@@ -1,0 +1,21 @@
+﻿@media (prefers-color-scheme: dark) {
+    :root /*[data-bs-theme="dark"]*/ {
+        --color-bg: 27, 30, 32;
+        --color-text: 214,216,218;
+        --color-link: 108,168,210;
+        --color-link-visited: 108,168,210;
+        --color-scrollbar: 136,136,136;
+        --color-scrollbar-bg: 68,68,68
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root /*[data-bs-theme="light"]*/ {
+        --color-bg: 245,245,245; /*whitesmoke*/
+        --color-text: 0,0,0;
+        --color-link: 0,0,238;
+        --color-link-visited: 0,0,238;
+        --color-scrollbar: 68,68,68;
+        --color-scrollbar-bg: 136,136,136
+    }
+}

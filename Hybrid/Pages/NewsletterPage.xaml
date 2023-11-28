@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Hybrid"
+             xmlns:pages="clr-namespace:Hybrid.Pages"
+             xmlns:lib="clr-namespace:Lib;assembly=Lib"
+             x:DataType ="local:NewsletterPageViewModel"
+             x:Class="Hybrid.NewsletterPage"
+             Title="Daily Workout">
+
+    <RefreshView x:Name="RefreshView" Refreshing="RefreshView_Refreshing">
+        <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent x:Name="rootComponent" Selector="#app" ComponentType="{x:Type pages:RefreshableLibMain}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </RefreshView>
+
+</ContentPage>

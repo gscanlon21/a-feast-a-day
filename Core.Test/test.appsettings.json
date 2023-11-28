@@ -1,0 +1,9 @@
+{
+  "SiteSettings": {
+    "Name": "A Feast a Day",
+    "Source": "https://github.com/gscanlon21/a-feast-a-day",
+    "WebLink": "https://afeastaday.com",
+    "ApiLink": "https://afeastaday.com/api",
+    "CdnLink": "https://cdn.afeastaday.com"
+  }
+}

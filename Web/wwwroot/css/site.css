@@ -1,0 +1,157 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+body {
+    width: 100%;
+}
+
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 1;
+}
+
+main {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-text));
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 1;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0
+}
+
+a {
+    color: rgb(var(--color-link))
+}
+
+a:focus, a:hover {
+    color: rgba(var(--color-link), .75)
+}
+
+a:visited {
+    color: rgb(var(--color-link-visited))
+}
+
+a.unstyled {
+    color: unset
+}
+
+summary {
+    cursor: pointer
+}
+
+summary:focus {
+    outline: none
+}
+
+/********** Bootstrap Overrides **********/
+.text-dark {
+    color: rgb(var(--color-text)) !important;
+}
+
+.callout {
+    border-radius: 0;
+    border-block-width: 0;
+    border-inline-end-width: 0;
+    border-inline-start-width: .25rem;
+}
+
+/********** Sticky Footer **********/
+
+html {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    height: 100%;
+}
+
+/********** Layout Styles **********/
+
+.site-logo {
+    height: 2rem;
+}
+
+.site-name {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/********** General Styles **********/
+
+.margin--none {
+    margin: 0;
+}
+
+.font-weight--normal {
+    font-weight: normal;
+}
+
+.font-weight--semibold {
+    font-weight: 600;
+}
+
+.font-weight--bold {
+    font-weight: bold;
+}
+
+.font-size--small {
+    font-size: small;
+}
+
+.font-size--smaller {
+    font-size: smaller;
+}
+
+.text-decoration--none {
+    text-decoration: none;
+}
+
+.white-space--nowrap {
+    white-space: nowrap;
+}
+
+/********** Shared Styles **********/
+
+.primary-heading {
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+
+.secondary-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.sub-heading {
+    margin-top: -5px;
+    font-size: smaller;
+}
+
+.m-0--empty:empty {
+    margin: 0 !important; 
+}
+
+.mb-25 {
+    margin-bottom: 0.75rem !important;
+}
+
+.hover:hover {
+    filter: opacity(0.75);
+}

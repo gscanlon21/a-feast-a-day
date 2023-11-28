@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hybrid.LoginPage"
+             Title="Login">
+
+    <FlexLayout VerticalOptions="FillAndExpand"
+                AlignItems="Center"
+                JustifyContent="SpaceAround"
+                Direction="Column">
+
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="A Feast a Day"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Entry x:Name="EmailEntry"
+                Placeholder="Email"
+                TextChanged="OnEmailEntryCompleted" />
+
+            <VerticalStackLayout>
+              <Entry x:Name="TokenEntry"
+                  Placeholder="Token"
+                  TextChanged="OnTokenEntryCompleted" />
+
+              <Label>
+                <Label.FormattedText>
+                  <FormattedString>
+                    <Span Text="Navigate to the "/>
+                    <Span
+                        Text="preferences page"
+                        TextColor="{StaticResource Blue100Accent}"
+                        TextDecorations="Underline">
+                      <!-- Link is broken. Just going to wait until this gets fixed: https://github.com/dotnet/maui/issues/4734 -->
+                      <Span.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding OpenUrlCommand}"
+                            CommandParameter="{Binding SiteSettings.Value.WebLink}"
+                        />
+                      </Span.GestureRecognizers>
+                    </Span>
+                    <Span Text=" and click on 'Access Token' to generate a new app token." />
+                  </FormattedString>
+                </Label.FormattedText>
+              </Label>
+            </VerticalStackLayout>
+
+            <FlexLayout
+                JustifyContent="SpaceBetween">
+                <Button Text="Register"
+                        VerticalOptions="Center"
+                        TextColor="{StaticResource White}"
+                        BackgroundColor="{StaticResource Secondary}"
+                        HorizontalOptions="Center"
+                        Clicked="OnRegisterClicked" />
+
+                <Button Text="Login"
+                        TextColor="{StaticResource White}"
+                        BackgroundColor="{StaticResource Primary}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Clicked="OnLoginClicked" />
+
+            </FlexLayout>
+        </VerticalStackLayout>
+
+        <!-- Blank space for keyboard -->
+        <VerticalStackLayout></VerticalStackLayout>
+        
+    </FlexLayout>
+</ContentPage>

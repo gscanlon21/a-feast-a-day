@@ -1,0 +1,75 @@
+﻿@page "/newsletter/footnote"
+@inject NewsletterService NewsletterService
+@inject DisplayHelper DH
+@using System.Net
+@using Core.Models.Footnote
+@using Core.Models.Newsletter
+
+@functions {
+    RenderFragment? Debug(ViewModels.Footnote.FootnoteViewModel footnote)
+    {
+        return Verbosity.HasFlag(Verbosity.Debug)
+            ? @<b>@footnote.Type.GetSingleDisplayName() - </b>
+            : null;
+    }
+}
+
+@if (Footnotes?.Any() == true)
+{
+    <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
+        <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
+            @foreach (var note in Footnotes.OrderBy(f => f.Type).ThenBy(f => Verbosity == Verbosity.Debug ? f.Note : Guid.NewGuid().ToString()))
+            {
+                if (string.IsNullOrWhiteSpace(note.Source))
+                {
+                    <li>@Debug(note)@note.Note</li>
+                }
+                else
+                {
+                    var sourceIsLink = Uri.IsWellFormedUriString(note.Source, UriKind.Absolute);
+                    if (sourceIsLink)
+                    {
+                        var sourceAsLink = new Uri(note.Source, UriKind.Absolute);
+                        <li>@Debug(note)@note.Note <a target="_blank" href="@note.Source">[@sourceAsLink.Host.Replace("www.", string.Empty)]</a></li>
+                    }
+                    else
+                    {
+                        <li>@Debug(note)@note.Note — @note.Source</li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public ViewModels.User.UserNewsletterViewModel? User { get; set; }
+
+    [Parameter, EditorRequired]
+    public FootnoteComponentType Type { get; set; } = FootnoteComponentType.System;
+
+    [Parameter]
+    public int Count { get; set; } = 2;
+
+    [Parameter, EditorRequired]
+    public Verbosity Verbosity { get; set; }
+
+    private IList<ViewModels.Footnote.FootnoteViewModel>? Footnotes { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Footnotes = Type switch {
+            FootnoteComponentType.User when User != null => await NewsletterService.GetUserFootnotes(User, Count),
+            _ => await NewsletterService.GetFootnotes(User, Count),
+        };
+        
+        await base.OnInitializedAsync();
+    }
+
+    public enum FootnoteComponentType
+    {
+        System = 0,
+        User = 1,
+    }
+}

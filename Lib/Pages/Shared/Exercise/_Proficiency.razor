@@ -1,0 +1,113 @@
+﻿@inject DisplayHelper DH
+@using Core.Models.Exercise
+@using Lib.ViewModels.Exercise
+
+@{
+    void Pounds()
+    {
+        if (User != null
+            && UserVariation != null 
+            && Variation.IsWeighted)
+        {
+            <span> (@UserVariation.Weight#)</span>
+        }
+    }
+}
+
+@functions {
+    string Secs()
+    {
+        return Model.MinSecs.HasValue && Model.MaxSecs.HasValue && Model.MinSecs != Model.MaxSecs
+            ? $"{Model.MinSecs}-{Model.MaxSecs}s"
+            : $"{Model.MinSecs ?? Model.MaxSecs}s";
+    }
+
+    string Sets()
+    {
+        return $"{Model.Sets} {(Model.Sets == 1 ? "set" : "sets")}";
+    }
+
+    string Reps()
+    {
+        return Model.MinReps.HasValue && Model.MaxReps.HasValue && Model.MinReps != Model.MaxReps
+            ? $"{Model.MinReps}-{Model.MaxReps} reps"
+            : $"{Model.MinReps ?? Model.MaxReps} reps";
+    }
+}
+
+<div style="margin-block:.25em;">
+    <h5 style="margin-block:0;font-size:.85em;">
+        @if (Model.Sets.HasValue)
+        {
+            if (Model.HasReps)
+            {
+                // 3 sets of 8-12 reps
+                <span>@Sets() of @Reps() @(Variation.Unilateral ? "(ea. side)" : "") @{Pounds();}</span>
+            }
+            else if (Variation.MuscleContractions.HasAnyFlag32(MuscleContractions.Dynamic))
+            {
+                // 3 sets of 15-30s
+                <span>@Sets() of @Secs() @(Variation.Unilateral ? "(ea. side)" : "") @{Pounds();}</span>
+            } 
+            else 
+            {
+                // 3 sets of 15-30s holds
+                <span>@Sets() of @Secs() holds @(Variation.Unilateral ? "(ea. side)" : "") @{Pounds();}</span>
+            }
+        }
+        else
+        {
+            if (Model.HasReps)
+            {
+                // 20-30 reps total
+                <span>@Reps() total @(Variation.Unilateral ? "(ea. side)" : "") @{Pounds();}</span>
+            }
+            else if (Variation.MuscleContractions.HasAnyFlag32(MuscleContractions.Dynamic))
+            {
+                // 30-60s total
+                <span>@Secs() total @(Variation.Unilateral ? "(ea. side)" : "") @{Pounds();}</span>
+            }
+            else
+            {
+                // Hold for 30-60s total
+                <span>Hold for @Secs() total @(Variation.Unilateral ? "(ea. side)" : "") @{Pounds();}</span>
+            }
+        }
+    </h5>
+
+    @if (FirstTimeViewing) 
+    {
+        <h6 style="margin-block:0;font-weight:normal;font-size:.8em;">First time? Take it easy working the new movement and focus on your form.</h6>
+    }
+    else
+    {
+        if (Model.HasSecs && Model.HasReps)
+        {
+            if (Variation.MuscleContractions.HasFlag(MuscleContractions.Static))
+            {
+                <h6 style="margin-block:0;font-weight:normal;font-size:.8em;">Hold the peak of each rep for @Secs().</h6>
+            }
+            else
+            {
+                <h6 style="margin-block:0;font-weight:normal;font-size:.8em;">&star;&nbsp;<i>Hold the peak of each rep for @Secs().</i></h6>
+            }
+        }
+    }
+</div>
+
+@code {
+    [CascadingParameter]
+    public ViewModels.User.UserNewsletterViewModel? User { get; set; }
+
+    [Parameter]
+    public VariationViewModel Variation { get; set; } = null!;
+
+    [Parameter]
+    public ViewModels.User.UserVariationViewModel? UserVariation { get; set; } = null!;
+
+    [Parameter]
+    public ViewModels.Newsletter.ProficiencyViewModel Model { get; set; } = null!;
+
+    [Parameter]
+    public bool FirstTimeViewing { get; init; } = false;
+}

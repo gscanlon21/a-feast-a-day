@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Hybrid.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Hybrid"
+    x:DataType ="local:AppShellViewModel"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutHeaderBehavior="Default">
+
+    <Shell.FlyoutHeader>
+        <local:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <ShellContent Title="Daily Workout"
+                    Route="NewsletterPage"
+                    Icon="{StaticResource Workout}"
+                    ContentTemplate="{DataTemplate local:NewsletterPage}" />
+
+    <ShellContent Title="Workouts"
+                    Route="NewslettersPage"
+                    Icon="{StaticResource Workouts}"
+                    ContentTemplate="{DataTemplate local:NewslettersPage}" />
+
+    <MenuItem Text="Website"
+              IconImageSource="{StaticResource Website}"
+              Command="{Binding BrowserCommand}"
+              CommandParameter="{Binding SiteSettings.Value.WebLink}" />
+
+    <MenuItem Text="Source"
+              IconImageSource="{StaticResource Source}"
+              Command="{Binding BrowserCommand}"
+              CommandParameter="{Binding SiteSettings.Value.Source}" />
+
+    <MenuItem Text="Logout"
+              IconImageSource="{StaticResource Logout}"
+              Command="{Binding LogoutCommand}" />
+
+    <Shell.FlyoutFooter>
+        <local:FlyoutFooter />
+    </Shell.FlyoutFooter>
+</Shell>

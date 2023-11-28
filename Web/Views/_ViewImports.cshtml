@@ -1,0 +1,33 @@
+﻿@using Microsoft.Extensions.Options;
+@using Web.Code
+@using Web.Code.TempData
+@using Web.Code.ViewData
+@using Web.Controllers
+@using Web.Controllers.User
+@using Web.Controllers.Exercise
+@using Web.Controllers.Newsletter
+@using Web.Components
+@using Web.Components.User
+@using Web.ViewModels.User
+@using Web.ViewModels.User.Components
+@using Web.ViewModels.Exercise
+@using Lib.ViewModels.Newsletter
+@using Core.Models.Options
+@using Core.Code.Extensions
+@using Core.Models.Equipment
+@using Core.Models.Exercise
+@using Core.Models.Footnote
+@using Core.Models.Newsletter
+@using Core.Models.User
+
+@namespace Web.Views
+
+@* Extend HtmlHelper<T> with helpful extensions *@
+@inject HtmlHelpers<TModel> Html
+
+@* App Settings *@
+@inject IOptions<SiteSettings> _siteSettings;
+
+@inject IWebHostEnvironment _webHostEnvironment;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

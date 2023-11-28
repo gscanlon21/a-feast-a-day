@@ -1,0 +1,112 @@
+﻿@page "/"
+@inject AppState AppState
+@inject DisplayHelper DH
+@inject NewsletterService NewsletterService
+@inject NavigationManager Navigation
+@using Core.Models.Exercise
+@using Core.Models.Newsletter
+@using Core.Models.Footnote
+@using Core.Models.User
+@using ViewModels.Exercise
+@using Shared.Exercise
+
+@if (Error != null)
+{
+    <div>@Error</div>
+}
+else if (Model == null)
+{
+    <div>Loading workout...</div>
+}
+else
+{
+    var isDebugWorkout = Model.User.Features.HasFlag(Features.Debug);
+    var isMobilityWorkout = Model.UserWorkout.Frequency == Core.Models.User.Frequency.OffDayStretches;
+    var exerciseNames = string.Join(", ", Model.MainExercises.GroupBy(e => e.Exercise).Select(g => g.Key.Name));
+
+    @if (isDebugWorkout)
+    {
+        <Lib.Pages.Shared.Newsletter._Preview Model='@($"Debug - {exerciseNames}")' />
+    }
+    else if (isMobilityWorkout)
+    {
+        <Lib.Pages.Shared.Newsletter._Preview Model='@($"Mobility - {Model.UserWorkout.Rotation.MuscleGroupsDisplayName}")' />
+    }
+    else
+    {
+        <Lib.Pages.Shared.Newsletter._Preview Model='@($"{Model.UserWorkout.Rotation.MuscleGroupsDisplayName} - {Model.UserWorkout.Rotation.MovementPatterns.GetDisplayName32(EnumExtensions.DisplayNameType.ShortName)}")' />
+    }
+
+    <div style="margin-bottom:1rem;">
+        <h6 style="margin-block:0;"><a target="_blank" href="@DH.NewsletterLink(Model.User, Model.Today)">@Model.Today.ToLongDateString()</a></h6>
+        <h1 style="margin-block:0;">Daily Workout</h1>
+        @if (isDebugWorkout)
+        {
+            <h4 style="margin-block:0;display:inline-block;">Debug</h4>
+            <small> - @exerciseNames</small>
+        } 
+        else if (isMobilityWorkout)
+        {
+            <h4 style="margin-block:0;display:inline-block;">Mobility</h4>
+            <small> - @Model.UserWorkout.Rotation.MuscleGroupsDisplayName</small>
+        }
+        else
+        {
+            <h4 style="margin-block:0;display:inline-block;">@Model.UserWorkout.Rotation.MuscleGroupsDisplayName</h4>
+            <small> - @Model.UserWorkout.Rotation.MovementPatterns.GetDisplayName32(EnumExtensions.DisplayNameType.ShortName)</small>
+        }
+    </div>
+
+    <Lib.Pages.Shared.Newsletter._UserStatusMessages User="Model.User" />
+
+    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
+    
+    <div style="margin-block:1rem;">
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Exercises="Model.RehabExercises" Theme="ExerciseTheme.Extra" Title="@(new ExerciseSection.Titles($"Rehab: {Model.User.RehabFocus.GetSingleDisplayName()}", "Use light weights, if any. Do these throughout the day."))" />
+
+        <Lib.Pages.Shared.Newsletter._UserRecoveryMessage User='Model.User' />
+
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Exercises="Model.WarmupExercises" Theme="ExerciseTheme.Warmup" Title="@(new ExerciseSection.Titles("Warmup", "Use light weights, if any. Aim to get your heart rate up with 5-10 minutes of cardio."))" />
+
+        <Lib.Pages.Shared.Newsletter._UserDeloadMessage Model='Model.UserWorkout' />
+
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Exercises="Model.SportsExercises" Theme="ExerciseTheme.Other" Title="@(new ExerciseSection.Titles($"Sport: {Model.User.SportsFocus.GetSingleDisplayName()}"))" />
+
+        @{ var mainDesc = Model.UserWorkout.IsDeloadWeek ? "Use light weights, if any. Rest between sets for 30s or less for muscular endurance." : "Start off with a lightweight warmup set. Rest between sets for 30-90s or 2-5min for hypertrophy or strength, respectively."; }
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Exercises="Model.MainExercises" Theme="ExerciseTheme.Main" Title="@(isDebugWorkout ? null : new ExerciseSection.Titles("Workout", mainDesc, "&star;&nbsp;<i>Prolong the eccentric 'lowering' phase of each rep.</i>"))" />
+
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Exercises="Model.PrehabExercises" Theme="ExerciseTheme.Extra" Title="@(new ExerciseSection.Titles("Prehab", "Use light weights, if any. Rest between sets for 30s or less for muscular endurance."))" />
+
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Exercises="Model.CooldownExercises" Theme="ExerciseTheme.Cooldown" Title="@(new ExerciseSection.Titles("Cooldown", "Or work through a full-body Yoga routine."))" />
+    </div>
+
+    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" />
+
+    @if (!Model.HideFooter)
+    {
+        <hr style="margin-block:1ex;">
+
+        <Lib.Pages.Shared.Newsletter._Footer User="Model.User" />
+    }
+}
+
+@code {
+    [Parameter]
+    public ViewModels.Newsletter.NewsletterViewModel? Model { get; set; }
+
+    public string? Error { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Model == null)
+        {
+            Model = await NewsletterService.Newsletter(AppState.Email, AppState.Token, AppState.Date);
+
+            if (Model == null)
+            {
+                // TODO Differentiate between server blip and user's login token is no longer valid.
+                Error = "Request failed.";
+            }
+        }
+    }
+}

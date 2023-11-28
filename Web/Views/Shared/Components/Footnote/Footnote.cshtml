@@ -1,0 +1,60 @@
+﻿@model Web.ViewModels.User.Components.FootnoteViewModel
+@using Core.Models.Exercise
+
+
+<details class="mb-25">
+    <summary class="mb-1 h5">
+        @Html.DisplayNameFor(_ => Model.Footnotes)
+        <span class="float-end">@Model.Footnotes.Count</span>
+    </summary>
+
+    <div class="alert alert-secondary" role="alert">
+        <div class="mb-4">
+            <h6 class="mb-1">New footnote</h6>
+            <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddFootnote)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <div class="form-group mb-3">
+                    <label for="Note" class="control-label">Note</label>
+                    <input type="text" name="Note" class="form-control" required="required" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Source" class="control-label">Source</label>
+                    <input type="text" name="Source" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn btn-secondary" />
+                    <div class="form-text">Footnotes are not encrypted. Avoid entering in any sensitive information.</div>
+                </div>
+            </form>
+        </div>
+
+        @foreach (var footnote in Model.Footnotes)
+        {
+            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveFootnote)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="FootnoteId" asp-for="@footnote.Id" />
+
+                <div class="form-group mt-3">
+                    <div class="input-group">
+                        <textarea class="form-control" disabled="disabled" aria-describedby="exercise-help" rows="2">@footnote.Note</textarea>
+                        <input type="submit" value="-" class="btn btn-outline-secondary" />
+                    </div>
+                    <span for="FootnoteId" class="text-danger"></span>
+                    @if (!string.IsNullOrWhiteSpace(footnote.Source))
+                    {
+                        var sourceIsLink = Uri.IsWellFormedUriString(footnote.Source, UriKind.Absolute);
+                        <div class="form-text font-size--smaller">
+                            @if (sourceIsLink)
+                            {
+                                <a target="_blank" href="@footnote.Source">@footnote.Source</a>
+                            }
+                            else
+                            {
+                                @footnote.Source
+                            }
+                        </div>
+                    }
+                </div>
+            </form>
+        }
+    </div>
+</details>

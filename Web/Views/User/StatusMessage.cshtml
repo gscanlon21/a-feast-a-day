@@ -1,0 +1,34 @@
+﻿@model ViewModels.User.StatusMessageViewModel
+
+@{
+    if (Model.Demo == true) {
+        Layout = "_Blank";
+    }
+}
+
+<p class="mb-3">@Model.Message</p>
+
+@if (Model.AutoCloseInXSeconds.HasValue) {
+    <p id="auto-close-warning">Attempting to <span onclick="closeMe();" style="text-decoration:underline;cursor:pointer">go back</span> in <span id="delay-duration" data-duration-ms=@(Model.AutoCloseInXSeconds * 1000)>@Model.AutoCloseInXSeconds</span> seconds...</p>
+
+    <script>
+        const delayDurationElement = document.getElementById('delay-duration');
+        const decreaseDelayDuration = setInterval(() => {
+            delayDurationElement.textContent = parseInt(delayDurationElement.textContent) - 1;
+        }, 1000);
+
+        const closeMe = () => {
+            clearInterval(decreaseDelayDuration);
+            // Go back to previous webpage
+            window.history.back();
+            // Go-back failed
+            window.close();
+            // Close failed
+            document.getElementById('auto-close-warning').remove();
+        }
+
+        setTimeout(() => {
+            closeMe()
+        }, delayDurationElement.dataset.durationMs);
+    </script>
+}

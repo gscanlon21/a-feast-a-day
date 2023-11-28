@@ -1,0 +1,101 @@
+﻿@using Core.Models.Exercise
+@using Core.Models.Newsletter;
+@using Core.Models.User;
+
+@if (Exercises?.Any() == true)
+{
+    var titleColor = Theme switch
+    {
+        ExerciseTheme.Warmup => "palevioletred",
+        ExerciseTheme.Main => "mediumpurple",
+        ExerciseTheme.Cooldown => "lightskyblue",
+        ExerciseTheme.Extra => "lightgreen",
+        ExerciseTheme.Other => "lightsalmon",
+        _ => "currentColor"
+    };
+
+    if (Title == null)
+    {
+        foreach (var exerciseGroup in Exercises.GroupBy(e => e, new ExerciseSectionComparer()).OrderBy(e => e.Key.Exercise.Name))
+        {
+            <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@exerciseGroup.Key.Exercise.Name</h2>
+
+            @if (Verbosity.HasFlag(Verbosity.Debug))
+            {
+                <p style="margin-block:0;"><b>Groups</b> - @exerciseGroup.Key.Exercise.Groups.GetDisplayName32()</p>
+                <div style="margin-block:.1ex;font-size:x-small;color:mediumvioletred"><b>Unused</b>: @ExerciseGroup.All.UnsetFlag32(exerciseGroup.Key.Exercise.Groups).GetDisplayName32(EnumExtensions.DisplayNameType.ShortName)</div>
+
+                @if (exerciseGroup.Key.ExercisePrerequisites?.Any() == true)
+                {
+                    <p style="margin-block:0;"><b>Prerequisites</b> - @String.Join(", ", exerciseGroup.Key.ExercisePrerequisites.Select(e => $"{e.Name}: {e.Proficiency}"))</p>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(exerciseGroup.Key.Exercise.Notes))
+                {
+                    <p style="margin-block:0;"><b>Notes</b> - @exerciseGroup.Key.Exercise.Notes</p>
+                }
+            }
+
+            <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+                @foreach (var item in exerciseGroup)
+                {
+                    <CascadingValue Value="User">
+                        <_Exercise Model="item" Verbosity="Verbosity" />
+                    </CascadingValue>
+                }
+            </div>
+        }
+    }
+    else
+    {
+        <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@Title.Header</h2>
+        @if (Verbosity.HasFlag(Verbosity.Instructions) && Title.Description.HasValue)
+        {
+            <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
+        }
+        <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+            @foreach (var item in Exercises)
+            {
+                <CascadingValue Value="User">
+                    <_Exercise Model="item" Verbosity="Verbosity" />
+                </CascadingValue>
+            }
+        </div>
+        @if (Verbosity.HasFlag(Verbosity.Instructions) && Title.Footer.HasValue)
+        {
+            <h6 style="margin-bottom:0;margin-top:.25em;font-weight:normal;font-size:revert;">@Title.Footer.Value</h6>
+        }
+    }
+}
+
+@code {
+    [Parameter]
+    public Titles? Title { get; init; }
+
+    [Parameter, EditorRequired]
+    public ViewModels.User.UserNewsletterViewModel? User { get; init; }
+
+    [Parameter, EditorRequired]
+    public ExerciseTheme Theme { get; init; }
+
+    [Parameter, EditorRequired]
+    public Verbosity Verbosity { get; init; }
+
+    [Parameter, EditorRequired]
+    public IList<ViewModels.Newsletter.ExerciseVariationViewModel>? Exercises { get; init; }
+
+    public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
+    {
+        public Titles(string header) : this(new MarkupString(header), null, null) { }
+        public Titles(string header, string description) : this(new MarkupString(header), new MarkupString(description), null) { }
+        public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
+    };
+
+    private class ExerciseSectionComparer : IEqualityComparer<ViewModels.Newsletter.ExerciseVariationViewModel>
+    {
+        public bool Equals(ViewModels.Newsletter.ExerciseVariationViewModel? a, ViewModels.Newsletter.ExerciseVariationViewModel? b)
+            => EqualityComparer<ViewModels.Exercise.ExerciseViewModel>.Default.Equals(a?.Exercise, b?.Exercise);
+
+        public int GetHashCode(ViewModels.Newsletter.ExerciseVariationViewModel e) => e.Exercise.GetHashCode();
+    }
+}

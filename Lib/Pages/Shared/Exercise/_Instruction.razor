@@ -1,0 +1,18 @@
+﻿@inject DisplayHelper DH
+@using Core.Models.Exercise
+
+<div>
+    @if (string.IsNullOrWhiteSpace(Model.Instruction.Link))
+    {
+        <span title="@Model.Instruction.Name">@Model.GetDisplayName()</span>
+    }
+    else 
+    {
+        <a class="allow-demo" target="_blank" href="@Model.Instruction.Link" title="@Model.Instruction.Name">@Model.GetDisplayName()</a>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public ViewModels.Newsletter.InstructionViewModel Model { get; set; } = null!;
+}
