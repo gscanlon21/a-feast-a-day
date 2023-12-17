@@ -1,9 +1,5 @@
-﻿using Core.Code.Extensions;
-using Core.Consts;
-using Core.Models.Exercise;
-using Core.Models.User;
+﻿using Core.Consts;
 using Data;
-using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -71,74 +67,21 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
         {
             try
             {
-                var rehabMuscleGroup = viewModel.RehabFocus.As<MuscleGroups>();
-                if (rehabMuscleGroup != MuscleGroups.None && viewModel.User.RehabFocus != viewModel.RehabFocus)
-                {
-                    // If any exercise's variation's muscle is worked by the (new) recovery muscle, lower it's progression level and un-ignore it.
-                    var progressions = context.UserExercises
-                        .Where(up => up.UserId == viewModel.User.Id);
-                    foreach (var progression in progressions)
-                    {
-                        progression.Ignore = false;
-                        progression.Progression = UserConsts.MinUserProgression;
-                    }
-                    context.Set<UserExercise>().UpdateRange(progressions);
-                }
-
-                // If previous and current frequency is custom, allow editing of user frequencies.
-                if (viewModel.User.Frequency == Frequency.Custom && viewModel.Frequency == Frequency.Custom)
-                {
-                    context.UserFrequencies.RemoveRange(context.UserFrequencies.Where(uf => uf.UserId == viewModel.User.Id));
-                    context.UserFrequencies.AddRange(viewModel.UserFrequencies
-                        .Where(f => !f.Hide)
-                        // At least some muscle groups or movement patterns are being worked
-                        .Where(f => f.MuscleGroups?.Any() == true || f.MovementPatterns != MovementPattern.None)
-                        // Order before we index the items so only the days following blank rotatations shift ids
-                        .OrderBy(f => f.Day)
-                        .Select((e, i) => new UserFrequency()
-                        {
-                            // Using the index as the id so we don't have blank days if there is a rotation w/o muscle groups or movement patterns.
-                            Id = i + 1,
-                            UserId = viewModel.User.Id,
-                            Rotation = new Data.Entities.Newsletter.WorkoutRotation(i + 1)
-                            {
-                                MuscleGroups = e.MuscleGroups!,
-                                MovementPatterns = e.MovementPatterns
-                            },
-                        })
-                    );
-                }
-
                 viewModel.User.Verbosity = viewModel.Verbosity;
                 viewModel.User.Equipment = viewModel.Equipment;
                 viewModel.User.FootnoteType = viewModel.FootnoteType;
                 viewModel.User.DeloadAfterEveryXWeeks = viewModel.DeloadAfterEveryXWeeks;
                 viewModel.User.RefreshAccessoryEveryXWeeks = viewModel.RefreshAccessoryEveryXWeeks;
                 viewModel.User.RefreshFunctionalEveryXWeeks = viewModel.RefreshFunctionalEveryXWeeks;
-                viewModel.User.SportsFocus = viewModel.SportsFocus;
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
                 viewModel.User.ShowStaticImages = viewModel.ShowStaticImages;
                 viewModel.User.Intensity = viewModel.Intensity;
-                viewModel.User.Frequency = viewModel.Frequency;
                 viewModel.User.IncludeMobilityWorkouts = viewModel.IncludeMobilityWorkouts;
-                viewModel.User.IsNewToFitness = viewModel.IsNewToFitness;
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
                 {
                     viewModel.User.NewsletterDisabledReason = viewModel.NewsletterEnabled ? null : UserDisabledByUserReason;
-                }
-
-                // If IncludeMobilityWorkouts is disabled, also remove any prehab or rehab focuses. Those are dependent on mobility workouts.
-                if (viewModel.User.IncludeMobilityWorkouts)
-                {
-                    viewModel.User.PrehabFocus = viewModel.PrehabFocus;
-                    viewModel.User.RehabFocus = viewModel.RehabFocus;
-                }
-                else
-                {
-                    viewModel.User.PrehabFocus = PrehabFocus.None;
-                    viewModel.User.RehabFocus = RehabFocus.None;
                 }
 
                 await context.SaveChangesAsync();
@@ -258,8 +201,7 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
         }
 
         // Add a dummy newsletter to advance the workout split
-        var (needsDeload, _) = await userRepo.CheckNewsletterDeloadStatus(user);
-        var newsletter = new Data.Entities.Newsletter.UserWorkout(Today, user, user.Frequency, needsDeload);
+        var newsletter = new Data.Entities.Newsletter.UserWorkout(Today, user);
         context.UserWorkouts.Add(newsletter);
 
         await context.SaveChangesAsync();

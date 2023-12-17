@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Data.Entities.Exercise;
 using Lib.ViewModels.Exercise;
 using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;

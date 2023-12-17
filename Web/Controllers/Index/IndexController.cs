@@ -50,7 +50,7 @@ public class IndexController(CoreContext context, UserRepo userRepo, CaptchaServ
     {
         if (ModelState.IsValid && captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success != false)
         {
-            var newUser = new Data.Entities.User.User(viewModel.Email, viewModel.AcceptedTerms, viewModel.IsNewToFitness);
+            var newUser = new Data.Entities.User.User(viewModel.Email, viewModel.AcceptedTerms);
 
             try
             {

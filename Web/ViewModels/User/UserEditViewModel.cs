@@ -28,21 +28,16 @@ public class UserEditViewModel
         Email = user.Email;
         SendDays = user.SendDays;
         Intensity = user.Intensity;
-        Frequency = user.Frequency;
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         Verbosity = user.Verbosity;
         Equipment = user.Equipment;
-        PrehabFocus = user.PrehabFocus;
-        RehabFocus = user.RehabFocus;
         FootnoteType = user.FootnoteType;
         ShowStaticImages = user.ShowStaticImages;
         SendHour = user.SendHour;
         DeloadAfterEveryXWeeks = user.DeloadAfterEveryXWeeks;
         RefreshAccessoryEveryXWeeks = user.RefreshAccessoryEveryXWeeks;
         RefreshFunctionalEveryXWeeks = user.RefreshFunctionalEveryXWeeks;
-        IsNewToFitness = user.IsNewToFitness;
-        SportsFocus = user.SportsFocus;
         IncludeMobilityWorkouts = user.IncludeMobilityWorkouts;
         Token = token;
     }
@@ -59,16 +54,10 @@ public class UserEditViewModel
     /// </summary>
     public bool? WasUpdated { get; set; }
 
-    public IList<UserEditFrequencyViewModel> UserFrequencies { get; set; } = new List<UserEditFrequencyViewModel>();
-
     [DataType(DataType.EmailAddress)]
     [Required, RegularExpression(UserCreateViewModel.EmailRegex, ErrorMessage = UserCreateViewModel.EmailRegexError)]
     [Display(Name = "Email", Description = "")]
     public string Email { get; init; } = null!;
-
-    [Required]
-    [Display(Name = "I'm new to fitness", Description = "Simplify your workouts.")]
-    public bool IsNewToFitness { get; init; }
 
     /// <summary>
     /// How often to take a deload week
@@ -90,21 +79,6 @@ public class UserEditViewModel
     public bool IncludeMobilityWorkouts { get; init; }
 
     /// <summary>
-    /// Include a section to boost a specific sports performance
-    /// </summary>
-    [Display(Name = "Sports Focus", Description = "Include additional plyometric and strengthening exercises that focus on the movements involved in a particular sport.")]
-    public SportsFocus SportsFocus { get; init; }
-
-    [Display(Name = "Prehab Focus", Description = "Focus areas to stretch and strengthen for injury prevention. Includes balance training.")]
-    public PrehabFocus PrehabFocus { get; private set; }
-
-    /// <summary>
-    /// Don't strengthen this muscle group, but do show recovery variations for exercises
-    /// </summary>
-    [Display(Name = "Rehab Focus")]
-    public RehabFocus RehabFocus { get; init; }
-
-    /// <summary>
     /// Types of footnotes to show to the user.
     /// </summary>
     [Display(Name = "Footnotes", Description = "What types of footnotes do you want to see?")]
@@ -119,10 +93,6 @@ public class UserEditViewModel
     [Required]
     [Display(Name = "Workout Intensity", Description = "Beginner lifters should not immediately train heavy. Tendons lag behind muscles by 2-5 years in strength adaption. Don’t push harder or increase your loads at a rate faster than what your tendons can adapt to.")]
     public Intensity Intensity { get; init; }
-
-    [Required]
-    [Display(Name = "Workout Split", Description = "")]
-    public Frequency Frequency { get; init; }
 
     [Required]
     [Display(Name = "Workout Verbosity", Description = "What level of detail do you want to receive in each workout?")]
@@ -147,12 +117,6 @@ public class UserEditViewModel
     {
         get => Enum.GetValues<Verbosity>().Where(e => Verbosity.HasFlag(e)).ToArray();
         set => Verbosity = value?.Aggregate(Verbosity.None, (a, e) => a | e) ?? Verbosity.None;
-    }
-
-    public PrehabFocus[]? PrehabFocusBinder
-    {
-        get => Enum.GetValues<PrehabFocus>().Where(e => PrehabFocus.HasFlag(e)).ToArray();
-        set => PrehabFocus = value?.Aggregate(PrehabFocus.None, (a, e) => a | e) ?? PrehabFocus.None;
     }
 
     public FootnoteType[]? FootnoteTypeBinder

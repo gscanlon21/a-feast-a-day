@@ -37,8 +37,6 @@ public class UserConsts
 
     public const Days DaysDefault = Days.Monday | Days.Tuesday | Days.Thursday | Days.Friday;
 
-    public const Frequency FrequencyDefault = Frequency.UpperLowerBodySplit4Day;
-
     public const Intensity IntensityDefault = Intensity.Light;
 
     public const Verbosity VerbosityDefault = Verbosity.Instructions

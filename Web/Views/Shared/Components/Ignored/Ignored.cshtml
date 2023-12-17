@@ -11,7 +11,7 @@
     </div>
 }
 
-@if (Model.IgnoredVariations.Any())
+@if (Model.IgnoredVariations != null && Model.IgnoredVariations.Any())
 {
     <details class="mt-4 mb-25">
         <summary class="mb-1 h5">
@@ -33,7 +33,7 @@
     </details>
 }
 
-@if (Model.IgnoredExercises.Any())
+@if (Model.IgnoredExercises != null && Model.IgnoredExercises.Any())
 {
     <details class="mt-4 mb-25">
         <summary class="mb-1 h5">

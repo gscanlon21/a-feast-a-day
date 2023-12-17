@@ -23,4 +23,9 @@
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Code\Extensions\" />
+    <Folder Include="Entities\Equipment\" />
+  </ItemGroup>
+
 </Project>

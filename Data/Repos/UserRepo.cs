@@ -1,12 +1,7 @@
 ﻿using Core.Consts;
-using Core.Models.Exercise;
-using Core.Models.Newsletter;
-using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
-using Data.Models.Newsletter;
 using Microsoft.EntityFrameworkCore;
-using System.Numerics;
 using System.Security.Cryptography;
 
 namespace Data.Repos;
@@ -95,42 +90,6 @@ public class UserRepo(CoreContext context)
     public async Task<string> AddUserToken(User user, int durationDays = 1)
     {
         return await AddUserToken(user, DateTime.UtcNow.AddDays(durationDays));
-    }
-
-    /// <summary>
-    /// Checks if the user should deload for a week.
-    /// 
-    /// Deloads are weeks with a message to lower the intensity of the workout so muscle growth doesn't stagnate.
-    /// Also to ease up the stress on joints.
-    /// </summary>
-    public async Task<(bool needsDeload, TimeSpan timeUntilDeload)> CheckNewsletterDeloadStatus(User user)
-    {
-        var lastDeload = await _context.UserWorkouts.AsNoTracking().TagWithCallSite()
-            .Where(n => n.UserId == user.Id)
-            .OrderByDescending(n => n.Date)
-            .FirstOrDefaultAsync(n => n.IsDeloadWeek);
-
-        // Grabs the date of Sunday of the current week.
-        var currentWeekStart = Today.AddDays(-1 * (int)Today.DayOfWeek);
-        // Grabs the Sunday that was the start of the last deload.
-        var lastDeloadStartOfWeek = lastDeload != null ? lastDeload.Date.AddDays(-1 * (int)lastDeload.Date.DayOfWeek) : DateOnly.MinValue;
-        // Grabs the Sunday at or before the user's created date.
-        var createdDateStartOfWeek = user.CreatedDate.AddDays(-1 * (int)user.CreatedDate.DayOfWeek);
-        // How far away the last deload need to be before another deload.
-        var countUpToNextDeload = Today.AddDays(-7 * user.DeloadAfterEveryXWeeks);
-
-        bool isSameWeekAsLastDeload = lastDeload != null && lastDeloadStartOfWeek == currentWeekStart;
-        TimeSpan timeUntilDeload = (isSameWeekAsLastDeload, lastDeload) switch
-        {
-            // There's never been a deload before, calculate the next deload date using the user's created date.
-            (false, null) => TimeSpan.FromDays(createdDateStartOfWeek.DayNumber - countUpToNextDeload.DayNumber),
-            // Calculate the next deload date using the last deload's date.
-            (false, not null) => TimeSpan.FromDays(lastDeloadStartOfWeek.DayNumber - countUpToNextDeload.DayNumber),
-            // Dates are the same week. Keep the deload going until the week is over.
-            _ => TimeSpan.Zero
-        };
-
-        return (timeUntilDeload <= TimeSpan.Zero, timeUntilDeload);
     }
 
     /// <summary>

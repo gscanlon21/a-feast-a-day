@@ -1,11 +1,8 @@
-﻿using Core.Models.Exercise;
-using Data.Entities.Equipment;
-using Data.Entities.Exercise;
+﻿using Data.Entities.Exercise;
 using Data.Entities.Footnote;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Text.Json;
 
 namespace Data;
@@ -37,24 +34,6 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserExercise>().HasKey(sc => new { sc.UserId, sc.ExerciseId });
         //modelBuilder.Entity<ExerciseVariation>().HasKey(sc => new { sc.ExerciseId, sc.VariationId });
 
-
-        ////////// Conversions //////////
-        modelBuilder
-            .Entity<UserWorkout>()
-            .OwnsOne(e => e.Rotation)
-            .Property(e => e.MuscleGroups)
-            .HasConversion(v => JsonSerializer.Serialize(v, JsonSerializerOptions),
-                v => JsonSerializer.Deserialize<List<MuscleGroups>>(v, JsonSerializerOptions)!,
-                new ValueComparer<IList<MuscleGroups>>((mg, mg2) => mg == mg2, mg => mg.GetHashCode())
-            );
-        modelBuilder
-            .Entity<UserFrequency>()
-            .OwnsOne(e => e.Rotation)
-            .Property(e => e.MuscleGroups)
-            .HasConversion(v => JsonSerializer.Serialize(v, JsonSerializerOptions),
-                v => JsonSerializer.Deserialize<List<MuscleGroups>>(v, JsonSerializerOptions)!,
-                new ValueComparer<IList<MuscleGroups>>((mg, mg2) => mg == mg2, mg => mg.GetHashCode())
-            );
         //modelBuilder
         //    .Entity<Variation>()
         //    .Property(e => e.StrengthMuscles)
@@ -68,6 +47,5 @@ public class CoreContext : DbContext
         modelBuilder.Entity<Exercise>().HasQueryFilter(p => p.DisabledReason == null);
         modelBuilder.Entity<UserExercise>().HasQueryFilter(p => p.Exercise.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);
-        modelBuilder.Entity<Instruction>().HasQueryFilter(p => p.DisabledReason == null);
     }
 }

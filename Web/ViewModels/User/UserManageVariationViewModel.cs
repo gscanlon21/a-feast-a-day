@@ -1,6 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Data.Entities.Exercise;
-using Data.Entities.User;
 using Lib.ViewModels.Newsletter;
 using System.ComponentModel.DataAnnotations;
 

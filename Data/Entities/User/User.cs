@@ -55,7 +55,7 @@ public class User
     /// <summary>
     /// Creates a new user.
     /// </summary>
-    public User(string email, bool acceptedTerms, bool isNewToFitness)
+    public User(string email, bool acceptedTerms)
     {
         if (!acceptedTerms)
         {
@@ -64,12 +64,10 @@ public class User
 
         Email = email.Trim();
         AcceptedTerms = acceptedTerms;
-        IsNewToFitness = isNewToFitness;
 
         SendDays = UserConsts.DaysDefault;
         SendHour = UserConsts.SendHourDefault;
         Verbosity = UserConsts.VerbosityDefault;
-        Frequency = UserConsts.FrequencyDefault;
         FootnoteType = UserConsts.FootnotesDefault;
         Intensity = UserConsts.IntensityDefault;
         DeloadAfterEveryXWeeks = UserConsts.DeloadAfterEveryXWeeksDefault;
@@ -113,52 +111,10 @@ public class User
     public bool IncludeMobilityWorkouts { get; set; }
 
     /// <summary>
-    /// User is new to fitness?
-    /// </summary>
-    [NotMapped]
-    public bool IsNewToFitness
-    {
-        get => SeasonedDate == null;
-        set
-        {
-            if (SeasonedDate == null && !value)
-            {
-                SeasonedDate = DateOnly.FromDateTime(DateTime.UtcNow);
-            }
-        }
-    }
-
-    /// <summary>
-    /// When was the user no longer new to fitness. 
-    /// Or null if the user is still new to fitness.
-    /// 
-    /// Date is UTC.
-    /// </summary>
-    public DateOnly? SeasonedDate { get; set; }
-
-    /// <summary>
     /// Types of footnotes to show to the user.
     /// </summary>
     [Required]
     public FootnoteType FootnoteType { get; set; }
-
-    /// <summary>
-    /// Focus areas to work on while on off days.
-    /// </summary>
-    [Required]
-    public PrehabFocus PrehabFocus { get; set; }
-
-    /// <summary>
-    /// Don't strengthen this muscle group, but do show recovery variations for exercises.
-    /// </summary>
-    [Required]
-    public RehabFocus RehabFocus { get; set; }
-
-    /// <summary>
-    /// Include a section to boost a specific sports performance.
-    /// </summary>
-    [Required]
-    public SportsFocus SportsFocus { get; set; }
 
     /// <summary>
     /// Days the user want to skip the newsletter.
@@ -194,30 +150,6 @@ public class User
     /// </summary>
     [Required]
     public Intensity Intensity { get; set; }
-
-    /// <summary>
-    /// The user's preferred workout split.
-    /// </summary>
-    [Required]
-    public Frequency Frequency { get; set; }
-
-    [NotMapped]
-    public Frequency ActualFrequency
-    {
-        get
-        {
-            if (SendDays.HasFlag(DaysExtensions.FromDate(DateOnly.FromDateTime(DateTime.UtcNow))))
-            {
-                return Frequency;
-            }
-            else if (IncludeMobilityWorkouts)
-            {
-                return Frequency.OffDayStretches;
-            }
-
-            return Frequency.None;
-        }
-    }
 
     /// <summary>
     /// How often should we show a deload week to the user?

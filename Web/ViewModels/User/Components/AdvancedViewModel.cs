@@ -11,7 +11,6 @@ public class AdvancedViewModel
     {
         Token = token;
         Email = user.Email;
-        IsNewToFitness = user.IsNewToFitness;
 
         IgnorePrerequisites = user.IgnorePrerequisites;
         AtLeastXUniqueMusclesPerExercise_Accessory = user.AtLeastXUniqueMusclesPerExercise_Accessory;

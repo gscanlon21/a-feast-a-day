@@ -33,9 +33,6 @@
     <Content Update="Pages\Newsletter\Newsletter.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Pages\Shared\Exercise\_Proficiency.razor">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Update="Pages\Shared\Exercise\_Debug.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -49,12 +46,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Pages\Shared\Newsletter\_Preview.razor">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="Pages\Shared\Newsletter\_UserDeloadMessage.razor">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Update="Pages\Shared\Newsletter\_UserRecoveryMessage.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Pages\Shared\Newsletter\_UserStatusMessages.razor">

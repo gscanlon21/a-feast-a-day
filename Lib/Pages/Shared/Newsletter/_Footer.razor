@@ -19,15 +19,7 @@
     }
 
     <div><small><b>Strengthening Days</b> - @User.SendDays.GetSingleDisplayName(EnumExtensions.DisplayNameType.ShortName)</small></div>
-    <div><small><b>Workout Split</b> - @User.Frequency.GetSingleDisplayName(EnumExtensions.DisplayNameType.ShortName)</small></div>
-    @if (User.IsNewToFitness)
-    {
-        <div><small><b>Is New to Fitness</b> - @User.IsNewToFitness</small></div>
-    }
-    else
-    {
-        <div><small><b>Workout Intensity</b> - @User.Intensity.GetSingleDisplayName()</small></div>
-    }
+    <div><small><b>Workout Intensity</b> - @User.Intensity.GetSingleDisplayName()</small></div>
 
     @if (User.RefreshFunctionalEveryXWeeks > 0)
     {
@@ -36,13 +28,6 @@
     @if (User.RefreshAccessoryEveryXWeeks > 0)
     {
         <div><small><b>Weeks Between Accessory Refresh</b> - @User.RefreshAccessoryEveryXWeeks</small></div>
-    }
-
-    <div><small><b>Sports Focus</b> - @User.SportsFocus.GetSingleDisplayName()</small></div>
-    @if (User.IncludeMobilityWorkouts)
-    {
-        <div><small><b>Prehab Focus</b> - @User.PrehabFocus.GetSingleDisplayName()</small></div>
-        <div><small><b>Rehab Focus</b> - @User.RehabFocus.GetSingleDisplayName()</small></div>
     }
 
     <div><small><b>Footnotes</b> - @User.FootnoteType.GetDisplayName32()</small></div>

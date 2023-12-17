@@ -32,26 +32,11 @@ public class UserNewsletterViewModel
 
     public DateOnly? LastActive { get; init; }
 
-    [Display(Name = "Is New to Fitness")]
-    public bool IsNewToFitness { get; init; }
-
     [Display(Name = "Strengthening Days")]
     public Days SendDays { get; init; }
 
-    [Display(Name = "Prehab Focus")]
-    public PrehabFocus PrehabFocus { get; init; }
-
-    [Display(Name = "Rehab Focus")]
-    public RehabFocus RehabFocus { get; init; }
-
-    [Display(Name = "Sports Focus")]
-    public SportsFocus SportsFocus { get; init; }
-
     [Display(Name = "Workout Intensity")]
     public Intensity Intensity { get; init; }
-
-    [Display(Name = "Workout Split")]
-    public Frequency Frequency { get; init; }
 
     [Display(Name = "Weeks Between Functional Refresh")]
     public int RefreshFunctionalEveryXWeeks { get; set; }

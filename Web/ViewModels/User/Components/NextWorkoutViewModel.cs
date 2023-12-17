@@ -1,6 +1,4 @@
 ﻿using Core.Models.User;
-using Data.Entities.Newsletter;
-using Data.Models.Newsletter;
 
 namespace Web.ViewModels.User.Components;
 
@@ -16,8 +14,6 @@ public class NextWorkoutViewModel
     public TimeSpan? TimeUntilNextSend { get; init; }
 
     public bool NextWorkoutSendsToday { get; init; }
-
-    public WorkoutRotation MobilityRotation { get; init; } = null!;
 
     public Data.Entities.User.User User { get; init; } = null!;
 

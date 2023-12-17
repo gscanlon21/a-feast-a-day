@@ -1,15 +1,11 @@
-﻿using Core.Code.Extensions;
-using Core.Models.Footnote;
-using Core.Models.Newsletter;
+﻿using Core.Models.Footnote;
 using Core.Models.User;
-using Data.Code.Extensions;
 using Data.Dtos.Newsletter;
 using Data.Dtos.User;
 using Data.Entities.Footnote;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
-using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -132,42 +128,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             return await NewsletterOld(user, token, currentWorkout.Date, currentWorkout);
         }
 
-        // User is a debug user. They should see the DebugNewsletter instead.
-        if (user.Features.HasFlag(Features.Debug))
-        {
-            logger.Log(LogLevel.Information, "Returning debug newsletter for user {Id}", user.Id);
-            return await Debug(context);
-        }
-
-        // Current day should be a mobility workout.
-        if (context.Frequency == Frequency.OffDayStretches)
-        {
-            logger.Log(LogLevel.Information, "Returning off day newsletter for user {Id}", user.Id);
-            return await OffDayNewsletter(context);
-        }
-
         // Current day should be a strengthening workout.
         logger.Log(LogLevel.Information, "Returning on day newsletter for user {Id}", user.Id);
         return await OnDayNewsletter(context);
-    }
-
-    /// <summary>
-    /// A newsletter with loads of debug information used for checking data validity.
-    /// </summary>
-    internal async Task<NewsletterDto?> Debug(WorkoutContext context)
-    {
-        context.User.Verbosity = Verbosity.Debug;
-        var debugExercises = await GetDebugExercises(context.User);
-        var newsletter = await CreateAndAddNewsletterToContext(context, exercises: debugExercises);
-        var userViewModel = new UserNewsletterDto(context);
-        var viewModel = new NewsletterDto(userViewModel, newsletter)
-        {
-            MainExercises = debugExercises,
-        };
-
-        await UpdateLastSeenDate(debugExercises);
-
-        return viewModel;
     }
 
     /// <summary>
@@ -175,123 +138,12 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     private async Task<NewsletterDto?> OnDayNewsletter(WorkoutContext context)
     {
-        // Choose core before functional. Otherwise, functional movements that target core muscle groups will filter out all core exercises.
-        // Choose core before accessory. We want to work variations such as Single Leg Lift from Reverse Plank as a core,
-        //  ... but before it gets filtered out by accessory which fills in any gaps in muscles worked.
-        var coreExercises = await GetCoreExercises(context);
-
-        // Choose strengthening exercises before warmup and cooldown because of the delayed refresh--we want to continue seeing those exercises in the strengthening sections.
-        // Functional movements > sports specific strengtheing.
-        var functionalExercises = await GetFunctionalExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: coreExercises);
-
-        // Choose sports before accessory. Sports specific strengthening > general strengthening.
-        var sportsExercises = await GetSportsExercises(context,
-            // sa. exclude all Squat variations if we already worked any Squat variation earlier.
-            excludeExercises: coreExercises.Concat(functionalExercises),
-            // Never work the same variation twice.
-            excludeVariations: coreExercises.Concat(functionalExercises));
-
-        // Lower the intensity to reduce the risk of injury from heavy-weighted isolation exercises.
-        // Choose accessory last. It fills the gaps in any muscle targets.
-        var accessoryExercises = await GetAccessoryExercises(context,
-            // sa. exclude all Plank variations if we already worked any Plank variation earlier.
-            excludeGroups: coreExercises.Concat(functionalExercises).Concat(sportsExercises),
-            // sa. exclude all Squat variations if we already worked any Squat variation earlier.
-            excludeExercises: coreExercises.Concat(functionalExercises).Concat(sportsExercises),
-            // Never work the same variation twice.
-            excludeVariations: coreExercises.Concat(functionalExercises).Concat(sportsExercises));
-
-        // These are the highest priority, choose these first.
-        var rehabExercises = await GetRehabExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: coreExercises.Concat(functionalExercises).Concat(sportsExercises).Concat(accessoryExercises));
-
-        // Choose prehab before warmup and cooldown. The user wants extra strengthening for these variations.
-        var prehabExercises = await GetPrehabExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: coreExercises.Concat(functionalExercises).Concat(sportsExercises).Concat(accessoryExercises).Concat(rehabExercises));
-
-        // Choose warmup before cooldown. We want a better warmup section on strengthening days.
-        var warmupExercises = await GetWarmupExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: coreExercises.Concat(functionalExercises).Concat(sportsExercises).Concat(accessoryExercises).Concat(rehabExercises).Concat(prehabExercises));
-
-        var cooldownExercises = await GetCooldownExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: coreExercises.Concat(functionalExercises).Concat(sportsExercises).Concat(accessoryExercises).Concat(rehabExercises).Concat(prehabExercises).Concat(warmupExercises));
-
-        var newsletter = await CreateAndAddNewsletterToContext(context,
-            exercises: coreExercises.Concat(functionalExercises).Concat(sportsExercises).Concat(accessoryExercises).Concat(rehabExercises).Concat(prehabExercises).Concat(warmupExercises).Concat(cooldownExercises).ToList()
-        );
+        var newsletter = await CreateAndAddNewsletterToContext(context);
 
         var userViewModel = new UserNewsletterDto(context);
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {
-            PrehabExercises = prehabExercises,
-            RehabExercises = rehabExercises,
-            WarmupExercises = warmupExercises,
-            CooldownExercises = cooldownExercises,
-            SportsExercises = sportsExercises,
-            MainExercises = functionalExercises.Concat(accessoryExercises).Concat(coreExercises).ToList()
         };
-
-        // Functional exercises. Refresh at the start of the week.
-        await UpdateLastSeenDate(exercises: functionalExercises,
-            refreshAfter: StartOfWeek.AddDays(7 * context.User.RefreshFunctionalEveryXWeeks));
-        // Accessory exercises. Refresh at the start of the week.
-        await UpdateLastSeenDate(exercises: sportsExercises.Concat(accessoryExercises),
-            refreshAfter: StartOfWeek.AddDays(7 * context.User.RefreshAccessoryEveryXWeeks));
-        // Other exercises. Refresh every day.
-        await UpdateLastSeenDate(exercises: coreExercises.Concat(rehabExercises).Concat(prehabExercises).Concat(warmupExercises).Concat(cooldownExercises));
-
-        return viewModel;
-    }
-
-    /// <summary>
-    /// The mobility/stretch newsletter for days off strength training.
-    /// </summary>
-    private async Task<NewsletterDto?> OffDayNewsletter(WorkoutContext context)
-    {
-        // These are the highest priority, choose these first.
-        var rehabExercises = await GetRehabExercises(context);
-
-        // Choose prehab before warmup and cooldown. The user wants extra stretching for these variations.
-        var prehabExercises = await GetPrehabExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: rehabExercises);
-
-        // Reverse the order we choose the core, warmup, and cooldown sections--so we're less likely to get stuck with a multi-purpose variation in just one section.
-        // Choose cooldown before warmup. We want a better cooldown section on mobility days.
-        var cooldownExercises = await GetCooldownExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: rehabExercises.Concat(prehabExercises));
-
-        var warmupExercises = await GetWarmupExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: rehabExercises.Concat(prehabExercises).Concat(cooldownExercises));
-
-        var coreExercises = await GetCoreExercises(context,
-            // Never work the same variation twice.
-            excludeVariations: rehabExercises.Concat(prehabExercises).Concat(cooldownExercises).Concat(warmupExercises));
-
-        var newsletter = await CreateAndAddNewsletterToContext(context,
-            exercises: rehabExercises.Concat(prehabExercises).Concat(cooldownExercises).Concat(warmupExercises).Concat(coreExercises).ToList()
-        );
-
-        var userViewModel = new UserNewsletterDto(context);
-        var viewModel = new NewsletterDto(userViewModel, newsletter)
-        {
-            PrehabExercises = prehabExercises,
-            RehabExercises = rehabExercises,
-            WarmupExercises = warmupExercises,
-            CooldownExercises = cooldownExercises,
-            MainExercises = coreExercises
-        };
-
-        // Other exercises. Refresh every day.
-        await UpdateLastSeenDate(exercises: rehabExercises.Concat(prehabExercises).Concat(cooldownExercises).Concat(warmupExercises).Concat(coreExercises));
 
         return viewModel;
     }
@@ -306,46 +158,6 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         {
             Today = date,
         };
-
-        foreach (var rootSection in EnumExtensions.GetMultiValues32<Section>())
-        {
-            var exercises = new List<ExerciseVariationDto>();
-            foreach (var section in EnumExtensions.GetSubValues32(rootSection))
-            {
-                exercises.AddRange((await new QueryBuilder(section)
-                    .WithUser(user, ignoreProgressions: true, ignorePrerequisites: true, uniqueExercises: false)
-                    .WithExercises(options =>
-                    {
-                        options.AddPastVariations(newsletter.UserWorkoutVariations);
-                    })
-                    .Build()
-                    .Query(serviceScopeFactory))
-                    .Select(r => new ExerciseVariationDto(r, newsletter.Intensity, newsletter.IsDeloadWeek))
-                    .ToList());
-            }
-
-            switch (rootSection)
-            {
-                case Section.Cooldown:
-                    newsletterViewModel.CooldownExercises = exercises;
-                    break;
-                case Section.Warmup:
-                    newsletterViewModel.WarmupExercises = exercises;
-                    break;
-                case Section.Main:
-                    newsletterViewModel.MainExercises = exercises;
-                    break;
-                case Section.Sports:
-                    newsletterViewModel.SportsExercises = exercises;
-                    break;
-                case Section.Rehab:
-                    newsletterViewModel.RehabExercises = exercises;
-                    break;
-                case Section.Prehab:
-                    newsletterViewModel.PrehabExercises = exercises;
-                    break;
-            }
-        }
 
         return newsletterViewModel;
     }

@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <Folder Include="Code\TagHelpers\" />
+    <Folder Include="Controllers\Exercise\" />
+    <Folder Include="ViewModels\Exercise\" />
+    <Folder Include="Views\Exercise\" />
     <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
     <Folder Include="wwwroot\lib\jquery-validation\" />
     <Folder Include="wwwroot\lib\jquery-validation\dist\" />

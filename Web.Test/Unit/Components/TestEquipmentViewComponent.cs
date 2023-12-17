@@ -11,7 +11,7 @@ public class TestEquipmentViewComponent
     [TestMethod]
     public async Task GetUserEquipmentStatus_WhenUserHasNoEquipment_ReturnsNoEquipmentStatus()
     {
-        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true, isNewToFitness: false);
+        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true);
         var status = EquipmentViewComponent.GetUserEquipmentStatus(user);
         Assert.AreEqual(status, EquipmentViewModel.UserEquipmentStatus.MissingEquipment);
     }
@@ -19,7 +19,7 @@ public class TestEquipmentViewComponent
     [TestMethod]
     public async Task GetUserEquipmentStatus_WhenUserHasSomeEquipment_ReturnsPartialEquipmentStatus()
     {
-        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true, isNewToFitness: false)
+        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true)
         {
             Equipment = Equipment.FlatBench
         };
@@ -31,7 +31,7 @@ public class TestEquipmentViewComponent
     [TestMethod]
     public async Task GetUserEquipmentStatus_WhenUserHasEquipment_ReturnsEquipmentStatus()
     {
-        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true, isNewToFitness: false)
+        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true)
         {
             Equipment = Equipment.GymnasticRings
         };
@@ -43,7 +43,7 @@ public class TestEquipmentViewComponent
     [TestMethod]
     public async Task GetUserEquipmentStatus_WhenUserHasNoEquipmentAndIsOnlyMobility_ReturnsNoEquipmentStatus()
     {
-        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true, isNewToFitness: false)
+        var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true)
         {
             SendDays = Days.None,
             IncludeMobilityWorkouts = true

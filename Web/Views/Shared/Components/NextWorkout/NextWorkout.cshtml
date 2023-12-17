@@ -4,28 +4,6 @@
 @using Lib.ViewModels.Newsletter
 @using Core.Models.User
 
-@{
-    void RenderListItem(Days day, Data.Entities.Newsletter.WorkoutRotation? rotation, Frequency? frequency)
-    {
-        <div class="row gx-3 gy-1">
-            <div class="col"><b class="">@(frequency == Frequency.OffDayStretches ? "Mobility" : (rotation?.MuscleGroupsDisplayName ?? "Rest"))</b></div>
-            <div class="col-auto"><small class="badge bg-dark rounded-pill">@day.GetSingleDisplayName(EnumExtensions.DisplayNameType.Name)</small></div>
-        </div>
-        @if (rotation != null)
-        {
-            <div class="">
-                @if (frequency == Frequency.OffDayStretches)
-                {
-                    <small>@rotation.MuscleGroupsDisplayName</small>
-                }
-                else
-                {
-                    <small>@rotation.MovementPatterns.GetDisplayName32(EnumExtensions.DisplayNameType.ShortName)</small>
-                }
-            </div>
-        }
-    }
-}
 
 @* Empty div to prevent nested counters with other components that nest their numbered lists under a <details> element. *@
 <div>

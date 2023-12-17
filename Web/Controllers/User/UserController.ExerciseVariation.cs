@@ -1,13 +1,9 @@
 ﻿using Core.Consts;
 using Core.Models.Newsletter;
-using Data.Dtos.Newsletter;
-using Data.Entities.Exercise;
 using Data.Entities.User;
-using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using Web.Code;
 using Web.ViewModels.User;
 
 namespace Web.Controllers.User;
@@ -28,7 +24,7 @@ public partial class UserController
         }
 
         var parameters = new UserManageExerciseVariationViewModel.Parameters(section, email, token, exerciseId, variationId);
-      
+
         var userExercise = await context.UserExercises
             .IgnoreQueryFilters()
             .Include(ue => ue.Exercise)
@@ -41,7 +37,7 @@ public partial class UserController
             {
                 UserId = user.Id,
                 ExerciseId = exerciseId,
-                Progression = user.IsNewToFitness ? UserConsts.MinUserProgression : UserConsts.MidUserProgression,
+                Progression = UserConsts.MidUserProgression,
                 Exercise = await context.Exercises.FirstAsync(e => e.Id == exerciseId),
             };
 
@@ -49,25 +45,10 @@ public partial class UserController
             await context.SaveChangesAsync();
         }
 
-        var exercises = (await new QueryBuilder(Section.None)
-            .WithUser(user, ignoreProgressions: true, ignorePrerequisites: true, ignoreIgnored: true, ignoreMissingEquipment: true, uniqueExercises: false)
-            .WithExercises(x =>
-            {
-                x.AddExercises(new List<Data.Entities.Exercise.Exercise>(1) { userExercise.Exercise });
-            })
-            .Build()
-            .Query(serviceScopeFactory))
-            .Select(r => new ExerciseVariationDto(r)
-            .AsType<Lib.ViewModels.Newsletter.ExerciseVariationViewModel, ExerciseVariationDto>()!)
-            .DistinctBy(vm => vm.Variation)
-            .ToList();
-
         var exerciseViewModel = new UserManageExerciseViewModel()
         {
             Parameters = parameters,
             User = user,
-            Exercise = userExercise.Exercise,
-            Exercises = exercises,
             UserExercise = userExercise,
         };
 
@@ -209,7 +190,7 @@ public partial class UserController
                 return NotFound();
             }
 
-        
+
             await context.SaveChangesAsync();
 
             return RedirectToAction(nameof(ManageExerciseVariation), new { email, token, exerciseId, variationId, section, WasUpdated = true });

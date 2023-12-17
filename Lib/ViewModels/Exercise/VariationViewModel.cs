@@ -1,5 +1,4 @@
 ﻿using Core.Models.Exercise;
-using Core.Models.User;
 using Lib.ViewModels.Equipment;
 using Lib.ViewModels.User;
 using System.ComponentModel.DataAnnotations;
@@ -60,52 +59,10 @@ public class VariationViewModel
     public bool? PauseReps { get; set; }
 
     /// <summary>
-    /// What sports does performing this exercise benefit.
-    /// </summary>
-    [Required]
-    public SportsFocus SportsFocus { get; init; }
-
-    /// <summary>
     /// Where in the newsletter should this exercise be shown.
     /// </summary>
     [Required]
     public ExerciseFocus ExerciseFocus { get; init; }
-
-    /// <summary>
-    /// Does this variation work muscles by moving weights or holding them in place?
-    /// </summary>
-    [Required]
-    public MuscleContractions MuscleContractions { get; init; }
-
-    /// <summary>
-    /// Does this variation work muscles by moving weights or holding them in place?
-    /// </summary>
-    [Required]
-    public MuscleMovement MuscleMovement { get; init; }
-
-    /// <summary>
-    /// What functional movement patterns does this variation work?
-    /// </summary>
-    [Required]
-    public MovementPattern MovementPattern { get; init; }
-
-    /// <summary>
-    /// Primary joints strengthened by the exercise
-    /// </summary>
-    [Required]
-    public Joints MobilityJoints { get; init; }
-
-    /// <summary>
-    /// Primary muscles strengthened by the exercise
-    /// </summary>
-    [Required]
-    public MuscleGroups StrengthMuscles { get; init; }
-
-    /// <summary>
-    /// Primary muscles stretched by the exercise
-    /// </summary>
-    [Required]
-    public MuscleGroups StretchMuscles { get; init; }
 
     /// <summary>
     /// The progression range required to view the exercise variation
@@ -124,23 +81,12 @@ public class VariationViewModel
     [Required]
     public ExerciseType ExerciseType { get; init; }
 
-    /// <summary>
-    /// Secondary (usually stabilizing) muscles worked by the exercise
-    /// </summary>
-    [Required]
-    public MuscleGroups SecondaryMuscles { get; init; }
-
     public string? DisabledReason { get; init; } = null;
 
     /// <summary>
     /// Notes about the variation (externally shown)
     /// </summary>
     public string? Notes { get; init; } = null;
-
-    /// <summary>
-    /// Combination of this variations Strength, Stretch and Stability muscles worked.
-    /// </summary>
-    public MuscleGroups AllMuscles => StrengthMuscles | StretchMuscles | SecondaryMuscles;
 
     public string? DefaultInstruction { get; init; }
 

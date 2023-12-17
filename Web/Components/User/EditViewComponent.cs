@@ -1,6 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Consts;
-using Data.Entities.User;
+﻿using Core.Consts;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels.User;
@@ -31,11 +29,6 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
 
     private async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
-        while (viewModel.UserFrequencies.Count < UserConsts.MaxUserFrequencies)
-        {
-            viewModel.UserFrequencies.Add(new UserEditFrequencyViewModel() { Day = viewModel.UserFrequencies.Count + 1 });
-        }
-
         return viewModel;
     }
 }

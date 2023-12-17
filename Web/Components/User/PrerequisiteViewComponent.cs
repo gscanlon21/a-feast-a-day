@@ -1,6 +1,4 @@
 ﻿using Data;
-using Data.Dtos.Newsletter;
-using Data.Query.Builders;
 using Data.Repos;
 using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;
@@ -25,7 +23,7 @@ public class PrerequisiteViewComponent(IServiceScopeFactory serviceScopeFactory,
     {
         var token = await userRepo.AddUserToken(user, durationDays: 1);
 
-   
+
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
