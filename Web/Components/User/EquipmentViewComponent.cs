@@ -35,7 +35,7 @@ public class EquipmentViewComponent : ViewComponent
     internal static EquipmentViewModel.UserEquipmentStatus GetUserEquipmentStatus(Data.Entities.User.User user)
     {
         // User is not seeing strengthening workouts, only seeing mobility workouts. Don't show any message.
-        if (user.SendDays == Days.None && user.IncludeMobilityWorkouts)
+        if (user.SendDays == Days.None)
         {
             return EquipmentViewModel.UserEquipmentStatus.None;
         }

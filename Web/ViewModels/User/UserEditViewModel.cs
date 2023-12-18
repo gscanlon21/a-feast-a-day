@@ -35,10 +35,6 @@ public class UserEditViewModel
         FootnoteType = user.FootnoteType;
         ShowStaticImages = user.ShowStaticImages;
         SendHour = user.SendHour;
-        DeloadAfterEveryXWeeks = user.DeloadAfterEveryXWeeks;
-        RefreshAccessoryEveryXWeeks = user.RefreshAccessoryEveryXWeeks;
-        RefreshFunctionalEveryXWeeks = user.RefreshFunctionalEveryXWeeks;
-        IncludeMobilityWorkouts = user.IncludeMobilityWorkouts;
         Token = token;
     }
 
@@ -58,25 +54,6 @@ public class UserEditViewModel
     [Required, RegularExpression(UserCreateViewModel.EmailRegex, ErrorMessage = UserCreateViewModel.EmailRegexError)]
     [Display(Name = "Email", Description = "")]
     public string Email { get; init; } = null!;
-
-    /// <summary>
-    /// How often to take a deload week
-    /// </summary>
-    [Required, Range(UserConsts.DeloadAfterEveryXWeeksMin, UserConsts.DeloadAfterEveryXWeeksMax)]
-    [Display(Name = "Deload After Every X Weeks", Description = "After how many weeks of strength training do you want to take a deload week?")]
-    public int DeloadAfterEveryXWeeks { get; init; }
-
-    [Required, Range(UserConsts.RefreshAccessoryEveryXWeeksMin, UserConsts.RefreshAccessoryEveryXWeeksMax)]
-    [Display(Name = "Refresh Accessory Exercises Every X Weeks", Description = "How often should accessory exercises (sa. Calf Raises and Bicep Curls) refresh?")]
-    public int RefreshAccessoryEveryXWeeks { get; init; }
-
-    [Required, Range(UserConsts.RefreshFunctionalEveryXWeeksMin, UserConsts.RefreshFunctionalEveryXWeeksMax)]
-    [Display(Name = "Refresh Functional Exercises Every X Weeks", Description = "How often should exercises working functional movement patterns (sa. Squats and Pushups) refresh?")]
-    public int RefreshFunctionalEveryXWeeks { get; init; }
-
-    [Required]
-    [Display(Name = "Include Rest-Day Mobility Workouts", Description = "Include workouts on your rest days with core, mobility, flexibility, injury prevention, and rehabilitation exercises.")]
-    public bool IncludeMobilityWorkouts { get; init; }
 
     /// <summary>
     /// Types of footnotes to show to the user.

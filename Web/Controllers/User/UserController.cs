@@ -70,14 +70,10 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
                 viewModel.User.Verbosity = viewModel.Verbosity;
                 viewModel.User.Equipment = viewModel.Equipment;
                 viewModel.User.FootnoteType = viewModel.FootnoteType;
-                viewModel.User.DeloadAfterEveryXWeeks = viewModel.DeloadAfterEveryXWeeks;
-                viewModel.User.RefreshAccessoryEveryXWeeks = viewModel.RefreshAccessoryEveryXWeeks;
-                viewModel.User.RefreshFunctionalEveryXWeeks = viewModel.RefreshFunctionalEveryXWeeks;
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
                 viewModel.User.ShowStaticImages = viewModel.ShowStaticImages;
                 viewModel.User.Intensity = viewModel.Intensity;
-                viewModel.User.IncludeMobilityWorkouts = viewModel.IncludeMobilityWorkouts;
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
                 {

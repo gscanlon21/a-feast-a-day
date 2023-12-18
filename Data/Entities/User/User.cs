@@ -70,9 +70,6 @@ public class User
         Verbosity = UserConsts.VerbosityDefault;
         FootnoteType = UserConsts.FootnotesDefault;
         Intensity = UserConsts.IntensityDefault;
-        DeloadAfterEveryXWeeks = UserConsts.DeloadAfterEveryXWeeksDefault;
-        RefreshAccessoryEveryXWeeks = UserConsts.RefreshAccessoryEveryXWeeksDefault;
-        RefreshFunctionalEveryXWeeks = UserConsts.RefreshFunctionalEveryXWeeksDefault;
 
         CreatedDate = DateOnly.FromDateTime(DateTime.UtcNow);
     }
@@ -103,12 +100,6 @@ public class User
     /// </summary>
     [Required]
     public Core.Models.Equipment.Equipment Equipment { get; set; }
-
-    /// <summary>
-    /// User would like to receive emails on their off days recommending mobility and stretching exercises?
-    /// </summary>
-    [Required]
-    public bool IncludeMobilityWorkouts { get; set; }
 
     /// <summary>
     /// Types of footnotes to show to the user.
@@ -150,24 +141,6 @@ public class User
     /// </summary>
     [Required]
     public Intensity Intensity { get; set; }
-
-    /// <summary>
-    /// How often should we show a deload week to the user?
-    /// </summary>
-    [Required, Range(UserConsts.DeloadAfterEveryXWeeksMin, UserConsts.DeloadAfterEveryXWeeksMax)]
-    public int DeloadAfterEveryXWeeks { get; set; }
-
-    /// <summary>
-    /// How often to refresh functional movement exercises.
-    /// </summary>
-    [Required, Range(UserConsts.RefreshFunctionalEveryXWeeksMin, UserConsts.RefreshFunctionalEveryXWeeksMax)]
-    public int RefreshFunctionalEveryXWeeks { get; set; }
-
-    /// <summary>
-    /// How often to refresh accessory exercises.
-    /// </summary>
-    [Required, Range(UserConsts.RefreshAccessoryEveryXWeeksMin, UserConsts.RefreshAccessoryEveryXWeeksMax)]
-    public int RefreshAccessoryEveryXWeeks { get; set; }
 
     /// <summary>
     /// What level of detail the user wants in their newsletter?

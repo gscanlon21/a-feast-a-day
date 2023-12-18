@@ -94,7 +94,7 @@ public class NewsletterJob : IJob, IScheduled
             // User's send time is now.
             .Where(u => u.SendHour == currentHour)
             // User's send day is now.
-            .Where(u => u.SendDays.HasFlag(currentDay) || u.IncludeMobilityWorkouts)
+            .Where(u => u.SendDays.HasFlag(currentDay))
             // User has not received a workout email today.
             .Where(u => !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectWorkout).Any(un => un.Date == Today))
             // User is not a test or demo user.

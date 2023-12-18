@@ -13,27 +13,9 @@ public class UserConsts
     public const string DemoUser = "demo@afeastaday.com";
     public const string DemoToken = "00000000-0000-0000-0000-000000000000";
 
-    public const int DeloadAfterEveryXWeeksMin = 3;
-    public const int DeloadAfterEveryXWeeksDefault = 9;
-    public const int DeloadAfterEveryXWeeksMax = 15;
-
-    public const int RefreshFunctionalEveryXWeeksMin = 0;
-    public const int RefreshFunctionalEveryXWeeksDefault = 0;
-    public const int RefreshFunctionalEveryXWeeksMax = 12;
-
-    public const int RefreshAccessoryEveryXWeeksMin = 0;
-    public const int RefreshAccessoryEveryXWeeksDefault = 0;
-    public const int RefreshAccessoryEveryXWeeksMax = 12;
-
     public const int SendHourMin = 0;
     public const int SendHourDefault = 0;
     public const int SendHourMax = 23;
-
-    public const int UserMuscleMobilityMin = 0;
-    public const int UserMuscleMobilityMax = 3;
-
-    public const int UserMuscleFlexibilityMin = 0;
-    public const int UserMuscleFlexibilityMax = 3;
 
     public const Days DaysDefault = Days.Monday | Days.Tuesday | Days.Thursday | Days.Friday;
 

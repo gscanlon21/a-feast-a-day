@@ -12,9 +12,6 @@ namespace Lib.ViewModels.User;
 /// </summary>
 public class UserNewsletterViewModel
 {
-    [Display(Name = "Days Until Deload")]
-    public TimeSpan TimeUntilDeload { get; set; } = TimeSpan.Zero;
-
     public int Id { get; init; }
 
     public string Email { get; init; } = null!;
@@ -37,12 +34,6 @@ public class UserNewsletterViewModel
 
     [Display(Name = "Workout Intensity")]
     public Intensity Intensity { get; init; }
-
-    [Display(Name = "Weeks Between Functional Refresh")]
-    public int RefreshFunctionalEveryXWeeks { get; set; }
-
-    [Display(Name = "Weeks Between Accessory Refresh")]
-    public int RefreshAccessoryEveryXWeeks { get; set; }
 
     public Core.Models.Equipment.Equipment Equipment { get; init; }
 
