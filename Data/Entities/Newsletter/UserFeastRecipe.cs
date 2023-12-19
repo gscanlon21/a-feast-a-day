@@ -9,22 +9,22 @@ namespace Data.Entities.Newsletter;
 /// <summary>
 /// A day's workout routine.
 /// </summary>
-[Table("user_workout_variation"), Comment("A day's workout routine")]
-public class UserWorkoutVariation
+[Table("user_feast_recipe"), Comment("A day's workout routine")]
+public class UserFeastRecipe
 {
-    public UserWorkoutVariation() { }
+    public UserFeastRecipe() { }
 
-    public UserWorkoutVariation(UserWorkout newsletter)
+    public UserFeastRecipe(UserFeast newsletter)
     {
-        UserWorkoutId = newsletter.Id;
+        UserFeastId = newsletter.Id;
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
-    public int UserWorkoutId { get; private init; }
+    public int UserFeastId { get; private init; }
 
-    public int VariationId { get; private init; }
+    public int RecipeId { get; private init; }
 
     /// <summary>
     /// The order of each exercise in each section.
@@ -36,6 +36,6 @@ public class UserWorkoutVariation
     /// </summary>
     public Section Section { get; init; }
 
-    [JsonIgnore, InverseProperty(nameof(Newsletter.UserWorkout.UserWorkoutVariations))]
-    public virtual UserWorkout UserWorkout { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeast.UserFeastRecipes))]
+    public virtual UserFeast UserFeast { get; private init; } = null!;
 }

@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Web.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20231219002915_SquashMigrations27")]
+    partial class SquashMigrations27
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,7 +156,7 @@ namespace Web.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
+            modelBuilder.Entity("Data.Entities.Newsletter.UserWorkoutVariation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -164,20 +167,20 @@ namespace Web.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("integer");
 
-                    b.Property<int>("RecipeId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("Section")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UserFeastId")
+                    b.Property<int>("UserWorkoutId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("VariationId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserFeastId");
+                    b.HasIndex("UserWorkoutId");
 
-                    b.ToTable("user_feast_recipe", t =>
+                    b.ToTable("user_workout_variation", t =>
                         {
                             t.HasComment("A day's workout routine");
                         });
@@ -419,15 +422,15 @@ namespace Web.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
+            modelBuilder.Entity("Data.Entities.Newsletter.UserWorkoutVariation", b =>
                 {
-                    b.HasOne("Data.Entities.Newsletter.UserFeast", "UserFeast")
-                        .WithMany("UserFeastRecipes")
-                        .HasForeignKey("UserFeastId")
+                    b.HasOne("Data.Entities.Newsletter.UserFeast", "UserWorkout")
+                        .WithMany("UserWorkoutVariations")
+                        .HasForeignKey("UserWorkoutId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UserFeast");
+                    b.Navigation("UserWorkout");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserRecipeIngredient", b =>
@@ -465,7 +468,7 @@ namespace Web.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
-                    b.Navigation("UserFeastRecipes");
+                    b.Navigation("UserWorkoutVariations");
                 });
 
             modelBuilder.Entity("Data.Entities.User.User", b =>

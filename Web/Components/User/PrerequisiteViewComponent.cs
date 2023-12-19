@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Entities.User;
 using Data.Repos;
 using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;
@@ -19,7 +20,7 @@ public class PrerequisiteViewComponent(IServiceScopeFactory serviceScopeFactory,
     /// </summary>
     public const string Name = "Prerequisite";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Data.Entities.Exercise.Exercise exercise)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, UserRecipe exercise)
     {
         var token = await userRepo.AddUserToken(user, durationDays: 1);
 
@@ -30,13 +31,9 @@ public class PrerequisiteViewComponent(IServiceScopeFactory serviceScopeFactory,
         var viewModel = new PrerequisiteViewModel()
         {
             UserNewsletter = userNewsletter,
-            VisiblePrerequisites = new List<ExerciseVariationViewModel>(),
-            InvisiblePrerequisites = new List<ExerciseVariationViewModel>()
+            VisiblePrerequisites = new List<RecipeViewModel>(),
+            InvisiblePrerequisites = new List<RecipeViewModel>()
         };
-
-        var userExercises = await coreContext.UserExercises
-            .Where(ue => ue.UserId == user.Id)
-            .ToListAsync();
 
         return View("Prerequisite", viewModel);
     }

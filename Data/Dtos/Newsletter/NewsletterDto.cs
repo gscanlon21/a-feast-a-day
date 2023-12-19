@@ -1,12 +1,13 @@
 ﻿using Core.Models.Newsletter;
 using Data.Dtos.User;
+using Data.Entities.User;
 
 namespace Data.Dtos.Newsletter;
 
 /// <summary>
 /// Viewmodel for Newsletter.cshtml
 /// </summary>
-public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserWorkout newsletter)
+public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserFeast newsletter)
 {
     /// <summary>
     /// The number of footnotes to show in the newsletter
@@ -16,7 +17,9 @@ public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserWorko
     public DateOnly Today { get; init; } = DateOnly.FromDateTime(DateTime.UtcNow);
 
     public UserNewsletterDto User { get; } = user;
-    public Entities.Newsletter.UserWorkout UserWorkout { get; } = newsletter;
+    public Entities.Newsletter.UserFeast UserWorkout { get; } = newsletter;
+
+    public IList<UserRecipe> Recipes { get; set; }
 
     /// <summary>
     /// How much detail to show in the newsletter.

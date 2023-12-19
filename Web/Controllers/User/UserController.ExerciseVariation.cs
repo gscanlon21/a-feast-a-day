@@ -25,31 +25,10 @@ public partial class UserController
 
         var parameters = new UserManageExerciseVariationViewModel.Parameters(section, email, token, exerciseId, variationId);
 
-        var userExercise = await context.UserExercises
-            .IgnoreQueryFilters()
-            .Include(ue => ue.Exercise)
-            .Where(ue => ue.UserId == user.Id)
-            .FirstOrDefaultAsync(ue => ue.ExerciseId == exerciseId);
-
-        if (userExercise == null)
-        {
-            userExercise = new UserExercise()
-            {
-                UserId = user.Id,
-                ExerciseId = exerciseId,
-                Progression = UserConsts.MidUserProgression,
-                Exercise = await context.Exercises.FirstAsync(e => e.Id == exerciseId),
-            };
-
-            context.UserExercises.Add(userExercise);
-            await context.SaveChangesAsync();
-        }
-
         var exerciseViewModel = new UserManageExerciseViewModel()
         {
             Parameters = parameters,
             User = user,
-            UserExercise = userExercise,
         };
 
         return View(new UserManageExerciseVariationViewModel()
@@ -57,60 +36,6 @@ public partial class UserController
             WasUpdated = wasUpdated,
             Exercise = exerciseViewModel,
         });
-    }
-
-    /// <summary>
-    /// Reduces the user's progression of an exercise.
-    /// </summary>
-    [HttpPost]
-    [Route("{section:section}/{exerciseId}/{variationId}/r", Order = 1)]
-    [Route("{section:section}/{exerciseId}/{variationId}/regress", Order = 2)]
-    public async Task<IActionResult> ThatWorkoutWasTough(string email, string token, int exerciseId, int variationId, Section section)
-    {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        var userProgression = await context.UserExercises
-            .Include(p => p.Exercise)
-            .FirstOrDefaultAsync(p => p.UserId == user.Id && p.ExerciseId == exerciseId);
-
-        // May be null if the exercise was soft/hard deleted
-        if (userProgression == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        return RedirectToAction(nameof(ManageExerciseVariation), new { email, token, exerciseId, variationId, section, WasUpdated = true });
-    }
-
-    /// <summary>
-    /// Increases the user's progression of an exercise.
-    /// </summary>
-    [HttpPost]
-    [Route("{section:section}/{exerciseId}/{variationId}/p", Order = 1)]
-    [Route("{section:section}/{exerciseId}/{variationId}/progress", Order = 2)]
-    public async Task<IActionResult> ThatWorkoutWasEasy(string email, string token, int exerciseId, int variationId, Section section)
-    {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        var userProgression = await context.UserExercises
-            .Include(p => p.Exercise)
-            .FirstOrDefaultAsync(p => p.UserId == user.Id && p.ExerciseId == exerciseId);
-
-        // May be null if the exercise was soft/hard deleted
-        if (userProgression == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        return RedirectToAction(nameof(ManageExerciseVariation), new { email, token, exerciseId, variationId, section, WasUpdated = true });
     }
 
     [HttpPost]

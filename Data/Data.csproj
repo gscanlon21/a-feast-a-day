@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Code\**" />
+    <Compile Remove="Entities\Equipment\**" />
+    <EmbeddedResource Remove="Code\**" />
+    <EmbeddedResource Remove="Entities\Equipment\**" />
+    <None Remove="Code\**" />
+    <None Remove="Entities\Equipment\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -21,11 +30,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Code\Extensions\" />
-    <Folder Include="Entities\Equipment\" />
   </ItemGroup>
 
 </Project>

@@ -19,12 +19,6 @@ public class ExerciseViewModel
     public string Name { get; init; } = null!;
 
     /// <summary>
-    /// Similar groups of exercises.
-    /// </summary>
-    [Required]
-    public ExerciseGroup Groups { get; init; }
-
-    /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
     public string? Notes { get; init; } = null;

@@ -14,7 +14,6 @@
 @if (!User.Features.HasFlag(Features.Demo))
 {
     <div><small><b>Send Days</b> - @User.SendDays.GetSingleDisplayName(EnumExtensions.DisplayNameType.ShortName)</small></div>
-    <div><small><b>Workout Intensity</b> - @User.Intensity.GetSingleDisplayName()</small></div>
 
     <div><small><b>Footnotes</b> - @User.FootnoteType.GetDisplayName32()</small></div>
 

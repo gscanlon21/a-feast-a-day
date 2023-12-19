@@ -15,7 +15,7 @@ public class UserManageVariationViewModel
 
     public required Data.Entities.User.User User { get; init; }
 
-    public required IList<ExerciseVariationViewModel> Variations { get; init; } = null!;
+    public required IList<RecipeViewModel> Variations { get; init; } = null!;
 
     public Verbosity VariationVerbosity => Verbosity.Instructions | Verbosity.Images;
 

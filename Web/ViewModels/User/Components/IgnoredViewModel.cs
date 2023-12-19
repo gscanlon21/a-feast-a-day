@@ -7,10 +7,10 @@ namespace Web.ViewModels.User.Components;
 public class IgnoredViewModel
 {
     [Display(Name = "Ignored Exercises")]
-    public IList<Lib.ViewModels.Newsletter.ExerciseVariationViewModel> IgnoredExercises { get; init; }
+    public IList<Lib.ViewModels.Newsletter.RecipeViewModel> IgnoredExercises { get; init; }
 
     [Display(Name = "Ignored Variations")]
-    public IList<Lib.ViewModels.Newsletter.ExerciseVariationViewModel> IgnoredVariations { get; init; }
+    public IList<Lib.ViewModels.Newsletter.RecipeViewModel> IgnoredVariations { get; init; }
 
     public Verbosity Verbosity => Verbosity.Instructions | Verbosity.Images;
 

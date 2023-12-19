@@ -25,10 +25,6 @@ public class UserRepo(CoreContext context)
     /// Grab a user from the db with a specific token
     /// </summary>
     public async Task<User?> GetUser(string? email, string? token,
-        bool includeUserExerciseVariations = false,
-        bool includeExerciseVariations = false,
-        bool includeMuscles = false,
-        bool includeFrequencies = false,
         bool allowDemoUser = false)
     {
         if (email == null || token == null)
@@ -37,20 +33,6 @@ public class UserRepo(CoreContext context)
         }
 
         IQueryable<User> query = _context.Users.AsSplitQuery().TagWithCallSite();
-
-        if (includeFrequencies)
-        {
-            query = query.Include(u => u.UserFrequencies);
-        }
-
-        if (includeExerciseVariations)
-        {
-            query = query.Include(u => u.UserExercises).ThenInclude(ue => ue.Exercise);
-        }
-        else if (includeUserExerciseVariations)
-        {
-            query = query.Include(u => u.UserExercises);
-        }
 
         var user = await query
             // User token is valid.
@@ -95,14 +77,14 @@ public class UserRepo(CoreContext context)
     /// <summary>
     /// Get the user's current workout.
     /// </summary>
-    public async Task<UserWorkout?> GetCurrentWorkout(User user)
+    public async Task<UserFeast?> GetCurrentWorkout(User user)
     {
-        return await _context.UserWorkouts.AsNoTracking().TagWithCallSite()
-            .Include(uw => uw.UserWorkoutVariations)
+        return await _context.UserFeasts.AsNoTracking().TagWithCallSite()
+            .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.TodayOffset)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
-            .Where(n => n.UserWorkoutVariations.Any())
+            .Where(n => n.UserFeastRecipes.Any())
             // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
             // Dummy records that are created when the user advances their workout split may also have the same date.
             .OrderByDescending(n => n.Date)
@@ -113,12 +95,12 @@ public class UserRepo(CoreContext context)
     /// <summary>
     /// Get the last 7 days of workouts for the user. Excludes the current workout.
     /// </summary>
-    public async Task<IList<UserWorkout>> GetPastWorkouts(User user)
+    public async Task<IList<UserFeast>> GetPastWorkouts(User user)
     {
-        return (await _context.UserWorkouts
+        return (await _context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
-            .Where(n => n.UserWorkoutVariations.Any())
+            .Where(n => n.UserFeastRecipes.Any())
             .Where(n => n.Date < user.TodayOffset)
             // Only select 1 workout per day, the most recent.
             .GroupBy(n => n.Date)

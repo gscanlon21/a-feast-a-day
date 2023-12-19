@@ -69,7 +69,6 @@ public class User
         SendHour = UserConsts.SendHourDefault;
         Verbosity = UserConsts.VerbosityDefault;
         FootnoteType = UserConsts.FootnotesDefault;
-        Intensity = UserConsts.IntensityDefault;
 
         CreatedDate = DateOnly.FromDateTime(DateTime.UtcNow);
     }
@@ -137,12 +136,6 @@ public class User
     public DateOnly CreatedDate { get; private init; }
 
     /// <summary>
-    /// How intense the user wants workouts to be.
-    /// </summary>
-    [Required]
-    public Intensity Intensity { get; set; }
-
-    /// <summary>
     /// What level of detail the user wants in their newsletter?
     /// </summary>
     [Required]
@@ -206,17 +199,11 @@ public class User
     #endregion
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(UserFrequency.User))]
-    public virtual ICollection<UserFrequency> UserFrequencies { get; private init; } = new List<UserFrequency>();
-
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; private init; } = new List<UserToken>();
 
-    [JsonIgnore, InverseProperty(nameof(UserExercise.User))]
-    public virtual ICollection<UserExercise> UserExercises { get; private init; } = null!;
-
-    [JsonIgnore, InverseProperty(nameof(UserWorkout.User))]
-    public virtual ICollection<UserWorkout> UserWorkouts { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
+    public virtual ICollection<UserFeast> UserWorkouts { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserEmail.User))]
     public virtual ICollection<UserEmail> UserEmails { get; private init; } = null!;

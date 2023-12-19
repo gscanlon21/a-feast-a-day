@@ -32,9 +32,6 @@ public class UserNewsletterViewModel
     [Display(Name = "Strengthening Days")]
     public Days SendDays { get; init; }
 
-    [Display(Name = "Workout Intensity")]
-    public Intensity Intensity { get; init; }
-
     public Core.Models.Equipment.Equipment Equipment { get; init; }
 
     [JsonInclude]

@@ -93,13 +93,6 @@
                 }
             </div>
 
-            @if (Verbosity.HasFlag(Verbosity.Proficiency) && Model.Proficiency != null)
-            {
-                <div style="margin-block:.5em;">
-                    <Lib.Pages.Shared.Exercise._Proficiency Model="Model.Proficiency" UserVariation="Model.UserVariation" Variation="Model.Variation" FirstTimeViewing="Model.UserFirstTimeViewing" />
-                </div>
-            }
-
             @if (Verbosity.HasFlag(Verbosity.Debug))
             {
                 <hr style="margin-block:.5em;" />
@@ -227,7 +220,7 @@
     public ViewModels.User.UserNewsletterViewModel? User { get; set; }
 
     [Parameter, EditorRequired]
-    public ViewModels.Newsletter.ExerciseVariationViewModel Model { get; set; } = null!;
+    public ViewModels.Newsletter.RecipeViewModel Model { get; set; } = null!;
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }

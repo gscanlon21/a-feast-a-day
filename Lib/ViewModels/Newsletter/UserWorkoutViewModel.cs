@@ -24,11 +24,6 @@ public class UserWorkoutViewModel
     public DateOnly Date { get; init; }
 
     /// <summary>
-    /// What was the workout split used when this newsletter was sent?
-    /// </summary>
-    public Intensity Intensity { get; init; }
-
-    /// <summary>
     /// Deloads are weeks with a message to lower the intensity of the workout so muscle growth doesn't stagnate
     /// </summary>
     public bool IsDeloadWeek { get; init; }

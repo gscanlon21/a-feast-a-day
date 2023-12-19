@@ -63,7 +63,6 @@ public class TestNewsletterJob : FakeDatabase
         Context.Users.Add(new Data.Entities.User.User(string.Empty, true)
         {
             SendDays = Core.Models.User.Days.None,
-            IncludeMobilityWorkouts = false,
         });
         await Context.SaveChangesAsync();
 
@@ -77,7 +76,6 @@ public class TestNewsletterJob : FakeDatabase
         Context.Users.Add(new Data.Entities.User.User(string.Empty, true)
         {
             SendDays = Core.Models.User.Days.None,
-            IncludeMobilityWorkouts = true,
         });
         await Context.SaveChangesAsync();
 
@@ -92,7 +90,6 @@ public class TestNewsletterJob : FakeDatabase
         {
             LastActive = Today,
             SendDays = Core.Models.User.Days.None,
-            IncludeMobilityWorkouts = true,
             SendHour = int.Parse(DateTime.UtcNow.ToString("HH"))
         });
         await Context.SaveChangesAsync();

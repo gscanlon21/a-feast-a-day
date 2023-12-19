@@ -9,14 +9,14 @@ public class PrerequisiteViewModel
 {
     public Verbosity Verbosity => Verbosity.Instructions | Verbosity.Images | Verbosity.ProgressionBar;
     public UserNewsletterViewModel UserNewsletter { get; init; }
-    public IList<ExerciseVariationViewModel> VisiblePrerequisites { get; init; }
-    public IList<ExerciseVariationViewModel> InvisiblePrerequisites { get; init; }
+    public IList<RecipeViewModel> VisiblePrerequisites { get; init; }
+    public IList<RecipeViewModel> InvisiblePrerequisites { get; init; }
 
-    public class ExerciseSectionComparer : IEqualityComparer<ExerciseVariationViewModel>
+    public class ExerciseSectionComparer : IEqualityComparer<RecipeViewModel>
     {
-        public bool Equals(ExerciseVariationViewModel? a, ExerciseVariationViewModel? b)
+        public bool Equals(RecipeViewModel? a, RecipeViewModel? b)
             => EqualityComparer<ExerciseViewModel>.Default.Equals(a?.Exercise, b?.Exercise);
 
-        public int GetHashCode(ExerciseVariationViewModel e) => e.Exercise.GetHashCode();
+        public int GetHashCode(RecipeViewModel e) => e.Exercise.GetHashCode();
     }
 }

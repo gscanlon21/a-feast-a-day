@@ -10,19 +10,18 @@ namespace Data.Entities.Newsletter;
 /// <summary>
 /// A day's workout routine.
 /// </summary>
-[Table("user_workout"), Comment("A day's workout routine")]
-public class UserWorkout
+[Table("user_feast"), Comment("A day's workout routine")]
+public class UserFeast
 {
     [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
-    public UserWorkout() { }
+    public UserFeast() { }
 
-    internal UserWorkout(DateOnly date, WorkoutContext context) : this(date, context.User) { }
+    internal UserFeast(DateOnly date, WorkoutContext context) : this(date, context.User) { }
 
-    public UserWorkout(DateOnly date, User.User user)
+    public UserFeast(DateOnly date, User.User user)
     {
         Date = date;
         User = user;
-        Intensity = user.Intensity;
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -37,15 +36,9 @@ public class UserWorkout
     [Required]
     public DateOnly Date { get; private init; }
 
-    /// <summary>
-    /// What was the workout split used when this newsletter was sent?
-    /// </summary>
-    [Required]
-    public Intensity Intensity { get; private init; }
-
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserWorkouts))]
     public virtual User.User User { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(UserWorkoutVariation.UserWorkout))]
-    public virtual ICollection<UserWorkoutVariation> UserWorkoutVariations { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]
+    public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;
 }

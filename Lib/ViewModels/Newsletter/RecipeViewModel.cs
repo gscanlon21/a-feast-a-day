@@ -10,7 +10,7 @@ namespace Lib.ViewModels.Newsletter;
 /// Viewmodel for _Exercise.cshtml
 /// </summary>
 [DebuggerDisplay("{Exercise,nq}: {Variation,nq}")]
-public class ExerciseVariationViewModel
+public class RecipeViewModel
 {
     public Section Section { get; init; }
 
@@ -39,6 +39,6 @@ public class ExerciseVariationViewModel
 
     public override int GetHashCode() => HashCode.Combine(Exercise, Variation);
 
-    public override bool Equals(object? obj) => obj is ExerciseVariationViewModel other
+    public override bool Equals(object? obj) => obj is RecipeViewModel other
         && other.Exercise == Exercise && other.Variation == Variation;
 }

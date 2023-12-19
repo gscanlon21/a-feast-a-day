@@ -13,7 +13,7 @@ public class DeleteOldWorkouts(ILogger<DeleteOldWorkouts> logger, CoreContext co
     {
         try
         {
-            await coreContext.UserWorkouts.IgnoreQueryFilters()
+            await coreContext.UserFeasts.IgnoreQueryFilters()
                 .Where(u => u.Date < Today.AddMonths(-1 * UserConsts.DeleteLogsAfterXMonths))
                 .ExecuteDeleteAsync();
         }

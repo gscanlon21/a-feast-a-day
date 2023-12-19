@@ -73,7 +73,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
-        var user = await userRepo.GetUser(email, token, includeExerciseVariations: true, includeMuscles: true, includeFrequencies: true, allowDemoUser: true);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return null;
@@ -85,13 +85,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         date ??= user.TodayOffset;
         if (date.HasValue)
         {
-            var oldNewsletter = await _context.UserWorkouts.AsNoTracking()
-                .Include(n => n.UserWorkoutVariations)
+            var oldNewsletter = await _context.UserFeasts.AsNoTracking()
+                .Include(n => n.UserFeastRecipes)
                 .Where(n => n.User.Id == user.Id)
                 // Always send a new workout for today for the demo and test users.
                 .Where(n => !((user.Features.HasFlag(Features.Demo) || user.Features.HasFlag(Features.Test)) && n.Date == user.TodayOffset))
                 // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
-                .Where(n => n.UserWorkoutVariations.Any())
+                .Where(n => n.UserFeastRecipes.Any())
                 .Where(n => n.Date == date)
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created.
                 .OrderByDescending(n => n.Id)
@@ -140,9 +140,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     {
         var newsletter = await CreateAndAddNewsletterToContext(context);
 
+        var recipes = _context.UserRecipes.OrderBy(r => EF.Functions.Random()).Take(1).ToList();
         var userViewModel = new UserNewsletterDto(context);
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {
+            Recipes = recipes
         };
 
         return viewModel;
@@ -151,7 +153,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Root route for building out the the workout routine newsletter based on a date.
     /// </summary>
-    private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserWorkout newsletter)
+    private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
         var userViewModel = new UserNewsletterDto(user, token);
         var newsletterViewModel = new NewsletterDto(userViewModel, newsletter)

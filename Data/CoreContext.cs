@@ -1,5 +1,4 @@
-﻿using Data.Entities.Exercise;
-using Data.Entities.Footnote;
+﻿using Data.Entities.Footnote;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
@@ -9,16 +8,15 @@ namespace Data;
 
 public class CoreContext : DbContext
 {
-    public DbSet<Exercise> Exercises { get; set; } = null!;
+    public DbSet<UserRecipe> Exercises { get; set; } = null!;
     public DbSet<Footnote> Footnotes { get; set; } = null!;
 
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<UserToken> UserTokens { get; set; } = null!;
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
-    public DbSet<UserFrequency> UserFrequencies { get; set; } = null!;
-    public DbSet<UserExercise> UserExercises { get; set; } = null!;
-    public DbSet<UserWorkout> UserWorkouts { get; set; } = null!;
-    public DbSet<UserWorkoutVariation> UserWorkoutVariations { get; set; } = null!;
+    public DbSet<UserFeast> UserFeasts { get; set; } = null!;
+    public DbSet<UserRecipe> UserRecipes { get; set; } = null!;
+    public DbSet<UserFeastRecipe> UserFeastRecipes { get; set; } = null!;
     public DbSet<UserFootnote> UserFootnotes { get; set; } = null!;
 
     public CoreContext() : base() { }
@@ -30,8 +28,6 @@ public class CoreContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         ////////// Keys //////////
-        modelBuilder.Entity<UserFrequency>().HasKey(sc => new { sc.UserId, sc.Id });
-        modelBuilder.Entity<UserExercise>().HasKey(sc => new { sc.UserId, sc.ExerciseId });
         //modelBuilder.Entity<ExerciseVariation>().HasKey(sc => new { sc.ExerciseId, sc.VariationId });
 
         //modelBuilder
@@ -44,8 +40,7 @@ public class CoreContext : DbContext
 
 
         ////////// Query Filters //////////
-        modelBuilder.Entity<Exercise>().HasQueryFilter(p => p.DisabledReason == null);
-        modelBuilder.Entity<UserExercise>().HasQueryFilter(p => p.Exercise.DisabledReason == null);
+        modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);
     }
 }

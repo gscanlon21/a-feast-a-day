@@ -32,7 +32,7 @@ public partial class UserController
         var user = await userRepo.GetUser(email, token);
         if (user != null)
         {
-            context.UserWorkouts.RemoveRange(await context.UserWorkouts.Where(n => n.UserId == user.Id).ToListAsync());
+            context.UserFeasts.RemoveRange(await context.UserFeasts.Where(n => n.UserId == user.Id).ToListAsync());
             context.Users.Remove(user); // Will also remove from ExerciseUserProgressions and EquipmentUsers
         }
 

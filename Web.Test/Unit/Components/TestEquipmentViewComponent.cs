@@ -46,7 +46,6 @@ public class TestEquipmentViewComponent
         var user = new Data.Entities.User.User(string.Empty, acceptedTerms: true)
         {
             SendDays = Days.None,
-            IncludeMobilityWorkouts = true
         };
 
         var status = EquipmentViewComponent.GetUserEquipmentStatus(user);

@@ -10,14 +10,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Exercise\**" />
+    <Compile Remove="ViewModels\Exercise\**" />
+    <Compile Remove="Views\Exercise\**" />
+    <Content Remove="Controllers\Exercise\**" />
+    <Content Remove="ViewModels\Exercise\**" />
+    <Content Remove="Views\Exercise\**" />
+    <EmbeddedResource Remove="Controllers\Exercise\**" />
+    <EmbeddedResource Remove="ViewModels\Exercise\**" />
+    <EmbeddedResource Remove="Views\Exercise\**" />
+    <None Remove="Controllers\Exercise\**" />
+    <None Remove="ViewModels\Exercise\**" />
+    <None Remove="Views\Exercise\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <InternalsVisibleTo Include="Web.Test" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Code\TagHelpers\" />
-    <Folder Include="Controllers\Exercise\" />
-    <Folder Include="ViewModels\Exercise\" />
-    <Folder Include="Views\Exercise\" />
     <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
     <Folder Include="wwwroot\lib\jquery-validation\" />
     <Folder Include="wwwroot\lib\jquery-validation\dist\" />

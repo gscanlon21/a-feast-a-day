@@ -42,12 +42,6 @@ public class UserNewsletterDto(Entities.User.User user, string token)
     [Display(Name = "Workout Verbosity")]
     public Verbosity Verbosity { get; } = user.Verbosity;
 
-    [Display(Name = "Workout Intensity")]
-    public Intensity Intensity { get; } = user.Intensity;
-
-    //[JsonIgnore]
-    public ICollection<UserExercise> UserExercises { get; init; } = user.UserExercises;
-
     public int FootnoteCountTop { get; init; } = user.FootnoteCountTop;
 
     public int FootnoteCountBottom { get; init; } = user.FootnoteCountBottom;

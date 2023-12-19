@@ -26,7 +26,7 @@ public class UserController(UserRepo userRepo) : ControllerBase
     /// Get the user's past workouts.
     /// </summary>
     [HttpGet("Workouts")]
-    public async Task<IList<UserWorkout>?> GetWorkouts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    public async Task<IList<UserFeast>?> GetWorkouts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)

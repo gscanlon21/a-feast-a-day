@@ -23,14 +23,7 @@ public class NewsletterViewModel
     /// </summary>
     public Verbosity Verbosity { get; init; }
 
-    public IList<ExerciseVariationViewModel> Exercises { get; init; } = null!;
-
-    public IList<ExerciseVariationViewModel> MainExercises { get; init; } = null!;
-    public IList<ExerciseVariationViewModel> PrehabExercises { get; init; } = null!;
-    public IList<ExerciseVariationViewModel> RehabExercises { get; init; } = null!;
-    public IList<ExerciseVariationViewModel> WarmupExercises { get; init; } = null!;
-    public IList<ExerciseVariationViewModel> SportsExercises { get; init; } = null!;
-    public IList<ExerciseVariationViewModel> CooldownExercises { get; init; } = null!;
+    public IList<RecipeViewModel> Recipes { get; init; } = null!;
 
     /// <summary>
     /// Hiding the footer in the demo iframe.

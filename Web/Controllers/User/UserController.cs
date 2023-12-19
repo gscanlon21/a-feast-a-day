@@ -39,7 +39,7 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
     [Route("edit", Order = 3)]
     public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
     {
-        var user = await userRepo.GetUser(email, token, includeExerciseVariations: true, includeMuscles: true, includeFrequencies: true, allowDemoUser: true);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -62,7 +62,7 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
             return NotFound();
         }
 
-        viewModel.User = await userRepo.GetUser(viewModel.Email, viewModel.Token, includeUserExerciseVariations: true, includeMuscles: true, includeFrequencies: true) ?? throw new ArgumentException(string.Empty, nameof(email));
+        viewModel.User = await userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (ModelState.IsValid)
         {
             try
@@ -73,7 +73,6 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
                 viewModel.User.ShowStaticImages = viewModel.ShowStaticImages;
-                viewModel.User.Intensity = viewModel.Intensity;
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
                 {
@@ -110,7 +109,7 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
     [Route("edit/advanced", Order = 2)]
     public async Task<IActionResult> EditAdvanced(string email, string token, AdvancedViewModel viewModel)
     {
-        var user = await userRepo.GetUser(email, token, includeUserExerciseVariations: true, includeMuscles: true, includeFrequencies: true) ?? throw new ArgumentException(string.Empty, nameof(email));
+        var user = await userRepo.GetUser(email, token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (ModelState.IsValid)
         {
             try
@@ -197,8 +196,8 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
         }
 
         // Add a dummy newsletter to advance the workout split
-        var newsletter = new Data.Entities.Newsletter.UserWorkout(Today, user);
-        context.UserWorkouts.Add(newsletter);
+        var newsletter = new Data.Entities.Newsletter.UserFeast(Today, user);
+        context.UserFeasts.Add(newsletter);
 
         await context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your workout split has been advanced!";

@@ -27,7 +27,6 @@ public class UserEditViewModel
         User = user;
         Email = user.Email;
         SendDays = user.SendDays;
-        Intensity = user.Intensity;
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         Verbosity = user.Verbosity;
@@ -66,10 +65,6 @@ public class UserEditViewModel
 
     [Display(Name = "Subscribe to Workout Emails", Description = "Receive your workouts via email.")]
     public bool NewsletterEnabled { get; init; }
-
-    [Required]
-    [Display(Name = "Workout Intensity", Description = "Beginner lifters should not immediately train heavy. Tendons lag behind muscles by 2-5 years in strength adaption. Don’t push harder or increase your loads at a rate faster than what your tendons can adapt to.")]
-    public Intensity Intensity { get; init; }
 
     [Required]
     [Display(Name = "Workout Verbosity", Description = "What level of detail do you want to receive in each workout?")]
