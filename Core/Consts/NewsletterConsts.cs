@@ -10,7 +10,7 @@ public class NewsletterConsts
 
     public const string SubjectConfirm = "Account Confirmation";
 
-    public const string SubjectWorkout = "Daily Workout";
+    public const string SubjectWorkout = "Daily Feast";
 
     public const int MaxSendAttempts = 1;
 }
