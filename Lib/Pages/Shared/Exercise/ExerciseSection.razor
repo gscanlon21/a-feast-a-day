@@ -2,7 +2,7 @@
 @using Core.Models.Newsletter;
 @using Core.Models.User;
 
-@if (Exercises?.Any() == true)
+@if (Recipes?.Any() == true)
 {
     var titleColor = Theme switch
     {
@@ -16,20 +16,15 @@
 
     if (Title == null)
     {
-        foreach (var exerciseGroup in Exercises.GroupBy(e => e, new ExerciseSectionComparer()).OrderBy(e => e.Key.Exercise.Name))
+        foreach (var exerciseGroup in Recipes.GroupBy(e => e, new ExerciseSectionComparer()).OrderBy(e => e.Key.Name))
         {
-            <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@exerciseGroup.Key.Exercise.Name</h2>
+            <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@exerciseGroup.Key.Name</h2>
 
             @if (Verbosity.HasFlag(Verbosity.Debug))
             {
-                @if (exerciseGroup.Key.ExercisePrerequisites?.Any() == true)
+                @if (!string.IsNullOrWhiteSpace(exerciseGroup.Key.Notes))
                 {
-                    <p style="margin-block:0;"><b>Prerequisites</b> - @String.Join(", ", exerciseGroup.Key.ExercisePrerequisites.Select(e => $"{e.Name}: {e.Proficiency}"))</p>
-                }
-
-                @if (!string.IsNullOrWhiteSpace(exerciseGroup.Key.Exercise.Notes))
-                {
-                    <p style="margin-block:0;"><b>Notes</b> - @exerciseGroup.Key.Exercise.Notes</p>
+                    <p style="margin-block:0;"><b>Notes</b> - @exerciseGroup.Key.Notes</p>
                 }
             }
 
@@ -51,7 +46,7 @@
             <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
         }
         <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
-            @foreach (var item in Exercises)
+            @foreach (var item in Recipes)
             {
                 <CascadingValue Value="User">
                     <_Exercise Model="item" Verbosity="Verbosity" />
@@ -79,7 +74,7 @@
     public Verbosity Verbosity { get; init; }
 
     [Parameter, EditorRequired]
-    public IList<ViewModels.Newsletter.RecipeViewModel>? Exercises { get; init; }
+    public IList<ViewModels.Newsletter.RecipeViewModel>? Recipes { get; init; }
 
     public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
     {
@@ -91,8 +86,8 @@
     private class ExerciseSectionComparer : IEqualityComparer<ViewModels.Newsletter.RecipeViewModel>
     {
         public bool Equals(ViewModels.Newsletter.RecipeViewModel? a, ViewModels.Newsletter.RecipeViewModel? b)
-            => EqualityComparer<ViewModels.Exercise.ExerciseViewModel>.Default.Equals(a?.Exercise, b?.Exercise);
+            => EqualityComparer<ViewModels.Newsletter.RecipeViewModel>.Default.Equals(a, b);
 
-        public int GetHashCode(ViewModels.Newsletter.RecipeViewModel e) => e.Exercise.GetHashCode();
+        public int GetHashCode(ViewModels.Newsletter.RecipeViewModel e) => e.GetHashCode();
     }
 }

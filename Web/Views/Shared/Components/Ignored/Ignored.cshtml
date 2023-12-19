@@ -38,7 +38,7 @@
     <details class="mt-4 mb-25">
         <summary class="mb-1 h5">
             @Html.DisplayNameFor(_ => Model.IgnoredExercises)
-            <span class="float-end">@Model.IgnoredExercises.GroupBy(vm => vm.Exercise).Count()</span>
+            <span class="float-end">@Model.IgnoredExercises.GroupBy(vm => vm).Count()</span>
         </summary>
 
         <component type="typeof(Lib.Pages.Shared.Exercise.ExerciseSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Exercises='Model.IgnoredExercises' param-Theme='ExerciseTheme.None' param-Verbosity="Model.Verbosity" />

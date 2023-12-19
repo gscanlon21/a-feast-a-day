@@ -25,7 +25,7 @@ public class UserRecipeIngredient
     public string Name { get; private init; } = null!;
 
     [Required]
-    public string Quantity { get; set; } = null!;
+    public double Quantity { get; set; }
 
     [Required]
     public Measure Measure { get; set; }

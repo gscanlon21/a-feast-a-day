@@ -42,9 +42,6 @@
     <Content Update="Pages\Shared\Exercise\ExerciseSection.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Pages\Shared\Exercise\_Instruction.razor">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Update="Pages\Shared\Newsletter\_Preview.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -59,6 +56,10 @@
 
   <ItemGroup>
     <None Include="C:\code\gscanlon\finer-fettle\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\Equipment\" />
   </ItemGroup>
 
 

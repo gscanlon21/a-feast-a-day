@@ -35,14 +35,13 @@
     Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
 *@
 <div style="flex:1 0 @(Verbosity.HasFlag(Verbosity.Debug) ? "250px" : "200px");padding:10px;position:relative;display:flex;flex-direction:column;justify-content:space-between;
-            border-bottom:4px @(Verbosity.HasFlag(Verbosity.ProgressionBar) ? "solid" : "none");border-image-slice:1;outline:1px solid @borderColor;background-color:@backgroundColor;
-            border-image-source:linear-gradient(90deg, transparent @(Model.Variation.Progression.Min ?? 0)%, @borderColor @(Model.Variation.Progression.Min ?? 0)% @(Model.Variation.Progression.Max ?? 100)%, transparent @(Model.Variation.Progression.Max ?? 100)%);">
+            border-bottom:4px @(Verbosity.HasFlag(Verbosity.ProgressionBar) ? "solid" : "none");border-image-slice:1;outline:1px solid @borderColor;background-color:@backgroundColor;">
     
     @if (User != null)
     {
         @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
         <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
-            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"{Model.Section}/{Model.Exercise.Id}/{Model.Variation.Id}")">Manage</a>
+            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"{Model.Id}")">Manage</a>
         </small>
     }
          
@@ -53,83 +52,30 @@
             @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
             <div style="padding-inline-end:1.1ch">
                 <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
-                    @if (Model.Variation.UseCaution)
-                    {
-                        @:&#9888;
-                    }
-                    @if (string.IsNullOrWhiteSpace(Model.Variation.DefaultInstruction))
-                    {
-                        <span style="text-decoration:underline;">@(Model.Variation.Name ?? Model.Exercise.Name)</span>
-                    }
-                    else
-                    {
-                        <a class="allow-demo" target="_blank" href="@Model.Variation.DefaultInstruction">
-                            @(Model.Variation.Name ?? Model.Exercise.Name)
-                        </a>
-                    }
+                    <span style="text-decoration:underline;">@(Model.Name)</span>
                 </h3>
 
-                @if (Verbosity.HasFlag(Verbosity.Instructions) && Model.Variation.HasRootInstructions)
-                {
-                    <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
-                        @foreach (var instruction in Model.Variation.GetRootInstructions(User))
-                        {
-                            <li style="margin-block:.35em;list-style-type:@(instruction.HasChildInstructions ? "circle" : "disc");">
-                                <_Instruction Model="new InstructionViewModel(instruction, User)" />
-                                @if (instruction.HasChildInstructions)
-                                {
-                                    <ul style="margin-block:0;padding-inline-start:2ch;">
-                                        @foreach (var childInstruction in instruction.GetChildInstructions(User))
-                                        {
-                                            <li style="margin-block:.25em;list-style-type:disc;">
-                                                <_Instruction Model="new InstructionViewModel(childInstruction, User)" />
-                                            </li>
-                                        }
-                                    </ul>
-                                }
-                            </li>
-                        }
-                    </ul>
-                }
+                <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
+                    @foreach (var ingredient in Model.Ingredients)
+                    {
+                        <li style="margin-block:.35em;list-style-type:disc;">
+                            @ingredient.Quantity @ingredient.Measure @ingredient.Name
+                        </li>
+                    }
+                </ul>
+
+                <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
+                    @foreach (var instruction in Model.Instructions)
+                    {
+                        <li style="margin-block:.35em;list-style-type:disc;">
+                            @instruction.Name
+                        </li>
+                    }
+                </ul>
             </div>
-
-            @if (Verbosity.HasFlag(Verbosity.Debug))
-            {
-                <hr style="margin-block:.5em;" />
-
-                <div style="margin-block:.5em;">
-                    <small><b>Type</b> - @Model.Variation.ExerciseType.GetDisplayName322(EnumExtensions.DisplayNameType.ShortName)</small>
-
-                    <div style="margin-block:0;font-size:x-small;color:mediumvioletred"><b>Unused</b>: @ExerciseType.All.UnsetFlag32(Model.Variation.ExerciseType).GetDisplayName32(EnumExtensions.DisplayNameType.ShortName)</div>
-                </div>
-
-                <div style="margin-block:.5em;">
-                    <small><b>Focus</b> - @Model.Variation.ExerciseFocus.GetDisplayName322(EnumExtensions.DisplayNameType.ShortName)</small>
-
-                    <div style="margin-block:0;font-size:x-small;color:mediumvioletred"><b>Unused</b>: @ExerciseFocus.All.UnsetFlag32(Model.Variation.ExerciseFocus).GetDisplayName32(EnumExtensions.DisplayNameType.ShortName)</div>
-                </div>
-
-                <div style="margin-block:.5em;">
-                    <small><b>Is Weighted</b> - @Model.Variation.IsWeighted</small>
-                </div>
-
-                <div style="margin-block:.5em;">
-                    <small><b>Is Unilateral</b> - @Model.Variation.Unilateral</small>
-                </div>
-
-                <div style="margin-block:.5em;">
-                    <small><b>Pause Reps</b> - @Model.Variation.PauseReps</small>
-                </div>
-
-                @if (!string.IsNullOrWhiteSpace(Model.Variation.Notes))
-                {
-                    <div style="margin-block:.5em;">
-                        <small><b>V:Notes</b> - @Model.Variation.Notes</small>
-                    </div>
-                }
-            }
         </div>
 
+        @*
         @if (Verbosity.HasFlag(Verbosity.Images))
         {
             bool showStaticImage = (User?.ShowStaticImages == true) || Model.Variation.AnimatedImage == null;
@@ -143,76 +89,8 @@
                 <img style="display:block;margin-top:1ex;height:auto;min-height:112px;max-height:200px;max-width:100%;object-fit:contain;object-position:left top;" loading="lazy" src="@(showStaticImage ? animatedSrc : staticSrc)">
             }
         }
+        *@
     </div>
-    
-    @* Displays ignored variations or variations missing equipment when the user's progression level is out-of-range for the current variation. *@
-    @if (Verbosity.HasFlag(Verbosity.ProgressionBar))
-    {
-        <div style="margin-top:1ex;display:flex;column-gap:1ch;font-size:smaller;">
-            <div>
-                @if (Model.EasierReason != null)
-                {
-                    <div style="white-space:nowrap;">
-                        <span style="color:red;">@Model.EasierReason</span>
-                    </div>
-                    @if (Model.EasierVariation != null)
-                    {
-                        <div style="font-size:smaller;">@Model.EasierVariation</div>
-                    }
-                }
-            </div>
-            <div style="margin-left:auto;text-align:end;">
-                @if (Model.HarderReason != null)
-                {
-                    <div style="white-space:nowrap;">
-                        <span style="color:red;">@Model.HarderReason</span>
-                    </div>
-                    @if (Model.HarderVariation != null)
-                    {
-                        <div style="font-size:smaller;">@Model.HarderVariation</div>
-                    }
-                }
-            </div>
-        </div>
-    }
-
-    @* Displays the ▼ for the user's current progression level. *@
-    @if (Verbosity.HasFlag(Verbosity.ProgressionBar) && Model.UserExercise != null)
-    {
-        var progressionOutOfRange = Model.UserExercise.Progression < Model.Variation.Progression.Min || Model.UserExercise.Progression >= Model.Variation.Progression.Max;
-        <div style="position:absolute;bottom:0;left:calc(@Model.UserExercise.Progression% - 1ch);width:2ch;text-align:center;font-size:xx-small;line-height:1;@(progressionOutOfRange ? "color:red" : "")">
-            &#9660;
-        </div>
-    }
-
-    @* Displays a vertical bar on the progression range of the exercise's proficiency. *@
-    @if (Verbosity.HasFlag(Verbosity.ProgressionBar))
-    {
-        foreach (var proficiency in Model.ExercisePrerequisites.Select(p => p.Proficiency).Distinct())
-        {
-            <div style="position:absolute;bottom:-4px;left:calc(@proficiency% - 1px);height:4px;width:2px;background-color:currentColor;"></div>
-        }
-    }
-    
-    @* Displays the variation's min and max progression range as numbers. *@
-    @if (Verbosity.HasFlag(Verbosity.Debug))
-    {
-        if (Model.Variation.Progression.Min.HasValue)
-        {
-            <div style="line-height:1;position:absolute;bottom:0;font-size:xx-small;font-weight:bold;
-                        left:max(0%, calc(@Model.Variation.Progression.Min% - @(Model.Variation.Progression.Min.Value.ToString().Length)ch));">
-                @Model.Variation.Progression.Min
-            </div>
-        }
-
-        if (Model.Variation.Progression.Max.HasValue)
-        {
-            <div style="line-height:1;position:absolute;bottom:0;font-size:xx-small;font-weight:bold;
-                        left:min(calc(100% - @(Model.Variation.Progression.Max.Value.ToString().Length)ch), @Model.Variation.Progression.Max%);">
-                @Model.Variation.Progression.Max
-            </div>
-        }
-    }
 </div>
 
 @code {

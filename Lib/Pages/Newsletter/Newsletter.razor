@@ -7,7 +7,6 @@
 @using Core.Models.Newsletter
 @using Core.Models.Footnote
 @using Core.Models.User
-@using ViewModels.Exercise
 @using Shared.Exercise
 
 @if (Error != null)
@@ -35,7 +34,7 @@ else
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
     
     <div style="margin-block:1rem;">
-        TODO Recipe
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.Recipes" Theme="ExerciseTheme.Main" Title="@(new ExerciseSection.Titles("Recipes"))" />
     </div>
 
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" />

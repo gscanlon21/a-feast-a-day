@@ -17,6 +17,9 @@ public class UserRecipe
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
+    [Required]
+    public int UserId { get; private init; }
+
     /// <summary>
     /// Friendly name.
     /// </summary>
@@ -30,10 +33,13 @@ public class UserRecipe
 
     public string? DisabledReason { get; private init; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.Recipe))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
+    public virtual User User { get; private init; } = null!;
+
+    [JsonInclude, InverseProperty(nameof(UserRecipeIngredient.Recipe))]
     public virtual IList<UserRecipeIngredient> Ingredients { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(UserRecipeInstruction.Recipe))]
+    [JsonInclude, InverseProperty(nameof(UserRecipeInstruction.Recipe))]
     public virtual IList<UserRecipeInstruction> Instructions { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);

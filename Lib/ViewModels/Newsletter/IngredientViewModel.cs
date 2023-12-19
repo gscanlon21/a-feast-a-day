@@ -1,14 +1,18 @@
 ﻿using Core.Models.Exercise;
+using Core.Models.User;
+using Lib.ViewModels.User;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
-namespace Lib.ViewModels.Exercise;
+namespace Lib.ViewModels.Newsletter;
 
+// TODO: Implement IValidateableObject and setup model validation instead of using the /exercises/check route
 /// <summary>
-/// Exercises listed on the website
+/// Intensity level of an exercise variation
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
-public class ExerciseViewModel
+public class IngredientViewModel
 {
     public int Id { get; init; }
 
@@ -17,6 +21,10 @@ public class ExerciseViewModel
     /// </summary>
     [Required]
     public string Name { get; init; } = null!;
+
+    public double Quantity { get; init; }
+
+    public Measure? Measure { get; init; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
@@ -27,6 +35,6 @@ public class ExerciseViewModel
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is ExerciseViewModel other
+    public override bool Equals(object? obj) => obj is InstructionViewModel other
         && other.Id == Id;
 }

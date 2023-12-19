@@ -140,7 +140,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     {
         var newsletter = await CreateAndAddNewsletterToContext(context);
 
-        var recipes = _context.UserRecipes.OrderBy(r => EF.Functions.Random()).Take(1).ToList();
+        var recipes = _context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .OrderBy(r => EF.Functions.Random())
+            .Take(1)
+            .ToList();
+
         var userViewModel = new UserNewsletterDto(context);
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {

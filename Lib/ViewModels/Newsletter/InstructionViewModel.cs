@@ -1,32 +1,32 @@
-﻿using Core.Code.Extensions;
+﻿using Core.Models.Exercise;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace Lib.ViewModels.Newsletter;
 
 /// <summary>
-/// Viewmodel for _Instruction.cshtml
+/// Exercises listed on the website
 /// </summary>
-public class InstructionViewModel(Equipment.InstructionViewModel instruction, User.UserNewsletterViewModel? user)
+[DebuggerDisplay("{Name,nq}")]
+public class InstructionViewModel
 {
-    public Equipment.InstructionViewModel Instruction { get; } = instruction;
-    public User.UserNewsletterViewModel? User { get; } = user;
+    public int Id { get; init; }
 
-    public string GetDisplayName()
-    {
-        var vals = EnumExtensions.GetSingleValues32<Core.Models.Equipment.Equipment>().Where(e => Instruction.Equipment.HasFlag(e));
-        // Disabling the friendly equipment exercise name and moving that over to a title attribute.
-        if (true || string.IsNullOrWhiteSpace(Instruction.Name))
-        {
-            if (User == null)
-            {
-                return string.Join(" | ", vals.Select(e => e.GetDisplayName32()));
-            }
-            else
-            {
-                return string.Join(" | ", vals.Where(e => User.Equipment.HasFlag(e)).Select(e => e.GetDisplayName32()));
-            }
-        }
+    /// <summary>
+    /// Friendly name.
+    /// </summary>
+    [Required]
+    public string Name { get; init; } = null!;
 
-        // This is the friendly equipment exercise name.
-        return Instruction.Name;
-    }
+    /// <summary>
+    /// Notes about the variation (externally shown).
+    /// </summary>
+    public string? Notes { get; init; } = null;
+
+    public string? DisabledReason { get; init; } = null;
+
+    public override int GetHashCode() => HashCode.Combine(Id);
+
+    public override bool Equals(object? obj) => obj is InstructionViewModel other
+        && other.Id == Id;
 }
