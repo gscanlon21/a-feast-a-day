@@ -1,0 +1,201 @@
+﻿@model Web.ViewModels.User.Components.RecipeViewModel
+@using Core.Models.Exercise
+@using Web.Code.Extensions
+
+
+<details class="mb-25">
+    <summary class="mb-1 h5">
+        @Html.DisplayNameFor(_ => Model.Recipes)
+        <span class="float-end">@Model.Recipes.Count</span>
+    </summary>
+
+    <div class="alert alert-secondary" role="alert">
+        <div class="mb-4">
+            <h6 class="mb-1">New recipe</h6>
+            <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <div class="form-group mb-3">
+                    <label asp-for="Recipe.Name" class="control-label">Name</label>
+                    <input asp-for="Recipe.Name" type="text" class="form-control" required="required" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Recipe.Notes" class="control-label">Notes</label>
+                    <input asp-for="Recipe.Notes" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Recipe.TypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Type)</label>
+                    <select asp-for="Recipe.TypeBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
+                            asp-items="@(EnumExtensions.GetDisplayValues<RecipeType>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+                    </select>
+                    <span asp-validation-for="Recipe.TypeBinder" class="text-danger"></span>
+                    <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Type)</div>
+                </div>
+
+                <details class="mb-3" >
+                    <summary class=""><b class="">Edit Ingredients</b></summary>
+
+                    <div class="mt-1 ps-3">
+                        @for (int id = 0; id < Model.Recipe.Ingredients.Count; id++)
+                        {
+                            var useringredient = Model.Recipe.Ingredients[id];
+                            <div id="custom-ingredient-@id" class="custom-ingredient @(useringredient.Hide ? "d-none" : "")" data-day="@id">
+                                <div class="row">
+                                    <span class="col-auto font-weight--semibold">Day @id</span>
+                                </div>
+                                <div class="row">
+                                    <input id="hide-input-@id" type="hidden" asp-for="Recipe.Ingredients[id].Hide" />
+                                    <input type="hidden" asp-for="@id" />
+
+                                    <div class="form-group mb-3 col" style="min-width:200px;">
+                                        <label asp-for="Recipe.Ingredients[id].Name" class="control-label">Name</label>
+                                        <input asp-for="Recipe.Ingredients[id].Name" type="text" class="form-control" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="btn-group">
+                            <button id="custom-freq-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                            <button id="custom-freq-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                        </div>
+                    </div>
+
+                    <script defer="defer">
+                        document.getElementById('custom-freq-add-button').addEventListener('click', (e) => {
+                            const freqs = Array.from(document.getElementsByClassName('custom-ingredient'));
+                            for (const freq of freqs) {
+                                if (freq.classList.contains('d-none')) {
+                                    // Unhide the freq
+                                    freq.classList.remove('d-none');
+                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'False';
+                                    break;
+                                }
+                            }
+
+                            // Always show the remove button after adding a freq
+                            document.getElementById('custom-freq-remove-button').classList.remove('d-none');
+
+                            // Hide the add button if we have already shown all freqs
+                            if (freqs.every(f => !f.classList.contains('d-none'))) {
+                                e.currentTarget.classList.add('d-none');
+                            }
+                        });
+
+                        document.getElementById('custom-freq-remove-button').addEventListener('click', (e) => {
+                            const freqs = Array.from(document.getElementsByClassName('custom-ingredient'));
+                            for (const freq of freqs.reverse()) {
+                                if (!freq.classList.contains('d-none')) {
+                                    // Hide the freq
+                                    freq.classList.add('d-none');
+                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'True';
+                                    break;
+                                }
+                            }
+
+                            // Always show the add button after removing a freq
+                            document.getElementById('custom-freq-add-button').classList.remove('d-none');
+
+                            // Hide the remove button when there is one remaining freq
+                            if (freqs.filter(f => !f.classList.contains('d-none')).length === 1) {
+                                e.currentTarget.classList.add('d-none');
+                            }
+                        });
+                    </script>
+                </details>
+
+                <details class="mb-3">
+                    <summary class=""><b class="">Edit Instructions</b></summary>
+
+                    <div class="mt-1 ps-3">
+                        @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
+                        {
+                            var userinstruction = Model.Recipe.Instructions[id];
+                            <div id="custom-instruction-@id" class="custom-instruction @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
+                                <div class="row">
+                                    <span class="col-auto font-weight--semibold">Day @id</span>
+                                </div>
+                                <div class="row">
+                                    <input id="hide-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
+                                    <input type="hidden" asp-for="@id" />
+
+                                    <div class="form-group mb-3 col" style="min-width:200px;">
+                                        <label asp-for="Recipe.Instructions[id].Name" class="control-label">Name</label>
+                                        <input asp-for="Recipe.Instructions[id].Name" type="text" class="form-control" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="btn-group">
+                            <button id="custom-freq-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                            <button id="custom-freq-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                        </div>
+                    </div>
+
+                    <script defer="defer">
+                        document.getElementById('custom-freq-add-button').addEventListener('click', (e) => {
+                            const freqs = Array.from(document.getElementsByClassName('custom-instruction'));
+                            for (const freq of freqs) {
+                                if (freq.classList.contains('d-none')) {
+                                    // Unhide the freq
+                                    freq.classList.remove('d-none');
+                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'False';
+                                    break;
+                                }
+                            }
+
+                            // Always show the remove button after adding a freq
+                            document.getElementById('custom-freq-remove-button').classList.remove('d-none');
+
+                            // Hide the add button if we have already shown all freqs
+                            if (freqs.every(f => !f.classList.contains('d-none'))) {
+                                e.currentTarget.classList.add('d-none');
+                            }
+                        });
+
+                        document.getElementById('custom-freq-remove-button').addEventListener('click', (e) => {
+                            const freqs = Array.from(document.getElementsByClassName('custom-instruction'));
+                            for (const freq of freqs.reverse()) {
+                                if (!freq.classList.contains('d-none')) {
+                                    // Hide the freq
+                                    freq.classList.add('d-none');
+                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'True';
+                                    break;
+                                }
+                            }
+
+                            // Always show the add button after removing a freq
+                            document.getElementById('custom-freq-add-button').classList.remove('d-none');
+
+                            // Hide the remove button when there is one remaining freq
+                            if (freqs.filter(f => !f.classList.contains('d-none')).length === 1) {
+                                e.currentTarget.classList.add('d-none');
+                            }
+                        });
+                    </script>
+                </details>
+
+                <div class="form-group">
+                    <input type="submit" value="Add" class="btn btn-secondary" />
+                </div>
+            </form>
+        </div>
+
+        @foreach (var recipe in Model.Recipes)
+        {
+            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="RecipeId" asp-for="@recipe.Id" />
+
+                <div class="form-group mt-3">
+                    <div class="input-group">
+                        <textarea class="form-control" disabled="disabled" aria-describedby="exercise-help" rows="2">@recipe.Name</textarea>
+                        <input type="submit" value="-" class="btn btn-outline-secondary" />
+                    </div>
+                    <span for="FootnoteId" class="text-danger"></span>
+                    <div class="form-text font-size--smaller">
+                        @recipe.Name
+                    </div>
+                </div>
+            </form>
+        }
+    </div>
+</details>

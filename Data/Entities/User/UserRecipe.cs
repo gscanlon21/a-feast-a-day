@@ -1,4 +1,4 @@
-﻿using Core.Models.Exercise;
+﻿using Core.Models.User;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,26 +24,36 @@ public class UserRecipe
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; private init; } = null!;
+    public string Name { get; init; } = null!;
+
+    [Required]
+    public RecipeType Type { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; private init; } = null;
+    public string? Notes { get; init; } = null;
 
     public string? DisabledReason { get; private init; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
-    public virtual User User { get; private init; } = null!;
+    public virtual User User { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(UserRecipeIngredient.Recipe))]
-    public virtual IList<UserRecipeIngredient> Ingredients { get; private init; } = null!;
+    public virtual IList<UserRecipeIngredient> Ingredients { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(UserRecipeInstruction.Recipe))]
-    public virtual IList<UserRecipeInstruction> Instructions { get; private init; } = null!;
+    public virtual IList<UserRecipeInstruction> Instructions { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
     public override bool Equals(object? obj) => obj is UserRecipe other
         && other.Id == Id;
+
+    [NotMapped]
+    public RecipeType[]? TypeBinder
+    {
+        get => Enum.GetValues<RecipeType>().Where(e => Type.HasFlag(e)).ToArray();
+        set => Type = value?.Aggregate(RecipeType.None, (a, e) => a | e) ?? RecipeType.None;
+    }
 }

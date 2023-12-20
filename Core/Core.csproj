@@ -18,4 +18,8 @@
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Equipment\" />
+  </ItemGroup>
+
 </Project>

@@ -1,8 +1,5 @@
-﻿using Core.Consts;
-using Core.Models.Newsletter;
-using Data.Entities.User;
+﻿using Core.Models.Newsletter;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using Web.ViewModels.User;
 

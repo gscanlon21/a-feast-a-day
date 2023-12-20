@@ -68,7 +68,6 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
             try
             {
                 viewModel.User.Verbosity = viewModel.Verbosity;
-                viewModel.User.Equipment = viewModel.Equipment;
                 viewModel.User.FootnoteType = viewModel.FootnoteType;
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;

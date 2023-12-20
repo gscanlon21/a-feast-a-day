@@ -1,5 +1,4 @@
-﻿using Core.Models.Exercise;
-using Data.Models.Newsletter;
+﻿using Data.Models.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

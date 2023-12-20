@@ -1,6 +1,4 @@
 ﻿using Core.Consts;
-using Core.Models.Equipment;
-using Core.Models.Exercise;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
@@ -30,7 +28,6 @@ public class UserEditViewModel
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         Verbosity = user.Verbosity;
-        Equipment = user.Equipment;
         FootnoteType = user.FootnoteType;
         ShowStaticImages = user.ShowStaticImages;
         SendHour = user.SendHour;
@@ -63,11 +60,11 @@ public class UserEditViewModel
     [Display(Name = "Disabled Reason")]
     public string? NewsletterDisabledReason { get; init; }
 
-    [Display(Name = "Subscribe to Workout Emails", Description = "Receive your workouts via email.")]
+    [Display(Name = "Subscribe to Recipe Emails", Description = "Receive your recipes via email.")]
     public bool NewsletterEnabled { get; init; }
 
     [Required]
-    [Display(Name = "Workout Verbosity", Description = "What level of detail do you want to receive in each workout?")]
+    [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive in each workout?")]
     public Verbosity Verbosity { get; set; }
 
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
@@ -81,9 +78,6 @@ public class UserEditViewModel
     [Required]
     [Display(Name = "Strengthening Days", Description = "What days do you want to receive new strengthening workouts?")]
     public Days SendDays { get; private set; }
-
-    [Display(Name = "Equipment", Description = "What equipment do you have access to workout with?")]
-    public Equipment Equipment { get; set; }
 
     public Verbosity[]? VerbosityBinder
     {
@@ -101,11 +95,5 @@ public class UserEditViewModel
     {
         get => Enum.GetValues<Days>().Where(e => SendDays.HasFlag(e)).ToArray();
         set => SendDays = value?.Aggregate(Days.None, (a, e) => a | e) ?? Days.None;
-    }
-
-    public Equipment[]? EquipmentBinder
-    {
-        get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
-        set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 }

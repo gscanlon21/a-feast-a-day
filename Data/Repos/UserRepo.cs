@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
@@ -50,6 +51,32 @@ public class UserRepo(CoreContext context)
     public static string CreateToken(int count = 24)
     {
         return Convert.ToBase64String(RandomNumberGenerator.GetBytes(count));
+    }
+
+    public async Task<(DateTime? NextWorkoutSendDate, TimeSpan? TimeUntilNextSend)> GetNextSendDate(User user)
+    {
+        DateOnly? nextSendDate = null;
+        if (user.RestDays < Days.All)
+        {
+            nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
+            // Next send date is a rest day and user does not want off day workouts, next send date is the day after.
+            while ((user.RestDays.HasFlag(DaysExtensions.FromDate(nextSendDate.Value)))
+                // User was sent a newsletter for the next send date, next send date is the day after.
+                // Checking for variations because we create a dummy newsletter record to advance the workout split.
+                || await context.UserEmails
+                    .Where(n => n.UserId == user.Id)
+                    .Where(n => n.Subject == NewsletterConsts.SubjectWorkout)
+                    .AnyAsync(n => n.Date == nextSendDate.Value)
+                )
+            {
+                nextSendDate = nextSendDate.Value.AddDays(1);
+            }
+        }
+
+        var nextSendDateTime = nextSendDate?.ToDateTime(TimeOnly.FromTimeSpan(TimeSpan.FromHours(user.SendHour)));
+        var timeUntilNextSend = !nextSendDateTime.HasValue ? null : nextSendDateTime - DateTime.UtcNow;
+
+        return (nextSendDateTime, timeUntilNextSend);
     }
 
     public async Task<string> AddUserToken(User user, DateTime expires)

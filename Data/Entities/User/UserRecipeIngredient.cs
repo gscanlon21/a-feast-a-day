@@ -1,5 +1,4 @@
-﻿using Core.Models.Exercise;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,13 +21,16 @@ public class UserRecipeIngredient
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; private init; } = null!;
+    public string Name { get; init; } = null!;
 
     [Required]
     public double Quantity { get; set; }
 
     [Required]
     public Measure Measure { get; set; }
+
+    [NotMapped]
+    public bool Hide { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).

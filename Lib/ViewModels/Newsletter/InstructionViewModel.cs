@@ -1,5 +1,4 @@
-﻿using Core.Models.Exercise;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
 namespace Lib.ViewModels.Newsletter;

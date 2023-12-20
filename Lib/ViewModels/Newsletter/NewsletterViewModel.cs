@@ -23,7 +23,13 @@ public class NewsletterViewModel
     /// </summary>
     public Verbosity Verbosity { get; init; }
 
-    public IList<RecipeViewModel> Recipes { get; init; } = null!;
+    public List<RecipeViewModel> BreakfastRecipes { get; set; } = [];
+    public List<RecipeViewModel> LunchRecipes { get; set; } = [];
+    public List<RecipeViewModel> DinnerRecipes { get; set; } = [];
+    public List<RecipeViewModel> SideRecipes { get; set; } = [];
+    public List<RecipeViewModel> DessertRecipes { get; set; } = [];
+    public List<RecipeViewModel> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
+
 
     /// <summary>
     /// Hiding the footer in the demo iframe.

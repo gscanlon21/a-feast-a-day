@@ -1,5 +1,4 @@
 ﻿using Core.Consts;
-using Core.Models.Exercise;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
@@ -93,12 +92,6 @@ public class User
     /// </summary>
     [Required]
     public bool ShowStaticImages { get; set; }
-
-    /// <summary>
-    /// User prefers static instead of dynamic images?
-    /// </summary>
-    [Required]
-    public Core.Models.Equipment.Equipment Equipment { get; set; }
 
     /// <summary>
     /// Types of footnotes to show to the user.

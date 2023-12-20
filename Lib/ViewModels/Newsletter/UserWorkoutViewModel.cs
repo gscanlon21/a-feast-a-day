@@ -1,6 +1,4 @@
-﻿using Core.Models.Exercise;
-
-namespace Lib.ViewModels.Newsletter;
+﻿namespace Lib.ViewModels.Newsletter;
 
 public class UserWorkoutViewModel
 {

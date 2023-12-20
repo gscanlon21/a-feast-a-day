@@ -1,9 +1,7 @@
-﻿using Core.Consts;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Data;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Web.ViewModels.User.Components;
 
 namespace Web.Components.User;
@@ -21,26 +19,7 @@ public class NextWorkoutViewComponent(CoreContext context, UserRepo userRepo) : 
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
-        DateOnly? nextSendDate = null;
-        if (user.RestDays < Days.All)
-        {
-            nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
-            // Next send date is a rest day and user does not want off day workouts, next send date is the day after.
-            while ((user.RestDays.HasFlag(DaysExtensions.FromDate(nextSendDate.Value)))
-                // User was sent a newsletter for the next send date, next send date is the day after.
-                // Checking for variations because we create a dummy newsletter record to advance the workout split.
-                || await context.UserEmails
-                    .Where(n => n.UserId == user.Id)
-                    .Where(n => n.Subject == NewsletterConsts.SubjectWorkout)
-                    .AnyAsync(n => n.Date == nextSendDate.Value)
-                )
-            {
-                nextSendDate = nextSendDate.Value.AddDays(1);
-            }
-        }
-
-        var nextSendDateTime = nextSendDate?.ToDateTime(TimeOnly.FromTimeSpan(TimeSpan.FromHours(user.SendHour)));
-        var timeUntilNextSend = !nextSendDateTime.HasValue ? null : nextSendDateTime - DateTime.UtcNow;
+        var (_, timeUntilNextSend) = await userRepo.GetNextSendDate(user);
         if (!timeUntilNextSend.HasValue)
         {
             return Content("");

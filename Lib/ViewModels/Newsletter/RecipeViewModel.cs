@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Lib.ViewModels.User;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 

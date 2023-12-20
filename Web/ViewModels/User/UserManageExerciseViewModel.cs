@@ -1,6 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Data.Entities.User;
-using System.ComponentModel.DataAnnotations;
 
 namespace Web.ViewModels.User;
 

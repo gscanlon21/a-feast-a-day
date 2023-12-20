@@ -1,5 +1,4 @@
-﻿using Core.Models.Exercise;
-using Core.Models.Footnote;
+﻿using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
 

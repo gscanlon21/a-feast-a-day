@@ -1,9 +1,6 @@
-﻿using Core.Models.Exercise;
-using Core.Models.User;
-using Lib.ViewModels.User;
+﻿using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Text.Json.Serialization;
 
 namespace Lib.ViewModels.Newsletter;
 

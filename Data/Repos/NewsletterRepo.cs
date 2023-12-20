@@ -140,17 +140,54 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     {
         var newsletter = await CreateAndAddNewsletterToContext(context);
 
-        var recipes = _context.UserRecipes
+        var breakfastRecipes = _context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Where(r => r.Type == RecipeType.Breakfast)
             .OrderBy(r => EF.Functions.Random())
-            .Take(1)
+            .Take(context.DaysUntilNextNewsletter)
+            .ToList();
+
+        var lunchRecipes = _context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .Where(r => r.Type == RecipeType.Lunch)
+            .OrderBy(r => EF.Functions.Random())
+            .Take(context.DaysUntilNextNewsletter)
+            .ToList();
+
+        var dinnerRecipes = _context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .Where(r => r.Type == RecipeType.Dinner)
+            .OrderBy(r => EF.Functions.Random())
+            .Take(context.DaysUntilNextNewsletter)
+            .ToList();
+
+        var sideRecipes = _context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .Where(r => r.Type == RecipeType.Side)
+            .OrderBy(r => EF.Functions.Random())
+            .Take(context.DaysUntilNextNewsletter)
+            .ToList();
+
+        var dessertRecipes = _context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .Where(r => r.Type == RecipeType.Dessert)
+            .OrderBy(r => EF.Functions.Random())
+            .Take(context.DaysUntilNextNewsletter)
             .ToList();
 
         var userViewModel = new UserNewsletterDto(context);
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {
-            Recipes = recipes
+            DinnerRecipes = dinnerRecipes,
+            SideRecipes = sideRecipes,
+            LunchRecipes = lunchRecipes,
+            DessertRecipes = dessertRecipes,
+            BreakfastRecipes = breakfastRecipes,
         };
 
         return viewModel;

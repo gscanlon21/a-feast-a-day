@@ -11,10 +11,12 @@ public partial class NewsletterRepo
     /// </summary>
     internal async Task<WorkoutContext?> BuildWorkoutContext(User user, string token)
     {
+        var (_, timeUntilNextSend) = await userRepo.GetNextSendDate(user);
         return new WorkoutContext()
         {
             User = user,
             Token = token,
+            DaysUntilNextNewsletter = ((int?)timeUntilNextSend?.TotalDays + 1) ?? 1
         };
     }
 

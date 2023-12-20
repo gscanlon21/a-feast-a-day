@@ -1,5 +1,4 @@
-﻿using Core.Models.Exercise;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -21,12 +20,15 @@ public class UserRecipeInstruction
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; private init; } = null!;
+    public string Name { get; init; } = null!;
 
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; private init; } = null;
+    public string? Notes { get; init; } = null;
+
+    [NotMapped]
+    public bool Hide { get; set; }
 
     public string? DisabledReason { get; private init; } = null;
 

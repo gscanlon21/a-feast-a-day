@@ -1,10 +1,7 @@
 ﻿using Core.Consts;
-using Core.Models.Equipment;
-using Core.Models.Exercise;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
-using Data.Entities.User;
 using Data.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,8 +24,6 @@ public class UserNewsletterDto(Entities.User.User user, string token)
 
     public Features Features { get; } = user.Features;
 
-    public Equipment Equipment { get; } = user.Equipment;
-
     [Display(Name = "Footnotes")]
     public FootnoteType FootnoteType { get; } = user.FootnoteType;
 
@@ -39,7 +34,7 @@ public class UserNewsletterDto(Entities.User.User user, string token)
     [Display(Name = "Strengthening Days")]
     public Days SendDays { get; } = user.SendDays;
 
-    [Display(Name = "Workout Verbosity")]
+    [Display(Name = "Email Verbosity")]
     public Verbosity Verbosity { get; } = user.Verbosity;
 
     public int FootnoteCountTop { get; init; } = user.FootnoteCountTop;
