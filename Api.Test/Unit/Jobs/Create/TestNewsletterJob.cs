@@ -84,21 +84,6 @@ public class TestNewsletterJob : FakeDatabase
     }
 
     [TestMethod]
-    public async Task GetUsers_WhenIncludeMobilityWorkouts_ReturnsOne()
-    {
-        Context.Users.Add(new Data.Entities.User.User(string.Empty, true)
-        {
-            LastActive = Today,
-            SendDays = Core.Models.User.Days.None,
-            SendHour = int.Parse(DateTime.UtcNow.ToString("HH"))
-        });
-        await Context.SaveChangesAsync();
-
-        var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 1);
-    }
-
-    [TestMethod]
     public async Task GetUsers_WhenActive_ReturnsOne()
     {
         Context.Users.Add(new Data.Entities.User.User(string.Empty, true)

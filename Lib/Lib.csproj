@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Pages\Shared\Components\**" />
+    <Compile Remove="ViewModels\Equipment\**" />
     <Content Remove="Pages\Shared\Components\**" />
+    <Content Remove="ViewModels\Equipment\**" />
     <EmbeddedResource Remove="Pages\Shared\Components\**" />
+    <EmbeddedResource Remove="ViewModels\Equipment\**" />
     <None Remove="Pages\Shared\Components\**" />
+    <None Remove="ViewModels\Equipment\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,10 +60,6 @@
 
   <ItemGroup>
     <None Include="C:\code\gscanlon\finer-fettle\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\Equipment\" />
   </ItemGroup>
 
 
