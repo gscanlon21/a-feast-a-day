@@ -29,7 +29,7 @@ public class UserEditViewModel
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         Verbosity = user.Verbosity;
         FootnoteType = user.FootnoteType;
-        ShowStaticImages = user.ShowStaticImages;
+        ShareMyRecipes = user.ShareMyRecipes;
         SendHour = user.SendHour;
         Token = token;
     }
@@ -72,11 +72,11 @@ public class UserEditViewModel
     public int SendHour { get; init; }
 
     [Required]
-    [Display(Name = "Show Static Images", Description = "Show static images instead of animated images in the workouts.")]
-    public bool ShowStaticImages { get; set; }
+    [Display(Name = "Share My Recipes", Description = "Share your recipes with other users.")]
+    public bool ShareMyRecipes { get; set; }
 
     [Required]
-    [Display(Name = "Strengthening Days", Description = "What days do you want to receive new strengthening workouts?")]
+    [Display(Name = "Send Days", Description = "What days do you want to receive new recipes?")]
     public Days SendDays { get; private set; }
 
     public Verbosity[]? VerbosityBinder

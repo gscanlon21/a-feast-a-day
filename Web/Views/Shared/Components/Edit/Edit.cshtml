@@ -83,10 +83,10 @@
             </div>
 
             <div class="form-group form-check mb-3">
-                <label asp-for="ShowStaticImages" class="control-label">@Html.DisplayNameFor(_ => Model.ShowStaticImages)</label>
-                <input class="form-check-input" asp-for="ShowStaticImages" aria-describedby="prefer-static-help" />
-                <span asp-validation-for="ShowStaticImages" class="text-danger"></span>
-                <div id="prefer-static-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.ShowStaticImages)</div>
+                <label asp-for="ShareMyRecipes" class="control-label">@Html.DisplayNameFor(_ => Model.ShareMyRecipes)</label>
+                <input class="form-check-input" asp-for="ShareMyRecipes" aria-describedby="prefer-static-help" />
+                <span asp-validation-for="ShareMyRecipes" class="text-danger"></span>
+                <div id="prefer-static-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.ShareMyRecipes)</div>
             </div>
             <div class="form-group form-check mb-3">
                 <label asp-for="NewsletterEnabled" class="control-label">@Html.DisplayNameFor(_ => Model.NewsletterEnabled)</label>
@@ -122,8 +122,9 @@
         @await Component.InvokeAsync(PastWorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(WorkoutsPerWeekViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(IgnoredViewComponent.Name, new { Model.User })
     </div>
 </div>

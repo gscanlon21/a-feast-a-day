@@ -5,14 +5,15 @@
 
 <details class="mb-25">
     <summary class="mb-1 h5">
-        @Html.DisplayNameFor(_ => Model.Recipes)
-        <span class="float-end">@Model.Recipes.Count</span>
+        @(Model.Recipe.Id == default ? "New" : "Edit") Recipe
     </summary>
 
     <div class="alert alert-secondary" role="alert">
         <div class="mb-4">
-            <h6 class="mb-1">New recipe</h6>
+            <h6 class="mb-1">@(Model.Recipe.Id == default ? "New" : "Edit") Recipe</h6>
             <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <input asp-for="Recipe.Id" type="hidden" class="form-control" />
+
                 <div class="form-group mb-3">
                     <label asp-for="Recipe.Name" class="control-label">Name</label>
                     <input asp-for="Recipe.Name" type="text" class="form-control" required="required" />
@@ -22,6 +23,99 @@
                     <input asp-for="Recipe.Notes" type="text" class="form-control" />
                 </div>
 
+                <div class="form-group mb-3 mt-3">
+                    <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
+                    <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
+                    <div style="display:flex;column-gap:1ex;">
+                        <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class="allow-demo"
+                               oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
+                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                            <input type="range" style="width:100%;" class="allow-demo"
+                                   name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
+                                   min="1" max="10" step="1" value="@Model.Recipe.Servings"
+                                   oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
+
+                            <datalist id="hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                                <option value="15"></option>
+                                <option value="30"></option>
+                                <option value="50"></option>
+                                <option value="75"></option>
+                                <option value="100"></option>
+
+                                <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(15% - .5ch)">2</div>
+                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(30% - .5ch)">4</div>
+                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">6</div>
+                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">8</div>
+                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</div>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div id="@Html.IdFor(_ => Model.Recipe.Servings)-help" class="form-text"></div>
+                </div>
+
+                <div class="form-group mb-3 mt-3">
+                    <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>
+                    <div><span asp-validation-for="Recipe.PrepTime" class="text-danger"></span></div>
+                    <div style="display:flex;column-gap:1ex;">
+                        <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;" class="allow-demo"
+                               oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
+                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                            <input type="range" style="width:100%;" class="allow-demo"
+                                   name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" list="hashmarks" id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
+                                   min="0" max="100" step="5" value="@Model.Recipe.PrepTime"
+                                   oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
+
+                            <datalist id="hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                                <option value="15"></option>
+                                <option value="30"></option>
+                                <option value="50"></option>
+                                <option value="75"></option>
+                                <option value="100"></option>
+
+                                <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="15" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(15% - .5ch)">5</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(30% - .5ch)">10</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="50" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">15</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="75" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">20</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="100" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">30</div>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div id="@Html.IdFor(_ => Model.Recipe.PrepTime)-help" class="form-text"></div>
+                </div>
+
+                <div class="form-group mb-3 mt-3">
+                    <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.CookTime)</label>
+                    <div><span asp-validation-for="Recipe.CookTime" class="text-danger"></span></div>
+                    <div style="display:flex;column-gap:1ex;">
+                        <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;" class="allow-demo"
+                               oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
+                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                            <input type="range" style="width:100%;" class="allow-demo"
+                                   name="@Html.IdFor(_ => Model.Recipe.CookTime)Input" list="hashmarks" id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
+                                   min="0" max="100" step="5" value="@Model.Recipe.CookTime"
+                                   oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
+
+                            <datalist id="hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                                <option value="15"></option>
+                                <option value="30"></option>
+                                <option value="50"></option>
+                                <option value="75"></option>
+                                <option value="100"></option>
+
+                                <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="15" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(15% - .5ch)">10</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(30% - .5ch)">20</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="50" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">30</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="75" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">40</div>
+                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="100" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">60</div>
+                            </datalist>
+                        </div>
+                    </div>
+                    <div id="@Html.IdFor(_ => Model.Recipe.CookTime)-help" class="form-text"></div>
+                </div>
+     
                 <div class="form-group mb-3">
                     <label asp-for="Recipe.TypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Type)</label>
                     <select asp-for="Recipe.TypeBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
@@ -40,11 +134,48 @@
                             var useringredient = Model.Recipe.Ingredients[id];
                             <div id="custom-ingredient-@id" class="custom-ingredient @(useringredient.Hide ? "d-none" : "")" data-day="@id">
                                 <div class="row">
-                                    <span class="col-auto font-weight--semibold">Day @id</span>
-                                </div>
-                                <div class="row">
-                                    <input id="hide-input-@id" type="hidden" asp-for="Recipe.Ingredients[id].Hide" />
+                                    <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.Ingredients[id].Hide" />
                                     <input type="hidden" asp-for="@id" />
+
+                                    <div class="form-group mb-3 mt-3">
+                                        <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].Quantity)</label>
+                                        <div><span asp-validation-for="Recipe.Ingredients[id].Quantity" class="text-danger"></span></div>
+                                        <div style="display:flex;column-gap:1ex;">
+                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity))" type="number" asp-for="Recipe.Ingredients[id].Quantity" style="width:6ch;height:fit-content;" class="allow-demo"
+                                                   oninput="@Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)Input.value = this.valueAsNumber" />
+                                            <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                                                <input type="range" style="width:100%;" class="allow-demo"
+                                                       name="@Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)Input" list="hashmarks" id="@Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)-input"
+                                                       min="1" max="10" step="1" value="@Model.Recipe.Ingredients[id].Quantity"
+                                                       oninput="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)).value = this.valueAsNumber" />
+
+                                                <datalist id="hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                                                    <option value="15"></option>
+                                                    <option value="30"></option>
+                                                    <option value="50"></option>
+                                                    <option value="75"></option>
+                                                    <option value="100"></option>
+
+                                                    <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                                                    <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(15% - .5ch)">2</div>
+                                                    <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(30% - .5ch)">4</div>
+                                                    <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">6</div>
+                                                    <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">8</div>
+                                                    <div  style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</div>
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                        <div id="@Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)-help" class="form-text"></div>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Recipe.Ingredients[id].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].Measure)</label>
+                                        <select asp-for="Recipe.Ingredients[id].Measure" class="form-control" aria-describedby="time-help"
+                                                asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
+                                        </select>
+                                        <span asp-validation-for="Recipe.Ingredients[id].Measure" class="text-danger"></span>
+                                        <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Ingredients[id].Measure)</span>
+                                    </div>
 
                                     <div class="form-group mb-3 col" style="min-width:200px;">
                                         <label asp-for="Recipe.Ingredients[id].Name" class="control-label">Name</label>
@@ -54,48 +185,48 @@
                             </div>
                         }
                         <div class="btn-group">
-                            <button id="custom-freq-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                            <button id="custom-freq-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                            <button id="custom-ingredient-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                            <button id="custom-ingredient-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
                         </div>
                     </div>
 
                     <script defer="defer">
-                        document.getElementById('custom-freq-add-button').addEventListener('click', (e) => {
-                            const freqs = Array.from(document.getElementsByClassName('custom-ingredient'));
-                            for (const freq of freqs) {
-                                if (freq.classList.contains('d-none')) {
-                                    // Unhide the freq
-                                    freq.classList.remove('d-none');
-                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'False';
+                        document.getElementById('custom-ingredient-add-button').addEventListener('click', (e) => {
+                            const ingredients = Array.from(document.getElementsByClassName('custom-ingredient'));
+                            for (const ingredient of ingredients) {
+                                if (ingredient.classList.contains('d-none')) {
+                                    // Unhide the ingredient
+                                    ingredient.classList.remove('d-none');
+                                    document.getElementById('hide-ingredient-input-' + ingredient.dataset.day).value = 'False';
                                     break;
                                 }
                             }
 
-                            // Always show the remove button after adding a freq
-                            document.getElementById('custom-freq-remove-button').classList.remove('d-none');
+                            // Always show the remove button after adding a ingredient
+                            document.getElementById('custom-ingredient-remove-button').classList.remove('d-none');
 
-                            // Hide the add button if we have already shown all freqs
-                            if (freqs.every(f => !f.classList.contains('d-none'))) {
+                            // Hide the add button if we have already shown all ingredients
+                            if (ingredients.every(f => !f.classList.contains('d-none'))) {
                                 e.currentTarget.classList.add('d-none');
                             }
                         });
 
-                        document.getElementById('custom-freq-remove-button').addEventListener('click', (e) => {
-                            const freqs = Array.from(document.getElementsByClassName('custom-ingredient'));
-                            for (const freq of freqs.reverse()) {
-                                if (!freq.classList.contains('d-none')) {
-                                    // Hide the freq
-                                    freq.classList.add('d-none');
-                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'True';
+                        document.getElementById('custom-ingredient-remove-button').addEventListener('click', (e) => {
+                            const ingredients = Array.from(document.getElementsByClassName('custom-ingredient'));
+                            for (const ingredient of ingredients.reverse()) {
+                                if (!ingredient.classList.contains('d-none')) {
+                                    // Hide the ingredient
+                                    ingredient.classList.add('d-none');
+                                    document.getElementById('hide-ingredient-input-' + ingredient.dataset.day).value = 'True';
                                     break;
                                 }
                             }
 
-                            // Always show the add button after removing a freq
-                            document.getElementById('custom-freq-add-button').classList.remove('d-none');
+                            // Always show the add button after removing a ingredient
+                            document.getElementById('custom-ingredient-add-button').classList.remove('d-none');
 
-                            // Hide the remove button when there is one remaining freq
-                            if (freqs.filter(f => !f.classList.contains('d-none')).length === 1) {
+                            // Hide the remove button when there is one remaining ingredient
+                            if (ingredients.filter(f => !f.classList.contains('d-none')).length === 1) {
                                 e.currentTarget.classList.add('d-none');
                             }
                         });
@@ -111,10 +242,7 @@
                             var userinstruction = Model.Recipe.Instructions[id];
                             <div id="custom-instruction-@id" class="custom-instruction @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
                                 <div class="row">
-                                    <span class="col-auto font-weight--semibold">Day @id</span>
-                                </div>
-                                <div class="row">
-                                    <input id="hide-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
+                                    <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
                                     <input type="hidden" asp-for="@id" />
 
                                     <div class="form-group mb-3 col" style="min-width:200px;">
@@ -125,48 +253,48 @@
                             </div>
                         }
                         <div class="btn-group">
-                            <button id="custom-freq-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                            <button id="custom-freq-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                            <button id="custom-instruction-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                            <button id="custom-instruction-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
                         </div>
                     </div>
 
                     <script defer="defer">
-                        document.getElementById('custom-freq-add-button').addEventListener('click', (e) => {
-                            const freqs = Array.from(document.getElementsByClassName('custom-instruction'));
-                            for (const freq of freqs) {
-                                if (freq.classList.contains('d-none')) {
-                                    // Unhide the freq
-                                    freq.classList.remove('d-none');
-                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'False';
+                        document.getElementById('custom-instruction-add-button').addEventListener('click', (e) => {
+                            const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
+                            for (const instruction of instructions) {
+                                if (instruction.classList.contains('d-none')) {
+                                    // Unhide the instruction
+                                    instruction.classList.remove('d-none');
+                                    document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'False';
                                     break;
                                 }
                             }
 
-                            // Always show the remove button after adding a freq
-                            document.getElementById('custom-freq-remove-button').classList.remove('d-none');
+                            // Always show the remove button after adding a instruction
+                            document.getElementById('custom-instruction-remove-button').classList.remove('d-none');
 
-                            // Hide the add button if we have already shown all freqs
-                            if (freqs.every(f => !f.classList.contains('d-none'))) {
+                            // Hide the add button if we have already shown all instructions
+                            if (instructions.every(f => !f.classList.contains('d-none'))) {
                                 e.currentTarget.classList.add('d-none');
                             }
                         });
 
-                        document.getElementById('custom-freq-remove-button').addEventListener('click', (e) => {
-                            const freqs = Array.from(document.getElementsByClassName('custom-instruction'));
-                            for (const freq of freqs.reverse()) {
-                                if (!freq.classList.contains('d-none')) {
-                                    // Hide the freq
-                                    freq.classList.add('d-none');
-                                    document.getElementById('hide-input-' + freq.dataset.day).value = 'True';
+                        document.getElementById('custom-instruction-remove-button').addEventListener('click', (e) => {
+                            const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
+                            for (const instruction of instructions.reverse()) {
+                                if (!instruction.classList.contains('d-none')) {
+                                    // Hide the instruction
+                                    instruction.classList.add('d-none');
+                                    document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'True';
                                     break;
                                 }
                             }
 
-                            // Always show the add button after removing a freq
-                            document.getElementById('custom-freq-add-button').classList.remove('d-none');
+                            // Always show the add button after removing a instruction
+                            document.getElementById('custom-instruction-add-button').classList.remove('d-none');
 
-                            // Hide the remove button when there is one remaining freq
-                            if (freqs.filter(f => !f.classList.contains('d-none')).length === 1) {
+                            // Hide the remove button when there is one remaining instruction
+                            if (instructions.filter(f => !f.classList.contains('d-none')).length === 1) {
                                 e.currentTarget.classList.add('d-none');
                             }
                         });
@@ -179,20 +307,20 @@
             </form>
         </div>
 
-        @foreach (var recipe in Model.Recipes)
+        @if (Model.Recipe.Id != default)
         {
             <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" name="RecipeId" asp-for="@recipe.Id" />
+                <input type="hidden" name="RecipeId" asp-for="@Model.Recipe.Id" />
 
                 <div class="form-group mt-3">
                     <div class="input-group">
-                        <textarea class="form-control" disabled="disabled" aria-describedby="exercise-help" rows="2">@recipe.Name</textarea>
+                        <textarea class="form-control" disabled="disabled" aria-describedby="exercise-help" rows="2">@Model.Recipe.Name</textarea>
                         <input type="submit" value="-" class="btn btn-outline-secondary" />
                     </div>
                     <span for="FootnoteId" class="text-danger"></span>
                     <div class="form-text font-size--smaller">
-                        @recipe.Name
+                        @Model.Recipe.Name
                     </div>
                 </div>
             </form>

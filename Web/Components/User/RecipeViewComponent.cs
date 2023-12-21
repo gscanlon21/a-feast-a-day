@@ -1,5 +1,6 @@
 ﻿using Core.Models.Footnote;
 using Data;
+using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,7 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
     /// </summary>
     public const string Name = "Recipe";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, UserRecipe? recipe = null)
     {
         // Custom footnotes must be enabled in the user edit form to show in the newsletter.
         if (!user.FootnoteType.HasFlag(FootnoteType.Custom))
@@ -22,24 +23,18 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
             return Content("");
         }
 
-        var userRecipes = await context.UserRecipes
-            .Where(f => f.UserId == user.Id)
-            .OrderBy(f => f.Name)
-            .ToListAsync();
-
         return View("Recipe", new RecipeViewModel()
         {
             User = user,
-            Recipes = userRecipes,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
-            Recipe = new Data.Entities.User.UserRecipe()
+            Recipe = recipe ?? new UserRecipe()
             {
                 User = user,
-                Ingredients = Enumerable.Repeat(new Data.Entities.User.UserRecipeIngredient()
+                Ingredients = Enumerable.Repeat(new UserRecipeIngredient()
                 {
                     Hide = true
                 }, 10).ToList(),
-                Instructions = Enumerable.Repeat(new Data.Entities.User.UserRecipeInstruction()
+                Instructions = Enumerable.Repeat(new UserRecipeInstruction()
                 {
                     Hide = true
                 }, 10).ToList()

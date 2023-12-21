@@ -27,11 +27,11 @@ public class UserNewsletterDto(Entities.User.User user, string token)
     [Display(Name = "Footnotes")]
     public FootnoteType FootnoteType { get; } = user.FootnoteType;
 
-    public bool ShowStaticImages { get; } = user.ShowStaticImages;
+    public bool ShareMyRecipes { get; } = user.ShareMyRecipes;
 
     public DateOnly? LastActive { get; } = user.LastActive;
 
-    [Display(Name = "Strengthening Days")]
+    [Display(Name = "Send Days")]
     public Days SendDays { get; } = user.SendDays;
 
     [Display(Name = "Email Verbosity")]

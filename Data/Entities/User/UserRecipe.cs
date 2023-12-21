@@ -24,7 +24,13 @@ public class UserRecipe
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; init; } = null!;
+    public string Name { get; set; } = null!;
+
+    public int PrepTime { get; set; }
+
+    public int CookTime { get; set; }
+
+    public int Servings { get; set; }
 
     [Required]
     public RecipeType Type { get; set; }
@@ -32,7 +38,7 @@ public class UserRecipe
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; init; } = null;
+    public string? Notes { get; set; } = null;
 
     public string? DisabledReason { get; private init; } = null;
 

@@ -41,7 +41,7 @@
     {
         @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
         <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
-            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"{Model.Id}")">Manage</a>
+            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"{Model.Section}/{Model.Id}")">Manage</a>
         </small>
     }
          
@@ -59,7 +59,7 @@
                     @foreach (var ingredient in Model.Ingredients)
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
-                            @ingredient.Quantity @ingredient.Measure @ingredient.Name
+                            @ingredient.Quantity @(ingredient.Measure?.GetSingleDisplayName()) @ingredient.Name
                         </li>
                     }
                 </ul>
@@ -78,7 +78,7 @@
         @*
         @if (Verbosity.HasFlag(Verbosity.Images))
         {
-            bool showStaticImage = (User?.ShowStaticImages == true) || Model.Variation.AnimatedImage == null;
+            bool showStaticImage = (User?.ShareMyRecipes == true) || Model.Variation.AnimatedImage == null;
             var staticSrc = $"{SiteSettings.Value.CdnLink}/static/{Model.Variation.StaticImage}";
             var animatedSrc = $"{SiteSettings.Value.CdnLink}/animated/{Model.Variation.AnimatedImage}";
             // If we want to reduce layout shift with aspect-ratio, that really needs to be included on the table with the image because our images don't have consistent aspect ratios. 

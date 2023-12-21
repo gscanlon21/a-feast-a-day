@@ -71,7 +71,7 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
                 viewModel.User.FootnoteType = viewModel.FootnoteType;
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
-                viewModel.User.ShowStaticImages = viewModel.ShowStaticImages;
+                viewModel.User.ShareMyRecipes = viewModel.ShareMyRecipes;
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
                 {

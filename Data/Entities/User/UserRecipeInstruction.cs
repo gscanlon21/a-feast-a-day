@@ -27,6 +27,8 @@ public class UserRecipeInstruction
     /// </summary>
     public string? Notes { get; init; } = null;
 
+    public int Order { get; set; }
+
     [NotMapped]
     public bool Hide { get; set; }
 

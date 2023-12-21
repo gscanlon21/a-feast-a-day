@@ -1,16 +1,18 @@
 ﻿using Core.Models.Newsletter;
+using Data.Entities.User;
 
 namespace Web.ViewModels.User;
 
 /// <summary>
 /// For CRUD actions
 /// </summary>
-public class UserManageExerciseVariationViewModel
+public class UserManageRecipeViewModel
 {
-    public record Parameters(Section Section, string Email, string Token, int ExerciseId, int VariationId);
+    public Data.Entities.User.User User { get; set; } = null!;
 
-    public required UserManageExerciseViewModel Exercise { get; set; }
-    public UserManageVariationViewModel? Variation { get; set; }
+    public record Parameters(Section Section, string Email, string Token, int RecipeId);
+
+    public required UserRecipe Recipe { get; set; }
 
     public bool? WasUpdated { get; init; }
 }

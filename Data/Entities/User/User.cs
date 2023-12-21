@@ -91,7 +91,7 @@ public class User
     /// User prefers static instead of dynamic images?
     /// </summary>
     [Required]
-    public bool ShowStaticImages { get; set; }
+    public bool ShareMyRecipes { get; set; }
 
     /// <summary>
     /// Types of footnotes to show to the user.
