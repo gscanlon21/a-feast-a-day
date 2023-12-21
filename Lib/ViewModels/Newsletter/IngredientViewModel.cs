@@ -19,7 +19,7 @@ public class IngredientViewModel
     [Required]
     public string Name { get; init; } = null!;
 
-    public double Quantity { get; init; }
+    public string Quantity { get; init; }
 
     public Measure? Measure { get; init; }
 

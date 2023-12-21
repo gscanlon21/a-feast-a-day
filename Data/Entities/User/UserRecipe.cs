@@ -26,10 +26,13 @@ public class UserRecipe
     [Required]
     public string Name { get; set; } = null!;
 
+    [Display(Name = "Prep Time")]
     public int PrepTime { get; set; }
 
+    [Display(Name = "Cook Time")]
     public int CookTime { get; set; }
 
+    [Display(Name = "Servings")]
     public int Servings { get; set; }
 
     [Required]

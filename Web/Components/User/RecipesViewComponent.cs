@@ -1,7 +1,6 @@
 ﻿using Data;
 using Data.Entities.User;
 using Data.Repos;
-using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

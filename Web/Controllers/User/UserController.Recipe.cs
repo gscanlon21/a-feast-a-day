@@ -2,7 +2,6 @@
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using Web.Code.TempData;
 using Web.ViewModels.User;
 

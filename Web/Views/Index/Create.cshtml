@@ -95,14 +95,6 @@
                     </div>
                     <div class="form-group form-check mb-3">
                         <div>
-                            <span><label asp-for="UserCreateViewModel.IsNewToFitness" class="control-label">@Html.DisplayNameFor(_ => Model.UserCreateViewModel.IsNewToFitness)</label></span>
-                            <input class="form-check-input allow-demo" asp-for="UserCreateViewModel.IsNewToFitness" aria-describedby="fitness-help" />
-                        </div>
-                        <span asp-validation-for="UserCreateViewModel.IsNewToFitness" class="text-danger"></span>
-                        <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserCreateViewModel.IsNewToFitness)</div>
-                    </div>
-                    <div class="form-group form-check mb-3">
-                        <div>
                             <span><label asp-for="UserCreateViewModel.AcceptedTerms" class="control-label">I agree to the</label> <a class="allow-demo" asp-area="" asp-page="/Terms">Terms of Use</a></span>
                             <input class="form-check-input allow-demo" asp-for="UserCreateViewModel.AcceptedTerms" aria-describedby="terms-help" />
                         </div>

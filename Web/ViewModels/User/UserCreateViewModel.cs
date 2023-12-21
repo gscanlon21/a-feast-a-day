@@ -15,7 +15,6 @@ public class UserCreateViewModel
 
     public UserCreateViewModel()
     {
-        IsNewToFitness = true;
     }
 
     [DataType(DataType.EmailAddress)]
@@ -29,10 +28,6 @@ public class UserCreateViewModel
     [Required, MustBeTrue]
     [Display(Description = "You must be at least 18 years old.")]
     public bool AcceptedTerms { get; init; }
-
-    [Required]
-    [Display(Name = "I'm new to fitness", Description = "Simplify your workouts.")]
-    public bool IsNewToFitness { get; init; }
 
     /// <summary>
     /// Anti-bot honeypot.

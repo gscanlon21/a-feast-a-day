@@ -41,6 +41,8 @@ public class CoreContext : DbContext
 
         ////////// Query Filters //////////
         modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.DisabledReason == null);
+        modelBuilder.Entity<UserRecipeIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
+        modelBuilder.Entity<UserRecipeInstruction>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);
     }
 }

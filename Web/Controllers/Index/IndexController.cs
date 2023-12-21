@@ -45,7 +45,7 @@ public class IndexController(CoreContext context, UserRepo userRepo, CaptchaServ
 
     [Route(""), HttpPost]
     public async Task<IActionResult> Create(
-        [Bind("Email,AcceptedTerms,IsNewToFitness,IExist", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel,
+        [Bind("Email,AcceptedTerms,IExist", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel,
         [FromForm(Name = "frc-captcha-solution")] string frcCaptchaSolution)
     {
         if (ModelState.IsValid && captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success != false)

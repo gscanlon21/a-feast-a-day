@@ -3,7 +3,6 @@ using Data;
 using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Web.ViewModels.User.Components;
 
 namespace Web.Components.User;

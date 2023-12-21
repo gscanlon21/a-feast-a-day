@@ -12,7 +12,6 @@ public class CreateViewModel
     {
         UserCreateViewModel = new UserCreateViewModel()
         {
-            IsNewToFitness = true
         };
     }
 

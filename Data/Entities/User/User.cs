@@ -177,17 +177,8 @@ public class User
     #endregion
     #region Advanced Preferences
 
-    public bool IgnorePrerequisites { get; set; }
-
-    public int AtLeastXUniqueMusclesPerExercise_Mobility { get; set; } = Consts.AtLeastXUniqueMusclesPerExercise_MobilityDefault;
-    public int AtLeastXUniqueMusclesPerExercise_Flexibility { get; set; } = Consts.AtLeastXUniqueMusclesPerExercise_FlexibilityDefault;
-    public int AtLeastXUniqueMusclesPerExercise_Accessory { get; set; } = Consts.AtLeastXUniqueMusclesPerExercise_AccessoryDefault;
-
     public int FootnoteCountTop { get; set; } = Consts.FootnoteCountTopDefault;
     public int FootnoteCountBottom { get; set; } = Consts.FootnoteCountBottomDefault;
-
-    public double WeightSecondaryMusclesXTimesLess { get; set; } = Consts.WeightSecondaryMusclesXTimesLessDefault;
-    public double WeightIsolationXTimesMore { get; set; } = Consts.WeightIsolationXTimesMoreDefault;
 
     #endregion
     #region Navigation Properties

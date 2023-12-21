@@ -113,14 +113,8 @@ public partial class UserController(CoreContext context, IServiceScopeFactory se
         {
             try
             {
-                user.AtLeastXUniqueMusclesPerExercise_Accessory = viewModel.AtLeastXUniqueMusclesPerExercise_Accessory;
-                user.AtLeastXUniqueMusclesPerExercise_Mobility = viewModel.AtLeastXUniqueMusclesPerExercise_Mobility;
-                user.AtLeastXUniqueMusclesPerExercise_Flexibility = viewModel.AtLeastXUniqueMusclesPerExercise_Flexibility;
-                user.WeightIsolationXTimesMore = viewModel.WeightIsolationXTimesMore;
-                user.WeightSecondaryMusclesXTimesLess = viewModel.WeightSecondaryMusclesXTimesLess;
                 user.FootnoteCountTop = viewModel.FootnoteCountTop;
                 user.FootnoteCountBottom = viewModel.FootnoteCountBottom;
-                user.IgnorePrerequisites = viewModel.IgnorePrerequisites;
 
                 await context.SaveChangesAsync();
             }

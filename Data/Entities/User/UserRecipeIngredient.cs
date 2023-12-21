@@ -23,8 +23,14 @@ public class UserRecipeIngredient
     [Required]
     public string Name { get; init; } = null!;
 
-    [Required]
-    public double Quantity { get; set; }
+    [NotMapped]
+    public string Quantity => QuantityDenominator == 1 ? $"{QuantityNumerator}" : $"{QuantityNumerator}/{QuantityDenominator}";
+
+    [Required, Range(1, 10)]
+    public int QuantityNumerator { get; set; } = 1;
+
+    [Required, Range(1, 10)]
+    public int QuantityDenominator { get; set; } = 1;
 
     [Required]
     public Measure Measure { get; set; }

@@ -14,7 +14,7 @@ public enum Measure
     [Display(Name = "Ounce")]
     Ounce = 2,
 
-    [Display(Name = "Teaspoon", ShortName = "Tsp.")]
+    [Display(Name = "Teaspoon", ShortName = "tsp.")]
     Teaspoon = 3,
 
     [Display(Name = "Tablespoon", ShortName = "Tbsp.")]
@@ -22,4 +22,7 @@ public enum Measure
 
     [Display(Name = "Cup")]
     Cup = 5,
+
+    [Display(Name = "Pound", ShortName = "lb.")]
+    Pound = 6,
 }
