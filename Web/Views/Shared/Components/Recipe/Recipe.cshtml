@@ -2,317 +2,302 @@
 @using Core.Models.Exercise
 @using Web.Code.Extensions
 
+<h5 class="mb-1">@(Model.Recipe.Id == default ? "New" : "Edit") Recipe</h5>
+<div class="alert alert-light shadow mb-3" role="alert">
+    <form id="recipe-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.AddRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+        <input asp-for="Recipe.Id" type="hidden" class="form-control" />
 
-<details class="mb-25">
-    <summary class="mb-1 h5">
-        @(Model.Recipe.Id == default ? "New" : "Edit") Recipe
-    </summary>
-
-    <div class="alert alert-secondary" role="alert">
-        <div class="mb-4">
-            <h6 class="mb-1">@(Model.Recipe.Id == default ? "New" : "Edit") Recipe</h6>
-            <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
-                <input asp-for="Recipe.Id" type="hidden" class="form-control" />
-
-                <div class="form-group mb-3">
-                    <label asp-for="Recipe.Name" class="control-label">Name</label>
-                    <input asp-for="Recipe.Name" type="text" class="form-control" required="required" />
-                </div>
-                <div class="form-group mb-3">
-                    <label asp-for="Recipe.Notes" class="control-label">Notes</label>
-                    <input asp-for="Recipe.Notes" type="text" class="form-control" />
-                </div>
-
-                <div class="form-group mb-3 mt-3">
-                    <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>
-                    <div><span asp-validation-for="Recipe.PrepTime" class="text-danger"></span></div>
-                    <div style="display:flex;column-gap:1ex;">
-                        <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;" class="allow-demo"
-                               oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
-                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                            <input type="range" style="width:100%;" class="allow-demo"
-                                   name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" list="hashmarks2" id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
-                                   min="0" max="60" step="5" value="@Model.Recipe.PrepTime"
-                                   oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
-
-                            <datalist id="hashmarks2" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
-                                <option value="0"></option>
-                                <option value="15"></option>
-                                <option value="30"></option>
-                                <option value="45"></option>
-                                <option value="60"></option>
-
-                                <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="15" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">15 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">30 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="45" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">45 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">60 min</div>
-                            </datalist>
-                        </div>
-                    </div>
-                    <div id="@Html.IdFor(_ => Model.Recipe.PrepTime)-help" class="form-text"></div>
-                </div>
-
-                <div class="form-group mb-3 mt-3">
-                    <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.CookTime)</label>
-                    <div><span asp-validation-for="Recipe.CookTime" class="text-danger"></span></div>
-                    <div style="display:flex;column-gap:1ex;">
-                        <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;" class="allow-demo"
-                               oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
-                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                            <input type="range" style="width:100%;" class="allow-demo"
-                                   name="@Html.IdFor(_ => Model.Recipe.CookTime)Input" list="hashmarks3" id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
-                                   min="0" max="120" step="5" value="@Model.Recipe.CookTime"
-                                   oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
-
-                            <datalist id="hashmarks3" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
-                                <option value="0"></option>
-                                <option value="30"></option>
-                                <option value="60"></option>
-                                <option value="90"></option>
-                                <option value="120"></option>
-
-                                <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">30 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">60 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="90" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">90 min</div>
-                                <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="120" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">120 min</div>
-                            </datalist>
-                        </div>
-                    </div>
-                    <div id="@Html.IdFor(_ => Model.Recipe.CookTime)-help" class="form-text"></div>
-                </div>
-
-                <div class="form-group mb-3 mt-3">
-                    <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
-                    <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
-                    <div style="display:flex;column-gap:1ex;">
-                        <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class="allow-demo"
-                               oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
-                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                            <input type="range" style="width:100%;" class="allow-demo"
-                                   name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks1" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
-                                   min="1" max="10" step="1" value="@Model.Recipe.Servings"
-                                   oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
-
-                            <datalist id="hashmarks1" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
-                                <option value="2"></option>
-                                <option value="4"></option>
-                                <option value="6"></option>
-                                <option value="8"></option>
-                                <option value="10"></option>
-
-                                <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
-                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</div>
-                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</div>
-                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</div>
-                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(80% - .5ch)">8</div>
-                                <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</div>
-                            </datalist>
-                        </div>
-                    </div>
-                    <div id="@Html.IdFor(_ => Model.Recipe.Servings)-help" class="form-text"></div>
-                </div>
-     
-                <div class="form-group mb-3">
-                    <label asp-for="Recipe.TypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Type)</label>
-                    <select asp-for="Recipe.TypeBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
-                            asp-items="@(EnumExtensions.GetDisplayValues<RecipeType>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
-                    </select>
-                    <span asp-validation-for="Recipe.TypeBinder" class="text-danger"></span>
-                    <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Type)</div>
-                </div>
-
-                <details class="mb-3" >
-                    <summary class=""><b class="">Edit Ingredients</b></summary>
-
-                    <div class="mt-1 ps-3">
-                        @for (int id = 0; id < Model.Recipe.Ingredients.Count; id++)
-                        {
-                            var useringredient = Model.Recipe.Ingredients[id];
-                            <div id="custom-ingredient-@id" class="custom-ingredient @(useringredient.Hide ? "d-none" : "")" data-day="@id">
-                                <div class="row">
-                                    <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.Ingredients[id].Hide" />
-                                    <input type="hidden" asp-for="@id" />
-
-                                    <div class="form-group mb-3 mt-3">
-                                        <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].Quantity)</label>
-                                        <div><span asp-validation-for="Recipe.Ingredients[id].QuantityNumerator" class="text-danger"></span></div>
-                                        <div><span asp-validation-for="Recipe.Ingredients[id].QuantityDenominator" class="text-danger"></span></div>
-                                        
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator))" type="number" asp-for="Recipe.Ingredients[id].QuantityNumerator" style="width:6ch;height:fit-content;" class="allow-demo" />
-                                            </div>
-                                            <div class="col-auto">
-                                                <span> / </span>
-                                            </div>
-                                            <div class="col-auto">
-                                                <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityDenominator))" type="number" asp-for="Recipe.Ingredients[id].QuantityDenominator" style="width:6ch;height:fit-content;" class="allow-demo" />
-                                            </div>
-                                        </div>
-                                        
-                                        <div id="@Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)-help" class="form-text"></div>
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <label asp-for="Recipe.Ingredients[id].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].Measure)</label>
-                                        <select asp-for="Recipe.Ingredients[id].Measure" class="form-control" aria-describedby="time-help"
-                                                asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
-                                        </select>
-                                        <span asp-validation-for="Recipe.Ingredients[id].Measure" class="text-danger"></span>
-                                        <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Ingredients[id].Measure)</span>
-                                    </div>
-
-                                    <div class="form-group mb-3 col" style="min-width:200px;">
-                                        <label asp-for="Recipe.Ingredients[id].Name" class="control-label">Name</label>
-                                        <input asp-for="Recipe.Ingredients[id].Name" type="text" class="form-control" required="required" />
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                        <div class="btn-group">
-                            <button id="custom-ingredient-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                            <button id="custom-ingredient-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
-                        </div>
-                    </div>
-
-                    <script defer="defer">
-                        document.getElementById('custom-ingredient-add-button').addEventListener('click', (e) => {
-                            const ingredients = Array.from(document.getElementsByClassName('custom-ingredient'));
-                            for (const ingredient of ingredients) {
-                                if (ingredient.classList.contains('d-none')) {
-                                    // Unhide the ingredient
-                                    ingredient.classList.remove('d-none');
-                                    document.getElementById('hide-ingredient-input-' + ingredient.dataset.day).value = 'False';
-                                    break;
-                                }
-                            }
-
-                            // Always show the remove button after adding a ingredient
-                            document.getElementById('custom-ingredient-remove-button').classList.remove('d-none');
-
-                            // Hide the add button if we have already shown all ingredients
-                            if (ingredients.every(f => !f.classList.contains('d-none'))) {
-                                e.currentTarget.classList.add('d-none');
-                            }
-                        });
-
-                        document.getElementById('custom-ingredient-remove-button').addEventListener('click', (e) => {
-                            const ingredients = Array.from(document.getElementsByClassName('custom-ingredient'));
-                            for (const ingredient of ingredients.reverse()) {
-                                if (!ingredient.classList.contains('d-none')) {
-                                    // Hide the ingredient
-                                    ingredient.classList.add('d-none');
-                                    document.getElementById('hide-ingredient-input-' + ingredient.dataset.day).value = 'True';
-                                    break;
-                                }
-                            }
-
-                            // Always show the add button after removing a ingredient
-                            document.getElementById('custom-ingredient-add-button').classList.remove('d-none');
-
-                            // Hide the remove button when there is one remaining ingredient
-                            if (ingredients.filter(f => !f.classList.contains('d-none')).length === 1) {
-                                e.currentTarget.classList.add('d-none');
-                            }
-                        });
-                    </script>
-                </details>
-
-                <details class="mb-3">
-                    <summary class=""><b class="">Edit Instructions</b></summary>
-
-                    <div class="mt-1 ps-3">
-                        @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
-                        {
-                            var userinstruction = Model.Recipe.Instructions[id];
-                            <div id="custom-instruction-@id" class="custom-instruction @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
-                                <div class="row">
-                                    <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
-                                    <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
-
-                                    <div class="form-group mb-3 col" style="min-width:200px;">
-                                        <label asp-for="Recipe.Instructions[id].Name" class="control-label">Step @id</label>
-                                        <input asp-for="Recipe.Instructions[id].Name" type="text" class="form-control" required="required" />
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                        <div class="btn-group">
-                            <button id="custom-instruction-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                            <button id="custom-instruction-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
-                        </div>
-                    </div>
-
-                    <script defer="defer">
-                        document.getElementById('custom-instruction-add-button').addEventListener('click', (e) => {
-                            const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
-                            for (const instruction of instructions) {
-                                if (instruction.classList.contains('d-none')) {
-                                    // Unhide the instruction
-                                    instruction.classList.remove('d-none');
-                                    document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'False';
-                                    break;
-                                }
-                            }
-
-                            // Always show the remove button after adding a instruction
-                            document.getElementById('custom-instruction-remove-button').classList.remove('d-none');
-
-                            // Hide the add button if we have already shown all instructions
-                            if (instructions.every(f => !f.classList.contains('d-none'))) {
-                                e.currentTarget.classList.add('d-none');
-                            }
-                        });
-
-                        document.getElementById('custom-instruction-remove-button').addEventListener('click', (e) => {
-                            const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
-                            for (const instruction of instructions.reverse()) {
-                                if (!instruction.classList.contains('d-none')) {
-                                    // Hide the instruction
-                                    instruction.classList.add('d-none');
-                                    document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'True';
-                                    break;
-                                }
-                            }
-
-                            // Always show the add button after removing a instruction
-                            document.getElementById('custom-instruction-add-button').classList.remove('d-none');
-
-                            // Hide the remove button when there is one remaining instruction
-                            if (instructions.filter(f => !f.classList.contains('d-none')).length === 1) {
-                                e.currentTarget.classList.add('d-none');
-                            }
-                        });
-                    </script>
-                </details>
-
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-secondary" />
-                </div>
-            </form>
+        <div class="form-group mb-3">
+            <label asp-for="Recipe.Name" class="control-label">Name</label>
+            <input asp-for="Recipe.Name" type="text" class="form-control" required="required" />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="Recipe.Notes" class="control-label">Notes</label>
+            <input asp-for="Recipe.Notes" type="text" class="form-control" />
         </div>
 
+        <div class="form-group mb-5 mt-3">
+            <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>
+            <div><span asp-validation-for="Recipe.PrepTime" class="text-danger"></span></div>
+            <div style="display:flex;column-gap:1ex;">
+                <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;" class="allow-demo"
+                        oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
+                <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                    <input type="range" style="width:100%;" class="allow-demo"
+                            name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" list="hashmarks2" id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
+                            min="0" max="60" step="5" value="@Model.Recipe.PrepTime"
+                            oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
+
+                    <datalist id="hashmarks2" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                        <option value="0"></option>
+                        <option value="15"></option>
+                        <option value="30"></option>
+                        <option value="45"></option>
+                        <option value="60"></option>
+
+                        <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="15" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">15 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">30 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="45" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">45 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">60 min</div>
+                    </datalist>
+                </div>
+            </div>
+            <div id="@Html.IdFor(_ => Model.Recipe.PrepTime)-help" class="form-text"></div>
+        </div>
+
+        <div class="form-group mb-5 mt-3">
+            <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.CookTime)</label>
+            <div><span asp-validation-for="Recipe.CookTime" class="text-danger"></span></div>
+            <div style="display:flex;column-gap:1ex;">
+                <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;" class="allow-demo"
+                        oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
+                <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                    <input type="range" style="width:100%;" class="allow-demo"
+                            name="@Html.IdFor(_ => Model.Recipe.CookTime)Input" list="hashmarks3" id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
+                            min="0" max="120" step="5" value="@Model.Recipe.CookTime"
+                            oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
+
+                    <datalist id="hashmarks3" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                        <option value="0"></option>
+                        <option value="30"></option>
+                        <option value="60"></option>
+                        <option value="90"></option>
+                        <option value="120"></option>
+
+                        <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">30 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">60 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="90" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">90 min</div>
+                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="120" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">120 min</div>
+                    </datalist>
+                </div>
+            </div>
+            <div id="@Html.IdFor(_ => Model.Recipe.CookTime)-help" class="form-text"></div>
+        </div>
+
+        <div class="form-group mb-3 mt-3">
+            <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
+            <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
+            <div style="display:flex;column-gap:1ex;">
+                <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class="allow-demo"
+                        oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
+                <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                    <input type="range" style="width:100%;" class="allow-demo"
+                            name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks1" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
+                            min="1" max="10" step="1" value="@Model.Recipe.Servings"
+                            oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
+
+                    <datalist id="hashmarks1" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                        <option value="2"></option>
+                        <option value="4"></option>
+                        <option value="6"></option>
+                        <option value="8"></option>
+                        <option value="10"></option>
+
+                        <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</div>
+                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</div>
+                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</div>
+                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(80% - .5ch)">8</div>
+                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</div>
+                    </datalist>
+                </div>
+            </div>
+            <div id="@Html.IdFor(_ => Model.Recipe.Servings)-help" class="form-text"></div>
+        </div>
+     
+        <div class="form-group mb-3">
+            <label asp-for="Recipe.TypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Type)</label>
+            <select asp-for="Recipe.TypeBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
+                    asp-items="@(EnumExtensions.GetDisplayValues<RecipeType>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+            </select>
+            <span asp-validation-for="Recipe.TypeBinder" class="text-danger"></span>
+            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Type)</div>
+        </div>
+
+        <details class="mb-3" >
+            <summary class=""><b class="">Edit Ingredients</b></summary>
+
+            <div class="mt-1 ps-3">
+                @for (int id = 0; id < Model.Recipe.Ingredients.Count; id++)
+                {
+                    var useringredient = Model.Recipe.Ingredients[id];
+                    <div id="custom-ingredient-@id" class="custom-ingredient @(useringredient.Hide ? "d-none" : "")" data-day="@id">
+                        <div class="row">
+                            <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.Ingredients[id].Hide" />
+                            <input type="hidden" asp-for="@id" />
+
+                            <div class="form-group mb-3 mt-3">
+                                <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].Quantity)</label>
+                                <div><span asp-validation-for="Recipe.Ingredients[id].QuantityNumerator" class="text-danger"></span></div>
+                                <div><span asp-validation-for="Recipe.Ingredients[id].QuantityDenominator" class="text-danger"></span></div>
+                                        
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator))" type="number" asp-for="Recipe.Ingredients[id].QuantityNumerator" style="width:6ch;height:fit-content;" class="allow-demo" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <span> / </span>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityDenominator))" type="number" asp-for="Recipe.Ingredients[id].QuantityDenominator" style="width:6ch;height:fit-content;" class="allow-demo" />
+                                    </div>
+                                </div>
+                                        
+                                <div id="@Html.IdFor(_ => Model.Recipe.Ingredients[id].Quantity)-help" class="form-text"></div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Recipe.Ingredients[id].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].Measure)</label>
+                                <select asp-for="Recipe.Ingredients[id].Measure" class="form-control" aria-describedby="time-help"
+                                        asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
+                                </select>
+                                <span asp-validation-for="Recipe.Ingredients[id].Measure" class="text-danger"></span>
+                                <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Ingredients[id].Measure)</span>
+                            </div>
+
+                            <div class="form-group mb-3 col" style="min-width:200px;">
+                                <label asp-for="Recipe.Ingredients[id].Name" class="control-label">Name</label>
+                                <input asp-for="Recipe.Ingredients[id].Name" type="text" class="form-control" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="btn-group">
+                    <button id="custom-ingredient-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                    <button id="custom-ingredient-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                </div>
+            </div>
+
+            <script defer="defer">
+                document.getElementById('custom-ingredient-add-button').addEventListener('click', (e) => {
+                    const ingredients = Array.from(document.getElementsByClassName('custom-ingredient'));
+                    for (const ingredient of ingredients) {
+                        if (ingredient.classList.contains('d-none')) {
+                            // Unhide the ingredient
+                            ingredient.classList.remove('d-none');
+                            document.getElementById('hide-ingredient-input-' + ingredient.dataset.day).value = 'False';
+                            break;
+                        }
+                    }
+
+                    // Always show the remove button after adding a ingredient
+                    document.getElementById('custom-ingredient-remove-button').classList.remove('d-none');
+
+                    // Hide the add button if we have already shown all ingredients
+                    if (ingredients.every(f => !f.classList.contains('d-none'))) {
+                        e.currentTarget.classList.add('d-none');
+                    }
+                });
+
+                document.getElementById('custom-ingredient-remove-button').addEventListener('click', (e) => {
+                    const ingredients = Array.from(document.getElementsByClassName('custom-ingredient'));
+                    for (const ingredient of ingredients.reverse()) {
+                        if (!ingredient.classList.contains('d-none')) {
+                            // Hide the ingredient
+                            ingredient.classList.add('d-none');
+                            document.getElementById('hide-ingredient-input-' + ingredient.dataset.day).value = 'True';
+                            break;
+                        }
+                    }
+
+                    // Always show the add button after removing a ingredient
+                    document.getElementById('custom-ingredient-add-button').classList.remove('d-none');
+
+                    // Hide the remove button when there is one remaining ingredient
+                    if (ingredients.filter(f => !f.classList.contains('d-none')).length === 1) {
+                        e.currentTarget.classList.add('d-none');
+                    }
+                });
+            </script>
+        </details>
+
+        <details class="mb-3">
+            <summary class=""><b class="">Edit Instructions</b></summary>
+
+            <div class="mt-1 ps-3">
+                @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
+                {
+                    var userinstruction = Model.Recipe.Instructions[id];
+                    <div id="custom-instruction-@id" class="custom-instruction @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
+                        <div class="row">
+                            <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
+                            <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
+
+                            <div class="form-group mb-3 col" style="min-width:200px;">
+                                <label asp-for="Recipe.Instructions[id].Name" class="control-label">Step @id</label>
+                                <input asp-for="Recipe.Instructions[id].Name" type="text" class="form-control" required="required" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="btn-group">
+                    <button id="custom-instruction-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                    <button id="custom-instruction-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                </div>
+            </div>
+
+            <script defer="defer">
+                document.getElementById('custom-instruction-add-button').addEventListener('click', (e) => {
+                    const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
+                    for (const instruction of instructions) {
+                        if (instruction.classList.contains('d-none')) {
+                            // Unhide the instruction
+                            instruction.classList.remove('d-none');
+                            document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'False';
+                            break;
+                        }
+                    }
+
+                    // Always show the remove button after adding a instruction
+                    document.getElementById('custom-instruction-remove-button').classList.remove('d-none');
+
+                    // Hide the add button if we have already shown all instructions
+                    if (instructions.every(f => !f.classList.contains('d-none'))) {
+                        e.currentTarget.classList.add('d-none');
+                    }
+                });
+
+                document.getElementById('custom-instruction-remove-button').addEventListener('click', (e) => {
+                    const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
+                    for (const instruction of instructions.reverse()) {
+                        if (!instruction.classList.contains('d-none')) {
+                            // Hide the instruction
+                            instruction.classList.add('d-none');
+                            document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'True';
+                            break;
+                        }
+                    }
+
+                    // Always show the add button after removing a instruction
+                    document.getElementById('custom-instruction-add-button').classList.remove('d-none');
+
+                    // Hide the remove button when there is one remaining instruction
+                    if (instructions.filter(f => !f.classList.contains('d-none')).length === 1) {
+                        e.currentTarget.classList.add('d-none');
+                    }
+                });
+            </script>
+        </details>
+    </form>
+
+    <div class="row form-group">
+        <div class="col">
+            <input type="submit" value="Save" class="btn btn-secondary" form="recipe-form" />
+        </div>
         @if (Model.Recipe.Id != default)
         {
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" name="RecipeId" asp-for="@Model.Recipe.Id" />
+            <div class="col-auto">
+                <form id="delete-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" name="RecipeId" asp-for="@Model.Recipe.Id" />
 
-                <div class="form-group mt-3">
-                    <div class="input-group">
-                        <textarea class="form-control" disabled="disabled" aria-describedby="exercise-help" rows="2">@Model.Recipe.Name</textarea>
-                        <input type="submit" value="-" class="btn btn-outline-secondary" />
-                    </div>
-                    <span for="FootnoteId" class="text-danger"></span>
-                    <div class="form-text font-size--smaller">
-                        @Model.Recipe.Name
-                    </div>
-                </div>
-            </form>
+                    <input type="submit" value="Delete" class="btn btn-outline-danger" form="delete-form" />
+                </form>
+            </div>
         }
     </div>
-</details>
+</div>
