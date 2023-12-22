@@ -32,7 +32,7 @@
                 @foreach (var item in exerciseGroup)
                 {
                     <CascadingValue Value="User">
-                        <_Exercise Model="item" Verbosity="Verbosity" />
+                        <_Exercise Model="item" Verbosity="Verbosity" Theme="Theme" />
                     </CascadingValue>
                 }
             </div>
@@ -41,7 +41,7 @@
     else
     {
         <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@Title.Header</h2>
-        @if (Verbosity.HasFlag(Verbosity.Instructions) && Title.Description.HasValue)
+        @if (Title.Description.HasValue)
         {
             <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
         }
@@ -49,11 +49,11 @@
             @foreach (var item in Recipes)
             {
                 <CascadingValue Value="User">
-                    <_Exercise Model="item" Verbosity="Verbosity" />
+                    <_Exercise Model="item" Verbosity="Verbosity" Theme="Theme" />
                 </CascadingValue>
             }
         </div>
-        @if (Verbosity.HasFlag(Verbosity.Instructions) && Title.Footer.HasValue)
+        @if (Title.Footer.HasValue)
         {
             <h6 style="margin-bottom:0;margin-top:.25em;font-weight:normal;font-size:revert;">@Title.Footer.Value</h6>
         }

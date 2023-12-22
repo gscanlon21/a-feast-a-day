@@ -9,7 +9,7 @@ public class RecipesViewModel
     [Display(Name = "My Recipes")]
     public IList<Lib.ViewModels.Newsletter.RecipeViewModel> Recipes { get; init; }
 
-    public Verbosity Verbosity => Verbosity.Instructions | Verbosity.Images;
+    public Verbosity Verbosity => Verbosity.Images;
 
     public UserNewsletterViewModel UserNewsletter { get; init; }
 }

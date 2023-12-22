@@ -143,6 +143,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var breakfastRecipes = _context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Breakfast)
             .OrderBy(r => EF.Functions.Random())
             .Take(context.DaysUntilNextNewsletter)
@@ -151,6 +152,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var lunchRecipes = _context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Lunch)
             .OrderBy(r => EF.Functions.Random())
             .Take(context.DaysUntilNextNewsletter)
@@ -159,6 +161,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var dinnerRecipes = _context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dinner)
             .OrderBy(r => EF.Functions.Random())
             .Take(context.DaysUntilNextNewsletter)
@@ -167,6 +170,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var sideRecipes = _context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Side)
             .OrderBy(r => EF.Functions.Random())
             .Take(context.DaysUntilNextNewsletter)
@@ -175,9 +179,18 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var dessertRecipes = _context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dessert)
             .OrderBy(r => EF.Functions.Random())
             .Take(context.DaysUntilNextNewsletter)
+            .ToList();
+
+        var recipesOfTheDay = _context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .Where(r => r.User.ShareMyRecipes)
+            .OrderBy(r => EF.Functions.Random())
+            .Take(1)
             .ToList();
 
         var userViewModel = new UserNewsletterDto(context);
@@ -188,6 +201,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             LunchRecipes = lunchRecipes,
             DessertRecipes = dessertRecipes,
             BreakfastRecipes = breakfastRecipes,
+            RecipesOfTheDay = recipesOfTheDay,
         };
 
         return viewModel;

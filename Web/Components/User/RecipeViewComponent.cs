@@ -1,5 +1,4 @@
-﻿using Core.Models.Footnote;
-using Data;
+﻿using Data;
 using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
@@ -16,8 +15,8 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, UserRecipe? recipe = null)
     {
-        // Custom footnotes must be enabled in the user edit form to show in the newsletter.
-        if (!user.FootnoteType.HasFlag(FootnoteType.Custom))
+        // User must own the recipe to be able to edit it.
+        if (recipe != null && recipe.UserId != user.Id)
         {
             return Content("");
         }

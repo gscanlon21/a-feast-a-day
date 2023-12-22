@@ -28,6 +28,8 @@ public class NewsletterViewModel
     public List<RecipeViewModel> DinnerRecipes { get; set; } = [];
     public List<RecipeViewModel> SideRecipes { get; set; } = [];
     public List<RecipeViewModel> DessertRecipes { get; set; } = [];
+    public List<RecipeViewModel> RecipesOfTheDay { get; set; } = [];
+
     public List<RecipeViewModel> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
 

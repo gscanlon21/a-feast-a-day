@@ -12,7 +12,7 @@ public class IgnoredViewModel
     [Display(Name = "Ignored Variations")]
     public IList<Lib.ViewModels.Newsletter.RecipeViewModel> IgnoredVariations { get; init; }
 
-    public Verbosity Verbosity => Verbosity.Instructions | Verbosity.Images;
+    public Verbosity Verbosity => Verbosity.Images;
 
     public UserNewsletterViewModel UserNewsletter { get; init; }
 }

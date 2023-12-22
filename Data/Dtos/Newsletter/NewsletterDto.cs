@@ -24,6 +24,7 @@ public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserFeast
     public List<UserRecipe> DinnerRecipes { get; set; } = [];
     public List<UserRecipe> SideRecipes { get; set; } = [];
     public List<UserRecipe> DessertRecipes { get; set; } = [];
+    public List<UserRecipe> RecipesOfTheDay { get; set; } = [];
     public List<UserRecipe> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
     /// <summary>

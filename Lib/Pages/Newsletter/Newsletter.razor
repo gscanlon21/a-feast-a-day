@@ -34,19 +34,14 @@ else
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
     
     <div style="margin-block:1rem;">
-        <h5>Shopping List</h5>
-        <ul>
-            @foreach (var ingredient in Model.AllRecipes.SelectMany(r => r.Ingredients))
-            {
-                <li>@ingredient.Quantity @(ingredient.Measure?.GetSingleDisplayName()) @ingredient.Name</li>
-            }
-        </ul>
+        <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.AllRecipes.SelectMany(r => r.Ingredients).ToList()" />
 
-        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.BreakfastRecipes" Theme="ExerciseTheme.Main" Title="@(new ExerciseSection.Titles("Breakfast"))" />
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.BreakfastRecipes" Theme="ExerciseTheme.Warmup" Title="@(new ExerciseSection.Titles("Breakfast"))" />
         <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.LunchRecipes" Theme="ExerciseTheme.Main" Title="@(new ExerciseSection.Titles("Lunch"))" />
         <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.DinnerRecipes" Theme="ExerciseTheme.Main" Title="@(new ExerciseSection.Titles("Dinner"))" />
-        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.SideRecipes" Theme="ExerciseTheme.Main" Title="@(new ExerciseSection.Titles("Sides"))" />
-        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.DessertRecipes" Theme="ExerciseTheme.Main" Title="@(new ExerciseSection.Titles("Desserts"))" />
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.SideRecipes" Theme="ExerciseTheme.Cooldown" Title="@(new ExerciseSection.Titles("Sides"))" />
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.DessertRecipes" Theme="ExerciseTheme.Other" Title="@(new ExerciseSection.Titles("Desserts"))" />
+        <Lib.Pages.Shared.Exercise.ExerciseSection User="null" Verbosity="Model.Verbosity" Recipes="Model.RecipesOfTheDay" Theme="ExerciseTheme.Extra" Title="@(new ExerciseSection.Titles("Recipe of the Day"))" />
     </div>
 
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" />
