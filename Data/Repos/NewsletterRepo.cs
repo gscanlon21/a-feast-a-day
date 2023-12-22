@@ -146,7 +146,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Breakfast)
             .OrderBy(r => EF.Functions.Random())
-            .Take(context.DaysUntilNextNewsletter)
+            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
             .ToList();
 
         var lunchRecipes = _context.UserRecipes
@@ -155,7 +155,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Lunch)
             .OrderBy(r => EF.Functions.Random())
-            .Take(context.DaysUntilNextNewsletter)
+            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
             .ToList();
 
         var dinnerRecipes = _context.UserRecipes
@@ -164,7 +164,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dinner)
             .OrderBy(r => EF.Functions.Random())
-            .Take(context.DaysUntilNextNewsletter)
+            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
             .ToList();
 
         var sideRecipes = _context.UserRecipes
@@ -173,7 +173,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Side)
             .OrderBy(r => EF.Functions.Random())
-            .Take(context.DaysUntilNextNewsletter)
+            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
             .ToList();
 
         var dessertRecipes = _context.UserRecipes
@@ -182,7 +182,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dessert)
             .OrderBy(r => EF.Functions.Random())
-            .Take(context.DaysUntilNextNewsletter)
+            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
             .ToList();
 
         var recipesOfTheDay = _context.UserRecipes

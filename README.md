@@ -13,7 +13,7 @@ The program [Obtainium](https://github.com/ImranR98/Obtainium) can be used for a
 - Customizable workout splits, intensity, and rest days.
 - Workouts are simplified for users who are new to fitness to build consistency and reduce injury risk.
 - Exercises are chosen from equipment you have access to — no pullups without a pullup bar or fitness rings.
-- Ignore unwanted exercises — no more burpees!
+- Ignore unwanted recipes — no more burpees!
 - Progress or regress exercises to switch between easier and harder variations.
 - Track how much weight you are able to lift.
 - Customize how long you want to see exercises before they refresh.

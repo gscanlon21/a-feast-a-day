@@ -64,11 +64,11 @@ public class UserEditViewModel
     public bool NewsletterEnabled { get; init; }
 
     [Required]
-    [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive in each workout?")]
+    [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive with each recipe?")]
     public Verbosity Verbosity { get; set; }
 
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
-    [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new workouts?")]
+    [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new recipes?")]
     public int SendHour { get; init; }
 
     [Required]
