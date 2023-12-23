@@ -29,14 +29,17 @@ public partial class UserController
         }
         else
         {
-            var existingRecipe = await context.UserRecipes.FirstOrDefaultAsync(r => r.Id == recipe.Id);
+            var existingRecipe = await context.UserRecipes
+                .Include(r => r.Instructions)
+                .Include(r => r.Ingredients)
+                .FirstOrDefaultAsync(r => r.Id == recipe.Id);
             if (existingRecipe == null)
             {
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
             }
 
-            existingRecipe.Ingredients = recipe.Ingredients;
-            existingRecipe.Instructions = recipe.Instructions;
+            existingRecipe.Ingredients = recipe.Ingredients.Where(i => !i.Hide).ToList();
+            existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
             existingRecipe.Name = recipe.Name;
             existingRecipe.Notes = recipe.Notes;
             existingRecipe.Type = recipe.Type;

@@ -36,9 +36,15 @@ public enum Verbosity
     Servings = 1 << 3, // 8
 
     /// <summary>
+    /// Show which muscles are stretched by the exercise to the user.
+    /// </summary>
+    [Display(Name = "Notes")]
+    Notes = 1 << 4, // 16
+
+    /// <summary>
     /// This is not user-facing. 
     /// It should not have a Display attribute. 
     /// </summary>
-    Debug = Images | CookTime | PrepTime | Servings
+    Debug = Images | CookTime | PrepTime | Servings | Notes
         | 1 << 30 // 1073741824
 }

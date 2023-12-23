@@ -27,8 +27,9 @@ public class RecipesViewComponent(IServiceScopeFactory serviceScopeFactory, Core
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
         var recipes = await context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == user.Id).ToListAsync();
 
         return View("Recipes", new RecipesViewModel()

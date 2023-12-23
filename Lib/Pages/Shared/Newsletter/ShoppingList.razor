@@ -12,7 +12,8 @@
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
             @foreach (var group in List.GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.Name))
             {
-                <li>@(new Fractions.Fraction(group.Sum(g => g.QuantityNumerator), group.Sum(g => g.QuantityDenominator), true)) @(group.Key.Measure?.GetSingleDisplayName()) @group.Key.Name</li>
+                var fraction = new Fractions.Fraction(group.Sum(g => g.QuantityNumerator ?? 0), group.Sum(g => g.QuantityDenominator ?? 0), true);
+                <li>@(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")@(group.Key.Measure?.GetSingleDisplayName()) @group.Key.Name</li>
             }
         </ul>
     </div>

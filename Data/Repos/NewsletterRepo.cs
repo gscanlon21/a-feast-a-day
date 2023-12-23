@@ -141,8 +141,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletter = await CreateAndAddNewsletterToContext(context);
 
         var breakfastRecipes = _context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Breakfast)
             .OrderBy(r => EF.Functions.Random())
@@ -150,8 +151,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .ToList();
 
         var lunchRecipes = _context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Lunch)
             .OrderBy(r => EF.Functions.Random())
@@ -159,8 +161,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .ToList();
 
         var dinnerRecipes = _context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dinner)
             .OrderBy(r => EF.Functions.Random())
@@ -168,8 +171,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .ToList();
 
         var sideRecipes = _context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Side)
             .OrderBy(r => EF.Functions.Random())
@@ -177,8 +181,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .ToList();
 
         var dessertRecipes = _context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dessert)
             .OrderBy(r => EF.Functions.Random())
@@ -186,8 +191,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .ToList();
 
         var recipesOfTheDay = _context.UserRecipes
-            .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
+            .Include(r => r.Ingredients)
+                .ThenInclude(i => i.Ingredient)
             .Where(r => r.User.ShareMyRecipes)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)

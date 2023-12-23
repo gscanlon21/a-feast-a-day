@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Equipment\**" />
+    <EmbeddedResource Remove="Models\Equipment\**" />
+    <None Remove="Models\Equipment\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <InternalsVisibleTo Include="Core.Test" />
   </ItemGroup>
 
@@ -16,10 +22,6 @@
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Equipment\" />
   </ItemGroup>
 
 </Project>

@@ -121,9 +121,10 @@
         @await Component.InvokeAsync(NextWorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(PastWorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(IngredientViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(IgnoredViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
     </div>
 </div>

@@ -17,20 +17,19 @@ public class UserRecipeIngredient
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
+    [Display(Name = "Ingredient")]
+    public int UserIngredientId { get; init; }
+
     /// <summary>
-    /// Friendly name.
+    /// Chopped, thinly sliced...
     /// </summary>
-    [Required]
-    public string Name { get; init; } = null!;
+    public string? Attributes { get; init; }
 
-    [NotMapped]
-    public string Quantity => QuantityDenominator == 1 ? $"{QuantityNumerator}" : $"{QuantityNumerator}/{QuantityDenominator}";
+    [Range(1, 32), Display(Name = "Quantity")]
+    public int? QuantityNumerator { get; set; } = 1;
 
-    [Required, Range(1, 10)]
-    public int QuantityNumerator { get; set; } = 1;
-
-    [Required, Range(1, 10)]
-    public int QuantityDenominator { get; set; } = 1;
+    [Range(1, 16), Display(Name = "Quantity")]
+    public int? QuantityDenominator { get; set; } = 1;
 
     [Required]
     public Measure Measure { get; set; }
@@ -45,8 +44,14 @@ public class UserRecipeIngredient
 
     public string? DisabledReason { get; private init; } = null;
 
+    [NotMapped]
+    public string Name => Ingredient?.Name ?? "";
+
     [JsonIgnore, InverseProperty(nameof(UserRecipe.Ingredients))]
     public virtual UserRecipe Recipe { get; private init; } = null!;
+
+    [JsonIgnore, InverseProperty(nameof(UserIngredient.RecipeIngredients))]
+    public virtual UserIngredient Ingredient { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

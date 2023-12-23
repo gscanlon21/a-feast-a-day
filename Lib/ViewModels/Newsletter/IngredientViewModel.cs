@@ -19,9 +19,11 @@ public class IngredientViewModel
     [Required]
     public string Name { get; init; } = null!;
 
-    public string Quantity { get; init; } = null!;
-    public int QuantityDenominator { get; init; }
-    public int QuantityNumerator { get; init; }
+    public string? Attributes { get; init; }
+
+    public Fractions.Fraction Quantity => new (QuantityNumerator ?? 0, QuantityDenominator ?? 0);
+    public int? QuantityDenominator { get; init; }
+    public int? QuantityNumerator { get; init; }
 
     public Measure? Measure { get; init; }
 

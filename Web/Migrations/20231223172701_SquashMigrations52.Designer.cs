@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Web.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20231223172701_SquashMigrations52")]
+    partial class SquashMigrations52
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -339,16 +342,16 @@ namespace Web.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<int?>("QuantityDenominator")
+                    b.Property<int>("QuantityDenominator")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("QuantityNumerator")
+                    b.Property<int>("QuantityNumerator")
                         .HasColumnType("integer");
 
                     b.Property<int>("RecipeId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UserIngredientId")
+                    b.Property<int?>("UserIngredientId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -499,9 +502,7 @@ namespace Web.Migrations
 
                     b.HasOne("Data.Entities.User.UserIngredient", "Ingredient")
                         .WithMany("RecipeIngredients")
-                        .HasForeignKey("UserIngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserIngredientId");
 
                     b.Navigation("Ingredient");
 

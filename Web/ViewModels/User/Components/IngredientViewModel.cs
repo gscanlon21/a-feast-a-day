@@ -1,16 +1,15 @@
-﻿using Data.Entities.User;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Web.ViewModels.User.Components;
 
 /// <summary>
 /// Viewmodel for Confirmation.cshtml
 /// </summary>
-public class RecipeViewModel
+public class IngredientViewModel
 {
     public string Token { get; init; } = null!;
     public Data.Entities.User.User User { get; init; } = null!;
 
-    public UserRecipe Recipe { get; set; } = null!;
-
-    public List<UserIngredient> Ingredients { get; init; } = [];
+    [Display(Name = "Custom Ingredients")]
+    public IList<Data.Entities.User.UserIngredient> Ingredients { get; init; } = null!;
 }

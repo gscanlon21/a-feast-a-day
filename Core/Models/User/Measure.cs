@@ -11,18 +11,21 @@ public enum Measure
     [Display(Name = "Pinch")]
     Pinch = 1,
 
-    [Display(Name = "Ounce")]
+    [Display(Name = "Ounces")]
     Ounce = 2,
 
-    [Display(Name = "Teaspoon", ShortName = "tsp.")]
+    [Display(Name = "Teaspoons", ShortName = "tsp.")]
     Teaspoon = 3,
 
-    [Display(Name = "Tablespoon", ShortName = "Tbsp.")]
+    [Display(Name = "Tablespoons", ShortName = "Tbsp.")]
     Tablespoon = 4,
 
-    [Display(Name = "Cup")]
+    [Display(Name = "Cups")]
     Cup = 5,
 
-    [Display(Name = "Pound", ShortName = "lb.")]
+    [Display(Name = "Pounds", ShortName = "lb.")]
     Pound = 6,
+
+    [Display(Name = "Handful")]
+    Handful = 7,
 }

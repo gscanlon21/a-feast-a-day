@@ -15,10 +15,10 @@ namespace Data.Entities.User;
 public class UserRecipe
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; private init; }
+    public int Id { get; init; }
 
     [Required]
-    public int UserId { get; private init; }
+    public int UserId { get; init; }
 
     /// <summary>
     /// Friendly name.
