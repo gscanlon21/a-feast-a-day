@@ -7,12 +7,12 @@
 @if (List?.Any() == true)
 {
     <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
-        <h4 style="margin:0;">Shopping List</h4>
+        <h3 style="margin:0;">Shopping List</h3>
         <p style="margin:0 0 1rem 0;">Does not include the recipe of the day</p>
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
-            @foreach (var ingredient in List)
+            @foreach (var group in List.GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.Name))
             {
-                <li>@ingredient.Quantity @(ingredient.Measure?.GetSingleDisplayName()) @ingredient.Name</li>
+                <li>@(new Fractions.Fraction(group.Sum(g => g.QuantityNumerator), group.Sum(g => g.QuantityDenominator), true)) @(group.Key.Measure?.GetSingleDisplayName()) @group.Key.Name</li>
             }
         </ul>
     </div>
@@ -27,4 +27,13 @@
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }
+
+    private class ListComparer : IEqualityComparer<ViewModels.Newsletter.IngredientViewModel>
+    {
+        public bool Equals(ViewModels.Newsletter.IngredientViewModel? a, ViewModels.Newsletter.IngredientViewModel? b)
+            => EqualityComparer<Core.Models.User.Measure?>.Default.Equals(a?.Measure, b?.Measure)
+            && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s'), b?.Name.TrimEnd('s'));
+
+        public int GetHashCode(ViewModels.Newsletter.IngredientViewModel e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
+    }
 }
