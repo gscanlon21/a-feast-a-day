@@ -55,6 +55,11 @@
                     <span style="text-decoration:underline;">@(Model.Name)</span>
                 </h3>
 
+                @if (Verbosity.HasFlag(Verbosity.Notes))
+                {
+                    <div style="margin-block:.5em;font-size:x-small;">@Model.Notes</div>
+                }
+
                 @if (Verbosity.HasFlag(Verbosity.PrepTime))
                 {
                     <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @(Model.PrepTime) min</div>

@@ -147,7 +147,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Breakfast)
             .OrderBy(r => EF.Functions.Random())
-            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
+            .Take(1)
             .ToList();
 
         var lunchRecipes = _context.UserRecipes
@@ -157,7 +157,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Lunch)
             .OrderBy(r => EF.Functions.Random())
-            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
+            .Take(1)
             .ToList();
 
         var dinnerRecipes = _context.UserRecipes
@@ -167,7 +167,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dinner)
             .OrderBy(r => EF.Functions.Random())
-            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
+            .Take(1)
             .ToList();
 
         var sideRecipes = _context.UserRecipes
@@ -177,7 +177,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Side)
             .OrderBy(r => EF.Functions.Random())
-            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
+            .Take(1)
             .ToList();
 
         var dessertRecipes = _context.UserRecipes
@@ -187,7 +187,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dessert)
             .OrderBy(r => EF.Functions.Random())
-            .Take(Math.Min(2, context.DaysUntilNextNewsletter))
+            .Take(1)
             .ToList();
 
         var recipesOfTheDay = _context.UserRecipes

@@ -20,7 +20,7 @@
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>
             <div><span asp-validation-for="Recipe.PrepTime" class="text-danger"></span></div>
             <div style="display:flex;column-gap:1ex;">
-                <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;" class="allow-demo"
+                <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;" class=""
                         oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
                     <input type="range" style="width:100%;" class=""
@@ -51,7 +51,7 @@
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.CookTime)</label>
             <div><span asp-validation-for="Recipe.CookTime" class="text-danger"></span></div>
             <div style="display:flex;column-gap:1ex;">
-                <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;" class="allow-demo"
+                <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;" class=""
                         oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
                     <input type="range" style="width:100%;" class=""
@@ -82,7 +82,7 @@
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
             <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
             <div style="display:flex;column-gap:1ex;">
-                <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class="allow-demo"
+                <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class=""
                         oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
                     <input type="range" style="width:100%;" class=""
@@ -136,13 +136,13 @@
                                     <div><span asp-validation-for="Recipe.Ingredients[id].QuantityDenominator" class="text-danger"></span></div>
                                     <div class="row">
                                         <div class="col-auto">
-                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator))" type="number" asp-for="Recipe.Ingredients[id].QuantityNumerator" style="width:6ch;height:fit-content;" class="allow-demo" />
+                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator))" type="number" asp-for="Recipe.Ingredients[id].QuantityNumerator" style="width:6ch;height:fit-content;" class="" />
+                                        </div>
+                                        <div class="col-auto px-0">
+                                            <span>/</span>
                                         </div>
                                         <div class="col-auto">
-                                            <span> / </span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityDenominator))" type="number" asp-for="Recipe.Ingredients[id].QuantityDenominator" style="width:6ch;height:fit-content;" class="allow-demo" />
+                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityDenominator))" type="number" asp-for="Recipe.Ingredients[id].QuantityDenominator" style="width:6ch;height:fit-content;" class="" />
                                         </div>
                                     </div>
                                     <div id="@Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator)-help" class="form-text"></div>
@@ -161,8 +161,8 @@
                             <div class="form-group mb-3 row">
                                 <div class="col">
                                     <label asp-for="Recipe.Ingredients[id].UserIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Ingredients[id].UserIngredientId)</label>
-                                    <select asp-for="Recipe.Ingredients[id].UserIngredientId" class="form-control" aria-describedby="time-help"
-                                            asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }))">
+                                    <select asp-for="Recipe.Ingredients[id].UserIngredientId" class="form-control" aria-describedby="time-help" required="required"
+                                            asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
                                     </select>
                                     <span asp-validation-for="Recipe.Ingredients[id].UserIngredientId" class="text-danger"></span>
                                     <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Ingredients[id].UserIngredientId)</span>
@@ -305,6 +305,20 @@
                     <input type="hidden" name="RecipeId" asp-for="@Model.Recipe.Id" />
 
                     <input type="submit" value="Delete" class="btn btn-outline-danger" form="delete-form" />
+                </form>
+            </div>
+        }
+        else
+        {
+            <div class="col-auto">
+                @* TODO *@
+                <form id="import-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.AddRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <input class="btn btn-outline-secondary" style="width:27ch;" disabled="disabled" type="file" name="Recipe" />
+                        <input type="submit" value="Import" class="btn btn-outline-secondary" form="import-form" disabled="disabled" />
+                    </div>
                 </form>
             </div>
         }

@@ -16,12 +16,6 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, UserRecipe? recipe = null)
     {
-        // Don't let the demo user add new recipes.
-        if (user.IsDemoUser)
-        {
-            return Content("");
-        }
-
         // User must own the recipe to be able to edit it.
         if (recipe != null && recipe.UserId != user.Id)
         {
