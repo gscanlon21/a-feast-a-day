@@ -10,7 +10,7 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
 /// </summary>
-public class IgnoredViewComponent(IServiceScopeFactory serviceScopeFactory, UserRepo userRepo) : ViewComponent
+public class IgnoredViewComponent(UserRepo userRepo) : ViewComponent
 {
     /// <summary>
     /// For routing

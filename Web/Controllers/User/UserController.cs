@@ -11,7 +11,7 @@ namespace Web.Controllers.User;
 
 [Route($"u/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 1)]
 [Route($"user/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 2)]
-public partial class UserController(CoreContext context, IServiceScopeFactory serviceScopeFactory, UserRepo userRepo) : ViewController()
+public partial class UserController(CoreContext context, UserRepo userRepo) : ViewController()
 {
     /// <summary>
     /// The name of the controller for routing purposes
