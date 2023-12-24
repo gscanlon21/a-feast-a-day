@@ -14,12 +14,12 @@
 
     <ShellContent Title="Daily Feast"
                     Route="NewsletterPage"
-                    Icon="{StaticResource Workout}"
+                    Icon="{StaticResource Feast}"
                     ContentTemplate="{DataTemplate local:NewsletterPage}" />
 
-    <ShellContent Title="Workouts"
+    <ShellContent Title="Feasts"
                     Route="NewslettersPage"
-                    Icon="{StaticResource Workouts}"
+                    Icon="{StaticResource Feasts}"
                     ContentTemplate="{DataTemplate local:NewslettersPage}" />
 
     <MenuItem Text="Website"
