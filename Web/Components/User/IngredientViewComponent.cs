@@ -1,5 +1,4 @@
-﻿using Core.Models.Footnote;
-using Data;
+﻿using Data;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

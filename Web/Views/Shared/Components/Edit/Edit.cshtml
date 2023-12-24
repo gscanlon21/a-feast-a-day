@@ -28,15 +28,8 @@
                         asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">
                 </select>
                 <span asp-validation-for="SendDaysBinder" class="text-danger"></span>
-                <details id="rest-help" class="form-text">
-                    <summary>@Html.DisplayDescriptionFor(_ => Model.SendDays)</summary>
-
-                    <div class="mt-1">
-                        <span>If.</span>
-                    </div>
-                </details>
+                <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
             </div>
-
 
             @if (Model.User.IsDemoUser)
             {

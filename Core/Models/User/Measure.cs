@@ -28,4 +28,19 @@ public enum Measure
 
     [Display(Name = "Handful")]
     Handful = 7,
+
+    [Display(Name = "Head")]
+    Head = 8,
+
+    [Display(Name = "Clove")]
+    Clove = 9,
+
+    [Display(Name = "Can")]
+    Can = 10,
+
+    [Display(Name = "Bottle")]
+    Bottle = 11,
+
+    [Display(Name = "Package")]
+    Package = 12,
 }

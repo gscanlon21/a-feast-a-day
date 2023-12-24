@@ -136,13 +136,13 @@
                                     <div><span asp-validation-for="Recipe.Ingredients[id].QuantityDenominator" class="text-danger"></span></div>
                                     <div class="row">
                                         <div class="col-auto">
-                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator))" type="number" asp-for="Recipe.Ingredients[id].QuantityNumerator" style="width:6ch;height:fit-content;" class="" />
+                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator))" type="number" asp-for="Recipe.Ingredients[id].QuantityNumerator" style="width:5ch;height:fit-content;" class="" />
                                         </div>
                                         <div class="col-auto px-0">
                                             <span>/</span>
                                         </div>
                                         <div class="col-auto">
-                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityDenominator))" type="number" asp-for="Recipe.Ingredients[id].QuantityDenominator" style="width:6ch;height:fit-content;" class="" />
+                                            <input id="@(Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityDenominator))" type="number" asp-for="Recipe.Ingredients[id].QuantityDenominator" style="width:5ch;height:fit-content;" class="" />
                                         </div>
                                     </div>
                                     <div id="@Html.IdFor(_ => Model.Recipe.Ingredients[id].QuantityNumerator)-help" class="form-text"></div>
@@ -293,7 +293,7 @@
         </div>
     </form>
 
-    <div class="row form-group">
+    <div class="row form-group justify-content-end gy-2">
         <div class="col">
             <input type="submit" value="Save" class="btn btn-secondary" form="recipe-form" />
         </div>
@@ -316,7 +316,7 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <input class="btn btn-outline-secondary" style="width:27ch;" disabled="disabled" type="file" name="Recipe" />
+                        <input id="file-input" class="btn btn-outline-secondary" style="width:27ch;" disabled="disabled" type="file" name="Recipe" />
                         <input type="submit" value="Import" class="btn btn-outline-secondary" form="import-form" disabled="disabled" />
                     </div>
                 </form>

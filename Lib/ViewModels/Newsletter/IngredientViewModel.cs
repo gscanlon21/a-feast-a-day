@@ -21,7 +21,7 @@ public class IngredientViewModel
 
     public string? Attributes { get; init; }
 
-    public Fractions.Fraction Quantity => new (QuantityNumerator ?? 0, QuantityDenominator ?? 0);
+    public Fractions.Fraction Quantity => new(QuantityNumerator ?? 0, QuantityDenominator ?? 0);
     public int? QuantityDenominator { get; init; }
     public int? QuantityNumerator { get; init; }
 
