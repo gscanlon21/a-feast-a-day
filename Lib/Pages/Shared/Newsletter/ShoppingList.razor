@@ -10,7 +10,7 @@
         <h3 style="margin:0;">Shopping List</h3>
         <p style="margin:0 0 1rem 0;">Does not include the recipe of the day</p>
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
-            @foreach (var group in List.GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.Name))
+            @foreach (var group in List.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)).GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.Name))
             {
                 var fraction = new Fractions.Fraction(group.Sum(g => g.QuantityNumerator ?? 0), group.Sum(g => g.QuantityDenominator ?? 0), true);
                 <li>@(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")@(group.Key.Measure?.GetSingleDisplayName()) @group.Key.Name</li>

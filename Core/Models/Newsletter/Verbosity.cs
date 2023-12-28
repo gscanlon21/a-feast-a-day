@@ -42,9 +42,15 @@ public enum Verbosity
     Notes = 1 << 4, // 16
 
     /// <summary>
+    /// Show common ingredients (salt, pepper...) in the shopping list.
+    /// </summary>
+    [Display(Name = "Common Ingredients")]
+    CommonIngredients = 1 << 5, // 32
+
+    /// <summary>
     /// This is not user-facing. 
     /// It should not have a Display attribute. 
     /// </summary>
-    Debug = Images | CookTime | PrepTime | Servings | Notes
+    Debug = Images | CookTime | PrepTime | Servings | Notes | CommonIngredients
         | 1 << 30 // 1073741824
 }

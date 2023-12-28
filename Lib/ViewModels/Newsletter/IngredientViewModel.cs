@@ -19,6 +19,8 @@ public class IngredientViewModel
     [Required]
     public string Name { get; init; } = null!;
 
+    public bool SkipShoppingList { get; init; }
+
     public string? Attributes { get; init; }
 
     public Fractions.Fraction Quantity => new(QuantityNumerator ?? 0, QuantityDenominator ?? 0);

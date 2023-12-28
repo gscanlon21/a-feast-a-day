@@ -47,6 +47,9 @@ public class UserRecipeIngredient
     [NotMapped]
     public string Name => Ingredient?.Name ?? "";
 
+    [NotMapped]
+    public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
+
     [JsonIgnore, InverseProperty(nameof(UserRecipe.Ingredients))]
     public virtual UserRecipe Recipe { get; private init; } = null!;
 

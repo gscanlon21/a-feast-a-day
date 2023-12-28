@@ -28,6 +28,11 @@ public class UserIngredient
     public IngredientGroup Group { get; init; }
 
     /// <summary>
+    /// Is a common household ingredient like salt and pepper.
+    /// </summary>
+    public bool SkipShoppingList { get; init; }
+
+    /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
     public string? Notes { get; private init; } = null;
