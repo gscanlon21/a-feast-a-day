@@ -32,20 +32,26 @@ public enum Verbosity
     /// <summary>
     /// Show which muscles are stretched by the exercise to the user.
     /// </summary>
+    [Display(Name = "Total Time")]
+    TotalTime = 1 << 3, // 8
+
+    /// <summary>
+    /// Show which muscles are stretched by the exercise to the user.
+    /// </summary>
     [Display(Name = "Servings")]
-    Servings = 1 << 3, // 8
+    Servings = 1 << 4, // 16
 
     /// <summary>
     /// Show which muscles are stretched by the exercise to the user.
     /// </summary>
     [Display(Name = "Notes")]
-    Notes = 1 << 4, // 16
+    Notes = 1 << 5, // 32
 
     /// <summary>
     /// Show common ingredients (salt, pepper...) in the shopping list.
     /// </summary>
     [Display(Name = "Common Ingredients")]
-    CommonIngredients = 1 << 5, // 32
+    CommonIngredients = 1 << 6, // 64
 
     /// <summary>
     /// This is not user-facing. 

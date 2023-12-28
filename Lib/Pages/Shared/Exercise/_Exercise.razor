@@ -70,6 +70,11 @@
                     <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @(Model.CookTime) min</div>
                 }
 
+                @if (Verbosity.HasFlag(Verbosity.TotalTime))
+                {
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @(Model.PrepTime + Model.CookTime) min</div>
+                }
+
                 @if (Verbosity.HasFlag(Verbosity.Servings))
                 {
                     <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Servings</div>
