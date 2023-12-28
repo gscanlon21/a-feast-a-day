@@ -43,7 +43,7 @@ public class UserRecipe
     /// </summary>
     public string? Notes { get; set; } = null;
 
-    public string? DisabledReason { get; private init; } = null;
+    public string? DisabledReason { get; set; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
     public virtual User User { get; set; } = null!;
@@ -64,5 +64,12 @@ public class UserRecipe
     {
         get => Enum.GetValues<RecipeType>().Where(e => Type.HasFlag(e)).ToArray();
         set => Type = value?.Aggregate(RecipeType.None, (a, e) => a | e) ?? RecipeType.None;
+    }
+
+    [NotMapped]
+    public bool Enabled
+    {
+        get => string.IsNullOrWhiteSpace(DisabledReason);
+        set => DisabledReason = value ? null : "Disabled by user";
     }
 }

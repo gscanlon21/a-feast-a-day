@@ -43,6 +43,7 @@ public partial class UserController
             existingRecipe.Name = recipe.Name;
             existingRecipe.Notes = recipe.Notes;
             existingRecipe.Type = recipe.Type;
+            existingRecipe.DisabledReason = recipe.DisabledReason;
         }
 
         await context.SaveChangesAsync();
