@@ -48,5 +48,8 @@ public enum Measure
     Grams = 13,
 
     [Display(Name = "Splash")]
-    Splash = 14
+    Splash = 14,
+
+    [Display(Name = "Jar")]
+    Jar = 15
 }

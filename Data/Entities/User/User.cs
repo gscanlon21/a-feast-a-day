@@ -196,7 +196,7 @@ public class User
     #region Navigation Properties
 
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
-    public virtual ICollection<UserToken> UserTokens { get; private init; } = new List<UserToken>();
+    public virtual ICollection<UserToken> UserTokens { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
     public virtual ICollection<UserFeast> UserWorkouts { get; private init; } = null!;

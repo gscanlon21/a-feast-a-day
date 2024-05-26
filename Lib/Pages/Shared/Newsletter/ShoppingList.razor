@@ -12,7 +12,9 @@
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
             @foreach (var group in List.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)).GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.Name))
             {
-                var fraction = new Fractions.Fraction(group.Sum(g => g.QuantityNumerator ?? 0), group.Sum(g => g.QuantityDenominator ?? 0), true);
+                var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator ?? 0);
+                var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
+                var fraction = new Fractions.Fraction(wholeFractions + partialFractions.Sum(g => g.QuantityNumerator ?? 0), Math.Max(1, partialFractions.Sum(g => g.QuantityDenominator ?? 0)), true);
                 <li>@(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")@(group.Key.Measure?.GetSingleDisplayName()) @group.Key.Name</li>
             }
         </ul>
