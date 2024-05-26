@@ -44,8 +44,8 @@ public class UserRecipe
     [Required]
     public Allergy Allergens { get; set; }
 
-    [Required]
-    public IngredientGroup IngredientGroups { get; set; }
+    [NotMapped]
+    public IngredientGroup IngredientGroups => Ingredients?.Aggregate(IngredientGroup.None, (curr, next) => curr | (next.Ingredient?.Group ?? IngredientGroup.None)) ?? IngredientGroup.None;
 
     /// <summary>
     /// Notes about the variation (externally shown).

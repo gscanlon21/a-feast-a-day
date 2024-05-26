@@ -17,7 +17,7 @@ public class QueryBuilder
     private SelectionOptions? SelectionOptions;
     private ExclusionOptions? ExclusionOptions;
     private RecipeOptions? ExerciseOptions;
-    private AllergenOptions? EquipmentOptions;
+    private AllergenOptions? AllergenOptions;
 
     /// <summary>
     /// Looks for similar buckets of exercise variations.
@@ -76,7 +76,7 @@ public class QueryBuilder
     /// </summary>
     public QueryBuilder WithUser(User user, bool ignoreIgnored = false, bool ignoreMissingEquipment = false, bool uniqueExercises = true)
     {
-        UserOptions = new UserOptions(user, Section)
+        UserOptions = new UserOptions(user)
         {
             IgnoreIgnored = ignoreIgnored,
             IgnoreMissingEquipment = ignoreMissingEquipment,
@@ -111,6 +111,17 @@ public class QueryBuilder
     }
 
     /// <summary>
+    /// The exercise ids and not the variation or exercisevariation ids.
+    /// </summary>
+    public QueryBuilder WithAllergens(Action<AllergenOptions>? builder = null)
+    {
+        var options = AllergenOptions ?? new AllergenOptions();
+        builder?.Invoke(options);
+        AllergenOptions = options;
+        return this;
+    }
+
+    /// <summary>
     /// Builds and returns the QueryRunner class with the options selected.
     /// </summary>
     public QueryRunner Build()
@@ -123,7 +134,7 @@ public class QueryBuilder
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             ExerciseOptions = ExerciseOptions ?? new RecipeOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
-            EquipmentOptions = EquipmentOptions ?? new AllergenOptions(),
+            AllergenOptions = AllergenOptions ?? new AllergenOptions(),
         };
     }
 }

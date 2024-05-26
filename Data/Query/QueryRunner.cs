@@ -64,7 +64,7 @@ public class QueryRunner(Section section)
     public required ExclusionOptions ExclusionOptions { get; init; }
     public required RecipeOptions ExerciseOptions { get; init; }
     public required IngredientGroupOptions IngredientGroupOptions { get; init; }
-    public required AllergenOptions EquipmentOptions { get; init; }
+    public required AllergenOptions AllergenOptions { get; init; }
 
     private IQueryable<ExercisesQueryResults> CreateExercisesQuery(CoreContext context)
     {
@@ -94,7 +94,7 @@ public class QueryRunner(Section section)
             });
     }
 
-    private IQueryable<ExerciseVariationsQueryResults> CreateFilteredExerciseVariationsQuery(CoreContext context, bool includeInstructions, bool includePrerequisites, bool ignoreExclusions = false)
+    private IQueryable<ExerciseVariationsQueryResults> CreateFilteredExerciseVariationsQuery(CoreContext context, bool ignoreExclusions = false)
     {
         var filteredQuery = CreateExerciseVariationsQuery(context)
             .TagWith(nameof(CreateFilteredExerciseVariationsQuery))
@@ -121,11 +121,11 @@ public class QueryRunner(Section section)
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        var filteredQuery = CreateFilteredExerciseVariationsQuery(context, includeInstructions: true, includePrerequisites: true);
+        var filteredQuery = CreateFilteredExerciseVariationsQuery(context);
 
         //filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterExercises(filteredQuery, ExerciseOptions.RecipeIds);
-        filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(IngredientGroup.None, (curr2, n2) => curr2 | n2), include: true, IngredientGroupOptions.MuscleTarget);
+        //filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(IngredientGroup.None, (curr2, n2) => curr2 | n2), include: true, IngredientGroupOptions.MuscleTarget);
 
         var queryResults = await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
 

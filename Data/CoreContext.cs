@@ -24,7 +24,7 @@ public class CoreContext : DbContext
 
     public CoreContext(DbContextOptions<CoreContext> context) : base(context) { }
 
-    private static readonly JsonSerializerOptions JsonSerializerOptions = new();
+    //private static readonly JsonSerializerOptions JsonSerializerOptions = new();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

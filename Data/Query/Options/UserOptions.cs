@@ -18,7 +18,7 @@ public class UserOptions : IOptions
 
     public UserOptions() { }
 
-    public UserOptions(Entities.User.User user, Section? section)
+    public UserOptions(Entities.User.User user)
     {
         NoUser = false;
         Id = user.Id;
