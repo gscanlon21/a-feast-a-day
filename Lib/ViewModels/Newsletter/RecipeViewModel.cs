@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
@@ -19,8 +18,6 @@ public class RecipeViewModel
     public string Name { get; init; } = null!;
 
     public string Notes { get; init; } = null!;
-
-    public RecipeType Type { get; init; }
 
     [Display(Name = "Prep Time")]
     public int PrepTime { get; set; }

@@ -7,7 +7,7 @@ namespace Web.ViewModels.User.Components;
 public class RecipesViewModel
 {
     [Display(Name = "My Recipes")]
-    public IList<Lib.ViewModels.Newsletter.RecipeViewModel> Recipes { get; init; }
+    public IList<Lib.ViewModels.Newsletter.NewsletterRecipeViewModel> Recipes { get; init; }
 
     public Verbosity Verbosity => Verbosity.Images;
 

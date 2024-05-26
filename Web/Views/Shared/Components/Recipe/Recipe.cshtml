@@ -110,12 +110,12 @@
         </div>
      
         <div class="form-group mb-3">
-            <label asp-for="Recipe.TypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Type)</label>
-            <select asp-for="Recipe.TypeBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
-                    asp-items="@(EnumExtensions.GetDisplayValues<RecipeType>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+            <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
+            <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
+                    asp-items="@(EnumExtensions.GetSingleValues32<Section>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
             </select>
-            <span asp-validation-for="Recipe.TypeBinder" class="text-danger"></span>
-            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Type)</div>
+            <span asp-validation-for="Recipe.SectionBinder" class="text-danger"></span>
+            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Section)</div>
         </div>
 
         <div class="mb-3" >

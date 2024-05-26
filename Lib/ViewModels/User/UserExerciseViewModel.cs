@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Lib.ViewModels.Newsletter;
+﻿using Lib.ViewModels.Newsletter;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
@@ -17,12 +16,6 @@ public class UserExerciseViewModel
 
     [Required]
     public int ExerciseId { get; init; }
-
-    /// <summary>
-    /// How far the user has progressed for this exercise.
-    /// </summary>
-    [Required, Range(UserConsts.MinUserProgression, UserConsts.MaxUserProgression)]
-    public int Progression { get; set; } = UserConsts.MinUserProgression;
 
     /// <summary>
     /// Don't show this exercise or any of it's variations to the user

@@ -45,7 +45,7 @@ public partial class UserController
             existingRecipe.Servings = recipe.Servings;
             existingRecipe.CookTime = recipe.CookTime;
             existingRecipe.PrepTime = recipe.PrepTime;
-            existingRecipe.Type = recipe.Type;
+            existingRecipe.Section = recipe.Section;
             existingRecipe.DisabledReason = recipe.DisabledReason;
         }
 

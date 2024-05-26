@@ -33,6 +33,7 @@ public class UserEditViewModel
         SendHour = user.SendHour;
         MaxIngredients = user.MaxIngredients;
         WeeklyServings = user.WeeklyServings;
+        ExcludeAllergens = user.ExcludeAllergens;
         Token = token;
     }
 
@@ -69,6 +70,10 @@ public class UserEditViewModel
     [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive with each recipe?")]
     public Verbosity Verbosity { get; set; }
 
+    [Required]
+    [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]
+    public Allergy ExcludeAllergens { get; set; }
+
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
     [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new recipes?")]
     public int SendHour { get; init; }
@@ -93,6 +98,12 @@ public class UserEditViewModel
     {
         get => Enum.GetValues<Verbosity>().Where(e => Verbosity.HasFlag(e)).ToArray();
         set => Verbosity = value?.Aggregate(Verbosity.None, (a, e) => a | e) ?? Verbosity.None;
+    }
+
+    public Allergy[]? AllergyBinder
+    {
+        get => Enum.GetValues<Allergy>().Where(e => ExcludeAllergens.HasFlag(e)).ToArray();
+        set => ExcludeAllergens = value?.Aggregate(Allergy.None, (a, e) => a | e) ?? Allergy.None;
     }
 
     public FootnoteType[]? FootnoteTypeBinder

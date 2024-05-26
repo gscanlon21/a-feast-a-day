@@ -19,13 +19,13 @@ public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserFeast
     public UserNewsletterDto User { get; } = user;
     public Entities.Newsletter.UserFeast UserWorkout { get; } = newsletter;
 
-    public List<UserRecipe> BreakfastRecipes { get; set; } = [];
-    public List<UserRecipe> LunchRecipes { get; set; } = [];
-    public List<UserRecipe> DinnerRecipes { get; set; } = [];
-    public List<UserRecipe> SideRecipes { get; set; } = [];
-    public List<UserRecipe> DessertRecipes { get; set; } = [];
-    public List<UserRecipe> RecipesOfTheDay { get; set; } = [];
-    public List<UserRecipe> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
+    public List<RecipeDto> BreakfastRecipes { get; set; } = [];
+    public List<RecipeDto> LunchRecipes { get; set; } = [];
+    public List<RecipeDto> DinnerRecipes { get; set; } = [];
+    public List<RecipeDto> SideRecipes { get; set; } = [];
+    public List<RecipeDto> DessertRecipes { get; set; } = [];
+    public List<RecipeDto> RecipesOfTheDay { get; set; } = [];
+    public List<RecipeDto> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
     /// <summary>
     /// How much detail to show in the newsletter.

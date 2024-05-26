@@ -41,7 +41,7 @@
     {
         @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
         <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
-            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"{Model.Section}/{Model.Id}")">Manage</a>
+            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"{Model.Section}/{Model.Recipe.Id}")">Manage</a>
         </small>
     }
          
@@ -52,36 +52,36 @@
             @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
             <div style="padding-inline-end:1.1ch">
                 <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
-                    <span style="text-decoration:underline;">@(Model.Name)</span>
+                    <span style="text-decoration:underline;">@(Model.Recipe.Name)</span>
                 </h3>
 
                 @if (Verbosity.HasFlag(Verbosity.Notes))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;">@Model.Notes</div>
+                    <div style="margin-block:.5em;font-size:x-small;">@Model.Recipe.Notes</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.PrepTime))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @(Model.PrepTime) min</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @(Model.Recipe.PrepTime) min</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.CookTime))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @(Model.CookTime) min</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @(Model.Recipe.CookTime) min</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.TotalTime))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @(Model.PrepTime + Model.CookTime) min</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @(Model.Recipe.PrepTime + Model.Recipe.CookTime) min</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.Servings))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Servings</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Recipe.Servings</div>
                 }
 
                 <ul style="padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var ingredient in Model.Ingredients)
+                    @foreach (var ingredient in Model.Recipe.Ingredients)
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
                             @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure?.GetSingleDisplayName()) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
@@ -90,7 +90,7 @@
                 </ul>
 
                 <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var instruction in Model.Instructions)
+                    @foreach (var instruction in Model.Recipe.Instructions)
                     {
                         <li style="margin-block:.35em;list-style-type:decimal;">
                             @instruction.Name
@@ -123,7 +123,7 @@
     public ViewModels.User.UserNewsletterViewModel? User { get; set; }
 
     [Parameter, EditorRequired]
-    public ViewModels.Newsletter.RecipeViewModel Model { get; set; } = null!;
+    public ViewModels.Newsletter.NewsletterRecipeViewModel Model { get; set; } = null!;
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }

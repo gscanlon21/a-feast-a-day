@@ -34,9 +34,6 @@ public class UserNewsletterViewModel
     [JsonInclude]
     public ICollection<UserExerciseViewModel> UserExercises { get; init; } = null!;
 
-    [JsonInclude]
-    public ICollection<UserVariationViewModel> UserVariations { get; init; } = null!;
-
     public int FootnoteCountTop { get; init; }
 
     public int FootnoteCountBottom { get; init; }

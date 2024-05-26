@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
@@ -75,6 +76,73 @@ public class UserRepo(CoreContext context)
         var timeUntilNextSend = !nextSendDateTime.HasValue ? null : nextSendDateTime - DateTime.UtcNow;
 
         return (nextSendDateTime, timeUntilNextSend);
+    }
+
+    private async Task<(double weeks, IDictionary<IngredientGroup, int?> volume)> GetWeeklyMuscleVolumeFromStrengthWorkouts(User user, int weeks)
+    {
+        var strengthNewsletterGroups = await context.UserFeasts
+            .AsNoTracking().TagWithCallSite()
+            .Where(n => n.User.Id == user.Id)
+            // Only look at records where the user is not new to fitness.
+            //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
+            // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
+            .Where(n => n.UserFeastRecipes.Any())
+            // Look at strengthening workouts only that are within the last X weeks.
+            //.Where(n => n.Frequency != Frequency.OffDayStretches)
+            .Where(n => n.Date >= Today.AddDays(-7 * weeks))
+            .GroupBy(n => n.Date)
+            .Select(g => new
+            {
+                g.Key,
+                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
+                NewsletterVariations = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+                    // Only select variations that worked a strengthening intensity.
+                    .Where(nv => (Section.Dinner | Section.Lunch | Section.Breakfast).HasFlag(nv.Section))
+                    .Select(nv => new
+                    {
+                        Proficiency = 1d,
+                        IngredientGroup = nv.Recipe.IngredientGroups,
+                    })
+            }).ToListAsync();
+
+        // .Max/.Min throw exceptions when the collection is empty.
+        if (strengthNewsletterGroups.Count != 0)
+        {
+            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
+            var actualWeeks = (Today.DayNumber - strengthNewsletterGroups.Min(n => n.Key).DayNumber) / 7d;
+            // User must have more than one week of data before we return anything.
+            if (actualWeeks > UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
+            {
+                var monthlyMuscles = strengthNewsletterGroups
+                    .SelectMany(ng => ng.NewsletterVariations.Select(nv => new
+                    {
+                        nv.IngredientGroup,
+                        StrengthVolume = nv.Proficiency,
+                    })).ToList();
+
+                return (weeks: actualWeeks, volume: UserIngredientGroup.MuscleTargets.Keys
+                    .ToDictionary(m => m, m => (int?)Convert.ToInt32(
+                            monthlyMuscles.Sum(mm => mm.IngredientGroup.HasFlag(m) ? mm.StrengthVolume : 0)
+                        / actualWeeks)
+                    )
+                );
+            }
+        }
+
+        return (weeks: 0, volume: UserIngredientGroup.MuscleTargets.Keys.ToDictionary(m => m, m => (int?)null));
+    }
+
+    /// <summary>
+    /// Get the user's weekly training volume for each muscle group.
+    /// 
+    /// Returns `null` when the user is new to fitness.
+    /// </summary>
+    public async Task<(double weeks, IDictionary<IngredientGroup, int?>? volume)> GetWeeklyMuscleVolume(User user, int weeks)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
+
+        var (strengthWeeks, weeklyMuscleVolumeFromStrengthWorkouts) = await GetWeeklyMuscleVolumeFromStrengthWorkouts(user, weeks);
+        return (weeks: strengthWeeks, volume: weeklyMuscleVolumeFromStrengthWorkouts);
     }
 
     public async Task<string> AddUserToken(User user, DateTime expires)

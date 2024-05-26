@@ -32,7 +32,7 @@ public class TestNewsletterJob : FakeDatabase
         var mockLoggerNewsletterJob = new Mock<ILogger<NewsletterJob>>();
         var mockLoggerNewsletterRepo = new Mock<ILogger<NewsletterRepo>>();
         var userRepo = new UserRepo(Context);
-        var newsletterRepo = new NewsletterRepo(mockLoggerNewsletterRepo.Object, Context, userRepo);
+        var newsletterRepo = new NewsletterRepo(mockLoggerNewsletterRepo.Object, Context, userRepo, mockSsf.Object);
 
         NewsletterJob = new NewsletterJob(
             mockLoggerNewsletterJob.Object,

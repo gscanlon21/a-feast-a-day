@@ -1,4 +1,6 @@
-﻿using Core.Models.Footnote;
+﻿using Core.Code.Extensions;
+using Core.Models.Footnote;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Dtos.Newsletter;
 using Data.Dtos.User;
@@ -6,12 +8,14 @@ using Data.Entities.Footnote;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
+using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace Data.Repos;
 
-public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext context, UserRepo userRepo)
+public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
 {
     /// <summary>
     /// Today's date in UTC.
@@ -131,67 +135,15 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     }
 
     /// <summary>
-    /// The strength training newsletter.
+    /// The meal plan newsletter.
     /// </summary>
     private async Task<NewsletterDto?> OnDayNewsletter(WorkoutContext newsletterContext)
     {
-        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext);
-
-        var breakfastRecipes = context.UserRecipes
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == newsletterContext.User.Id)
-            .Where(r => r.Type.HasFlag(RecipeType.Breakfast))
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
-            .OrderBy(r => EF.Functions.Random())
-            .Take(7)
-            .ToList();
-
-        var lunchRecipes = context.UserRecipes
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == newsletterContext.User.Id)
-            .Where(r => r.Type.HasFlag(RecipeType.Lunch))
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
-            .OrderBy(r => EF.Functions.Random())
-            .Take(7)
-            .ToList();
-
-        var dinnerRecipes = context.UserRecipes
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == newsletterContext.User.Id)
-            .Where(r => r.Type.HasFlag(RecipeType.Dinner))
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
-            .OrderBy(r => EF.Functions.Random())
-            .Take(7)
-            .ToList();
-
-        var sideRecipes = context.UserRecipes
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == newsletterContext.User.Id)
-            .Where(r => r.Type.HasFlag(RecipeType.Side))
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
-            .OrderBy(r => EF.Functions.Random())
-            .Take(7)
-            .ToList();
-
-        var dessertRecipes = context.UserRecipes
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == newsletterContext.User.Id)
-            .Where(r => r.Type.HasFlag(RecipeType.Dessert))
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
-            .OrderBy(r => EF.Functions.Random())
-            .Take(7)
-            .ToList();
-
+        var breakfastRecipes = await GetBreakfastRecipes(newsletterContext);
+        var lunchRecipes = await GetLunchRecipes(newsletterContext, exclude: breakfastRecipes);
+        var dinnerRecipes = await GetDinnerRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes));
+        var sideRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes));
+        var dessertRecipes = await GetDessertRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes));        
         var recipesOfTheDay = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
@@ -202,51 +154,23 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Take(1)
             .ToList();
 
-        var finalDinnerRecipes = new List<UserRecipe>();
-        while (dinnerRecipes.Any() && finalDinnerRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
-        {
-            finalDinnerRecipes.Add(dinnerRecipes[0]);
-            dinnerRecipes.RemoveAt(0);
-        }
-
-        var finalSideRecipes = new List<UserRecipe>();
-        while (sideRecipes.Any() && finalSideRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
-        {
-            finalSideRecipes.Add(sideRecipes[0]);
-            sideRecipes.RemoveAt(0);
-        }
-
-        var finalLunchRecipes = new List<UserRecipe>();
-        while (lunchRecipes.Any() && finalLunchRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
-        {
-            finalLunchRecipes.Add(lunchRecipes[0]);
-            lunchRecipes.RemoveAt(0);
-        }
-
-        var finalBreakfastRecipes = new List<UserRecipe>();
-        while (breakfastRecipes.Any() && finalBreakfastRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
-        {
-            finalBreakfastRecipes.Add(breakfastRecipes[0]);
-            breakfastRecipes.RemoveAt(0);
-        }
-
-        var finalDessertRecipes = new List<UserRecipe>();
-        while (dessertRecipes.Any() && finalDessertRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
-        {
-            finalDessertRecipes.Add(dessertRecipes[0]);
-            dessertRecipes.RemoveAt(0);
-        }
+        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext,
+            recipes: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList()
+        );
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {
-            DinnerRecipes = finalDinnerRecipes,
-            SideRecipes = finalSideRecipes,
-            LunchRecipes = finalLunchRecipes,
-            DessertRecipes = finalDessertRecipes,
-            BreakfastRecipes = finalBreakfastRecipes,
-            RecipesOfTheDay = recipesOfTheDay,
+            DinnerRecipes = dinnerRecipes,
+            SideRecipes = sideRecipes,
+            LunchRecipes = lunchRecipes,
+            DessertRecipes = dessertRecipes,
+            BreakfastRecipes = breakfastRecipes,
+            //RecipesOfTheDay = recipesOfTheDay,
         };
+
+        // Other exercises. Refresh every day.
+        await UpdateLastSeenDate(exercises: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
 
         return viewModel;
     }
@@ -261,6 +185,40 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         {
             Today = date,
         };
+
+        foreach (var section in EnumExtensions.GetSingleValues32<Section>())
+        {
+            var exercises = (await new QueryBuilder(section)
+                .WithUser(user, uniqueExercises: false)
+                .WithExercises(options =>
+                {
+                    options.AddPastRecipes(newsletter.UserFeastRecipes);
+                })
+                .Build()
+                .Query(serviceScopeFactory))
+                .Select(r => new RecipeDto(r))
+                .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
+                .ToList();
+
+            switch (section)
+            {
+                case Section.Dinner:
+                    newsletterViewModel.DinnerRecipes = exercises;
+                    break;
+                case Section.Lunch:
+                    newsletterViewModel.LunchRecipes = exercises;
+                    break;
+                case Section.Breakfast:
+                    newsletterViewModel.BreakfastRecipes = exercises;
+                    break;
+                case Section.Sides:
+                    newsletterViewModel.SideRecipes = exercises;
+                    break;
+                case Section.Dessert:
+                    newsletterViewModel.DessertRecipes = exercises;
+                    break;
+            }
+        }
 
         return newsletterViewModel;
     }

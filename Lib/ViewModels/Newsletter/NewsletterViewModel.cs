@@ -23,14 +23,14 @@ public class NewsletterViewModel
     /// </summary>
     public Verbosity Verbosity { get; init; }
 
-    public List<RecipeViewModel> BreakfastRecipes { get; set; } = [];
-    public List<RecipeViewModel> LunchRecipes { get; set; } = [];
-    public List<RecipeViewModel> DinnerRecipes { get; set; } = [];
-    public List<RecipeViewModel> SideRecipes { get; set; } = [];
-    public List<RecipeViewModel> DessertRecipes { get; set; } = [];
-    public List<RecipeViewModel> RecipesOfTheDay { get; set; } = [];
+    public List<NewsletterRecipeViewModel> BreakfastRecipes { get; set; } = [];
+    public List<NewsletterRecipeViewModel> LunchRecipes { get; set; } = [];
+    public List<NewsletterRecipeViewModel> DinnerRecipes { get; set; } = [];
+    public List<NewsletterRecipeViewModel> SideRecipes { get; set; } = [];
+    public List<NewsletterRecipeViewModel> DessertRecipes { get; set; } = [];
+    public List<NewsletterRecipeViewModel> RecipesOfTheDay { get; set; } = [];
 
-    public List<RecipeViewModel> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
+    public List<NewsletterRecipeViewModel> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
 
     /// <summary>

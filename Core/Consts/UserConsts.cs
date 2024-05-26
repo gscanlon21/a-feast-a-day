@@ -31,26 +31,24 @@ public class UserConsts
         | FootnoteType.HealthTips | FootnoteType.HealthFacts | FootnoteType.GoodVibes | FootnoteType.Mindfulness;
 
     /// <summary>
+    /// This shouldn't be too high (>8) or else the program will spend too much time trying 
+    /// to get the user in range and end up not working or overworking specific muscles in the interim.
+    /// 
+    /// This shouldn't be too low (<8) or else the muscle target value will drop too much
+    /// during rest days and overwork the user the next time they see a workout.
+    /// </summary>
+    public const int TrainingVolumeWeeks = 8;
+
+    /// <summary>
+    /// 8 because we want to leave the user with at least one week of data 
+    /// and muscle targets only take effect after 1 week (MuscleTargetsTakeEffectAfterXWeeks).
+    /// </summary>
+    public const int TrainingVolumeClearDays = 8;
+
+    /// <summary>
     /// After how many weeks until muscle targets start taking effect.
     /// </summary>
     public const int MuscleTargetsTakeEffectAfterXWeeks = 1;
-
-    /// <summary>
-    /// The lowest the user's progression can go.
-    /// 
-    /// Also the user's starting progression when the user is new to fitness.
-    /// </summary>
-    public const int MinUserProgression = 5;
-
-    /// <summary>
-    /// Also the user's starting progression when the user is not new to fitness.
-    /// </summary>
-    public const int MidUserProgression = 50;
-
-    /// <summary>
-    /// The highest the user's progression can go.
-    /// </summary>
-    public const int MaxUserProgression = 95;
 
     /// <summary>
     /// How many custom user_frequency records do we allow per user?

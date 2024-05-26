@@ -1,9 +1,13 @@
 ﻿using Data;
+using Data.Dtos.Newsletter;
 using Data.Entities.User;
+using Data.Query.Builders;
 using Data.Repos;
+using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Web.Code;
 using Web.ViewModels.User.Components;
 
@@ -13,7 +17,7 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
 /// </summary>
-public class RecipesViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
+public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory) : ViewComponent
 {
     /// <summary>
     /// For routing
@@ -26,18 +30,24 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo) : View
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
-        var recipes = await context.UserRecipes
+        var userRecipes = await context.UserRecipes.Where(r => r.UserId == user.Id).ToListAsync();
+        var recipes = (await new QueryBuilder()
             // Include disabled recipes.
-            .IgnoreQueryFilters()
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == user.Id)
-            .ToListAsync();
+            .WithUser(user, ignoreIgnored: true, ignoreMissingEquipment: true, uniqueExercises: false)
+            .WithExercises(x =>
+            {
+                x.AddExercises(userRecipes);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .Select(r => new RecipeDto(r)
+            .AsType<NewsletterRecipeViewModel, RecipeDto>()!)
+            .DistinctBy(vm => vm.Recipe)
+            .ToList();
 
         return View("Recipes", new RecipesViewModel()
         {
-            Recipes = recipes.AsType<List<Lib.ViewModels.Newsletter.RecipeViewModel>, List<UserRecipe>>()!,
+            Recipes = recipes,
             UserNewsletter = userNewsletter,
         });
     }

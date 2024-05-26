@@ -10,7 +10,7 @@ public enum IngredientGroup
     [Display(Name = "Fruits", GroupName = "Fruits and Vegatables")]
     Fruits = 1 << 0, // 1
 
-    [Display(Name = "Fruits", GroupName = "Fruits and Vegetables")]
+    [Display(Name = "Vegetables", GroupName = "Fruits and Vegetables")]
     Vegetables = 1 << 1, // 2
 
     [Display(Name = "Vegetable Oils", GroupName = "Unsaturated Fats and Cholesterol")]
@@ -28,10 +28,10 @@ public enum IngredientGroup
     [Display(Name = "Poultry", GroupName = "Fish, Poultry, and Eggs")]
     Poultry = 1 << 6, // 64
 
-    [Display(Name = "Poultry", GroupName = "Fish, Poultry, and Eggs")]
+    [Display(Name = "Eggs", GroupName = "Fish, Poultry, and Eggs")]
     Eggs = 1 << 7, // 128
 
-    [Display(Name = "Poultry", GroupName = "Fish, Poultry, and Eggs")]
+    [Display(Name = "Fish", GroupName = "Fish, Poultry, and Eggs")]
     Fish = 1 << 8, // 256
 
     [Display(Name = "Nuts", GroupName = "Nuts, Seeds, Beans, and Tofu")]
@@ -54,4 +54,7 @@ public enum IngredientGroup
 
     [Display(Name = "Refined Grains", GroupName = "Refined Grains")]
     RefinedGrains = 1 << 15, // 32768
+
+    All = Fruits | Vegetables | VegetableOils | UnsaturatedFats | Dairy | WholeGrains | Poultry
+        | Eggs | Fish | Nuts | Seeds | Beans | Tofu | RedMeat | Butter | RefinedGrains
 }

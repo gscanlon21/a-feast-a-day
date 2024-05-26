@@ -54,6 +54,15 @@
                 <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
             </div>
 
+            <div class="form-group mb-3">
+                <label asp-for="AllergyBinder" class="control-label">@Html.DisplayNameFor(_ => Model.ExcludeAllergens)</label>
+                <select asp-for="AllergyBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"
+                        asp-items="@(EnumExtensions.GetSingleValues32<Allergy>().AsSelectListItems32())">
+                </select>
+                <span asp-validation-for="AllergyBinder" class="text-danger"></span>
+                <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.ExcludeAllergens)</div>
+            </div>
+
             @if (Model.User.IsDemoUser)
             {
                 <div class="alert alert-info callout">
@@ -136,6 +145,7 @@
         @await Component.InvokeAsync(WorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(NextWorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(PastWorkoutViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(IngredientGroupViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })

@@ -1,0 +1,146 @@
+﻿@model IngredientGroupViewModel
+@using Core.Consts
+@using Lib.ViewModels.User
+@using Core.Models.Exercise
+@using Data.Entities.User
+@using Lib.Services
+
+@if (Model.User.IsDemoUser)
+{
+    <div class="alert alert-info callout">
+        Customize how much each muscle is being strengthened. Workouts are automatically adjusted to remove muscle imbalances.
+    </div>
+}
+
+<div class="row align-items-center">
+    <div class="col">
+        <h5 class="mb-0">Weekly Training Volume Targets</h5>
+        <h6 class="mb-1 font-weight--normal">@Model.Weeks week rolling average</h6>
+    </div>
+</div>
+<div class="alert alert-primary" role="alert">
+    <div style="display:flex;flex-direction:column;row-gap:1ex;">
+        @foreach (var muscleTarget in UserIngredientGroup.MuscleTargets
+        .Select(kv => Model.GetMuscleTarget(kv))
+        .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
+        .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
+        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName()).Append(new IngredientGroupViewModel.MonthlyMuscle()
+        {
+            IngredientGroup = IngredientGroup.All,
+            ShowButtons = true,
+            IsMaxVolumeInRange = true,
+            IsMinVolumeInRange = true,
+            Start = 0,
+            End = 100,
+            Middle = 50,
+            DefaultStart = 0,
+            DefaultEnd = 100,
+            ValueInRange = 50,
+            UserMuscleTarget = new Range(Convert.ToInt32(Model.MaxRangeValue) / 4, Convert.ToInt32(Model.MaxRangeValue) / 4 * 3),
+        }))
+        {
+            var color = (muscleTarget.IsMinVolumeInRange, muscleTarget.IsMaxVolumeInRange, muscleTarget.ShowButtons) switch
+            {
+                // Max volume is out of range
+                (_, false, true) => "orangered",
+                // Min volume is out of range
+                (false, _, true) => "darkorange",
+                // Volume is in range
+                _ => "limegreen",
+            };
+
+            <div style="display:flex;column-gap:1ch;flex-wrap:wrap;">
+                <div style="display:flex;width:14ch;">@muscleTarget.IngredientGroup.GetSingleDisplayName()</div>
+
+                <div style="display:flex;gap:1ch;align-items:center;flex:1 0 275px;">
+                    <div style="display:flex;justify-content:space-between;">
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetMuscleRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <button class="btn btn-icon" type="submit" @(muscleTarget.ShowButtons ? "" : "disabled")>
+                                <img src="/images/user/restore-filled.svg">
+                            </button>
+                        </form>
+
+                        @{
+                            var showDecreaseStart = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.Start.Value > 0;
+                        }
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseStartMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <button class="btn btn-icon" type="submit" @(showDecreaseStart ? "" : "disabled")>
+                                <img src="/images/user/minus.svg">
+                            </button>
+                        </form>
+
+                        @{
+                            var showIncreaseStart = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.Start.Value + UserConsts.IncrementMuscleTargetBy < muscleTarget.UserMuscleTarget.End.Value - UserConsts.IncrementMuscleTargetBy;
+                        }
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseStartMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <button class="btn btn-icon" type="submit" @(showIncreaseStart ? "" : "disabled")>
+                                <img src="/images/user/add.svg">
+                            </button>
+                        </form>
+                    </div>
+                    <div style="width:100%;position:relative;display:flex;">
+                        <div style="position:absolute;bottom:-1px;height:2px;width:100%;background-color:@color;"></div>
+
+                        @if (muscleTarget.ShowButtons)
+                        {
+                            @* User's muscle target *@
+                            <div style="position:absolute;bottom:calc(-.5ex - 0px);height:1ex;width:100%;background:linear-gradient(90deg, transparent @muscleTarget.Start%, lightgreen @muscleTarget.Start% @muscleTarget.End%, transparent @muscleTarget.End%);"></div>
+
+                            <div style="position:absolute;bottom:calc(-.5ex - 0px);left:calc(@muscleTarget.Middle% - 1px);height:1ex;width:2px;background:rgba(0,0,0,.1);"></div>
+                        }
+
+                        @* Default muscle target *@
+                        <div style="position:absolute;bottom:calc(-.5ex - 0px);height:1ex;width:100%;background:linear-gradient(90deg, transparent @muscleTarget.DefaultStart%, rgba(0,0,0,.1) @muscleTarget.DefaultStart% @muscleTarget.DefaultEnd%, transparent @muscleTarget.DefaultEnd%);"></div>
+
+                        @* Actual muscle volume *@
+                        <div style="position:absolute;bottom:calc(.5ex + 1px);left:calc(@muscleTarget.ValueInRange% - 1ch);width:2ch;text-align:center;font-size:xx-small;line-height:1;color:@color;">
+                            &#9660;
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;">
+                        @{
+                            var showDecreaseEnd = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.End.Value - UserConsts.IncrementMuscleTargetBy > muscleTarget.UserMuscleTarget.Start.Value + UserConsts.IncrementMuscleTargetBy;
+                        }
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseEndMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <button class="btn btn-icon" type="submit" @(showDecreaseEnd ? "" : "disabled")>
+                                <img src="/images/user/minus.svg">
+                            </button>
+                        </form>
+
+                        @{
+                            var showIncreaseEnd = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.End.Value < Model.MaxRangeValue;
+                        }
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseEndMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <button class="btn btn-icon" type="submit" @(showIncreaseEnd ? "" : "disabled")>
+                                <img src="/images/user/add.svg">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <hr>
+    <details>
+        <summary>
+            @if (Model.WeeksOfData <= UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
+            {
+                <span>Workouts are not being automatically adjusted to match your muscle targets—there is not enough weekly data to work with yet.</span>
+            }
+            else
+            {
+                <span>Workouts are being automatically adjusted to match your muscle targets.</span>
+            }
+        </summary>
+
+        <div class="mt-3 small">
+            <div class="mb-3">Too much training volume per week can lead to joint pain and overuse injuries. Too little training volume per week may not result in any noticeable strength gain. Beginner lifters should skew towards the lower end of the range.</div>
+            <div>Only functional, accessory, and core exercises are used in the calculation for this feature. Only muscle groups that are targeted by your current workout split are able to be adjusted. </div>
+        </div>
+    </details>
+</div>

@@ -175,6 +175,8 @@ namespace Web.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RecipeId");
+
                     b.HasIndex("UserFeastId");
 
                     b.ToTable("user_feast_recipe", t =>
@@ -200,6 +202,9 @@ namespace Web.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("ExcludeAllergens")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Features")
                         .HasColumnType("integer");
@@ -294,6 +299,25 @@ namespace Web.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Data.Entities.User.UserIngredientGroup", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Group")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("End")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Start")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "Group");
+
+                    b.ToTable("user_ingredient_group");
+                });
+
             modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
                 {
                     b.Property<int>("Id")
@@ -302,11 +326,17 @@ namespace Web.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Allergens")
+                        .HasColumnType("integer");
+
                     b.Property<int>("CookTime")
                         .HasColumnType("integer");
 
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
+
+                    b.Property<int>("IngredientGroups")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -318,10 +348,10 @@ namespace Web.Migrations
                     b.Property<int>("PrepTime")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Servings")
+                    b.Property<int>("Section")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Type")
+                    b.Property<int>("Servings")
                         .HasColumnType("integer");
 
                     b.Property<int>("UserId")
@@ -443,6 +473,39 @@ namespace Web.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Data.Entities.User.UserUserRecipe", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("Ignore")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool?>("IsPrimary")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateOnly>("LastSeen")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("LastVisible")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly?>("RefreshAfter")
+                        .HasColumnType("date");
+
+                    b.HasKey("UserId", "RecipeId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("user_user_recipe", t =>
+                        {
+                            t.HasComment("User's progression level of an exercise");
+                        });
+                });
+
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
                 {
                     b.HasOne("Data.Entities.User.User", "User")
@@ -478,11 +541,19 @@ namespace Web.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
                 {
+                    b.HasOne("Data.Entities.User.UserRecipe", "Recipe")
+                        .WithMany("UserFeastRecipes")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Data.Entities.Newsletter.UserFeast", "UserFeast")
                         .WithMany("UserFeastRecipes")
                         .HasForeignKey("UserFeastId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Recipe");
 
                     b.Navigation("UserFeast");
                 });
@@ -492,6 +563,17 @@ namespace Web.Migrations
                     b.HasOne("Data.Entities.User.User", "User")
                         .WithMany("UserIngredients")
                         .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Data.Entities.User.UserIngredientGroup", b =>
+                {
+                    b.HasOne("Data.Entities.User.User", "User")
+                        .WithMany("UserIngredientGroups")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -548,6 +630,25 @@ namespace Web.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Data.Entities.User.UserUserRecipe", b =>
+                {
+                    b.HasOne("Data.Entities.User.UserRecipe", "Recipe")
+                        .WithMany("UserUserRecipes")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Data.Entities.User.User", "User")
+                        .WithMany("UserUserRecipes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Recipe");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
                     b.Navigation("UserFeastRecipes");
@@ -559,11 +660,15 @@ namespace Web.Migrations
 
                     b.Navigation("UserFootnotes");
 
+                    b.Navigation("UserIngredientGroups");
+
                     b.Navigation("UserIngredients");
 
                     b.Navigation("UserRecipes");
 
                     b.Navigation("UserTokens");
+
+                    b.Navigation("UserUserRecipes");
 
                     b.Navigation("UserWorkouts");
                 });
@@ -578,6 +683,10 @@ namespace Web.Migrations
                     b.Navigation("Ingredients");
 
                     b.Navigation("Instructions");
+
+                    b.Navigation("UserFeastRecipes");
+
+                    b.Navigation("UserUserRecipes");
                 });
 #pragma warning restore 612, 618
         }

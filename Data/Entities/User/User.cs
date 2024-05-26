@@ -147,6 +147,12 @@ public class User
     public Verbosity Verbosity { get; set; }
 
     /// <summary>
+    /// What allergens does the user want in their newsletter?
+    /// </summary>
+    [Required]
+    public Allergy ExcludeAllergens { get; set; }
+
+    /// <summary>
     /// When was the user last active?
     /// 
     /// Is `null` when the user has not confirmed their account.
@@ -195,6 +201,9 @@ public class User
     #endregion
     #region Navigation Properties
 
+    [JsonIgnore, InverseProperty(nameof(UserIngredientGroup.User))]
+    public virtual ICollection<UserIngredientGroup> UserIngredientGroups { get; private init; } = [];
+
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; private init; } = [];
 
@@ -203,6 +212,9 @@ public class User
 
     [JsonIgnore, InverseProperty(nameof(UserRecipe.User))]
     public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
+
+    [JsonIgnore, InverseProperty(nameof(UserUserRecipe.User))]
+    public virtual ICollection<UserUserRecipe> UserUserRecipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserIngredient.User))]
     public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = null!;
