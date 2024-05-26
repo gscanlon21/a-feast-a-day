@@ -25,7 +25,7 @@ public class UserRecipeIngredient
     /// </summary>
     public string? Attributes { get; init; }
 
-    [Range(1, 32), Display(Name = "Quantity")]
+    [Range(1, 1000), Display(Name = "Quantity")]
     public int? QuantityNumerator { get; set; } = 1;
 
     [Range(1, 16), Display(Name = "Quantity")]
