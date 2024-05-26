@@ -17,15 +17,8 @@ namespace Data.Query;
 /// </summary>
 public class QueryRunner(Section section)
 {
-    [DebuggerDisplay("{Exercise}")]
-    private class ExercisesQueryResults
-    {
-        public UserRecipe Exercise { get; init; } = null!;
-        public UserUserRecipe UserExercise { get; init; } = null!;
-    }
-
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
-    private class ExerciseVariationsQueryResults
+    private class RecipesQueryResults
         : IExerciseVariationCombo
     {
         public UserRecipe Recipe { get; init; } = null!;
@@ -33,7 +26,7 @@ public class QueryRunner(Section section)
     }
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
-    private class InProgressQueryResults(ExerciseVariationsQueryResults queryResult) :
+    private class InProgressQueryResults(RecipesQueryResults queryResult) :
         IExerciseVariationCombo
     {
         public UserRecipe Recipe { get; } = queryResult.Recipe;
@@ -43,14 +36,6 @@ public class QueryRunner(Section section)
 
         public override bool Equals(object? obj) => obj is InProgressQueryResults other
             && other.Recipe.Id == Recipe.Id;
-    }
-
-    [DebuggerDisplay("{ExerciseId}: {VariationName}")]
-    private class AllVariationsQueryResults(ExerciseVariationsQueryResults queryResult)
-    {
-        public int ExerciseId { get; } = queryResult.Recipe.Id;
-        public string VariationName { get; } = queryResult.Recipe.Name;
-        public bool IsIgnored { get; } = queryResult.UserRecipe?.Ignore ?? false;
     }
 
     /// <summary>
@@ -66,37 +51,27 @@ public class QueryRunner(Section section)
     public required IngredientGroupOptions IngredientGroupOptions { get; init; }
     public required AllergenOptions AllergenOptions { get; init; }
 
-    private IQueryable<ExercisesQueryResults> CreateExercisesQuery(CoreContext context)
+    private IQueryable<RecipesQueryResults> CreateExercisesQuery(CoreContext context)
     {
         var query = context.UserRecipes.IgnoreQueryFilters().TagWith(nameof(CreateExercisesQuery))
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == UserOptions.Id)
+            .Where(r => r.UserId == UserOptions.Id || (UserOptions.NoUser && r.User.ShareMyRecipes))
             .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .Where(ev => ev.DisabledReason == null);
 
 
-        return query.Select(i => new ExercisesQueryResults()
+        return query.Select(i => new RecipesQueryResults()
         {
-            Exercise = i,
-            UserExercise = i.UserUserRecipes.First(ue => ue.UserId == UserOptions.Id)
+            Recipe = i,
+            UserRecipe = i.UserUserRecipes.First(ue => ue.UserId == UserOptions.Id)
         });
     }
 
-    private IQueryable<ExerciseVariationsQueryResults> CreateExerciseVariationsQuery(CoreContext context)
+    private IQueryable<RecipesQueryResults> CreateFilteredExerciseVariationsQuery(CoreContext context, bool ignoreExclusions = false)
     {
-        return CreateExercisesQuery(context)
-            .Select(a => new ExerciseVariationsQueryResults()
-            {
-                Recipe = a.Exercise,
-                UserRecipe = a.UserExercise
-            });
-    }
-
-    private IQueryable<ExerciseVariationsQueryResults> CreateFilteredExerciseVariationsQuery(CoreContext context, bool ignoreExclusions = false)
-    {
-        var filteredQuery = CreateExerciseVariationsQuery(context)
+        var filteredQuery = CreateExercisesQuery(context)
             .TagWith(nameof(CreateFilteredExerciseVariationsQuery))
             // Don't grab exercises that the user wants to ignore
             .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
@@ -138,11 +113,6 @@ public class QueryRunner(Section section)
         {
             // Do this before querying prerequisites so that the user records also exist for the prerequisites.
             await AddMissingUserRecords(context, queryResults);
-
-            // Grab a list of non-filtered variations for all the exercises we grabbed.
-            // We only need exercise variations for the exercises in our query result set.
-            var allExercisesVariations = await Filters.FilterExercises(CreateExerciseVariationsQuery(context), queryResults.Select(qr => qr.Recipe.Id).ToList())
-                .Select(a => new AllVariationsQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
 
             foreach (var queryResult in queryResults)
             {
