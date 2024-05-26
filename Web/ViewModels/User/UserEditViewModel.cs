@@ -92,7 +92,7 @@ public class UserEditViewModel
 
     [Required]
     [Display(Name = "Send Days", Description = "What days do you want to receive new recipes?")]
-    public Days SendDays { get; private set; }
+    public Days SendDays { get; init; }
 
     public Verbosity[]? VerbosityBinder
     {
