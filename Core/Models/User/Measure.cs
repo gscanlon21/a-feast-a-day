@@ -43,4 +43,7 @@ public enum Measure
 
     [Display(Name = "Package")]
     Package = 12,
+
+    [Display(Name = "Grams", ShortName = "g")]
+    Grams = 13,
 }
