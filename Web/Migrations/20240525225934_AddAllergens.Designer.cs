@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Web.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240525225934_AddAllergens")]
+    partial class AddAllergens
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -216,9 +219,6 @@ namespace Web.Migrations
                     b.Property<DateOnly?>("LastActive")
                         .HasColumnType("date");
 
-                    b.Property<int?>("MaxIngredients")
-                        .HasColumnType("integer");
-
                     b.Property<string>("NewsletterDisabledReason")
                         .HasColumnType("text");
 
@@ -262,9 +262,6 @@ namespace Web.Migrations
                     b.Property<int>("Group")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Minerals")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -276,9 +273,6 @@ namespace Web.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<int?>("UserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Vitamins")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

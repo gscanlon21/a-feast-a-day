@@ -31,6 +31,7 @@ public class UserEditViewModel
         FootnoteType = user.FootnoteType;
         ShareMyRecipes = user.ShareMyRecipes;
         SendHour = user.SendHour;
+        MaxIngredients = user.MaxIngredients;
         Token = token;
     }
 
@@ -71,6 +72,10 @@ public class UserEditViewModel
     [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new recipes?")]
     public int SendHour { get; init; }
 
+    [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
+    [Display(Name = "Maximum Ingredients", Description = "What's the maximum number of ingredients you'd like in your recipes?")]
+    public int? MaxIngredients { get; init; }
+
     [Required]
     [Display(Name = "Share My Recipes", Description = "Share your recipes with other users.")]
     public bool ShareMyRecipes { get; set; }
@@ -89,11 +94,5 @@ public class UserEditViewModel
     {
         get => Enum.GetValues<FootnoteType>().Where(e => FootnoteType.HasFlag(e)).ToArray();
         set => FootnoteType = value?.Aggregate(FootnoteType.None, (a, e) => a | e) ?? FootnoteType.None;
-    }
-
-    public Days[]? SendDaysBinder
-    {
-        get => Enum.GetValues<Days>().Where(e => SendDays.HasFlag(e)).ToArray();
-        set => SendDays = value?.Aggregate(Days.None, (a, e) => a | e) ?? Days.None;
     }
 }

@@ -80,7 +80,7 @@
                     <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Servings</div>
                 }
 
-                <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
+                <ul style="padding-inline-start:2ch;font-size:.85em;">
                     @foreach (var ingredient in Model.Ingredients)
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
@@ -92,7 +92,7 @@
                 <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
                     @foreach (var instruction in Model.Instructions)
                     {
-                        <li style="margin-block:.35em;list-style-type:disc;">
+                        <li style="margin-block:.35em;list-style-type:decimal;">
                             @instruction.Name
                         </li>
                     }

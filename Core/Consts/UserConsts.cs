@@ -16,7 +16,10 @@ public class UserConsts
     public const int SendHourDefault = 0;
     public const int SendHourMax = 23;
 
-    public const Days DaysDefault = Days.Monday | Days.Tuesday | Days.Thursday | Days.Friday;
+    public const int IngredientsMin = 4;
+    public const int IngredientsMax = 10;
+
+    public const Days DaysDefault = Days.Sunday;
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
 

@@ -54,9 +54,15 @@ public enum Verbosity
     CommonIngredients = 1 << 6, // 64
 
     /// <summary>
+    /// Show common ingredients (salt, pepper...) in the shopping list.
+    /// </summary>
+    [Display(Name = "Allergens")]
+    Allergens = 1 << 7, // 128
+
+    /// <summary>
     /// This is not user-facing. 
     /// It should not have a Display attribute. 
     /// </summary>
-    Debug = Images | CookTime | PrepTime | Servings | Notes | CommonIngredients
+    Debug = Images | CookTime | PrepTime | Servings | Notes | CommonIngredients | Allergens
         | 1 << 30 // 1073741824
 }

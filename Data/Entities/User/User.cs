@@ -117,6 +117,12 @@ public class User
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
     public int SendHour { get; set; }
 
+    // <summary>
+    /// What's the maximum number of ingredients you'd like in recipes?
+    /// </summary>
+    [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
+    public int? MaxIngredients { get; set; }
+
     /// <summary>
     /// Offset of today taking into account the user's SendHour.
     /// </summary>

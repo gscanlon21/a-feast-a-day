@@ -145,6 +145,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Breakfast)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();
@@ -155,6 +156,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Lunch)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();
@@ -165,6 +167,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dinner)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();
@@ -175,6 +178,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Side)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();
@@ -185,6 +189,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.UserId == context.User.Id)
             .Where(r => r.Type == RecipeType.Dessert)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();
@@ -194,6 +199,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.User.ShareMyRecipes)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();

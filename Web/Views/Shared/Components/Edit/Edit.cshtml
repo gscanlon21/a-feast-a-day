@@ -23,11 +23,20 @@
             </div>
 
             <div class="form-group mb-3">
-                <label asp-for="SendDaysBinder" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
-                <select asp-for="SendDaysBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="@BitOperations.PopCount((ulong)Days.All)"
+                <label asp-for="MaxIngredients" class="control-label">@Html.DisplayNameFor(_ => Model.MaxIngredients)</label>
+                <select asp-for="MaxIngredients" class="form-control" aria-describedby="ingredients-help"
+                        asp-items="@(Enumerable.Range(4, 6).Select(h => new SelectListItem() { Text = $"{h}", Value = $"{h}" }))">
+                </select>
+                <span asp-validation-for="MaxIngredients" class="text-danger"></span>
+                <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.MaxIngredients)</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="SendDays" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
+                <select asp-for="SendDays" class="form-control overflow-auto" aria-describedby="rest-help"
                         asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">
                 </select>
-                <span asp-validation-for="SendDaysBinder" class="text-danger"></span>
+                <span asp-validation-for="SendDays" class="text-danger"></span>
                 <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
             </div>
 
