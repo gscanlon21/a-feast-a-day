@@ -17,7 +17,7 @@ public class IngredientsViewModel
 
     public Verbosity Verbosity => Verbosity.Debug;
 
-    [Display(Name = "Exercise Name")]
+    [Display(Name = "Ingredient Name")]
     public string? Name { get; init; }
 
     [Display(Name = "Section")]
@@ -26,4 +26,12 @@ public class IngredientsViewModel
     public bool FormHasData =>
         !string.IsNullOrWhiteSpace(Name)
         || Section.HasValue;
+
+    internal class IngredientComparer : IEqualityComparer<IngredientViewModel>
+    {
+        public bool Equals(IngredientViewModel? a, IngredientViewModel? b)
+            => EqualityComparer<string>.Default.Equals(a?.Name, b?.Name);
+
+        public int GetHashCode(IngredientViewModel e) => e.Name.GetHashCode();
+    }
 }

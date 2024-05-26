@@ -21,6 +21,14 @@ public class IngredientViewModel
 
     public bool SkipShoppingList { get; init; }
 
+    public Vitamins Vitamins { get; init; }
+
+    public Minerals Minerals { get; init; }
+
+    public Allergy Allergens { get; init; }
+
+    public IngredientGroup Group { get; init; }
+
     public string? Attributes { get; init; }
 
     public Fractions.Fraction Quantity => new(QuantityNumerator ?? 0, QuantityDenominator ?? 0);

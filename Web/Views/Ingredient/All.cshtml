@@ -1,4 +1,5 @@
-﻿@model ViewModels.Ingredient.IngredientsViewModel
+﻿@model IngredientsViewModel
+@using ViewModels.Ingredient
 @using System.Numerics
 @using Web.Controllers.Ingredient
 @using Core.Models.Exercise
@@ -36,9 +37,39 @@
     </form>
 </details>
 
-@foreach (var ingredient in Model.Ingredients)
-{
-    <div>
-        @ingredient.Name
-    </div>
-}
+
+<div class="mt-4" style="display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+    @foreach (var ingredient in Model.Ingredients.OrderBy(e => e.Name))
+    {
+        <div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;justify-content:space-between;
+        border-bottom:4px solid black;border-image-slice:1;outline:1px solid black;background-color:transparent;">
+
+            @if (User != null)
+            {
+                @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
+                <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
+                    <a class="allow-demo" target="_blank" href="/manageingredient">Manage</a>
+                </small>
+            }
+
+            @* div for margin-collapse between text content and image. *@
+            <div>
+                @* min-height so the Manage link doesn't overlap the image. *@
+                <div style="min-height:5ch;">
+                    @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
+                    <div style="padding-inline-end:1.1ch">
+                        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
+                            <span style="text-decoration:underline;">@ingredient.Name</span>
+                        </h3>
+
+
+                        <div style="margin-block:.5em;font-size:x-small;"><b>Group</b>: @ingredient.Group.GetDisplayName32()</div>
+                        <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @ingredient.Allergens.GetDisplayName32()</div>
+                        <div style="margin-block:.5em;font-size:x-small;"><b>Vitamins</b>: @ingredient.Vitamins.GetDisplayName32()</div>
+                        <div style="margin-block:.5em;font-size:x-small;"><b>Minerals</b>: @ingredient.Minerals.GetDisplayName32()</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
