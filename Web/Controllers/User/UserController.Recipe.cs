@@ -42,6 +42,9 @@ public partial class UserController
             existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
             existingRecipe.Name = recipe.Name;
             existingRecipe.Notes = recipe.Notes;
+            existingRecipe.Servings = recipe.Servings;
+            existingRecipe.CookTime = recipe.CookTime;
+            existingRecipe.PrepTime = recipe.PrepTime;
             existingRecipe.Type = recipe.Type;
             existingRecipe.DisabledReason = recipe.DisabledReason;
         }
