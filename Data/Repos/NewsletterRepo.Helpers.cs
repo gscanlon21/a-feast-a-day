@@ -3,7 +3,6 @@ using Data.Dtos.Newsletter;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Data.Repos;
@@ -76,7 +75,8 @@ public partial class NewsletterRepo
                     exercise.UserRecipe.LastSeen = Today;
                 }
                 // If refresh after is today, we want to see a different exercises tomorrow so update the last seen date.
-                else*/ if (exercise.UserRecipe.RefreshAfter == null && refreshAfter.HasValue && refreshAfter.Value > Today)
+                else*/
+                if (exercise.UserRecipe.RefreshAfter == null && refreshAfter.HasValue && refreshAfter.Value > Today)
                 {
                     exercise.UserRecipe.RefreshAfter = refreshAfter.Value;
                 }

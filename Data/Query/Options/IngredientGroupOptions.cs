@@ -8,7 +8,6 @@ public class IngredientGroupOptions : IOptions
 {
     private int? _atLeastXIngredientGroupsPerRecipe;
     private int? _atLeastXUniqueIngredientGroupsPerRecipe;
-    private int? _atLeastXServingsPerRecipe = 2;
 
     public IngredientGroupOptions() { }
 
@@ -59,15 +58,5 @@ public class IngredientGroupOptions : IOptions
     {
         get => _atLeastXIngredientGroupsPerRecipe;
         set => _atLeastXIngredientGroupsPerRecipe = value;
-    }
-
-    /// <summary>
-    /// Minimum value for AtLeastXUniqueMusclesPerRecipe.
-    /// </summary>
-    [Range(1, 9)]
-    public int? AtLeastXServingsPerRecipe
-    {
-        get => _atLeastXServingsPerRecipe;
-        set => _atLeastXServingsPerRecipe = value;
     }
 }

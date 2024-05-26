@@ -13,6 +13,7 @@ public class QueryBuilder
 
     private UserOptions? UserOptions;
     private IngredientGroupOptions? IngredientGroupOptions;
+    private ServingsOptions? ServingsOptions;
     private SelectionOptions? SelectionOptions;
     private ExclusionOptions? ExclusionOptions;
     private RecipeOptions? ExerciseOptions;
@@ -42,6 +43,17 @@ public class QueryBuilder
         var options = SelectionOptions ?? new SelectionOptions();
         builder?.Invoke(options);
         SelectionOptions = options;
+        return this;
+    }
+
+    /// <summary>
+    /// What progression level should we cap exercise's at?
+    /// </summary>
+    public QueryBuilder WithServingsOptions(Action<ServingsOptions>? builder = null)
+    {
+        var options = ServingsOptions ?? new ServingsOptions();
+        builder?.Invoke(options);
+        ServingsOptions = options;
         return this;
     }
 
@@ -108,6 +120,7 @@ public class QueryBuilder
             UserOptions = UserOptions ?? new UserOptions(),
             IngredientGroupOptions = IngredientGroupOptions ?? new IngredientGroupOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
+            ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             ExerciseOptions = ExerciseOptions ?? new RecipeOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             EquipmentOptions = EquipmentOptions ?? new AllergenOptions(),

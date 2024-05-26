@@ -1,6 +1,5 @@
 ﻿using Core.Models.Newsletter;
 using Data.Dtos.User;
-using Data.Entities.User;
 
 namespace Data.Dtos.Newsletter;
 

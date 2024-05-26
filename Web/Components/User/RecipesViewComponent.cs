@@ -1,13 +1,11 @@
 ﻿using Data;
 using Data.Dtos.Newsletter;
-using Data.Entities.User;
 using Data.Query.Builders;
 using Data.Repos;
 using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Web.Code;
 using Web.ViewModels.User.Components;
 
@@ -30,6 +28,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
+        
         var userRecipes = await context.UserRecipes.Where(r => r.UserId == user.Id).ToListAsync();
         var recipes = (await new QueryBuilder()
             // Include disabled recipes.

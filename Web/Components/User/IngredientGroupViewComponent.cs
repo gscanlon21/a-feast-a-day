@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using Core.Consts;
+﻿using Core.Consts;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels.User.Components;

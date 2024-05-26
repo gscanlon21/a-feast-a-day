@@ -6,7 +6,7 @@ namespace Core.Models.User;
 public enum Allergy
 {
     None = 0,
-    
+
     [Display(Name = "Lactose")]
     Lactose = 1 << 0, // 1
 

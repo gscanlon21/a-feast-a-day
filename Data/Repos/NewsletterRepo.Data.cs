@@ -15,7 +15,11 @@ public partial class NewsletterRepo
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
-            .WithExcludeExercises(x => 
+            .WithServingsOptions(options =>
+            {
+                options.AtLeastXServingsPerRecipe = 2;
+            })
+            .WithExcludeExercises(x =>
             {
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             })
@@ -32,6 +36,10 @@ public partial class NewsletterRepo
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
+            .WithServingsOptions(options =>
+            {
+                options.AtLeastXServingsPerRecipe = 2;
+            })
             .WithExcludeExercises(x =>
             {
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
@@ -48,6 +56,10 @@ public partial class NewsletterRepo
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
+            .WithServingsOptions(options =>
+            {
+                options.AtLeastXServingsPerRecipe = 2;
+            })
             .WithExcludeExercises(x =>
             {
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
@@ -65,6 +77,10 @@ public partial class NewsletterRepo
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
+            .WithServingsOptions(options =>
+            {
+                options.AtLeastXServingsPerRecipe = 2;
+            })
             .WithExcludeExercises(x =>
             {
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
@@ -82,6 +98,10 @@ public partial class NewsletterRepo
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
+            .WithServingsOptions(options =>
+            {
+                options.AtLeastXServingsPerRecipe = 2;
+            })
             .WithExcludeExercises(x =>
             {
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));

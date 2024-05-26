@@ -1,5 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.User;
@@ -60,6 +59,7 @@ public class QueryRunner(Section section)
     private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
 
     public required UserOptions UserOptions { get; init; }
+    public required ServingsOptions ServingsOptions { get; init; }
     public required SelectionOptions SelectionOptions { get; init; }
     public required ExclusionOptions ExclusionOptions { get; init; }
     public required RecipeOptions ExerciseOptions { get; init; }
@@ -178,14 +178,15 @@ public class QueryRunner(Section section)
                 }
 
                 // Don't choose exercises under our desired number of servings.
-                if (IngredientGroupOptions.AtLeastXServingsPerRecipe != null
-                    && BitOperations.PopCount((ulong)exercise.Recipe.Servings) < IngredientGroupOptions.AtLeastXServingsPerRecipe)
+                if (ServingsOptions.AtLeastXServingsPerRecipe != null
+                    && BitOperations.PopCount((ulong)exercise.Recipe.Servings) < ServingsOptions.AtLeastXServingsPerRecipe)
                 {
                     continue;
                 }
 
                 // Don't overwork weekly servings.
-                if (finalResults.Aggregate(exercise.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > UserOptions.WeeklyServings)
+                if (ServingsOptions.AtLeastXServingsPerRecipe != null
+                    && finalResults.Aggregate(exercise.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > UserOptions.WeeklyServings)
                 {
                     continue;
                 }
@@ -195,7 +196,7 @@ public class QueryRunner(Section section)
         }
         // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
         // Choose a 3-muscle group compound exercise or a 2-muscle group compound exercise and then an isolation exercise.
-        while (IngredientGroupOptions.AtLeastXServingsPerRecipe != null && --IngredientGroupOptions.AtLeastXServingsPerRecipe >= 1);
+        while (ServingsOptions.AtLeastXServingsPerRecipe != null && --ServingsOptions.AtLeastXServingsPerRecipe >= 1);
 
 
         /*
