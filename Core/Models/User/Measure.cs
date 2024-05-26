@@ -46,4 +46,7 @@ public enum Measure
 
     [Display(Name = "Grams", ShortName = "g")]
     Grams = 13,
+
+    [Display(Name = "Splash")]
+    Splash = 14
 }

@@ -20,8 +20,6 @@ public class UserRepo(CoreContext context)
     // Keep this relatively low so it is less jarring when the user switches away from IsNewToFitness.
     private const double WeightUserIsNewXTimesMore = 1.25;
 
-    private readonly CoreContext _context = context;
-
     /// <summary>
     /// Grab a user from the db with a specific token
     /// </summary>
@@ -33,7 +31,7 @@ public class UserRepo(CoreContext context)
             return null;
         }
 
-        IQueryable<User> query = _context.Users.AsSplitQuery().TagWithCallSite();
+        IQueryable<User> query = context.Users.AsSplitQuery().TagWithCallSite();
 
         var user = await query
             // User token is valid.
@@ -91,7 +89,7 @@ public class UserRepo(CoreContext context)
             Expires = expires
         };
         user.UserTokens.Add(token);
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
 
         return token.Token;
     }
@@ -106,7 +104,7 @@ public class UserRepo(CoreContext context)
     /// </summary>
     public async Task<UserFeast?> GetCurrentWorkout(User user)
     {
-        return await _context.UserFeasts.AsNoTracking().TagWithCallSite()
+        return await context.UserFeasts.AsNoTracking().TagWithCallSite()
             .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.TodayOffset)
@@ -124,7 +122,7 @@ public class UserRepo(CoreContext context)
     /// </summary>
     public async Task<IList<UserFeast>> GetPastWorkouts(User user)
     {
-        return (await _context.UserFeasts
+        return (await context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
             .Where(n => n.UserFeastRecipes.Any())

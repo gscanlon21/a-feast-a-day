@@ -23,12 +23,12 @@ public partial class NewsletterRepo
     /// <summary>
     /// Creates a new instance of the newsletter and saves it.
     /// </summary>
-    internal async Task<UserFeast> CreateAndAddNewsletterToContext(WorkoutContext context)
+    internal async Task<UserFeast> CreateAndAddNewsletterToContext(WorkoutContext newsletterContext)
     {
-        var newsletter = new UserFeast(context.User.TodayOffset, context);
-        _context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
+        var newsletter = new UserFeast(newsletterContext.User.TodayOffset, newsletterContext);
+        context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
 
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
         return newsletter;
     }
 }

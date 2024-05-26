@@ -32,6 +32,20 @@
             </div>
 
             <div class="form-group mb-3">
+                <label asp-for="WeeklyServings" class="control-label">@Html.DisplayNameFor(_ => Model.WeeklyServings)</label>
+                <div style="display:flex;column-gap:1ex;">
+                    <output name="deloadOutput" for="@Html.IdFor(_ => Model.WeeklyServings)">@Model.WeeklyServings</output>
+                    <div style="display:flex;width:100%;">
+                        <input asp-for="WeeklyServings" type="range" style="width:100%;" aria-describedby="deload-help"
+                               min="@Core.Consts.UserConsts.WeeklyServingsMin" max="@Core.Consts.UserConsts.WeeklyServingsMax"
+                               oninput="deloadOutput.value = this.valueAsNumber" />
+                    </div>
+                </div>
+                <span asp-validation-for="WeeklyServings" class="text-danger"></span>
+                <div id="deload-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.WeeklyServings)</div>
+            </div>
+
+            <div class="form-group mb-3">
                 <label asp-for="SendDays" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
                 <select asp-for="SendDays" class="form-control overflow-auto" aria-describedby="rest-help"
                         asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">

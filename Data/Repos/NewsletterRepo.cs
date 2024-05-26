@@ -23,12 +23,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     protected static DateOnly StartOfWeek => Today.AddDays(-1 * (int)Today.DayOfWeek);
 
-    private readonly CoreContext _context = context;
-
     public async Task<IList<Footnote>> GetFootnotes(string? email, string? token, int count = 1)
     {
         var user = await userRepo.GetUser(email, token, allowDemoUser: true);
-        var footnotes = await _context.Footnotes
+        var footnotes = await context.Footnotes
             // Apply the user's footnote type preferences. Has any flag.
             .Where(f => user == null || (f.Type & user.FootnoteType) != 0)
             .OrderBy(_ => EF.Functions.Random())
@@ -44,10 +42,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         ArgumentNullException.ThrowIfNull(user);
         if (!user.FootnoteType.HasFlag(FootnoteType.Custom))
         {
-            return new List<UserFootnote>(0);
+            return [];
         }
 
-        var footnotes = await _context.UserFootnotes
+        var footnotes = await context.UserFootnotes
             .Where(f => f.Type == FootnoteType.Custom)
             .Where(f => f.UserId == user.Id)
             // Keep the same footnotes over the course of a day.
@@ -63,7 +61,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             footnote.UserLastSeen = Today;
         }
 
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync();
         return footnotes;
     }
 
@@ -84,7 +82,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         date ??= user.TodayOffset;
         if (date.HasValue)
         {
-            var oldNewsletter = await _context.UserFeasts.AsNoTracking()
+            var oldNewsletter = await context.UserFeasts.AsNoTracking()
                 .Include(n => n.UserFeastRecipes)
                 .Where(n => n.User.Id == user.Id)
                 // Always send a new workout for today for the demo and test users.
@@ -112,8 +110,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         }
 
         // Context may be null on rest days.
-        var context = await BuildWorkoutContext(user, token);
-        if (context == null)
+        var newsletterContext = await BuildWorkoutContext(user, token);
+        if (newsletterContext == null)
         {
             // See if a previous workout exists, we send that back down so the app doesn't render nothing on rest days.
             var currentWorkout = await userRepo.GetCurrentWorkout(user);
@@ -129,89 +127,124 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         // Current day should be a strengthening workout.
         logger.Log(LogLevel.Information, "Returning on day newsletter for user {Id}", user.Id);
-        return await OnDayNewsletter(context);
+        return await OnDayNewsletter(newsletterContext);
     }
 
     /// <summary>
     /// The strength training newsletter.
     /// </summary>
-    private async Task<NewsletterDto?> OnDayNewsletter(WorkoutContext context)
+    private async Task<NewsletterDto?> OnDayNewsletter(WorkoutContext newsletterContext)
     {
-        var newsletter = await CreateAndAddNewsletterToContext(context);
+        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext);
 
-        var breakfastRecipes = _context.UserRecipes
+        var breakfastRecipes = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == context.User.Id)
-            .Where(r => r.Type == RecipeType.Breakfast)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
+            .Where(r => r.UserId == newsletterContext.User.Id)
+            .Where(r => r.Type.HasFlag(RecipeType.Breakfast))
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .OrderBy(r => EF.Functions.Random())
-            .Take(1)
+            .Take(7)
             .ToList();
 
-        var lunchRecipes = _context.UserRecipes
+        var lunchRecipes = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == context.User.Id)
-            .Where(r => r.Type == RecipeType.Lunch)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
+            .Where(r => r.UserId == newsletterContext.User.Id)
+            .Where(r => r.Type.HasFlag(RecipeType.Lunch))
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .OrderBy(r => EF.Functions.Random())
-            .Take(1)
+            .Take(7)
             .ToList();
 
-        var dinnerRecipes = _context.UserRecipes
+        var dinnerRecipes = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == context.User.Id)
-            .Where(r => r.Type == RecipeType.Dinner)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
+            .Where(r => r.UserId == newsletterContext.User.Id)
+            .Where(r => r.Type.HasFlag(RecipeType.Dinner))
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .OrderBy(r => EF.Functions.Random())
-            .Take(1)
+            .Take(7)
             .ToList();
 
-        var sideRecipes = _context.UserRecipes
+        var sideRecipes = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == context.User.Id)
-            .Where(r => r.Type == RecipeType.Side)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
+            .Where(r => r.UserId == newsletterContext.User.Id)
+            .Where(r => r.Type.HasFlag(RecipeType.Side))
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .OrderBy(r => EF.Functions.Random())
-            .Take(1)
+            .Take(7)
             .ToList();
 
-        var dessertRecipes = _context.UserRecipes
+        var dessertRecipes = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
-            .Where(r => r.UserId == context.User.Id)
-            .Where(r => r.Type == RecipeType.Dessert)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
+            .Where(r => r.UserId == newsletterContext.User.Id)
+            .Where(r => r.Type.HasFlag(RecipeType.Dessert))
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .OrderBy(r => EF.Functions.Random())
-            .Take(1)
+            .Take(7)
             .ToList();
 
-        var recipesOfTheDay = _context.UserRecipes
+        var recipesOfTheDay = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
             .Where(r => r.User.ShareMyRecipes)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count)
+            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
             .OrderBy(r => EF.Functions.Random())
             .Take(1)
             .ToList();
 
-        var userViewModel = new UserNewsletterDto(context);
+        var finalDinnerRecipes = new List<UserRecipe>();
+        while (dinnerRecipes.Any() && finalDinnerRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
+        {
+            finalDinnerRecipes.Add(dinnerRecipes[0]);
+            dinnerRecipes.RemoveAt(0);
+        }
+
+        var finalSideRecipes = new List<UserRecipe>();
+        while (sideRecipes.Any() && finalSideRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
+        {
+            finalSideRecipes.Add(sideRecipes[0]);
+            sideRecipes.RemoveAt(0);
+        }
+
+        var finalLunchRecipes = new List<UserRecipe>();
+        while (lunchRecipes.Any() && finalLunchRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
+        {
+            finalLunchRecipes.Add(lunchRecipes[0]);
+            lunchRecipes.RemoveAt(0);
+        }
+
+        var finalBreakfastRecipes = new List<UserRecipe>();
+        while (breakfastRecipes.Any() && finalBreakfastRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
+        {
+            finalBreakfastRecipes.Add(breakfastRecipes[0]);
+            breakfastRecipes.RemoveAt(0);
+        }
+
+        var finalDessertRecipes = new List<UserRecipe>();
+        while (dessertRecipes.Any() && finalDessertRecipes.Aggregate(0, (curr, next) => curr + next.Servings) < newsletterContext.User.WeeklyServings)
+        {
+            finalDessertRecipes.Add(dessertRecipes[0]);
+            dessertRecipes.RemoveAt(0);
+        }
+
+        var userViewModel = new UserNewsletterDto(newsletterContext);
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {
-            DinnerRecipes = dinnerRecipes,
-            SideRecipes = sideRecipes,
-            LunchRecipes = lunchRecipes,
-            DessertRecipes = dessertRecipes,
-            BreakfastRecipes = breakfastRecipes,
+            DinnerRecipes = finalDinnerRecipes,
+            SideRecipes = finalSideRecipes,
+            LunchRecipes = finalLunchRecipes,
+            DessertRecipes = finalDessertRecipes,
+            BreakfastRecipes = finalBreakfastRecipes,
             RecipesOfTheDay = recipesOfTheDay,
         };
 

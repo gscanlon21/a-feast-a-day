@@ -117,11 +117,17 @@ public class User
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
     public int SendHour { get; set; }
 
-    // <summary>
+    /// <summary>
     /// What's the maximum number of ingredients you'd like in recipes?
     /// </summary>
     [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
     public int? MaxIngredients { get; set; }
+
+    /// <summary>
+    /// The number of servings to get recipes for in a week.
+    /// </summary>
+    [Required, Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
+    public int WeeklyServings { get; set; } = UserConsts.WeeklyServingsDefault;
 
     /// <summary>
     /// Offset of today taking into account the user's SendHour.
