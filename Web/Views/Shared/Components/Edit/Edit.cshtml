@@ -25,7 +25,7 @@
             <div class="form-group mb-3">
                 <label asp-for="MaxIngredients" class="control-label">@Html.DisplayNameFor(_ => Model.MaxIngredients)</label>
                 <select asp-for="MaxIngredients" class="form-control" aria-describedby="ingredients-help"
-                        asp-items="@(Enumerable.Range(4, 6).Select(h => new SelectListItem() { Text = $"{h}", Value = $"{h}" }))">
+                        asp-items="@(Enumerable.Range(4, 6).Select(h => new SelectListItem() { Text = $"{h}", Value = $"{h}" }).Prepend(new SelectListItem() { Text = "Any", Value = null }))">
                 </select>
                 <span asp-validation-for="MaxIngredients" class="text-danger"></span>
                 <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.MaxIngredients)</div>

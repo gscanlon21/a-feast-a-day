@@ -71,6 +71,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.FootnoteType = viewModel.FootnoteType;
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
+                viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ShareMyRecipes = viewModel.ShareMyRecipes;
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
