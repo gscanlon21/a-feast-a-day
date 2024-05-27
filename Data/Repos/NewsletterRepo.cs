@@ -105,7 +105,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 return await NewsletterOld(user, token, date.Value, oldNewsletter);
             }
             // A newsletter was not found and the date is not one we want to render a new newsletter for.
-            else if (date != user.TodayOffset)
+            else if (date != user.TodayOffset.AddDays(-1 * (int)Today.DayOfWeek))
             {
                 logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
                 return null;
