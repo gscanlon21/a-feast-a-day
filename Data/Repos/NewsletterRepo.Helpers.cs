@@ -66,25 +66,9 @@ public partial class NewsletterRepo
         foreach (var exercise in exercises.DistinctBy(e => e.UserRecipe))
         {
             // >= so that today is the last day seeing the same exercises and tomorrow the exercises will refresh.
-            if (exercise.UserRecipe != null && (exercise.UserRecipe.RefreshAfter == null || Today >= exercise.UserRecipe.RefreshAfter))
+            if (exercise.UserRecipe != null)
             {
-                // If the exercise is not a main exercise, refresh it immediately.
-                /*if ((exercise.UserRecipe.IsPrimary ?? exercise.Recipe.IsPrimary) == false)
-                {
-                    exercise.UserRecipe.RefreshAfter = null;
-                    exercise.UserRecipe.LastSeen = Today;
-                }
-                // If refresh after is today, we want to see a different exercises tomorrow so update the last seen date.
-                else*/
-                if (exercise.UserRecipe.RefreshAfter == null && refreshAfter.HasValue && refreshAfter.Value > Today)
-                {
-                    exercise.UserRecipe.RefreshAfter = refreshAfter.Value;
-                }
-                else
-                {
-                    exercise.UserRecipe.RefreshAfter = null;
-                    exercise.UserRecipe.LastSeen = Today;
-                }
+                exercise.UserRecipe.LastSeen = Today;
                 scopedCoreContext.UserUserRecipes.Update(exercise.UserRecipe);
             }
         }

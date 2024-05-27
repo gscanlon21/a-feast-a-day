@@ -32,7 +32,6 @@ public class UserEditViewModel
         ShareMyRecipes = user.ShareMyRecipes;
         SendHour = user.SendHour;
         MaxIngredients = user.MaxIngredients;
-        WeeklyServings = user.WeeklyServings;
         ExcludeAllergens = user.ExcludeAllergens;
         Token = token;
     }
@@ -70,6 +69,9 @@ public class UserEditViewModel
     [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive with each recipe?")]
     public Verbosity Verbosity { get; set; }
 
+    [Display(Name = "Weekly Servings", Description = "Customize weekly servings.")]
+    public IList<UserServingViewModel> UserServings { get; set; } = [];
+
     [Required]
     [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]
     public Allergy ExcludeAllergens { get; set; }
@@ -81,10 +83,6 @@ public class UserEditViewModel
     [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
     [Display(Name = "Maximum Ingredients", Description = "What's the maximum number of ingredients you'd like in your recipes?")]
     public int? MaxIngredients { get; init; }
-
-    [Required, Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
-    [Display(Name = "Weekly Servings", Description = "The number of servings to get recipes for in a week.")]
-    public int WeeklyServings { get; init; }
 
     [Required]
     [Display(Name = "Share My Recipes", Description = "Share your recipes with other users.")]

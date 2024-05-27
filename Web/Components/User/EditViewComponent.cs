@@ -1,4 +1,6 @@
-﻿using Core.Consts;
+﻿using Core.Code.Extensions;
+using Core.Consts;
+using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels.User;
@@ -29,6 +31,19 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
 
     private async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
+        foreach (var muscleGroup in UserServing.MuscleTargets.Keys
+            .OrderBy(mg => mg.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
+            .ThenBy(mg => mg.GetSingleDisplayName()))
+        {
+            var userMuscleMobility = viewModel.User.UserServings.SingleOrDefault(umm => umm.Section == muscleGroup);
+            viewModel.UserServings.Add(userMuscleMobility != null ? new UserServingViewModel(userMuscleMobility) : new UserServingViewModel()
+            {
+                UserId = viewModel.User.Id,
+                Section = muscleGroup,
+                Count = UserServing.MuscleTargets.TryGetValue(muscleGroup, out int countTmp) ? countTmp : 0
+            });
+        }
+
         return viewModel;
     }
 }

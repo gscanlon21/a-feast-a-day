@@ -27,6 +27,7 @@ public class NewsletterViewModel
     public List<NewsletterRecipeViewModel> LunchRecipes { get; set; } = [];
     public List<NewsletterRecipeViewModel> DinnerRecipes { get; set; } = [];
     public List<NewsletterRecipeViewModel> SideRecipes { get; set; } = [];
+    public List<NewsletterRecipeViewModel> SnackRecipes { get; set; } = [];
     public List<NewsletterRecipeViewModel> DessertRecipes { get; set; } = [];
     public List<NewsletterRecipeViewModel> RecipesOfTheDay { get; set; } = [];
 

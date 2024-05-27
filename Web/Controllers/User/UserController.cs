@@ -1,5 +1,6 @@
 ﻿using Core.Consts;
 using Data;
+using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -72,9 +73,18 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
-                viewModel.User.WeeklyServings = viewModel.WeeklyServings;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
                 viewModel.User.ShareMyRecipes = viewModel.ShareMyRecipes;
+
+                context.UserServings.RemoveRange(context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
+                context.UserServings.AddRange(viewModel.UserServings
+                    .Select(umm => new UserServing()
+                    {
+                        UserId = umm.UserId,
+                        Count = umm.Count,
+                        Section = umm.Section
+                    })
+                );
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
                 {

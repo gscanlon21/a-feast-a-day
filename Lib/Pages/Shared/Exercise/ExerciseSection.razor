@@ -1,4 +1,4 @@
-﻿@using Core.Models.Exercise
+﻿@using Core.Models.Recipe
 @using Core.Models.Newsletter;
 @using Core.Models.User;
 
@@ -6,11 +6,11 @@
 {
     var titleColor = Theme switch
     {
-        ExerciseTheme.Warmup => "palevioletred",
-        ExerciseTheme.Main => "mediumpurple",
-        ExerciseTheme.Cooldown => "lightskyblue",
-        ExerciseTheme.Extra => "lightgreen",
-        ExerciseTheme.Other => "lightsalmon",
+        RecipeTheme.Warmup => "palevioletred",
+        RecipeTheme.Main => "mediumpurple",
+        RecipeTheme.Cooldown => "lightskyblue",
+        RecipeTheme.Extra => "lightgreen",
+        RecipeTheme.Other => "lightsalmon",
         _ => "currentColor"
     };
 
@@ -68,7 +68,7 @@
     public ViewModels.User.UserNewsletterViewModel? User { get; init; }
 
     [Parameter, EditorRequired]
-    public ExerciseTheme Theme { get; init; }
+    public RecipeTheme Theme { get; init; }
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; init; }

@@ -9,13 +9,13 @@ namespace Lib.ViewModels.User;
 /// User's progression level of an exercise.
 /// </summary>
 [DebuggerDisplay("User: {UserId}, Exercise: {ExerciseId}")]
-public class UserExerciseViewModel
+public class UserRecipeViewModel
 {
     [Required]
     public int UserId { get; init; }
 
     [Required]
-    public int ExerciseId { get; init; }
+    public int RecipeId { get; init; }
 
     /// <summary>
     /// Don't show this exercise or any of it's variations to the user
@@ -29,18 +29,12 @@ public class UserExerciseViewModel
     [Required]
     public DateOnly LastSeen { get; set; }
 
-    /// <summary>
-    /// If this is set, will not update the LastSeen date until this date is reached.
-    /// This is so we can reduce the variation of workouts and show the same groups of exercises for a month+ straight.
-    /// </summary>
-    public DateOnly? RefreshAfter { get; set; }
-
     [JsonInclude]
     public InstructionViewModel Exercise { get; init; } = null!;
 
-    public override int GetHashCode() => HashCode.Combine(UserId, ExerciseId);
+    public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
 
-    public override bool Equals(object? obj) => obj is UserExerciseViewModel other
-        && other.ExerciseId == ExerciseId
+    public override bool Equals(object? obj) => obj is UserRecipeViewModel other
+        && other.RecipeId == RecipeId
         && other.UserId == UserId;
 }

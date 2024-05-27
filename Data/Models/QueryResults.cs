@@ -10,4 +10,4 @@ public record QueryResults(
     Section Section,
     UserRecipe Recipe,
     UserUserRecipe? UserRecipe
-) : IExerciseVariationCombo;
+) : IRecipeCombo;

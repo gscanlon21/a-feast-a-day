@@ -1,5 +1,5 @@
 ﻿@model RecipesViewModel
-@using Core.Models.Exercise
+@using Core.Models.Recipe
 @using Lib.ViewModels.User
 @using Lib.ViewModels.Newsletter
 @using Core.Models.User
@@ -12,6 +12,6 @@
             <span class="float-end">@Model.Recipes.Count()</span>
         </summary>
 
-        <component type="typeof(Lib.Pages.Shared.Exercise.ExerciseSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.Recipes' param-Theme='ExerciseTheme.None' param-Verbosity="Model.Verbosity" />
+        <component type="typeof(Lib.Pages.Shared.Exercise.ExerciseSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.Recipes' param-Theme='RecipeTheme.None' param-Verbosity="Model.Verbosity" />
     </details>
 }

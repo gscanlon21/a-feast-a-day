@@ -32,7 +32,7 @@ public class UserNewsletterViewModel
     public Days SendDays { get; init; }
 
     [JsonInclude]
-    public ICollection<UserExerciseViewModel> UserExercises { get; init; } = null!;
+    public ICollection<UserRecipeViewModel> UserExercises { get; init; } = null!;
 
     public int FootnoteCountTop { get; init; }
 

@@ -124,12 +124,6 @@ public class User
     public int? MaxIngredients { get; set; }
 
     /// <summary>
-    /// The number of servings to get recipes for in a week.
-    /// </summary>
-    [Required, Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
-    public int WeeklyServings { get; set; } = UserConsts.WeeklyServingsDefault;
-
-    /// <summary>
     /// Offset of today taking into account the user's SendHour.
     /// </summary>
     public DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
@@ -206,6 +200,9 @@ public class User
 
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; private init; } = [];
+
+    [JsonIgnore, InverseProperty(nameof(UserServing.User))]
+    public virtual ICollection<UserServing> UserServings { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
     public virtual ICollection<UserFeast> UserWorkouts { get; private init; } = null!;

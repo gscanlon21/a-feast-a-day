@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Data.Query;
 
-public interface IExerciseVariationCombo
+public interface IRecipeCombo
 {
     UserRecipe Recipe { get; }
 }
@@ -16,7 +16,7 @@ public static class Filters
     /// <summary>
     /// Make sure the exercise is for the correct workout type
     /// </summary>
-    public static IQueryable<T> FilterSection<T>(IQueryable<T> query, Section? value) where T : IExerciseVariationCombo
+    public static IQueryable<T> FilterSection<T>(IQueryable<T> query, Section? value) where T : IRecipeCombo
     {
         // Debug should be able to see all exercises.
         if (value.HasValue && value != Section.None && value != Section.Debug)
@@ -31,7 +31,7 @@ public static class Filters
     /// <summary>
     /// Filter down to these specific exercises
     /// </summary>
-    public static IQueryable<T> FilterExercises<T>(IQueryable<T> query, IList<int>? exerciseIds) where T : IExerciseVariationCombo
+    public static IQueryable<T> FilterExercises<T>(IQueryable<T> query, IList<int>? exerciseIds) where T : IRecipeCombo
     {
         if (exerciseIds != null)
         {
@@ -44,7 +44,7 @@ public static class Filters
     /// <summary>
     /// Make sure the exercise works a specific muscle group
     /// </summary>
-    public static IQueryable<T> FilterMuscleGroup<T>(IQueryable<T> query, IngredientGroup? muscleGroup, bool include, Expression<Func<IExerciseVariationCombo, IngredientGroup>> muscleTarget) where T : IExerciseVariationCombo
+    public static IQueryable<T> FilterMuscleGroup<T>(IQueryable<T> query, IngredientGroup? muscleGroup, bool include, Expression<Func<IRecipeCombo, IngredientGroup>> muscleTarget) where T : IRecipeCombo
     {
         if (muscleGroup.HasValue && muscleGroup != IngredientGroup.None)
         {
@@ -66,7 +66,7 @@ public static class Filters
     /// Builds an expression consumable by EF Core for filtering what muscles a variation works.
     /// </summary>
     private static IQueryable<T> WithMuscleTarget<T>(this IQueryable<T> entities,
-        Expression<Func<IExerciseVariationCombo, IngredientGroup>> propertySelector, IngredientGroup muscleGroup, bool include)
+        Expression<Func<IRecipeCombo, IngredientGroup>> propertySelector, IngredientGroup muscleGroup, bool include)
     {
         ParameterExpression parameter = Expression.Parameter(typeof(T));
 
@@ -92,7 +92,7 @@ public static class Filters
     {
 
         /// <summary>
-        /// The IExerciseVariationCombo
+        /// The IRecipeCombo
         /// </summary>
         public ParameterExpression Parameter { get; } = parameter;
 

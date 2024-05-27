@@ -1,4 +1,4 @@
-﻿using Core.Models.Exercise;
+﻿using Core.Models.Recipe;
 using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.Newsletter;
@@ -34,12 +34,12 @@ public enum Section
 
 public static class SectionExtensions
 {
-    public static ExerciseTheme AsTheme(this Section section) => section switch
+    public static RecipeTheme AsTheme(this Section section) => section switch
     {
-        not Section.None when Section.Breakfast.HasFlag(section) => ExerciseTheme.Warmup,
-        not Section.None when Section.Lunch.HasFlag(section) => ExerciseTheme.Cooldown,
-        not Section.None when Section.Dinner.HasFlag(section) => ExerciseTheme.Main,
-        not Section.None when Section.Dessert.HasFlag(section) => ExerciseTheme.Other,
-        _ => ExerciseTheme.None,
+        not Section.None when Section.Breakfast.HasFlag(section) => RecipeTheme.Warmup,
+        not Section.None when Section.Lunch.HasFlag(section) => RecipeTheme.Cooldown,
+        not Section.None when Section.Dinner.HasFlag(section) => RecipeTheme.Main,
+        not Section.None when Section.Dessert.HasFlag(section) => RecipeTheme.Other,
+        _ => RecipeTheme.None,
     };
 }

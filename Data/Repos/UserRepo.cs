@@ -25,6 +25,8 @@ public class UserRepo(CoreContext context)
     /// Grab a user from the db with a specific token
     /// </summary>
     public async Task<User?> GetUser(string? email, string? token,
+        bool includeIngredientGroups = false,
+        bool includeServings = false,
         bool allowDemoUser = false)
     {
         if (email == null || token == null)
@@ -33,6 +35,16 @@ public class UserRepo(CoreContext context)
         }
 
         IQueryable<User> query = context.Users.AsSplitQuery().TagWithCallSite();
+
+        if (includeIngredientGroups)
+        {
+            query = query.Include(u => u.UserIngredientGroups);
+        }
+
+        if (includeServings)
+        {
+            query = query.Include(u => u.UserServings);
+        }
 
         var user = await query
             // User token is valid.

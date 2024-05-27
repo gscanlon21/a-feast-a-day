@@ -1,6 +1,6 @@
 ﻿@model UserEditViewModel
 @using System.Numerics
-@using Core.Models.Exercise
+@using Core.Models.Recipe
 @using Lib.ViewModels.User
 @using Lib.ViewModels.Newsletter
 @using Core.Models.User
@@ -23,6 +23,15 @@
             </div>
 
             <div class="form-group mb-3">
+                <label asp-for="SendDays" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
+                <select asp-for="SendDays" class="form-control overflow-auto" aria-describedby="rest-help"
+                        asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">
+                </select>
+                <span asp-validation-for="SendDays" class="text-danger"></span>
+                <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
+            </div>
+
+            <div class="form-group mb-3">
                 <label asp-for="MaxIngredients" class="control-label">@Html.DisplayNameFor(_ => Model.MaxIngredients)</label>
                 <select asp-for="MaxIngredients" class="form-control" aria-describedby="ingredients-help"
                         asp-items="@(Enumerable.Range(4, 6).Select(h => new SelectListItem() { Text = $"{h}", Value = $"{h}" }).Prepend(new SelectListItem() { Text = "Any", Value = null }))">
@@ -31,27 +40,47 @@
                 <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.MaxIngredients)</div>
             </div>
 
-            <div class="form-group mb-3">
-                <label asp-for="WeeklyServings" class="control-label">@Html.DisplayNameFor(_ => Model.WeeklyServings)</label>
-                <div style="display:flex;column-gap:1ex;">
-                    <output name="deloadOutput" for="@Html.IdFor(_ => Model.WeeklyServings)">@Model.WeeklyServings</output>
-                    <div style="display:flex;width:100%;">
-                        <input asp-for="WeeklyServings" type="range" style="width:100%;" aria-describedby="deload-help"
-                               min="@Core.Consts.UserConsts.WeeklyServingsMin" max="@Core.Consts.UserConsts.WeeklyServingsMax"
-                               oninput="deloadOutput.value = this.valueAsNumber" />
-                    </div>
+            @if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout callout">
+                    Customize weekly servings.
                 </div>
-                <span asp-validation-for="WeeklyServings" class="text-danger"></span>
-                <div id="deload-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.WeeklyServings)</div>
-            </div>
-
+            }
             <div class="form-group mb-3">
-                <label asp-for="SendDays" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
-                <select asp-for="SendDays" class="form-control overflow-auto" aria-describedby="rest-help"
-                        asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">
-                </select>
-                <span asp-validation-for="SendDays" class="text-danger"></span>
-                <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
+                <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
+                    <summary class=""><b class="">Edit @Html.DisplayNameFor(_ => Model.UserServings)</b></summary>
+
+                    <div class="mt-1 ps-3">
+                        @for (var i = 0; i < Model.UserServings.Count; i++)
+                        {
+                            <input type="hidden" asp-for="UserServings[i].UserId" />
+                            <input type="hidden" asp-for="UserServings[i].Section" />
+                            <div class="mb-1" style="display:flex;column-gap:1ch;flex-wrap:wrap;">
+                                <div style="display:flex;width:14ch;margin-bottom:-.5ex;">@Model.UserServings[i].Section.GetDisplayName322()</div>
+                                <div style="display:flex;gap:1ch;align-items:center;flex:1 0 150px;">
+                                    <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserServings[i])">@Model.UserServings[i].Count</output>
+                                    <div style="display:flex;width:100%;">
+                                        <input asp-for="UserServings[i].Count" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                               min="@UserConsts.WeeklyServingsMin" max="@UserConsts.WeeklyServingsMax"
+                                               oninput="mobilityMusclesOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
+                                        <datalist id="mobilityMusclesList@(i)">
+                                            <option value="@(UserServing.MuscleTargets.TryGetValue(Model.UserServings[i].Section, out int countTmp) ? countTmp : 0)"></option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="UserServings[i]" class="text-danger"></span>
+                                <div id="refresh-functional-help" class="form-text">
+                                    <p>@Html.DisplayDescriptionFor(_ => Model.UserServings[i])</p>
+                                </div>
+                            </div>
+                        }
+
+                        <span asp-validation-for="UserServings" class="text-danger"></span>
+                        <div id="mobility-muscles-help" class="form-text">
+                            @Html.DisplayDescriptionFor(_ => Model.UserServings)
+                        </div>
+                    </div>
+                </details>
             </div>
 
             <div class="form-group mb-3">

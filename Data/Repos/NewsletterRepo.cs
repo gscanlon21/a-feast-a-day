@@ -74,7 +74,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true);
         if (user == null)
         {
             return null;
@@ -143,7 +143,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var lunchRecipes = await GetLunchRecipes(newsletterContext, exclude: breakfastRecipes);
         var dinnerRecipes = await GetDinnerRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes));
         var sideRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes));
-        var dessertRecipes = await GetDessertRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes));
+        var snackRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes));
+        var dessertRecipes = await GetDessertRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes).Concat(snackRecipes));
         var recipesOfTheDay = context.UserRecipes
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
@@ -155,7 +156,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .ToList();
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext,
-            recipes: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList()
+            recipes: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList()
         );
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
@@ -165,12 +166,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             SideRecipes = sideRecipes,
             LunchRecipes = lunchRecipes,
             DessertRecipes = dessertRecipes,
+            SnackRecipes = snackRecipes,
             BreakfastRecipes = breakfastRecipes,
             //RecipesOfTheDay = recipesOfTheDay,
         };
 
         // Other exercises. Refresh every day.
-        await UpdateLastSeenDate(exercises: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
+        await UpdateLastSeenDate(exercises: dinnerRecipes.Concat(sideRecipes).Concat(snackRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
 
         return viewModel;
     }
@@ -216,6 +218,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                     break;
                 case Section.Dessert:
                     newsletterViewModel.DessertRecipes = exercises;
+                    break;
+                case Section.Snacks:
+                    newsletterViewModel.SnackRecipes = exercises;
                     break;
             }
         }

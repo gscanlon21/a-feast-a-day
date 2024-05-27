@@ -5,28 +5,28 @@
 @using Lib.ViewModels.Newsletter
 @using Core.Models.Options
 @using Microsoft.Extensions.Options
-@using Core.Models.Exercise
+@using Core.Models.Recipe
 @using Core.Models.User
 @using Core.Models.Newsletter
 
 @{ 
     var borderColor = Theme switch
     {
-        ExerciseTheme.Warmup => "palevioletred",
-        ExerciseTheme.Main => "mediumpurple",
-        ExerciseTheme.Cooldown => "lightskyblue",
-        ExerciseTheme.Extra => "lightgreen",
-        ExerciseTheme.Other => "lightsalmon",
+        RecipeTheme.Warmup => "palevioletred",
+        RecipeTheme.Main => "mediumpurple",
+        RecipeTheme.Cooldown => "lightskyblue",
+        RecipeTheme.Extra => "lightgreen",
+        RecipeTheme.Other => "lightsalmon",
         _ => "currentColor"
     };
 
     var backgroundColor = Theme switch
     {
-        ExerciseTheme.Warmup => "rgba(250,200,200,.1)",
-        ExerciseTheme.Main => "rgba(250,200,250,.1)",
-        ExerciseTheme.Cooldown => "rgba(200,200,250,.1)",
-        ExerciseTheme.Extra => "rgba(200,250,200,.1)",
-        ExerciseTheme.Other => "rgba(250,200,150,.1)",
+        RecipeTheme.Warmup => "rgba(250,200,200,.1)",
+        RecipeTheme.Main => "rgba(250,200,250,.1)",
+        RecipeTheme.Cooldown => "rgba(200,200,250,.1)",
+        RecipeTheme.Extra => "rgba(200,250,200,.1)",
+        RecipeTheme.Other => "rgba(250,200,150,.1)",
         _ => "transparent"
     };
 }
@@ -129,5 +129,5 @@
     public Verbosity Verbosity { get; set; }
 
     [Parameter, EditorRequired]
-    public ExerciseTheme Theme { get; init; }
+    public RecipeTheme Theme { get; init; }
 }

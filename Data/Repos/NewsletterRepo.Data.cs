@@ -18,6 +18,8 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
+                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Dinner)?.Count
+                    ?? UserServing.MuscleTargets[Section.Dinner];
             })
             .WithExcludeExercises(x =>
             {
@@ -39,6 +41,8 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
+                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Lunch)?.Count
+                    ?? UserServing.MuscleTargets[Section.Lunch];
             })
             .WithExcludeExercises(x =>
             {
@@ -59,6 +63,8 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
+                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Sides)?.Count
+                    ?? UserServing.MuscleTargets[Section.Sides];
             })
             .WithExcludeExercises(x =>
             {
@@ -80,6 +86,31 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
+                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Breakfast)?.Count
+                    ?? UserServing.MuscleTargets[Section.Breakfast];
+            })
+            .WithExcludeExercises(x =>
+            {
+                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+            })
+            .Build()
+            .Query(serviceScopeFactory, take: 2))
+            .Select(r => new RecipeDto(r))
+            .ToList();
+    }
+
+    internal async Task<List<RecipeDto>> GetSnackRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    {
+        return (await new QueryBuilder(Section.Snacks)
+            .WithUser(newsletterContext.User)
+            .WithIngredientGroups(MuscleTargetsBuilder
+                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithoutMuscleTargets())
+            .WithServingsOptions(options =>
+            {
+                options.AtLeastXServingsPerRecipe = 2;
+                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Snacks)?.Count
+                    ?? UserServing.MuscleTargets[Section.Snacks];
             })
             .WithExcludeExercises(x =>
             {
@@ -101,6 +132,8 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
+                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Dessert)?.Count
+                    ?? UserServing.MuscleTargets[Section.Dessert];
             })
             .WithExcludeExercises(x =>
             {

@@ -11,7 +11,7 @@ namespace Data.Dtos.Newsletter;
 /// </summary>
 [DebuggerDisplay("{Section,nq}: {Variation,nq}")]
 public class RecipeDto :
-    IExerciseVariationCombo
+    IRecipeCombo
 {
     public RecipeDto(Section section, UserRecipe exercise, UserUserRecipe? userExercise)
     {

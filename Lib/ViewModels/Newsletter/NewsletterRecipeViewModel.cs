@@ -16,7 +16,7 @@ public class NewsletterRecipeViewModel
     public RecipeViewModel Recipe { get; init; } = null!;
 
     [JsonInclude]
-    public UserExerciseViewModel? UserRecipe { get; set; }
+    public UserRecipeViewModel? UserRecipe { get; set; }
 
     public bool UserFirstTimeViewing { get; init; } = false;
 

@@ -19,7 +19,7 @@ public class QueryRunner(Section section)
 {
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     private class RecipesQueryResults
-        : IExerciseVariationCombo
+        : IRecipeCombo
     {
         public UserRecipe Recipe { get; init; } = null!;
         public UserUserRecipe UserRecipe { get; init; } = null!;
@@ -27,7 +27,7 @@ public class QueryRunner(Section section)
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     private class InProgressQueryResults(RecipesQueryResults queryResult) :
-        IExerciseVariationCombo
+        IRecipeCombo
     {
         public UserRecipe Recipe { get; } = queryResult.Recipe;
         public UserUserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
@@ -245,17 +245,6 @@ public class QueryRunner(Section section)
             return;
         }
 
-        // Check this first so that the LastVisible date is not updated immediately after the UserExercise record is created.
-        var exercisesUpdated = new HashSet<UserUserRecipe>();
-        foreach (var queryResult in queryResults.Where(qr => qr.UserRecipe != null))
-        {
-            queryResult.UserRecipe!.LastVisible = Today;
-            if (exercisesUpdated.Add(queryResult.UserRecipe))
-            {
-                context.UserUserRecipes.Update(queryResult.UserRecipe);
-            }
-        }
-
         var exercisesCreated = new HashSet<UserUserRecipe>();
         foreach (var queryResult in queryResults.Where(qr => qr.UserRecipe == null))
         {
@@ -274,7 +263,7 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<IngredientGroup> GetUnworkedMuscleGroups(IList<QueryResults> finalResults, Func<IExerciseVariationCombo, IngredientGroup> muscleTarget, Func<IExerciseVariationCombo, IngredientGroup>? secondaryMuscleTarget = null)
+    private List<IngredientGroup> GetUnworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, IngredientGroup> muscleTarget, Func<IRecipeCombo, IngredientGroup>? secondaryMuscleTarget = null)
     {
         // Not using MuscleGroups because MuscleTargets can contain unions 
         return IngredientGroupOptions.MuscleTargets.Where(kv =>
@@ -291,7 +280,7 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<IngredientGroup> GetOverworkedMuscleGroups(IList<QueryResults> finalResults, Func<IExerciseVariationCombo, IngredientGroup> muscleTarget, Func<IExerciseVariationCombo, IngredientGroup>? secondaryMuscleTarget = null)
+    private List<IngredientGroup> GetOverworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, IngredientGroup> muscleTarget, Func<IRecipeCombo, IngredientGroup>? secondaryMuscleTarget = null)
     {
         // Not using MuscleGroups because MuscleTargets can contain unions.
         return IngredientGroupOptions.MuscleTargets.Where(kv =>

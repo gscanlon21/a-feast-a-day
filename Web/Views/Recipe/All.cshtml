@@ -1,6 +1,6 @@
 ﻿@model ViewModels.Recipe.RecipesViewModel
 @using System.Numerics
-@using Core.Models.Exercise
+@using Core.Models.Recipe
 @using Web.Controllers.Recipe
 @using Web.Code.Extensions
 @using Core.Models.User
@@ -36,6 +36,6 @@
     </form>
 </details>
 
-<component type="typeof(Lib.Pages.Shared.Exercise.ExerciseSection)" render-mode="Static" param-Recipes='Model.Recipes' param-Theme='ExerciseTheme.None' param-Verbosity="Verbosity.Debug" />
+<component type="typeof(Lib.Pages.Shared.Exercise.ExerciseSection)" render-mode="Static" param-Recipes='Model.Recipes' param-Theme='RecipeTheme.None' param-Verbosity="Verbosity.Debug" />
 
 <component type="typeof(Lib.Pages.Shared.Newsletter.Footnote)" render-mode="Static" param-Count='int.MaxValue' param-Verbosity='Verbosity.Debug' />

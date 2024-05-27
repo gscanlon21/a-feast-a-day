@@ -1,9 +1,9 @@
-﻿namespace Core.Models.Exercise;
+﻿namespace Core.Models.Recipe;
 
 /// <summary>
 /// Color schemes for exercises.
 /// </summary>
-public enum ExerciseTheme
+public enum RecipeTheme
 {
     /// <summary>
     /// Text.

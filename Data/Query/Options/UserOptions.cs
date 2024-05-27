@@ -6,11 +6,9 @@ public class UserOptions : IOptions
 
     public int Id { get; }
     public int? MaxIngredients { get; }
-    public int WeeklyServings { get; }
     public bool IsNewToFitness { get; }
     public DateOnly CreatedDate { get; }
     public int RefreshExercisesAfterXWeeks { get; }
-
     public bool IgnoreIgnored { get; set; } = false;
     public bool IgnoreMissingEquipment { get; set; } = false;
 
@@ -21,7 +19,6 @@ public class UserOptions : IOptions
         NoUser = false;
         Id = user.Id;
         MaxIngredients = user.MaxIngredients;
-        WeeklyServings = user.WeeklyServings;
         CreatedDate = user.CreatedDate;
     }
 }
