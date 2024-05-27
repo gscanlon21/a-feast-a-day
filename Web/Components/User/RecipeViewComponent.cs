@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using Core.Models.User;
+using Data;
 using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe? recipe = null)
     {
         // User must own the recipe to be able to edit it.
-        if (recipe != null && recipe.UserId != user.Id)
+        if (recipe != null && recipe.UserId != user.Id && !user.Features.HasFlag(Features.Admin))
         {
             return Content("");
         }

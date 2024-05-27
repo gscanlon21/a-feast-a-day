@@ -146,8 +146,8 @@ public partial class UserController
     }
 
     [HttpPost]
-    [Route("{section:section}/{exerciseId}/{variationId}/ip", Order = 1)]
-    [Route("{section:section}/{exerciseId}/{variationId}/is-primary", Order = 2)]
+    [Route("{section:section}/{recipeId}/ip", Order = 1)]
+    [Route("{section:section}/{recipeId}/is-primary", Order = 2)]
     public async Task<IActionResult> IsPrimary(string email, string token, int recipeId, Section section, bool? isPrimary)
     {
         var user = await userRepo.GetUser(email, token);
