@@ -1,0 +1,22 @@
+﻿::deep form {
+    height: 100%;
+    display: flex;
+}
+
+.btn:disabled {
+    opacity: .3;
+}
+
+.flip-x {
+    transform: scaleX(-1);
+}
+
+img {
+    vertical-align: unset;
+}
+
+@media (prefers-color-scheme: dark) {
+    img {
+        filter: invert(.85);
+    }
+}
