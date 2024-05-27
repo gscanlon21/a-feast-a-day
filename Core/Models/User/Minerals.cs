@@ -47,4 +47,13 @@ public enum Minerals
 
     [Display(Name = "Zinc", GroupName = "Nuts, Seeds, Beans, and Tofu", Description = "meat, shellfish, legumes, whole grains")]
     Zinc = 1 << 12, // 4096,
+
+    [Display(Name = "Molybdenum", GroupName = "", Description = "")]
+    Molybdenum = 1 << 13, // 8192,
+
+    [Display(Name = "Phosphorus", GroupName = "", Description = "")]
+    Phosphorus = 1 << 14, // 16384,
+
+    [Display(Name = "Sulfur", GroupName = "", Description = "")]
+    Sulfur = 1 << 14, // 32768,
 }

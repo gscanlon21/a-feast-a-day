@@ -84,10 +84,6 @@ public class UserEditViewModel
     public int? MaxIngredients { get; init; }
 
     [Required]
-    [Display(Name = "Share My Recipes", Description = "Share your recipes with other users.")]
-    public bool ShareMyRecipes { get; set; }
-
-    [Required]
     [Display(Name = "Send Days", Description = "What days do you want to receive new recipes?")]
     public Days SendDays { get; init; }
 

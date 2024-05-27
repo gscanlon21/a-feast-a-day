@@ -11,15 +11,27 @@
 
     <div class="alert alert-secondary" role="alert">
         <div class="mb-4">
-            <h6 class="mb-1">New ingredient</h6>
-            <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddFootnote)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+            <h6 class="mb-1">New Ingredient</h6>
+            <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
                 <div class="form-group mb-3">
                     <label for="Name" class="control-label">Name</label>
                     <input type="text" name="Name" class="form-control" required="required" />
                 </div>
                 <div class="form-group mb-3">
                     <label for="Group" class="control-label">Group</label>
-                    <select name="Group" class="form-control" asp-items="@(EnumExtensions.GetSingleValues32<IngredientGroup>().AsSelectListItems32())"></select>
+                    <select name="Group" class="form-control" asp-items="@(EnumExtensions.GetSingleOrNoneValues32<IngredientGroup>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, IngredientGroup.None))"></select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Allergens" class="control-label">Allergens</label>
+                    <select name="Allergens" class="form-control" multiple asp-items="@(EnumExtensions.GetSingleValues32<Allergy>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))"></select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Vitamins" class="control-label">Vitamins</label>
+                    <select name="Vitamins" class="form-control" multiple asp-items="@(EnumExtensions.GetSingleValues32<Vitamins>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))"></select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Minerals" class="control-label">Minerals</label>
+                    <select name="Minerals" class="form-control" multiple asp-items="@(EnumExtensions.GetSingleValues32<Minerals>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))"></select>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Add" class="btn btn-secondary" />
@@ -30,7 +42,7 @@
 
         @foreach (var ingredient in Model.Ingredients)
         {
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveFootnote)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" name="IngredientId" asp-for="@ingredient.Id" />
 
