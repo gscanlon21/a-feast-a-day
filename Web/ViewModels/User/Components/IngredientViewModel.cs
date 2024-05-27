@@ -11,5 +11,5 @@ public class IngredientViewModel
     public Data.Entities.User.User User { get; init; } = null!;
 
     [Display(Name = "Custom Ingredients")]
-    public IList<Data.Entities.User.UserIngredient> Ingredients { get; init; } = null!;
+    public IList<Data.Entities.User.Ingredient> Ingredients { get; init; } = null!;
 }

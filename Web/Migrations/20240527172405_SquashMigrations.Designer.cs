@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Web.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20240527162709_SquashMigrations2")]
-    partial class SquashMigrations2
+    [Migration("20240527172405_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -188,6 +188,52 @@ namespace Web.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Data.Entities.User.Ingredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Allergens")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("DisabledReason")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Group")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Minerals")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("SkipShoppingList")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Vitamins")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ingredient", t =>
+                        {
+                            t.HasComment("Recipes listed on the website");
+                        });
+                });
+
             modelBuilder.Entity("Data.Entities.User.Recipe", b =>
                 {
                     b.Property<int>("Id")
@@ -229,6 +275,84 @@ namespace Web.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("recipe", t =>
+                        {
+                            t.HasComment("Recipes listed on the website");
+                        });
+                });
+
+            modelBuilder.Entity("Data.Entities.User.RecipeIngredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Attributes")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DisabledReason")
+                        .HasColumnType("text");
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("QuantityDenominator")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("QuantityNumerator")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("recipe_ingredient", t =>
+                        {
+                            t.HasComment("Recipes listed on the website");
+                        });
+                });
+
+            modelBuilder.Entity("Data.Entities.User.RecipeInstruction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DisabledReason")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("recipe_instruction", t =>
                         {
                             t.HasComment("Recipes listed on the website");
                         });
@@ -296,52 +420,6 @@ namespace Web.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserIngredient", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Allergens")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("DisabledReason")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Group")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Minerals")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("SkipShoppingList")
-                        .HasColumnType("boolean");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Vitamins")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("user_ingredient", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
-                        });
-                });
-
             modelBuilder.Entity("Data.Entities.User.UserIngredientGroup", b =>
                 {
                     b.Property<int>("UserId")
@@ -385,84 +463,6 @@ namespace Web.Migrations
                     b.ToTable("user_recipe", t =>
                         {
                             t.HasComment("User's progression level of an exercise");
-                        });
-                });
-
-            modelBuilder.Entity("Data.Entities.User.UserRecipeIngredient", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Attributes")
-                        .HasColumnType("text");
-
-                    b.Property<string>("DisabledReason")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Measure")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("QuantityDenominator")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("QuantityNumerator")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RecipeId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserIngredientId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipeId");
-
-                    b.HasIndex("UserIngredientId");
-
-                    b.ToTable("user_recipe_ingredient", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
-                        });
-                });
-
-            modelBuilder.Entity("Data.Entities.User.UserRecipeInstruction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("DisabledReason")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Order")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RecipeId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipeId");
-
-                    b.ToTable("user_recipe_instruction", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
                         });
                 });
 
@@ -562,6 +562,15 @@ namespace Web.Migrations
                     b.Navigation("UserFeast");
                 });
 
+            modelBuilder.Entity("Data.Entities.User.Ingredient", b =>
+                {
+                    b.HasOne("Data.Entities.User.User", "User")
+                        .WithMany("UserIngredients")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Data.Entities.User.Recipe", b =>
                 {
                     b.HasOne("Data.Entities.User.User", "User")
@@ -571,13 +580,34 @@ namespace Web.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserIngredient", b =>
+            modelBuilder.Entity("Data.Entities.User.RecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
-                        .WithMany("UserIngredients")
-                        .HasForeignKey("UserId");
+                    b.HasOne("Data.Entities.User.Ingredient", "Ingredient")
+                        .WithMany("RecipeIngredients")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
+                        .WithMany("Ingredients")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+
+                    b.Navigation("Recipe");
+                });
+
+            modelBuilder.Entity("Data.Entities.User.RecipeInstruction", b =>
+                {
+                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
+                        .WithMany("Instructions")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserIngredientGroup", b =>
@@ -610,36 +640,6 @@ namespace Web.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserRecipeIngredient", b =>
-                {
-                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
-                        .WithMany("Ingredients")
-                        .HasForeignKey("RecipeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.Entities.User.UserIngredient", "Ingredient")
-                        .WithMany("RecipeIngredients")
-                        .HasForeignKey("UserIngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ingredient");
-
-                    b.Navigation("Recipe");
-                });
-
-            modelBuilder.Entity("Data.Entities.User.UserRecipeInstruction", b =>
-                {
-                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
-                        .WithMany("Instructions")
-                        .HasForeignKey("RecipeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Recipe");
-                });
-
             modelBuilder.Entity("Data.Entities.User.UserServing", b =>
                 {
                     b.HasOne("Data.Entities.User.User", "User")
@@ -665,6 +665,11 @@ namespace Web.Migrations
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
                     b.Navigation("UserFeastRecipes");
+                });
+
+            modelBuilder.Entity("Data.Entities.User.Ingredient", b =>
+                {
+                    b.Navigation("RecipeIngredients");
                 });
 
             modelBuilder.Entity("Data.Entities.User.Recipe", b =>
@@ -697,11 +702,6 @@ namespace Web.Migrations
                     b.Navigation("UserUserRecipes");
 
                     b.Navigation("UserWorkouts");
-                });
-
-            modelBuilder.Entity("Data.Entities.User.UserIngredient", b =>
-                {
-                    b.Navigation("RecipeIngredients");
                 });
 #pragma warning restore 612, 618
         }

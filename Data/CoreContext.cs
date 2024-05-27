@@ -12,7 +12,7 @@ public class CoreContext : DbContext
     public DbSet<UserToken> UserTokens { get; set; } = null!;
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserServing> UserServings { get; set; } = null!;
-    public DbSet<UserIngredient> UserIngredients { get; set; } = null!;
+    public DbSet<Ingredient> UserIngredients { get; set; } = null!;
     public DbSet<UserIngredientGroup> UserIngredientGroups { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
     public DbSet<Recipe> UserRecipes { get; set; } = null!;
@@ -44,8 +44,8 @@ public class CoreContext : DbContext
 
         ////////// Query Filters //////////
         modelBuilder.Entity<Recipe>().HasQueryFilter(p => p.DisabledReason == null);
-        modelBuilder.Entity<UserRecipeIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
-        modelBuilder.Entity<UserRecipeInstruction>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
+        modelBuilder.Entity<RecipeIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
+        modelBuilder.Entity<RecipeInstruction>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);

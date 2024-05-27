@@ -9,9 +9,9 @@ namespace Data.Entities.User;
 /// <summary>
 /// Exercises listed on the website
 /// </summary>
-[Table("user_recipe_instruction"), Comment("Recipes listed on the website")]
+[Table("recipe_instruction"), Comment("Recipes listed on the website")]
 [DebuggerDisplay("{Name,nq}")]
-public class UserRecipeInstruction
+public class RecipeInstruction
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }

@@ -27,7 +27,7 @@ public partial class IngredientController(CoreContext context) : ViewController(
         var queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None);
 
         viewModel.Ingredients = (await context.UserIngredients.ToListAsync())
-            .Select(r => r.AsType<Lib.ViewModels.Newsletter.IngredientViewModel, UserIngredient>()!)
+            .Select(r => r.AsType<Lib.ViewModels.Newsletter.IngredientViewModel, Data.Entities.User.Ingredient>()!)
             .ToList();
 
         if (!string.IsNullOrWhiteSpace(viewModel.Name))

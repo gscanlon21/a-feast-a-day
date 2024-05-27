@@ -10,9 +10,9 @@ namespace Data.Entities.User;
 /// <summary>
 /// Exercises listed on the website
 /// </summary>
-[Table("user_ingredient"), Comment("Recipes listed on the website")]
+[Table("ingredient"), Comment("Recipes listed on the website")]
 [DebuggerDisplay("{Name,nq}")]
-public class UserIngredient
+public class Ingredient
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
@@ -48,8 +48,8 @@ public class UserIngredient
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredients))]
     public virtual User? User { get; set; }
 
-    [JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.Ingredient))]
-    public virtual List<UserRecipeIngredient> RecipeIngredients { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
+    public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

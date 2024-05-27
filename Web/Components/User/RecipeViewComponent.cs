@@ -37,22 +37,22 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
         });
     }
 
-    private static IEnumerable<UserRecipeIngredient> GetIngredients()
+    private static IEnumerable<RecipeIngredient> GetIngredients()
     {
         for (var i = 0; i < 16; i++)
         {
-            yield return new UserRecipeIngredient()
+            yield return new RecipeIngredient()
             {
                 Hide = i > 0
             };
         }
     }
 
-    private static IEnumerable<UserRecipeInstruction> GetInstructions()
+    private static IEnumerable<RecipeInstruction> GetInstructions()
     {
         for (var i = 0; i < 16; i++)
         {
-            yield return new UserRecipeInstruction()
+            yield return new RecipeInstruction()
             {
                 Hide = i > 0
             };

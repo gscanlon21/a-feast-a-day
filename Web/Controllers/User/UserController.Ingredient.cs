@@ -20,7 +20,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        context.Add(new UserIngredient()
+        context.Add(new Data.Entities.User.Ingredient()
         {
             User = user,
             Name = name,
