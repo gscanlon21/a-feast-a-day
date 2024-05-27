@@ -55,6 +55,10 @@ public enum IngredientGroup
     [Display(Name = "Refined Grains", GroupName = "Refined Grains")]
     RefinedGrains = 1 << 15, // 32768
 
+    [Display(Name = "Sweets", GroupName = "Sugary and Sweet")]
+    Sweet = 1 << 16, // 65536
+
+
     All = Fruits | Vegetables | VegetableOils | UnsaturatedFats | Dairy | WholeGrains | Poultry
         | Eggs | Fish | Nuts | Seeds | Beans | Tofu | RedMeat | Butter | RefinedGrains
 }
