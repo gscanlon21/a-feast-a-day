@@ -14,7 +14,7 @@ public class UserManageRecipeViewModel
 
     [Display(Name = "Recipe", Description = "Ignore this recipe.")]
     public required Data.Entities.User.Recipe Recipe { get; init; }
-    
+
     public required Data.Entities.User.UserRecipe UserRecipe { get; init; }
 
     public Verbosity RecipeVerbosity => Verbosity.Images;

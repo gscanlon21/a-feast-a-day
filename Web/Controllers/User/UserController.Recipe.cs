@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;

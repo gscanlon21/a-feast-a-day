@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Data.Entities.User;
 
 namespace Web.ViewModels.User;
 
