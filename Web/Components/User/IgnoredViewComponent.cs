@@ -6,7 +6,6 @@ using Lib.ViewModels.Newsletter;
 using Lib.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Web.Code;
 using Web.ViewModels.User.Components;
 

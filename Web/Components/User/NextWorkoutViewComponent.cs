@@ -1,5 +1,4 @@
 ﻿using Core.Models.User;
-using Data;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels.User.Components;

@@ -1,6 +1,4 @@
-﻿using Core.Models.Exercise;
-using Core.Models.Newsletter;
-using Core.Models.User;
+﻿using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.ViewModels.Recipe;

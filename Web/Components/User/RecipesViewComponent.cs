@@ -28,7 +28,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
-        
+
         var userRecipes = await context.UserRecipes.Where(r => r.UserId == user.Id).ToListAsync();
         var recipes = (await new QueryBuilder()
             // Include disabled recipes.

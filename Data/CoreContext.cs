@@ -2,7 +2,6 @@
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
 
 namespace Data;
 

@@ -1,6 +1,4 @@
-﻿using Core.Models.Newsletter;
-
-namespace Data.Query.Options;
+﻿namespace Data.Query.Options;
 
 public class UserOptions : IOptions
 {
