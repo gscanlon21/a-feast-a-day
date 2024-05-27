@@ -98,7 +98,7 @@ public class QueryRunner(Section section)
 
         var filteredQuery = CreateFilteredExerciseVariationsQuery(context);
 
-        //filteredQuery = Filters.FilterSection(filteredQuery, section);
+        filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterExercises(filteredQuery, ExerciseOptions.RecipeIds);
         //filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(IngredientGroup.None, (curr2, n2) => curr2 | n2), include: true, IngredientGroupOptions.MuscleTarget);
 
