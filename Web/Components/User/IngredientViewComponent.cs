@@ -21,15 +21,15 @@ public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : V
             return Content("");
         }
 
-        var userFootnotes = await context.UserIngredients
-            .Where(f => f.UserId == user.Id)
+        var userIngredients = await context.UserIngredients
+            .Where(i => i.UserId == user.Id)
             .OrderBy(f => f.Name)
             .ToListAsync();
 
         return View("Ingredient", new IngredientViewModel()
         {
             User = user,
-            Ingredients = userFootnotes,
+            Ingredients = userIngredients,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }
