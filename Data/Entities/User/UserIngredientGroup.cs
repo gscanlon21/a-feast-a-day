@@ -27,12 +27,6 @@ public class UserIngredientGroup
 
     /// <summary>
     /// The volume each muscle group should be exposed to each week.
-    /// 
-    /// ~24 per exercise.
-    /// 
-    /// https://www.bodybuilding.com/content/how-many-exercises-per-muscle-group.html
-    /// 50-70 for minor muscle groups.
-    /// 90-120 for major muscle groups.
     /// </summary>
     public static readonly IDictionary<IngredientGroup, Range> MuscleTargets = new Dictionary<IngredientGroup, Range>
     {
