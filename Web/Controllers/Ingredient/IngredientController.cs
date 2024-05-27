@@ -1,7 +1,6 @@
 ﻿using Core.Consts;
 using Core.Models.Newsletter;
 using Data;
-using Data.Entities.User;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
