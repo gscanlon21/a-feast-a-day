@@ -22,10 +22,6 @@ public class UserNewsletterViewModel
     [Display(Name = "Footnotes")]
     public FootnoteType FootnoteType { get; init; }
 
-    public bool ShareMyRecipes { get; init; }
-
-    public bool IncludeMobilityWorkouts { get; init; }
-
     public DateOnly? LastActive { get; init; }
 
     [Display(Name = "Send Days")]

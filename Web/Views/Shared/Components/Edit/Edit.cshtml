@@ -137,12 +137,6 @@
             </div>
 
             <div class="form-group form-check mb-3">
-                <label asp-for="ShareMyRecipes" class="control-label">@Html.DisplayNameFor(_ => Model.ShareMyRecipes)</label>
-                <input class="form-check-input" asp-for="ShareMyRecipes" aria-describedby="prefer-static-help" />
-                <span asp-validation-for="ShareMyRecipes" class="text-danger"></span>
-                <div id="prefer-static-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.ShareMyRecipes)</div>
-            </div>
-            <div class="form-group form-check mb-3">
                 <label asp-for="NewsletterEnabled" class="control-label">@Html.DisplayNameFor(_ => Model.NewsletterEnabled)</label>
                 <input class="form-check-input" asp-for="NewsletterEnabled" aria-describedby="disabled-help" />
                 <span asp-validation-for="NewsletterEnabled" class="text-danger"></span>
