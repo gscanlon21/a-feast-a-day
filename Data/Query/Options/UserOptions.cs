@@ -6,11 +6,8 @@ public class UserOptions : IOptions
 
     public int Id { get; }
     public int? MaxIngredients { get; }
-    public bool IsNewToFitness { get; }
     public DateOnly CreatedDate { get; }
-    public int RefreshExercisesAfterXWeeks { get; }
     public bool IgnoreIgnored { get; set; } = false;
-    public bool IgnoreMissingEquipment { get; set; } = false;
 
     public UserOptions() { }
 

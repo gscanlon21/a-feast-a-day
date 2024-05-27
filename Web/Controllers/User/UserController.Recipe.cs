@@ -91,6 +91,7 @@ public partial class UserController
         }
 
         var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
+        var userUserRecipe = await context.UserUserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
         var recipe = await context.UserRecipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
@@ -106,13 +107,21 @@ public partial class UserController
             User = user,
             WasUpdated = wasUpdated,
             Recipe = recipe,
+            RecipeViewModel = new ViewModels.Shared.UserManageRecipeViewModel()
+            {
+                Recipe = recipe,
+                User = user,
+                RecipeSection = section,
+                UserRecipe = userUserRecipe,
+                Parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId)
+            },
         });
     }
 
     [HttpPost]
-    [Route("{section:section}/{recipeId}/ie", Order = 1)]
-    [Route("{section:section}/{recipeId}/ignore-exercise", Order = 2)]
-    public async Task<IActionResult> IgnoreExercise(string email, string token, int recipeId, Section section)
+    [Route("{section:section}/{recipeId}/ir", Order = 1)]
+    [Route("{section:section}/{recipeId}/ignore-recipe", Order = 2)]
+    public async Task<IActionResult> IgnoreRecipe(string email, string token, int recipeId, Section section)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -120,24 +129,46 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        var userProgression = await context.UserUserRecipes
+            .Where(ue => ue.UserId == user.Id)
+            .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);
+
+        // May be null if the exercise was soft/hard deleted
+        if (userProgression == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        userProgression.Ignore = !userProgression.Ignore;
         await context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
 
     [HttpPost]
-    [Route("{section:section}/{recipeId}/re", Order = 1)]
-    [Route("{section:section}/{recipeId}/refresh-exercise", Order = 2)]
-    public async Task<IActionResult> RefreshExercise(string email, string token, int recipeId, Section section)
+    [Route("{section:section}/{exerciseId}/{variationId}/ip", Order = 1)]
+    [Route("{section:section}/{exerciseId}/{variationId}/is-primary", Order = 2)]
+    public async Task<IActionResult> IsPrimary(string email, string token, int recipeId, Section section, bool? isPrimary)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.SaveChangesAsync();
+        var userProgression = await context.UserUserRecipes
+            .Include(ue => ue.Recipe)
+            .Where(ue => ue.UserId == user.Id)
+            .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);
 
+        // May be null if the exercise was soft/hard deleted
+        if (userProgression == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        userProgression.IsPrimary = isPrimary;
+        await context.SaveChangesAsync();
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
 }

@@ -14,5 +14,7 @@ public class UserManageRecipeViewModel
 
     public required Data.Entities.User.Recipe Recipe { get; set; }
 
+    public required Shared.UserManageRecipeViewModel RecipeViewModel { get; init; }
+
     public bool? WasUpdated { get; init; }
 }

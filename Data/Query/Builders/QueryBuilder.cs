@@ -74,12 +74,11 @@ public class QueryBuilder
     /// TODO: Refactor user options to better select what is filtered and what isn't.
     /// ..... (prerequisites, progressions, equipment, no use caution when new, unique exercises).
     /// </summary>
-    public QueryBuilder WithUser(User user, bool ignoreIgnored = false, bool ignoreMissingEquipment = false, bool uniqueExercises = true)
+    public QueryBuilder WithUser(User user, bool ignoreIgnored = false, bool uniqueExercises = true)
     {
         UserOptions = new UserOptions(user)
         {
             IgnoreIgnored = ignoreIgnored,
-            IgnoreMissingEquipment = ignoreMissingEquipment,
         };
 
         return WithSelectionOptions(options =>

@@ -33,8 +33,18 @@
 <div class="alert alert-secondary">
     <div class="row gy-2">
         <div class="col-lg-6">
-            @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User, Model.Recipe })
+            @{
+                await Html.RenderPartialAsync("_ManageRecipe", Model.RecipeViewModel);
+            }
         </div>
+
+        @* User must have created the recipe to be able to edit it. *@
+        @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
+        {
+            <div class="col-lg-6">
+                @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User, Model.Recipe })
+            </div>
+        }
     </div>
 </div>
 

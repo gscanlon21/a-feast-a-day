@@ -36,7 +36,7 @@ public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServi
 
         var ignoredRecipes = (await new QueryBuilder()
             // Include disabled recipes.
-            .WithUser(user, ignoreIgnored: true, ignoreMissingEquipment: true, uniqueExercises: false)
+            .WithUser(user, ignoreIgnored: true, uniqueExercises: false)
             .WithExercises(x =>
             {
                 x.AddExercises(userRecipes);
