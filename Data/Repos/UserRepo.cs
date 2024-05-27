@@ -91,6 +91,10 @@ public class UserRepo(CoreContext context)
     {
         var strengthNewsletterGroups = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
+            .Include(f => f.UserFeastRecipes)
+                .ThenInclude(r => r.Recipe)
+                    .ThenInclude(r => r.Ingredients)
+                        .ThenInclude(r => r.Ingredient)
             .Where(n => n.User.Id == user.Id)
             // Only look at records where the user is not new to fitness.
             //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
