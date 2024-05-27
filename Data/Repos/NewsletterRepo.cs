@@ -82,8 +82,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         logger.Log(LogLevel.Information, "Building newsletter for user {Id}", user.Id);
 
-        // Is the user requesting an old newsletter?
-        date ??= user.TodayOffset;
+        // Is the user requesting an old newsletter? Newsletters are weekly so shimmy the date over to the start of the week.
+        date = date?.AddDays(-1 * (int)Today.DayOfWeek) ?? user.TodayOffset.AddDays(-1 * (int)Today.DayOfWeek);
         if (date.HasValue)
         {
             var oldNewsletter = await context.UserFeasts.AsNoTracking()
