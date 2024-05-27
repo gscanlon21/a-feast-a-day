@@ -156,7 +156,7 @@ public class QueryRunner(Section section)
 
                 // Don't overwork weekly servings.
                 if (ServingsOptions.AtLeastXServingsPerRecipe != null
-                    && finalResults.Aggregate(exercise.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > UserOptions.WeeklyServings)
+                    && finalResults.Aggregate(exercise.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings)
                 {
                     continue;
                 }
