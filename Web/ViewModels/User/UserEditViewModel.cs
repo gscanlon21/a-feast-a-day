@@ -29,7 +29,6 @@ public class UserEditViewModel
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         Verbosity = user.Verbosity;
         FootnoteType = user.FootnoteType;
-        ShareMyRecipes = user.ShareMyRecipes;
         SendHour = user.SendHour;
         MaxIngredients = user.MaxIngredients;
         ExcludeAllergens = user.ExcludeAllergens;

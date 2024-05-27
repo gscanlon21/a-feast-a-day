@@ -74,7 +74,6 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.SendHour = viewModel.SendHour;
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
-                viewModel.User.ShareMyRecipes = viewModel.ShareMyRecipes;
 
                 context.UserServings.RemoveRange(context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
                 context.UserServings.AddRange(viewModel.UserServings

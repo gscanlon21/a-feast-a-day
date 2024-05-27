@@ -145,15 +145,6 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var sideRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes));
         var snackRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes));
         var dessertRecipes = await GetDessertRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes).Concat(snackRecipes));
-        var recipesOfTheDay = context.UserRecipes
-            .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
-                .ThenInclude(i => i.Ingredient)
-            .Where(r => r.User.ShareMyRecipes)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
-            .OrderBy(r => EF.Functions.Random())
-            .Take(1)
-            .ToList();
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext,
             recipes: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList()
@@ -168,7 +159,6 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             DessertRecipes = dessertRecipes,
             SnackRecipes = snackRecipes,
             BreakfastRecipes = breakfastRecipes,
-            //RecipesOfTheDay = recipesOfTheDay,
         };
 
         // Other exercises. Refresh every day.

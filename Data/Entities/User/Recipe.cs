@@ -20,8 +20,7 @@ public class Recipe
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Required]
-    public int UserId { get; init; }
+    public int? UserId { get; init; }
 
     /// <summary>
     /// Friendly name.
@@ -49,7 +48,7 @@ public class Recipe
     public IngredientGroup IngredientGroups => Ingredients?.Aggregate(IngredientGroup.None, (curr, next) => curr | (next.Ingredient?.Group ?? IngredientGroup.None)) ?? IngredientGroup.None;
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the recipe (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
 

@@ -88,12 +88,6 @@ public class User
     public bool AcceptedTerms { get; private init; }
 
     /// <summary>
-    /// User prefers static instead of dynamic images?
-    /// </summary>
-    [Required]
-    public bool ShareMyRecipes { get; set; }
-
-    /// <summary>
     /// Types of footnotes to show to the user.
     /// </summary>
     [Required]

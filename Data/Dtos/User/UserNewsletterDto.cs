@@ -27,8 +27,6 @@ public class UserNewsletterDto(Entities.User.User user, string token)
     [Display(Name = "Footnotes")]
     public FootnoteType FootnoteType { get; } = user.FootnoteType;
 
-    public bool ShareMyRecipes { get; } = user.ShareMyRecipes;
-
     public DateOnly? LastActive { get; } = user.LastActive;
 
     [Display(Name = "Send Days")]
