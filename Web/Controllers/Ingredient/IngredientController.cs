@@ -12,7 +12,7 @@ using Web.ViewModels.Ingredient;
 namespace Web.Controllers.Ingredient;
 
 [Route("ingredient")]
-public partial class IngredientController(CoreContext context, IServiceScopeFactory serviceScopeFactory) : ViewController()
+public partial class IngredientController(CoreContext context) : ViewController()
 {
     /// <summary>
     /// The name of the controller for routing purposes

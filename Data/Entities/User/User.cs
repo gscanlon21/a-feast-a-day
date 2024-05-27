@@ -207,11 +207,11 @@ public class User
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
     public virtual ICollection<UserFeast> UserWorkouts { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(UserRecipe.User))]
-    public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Recipe.User))]
+    public virtual ICollection<Recipe> UserRecipes { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(UserUserRecipe.User))]
-    public virtual ICollection<UserUserRecipe> UserUserRecipes { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(UserRecipe.User))]
+    public virtual ICollection<UserRecipe> UserUserRecipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserIngredient.User))]
     public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = null!;

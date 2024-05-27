@@ -18,9 +18,6 @@ public class UserRepo(CoreContext context)
     /// </summary>
     private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
 
-    // Keep this relatively low so it is less jarring when the user switches away from IsNewToFitness.
-    private const double WeightUserIsNewXTimesMore = 1.25;
-
     /// <summary>
     /// Grab a user from the db with a specific token
     /// </summary>

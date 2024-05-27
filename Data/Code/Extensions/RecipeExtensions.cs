@@ -4,7 +4,7 @@ using Data.Query;
 
 namespace Data.Code.Extensions;
 
-public static class VariationExtensions
+public static class RecipeExtensions
 {
     /// <summary>
     /// Returns the bitwise ORed result of muscles targeted by any of the items in the list.

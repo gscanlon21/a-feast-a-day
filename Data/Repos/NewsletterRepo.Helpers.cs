@@ -58,7 +58,7 @@ public partial class NewsletterRepo
     /// <param name="refreshAfter">
     ///     When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same exercises in each workout.
     /// </param>
-    public async Task UpdateLastSeenDate(IEnumerable<RecipeDto> exercises, DateOnly? refreshAfter = null)
+    public async Task UpdateLastSeenDate(IEnumerable<RecipeDto> exercises)
     {
         using var scope = serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();

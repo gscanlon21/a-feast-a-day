@@ -53,6 +53,6 @@ public class UserIngredient
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is UserRecipe other
+    public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
 }

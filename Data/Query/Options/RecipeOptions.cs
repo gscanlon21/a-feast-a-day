@@ -31,7 +31,7 @@ public class RecipeOptions : IOptions
     /// <summary>
     /// Exclude any variation of these exercises from being chosen.
     /// </summary>
-    public void AddExercises(IEnumerable<UserRecipe>? exercises)
+    public void AddExercises(IEnumerable<Recipe>? exercises)
     {
         if (exercises != null)
         {

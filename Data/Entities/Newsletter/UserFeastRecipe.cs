@@ -15,7 +15,7 @@ public class UserFeastRecipe
 {
     public UserFeastRecipe() { }
 
-    public UserFeastRecipe(UserFeast newsletter, UserRecipe userRecipe)
+    public UserFeastRecipe(UserFeast newsletter, Recipe userRecipe)
     {
         UserFeastId = newsletter.Id;
         RecipeId = userRecipe.Id;
@@ -38,8 +38,8 @@ public class UserFeastRecipe
     /// </summary>
     public Section Section { get; init; }
 
-    [JsonIgnore, InverseProperty(nameof(User.UserRecipe.UserFeastRecipes))]
-    public virtual UserRecipe Recipe { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(User.Recipe.UserFeastRecipes))]
+    public virtual Recipe Recipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeast.UserFeastRecipes))]
     public virtual UserFeast UserFeast { get; private init; } = null!;

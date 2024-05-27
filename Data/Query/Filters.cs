@@ -8,7 +8,7 @@ namespace Data.Query;
 
 public interface IRecipeCombo
 {
-    UserRecipe Recipe { get; }
+    Recipe Recipe { get; }
 }
 
 public static class Filters

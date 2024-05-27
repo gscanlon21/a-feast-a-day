@@ -21,16 +21,16 @@ public class QueryRunner(Section section)
     private class RecipesQueryResults
         : IRecipeCombo
     {
-        public UserRecipe Recipe { get; init; } = null!;
-        public UserUserRecipe UserRecipe { get; init; } = null!;
+        public Recipe Recipe { get; init; } = null!;
+        public UserRecipe UserRecipe { get; init; } = null!;
     }
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     private class InProgressQueryResults(RecipesQueryResults queryResult) :
         IRecipeCombo
     {
-        public UserRecipe Recipe { get; } = queryResult.Recipe;
-        public UserUserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
+        public Recipe Recipe { get; } = queryResult.Recipe;
+        public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
 
         public override int GetHashCode() => HashCode.Combine(Recipe.Id);
 
@@ -245,10 +245,10 @@ public class QueryRunner(Section section)
             return;
         }
 
-        var exercisesCreated = new HashSet<UserUserRecipe>();
+        var exercisesCreated = new HashSet<UserRecipe>();
         foreach (var queryResult in queryResults.Where(qr => qr.UserRecipe == null))
         {
-            queryResult.UserRecipe = new UserUserRecipe()
+            queryResult.UserRecipe = new UserRecipe()
             {
                 UserId = UserOptions.Id,
                 RecipeId = queryResult.Recipe.Id

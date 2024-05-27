@@ -17,7 +17,7 @@ namespace Web.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -185,6 +185,52 @@ namespace Web.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Data.Entities.User.Recipe", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Allergens")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CookTime")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("DisabledReason")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int>("PrepTime")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Section")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Servings")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("recipe", t =>
+                        {
+                            t.HasComment("Recipes listed on the website");
+                        });
+                });
+
             modelBuilder.Entity("Data.Entities.User.User", b =>
                 {
                     b.Property<int>("Id")
@@ -317,47 +363,28 @@ namespace Web.Migrations
 
             modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Allergens")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("CookTime")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("DisabledReason")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<int>("PrepTime")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Section")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Servings")
-                        .HasColumnType("integer");
-
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("integer");
 
-                    b.HasIndex("UserId");
+                    b.Property<bool>("Ignore")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool?>("IsPrimary")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateOnly>("LastSeen")
+                        .HasColumnType("date");
+
+                    b.HasKey("UserId", "RecipeId");
+
+                    b.HasIndex("RecipeId");
 
                     b.ToTable("user_recipe", t =>
                         {
-                            t.HasComment("Recipes listed on the website");
+                            t.HasComment("User's progression level of an exercise");
                         });
                 });
 
@@ -483,33 +510,6 @@ namespace Web.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserUserRecipe", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RecipeId")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("Ignore")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool?>("IsPrimary")
-                        .HasColumnType("boolean");
-
-                    b.Property<DateOnly>("LastSeen")
-                        .HasColumnType("date");
-
-                    b.HasKey("UserId", "RecipeId");
-
-                    b.HasIndex("RecipeId");
-
-                    b.ToTable("user_user_recipe", t =>
-                        {
-                            t.HasComment("User's progression level of an exercise");
-                        });
-                });
-
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
                 {
                     b.HasOne("Data.Entities.User.User", "User")
@@ -545,7 +545,7 @@ namespace Web.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
                 {
-                    b.HasOne("Data.Entities.User.UserRecipe", "Recipe")
+                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
                         .WithMany("UserFeastRecipes")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -560,6 +560,17 @@ namespace Web.Migrations
                     b.Navigation("Recipe");
 
                     b.Navigation("UserFeast");
+                });
+
+            modelBuilder.Entity("Data.Entities.User.Recipe", b =>
+                {
+                    b.HasOne("Data.Entities.User.User", "User")
+                        .WithMany("UserRecipes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserIngredient", b =>
@@ -584,18 +595,26 @@ namespace Web.Migrations
 
             modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
                 {
+                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
+                        .WithMany("UserUserRecipes")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Data.Entities.User.User", "User")
-                        .WithMany("UserRecipes")
+                        .WithMany("UserUserRecipes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Recipe");
 
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserRecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.User.UserRecipe", "Recipe")
+                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
                         .WithMany("Ingredients")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -614,7 +633,7 @@ namespace Web.Migrations
 
             modelBuilder.Entity("Data.Entities.User.UserRecipeInstruction", b =>
                 {
-                    b.HasOne("Data.Entities.User.UserRecipe", "Recipe")
+                    b.HasOne("Data.Entities.User.Recipe", "Recipe")
                         .WithMany("Instructions")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -645,28 +664,20 @@ namespace Web.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserUserRecipe", b =>
-                {
-                    b.HasOne("Data.Entities.User.UserRecipe", "Recipe")
-                        .WithMany("UserUserRecipes")
-                        .HasForeignKey("RecipeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.Entities.User.User", "User")
-                        .WithMany("UserUserRecipes")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Recipe");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
                     b.Navigation("UserFeastRecipes");
+                });
+
+            modelBuilder.Entity("Data.Entities.User.Recipe", b =>
+                {
+                    b.Navigation("Ingredients");
+
+                    b.Navigation("Instructions");
+
+                    b.Navigation("UserFeastRecipes");
+
+                    b.Navigation("UserUserRecipes");
                 });
 
             modelBuilder.Entity("Data.Entities.User.User", b =>
@@ -693,17 +704,6 @@ namespace Web.Migrations
             modelBuilder.Entity("Data.Entities.User.UserIngredient", b =>
                 {
                     b.Navigation("RecipeIngredients");
-                });
-
-            modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
-                {
-                    b.Navigation("Ingredients");
-
-                    b.Navigation("Instructions");
-
-                    b.Navigation("UserFeastRecipes");
-
-                    b.Navigation("UserUserRecipes");
                 });
 #pragma warning restore 612, 618
         }

@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fractions" Version="7.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+    <PackageReference Include="Fractions" Version="7.7.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.5" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
   </ItemGroup>
 
@@ -38,10 +38,10 @@
     <Content Update="Pages\Newsletter\Newsletter.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Pages\Shared\Exercise\_Exercise.razor">
+    <Content Update="Pages\Shared\Recipe\_Recipe.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="Pages\Shared\Exercise\ExerciseSection.razor">
+    <Content Update="Pages\Shared\Recipe\RecipeSection.razor">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Pages\Shared\Newsletter\_Preview.razor">

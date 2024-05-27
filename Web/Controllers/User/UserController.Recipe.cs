@@ -12,7 +12,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("recipe/add")]
-    public async Task<IActionResult> AddRecipe(string email, string token, UserRecipe recipe)
+    public async Task<IActionResult> AddRecipe(string email, string token, Data.Entities.User.Recipe recipe)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)

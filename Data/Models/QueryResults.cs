@@ -8,6 +8,6 @@ namespace Data.Models;
 [DebuggerDisplay("{Exercise}: {Variation}")]
 public record QueryResults(
     Section Section,
-    UserRecipe Recipe,
-    UserUserRecipe? UserRecipe
+    Recipe Recipe,
+    UserRecipe? UserRecipe
 ) : IRecipeCombo;

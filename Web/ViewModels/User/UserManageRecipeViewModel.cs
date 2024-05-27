@@ -12,7 +12,7 @@ public class UserManageRecipeViewModel
 
     public record Parameters(Section Section, string Email, string Token, int RecipeId);
 
-    public required UserRecipe Recipe { get; set; }
+    public required Data.Entities.User.Recipe Recipe { get; set; }
 
     public bool? WasUpdated { get; init; }
 }

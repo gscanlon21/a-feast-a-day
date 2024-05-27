@@ -50,14 +50,14 @@ public class UserRecipeIngredient
     [NotMapped]
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
-    [JsonIgnore, InverseProperty(nameof(UserRecipe.Ingredients))]
-    public virtual UserRecipe Recipe { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.Ingredients))]
+    public virtual Recipe Recipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserIngredient.RecipeIngredients))]
     public virtual UserIngredient Ingredient { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is UserRecipe other
+    public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
 }

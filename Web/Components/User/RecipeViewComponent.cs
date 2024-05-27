@@ -14,7 +14,7 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
     /// </summary>
     public const string Name = "Recipe";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, UserRecipe? recipe = null)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe? recipe = null)
     {
         // User must own the recipe to be able to edit it.
         if (recipe != null && recipe.UserId != user.Id)
@@ -27,7 +27,7 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
             User = user,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
             Ingredients = await context.UserIngredients.Where(i => i.UserId == null || i.UserId == user.Id).OrderBy(i => i.Name).ToListAsync(),
-            Recipe = recipe ?? new UserRecipe()
+            Recipe = recipe ?? new Recipe()
             {
                 User = user,
                 Ingredients = GetIngredients().ToList(),

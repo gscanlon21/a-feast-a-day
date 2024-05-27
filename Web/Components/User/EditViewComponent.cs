@@ -29,7 +29,7 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
         return View("Edit", await PopulateUserEditViewModel(new UserEditViewModel(user, token)));
     }
 
-    private async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
+    private static async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
         foreach (var muscleGroup in UserServing.MuscleTargets.Keys
             .OrderBy(mg => mg.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))

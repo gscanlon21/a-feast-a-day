@@ -15,8 +15,8 @@ public class CoreContext : DbContext
     public DbSet<UserIngredient> UserIngredients { get; set; } = null!;
     public DbSet<UserIngredientGroup> UserIngredientGroups { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
-    public DbSet<UserRecipe> UserRecipes { get; set; } = null!;
-    public DbSet<UserUserRecipe> UserUserRecipes { get; set; } = null!;
+    public DbSet<Recipe> UserRecipes { get; set; } = null!;
+    public DbSet<UserRecipe> UserUserRecipes { get; set; } = null!;
     public DbSet<UserFeastRecipe> UserFeastRecipes { get; set; } = null!;
     public DbSet<UserFootnote> UserFootnotes { get; set; } = null!;
 
@@ -29,7 +29,7 @@ public class CoreContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         ////////// Keys //////////
-        modelBuilder.Entity<UserUserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId });
+        modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId });
         modelBuilder.Entity<UserIngredientGroup>().HasKey(sc => new { sc.UserId, sc.Group });
         modelBuilder.Entity<UserServing>().HasKey(sc => new { sc.UserId, sc.Section });
 
@@ -43,11 +43,11 @@ public class CoreContext : DbContext
 
 
         ////////// Query Filters //////////
-        modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.DisabledReason == null);
+        modelBuilder.Entity<Recipe>().HasQueryFilter(p => p.DisabledReason == null);
         modelBuilder.Entity<UserRecipeIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserRecipeInstruction>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
-        modelBuilder.Entity<UserUserRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
+        modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);
     }
 }

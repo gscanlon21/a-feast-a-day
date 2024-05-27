@@ -34,11 +34,11 @@ public class UserRecipeInstruction
 
     public string? DisabledReason { get; private init; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(UserRecipe.Instructions))]
-    public virtual UserRecipe Recipe { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.Instructions))]
+    public virtual Recipe Recipe { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is UserRecipe other
+    public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
 }
