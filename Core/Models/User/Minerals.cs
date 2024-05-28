@@ -55,5 +55,5 @@ public enum Minerals
     Phosphorus = 1 << 14, // 16384,
 
     [Display(Name = "Sulfur", GroupName = "", Description = "")]
-    Sulfur = 1 << 14, // 32768,
+    Sulfur = 1 << 15, // 32768,
 }
