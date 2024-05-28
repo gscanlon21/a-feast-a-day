@@ -12,12 +12,13 @@ public partial class NewsletterRepo
     /// <summary>
     /// Common properties surrounding today's workout.
     /// </summary>
-    internal async Task<WorkoutContext?> BuildWorkoutContext(User user, string token)
+    internal async Task<WorkoutContext?> BuildWorkoutContext(User user, string token, DateOnly date)
     {
         var (_, timeUntilNextSend) = await userRepo.GetNextSendDate(user);
         var (weeks, volume) = await userRepo.GetWeeklyMuscleVolume(user, UserConsts.TrainingVolumeWeeks);
         return new WorkoutContext()
         {
+            Date = date,
             User = user,
             Token = token,
             WeeklyMusclesWeeks = weeks,
@@ -31,7 +32,7 @@ public partial class NewsletterRepo
     /// </summary>
     internal async Task<UserFeast> CreateAndAddNewsletterToContext(WorkoutContext newsletterContext, IList<RecipeDto>? recipes = null)
     {
-        var newsletter = new UserFeast(newsletterContext.User.TodayOffset, newsletterContext);
+        var newsletter = new UserFeast(newsletterContext.Date, newsletterContext);
         context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
         await context.SaveChangesAsync();
 
