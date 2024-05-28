@@ -83,7 +83,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         logger.Log(LogLevel.Information, "Building newsletter for user {Id}", user.Id);
 
         // Is the user requesting an old newsletter? Newsletters are weekly so shimmy the date over to the start of the week.
-        date = date?.AddDays(-1 * (int)Today.DayOfWeek) ?? user.TodayOffset.AddDays(-1 * (int)Today.DayOfWeek);
+        var thisWeekDate = user.TodayOffset.AddDays(-1 * (int)user.TodayOffset.DayOfWeek);
+        date = date?.AddDays(-1 * (int)date.Value.DayOfWeek) ?? thisWeekDate;
         var oldNewsletter = await context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
             .Where(n => n.User.Id == user.Id)
@@ -103,7 +104,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             return await NewsletterOld(user, token, date.Value, oldNewsletter);
         }
         // A newsletter was not found and the date is not one we want to render a new newsletter for.
-        else if (date != user.TodayOffset.AddDays(-1 * (int)Today.DayOfWeek))
+        else if (date != thisWeekDate)
         {
             logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
             return null;
