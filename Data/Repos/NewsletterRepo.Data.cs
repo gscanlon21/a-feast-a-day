@@ -26,7 +26,7 @@ public partial class NewsletterRepo
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory, take: 2))
+            .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
     }
@@ -48,7 +48,7 @@ public partial class NewsletterRepo
             {
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             }).Build()
-            .Query(serviceScopeFactory, take: 2))
+            .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
     }
@@ -71,7 +71,7 @@ public partial class NewsletterRepo
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory, take: 2))
+            .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
     }
@@ -94,7 +94,7 @@ public partial class NewsletterRepo
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory, take: 2))
+            .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
     }
@@ -117,7 +117,7 @@ public partial class NewsletterRepo
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory, take: 2))
+            .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
     }
@@ -140,7 +140,7 @@ public partial class NewsletterRepo
                 x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory, take: 2))
+            .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
     }
