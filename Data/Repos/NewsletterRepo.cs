@@ -204,7 +204,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         if (user.Features.HasFlag(Features.Debug))
         {
-            newsletterViewModel.DebugIngredients = await context.UserIngredients.OrderBy(_ => EF.Functions.Random()).Take(2).ToListAsync();
+            newsletterViewModel.DebugIngredients = await context.UserIngredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(2).ToListAsync();
         }
 
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
