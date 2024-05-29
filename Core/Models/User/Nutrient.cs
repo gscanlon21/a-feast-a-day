@@ -78,7 +78,13 @@ public enum Nutrient : long
     [Display(ShortName = "B7", Name = "B7 (Biotin)", GroupName = "Vitamin B", Description = "Whole grains, eggs, soybeans, fish")]
     B7 = 1 << 17, // 131072
 
-    [Display(ShortName = "B9", Name = "B9 (Folic Acid)", GroupName = "Vitamin B", Description = "Fortified grains and cereals, asparagus, spinach, broccoli, legumes (black-eyed peas and chickpeas), orange juice")]
+    /// <summary>
+    /// NOT folic acid: we are not tracking the artificial version of folate 
+    /// because it is not well utilized by the body. It can even contribute 
+    /// to folate deficiency and other adverse side effects!
+    /// https://education.seekinghealth.com/folic-acid-side-effects/
+    /// </summary>
+    [Display(ShortName = "B9", Name = "B9 (Folinic Acid)", GroupName = "Vitamin B", Description = "Fortified grains and cereals, asparagus, spinach, broccoli, legumes (black-eyed peas and chickpeas), orange juice")]
     B9 = 1 << 18, // 262144
 
     [Display(ShortName = "B12", Name = "B12 (Cobalamin)", GroupName = "Vitamin B", Description = "Meat, poultry, fish, milk, cheese, fortified soymilk and cereals")]
