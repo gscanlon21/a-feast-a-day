@@ -14,14 +14,14 @@ public enum Nutrients : long
     [Display(Name = "Starch", GroupName = "Carbohydrates")]
     Starch = 1 << 1, // 2
 
-    [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates")]
+    [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
     SolubleFiber = 1 << 2, // 4
 
-    [Display(Name = "Insoluble Fiber", GroupName = "Carbohydrates")]
+    [Display(Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
     InsolubleFiber = 1 << 3, // 8
 
-    [Display(Name = "Fiber", GroupName = "Carbohydrates")]
-    Fiber = SolubleFiber | InsolubleFiber, // 12
+    [Display(Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
+    DietaryFiber = SolubleFiber | InsolubleFiber, // 12
 
     [Display(Name = "Sugar", GroupName = "Carbohydrates")]
     Sugar = 1 << 4, // 16
@@ -29,16 +29,16 @@ public enum Nutrients : long
     [Display(Name = "Oligosaccharides", GroupName = "Carbohydrates")]
     Oligosaccharides = 1 << 5, // 32
 
-    [Display(Name = "Carbohydrates", GroupName = "Carbohydrates")]
-    Carbohydrates = Starch | Fiber | Sugar | Oligosaccharides, // 62
+    [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
+    Carbohydrates = Starch | DietaryFiber | Sugar | Oligosaccharides, // 62
 
-    [Display(Name = "Monounsaturated Fats", GroupName = "Fats")]
+    [Display(Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
     MonounsaturatedFats = 1 << 6, // 64
 
-    [Display(Name = "Polyunsaturated Fats", GroupName = "Fats")]
+    [Display(Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated")]
     PolyunsaturatedFats = 1 << 7, // 128
 
-    [Display(Name = "Unsaturated Fats", GroupName = "Fats")]
+    [Display(Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 192
 
     [Display(Name = "Saturated Fats", GroupName = "Fats")]
