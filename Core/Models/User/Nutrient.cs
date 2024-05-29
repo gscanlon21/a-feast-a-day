@@ -156,7 +156,7 @@ public enum Nutrient : long
         | VitaminARetinoids | VitaminACartenoids
         | B1 | B2 | B3 | B5 | B6 | B7 | B9 | B12
         | VitaminC | VitaminD | VitaminE | VitaminK
-        | Calcium | Choline | Magnesium | Potassium | Sodium
+        | Calcium | Chloride | Magnesium | Potassium | Sodium
         | Chromium | Copper | Fluoride | Iodine | Iron | Manganese | Selenium | Zinc | Molybdenum | Phosphorus | Sulfur
         | Choline
 }
