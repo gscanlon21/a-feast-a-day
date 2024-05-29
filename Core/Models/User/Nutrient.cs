@@ -119,26 +119,26 @@ public enum Nutrient : long
 
     // Major Minerals
     [Display(Name = "Calcium", GroupName = "Fruits and Vegatables", Description = "yogurt, cheese, milk, salmon, leafy green vegetables")]
-    Calcium = 1 << 30, // 1073741824
+    Calcium = 1L << 30, // 1073741824
 
     [Display(Name = "Chloride", GroupName = "Fruits and Vegetables", Description = "salt")]
-    Chloride = 1 << 31, // 2147483648
+    Chloride = 1L << 31, // 2147483648
 
     [Display(Name = "Magnesium", GroupName = "Unsaturated Fats and Cholesterol", Description = "Spinach, broccoli, legumes, seeds, whole-wheat bread")]
-    Magnesium = 1 << 32, // 4294967296
+    Magnesium = 1L << 32, // 4294967296
 
     [Display(Name = "Potassium", GroupName = "Unsaturated Fats and Cholesterol", Description = "meat, milk, fruits, vegetables, grains, legumes")]
-    Potassium = 1 << 33, // 8589934592
+    Potassium = 1L << 33, // 8589934592
 
     [Display(Name = "Sodium", GroupName = "Dairy", Description = "salt, soy sauce, vegetables")]
-    Sodium = 1 << 34, // 17179869184
+    Sodium = 1L << 34, // 17179869184
 
     // Trace Minerals
     [Display(Name = "Chromium", GroupName = "Whole Grains", Description = "meat, poultry, fish, nuts, cheese")]
-    Chromium = 1 << 35, // 34359738368
+    Chromium = 1L << 35, // 34359738368
 
     [Display(Name = "Copper", GroupName = "Fish, Poultry, and Eggs", Description = "shellfish, nuts, seeds, whole-grain products, beans, prunes")]
-    Copper = 1 << 36, // 68719476736
+    Copper = 1L << 36, // 68719476736
 
     [Display(Name = "Fluoride", GroupName = "Fish, Poultry, and Eggs", Description = "fish, teas")]
     Fluoride = 1L << 37, // 137438953472
