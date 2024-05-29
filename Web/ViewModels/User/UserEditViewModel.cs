@@ -32,6 +32,7 @@ public class UserEditViewModel
         SendHour = user.SendHour;
         MaxIngredients = user.MaxIngredients;
         ExcludeAllergens = user.ExcludeAllergens;
+        AtLeastXServingsPerRecipe = user.AtLeastXServingsPerRecipe;
         Token = token;
     }
 
@@ -70,6 +71,10 @@ public class UserEditViewModel
 
     [Display(Name = "Weekly Servings", Description = "Customize weekly servings.")]
     public IList<UserServingViewModel> UserServings { get; set; } = [];
+
+    [Range(1, 9)]
+    [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
+    public int AtLeastXServingsPerRecipe { get; set; } = 3;
 
     [Required]
     [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]

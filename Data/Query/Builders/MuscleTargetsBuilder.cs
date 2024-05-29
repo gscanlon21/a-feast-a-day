@@ -19,7 +19,7 @@ public interface IMuscleGroupBuilderTargets : IMuscleGroupBuilderNoContext
 
 public interface IMuscleGroupBuilderFinalNoContext
 {
-    IngredientGroupOptions Build();
+    NutrientOptions Build();
 }
 
 public interface IMuscleGroupBuilderFinal : IMuscleGroupBuilderFinalNoContext
@@ -129,8 +129,8 @@ public class MuscleTargetsBuilder : IOptions, IMuscleGroupBuilderNoContext, IMus
         return this;
     }
 
-    public IngredientGroupOptions Build()
+    public NutrientOptions Build()
     {
-        return new IngredientGroupOptions(MuscleGroups, MuscleTargets);
+        return new NutrientOptions(MuscleGroups, MuscleTargets);
     }
 }

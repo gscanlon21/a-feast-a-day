@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Core.Consts;
+using System.ComponentModel.DataAnnotations;
 
 namespace Web.ViewModels.User.Components;
 
@@ -17,7 +18,16 @@ public class AdvancedViewModel
     }
 
     public bool IsNotDefault => FootnoteCountTop != Data.Entities.User.User.Consts.FootnoteCountTopDefault
-        || FootnoteCountBottom != Data.Entities.User.User.Consts.FootnoteCountBottomDefault;
+        || FootnoteCountBottom != Data.Entities.User.User.Consts.FootnoteCountBottomDefault
+        || AtLeastXUniqueNutrientsPerRecipe != 3;
+
+    [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in shorter warmup sections and decreased exercise variety.")]
+    [Range(1, 9)]
+    public int AtLeastXUniqueNutrientsPerRecipe { get; set; }
+
+    [Display(Name = "At Least X Servings Per Recipe", Description = "A higher value will result in shorter warmup sections and decreased exercise variety.")]
+    [Range(1, 9)]
+    public int AtLeastXServingsPerRecipe { get; set; }
 
     public string Token { get; init; } = null!;
     public string Email { get; init; } = null!;

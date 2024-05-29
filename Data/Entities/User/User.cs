@@ -180,11 +180,18 @@ public class User
     [NotMapped]
     public int WorkoutsDays => BitOperations.PopCount((ulong)SendDays);
 
+    [Range(1, 9)]
+    public int AtLeastXServingsPerRecipe { get; set; } = 3;
+
     #endregion
     #region Advanced Preferences
 
     public int FootnoteCountTop { get; set; } = Consts.FootnoteCountTopDefault;
     public int FootnoteCountBottom { get; set; } = Consts.FootnoteCountBottomDefault;
+
+    [Range(1, 9)]
+    public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = 3;
+
 
     #endregion
     #region Navigation Properties

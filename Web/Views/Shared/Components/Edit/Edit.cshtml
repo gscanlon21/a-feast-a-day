@@ -83,6 +83,27 @@
                 </details>
             </div>
 
+            <div class="mb-3">
+                <div class="form-group mb-3">
+                    <label asp-for="AtLeastXServingsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.AtLeastXServingsPerRecipe)</label>
+                    <div style="display:flex;column-gap:1ex;">
+                        <output name="OutputAtLeastXServingsPerRecipe" for="@Html.IdFor(_ => Model.AtLeastXServingsPerRecipe)">@Model.AtLeastXServingsPerRecipe</output>
+                        <div style="display:flex;width:100%;">
+                            <input asp-for="AtLeastXServingsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                   step="1" min="1" max="9"
+                                   oninput="OutputAtLeastXServingsPerRecipe.value = this.valueAsNumber" list="ListAtLeastXServingsPerRecipe" />
+                            <datalist id="ListAtLeastXServingsPerRecipe">
+                                <option value="3"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <span asp-validation-for="AtLeastXServingsPerRecipe" class="text-danger"></span>
+                    <div id="refresh-functional-help" class="form-text">
+                        @Html.DisplayDescriptionFor(_ => Model.AtLeastXServingsPerRecipe)
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group mb-3">
                 <label asp-for="AllergyBinder" class="control-label">@Html.DisplayNameFor(_ => Model.ExcludeAllergens)</label>
                 <select asp-for="AllergyBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"

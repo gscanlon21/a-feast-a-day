@@ -12,7 +12,7 @@ public class QueryBuilder
     private readonly Section Section;
 
     private UserOptions? UserOptions;
-    private IngredientGroupOptions? IngredientGroupOptions;
+    private NutrientOptions? NutrientOptions;
     private ServingsOptions? ServingsOptions;
     private SelectionOptions? SelectionOptions;
     private ExclusionOptions? ExclusionOptions;
@@ -60,11 +60,11 @@ public class QueryBuilder
     /// <summary>
     /// Show exercises that work these unique muscle groups.
     /// </summary>
-    public QueryBuilder WithIngredientGroups(IMuscleGroupBuilderFinalNoContext builder, Action<IngredientGroupOptions>? optionsBuilder = null)
+    public QueryBuilder WithNutrients(IMuscleGroupBuilderFinalNoContext builder, Action<NutrientOptions>? optionsBuilder = null)
     {
         var options = builder.Build();
         optionsBuilder?.Invoke(options);
-        IngredientGroupOptions = options;
+        NutrientOptions = options;
         return this;
     }
 
@@ -128,7 +128,7 @@ public class QueryBuilder
         return new QueryRunner(Section)
         {
             UserOptions = UserOptions ?? new UserOptions(),
-            IngredientGroupOptions = IngredientGroupOptions ?? new IngredientGroupOptions(),
+            NutrientOptions = NutrientOptions ?? new NutrientOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             RecipeOptions = ExerciseOptions ?? new RecipeOptions(),
