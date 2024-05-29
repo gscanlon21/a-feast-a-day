@@ -126,9 +126,36 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             return await NewsletterOld(user, token, currentWorkout.Date, currentWorkout);
         }
 
+        // User is a debug user. They should see the DebugNewsletter instead.
+        if (user.Features.HasFlag(Features.Debug))
+        {
+            logger.Log(LogLevel.Information, "Returning debug newsletter for user {Id}", user.Id);
+            return await Debug(newsletterContext);
+        }
+
         // Current day should be a strengthening workout.
         logger.Log(LogLevel.Information, "Returning on day newsletter for user {Id}", user.Id);
         return await OnDayNewsletter(newsletterContext);
+    }
+
+    /// <summary>
+    /// A newsletter with loads of debug information used for checking data validity.
+    /// </summary>
+    internal async Task<NewsletterDto?> Debug(WorkoutContext newsletterContext)
+    {
+        newsletterContext.User.Verbosity = Verbosity.Debug;
+        var debugRecipes = await GetDebugExercises(newsletterContext.User);
+        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
+        var userViewModel = new UserNewsletterDto(newsletterContext);
+        var viewModel = new NewsletterDto(userViewModel, newsletter)
+        {
+            DinnerRecipes = debugRecipes,
+            DebugIngredients = await context.UserIngredients.OrderBy(_ => EF.Functions.Random()).Take(1).ToListAsync()
+        };
+
+        await UpdateLastSeenDate(debugRecipes);
+
+        return viewModel;
     }
 
     /// <summary>

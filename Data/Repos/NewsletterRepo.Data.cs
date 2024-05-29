@@ -147,4 +147,17 @@ public partial class NewsletterRepo
             .Select(r => new RecipeDto(r))
             .ToList();
     }
+
+    /// <summary>
+    /// Grab x-many exercises that the user hasn't seen in a long time.
+    /// </summary>
+    private async Task<List<RecipeDto>> GetDebugExercises(User user)
+    {
+        return (await new QueryBuilder(Section.Debug)
+            .WithUser(user, uniqueExercises: false)
+            .Build()
+            .Query(serviceScopeFactory, take: 1))
+            .Select(r => new RecipeDto(r))
+            .ToList();
+    }
 }

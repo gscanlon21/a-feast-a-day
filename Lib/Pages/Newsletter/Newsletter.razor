@@ -40,6 +40,44 @@ else
         <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.SideRecipes" Theme="RecipeTheme.Cooldown" Title="@(new RecipeSection.Titles("Sides"))" />
         <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.SnackRecipes" Theme="RecipeTheme.Other" Title="@(new RecipeSection.Titles("Snacks"))" />
         <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.DessertRecipes" Theme="RecipeTheme.Other" Title="@(new RecipeSection.Titles("Desserts"))" />
+        @if (Model.DebugIngredients.Any())
+        {
+
+            <div class="mt-4" style="display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+                @foreach (var ingredient in Model.DebugIngredients.OrderBy(e => e.Name))
+                {
+                    <div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;justify-content:space-between;
+                        border-bottom:4px solid black;border-image-slice:1;outline:1px solid black;background-color:transparent;">
+
+                        @if (Model.User != null)
+                        {
+                            @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
+                            <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
+                                <a class="allow-demo" target="_blank" href="@DH.UserLink(Model.User, "/manageingredient")">Manage</a>
+                            </small>
+                        }
+
+                        @* div for margin-collapse between text content and image. *@
+                        <div>
+                            @* min-height so the Manage link doesn't overlap the image. *@
+                            <div style="min-height:5ch;">
+                                @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
+                                <div style="padding-inline-end:1.1ch">
+                                    <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
+                                        <span style="text-decoration:underline;">@ingredient.Name</span>
+                                    </h3>
+
+
+                                    <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @ingredient.Nutrients.GetDisplayName32()</div>
+                                    <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @ingredient.Allergens.GetDisplayName32()</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        }
     </div>
 
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" />

@@ -1,5 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Data.Dtos.User;
+using Data.Entities.User;
 
 namespace Data.Dtos.Newsletter;
 
@@ -24,6 +25,7 @@ public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserFeast
     public List<RecipeDto> SideRecipes { get; set; } = [];
     public List<RecipeDto> DessertRecipes { get; set; } = [];
     public List<RecipeDto> SnackRecipes { get; set; } = [];
+    public List<Ingredient> DebugIngredients { get; set; } = [];
     public List<RecipeDto> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
     /// <summary>
