@@ -47,7 +47,7 @@ public class Ingredient
     public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
     [InverseProperty(nameof(Nutrient.Ingredient))]
-    public virtual List<Nutrient> Nutrients { get; set; } = null!;
+    public virtual List<Nutrient> Nutrients { get; set; } = [];
 
 
     public override int GetHashCode() => HashCode.Combine(Id);
