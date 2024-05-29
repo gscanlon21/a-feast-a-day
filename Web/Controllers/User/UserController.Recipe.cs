@@ -8,6 +8,46 @@ namespace Web.Controllers.User;
 
 public partial class UserController
 {
+    /// <summary>
+    /// Shows a form to the user where they can update their Pounds lifted.
+    /// </summary>
+    [HttpGet]
+    [Route("{section:section}/{recipeId}", Order = 1)]
+    public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, Section section, bool? wasUpdated = null)
+    {
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        if (user == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
+        var userUserRecipe = await context.UserUserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
+        var recipe = await context.UserRecipes
+            .Include(r => r.Ingredients)
+            .Include(r => r.Instructions)
+            .FirstOrDefaultAsync(r => r.Id == recipeId);
+
+        if (recipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        return View(new UserManageRecipeViewModel()
+        {
+            User = user,
+            WasUpdated = wasUpdated,
+            Recipe = recipe,
+            RecipeViewModel = new ViewModels.Shared.UserManageRecipeViewModel()
+            {
+                Recipe = recipe,
+                User = user,
+                RecipeSection = section,
+                UserRecipe = userUserRecipe,
+                Parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId)
+            },
+        });
+    }
 
     [HttpPost]
     [Route("recipe/add")]
@@ -73,48 +113,6 @@ public partial class UserController
 
         TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
-    }
-
-
-    /// <summary>
-    /// Shows a form to the user where they can update their Pounds lifted.
-    /// </summary>
-    [HttpGet]
-    [Route("{section:section}/{recipeId}", Order = 1)]
-    public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, Section section, bool? wasUpdated = null)
-    {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
-        var userUserRecipe = await context.UserUserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
-        var recipe = await context.UserRecipes
-            .Include(r => r.Ingredients)
-            .Include(r => r.Instructions)
-            .FirstOrDefaultAsync(r => r.Id == recipeId);
-
-        if (recipe == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        return View(new UserManageRecipeViewModel()
-        {
-            User = user,
-            WasUpdated = wasUpdated,
-            Recipe = recipe,
-            RecipeViewModel = new ViewModels.Shared.UserManageRecipeViewModel()
-            {
-                Recipe = recipe,
-                User = user,
-                RecipeSection = section,
-                UserRecipe = userUserRecipe,
-                Parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId)
-            },
-        });
     }
 
     [HttpPost]

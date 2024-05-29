@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Web.Code;
 using Web.Code.Attributes;
 using Web.ViewModels.Ingredient;
+using Web.ViewModels.User;
 
 namespace Web.Controllers.Ingredient;
 

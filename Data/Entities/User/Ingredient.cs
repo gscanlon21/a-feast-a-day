@@ -15,7 +15,7 @@ namespace Data.Entities.User;
 public class Ingredient
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; private init; }
+    public int Id { get; init; }
 
     public int? UserId { get; init; }
 
@@ -28,9 +28,9 @@ public class Ingredient
     /// <summary>
     /// If it has atleast 10% RDA per serving.
     /// </summary>
-    public Nutrient Nutrients { get; init; }
+    public Nutrient Nutrients { get; set; }
 
-    public Allergy Allergens { get; init; }
+    public Allergy Allergens { get; set; }
 
     /// <summary>
     /// Is a common household ingredient like salt and pepper.
@@ -54,4 +54,18 @@ public class Ingredient
 
     public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
+
+    [NotMapped]
+    public Allergy[]? AllergenBinder
+    {
+        get => Enum.GetValues<Allergy>().Where(e => Allergens.HasFlag(e)).ToArray();
+        set => Allergens = value?.Aggregate(Allergy.None, (a, e) => a | e) ?? Allergy.None;
+    }
+
+    [NotMapped]
+    public Nutrient[]? NutrientBinder
+    {
+        get => Enum.GetValues<Nutrient>().Where(e => Nutrients.HasFlag(e)).ToArray();
+        set => Nutrients = value?.Aggregate(Nutrient.None, (a, e) => a | e) ?? Nutrient.None;
+    }
 }
