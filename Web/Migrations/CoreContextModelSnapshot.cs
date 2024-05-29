@@ -42,7 +42,7 @@ namespace Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("footnote", t =>
+                    b.ToTable("footnote", null, t =>
                         {
                             t.HasComment("Sage advice");
                         });
@@ -76,7 +76,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_footnote", t =>
+                    b.ToTable("user_footnote", null, t =>
                         {
                             t.HasComment("Sage advice");
                         });
@@ -123,7 +123,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_email", t =>
+                    b.ToTable("user_email", null, t =>
                         {
                             t.HasComment("A day's workout routine");
                         });
@@ -147,7 +147,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_feast", t =>
+                    b.ToTable("user_feast", null, t =>
                         {
                             t.HasComment("A day's workout routine");
                         });
@@ -179,7 +179,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserFeastId");
 
-                    b.ToTable("user_feast_recipe", t =>
+                    b.ToTable("user_feast_recipe", null, t =>
                         {
                             t.HasComment("A day's workout routine");
                         });
@@ -219,7 +219,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ingredient", t =>
+                    b.ToTable("ingredient", null, t =>
                         {
                             t.HasComment("Recipes listed on the website");
                         });
@@ -265,7 +265,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("recipe", t =>
+                    b.ToTable("recipe", null, t =>
                         {
                             t.HasComment("Recipes listed on the website");
                         });
@@ -309,7 +309,7 @@ namespace Web.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("recipe_ingredient", t =>
+                    b.ToTable("recipe_ingredient", null, t =>
                         {
                             t.HasComment("Recipes listed on the website");
                         });
@@ -343,7 +343,7 @@ namespace Web.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("recipe_instruction", t =>
+                    b.ToTable("recipe_instruction", null, t =>
                         {
                             t.HasComment("Recipes listed on the website");
                         });
@@ -405,7 +405,7 @@ namespace Web.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("user", t =>
+                    b.ToTable("user", null, t =>
                         {
                             t.HasComment("User who signed up for the newsletter");
                         });
@@ -427,7 +427,7 @@ namespace Web.Migrations
 
                     b.HasKey("UserId", "Nutrient");
 
-                    b.ToTable("user_nutrient");
+                    b.ToTable("user_nutrient", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
@@ -451,7 +451,7 @@ namespace Web.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("user_recipe", t =>
+                    b.ToTable("user_recipe", null, t =>
                         {
                             t.HasComment("User's progression level of an exercise");
                         });
@@ -470,7 +470,7 @@ namespace Web.Migrations
 
                     b.HasKey("UserId", "Section");
 
-                    b.ToTable("user_serving");
+                    b.ToTable("user_serving", (string)null);
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserToken", b =>
@@ -495,7 +495,7 @@ namespace Web.Migrations
 
                     b.HasIndex("UserId", "Token");
 
-                    b.ToTable("user_token", t =>
+                    b.ToTable("user_token", null, t =>
                         {
                             t.HasComment("Auth tokens for a user");
                         });

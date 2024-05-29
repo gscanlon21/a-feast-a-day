@@ -6,7 +6,7 @@ namespace Data.Entities.User;
 
 
 [Table("user_nutrient")]
-public class UserIngredientGroup
+public class UserNutrient
 {
     public const int MuscleTargetMin = 0;
 
@@ -30,6 +30,27 @@ public class UserIngredientGroup
     /// </summary>
     public static readonly IDictionary<Nutrient, Range> MuscleTargets = new Dictionary<Nutrient, Range>
     {
+        [Nutrient.Proteins] = 4..8,
+        [Nutrient.Starch] = 4..8,
+        [Nutrient.Sugar] = 4..8,
+        [Nutrient.Oligosaccharides] = 4..8,
+        [Nutrient.SolubleFiber | Nutrient.InsolubleFiber] = 4..8,
+        [Nutrient.MonounsaturatedFats | Nutrient.PolyunsaturatedFats | Nutrient.SaturatedFats] = 4..8,
+        [Nutrient.Calcium] = 4..8,
+        [Nutrient.Chloride] = 4..8,
+        [Nutrient.Chromium] = 4..8,
+        [Nutrient.Copper] = 4..8,
+        [Nutrient.Fluoride] = 4..8,
+        [Nutrient.Iodine] = 4..8,
+        [Nutrient.Iron] = 4..8,
+        [Nutrient.Magnesium] = 4..8,
+        [Nutrient.Manganese] = 4..8,
+        [Nutrient.Molybdenum] = 4..8,
+        [Nutrient.Phosphorus] = 4..8,
+        [Nutrient.Potassium] = 4..8,
+        [Nutrient.Selenium] = 4..8,
+        [Nutrient.Sodium] = 4..8,
+        [Nutrient.Sulfur] = 4..8,
         [Nutrient.B1] = 4..8,
         [Nutrient.B2] = 4..8,
         [Nutrient.B3] = 4..8,
@@ -38,37 +59,6 @@ public class UserIngredientGroup
         [Nutrient.B7] = 4..8,
         [Nutrient.B9] = 4..8,
         [Nutrient.B12] = 4..8,
-        [Nutrient.Calcium] = 4..8,
-        [Nutrient.Carbohydrates] = 4..8,
-        [Nutrient.Chloride] = 4..8,
-        [Nutrient.Choline] = 4..8,
-        [Nutrient.Chromium] = 4..8,
-        [Nutrient.Copper] = 4..8,
-        [Nutrient.Fats] = 4..8,
-        [Nutrient.Fiber] = 4..8,
-        [Nutrient.Fluoride] = 4..8,
-        [Nutrient.InsolubleFiber] = 4..8,
-        [Nutrient.Iodine] = 4..8,
-        [Nutrient.Iron] = 4..8,
-        [Nutrient.Magnesium] = 4..8,
-        [Nutrient.Manganese] = 4..8,
-        [Nutrient.Molybdenum] = 4..8,
-        [Nutrient.MonounsaturatedFats] = 4..8,
-        [Nutrient.Oligosaccharides] = 4..8,
-        [Nutrient.Phosphorus] = 4..8,
-        [Nutrient.PolyunsaturatedFats] = 4..8,
-        [Nutrient.Potassium] = 4..8,
-        [Nutrient.Proteins] = 4..8,
-        [Nutrient.SaturatedFats] = 4..8,
-        [Nutrient.Selenium] = 4..8,
-        [Nutrient.Sodium] = 4..8,
-        [Nutrient.SolubleFiber] = 4..8,
-        [Nutrient.Starch] = 4..8,
-        [Nutrient.Sugar] = 4..8,
-        [Nutrient.Sulfur] = 4..8,
-        [Nutrient.TransFats] = 4..8,
-        [Nutrient.UnsaturatedFats] = 4..8,
-        [Nutrient.VitaminA] = 4..8,
         [Nutrient.VitaminACartenoids] = 4..8,
         [Nutrient.VitaminARetinoids] = 4..8,
         [Nutrient.VitaminC] = 4..8,
@@ -76,5 +66,7 @@ public class UserIngredientGroup
         [Nutrient.VitaminE] = 4..8,
         [Nutrient.VitaminK] = 4..8,
         [Nutrient.Zinc] = 4..8,
+        [Nutrient.Choline] = 4..8,
+        [Nutrient.TransFats] = 0..4,
     };
 }

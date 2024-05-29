@@ -13,7 +13,7 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithMuscleTargetsFromMuscleGroups(null)
                 .AdjustMuscleTargets())
             .WithServingsOptions(options =>
@@ -37,7 +37,7 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithMuscleTargetsFromMuscleGroups(null)
                 .AdjustMuscleTargets())
             .WithServingsOptions(options =>
@@ -60,7 +60,7 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithMuscleTargetsFromMuscleGroups(null)
                 .AdjustMuscleTargets())
             .WithServingsOptions(options =>
@@ -84,7 +84,7 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
             .WithServingsOptions(options =>
             {
@@ -107,7 +107,7 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
             .WithServingsOptions(options =>
             {
@@ -130,7 +130,7 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
+                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
                 .WithoutMuscleTargets())
             .WithServingsOptions(options =>
             {

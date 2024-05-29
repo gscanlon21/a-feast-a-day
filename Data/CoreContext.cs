@@ -13,7 +13,7 @@ public class CoreContext : DbContext
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserServing> UserServings { get; set; } = null!;
     public DbSet<Ingredient> UserIngredients { get; set; } = null!;
-    public DbSet<UserIngredientGroup> UserIngredientGroups { get; set; } = null!;
+    public DbSet<UserNutrient> UserIngredientGroups { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
     public DbSet<Recipe> UserRecipes { get; set; } = null!;
     public DbSet<UserRecipe> UserUserRecipes { get; set; } = null!;
@@ -30,7 +30,7 @@ public class CoreContext : DbContext
     {
         ////////// Keys //////////
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId });
-        modelBuilder.Entity<UserIngredientGroup>().HasKey(sc => new { sc.UserId, sc.Nutrient });
+        modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserServing>().HasKey(sc => new { sc.UserId, sc.Section });
 
         //modelBuilder

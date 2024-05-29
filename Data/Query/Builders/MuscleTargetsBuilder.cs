@@ -74,7 +74,7 @@ public class MuscleTargetsBuilder : IOptions, IMuscleGroupBuilderNoContext, IMus
 
     public IMuscleGroupBuilderFinal WithMuscleTargetsFromMuscleGroups(IDictionary<Nutrient, int>? workedMusclesDict = null)
     {
-        MuscleTargets = UserIngredientGroup.MuscleTargets.Keys
+        MuscleTargets = UserNutrient.MuscleTargets.Keys
             // Base 1 target for each targeted muscle group. If we've already worked this muscle, reduce the muscle target volume.
             // Keep all muscle groups in our target dict so we exclude overworked muscles.
             .ToDictionary(mt => mt, mt => (MuscleGroups.Any(mg => mt.HasFlag(mg)) ? 1 : 0) - (workedMusclesDict?.TryGetValue(mt, out int workedAmt) ?? false ? workedAmt : 0));
@@ -93,7 +93,7 @@ public class MuscleTargetsBuilder : IOptions, IMuscleGroupBuilderNoContext, IMus
             foreach (var key in MuscleTargets.Keys)
             {
                 // Adjust muscle targets based on the user's weekly muscle volume averages over the last several weeks.
-                if (Context.WeeklyMuscles[key].HasValue && UserIngredientGroup.MuscleTargets.TryGetValue(key, out Range defaultRange))
+                if (Context.WeeklyMuscles[key].HasValue && UserNutrient.MuscleTargets.TryGetValue(key, out Range defaultRange))
                 {
                     // Use the default muscle target when the user's workout split never targets this muscle group--because they can't adjust this muscle group's muscle target.
                     var targetRange = (Nutrient.All.HasFlag(key)

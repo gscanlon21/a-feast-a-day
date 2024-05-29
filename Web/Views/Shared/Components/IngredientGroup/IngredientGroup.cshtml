@@ -20,7 +20,7 @@
 </div>
 <div class="alert alert-primary" role="alert">
     <div style="display:flex;flex-direction:column;row-gap:1ex;">
-        @foreach (var muscleTarget in UserIngredientGroup.MuscleTargets
+        @foreach (var muscleTarget in UserNutrient.MuscleTargets
         .Select(kv => Model.GetMuscleTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)

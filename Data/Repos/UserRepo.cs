@@ -136,7 +136,7 @@ public class UserRepo(CoreContext context)
                         StrengthVolume = nv.Proficiency / userServings,
                     })).ToList();
 
-                return (weeks: actualWeeks, volume: UserIngredientGroup.MuscleTargets.Keys
+                return (weeks: actualWeeks, volume: UserNutrient.MuscleTargets.Keys
                     .ToDictionary(m => m, m => (int?)Convert.ToInt32(
                             monthlyMuscles.Sum(mm => mm.IngredientGroup.HasFlag(m) ? mm.StrengthVolume : 0)
                         / actualWeeks)
@@ -145,7 +145,7 @@ public class UserRepo(CoreContext context)
             }
         }
 
-        return (weeks: 0, volume: UserIngredientGroup.MuscleTargets.Keys.ToDictionary(m => m, m => (int?)null));
+        return (weeks: 0, volume: UserNutrient.MuscleTargets.Keys.ToDictionary(m => m, m => (int?)null));
     }
 
     /// <summary>

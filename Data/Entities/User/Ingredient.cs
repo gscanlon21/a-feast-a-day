@@ -25,6 +25,9 @@ public class Ingredient
     [Required]
     public string Name { get; init; } = null!;
 
+    /// <summary>
+    /// If it has atleast 10% RDA per serving.
+    /// </summary>
     public Nutrient Nutrients { get; init; }
 
     public Allergy Allergens { get; init; }
