@@ -98,6 +98,7 @@ public class UserRepo(CoreContext context)
                 .ThenInclude(r => r.Recipe)
                     .ThenInclude(r => r.Ingredients)
                         .ThenInclude(r => r.Ingredient)
+                            .ThenInclude(r => r.Nutrients)
             .Where(n => n.User.Id == user.Id)
             // Only look at records where the user is not new to fitness.
             //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
@@ -114,11 +115,11 @@ public class UserRepo(CoreContext context)
                 NewsletterVariations = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
                     // Only select variations that worked a strengthening intensity.
                     .Where(nv => onlySections.HasFlag(nv.Section))
-                    .Select(nv => new
+                    .SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients).Select(n => new
                     {
-                        Proficiency = nv.Recipe.Servings * 50,
-                        IngredientGroup = nv.Recipe.IngredientGroups,
-                    })
+                        Proficiency = nv.Recipe.Servings * n.PercentDailyValue / 7d,
+                        IngredientGroup = n.Nutrients,
+                    }))
             }).ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
