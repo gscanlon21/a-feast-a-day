@@ -48,7 +48,7 @@ public class QueryRunner(Section section)
     public required ServingsOptions ServingsOptions { get; init; }
     public required SelectionOptions SelectionOptions { get; init; }
     public required ExclusionOptions ExclusionOptions { get; init; }
-    public required RecipeOptions ExerciseOptions { get; init; }
+    public required RecipeOptions RecipeOptions { get; init; }
     public required IngredientGroupOptions IngredientGroupOptions { get; init; }
     public required AllergenOptions AllergenOptions { get; init; }
 
@@ -100,8 +100,8 @@ public class QueryRunner(Section section)
         var filteredQuery = CreateFilteredExerciseVariationsQuery(context);
 
         filteredQuery = Filters.FilterSection(filteredQuery, section);
-        filteredQuery = Filters.FilterExercises(filteredQuery, ExerciseOptions.RecipeIds);
-        filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(Nutrient.None, (curr2, n2) => curr2 | n2), include: true);
+        filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds);
+        filteredQuery = Filters.FilterNutrients(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(Nutrient.None, (curr2, n2) => curr2 | n2), include: true);
 
         var queryResults = await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
 

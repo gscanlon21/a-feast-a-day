@@ -131,7 +131,7 @@ public class QueryBuilder
             IngredientGroupOptions = IngredientGroupOptions ?? new IngredientGroupOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
-            ExerciseOptions = ExerciseOptions ?? new RecipeOptions(),
+            RecipeOptions = ExerciseOptions ?? new RecipeOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             AllergenOptions = AllergenOptions ?? new AllergenOptions(),
         };
