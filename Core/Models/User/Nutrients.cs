@@ -75,23 +75,23 @@ public enum Nutrients : long
     [Display(ShortName = "Vitamin A", Name = "Vitamin A (Retinoids and Carotenoids)", GroupName = "Vitamin A", Description = "beef, liver, eggs, shrimp, fish, fortified milk, sweet potatoes, carrots, pumpkins, spinach, mangoes")]
     VitaminA = VitaminARetinoids | VitaminACartenoids, // 98304
 
-    [Display(ShortName = "B1", Name = "B1 (Thiamine)", GroupName = "Vitamin B", Description = "ham, soymilk, watermelon, acorn squash")]
-    B1 = 1 << 17, // 131072
+    [Display(ShortName = "Vitamin B1", Name = "Vitamin B1 (Thiamine)", GroupName = "Vitamin B", Description = "ham, soymilk, watermelon, acorn squash")]
+    VitaminB1 = 1 << 17, // 131072
 
-    [Display(ShortName = "B2", Name = "B2 (Riboflavin)", GroupName = "Vitamin B", Description = "milk, yogurt, cheese, whole and enriched grains and cereals.")]
-    B2 = 1 << 18, // 262144
+    [Display(ShortName = "Vitamin B2", Name = "Vitamin B2 (Riboflavin)", GroupName = "Vitamin B", Description = "milk, yogurt, cheese, whole and enriched grains and cereals.")]
+    VitaminB2 = 1 << 18, // 262144
 
-    [Display(ShortName = "B3", Name = "B3 (Niacin)", GroupName = "Vitamin B", Description = "meat, poultry, fish, fortified and whole grains, mushrooms, potatoes")]
-    B3 = 1 << 19, // 524288
+    [Display(ShortName = "Vitamin B3", Name = "Vitamin B3 (Niacin)", GroupName = "Vitamin B", Description = "meat, poultry, fish, fortified and whole grains, mushrooms, potatoes")]
+    VitaminB3 = 1 << 19, // 524288
 
-    [Display(ShortName = "B5", Name = "B5 (Pantothenic Acid)", GroupName = "Vitamin B", Description = "chicken, whole grains, broccoli, avocados, mushrooms")]
-    B5 = 1 << 20, // 1048576
+    [Display(ShortName = "Vitamin B5", Name = "Vitamin B5 (Pantothenic Acid)", GroupName = "Vitamin B", Description = "chicken, whole grains, broccoli, avocados, mushrooms")]
+    VitaminB5 = 1 << 20, // 1048576
 
-    [Display(ShortName = "B6", Name = "B6 (Pyridoxine)", GroupName = "Vitamin B", Description = "meat, fish, poultry, legumes, tofu and other soy products, bananas")]
-    B6 = 1 << 21, // 2097152
+    [Display(ShortName = "Vitamin B6", Name = "Vitamin B6 (Pyridoxine)", GroupName = "Vitamin B", Description = "meat, fish, poultry, legumes, tofu and other soy products, bananas")]
+    VitaminB6 = 1 << 21, // 2097152
 
-    [Display(ShortName = "B7", Name = "B7 (Biotin)", GroupName = "Vitamin B", Description = "Whole grains, eggs, soybeans, fish")]
-    B7 = 1 << 22, // 4194304
+    [Display(ShortName = "Vitamin B7", Name = "Vitamin B7 (Biotin)", GroupName = "Vitamin B", Description = "Whole grains, eggs, soybeans, fish")]
+    VitaminB7 = 1 << 22, // 4194304
 
     /// <summary>
     /// NOT folic acid: we are not tracking the artificial version of folate 
@@ -99,11 +99,11 @@ public enum Nutrients : long
     /// to folate deficiency and other adverse side effects!
     /// https://education.seekinghealth.com/folic-acid-side-effects/
     /// </summary>
-    [Display(ShortName = "B9", Name = "B9 (Folinic Acid)", GroupName = "Vitamin B", Description = "Fortified grains and cereals, asparagus, spinach, broccoli, legumes (black-eyed peas and chickpeas), orange juice")]
-    B9 = 1 << 23, // 8388608
+    [Display(ShortName = "Vitamin B9", Name = "Vitamin B9 (Folinic Acid)", GroupName = "Vitamin B", Description = "Fortified grains and cereals, asparagus, spinach, broccoli, legumes (black-eyed peas and chickpeas), orange juice")]
+    VitaminB9 = 1 << 23, // 8388608
 
-    [Display(ShortName = "B12", Name = "B12 (Cobalamin)", GroupName = "Vitamin B", Description = "Meat, poultry, fish, milk, cheese, fortified soymilk and cereals")]
-    B12 = 1 << 24, // 16777216
+    [Display(ShortName = "Vitamin B12", Name = "Vitamin B12 (Cobalamin)", GroupName = "Vitamin B", Description = "Meat, poultry, fish, milk, cheese, fortified soymilk and cereals")]
+    VitaminB12 = 1 << 24, // 16777216
 
     [Display(ShortName = "Vitamin C", Name = "Vitamin C (Ascorbic Acid)", GroupName = "Vitamin C", Description = "Citrus fruit, potatoes, broccoli, bell peppers, spinach, strawberries, tomatoes, Brussels sprouts")]
     VitaminC = 1 << 25, // 33554432
@@ -184,9 +184,9 @@ public enum Nutrients : long
         | MonounsaturatedFats | PolyunsaturatedFats | SaturatedFats | TransFats
         | HDLCholesterol | LDLCholesterol
         | VitaminARetinoids | VitaminACartenoids
-        | B1 | B2 | B3 | B5 | B6 | B7 | B9 | B12
+        | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
         | VitaminC | VitaminD | VitaminE | VitaminK
         | Calcium | Chloride | Magnesium | Potassium | Sodium
-        | Chromium | Copper | Fluoride | Iodine | Iron | Manganese | Selenium | Zinc | Molybdenum | Phosphorus | Sulfur
+        | Chromium | Copper | Fluoride | Iodine | Iron | Manganese | Selenium | Zinc | Molybdenum | Phosphorus | Sulfur | Boron | Vanadium
         | Lithium | Choline
 }

@@ -76,7 +76,9 @@ public partial class UserController
         }
 
         var nutrients = new List<Nutrient>();
-        foreach (var nutrient in EnumExtensions.GetValuesExcluding32(Nutrients.None, Nutrients.All))
+        foreach (var nutrient in EnumExtensions.GetValuesExcluding32(Nutrients.None, Nutrients.All)
+            .OrderBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
+            .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayNameType.Name)))
         {
             var userNutrient = ingredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient);
             if (userNutrient != null)
@@ -99,7 +101,7 @@ public partial class UserController
             Token = token,
             Ingredient = ingredient,
             WasUpdated = wasUpdated,
-            Nutrients = nutrients,
+            Nutrients = nutrients
         });
     }
 
