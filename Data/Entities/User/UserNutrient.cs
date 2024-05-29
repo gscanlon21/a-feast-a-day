@@ -43,6 +43,7 @@ public class UserNutrient
         [Nutrient.Fluoride] = 4..8,
         [Nutrient.Iodine] = 4..8,
         [Nutrient.Iron] = 4..8,
+        [Nutrient.Lithium] = 4..8,
         [Nutrient.Magnesium] = 4..8,
         [Nutrient.Manganese] = 4..8,
         [Nutrient.Molybdenum] = 4..8,

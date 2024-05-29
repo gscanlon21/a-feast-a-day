@@ -156,6 +156,9 @@ public enum Nutrient : long
     [Display(Name = "Choline", GroupName = "Vitamin B", Description = "Eggs")]
     Choline = 1L << 40, // 1099511627776,
 
+    [Display(Name = "Lithium", GroupName = "Lithium", Description = "Lithium")]
+    Lithium = 1L << 41, // 2199023255552,
+
 
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | PolyunsaturatedFats | SaturatedFats | TransFats
@@ -164,5 +167,5 @@ public enum Nutrient : long
         | VitaminC | VitaminD | VitaminE | VitaminK
         | Calcium | Chloride | Magnesium | Potassium | Sodium
         | Chromium | Copper | Fluoride | Iodine | Iron | Manganese | Selenium | Zinc | Molybdenum | Phosphorus | Sulfur
-        | Choline
+        | Choline | Lithium
 }
