@@ -36,6 +36,7 @@ public class UserNutrient
         [Nutrient.Oligosaccharides] = 4..8,
         [Nutrient.SolubleFiber | Nutrient.InsolubleFiber] = 4..8,
         [Nutrient.MonounsaturatedFats | Nutrient.PolyunsaturatedFats | Nutrient.SaturatedFats] = 4..8,
+        [Nutrient.HDLCholesterol] = 4..8,
         [Nutrient.Calcium] = 4..8,
         [Nutrient.Chloride] = 4..8,
         [Nutrient.Chromium] = 4..8,
@@ -69,5 +70,6 @@ public class UserNutrient
         [Nutrient.Zinc] = 4..8,
         [Nutrient.Choline] = 4..8,
         [Nutrient.TransFats] = 0..4,
+        [Nutrient.LDLCholesterol] = 0..2,
     };
 }
