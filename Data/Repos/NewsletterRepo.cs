@@ -150,7 +150,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var viewModel = new NewsletterDto(userViewModel, newsletter)
         {
             DinnerRecipes = debugRecipes,
-            DebugIngredients = await context.UserIngredients.OrderBy(_ => EF.Functions.Random()).Take(1).ToListAsync()
+            DebugIngredients = await context.UserIngredients.OrderBy(_ => EF.Functions.Random()).Take(2).ToListAsync()
         };
 
         await UpdateLastSeenDate(debugRecipes);
