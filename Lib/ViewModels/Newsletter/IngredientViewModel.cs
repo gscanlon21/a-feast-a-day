@@ -23,7 +23,7 @@ public class IngredientViewModel
 
     public Allergy Allergens { get; init; }
 
-    public Nutrients Nutrients { get; init; }
+    public List<NutrientViewModel> Nutrients { get; init; } = [];
 
     public string? Attributes { get; init; }
 

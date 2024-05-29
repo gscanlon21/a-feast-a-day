@@ -40,12 +40,14 @@
             <div class="form-group mb-3">
                 <input type="hidden" asp-for="Nutrients[i].Nutrients" />
                 <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName()</label>
+
                 <div style="display:flex;column-gap:1ex;">
-                    <output name="Output@(i)" for="@Html.IdFor(_ => Model.Nutrients[i].Nutrients)">@nutrient.PercentDailyValue</output>
-                    <div style="display:flex;width:100%;">
-                        <input asp-for="Nutrients[i].PercentDailyValue" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                               step="5" min="0" max="200"
-                               oninput="Output@(i).value = this.valueAsNumber" list="List@(i)" />
+                    <input type="number" asp-for="Nutrients[i].PercentDailyValue" style="width:6ch;height:fit-content;" class="allow-demo"
+                           oninput="input@(i).value = this.valueAsNumber" />
+                    <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                        <input name="input@(i)" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                               step="5" min="0" max="200" value="@Model.Nutrients[i].PercentDailyValue"
+                               oninput="document.getElementById('@(Html.IdFor(_ => Model.Nutrients[i].PercentDailyValue))').value = this.valueAsNumber" list="List@(i)" />
                         <datalist id="List@(i)">
                             <option value="5"></option>
                             <option value="10"></option>

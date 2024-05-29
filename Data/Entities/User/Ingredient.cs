@@ -46,7 +46,7 @@ public class Ingredient
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Nutrient.Ingredient))]
+    [InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual List<Nutrient> Nutrients { get; set; } = null!;
 
 
