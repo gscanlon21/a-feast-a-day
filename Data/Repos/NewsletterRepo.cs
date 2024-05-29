@@ -218,6 +218,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
             switch (section)
             {
+                case Section.Debug:
                 case Section.Dinner:
                     newsletterViewModel.DinnerRecipes = exercises;
                     break;
