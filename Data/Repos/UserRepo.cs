@@ -89,6 +89,9 @@ public class UserRepo(CoreContext context)
 
     private async Task<(double weeks, IDictionary<IngredientGroup, int?> volume)> GetWeeklyMuscleVolumeFromStrengthWorkouts(User user, int weeks)
     {
+        var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
+        var userServings = UserServing.MuscleTargets.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
+
         var strengthNewsletterGroups = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
@@ -110,10 +113,10 @@ public class UserRepo(CoreContext context)
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
                 NewsletterVariations = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
                     // Only select variations that worked a strengthening intensity.
-                    .Where(nv => (Section.Dinner | Section.Lunch | Section.Breakfast).HasFlag(nv.Section))
+                    .Where(nv => onlySections.HasFlag(nv.Section))
                     .Select(nv => new
                     {
-                        Proficiency = 1d,
+                        Proficiency = nv.Recipe.Servings,
                         IngredientGroup = nv.Recipe.IngredientGroups,
                     })
             }).ToListAsync();
@@ -130,7 +133,7 @@ public class UserRepo(CoreContext context)
                     .SelectMany(ng => ng.NewsletterVariations.Select(nv => new
                     {
                         nv.IngredientGroup,
-                        StrengthVolume = nv.Proficiency,
+                        StrengthVolume = nv.Proficiency / userServings,
                     })).ToList();
 
                 return (weeks: actualWeeks, volume: UserIngredientGroup.MuscleTargets.Keys

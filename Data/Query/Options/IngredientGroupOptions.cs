@@ -36,7 +36,7 @@ public class IngredientGroupOptions : IOptions
     /// <summary>
     /// This says what (strengthening/secondary/stretching) muscles we should abide by when selecting variations.
     /// </summary>
-    public Expression<Func<IRecipeCombo, IngredientGroup>> MuscleTarget { get; set; } = v => v.Recipe.IngredientGroups;
+    public Expression<Func<IRecipeCombo, IngredientGroup>> MuscleTarget { get; set; } = v => v.Recipe.Ingredients.Aggregate(IngredientGroup.None, (curr, next) => curr | (next.Ingredient.Group));
 
     /// <summary>
     ///     Makes sure each variations works at least x unique muscle groups to be chosen.

@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Code.Extensions;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.User;
@@ -100,7 +101,7 @@ public class QueryRunner(Section section)
 
         filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterExercises(filteredQuery, ExerciseOptions.RecipeIds);
-        //filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(IngredientGroup.None, (curr2, n2) => curr2 | n2), include: true, IngredientGroupOptions.MuscleTarget);
+        filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(IngredientGroup.None, (curr2, n2) => curr2 | n2), include: true);
 
         var queryResults = await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
 
@@ -161,6 +162,20 @@ public class QueryRunner(Section section)
                     continue;
                 }
 
+                // Don't choose exercises under our desired number of worked muscles.
+                if (IngredientGroupOptions.AtLeastXIngredientGroupsPerRecipe != null
+                    && BitOperations.PopCount((ulong)muscleTarget(exercise)) < IngredientGroupOptions.AtLeastXIngredientGroupsPerRecipe)
+                {
+                    continue;
+                }
+
+                // Don't overwork muscle groups.
+                var overworkedMuscleGroups = GetOverworkedMuscleGroups(finalResults, muscleTarget: muscleTarget);
+                if (overworkedMuscleGroups.Any(mg => muscleTarget(exercise).HasAnyFlag32(mg)))
+                {
+                    continue;
+                }
+
                 finalResults.Add(new QueryResults(section, exercise.Recipe, exercise.UserRecipe));
             }
         }
@@ -174,27 +189,6 @@ public class QueryRunner(Section section)
         {
             foreach (var exercise in orderedResults)
             {
-                // Don't choose two variations of the same exercise.
-                if (SelectionOptions.UniqueExercises
-                    && finalResults.Select(r => r.Recipe).Contains(exercise.Recipe))
-                {
-                    continue;
-                }
-
-                // Don't choose exercises under our desired number of worked muscles.
-                if (IngredientGroupOptions.AtLeastXMusclesPerExercise != null
-                    && BitOperations.PopCount((ulong)muscleTarget(exercise)) < IngredientGroupOptions.AtLeastXMusclesPerExercise)
-                {
-                    continue;
-                }
-
-                // Don't overwork muscle groups.
-                var overworkedMuscleGroups = GetOverworkedMuscleGroups(finalResults, muscleTarget: muscleTarget);
-                if (overworkedMuscleGroups.Any(mg => muscleTarget(exercise).HasAnyFlag32(mg)))
-                {
-                    continue;
-                }
-
                 // Choose exercises that cover at least X muscles in the targeted muscles set.
                 if (IngredientGroupOptions.AtLeastXUniqueMusclesPerExercise != null)
                 {

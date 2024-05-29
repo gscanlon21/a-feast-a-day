@@ -14,7 +14,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithoutMuscleTargets())
+                .WithMuscleTargetsFromMuscleGroups(null))
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
@@ -37,7 +37,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithoutMuscleTargets())
+                .WithMuscleTargetsFromMuscleGroups(null))
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
@@ -82,7 +82,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithIngredientGroups(MuscleTargetsBuilder
                 .WithMuscleGroups(newsletterContext, UserIngredientGroup.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithoutMuscleTargets())
+                .WithMuscleTargetsFromMuscleGroups(null))
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = 2;
