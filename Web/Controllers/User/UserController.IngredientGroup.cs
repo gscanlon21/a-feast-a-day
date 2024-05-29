@@ -12,7 +12,7 @@ public partial class UserController
 {
     [HttpPost]
     [Route("muscle/reset")]
-    public async Task<IActionResult> ResetMuscleRanges(string email, string token, [Bind(Prefix = "muscleGroup")] IngredientGroup muscleGroups)
+    public async Task<IActionResult> ResetMuscleRanges(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrient muscleGroups)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -22,7 +22,7 @@ public partial class UserController
 
         await context.UserIngredientGroups
             .Where(um => um.User.Id == user.Id)
-            .Where(um => muscleGroups.HasFlag(um.Group))
+            .Where(um => muscleGroups.HasFlag(um.Nutrient))
             .ExecuteDeleteAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your muscle targets have been updated!";
@@ -31,7 +31,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("muscle/start/decrease")]
-    public async Task<IActionResult> DecreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] IngredientGroup muscleGroups)
+    public async Task<IActionResult> DecreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrient muscleGroups)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -41,13 +41,13 @@ public partial class UserController
 
         foreach (var muscleGroup in UserIngredientGroup.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Group == muscleGroup);
+            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
                 context.UserIngredientGroups.Add(new UserIngredientGroup()
                 {
                     UserId = user.Id,
-                    Group = muscleGroup,
+                    Nutrient = muscleGroup,
                     Start = Math.Max(UserIngredientGroup.MuscleTargetMin, UserIngredientGroup.MuscleTargets[muscleGroup].Start.Value - UserConsts.IncrementMuscleTargetBy),
                     End = UserIngredientGroup.MuscleTargets[muscleGroup].End.Value
                 });
@@ -71,7 +71,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("muscle/start/increase")]
-    public async Task<IActionResult> IncreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] IngredientGroup muscleGroups)
+    public async Task<IActionResult> IncreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrient muscleGroups)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -81,13 +81,13 @@ public partial class UserController
 
         foreach (var muscleGroup in UserIngredientGroup.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Group == muscleGroup);
+            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
                 context.UserIngredientGroups.Add(new UserIngredientGroup()
                 {
                     UserId = user.Id,
-                    Group = muscleGroup,
+                    Nutrient = muscleGroup,
                     Start = UserIngredientGroup.MuscleTargets[muscleGroup].Start.Value + UserConsts.IncrementMuscleTargetBy,
                     End = UserIngredientGroup.MuscleTargets[muscleGroup].End.Value
                 });
@@ -111,7 +111,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("muscle/end/decrease")]
-    public async Task<IActionResult> DecreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] IngredientGroup muscleGroups)
+    public async Task<IActionResult> DecreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrient muscleGroups)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -121,13 +121,13 @@ public partial class UserController
 
         foreach (var muscleGroup in UserIngredientGroup.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Group == muscleGroup);
+            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
                 context.UserIngredientGroups.Add(new UserIngredientGroup()
                 {
                     UserId = user.Id,
-                    Group = muscleGroup,
+                    Nutrient = muscleGroup,
                     Start = UserIngredientGroup.MuscleTargets[muscleGroup].Start.Value,
                     End = UserIngredientGroup.MuscleTargets[muscleGroup].End.Value - UserConsts.IncrementMuscleTargetBy
                 });
@@ -151,7 +151,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("muscle/end/increase")]
-    public async Task<IActionResult> IncreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] IngredientGroup muscleGroups)
+    public async Task<IActionResult> IncreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrient muscleGroups)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -162,13 +162,13 @@ public partial class UserController
         var muscleTargetMax = UserIngredientGroup.MuscleTargets.Values.MaxBy(v => v.End.Value).End.Value;
         foreach (var muscleGroup in UserIngredientGroup.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Group == muscleGroup);
+            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
                 context.UserIngredientGroups.Add(new UserIngredientGroup()
                 {
                     UserId = user.Id,
-                    Group = muscleGroup,
+                    Nutrient = muscleGroup,
                     Start = UserIngredientGroup.MuscleTargets[muscleGroup].Start.Value,
                     End = Math.Min(muscleTargetMax, UserIngredientGroup.MuscleTargets[muscleGroup].End.Value + UserConsts.IncrementMuscleTargetBy)
                 });

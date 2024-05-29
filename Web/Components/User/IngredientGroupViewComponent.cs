@@ -36,7 +36,7 @@ public class IngredientGroupViewComponent(UserRepo userRepo) : ViewComponent
             Weeks = weeks,
             WeeksOfData = weeksOfData,
             WeeklyVolume = weeklyMuscles,
-            UsersWorkedMuscles = Core.Models.User.IngredientGroup.All,
+            UsersWorkedMuscles = Core.Models.User.Nutrient.All,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }

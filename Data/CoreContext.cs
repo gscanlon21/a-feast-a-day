@@ -30,7 +30,7 @@ public class CoreContext : DbContext
     {
         ////////// Keys //////////
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId });
-        modelBuilder.Entity<UserIngredientGroup>().HasKey(sc => new { sc.UserId, sc.Group });
+        modelBuilder.Entity<UserIngredientGroup>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserServing>().HasKey(sc => new { sc.UserId, sc.Section });
 
         //modelBuilder

@@ -9,6 +9,6 @@ public class WorkoutContext
     public User User { get; init; } = null!;
     public string Token { get; init; } = null!;
     public int DaysUntilNextNewsletter { get; init; } = 1;
-    public required IDictionary<IngredientGroup, int?>? WeeklyMuscles { get; init; }
+    public required IDictionary<Nutrient, int?>? WeeklyMuscles { get; init; }
     public required double WeeklyMusclesWeeks { get; init; }
 }

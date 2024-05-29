@@ -11,7 +11,7 @@ public class IngredientGroupOptions : IOptions
 
     public IngredientGroupOptions() { }
 
-    public IngredientGroupOptions(IList<IngredientGroup> muscleGroups, IDictionary<IngredientGroup, int> muscleTargets)
+    public IngredientGroupOptions(IList<Nutrient> muscleGroups, IDictionary<Nutrient, int> muscleTargets)
     {
         MuscleGroups = muscleGroups;
         MuscleTargets = muscleTargets;
@@ -20,12 +20,12 @@ public class IngredientGroupOptions : IOptions
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IList<IngredientGroup> MuscleGroups { get; } = [];
+    public IList<Nutrient> MuscleGroups { get; } = [];
 
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IDictionary<IngredientGroup, int> MuscleTargets { get; } = new Dictionary<IngredientGroup, int>();
+    public IDictionary<Nutrient, int> MuscleTargets { get; } = new Dictionary<Nutrient, int>();
 
     public int GetWorkedMuscleSum()
     {
@@ -36,7 +36,7 @@ public class IngredientGroupOptions : IOptions
     /// <summary>
     /// This says what (strengthening/secondary/stretching) muscles we should abide by when selecting variations.
     /// </summary>
-    public Expression<Func<IRecipeCombo, IngredientGroup>> MuscleTarget { get; set; } = v => v.Recipe.Ingredients.Aggregate(IngredientGroup.None, (curr, next) => curr | (next.Ingredient.Group));
+    public Expression<Func<IRecipeCombo, Nutrient>> MuscleTarget { get; set; } = v => v.Recipe.Ingredients.Aggregate(Nutrient.None, (curr, next) => curr | (next.Ingredient.Nutrients));
 
     /// <summary>
     ///     Makes sure each variations works at least x unique muscle groups to be chosen.

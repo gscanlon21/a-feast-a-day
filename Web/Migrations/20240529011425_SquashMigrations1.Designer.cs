@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Web.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240529011425_SquashMigrations1")]
+    partial class SquashMigrations1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,6 +202,12 @@ namespace Web.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
+                    b.Property<int>("Group")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Minerals")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -206,13 +215,13 @@ namespace Web.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<decimal>("Nutrients")
-                        .HasColumnType("numeric(20,0)");
-
                     b.Property<bool>("SkipShoppingList")
                         .HasColumnType("boolean");
 
                     b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Vitamins")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -416,8 +425,8 @@ namespace Web.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Nutrient")
-                        .HasColumnType("numeric(20,0)");
+                    b.Property<int>("Group")
+                        .HasColumnType("integer");
 
                     b.Property<int>("End")
                         .HasColumnType("integer");
@@ -425,7 +434,7 @@ namespace Web.Migrations
                     b.Property<int>("Start")
                         .HasColumnType("integer");
 
-                    b.HasKey("UserId", "Nutrient");
+                    b.HasKey("UserId", "Group");
 
                     b.ToTable("user_nutrient");
                 });

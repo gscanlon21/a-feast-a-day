@@ -5,12 +5,12 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.User;
 
 
-[Table("user_ingredient_group")]
+[Table("user_nutrient")]
 public class UserIngredientGroup
 {
     public const int MuscleTargetMin = 0;
 
-    public IngredientGroup Group { get; init; }
+    public Nutrient Nutrient { get; init; }
 
     [ForeignKey(nameof(Entities.User.User.Id))]
     public int UserId { get; init; }
@@ -28,24 +28,53 @@ public class UserIngredientGroup
     /// <summary>
     /// The volume each muscle group should be exposed to each week.
     /// </summary>
-    public static readonly IDictionary<IngredientGroup, Range> MuscleTargets = new Dictionary<IngredientGroup, Range>
+    public static readonly IDictionary<Nutrient, Range> MuscleTargets = new Dictionary<Nutrient, Range>
     {
-        [IngredientGroup.Eggs] = 4..8,
-        [IngredientGroup.Fruits] = 4..8,
-        [IngredientGroup.Vegetables] = 4..8,
-        [IngredientGroup.Beans] = 2..4,
-        [IngredientGroup.Dairy] = 2..4,
-        [IngredientGroup.Fish] = 2..4,
-        [IngredientGroup.Nuts] = 2..4,
-        [IngredientGroup.Poultry] = 2..4,
-        [IngredientGroup.Seeds] = 2..4,
-        [IngredientGroup.WholeGrains] = 2..4,
-        [IngredientGroup.UnsaturatedFats] = 2..4,
-        [IngredientGroup.VegetableOils] = 2..4,
-        [IngredientGroup.Tofu] = 0..4,
-        [IngredientGroup.Butter] = 0..2,
-        [IngredientGroup.RedMeat] = 0..2,
-        [IngredientGroup.RefinedGrains] = 0..2,
-        [IngredientGroup.Sweet] = 0..2,
+        [Nutrient.B1] = 4..8,
+        [Nutrient.B2] = 4..8,
+        [Nutrient.B3] = 4..8,
+        [Nutrient.B5] = 4..8,
+        [Nutrient.B6] = 4..8,
+        [Nutrient.B7] = 4..8,
+        [Nutrient.B9] = 4..8,
+        [Nutrient.B12] = 4..8,
+        [Nutrient.Calcium] = 4..8,
+        [Nutrient.Carbohydrates] = 4..8,
+        [Nutrient.Chloride] = 4..8,
+        [Nutrient.Choline] = 4..8,
+        [Nutrient.Chromium] = 4..8,
+        [Nutrient.Copper] = 4..8,
+        [Nutrient.Fats] = 4..8,
+        [Nutrient.Fiber] = 4..8,
+        [Nutrient.Fluoride] = 4..8,
+        [Nutrient.InsolubleFiber] = 4..8,
+        [Nutrient.Iodine] = 4..8,
+        [Nutrient.Iron] = 4..8,
+        [Nutrient.Magnesium] = 4..8,
+        [Nutrient.Manganese] = 4..8,
+        [Nutrient.Molybdenum] = 4..8,
+        [Nutrient.MonounsaturatedFats] = 4..8,
+        [Nutrient.Oligosaccharides] = 4..8,
+        [Nutrient.Phosphorus] = 4..8,
+        [Nutrient.PolyunsaturatedFats] = 4..8,
+        [Nutrient.Potassium] = 4..8,
+        [Nutrient.Proteins] = 4..8,
+        [Nutrient.SaturatedFats] = 4..8,
+        [Nutrient.Selenium] = 4..8,
+        [Nutrient.Sodium] = 4..8,
+        [Nutrient.SolubleFiber] = 4..8,
+        [Nutrient.Starch] = 4..8,
+        [Nutrient.Sugar] = 4..8,
+        [Nutrient.Sulfur] = 4..8,
+        [Nutrient.TransFats] = 4..8,
+        [Nutrient.UnsaturatedFats] = 4..8,
+        [Nutrient.VitaminA] = 4..8,
+        [Nutrient.VitaminACartenoids] = 4..8,
+        [Nutrient.VitaminARetinoids] = 4..8,
+        [Nutrient.VitaminC] = 4..8,
+        [Nutrient.VitaminD] = 4..8,
+        [Nutrient.VitaminE] = 4..8,
+        [Nutrient.VitaminK] = 4..8,
+        [Nutrient.Zinc] = 4..8,
     };
 }

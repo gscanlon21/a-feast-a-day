@@ -101,7 +101,7 @@ public class QueryRunner(Section section)
 
         filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterExercises(filteredQuery, ExerciseOptions.RecipeIds);
-        filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(IngredientGroup.None, (curr2, n2) => curr2 | n2), include: true);
+        filteredQuery = Filters.FilterMuscleGroup(filteredQuery, IngredientGroupOptions.MuscleGroups.Aggregate(Nutrient.None, (curr2, n2) => curr2 | n2), include: true);
 
         var queryResults = await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
 
@@ -257,7 +257,7 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<IngredientGroup> GetUnworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, IngredientGroup> muscleTarget, Func<IRecipeCombo, IngredientGroup>? secondaryMuscleTarget = null)
+    private List<Nutrient> GetUnworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrient> muscleTarget, Func<IRecipeCombo, Nutrient>? secondaryMuscleTarget = null)
     {
         // Not using MuscleGroups because MuscleTargets can contain unions 
         return IngredientGroupOptions.MuscleTargets.Where(kv =>
@@ -274,7 +274,7 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<IngredientGroup> GetOverworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, IngredientGroup> muscleTarget, Func<IRecipeCombo, IngredientGroup>? secondaryMuscleTarget = null)
+    private List<Nutrient> GetOverworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrient> muscleTarget, Func<IRecipeCombo, Nutrient>? secondaryMuscleTarget = null)
     {
         // Not using MuscleGroups because MuscleTargets can contain unions.
         return IngredientGroupOptions.MuscleTargets.Where(kv =>

@@ -13,8 +13,8 @@ public interface IMuscleGroupBuilderNoContext
 
 public interface IMuscleGroupBuilderTargets : IMuscleGroupBuilderNoContext
 {
-    IMuscleGroupBuilderFinal WithMuscleTargets(IDictionary<IngredientGroup, int> muscleTargets);
-    IMuscleGroupBuilderFinal WithMuscleTargetsFromMuscleGroups(IDictionary<IngredientGroup, int>? workedMusclesDict = null);
+    IMuscleGroupBuilderFinal WithMuscleTargets(IDictionary<Nutrient, int> muscleTargets);
+    IMuscleGroupBuilderFinal WithMuscleTargetsFromMuscleGroups(IDictionary<Nutrient, int>? workedMusclesDict = null);
 }
 
 public interface IMuscleGroupBuilderFinalNoContext
@@ -37,25 +37,25 @@ public class MuscleTargetsBuilder : IOptions, IMuscleGroupBuilderNoContext, IMus
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IList<IngredientGroup> MuscleGroups = [];
+    public IList<Nutrient> MuscleGroups = [];
 
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IDictionary<IngredientGroup, int> MuscleTargets = new Dictionary<IngredientGroup, int>();
+    public IDictionary<Nutrient, int> MuscleTargets = new Dictionary<Nutrient, int>();
 
-    private MuscleTargetsBuilder(IList<IngredientGroup> muscleGroups, WorkoutContext? context)
+    private MuscleTargetsBuilder(IList<Nutrient> muscleGroups, WorkoutContext? context)
     {
         MuscleGroups = muscleGroups;
         Context = context;
     }
 
-    public static IMuscleGroupBuilderNoContext WithMuscleGroups(IList<IngredientGroup> muscleGroups)
+    public static IMuscleGroupBuilderNoContext WithMuscleGroups(IList<Nutrient> muscleGroups)
     {
         return new MuscleTargetsBuilder(muscleGroups, null);
     }
 
-    public static IMuscleGroupBuilderTargets WithMuscleGroups(WorkoutContext context, IList<IngredientGroup> muscleGroups)
+    public static IMuscleGroupBuilderTargets WithMuscleGroups(WorkoutContext context, IList<Nutrient> muscleGroups)
     {
         return new MuscleTargetsBuilder(muscleGroups, context);
     }
@@ -65,14 +65,14 @@ public class MuscleTargetsBuilder : IOptions, IMuscleGroupBuilderNoContext, IMus
         return this;
     }
 
-    public IMuscleGroupBuilderFinal WithMuscleTargets(IDictionary<IngredientGroup, int> muscleTargets)
+    public IMuscleGroupBuilderFinal WithMuscleTargets(IDictionary<Nutrient, int> muscleTargets)
     {
         MuscleTargets = muscleTargets;
 
         return this;
     }
 
-    public IMuscleGroupBuilderFinal WithMuscleTargetsFromMuscleGroups(IDictionary<IngredientGroup, int>? workedMusclesDict = null)
+    public IMuscleGroupBuilderFinal WithMuscleTargetsFromMuscleGroups(IDictionary<Nutrient, int>? workedMusclesDict = null)
     {
         MuscleTargets = UserIngredientGroup.MuscleTargets.Keys
             // Base 1 target for each targeted muscle group. If we've already worked this muscle, reduce the muscle target volume.
@@ -96,8 +96,8 @@ public class MuscleTargetsBuilder : IOptions, IMuscleGroupBuilderNoContext, IMus
                 if (Context.WeeklyMuscles[key].HasValue && UserIngredientGroup.MuscleTargets.TryGetValue(key, out Range defaultRange))
                 {
                     // Use the default muscle target when the user's workout split never targets this muscle group--because they can't adjust this muscle group's muscle target.
-                    var targetRange = (IngredientGroup.All.HasFlag(key)
-                        ? Context.User.UserIngredientGroups.FirstOrDefault(um => um.Group == key)?.Range
+                    var targetRange = (Nutrient.All.HasFlag(key)
+                        ? Context.User.UserIngredientGroups.FirstOrDefault(um => um.Nutrient == key)?.Range
                         : null) ?? defaultRange;
 
                     // Don't be so harsh about what constitutes an out-of-range value when there is not a lot of weekly data to work with.

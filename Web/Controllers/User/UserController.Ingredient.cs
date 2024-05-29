@@ -10,7 +10,7 @@ public partial class UserController
 {
     [HttpPost]
     [Route("ingredient/add")]
-    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] IngredientGroup group, [FromForm] IList<Allergy> allergens, [FromForm] IList<Vitamins> vitamins, [FromForm] IList<Minerals> minerals)
+    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrient nutrients, [FromForm] IList<Allergy> allergens)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -22,10 +22,8 @@ public partial class UserController
         {
             User = user,
             Name = name,
-            Group = group,
+            Nutrients = nutrients,
             Allergens = allergens.Aggregate(Allergy.None, (curr, next) => curr | next),
-            Vitamins = vitamins.Aggregate(Vitamins.None, (curr, next) => curr | next),
-            Minerals = minerals.Aggregate(Minerals.None, (curr, next) => curr | next),
         });
 
         await context.SaveChangesAsync();

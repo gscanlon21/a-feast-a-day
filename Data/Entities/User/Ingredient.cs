@@ -25,13 +25,9 @@ public class Ingredient
     [Required]
     public string Name { get; init; } = null!;
 
-    public IngredientGroup Group { get; init; }
+    public Nutrient Nutrients { get; init; }
 
     public Allergy Allergens { get; init; }
-
-    public Vitamins Vitamins { get; init; }
-
-    public Minerals Minerals { get; init; }
 
     /// <summary>
     /// Is a common household ingredient like salt and pepper.
