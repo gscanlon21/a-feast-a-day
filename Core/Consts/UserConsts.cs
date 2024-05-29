@@ -58,7 +58,7 @@ public class UserConsts
     /// <summary>
     /// How much to increment the user_muscle_strength target ranges with each increment?
     /// </summary>
-    public const int IncrementMuscleTargetBy = 1;
+    public const int IncrementMuscleTargetBy = 10;
 
     /// <summary>
     /// How many months until the user's account is disabled for inactivity.

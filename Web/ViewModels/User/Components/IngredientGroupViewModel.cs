@@ -22,7 +22,7 @@ public class IngredientGroupViewModel
     public Nutrients UsersWorkedMuscles { get; init; }
 
     // The max value (seconds of time-under-tension) of the range display
-    public double MaxRangeValue => UserNutrient.MuscleTargets.Values.Max(r => r.End.Value);
+    public double MaxRangeValue => 2 * UserNutrient.MuscleTargets.Values.Max(r => r.End.Value);
 
     public MonthlyMuscle GetMuscleTarget(KeyValuePair<Nutrients, Range> defaultRange)
     {
