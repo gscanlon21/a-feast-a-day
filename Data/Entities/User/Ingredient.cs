@@ -23,7 +23,7 @@ public class Ingredient
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; init; } = null!;
+    public string Name { get; set; } = null!;
 
     /// <summary>
     /// If it has atleast 10% RDA per serving.
@@ -35,12 +35,13 @@ public class Ingredient
     /// <summary>
     /// Is a common household ingredient like salt and pepper.
     /// </summary>
-    public bool SkipShoppingList { get; init; }
+    [Display(Name = "Skip Shopping List")]
+    public bool SkipShoppingList { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; private init; } = null;
+    public string? Notes { get; set; } = null;
 
     public string? DisabledReason { get; private init; } = null;
 

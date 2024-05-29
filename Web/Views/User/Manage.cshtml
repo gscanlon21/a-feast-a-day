@@ -16,6 +16,14 @@
             <label asp-for="Ingredient.Notes" class="control-label">Notes</label>
             <input asp-for="Ingredient.Notes" type="text" class="form-control" />
         </div>
+        <div class="form-group form-check mb-3">
+            <div>
+                <span><label asp-for="Ingredient.SkipShoppingList" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.SkipShoppingList)</label></span>
+                <input class="form-check-input allow-demo" asp-for="Ingredient.SkipShoppingList" aria-describedby="fitness-help" />
+            </div>
+            <span asp-validation-for="Ingredient.SkipShoppingList" class="text-danger"></span>
+            <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.SkipShoppingList)</div>
+        </div>
 
         <div class="form-group mb-3">
             <label asp-for="Ingredient.AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Allergens)</label>

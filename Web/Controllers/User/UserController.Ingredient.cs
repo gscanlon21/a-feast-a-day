@@ -100,6 +100,9 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        existingRecipe.Name = ingredient.Name;
+        existingRecipe.Notes = ingredient.Notes;
+        existingRecipe.SkipShoppingList = ingredient.SkipShoppingList;
         existingRecipe.Allergens = ingredient.Allergens;
         existingRecipe.Nutrients = ingredient.Nutrients;
 
