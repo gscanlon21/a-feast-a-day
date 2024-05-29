@@ -202,6 +202,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             Today = date,
         };
 
+        if (user.Features.HasFlag(Features.Debug))
+        {
+            newsletterViewModel.DebugIngredients = await context.UserIngredients.OrderBy(_ => EF.Functions.Random()).Take(2).ToListAsync();
+        }
+
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
         {
             var exercises = (await new QueryBuilder(section)
