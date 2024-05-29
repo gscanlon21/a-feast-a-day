@@ -1,9 +1,9 @@
-﻿using Core.Models.User;
+﻿using Core.Code.Extensions;
+using Core.Models.User;
+using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
-using Web.Controllers.Ingredient;
-using Web.ViewModels.Ingredient;
 using Web.ViewModels.User;
 
 namespace Web.Controllers.User;
@@ -12,7 +12,7 @@ public partial class UserController
 {
     [HttpPost]
     [Route("ingredient/add")]
-    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrient nutrients, [FromForm] IList<Allergy> allergens)
+    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] IList<Allergy> allergens)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -24,7 +24,7 @@ public partial class UserController
         {
             User = user,
             Name = name,
-            Nutrients = nutrients,
+            //Nutrients = nutrients,
             Allergens = allergens.Aggregate(Allergy.None, (curr, next) => curr | next),
         });
 
@@ -69,10 +69,28 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var ingredient = await context.UserIngredients.FirstOrDefaultAsync(r => r.Id == ingredientId);
+        var ingredient = await context.UserIngredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredientId);
         if (ingredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var nutrients = new List<Nutrient>();
+        foreach (var nutrient in EnumExtensions.GetValuesExcluding32(Nutrients.None, Nutrients.All))
+        {
+            var userNutrient = ingredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient);
+            if (userNutrient != null)
+            {
+                nutrients.Add(userNutrient);
+            }
+            else
+            {
+                nutrients.Add(new Nutrient()
+                {
+                    Nutrients = nutrient,
+                    Ingredient = ingredient,
+                });
+            }
         }
 
         return View(new ManageIngredientViewModel()
@@ -81,12 +99,13 @@ public partial class UserController
             Token = token,
             Ingredient = ingredient,
             WasUpdated = wasUpdated,
+            Nutrients = nutrients,
         });
     }
 
     [HttpPost]
     [Route("ingredient/{ingredientId}")]
-    public async Task<IActionResult> ManagePost(string email, string token, Data.Entities.User.Ingredient ingredient)
+    public async Task<IActionResult> ManagePost(string email, string token, Data.Entities.User.Ingredient ingredient, List<Data.Entities.User.Nutrient> nutrients)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
@@ -94,7 +113,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var existingRecipe = await context.UserIngredients.FirstOrDefaultAsync(r => r.Id == ingredient.Id);
+        var existingRecipe = await context.UserIngredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
         if (existingRecipe == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -104,7 +123,23 @@ public partial class UserController
         existingRecipe.Notes = ingredient.Notes;
         existingRecipe.SkipShoppingList = ingredient.SkipShoppingList;
         existingRecipe.Allergens = ingredient.Allergens;
-        existingRecipe.Nutrients = ingredient.Nutrients;
+
+        foreach (var nutrient in nutrients)
+        {
+            var existingNutrient = existingRecipe.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
+            if (existingNutrient != null)
+            {
+                existingNutrient.PercentDailyValue = nutrient.PercentDailyValue;
+            }
+            else
+            {
+                existingRecipe.Nutrients.Add(new Nutrient()
+                {
+                    Nutrients = nutrient.Nutrients,
+                    PercentDailyValue = nutrient.PercentDailyValue
+                });
+            }
+        }
 
         await context.SaveChangesAsync();
         //TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";

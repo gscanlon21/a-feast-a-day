@@ -34,14 +34,33 @@
             <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Allergens)</div>
         </div>
 
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.NutrientBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Nutrients)</label>
-            <select asp-for="Ingredient.NutrientBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="10"
-                    asp-items="@(EnumExtensions.GetSingleValues32<Nutrient>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
-            </select>
-            <span asp-validation-for="Ingredient.NutrientBinder" class="text-danger"></span>
-            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Nutrients)</div>
-        </div>
+        @for (var i = 0; i < Model.Nutrients.Count; i++)
+        {
+            var nutrient = Model.Nutrients[i];
+            <div class="form-group mb-3">
+                <input type="hidden" asp-for="Nutrients[i].Nutrients" />
+                <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName()</label>
+                <div style="display:flex;column-gap:1ex;">
+                    <output name="Output@(i)" for="@Html.IdFor(_ => Model.Nutrients[i].Nutrients)">@nutrient.PercentDailyValue</output>
+                    <div style="display:flex;width:100%;">
+                        <input asp-for="Nutrients[i].PercentDailyValue" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                               step="5" min="0" max="200"
+                               oninput="Output@(i).value = this.valueAsNumber" list="List@(i)" />
+                        <datalist id="List@(i)">
+                            <option value="5"></option>
+                            <option value="10"></option>
+                            <option value="25"></option>
+                            <option value="50"></option>
+                            <option value="75"></option>
+                            <option value="100"></option>
+                            <option value="150"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
+                <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Nutrients[i].Nutrients)</div>
+            </div>
+        }
     </form>
 
     <div class="row form-group justify-content-end gy-2">

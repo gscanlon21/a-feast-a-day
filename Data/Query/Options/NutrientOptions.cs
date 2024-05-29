@@ -11,7 +11,7 @@ public class NutrientOptions : IOptions
 
     public NutrientOptions() { }
 
-    public NutrientOptions(IList<Nutrient> nutrients, IDictionary<Nutrient, int> nutrientTargets)
+    public NutrientOptions(IList<Nutrients> nutrients, IDictionary<Nutrients, int> nutrientTargets)
     {
         Nutrients = nutrients;
         NutrientTargets = nutrientTargets;
@@ -20,12 +20,12 @@ public class NutrientOptions : IOptions
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IList<Nutrient> Nutrients { get; } = [];
+    public IList<Nutrients> Nutrients { get; } = [];
 
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IDictionary<Nutrient, int> NutrientTargets { get; } = new Dictionary<Nutrient, int>();
+    public IDictionary<Nutrients, int> NutrientTargets { get; } = new Dictionary<Nutrients, int>();
 
     public int GetWorkedNutrientsSum()
     {
@@ -36,7 +36,7 @@ public class NutrientOptions : IOptions
     /// <summary>
     /// This says what (strengthening/secondary/stretching) muscles we should abide by when selecting variations.
     /// </summary>
-    public Expression<Func<IRecipeCombo, Nutrient>> NutrientTarget { get; set; } = v => v.Recipe.Ingredients.Aggregate(Nutrient.None, (curr, next) => curr | (next.Ingredient.Nutrients));
+    public Expression<Func<IRecipeCombo, Nutrients>> NutrientTarget { get; set; } = v => v.Recipe.Ingredients.Aggregate(Core.Models.User.Nutrients.None, (curr, next) => curr | (next.Ingredient.Nutrients.Aggregate(Core.Models.User.Nutrients.None, (c, n) => c | n.Nutrients)));
 
     /// <summary>
     ///     Makes sure each variations works at least x unique muscle groups to be chosen.

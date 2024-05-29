@@ -17,14 +17,14 @@ public class IngredientGroupViewModel
 
     public double WeeksOfData { get; set; }
 
-    public required IDictionary<Nutrient, int?> WeeklyVolume { get; set; }
+    public required IDictionary<Nutrients, int?> WeeklyVolume { get; set; }
 
-    public Nutrient UsersWorkedMuscles { get; init; }
+    public Nutrients UsersWorkedMuscles { get; init; }
 
     // The max value (seconds of time-under-tension) of the range display
     public double MaxRangeValue => UserNutrient.MuscleTargets.Values.Max(r => r.End.Value);
 
-    public MonthlyMuscle GetMuscleTarget(KeyValuePair<Nutrient, Range> defaultRange)
+    public MonthlyMuscle GetMuscleTarget(KeyValuePair<Nutrients, Range> defaultRange)
     {
         var userMuscleTarget = User.UserIngredientGroups.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == defaultRange.Key)?.Range ?? UserNutrient.MuscleTargets[defaultRange.Key];
 
@@ -46,7 +46,7 @@ public class IngredientGroupViewModel
 
     public class MonthlyMuscle
     {
-        public required Nutrient IngredientGroup { get; init; }
+        public required Nutrients IngredientGroup { get; init; }
         public required bool ShowButtons { get; init; }
         public required Range UserMuscleTarget { get; init; }
         public required double Start { get; init; }

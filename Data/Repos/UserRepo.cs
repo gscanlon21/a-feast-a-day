@@ -87,7 +87,7 @@ public class UserRepo(CoreContext context)
         return (nextSendDateTime, timeUntilNextSend);
     }
 
-    private async Task<(double weeks, IDictionary<Nutrient, int?> volume)> GetWeeklyMuscleVolumeFromStrengthWorkouts(User user, int weeks)
+    private async Task<(double weeks, IDictionary<Nutrients, int?> volume)> GetWeeklyMuscleVolumeFromStrengthWorkouts(User user, int weeks)
     {
         var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
         var userServings = UserServing.MuscleTargets.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
@@ -116,7 +116,7 @@ public class UserRepo(CoreContext context)
                     .Where(nv => onlySections.HasFlag(nv.Section))
                     .Select(nv => new
                     {
-                        Proficiency = nv.Recipe.Servings,
+                        Proficiency = nv.Recipe.Servings * 50,
                         IngredientGroup = nv.Recipe.IngredientGroups,
                     })
             }).ToListAsync();
@@ -153,7 +153,7 @@ public class UserRepo(CoreContext context)
     /// 
     /// Returns `null` when the user is new to fitness.
     /// </summary>
-    public async Task<(double weeks, IDictionary<Nutrient, int?>? volume)> GetWeeklyMuscleVolume(User user, int weeks)
+    public async Task<(double weeks, IDictionary<Nutrients, int?>? volume)> GetWeeklyMuscleVolume(User user, int weeks)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 

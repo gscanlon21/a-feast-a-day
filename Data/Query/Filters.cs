@@ -1,8 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Entities.User;
-using System.Linq.Expressions;
-using System.Reflection;
 
 namespace Data.Query;
 
@@ -44,18 +42,18 @@ public static class Filters
     /// <summary>
     /// Make sure the exercise works a specific muscle group
     /// </summary>
-    public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, Nutrient? nutrients, bool include) where T : IRecipeCombo
+    public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, Nutrients? nutrients, bool include) where T : IRecipeCombo
     {
-        if (nutrients.HasValue && nutrients != Nutrient.None)
+        if (nutrients.HasValue && nutrients != Nutrients.None)
         {
             if (include)
             {
-                query = query.Where(r => r.Recipe.Ingredients.Any(i => (i.Ingredient.Nutrients & nutrients) != 0));
+                query = query.Where(r => r.Recipe.Ingredients.Any(i => (i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients)))));
             }
             else
             {
                 // If a recovery muscle is set, don't choose any exercises that work the injured muscle
-                query = query.Where(r => r.Recipe.Ingredients.All(i => (i.Ingredient.Nutrients & nutrients) == 0));
+                query = query.Where(r => r.Recipe.Ingredients.All(i => (i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients)))));
             }
         }
 

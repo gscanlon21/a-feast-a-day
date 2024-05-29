@@ -26,7 +26,7 @@
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
         .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName()).Append(new IngredientGroupViewModel.MonthlyMuscle()
         {
-            IngredientGroup = Nutrient.All,
+            IngredientGroup = Nutrients.All,
             ShowButtons = true,
             IsMaxVolumeInRange = true,
             IsMinVolumeInRange = true,

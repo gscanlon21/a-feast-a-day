@@ -25,11 +25,6 @@ public class Ingredient
     [Required]
     public string Name { get; set; } = null!;
 
-    /// <summary>
-    /// If it has atleast 10% RDA per serving.
-    /// </summary>
-    public Nutrient Nutrients { get; set; }
-
     public Allergy Allergens { get; set; }
 
     /// <summary>
@@ -51,6 +46,10 @@ public class Ingredient
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
+    [JsonIgnore, InverseProperty(nameof(Nutrient.Ingredient))]
+    public virtual List<Nutrient> Nutrients { get; set; } = null!;
+
+
     public override int GetHashCode() => HashCode.Combine(Id);
 
     public override bool Equals(object? obj) => obj is Recipe other
@@ -61,12 +60,5 @@ public class Ingredient
     {
         get => Enum.GetValues<Allergy>().Where(e => Allergens.HasFlag(e)).ToArray();
         set => Allergens = value?.Aggregate(Allergy.None, (a, e) => a | e) ?? Allergy.None;
-    }
-
-    [NotMapped]
-    public Nutrient[]? NutrientBinder
-    {
-        get => Enum.GetValues<Nutrient>().Where(e => Nutrients.HasFlag(e)).ToArray();
-        set => Nutrients = value?.Aggregate(Nutrient.None, (a, e) => a | e) ?? Nutrient.None;
     }
 }

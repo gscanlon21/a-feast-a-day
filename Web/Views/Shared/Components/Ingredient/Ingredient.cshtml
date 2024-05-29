@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="Nutrients" class="control-label">Nutrients</label>
-                    <select name="Nutrients" class="form-control" asp-items="@(EnumExtensions.GetSingleOrNoneValues32<Nutrient>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, Nutrient.None))"></select>
+                    <select name="Nutrients" class="form-control" asp-items="@(EnumExtensions.GetSingleOrNoneValues32<Nutrients>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, Nutrients.None))"></select>
                 </div>
                 <div class="form-group mb-3">
                     <label for="Allergens" class="control-label">Allergens</label>
@@ -45,7 +45,7 @@
                     </div>
                     <span for="FootnoteId" class="text-danger"></span>
                     <div class="form-text font-size--smaller">
-                        @ingredient.Nutrients.GetSingleDisplayName()
+                        @*ingredient.Nutrients.GetSingleDisplayName()*@
                     </div>
                 </div>
             </form>

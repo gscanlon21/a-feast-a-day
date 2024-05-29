@@ -3,7 +3,7 @@
 namespace Core.Models.User;
 
 [Flags]
-public enum Nutrient : long
+public enum Nutrients : long
 {
     None = 0,
 
