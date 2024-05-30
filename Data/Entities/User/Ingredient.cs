@@ -33,7 +33,7 @@ public class Ingredient
     [Display(Name = "Skip Shopping List")]
     public bool SkipShoppingList { get; set; }
 
-    [Display(Name = "Serving Size (Grams)")]
+    [Display(Name = "Serving Size (grams)")]
     public int ServingSizeGrams { get; set; }
 
     public int GramsInACup { get; set; }
