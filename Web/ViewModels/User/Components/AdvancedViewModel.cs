@@ -25,10 +25,6 @@ public class AdvancedViewModel
     [Range(1, 9)]
     public int AtLeastXUniqueNutrientsPerRecipe { get; set; }
 
-    [Display(Name = "At Least X Servings Per Recipe", Description = "A higher value will result in shorter warmup sections and decreased exercise variety.")]
-    [Range(1, 9)]
-    public int AtLeastXServingsPerRecipe { get; set; }
-
     public string Token { get; init; } = null!;
     public string Email { get; init; } = null!;
 
