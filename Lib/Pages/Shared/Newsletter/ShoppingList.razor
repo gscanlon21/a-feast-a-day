@@ -34,10 +34,7 @@
     {
         public bool Equals(ViewModels.Newsletter.IngredientViewModel? a, ViewModels.Newsletter.IngredientViewModel? b)
             => EqualityComparer<Core.Models.User.Measure?>.Default.Equals(a?.Measure, b?.Measure)
-            && EqualityComparer<string?>.Default.Equals(
-                new string(a?.Name.TakeWhile(c => c != '(').ToArray()).TrimEnd('s', ' '), 
-                new string(b?.Name.TakeWhile(c => c != '(').ToArray()).TrimEnd('s', ' ')
-            );
+            && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
 
         public int GetHashCode(ViewModels.Newsletter.IngredientViewModel e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
     }

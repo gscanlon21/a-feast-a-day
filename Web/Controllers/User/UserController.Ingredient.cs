@@ -123,6 +123,7 @@ public partial class UserController
 
         existingRecipe.Name = ingredient.Name;
         existingRecipe.Notes = ingredient.Notes;
+        existingRecipe.ServingSizeGrams = ingredient.ServingSizeGrams;
         existingRecipe.SkipShoppingList = ingredient.SkipShoppingList;
         existingRecipe.Allergens = ingredient.Allergens;
 

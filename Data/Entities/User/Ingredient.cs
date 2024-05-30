@@ -33,6 +33,11 @@ public class Ingredient
     [Display(Name = "Skip Shopping List")]
     public bool SkipShoppingList { get; set; }
 
+    [Display(Name = "Serving Size (Grams)")]
+    public int ServingSizeGrams { get; set; }
+
+    public int GramsInACup { get; set; }
+
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
@@ -46,6 +51,9 @@ public class Ingredient
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
+    /// <summary>
+    /// Nutrients per Serving Size (Grams).
+    /// </summary>
     [InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual List<Nutrient> Nutrients { get; set; } = [];
 

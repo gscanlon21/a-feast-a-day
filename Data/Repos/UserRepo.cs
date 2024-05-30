@@ -1,4 +1,5 @@
-﻿using Core.Consts;
+﻿using Core.Code.Extensions;
+using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Entities.Newsletter;
@@ -115,11 +116,11 @@ public class UserRepo(CoreContext context)
                 NewsletterVariations = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
                     // Only select variations that worked a strengthening intensity.
                     .Where(nv => onlySections.HasFlag(nv.Section))
-                    .SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients).Select(n => new
+                    .SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients.Select(n => new
                     {
-                        Proficiency = nv.Recipe.Servings * n.PercentDailyValue / 7d,
+                        Proficiency = i.NumberOfServings(i.Ingredient) * n.PercentDailyValue / 7d,
                         IngredientGroup = n.Nutrients,
-                    }))
+                    })))
             }).ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
