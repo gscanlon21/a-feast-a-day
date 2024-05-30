@@ -136,43 +136,43 @@ public class QueryRunner(Section section)
             // Don't re-order the list on each read
             .ToList();
 
-        var muscleTarget = NutrientOptions.NutrientTarget.Compile();
+        var nutrientTarget = NutrientOptions.NutrientTarget.Compile();
         var finalResults = new List<QueryResults>();
         do
         {
-            foreach (var exercise in orderedResults)
+            foreach (var recipe in orderedResults)
             {
                 // Don't choose two variations of the same exercise.
                 if (SelectionOptions.UniqueExercises
-                    && finalResults.Select(r => r.Recipe).Contains(exercise.Recipe))
+                    && finalResults.Select(r => r.Recipe).Contains(recipe.Recipe))
                 {
                     continue;
                 }
 
                 // Don't choose exercises under our desired number of servings.
                 if (ServingsOptions.AtLeastXServingsPerRecipe != null
-                    && BitOperations.PopCount((ulong)exercise.Recipe.Servings) < ServingsOptions.AtLeastXServingsPerRecipe)
+                    && BitOperations.PopCount((ulong)recipe.Recipe.Servings) < ServingsOptions.AtLeastXServingsPerRecipe)
                 {
                     continue;
                 }
 
                 // Don't overwork weekly servings.
                 if (ServingsOptions.AtLeastXServingsPerRecipe != null
-                    && finalResults.Aggregate(exercise.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings)
+                    && finalResults.Aggregate(recipe.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings)
                 {
                     continue;
                 }
 
                 // Don't choose exercises under our desired number of worked muscles.
                 if (NutrientOptions.AtLeastXNutrientsPerRecipe != null
-                    && BitOperations.PopCount((ulong)muscleTarget(exercise)) < NutrientOptions.AtLeastXNutrientsPerRecipe)
+                    && BitOperations.PopCount((ulong)nutrientTarget(recipe)) < NutrientOptions.AtLeastXNutrientsPerRecipe)
                 {
                     continue;
                 }
 
                 // Don't overwork muscle groups.
-                var overworkedMuscleGroups = GetOverworkedMuscleGroups(finalResults, muscleTarget: muscleTarget);
-                if (overworkedMuscleGroups.Any(mg => muscleTarget(exercise).HasAnyFlag32(mg)))
+                var overworkedMuscleGroups = GetOverworkedMuscleGroups(finalResults, nutrientTarget: nutrientTarget);
+                if (overworkedMuscleGroups.Any(mg => nutrientTarget(recipe).HasAnyFlag32(mg)))
                 {
                     continue;
                 }
@@ -180,7 +180,7 @@ public class QueryRunner(Section section)
                 // Choose exercises that cover at least X muscles in the targeted muscles set.
                 if (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe != null)
                 {
-                    var unworkedMuscleGroups = GetUnworkedMuscleGroups(finalResults, muscleTarget: muscleTarget);
+                    var unworkedMuscleGroups = GetUnworkedMuscleGroups(finalResults, nutrientTarget: nutrientTarget);
 
                     // We've already worked all unique muscles
                     if (unworkedMuscleGroups.Count == 0)
@@ -190,13 +190,13 @@ public class QueryRunner(Section section)
 
                     // The exercise does not work enough unique muscles that we are trying to target.
                     // Allow the first exercise with any muscle group so the user does not get stuck from seeing certain exercises if, for example, a prerequisite only works one muscle group and that muscle group is otherwise worked by compound exercises.
-                    if (unworkedMuscleGroups.Count(mg => muscleTarget(exercise).HasAnyFlag32(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.Value))
+                    if (unworkedMuscleGroups.Count(mg => nutrientTarget(recipe).HasAnyFlag32(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.Value))
                     {
                         continue;
                     }
                 }
 
-                finalResults.Add(new QueryResults(section, exercise.Recipe, exercise.UserRecipe));
+                finalResults.Add(new QueryResults(section, recipe.Recipe, recipe.UserRecipe));
             }
         }
         // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
@@ -246,34 +246,34 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients> GetUnworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> muscleTarget, Func<IRecipeCombo, Nutrients>? secondaryMuscleTarget = null)
+    private List<Nutrients> GetUnworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> nutrientTarget, Func<IRecipeCombo, Nutrients>? secondaryMuscleTarget = null)
     {
         // Not using MuscleGroups because MuscleTargets can contain unions 
         return NutrientOptions.NutrientTargets.Where(kv =>
         {
             // We are targeting this muscle group.
-            var workedCount = finalResults.WorkedAnyMuscleCount(kv.Key, muscleTarget: muscleTarget);
+            var workedCount = finalResults.WorkedAnyNutrientCount(kv.Key, nutrientTarget: nutrientTarget);
             if (secondaryMuscleTarget != null)
             {
                 // Weight secondary muscles as half.
-                workedCount += finalResults.WorkedAnyMuscleCount(kv.Key, muscleTarget: secondaryMuscleTarget, weightDivisor: 2);
+                workedCount += finalResults.WorkedAnyNutrientCount(kv.Key, nutrientTarget: secondaryMuscleTarget, weightDivisor: 2);
             }
 
             return workedCount < kv.Value && NutrientOptions.Nutrients.Any(mg => kv.Key.HasFlag(mg));
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients> GetOverworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> muscleTarget, Func<IRecipeCombo, Nutrients>? secondaryMuscleTarget = null)
+    private List<Nutrients> GetOverworkedMuscleGroups(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> nutrientTarget, Func<IRecipeCombo, Nutrients>? secondaryMuscleTarget = null)
     {
         // Not using MuscleGroups because MuscleTargets can contain unions.
         return NutrientOptions.NutrientTargets.Where(kv =>
         {
             // We have not overworked this muscle group.
-            var workedCount = finalResults.WorkedAnyMuscleCount(kv.Key, muscleTarget: muscleTarget);
+            var workedCount = finalResults.WorkedAnyNutrientCount(kv.Key, nutrientTarget: nutrientTarget);
             if (secondaryMuscleTarget != null)
             {
                 // Weight secondary muscles as half.
-                workedCount += finalResults.WorkedAnyMuscleCount(kv.Key, muscleTarget: secondaryMuscleTarget, weightDivisor: 2);
+                workedCount += finalResults.WorkedAnyNutrientCount(kv.Key, nutrientTarget: secondaryMuscleTarget, weightDivisor: 2);
             }
 
             return workedCount > kv.Value;

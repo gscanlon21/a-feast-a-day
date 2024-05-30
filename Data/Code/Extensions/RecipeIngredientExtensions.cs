@@ -12,7 +12,7 @@ public static class RecipeIngredientExtensions
     public static double NumberOfServings(this RecipeIngredient recipeIngredient, Ingredient ingredient)
     {
         var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);
-        
+
         return recipeIngredient.Measure switch
         {
             Measure.Grams => fraction.ToDouble() / ingredient.ServingSizeGrams,
