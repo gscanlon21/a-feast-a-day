@@ -10,16 +10,16 @@ namespace Data.Dtos.Newsletter;
 /// Viewmodel for _Exercise.cshtml
 /// </summary>
 [DebuggerDisplay("{Section,nq}: {Variation,nq}")]
-public class RecipeDto(Section section, Recipe exercise, UserRecipe? userExercise) :
+public class RecipeDto(Section section, Recipe recipe, UserRecipe? userRecipe) :
     IRecipeCombo
 {
     public RecipeDto(QueryResults result) : this(result.Section, result.Recipe, result.UserRecipe) { }
 
     public Section Section { get; private init; } = section;
 
-    public Recipe Recipe { get; private init; } = exercise;
+    public Recipe Recipe { get; private init; } = recipe;
 
-    public UserRecipe? UserRecipe { get; set; } = userExercise;
+    public UserRecipe? UserRecipe { get; set; } = userRecipe;
 
     public override int GetHashCode() => HashCode.Combine(Recipe);
 

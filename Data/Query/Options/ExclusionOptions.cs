@@ -18,7 +18,7 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variation of these exercises from being chosen.
     /// </summary>
-    public void AddExcludeExercises(IEnumerable<Recipe>? exercises)
+    public void AddExcludeRecipes(IEnumerable<Recipe>? exercises)
     {
         if (exercises != null)
         {
@@ -29,7 +29,7 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variations from being chosen that are a part of these exercise groups.
     /// </summary>
-    public void AddExcludeGroups(IEnumerable<Recipe>? exercises)
+    public void AddExcludeAllergens(IEnumerable<Recipe>? exercises)
     {
         if (exercises != null)
         {
@@ -40,7 +40,7 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variations from being chosen that are a part of these exercise groups.
     /// </summary>
-    public void AddExcludeGroups(Allergy allergens)
+    public void AddExcludeAllergens(Allergy allergens)
     {
         Allergens |= allergens;
     }

@@ -27,25 +27,13 @@ public class User
         public const int FootnoteCountBottomDefault = 2;
         public const int FootnoteCountMax = 4;
 
-        public const int AtLeastXUniqueMusclesPerExercise_FlexibilityMin = 1;
-        public const int AtLeastXUniqueMusclesPerExercise_FlexibilityDefault = 3;
-        public const int AtLeastXUniqueMusclesPerExercise_FlexibilityMax = 4;
+        public const int AtLeastXUniqueNutrientsPerRecipeMin = 1;
+        public const int AtLeastXUniqueNutrientsPerRecipeDefault = 6;
+        public const int AtLeastXUniqueNutrientsPerRecipeMax = 9;
 
-        public const int AtLeastXUniqueMusclesPerExercise_MobilityMin = 1;
-        public const int AtLeastXUniqueMusclesPerExercise_MobilityDefault = 3;
-        public const int AtLeastXUniqueMusclesPerExercise_MobilityMax = 4;
-
-        public const int AtLeastXUniqueMusclesPerExercise_AccessoryMin = 1;
-        public const int AtLeastXUniqueMusclesPerExercise_AccessoryDefault = 3;
-        public const int AtLeastXUniqueMusclesPerExercise_AccessoryMax = 4;
-
-        public const double WeightIsolationXTimesMoreMin = 1;
-        public const double WeightIsolationXTimesMoreDefault = 1.5;
-        public const double WeightIsolationXTimesMoreMax = 2;
-
-        public const double WeightSecondaryMusclesXTimesLessMin = 2;
-        public const double WeightSecondaryMusclesXTimesLessDefault = 3;
-        public const double WeightSecondaryMusclesXTimesLessMax = 4;
+        public const int AtLeastXServingsPerRecipeMin = 1;
+        public const int AtLeastXServingsPerRecipeDefault = 3;
+        public const int AtLeastXServingsPerRecipeMax = 9;
     }
 
     [Obsolete("Public parameterless constructor for model binding.", error: true)]
@@ -157,7 +145,18 @@ public class User
     /// </summary>
     public Features Features { get; set; } = Features.None;
 
+    #region Advanced Preferences
 
+    [Range(Consts.FootnoteCountMin, Consts.FootnoteCountMax)]
+    public int FootnoteCountTop { get; set; } = Consts.FootnoteCountTopDefault;
+
+    [Range(Consts.FootnoteCountMin, Consts.FootnoteCountMax)]
+    public int FootnoteCountBottom { get; set; } = Consts.FootnoteCountBottomDefault;
+
+    [Range(Consts.AtLeastXUniqueNutrientsPerRecipeMin, Consts.AtLeastXUniqueNutrientsPerRecipeMax)]
+    public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = Consts.AtLeastXUniqueNutrientsPerRecipeDefault;
+
+    #endregion
     #region NotMapped
 
     /// <summary>
@@ -180,18 +179,8 @@ public class User
     [NotMapped]
     public int WorkoutsDays => BitOperations.PopCount((ulong)SendDays);
 
-    [Range(1, 9)]
-    public int AtLeastXServingsPerRecipe { get; set; } = 3;
-
-    #endregion
-    #region Advanced Preferences
-
-    public int FootnoteCountTop { get; set; } = Consts.FootnoteCountTopDefault;
-    public int FootnoteCountBottom { get; set; } = Consts.FootnoteCountBottomDefault;
-
-    [Range(1, 9)]
-    public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = 3;
-
+    [Range(Consts.AtLeastXServingsPerRecipeMin, Consts.AtLeastXServingsPerRecipeMax)]
+    public int AtLeastXServingsPerRecipe { get; set; } = Consts.AtLeastXServingsPerRecipeDefault;
 
     #endregion
     #region Navigation Properties

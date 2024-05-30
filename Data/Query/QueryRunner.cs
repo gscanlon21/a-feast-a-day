@@ -52,9 +52,9 @@ public class QueryRunner(Section section)
     public required NutrientOptions NutrientOptions { get; init; }
     public required AllergenOptions AllergenOptions { get; init; }
 
-    private IQueryable<RecipesQueryResults> CreateExercisesQuery(CoreContext context)
+    private IQueryable<RecipesQueryResults> CreateRecipesQuery(CoreContext context)
     {
-        var query = context.UserRecipes.IgnoreQueryFilters().TagWith(nameof(CreateExercisesQuery))
+        var query = context.UserRecipes.IgnoreQueryFilters().TagWith(nameof(CreateRecipesQuery))
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
@@ -71,10 +71,10 @@ public class QueryRunner(Section section)
         });
     }
 
-    private IQueryable<RecipesQueryResults> CreateFilteredExerciseVariationsQuery(CoreContext context, bool ignoreExclusions = false)
+    private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context, bool ignoreExclusions = false)
     {
-        var filteredQuery = CreateExercisesQuery(context)
-            .TagWith(nameof(CreateFilteredExerciseVariationsQuery))
+        var filteredQuery = CreateRecipesQuery(context)
+            .TagWith(nameof(CreateFilteredRecipesQuery))
             // Don't grab exercises that the user wants to ignore
             .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
 
@@ -98,7 +98,7 @@ public class QueryRunner(Section section)
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        var filteredQuery = CreateFilteredExerciseVariationsQuery(context);
+        var filteredQuery = CreateFilteredRecipesQuery(context);
 
         filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds);

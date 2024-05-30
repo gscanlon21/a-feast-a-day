@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Data.Entities.User;
 using System.ComponentModel.DataAnnotations;
 
 namespace Data.Query.Options;
@@ -18,7 +19,7 @@ public class ServingsOptions : IOptions
     /// <summary>
     /// Minimum value for AtLeastXUniqueMusclesPerRecipe.
     /// </summary>
-    [Range(1, 9)]
+    [Range(User.Consts.AtLeastXServingsPerRecipeMin, User.Consts.AtLeastXServingsPerRecipeMax)]
     public int? AtLeastXServingsPerRecipe
     {
         get => _atLeastXServingsPerRecipe;

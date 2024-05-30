@@ -186,7 +186,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         };
 
         // Other exercises. Refresh every day.
-        await UpdateLastSeenDate(exercises: dinnerRecipes.Concat(sideRecipes).Concat(snackRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
+        await UpdateLastSeenDate(recipes: dinnerRecipes.Concat(sideRecipes).Concat(snackRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
 
         return viewModel;
     }
@@ -209,7 +209,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
         {
-            var exercises = (await new QueryBuilder(section)
+            var recipes = (await new QueryBuilder(section)
                 .WithUser(user, uniqueExercises: false)
                 .WithExercises(options =>
                 {
@@ -225,22 +225,22 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             {
                 case Section.Debug:
                 case Section.Dinner:
-                    newsletterViewModel.DinnerRecipes = exercises;
+                    newsletterViewModel.DinnerRecipes = recipes;
                     break;
                 case Section.Lunch:
-                    newsletterViewModel.LunchRecipes = exercises;
+                    newsletterViewModel.LunchRecipes = recipes;
                     break;
                 case Section.Breakfast:
-                    newsletterViewModel.BreakfastRecipes = exercises;
+                    newsletterViewModel.BreakfastRecipes = recipes;
                     break;
                 case Section.Sides:
-                    newsletterViewModel.SideRecipes = exercises;
+                    newsletterViewModel.SideRecipes = recipes;
                     break;
                 case Section.Dessert:
-                    newsletterViewModel.DessertRecipes = exercises;
+                    newsletterViewModel.DessertRecipes = recipes;
                     break;
                 case Section.Snacks:
-                    newsletterViewModel.SnackRecipes = exercises;
+                    newsletterViewModel.SnackRecipes = recipes;
                     break;
             }
         }

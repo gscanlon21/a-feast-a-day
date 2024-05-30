@@ -25,9 +25,9 @@ public partial class NewsletterRepo
                 options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Breakfast)?.Count
                     ?? UserServing.MuscleTargets[Section.Breakfast];
             })
-            .WithExcludeExercises(x =>
+            .WithExcludeRecipes(x =>
             {
-                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
             .Query(serviceScopeFactory))
@@ -52,9 +52,9 @@ public partial class NewsletterRepo
                 options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Lunch)?.Count
                     ?? UserServing.MuscleTargets[Section.Lunch];
             })
-            .WithExcludeExercises(x =>
+            .WithExcludeRecipes(x =>
             {
-                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             }).Build()
             .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
@@ -78,9 +78,9 @@ public partial class NewsletterRepo
                 options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Dinner)?.Count
                     ?? UserServing.MuscleTargets[Section.Dinner];
             })
-            .WithExcludeExercises(x =>
+            .WithExcludeRecipes(x =>
             {
-                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
             .Query(serviceScopeFactory))
@@ -101,9 +101,9 @@ public partial class NewsletterRepo
                 options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Sides)?.Count
                     ?? UserServing.MuscleTargets[Section.Sides];
             })
-            .WithExcludeExercises(x =>
+            .WithExcludeRecipes(x =>
             {
-                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
             .Query(serviceScopeFactory))
@@ -124,9 +124,9 @@ public partial class NewsletterRepo
                 options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Snacks)?.Count
                     ?? UserServing.MuscleTargets[Section.Snacks];
             })
-            .WithExcludeExercises(x =>
+            .WithExcludeRecipes(x =>
             {
-                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
             .Query(serviceScopeFactory))
@@ -147,9 +147,9 @@ public partial class NewsletterRepo
                 options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Dessert)?.Count
                     ?? UserServing.MuscleTargets[Section.Dessert];
             })
-            .WithExcludeExercises(x =>
+            .WithExcludeRecipes(x =>
             {
-                x.AddExcludeExercises(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
             .Query(serviceScopeFactory))

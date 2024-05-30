@@ -59,18 +59,18 @@ public partial class NewsletterRepo
     /// <param name="refreshAfter">
     ///     When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same exercises in each workout.
     /// </param>
-    public async Task UpdateLastSeenDate(IEnumerable<RecipeDto> exercises)
+    public async Task UpdateLastSeenDate(IEnumerable<RecipeDto> recipes)
     {
         using var scope = serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        foreach (var exercise in exercises.DistinctBy(e => e.UserRecipe))
+        foreach (var recipe in recipes.DistinctBy(e => e.UserRecipe))
         {
             // >= so that today is the last day seeing the same exercises and tomorrow the exercises will refresh.
-            if (exercise.UserRecipe != null)
+            if (recipe.UserRecipe != null)
             {
-                exercise.UserRecipe.LastSeen = Today;
-                scopedCoreContext.UserUserRecipes.Update(exercise.UserRecipe);
+                recipe.UserRecipe.LastSeen = Today;
+                scopedCoreContext.UserUserRecipes.Update(recipe.UserRecipe);
             }
         }
 

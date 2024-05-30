@@ -90,7 +90,7 @@ public class QueryBuilder
     /// <summary>
     /// The exercise ids and not the variation or exercisevariation ids.
     /// </summary>
-    public QueryBuilder WithExcludeExercises(Action<ExclusionOptions>? builder = null)
+    public QueryBuilder WithExcludeRecipes(Action<ExclusionOptions>? builder = null)
     {
         var options = ExclusionOptions ?? new ExclusionOptions();
         builder?.Invoke(options);
