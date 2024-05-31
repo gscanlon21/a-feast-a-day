@@ -18,12 +18,12 @@ public static class RecipeIngredientExtensions
             Measure.Grams => fraction.ToDouble() / ingredient.ServingSizeGrams,
             Measure.Ounce => fraction.ToDouble() * 28.3495231 / ingredient.ServingSizeGrams,
             Measure.Pound => fraction.ToDouble() * 453.59237 / ingredient.ServingSizeGrams,
-            Measure.Teaspoon => fraction.ToDouble() * ingredient.GramsInACup * 0.02083333 / ingredient.ServingSizeGrams,
-            Measure.Tablespoon => fraction.ToDouble() * ingredient.GramsInACup * 0.0625 / ingredient.ServingSizeGrams,
-            Measure.Handful => fraction.ToDouble() * ingredient.GramsInACup * 0.5 / ingredient.ServingSizeGrams,
-            Measure.Jar => fraction.ToDouble() * ingredient.GramsInACup / ingredient.ServingSizeGrams,
-            Measure.Can => fraction.ToDouble() * ingredient.GramsInACup / ingredient.ServingSizeGrams,
-            Measure.Cup => fraction.ToDouble() * ingredient.GramsInACup / ingredient.ServingSizeGrams,
+            Measure.Teaspoon => fraction.ToDouble() * ingredient.GramsPerCup * 0.02083333 / ingredient.ServingSizeGrams,
+            Measure.Tablespoon => fraction.ToDouble() * ingredient.GramsPerCup * 0.0625 / ingredient.ServingSizeGrams,
+            Measure.Handful => fraction.ToDouble() * ingredient.GramsPerCup * 0.5 / ingredient.ServingSizeGrams,
+            Measure.Jar => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
+            Measure.Can => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
+            Measure.Cup => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
             _ => 1,
         };
     }

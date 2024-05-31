@@ -123,9 +123,10 @@ public partial class UserController
 
         existingRecipe.Name = ingredient.Name;
         existingRecipe.Notes = ingredient.Notes;
+        existingRecipe.Allergens = ingredient.Allergens;
+        existingRecipe.GramsPerCup = ingredient.GramsPerCup;
         existingRecipe.ServingSizeGrams = ingredient.ServingSizeGrams;
         existingRecipe.SkipShoppingList = ingredient.SkipShoppingList;
-        existingRecipe.Allergens = ingredient.Allergens;
 
         foreach (var nutrient in nutrients)
         {

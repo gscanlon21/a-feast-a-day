@@ -36,7 +36,7 @@ public class Ingredient
     [Display(Name = "Serving Size (grams)")]
     public int ServingSizeGrams { get; set; }
 
-    public int GramsInACup { get; set; }
+    public int GramsPerCup { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
