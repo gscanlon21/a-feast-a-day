@@ -1,0 +1,78 @@
+@page "/ingredient/ingredient"
+@inject DisplayHelper DH
+@inject IOptions<SiteSettings> SiteSettings
+@using Core.Consts;
+@using Lib.ViewModels.Newsletter
+@using Core.Models.Options
+@using Microsoft.Extensions.Options
+@using Core.Models.Recipe
+@using Core.Models.User
+@using Core.Models.Newsletter
+
+@{
+    var borderColor = Theme switch
+    {
+        RecipeTheme.Warmup => "palevioletred",
+        RecipeTheme.Main => "mediumpurple",
+        RecipeTheme.Cooldown => "lightskyblue",
+        RecipeTheme.Extra => "lightgreen",
+        RecipeTheme.Other => "lightsalmon",
+        _ => "currentColor"
+    };
+
+    var backgroundColor = Theme switch
+    {
+        RecipeTheme.Warmup => "rgba(250,200,200,.1)",
+        RecipeTheme.Main => "rgba(250,200,250,.1)",
+        RecipeTheme.Cooldown => "rgba(200,200,250,.1)",
+        RecipeTheme.Extra => "rgba(200,250,200,.1)",
+        RecipeTheme.Other => "rgba(250,200,150,.1)",
+        _ => "transparent"
+    };
+}
+
+@*
+    Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
+*@
+<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;justify-content:space-between;
+            border-bottom:4px solid black;border-image-slice:1;outline:1px solid black;background-color:transparent;">
+
+    @if (User != null)
+    {
+        @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
+        <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
+            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"/ingredient/{Model.Id}")">Manage</a>
+        </small>
+    }
+
+    @* div for margin-collapse between text content and image. *@
+    <div>
+        @* min-height so the Manage link doesn't overlap the image. *@
+        <div style="min-height:5ch;">
+            @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
+            <div style="padding-inline-end:1.1ch">
+                <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
+                    <span style="text-decoration:underline;">@Model.Name</span>
+                </h3>
+
+
+                <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Where(n => n.PercentDailyValue > 0).Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName32()</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName32()</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ViewModels.User.UserNewsletterViewModel? User { get; set; }
+
+    [Parameter, EditorRequired]
+    public ViewModels.Newsletter.IngredientViewModel Model { get; set; } = null!;
+
+    [Parameter, EditorRequired]
+    public Verbosity Verbosity { get; set; }
+
+    [Parameter, EditorRequired]
+    public RecipeTheme Theme { get; init; }
+}

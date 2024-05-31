@@ -60,6 +60,10 @@
     <None Include="C:\code\gscanlon\finer-fettle\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Shared\Ingredient\" />
+  </ItemGroup>
+
 
 
 </Project>

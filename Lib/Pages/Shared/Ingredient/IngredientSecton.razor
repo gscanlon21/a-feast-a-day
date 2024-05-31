@@ -1,0 +1,48 @@
+@inject DisplayHelper DH
+@using Core.Models.Recipe
+@using Core.Models.Newsletter;
+@using Core.Models.User;
+
+@if (Ingredients?.Any() == true)
+{
+    <div class="mt-4" style="display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+        @foreach (var ingredient in Ingredients.OrderBy(e => e.Name))
+        {
+            <CascadingValue Value="User">
+                <_Ingredient Model="ingredient" Verbosity="Verbosity" Theme="Theme" />
+            </CascadingValue>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Titles? Title { get; init; }
+
+    [Parameter, EditorRequired]
+    public ViewModels.User.UserNewsletterViewModel? User { get; init; }
+
+    [Parameter, EditorRequired]
+    public RecipeTheme Theme { get; init; }
+
+    [Parameter, EditorRequired]
+    public Verbosity Verbosity { get; init; }
+
+    [Parameter, EditorRequired]
+    public IList<ViewModels.Newsletter.IngredientViewModel>? Ingredients { get; init; }
+
+    public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
+    {
+        public Titles(string header) : this(new MarkupString(header), null, null) { }
+        public Titles(string header, string description) : this(new MarkupString(header), new MarkupString(description), null) { }
+        public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
+    };
+
+    private class IngredientSectionComparer : IEqualityComparer<ViewModels.Newsletter.NewsletterRecipeViewModel>
+    {
+        public bool Equals(ViewModels.Newsletter.NewsletterRecipeViewModel? a, ViewModels.Newsletter.NewsletterRecipeViewModel? b)
+            => EqualityComparer<ViewModels.Newsletter.NewsletterRecipeViewModel>.Default.Equals(a, b);
+
+        public int GetHashCode(ViewModels.Newsletter.NewsletterRecipeViewModel e) => e.GetHashCode();
+    }
+}
