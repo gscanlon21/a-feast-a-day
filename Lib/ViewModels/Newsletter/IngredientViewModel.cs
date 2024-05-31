@@ -21,6 +21,8 @@ public class IngredientViewModel
 
     public bool SkipShoppingList { get; init; }
 
+    public int ServingSizeGrams { get; init; }
+
     public Allergy Allergens { get; init; }
 
     public List<NutrientViewModel> Nutrients { get; init; } = [];

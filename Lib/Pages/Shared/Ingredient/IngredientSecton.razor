@@ -5,14 +5,47 @@
 
 @if (Ingredients?.Any() == true)
 {
-    <div class="mt-4" style="display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
-        @foreach (var ingredient in Ingredients.OrderBy(e => e.Name))
+   if (Title == null)
+   {
+        foreach (var recipeGroup in Ingredients.GroupBy(e => e, new IngredientSectionComparer()).OrderBy(e => e.Key.Name))
         {
-            <CascadingValue Value="User">
-                <_Ingredient Model="ingredient" Verbosity="Verbosity" Theme="Theme" />
-            </CascadingValue>
+            <h2 style="margin-bottom:0;margin-top:1em;color:black;font-size:revert;">@recipeGroup.Key.Name</h2>
+
+            @if (!string.IsNullOrWhiteSpace(recipeGroup.Key.Notes))
+            {
+                <p style="margin-block:0;"><b>Notes</b> - @recipeGroup.Key.Notes</p>
+            }
+
+            <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+                @foreach (var item in recipeGroup)
+                {
+                    <CascadingValue Value="User">
+                        <_Ingredient Model="item" />
+                    </CascadingValue>
+                }
+            </div>
         }
-    </div>
+    }
+    else
+    {
+        <h2 style="margin-bottom:0;margin-top:1em;color:black;font-size:revert;">@Title.Header</h2>
+        @if (Title.Description.HasValue)
+        {
+            <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
+        }
+        <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+            @foreach (var item in Ingredients)
+            {
+                <CascadingValue Value="User">
+                    <_Ingredient Model="item" />
+                </CascadingValue>
+            }
+        </div>
+        @if (Title.Footer.HasValue)
+        {
+            <h6 style="margin-bottom:0;margin-top:.25em;font-weight:normal;font-size:revert;">@Title.Footer.Value</h6>
+        }
+    }
 }
 
 @code {
@@ -21,12 +54,6 @@
 
     [Parameter, EditorRequired]
     public ViewModels.User.UserNewsletterViewModel? User { get; init; }
-
-    [Parameter, EditorRequired]
-    public RecipeTheme Theme { get; init; }
-
-    [Parameter, EditorRequired]
-    public Verbosity Verbosity { get; init; }
 
     [Parameter, EditorRequired]
     public IList<ViewModels.Newsletter.IngredientViewModel>? Ingredients { get; init; }
@@ -38,11 +65,11 @@
         public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
     };
 
-    private class IngredientSectionComparer : IEqualityComparer<ViewModels.Newsletter.NewsletterRecipeViewModel>
+    private class IngredientSectionComparer : IEqualityComparer<ViewModels.Newsletter.IngredientViewModel>
     {
-        public bool Equals(ViewModels.Newsletter.NewsletterRecipeViewModel? a, ViewModels.Newsletter.NewsletterRecipeViewModel? b)
-            => EqualityComparer<ViewModels.Newsletter.NewsletterRecipeViewModel>.Default.Equals(a, b);
+        public bool Equals(ViewModels.Newsletter.IngredientViewModel? a, ViewModels.Newsletter.IngredientViewModel? b)
+            => EqualityComparer<ViewModels.Newsletter.IngredientViewModel>.Default.Equals(a, b);
 
-        public int GetHashCode(ViewModels.Newsletter.NewsletterRecipeViewModel e) => e.GetHashCode();
+        public int GetHashCode(ViewModels.Newsletter.IngredientViewModel e) => e.GetHashCode();
     }
 }

@@ -9,28 +9,6 @@
 @using Core.Models.User
 @using Core.Models.Newsletter
 
-@{
-    var borderColor = Theme switch
-    {
-        RecipeTheme.Warmup => "palevioletred",
-        RecipeTheme.Main => "mediumpurple",
-        RecipeTheme.Cooldown => "lightskyblue",
-        RecipeTheme.Extra => "lightgreen",
-        RecipeTheme.Other => "lightsalmon",
-        _ => "currentColor"
-    };
-
-    var backgroundColor = Theme switch
-    {
-        RecipeTheme.Warmup => "rgba(250,200,200,.1)",
-        RecipeTheme.Main => "rgba(250,200,250,.1)",
-        RecipeTheme.Cooldown => "rgba(200,200,250,.1)",
-        RecipeTheme.Extra => "rgba(200,250,200,.1)",
-        RecipeTheme.Other => "rgba(250,200,150,.1)",
-        _ => "transparent"
-    };
-}
-
 @*
     Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
 *@
@@ -55,7 +33,9 @@
                     <span style="text-decoration:underline;">@Model.Name</span>
                 </h3>
 
-
+                <div style="margin-block:.5em;font-size:x-small;"><b>Notes</b>: @Model.Notes</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Serving Size</b>: @(Model.ServingSizeGrams)g</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Where(n => n.PercentDailyValue > 0).Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName32()</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName32()</div>
             </div>
@@ -69,10 +49,4 @@
 
     [Parameter, EditorRequired]
     public ViewModels.Newsletter.IngredientViewModel Model { get; set; } = null!;
-
-    [Parameter, EditorRequired]
-    public Verbosity Verbosity { get; set; }
-
-    [Parameter, EditorRequired]
-    public RecipeTheme Theme { get; init; }
 }
