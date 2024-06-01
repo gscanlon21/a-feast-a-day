@@ -63,6 +63,6 @@ public enum Verbosity
     /// This is not user-facing. 
     /// It should not have a Display attribute. 
     /// </summary>
-    Debug = Images | CookTime | PrepTime | Servings | Notes | CommonIngredients | Allergens
+    Debug = Images | CookTime | PrepTime | TotalTime | Servings | Notes | CommonIngredients | Allergens
         | 1 << 30 // 1073741824
 }

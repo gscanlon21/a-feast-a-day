@@ -28,6 +28,8 @@ public class RecipeViewModel
     [Display(Name = "Servings")]
     public int Servings { get; set; }
 
+    public bool AdjustableServings { get; set; }
+
     [JsonInclude]
     public List<InstructionViewModel> Instructions { get; init; } = [];
 
