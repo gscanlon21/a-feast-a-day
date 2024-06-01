@@ -144,7 +144,7 @@ public class QueryRunner(Section section)
             {
                 // Don't choose recipes under our desired number of servings.
                 if (ServingsOptions.AtLeastXServingsPerRecipe != null
-                    && BitOperations.PopCount((ulong)recipe.Recipe.Servings) < ServingsOptions.AtLeastXServingsPerRecipe)
+                    && recipe.Recipe.Servings < ServingsOptions.AtLeastXServingsPerRecipe)
                 {
                     if (recipe.Recipe.AdjustableServings)
                     {
@@ -154,7 +154,7 @@ public class QueryRunner(Section section)
                             servings += servings;
                         }
 
-                        var servingsDifference = servings % recipe.Recipe.Servings;
+                        var servingsDifference = servings / recipe.Recipe.Servings;
                         recipe.Scale = servingsDifference;
                         foreach (var ingredient in recipe.Recipe.Ingredients)
                         {
