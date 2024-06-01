@@ -82,6 +82,7 @@ public partial class UserController
             existingRecipe.Name = recipe.Name;
             existingRecipe.Notes = recipe.Notes;
             existingRecipe.Servings = recipe.Servings;
+            existingRecipe.AdjustableServings = recipe.AdjustableServings;
             existingRecipe.CookTime = recipe.CookTime;
             existingRecipe.PrepTime = recipe.PrepTime;
             existingRecipe.Section = recipe.Section;
