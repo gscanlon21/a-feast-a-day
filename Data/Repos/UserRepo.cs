@@ -118,7 +118,7 @@ public class UserRepo(CoreContext context)
                     .Where(nv => onlySections.HasFlag(nv.Section))
                     .SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients.Select(n => new
                     {
-                        Proficiency = i.NumberOfServings(i.Ingredient) * n.PercentDailyValue / 7d,
+                        Proficiency = i.NumberOfServings(i.Ingredient, nv.Scale) * n.PercentDailyValue / 7d,
                         IngredientGroup = n.Nutrients,
                     })))
             }).ToListAsync();

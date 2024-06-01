@@ -9,5 +9,6 @@ namespace Data.Models;
 public record QueryResults(
     Section Section,
     Recipe Recipe,
-    UserRecipe? UserRecipe
+    UserRecipe? UserRecipe,
+    int Scale
 ) : IRecipeCombo;

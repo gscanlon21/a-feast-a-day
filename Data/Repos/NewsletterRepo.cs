@@ -210,7 +210,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
         {
             var recipes = (await new QueryBuilder(section)
-                .WithUser(user, uniqueExercises: false)
+                .WithUser(user)
                 .WithExercises(options =>
                 {
                     options.AddPastRecipes(newsletter.UserFeastRecipes);

@@ -32,7 +32,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
         var userRecipes = await context.UserRecipes.Where(r => r.UserId == user.Id).ToListAsync();
         var recipes = (await new QueryBuilder()
             // Include disabled recipes.
-            .WithUser(user, ignoreIgnored: true, uniqueExercises: false)
+            .WithUser(user, ignoreIgnored: true)
             .WithExercises(x =>
             {
                 x.AddExercises(userRecipes);

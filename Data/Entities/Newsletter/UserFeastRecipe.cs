@@ -15,14 +15,17 @@ public class UserFeastRecipe
 {
     public UserFeastRecipe() { }
 
-    public UserFeastRecipe(UserFeast newsletter, Recipe userRecipe)
+    public UserFeastRecipe(UserFeast newsletter, Recipe userRecipe, int scale)
     {
         UserFeastId = newsletter.Id;
         RecipeId = userRecipe.Id;
+        Scale = scale;
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
+
+    public int Scale { get; private init; }
 
     public int UserFeastId { get; private init; }
 

@@ -13,7 +13,12 @@ namespace Data.Dtos.Newsletter;
 public class RecipeDto(Section section, Recipe recipe, UserRecipe? userRecipe) :
     IRecipeCombo
 {
-    public RecipeDto(QueryResults result) : this(result.Section, result.Recipe, result.UserRecipe) { }
+    public RecipeDto(QueryResults result) : this(result.Section, result.Recipe, result.UserRecipe) 
+    { 
+        Scale = result.Scale;
+    }
+
+    public int Scale { get; set; } = 1;
 
     public Section Section { get; private init; } = section;
 

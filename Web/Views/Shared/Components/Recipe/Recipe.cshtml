@@ -15,6 +15,14 @@
             <label asp-for="Recipe.Notes" class="control-label">Notes</label>
             <input asp-for="Recipe.Notes" type="text" class="form-control" />
         </div>
+        <div class="form-group form-check mb-3">
+            <div>
+                <span><label asp-for="Recipe.AdjustableServings" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.AdjustableServings)</label></span>
+                <input class="form-check-input allow-demo" asp-for="Recipe.AdjustableServings" aria-describedby="fitness-help" />
+            </div>
+            <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
+            <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
+        </div>
 
         <div class="form-group mb-5 mt-3">
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>

@@ -25,6 +25,8 @@ public class UserRecipe
     [Required]
     public bool Ignore { get; set; }
 
+    public int Scale { get; set; } = 1;
+
     /// <summary>
     /// Multiplier for how often this exercise is choosen. Weights the LastSeen date.
     /// </summary>

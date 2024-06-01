@@ -163,7 +163,7 @@ public partial class NewsletterRepo
     private async Task<List<RecipeDto>> GetDebugExercises(User user)
     {
         return (await new QueryBuilder(Section.Debug)
-            .WithUser(user, uniqueExercises: false)
+            .WithUser(user)
             .Build()
             .Query(serviceScopeFactory, take: 1))
             .Select(r => new RecipeDto(r))

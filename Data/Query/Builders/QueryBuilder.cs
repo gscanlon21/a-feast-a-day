@@ -14,7 +14,6 @@ public class QueryBuilder
     private UserOptions? UserOptions;
     private NutrientOptions? NutrientOptions;
     private ServingsOptions? ServingsOptions;
-    private SelectionOptions? SelectionOptions;
     private ExclusionOptions? ExclusionOptions;
     private RecipeOptions? ExerciseOptions;
     private AllergenOptions? AllergenOptions;
@@ -33,17 +32,6 @@ public class QueryBuilder
     public QueryBuilder(Section section)
     {
         Section = section;
-    }
-
-    /// <summary>
-    /// What progression level should we cap exercise's at?
-    /// </summary>
-    public QueryBuilder WithSelectionOptions(Action<SelectionOptions>? builder = null)
-    {
-        var options = SelectionOptions ?? new SelectionOptions();
-        builder?.Invoke(options);
-        SelectionOptions = options;
-        return this;
     }
 
     /// <summary>
@@ -74,17 +62,14 @@ public class QueryBuilder
     /// TODO: Refactor user options to better select what is filtered and what isn't.
     /// ..... (prerequisites, progressions, equipment, no use caution when new, unique exercises).
     /// </summary>
-    public QueryBuilder WithUser(User user, bool ignoreIgnored = false, bool uniqueExercises = true)
+    public QueryBuilder WithUser(User user, bool ignoreIgnored = false)
     {
         UserOptions = new UserOptions(user)
         {
             IgnoreIgnored = ignoreIgnored,
         };
 
-        return WithSelectionOptions(options =>
-        {
-            options.UniqueExercises = uniqueExercises;
-        });
+        return this;
     }
 
     /// <summary>
@@ -132,7 +117,6 @@ public class QueryBuilder
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             RecipeOptions = ExerciseOptions ?? new RecipeOptions(),
-            SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             AllergenOptions = AllergenOptions ?? new AllergenOptions(),
         };
     }

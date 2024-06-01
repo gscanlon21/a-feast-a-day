@@ -15,5 +15,5 @@ public class ManageIngredientViewModel
     public required Data.Entities.User.User User { get; set; } = null!;
     public required Data.Entities.User.Ingredient Ingredient { get; set; } = null!;
 
-    public IList<Nutrient> Nutrients { get; set; }
+    public required IList<Nutrient> Nutrients { get; set; }
 }

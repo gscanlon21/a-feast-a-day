@@ -37,6 +37,9 @@ public class Recipe
     [Display(Name = "Servings")]
     public int Servings { get; set; }
 
+    [Display(Name = "Adjustable Servings")]
+    public bool AdjustableServings { get; set; }
+
     [Required]
     public Section Section { get; set; }
 

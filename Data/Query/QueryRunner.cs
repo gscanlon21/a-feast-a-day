@@ -30,6 +30,7 @@ public class QueryRunner(Section section)
     private class InProgressQueryResults(RecipesQueryResults queryResult) :
         IRecipeCombo
     {
+        public int Scale { get; set; } = 1;
         public Recipe Recipe { get; } = queryResult.Recipe;
         public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
 
@@ -46,7 +47,6 @@ public class QueryRunner(Section section)
 
     public required UserOptions UserOptions { get; init; }
     public required ServingsOptions ServingsOptions { get; init; }
-    public required SelectionOptions SelectionOptions { get; init; }
     public required ExclusionOptions ExclusionOptions { get; init; }
     public required RecipeOptions RecipeOptions { get; init; }
     public required NutrientOptions NutrientOptions { get; init; }
@@ -142,18 +142,29 @@ public class QueryRunner(Section section)
         {
             foreach (var recipe in orderedResults)
             {
-                // Don't choose two variations of the same exercise.
-                if (SelectionOptions.UniqueExercises
-                    && finalResults.Select(r => r.Recipe).Contains(recipe.Recipe))
-                {
-                    continue;
-                }
-
-                // Don't choose exercises under our desired number of servings.
+                // Don't choose recipes under our desired number of servings.
                 if (ServingsOptions.AtLeastXServingsPerRecipe != null
                     && BitOperations.PopCount((ulong)recipe.Recipe.Servings) < ServingsOptions.AtLeastXServingsPerRecipe)
                 {
-                    continue;
+                    if (recipe.Recipe.AdjustableServings)
+                    {
+                        var servings = recipe.Recipe.Servings;
+                        while (servings < ServingsOptions.AtLeastXServingsPerRecipe)
+                        {
+                            servings += servings;
+                        }
+
+                        var servingsDifference = servings % recipe.Recipe.Servings;
+                        recipe.Scale = servingsDifference;
+                        foreach (var ingredient in recipe.Recipe.Ingredients)
+                        {
+                            ingredient.QuantityNumerator *= servingsDifference;
+                        }
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
 
                 // Don't overwork weekly servings.
@@ -196,7 +207,7 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                finalResults.Add(new QueryResults(section, recipe.Recipe, recipe.UserRecipe));
+                finalResults.Add(new QueryResults(section, recipe.Recipe, recipe.UserRecipe, recipe.Scale));
             }
         }
         // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
