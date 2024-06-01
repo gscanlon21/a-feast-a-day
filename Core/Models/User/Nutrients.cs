@@ -167,6 +167,7 @@ public enum Nutrients : long
     [Display(Name = "Phosphorus", GroupName = "Minerals")]
     Phosphorus = 1L << 44, // 17592186044416,
 
+    [DailyAllowance(1, 20, Measure.Grams)]
     [Display(Name = "Sulfur", GroupName = "Minerals")]
     Sulfur = 1L << 45, // 35184372088832,
 
@@ -174,6 +175,7 @@ public enum Nutrients : long
     [Display(Name = "Boron", GroupName = "Minerals")]
     Boron = 1L << 46, // 70368744177664,
 
+    [DailyAllowance(20, 1000, Measure.Micrograms)]
     [Display(Name = "Vanadium", GroupName = "Minerals")]
     Vanadium = 1L << 47, // 140737488355328,
 

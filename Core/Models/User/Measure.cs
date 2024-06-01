@@ -58,4 +58,7 @@ public enum Measure
 
     [Display(Name = "Milligrams", ShortName = "mg")]
     Milligrams = 17,
+
+    [Display(Name = "Micrograms", ShortName = "mcg")]
+    Micrograms = 18,
 }
