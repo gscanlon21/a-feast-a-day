@@ -47,7 +47,7 @@
             var nutrient = Model.Nutrients[i];
             <div class="form-group mb-3">
                 <input type="hidden" asp-for="Nutrients[i].Nutrients" />
-                <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName()</label>
+                <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
 
                 <div style="display:flex;column-gap:1ex;">
                     <input type="number" asp-for="Nutrients[i].PercentDailyValue" style="width:6ch;height:fit-content;" class="allow-demo"

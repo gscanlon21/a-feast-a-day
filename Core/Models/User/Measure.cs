@@ -51,5 +51,11 @@ public enum Measure
     Splash = 14,
 
     [Display(Name = "Jar")]
-    Jar = 15
+    Jar = 15,
+
+    [Display(Name = "Slices")]
+    Slice = 16,
+
+    [Display(Name = "Milligrams", ShortName = "mg")]
+    Milligrams = 17,
 }

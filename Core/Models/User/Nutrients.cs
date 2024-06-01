@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Core.Code.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
 
@@ -8,9 +9,11 @@ public enum Nutrients : long
     None = 0,
 
     // Macronutrients
+    [DailyAllowance(75, 225, Measure.Grams)]
     [Display(Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1 << 0, // 1
 
+    [DailyAllowance(150, 300, Measure.Grams)]
     [Display(Name = "Starch", GroupName = "Carbohydrates")]
     Starch = 1 << 1, // 2
 
@@ -167,6 +170,7 @@ public enum Nutrients : long
     [Display(Name = "Sulfur", GroupName = "Minerals")]
     Sulfur = 1L << 45, // 35184372088832,
 
+    [DailyAllowance(2, 20, Measure.Milligrams)]
     [Display(Name = "Boron", GroupName = "Minerals")]
     Boron = 1L << 46, // 70368744177664,
 
@@ -174,9 +178,11 @@ public enum Nutrients : long
     Vanadium = 1L << 47, // 140737488355328,
 
     // Other Essential Nutrients
+    [DailyAllowance(1, 25, Measure.Grams)]
     [Display(Name = "Lithium", GroupName = "Micronutrients")]
     Lithium = 1L << 50, // 1125899906842624,
 
+    [DailyAllowance(500, 3500, Measure.Milligrams)]
     [Display(Name = "Choline", GroupName = "Micronutrients")]
     Choline = 1L << 51, // 2251799813685248,
 
