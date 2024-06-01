@@ -5,6 +5,7 @@ using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
 using System.Security.Cryptography;
 
 namespace Data.Repos;
@@ -140,7 +141,7 @@ public class UserRepo(CoreContext context)
 
                 return (weeks: actualWeeks, volume: UserNutrient.MuscleTargets.Keys
                     .ToDictionary(m => m, m => (int?)Convert.ToInt32(
-                            monthlyMuscles.Sum(mm => mm.IngredientGroup.HasFlag(m) ? mm.StrengthVolume : 0)
+                            monthlyMuscles.Sum(mm => m.HasFlag(mm.IngredientGroup) ? mm.StrengthVolume / BitOperations.PopCount((ulong)m) : 0)
                         / actualWeeks)
                     )
                 );
