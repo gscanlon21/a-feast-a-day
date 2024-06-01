@@ -36,6 +36,7 @@
                 <div style="margin-block:.5em;font-size:x-small;"><b>Notes</b>: @Model.Notes</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Serving Size</b>: @(Model.ServingSizeGrams)g</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>One Cup Weighs</b>: @(Model.GramsPerCup)g</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Where(n => n.PercentDailyValue > 0).Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName32()</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName32()</div>
             </div>
