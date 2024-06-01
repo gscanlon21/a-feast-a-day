@@ -24,7 +24,7 @@ public static class RecipeIngredientExtensions
             Measure.Jar => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
             Measure.Can => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
             Measure.Cup => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
-            _ => 1,
+            _ => fraction.ToDouble(),
         };
     }
 }
