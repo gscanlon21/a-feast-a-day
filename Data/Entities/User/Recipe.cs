@@ -77,6 +77,7 @@ public class Recipe
         && other.Id == Id;
 
     [NotMapped]
+    [Required]
     public Section[]? SectionBinder
     {
         get => Enum.GetValues<Section>().Where(e => Section.HasFlag(e)).ToArray();
