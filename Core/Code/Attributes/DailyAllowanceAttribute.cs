@@ -9,7 +9,7 @@ namespace Core.Code.Attributes;
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
 public class DailyAllowanceAttribute : Attribute
 {
-    public DailyAllowanceAttribute(int rda, int tul, Measure measure = Measure.Grams)
+    public DailyAllowanceAttribute(double rda, double tul, Measure measure = Measure.Grams)
     {
         RDA = rda;
         TUL = tul;
@@ -17,6 +17,6 @@ public class DailyAllowanceAttribute : Attribute
     }
 
     public Measure Measure { get; set; }
-    public int RDA { get; set; }
-    public int TUL { get; set; }
+    public double RDA { get; set; }
+    public double TUL { get; set; }
 }

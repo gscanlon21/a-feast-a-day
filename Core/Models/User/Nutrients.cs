@@ -13,7 +13,6 @@ public enum Nutrients : long
     [Display(Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1 << 0, // 1
 
-    [DailyAllowance(150, 300, Measure.Grams)]
     [Display(Name = "Starch", GroupName = "Carbohydrates")]
     Starch = 1 << 1, // 2
 
@@ -32,6 +31,7 @@ public enum Nutrients : long
     [Display(Name = "Oligosaccharides", GroupName = "Carbohydrates")]
     Oligosaccharides = 1 << 5, // 32
 
+    [DailyAllowance(150, 0, Measure.Grams)]
     [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Starch | DietaryFiber | Sugar | Oligosaccharides, // 62
 
@@ -56,6 +56,7 @@ public enum Nutrients : long
     /// <summary>
     /// Good Cholesterol.
     /// </summary>
+    [DailyAllowance(0, 250, Measure.Milligrams)]
     [Display(Name = "HDL Cholesterol", GroupName = "Cholesterol")]
     HDLCholesterol = 1 << 10, // 1024
 
@@ -65,6 +66,12 @@ public enum Nutrients : long
     [Display(Name = "LDL Cholesterol", GroupName = "Cholesterol")]
     LDLCholesterol = 1 << 11, // 2048
 
+    /// <summary>
+    /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn’t contribute to increases in your body’s blood cholesterol levels. 
+    /// Cholesterol is a natural substance that’s produced in your body and is found in animal-based foods. It’s a waxy, fatty substance that travels through your bloodstream.
+    /// But problems arise when you eat too many saturated and trans fats. These cause your liver to produce too much LDL (“bad”) cholesterol, which winds up in artery-clogging deposits. 
+    /// For this reason, experts generally recommend avoiding trans fats altogether and limiting saturated fats to 10 percent or lessTrusted Source of your total calorie intake.
+    /// </summary>
     [Display(Name = "Cholesterol", GroupName = "Cholesterol")]
     Cholesterol = HDLCholesterol | LDLCholesterol, // 3072
 
@@ -143,6 +150,7 @@ public enum Nutrients : long
     [Display(Name = "Copper", GroupName = "Minerals")]
     Copper = 1L << 36, // 68719476736
 
+    [DailyAllowance(2.5, 10, Measure.Milligrams)]
     [Display(Name = "Fluoride", GroupName = "Minerals")]
     Fluoride = 1L << 37, // 137438953472
 

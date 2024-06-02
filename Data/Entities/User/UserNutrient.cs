@@ -35,7 +35,6 @@ public class UserNutrient
         [Nutrients.Oligosaccharides] = 100..200,
         [Nutrients.SolubleFiber | Nutrients.InsolubleFiber] = 100..200,
         [Nutrients.MonounsaturatedFats | Nutrients.PolyunsaturatedFats | Nutrients.SaturatedFats] = 100..200,
-        [Nutrients.HDLCholesterol] = 100..200,
         [Nutrients.Calcium] = 100..200,
         [Nutrients.Chloride] = 100..200,
         [Nutrients.Chromium] = 100..200,
@@ -71,7 +70,6 @@ public class UserNutrient
         [Nutrients.Zinc] = 100..200,
         [Nutrients.Choline] = 100..200,
         [Nutrients.Sugar] = 100..150,
-        [Nutrients.LDLCholesterol] = 50..150,
         [Nutrients.TransFats] = 50..100,
     };
 }
