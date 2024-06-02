@@ -5,10 +5,16 @@ using System.Diagnostics;
 
 namespace Data.Models;
 
-[DebuggerDisplay("{Exercise}: {Variation}")]
-public record QueryResults(
-    Section Section,
-    Recipe Recipe,
-    UserRecipe? UserRecipe,
-    int Scale
-) : IRecipeCombo;
+[DebuggerDisplay("{Section}: {Recipe}")]
+public class QueryResults(Section section, Recipe recipe, UserRecipe? userRecipe, int scale) : IRecipeCombo
+{
+    public Section Section { get; init; } = section;
+    public Recipe Recipe { get; init; } = recipe;
+    public UserRecipe? UserRecipe { get; init; } = userRecipe;
+    public int Scale { get; set; } = scale;
+
+    public override int GetHashCode() => HashCode.Combine(Recipe.Id);
+
+    public override bool Equals(object? obj) => obj is QueryResults other
+        && other.Recipe.Id == Recipe.Id;
+}

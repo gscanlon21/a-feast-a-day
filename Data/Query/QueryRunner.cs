@@ -207,7 +207,12 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                finalResults.Add(new QueryResults(section, recipe.Recipe, recipe.UserRecipe, recipe.Scale));
+                // TODO? If the recipe already exists, scale the recipe to make up for the missing servings?
+                var queryResult = new QueryResults(section, recipe.Recipe, recipe.UserRecipe, recipe.Scale);
+                if (!finalResults.Contains(queryResult))
+                {
+                    finalResults.Add(queryResult);
+                }
             }
         }
         // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
