@@ -10,7 +10,7 @@ namespace Data.Entities.User;
 /// User's progression level of an exercise.
 /// </summary>
 [Table("user_recipe"), Comment("User's progression level of an exercise")]
-[DebuggerDisplay("User: {UserId}, Exercise: {ExerciseId}")]
+[DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipe
 {
     [Required]

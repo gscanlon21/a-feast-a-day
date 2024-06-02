@@ -8,7 +8,7 @@ namespace Lib.ViewModels.User;
 /// <summary>
 /// User's progression level of an exercise.
 /// </summary>
-[DebuggerDisplay("User: {UserId}, Exercise: {ExerciseId}")]
+[DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipeViewModel
 {
     [Required]
