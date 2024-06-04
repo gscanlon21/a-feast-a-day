@@ -80,6 +80,9 @@ public enum Nutrients : long
     [Display(ShortName = "Vitamin A", Name = "Vitamin A (Retinoids and Carotenoids)", GroupName = "Vitamins")]
     VitaminA = VitaminARetinoids | VitaminACartenoids, // 98304
 
+    /// <summary>
+    /// Histamine liberator? Increases histamine blood levels by liberating histamine from mast cells.
+    /// </summary>
     [Display(ShortName = "Vitamin B1", Name = "Vitamin B1 (Thiamine)", GroupName = "Vitamins")]
     VitaminB1 = 1 << 17, // 131072
 
@@ -186,10 +189,16 @@ public enum Nutrients : long
 
     // Other Essential Nutrients
 
+    /// <summary>
+    /// Methyl donor.
+    /// </summary>
     [DailyAllowance(500, 3500, Measure.Milligrams)]
     [Display(Name = "Choline", GroupName = "Micronutrients")]
     Choline = 1L << 48, // 281474976710656,
 
+    /// <summary>
+    /// Methyl donor.
+    /// </summary>
     [Display(Name = "Betaine", GroupName = "Micronutrients")]
     Betaine = 1L << 49, // 562949953421312, ,
 
@@ -214,6 +223,9 @@ public enum Nutrients : long
     [Display(Name = "Lysine", GroupName = "Amino Acids / Essential")]
     Lysine = 1L << 54, // 18014398509481984,
 
+    /// <summary>
+    /// Methyl donor.
+    /// </summary>
     [Display(Name = "Methionine", GroupName = "Amino Acids / Essential")]
     Methionine = 1L << 55, // 36028797018963968,
 
