@@ -9,6 +9,7 @@ public enum Nutrients : long
     None = 0,
 
     // Macronutrients
+
     [DailyAllowance(75, 225, Measure.Grams)]
     [Display(Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1 << 0, // 1
@@ -54,31 +55,25 @@ public enum Nutrients : long
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 960
 
     /// <summary>
-    /// Good Cholesterol.
-    /// </summary>
-    [DailyAllowance(0, 250, Measure.Milligrams)]
-    [Display(Name = "HDL Cholesterol", GroupName = "Cholesterol")]
-    HDLCholesterol = 1 << 10, // 1024
-
-    /// <summary>
-    /// Bad Cholesterol.
-    /// </summary>
-    [Display(Name = "LDL Cholesterol", GroupName = "Cholesterol")]
-    LDLCholesterol = 1 << 11, // 2048
-
-    /// <summary>
     /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn’t contribute to increases in your body’s blood cholesterol levels. 
     /// Cholesterol is a natural substance that’s produced in your body and is found in animal-based foods. It’s a waxy, fatty substance that travels through your bloodstream.
     /// But problems arise when you eat too many saturated and trans fats. These cause your liver to produce too much LDL (“bad”) cholesterol, which winds up in artery-clogging deposits. 
     /// For this reason, experts generally recommend avoiding trans fats altogether and limiting saturated fats to 10 percent or lessTrusted Source of your total calorie intake.
+    /// 
+    /// Dietary cholesterol is different from blood (HDL—good or LDL—bad) cholesterol.
     /// </summary>
-    [Display(Name = "Cholesterol", GroupName = "Cholesterol")]
-    Cholesterol = HDLCholesterol | LDLCholesterol, // 3072
+    [DailyAllowance(0, 250, Measure.Milligrams)]
+    [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
+    DietaryCholesterol = 1 << 10, // 1024
 
     // Vitamins
+
     [Display(Name = "Vitamin A (Retinoids)", GroupName = "Vitamins")]
     VitaminARetinoids = 1 << 15, // 32768
 
+    /// <summary>
+    /// Alpha carotene or Beta carotene.
+    /// </summary>
     [Display(Name = "Vitamin A (Carotenoids)", GroupName = "Vitamins")]
     VitaminACartenoids = 1 << 16, // 65536
 
@@ -128,6 +123,7 @@ public enum Nutrients : long
     VitaminK = 1 << 28, // 268435456,
 
     // Major Minerals
+
     [Display(Name = "Calcium", GroupName = "Minerals")]
     Calcium = 1L << 30, // 1073741824
 
@@ -144,6 +140,7 @@ public enum Nutrients : long
     Sodium = 1L << 34, // 17179869184
 
     // Trace Minerals
+
     [Display(Name = "Chromium", GroupName = "Minerals")]
     Chromium = 1L << 35, // 34359738368
 
@@ -188,21 +185,97 @@ public enum Nutrients : long
     Vanadium = 1L << 47, // 140737488355328,
 
     // Other Essential Nutrients
+
+    [DailyAllowance(500, 3500, Measure.Milligrams)]
+    [Display(Name = "Choline", GroupName = "Micronutrients")]
+    Choline = 1L << 48, // 281474976710656,
+
+    [Display(Name = "Betaine", GroupName = "Micronutrients")]
+    Betaine = 1L << 49, // 562949953421312, ,
+
     [DailyAllowance(1, 25, Measure.Grams)]
     [Display(Name = "Lithium", GroupName = "Micronutrients")]
     Lithium = 1L << 50, // 1125899906842624,
 
-    [DailyAllowance(500, 3500, Measure.Milligrams)]
-    [Display(Name = "Choline", GroupName = "Micronutrients")]
-    Choline = 1L << 51, // 2251799813685248,
+
+
+    
+
+    // Essential Amino Acids
+    [Display(Name = "Histidine", GroupName = "Amino Acids / Essential")]
+    Histidine = 1L << 51, // 2251799813685248,
+
+    [Display(Name = "Isoleucine", GroupName = "Amino Acids / Essential")]
+    Isoleucine = 1L << 52, // 4503599627370496,
+
+    [Display(Name = "Leucine", GroupName = "Amino Acids / Essential")]
+    Leucine = 1L << 53, // 9007199254740992,
+
+    [Display(Name = "Lysine", GroupName = "Amino Acids / Essential")]
+    Lysine = 1L << 54, // 18014398509481984,
+
+    [Display(Name = "Methionine", GroupName = "Amino Acids / Essential")]
+    Methionine = 1L << 55, // 36028797018963968,
+
+    [Display(Name = "Phenylalanine", GroupName = "Amino Acids / Essential")]
+    Phenylalanine = 1L << 56, // 72057594037927936,
+
+    [Display(Name = "Threonine", GroupName = "Amino Acids / Essential")]
+    Threonine = 1L << 57, // 144115188075855872,
+
+    [Display(Name = "Tryptophan", GroupName = "Amino Acids / Essential")]
+    Tryptophan = 1L << 58, // 288230376151711744,
+
+    [Display(Name = "Valine", GroupName = "Amino Acids / Essential")]
+    Valine = 1L << 59, // 576460752303423488,
+
+    // Semi-essential Amino Acids
+
+    [Display(Name = "Arginine", GroupName = "Amino Acids / Semiessential")]
+    Arginine = 1L << 60, // 1152921504606846976,
+
+    // Non-essential Amino Acids
+
+    [Display(Name = "Glycine", GroupName = "Amino Acids / Nonessential")]
+    Glycine = 1L << 61, // 2305843009213693952,
+
+    [Display(Name = "Creatine", GroupName = "Amino Acids / Nonessential")]
+    Creatine = 1L << 62, // 4611686018427387904,
+
+    //[Display(Name = "Alanine", GroupName = "Micronutrients")]
+    //Alanine = 1L << 12, // 2251799813685248,
+
+    //[Display(Name = "Aspartic acid", GroupName = "Micronutrients")]
+    //AsparticAcid = 1L << 14, // 2251799813685248,
+
+    //[Display(Name = "Cystine", GroupName = "Micronutrients")]
+    //Cystine = 1L << 29, // 2251799813685248,
+
+    //[Display(Name = "Glutamic acid", GroupName = "Micronutrients")]
+    //GlutamicAcid = 1L << 48, // 2251799813685248,
+
+    //[Display(Name = "Hydroxyproline", GroupName = "Micronutrients")]
+    //Hydroxyproline = 1L << 53, // 2251799813685248,
+
+    //[Display(Name = "Proline", GroupName = "Micronutrients")]
+    //Proline = 1L << 59, // 2251799813685248,
+
+    //[Display(Name = "Serine", GroupName = "Micronutrients")]
+    //Serine = 1L << 60, // 2251799813685248,
+
+    //[Display(Name = "Tyrosine", GroupName = "Micronutrients")]
+    //Tyrosine = 1L << 63, // 2251799813685248,
+
 
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | PolyunsaturatedFats | SaturatedFats | TransFats
-        | HDLCholesterol | LDLCholesterol
+        | DietaryCholesterol
         | VitaminARetinoids | VitaminACartenoids
         | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
         | VitaminC | VitaminD | VitaminE | VitaminK
         | Calcium | Chloride | Magnesium | Potassium | Sodium
         | Chromium | Copper | Fluoride | Iodine | Iron | Manganese | Selenium | Zinc | Molybdenum | Phosphorus | Sulfur | Boron | Vanadium
-        | Lithium | Choline
+        | Choline | Betaine | Lithium
+        | Histidine | Isoleucine | Leucine | Lysine | Methionine | Phenylalanine | Threonine | Tryptophan | Valine
+        | Arginine | Glycine | Creatine
 }

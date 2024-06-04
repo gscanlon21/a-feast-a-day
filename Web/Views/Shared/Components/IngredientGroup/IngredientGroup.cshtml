@@ -24,7 +24,9 @@
         .Select(kv => Model.GetMuscleTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
-        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName()).Append(new IngredientGroupViewModel.MonthlyMuscle()
+        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
+        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayNameType.Name))
+        .Append(new IngredientGroupViewModel.MonthlyMuscle()
         {
             IngredientGroup = Nutrients.All,
             ShowButtons = true,
