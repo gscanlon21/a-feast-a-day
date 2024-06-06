@@ -68,3 +68,8 @@ public enum Measure
     [Display(Name = "IU")]
     IU = 20,
 }
+
+public static class MeasureConsts
+{
+    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.IU];
+}
