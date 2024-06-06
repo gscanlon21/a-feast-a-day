@@ -2,9 +2,11 @@
 using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.User;
+using Data.Code.Extensions;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 
@@ -26,6 +28,7 @@ public class UserRepo(CoreContext context)
     public async Task<User?> GetUser(string? email, string? token,
         bool includeIngredientGroups = false,
         bool includeServings = false,
+        bool includeFamilies = false,
         bool allowDemoUser = false)
     {
         if (email == null || token == null)
@@ -43,6 +46,11 @@ public class UserRepo(CoreContext context)
         if (includeServings)
         {
             query = query.Include(u => u.UserServings);
+        }
+
+        if (includeFamilies)
+        {
+            query = query.Include(u => u.UserFamilies);
         }
 
         var user = await query
@@ -93,8 +101,13 @@ public class UserRepo(CoreContext context)
     {
         var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
         var userServings = UserServing.MuscleTargets.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
+        double familyCount = Math.Max(1, user.UserFamilies.Count);
+        var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
+        var familyNutrientServings = EnumExtensions.GetSingleValues32<Nutrients>().ToDictionary(n => n, n => 
+            familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowance(fp.Value))
+        );
 
-        var strengthNewsletterGroups = await context.UserFeasts
+        var weeklyFeasts = (await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.Recipe)
@@ -114,29 +127,37 @@ public class UserRepo(CoreContext context)
             {
                 g.Key,
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                NewsletterVariations = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
                     // Only select variations that worked a strengthening intensity.
                     .Where(nv => onlySections.HasFlag(nv.Section))
-                    .SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients.Select(n => new
-                    {
-                        Proficiency = i.NumberOfServings(i.Ingredient, nv.Scale) * n.PercentDailyValue / 7d,
-                        IngredientGroup = n.Nutrients,
-                    })))
-            }).ToListAsync();
+            }).ToListAsync()).Select(n => new
+            {
+                n.Key,
+                Recipes = n.Recipes.SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients.Select(n => new
+                {
+                    nv.Scale,
+                    nv.Section,
+                    i.Ingredient,
+                    RecipeIngredient = i,
+                    IngredientGroup = n.Nutrients,
+                })))
+            }).ToList();
 
         // .Max/.Min throw exceptions when the collection is empty.
-        if (strengthNewsletterGroups.Count != 0)
+        if (weeklyFeasts.Count != 0)
         {
             // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
-            var actualWeeks = (Today.DayNumber - strengthNewsletterGroups.Min(n => n.Key).DayNumber) / 7d;
+            var actualWeeks = (Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
             {
-                var monthlyMuscles = strengthNewsletterGroups
-                    .SelectMany(ng => ng.NewsletterVariations.Select(nv => new
+                var monthlyMuscles = weeklyFeasts
+                    .SelectMany(ng => ng.Recipes.Select(nv => new
                     {
                         nv.IngredientGroup,
-                        StrengthVolume = nv.Proficiency / userServings,
+                        StrengthVolume = familyNutrientServings.FirstOrDefault(fn => fn.Key == nv.IngredientGroup).Value 
+                            / (nv.RecipeIngredient.NormalizedGrams(nv.Ingredient, nv.Scale) / ((user.UserServings.FirstOrDefault(us => us.Section == nv.Section)?.Count ?? 1) / familyCount))
+                            * 100,
                     })).ToList();
 
                 return (weeks: actualWeeks, volume: UserNutrient.MuscleTargets.Keys

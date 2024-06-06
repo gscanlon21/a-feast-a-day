@@ -185,6 +185,9 @@ public class User
     #endregion
     #region Navigation Properties
 
+    [JsonIgnore, InverseProperty(nameof(UserFamily.User))]
+    public virtual ICollection<UserFamily> UserFamilies { get; private init; } = [];
+
     [JsonIgnore, InverseProperty(nameof(UserNutrient.User))]
     public virtual ICollection<UserNutrient> UserIngredientGroups { get; private init; } = [];
 

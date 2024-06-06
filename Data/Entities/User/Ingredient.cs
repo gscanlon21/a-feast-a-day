@@ -36,6 +36,8 @@ public class Ingredient
     [Display(Name = "Serving Size (grams)")]
     public int ServingSizeGrams { get; set; }
 
+    public int CaloriesPerServing { get; set; }
+
     public int GramsPerCup { get; set; }
 
     /// <summary>

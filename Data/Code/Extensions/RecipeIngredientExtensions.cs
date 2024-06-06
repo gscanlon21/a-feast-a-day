@@ -27,4 +27,26 @@ public static class RecipeIngredientExtensions
             _ => fraction.ToDouble(),
         } * scale;
     }
+
+    /// <summary>
+    /// Returns null if the source list does not contain any items.
+    /// </summary>
+    public static double NormalizedGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
+    {
+        var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);
+
+        return recipeIngredient.Measure switch
+        {
+            Measure.Grams => fraction.ToDouble(),
+            Measure.Ounce => fraction.ToDouble() * 28.3495231,
+            Measure.Pound => fraction.ToDouble() * 453.59237,
+            Measure.Teaspoon => fraction.ToDouble() * ingredient.GramsPerCup * 0.02083333,
+            Measure.Tablespoon => fraction.ToDouble() * ingredient.GramsPerCup * 0.0625,
+            Measure.Handful => fraction.ToDouble() * ingredient.GramsPerCup * 0.5,
+            Measure.Jar => fraction.ToDouble() * ingredient.GramsPerCup,
+            Measure.Can => fraction.ToDouble() * ingredient.GramsPerCup,
+            Measure.Cup => fraction.ToDouble() * ingredient.GramsPerCup,
+            _ => fraction.ToDouble(),
+        } * scale;
+    }
 }

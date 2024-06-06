@@ -25,6 +25,10 @@ public class Nutrient
     /// </summary>
     public Nutrients Nutrients { get; set; }
 
+    public Measure Measure { get; set; }
+
+    public int Value { get; set; }
+
     public int PercentDailyValue { get; set; }
 
     /// <summary>

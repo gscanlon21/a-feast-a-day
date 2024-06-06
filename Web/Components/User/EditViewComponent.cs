@@ -44,6 +44,15 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
             });
         }
 
+        while (viewModel.UserFamilies.Count < 10)
+        {
+            viewModel.UserFamilies.Add(new UserFamily()
+            {
+                UserId = viewModel.User.Id,
+                Hide = true,
+            });
+        }
+
         return viewModel;
     }
 }

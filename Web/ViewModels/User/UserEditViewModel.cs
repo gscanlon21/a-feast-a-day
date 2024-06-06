@@ -2,6 +2,7 @@
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
+using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
@@ -30,6 +31,7 @@ public class UserEditViewModel
         Verbosity = user.Verbosity;
         FootnoteType = user.FootnoteType;
         SendHour = user.SendHour;
+        UserFamilies = user.UserFamilies.ToList();
         MaxIngredients = user.MaxIngredients;
         ExcludeAllergens = user.ExcludeAllergens;
         AtLeastXServingsPerRecipe = user.AtLeastXServingsPerRecipe;
@@ -71,6 +73,10 @@ public class UserEditViewModel
 
     [Display(Name = "Weekly Servings", Description = "Customize weekly servings.")]
     public IList<UserServingViewModel> UserServings { get; set; } = [];
+
+    [Required, Range(1, 10)]
+    [Display(Name = "Family Members", Description = "Customize family members.")]
+    public IList<UserFamily> UserFamilies { get; set; } = [];
 
     [Range(1, 9)]
     [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]

@@ -61,4 +61,10 @@ public enum Measure
 
     [Display(Name = "Micrograms", ShortName = "mcg")]
     Micrograms = 18,
+
+    [Display(Name = "Percent", ShortName = "%")]
+    Percent = 19,
+
+    [Display(Name = "IU")]
+    IU = 20,
 }
