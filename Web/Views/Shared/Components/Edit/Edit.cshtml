@@ -131,7 +131,7 @@
                                             <output name="OutputFamillyWeight@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].Weight)">@Model.UserFamilies[id].Weight</output>
                                             <div style="display:flex;width:100%;">
                                                 <input asp-for="UserFamilies[id].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                       step="1" min="1" max="9"
+                                                       step="1" min="@UserFamily.Consts.WeightMin" max="@UserFamily.Consts.WeightMax"
                                                        oninput="OutputFamillyWeight@(id).value = this.valueAsNumber" list="ListFamillyWeight@(id)" />
                                                 <datalist id="ListFamillyWeight@(id)">
                                                     <option value="3"></option>
@@ -152,7 +152,7 @@
                                             <output name="OutputFamillyCalories@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].CaloriesPerDay)">@Model.UserFamilies[id].CaloriesPerDay</output>
                                             <div style="display:flex;width:100%;">
                                                 <input asp-for="UserFamilies[id].CaloriesPerDay" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                       step="1" min="1" max="9"
+                                                       step="50" min="@UserFamily.Consts.CaloriesPerDayMin" max="@UserFamily.Consts.CaloriesPerDayMax"
                                                        oninput="OutputFamillyCalories@(id).value = this.valueAsNumber" list="ListFamillyCalories@(id)" />
                                                 <datalist id="ListFamillyCalories@(id)">
                                                     <option value="3"></option>

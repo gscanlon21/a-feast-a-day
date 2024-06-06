@@ -49,7 +49,7 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
             viewModel.UserFamilies.Add(new UserFamily()
             {
                 UserId = viewModel.User.Id,
-                Hide = true,
+                Hide = viewModel.UserFamilies.Count > 0,
             });
         }
 
