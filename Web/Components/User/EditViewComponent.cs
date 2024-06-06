@@ -44,9 +44,20 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
             });
         }
 
+        foreach (var family in viewModel.User.UserFamilies)
+        {
+            viewModel.UserFamilies.Add(new UserFamilyViewModel()
+            {
+                Person = family.Person,
+                CaloriesPerDay = family.CaloriesPerDay,
+                Weight = family.Weight,
+                UserId = viewModel.User.Id,
+            });
+        }
+
         while (viewModel.UserFamilies.Count < 10)
         {
-            viewModel.UserFamilies.Add(new UserFamily()
+            viewModel.UserFamilies.Add(new UserFamilyViewModel()
             {
                 UserId = viewModel.User.Id,
                 Hide = viewModel.UserFamilies.Count > 0,

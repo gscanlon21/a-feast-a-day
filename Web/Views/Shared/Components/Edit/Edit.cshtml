@@ -113,117 +113,120 @@
                 <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.ExcludeAllergens)</div>
             </div>
 
-            <div class="mb-3">
-                <b class="">Edit Family Members</b>
-                <div class="mt-1 ps-3">
-                    @for (int id = 0; id < Model.UserFamilies.Count; id++)
-                    {
-                        var userinstruction = Model.UserFamilies[id];
-                        <div id="custom-instruction-@id" class="custom-instruction @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
-                            <div class="row">
-                                <input id="hide-instruction-input-@id" type="hidden" asp-for="UserFamilies[id].Hide" />
-                                <input type="hidden" asp-for="UserFamilies[id].UserId" value="@Model.User.Id" />
+            <div class="form-group mb-3">
+                <details class="mb-3" @((Model.WasUpdated == false || Model.UserFamilies.Count(f => f.Person != Person.None) == 0) ? "open='open'" : "")>
+                    <summary class=""><b class="">Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
 
-                                <div class="mb-3">
-                                    <div class="form-group mb-3">
-                                        <label asp-for="UserFamilies[id].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Weight)</label>
-                                        <div style="display:flex;column-gap:1ex;">
-                                            <output name="OutputFamillyWeight@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].Weight)">@Model.UserFamilies[id].Weight</output>
-                                            <div style="display:flex;width:100%;">
-                                                <input asp-for="UserFamilies[id].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                       step="1" min="@UserFamily.Consts.WeightMin" max="@UserFamily.Consts.WeightMax"
-                                                       oninput="OutputFamillyWeight@(id).value = this.valueAsNumber" list="ListFamillyWeight@(id)" />
-                                                <datalist id="ListFamillyWeight@(id)">
-                                                    <option value="3"></option>
-                                                </datalist>
+                    <div class="mt-1 ps-3">
+                        @for (int id = 0; id < Model.UserFamilies.Count; id++)
+                        {
+                            var userinstruction = Model.UserFamilies[id];
+                            <div id="custom-family-@id" class="custom-family @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
+                                <div class="row">
+                                    <input id="hide-family-input-@id" type="hidden" asp-for="UserFamilies[id].Hide" />
+                                    <input type="hidden" asp-for="UserFamilies[id].UserId" value="@Model.User.Id" />
+
+                                    <div class="mb-3">
+                                        <div class="form-group mb-3">
+                                            <label asp-for="UserFamilies[id].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Weight)</label>
+                                            <div style="display:flex;column-gap:1ex;">
+                                                <output name="OutputFamillyWeight@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].Weight)">@Model.UserFamilies[id].Weight</output>
+                                                <div style="display:flex;width:100%;">
+                                                    <input asp-for="UserFamilies[id].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                           step="1" min="@UserFamily.Consts.WeightMin" max="@UserFamily.Consts.WeightMax"
+                                                           oninput="OutputFamillyWeight@(id).value = this.valueAsNumber" list="ListFamillyWeight@(id)" />
+                                                    <datalist id="ListFamillyWeight@(id)">
+                                                        <option value="3"></option>
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                            <span asp-validation-for="UserFamilies[id].Weight" class="text-danger"></span>
+                                            <div id="refresh-functional-help" class="form-text">
+                                                @Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Weight)
                                             </div>
                                         </div>
-                                        <span asp-validation-for="UserFamilies[id].Weight" class="text-danger"></span>
-                                        <div id="refresh-functional-help" class="form-text">
-                                            @Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Weight)
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="mb-3">
-                                    <div class="form-group mb-3">
-                                        <label asp-for="UserFamilies[id].CaloriesPerDay" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].CaloriesPerDay)</label>
-                                        <div style="display:flex;column-gap:1ex;">
-                                            <output name="OutputFamillyCalories@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].CaloriesPerDay)">@Model.UserFamilies[id].CaloriesPerDay</output>
-                                            <div style="display:flex;width:100%;">
-                                                <input asp-for="UserFamilies[id].CaloriesPerDay" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                       step="50" min="@UserFamily.Consts.CaloriesPerDayMin" max="@UserFamily.Consts.CaloriesPerDayMax"
-                                                       oninput="OutputFamillyCalories@(id).value = this.valueAsNumber" list="ListFamillyCalories@(id)" />
-                                                <datalist id="ListFamillyCalories@(id)">
-                                                    <option value="3"></option>
-                                                </datalist>
+                                    <div class="mb-3">
+                                        <div class="form-group mb-3">
+                                            <label asp-for="UserFamilies[id].CaloriesPerDay" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].CaloriesPerDay)</label>
+                                            <div style="display:flex;column-gap:1ex;">
+                                                <output name="OutputFamillyCalories@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].CaloriesPerDay)">@Model.UserFamilies[id].CaloriesPerDay</output>
+                                                <div style="display:flex;width:100%;">
+                                                    <input asp-for="UserFamilies[id].CaloriesPerDay" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                           step="50" min="@UserFamily.Consts.CaloriesPerDayMin" max="@UserFamily.Consts.CaloriesPerDayMax"
+                                                           oninput="OutputFamillyCalories@(id).value = this.valueAsNumber" list="ListFamillyCalories@(id)" />
+                                                    <datalist id="ListFamillyCalories@(id)">
+                                                        <option value="3"></option>
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                            <span asp-validation-for="UserFamilies[id].CaloriesPerDay" class="text-danger"></span>
+                                            <div id="refresh-functional-help" class="form-text">
+                                                @Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].CaloriesPerDay)
                                             </div>
                                         </div>
-                                        <span asp-validation-for="UserFamilies[id].CaloriesPerDay" class="text-danger"></span>
-                                        <div id="refresh-functional-help" class="form-text">
-                                            @Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].CaloriesPerDay)
-                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group mb-3">
-                                    <label asp-for="UserFamilies[id].Person" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Person)</label>
-                                    <select asp-for="UserFamilies[id].Person" class="form-control overflow-auto" aria-describedby="footnote-help" size="5"
-                                            asp-items='@(EnumExtensions.GetSingleValues32<Person>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))'>
-                                    </select>
-                                    <span asp-validation-for="UserFamilies[id].Person" class="text-danger"></span>
-                                    <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Person)</div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="UserFamilies[id].Person" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Person)</label>
+                                        <select asp-for="UserFamilies[id].Person" class="form-control overflow-auto" aria-describedby="footnote-help"
+                                                asp-items='@(EnumExtensions.GetSingleValues32<Person>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text)).Prepend(new SelectListItem() { Text = "" })'>
+                                        </select>
+                                        <span asp-validation-for="UserFamilies[id].Person" class="text-danger"></span>
+                                        <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Person)</div>
+                                    </div>
                                 </div>
                             </div>
+                        }
+                        <div class="btn-group">
+                            <button id="custom-family-add-button" type="button" class="btn btn-outline-primary">Add</button>
+                            <button id="custom-family-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
                         </div>
-                    }
-                    <div class="btn-group">
-                        <button id="custom-instruction-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                        <button id="custom-instruction-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
                     </div>
-                </div>
 
-                <script defer="defer">
-                    document.getElementById('custom-instruction-add-button').addEventListener('click', (e) => {
-                        const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
-                        for (const instruction of instructions) {
-                            if (instruction.classList.contains('d-none')) {
-                                // Unhide the instruction
-                                instruction.classList.remove('d-none');
-                                document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'False';
-                                break;
+                    <script defer="defer">
+                        document.getElementById('custom-family-add-button').addEventListener('click', (e) => {
+                            const instructions = Array.from(document.getElementsByClassName('custom-family'));
+                            for (const instruction of instructions) {
+                                if (instruction.classList.contains('d-none')) {
+                                    // Unhide the instruction
+                                    instruction.classList.remove('d-none');
+                                    document.getElementById('hide-family-input-' + instruction.dataset.day).value = 'False';
+                                    break;
+                                }
                             }
-                        }
 
-                        // Always show the remove button after adding a instruction
-                        document.getElementById('custom-instruction-remove-button').classList.remove('d-none');
+                            // Always show the remove button after adding a instruction
+                            document.getElementById('custom-family-remove-button').classList.remove('d-none');
 
-                        // Hide the add button if we have already shown all instructions
-                        if (instructions.every(f => !f.classList.contains('d-none'))) {
-                            e.currentTarget.classList.add('d-none');
-                        }
-                    });
-
-                    document.getElementById('custom-instruction-remove-button').addEventListener('click', (e) => {
-                        const instructions = Array.from(document.getElementsByClassName('custom-instruction'));
-                        for (const instruction of instructions.reverse()) {
-                            if (!instruction.classList.contains('d-none')) {
-                                // Hide the instruction
-                                instruction.classList.add('d-none');
-                                document.getElementById('hide-instruction-input-' + instruction.dataset.day).value = 'True';
-                                break;
+                            // Hide the add button if we have already shown all instructions
+                            if (instructions.every(f => !f.classList.contains('d-none'))) {
+                                e.currentTarget.classList.add('d-none');
                             }
-                        }
+                        });
 
-                        // Always show the add button after removing a instruction
-                        document.getElementById('custom-instruction-add-button').classList.remove('d-none');
+                        document.getElementById('custom-family-remove-button').addEventListener('click', (e) => {
+                            const instructions = Array.from(document.getElementsByClassName('custom-family'));
+                            for (const instruction of instructions.reverse()) {
+                                if (!instruction.classList.contains('d-none')) {
+                                    // Hide the instruction
+                                    instruction.classList.add('d-none');
+                                    document.getElementById('hide-family-input-' + instruction.dataset.day).value = 'True';
+                                    break;
+                                }
+                            }
 
-                        // Hide the remove button when there is one remaining instruction
-                        if (instructions.filter(f => !f.classList.contains('d-none')).length === 1) {
-                            e.currentTarget.classList.add('d-none');
-                        }
-                    });
-                </script>
+                            // Always show the add button after removing a instruction
+                            document.getElementById('custom-family-add-button').classList.remove('d-none');
+
+                            // Hide the remove button when there is one remaining instruction
+                            if (instructions.filter(f => !f.classList.contains('d-none')).length === 1) {
+                                e.currentTarget.classList.add('d-none');
+                            }
+                        });
+                    </script>
+                </details>
             </div>
 
             @if (Model.User.IsDemoUser)

@@ -31,9 +31,6 @@ public class UserFamily
     [Range(Consts.CaloriesPerDayMin, Consts.CaloriesPerDayMax)]
     public int CaloriesPerDay { get; init; } = Consts.CaloriesPerDayDefault;
 
-    [NotMapped]
-    public bool Hide { get; set; }
-
     [ForeignKey(nameof(Entities.User.User.Id))]
     public int UserId { get; init; }
 
