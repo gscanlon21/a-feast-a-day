@@ -35,7 +35,7 @@ public static class DailyAllowanceExtensions
                     (null, not null) => $"(TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)})",
                     (not null, null) => $"(RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)})",
                     (not null, not null) => $"(RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}, TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)})",
-                    => string.Empty
+                    _ => string.Empty
                 };
             }
         }
