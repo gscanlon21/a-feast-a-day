@@ -104,7 +104,7 @@ public class UserRepo(CoreContext context)
         double familyCount = Math.Max(1, user.UserFamilies.Count);
         var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
         var familyNutrientServings = EnumExtensions.GetSingleValues32<Nutrients>().ToDictionary(n => n, n => 
-            familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowance(fp.Value))
+            (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowance(fp.Value))
         );
 
         var weeklyFeasts = (await context.UserFeasts
@@ -152,13 +152,20 @@ public class UserRepo(CoreContext context)
             if (actualWeeks > UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
             {
                 var monthlyMuscles = weeklyFeasts
-                    .SelectMany(ng => ng.Recipes.Select(nv => new
-                    {
-                        nv.IngredientGroup,
-                        StrengthVolume = familyNutrientServings.FirstOrDefault(fn => fn.Key == nv.IngredientGroup).Value 
-                            / (nv.RecipeIngredient.NormalizedGrams(nv.Ingredient, nv.Scale) / ((user.UserServings.FirstOrDefault(us => us.Section == nv.Section)?.Count ?? 1) / familyCount))
-                            * 100,
-                    })).ToList();
+                    .SelectMany(ng => ng.Recipes
+                        .SelectMany(nv => nv.Ingredient.Nutrients
+                            .Select(n => {
+                                var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nv.IngredientGroup).Value ?? 100;
+                                return new
+                                {
+                                    nv.IngredientGroup,
+                                    StrengthVolume = (n.Measure.ToGrams(n.Value) * nv.RecipeIngredient.NormalizedGrams(nv.Ingredient, nv.Scale)) / ((user.UserServings.FirstOrDefault(us => us.Section == nv.Section)?.Count ?? 1) / familyCount)
+                                        / (familyGrams > 0 ? familyGrams : 100)
+                                        * 100,
+                                };
+                            })
+                        )
+                    ).ToList();
 
                 return (weeks: actualWeeks, volume: UserNutrient.MuscleTargets.Keys
                     .ToDictionary(m => m, m => (int?)Convert.ToInt32(
