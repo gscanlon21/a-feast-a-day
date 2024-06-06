@@ -133,14 +133,16 @@ public partial class UserController
             var existingNutrient = existingRecipe.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
             if (existingNutrient != null)
             {
-                existingNutrient.PercentDailyValue = nutrient.PercentDailyValue;
+                existingNutrient.Value = nutrient.Value;
+                existingNutrient.Measure = nutrient.Measure;
             }
             else
             {
                 existingRecipe.Nutrients.Add(new Nutrient()
                 {
                     Nutrients = nutrient.Nutrients,
-                    PercentDailyValue = nutrient.PercentDailyValue
+                    Measure = nutrient.Measure,
+                    Value = nutrient.Value
                 });
             }
         }

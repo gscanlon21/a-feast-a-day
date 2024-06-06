@@ -29,8 +29,6 @@ public class Nutrient
 
     public int Value { get; set; }
 
-    public int PercentDailyValue { get; set; }
-
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
