@@ -6,6 +6,7 @@ using Data.Code.Extensions;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -107,7 +108,7 @@ public class UserRepo(CoreContext context)
             (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowance(fp.Value))
         );
 
-        var weeklyFeasts = (await context.UserFeasts
+        var weeklyFeasts = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.Recipe)
@@ -130,18 +131,7 @@ public class UserRepo(CoreContext context)
                 Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
                     // Only select variations that worked a strengthening intensity.
                     .Where(nv => onlySections.HasFlag(nv.Section))
-            }).ToListAsync()).Select(n => new
-            {
-                n.Key,
-                Recipes = n.Recipes.SelectMany(nv => nv.Recipe.Ingredients.SelectMany(i => i.Ingredient.Nutrients.Select(n => new
-                {
-                    nv.Scale,
-                    nv.Section,
-                    i.Ingredient,
-                    RecipeIngredient = i,
-                    IngredientGroup = n.Nutrients,
-                })))
-            }).ToList();
+            }).ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
@@ -152,24 +142,30 @@ public class UserRepo(CoreContext context)
             if (actualWeeks > UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
             {
                 var monthlyMuscles = weeklyFeasts
-                    .SelectMany(ng => ng.Recipes
-                        .SelectMany(nv => nv.Ingredient.Nutrients
-                            .Select(n => {
-                                var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nv.IngredientGroup).Value ?? 100;
-                                return new
-                                {
-                                    nv.IngredientGroup,
-                                    StrengthVolume = (n.Measure.ToGrams(n.Value) * nv.RecipeIngredient.NormalizedGrams(nv.Ingredient, nv.Scale)) / ((user.UserServings.FirstOrDefault(us => us.Section == nv.Section)?.Count ?? 1) / familyCount)
-                                        / (familyGrams > 0 ? familyGrams : 100)
-                                        * 100,
-                                };
-                            })
+                    .SelectMany(feast => feast.Recipes
+                        .SelectMany(recipe => recipe.Recipe.Ingredients
+                            .SelectMany(recipeIngredient => recipeIngredient.Ingredient.Nutrients
+                                .Select(nutrient => {
+                                    var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
+                                    var gramsOfIngredientUsed = recipeIngredient.NormalizedGrams(recipeIngredient.Ingredient, recipe.Scale);
+                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
+                                    var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.ServingSizeGrams * gramsOfNutrientPerServing 
+                                            / ((user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? 1) / familyCount)
+                                            / (familyGrams > 0 ? familyGrams : 100)
+                                            * 100;
+                                    return new
+                                    {
+                                        Nutrient = nutrient.Nutrients,
+                                        PercentDailyValue = percentDailyValue,
+                                    };
+                                })
+                            )
                         )
                     ).ToList();
 
                 return (weeks: actualWeeks, volume: UserNutrient.MuscleTargets.Keys
                     .ToDictionary(m => m, m => (int?)Convert.ToInt32(
-                            monthlyMuscles.Sum(mm => m.HasFlag(mm.IngredientGroup) ? mm.StrengthVolume / BitOperations.PopCount((ulong)m) : 0)
+                            monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.PercentDailyValue / BitOperations.PopCount((ulong)m) : 0)
                         / actualWeeks)
                     )
                 );

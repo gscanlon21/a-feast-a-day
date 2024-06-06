@@ -12,7 +12,7 @@ namespace Data.Entities.User;
 /// Exercises listed on the website
 /// </summary>
 [Table("nutrient"), Comment("Recipes listed on the website")]
-[DebuggerDisplay("{Name,nq}")]
+[DebuggerDisplay("{Nutrients}: {Measure} - {Value}")]
 public class Nutrient
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
