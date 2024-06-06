@@ -40,6 +40,6 @@ public static class DailyAllowanceExtensions
             }
         }
 
-        return string.Empty;    
+        return string.Empty;
     }
 }

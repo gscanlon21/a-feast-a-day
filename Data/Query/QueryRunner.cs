@@ -172,7 +172,7 @@ public class QueryRunner(Section section)
                 }
 
                 // Don't overwork weekly servings.
-                if (ServingsOptions.WeeklyServings.HasValue 
+                if (ServingsOptions.WeeklyServings.HasValue
                     && finalResults.Aggregate(recipe.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings.Value)
                 {
                     continue;

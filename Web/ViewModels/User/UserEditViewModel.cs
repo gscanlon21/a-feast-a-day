@@ -2,7 +2,6 @@
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
-using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 

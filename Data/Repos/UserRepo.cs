@@ -6,8 +6,6 @@ using Data.Code.Extensions;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 
@@ -104,7 +102,7 @@ public class UserRepo(CoreContext context)
         var userServings = UserServing.MuscleTargets.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
         double familyCount = Math.Max(1, user.UserFamilies.Count);
         var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
-        var familyNutrientServings = EnumExtensions.GetSingleValues32<Nutrients>().ToDictionary(n => n, n => 
+        var familyNutrientServings = EnumExtensions.GetSingleValues32<Nutrients>().ToDictionary(n => n, n =>
             (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowance(fp.Value))
         );
 
@@ -145,11 +143,12 @@ public class UserRepo(CoreContext context)
                     .SelectMany(feast => feast.Recipes
                         .SelectMany(recipe => recipe.Recipe.Ingredients
                             .SelectMany(recipeIngredient => recipeIngredient.Ingredient.Nutrients
-                                .Select(nutrient => {
+                                .Select(nutrient =>
+                                {
                                     var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
                                     var gramsOfIngredientUsed = recipeIngredient.NormalizedGrams(recipeIngredient.Ingredient, recipe.Scale);
                                     var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                    var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.ServingSizeGrams * gramsOfNutrientPerServing 
+                                    var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.ServingSizeGrams * gramsOfNutrientPerServing
                                             / ((user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? 1) / familyCount)
                                             / (familyGrams > 0 ? familyGrams : 100)
                                             * 100;

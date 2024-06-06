@@ -81,7 +81,6 @@ public class UserNutrient
         [Nutrients.Arginine] = 100..200,
         [Nutrients.Glycine] = 100..200,
         [Nutrients.Creatine] = 100..200,
-        [Nutrients.Isoleucine] = 100..200,
         [Nutrients.Sugar] = 100..150,
         [Nutrients.TransFats] = 50..100,
     };
