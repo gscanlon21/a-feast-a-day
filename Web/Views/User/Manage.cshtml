@@ -24,6 +24,10 @@
             <label asp-for="Ingredient.GramsPerCup" class="control-label">One Cup Weighs (grams)</label>
             <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" />
         </div>
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.CaloriesPerServing" class="control-label">Calories Per Serving</label>
+            <input asp-for="Ingredient.CaloriesPerServing" type="text" class="form-control" />
+        </div>
         <div class="form-group form-check mb-3">
             <div>
                 <span><label asp-for="Ingredient.SkipShoppingList" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.SkipShoppingList)</label></span>

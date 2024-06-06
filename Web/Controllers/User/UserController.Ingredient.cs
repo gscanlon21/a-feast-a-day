@@ -127,6 +127,7 @@ public partial class UserController
         existingRecipe.GramsPerCup = ingredient.GramsPerCup;
         existingRecipe.ServingSizeGrams = ingredient.ServingSizeGrams;
         existingRecipe.SkipShoppingList = ingredient.SkipShoppingList;
+        existingRecipe.CaloriesPerServing = ingredient.CaloriesPerServing;
 
         foreach (var nutrient in nutrients)
         {
