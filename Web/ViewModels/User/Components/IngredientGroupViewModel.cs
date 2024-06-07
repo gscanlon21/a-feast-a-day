@@ -57,6 +57,6 @@ public class IngredientGroupViewModel
         public required double DefaultEnd { get; init; }
         public required double ValueInRange { get; init; }
         public bool IsMinVolumeInRange => ValueInRange >= Start;
-        public bool IsMaxVolumeInRange => ValueInRange <= Start;
+        public bool IsMaxVolumeInRange => ValueInRange <= End;
     }
 }
