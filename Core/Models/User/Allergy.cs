@@ -14,31 +14,31 @@ public enum Allergy
     Casein = 1 << 1, // 2
 
     [Display(Name = "Dairy", GroupName = "Dairy")]
-    Dairy = Lactose | Casein,
-
-    [Display(Name = "Eggs")]
-    Eggs = 1 << 2, // 4
-
-    [Display(Name = "Tree Nuts")]
-    TreeNuts = 1 << 3, // 8
-
-    [Display(Name = "Peanuts")]
-    Peanuts = 1 << 4, // 16
-
-    [Display(Name = "Shellfish")]
-    Shellfish = 1 << 5, // 32
+    Dairy = Lactose | Casein, // 3
 
     [Display(Name = "Gluten")]
-    Gluten = 1 << 6, // 64
+    Gluten = 1 << 2, // 4
+
+    [Display(Name = "Eggs")]
+    Eggs = 1 << 3, // 8
+
+    [Display(Name = "Tree Nuts")]
+    TreeNuts = 1 << 4, // 16
+
+    [Display(Name = "Peanuts")]
+    Peanuts = 1 << 5, // 32
+
+    [Display(Name = "Sesame")]
+    Sesame = 1 << 6, // 64
 
     [Display(Name = "Soy")]
     Soy = 1 << 7, // 128
 
-    [Display(Name = "Fish")]
-    Fish = 1 << 8, // 256
+    [Display(Name = "Shellfish")]
+    Shellfish = 1 << 8, // 256
 
-    [Display(Name = "Sesame")]
-    Sesame = 1 << 9, // 512
+    [Display(Name = "Fish")]
+    Fish = 1 << 9, // 512
 
     [Display(Name = "Histamine")]
     Histamine = 1 << 10, // 1024
