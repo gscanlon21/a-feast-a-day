@@ -1,5 +1,4 @@
 ﻿using Core.Code.Extensions;
-using Core.Consts;
 using Core.Models.User;
 using Data.Entities.User;
 
@@ -23,13 +22,13 @@ public class IngredientGroupViewModel
     public Nutrients UsersWorkedMuscles { get; init; }
 
     // The max value (seconds of time-under-tension) of the range display
-    public double MaxRangeValue => UserNutrient.MuscleTargets.Values.Max(r => r.End.Value);
+    public double MaxRangeValue => UserNutrient.NutrientTargets.Values.Max(r => r.End.Value);
 
     public MonthlyMuscle GetMuscleTarget(KeyValuePair<Nutrients, Range> defaultRange)
     {
-        var userMuscleTarget = User.UserIngredientGroups.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == defaultRange.Key)?.Range ?? UserNutrient.MuscleTargets[defaultRange.Key];
+        var userMuscleTarget = User.UserIngredientGroups.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == defaultRange.Key)?.Range ?? UserNutrient.NutrientTargets[defaultRange.Key];
 
-        var sumRDA = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).RDA); 
+        var sumRDA = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).RDA);
         var sumTUL = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
         return new MonthlyMuscle()
         {

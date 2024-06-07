@@ -20,7 +20,7 @@
 </div>
 <div class="alert alert-primary" role="alert">
     <div style="display:flex;flex-direction:column;row-gap:1ex;">
-        @foreach (var muscleTarget in UserNutrient.MuscleTargets
+        @foreach (var muscleTarget in UserNutrient.NutrientTargets
         .Select(kv => Model.GetMuscleTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
@@ -72,7 +72,7 @@
                         </form>
 
                         @{
-                            var showIncreaseStart = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.Start.Value + UserConsts.IncrementMuscleTargetBy < muscleTarget.UserMuscleTarget.End.Value - UserConsts.IncrementMuscleTargetBy;
+                            var showIncreaseStart = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.Start.Value + UserConsts.IncrementNutrientTargetBy < muscleTarget.UserMuscleTarget.End.Value - UserConsts.IncrementNutrientTargetBy;
                         }
                         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseStartMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -102,7 +102,7 @@
                     </div>
                     <div style="display:flex;justify-content:space-between;">
                         @{
-                            var showDecreaseEnd = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.End.Value - UserConsts.IncrementMuscleTargetBy > muscleTarget.UserMuscleTarget.Start.Value + UserConsts.IncrementMuscleTargetBy;
+                            var showDecreaseEnd = muscleTarget.ShowButtons && muscleTarget.UserMuscleTarget.End.Value - UserConsts.IncrementNutrientTargetBy > muscleTarget.UserMuscleTarget.Start.Value + UserConsts.IncrementNutrientTargetBy;
                         }
                         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseEndMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@muscleTarget.IngredientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -128,7 +128,7 @@
     <hr>
     <details>
         <summary>
-            @if (Model.WeeksOfData <= UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
+            @if (Model.WeeksOfData <= UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
                 <span>Recipes are not being automatically adjusted to match your nutritional targets—there is not enough weekly data to work with yet.</span>
             }

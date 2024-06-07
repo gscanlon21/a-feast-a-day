@@ -39,7 +39,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var muscleGroup in UserNutrient.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
             var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -48,16 +48,16 @@ public partial class UserController
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
-                    Start = Math.Max(UserNutrient.MuscleTargetMin, UserNutrient.MuscleTargets[muscleGroup].Start.Value - UserConsts.IncrementMuscleTargetBy),
-                    End = UserNutrient.MuscleTargets[muscleGroup].End.Value
+                    Start = Math.Max(UserNutrient.MuscleTargetMin, UserNutrient.NutrientTargets[muscleGroup].Start.Value - UserConsts.IncrementNutrientTargetBy),
+                    End = UserNutrient.NutrientTargets[muscleGroup].End.Value
                 });
             }
             else
             {
-                userMuscleGroup.Start = Math.Max(UserNutrient.MuscleTargetMin, userMuscleGroup.Start - UserConsts.IncrementMuscleTargetBy);
+                userMuscleGroup.Start = Math.Max(UserNutrient.MuscleTargetMin, userMuscleGroup.Start - UserConsts.IncrementNutrientTargetBy);
 
                 // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userMuscleGroup.Range.Equals(UserNutrient.MuscleTargets[muscleGroup]))
+                if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
                     context.UserIngredientGroups.Remove(userMuscleGroup);
                 }
@@ -79,7 +79,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var muscleGroup in UserNutrient.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
             var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -88,16 +88,16 @@ public partial class UserController
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
-                    Start = UserNutrient.MuscleTargets[muscleGroup].Start.Value + UserConsts.IncrementMuscleTargetBy,
-                    End = UserNutrient.MuscleTargets[muscleGroup].End.Value
+                    Start = UserNutrient.NutrientTargets[muscleGroup].Start.Value + UserConsts.IncrementNutrientTargetBy,
+                    End = UserNutrient.NutrientTargets[muscleGroup].End.Value
                 });
             }
             else
             {
-                userMuscleGroup.Start = Math.Min(userMuscleGroup.End - UserConsts.IncrementMuscleTargetBy, userMuscleGroup.Start + UserConsts.IncrementMuscleTargetBy);
+                userMuscleGroup.Start = Math.Min(userMuscleGroup.End - UserConsts.IncrementNutrientTargetBy, userMuscleGroup.Start + UserConsts.IncrementNutrientTargetBy);
 
                 // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userMuscleGroup.Range.Equals(UserNutrient.MuscleTargets[muscleGroup]))
+                if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
                     context.UserIngredientGroups.Remove(userMuscleGroup);
                 }
@@ -119,7 +119,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var muscleGroup in UserNutrient.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
             var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -128,16 +128,16 @@ public partial class UserController
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
-                    Start = UserNutrient.MuscleTargets[muscleGroup].Start.Value,
-                    End = UserNutrient.MuscleTargets[muscleGroup].End.Value - UserConsts.IncrementMuscleTargetBy
+                    Start = UserNutrient.NutrientTargets[muscleGroup].Start.Value,
+                    End = UserNutrient.NutrientTargets[muscleGroup].End.Value - UserConsts.IncrementNutrientTargetBy
                 });
             }
             else
             {
-                userMuscleGroup.End = Math.Max(userMuscleGroup.Start + UserConsts.IncrementMuscleTargetBy, userMuscleGroup.End - UserConsts.IncrementMuscleTargetBy);
+                userMuscleGroup.End = Math.Max(userMuscleGroup.Start + UserConsts.IncrementNutrientTargetBy, userMuscleGroup.End - UserConsts.IncrementNutrientTargetBy);
 
                 // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userMuscleGroup.Range.Equals(UserNutrient.MuscleTargets[muscleGroup]))
+                if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
                     context.UserIngredientGroups.Remove(userMuscleGroup);
                 }
@@ -159,8 +159,8 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var muscleTargetMax = UserNutrient.MuscleTargets.Values.MaxBy(v => v.End.Value).End.Value;
-        foreach (var muscleGroup in UserNutrient.MuscleTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        var muscleTargetMax = UserNutrient.NutrientTargets.Values.MaxBy(v => v.End.Value).End.Value;
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
             var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -169,16 +169,16 @@ public partial class UserController
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
-                    Start = UserNutrient.MuscleTargets[muscleGroup].Start.Value,
-                    End = Math.Min(muscleTargetMax, UserNutrient.MuscleTargets[muscleGroup].End.Value + UserConsts.IncrementMuscleTargetBy)
+                    Start = UserNutrient.NutrientTargets[muscleGroup].Start.Value,
+                    End = Math.Min(muscleTargetMax, UserNutrient.NutrientTargets[muscleGroup].End.Value + UserConsts.IncrementNutrientTargetBy)
                 });
             }
             else
             {
-                userMuscleGroup.End = Math.Min(muscleTargetMax, userMuscleGroup.End + UserConsts.IncrementMuscleTargetBy);
+                userMuscleGroup.End = Math.Min(muscleTargetMax, userMuscleGroup.End + UserConsts.IncrementNutrientTargetBy);
 
                 // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userMuscleGroup.Range.Equals(UserNutrient.MuscleTargets[muscleGroup]))
+                if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
                     context.UserIngredientGroups.Remove(userMuscleGroup);
                 }

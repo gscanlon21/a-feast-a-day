@@ -48,7 +48,7 @@ public class QueryBuilder
     /// <summary>
     /// Show exercises that work these unique muscle groups.
     /// </summary>
-    public QueryBuilder WithNutrients(IMuscleGroupBuilderFinalNoContext builder, Action<NutrientOptions>? optionsBuilder = null)
+    public QueryBuilder WithNutrients(INutrientBuilderFinalNoContext builder, Action<NutrientOptions>? optionsBuilder = null)
     {
         var options = builder.Build();
         optionsBuilder?.Invoke(options);

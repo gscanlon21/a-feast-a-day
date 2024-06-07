@@ -21,8 +21,8 @@ public partial class NewsletterRepo
             Date = date,
             User = user,
             Token = token,
-            WeeklyMusclesWeeks = weeks,
-            WeeklyMuscles = volume,
+            WeeklyNutrientsWeeks = weeks,
+            WeeklyNutrients = volume,
             DaysUntilNextNewsletter = ((int?)timeUntilNextSend?.TotalDays + 1) ?? 1
         };
     }

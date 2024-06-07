@@ -137,7 +137,7 @@ public class UserRepo(CoreContext context)
             // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
             var actualWeeks = (Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
-            if (actualWeeks > UserConsts.MuscleTargetsTakeEffectAfterXWeeks)
+            if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.Recipes
@@ -162,7 +162,7 @@ public class UserRepo(CoreContext context)
                         )
                     ).ToList();
 
-                return (weeks: actualWeeks, volume: UserNutrient.MuscleTargets.Keys
+                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys
                     .ToDictionary(m => m, m => (int?)Convert.ToInt32(
                             monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.PercentDailyValue / BitOperations.PopCount((ulong)m) : 0)
                         / actualWeeks)
@@ -171,11 +171,11 @@ public class UserRepo(CoreContext context)
             }
         }
 
-        return (weeks: 0, volume: UserNutrient.MuscleTargets.Keys.ToDictionary(m => m, m => (int?)null));
+        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (int?)null));
     }
 
     /// <summary>
-    /// Get the user's weekly training volume for each muscle group.
+    /// Get the user's average percent daily value for each nutrient.
     /// 
     /// Returns `null` when the user is new to fitness.
     /// </summary>

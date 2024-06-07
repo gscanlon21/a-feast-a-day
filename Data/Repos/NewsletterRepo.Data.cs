@@ -13,9 +13,9 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithMuscleTargetsFromMuscleGroups(null)
-                .AdjustMuscleTargets(), options =>
+                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrientTargetsFromNutrients(null)
+                .AdjustNutrientTargets(), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
                 })
@@ -40,9 +40,9 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithMuscleTargetsFromMuscleGroups(null)
-                .AdjustMuscleTargets(), options =>
+                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrientTargetsFromNutrients(null)
+                .AdjustNutrientTargets(), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
                 })
@@ -66,9 +66,9 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithMuscleTargetsFromMuscleGroups(null)
-                .AdjustMuscleTargets(), options =>
+                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrientTargetsFromNutrients(null)
+                .AdjustNutrientTargets(), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
                 })
@@ -93,8 +93,8 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithoutMuscleTargets())
+                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithoutNutrientTargets())
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
@@ -116,8 +116,8 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithoutMuscleTargets())
+                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithoutNutrientTargets())
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
@@ -139,8 +139,8 @@ public partial class NewsletterRepo
         return (await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithMuscleGroups(newsletterContext, UserNutrient.MuscleTargets.Select(mt => mt.Key).ToList())
-                .WithoutMuscleTargets())
+                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithoutNutrientTargets())
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
