@@ -25,6 +25,8 @@ public class IngredientViewModel
 
     public int GramsPerCup { get; init; }
 
+    public int CaloriesPerServing { get; set; }
+
     public Allergy Allergens { get; init; }
 
     public List<NutrientViewModel> Nutrients { get; init; } = [];
