@@ -11,9 +11,9 @@ public class UserFamily
 {
     public static class Consts
     {
-        public const int CaloriesPerDayMin = 1600;
-        public const int CaloriesPerDayDefault = 2200;
-        public const int CaloriesPerDayMax = 3200;
+        public const int CaloriesPerDayMin = 1500;
+        public const int CaloriesPerDayDefault = 2000;
+        public const int CaloriesPerDayMax = 3000;
 
         public const int WeightMin = 50;
         public const int WeightDefault = 75;
