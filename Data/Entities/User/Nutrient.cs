@@ -25,9 +25,9 @@ public class Nutrient
     /// </summary>
     public Nutrients Nutrients { get; set; }
 
-    public Measure Measure { get; set; }
+    public Measure Measure { get; set; } = Measure.Milligrams;
 
-    public int Value { get; set; }
+    public double Value { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).

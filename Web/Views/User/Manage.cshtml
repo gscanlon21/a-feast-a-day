@@ -50,6 +50,8 @@
         {
             var nutrient = Model.Nutrients[i];
             <div class="form-group mt-3 row">
+                <input type="hidden" asp-for="Nutrients[i].Nutrients" />
+
                 <div class="col-lg-2">
                     <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
                     <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto" aria-describedby="footnote-help"
@@ -60,27 +62,9 @@
                 </div>
 
                 <div class="col-lg-10">
-                    <input type="hidden" asp-for="Nutrients[i].Nutrients" />
                     <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
 
-                    <div style="display:flex;column-gap:1ex;">
-                        <input type="number" asp-for="Nutrients[i].Value" style="width:6ch;height:fit-content;" class="allow-demo"
-                               oninput="input@(i).value = this.valueAsNumber" />
-                        <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                            <input name="input@(i)" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                   step="25" min="0" max="1000" value="@Model.Nutrients[i].Value"
-                                   oninput="document.getElementById('@(Html.IdFor(_ => Model.Nutrients[i].Value))').value = this.valueAsNumber" list="List@(i)" />
-                            <datalist id="List@(i)">
-                                <option value="25"></option>
-                                <option value="50"></option>
-                                <option value="100"></option>
-                                <option value="250"></option>
-                                <option value="500"></option>
-                                <option value="750"></option>
-                                <option value="1000"></option>
-                            </datalist>
-                        </div>
-                    </div>
+                    <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="allow-demo form-control" />
                     <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
                     <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Nutrients[i].Nutrients)</div>
                 </div>
