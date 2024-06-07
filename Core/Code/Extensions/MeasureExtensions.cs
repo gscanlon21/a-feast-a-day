@@ -12,6 +12,8 @@ public static class MeasureExtensions
         var gramMultiplier = gramsPerCup ?? 1;
         return measure switch
         {
+            Measure.Micrograms => quantity / 1000000,
+            Measure.Milligrams => quantity / 1000,
             Measure.Grams => quantity,
             Measure.Ounce => quantity * 28.3495231,
             Measure.Pound => quantity * 453.59237,
