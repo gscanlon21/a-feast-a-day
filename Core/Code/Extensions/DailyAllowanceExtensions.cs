@@ -30,13 +30,13 @@ public static class DailyAllowanceExtensions
             if (attrs != null && attrs.Length > 0)
             {
                 var attribute = (DailyAllowanceAttribute)attrs[0];
-                return (attribute.RDA, attribute.TUL) switch
+                return $@"({(attribute.RDA, attribute.TUL) switch
                 {
-                    (null, not null) => $"(TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)})",
-                    (not null, null) => $"(RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)})",
-                    (not null, not null) => $"(RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}, TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)})",
+                    (null, not null) => $"TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                    (not null, null) => $"RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                    (not null, not null) => $"RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}, TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
                     _ => string.Empty
-                };
+                }} / {attribute.Multiplier.GetSingleDisplayName()})";
             }
         }
 

@@ -150,6 +150,6 @@ public partial class UserController
 
         await context.SaveChangesAsync();
         //TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-        return RedirectToAction(nameof(UserController.Manage), new { email, token, ingredientId = ingredient.Id });
+        return RedirectToAction(nameof(UserController.Manage), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
     }
 }

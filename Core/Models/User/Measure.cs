@@ -71,5 +71,5 @@ public enum Measure
 
 public static class MeasureConsts
 {
-    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.IU];
+    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.IU, Measure.Percent];
 }
