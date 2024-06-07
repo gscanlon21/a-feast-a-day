@@ -35,7 +35,7 @@ public enum Nutrients : long
     [Display(Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
     DietaryFiber = SolubleFiber | InsolubleFiber, // 12
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Sugar", GroupName = "Carbohydrates")]
     Sugar = 1 << 4, // 16
@@ -50,32 +50,32 @@ public enum Nutrients : long
     [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Starch | DietaryFiber | Sugar | Oligosaccharides, // 62
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
     MonounsaturatedFats = 1 << 6, // 64
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated")]
     PolyunsaturatedFats = 1 << 7, // 128
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 192
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Saturated Fats", GroupName = "Fats")]
     SaturatedFats = 1 << 8, // 256
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Trans Fats", GroupName = "Fats")]
     TransFats = 1 << 9, // 512
 
-    [DefaultMeasure(Measure.Percent)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(25, 30, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 960
@@ -97,21 +97,29 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
-    [Display(Name = "Vitamin A (Retinoids)", GroupName = "Vitamins")]
-    VitaminARetinoids = 1 << 15, // 32768
+    [Display(Name = "Alpha Carotene", GroupName = "Vitamins")]
+    AlphaCarotene = 1 << 14, // 16384
+
+    [DefaultMeasure(Measure.Micrograms)]
+    [DailyAllowance(3, 6, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Beta Carotene", GroupName = "Vitamins")]
+    BetaCarotene = 1 << 15, // 32768
 
     /// <summary>
-    /// Alpha carotene or Beta carotene.
+    /// Precursors to vitamin A.
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
-    [Display(Name = "Vitamin A (Carotenoids)", GroupName = "Vitamins")]
-    VitaminACartenoids = 1 << 16, // 65536
+    [Display(Name = "Carotenoids", GroupName = "Vitamins")]
+    Carotenoids = AlphaCarotene | BetaCarotene, // 49152
 
+    /// <summary>
+    /// Retinoids.
+    /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
-    [Display(ShortName = "Vitamin A", Name = "Vitamin A (Retinoids and Carotenoids)", GroupName = "Vitamins")]
-    VitaminA = VitaminARetinoids | VitaminACartenoids, // 98304
+    [Display(Name = "Vitamin A", GroupName = "Vitamins")]
+    VitaminA = 1 << 16, // 65536
 
     /// <summary>
     /// Histamine liberator? Increases histamine blood levels by liberating histamine from mast cells.
@@ -152,8 +160,14 @@ public enum Nutrients : long
     [Display(ShortName = "Vitamin B6", Name = "Vitamin B6 (Pyridoxine)", GroupName = "Vitamins")]
     VitaminB6 = 1 << 21, // 2097152
 
-    [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, -1, Measure.Grams, Multiplier.Person)]
+    /// <summary>
+    /// Using AI instead of RDA. RDA has not been established.
+    /// 
+    /// https://ods.od.nih.gov/factsheets/Biotin-HealthProfessional/
+    /// </summary>
+    [DefaultMeasure(Measure.Micrograms)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
+    [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin B7", Name = "Vitamin B7 (Biotin)", GroupName = "Vitamins")]
     VitaminB7 = 1 << 22, // 4194304
 
@@ -175,9 +189,9 @@ public enum Nutrients : long
     [Display(ShortName = "Vitamin B12", Name = "Vitamin B12 (Cobalamin)", GroupName = "Vitamins")]
     VitaminB12 = 1 << 24, // 16777216
 
-    [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(75, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
+    [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
     [Display(ShortName = "Vitamin C", Name = "Vitamin C (Ascorbic Acid)", GroupName = "Vitamins")]
     VitaminC = 1 << 25, // 33554432
 
@@ -291,8 +305,11 @@ public enum Nutrients : long
     [Display(Name = "Phosphorus", GroupName = "Minerals")]
     Phosphorus = 1L << 44, // 17592186044416,
 
+    /// <summary>
+    /// Using AI instead of RDA. RDA has not been established.
+    /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(-1, -1, Measure.Milligrams, Multiplier.Person)]
+    [DailyAllowance(850, -1, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Sulfur", GroupName = "Minerals")]
     Sulfur = 1L << 45, // 35184372088832,
 
@@ -331,24 +348,24 @@ public enum Nutrients : long
 
     // Essential Amino Acids
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(11, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
     [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
     [Display(Name = "Histidine", GroupName = "Amino Acids / Essential")]
     Histidine = 1L << 51, // 2251799813685248,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(19, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
     [Display(Name = "Isoleucine", GroupName = "Amino Acids / Essential")]
     Isoleucine = 1L << 52, // 4503599627370496,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(80, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
     [DailyAllowance(120, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
     [Display(Name = "Leucine", GroupName = "Amino Acids / Essential")]
     Leucine = 1L << 53, // 9007199254740992,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(38, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
     [Display(Name = "Lysine", GroupName = "Amino Acids / Essential")]
     Lysine = 1L << 54, // 18014398509481984,
@@ -356,30 +373,30 @@ public enum Nutrients : long
     /// <summary>
     /// Methyl donor.
     /// </summary>
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(14, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
     [Display(Name = "Methionine", GroupName = "Amino Acids / Essential")]
     Methionine = 1L << 55, // 36028797018963968,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(33, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
     [DailyAllowance(35, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantOrBreastfeedingWomen)]
     [Display(Name = "Phenylalanine", GroupName = "Amino Acids / Essential")]
     Phenylalanine = 1L << 56, // 72057594037927936,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(73, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
     [Display(Name = "Threonine", GroupName = "Amino Acids / Essential")]
     Threonine = 1L << 57, // 144115188075855872,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(4, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantWomen)]
     [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.BreastfeedingWomen)]
     [Display(Name = "Tryptophan", GroupName = "Amino Acids / Essential")]
     Tryptophan = 1L << 58, // 288230376151711744,
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
     [DailyAllowance(25, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
     [Display(Name = "Valine", GroupName = "Amino Acids / Essential")]
@@ -432,7 +449,7 @@ public enum Nutrients : long
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | PolyunsaturatedFats | SaturatedFats | TransFats
         | DietaryCholesterol
-        | VitaminARetinoids | VitaminACartenoids
+        | AlphaCarotene | BetaCarotene | VitaminA
         | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
         | VitaminC | VitaminD | VitaminE | VitaminK
         | Calcium | Chloride | Magnesium | Potassium | Sodium

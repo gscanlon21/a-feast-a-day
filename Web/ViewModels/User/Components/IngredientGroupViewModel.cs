@@ -1,4 +1,5 @@
-﻿using Core.Consts;
+﻿using Core.Code.Extensions;
+using Core.Consts;
 using Core.Models.User;
 using Data.Entities.User;
 
@@ -28,18 +29,18 @@ public class IngredientGroupViewModel
     {
         var userMuscleTarget = User.UserIngredientGroups.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == defaultRange.Key)?.Range ?? UserNutrient.MuscleTargets[defaultRange.Key];
 
+        var sumRDA = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).RDA); 
+        var sumTUL = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
         return new MonthlyMuscle()
         {
             IngredientGroup = defaultRange.Key,
             UserMuscleTarget = userMuscleTarget,
-            Start = userMuscleTarget.Start.Value / MaxRangeValue * 100,
-            Middle = (userMuscleTarget.Start.Value + UserConsts.IncrementMuscleTargetBy) / MaxRangeValue * 100,
-            End = userMuscleTarget.End.Value / MaxRangeValue * 100,
-            DefaultStart = defaultRange.Value.Start.Value / MaxRangeValue * 100,
-            DefaultEnd = defaultRange.Value.End.Value / MaxRangeValue * 100,
+            Start = sumRDA / sumTUL * userMuscleTarget.Start.Value ?? 0,
+            Middle = sumRDA / sumTUL * userMuscleTarget.End.Value ?? 0,
+            End = sumRDA / sumTUL * userMuscleTarget.End.Value ?? 100,
+            DefaultStart = sumRDA / sumTUL * defaultRange.Value.Start.Value ?? 0,
+            DefaultEnd = sumRDA / sumTUL * defaultRange.Value.End.Value ?? 100,
             ValueInRange = Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / MaxRangeValue * 100),
-            IsMinVolumeInRange = WeeklyVolume[defaultRange.Key] >= userMuscleTarget.Start.Value,
-            IsMaxVolumeInRange = WeeklyVolume[defaultRange.Key] <= userMuscleTarget.End.Value,
             ShowButtons = UsersWorkedMuscles.HasFlag(defaultRange.Key),
         };
     }
@@ -55,7 +56,7 @@ public class IngredientGroupViewModel
         public required double DefaultStart { get; init; }
         public required double DefaultEnd { get; init; }
         public required double ValueInRange { get; init; }
-        public required bool IsMinVolumeInRange { get; init; }
-        public required bool IsMaxVolumeInRange { get; init; }
+        public bool IsMinVolumeInRange => ValueInRange >= Start;
+        public bool IsMaxVolumeInRange => ValueInRange <= Start;
     }
 }
