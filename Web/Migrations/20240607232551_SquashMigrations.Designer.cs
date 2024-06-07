@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Web.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20240607231636_SquashMigrations18")]
-    partial class SquashMigrations18
+    [Migration("20240607232551_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

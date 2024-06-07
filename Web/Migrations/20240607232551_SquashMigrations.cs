@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -46,7 +47,9 @@ namespace Web.Migrations
                     NewsletterDisabledReason = table.Column<string>(type: "text", nullable: true),
                     Features = table.Column<int>(type: "integer", nullable: false),
                     FootnoteCountTop = table.Column<int>(type: "integer", nullable: false),
-                    FootnoteCountBottom = table.Column<int>(type: "integer", nullable: false)
+                    FootnoteCountBottom = table.Column<int>(type: "integer", nullable: false),
+                    AtLeastXUniqueNutrientsPerRecipe = table.Column<int>(type: "integer", nullable: false),
+                    AtLeastXServingsPerRecipe = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,11 +65,11 @@ namespace Web.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: true),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Group = table.Column<int>(type: "integer", nullable: false),
                     Allergens = table.Column<int>(type: "integer", nullable: false),
-                    Vitamins = table.Column<int>(type: "integer", nullable: false),
-                    Minerals = table.Column<int>(type: "integer", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
+                    ServingSizeGrams = table.Column<int>(type: "integer", nullable: false),
+                    CaloriesPerServing = table.Column<double>(type: "double precision", nullable: false),
+                    GramsPerCup = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     DisabledReason = table.Column<string>(type: "text", nullable: true)
                 },
@@ -92,6 +95,7 @@ namespace Web.Migrations
                     PrepTime = table.Column<int>(type: "integer", nullable: false),
                     CookTime = table.Column<int>(type: "integer", nullable: false),
                     Servings = table.Column<int>(type: "integer", nullable: false),
+                    AdjustableServings = table.Column<bool>(type: "boolean", nullable: false),
                     Section = table.Column<int>(type: "integer", nullable: false),
                     Allergens = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
@@ -135,6 +139,28 @@ namespace Web.Migrations
                         onDelete: ReferentialAction.Cascade);
                 },
                 comment: "A day's workout routine");
+
+            migrationBuilder.CreateTable(
+                name: "user_family",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Person = table.Column<int>(type: "integer", nullable: false),
+                    Weight = table.Column<int>(type: "integer", nullable: false),
+                    CaloriesPerDay = table.Column<int>(type: "integer", nullable: false),
+                    UserId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_family", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_user_family_user_UserId",
+                        column: x => x.UserId,
+                        principalTable: "user",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_feast",
@@ -182,19 +208,19 @@ namespace Web.Migrations
                 comment: "Sage advice");
 
             migrationBuilder.CreateTable(
-                name: "user_ingredient_group",
+                name: "user_nutrient",
                 columns: table => new
                 {
-                    Group = table.Column<int>(type: "integer", nullable: false),
+                    Nutrient = table.Column<long>(type: "bigint", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     Start = table.Column<int>(type: "integer", nullable: false),
                     End = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_ingredient_group", x => new { x.UserId, x.Group });
+                    table.PrimaryKey("PK_user_nutrient", x => new { x.UserId, x.Nutrient });
                     table.ForeignKey(
-                        name: "FK_user_ingredient_group_user_UserId",
+                        name: "FK_user_nutrient_user_UserId",
                         column: x => x.UserId,
                         principalTable: "user",
                         principalColumn: "Id",
@@ -241,6 +267,30 @@ namespace Web.Migrations
                         onDelete: ReferentialAction.Cascade);
                 },
                 comment: "Auth tokens for a user");
+
+            migrationBuilder.CreateTable(
+                name: "nutrient",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    IngredientId = table.Column<int>(type: "integer", nullable: true),
+                    Nutrients = table.Column<long>(type: "bigint", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    Value = table.Column<double>(type: "double precision", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    DisabledReason = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_nutrient", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_nutrient_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id");
+                },
+                comment: "Recipes listed on the website");
 
             migrationBuilder.CreateTable(
                 name: "recipe_ingredient",
@@ -306,6 +356,7 @@ namespace Web.Migrations
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
                     Ignore = table.Column<bool>(type: "boolean", nullable: false),
+                    Scale = table.Column<int>(type: "integer", nullable: false),
                     IsPrimary = table.Column<bool>(type: "boolean", nullable: true),
                     LastSeen = table.Column<DateOnly>(type: "date", nullable: false)
                 },
@@ -333,6 +384,7 @@ namespace Web.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Scale = table.Column<int>(type: "integer", nullable: false),
                     UserFeastId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
                     Order = table.Column<int>(type: "integer", nullable: false),
@@ -360,6 +412,11 @@ namespace Web.Migrations
                 name: "IX_ingredient_UserId",
                 table: "ingredient",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_nutrient_IngredientId",
+                table: "nutrient",
+                column: "IngredientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_recipe_UserId",
@@ -390,6 +447,11 @@ namespace Web.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_user_email_UserId",
                 table: "user_email",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_family_UserId",
+                table: "user_family",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -430,6 +492,9 @@ namespace Web.Migrations
                 name: "footnote");
 
             migrationBuilder.DropTable(
+                name: "nutrient");
+
+            migrationBuilder.DropTable(
                 name: "recipe_ingredient");
 
             migrationBuilder.DropTable(
@@ -439,13 +504,16 @@ namespace Web.Migrations
                 name: "user_email");
 
             migrationBuilder.DropTable(
+                name: "user_family");
+
+            migrationBuilder.DropTable(
                 name: "user_feast_recipe");
 
             migrationBuilder.DropTable(
                 name: "user_footnote");
 
             migrationBuilder.DropTable(
-                name: "user_ingredient_group");
+                name: "user_nutrient");
 
             migrationBuilder.DropTable(
                 name: "user_recipe");
