@@ -48,7 +48,7 @@ public class UserConsts
     /// <summary>
     /// After how many weeks until muscle targets start taking effect.
     /// </summary>
-    public const int MuscleTargetsTakeEffectAfterXWeeks = 1;
+    public const int NutrientTargetsTakeEffectAfterXWeeks = 1;
 
     /// <summary>
     /// How many custom user_frequency records do we allow per user?
@@ -58,7 +58,7 @@ public class UserConsts
     /// <summary>
     /// How much to increment the user_muscle_strength target ranges with each increment?
     /// </summary>
-    public const int IncrementMuscleTargetBy = 10;
+    public const int IncrementNutrientTargetBy = 10;
 
     /// <summary>
     /// How many months until the user's account is disabled for inactivity.

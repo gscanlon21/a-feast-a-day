@@ -28,7 +28,7 @@ public class UserNutrient
     /// <summary>
     /// The volume each muscle group should be exposed to each week.
     /// </summary>
-    public static readonly IDictionary<Nutrients, Range> MuscleTargets = new Dictionary<Nutrients, Range>
+    public static readonly IDictionary<Nutrients, Range> NutrientTargets = new Dictionary<Nutrients, Range>
     {
         [Nutrients.Proteins] = 100..200,
         [Nutrients.Starch] = 100..200,
