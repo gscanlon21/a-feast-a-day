@@ -130,7 +130,7 @@ public partial class UserController
         existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
         existingIngredient.CaloriesPerServing = ingredient.CaloriesPerServing;
 
-        foreach (var nutrient in nutrients)
+        foreach (var nutrient in nutrients.OrderBy(n => BitOperations.PopCount((ulong)n.Nutrients)))
         {
             // Sum all the parts of a nutrient if it was left empty.
             if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
