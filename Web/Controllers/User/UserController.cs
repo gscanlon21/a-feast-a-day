@@ -41,7 +41,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("edit", Order = 3)]
     public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
