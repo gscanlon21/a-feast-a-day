@@ -93,33 +93,51 @@ public enum Nutrients : long
     [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
     DietaryCholesterol = 1 << 10, // 1024
 
+    // Antioxidants
+
+    /// <summary>
+    /// Anti-oxidant plant compounds.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Flavanoids", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids.")]
+    Polyphenols = 1 << 13, // 8192
+
+    /// <summary>
+    /// Does not get converted into vitamin A.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Non-provitamin A Carotenoids", GroupName = "Anti-oxidants", Description = "Lycopene.")]
+    NonProvitaminACarotenoids = 1 << 14, // 16384
+
     // Vitamins
-
-    [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
-    [Display(Name = "Alpha Carotene", GroupName = "Vitamins")]
-    AlphaCarotene = 1 << 14, // 16384
-
-    [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(3, 6, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Beta Carotene", GroupName = "Vitamins")]
-    BetaCarotene = 1 << 15, // 32768
 
     /// <summary>
     /// Precursors to vitamin A.
     /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Provitamin A Carotenoids", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
+    ProvitaminACarotenoids = 1 << 15, // 32768
+
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
+    [DailyAllowance(10, 100, Measure.Micrograms, Multiplier.Person)]
     [Display(Name = "Carotenoids", GroupName = "Vitamins")]
-    Carotenoids = AlphaCarotene | BetaCarotene, // 49152
+    Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 49152
 
     /// <summary>
     /// Retinoids.
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
+    [Display(Name = "Retinol", GroupName = "Vitamins")]
+    Retinol = 1 << 16, // 65536
+
+    [DefaultMeasure(Measure.Micrograms)]
+    [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
     [Display(Name = "Vitamin A", GroupName = "Vitamins")]
-    VitaminA = 1 << 16, // 65536
+    VitaminA = Retinol | ProvitaminACarotenoids, // 114688
 
     /// <summary>
     /// Histamine liberator? Increases histamine blood levels by liberating histamine from mast cells.
@@ -255,7 +273,7 @@ public enum Nutrients : long
     [Display(Name = "Copper", GroupName = "Minerals")]
     Copper = 1L << 36, // 68719476736
 
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(2.5, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Fluoride", GroupName = "Minerals")]
     Fluoride = 1L << 37, // 137438953472
@@ -449,7 +467,8 @@ public enum Nutrients : long
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | PolyunsaturatedFats | SaturatedFats | TransFats
         | DietaryCholesterol
-        | AlphaCarotene | BetaCarotene | VitaminA
+        | Polyphenols | NonProvitaminACarotenoids
+        | ProvitaminACarotenoids | Retinol
         | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
         | VitaminC | VitaminD | VitaminE | VitaminK
         | Calcium | Chloride | Magnesium | Potassium | Sodium

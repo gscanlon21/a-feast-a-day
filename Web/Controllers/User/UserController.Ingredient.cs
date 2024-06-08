@@ -3,6 +3,7 @@ using Core.Models.User;
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
 using Web.Code.TempData;
 using Web.ViewModels.User;
 
@@ -131,6 +132,16 @@ public partial class UserController
 
         foreach (var nutrient in nutrients)
         {
+            // Sum all the parts of a nutrient if it was left empty.
+            if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
+            {
+                nutrient.Measure = Measure.Grams;
+                nutrient.Value = nutrients
+                    .Where(n => BitOperations.PopCount((ulong)n.Nutrients) == 1)
+                    .Where(n => nutrient.Nutrients.HasFlag(n.Nutrients))
+                    .Sum(n => n.Measure.ToGrams(n.Value));
+            }
+
             var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
             if (existingNutrient != null)
             {

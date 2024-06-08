@@ -203,7 +203,7 @@ public static class EnumExtensions
                     DisplayNameType.Name => attribute.GetName(),
                     DisplayNameType.ShortName => attribute.GetShortName() ?? attribute.GetName(),
                     DisplayNameType.GroupName => attribute.GetGroupName() ?? attribute.GetShortName() ?? attribute.GetName(),
-                    DisplayNameType.Description => attribute.GetDescription(),
+                    DisplayNameType.Description => attribute.GetDescription() ?? string.Empty,
                     _ => null
                 } ?? @enum.GetDisplayName32(nameType);
             }
