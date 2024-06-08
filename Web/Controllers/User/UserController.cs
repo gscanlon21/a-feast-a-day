@@ -1,4 +1,5 @@
-﻿using Core.Consts;
+﻿using Core.Code.Extensions;
+using Core.Consts;
 using Data;
 using Data.Entities.User;
 using Data.Repos;
@@ -66,6 +67,17 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
         viewModel.User = await userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (ModelState.IsValid)
         {
+            // New ingredients, check that they don't conflict with allergens.
+            foreach (var ingredient in viewModel.UserIngredients)
+            {
+                var substituteIngredient = await context.Ingredients.FirstOrDefaultAsync(i => i.Id == ingredient.SubstituteIngredientId);
+                if (substituteIngredient != null && viewModel.User.ExcludeAllergens.HasAnyFlag32(substituteIngredient.Allergens))
+                {
+                    TempData[TempData_User.FailureMessage] = $"The substisute ingredient {substituteIngredient.Name} conflicts with your allergens.";
+                    return View("Edit", viewModel);
+                }
+            }
+
             try
             {
                 viewModel.User.Verbosity = viewModel.Verbosity;

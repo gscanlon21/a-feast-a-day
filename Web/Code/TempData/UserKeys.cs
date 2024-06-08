@@ -11,4 +11,9 @@ public static class TempData_User
     /// Success message to display when viewing the user edit page.
     /// </summary>
     public const string SuccessMessage = "USER_SUCCESSMESSAGE";
+
+    /// <summary>
+    /// Success message to display when viewing the user edit page.
+    /// </summary>
+    public const string FailureMessage = "USER_FAILUREMESSAGE";
 }
