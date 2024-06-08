@@ -30,6 +30,8 @@ public class UserNutrient
     /// </summary>
     public static readonly IDictionary<Nutrients, Range> NutrientTargets = new Dictionary<Nutrients, Range>
     {
+        [Nutrients.Sodium] = 100..140,
+        [Nutrients.Creatine] = 100..160,
         [Nutrients.Proteins] = 100..200,
         [Nutrients.Starch] = 100..200,
         [Nutrients.Oligosaccharides] = 100..200,
@@ -43,17 +45,14 @@ public class UserNutrient
         [Nutrients.Fluoride] = 100..200,
         [Nutrients.Iodine] = 100..200,
         [Nutrients.Iron] = 100..200,
-        [Nutrients.Lithium] = 100..200,
         [Nutrients.Magnesium] = 100..200,
         [Nutrients.Manganese] = 100..200,
         [Nutrients.Molybdenum] = 100..200,
         [Nutrients.Phosphorus] = 100..200,
         [Nutrients.Potassium] = 100..200,
         [Nutrients.Selenium] = 100..200,
-        [Nutrients.Sodium] = 100..200,
         [Nutrients.Sulfur] = 100..200,
         [Nutrients.Boron] = 100..200,
-        [Nutrients.Vanadium] = 100..200,
         [Nutrients.VitaminB1] = 100..200,
         [Nutrients.VitaminB2] = 100..200,
         [Nutrients.VitaminB3] = 100..200,
@@ -83,7 +82,8 @@ public class UserNutrient
         [Nutrients.Valine] = 100..200,
         [Nutrients.Arginine] = 100..200,
         [Nutrients.Glycine] = 100..200,
-        [Nutrients.Creatine] = 100..200,
+        [Nutrients.Lithium] = 100..300,
+        [Nutrients.Vanadium] = 100..400,
         [Nutrients.Sugar] = 100..150,
         [Nutrients.TransFats] = 50..100,
     };
