@@ -106,7 +106,7 @@ public partial class UserController
     }
 
     [HttpPost]
-    [Route("ingredient/{ingredientId}")]
+    [Route("ingredient/post")]
     public async Task<IActionResult> ManageIngredientPost(string email, string token, Data.Entities.User.Ingredient ingredient, List<Data.Entities.User.Nutrient> nutrients)
     {
         var user = await userRepo.GetUser(email, token);

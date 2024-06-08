@@ -37,7 +37,6 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
         return View(new UserManageRecipeViewModel()
         {
             User = user,
