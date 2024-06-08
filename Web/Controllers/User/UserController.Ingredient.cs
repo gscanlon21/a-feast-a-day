@@ -61,7 +61,7 @@ public partial class UserController
     /// </summary>
     [HttpGet]
     [Route("ingredient/{ingredientId}")]
-    public async Task<IActionResult> Manage(string email, string token, int ingredientId, bool? wasUpdated = null)
+    public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, bool? wasUpdated = null)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -107,7 +107,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("ingredient/{ingredientId}")]
-    public async Task<IActionResult> ManagePost(string email, string token, Data.Entities.User.Ingredient ingredient, List<Data.Entities.User.Nutrient> nutrients)
+    public async Task<IActionResult> ManageIngredientPost(string email, string token, Data.Entities.User.Ingredient ingredient, List<Data.Entities.User.Nutrient> nutrients)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
@@ -115,23 +115,24 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var existingRecipe = await context.UserIngredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
-        if (existingRecipe == null)
+        var existingIngredient = await context.UserIngredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
+        if (existingIngredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        existingRecipe.Name = ingredient.Name;
-        existingRecipe.Notes = ingredient.Notes;
-        existingRecipe.Allergens = ingredient.Allergens;
-        existingRecipe.GramsPerCup = ingredient.GramsPerCup;
-        existingRecipe.ServingSizeGrams = ingredient.ServingSizeGrams;
-        existingRecipe.SkipShoppingList = ingredient.SkipShoppingList;
-        existingRecipe.CaloriesPerServing = ingredient.CaloriesPerServing;
+        existingIngredient.LastUpdated = Today;
+        existingIngredient.Name = ingredient.Name;
+        existingIngredient.Notes = ingredient.Notes;
+        existingIngredient.Allergens = ingredient.Allergens;
+        existingIngredient.GramsPerCup = ingredient.GramsPerCup;
+        existingIngredient.ServingSizeGrams = ingredient.ServingSizeGrams;
+        existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
+        existingIngredient.CaloriesPerServing = ingredient.CaloriesPerServing;
 
         foreach (var nutrient in nutrients)
         {
-            var existingNutrient = existingRecipe.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
+            var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
             if (existingNutrient != null)
             {
                 existingNutrient.Value = nutrient.Value;
@@ -139,7 +140,7 @@ public partial class UserController
             }
             else
             {
-                existingRecipe.Nutrients.Add(new Nutrient()
+                existingIngredient.Nutrients.Add(new Nutrient()
                 {
                     Nutrients = nutrient.Nutrients,
                     Measure = nutrient.Measure,
@@ -150,6 +151,6 @@ public partial class UserController
 
         await context.SaveChangesAsync();
         //TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-        return RedirectToAction(nameof(UserController.Manage), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
+        return RedirectToAction(nameof(UserController.ManageIngredient), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
     }
 }

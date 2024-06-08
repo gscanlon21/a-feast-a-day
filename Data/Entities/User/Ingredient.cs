@@ -45,6 +45,11 @@ public class Ingredient
     /// </summary>
     public string? Notes { get; set; } = null;
 
+    /// <summary>
+    /// When was this ingredient last checked, for debug user.
+    /// </summary>
+    public DateOnly LastUpdated { get; set; }
+
     public string? DisabledReason { get; private init; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredients))]
