@@ -70,7 +70,7 @@ public partial class NewsletterRepo
             if (recipe.UserRecipe != null)
             {
                 recipe.UserRecipe.LastSeen = Today;
-                scopedCoreContext.UserUserRecipes.Update(recipe.UserRecipe);
+                scopedCoreContext.UserRecipes.Update(recipe.UserRecipe);
             }
         }
 

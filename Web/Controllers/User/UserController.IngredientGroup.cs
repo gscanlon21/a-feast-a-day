@@ -20,7 +20,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.UserIngredientGroups
+        await context.UserNutrients
             .Where(um => um.User.Id == user.Id)
             .Where(um => muscleGroups.HasFlag(um.Nutrient))
             .ExecuteDeleteAsync();
@@ -41,10 +41,10 @@ public partial class UserController
 
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserIngredientGroups.Add(new UserNutrient()
+                context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -59,7 +59,7 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserIngredientGroups.Remove(userMuscleGroup);
+                    context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
@@ -81,10 +81,10 @@ public partial class UserController
 
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserIngredientGroups.Add(new UserNutrient()
+                context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -99,7 +99,7 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserIngredientGroups.Remove(userMuscleGroup);
+                    context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
@@ -121,10 +121,10 @@ public partial class UserController
 
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserIngredientGroups.Add(new UserNutrient()
+                context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -139,7 +139,7 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserIngredientGroups.Remove(userMuscleGroup);
+                    context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
@@ -162,10 +162,10 @@ public partial class UserController
         var muscleTargetMax = UserNutrient.NutrientTargets.Values.MaxBy(v => v.End.Value).End.Value;
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserIngredientGroups.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserIngredientGroups.Add(new UserNutrient()
+                context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -180,7 +180,7 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserIngredientGroups.Remove(userMuscleGroup);
+                    context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }

@@ -56,7 +56,7 @@ public class Recipe
 
     public string? DisabledReason { get; set; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.Recipes))]
     public virtual User User { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(RecipeIngredient.Recipe))]
@@ -69,7 +69,7 @@ public class Recipe
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserRecipe.Recipe))]
-    public virtual ICollection<UserRecipe> UserUserRecipes { get; private init; } = null!;
+    public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

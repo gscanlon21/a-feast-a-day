@@ -27,7 +27,7 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
         {
             User = user,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
-            Ingredients = await context.UserIngredients.Where(i => i.UserId == null || i.UserId == user.Id).OrderBy(i => i.Name).ToListAsync(),
+            Ingredients = await context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).OrderBy(i => i.Name).ToListAsync(),
             Recipe = recipe ?? new Recipe()
             {
                 User = user,

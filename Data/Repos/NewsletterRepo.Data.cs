@@ -3,6 +3,8 @@ using Data.Dtos.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Data.Repos;
 
@@ -168,5 +170,30 @@ public partial class NewsletterRepo
             .Query(serviceScopeFactory, take: 1))
             .Select(r => new RecipeDto(r))
             .ToList();
+    }
+
+    /// <summary>
+    /// Grab x-many exercises that the user hasn't seen in a long time.
+    /// </summary>
+    private async Task<List<Ingredient>> GetDebugIngredients()
+    {
+        using var scope = serviceScopeFactory.CreateScope();
+        using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
+
+        var debugIngredients = await context.Ingredients
+                .OrderByDescending(i => i.LastUpdated == Today)
+                .ThenBy(i => i.LastUpdated)
+                .ThenBy(_ => EF.Functions.Random())
+                .Take(4)
+                .ToListAsync();
+
+        foreach (var debugIngredient in debugIngredients)
+        {
+            debugIngredient.LastUpdated = Today;
+            scopedCoreContext.Ingredients.Update(debugIngredient);
+        }
+
+        await scopedCoreContext.SaveChangesAsync();
+        return debugIngredients;
     }
 }

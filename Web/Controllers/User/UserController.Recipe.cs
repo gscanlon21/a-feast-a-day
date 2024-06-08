@@ -22,8 +22,8 @@ public partial class UserController
         }
 
         var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
-        var userUserRecipe = await context.UserUserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
-        var recipe = await context.UserRecipes
+        var UserRecipe = await context.UserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
+        var recipe = await context.Recipes
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
             .FirstOrDefaultAsync(r => r.Id == recipeId);
@@ -43,7 +43,7 @@ public partial class UserController
                 Recipe = recipe,
                 User = user,
                 RecipeSection = section,
-                UserRecipe = userUserRecipe,
+                UserRecipe = UserRecipe,
                 Parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId)
             },
         });
@@ -68,7 +68,7 @@ public partial class UserController
         }
         else
         {
-            var existingRecipe = await context.UserRecipes
+            var existingRecipe = await context.Recipes
                 .Include(r => r.Instructions)
                 .Include(r => r.Ingredients)
                 .FirstOrDefaultAsync(r => r.Id == recipe.Id);
@@ -104,7 +104,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.UserRecipes
+        await context.Recipes
             // The user has control of this footnote and is not a built-in footnote.
             .Where(f => f.UserId == user.Id)
             .Where(f => f.Id == recipeId)
@@ -127,7 +127,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userProgression = await context.UserUserRecipes
+        var userProgression = await context.UserRecipes
             .Where(ue => ue.UserId == user.Id)
             .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);
 
@@ -154,7 +154,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userProgression = await context.UserUserRecipes
+        var userProgression = await context.UserRecipes
             .Include(ue => ue.Recipe)
             .Where(ue => ue.UserId == user.Id)
             .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);

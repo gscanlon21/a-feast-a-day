@@ -38,10 +38,10 @@ public class UserRecipe
     [Required]
     public DateOnly LastSeen { get; set; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.UserUserRecipes))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.UserRecipes))]
     public virtual Recipe Recipe { get; set; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserUserRecipes))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
     public virtual User User { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);

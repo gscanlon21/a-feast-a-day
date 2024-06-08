@@ -201,10 +201,10 @@ public class User
     public virtual ICollection<UserFeast> UserWorkouts { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Recipe.User))]
-    public virtual ICollection<Recipe> UserRecipes { get; private init; } = null!;
+    public virtual ICollection<Recipe> Recipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserRecipe.User))]
-    public virtual ICollection<UserRecipe> UserUserRecipes { get; private init; } = null!;
+    public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.User))]
     public virtual ICollection<Ingredient> UserIngredients { get; private init; } = null!;

@@ -28,7 +28,7 @@ public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServi
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
-        var userRecipes = await context.UserUserRecipes
+        var userRecipes = await context.UserRecipes
             .Where(r => r.UserId == user.Id)
             .Where(r => r.Ignore)
             .Select(r => r.Recipe)

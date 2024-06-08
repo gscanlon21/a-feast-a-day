@@ -44,7 +44,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.UserIngredients
+        await context.Ingredients
             // The user has control of this footnote and is not a built-in footnote.
             .Where(f => f.UserId == user.Id)
             .Where(f => f.Id == ingredientId)
@@ -69,7 +69,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var ingredient = await context.UserIngredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredientId);
+        var ingredient = await context.Ingredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredientId);
         if (ingredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -115,13 +115,12 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var existingIngredient = await context.UserIngredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
+        var existingIngredient = await context.Ingredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
         if (existingIngredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        existingIngredient.LastUpdated = Today;
         existingIngredient.Name = ingredient.Name;
         existingIngredient.Notes = ingredient.Notes;
         existingIngredient.Allergens = ingredient.Allergens;

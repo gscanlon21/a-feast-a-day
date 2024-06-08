@@ -13,11 +13,11 @@ public class CoreContext : DbContext
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserServing> UserServings { get; set; } = null!;
     public DbSet<UserFamily> UserFamilies { get; set; } = null!;
-    public DbSet<Ingredient> UserIngredients { get; set; } = null!;
-    public DbSet<UserNutrient> UserIngredientGroups { get; set; } = null!;
+    public DbSet<Ingredient> Ingredients { get; set; } = null!;
+    public DbSet<UserNutrient> UserNutrients { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
-    public DbSet<Recipe> UserRecipes { get; set; } = null!;
-    public DbSet<UserRecipe> UserUserRecipes { get; set; } = null!;
+    public DbSet<Recipe> Recipes { get; set; } = null!;
+    public DbSet<UserRecipe> UserRecipes { get; set; } = null!;
     public DbSet<UserFeastRecipe> UserFeastRecipes { get; set; } = null!;
     public DbSet<UserFootnote> UserFootnotes { get; set; } = null!;
 

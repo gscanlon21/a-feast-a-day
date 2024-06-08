@@ -54,7 +54,7 @@ public class QueryRunner(Section section)
 
     private IQueryable<RecipesQueryResults> CreateRecipesQuery(CoreContext context)
     {
-        var query = context.UserRecipes.IgnoreQueryFilters().TagWith(nameof(CreateRecipesQuery))
+        var query = context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateRecipesQuery))
             .Include(r => r.Instructions)
             .Include(r => r.Ingredients)
                 .ThenInclude(i => i.Ingredient)
@@ -67,7 +67,7 @@ public class QueryRunner(Section section)
         return query.Select(i => new RecipesQueryResults()
         {
             Recipe = i,
-            UserRecipe = i.UserUserRecipes.First(ue => ue.UserId == UserOptions.Id)
+            UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id)
         });
     }
 
@@ -259,7 +259,7 @@ public class QueryRunner(Section section)
 
             if (exercisesCreated.Add(queryResult.UserRecipe))
             {
-                context.UserUserRecipes.Add(queryResult.UserRecipe);
+                context.UserRecipes.Add(queryResult.UserRecipe);
             }
         }
 

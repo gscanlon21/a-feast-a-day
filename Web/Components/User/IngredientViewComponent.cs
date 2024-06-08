@@ -21,7 +21,7 @@ public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : V
             return Content("");
         }
 
-        var userIngredients = await context.UserIngredients
+        var userIngredients = await context.Ingredients
             .Where(i => i.UserId == user.Id)
             .OrderBy(f => f.Name)
             .ToListAsync();
