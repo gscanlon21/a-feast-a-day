@@ -30,7 +30,7 @@
         @* User must have created the ingredient to be able to edit it. *@
         @if (Model.User.Id == Model.Ingredient.UserId || Model.User.Features.HasFlag(Features.Admin))
         {
-            <div class="col-lg-6">
+            <div class="col">
                 <h6 class="mb-1">Edit Ingredient</h6>
                 @await Component.InvokeAsync(IngredientViewComponent.Name, new { Model.User, Model.Ingredient })
             </div>
