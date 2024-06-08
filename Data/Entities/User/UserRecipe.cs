@@ -30,7 +30,7 @@ public class UserRecipe
     /// <summary>
     /// Multiplier for how often this exercise is choosen. Weights the LastSeen date.
     /// </summary>
-    public bool? IsPrimary { get; set; }
+    public bool Favorite { get; set; }
 
     /// <summary>
     /// When was this exercise last seen in the user's newsletter.

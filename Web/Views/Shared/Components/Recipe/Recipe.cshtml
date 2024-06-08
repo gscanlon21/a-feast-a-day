@@ -2,7 +2,6 @@
 @using Core.Models.Recipe
 @using Web.Code.Extensions
 
-<h5 class="mb-1">@(Model.Recipe.Id == default ? "New" : "Edit") Recipe</h5>
 <div class="alert alert-light shadow mb-3" role="alert">
     <form id="recipe-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.AddRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
         <input asp-for="Recipe.Id" type="hidden" class="form-control" />

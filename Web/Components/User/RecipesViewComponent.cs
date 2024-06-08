@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using Core.Models.User;
+using Data;
 using Data.Dtos.Newsletter;
 using Data.Query.Builders;
 using Data.Repos;
@@ -28,8 +29,12 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
+        var userRecipes = await context.Recipes
+            .Where(r => r.UserId == user.Id
+                // The user is an admin who is allowed to edit base recipes.
+                || (user.Features.HasFlag(Features.Admin) && r.UserId == null))
+            .ToListAsync();
 
-        var userRecipes = await context.Recipes.Where(r => r.UserId == user.Id).ToListAsync();
         var recipes = (await new QueryBuilder()
             // Include disabled recipes.
             .WithUser(user, ignoreIgnored: true)

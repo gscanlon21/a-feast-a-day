@@ -8,12 +8,12 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of how often each muscle the user has worked over the course of a month.
 /// </summary>
-public class IngredientGroupViewComponent(UserRepo userRepo) : ViewComponent
+public class NutrientViewComponent(UserRepo userRepo) : ViewComponent
 {
     /// <summary>
     /// For routing
     /// </summary>
-    public const string Name = "IngredientGroup";
+    public const string Name = "Nutrient";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
@@ -30,7 +30,7 @@ public class IngredientGroupViewComponent(UserRepo userRepo) : ViewComponent
         }
 
         //var usersWorkedMuscles = (await userRepo.GetUpcomingRotations(user, user.Frequency)).Aggregate(MuscleGroups.None, (curr, n) => curr | n.MuscleGroups.Aggregate(MuscleGroups.None, (curr2, n2) => curr2 | n2));
-        return View("IngredientGroup", new IngredientGroupViewModel()
+        return View("Nutrient", new NutrientViewModel()
         {
             User = user,
             Weeks = weeks,

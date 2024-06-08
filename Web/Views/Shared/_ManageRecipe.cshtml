@@ -26,31 +26,23 @@
     </form>
 
     <div class="form-group mb-3">
-        <label for="Recipe-variation-date" class="control-label">Is Primary</label>
+        <label for="Recipe-variation-date" class="control-label">Favorite?</label>
         <div class="input-group">
-            <input type="text" id="Recipe-variation-primary" class="form-control" disabled="disabled" aria-describedby="Recipe-variation-primary-help" rows="1" value="@((Model.UserRecipe.IsPrimary ?? false).ToString())" />
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsPrimary)" method="post"
-                  asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-isPrimary="@true">
+            <input type="text" id="Recipe-variation-primary" class="form-control" disabled="disabled" aria-describedby="Recipe-variation-primary-help" rows="1" value="@(Model.UserRecipe.Favorite.ToString())" />
+            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsFavorite)" method="post"
+                  asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-favorite="@true">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="submit" value="True" class="btn btn-outline-secondary"
                         style="border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0;" />
             </form>
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsPrimary)" method="post"
-                  asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-isPrimary="@false">
+            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsFavorite)" method="post"
+                  asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-favorite="@false">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="submit" value="False" class="btn btn-outline-secondary"
-                        style="border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0;" />
+                       style="border-top-left-radius:0;border-bottom-left-radius:0;" />
             </form>
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsPrimary)" method="post"
-                    asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-isPrimary="@null">
-
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="submit" value="Default" class="btn btn-outline-secondary"
-                        style="border-top-left-radius:0;border-bottom-left-radius:0;" />
-            </form>
-
         </div>
 
         <span asp-validation-for="UserRecipe" class="text-danger"></span>

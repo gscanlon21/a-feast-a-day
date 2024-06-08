@@ -3,52 +3,77 @@
 @using Web.Code.Extensions
 
 
-<details class="mb-25">
-    <summary class="mb-1 h5">
-        @Html.DisplayNameFor(_ => Model.Ingredients)
-        <span class="float-end">@Model.Ingredients.Count</span>
-    </summary>
+<div class="alert alert-light shadow mb-3" role="alert">
+    <form id="ingredient-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.ManageIngredientPost)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+        <input asp-for="Ingredient.Id" type="hidden" class="form-control" />
 
-    <div class="alert alert-secondary" role="alert">
-        <div class="mb-4">
-            <h6 class="mb-1">New Ingredient</h6>
-            <form asp-controller="@UserController.Name" class="alert alert-light shadow" asp-action="@nameof(UserController.AddIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
-                <div class="form-group mb-3">
-                    <label for="Name" class="control-label">Name</label>
-                    <input type="text" name="Name" class="form-control" required="required" />
-                </div>
-                <div class="form-group mb-3">
-                    <label for="Nutrients" class="control-label">Nutrients</label>
-                    <select name="Nutrients" class="form-control" asp-items="@(EnumExtensions.GetSingleOrNoneValues32<Nutrients>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, Nutrients.None))"></select>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="Allergens" class="control-label">Allergens</label>
-                    <select name="Allergens" class="form-control" multiple asp-items="@(EnumExtensions.GetSingleValues32<Allergy>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))"></select>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Add" class="btn btn-secondary" />
-                    <div class="form-text">Ingredients are not encrypted. Avoid entering in any sensitive information.</div>
-                </div>
-            </form>
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.Name" class="control-label">Name</label>
+            <input asp-for="Ingredient.Name" type="text" class="form-control" required="required" />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.Notes" class="control-label">Notes</label>
+            <input asp-for="Ingredient.Notes" type="text" class="form-control" />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.ServingSizeGrams" class="control-label">Serving Size (grams)</label>
+            <input asp-for="Ingredient.ServingSizeGrams" type="text" class="form-control" />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.GramsPerCup" class="control-label">One Cup Weighs (grams)</label>
+            <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.CaloriesPerServing" class="control-label">Calories Per Serving</label>
+            <input asp-for="Ingredient.CaloriesPerServing" type="text" class="form-control" />
+        </div>
+        <div class="form-group form-check mb-3">
+            <div>
+                <span><label asp-for="Ingredient.SkipShoppingList" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.SkipShoppingList)</label></span>
+                <input class="form-check-input" asp-for="Ingredient.SkipShoppingList" aria-describedby="fitness-help" />
+            </div>
+            <span asp-validation-for="Ingredient.SkipShoppingList" class="text-danger"></span>
+            <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.SkipShoppingList)</div>
         </div>
 
-        @foreach (var ingredient in Model.Ingredients)
-        {
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" name="IngredientId" asp-for="@ingredient.Id" />
+        <div class="form-group mb-3">
+            <label asp-for="Ingredient.AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Allergens)</label>
+            <select asp-for="Ingredient.AllergenBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
+                    asp-items="@(EnumExtensions.GetSingleValues32<Allergy>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+            </select>
+            <span asp-validation-for="Ingredient.AllergenBinder" class="text-danger"></span>
+            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Allergens)</div>
+        </div>
 
-                <div class="form-group mt-3">
-                    <div class="input-group">
-                        <textarea class="form-control" disabled="disabled" aria-describedby="exercise-help" rows="2">@ingredient.Name</textarea>
-                        <input type="submit" value="-" class="btn btn-outline-secondary" />
-                    </div>
-                    <span for="FootnoteId" class="text-danger"></span>
-                    <div class="form-text font-size--smaller">
-                        @*ingredient.Nutrients.GetSingleDisplayName()*@
-                    </div>
+        @for (var i = 0; i < Model.Nutrients.Count; i++)
+        {
+            var nutrient = Model.Nutrients[i];
+            <div class="form-group mb-3 row">
+                <input type="hidden" asp-for="Nutrients[i].Nutrients" />
+
+                <div class="col-lg-2 col-md-3">
+                    <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
+                    <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto" aria-describedby="footnote-help"
+                            asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
+                    </select>
+                    <span asp-validation-for="Nutrients[i].Measure" class="text-danger"></span>
+                    <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Measure)</div>
                 </div>
-            </form>
+
+                <div class="col-lg-10 col-md-9">
+                    <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
+
+                    <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="form-control" />
+                    <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
+                    <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Nutrients[i].Nutrients)</div>
+                </div>
+            </div>
         }
-    </div>
-</details>
+
+        <div class="row form-group justify-content-end gy-2">
+            <div class="col">
+                <input type="submit" value="Save" class="btn btn-secondary" form="ingredient-form" />
+            </div>
+        </div>
+    </form>
+</div>

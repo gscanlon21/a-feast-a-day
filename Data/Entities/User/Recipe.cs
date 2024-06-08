@@ -46,9 +46,6 @@ public class Recipe
     [Required]
     public Allergy Allergens { get; set; }
 
-    [NotMapped]
-    public Nutrients IngredientGroups => Ingredients?.Aggregate(Nutrients.None, (curr, next) => curr | (next.Ingredient?.Nutrients?.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients) ?? Nutrients.None)) ?? Nutrients.None;
-
     /// <summary>
     /// Notes about the recipe (externally shown).
     /// </summary>

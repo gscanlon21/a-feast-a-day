@@ -25,77 +25,15 @@
     </div>
 </div>
 
-<div class="alert alert-light shadow mb-3" role="alert">
-    <form id="ingredient-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.ManageIngredientPost)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
-        <input asp-for="Ingredient.Id" type="hidden" class="form-control" />
-
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.Name" class="control-label">Name</label>
-            <input asp-for="Ingredient.Name" type="text" class="form-control" required="required" />
-        </div>
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.Notes" class="control-label">Notes</label>
-            <input asp-for="Ingredient.Notes" type="text" class="form-control" />
-        </div>
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.ServingSizeGrams" class="control-label">Serving Size (grams)</label>
-            <input asp-for="Ingredient.ServingSizeGrams" type="text" class="form-control" />
-        </div>
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.GramsPerCup" class="control-label">One Cup Weighs (grams)</label>
-            <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" />
-        </div>
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.CaloriesPerServing" class="control-label">Calories Per Serving</label>
-            <input asp-for="Ingredient.CaloriesPerServing" type="text" class="form-control" />
-        </div>
-        <div class="form-group form-check mb-3">
-            <div>
-                <span><label asp-for="Ingredient.SkipShoppingList" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.SkipShoppingList)</label></span>
-                <input class="form-check-input allow-demo" asp-for="Ingredient.SkipShoppingList" aria-describedby="fitness-help" />
-            </div>
-            <span asp-validation-for="Ingredient.SkipShoppingList" class="text-danger"></span>
-            <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.SkipShoppingList)</div>
-        </div>
-
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Allergens)</label>
-            <select asp-for="Ingredient.AllergenBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
-                    asp-items="@(EnumExtensions.GetSingleValues32<Allergy>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
-            </select>
-            <span asp-validation-for="Ingredient.AllergenBinder" class="text-danger"></span>
-            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Allergens)</div>
-        </div>
-
-        @for (var i = 0; i < Model.Nutrients.Count; i++)
+<div class="alert alert-secondary">
+    <div class="row gy-2">
+        @* User must have created the ingredient to be able to edit it. *@
+        @if (Model.User.Id == Model.Ingredient.UserId || Model.User.Features.HasFlag(Features.Admin))
         {
-            var nutrient = Model.Nutrients[i];
-            <div class="form-group mb-3 row">
-                <input type="hidden" asp-for="Nutrients[i].Nutrients" />
-
-                <div class="col-md-2">
-                    <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
-                    <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto" aria-describedby="footnote-help"
-                            asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
-                    </select>
-                    <span asp-validation-for="Nutrients[i].Measure" class="text-danger"></span>
-                    <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Measure)</div>
-                </div>
-
-                <div class="col-md-10">
-                    <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
-
-                    <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="allow-demo form-control" />
-                    <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
-                    <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Nutrients[i].Nutrients)</div>
-                </div>
+            <div class="col-lg-6">
+                <h6 class="mb-1">Edit Ingredient</h6>
+                @await Component.InvokeAsync(IngredientViewComponent.Name, new { Model.User, Model.Ingredient })
             </div>
         }
-
-        <div class="row form-group justify-content-end gy-2">
-            <div class="col">
-                <input type="submit" value="Save" class="btn btn-secondary" form="ingredient-form" />
-            </div>
-        </div>
-    </form>
+    </div>
 </div>

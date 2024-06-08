@@ -6,9 +6,9 @@ namespace Web.ViewModels.User.Components;
 
 
 /// <summary>
-/// Viewmodel for MonthlyMuscles.cshtml
+/// Viewmodel for Nutrient.cshtml
 /// </summary>
-public class IngredientGroupViewModel
+public class NutrientViewModel
 {
     public required string Token { get; set; }
     public required Data.Entities.User.User User { get; set; }

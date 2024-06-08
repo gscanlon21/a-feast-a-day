@@ -329,9 +329,20 @@
                 </div>
             </div>
         </form>
-
-        @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
+      
         @await Component.InvokeAsync(AdvancedViewComponent.Name, new { Model.User })
+
+        <details class="mb-25">
+            <summary class="mb-1 h5">New Recipe</summary>
+
+            @await Component.InvokeAsync(RecipeViewComponent.Name, new { Model.User })
+        </details>
+
+        <details class="mb-25">
+            <summary class="mb-1 h5">New Ingredient</summary>
+
+            @await Component.InvokeAsync(IngredientViewComponent.Name, new { Model.User })
+        </details>
     </div>
 
     <div id="info" class="col">
@@ -340,10 +351,10 @@
         @await Component.InvokeAsync(WorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(NextWorkoutViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(PastWorkoutViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(IngredientGroupViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(NutrientViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(IngredientViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(IngredientsViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(IgnoredViewComponent.Name, new { Model.User })
     </div>

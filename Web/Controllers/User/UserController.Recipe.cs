@@ -144,9 +144,9 @@ public partial class UserController
     }
 
     [HttpPost]
-    [Route("{section:section}/{recipeId}/ip", Order = 1)]
-    [Route("{section:section}/{recipeId}/is-primary", Order = 2)]
-    public async Task<IActionResult> IsPrimary(string email, string token, int recipeId, Section section, bool? isPrimary)
+    [Route("{section:section}/{recipeId}/if", Order = 1)]
+    [Route("{section:section}/{recipeId}/is-favorite", Order = 2)]
+    public async Task<IActionResult> IsFavorite(string email, string token, int recipeId, Section section, bool favorite)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -165,7 +165,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        userProgression.IsPrimary = isPrimary;
+        userProgression.Favorite = favorite;
         await context.SaveChangesAsync();
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
