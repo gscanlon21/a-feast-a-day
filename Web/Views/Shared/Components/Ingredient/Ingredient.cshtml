@@ -51,7 +51,7 @@
             <div class="form-group mb-3 row">
                 <input type="hidden" asp-for="Nutrients[i].Nutrients" />
 
-                <div class="col-lg-2 col-md-3">
+                <div class="col-md-3">
                     <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
                     <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto" aria-describedby="footnote-help"
                             asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
@@ -60,7 +60,7 @@
                     <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Measure)</div>
                 </div>
 
-                <div class="col-lg-10 col-md-9">
+                <div class="col">
                     <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
 
                     <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="form-control" />
