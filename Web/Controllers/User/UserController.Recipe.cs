@@ -23,7 +23,7 @@ public partial class UserController
 
         var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
         var UserRecipe = await context.UserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
-        var recipe = await context.Recipes
+        var recipe = await context.Recipes.AsNoTracking()
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
             .FirstOrDefaultAsync(r => r.Id == recipeId);

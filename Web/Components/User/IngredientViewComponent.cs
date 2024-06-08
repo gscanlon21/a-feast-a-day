@@ -19,7 +19,7 @@ public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : V
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient? ingredient = null)
     {
         var userIngredients = await context.Ingredients
-            .Where(i => i.UserId == user.Id 
+            .Where(i => i.UserId == user.Id
                 // The user is an admin who is allowed to edit base ingredients.
                 || (user.Features.HasFlag(Features.Admin) && i.UserId == null))
             .OrderBy(f => f.Name)

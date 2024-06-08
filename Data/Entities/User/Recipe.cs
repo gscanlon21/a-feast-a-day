@@ -57,10 +57,10 @@ public class Recipe
     public virtual User User { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(RecipeIngredient.Recipe))]
-    public virtual IList<RecipeIngredient> Ingredients { get; set; } = null!;
+    public virtual IList<RecipeIngredient> Ingredients { get; set; } = [];
 
     [JsonInclude, InverseProperty(nameof(RecipeInstruction.Recipe))]
-    public virtual IList<RecipeInstruction> Instructions { get; set; } = null!;
+    public virtual IList<RecipeInstruction> Instructions { get; set; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.Recipe))]
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;

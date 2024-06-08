@@ -23,49 +23,43 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
             return Content("");
         }
 
+        recipe ??= new Recipe()
+        {
+            User = user
+        };
+
+        while (recipe.Ingredients.Count < 16)
+        {
+            recipe.Ingredients.Add(new RecipeIngredient
+            {
+                Hide = recipe.Ingredients.Count > 0
+            });
+        }
+
+        while (recipe.Instructions.Count < 16)
+        {
+            recipe.Instructions.Add(new RecipeInstruction
+            {
+                Hide = recipe.Instructions.Count > 0
+            });
+        }
+
         return View("Recipe", new RecipeViewModel()
         {
             User = user,
-            Token = await userRepo.AddUserToken(user, durationDays: 1),
+            Recipe = recipe,
             Ingredients = await GetIngredients(user),
-            Recipe = recipe ?? new Recipe()
-            {
-                User = user,
-                Ingredients = GetRecipeIngredients().ToList(),
-                Instructions = GetRecipeInstructions().ToList()
-            }
+            Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 
     private async Task<IList<Ingredient>> GetIngredients(Data.Entities.User.User user)
     {
-        return await context.Ingredients
+        return await context.Ingredients.AsNoTracking()
             // Only grab root ingredients.
-            .Where(i => i.Parent == null)
+            .Where(i => i.ParentId == null)
             .Where(i => i.UserId == null || i.UserId == user.Id)
             .OrderBy(i => i.Name)
             .ToListAsync();
-    }
-
-    private static IEnumerable<RecipeIngredient> GetRecipeIngredients()
-    {
-        for (var i = 0; i < 16; i++)
-        {
-            yield return new RecipeIngredient()
-            {
-                Hide = i > 0
-            };
-        }
-    }
-
-    private static IEnumerable<RecipeInstruction> GetRecipeInstructions()
-    {
-        for (var i = 0; i < 16; i++)
-        {
-            yield return new RecipeInstruction()
-            {
-                Hide = i > 0
-            };
-        }
     }
 }

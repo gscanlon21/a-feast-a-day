@@ -33,7 +33,7 @@ public class EditViewComponent(UserRepo userRepo, CoreContext context) : ViewCom
 
     private async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
-        viewModel.Ingredients = await context.Ingredients
+        viewModel.Ingredients = await context.Ingredients.AsNoTracking()
             .Where(i => i.UserId == null || i.UserId == viewModel.User.Id)
             .OrderBy(i => i.Name)
             .ToListAsync();
@@ -51,7 +51,7 @@ public class EditViewComponent(UserRepo userRepo, CoreContext context) : ViewCom
             });
         }
 
-        var rootIngredients = await context.Ingredients.Where(i => i.Children.Any()).ToListAsync();
+        var rootIngredients = await context.Ingredients.AsNoTracking().Where(i => i.Children.Any()).ToListAsync();
         foreach (var rootIngredient in rootIngredients)
         {
             var existingIngredient = viewModel.User.UserIngredients.FirstOrDefault(i => i.IngredientId == rootIngredient.Id);

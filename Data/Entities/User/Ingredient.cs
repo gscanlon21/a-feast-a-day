@@ -19,6 +19,8 @@ public class Ingredient
 
     public int? UserId { get; init; }
 
+    public int? ParentId { get; init; }
+
     /// <summary>
     /// Friendly name.
     /// </summary>

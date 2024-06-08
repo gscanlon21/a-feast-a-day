@@ -27,7 +27,7 @@ public class IngredientsViewComponent(CoreContext context, UserRepo userRepo, IS
         var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
-        var userIngredients = await context.Ingredients
+        var userIngredients = await context.Ingredients.AsNoTracking()
             .Where(i => i.UserId == user.Id
                 // The user is an admin who is allowed to edit base ingredients.
                 || (user.Features.HasFlag(Features.Admin) && i.UserId == null))
