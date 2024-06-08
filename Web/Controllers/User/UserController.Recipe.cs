@@ -21,18 +21,23 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
-        var UserRecipe = await context.UserRecipes.FirstAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
+        var userRecipe = await context.UserRecipes.AsNoTracking()
+            .FirstOrDefaultAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
+        if (userRecipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
         var recipe = await context.Recipes.AsNoTracking()
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
             .FirstOrDefaultAsync(r => r.Id == recipeId);
-
         if (recipe == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        var parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId);
         return View(new UserManageRecipeViewModel()
         {
             User = user,
@@ -43,7 +48,7 @@ public partial class UserController
                 Recipe = recipe,
                 User = user,
                 RecipeSection = section,
-                UserRecipe = UserRecipe,
+                UserRecipe = userRecipe,
                 Parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId)
             },
         });
