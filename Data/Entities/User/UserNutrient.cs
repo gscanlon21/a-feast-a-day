@@ -30,8 +30,8 @@ public class UserNutrient
     /// </summary>
     public static readonly IDictionary<Nutrients, Range> NutrientTargets = new Dictionary<Nutrients, Range>
     {
-        [Nutrients.Sodium] = 100..140,
-        [Nutrients.Creatine] = 100..160,
+        [Nutrients.Sodium] = 100..160,
+        [Nutrients.Creatine] = 100..180,
         [Nutrients.Proteins] = 100..200,
         [Nutrients.Starch] = 100..200,
         [Nutrients.Oligosaccharides] = 100..200,
