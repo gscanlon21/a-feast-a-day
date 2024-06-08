@@ -33,7 +33,6 @@ public static class EnumViewExtensions
         {
             Text = v.GetSingleDisplayName(),
             Value = Convert.ToInt64(v).ToString()
-        })
-        .ToList();
+        }).ToList();
     }
 }
