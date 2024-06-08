@@ -36,7 +36,7 @@ public class NutrientViewModel
             IngredientGroup = defaultRange.Key,
             UserMuscleTarget = userMuscleTarget,
             Start = sumRDA / sumTUL * userMuscleTarget.Start.Value ?? 0,
-            Middle = sumRDA / sumTUL * userMuscleTarget.End.Value ?? 0,
+            Middle = sumRDA / sumTUL * 100 ?? 0,
             End = sumRDA / sumTUL * userMuscleTarget.End.Value ?? 100,
             DefaultStart = sumRDA / sumTUL * defaultRange.Value.Start.Value ?? 0,
             DefaultEnd = sumRDA / sumTUL * defaultRange.Value.End.Value ?? 100,
@@ -49,18 +49,24 @@ public class NutrientViewModel
     public class MonthlyMuscle
     {
         public required Nutrients IngredientGroup { get; init; }
-        public required bool ShowButtons { get; init; }
         public required Range UserMuscleTarget { get; init; }
+
         public required double Start { get; init; }
+        /// <summary>
+        /// The RDA as a percent of the TUL.
+        /// </summary>
         public double Middle { get; init; }
-        public double Increment { get; init; }
         public required double End { get; init; }
+
         public required double DefaultStart { get; init; }
         public required double DefaultEnd { get; init; }
+
         public required double ValueInRange { get; init; }
         public bool IsMinVolumeInRange => ValueInRange >= Start;
         public bool IsMaxVolumeInRange => ValueInRange <= End;
 
+        public double Increment { get; init; }
+        public required bool ShowButtons { get; init; }
         public bool ShowDecreaseStart => ShowButtons && Start > 0;
         public bool ShowIncreaseStart => ShowButtons && Start + Increment < End - Increment;
         public bool ShowDecreaseEnd => ShowButtons && End - Increment > Start + Increment;
