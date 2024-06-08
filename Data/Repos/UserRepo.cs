@@ -137,11 +137,11 @@ public class UserRepo(CoreContext context)
                     .Where(nv => onlySections.HasFlag(nv.Section))
             }).ToListAsync();
 
-         var substituteIngredients = await context.UserIngredients
-            .Include(i => i.SubstituteIngredient)
-                .ThenInclude(i => i.Nutrients)
-            .Where(i => i.UserId == user.Id)
-            .ToListAsync();
+        var substituteIngredients = await context.UserIngredients
+           .Include(i => i.SubstituteIngredient)
+               .ThenInclude(i => i.Nutrients)
+           .Where(i => i.UserId == user.Id)
+           .ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)

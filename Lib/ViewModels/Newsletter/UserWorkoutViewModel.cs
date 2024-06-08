@@ -20,9 +20,4 @@ public class UserWorkoutViewModel
     /// The date the newsletter was sent out on
     /// </summary>
     public DateOnly Date { get; init; }
-
-    /// <summary>
-    /// Deloads are weeks with a message to lower the intensity of the workout so muscle growth doesn't stagnate
-    /// </summary>
-    public bool IsDeloadWeek { get; init; }
 }

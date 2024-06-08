@@ -30,7 +30,7 @@ public class UserRecipeViewModel
     public DateOnly LastSeen { get; set; }
 
     [JsonInclude]
-    public InstructionViewModel Exercise { get; init; } = null!;
+    public RecipeInstructionViewModel Exercise { get; init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
 

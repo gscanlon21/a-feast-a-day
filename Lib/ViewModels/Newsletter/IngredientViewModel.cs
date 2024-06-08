@@ -48,6 +48,6 @@ public class IngredientViewModel
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is InstructionViewModel other
+    public override bool Equals(object? obj) => obj is RecipeInstructionViewModel other
         && other.Id == Id;
 }

@@ -31,7 +31,7 @@ public class RecipeViewModel
     public bool AdjustableServings { get; set; }
 
     [JsonInclude]
-    public List<InstructionViewModel> Instructions { get; init; } = [];
+    public List<RecipeInstructionViewModel> Instructions { get; init; } = [];
 
     [JsonInclude]
     public List<IngredientViewModel> Ingredients { get; init; } = [];

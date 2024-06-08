@@ -7,18 +7,20 @@ namespace Lib.ViewModels.Newsletter;
 /// Exercises listed on the website
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
-public class InstructionViewModel
+public class RecipeInstructionViewModel
 {
     public int Id { get; init; }
 
+    public int Order { get; set; }
+
     /// <summary>
-    /// Friendly name.
+    /// The instruction text.
     /// </summary>
     [Required]
     public string Name { get; init; } = null!;
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the instruction (externally shown).
     /// </summary>
     public string? Notes { get; init; } = null;
 
@@ -26,6 +28,6 @@ public class InstructionViewModel
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is InstructionViewModel other
+    public override bool Equals(object? obj) => obj is RecipeInstructionViewModel other
         && other.Id == Id;
 }

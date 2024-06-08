@@ -86,7 +86,7 @@
                 }
 
                 <ul style="padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var ingredient in Model.Recipe.Ingredients)
+                    @foreach (var ingredient in Model.Recipe.Ingredients.OrderBy(i => i.SkipShoppingList).ThenBy(i => i.Name).ThenBy(i => i.Id))
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
                             @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure?.GetSingleDisplayName()) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
@@ -95,7 +95,7 @@
                 </ul>
 
                 <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var instruction in Model.Recipe.Instructions)
+                    @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))
                     {
                         <li style="margin-block:.35em;list-style-type:decimal;">
                             @instruction.Name
