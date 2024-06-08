@@ -27,17 +27,27 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
         {
             User = user,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
-            Ingredients = await context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).OrderBy(i => i.Name).ToListAsync(),
+            Ingredients = await GetIngredients(user),
             Recipe = recipe ?? new Recipe()
             {
                 User = user,
-                Ingredients = GetIngredients().ToList(),
-                Instructions = GetInstructions().ToList()
+                Ingredients = GetRecipeIngredients().ToList(),
+                Instructions = GetRecipeInstructions().ToList()
             }
         });
     }
 
-    private static IEnumerable<RecipeIngredient> GetIngredients()
+    private async Task<IList<Ingredient>> GetIngredients(Data.Entities.User.User user)
+    {
+        return await context.Ingredients
+            // Only grab root ingredients.
+            .Where(i => i.Parent == null)
+            .Where(i => i.UserId == null || i.UserId == user.Id)
+            .OrderBy(i => i.Name)
+            .ToListAsync();
+    }
+
+    private static IEnumerable<RecipeIngredient> GetRecipeIngredients()
     {
         for (var i = 0; i < 16; i++)
         {
@@ -48,7 +58,7 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
         }
     }
 
-    private static IEnumerable<RecipeInstruction> GetInstructions()
+    private static IEnumerable<RecipeInstruction> GetRecipeInstructions()
     {
         for (var i = 0; i < 16; i++)
         {

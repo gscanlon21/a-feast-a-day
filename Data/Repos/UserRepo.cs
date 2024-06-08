@@ -25,9 +25,10 @@ public class UserRepo(CoreContext context)
     /// Grab a user from the db with a specific token
     /// </summary>
     public async Task<User?> GetUser(string? email, string? token,
-        bool includeIngredientGroups = false,
+        bool includeNutrients = false,
         bool includeServings = false,
         bool includeFamilies = false,
+        bool includeIngredients = false,
         bool allowDemoUser = false)
     {
         if (email == null || token == null)
@@ -37,9 +38,9 @@ public class UserRepo(CoreContext context)
 
         IQueryable<User> query = context.Users.AsSplitQuery().TagWithCallSite();
 
-        if (includeIngredientGroups)
+        if (includeNutrients)
         {
-            query = query.Include(u => u.UserIngredientGroups);
+            query = query.Include(u => u.UserNutreints);
         }
 
         if (includeServings)
@@ -50,6 +51,11 @@ public class UserRepo(CoreContext context)
         if (includeFamilies)
         {
             query = query.Include(u => u.UserFamilies);
+        }
+
+        if (includeIngredients)
+        {
+            query = query.Include(u => u.UserIngredients);
         }
 
         var user = await query
@@ -131,6 +137,12 @@ public class UserRepo(CoreContext context)
                     .Where(nv => onlySections.HasFlag(nv.Section))
             }).ToListAsync();
 
+         var substituteIngredients = await context.UserIngredients
+            .Include(i => i.SubstituteIngredient)
+                .ThenInclude(i => i.Nutrients)
+            .Where(i => i.UserId == user.Id)
+            .ToListAsync();
+
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
         {
@@ -142,7 +154,7 @@ public class UserRepo(CoreContext context)
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.Recipes
                         .SelectMany(recipe => recipe.Recipe.Ingredients
-                            .SelectMany(recipeIngredient => recipeIngredient.Ingredient.Nutrients
+                            .SelectMany(recipeIngredient => recipeIngredient.Ingredient.SubstitutedIngredient(substituteIngredients).Nutrients
                                 .Select(nutrient =>
                                 {
                                     var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;

@@ -40,7 +40,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("edit", Order = 3)]
     public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -75,6 +75,16 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
                 viewModel.User.AtLeastXServingsPerRecipe = viewModel.AtLeastXServingsPerRecipe;
+
+                context.UserIngredients.RemoveRange(context.UserIngredients.Where(uf => uf.UserId == viewModel.User.Id));
+                context.UserIngredients.AddRange(viewModel.UserIngredients
+                    .Select(umm => new UserIngredient()
+                    {
+                        UserId = umm.UserId,
+                        IngredientId = umm.IngredientId,
+                        SubstituteIngredientId = umm.SubstituteIngredientId,
+                    })
+                );
 
                 context.UserFamilies.RemoveRange(context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
                 context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide)

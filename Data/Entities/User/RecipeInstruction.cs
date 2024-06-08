@@ -39,6 +39,6 @@ public class RecipeInstruction
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is Recipe other
+    public override bool Equals(object? obj) => obj is RecipeInstruction other
         && other.Id == Id;
 }

@@ -75,6 +75,11 @@ public class UserEditViewModel
     [Display(Name = "Family Members", Description = "Customize family members.")]
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
+    [Display(Name = "Substitute Ingredients", Description = "Customize substitute ingredients.")]
+    public IList<UserIngredientViewModel> UserIngredients { get; set; } = [];
+
+    public IList<Data.Entities.User.Ingredient> Ingredients { get; set; } = [];
+
     [Range(1, 9)]
     [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
     public int AtLeastXServingsPerRecipe { get; set; } = 3;

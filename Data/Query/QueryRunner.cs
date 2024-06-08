@@ -115,9 +115,19 @@ public class QueryRunner(Section section)
         {
             // Do this before querying prerequisites so that the user records also exist for the prerequisites.
             await AddMissingUserRecords(context, queryResults);
+            var substituteIngredients = await context.UserIngredients
+                .Include(i => i.SubstituteIngredient)
+                    .ThenInclude(i => i.Nutrients)
+                .Where(i => i.UserId == UserOptions.Id)
+                .ToListAsync();
 
             foreach (var queryResult in queryResults)
             {
+                foreach (var ingredient in queryResult.Recipe.Ingredients)
+                {
+                    ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(substituteIngredients);
+                }
+
                 filteredResults.Add(queryResult);
             }
         }

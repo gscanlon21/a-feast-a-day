@@ -50,9 +50,21 @@ public class Ingredient
     /// </summary>
     public DateOnly LastUpdated { get; set; }
 
+    /// <summary>
+    /// The base ingredient.
+    /// </summary>
+    [JsonIgnore, InverseProperty(nameof(Children))]
+    public virtual Ingredient? Parent { get; private init; } = null!;
+
+    /// <summary>
+    /// Substitute ingredients.
+    /// </summary>
+    [InverseProperty(nameof(Parent))]
+    public virtual ICollection<Ingredient> Children { get; private init; } = [];
+
     public string? DisabledReason { get; private init; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredients))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.Ingredients))]
     public virtual User? User { get; set; }
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
@@ -64,10 +76,15 @@ public class Ingredient
     [InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual List<Nutrient> Nutrients { get; set; } = [];
 
+    [JsonIgnore, InverseProperty(nameof(UserIngredient.Ingredient))]
+    public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];
+
+    [JsonIgnore, InverseProperty(nameof(UserIngredient.SubstituteIngredient))]
+    public virtual ICollection<UserIngredient> UserSubstituteIngredients { get; private init; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is Recipe other
+    public override bool Equals(object? obj) => obj is Ingredient other
         && other.Id == Id;
 
     [NotMapped]

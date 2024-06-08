@@ -189,7 +189,10 @@ public class User
     public virtual ICollection<UserFamily> UserFamilies { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserNutrient.User))]
-    public virtual ICollection<UserNutrient> UserIngredientGroups { get; private init; } = [];
+    public virtual ICollection<UserNutrient> UserNutreints { get; private init; } = [];
+
+    [JsonIgnore, InverseProperty(nameof(UserIngredient.User))]
+    public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; private init; } = [];
@@ -207,7 +210,7 @@ public class User
     public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.User))]
-    public virtual ICollection<Ingredient> UserIngredients { get; private init; } = null!;
+    public virtual ICollection<Ingredient> Ingredients { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserEmail.User))]
     public virtual ICollection<UserEmail> UserEmails { get; private init; } = null!;

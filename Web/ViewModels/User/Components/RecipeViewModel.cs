@@ -10,5 +10,5 @@ public class RecipeViewModel
 
     public Data.Entities.User.Recipe Recipe { get; set; } = null!;
 
-    public List<Data.Entities.User.Ingredient> Ingredients { get; init; } = [];
+    public IList<Data.Entities.User.Ingredient> Ingredients { get; init; } = [];
 }

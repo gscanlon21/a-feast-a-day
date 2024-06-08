@@ -1,8 +1,11 @@
 ﻿using Core.Code.Extensions;
 using Core.Consts;
+using Data;
 using Data.Entities.User;
 using Data.Repos;
+using Lib.Pages.Shared.Ingredient;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Web.ViewModels.User;
 
 namespace Web.Components.User;
@@ -10,7 +13,7 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
 /// </summary>
-public class EditViewComponent(UserRepo userRepo) : ViewComponent
+public class EditViewComponent(UserRepo userRepo, CoreContext context) : ViewComponent
 {
     /// <summary>
     /// For routing
@@ -19,7 +22,7 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User? user = null)
     {
-        user ??= await userRepo.GetUser(UserConsts.DemoUser, UserConsts.DemoToken, allowDemoUser: true, includeServings: true, includeFamilies: true);
+        user ??= await userRepo.GetUser(UserConsts.DemoUser, UserConsts.DemoToken, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true);
         if (user == null)
         {
             return Content("");
@@ -29,8 +32,13 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
         return View("Edit", await PopulateUserEditViewModel(new UserEditViewModel(user, token)));
     }
 
-    private static async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
+    private async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
+        viewModel.Ingredients = await context.Ingredients
+            .Where(i => i.UserId == null || i.UserId == viewModel.User.Id)
+            .OrderBy(i => i.Name)
+            .ToListAsync();
+
         foreach (var muscleGroup in UserServing.MuscleTargets.Keys
             .OrderBy(mg => mg.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
             .ThenBy(mg => mg.GetSingleDisplayName()))
@@ -41,6 +49,18 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
                 UserId = viewModel.User.Id,
                 Section = muscleGroup,
                 Count = UserServing.MuscleTargets.TryGetValue(muscleGroup, out int countTmp) ? countTmp : 0
+            });
+        }
+
+        var rootIngredients = await context.Ingredients.Where(i => i.Children.Any()).ToListAsync();
+        foreach (var rootIngredient in rootIngredients)
+        {
+            var existingIngredient = viewModel.User.UserIngredients.FirstOrDefault(i => i.IngredientId == rootIngredient.Id);
+            viewModel.UserIngredients.Add(new UserIngredientViewModel()
+            {
+                UserId = viewModel.User.Id,
+                IngredientId = rootIngredient.Id,
+                SubstituteIngredientId = existingIngredient?.SubstituteIngredientId ?? rootIngredient.Id
             });
         }
 

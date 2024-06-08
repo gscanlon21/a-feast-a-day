@@ -54,10 +54,10 @@ public class RecipeIngredient
     public virtual Recipe Recipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.Ingredient.RecipeIngredients))]
-    public virtual Ingredient Ingredient { get; private init; } = null!;
+    public virtual Ingredient Ingredient { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is Recipe other
+    public override bool Equals(object? obj) => obj is RecipeIngredient other
         && other.Id == Id;
 }

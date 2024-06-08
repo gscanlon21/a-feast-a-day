@@ -97,7 +97,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
                 {
                     // Use the default Nutrient target when the user's workout split never targets this Nutrient group--because they can't adjust this Nutrient group's Nutrient target.
                     var targetRange = (Core.Models.User.Nutrients.All.HasFlag(key)
-                        ? Context.User.UserIngredientGroups.FirstOrDefault(um => um.Nutrient == key)?.Range
+                        ? Context.User.UserNutreints.FirstOrDefault(um => um.Nutrient == key)?.Range
                         : null) ?? defaultRange;
 
                     // Don't be so harsh about what constitutes an out-of-range value when there is not a lot of weekly data to work with.

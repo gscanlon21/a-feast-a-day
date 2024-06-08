@@ -10,6 +10,7 @@ public class CoreContext : DbContext
     public DbSet<Footnote> Footnotes { get; set; } = null!;
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<UserToken> UserTokens { get; set; } = null!;
+    public DbSet<UserIngredient> UserIngredients { get; set; } = null!;
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserServing> UserServings { get; set; } = null!;
     public DbSet<UserFamily> UserFamilies { get; set; } = null!;
@@ -30,6 +31,7 @@ public class CoreContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         ////////// Keys //////////
+        modelBuilder.Entity<UserIngredient>().HasKey(sc => new { sc.UserId, sc.IngredientId });
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId });
         modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserServing>().HasKey(sc => new { sc.UserId, sc.Section });

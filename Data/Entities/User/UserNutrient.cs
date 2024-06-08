@@ -15,7 +15,7 @@ public class UserNutrient
     [ForeignKey(nameof(Entities.User.User.Id))]
     public int UserId { get; init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredientGroups))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserNutreints))]
     public virtual User User { get; private init; } = null!;
 
     public int Start { get; set; }

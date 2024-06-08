@@ -41,7 +41,7 @@ public class Nutrient
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is Recipe other
+    public override bool Equals(object? obj) => obj is Nutrient other
         && other.Id == Id;
 
     [NotMapped]
