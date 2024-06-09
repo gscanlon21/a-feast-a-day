@@ -48,10 +48,10 @@
         @for (var i = 0; i < Model.Nutrients.Count; i++)
         {
             var nutrient = Model.Nutrients[i];
-            <div class="form-group mb-3 row">
+            <div class="mb-3 row align-items-end">
                 <input type="hidden" asp-for="Nutrients[i].Nutrients" />
 
-                <div class="col-md-3">
+                <div class="form-group col-md-3">
                     <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
                     <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto" aria-describedby="footnote-help"
                             asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
@@ -60,12 +60,19 @@
                     <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Measure)</div>
                 </div>
 
-                <div class="col">
+                <div class="form-group col">
                     <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
 
                     <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="form-control" />
                     <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
                     <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(EnumExtensions.DisplayNameType.Description)</div>
+                </div>
+
+                <div class="form-group form-check col-auto">
+                    <label asp-for="Nutrients[i].Synthetic" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Synthetic)</label>
+                    <input class="form-check-input" asp-for="Nutrients[i].Synthetic" aria-describedby="synthetic-help" />
+                    <span asp-validation-for="Nutrients[i].Synthetic" class="text-danger"></span>
+                    <div id="synthetic-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Synthetic)</div>
                 </div>
             </div>
         }

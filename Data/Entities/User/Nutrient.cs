@@ -29,6 +29,8 @@ public class Nutrient
 
     public double Value { get; set; }
 
+    public bool Synthetic { get; set; }
+
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>

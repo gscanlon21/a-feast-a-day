@@ -146,16 +146,18 @@ public partial class UserController
             var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
             if (existingNutrient != null)
             {
-                existingNutrient.Value = nutrient.Value;
+                existingNutrient.Synthetic = nutrient.Synthetic;
                 existingNutrient.Measure = nutrient.Measure;
+                existingNutrient.Value = nutrient.Value;
             }
             else
             {
                 existingIngredient.Nutrients.Add(new Nutrient()
                 {
                     Nutrients = nutrient.Nutrients,
+                    Synthetic = nutrient.Synthetic,
                     Measure = nutrient.Measure,
-                    Value = nutrient.Value
+                    Value = nutrient.Value,
                 });
             }
         }

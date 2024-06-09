@@ -238,8 +238,9 @@ public enum Nutrients : long
     VitaminB7 = 1 << 23, // 8388608
 
     /// <summary>
-    /// NOT folic acid: we are not tracking the artificial version of folate 
-    /// because it is not well utilized by the body. It can even contribute 
+    /// Folinic acid is the natural form.
+    /// 
+    /// The synthetic, folic, acid, can contribute 
     /// to folate deficiency and other adverse side effects!
     /// https://education.seekinghealth.com/folic-acid-side-effects/
     /// </summary>
@@ -247,7 +248,7 @@ public enum Nutrients : long
     [DailyAllowance(400, -1, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(600, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWomen)]
     [DailyAllowance(500, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
-    [Display(ShortName = "Vitamin B9", Name = "Vitamin B9 (Folinic Acid)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin B9", Name = "Vitamin B9 (Folate)", GroupName = "Vitamins", Description = "Use the DFE (dietary folate equivalent) value.")]
     VitaminB9 = 1 << 24, // 16777216
 
     [DefaultMeasure(Measure.Micrograms)]
