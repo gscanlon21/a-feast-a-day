@@ -113,7 +113,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Flavanoids", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
+    [Display(Name = "Polyphenols", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
     Polyphenols = 1 << 13, // 8192
 
     /// <summary>
