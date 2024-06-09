@@ -14,77 +14,77 @@ public enum Nutrients : long
     // Macronutrients
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(75, 225, Measure.Grams, Multiplier.Person)]
+    [DailyAllowance(75, 225, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1 << 0, // 1
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
     Sugar = 1 << 1, // 2
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person)]
+    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Name = "Oligosaccharides", GroupName = "Carbohydrates")]
     Oligosaccharides = 1 << 2, // 4
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Startch, Glycogen, Cellulose.")]
     Starch = 1 << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(4, -1, Measure.Grams, Multiplier.Kilocalorie)]
+    [DailyAllowance(4, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
     SolubleFiber = 1 << 4, // 16
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie)]
+    [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
     InsolubleFiber = 1 << 5, // 32
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie)]
+    [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person)]
+    [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Trans Fats", GroupName = "Fats")]
     TransFats = 1 << 6, // 64
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Saturated Fats", GroupName = "Fats")]
     SaturatedFats = 1 << 7, // 128
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
     MonounsaturatedFats = 1 << 8, // 256
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Omega 3", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     Omega3 = 1 << 9, // 512
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Omega 6", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     Omega6 = 1 << 10, // 1024
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     PolyunsaturatedFats = Omega3 | Omega6, // 1536
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 1792
 
