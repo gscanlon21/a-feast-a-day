@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Core.Models.User;
 
 /// <summary>
-/// Free: 12, 29, 63.
+/// Free: 63.
 /// </summary>
 [Flags]
 public enum Nutrients : long
@@ -110,11 +110,37 @@ public enum Nutrients : long
 
     /// <summary>
     /// Anti-oxidant plant compounds.
+    /// Accounts for 60% of Polyphenols.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Flavanoids", GroupName = "Anti-oxidants")]
+    Flavanoids = 1 << 12, // 4096
+
+    /// <summary>
+    /// Anti-oxidant plant compounds.
+    /// Accounts for 30% of Polyphenols.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Phenolic Acids", GroupName = "Anti-oxidants")]
+    PhenolicAcids = 1 << 13, // 8192
+
+    /// <summary>
+    /// Anti-oxidant plant compounds.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Other Polyphenols", GroupName = "Anti-oxidants", Description = "Polyphenolic amides, Stilbenoids.")]
+    OtherPolyphenols = 1 << 14, // 16384
+
+    /// <summary>
+    /// Anti-oxidant plant compounds.
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Polyphenols", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
-    Polyphenols = 1 << 13, // 8192
+    Polyphenols = Flavanoids | PhenolicAcids | OtherPolyphenols, // 28672
 
     /// <summary>
     /// Does not get converted into vitamin A.
@@ -122,7 +148,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Non-provitamin A Carotenoids", GroupName = "Anti-oxidants", Description = "Lycopene.")]
-    NonProvitaminACarotenoids = 1 << 14, // 16384
+    NonProvitaminACarotenoids = 1 << 15, // 32768
 
     // Vitamins
 
@@ -132,12 +158,12 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Provitamin A Carotenoids", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
-    ProvitaminACarotenoids = 1 << 15, // 32768
+    ProvitaminACarotenoids = 1 << 16, // 65536
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Micrograms, Multiplier.Person)]
     [Display(Name = "Carotenoids", GroupName = "Vitamins")]
-    Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 49152
+    Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 98304
 
     /// <summary>
     /// Retinoids.
@@ -145,12 +171,12 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
     [Display(Name = "Retinol", GroupName = "Vitamins")]
-    Retinol = 1 << 16, // 65536
+    Retinol = 1 << 17, // 131072
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
     [Display(Name = "Vitamin A", GroupName = "Vitamins")]
-    VitaminA = Retinol | ProvitaminACarotenoids, // 114688
+    VitaminA = Retinol | ProvitaminACarotenoids, // 196608
 
     /// <summary>
     /// Histamine liberator? Increases histamine blood levels by liberating histamine from mast cells.
@@ -160,7 +186,7 @@ public enum Nutrients : long
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
     [DailyAllowance(1.4, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantOrBreastfeedingWomen)]
     [Display(ShortName = "Vitamin B1", Name = "Vitamin B1 (Thiamine)", GroupName = "Vitamins")]
-    VitaminB1 = 1 << 17, // 131072
+    VitaminB1 = 1 << 18, // 262144
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
@@ -168,28 +194,28 @@ public enum Nutrients : long
     [DailyAllowance(1.4, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
     [DailyAllowance(1.6, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin B2", Name = "Vitamin B2 (Riboflavin)", GroupName = "Vitamins")]
-    VitaminB2 = 1 << 18, // 262144
+    VitaminB2 = 1 << 19, // 524288
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(16, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
     [DailyAllowance(14, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
     [DailyAllowance(17, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin B3", Name = "Vitamin B3 (Niacin)", GroupName = "Vitamins")]
-    VitaminB3 = 1 << 19, // 524288
+    VitaminB3 = 1 << 20, // 1048576
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(6, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
     [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin B5", Name = "Vitamin B5 (Pantothenic Acid)", GroupName = "Vitamins")]
-    VitaminB5 = 1 << 20, // 1048576
+    VitaminB5 = 1 << 21, // 2097152
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(1.5, -1, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyWomen)]
     [DailyAllowance(1.7, -1, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyMen)]
     [Display(ShortName = "Vitamin B6", Name = "Vitamin B6 (Pyridoxine)", GroupName = "Vitamins")]
-    VitaminB6 = 1 << 21, // 2097152
+    VitaminB6 = 1 << 22, // 4194304
 
     /// <summary>
     /// Using AI instead of RDA. RDA has not been established.
@@ -200,7 +226,7 @@ public enum Nutrients : long
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin B7", Name = "Vitamin B7 (Biotin)", GroupName = "Vitamins")]
-    VitaminB7 = 1 << 22, // 4194304
+    VitaminB7 = 1 << 23, // 8388608
 
     /// <summary>
     /// NOT folic acid: we are not tracking the artificial version of folate 
@@ -213,36 +239,36 @@ public enum Nutrients : long
     [DailyAllowance(600, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWomen)]
     [DailyAllowance(500, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin B9", Name = "Vitamin B9 (Folinic Acid)", GroupName = "Vitamins")]
-    VitaminB9 = 1 << 23, // 8388608
+    VitaminB9 = 1 << 24, // 16777216
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [Display(ShortName = "Vitamin B12", Name = "Vitamin B12 (Cobalamin)", GroupName = "Vitamins")]
-    VitaminB12 = 1 << 24, // 16777216
+    VitaminB12 = 1 << 25, // 33554432
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
     [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
     [Display(ShortName = "Vitamin C", Name = "Vitamin C (Ascorbic Acid)", GroupName = "Vitamins")]
-    VitaminC = 1 << 25, // 33554432
+    VitaminC = 1 << 26, // 67108864
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
     [Display(ShortName = "Vitamin D", Name = "Vitamin D (Calciferol)", GroupName = "Vitamins")]
-    VitaminD = 1 << 26, // 67108864
+    VitaminD = 1 << 27, // 134217728
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult | Person.PregnantWomen)]
     [DailyAllowance(19, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
     [Display(ShortName = "Vitamin E", Name = "Vitamin E (Alpha-Tocopherol)", GroupName = "Vitamins")]
-    VitaminE = 1 << 27, // 134217728
+    VitaminE = 1 << 28, // 268435456
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
     [Display(ShortName = "Vitamin K", Name = "Vitamin K (Phylloquinone, Menadione)", GroupName = "Vitamins")]
-    VitaminK = 1 << 28, // 268435456,
+    VitaminK = 1 << 29, // 536870912,
 
     // Major Minerals
 
@@ -489,7 +515,7 @@ public enum Nutrients : long
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | Omega3 | Omega6 | SaturatedFats | TransFats
         | DietaryCholesterol
-        | Polyphenols | NonProvitaminACarotenoids
+        | Flavanoids | PhenolicAcids | OtherPolyphenols | NonProvitaminACarotenoids
         | ProvitaminACarotenoids | Retinol
         | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
         | VitaminC | VitaminD | VitaminE | VitaminK
