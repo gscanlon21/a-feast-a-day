@@ -89,7 +89,7 @@ public enum Nutrients : long
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 1792
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(25, 30, Measure.Percent, Multiplier.Person)]
+    [DailyAllowance(25, 30, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 

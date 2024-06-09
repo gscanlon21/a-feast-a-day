@@ -108,9 +108,6 @@ public class UserRepo(CoreContext context)
         var userServings = UserServing.MuscleTargets.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
         double familyCount = Math.Max(1, user.UserFamilies.Count);
         var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
-        var familyNutrientServings = EnumExtensions.GetSingleValues32<Nutrients>().ToDictionary(n => n, n =>
-            (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowance(fp.Value))
-        );
 
         var weeklyFeasts = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
@@ -151,6 +148,11 @@ public class UserRepo(CoreContext context)
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
+                var totalCaloricIntake = weeklyFeasts.Sum(f => f.Recipes.Sum(r => r.Recipe.Ingredients.Sum(i => i.NumberOfServings(i.Ingredient, r.Scale) * i.Ingredient.CaloriesPerServing)));
+                var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
+                    (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowanceTUL(fp.Value, totalCaloricIntake))
+                );
+
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.Recipes
                         .SelectMany(recipe => recipe.Recipe.Ingredients

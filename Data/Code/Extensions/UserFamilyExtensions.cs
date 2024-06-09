@@ -7,17 +7,19 @@ namespace Data.Code.Extensions;
 
 public static class UserFamilyExtensions
 {
-    public static double NormalizedDailyAllowance(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies)
+    public static double NormalizedDailyAllowanceTUL(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies, double totalCalories)
     {
         var totalWeightKg = userFamilies.Sum(uf => uf.Weight);
         var totalKCaloriesPerDay = userFamilies.Sum(uf => uf.CaloriesPerDay) / 1000d;
 
-        return ((dailyAllowance.For, dailyAllowance.Multiplier) switch
+        var maxValue = dailyAllowance.TUL ?? dailyAllowance.RDA ?? 0;
+        return (dailyAllowance.For, dailyAllowance.Measure, dailyAllowance.Multiplier) switch
         {
-            (_, Multiplier.Person) => dailyAllowance.Measure.ToGrams(dailyAllowance.RDA ?? 0),
-            (_, Multiplier.KilogramOfBodyweight) => totalWeightKg * dailyAllowance.Measure.ToGrams(dailyAllowance.RDA ?? 0),
-            (_, Multiplier.Kilocalorie) => totalKCaloriesPerDay * dailyAllowance.Measure.ToGrams(dailyAllowance.RDA ?? 0),
-            _ => dailyAllowance.RDA
-        } ?? 0) * userFamilies.Count();
+            (_, Measure.Percent, _) => totalCalories / 100 * maxValue / dailyAllowance.CaloriesPerGram,
+            (_, _, Multiplier.Person) => dailyAllowance.Measure.ToGrams(maxValue),
+            (_, _, Multiplier.KilogramOfBodyweight) => totalWeightKg * dailyAllowance.Measure.ToGrams(maxValue),
+            (_, _, Multiplier.Kilocalorie) => totalKCaloriesPerDay * dailyAllowance.Measure.ToGrams(maxValue),
+            _ => maxValue
+        } * userFamilies.Count();
     }
 }

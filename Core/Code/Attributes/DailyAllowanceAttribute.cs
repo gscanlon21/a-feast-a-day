@@ -26,6 +26,7 @@ namespace Core.Code.Attributes;
 public class DailyAllowanceAttribute(double rda, double tul, Measure measure, Multiplier multiplier)
     : Attribute
 {
+    public double CaloriesPerGram { get; set; } = 1;
     public Person For { get; set; } = Person.All;
     public Multiplier Multiplier { get; set; } = multiplier;
     public Measure Measure { get; set; } = measure;
