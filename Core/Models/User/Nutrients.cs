@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
 
+/// <summary>
+/// Free: 12, 29, 63.
+/// </summary>
 [Flags]
 public enum Nutrients : long
 {
@@ -51,34 +54,44 @@ public enum Nutrients : long
     Carbohydrates = Starch | DietaryFiber | Sugar | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
-    [Display(Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
-    MonounsaturatedFats = 1 << 6, // 64
-
-    [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
-    [Display(Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated")]
-    PolyunsaturatedFats = 1 << 7, // 128
-
-    [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person)]
-    [Display(Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
-    UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 192
+    [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Trans Fats", GroupName = "Fats")]
+    TransFats = 1 << 6, // 64
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Saturated Fats", GroupName = "Fats")]
-    SaturatedFats = 1 << 8, // 256
+    SaturatedFats = 1 << 7, // 128
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person)]
-    [Display(Name = "Trans Fats", GroupName = "Fats")]
-    TransFats = 1 << 9, // 512
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
+    MonounsaturatedFats = 1 << 8, // 256
+
+    [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Omega 3", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    Omega3 = 1 << 9, // 512
+
+    [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Omega 6", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    Omega6 = 1 << 10, // 1024
+
+    [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    PolyunsaturatedFats = Omega3 | Omega6, // 1536
+
+    [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
+    UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 1792
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(25, 30, Measure.Percent, Multiplier.Person)]
     [Display(Name = "Fats", GroupName = "Fats")]
-    Fats = UnsaturatedFats | SaturatedFats | TransFats, // 960
+    Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 
     /// <summary>
     /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn’t contribute to increases in your body’s blood cholesterol levels. 
@@ -91,7 +104,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(0, 250, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
-    DietaryCholesterol = 1 << 10, // 1024
+    DietaryCholesterol = 1 << 11, // 2048
 
     // Antioxidants
 
@@ -100,7 +113,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Flavanoids", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids.")]
+    [Display(Name = "Flavanoids", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
     Polyphenols = 1 << 13, // 8192
 
     /// <summary>
@@ -465,7 +478,7 @@ public enum Nutrients : long
 
 
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
-        | MonounsaturatedFats | PolyunsaturatedFats | SaturatedFats | TransFats
+        | MonounsaturatedFats | Omega3 | Omega6 | SaturatedFats | TransFats
         | DietaryCholesterol
         | Polyphenols | NonProvitaminACarotenoids
         | ProvitaminACarotenoids | Retinol

@@ -133,6 +133,7 @@ public partial class UserController
         foreach (var nutrient in nutrients.OrderBy(n => BitOperations.PopCount((ulong)n.Nutrients)))
         {
             // Sum all the parts of a nutrient if it was left empty.
+            // FIXME: Not all of the precursors get converted into a nutrient. Need a conversion percentage.
             if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
             {
                 nutrient.Measure = Measure.Grams;
