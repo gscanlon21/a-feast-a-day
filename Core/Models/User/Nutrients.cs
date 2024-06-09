@@ -51,7 +51,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person)]
     [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
-    Carbohydrates = Sugar | Starches | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
+    Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person)]
