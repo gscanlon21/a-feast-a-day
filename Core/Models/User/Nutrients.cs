@@ -19,29 +19,29 @@ public enum Nutrients : long
     Proteins = 1 << 0, // 1
 
     [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person)]
+    [Display(Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
+    Sugar = 1 << 1, // 2
+
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person)]
-    [Display(Name = "Starch", GroupName = "Carbohydrates")]
-    Starch = 1 << 1, // 2
+    [Display(Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Startch, Glycogen, Cellulose.")]
+    Starch = 1 << 2, // 4
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(4, -1, Measure.Grams, Multiplier.Kilocalorie)]
     [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
-    SolubleFiber = 1 << 2, // 4
+    SolubleFiber = 1 << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie)]
     [Display(Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
-    InsolubleFiber = 1 << 3, // 8
+    InsolubleFiber = 1 << 4, // 16
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie)]
     [Display(Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
-    DietaryFiber = SolubleFiber | InsolubleFiber, // 12
-
-    [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person)]
-    [Display(Name = "Sugar", GroupName = "Carbohydrates")]
-    Sugar = 1 << 4, // 16
+    DietaryFiber = SolubleFiber | InsolubleFiber, // 24
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person)]
@@ -51,7 +51,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person)]
     [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
-    Carbohydrates = Starch | DietaryFiber | Sugar | Oligosaccharides, // 62
+    Carbohydrates = Sugar | Starches | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person)]
