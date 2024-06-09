@@ -385,11 +385,17 @@ public enum Nutrients : long
     [Display(Name = "Histidine", GroupName = "Amino Acids / Essential")]
     Histidine = 1L << 51, // 2251799813685248,
 
+    /// <summary>
+    /// Branched-chain amino-acid.
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(19, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
     [Display(Name = "Isoleucine", GroupName = "Amino Acids / Essential")]
     Isoleucine = 1L << 52, // 4503599627370496,
 
+    /// <summary>
+    /// Branched-chain amino-acid.
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(80, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
     [DailyAllowance(120, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
@@ -427,6 +433,9 @@ public enum Nutrients : long
     [Display(Name = "Tryptophan", GroupName = "Amino Acids / Essential")]
     Tryptophan = 1L << 58, // 288230376151711744,
 
+    /// <summary>
+    /// Branched-chain amino-acid.
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
     [DailyAllowance(25, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
