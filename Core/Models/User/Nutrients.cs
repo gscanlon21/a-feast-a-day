@@ -24,29 +24,29 @@ public enum Nutrients : long
     Sugar = 1 << 1, // 2
 
     [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person)]
+    [Display(Name = "Oligosaccharides", GroupName = "Carbohydrates")]
+    Oligosaccharides = 1 << 2, // 4
+
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Startch, Glycogen, Cellulose.")]
-    Starch = 1 << 2, // 4
+    Starch = 1 << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(4, -1, Measure.Grams, Multiplier.Kilocalorie)]
     [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
-    SolubleFiber = 1 << 3, // 8
+    SolubleFiber = 1 << 4, // 16
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie)]
     [Display(Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
-    InsolubleFiber = 1 << 4, // 16
+    InsolubleFiber = 1 << 5, // 32
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie)]
     [Display(Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
-    DietaryFiber = SolubleFiber | InsolubleFiber, // 24
-
-    [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person)]
-    [Display(Name = "Oligosaccharides", GroupName = "Carbohydrates")]
-    Oligosaccharides = 1 << 5, // 32
+    DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person)]
@@ -136,6 +136,15 @@ public enum Nutrients : long
 
     /// <summary>
     /// Anti-oxidant plant compounds.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Non-flavanoids", GroupName = "Anti-oxidants", Description = "Polyphenolic amides, Stilbenoids.")]
+    NonFlavanoids = PhenolicAcids | OtherPolyphenols, // 24576
+
+    /// <summary>
+    /// Anti-oxidant plant compounds.
+    /// https://www.researchgate.net/figure/Polyphenols-classification_fig1_360419454
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]

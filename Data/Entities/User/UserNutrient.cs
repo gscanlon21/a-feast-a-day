@@ -77,6 +77,7 @@ public class UserNutrient
         [Nutrients.Carotenoids] = 100..200,
         [Nutrients.Flavanoids] = 100..200,
         [Nutrients.PhenolicAcids] = 100..200,
+        [Nutrients.NonFlavanoids] = 100..200,
         [Nutrients.OtherPolyphenols] = 100..200,
         [Nutrients.Polyphenols] = 100..200,
         [Nutrients.Retinol] = 100..200,
