@@ -98,7 +98,13 @@ public class UserEditViewModel
 
     [Required]
     [Display(Name = "Send Days", Description = "What days do you want to receive new recipes?")]
-    public Days SendDays { get; init; }
+    public Days SendDays { get; set; }
+
+    public Days[]? SendDaysBinder
+    {
+        get => Enum.GetValues<Days>().Where(e => SendDays.HasFlag(e)).ToArray();
+        set => SendDays = value?.Aggregate(Days.None, (a, e) => a | e) ?? Days.None;
+    }
 
     public Verbosity[]? VerbosityBinder
     {
