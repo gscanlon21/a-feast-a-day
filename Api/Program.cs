@@ -100,7 +100,6 @@ await DisableInactiveUsers.Schedule(scheduler);
 await DisableErroredUsers.Schedule(scheduler);
 await DeleteOldWorkouts.Schedule(scheduler);
 await DeleteOldNewsletters.Schedule(scheduler);
-await DeleteOldWeights.Schedule(scheduler);
 await DeleteInactiveUsers.Schedule(scheduler);
 await DeleteOldTokens.Schedule(scheduler);
 
