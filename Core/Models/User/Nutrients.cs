@@ -93,19 +93,6 @@ public enum Nutrients : long
     [Display(Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 
-    /// <summary>
-    /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn’t contribute to increases in your body’s blood cholesterol levels. 
-    /// Cholesterol is a natural substance that’s produced in your body and is found in animal-based foods. It’s a waxy, fatty substance that travels through your bloodstream.
-    /// But problems arise when you eat too many saturated and trans fats. These cause your liver to produce too much LDL (“bad”) cholesterol, which winds up in artery-clogging deposits. 
-    /// For this reason, experts generally recommend avoiding trans fats altogether and limiting saturated fats to 10 percent or lessTrusted Source of your total calorie intake.
-    /// 
-    /// Dietary cholesterol is different from blood (HDL—good or LDL—bad) cholesterol.
-    /// </summary>
-    [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(-1, 250, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
-    DietaryCholesterol = 1 << 11, // 2048
-
     // Antioxidants
 
     /// <summary>
@@ -115,7 +102,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Flavanoids", GroupName = "Anti-oxidants")]
-    Flavanoids = 1 << 12, // 4096
+    Flavanoids = 1 << 11, // 2048
 
     /// <summary>
     /// Anti-oxidant plant compounds.
@@ -124,7 +111,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Phenolic Acids", GroupName = "Anti-oxidants")]
-    PhenolicAcids = 1 << 13, // 8192
+    PhenolicAcids = 1 << 12, // 4096
 
     /// <summary>
     /// Anti-oxidant plant compounds.
@@ -132,7 +119,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Other Polyphenols", GroupName = "Anti-oxidants", Description = "Polyphenolic amides, Stilbenoids.")]
-    OtherPolyphenols = 1 << 14, // 16384
+    OtherPolyphenols = 1 << 13, // 8192
 
     /// <summary>
     /// Anti-oxidant plant compounds.
@@ -140,7 +127,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Non-flavanoids", GroupName = "Anti-oxidants", Description = "Polyphenolic amides, Stilbenoids.")]
-    NonFlavanoids = PhenolicAcids | OtherPolyphenols, // 24576
+    NonFlavanoids = PhenolicAcids | OtherPolyphenols, // 12288
 
     /// <summary>
     /// Anti-oxidant plant compounds.
@@ -149,7 +136,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Polyphenols", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
-    Polyphenols = Flavanoids | PhenolicAcids | OtherPolyphenols, // 28672
+    Polyphenols = Flavanoids | PhenolicAcids | OtherPolyphenols, // 14336
 
     /// <summary>
     /// Does not get converted into vitamin A.
@@ -157,7 +144,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Non-provitamin A Carotenoids", GroupName = "Anti-oxidants", Description = "Lycopene.")]
-    NonProvitaminACarotenoids = 1 << 15, // 32768
+    NonProvitaminACarotenoids = 1 << 14, // 16384
 
     // Vitamins
 
@@ -166,13 +153,29 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Alpha Carotene", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
+    AlphaCarotene = 1 << 15, // 32768
+
+    /// <summary>
+    /// Precursors to vitamin A.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Beta Carotene", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
+    BetaCarotene = 1 << 16, // 65536
+
+    /// <summary>
+    /// Precursors to vitamin A.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Provitamin A Carotenoids", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
-    ProvitaminACarotenoids = 1 << 16, // 65536
+    ProvitaminACarotenoids = AlphaCarotene | BetaCarotene, // 98304
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Micrograms, Multiplier.Person)]
     [Display(Name = "Carotenoids", GroupName = "Vitamins")]
-    Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 98304
+    Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 114688
 
     /// <summary>
     /// Retinoids.
@@ -521,12 +524,24 @@ public enum Nutrients : long
     //[Display(Name = "Tyrosine", GroupName = "Micronutrients")]
     //Tyrosine = 1L << 63, // 2251799813685248,
 
+    /// <summary>
+    /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn’t contribute to increases in your body’s blood cholesterol levels. 
+    /// Cholesterol is a natural substance that’s produced in your body and is found in animal-based foods. It’s a waxy, fatty substance that travels through your bloodstream.
+    /// But problems arise when you eat too many saturated and trans fats. These cause your liver to produce too much LDL (“bad”) cholesterol, which winds up in artery-clogging deposits. 
+    /// For this reason, experts generally recommend avoiding trans fats altogether and limiting saturated fats to 10 percent or lessTrusted Source of your total calorie intake.
+    /// 
+    /// Dietary cholesterol is different from blood (HDL—good or LDL—bad) cholesterol.
+    /// </summary>
+    [DefaultMeasure(Measure.Milligrams)]
+    [DailyAllowance(-1, 250, Measure.Milligrams, Multiplier.Person)]
+    [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
+    DietaryCholesterol = 1 << 63, // 9223372036854775808
 
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | Omega3 | Omega6 | SaturatedFats | TransFats
         | DietaryCholesterol
         | Flavanoids | PhenolicAcids | OtherPolyphenols | NonProvitaminACarotenoids
-        | ProvitaminACarotenoids | Retinol
+        | AlphaCarotene | BetaCarotene | Retinol
         | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
         | VitaminC | VitaminD | VitaminE | VitaminK
         | Calcium | Chloride | Magnesium | Potassium | Sodium

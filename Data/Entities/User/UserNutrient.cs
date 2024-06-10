@@ -73,6 +73,8 @@ public class UserNutrient
         [Nutrients.VitaminA] = 100..200,
         [Nutrients.VitaminC] = 100..200,
         [Nutrients.NonProvitaminACarotenoids] = 100..200,
+        [Nutrients.AlphaCarotene] = 100..200,
+        [Nutrients.BetaCarotene] = 100..200,
         [Nutrients.ProvitaminACarotenoids] = 100..200,
         [Nutrients.Carotenoids] = 100..200,
         [Nutrients.Flavanoids] = 100..200,
