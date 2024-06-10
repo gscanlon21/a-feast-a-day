@@ -134,14 +134,14 @@ public partial class UserController
         {
             // Sum all the parts of a nutrient if it was left empty.
             // FIXME: Not all of the precursors get converted into a nutrient. Need a conversion percentage.
-            if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
-            {
-                nutrient.Measure = Measure.Grams;
-                nutrient.Value = nutrients
-                    .Where(n => BitOperations.PopCount((ulong)n.Nutrients) == 1)
-                    .Where(n => nutrient.Nutrients.HasFlag(n.Nutrients))
-                    .Sum(n => n.Measure.ToGrams(n.Value));
-            }
+            //if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
+            //{
+            //    nutrient.Measure = Measure.Grams;
+            //    nutrient.Value = nutrients
+            //        .Where(n => BitOperations.PopCount((ulong)n.Nutrients) == 1)
+            //        .Where(n => nutrient.Nutrients.HasFlag(n.Nutrients))
+            //        .Sum(n => n.Measure.ToGrams(n.Value));
+            //}
 
             var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
             if (existingNutrient != null)
