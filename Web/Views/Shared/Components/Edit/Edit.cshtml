@@ -247,16 +247,17 @@
                         @for (int id = 0; id < Model.UserIngredients.Count; id++)
                         {
                             var userIngredient = Model.UserIngredients[id];
+                            var baseIngredient = Model.Ingredients.First(i => i.Id == userIngredient.IngredientId);
+                            var substituteIngredients = Model.Ingredients.Where(i => i.ParentId == userIngredient.IngredientId);
                             <div id="custom-substitute-@id" class="custom-substitute">
                                 <div class="row">
                                     <input type="hidden" asp-for="UserIngredients[id].UserId" value="@Model.User.Id" />
+                                    <input type="hidden" asp-for="UserIngredients[id].IngredientId" value="@Model.UserIngredients[id].IngredientId" />
 
                                     <div class="form-group mb-3 row">
                                         <div class="col">
                                             <label asp-for="UserIngredients[id].IngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredients[id].IngredientId)</label>
-                                            <select asp-for="UserIngredients[id].IngredientId" class="form-control" aria-describedby="time-help" required="required"
-                                                    asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
-                                            </select>
+                                            <input class="form-control" aria-describedby="time-help" readonly value="@baseIngredient.Name" />
                                             <span asp-validation-for="UserIngredients[id].IngredientId" class="text-danger"></span>
                                             <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredients[id].IngredientId)</span>
                                         </div>
@@ -264,7 +265,7 @@
                                         <div class="col">
                                             <label asp-for="UserIngredients[id].SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredients[id].SubstituteIngredientId)</label>
                                             <select asp-for="UserIngredients[id].SubstituteIngredientId" class="form-control" aria-describedby="time-help" required="required"
-                                                    asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
+                                                    asp-items="@(substituteIngredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem() { Text = baseIngredient.Name, Value = baseIngredient.Id.ToString() }))">
                                             </select>
                                             <span asp-validation-for="UserIngredients[id].SubstituteIngredientId" class="text-danger"></span>
                                             <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredients[id].SubstituteIngredientId)</span>
