@@ -535,7 +535,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(-1, 250, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
-    DietaryCholesterol = 1 << 63, // 9223372036854775808
+    DietaryCholesterol = 1L << 63, // 9223372036854775808
 
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | Omega3 | Omega6 | SaturatedFats | TransFats
