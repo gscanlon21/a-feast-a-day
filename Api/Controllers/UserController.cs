@@ -34,6 +34,6 @@ public class UserController(UserRepo userRepo) : ControllerBase
             return null;
         }
 
-        return await userRepo.GetPastWorkouts(user);
+        return await userRepo.GetPastFeasts(user);
     }
 }
