@@ -1,6 +1,6 @@
 ﻿namespace Web.ViewModels.User.Components;
 
-public class WorkoutViewModel
+public class CurrentFeastViewModel
 {
     public Data.Entities.User.User User { get; init; } = null!;
 

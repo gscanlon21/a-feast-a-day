@@ -9,12 +9,12 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
 /// </summary>
-public class NextWorkoutViewComponent(UserRepo userRepo) : ViewComponent
+public class NextFeastViewComponent(UserRepo userRepo) : ViewComponent
 {
     /// <summary>
     /// For routing
     /// </summary>
-    public const string Name = "NextWorkout";
+    public const string Name = "NextFeast";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
@@ -24,13 +24,12 @@ public class NextWorkoutViewComponent(UserRepo userRepo) : ViewComponent
             return Content("");
         }
 
-        return View("NextWorkout", new NextWorkoutViewModel()
+        return View("NextFeast", new NextFeastViewModel()
         {
             User = user,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
             TimeUntilNextSend = timeUntilNextSend,
             Today = DaysExtensions.FromDate(user.TodayOffset),
-            NextWorkoutSendsToday = timeUntilNextSend.HasValue && DateOnly.FromDateTime(DateTime.UtcNow.Add(timeUntilNextSend.Value)) == user.TodayOffset
         });
     }
 }

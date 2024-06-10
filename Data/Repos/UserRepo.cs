@@ -244,7 +244,7 @@ public class UserRepo(CoreContext context)
     /// <summary>
     /// Get the last 7 days of workouts for the user. Excludes the current workout.
     /// </summary>
-    public async Task<IList<UserFeast>> GetPastWorkouts(User user)
+    public async Task<IList<UserFeast>> GetPastFeasts(User user)
     {
         return (await context.UserFeasts
             .Where(uw => uw.UserId == user.Id)

@@ -1,0 +1,21 @@
+﻿@model PastFeastsViewModel
+@using Core.Models.Recipe
+@using Lib.ViewModels.User
+@using Lib.ViewModels.Newsletter
+@using Core.Models.User
+
+<details class="mb-25">
+    <summary class="mb-1 h5">Past Feasts</summary>
+
+    <div class="list-group mb-3">
+        @foreach (var pastFeast in Model.PastFeasts)
+        {
+            <a href="@Url.ActionLink(nameof(NewsletterController.Newsletter), NewsletterController.Name, new { Model.User.Email, Model.Token, Date = pastFeast.Date.ToString("O") })"
+               class="list-group-item list-group-item-dark list-group-item-action allow-demo">
+                <div class="row gx-3 gy-1">
+                    <h6 class="mb-1 font-weight--normal">@pastFeast.Date.ToLongDateString()</h6>
+                </div>
+            </a>
+        }
+    </div>
+</details>

@@ -4,26 +4,26 @@ using Web.ViewModels.User.Components;
 
 namespace Web.Components.User;
 
-public class PastWorkoutViewComponent(UserRepo userRepo) : ViewComponent
+public class PastFeastsViewComponent(UserRepo userRepo) : ViewComponent
 {
     /// <summary>
     /// For routing
     /// </summary>
-    public const string Name = "PastWorkout";
+    public const string Name = "PastFeasts";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
-        var pastWorkouts = await userRepo.GetPastWorkouts(user);
-        if (!pastWorkouts.Any())
+        var pastFeasts = await userRepo.GetPastFeasts(user);
+        if (!pastFeasts.Any())
         {
             return Content("");
         }
 
-        return View("PastWorkout", new PastWorkoutViewModel()
+        return View("PastFeasts", new PastFeastsViewModel()
         {
             User = user,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
-            PastWorkouts = pastWorkouts,
+            PastFeasts = pastFeasts,
         });
     }
 }

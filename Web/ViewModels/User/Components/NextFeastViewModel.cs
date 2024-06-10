@@ -3,7 +3,7 @@
 namespace Web.ViewModels.User.Components;
 
 
-public class NextWorkoutViewModel
+public class NextFeastViewModel
 {
     public Days Today { get; init; }
 
@@ -12,8 +12,6 @@ public class NextWorkoutViewModel
     /// Otherwise the duration until the next workout starts sending.
     /// </summary>
     public TimeSpan? TimeUntilNextSend { get; init; }
-
-    public bool NextWorkoutSendsToday { get; init; }
 
     public Data.Entities.User.User User { get; init; } = null!;
 

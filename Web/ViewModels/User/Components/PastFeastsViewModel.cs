@@ -2,11 +2,11 @@
 
 namespace Web.ViewModels.User.Components;
 
-public class PastWorkoutViewModel
+public class PastFeastsViewModel
 {
     public DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
 
-    public IList<UserFeast> PastWorkouts { get; init; } = null!;
+    public IList<UserFeast> PastFeasts { get; init; } = null!;
 
     public Data.Entities.User.User User { get; init; } = null!;
 
