@@ -5,7 +5,7 @@ using Quartz;
 
 namespace Api.Jobs.Delete;
 
-public class DeleteOldWorkouts(ILogger<DeleteOldWorkouts> logger, CoreContext coreContext) : IJob, IScheduled
+public class DeleteOldFeasts(ILogger<DeleteOldFeasts> logger, CoreContext coreContext) : IJob, IScheduled
 {
     private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
 
@@ -23,13 +23,13 @@ public class DeleteOldWorkouts(ILogger<DeleteOldWorkouts> logger, CoreContext co
         }
     }
 
-    public static JobKey JobKey => new(nameof(DeleteOldWorkouts) + "Job", GroupName);
-    public static TriggerKey TriggerKey => new(nameof(DeleteOldWorkouts) + "Trigger", GroupName);
+    public static JobKey JobKey => new(nameof(DeleteOldFeasts) + "Job", GroupName);
+    public static TriggerKey TriggerKey => new(nameof(DeleteOldFeasts) + "Trigger", GroupName);
     public static string GroupName => "Delete";
 
     public static async Task Schedule(IScheduler scheduler)
     {
-        var job = JobBuilder.Create<DeleteOldWorkouts>()
+        var job = JobBuilder.Create<DeleteOldFeasts>()
             .WithIdentity(JobKey)
             .Build();
 
