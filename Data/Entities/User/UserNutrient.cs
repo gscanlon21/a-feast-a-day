@@ -102,6 +102,7 @@ public class UserNutrient
         [Nutrients.Valine] = 100..200,
         [Nutrients.Arginine] = 100..200,
         [Nutrients.Glycine] = 100..200,
+        [Nutrients.MacroNutrients] = 100..150,
         [Nutrients.Sodium] = 80..120,
         [Nutrients.Sugar] = 80..120,
         [Nutrients.TransFats] = 0..100,
