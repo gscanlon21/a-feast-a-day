@@ -6,9 +6,9 @@ public class UserIngredientViewModel
 {
     public int UserId { get; set; }
 
-    [Display(Name = "Base Ingredient")]
+    [Display(ShortName = "Ingredient", Name = "Base Ingredient")]
     public int IngredientId { get; init; }
 
-    [Display(Name = "Substitute Ingredient")]
+    [Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
     public int SubstituteIngredientId { get; init; }
 }

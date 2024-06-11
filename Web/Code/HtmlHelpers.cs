@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
+using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 using System.Text.Encodings.Web;
 
@@ -28,5 +30,26 @@ public class HtmlHelpers<TModel>(IHtmlGenerator generator,
     {
         var metadata = expressionProvider.CreateModelExpression(ViewData, expression);
         return new HtmlString(metadata.Metadata.Description);
+    }
+
+    /// <summary>
+    /// Returns the ShortName property of the Display attribute for the model property.
+    /// </summary>
+    public HtmlString? DisplayShortNameFor<TProperty>(
+        Expression<Func<TModel, TProperty>> expression)
+    {
+        var metadata = expressionProvider.CreateModelExpression(ViewData, expression);
+        if (metadata.Metadata is DefaultModelMetadata modelMetadata && modelMetadata.Attributes.PropertyAttributes != null)
+        {
+            foreach (var attribute in modelMetadata.Attributes.PropertyAttributes)
+            {
+                if (attribute is DisplayAttribute displayAttribute)
+                {
+                    return new HtmlString(displayAttribute.GetShortName() ?? displayAttribute.GetName());
+                }
+            }
+        }
+
+        return null;
     }
 }

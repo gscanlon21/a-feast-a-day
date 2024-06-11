@@ -21,9 +21,9 @@ public class IngredientViewModel
 
     public bool SkipShoppingList { get; init; }
 
-    public int ServingSizeGrams { get; init; }
+    public double ServingSizeGrams { get; init; }
 
-    public int GramsPerCup { get; init; }
+    public double GramsPerCup { get; init; }
 
     public double CaloriesPerServing { get; set; }
 

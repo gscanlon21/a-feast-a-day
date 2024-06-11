@@ -7,7 +7,7 @@ public static class MeasureExtensions
     /// <summary>
     /// Returns null if the source list does not contain any items.
     /// </summary>
-    public static double ToGrams(this Measure measure, double quantity, int? gramsPerCup = null)
+    public static double ToGrams(this Measure measure, double quantity, double? gramsPerCup = null)
     {
         var gramMultiplier = gramsPerCup ?? 1;
         return measure switch

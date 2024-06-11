@@ -256,14 +256,14 @@
 
                                     <div class="form-group mb-3 row">
                                         <div class="col">
-                                            <label asp-for="UserIngredients[id].IngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredients[id].IngredientId)</label>
+                                            <label asp-for="UserIngredients[id].IngredientId" class="control-label">@Html.DisplayShortNameFor(_ => Model.UserIngredients[id].IngredientId)</label>
                                             <input class="form-control" aria-describedby="time-help" readonly value="@baseIngredient.Name" />
                                             <span asp-validation-for="UserIngredients[id].IngredientId" class="text-danger"></span>
                                             <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredients[id].IngredientId)</span>
                                         </div>
 
                                         <div class="col">
-                                            <label asp-for="UserIngredients[id].SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredients[id].SubstituteIngredientId)</label>
+                                            <label asp-for="UserIngredients[id].SubstituteIngredientId" class="control-label">@Html.DisplayShortNameFor(_ => Model.UserIngredients[id].SubstituteIngredientId)</label>
                                             <select asp-for="UserIngredients[id].SubstituteIngredientId" class="form-control" aria-describedby="time-help" required="required"
                                                     asp-items="@(substituteIngredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem() { Text = baseIngredient.Name, Value = baseIngredient.Id.ToString() }))">
                                             </select>
