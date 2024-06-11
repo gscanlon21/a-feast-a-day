@@ -545,8 +545,6 @@ public enum Nutrients : long
     //[Display(Name = "Tyrosine", GroupName = "Micronutrients")]
     //Tyrosine = 1L << 63, // 2251799813685248,
 
-
-
     All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | Omega3 | Omega6 | SaturatedFats | TransFats
         | DietaryCholesterol
