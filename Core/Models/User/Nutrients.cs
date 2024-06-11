@@ -262,13 +262,13 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
-    [Display(ShortName = "Vitamin D", Name = "Vitamin D (Calciferol)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin D2", Name = "Vitamin D2 (Calciferol)", GroupName = "Vitamins")]
     VitaminD2 = 1L << 27, // 134217728
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
-    [Display(ShortName = "Vitamin D", Name = "Vitamin D (Calciferol)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin D3", Name = "Vitamin D3 (Calciferol)", GroupName = "Vitamins")]
     VitaminD3 = 1L << 28, // 268435456
 
     [DefaultMeasure(Measure.Micrograms)]
@@ -286,13 +286,13 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
-    [Display(ShortName = "Vitamin K", Name = "Vitamin K (Phylloquinone, Menadione)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin K1", Name = "Vitamin K1 (Phylloquinone, )", GroupName = "Vitamins")]
     VitaminK1 = 1L << 30, // 1073741824
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
-    [Display(ShortName = "Vitamin K", Name = "Vitamin K (Phylloquinone, Menadione)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin K2", Name = "Vitamin K2 (Menadione)", GroupName = "Vitamins")]
     VitaminK2 = 1L << 31, // 2147483648
 
     [DefaultMeasure(Measure.Micrograms)]
