@@ -205,6 +205,7 @@ public static class EnumExtensions
                     DisplayNameType.ShortName => attribute.GetShortName() ?? attribute.GetName(),
                     DisplayNameType.GroupName => attribute.GetGroupName() ?? attribute.GetShortName() ?? attribute.GetName(),
                     DisplayNameType.Description => attribute.GetDescription() ?? string.Empty,
+                    DisplayNameType.Order => attribute.GetOrder().ToString(),
                     _ => null
                 } ?? @enum.GetDisplayName32(nameType);
             }
