@@ -1,12 +1,17 @@
-﻿namespace Data.Query.Options;
+﻿using Core.Models.Recipe;
+
+namespace Data.Query.Options;
 
 public class UserOptions : IOptions
 {
     public bool NoUser { get; } = true;
 
     public int Id { get; }
+    public Equipment Equipment { get; }
     public int? MaxIngredients { get; }
     public DateOnly CreatedDate { get; }
+
+    public bool IgnoreMissingEquipment { get; set; } = false;
     public bool IgnoreIgnored { get; set; } = false;
 
     public UserOptions() { }
@@ -15,7 +20,8 @@ public class UserOptions : IOptions
     {
         NoUser = false;
         Id = user.Id;
-        MaxIngredients = user.MaxIngredients;
+        Equipment = user.Equipment;
         CreatedDate = user.CreatedDate;
+        MaxIngredients = user.MaxIngredients;
     }
 }

@@ -1,13 +1,13 @@
 ﻿using Core.Consts;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
-using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
@@ -93,6 +93,9 @@ public class User
     [Required]
     public Days SendDays { get; set; }
 
+    [Required]
+    public Equipment Equipment { get; set; }
+
     /// <summary>
     /// What hour of the day (UTC) should we send emails to this user.
     /// </summary>
@@ -145,6 +148,9 @@ public class User
     /// </summary>
     public Features Features { get; set; } = Features.None;
 
+    [Range(Consts.AtLeastXServingsPerRecipeMin, Consts.AtLeastXServingsPerRecipeMax)]
+    public int AtLeastXServingsPerRecipe { get; set; } = Consts.AtLeastXServingsPerRecipeDefault;
+
     #region Advanced Preferences
 
     [Range(Consts.FootnoteCountMin, Consts.FootnoteCountMax)]
@@ -170,17 +176,6 @@ public class User
     /// </summary>
     [NotMapped]
     public bool NewsletterEnabled => NewsletterDisabledReason == null;
-
-    /// <summary>
-    /// How many days of the week is the user working out?
-    /// 
-    /// Don't use in queries, is not mapped currently.
-    /// </summary>
-    [NotMapped]
-    public int WorkoutsDays => BitOperations.PopCount((ulong)SendDays);
-
-    [Range(Consts.AtLeastXServingsPerRecipeMin, Consts.AtLeastXServingsPerRecipeMax)]
-    public int AtLeastXServingsPerRecipe { get; set; } = Consts.AtLeastXServingsPerRecipeDefault;
 
     #endregion
     #region Navigation Properties

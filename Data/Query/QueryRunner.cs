@@ -1,5 +1,6 @@
 ﻿using Core.Code.Extensions;
 using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.User;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System.Numerics;
+using System.Runtime.ConstrainedExecution;
 using System.Security.Cryptography;
 
 namespace Data.Query;
@@ -24,6 +26,7 @@ public class QueryRunner(Section section)
     {
         public Recipe Recipe { get; init; } = null!;
         public UserRecipe UserRecipe { get; init; } = null!;
+        public bool UserOwnsEquipment { get; init; }
     }
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
@@ -33,6 +36,7 @@ public class QueryRunner(Section section)
         public int Scale { get; set; } = 1;
         public Recipe Recipe { get; } = queryResult.Recipe;
         public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
+        public bool UserOwnsEquipment { get; } = queryResult.UserOwnsEquipment;
 
         public override int GetHashCode() => HashCode.Combine(Recipe.Id);
 
@@ -51,6 +55,7 @@ public class QueryRunner(Section section)
     public required RecipeOptions RecipeOptions { get; init; }
     public required NutrientOptions NutrientOptions { get; init; }
     public required AllergenOptions AllergenOptions { get; init; }
+    public required EquipmentOptions EquipmentOptions { get; init; }
 
     private IQueryable<RecipesQueryResults> CreateRecipesQuery(CoreContext context)
     {
@@ -67,7 +72,12 @@ public class QueryRunner(Section section)
         return query.Select(i => new RecipesQueryResults()
         {
             Recipe = i,
-            UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id)
+            UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
+            UserOwnsEquipment = UserOptions.NoUser
+                // The user owns all of the equipment for the recipe.
+                || UserOptions.Equipment.HasFlag(i.Equipment)
+                // The recipe does not require any equipment.
+                || i.Equipment == Equipment.None
         });
     }
 
@@ -75,6 +85,8 @@ public class QueryRunner(Section section)
     {
         var filteredQuery = CreateRecipesQuery(context)
             .TagWith(nameof(CreateFilteredRecipesQuery))
+            // Filter down to variations the user owns equipment for
+            .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment)
             // Don't grab exercises that the user wants to ignore
             .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
 
@@ -103,6 +115,7 @@ public class QueryRunner(Section section)
         filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds);
         filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (curr2, n2) => curr2 | n2), include: true);
+        filteredQuery = Filters.FilterEquipmentIds(filteredQuery, EquipmentOptions.Equipment);
 
         var queryResults = await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
 

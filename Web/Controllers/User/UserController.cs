@@ -84,6 +84,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.FootnoteType = viewModel.FootnoteType;
                 viewModel.User.SendDays = viewModel.SendDays;
                 viewModel.User.SendHour = viewModel.SendHour;
+                viewModel.User.Equipment = viewModel.Equipment;
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
                 viewModel.User.AtLeastXServingsPerRecipe = viewModel.AtLeastXServingsPerRecipe;

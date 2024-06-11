@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Newsletter;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,9 @@ public class Recipe
     public bool AdjustableServings { get; set; }
 
     [Required]
+    public Equipment Equipment { get; set; }
+
+    [Required]
     public Section Section { get; set; }
 
     [Required]
@@ -79,6 +83,14 @@ public class Recipe
     {
         get => Enum.GetValues<Section>().Where(e => Section.HasFlag(e)).ToArray();
         set => Section = value?.Aggregate(Section.None, (a, e) => a | e) ?? Section.None;
+    }
+
+    [NotMapped]
+    [Required]
+    public Equipment[]? EquipmentBinder
+    {
+        get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
+        set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
     [NotMapped]

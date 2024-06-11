@@ -24,6 +24,11 @@ public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) 
 
         var queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None);
 
+        if (viewModel.Equipment.HasValue)
+        {
+            queryBuilder = queryBuilder.WithEquipment(viewModel.Equipment.Value);
+        }
+
         viewModel.Recipes = (await queryBuilder.Build().Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r)
             .AsType<Lib.ViewModels.Newsletter.NewsletterRecipeViewModel, RecipeDto>()!)

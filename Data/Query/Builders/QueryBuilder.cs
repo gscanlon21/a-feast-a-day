@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Data.Entities.User;
 using Data.Query.Options;
 
@@ -16,6 +17,7 @@ public class QueryBuilder
     private ServingsOptions? ServingsOptions;
     private ExclusionOptions? ExclusionOptions;
     private RecipeOptions? ExerciseOptions;
+    private EquipmentOptions? EquipmentOptions;
     private AllergenOptions? AllergenOptions;
 
     /// <summary>
@@ -53,6 +55,17 @@ public class QueryBuilder
         var options = builder.Build();
         optionsBuilder?.Invoke(options);
         NutrientOptions = options;
+        return this;
+    }
+
+    /// <summary>
+    /// Filter variations down to have this equipment.
+    /// </summary>
+    public QueryBuilder WithEquipment(Equipment equipments, Action<EquipmentOptions>? builder = null)
+    {
+        var options = EquipmentOptions ?? new EquipmentOptions(equipments);
+        builder?.Invoke(options);
+        EquipmentOptions = options;
         return this;
     }
 
@@ -118,6 +131,7 @@ public class QueryBuilder
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             RecipeOptions = ExerciseOptions ?? new RecipeOptions(),
             AllergenOptions = AllergenOptions ?? new AllergenOptions(),
+            EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
         };
     }
 }

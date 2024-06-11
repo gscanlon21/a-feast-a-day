@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.User;
 
@@ -54,6 +55,27 @@ public static class Filters
             {
                 // If a recovery muscle is set, don't choose any exercises that work the injured muscle
                 query = query.Where(r => r.Recipe.Ingredients.All(i => (i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients)))));
+            }
+        }
+
+        return query;
+    }
+
+    /// <summary>
+    ///     Filters exercises to whether they use certain equipment.
+    /// </summary>
+    public static IQueryable<T> FilterEquipmentIds<T>(IQueryable<T> query, Equipment? equipments) where T : IRecipeCombo
+    {
+        if (equipments.HasValue)
+        {
+            if (equipments == Equipment.None)
+            {
+                query = query.Where(i => i.Recipe.Equipment == Equipment.None);
+            }
+            else
+            {
+                // Has any flag
+                query = query.Where(i => (i.Recipe.Equipment & equipments) != 0);
             }
         }
 

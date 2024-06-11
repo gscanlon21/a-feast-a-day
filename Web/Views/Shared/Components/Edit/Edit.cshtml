@@ -118,6 +118,27 @@
                 </div>
             </div>
 
+            @if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
+                    Recipes are chosen from equipment you have access to.
+                </div>
+            }
+            <div class="form-group mb-3">
+                <label asp-for="EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Equipment)</label>
+                <select asp-for="EquipmentBinder" class="form-control overflow-auto" aria-describedby="equipment-help" size="5"
+                        asp-items="@(EnumExtensions.GetSingleValues32<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.GroupText))">
+                </select>
+                <span asp-validation-for="EquipmentBinder" class="text-danger"></span>
+                <details id="equipment-help" class="form-text">
+                    <summary>@Html.DisplayDescriptionFor(_ => Model.Equipment)</summary>
+
+                    <div class="mt-1">
+                        <span>Recipes that require equipment you don't have will be excluded from your meal plan.</span>
+                    </div>
+                </details>
+            </div>
+
             <div class="form-group mb-3">
                 <label asp-for="AllergyBinder" class="control-label">@Html.DisplayNameFor(_ => Model.ExcludeAllergens)</label>
                 <select asp-for="AllergyBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"

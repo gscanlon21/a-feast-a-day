@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.ViewModels.Recipe;
@@ -20,7 +21,11 @@ public class RecipesViewModel
     [Display(Name = "Section")]
     public Section? Section { get; init; }
 
+    [Display(Name = "Equipment")]
+    public Equipment? Equipment { get; init; }
+
     public bool FormHasData =>
         !string.IsNullOrWhiteSpace(Name)
-        || Section.HasValue;
+        || Section.HasValue
+        || Equipment.HasValue;
 }

@@ -1,6 +1,7 @@
 ﻿using Core.Consts;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
@@ -30,6 +31,7 @@ public class UserEditViewModel
         Verbosity = user.Verbosity;
         FootnoteType = user.FootnoteType;
         SendHour = user.SendHour;
+        Equipment = user.Equipment;
         MaxIngredients = user.MaxIngredients;
         ExcludeAllergens = user.ExcludeAllergens;
         AtLeastXServingsPerRecipe = user.AtLeastXServingsPerRecipe;
@@ -88,6 +90,10 @@ public class UserEditViewModel
     [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]
     public Allergy ExcludeAllergens { get; set; }
 
+    [Required]
+    [Display(Name = "Cooking Equipment", Description = "What cooking equipment do you have access to?")]
+    public Equipment Equipment { get; set; }
+
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
     [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new recipes?")]
     public int SendHour { get; init; }
@@ -110,6 +116,12 @@ public class UserEditViewModel
     {
         get => Enum.GetValues<Verbosity>().Where(e => Verbosity.HasFlag(e)).ToArray();
         set => Verbosity = value?.Aggregate(Verbosity.None, (a, e) => a | e) ?? Verbosity.None;
+    }
+
+    public Equipment[]? EquipmentBinder
+    {
+        get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
+        set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
     public Allergy[]? AllergyBinder

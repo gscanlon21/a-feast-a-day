@@ -90,6 +90,7 @@ public partial class UserController
             existingRecipe.CookTime = recipe.CookTime;
             existingRecipe.PrepTime = recipe.PrepTime;
             existingRecipe.Section = recipe.Section;
+            existingRecipe.Equipment = recipe.Equipment;
             existingRecipe.DisabledReason = recipe.DisabledReason;
         }
 

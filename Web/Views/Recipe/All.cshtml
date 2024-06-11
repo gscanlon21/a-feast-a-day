@@ -25,6 +25,12 @@
                     asp-items='@(EnumExtensions.GetValuesExcluding32(Section.None, Section.All, Section.Debug).AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem() { Text = "" }))'>
             </select>
         </div>
+        <div style="margin-bottom:1ex;">
+            <label asp-for="Equipment" class="control-label">@Html.DisplayNameFor(_ => Model.Equipment)</label>
+            <select asp-for="Equipment" class="form-control"
+                    asp-items='@(EnumExtensions.GetDisplayValues<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem() { Text = "" }))'>
+            </select>
+        </div>
         <div class="row pt-1">
             <div class="col">
                 <input type="submit" value="Apply" class="btn btn-secondary" name="submitButton" />

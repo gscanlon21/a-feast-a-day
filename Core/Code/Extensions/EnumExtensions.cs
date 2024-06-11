@@ -140,7 +140,8 @@ public static class EnumExtensions
         Name,
         ShortName,
         GroupName,
-        Description
+        Description,
+        Order
     }
 
     /// <summary>
