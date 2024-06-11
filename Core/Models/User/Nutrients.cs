@@ -3,9 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
 
-/// <summary>
-/// Free: 63.
-/// </summary>
 [Flags]
 public enum Nutrients : long
 {
