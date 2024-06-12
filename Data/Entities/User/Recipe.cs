@@ -77,8 +77,7 @@ public class Recipe
     public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
 
-    [NotMapped]
-    [Required]
+    [NotMapped, Required]
     public Section[]? SectionBinder
     {
         get => Enum.GetValues<Section>().Where(e => Section.HasFlag(e)).ToArray();
@@ -86,7 +85,6 @@ public class Recipe
     }
 
     [NotMapped]
-    [Required]
     public Equipment[]? EquipmentBinder
     {
         get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
