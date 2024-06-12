@@ -93,7 +93,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.None)]
     [DailyAllowance(2000, 3000, Measure.None, Multiplier.Person)]
     [Display(Order = 0, Name = "Calories", GroupName = "Calories")]
-    Calories = Proteins 
+    Calories = Proteins
         | Sugar | Oligosaccharides | Starch | SolubleFiber | InsolubleFiber
         | TransFats | SaturatedFats | MonounsaturatedFats | Omega3 | Omega6, // 2047
 
