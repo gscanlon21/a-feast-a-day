@@ -12,82 +12,82 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(75, 225, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Order = 1, Name = "Proteins", GroupName = "Proteins")]
+    [Display(Order = 17, Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1L << 0, // 1
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Order = 2, Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
+    [Display(Order = 10, Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
     Sugar = 1L << 1, // 2
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Order = 3, Name = "Oligosaccharides", GroupName = "Carbohydrates")]
+    [Display(Order = 11, Name = "Oligosaccharides", GroupName = "Carbohydrates")]
     Oligosaccharides = 1L << 2, // 4
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Order = 4, Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Startch, Glycogen, Cellulose.")]
+    [Display(Order = 12, Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Startch, Glycogen, Cellulose.")]
     Starch = 1L << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(4, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
-    [Display(Order = 5, Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
+    [Display(Order = 13, Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
     SolubleFiber = 1L << 4, // 16
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
-    [Display(Order = 6, Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
+    [Display(Order = 14, Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
     InsolubleFiber = 1L << 5, // 32
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
-    [Display(Order = 7, Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
+    [Display(Order = 15, Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Order = 8, ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
+    [Display(Order = 16, ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 9, Name = "Trans Fats", GroupName = "Fats")]
+    [Display(Order = 7, Name = "Trans Fats", GroupName = "Fats")]
     TransFats = 1L << 6, // 64
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 10, Name = "Saturated Fats", GroupName = "Fats")]
+    [Display(Order = 6, Name = "Saturated Fats", GroupName = "Fats")]
     SaturatedFats = 1L << 7, // 128
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 11, Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
+    [Display(Order = 1, Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
     MonounsaturatedFats = 1L << 8, // 256
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 12, Name = "Omega 3", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    [Display(Order = 2, Name = "Omega 3", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     Omega3 = 1L << 9, // 512
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 13, Name = "Omega 6", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    [Display(Order = 3, Name = "Omega 6", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     Omega6 = 1L << 10, // 1024
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 14, Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    [Display(Order = 4, Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     PolyunsaturatedFats = Omega3 | Omega6, // 1536
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 15, Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
+    [Display(Order = 5, Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 1792
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(25, 30, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Order = 16, Name = "Fats", GroupName = "Fats")]
+    [Display(Order = 8, Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 
     [DefaultMeasure(Measure.None)]
@@ -107,7 +107,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(-1, 250, Measure.Milligrams, Multiplier.Person)]
-    [Display(Order = 17, Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
+    [Display(Order = 9, Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
     DietaryCholesterol = 1L << 11, // 2048
 
     // Antioxidants
