@@ -12,12 +12,12 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(75, 225, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Name = "Proteins", GroupName = "Proteins")]
+    [Display(Order = 100, Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1L << 0, // 1
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
+    [Display(Order = 80, Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
     Sugar = 1L << 1, // 2
 
     [DefaultMeasure(Measure.Grams)]
@@ -42,12 +42,12 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
-    [Display(Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
+    [Display(Order = 90, Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
+    [Display(Order = 70, ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
@@ -57,12 +57,12 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Name = "Saturated Fats", GroupName = "Fats")]
+    [Display(Order = 20, Name = "Saturated Fats", GroupName = "Fats")]
     SaturatedFats = 1L << 7, // 128
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
+    [Display(Order = 30, Name = "Monounsaturated Fats", GroupName = "Fats / Unsaturated")]
     MonounsaturatedFats = 1L << 8, // 256
 
     [DefaultMeasure(Measure.Grams)]
@@ -77,7 +77,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated / Polyunsaturated")]
+    [Display(Order = 40, Name = "Polyunsaturated Fats", GroupName = "Fats / Unsaturated / Polyunsaturated")]
     PolyunsaturatedFats = Omega3 | Omega6, // 1536
 
     [DefaultMeasure(Measure.Grams)]
@@ -87,12 +87,12 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(25, 30, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Name = "Fats", GroupName = "Fats")]
+    [Display(Order = 10, Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 
     [DefaultMeasure(Measure.None)]
     [DailyAllowance(2000, 3000, Measure.None, Multiplier.Person)]
-    [Display(Name = "Calories", GroupName = "Calories")]
+    [Display(Order = 0, Name = "Calories", GroupName = "Calories")]
     Calories = Proteins
         | Sugar | Oligosaccharides | Starch | SolubleFiber | InsolubleFiber
         | TransFats | SaturatedFats | MonounsaturatedFats | Omega3 | Omega6, // 2047
@@ -328,12 +328,12 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(3500, -1, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Potassium", GroupName = "Minerals")]
+    [Display(Order = 60, Name = "Potassium", GroupName = "Minerals")]
     Potassium = 1L << 35, //  34359738368
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1500, 2300, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Sodium", GroupName = "Minerals")]
+    [Display(Order = 50, Name = "Sodium", GroupName = "Minerals")]
     Sodium = 1L << 36, // 68719476736
 
     // Trace Minerals

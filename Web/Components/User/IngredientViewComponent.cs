@@ -5,7 +5,6 @@ using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Numerics;
 using Web.ViewModels.User.Components;
 
 namespace Web.Components.User;
@@ -28,7 +27,8 @@ public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : V
 
         var nutrients = new List<Nutrient>();
         foreach (var nutrient in EnumExtensions.GetValuesExcluding32(Nutrients.None, Nutrients.All)
-            .OrderByDescending(n => BitOperations.PopCount((ulong)n))
+            .OrderBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayNameType.Order).Length)
+            .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayNameType.Order))
             .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
             .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayNameType.Name)))
         {
