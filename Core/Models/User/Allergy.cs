@@ -87,4 +87,7 @@ public enum Allergy
 
     [Display(Name = "Fructose")]
     Fructose = 1 << 23, // 8388608
+
+    [Display(Name = "Banana")]
+    Banana = 1 << 24, // 16777216
 }
