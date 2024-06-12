@@ -3,7 +3,7 @@
 namespace Core.Models.User;
 
 [Flags]
-public enum Allergy
+public enum Allergy : long
 {
     None = 0,
 
