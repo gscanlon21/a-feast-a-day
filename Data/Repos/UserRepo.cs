@@ -140,8 +140,6 @@ public class UserRepo(CoreContext context)
            .Where(i => i.UserId == user.Id)
            .ToListAsync();
 
-        throw new Exception("Test Exception");
-
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
         {
