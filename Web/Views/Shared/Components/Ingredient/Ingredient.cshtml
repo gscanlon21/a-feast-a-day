@@ -48,7 +48,7 @@
         @for (var i = 0; i < Model.Nutrients.Count; i++)
         {
             var nutrient = Model.Nutrients[i];
-            <div class="mb-3 row align-items-end">
+            <div class="mb-3 row">
                 <input type="hidden" asp-for="Nutrients[i].Nutrients" />
 
                 <div class="form-group col-md-3">
@@ -68,7 +68,7 @@
                     <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(EnumExtensions.DisplayNameType.Description)</div>
                 </div>
 
-                <div class="form-group form-check col-auto mb-2">
+                <div class="form-group form-check col-auto mb-2 align-self-center">
                     <label asp-for="Nutrients[i].Synthetic" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Synthetic)</label>
                     <input class="form-check-input" asp-for="Nutrients[i].Synthetic" aria-describedby="synthetic-help" />
                     <span asp-validation-for="Nutrients[i].Synthetic" class="text-danger"></span>
