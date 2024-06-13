@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
+using Core.Consts;
 using Data.Entities.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
@@ -34,9 +35,9 @@ public class Recipe
     [Display(Name = "Cook Time")]
     public int CookTime { get; set; }
 
-    [Required, Range(1, 12)]
+    [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
     [Display(Name = "Servings")]
-    public int Servings { get; set; }
+    public int Servings { get; set; } = RecipeConsts.ServingsDefault;
 
     [Display(Name = "Adjustable Servings")]
     public bool AdjustableServings { get; set; }
