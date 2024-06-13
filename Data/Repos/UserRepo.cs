@@ -1,4 +1,5 @@
-﻿using Core.Code.Extensions;
+﻿using Core.Code.Exceptions;
+using Core.Code.Extensions;
 using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.User;
@@ -22,7 +23,25 @@ public class UserRepo(CoreContext context)
     private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
 
     /// <summary>
-    /// Grab a user from the db with a specific token
+    /// Grab a user from the db with a specific token.
+    /// </summary>
+    public async Task<User> GetUserStrict(string? email, string? token,
+        bool includeNutrients = false,
+        bool includeServings = false,
+        bool includeFamilies = false,
+        bool includeIngredients = false,
+        bool allowDemoUser = false)
+    {
+        return await GetUser(email, token,
+            includeNutrients: includeNutrients,
+            includeServings: includeServings,
+            includeFamilies: includeFamilies,
+            includeIngredients: includeIngredients,
+            allowDemoUser: allowDemoUser) ?? throw new UserException("User is null.");
+    }
+
+    /// <summary>
+    /// Grab a user from the db with a specific token.
     /// </summary>
     public async Task<User?> GetUser(string? email, string? token,
         bool includeNutrients = false,
@@ -65,7 +84,7 @@ public class UserRepo(CoreContext context)
 
         if (!allowDemoUser && user?.IsDemoUser == true)
         {
-            throw new ArgumentException("User not authorized.", nameof(email));
+            throw new UserException("User not authorized.");
         }
 
         return user;
