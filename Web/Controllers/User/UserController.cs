@@ -68,16 +68,15 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
         if (ModelState.IsValid)
         {
             // New ingredients, check that they don't conflict with allergens.
-            /* FIXME: Some ingredient substitutes always conflict with allergens.
             foreach (var ingredient in viewModel.UserIngredients)
             {
                 var substituteIngredient = await context.Ingredients.FirstOrDefaultAsync(i => i.Id == ingredient.SubstituteIngredientId);
                 if (substituteIngredient != null && viewModel.User.ExcludeAllergens.HasAnyFlag32(substituteIngredient.Allergens))
                 {
-                    TempData[TempData_User.FailureMessage] = $"The substisute ingredient {substituteIngredient.Name} conflicts with your allergens.";
-                    return View("Edit", viewModel);
+                    TempData[TempData_User.WarningMessage] = $"The substisute ingredient {substituteIngredient.Name} conflicts with your allergens.";
+                    // Not returning early: some ingredient substitutes always conflict with allergens.
                 }
-            }*/
+            }
 
             try
             {
