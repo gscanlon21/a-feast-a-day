@@ -422,7 +422,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(1, 25, Measure.Grams, Multiplier.Person)]
-    [Display(Name = "Lithium", GroupName = "Micronutrients")]
+    [Display(Order = 500, Name = "Lithium", GroupName = "Micronutrients")]
     Lithium = 1L << 50, // 1125899906842624 
 
     /// <summary>
@@ -430,7 +430,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Choline", GroupName = "Micronutrients")]
+    [Display(Order = 510, Name = "Choline", GroupName = "Micronutrients")]
     Choline = 1L << 51, // 2251799813685248
 
     /// <summary>
@@ -438,7 +438,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Betaine", GroupName = "Micronutrients")]
+    [Display(Order = 520, Name = "Betaine", GroupName = "Micronutrients")]
     Betaine = 1L << 52, // 4503599627370496  
 
     // Essential Amino Acids
