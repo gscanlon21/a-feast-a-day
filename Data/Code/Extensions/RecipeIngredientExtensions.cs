@@ -33,8 +33,7 @@ public static class RecipeIngredientExtensions
     /// </summary>
     public static double NormalizedGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
-        var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);
-        var isLiquidMeasure = (Measure.Teaspoon | Measure.Tablespoon | Measure.Handful | Measure.Jar | Measure.Can | Measure.Cup).HasFlag(recipeIngredient.Measure);
-        return recipeIngredient.Measure.ToGrams(fraction.ToDouble(), isLiquidMeasure ? ingredient.GramsPerCup : null) * scale;
+        var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);        
+        return scale * recipeIngredient.Measure.ToGrams(fraction.ToDouble(), gramsPerServing: ingredient.ServingSizeGrams, gramsPerCup: ingredient.GramsPerCup);
     }
 }
