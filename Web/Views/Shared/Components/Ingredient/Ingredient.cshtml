@@ -8,11 +8,11 @@
         <input asp-for="Ingredient.Id" type="hidden" class="form-control" />
 
         <div class="form-group mb-3">
-            <label asp-for="Ingredient.Name" class="control-label">Name</label>
+            <label asp-for="Ingredient.Name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Name)</label>
             <input asp-for="Ingredient.Name" type="text" class="form-control" required="required" />
         </div>
         <div class="form-group mb-3">
-            <label asp-for="Ingredient.Notes" class="control-label">Notes</label>
+            <label asp-for="Ingredient.Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Notes)</label>
             <input asp-for="Ingredient.Notes" type="text" class="form-control" />
         </div>
         <div class="form-group mb-3">
@@ -20,10 +20,10 @@
             <input asp-for="Ingredient.GramsPerServing" type="text" class="form-control" />
         </div>
         <div class="form-group mb-3">
-            <label asp-for="Ingredient.GramsPerMeasure" class="control-label">@Model.Ingredient. One Measure Weighs (grams)</label>
+            <label asp-for="Ingredient.GramsPerMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerMeasure)</label>
             <input asp-for="Ingredient.GramsPerMeasure" type="text" class="form-control" />
         </div>
-        <div class="col">
+        <div class="form-group mb-3">
             <label asp-for="Ingredient.DefaultMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.DefaultMeasure)</label>
             <select asp-for="Ingredient.DefaultMeasure" class="form-control" aria-describedby="time-help"
                     asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
@@ -32,7 +32,7 @@
             <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
         </div>
         <div class="form-group mb-3">
-            <label asp-for="Ingredient.CaloriesPerServing" class="control-label">Calories Per Serving</label>
+            <label asp-for="Ingredient.CaloriesPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.CaloriesPerServing)</label>
             <input asp-for="Ingredient.CaloriesPerServing" type="text" class="form-control" />
         </div>
         <div class="form-group form-check mb-3">

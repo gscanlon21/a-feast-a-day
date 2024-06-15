@@ -25,8 +25,10 @@ public class Ingredient
     /// Friendly name.
     /// </summary>
     [Required]
+    [Display(Name = "Name")]
     public string Name { get; set; } = null!;
 
+    [Display(Name = "Allergens")]
     public Allergy Allergens { get; set; }
 
     /// <summary>
@@ -35,17 +37,21 @@ public class Ingredient
     [Display(Name = "Skip Shopping List")]
     public bool SkipShoppingList { get; set; }
 
-    [Display(Name = "Serving Size (grams)")]
+    [Display(Name = "Grams Per Serving")]
     public double GramsPerServing { get; set; }
 
+    [Display(Name = "Calories Per Serving")]
     public double CaloriesPerServing { get; set; }
 
+    [Display(Name = "Grams Per Measure")]
     public double GramsPerMeasure { get; set; }
+    [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
+    [Display(Name = "Notes")]
     public string? Notes { get; set; } = null;
 
     /// <summary>
