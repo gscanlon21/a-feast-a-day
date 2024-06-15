@@ -1,14 +1,14 @@
 ﻿using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.ViewModels.Shared;
+namespace Web.ViewModels.User.Components;
 
 /// <summary>
-/// For CRUD actions
+/// Viewmodel for Confirmation.cshtml
 /// </summary>
-public class UserManageRecipeViewModel
+public class ManageRecipeViewModel
 {
-    public required User.UserManageRecipeViewModel.Parameters Parameters { get; init; }
+    public required User.UserManageRecipeViewModel.Params Parameters { get; init; }
 
     public required Data.Entities.User.User User { get; init; }
 

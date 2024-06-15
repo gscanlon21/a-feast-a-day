@@ -21,13 +21,6 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userRecipe = await context.UserRecipes.AsNoTracking()
-            .FirstOrDefaultAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
-        if (userRecipe == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
         var recipe = await context.Recipes.AsNoTracking()
             .Include(r => r.Ingredients)
             .Include(r => r.Instructions)
@@ -37,19 +30,14 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        var hasUserRecipe = await context.UserRecipes.AnyAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
         return View(new UserManageRecipeViewModel()
         {
             User = user,
             WasUpdated = wasUpdated,
             Recipe = recipe,
-            RecipeViewModel = new ViewModels.Shared.UserManageRecipeViewModel()
-            {
-                Recipe = recipe,
-                User = user,
-                RecipeSection = section,
-                UserRecipe = userRecipe,
-                Parameters = new UserManageRecipeViewModel.Parameters(section, email, token, recipeId)
-            },
+            HasUserRecipe = hasUserRecipe,
+            Parameters = new UserManageRecipeViewModel.Params(section, email, token, recipeId)
         });
     }
 

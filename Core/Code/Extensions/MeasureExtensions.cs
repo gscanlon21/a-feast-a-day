@@ -9,9 +9,9 @@ public static class MeasureExtensions
     /// </summary>
     public static double ToGrams(this Measure measure, double quantity, double? gramsPerServing = null, double? gramsPerCup = null)
     {
-        var getGramsPerCup = () => gramsPerCup ?? throw new ArgumentNullException(nameof(gramsPerCup));
-        var getGramsPerServing = () => gramsPerServing ?? throw new ArgumentNullException(nameof(gramsPerServing));
-        
+        double getGramsPerCup() => gramsPerCup ?? throw new ArgumentNullException(nameof(gramsPerCup));
+        double getGramsPerServing() => gramsPerServing ?? throw new ArgumentNullException(nameof(gramsPerServing));
+
         return measure switch
         {
             Measure.None => quantity,

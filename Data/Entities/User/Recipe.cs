@@ -1,7 +1,7 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Consts;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
-using Core.Consts;
 using Data.Entities.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;

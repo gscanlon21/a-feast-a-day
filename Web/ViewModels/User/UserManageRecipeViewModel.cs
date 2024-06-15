@@ -7,13 +7,15 @@ namespace Web.ViewModels.User;
 /// </summary>
 public class UserManageRecipeViewModel
 {
-    public Data.Entities.User.User User { get; set; } = null!;
+    public record Params(Section Section, string Email, string Token, int RecipeId);
 
-    public record Parameters(Section Section, string Email, string Token, int RecipeId);
+    public required Params Parameters { get; init; }
 
-    public required Data.Entities.User.Recipe Recipe { get; set; }
+    public Data.Entities.User.User User { get; init; } = null!;
 
-    public required Shared.UserManageRecipeViewModel RecipeViewModel { get; init; }
+    public required Data.Entities.User.Recipe Recipe { get; init; }
+
+    public required bool HasUserRecipe { get; init; }
 
     public bool? WasUpdated { get; init; }
 }
