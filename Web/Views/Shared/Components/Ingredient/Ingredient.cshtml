@@ -16,12 +16,20 @@
             <input asp-for="Ingredient.Notes" type="text" class="form-control" />
         </div>
         <div class="form-group mb-3">
-            <label asp-for="Ingredient.ServingSizeGrams" class="control-label">Serving Size (grams)</label>
-            <input asp-for="Ingredient.ServingSizeGrams" type="text" class="form-control" />
+            <label asp-for="Ingredient.GramsPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerServing)</label>
+            <input asp-for="Ingredient.GramsPerServing" type="text" class="form-control" />
         </div>
         <div class="form-group mb-3">
-            <label asp-for="Ingredient.GramsPerCup" class="control-label">One Cup Weighs (grams)</label>
-            <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" />
+            <label asp-for="Ingredient.GramsPerMeasure" class="control-label">@Model.Ingredient. One Measure Weighs (grams)</label>
+            <input asp-for="Ingredient.GramsPerMeasure" type="text" class="form-control" />
+        </div>
+        <div class="col">
+            <label asp-for="Ingredient.DefaultMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.DefaultMeasure)</label>
+            <select asp-for="Ingredient.DefaultMeasure" class="form-control" aria-describedby="time-help"
+                    asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
+            </select>
+            <span asp-validation-for="Ingredient.DefaultMeasure" class="text-danger"></span>
+            <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
         </div>
         <div class="form-group mb-3">
             <label asp-for="Ingredient.CaloriesPerServing" class="control-label">Calories Per Serving</label>

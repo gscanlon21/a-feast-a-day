@@ -125,8 +125,9 @@ public partial class UserController
         existingIngredient.Name = ingredient.Name;
         existingIngredient.Notes = ingredient.Notes;
         existingIngredient.Allergens = ingredient.Allergens;
-        existingIngredient.GramsPerCup = ingredient.GramsPerCup;
-        existingIngredient.ServingSizeGrams = ingredient.ServingSizeGrams;
+        existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
+        existingIngredient.GramsPerMeasure = ingredient.GramsPerMeasure;
+        existingIngredient.GramsPerServing = ingredient.GramsPerServing;
         existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
         existingIngredient.CaloriesPerServing = ingredient.CaloriesPerServing;
 

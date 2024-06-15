@@ -36,11 +36,12 @@ public class Ingredient
     public bool SkipShoppingList { get; set; }
 
     [Display(Name = "Serving Size (grams)")]
-    public double ServingSizeGrams { get; set; }
+    public double GramsPerServing { get; set; }
 
     public double CaloriesPerServing { get; set; }
 
-    public double GramsPerCup { get; set; }
+    public double GramsPerMeasure { get; set; }
+    public Measure DefaultMeasure { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).

@@ -181,7 +181,7 @@ public class UserRepo(CoreContext context)
                                     var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
                                     var gramsOfIngredientUsed = recipeIngredient.NormalizedGrams(recipeIngredient.Ingredient, recipe.Scale);
                                     var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                    var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.ServingSizeGrams * gramsOfNutrientPerServing
+                                    var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.GramsPerServing * gramsOfNutrientPerServing
                                             / ((user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? 1) / familyCount)
                                             / (familyGrams > 0 ? familyGrams : 100)
                                             * 100;

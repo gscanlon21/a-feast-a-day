@@ -21,11 +21,12 @@ public class IngredientViewModel
 
     public bool SkipShoppingList { get; init; }
 
-    public double ServingSizeGrams { get; init; }
-
-    public double GramsPerCup { get; init; }
-
     public double CaloriesPerServing { get; set; }
+
+    public double GramsPerServing { get; init; }
+
+    public double GramsPerMeasure { get; init; }
+    public Measure DefaultMeasure { get; init; }
 
     public Allergy Allergens { get; init; }
 

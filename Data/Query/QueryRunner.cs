@@ -64,7 +64,7 @@ public class QueryRunner(Section section)
                 .ThenInclude(i => i.Ingredient)
                     .ThenInclude(i => i.Nutrients)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
-            .Where(r => r.User.MaxIngredients == null || r.User.MaxIngredients >= r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList))
+            .Where(r => r.User.MaxIngredients == null || r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList) <= r.User.MaxIngredients)
             .Where(ev => ev.DisabledReason == null);
 
 

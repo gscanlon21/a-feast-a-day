@@ -15,15 +15,15 @@ public static class RecipeIngredientExtensions
 
         return recipeIngredient.Measure switch
         {
-            Measure.Grams => fraction.ToDouble() / ingredient.ServingSizeGrams,
-            Measure.Ounce => fraction.ToDouble() * 28.3495231 / ingredient.ServingSizeGrams,
-            Measure.Pound => fraction.ToDouble() * 453.59237 / ingredient.ServingSizeGrams,
-            Measure.Teaspoon => fraction.ToDouble() * ingredient.GramsPerCup * 0.02083333 / ingredient.ServingSizeGrams,
-            Measure.Tablespoon => fraction.ToDouble() * ingredient.GramsPerCup * 0.0625 / ingredient.ServingSizeGrams,
-            Measure.Handful => fraction.ToDouble() * ingredient.GramsPerCup * 0.5 / ingredient.ServingSizeGrams,
-            Measure.Jar => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
-            Measure.Can => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
-            Measure.Cup => fraction.ToDouble() * ingredient.GramsPerCup / ingredient.ServingSizeGrams,
+            Measure.Grams => fraction.ToDouble() / ingredient.GramsPerServing,
+            Measure.Ounce => fraction.ToDouble() * 28.3495231 / ingredient.GramsPerServing,
+            Measure.Pound => fraction.ToDouble() * 453.59237 / ingredient.GramsPerServing,
+            Measure.Teaspoon => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.02083333 / ingredient.GramsPerServing,
+            Measure.Tablespoon => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.0625 / ingredient.GramsPerServing,
+            Measure.Handful => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.5 / ingredient.GramsPerServing,
+            Measure.Jar => fraction.ToDouble() * ingredient.GramsPerMeasure / ingredient.GramsPerServing,
+            Measure.Can => fraction.ToDouble() * ingredient.GramsPerMeasure / ingredient.GramsPerServing,
+            Measure.Cup => fraction.ToDouble() * ingredient.GramsPerMeasure / ingredient.GramsPerServing,
             _ => fraction.ToDouble(),
         } * scale;
     }
@@ -34,6 +34,6 @@ public static class RecipeIngredientExtensions
     public static double NormalizedGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
         var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);
-        return scale * recipeIngredient.Measure.ToGrams(fraction.ToDouble(), gramsPerServing: ingredient.ServingSizeGrams, gramsPerCup: ingredient.GramsPerCup);
+        return scale * recipeIngredient.Measure.ToGrams(fraction.ToDouble(), gramsPerServing: ingredient.GramsPerServing, gramsPerCup: ingredient.GramsPerMeasure);
     }
 }
