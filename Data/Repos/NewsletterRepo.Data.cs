@@ -184,8 +184,7 @@ public partial class NewsletterRepo
                 .OrderByDescending(i => i.LastUpdated == Today)
                 .ThenBy(i => i.LastUpdated)
                 .ThenBy(_ => EF.Functions.Random())
-                .Take(4)
-                .ToListAsync();
+                .Take(1).ToListAsync();
 
         foreach (var debugIngredient in debugIngredients)
         {
