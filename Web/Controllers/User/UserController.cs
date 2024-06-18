@@ -89,11 +89,11 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
                 viewModel.User.AtLeastXServingsPerRecipe = viewModel.AtLeastXServingsPerRecipe;
-                viewModel.User.IngredientExclusions = viewModel.IngredientExclusionIds.Select(i => new Data.Entities.User.Ingredient()
+                viewModel.User.IngredientExclusions = viewModel.IngredientExclusionIds?.Select(i => new Data.Entities.User.Ingredient()
                 {
                     Id = i,
                     UserId = viewModel.User.Id
-                }).ToList();
+                }).ToList() ?? [];
 
                 context.UserIngredients.RemoveRange(context.UserIngredients.Where(uf => uf.UserId == viewModel.User.Id));
                 context.UserIngredients.AddRange(viewModel.UserIngredients

@@ -81,7 +81,7 @@ public class UserEditViewModel
     public IList<UserIngredientViewModel> UserIngredients { get; set; } = [];
 
     [Display(Name = "Exclude Ingredients", Description = "Customize ingredient exclusions.")]
-    public IList<int> IngredientExclusionIds { get; private init; } = null!;
+    public IList<int>? IngredientExclusionIds { get; private init; } = [];
 
     public IList<Data.Entities.User.Ingredient> Ingredients { get; set; } = [];
 
