@@ -34,6 +34,9 @@ public class RecipeIngredient
     [Required]
     public Measure Measure { get; set; }
 
+
+    public bool Optional { get; set; }
+
     [NotMapped]
     public bool Hide { get; set; }
 

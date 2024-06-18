@@ -149,6 +149,15 @@
             </div>
 
             <div class="form-group mb-3">
+                <label asp-for="IngredientExclusionIds" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientExclusionIds)</label>
+                <select asp-for="IngredientExclusionIds" class="form-control" aria-describedby="ingredients-help" size="5"
+                        asp-items="@(Model.Ingredients.Select(h => new SelectListItem() { Text = h.Name, Value = $"{h.Id}" }))">
+                </select>
+                <span asp-validation-for="IngredientExclusionIds" class="text-danger"></span>
+                <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.IngredientExclusionIds)</div>
+            </div>
+
+            <div class="form-group mb-3">
                 <details class="mb-3" @((Model.WasUpdated == false || Model.UserFamilies.Count(f => f.Person != Person.None) == 0) ? "open='open'" : "")>
                     <summary class=""><b class="">Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
 
