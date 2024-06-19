@@ -28,11 +28,11 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
             User = user
         };
 
-        while (recipe.Ingredients.Count < 16)
+        while (recipe.RecipeIngredients.Count < 16)
         {
-            recipe.Ingredients.Add(new RecipeIngredient
+            recipe.RecipeIngredients.Add(new RecipeIngredient
             {
-                Hide = recipe.Ingredients.Count > 0
+                Hide = recipe.RecipeIngredients.Count > 0
             });
         }
 

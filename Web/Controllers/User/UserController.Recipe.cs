@@ -22,7 +22,7 @@ public partial class UserController
         }
 
         var recipe = await context.Recipes.AsNoTracking()
-            .Include(r => r.Ingredients)
+            .Include(r => r.RecipeIngredients)
             .Include(r => r.Instructions)
             .FirstOrDefaultAsync(r => r.Id == recipeId);
         if (recipe == null)
@@ -54,7 +54,7 @@ public partial class UserController
         if (recipe.Id == default)
         {
             recipe.User = user;
-            recipe.Ingredients = recipe.Ingredients.Where(i => !i.Hide).ToList();
+            recipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
             recipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
             context.Add(recipe);
         }
@@ -62,14 +62,14 @@ public partial class UserController
         {
             var existingRecipe = await context.Recipes
                 .Include(r => r.Instructions)
-                .Include(r => r.Ingredients)
+                .Include(r => r.RecipeIngredients)
                 .FirstOrDefaultAsync(r => r.Id == recipe.Id);
             if (existingRecipe == null)
             {
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
             }
 
-            existingRecipe.Ingredients = recipe.Ingredients.Where(i => !i.Hide).ToList();
+            existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
             existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
             existingRecipe.Name = recipe.Name;
             existingRecipe.Notes = recipe.Notes;

@@ -29,6 +29,7 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
+                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -56,8 +57,10 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
+                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
-            }).Build()
+            })
+            .Build()
             .Query(serviceScopeFactory))
             .Select(r => new RecipeDto(r))
             .ToList();
@@ -82,6 +85,7 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
+                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -105,6 +109,7 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
+                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -128,6 +133,7 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
+                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -151,6 +157,7 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
+                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()

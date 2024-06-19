@@ -36,7 +36,7 @@ public class NutrientOptions : IOptions
     /// <summary>
     /// This says what (strengthening/secondary/stretching) muscles we should abide by when selecting variations.
     /// </summary>
-    public Expression<Func<IRecipeCombo, Nutrients>> NutrientTarget { get; set; } = v => v.Recipe.Ingredients.Aggregate(Core.Models.User.Nutrients.None, (curr, next) => curr | (next.Ingredient.Nutrients.Aggregate(Core.Models.User.Nutrients.None, (c, n) => c | n.Nutrients)));
+    public Expression<Func<IRecipeCombo, Nutrients>> NutrientTarget { get; set; } = v => v.Recipe.RecipeIngredients.Aggregate(Core.Models.User.Nutrients.None, (curr, next) => curr | (next.Ingredient.Nutrients.Aggregate(Core.Models.User.Nutrients.None, (c, n) => c | n.Nutrients)));
 
     /// <summary>
     ///     Makes sure each variations works at least x unique muscle groups to be chosen.

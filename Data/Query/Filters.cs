@@ -49,12 +49,12 @@ public static class Filters
         {
             if (include)
             {
-                query = query.Where(r => r.Recipe.Ingredients.Any(i => (i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients)))));
+                query = query.Where(r => r.Recipe.RecipeIngredients.Any(i => (i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients)))));
             }
             else
             {
                 // If a recovery muscle is set, don't choose any exercises that work the injured muscle
-                query = query.Where(r => r.Recipe.Ingredients.All(i => (i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients)))));
+                query = query.Where(r => r.Recipe.RecipeIngredients.All(i => (i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients)))));
             }
         }
 

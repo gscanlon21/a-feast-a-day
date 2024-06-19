@@ -132,7 +132,7 @@ public class UserRepo(CoreContext context)
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.Ingredients)
+                    .ThenInclude(r => r.RecipeIngredients)
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
             .Where(n => n.User.Id == user.Id)
@@ -167,14 +167,14 @@ public class UserRepo(CoreContext context)
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
-                var totalCaloricIntake = weeklyFeasts.Sum(f => f.Recipes.Sum(r => r.Recipe.Ingredients.Sum(i => i.NumberOfServings(i.Ingredient, r.Scale) * i.Ingredient.CaloriesPerServing)));
+                var totalCaloricIntake = weeklyFeasts.Sum(f => f.Recipes.Sum(r => r.Recipe.RecipeIngredients.Sum(i => i.NumberOfServings(i.Ingredient, r.Scale) * i.Ingredient.CaloriesPerServing)));
                 var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
                     (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowanceTUL(fp.Value, totalCaloricIntake))
                 );
 
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.Recipes
-                        .SelectMany(recipe => recipe.Recipe.Ingredients
+                        .SelectMany(recipe => recipe.Recipe.RecipeIngredients
                             .SelectMany(recipeIngredient => recipeIngredient.Ingredient.SubstitutedIngredient(substituteIngredients).Nutrients
                                 .Select(nutrient =>
                                 {

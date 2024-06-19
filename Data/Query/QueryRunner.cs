@@ -60,11 +60,11 @@ public class QueryRunner(Section section)
     {
         var query = context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateRecipesQuery))
             .Include(r => r.Instructions)
-            .Include(r => r.Ingredients)
+            .Include(r => r.RecipeIngredients)
                 .ThenInclude(i => i.Ingredient)
                     .ThenInclude(i => i.Nutrients)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
-            .Where(r => r.User.MaxIngredients == null || r.Ingredients.Count(i => !i.Ingredient.SkipShoppingList) <= r.User.MaxIngredients)
+            .Where(r => r.User.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= r.User.MaxIngredients)
             .Where(ev => ev.DisabledReason == null);
 
 
@@ -84,18 +84,20 @@ public class QueryRunner(Section section)
     {
         var filteredQuery = CreateRecipesQuery(context)
             .TagWith(nameof(CreateFilteredRecipesQuery))
-            // Filter down to variations the user owns equipment for
+            // Filter down to variations the user owns equipment for.
             .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment)
-            // Don't grab exercises that the user wants to ignore
+            // Don't grab exercises that the user wants to ignore.
             .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
 
         if (!ignoreExclusions)
         {
             filteredQuery = filteredQuery
-                // Don't grab exercises that we want to ignore
+                // Don't grab exercises that we want to ignore.
                 .Where(vm => !ExclusionOptions.RecipeIds.Contains(vm.Recipe.Id))
                 // Don't grab variations that we want to ignore. Has any flag.
-                .Where(vm => (ExclusionOptions.Allergens & vm.Recipe.Allergens) == 0);
+                .Where(vm => (ExclusionOptions.Allergens & vm.Recipe.Allergens) == 0)
+                // Don't grap recipes that contain ignored ingredients.
+                .Where(vm => vm.Recipe.RecipeIngredients.All(ri => ri.Optional || !ExclusionOptions.Ingredients.Contains(ri.IngredientId)));
         }
 
         return filteredQuery;
@@ -135,7 +137,7 @@ public class QueryRunner(Section section)
 
             foreach (var queryResult in queryResults)
             {
-                foreach (var ingredient in queryResult.Recipe.Ingredients)
+                foreach (var ingredient in queryResult.Recipe.RecipeIngredients)
                 {
                     ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(substituteIngredients);
                 }
@@ -182,7 +184,7 @@ public class QueryRunner(Section section)
 
                         var servingsDifference = servings / recipe.Recipe.Servings;
                         recipe.Scale = servingsDifference;
-                        foreach (var ingredient in recipe.Recipe.Ingredients)
+                        foreach (var ingredient in recipe.Recipe.RecipeIngredients)
                         {
                             ingredient.QuantityNumerator *= servingsDifference;
                         }

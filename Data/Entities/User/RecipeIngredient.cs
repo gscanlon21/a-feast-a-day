@@ -53,7 +53,7 @@ public class RecipeIngredient
     [NotMapped]
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.Ingredients))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.RecipeIngredients))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.Ingredient.RecipeIngredients))]

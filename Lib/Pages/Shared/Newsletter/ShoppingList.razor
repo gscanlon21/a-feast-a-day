@@ -25,17 +25,17 @@
     public ViewModels.User.UserNewsletterViewModel? User { get; set; }
 
     [Parameter, EditorRequired]
-    public IList<Lib.ViewModels.Newsletter.IngredientViewModel>? List { get; set; }
+    public IList<Lib.ViewModels.Newsletter.RecipeIngredientViewModel>? List { get; set; }
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }
 
-    private class ListComparer : IEqualityComparer<ViewModels.Newsletter.IngredientViewModel>
+    private class ListComparer : IEqualityComparer<ViewModels.Newsletter.RecipeIngredientViewModel>
     {
-        public bool Equals(ViewModels.Newsletter.IngredientViewModel? a, ViewModels.Newsletter.IngredientViewModel? b)
+        public bool Equals(ViewModels.Newsletter.RecipeIngredientViewModel? a, ViewModels.Newsletter.RecipeIngredientViewModel? b)
             => EqualityComparer<Core.Models.User.Measure?>.Default.Equals(a?.Measure, b?.Measure)
             && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
 
-        public int GetHashCode(ViewModels.Newsletter.IngredientViewModel e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
+        public int GetHashCode(ViewModels.Newsletter.RecipeIngredientViewModel e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
     }
 }

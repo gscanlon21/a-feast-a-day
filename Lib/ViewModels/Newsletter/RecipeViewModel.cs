@@ -34,7 +34,7 @@ public class RecipeViewModel
     public List<RecipeInstructionViewModel> Instructions { get; init; } = [];
 
     [JsonInclude]
-    public List<IngredientViewModel> Ingredients { get; init; } = [];
+    public List<RecipeIngredientViewModel> RecipeIngredients { get; init; } = [];
 
     public bool UserFirstTimeViewing { get; init; } = false;
 }
