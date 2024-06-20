@@ -15,7 +15,7 @@ public class UserFeast
     [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
     public UserFeast() { }
 
-    internal UserFeast(DateOnly date, WorkoutContext context) : this(date, context.User) { }
+    internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User) { }
 
     public UserFeast(DateOnly date, User.User user)
     {
@@ -35,7 +35,7 @@ public class UserFeast
     [Required]
     public DateOnly Date { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserWorkouts))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFeasts))]
     public virtual User.User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]

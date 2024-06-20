@@ -7,10 +7,10 @@ using System.Windows.Input;
 
 namespace Hybrid;
 
-public partial class NewslettersPage : ContentPage
+public partial class ShoppingListPage : ContentPage
 {
     /// https://stackoverflow.com/questions/73710578/net-maui-mvvm-navigate-and-pass-object-between-views
-    public NewslettersPage(NewslettersPageViewModel viewModel)
+    public ShoppingListPage(ShoppingListPageViewModel viewModel)
     {
         InitializeComponent();
         viewModel.Navigation = Navigation;
@@ -18,7 +18,7 @@ public partial class NewslettersPage : ContentPage
     }
 }
 
-public partial class NewslettersPageViewModel : ObservableObject
+public partial class ShoppingListPageViewModel : ObservableObject
 {
     private readonly UserService _userService;
 
@@ -28,7 +28,7 @@ public partial class NewslettersPageViewModel : ObservableObject
 
     public IAsyncRelayCommand LoadCommand { get; }
 
-    public NewslettersPageViewModel(UserService userService)
+    public ShoppingListPageViewModel(UserService userService)
     {
         _userService = userService;
 
@@ -43,14 +43,14 @@ public partial class NewslettersPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<UserFeastViewModel>? _workouts = null;
+    public ObservableCollection<RecipeIngredientViewModel>? _workouts = null;
 
     private async Task LoadWorkoutsAsync()
     {
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        Workouts = new ObservableCollection<UserFeastViewModel>(
-            await _userService.GetFeasts(email, token) ?? Enumerable.Empty<UserFeastViewModel>()
+        Workouts = new ObservableCollection<RecipeIngredientViewModel>(
+            await _userService.GetShoppingList(email, token) ?? Enumerable.Empty<RecipeIngredientViewModel>()
         );
 
         Loading = false;

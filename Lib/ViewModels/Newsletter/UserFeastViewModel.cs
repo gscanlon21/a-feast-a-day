@@ -1,6 +1,6 @@
 ﻿namespace Lib.ViewModels.Newsletter;
 
-public class UserWorkoutViewModel
+public class UserFeastViewModel
 {
     public int Id { get; init; }
 

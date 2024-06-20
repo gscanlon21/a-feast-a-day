@@ -107,7 +107,7 @@ public class UserRepo(CoreContext context)
                 // Checking for variations because we create a dummy newsletter record to advance the workout split.
                 || await context.UserEmails
                     .Where(n => n.UserId == user.Id)
-                    .Where(n => n.Subject == NewsletterConsts.SubjectWorkout)
+                    .Where(n => n.Subject == NewsletterConsts.SubjectFeast)
                     .AnyAsync(n => n.Date == nextSendDate.Value)
                 )
             {
@@ -277,13 +277,22 @@ public class UserRepo(CoreContext context)
                 g.Key,
                 // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
                 // Dummy records that are created when the user advances their workout split may also have the same date.
-                Workout = g.OrderByDescending(n => n.Id).First()
+                Feast = g.OrderByDescending(n => n.Id).First()
             })
             .OrderByDescending(n => n.Key)
             .Take(7)
             .ToListAsync())
-            .Select(n => n.Workout)
+            .Select(n => n.Feast)
             .ToList();
+    }
+
+    /// <summary>
+    /// Get the current shopping list for the user.
+    /// </summary>
+    public async Task<IList<RecipeIngredient>> GetShoppingList(User user)
+    {
+        var currentFeast = await GetCurrentWorkout(user);
+        return currentFeast?.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList() ?? [];
     }
 }
 

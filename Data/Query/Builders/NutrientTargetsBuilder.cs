@@ -32,7 +32,7 @@ public interface INutrientBuilderFinal : INutrientBuilderFinalNoContext
 /// </summary>
 public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutrientBuilderFinalNoContext, INutrientBuilderTargets, INutrientBuilderFinal
 {
-    private readonly WorkoutContext? Context;
+    private readonly FeastContext? Context;
 
     /// <summary>
     /// Filters variations to only those that target these Nutrient groups.
@@ -44,7 +44,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     /// </summary>
     public IDictionary<Nutrients, int> NutrientTargets = new Dictionary<Nutrients, int>();
 
-    private NutrientTargetsBuilder(IList<Nutrients> nutrients, WorkoutContext? context)
+    private NutrientTargetsBuilder(IList<Nutrients> nutrients, FeastContext? context)
     {
         Nutrients = nutrients;
         Context = context;
@@ -55,7 +55,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
         return new NutrientTargetsBuilder(Nutrients, null);
     }
 
-    public static INutrientBuilderTargets WithNutrients(WorkoutContext context, IList<Nutrients> Nutrients)
+    public static INutrientBuilderTargets WithNutrients(FeastContext context, IList<Nutrients> Nutrients)
     {
         return new NutrientTargetsBuilder(Nutrients, context);
     }

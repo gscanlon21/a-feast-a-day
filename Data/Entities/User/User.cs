@@ -196,7 +196,7 @@ public class User
     public virtual ICollection<UserServing> UserServings { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
-    public virtual ICollection<UserFeast> UserWorkouts { get; private init; } = null!;
+    public virtual ICollection<UserFeast> UserFeasts { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Recipe.User))]
     public virtual ICollection<Recipe> Recipes { get; private init; } = null!;

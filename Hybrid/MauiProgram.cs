@@ -59,6 +59,9 @@ namespace Hybrid
             builder.Services.AddTransient<NewslettersPage>();
             builder.Services.AddTransient<NewslettersPageViewModel>();
 
+            builder.Services.AddTransient<ShoppingListPage>();
+            builder.Services.AddTransient<ShoppingListPageViewModel>();
+
             return builder.Build();
         }
     }

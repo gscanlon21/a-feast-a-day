@@ -10,7 +10,7 @@ namespace Data.Repos;
 
 public partial class NewsletterRepo
 {
-    internal async Task<List<RecipeDto>> GetBreakfastRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<RecipeDto>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
     {
         return (await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
@@ -38,7 +38,7 @@ public partial class NewsletterRepo
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetLunchRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<RecipeDto>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
     {
         return (await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
@@ -66,7 +66,7 @@ public partial class NewsletterRepo
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetDinnerRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<RecipeDto>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
     {
         return (await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
@@ -94,7 +94,7 @@ public partial class NewsletterRepo
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetSideRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<RecipeDto>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
     {
         return (await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
@@ -118,7 +118,7 @@ public partial class NewsletterRepo
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetSnackRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<RecipeDto>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
     {
         return (await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
@@ -142,7 +142,7 @@ public partial class NewsletterRepo
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetDessertRecipes(WorkoutContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<RecipeDto>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
     {
         return (await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)

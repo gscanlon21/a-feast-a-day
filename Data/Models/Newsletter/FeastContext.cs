@@ -3,7 +3,7 @@ using Data.Entities.User;
 
 namespace Data.Models.Newsletter;
 
-public class WorkoutContext
+public class FeastContext
 {
     public required DateOnly Date { get; init; }
     public User User { get; init; } = null!;

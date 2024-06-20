@@ -41,9 +41,14 @@ public class UserService
         return null;
     }
 
-    public async Task<IList<UserWorkoutViewModel>?> GetWorkouts(string email, string token)
+    public async Task<IList<UserFeastViewModel>?> GetFeasts(string email, string token)
     {
-        return await _httpClient.GetFromJsonAsync<List<UserWorkoutViewModel>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/Workouts?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
+        return await _httpClient.GetFromJsonAsync<List<UserFeastViewModel>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/Feasts?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
+    }
+
+    public async Task<IList<RecipeIngredientViewModel>?> GetShoppingList(string email, string token)
+    {
+        return await _httpClient.GetFromJsonAsync<List<RecipeIngredientViewModel>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/ShoppingList?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
     }
 }
 

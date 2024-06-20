@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Hybrid"
@@ -7,9 +7,9 @@
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              xmlns:newsletter="clr-namespace:Lib.ViewModels.Newsletter;assembly=Lib"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType ="local:NewslettersPageViewModel"
-             x:Class="Hybrid.NewslettersPage"
-             Title="Feasts">
+             x:DataType ="local:ShoppingListPageViewModel"
+             x:Class="Hybrid.ShoppingListPage"
+             Title="Shopping List">
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior
@@ -31,7 +31,7 @@
                      AbsoluteLayout.LayoutFlags="All" >
             <ListView ItemsSource="{Binding Workouts}" SelectionMode="None" HasUnevenRows="True">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="newsletter:UserFeastViewModel">
+                    <DataTemplate x:DataType="newsletter:RecipeIngredientViewModel">
                         <ViewCell>
                             <StackLayout VerticalOptions="FillAndExpand" Padding="15,10">
                                 <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Title'}" LineBreakMode="WordWrap"
@@ -66,5 +66,5 @@
         </StackLayout>
 
     </AbsoluteLayout>
-    
+
 </ContentPage>

@@ -12,7 +12,7 @@ namespace Data.Dtos.User;
 /// </summary>
 public class UserNewsletterDto(Entities.User.User user, string token)
 {
-    internal UserNewsletterDto(WorkoutContext context) : this(context.User, context.Token)
+    internal UserNewsletterDto(FeastContext context) : this(context.User, context.Token)
     {
     }
 

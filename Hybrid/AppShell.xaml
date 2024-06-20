@@ -12,6 +12,11 @@
         <local:FlyoutHeader />
     </Shell.FlyoutHeader>
 
+    <ShellContent Title="Shopping List"
+            Route="ShoppingListPage"
+            Icon="{StaticResource ShoppingList}"
+            ContentTemplate="{DataTemplate local:ShoppingListPage}" />
+
     <ShellContent Title="Daily Feast"
                     Route="NewsletterPage"
                     Icon="{StaticResource Feast}"

@@ -25,8 +25,8 @@ public class UserController(UserRepo userRepo) : ControllerBase
     /// <summary>
     /// Get the user's past workouts.
     /// </summary>
-    [HttpGet("Workouts")]
-    public async Task<IList<UserFeast>?> GetWorkouts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    [HttpGet("Feasts")]
+    public async Task<IList<UserFeast>?> GetFeasts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -35,5 +35,20 @@ public class UserController(UserRepo userRepo) : ControllerBase
         }
 
         return await userRepo.GetPastFeasts(user);
+    }
+
+    /// <summary>
+    /// Get the user's past workouts.
+    /// </summary>
+    [HttpGet("ShoppingList")]
+    public async Task<IList<RecipeIngredient>?> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    {
+        var user = await userRepo.GetUser(email, token);
+        if (user == null)
+        {
+            return null;
+        }
+
+        return await userRepo.GetShoppingList(user);
     }
 }

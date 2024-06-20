@@ -14,7 +14,7 @@ public class DeleteOldNewsletters(ILogger<DeleteOldNewsletters> logger, CoreCont
         try
         {
             await coreContext.UserEmails.IgnoreQueryFilters()
-                .Where(u => u.Date < Today.AddMonths(-1 * UserConsts.DeleteLogsAfterXMonths))
+                .Where(u => u.Date < Today.AddMonths(-1 * NewsletterConsts.DeleteEmailsAfterXMonths))
                 .ExecuteDeleteAsync();
         }
         catch (Exception e)

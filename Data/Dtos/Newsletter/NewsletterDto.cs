@@ -17,7 +17,7 @@ public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserFeast
     public DateOnly Today { get; init; } = DateOnly.FromDateTime(DateTime.UtcNow);
 
     public UserNewsletterDto User { get; } = user;
-    public Entities.Newsletter.UserFeast UserWorkout { get; } = newsletter;
+    public Entities.Newsletter.UserFeast UserFeast { get; } = newsletter;
 
     public List<RecipeDto> BreakfastRecipes { get; set; } = [];
     public List<RecipeDto> LunchRecipes { get; set; } = [];

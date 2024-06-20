@@ -114,7 +114,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         }
 
         // Context may be null on rest days.
-        var newsletterContext = await BuildWorkoutContext(user, token, date.Value);
+        var newsletterContext = await BuildFeastContext(user, token, date.Value);
         if (newsletterContext == null)
         {
             // See if a previous workout exists, we send that back down so the app doesn't render nothing on rest days.
@@ -144,7 +144,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// A newsletter with loads of debug information used for checking data validity.
     /// </summary>
-    internal async Task<NewsletterDto?> Debug(WorkoutContext newsletterContext)
+    internal async Task<NewsletterDto?> Debug(FeastContext newsletterContext)
     {
         newsletterContext.User.Verbosity = Verbosity.Debug;
         var debugRecipes = await GetDebugExercises(newsletterContext.User);
@@ -163,7 +163,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// The meal plan newsletter.
     /// </summary>
-    private async Task<NewsletterDto?> OnDayNewsletter(WorkoutContext newsletterContext)
+    private async Task<NewsletterDto?> OnDayNewsletter(FeastContext newsletterContext)
     {
         var breakfastRecipes = await GetBreakfastRecipes(newsletterContext);
         var lunchRecipes = await GetLunchRecipes(newsletterContext, exclude: breakfastRecipes);
