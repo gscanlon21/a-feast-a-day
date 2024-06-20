@@ -25,6 +25,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
     public INavigation Navigation { get; set; } = null!;
 
     public ICommand NewsletterCommand { get; }
+    public ICommand UpdateThisItemCommand { get; set; }
 
     public IAsyncRelayCommand LoadCommand { get; }
 
@@ -32,10 +33,11 @@ public partial class ShoppingListPageViewModel : ObservableObject
     {
         _userService = userService;
 
-        LoadCommand = new AsyncRelayCommand(LoadWorkoutsAsync);
+        LoadCommand = new AsyncRelayCommand(LoadShoppingListAsync);
+        UpdateThisItemCommand = new Command<RecipeIngredientViewModel>(checkboxcommand);
         NewsletterCommand = new Command<UserFeastViewModel>(async (UserFeastViewModel arg) =>
         {
-            await Navigation.PushAsync(new NewsletterPage(arg.Date));
+            //await Navigation.PushAsync(new NewsletterPage(arg.Date));
         });
     }
 
@@ -43,13 +45,21 @@ public partial class ShoppingListPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<RecipeIngredientViewModel>? _workouts = null;
+    public ObservableCollection<RecipeIngredientViewModel>? _ingredients = null;
 
-    private async Task LoadWorkoutsAsync()
+    private void checkboxcommand(RecipeIngredientViewModel obj)
+    {
+        if (obj != null)
+        {
+            obj.IsChecked = !obj.IsChecked;
+        }
+    }
+
+    private async Task LoadShoppingListAsync()
     {
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        Workouts = new ObservableCollection<RecipeIngredientViewModel>(
+        Ingredients = Ingredients ?? new ObservableCollection<RecipeIngredientViewModel>(
             await _userService.GetShoppingList(email, token) ?? Enumerable.Empty<RecipeIngredientViewModel>()
         );
 

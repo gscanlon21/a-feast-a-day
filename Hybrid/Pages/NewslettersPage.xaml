@@ -29,7 +29,7 @@
             x:Name="mainLayout"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" >
-            <ListView ItemsSource="{Binding Workouts}" SelectionMode="None" HasUnevenRows="True">
+            <ListView ItemsSource="{Binding Recipes}" SelectionMode="None" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="newsletter:UserFeastViewModel">
                         <ViewCell>

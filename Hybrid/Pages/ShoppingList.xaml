@@ -29,18 +29,31 @@
             x:Name="mainLayout"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" >
-            <ListView ItemsSource="{Binding Workouts}" SelectionMode="None" HasUnevenRows="True">
+            <ListView ItemsSource="{Binding Ingredients}" SelectionMode="None" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="newsletter:RecipeIngredientViewModel">
                         <ViewCell>
-                            <StackLayout VerticalOptions="FillAndExpand" Padding="15,10">
+                            <HorizontalStackLayout>
+
+                              <CheckBox Color="#0B4C90" IsChecked="{Binding IsChecked}">
+                                <CheckBox.Behaviors>
+                                  <toolkit:EventToCommandBehavior
+                                      Command="{Binding BindingContext.UpdateThisItemCommand, Source={x:Reference myCollectionView}}"
+                                      CommandParameter="{Binding .}"
+                                      EventName="CheckedChanged" />
+                                </CheckBox.Behaviors>
+                              </CheckBox>
+                              
+                              <StackLayout VerticalOptions="FillAndExpand" Padding="15,10">
                                 <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Title'}" LineBreakMode="WordWrap"
                                        FontAttributes="Bold"
                                        FontSize="16"
                                        Padding="0,0,0,1"
                                        TextColor="{StaticResource Primary}"/>
                                 <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Description'}" LineBreakMode="WordWrap"/>
-                            </StackLayout>
+                              </StackLayout>
+                              
+                            </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

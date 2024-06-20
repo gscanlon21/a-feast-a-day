@@ -32,7 +32,7 @@ public partial class NewslettersPageViewModel : ObservableObject
     {
         _userService = userService;
 
-        LoadCommand = new AsyncRelayCommand(LoadWorkoutsAsync);
+        LoadCommand = new AsyncRelayCommand(LoadRecipesAsync);
         NewsletterCommand = new Command<UserFeastViewModel>(async (UserFeastViewModel arg) =>
         {
             await Navigation.PushAsync(new NewsletterPage(arg.Date));
@@ -43,13 +43,13 @@ public partial class NewslettersPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<UserFeastViewModel>? _workouts = null;
+    public ObservableCollection<UserFeastViewModel>? _recipes = null;
 
-    private async Task LoadWorkoutsAsync()
+    private async Task LoadRecipesAsync()
     {
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        Workouts = new ObservableCollection<UserFeastViewModel>(
+        Recipes = new ObservableCollection<UserFeastViewModel>(
             await _userService.GetFeasts(email, token) ?? Enumerable.Empty<UserFeastViewModel>()
         );
 

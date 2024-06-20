@@ -1,6 +1,10 @@
-﻿using Core.Models.User;
+﻿using Core.Code.Extensions;
+using Core.Models.User;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Lib.ViewModels.Newsletter;
 
@@ -9,8 +13,18 @@ namespace Lib.ViewModels.Newsletter;
 /// Intensity level of an exercise variation
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
-public class RecipeIngredientViewModel
+public class RecipeIngredientViewModel : INotifyPropertyChanged
 {
+    public string Title()
+    {
+        return $"{Name}";
+    }
+
+    public string Description()
+    {
+        return $"{QuantityNumerator}/{QuantityDenominator} {Measure?.GetSingleDisplayName()}";
+    }
+
     public int Id { get; init; }
 
     /// <summary>
@@ -46,6 +60,31 @@ public class RecipeIngredientViewModel
     public string? Notes { get; init; } = null;
 
     public string? DisabledReason { get; init; } = null;
+
+
+    private bool _isChecked;
+    public bool IsChecked
+    {
+        set { SetProperty(ref _isChecked, value); }
+        get { return _isChecked; }
+    }
+
+    bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null)
+    {
+        if (object.Equals(storage, value))
+        {
+            return false;
+        }
+
+        storage = value;
+        OnPropertyChanged(propertyName);
+        return true;
+    }
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+    public event PropertyChangedEventHandler? PropertyChanged;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
