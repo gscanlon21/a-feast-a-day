@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Models;
 using Data.Dtos.Newsletter;
 using Data.Entities.Footnote;
 using Data.Repos;
@@ -36,8 +37,14 @@ public partial class NewsletterController(NewsletterRepo newsletterRepo) : Contr
     /// Root route for building out the the workout routine newsletter.
     /// </summary>
     [HttpGet("Newsletter")]
-    public async Task<NewsletterDto?> GetNewsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null)
+    public async Task<NewsletterDto?> GetNewsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null, Client client = Client.Email)
     {
-        return await newsletterRepo.Newsletter(email, token, date);
+        var newsletter = await newsletterRepo.Newsletter(email, token, date);
+        if (newsletter != null)
+        {
+            newsletter.Client = client;
+        }
+
+        return newsletter;
     }
 }

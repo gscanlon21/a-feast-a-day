@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Models;
 using Core.Models.Options;
 using Lib.ViewModels.Footnote;
 using Lib.ViewModels.Newsletter;
@@ -52,9 +53,9 @@ public class NewsletterService
     /// <summary>
     /// Root route for building out the the workout routine newsletter.
     /// </summary>
-    public async Task<NewsletterViewModel?> Newsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null)
+    public async Task<NewsletterViewModel?> Newsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null, Client client = Client.App)
     {
-        var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Newsletter?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}&date={date}");
+        var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Newsletter?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}&date={date}?client={client}");
 
         if (response.StatusCode == HttpStatusCode.NoContent)
         {

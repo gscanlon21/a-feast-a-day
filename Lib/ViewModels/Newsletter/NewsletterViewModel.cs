@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Models;
+using Core.Models.Newsletter;
 using Lib.ViewModels.User;
 
 namespace Lib.ViewModels.Newsletter;
@@ -38,4 +39,6 @@ public class NewsletterViewModel
     /// Hiding the footer in the demo iframe.
     /// </summary>
     public bool HideFooter { get; set; } = false;
+
+    public Client Client { get; init; }
 }

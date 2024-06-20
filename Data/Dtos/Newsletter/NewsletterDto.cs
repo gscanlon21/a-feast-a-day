@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Models;
+using Core.Models.Newsletter;
 using Data.Dtos.User;
 using Data.Entities.User;
 
@@ -32,4 +33,6 @@ public class NewsletterDto(UserNewsletterDto user, Entities.Newsletter.UserFeast
     /// How much detail to show in the newsletter.
     /// </summary>
     public Verbosity Verbosity { get; } = user.Verbosity;
+
+    public Client Client { get; set; } = Client.Email;
 }

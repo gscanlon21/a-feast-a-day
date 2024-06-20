@@ -33,7 +33,10 @@ else
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
     
     <div style="margin-block:1rem;">
-        <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.AllRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList()" />
+        @if (Model.Client != Core.Models.Client.App) 
+        {
+            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.AllRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList()" />
+        }
 
         <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.BreakfastRecipes" Theme="RecipeTheme.Warmup" Title="@(new RecipeSection.Titles("Breakfast"))" />
         <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.LunchRecipes" Theme="RecipeTheme.Main" Title="@(new RecipeSection.Titles("Lunch"))" />
