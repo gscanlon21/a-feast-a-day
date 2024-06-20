@@ -29,7 +29,7 @@
             x:Name="mainLayout"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" >
-            <ListView ItemsSource="{Binding Ingredients}" SelectionMode="None" HasUnevenRows="True">
+            <ListView ItemsSource="{Binding Ingredients}" SelectionMode="None" HasUnevenRows="True" x:Name="myCollectionView">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="newsletter:RecipeIngredientViewModel">
                         <ViewCell>

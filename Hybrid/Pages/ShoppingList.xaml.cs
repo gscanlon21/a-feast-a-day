@@ -49,14 +49,12 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private void CheckboxCommand(RecipeIngredientViewModel obj)
     {
-        if (obj != null)
-        {
-            obj.IsChecked = !obj.IsChecked;
-        }
+        // TODO?
     }
 
     private async Task LoadShoppingListAsync()
     {
+
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
         Ingredients ??= new ObservableCollection<RecipeIngredientViewModel>(

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Lib.ViewModels.Newsletter;
 
