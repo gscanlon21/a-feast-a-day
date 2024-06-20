@@ -1,5 +1,5 @@
 ﻿
-namespace Data.Code;
+namespace Hybrid.Code;
 
 public static class GlobalExceptionHandler
 {

@@ -56,7 +56,7 @@ public class UserController(UserRepo userRepo) : ControllerBase
     /// Get the user's past workouts.
     /// </summary>
     [HttpPost("LogException")]
-    public async Task LogException(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, string? message = null)
+    public async Task LogException([FromForm] string? email, [FromForm] string? token, [FromForm] string? message)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null || string.IsNullOrWhiteSpace(message))
