@@ -1,7 +1,6 @@
 ﻿using Core.Code.Exceptions;
 using Core.Consts;
 using Core.Models;
-using Data.Dtos.Newsletter;
 using Data.Entities.Footnote;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;

@@ -2,8 +2,8 @@
 using Azure.Messaging.EventGrid;
 using Azure.Messaging.EventGrid.SystemEvents;
 using Core.Consts;
-using Core.Models.Newsletter;
 using Data;
+using Data.Entities.Newsletter;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
@@ -86,19 +86,19 @@ public class AzureController(ILogger<AzureController> logger, CoreContext contex
 
         if (deliveryReport.Status == AcsEmailDeliveryReportStatus.Delivered)
         {
-            email.EmailStatus = EmailStatus.Delivered;
+            email.Status = UserEmail.EmailStatus.Delivered;
             await context.SaveChangesAsync(CancellationToken.None);
         }
         else
         {
-            email.EmailStatus = EmailStatus.Failed;
+            email.Status = UserEmail.EmailStatus.Failed;
             email.LastError = deliveryReport.Status.ToString();
 
             // If the email soft-bounced after the first try, retry.
             if (email.SendAttempts <= NewsletterConsts.MaxSendAttempts && false)
             {
                 email.SendAfter = DateTime.UtcNow.AddHours(1);
-                email.EmailStatus = EmailStatus.Pending;
+                email.Status = UserEmail.EmailStatus.Pending;
             }
             // If the newsletter failed, disable it.
             else if (email.Subject == NewsletterConsts.SubjectFeast)

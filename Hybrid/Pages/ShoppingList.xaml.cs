@@ -96,7 +96,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 Desc = $"{(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")}{group.Key.Measure?.GetSingleDisplayName()}"
             });
         }
-        
+
         Ingredients ??= new ObservableCollection<RecipeIngredientViewModel>(finalShoppingList);
         Loading = false;
     }

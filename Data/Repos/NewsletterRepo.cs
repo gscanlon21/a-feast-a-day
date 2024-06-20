@@ -1,5 +1,4 @@
 ﻿using Core.Code.Extensions;
-using Core.Models;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
