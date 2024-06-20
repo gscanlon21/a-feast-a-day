@@ -4,9 +4,12 @@ using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
+using Data.Dtos.Newsletter;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
+using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Numerics;
 using System.Security.Cryptography;
 
@@ -15,7 +18,7 @@ namespace Data.Repos;
 /// <summary>
 /// User helpers.
 /// </summary>
-public class UserRepo(CoreContext context)
+public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFactory)
 {
     /// <summary>
     /// Today's date in UTC.
@@ -245,7 +248,7 @@ public class UserRepo(CoreContext context)
     /// <summary>
     /// Get the user's current workout.
     /// </summary>
-    public async Task<UserFeast?> GetCurrentWorkout(User user)
+    public async Task<UserFeast?> GetCurrentFeast(User user)
     {
         return await context.UserFeasts.AsNoTracking().TagWithCallSite()
             .Include(uw => uw.UserFeastRecipes)
@@ -291,8 +294,22 @@ public class UserRepo(CoreContext context)
     /// </summary>
     public async Task<IList<RecipeIngredient>> GetShoppingList(User user)
     {
-        var currentFeast = await GetCurrentWorkout(user);
-        return currentFeast?.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList() ?? [];
+        var currentFeast = await GetCurrentFeast(user);
+        if (currentFeast == null) { return []; }
+
+        var recipes = (await new QueryBuilder(Section.None)
+                .WithUser(user)
+                .WithExercises(options =>
+                {
+                    options.AddPastRecipes(currentFeast.UserFeastRecipes);
+                })
+                .Build()
+                .Query(serviceScopeFactory))
+                .Select(r => new RecipeDto(r))
+                .OrderBy(e => currentFeast.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
+                .ToList();
+
+        return recipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList();
     }
 }
 

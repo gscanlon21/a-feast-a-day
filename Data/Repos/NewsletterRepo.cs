@@ -118,15 +118,15 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         if (newsletterContext == null)
         {
             // See if a previous workout exists, we send that back down so the app doesn't render nothing on rest days.
-            var currentWorkout = await userRepo.GetCurrentWorkout(user);
-            if (currentWorkout == null)
+            var currentFeast = await userRepo.GetCurrentFeast(user);
+            if (currentFeast == null)
             {
                 logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
                 return null;
             }
 
             logger.Log(LogLevel.Information, "Returning current newsletter for user {Id}", user.Id);
-            return await NewsletterOld(user, token, currentWorkout.Date, currentWorkout);
+            return await NewsletterOld(user, token, currentFeast.Date, currentFeast);
         }
 
         // User is a debug user. They should see the DebugNewsletter instead.
