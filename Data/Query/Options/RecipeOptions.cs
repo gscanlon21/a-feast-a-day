@@ -23,7 +23,7 @@ public class RecipeOptions : IOptions
     public void AddPastRecipes(ICollection<UserFeastRecipe> userFeastRecipes)
     {
         RecipeIds = userFeastRecipes
-            .Where(nv => _section == nv.Section)
+            .Where(nv => _section == nv.Section || _section == Section.None)
             .Select(nv => nv.RecipeId)
             .ToList();
     }
