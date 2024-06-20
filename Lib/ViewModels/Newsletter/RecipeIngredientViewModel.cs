@@ -19,9 +19,10 @@ public class RecipeIngredientViewModel : INotifyPropertyChanged
         return $"{Name}";
     }
 
+    public string? Desc { get; set; }
     public string Description()
     {
-        return $"{QuantityNumerator}/{QuantityDenominator} {Measure?.GetSingleDisplayName()}";
+        return Desc ?? $"{QuantityNumerator}/{QuantityDenominator} {Measure?.GetSingleDisplayName()}";
     }
 
     public int Id { get; init; }
