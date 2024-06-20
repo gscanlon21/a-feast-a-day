@@ -1,4 +1,5 @@
-﻿using Core.Consts;
+﻿using Core.Code.Exceptions;
+using Core.Consts;
 using Core.Models;
 using Data.Dtos.Newsletter;
 using Data.Entities.Footnote;
@@ -37,14 +38,22 @@ public partial class NewsletterController(NewsletterRepo newsletterRepo) : Contr
     /// Root route for building out the the workout routine newsletter.
     /// </summary>
     [HttpGet("Newsletter")]
-    public async Task<NewsletterDto?> GetNewsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null, Client client = Client.Email)
+    public async Task<IActionResult> GetNewsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null, Client client = Client.Email)
     {
-        var newsletter = await newsletterRepo.Newsletter(email, token, date);
-        if (newsletter != null)
+        try
         {
-            newsletter.Client = client;
-        }
+            var newsletter = await newsletterRepo.Newsletter(email, token, date);
+            if (newsletter != null)
+            {
+                newsletter.Client = client;
+                return StatusCode(StatusCodes.Status200OK, newsletter);
+            }
 
-        return newsletter;
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+        catch (UserException)
+        {
+            return StatusCode(StatusCodes.Status401Unauthorized);
+        }
     }
 }

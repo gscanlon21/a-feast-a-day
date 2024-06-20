@@ -28,6 +28,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     public ICommand NewsletterCommand { get; }
     public ICommand UpdateThisItemCommand { get; set; }
+    public ICommand RefreshCommand { get; set; }
 
     public IAsyncRelayCommand LoadCommand { get; }
 
@@ -36,6 +37,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
         _userService = userService;
 
         LoadCommand = new AsyncRelayCommand(LoadShoppingListAsync);
+        RefreshCommand = new AsyncRelayCommand(LoadShoppingListAsync);
         UpdateThisItemCommand = new Command<RecipeIngredientViewModel>(CheckboxCommand);
         NewsletterCommand = new Command<UserFeastViewModel>(async (UserFeastViewModel arg) =>
         {
@@ -68,6 +70,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private async Task LoadShoppingListAsync()
     {
+        Loading = true;
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
         var shoppingList = await _userService.GetShoppingList(email, token) ?? Enumerable.Empty<RecipeIngredientViewModel>();
