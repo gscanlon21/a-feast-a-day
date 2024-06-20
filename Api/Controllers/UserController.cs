@@ -51,4 +51,19 @@ public class UserController(UserRepo userRepo) : ControllerBase
 
         return await userRepo.GetShoppingList(user);
     }
+
+    /// <summary>
+    /// Get the user's past workouts.
+    /// </summary>
+    [HttpPost("LogException")]
+    public async Task LogException(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, string? message = null)
+    {
+        var user = await userRepo.GetUser(email, token);
+        if (user == null || string.IsNullOrWhiteSpace(message))
+        {
+            return;
+        }
+
+        throw new Exception(message);
+    }
 }

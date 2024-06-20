@@ -1,4 +1,7 @@
-﻿namespace Hybrid;
+﻿using Data.Code;
+using Lib.Services;
+
+namespace Hybrid;
 
 public partial class App : Application
 {
@@ -14,6 +17,10 @@ public partial class App : Application
 
         Email = Preferences.Default.Get<string?>(nameof(PreferenceKeys.Email), null);
         Token = Preferences.Default.Get<string?>(nameof(PreferenceKeys.Token), null);
+        GlobalExceptionHandler.UnhandledException += async (sender, args) =>
+        {
+            await serviceProvider.GetRequiredService<UserService>().LogException(Email, Token, args.ExceptionObject.ToString());
+        };
 
         if (HasLoggedIn)
         {

@@ -50,5 +50,15 @@ public class UserService
     {
         return await _httpClient.GetFromJsonAsync<List<RecipeIngredientViewModel>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/ShoppingList?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
     }
+
+    public async Task LogException(string? email, string? token, string? message)
+    {
+        await _httpClient.PostAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/LogException", new FormUrlEncodedContent(new Dictionary<string, string?>
+        {
+            { "email", email },
+            { "token", token },
+            { "message", message }
+        }));
+    }
 }
 
