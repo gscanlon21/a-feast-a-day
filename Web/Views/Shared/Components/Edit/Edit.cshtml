@@ -149,7 +149,7 @@
             <div class="form-group mb-3">
                 <label asp-for="IngredientExclusionIds" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientExclusionIds)</label>
                 <select asp-for="IngredientExclusionIds" class="form-control" aria-describedby="ingredients-help" size="5"
-                        asp-items="@(Model.Ingredients.Select(h => new SelectListItem() { Text = h.Name, Value = $"{h.Id}" }))">
+                        asp-items="@(Model.Ingredients.Where(i => i.ParentId == null).Select(h => new SelectListItem() { Text = h.Name, Value = $"{h.Id}" }))">
                 </select>
                 <span asp-validation-for="IngredientExclusionIds" class="text-danger"></span>
                 <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.IngredientExclusionIds)</div>
