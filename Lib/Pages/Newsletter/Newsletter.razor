@@ -1,12 +1,14 @@
 ﻿@page "/"
 @inject AppState AppState
 @inject DisplayHelper DH
+@inject IOptions<SiteSettings> SiteSettings
 @inject NewsletterService NewsletterService
 @inject NavigationManager Navigation
 @using Core.Models.Recipe
 @using Core.Models.Newsletter
 @using Core.Models.Footnote
 @using Core.Models.User
+@using Core.Dtos.Newsletter
 @using Shared.Recipe
 @using Shared.Ingredient
 
@@ -59,21 +61,22 @@ else
 
 @code {
     [Parameter]
-    public Pages.Newsletter.NewsletterViewModel? Model { get; set; }
+    public NewsletterDto? Model { get; set; }
 
-    public string? Error { get; set; }
+    public MarkupString? Error { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         if (Model == null)
         {
-            Model = await NewsletterService.Newsletter(AppState.Email, AppState.Token, AppState.Date);
-
-            if (Model == null)
+            var apiResult = await NewsletterService.Newsletter(AppState.Email, AppState.Token, AppState.Date);
+            (Model, Error) = (apiResult.StatusCode, apiResult.Result) switch
             {
-                // TODO Differentiate between server blip and user's login token is no longer valid.
-                Error = "Request failed.";
-            }
+                (StatusCodeRange.Successful, not null) => (apiResult.Result, (MarkupString?)null),
+                (StatusCodeRange.Successful, null) => (null, new MarkupString("Enjoy your rest day!")),
+                (StatusCodeRange.ClientError, _) => (null, new MarkupString("Invalid credentials.")),
+                (_, _) => (null, new MarkupString($"Request failed. Check for an updated app version <a href='{SiteSettings.Value.Source}/releases'>here</a>.")),
+            };
         }
     }
 }

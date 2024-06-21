@@ -1,8 +1,8 @@
 ﻿using Core.Consts;
+using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
 using Data.Models;
 using Data.Query.Builders;
-using Lib.Pages.Shared.Recipe;
 using Microsoft.AspNetCore.Mvc;
 using Web.Code;
 using Web.Code.Attributes;
@@ -31,7 +31,7 @@ public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) 
         }
 
         viewModel.Recipes = (await queryBuilder.Build().Query(serviceScopeFactory))
-            .Select(r => r.AsType<NewsletterRecipeViewModel, QueryResults>()!)
+            .Select(r => r.AsType<RecipeDtoDto, QueryResults>()!)
             .ToList();
 
         if (!string.IsNullOrWhiteSpace(viewModel.Name))

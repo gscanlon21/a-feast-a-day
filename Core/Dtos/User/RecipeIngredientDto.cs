@@ -1,7 +1,10 @@
-﻿using Core.Models.User;
+﻿using Core.Code.Extensions;
+using Core.Models.User;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
 namespace Core.Dtos.User;
@@ -13,6 +16,18 @@ namespace Core.Dtos.User;
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeIngredientDto
 {
+    public string? Nam { get; set; }
+    public string Title()
+    {
+        return Nam ?? $"{Name}";
+    }
+
+    public string? Desc { get; set; }
+    public string Description()
+    {
+        return Desc ?? $"{QuantityNumerator}/{QuantityDenominator} {Measure.GetSingleDisplayName()}";
+    }
+
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
@@ -59,6 +74,31 @@ public class RecipeIngredientDto
 
     [JsonInclude]
     public virtual IngredientDto Ingredient { get; set; } = null!;
+
+
+    private bool _isChecked;
+    public bool IsChecked
+    {
+        set { SetProperty(ref _isChecked, value); }
+        get { return _isChecked; }
+    }
+
+    bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null)
+    {
+        if (object.Equals(storage, value))
+        {
+            return false;
+        }
+
+        storage = value;
+        OnPropertyChanged(propertyName);
+        return true;
+    }
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+    public event PropertyChangedEventHandler? PropertyChanged;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

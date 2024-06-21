@@ -1,6 +1,8 @@
 ﻿@using Core.Models.Recipe
-@using Core.Models.Newsletter;
-@using Core.Models.User;
+@using Core.Models.Newsletter
+@using Core.Models.User
+@using Core.Dtos.User
+@using Core.Dtos.Newsletter
 
 @if (Recipes?.Any() == true)
 {
@@ -65,7 +67,7 @@
     public Titles? Title { get; init; }
 
     [Parameter, EditorRequired]
-    public Pages.Newsletter.UserNewsletterViewModel? User { get; init; }
+    public Core.Dtos.User.UserNewsletterDto? User { get; init; }
 
     [Parameter, EditorRequired]
     public RecipeTheme Theme { get; init; }
@@ -74,7 +76,7 @@
     public Verbosity Verbosity { get; init; }
 
     [Parameter, EditorRequired]
-    public IList<Pages.Shared.Recipe.NewsletterRecipeViewModel>? Recipes { get; init; }
+    public IList<RecipeDtoDto>? Recipes { get; init; }
 
     public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
     {
@@ -83,11 +85,11 @@
         public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
     };
 
-    private class RecipeSectionComparer : IEqualityComparer<Pages.Shared.Recipe.NewsletterRecipeViewModel>
+    private class RecipeSectionComparer : IEqualityComparer<RecipeDtoDto>
     {
-        public bool Equals(Pages.Shared.Recipe.NewsletterRecipeViewModel? a, Pages.Shared.Recipe.NewsletterRecipeViewModel? b)
-            => EqualityComparer<Pages.Shared.Recipe.NewsletterRecipeViewModel>.Default.Equals(a, b);
+        public bool Equals(RecipeDtoDto? a, RecipeDtoDto? b)
+            => EqualityComparer<RecipeDtoDto>.Default.Equals(a, b);
 
-        public int GetHashCode(Pages.Shared.Recipe.NewsletterRecipeViewModel e) => e.GetHashCode();
+        public int GetHashCode(RecipeDtoDto e) => e.GetHashCode();
     }
 }

@@ -1,6 +1,6 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Dtos.Newsletter;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Lib.Pages.Shared.Recipe;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Recipe;
@@ -10,7 +10,7 @@ public class RecipesViewModel
 {
     public RecipesViewModel() { }
 
-    public IList<NewsletterRecipeViewModel> Recipes { get; set; } = null!;
+    public IList<RecipeDtoDto> Recipes { get; set; } = null!;
 
     public Verbosity Verbosity => Verbosity.Debug;
 

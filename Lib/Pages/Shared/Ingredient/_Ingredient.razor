@@ -7,6 +7,7 @@
 @using Core.Models.Recipe
 @using Core.Models.User
 @using Core.Models.Newsletter
+@using Core.Dtos.User
 
 @*
     Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
@@ -46,8 +47,8 @@
 
 @code {
     [CascadingParameter]
-    public Pages.Newsletter.UserNewsletterViewModel? User { get; set; }
+    public Core.Dtos.User.UserNewsletterDto? User { get; set; }
 
     [Parameter, EditorRequired]
-    public Pages.Shared.Ingredient.IngredientViewModel Model { get; set; } = null!;
+    public IngredientDto Model { get; set; } = null!;
 }

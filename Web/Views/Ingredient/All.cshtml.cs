@@ -1,5 +1,5 @@
-﻿using Core.Models.Newsletter;
-using Lib.Pages.Shared.Ingredient;
+﻿using Core.Dtos.User;
+using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Ingredient;
@@ -9,7 +9,7 @@ public class IngredientsViewModel
 {
     public IngredientsViewModel() { }
 
-    public IList<IngredientViewModel> Ingredients { get; set; } = null!;
+    public IList<IngredientDto> Ingredients { get; set; } = null!;
 
     public Verbosity Verbosity => Verbosity.Debug;
 
@@ -23,11 +23,11 @@ public class IngredientsViewModel
         !string.IsNullOrWhiteSpace(Name)
         || Section.HasValue;
 
-    internal class IngredientComparer : IEqualityComparer<IngredientViewModel>
+    internal class IngredientComparer : IEqualityComparer<IngredientDto>
     {
-        public bool Equals(IngredientViewModel? a, IngredientViewModel? b)
+        public bool Equals(IngredientDto? a, IngredientDto? b)
             => EqualityComparer<string>.Default.Equals(a?.Name, b?.Name);
 
-        public int GetHashCode(IngredientViewModel e) => e.Name.GetHashCode();
+        public int GetHashCode(IngredientDto e) => e.Name.GetHashCode();
     }
 }

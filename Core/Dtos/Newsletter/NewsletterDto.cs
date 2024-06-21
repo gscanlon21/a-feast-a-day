@@ -4,7 +4,7 @@ using Core.Models.Newsletter;
 
 namespace Core.Dtos.Newsletter;
 
-public class NewsletterDto(UserNewsletterDto user, UserFeastDto newsletter)
+public class NewsletterDto
 {
     /// <summary>
     /// The number of footnotes to show in the newsletter
@@ -13,8 +13,8 @@ public class NewsletterDto(UserNewsletterDto user, UserFeastDto newsletter)
 
     public DateOnly Today { get; init; } = DateOnly.FromDateTime(DateTime.UtcNow);
 
-    public UserNewsletterDto User { get; } = user;
-    public UserFeastDto UserFeast { get; } = newsletter;
+    public required UserNewsletterDto User { get; init; }
+    public required UserFeastDto UserFeast { get; init; }
 
     public List<RecipeDtoDto> BreakfastRecipes { get; set; } = [];
     public List<RecipeDtoDto> LunchRecipes { get; set; } = [];
@@ -28,7 +28,12 @@ public class NewsletterDto(UserNewsletterDto user, UserFeastDto newsletter)
     /// <summary>
     /// How much detail to show in the newsletter.
     /// </summary>
-    public Verbosity Verbosity { get; } = user.Verbosity;
+    public required Verbosity Verbosity { get; init; }
+
+    /// <summary>
+    /// Hiding the footer in the demo iframe.
+    /// </summary>
+    public bool HideFooter { get; set; } = false;
 
     public Client Client { get; set; } = Client.Email;
 }

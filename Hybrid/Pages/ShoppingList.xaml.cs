@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Core.Code.Extensions;
 using Core.Dtos.Feast;
-using Lib.Pages.Shared.Recipe;
+using Core.Dtos.User;
 using Lib.Services;
 using System.Collections.ObjectModel;
 using System.Text.Json;
@@ -39,7 +39,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
         LoadCommand = new AsyncRelayCommand(LoadShoppingListAsync);
         RefreshCommand = new AsyncRelayCommand(LoadShoppingListAsync);
-        UpdateThisItemCommand = new Command<RecipeIngredientViewModel>(CheckboxCommand);
+        UpdateThisItemCommand = new Command<RecipeIngredientDto>(CheckboxCommand);
         NewsletterCommand = new Command<UserFeastViewModel>(async (UserFeastViewModel arg) =>
         {
             //await Navigation.PushAsync(new NewsletterPage(arg.Date));
@@ -50,9 +50,9 @@ public partial class ShoppingListPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<RecipeIngredientViewModel>? _ingredients = null;
+    public ObservableCollection<RecipeIngredientDto>? _ingredients = null;
 
-    private void CheckboxCommand(RecipeIngredientViewModel obj)
+    private void CheckboxCommand(RecipeIngredientDto obj)
     {
         if (obj != null)
         {
@@ -74,14 +74,14 @@ public partial class ShoppingListPageViewModel : ObservableObject
         Loading = true;
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        var shoppingList = await _userService.GetShoppingList(email, token) ?? Enumerable.Empty<RecipeIngredientViewModel>();
+        var shoppingList = await _userService.GetShoppingList(email, token) ?? [];
         var checkedList = JsonSerializer.Deserialize<List<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
         foreach (var item in shoppingList)
         {
             item.IsChecked = checkedList.Contains(item.Id) || item.SkipShoppingList;
         }
 
-        var finalShoppingList = new List<RecipeIngredientViewModel>();
+        var finalShoppingList = new List<RecipeIngredientDto>();
         // There might be a bug where the saved shopping list ids are different than the ones that are choosen for each group.
         foreach (var group in shoppingList.GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
@@ -89,25 +89,25 @@ public partial class ShoppingListPageViewModel : ObservableObject
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
             var fraction = new Fractions.Fraction(wholeFractions + partialFractions.Sum(g => g.QuantityNumerator ?? 0), Math.Max(1, partialFractions.Sum(g => g.QuantityDenominator ?? 0)), true);
 
-            finalShoppingList.Add(new RecipeIngredientViewModel()
+            finalShoppingList.Add(new RecipeIngredientDto()
             {
                 Id = group.Key.Id,
-                Name = group.Key.Name,
+                Nam = group.Key.Name,
                 IsChecked = group.Key.IsChecked,
-                Desc = $"{(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")}{group.Key.Measure?.GetSingleDisplayName()}"
+                Desc = $"{(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")}{group.Key.Measure.GetSingleDisplayName()}"
             });
         }
 
-        Ingredients ??= new ObservableCollection<RecipeIngredientViewModel>(finalShoppingList);
+        Ingredients ??= new ObservableCollection<RecipeIngredientDto>(finalShoppingList);
         Loading = false;
     }
 
-    private class ListComparer : IEqualityComparer<RecipeIngredientViewModel>
+    private class ListComparer : IEqualityComparer<RecipeIngredientDto>
     {
-        public bool Equals(RecipeIngredientViewModel? a, RecipeIngredientViewModel? b)
+        public bool Equals(RecipeIngredientDto? a, RecipeIngredientDto? b)
             => EqualityComparer<Core.Models.User.Measure?>.Default.Equals(a?.Measure, b?.Measure)
             && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
 
-        public int GetHashCode(RecipeIngredientViewModel e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
+        public int GetHashCode(RecipeIngredientDto e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
     }
 }

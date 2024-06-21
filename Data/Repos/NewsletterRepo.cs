@@ -152,8 +152,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var debugRecipes = await GetDebugExercises(newsletterContext.User);
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
-        var viewModel = new NewsletterDto(userViewModel, newsletter.AsType<UserFeastDto, UserFeast>()!)
+        var viewModel = new NewsletterDto
         {
+            User = userViewModel,
+            Verbosity = newsletterContext.User.Verbosity,
+            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             DinnerRecipes = debugRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
             DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList()
         };
@@ -179,8 +182,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         );
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
-        var viewModel = new NewsletterDto(userViewModel, newsletter.AsType<UserFeastDto, UserFeast>()!)
+        var viewModel = new NewsletterDto
         {
+            User = userViewModel,
+            Verbosity = newsletterContext.User.Verbosity,
+            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             DinnerRecipes = dinnerRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
             SideRecipes = sideRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
             LunchRecipes = lunchRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
@@ -201,8 +207,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
-        var newsletterViewModel = new NewsletterDto(userViewModel, newsletter.AsType<UserFeastDto, UserFeast>()!)
+        var newsletterViewModel = new NewsletterDto
         {
+            User = userViewModel,
+            Verbosity = user.Verbosity,
+            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             Today = date,
         };
 

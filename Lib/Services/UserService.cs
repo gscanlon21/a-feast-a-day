@@ -1,7 +1,6 @@
 ﻿using Core.Dtos.Feast;
+using Core.Dtos.User;
 using Core.Models.Options;
-using Lib.Pages.Newsletter;
-using Lib.Pages.Shared.Recipe;
 using Microsoft.Extensions.Options;
 using System.Net;
 using System.Net.Http.Json;
@@ -26,7 +25,7 @@ public class UserService
         }
     }
 
-    public async Task<UserNewsletterViewModel?> GetUser(string email, string token)
+    public async Task<UserNewsletterDto?> GetUser(string email, string token)
     {
         var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/User?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
 
@@ -36,7 +35,7 @@ public class UserService
         }
         else if (response.IsSuccessStatusCode)
         {
-            return await response.Content.ReadFromJsonAsync<UserNewsletterViewModel>();
+            return await response.Content.ReadFromJsonAsync<UserNewsletterDto>();
         }
 
         return null;
@@ -47,9 +46,9 @@ public class UserService
         return await _httpClient.GetFromJsonAsync<List<UserFeastViewModel>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/Feasts?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
     }
 
-    public async Task<IList<RecipeIngredientViewModel>?> GetShoppingList(string email, string token)
+    public async Task<IList<RecipeIngredientDto>?> GetShoppingList(string email, string token)
     {
-        return await _httpClient.GetFromJsonAsync<List<RecipeIngredientViewModel>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/ShoppingList?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
+        return await _httpClient.GetFromJsonAsync<List<RecipeIngredientDto>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/ShoppingList?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
     }
 
     public async Task LogException(string? email, string? token, string? message)

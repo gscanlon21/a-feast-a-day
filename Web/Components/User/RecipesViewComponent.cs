@@ -1,10 +1,10 @@
-﻿using Core.Models.User;
+﻿using Core.Dtos.Newsletter;
+using Core.Dtos.User;
+using Core.Models.User;
 using Data;
 using Data.Models;
 using Data.Query.Builders;
 using Data.Repos;
-using Lib.Pages.Newsletter;
-using Lib.Pages.Shared.Recipe;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
@@ -26,7 +26,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
-        var userNewsletter = user.AsType<UserNewsletterViewModel, Data.Entities.User.User>()!;
+        var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
         var userRecipes = await context.Recipes
@@ -45,7 +45,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
             .Build()
             .Query(serviceScopeFactory))
             .DistinctBy(vm => vm.Recipe)
-            .ToList().Select(r => r.AsType<NewsletterRecipeViewModel, QueryResults>()!).ToList();
+            .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
 
         return View("Recipes", new RecipesViewModel()
         {
