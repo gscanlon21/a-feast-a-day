@@ -1,5 +1,4 @@
 ﻿using Web.Components.User;
-using Web.ViewModels.User.Components;
 
 namespace Web.Test.Unit.Components;
 

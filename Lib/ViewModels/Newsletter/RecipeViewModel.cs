@@ -5,9 +5,6 @@ using System.Text.Json.Serialization;
 
 namespace Lib.ViewModels.Newsletter;
 
-/// <summary>
-/// Viewmodel for _Exercise.cshtml
-/// </summary>
 [DebuggerDisplay("{Exercise,nq}: {Variation,nq}")]
 public class RecipeViewModel
 {

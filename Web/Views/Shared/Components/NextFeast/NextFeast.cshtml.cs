@@ -1,7 +1,6 @@
 ﻿using Core.Models.User;
 
-namespace Web.ViewModels.User.Components;
-
+namespace Web.Views.Shared.Components.NextFeast;
 
 public class NextFeastViewModel
 {

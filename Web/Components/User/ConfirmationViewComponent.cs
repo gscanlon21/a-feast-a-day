@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Web.ViewModels.User.Components;
+using Web.Views.Shared.Components.Confirmation;
 
 namespace Web.Components.User;
 

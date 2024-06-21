@@ -3,12 +3,9 @@ using Core.Consts;
 using Core.Models.User;
 using Data.Entities.User;
 
-namespace Web.ViewModels.User.Components;
+namespace Web.Views.Shared.Components.Nutrient;
 
 
-/// <summary>
-/// Viewmodel for Nutrient.cshtml
-/// </summary>
 public class NutrientViewModel
 {
     public required string Token { get; set; }

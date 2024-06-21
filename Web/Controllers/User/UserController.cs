@@ -6,8 +6,9 @@ using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
-using Web.ViewModels.User;
-using Web.ViewModels.User.Components;
+using Web.Views.Index;
+using Web.Views.Shared.Components.Advanced;
+using Web.Views.User;
 
 namespace Web.Controllers.User;
 

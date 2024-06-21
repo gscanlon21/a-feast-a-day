@@ -2,8 +2,8 @@
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.ViewModels.User;
-using Web.ViewModels.User.Components;
+using Web.Views.Shared.Components.ManageRecipe;
+using Web.Views.User;
 
 namespace Web.Components.User;
 

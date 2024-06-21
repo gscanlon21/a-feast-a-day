@@ -1,10 +1,8 @@
 ﻿using Data.Entities.User;
 
-namespace Web.ViewModels.User;
+namespace Web.Views.User;
 
-/// <summary>
-/// Viewmodel for All.cshtml
-/// </summary>
+
 public class ManageIngredientViewModel
 {
     public ManageIngredientViewModel() { }

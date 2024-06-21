@@ -2,11 +2,9 @@
 using Core.Models.Recipe;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.ViewModels.Recipe;
+namespace Web.Views.Recipe;
 
-/// <summary>
-/// Viewmodel for All.cshtml
-/// </summary>
+
 public class RecipesViewModel
 {
     public RecipesViewModel() { }

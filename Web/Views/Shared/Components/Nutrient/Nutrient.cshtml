@@ -1,4 +1,4 @@
-﻿@model Web.ViewModels.User.Components.NutrientViewModel
+﻿@model Web.Views.Shared.Components.Nutrient.NutrientViewModel
 @using Core.Consts
 @using Lib.ViewModels.User
 @using Core.Models.Recipe
@@ -26,7 +26,7 @@
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
         .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
         .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayNameType.Name))
-        .Append(new Web.ViewModels.User.Components.NutrientViewModel.MonthlyMuscle()
+        .Append(new Web.Views.Shared.Components.Nutrient.NutrientViewModel.MonthlyMuscle()
         {
             IngredientGroup = Nutrients.All,
             ShowButtons = true,

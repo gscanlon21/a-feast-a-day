@@ -4,9 +4,6 @@ using Lib.ViewModels.User;
 
 namespace Lib.ViewModels.Newsletter;
 
-/// <summary>
-/// Viewmodel for Newsletter.cshtml
-/// </summary>
 public class NewsletterViewModel
 {
     /// <summary>

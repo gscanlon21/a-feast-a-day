@@ -4,7 +4,7 @@ using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.ViewModels.User.Components;
+using Web.Views.Shared.Components.Recipe;
 
 namespace Web.Components.User;
 

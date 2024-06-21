@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
 using Web.Code.Attributes;
-using Web.ViewModels.Ingredient;
+using Web.Views.Ingredient;
 
 namespace Web.Controllers.Ingredient;
 

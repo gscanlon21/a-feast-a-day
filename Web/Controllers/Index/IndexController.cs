@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 using Web.Code.TempData;
 using Web.Controllers.User;
 using Web.Services;
-using Web.ViewModels.User;
+using Web.Views.Index;
 
 namespace Web.Controllers.Index;
 

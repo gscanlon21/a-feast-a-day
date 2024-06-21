@@ -2,12 +2,12 @@
 using Lib.ViewModels.User;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.ViewModels.User.Components;
+namespace Web.Views.Shared.Components.Recipes;
 
-public class IngredientsViewModel
+public class RecipesViewModel
 {
-    [Display(Name = "My Ingredients")]
-    public required IList<Lib.ViewModels.Newsletter.IngredientViewModel> Ingredients { get; init; }
+    [Display(Name = "My Recipes")]
+    public required IList<Lib.ViewModels.Newsletter.NewsletterRecipeViewModel> Recipes { get; init; }
 
     public required UserNewsletterViewModel UserNewsletter { get; init; }
 

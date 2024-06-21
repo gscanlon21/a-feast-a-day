@@ -6,7 +6,7 @@ using Lib.ViewModels.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
-using Web.ViewModels.User.Components;
+using Web.Views.Shared.Components.Ingredients;
 
 namespace Web.Components.User;
 

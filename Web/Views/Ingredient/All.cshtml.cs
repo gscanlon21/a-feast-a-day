@@ -2,11 +2,9 @@
 using Lib.ViewModels.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.ViewModels.Ingredient;
+namespace Web.Views.Ingredient;
 
-/// <summary>
-/// Viewmodel for All.cshtml
-/// </summary>
+
 public class IngredientsViewModel
 {
     public IngredientsViewModel() { }

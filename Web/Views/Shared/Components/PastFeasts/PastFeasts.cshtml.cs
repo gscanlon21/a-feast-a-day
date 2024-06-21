@@ -1,6 +1,6 @@
 ﻿using Data.Entities.Newsletter;
 
-namespace Web.ViewModels.User.Components;
+namespace Web.Views.Shared.Components.PastFeasts;
 
 public class PastFeastsViewModel
 {

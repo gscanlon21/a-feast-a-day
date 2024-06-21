@@ -1,8 +1,5 @@
-﻿namespace Web.ViewModels.User.Components;
+﻿namespace Web.Views.Shared.Components.Recipe;
 
-/// <summary>
-/// Viewmodel for Confirmation.cshtml
-/// </summary>
 public class RecipeViewModel
 {
     public string Token { get; init; } = null!;

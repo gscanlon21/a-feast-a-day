@@ -1,11 +1,9 @@
 ﻿using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.ViewModels.User.Components;
+namespace Web.Views.Shared.Components.ManageRecipe;
 
-/// <summary>
-/// Viewmodel for Confirmation.cshtml
-/// </summary>
+
 public class ManageRecipeViewModel
 {
     public required User.UserManageRecipeViewModel.Params Parameters { get; init; }

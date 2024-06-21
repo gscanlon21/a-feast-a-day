@@ -1,7 +1,7 @@
 ﻿using Core.Consts;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
-using Web.ViewModels.User.Components;
+using Web.Views.Shared.Components.Nutrient;
 
 namespace Web.Components.User;
 

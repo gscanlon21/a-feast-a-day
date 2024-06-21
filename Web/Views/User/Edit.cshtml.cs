@@ -3,10 +3,13 @@ using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
+using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
+using Web.Views.Index;
 
-namespace Web.ViewModels.User;
+namespace Web.Views.User;
+
 
 /// <summary>
 /// For CRUD actions
@@ -137,5 +140,53 @@ public class UserEditViewModel
     {
         get => Enum.GetValues<FootnoteType>().Where(e => FootnoteType.HasFlag(e)).ToArray();
         set => FootnoteType = value?.Aggregate(FootnoteType.None, (a, e) => a | e) ?? FootnoteType.None;
+    }
+
+    public class UserFamilyViewModel
+    {
+        public int UserId { get; set; }
+
+        [Range(UserFamily.Consts.WeightMin, UserFamily.Consts.WeightMax)]
+        [Display(Name = "Weight (kg)")]
+        public int Weight { get; init; } = UserFamily.Consts.WeightDefault;
+
+        [Range(UserFamily.Consts.CaloriesPerDayMin, UserFamily.Consts.CaloriesPerDayMax)]
+        [Display(Name = "Calories Per Day")]
+        public int CaloriesPerDay { get; init; } = UserFamily.Consts.CaloriesPerDayDefault;
+
+        [Display(Name = "Person")]
+        public Person Person { get; init; }
+
+        public bool Hide { get; set; }
+    }
+
+    public class UserIngredientViewModel
+    {
+        public int UserId { get; set; }
+
+        [Display(ShortName = "Ingredient", Name = "Base Ingredient")]
+        public int IngredientId { get; init; }
+
+        [Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
+        public int SubstituteIngredientId { get; init; }
+    }
+
+    public class UserServingViewModel
+    {
+        public UserServingViewModel() { }
+
+        public UserServingViewModel(UserServing userMuscleMobility)
+        {
+            UserId = userMuscleMobility.UserId;
+            Section = userMuscleMobility.Section;
+            Count = userMuscleMobility.Count;
+        }
+
+        public Section Section { get; init; }
+
+        public int UserId { get; init; }
+
+        [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
+        public int Count { get; set; }
     }
 }
