@@ -1,8 +1,10 @@
 ﻿using Core.Models.User;
+using Lib.Pages.Shared.Recipe;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
-namespace Lib.ViewModels.Newsletter;
+namespace Lib.Pages.Shared.Ingredient;
+
 
 // TODO: Implement IValidateableObject and setup model validation instead of using the /exercises/check route
 /// <summary>
@@ -49,6 +51,13 @@ public class IngredientViewModel
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is RecipeInstructionViewModel other
+    public override bool Equals(object? obj) => obj is IngredientViewModel other
         && other.Id == Id;
+}
+
+public class NutrientViewModel
+{
+    public Nutrients Nutrients { get; set; }
+    public Measure Measure { get; set; }
+    public double Value { get; set; }
 }

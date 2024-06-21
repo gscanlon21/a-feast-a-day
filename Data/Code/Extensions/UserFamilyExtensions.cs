@@ -7,7 +7,7 @@ namespace Data.Code.Extensions;
 
 public static class UserFamilyExtensions
 {
-    public static double NormalizedDailyAllowanceTUL(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies, double totalCalories)
+    internal static double NormalizedDailyAllowanceTUL(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies, double totalCalories)
     {
         var totalWeightKg = userFamilies.Sum(uf => uf.Weight);
         var totalKCaloriesPerDay = userFamilies.Sum(uf => uf.CaloriesPerDay) / 1000d;

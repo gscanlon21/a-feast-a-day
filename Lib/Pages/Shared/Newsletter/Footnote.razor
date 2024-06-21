@@ -2,11 +2,12 @@
 @inject NewsletterService NewsletterService
 @inject DisplayHelper DH
 @using System.Net
+@using Core.Dtos.Footnote
 @using Core.Models.Footnote
 @using Core.Models.Newsletter
 
 @functions {
-    RenderFragment? Debug(ViewModels.Footnote.FootnoteViewModel footnote)
+    RenderFragment? Debug(FootnoteDto footnote)
     {
         return Verbosity.HasFlag(Verbosity.Debug)
             ? @<b>@footnote.Type.GetSingleDisplayName() - </b>
@@ -44,7 +45,7 @@
 
 @code {
     [Parameter]
-    public ViewModels.User.UserNewsletterViewModel? User { get; set; }
+    public Pages.Newsletter.UserNewsletterViewModel? User { get; set; }
 
     [Parameter, EditorRequired]
     public FootnoteComponentType Type { get; set; } = FootnoteComponentType.System;
@@ -55,7 +56,7 @@
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }
 
-    private IList<ViewModels.Footnote.FootnoteViewModel>? Footnotes { get; set; }
+    private IList<FootnoteDto>? Footnotes { get; set; }
 
     protected override async Task OnInitializedAsync()
     {

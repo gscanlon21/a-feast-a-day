@@ -1,17 +1,20 @@
 ﻿using Core.Code.Exceptions;
 using Core.Code.Extensions;
 using Core.Consts;
+using Core.Dtos.Newsletter;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
-using Data.Dtos.Newsletter;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
+using Data.Models;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Numerics;
 using System.Security.Cryptography;
+using Web.Code;
 
 namespace Data.Repos;
 
@@ -138,7 +141,7 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
                     .ThenInclude(r => r.RecipeIngredients)
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
-            .Where(n => n.User.Id == user.Id)
+            .Where(n => n.UserId == user.Id)
             // Only look at records where the user is not new to fitness.
             //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
@@ -292,7 +295,7 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public async Task<IList<RecipeIngredient>> GetShoppingList(User user)
+    public async Task<IList<RecipeIngredientDto>> GetShoppingList(User user)
     {
         var currentFeast = await GetCurrentFeast(user);
         if (currentFeast == null) { return []; }
@@ -305,9 +308,8 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
                 })
                 .Build()
                 .Query(serviceScopeFactory))
-                .Select(r => new RecipeDto(r))
                 .OrderBy(e => currentFeast.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
-                .ToList();
+                .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
 
         return recipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList();
     }

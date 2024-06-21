@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Core.Dtos.Feast;
 using Lib.Services;
-using Lib.ViewModels.Newsletter;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 

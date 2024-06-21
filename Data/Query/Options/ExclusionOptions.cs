@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Dtos.User;
+using Core.Models.User;
 using Data.Entities.User;
 
 namespace Data.Query.Options;
@@ -23,7 +24,7 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variation of these exercises from being chosen.
     /// </summary>
-    public void AddExcludeRecipes(IEnumerable<Recipe>? exercises)
+    internal void AddExcludeRecipes(IEnumerable<Recipe>? exercises)
     {
         if (exercises != null)
         {
@@ -34,7 +35,7 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variations from being chosen that are a part of these exercise groups.
     /// </summary>
-    public void AddExcludeAllergens(IEnumerable<Recipe>? exercises)
+    internal void AddExcludeAllergens(IEnumerable<Recipe>? exercises)
     {
         if (exercises != null)
         {
@@ -45,7 +46,15 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variations from being chosen that are a part of these exercise groups.
     /// </summary>
-    public void AddExcludeIngredients(IEnumerable<Ingredient>? ingredients)
+    internal void AddExcludeIngredients(IEnumerable<Ingredient>? ingredients)
+    {
+        if (ingredients != null)
+        {
+            Ingredients = Ingredients.Union(ingredients.Select(i => i.Id)).ToList();
+        }
+    }
+
+    public void AddExcludeIngredients(IEnumerable<IngredientDto>? ingredients)
     {
         if (ingredients != null)
         {

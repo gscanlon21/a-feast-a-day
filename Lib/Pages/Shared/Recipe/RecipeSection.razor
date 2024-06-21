@@ -65,7 +65,7 @@
     public Titles? Title { get; init; }
 
     [Parameter, EditorRequired]
-    public ViewModels.User.UserNewsletterViewModel? User { get; init; }
+    public Pages.Newsletter.UserNewsletterViewModel? User { get; init; }
 
     [Parameter, EditorRequired]
     public RecipeTheme Theme { get; init; }
@@ -74,7 +74,7 @@
     public Verbosity Verbosity { get; init; }
 
     [Parameter, EditorRequired]
-    public IList<ViewModels.Newsletter.NewsletterRecipeViewModel>? Recipes { get; init; }
+    public IList<Pages.Shared.Recipe.NewsletterRecipeViewModel>? Recipes { get; init; }
 
     public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
     {
@@ -83,11 +83,11 @@
         public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
     };
 
-    private class RecipeSectionComparer : IEqualityComparer<ViewModels.Newsletter.NewsletterRecipeViewModel>
+    private class RecipeSectionComparer : IEqualityComparer<Pages.Shared.Recipe.NewsletterRecipeViewModel>
     {
-        public bool Equals(ViewModels.Newsletter.NewsletterRecipeViewModel? a, ViewModels.Newsletter.NewsletterRecipeViewModel? b)
-            => EqualityComparer<ViewModels.Newsletter.NewsletterRecipeViewModel>.Default.Equals(a, b);
+        public bool Equals(Pages.Shared.Recipe.NewsletterRecipeViewModel? a, Pages.Shared.Recipe.NewsletterRecipeViewModel? b)
+            => EqualityComparer<Pages.Shared.Recipe.NewsletterRecipeViewModel>.Default.Equals(a, b);
 
-        public int GetHashCode(ViewModels.Newsletter.NewsletterRecipeViewModel e) => e.GetHashCode();
+        public int GetHashCode(Pages.Shared.Recipe.NewsletterRecipeViewModel e) => e.GetHashCode();
     }
 }

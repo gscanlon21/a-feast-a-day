@@ -9,7 +9,7 @@ public static class RecipeIngredientExtensions
     /// <summary>
     /// Returns null if the source list does not contain any items.
     /// </summary>
-    public static double NumberOfServings(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
+    internal static double NumberOfServings(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
         var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);
 
@@ -31,7 +31,7 @@ public static class RecipeIngredientExtensions
     /// <summary>
     /// Returns null if the source list does not contain any items.
     /// </summary>
-    public static double NormalizedGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
+    internal static double NormalizedGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
         var fraction = new Fraction(recipeIngredient.QuantityNumerator ?? 0, recipeIngredient.QuantityDenominator ?? 1, true);
         return scale * recipeIngredient.Measure.ToGrams(fraction.ToDouble(), gramsPerServing: ingredient.GramsPerServing, gramsPerCup: ingredient.GramsPerMeasure);

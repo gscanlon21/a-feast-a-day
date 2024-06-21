@@ -1,9 +1,11 @@
 ﻿using Core.Consts;
-using Data.Dtos.Newsletter;
+using Core.Dtos.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
+using Data.Models;
 using Data.Models.Newsletter;
 using Microsoft.Extensions.DependencyInjection;
+using Web.Code;
 
 namespace Data.Repos;
 
@@ -19,7 +21,7 @@ public partial class NewsletterRepo
         return new FeastContext()
         {
             Date = date,
-            User = user,
+            User = user.AsType<UserDto, User>()!,
             Token = token,
             WeeklyNutrientsWeeks = weeks,
             WeeklyNutrients = volume,
@@ -30,7 +32,7 @@ public partial class NewsletterRepo
     /// <summary>
     /// Creates a new instance of the newsletter and saves it.
     /// </summary>
-    internal async Task<UserFeast> CreateAndAddNewsletterToContext(FeastContext newsletterContext, IList<RecipeDto>? recipes = null)
+    internal async Task<UserFeast> CreateAndAddNewsletterToContext(FeastContext newsletterContext, IList<QueryResults>? recipes = null)
     {
         var newsletter = new UserFeast(newsletterContext.Date, newsletterContext);
         context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
@@ -59,7 +61,7 @@ public partial class NewsletterRepo
     /// <param name="refreshAfter">
     ///     When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same exercises in each workout.
     /// </param>
-    public async Task UpdateLastSeenDate(IEnumerable<RecipeDto> recipes)
+    internal async Task UpdateLastSeenDate(IEnumerable<QueryResults> recipes)
     {
         using var scope = serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();

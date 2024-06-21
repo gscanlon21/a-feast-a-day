@@ -1,10 +1,10 @@
 ﻿using Core.Models.User;
 using Data;
-using Data.Dtos.Newsletter;
+using Data.Models;
 using Data.Query.Builders;
 using Data.Repos;
-using Lib.ViewModels.Newsletter;
-using Lib.ViewModels.User;
+using Lib.Pages.Newsletter;
+using Lib.Pages.Shared.Recipe;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
@@ -44,10 +44,8 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r)
-            .AsType<NewsletterRecipeViewModel, RecipeDto>()!)
             .DistinctBy(vm => vm.Recipe)
-            .ToList();
+            .ToList().Select(r => r.AsType<NewsletterRecipeViewModel, QueryResults>()!).ToList();
 
         return View("Recipes", new RecipesViewModel()
         {

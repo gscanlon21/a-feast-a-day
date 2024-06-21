@@ -56,7 +56,7 @@ public class RecipeIngredient
     [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.RecipeIngredients))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Ingredient.RecipeIngredients))]
+    [JsonInclude, InverseProperty(nameof(Entities.User.Ingredient.RecipeIngredients))]
     public virtual Ingredient Ingredient { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);

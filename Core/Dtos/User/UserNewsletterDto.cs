@@ -5,14 +5,14 @@ using Core.Models.User;
 using Data.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
-namespace Data.Dtos.User;
+namespace Core.Dtos.User;
 
 /// <summary>
 /// For the newsletter
 /// </summary>
-public class UserNewsletterDto(Entities.User.User user, string token)
+public class UserNewsletterDto(UserDto user, string token)
 {
-    internal UserNewsletterDto(FeastContext context) : this(context.User, context.Token)
+    public UserNewsletterDto(FeastContext context) : this(context.User, context.Token)
     {
     }
 

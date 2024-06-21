@@ -1,8 +1,10 @@
-﻿using Data.Models.Newsletter;
+﻿using Core.Dtos.User;
+using Data.Models.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using Web.Code;
 
 namespace Data.Entities.Newsletter;
 
@@ -15,12 +17,12 @@ public class UserFeast
     [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
     public UserFeast() { }
 
-    internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User) { }
+    internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User.AsType<User.User, UserDto>()!) { }
 
     public UserFeast(DateOnly date, User.User user)
     {
         Date = date;
-        User = user;
+        UserId = user.Id;
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -35,8 +37,8 @@ public class UserFeast
     [Required]
     public DateOnly Date { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFeasts))]
-    public virtual User.User User { get; private init; } = null!;
+    //[JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFeasts))]
+    //public virtual User.User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;

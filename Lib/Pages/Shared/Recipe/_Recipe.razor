@@ -2,7 +2,6 @@
 @inject DisplayHelper DH
 @inject IOptions<SiteSettings> SiteSettings
 @using Core.Consts;
-@using Lib.ViewModels.Newsletter
 @using Core.Models.Options
 @using Microsoft.Extensions.Options
 @using Core.Models.Recipe
@@ -89,7 +88,7 @@
                     @foreach (var ingredient in Model.Recipe.RecipeIngredients.OrderBy(i => i.SkipShoppingList).ThenBy(i => i.Name).ThenBy(i => i.Id))
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
-                            @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure?.GetSingleDisplayName()) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
+                            @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName()) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
                         </li>
                     }
                 </ul>
@@ -125,10 +124,10 @@
 
 @code {
     [CascadingParameter]
-    public ViewModels.User.UserNewsletterViewModel? User { get; set; }
+    public Pages.Newsletter.UserNewsletterViewModel? User { get; set; }
 
     [Parameter, EditorRequired]
-    public ViewModels.Newsletter.NewsletterRecipeViewModel Model { get; set; } = null!;
+    public Pages.Shared.Recipe.NewsletterRecipeViewModel Model { get; set; } = null!;
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }

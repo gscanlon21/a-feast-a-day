@@ -1,11 +1,34 @@
 ﻿using Core.Code.Extensions;
+using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Core.Models.User;
+using Lib.Pages.Shared.Ingredient;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
-namespace Lib.ViewModels.Newsletter;
+namespace Lib.Pages.Shared.Recipe;
+
+
+[DebuggerDisplay("{Exercise,nq}: {Variation,nq}")]
+public class NewsletterRecipeViewModel
+{
+    public Section Section { get; init; }
+
+    [JsonInclude]
+    public RecipeDto Recipe { get; init; } = null!;
+
+    [JsonInclude]
+    public UserRecipeViewModel? UserRecipe { get; set; }
+
+    public override int GetHashCode() => HashCode.Combine(Recipe);
+
+    public override bool Equals(object? obj) => obj is NewsletterRecipeViewModel other
+        && other.Recipe == Recipe;
+}
+
 
 // TODO: Implement IValidateableObject and setup model validation instead of using the /exercises/check route
 /// <summary>
@@ -88,6 +111,41 @@ public class RecipeIngredientViewModel : INotifyPropertyChanged
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
-    public override bool Equals(object? obj) => obj is RecipeInstructionViewModel other
+    public override bool Equals(object? obj) => obj is RecipeIngredientViewModel other
         && other.Id == Id;
 }
+
+/// <summary>
+/// User's progression level of an exercise.
+/// </summary>
+[DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
+public class UserRecipeViewModel
+{
+    [Required]
+    public int UserId { get; init; }
+
+    [Required]
+    public int RecipeId { get; init; }
+
+    /// <summary>
+    /// Don't show this exercise or any of it's variations to the user
+    /// </summary>
+    [Required]
+    public bool Ignore { get; set; }
+
+    /// <summary>
+    /// When was this exercise last seen in the user's newsletter.
+    /// </summary>
+    [Required]
+    public DateOnly LastSeen { get; set; }
+
+    [JsonInclude]
+    public RecipeInstructionDto Instruction { get; init; } = null!;
+
+    public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
+
+    public override bool Equals(object? obj) => obj is UserRecipeViewModel other
+        && other.RecipeId == RecipeId
+        && other.UserId == UserId;
+}
+

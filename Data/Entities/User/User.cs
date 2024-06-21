@@ -61,19 +61,19 @@ public class User
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; private init; }
+    public int Id { get; init; }
 
     /// <summary>
     /// The user's email address.
     /// </summary>
     [Required]
-    public string Email { get; private init; } = null!;
+    public string Email { get; init; } = null!;
 
     /// <summary>
     /// User has accepted the current Terms of Use when they signed up.
     /// </summary>
     [Required]
-    public bool AcceptedTerms { get; private init; }
+    public bool AcceptedTerms { get; init; }
 
     /// <summary>
     /// Types of footnotes to show to the user.
@@ -117,7 +117,7 @@ public class User
     /// When this user was created.
     /// </summary>
     [Required]
-    public DateOnly CreatedDate { get; private init; }
+    public DateOnly CreatedDate { get; init; }
 
     /// <summary>
     /// What level of detail the user wants in their newsletter?
@@ -181,40 +181,40 @@ public class User
     #region Navigation Properties
 
     [JsonIgnore, InverseProperty(nameof(UserFamily.User))]
-    public virtual ICollection<UserFamily> UserFamilies { get; private init; } = [];
+    public virtual ICollection<UserFamily> UserFamilies { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserNutrient.User))]
-    public virtual ICollection<UserNutrient> UserNutreints { get; private init; } = [];
+    public virtual ICollection<UserNutrient> UserNutreints { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserIngredient.User))]
-    public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];
+    public virtual ICollection<UserIngredient> UserIngredients { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
-    public virtual ICollection<UserToken> UserTokens { get; private init; } = [];
+    public virtual ICollection<UserToken> UserTokens { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserServing.User))]
-    public virtual ICollection<UserServing> UserServings { get; private init; } = [];
+    public virtual ICollection<UserServing> UserServings { get; init; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
-    public virtual ICollection<UserFeast> UserFeasts { get; private init; } = null!;
+    [JsonIgnore/*, InverseProperty(nameof(UserFeast.User))*/]
+    public virtual ICollection<UserFeast> UserFeasts { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Recipe.User))]
-    public virtual ICollection<Recipe> Recipes { get; private init; } = null!;
+    public virtual ICollection<Recipe> Recipes { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserRecipe.User))]
-    public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
+    public virtual ICollection<UserRecipe> UserRecipes { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserExclusions))]
     public virtual ICollection<Ingredient> IngredientExclusions { get; set; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.User))]
-    public virtual ICollection<Ingredient> Ingredients { get; private init; } = null!;
+    public virtual ICollection<Ingredient> Ingredients { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserEmail.User))]
-    public virtual ICollection<UserEmail> UserEmails { get; private init; } = null!;
+    public virtual ICollection<UserEmail> UserEmails { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Footnote.UserFootnote.User))]
-    public virtual ICollection<Footnote.UserFootnote> UserFootnotes { get; private init; } = null!;
+    public virtual ICollection<Footnote.UserFootnote> UserFootnotes { get; init; } = null!;
 
     #endregion
 }

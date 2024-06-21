@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Entities.User;
 using Data.Query.Options;
@@ -76,6 +77,16 @@ public class QueryBuilder
     /// ..... (prerequisites, progressions, equipment, no use caution when new, unique exercises).
     /// </summary>
     public QueryBuilder WithUser(User user, bool ignoreIgnored = false)
+    {
+        UserOptions = new UserOptions(user)
+        {
+            IgnoreIgnored = ignoreIgnored,
+        };
+
+        return this;
+    }
+
+    public QueryBuilder WithUser(UserDto user, bool ignoreIgnored = false)
     {
         UserOptions = new UserOptions(user)
         {

@@ -1,5 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
+using Lib.Pages.Shared.Recipe;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Recipe;
@@ -9,7 +10,7 @@ public class RecipesViewModel
 {
     public RecipesViewModel() { }
 
-    public IList<Lib.ViewModels.Newsletter.NewsletterRecipeViewModel> Recipes { get; set; } = null!;
+    public IList<NewsletterRecipeViewModel> Recipes { get; set; } = null!;
 
     public Verbosity Verbosity => Verbosity.Debug;
 

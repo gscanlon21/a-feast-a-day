@@ -1,4 +1,5 @@
-﻿using Core.Models.Recipe;
+﻿using Core.Dtos.User;
+using Core.Models.Recipe;
 
 namespace Data.Query.Options;
 
@@ -15,6 +16,15 @@ public class UserOptions : IOptions
     public bool IgnoreIgnored { get; set; } = false;
 
     public UserOptions() { }
+
+    public UserOptions(UserDto user)
+    {
+        NoUser = false;
+        Id = user.Id;
+        Equipment = user.Equipment;
+        CreatedDate = user.CreatedDate;
+        MaxIngredients = user.MaxIngredients;
+    }
 
     public UserOptions(Entities.User.User user)
     {

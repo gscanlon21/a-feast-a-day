@@ -1,8 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Core.Code.Extensions;
+using Core.Dtos.Feast;
+using Lib.Pages.Shared.Recipe;
 using Lib.Services;
-using Lib.ViewModels.Newsletter;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Windows.Input;

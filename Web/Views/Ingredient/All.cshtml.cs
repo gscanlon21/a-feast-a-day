@@ -1,5 +1,5 @@
 ﻿using Core.Models.Newsletter;
-using Lib.ViewModels.Newsletter;
+using Lib.Pages.Shared.Ingredient;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Ingredient;

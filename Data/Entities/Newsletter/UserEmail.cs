@@ -5,7 +5,6 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.Newsletter;
 
-
 /// <summary>
 /// A day's workout routine.
 /// </summary>

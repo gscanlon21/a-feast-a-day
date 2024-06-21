@@ -53,10 +53,10 @@
     public Titles? Title { get; init; }
 
     [Parameter, EditorRequired]
-    public ViewModels.User.UserNewsletterViewModel? User { get; init; }
+    public Pages.Newsletter.UserNewsletterViewModel? User { get; init; }
 
     [Parameter, EditorRequired]
-    public IList<ViewModels.Newsletter.IngredientViewModel>? Ingredients { get; init; }
+    public IList<Pages.Shared.Ingredient.IngredientViewModel>? Ingredients { get; init; }
 
     public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
     {
@@ -65,11 +65,11 @@
         public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
     };
 
-    private class IngredientSectionComparer : IEqualityComparer<ViewModels.Newsletter.IngredientViewModel>
+    private class IngredientSectionComparer : IEqualityComparer<Pages.Shared.Ingredient.IngredientViewModel>
     {
-        public bool Equals(ViewModels.Newsletter.IngredientViewModel? a, ViewModels.Newsletter.IngredientViewModel? b)
-            => EqualityComparer<ViewModels.Newsletter.IngredientViewModel>.Default.Equals(a, b);
+        public bool Equals(Pages.Shared.Ingredient.IngredientViewModel? a, Pages.Shared.Ingredient.IngredientViewModel? b)
+            => EqualityComparer<Pages.Shared.Ingredient.IngredientViewModel>.Default.Equals(a, b);
 
-        public int GetHashCode(ViewModels.Newsletter.IngredientViewModel e) => e.GetHashCode();
+        public int GetHashCode(Pages.Shared.Ingredient.IngredientViewModel e) => e.GetHashCode();
     }
 }

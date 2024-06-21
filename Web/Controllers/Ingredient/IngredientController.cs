@@ -2,6 +2,7 @@
 using Core.Models.Newsletter;
 using Data;
 using Data.Query.Builders;
+using Lib.Pages.Shared.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
@@ -26,7 +27,7 @@ public partial class IngredientController(CoreContext context) : ViewController(
         var queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None);
 
         viewModel.Ingredients = (await context.Ingredients.Include(i => i.Nutrients).ToListAsync())
-            .Select(r => r.AsType<Lib.ViewModels.Newsletter.IngredientViewModel, Data.Entities.User.Ingredient>()!)
+            .Select(r => r.AsType<IngredientViewModel, Data.Entities.User.Ingredient>()!)
             .ToList();
 
         if (!string.IsNullOrWhiteSpace(viewModel.Name))

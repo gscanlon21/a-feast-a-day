@@ -1,4 +1,4 @@
-﻿namespace Lib.ViewModels.Newsletter;
+﻿namespace Core.Dtos.Feast;
 
 public class UserFeastViewModel
 {

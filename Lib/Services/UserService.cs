@@ -1,6 +1,7 @@
-﻿using Core.Models.Options;
-using Lib.ViewModels.Newsletter;
-using Lib.ViewModels.User;
+﻿using Core.Dtos.Feast;
+using Core.Models.Options;
+using Lib.Pages.Newsletter;
+using Lib.Pages.Shared.Recipe;
 using Microsoft.Extensions.Options;
 using System.Net;
 using System.Net.Http.Json;

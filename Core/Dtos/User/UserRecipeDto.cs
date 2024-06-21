@@ -1,15 +1,16 @@
-﻿using Lib.ViewModels.Newsletter;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Lib.ViewModels.User;
+namespace Core.Dtos.User;
 
 /// <summary>
 /// User's progression level of an exercise.
 /// </summary>
+[Table("user_recipe")]
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
-public class UserRecipeViewModel
+public class UserRecipeDto
 {
     [Required]
     public int UserId { get; init; }
@@ -23,18 +24,28 @@ public class UserRecipeViewModel
     [Required]
     public bool Ignore { get; set; }
 
+    public int Scale { get; set; } = 1;
+
+    /// <summary>
+    /// Multiplier for how often this exercise is choosen. Weights the LastSeen date.
+    /// </summary>
+    public bool Favorite { get; set; }
+
     /// <summary>
     /// When was this exercise last seen in the user's newsletter.
     /// </summary>
     [Required]
     public DateOnly LastSeen { get; set; }
 
-    [JsonInclude]
-    public RecipeInstructionViewModel Exercise { get; init; } = null!;
+    [JsonIgnore]
+    public virtual RecipeDto Recipe { get; set; } = null!;
+
+    [JsonIgnore]
+    public virtual UserDto User { get; init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
 
-    public override bool Equals(object? obj) => obj is UserRecipeViewModel other
+    public override bool Equals(object? obj) => obj is UserRecipeDto other
         && other.RecipeId == RecipeId
         && other.UserId == UserId;
 }

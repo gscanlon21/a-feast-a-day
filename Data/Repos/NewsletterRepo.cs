@@ -1,17 +1,19 @@
 ﻿using Core.Code.Extensions;
+using Core.Dtos.Newsletter;
+using Core.Dtos.User;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
-using Data.Dtos.Newsletter;
-using Data.Dtos.User;
 using Data.Entities.Footnote;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
+using Data.Models;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Web.Code;
 
 namespace Data.Repos;
 
@@ -87,7 +89,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         date = date?.AddDays(-1 * (int)date.Value.DayOfWeek) ?? thisWeekDate;
         var oldNewsletter = await context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
-            .Where(n => n.User.Id == user.Id)
+            .Where(n => n.UserId == user.Id)
             // Always send a new newsletter for the demo and test users.
             .Where(n => !user.Features.HasFlag(Features.Demo) && !user.Features.HasFlag(Features.Test))
             // Always send a new newsletter for today for the debug user.
@@ -150,10 +152,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var debugRecipes = await GetDebugExercises(newsletterContext.User);
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
-        var viewModel = new NewsletterDto(userViewModel, newsletter)
+        var viewModel = new NewsletterDto(userViewModel, newsletter.AsType<UserFeastDto, UserFeast>()!)
         {
-            DinnerRecipes = debugRecipes,
-            DebugIngredients = await GetDebugIngredients()
+            DinnerRecipes = debugRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList()
         };
 
         await UpdateLastSeenDate(debugRecipes);
@@ -177,14 +179,14 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         );
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
-        var viewModel = new NewsletterDto(userViewModel, newsletter)
+        var viewModel = new NewsletterDto(userViewModel, newsletter.AsType<UserFeastDto, UserFeast>()!)
         {
-            DinnerRecipes = dinnerRecipes,
-            SideRecipes = sideRecipes,
-            LunchRecipes = lunchRecipes,
-            DessertRecipes = dessertRecipes,
-            SnackRecipes = snackRecipes,
-            BreakfastRecipes = breakfastRecipes,
+            DinnerRecipes = dinnerRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            SideRecipes = sideRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            LunchRecipes = lunchRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            DessertRecipes = dessertRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            SnackRecipes = snackRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            BreakfastRecipes = breakfastRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
         };
 
         // Other exercises. Refresh every day.
@@ -198,15 +200,16 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
-        var userViewModel = new UserNewsletterDto(user, token);
-        var newsletterViewModel = new NewsletterDto(userViewModel, newsletter)
+        var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
+        var newsletterViewModel = new NewsletterDto(userViewModel, newsletter.AsType<UserFeastDto, UserFeast>()!)
         {
             Today = date,
         };
 
+        var ingredients = await context.Ingredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(4).ToListAsync();
         if (user.Features.HasFlag(Features.Debug))
         {
-            newsletterViewModel.DebugIngredients = await context.Ingredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(4).ToListAsync();
+            newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto, Ingredient>()!).ToList();
         }
 
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
@@ -219,9 +222,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 })
                 .Build()
                 .Query(serviceScopeFactory))
-                .Select(r => new RecipeDto(r))
                 .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
-                .ToList();
+                .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
 
             switch (section)
             {

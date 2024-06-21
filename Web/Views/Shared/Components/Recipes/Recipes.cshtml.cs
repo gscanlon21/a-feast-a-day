@@ -1,5 +1,5 @@
 ﻿using Core.Models.Newsletter;
-using Lib.ViewModels.User;
+using Lib.Pages.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Shared.Components.Recipes;
@@ -7,7 +7,7 @@ namespace Web.Views.Shared.Components.Recipes;
 public class RecipesViewModel
 {
     [Display(Name = "My Recipes")]
-    public required IList<Lib.ViewModels.Newsletter.NewsletterRecipeViewModel> Recipes { get; init; }
+    public required IList<Lib.Pages.Shared.Recipe.NewsletterRecipeViewModel> Recipes { get; init; }
 
     public required UserNewsletterViewModel UserNewsletter { get; init; }
 

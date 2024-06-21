@@ -1,6 +1,7 @@
-﻿using Core.Models.Newsletter;
-using Data.Dtos.Newsletter;
+﻿using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Data.Entities.User;
+using Data.Models;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ namespace Data.Repos;
 
 public partial class NewsletterRepo
 {
-    internal async Task<List<RecipeDto>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         return (await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
@@ -34,11 +35,10 @@ public partial class NewsletterRepo
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         return (await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
@@ -62,11 +62,10 @@ public partial class NewsletterRepo
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         return (await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
@@ -90,11 +89,10 @@ public partial class NewsletterRepo
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         return (await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
@@ -114,11 +112,10 @@ public partial class NewsletterRepo
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         return (await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
@@ -138,11 +135,10 @@ public partial class NewsletterRepo
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 
-    internal async Task<List<RecipeDto>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<RecipeDto>? exclude = null)
+    internal async Task<List<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         return (await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
@@ -162,20 +158,15 @@ public partial class NewsletterRepo
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 
-    /// <summary>
-    /// Grab x-many exercises that the user hasn't seen in a long time.
-    /// </summary>
-    private async Task<List<RecipeDto>> GetDebugExercises(User user)
+    private async Task<List<QueryResults>> GetDebugExercises(UserDto user)
     {
         return (await new QueryBuilder(Section.Debug)
             .WithUser(user)
             .Build()
             .Query(serviceScopeFactory, take: 1))
-            .Select(r => new RecipeDto(r))
             .ToList();
     }
 

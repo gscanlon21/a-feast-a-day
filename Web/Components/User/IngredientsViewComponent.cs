@@ -2,7 +2,8 @@
 using Data;
 using Data.Entities.User;
 using Data.Repos;
-using Lib.ViewModels.User;
+using Lib.Pages.Newsletter;
+using Lib.Pages.Shared.Ingredient;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
@@ -37,7 +38,7 @@ public class IngredientsViewComponent(CoreContext context, UserRepo userRepo) : 
         return View("Ingredients", new IngredientsViewModel()
         {
             UserNewsletter = userNewsletter,
-            Ingredients = userIngredients.Select(i => i.AsType<Lib.ViewModels.Newsletter.IngredientViewModel, Ingredient>()!).ToList(),
+            Ingredients = userIngredients.Select(i => i.AsType<IngredientViewModel, Ingredient>()!).ToList(),
         });
     }
 }

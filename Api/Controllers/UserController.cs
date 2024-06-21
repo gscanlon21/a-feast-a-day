@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Dtos.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Repos;
@@ -41,7 +42,7 @@ public class UserController(UserRepo userRepo) : ControllerBase
     /// Get the user's past workouts.
     /// </summary>
     [HttpGet("ShoppingList")]
-    public async Task<IList<RecipeIngredient>?> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    public async Task<IList<RecipeIngredientDto>?> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
