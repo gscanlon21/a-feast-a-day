@@ -157,11 +157,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
-            Verbosity = newsletterContext.User.Verbosity,
             ShoppingList = shoppingList,
+            Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             DinnerRecipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList()
+            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList(),
         };
 
         await UpdateLastSeenDate(debugRecipes);
@@ -210,23 +210,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
-        var shoppingList = await GetShoppingList(newsletter.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
-        var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
-        var newsletterViewModel = new NewsletterDto
-        {
-            User = userViewModel,
-            ShoppingList = shoppingList,
-            Verbosity = user.Verbosity,
-            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            Today = date,
-        };
-
-        var ingredients = await context.Ingredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(4).ToListAsync();
-        if (user.Features.HasFlag(Features.Debug))
-        {
-            newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto, Ingredient>()!).ToList();
-        }
-
+        IList<QueryResults> dinnerRecipes = [], lunchRecipes = [], snackRecipes = [], sideRecipes = [], dessertRecipes = [], breakfastRecipes = [];
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
         {
             var recipes = (await new QueryBuilder(section)
@@ -238,7 +222,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .Build()
                 .Query(serviceScopeFactory))
                 .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
-                .ToList().Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList();
+                .ToList();
 
             foreach (var recipe in recipes)
             {
@@ -254,24 +238,48 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             {
                 case Section.Debug:
                 case Section.Dinner:
-                    newsletterViewModel.DinnerRecipes = recipes;
+                    dinnerRecipes = recipes;
                     break;
                 case Section.Lunch:
-                    newsletterViewModel.LunchRecipes = recipes;
+                    lunchRecipes = recipes;
                     break;
                 case Section.Breakfast:
-                    newsletterViewModel.BreakfastRecipes = recipes;
+                    breakfastRecipes = recipes;
                     break;
                 case Section.Sides:
-                    newsletterViewModel.SideRecipes = recipes;
+                    sideRecipes = recipes;
                     break;
                 case Section.Dessert:
-                    newsletterViewModel.DessertRecipes = recipes;
+                    dessertRecipes = recipes;
                     break;
                 case Section.Snacks:
-                    newsletterViewModel.SnackRecipes = recipes;
+                    snackRecipes = recipes;
                     break;
             }
+        }
+
+        var allRecipes = dinnerRecipes.Concat(lunchRecipes).Concat(breakfastRecipes).Concat(sideRecipes).Concat(snackRecipes).Concat(dessertRecipes);
+        var shoppingList = await GetShoppingList(allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
+        var newsletterViewModel = new NewsletterDto
+        {
+            Today = date,
+            User = userViewModel,
+            Verbosity = user.Verbosity,
+            ShoppingList = shoppingList,
+            DinnerRecipes = dinnerRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            DessertRecipes = dessertRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            SideRecipes = sideRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            SnackRecipes = snackRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            BreakfastRecipes = breakfastRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            LunchRecipes = lunchRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
+        };
+
+        if (user.Features.HasFlag(Features.Debug))
+        {
+            var ingredients = await context.Ingredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(4).ToListAsync();
+            newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto, Ingredient>()!).ToList();
         }
 
         return newsletterViewModel;
@@ -280,7 +288,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<IList<RecipeIngredientDto>> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
+    public static async Task<ShoppingListDto> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
     {
         var shoppingList = new List<RecipeIngredientDto>();
         // Order before grouping so the .Key is the same across requests.
@@ -304,7 +312,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             });
         }
 
-        return shoppingList;
+        return new ShoppingListDto() 
+        {
+            ShoppingList = shoppingList
+        };
     }
 
     private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>

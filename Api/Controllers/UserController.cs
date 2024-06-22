@@ -1,7 +1,5 @@
 ﻿using Core.Consts;
-using Core.Dtos.User;
-using Data.Entities.Newsletter;
-using Data.Entities.User;
+using Core.Dtos.Newsletter;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,42 +16,50 @@ public class UserController(UserRepo userRepo) : ControllerBase
     /// Get the user.
     /// </summary>
     [HttpGet("User")]
-    public async Task<User?> GetUser(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    public async Task<IActionResult> GetUser(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
-        return await userRepo.GetUser(email, token);
+        var user = await userRepo.GetUser(email, token);
+        if (user == null)
+        {
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+
+        return StatusCode(StatusCodes.Status200OK, user);
     }
 
     /// <summary>
     /// Get the user's past workouts.
     /// </summary>
     [HttpGet("Feasts")]
-    public async Task<IList<UserFeast>?> GetFeasts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    public async Task<IActionResult> GetFeasts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
         {
-            return null;
+            return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        return await userRepo.GetPastFeasts(user);
+        var feasts = await userRepo.GetPastFeasts(user);
+        return StatusCode(StatusCodes.Status200OK, feasts);
     }
 
     /// <summary>
     /// Get the user's past workouts.
     /// </summary>
     [HttpGet("ShoppingList")]
-    public async Task<IList<RecipeIngredientDto>?> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    public async Task<IActionResult> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
         {
-            return null;
+            return StatusCode(StatusCodes.Status204NoContent);
         }
 
         var currentFeast = await userRepo.GetCurrentFeast(user, includeRecipeIngredients: true);
-        if (currentFeast == null) { return null; }
+        if (currentFeast == null) { return StatusCode(StatusCodes.Status204NoContent); }
 
-        return await NewsletterRepo.GetShoppingList(currentFeast.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        return StatusCode(StatusCodes.Status200OK, shoppingList);
     }
 
     /// <summary>

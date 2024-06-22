@@ -1,7 +1,6 @@
 ﻿using Core.Code.Exceptions;
 using Core.Consts;
 using Core.Models;
-using Data.Entities.Footnote;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,15 +21,17 @@ public partial class NewsletterController(NewsletterRepo newsletterRepo) : Contr
     protected static DateOnly StartOfWeek => Today.AddDays(-1 * (int)Today.DayOfWeek);
 
     [HttpGet("Footnotes")]
-    public async Task<IList<Footnote>> GetFootnotes(string? email = null, string? token = null, int count = 1)
+    public async Task<IActionResult> GetFootnotes(string? email = null, string? token = null, int count = 1)
     {
-        return await newsletterRepo.GetFootnotes(email, token, count);
+        var footnotes = await newsletterRepo.GetFootnotes(email, token, count);
+        return StatusCode(StatusCodes.Status200OK, footnotes);
     }
 
     [HttpGet("Footnotes/Custom")]
-    public async Task<IList<UserFootnote>> GetUserFootnotes(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int count = 1)
+    public async Task<IActionResult> GetUserFootnotes(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int count = 1)
     {
-        return await newsletterRepo.GetUserFootnotes(email, token, count);
+        var footnotes = await newsletterRepo.GetUserFootnotes(email, token, count);
+        return StatusCode(StatusCodes.Status200OK, footnotes);
     }
 
     /// <summary>

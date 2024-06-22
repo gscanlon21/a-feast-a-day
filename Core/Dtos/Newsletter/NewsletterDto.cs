@@ -16,7 +16,7 @@ public class NewsletterDto
     public required UserNewsletterDto User { get; init; }
     public required UserFeastDto UserFeast { get; init; }
 
-    public required IList<RecipeIngredientDto> ShoppingList { get; init; } = [];
+    public required ShoppingListDto ShoppingList { get; init; }
 
     public List<NewsletterRecipeDto> BreakfastRecipes { get; set; } = [];
     public List<NewsletterRecipeDto> LunchRecipes { get; set; } = [];
