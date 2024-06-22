@@ -56,7 +56,8 @@ public class RecipeIngredientDto
     private string? _name;
 
     [NotMapped]
-    public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
+    public bool SkipShoppingList { get => _skipShoppingList ?? Ingredient?.SkipShoppingList ?? false; init => _skipShoppingList = value; }
+    private bool? _skipShoppingList;
 
     [JsonIgnore]
     public virtual RecipeDto Recipe { get; init; } = null!;

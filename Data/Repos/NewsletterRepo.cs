@@ -294,6 +294,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 Id = group.Key.Id,
                 Name = group.Key.Name,
                 Measure = group.Key.Measure,
+                SkipShoppingList = group.Key.SkipShoppingList,
                 QuantityNumerator = (int)fraction.Numerator,
                 QuantityDenominator = (int)fraction.Denominator,
                 Desc = $"{(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")}{group.Key.Measure.GetSingleDisplayName()}"
