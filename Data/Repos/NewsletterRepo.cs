@@ -282,14 +282,17 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     public static async Task<IList<RecipeIngredientDto>> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
     {
-        var finalShoppingList = new List<RecipeIngredientDto>();
-        foreach (var group in recipeIngredients.GroupBy(l => l, new ShoppingListComparer()).OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
+        var shoppingList = new List<RecipeIngredientDto>();
+        // Order before grouping so the .Key is the same across requests.
+        foreach (var group in recipeIngredients.OrderBy(ri => ri.Id)
+            .GroupBy(l => l, new ShoppingListComparer())
+            .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
             var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator);
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
             var fraction = new Fractions.Fraction(wholeFractions + partialFractions.Sum(g => g.QuantityNumerator), Math.Max(1, partialFractions.Sum(g => g.QuantityDenominator)), true);
 
-            finalShoppingList.Add(new RecipeIngredientDto()
+            shoppingList.Add(new RecipeIngredientDto()
             {
                 Id = group.Key.Id,
                 Name = group.Key.Name,
@@ -301,7 +304,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             });
         }
 
-        return finalShoppingList;
+        return shoppingList;
     }
 
     private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>
