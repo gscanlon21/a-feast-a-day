@@ -248,13 +248,16 @@ public class UserRepo(CoreContext context)
     public async Task<UserFeast?> GetCurrentFeast(User user, bool includeRecipeIngredients = false)
     {
         IQueryable<UserFeast> query = context.UserFeasts.AsNoTracking().TagWithCallSite();
-        if (includeRecipeIngredients)
+        if (!includeRecipeIngredients)
         {
-            query = query.Include(uw => uw.UserFeastRecipes).ThenInclude(uw => uw.Recipe).ThenInclude(uw => uw.RecipeIngredients);
+            query = query.Include(uw => uw.UserFeastRecipes);
         }
         else
         {
-            query = query.Include(uw => uw.UserFeastRecipes);
+            query = query.Include(uw => uw.UserFeastRecipes)
+                .ThenInclude(uw => uw.Recipe)
+                    .ThenInclude(uw => uw.RecipeIngredients)
+                        .ThenInclude(uw => uw.Ingredient);
         }
 
         var results = await query.Where(n => n.UserId == user.Id)
