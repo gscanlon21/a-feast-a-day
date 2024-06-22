@@ -51,6 +51,8 @@ public class Recipe
     [Required]
     public Allergy Allergens { get; set; }
 
+    public string? Image { get; set; } = null;
+
     /// <summary>
     /// Notes about the recipe (externally shown).
     /// </summary>
