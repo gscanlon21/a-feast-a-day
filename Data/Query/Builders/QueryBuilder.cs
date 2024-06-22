@@ -19,7 +19,6 @@ public class QueryBuilder
     private ExclusionOptions? ExclusionOptions;
     private RecipeOptions? ExerciseOptions;
     private EquipmentOptions? EquipmentOptions;
-    private AllergenOptions? AllergenOptions;
 
     /// <summary>
     /// Looks for similar buckets of exercise variations.
@@ -119,17 +118,6 @@ public class QueryBuilder
     }
 
     /// <summary>
-    /// The exercise ids and not the variation or exercisevariation ids.
-    /// </summary>
-    public QueryBuilder WithAllergens(Action<AllergenOptions>? builder = null)
-    {
-        var options = AllergenOptions ?? new AllergenOptions();
-        builder?.Invoke(options);
-        AllergenOptions = options;
-        return this;
-    }
-
-    /// <summary>
     /// Builds and returns the QueryRunner class with the options selected.
     /// </summary>
     public QueryRunner Build()
@@ -141,7 +129,6 @@ public class QueryBuilder
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             RecipeOptions = ExerciseOptions ?? new RecipeOptions(),
-            AllergenOptions = AllergenOptions ?? new AllergenOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
         };
     }

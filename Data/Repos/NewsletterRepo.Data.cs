@@ -30,7 +30,6 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -57,7 +56,6 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -84,7 +82,6 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -107,7 +104,6 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -130,7 +126,6 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
@@ -153,7 +148,6 @@ public partial class NewsletterRepo
             })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeIngredients(newsletterContext.User.IngredientExclusions);
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()

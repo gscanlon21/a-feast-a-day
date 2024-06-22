@@ -8,7 +8,6 @@ using Data.Models;
 using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic;
 using System.Diagnostics;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -54,54 +53,35 @@ public class QueryRunner(Section section)
     public required ExclusionOptions ExclusionOptions { get; init; }
     public required RecipeOptions RecipeOptions { get; init; }
     public required NutrientOptions NutrientOptions { get; init; }
-    public required AllergenOptions AllergenOptions { get; init; }
     public required EquipmentOptions EquipmentOptions { get; init; }
 
-    private IQueryable<RecipesQueryResults> CreateRecipesQuery(CoreContext context)
+    private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
-        var query = context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateRecipesQuery))
+        return context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateFilteredRecipesQuery))
             .Include(r => r.Instructions)
             .Include(r => r.RecipeIngredients)
                 .ThenInclude(i => i.Ingredient)
                     .ThenInclude(i => i.Nutrients)
+            .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
+            // Don't grab recipes over our max ingredient count.
             .Where(r => r.User.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= r.User.MaxIngredients)
-            .Where(ev => ev.DisabledReason == null);
-
-
-        return query.Select(i => new RecipesQueryResults()
-        {
-            Recipe = i,
-            UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
-            UserOwnsEquipment = UserOptions.NoUser
-                // The user owns all of the equipment for the recipe.
-                || UserOptions.Equipment.HasFlag(i.Equipment)
-                // The recipe does not require any equipment.
-                || i.Equipment == Equipment.None
-        });
-    }
-
-    private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context, bool ignoreExclusions = false)
-    {
-        var filteredQuery = CreateRecipesQuery(context)
-            .TagWith(nameof(CreateFilteredRecipesQuery))
-            // Filter down to variations the user owns equipment for.
-            .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment)
-            // Don't grab exercises that the user wants to ignore.
-            .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
-
-        if (!ignoreExclusions)
-        {
-            filteredQuery = filteredQuery
-                // Don't grab exercises that we want to ignore.
-                .Where(vm => !ExclusionOptions.RecipeIds.Contains(vm.Recipe.Id))
-                // Don't grab variations that we want to ignore. Has any flag.
-                .Where(vm => (ExclusionOptions.Allergens & vm.Recipe.Allergens) == 0)
-                // Don't grap recipes that contain ignored ingredients.
-                .Where(vm => vm.Recipe.RecipeIngredients.All(ri => ri.Optional || !ExclusionOptions.Ingredients.Contains(ri.IngredientId)));
-        }
-
-        return filteredQuery;
+            // Don't grab recipes that we want to ignore.
+            .Where(vm => !ExclusionOptions.RecipeIds.Contains(vm.Id))
+            .Select(i => new RecipesQueryResults()
+            {
+                Recipe = i,
+                UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
+                UserOwnsEquipment = UserOptions.NoUser
+                    // The user owns all of the equipment for the recipe.
+                    || UserOptions.Equipment.HasFlag(i.Equipment)
+                    // The recipe does not require any equipment.
+                    || i.Equipment == Equipment.None
+            })
+            // Don't grab recipes that the user wants to ignore.
+            .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true)
+            // Filter down to recipes the user owns equipment for.
+            .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment);
     }
 
     /// <summary>
@@ -128,6 +108,7 @@ public class QueryRunner(Section section)
         }
         else
         {
+            var allIngredients = await context.Ingredients.ToListAsync();
             var userIngredients = await context.UserIngredients
                 .Include(i => i.SubstituteIngredient)
                     .ThenInclude(i => i.Nutrients)
@@ -146,6 +127,7 @@ public class QueryRunner(Section section)
                 var finalRecipeIngredients = new List<RecipeIngredient>();
                 foreach (var ingredient in queryResult.Recipe.RecipeIngredients)
                 {
+                    // Don't grap recipes that contain ignored ingredients.
                     var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == ingredient.IngredientId);
                     if (userIngredient?.Ignore == true)
                     {
@@ -159,8 +141,29 @@ public class QueryRunner(Section section)
                         }
                     }
 
+                    // Find the user's substituted ingredient.
+                    ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(userIngredient);
+
+                    // Switch the ingredient with another if it conflicts with allergens.
+                    var substituteIngredient = ingredient.Ingredient.SubstitutedIngredientForAllergens(allIngredients, UserOptions.Allergens);
+                    if (substituteIngredient == null)
+                    {
+                        if (ingredient.Optional)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            ignoreRecipe = true;
+                        }
+                    }
+                    else
+                    {
+                        ingredient.Ingredient = substituteIngredient;
+                    }
+
+                    // Scale the ingredient.
                     ingredient.QuantityNumerator *= scale;
-                    ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(userIngredients);
                     finalRecipeIngredients.Add(ingredient);
                 }
 
@@ -329,7 +332,7 @@ public class QueryRunner(Section section)
                 {
                     context.UserIngredients.Add(userIngredient);
                 }
-            }            
+            }
         }
 
         await context.SaveChangesAsync();

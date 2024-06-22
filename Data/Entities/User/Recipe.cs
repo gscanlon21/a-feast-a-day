@@ -1,7 +1,6 @@
 ﻿using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Core.Models.User;
 using Data.Entities.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
@@ -47,9 +46,6 @@ public class Recipe
 
     [Required]
     public Section Section { get; set; }
-
-    [Required]
-    public Allergy Allergens { get; set; }
 
     public string? Image { get; set; } = null;
 

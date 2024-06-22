@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.User;
 using Core.Models.Recipe;
+using Core.Models.User;
 
 namespace Data.Query.Options;
 
@@ -9,6 +10,7 @@ public class UserOptions : IOptions
 
     public int Id { get; }
     public Equipment Equipment { get; }
+    public Allergy Allergens { get; }
     public int? MaxIngredients { get; }
     public DateOnly CreatedDate { get; }
 
@@ -22,6 +24,7 @@ public class UserOptions : IOptions
         NoUser = false;
         Id = user.Id;
         Equipment = user.Equipment;
+        Allergens = user.ExcludeAllergens;
         CreatedDate = user.CreatedDate;
         MaxIngredients = user.MaxIngredients;
     }
@@ -31,6 +34,7 @@ public class UserOptions : IOptions
         NoUser = false;
         Id = user.Id;
         Equipment = user.Equipment;
+        Allergens = user.ExcludeAllergens;
         CreatedDate = user.CreatedDate;
         MaxIngredients = user.MaxIngredients;
     }

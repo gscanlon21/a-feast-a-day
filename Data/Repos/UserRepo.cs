@@ -153,7 +153,7 @@ public class UserRepo(CoreContext context)
                     .Where(nv => onlySections.HasFlag(nv.Section))
             }).ToListAsync();
 
-        var substituteIngredients = await context.UserIngredients
+        var userIngredients = await context.UserIngredients
            .Include(i => i.SubstituteIngredient)
                .ThenInclude(i => i.Nutrients)
            .Where(i => i.UserId == user.Id)
@@ -175,23 +175,26 @@ public class UserRepo(CoreContext context)
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.Recipes
                         .SelectMany(recipe => recipe.Recipe.RecipeIngredients
-                            .SelectMany(recipeIngredient => recipeIngredient.Ingredient.SubstitutedIngredient(substituteIngredients).Nutrients
-                                .Select(nutrient =>
-                                {
-                                    var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
-                                    var gramsOfIngredientUsed = recipeIngredient.NormalizedGrams(recipeIngredient.Ingredient, recipe.Scale);
-                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                    var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.GramsPerServing * gramsOfNutrientPerServing
-                                            / ((user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? 1) / familyCount)
-                                            / (familyGrams > 0 ? familyGrams : 100)
-                                            * 100;
-                                    return new
+                            .SelectMany(recipeIngredient =>
+                            {
+                                var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
+                                return recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient)?.Nutrients
+                                    .Select(nutrient =>
                                     {
-                                        Nutrient = nutrient.Nutrients,
-                                        PercentDailyValue = percentDailyValue,
-                                    };
-                                })
-                            )
+                                        var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
+                                        var gramsOfIngredientUsed = recipeIngredient.NormalizedGrams(recipeIngredient.Ingredient, recipe.Scale);
+                                        var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
+                                        var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.GramsPerServing * gramsOfNutrientPerServing
+                                                / ((user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? 1) / familyCount)
+                                                / (familyGrams > 0 ? familyGrams : 100)
+                                                * 100;
+                                        return new
+                                        {
+                                            Nutrient = nutrient.Nutrients,
+                                            PercentDailyValue = percentDailyValue,
+                                        };
+                                    }) ?? [];
+                            })
                         )
                     ).ToList();
 

@@ -1,15 +1,15 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Recipe;
 
 namespace Data.Query.Options;
 
-public class AllergenOptions : IOptions
+public class EquipmentOptions : IOptions
 {
-    public AllergenOptions() { }
+    public EquipmentOptions() { }
 
-    public AllergenOptions(Allergy? allergy)
+    public EquipmentOptions(Equipment? equipment)
     {
-        Allery = allergy;
+        Equipment = equipment;
     }
 
-    public Allergy? Allery { get; set; }
+    public Equipment? Equipment { get; set; }
 }

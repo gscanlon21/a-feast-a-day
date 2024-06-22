@@ -161,9 +161,6 @@ public class UserDto
     public virtual ICollection<UserRecipeDto> UserRecipes { get; init; } = null!;
 
     [JsonIgnore]
-    public virtual ICollection<IngredientDto> IngredientExclusions { get; set; } = null!;
-
-    [JsonIgnore]
     public virtual ICollection<IngredientDto> Ingredients { get; init; } = null!;
 
     [JsonIgnore]
