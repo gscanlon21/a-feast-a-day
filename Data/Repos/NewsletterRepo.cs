@@ -10,6 +10,7 @@ using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
+using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -233,6 +234,16 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .Query(serviceScopeFactory))
                 .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
                 .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
+
+            foreach (var recipe in recipes)
+            {
+                var match = newsletter.UserFeastRecipes.First(nv => nv.RecipeId == recipe.Recipe.Id);
+                recipe.Recipe.Servings *= match.Scale;
+                foreach (var ingredient in recipe.Recipe.RecipeIngredients)
+                {
+                    ingredient.QuantityNumerator *= match.Scale;
+                }
+            }
 
             switch (section)
             {

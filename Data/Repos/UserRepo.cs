@@ -311,6 +311,16 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
                 .OrderBy(e => currentFeast.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
                 .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
 
+        foreach (var recipe in recipes)
+        {
+            var match = currentFeast.UserFeastRecipes.First(nv => nv.RecipeId == recipe.Recipe.Id);
+            recipe.Recipe.Servings *= match.Scale;
+            foreach (var ingredient in recipe.Recipe.RecipeIngredients)
+            {
+                ingredient.QuantityNumerator *= match.Scale;
+            }
+        }
+
         return recipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList();
     }
 }
