@@ -5,7 +5,6 @@ using Core.Dtos.User;
 using Core.Models;
 using Core.Models.Options;
 using Microsoft.Extensions.Options;
-using System.Net.Http.Json;
 
 namespace Lib.Services;
 
@@ -34,19 +33,22 @@ public class NewsletterService
         }
     }
 
-    public async Task<IList<FootnoteDto>?> GetFootnotes(UserNewsletterDto? user = null, int count = 1)
+    public async Task<ApiResult<IList<FootnoteDto>>> GetFootnotes(UserNewsletterDto? user = null, int count = 1)
     {
         if (user == null)
         {
-            return await _httpClient.GetFromJsonAsync<List<FootnoteDto>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Footnotes?count={count}");
+            var response2 = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Footnotes?count={count}");
+            return await ApiResult<IList<FootnoteDto>>.FromResponse(response2);
         }
 
-        return await _httpClient.GetFromJsonAsync<List<FootnoteDto>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Footnotes?count={count}&email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(user.Token)}");
+        var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Footnotes?count={count}&email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(user.Token)}");
+        return await ApiResult<IList<FootnoteDto>>.FromResponse(response);
     }
 
-    public async Task<IList<FootnoteDto>?> GetUserFootnotes(UserNewsletterDto user, int count = 1)
+    public async Task<ApiResult<IList<FootnoteDto>>> GetUserFootnotes(UserNewsletterDto user, int count = 1)
     {
-        return await _httpClient.GetFromJsonAsync<List<FootnoteDto>>($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Footnotes/Custom?count={count}&email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(user.Token)}");
+        var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Footnotes/Custom?count={count}&email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(user.Token)}");
+        return await ApiResult<IList<FootnoteDto>>.FromResponse(response);
     }
 
     /// <summary>

@@ -49,9 +49,9 @@ public partial class NewslettersPageViewModel : ObservableObject
     {
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        Recipes = new ObservableCollection<UserFeastViewModel>(
-            await _userService.GetFeasts(email, token) ?? Enumerable.Empty<UserFeastViewModel>()
-        );
+
+        var pastFeasts = await _userService.GetFeasts(email, token);
+        Recipes = new ObservableCollection<UserFeastViewModel>(pastFeasts.Result ?? []);
 
         Loading = false;
     }
