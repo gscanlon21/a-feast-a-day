@@ -157,11 +157,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
-            Verbosity = newsletterContext.User.Verbosity,
             ShoppingList = shoppingList,
+            Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             DinnerRecipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList()
+            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList(),
         };
 
         await UpdateLastSeenDate(debugRecipes);
@@ -214,11 +214,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
-            User = userViewModel,
-            ShoppingList = shoppingList,
-            Verbosity = user.Verbosity,
-            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             Today = date,
+            User = userViewModel,
+            Verbosity = user.Verbosity,
+            ShoppingList = shoppingList,
+            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
         };
 
         var ingredients = await context.Ingredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(4).ToListAsync();
@@ -280,7 +280,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<IList<RecipeIngredientDto>> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
+    public static async Task<ShoppingListDto> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
     {
         var shoppingList = new List<RecipeIngredientDto>();
         // Order before grouping so the .Key is the same across requests.
@@ -304,7 +304,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             });
         }
 
-        return shoppingList;
+        return new ShoppingListDto() 
+        {
+            ShoppingList = shoppingList
+        };
     }
 
     private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>

@@ -2,8 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
+using Hybrid.Code;
 using Lib.Services;
-using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Windows.Input;
 
@@ -49,7 +49,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<RecipeIngredientDto>? _ingredients = null;
+    public ObservableRangeCollection<RecipeIngredientDto> _ingredients = [];
 
     private void CheckboxCommand(RecipeIngredientDto obj)
     {
@@ -73,16 +73,29 @@ public partial class ShoppingListPageViewModel : ObservableObject
         Loading = true;
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        var checkedList = JsonSerializer.Deserialize<List<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
+        var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), default(int?));
 
-        var shoppingList = await _userService.GetShoppingList(email, token) ?? [];
-        foreach (var item in shoppingList)
+        var shoppingList = (await _userService.GetShoppingList(email, token)).Result;
+        if (shoppingList != null)
         {
-            item.IsChecked = checkedList.Contains(item.Id) || item.SkipShoppingList;
+            if (shoppingListHash != shoppingList!.GetHashCode())
+            {
+                var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.IsChecked).Select(sl => sl.Id));
+                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), defaultCheckedItems);
+                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.GetHashCode());
+            }
+
+            var checkedList = JsonSerializer.Deserialize<List<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
+            foreach (var item in shoppingList!.ShoppingList ?? [])
+            {
+                item.IsChecked = checkedList.Contains(item.Id);
+            }
+
+            Ingredients.ReplaceRange(shoppingList!.ShoppingList!.OrderBy(sl => sl.IsChecked));
         }
 
-        Ingredients = new ObservableCollection<RecipeIngredientDto>(shoppingList);
         Loading = false;
+        return;
     }
 
     private class ListComparer : IEqualityComparer<RecipeIngredientDto>
