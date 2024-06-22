@@ -80,14 +80,6 @@ public class UserEditViewModel
     [Display(Name = "Family Members", Description = "Customize family members.")]
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
-    [Display(Name = "Substitute Ingredients", Description = "Customize substitute ingredients.")]
-    public IList<UserIngredientViewModel> UserIngredients { get; set; } = [];
-
-    [Display(Name = "Exclude Ingredients", Description = "Customize ingredient exclusions.")]
-    public IList<int>? IngredientExclusionIds { get; private init; } = [];
-
-    public IList<Data.Entities.User.Ingredient> Ingredients { get; set; } = [];
-
     [Range(1, 9)]
     [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
     public int AtLeastXServingsPerRecipe { get; set; } = 3;
@@ -158,17 +150,6 @@ public class UserEditViewModel
         public Person Person { get; init; }
 
         public bool Hide { get; set; }
-    }
-
-    public class UserIngredientViewModel
-    {
-        public int UserId { get; set; }
-
-        [Display(ShortName = "Ingredient", Name = "Base Ingredient")]
-        public int IngredientId { get; init; }
-
-        [Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
-        public int SubstituteIngredientId { get; init; }
     }
 
     public class UserServingViewModel

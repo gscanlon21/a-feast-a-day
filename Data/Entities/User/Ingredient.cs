@@ -85,9 +85,6 @@ public class Ingredient
     [InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual List<Nutrient> Nutrients { get; set; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.IngredientExclusions))]
-    public virtual ICollection<User> UserExclusions { get; private init; } = [];
-
     [JsonIgnore, InverseProperty(nameof(UserIngredient.Ingredient))]
     public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];
 

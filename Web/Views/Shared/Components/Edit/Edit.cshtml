@@ -147,15 +147,6 @@
             </div>
 
             <div class="form-group mb-3">
-                <label asp-for="IngredientExclusionIds" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientExclusionIds)</label>
-                <select asp-for="IngredientExclusionIds" class="form-control" aria-describedby="ingredients-help" size="5"
-                        asp-items="@(Model.Ingredients.Where(i => i.ParentId == null).Select(h => new SelectListItem() { Text = h.Name, Value = $"{h.Id}" }))">
-                </select>
-                <span asp-validation-for="IngredientExclusionIds" class="text-danger"></span>
-                <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.IngredientExclusionIds)</div>
-            </div>
-
-            <div class="form-group mb-3">
                 <details class="mb-3" @((Model.WasUpdated == false || Model.UserFamilies.Count(f => f.Person != Person.None) == 0) ? "open='open'" : "")>
                     <summary class=""><b class="">Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
 
@@ -264,45 +255,6 @@
                             }
                         });
                     </script>
-                </details>
-            </div>
-
-            <div class="form-group mb-3">
-                <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
-                    <summary class=""><b class="">Edit Substitute Ingredients</b></summary>
-
-                    <div class="mt-2 ps-3">
-                        @for (int id = 0; id < Model.UserIngredients.Count; id++)
-                        {
-                            var userIngredient = Model.UserIngredients[id];
-                            var baseIngredient = Model.Ingredients.First(i => i.Id == userIngredient.IngredientId);
-                            var substituteIngredients = Model.Ingredients.Where(i => i.ParentId == userIngredient.IngredientId);
-                            <div id="custom-substitute-@id" class="custom-substitute">
-                                <div class="row">
-                                    <input type="hidden" asp-for="UserIngredients[id].UserId" value="@Model.User.Id" />
-                                    <input type="hidden" asp-for="UserIngredients[id].IngredientId" value="@Model.UserIngredients[id].IngredientId" />
-
-                                    <div class="form-group mb-3 row">
-                                        <div class="col">
-                                            <label asp-for="UserIngredients[id].IngredientId" class="control-label">@Html.DisplayShortNameFor(_ => Model.UserIngredients[id].IngredientId)</label>
-                                            <input class="form-control" aria-describedby="time-help" readonly value="@baseIngredient.Name" />
-                                            <span asp-validation-for="UserIngredients[id].IngredientId" class="text-danger"></span>
-                                            <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredients[id].IngredientId)</span>
-                                        </div>
-
-                                        <div class="col">
-                                            <label asp-for="UserIngredients[id].SubstituteIngredientId" class="control-label">@Html.DisplayShortNameFor(_ => Model.UserIngredients[id].SubstituteIngredientId)</label>
-                                            <select asp-for="UserIngredients[id].SubstituteIngredientId" class="form-control" aria-describedby="time-help" required="required"
-                                                    asp-items="@(substituteIngredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem() { Text = baseIngredient.Name, Value = baseIngredient.Id.ToString() }))">
-                                            </select>
-                                            <span asp-validation-for="UserIngredients[id].SubstituteIngredientId" class="text-danger"></span>
-                                            <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredients[id].SubstituteIngredientId)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    </div>
                 </details>
             </div>
 

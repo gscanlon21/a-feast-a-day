@@ -34,6 +34,7 @@
         {
             <div class="col-lg-6">
                 @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
+                @await Component.InvokeAsync(ManageIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
             </div>
         }
         

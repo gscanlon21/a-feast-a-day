@@ -81,7 +81,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
             item.IsChecked = checkedList.Contains(item.Id) || item.SkipShoppingList;
         }
 
-        Ingredients ??= new ObservableCollection<RecipeIngredientDto>(shoppingList);
+        Ingredients = new ObservableCollection<RecipeIngredientDto>(shoppingList);
         Loading = false;
     }
 

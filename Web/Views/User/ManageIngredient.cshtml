@@ -1,4 +1,4 @@
-﻿@model ManageIngredientViewModel
+﻿@model UserManageIngredientViewModel
 @using Core.Models.Recipe
 @using Web.Controllers.Ingredient
 @using Web.Code.Extensions
@@ -27,6 +27,14 @@
 
 <div class="alert alert-secondary">
     <div class="row gy-2">
+        @if (Model.HasUserIngredient)
+        {
+            <div class="col-lg-6">
+                @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+                @*await Component.InvokeAsync(ManageIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })*@
+            </div>
+        }
+
         @* User must have created the ingredient to be able to edit it. *@
         @if (Model.User.Id == Model.Ingredient.UserId || Model.User.Features.HasFlag(Features.Admin))
         {
@@ -37,3 +45,9 @@
         }
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial", new Web.Views.Shared.ValidationScriptsPartialViewModel() { IsDemoUser = Model.User.IsDemoUser });
+    }
+}

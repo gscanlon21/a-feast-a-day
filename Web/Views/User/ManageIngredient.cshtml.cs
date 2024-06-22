@@ -1,17 +1,17 @@
-﻿using Data.Entities.User;
-
+﻿
 namespace Web.Views.User;
 
-
-public class ManageIngredientViewModel
+public class UserManageIngredientViewModel
 {
-    public ManageIngredientViewModel() { }
+    public record Params(string Email, string Token, int IngredientId);
 
-    public bool? WasUpdated { get; init; }
+    public required Params Parameters { get; init; }
+
+    public required bool HasUserIngredient { get; init; }
 
     public required string Token { get; init; }
     public required Data.Entities.User.User User { get; set; } = null!;
     public required Data.Entities.User.Ingredient Ingredient { get; set; } = null!;
 
-    public required IList<Nutrient> Nutrients { get; set; }
+    public bool? WasUpdated { get; init; }
 }

@@ -1,10 +1,8 @@
 ﻿using Core.Code.Extensions;
 using Core.Consts;
-using Data;
 using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Web.Views.User;
 
 namespace Web.Components.User;
@@ -12,7 +10,7 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
 /// </summary>
-public class EditViewComponent(UserRepo userRepo, CoreContext context) : ViewComponent
+public class EditViewComponent(UserRepo userRepo) : ViewComponent
 {
     /// <summary>
     /// For routing
@@ -31,13 +29,8 @@ public class EditViewComponent(UserRepo userRepo, CoreContext context) : ViewCom
         return View("Edit", await PopulateUserEditViewModel(new UserEditViewModel(user, token)));
     }
 
-    private async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
+    private static async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
-        viewModel.Ingredients = await context.Ingredients.AsNoTracking()
-            .Where(i => i.UserId == null || i.UserId == viewModel.User.Id)
-            .OrderBy(i => i.Name)
-            .ToListAsync();
-
         foreach (var muscleGroup in UserServing.MuscleTargets.Keys
             .OrderBy(mg => mg.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
             .ThenBy(mg => mg.GetSingleDisplayName()))
@@ -48,18 +41,6 @@ public class EditViewComponent(UserRepo userRepo, CoreContext context) : ViewCom
                 UserId = viewModel.User.Id,
                 Section = muscleGroup,
                 Count = UserServing.MuscleTargets.TryGetValue(muscleGroup, out int countTmp) ? countTmp : 0
-            });
-        }
-
-        var rootIngredients = await context.Ingredients.AsNoTracking().Where(i => i.Children.Any()).ToListAsync();
-        foreach (var rootIngredient in rootIngredients)
-        {
-            var existingIngredient = viewModel.User.UserIngredients.FirstOrDefault(i => i.IngredientId == rootIngredient.Id);
-            viewModel.UserIngredients.Add(new UserEditViewModel.UserIngredientViewModel()
-            {
-                UserId = viewModel.User.Id,
-                IngredientId = rootIngredient.Id,
-                SubstituteIngredientId = existingIngredient?.SubstituteIngredientId ?? rootIngredient.Id
             });
         }
 

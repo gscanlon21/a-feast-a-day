@@ -16,6 +16,8 @@ public class UserIngredient
 
     public int SubstituteIngredientId { get; set; }
 
+    public bool Ignore { get; set; }
+
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserIngredients))]
     public virtual Ingredient Ingredient { get; private init; } = null!;
 

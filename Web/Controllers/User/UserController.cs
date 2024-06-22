@@ -1,5 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Consts;
+﻿using Core.Consts;
 using Data;
 using Data.Entities.User;
 using Data.Repos;
@@ -69,17 +68,6 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
         viewModel.User = await userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (ModelState.IsValid)
         {
-            // New ingredients, check that they don't conflict with allergens.
-            foreach (var ingredient in viewModel.UserIngredients)
-            {
-                var substituteIngredient = await context.Ingredients.FirstOrDefaultAsync(i => i.Id == ingredient.SubstituteIngredientId);
-                if (substituteIngredient != null && viewModel.User.ExcludeAllergens.HasAnyFlag32(substituteIngredient.Allergens))
-                {
-                    TempData[TempData_User.WarningMessage] = $"The substisute ingredient {substituteIngredient.Name} conflicts with your allergens.";
-                    // Not returning early: some ingredient substitutes always conflict with allergens.
-                }
-            }
-
             try
             {
                 viewModel.User.Verbosity = viewModel.Verbosity;
@@ -90,21 +78,6 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
                 viewModel.User.AtLeastXServingsPerRecipe = viewModel.AtLeastXServingsPerRecipe;
-                viewModel.User.IngredientExclusions = viewModel.IngredientExclusionIds?.Select(i => new Data.Entities.User.Ingredient()
-                {
-                    Id = i,
-                    UserId = viewModel.User.Id
-                }).ToList() ?? [];
-
-                context.UserIngredients.RemoveRange(context.UserIngredients.Where(uf => uf.UserId == viewModel.User.Id));
-                context.UserIngredients.AddRange(viewModel.UserIngredients
-                    .Select(umm => new UserIngredient()
-                    {
-                        UserId = umm.UserId,
-                        IngredientId = umm.IngredientId,
-                        SubstituteIngredientId = umm.SubstituteIngredientId,
-                    })
-                );
 
                 context.UserFamilies.RemoveRange(context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
                 context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide)
