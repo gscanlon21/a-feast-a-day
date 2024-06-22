@@ -176,13 +176,13 @@ public class QueryRunner(Section section)
                 {
                     if (recipe.Recipe.AdjustableServings)
                     {
-                        var servings = recipe.Recipe.Servings;
-                        while (servings < ServingsOptions.AtLeastXServingsPerRecipe)
+                        var origServings = recipe.Recipe.Servings;
+                        while (recipe.Recipe.Servings < ServingsOptions.AtLeastXServingsPerRecipe)
                         {
-                            servings += servings;
+                            recipe.Recipe.Servings += origServings;
                         }
 
-                        var servingsDifference = servings / recipe.Recipe.Servings;
+                        var servingsDifference = recipe.Recipe.Servings / origServings;
                         recipe.Scale = servingsDifference;
                         foreach (var ingredient in recipe.Recipe.RecipeIngredients)
                         {
