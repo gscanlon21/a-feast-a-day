@@ -55,7 +55,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
     {
         if (obj != null)
         {
-            var checkedList = JsonSerializer.Deserialize<List<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
+            var checkedList = JsonSerializer.Deserialize<HashSet<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
             if (obj.IsChecked)
             {
                 checkedList.Add(obj.Id);
@@ -85,13 +85,14 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.GetHashCode());
             }
 
-            var checkedList = JsonSerializer.Deserialize<List<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
+            var checkedList = JsonSerializer.Deserialize<HashSet<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
             foreach (var item in shoppingList!.ShoppingList ?? [])
             {
                 item.IsChecked = checkedList.Contains(item.Id);
             }
 
-            Ingredients.ReplaceRange(shoppingList!.ShoppingList!.OrderBy(sl => sl.IsChecked));
+            Ingredients.ReplaceRange(shoppingList!.ShoppingList!.OrderBy(sl => sl.IsChecked)
+                .ThenBy(sl => sl.SkipShoppingList).ThenBy(sl => sl.Name));
         }
 
         Loading = false;
