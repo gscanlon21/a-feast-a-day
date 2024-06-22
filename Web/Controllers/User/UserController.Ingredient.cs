@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Numerics;
 using Web.Code.TempData;
+using Web.Views.Shared.Components.ManageIngredient;
 using Web.Views.User;
 
 namespace Web.Controllers.User;
@@ -115,7 +116,7 @@ public partial class UserController
 
     [HttpPost]
     [Route("useringredient/post")]
-    public async Task<IActionResult> ManageUserIngredientPost(string email, string token, int ingredientId, int substisuteIngredientId)
+    public async Task<IActionResult> ManageUserIngredientPost(string email, string token, int ingredientId, ManageIngredientViewModel viewModel)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
@@ -130,7 +131,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        existingIngredient.SubstituteIngredientId = substisuteIngredientId;
+        existingIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
         await context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
         return RedirectToAction(nameof(UserController.ManageIngredient), new { email, token, ingredientId, wasUpdated = true });

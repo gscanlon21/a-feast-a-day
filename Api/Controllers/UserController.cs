@@ -1,5 +1,6 @@
 ﻿using Core.Consts;
-using Core.Dtos.Newsletter;
+using Core.Models.Newsletter;
+using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +11,7 @@ namespace Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("[controller]")]
-public class UserController(UserRepo userRepo) : ControllerBase
+public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScopeFactory) : ControllerBase
 {
     /// <summary>
     /// Get the user.
@@ -55,10 +56,20 @@ public class UserController(UserRepo userRepo) : ControllerBase
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        var currentFeast = await userRepo.GetCurrentFeast(user, includeRecipeIngredients: true);
+        var currentFeast = await userRepo.GetCurrentFeast(user);
         if (currentFeast == null) { return StatusCode(StatusCodes.Status204NoContent); }
 
-        var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var recipes = (await new QueryBuilder(Section.None)
+            .WithUser(user)
+            .WithExercises(options =>
+            {
+                options.AddPastRecipes(currentFeast.UserFeastRecipes);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        var shoppingList = await NewsletterRepo.GetShoppingList(recipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         return StatusCode(StatusCodes.Status200OK, shoppingList);
     }
 

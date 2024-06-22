@@ -245,22 +245,11 @@ public class UserRepo(CoreContext context)
     /// <summary>
     /// Get the user's current workout.
     /// </summary>
-    public async Task<UserFeast?> GetCurrentFeast(User user, bool includeRecipeIngredients = false)
+    public async Task<UserFeast?> GetCurrentFeast(User user)
     {
-        IQueryable<UserFeast> query = context.UserFeasts.AsNoTracking().TagWithCallSite();
-        if (!includeRecipeIngredients)
-        {
-            query = query.Include(uw => uw.UserFeastRecipes);
-        }
-        else
-        {
-            query = query.Include(uw => uw.UserFeastRecipes)
-                .ThenInclude(uw => uw.Recipe)
-                    .ThenInclude(uw => uw.RecipeIngredients)
-                        .ThenInclude(uw => uw.Ingredient);
-        }
-
-        var results = await query.Where(n => n.UserId == user.Id)
+        return await context.UserFeasts.AsNoTracking().TagWithCallSite()
+            .Include(uw => uw.UserFeastRecipes)
+            .Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.TodayOffset)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
             .Where(n => n.UserFeastRecipes.Any())
@@ -269,20 +258,6 @@ public class UserRepo(CoreContext context)
             .OrderByDescending(n => n.Date)
             .ThenByDescending(n => n.Id)
             .FirstOrDefaultAsync();
-
-        if (includeRecipeIngredients && results != null)
-        {
-            foreach (var feastRecipe in results.UserFeastRecipes)
-            {
-                feastRecipe.Recipe.Servings *= feastRecipe.Scale;
-                foreach (var ingredient in feastRecipe.Recipe.RecipeIngredients)
-                {
-                    ingredient.QuantityNumerator *= feastRecipe.Scale;
-                }
-            }
-        }
-
-        return results;
     }
 
     /// <summary>

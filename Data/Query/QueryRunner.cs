@@ -8,6 +8,7 @@ using Data.Models;
 using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic;
 using System.Diagnostics;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -114,7 +115,7 @@ public class QueryRunner(Section section)
         var filteredQuery = CreateFilteredRecipesQuery(context);
 
         filteredQuery = Filters.FilterSection(filteredQuery, section);
-        filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds);
+        filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Select(r => r.Key).ToList());
         filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (curr2, n2) => curr2 | n2), include: true);
         filteredQuery = Filters.FilterEquipmentIds(filteredQuery, EquipmentOptions.Equipment);
 
@@ -127,22 +128,47 @@ public class QueryRunner(Section section)
         }
         else
         {
-            // Do this before querying prerequisites so that the user records also exist for the prerequisites.
-            await AddMissingUserRecords(context, queryResults);
-            var substituteIngredients = await context.UserIngredients
+            var userIngredients = await context.UserIngredients
                 .Include(i => i.SubstituteIngredient)
                     .ThenInclude(i => i.Nutrients)
                 .Where(i => i.UserId == UserOptions.Id)
                 .ToListAsync();
 
+            // Do this before querying prerequisites so that the user records also exist for the prerequisites.
+            userIngredients.AddRange(await AddMissingUserRecords(context, queryResults, userIngredients));
             foreach (var queryResult in queryResults)
             {
+                var ignoreRecipe = false;
+
+                var scale = RecipeOptions.RecipeIds?.TryGetValue(queryResult.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1;
+                queryResult.Recipe.Servings *= scale;
+
+                var finalRecipeIngredients = new List<RecipeIngredient>();
                 foreach (var ingredient in queryResult.Recipe.RecipeIngredients)
                 {
-                    ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(substituteIngredients);
+                    var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == ingredient.IngredientId);
+                    if (userIngredient?.Ignore == true)
+                    {
+                        if (ingredient.Optional)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            ignoreRecipe = true;
+                        }
+                    }
+
+                    ingredient.QuantityNumerator *= scale;
+                    ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(userIngredients);
+                    finalRecipeIngredients.Add(ingredient);
                 }
 
-                filteredResults.Add(queryResult);
+                if (!ignoreRecipe)
+                {
+                    queryResult.Recipe.RecipeIngredients = finalRecipeIngredients;
+                    filteredResults.Add(queryResult);
+                }
             }
         }
 
@@ -264,12 +290,12 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Reference updates to QueryResult.UserExercise and QueryResult.UserVariation to set them to default and save to db if they are null.
     /// </summary>
-    private async Task AddMissingUserRecords(CoreContext context, IList<InProgressQueryResults> queryResults)
+    private async Task<HashSet<UserIngredient>> AddMissingUserRecords(CoreContext context, IList<InProgressQueryResults> queryResults, IList<UserIngredient> userIngredients)
     {
         // User is not viewing a newsletter, don't log.
         if (section == Section.None)
         {
-            return;
+            return [];
         }
 
         var exercisesCreated = new HashSet<UserRecipe>();
@@ -287,7 +313,27 @@ public class QueryRunner(Section section)
             }
         }
 
+        var ingredientsCreated = new HashSet<UserIngredient>();
+        foreach (var ingredient in queryResults.SelectMany(qr => qr.Recipe.RecipeIngredients))
+        {
+            var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == ingredient.IngredientId);
+            if (userIngredient == null)
+            {
+                userIngredient = new UserIngredient()
+                {
+                    UserId = UserOptions.Id,
+                    IngredientId = ingredient.IngredientId,
+                    SubstituteIngredientId = ingredient.IngredientId,
+                };
+                if (ingredientsCreated.Add(userIngredient))
+                {
+                    context.UserIngredients.Add(userIngredient);
+                }
+            }            
+        }
+
         await context.SaveChangesAsync();
+        return ingredientsCreated;
     }
 
     private List<Nutrients> GetUnworkedNutrients(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> nutrientTarget)

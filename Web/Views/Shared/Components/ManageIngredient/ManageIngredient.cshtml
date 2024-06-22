@@ -5,7 +5,7 @@
 
 <h6 class="mb-1">Ingredient</h6>
 <div class="alert alert-light shadow">
-    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreRecipe)" method="post"
+    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreIngredient)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-ingredientId="@Model.Parameters.IngredientId">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -29,12 +29,12 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="form-group mb-3 mt-3">
-            <label asp-for="SubstituteIngredientId" class="control-label">@Html.DisplayShortNameFor(_ => Model.SubstituteIngredientId)</label>
-            <select asp-for="SubstituteIngredientId" class="form-control" aria-describedby="time-help" required="required"
+            <label asp-for="UserIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayShortNameFor(_ => Model.UserIngredient.SubstituteIngredientId)</label>
+            <select asp-for="UserIngredient.SubstituteIngredientId" class="form-control" aria-describedby="time-help" required="required"
                     asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem() { Text = Model.Ingredient.Name, Value = Model.Ingredient.Id.ToString() }))">
             </select>
-            <span asp-validation-for="SubstituteIngredientId" class="text-danger"></span>
-            <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SubstituteIngredientId)</span>
+            <span asp-validation-for="UserIngredient.SubstituteIngredientId" class="text-danger"></span>
+            <span id="time-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredient.SubstituteIngredientId)</span>
         </div>
 
 

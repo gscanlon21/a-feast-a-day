@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
@@ -14,6 +15,7 @@ public class UserIngredient
 
     public int IngredientId { get; set; }
 
+    [Display(Name = "Substitute Ingredient", ShortName = "Substitute")]
     public int SubstituteIngredientId { get; set; }
 
     public bool Ignore { get; set; }

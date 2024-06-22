@@ -18,14 +18,13 @@ public class RecipeOptions : IOptions
     /// <summary>
     /// Will not choose any exercises that fall in this list.
     /// </summary>
-    public List<int>? RecipeIds { get; private set; }
+    public Dictionary<int, int>? RecipeIds { get; private set; }
 
     public void AddPastRecipes(ICollection<UserFeastRecipe> userFeastRecipes)
     {
         RecipeIds = userFeastRecipes
             .Where(nv => _section == nv.Section || _section == Section.None)
-            .Select(nv => nv.RecipeId)
-            .ToList();
+            .ToDictionary(nv => nv.RecipeId, nv => nv.Scale);
     }
 
     /// <summary>
@@ -37,11 +36,11 @@ public class RecipeOptions : IOptions
         {
             if (RecipeIds == null)
             {
-                RecipeIds = exercises.Select(e => e.Id).ToList();
+                RecipeIds = exercises.ToDictionary(nv => nv.Id, nv => 1);
             }
             else
             {
-                RecipeIds.AddRange(exercises.Select(e => e.Id));
+                throw new NotImplementedException();
             }
         }
     }

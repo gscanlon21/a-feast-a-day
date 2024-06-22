@@ -210,7 +210,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
-        IList<QueryResults> dinnerRecipes = [], lunchRecipes = [], snackRecipes = [], sideRecipes = [], dessertRecipes = [], breakfastRecipes = [];
+        List<QueryResults> dinnerRecipes = [], lunchRecipes = [], snackRecipes = [], sideRecipes = [], dessertRecipes = [], breakfastRecipes = [];
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
         {
             var recipes = (await new QueryBuilder(section)
@@ -224,36 +224,26 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
                 .ToList();
 
-            foreach (var recipe in recipes)
-            {
-                var match = newsletter.UserFeastRecipes.First(nv => nv.RecipeId == recipe.Recipe.Id);
-                recipe.Recipe.Servings *= match.Scale;
-                foreach (var ingredient in recipe.Recipe.RecipeIngredients)
-                {
-                    ingredient.QuantityNumerator *= match.Scale;
-                }
-            }
-
             switch (section)
             {
                 case Section.Debug:
                 case Section.Dinner:
-                    dinnerRecipes = recipes;
+                    dinnerRecipes.AddRange(recipes);
                     break;
                 case Section.Lunch:
-                    lunchRecipes = recipes;
+                    lunchRecipes.AddRange(recipes);
                     break;
                 case Section.Breakfast:
-                    breakfastRecipes = recipes;
+                    breakfastRecipes.AddRange(recipes);
                     break;
                 case Section.Sides:
-                    sideRecipes = recipes;
+                    sideRecipes.AddRange(recipes);
                     break;
                 case Section.Dessert:
-                    dessertRecipes = recipes;
+                    dessertRecipes.AddRange(recipes);
                     break;
                 case Section.Snacks:
-                    snackRecipes = recipes;
+                    snackRecipes.AddRange(recipes);
                     break;
             }
         }
@@ -312,7 +302,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             });
         }
 
-        return new ShoppingListDto() 
+        return new ShoppingListDto()
         {
             ShoppingList = shoppingList
         };
