@@ -1,4 +1,4 @@
-﻿namespace Core.Dtos.Feast;
+﻿namespace Core.Dtos.Newsletter;
 
 public class UserFeastViewModel
 {

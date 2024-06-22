@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Recipe;
 
 /// <summary>
 /// Exercises listed on the website

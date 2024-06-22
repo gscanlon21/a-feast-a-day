@@ -50,7 +50,10 @@ public class UserController(UserRepo userRepo) : ControllerBase
             return null;
         }
 
-        return await userRepo.GetShoppingList(user);
+        var currentFeast = await userRepo.GetCurrentFeast(user, includeRecipeIngredients: true);
+        if (currentFeast == null) { return null; }
+
+        return await NewsletterRepo.GetShoppingList(currentFeast.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
     }
 
     /// <summary>

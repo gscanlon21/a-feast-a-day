@@ -31,7 +31,7 @@ public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) 
         }
 
         viewModel.Recipes = (await queryBuilder.Build().Query(serviceScopeFactory))
-            .Select(r => r.AsType<RecipeDtoDto, QueryResults>()!)
+            .Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!)
             .ToList();
 
         if (!string.IsNullOrWhiteSpace(viewModel.Name))

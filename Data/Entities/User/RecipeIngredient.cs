@@ -26,10 +26,10 @@ public class RecipeIngredient
     public string? Attributes { get; init; }
 
     [Range(1, 1000), Display(Name = "Quantity")]
-    public int? QuantityNumerator { get; set; } = 1;
+    public int QuantityNumerator { get; set; } = 1;
 
     [Range(1, 16), Display(Name = "Quantity")]
-    public int? QuantityDenominator { get; set; } = 1;
+    public int QuantityDenominator { get; set; } = 1;
 
     [Required]
     public Measure Measure { get; set; }

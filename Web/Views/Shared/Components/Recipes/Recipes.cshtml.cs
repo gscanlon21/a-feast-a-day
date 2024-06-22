@@ -8,7 +8,7 @@ namespace Web.Views.Shared.Components.Recipes;
 public class RecipesViewModel
 {
     [Display(Name = "My Recipes")]
-    public required IList<RecipeDtoDto> Recipes { get; init; }
+    public required IList<NewsletterRecipeDto> Recipes { get; init; }
 
     public required UserNewsletterDto UserNewsletter { get; init; }
 

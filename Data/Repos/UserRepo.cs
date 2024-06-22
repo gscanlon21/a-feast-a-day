@@ -1,27 +1,21 @@
 ﻿using Core.Code.Exceptions;
 using Core.Code.Extensions;
 using Core.Consts;
-using Core.Dtos.Newsletter;
-using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
-using Data.Models;
-using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using System.Numerics;
 using System.Security.Cryptography;
-using Web.Code;
 
 namespace Data.Repos;
 
 /// <summary>
 /// User helpers.
 /// </summary>
-public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFactory)
+public class UserRepo(CoreContext context)
 {
     /// <summary>
     /// Today's date in UTC.
@@ -251,11 +245,19 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
     /// <summary>
     /// Get the user's current workout.
     /// </summary>
-    public async Task<UserFeast?> GetCurrentFeast(User user)
+    public async Task<UserFeast?> GetCurrentFeast(User user, bool includeRecipeIngredients = false)
     {
-        return await context.UserFeasts.AsNoTracking().TagWithCallSite()
-            .Include(uw => uw.UserFeastRecipes)
-            .Where(n => n.UserId == user.Id)
+        IQueryable<UserFeast> query = context.UserFeasts.AsNoTracking().TagWithCallSite();
+        if (includeRecipeIngredients)
+        {
+            query = query.Include(uw => uw.UserFeastRecipes).ThenInclude(uw => uw.Recipe).ThenInclude(uw => uw.RecipeIngredients);
+        }
+        else
+        {
+            query = query.Include(uw => uw.UserFeastRecipes);
+        }
+
+        var results = await query.Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.TodayOffset)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
             .Where(n => n.UserFeastRecipes.Any())
@@ -264,6 +266,20 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
             .OrderByDescending(n => n.Date)
             .ThenByDescending(n => n.Id)
             .FirstOrDefaultAsync();
+
+        if (includeRecipeIngredients && results != null)
+        {
+            foreach (var feastRecipe in results.UserFeastRecipes)
+            {
+                feastRecipe.Recipe.Servings *= feastRecipe.Scale;
+                foreach (var ingredient in feastRecipe.Recipe.RecipeIngredients)
+                {
+                    ingredient.QuantityNumerator *= feastRecipe.Scale;
+                }
+            }
+        }
+
+        return results;
     }
 
     /// <summary>
@@ -290,38 +306,6 @@ public class UserRepo(CoreContext context, IServiceScopeFactory serviceScopeFact
             .ToListAsync())
             .Select(n => n.Feast)
             .ToList();
-    }
-
-    /// <summary>
-    /// Get the current shopping list for the user.
-    /// </summary>
-    public async Task<IList<RecipeIngredientDto>> GetShoppingList(User user)
-    {
-        var currentFeast = await GetCurrentFeast(user);
-        if (currentFeast == null) { return []; }
-
-        var recipes = (await new QueryBuilder(Section.None)
-                .WithUser(user)
-                .WithExercises(options =>
-                {
-                    options.AddPastRecipes(currentFeast.UserFeastRecipes);
-                })
-                .Build()
-                .Query(serviceScopeFactory))
-                .OrderBy(e => currentFeast.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
-                .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
-
-        foreach (var recipe in recipes)
-        {
-            var match = currentFeast.UserFeastRecipes.First(nv => nv.RecipeId == recipe.Recipe.Id);
-            recipe.Recipe.Servings *= match.Scale;
-            foreach (var ingredient in recipe.Recipe.RecipeIngredients)
-            {
-                ingredient.QuantityNumerator *= match.Scale;
-            }
-        }
-
-        return recipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList();
     }
 }
 

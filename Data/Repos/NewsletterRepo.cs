@@ -10,7 +10,6 @@ using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
-using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -153,12 +152,15 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var debugRecipes = await GetDebugExercises(newsletterContext.User);
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
+
+        var shoppingList = await GetShoppingList(newsletter.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
             Verbosity = newsletterContext.User.Verbosity,
+            ShoppingList = shoppingList,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            DinnerRecipes = debugRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            DinnerRecipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
             DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList()
         };
 
@@ -177,23 +179,24 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var sideRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes));
         var snackRecipes = await GetSnackRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes));
         var dessertRecipes = await GetDessertRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes).Concat(snackRecipes));
+        var allRecipes = dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList();
 
-        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext,
-            recipes: dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList()
-        );
+        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
+        var shoppingList = await GetShoppingList(allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
+            ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            DinnerRecipes = dinnerRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
-            SideRecipes = sideRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
-            LunchRecipes = lunchRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
-            DessertRecipes = dessertRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
-            SnackRecipes = snackRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
-            BreakfastRecipes = breakfastRecipes.Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList(),
+            DinnerRecipes = dinnerRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            SideRecipes = sideRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            LunchRecipes = lunchRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            DessertRecipes = dessertRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            SnackRecipes = snackRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            BreakfastRecipes = breakfastRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
         };
 
         // Other exercises. Refresh every day.
@@ -207,10 +210,12 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
+        var shoppingList = await GetShoppingList(newsletter.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
             User = userViewModel,
+            ShoppingList = shoppingList,
             Verbosity = user.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             Today = date,
@@ -233,7 +238,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .Build()
                 .Query(serviceScopeFactory))
                 .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
-                .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
+                .ToList().Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList();
 
             foreach (var recipe in recipes)
             {
@@ -270,5 +275,40 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         }
 
         return newsletterViewModel;
+    }
+
+    /// <summary>
+    /// Get the current shopping list for the user.
+    /// </summary>
+    public static async Task<IList<RecipeIngredientDto>> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
+    {
+        var finalShoppingList = new List<RecipeIngredientDto>();
+        foreach (var group in recipeIngredients.GroupBy(l => l, new ShoppingListComparer()).OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
+        {
+            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator);
+            var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
+            var fraction = new Fractions.Fraction(wholeFractions + partialFractions.Sum(g => g.QuantityNumerator), Math.Max(1, partialFractions.Sum(g => g.QuantityDenominator)), true);
+
+            finalShoppingList.Add(new RecipeIngredientDto()
+            {
+                Id = group.Key.Id,
+                Name = group.Key.Name,
+                Measure = group.Key.Measure,
+                QuantityNumerator = (int)fraction.Numerator,
+                QuantityDenominator = (int)fraction.Denominator,
+                Desc = $"{(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")}{group.Key.Measure.GetSingleDisplayName()}"
+            });
+        }
+
+        return finalShoppingList;
+    }
+
+    private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>
+    {
+        public bool Equals(RecipeIngredient? a, RecipeIngredient? b)
+            => EqualityComparer<Measure?>.Default.Equals(a?.Measure, b?.Measure)
+            && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
+
+        public int GetHashCode(RecipeIngredient e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
     }
 }

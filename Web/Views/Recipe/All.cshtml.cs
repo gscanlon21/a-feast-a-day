@@ -10,7 +10,7 @@ public class RecipesViewModel
 {
     public RecipesViewModel() { }
 
-    public IList<RecipeDtoDto> Recipes { get; set; } = null!;
+    public IList<NewsletterRecipeDto> Recipes { get; set; } = null!;
 
     public Verbosity Verbosity => Verbosity.Debug;
 

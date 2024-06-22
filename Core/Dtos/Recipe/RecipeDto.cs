@@ -1,5 +1,6 @@
 ﻿using Core.Consts;
 using Core.Dtos.Newsletter;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
@@ -8,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Recipe;
 
 /// <summary>
 /// Exercises listed on the website

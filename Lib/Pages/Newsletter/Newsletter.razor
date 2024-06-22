@@ -37,7 +37,7 @@ else
     <div style="margin-block:1rem;">
         @if (Model.Client != Core.Models.Client.App) 
         {
-            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.AllRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList()" />
+            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" />
         }
 
         <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.BreakfastRecipes" Theme="RecipeTheme.Warmup" Title="@(new RecipeSection.Titles("Breakfast"))" />

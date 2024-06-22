@@ -1,6 +1,7 @@
 ﻿using Core.Consts;
 using Core.Dtos.Footnote;
 using Core.Dtos.Newsletter;
+using Core.Dtos.Recipe;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;

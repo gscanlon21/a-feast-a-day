@@ -45,7 +45,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
             .Build()
             .Query(serviceScopeFactory))
             .DistinctBy(vm => vm.Recipe)
-            .ToList().Select(r => r.AsType<RecipeDtoDto, QueryResults>()!).ToList();
+            .ToList().Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList();
 
         return View("Recipes", new RecipesViewModel()
         {

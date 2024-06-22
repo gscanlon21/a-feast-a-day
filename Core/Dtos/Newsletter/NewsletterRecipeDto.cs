@@ -1,11 +1,12 @@
-﻿using Core.Dtos.User;
+﻿using Core.Dtos.Recipe;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using System.Diagnostics;
 
 namespace Core.Dtos.Newsletter;
 
 [DebuggerDisplay("{Section,nq}: {Variation,nq}")]
-public class RecipeDtoDto
+public class NewsletterRecipeDto
 {
     public int Scale { get; set; } = 1;
 
@@ -17,6 +18,6 @@ public class RecipeDtoDto
 
     public override int GetHashCode() => HashCode.Combine(Recipe);
 
-    public override bool Equals(object? obj) => obj is RecipeDtoDto other
+    public override bool Equals(object? obj) => obj is NewsletterRecipeDto other
         && other.Recipe == Recipe;
 }

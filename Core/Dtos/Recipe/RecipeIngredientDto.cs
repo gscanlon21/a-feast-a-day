@@ -1,4 +1,5 @@
 ﻿using Core.Code.Extensions;
+using Core.Dtos.Recipe;
 using Core.Models.User;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -16,18 +17,6 @@ namespace Core.Dtos.User;
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeIngredientDto
 {
-    public string? Nam { get; set; }
-    public string Title()
-    {
-        return Nam ?? $"{Name}";
-    }
-
-    public string? Desc { get; set; }
-    public string Description()
-    {
-        return Desc ?? $"{QuantityNumerator}/{QuantityDenominator} {Measure.GetSingleDisplayName()}";
-    }
-
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
@@ -40,16 +29,15 @@ public class RecipeIngredientDto
     public string? Attributes { get; init; }
 
     [Range(1, 1000), Display(Name = "Quantity")]
-    public int? QuantityNumerator { get; set; } = 1;
+    public int QuantityNumerator { get; set; } = 1;
 
     [Range(1, 16), Display(Name = "Quantity")]
-    public int? QuantityDenominator { get; set; } = 1;
+    public int QuantityDenominator { get; set; } = 1;
 
-    public Fractions.Fraction Quantity => new(QuantityNumerator ?? 0, QuantityDenominator ?? 0);
+    public Fractions.Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
     [Required]
     public Measure Measure { get; set; }
-
 
     public bool Optional { get; set; }
 
@@ -64,7 +52,8 @@ public class RecipeIngredientDto
     public string? DisabledReason { get; init; } = null;
 
     [NotMapped]
-    public string Name => Ingredient?.Name ?? "";
+    public string Name { get => _name ?? Ingredient?.Name ?? ""; init => _name = value; }
+    private string? _name;
 
     [NotMapped]
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
@@ -75,6 +64,16 @@ public class RecipeIngredientDto
     [JsonInclude]
     public virtual IngredientDto Ingredient { get; set; } = null!;
 
+    public string Title()
+    {
+        return $"{Name}";
+    }
+
+    public string? Desc { get; set; }
+    public string Description()
+    {
+        return Desc ?? $"{QuantityNumerator}/{QuantityDenominator} {Measure.GetSingleDisplayName()}";
+    }
 
     private bool _isChecked;
     public bool IsChecked

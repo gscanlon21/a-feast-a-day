@@ -11,12 +11,9 @@
     <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
         <h3 style="margin:0;">Shopping List</h3>
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
-            @foreach (var group in List.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)).GroupBy(l => l, new ListComparer()).OrderBy(l => l.Key.Name))
+            @foreach (var item in List.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)).OrderBy(l => l.Name))
             {
-                var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator ?? 0);
-                var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
-                var fraction = new Fractions.Fraction(wholeFractions + partialFractions.Sum(g => g.QuantityNumerator ?? 0), Math.Max(1, partialFractions.Sum(g => g.QuantityDenominator ?? 0)), true);
-                <li>@(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")@(group.Key.Measure.GetSingleDisplayName()) @group.Key.Name</li>
+                <li>@(item.Quantity == Fractions.Fraction.Zero ? "" : $"{item.Quantity} ")@(item.Measure.GetSingleDisplayName()) @item.Name</li>
             }
         </ul>
     </div>
@@ -31,13 +28,4 @@
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; set; }
-
-    private class ListComparer : IEqualityComparer<RecipeIngredientDto>
-    {
-        public bool Equals(RecipeIngredientDto? a, RecipeIngredientDto? b)
-            => EqualityComparer<Core.Models.User.Measure?>.Default.Equals(a?.Measure, b?.Measure)
-            && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
-
-        public int GetHashCode(RecipeIngredientDto e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
-    }
 }

@@ -1,4 +1,4 @@
-﻿using Core.Dtos.Feast;
+﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Options;
 using Microsoft.Extensions.Options;

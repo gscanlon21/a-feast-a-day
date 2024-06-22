@@ -76,7 +76,7 @@
     public Verbosity Verbosity { get; init; }
 
     [Parameter, EditorRequired]
-    public IList<RecipeDtoDto>? Recipes { get; init; }
+    public IList<NewsletterRecipeDto>? Recipes { get; init; }
 
     public record Titles(MarkupString Header, MarkupString? Description, MarkupString? Footer)
     {
@@ -85,11 +85,11 @@
         public Titles(string header, string description, string footer) : this(new MarkupString(header), new MarkupString(description), new MarkupString(footer)) { }
     };
 
-    private class RecipeSectionComparer : IEqualityComparer<RecipeDtoDto>
+    private class RecipeSectionComparer : IEqualityComparer<NewsletterRecipeDto>
     {
-        public bool Equals(RecipeDtoDto? a, RecipeDtoDto? b)
-            => EqualityComparer<RecipeDtoDto>.Default.Equals(a, b);
+        public bool Equals(NewsletterRecipeDto? a, NewsletterRecipeDto? b)
+            => EqualityComparer<NewsletterRecipeDto>.Default.Equals(a, b);
 
-        public int GetHashCode(RecipeDtoDto e) => e.GetHashCode();
+        public int GetHashCode(NewsletterRecipeDto e) => e.GetHashCode();
     }
 }

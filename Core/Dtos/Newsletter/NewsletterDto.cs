@@ -16,14 +16,16 @@ public class NewsletterDto
     public required UserNewsletterDto User { get; init; }
     public required UserFeastDto UserFeast { get; init; }
 
-    public List<RecipeDtoDto> BreakfastRecipes { get; set; } = [];
-    public List<RecipeDtoDto> LunchRecipes { get; set; } = [];
-    public List<RecipeDtoDto> DinnerRecipes { get; set; } = [];
-    public List<RecipeDtoDto> SideRecipes { get; set; } = [];
-    public List<RecipeDtoDto> DessertRecipes { get; set; } = [];
-    public List<RecipeDtoDto> SnackRecipes { get; set; } = [];
+    public required IList<RecipeIngredientDto> ShoppingList { get; init; } = [];
+
+    public List<NewsletterRecipeDto> BreakfastRecipes { get; set; } = [];
+    public List<NewsletterRecipeDto> LunchRecipes { get; set; } = [];
+    public List<NewsletterRecipeDto> DinnerRecipes { get; set; } = [];
+    public List<NewsletterRecipeDto> SideRecipes { get; set; } = [];
+    public List<NewsletterRecipeDto> DessertRecipes { get; set; } = [];
+    public List<NewsletterRecipeDto> SnackRecipes { get; set; } = [];
     public List<IngredientDto> DebugIngredients { get; set; } = [];
-    public List<RecipeDtoDto> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
+    public List<NewsletterRecipeDto> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
     /// <summary>
     /// How much detail to show in the newsletter.

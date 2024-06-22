@@ -8,7 +8,7 @@ namespace Web.Views.Shared.Components.Ignored;
 public class IgnoredViewModel
 {
     [Display(Name = "Ignored Recipes")]
-    public required IList<RecipeDtoDto> IgnoredRecipes { get; init; }
+    public required IList<NewsletterRecipeDto> IgnoredRecipes { get; init; }
 
     public required UserNewsletterDto UserNewsletter { get; init; }
 
