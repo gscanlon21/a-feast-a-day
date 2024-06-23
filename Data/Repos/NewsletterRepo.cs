@@ -94,7 +94,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(n => !user.Features.HasFlag(Features.Demo) && !user.Features.HasFlag(Features.Test))
             // Always send a new newsletter for today for the debug user.
             .Where(n => !user.Features.HasFlag(Features.Debug) || n.Date == Today)
-            .Where(n => user.Features.HasFlag(Features.Debug) || n.Date == thisWeekDate)
+            .Where(n => user.Features.HasFlag(Features.Debug) || n.Date == date)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
             .Where(n => n.UserFeastRecipes.Any())
             .Where(n => n.Date == date)
