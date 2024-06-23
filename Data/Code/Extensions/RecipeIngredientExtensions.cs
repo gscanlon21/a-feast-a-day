@@ -16,15 +16,15 @@ public static class RecipeIngredientExtensions
         return recipeIngredient.Measure switch
         {
             Measure.Grams => fraction.ToDouble() / ingredient.GramsPerServing,
-            Measure.Ounce => fraction.ToDouble() * 28.3495231 / ingredient.GramsPerServing,
+            Measure.Ounces => fraction.ToDouble() * 28.3495231 / ingredient.GramsPerServing,
             Measure.Pound => fraction.ToDouble() * 453.59237 / ingredient.GramsPerServing,
-            Measure.Teaspoon => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.02083333 / ingredient.GramsPerServing,
-            Measure.Tablespoon => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.0625 / ingredient.GramsPerServing,
+            Measure.Teaspoons => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.02083333 / ingredient.GramsPerServing,
+            Measure.Tablespoons => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.0625 / ingredient.GramsPerServing,
             Measure.Handful => fraction.ToDouble() * ingredient.GramsPerMeasure * 0.5 / ingredient.GramsPerServing,
             Measure.Jar => fraction.ToDouble() * ingredient.GramsPerMeasure / ingredient.GramsPerServing,
             Measure.Can => fraction.ToDouble() * ingredient.GramsPerMeasure / ingredient.GramsPerServing,
             Measure.Cup => fraction.ToDouble() * ingredient.GramsPerMeasure / ingredient.GramsPerServing,
-            _ => fraction.ToDouble(),
+            _ => throw new NotImplementedException($"Missing measure: {recipeIngredient.Measure}"),
         } * scale;
     }
 

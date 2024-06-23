@@ -12,13 +12,13 @@ public enum Measure
     Pinch = 1,
 
     [Display(Name = "Ounces")]
-    Ounce = 2,
+    Ounces = 2,
 
     [Display(Name = "Teaspoons", ShortName = "tsp.")]
-    Teaspoon = 3,
+    Teaspoons = 3,
 
     [Display(Name = "Tablespoons", ShortName = "Tbsp.")]
-    Tablespoon = 4,
+    Tablespoons = 4,
 
     [Display(Name = "Cups")]
     Cup = 5,
@@ -32,8 +32,8 @@ public enum Measure
     [Display(Name = "Head")]
     Head = 8,
 
-    [Display(Name = "Clove")]
-    Clove = 9,
+    [Display(Name = "Cloves")]
+    Cloves = 9,
 
     [Display(Name = "Can")]
     Can = 10,
@@ -54,7 +54,7 @@ public enum Measure
     Jar = 15,
 
     [Display(Name = "Slices")]
-    Slice = 16,
+    Slices = 16,
 
     [Display(Name = "Milligrams", ShortName = "mg")]
     Milligrams = 17,
@@ -67,6 +67,12 @@ public enum Measure
 
     [Display(Name = "IU")]
     IU = 20,
+
+    [Display(Name = "Leaves")]
+    Leaves = 21,
+
+    [Display(Name = "Stick")]
+    Sticks = 22,
 }
 
 public static class MeasureConsts

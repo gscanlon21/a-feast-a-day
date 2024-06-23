@@ -18,15 +18,15 @@ public static class MeasureExtensions
             Measure.Micrograms => quantity / 1000000,
             Measure.Milligrams => quantity / 1000,
             Measure.Grams => quantity,
-            Measure.Ounce => quantity * 28.3495231,
+            Measure.Ounces => quantity * 28.3495231,
             Measure.Pound => quantity * 453.59237,
-            Measure.Teaspoon => quantity * getGramsPerCup() * 0.02083333,
-            Measure.Tablespoon => quantity * getGramsPerCup() * 0.0625,
+            Measure.Teaspoons => quantity * getGramsPerCup() * 0.02083333,
+            Measure.Tablespoons => quantity * getGramsPerCup() * 0.0625,
             Measure.Handful => quantity * getGramsPerCup() * 0.5,
             Measure.Jar => quantity * getGramsPerCup(),
             Measure.Can => quantity * getGramsPerCup(),
             Measure.Cup => quantity * getGramsPerCup(),
-            _ => quantity * getGramsPerServing(),
+            _ => throw new NotImplementedException($"Missing measure: {measure}"),
         };
     }
 }
