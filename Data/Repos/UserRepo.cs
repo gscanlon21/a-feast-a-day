@@ -178,23 +178,23 @@ public class UserRepo(CoreContext context)
                             .SelectMany(recipeIngredient =>
                             {
                                 var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                                return recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient)?.Nutrients
-                                    .Select(nutrient =>
+                                var substitutedIngredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
+                                return substitutedIngredient.Nutrients.Select(nutrient =>
+                                {
+                                    var servingsOfSection = user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? UserServing.DefaultServings[recipe.Section];
+                                    var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
+                                    var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
+                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
+                                    var percentDailyValue = servingsOfIngredientUsed * gramsOfNutrientPerServing
+                                            / (servingsOfSection / familyCount)
+                                            / (familyGrams > 0 ? familyGrams : 100)
+                                            * 100;
+                                    return new
                                     {
-                                        var servingsOfSection = user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? UserServing.DefaultServings[recipe.Section];
-                                        var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
-                                        var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient), recipe.Scale);
-                                        var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                        var percentDailyValue = servingsOfIngredientUsed * gramsOfNutrientPerServing
-                                                / (servingsOfSection / familyCount)
-                                                / (familyGrams > 0 ? familyGrams : 100)
-                                                * 100;
-                                        return new
-                                        {
-                                            Nutrient = nutrient.Nutrients,
-                                            PercentDailyValue = percentDailyValue,
-                                        };
-                                    }) ?? [];
+                                        Nutrient = nutrient.Nutrients,
+                                        PercentDailyValue = percentDailyValue,
+                                    };
+                                });
                             })
                         )
                     ).ToList();
