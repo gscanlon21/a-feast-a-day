@@ -153,7 +153,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
 
-        var shoppingList = await GetShoppingList(newsletter.UserFeastRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(debugRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
