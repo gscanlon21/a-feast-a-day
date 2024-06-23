@@ -7,7 +7,7 @@ namespace Web.Views.User;
 /// </summary>
 public class UserManageRecipeViewModel
 {
-    public record Params(Section Section, string Email, string Token, int RecipeId);
+    public record Params(string Email, string Token, int RecipeId);
 
     public required Params Parameters { get; init; }
 

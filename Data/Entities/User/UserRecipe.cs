@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Consts;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -25,18 +26,34 @@ public class UserRecipe
     [Required]
     public bool Ignore { get; set; }
 
-    public int Scale { get; set; } = 1;
+    public string? Notes { get; set; }
 
-    /// <summary>
-    /// Multiplier for how often this exercise is choosen. Weights the LastSeen date.
-    /// </summary>
-    public bool Favorite { get; set; }
+    public int Scale { get; set; } = 1;
 
     /// <summary>
     /// When was this exercise last seen in the user's newsletter.
     /// </summary>
     [Required]
     public DateOnly LastSeen { get; set; }
+
+    /// <summary>
+    /// If this is set, will not update the LastSeen date until this date is reached.
+    /// This is so we can reduce the variation of workouts and show the same groups of exercises for a month+ straight.
+    /// </summary>
+    public DateOnly? RefreshAfter { get; set; }
+
+    /// <summary>
+    /// How often to refresh exercises.
+    /// </summary>
+    [Required, Range(UserConsts.LagRefreshXWeeksMin, UserConsts.LagRefreshXWeeksMax)]
+    public int LagRefreshXWeeks { get; set; } = UserConsts.LagRefreshXWeeksDefault;
+
+    /// <summary>
+    /// How often to refresh exercises.
+    /// </summary>
+    [Required, Range(UserConsts.PadRefreshXWeeksMin, UserConsts.PadRefreshXWeeksMax)]
+    public int PadRefreshXWeeks { get; set; } = UserConsts.PadRefreshXWeeksDefault;
+
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.UserRecipes))]
     public virtual Recipe Recipe { get; set; } = null!;

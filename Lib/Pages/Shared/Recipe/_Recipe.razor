@@ -104,6 +104,13 @@
                     }
                 </ul>
             </div>
+
+            @if (!string.IsNullOrWhiteSpace(Model.UserRecipe?.Notes))
+            {
+                <div style="margin-block:.5em;">
+                    <small>@Model.UserRecipe.Notes</small>
+                </div>
+            }
         </div>
 
         @if (Verbosity.HasFlag(Verbosity.Images))

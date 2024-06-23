@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
+using Web.Views.Shared.Components.ManageRecipe;
 using Web.Views.User;
 
 namespace Web.Controllers.User;
@@ -12,8 +13,8 @@ public partial class UserController
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
     [HttpGet]
-    [Route("{section:section}/{recipeId}", Order = 1)]
-    public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, Section section, bool? wasUpdated = null)
+    [Route("{recipeId}", Order = 1)]
+    public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, bool? wasUpdated = null)
     {
         var user = await userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
@@ -37,13 +38,12 @@ public partial class UserController
             WasUpdated = wasUpdated,
             Recipe = recipe,
             HasUserRecipe = hasUserRecipe,
-            Parameters = new UserManageRecipeViewModel.Params(section, email, token, recipeId)
+            Parameters = new UserManageRecipeViewModel.Params(email, token, recipeId)
         });
     }
 
-    [HttpPost]
-    [Route("recipe/add")]
-    public async Task<IActionResult> AddRecipe(string email, string token, Data.Entities.User.Recipe recipe)
+    [HttpPost, Route("recipe/addedit")]
+    public async Task<IActionResult> AddEditRecipe(string email, string token, Data.Entities.User.Recipe recipe)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -53,13 +53,19 @@ public partial class UserController
 
         if (recipe.Id == default)
         {
+            // Adding recipe
             recipe.User = user;
             recipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
             recipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
             context.Add(recipe);
+
+            await context.SaveChangesAsync();
+            TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
+            return RedirectToAction(nameof(Edit), new { email, token });
         }
         else
         {
+            // Editing recipe.
             var existingRecipe = await context.Recipes
                 .Include(r => r.Instructions)
                 .Include(r => r.RecipeIngredients)
@@ -80,15 +86,14 @@ public partial class UserController
             existingRecipe.Section = recipe.Section;
             existingRecipe.Equipment = recipe.Equipment;
             existingRecipe.DisabledReason = recipe.DisabledReason;
-        }
 
-        await context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
+            await context.SaveChangesAsync();
+            TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
+            return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId = recipe.Id, wasUpdated = true });
+        }
     }
 
-    [HttpPost]
-    [Route("recipe/remove")]
+    [HttpPost, Route("recipe/remove")]
     public async Task<IActionResult> RemoveRecipe(string email, string token, [FromForm] int recipeId)
     {
         var user = await userRepo.GetUser(email, token);
@@ -137,18 +142,17 @@ public partial class UserController
     }
 
     [HttpPost]
-    [Route("{section:section}/{recipeId}/if", Order = 1)]
-    [Route("{section:section}/{recipeId}/is-favorite", Order = 2)]
-    public async Task<IActionResult> IsFavorite(string email, string token, int recipeId, Section section, bool favorite)
+    [Route("{recipeId}/rr", Order = 1)]
+    [Route("{recipeId}/refresh-recipe", Order = 2)]
+    public async Task<IActionResult> RefreshRecipe(string email, string token, int recipeId)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
         var userProgression = await context.UserRecipes
-            .Include(ue => ue.Recipe)
             .Where(ue => ue.UserId == user.Id)
             .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);
 
@@ -158,8 +162,46 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        userProgression.Favorite = favorite;
+        userProgression.RefreshAfter = null;
         await context.SaveChangesAsync();
-        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
+
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
+    }
+
+    [HttpPost]
+    [Route("{recipeId}/l", Order = 1)]
+    [Route("{recipeId}/log", Order = 2)]
+    public async Task<IActionResult> LogRecipe(string email, string token, int recipeId, ManageRecipeViewModel viewModel)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Set the new weight on the UserVariation
+            var userVariation = await context.UserRecipes
+                .Include(p => p.Recipe)
+                .FirstAsync(p => p.UserId == user.Id && p.RecipeId == recipeId);
+
+            // Apply refresh padding immediately?
+            /*if (userVariation.PadRefreshXWeeks != viewModel.PadRefreshXWeeks)
+            {
+                var difference = viewModel.PadRefreshXWeeks - userVariation.PadRefreshXWeeks;
+                userVariation.LastSeen.AddDays(7 * difference);
+            }*/
+
+            userVariation.Notes = viewModel.UserRecipe.Notes;
+            userVariation.LagRefreshXWeeks = viewModel.UserRecipe.LagRefreshXWeeks;
+            userVariation.PadRefreshXWeeks = viewModel.UserRecipe.PadRefreshXWeeks;
+
+            await context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
+        }
+
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = false });
     }
 }

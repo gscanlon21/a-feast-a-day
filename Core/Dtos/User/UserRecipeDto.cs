@@ -27,6 +27,8 @@ public class UserRecipeDto
 
     public int Scale { get; set; } = 1;
 
+    public string? Notes { get; init; }
+
     /// <summary>
     /// Multiplier for how often this exercise is choosen. Weights the LastSeen date.
     /// </summary>

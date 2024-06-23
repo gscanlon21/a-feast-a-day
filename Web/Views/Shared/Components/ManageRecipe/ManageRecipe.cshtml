@@ -6,7 +6,7 @@
 <h6 class="mb-1">Recipe</h6>
 <div class="alert alert-light shadow">
     <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreRecipe)" method="post"
-          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId">
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -23,29 +23,90 @@
         </div>
     </form>
 
-    <div class="form-group mb-3">
-        <label for="Recipe-variation-date" class="control-label">Favorite?</label>
-        <div class="input-group">
-            <input type="text" id="Recipe-variation-primary" class="form-control" disabled="disabled" aria-describedby="Recipe-variation-primary-help" rows="1" value="@(Model.UserRecipe.Favorite.ToString())" />
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsFavorite)" method="post"
-                  asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-favorite="@true">
+    <form asp-controller="@UserController.Name" class="row mb-3" asp-action="@nameof(UserController.RefreshRecipe)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
 
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="submit" value="True" class="btn btn-outline-secondary"
-                        style="border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0;" />
-            </form>
-            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IsFavorite)" method="post"
-                  asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-section="@Model.Parameters.Section" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-favorite="@false">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="submit" value="False" class="btn btn-outline-secondary"
-                       style="border-top-left-radius:0;border-bottom-left-radius:0;" />
-            </form>
+        <div class="form-group">
+            <label for="exercise-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
+            <div class="input-group">
+                <input type="text" id="exercise-date" class="form-control" disabled="disabled" aria-describedby="exercise-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen).ToString("O"))" />
+                <input type="submit" value="Refresh" class="btn btn-outline-secondary allow-demo" />
+            </div>
+
+            <span asp-validation-for="UserRecipe" class="text-danger"></span>
+            <div id="exercise-date-help" class="form-text">
+                @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
+            </div>
+        </div>
+    </form>
+
+    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.LogRecipe)" method="post" class="mb-4"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group mb-3 mt-3">
+            <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe.Notes)</label>
+            <input type="text" asp-for="UserRecipe.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserRecipe.Notes" />
+            <span asp-validation-for="UserRecipe.Notes" class="text-danger"></span>
         </div>
 
-        <span asp-validation-for="UserRecipe" class="text-danger"></span>
-        <div id="Recipe-variation-primary-help" class="form-text">
-            Secondary Recipes refresh immediately and are shown less often.
+        @if (Model.User.IsDemoUser)
+        {
+            <div class="alert alert-info callout">
+                Customize how long you want to see exercises before they refresh.
+            </div>
+        }
+
+        <div class="form-group mb-3 mt-3">
+            <label asp-for="UserRecipe.LagRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe.LagRefreshXWeeks)</label>
+            <div style="display:flex;column-gap:1ex;">
+                <output name="refreshFunctionalOutput" for="@Html.IdFor(_ => Model.UserRecipe.LagRefreshXWeeks)">@Model.UserRecipe.LagRefreshXWeeks</output>
+                <div style="display:flex;width:100%;">
+                    <input asp-for="UserRecipe.LagRefreshXWeeks" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                           min="@UserConsts.LagRefreshXWeeksMin" max="@UserConsts.LagRefreshXWeeksMax"
+                           oninput="refreshFunctionalOutput.value = this.valueAsNumber" />
+                </div>
+            </div>
+            <span asp-validation-for="UserRecipe.LagRefreshXWeeks" class="text-danger"></span>
+            <details id="refresh-functional-help" class="form-text">
+                <summary>@Html.DisplayDescriptionFor(_ => Model.UserRecipe.LagRefreshXWeeks)</summary>
+
+                <div class="mt-1">
+                    <span>The Weekly Nutritional Targets feature takes precedence over this.</span>
+                </div>
+            </details>
         </div>
-    </div>
+
+        <div class="form-group mb-3 mt-3">
+            <label asp-for="UserRecipe.PadRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe.PadRefreshXWeeks)</label>
+            <div style="display:flex;column-gap:1ex;">
+                <output name="delayFunctionalOutput" for="@Html.IdFor(_ => Model.UserRecipe.PadRefreshXWeeks)">@Model.UserRecipe.PadRefreshXWeeks</output>
+                <div style="display:flex;width:100%;">
+                    <input asp-for="UserRecipe.PadRefreshXWeeks" type="range" style="width:100%;" aria-describedby="delay-functional-help"
+                           min="@UserConsts.PadRefreshXWeeksMin" max="@UserConsts.PadRefreshXWeeksMax"
+                           oninput="delayFunctionalOutput.value = this.valueAsNumber" />
+                </div>
+            </div>
+            <span asp-validation-for="UserRecipe.PadRefreshXWeeks" class="text-danger"></span>
+            <details id="delay-functional-help" class="form-text">
+                <summary>@Html.DisplayDescriptionFor(_ => Model.UserRecipe.PadRefreshXWeeks)</summary>
+
+                <div class="mt-1">
+                    <span>This may not apply if there are no other recipes available.</span>
+                </div>
+            </details>
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary allow-demo" />
+        </div>
+    </form>
+
+    <component type="typeof(Microsoft.AspNetCore.Components.CascadingValue<Core.Dtos.User.UserNewsletterDto?>)" render-mode="Static" param-Value="null">
+        <component type="typeof(Lib.Pages.Shared.Recipe._Recipe)" render-mode="Static" param-Model='Model.Recipe' param-Verbosity="Model.RecipeVerbosity" />
+    </component>
 </div>

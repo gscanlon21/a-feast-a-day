@@ -27,7 +27,6 @@ public class ManageRecipeViewComponent(CoreContext context) : ViewComponent
         {
             Recipe = recipe,
             User = user,
-            RecipeSection = parameters.Section,
             UserRecipe = userRecipe,
             Parameters = parameters
         });

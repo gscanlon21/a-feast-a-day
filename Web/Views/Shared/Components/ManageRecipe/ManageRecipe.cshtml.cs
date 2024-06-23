@@ -16,6 +16,4 @@ public class ManageRecipeViewModel
     public required Data.Entities.User.UserRecipe UserRecipe { get; init; }
 
     public Verbosity RecipeVerbosity => Verbosity.Images;
-
-    public required Section RecipeSection { get; init; }
 }

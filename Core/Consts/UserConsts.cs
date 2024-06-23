@@ -23,6 +23,14 @@ public class UserConsts
     public const int WeeklyServingsDefault = 7;
     public const int WeeklyServingsMax = 35;
 
+    public const int LagRefreshXWeeksMin = 0;
+    public const int LagRefreshXWeeksDefault = 0;
+    public const int LagRefreshXWeeksMax = 12;
+
+    public const int PadRefreshXWeeksMin = 0;
+    public const int PadRefreshXWeeksDefault = 0;
+    public const int PadRefreshXWeeksMax = 12;
+
     public const Days DaysDefault = Days.Sunday;
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
