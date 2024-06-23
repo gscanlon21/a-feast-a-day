@@ -163,6 +163,7 @@ public partial class UserController
         }
 
         userProgression.RefreshAfter = null;
+        userProgression.LastSeen = userProgression.LastSeen > Today ? Today : userProgression.LastSeen;
         await context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
@@ -193,9 +194,9 @@ public partial class UserController
                 userVariation.LastSeen.AddDays(7 * difference);
             }*/
 
-            userVariation.Notes = viewModel.UserRecipe.Notes;
-            userVariation.LagRefreshXWeeks = viewModel.UserRecipe.LagRefreshXWeeks;
-            userVariation.PadRefreshXWeeks = viewModel.UserRecipe.PadRefreshXWeeks;
+            userVariation.Notes = viewModel.Notes;
+            userVariation.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
+            userVariation.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
 
             await context.SaveChangesAsync();
 

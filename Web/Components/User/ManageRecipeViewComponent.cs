@@ -1,14 +1,14 @@
-﻿using Data;
+﻿using Core.Dtos.Newsletter;
+using Core.Models.Newsletter;
+using Data;
+using Data.Entities.User;
 using Data.Models;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Core.Models.Newsletter;
+using Web.Code;
 using Web.Views.Shared.Components.ManageRecipe;
 using Web.Views.User;
-using Data.Entities.User;
-using Core.Dtos.Newsletter;
-using Web.Code;
 
 namespace Web.Components.User;
 
@@ -47,7 +47,10 @@ public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory
             User = user,
             Recipe = recipeDto,
             UserRecipe = userRecipe,
-            Parameters = parameters
+            Parameters = parameters,
+            Notes = userRecipe.Notes,
+            LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,
+            PadRefreshXWeeks = userRecipe.PadRefreshXWeeks,
         });
     }
 }
