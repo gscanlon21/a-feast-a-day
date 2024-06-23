@@ -10,7 +10,7 @@
    {
         foreach (var recipeGroup in Ingredients.GroupBy(e => e, new IngredientSectionComparer()).OrderBy(e => e.Key.Name))
         {
-            <h2 style="margin-bottom:0;margin-top:1em;color:black;font-size:revert;">@recipeGroup.Key.Name</h2>
+            <h2 style="margin-bottom:0;margin-top:1em;font-size:revert;">@recipeGroup.Key.Name</h2>
 
             @if (!string.IsNullOrWhiteSpace(recipeGroup.Key.Notes))
             {
@@ -29,7 +29,7 @@
     }
     else
     {
-        <h2 style="margin-bottom:0;margin-top:1em;color:black;font-size:revert;">@Title.Header</h2>
+        <h2 style="margin-bottom:0;margin-top:1em;font-size:revert;">@Title.Header</h2>
         @if (Title.Description.HasValue)
         {
             <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
