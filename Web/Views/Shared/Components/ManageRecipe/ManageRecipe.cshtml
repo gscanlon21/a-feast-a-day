@@ -13,7 +13,7 @@
         <div class="form-group mb-3">
             <label for="Recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe)</label>
             <div class="input-group">
-                <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@Model.Recipe.Name</textarea>
+                <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
                 <input type="submit" value="@(Model.UserRecipe.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
             </div>
             <span asp-validation-for="Recipe" class="text-danger"></span>

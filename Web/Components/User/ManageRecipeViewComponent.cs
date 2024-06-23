@@ -1,13 +1,18 @@
 ﻿using Data;
-using Data.Entities.User;
+using Data.Models;
+using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Core.Models.Newsletter;
 using Web.Views.Shared.Components.ManageRecipe;
 using Web.Views.User;
+using Data.Entities.User;
+using Core.Dtos.Newsletter;
+using Web.Code;
 
 namespace Web.Components.User;
 
-public class ManageRecipeViewComponent(CoreContext context) : ViewComponent
+public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory serviceScopeFactory) : ViewComponent
 {
     /// <summary>
     /// For routing
@@ -23,10 +28,24 @@ public class ManageRecipeViewComponent(CoreContext context) : ViewComponent
             return Content("");
         }
 
+        if (userRecipe == null) { return Content(""); }
+        var recipeDto = (await new QueryBuilder(Section.None)
+            .WithUser(user, ignoreIgnored: true)
+            .WithRecipes(x =>
+            {
+                x.AddRecipes([recipe]);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!)
+            .DistinctBy(vm => vm.Recipe)
+            .SingleOrDefault();
+
+        if (recipeDto == null) { return Content(""); }
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
-            Recipe = recipe,
             User = user,
+            Recipe = recipeDto,
             UserRecipe = userRecipe,
             Parameters = parameters
         });

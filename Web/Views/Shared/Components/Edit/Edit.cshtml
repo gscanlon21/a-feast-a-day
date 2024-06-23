@@ -76,7 +76,7 @@
                                                min="@UserConsts.WeeklyServingsMin" max="@UserConsts.WeeklyServingsMax"
                                                oninput="mobilityMusclesOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
                                         <datalist id="mobilityMusclesList@(i)">
-                                            <option value="@(UserServing.MuscleTargets.TryGetValue(Model.UserServings[i].Section, out int countTmp) ? countTmp : 0)"></option>
+                                            <option value="@(UserServing.DefaultServings.TryGetValue(Model.UserServings[i].Section, out int countTmp) ? countTmp : 0)"></option>
                                         </datalist>
                                     </div>
                                 </div>

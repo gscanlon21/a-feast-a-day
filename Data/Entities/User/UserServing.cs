@@ -24,7 +24,7 @@ public class UserServing
     /// <summary>
     /// The volume each muscle group should be exposed to each week.
     /// </summary>
-    public static readonly IDictionary<Section, int> MuscleTargets = new Dictionary<Section, int>
+    public static readonly IDictionary<Section, int> DefaultServings = new Dictionary<Section, int>
     {
         [Section.Breakfast] = 5,
         [Section.Dessert] = 2,

@@ -37,9 +37,9 @@ public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServi
         var ignoredRecipes = (await new QueryBuilder()
             // Include disabled recipes.
             .WithUser(user, ignoreIgnored: true)
-            .WithExercises(x =>
+            .WithRecipes(x =>
             {
-                x.AddExercises(userRecipes);
+                x.AddRecipes(userRecipes);
             })
             .Build()
             .Query(serviceScopeFactory))

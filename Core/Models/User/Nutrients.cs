@@ -152,7 +152,7 @@ public enum Nutrients : long
     /// <summary>
     /// Precursors to vitamin A.
     /// </summary>
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Alpha Carotene", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
     AlphaCarotene = 1L << 15, // 32768
@@ -160,7 +160,7 @@ public enum Nutrients : long
     /// <summary>
     /// Precursors to vitamin A.
     /// </summary>
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Beta Carotene", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
     BetaCarotene = 1L << 16, // 65536

@@ -215,7 +215,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         {
             var recipes = (await new QueryBuilder(section)
                 .WithUser(user)
-                .WithExercises(options =>
+                .WithRecipes(options =>
                 {
                     options.AddPastRecipes(newsletter.UserFeastRecipes);
                 })

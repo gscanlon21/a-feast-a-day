@@ -124,7 +124,7 @@ public class UserRepo(CoreContext context)
     private async Task<(double weeks, IDictionary<Nutrients, int?> volume)> GetWeeklyMuscleVolumeFromStrengthWorkouts(User user, int weeks)
     {
         var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
-        var userServings = UserServing.MuscleTargets.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
+        var userServings = UserServing.DefaultServings.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
         double familyCount = Math.Max(1, user.UserFamilies.Count);
         var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
 
@@ -169,7 +169,7 @@ public class UserRepo(CoreContext context)
             {
                 var totalCaloricIntake = weeklyFeasts.Sum(f => f.Recipes.Sum(r => r.Recipe.RecipeIngredients.Sum(i => i.NumberOfServings(i.Ingredient, r.Scale) * i.Ingredient.CaloriesPerServing)));
                 var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
-                    (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).NormalizedDailyAllowanceTUL(fp.Value, totalCaloricIntake))
+                    (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake))
                 );
 
                 var monthlyMuscles = weeklyFeasts
@@ -181,11 +181,12 @@ public class UserRepo(CoreContext context)
                                 return recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient)?.Nutrients
                                     .Select(nutrient =>
                                     {
+                                        var servingsOfSection = user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? UserServing.DefaultServings[recipe.Section];
                                         var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
-                                        var gramsOfIngredientUsed = recipeIngredient.ToGrams(recipeIngredient.Ingredient, recipe.Scale);
+                                        var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient), recipe.Scale);
                                         var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                        var percentDailyValue = gramsOfIngredientUsed / recipeIngredient.Ingredient.GramsPerServing * gramsOfNutrientPerServing
-                                                / ((user.UserServings.FirstOrDefault(us => us.Section == recipe.Section)?.Count ?? 1) / familyCount)
+                                        var percentDailyValue = servingsOfIngredientUsed * gramsOfNutrientPerServing
+                                                / (servingsOfSection / familyCount)
                                                 / (familyGrams > 0 ? familyGrams : 100)
                                                 * 100;
                                         return new

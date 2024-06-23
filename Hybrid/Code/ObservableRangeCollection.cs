@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 
@@ -46,7 +45,7 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
     /// </summary> 
     /// <param name="collection">collection: The collection from which the elements are copied.</param> 
     /// <exception cref="System.ArgumentNullException">The collection parameter cannot be null.</exception> 
-    public ObservableRangeCollection(IEnumerable<T> collection): base(collection) { }
+    public ObservableRangeCollection(IEnumerable<T> collection) : base(collection) { }
 
     /// <summary> 
     /// Adds the elements of the specified collection to the end of the ObservableCollection(Of T). 

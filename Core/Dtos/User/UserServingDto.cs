@@ -18,17 +18,4 @@ public class UserServingDto
 
     [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
     public int Count { get; set; }
-
-    /// <summary>
-    /// The volume each muscle group should be exposed to each week.
-    /// </summary>
-    public static readonly IDictionary<Section, int> MuscleTargets = new Dictionary<Section, int>
-    {
-        [Section.Breakfast] = 5,
-        [Section.Dessert] = 2,
-        [Section.Dinner] = 7,
-        [Section.Lunch] = 7,
-        [Section.Sides] = 4,
-        [Section.Snacks] = 4,
-    };
 }

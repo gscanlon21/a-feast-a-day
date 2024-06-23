@@ -87,8 +87,7 @@ public partial class UserController
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
-    [HttpGet]
-    [Route("ingredient/{ingredientId}")]
+    [HttpGet, Route("ingredient/{ingredientId}")]
     public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, bool? wasUpdated = null)
     {
         var user = await userRepo.GetUser(email, token, allowDemoUser: true);
@@ -181,8 +180,12 @@ public partial class UserController
                 existingNutrient.Synthetic = nutrient.Synthetic;
                 existingNutrient.Measure = nutrient.Measure;
                 existingNutrient.Value = nutrient.Value;
+                if (nutrient.Value == 0)
+                {
+                    context.Nutrients.Remove(existingNutrient);
+                }
             }
-            else
+            else if (nutrient.Value > 0)
             {
                 existingIngredient.Nutrients.Add(new Nutrient()
                 {

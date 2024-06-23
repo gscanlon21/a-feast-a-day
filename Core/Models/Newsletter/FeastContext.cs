@@ -9,6 +9,10 @@ public class FeastContext
     public UserDto User { get; init; } = null!;
     public string Token { get; init; } = null!;
     public int DaysUntilNextNewsletter { get; init; } = 1;
+
+    /// <summary>
+    /// The user's average percent daily volume for each nutrient.
+    /// </summary>
     public required IDictionary<Nutrients, int?>? WeeklyNutrients { get; init; }
     public required double WeeklyNutrientsWeeks { get; init; }
 }

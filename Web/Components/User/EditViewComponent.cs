@@ -31,16 +31,16 @@ public class EditViewComponent(UserRepo userRepo) : ViewComponent
 
     private static async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
-        foreach (var muscleGroup in UserServing.MuscleTargets.Keys
+        foreach (var section in UserServing.DefaultServings.Keys
             .OrderBy(mg => mg.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
             .ThenBy(mg => mg.GetSingleDisplayName()))
         {
-            var userMuscleMobility = viewModel.User.UserServings.SingleOrDefault(umm => umm.Section == muscleGroup);
+            var userMuscleMobility = viewModel.User.UserServings.SingleOrDefault(umm => umm.Section == section);
             viewModel.UserServings.Add(userMuscleMobility != null ? new UserEditViewModel.UserServingViewModel(userMuscleMobility) : new UserEditViewModel.UserServingViewModel()
             {
                 UserId = viewModel.User.Id,
-                Section = muscleGroup,
-                Count = UserServing.MuscleTargets.TryGetValue(muscleGroup, out int countTmp) ? countTmp : 0
+                Section = section,
+                Count = UserServing.DefaultServings.TryGetValue(section, out int countTmp) ? countTmp : 0
             });
         }
 

@@ -15,6 +15,7 @@ public class CoreContext : DbContext
     public DbSet<UserServing> UserServings { get; set; } = null!;
     public DbSet<UserFamily> UserFamilies { get; set; } = null!;
     public DbSet<Ingredient> Ingredients { get; set; } = null!;
+    public DbSet<Nutrient> Nutrients { get; set; } = null!;
     public DbSet<UserNutrient> UserNutrients { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
     public DbSet<Recipe> Recipes { get; set; } = null!;

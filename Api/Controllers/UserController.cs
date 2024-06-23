@@ -61,7 +61,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
 
         var recipes = (await new QueryBuilder(Section.None)
             .WithUser(user)
-            .WithExercises(options =>
+            .WithRecipes(options =>
             {
                 options.AddPastRecipes(currentFeast.UserFeastRecipes);
             })

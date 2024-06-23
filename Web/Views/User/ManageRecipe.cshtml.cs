@@ -1,6 +1,4 @@
-﻿using Core.Models.Newsletter;
-
-namespace Web.Views.User;
+﻿namespace Web.Views.User;
 
 /// <summary>
 /// For CRUD actions

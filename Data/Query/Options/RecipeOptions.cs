@@ -30,13 +30,13 @@ public class RecipeOptions : IOptions
     /// <summary>
     /// Exclude any variation of these exercises from being chosen.
     /// </summary>
-    public void AddExercises(IEnumerable<Recipe>? exercises)
+    public void AddRecipes(IEnumerable<Recipe>? recipes)
     {
-        if (exercises != null)
+        if (recipes != null)
         {
             if (RecipeIds == null)
             {
-                RecipeIds = exercises.ToDictionary(nv => nv.Id, nv => 1);
+                RecipeIds = recipes.ToDictionary(nv => nv.Id, nv => 1);
             }
             else
             {

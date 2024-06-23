@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Dtos.Newsletter;
+using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Shared.Components.ManageRecipe;
@@ -11,7 +12,7 @@ public class ManageRecipeViewModel
     public required Data.Entities.User.User User { get; init; }
 
     [Display(Name = "Recipe", Description = "Ignore this recipe.")]
-    public required Data.Entities.User.Recipe Recipe { get; init; }
+    public required NewsletterRecipeDto Recipe { get; init; }
 
     public required Data.Entities.User.UserRecipe UserRecipe { get; init; }
 

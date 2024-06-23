@@ -17,7 +17,7 @@ public class QueryBuilder
     private NutrientOptions? NutrientOptions;
     private ServingsOptions? ServingsOptions;
     private ExclusionOptions? ExclusionOptions;
-    private RecipeOptions? ExerciseOptions;
+    private RecipeOptions? RecipeOptions;
     private EquipmentOptions? EquipmentOptions;
 
     /// <summary>
@@ -109,11 +109,11 @@ public class QueryBuilder
     /// <summary>
     /// The exercise ids and not the variation or exercisevariation ids.
     /// </summary>
-    public QueryBuilder WithExercises(Action<RecipeOptions>? builder = null)
+    public QueryBuilder WithRecipes(Action<RecipeOptions>? builder = null)
     {
-        var options = ExerciseOptions ?? new RecipeOptions(Section);
+        var options = RecipeOptions ?? new RecipeOptions(Section);
         builder?.Invoke(options);
-        ExerciseOptions = options;
+        RecipeOptions = options;
         return this;
     }
 
@@ -128,7 +128,7 @@ public class QueryBuilder
             NutrientOptions = NutrientOptions ?? new NutrientOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             ServingsOptions = ServingsOptions ?? new ServingsOptions(),
-            RecipeOptions = ExerciseOptions ?? new RecipeOptions(),
+            RecipeOptions = RecipeOptions ?? new RecipeOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
         };
     }
