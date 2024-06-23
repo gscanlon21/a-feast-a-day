@@ -91,7 +91,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
         {
             if (shoppingListHash != shoppingList!.GetHashCode())
             {
-                var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.SkipShoppingList).Select(sl => sl.Id));
+                var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.SkipShoppingList).Select(sl => sl.Name));
                 Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), defaultCheckedItems);
                 Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.GetHashCode());
                 Preferences.Default.Remove(nameof(PreferenceKeys.ShoppingListCustom));
