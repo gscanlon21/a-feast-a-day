@@ -22,13 +22,13 @@
             <Entry x:Name="EmailEntry"
                 Placeholder="Email"
                    Keyboard="Email"
-                TextChanged="OnEmailEntryCompleted" />
+                TextChanged="OnEmailEntryChanged" />
 
             <VerticalStackLayout>
               <Entry x:Name="TokenEntry"
                   Placeholder="Token"
                   IsPassword="true"
-                  TextChanged="OnTokenEntryCompleted" />
+                  TextChanged="OnTokenEntryChanged" />
 
               <Label>
                 <Label.FormattedText>

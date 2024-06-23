@@ -27,12 +27,12 @@ public partial class LoginPage : ContentPage
         BindingContext = this;
     }
 
-    async void OnTokenEntryCompleted(object sender, EventArgs e)
+    async void OnTokenEntryChanged(object sender, EventArgs e)
     {
         Token = ((Entry)sender).Text;
     }
 
-    async void OnEmailEntryCompleted(object sender, EventArgs e)
+    async void OnEmailEntryChanged(object sender, EventArgs e)
     {
         Email = ((Entry)sender).Text;
     }

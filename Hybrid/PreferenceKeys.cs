@@ -6,4 +6,5 @@ public enum PreferenceKeys
     Token,
     ShoppingList,
     ShoppingListHash,
+    ShoppingListCustom,
 }

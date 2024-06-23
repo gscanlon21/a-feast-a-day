@@ -1,11 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Core.Dtos.Newsletter;
-using Core.Dtos.User;
+using System.Collections.Specialized;
 using Hybrid.Code;
 using Lib.Services;
 using System.Text.Json;
-using System.Windows.Input;
+using Core.Dtos.User;
 
 namespace Hybrid;
 
@@ -26,44 +25,56 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     public INavigation Navigation { get; set; } = null!;
 
-    public ICommand NewsletterCommand { get; }
-    public ICommand UpdateThisItemCommand { get; set; }
-    public ICommand RefreshCommand { get; set; }
-
-    public IAsyncRelayCommand LoadCommand { get; }
+    public IAsyncRelayCommand LoadCommand { get; set; }
 
     public ShoppingListPageViewModel(UserService userService)
     {
         _userService = userService;
 
         LoadCommand = new AsyncRelayCommand(LoadShoppingListAsync);
-        RefreshCommand = new AsyncRelayCommand(LoadShoppingListAsync);
-        UpdateThisItemCommand = new Command<RecipeIngredientDto>(CheckboxCommand);
-        NewsletterCommand = new Command<UserFeastViewModel>(async (UserFeastViewModel arg) =>
-        {
-            //await Navigation.PushAsync(new NewsletterPage(arg.Date));
-        });
     }
+
+    [ObservableProperty]
+    public string _ingredientEntry = "";
 
     [ObservableProperty]
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableRangeCollection<RecipeIngredientDto> _ingredients = [];
+    public ObservableRangeCollection<RecipeIngredientDto> _ingredients = new()
+    {
+        SortingSelector = a => $"{a.IsChecked}-{a.SkipShoppingList}-{a.Name}"
+    };
 
-    private void CheckboxCommand(RecipeIngredientDto obj)
+    [RelayCommand]
+    private void WhenCompleted()
+    {
+        Ingredients.Insert(0, new RecipeIngredientDto()
+        {
+            Name = IngredientEntry,
+        });
+
+        var customList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListCustom), "[]")) ?? [];
+        Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListCustom), JsonSerializer.Serialize(customList.Prepend(IngredientEntry)));
+        IngredientEntry = "";
+    }
+
+    [RelayCommand]
+    private void WhenChecked(RecipeIngredientDto obj)
     {
         if (obj != null)
         {
-            var checkedList = JsonSerializer.Deserialize<HashSet<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
+            var checkedList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
             if (obj.IsChecked)
             {
-                checkedList.Add(obj.Id);
+                checkedList.Add(obj.Name);
             }
             else
             {
-                checkedList.Remove(obj.Id);
+                checkedList.Remove(obj.Name);
             }
+
+            Ingredients.RaiseObjectMoved(obj, Ingredients.IndexOf(obj), Ingredients.IndexOf(obj));
             Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), JsonSerializer.Serialize(checkedList));
         }
     }
@@ -83,16 +94,18 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.SkipShoppingList).Select(sl => sl.Id));
                 Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), defaultCheckedItems);
                 Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.GetHashCode());
+                Preferences.Default.Remove(nameof(PreferenceKeys.ShoppingListCustom));
             }
 
-            var checkedList = JsonSerializer.Deserialize<HashSet<int>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
+            var checkedList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
             foreach (var item in shoppingList!.ShoppingList ?? [])
             {
-                item.IsChecked = checkedList.Contains(item.Id);
+                item.IsChecked = checkedList.Contains(item.Name);
             }
 
-            Ingredients.ReplaceRange(shoppingList!.ShoppingList!.OrderBy(sl => sl.IsChecked)
-                .ThenBy(sl => sl.SkipShoppingList).ThenBy(sl => sl.Name));
+            var customList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListCustom), "[]")) ?? [];
+            var customItems = customList.Select(c => new RecipeIngredientDto() { Name = c, IsChecked = checkedList.Contains(c) });
+            Ingredients.ReplaceRange(customItems.Concat(shoppingList!.ShoppingList!));
         }
 
         Loading = false;
