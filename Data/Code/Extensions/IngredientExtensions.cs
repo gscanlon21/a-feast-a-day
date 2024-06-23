@@ -13,7 +13,11 @@ public static class IngredientExtensions
 
     internal static Ingredient? SubstitutedIngredientForAllergens(this Ingredient ingredient, IList<Ingredient> allIngredients, Allergy allergens)
     {
-        var alternativeIngredients = allIngredients.Where(i => ingredient.ParentId == i.ParentId || ingredient.Id == i.ParentId).ToList();
+        // Find alt ingredients where the alt's parent is this ingredient.
+        var alternativeIngredients = allIngredients.Where(i => ingredient.Id == i.ParentId
+            // Or the alt's parent and this ingredient's parent are the same.
+            || (ingredient.ParentId.HasValue && ingredient.ParentId == i.ParentId)).ToList();
+
         if (allergens.HasAnyFlag32(ingredient.Allergens))
         {
             return alternativeIngredients.FirstOrDefault(i => !allergens.HasAnyFlag32(i.Allergens));
