@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Code.Helpers;
+using Core.Models.Newsletter;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
@@ -163,7 +164,7 @@ public partial class UserController
         }
 
         userProgression.RefreshAfter = null;
-        userProgression.LastSeen = userProgression.LastSeen > Today ? Today : userProgression.LastSeen;
+        userProgression.LastSeen = userProgression.LastSeen > DateHelpers.Today ? DateHelpers.Today : userProgression.LastSeen;
         await context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });

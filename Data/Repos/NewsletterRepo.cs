@@ -1,4 +1,5 @@
 ﻿using Core.Code.Extensions;
+using Core.Code.Helpers;
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Footnote;
@@ -19,16 +20,6 @@ namespace Data.Repos;
 
 public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
 {
-    /// <summary>
-    /// Today's date in UTC.
-    /// </summary>
-    private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
-
-    /// <summary>
-    /// This week's Sunday date in UTC.
-    /// </summary>
-    protected static DateOnly StartOfWeek => Today.AddDays(-1 * (int)Today.DayOfWeek);
-
     public async Task<IList<Footnote>> GetFootnotes(string? email, string? token, int count = 1)
     {
         var user = await userRepo.GetUser(email, token, allowDemoUser: true);
@@ -55,7 +46,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .Where(f => f.Type == FootnoteType.Custom)
             .Where(f => f.UserId == user.Id)
             // Keep the same footnotes over the course of a day.
-            .OrderByDescending(f => f.UserLastSeen == Today)
+            .OrderByDescending(f => f.UserLastSeen == DateHelpers.Today)
             // Then choose the least seen.
             .ThenBy(f => f.UserLastSeen)
             .ThenBy(_ => EF.Functions.Random())
@@ -64,7 +55,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         foreach (var footnote in footnotes)
         {
-            footnote.UserLastSeen = Today;
+            footnote.UserLastSeen = DateHelpers.Today;
         }
 
         await context.SaveChangesAsync();
@@ -93,7 +84,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             // Always send a new newsletter for the demo and test users.
             .Where(n => !user.Features.HasFlag(Features.Demo) && !user.Features.HasFlag(Features.Test))
             // Always send a new newsletter for today for the debug user.
-            .Where(n => !user.Features.HasFlag(Features.Debug) || n.Date == Today)
+            .Where(n => !user.Features.HasFlag(Features.Debug) || n.Date == DateHelpers.Today)
             .Where(n => user.Features.HasFlag(Features.Debug) || n.Date == date)
             // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
             .Where(n => n.UserFeastRecipes.Any())

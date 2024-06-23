@@ -43,11 +43,6 @@ public class QueryRunner(Section section)
             && other.Recipe.Id == Recipe.Id;
     }
 
-    /// <summary>
-    /// Today's date in UTC.
-    /// </summary>
-    private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
-
     public required UserOptions UserOptions { get; init; }
     public required ServingsOptions ServingsOptions { get; init; }
     public required ExclusionOptions ExclusionOptions { get; init; }

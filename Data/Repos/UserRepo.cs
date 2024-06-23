@@ -1,5 +1,6 @@
 ﻿using Core.Code.Exceptions;
 using Core.Code.Extensions;
+using Core.Code.Helpers;
 using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.User;
@@ -17,11 +18,6 @@ namespace Data.Repos;
 /// </summary>
 public class UserRepo(CoreContext context)
 {
-    /// <summary>
-    /// Today's date in UTC.
-    /// </summary>
-    private static DateOnly Today => DateOnly.FromDateTime(DateTime.UtcNow);
-
     /// <summary>
     /// Grab a user from the db with a specific token.
     /// </summary>
@@ -142,7 +138,7 @@ public class UserRepo(CoreContext context)
             .Where(n => n.UserFeastRecipes.Any())
             // Look at strengthening workouts only that are within the last X weeks.
             //.Where(n => n.Frequency != Frequency.OffDayStretches)
-            .Where(n => n.Date >= Today.AddDays(-7 * weeks))
+            .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
             .GroupBy(n => n.Date)
             .Select(g => new
             {
@@ -163,7 +159,7 @@ public class UserRepo(CoreContext context)
         if (weeklyFeasts.Count != 0)
         {
             // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
-            var actualWeeks = (Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
+            var actualWeeks = (DateHelpers.Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {

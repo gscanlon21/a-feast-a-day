@@ -1,4 +1,5 @@
-﻿using Core.Dtos.User;
+﻿using Core.Code.Helpers;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data.Entities.User;
 using Data.Models;
@@ -173,14 +174,14 @@ public partial class NewsletterRepo
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
         var debugIngredients = await context.Ingredients
-                .OrderByDescending(i => i.LastUpdated == Today)
+                .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
                 .ThenBy(i => i.LastUpdated)
                 .ThenBy(_ => EF.Functions.Random())
                 .Take(1).ToListAsync();
 
         foreach (var debugIngredient in debugIngredients)
         {
-            debugIngredient.LastUpdated = Today;
+            debugIngredient.LastUpdated = DateHelpers.Today;
             scopedCoreContext.Ingredients.Update(debugIngredient);
         }
 

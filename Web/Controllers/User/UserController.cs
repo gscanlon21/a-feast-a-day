@@ -1,4 +1,5 @@
-﻿using Core.Consts;
+﻿using Core.Code.Helpers;
+using Core.Consts;
 using Data;
 using Data.Entities.User;
 using Data.Repos;
@@ -217,7 +218,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
         }
 
         // Add a dummy newsletter to advance the workout split
-        var newsletter = new Data.Entities.Newsletter.UserFeast(Today, user);
+        var newsletter = new Data.Entities.Newsletter.UserFeast(DateHelpers.Today, user);
         context.UserFeasts.Add(newsletter);
 
         await context.SaveChangesAsync();
