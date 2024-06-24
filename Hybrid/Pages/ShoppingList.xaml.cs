@@ -94,7 +94,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 // Remove unchecked custom items.
                 var checkedListRefresh = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
                 var customListRefresh = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListCustom), "[]")) ?? [];
-                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListCustom), customListRefresh.Where(cl => checkedListRefresh.Contains(cl)));
+                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListCustom), customListRefresh.Where(cl => !checkedListRefresh.Contains(cl)));
 
                 // Reset checked items to just the common ingredients.
                 var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.SkipShoppingList).Select(sl => sl.Name));
