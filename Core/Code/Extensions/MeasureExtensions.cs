@@ -8,6 +8,8 @@ public static class MeasureExtensions
     {
         return (recipeIngredientMeasure, defaultMeasure) switch
         {
+            (Measure.Pound, Measure.Ounces) => 16,
+            (Measure.Ounces, Measure.Cup) => 0.125,
             (Measure.Cup, Measure.Teaspoons) => 48,
             (Measure.Cup, Measure.Tablespoons) => 16,
             (Measure.Tablespoons, Measure.Cup) => 0.0625,
@@ -17,6 +19,7 @@ public static class MeasureExtensions
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
             (Measure.Can, Measure.Jar) => 1, // ~
             (Measure.Package, Measure.Cup) => 2, // ~
+            (Measure.Pound, Measure.Cup) => 1.92, // ~
             (Measure.Pinch, Measure.Cup) => 0.01, // ~
             (Measure.Handful, Measure.Cup) => 0.5, // ~
             (Measure.Package, Measure.Slices) => 6, // ~

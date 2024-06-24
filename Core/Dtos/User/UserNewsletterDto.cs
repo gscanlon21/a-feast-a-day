@@ -34,9 +34,9 @@ public class UserNewsletterDto
 
     public int Id { get; init; }
 
-    public string Email { get; init; }
+    public string Email { get; init; } = null!;
 
-    public string Token { get; set; }
+    public string Token { get; set; } = null!;
 
     public Features Features { get; init; }
 

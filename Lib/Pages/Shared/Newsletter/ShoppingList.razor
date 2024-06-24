@@ -4,7 +4,7 @@
 @using Core.Models.Footnote
 @using Core.Models.Newsletter
 @using Core.Dtos.User
-@using Core.Dtos.Newsletter
+@using Core.Dtos.ShoppingList
 @using Lib.Pages.Shared.Recipe
 
 @if (List?.ShoppingList.Any() == true)
@@ -14,7 +14,7 @@
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
             @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)).OrderBy(l => l.Name))
             {
-                <li>@(item.Quantity == Fractions.Fraction.Zero ? "" : $"{item.Quantity} ")@(item.Measure.GetSingleDisplayName()) @item.Name</li>
+                <li>@item.Quantity @(item.Measure.GetSingleDisplayName()) @item.Name</li>
             }
         </ul>
     </div>

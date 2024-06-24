@@ -5,7 +5,7 @@
              xmlns:converter="clr-namespace:Hybrid.Converters"
              xmlns:pages="clr-namespace:Hybrid.Pages"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-             xmlns:newsletter="clr-namespace:Core.Dtos.User;assembly=Core"
+             xmlns:newsletter="clr-namespace:Hybrid.Database.Entities;assembly=Hybrid"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:DataType ="local:ShoppingListPageViewModel"
              x:Class="Hybrid.ShoppingListPage"
@@ -35,7 +35,7 @@
 
                 <ListView ItemsSource="{Binding Ingredients}" SelectionMode="None" HasUnevenRows="True" x:Name="myCollectionView">
                     <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="newsletter:RecipeIngredientDto">
+                        <DataTemplate x:DataType="newsletter:ShoppingListItem">
                             <ViewCell>
                                 <HorizontalStackLayout>
 

@@ -1,4 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
+using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
 using Core.Models.Options;
 using Microsoft.Extensions.Options;

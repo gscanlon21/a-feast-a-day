@@ -7,7 +7,7 @@ namespace Core.Dtos.User;
 /// Exercises listed on the website
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
-public class RecipeIngredientDto
+public class ShoppingListItemDto
 {
     public int Id { get; init; }
 
@@ -18,15 +18,9 @@ public class RecipeIngredientDto
     /// </summary>
     public string? Attributes { get; init; }
 
-    public int QuantityNumerator { get; set; } = 1;
-
-    public int QuantityDenominator { get; set; } = 1;
-
-    public Fractions.Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
+    public int Quantity { get; set; } = 1;
 
     public Measure Measure { get; set; }
-
-    public Measure DefaultMeasure { get; set; }
 
     public bool Optional { get; set; }
 

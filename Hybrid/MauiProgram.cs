@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Core.Code;
 using Core.Models.Options;
+using Hybrid.Database;
 using Lib;
 using Lib.Services;
 using Microsoft.Extensions.Configuration;
@@ -42,6 +43,8 @@ namespace Hybrid
             builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddSingleton<LocalDatabase>();
+
             builder.Services.AddTransient<UserService>();
             builder.Services.AddTransient<NewsletterService>();
 
@@ -60,7 +63,7 @@ namespace Hybrid
             builder.Services.AddTransient<NewslettersPageViewModel>();
 
             builder.Services.AddTransient<ShoppingListPage>();
-            builder.Services.AddTransient<ShoppingListPageViewModel>();
+            builder.Services.AddSingleton<ShoppingListPageViewModel>();
 
             return builder.Build();
         }

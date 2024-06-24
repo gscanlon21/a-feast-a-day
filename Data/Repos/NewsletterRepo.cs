@@ -1,6 +1,7 @@
 ﻿using Core.Code.Extensions;
 using Core.Code.Helpers;
 using Core.Dtos.Newsletter;
+using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
@@ -11,6 +12,7 @@ using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
+using Fractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -144,7 +146,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
 
-        var shoppingList = await GetShoppingList(debugRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, debugRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
@@ -173,7 +175,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var allRecipes = dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList();
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
-        var shoppingList = await GetShoppingList(allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
         var viewModel = new NewsletterDto
@@ -240,7 +242,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         }
 
         var allRecipes = dinnerRecipes.Concat(lunchRecipes).Concat(breakfastRecipes).Concat(sideRecipes).Concat(snackRecipes).Concat(dessertRecipes);
-        var shoppingList = await GetShoppingList(allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
@@ -269,42 +271,47 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<ShoppingListDto> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
+    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<RecipeIngredient> recipeIngredients)
     {
-        var shoppingList = new List<RecipeIngredientDto>();
+        var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
         foreach (var group in recipeIngredients.OrderBy(ri => ri.Id)
             .GroupBy(l => l, new ShoppingListComparer())
             .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
-            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator);
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
-            var fraction = new Fractions.Fraction(wholeFractions + partialFractions.Sum(g => g.QuantityNumerator), Math.Max(1, partialFractions.Sum(g => g.QuantityDenominator)), true);
+            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
 
-            shoppingList.Add(new RecipeIngredientDto()
+            var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
+            var denonimator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator));
+            while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denonimator) && denonimator > 0))
+            {
+                numerator *= 10;
+                denonimator *= 10;
+            }
+
+            var fraction = new Fraction((int)numerator, (int)denonimator);
+            shoppingList.Add(new ShoppingListItemDto()
             {
                 Id = group.Key.Id,
                 Name = group.Key.Name,
-                Measure = group.Key.Measure,
+                Measure = group.Key.Ingredient.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
-                QuantityNumerator = (int)fraction.Numerator,
-                QuantityDenominator = (int)fraction.Denominator,
-                Desc = $"{(fraction == Fractions.Fraction.Zero ? "" : $"{fraction} ")}{group.Key.Measure.GetSingleDisplayName()}"
+                Quantity = (int)Math.Ceiling(fraction.ToDouble()),
             });
         }
 
         return new ShoppingListDto()
         {
+            NewsletterId = newsletter.Id,
             ShoppingList = shoppingList
         };
     }
 
     private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>
     {
+        public int GetHashCode(RecipeIngredient e) => HashCode.Combine(e.Name.TrimEnd('s'));
         public bool Equals(RecipeIngredient? a, RecipeIngredient? b)
-            => EqualityComparer<Measure?>.Default.Equals(a?.Measure, b?.Measure)
-            && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
-
-        public int GetHashCode(RecipeIngredient e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
+            => EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
     }
 }

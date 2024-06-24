@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Core.Dtos.User;
 using Hybrid.Code;
+using Hybrid.Database;
+using Hybrid.Database.Entities;
 using Lib.Services;
-using System.Text.Json;
 
 namespace Hybrid;
 
@@ -21,16 +21,22 @@ public partial class ShoppingListPage : ContentPage
 public partial class ShoppingListPageViewModel : ObservableObject
 {
     private readonly UserService _userService;
+    private readonly LocalDatabase _localDatabase;
 
     public INavigation Navigation { get; set; } = null!;
 
     public IAsyncRelayCommand LoadCommand { get; set; }
+    public IAsyncRelayCommand WhenCompletedCommand { get; set; }
+    public IAsyncRelayCommand WhenCheckedCommand { get; set; }
 
-    public ShoppingListPageViewModel(UserService userService)
+    public ShoppingListPageViewModel(UserService userService, LocalDatabase localDatabase)
     {
         _userService = userService;
+        _localDatabase = localDatabase;
 
-        LoadCommand = new AsyncRelayCommand(LoadShoppingListAsync);
+        LoadCommand = new AsyncRelayCommand(LoadShoppingList);
+        WhenCompletedCommand = new AsyncRelayCommand(WhenCompleted);
+        WhenCheckedCommand = new AsyncRelayCommand<ShoppingListItem>(WhenChecked);
     }
 
     [ObservableProperty]
@@ -40,45 +46,42 @@ public partial class ShoppingListPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableRangeCollection<RecipeIngredientDto> _ingredients = new()
+    public ObservableRangeCollection<ShoppingListItem> _ingredients = new()
     {
-        SortingSelector = a => $"{a.IsChecked}-{a.SkipShoppingList}-{a.Name}"
+        SortingSelector = a => $"{a.IsChecked}-{a.Name}"
     };
 
-    [RelayCommand]
-    private void WhenCompleted()
+    private async Task WhenCompleted()
     {
-        Ingredients.Insert(0, new RecipeIngredientDto()
+        if (!await _localDatabase.ContainsItemAsync(IngredientEntry))
         {
-            Name = IngredientEntry,
-        });
+            await _localDatabase.SaveItemAsync(new ShoppingListItem()
+            {
+                Name = IngredientEntry,
+                IsCustom = true,
+            });
+        }
 
-        var customList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListCustom), "[]")) ?? [];
-        Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListCustom), JsonSerializer.Serialize(customList.Prepend(IngredientEntry)));
         IngredientEntry = "";
     }
 
-    [RelayCommand]
-    private void WhenChecked(RecipeIngredientDto obj)
+    private async Task WhenChecked(ShoppingListItem? obj)
     {
         if (obj != null)
         {
-            var checkedList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
-            if (obj.IsChecked)
-            {
-                checkedList.Add(obj.Name);
-            }
-            else
-            {
-                checkedList.Remove(obj.Name);
-            }
-
+            // Move the item to the end of the list.
             Ingredients.RaiseObjectMoved(obj, Ingredients.IndexOf(obj), Ingredients.IndexOf(obj));
-            Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), JsonSerializer.Serialize(checkedList));
+
+            // Save the checked status in the database.
+            if (await _localDatabase.GetItemAsync(obj.Id) is ShoppingListItem item)
+            {
+                item.IsChecked = obj.IsChecked;
+                await _localDatabase.SaveItemAsync(item);
+            }
         }
     }
 
-    private async Task LoadShoppingListAsync()
+    private async Task LoadShoppingList()
     {
         Loading = true;
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
@@ -89,41 +92,38 @@ public partial class ShoppingListPageViewModel : ObservableObject
         if (shoppingList != null)
         {
             // If the week has changed, reset the shopping list.
-            if (shoppingListHash != shoppingList!.GetHashCode())
+            if (shoppingListHash != shoppingList!.NewsletterId)
             {
                 // Remove unchecked custom items.
-                var checkedListRefresh = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
-                var customListRefresh = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListCustom), "[]")) ?? [];
-                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListCustom), JsonSerializer.Serialize(customListRefresh.Where(cl => !checkedListRefresh.Contains(cl))));
+                _ = await _localDatabase.DeleteItemsAsync();
 
-                // Reset checked items to just the common ingredients.
-                var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.SkipShoppingList).Select(sl => sl.Name));
-                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), defaultCheckedItems);
                 // Update the shopping list hash so we don't reset again until next week.
-                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.GetHashCode());
+                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.NewsletterId);
             }
 
-            var checkedList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
-            foreach (var item in shoppingList!.ShoppingList ?? [])
+            // Merge local and remote items into the db.
+            var localItems = await _localDatabase.GetItemsAsync();
+            var remoteItems = shoppingList.ShoppingList.Select(sl => new ShoppingListItem(sl)).ToList();
+            foreach (var remoteItem in remoteItems)
             {
-                item.IsChecked = checkedList.Contains(item.Name);
+                if (!localItems.Contains(remoteItem))
+                {
+                    await _localDatabase.SaveItemAsync(remoteItem);
+                }
+            }
+            foreach (var localItem in localItems)
+            {
+                if (!localItem.IsCustom && !remoteItems.Contains(localItem))
+                {
+                    await _localDatabase.DeleteItemAsync(localItem);
+                }
             }
 
-            var customList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListCustom), "[]")) ?? [];
-            var customItems = customList.Select(c => new RecipeIngredientDto() { Name = c, IsChecked = checkedList.Contains(c) });
-            Ingredients.ReplaceRange(customItems.Concat(shoppingList!.ShoppingList!));
+            // Re-pull the list from the db so the Ids are up to date.
+            Ingredients.ReplaceRange(await _localDatabase.GetItemsAsync());
         }
 
         Loading = false;
         return;
-    }
-
-    private class ListComparer : IEqualityComparer<RecipeIngredientDto>
-    {
-        public bool Equals(RecipeIngredientDto? a, RecipeIngredientDto? b)
-            => EqualityComparer<Core.Models.User.Measure?>.Default.Equals(a?.Measure, b?.Measure)
-            && EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
-
-        public int GetHashCode(RecipeIngredientDto e) => HashCode.Combine(e.Measure, e.Name.TrimEnd('s'));
     }
 }
