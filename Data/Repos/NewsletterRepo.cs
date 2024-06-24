@@ -144,7 +144,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
 
-        var shoppingList = await GetShoppingList(debugRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, debugRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
@@ -173,7 +173,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var allRecipes = dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList();
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
-        var shoppingList = await GetShoppingList(allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
         var viewModel = new NewsletterDto
@@ -240,7 +240,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         }
 
         var allRecipes = dinnerRecipes.Concat(lunchRecipes).Concat(breakfastRecipes).Concat(sideRecipes).Concat(snackRecipes).Concat(dessertRecipes);
-        var shoppingList = await GetShoppingList(allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
@@ -269,7 +269,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<ShoppingListDto> GetShoppingList(IList<RecipeIngredient> recipeIngredients)
+    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<RecipeIngredient> recipeIngredients)
     {
         var shoppingList = new List<RecipeIngredientDto>();
         // Order before grouping so the .Key is the same across requests.
@@ -295,6 +295,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         return new ShoppingListDto()
         {
+            NewsletterId = newsletter.Id,
             ShoppingList = shoppingList
         };
     }

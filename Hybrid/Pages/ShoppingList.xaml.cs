@@ -89,7 +89,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
         if (shoppingList != null)
         {
             // If the week has changed, reset the shopping list.
-            if (shoppingListHash != shoppingList!.GetHashCode())
+            if (shoppingListHash != shoppingList!.NewsletterId)
             {
                 // Remove unchecked custom items.
                 var checkedListRefresh = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
@@ -100,7 +100,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 var defaultCheckedItems = JsonSerializer.Serialize(shoppingList?.ShoppingList.Where(sl => sl.SkipShoppingList).Select(sl => sl.Name));
                 Preferences.Default.Set(nameof(PreferenceKeys.ShoppingList), defaultCheckedItems);
                 // Update the shopping list hash so we don't reset again until next week.
-                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.GetHashCode());
+                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.NewsletterId);
             }
 
             var checkedList = JsonSerializer.Deserialize<HashSet<string>>(Preferences.Default.Get(nameof(PreferenceKeys.ShoppingList), "[]")) ?? [];
