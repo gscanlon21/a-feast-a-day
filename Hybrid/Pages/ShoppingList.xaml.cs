@@ -53,13 +53,18 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private async Task WhenCompleted()
     {
-        if (!await _localDatabase.ContainsItemAsync(IngredientEntry))
+        if (!string.IsNullOrWhiteSpace(IngredientEntry)
+            && !await _localDatabase.ContainsItemAsync(IngredientEntry))
         {
-            await _localDatabase.SaveItemAsync(new ShoppingListItem()
+            var item = new ShoppingListItem()
             {
                 Name = IngredientEntry,
                 IsCustom = true,
-            });
+                Quantity = 1,
+            };
+
+            Ingredients.Add(item);
+            await _localDatabase.SaveItemAsync(item);
         }
 
         IngredientEntry = "";
@@ -67,7 +72,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private async Task WhenChecked(ShoppingListItem? obj)
     {
-        if (obj != null)
+        if (obj != null && !Loading)
         {
             // Move the item to the end of the list.
             Ingredients.RaiseObjectMoved(obj, Ingredients.IndexOf(obj), Ingredients.IndexOf(obj));

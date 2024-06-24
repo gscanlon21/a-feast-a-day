@@ -21,8 +21,9 @@ public class ShoppingListItem
         Name = dto.Name;
         IsCustom = false;
         Measure = dto.Measure;
-        IsChecked = dto.SkipShoppingList;
         Quantity = dto.Quantity;
+        // Don't trigger the property changed event.
+        _isChecked = dto.SkipShoppingList;
     }
 
     [Key, PrimaryKey, AutoIncrement, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -72,7 +73,8 @@ public class ShoppingListItem
         return true;
     }
 
-    public override int GetHashCode() => HashCode.Combine(Id);
+    // Not using Id because we want to compare local with remote.
+    public override int GetHashCode() => HashCode.Combine(Name.TrimEnd('s', ' '));
     public override bool Equals(object? obj) => obj is ShoppingListItem other
-        && other.Id == Id;
+        && other.Name.TrimEnd('s', ' ') == Name.TrimEnd('s', ' ');
 }

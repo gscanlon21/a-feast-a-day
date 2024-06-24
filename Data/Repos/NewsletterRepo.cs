@@ -283,7 +283,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
 
             var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
-            var denonimator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator));
+            var denonimator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure)));
             while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denonimator) && denonimator > 0))
             {
                 numerator *= 10;
@@ -293,11 +293,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             var fraction = new Fraction((int)numerator, (int)denonimator);
             shoppingList.Add(new ShoppingListItemDto()
             {
-                Id = group.Key.Id,
                 Name = group.Key.Name,
                 Measure = group.Key.Ingredient.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
-                Quantity = (int)Math.Ceiling(fraction.ToDouble()),
+                Quantity = Math.Max(1, (int)Math.Ceiling(fraction.ToDouble())),
             });
         }
 
@@ -312,6 +311,6 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     {
         public int GetHashCode(RecipeIngredient e) => HashCode.Combine(e.Name.TrimEnd('s'));
         public bool Equals(RecipeIngredient? a, RecipeIngredient? b)
-            => EqualityComparer<string?>.Default.Equals(a?.Name.TrimEnd('s', ' '), b?.Name.TrimEnd('s', ' '));
+            => a?.Name.TrimEnd('s', ' ') == b?.Name.TrimEnd('s', ' ');
     }
 }

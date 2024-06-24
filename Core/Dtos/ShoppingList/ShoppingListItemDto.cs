@@ -9,8 +9,6 @@ namespace Core.Dtos.User;
 [DebuggerDisplay("{Name,nq}")]
 public class ShoppingListItemDto
 {
-    public int Id { get; init; }
-
     public string Name { get; init; } = null!;
 
     /// <summary>
@@ -26,7 +24,7 @@ public class ShoppingListItemDto
 
     public bool SkipShoppingList { get; init; }
 
-    public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is RecipeIngredientDto other
-        && other.Id == Id;
+    public override int GetHashCode() => HashCode.Combine(Name.TrimEnd('s', ' '));
+    public override bool Equals(object? obj) => obj is ShoppingListItemDto other
+        && other.Name.TrimEnd('s', ' ') == Name.TrimEnd('s', ' ');
 }
