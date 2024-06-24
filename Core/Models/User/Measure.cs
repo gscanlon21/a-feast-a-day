@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
 
@@ -8,35 +7,35 @@ public enum Measure
     [Display(Name = "")]
     None = 0,
 
-    [Display(Name = "Pinch")]
-    Pinch = 1,
+    [Display(Name = "Micrograms", ShortName = "mcg")]
+    Micrograms = 1,
+
+    [Display(Name = "Milligrams", ShortName = "mg")]
+    Milligrams = 2,
+
+    [Display(Name = "Grams", ShortName = "g")]
+    Grams = 3,
 
     [Display(Name = "Ounces")]
-    Ounces = 2,
-
-    [Display(Name = "Teaspoons", ShortName = "tsp.")]
-    Teaspoons = 3,
-
-    [Display(Name = "Tablespoons", ShortName = "Tbsp.")]
-    Tablespoons = 4,
-
-    [Display(Name = "Cups")]
-    Cup = 5,
+    Ounces = 4,
 
     [Display(Name = "Pounds", ShortName = "lb.")]
-    Pound = 6,
+    Pound = 5,
 
-    [Display(Name = "Handful")]
-    Handful = 7,
+    [Display(Name = "Cups")]
+    Cup = 6,
 
-    [Display(Name = "Head")]
-    Head = 8,
+    [Display(Name = "Tablespoons", ShortName = "Tbsp.")]
+    Tablespoons = 7,
 
-    [Display(Name = "Cloves")]
-    Cloves = 9,
+    [Display(Name = "Teaspoons", ShortName = "tsp.")]
+    Teaspoons = 8,
 
-    [Display(Name = "Can")]
-    Can = 10,
+    [Display(Name = "IU")]
+    IU = 9,
+
+    [Display(Name = "Percent", ShortName = "%")]
+    Percent = 10,
 
     [Display(Name = "Bottle")]
     Bottle = 11,
@@ -44,8 +43,8 @@ public enum Measure
     [Display(Name = "Package")]
     Package = 12,
 
-    [Display(Name = "Grams", ShortName = "g")]
-    Grams = 13,
+    [Display(Name = "Head")]
+    Head = 13,
 
     [Display(Name = "Splash")]
     Splash = 14,
@@ -56,17 +55,17 @@ public enum Measure
     [Display(Name = "Slices")]
     Slices = 16,
 
-    [Display(Name = "Milligrams", ShortName = "mg")]
-    Milligrams = 17,
+    [Display(Name = "Handful")]
+    Handful = 17,
 
-    [Display(Name = "Micrograms", ShortName = "mcg")]
-    Micrograms = 18,
+    [Display(Name = "Pinch")]
+    Pinch = 18,
 
-    [Display(Name = "Percent", ShortName = "%")]
-    Percent = 19,
+    [Display(Name = "Can")]
+    Can = 19,
 
-    [Display(Name = "IU")]
-    IU = 20,
+    [Display(Name = "Cloves")]
+    Cloves = 20,
 
     [Display(Name = "Leaves")]
     Leaves = 21,
@@ -79,3 +78,24 @@ public static class MeasureConsts
 {
     public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.IU, Measure.Percent];
 }
+
+/* Swap two measures.
+do $$
+declare 
+	BeginMeasure integer = 99;
+ 	EndMeasure integer = 99;
+ 	TempMeasure integer = 999;
+begin
+	update ingredient set "DefaultMeasure" = TempMeasure where "DefaultMeasure" = EndMeasure;
+	update nutrient set "Measure" = TempMeasure where "Measure" = EndMeasure;
+	update recipe_ingredient set "Measure" = TempMeasure where "Measure" = EndMeasure;
+
+	update ingredient set "DefaultMeasure" = EndMeasure where "DefaultMeasure" = BeginMeasure;
+	update nutrient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
+	update recipe_ingredient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
+
+	update ingredient set "DefaultMeasure" = BeginMeasure where "DefaultMeasure" = TempMeasure;
+	update nutrient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
+	update recipe_ingredient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
+end; $$;
+*/

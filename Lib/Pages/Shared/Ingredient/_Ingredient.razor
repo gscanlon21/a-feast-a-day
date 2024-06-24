@@ -35,10 +35,11 @@
 
                 <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Notes</b>: @Model.Notes</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Serving Size</b>: @(Model.GramsPerServing)g</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>One Measure Weighs</b>: @(Model.GramsPerMeasure)g</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Default Measure</b>: @Model.DefaultMeasure.GetSingleDisplayName()</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Measure</b>: @Model.GramsPerMeasure</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Calories Per Serving</b>: @Model.CaloriesPerServing</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Where(n => n.Value > 0).Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName32()</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName32()</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName32()</div>
             </div>
         </div>

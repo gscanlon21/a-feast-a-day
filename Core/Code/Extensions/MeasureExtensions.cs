@@ -18,6 +18,11 @@ public static class MeasureExtensions
             (Measure.Tablespoons, Measure.Sticks) => 0.125,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
             (Measure.Can, Measure.Jar) => 1, // ~
+            (Measure.Can, Measure.Cup) => 1, // ~
+            (Measure.Jar, Measure.Cup) => 1, // ~
+            (Measure.Jar, Measure.Can) => 1, // ~
+            (Measure.Cup, Measure.Jar) => 1, // ~
+            (Measure.Cup, Measure.Can) => 1, // ~
             (Measure.Package, Measure.Cup) => 2, // ~
             (Measure.Pound, Measure.Cup) => 1.92, // ~
             (Measure.Pinch, Measure.Cup) => 0.01, // ~
