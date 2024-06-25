@@ -98,7 +98,7 @@ public enum Nutrients : long
         | TransFats | SaturatedFats | MonounsaturatedFats | Omega3 | Omega6, // 2047
 
     /// <summary>
-    /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn’t contribute to increases in your body’s blood cholesterol levels. 
+    /// The guideline changes are due to research showing that dietary cholesterol itself isn’t harmful and doesn't contribute to increases in your body’s blood cholesterol levels. 
     /// Cholesterol is a natural substance that’s produced in your body and is found in animal-based foods. It’s a waxy, fatty substance that travels through your bloodstream.
     /// But problems arise when you eat too many saturated and trans fats. These cause your liver to produce too much LDL (“bad”) cholesterol, which winds up in artery-clogging deposits. 
     /// For this reason, experts generally recommend avoiding trans fats altogether and limiting saturated fats to 10 percent or lessTrusted Source of your total calorie intake.
