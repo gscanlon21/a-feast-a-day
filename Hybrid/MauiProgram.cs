@@ -63,7 +63,7 @@ namespace Hybrid
             builder.Services.AddTransient<NewslettersPageViewModel>();
 
             builder.Services.AddTransient<ShoppingListPage>();
-            builder.Services.AddSingleton<ShoppingListPageViewModel>();
+            builder.Services.AddTransient<ShoppingListPageViewModel>();
 
             return builder.Build();
         }

@@ -88,7 +88,6 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private async Task LoadShoppingList()
     {
-        if (Loading) { return; }
         Loading = true;
 
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
