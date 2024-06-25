@@ -363,8 +363,11 @@ public enum Nutrients : long
     Iodine = 1L << 40, // 1099511627776
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(11, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(16, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
+    [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
+    [DailyAllowance(27, 45, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
+    [DailyAllowance(9, 45, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyWomen)]
     [Display(Name = "Iron", GroupName = "Minerals")]
     Iron = 1L << 41, // 2199023255552
 

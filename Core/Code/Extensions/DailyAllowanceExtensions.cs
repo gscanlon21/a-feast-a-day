@@ -11,10 +11,12 @@ public static class DailyAllowanceExtensions
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)
         {
-            var attrs = memberInfo[0].GetCustomAttributes(typeof(DailyAllowanceAttribute), true).Cast<DailyAllowanceAttribute>().ToArray();
-            if (attrs != null && attrs.Length > 0)
+            var attributes = memberInfo[0].GetCustomAttributes(typeof(DailyAllowanceAttribute), true).Cast<DailyAllowanceAttribute>().ToArray();
+            if (attributes != null && attributes.Length > 0)
             {
-                return attrs.FirstOrDefault(a => a.For.HasFlag(person)) ?? attrs[0];
+                return attributes.FirstOrDefault(a => a.For == person)
+                    ?? attributes.FirstOrDefault(a => a.For.HasFlag(person))
+                    ?? attributes[0];
             }
         }
 
@@ -26,10 +28,10 @@ public static class DailyAllowanceExtensions
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)
         {
-            var attrs = memberInfo[0].GetCustomAttributes(typeof(DailyAllowanceAttribute), true);
-            if (attrs != null && attrs.Length > 0)
+            var attributes = memberInfo[0].GetCustomAttributes(typeof(DailyAllowanceAttribute), true);
+            if (attributes != null && attributes.Length > 0)
             {
-                var attribute = (DailyAllowanceAttribute)attrs[0];
+                var attribute = (DailyAllowanceAttribute)attributes[0];
                 return $@"({(attribute.RDA, attribute.TUL) switch
                 {
                     (null, not null) => $"TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
