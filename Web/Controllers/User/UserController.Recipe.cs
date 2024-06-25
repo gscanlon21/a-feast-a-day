@@ -1,5 +1,4 @@
 ﻿using Core.Code.Helpers;
-using Core.Models.Newsletter;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
@@ -116,9 +115,9 @@ public partial class UserController
     }
 
     [HttpPost]
-    [Route("{section:section}/{recipeId}/ir", Order = 1)]
-    [Route("{section:section}/{recipeId}/ignore-recipe", Order = 2)]
-    public async Task<IActionResult> IgnoreRecipe(string email, string token, int recipeId, Section section)
+    [Route("{recipeId}/ir", Order = 1)]
+    [Route("{recipeId}/ignore-recipe", Order = 2)]
+    public async Task<IActionResult> IgnoreRecipe(string email, string token, int recipeId)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -139,7 +138,7 @@ public partial class UserController
         userProgression.Ignore = !userProgression.Ignore;
         await context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
     }
 
     [HttpPost]

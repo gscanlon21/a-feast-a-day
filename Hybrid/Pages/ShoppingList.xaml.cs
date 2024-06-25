@@ -88,11 +88,12 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private async Task LoadShoppingList()
     {
+        if (Loading) { return; }
         Loading = true;
+
         var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
         var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
         var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), 0);
-
         var shoppingList = (await _userService.GetShoppingList(email, token)).Result;
         if (shoppingList != null)
         {
