@@ -42,7 +42,7 @@ public partial class UserController
         });
     }
 
-    [HttpPost, Route("recipe/addedit")]
+    [HttpPost, Route("recipe/add-edit")]
     public async Task<IActionResult> AddEditRecipe(string email, string token, Data.Entities.User.Recipe recipe)
     {
         var user = await userRepo.GetUser(email, token);

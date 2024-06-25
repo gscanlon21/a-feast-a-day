@@ -39,7 +39,7 @@ public class Recipe
     public int Servings { get; set; } = RecipeConsts.ServingsDefault;
 
     [Display(Name = "Adjustable Servings")]
-    public bool AdjustableServings { get; set; }
+    public bool AdjustableServings { get; set; } = true;
 
     [Required]
     public Equipment Equipment { get; set; }
