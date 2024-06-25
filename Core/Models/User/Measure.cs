@@ -20,10 +20,10 @@ public enum Measure
     Ounces = 4,
 
     [Display(Name = "Pounds", ShortName = "lb.")]
-    Pound = 5,
+    Pounds = 5,
 
     [Display(Name = "Cups")]
-    Cup = 6,
+    Cups = 6,
 
     [Display(Name = "Tablespoons", ShortName = "Tbsp.")]
     Tablespoons = 7,
@@ -37,11 +37,11 @@ public enum Measure
     [Display(Name = "Percent", ShortName = "%")]
     Percent = 10,
 
-    [Display(Name = "Bottle")]
-    Bottle = 11,
+    [Display(Name = "Bottles")]
+    Bottles = 11,
 
-    [Display(Name = "Package")]
-    Package = 12,
+    [Display(Name = "Packages")]
+    Packages = 12,
 
     [Display(Name = "Head")]
     Head = 13,
@@ -49,8 +49,8 @@ public enum Measure
     [Display(Name = "Splash")]
     Splash = 14,
 
-    [Display(Name = "Jar")]
-    Jar = 15,
+    [Display(Name = "Jars")]
+    Jars = 15,
 
     [Display(Name = "Slices")]
     Slices = 16,
@@ -61,8 +61,8 @@ public enum Measure
     [Display(Name = "Pinch")]
     Pinch = 18,
 
-    [Display(Name = "Can")]
-    Can = 19,
+    [Display(Name = "Cans")]
+    Cans = 19,
 
     [Display(Name = "Cloves")]
     Cloves = 20,

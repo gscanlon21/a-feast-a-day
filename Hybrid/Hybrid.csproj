@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <!-- Removed ;net7.0-maccatalyst -->
-        <TargetFrameworks>net8.0-ios;net8.0-android</TargetFrameworks>
+        <TargetFrameworks>net9.0-ios;net9.0-android</TargetFrameworks>
         <!-- Uncomment to also build the windows app. -->
         <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>-->
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
@@ -69,15 +69,15 @@
 
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-      <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
-      <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.60" />
+      <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.0-preview.5.24307.10" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.0-preview.5.24307.10" />
       <PackageReference Include="CommunityToolkit.Maui" Version="9.0.1" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.0-preview.5.24306.7" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0-preview.5.24306.7" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.0-preview.5.24306.7" />
       <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
       <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
-      <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
+      <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="9.0.0-preview.5.24307.10" />
     </ItemGroup>
 
     <ItemGroup>

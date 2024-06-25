@@ -8,26 +8,28 @@ public static class MeasureExtensions
     {
         return (recipeIngredientMeasure, defaultMeasure) switch
         {
-            (Measure.Pound, Measure.Ounces) => 16,
-            (Measure.Ounces, Measure.Cup) => 0.125,
-            (Measure.Cup, Measure.Teaspoons) => 48,
-            (Measure.Cup, Measure.Tablespoons) => 16,
-            (Measure.Tablespoons, Measure.Cup) => 0.0625,
+            (Measure.Pounds, Measure.Ounces) => 16,
+            (Measure.Ounces, Measure.Cups) => 0.125,
+            (Measure.Ounces, Measure.Grams) => 28.35,
+            (Measure.Grams, Measure.Ounces) => 0.0353,
+            (Measure.Cups, Measure.Teaspoons) => 48,
+            (Measure.Cups, Measure.Tablespoons) => 16,
+            (Measure.Tablespoons, Measure.Cups) => 0.0625,
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
-            (Measure.Teaspoons, Measure.Cup) => 0.0208333,
+            (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Tablespoons, Measure.Sticks) => 0.125,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
-            (Measure.Can, Measure.Jar) => 1, // ~
-            (Measure.Can, Measure.Cup) => 1, // ~
-            (Measure.Jar, Measure.Cup) => 1, // ~
-            (Measure.Jar, Measure.Can) => 1, // ~
-            (Measure.Cup, Measure.Jar) => 1, // ~
-            (Measure.Cup, Measure.Can) => 1, // ~
-            (Measure.Package, Measure.Cup) => 2, // ~
-            (Measure.Pound, Measure.Cup) => 1.92, // ~
-            (Measure.Pinch, Measure.Cup) => 0.01, // ~
-            (Measure.Handful, Measure.Cup) => 0.5, // ~
-            (Measure.Package, Measure.Slices) => 6, // ~
+            (Measure.Cans, Measure.Jars) => 1, // ~
+            (Measure.Cans, Measure.Cups) => 1, // ~
+            (Measure.Jars, Measure.Cups) => 1, // ~
+            (Measure.Jars, Measure.Cans) => 1, // ~
+            (Measure.Cups, Measure.Jars) => 1, // ~
+            (Measure.Cups, Measure.Cans) => 1, // ~
+            (Measure.Packages, Measure.Cups) => 2, // ~
+            (Measure.Pounds, Measure.Cups) => 1.92, // ~
+            (Measure.Pinch, Measure.Cups) => 0.01, // ~
+            (Measure.Handful, Measure.Cups) => 0.5, // ~
+            (Measure.Packages, Measure.Slices) => 6, // ~
             (Measure.Pinch, Measure.Teaspoons) => 0.5, // ~
             (Measure.Pinch, Measure.Tablespoons) => 0.25, // ~
             _ when recipeIngredientMeasure == defaultMeasure => 1,
@@ -46,7 +48,7 @@ public static class MeasureExtensions
             Measure.Milligrams => quantity / 1000,
             Measure.Grams or Measure.None => quantity,
             Measure.Ounces => quantity * 28.3495231,
-            Measure.Pound => quantity * 453.59237,
+            Measure.Pounds => quantity * 453.59237,
             _ => throw new NotImplementedException("Use RecipeIngredientExtensions.ToGrams()")
         };
     }
