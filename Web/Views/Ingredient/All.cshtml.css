@@ -1,7 +1,0 @@
-﻿details[open] {
-    bottom: env(safe-area-inset-bottom);
-}
-
-.cursor--pointer {
-    cursor: pointer;
-}
