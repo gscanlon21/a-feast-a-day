@@ -593,6 +593,7 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 
 COPY public.footnote ("Id", "Note", "Source", "Type") FROM stdin;
 1	Food experts recommend rinsing dry rice before cooking it because it helps wash away contaminants, heavy metals, dirt and bugs that may be in the rice.	\N	1
+2	When reheating rice in the microwave, put a little bit of water in the bowl so it heats up fluffy again.	\N	1
 \.
 
 
@@ -625,7 +626,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 114	\N	Pork Loin Fillet	\N	\N	f	0	240	100	0	-infinity	\N	6
 127	\N	Apple Sauce	\N	\N	f	0	240	100	0	-infinity	\N	6
 130	\N	Molasses	\N	\N	f	0	240	100	0	-infinity	\N	6
-140	\N	Chives	\N	\N	f	0	240	100	0	-infinity	\N	6
 156	\N	Brussel Sprouts	\N	\N	f	0	240	100	0	-infinity	\N	6
 157	\N	Pears	\N	\N	f	0	240	100	0	-infinity	\N	6
 158	\N	Sunflower Seeds	\N	\N	f	0	240	100	0	-infinity	\N	6
@@ -633,7 +633,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 13	\N	Cilantro	\N	\N	f	0	240	100	0	-infinity	\N	6
 14	\N	Basil	\N	\N	f	0	240	100	0	-infinity	\N	6
 19	\N	Spaghetti Pasta	\N	\N	f	0	240	100	0	-infinity	\N	6
-20	\N	Quinoa	\N	\N	f	0	240	100	0	-infinity	\N	6
 38	\N	All-Purpose Flour	\N	\N	t	0	240	100	0	-infinity	\N	6
 159	\N	Watermelon	\N	\N	f	0	240	100	0	-infinity	\N	6
 160	\N	Milk, Cow (1%)	\N	\N	f	0	240	100	0	-infinity	186	6
@@ -642,8 +641,11 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 30	\N	Cheese, Chedder	\N	\N	f	0	240	100	0	-infinity	\N	6
 186	\N	Milk	\N	\N	f	0	240	100	0	-infinity	\N	6
 5	\N	Garlic	\N	\N	f	0	240	100	0	-infinity	\N	20
+205	\N	Mixed Beans	\N	\N	f	0	240	100	0	-infinity	\N	6
+140	\N	Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	3	3	0.9	2024-06-25	\N	7
+20	\N	Quinoa	https://www.eatthismuch.com/food/nutrition/quinoa,4888	\N	f	0	185	185	222	-infinity	\N	6
+8	\N	Bell Peppers	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	36.9	-infinity	\N	0
 4	\N	Lemons	\N	\N	f	0	240	100	0	-infinity	\N	0
-8	\N	Bell Peppers	\N	\N	f	0	240	100	0	-infinity	\N	0
 9	\N	Avocados	https://www.eatthismuch.com/food/nutrition/avocados,1334/	\N	f	0	201	201	0	-infinity	\N	0
 15	\N	Yellow Potatoes	https://www.eatthismuch.com/food/nutrition/yellow-potato,528851/	\N	f	0	113	113	90	2024-06-16	\N	0
 16	\N	Spinach	https://www.eatthismuch.com/calories/fresh-spinach,2211687	\N	f	0	57	85	40	2024-06-10	\N	6
@@ -676,6 +678,7 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 154	\N	Rice Cakes, White	\N	\N	f	0	240	100	0	-infinity	194	6
 49	\N	Jelly, Grape	https://www.eatthismuch.com/nutrition/grape-jelly,1644639	\N	f	0	20	20	50	2024-06-17	\N	7
 177	\N	Corn Oil	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	8192	13.6	13.6	122.4	2024-06-22	\N	7
+206	\N	Baby Spinach	\N	\N	f	0	240	100	0	2024-06-09	\N	6
 174	\N	Lettuce, Romaine	\N	\N	f	0	240	100	0	-infinity	\N	21
 12	\N	Limes	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	240	67	20	2024-06-10	\N	0
 136	\N	Tortillas, Whole-Wheat	\N	\N	f	0	240	100	0	-infinity	191	0
@@ -683,6 +686,11 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 23	\N	Tortillas, Flour	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	0	45	45	130	2024-06-16	191	0
 175	\N	Tomatoes, Grape	\N	\N	f	0	240	100	0	-infinity	\N	0
 54	\N	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	662	-infinity	\N	6
+98	\N	Rice, Brown	https://www.eatthismuch.com/food/nutrition/brown-rice,4804	\N	f	0	190	190	688	-infinity	188	6
+164	\N	Eggs, White	https://www.eatthismuch.com/nutrition/grade-a-large-white-eggs,2010944	\N	f	8	50	50	70	-infinity	187	0
+148	\N	Salad Greens	\N	\N	f	0	240	100	0	2024-06-09	\N	6
+207	\N	Edamame	\N	\N	f	0	240	100	0	-infinity	\N	6
+208	\N	Scallions	\N	\N	f	0	240	100	0	-infinity	\N	6
 31	\N	Milk, Cow (Whole)	\N	\N	f	0	240	100	0	-infinity	186	6
 48	\N	Salsa	\N	\N	f	0	240	100	0	-infinity	\N	6
 55	\N	Pasta Sauce	https://www.eatthismuch.com/food/nutrition/pasta-sauce,871/	\N	f	0	257	257	131.1	2024-06-14	\N	6
@@ -694,8 +702,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 183	\N	Milk, Cashew	\N	\N	f	64	240	100	0	-infinity	186	6
 163	\N	Milk, Cow (Skim)	https://www.eatthismuch.com/food/nutrition/skim-milk,4070520/	\N	f	0	240	240	90	-infinity	186	6
 187	\N	Eggs	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	71.5	-infinity	\N	0
-98	\N	Rice, Brown	\N	\N	f	0	240	100	0	-infinity	188	6
-164	\N	Eggs, White	\N	\N	f	8	240	50	0	-infinity	187	0
 28	\N	Eggs, Brown	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	71.5	2024-06-18	187	0
 193	\N	White Bread Loaf	\N	\N	f	32	240	100	0	-infinity	22	16
 170	\N	Tortillas, Corn	https://www.livestrong.com/article/418019-the-nutritional-benefits-of-corn-tortillas/	\N	f	8192	240	47	100	-infinity	191	0
@@ -714,7 +720,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 126	\N	Kielbasa Sausage	https://www.eatthismuch.com/food/nutrition/kielbasa-sausage,2717250/	\N	f	0	240	100	140	2024-06-11	\N	6
 135	\N	Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	1	240	28	110	2024-06-09	\N	6
 146	\N	Wholemeal Rye Bread	\N	\N	f	0	240	100	0	-infinity	22	6
-148	\N	Baby Spinach	\N	\N	f	0	240	100	0	2024-06-09	\N	6
 150	\N	Celery	\N	\N	f	0	240	100	0	2024-06-12	\N	6
 153	\N	Rice Cakes, Brown	https://www.eatthismuch.com/food/nutrition/brown-rice-cakes,4204545	\N	f	0	35	35	134	2024-06-11	194	6
 155	\N	Cucumber	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	301	301	45.2	2024-06-12	\N	6
@@ -726,18 +731,19 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 34	\N	Baking Powder	https://www.eatthismuch.com/food/nutrition/baking-powder,4274	\N	t	0	15	15	15	2024-06-20	\N	7
 25	\N	Ground Beef	https://www.eatthismuch.com/nutrition/ground-beef,5416	\N	f	0	28	28	61	-infinity	\N	4
 188	\N	Rice	\N	\N	f	0	240	100	0	-infinity	\N	6
-78	\N	Vegetable Oil	\N	\N	f	0	240	100	0	-infinity	\N	6
 107	\N	Roast Beef	https://www.eatthismuch.com/food/nutrition/roast-beef,484998/	\N	f	0	240	100	161	-infinity	\N	6
-197	\N	White Bread Loaf, Gluten Free	\N	\N	f	0	240	100	0	-infinity	22	16
 204	\N	Wholemeal Linguine	\N	\N	f	32	240	100	0	-infinity	137	6
 57	\N	Chickpeas	\N	\N	f	0	240	100	0	-infinity	\N	6
 58	\N	Baked Beans	\N	\N	f	0	240	100	0	-infinity	\N	6
 203	\N	Popcorn	\N	\N	f	0	240	100	0	-infinity	\N	20
+78	\N	Vegetable Oil	https://www.eatthismuch.com/food/nutrition/vegetable-oil,4133040/	\N	f	0	14	14	120	-infinity	\N	7
+197	\N	White Bread Loaf, Gluten Free	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	131	-infinity	22	16
+77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	119	2024-06-13	\N	7
+209	\N	Mixed Vegetables	\N	\N	f	0	240	100	0	-infinity	\N	6
 3	\N	Yellow Onions	https://www.eatthismuch.com/food/nutrition/yellow-onion,89980/	\N	f	0	148	148	45	2024-06-13	\N	0
 66	\N	Ranch Dressing	\N	\N	f	0	240	100	0	-infinity	\N	6
 39	\N	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	21	21	64	2024-06-17	\N	7
 61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	14	14	94	2024-06-17	\N	7
-77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	216	14	119	2024-06-13	\N	7
 67	\N	Black Pepper	\N	\N	t	0	240	100	0	-infinity	\N	8
 74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,656072/	\N	t	0	258	1	0	-infinity	\N	8
 75	\N	Kosher Salt	\N	\N	t	0	240	100	0	-infinity	\N	8
@@ -761,7 +767,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 110	\N	Cabbage	\N	\N	f	0	240	100	0	-infinity	\N	0
 117	\N	Garlic Toast	\N	\N	f	0	240	100	0	-infinity	\N	0
 138	\N	Coriander	\N	\N	f	0	240	100	0	-infinity	\N	12
-144	\N	Spring Onions	\N	\N	f	0	240	100	0	-infinity	\N	0
 147	\N	Tomatoes, Cherry	\N	\N	f	0	240	100	0	-infinity	\N	0
 165	\N	Mini Bagels	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	4	40	40	100.5	2024-06-19	\N	0
 121	\N	Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	29	28	9	-infinity	\N	4
@@ -789,7 +794,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 123	\N	Water	\N	\N	t	0	240	240	0	2024-06-17	\N	6
 124	\N	Curry Powder	\N	\N	f	0	240	100	0	-infinity	\N	6
 125	\N	Cardamom	\N	\N	f	0	240	100	0	-infinity	\N	6
-129	\N	Frozen Meatballs	\N	\N	f	0	240	100	0	-infinity	\N	6
 131	\N	Pinto Beans	\N	\N	f	0	240	100	0	-infinity	\N	6
 132	\N	Elbow Macaroni	\N	\N	f	0	240	100	0	-infinity	\N	6
 134	\N	Cheese, Pepper Jack	\N	\N	f	1	240	100	0	-infinity	\N	6
@@ -803,6 +807,8 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 167	\N	Naan	\N	\N	f	0	240	100	0	-infinity	\N	6
 185	\N	Oats, Steel-Cut	\N	\N	f	0	240	100	0	-infinity	\N	6
 198	\N	Bologna	https://www.eatthismuch.com/food/nutrition/bolonga,129024	\N	f	0	28	28	89	2024-06-14	\N	4
+129	\N	Frozen Meatballs	https://www.eatthismuch.com/calories/meatballs-frozen,587209	\N	f	0	113	113	266	-infinity	\N	3
+144	\N	Spring Onions	https://www.eatthismuch.com/food/nutrition/spring-onions,148275/	\N	f	0	100	100	28	-infinity	\N	0
 194	\N	Rice Cakes	\N	\N	f	0	240	100	0	-infinity	\N	6
 \.
 
@@ -865,6 +871,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 6672	121	67108864	\N	\N	2	3	f
 6673	121	536870912	\N	\N	2	0.1	f
 4329	153	68719476736	\N	\N	2	1	f
+6714	140	2047	\N	\N	3	0.9	f
 6678	187	68719476736	\N	\N	2	71	f
 6679	187	34359738368	\N	\N	2	69	f
 6682	187	2048	\N	\N	2	186	f
@@ -882,26 +889,57 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 4360	153	62	\N	\N	3	30	f
 4361	153	1984	\N	\N	3	0.1	f
 4380	180	2	\N	\N	3	2	f
+6715	129	128	\N	\N	3	6	f
+6716	129	68719476736	\N	\N	2	558	f
+6717	129	2	\N	\N	3	1	f
+6718	129	1	\N	\N	3	19	f
+6719	129	2048	\N	\N	2	60	f
+6720	129	4294967296	\N	\N	2	80	f
+6721	129	48	\N	\N	3	1	f
+6722	129	1984	\N	\N	3	17	f
+6723	129	62	\N	\N	3	8	f
+6724	129	2047	\N	\N	3	266	f
+6725	20	1984	\N	\N	3	4	f
 6688	25	68719476736	\N	\N	2	19	f
 6690	25	2048	\N	\N	2	19	f
 4391	180	4294967296	\N	\N	2	300	f
 4397	180	2199023255552	\N	\N	2	1	f
 4404	180	68719476736	\N	\N	2	110	f
+6726	20	2047	\N	\N	3	222	f
+6727	98	1984	\N	\N	3	5	f
+6728	98	2047	\N	\N	3	688	f
 6687	25	128	\N	\N	3	2	f
 6689	25	1	\N	\N	3	5	f
 6691	25	1984	\N	\N	3	4	f
 6692	25	2047	\N	\N	3	61	f
 4408	180	1	\N	\N	3	2	f
+6729	144	2047	\N	\N	3	28	f
+6730	78	128	\N	\N	3	2	f
+6731	78	256	\N	\N	3	3.5	f
+6732	78	1536	\N	\N	3	8	f
+6733	78	1984	\N	\N	3	14	f
 4434	180	229376	\N	\N	1	150	f
+6734	78	2047	\N	\N	3	120	f
+6735	197	2047	\N	\N	3	131	f
 4464	11	67108864	\N	\N	2	9	f
 4479	11	2199023255552	\N	\N	2	0.4	f
 4444	11	2	\N	\N	3	21	f
 4449	11	1	\N	\N	3	1	f
 4435	180	62	\N	\N	3	12	f
 4436	180	1984	\N	\N	3	1	f
+6736	8	1984	\N	\N	3	0.4	f
+6737	8	2047	\N	\N	3	36.9	f
+6738	164	128	\N	\N	3	2	f
+6740	164	1	\N	\N	3	6	f
+6741	164	2048	\N	\N	2	185	f
 4503	11	48	\N	\N	3	4	f
 4512	11	62	\N	\N	3	29	f
 4513	11	2047	\N	\N	3	110	f
+6742	164	4294967296	\N	\N	2	20	f
+6744	164	1984	\N	\N	3	5	f
+6745	164	2047	\N	\N	3	70	f
+6743	164	2199023255552	\N	\N	2	0.9	f
+6739	164	68719476736	\N	\N	2	62	f
 4515	155	18014398509481984	\N	\N	3	0.1	f
 4516	155	36028797018963968	\N	\N	3	0.1	f
 4517	155	72057594037927936	\N	\N	3	0.1	f
@@ -1044,14 +1082,14 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 -- Name: footnote_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."footnote_Id_seq"', 1, true);
+SELECT pg_catalog.setval('public."footnote_Id_seq"', 2, true);
 
 
 --
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 6713, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 6745, true);
 
 
 --
