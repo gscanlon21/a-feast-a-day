@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Recipe;
 
 /// <summary>
 /// Exercises listed on the website
@@ -34,7 +34,7 @@ public class RecipeInstruction
 
     public string? DisabledReason { get; private init; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.Instructions))]
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.Instructions))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);

@@ -12,4 +12,7 @@ $("[data-dismiss]").each((i, elem) => elem.addEventListener('click', (e) => {
     const grandParent = parent.parent();
     parent.remove();
     grandParent.cleanWhitespace();
-}))
+}));
+
+// Searchable select boxes.
+$('select.searchable').select2({ theme: 'bootstrap-5' });

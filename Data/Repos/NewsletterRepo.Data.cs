@@ -1,6 +1,7 @@
 ﻿using Core.Code.Helpers;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
+using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
@@ -14,7 +15,7 @@ public partial class NewsletterRepo
 {
     internal async Task<List<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        return (await new QueryBuilder(Section.Breakfast)
+        var recipes = (await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -36,11 +37,24 @@ public partial class NewsletterRepo
             .Build()
             .Query(serviceScopeFactory))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(newsletterContext.User)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     internal async Task<List<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        return (await new QueryBuilder(Section.Lunch)
+        var recipes = (await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -62,11 +76,24 @@ public partial class NewsletterRepo
             .Build()
             .Query(serviceScopeFactory))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(newsletterContext.User)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     internal async Task<List<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        return (await new QueryBuilder(Section.Dinner)
+        var recipes = (await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -88,11 +115,24 @@ public partial class NewsletterRepo
             .Build()
             .Query(serviceScopeFactory))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(newsletterContext.User)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     internal async Task<List<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        return (await new QueryBuilder(Section.Sides)
+        var recipes = (await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -110,11 +150,24 @@ public partial class NewsletterRepo
             .Build()
             .Query(serviceScopeFactory))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(newsletterContext.User)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     internal async Task<List<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        return (await new QueryBuilder(Section.Snacks)
+        var recipes = (await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -132,11 +185,24 @@ public partial class NewsletterRepo
             .Build()
             .Query(serviceScopeFactory))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(newsletterContext.User)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     internal async Task<List<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        return (await new QueryBuilder(Section.Dessert)
+        var recipes = (await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -154,15 +220,41 @@ public partial class NewsletterRepo
             .Build()
             .Query(serviceScopeFactory))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(newsletterContext.User)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     private async Task<List<QueryResults>> GetDebugExercises(UserDto user)
     {
-        return (await new QueryBuilder(Section.Debug)
+        var recipes = (await new QueryBuilder(Section.Debug)
             .WithUser(user)
             .Build()
             .Query(serviceScopeFactory, take: 1))
             .ToList();
+
+        var prerequisiteRecipeIds = recipes.SelectMany(ar => ar.Recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).ToDictionary(ri => ri.IngredientRecipeId.GetValueOrDefault(), ri => ar.Scale));
+        var prerequisiteRecipes = (await new QueryBuilder(Section.Dessert)
+            .WithUser(user)
+            .WithRecipes(options =>
+            {
+                options.AddRecipes(prerequisiteRecipeIds);
+            })
+            .Build()
+            .Query(serviceScopeFactory))
+            .ToList();
+
+        return [.. prerequisiteRecipes, .. recipes];
     }
 
     /// <summary>

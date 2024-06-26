@@ -1,4 +1,4 @@
-﻿using Data.Entities.User;
+﻿using Data.Entities.Recipe;
 
 namespace Data.Query.Options;
 

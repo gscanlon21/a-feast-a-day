@@ -1,7 +1,7 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
 using Data;
-using Data.Entities.User;
+using Data.Entities.Recipe;
 using Data.Models;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;

@@ -19,5 +19,5 @@ public class ManageIngredientViewModel
 
     public Verbosity RecipeVerbosity => Verbosity.Images;
 
-    public required IList<Data.Entities.User.Ingredient> Ingredients { get; init; }
+    public required IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; }
 }

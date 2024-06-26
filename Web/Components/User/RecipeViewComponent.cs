@@ -1,6 +1,8 @@
 ﻿using Core.Models.User;
+using Core.Models.Newsletter;
 using Data;
-using Data.Entities.User;
+using Data.Entities.Ingredient;
+using Data.Entities.Recipe;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -48,16 +50,24 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
         {
             User = user,
             Recipe = recipe,
+            Recipes = await GetRecipes(user),
             Ingredients = await GetIngredients(user),
             Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 
+    private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
+    {
+        return await context.Recipes.AsNoTracking()
+            .Where(i => i.UserId == null || i.UserId == user.Id)
+            .Where(i => i.Section == Section.None)
+            .OrderBy(i => i.Name)
+            .ToListAsync();
+    }
+
     private async Task<IList<Ingredient>> GetIngredients(Data.Entities.User.User user)
     {
         return await context.Ingredients.AsNoTracking()
-            // Only grab root ingredients.
-            .Where(i => i.ParentId == null)
             .Where(i => i.UserId == null || i.UserId == user.Id)
             .OrderBy(i => i.Name)
             .ToListAsync();

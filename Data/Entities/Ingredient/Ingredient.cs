@@ -1,11 +1,13 @@
 ﻿using Core.Models.User;
+using Data.Entities.Recipe;
+using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Ingredient;
 
 /// <summary>
 /// Exercises listed on the website
@@ -18,8 +20,6 @@ public class Ingredient
     public int Id { get; init; }
 
     public int? UserId { get; init; }
-
-    public int? ParentId { get; init; }
 
     /// <summary>
     /// Friendly name.
@@ -59,22 +59,16 @@ public class Ingredient
     /// </summary>
     public DateOnly LastUpdated { get; set; }
 
-    /// <summary>
-    /// The base ingredient.
-    /// </summary>
-    [JsonIgnore, InverseProperty(nameof(Children))]
-    public virtual Ingredient? Parent { get; private init; } = null!;
+    [InverseProperty(nameof(IngredientAlternative.Ingredient))]
+    public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];
 
-    /// <summary>
-    /// Substitute ingredients.
-    /// </summary>
-    [InverseProperty(nameof(Parent))]
-    public virtual ICollection<Ingredient> Children { get; private init; } = [];
+    [JsonIgnore, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
+    public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
 
     public string? DisabledReason { get; private init; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.Ingredients))]
-    public virtual User? User { get; set; }
+    public virtual User.User? User { get; set; }
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;

@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        context.Add(new Data.Entities.User.Ingredient()
+        context.Add(new Ingredient()
         {
             User = user,
             Name = name,
@@ -32,7 +33,7 @@ public partial class UserController
         await context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
+        return RedirectToAction(nameof(Edit), new { email, token });
     }
 
     [HttpPost]
@@ -54,7 +55,7 @@ public partial class UserController
         await context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
+        return RedirectToAction(nameof(Edit), new { email, token });
     }
 
     [HttpPost]
@@ -133,12 +134,12 @@ public partial class UserController
         existingIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
         await context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(UserController.ManageIngredient), new { email, token, ingredientId, wasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, wasUpdated = true });
     }
 
     [HttpPost]
     [Route("ingredient/post")]
-    public async Task<IActionResult> ManageIngredientPost(string email, string token, Data.Entities.User.Ingredient ingredient, List<Data.Entities.User.Nutrient> nutrients)
+    public async Task<IActionResult> ManageIngredientPost(string email, string token, Ingredient ingredient, List<Data.Entities.User.Nutrient> nutrients)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
@@ -199,6 +200,6 @@ public partial class UserController
 
         await context.SaveChangesAsync();
         //TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-        return RedirectToAction(nameof(UserController.ManageIngredient), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
     }
 }

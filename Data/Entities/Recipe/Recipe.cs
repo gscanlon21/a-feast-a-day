@@ -2,13 +2,14 @@
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Entities.Newsletter;
+using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Recipe;
 
 /// <summary>
 /// Exercises listed on the website
@@ -57,10 +58,13 @@ public class Recipe
     public string? DisabledReason { get; set; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.Recipes))]
-    public virtual User User { get; set; } = null!;
+    public virtual User.User User { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(RecipeIngredient.Recipe))]
     public virtual IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
+
+    [JsonIgnore, InverseProperty(nameof(RecipeIngredient.IngredientRecipe))]
+    public virtual List<RecipeIngredient> RecipeIngredientRecipes { get; private init; } = null!;
 
     [JsonInclude, InverseProperty(nameof(RecipeInstruction.Recipe))]
     public virtual IList<RecipeInstruction> Instructions { get; set; } = [];
@@ -76,7 +80,7 @@ public class Recipe
     public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
 
-    [NotMapped, Required]
+    [NotMapped]
     public Section[]? SectionBinder
     {
         get => Enum.GetValues<Section>().Where(e => Section.HasFlag(e)).ToArray();

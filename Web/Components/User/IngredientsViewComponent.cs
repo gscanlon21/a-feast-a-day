@@ -1,7 +1,7 @@
 ﻿using Core.Dtos.User;
 using Core.Models.User;
 using Data;
-using Data.Entities.User;
+using Data.Entities.Ingredient;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

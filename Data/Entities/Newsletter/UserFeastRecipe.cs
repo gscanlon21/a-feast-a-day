@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,7 +14,7 @@ public class UserFeastRecipe
 {
     public UserFeastRecipe() { }
 
-    public UserFeastRecipe(UserFeast newsletter, Recipe userRecipe, int scale)
+    public UserFeastRecipe(UserFeast newsletter, Recipe.Recipe userRecipe, int scale)
     {
         UserFeastId = newsletter.Id;
         RecipeId = userRecipe.Id;
@@ -41,8 +40,8 @@ public class UserFeastRecipe
     /// </summary>
     public Section Section { get; init; }
 
-    [JsonIgnore, InverseProperty(nameof(User.Recipe.UserFeastRecipes))]
-    public virtual Recipe Recipe { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserFeastRecipes))]
+    public virtual Recipe.Recipe Recipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeast.UserFeastRecipes))]
     public virtual UserFeast UserFeast { get; private init; } = null!;

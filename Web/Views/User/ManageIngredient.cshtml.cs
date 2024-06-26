@@ -1,4 +1,5 @@
-﻿
+﻿using Data.Entities.Ingredient;
+
 namespace Web.Views.User;
 
 public class UserManageIngredientViewModel
@@ -11,7 +12,7 @@ public class UserManageIngredientViewModel
 
     public required string Token { get; init; }
     public required Data.Entities.User.User User { get; set; } = null!;
-    public required Data.Entities.User.Ingredient Ingredient { get; set; } = null!;
+    public required Ingredient Ingredient { get; set; } = null!;
 
     public bool? WasUpdated { get; init; }
 }

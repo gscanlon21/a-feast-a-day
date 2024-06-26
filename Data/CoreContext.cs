@@ -1,5 +1,7 @@
 ﻿using Data.Entities.Footnote;
+using Data.Entities.Ingredient;
 using Data.Entities.Newsletter;
+using Data.Entities.Recipe;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,6 +38,7 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId });
         modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserServing>().HasKey(sc => new { sc.UserId, sc.Section });
+        modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
 
         //modelBuilder
         //    .Entity<Variation>()

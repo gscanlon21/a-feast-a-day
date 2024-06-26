@@ -11,7 +11,7 @@ public class UserManageRecipeViewModel
 
     public Data.Entities.User.User User { get; init; } = null!;
 
-    public required Data.Entities.User.Recipe Recipe { get; init; }
+    public required Data.Entities.Recipe.Recipe Recipe { get; init; }
 
     public required bool HasUserRecipe { get; init; }
 

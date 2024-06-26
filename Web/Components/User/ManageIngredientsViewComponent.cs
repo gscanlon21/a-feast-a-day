@@ -1,6 +1,7 @@
 ﻿using Core.Dtos.User;
 using Data;
-using Data.Entities.User;
+using Data.Entities.Ingredient;
+using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;

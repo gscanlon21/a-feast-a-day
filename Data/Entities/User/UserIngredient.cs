@@ -21,10 +21,10 @@ public class UserIngredient
     public bool Ignore { get; set; }
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserIngredients))]
-    public virtual Ingredient Ingredient { get; private init; } = null!;
+    public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserSubstituteIngredients))]
-    public virtual Ingredient SubstituteIngredient { get; private init; } = null!;
+    public virtual Ingredient.Ingredient SubstituteIngredient { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
 

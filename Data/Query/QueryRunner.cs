@@ -3,6 +3,7 @@ using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
+using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Models;
 using Data.Query.Options;
@@ -57,6 +58,11 @@ public class QueryRunner(Section section)
             .Include(r => r.RecipeIngredients)
                 .ThenInclude(i => i.Ingredient)
                     .ThenInclude(i => i.Nutrients)
+            .Include(r => r.RecipeIngredients)
+                .ThenInclude(i => i.Ingredient)
+                    .ThenInclude(i => i.AlternativeIngredients)
+                        .ThenInclude(i => i.Ingredient)
+                            .ThenInclude(i => i.Nutrients)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -120,46 +126,54 @@ public class QueryRunner(Section section)
                 queryResult.Recipe.Servings *= scale;
 
                 var finalRecipeIngredients = new List<RecipeIngredient>();
-                foreach (var ingredient in queryResult.Recipe.RecipeIngredients)
+                foreach (var recipeIngredient in queryResult.Recipe.RecipeIngredients)
                 {
-                    // Don't grap recipes that contain ignored ingredients.
-                    var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == ingredient.IngredientId);
-                    if (userIngredient?.Ignore == true)
+                    if (recipeIngredient.IngredientId.HasValue)
                     {
-                        if (ingredient.Optional)
+                        // Don't grab recipes that contain ignored ingredients.
+                        var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == recipeIngredient.IngredientId);
+                        if (userIngredient?.Ignore == true)
                         {
-                            continue;
+                            if (recipeIngredient.Optional)
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                ignoreRecipe = true;
+                            }
+                        }
+
+                        // Find the user's substituted ingredient.
+                        recipeIngredient.Ingredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
+
+                        // Switch the ingredient with another if it conflicts with allergens.
+                        var substituteIngredient = recipeIngredient.Ingredient.SubstitutedIngredientForAllergens(allIngredients, UserOptions.Allergens);
+                        if (substituteIngredient == null)
+                        {
+                            if (recipeIngredient.Optional)
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                ignoreRecipe = true;
+                            }
                         }
                         else
                         {
-                            ignoreRecipe = true;
+                            recipeIngredient.Ingredient = substituteIngredient;
                         }
+
+                        // Scale the ingredient.
+                        recipeIngredient.QuantityNumerator *= scale;
                     }
-
-                    // Find the user's substituted ingredient.
-                    ingredient.Ingredient = ingredient.Ingredient.SubstitutedIngredient(userIngredient);
-
-                    // Switch the ingredient with another if it conflicts with allergens.
-                    var substituteIngredient = ingredient.Ingredient.SubstitutedIngredientForAllergens(allIngredients, UserOptions.Allergens);
-                    if (substituteIngredient == null)
+                    else if (recipeIngredient.IngredientRecipeId.HasValue)
                     {
-                        if (ingredient.Optional)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            ignoreRecipe = true;
-                        }
-                    }
-                    else
-                    {
-                        ingredient.Ingredient = substituteIngredient;
+                        //if (recipeIngredient.Recipe.UserRecipe.Ignore)
                     }
 
-                    // Scale the ingredient.
-                    ingredient.QuantityNumerator *= scale;
-                    finalRecipeIngredients.Add(ingredient);
+                    finalRecipeIngredients.Add(recipeIngredient);
                 }
 
                 if (!ignoreRecipe)
@@ -235,10 +249,13 @@ public class QueryRunner(Section section)
 
                 // Don't overwork nutrients.
                 var overworkedNutrients = GetOverworkedNutrients(finalResults, nutrientTarget: nutrientTarget);
-                if (overworkedNutrients.Any(mg => nutrientTarget(recipe).HasAnyFlag32(mg)))
+                try
                 {
-                    continue;
-                }
+                    if (overworkedNutrients.Any(mg => nutrientTarget(recipe).HasAnyFlag32(mg)))
+                    {
+                        continue;
+                    }
+                } catch { continue; }
 
                 // Choose exercises that cover at least X muscles in the targeted muscles set.
                 if (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue)
@@ -312,7 +329,7 @@ public class QueryRunner(Section section)
         }
 
         var ingredientsCreated = new HashSet<UserIngredient>();
-        foreach (var ingredient in queryResults.SelectMany(qr => qr.Recipe.RecipeIngredients))
+        foreach (var ingredient in queryResults.SelectMany(qr => qr.Recipe.RecipeIngredients).Where(i => i.IngredientId.HasValue))
         {
             var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == ingredient.IngredientId);
             if (userIngredient == null)
@@ -320,8 +337,8 @@ public class QueryRunner(Section section)
                 userIngredient = new UserIngredient()
                 {
                     UserId = UserOptions.Id,
-                    IngredientId = ingredient.IngredientId,
-                    SubstituteIngredientId = ingredient.IngredientId,
+                    IngredientId = ingredient.IngredientId!.Value,
+                    SubstituteIngredientId = ingredient.IngredientId!.Value,
                 };
                 if (ingredientsCreated.Add(userIngredient))
                 {

@@ -1,6 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Data.Entities.Newsletter;
-using Data.Entities.User;
+using Data.Entities.Recipe;
 
 namespace Data.Query.Options;
 
@@ -16,7 +16,7 @@ public class RecipeOptions : IOptions
     }
 
     /// <summary>
-    /// Will not choose any exercises that fall in this list.
+    /// RecipeId:Scale.
     /// </summary>
     public Dictionary<int, int>? RecipeIds { get; private set; }
 
@@ -37,6 +37,24 @@ public class RecipeOptions : IOptions
             if (RecipeIds == null)
             {
                 RecipeIds = recipes.ToDictionary(nv => nv.Id, nv => 1);
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Exclude any variation of these exercises from being chosen.
+    /// </summary>
+    public void AddRecipes(IEnumerable<KeyValuePair<int, int>>? recipeIds)
+    {
+        if (recipeIds != null)
+        {
+            if (RecipeIds == null)
+            {
+                RecipeIds = recipeIds.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
             }
             else
             {

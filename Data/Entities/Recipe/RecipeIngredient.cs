@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Recipe;
 
 /// <summary>
 /// Exercises listed on the website
@@ -17,13 +17,14 @@ public class RecipeIngredient
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
-    [Display(Name = "Ingredient")]
-    public int IngredientId { get; init; }
+    [Display(Name = "Recipe")]
+    public int RecipeId { get; init; }
 
-    /// <summary>
-    /// Chopped, thinly sliced...
-    /// </summary>
-    public string? Attributes { get; init; }
+    [Display(Name = "Ingredient")]
+    public int? IngredientId { get; init; }
+
+    [Display(Name = "Ingredient (Recipe)")]
+    public int? IngredientRecipeId { get; init; }
 
     [Range(1, 1000), Display(Name = "Quantity")]
     public int QuantityNumerator { get; set; } = 1;
@@ -34,11 +35,12 @@ public class RecipeIngredient
     [Required]
     public Measure Measure { get; set; }
 
-
     public bool Optional { get; set; }
 
-    [NotMapped]
-    public bool Hide { get; set; }
+    /// <summary>
+    /// Chopped, thinly sliced...
+    /// </summary>
+    public string? Attributes { get; init; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
@@ -48,16 +50,22 @@ public class RecipeIngredient
     public string? DisabledReason { get; private init; } = null;
 
     [NotMapped]
+    public bool Hide { get; set; }
+
+    [NotMapped]
     public string Name => Ingredient?.Name ?? "";
 
     [NotMapped]
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.RecipeIngredients))]
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredients))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
-    [JsonInclude, InverseProperty(nameof(Entities.User.Ingredient.RecipeIngredients))]
-    public virtual Ingredient Ingredient { get; set; } = null!;
+    [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.RecipeIngredients))]
+    public virtual Ingredient.Ingredient Ingredient { get; set; } = null!;
+
+    [JsonInclude, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredientRecipes))]
+    public virtual Recipe IngredientRecipe { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

@@ -55,8 +55,8 @@ public class UserRecipe
     public int PadRefreshXWeeks { get; set; } = UserConsts.PadRefreshXWeeksDefault;
 
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Recipe.UserRecipes))]
-    public virtual Recipe Recipe { get; set; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserRecipes))]
+    public virtual Recipe.Recipe Recipe { get; set; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
     public virtual User User { get; private init; } = null!;

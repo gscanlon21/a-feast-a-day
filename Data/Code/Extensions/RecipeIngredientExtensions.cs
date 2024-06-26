@@ -1,5 +1,6 @@
 ﻿using Core.Models.User;
-using Data.Entities.User;
+using Data.Entities.Ingredient;
+using Data.Entities.Recipe;
 using Fractions;
 
 namespace Core.Code.Extensions;

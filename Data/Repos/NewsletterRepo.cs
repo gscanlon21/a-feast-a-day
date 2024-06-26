@@ -7,7 +7,9 @@ using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Entities.Footnote;
+using Data.Entities.Ingredient;
 using Data.Entities.Newsletter;
+using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
@@ -283,14 +285,14 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
 
             var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
-            var denonimator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure)));
-            while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denonimator) && denonimator > 0))
+            var denominator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure)));
+            while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denominator) && denominator > 0))
             {
                 numerator *= 10;
-                denonimator *= 10;
+                denominator *= 10;
             }
 
-            var fraction = new Fraction((int)numerator, (int)denonimator);
+            var fraction = new Fraction((int)numerator, (int)denominator);
             shoppingList.Add(new ShoppingListItemDto()
             {
                 Name = group.Key.Name,

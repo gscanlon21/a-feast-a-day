@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.User;
 using Data;
+using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,17 +34,11 @@ public class ManageIngredientViewComponent(CoreContext context) : ViewComponent
             await context.SaveChangesAsync();
         }
 
-        var ingredients = await context.Ingredients.AsNoTracking()
-            .Where(i => i.UserId == null || i.UserId == user.Id)
-            .Where(i => i.ParentId == ingredient.Id)
-            .OrderBy(i => i.Name)
-            .ToListAsync();
-
         return View("ManageIngredient", new ManageIngredientViewModel()
         {
             User = user,
             Parameters = parameters,
-            Ingredients = ingredients,
+            Ingredients = ingredient.AlternativeIngredients.Select(ai => ai.Ingredient).ToList(),
             UserIngredient = userIngredient,
             Ingredient = ingredient.AsType<IngredientDto, Ingredient>()!,
         });

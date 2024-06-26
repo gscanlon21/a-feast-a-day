@@ -38,8 +38,8 @@ public class Nutrient
 
     public string? DisabledReason { get; private init; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.Ingredient.Nutrients))]
-    public virtual Ingredient? Ingredient { get; set; }
+    [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.Nutrients))]
+    public virtual Ingredient.Ingredient? Ingredient { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);
 
