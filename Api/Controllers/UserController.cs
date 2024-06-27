@@ -69,7 +69,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
             .Query(serviceScopeFactory))
             .ToList();
 
-        var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast, recipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast, recipes.SelectMany(r => r.RecipeIngredients).ToList());
         return StatusCode(StatusCodes.Status200OK, shoppingList);
     }
 
