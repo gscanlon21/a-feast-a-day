@@ -287,7 +287,7 @@ public class UserRepo(CoreContext context)
         var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks);
         var totalCaloricIntake = weeklyNutrientVolumeFromRecipeIngredients[Nutrients.Calories] + weeklyNutrientVolumeFromRecipeIngredientRecipes[Nutrients.Calories];
 
-        var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
+        var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
             var gramsOfRda = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
@@ -297,7 +297,7 @@ public class UserRepo(CoreContext context)
         return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
         {
             // If there is no RDA or TUL.
-            if (familyNutrientServings[n] == 0) { return 0; }
+            if (familyNutrientServings[n] <= 0) { return null; }
 
             if (weeklyNutrientVolumeFromRecipeIngredients[n].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[n].HasValue)
             {

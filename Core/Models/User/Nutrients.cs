@@ -106,7 +106,7 @@ public enum Nutrients : long
     /// Dietary cholesterol is different from blood (HDL—good or LDL—bad) cholesterol.
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(-1, 250, Measure.Milligrams, Multiplier.Person)]
+    [DailyAllowance(-1, 300, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
     DietaryCholesterol = 1L << 11, // 2048
 

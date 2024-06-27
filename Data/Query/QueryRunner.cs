@@ -297,8 +297,8 @@ public class QueryRunner(Section section)
         }
         // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
         // Choose a 3-muscle group compound exercise or a 2-muscle group compound exercise and then an isolation exercise.
-        while (ServingsOptions.AtLeastXServingsPerRecipe.HasValue && --ServingsOptions.AtLeastXServingsPerRecipe >= 1
-            || NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXUniqueNutrientsPerRecipe >= 1
+        while ((ServingsOptions.AtLeastXServingsPerRecipe.HasValue && --ServingsOptions.AtLeastXServingsPerRecipe >= 1)
+            || (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXUniqueNutrientsPerRecipe >= 1)
         );
 
         // REFACTORME
