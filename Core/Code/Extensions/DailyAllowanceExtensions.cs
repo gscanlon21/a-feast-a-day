@@ -1,6 +1,5 @@
 ﻿using Core.Code.Attributes;
 using Core.Models.User;
-using System;
 using System.Reflection;
 using static Core.Code.Extensions.EnumExtensions;
 
@@ -27,20 +26,16 @@ public static class DailyAllowanceExtensions
 
     public static string DailyAllowanceDisplayName(this Nutrients nutrients)
     {
-        var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
-        if (memberInfo != null && memberInfo.Length > 0)
+        var attribute = nutrients.DailyAllowance(Person.YoungAdult);
+        if (attribute != null)
         {
-            var attribute = memberInfo[0].GetCustomAttribute<DailyAllowanceAttribute>(true);
-            if (attribute != null)
+            return $@"({(attribute.RDA, attribute.TUL) switch
             {
-                return $@"({(attribute.RDA, attribute.TUL) switch
-                {
-                    (null, not null) => $"TUL={attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                    (not null, null) => $"RDA={attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                    (not null, not null) => $"{attribute.RDA}-{attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                    _ => string.Empty
-                }} / {attribute.Multiplier.GetSingleDisplayName(DisplayNameType.ShortName)})";
-            }
+                (null, not null) => $"TUL={attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                (not null, null) => $"RDA={attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                (not null, not null) => $"{attribute.RDA}-{attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                _ => string.Empty
+            }} / {attribute.Multiplier.GetSingleDisplayName(DisplayNameType.ShortName)})";
         }
 
         return string.Empty;
