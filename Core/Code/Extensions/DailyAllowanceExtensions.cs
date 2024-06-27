@@ -1,5 +1,7 @@
 ﻿using Core.Code.Attributes;
 using Core.Models.User;
+using System;
+using System.Reflection;
 using static Core.Code.Extensions.EnumExtensions;
 
 namespace Core.Code.Extensions;
@@ -11,7 +13,7 @@ public static class DailyAllowanceExtensions
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)
         {
-            var attributes = memberInfo[0].GetCustomAttributes(typeof(DailyAllowanceAttribute), true).Cast<DailyAllowanceAttribute>().ToArray();
+            var attributes = memberInfo[0].GetCustomAttributes<DailyAllowanceAttribute>(true).ToArray();
             if (attributes != null && attributes.Length > 0)
             {
                 return attributes.FirstOrDefault(a => a.For == person)
@@ -28,17 +30,16 @@ public static class DailyAllowanceExtensions
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)
         {
-            var attributes = memberInfo[0].GetCustomAttributes(typeof(DailyAllowanceAttribute), true);
-            if (attributes != null && attributes.Length > 0)
+            var attribute = memberInfo[0].GetCustomAttribute<DailyAllowanceAttribute>(true);
+            if (attribute != null)
             {
-                var attribute = (DailyAllowanceAttribute)attributes[0];
                 return $@"({(attribute.RDA, attribute.TUL) switch
                 {
-                    (null, not null) => $"TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                    (not null, null) => $"RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                    (not null, not null) => $"RDA = {attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}, TUL = {attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                    (null, not null) => $"TUL={attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                    (not null, null) => $"RDA={attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                    (not null, not null) => $"{attribute.RDA}-{attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
                     _ => string.Empty
-                }} / {attribute.Multiplier.GetSingleDisplayName()})";
+                }} / {attribute.Multiplier.GetSingleDisplayName(DisplayNameType.ShortName)})";
             }
         }
 

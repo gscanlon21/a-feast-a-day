@@ -1,5 +1,6 @@
 ﻿using Core.Code.Attributes;
 using Core.Models.User;
+using System.Reflection;
 
 namespace Core.Code.Extensions;
 
@@ -10,10 +11,10 @@ public static class DefaultMeasureExtensions
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)
         {
-            var attrs = memberInfo[0].GetCustomAttributes(typeof(DefaultMeasureAttribute), true).Cast<DefaultMeasureAttribute>().ToArray();
-            if (attrs != null && attrs.Length > 0)
+            var attribute = memberInfo[0].GetCustomAttribute<DefaultMeasureAttribute>(true);
+            if (attribute != null)
             {
-                return attrs[0].Measure;
+                return attribute.Measure;
             }
         }
 

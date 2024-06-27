@@ -10,9 +10,9 @@ public enum Multiplier
     [Display(Name = "Person")]
     Person = 1,
 
-    [Display(Name = "Kilogram of bodyweight")]
+    [Display(Name = "Kilogram", ShortName = "kg")]
     KilogramOfBodyweight = 2,
 
-    [Display(Name = "Kilocalorie")]
+    [Display(Name = "Kilocalorie", ShortName = "Kcal")]
     Kilocalorie = 3,
 }

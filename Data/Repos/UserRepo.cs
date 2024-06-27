@@ -290,26 +290,24 @@ public class UserRepo(CoreContext context)
         var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
-            var gramsOfRda = (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
+            var gramsOfRda = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
             return gramsOfRda * (user.IsDemoUser ? 49 : 7);
         });
 
-        return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m,
-            m =>
-            {
-                var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == m).Value ?? 100;
-                if (!rawValues && weeklyNutrientVolumeFromRecipeIngredients[m].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[m].HasValue)
-                {
-                    return rawValues ? familyGrams - (weeklyNutrientVolumeFromRecipeIngredients[m].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[m].GetValueOrDefault())
-                        : (weeklyNutrientVolumeFromRecipeIngredients[m].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[m].GetValueOrDefault()) / (familyGrams > 0 ? familyGrams : 100) * 100;
-                }
+        return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
+        {
+            // If there is no RDA or TUL.
+            if (familyNutrientServings[n] == 0) { return 0; }
 
-                // Not using the mobility value if the strength value doesn't exist because
-                // ... we don't want muscle target adjustments to apply to strength workouts using mobility muscle volumes.
-                return rawValues ? familyGrams - weeklyNutrientVolumeFromRecipeIngredients[m]
-                    : weeklyNutrientVolumeFromRecipeIngredients[m] / (familyGrams > 0 ? familyGrams : 100) * 100;
-            })
-        );
+            if (weeklyNutrientVolumeFromRecipeIngredients[n].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[n].HasValue)
+            {
+                return rawValues ? familyNutrientServings[n] - (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault())
+                    : (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault()) / familyNutrientServings[n] * 100;
+            }
+
+            return rawValues ? familyNutrientServings[n] - weeklyNutrientVolumeFromRecipeIngredients[n]
+                : weeklyNutrientVolumeFromRecipeIngredients[n] / familyNutrientServings[n] * 100;
+        }));
     }
 
     public async Task<string> AddUserToken(User user, DateTime expires)
