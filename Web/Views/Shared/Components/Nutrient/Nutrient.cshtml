@@ -1,4 +1,5 @@
-﻿@model Web.Views.Shared.Components.Nutrient.NutrientViewModel
+﻿@model NutrientViewModel
+@using Web.Views.Shared.Components.Nutrient
 @using Core.Consts
 @using Core.Models.Recipe
 @using Data.Entities.User
@@ -20,12 +21,12 @@
 <div class="alert alert-primary" role="alert">
     <div style="display:flex;flex-direction:column;row-gap:1ex;">
         @foreach (var nutrientTarget in UserNutrient.NutrientTargets
-        .Select(kv => Model.GetMuscleTarget(kv))
+        .Select(kv => Model.GetNutrientTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
         .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayNameType.GroupName))
         .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayNameType.Name))
-        .Append(new Web.Views.Shared.Components.Nutrient.NutrientViewModel.MonthlyMuscle()
+        .Append(new NutrientViewModel.NutrientTarget()
         {
             IngredientGroup = Nutrients.All,
             ShowButtons = true,

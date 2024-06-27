@@ -22,14 +22,14 @@ public class NutrientViewModel
     // The max value (seconds of time-under-tension) of the range display
     public double MaxRangeValue => UserNutrient.NutrientTargets.Values.Max(r => r.End.Value);
 
-    public MonthlyMuscle GetMuscleTarget(KeyValuePair<Nutrients, Range> defaultRange)
+    public NutrientTarget GetNutrientTarget(KeyValuePair<Nutrients, Range> defaultRange)
     {
         var userMuscleTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == defaultRange.Key)?.Range ?? UserNutrient.NutrientTargets[defaultRange.Key];
 
         var sumRDA = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).RDA);
         var sumTUL = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
         var start = sumRDA / sumTUL * userMuscleTarget.Start.Value ?? 0;
-        return new MonthlyMuscle()
+        return new NutrientTarget()
         {
             IngredientGroup = defaultRange.Key,
             UserMuscleTarget = userMuscleTarget,
@@ -38,13 +38,14 @@ public class NutrientViewModel
             End = sumRDA / sumTUL * userMuscleTarget.End.Value ?? 100,
             DefaultStart = sumRDA / sumTUL * defaultRange.Value.Start.Value ?? 0,
             DefaultEnd = sumRDA / sumTUL * defaultRange.Value.End.Value ?? 100,
-            ValueInRange = Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / 100d * start),
+            ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / 100d * start)
+                : Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / (sumTUL ?? 1) * 100),
             ShowButtons = UsersWorkedMuscles.HasFlag(defaultRange.Key),
             Increment = sumRDA / sumTUL * UserConsts.IncrementNutrientTargetBy ?? UserConsts.IncrementNutrientTargetBy,
         };
     }
 
-    public class MonthlyMuscle
+    public class NutrientTarget
     {
         public required Nutrients IngredientGroup { get; init; }
         public required Range UserMuscleTarget { get; init; }

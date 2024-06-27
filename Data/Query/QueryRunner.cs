@@ -153,7 +153,7 @@ public class QueryRunner(Section section)
                         }
 
                         // Find the user's substituted ingredient.
-                        recipeIngredient.Ingredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
+                        recipeIngredient.Ingredient = recipeIngredient.Ingredient!.SubstitutedIngredient(userIngredient);
 
                         // Switch the ingredient with another if it conflicts with allergens.
                         var substituteIngredient = recipeIngredient.Ingredient.SubstitutedIngredientForAllergens(allIngredients, UserOptions.Allergens);

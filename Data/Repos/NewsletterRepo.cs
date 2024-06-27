@@ -282,10 +282,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
-            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
+            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient!.DefaultMeasure));
 
-            var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure));
-            var denominator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToMeasure(g.Ingredient.DefaultMeasure)));
+            var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient!.DefaultMeasure));
+            var denominator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToMeasure(g.Ingredient!.DefaultMeasure)));
             while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denominator) && denominator > 0))
             {
                 numerator *= 10;
@@ -296,7 +296,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             shoppingList.Add(new ShoppingListItemDto()
             {
                 Name = group.Key.Name,
-                Measure = group.Key.Ingredient.DefaultMeasure,
+                Measure = group.Key.Ingredient!.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
                 Quantity = Math.Max(1, (int)Math.Ceiling(fraction.ToDouble())),
             });

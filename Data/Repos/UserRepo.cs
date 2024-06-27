@@ -279,7 +279,7 @@ public class UserRepo(CoreContext context)
     /// 
     /// Returns `null` when the user is new to fitness.
     /// </summary>
-    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false)
+    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
@@ -290,8 +290,17 @@ public class UserRepo(CoreContext context)
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
-            var gramsOfRda = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
-            return gramsOfRda * (user.IsDemoUser ? 49 : 7);
+            double gramsOfRDATUL;
+            if (tul)
+            {
+                gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfTUL(fp.Value, totalCaloricIntake.GetValueOrDefault()));
+            }
+            else
+            {
+                gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
+            }
+
+            return gramsOfRDATUL * (user.IsDemoUser ? 49 : 7);
         });
 
         return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>

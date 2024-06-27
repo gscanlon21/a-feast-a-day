@@ -20,7 +20,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithNutrientTargetsFromNutrients(null)
+                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
@@ -60,7 +60,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithNutrientTargetsFromNutrients(null)
+                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
@@ -100,7 +100,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithNutrientTargetsFromNutrients(null)
+                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
@@ -140,7 +140,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithNutrientTargetsFromNutrients(null)
+                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale))
             .WithServingsOptions(options =>
             {
@@ -177,7 +177,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithNutrientTargetsFromNutrients(null)
+                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale))
             .WithServingsOptions(options =>
             {
@@ -214,7 +214,7 @@ public partial class NewsletterRepo
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithNutrientTargetsFromNutrients(null)
+                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale))
             .WithServingsOptions(options =>
             {

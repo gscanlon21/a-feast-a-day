@@ -18,14 +18,16 @@ public partial class NewsletterRepo
     internal async Task<FeastContext?> BuildFeastContext(User user, string token, DateOnly date)
     {
         var (_, timeUntilNextSend) = await userRepo.GetNextSendDate(user);
-        var (weeks, volume) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.TrainingVolumeWeeks, rawValues: true);
+        var (weeks, volumeRDA) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.TrainingVolumeWeeks, rawValues: true);
+        var (_, volumeTUL) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.TrainingVolumeWeeks, rawValues: true, tul: true);
         return new FeastContext()
         {
             Date = date,
             User = user.AsType<UserDto, User>()!,
             Token = token,
             WeeklyNutrientsWeeks = weeks,
-            WeeklyNutrients = volume,
+            WeeklyNutrientsRDA = volumeRDA,
+            WeeklyNutrientsTUL = volumeTUL,
             DaysUntilNextNewsletter = ((int?)timeUntilNextSend?.TotalDays + 1) ?? 1
         };
     }
