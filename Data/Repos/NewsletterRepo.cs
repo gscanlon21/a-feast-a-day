@@ -148,7 +148,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
 
-        var shoppingList = await GetShoppingList(newsletter, debugRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, debugRecipes.SelectMany(r => r.RecipeIngredients).ToList());
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
@@ -177,7 +177,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var allRecipes = dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList();
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
-        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.RecipeIngredients).ToList());
 
         var userViewModel = new UserNewsletterDto(newsletterContext);
         var viewModel = new NewsletterDto
@@ -244,7 +244,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         }
 
         var allRecipes = dinnerRecipes.Concat(lunchRecipes).Concat(breakfastRecipes).Concat(sideRecipes).Concat(snackRecipes).Concat(dessertRecipes);
-        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.Recipe.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.RecipeIngredients).ToList());
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
@@ -273,12 +273,12 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<RecipeIngredient> recipeIngredients)
+    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<RecipeIngredientQueryResults> recipeIngredients)
     {
         var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
         foreach (var group in recipeIngredients.OrderBy(ri => ri.Id)
-            .GroupBy(l => l, new ShoppingListComparer())
+            .GroupBy(l => l, new ShoppingListComparer2())
             .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
@@ -307,6 +307,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             NewsletterId = newsletter.Id,
             ShoppingList = shoppingList
         };
+    }
+
+    private class ShoppingListComparer2 : IEqualityComparer<RecipeIngredientQueryResults>
+    {
+        public int GetHashCode(RecipeIngredientQueryResults e) => HashCode.Combine(e.Name.TrimEnd('s'));
+        public bool Equals(RecipeIngredientQueryResults? a, RecipeIngredientQueryResults? b)
+            => a?.Name.TrimEnd('s', ' ') == b?.Name.TrimEnd('s', ' ');
     }
 
     private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>

@@ -1,5 +1,5 @@
-﻿using Core.Models.User;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
+using Core.Models.User;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;

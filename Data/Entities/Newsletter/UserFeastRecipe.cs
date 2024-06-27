@@ -14,10 +14,10 @@ public class UserFeastRecipe
 {
     public UserFeastRecipe() { }
 
-    public UserFeastRecipe(UserFeast newsletter, Recipe.Recipe userRecipe, int scale)
+    public UserFeastRecipe(UserFeast newsletter, Recipe.Recipe recipe, int scale)
     {
         UserFeastId = newsletter.Id;
-        RecipeId = userRecipe.Id;
+        RecipeId = recipe.Id;
         Scale = scale;
     }
 

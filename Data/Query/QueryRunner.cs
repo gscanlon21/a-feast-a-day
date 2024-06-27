@@ -3,7 +3,6 @@ using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
-using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Models;
 using Data.Query.Options;
@@ -21,10 +20,10 @@ namespace Data.Query;
 public class QueryRunner(Section section)
 {
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
-    private class RecipesQueryResults
-        : IRecipeCombo
+    public class RecipesQueryResults : IRecipeCombo
     {
-        public Recipe Recipe { get; init; } = null!;
+        public Entities.Recipe.Recipe Recipe { get; init; } = null!;
+        public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = null!;
         public UserRecipe UserRecipe { get; init; } = null!;
         public bool UserOwnsEquipment { get; init; }
     }
@@ -34,7 +33,8 @@ public class QueryRunner(Section section)
         IRecipeCombo
     {
         public int Scale { get; set; } = 1;
-        public Recipe Recipe { get; } = queryResult.Recipe;
+        public Entities.Recipe.Recipe Recipe { get; } = queryResult.Recipe;
+        public IList<RecipeIngredientQueryResults> RecipeIngredients { get; set; } = queryResult.RecipeIngredients;
         public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
         public bool UserOwnsEquipment { get; } = queryResult.UserOwnsEquipment;
 
@@ -73,6 +73,11 @@ public class QueryRunner(Section section)
             {
                 Recipe = i,
                 UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
+                RecipeIngredients = i.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
+                {
+                    UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
+                    UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
+                }).ToList(),
                 UserOwnsEquipment = UserOptions.NoUser
                     // The user owns all of the equipment for the recipe.
                     || UserOptions.Equipment.HasFlag(i.Equipment)
@@ -109,15 +114,20 @@ public class QueryRunner(Section section)
         }
         else
         {
+            await AddMissingUserRecords(context, queryResults);
+            // Do this before querying prerequisites so that the user records also exist for the prerequisites.
+
+
             var allIngredients = await context.Ingredients.ToListAsync();
+            var userIngredientRecipes = await context.UserRecipes
+                .Where(i => i.UserId == UserOptions.Id)
+                .ToListAsync();
             var userIngredients = await context.UserIngredients
                 .Include(i => i.SubstituteIngredient)
                     .ThenInclude(i => i.Nutrients)
                 .Where(i => i.UserId == UserOptions.Id)
                 .ToListAsync();
 
-            // Do this before querying prerequisites so that the user records also exist for the prerequisites.
-            userIngredients.AddRange(await AddMissingUserRecords(context, queryResults, userIngredients));
             foreach (var queryResult in queryResults)
             {
                 var ignoreRecipe = false;
@@ -125,8 +135,8 @@ public class QueryRunner(Section section)
                 var scale = RecipeOptions.RecipeIds?.TryGetValue(queryResult.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1;
                 queryResult.Recipe.Servings *= scale;
 
-                var finalRecipeIngredients = new List<RecipeIngredient>();
-                foreach (var recipeIngredient in queryResult.Recipe.RecipeIngredients)
+                var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
+                foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
                     if (recipeIngredient.IngredientId.HasValue)
                     {
@@ -170,7 +180,7 @@ public class QueryRunner(Section section)
                     }
                     else if (recipeIngredient.IngredientRecipeId.HasValue)
                     {
-                        //if (recipeIngredient.Recipe.UserRecipe.Ignore)
+                        ignoreRecipe = ignoreRecipe && recipeIngredient.UserIngredientRecipe.Ignore;
                     }
 
                     finalRecipeIngredients.Add(recipeIngredient);
@@ -178,7 +188,7 @@ public class QueryRunner(Section section)
 
                 if (!ignoreRecipe)
                 {
-                    queryResult.Recipe.RecipeIngredients = finalRecipeIngredients;
+                    queryResult.RecipeIngredients = finalRecipeIngredients;
                     filteredResults.Add(queryResult);
                 }
             }
@@ -255,7 +265,8 @@ public class QueryRunner(Section section)
                     {
                         continue;
                     }
-                } catch { continue; }
+                }
+                catch { continue; }
 
                 // Choose exercises that cover at least X muscles in the targeted muscles set.
                 if (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue)
@@ -277,7 +288,7 @@ public class QueryRunner(Section section)
                 }
 
                 // TODO? If the recipe already exists, scale the recipe to make up for the missing servings?
-                var queryResult = new QueryResults(section, recipe.Recipe, recipe.UserRecipe, recipe.Scale);
+                var queryResult = new QueryResults(section, recipe.Recipe, recipe.RecipeIngredients, recipe.UserRecipe, recipe.Scale);
                 if (!finalResults.Contains(queryResult))
                 {
                     finalResults.Add(queryResult);
@@ -305,15 +316,12 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Reference updates to QueryResult.UserExercise and QueryResult.UserVariation to set them to default and save to db if they are null.
     /// </summary>
-    private async Task<HashSet<UserIngredient>> AddMissingUserRecords(CoreContext context, IList<InProgressQueryResults> queryResults, IList<UserIngredient> userIngredients)
+    private async Task AddMissingUserRecords(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
         // User is not viewing a newsletter, don't log.
-        if (section == Section.None)
-        {
-            return [];
-        }
+        if (section == Section.None) { return; }
 
-        var exercisesCreated = new HashSet<UserRecipe>();
+        var recipesCreated = new HashSet<UserRecipe>();
         foreach (var queryResult in queryResults.Where(qr => qr.UserRecipe == null))
         {
             queryResult.UserRecipe = new UserRecipe()
@@ -322,33 +330,45 @@ public class QueryRunner(Section section)
                 RecipeId = queryResult.Recipe.Id
             };
 
-            if (exercisesCreated.Add(queryResult.UserRecipe))
+            if (recipesCreated.Add(queryResult.UserRecipe))
             {
                 context.UserRecipes.Add(queryResult.UserRecipe);
             }
         }
 
-        var ingredientsCreated = new HashSet<UserIngredient>();
-        foreach (var ingredient in queryResults.SelectMany(qr => qr.Recipe.RecipeIngredients).Where(i => i.IngredientId.HasValue))
+        foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
+            .Where(i => i.UserIngredientRecipe == null && i.IngredientRecipeId.HasValue))
         {
-            var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == ingredient.IngredientId);
-            if (userIngredient == null)
+            ingredient.UserIngredientRecipe = new UserRecipe()
             {
-                userIngredient = new UserIngredient()
-                {
-                    UserId = UserOptions.Id,
-                    IngredientId = ingredient.IngredientId!.Value,
-                    SubstituteIngredientId = ingredient.IngredientId!.Value,
-                };
-                if (ingredientsCreated.Add(userIngredient))
-                {
-                    context.UserIngredients.Add(userIngredient);
-                }
+                UserId = UserOptions.Id,
+                RecipeId = ingredient.IngredientRecipeId!.Value
+            };
+
+            if (recipesCreated.Add(ingredient.UserIngredientRecipe))
+            {
+                context.UserRecipes.Add(ingredient.UserIngredientRecipe);
+            }
+        }
+
+        var ingredientsCreated = new HashSet<UserIngredient>();
+        foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
+            .Where(i => i.UserIngredient == null && i.IngredientId.HasValue))
+        {
+            ingredient.UserIngredient = new UserIngredient()
+            {
+                UserId = UserOptions.Id,
+                IngredientId = ingredient.IngredientId!.Value,
+                SubstituteIngredientId = ingredient.IngredientId!.Value,
+            };
+
+            if (ingredientsCreated.Add(ingredient.UserIngredient))
+            {
+                context.UserIngredients.Add(ingredient.UserIngredient);
             }
         }
 
         await context.SaveChangesAsync();
-        return ingredientsCreated;
     }
 
     private List<Nutrients> GetUnworkedNutrients(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> nutrientTarget)

@@ -12,11 +12,11 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any variation of these exercises from being chosen.
     /// </summary>
-    internal void AddExcludeRecipes(IEnumerable<Recipe>? exercises)
+    internal void AddExcludeRecipes(IEnumerable<Recipe>? recipes)
     {
-        if (exercises != null)
+        if (recipes != null)
         {
-            RecipeIds.AddRange(exercises.Select(e => e.Id));
+            RecipeIds.AddRange(recipes.Select(e => e.Id));
         }
     }
 }

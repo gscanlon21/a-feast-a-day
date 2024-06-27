@@ -62,9 +62,6 @@ public class RecipeDto
     public virtual UserDto User { get; set; } = null!;
 
     [JsonInclude]
-    public virtual IList<RecipeIngredientDto> RecipeIngredients { get; set; } = [];
-
-    [JsonInclude]
     public virtual IList<RecipeInstructionDto> Instructions { get; set; } = [];
 
     [JsonIgnore]

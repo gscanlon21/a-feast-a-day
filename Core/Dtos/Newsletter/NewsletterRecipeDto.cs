@@ -2,6 +2,7 @@
 using Core.Dtos.User;
 using Core.Models.Newsletter;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace Core.Dtos.Newsletter;
 
@@ -12,8 +13,13 @@ public class NewsletterRecipeDto
 
     public Section Section { get; init; }
 
+    [JsonInclude]
     public RecipeDto Recipe { get; init; } = null!;
 
+    [JsonInclude]
+    public IList<RecipeIngredientDto> RecipeIngredients { get; init; } = [];
+
+    [JsonInclude]
     public UserRecipeDto? UserRecipe { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Recipe);
