@@ -34,6 +34,9 @@ public static class MeasureExtensions
             (Measure.Pinch, Measure.Tablespoons) => 0.25, // ~
             (Measure.Cups, Measure.None) => 1, // ~ // TODO use ingredient's grams per measure.
             (Measure.None, Measure.Cups) => 1, // ~ // TODO use ingredient's grams per measure.
+            (Measure.None, Measure.Tablespoons) => 1, // ~ // TODO use ingredient's grams per measure.
+            (Measure.Slices, Measure.Cups) => 1, // ~ // TODO use ingredient's grams per measure.
+            (Measure.None, Measure.Slices) => 1, // ~ // TODO use ingredient's grams per measure.
             _ when recipeIngredientMeasure == defaultMeasure => 1,
             _ => throw new NotImplementedException($"Missing measure: {recipeIngredientMeasure}, {defaultMeasure}")
         };

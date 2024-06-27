@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Web.Migrations
+namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
     partial class CoreContextModelSnapshot : ModelSnapshot

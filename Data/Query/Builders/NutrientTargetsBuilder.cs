@@ -13,8 +13,8 @@ public interface INutrientBuilderNoContext
 
 public interface INutrientBuilderTargets : INutrientBuilderNoContext
 {
-    INutrientBuilderFinal WithNutrientTargets(IDictionary<Nutrients, int> NutrientTargets);
-    INutrientBuilderFinal WithNutrientTargetsFromNutrients(IDictionary<Nutrients, int>? workedNutrientsDict = null);
+    INutrientBuilderFinal WithNutrientTargets(IDictionary<Nutrients, double> NutrientTargets);
+    INutrientBuilderFinal WithNutrientTargetsFromNutrients(IDictionary<Nutrients, double>? workedNutrientsDict = null);
 }
 
 public interface INutrientBuilderFinalNoContext
@@ -24,7 +24,7 @@ public interface INutrientBuilderFinalNoContext
 
 public interface INutrientBuilderFinal : INutrientBuilderFinalNoContext
 {
-    INutrientBuilderFinal AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true);
+    INutrientBuilderFinal AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true, double scale = 1);
 }
 
 /// <summary>
@@ -42,7 +42,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     /// <summary>
     /// Filters variations to only those that target these Nutrient groups.
     /// </summary>
-    public IDictionary<Nutrients, int> NutrientTargets = new Dictionary<Nutrients, int>();
+    public IDictionary<Nutrients, double> NutrientTargets = new Dictionary<Nutrients, double>();
 
     private NutrientTargetsBuilder(IList<Nutrients> nutrients, FeastContext? context)
     {
@@ -65,19 +65,19 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
         return this;
     }
 
-    public INutrientBuilderFinal WithNutrientTargets(IDictionary<Nutrients, int> nutrientTargets)
+    public INutrientBuilderFinal WithNutrientTargets(IDictionary<Nutrients, double> nutrientTargets)
     {
         NutrientTargets = nutrientTargets;
 
         return this;
     }
 
-    public INutrientBuilderFinal WithNutrientTargetsFromNutrients(IDictionary<Nutrients, int>? workedNutrientsDict = null)
+    public INutrientBuilderFinal WithNutrientTargetsFromNutrients(IDictionary<Nutrients, double>? workedNutrientsDict = null)
     {
         NutrientTargets = UserNutrient.NutrientTargets.Keys
             // Base 1 target for each targeted Nutrient group. If we've already worked this Nutrient, reduce the Nutrient target volume.
             // Keep all Nutrient groups in our target dict so we exclude overworked Nutrients.
-            .ToDictionary(mt => mt, mt => (Nutrients.Any(mg => mt.HasFlag(mg)) ? 1 : 0) - (workedNutrientsDict?.TryGetValue(mt, out int workedAmt) ?? false ? workedAmt : 0));
+            .ToDictionary(mt => mt, mt => (Nutrients.Any(mg => mt.HasFlag(mg)) ? 1 : 0) - (workedNutrientsDict?.TryGetValue(mt, out double workedAmt) ?? false ? workedAmt : 0));
 
         return this;
     }
@@ -86,18 +86,29 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     /// Adjustments to the Nutrient groups to reduce Nutrient imbalances.
     /// Note: Don't change too much during deload weeks or they don't throw off the weekly Nutrient target tracking.
     /// </summary>
-    public INutrientBuilderFinal AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true)
+    public INutrientBuilderFinal AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true, double scale = 1)
     {
         if (Context?.WeeklyNutrients != null && Context.WeeklyNutrientsWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
         {
+            /*
+            var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => Context.User.UserFamilies.Where(f => f.Person == p));
+            var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Core.Models.User.Nutrients.All, Core.Models.User.Nutrients.None).ToDictionary(n => n, n =>
+            {
+                var gramsOfRda = (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake));
+                return gramsOfRda * (user.IsDemoUser ? 7 : 1); //* weeklyServings / 7d;
+            });*/
+
             foreach (var key in NutrientTargets.Keys)
             {
                 // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
                 if (Context.WeeklyNutrients[key].HasValue && UserNutrient.NutrientTargets.TryGetValue(key, out Range defaultRange))
                 {
+                    NutrientTargets[key] = Context.WeeklyNutrients[key]!.Value * scale;
+
+                    /*
                     // Use the default Nutrient target when the user's workout split never targets this Nutrient group--because they can't adjust this Nutrient group's Nutrient target.
                     var targetRange = (Core.Models.User.Nutrients.All.HasFlag(key)
-                        ? Context.User.UserNutreints.FirstOrDefault(um => um.Nutrient == key)?.Range
+                        ? Context.User.UserNutrients.FirstOrDefault(um => um.Nutrient == key)?.Range
                         : null) ?? defaultRange;
 
                     // Don't be so harsh about what constitutes an out-of-range value when there is not a lot of weekly data to work with.
@@ -124,6 +135,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
                     {
                         Nutrients.Remove(key);
                     }
+                    */
                 }
             }
         }

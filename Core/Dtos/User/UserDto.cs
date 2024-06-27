@@ -148,7 +148,7 @@ public class UserDto
     [JsonIgnore]
     public virtual ICollection<UserTokenDto> UserTokens { get; init; } = [];
 
-    [JsonIgnore]
+    [JsonInclude]
     public virtual ICollection<UserServingDto> UserServings { get; init; } = [];
 
     [JsonIgnore]

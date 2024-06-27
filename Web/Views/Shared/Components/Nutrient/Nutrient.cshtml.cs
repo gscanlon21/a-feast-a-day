@@ -15,7 +15,7 @@ public class NutrientViewModel
 
     public double WeeksOfData { get; set; }
 
-    public required IDictionary<Nutrients, int?> WeeklyVolume { get; set; }
+    public required IDictionary<Nutrients, double?> WeeklyVolume { get; set; }
 
     public Nutrients UsersWorkedMuscles { get; init; }
 

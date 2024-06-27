@@ -13,6 +13,6 @@ public class FeastContext
     /// <summary>
     /// The user's average percent daily volume for each nutrient.
     /// </summary>
-    public required IDictionary<Nutrients, int?>? WeeklyNutrients { get; init; }
+    public required IDictionary<Nutrients, double?>? WeeklyNutrients { get; init; }
     public required double WeeklyNutrientsWeeks { get; init; }
 }

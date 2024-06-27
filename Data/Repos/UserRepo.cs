@@ -8,7 +8,6 @@ using Data.Code.Extensions;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
-using System.Numerics;
 using System.Security.Cryptography;
 
 namespace Data.Repos;
@@ -117,7 +116,7 @@ public class UserRepo(CoreContext context)
         return (nextSendDateTime, timeUntilNextSend);
     }
 
-    private async Task<(double weeks, IDictionary<Nutrients, int?> volume)> GetWeeklyMuscleVolumeFromStrengthWorkouts(User user, int weeks)
+    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool rawValues = false)
     {
         var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
         var userServings = UserServing.DefaultServings.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
@@ -128,7 +127,87 @@ public class UserRepo(CoreContext context)
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.RecipeIngredients)
+                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
+                        .ThenInclude(r => r.IngredientRecipe)
+                            .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
+                                .ThenInclude(r => r.Ingredient)
+                                    .ThenInclude(r => r.Nutrients)
+            .Where(n => n.UserId == user.Id)
+            // Only look at records where the user is not new to fitness.
+            //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
+            // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
+            .Where(n => n.UserFeastRecipes.Any())
+            // Look at strengthening workouts only that are within the last X weeks.
+            //.Where(n => n.Frequency != Frequency.OffDayStretches)
+            .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
+            .GroupBy(n => n.Date)
+            .Select(g => new
+            {
+                g.Key,
+                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
+                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+                    // Only select variations that worked a strengthening intensity.
+                    .Where(nv => onlySections.HasFlag(nv.Section))
+            }).ToListAsync();
+
+        var userIngredients = await context.UserIngredients
+           .Include(i => i.SubstituteIngredient)
+               .ThenInclude(i => i.Nutrients)
+           .Where(i => i.UserId == user.Id)
+           .ToListAsync();
+
+        // .Max/.Min throw exceptions when the collection is empty.
+        if (weeklyFeasts.Count != 0)
+        {
+            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
+            var actualWeeks = (DateHelpers.Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
+            // User must have more than one week of data before we return anything.
+            if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
+            {
+                var monthlyMuscles = weeklyFeasts
+                    .SelectMany(feast => feast.Recipes
+                        .SelectMany(recipe => recipe.Recipe.RecipeIngredients.SelectMany(ri => ri.IngredientRecipe.RecipeIngredients)
+                            .SelectMany(recipeIngredient =>
+                            {
+                                var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
+                                var substitutedIngredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
+                                return substitutedIngredient?.Nutrients.Select(nutrient =>
+                                {
+                                    var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
+                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
+                                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
+                                    return new
+                                    {
+                                        Nutrient = nutrient.Nutrients,
+                                        GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe
+                                    };
+                                }) ?? [];
+                            })
+                        )
+                    ).ToList();
+
+                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m =>
+                {
+                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
+                }));
+            }
+        }
+
+        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
+    }
+
+    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool rawValues = false)
+    {
+        var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
+        var userServings = UserServing.DefaultServings.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
+        double familyCount = Math.Max(1, user.UserFamilies.Count);
+        var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
+
+        var weeklyFeasts = await context.UserFeasts
+            .AsNoTracking().TagWithCallSite()
+            .Include(f => f.UserFeastRecipes)
+                .ThenInclude(r => r.Recipe)
+                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
@@ -163,13 +242,6 @@ public class UserRepo(CoreContext context)
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
-                //var weeklyServings = UserServing.DefaultServings.Sum(ds => user.UserServings.FirstOrDefault(us => us.Section == ds.Key)?.Count ?? ds.Value) / familyCount / UserServing.DefaultServings.Count;
-                var totalCaloricIntake = weeklyFeasts.Sum(f => f.Recipes.Sum(r => r.Recipe.RecipeIngredients.Sum(i => i.NumberOfServings(i.Ingredient, r.Scale) * i.Ingredient.CaloriesPerServing)));
-                var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
-                {
-                    return (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake)); //* weeklyServings / 7d;
-                });
-
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.Recipes
                         .SelectMany(recipe => recipe.Recipe.RecipeIngredients
@@ -177,32 +249,29 @@ public class UserRepo(CoreContext context)
                             {
                                 var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
                                 var substitutedIngredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
-                                return substitutedIngredient.Nutrients.Select(nutrient =>
+                                return substitutedIngredient?.Nutrients.Select(nutrient =>
                                 {
-                                    var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == nutrient.Nutrients).Value ?? 100;
                                     var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
                                     var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
                                     var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
                                     return new
                                     {
                                         Nutrient = nutrient.Nutrients,
-                                        PercentDailyValue = gramsOfNutrientPerRecipe / (familyGrams > 0 ? familyGrams : 100) * 100,
+                                        GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe,
                                     };
-                                });
+                                }) ?? [];
                             })
                         )
                     ).ToList();
 
-                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys
-                    .ToDictionary(m => m, m => (int?)Convert.ToInt32(
-                            monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.PercentDailyValue / BitOperations.PopCount((ulong)m) : 0)
-                        / actualWeeks)
-                    )
-                );
+                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m =>
+                {
+                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
+                }));
             }
         }
 
-        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (int?)null));
+        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
     }
 
     /// <summary>
@@ -210,12 +279,37 @@ public class UserRepo(CoreContext context)
     /// 
     /// Returns `null` when the user is new to fitness.
     /// </summary>
-    public async Task<(double weeks, IDictionary<Nutrients, int?>? volume)> GetWeeklyMuscleVolume(User user, int weeks)
+    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
-        var (strengthWeeks, weeklyMuscleVolumeFromStrengthWorkouts) = await GetWeeklyMuscleVolumeFromStrengthWorkouts(user, weeks);
-        return (weeks: strengthWeeks, volume: weeklyMuscleVolumeFromStrengthWorkouts);
+        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks);
+        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks);
+        var totalCaloricIntake = weeklyNutrientVolumeFromRecipeIngredients[Nutrients.Calories] + weeklyNutrientVolumeFromRecipeIngredientRecipes[Nutrients.Calories];
+
+        var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
+        var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
+        {
+            var gramsOfRda = (double?)familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
+            return gramsOfRda * (user.IsDemoUser ? 49 : 7);
+        });
+
+        return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m,
+            m =>
+            {
+                var familyGrams = familyNutrientServings.FirstOrDefault(fn => fn.Key == m).Value ?? 100;
+                if (!rawValues && weeklyNutrientVolumeFromRecipeIngredients[m].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[m].HasValue)
+                {
+                    return rawValues ? familyGrams - (weeklyNutrientVolumeFromRecipeIngredients[m].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[m].GetValueOrDefault())
+                        : (weeklyNutrientVolumeFromRecipeIngredients[m].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[m].GetValueOrDefault()) / (familyGrams > 0 ? familyGrams : 100) * 100;
+                }
+
+                // Not using the mobility value if the strength value doesn't exist because
+                // ... we don't want muscle target adjustments to apply to strength workouts using mobility muscle volumes.
+                return rawValues ? familyGrams - weeklyNutrientVolumeFromRecipeIngredients[m]
+                    : weeklyNutrientVolumeFromRecipeIngredients[m] / (familyGrams > 0 ? familyGrams : 100) * 100;
+            })
+        );
     }
 
     public async Task<string> AddUserToken(User user, DateTime expires)

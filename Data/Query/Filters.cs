@@ -2,12 +2,14 @@
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Recipe;
+using Data.Entities.User;
 
 namespace Data.Query;
 
 public interface IRecipeCombo
 {
     Recipe Recipe { get; }
+    IList<Nutrient> Nutrients { get; }
 }
 
 public static class Filters

@@ -9,7 +9,7 @@ namespace Data.Entities.Ingredient;
 /// Pre-requisite exercises for other exercises
 /// </summary>
 [Table("ingredient_alternative"), Comment("Alternative ingredients")]
-[DebuggerDisplay("{Ingredient} alt is {AltIngredient}")]
+[DebuggerDisplay("{Ingredient} alt is {AlternativeIngredient}")]
 public class IngredientAlternative
 {
     public virtual int IngredientId { get; private init; }

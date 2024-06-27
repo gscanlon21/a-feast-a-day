@@ -71,7 +71,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true);
+        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true);
         if (user == null)
         {
             return null;
@@ -277,8 +277,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     {
         var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
-        foreach (var group in recipeIngredients.OrderBy(ri => ri.Id)
-            .GroupBy(l => l, new ShoppingListComparer2())
+        foreach (var group in recipeIngredients.Where(ri => ri.IngredientId.HasValue)
+            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer2())
             .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();

@@ -184,7 +184,7 @@
                             <div class="form-group row">
                                 <div class="col">
                                     <label asp-for="Recipe.RecipeIngredients[id].IngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientId)</label>
-                                    <select asp-for="Recipe.RecipeIngredients[id].IngredientId" class="form-control searchable" aria-describedby="ingredient-help" required="required"
+                                    <select asp-for="Recipe.RecipeIngredients[id].IngredientId" class="form-control searchable" aria-describedby="ingredient-help"
                                             asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
                                     </select>
                                     <span asp-validation-for="Recipe.RecipeIngredients[id].IngredientId" class="text-danger"></span>
@@ -193,7 +193,7 @@
 
                                 <div class="col">
                                     <label asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientRecipeId)</label>
-                                    <select asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="form-control searchable" aria-describedby="ingredient-recipe-help" required="required"
+                                    <select asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="form-control searchable" aria-describedby="ingredient-recipe-help"
                                             asp-items="@(Model.Recipes.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
                                     </select>
                                     <span asp-validation-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="text-danger"></span>

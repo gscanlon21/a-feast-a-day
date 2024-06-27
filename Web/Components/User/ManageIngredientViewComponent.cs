@@ -38,9 +38,9 @@ public class ManageIngredientViewComponent(CoreContext context) : ViewComponent
         {
             User = user,
             Parameters = parameters,
-            Ingredients = ingredient.AlternativeIngredients.Select(ai => ai.Ingredient).ToList(),
             UserIngredient = userIngredient,
             Ingredient = ingredient.AsType<IngredientDto, Ingredient>()!,
+            Ingredients = ingredient.Alternatives.Select(ai => ai.AlternativeIngredient).ToList(),
         });
     }
 }

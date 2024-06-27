@@ -9,8 +9,9 @@ using System.Diagnostics;
 namespace Data.Models;
 
 [DebuggerDisplay("{Section}: {Recipe}")]
-public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe, int scale) : IRecipeCombo
+public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe, int scale) : IRecipeCombo
 {
+    public IList<Nutrient> Nutrients { get; init; } = nutrients;
     public Section Section { get; init; } = section;
     public Recipe Recipe { get; init; } = recipe;
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
@@ -36,6 +37,6 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public int? IngredientRecipeId { get; init; } = recipeIngredient.IngredientRecipeId;
     public Ingredient? Ingredient { get; set; } = recipeIngredient.Ingredient;
     public Recipe? IngredientRecipe { get; init; } = recipeIngredient.IngredientRecipe;
-    public UserRecipe UserIngredientRecipe { get; set; }
-    public UserIngredient UserIngredient { get; set; }
+    public UserRecipe UserIngredientRecipe { get; set; } = null!;
+    public UserIngredient UserIngredient { get; set; } = null!;
 }

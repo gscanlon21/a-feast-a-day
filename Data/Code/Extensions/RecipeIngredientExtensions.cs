@@ -12,11 +12,14 @@ public static class RecipeIngredientExtensions
     /// </summary>
     internal static double NumberOfServings(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
+        if (ingredient == null) { return 0; }
         return recipeIngredient.ToGrams(ingredient, scale) / ingredient.GramsPerServing;
     }
 
     internal static double ToGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
+        if (ingredient == null) { return 0; }
+
         var fraction = new Fraction(recipeIngredient.QuantityNumerator, recipeIngredient.QuantityDenominator, true);
 
         return recipeIngredient.Measure switch

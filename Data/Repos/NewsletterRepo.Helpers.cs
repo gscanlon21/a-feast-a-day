@@ -18,7 +18,7 @@ public partial class NewsletterRepo
     internal async Task<FeastContext?> BuildFeastContext(User user, string token, DateOnly date)
     {
         var (_, timeUntilNextSend) = await userRepo.GetNextSendDate(user);
-        var (weeks, volume) = await userRepo.GetWeeklyMuscleVolume(user, UserConsts.TrainingVolumeWeeks);
+        var (weeks, volume) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.TrainingVolumeWeeks, rawValues: true);
         return new FeastContext()
         {
             Date = date,

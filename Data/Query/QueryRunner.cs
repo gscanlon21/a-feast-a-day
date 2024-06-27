@@ -1,5 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
@@ -9,7 +8,6 @@ using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
-using System.Numerics;
 using System.Security.Cryptography;
 
 namespace Data.Query;
@@ -22,6 +20,7 @@ public class QueryRunner(Section section)
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     public class RecipesQueryResults : IRecipeCombo
     {
+        public IList<Nutrient> Nutrients { get; init; } = null!;
         public Entities.Recipe.Recipe Recipe { get; init; } = null!;
         public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = null!;
         public UserRecipe UserRecipe { get; init; } = null!;
@@ -32,6 +31,7 @@ public class QueryRunner(Section section)
     private class InProgressQueryResults(RecipesQueryResults queryResult) :
         IRecipeCombo
     {
+        public IList<Nutrient> Nutrients { get; set; } = queryResult.Nutrients;
         public int Scale { get; set; } = 1;
         public Entities.Recipe.Recipe Recipe { get; } = queryResult.Recipe;
         public IList<RecipeIngredientQueryResults> RecipeIngredients { get; set; } = queryResult.RecipeIngredients;
@@ -55,14 +55,12 @@ public class QueryRunner(Section section)
     {
         return context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateFilteredRecipesQuery))
             .Include(r => r.Instructions)
-            .Include(r => r.RecipeIngredients)
+            .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                 .ThenInclude(i => i.Ingredient)
-                    .ThenInclude(i => i.Nutrients)
-            .Include(r => r.RecipeIngredients)
+            .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                 .ThenInclude(i => i.Ingredient)
-                    .ThenInclude(i => i.AlternativeIngredients)
-                        .ThenInclude(i => i.Ingredient)
-                            .ThenInclude(i => i.Nutrients)
+                    .ThenInclude(i => i.Alternatives)
+                        .ThenInclude(i => i.AlternativeIngredient)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -194,6 +192,13 @@ public class QueryRunner(Section section)
             }
         }
 
+        var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.IngredientId)).ToList();
+        var allNutrients = await context.Nutrients.Where(n => allIngredientIds.Contains(n.IngredientId)).ToListAsync();
+        foreach (var queryResult in filteredResults)
+        {
+            queryResult.Nutrients = allNutrients.Where(n => queryResult.RecipeIngredients.Select(ri => ri.IngredientId).Contains(n.IngredientId)).ToList();
+        }
+
         // OrderBy must come after the query or you get cartesian explosion.
         var orderedResults = filteredResults
             // Show exercise variations that the user has rarely seen.
@@ -244,34 +249,30 @@ public class QueryRunner(Section section)
                 }
 
                 // Don't overwork weekly servings.
-                if (ServingsOptions.WeeklyServings.HasValue
-                    && finalResults.Aggregate(recipe.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings.Value)
-                {
-                    continue;
-                }
+                //if (ServingsOptions.WeeklyServings.HasValue
+                //    && finalResults.Aggregate(recipe.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings.Value)
+                //{
+                //    continue;
+                //}
 
                 // Don't choose exercises under our desired number of worked nutrients.
                 if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue
-                    && BitOperations.PopCount((ulong)nutrientTarget(recipe)) < NutrientOptions.AtLeastXNutrientsPerRecipe.Value)
+                    && nutrientTarget(recipe).Keys.Count < NutrientOptions.AtLeastXNutrientsPerRecipe.Value)
                 {
                     continue;
                 }
 
                 // Don't overwork nutrients.
-                var overworkedNutrients = GetOverworkedNutrients(finalResults, nutrientTarget: nutrientTarget);
-                try
+                var overworkedNutrients = GetOverworkedNutrients(finalResults);
+                if (overworkedNutrients.Any(mg => nutrientTarget(recipe).ContainsKey(mg)))
                 {
-                    if (overworkedNutrients.Any(mg => nutrientTarget(recipe).HasAnyFlag32(mg)))
-                    {
-                        continue;
-                    }
+                    continue;
                 }
-                catch { continue; }
 
                 // Choose exercises that cover at least X muscles in the targeted muscles set.
                 if (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue)
                 {
-                    var unworkedNutrients = GetUnworkedNutrients(finalResults, nutrientTarget: nutrientTarget);
+                    var unworkedNutrients = GetUnworkedNutrients(finalResults);
 
                     // We've already worked all unique muscles
                     if (unworkedNutrients.Count == 0)
@@ -279,16 +280,15 @@ public class QueryRunner(Section section)
                         break;
                     }
 
-                    // The exercise does not work enough unique muscles that we are trying to target.
-                    // Allow the first exercise with any muscle group so the user does not get stuck from seeing certain exercises if, for example, a prerequisite only works one muscle group and that muscle group is otherwise worked by compound exercises.
-                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).HasAnyFlag32(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.Value))
+                    // The recipe does not work enough unique nutrients that we are trying to target.
+                    // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes if, for example, a prerequisite only works one muscle group and that muscle group is otherwise worked by compound exercises.
+                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).ContainsKey(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.Value))
                     {
                         continue;
                     }
                 }
 
-                // TODO? If the recipe already exists, scale the recipe to make up for the missing servings?
-                var queryResult = new QueryResults(section, recipe.Recipe, recipe.RecipeIngredients, recipe.UserRecipe, recipe.Scale);
+                var queryResult = new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe, recipe.Scale);
                 if (!finalResults.Contains(queryResult))
                 {
                     finalResults.Add(queryResult);
@@ -371,7 +371,7 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients> GetUnworkedNutrients(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> nutrientTarget)
+    private List<Nutrients> GetUnworkedNutrients(IList<QueryResults> finalResults)
     {
         // Not using Nutrients because NutrientTargets can contain unions 
         return NutrientOptions.NutrientTargets.Where(kv =>
@@ -379,17 +379,17 @@ public class QueryRunner(Section section)
             // We are targeting this nutrient.
             return NutrientOptions.Nutrients.Any(mg => kv.Key.HasFlag(mg))
                 // We have not overconsumed this nutrient.
-                && finalResults.WorkedAnyNutrientCount(kv.Key, nutrientTarget: nutrientTarget) < kv.Value;
+                && finalResults.WorkedAnyNutrientCount(kv.Key) < kv.Value;
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients> GetOverworkedNutrients(IList<QueryResults> finalResults, Func<IRecipeCombo, Nutrients> nutrientTarget)
+    private List<Nutrients> GetOverworkedNutrients(IList<QueryResults> finalResults)
     {
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargets.Where(kv =>
         {
             // We have consumed too much of this nutrient.
-            return finalResults.WorkedAnyNutrientCount(kv.Key, nutrientTarget: nutrientTarget) > kv.Value;
+            return finalResults.WorkedAnyNutrientCount(kv.Key) > kv.Value;
         }).Select(kv => kv.Key).ToList();
     }
 }

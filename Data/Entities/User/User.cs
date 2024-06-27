@@ -192,7 +192,7 @@ public class User
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; init; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(UserServing.User))]
+    [JsonInclude, InverseProperty(nameof(UserServing.User))]
     public virtual ICollection<UserServing> UserServings { get; init; } = [];
 
     [JsonIgnore/*, InverseProperty(nameof(UserFeast.User))*/]

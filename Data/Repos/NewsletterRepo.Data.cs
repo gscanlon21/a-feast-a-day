@@ -15,12 +15,13 @@ public partial class NewsletterRepo
 {
     internal async Task<List<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
+        var scale = newsletterContext.User.UserServings.First(us => us.Section == Section.Breakfast).Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         var recipes = (await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
                 .WithNutrientTargetsFromNutrients(null)
-                .AdjustNutrientTargets(), options =>
+                .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
                 })
@@ -54,12 +55,13 @@ public partial class NewsletterRepo
 
     internal async Task<List<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
+        var scale = newsletterContext.User.UserServings.First(us => us.Section == Section.Lunch).Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         var recipes = (await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
                 .WithNutrientTargetsFromNutrients(null)
-                .AdjustNutrientTargets(), options =>
+                .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
                 })
@@ -93,12 +95,13 @@ public partial class NewsletterRepo
 
     internal async Task<List<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
+        var scale = newsletterContext.User.UserServings.First(us => us.Section == Section.Dinner).Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         var recipes = (await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
                 .WithNutrientTargetsFromNutrients(null)
-                .AdjustNutrientTargets(), options =>
+                .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
                 })
@@ -132,11 +135,13 @@ public partial class NewsletterRepo
 
     internal async Task<List<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
+        var scale = newsletterContext.User.UserServings.First(us => us.Section == Section.Sides).Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         var recipes = (await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithoutNutrientTargets())
+                .WithNutrientTargetsFromNutrients(null)
+                .AdjustNutrientTargets(scale: scale))
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
@@ -167,11 +172,13 @@ public partial class NewsletterRepo
 
     internal async Task<List<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
+        var scale = newsletterContext.User.UserServings.First(us => us.Section == Section.Snacks).Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         var recipes = (await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithoutNutrientTargets())
+                .WithNutrientTargetsFromNutrients(null)
+                .AdjustNutrientTargets(scale: scale))
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
@@ -202,11 +209,13 @@ public partial class NewsletterRepo
 
     internal async Task<List<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
+        var scale = newsletterContext.User.UserServings.First(us => us.Section == Section.Dessert).Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         var recipes = (await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
-                .WithoutNutrientTargets())
+                .WithNutrientTargetsFromNutrients(null)
+                .AdjustNutrientTargets(scale: scale))
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
