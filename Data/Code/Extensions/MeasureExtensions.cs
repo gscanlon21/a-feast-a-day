@@ -10,6 +10,8 @@ public static class MeasureExtensions
     {
         return (fromMeasure, ingredient.DefaultMeasure) switch
         {
+            _ when fromMeasure == ingredient.DefaultMeasure => 1,
+
             // Dry conversions.
             (Measure.Pounds, Measure.Ounces) => 16,
             (Measure.Ounces, Measure.Grams) => 28.35,
@@ -25,13 +27,14 @@ public static class MeasureExtensions
             (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
 
-            _ when fromMeasure == ingredient.DefaultMeasure => 1,
+            (not Measure.None, Measure.None) 
+                => fromMeasure.ToMeasure(Measure.Grams) / ingredient.GramsPerMeasure,
 
             _ when MeasureConsts.LiquidMeasures.Contains(fromMeasure)
-                => Measure.Grams.ToMeasure(ingredient.DefaultMeasure) * ingredient.GramsPerCup * fromMeasure.ToMeasure(Measure.Cups),
+                => Measure.Grams.ToMeasure(ingredient.DefaultMeasure) * fromMeasure.ToMeasure(Measure.Cups) / ingredient.GramsPerCup,
             
             _ when MeasureConsts.LiquidMeasures.Contains(ingredient.DefaultMeasure)
-                => fromMeasure.ToMeasure(Measure.Grams) * ingredient.GramsPerCup * Measure.Cups.ToMeasure(ingredient.DefaultMeasure),
+                => fromMeasure.ToMeasure(Measure.Grams) * Measure.Cups.ToMeasure(ingredient.DefaultMeasure) / ingredient.GramsPerCup,
             
             _ => throw new NotImplementedException($"Missing measure: {fromMeasure}, {ingredient.DefaultMeasure}")
         };

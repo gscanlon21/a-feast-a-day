@@ -285,21 +285,11 @@ public class UserRepo(CoreContext context)
 
         var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks);
         var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks);
-        var totalCaloricIntake = weeklyNutrientVolumeFromRecipeIngredients[Nutrients.Calories] + weeklyNutrientVolumeFromRecipeIngredientRecipes[Nutrients.Calories];
 
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
-            double gramsOfRDATUL;
-            if (tul)
-            {
-                gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfTUL(fp.Value, totalCaloricIntake.GetValueOrDefault()));
-            }
-            else
-            {
-                gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDA(fp.Value, totalCaloricIntake.GetValueOrDefault()));
-            }
-
+            var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
             return gramsOfRDATUL * (user.IsDemoUser ? 49 : 7);
         });
 

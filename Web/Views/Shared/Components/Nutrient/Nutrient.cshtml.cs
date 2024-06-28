@@ -26,6 +26,7 @@ public class NutrientViewModel
     {
         var userMuscleTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == defaultRange.Key)?.Range ?? UserNutrient.NutrientTargets[defaultRange.Key];
 
+        var dailyAllowance = defaultRange.Key.DailyAllowance(Person.All);
         var sumRDA = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).RDA);
         var sumTUL = User.UserFamilies.Average(f => defaultRange.Key.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
         var start = sumRDA / sumTUL * userMuscleTarget.Start.Value ?? 0;
@@ -39,7 +40,9 @@ public class NutrientViewModel
             DefaultStart = sumRDA / sumTUL * defaultRange.Value.Start.Value ?? 0,
             DefaultEnd = sumRDA / sumTUL * defaultRange.Value.End.Value ?? 100,
             ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / 100d * start)
-                : Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / (sumTUL ?? 1) * 100),
+                : dailyAllowance.Measure == Measure.Percent 
+                    ? Math.Min(101, WeeklyVolume[defaultRange.Key] ?? 0)
+                    : Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / (sumTUL ?? 1) * 100),
             ShowButtons = UsersWorkedMuscles.HasFlag(defaultRange.Key),
             Increment = sumRDA / sumTUL * UserConsts.IncrementNutrientTargetBy ?? UserConsts.IncrementNutrientTargetBy,
         };

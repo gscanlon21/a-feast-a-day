@@ -102,7 +102,7 @@ public class UserNutrient
         [Nutrients.Glycine] = 100..200,
         [Nutrients.Iron] = 100..200,
         [Nutrients.Calories] = 100..150,
-        [Nutrients.Fats] = 100..120,
+        [Nutrients.Fats] = 100..140,
         [Nutrients.Sodium] = 80..120,
         [Nutrients.Sugar] = 80..120,
         [Nutrients.TransFats] = 0..100,

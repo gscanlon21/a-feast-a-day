@@ -7,31 +7,16 @@ namespace Data.Code.Extensions;
 
 public static class UserFamilyExtensions
 {
-    public static double GramsOfRDA(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies, double totalCalories)
+    public static double GramsOfRDATUL(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies, bool tul = false)
     {
         var totalWeightKg = userFamilies.Sum(uf => uf.Weight);
-        var totalKCaloriesPerDay = userFamilies.Sum(uf => uf.CaloriesPerDay) / 1000d;
+        var totalCaloriesPerDay = userFamilies.Sum(uf => uf.CaloriesPerDay);
+        var totalKCaloriesPerDay = totalCaloriesPerDay / 1000d;
 
-        var maxValue = dailyAllowance.RDA ?? dailyAllowance.TUL ?? 0;
+        var maxValue = tul ? (dailyAllowance.TUL ?? dailyAllowance.RDA ?? 0) : (dailyAllowance.RDA ?? dailyAllowance.TUL ?? 0);
         return (dailyAllowance.For, dailyAllowance.Measure, dailyAllowance.Multiplier) switch
         {
-            (_, Measure.Percent, _) => totalCalories / 100 * maxValue / dailyAllowance.CaloriesPerGram,
-            (_, _, Multiplier.Person) => dailyAllowance.Measure.ToGrams(maxValue),
-            (_, _, Multiplier.KilogramOfBodyweight) => totalWeightKg * dailyAllowance.Measure.ToGrams(maxValue),
-            (_, _, Multiplier.Kilocalorie) => totalKCaloriesPerDay * dailyAllowance.Measure.ToGrams(maxValue),
-            _ => maxValue
-        } * userFamilies.Count();
-    }
-
-    public static double GramsOfTUL(this DailyAllowanceAttribute dailyAllowance, IEnumerable<UserFamily> userFamilies, double totalCalories)
-    {
-        var totalWeightKg = userFamilies.Sum(uf => uf.Weight);
-        var totalKCaloriesPerDay = userFamilies.Sum(uf => uf.CaloriesPerDay) / 1000d;
-
-        var maxValue = dailyAllowance.TUL ?? dailyAllowance.RDA ?? 0;
-        return (dailyAllowance.For, dailyAllowance.Measure, dailyAllowance.Multiplier) switch
-        {
-            (_, Measure.Percent, _) => totalCalories / 100 * maxValue / dailyAllowance.CaloriesPerGram,
+            (_, Measure.Percent, _) => maxValue * totalCaloriesPerDay / dailyAllowance.CaloriesPerGram / 100,
             (_, _, Multiplier.Person) => dailyAllowance.Measure.ToGrams(maxValue),
             (_, _, Multiplier.KilogramOfBodyweight) => totalWeightKg * dailyAllowance.Measure.ToGrams(maxValue),
             (_, _, Multiplier.Kilocalorie) => totalKCaloriesPerDay * dailyAllowance.Measure.ToGrams(maxValue),
