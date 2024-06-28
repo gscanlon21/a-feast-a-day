@@ -90,6 +90,11 @@ public enum Nutrients : long
     [Display(Order = 10, Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 
+    /// <summary>
+    /// On the new nutrition facts label, the number of calories from fat has been removed entirely. 
+    /// This is because research generally shows that the type of fat consumed may be more important than the amount. 
+    /// The total amount of fat, as well as the grams of trans and saturated fats, are still listed on the updated label.
+    /// </summary>
     [DefaultMeasure(Measure.None)]
     [DailyAllowance(2000, 3000, Measure.None, Multiplier.Person)]
     [Display(Order = 0, Name = "Calories", GroupName = "Calories")]

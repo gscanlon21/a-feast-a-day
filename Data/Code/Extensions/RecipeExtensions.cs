@@ -14,7 +14,7 @@ public static class RecipeExtensions
         return list.Sum(r =>
         {
             var nutrient = r.Nutrients.FirstOrDefault(n => n.Nutrients == nutrients);
-            return nutrient?.Measure.ToGrams(nutrient.Value) ?? 0;
+            return r.Scale * nutrient?.Measure.ToGrams(nutrient.Value) ?? 0;
         }) / weightDivisor;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Data.Code.Extensions;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Fractions;
@@ -29,7 +30,7 @@ public static class RecipeIngredientExtensions
             Measure.Grams => fraction.ToDouble(),
             Measure.Ounces => fraction.ToDouble() * 28.3495231,
             Measure.Pounds => fraction.ToDouble() * 453.59237,
-            _ => fraction.ToDouble() * recipeIngredient.Measure.ToMeasure(ingredient.DefaultMeasure) * ingredient.GramsPerMeasure,
+            _ => fraction.ToDouble() * recipeIngredient.Measure.ToDefaultMeasure(ingredient) * ingredient.GramsPerMeasure,
         } * scale;
     }
 }

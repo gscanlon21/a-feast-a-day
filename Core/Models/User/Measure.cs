@@ -16,7 +16,7 @@ public enum Measure
     [Display(Name = "Grams", ShortName = "g")]
     Grams = 3,
 
-    [Display(Name = "Ounces")]
+    [Display(Name = "Ounces", ShortName = "oz.")]
     Ounces = 4,
 
     [Display(Name = "Pounds", ShortName = "lb.")]
@@ -25,58 +25,27 @@ public enum Measure
     [Display(Name = "Cups")]
     Cups = 6,
 
-    [Display(Name = "Tablespoons", ShortName = "Tbsp.")]
+    [Display(Name = "Tablespoons", ShortName = "tbsp.")]
     Tablespoons = 7,
 
     [Display(Name = "Teaspoons", ShortName = "tsp.")]
     Teaspoons = 8,
 
-    [Display(Name = "IU")]
-    IU = 9,
+    [Display(Name = "Fluid Ounces", ShortName = "fl oz.")]
+    FluidOunces = 9,
 
     [Display(Name = "Percent", ShortName = "%")]
     Percent = 10,
 
-    [Display(Name = "Bottles")]
-    Bottles = 11,
-
-    [Display(Name = "Packages")]
-    Packages = 12,
-
-    [Display(Name = "Head")]
-    Head = 13,
-
-    [Display(Name = "Splash")]
-    Splash = 14,
-
-    [Display(Name = "Jars")]
-    Jars = 15,
-
-    [Display(Name = "Slices")]
-    Slices = 16,
-
-    [Display(Name = "Handful")]
-    Handful = 17,
-
-    [Display(Name = "Pinch")]
-    Pinch = 18,
-
-    [Display(Name = "Cans")]
-    Cans = 19,
-
-    [Display(Name = "Cloves")]
-    Cloves = 20,
-
-    [Display(Name = "Leaves")]
-    Leaves = 21,
-
-    [Display(Name = "Stick")]
-    Sticks = 22,
+    [Display(Name = "IU")]
+    IU = 11,
 }
 
 public static class MeasureConsts
 {
-    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.IU, Measure.Percent];
+    public static Measure[] DryMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Ounces, Measure.Pounds];
+    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces];
+    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Percent, Measure.IU];
 }
 
 /* Swap two measures.

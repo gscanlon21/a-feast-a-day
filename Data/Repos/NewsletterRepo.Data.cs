@@ -28,8 +28,6 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
-                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Breakfast)?.Count
-                    ?? UserServing.DefaultServings[Section.Breakfast];
             })
             .WithExcludeRecipes(x =>
             {
@@ -68,8 +66,6 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
-                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Lunch)?.Count
-                    ?? UserServing.DefaultServings[Section.Lunch];
             })
             .WithExcludeRecipes(x =>
             {
@@ -108,8 +104,6 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
-                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Dinner)?.Count
-                    ?? UserServing.DefaultServings[Section.Dinner];
             })
             .WithExcludeRecipes(x =>
             {
@@ -145,8 +139,6 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
-                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Sides)?.Count
-                    ?? UserServing.DefaultServings[Section.Sides];
             })
             .WithExcludeRecipes(x =>
             {
@@ -182,8 +174,6 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
-                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Snacks)?.Count
-                    ?? UserServing.DefaultServings[Section.Snacks];
             })
             .WithExcludeRecipes(x =>
             {
@@ -219,8 +209,6 @@ public partial class NewsletterRepo
             .WithServingsOptions(options =>
             {
                 options.AtLeastXServingsPerRecipe = newsletterContext.User.AtLeastXServingsPerRecipe;
-                options.WeeklyServings = newsletterContext.User.UserServings.FirstOrDefault(s => s.Section == Section.Dessert)?.Count
-                    ?? UserServing.DefaultServings[Section.Dessert];
             })
             .WithExcludeRecipes(x =>
             {

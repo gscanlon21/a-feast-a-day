@@ -6,10 +6,10 @@ using Core.Dtos.User;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
+using Data.Code.Extensions;
 using Data.Entities.Footnote;
 using Data.Entities.Ingredient;
 using Data.Entities.Newsletter;
-using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
@@ -278,14 +278,14 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
         foreach (var group in recipeIngredients.Where(ri => ri.IngredientId.HasValue)
-            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer2())
+            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
             .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
             var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
-            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient!.DefaultMeasure));
+            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToDefaultMeasure(g.Ingredient!));
 
-            var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToMeasure(g.Ingredient!.DefaultMeasure));
-            var denominator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToMeasure(g.Ingredient!.DefaultMeasure)));
+            var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToDefaultMeasure(g.Ingredient!));
+            var denominator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToDefaultMeasure(g.Ingredient!)));
             while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denominator) && denominator > 0))
             {
                 numerator *= 10;
@@ -309,17 +309,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         };
     }
 
-    private class ShoppingListComparer2 : IEqualityComparer<RecipeIngredientQueryResults>
+    private class ShoppingListComparer : IEqualityComparer<RecipeIngredientQueryResults>
     {
         public int GetHashCode(RecipeIngredientQueryResults e) => HashCode.Combine(e.Name.TrimEnd('s'));
         public bool Equals(RecipeIngredientQueryResults? a, RecipeIngredientQueryResults? b)
-            => a?.Name.TrimEnd('s', ' ') == b?.Name.TrimEnd('s', ' ');
-    }
-
-    private class ShoppingListComparer : IEqualityComparer<RecipeIngredient>
-    {
-        public int GetHashCode(RecipeIngredient e) => HashCode.Combine(e.Name.TrimEnd('s'));
-        public bool Equals(RecipeIngredient? a, RecipeIngredient? b)
             => a?.Name.TrimEnd('s', ' ') == b?.Name.TrimEnd('s', ' ');
     }
 }

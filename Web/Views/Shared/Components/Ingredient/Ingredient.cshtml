@@ -30,16 +30,16 @@
             <span id="grams-measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerMeasure)</span>
         </div>
         <div class="form-group mb-3">
+            <label asp-for="Ingredient.GramsPerCup" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerCup)</label>
+            <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" aria-describedby="grams-cup-help" />
+            <span asp-validation-for="Ingredient.GramsPerCup" class="text-danger"></span>
+            <span id="grams-cups-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerCup)</span>
+        </div>
+        <div class="form-group mb-3">
             <label asp-for="Ingredient.GramsPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerServing)</label>
             <input asp-for="Ingredient.GramsPerServing" type="text" class="form-control" aria-describedby="grams-serving-help" />
             <span asp-validation-for="Ingredient.GramsPerServing" class="text-danger"></span>
             <span id="grams-serving-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerServing)</span>
-        </div>
-        <div class="form-group mb-3">
-            <label asp-for="Ingredient.CaloriesPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.CaloriesPerServing)</label>
-            <input asp-for="Ingredient.CaloriesPerServing" type="text" class="form-control" aria-describedby="calories-help" />
-            <span asp-validation-for="Ingredient.CaloriesPerServing" class="text-danger"></span>
-            <span id="calories-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.CaloriesPerServing)</span>
         </div>
         <div class="form-group form-check mb-3">
             <div>

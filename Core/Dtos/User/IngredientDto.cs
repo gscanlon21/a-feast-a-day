@@ -1,6 +1,5 @@
 ﻿using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
@@ -9,11 +8,9 @@ namespace Core.Dtos.User;
 /// <summary>
 /// Exercises listed on the website
 /// </summary>
-[Table("ingredient")]
 [DebuggerDisplay("{Name,nq}")]
 public class IngredientDto
 {
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
     public int? UserId { get; init; }
@@ -23,12 +20,8 @@ public class IngredientDto
     /// <summary>
     /// Friendly name.
     /// </summary>
-    [Required]
     [Display(Name = "Name")]
     public string Name { get; set; } = null!;
-
-    [Display(Name = "Allergens")]
-    public Allergy Allergens { get; set; }
 
     /// <summary>
     /// Is a common household ingredient like salt and pepper.
@@ -36,16 +29,20 @@ public class IngredientDto
     [Display(Name = "Skip Shopping List")]
     public bool SkipShoppingList { get; set; }
 
-    [Display(Name = "Grams Per Serving")]
-    public double GramsPerServing { get; set; }
+    [Display(Name = "Allergens")]
+    public Allergy Allergens { get; set; }
 
-    [Display(Name = "Calories Per Serving")]
-    public double CaloriesPerServing { get; set; }
+    [Display(Name = "Default Measure")]
+    public Measure DefaultMeasure { get; set; }
 
     [Display(Name = "Grams Per Measure")]
     public double GramsPerMeasure { get; set; }
-    [Display(Name = "Default Measure")]
-    public Measure DefaultMeasure { get; set; }
+
+    [Display(Name = "Grams Per Cup")]
+    public double GramsPerCup { get; set; }
+
+    [Display(Name = "Grams Per Serving")]
+    public double GramsPerServing { get; set; }
 
     /// <summary>
     /// Notes about the variation (externally shown).
@@ -74,9 +71,6 @@ public class IngredientDto
     [JsonIgnore]
     public virtual UserDto? User { get; set; }
 
-    [JsonInclude]
-    public virtual List<RecipeIngredientDto> RecipeIngredients { get; init; } = null!;
-
     /// <summary>
     /// Nutrients per Serving Size (Grams).
     /// </summary>
@@ -84,6 +78,9 @@ public class IngredientDto
 
     [JsonIgnore]
     public virtual ICollection<UserDto> UserExclusions { get; init; } = [];
+
+    [JsonInclude]
+    public virtual List<RecipeIngredientDto> RecipeIngredients { get; init; } = null!;
 
     [JsonIgnore]
     public virtual ICollection<UserIngredientDto> UserIngredients { get; init; } = [];
@@ -96,7 +93,6 @@ public class IngredientDto
     public override bool Equals(object? obj) => obj is IngredientDto other
         && other.Id == Id;
 
-    [NotMapped]
     public Allergy[]? AllergenBinder
     {
         get => Enum.GetValues<Allergy>().Where(e => Allergens.HasFlag(e)).ToArray();

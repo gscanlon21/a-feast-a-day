@@ -28,28 +28,29 @@ public class Ingredient
     [Display(Name = "Name")]
     public string Name { get; set; } = null!;
 
-    [Display(Name = "Allergens")]
-    public Allergy Allergens { get; set; }
-
     /// <summary>
     /// Is a common household ingredient like salt and pepper.
     /// </summary>
     [Display(Name = "Skip Shopping List")]
     public bool SkipShoppingList { get; set; }
 
-    [Display(Name = "Grams Per Serving")]
-    public double GramsPerServing { get; set; }
+    [Display(Name = "Allergens")]
+    public Allergy Allergens { get; set; }
 
-    [Display(Name = "Calories Per Serving")]
-    public double CaloriesPerServing { get; set; }
-
-    [Display(Name = "Grams Per Measure")]
-    public double GramsPerMeasure { get; set; }
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }
 
+    [Display(Name = "Grams Per Measure")]
+    public double GramsPerMeasure { get; set; }
+
+    [Display(Name = "Grams Per Cup")]
+    public double GramsPerCup { get; set; }
+
+    [Display(Name = "Grams Per Serving")]
+    public double GramsPerServing { get; set; }
+
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the ingredient (externally shown).
     /// </summary>
     [Display(Name = "Notes")]
     public string? Notes { get; set; } = null;
@@ -59,25 +60,25 @@ public class Ingredient
     /// </summary>
     public DateOnly LastUpdated { get; set; }
 
+    public string? DisabledReason { get; private init; } = null;
+
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.Ingredients))]
+    public virtual User.User? User { get; set; }
+
+    /// <summary>
+    /// Nutrients per serving.
+    /// </summary>
+    [InverseProperty(nameof(Nutrient.Ingredient))]
+    public virtual IList<Nutrient> Nutrients { get; private init; } = [];
+
     [InverseProperty(nameof(IngredientAlternative.Ingredient))]
     public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
     public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
 
-    public string? DisabledReason { get; private init; } = null;
-
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.Ingredients))]
-    public virtual User.User? User { get; set; }
-
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
-    public virtual List<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
-
-    /// <summary>
-    /// Nutrients per Serving Size (Grams).
-    /// </summary>
-    [InverseProperty(nameof(Nutrient.Ingredient))]
-    public virtual List<Nutrient> Nutrients { get; set; } = [];
+    public virtual ICollection<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserIngredient.Ingredient))]
     public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];

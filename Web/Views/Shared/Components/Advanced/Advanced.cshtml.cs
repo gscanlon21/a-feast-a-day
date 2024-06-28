@@ -22,7 +22,7 @@ public class AdvancedViewModel
         || FootnoteCountBottom != Data.Entities.User.User.Consts.FootnoteCountBottomDefault
         || AtLeastXUniqueNutrientsPerRecipe != 3;
 
-    [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in shorter warmup sections and decreased exercise variety.")]
+    [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
     [Range(Data.Entities.User.User.Consts.AtLeastXUniqueNutrientsPerRecipeMin, Data.Entities.User.User.Consts.AtLeastXUniqueNutrientsPerRecipeMax)]
     public int AtLeastXUniqueNutrientsPerRecipe { get; set; }
 

@@ -157,11 +157,11 @@ public partial class UserController
         existingIngredient.Name = ingredient.Name;
         existingIngredient.Notes = ingredient.Notes;
         existingIngredient.Allergens = ingredient.Allergens;
+        existingIngredient.GramsPerCup = ingredient.GramsPerCup;
         existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
         existingIngredient.GramsPerMeasure = ingredient.GramsPerMeasure;
         existingIngredient.GramsPerServing = ingredient.GramsPerServing;
         existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
-        existingIngredient.CaloriesPerServing = ingredient.CaloriesPerServing;
 
         foreach (var nutrient in nutrients.OrderBy(n => BitOperations.PopCount((ulong)n.Nutrients)))
         {

@@ -20,6 +20,7 @@ public class QueryRunner(Section section)
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     public class RecipesQueryResults : IRecipeCombo
     {
+        public int Scale { get; init; } = 1;
         public IList<Nutrient> Nutrients { get; init; } = null!;
         public Entities.Recipe.Recipe Recipe { get; init; } = null!;
         public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = null!;
@@ -32,7 +33,7 @@ public class QueryRunner(Section section)
         IRecipeCombo
     {
         public IList<Nutrient> Nutrients { get; set; } = queryResult.Nutrients;
-        public int Scale { get; set; } = 1;
+        public int Scale { get; set; } = queryResult.Scale;
         public Entities.Recipe.Recipe Recipe { get; } = queryResult.Recipe;
         public IList<RecipeIngredientQueryResults> RecipeIngredients { get; set; } = queryResult.RecipeIngredients;
         public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
@@ -220,12 +221,9 @@ public class QueryRunner(Section section)
             foreach (var recipe in orderedResults)
             {
                 var servingsSoFar = finalResults.Aggregate(0, (curr, next) => curr + next.Recipe.Servings);
-                if (ServingsOptions.WeeklyServings.HasValue
-                    && ServingsOptions.AtLeastXServingsPerRecipe.HasValue
+                if (ServingsOptions.AtLeastXServingsPerRecipe.HasValue
                     // Don't choose recipes under our desired number of servings.
-                    && recipe.Recipe.Servings < ServingsOptions.AtLeastXServingsPerRecipe.Value
-                    // If desired number of servings is less than the number of servings left in the week.
-                    && ServingsOptions.AtLeastXServingsPerRecipe.Value < (ServingsOptions.WeeklyServings.Value - servingsSoFar))
+                    && recipe.Recipe.Servings < ServingsOptions.AtLeastXServingsPerRecipe.Value)
                 {
                     if (recipe.Recipe.AdjustableServings)
                     {
@@ -304,12 +302,10 @@ public class QueryRunner(Section section)
         // REFACTORME
         return section switch
         {
-            Section.None => [
-                .. finalResults.Take(take)
-                    // Not in a workout context, order by progression levels.
-                    .OrderBy(vm => vm.Recipe.Name)
-            ],
-            _ => finalResults.Take(take).ToList() // We are in a workout context, keep the result order.
+            // Not in a workout context, order by name.
+            Section.None => [.. finalResults.Take(take).OrderBy(vm => vm.Recipe.Name)],
+            // We are in a workout context, keep the result order.
+            _ => finalResults.Take(take).ToList()
         };
     }
 
