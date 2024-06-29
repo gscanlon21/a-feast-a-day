@@ -92,7 +92,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
 
                     // We want a buffer before excluding Nutrient groups to where we don't target the Nutrient group, but still allow exercises that target the Nutrient to be chosen.
                     // Forearms, for example, are rarely something we want to target directly, since they are worked in many functional movements.
-                    if (adjustDownBuffer && gramsUntilRDA < 0 && gramsUntilTUL > 0)
+                    if (adjustDownBuffer && gramsUntilRDA <= 0 && gramsUntilTUL >= 0)
                     {
                         Nutrients.Remove(key);
                     }

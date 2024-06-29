@@ -385,7 +385,7 @@ public class QueryRunner(Section section)
         return NutrientOptions.NutrientTargets.Where(kv =>
         {
             // We have consumed too much of this nutrient.
-            return finalResults.WorkedAnyNutrientCount(kv.Key) > kv.Value;
+            return finalResults.WorkedAnyNutrientCount(kv.Key) >= kv.Value;
         }).Select(kv => kv.Key).ToList();
     }
 }
