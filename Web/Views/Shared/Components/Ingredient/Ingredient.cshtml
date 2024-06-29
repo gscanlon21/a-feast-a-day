@@ -75,13 +75,12 @@
 
                 <div class="form-group col-md-3">
                     <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
-                    <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto" aria-describedby="footnote-help"
+                    <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto"
                             asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
                     </select>
                     <span asp-validation-for="Nutrients[i].Measure" class="text-danger"></span>
-                    <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Measure)</div>
 
-                    <div class="form-check">
+                    <div class="form-check mt-1">
                         <label asp-for="Nutrients[i].Synthetic" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Synthetic)</label>
                         <input class="form-check-input" asp-for="Nutrients[i].Synthetic" aria-describedby="synthetic-help" />
                         <span asp-validation-for="Nutrients[i].Synthetic" class="text-danger"></span>
