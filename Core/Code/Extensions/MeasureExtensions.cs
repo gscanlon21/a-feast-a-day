@@ -12,9 +12,11 @@ public static class MeasureExtensions
 
             // Dry conversions.
             (Measure.Pounds, Measure.Ounces) => 16,
+            (Measure.Pounds, Measure.Grams) => 453.592,
             (Measure.Ounces, Measure.Grams) => 28.35,
             (Measure.Ounces, Measure.Pounds) => 0.0625,
             (Measure.Grams, Measure.Ounces) => 0.0353,
+            (Measure.Grams, Measure.Pounds) => 0.00220462442,
 
             // Fluid conversions.
             (Measure.FluidOunces, Measure.Cups) => 0.125,
