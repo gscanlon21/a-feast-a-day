@@ -92,10 +92,4 @@ public class IngredientDto
 
     public override bool Equals(object? obj) => obj is IngredientDto other
         && other.Id == Id;
-
-    public Allergy[]? AllergenBinder
-    {
-        get => Enum.GetValues<Allergy>().Where(e => Allergens.HasFlag(e)).ToArray();
-        set => Allergens = value?.Aggregate(Allergy.None, (a, e) => a | e) ?? Allergy.None;
-    }
 }

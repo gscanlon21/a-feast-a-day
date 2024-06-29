@@ -27,6 +27,9 @@ public static class MeasureExtensions
             (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
 
+            (not Measure.None, Measure.None) when MeasureConsts.LiquidMeasures.Contains(fromMeasure)
+                => fromMeasure.ToMeasure(Measure.Cups) / ingredient.GramsPerCup,
+
             (not Measure.None, Measure.None)
                 => fromMeasure.ToMeasure(Measure.Grams) / ingredient.GramsPerMeasure,
 

@@ -8,11 +8,14 @@ public static class MeasureExtensions
     {
         return (fromMeasure, toMeasure) switch
         {
+            _ when fromMeasure == toMeasure => 1,
+
             // Dry conversions.
             (Measure.Pounds, Measure.Ounces) => 16,
             (Measure.Ounces, Measure.Grams) => 28.35,
             (Measure.Ounces, Measure.Pounds) => 0.0625,
             (Measure.Grams, Measure.Ounces) => 0.0353,
+
             // Fluid conversions.
             (Measure.FluidOunces, Measure.Cups) => 0.125,
             (Measure.Cups, Measure.Teaspoons) => 48,
@@ -21,7 +24,7 @@ public static class MeasureExtensions
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
-            _ when fromMeasure == toMeasure => 1,
+
             _ => throw new NotImplementedException($"Missing measure: {fromMeasure}, {toMeasure}")
         };
     }

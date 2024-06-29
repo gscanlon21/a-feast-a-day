@@ -44,11 +44,4 @@ public class NutrientDto
 
     public override bool Equals(object? obj) => obj is NutrientDto other
         && other.Id == Id;
-
-    [NotMapped]
-    public Nutrients[]? NutrientBinder
-    {
-        get => Enum.GetValues<Nutrients>().Where(e => Nutrients.HasFlag(e)).ToArray();
-        set => Nutrients = value?.Aggregate(Nutrients.None, (a, e) => a | e) ?? Nutrients.None;
-    }
 }
