@@ -23,7 +23,7 @@ public class RecipeIngredient
     [Display(Name = "Ingredient")]
     public int? IngredientId { get; init; }
 
-    [Display(Name = "Ingredient (Recipe)")]
+    [Display(Name = "or Recipe")]
     public int? IngredientRecipeId { get; init; }
 
     [Range(1, 1000), Display(Name = "Quantity")]
