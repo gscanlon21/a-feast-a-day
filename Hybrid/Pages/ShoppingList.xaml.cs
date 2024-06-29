@@ -27,16 +27,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     public IAsyncRelayCommand LoadCommand { get; set; }
     public IAsyncRelayCommand WhenCompletedCommand { get; set; }
-
     public IAsyncRelayCommand WhenCheckedCommand { get; set; }
-    /* FIXME fails binding to ancestor context.
-    <CheckBox.Behaviors>
-        <toolkit:EventToCommandBehavior
-            Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference myCollectionView}}"
-            CommandParameter="{Binding .}"
-            EventName="CheckedChanged" />
-    </CheckBox.Behaviors>
-    */
 
     public ShoppingListPageViewModel(UserService userService, LocalDatabase localDatabase)
     {
