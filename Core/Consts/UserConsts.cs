@@ -31,6 +31,19 @@ public class UserConsts
     public const int PadRefreshXWeeksDefault = 0;
     public const int PadRefreshXWeeksMax = 12;
 
+    public const int FootnoteCountMin = 1;
+    public const int FootnoteCountTopDefault = 2;
+    public const int FootnoteCountBottomDefault = 2;
+    public const int FootnoteCountMax = 4;
+
+    public const int AtLeastXUniqueNutrientsPerRecipeMin = 1;
+    public const int AtLeastXUniqueNutrientsPerRecipeDefault = 6;
+    public const int AtLeastXUniqueNutrientsPerRecipeMax = 9;
+
+    public const int AtLeastXServingsPerRecipeMin = 1;
+    public const int AtLeastXServingsPerRecipeDefault = 3;
+    public const int AtLeastXServingsPerRecipeMax = 9;
+
     public const Days DaysDefault = Days.Sunday;
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;

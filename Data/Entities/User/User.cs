@@ -20,22 +20,6 @@ namespace Data.Entities.User;
 [DebuggerDisplay("Email = {Email}, LastActive = {LastActive}")]
 public class User
 {
-    public class Consts
-    {
-        public const int FootnoteCountMin = 1;
-        public const int FootnoteCountTopDefault = 2;
-        public const int FootnoteCountBottomDefault = 2;
-        public const int FootnoteCountMax = 4;
-
-        public const int AtLeastXUniqueNutrientsPerRecipeMin = 1;
-        public const int AtLeastXUniqueNutrientsPerRecipeDefault = 6;
-        public const int AtLeastXUniqueNutrientsPerRecipeMax = 9;
-
-        public const int AtLeastXServingsPerRecipeMin = 1;
-        public const int AtLeastXServingsPerRecipeDefault = 3;
-        public const int AtLeastXServingsPerRecipeMax = 9;
-    }
-
     [Obsolete("Public parameterless constructor for model binding.", error: true)]
     public User() { }
 
@@ -148,19 +132,19 @@ public class User
     /// </summary>
     public Features Features { get; set; } = Features.None;
 
-    [Range(Consts.AtLeastXServingsPerRecipeMin, Consts.AtLeastXServingsPerRecipeMax)]
-    public int AtLeastXServingsPerRecipe { get; set; } = Consts.AtLeastXServingsPerRecipeDefault;
+    [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]
+    public int AtLeastXServingsPerRecipe { get; set; } = UserConsts.AtLeastXServingsPerRecipeDefault;
 
     #region Advanced Preferences
 
-    [Range(Consts.FootnoteCountMin, Consts.FootnoteCountMax)]
-    public int FootnoteCountTop { get; set; } = Consts.FootnoteCountTopDefault;
+    [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
+    public int FootnoteCountTop { get; set; } = UserConsts.FootnoteCountTopDefault;
 
-    [Range(Consts.FootnoteCountMin, Consts.FootnoteCountMax)]
-    public int FootnoteCountBottom { get; set; } = Consts.FootnoteCountBottomDefault;
+    [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
+    public int FootnoteCountBottom { get; set; } = UserConsts.FootnoteCountBottomDefault;
 
-    [Range(Consts.AtLeastXUniqueNutrientsPerRecipeMin, Consts.AtLeastXUniqueNutrientsPerRecipeMax)]
-    public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = Consts.AtLeastXUniqueNutrientsPerRecipeDefault;
+    [Range(UserConsts.AtLeastXUniqueNutrientsPerRecipeMin, UserConsts.AtLeastXUniqueNutrientsPerRecipeMax)]
+    public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault;
 
     #endregion
     #region NotMapped

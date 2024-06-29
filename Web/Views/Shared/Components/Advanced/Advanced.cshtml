@@ -1,6 +1,7 @@
 ﻿@model AdvancedViewModel
 @using Core.Models.Recipe
 @using Data.Entities.User
+@using Core.Consts
 
 <details class="mt-4 mb-25">
     <summary class="mb-1 h5">@(Model.IsNotDefault ? "*" : "")Advanced Preferences</summary>
@@ -19,7 +20,7 @@
                                step="1" min="1" max="9"
                                oninput="OutputAtLeastXUniqueNutrientsPerRecipe.value = this.valueAsNumber" list="ListAtLeastXUniqueNutrientsPerRecipe" />
                         <datalist id="ListAtLeastXUniqueNutrientsPerRecipe">
-                            <option value="3"></option>
+                            <option value="@UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault"></option>
                         </datalist>
                     </div>
                 </div>
@@ -37,10 +38,10 @@
                     <output name="OutputFootnoteCountTop" for="@Html.IdFor(_ => Model.FootnoteCountTop)">@Model.FootnoteCountTop</output>
                     <div style="display:flex;width:100%;">
                         <input asp-for="FootnoteCountTop" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                               step="1" min="@Data.Entities.User.User.Consts.FootnoteCountMin" max="@Data.Entities.User.User.Consts.FootnoteCountMax"
+                               step="1" min="@UserConsts.FootnoteCountMin" max="@UserConsts.FootnoteCountMax"
                                oninput="OutputFootnoteCountTop.value = this.valueAsNumber" list="ListFootnoteCountTop" />
                         <datalist id="ListFootnoteCountTop">
-                            <option value="@Data.Entities.User.User.Consts.FootnoteCountTopDefault"></option>
+                            <option value="@UserConsts.FootnoteCountTopDefault"></option>
                         </datalist>
                     </div>
                 </div>
@@ -58,10 +59,10 @@
                     <output name="OutputFootnoteCountBottom" for="@Html.IdFor(_ => Model.FootnoteCountBottom)">@Model.FootnoteCountBottom</output>
                     <div style="display:flex;width:100%;">
                         <input asp-for="FootnoteCountBottom" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                               step="1" min="@Data.Entities.User.User.Consts.FootnoteCountMin" max="@Data.Entities.User.User.Consts.FootnoteCountMax"
+                               step="1" min="@UserConsts.FootnoteCountMin" max="@UserConsts.FootnoteCountMax"
                                oninput="OutputFootnoteCountBottom.value = this.valueAsNumber" list="ListFootnoteCountBottom" />
                         <datalist id="ListFootnoteCountBottom">
-                            <option value="@Data.Entities.User.User.Consts.FootnoteCountBottomDefault"></option>
+                            <option value="@UserConsts.FootnoteCountBottomDefault"></option>
                         </datalist>
                     </div>
                 </div>

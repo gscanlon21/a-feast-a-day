@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Core.Consts;
+using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Shared.Components.Advanced;
-
 
 public class AdvancedViewModel
 {
@@ -18,12 +18,12 @@ public class AdvancedViewModel
         AtLeastXUniqueNutrientsPerRecipe = user.AtLeastXUniqueNutrientsPerRecipe;
     }
 
-    public bool IsNotDefault => FootnoteCountTop != Data.Entities.User.User.Consts.FootnoteCountTopDefault
-        || FootnoteCountBottom != Data.Entities.User.User.Consts.FootnoteCountBottomDefault
-        || AtLeastXUniqueNutrientsPerRecipe != 3;
+    public bool IsNotDefault => FootnoteCountTop != UserConsts.FootnoteCountTopDefault
+        || FootnoteCountBottom != UserConsts.FootnoteCountBottomDefault
+        || AtLeastXUniqueNutrientsPerRecipe != UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault;
 
     [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
-    [Range(Data.Entities.User.User.Consts.AtLeastXUniqueNutrientsPerRecipeMin, Data.Entities.User.User.Consts.AtLeastXUniqueNutrientsPerRecipeMax)]
+    [Range(UserConsts.AtLeastXUniqueNutrientsPerRecipeMin, UserConsts.AtLeastXUniqueNutrientsPerRecipeMax)]
     public int AtLeastXUniqueNutrientsPerRecipe { get; set; }
 
     public string Token { get; init; } = null!;
