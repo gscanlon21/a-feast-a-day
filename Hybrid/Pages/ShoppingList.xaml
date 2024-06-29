@@ -40,7 +40,7 @@
                                 <HorizontalStackLayout>
 
                                     <CheckBox Color="{StaticResource Secondary}" IsChecked="{Binding IsChecked}">
-
+                                        
                                     </CheckBox>
 
                                     <StackLayout VerticalOptions="FillAndExpand" Padding="15,10">
@@ -56,12 +56,6 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <ListView.Behaviors>
-                        <toolkit:EventToCommandBehavior
-                        Command="{Binding WhenCheckedCommand}"
-                        CommandParameter="{Binding .}"
-                        EventName="ItemTapped" />       
-                    </ListView.Behaviors>
                 </ListView>
             </VerticalStackLayout>
         </ScrollView>
