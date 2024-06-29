@@ -1,9 +1,9 @@
-﻿using Core.Models.User;
+﻿using Core.Dtos.User;
+using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Text.Json.Serialization;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Ingredient;
 
 /// <summary>
 /// Exercises listed on the website
@@ -56,37 +56,18 @@ public class IngredientDto
     public DateOnly LastUpdated { get; set; }
 
     /// <summary>
-    /// The base ingredient.
-    /// </summary>
-    [JsonIgnore]
-    public virtual IngredientDto? Parent { get; init; } = null!;
-
-    /// <summary>
     /// Substitute ingredients.
     /// </summary>
-    public virtual ICollection<IngredientDto> Children { get; init; } = [];
+    public ICollection<IngredientDto> Children { get; init; } = [];
 
-    public string? DisabledReason { get; init; } = null;
-
-    [JsonIgnore]
-    public virtual UserDto? User { get; set; }
+    public ICollection<IngredientAlternativeDto> Alternatives { get; init; } = [];
 
     /// <summary>
     /// Nutrients per Serving Size (Grams).
     /// </summary>
-    public virtual List<NutrientDto> Nutrients { get; set; } = [];
+    public ICollection<NutrientDto> Nutrients { get; set; } = [];
 
-    [JsonIgnore]
-    public virtual ICollection<UserDto> UserExclusions { get; init; } = [];
-
-    [JsonInclude]
-    public virtual List<RecipeIngredientDto> RecipeIngredients { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<UserIngredientDto> UserIngredients { get; init; } = [];
-
-    [JsonIgnore]
-    public virtual ICollection<UserIngredientDto> UserSubstituteIngredients { get; init; } = [];
+    public string? DisabledReason { get; init; } = null;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

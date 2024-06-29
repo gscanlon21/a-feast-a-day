@@ -262,11 +262,13 @@ public partial class NewsletterRepo
         using var scope = serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        var debugIngredients = await context.Ingredients
-                .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
-                .ThenBy(i => i.LastUpdated)
-                .ThenBy(_ => EF.Functions.Random())
-                .Take(1).ToListAsync();
+        var debugIngredients = await context.Ingredients.AsNoTracking()
+            .Include(i => i.Alternatives)
+                .ThenInclude(a => a.AlternativeIngredient)
+            .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
+            .ThenBy(i => i.LastUpdated)
+            .ThenBy(_ => EF.Functions.Random())
+            .Take(1).ToListAsync();
 
         foreach (var debugIngredient in debugIngredients)
         {

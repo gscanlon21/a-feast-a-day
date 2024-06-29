@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Dtos.Ingredient;
+using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;

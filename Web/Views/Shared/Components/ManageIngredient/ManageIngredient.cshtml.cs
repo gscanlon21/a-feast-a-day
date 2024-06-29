@@ -1,4 +1,4 @@
-﻿using Core.Dtos.User;
+﻿using Core.Dtos.Ingredient;
 using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 

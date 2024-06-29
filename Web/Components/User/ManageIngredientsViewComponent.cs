@@ -1,4 +1,5 @@
-﻿using Core.Dtos.User;
+﻿using Core.Dtos.Ingredient;
+using Core.Dtos.User;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
@@ -27,7 +28,8 @@ public class ManageIngredientsViewComponent(CoreContext context) : ViewComponent
         }
 
         var recipeIngredientIds = recipe.RecipeIngredients.Select(ri => ri.IngredientId).ToList();
-        var ingredients = await context.Ingredients.Where(i => recipeIngredientIds.Contains(i.Id)).ToListAsync();
+        var ingredients = await context.Ingredients.Where(i => recipeIngredientIds.Contains(i.Id))
+            .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient).ToListAsync();
 
         var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
         userNewsletter.Token = parameters.Token;

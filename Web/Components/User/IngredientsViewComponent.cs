@@ -1,4 +1,5 @@
-﻿using Core.Dtos.User;
+﻿using Core.Dtos.Ingredient;
+using Core.Dtos.User;
 using Core.Models.User;
 using Data;
 using Data.Entities.Ingredient;
@@ -28,6 +29,8 @@ public class IngredientsViewComponent(CoreContext context, UserRepo userRepo) : 
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
         var userIngredients = await context.Ingredients.AsNoTracking()
+            .Include(i => i.Alternatives)
+                .ThenInclude(a => a.AlternativeIngredient)
             .Where(i => i.UserId == user.Id
                 // The user is an admin who is allowed to edit base ingredients.
                 || (user.Features.HasFlag(Features.Admin) && i.UserId == null))

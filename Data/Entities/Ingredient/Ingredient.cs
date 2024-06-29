@@ -71,7 +71,7 @@ public class Ingredient
     [InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual IList<Nutrient> Nutrients { get; private init; } = [];
 
-    [InverseProperty(nameof(IngredientAlternative.Ingredient))]
+    [JsonInclude, InverseProperty(nameof(IngredientAlternative.Ingredient))]
     public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]

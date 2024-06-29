@@ -1,4 +1,4 @@
-﻿using Core.Dtos.User;
+﻿using Core.Dtos.Ingredient;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.User;

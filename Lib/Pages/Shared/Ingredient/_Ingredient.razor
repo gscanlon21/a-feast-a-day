@@ -7,7 +7,7 @@
 @using Core.Models.Recipe
 @using Core.Models.User
 @using Core.Models.Newsletter
-@using Core.Dtos.User
+@using Core.Dtos.Ingredient
 
 @*
     Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
@@ -41,6 +41,7 @@
                 <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName32()</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName32()</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Alternates</b>: @string.Join(", ", Model.Alternatives.Select(ai => ai.AlternativeIngredient.Name))</div>
             </div>
         </div>
     </div>
