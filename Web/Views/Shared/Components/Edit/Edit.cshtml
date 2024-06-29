@@ -58,27 +58,6 @@
                     Customize weekly servings.
                 </div>
             }
-            <div class="mb-3">
-                <div class="form-group mb-3">
-                    <label asp-for="AtLeastXServingsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.AtLeastXServingsPerRecipe)</label>
-                    <div style="display:flex;column-gap:1ex;">
-                        <output name="OutputAtLeastXServingsPerRecipe" for="@Html.IdFor(_ => Model.AtLeastXServingsPerRecipe)">@Model.AtLeastXServingsPerRecipe</output>
-                        <div style="display:flex;width:100%;">
-                            <input asp-for="AtLeastXServingsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                   step="1" min="1" max="9"
-                                   oninput="OutputAtLeastXServingsPerRecipe.value = this.valueAsNumber" list="ListAtLeastXServingsPerRecipe" />
-                            <datalist id="ListAtLeastXServingsPerRecipe">
-                                <option value="3"></option>
-                            </datalist>
-                        </div>
-                    </div>
-                    <span asp-validation-for="AtLeastXServingsPerRecipe" class="text-danger"></span>
-                    <div id="refresh-functional-help" class="form-text">
-                        @Html.DisplayDescriptionFor(_ => Model.AtLeastXServingsPerRecipe)
-                    </div>
-                </div>
-            </div>
-
             <div class="form-group mb-3">
                 <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
                     <summary class=""><b class="">Edit @Html.DisplayNameFor(_ => Model.UserServings)</b></summary>
@@ -88,22 +67,66 @@
                         {
                             <input type="hidden" asp-for="UserServings[i].UserId" />
                             <input type="hidden" asp-for="UserServings[i].Section" />
-                            <div class="mb-1" style="display:flex;column-gap:1ch;flex-wrap:wrap;">
-                                <div style="display:flex;width:14ch;margin-bottom:-.5ex;">@Model.UserServings[i].Section.GetDisplayName322()</div>
-                                <div style="display:flex;gap:1ch;align-items:center;flex:1 0 150px;">
-                                    <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserServings[i])">@Model.UserServings[i].Count</output>
-                                    <div style="display:flex;width:100%;">
-                                        <input asp-for="UserServings[i].Count" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                               min="@UserConsts.WeeklyServingsMin" max="@UserConsts.WeeklyServingsMax"
-                                               oninput="mobilityMusclesOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
-                                        <datalist id="mobilityMusclesList@(i)">
-                                            <option value="@(UserServing.DefaultServings.TryGetValue(Model.UserServings[i].Section, out int countTmp) ? countTmp : 0)"></option>
-                                        </datalist>
+                            <div class="mb-3">
+                                <div class=""><b>@Model.UserServings[i].Section.GetDisplayName322()</b></div>
+
+                                <div class="mb-1 form-group">
+                                    <label asp-for="UserServings[i].Count" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].Count)</label>
+                                    <div style="display:flex;column-gap:1ch;">
+                                        <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserServings[i])">@Model.UserServings[i].Count</output>
+                                        <div style="display:flex;width:100%;">
+                                            <input asp-for="UserServings[i].Count" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                   min="@UserConsts.WeeklyServingsMin" max="@UserConsts.WeeklyServingsMax"
+                                                   oninput="mobilityMusclesOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
+                                            <datalist id="mobilityMusclesList@(i)">
+                                                <option value="@(UserServing.DefaultServings.TryGetValue(Model.UserServings[i].Section, out int countTmp) ? countTmp : 0)"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="UserServings[i].Count" class="text-danger"></span>
+                                    <div id="refresh-functional-help" class="form-text">
+                                        <p>@Html.DisplayDescriptionFor(_ => Model.UserServings[i].Count)</p>
                                     </div>
                                 </div>
-                                <span asp-validation-for="UserServings[i]" class="text-danger"></span>
-                                <div id="refresh-functional-help" class="form-text">
-                                    <p>@Html.DisplayDescriptionFor(_ => Model.UserServings[i])</p>
+
+                                <div class="mb-1 form-group">
+                                    <label asp-for="UserServings[i].AtLeastXServingsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)</label>
+                                    <div style="display:flex;column-gap:1ex;">
+                                        <output name="OutputAtLeastXServingsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)">@Model.UserServings[i].AtLeastXServingsPerRecipe</output>
+                                        <div style="display:flex;width:100%;">
+                                            <input asp-for="UserServings[i].AtLeastXServingsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                   step="1" min="1" max="9"
+                                                   oninput="OutputAtLeastXServingsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXServingsPerRecipe@(i)" />
+                                            <datalist id="ListAtLeastXServingsPerRecipe@(i)">
+                                                <option value="@UserConsts.AtLeastXServingsPerRecipeDefault"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="UserServings[i].AtLeastXServingsPerRecipe" class="text-danger"></span>
+                                    <div id="refresh-functional-help" class="form-text">
+                                        @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)
+                                    </div>
+                                </div>
+
+                                <div class="mb-1">
+                                    <div class="form-group mb-3">
+                                        <label asp-for="UserServings[i].AtLeastXUniqueNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe)</label>
+                                        <div style="display:flex;column-gap:1ex;">
+                                            <output name="OutputAtLeastXUniqueNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe)">@Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe</output>
+                                            <div style="display:flex;width:100%;">
+                                                <input asp-for="UserServings[i].AtLeastXUniqueNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                       step="1" min="1" max="9"
+                                                       oninput="OutputAtLeastXUniqueNutrientsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXUniqueNutrientsPerRecipe@(i)" />
+                                                <datalist id="ListAtLeastXUniqueNutrientsPerRecipe@(i)">
+                                                    <option value="@UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault"></option>
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                        <span asp-validation-for="UserServings[i].AtLeastXUniqueNutrientsPerRecipe" class="text-danger"></span>
+                                        <div id="refresh-functional-help" class="form-text">
+                                            @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe)
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         }

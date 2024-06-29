@@ -12,27 +12,6 @@
 
         <div class="mb-3">
             <div class="form-group mb-3">
-                <label asp-for="AtLeastXUniqueNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.AtLeastXUniqueNutrientsPerRecipe)</label>
-                <div style="display:flex;column-gap:1ex;">
-                    <output name="OutputAtLeastXUniqueNutrientsPerRecipe" for="@Html.IdFor(_ => Model.AtLeastXUniqueNutrientsPerRecipe)">@Model.AtLeastXUniqueNutrientsPerRecipe</output>
-                    <div style="display:flex;width:100%;">
-                        <input asp-for="AtLeastXUniqueNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                               step="1" min="1" max="9"
-                               oninput="OutputAtLeastXUniqueNutrientsPerRecipe.value = this.valueAsNumber" list="ListAtLeastXUniqueNutrientsPerRecipe" />
-                        <datalist id="ListAtLeastXUniqueNutrientsPerRecipe">
-                            <option value="@UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault"></option>
-                        </datalist>
-                    </div>
-                </div>
-                <span asp-validation-for="AtLeastXUniqueNutrientsPerRecipe" class="text-danger"></span>
-                <div id="refresh-functional-help" class="form-text">
-                    @Html.DisplayDescriptionFor(_ => Model.AtLeastXUniqueNutrientsPerRecipe)
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <div class="form-group mb-3">
                 <label asp-for="FootnoteCountTop" class="control-label">@Html.DisplayNameFor(_ => Model.FootnoteCountTop)</label>
                 <div style="display:flex;column-gap:1ex;">
                     <output name="OutputFootnoteCountTop" for="@Html.IdFor(_ => Model.FootnoteCountTop)">@Model.FootnoteCountTop</output>

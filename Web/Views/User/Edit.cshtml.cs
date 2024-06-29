@@ -37,7 +37,6 @@ public class UserEditViewModel
         Equipment = user.Equipment;
         MaxIngredients = user.MaxIngredients;
         ExcludeAllergens = user.ExcludeAllergens;
-        AtLeastXServingsPerRecipe = user.AtLeastXServingsPerRecipe;
         Token = token;
     }
 
@@ -79,10 +78,6 @@ public class UserEditViewModel
 
     [Display(Name = "Family Members", Description = "Customize family members.")]
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
-
-    [Range(1, 9)]
-    [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
-    public int AtLeastXServingsPerRecipe { get; set; } = 3;
 
     [Required]
     [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]
@@ -161,13 +156,24 @@ public class UserEditViewModel
             UserId = userMuscleMobility.UserId;
             Section = userMuscleMobility.Section;
             Count = userMuscleMobility.Count;
+            AtLeastXServingsPerRecipe = userMuscleMobility.AtLeastXServingsPerRecipe;
+            AtLeastXUniqueNutrientsPerRecipe = userMuscleMobility.AtLeastXUniqueNutrientsPerRecipe;
         }
 
         public Section Section { get; init; }
 
         public int UserId { get; init; }
 
+        [Display(Name = "Servings", Description = "A relative weight of servings.")]
         [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
         public int Count { get; set; }
+
+        [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
+        [Range(UserConsts.AtLeastXUniqueNutrientsPerRecipeMin, UserConsts.AtLeastXUniqueNutrientsPerRecipeMax)]
+        public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault;
+
+        [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
+        [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]
+        public int AtLeastXServingsPerRecipe { get; set; } = UserConsts.AtLeastXServingsPerRecipeDefault;
     }
 }

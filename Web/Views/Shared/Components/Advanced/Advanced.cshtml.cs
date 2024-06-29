@@ -15,16 +15,10 @@ public class AdvancedViewModel
 
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
-        AtLeastXUniqueNutrientsPerRecipe = user.AtLeastXUniqueNutrientsPerRecipe;
     }
 
     public bool IsNotDefault => FootnoteCountTop != UserConsts.FootnoteCountTopDefault
-        || FootnoteCountBottom != UserConsts.FootnoteCountBottomDefault
-        || AtLeastXUniqueNutrientsPerRecipe != UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault;
-
-    [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
-    [Range(UserConsts.AtLeastXUniqueNutrientsPerRecipeMin, UserConsts.AtLeastXUniqueNutrientsPerRecipeMax)]
-    public int AtLeastXUniqueNutrientsPerRecipe { get; set; }
+        || FootnoteCountBottom != UserConsts.FootnoteCountBottomDefault;
 
     public string Token { get; init; } = null!;
     public string Email { get; init; } = null!;

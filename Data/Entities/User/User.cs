@@ -132,9 +132,6 @@ public class User
     /// </summary>
     public Features Features { get; set; } = Features.None;
 
-    [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]
-    public int AtLeastXServingsPerRecipe { get; set; } = UserConsts.AtLeastXServingsPerRecipeDefault;
-
     #region Advanced Preferences
 
     [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
@@ -142,9 +139,6 @@ public class User
 
     [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
     public int FootnoteCountBottom { get; set; } = UserConsts.FootnoteCountBottomDefault;
-
-    [Range(UserConsts.AtLeastXUniqueNutrientsPerRecipeMin, UserConsts.AtLeastXUniqueNutrientsPerRecipeMax)]
-    public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault;
 
     #endregion
     #region NotMapped

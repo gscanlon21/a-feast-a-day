@@ -78,7 +78,6 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.Equipment = viewModel.Equipment;
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
-                viewModel.User.AtLeastXServingsPerRecipe = viewModel.AtLeastXServingsPerRecipe;
 
                 context.UserFamilies.RemoveRange(context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
                 context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide)
@@ -97,6 +96,8 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                     {
                         UserId = umm.UserId,
                         Count = umm.Count,
+                        AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
+                        AtLeastXUniqueNutrientsPerRecipe = umm.AtLeastXUniqueNutrientsPerRecipe,
                         Section = umm.Section
                     })
                 );
@@ -143,7 +144,6 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
             {
                 user.FootnoteCountTop = viewModel.FootnoteCountTop;
                 user.FootnoteCountBottom = viewModel.FootnoteCountBottom;
-                user.AtLeastXUniqueNutrientsPerRecipe = viewModel.AtLeastXUniqueNutrientsPerRecipe;
 
                 await context.SaveChangesAsync();
             }
