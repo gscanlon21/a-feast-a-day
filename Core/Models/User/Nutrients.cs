@@ -27,7 +27,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Startch, Glycogen, Cellulose.")]
+    [Display(Name = "Starch", GroupName = "Carbohydrates", Description = "Complex Sugars: Starch, Glycogen, Cellulose.")]
     Starch = 1L << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]

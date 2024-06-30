@@ -40,7 +40,12 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     /// <summary>
     /// Filters variations to only those that target these Nutrient groups.
     /// </summary>
-    public IDictionary<Nutrients, double> NutrientTargets = new Dictionary<Nutrients, double>();
+    public IDictionary<Nutrients, double> NutrientTargetsRDA = new Dictionary<Nutrients, double>();
+
+    /// <summary>
+    /// Filters variations to only those that target these Nutrient groups.
+    /// </summary>
+    public IDictionary<Nutrients, double> NutrientTargetsTUL = new Dictionary<Nutrients, double>();
 
     private NutrientTargetsBuilder(IList<Nutrients> nutrients, FeastContext? context)
     {
@@ -67,7 +72,11 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     {
         // Base 1 target for each targeted Nutrient group. If we've already worked this Nutrient, reduce the Nutrient target volume.
         // Keep all Nutrient groups in our target dict so we exclude overworked Nutrients.
-        NutrientTargets = UserNutrient.NutrientTargets.Keys.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
+        NutrientTargetsRDA = UserNutrient.NutrientTargets.Keys.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
+
+        // Base 1 target for each targeted Nutrient group. If we've already worked this Nutrient, reduce the Nutrient target volume.
+        // Keep all Nutrient groups in our target dict so we exclude overworked Nutrients.
+        NutrientTargetsTUL = UserNutrient.NutrientTargets.Keys.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
 
         return this;
     }
@@ -78,24 +87,26 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     /// </summary>
     public INutrientBuilderFinal AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true, double scale = 1)
     {
-        if (Context?.WeeklyNutrientsRDA != null && Context.WeeklyNutrientsTUL != null)
+        if (Context?.WeeklyNutrientsRDA != null)
         {
-            foreach (var key in NutrientTargets.Keys)
+            foreach (var key in NutrientTargetsRDA.Keys)
             {
                 // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
-                if (Context.WeeklyNutrientsRDA[key].HasValue && Context.WeeklyNutrientsTUL[key].HasValue && UserNutrient.NutrientTargets.TryGetValue(key, out Range defaultRange))
+                if (Context.WeeklyNutrientsRDA[key].HasValue)
                 {
-                    var gramsUntilRDA = Context.WeeklyNutrientsRDA[key]!.Value * scale;
-                    var gramsUntilTUL = Context.WeeklyNutrientsTUL[key]!.Value * scale;
+                    NutrientTargetsRDA[key] = Context.WeeklyNutrientsRDA[key]!.Value * scale;
+                }
+            }
+        }
 
-                    NutrientTargets[key] = gramsUntilRDA;
-
-                    // We want a buffer before excluding Nutrient groups to where we don't target the Nutrient group, but still allow exercises that target the Nutrient to be chosen.
-                    // Forearms, for example, are rarely something we want to target directly, since they are worked in many functional movements.
-                    if (adjustDownBuffer && gramsUntilRDA <= 0 && gramsUntilTUL >= 0)
-                    {
-                        Nutrients.Remove(key);
-                    }
+        if (Context?.WeeklyNutrientsTUL != null)
+        {
+            foreach (var key in NutrientTargetsTUL.Keys)
+            {
+                // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
+                if (Context.WeeklyNutrientsTUL[key].HasValue)
+                {
+                    NutrientTargetsTUL[key] = Context.WeeklyNutrientsTUL[key]!.Value * scale;
                 }
             }
         }
@@ -105,6 +116,6 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
 
     public NutrientOptions Build()
     {
-        return new NutrientOptions(Nutrients, NutrientTargets);
+        return new NutrientOptions(Nutrients, NutrientTargetsRDA, NutrientTargetsTUL);
     }
 }

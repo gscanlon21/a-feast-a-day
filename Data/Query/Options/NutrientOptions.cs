@@ -12,10 +12,11 @@ public class NutrientOptions : IOptions
 
     public NutrientOptions() { }
 
-    public NutrientOptions(IList<Nutrients> nutrients, IDictionary<Nutrients, double> nutrientTargets)
+    public NutrientOptions(IList<Nutrients> nutrients, IDictionary<Nutrients, double> nutrientTargetsRDA, IDictionary<Nutrients, double> nutrientTargetsTUL)
     {
         Nutrients = nutrients;
-        NutrientTargets = nutrientTargets;
+        NutrientTargetsRDA = nutrientTargetsRDA;
+        NutrientTargetsTUL = nutrientTargetsTUL;
     }
 
     /// <summary>
@@ -26,13 +27,8 @@ public class NutrientOptions : IOptions
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IDictionary<Nutrients, double> NutrientTargets { get; } = new Dictionary<Nutrients, double>();
-
-    public double GetWorkedNutrientsSum()
-    {
-        // Ignoring negative values because those aren't worked.
-        return NutrientTargets.Where(mt => Nutrients.Contains(mt.Key)).Sum(mt => Math.Max(mt.Value, 0));
-    }
+    public IDictionary<Nutrients, double> NutrientTargetsRDA { get; } = new Dictionary<Nutrients, double>();
+    public IDictionary<Nutrients, double> NutrientTargetsTUL { get; } = new Dictionary<Nutrients, double>();
 
     /// <summary>
     /// This says what (strengthening/secondary/stretching) muscles we should abide by when selecting variations.

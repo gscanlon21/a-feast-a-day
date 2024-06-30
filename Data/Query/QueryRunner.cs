@@ -359,7 +359,7 @@ public class QueryRunner(Section section)
     private List<Nutrients> GetUnworkedNutrients(IList<QueryResults> finalResults)
     {
         // Not using Nutrients because NutrientTargets can contain unions 
-        return NutrientOptions.NutrientTargets.Where(kv =>
+        return NutrientOptions.NutrientTargetsRDA.Where(kv =>
         {
             // We are targeting this nutrient.
             return NutrientOptions.Nutrients.Any(mg => kv.Key.HasFlag(mg))
@@ -371,7 +371,7 @@ public class QueryRunner(Section section)
     private List<Nutrients> GetOverworkedNutrients(IList<QueryResults> finalResults)
     {
         // Not using Nutrients because NutrientTargets can contain unions.
-        return NutrientOptions.NutrientTargets.Where(kv =>
+        return NutrientOptions.NutrientTargetsTUL.Where(kv =>
         {
             // We have consumed too much of this nutrient.
             return finalResults.WorkedAnyNutrientCount(kv.Key) >= kv.Value;

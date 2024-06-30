@@ -118,11 +118,6 @@ public class UserRepo(CoreContext context)
 
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool rawValues = false)
     {
-        var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
-        var userServings = UserServing.DefaultServings.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
-        double familyCount = Math.Max(1, user.UserFamilies.Count);
-        var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
-
         var weeklyFeasts = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
@@ -146,8 +141,6 @@ public class UserRepo(CoreContext context)
                 g.Key,
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
                 Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
-                    // Only select variations that worked a strengthening intensity.
-                    .Where(nv => onlySections.HasFlag(nv.Section))
             }).ToListAsync();
 
         var userIngredients = await context.UserIngredients
@@ -198,11 +191,6 @@ public class UserRepo(CoreContext context)
 
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool rawValues = false)
     {
-        var onlySections = Section.Dinner | Section.Lunch | Section.Breakfast;
-        var userServings = UserServing.DefaultServings.Where(s => onlySections.HasFlag(s.Key)).Sum(s => user.UserServings.FirstOrDefault(us => us.Section == s.Key)?.Count ?? s.Value) / 21d;
-        double familyCount = Math.Max(1, user.UserFamilies.Count);
-        var familyPeople = Enum.GetValues<Person>().ToDictionary(p => p, p => user.UserFamilies.Where(f => f.Person == p));
-
         var weeklyFeasts = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
@@ -224,8 +212,6 @@ public class UserRepo(CoreContext context)
                 g.Key,
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
                 Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
-                    // Only select variations that worked a strengthening intensity.
-                    .Where(nv => onlySections.HasFlag(nv.Section))
             }).ToListAsync();
 
         var userIngredients = await context.UserIngredients
