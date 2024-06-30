@@ -22,6 +22,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
 {
     private readonly UserService _userService;
     private readonly LocalDatabase _localDatabase;
+    private readonly UserPreferences _preferences;
 
     public INavigation Navigation { get; set; } = null!;
 
@@ -29,9 +30,10 @@ public partial class ShoppingListPageViewModel : ObservableObject
     public IAsyncRelayCommand WhenCompletedCommand { get; set; }
     public IAsyncRelayCommand WhenCheckedCommand { get; set; }
 
-    public ShoppingListPageViewModel(UserService userService, LocalDatabase localDatabase)
+    public ShoppingListPageViewModel(UserService userService, LocalDatabase localDatabase, UserPreferences preferences)
     {
         _userService = userService;
+        _preferences = preferences;
         _localDatabase = localDatabase;
 
         LoadCommand = new AsyncRelayCommand(LoadShoppingList);
@@ -86,49 +88,53 @@ public partial class ShoppingListPageViewModel : ObservableObject
         }
     }
 
+    private readonly Lock _loadingLock = new();
     private async Task LoadShoppingList()
     {
-        Loading = true;
-
-        var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
-        var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-        var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), 0);
-        var shoppingList = (await _userService.GetShoppingList(email, token)).Result;
-        if (shoppingList != null)
+        if (_loadingLock.TryEnter())
         {
-            // If the week has changed, reset the shopping list.
-            if (shoppingListHash != shoppingList!.NewsletterId)
+            try
             {
-                // Remove unchecked custom items.
-                _ = await _localDatabase.DeleteItemsAsync();
-
-                // Update the shopping list hash so we don't reset again until next week.
-                Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.NewsletterId);
-            }
-
-            // Merge local and remote items into the db.
-            var localItems = await _localDatabase.GetItemsAsync();
-            var remoteItems = shoppingList.ShoppingList.Select(sl => new ShoppingListItem(sl)).ToList();
-            foreach (var remoteItem in remoteItems)
-            {
-                if (!localItems.Contains(remoteItem))
+                var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), 0);
+                var shoppingList = (await _userService.GetShoppingList(_preferences.Email.Value, _preferences.Token.Value)).Result;
+                if (shoppingList != null)
                 {
-                    await _localDatabase.SaveItemAsync(remoteItem);
+                    // If the week has changed, reset the shopping list.
+                    if (shoppingListHash != shoppingList!.NewsletterId)
+                    {
+                        _ = await _localDatabase.DeleteItemsAsync();
+
+                        // Update the shopping list hash so we don't reset again until next week.
+                        Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.NewsletterId);
+                    }
+
+                    // Merge local and remote items into the db.
+                    var localItems = await _localDatabase.GetItemsAsync();
+                    var remoteItems = shoppingList.ShoppingList.Select(sl => new ShoppingListItem(sl)).ToList();
+                    foreach (var remoteItem in remoteItems)
+                    {
+                        if (!localItems.Contains(remoteItem))
+                        {
+                            await _localDatabase.SaveItemAsync(remoteItem);
+                        }
+                    }
+                    foreach (var localItem in localItems)
+                    {
+                        if (!localItem.IsCustom && !remoteItems.Contains(localItem))
+                        {
+                            await _localDatabase.DeleteItemAsync(localItem);
+                        }
+                    }
+
+                    // Re-pull the list from the db so the Ids are up to date.
+                    Ingredients.ReplaceRange(await _localDatabase.GetItemsAsync());
                 }
             }
-            foreach (var localItem in localItems)
+            finally
             {
-                if (!localItem.IsCustom && !remoteItems.Contains(localItem))
-                {
-                    await _localDatabase.DeleteItemAsync(localItem);
-                }
+                _loadingLock.Exit();
+                Loading = false;
             }
-
-            // Re-pull the list from the db so the Ids are up to date.
-            Ingredients.ReplaceRange(await _localDatabase.GetItemsAsync());
         }
-
-        Loading = false;
-        return;
     }
 }

@@ -44,6 +44,7 @@ namespace Hybrid
 #endif
 
             builder.Services.AddSingleton<LocalDatabase>();
+            builder.Services.AddTransient<UserPreferences>();
 
             builder.Services.AddTransient<UserService>();
             builder.Services.AddTransient<NewsletterService>();

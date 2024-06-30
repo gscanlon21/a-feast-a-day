@@ -99,7 +99,6 @@ public class UserRepo(CoreContext context)
             // Next send date is a rest day and user does not want off day workouts, next send date is the day after.
             while ((user.RestDays.HasFlag(DaysExtensions.FromDate(nextSendDate.Value)))
                 // User was sent a newsletter for the next send date, next send date is the day after.
-                // Checking for variations because we create a dummy newsletter record to advance the workout split.
                 || await context.UserEmails
                     .Where(n => n.UserId == user.Id)
                     .Where(n => n.Subject == NewsletterConsts.SubjectFeast)
@@ -130,8 +129,6 @@ public class UserRepo(CoreContext context)
             .Where(n => n.UserId == user.Id)
             // Only look at records where the user is not new to fitness.
             //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
-            // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
-            .Where(n => n.UserFeastRecipes.Any())
             // Look at strengthening workouts only that are within the last X weeks.
             //.Where(n => n.Frequency != Frequency.OffDayStretches)
             .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
@@ -201,8 +198,6 @@ public class UserRepo(CoreContext context)
             .Where(n => n.UserId == user.Id)
             // Only look at records where the user is not new to fitness.
             //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
-            // Checking the newsletter variations because we create a dummy newsletter to advance the workout split.
-            .Where(n => n.UserFeastRecipes.Any())
             // Look at strengthening workouts only that are within the last X weeks.
             //.Where(n => n.Frequency != Frequency.OffDayStretches)
             .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
@@ -326,8 +321,6 @@ public class UserRepo(CoreContext context)
             .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.TodayOffset)
-            // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
-            .Where(n => n.UserFeastRecipes.Any())
             // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
             // Dummy records that are created when the user advances their workout split may also have the same date.
             .OrderByDescending(n => n.Date)
@@ -342,8 +335,6 @@ public class UserRepo(CoreContext context)
     {
         return (await context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
-            // Checking the newsletter variations because we create a dummy newsletter to advance the workout split and we want actual workouts.
-            .Where(n => n.UserFeastRecipes.Any())
             .Where(n => n.Date < user.TodayOffset)
             // Only select 1 workout per day, the most recent.
             .GroupBy(n => n.Date)

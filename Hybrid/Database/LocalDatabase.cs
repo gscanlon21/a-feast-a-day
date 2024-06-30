@@ -56,6 +56,10 @@ public class LocalDatabase
         return await Database.DeleteAsync(item);
     }
 
+    /// <summary>
+    /// Remove all non-custom items and checked custom items.
+    /// </summary>
+    /// <returns></returns>
     public async Task<int> DeleteItemsAsync()
     {
         await Init();
