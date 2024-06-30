@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Core.Dtos.Newsletter;
@@ -8,7 +7,6 @@ namespace Core.Dtos.Newsletter;
 /// <summary>
 /// A day's workout routine.
 /// </summary>
-[Table("user_email")]
 public class UserEmailDto
 {
     [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
@@ -31,7 +29,6 @@ public class UserEmailDto
     [Required]
     public DateTime SendAfter { get; set; } = DateTime.UtcNow;
 
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
     [Required]

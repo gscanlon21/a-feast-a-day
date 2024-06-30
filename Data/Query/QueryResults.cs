@@ -29,14 +29,12 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public int Id { get; init; } = recipeIngredient.Id;
     public Measure Measure { get; init; } = recipeIngredient.Measure;
     public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
-    public string Name { get; init; } = recipeIngredient.Name;
     public bool Optional { get; init; } = recipeIngredient.Optional;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
-    public int? IngredientId { get; init; } = recipeIngredient.IngredientId;
-    public int? IngredientRecipeId { get; init; } = recipeIngredient.IngredientRecipeId;
     public Ingredient? Ingredient { get; set; } = recipeIngredient.Ingredient;
     public Recipe? IngredientRecipe { get; init; } = recipeIngredient.IngredientRecipe;
     public UserRecipe UserIngredientRecipe { get; set; } = null!;
     public UserIngredient UserIngredient { get; set; } = null!;
+    public string Name => Ingredient?.Name ?? IngredientRecipe?.Name ?? "";
 }

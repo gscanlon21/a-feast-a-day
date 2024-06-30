@@ -15,8 +15,6 @@ public class IngredientDto
 
     public int? UserId { get; init; }
 
-    public int? ParentId { get; init; }
-
     /// <summary>
     /// Friendly name.
     /// </summary>
@@ -55,19 +53,12 @@ public class IngredientDto
     /// </summary>
     public DateOnly LastUpdated { get; set; }
 
-    /// <summary>
-    /// Substitute ingredients.
-    /// </summary>
-    public ICollection<IngredientDto> Children { get; init; } = [];
-
     public ICollection<IngredientAlternativeDto> Alternatives { get; init; } = [];
 
     /// <summary>
     /// Nutrients per Serving Size (Grams).
     /// </summary>
     public ICollection<NutrientDto> Nutrients { get; set; } = [];
-
-    public string? DisabledReason { get; init; } = null;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

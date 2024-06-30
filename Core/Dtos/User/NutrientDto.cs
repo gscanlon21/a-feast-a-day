@@ -1,9 +1,5 @@
-﻿using Core.Dtos.Ingredient;
-using Core.Models.User;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Core.Models.User;
 using System.Diagnostics;
-using System.Text.Json.Serialization;
 
 namespace Core.Dtos.User;
 
@@ -11,11 +7,9 @@ namespace Core.Dtos.User;
 /// <summary>
 /// Exercises listed on the website
 /// </summary>
-[Table("nutrient")]
 [DebuggerDisplay("{Nutrients}: {Measure} - {Value}")]
 public class NutrientDto
 {
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
     public int? IngredientId { get; init; }
@@ -35,11 +29,6 @@ public class NutrientDto
     /// Notes about the variation (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
-
-    public string? DisabledReason { get; init; } = null;
-
-    [JsonIgnore]
-    public virtual IngredientDto? Ingredient { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

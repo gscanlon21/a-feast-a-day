@@ -20,19 +20,19 @@ public class RecipeInstruction
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; init; } = null!;
+    public string Name { get; private init; } = null!;
 
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; init; } = null;
+    public string? Notes { get; private init; } = null;
 
-    public int Order { get; set; }
-
-    [NotMapped]
-    public bool Hide { get; set; }
+    public int Order { get; private init; }
 
     public string? DisabledReason { get; private init; } = null;
+
+    [NotMapped]
+    public bool Hide { get; init; }
 
     [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.Instructions))]
     public virtual Recipe Recipe { get; private init; } = null!;

@@ -53,9 +53,6 @@ public class RecipeIngredient
     public bool Hide { get; set; }
 
     [NotMapped]
-    public string Name => Ingredient?.Name ?? IngredientRecipe?.Name ?? "";
-
-    [NotMapped]
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
     [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredients))]

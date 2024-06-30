@@ -1,6 +1,4 @@
 ﻿using Core.Consts;
-using Core.Dtos.Newsletter;
-using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
@@ -50,25 +48,8 @@ public class RecipeDto
     /// </summary>
     public string? Notes { get; set; } = null;
 
-    public string? DisabledReason { get; set; } = null;
-
-    public bool Enabled
-    {
-        get => string.IsNullOrWhiteSpace(DisabledReason);
-        set => DisabledReason = value ? null : "Disabled by user";
-    }
-
-    [JsonIgnore]
-    public virtual UserDto User { get; set; } = null!;
-
     [JsonInclude]
     public virtual IList<RecipeInstructionDto> Instructions { get; set; } = [];
-
-    [JsonIgnore]
-    public virtual ICollection<UserFeastRecipeDto> UserFeastRecipes { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<UserRecipeDto> UserRecipes { get; init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
 

@@ -58,10 +58,6 @@ public class QueryRunner(Section section)
             .Include(r => r.Instructions)
             .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                 .ThenInclude(i => i.Ingredient)
-            .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
-                .ThenInclude(i => i.Ingredient)
-                    .ThenInclude(i => i.Alternatives)
-                        .ThenInclude(i => i.AlternativeIngredient)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -113,9 +109,8 @@ public class QueryRunner(Section section)
         }
         else
         {
+            // Do this before querying alternatives so that the user records also exist for the alternatives.
             await AddMissingUserRecords(context, queryResults);
-            // Do this before querying prerequisites so that the user records also exist for the prerequisites.
-
 
             var allIngredients = await context.Ingredients.ToListAsync();
             var userIngredientRecipes = await context.UserRecipes
@@ -123,7 +118,8 @@ public class QueryRunner(Section section)
                 .ToListAsync();
             var userIngredients = await context.UserIngredients
                 .Include(i => i.SubstituteIngredient)
-                    .ThenInclude(i => i.Nutrients)
+                    .ThenInclude(i => i.Alternatives)
+                        .ThenInclude(a => a.AlternativeIngredient)
                 .Where(i => i.UserId == UserOptions.Id)
                 .ToListAsync();
 
@@ -137,10 +133,10 @@ public class QueryRunner(Section section)
                 var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
                 foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
-                    if (recipeIngredient.IngredientId.HasValue)
+                    if (recipeIngredient.Ingredient != null)
                     {
                         // Don't grab recipes that contain ignored ingredients.
-                        var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == recipeIngredient.IngredientId);
+                        var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == recipeIngredient.Ingredient?.Id);
                         if (userIngredient?.Ignore == true)
                         {
                             if (recipeIngredient.Optional)
@@ -177,7 +173,7 @@ public class QueryRunner(Section section)
                         // Scale the ingredient.
                         recipeIngredient.QuantityNumerator *= scale;
                     }
-                    else if (recipeIngredient.IngredientRecipeId.HasValue)
+                    else if (recipeIngredient.IngredientRecipe != null)
                     {
                         ignoreRecipe = ignoreRecipe && recipeIngredient.UserIngredientRecipe.Ignore;
                     }
@@ -193,11 +189,11 @@ public class QueryRunner(Section section)
             }
         }
 
-        var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.IngredientId)).ToList();
+        var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         var allNutrients = await context.Nutrients.Where(n => allIngredientIds.Contains(n.IngredientId)).ToListAsync();
         foreach (var queryResult in filteredResults)
         {
-            queryResult.Nutrients = allNutrients.Where(n => queryResult.RecipeIngredients.Select(ri => ri.IngredientId).Contains(n.IngredientId)).ToList();
+            queryResult.Nutrients = allNutrients.Where(n => queryResult.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
         }
 
         // OrderBy must come after the query or you get cartesian explosion.
@@ -326,12 +322,12 @@ public class QueryRunner(Section section)
         }
 
         foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
-            .Where(i => i.UserIngredientRecipe == null && i.IngredientRecipeId.HasValue))
+            .Where(i => i.UserIngredientRecipe == null && i.IngredientRecipe != null))
         {
             ingredient.UserIngredientRecipe = new UserRecipe()
             {
                 UserId = UserOptions.Id,
-                RecipeId = ingredient.IngredientRecipeId!.Value
+                RecipeId = ingredient.IngredientRecipe!.Id
             };
 
             if (recipesCreated.Add(ingredient.UserIngredientRecipe))
@@ -342,13 +338,13 @@ public class QueryRunner(Section section)
 
         var ingredientsCreated = new HashSet<UserIngredient>();
         foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
-            .Where(i => i.UserIngredient == null && i.IngredientId.HasValue))
+            .Where(i => i.UserIngredient == null && i.Ingredient != null))
         {
             ingredient.UserIngredient = new UserIngredient()
             {
                 UserId = UserOptions.Id,
-                IngredientId = ingredient.IngredientId!.Value,
-                SubstituteIngredientId = ingredient.IngredientId!.Value,
+                IngredientId = ingredient.Ingredient!.Id,
+                SubstituteIngredientId = ingredient.Ingredient!.Id,
             };
 
             if (ingredientsCreated.Add(ingredient.UserIngredient))

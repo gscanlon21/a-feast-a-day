@@ -9,7 +9,7 @@ public static class IngredientExtensions
 {
     internal static Ingredient SubstitutedIngredient(this Ingredient ingredient, UserIngredient? substitute)
     {
-        return substitute?.SubstituteIngredient ?? ingredient;
+        return (ingredient == substitute?.SubstituteIngredient) ? ingredient : substitute?.SubstituteIngredient ?? ingredient;
     }
 
     internal static Ingredient? SubstitutedIngredientForAllergens(this Ingredient ingredient, IList<Ingredient> allIngredients, Allergy allergens)

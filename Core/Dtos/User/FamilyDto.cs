@@ -1,12 +1,9 @@
 ﻿using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace Core.Dtos.User;
 
 
-[Table("user_family")]
 public class UserFamilyDto
 {
     public static class Consts
@@ -20,7 +17,6 @@ public class UserFamilyDto
         public const int WeightMax = 150;
     }
 
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
     public Person Person { get; init; }
@@ -32,7 +28,4 @@ public class UserFamilyDto
     public int CaloriesPerDay { get; init; } = Consts.CaloriesPerDayDefault;
 
     public int UserId { get; init; }
-
-    [JsonIgnore]
-    public virtual UserDto User { get; init; } = null!;
 }

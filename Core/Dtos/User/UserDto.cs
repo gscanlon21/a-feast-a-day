@@ -1,8 +1,4 @@
 ﻿using Core.Consts;
-using Core.Dtos.Footnote;
-using Core.Dtos.Ingredient;
-using Core.Dtos.Newsletter;
-using Core.Dtos.Recipe;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
@@ -17,11 +13,9 @@ namespace Core.Dtos.User;
 /// <summary>
 /// User who signed up for the newsletter.
 /// </summary>
-[Table("user")]
 [DebuggerDisplay("Email = {Email}, LastActive = {LastActive}")]
 public class UserDto
 {
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
     /// <summary>
@@ -100,11 +94,6 @@ public class UserDto
     public DateOnly? LastActive { get; set; } = null;
 
     /// <summary>
-    /// User would like to receive the workouts in emails?
-    /// </summary>
-    public string? NewsletterDisabledReason { get; set; } = null;
-
-    /// <summary>
     /// What features should the user have access to?
     /// </summary>
     public Features Features { get; set; } = Features.None;
@@ -125,47 +114,11 @@ public class UserDto
     [NotMapped]
     public bool IsDemoUser => Features.HasFlag(Features.Demo);
 
-    /// <summary>
-    /// Don't use in queries, is not mapped currently.
-    /// </summary>
-    [NotMapped]
-    public bool NewsletterEnabled => NewsletterDisabledReason == null;
-
     #endregion
     #region Navigation Properties
 
-    [JsonIgnore]
-    public virtual ICollection<UserFamilyDto> UserFamilies { get; init; } = [];
-
-    [JsonIgnore]
-    public virtual ICollection<UserNutrientDto> UserNutreints { get; init; } = [];
-
-    [JsonIgnore]
-    public virtual ICollection<UserIngredientDto> UserIngredients { get; init; } = [];
-
-    [JsonIgnore]
-    public virtual ICollection<UserTokenDto> UserTokens { get; init; } = [];
-
     [JsonInclude]
     public virtual ICollection<UserServingDto> UserServings { get; init; } = [];
-
-    [JsonIgnore]
-    public virtual ICollection<UserFeastDto> UserFeasts { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<RecipeDto> Recipes { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<UserRecipeDto> UserRecipes { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<IngredientDto> Ingredients { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<UserEmailDto> UserEmails { get; init; } = null!;
-
-    [JsonIgnore]
-    public virtual ICollection<FootnoteDto> UserFootnotes { get; init; } = null!;
 
     #endregion
 }

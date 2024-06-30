@@ -1,8 +1,6 @@
-﻿using Core.Dtos.Recipe;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
-using System.Text.Json.Serialization;
 
 namespace Core.Dtos.User;
 
@@ -39,12 +37,6 @@ public class UserRecipeDto
     /// </summary>
     [Required]
     public DateOnly LastSeen { get; set; }
-
-    [JsonIgnore]
-    public virtual RecipeDto Recipe { get; set; } = null!;
-
-    [JsonIgnore]
-    public virtual UserDto User { get; init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
 
