@@ -1,21 +1,17 @@
-﻿using Core.Consts;
-using Core.Models.Newsletter;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+﻿using Core.Models.Newsletter;
 
 namespace Core.Dtos.User;
 
-[Table("user_serving")]
 public class UserServingDto
 {
     public Section Section { get; init; }
 
     public int UserId { get; init; }
 
-    [JsonIgnore]
-    public virtual UserDto User { get; init; } = null!;
+    public int Count { get; init; }
 
-    [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
-    public int Count { get; set; }
+    public int AtLeastXNutrientsPerRecipe { get; init; }
+
+    public int AtLeastXServingsPerRecipe { get; init; }
+
 }

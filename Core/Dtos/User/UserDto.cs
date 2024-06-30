@@ -109,15 +109,12 @@ public class UserDto
     /// </summary>
     public Features Features { get; set; } = Features.None;
 
-    public int AtLeastXServingsPerRecipe { get; set; }
 
     #region Advanced Preferences
 
     public int FootnoteCountTop { get; set; }
 
     public int FootnoteCountBottom { get; set; }
-
-    public int AtLeastXNutrientsPerRecipe { get; set; }
 
     #endregion
     #region NotMapped
