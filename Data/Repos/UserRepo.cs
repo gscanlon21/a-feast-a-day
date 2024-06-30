@@ -290,7 +290,7 @@ public class UserRepo(CoreContext context)
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
             var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
-            return gramsOfRDATUL * (user.IsDemoUser ? 49 : 7);
+            return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
         });
 
         return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>

@@ -29,6 +29,7 @@ public class IngredientsViewComponent(CoreContext context, UserRepo userRepo) : 
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
         var userIngredients = await context.Ingredients.AsNoTracking()
+            .Include(i => i.Nutrients)
             .Include(i => i.Alternatives)
                 .ThenInclude(a => a.AlternativeIngredient)
             .Where(i => i.UserId == user.Id

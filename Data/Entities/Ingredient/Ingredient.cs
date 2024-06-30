@@ -68,7 +68,7 @@ public class Ingredient
     /// <summary>
     /// Nutrients per serving.
     /// </summary>
-    [InverseProperty(nameof(Nutrient.Ingredient))]
+    [JsonInclude, InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual IList<Nutrient> Nutrients { get; private init; } = [];
 
     /// <summary>
