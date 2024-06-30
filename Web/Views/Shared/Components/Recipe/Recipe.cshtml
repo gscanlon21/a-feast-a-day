@@ -195,7 +195,7 @@
 
                         <div class="form-group">
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
-                            <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder="diced, minced, thinly chopped..." class="form-control" />
+                            <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" />
 
                             <div class="form-check mt-1">
                                 <label asp-for="Recipe.RecipeIngredients[id].Optional" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Optional)</label>
