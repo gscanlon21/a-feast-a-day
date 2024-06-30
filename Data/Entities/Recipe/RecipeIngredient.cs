@@ -45,9 +45,9 @@ public class RecipeIngredient
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; private init; } = null;
+    public string? Notes { get; init; } = null;
 
-    public string? DisabledReason { get; private init; } = null;
+    public string? DisabledReason { get; init; } = null;
 
     [NotMapped]
     public bool Hide { get; set; }

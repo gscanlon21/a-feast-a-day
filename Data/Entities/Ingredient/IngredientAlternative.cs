@@ -15,7 +15,7 @@ public class IngredientAlternative
     /// <summary>
     /// This is the ingredient that has an alternative.
     /// </summary>
-    public virtual int IngredientId { get; private init; }
+    public virtual int IngredientId { get; init; }
 
     /// <summary>
     /// This is the ingredient that has an alternative.
@@ -26,7 +26,7 @@ public class IngredientAlternative
     /// <summary>
     /// This is the alternative ingredient.
     /// </summary>
-    public virtual int AlternativeIngredientId { get; private init; }
+    public virtual int AlternativeIngredientId { get; init; }
 
     /// <summary>
     /// This is the alternative ingredient.

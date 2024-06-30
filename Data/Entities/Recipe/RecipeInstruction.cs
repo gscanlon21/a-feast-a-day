@@ -20,16 +20,16 @@ public class RecipeInstruction
     /// Friendly name.
     /// </summary>
     [Required]
-    public string Name { get; private init; } = null!;
+    public string Name { get; init; } = null!;
 
     /// <summary>
     /// Notes about the variation (externally shown).
     /// </summary>
-    public string? Notes { get; private init; } = null;
+    public string? Notes { get; init; } = null;
 
-    public int Order { get; private init; }
+    public int Order { get; init; }
 
-    public string? DisabledReason { get; private init; } = null;
+    public string? DisabledReason { get; init; } = null;
 
     [NotMapped]
     public bool Hide { get; init; }
