@@ -140,7 +140,7 @@
                 @for (int id = 0; id < Model.Recipe.RecipeIngredients.Count; id++)
                 {
                     var userIngredient = Model.Recipe.RecipeIngredients[id];
-                    <div id="custom-ingredient-@id" class="mb-3 mt-3 custom-ingredient @(userIngredient.Hide ? "d-none" : "")" data-day="@id">
+                    <div id="custom-ingredient-@id" class="mb-4 custom-ingredient @(userIngredient.Hide ? "d-none" : "")" data-day="@id">
                         <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.RecipeIngredients[id].Hide" />
                         <input type="hidden" asp-for="@id" />
 
