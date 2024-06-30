@@ -110,21 +110,21 @@
 
                                 <div class="mb-1">
                                     <div class="form-group mb-3">
-                                        <label asp-for="UserServings[i].AtLeastXUniqueNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe)</label>
+                                        <label asp-for="UserServings[i].AtLeastXNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)</label>
                                         <div style="display:flex;column-gap:1ex;">
-                                            <output name="OutputAtLeastXUniqueNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe)">@Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe</output>
+                                            <output name="OutputAtLeastXNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)">@Model.UserServings[i].AtLeastXNutrientsPerRecipe</output>
                                             <div style="display:flex;width:100%;">
-                                                <input asp-for="UserServings[i].AtLeastXUniqueNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                <input asp-for="UserServings[i].AtLeastXNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
                                                        step="1" min="1" max="9"
-                                                       oninput="OutputAtLeastXUniqueNutrientsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXUniqueNutrientsPerRecipe@(i)" />
-                                                <datalist id="ListAtLeastXUniqueNutrientsPerRecipe@(i)">
-                                                    <option value="@UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault"></option>
+                                                       oninput="OutputAtLeastXNutrientsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXNutrientsPerRecipe@(i)" />
+                                                <datalist id="ListAtLeastXNutrientsPerRecipe@(i)">
+                                                    <option value="@UserConsts.AtLeastXNutrientsPerRecipeDefault"></option>
                                                 </datalist>
                                             </div>
                                         </div>
-                                        <span asp-validation-for="UserServings[i].AtLeastXUniqueNutrientsPerRecipe" class="text-danger"></span>
+                                        <span asp-validation-for="UserServings[i].AtLeastXNutrientsPerRecipe" class="text-danger"></span>
                                         <div id="refresh-functional-help" class="form-text">
-                                            @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXUniqueNutrientsPerRecipe)
+                                            @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)
                                         </div>
                                     </div>
                                 </div>

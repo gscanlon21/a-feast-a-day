@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -46,10 +47,8 @@ namespace Data.Migrations
                     LastActive = table.Column<DateOnly>(type: "date", nullable: true),
                     NewsletterDisabledReason = table.Column<string>(type: "text", nullable: true),
                     Features = table.Column<int>(type: "integer", nullable: false),
-                    AtLeastXServingsPerRecipe = table.Column<int>(type: "integer", nullable: false),
                     FootnoteCountTop = table.Column<int>(type: "integer", nullable: false),
-                    FootnoteCountBottom = table.Column<int>(type: "integer", nullable: false),
-                    AtLeastXUniqueNutrientsPerRecipe = table.Column<int>(type: "integer", nullable: false)
+                    FootnoteCountBottom = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,12 +64,12 @@ namespace Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: true),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Allergens = table.Column<long>(type: "bigint", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
-                    GramsPerServing = table.Column<double>(type: "double precision", nullable: false),
-                    CaloriesPerServing = table.Column<double>(type: "double precision", nullable: false),
-                    GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
+                    Allergens = table.Column<long>(type: "bigint", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
+                    GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
+                    GramsPerCup = table.Column<double>(type: "double precision", nullable: false),
+                    GramsPerServing = table.Column<double>(type: "double precision", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     LastUpdated = table.Column<DateOnly>(type: "date", nullable: false),
                     DisabledReason = table.Column<string>(type: "text", nullable: true)
@@ -236,7 +235,9 @@ namespace Data.Migrations
                 {
                     Section = table.Column<int>(type: "integer", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    Count = table.Column<int>(type: "integer", nullable: false)
+                    Count = table.Column<int>(type: "integer", nullable: false),
+                    AtLeastXNutrientsPerRecipe = table.Column<int>(type: "integer", nullable: false),
+                    AtLeastXServingsPerRecipe = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

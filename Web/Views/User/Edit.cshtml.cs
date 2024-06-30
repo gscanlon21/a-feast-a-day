@@ -157,7 +157,7 @@ public class UserEditViewModel
             Section = userMuscleMobility.Section;
             Count = userMuscleMobility.Count;
             AtLeastXServingsPerRecipe = userMuscleMobility.AtLeastXServingsPerRecipe;
-            AtLeastXUniqueNutrientsPerRecipe = userMuscleMobility.AtLeastXUniqueNutrientsPerRecipe;
+            AtLeastXNutrientsPerRecipe = userMuscleMobility.AtLeastXNutrientsPerRecipe;
         }
 
         public Section Section { get; init; }
@@ -168,9 +168,9 @@ public class UserEditViewModel
         [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
         public int Count { get; set; }
 
-        [Display(Name = "At Least X Unique Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
-        [Range(UserConsts.AtLeastXUniqueNutrientsPerRecipeMin, UserConsts.AtLeastXUniqueNutrientsPerRecipeMax)]
-        public int AtLeastXUniqueNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXUniqueNutrientsPerRecipeDefault;
+        [Display(Name = "At Least X Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
+        [Range(UserConsts.AtLeastXNutrientsPerRecipeMin, UserConsts.AtLeastXNutrientsPerRecipeMax)]
+        public int AtLeastXNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXNutrientsPerRecipeDefault;
 
         [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
         [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]

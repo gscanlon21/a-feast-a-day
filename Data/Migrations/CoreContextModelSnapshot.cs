@@ -616,10 +616,10 @@ namespace Data.Migrations
                     b.Property<int>("Section")
                         .HasColumnType("integer");
 
-                    b.Property<int>("AtLeastXServingsPerRecipe")
+                    b.Property<int>("AtLeastXNutrientsPerRecipe")
                         .HasColumnType("integer");
 
-                    b.Property<int>("AtLeastXUniqueNutrientsPerRecipe")
+                    b.Property<int>("AtLeastXServingsPerRecipe")
                         .HasColumnType("integer");
 
                     b.Property<int>("Count")

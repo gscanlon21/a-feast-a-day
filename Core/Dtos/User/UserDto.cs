@@ -117,7 +117,7 @@ public class UserDto
 
     public int FootnoteCountBottom { get; set; }
 
-    public int AtLeastXUniqueNutrientsPerRecipe { get; set; }
+    public int AtLeastXNutrientsPerRecipe { get; set; }
 
     #endregion
     #region NotMapped

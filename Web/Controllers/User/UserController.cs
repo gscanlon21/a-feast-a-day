@@ -97,7 +97,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                         UserId = umm.UserId,
                         Count = umm.Count,
                         AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
-                        AtLeastXUniqueNutrientsPerRecipe = umm.AtLeastXUniqueNutrientsPerRecipe,
+                        AtLeastXNutrientsPerRecipe = umm.AtLeastXNutrientsPerRecipe,
                         Section = umm.Section
                     })
                 );

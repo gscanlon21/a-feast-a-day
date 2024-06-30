@@ -23,7 +23,7 @@ public partial class NewsletterRepo
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
-                    options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
+                    options.AtLeastXNutrientsPerRecipe = newsletterContext.User.AtLeastXNutrientsPerRecipe;
                 })
             .WithServingsOptions(options =>
             {
@@ -61,7 +61,7 @@ public partial class NewsletterRepo
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
-                    options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
+                    options.AtLeastXNutrientsPerRecipe = newsletterContext.User.AtLeastXNutrientsPerRecipe;
                 })
             .WithServingsOptions(options =>
             {
@@ -99,7 +99,7 @@ public partial class NewsletterRepo
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
-                    options.AtLeastXUniqueNutrientsPerRecipe = newsletterContext.User.AtLeastXUniqueNutrientsPerRecipe;
+                    options.AtLeastXNutrientsPerRecipe = newsletterContext.User.AtLeastXNutrientsPerRecipe;
                 })
             .WithServingsOptions(options =>
             {

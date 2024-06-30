@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20240629220925_SectionSpecificAtLeastX")]
-    partial class SectionSpecificAtLeastX
+    [Migration("20240630003111_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -619,10 +619,10 @@ namespace Data.Migrations
                     b.Property<int>("Section")
                         .HasColumnType("integer");
 
-                    b.Property<int>("AtLeastXServingsPerRecipe")
+                    b.Property<int>("AtLeastXNutrientsPerRecipe")
                         .HasColumnType("integer");
 
-                    b.Property<int>("AtLeastXUniqueNutrientsPerRecipe")
+                    b.Property<int>("AtLeastXServingsPerRecipe")
                         .HasColumnType("integer");
 
                     b.Property<int>("Count")

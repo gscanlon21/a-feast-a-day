@@ -253,13 +253,6 @@ public class QueryRunner(Section section)
                 //    continue;
                 //}
 
-                // Don't choose exercises under our desired number of worked nutrients.
-                if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue
-                    && nutrientTarget(recipe).Keys.Count < NutrientOptions.AtLeastXNutrientsPerRecipe.Value)
-                {
-                    continue;
-                }
-
                 // Don't overwork nutrients.
                 var overworkedNutrients = GetOverworkedNutrients(finalResults);
                 if (overworkedNutrients.Any(mg => nutrientTarget(recipe).ContainsKey(mg)))
@@ -268,7 +261,7 @@ public class QueryRunner(Section section)
                 }
 
                 // Choose exercises that cover at least X muscles in the targeted muscles set.
-                if (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue)
+                if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
                 {
                     var unworkedNutrients = GetUnworkedNutrients(finalResults);
 
@@ -280,7 +273,7 @@ public class QueryRunner(Section section)
 
                     // The recipe does not work enough unique nutrients that we are trying to target.
                     // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes if, for example, a prerequisite only works one muscle group and that muscle group is otherwise worked by compound exercises.
-                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).ContainsKey(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.Value))
+                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).ContainsKey(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXNutrientsPerRecipe.Value))
                     {
                         continue;
                     }
@@ -296,7 +289,7 @@ public class QueryRunner(Section section)
         // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
         // Choose a 3-muscle group compound exercise or a 2-muscle group compound exercise and then an isolation exercise.
         while ((ServingsOptions.AtLeastXServingsPerRecipe.HasValue && --ServingsOptions.AtLeastXServingsPerRecipe >= 1)
-            || (NutrientOptions.AtLeastXUniqueNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXUniqueNutrientsPerRecipe >= 1)
+            || (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1)
         );
 
         // REFACTORME
