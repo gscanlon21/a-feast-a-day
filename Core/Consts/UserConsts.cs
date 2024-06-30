@@ -19,7 +19,6 @@ public class UserConsts
     public const int IngredientsMax = 10;
 
     public const int WeeklyServingsMin = 0;
-    public const int WeeklyServingsDefault = 7;
     public const int WeeklyServingsMax = 35;
 
     public const int LagRefreshXWeeksMin = 0;

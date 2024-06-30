@@ -28,13 +28,13 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 {
     public int Id { get; init; } = recipeIngredient.Id;
     public Measure Measure { get; init; } = recipeIngredient.Measure;
-    public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public bool Optional { get; init; } = recipeIngredient.Optional;
+    public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
     public Ingredient? Ingredient { get; set; } = recipeIngredient.Ingredient;
     public Recipe? IngredientRecipe { get; init; } = recipeIngredient.IngredientRecipe;
-    public UserRecipe UserIngredientRecipe { get; set; } = null!;
-    public UserIngredient UserIngredient { get; set; } = null!;
-    public string Name => Ingredient?.Name ?? IngredientRecipe?.Name ?? "";
+    public UserIngredient? UserIngredient { get; set; }
+    public UserRecipe? UserIngredientRecipe { get; set; }
+    public string Name { get; init; } = null!;
 }

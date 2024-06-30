@@ -156,7 +156,7 @@ public class UserRepo(CoreContext context)
                             .SelectMany(recipeIngredient =>
                             {
                                 var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                                var substitutedIngredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
+                                var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
                                 return substitutedIngredient?.Nutrients.Select(nutrient =>
                                 {
                                     var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
@@ -225,7 +225,7 @@ public class UserRepo(CoreContext context)
                             .SelectMany(recipeIngredient =>
                             {
                                 var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                                var substitutedIngredient = recipeIngredient.Ingredient.SubstitutedIngredient(userIngredient);
+                                var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
                                 return substitutedIngredient?.Nutrients.Select(nutrient =>
                                 {
                                     var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);

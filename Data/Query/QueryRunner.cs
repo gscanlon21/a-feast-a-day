@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Code.Extensions;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
@@ -58,6 +59,8 @@ public class QueryRunner(Section section)
             .Include(r => r.Instructions)
             .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                 .ThenInclude(i => i.Ingredient)
+                .ThenInclude(i => i.UserIngredients.Where(ui => ui.UserId == UserOptions.Id))
+                .ThenInclude(i => i.SubstituteIngredient)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -70,6 +73,7 @@ public class QueryRunner(Section section)
                 UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
                 RecipeIngredients = i.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
                 {
+                    Name = ri.Ingredient.Name ?? ri.IngredientRecipe.Name ?? "",
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
                 }).ToList(),
@@ -100,7 +104,15 @@ public class QueryRunner(Section section)
         filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (curr2, n2) => curr2 | n2), include: true);
         filteredQuery = Filters.FilterEquipmentIds(filteredQuery, EquipmentOptions.Equipment);
 
-        var queryResults = await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
+        var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync())
+            // Don't grab recipes that use ingredients that the user wants to ignore.
+            // Checking the base ingredient for ignored and not the substitute ingredient,
+            // because we don't want the user to ignore a substitute ingredient
+            // and cause a cascade effect for recipes that use that substitute.
+            .Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient?.Ignore != true))
+            // Don't grab recipes that use ingredient recipes that the user wants to ignore.
+            .Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe?.Ignore != true))
+            .ToList();
 
         var filteredResults = new List<InProgressQueryResults>();
         if (UserOptions.NoUser)
@@ -112,17 +124,6 @@ public class QueryRunner(Section section)
             // Do this before querying alternatives so that the user records also exist for the alternatives.
             await AddMissingUserRecords(context, queryResults);
 
-            var allIngredients = await context.Ingredients.ToListAsync();
-            var userIngredientRecipes = await context.UserRecipes
-                .Where(i => i.UserId == UserOptions.Id)
-                .ToListAsync();
-            var userIngredients = await context.UserIngredients
-                .Include(i => i.SubstituteIngredient)
-                    .ThenInclude(i => i.Alternatives)
-                        .ThenInclude(a => a.AlternativeIngredient)
-                .Where(i => i.UserId == UserOptions.Id)
-                .ToListAsync();
-
             foreach (var queryResult in queryResults)
             {
                 var ignoreRecipe = false;
@@ -130,54 +131,31 @@ public class QueryRunner(Section section)
                 var scale = RecipeOptions.RecipeIds?.TryGetValue(queryResult.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1;
                 queryResult.Recipe.Servings *= scale;
 
+                // Filter out optional ingredients that the user has allergens for.
                 var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
                 foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
                     if (recipeIngredient.Ingredient != null)
                     {
-                        // Don't grab recipes that contain ignored ingredients.
-                        var userIngredient = userIngredients.FirstOrDefault(si => si.IngredientId == recipeIngredient.Ingredient?.Id);
-                        if (userIngredient?.Ignore == true)
-                        {
-                            if (recipeIngredient.Optional)
-                            {
-                                continue;
-                            }
-                            else
-                            {
-                                ignoreRecipe = true;
-                            }
-                        }
-
-                        // Find the user's substituted ingredient.
-                        recipeIngredient.Ingredient = recipeIngredient.Ingredient!.SubstitutedIngredient(userIngredient);
+                        // Swap the user's substituted ingredient.
+                        recipeIngredient.Ingredient = recipeIngredient.UserIngredient!.SubstituteIngredient;
 
                         // Switch the ingredient with another if it conflicts with allergens.
-                        var substituteIngredient = recipeIngredient.Ingredient.SubstitutedIngredientForAllergens(allIngredients, UserOptions.Allergens);
-                        if (substituteIngredient == null)
+                        if (recipeIngredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens))
                         {
-                            if (recipeIngredient.Optional)
+                            recipeIngredient.Ingredient = recipeIngredient.Ingredient.Alternatives.Select(a => a.AlternativeIngredient)
+                                .FirstOrDefault(ai => !ai.Allergens.HasAnyFlag32(UserOptions.Allergens));
+
+                            if (recipeIngredient.Ingredient == null)
                             {
+                                ignoreRecipe = !recipeIngredient.Optional;
                                 continue;
                             }
-                            else
-                            {
-                                ignoreRecipe = true;
-                            }
                         }
-                        else
-                        {
-                            recipeIngredient.Ingredient = substituteIngredient;
-                        }
-
-                        // Scale the ingredient.
-                        recipeIngredient.QuantityNumerator *= scale;
-                    }
-                    else if (recipeIngredient.IngredientRecipe != null)
-                    {
-                        ignoreRecipe = ignoreRecipe && recipeIngredient.UserIngredientRecipe.Ignore;
                     }
 
+                    // Scale the ingredient.
+                    recipeIngredient.QuantityNumerator *= scale;
                     finalRecipeIngredients.Add(recipeIngredient);
                 }
 
@@ -191,9 +169,9 @@ public class QueryRunner(Section section)
 
         var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         var allNutrients = await context.Nutrients.Where(n => allIngredientIds.Contains(n.IngredientId)).ToListAsync();
-        foreach (var queryResult in filteredResults)
+        foreach (var filteredResult in filteredResults)
         {
-            queryResult.Nutrients = allNutrients.Where(n => queryResult.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
+            filteredResult.Nutrients = allNutrients.Where(n => filteredResult.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
         }
 
         // OrderBy must come after the query or you get cartesian explosion.
@@ -242,13 +220,6 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                // Don't overwork weekly servings.
-                //if (ServingsOptions.WeeklyServings.HasValue
-                //    && finalResults.Aggregate(recipe.Recipe.Servings, (curr, next) => curr + next.Recipe.Servings) > ServingsOptions.WeeklyServings.Value)
-                //{
-                //    continue;
-                //}
-
                 // Don't overwork nutrients.
                 var overworkedNutrients = GetOverworkedNutrients(finalResults);
                 if (overworkedNutrients.Any(mg => nutrientTarget(recipe).ContainsKey(mg)))
@@ -256,12 +227,12 @@ public class QueryRunner(Section section)
                     continue;
                 }
 
-                // Choose exercises that cover at least X muscles in the targeted muscles set.
+                // Choose exercises that cover at least X nutrients in the targeted nutrient set.
                 if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
                 {
                     var unworkedNutrients = GetUnworkedNutrients(finalResults);
 
-                    // We've already worked all unique muscles
+                    // We've already worked all unique nutrients.
                     if (unworkedNutrients.Count == 0)
                     {
                         break;
@@ -282,8 +253,7 @@ public class QueryRunner(Section section)
                 }
             }
         }
-        // If AtLeastXUniqueMusclesPerExercise is say 4 and there are 7 muscle groups, we don't want 3 isolation exercises at the end if there are no 3-muscle group compound exercises to find.
-        // Choose a 3-muscle group compound exercise or a 2-muscle group compound exercise and then an isolation exercise.
+        // Slowly allow out of preference recipes until we meet our nutritional targets.
         while ((ServingsOptions.AtLeastXServingsPerRecipe.HasValue && --ServingsOptions.AtLeastXServingsPerRecipe >= 1)
             || (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1)
         );
@@ -344,6 +314,7 @@ public class QueryRunner(Section section)
             {
                 UserId = UserOptions.Id,
                 IngredientId = ingredient.Ingredient!.Id,
+                SubstituteIngredient = ingredient.Ingredient!,
                 SubstituteIngredientId = ingredient.Ingredient!.Id,
             };
 
