@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Core.Dtos.Newsletter;
+using Hybrid.Database;
 using Lib.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -21,6 +22,7 @@ public partial class NewslettersPage : ContentPage
 public partial class NewslettersPageViewModel : ObservableObject
 {
     private readonly UserService _userService;
+    private readonly UserPreferences _preferences;
 
     public INavigation Navigation { get; set; } = null!;
 
@@ -28,12 +30,13 @@ public partial class NewslettersPageViewModel : ObservableObject
 
     public IAsyncRelayCommand LoadCommand { get; }
 
-    public NewslettersPageViewModel(UserService userService)
+    public NewslettersPageViewModel(UserService userService, UserPreferences preferences)
     {
         _userService = userService;
+        _preferences = preferences;
 
         LoadCommand = new AsyncRelayCommand(LoadRecipesAsync);
-        NewsletterCommand = new Command<UserFeastViewModel>(async (UserFeastViewModel arg) =>
+        NewsletterCommand = new Command<UserFeastDto>(async (UserFeastDto arg) =>
         {
             await Navigation.PushAsync(new NewsletterPage(arg.Date));
         });
@@ -43,15 +46,12 @@ public partial class NewslettersPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<UserFeastViewModel>? _recipes = null;
+    public ObservableCollection<UserFeastDto>? _recipes = null;
 
     private async Task LoadRecipesAsync()
     {
-        var email = Preferences.Default.Get(nameof(PreferenceKeys.Email), "");
-        var token = Preferences.Default.Get(nameof(PreferenceKeys.Token), "");
-
-        var pastFeasts = await _userService.GetFeasts(email, token);
-        Recipes = new ObservableCollection<UserFeastViewModel>(pastFeasts.Result ?? []);
+        var pastFeasts = await _userService.GetFeasts(_preferences.Email.Value, _preferences.Token.Value);
+        Recipes = new ObservableCollection<UserFeastDto>(pastFeasts.Result ?? []);
 
         Loading = false;
     }

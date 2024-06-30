@@ -30,10 +30,10 @@ public class UserService
         return await ApiResult<UserNewsletterDto>.FromResponse(response);
     }
 
-    public async Task<ApiResult<IList<UserFeastViewModel>>> GetFeasts(string email, string token)
+    public async Task<ApiResult<IList<UserFeastDto>>> GetFeasts(string email, string token)
     {
         var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/User/Feasts?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
-        return await ApiResult<IList<UserFeastViewModel>>.FromResponse(response);
+        return await ApiResult<IList<UserFeastDto>>.FromResponse(response);
     }
 
     public async Task<ApiResult<ShoppingListDto>> GetShoppingList(string email, string token)
