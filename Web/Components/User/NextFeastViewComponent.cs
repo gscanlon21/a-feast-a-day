@@ -1,10 +1,8 @@
-﻿using Core.Models.User;
-using Data.Repos;
+﻿using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.NextFeast;
 
 namespace Web.Components.User;
-
 
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
@@ -29,7 +27,6 @@ public class NextFeastViewComponent(UserRepo userRepo) : ViewComponent
             User = user,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
             TimeUntilNextSend = timeUntilNextSend,
-            Today = DaysExtensions.FromDate(user.TodayOffset),
         });
     }
 }

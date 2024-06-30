@@ -23,8 +23,7 @@ namespace Core.Code.Attributes;
 ///     National Academy of Sciences issues updated reports on DRIs when scientific evidence warrants an update. For example, the DRIs for sodium and potassium were updated in 2019.
 /// </summary>
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
-public class DailyAllowanceAttribute(double rda, double tul, Measure measure, Multiplier multiplier)
-    : Attribute
+public class DailyAllowanceAttribute(double rda, double tul, Measure measure, Multiplier multiplier) : Attribute
 {
     public double CaloriesPerGram { get; set; } = 1;
     public Person For { get; set; } = Person.All;

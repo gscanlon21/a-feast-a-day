@@ -1,11 +1,7 @@
-﻿using Core.Models.User;
-
-namespace Web.Views.Shared.Components.NextFeast;
+﻿namespace Web.Views.Shared.Components.NextFeast;
 
 public class NextFeastViewModel
 {
-    public Days Today { get; init; }
-
     /// <summary>
     /// Negative if the next workout is in the process of sending.
     /// Otherwise the duration until the next workout starts sending.

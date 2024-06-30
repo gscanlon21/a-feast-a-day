@@ -28,7 +28,7 @@ public class UserEditViewModel
     {
         User = user;
         Email = user.Email;
-        SendDays = user.SendDays;
+        SendDay = user.SendDay;
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         Verbosity = user.Verbosity;
@@ -96,14 +96,8 @@ public class UserEditViewModel
     public int? MaxIngredients { get; init; }
 
     [Required]
-    [Display(Name = "Send Days", Description = "What days do you want to receive new recipes?")]
-    public Days SendDays { get; set; }
-
-    public Days[]? SendDaysBinder
-    {
-        get => Enum.GetValues<Days>().Where(e => SendDays.HasFlag(e)).ToArray();
-        set => SendDays = value?.Aggregate(Days.None, (a, e) => a | e) ?? Days.None;
-    }
+    [Display(Name = "Send Day", Description = "What days do you want to receive new recipes?")]
+    public DayOfWeek SendDay { get; set; }
 
     public Verbosity[]? VerbosityBinder
     {

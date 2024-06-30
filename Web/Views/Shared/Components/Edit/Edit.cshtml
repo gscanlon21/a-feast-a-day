@@ -20,28 +20,14 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
-            @if (Model.User.Features.HasFlag(Features.Debug))
-            {
-                <div class="form-group mb-3">
-                    <label asp-for="SendDaysBinder" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
-                    <select asp-for="SendDaysBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="7"
-                            asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">
-                    </select>
-                    <span asp-validation-for="SendDaysBinder" class="text-danger"></span>
-                    <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
-                </div>
-            }
-            else
-            {
-                <div class="form-group mb-3">
-                    <label asp-for="SendDays" class="control-label">@Html.DisplayNameFor(_ => Model.SendDays)</label>
-                    <select asp-for="SendDays" class="form-control overflow-auto" aria-describedby="rest-help"
-                            asp-items="@(EnumExtensions.GetSingleValues32<Days>().AsSelectListItems32())">
-                    </select>
-                    <span asp-validation-for="SendDays" class="text-danger"></span>
-                    <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDays)</div>
-                </div>
-            }
+            <div class="form-group mb-3">
+                <label asp-for="SendDay" class="control-label">@Html.DisplayNameFor(_ => Model.SendDay)</label>
+                <select asp-for="SendDay" class="form-control overflow-auto" aria-describedby="rest-help"
+                        asp-items="@(Enum.GetValues<DayOfWeek>().AsSelectListItems32())">
+                </select>
+                <span asp-validation-for="SendDay" class="text-danger"></span>
+                <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDay)</div>
+            </div>
 
             <div class="form-group mb-3">
                 <label asp-for="MaxIngredients" class="control-label">@Html.DisplayNameFor(_ => Model.MaxIngredients)</label>

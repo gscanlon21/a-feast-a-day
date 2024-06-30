@@ -21,7 +21,7 @@ public class UserNewsletterDto
         Features = user.Features;
         FootnoteType = user.FootnoteType;
         LastActive = user.LastActive;
-        SendDays = user.SendDays;
+        SendDay = user.SendDay;
         Verbosity = user.Verbosity;
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
@@ -45,8 +45,8 @@ public class UserNewsletterDto
 
     public DateOnly? LastActive { get; init; }
 
-    [Display(Name = "Send Days")]
-    public Days SendDays { get; init; }
+    [Display(Name = "Send Day")]
+    public DayOfWeek SendDay { get; init; }
 
     [Display(Name = "Email Verbosity")]
     public Verbosity Verbosity { get; init; }

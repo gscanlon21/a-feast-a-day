@@ -36,7 +36,7 @@ public class User
         Email = email.Trim();
         AcceptedTerms = acceptedTerms;
 
-        SendDays = UserConsts.DaysDefault;
+        SendDay = UserConsts.SendDayDefault;
         SendHour = UserConsts.SendHourDefault;
         Verbosity = UserConsts.VerbosityDefault;
         FootnoteType = UserConsts.FootnotesDefault;
@@ -66,16 +66,10 @@ public class User
     public FootnoteType FootnoteType { get; set; }
 
     /// <summary>
-    /// Days the user want to skip the newsletter.
-    /// </summary>
-    [NotMapped]
-    public Days RestDays => Days.All & ~SendDays;
-
-    /// <summary>
     /// Days the user want to send the newsletter.
     /// </summary>
     [Required]
-    public Days SendDays { get; set; }
+    public DayOfWeek SendDay { get; set; }
 
     [Required]
     public Equipment Equipment { get; set; }
@@ -93,9 +87,16 @@ public class User
     public int? MaxIngredients { get; set; }
 
     /// <summary>
+    /// Offset of today taking into account the user's SendHour and SendDay.
+    /// </summary>
+    public DateOnly StartOfWeekOffset => TodayOffset.AddDays(-1 * WeekdayDifference);
+
+    /// <summary>
     /// Offset of today taking into account the user's SendHour.
     /// </summary>
-    public DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
+    private DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
+
+    private int WeekdayDifference => (7 - Math.Abs((int)SendDay - (int)TodayOffset.DayOfWeek)) % 7;
 
     /// <summary>
     /// When this user was created.

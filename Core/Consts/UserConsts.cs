@@ -1,6 +1,5 @@
 ﻿using Core.Models.Footnote;
 using Core.Models.Newsletter;
-using Core.Models.User;
 
 namespace Core.Consts;
 
@@ -44,7 +43,7 @@ public class UserConsts
     public const int AtLeastXServingsPerRecipeDefault = 3;
     public const int AtLeastXServingsPerRecipeMax = 9;
 
-    public const Days DaysDefault = Days.Sunday;
+    public const DayOfWeek SendDayDefault = DayOfWeek.Sunday;
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
 

@@ -2,7 +2,6 @@
 using Core.Code.Extensions;
 using Core.Code.Helpers;
 using Core.Consts;
-using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.Newsletter;
@@ -93,20 +92,17 @@ public class UserRepo(CoreContext context)
     public async Task<(DateTime? NextWorkoutSendDate, TimeSpan? TimeUntilNextSend)> GetNextSendDate(User user)
     {
         DateOnly? nextSendDate = null;
-        if (user.RestDays < Days.All)
+        nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
+        // Next send date is a rest day and user does not want off day workouts, next send date is the day after.
+        while (user.SendDay != nextSendDate.Value.DayOfWeek
+            // User was sent a newsletter for the next send date, next send date is the day after.
+            || await context.UserEmails
+                .Where(n => n.UserId == user.Id)
+                .Where(n => n.Subject == NewsletterConsts.SubjectFeast)
+                .AnyAsync(n => n.Date == nextSendDate.Value)
+            )
         {
-            nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
-            // Next send date is a rest day and user does not want off day workouts, next send date is the day after.
-            while ((user.RestDays.HasFlag(DaysExtensions.FromDate(nextSendDate.Value)))
-                // User was sent a newsletter for the next send date, next send date is the day after.
-                || await context.UserEmails
-                    .Where(n => n.UserId == user.Id)
-                    .Where(n => n.Subject == NewsletterConsts.SubjectFeast)
-                    .AnyAsync(n => n.Date == nextSendDate.Value)
-                )
-            {
-                nextSendDate = nextSendDate.Value.AddDays(1);
-            }
+            nextSendDate = nextSendDate.Value.AddDays(1);
         }
 
         var nextSendDateTime = nextSendDate?.ToDateTime(TimeOnly.FromTimeSpan(TimeSpan.FromHours(user.SendHour)));
@@ -320,7 +316,7 @@ public class UserRepo(CoreContext context)
         return await context.UserFeasts.AsNoTracking().TagWithCallSite()
             .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
-            .Where(n => n.Date <= user.TodayOffset)
+            .Where(n => n.Date <= user.StartOfWeekOffset)
             // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
             // Dummy records that are created when the user advances their workout split may also have the same date.
             .OrderByDescending(n => n.Date)
@@ -335,7 +331,7 @@ public class UserRepo(CoreContext context)
     {
         return (await context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
-            .Where(n => n.Date < user.TodayOffset)
+            .Where(n => n.Date < user.StartOfWeekOffset)
             // Only select 1 workout per day, the most recent.
             .GroupBy(n => n.Date)
             .Select(g => new

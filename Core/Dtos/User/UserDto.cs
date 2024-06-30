@@ -37,16 +37,10 @@ public class UserDto
     public FootnoteType FootnoteType { get; set; }
 
     /// <summary>
-    /// Days the user want to skip the newsletter.
-    /// </summary>
-    [NotMapped]
-    public Days RestDays => Days.All & ~SendDays;
-
-    /// <summary>
     /// Days the user want to send the newsletter.
     /// </summary>
     [Required]
-    public Days SendDays { get; set; }
+    public DayOfWeek SendDay { get; set; }
 
     [Required]
     public Equipment Equipment { get; set; }
@@ -62,11 +56,6 @@ public class UserDto
     /// </summary>
     [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
     public int? MaxIngredients { get; set; }
-
-    /// <summary>
-    /// Offset of today taking into account the user's SendHour.
-    /// </summary>
-    public DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
 
     /// <summary>
     /// When this user was created.

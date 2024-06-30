@@ -70,6 +70,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Root route for building out the the workout routine newsletter.
     /// </summary>
+    /// <param name="date">The utc date to send the newsletter for.</param>
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
         var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true);
@@ -81,15 +82,15 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         logger.Log(LogLevel.Information, "Building newsletter for user {Id}", user.Id);
 
         // Is the user requesting an old newsletter? Newsletters are weekly so shimmy the date over to the start of the week.
-        var thisWeekDate = user.TodayOffset.AddDays(-1 * (int)user.TodayOffset.DayOfWeek);
-        date = date?.AddDays(-1 * (int)date.Value.DayOfWeek) ?? thisWeekDate;
+        date ??= user.StartOfWeekOffset;
         var oldNewsletter = await context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             // Always send a new newsletter for the demo and test users.
             .Where(n => !user.Features.HasFlag(Features.Demo) && !user.Features.HasFlag(Features.Test))
-            // Always send a new newsletter for today for the debug user.
+            // Send the same newsletter for debug users when today only.
             .Where(n => !user.Features.HasFlag(Features.Debug) || n.Date == DateHelpers.Today)
+            // Always send a new newsletter for today for the debug user.
             .Where(n => user.Features.HasFlag(Features.Debug) || n.Date == date)
             .Where(n => n.Date == date)
             // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created.
@@ -99,13 +100,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         // A newsletter was found.
         if (oldNewsletter != null)
         {
-            logger.Log(LogLevel.Information, "Returning old newsletter for user {Id} on {date}", user.Id, date);
+            logger.Log(LogLevel.Information, "Returning old newsletter for user {Id}", user.Id);
             return await NewsletterOld(user, token, date.Value, oldNewsletter);
         }
         // A newsletter was not found and the date is not one we want to render a new newsletter for.
-        else if (date != thisWeekDate)
+        else if (date != user.StartOfWeekOffset)
         {
-            logger.Log(LogLevel.Information, "Returning no newsletter for user {Id} on {date}", user.Id, date);
+            logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
             return null;
         }
 
@@ -117,23 +118,23 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             var currentFeast = await userRepo.GetCurrentFeast(user);
             if (currentFeast == null)
             {
-                logger.Log(LogLevel.Information, "Returning no newsletter for user {Id} on {date}", user.Id, date);
+                logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
                 return null;
             }
 
-            logger.Log(LogLevel.Information, "Returning current newsletter for user {Id} on {date}", user.Id, date);
+            logger.Log(LogLevel.Information, "Returning current newsletter for user {Id}", user.Id);
             return await NewsletterOld(user, token, currentFeast.Date, currentFeast);
         }
 
         // User is a debug user. They should see the DebugNewsletter instead.
         if (user.Features.HasFlag(Features.Debug))
         {
-            logger.Log(LogLevel.Information, "Returning debug newsletter for user {Id} on {date}", user.Id, date);
+            logger.Log(LogLevel.Information, "Returning debug newsletter for user {Id}", user.Id);
             return await Debug(newsletterContext);
         }
 
         // Current day should be a strengthening workout.
-        logger.Log(LogLevel.Information, "Returning on day newsletter for user {Id} on {date}", user.Id, date);
+        logger.Log(LogLevel.Information, "Returning on day newsletter for user {Id}", user.Id);
         return await OnDayNewsletter(newsletterContext);
     }
 
