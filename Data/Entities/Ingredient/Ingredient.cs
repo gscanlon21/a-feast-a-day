@@ -71,9 +71,15 @@ public class Ingredient
     [InverseProperty(nameof(Nutrient.Ingredient))]
     public virtual IList<Nutrient> Nutrients { get; private init; } = [];
 
+    /// <summary>
+    /// These are the alternate ingredients.
+    /// </summary>
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.Ingredient))]
     public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];
 
+    /// <summary>
+    /// These are what ingredients this ingredient is an alternate of.
+    /// </summary>
     [JsonIgnore, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
     public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
 

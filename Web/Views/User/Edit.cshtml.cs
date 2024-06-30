@@ -172,7 +172,7 @@ public class UserEditViewModel
         [Range(UserConsts.AtLeastXNutrientsPerRecipeMin, UserConsts.AtLeastXNutrientsPerRecipeMax)]
         public int AtLeastXNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXNutrientsPerRecipeDefault;
 
-        [Display(Name = "At Least X Servings Per Recipe", Description = "Customize recipe servings.")]
+        [Display(Name = "At Least X Servings Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
         [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]
         public int AtLeastXServingsPerRecipe { get; set; } = UserConsts.AtLeastXServingsPerRecipeDefault;
     }
