@@ -58,9 +58,9 @@ public class QueryRunner(Section section)
         return context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateFilteredRecipesQuery))
             .Include(r => r.Instructions)
             .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
-                .ThenInclude(i => i.Ingredient)
-                .ThenInclude(i => i.UserIngredients.Where(ui => ui.UserId == UserOptions.Id))
-                .ThenInclude(i => i.SubstituteIngredient)
+                .ThenInclude(ri => ri.Ingredient)
+                    .ThenInclude(i => i.UserIngredients.Where(ui => ui.UserId == UserOptions.Id))
+                        .ThenInclude(ui => ui.SubstituteIngredient)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -90,7 +90,7 @@ public class QueryRunner(Section section)
     }
 
     /// <summary>
-    /// Queries the db for the data
+    /// Queries the db for the data.
     /// </summary>
     public async Task<IList<QueryResults>> Query(IServiceScopeFactory factory, int take = int.MaxValue)
     {
@@ -124,14 +124,17 @@ public class QueryRunner(Section section)
             // Do this before querying alternatives so that the user records also exist for the alternatives.
             await AddMissingUserRecords(context, queryResults);
 
+            var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
+            var ingredientAlternatives = (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id))
+                .Select(i => new { i.Id, AlternativeIngredients = i.Alternatives.Select(a => a.AlternativeIngredient) })
+                .ToListAsync()).ToDictionary(i => i.Id, i => i.AlternativeIngredients);
+
             foreach (var queryResult in queryResults)
             {
-                var ignoreRecipe = false;
-
                 var scale = RecipeOptions.RecipeIds?.TryGetValue(queryResult.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1;
                 queryResult.Recipe.Servings *= scale;
 
-                // Filter out optional ingredients that the user has allergens for.
+                var ignoreRecipe = false;
                 var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
                 foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
@@ -143,12 +146,13 @@ public class QueryRunner(Section section)
                         // Switch the ingredient with another if it conflicts with allergens.
                         if (recipeIngredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens))
                         {
-                            recipeIngredient.Ingredient = recipeIngredient.Ingredient.Alternatives.Select(a => a.AlternativeIngredient)
-                                .FirstOrDefault(ai => !ai.Allergens.HasAnyFlag32(UserOptions.Allergens));
+                            recipeIngredient.Ingredient = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient.Id, out var alternatives)
+                                ? alternatives.FirstOrDefault(ai => !ai.Allergens.HasAnyFlag32(UserOptions.Allergens)) : null;
 
                             if (recipeIngredient.Ingredient == null)
                             {
-                                ignoreRecipe = !recipeIngredient.Optional;
+                                // Filter out optional ingredients that the user has allergens for.
+                                ignoreRecipe = ignoreRecipe || !recipeIngredient.Optional;
                                 continue;
                             }
                         }
@@ -167,8 +171,8 @@ public class QueryRunner(Section section)
             }
         }
 
-        var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-        var allNutrients = await context.Nutrients.Where(n => allIngredientIds.Contains(n.IngredientId)).ToListAsync();
+        var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
+        var allNutrients = await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).ToListAsync();
         foreach (var filteredResult in filteredResults)
         {
             filteredResult.Nutrients = allNutrients.Where(n => filteredResult.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
