@@ -90,10 +90,10 @@ public class NewsletterJob : IJob, IScheduled
             .Where(u => u.LastActive.HasValue)
             // User is subscribed to the newsletter.
             .Where(u => u.NewsletterDisabledReason == null)
-            // User's send day is now or user is the Debug user, send emails every day.
-            .Where(u => u.SendDay == currentDay || u.Features.HasFlag(Features.Debug))
             // User's send time is now.
             .Where(u => u.SendHour == currentHour)
+            // User's send day is now or user is the Debug user-send emails every day.
+            .Where(u => u.SendDay == currentDay || u.Features.HasFlag(Features.Debug))
             // User has not received an email today.
             .Where(u => !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectFeast).Any(un => un.Date == DateHelpers.Today))
             // User is not a test or demo user.

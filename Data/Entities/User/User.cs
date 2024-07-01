@@ -89,7 +89,8 @@ public class User
     /// <summary>
     /// Offset of today taking into account the user's SendHour and SendDay.
     /// </summary>
-    public DateOnly StartOfWeekOffset => TodayOffset.AddDays(-1 * WeekdayDifference);
+    public DateOnly StartOfWeekOffset => Features.HasFlag(Features.Debug) ? TodayOffset
+        : TodayOffset.AddDays(-1 * WeekdayDifference);
 
     /// <summary>
     /// Offset of today taking into account the user's SendHour.

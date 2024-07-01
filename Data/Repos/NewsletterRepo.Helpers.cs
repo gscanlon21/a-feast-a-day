@@ -13,11 +13,10 @@ namespace Data.Repos;
 public partial class NewsletterRepo
 {
     /// <summary>
-    /// Common properties surrounding today's workout.
+    /// Common properties surrounding today's feast.
     /// </summary>
     internal async Task<FeastContext?> BuildFeastContext(User user, string token, DateOnly date)
     {
-        var (_, timeUntilNextSend) = await userRepo.GetNextSendDate(user);
         var (weeks, volumeRDA) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.TrainingVolumeWeeks, rawValues: true);
         var (_, volumeTUL) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.TrainingVolumeWeeks, rawValues: true, tul: true);
         return new FeastContext()
@@ -28,7 +27,6 @@ public partial class NewsletterRepo
             WeeklyNutrientsWeeks = weeks,
             WeeklyNutrientsRDA = volumeRDA,
             WeeklyNutrientsTUL = volumeTUL,
-            DaysUntilNextNewsletter = ((int?)timeUntilNextSend?.TotalDays + 1) ?? 1
         };
     }
 

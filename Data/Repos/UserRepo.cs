@@ -84,102 +84,98 @@ public class UserRepo(CoreContext context)
         return user;
     }
 
-    public static string CreateToken(int count = 24)
+    private static string CreateToken(int count = 24) => Convert.ToBase64String(RandomNumberGenerator.GetBytes(count));
+    public async Task<string> AddUserToken(User user, int durationDays = 1) => await AddUserToken(user, DateTime.UtcNow.AddDays(durationDays));
+    public async Task<string> AddUserToken(User user, DateTime expires)
     {
-        return Convert.ToBase64String(RandomNumberGenerator.GetBytes(count));
-    }
-
-    public async Task<(DateTime? NextWorkoutSendDate, TimeSpan? TimeUntilNextSend)> GetNextSendDate(User user)
-    {
-        DateOnly? nextSendDate = null;
-        nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
-        // Next send date is a rest day and user is not the debug user, next send date is the day after.
-        while ((user.SendDay != nextSendDate.Value.DayOfWeek && !user.Features.HasFlag(Features.Debug))
-            // User was sent a newsletter for the next send date, next send date is the day after.
-            || await context.UserEmails
-                .Where(n => n.UserId == user.Id)
-                .Where(n => n.Subject == NewsletterConsts.SubjectFeast)
-                .AnyAsync(n => n.Date == nextSendDate.Value)
-            )
+        if (user.IsDemoUser)
         {
-            nextSendDate = nextSendDate.Value.AddDays(1);
+            return UserConsts.DemoToken;
         }
 
-        var nextSendDateTime = nextSendDate?.ToDateTime(TimeOnly.FromTimeSpan(TimeSpan.FromHours(user.SendHour)));
-        var timeUntilNextSend = !nextSendDateTime.HasValue ? null : nextSendDateTime - DateTime.UtcNow;
+        var token = new UserToken(user.Id, CreateToken())
+        {
+            Expires = expires
+        };
+        user.UserTokens.Add(token);
+        await context.SaveChangesAsync();
 
-        return (nextSendDateTime, timeUntilNextSend);
+        return token.Token;
     }
 
-    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool rawValues = false)
+    /// <summary>
+    /// Get the user's current workout.
+    /// </summary>
+    public async Task<UserFeast?> GetCurrentFeast(User user)
     {
-        var weeklyFeasts = await context.UserFeasts
-            .AsNoTracking().TagWithCallSite()
-            .Include(f => f.UserFeastRecipes)
-                .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
-                        .ThenInclude(r => r.IngredientRecipe)
-                            .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
-                                .ThenInclude(r => r.Ingredient)
-                                    .ThenInclude(r => r.Nutrients)
+        return await context.UserFeasts.AsNoTracking().TagWithCallSite()
+            .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
-            // Only look at records where the user is not new to fitness.
-            //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
-            // Look at strengthening workouts only that are within the last X weeks.
-            //.Where(n => n.Frequency != Frequency.OffDayStretches)
-            .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
+            .Where(n => n.Date <= user.StartOfWeekOffset)
+            // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
+            // Dummy records that are created when the user advances their workout split may also have the same date.
+            .OrderByDescending(n => n.Date)
+            .ThenByDescending(n => n.Id)
+            .FirstOrDefaultAsync();
+    }
+
+    /// <summary>
+    /// Get the last 7 days of workouts for the user. Excludes the current workout.
+    /// </summary>
+    public async Task<IList<UserFeast>> GetPastFeasts(User user)
+    {
+        return (await context.UserFeasts
+            .Where(uw => uw.UserId == user.Id)
+            .Where(n => n.Date < user.StartOfWeekOffset)
+            // Only select 1 workout per day, the most recent.
             .GroupBy(n => n.Date)
             .Select(g => new
             {
                 g.Key,
-                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
-            }).ToListAsync();
+                // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
+                // Dummy records that are created when the user advances their workout split may also have the same date.
+                Feast = g.OrderByDescending(n => n.Id).First()
+            })
+            .OrderByDescending(n => n.Key)
+            .Take(7)
+            .ToListAsync())
+            .Select(n => n.Feast)
+            .ToList();
+    }
 
-        var userIngredients = await context.UserIngredients
-           .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i.Nutrients)
-           .Where(i => i.UserId == user.Id)
-           .ToListAsync();
+    /// <summary>
+    /// Get the user's average percent daily value for each nutrient.
+    /// 
+    /// Returns `null` when the user is new to fitness.
+    /// </summary>
+    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
-        // .Max/.Min throw exceptions when the collection is empty.
-        if (weeklyFeasts.Count != 0)
+        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks);
+        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks);
+
+        var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
+        var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
-            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
-            var actualWeeks = (DateHelpers.Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
-            // User must have more than one week of data before we return anything.
-            if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
+            var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
+            return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
+        });
+
+        return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
+        {
+            // If there is no RDA or TUL.
+            if (familyNutrientServings[n] <= 0) { return null; }
+
+            if (weeklyNutrientVolumeFromRecipeIngredients[n].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[n].HasValue)
             {
-                var monthlyMuscles = weeklyFeasts
-                    .SelectMany(feast => feast.Recipes
-                        .SelectMany(recipe => recipe.Recipe.RecipeIngredients.SelectMany(ri => ri.IngredientRecipe.RecipeIngredients)
-                            .SelectMany(recipeIngredient =>
-                            {
-                                var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                                var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
-                                return substitutedIngredient?.Nutrients.Select(nutrient =>
-                                {
-                                    var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
-                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
-                                    return new
-                                    {
-                                        Nutrient = nutrient.Nutrients,
-                                        GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe
-                                    };
-                                }) ?? [];
-                            })
-                        )
-                    ).ToList();
-
-                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m =>
-                {
-                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
-                }));
+                return rawValues ? familyNutrientServings[n] - (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault())
+                    : (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault()) / familyNutrientServings[n] * 100;
             }
-        }
 
-        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
+            return rawValues ? familyNutrientServings[n] - weeklyNutrientVolumeFromRecipeIngredients[n]
+                : weeklyNutrientVolumeFromRecipeIngredients[n] / familyNutrientServings[n] * 100;
+        }));
     }
 
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool rawValues = false)
@@ -251,101 +247,75 @@ public class UserRepo(CoreContext context)
         return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
     }
 
-    /// <summary>
-    /// Get the user's average percent daily value for each nutrient.
-    /// 
-    /// Returns `null` when the user is new to fitness.
-    /// </summary>
-    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false)
+    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool rawValues = false)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
-
-        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks);
-        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks);
-
-        var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
-        var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
-        {
-            var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
-            return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
-        });
-
-        return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
-        {
-            // If there is no RDA or TUL.
-            if (familyNutrientServings[n] <= 0) { return null; }
-
-            if (weeklyNutrientVolumeFromRecipeIngredients[n].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[n].HasValue)
-            {
-                return rawValues ? familyNutrientServings[n] - (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault())
-                    : (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault()) / familyNutrientServings[n] * 100;
-            }
-
-            return rawValues ? familyNutrientServings[n] - weeklyNutrientVolumeFromRecipeIngredients[n]
-                : weeklyNutrientVolumeFromRecipeIngredients[n] / familyNutrientServings[n] * 100;
-        }));
-    }
-
-    public async Task<string> AddUserToken(User user, DateTime expires)
-    {
-        if (user.IsDemoUser)
-        {
-            return UserConsts.DemoToken;
-        }
-
-        var token = new UserToken(user.Id, CreateToken())
-        {
-            Expires = expires
-        };
-        user.UserTokens.Add(token);
-        await context.SaveChangesAsync();
-
-        return token.Token;
-    }
-
-    public async Task<string> AddUserToken(User user, int durationDays = 1)
-    {
-        return await AddUserToken(user, DateTime.UtcNow.AddDays(durationDays));
-    }
-
-    /// <summary>
-    /// Get the user's current workout.
-    /// </summary>
-    public async Task<UserFeast?> GetCurrentFeast(User user)
-    {
-        return await context.UserFeasts.AsNoTracking().TagWithCallSite()
-            .Include(uw => uw.UserFeastRecipes)
+        var weeklyFeasts = await context.UserFeasts
+            .AsNoTracking().TagWithCallSite()
+            .Include(f => f.UserFeastRecipes)
+                .ThenInclude(r => r.Recipe)
+                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
+                        .ThenInclude(r => r.IngredientRecipe)
+                            .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
+                                .ThenInclude(r => r.Ingredient)
+                                    .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
-            .Where(n => n.Date <= user.StartOfWeekOffset)
-            // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
-            // Dummy records that are created when the user advances their workout split may also have the same date.
-            .OrderByDescending(n => n.Date)
-            .ThenByDescending(n => n.Id)
-            .FirstOrDefaultAsync();
-    }
-
-    /// <summary>
-    /// Get the last 7 days of workouts for the user. Excludes the current workout.
-    /// </summary>
-    public async Task<IList<UserFeast>> GetPastFeasts(User user)
-    {
-        return (await context.UserFeasts
-            .Where(uw => uw.UserId == user.Id)
-            .Where(n => n.Date < user.StartOfWeekOffset)
-            // Only select 1 workout per day, the most recent.
+            // Only look at records where the user is not new to fitness.
+            //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
+            // Look at strengthening workouts only that are within the last X weeks.
+            //.Where(n => n.Frequency != Frequency.OffDayStretches)
+            .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
             .GroupBy(n => n.Date)
             .Select(g => new
             {
                 g.Key,
-                // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
-                // Dummy records that are created when the user advances their workout split may also have the same date.
-                Feast = g.OrderByDescending(n => n.Id).First()
-            })
-            .OrderByDescending(n => n.Key)
-            .Take(7)
-            .ToListAsync())
-            .Select(n => n.Feast)
-            .ToList();
+                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
+                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+            }).ToListAsync();
+
+        var userIngredients = await context.UserIngredients
+           .Include(i => i.SubstituteIngredient)
+               .ThenInclude(i => i.Nutrients)
+           .Where(i => i.UserId == user.Id)
+           .ToListAsync();
+
+        // .Max/.Min throw exceptions when the collection is empty.
+        if (weeklyFeasts.Count != 0)
+        {
+            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
+            var actualWeeks = (DateHelpers.Today.DayNumber - weeklyFeasts.Min(n => n.Key).DayNumber) / 7d;
+            // User must have more than one week of data before we return anything.
+            if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
+            {
+                var monthlyMuscles = weeklyFeasts
+                    .SelectMany(feast => feast.Recipes
+                        .SelectMany(recipe => recipe.Recipe.RecipeIngredients.SelectMany(ri => ri.IngredientRecipe.RecipeIngredients)
+                            .SelectMany(recipeIngredient =>
+                            {
+                                var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
+                                var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
+                                return substitutedIngredient?.Nutrients.Select(nutrient =>
+                                {
+                                    var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
+                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
+                                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
+                                    return new
+                                    {
+                                        Nutrient = nutrient.Nutrients,
+                                        GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe
+                                    };
+                                }) ?? [];
+                            })
+                        )
+                    ).ToList();
+
+                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m =>
+                {
+                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
+                }));
+            }
+        }
+
+        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
     }
 }
 

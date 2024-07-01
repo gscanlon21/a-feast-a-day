@@ -225,6 +225,7 @@ public partial class NewsletterRepo
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
         var debugIngredients = await context.Ingredients.AsNoTracking()
+            .Include(i => i.Nutrients)
             .Include(i => i.Alternatives)
                 .ThenInclude(a => a.AlternativeIngredient)
             .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)

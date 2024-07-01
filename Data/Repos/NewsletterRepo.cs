@@ -86,14 +86,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var oldNewsletter = await context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
+            .Where(n => n.Date == date)
             // Always send a new newsletter for the demo and test users.
             .Where(n => !user.Features.HasFlag(Features.Demo) && !user.Features.HasFlag(Features.Test))
-            // Send the same newsletter for debug users when today only.
-            .Where(n => !user.Features.HasFlag(Features.Debug) || n.Date == DateHelpers.Today)
-            // Always send a new newsletter for today for the debug user.
-            .Where(n => user.Features.HasFlag(Features.Debug) || n.Date == date)
-            .Where(n => n.Date == date)
-            // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created.
             .OrderByDescending(n => n.Id)
             .FirstOrDefaultAsync();
 
