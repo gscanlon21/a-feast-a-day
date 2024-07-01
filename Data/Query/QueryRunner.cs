@@ -73,6 +73,7 @@ public class QueryRunner(Section section)
                 UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
                 RecipeIngredients = i.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
                 {
+                    Optional = ri.Optional,
                     IngredientRecipeName = ri.IngredientRecipe.Name,
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
@@ -83,10 +84,17 @@ public class QueryRunner(Section section)
                     // The recipe does not require any equipment.
                     || i.Equipment == Equipment.None
             })
+            // Filter down to recipes the user owns equipment for.
+            .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment)
             // Don't grab recipes that the user wants to ignore.
             .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true)
-            // Filter down to recipes the user owns equipment for.
-            .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment);
+            // Don't grab recipes that use ingredients that the user wants to ignore.
+            // Checking the base ingredient for ignored and not the substitute ingredient,
+            // because we don't want the user to ignore a substitute ingredient
+            // and cause a cascade effect for recipes that use that substitute.
+            .Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient!.Ignore != true))
+            // Don't grab recipes that use ingredient recipes that the user wants to ignore.
+            .Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe!.Ignore != true));
     }
 
     /// <summary>
@@ -104,15 +112,7 @@ public class QueryRunner(Section section)
         filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (curr2, n2) => curr2 | n2), include: true);
         filteredQuery = Filters.FilterEquipmentIds(filteredQuery, EquipmentOptions.Equipment);
 
-        var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync())
-            // Don't grab recipes that use ingredients that the user wants to ignore.
-            // Checking the base ingredient for ignored and not the substitute ingredient,
-            // because we don't want the user to ignore a substitute ingredient
-            // and cause a cascade effect for recipes that use that substitute.
-            .Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient?.Ignore != true))
-            // Don't grab recipes that use ingredient recipes that the user wants to ignore.
-            .Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe?.Ignore != true))
-            .ToList();
+        var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();
 
         var filteredResults = new List<InProgressQueryResults>();
         if (UserOptions.NoUser)
@@ -136,7 +136,9 @@ public class QueryRunner(Section section)
 
                 var ignoreRecipe = false;
                 var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
-                foreach (var recipeIngredient in queryResult.RecipeIngredients)
+                foreach (var recipeIngredient in queryResult.RecipeIngredients
+                    // Filter out ignored ingredients and ingredient recipes.
+                    .Where(ri => UserOptions.IgnoreIgnored || (ri.UserIngredient?.Ignore != true && ri.UserIngredientRecipe?.Ignore != true)))
                 {
                     if (recipeIngredient.Ingredient != null)
                     {

@@ -29,14 +29,14 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 {
     public int Id { get; init; } = recipeIngredient.Id;
     public Measure Measure { get; init; } = recipeIngredient.Measure;
-    public bool Optional { get; init; } = recipeIngredient.Optional;
     public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
     public Ingredient? Ingredient { get; set; } = recipeIngredient.Ingredient;
     public int? IngredientRecipeId { get; set; } = recipeIngredient.IngredientRecipeId;
 
-    // We don't include this so we can't set it from the constructor.
+    // We don't .Include these or we use these later in the query so they can't be set in the constructor.
+    public required bool Optional { get; init; }
     public required string IngredientRecipeName { get; init; }
     public required UserIngredient? UserIngredient { get; set; }
     public required UserRecipe? UserIngredientRecipe { get; set; }

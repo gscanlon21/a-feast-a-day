@@ -88,11 +88,11 @@ public class NewsletterJob : IJob, IScheduled
             .Where(u => u.LastActive.HasValue)
             // User is subscribed to the newsletter.
             .Where(u => u.NewsletterDisabledReason == null)
-            // User's send day is now.
-            .Where(u => u.SendDay == DateHelpers.Today.DayOfWeek)
+            // User's send day is now or when user is the Debug user, send emails every day.
+            .Where(u => u.SendDay == DateHelpers.Today.DayOfWeek || u.Features.HasFlag(Features.Debug))
             // User's send time is now.
             .Where(u => u.SendHour == int.Parse(DateTime.UtcNow.ToString("HH")))
-            // User has not received a workout email today.
+            // User has not received an email today.
             .Where(u => !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectFeast).Any(un => un.Date == DateHelpers.Today))
             // User is not a test or demo user.
             .Where(u => !u.Email.EndsWith(_siteSettings.Value.Domain) || u.Features.HasFlag(Features.Test) || u.Features.HasFlag(Features.Debug))

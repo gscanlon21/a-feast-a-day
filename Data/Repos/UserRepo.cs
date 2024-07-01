@@ -93,8 +93,8 @@ public class UserRepo(CoreContext context)
     {
         DateOnly? nextSendDate = null;
         nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
-        // Next send date is a rest day and user does not want off day workouts, next send date is the day after.
-        while (user.SendDay != nextSendDate.Value.DayOfWeek
+        // Next send date is a rest day and user is not the debug user, next send date is the day after.
+        while ((user.SendDay != nextSendDate.Value.DayOfWeek && !user.Features.HasFlag(Features.Debug))
             // User was sent a newsletter for the next send date, next send date is the day after.
             || await context.UserEmails
                 .Where(n => n.UserId == user.Id)
