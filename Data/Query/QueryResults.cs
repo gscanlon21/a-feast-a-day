@@ -4,6 +4,7 @@ using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Query;
+using Fractions;
 using System.Diagnostics;
 
 namespace Data.Models;
@@ -11,11 +12,11 @@ namespace Data.Models;
 [DebuggerDisplay("{Section}: {Recipe}")]
 public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe, int scale) : IRecipeCombo
 {
-    public IList<Nutrient> Nutrients { get; init; } = nutrients;
     public Section Section { get; init; } = section;
     public Recipe Recipe { get; init; } = recipe;
-    public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
     public UserRecipe? UserRecipe { get; init; } = userRecipe;
+    public IList<Nutrient> Nutrients { get; init; } = nutrients;
+    public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
     public int Scale { get; set; } = scale;
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);
@@ -33,8 +34,14 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
     public Ingredient? Ingredient { get; set; } = recipeIngredient.Ingredient;
-    public Recipe? IngredientRecipe { get; init; } = recipeIngredient.IngredientRecipe;
-    public UserIngredient? UserIngredient { get; set; }
-    public UserRecipe? UserIngredientRecipe { get; set; }
-    public string Name { get; init; } = null!;
+    public int? IngredientRecipeId { get; set; } = recipeIngredient.IngredientRecipeId;
+
+    // We don't include this so we can't set it from the constructor.
+    public required string IngredientRecipeName { get; init; }
+    public required UserIngredient? UserIngredient { get; set; }
+    public required UserRecipe? UserIngredientRecipe { get; set; }
+
+    // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
+    public string Name => Ingredient?.Name ?? IngredientRecipeName ?? "";
+    public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 }

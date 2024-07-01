@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Fractions;
 using System.Diagnostics;
 
 namespace Core.Dtos.User;
@@ -22,7 +23,7 @@ public class RecipeIngredientDto
 
     public int QuantityDenominator { get; set; } = 1;
 
-    public Fractions.Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
+    public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
     public Measure Measure { get; set; }
 

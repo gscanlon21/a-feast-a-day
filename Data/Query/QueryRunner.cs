@@ -73,7 +73,7 @@ public class QueryRunner(Section section)
                 UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
                 RecipeIngredients = i.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
                 {
-                    Name = ri.Ingredient.Name ?? ri.IngredientRecipe.Name ?? "",
+                    IngredientRecipeName = ri.IngredientRecipe.Name,
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
                 }).ToList(),
@@ -141,6 +141,7 @@ public class QueryRunner(Section section)
                     if (recipeIngredient.Ingredient != null)
                     {
                         // Swap the user's substituted ingredient.
+                        // Fall back to use the ingredient for when a new UserIngredient is created, the substitute ingredient doesn't yet exist.
                         recipeIngredient.Ingredient = recipeIngredient.UserIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
 
                         // Switch the ingredient with another if it conflicts with allergens.
@@ -213,7 +214,7 @@ public class QueryRunner(Section section)
 
                         var servingsDifference = recipe.Recipe.Servings / origServings;
                         recipe.Scale = servingsDifference;
-                        foreach (var ingredient in recipe.Recipe.RecipeIngredients)
+                        foreach (var ingredient in recipe.RecipeIngredients)
                         {
                             ingredient.QuantityNumerator *= servingsDifference;
                         }
@@ -296,12 +297,12 @@ public class QueryRunner(Section section)
         }
 
         foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
-            .Where(i => i.UserIngredientRecipe == null && i.IngredientRecipe != null))
+            .Where(i => i.UserIngredientRecipe == null && i.IngredientRecipeId.HasValue))
         {
             ingredient.UserIngredientRecipe = new UserRecipe()
             {
                 UserId = UserOptions.Id,
-                RecipeId = ingredient.IngredientRecipe!.Id
+                RecipeId = ingredient.IngredientRecipeId!.Value
             };
 
             if (recipesCreated.Add(ingredient.UserIngredientRecipe))
@@ -318,7 +319,6 @@ public class QueryRunner(Section section)
             {
                 UserId = UserOptions.Id,
                 IngredientId = ingredient.Ingredient!.Id,
-                SubstituteIngredient = ingredient.Ingredient!,
                 SubstituteIngredientId = ingredient.Ingredient!.Id,
             };
 
