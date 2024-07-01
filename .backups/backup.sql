@@ -629,6 +629,7 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 9	\N	Avocados	https://www.eatthismuch.com/food/nutrition/avocados,1334/	\N	f	0	201	201	-infinity	0	240
 19	\N	Spaghetti Pasta, Unenriched	https://www.eatthismuch.com/food/nutrition/spaghetti,4914/	\N	f	4	28.35	28.35	-infinity	4	240
 218	\N	Spaghetti Pasta, Unenriched, Gluten Free	https://www.eatthismuch.com/nutrition/gluten-free-spaghetti,2283586	\N	f	0	28	56	-infinity	4	240
+216	\N	Bacon	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	16384	8	8	-infinity	0	24
 15	\N	Yellow Potatoes	https://www.eatthismuch.com/food/nutrition/yellow-potato,528851/	\N	f	0	113	113	2024-06-16	6	240
 172	\N	Peaches	\N	\N	f	0	240	100	-infinity	6	240
 173	\N	Plums	\N	\N	f	0	240	66	2024-06-14	6	240
@@ -636,7 +637,6 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 47	\N	Chicken Stock	\N	\N	f	0	240	100	-infinity	6	240
 175	\N	Tomatoes, Grape	\N	\N	f	0	240	100	-infinity	6	240
 113	\N	Hamburger Buns	\N	\N	f	0	240	100	-infinity	6	240
-216	\N	Bacon	\N	\N	f	0	240	100	-infinity	6	240
 4	\N	Lemons	\N	\N	f	0	240	100	-infinity	6	240
 130	\N	Molasses	\N	\N	f	0	240	100	-infinity	6	240
 156	\N	Brussel Sprouts	\N	\N	f	0	240	100	-infinity	6	240
@@ -659,7 +659,10 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 23	\N	Tortillas, Flour	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	0	45	45	2024-06-16	6	240
 50	\N	Jam, Grape	\N	\N	f	0	240	100	-infinity	6	240
 158	\N	Sunflower Seeds	https://www.eatthismuch.com/food/nutrition/raw-sunflower-seeds,135248/	\N	f	0	132	33	-infinity	6	132
+12	\N	Limes	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	0	240
 127	\N	Apple Sauce	\N	\N	f	0	240	100	-infinity	6	240
+17	\N	Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	0	123	123	-infinity	0	240
+219	\N	Iodized Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,656072/	\N	t	0	258	1	-infinity	8	240
 140	\N	Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	3	3	2024-06-25	7	240
 171	\N	Heavy Cream	\N	\N	f	0	240	100	-infinity	6	240
 186	\N	Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	3	244	244	-infinity	6	240
@@ -668,12 +671,10 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 51	\N	Tuna	\N	\N	f	128	240	100	-infinity	6	240
 52	\N	Coffee	\N	\N	f	0	240	100	2024-06-16	6	240
 53	\N	Earl Gray Tea	\N	\N	f	0	240	100	-infinity	6	240
-17	\N	Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	0	123	123	-infinity	6	240
 42	\N	Chocolate Chips	\N	\N	f	0	240	100	2024-06-09	6	240
 43	\N	Cocoa Powder	\N	\N	f	0	240	100	2024-06-21	6	240
 46	\N	Pizza Crust	\N	\N	f	0	240	100	-infinity	6	240
 59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	0	240	240	-infinity	6	240
-12	\N	Limes	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	240	67	2024-06-10	6	240
 176	\N	Avocado Oil	\N	\N	f	256	240	100	-infinity	6	240
 178	\N	Milk, Coconut	\N	\N	f	4	240	100	-infinity	6	240
 179	\N	Milk, Oat	\N	\N	f	0	240	100	-infinity	6	240
@@ -710,6 +711,7 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 103	\N	Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	-infinity	0	170
 212	\N	French Bread Loaf	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	-infinity	0	240
 24	\N	Boneless Chicken Breast	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	4	224
+220	\N	Slices of Sourdough Bread, Gluten Free	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	-infinity	0	240
 214	\N	Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,656072/	\N	t	0	258	1	-infinity	8	240
 111	\N	Chicken Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436	\N	f	0	240	240	2024-06-28	6	240
 56	\N	Peanut Butter	\N	\N	f	0	240	100	-infinity	6	240
@@ -742,6 +744,7 @@ COPY public.ingredient ("Id", "UserId", "Name", "Notes", "DisabledReason", "Skip
 164	\N	Eggs, White	https://www.eatthismuch.com/nutrition/grade-a-large-white-eggs,2010944	\N	f	8	50	50	-infinity	0	240
 28	\N	Eggs, Brown	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-06-18	0	240
 75	\N	Kosher Salt	https://www.eatthismuch.com/food/nutrition/kosher-salt-coarse,2313857/	\N	t	0	4.8	1.2	-infinity	8	273.12
+221	\N	Slices of Sourdough Bread	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	-infinity	0	240
 26	\N	Ham	https://www.eatthismuch.com/food/nutrition/sliced-ham,905/	\N	f	0	240	28	-infinity	5	240
 126	\N	Kielbasa Sausage	https://www.eatthismuch.com/food/nutrition/kielbasa-sausage,2717250/	\N	f	0	240	100	2024-06-11	5	240
 97	\N	Rice, White	https://www.eatthismuch.com/food/nutrition/white-rice,4814/	\N	f	0	200	200	-infinity	6	240
@@ -855,6 +858,16 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 137	204
 218	19
 19	218
+214	74
+214	75
+75	74
+74	75
+214	219
+75	219
+74	219
+219	75
+219	74
+221	220
 \.
 
 
@@ -1276,14 +1289,26 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 4166	126	4294967296	\N	\N	2	100	f
 4172	126	2199023255552	\N	\N	2	0.2	f
 4177	126	34359738368	\N	\N	2	350	f
+6965	9	128	\N	\N	3	4.3	f
+6966	9	256	\N	\N	3	19.7	f
+6967	9	68719476736	\N	\N	2	14.1	f
+6968	9	34359738368	\N	\N	2	974.9	f
+6969	9	2	\N	\N	3	1.3	f
 4179	126	68719476736	\N	\N	2	880	f
 4183	126	1	\N	\N	3	18	f
 4211	126	1984	\N	\N	3	7	f
+6970	9	1	\N	\N	3	4	f
+6971	9	1536	\N	\N	3	3.7	f
+6972	9	48	\N	\N	3	13.5	f
+6973	9	1984	\N	\N	3	29.5	f
+6974	9	62	\N	\N	3	17.1	f
+6975	9	2047	\N	\N	3	321.6	f
 4969	55	2047	\N	\N	3	131.1	f
 5187	166	48	\N	\N	3	6	f
 5195	166	1984	\N	\N	3	1.5	f
 5196	166	62	\N	\N	3	37	f
 5197	166	2047	\N	\N	3	180	f
+6976	216	2047	\N	\N	3	37	f
 4273	101	536870912	\N	\N	2	0.2	f
 4278	101	1536	\N	\N	3	5.7	f
 4281	101	3221225472	\N	\N	1	1.9	f
@@ -1323,7 +1348,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 3, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 6964, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 6976, true);
 
 
 --
