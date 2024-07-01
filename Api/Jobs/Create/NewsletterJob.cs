@@ -83,15 +83,17 @@ public class NewsletterJob : IJob, IScheduled
 
     internal async Task<List<User>> GetUsers()
     {
+        var currentDay = DateHelpers.Today.DayOfWeek;
+        var currentHour = int.Parse(DateTime.UtcNow.ToString("HH"));
         return await _coreContext.Users
             // User has confirmed their account.
             .Where(u => u.LastActive.HasValue)
             // User is subscribed to the newsletter.
             .Where(u => u.NewsletterDisabledReason == null)
-            // User's send day is now or when user is the Debug user, send emails every day.
-            .Where(u => u.SendDay == DateHelpers.Today.DayOfWeek || u.Features.HasFlag(Features.Debug))
+            // User's send day is now or user is the Debug user, send emails every day.
+            .Where(u => u.SendDay == currentDay || u.Features.HasFlag(Features.Debug))
             // User's send time is now.
-            .Where(u => u.SendHour == int.Parse(DateTime.UtcNow.ToString("HH")))
+            .Where(u => u.SendHour == currentHour)
             // User has not received an email today.
             .Where(u => !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectFeast).Any(un => un.Date == DateHelpers.Today))
             // User is not a test or demo user.

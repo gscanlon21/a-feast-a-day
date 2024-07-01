@@ -52,7 +52,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Name = "Trans Fats", GroupName = "Fats")]
+    [Display(Order = 44, Name = "Trans Fats", GroupName = "Fats")]
     TransFats = 1L << 6, // 64
 
     [DefaultMeasure(Measure.Grams)]
@@ -82,7 +82,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 20, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
-    [Display(Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
+    [Display(Order = 25, Name = "Unsaturated Fats", GroupName = "Fats / Unsaturated")]
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 1792
 
     [DefaultMeasure(Measure.Grams)]
@@ -112,7 +112,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(-1, 300, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
+    [Display(Order = 46, Name = "Dietary Cholesterol", GroupName = "Cholesterol")]
     DietaryCholesterol = 1L << 11, // 2048
 
     // Antioxidants
