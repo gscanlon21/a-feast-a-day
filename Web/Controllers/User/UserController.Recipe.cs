@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
 using Web.Views.Shared.Components.ManageRecipe;
+using Web.Views.Shared.Components.UpsertRecipe;
 using Web.Views.User;
 
 namespace Web.Controllers.User;
@@ -42,8 +43,8 @@ public partial class UserController
         });
     }
 
-    [HttpPost, Route("recipe/add-edit")]
-    public async Task<IActionResult> AddEditRecipe(string email, string token, Data.Entities.Recipe.Recipe recipe)
+    [HttpPost, Route("recipe/upsert")]
+    public async Task<IActionResult> UpsertRecipe(string email, string token, UpsertRecipeModel recipe)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -53,43 +54,64 @@ public partial class UserController
 
         if (recipe.Id == default)
         {
-            // Adding recipe
-            recipe.User = user;
-            recipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
-            recipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
-            context.Add(recipe);
+            if (ModelState.IsValid)
+            {
+                // Adding recipe.
+                context.Add(new Data.Entities.Recipe.Recipe()
+                {
+                    User = user,
+                    Name = recipe.Name,
+                    Notes = recipe.Notes,
+                    Enabled = recipe.Enabled,
+                    Section = recipe.Section,
+                    CookTime = recipe.CookTime,
+                    Servings = recipe.Servings,
+                    PrepTime = recipe.PrepTime,
+                    Equipment = recipe.Equipment,
+                    AdjustableServings = recipe.AdjustableServings,
+                    Instructions = recipe.Instructions.Where(i => !i.Hide).ToList(),
+                    RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList()
+                });
 
-            await context.SaveChangesAsync();
-            TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-            return RedirectToAction(nameof(Edit), new { email, token });
+                await context.SaveChangesAsync();
+                TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
+                return RedirectToAction(nameof(Edit), new { email, token });
+            }
+
+            return await Edit(email, token);
         }
         else
         {
-            // Editing recipe.
-            var existingRecipe = await context.Recipes
-                .Include(r => r.Instructions)
-                .Include(r => r.RecipeIngredients)
-                .FirstOrDefaultAsync(r => r.Id == recipe.Id);
-            if (existingRecipe == null)
+            if (ModelState.IsValid)
             {
-                return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+                // Editing recipe.
+                var existingRecipe = await context.Recipes
+                    .Include(r => r.Instructions)
+                    .Include(r => r.RecipeIngredients)
+                    .FirstOrDefaultAsync(r => r.Id == recipe.Id);
+                if (existingRecipe == null)
+                {
+                    return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+                }
+
+                existingRecipe.Name = recipe.Name;
+                existingRecipe.Notes = recipe.Notes;
+                existingRecipe.Section = recipe.Section;
+                existingRecipe.Enabled = recipe.Enabled;
+                existingRecipe.Servings = recipe.Servings;
+                existingRecipe.CookTime = recipe.CookTime;
+                existingRecipe.PrepTime = recipe.PrepTime;
+                existingRecipe.Equipment = recipe.Equipment;
+                existingRecipe.AdjustableServings = recipe.AdjustableServings;
+                existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
+                existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
+
+                await context.SaveChangesAsync();
+                TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
+                return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId = recipe.Id, wasUpdated = true });
             }
 
-            existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
-            existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
-            existingRecipe.Name = recipe.Name;
-            existingRecipe.Notes = recipe.Notes;
-            existingRecipe.Servings = recipe.Servings;
-            existingRecipe.AdjustableServings = recipe.AdjustableServings;
-            existingRecipe.CookTime = recipe.CookTime;
-            existingRecipe.PrepTime = recipe.PrepTime;
-            existingRecipe.Section = recipe.Section;
-            existingRecipe.Equipment = recipe.Equipment;
-            existingRecipe.DisabledReason = recipe.DisabledReason;
-
-            await context.SaveChangesAsync();
-            TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-            return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId = recipe.Id, wasUpdated = true });
+            return await ManageRecipe(email, token, recipe.Id, wasUpdated: false);
         }
     }
 

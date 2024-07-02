@@ -2,8 +2,6 @@
 
 /// <summary>
 /// ViewData Keys for User pages.
-/// 
-/// ViewData[UserKeys.SuccessMessage]
 /// </summary>
 public static class TempData_User
 {

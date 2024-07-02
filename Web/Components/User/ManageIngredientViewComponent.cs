@@ -30,7 +30,6 @@ public class ManageIngredientViewComponent(CoreContext context) : ViewComponent
             {
                 UserId = user.Id,
                 IngredientId = ingredient.Id,
-                SubstituteIngredientId = ingredient.Id,
             };
             context.UserIngredients.Add(userIngredient);
             await context.SaveChangesAsync();

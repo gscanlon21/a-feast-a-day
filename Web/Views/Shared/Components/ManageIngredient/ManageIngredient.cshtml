@@ -32,7 +32,7 @@
             <div class="col">
                 <label asp-for="UserIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteIngredientId)</label>
                 <select asp-for="UserIngredient.SubstituteIngredientId" class="form-control searchable" aria-describedby="ingredient-help"
-                        asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem() { Text = Model.Ingredient.Name, Value = Model.Ingredient.Id.ToString() }))">
+                        asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
                 </select>
                 <span asp-validation-for="UserIngredient.SubstituteIngredientId" class="text-danger"></span>
                 <span id="ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredient.SubstituteIngredientId)</span>

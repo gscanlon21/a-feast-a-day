@@ -113,7 +113,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
             {
                 if (!(context.Users?.Any(e => e.Email == viewModel.Email)).GetValueOrDefault())
                 {
-                    // User does not exist
+                    // User does not exist.
                     return NotFound();
                 }
                 else

@@ -21,8 +21,7 @@ public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
     {
-        var userRecipe = await context.UserRecipes.AsNoTracking()
-            .FirstOrDefaultAsync(r => r.UserId == user.Id && r.RecipeId == parameters.RecipeId);
+        var userRecipe = await context.UserRecipes.AsNoTracking().FirstOrDefaultAsync(r => r.UserId == user.Id && r.RecipeId == parameters.RecipeId);
         if (userRecipe == null)
         {
             return Content("");
@@ -39,7 +38,8 @@ public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory
             .Query(serviceScopeFactory))
             .Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!)
             .DistinctBy(vm => vm.Recipe)
-            .SingleOrDefault();
+            // May return more than one recipe if the recipe has ingredient recipes.
+            .FirstOrDefault(r => r.Recipe.Id == recipe.Id);
 
         if (recipeDto == null) { return Content(""); }
         return View("ManageRecipe", new ManageRecipeViewModel()

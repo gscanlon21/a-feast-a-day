@@ -1,9 +1,9 @@
-﻿@model Web.Views.Shared.Components.Recipe.RecipeViewModel
+﻿@model Web.Views.Shared.Components.UpsertRecipe.UpsertRecipeViewModel
 @using Core.Models.Recipe
 @using Web.Code.Extensions
 
 <div class="alert alert-light shadow mb-3" role="alert">
-    <form id="recipe-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.AddEditRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+    <form id="recipe-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
         <input asp-for="Recipe.Id" type="hidden" class="form-control" />
 
         <div class="form-group mb-3">
@@ -355,7 +355,7 @@
         {
             <div class="col-auto">
                 @* TODO *@
-                <form id="import-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.AddEditRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <form id="import-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="btn-group" role="group" aria-label="Basic example">

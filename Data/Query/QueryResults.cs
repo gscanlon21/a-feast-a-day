@@ -10,14 +10,38 @@ using System.Diagnostics;
 namespace Data.Models;
 
 [DebuggerDisplay("{Section}: {Recipe}")]
-public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe, int scale) : IRecipeCombo
+public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe) : IRecipeCombo
 {
     public Section Section { get; init; } = section;
     public Recipe Recipe { get; init; } = recipe;
     public UserRecipe? UserRecipe { get; init; } = userRecipe;
     public IList<Nutrient> Nutrients { get; init; } = nutrients;
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
-    public int Scale { get; set; } = scale;
+
+    private int _scale = 1;
+    public int Scale
+    {
+        get => _scale;
+        internal set
+        {
+            Recipe.Servings /= _scale;
+            Recipe.Servings *= value;
+            foreach (var ingredient in RecipeIngredients)
+            {
+                ingredient.QuantityNumerator /= _scale;
+                ingredient.QuantityNumerator *= value;
+
+                // Scale the prerequisite recipe if it exists.
+                if (ingredient.IngredientRecipe != null)
+                {
+                    // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.
+                    var innerScale = (int)Math.Ceiling(ingredient.Quantity.ToDouble() / ingredient.IngredientRecipe.Recipe.Servings);
+                    ingredient.IngredientRecipe.Scale = innerScale;
+                }
+            }
+            _scale = value;
+        }
+    }
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);
 
@@ -32,8 +56,8 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
-    public Ingredient? Ingredient { get; set; } = recipeIngredient.Ingredient;
-    public int? IngredientRecipeId { get; set; } = recipeIngredient.IngredientRecipeId;
+    public Ingredient? Ingredient { get; internal set; } = recipeIngredient.Ingredient;
+    public int? IngredientRecipeId { get; internal set; } = recipeIngredient.IngredientRecipeId;
 
     // We don't .Include these or we use these later in the query so they can't be set in the constructor.
     public required bool Optional { get; init; }
@@ -41,7 +65,8 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public required UserRecipe? UserIngredientRecipe { get; set; }
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
-    public string IngredientRecipeName { get; set; }
-    public string Name => Ingredient?.Name ?? IngredientRecipeName ?? "";
+    public string Name => Ingredient?.Name ?? IngredientRecipe?.Recipe.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
+
+    public QueryResults? IngredientRecipe { get; internal set; }
 }

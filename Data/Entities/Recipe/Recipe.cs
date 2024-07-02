@@ -84,20 +84,6 @@ public class Recipe
         && other.Id == Id;
 
     [NotMapped]
-    public Section[]? SectionBinder
-    {
-        get => Enum.GetValues<Section>().Where(e => Section.HasFlag(e)).ToArray();
-        set => Section = value?.Aggregate(Section.None, (a, e) => a | e) ?? Section.None;
-    }
-
-    [NotMapped]
-    public Equipment[]? EquipmentBinder
-    {
-        get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
-        set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
-    }
-
-    [NotMapped]
     public bool Enabled
     {
         get => string.IsNullOrWhiteSpace(DisabledReason);

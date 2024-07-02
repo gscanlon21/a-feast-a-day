@@ -9,7 +9,6 @@ namespace Data.Query;
 public interface IRecipeCombo
 {
     Recipe Recipe { get; }
-    public int Scale { get; }
     IList<Nutrient> Nutrients { get; }
 }
 

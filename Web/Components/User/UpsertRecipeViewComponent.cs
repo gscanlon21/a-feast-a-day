@@ -6,16 +6,17 @@ using Data.Entities.Recipe;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Views.Shared.Components.Recipe;
+using Web.Code;
+using Web.Views.Shared.Components.UpsertRecipe;
 
 namespace Web.Components.User;
 
-public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
+public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
 {
     /// <summary>
     /// For routing
     /// </summary>
-    public const string Name = "Recipe";
+    public const string Name = "UpsertRecipe";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe? recipe = null)
     {
@@ -46,10 +47,10 @@ public class RecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewC
             });
         }
 
-        return View("Recipe", new RecipeViewModel()
+        return View("UpsertRecipe", new UpsertRecipeViewModel()
         {
             User = user,
-            Recipe = recipe,
+            Recipe = recipe.AsType<UpsertRecipeModel, Recipe>()!,
             Recipes = await GetRecipes(user),
             Ingredients = await GetIngredients(user),
             Token = await userRepo.AddUserToken(user, durationDays: 1),

@@ -15,13 +15,7 @@
         <h1 class="primary-heading">Consistent cooking starts here</h1>
         <h2 class="secondary-heading">A personalized meal plan delivered to your inbox weekly</h2>
     </div>
-    <div class="col-lg-6 m-0--empty">@if (TempData[TempData_User.SuccessMessage] != null)
-    {
-        <div class="alert alert-success alert-dismissible mb-1" role="alert">
-            <span>@TempData[TempData_User.SuccessMessage]</span>
-            <button type="button" class="btn-close allow-demo" data-dismiss=".alert" aria-label="Close"></button>
-        </div>
-    }</div>
+    <partial name="_ValidationMessagePartial" model='new _ValidationMessagePartialModel()' />
 </div>
 
 <div class="row gy-4">
@@ -189,5 +183,5 @@
 </div>
 
 @section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial", new Web.Views.Shared.ValidationScriptsPartialViewModel() { IsDemoUser = true }); }
+    <partial name="_ValidationScriptsPartial" model='new ValidationScriptsPartialViewModel() { IsDemoUser = true }' />
 }

@@ -211,7 +211,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 })
                 .Build()
                 .Query(serviceScopeFactory))
-                .OrderBy(e => newsletter.UserFeastRecipes.First(nv => nv.RecipeId == e.Recipe.Id).Order)
+                // May be null when the user substitutes in a recipe for an ingredient after the first feast was sent.
+                .OrderBy(e => newsletter.UserFeastRecipes.FirstOrDefault(nv => nv.RecipeId == e.Recipe.Id)?.Order ?? -1)
                 .ToList();
 
             switch (section)
