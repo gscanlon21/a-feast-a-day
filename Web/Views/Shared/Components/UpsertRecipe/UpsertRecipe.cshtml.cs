@@ -61,13 +61,12 @@ public class UpsertRecipeModel : IValidatableObject
     public string? DisabledReason { get; set; } = null;
 
     [JsonInclude, ValidateNever]
-    public virtual IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
+    public IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
 
     [JsonInclude, ValidateNever]
-    public virtual IList<RecipeInstruction> Instructions { get; set; } = [];
+    public IList<RecipeInstruction> Instructions { get; set; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is UpsertRecipeModel other
         && other.Id == Id;
 

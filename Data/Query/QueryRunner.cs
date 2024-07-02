@@ -66,21 +66,21 @@ public class QueryRunner(Section section)
             .Where(r => r.User.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= r.User.MaxIngredients)
             // Don't grab recipes that we want to ignore.
             .Where(vm => !ExclusionOptions.RecipeIds.Contains(vm.Id))
-            .Select(i => new RecipesQueryResults()
+            .Select(r => new RecipesQueryResults()
             {
-                Recipe = i,
-                UserRecipe = i.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
-                RecipeIngredients = i.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
+                Recipe = r,
+                UserRecipe = r.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
+                RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
                 {
                     Optional = ri.Optional,
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
                 }).ToList(),
                 UserOwnsEquipment = UserOptions.NoUser
-                    // The user owns all of the equipment for the recipe.
-                    || UserOptions.Equipment.HasFlag(i.Equipment)
                     // The recipe does not require any equipment.
-                    || i.Equipment == Equipment.None
+                    || r.Equipment == Equipment.None
+                    // The user owns all of the equipment for the recipe.
+                    || UserOptions.Equipment.HasFlag(r.Equipment)
             })
             // Filter down to recipes the user owns equipment for.
             .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment)

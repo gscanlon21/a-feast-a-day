@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
@@ -49,9 +50,10 @@ public class ManageIngredientViewComponent(CoreContext context) : ViewComponent
     private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
     {
         return await context.Recipes.AsNoTracking()
-            .Where(i => i.UserId == null || i.UserId == user.Id)
-            .Where(i => i.Section == Section.None)
-            .OrderBy(i => i.Name)
+            .Where(r => r.Equipment == Equipment.None || user.Equipment.HasFlag(r.Equipment))
+            .Where(r => r.UserId == null || r.UserId == user.Id)
+            .Where(r => r.Section == Section.None)
+            .OrderBy(r => r.Name)
             .ToListAsync();
     }
 }

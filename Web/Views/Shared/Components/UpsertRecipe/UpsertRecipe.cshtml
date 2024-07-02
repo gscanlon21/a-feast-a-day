@@ -260,8 +260,8 @@
             <div class="mt-1 ps-3">
                 @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
                 {
-                    var userinstruction = Model.Recipe.Instructions[id];
-                    <div id="custom-instruction-@id" class="custom-instruction @(userinstruction.Hide ? "d-none" : "")" data-day="@id">
+                    var userInstruction = Model.Recipe.Instructions[id];
+                    <div id="custom-instruction-@id" class="custom-instruction @(userInstruction.Hide ? "d-none" : "")" data-day="@id">
                         <div class="row">
                             <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
                             <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
