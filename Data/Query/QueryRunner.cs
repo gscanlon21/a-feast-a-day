@@ -3,13 +3,17 @@ using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
+using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Models;
+using Data.Query.Builders;
 using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Xml.Linq;
 
 namespace Data.Query;
 
@@ -74,7 +78,6 @@ public class QueryRunner(Section section)
                 RecipeIngredients = i.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
                 {
                     Optional = ri.Optional,
-                    IngredientRecipeName = ri.IngredientRecipe.Name,
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
                 }).ToList(),
@@ -142,21 +145,28 @@ public class QueryRunner(Section section)
                 {
                     if (recipeIngredient.Ingredient != null)
                     {
-                        // Swap the user's substituted ingredient.
-                        // Fall back to use the ingredient for when a new UserIngredient is created, the substitute ingredient doesn't yet exist.
-                        recipeIngredient.Ingredient = recipeIngredient.UserIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
-
-                        // Switch the ingredient with another if it conflicts with allergens.
-                        if (recipeIngredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens))
+                        // Swap the user's substituted ingredient or recipe.
+                        if (recipeIngredient.UserIngredient?.SubstituteRecipeId.HasValue == true)
                         {
-                            recipeIngredient.Ingredient = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient.Id, out var alternatives)
-                                ? alternatives.FirstOrDefault(ai => !ai.Allergens.HasAnyFlag32(UserOptions.Allergens)) : null;
+                            recipeIngredient.IngredientRecipeId = recipeIngredient.UserIngredient?.SubstituteRecipeId;
+                        }
+                        else
+                        {
+                            // Fall back to use the ingredient for when a new UserIngredient is created, the substitute ingredient doesn't yet exist.
+                            recipeIngredient.Ingredient = recipeIngredient.UserIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
 
-                            if (recipeIngredient.Ingredient == null)
+                            // Switch the ingredient with another if it conflicts with allergens.
+                            if (recipeIngredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens))
                             {
-                                // Filter out optional ingredients that the user has allergens for.
-                                ignoreRecipe = ignoreRecipe || !recipeIngredient.Optional;
-                                continue;
+                                recipeIngredient.Ingredient = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient.Id, out var alternatives)
+                                    ? alternatives.FirstOrDefault(ai => !ai.Allergens.HasAnyFlag32(UserOptions.Allergens)) : null;
+
+                                if (recipeIngredient.Ingredient == null)
+                                {
+                                    // Filter out optional ingredients that the user has allergens for.
+                                    ignoreRecipe = ignoreRecipe || !recipeIngredient.Optional;
+                                    continue;
+                                }
                             }
                         }
                     }
@@ -174,15 +184,28 @@ public class QueryRunner(Section section)
             }
         }
 
-        var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-        var allNutrients = await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).ToListAsync();
-        foreach (var filteredResult in filteredResults)
+        // Query for prerequisites ingredient recipes here so we can check check their ignored status before finalizing recipes.
+        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue)
+            .ToDictionary(ri => ri.IngredientRecipeId!.Value, ri => (int)Math.Ceiling(ri.Quantity.ToDouble())));
+        var prerequisiteRecipes = new List<QueryResults>();
+        if (prerequisiteRecipeIds.Any())
         {
-            filteredResult.Nutrients = allNutrients.Where(n => filteredResult.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
+            prerequisiteRecipes = (await new QueryBuilder(Section.None)
+                .WithUser(UserOptions)
+                .WithRecipes(options =>
+                {
+                    options.AddRecipes(prerequisiteRecipeIds);
+                })
+                .Build()
+                .Query(factory))
+                .ToList();
         }
 
         // OrderBy must come after the query or you get cartesian explosion.
-        var orderedResults = filteredResults
+        var orderedResults = new List<InProgressQueryResults>();
+        var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
+        var allNutrients = await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).ToListAsync();
+        foreach (var filteredResult in filteredResults
             // Show exercise variations that the user has rarely seen.
             // Adding the two in case there is a warmup and main variation in the same exercise.
             // ... Otherwise, since the warmup section is always chosen first, the last seen date is always updated and the main variation is rarely chosen.
@@ -192,8 +215,29 @@ public class QueryRunner(Section section)
             // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
             // ... and we may see two randomly alternating exercises for the LagRefreshXWeeks duration.
             .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
-            // Don't re-order the list on each read
-            .ToList();
+            // Don't re-order the list on each read.
+            .ToList())
+        {
+            var ignoreRecipe = false;
+            foreach (var recipeIngredient in filteredResult.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
+            {
+                // Ignore the recipe if any of the prerequisite ingredient recipes are null.
+                if (prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId!.Value) is QueryResults prerequisiteQueryResult)
+                {
+                    recipeIngredient.IngredientRecipeName = prerequisiteQueryResult.Recipe.Name;
+                }
+                else
+                {
+                    ignoreRecipe = true;
+                }
+            }
+
+            if (!ignoreRecipe)
+            {
+                filteredResult.Nutrients = allNutrients.Where(n => filteredResult.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
+                orderedResults.Add(filteredResult);
+            }
+        }
 
         var nutrientTarget = NutrientOptions.NutrientTarget.Compile();
         var finalResults = new List<QueryResults>();
@@ -256,7 +300,34 @@ public class QueryRunner(Section section)
                 var queryResult = new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe, recipe.Scale);
                 if (!finalResults.Contains(queryResult))
                 {
-                    finalResults.Add(queryResult);
+                    var ignoreRecipe = false;
+                    var queryResultPrerequisiteRecipeIds = queryResult.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).Select(ri => ri.IngredientRecipeId!.Value).ToList();
+                    var queryResultPrerequisiteRecipes = prerequisiteRecipes.Where(pr => queryResultPrerequisiteRecipeIds.Contains(pr.Recipe.Id));
+                    if (recipe.Scale > 1)
+                    {
+                        foreach (var queryResultPrerequisiteRecipe in queryResultPrerequisiteRecipes)
+                        {
+                            if (queryResultPrerequisiteRecipe.Recipe.AdjustableServings)
+                            {
+                                queryResultPrerequisiteRecipe.Scale = recipe.Scale;
+                                queryResultPrerequisiteRecipe.Recipe.Servings *= recipe.Scale;
+                                foreach (var ingredient in queryResultPrerequisiteRecipe.RecipeIngredients)
+                                {
+                                    ingredient.QuantityNumerator *= recipe.Scale;
+                                }
+                            }
+                            else
+                            {
+                                ignoreRecipe = true;
+                            }
+                        }
+                    }
+
+                    if (!ignoreRecipe)
+                    {
+                        finalResults.AddRange(queryResultPrerequisiteRecipes);
+                        finalResults.Add(queryResult);
+                    }
                 }
             }
         }

@@ -28,8 +28,6 @@ public class UserRecipe
 
     public string? Notes { get; set; }
 
-    public int Scale { get; set; } = 1;
-
     /// <summary>
     /// When was this exercise last seen in the user's newsletter.
     /// </summary>

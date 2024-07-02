@@ -37,11 +37,11 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 
     // We don't .Include these or we use these later in the query so they can't be set in the constructor.
     public required bool Optional { get; init; }
-    public required string IngredientRecipeName { get; init; }
     public required UserIngredient? UserIngredient { get; set; }
     public required UserRecipe? UserIngredientRecipe { get; set; }
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
+    public string IngredientRecipeName { get; set; }
     public string Name => Ingredient?.Name ?? IngredientRecipeName ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 }

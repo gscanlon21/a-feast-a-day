@@ -75,6 +75,9 @@ public class Recipe
     [JsonIgnore, InverseProperty(nameof(UserRecipe.Recipe))]
     public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
 
+    [JsonIgnore, InverseProperty(nameof(UserIngredient.SubstituteRecipe))]
+    public virtual ICollection<UserIngredient> UserSubstituteRecipes { get; private init; } = [];
+
     public override int GetHashCode() => HashCode.Combine(Id);
 
     public override bool Equals(object? obj) => obj is Recipe other

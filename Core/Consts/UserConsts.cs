@@ -46,7 +46,7 @@ public class UserConsts
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
 
-    public const FootnoteType FootnotesDefault = FootnoteType.FitnessTips | FootnoteType.FitnessFacts
+    public const FootnoteType FootnotesDefault = FootnoteType.CookingTips | FootnoteType.IngredientTips
         | FootnoteType.HealthTips | FootnoteType.HealthFacts | FootnoteType.GoodVibes | FootnoteType.Mindfulness;
 
     /// <summary>

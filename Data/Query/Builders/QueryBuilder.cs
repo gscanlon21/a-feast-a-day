@@ -95,9 +95,12 @@ public class QueryBuilder
         return this;
     }
 
-    /// <summary>
-    /// The exercise ids and not the variation or exercisevariation ids.
-    /// </summary>
+    public QueryBuilder WithUser(UserOptions userOptions)
+    {
+        UserOptions = userOptions;
+        return this;
+    }
+
     public QueryBuilder WithExcludeRecipes(Action<ExclusionOptions>? builder = null)
     {
         var options = ExclusionOptions ?? new ExclusionOptions();
@@ -106,9 +109,6 @@ public class QueryBuilder
         return this;
     }
 
-    /// <summary>
-    /// The exercise ids and not the variation or exercisevariation ids.
-    /// </summary>
     public QueryBuilder WithRecipes(Action<RecipeOptions>? builder = null)
     {
         var options = RecipeOptions ?? new RecipeOptions(Section);

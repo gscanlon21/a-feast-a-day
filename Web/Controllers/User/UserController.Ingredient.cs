@@ -132,6 +132,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        existingIngredient.SubstituteRecipeId = viewModel.UserIngredient.SubstituteRecipeId;
         existingIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
         await context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Data.Entities.Recipe;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -15,8 +16,11 @@ public class UserIngredient
 
     public int IngredientId { get; set; }
 
-    [Display(Name = "Substitute Ingredient", ShortName = "Substitute")]
-    public int SubstituteIngredientId { get; set; }
+    [Display(Name = "Substitute Ingredient")]
+    public int? SubstituteIngredientId { get; set; }
+
+    [Display(Name = "or Substitute Recipe")]
+    public int? SubstituteRecipeId { get; set; }
 
     public bool Ignore { get; set; }
 
@@ -24,7 +28,10 @@ public class UserIngredient
     public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserSubstituteIngredients))]
-    public virtual Ingredient.Ingredient SubstituteIngredient { get; private init; } = null!;
+    public virtual Ingredient.Ingredient? SubstituteIngredient { get; private init; }
+
+    [JsonIgnore, InverseProperty(nameof(Recipe.Recipe.UserSubstituteRecipes))]
+    public virtual Recipe.Recipe? SubstituteRecipe { get; private init; }
 
     public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
 

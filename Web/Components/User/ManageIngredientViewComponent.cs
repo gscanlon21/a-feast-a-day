@@ -1,6 +1,8 @@
 ﻿using Core.Dtos.Ingredient;
+using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Ingredient;
+using Data.Entities.Recipe;
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +43,16 @@ public class ManageIngredientViewComponent(CoreContext context) : ViewComponent
             UserIngredient = userIngredient,
             Ingredient = ingredient.AsType<IngredientDto, Ingredient>()!,
             Ingredients = ingredient.Alternatives.Select(ai => ai.AlternativeIngredient).ToList(),
+            Recipes = await GetRecipes(user),
         });
+    }
+
+    private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
+    {
+        return await context.Recipes.AsNoTracking()
+            .Where(i => i.UserId == null || i.UserId == user.Id)
+            .Where(i => i.Section == Section.None)
+            .OrderBy(i => i.Name)
+            .ToListAsync();
     }
 }
