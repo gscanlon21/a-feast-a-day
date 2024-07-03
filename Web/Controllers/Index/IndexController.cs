@@ -2,6 +2,7 @@
 using Core.Models.Options;
 using Data;
 using Data.Entities.Newsletter;
+using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -44,13 +45,22 @@ public class IndexController(CoreContext context, UserRepo userRepo, CaptchaServ
     }
 
     [Route(""), HttpPost]
-    public async Task<IActionResult> Create(
-        [Bind("Email,AcceptedTerms,IExist", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel,
-        [FromForm(Name = "frc-captcha-solution")] string frcCaptchaSolution)
+    public async Task<IActionResult> Create([FromForm(Name = "frc-captcha-solution")] string frcCaptchaSolution,
+        [Bind("Email,AcceptedTerms,IExist", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel)
     {
         if (ModelState.IsValid && captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success != false)
         {
             var newUser = new Data.Entities.User.User(viewModel.Email, viewModel.AcceptedTerms);
+            foreach (var section in UserServing.DefaultServings.Keys)
+            {
+                // These records are required.
+                newUser.UserServings.Add(new UserServing()
+                {
+                    Count = UserServing.DefaultServings[section],
+                    AtLeastXServingsPerRecipe = UserConsts.AtLeastXServingsPerRecipeDefault,
+                    AtLeastXNutrientsPerRecipe = UserConsts.AtLeastXNutrientsPerRecipeDefault,
+                });
+            }
 
             try
             {
