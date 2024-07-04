@@ -32,6 +32,8 @@ public class RecipeIngredient
     [Range(1, 16), Display(Name = "Quantity")]
     public int QuantityDenominator { get; set; } = 1;
 
+    public int Order { get; set; }
+
     [Required]
     public Measure Measure { get; set; }
 

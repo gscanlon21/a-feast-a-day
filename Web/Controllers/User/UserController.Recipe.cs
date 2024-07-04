@@ -24,14 +24,11 @@ public partial class UserController
         }
 
         var recipe = await context.Recipes.AsNoTracking()
-            .Include(r => r.RecipeIngredients)
-            .Include(r => r.Instructions)
+            .Include(r => r.RecipeIngredients.OrderBy(ri => ri.Order))
+            .Include(r => r.Instructions.OrderBy(i => i.Order))
             .FirstOrDefaultAsync(r => r.Id == recipeId);
-        if (recipe == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
 
+        if (recipe == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
         var hasUserRecipe = await context.UserRecipes.AnyAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
         return View(new UserManageRecipeViewModel()
         {

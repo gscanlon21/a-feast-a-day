@@ -19,6 +19,8 @@ public class RecipeIngredientDto
     /// </summary>
     public string? Attributes { get; init; }
 
+    public int Order { get; set; }
+
     public int QuantityNumerator { get; set; } = 1;
 
     public int QuantityDenominator { get; set; } = 1;
