@@ -16,7 +16,7 @@ public static class UserFamilyExtensions
         var maxValue = tul ? (dailyAllowance.TUL ?? dailyAllowance.RDA ?? 0) : (dailyAllowance.RDA ?? dailyAllowance.TUL ?? 0);
         return (dailyAllowance.For, dailyAllowance.Measure, dailyAllowance.Multiplier) switch
         {
-            (_, Measure.Percent, _) => maxValue * totalCaloriesPerDay / dailyAllowance.CaloriesPerGram / 100,
+            (_, Measure.Percent, _) => maxValue * totalCaloriesPerDay / dailyAllowance.CaloriesPerGram / 100d,
             (_, _, Multiplier.Person) => dailyAllowance.Measure.ToGrams(maxValue),
             (_, _, Multiplier.KilogramOfBodyweight) => totalWeightKg * dailyAllowance.Measure.ToGrams(maxValue),
             (_, _, Multiplier.Kilocalorie) => totalKCaloriesPerDay * dailyAllowance.Measure.ToGrams(maxValue),

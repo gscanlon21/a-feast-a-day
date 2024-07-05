@@ -8,10 +8,10 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Recipe;
 
 /// <summary>
-/// Exercises listed on the website
+/// A recipe's ingredients.
 /// </summary>
-[Table("recipe_ingredient"), Comment("Recipes listed on the website")]
-[DebuggerDisplay("{Name,nq}")]
+[Table("recipe_ingredient"), Comment("A recipe's ingredients")]
+[DebuggerDisplay("Id = {Id}, {Recipe}: {Ingredient}")]
 public class RecipeIngredient
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

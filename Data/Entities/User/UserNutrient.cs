@@ -26,10 +26,11 @@ public class UserNutrient
     public Range Range => new(Start, End);
 
     /// <summary>
-    /// The volume each muscle group should be exposed to each week.
+    /// The volume each nutrient should be consumed each week.
     /// </summary>
     public static readonly IDictionary<Nutrients, Range> NutrientTargets = new Dictionary<Nutrients, Range>
     {
+        // TODO move these into the DailyAllowance attribute.
         [Nutrients.Vanadium] = 100..400,
         [Nutrients.Lithium] = 100..300,
         [Nutrients.Proteins] = 100..200,
@@ -39,13 +40,6 @@ public class UserNutrient
         [Nutrients.SolubleFiber] = 100..200,
         [Nutrients.InsolubleFiber] = 100..200,
         [Nutrients.DietaryFiber] = 100..200,
-        [Nutrients.DietaryCholesterol] = 100..200,
-        [Nutrients.MonounsaturatedFats] = 100..200,
-        [Nutrients.Omega3] = 100..200,
-        [Nutrients.Omega6] = 100..200,
-        [Nutrients.PolyunsaturatedFats] = 100..200,
-        [Nutrients.UnsaturatedFats] = 100..200,
-        [Nutrients.SaturatedFats] = 100..200,
         [Nutrients.Calcium] = 100..200,
         [Nutrients.Chloride] = 100..200,
         [Nutrients.Chromium] = 100..200,
@@ -105,6 +99,15 @@ public class UserNutrient
         [Nutrients.Fats] = 100..140,
         [Nutrients.Sodium] = 80..120,
         [Nutrients.Sugar] = 80..120,
+        [Nutrients.MonounsaturatedFats] = 0..100,
+        [Nutrients.Omega3] = 0..100,
+        [Nutrients.Omega6] = 0..100,
+        [Nutrients.PolyunsaturatedFats] = 0..100,
+        [Nutrients.UnsaturatedFats] = 0..100,
+        [Nutrients.SaturatedFats] = 0..100,
         [Nutrients.TransFats] = 0..100,
+
+        // No RDA or TUL.
+        //[Nutrients.DietaryCholesterol] = 0..100,
     };
 }

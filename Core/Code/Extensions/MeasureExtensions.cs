@@ -38,8 +38,8 @@ public static class MeasureExtensions
     {
         return measure switch
         {
-            Measure.Micrograms => quantity / 1000000,
-            Measure.Milligrams => quantity / 1000,
+            Measure.Micrograms => quantity / 1000000d,
+            Measure.Milligrams => quantity / 1000d,
             Measure.Grams or Measure.None => quantity,
             Measure.Ounces => quantity * 28.3495231,
             Measure.Pounds => quantity * 453.59237,
