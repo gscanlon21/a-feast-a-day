@@ -176,9 +176,9 @@ public class QueryRunner(Section section)
         }
 
         // Query for prerequisites ingredient recipes here so we can check check their ignored status before finalizing recipes.
-        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue)
-            // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.
-            .ToDictionary(ri => ri.IngredientRecipeId!.Value, ri => 1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/));
+        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
+            // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
+            .GroupBy(ri => ri.IngredientRecipeId!.Value).ToDictionary(g => g.Key, ri => 1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
         var prerequisiteRecipes = new List<QueryResults>();
         if (prerequisiteRecipeIds.Any())
         {

@@ -28,7 +28,7 @@ public class RecipeOptions : IOptions
     }
 
     /// <summary>
-    /// Exclude any variation of these exercises from being chosen.
+    /// Only select these recipes.
     /// </summary>
     public void AddRecipes(IEnumerable<Recipe>? recipes)
     {
@@ -46,15 +46,15 @@ public class RecipeOptions : IOptions
     }
 
     /// <summary>
-    /// Exclude any variation of these exercises from being chosen.
+    /// Only select these recipes.
     /// </summary>
-    public void AddRecipes(IEnumerable<KeyValuePair<int, int>>? recipeIds)
+    public void AddRecipes(Dictionary<int, int>? recipeIds)
     {
         if (recipeIds != null)
         {
             if (RecipeIds == null)
             {
-                RecipeIds = recipeIds.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+                RecipeIds = recipeIds;
             }
             else
             {
