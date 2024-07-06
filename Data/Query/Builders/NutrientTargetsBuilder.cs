@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Consts;
+using Core.Models.User;
 using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query.Options;
@@ -94,7 +95,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
                 // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
                 if (Context.WeeklyNutrientsRDA[key].HasValue)
                 {
-                    NutrientTargetsRDA[key] = Context.WeeklyNutrientsRDA[key]!.Value * scale;
+                    NutrientTargetsRDA[key] = Context.WeeklyNutrientsRDA[key]!.Value * Math.Min(1, scale + (scale * UserConsts.IncrementNutrientTargetBy / 100d));
                 }
             }
         }

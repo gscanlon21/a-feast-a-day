@@ -203,7 +203,7 @@ public class UserRepo(CoreContext context)
 
         var userIngredients = await context.UserIngredients
            .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i.Nutrients)
+               .ThenInclude(i => i!.Nutrients)
            .Where(i => i.UserId == user.Id)
            .ToListAsync();
 
@@ -274,7 +274,7 @@ public class UserRepo(CoreContext context)
 
         var userIngredients = await context.UserIngredients
            .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i.Nutrients)
+               .ThenInclude(i => i!.Nutrients)
            .Where(i => i.UserId == user.Id)
            .ToListAsync();
 

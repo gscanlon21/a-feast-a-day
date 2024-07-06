@@ -37,7 +37,7 @@ public class NutrientViewModel
             Middle = sumRDA / sumTUL * 100 ?? 0,
             End = sumRDA / sumTUL * userMuscleTarget.End.Value ?? 100,
             DefaultStart = sumRDA / sumTUL * defaultRange.Value.Start.Value ?? 0,
-            DefaultEnd = sumRDA / sumTUL * defaultRange.Value.End.Value ?? 100, 
+            DefaultEnd = sumRDA / sumTUL * defaultRange.Value.End.Value ?? 100,
             ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[defaultRange.Key] ?? 0) / 100d * start)
                 : Math.Min(101, WeeklyVolume[defaultRange.Key] ?? 0),
             ShowButtons = UsersWorkedMuscles.HasFlag(defaultRange.Key),
