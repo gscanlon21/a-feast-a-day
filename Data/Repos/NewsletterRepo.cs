@@ -20,6 +20,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Web.Code;
+using System.Numerics;
 
 namespace Data.Repos;
 
@@ -288,7 +289,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 denominator *= 10;
             }
 
-            var fraction = new Fraction((int)numerator, (int)denominator);
+            var fraction = new Fraction(new BigInteger(numerator), new BigInteger(denominator));
             shoppingList.Add(new ShoppingListItemDto()
             {
                 Name = group.Key.Name,
