@@ -53,6 +53,7 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 {
     public int Id { get; init; } = recipeIngredient.Id;
     public Measure Measure { get; init; } = recipeIngredient.Measure;
+    public string? Attributes { get; init; } = recipeIngredient.Attributes;
     public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
