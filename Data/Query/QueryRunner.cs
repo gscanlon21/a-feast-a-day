@@ -275,8 +275,11 @@ public class QueryRunner(Section section)
                     }
 
                     // The recipe does not work enough unique nutrients that we are trying to target.
-                    // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes if, for example, a prerequisite only works one muscle group and that muscle group is otherwise worked by compound exercises.
-                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).ContainsKey(mg)) < Math.Max(1, finalResults.Count == 0 ? 1 : NutrientOptions.AtLeastXNutrientsPerRecipe.Value))
+                    // Allow exercises that have a refresh date since we want to show those continuously until that date.
+                    // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
+                    // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
+                    var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1 : NutrientOptions.AtLeastXNutrientsPerRecipe.Value;
+                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).ContainsKey(mg)) < Math.Max(1, nutrientsToWork))
                     {
                         continue;
                     }
