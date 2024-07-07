@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20240703235541_AddRecipeIngredientOrderNonNullable")]
-    partial class AddRecipeIngredientOrderNonNullable
+    [Migration("20240707152620_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -364,7 +364,7 @@ namespace Data.Migrations
 
                     b.ToTable("recipe_ingredient", t =>
                         {
-                            t.HasComment("Recipes listed on the website");
+                            t.HasComment("A recipe's ingredients");
                         });
                 });
 

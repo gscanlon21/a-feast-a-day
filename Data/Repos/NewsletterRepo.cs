@@ -19,8 +19,8 @@ using Fractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Web.Code;
 using System.Numerics;
+using Web.Code;
 
 namespace Data.Repos;
 

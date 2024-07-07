@@ -36,7 +36,7 @@ namespace Data.Migrations
                     Email = table.Column<string>(type: "text", nullable: false),
                     AcceptedTerms = table.Column<bool>(type: "boolean", nullable: false),
                     FootnoteType = table.Column<int>(type: "integer", nullable: false),
-                    SendDays = table.Column<int>(type: "integer", nullable: false),
+                    SendDay = table.Column<int>(type: "integer", nullable: false),
                     Equipment = table.Column<int>(type: "integer", nullable: false),
                     SendHour = table.Column<int>(type: "integer", nullable: false),
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
@@ -322,38 +322,6 @@ namespace Data.Migrations
                 comment: "Recipes listed on the website");
 
             migrationBuilder.CreateTable(
-                name: "user_ingredient",
-                columns: table => new
-                {
-                    UserId = table.Column<int>(type: "integer", nullable: false),
-                    IngredientId = table.Column<int>(type: "integer", nullable: false),
-                    SubstituteIngredientId = table.Column<int>(type: "integer", nullable: false),
-                    Ignore = table.Column<bool>(type: "boolean", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_user_ingredient", x => new { x.UserId, x.IngredientId });
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_ingredient_IngredientId",
-                        column: x => x.IngredientId,
-                        principalTable: "ingredient",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_ingredient_SubstituteIngredientId",
-                        column: x => x.SubstituteIngredientId,
-                        principalTable: "ingredient",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_user_UserId",
-                        column: x => x.UserId,
-                        principalTable: "user",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "recipe_ingredient",
                 columns: table => new
                 {
@@ -364,6 +332,7 @@ namespace Data.Migrations
                     IngredientRecipeId = table.Column<int>(type: "integer", nullable: true),
                     QuantityNumerator = table.Column<int>(type: "integer", nullable: false),
                     QuantityDenominator = table.Column<int>(type: "integer", nullable: false),
+                    Order = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Optional = table.Column<bool>(type: "boolean", nullable: false),
                     Attributes = table.Column<string>(type: "text", nullable: true),
@@ -390,7 +359,7 @@ namespace Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 },
-                comment: "Recipes listed on the website");
+                comment: "A recipe's ingredients");
 
             migrationBuilder.CreateTable(
                 name: "recipe_instruction",
@@ -417,6 +386,43 @@ namespace Data.Migrations
                 comment: "Recipes listed on the website");
 
             migrationBuilder.CreateTable(
+                name: "user_ingredient",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "integer", nullable: false),
+                    IngredientId = table.Column<int>(type: "integer", nullable: false),
+                    SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
+                    SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
+                    Ignore = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_ingredient", x => new { x.UserId, x.IngredientId });
+                    table.ForeignKey(
+                        name: "FK_user_ingredient_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_user_ingredient_ingredient_SubstituteIngredientId",
+                        column: x => x.SubstituteIngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_user_ingredient_recipe_SubstituteRecipeId",
+                        column: x => x.SubstituteRecipeId,
+                        principalTable: "recipe",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_user_ingredient_user_UserId",
+                        column: x => x.UserId,
+                        principalTable: "user",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "user_recipe",
                 columns: table => new
                 {
@@ -424,7 +430,6 @@ namespace Data.Migrations
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
                     Ignore = table.Column<bool>(type: "boolean", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
-                    Scale = table.Column<int>(type: "integer", nullable: false),
                     LastSeen = table.Column<DateOnly>(type: "date", nullable: false),
                     RefreshAfter = table.Column<DateOnly>(type: "date", nullable: true),
                     LagRefreshXWeeks = table.Column<int>(type: "integer", nullable: false),
@@ -563,6 +568,11 @@ namespace Data.Migrations
                 name: "IX_user_ingredient_SubstituteIngredientId",
                 table: "user_ingredient",
                 column: "SubstituteIngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_ingredient_SubstituteRecipeId",
+                table: "user_ingredient",
+                column: "SubstituteRecipeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_recipe_RecipeId",

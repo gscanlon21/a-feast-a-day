@@ -361,7 +361,7 @@ namespace Data.Migrations
 
                     b.ToTable("recipe_ingredient", t =>
                         {
-                            t.HasComment("Recipes listed on the website");
+                            t.HasComment("A recipe's ingredients");
                         });
                 });
 
