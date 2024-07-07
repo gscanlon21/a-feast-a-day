@@ -159,7 +159,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Alpha Carotene", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
+    [Display(Name = "Alpha Carotene", GroupName = "Vitamins", Description = "24 mcg of alpha-carotene is 1 mcg of vitamin A.")]
     AlphaCarotene = 1L << 15, // 32768
 
     /// <summary>
@@ -167,7 +167,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Beta Carotene", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
+    [Display(Name = "Beta Carotene", GroupName = "Vitamins", Description = "12 mcg of beta-carotene is 1 mcg of vitamin A.")]
     BetaCarotene = 1L << 16, // 65536
 
     /// <summary>
@@ -188,7 +188,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
-    [Display(Name = "Retinol", GroupName = "Vitamins")]
+    [Display(Name = "Retinol", GroupName = "Vitamins", Description = "1 mcg of retinol is 1 mcg of vitamin A.")]
     Retinol = 1L << 17, // 131072
 
     [DefaultMeasure(Measure.Micrograms)]
