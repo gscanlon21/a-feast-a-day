@@ -90,7 +90,7 @@
                     @foreach (var ingredient in Model.RecipeIngredients.OrderBy(ri => ri.Order))
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
-                            @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName()) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
+                            @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName(EnumExtensions.DisplayNameType.ShortName)) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
                         </li>
                     }
                 </ul>
