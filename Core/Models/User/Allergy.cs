@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
 
@@ -111,7 +112,7 @@ public enum Allergy : long
     SugarAlcohols = 1 << 15, // 32768
 
     /// <summary>
-    /// An artifical sweetener. Not a sugar alcohol.
+    /// An artificial sweetener. Not a sugar alcohol.
     /// </summary>
     [Display(Name = "Aspartame")]
     Aspartame = 1 << 16, // 65536
@@ -119,23 +120,29 @@ public enum Allergy : long
     /// <summary>
     /// Artificial sweeteners.
     /// </summary>
-    [Display(Name = "Artifical Sweeteners")]
-    ArtificalSweeteners = SugarAlcohols | Aspartame, // 98304
+    [Display(Name = "Artificial Sweeteners")]
+    ArtificialSweeteners = SugarAlcohols | Aspartame, // 98304
 
     /// <summary>
     /// Simple sugars.
     /// </summary>
-    [Display(Name = "Fructose")]
-    Fructose = 1 << 17, // 131072
+    [Display(Name = "Simple Sugars", Description = "Glucose, Fructose, Galactose")]
+    SimpleSugars = 1 << 17, // 131072
+
+    /// <summary>
+    /// Carbohydrate Intolerance
+    /// </summary>
+    [Display(Name = "Carbohydrates")]
+    Carbohydrates = Lactose | Casein | SimpleSugars, // 131075
 
     /// <summary>
     /// Sugar and sugar alternatives.
     /// </summary>
     [Display(Name = "Sugars")]
-    Sugars = SugarAlcohols | Aspartame | Fructose, // 229376
+    Sugars = SugarAlcohols | Aspartame | SimpleSugars, // 229376
 
     /// <summary>
-    /// Artificial colors or flavours. Emulsifiers, Preservatives, Thickener
+    /// Artificial colors or flavors. Emulsifiers, Preservatives, Thickener
     /// </summary>
     [Display(Name = "Food Additives")]
     FoodAdditives = 1 << 18, // 262144
@@ -153,7 +160,7 @@ public enum Allergy : long
     FODMAP = 1 << 20, // 1048576
 
     /// <summary>
-    /// Caffine intolerance.
+    /// Caffeine intolerance.
     /// </summary>
     [Display(Name = "Caffeine")]
     Caffeine = 1 << 21, // 2097152
