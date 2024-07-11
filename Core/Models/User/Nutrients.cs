@@ -274,13 +274,13 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
-    [Display(ShortName = "Vitamin D2", Name = "Vitamin D2 (Calciferol)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin D2", Name = "Vitamin D2 (Ergocalciferol)", GroupName = "Vitamins")]
     VitaminD2 = 1L << 27, // 134217728
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
-    [Display(ShortName = "Vitamin D3", Name = "Vitamin D3 (Calciferol)", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin D3", Name = "Vitamin D3 (Cholecalciferol)", GroupName = "Vitamins")]
     VitaminD3 = 1L << 28, // 268435456
 
     [DefaultMeasure(Measure.Micrograms)]
