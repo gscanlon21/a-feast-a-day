@@ -61,9 +61,10 @@ public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) :
     private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
     {
         return await context.Recipes.AsNoTracking()
-            .Where(r => r.Equipment == Equipment.None || user.Equipment.HasFlag(r.Equipment))
             .Where(r => r.UserId == null || r.UserId == user.Id)
-            .Where(r => r.Section == Section.None)
+            .Where(r => r.Equipment == Equipment.None || user.Equipment.HasFlag(r.Equipment))
+            // Some ingredients recipes can stand on their own, such as a simple salad that can be used in a sandwich.
+            //.Where(r => r.Section == Section.None)
             .OrderBy(r => r.Name)
             .ToListAsync();
     }
