@@ -252,7 +252,11 @@ public class QueryRunner(Section section)
                             queryResultPrerequisiteRecipe.IngredientRecipe!.Scale = recipe.Scale;
                         }
                     }
-                    else
+                    // The recipe does not work enough servings that we are trying to target.
+                    // Allow recipes that have a refresh date since we want to show those continuously until that date.
+                    // Allow the first recipe with any serving so the user does not get stuck from seeing certain recipes
+                    // ... if, for example, a prerequisite only works one serving and that serving is otherwise worked by other recipes.
+                    else if (recipe.UserRecipe?.RefreshAfter == null && finalResults.Any(r => r.UserRecipe?.RefreshAfter == null))
                     {
                         continue;
                     }
@@ -277,7 +281,7 @@ public class QueryRunner(Section section)
                     }
 
                     // The recipe does not work enough unique nutrients that we are trying to target.
-                    // Allow exercises that have a refresh date since we want to show those continuously until that date.
+                    // Allow recipes that have a refresh date since we want to show those continuously until that date.
                     // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
                     // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
                     var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1 : NutrientOptions.AtLeastXNutrientsPerRecipe.Value;

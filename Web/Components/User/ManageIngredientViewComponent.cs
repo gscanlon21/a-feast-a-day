@@ -1,5 +1,4 @@
 ﻿using Core.Dtos.Ingredient;
-using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data;
 using Data.Entities.Ingredient;

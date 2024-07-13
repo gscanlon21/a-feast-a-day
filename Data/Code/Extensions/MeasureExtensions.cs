@@ -34,9 +34,11 @@ public static class MeasureExtensions
                 => fromMeasure.ToMeasure(Measure.Grams) / ingredient.GramsPerMeasure,
 
             _ when MeasureConsts.LiquidMeasures.Contains(fromMeasure)
-                => Measure.Grams.ToMeasure(ingredient.DefaultMeasure) * fromMeasure.ToMeasure(Measure.Cups) / ingredient.GramsPerCup,
+                // Tablespoons to dry ounces: 0.0353oz/g * 0.0625c/tbsp * ~240g/c ~= 0.5295oz/tbsp. Approx 8oz/c and 16tbsp/c.
+                => Measure.Grams.ToMeasure(ingredient.DefaultMeasure) * fromMeasure.ToMeasure(Measure.Cups) * ingredient.GramsPerCup,
 
             _ when MeasureConsts.LiquidMeasures.Contains(ingredient.DefaultMeasure)
+                // Dry ounces to tablespoons: 28.35g/oz * 16tbsp/c / ~240g/c ~= 1.89tbsp/oz. Approx 8oz/c and 16tbsp/c.
                 => fromMeasure.ToMeasure(Measure.Grams) * Measure.Cups.ToMeasure(ingredient.DefaultMeasure) / ingredient.GramsPerCup,
 
             _ => throw new NotImplementedException($"Missing measure: {fromMeasure}, {ingredient.DefaultMeasure}")

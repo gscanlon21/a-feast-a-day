@@ -15,11 +15,9 @@ using Data.Entities.User;
 using Data.Models;
 using Data.Models.Newsletter;
 using Data.Query.Builders;
-using Fractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Numerics;
 using Web.Code;
 
 namespace Data.Repos;
@@ -278,24 +276,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
             .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
         {
-            var partialFractions = group.Where(g => g.QuantityDenominator > 1).ToList();
-            var wholeFractions = group.Where(g => g.QuantityDenominator == 1).Sum(g => g.QuantityNumerator * g.Measure.ToDefaultMeasure(g.Ingredient!));
-
-            var numerator = wholeFractions + partialFractions.Sum(g => g.QuantityNumerator * g.Measure.ToDefaultMeasure(g.Ingredient!));
-            var denominator = Math.Max(1d, partialFractions.Sum(g => g.QuantityDenominator * g.Measure.ToDefaultMeasure(g.Ingredient!)));
-            while ((!double.IsInteger(numerator) && numerator > 0) || (!double.IsInteger(denominator) && denominator > 0))
-            {
-                numerator *= 10;
-                denominator *= 10;
-            }
-
-            var fraction = new Fraction(new BigInteger(numerator), new BigInteger(denominator));
+            var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!));
             shoppingList.Add(new ShoppingListItemDto()
             {
                 Name = group.Key.Name,
                 Measure = group.Key.Ingredient!.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
-                Quantity = Math.Max(1, (int)Math.Ceiling(fraction.ToDouble())),
+                Quantity = Math.Max(1, (int)Math.Ceiling(totalQuantity)),
             });
         }
 
