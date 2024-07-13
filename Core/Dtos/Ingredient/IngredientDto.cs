@@ -43,7 +43,7 @@ public class IngredientDto
     public double GramsPerServing { get; set; }
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the recipe ingredient (externally shown).
     /// </summary>
     [Display(Name = "Notes")]
     public string? Notes { get; set; } = null;

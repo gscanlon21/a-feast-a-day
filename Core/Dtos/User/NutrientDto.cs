@@ -26,7 +26,7 @@ public class NutrientDto
     public bool Synthetic { get; set; }
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the nutrient (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
 

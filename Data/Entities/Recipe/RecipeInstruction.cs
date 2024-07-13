@@ -23,7 +23,7 @@ public class RecipeInstruction
     public string Name { get; init; } = null!;
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the recipe instruction (externally shown).
     /// </summary>
     public string? Notes { get; init; } = null;
 

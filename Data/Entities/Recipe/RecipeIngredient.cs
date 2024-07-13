@@ -45,7 +45,7 @@ public class RecipeIngredient
     public string? Attributes { get; init; }
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the recipe ingredient (externally shown).
     /// </summary>
     public string? Notes { get; init; } = null;
 

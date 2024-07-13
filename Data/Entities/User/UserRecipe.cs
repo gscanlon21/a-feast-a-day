@@ -36,7 +36,7 @@ public class UserRecipe
 
     /// <summary>
     /// If this is set, will not update the LastSeen date until this date is reached.
-    /// This is so we can reduce the variation of workouts and show the same groups of exercises for a month+ straight.
+    /// This is so we can reduce the variation of feasts and show the same groups of recipes for a month+ straight.
     /// </summary>
     public DateOnly? RefreshAfter { get; set; }
 

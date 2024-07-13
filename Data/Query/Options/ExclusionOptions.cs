@@ -10,7 +10,7 @@ public class ExclusionOptions : IOptions
     public List<int> RecipeIds = [];
 
     /// <summary>
-    /// Exclude any variation of these exercises from being chosen.
+    /// Exclude any of these recipes from being chosen.
     /// </summary>
     internal void AddExcludeRecipes(IEnumerable<Recipe>? recipes)
     {

@@ -201,8 +201,6 @@ public class QueryRunner(Section section)
             // Order by recipes that are still pending refresh.
             .OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue)
             // Show recipes that the user has rarely seen.
-            // Adding the two in case there is a warmup and main variation in the same exercise.
-            // ... Otherwise, since the warmup section is always chosen first, the last seen date is always updated and the main variation is rarely chosen.
             .ThenBy(a => a.UserRecipe?.LastSeen.DayNumber)
             // Mostly for the demo, show mostly random exercises.
             // NOTE: When the two variation's LastSeen dates are the same:
@@ -314,7 +312,7 @@ public class QueryRunner(Section section)
     }
 
     /// <summary>
-    /// Reference updates to QueryResult.UserExercise and QueryResult.UserVariation to set them to default and save to db if they are null.
+    /// Reference updates to QueryResult.UserRecipe and QueryResult.UserIngredient to set them to default and save to db if they are null.
     /// </summary>
     private async Task AddMissingUserRecords(CoreContext context, IList<InProgressQueryResults> queryResults)
     {

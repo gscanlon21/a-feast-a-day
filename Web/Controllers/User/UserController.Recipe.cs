@@ -201,8 +201,7 @@ public partial class UserController
                 return NotFound();
             }
 
-            // Set the new weight on the UserVariation
-            var userVariation = await context.UserRecipes
+            var userRecipe = await context.UserRecipes
                 .Include(p => p.Recipe)
                 .FirstAsync(p => p.UserId == user.Id && p.RecipeId == recipeId);
 
@@ -213,9 +212,9 @@ public partial class UserController
                 userVariation.LastSeen.AddDays(7 * difference);
             }*/
 
-            userVariation.Notes = viewModel.Notes;
-            userVariation.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
-            userVariation.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
+            userRecipe.Notes = viewModel.Notes;
+            userRecipe.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
+            userRecipe.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
 
             await context.SaveChangesAsync();
 

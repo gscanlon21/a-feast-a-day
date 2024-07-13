@@ -27,11 +27,11 @@ public class ManageRecipeViewModel
     public string? Notes { get; init; }
 
     [Required, Range(UserConsts.LagRefreshXWeeksMin, UserConsts.LagRefreshXWeeksMax)]
-    [Display(Name = "Lag Refresh by X Weeks", Description = "Add a delay before this variation is recycled from your workouts.")]
+    [Display(Name = "Lag Refresh by X Weeks", Description = "Add a delay before this recipe is recycled from your workouts.")]
     public int LagRefreshXWeeks { get; init; }
 
     [Required, Range(UserConsts.PadRefreshXWeeksMin, UserConsts.PadRefreshXWeeksMax)]
-    [Display(Name = "Pad Refresh by X Weeks", Description = "Add a delay before this variation is recirculated back into your workouts.")]
+    [Display(Name = "Pad Refresh by X Weeks", Description = "Add a delay before this recipe is recirculated back into your workouts.")]
     public int PadRefreshXWeeks { get; init; }
 
     public Verbosity RecipeVerbosity => Verbosity.Images;
