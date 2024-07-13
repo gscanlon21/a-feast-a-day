@@ -147,7 +147,7 @@ public enum Nutrients : long
     /// <summary>
     /// Does not get converted into vitamin A.
     /// </summary>
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Non-provitamin A Carotenoids", GroupName = "Anti-oxidants", Description = "Lycopene.")]
     NonProvitaminACarotenoids = 1L << 14, // 16384
@@ -173,13 +173,13 @@ public enum Nutrients : long
     /// <summary>
     /// Precursors to vitamin A.
     /// </summary>
-    [DefaultMeasure(Measure.Milligrams)]
+    [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Provitamin A Carotenoids", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
     ProvitaminACarotenoids = AlphaCarotene | BetaCarotene, // 98304
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(10, 100, Measure.Micrograms, Multiplier.Person)]
+    [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Carotenoids", GroupName = "Vitamins")]
     Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 114688
 
