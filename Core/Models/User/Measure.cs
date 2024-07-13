@@ -22,7 +22,7 @@ public enum Measure
     [Display(Name = "Pounds", ShortName = "lb.")]
     Pounds = 5,
 
-    [Display(Name = "Cups", ShortName = "cups")]
+    [Display(Name = "Cups", ShortName = "c.")]
     Cups = 6,
 
     [Display(Name = "Tablespoons", ShortName = "tbsp.")]
