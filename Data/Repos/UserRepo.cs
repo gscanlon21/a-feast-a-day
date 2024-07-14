@@ -148,12 +148,12 @@ public class UserRepo(CoreContext context)
     /// 
     /// Returns `null` when the user is new to fitness.
     /// </summary>
-    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false)
+    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false, bool includeToday = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
-        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks);
-        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks);
+        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: includeToday);
+        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks, includeToday: includeToday);
 
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
@@ -178,7 +178,7 @@ public class UserRepo(CoreContext context)
         }));
     }
 
-    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool rawValues = false)
+    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
@@ -188,11 +188,9 @@ public class UserRepo(CoreContext context)
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
-            // Only look at records where the user is not new to fitness.
-            //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
-            // Look at strengthening workouts only that are within the last X weeks.
-            //.Where(n => n.Frequency != Frequency.OffDayStretches)
+            // Look at feasts only that are within the last X weeks.
             .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
+            .Where(n => includeToday || n.Date != user.StartOfWeekOffset)
             .GroupBy(n => n.Date)
             .Select(g => new
             {
@@ -247,7 +245,7 @@ public class UserRepo(CoreContext context)
         return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
     }
 
-    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool rawValues = false)
+    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await context.UserFeasts
             .AsNoTracking().TagWithCallSite()
@@ -259,11 +257,9 @@ public class UserRepo(CoreContext context)
                                 .ThenInclude(r => r.Ingredient)
                                     .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
-            // Only look at records where the user is not new to fitness.
-            //.Where(n => user.IsNewToFitness || n.Date > user.SeasonedDate)
-            // Look at strengthening workouts only that are within the last X weeks.
-            //.Where(n => n.Frequency != Frequency.OffDayStretches)
+            // Look at feasts only that are within the last X weeks.
             .Where(n => n.Date >= DateHelpers.Today.AddDays(-7 * weeks))
+            .Where(n => includeToday || n.Date != user.StartOfWeekOffset)
             .GroupBy(n => n.Date)
             .Select(g => new
             {
