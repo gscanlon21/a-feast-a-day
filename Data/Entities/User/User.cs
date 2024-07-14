@@ -97,7 +97,9 @@ public class User
     /// </summary>
     private DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
 
-    private int WeekdayDifference => (7 + Math.Abs((int)SendDay - (int)TodayOffset.DayOfWeek)) % 7;
+    private int WeekdayDifference => SendDay > TodayOffset.DayOfWeek 
+        ? 7 - Math.Abs((int)SendDay - (int)TodayOffset.DayOfWeek)
+        : Math.Abs((int)TodayOffset.DayOfWeek - (int)SendDay);
 
     /// <summary>
     /// When this user was created.
