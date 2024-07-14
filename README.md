@@ -19,7 +19,7 @@ The program [Obtainium](https://github.com/ImranR98/Obtainium) can be used for a
 - Customize how long you want to see exercises before they refresh.
 - Customize how much each muscle is being strengthened. Workouts are automatically adjusted to remove muscle imbalances.
 - Customize how often you want to deload. Built-in deload weeks automatically adjust your workout to prevent overtraining.
-- Optional health and fitness tips.
+- Optional health and cooking tips.
 - Optional mobility workouts on rest days.
 - Optional sports, injury prevention, and rehabilitation exercises.
 
