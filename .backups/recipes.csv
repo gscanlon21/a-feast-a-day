@@ -1,6 +1,6 @@
-1	Lentil Soup	\N	\N	\N	4	360	20	4	t	4	\N
+1	Lentil Soup	\N	\N	\N	4	360	20	4	t	4	lentil-soup.jpg
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	2	t	0	sausage-spaghetti.jpg
-17	Vegetarian Stir-Fry	Save time and money by purchasing a package of frozen vegetables. These vegetables are typically picked at their peak and frozen quickly to lock in their natural nutrients while also maintaining flavor. The seasoning from the rice, oil, and sauce will provide plenty of flavors to keep this meal from being anything but bland. For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives. (Prep Time: 5 minutes. Cook Time: 25 minutes. Serves 2 – 4)	\N	\N	4	15	5	2	t	0	\N
+17	Vegetarian Stir-Fry	Save time and money by purchasing a package of frozen vegetables. These vegetables are typically picked at their peak and frozen quickly to lock in their natural nutrients while also maintaining flavor. The seasoning from the rice, oil, and sauce will provide plenty of flavors to keep this meal from being anything but bland. For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives. (Prep Time: 5 minutes. Cook Time: 25 minutes. Serves 2 – 4)	\N	\N	4	15	5	2	t	0	vegetable-stir-fry.jpg
 19	Egg in a Pepper	\N	\N	\N	1	5	0	1	t	0	egg-in-a-pepper.jpg
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg
 23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	0	scalloped-potatoes-ham.jpg
@@ -9,7 +9,7 @@
 26	Roasted Broccoli	Roasted broccoli is easy to make and so much more flavorsome than boiled. My favorite part is the roasted sliced stem pieces.	\N	\N	8	20	5	1	t	2	\N
 27	Garlic Toast Pizzas	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	\N	\N	6	10	5	2	t	2	\N
 28	Sauteed Green Beans	\N	\N	\N	8	0	0	2	t	0	sauteed-green-beans.jpg
-29	Garlic Parmesan Asparagus	\N	\N	\N	8	0	0	2	t	0	parmesan-roasted-asparagus.jpg
+29	Garlic Parmesan Asparagus	\N	\N	\N	8	5	5	2	t	4	parmesan-roasted-asparagus.jpg
 30	Curry Scramble	\N	\N	\N	4	10	5	2	t	0	\N
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	4	420	15	6	t	1	\N
 32	Crock Pot Baked Potatoes	\N	\N	\N	8	480	5	4	t	0	crockpot-baked-potatoes.jpg
@@ -17,7 +17,7 @@
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	2	t	1	kielbasa.jpg
 35	Crockpot BBQ Pinto Beans	Beans and barbeque sauce go together like apple pie and ice cream. This simple and flavorful recipe for Crockpot BBQ pinto beans is perfect as a side dish for a juicy grilled steak. To complete this classic southern meal, make some quick and easy cornbread to scoop up all of the rich flavors in the sauce.	\N	\N	4	480	15	6	f	32	bbq-pinto-beans.jpg
 36	Slow Cooker Macaroni and Cheese Recipe	This is a tasty slow cooker macaroni and cheese recipe, made with just a few ingredients in the slow cooker or crockpot.  When the macaroni and cheese is done, feel free to spoon into a baking dish, top with a little more cheese, and put under the broiler for a minute or two for that "homemade from the oven" look.	\N	\N	1	120	10	4	t	0	\N
-37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	\N
+37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg
 38	Black Bean Fajita Skillet	You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg
 39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	0	linguine-avocado-tomato-lime.jpg
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg
@@ -27,14 +27,14 @@
 44	Quinoa Pizza	\N	\N	\N	6	45	5	2	t	0	quinoa-pizza.jpg
 45	5-Ingredient Black Bean Soup	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	\N	\N	6	18	2	4	t	4	black-bean-soup.jpg
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	0	\N
-47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	\N
+47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	banana-ice-cream.jpg
 48	Avocado Cakes	\N	\N	\N	16	1	1	2	t	0	avocado-cakes.jpg
 49	Easy Mini Bagel Pizzas	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	\N	\N	6	10	10	2	t	0	\N
 50	Simple 4-Ingredient Egg Salad with Mayo	https://www.lifeisbutadish.com/momos-egg-salad/	\N	\N	1	5	10	1	t	0	egg-salad.jpg
-51	Grilled Garlic Naan	\N	\N	\N	1	10	10	2	t	0	\N
+51	Grilled Garlic Naan	\N	\N	\N	1	10	10	2	t	0	grilled-garlic-naan.jpg
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg
-53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	0	\N
-54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	\N
+53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	0	old-fashioned-oatmeal.jpg
+54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg
 55	Oven Roasted Asparagus	\N	\N	\N	8	10	5	1	t	0	parmesan-roasted-asparagus.jpg
 56	Microwave Macaroni and Cheese in a Mug	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	\N	\N	6	5	5	1	t	0	mac-n-cheese-mug.jpg
 57	Flying Saucers	https://www.tasteofhome.com/recipes/flying-saucers/	\N	\N	14	5	5	4	t	0	\N
@@ -44,11 +44,11 @@
 61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	8	\N
 62	Edamame & Veggie Rice Bowl	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	\N	\N	3	5	5	1	t	0	edamame-veggie-rice-bowl.jpg
 63	Grilled Sausage-Basil Pizzas	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	\N	\N	4	15	15	4	t	0	\N
-64	French Bread Pizza Recipe	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	2	\N
+64	French Bread Pizza	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	2	french-bread-pizza.jpg
 65	Hardboiled Eggs	\N	\N	\N	17	10	2	1	t	4	hardboiled-eggs.jpg
-66	Frittata Base	\N	\N	\N	0	0	5	1	t	0	\N
+66	Frittata Base	\N	\N	\N	0	0	5	1	t	0	frittata-base.jpg
 67	French Toast	\N	\N	\N	3	15	5	1	t	4	french-toast.jpg
-68	Cheese and Crackers	\N	\N	\N	18	0	0	1	t	0	\N
+68	Cheese and Crackers	\N	\N	\N	18	0	0	1	t	0	cheese-meat-crackers.jpg
 69	Chopped Eggs and Onions	\N	\N	\N	10	12	3	4	t	4	egg-salad-alt.jpg
 70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	4	t	0	\N
 71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	0	\N
@@ -56,4 +56,15 @@
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settles, shake the bottle before using.	\N	\N	0	155	5	6	t	128	\N
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	4	basil-quesadilla.jpg
 75	Garlic Infused Olive Oil	\N	\N	\N	0	0	5	5	t	0	garlic-olive-oil.jpg
-76	Minty Courgette Linguine	\N	\N	\N	6	15	5	4	t	4	zucchini-linguine.jpg
+76	Minty Courgette Linguine	\N	\N	\N	6	15	5	2	t	4	zucchini-linguine.jpg
+77	Cereal	\N	\N	\N	1	0	0	1	f	0	cereal.jpg
+78	String Cheese	\N	\N	\N	16	0	0	1	t	0	string-cheese.jpg
+79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	4	fettucine-alfredo.jpg
+80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	4	eggplant-mint-couscous-salad.jpg
+81	Griddle Potatoes	\N	\N	\N	8	8	10	4	t	4	griddle-potatoes.jpg
+82	Chicken Salad	\N	\N	\N	10	0	5	1	t	0	\N
+83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	32	60	60	4	t	2	springerle-cookies.jpg
+84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	2	12	3	4	t	4	\N
+85	Pasta Fresca	https://iowagirleats.com/pasta-fresca/	\N	\N	6	15	5	4	t	4	\N
+86	Cheesy Ham and Broccoli Rice Skillet	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	\N	\N	6	15	5	3	t	4	\N
+87	Korean Beef Lettuce Wraps	https://iowagirleats.com/korean-beef-lettuce-wraps/	\N	\N	6	15	5	4	t	4	\N
