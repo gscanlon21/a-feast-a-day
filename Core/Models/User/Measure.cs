@@ -34,17 +34,34 @@ public enum Measure
     [Display(Name = "Fluid Ounces", ShortName = "fl oz.")]
     FluidOunces = 9,
 
+    [Display(Name = "Milliliters", ShortName = "ml")]
+    Milliliters = 10,
+
+    [Display(Name = "Liters", ShortName = "l")]
+    Liters = 11,
+
     [Display(Name = "Percent", ShortName = "%")]
-    Percent = 10,
+    Percent = 12,
 
     [Display(Name = "IU")]
-    IU = 11,
+    IU = 13,
 }
 
 public static class MeasureConsts
 {
+    /// <summary>
+    /// Measures used to measure dry ingredients.
+    /// </summary>
     public static Measure[] DryMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Ounces, Measure.Pounds];
-    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces];
+    
+    /// <summary>
+    /// Measures used to measure liquids.
+    /// </summary>
+    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters];
+    
+    /// <summary>
+    /// Nutrient measures.
+    /// </summary>
     public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Percent, Measure.IU];
 }
 
