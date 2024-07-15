@@ -164,7 +164,11 @@ public class QueryRunner(Section section)
                         }
                     }
 
-                    finalRecipeIngredients.Add(recipeIngredient);
+                    // Skip if the optional ingredient conflicts with allergens and there is no substitute ingredient available.
+                    if (recipeIngredient.Ingredient != null || recipeIngredient.IngredientRecipeId.HasValue)
+                    {
+                        finalRecipeIngredients.Add(recipeIngredient);
+                    }
                 }
 
                 if (!ignoreRecipe)
