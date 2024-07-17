@@ -6,7 +6,7 @@ using Quartz;
 
 namespace Api.Jobs.Delete;
 
-public class DeleteOldNewsletters(ILogger<DeleteOldNewsletters> logger, CoreContext coreContext) : IJob, IScheduled
+public class DeleteOldEmails(ILogger<DeleteOldEmails> logger, CoreContext coreContext) : IJob, IScheduled
 {
     public async Task Execute(IJobExecutionContext context)
     {
@@ -22,13 +22,13 @@ public class DeleteOldNewsletters(ILogger<DeleteOldNewsletters> logger, CoreCont
         }
     }
 
-    public static JobKey JobKey => new(nameof(DeleteOldNewsletters) + "Job", GroupName);
-    public static TriggerKey TriggerKey => new(nameof(DeleteOldNewsletters) + "Trigger", GroupName);
+    public static JobKey JobKey => new(nameof(DeleteOldEmails) + "Job", GroupName);
+    public static TriggerKey TriggerKey => new(nameof(DeleteOldEmails) + "Trigger", GroupName);
     public static string GroupName => "Delete";
 
     public static async Task Schedule(IScheduler scheduler)
     {
-        var job = JobBuilder.Create<DeleteOldNewsletters>()
+        var job = JobBuilder.Create<DeleteOldEmails>()
             .WithIdentity(JobKey)
             .Build();
 

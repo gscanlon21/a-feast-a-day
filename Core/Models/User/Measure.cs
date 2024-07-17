@@ -53,12 +53,12 @@ public static class MeasureConsts
     /// Measures used to measure dry ingredients.
     /// </summary>
     public static Measure[] DryMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Ounces, Measure.Pounds];
-    
+
     /// <summary>
     /// Measures used to measure liquids.
     /// </summary>
     public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters];
-    
+
     /// <summary>
     /// Nutrient measures.
     /// </summary>

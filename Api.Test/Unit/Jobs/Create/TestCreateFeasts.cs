@@ -12,9 +12,9 @@ using Moq;
 namespace Api.Test.Unit.Jobs.Create;
 
 [TestClass]
-public class TestNewsletterJob : FakeDatabase
+public class TestCreateFeasts : FakeDatabase
 {
-    private NewsletterJob NewsletterJob { get; set; } = null!;
+    private CreateFeasts NewsletterJob { get; set; } = null!;
 
     [TestInitialize]
     public void Init()
@@ -26,36 +26,34 @@ public class TestNewsletterJob : FakeDatabase
         var mockSsf = new Mock<IServiceScopeFactory>();
         mockSsf.Setup(m => m.CreateScope()).Returns(mockSs.Object);
 
-        var mockHttpClient = new Mock<HttpClient>();
-        var mockHttpClientFactory = new Mock<IHttpClientFactory>();
-        mockHttpClientFactory.Setup(m => m.CreateClient(It.IsAny<string>())).Returns(mockHttpClient.Object);
-
-        var mockLoggerNewsletterJob = new Mock<ILogger<NewsletterJob>>();
+        var mockLoggerNewsletterJob = new Mock<ILogger<CreateFeasts>>();
         var mockLoggerNewsletterRepo = new Mock<ILogger<NewsletterRepo>>();
         var userRepo = new UserRepo(Context);
         var newsletterRepo = new NewsletterRepo(mockLoggerNewsletterRepo.Object, Context, userRepo, mockSsf.Object);
 
-        NewsletterJob = new NewsletterJob(
+        NewsletterJob = new CreateFeasts(
             mockLoggerNewsletterJob.Object,
             userRepo,
             newsletterRepo,
-            mockHttpClientFactory.Object,
             Services.GetService<IOptions<SiteSettings>>()!,
             Context
         );
     }
 
     [TestMethod]
-    public async Task GetUsers_WhenNewsletterIsDisabled_ReturnsNone()
+    public async Task GetUsers_WhenNewsletterIsDisabled_ReturnsOne()
     {
         Context.Users.Add(new Data.Entities.User.User(string.Empty, true)
         {
-            NewsletterDisabledReason = "testing"
+            LastActive = DateHelpers.Today,
+            NewsletterDisabledReason = "testing",
+            SendDay = DateHelpers.Today.DayOfWeek,
+            SendHour = int.Parse(DateTime.UtcNow.ToString("HH"))
         });
         await Context.SaveChangesAsync();
 
         var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 0);
+        Assert.IsTrue(users.Count == 1);
     }
 
     [TestMethod]
@@ -85,7 +83,7 @@ public class TestNewsletterJob : FakeDatabase
     }
 
     [TestMethod]
-    public async Task GetUsers_WhenActive_ReturnsOne()
+    public async Task GetUsers_WhenActive_ReturnsNone()
     {
         Context.Users.Add(new Data.Entities.User.User(string.Empty, true)
         {
@@ -96,6 +94,6 @@ public class TestNewsletterJob : FakeDatabase
         await Context.SaveChangesAsync();
 
         var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 1);
+        Assert.IsTrue(users.Count == 0);
     }
 }
