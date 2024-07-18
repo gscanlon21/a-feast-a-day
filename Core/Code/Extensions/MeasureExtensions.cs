@@ -2,9 +2,12 @@
 
 namespace Core.Code.Extensions;
 
+/// <summary>
+/// Exact measure conversions.
+/// </summary>
 public static class MeasureExtensions
 {
-    public static double ToMeasure(this Measure fromMeasure, Measure toMeasure)
+    public static double? ToMeasureOrNull(this Measure fromMeasure, Measure toMeasure)
     {
         return (fromMeasure, toMeasure) switch
         {
@@ -12,11 +15,13 @@ public static class MeasureExtensions
 
             // Dry conversions.
             (Measure.Pounds, Measure.Ounces) => 16,
-            (Measure.Pounds, Measure.Grams) => 453.592,
-            (Measure.Ounces, Measure.Grams) => 28.35,
+            (Measure.Pounds, Measure.Grams) => 453.59237,
+            (Measure.Ounces, Measure.Grams) => 28.3495231,
             (Measure.Ounces, Measure.Pounds) => 0.0625,
             (Measure.Grams, Measure.Ounces) => 0.0353,
             (Measure.Grams, Measure.Pounds) => 0.00220462442,
+            (Measure.Micrograms, Measure.Grams) => 0.000001,
+            (Measure.Milligrams, Measure.Grams) => 0.001,
 
             // Fluid conversions.
             (Measure.Cups, Measure.Gallons) => 0.0625,
@@ -29,23 +34,32 @@ public static class MeasureExtensions
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
 
-            _ => throw new NotImplementedException($"Missing measure: {fromMeasure}, {toMeasure}")
+            _ => null
         };
     }
 
-    /// <summary>
-    /// Returns null if the source list does not contain any items.
-    /// </summary>
-    public static double ToGrams(this Measure measure, double quantity)
+    public static double ToMeasure(this Measure fromMeasure, Measure toMeasure)
     {
-        return measure switch
+        if (fromMeasure.ToMeasureOrNull(toMeasure) is double conversion)
         {
-            Measure.Micrograms => quantity / 1000000d,
-            Measure.Milligrams => quantity / 1000d,
-            Measure.Grams or Measure.None => quantity,
-            Measure.Ounces => quantity * 28.3495231,
-            Measure.Pounds => quantity * 453.59237,
-            _ => throw new NotImplementedException("Use RecipeIngredientExtensions.ToGrams()")
-        };
+            return conversion;
+        }
+
+        throw new NotSupportedException($"Missing measure: {fromMeasure}, {toMeasure}");
+    }
+
+    public static double ToGrams(this Measure measure, double quantity = 1)
+    {
+        return quantity * measure.ToMeasure(Measure.Grams);
+    }
+
+    public static double ToGramsOrDefault(this Measure measure, double quantity)
+    {
+        return (quantity * measure.ToMeasureOrNull(Measure.Grams)) ?? quantity;
+    }
+
+    public static double? ToGramsOrNull(this Measure measure, double quantity = 1)
+    {
+        return quantity * measure.ToMeasureOrNull(Measure.Grams);
     }
 }

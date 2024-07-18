@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Fractions;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,10 +35,10 @@ public class RecipeIngredient
 
     public int Order { get; set; }
 
+    public bool Optional { get; set; }
+
     [Required]
     public Measure Measure { get; set; }
-
-    public bool Optional { get; set; }
 
     /// <summary>
     /// Chopped, thinly sliced...
@@ -51,11 +52,16 @@ public class RecipeIngredient
 
     public string? DisabledReason { get; init; } = null;
 
+
     [NotMapped]
     public bool Hide { get; set; }
 
     [NotMapped]
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
+
+    [NotMapped]
+    public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
+
 
     [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredients))]
     public virtual Recipe Recipe { get; private init; } = null!;
@@ -66,8 +72,8 @@ public class RecipeIngredient
     [JsonInclude, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredientRecipes))]
     public virtual Recipe IngredientRecipe { get; set; } = null!;
 
-    public override int GetHashCode() => HashCode.Combine(Id);
 
+    public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeIngredient other
         && other.Id == Id;
 }
