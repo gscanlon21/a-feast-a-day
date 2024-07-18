@@ -40,11 +40,14 @@ public enum Measure
     [Display(Name = "Liters", ShortName = "l")]
     Liters = 11,
 
+    [Display(Name = "Gallons", ShortName = "gal")]
+    Gallons = 12,
+
     [Display(Name = "Percent", ShortName = "%")]
-    Percent = 12,
+    Percent = 13,
 
     [Display(Name = "IU")]
-    IU = 13,
+    IU = 14,
 }
 
 public static class MeasureConsts
@@ -57,7 +60,7 @@ public static class MeasureConsts
     /// <summary>
     /// Measures used to measure liquids.
     /// </summary>
-    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters];
+    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters, Measure.Gallons];
 
     /// <summary>
     /// Nutrient measures.

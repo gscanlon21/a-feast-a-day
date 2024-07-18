@@ -19,12 +19,14 @@ public static class MeasureExtensions
             (Measure.Grams, Measure.Pounds) => 0.00220462442,
 
             // Fluid conversions.
-            (Measure.FluidOunces, Measure.Cups) => 0.125,
-            (Measure.Cups, Measure.Teaspoons) => 48,
+            (Measure.Cups, Measure.Gallons) => 0.0625,
             (Measure.Cups, Measure.Tablespoons) => 16,
+            (Measure.Cups, Measure.Teaspoons) => 48,
+            (Measure.Gallons, Measure.Cups) => 16,
+            (Measure.FluidOunces, Measure.Cups) => 0.125,
             (Measure.Tablespoons, Measure.Cups) => 0.0625,
-            (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Teaspoons, Measure.Cups) => 0.0208333,
+            (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
 
             _ => throw new NotImplementedException($"Missing measure: {fromMeasure}, {toMeasure}")
