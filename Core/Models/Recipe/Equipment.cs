@@ -33,4 +33,7 @@ public enum Equipment
 
     [Display(Name = "Air Fryer")]
     AirFryer = 1 << 8, // 256
+
+    [Display(Name = "Grill")]
+    Grill = 1 << 9, // 512
 }
