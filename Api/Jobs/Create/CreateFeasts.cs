@@ -17,18 +17,22 @@ namespace Api.Jobs.Create;
 public class CreateFeasts : IJob, IScheduled
 {
     private readonly UserRepo _userRepo;
-    private readonly NewsletterRepo _newsletterRepo;
+    private readonly HttpClient _httpClient;
     private readonly CoreContext _coreContext;
-    private readonly IOptions<SiteSettings> _siteSettings;
     private readonly ILogger<CreateFeasts> _logger;
+    private readonly IOptions<SiteSettings> _siteSettings;
 
-    public CreateFeasts(ILogger<CreateFeasts> logger, UserRepo userRepo, NewsletterRepo newsletterRepo, IOptions<SiteSettings> siteSettings, CoreContext coreContext)
+    public CreateFeasts(ILogger<CreateFeasts> logger, UserRepo userRepo, IHttpClientFactory httpClientFactory, IOptions<SiteSettings> siteSettings, CoreContext coreContext)
     {
         _logger = logger;
-        _newsletterRepo = newsletterRepo;
         _userRepo = userRepo;
         _coreContext = coreContext;
         _siteSettings = siteSettings;
+        _httpClient = httpClientFactory.CreateClient();
+        if (_httpClient.BaseAddress != _siteSettings.Value.WebUri)
+        {
+            _httpClient.BaseAddress = _siteSettings.Value.WebUri;
+        }
     }
 
     public async Task Execute(IJobExecutionContext context)
@@ -36,16 +40,16 @@ public class CreateFeasts : IJob, IScheduled
         try
         {
             var options = new ParallelOptions() { MaxDegreeOfParallelism = 3, CancellationToken = context.CancellationToken };
-            await Parallel.ForEachAsync(await GetUsers(), options, async (user, _) =>
+            await Parallel.ForEachAsync(await GetUsers(), options, async (userToken, cancellationToken) =>
             {
                 try
                 {
-                    var token = await _userRepo.AddUserToken(user, durationDays: 100); // Needs to last at least 3 months by law for unsubscribe link.
-                    await _newsletterRepo.Newsletter(user.Email, token);
+                    // Don't hit the user repo because we're in a parallel loop and CoreContext isn't thread-safe.
+                    await _httpClient.GetAsync($"/newsletter/{Uri.EscapeDataString(userToken.User.Email)}?token={Uri.EscapeDataString(userToken.Token)}", cancellationToken);
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error, e, "Error retrieving newsletter for user {Id}", user.Id);
+                    _logger.Log(LogLevel.Error, e, "Error retrieving newsletter for user {Id}", userToken.User.Id);
                 }
             });
         }
@@ -55,11 +59,11 @@ public class CreateFeasts : IJob, IScheduled
         }
     }
 
-    internal async Task<List<User>> GetUsers()
+    internal async Task<IEnumerable<(User User, string Token)>> GetUsers()
     {
         var currentDay = DateHelpers.Today.DayOfWeek;
         var currentHour = int.Parse(DateTime.UtcNow.ToString("HH"));
-        return await _coreContext.Users
+        return await Task.WhenAll((await _coreContext.Users
             // User has confirmed their account.
             .Where(u => u.LastActive.HasValue)
             // User is not subscribed to the newsletter.
@@ -70,7 +74,9 @@ public class CreateFeasts : IJob, IScheduled
             .Where(u => u.SendDay == currentDay || u.Features.HasFlag(Features.Debug))
             // User is not a test or demo user.
             .Where(u => !u.Email.EndsWith(_siteSettings.Value.Domain) || u.Features.HasFlag(Features.Test) || u.Features.HasFlag(Features.Debug))
-            .ToListAsync();
+            .ToListAsync())
+            // Token needs to last at least 3 months by law for unsubscribe link.
+            .Select(async u => (u, await _userRepo.AddUserToken(u, durationDays: 100))));
     }
 
     public static JobKey JobKey => new(nameof(CreateFeasts) + "Job", GroupName);

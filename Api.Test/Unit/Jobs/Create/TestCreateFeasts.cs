@@ -26,15 +26,17 @@ public class TestCreateFeasts : FakeDatabase
         var mockSsf = new Mock<IServiceScopeFactory>();
         mockSsf.Setup(m => m.CreateScope()).Returns(mockSs.Object);
 
+        var mockHttpClient = new Mock<HttpClient>();
+        var mockHttpClientFactory = new Mock<IHttpClientFactory>();
+        mockHttpClientFactory.Setup(m => m.CreateClient(It.IsAny<string>())).Returns(mockHttpClient.Object);
+
         var mockLoggerNewsletterJob = new Mock<ILogger<CreateFeasts>>();
-        var mockLoggerNewsletterRepo = new Mock<ILogger<NewsletterRepo>>();
         var userRepo = new UserRepo(Context);
-        var newsletterRepo = new NewsletterRepo(mockLoggerNewsletterRepo.Object, Context, userRepo, mockSsf.Object);
 
         NewsletterJob = new CreateFeasts(
             mockLoggerNewsletterJob.Object,
             userRepo,
-            newsletterRepo,
+            mockHttpClientFactory.Object,
             Services.GetService<IOptions<SiteSettings>>()!,
             Context
         );
@@ -53,7 +55,7 @@ public class TestCreateFeasts : FakeDatabase
         await Context.SaveChangesAsync();
 
         var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 1);
+        Assert.IsTrue(users.Count() == 1);
     }
 
     [TestMethod]
@@ -66,7 +68,7 @@ public class TestCreateFeasts : FakeDatabase
         await Context.SaveChangesAsync();
 
         var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 0);
+        Assert.IsTrue(users.Count() == 0);
     }
 
     [TestMethod]
@@ -79,7 +81,7 @@ public class TestCreateFeasts : FakeDatabase
         await Context.SaveChangesAsync();
 
         var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 0);
+        Assert.IsTrue(users.Count() == 0);
     }
 
     [TestMethod]
@@ -94,6 +96,6 @@ public class TestCreateFeasts : FakeDatabase
         await Context.SaveChangesAsync();
 
         var users = await NewsletterJob.GetUsers();
-        Assert.IsTrue(users.Count == 0);
+        Assert.IsTrue(users.Count() == 0);
     }
 }

@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data;
 
+/// <summary>
+/// https://mehdi.me/ambient-dbcontext-in-ef6/
+/// </summary>
 public class CoreContext : DbContext
 {
     public DbSet<Footnote> Footnotes { get; set; } = null!;

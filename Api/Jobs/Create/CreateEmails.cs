@@ -17,17 +17,17 @@ namespace Api.Jobs.Create;
 public class CreateEmails : IJob, IScheduled
 {
     private readonly UserRepo _userRepo;
-    private readonly CoreContext _coreContext;
     private readonly HttpClient _httpClient;
-    private readonly IOptions<SiteSettings> _siteSettings;
     private readonly ILogger<CreateEmails> _logger;
+    private readonly IOptions<SiteSettings> _siteSettings;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public CreateEmails(ILogger<CreateEmails> logger, UserRepo userRepo, IHttpClientFactory httpClientFactory, IOptions<SiteSettings> siteSettings, CoreContext coreContext)
+    public CreateEmails(ILogger<CreateEmails> logger, UserRepo userRepo, IHttpClientFactory httpClientFactory, IOptions<SiteSettings> siteSettings, IServiceScopeFactory serviceScopeFactory)
     {
         _logger = logger;
         _userRepo = userRepo;
-        _coreContext = coreContext;
         _siteSettings = siteSettings;
+        _serviceScopeFactory = serviceScopeFactory;
         _httpClient = httpClientFactory.CreateClient();
         if (_httpClient.BaseAddress != _siteSettings.Value.WebUri)
         {
@@ -40,32 +40,35 @@ public class CreateEmails : IJob, IScheduled
         try
         {
             var options = new ParallelOptions() { MaxDegreeOfParallelism = 3, CancellationToken = context.CancellationToken };
-            await Parallel.ForEachAsync(await GetUsers(), options, async (user, cancellationToken) =>
+            await Parallel.ForEachAsync(await GetUsers(), options, async (userToken, cancellationToken) =>
             {
                 try
                 {
-                    var token = await _userRepo.AddUserToken(user, durationDays: 100); // Needs to last at least 3 months by law for unsubscribe link.
-                    var html = await _httpClient.GetAsync($"/newsletter/{Uri.EscapeDataString(user.Email)}?token={Uri.EscapeDataString(token)}");
+                    // The creation of DbContext is lightweight, and the context is not thread-safe.
+                    using var scope = _serviceScopeFactory.CreateScope();
+                    using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
+
+                    var html = await _httpClient.GetAsync($"/newsletter/{Uri.EscapeDataString(userToken.User.Email)}?token={Uri.EscapeDataString(userToken.Token)}", cancellationToken);
                     if (html.StatusCode == HttpStatusCode.OK)
                     {
-                        // Insert newsletter record
-                        var userNewsletter = new UserEmail(user)
+                        // Insert newsletter record.
+                        var userNewsletter = new UserEmail(userToken.User)
                         {
                             Subject = NewsletterConsts.SubjectFeast,
                             Body = await html.Content.ReadAsStringAsync(cancellationToken),
                         };
 
-                        _coreContext.UserEmails.Add(userNewsletter);
-                        await _coreContext.SaveChangesAsync(cancellationToken);
+                        context.UserEmails.Add(userNewsletter);
+                        await context.SaveChangesAsync(cancellationToken);
                     }
                     else if (html.StatusCode != HttpStatusCode.NoContent)
                     {
-                        _logger.Log(LogLevel.Warning, "Newsletter failed for user {Id} with status {StatusCode}", user.Id, html.StatusCode);
+                        _logger.Log(LogLevel.Warning, "Newsletter failed for user {Id} with status {StatusCode}", userToken.User.Id, html.StatusCode);
                     }
                 }
                 catch (Exception e)
                 {
-                    _logger.Log(LogLevel.Error, e, "Error retrieving newsletter for user {Id}", user.Id);
+                    _logger.Log(LogLevel.Error, e, "Error retrieving newsletter for user {Id}", userToken.User.Id);
                 }
             });
         }
@@ -75,11 +78,14 @@ public class CreateEmails : IJob, IScheduled
         }
     }
 
-    internal async Task<List<User>> GetUsers()
+    internal async Task<IEnumerable<(User User, string Token)>> GetUsers()
     {
+        using var scope = _serviceScopeFactory.CreateScope();
+        using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
+
         var currentDay = DateHelpers.Today.DayOfWeek;
         var currentHour = int.Parse(DateTime.UtcNow.ToString("HH"));
-        return await _coreContext.Users
+        return await Task.WhenAll((await context.Users
             // User has confirmed their account.
             .Where(u => u.LastActive.HasValue)
             // User is subscribed to the newsletter.
@@ -92,7 +98,9 @@ public class CreateEmails : IJob, IScheduled
             .Where(u => !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectFeast).Any(un => un.Date == DateHelpers.Today))
             // User is not a test or demo user.
             .Where(u => !u.Email.EndsWith(_siteSettings.Value.Domain) || u.Features.HasFlag(Features.Test) || u.Features.HasFlag(Features.Debug))
-            .ToListAsync();
+            .ToListAsync())
+            // Token needs to last at least 3 months by law for unsubscribe link.
+            .Select(async u => (u, await _userRepo.AddUserToken(u, durationDays: 100))));
     }
 
     public static JobKey JobKey => new(nameof(CreateEmails) + "Job", GroupName);
