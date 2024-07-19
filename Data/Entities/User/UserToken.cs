@@ -20,9 +20,10 @@ public class UserToken
     /// <summary>
     /// Creates a new token for the user.
     /// </summary>
-    public UserToken(int userId, string token)
+    public UserToken(User user, string token)
     {
-        UserId = userId;
+        // Don't set User, so that EF Core doesn't add/update User.
+        UserId = user.Id;
         Token = token;
     }
 
@@ -30,9 +31,9 @@ public class UserToken
     public int Id { get; private init; }
 
     /// <summary>
-    /// Used as a unique user identifier in email links. This valus is switched out every day to expire old links.
+    /// Used as a unique user identifier in email links. This value is switched out every day to expire old links.
     /// 
-    /// This is kinda like a bearer token.
+    /// This is kind of like a bearer token.
     /// </summary>
     [Required]
     public string Token { get; private init; } = null!;

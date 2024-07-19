@@ -53,13 +53,12 @@ public class CreateEmails : IJob, IScheduled
                     if (html.StatusCode == HttpStatusCode.OK)
                     {
                         // Insert newsletter record.
-                        var userNewsletter = new UserEmail(userToken.User)
+                        context.UserEmails.Add(new UserEmail(userToken.User)
                         {
                             Subject = NewsletterConsts.SubjectFeast,
                             Body = await html.Content.ReadAsStringAsync(cancellationToken),
-                        };
+                        });
 
-                        context.UserEmails.Add(userNewsletter);
                         await context.SaveChangesAsync(cancellationToken);
                     }
                     else if (html.StatusCode != HttpStatusCode.NoContent)
@@ -77,6 +76,10 @@ public class CreateEmails : IJob, IScheduled
         {
             _logger.Log(LogLevel.Error, e, "Error running job {p0}", nameof(CreateEmails));
         }
+        finally
+        {
+            _logger.Log(LogLevel.Information, "Ending job {p0}", nameof(CreateEmails));
+        }
     }
 
     internal async Task<IEnumerable<(User User, string Token)>> GetUsers()
@@ -86,7 +89,7 @@ public class CreateEmails : IJob, IScheduled
 
         var currentDay = DateHelpers.Today.DayOfWeek;
         var currentHour = int.Parse(DateTime.UtcNow.ToString("HH"));
-        return await Task.WhenAll((await context.Users
+        return await Task.WhenAll((await context.Users.AsNoTracking()
             // User has confirmed their account.
             .Where(u => u.LastActive.HasValue)
             // User is subscribed to the newsletter.

@@ -7,17 +7,6 @@ namespace Core.Dtos.User;
 /// </summary>
 public class UserTokenDto
 {
-    public UserTokenDto() { }
-
-    /// <summary>
-    /// Creates a new token for the user.
-    /// </summary>
-    public UserTokenDto(int userId, string token)
-    {
-        UserId = userId;
-        Token = token;
-    }
-
     public int Id { get; init; }
 
     /// <summary>

@@ -93,18 +93,18 @@ public class UserRepo(CoreContext context)
             return UserConsts.DemoToken;
         }
 
-        var token = new UserToken(user.Id, CreateToken())
+        var token = CreateToken();
+        context.UserTokens.Add(new UserToken(user, token)
         {
             Expires = expires
-        };
-        user.UserTokens.Add(token);
-        await context.SaveChangesAsync();
+        });
 
-        return token.Token;
+        await context.SaveChangesAsync();
+        return token;
     }
 
     /// <summary>
-    /// Get the user's current workout.
+    /// Get the user's current feast.
     /// </summary>
     public async Task<UserFeast?> GetCurrentFeast(User user)
     {
@@ -120,7 +120,7 @@ public class UserRepo(CoreContext context)
     }
 
     /// <summary>
-    /// Get the last 7 days of workouts for the user. Excludes the current workout.
+    /// Get the last 7 days of feasts for the user. Excludes the current feast.
     /// </summary>
     public async Task<IList<UserFeast>> GetPastFeasts(User user)
     {
