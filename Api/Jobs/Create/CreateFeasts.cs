@@ -39,6 +39,7 @@ public class CreateFeasts : IJob, IScheduled
     {
         try
         {
+            _logger.Log(LogLevel.Information, "Starting job {p0}", nameof(CreateFeasts));
             var options = new ParallelOptions() { MaxDegreeOfParallelism = 3, CancellationToken = context.CancellationToken };
             await Parallel.ForEachAsync(await GetUsers(), options, async (userToken, cancellationToken) =>
             {
