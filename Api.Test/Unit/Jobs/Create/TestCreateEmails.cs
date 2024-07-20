@@ -54,7 +54,7 @@ public class TestCreateEmails : FakeDatabase
         });
         await Context.SaveChangesAsync();
 
-        var users = await NewsletterJob.GetUsers();
+        var users = await NewsletterJob.GetUsers().ToListAsync();
         Assert.IsTrue(users.Count() == 0);
     }
 
@@ -67,7 +67,7 @@ public class TestCreateEmails : FakeDatabase
         });
         await Context.SaveChangesAsync();
 
-        var users = await NewsletterJob.GetUsers();
+        var users = await NewsletterJob.GetUsers().ToListAsync();
         Assert.IsTrue(users.Count() == 0);
     }
 
@@ -80,7 +80,7 @@ public class TestCreateEmails : FakeDatabase
         });
         await Context.SaveChangesAsync();
 
-        var users = await NewsletterJob.GetUsers();
+        var users = await NewsletterJob.GetUsers().ToListAsync();
         Assert.IsTrue(users.Count() == 0);
     }
 
@@ -95,7 +95,7 @@ public class TestCreateEmails : FakeDatabase
         });
         await Context.SaveChangesAsync();
 
-        var users = await NewsletterJob.GetUsers();
+        var users = await NewsletterJob.GetUsers().ToListAsync();
         Assert.IsTrue(users.Count() == 1);
     }
 }
