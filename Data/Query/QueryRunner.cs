@@ -188,10 +188,7 @@ public class QueryRunner(Section section)
         {
             prerequisiteRecipes = (await new QueryBuilder(Section.None)
                 .WithUser(UserOptions)
-                .WithRecipes(options =>
-                {
-                    options.AddRecipes(prerequisiteRecipeIds);
-                })
+                .WithRecipes(options => options.AddRecipes(prerequisiteRecipeIds))
                 .Build()
                 .Query(factory))
                 .ToList();
@@ -214,9 +211,7 @@ public class QueryRunner(Section section)
             // Don't re-order the list on each read.
             .ToList())
         {
-            var queryResultPrerequisiteRecipeIds = recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue).Select(ri => ri.IngredientRecipeId!.Value).ToList();
-            var queryResultPrerequisiteRecipes = prerequisiteRecipes.Where(pr => queryResultPrerequisiteRecipeIds.Contains(pr.Recipe.Id)).ToList();
-
+            // Set the prerequisite recipe.
             foreach (var recipeIngredient in recipe.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
             {
                 recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId!.Value);
@@ -235,7 +230,7 @@ public class QueryRunner(Section section)
         }
 
         var nutrientTarget = NutrientOptions.NutrientTarget.Compile();
-        var finalResults = new List<QueryResults>();
+        var finalResults = new HashSet<QueryResults>();
         do
         {
             foreach (var recipe in orderedResults)
@@ -248,11 +243,8 @@ public class QueryRunner(Section section)
                     // If the recipe and all prerequisite recipes are adjustable.
                     if (recipe.Recipe.AdjustableServings && recipe.RecipeIngredients.All(r => r.IngredientRecipe?.Recipe.AdjustableServings != false))
                     {
+                        // Scaling the recipe will also scale the recipe ingredient quantities with then effects ingredient recipe scales.
                         recipe.Scale = (int)Math.Ceiling(ServingsOptions.AtLeastXServingsPerRecipe.Value / (double)recipe.Recipe.Servings);
-                        foreach (var queryResultPrerequisiteRecipe in recipe.RecipeIngredients.Where(ri => ri.IngredientRecipe != null))
-                        {
-                            queryResultPrerequisiteRecipe.IngredientRecipe!.Scale = recipe.Scale;
-                        }
                     }
                     // The recipe does not work enough servings that we are trying to target.
                     // Allow recipes that have a refresh date since we want to show those continuously until that date.
@@ -295,12 +287,30 @@ public class QueryRunner(Section section)
 
                 if (!finalResults.Contains(recipe))
                 {
-                    finalResults.AddRange(recipe.RecipeIngredients.Where(ri => ri.IngredientRecipe != null).Select(ri => ri.IngredientRecipe!));
+                    // Prepend the recipe's prerequisite recipes.
+                    foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
+                    {
+                        // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.
+                        prerequisiteRecipe.Key.Scale = (int)Math.Ceiling(prerequisiteRecipe.Value / prerequisiteRecipe.Key.Recipe.Servings);
+
+                        // Prerequisite recipe already exists, scale it.
+                        if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe))
+                        {
+                            // FIXME: Scale is stored as int and rounds up, so if two recipe ingredients from distinct recipes
+                            // only use a fraction of the recipe, the scale will end up being more than doubled.
+                            existingIngredientRecipe.Scale += prerequisiteRecipe.Key.Scale;
+                        }
+                        else
+                        {
+                            finalResults.Add(prerequisiteRecipe.Key);
+                        }
+                    }
+
                     finalResults.Add(recipe);
                 }
             }
         }
-        // Slowly allow out of preference recipes until we meet our nutritional targets.
+        // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
         while ((ServingsOptions.AtLeastXServingsPerRecipe.HasValue && --ServingsOptions.AtLeastXServingsPerRecipe >= 1)
             || (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1)
         );
@@ -373,7 +383,7 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients> GetUnworkedNutrients(IList<QueryResults> finalResults)
+    private List<Nutrients> GetUnworkedNutrients(ICollection<QueryResults> finalResults)
     {
         // Not using Nutrients because NutrientTargets can contain unions 
         return NutrientOptions.NutrientTargetsRDA.Where(kv =>
@@ -385,7 +395,7 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients> GetOverworkedNutrients(IList<QueryResults> finalResults)
+    private List<Nutrients> GetOverworkedNutrients(ICollection<QueryResults> finalResults)
     {
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsTUL.Where(kv =>
@@ -398,7 +408,7 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Returns the muscles targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
-    private static double WorkedAnyNutrientCount(IList<QueryResults> list, Nutrients nutrients, int weightDivisor = 1)
+    private static double WorkedAnyNutrientCount(ICollection<QueryResults> list, Nutrients nutrients, int weightDivisor = 1)
     {
         return list.Sum(r =>
         {

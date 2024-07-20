@@ -6,6 +6,7 @@ using Data.Entities.User;
 using Data.Query;
 using Fractions;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace Data.Models;
 
@@ -24,27 +25,30 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
         get => _scale;
         internal set
         {
-            Recipe.Servings /= _scale;
+            // Scale the servings.
             Recipe.Servings *= value;
+            Recipe.Servings /= _scale;
+
+            // Scale the recipe ingredient quantities.
             foreach (var ingredient in RecipeIngredients)
             {
-                ingredient.QuantityNumerator /= _scale;
                 ingredient.QuantityNumerator *= value;
-
-                // Scale the prerequisite recipe if it exists.
-                if (ingredient.IngredientRecipe != null)
-                {
-                    // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.
-                    var innerScale = (int)Math.Ceiling(ingredient.Quantity.ToDouble() / ingredient.IngredientRecipe.Recipe.Servings);
-                    ingredient.IngredientRecipe.Scale = innerScale;
-                }
+                ingredient.QuantityNumerator /= _scale;
             }
+
             _scale = value;
         }
     }
 
-    public override int GetHashCode() => HashCode.Combine(Recipe.Id);
+    /// <summary>
+    /// Distinct ingredient recipes with the group's quantities summed.
+    /// </summary>
+    [JsonIgnore]
+    public IDictionary<QueryResults, double> PrerequisiteRecipes => RecipeIngredients
+        .Where(ri => ri.IngredientRecipe != null).GroupBy(ri => ri.IngredientRecipe)
+        .ToDictionary(ir => ir.Key!, ir => ir.Sum(i => i.Quantity.ToDouble()));
 
+    public override int GetHashCode() => HashCode.Combine(Recipe.Id);
     public override bool Equals(object? obj) => obj is QueryResults other
         && other.Recipe.Id == Recipe.Id;
 }
@@ -70,4 +74,8 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
     public QueryResults? IngredientRecipe { get; internal set; }
+
+    public override int GetHashCode() => HashCode.Combine(Id);
+    public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other
+        && other.Id == Id;
 }
