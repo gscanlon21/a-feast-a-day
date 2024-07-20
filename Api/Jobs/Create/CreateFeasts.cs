@@ -68,7 +68,7 @@ public class CreateFeasts : IJob, IScheduled
     {
         var currentDay = DateHelpers.Today.DayOfWeek;
         var currentHour = int.Parse(DateTime.UtcNow.ToString("HH"));
-        return await Task.WhenAll((await _coreContext.Users
+        return await Task.WhenAll((await _coreContext.Users.AsNoTracking()
             // User has confirmed their account.
             .Where(u => u.LastActive.HasValue)
             // User is not subscribed to the newsletter.
