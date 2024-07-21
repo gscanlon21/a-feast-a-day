@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Code.Exceptions;
+using Core.Models.User;
 
 namespace Core.Code.Extensions;
 
@@ -45,7 +46,7 @@ public static class MeasureExtensions
             return conversion;
         }
 
-        throw new NotSupportedException($"Missing measure: {fromMeasure}, {toMeasure}");
+        throw new MissingMeasureException($"Missing measure: {fromMeasure}, {toMeasure}");
     }
 
     public static double ToGrams(this Measure measure, double quantity = 1)
