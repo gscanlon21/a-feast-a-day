@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Web.Controllers.Index;
 using Web.Views.User;
 
@@ -32,8 +31,8 @@ public partial class UserController
         var user = await userRepo.GetUser(email, token);
         if (user != null)
         {
-            context.UserFeasts.RemoveRange(await context.UserFeasts.Where(n => n.UserId == user.Id).ToListAsync());
-            context.Users.Remove(user); // Will also remove from ExerciseUserProgressions and EquipmentUsers
+            // Will also delete from related tables, cascade delete is enabled.
+            context.Users.Remove(user);
         }
 
         await context.SaveChangesAsync();
