@@ -43,7 +43,7 @@ public static class MeasureExtensions
         }
         catch (MissingMeasureException ex)
         {
-            ex.Data[nameof(ingredient)] = ingredient.Name;
+            ex.Data[nameof(ingredient)] += ingredient.Name;
             throw;
         }
     }

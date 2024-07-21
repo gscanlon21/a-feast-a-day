@@ -258,7 +258,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         if (user.Features.HasFlag(Features.Debug))
         {
-            var ingredients = await context.Ingredients.Include(i => i.Nutrients).OrderBy(_ => EF.Functions.Random()).Take(4).ToListAsync();
+            var ingredients = await context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == date).ToListAsync();
             newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto, Ingredient>()!).ToList();
         }
 
