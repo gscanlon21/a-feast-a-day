@@ -14,8 +14,15 @@ namespace Data.Repos;
 /// <summary>
 /// User helpers.
 /// </summary>
-public class UserRepo(CoreContext context)
+public class UserRepo
 {
+    private readonly CoreContext _context;
+
+    public UserRepo(CoreContext context)
+    {
+        _context = context;
+    }
+
     /// <summary>
     /// Grab a user from the db with a specific token.
     /// </summary>
@@ -49,7 +56,7 @@ public class UserRepo(CoreContext context)
             return null;
         }
 
-        IQueryable<User> query = context.Users.AsSplitQuery().TagWithCallSite();
+        IQueryable<User> query = _context.Users.AsSplitQuery().TagWithCallSite();
 
         if (includeNutrients)
         {
@@ -94,12 +101,12 @@ public class UserRepo(CoreContext context)
         }
 
         var token = CreateToken();
-        context.UserTokens.Add(new UserToken(user, token)
+        _context.UserTokens.Add(new UserToken(user, token)
         {
             Expires = expires
         });
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         return token;
     }
 
@@ -108,7 +115,7 @@ public class UserRepo(CoreContext context)
     /// </summary>
     public async Task<UserFeast?> GetCurrentFeast(User user)
     {
-        return await context.UserFeasts.AsNoTracking().TagWithCallSite()
+        return await _context.UserFeasts.AsNoTracking().TagWithCallSite()
             .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.StartOfWeekOffset)
@@ -124,7 +131,7 @@ public class UserRepo(CoreContext context)
     /// </summary>
     public async Task<IList<UserFeast>> GetPastFeasts(User user)
     {
-        return (await context.UserFeasts
+        return (await _context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
             .Where(n => n.Date < user.StartOfWeekOffset)
             // Only select 1 workout per day, the most recent.
@@ -180,7 +187,7 @@ public class UserRepo(CoreContext context)
 
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
-        var weeklyFeasts = await context.UserFeasts
+        var weeklyFeasts = await _context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.Recipe)
@@ -199,7 +206,7 @@ public class UserRepo(CoreContext context)
                 Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
             }).ToListAsync();
 
-        var userIngredients = await context.UserIngredients
+        var userIngredients = await _context.UserIngredients
            .Include(i => i.SubstituteIngredient)
                .ThenInclude(i => i!.Nutrients)
            .Where(i => i.UserId == user.Id)
@@ -247,7 +254,7 @@ public class UserRepo(CoreContext context)
 
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool includeToday = false)
     {
-        var weeklyFeasts = await context.UserFeasts
+        var weeklyFeasts = await _context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.Recipe)
@@ -268,7 +275,7 @@ public class UserRepo(CoreContext context)
                 Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
             }).ToListAsync();
 
-        var userIngredients = await context.UserIngredients
+        var userIngredients = await _context.UserIngredients
            .Include(i => i.SubstituteIngredient)
                .ThenInclude(i => i!.Nutrients)
            .Where(i => i.UserId == user.Id)
