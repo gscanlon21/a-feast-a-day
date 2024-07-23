@@ -51,8 +51,8 @@ public class ShoppingListItem
     {
         return Quantity switch
         {
-            0 => $"<1 {Measure.GetSingleDisplayName(EnumExtensions.DisplayNameType.ShortName)}",
-            _ => $"{Quantity} {Measure.GetSingleDisplayName(EnumExtensions.DisplayNameType.ShortName)}",
+            0 => $"<1 {Measure.GetSingleDisplayName(EnumExtensions.DisplayType.ShortName)}",
+            _ => $"{Quantity} {Measure.GetSingleDisplayName(EnumExtensions.DisplayType.ShortName)}",
         };
     }
 

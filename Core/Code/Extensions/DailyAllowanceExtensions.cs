@@ -31,11 +31,11 @@ public static class DailyAllowanceExtensions
         {
             return $@"({(attribute.RDA, attribute.TUL) switch
             {
-                (null, not null) => $"TUL={attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                (not null, null) => $"RDA={attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
-                (not null, not null) => $"{attribute.RDA}-{attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayNameType.ShortName)}",
+                (null, not null) => $"TUL={attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayType.ShortName)}",
+                (not null, null) => $"RDA={attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayType.ShortName)}",
+                (not null, not null) => $"{attribute.RDA}-{attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayType.ShortName)}",
                 _ => string.Empty
-            }} / {attribute.Multiplier.GetSingleDisplayName(DisplayNameType.ShortName)})";
+            }} / {attribute.Multiplier.GetSingleDisplayName(DisplayType.ShortName)})";
         }
 
         return string.Empty;

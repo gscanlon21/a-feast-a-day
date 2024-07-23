@@ -70,7 +70,7 @@
 
                     <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="form-control" />
                     <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
-                    <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(EnumExtensions.DisplayNameType.Description)</div>
+                    <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(EnumExtensions.DisplayType.Description)</div>
                 </div>
 
                 <div class="form-group col-md-3">
