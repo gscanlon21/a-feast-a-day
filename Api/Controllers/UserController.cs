@@ -29,7 +29,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     }
 
     /// <summary>
-    /// Get the user's past workouts.
+    /// Get the user's past feasts.
     /// </summary>
     [HttpGet("Feasts")]
     public async Task<IActionResult> GetFeasts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
@@ -45,7 +45,23 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     }
 
     /// <summary>
-    /// Get the user's past workouts.
+    /// Get the user's current nutrients.
+    /// </summary>
+    [HttpGet("Nutrients")]
+    public async Task<IActionResult> GetNutrients(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    {
+        var user = await userRepo.GetUser(email, token);
+        if (user == null)
+        {
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+
+        var nutrients = await userRepo.GetWeeklyNutrientVolume(user, 1);
+        return StatusCode(StatusCodes.Status200OK, nutrients.volume);
+    }
+
+    /// <summary>
+    /// Get the user's current shopping list.
     /// </summary>
     [HttpGet("ShoppingList")]
     public async Task<IActionResult> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
@@ -74,7 +90,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     }
 
     /// <summary>
-    /// Get the user's past workouts.
+    /// Logs a client exception.
     /// </summary>
     [HttpPost("LogException")]
     public async Task LogException([FromForm] string? email, [FromForm] string? token, [FromForm] string? message)
