@@ -6,13 +6,13 @@
 23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	0	scalloped-potatoes-ham.jpg
 24	Fried Cabbage and Egg Noodles	It's cabbage that is lightly browned in butter and tossed with egg noodles for a wonderful, hearty, and fast dish.	\N	\N	4	15	5	4	t	0	cabbage-noodles.jpg
 25	Slow Cooker Chicken Tacos	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	4	360	10	8	t	0	\N
-26	Roasted Broccoli	Roasted broccoli is easy to make and so much more flavorsome than boiled. My favorite part is the roasted sliced stem pieces.	\N	\N	8	20	5	1	t	2	\N
+26	Roasted Broccoli	Roasted broccoli is easy to make and so much more flavorsome than boiled. My favorite part is the roasted sliced stem pieces.	\N	\N	8	20	5	1	t	2	roasted-broccoli.jpg
 27	Garlic Toast Pizzas	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	\N	\N	6	10	5	2	t	2	\N
 28	Sauteed Green Beans	\N	\N	\N	8	0	0	2	t	0	sauteed-green-beans.jpg
 29	Garlic Parmesan Asparagus	\N	\N	\N	8	5	5	2	t	4	parmesan-roasted-asparagus.jpg
-30	Curry Scramble	\N	\N	\N	4	10	5	2	t	0	\N
+30	Curry Scramble	\N	\N	\N	4	10	5	2	t	0	curry-scramble.jpg
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	4	420	15	6	t	1	\N
-32	Crock Pot Baked Potatoes	\N	\N	\N	8	480	5	4	t	0	crockpot-baked-potatoes.jpg
+32	Crock Pot Baked Potatoes	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	\N	\N	10	480	5	4	t	0	crockpot-baked-potatoes.jpg
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	32	spaghetti-meatballs.jpg
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	2	t	1	kielbasa.jpg
 35	Crockpot BBQ Pinto Beans	Beans and barbeque sauce go together like apple pie and ice cream. This simple and flavorful recipe for Crockpot BBQ pinto beans is perfect as a side dish for a juicy grilled steak. To complete this classic southern meal, make some quick and easy cornbread to scoop up all of the rich flavors in the sauce.	\N	\N	4	480	15	6	f	32	bbq-pinto-beans.jpg
@@ -24,14 +24,14 @@
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	\N
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	0	\N
 43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	\N
-44	Quinoa Pizza	\N	\N	\N	6	45	5	2	t	0	quinoa-pizza.jpg
+44	Quinoa Pizza Crust	\N	\N	\N	6	45	5	2	t	0	quinoa-pizza.jpg
 45	5-Ingredient Black Bean Soup	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	\N	\N	6	18	2	4	t	4	black-bean-soup.jpg
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	0	\N
 47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	banana-ice-cream.jpg
-48	Avocado Cakes	\N	\N	\N	16	1	1	2	t	0	avocado-cakes.jpg
+48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	0	avocado-cakes.jpg
 49	Easy Mini Bagel Pizzas	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	\N	\N	6	10	10	2	t	0	\N
 50	Simple 4-Ingredient Egg Salad with Mayo	https://www.lifeisbutadish.com/momos-egg-salad/	\N	\N	1	5	10	1	t	0	egg-salad.jpg
-51	Grilled Garlic Naan	\N	\N	\N	1	10	10	2	t	0	grilled-garlic-naan.jpg
+51	Grilled Garlic Naan	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	\N	\N	8	5	5	2	t	512	grilled-garlic-naan.jpg
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg
 53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	0	old-fashioned-oatmeal.jpg
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg
@@ -40,31 +40,42 @@
 57	Flying Saucers	https://www.tasteofhome.com/recipes/flying-saucers/	\N	\N	14	5	5	4	t	0	\N
 58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	\N
 59	Popcorn	\N	\N	\N	16	5	0	1	t	0	\N
-60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	\N
+60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-and-salsa.jpg
 61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	8	\N
 62	Edamame & Veggie Rice Bowl	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	\N	\N	3	5	5	1	t	0	edamame-veggie-rice-bowl.jpg
-63	Grilled Sausage-Basil Pizzas	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	\N	\N	4	15	15	4	t	0	\N
+63	Grilled Sausage-Basil Pizzas	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	\N	\N	4	15	15	4	t	0	grilled-sausage-basil-pizza.jpg
 64	French Bread Pizza	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	2	french-bread-pizza.jpg
 65	Hardboiled Eggs	\N	\N	\N	17	10	2	1	t	4	hardboiled-eggs.jpg
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	0	frittata-base.jpg
 67	French Toast	\N	\N	\N	3	15	5	1	t	4	french-toast.jpg
-68	Cheese and Crackers	\N	\N	\N	18	0	0	1	t	0	cheese-meat-crackers.jpg
+68	Cheese and Crackers	\N	\N	\N	18	0	5	1	t	0	cheese-meat-crackers.jpg
 69	Chopped Eggs and Onions	\N	\N	\N	10	12	3	4	t	4	egg-salad-alt.jpg
-70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	4	t	0	\N
-71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	0	\N
+70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	4	t	0	guacamole.jpg
+71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	0	guacamole-chip.jpg
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	t	128	white-bread.jpg
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settles, shake the bottle before using.	\N	\N	0	155	5	6	t	128	\N
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	4	basil-quesadilla.jpg
 75	Garlic Infused Olive Oil	\N	\N	\N	0	0	5	5	t	0	garlic-olive-oil.jpg
 76	Minty Courgette Linguine	\N	\N	\N	6	15	5	2	t	4	zucchini-linguine.jpg
-77	Cereal	\N	\N	\N	1	0	0	1	f	0	cereal.jpg
+77	Cereal	\N	\N	\N	1	0	0	4	f	0	cereal.jpg
 78	String Cheese	\N	\N	\N	16	0	0	1	t	0	string-cheese.jpg
 79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	4	fettucine-alfredo.jpg
 80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	4	eggplant-mint-couscous-salad.jpg
 81	Griddle Potatoes	\N	\N	\N	8	8	10	4	t	4	griddle-potatoes.jpg
-82	Chicken Salad	\N	\N	\N	10	0	5	1	t	0	\N
+82	Chicken Salad	\N	\N	\N	10	0	5	1	t	0	chicken-salad.jpg
 83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	32	60	60	4	t	2	springerle-cookies.jpg
 84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	2	12	3	4	t	4	\N
-85	Pasta Fresca	https://iowagirleats.com/pasta-fresca/	\N	\N	6	15	5	4	t	4	\N
-86	Cheesy Ham and Broccoli Rice Skillet	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	\N	\N	6	15	5	3	t	4	\N
-87	Korean Beef Lettuce Wraps	https://iowagirleats.com/korean-beef-lettuce-wraps/	\N	\N	6	15	5	4	t	4	\N
+85	Pasta Fresca	https://iowagirleats.com/pasta-fresca/	\N	\N	6	15	5	4	t	4	pasta-fresca.jpg
+86	Cheesy Ham and Broccoli Rice Skillet	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	\N	\N	6	15	5	3	t	4	cheesy-ham-broccoli-rice.jpg
+87	Korean Beef Lettuce Wraps	https://iowagirleats.com/korean-beef-lettuce-wraps/	\N	\N	6	15	5	4	t	4	chicken-lettuce-wraps.jpg
+88	Homemade Teriyaki Sauce	https://www.recipetineats.com/homemade-teriyaki-sauce/	\N	\N	0	10	5	1	t	4	teriyaki-sauce.jpg
+89	Homemade Crunchy Taco Hamburger Helper	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	\N	\N	4	15	5	5	t	4	taco-hamburger-helper.jpg
+90	Mini BBQ Cheddar Meatloaves	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	\N	\N	4	15	5	4	t	2	\N
+91	Large Batch Homemade Taco Seasoning	https://iowagirleats.com/large-batch-homemade-taco-seasoning	\N	\N	0	0	5	1	t	0	\N
+92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	6	5	5	2	t	4	\N
+93	Pork Kebab with BBQ Sauce	\N	\N	\N	6	10	5	4	t	4	\N
+94	Balsamic Vinaigrette	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	\N	\N	0	0	5	4	t	0	balsamic-vinaigrette.jpg
+95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	\N	\N	8	10	5	4	t	4	\N
+96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	4	t	0	\N
+97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	0	quinoa-pizza.jpg
+98	Loaded Deviled Eggs	https://iowagirleats.com/loaded-deviled-eggs/	\N	\N	26	20	5	4	t	4	\N
