@@ -75,15 +75,14 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
         var currentFeast = await userRepo.GetCurrentFeast(user);
         if (currentFeast == null) { return StatusCode(StatusCodes.Status204NoContent); }
 
-        var recipes = (await new QueryBuilder(Section.None)
+        var recipes = await new QueryBuilder(Section.None)
             .WithUser(user)
             .WithRecipes(options =>
             {
                 options.AddPastRecipes(currentFeast.UserFeastRecipes);
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
 
         var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast, recipes.SelectMany(r => r.RecipeIngredients).ToList());
         return StatusCode(StatusCodes.Status200OK, shoppingList);

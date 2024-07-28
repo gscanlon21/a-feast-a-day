@@ -13,11 +13,11 @@ namespace Data.Repos;
 
 public partial class NewsletterRepo
 {
-    internal async Task<List<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    internal async Task<IList<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var breakfastServing = newsletterContext.User.UserServings.First(us => us.Section == Section.Breakfast);
         var scale = breakfastServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
-        return (await new QueryBuilder(Section.Breakfast)
+        return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -35,15 +35,14 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
     }
 
-    internal async Task<List<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    internal async Task<IList<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var lunchServing = newsletterContext.User.UserServings.First(us => us.Section == Section.Lunch);
         var scale = lunchServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
-        return (await new QueryBuilder(Section.Lunch)
+        return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -61,15 +60,14 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
     }
 
-    internal async Task<List<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    internal async Task<IList<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var dinnerServing = newsletterContext.User.UserServings.First(us => us.Section == Section.Dinner);
         var scale = dinnerServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
-        return (await new QueryBuilder(Section.Dinner)
+        return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -87,15 +85,14 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
     }
 
-    internal async Task<List<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    internal async Task<IList<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var sideServing = newsletterContext.User.UserServings.First(us => us.Section == Section.Sides);
         var scale = sideServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
-        return (await new QueryBuilder(Section.Sides)
+        return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -113,15 +110,14 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
     }
 
-    internal async Task<List<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    internal async Task<IList<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var snackServing = newsletterContext.User.UserServings.First(us => us.Section == Section.Snacks);
         var scale = snackServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
-        return (await new QueryBuilder(Section.Snacks)
+        return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -139,15 +135,14 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
     }
 
-    internal async Task<List<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    internal async Task<IList<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var dessertServing = newsletterContext.User.UserServings.First(us => us.Section == Section.Dessert);
         var scale = dessertServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
-        return (await new QueryBuilder(Section.Dessert)
+        return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
                 .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
@@ -165,23 +160,21 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .ToList();
+            .Query(serviceScopeFactory);
     }
 
-    private async Task<List<QueryResults>> GetDebugExercises(UserDto user)
+    private async Task<IList<QueryResults>> GetDebugExercises(UserDto user)
     {
-        return (await new QueryBuilder(Section.Debug)
+        return await new QueryBuilder(Section.Debug)
             .WithUser(user)
             .Build()
-            .Query(serviceScopeFactory, take: 1))
-            .ToList();
+            .Query(serviceScopeFactory, take: 1);
     }
 
     /// <summary>
     /// Grab x-many exercises that the user hasn't seen in a long time.
     /// </summary>
-    private async Task<List<Ingredient>> GetDebugIngredients()
+    private async Task<IList<Ingredient>> GetDebugIngredients()
     {
         using var scope = serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();

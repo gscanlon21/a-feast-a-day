@@ -34,7 +34,7 @@ public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServi
             .Select(r => r.Recipe)
             .ToListAsync();
 
-        var ignoredRecipes = (await new QueryBuilder()
+        var ignoredRecipes = await new QueryBuilder()
             // Include disabled recipes.
             .WithUser(user, ignoreIgnored: true)
             .WithRecipes(x =>
@@ -42,14 +42,12 @@ public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServi
                 x.AddRecipes(userRecipes);
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .DistinctBy(vm => vm.Recipe)
-            .ToList().Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList();
+            .Query(serviceScopeFactory);
 
         return View("Ignored", new IgnoredViewModel()
         {
-            IgnoredRecipes = ignoredRecipes,
             UserNewsletter = userNewsletter,
+            IgnoredRecipes = ignoredRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
         });
     }
 }

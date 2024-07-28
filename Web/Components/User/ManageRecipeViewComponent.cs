@@ -36,8 +36,6 @@ public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory
             })
             .Build()
             .Query(serviceScopeFactory))
-            .Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!)
-            .DistinctBy(vm => vm.Recipe)
             // May return more than one recipe if the recipe has ingredient recipes.
             .FirstOrDefault(r => r.Recipe.Id == recipe.Id);
 
@@ -45,12 +43,12 @@ public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,
-            Recipe = recipeDto,
             UserRecipe = userRecipe,
             Parameters = parameters,
             Notes = userRecipe.Notes,
             LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,
             PadRefreshXWeeks = userRecipe.PadRefreshXWeeks,
+            Recipe = recipeDto.AsType<NewsletterRecipeDto, QueryResults>()!,
         });
     }
 }

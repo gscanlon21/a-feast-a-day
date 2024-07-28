@@ -35,7 +35,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
                 || (user.Features.HasFlag(Features.Admin) && r.UserId == null))
             .ToListAsync();
 
-        var recipes = (await new QueryBuilder()
+        var recipes = await new QueryBuilder()
             // Include disabled recipes.
             .WithUser(user, ignoreIgnored: true)
             .WithRecipes(x =>
@@ -43,14 +43,12 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
                 x.AddRecipes(userRecipes);
             })
             .Build()
-            .Query(serviceScopeFactory))
-            .DistinctBy(vm => vm.Recipe)
-            .ToList().Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList();
+            .Query(serviceScopeFactory);
 
         return View("Recipes", new RecipesViewModel()
         {
-            Recipes = recipes,
             UserNewsletter = userNewsletter,
+            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
         });
     }
 }
