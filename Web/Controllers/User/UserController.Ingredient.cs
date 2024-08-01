@@ -1,9 +1,9 @@
-﻿using Core.Models.User;
+﻿using Core.Code.Extensions;
+using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Numerics;
 using Web.Code.TempData;
 using Web.Views.Shared.Components.ManageIngredient;
 using Web.Views.User;
@@ -169,7 +169,7 @@ public partial class UserController
         existingIngredient.GramsPerServing = ingredient.GramsPerServing;
         existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
 
-        foreach (var nutrient in nutrients.OrderBy(n => BitOperations.PopCount((ulong)n.Nutrients)))
+        foreach (var nutrient in nutrients.OrderBy(n => n.Nutrients.PopCount()))
         {
             // Sum all the parts of a nutrient if it was left empty.
             // FIXME: Not all of the precursors get converted into a nutrient. Need a conversion percentage.

@@ -8,12 +8,14 @@ using System.ComponentModel.DataAnnotations;
 namespace Core.Dtos.User;
 
 /// <summary>
-/// For the newsletter
+/// For the newsletter.
 /// </summary>
 public class UserNewsletterDto
 {
+    [Obsolete("Public parameterless constructor for model binding.", error: true)]
     public UserNewsletterDto() { }
 
+    public UserNewsletterDto(FeastContext context) : this(context.User, context.Token) { }
     public UserNewsletterDto(UserDto user, string token)
     {
         Id = user.Id;
@@ -26,10 +28,6 @@ public class UserNewsletterDto
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
         Token = token;
-    }
-
-    public UserNewsletterDto(FeastContext context) : this(context.User, context.Token)
-    {
     }
 
     public int Id { get; init; }
