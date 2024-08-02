@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Interfaces.User;
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
@@ -18,7 +19,7 @@ namespace Data.Entities.User;
 [Table("user"), Comment("User who signed up for the newsletter")]
 [Index(nameof(Email), IsUnique = true)]
 [DebuggerDisplay("Email = {Email}, LastActive = {LastActive}")]
-public class User
+public class User : IUser
 {
     [Obsolete("Public parameterless constructor for model binding.", error: true)]
     public User() { }
@@ -196,4 +197,8 @@ public class User
     public virtual ICollection<Footnote.UserFootnote> UserFootnotes { get; init; } = null!;
 
     #endregion
+
+    public override int GetHashCode() => HashCode.Combine(Id);
+    public override bool Equals(object? obj) => obj is User other
+        && other.Id == Id;
 }

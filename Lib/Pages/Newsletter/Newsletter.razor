@@ -56,6 +56,16 @@ else
         <hr style="margin-block:1ex;">
 
         <Lib.Pages.Shared.Newsletter._Footer User="Model.User" />
+
+        if (Model.Client == Client.Web && !string.IsNullOrWhiteSpace(Model.UserFeast.Logs))
+        {
+            <hr style="margin-block:1ex;">
+            <details>
+                <summary>Debug Logs</summary>
+
+                @Model.UserFeast.Logs
+            </details>
+        }
     }
 }
 

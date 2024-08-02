@@ -1,6 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Code.Helpers;
-using Core.Dtos.Ingredient;
+﻿using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.User;

@@ -1,5 +1,4 @@
 ﻿using Core.Code.Exceptions;
-using Core.Code.Extensions;
 using Core.Models.User;
 using Data.Entities.Ingredient;
 

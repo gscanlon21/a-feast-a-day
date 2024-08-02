@@ -1,5 +1,4 @@
-﻿using Core.Code.Exceptions;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 using System.Reflection;
 

@@ -1,5 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Recipe;

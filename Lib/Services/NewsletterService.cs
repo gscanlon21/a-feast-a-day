@@ -2,7 +2,6 @@
 using Core.Dtos.Footnote;
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
-using Core.Models;
 using Core.Models.Options;
 using Microsoft.Extensions.Options;
 

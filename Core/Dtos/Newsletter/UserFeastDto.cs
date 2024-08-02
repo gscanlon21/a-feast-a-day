@@ -15,13 +15,5 @@ public class UserFeastDto
     /// </summary>
     public DateOnly Date { get; init; }
 
-    public string Title()
-    {
-        return Date.ToLongDateString();
-    }
-
-    public string Description()
-    {
-        return $"{Date}";
-    }
+    public string? Logs { get; init; }
 }
