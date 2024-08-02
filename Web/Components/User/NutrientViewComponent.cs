@@ -22,8 +22,9 @@ public class NutrientViewComponent(UserRepo userRepo) : ViewComponent
             return Content(string.Empty);
         }
 
-        int weeks = int.TryParse(Request.Query["weeks"], out int weeksTmp) ? weeksTmp : UserConsts.TrainingVolumeWeeks;
-        var (weeksOfData, weeklyMuscles) = await userRepo.GetWeeklyNutrientVolume(user, weeks, includeToday: true);
+        var weeks = int.TryParse(Request.Query["weeks"], out int weeksTmp) ? weeksTmp : UserConsts.TrainingVolumeWeeks;
+        var includeToday = bool.TryParse(Request.Query["includeToday"], out bool includeTodayTmp) ? includeTodayTmp : true;
+        var (weeksOfData, weeklyMuscles) = await userRepo.GetWeeklyNutrientVolume(user, weeks, includeToday: includeToday);
         if (weeklyMuscles == null)
         {
             return Content(string.Empty);

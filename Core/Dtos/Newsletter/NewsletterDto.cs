@@ -38,5 +38,5 @@ public class NewsletterDto
     /// </summary>
     public bool HideFooter { get; set; } = false;
 
-    public Client Client { get; set; } = Client.Email;
+    public Client Client { get; set; } = Client.Web;
 }
