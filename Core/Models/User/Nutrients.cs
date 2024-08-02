@@ -518,7 +518,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(6, 30, Measure.Grams, Multiplier.Person)]
-    [Display(Name = "Arginine", GroupName = "Amino Acids / Semiessential")]
+    [Display(Name = "Arginine", GroupName = "Amino Acids / Semi-essential")]
     Arginine = 1L << 62, // 4611686018427387904
 
     [DefaultMeasure(Measure.Grams)]

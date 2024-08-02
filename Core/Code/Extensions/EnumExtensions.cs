@@ -14,7 +14,7 @@ public static class EnumExtensions
     {
         try
         {
-            return BitOperations.PopCount(Convert.ToUInt64(flags));
+            return BitOperations.PopCount((ulong)Convert.ToInt64(flags));
         }
         catch (OverflowException ex)
         {
