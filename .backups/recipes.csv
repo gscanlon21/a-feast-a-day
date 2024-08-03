@@ -4,7 +4,7 @@
 19	Egg in a Pepper	\N	\N	\N	1	5	0	1	t	0	egg-in-a-pepper.jpg
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg
 23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	0	scalloped-potatoes-ham.jpg
-24	Fried Cabbage and Egg Noodles	It's cabbage that is lightly browned in butter and tossed with egg noodles for a wonderful, hearty, and fast dish.	\N	\N	4	15	5	4	t	0	cabbage-noodles.jpg
+24	Fried Cabbage and Egg Noodles	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	\N	\N	4	15	5	4	t	0	cabbage-noodles.jpg
 25	Slow Cooker Chicken Tacos	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	4	360	10	8	t	0	\N
 26	Roasted Broccoli	Roasted broccoli is easy to make and so much more flavorsome than boiled. My favorite part is the roasted sliced stem pieces.	\N	\N	8	20	5	1	t	2	roasted-broccoli.jpg
 27	Garlic Toast Pizzas	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	\N	\N	6	10	5	2	t	2	\N
@@ -15,8 +15,8 @@
 32	Crock Pot Baked Potatoes	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	\N	\N	10	480	5	4	t	0	crockpot-baked-potatoes.jpg
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	32	spaghetti-meatballs.jpg
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	2	t	1	kielbasa.jpg
-35	Crockpot BBQ Pinto Beans	Beans and barbeque sauce go together like apple pie and ice cream. This simple and flavorful recipe for Crockpot BBQ pinto beans is perfect as a side dish for a juicy grilled steak. To complete this classic southern meal, make some quick and easy cornbread to scoop up all of the rich flavors in the sauce.	\N	\N	4	480	15	6	f	32	bbq-pinto-beans.jpg
-36	Slow Cooker Macaroni and Cheese Recipe	This is a tasty slow cooker macaroni and cheese recipe, made with just a few ingredients in the slow cooker or crockpot.  When the macaroni and cheese is done, feel free to spoon into a baking dish, top with a little more cheese, and put under the broiler for a minute or two for that "homemade from the oven" look.	\N	\N	1	120	10	4	t	0	\N
+35	Crockpot BBQ Pinto Beans	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	\N	\N	4	480	15	6	f	32	bbq-pinto-beans.jpg
+36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	32	\N
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg
 38	Black Bean Fajita Skillet	You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg
 39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	0	linguine-avocado-tomato-lime.jpg
@@ -41,7 +41,7 @@
 58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	\N
 59	Popcorn	\N	\N	\N	16	5	0	1	t	0	\N
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-and-salsa.jpg
-61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	8	\N
+61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	8	pita-bowl-salad.jpg
 62	Edamame & Veggie Rice Bowl	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	\N	\N	3	5	5	1	t	0	edamame-veggie-rice-bowl.jpg
 63	Grilled Sausage-Basil Pizzas	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	\N	\N	4	15	15	4	t	0	grilled-sausage-basil-pizza.jpg
 64	French Bread Pizza	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	2	french-bread-pizza.jpg
@@ -79,3 +79,6 @@
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	4	t	0	\N
 97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	0	quinoa-pizza.jpg
 98	Loaded Deviled Eggs	https://iowagirleats.com/loaded-deviled-eggs/	\N	\N	26	20	5	4	t	4	\N
+99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	4	\N
+100	Buttermilk Pancakes	\N	\N	\N	3	12	2	4	t	4	\N
+101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	6	12	3	4	t	4	\N
