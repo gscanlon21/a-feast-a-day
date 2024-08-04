@@ -150,9 +150,11 @@ public class UserRepo
 
     /// <summary>
     /// Get the user's average percent daily value for each nutrient.
-    /// 
-    /// Returns `null` when the user is new to fitness.
     /// </summary>
+    /// <param name="rawValues">
+    /// If true, returns how much left of a nutrient to work per week.
+    /// If false, returns returns the percentage a nutrient has been worked.
+    /// </param>
     public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false, bool includeToday = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
