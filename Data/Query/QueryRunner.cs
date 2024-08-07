@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
+using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Models;
@@ -121,18 +122,12 @@ public class QueryRunner(Section section)
             // Do this before querying alternatives so that the user records also exist for the alternatives.
             await AddMissingUserRecords(context, queryResults);
 
-            var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-            var ingredientAlternatives = (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id))
-                .Select(i => new { i.Id, AlternativeIngredients = i.Alternatives.Select(a => a.AlternativeIngredient) })
-                .ToListAsync()).ToDictionary(i => i.Id, i => i.AlternativeIngredients);
-
+            var ingredientAlternatives = await GetAlternativeIngredientsForIngredients(context, queryResults);
             foreach (var queryResult in queryResults)
             {
                 var ignoreRecipe = false;
                 var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
-                foreach (var recipeIngredient in queryResult.RecipeIngredients
-                    // Filter out ignored ingredients and ingredient recipes.
-                    .Where(ri => UserOptions.IgnoreIgnored || (ri.UserIngredient?.Ignore != true && ri.UserIngredientRecipe?.Ignore != true)))
+                foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
                     if (recipeIngredient.Ingredient != null)
                     {
@@ -172,7 +167,8 @@ public class QueryRunner(Section section)
 
                 if (!ignoreRecipe)
                 {
-                    queryResult.RecipeIngredients = finalRecipeIngredients;
+                    // Filter out ignored ingredient recipes. Do this after swapping in user substitute ingredients.
+                    queryResult.RecipeIngredients = finalRecipeIngredients.Where(ri => UserOptions.IgnoreIgnored || (ri.UserIngredient?.Ignore != true && ri.UserIngredientRecipe?.Ignore != true)).ToList();
                     filteredResults.Add(queryResult);
                 }
             }
@@ -322,6 +318,26 @@ public class QueryRunner(Section section)
             // We are in a workout context, keep the result order.
             _ => finalResults.Take(take).ToList()
         };
+    }
+
+    /// <summary>
+    /// Get the alternative ingredients for all of the ingredients, ignored ignored alternative ingredients.
+    /// </summary>
+    private async Task<IDictionary<int, List<Ingredient>>> GetAlternativeIngredientsForIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
+    {
+        var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
+        return (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id))
+            .Select(i => new
+            {
+                IngredientId = i.Id,
+                AlternativeIngredients = i.Alternatives.Select(a => new
+                {
+                    a.AlternativeIngredient,
+                    UserIngredient = i.UserIngredients.First(ei => ei.UserId == UserOptions.Id)
+                })
+            })
+            // Don't select ignored alternative ingredients.
+            .ToListAsync()).ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Where(i => i.UserIngredient.Ignore != true).Select(ai => ai.AlternativeIngredient).ToList());
     }
 
     /// <summary>
