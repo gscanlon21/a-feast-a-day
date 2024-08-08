@@ -20,6 +20,7 @@ public class ShoppingListItem
         IsCustom = false;
         Measure = dto.Measure;
         Quantity = dto.Quantity;
+        Order = dto.Category.GetDisplayName32(DisplayType.Order);
         // Don't trigger the property changed event.
         _isChecked = dto.SkipShoppingList;
     }
@@ -29,6 +30,7 @@ public class ShoppingListItem
 
     public string Name { get; init; } = null!;
     public Measure Measure { get; init; }
+    public string Order { get; init; }
     public int Quantity { get; set; }
     public bool IsCustom { get; init; }
 
@@ -49,8 +51,8 @@ public class ShoppingListItem
     {
         return Quantity switch
         {
-            0 => $"<1 {Measure.GetSingleDisplayName(EnumExtensions.DisplayType.ShortName)}",
-            _ => $"{Quantity} {Measure.GetSingleDisplayName(EnumExtensions.DisplayType.ShortName)}",
+            0 => $"<1 {Measure.GetSingleDisplayName(DisplayType.ShortName)}",
+            _ => $"{Quantity} {Measure.GetSingleDisplayName(DisplayType.ShortName)}",
         };
     }
 

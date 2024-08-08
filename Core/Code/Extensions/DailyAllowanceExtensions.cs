@@ -1,7 +1,6 @@
 ﻿using Core.Code.Attributes;
 using Core.Models.User;
 using System.Reflection;
-using static Core.Code.Extensions.EnumExtensions;
 
 namespace Core.Code.Extensions;
 

@@ -24,8 +24,8 @@
         .Select(kv => Model.GetNutrientTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
-        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayType.GroupName))
-        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(EnumExtensions.DisplayType.Name))
+        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(DisplayType.GroupName))
+        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(DisplayType.Name))
         .Append(new NutrientViewModel.NutrientTarget()
         {
             IngredientGroup = Nutrients.All,

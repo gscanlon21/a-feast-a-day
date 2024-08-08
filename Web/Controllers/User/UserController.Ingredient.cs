@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredient;
+using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +14,7 @@ public partial class UserController
 {
     [HttpPost]
     [Route("ingredient/add")]
-    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] IList<Allergy> allergens)
+    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergy> allergens)
     {
         var user = await userRepo.GetUser(email, token);
         if (user == null)
@@ -25,6 +26,7 @@ public partial class UserController
         {
             User = user,
             Name = name,
+            Category = category,
             //Nutrients = nutrients,
             Allergens = allergens.Aggregate(Allergy.None, (curr, next) => curr | next),
         });
@@ -160,6 +162,7 @@ public partial class UserController
 
         existingIngredient.Name = ingredient.Name;
         existingIngredient.Notes = ingredient.Notes;
+        existingIngredient.Category = ingredient.Category;
         existingIngredient.Allergens = ingredient.Allergens;
         existingIngredient.GramsPerCup = ingredient.GramsPerCup;
         existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;

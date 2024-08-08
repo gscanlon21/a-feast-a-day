@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredient;
+using Core.Models.User;
 using Data.Entities.Recipe;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
@@ -36,6 +37,9 @@ public class Ingredient
 
     [Display(Name = "Allergens")]
     public Allergy Allergens { get; set; }
+
+    [Display(Name = "Category")]
+    public Category Category { get; set; }
 
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }

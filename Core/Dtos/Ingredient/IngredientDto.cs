@@ -1,4 +1,5 @@
 ﻿using Core.Dtos.User;
+using Core.Models.Ingredient;
 using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -29,6 +30,9 @@ public class IngredientDto
 
     [Display(Name = "Allergens")]
     public Allergy Allergens { get; set; }
+
+    [Display(Name = "Category")]
+    public Category Category { get; set; }
 
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }

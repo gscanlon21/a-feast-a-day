@@ -271,8 +271,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
         foreach (var group in recipeIngredients.Where(ri => ri.Ingredient != null)
-            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
-            .OrderBy(l => l.Key.SkipShoppingList).ThenBy(g => g.Key.Name))
+            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer()).OrderBy(l => l.Key.SkipShoppingList)
+            .ThenBy(g => g.Key.Ingredient!.Category.GetDisplayName32(DisplayType.Order).Length)
+            .ThenBy(g => g.Key.Ingredient!.Category.GetDisplayName32(DisplayType.Order))
+            .ThenBy(g => g.Key.Name))
         {
             var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!));
             shoppingList.Add(new ShoppingListItemDto()

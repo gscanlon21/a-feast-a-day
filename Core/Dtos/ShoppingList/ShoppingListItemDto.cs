@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredient;
+using Core.Models.User;
 using System.Diagnostics;
 
 namespace Core.Dtos.User;
@@ -17,6 +18,8 @@ public class ShoppingListItemDto
     public string? Attributes { get; init; }
 
     public int Quantity { get; set; } = 1;
+
+    public Category Category { get; set; }
 
     public Measure Measure { get; set; }
 

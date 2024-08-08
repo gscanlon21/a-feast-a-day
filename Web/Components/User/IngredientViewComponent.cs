@@ -27,10 +27,10 @@ public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : V
 
         var nutrients = new List<Nutrient>();
         foreach (var nutrient in EnumExtensions.GetValuesExcluding32(Nutrients.None, Nutrients.All)
-            .OrderBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayType.Order).Length)
-            .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayType.Order))
-            .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayType.GroupName))
-            .ThenBy(n => n.GetSingleDisplayName(EnumExtensions.DisplayType.Name)))
+            .OrderBy(n => n.GetSingleDisplayName(DisplayType.Order).Length)
+            .ThenBy(n => n.GetSingleDisplayName(DisplayType.Order))
+            .ThenBy(n => n.GetSingleDisplayName(DisplayType.GroupName))
+            .ThenBy(n => n.GetSingleDisplayName(DisplayType.Name)))
         {
             var userNutrient = ingredient?.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient);
             if (userNutrient != null)
