@@ -80,7 +80,7 @@ public class Ingredient
     /// <summary>
     /// These are what ingredients this ingredient is an alternate of.
     /// </summary>
-    [JsonIgnore, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
+    [JsonInclude, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
     public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]

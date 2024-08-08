@@ -96,10 +96,9 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var ingredient = await context.Ingredients
-            .Include(i => i.Nutrients)
-            .Include(i => i.Alternatives)
-                .ThenInclude(ai => ai.AlternativeIngredient)
+        var ingredient = await context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
+            .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             .FirstOrDefaultAsync(r => r.Id == ingredientId);
 
         if (ingredient == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }

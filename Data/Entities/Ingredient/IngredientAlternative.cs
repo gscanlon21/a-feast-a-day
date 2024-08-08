@@ -20,7 +20,7 @@ public class IngredientAlternative
     /// <summary>
     /// This is the ingredient that has an alternative.
     /// </summary>
-    [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.Alternatives))]
+    [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.Alternatives))]
     public virtual Ingredient Ingredient { get; private init; } = null!;
 
     /// <summary>

@@ -28,10 +28,9 @@ public class IngredientsViewComponent(CoreContext context, UserRepo userRepo) : 
         var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
-        var userIngredients = await context.Ingredients.AsNoTracking()
-            .Include(i => i.Nutrients)
-            .Include(i => i.Alternatives)
-                .ThenInclude(a => a.AlternativeIngredient)
+        var userIngredients = await context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+            .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
+            .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
             .Where(i => i.UserId == user.Id
                 // The user is an admin who is allowed to edit base ingredients.
                 || (user.Features.HasFlag(Features.Admin) && i.UserId == null))

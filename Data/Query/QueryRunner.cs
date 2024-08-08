@@ -48,7 +48,7 @@ public class QueryRunner(Section section)
     private class IngredientUserIngredient
     {
         public Ingredient Ingredient { get; init; } = null!;
-        public UserIngredient UserIngredient { get; init; } = null!;
+        public UserIngredient? UserIngredient { get; init; }
     }
 
     public required UserOptions UserOptions { get; init; }
@@ -366,7 +366,7 @@ public class QueryRunner(Section section)
         // Don't select ignored alternative ingredients or alternative ingredients containing allergens.
         var noIgnoredOrAllergicIngredients = (IngredientUserIngredient ingredient) =>
         {
-            return !ingredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens) && !ingredient.UserIngredient.Ignore != true;
+            return !ingredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens) && !ingredient.UserIngredient?.Ignore != true;
         };
 
         var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();

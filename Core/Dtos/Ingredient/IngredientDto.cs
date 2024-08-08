@@ -53,7 +53,15 @@ public class IngredientDto
     /// </summary>
     public DateOnly LastUpdated { get; set; }
 
+    /// <summary>
+    /// These are the alternate ingredients.
+    /// </summary>
     public ICollection<IngredientAlternativeDto> Alternatives { get; init; } = [];
+
+    /// <summary>
+    /// These are what ingredients this ingredient is an alternate of.
+    /// </summary>
+    public ICollection<IngredientAlternativeDto> AlternativeIngredients { get; init; } = [];
 
     /// <summary>
     /// Nutrients per Serving Size (Grams).

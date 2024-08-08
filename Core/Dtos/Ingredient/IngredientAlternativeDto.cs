@@ -8,9 +8,11 @@ namespace Core.Dtos.Ingredient;
 [DebuggerDisplay("{IngredientId} alt is {AlternativeIngredient}")]
 public class IngredientAlternativeDto
 {
-    public virtual int IngredientId { get; init; }
+    public int IngredientId { get; init; }
 
-    public virtual int AlternativeIngredientId { get; init; }
+    public int AlternativeIngredientId { get; init; }
 
-    public virtual IngredientDto AlternativeIngredient { get; init; } = null!;
+    public IngredientDto Ingredient { get; init; } = null!;
+
+    public IngredientDto AlternativeIngredient { get; init; } = null!;
 }
