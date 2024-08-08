@@ -280,7 +280,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             shoppingList.Add(new ShoppingListItemDto()
             {
                 Name = group.Key.Name,
-                Measure = group.Key.Ingredient!.DefaultMeasure,
+                Category = group.Key.Ingredient!.Category,
+                Measure = group.Key.Ingredient.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
                 Quantity = Math.Max(1, (int)Math.Ceiling(totalQuantity)),
             });
