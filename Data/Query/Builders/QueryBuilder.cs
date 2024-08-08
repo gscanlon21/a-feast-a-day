@@ -95,8 +95,9 @@ public class QueryBuilder
         return this;
     }
 
-    public QueryBuilder WithUser(UserOptions userOptions)
+    public QueryBuilder WithUser(UserOptions userOptions, bool? ignoreIgnored = null)
     {
+        userOptions.IgnoreIgnored = ignoreIgnored ?? userOptions.IgnoreIgnored;
         UserOptions = userOptions;
         return this;
     }
