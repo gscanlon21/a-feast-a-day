@@ -50,7 +50,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
     [ObservableProperty]
     public ObservableRangeCollection<ShoppingListItem> _ingredients = new()
     {
-        SortingSelector = a => $"{a.IsChecked}-{a.Order.Length}-{a.Order}-{a.Name}"
+        SortingSelector = a => $"{a.IsChecked}-{a.Order?.Length}-{a.Order}-{a.Name}"
     };
 
     private async Task WhenCompleted()
