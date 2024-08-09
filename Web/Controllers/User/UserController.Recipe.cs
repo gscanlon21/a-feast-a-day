@@ -204,19 +204,18 @@ public partial class UserController
                 .Include(p => p.Recipe)
                 .FirstAsync(p => p.UserId == user.Id && p.RecipeId == recipeId);
 
-            // Apply refresh padding immediately?
-            /*if (userVariation.PadRefreshXWeeks != viewModel.PadRefreshXWeeks)
+            // Apply refresh padding immediately.
+            if (viewModel.PadRefreshXWeeks != userRecipe.PadRefreshXWeeks)
             {
-                var difference = viewModel.PadRefreshXWeeks - userVariation.PadRefreshXWeeks;
-                userVariation.LastSeen.AddDays(7 * difference);
-            }*/
+                var difference = viewModel.PadRefreshXWeeks - userRecipe.PadRefreshXWeeks; // 11 new - 1 old = 10 weeks.
+                userRecipe.LastSeen = userRecipe.LastSeen.AddDays(7 * difference); // Add 70 days onto the LastSeen date.
+            }
 
             userRecipe.Notes = viewModel.Notes;
             userRecipe.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
             userRecipe.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
 
             await context.SaveChangesAsync();
-
             return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
         }
 
