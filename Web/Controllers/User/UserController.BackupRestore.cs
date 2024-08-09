@@ -21,7 +21,9 @@ public partial class UserController
         }
 
         var ingredients = await context.Ingredients.Where(r => r.UserId == user.Id).ToListAsync();
-        var recipes = await context.Recipes.Where(r => r.UserId == user.Id).ToListAsync();
+        var recipes = await context.Recipes.Include(r => r.Instructions).Include(r => r.RecipeIngredients)
+            .Where(r => r.UserId == user.Id).ToListAsync();
+
         return Json(new { recipes, ingredients });
     }
 }

@@ -2,7 +2,7 @@
 @using Core.Models.Recipe
 
 <div class="alert alert-dark" role="alert">
-    <div class="d-inline-flex w-100 row align-items-center gy-2">
+    <div class="row gy-2">
         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.Backup)" asp-route-email="@Model.Email" asp-route-token="@Model.Token" method="post"
                 class="col">
             <div class="form-group">
@@ -10,7 +10,7 @@
             </div>
         </form>
         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.Backup)" asp-route-email="@Model.Email" asp-route-token="@Model.Token" method="post"
-              class="col-auto pe-0">
+              class="col-auto">
             <div class="form-group">
                 <input type="submit" value="Restore" class="btn btn-outline-secondary" />
             </div>
