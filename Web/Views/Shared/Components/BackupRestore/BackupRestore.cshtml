@@ -1,0 +1,21 @@
+﻿@model BackupRestoreViewModel
+@using Core.Models.Recipe
+
+<div class="alert alert-dark" role="alert">
+    <div class="d-inline-flex w-100 row align-items-center gy-2">
+        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.Backup)" asp-route-email="@Model.Email" asp-route-token="@Model.Token" method="post"
+                class="col">
+            <div class="form-group">
+                <input type="submit" value="Backup" class="btn btn-outline-secondary" />
+            </div>
+        </form>
+        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.Backup)" asp-route-email="@Model.Email" asp-route-token="@Model.Token" method="post"
+              class="col-auto pe-0">
+            <div class="form-group">
+                <input type="submit" value="Restore" class="btn btn-outline-secondary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
