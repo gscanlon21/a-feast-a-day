@@ -11,15 +11,13 @@ public static class RecipeIngredientExtensions
     /// </summary>
     internal static double NumberOfServings(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
-        if (ingredient == null) { return 0; }
+        ArgumentNullException.ThrowIfNull(ingredient);
         return recipeIngredient.ToGrams(ingredient, scale) / ingredient.GramsPerServing;
     }
 
     internal static double ToGrams(this RecipeIngredient recipeIngredient, Ingredient ingredient, int scale = 1)
     {
-        if (ingredient == null) { return 0; }
-
-        var conversionFactor = recipeIngredient.Measure.ToGramsOrNull() ?? (recipeIngredient.Measure.ToDefaultMeasure(ingredient) * ingredient.GramsPerMeasure);
-        return recipeIngredient.Quantity.ToDouble() * conversionFactor * scale;
+        ArgumentNullException.ThrowIfNull(ingredient);
+        return scale * recipeIngredient.Quantity.ToDouble() * recipeIngredient.Measure.ToGramsWithContext(ingredient);
     }
 }

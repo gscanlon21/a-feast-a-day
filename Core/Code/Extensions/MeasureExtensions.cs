@@ -8,6 +8,51 @@ namespace Core.Code.Extensions;
 /// </summary>
 public static class MeasureExtensions
 {
+    /// <summary>
+    /// Finds the exact conversion factor from one measure to grams.
+    /// Throws an exception when there is no exact conversion.
+    /// </summary>
+    public static double ToGrams(this Measure measure, double quantity = 1)
+    {
+        return quantity * measure.ToMeasure(Measure.Grams);
+    }
+
+    /// <summary>
+    /// Finds the exact conversion factor from one measure to grams.
+    /// Returns the input quantity when there is no exact conversion.
+    /// </summary>
+    public static double ToGramsOrDefault(this Measure measure, double quantity)
+    {
+        return (quantity * measure.ToMeasureOrNull(Measure.Grams)) ?? quantity;
+    }
+
+    /// <summary>
+    /// Finds the exact conversion factor from one measure to grams.
+    /// Returns null when there is no exact conversion.
+    /// </summary>
+    public static double? ToGramsOrNull(this Measure measure, double quantity = 1)
+    {
+        return quantity * measure.ToMeasureOrNull(Measure.Grams);
+    }
+
+    /// <summary>
+    /// Finds the exact conversion factor from one measure to another.
+    /// Throws an exception when there is no exact conversion.
+    /// </summary>
+    public static double ToMeasure(this Measure fromMeasure, Measure toMeasure)
+    {
+        if (fromMeasure.ToMeasureOrNull(toMeasure) is double conversion)
+        {
+            return conversion;
+        }
+
+        throw new MissingMeasureException($"Missing measure: {fromMeasure}, {toMeasure}");
+    }
+
+    /// <summary>
+    /// Finds the exact conversion factor from one measure to another.
+    /// Returns null when there is no exact conversion.
+    /// </summary>
     public static double? ToMeasureOrNull(this Measure fromMeasure, Measure toMeasure)
     {
         return (fromMeasure, toMeasure) switch
@@ -37,30 +82,5 @@ public static class MeasureExtensions
 
             _ => null
         };
-    }
-
-    public static double ToMeasure(this Measure fromMeasure, Measure toMeasure)
-    {
-        if (fromMeasure.ToMeasureOrNull(toMeasure) is double conversion)
-        {
-            return conversion;
-        }
-
-        throw new MissingMeasureException($"Missing measure: {fromMeasure}, {toMeasure}");
-    }
-
-    public static double ToGrams(this Measure measure, double quantity = 1)
-    {
-        return quantity * measure.ToMeasure(Measure.Grams);
-    }
-
-    public static double ToGramsOrDefault(this Measure measure, double quantity)
-    {
-        return (quantity * measure.ToMeasureOrNull(Measure.Grams)) ?? quantity;
-    }
-
-    public static double? ToGramsOrNull(this Measure measure, double quantity = 1)
-    {
-        return quantity * measure.ToMeasureOrNull(Measure.Grams);
     }
 }
