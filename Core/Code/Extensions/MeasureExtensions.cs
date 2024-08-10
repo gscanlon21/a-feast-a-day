@@ -38,10 +38,11 @@ public static class MeasureExtensions
     /// <summary>
     /// Finds the exact conversion factor from one measure to grams.
     /// Returns the exact milliliter conversion if there is no conversion to grams.
+    /// Returns the input quantity when there is no exact conversion.
     /// </summary>
-    public static double ToGramsOrMilliliters(this Measure measure, double quantity)
+    public static double ToGramsOrMillilitersOrDefault(this Measure measure, double quantity)
     {
-        return quantity * (measure.ToMeasureOrNull(Measure.Grams) ?? measure.ToMeasure(Measure.Milliliters));
+        return (quantity * (measure.ToMeasureOrNull(Measure.Grams) ?? measure.ToMeasureOrNull(Measure.Milliliters))) ?? quantity;
     }
 
     /// <summary>

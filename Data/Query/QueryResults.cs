@@ -46,7 +46,7 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
     [JsonIgnore]
     public IDictionary<QueryResults, double> PrerequisiteRecipes => RecipeIngredients
         .Where(ri => ri.IngredientRecipe != null).GroupBy(ri => ri.IngredientRecipe)
-        .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble())));
+        .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMillilitersOrDefault(r.Quantity.ToDouble())));
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);
     public override bool Equals(object? obj) => obj is QueryResults other
