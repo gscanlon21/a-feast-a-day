@@ -74,7 +74,7 @@
                         <option value="90"></option>
                         <option value="120"></option>
 
-                        <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                        <!-- These need to be separate from the <option> elements because those have their position attribute overridden (from absolute to static) on Firefox -->
                         <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</span>
                         <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">30 min</span>
                         <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">60 min</span>
@@ -106,7 +106,7 @@
                             <option value="8"></option>
                             <option value="10"></option>
 
-                            <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                            <!-- These need to be separate from the <option> elements because those have their position attribute overridden (from absolute to static) on Firefox -->
                             <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</span>
                             <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</span>
                             <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</span>
