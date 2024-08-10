@@ -1369,6 +1369,23 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7476	94	1984	\N	\N	3	22.7	f
 7477	94	62	\N	\N	3	3.5	f
 7478	94	2047	\N	\N	3	285.5	f
+7590	336	128	\N	\N	3	7	f
+7591	336	2048	\N	\N	2	30	f
+7592	336	68719476736	\N	\N	2	90	f
+7593	336	229376	\N	\N	1	72	f
+7594	336	1984	\N	\N	3	11	f
+7595	336	2047	\N	\N	3	100	f
+7596	21	128	\N	\N	3	0.2	f
+7597	21	68719476736	\N	\N	2	11	f
+7598	21	34359738368	\N	\N	2	683	f
+7599	21	2	\N	\N	3	4	f
+7600	21	1	\N	\N	3	24	f
+7601	21	4294967296	\N	\N	2	34	f
+7602	21	2199023255552	\N	\N	2	3	f
+7603	21	48	\N	\N	3	10	f
+7604	21	1984	\N	\N	3	2	f
+7605	21	62	\N	\N	3	120	f
+7606	21	2047	\N	\N	3	571	f
 4273	101	536870912	\N	\N	2	0.2	f
 4278	101	1536	\N	\N	3	5.7	f
 4281	101	3221225472	\N	\N	1	1.9	f
@@ -1433,6 +1450,16 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7491	109	62	\N	\N	3	27	f
 7492	109	2047	\N	\N	3	146	f
 7493	332	2047	\N	\N	3	109	f
+7607	355	68719476736	\N	\N	2	35	f
+7608	355	34359738368	\N	\N	2	510	f
+7609	355	2	\N	\N	3	2	f
+7610	355	1	\N	\N	3	12	f
+7611	355	4294967296	\N	\N	2	40	f
+7612	355	2199023255552	\N	\N	2	3	f
+7613	355	48	\N	\N	3	5	f
+7614	355	1984	\N	\N	3	4	f
+7615	355	62	\N	\N	3	32	f
+7616	355	2047	\N	\N	3	190	f
 5273	22	2047	\N	\N	3	80	f
 5349	23	2047	\N	\N	3	130	f
 7021	117	2047	\N	\N	3	140	f
@@ -1448,6 +1475,16 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7356	89	62	\N	\N	3	13.7	f
 7357	89	2047	\N	\N	3	684.1	f
 7494	305	2047	\N	\N	3	5	f
+7617	261	68719476736	\N	\N	2	500	f
+7618	261	34359738368	\N	\N	2	130	f
+7619	261	1	\N	\N	3	7	f
+7620	261	4294967296	\N	\N	2	10	f
+7621	261	2199023255552	\N	\N	2	3	f
+7622	261	48	\N	\N	3	2	f
+7623	261	402653184	\N	\N	1	0.1	f
+7624	261	1984	\N	\N	3	1	f
+7625	261	62	\N	\N	3	40	f
+7626	261	2047	\N	\N	3	200	f
 5425	102	2047	\N	\N	3	687	f
 7022	117	128	\N	\N	3	2	f
 7023	117	68719476736	\N	\N	2	200	f
@@ -1662,7 +1699,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7589, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7626, true);
 
 
 --
