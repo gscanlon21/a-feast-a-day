@@ -214,9 +214,6 @@ public class QueryRunner(Section section)
             // Don't re-order the list on each read.
             .ToList())
         {
-            // Nutrients and scale from options we're already set on prerequisite recipes. Scaling relative to the parent recipe comes later.
-            orderedResults.AddRange(recipe.RecipeIngredients.Where(ri => ri.IngredientRecipe != null).Select(ri => ri.IngredientRecipe!));
-
             // Set nutrients on the recipe after all the ingredient swapping has taken place.
             recipe.Nutrients = allNutrients.Where(n => recipe.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
 
