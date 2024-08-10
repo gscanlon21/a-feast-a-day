@@ -287,7 +287,7 @@ public class QueryRunner(Section section)
                     foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
                     {
                         // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.
-                        prerequisiteRecipe.Key.Scale = (int)Math.Ceiling(prerequisiteRecipe.Value / prerequisiteRecipe.Key.Recipe.Servings);
+                        prerequisiteRecipe.Key.Scale = (int)Math.Ceiling(prerequisiteRecipe.Value / prerequisiteRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prerequisiteRecipe.Key.Recipe.Servings));
 
                         // Prerequisite recipe already exists, scale it.
                         if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe))

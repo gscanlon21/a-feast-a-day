@@ -22,12 +22,21 @@ public enum Measure
     [Display(Name = "Pounds", ShortName = "lb.")]
     Pounds = 5,
 
+    /// <summary>
+    /// US Legal Cup. 240 ml/grams of water.
+    /// </summary>
     [Display(Name = "Cups", ShortName = "c.")]
     Cups = 6,
 
+    /// <summary>
+    /// Metric tablespoon. 15 ml/grams of water.
+    /// </summary>
     [Display(Name = "Tablespoons", ShortName = "tbsp.")]
     Tablespoons = 7,
 
+    /// <summary>
+    /// 5 ml/grams of water.
+    /// </summary>
     [Display(Name = "Teaspoons", ShortName = "tsp.")]
     Teaspoons = 8,
 

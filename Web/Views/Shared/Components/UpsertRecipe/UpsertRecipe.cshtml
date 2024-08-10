@@ -1,5 +1,6 @@
 ﻿@model Web.Views.Shared.Components.UpsertRecipe.UpsertRecipeViewModel
 @using Core.Models.Recipe
+@using Core.Models.User
 @using Web.Code.Extensions
 
 <div class="alert alert-light shadow mb-3" role="alert">
@@ -42,12 +43,12 @@
                         <option value="45"></option>
                         <option value="60"></option>
 
-                        <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="15" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">15 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">30 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="45" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">45 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">60 min</div>
+                        <!-- These need to be separate from the <option> elements because those have their position attribute overridden (from absolute to static) on Firefox -->
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="15" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">15 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">30 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="45" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">45 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.PrepTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">60 min</span>
                     </datalist>
                 </div>
             </div>
@@ -74,46 +75,56 @@
                         <option value="120"></option>
 
                         <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">30 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">60 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="90" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">90 min</div>
-                        <div onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="120" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">120 min</div>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="0" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(0% - .5ch)">0 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="30" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(25% - .5ch)">30 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="60" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(50% - .5ch)">60 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="90" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(75% - .5ch)">90 min</span>
+                        <span onclick="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.CookTime)-input').value = this.dataset.value" data-value="120" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(100% - .5ch)">120 min</span>
                     </datalist>
                 </div>
             </div>
             <div id="@Html.IdFor(_ => Model.Recipe.CookTime)-help" class="form-text"></div>
         </div>
 
-        <div class="form-group mb-3 mt-3">
-            <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
-            <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
-            <div style="display:flex;column-gap:1ex;">
-                <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class=""
-                        oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
-                <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                    <input type="range" style="width:100%;" class=""
-                            name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks1" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
-                            min="1" max="10" step="1" value="@Model.Recipe.Servings"
-                            oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
+        <div class="form-group mb-3 mt-3 row">
+            <div class="col">
+                <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
+                <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
+                <div style="display:flex;column-gap:1ex;">
+                    <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;" class=""
+                           oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
+                    <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                        <input type="range" style="width:100%;" class=""
+                               name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks1" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
+                               min="1" max="10" step="1" value="@Model.Recipe.Servings"
+                               oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
 
-                    <datalist id="hashmarks1" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
-                        <option value="2"></option>
-                        <option value="4"></option>
-                        <option value="6"></option>
-                        <option value="8"></option>
-                        <option value="10"></option>
+                        <datalist id="hashmarks1" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                            <option value="2"></option>
+                            <option value="4"></option>
+                            <option value="6"></option>
+                            <option value="8"></option>
+                            <option value="10"></option>
 
-                        <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
-                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</div>
-                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</div>
-                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</div>
-                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(80% - .5ch)">8</div>
-                        <div style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</div>
-                    </datalist>
+                            <!-- These need to be separate from the <option> elements because those have their position attribute overriden (from absolute to static) on Firefox -->
+                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</span>
+                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</span>
+                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</span>
+                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(80% - .5ch)">8</span>
+                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</span>
+                        </datalist>
+                    </div>
                 </div>
+                <div id="@Html.IdFor(_ => Model.Recipe.Servings)-help" class="form-text"></div>
             </div>
-            <div id="@Html.IdFor(_ => Model.Recipe.Servings)-help" class="form-text"></div>
+            <div class="col-auto">
+                <label asp-for="Recipe.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Measure)</label>
+                <select asp-for="Recipe.Measure" class="form-control" aria-describedby="measure-help"
+                        asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
+                </select>
+                <span asp-validation-for="Recipe.Measure" class="text-danger"></span>
+                <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Measure)</span>
+            </div>
         </div>
      
         <div class="form-group mb-3">

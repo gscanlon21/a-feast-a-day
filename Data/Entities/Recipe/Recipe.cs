@@ -1,6 +1,7 @@
 ﻿using Core.Consts;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
+using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
@@ -38,6 +39,9 @@ public class Recipe
     [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
     [Display(Name = "Servings")]
     public int Servings { get; set; } = RecipeConsts.ServingsDefault;
+
+    [Display(Name = "Measure")]
+    public Measure Measure { get; set; } = Measure.None;
 
     [Display(Name = "Adjustable Servings")]
     public bool AdjustableServings { get; set; } = true;

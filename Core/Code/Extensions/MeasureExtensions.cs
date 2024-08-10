@@ -36,6 +36,15 @@ public static class MeasureExtensions
     }
 
     /// <summary>
+    /// Finds the exact conversion factor from one measure to grams.
+    /// Returns the exact milliliter conversion if there is no conversion to grams.
+    /// </summary>
+    public static double ToGramsOrMilliliters(this Measure measure, double quantity)
+    {
+        return quantity * (measure.ToMeasureOrNull(Measure.Grams) ?? measure.ToMeasure(Measure.Milliliters));
+    }
+
+    /// <summary>
     /// Finds the exact conversion factor from one measure to another.
     /// Throws an exception when there is no exact conversion.
     /// </summary>
@@ -73,11 +82,13 @@ public static class MeasureExtensions
             (Measure.Cups, Measure.Gallons) => 0.0625,
             (Measure.Cups, Measure.Tablespoons) => 16,
             (Measure.Cups, Measure.Teaspoons) => 48,
+            (Measure.Cups, Measure.Milliliters) => 240,
             (Measure.Gallons, Measure.Cups) => 16,
             (Measure.FluidOunces, Measure.Cups) => 0.125,
             (Measure.Tablespoons, Measure.Cups) => 0.0625,
-            (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
+            (Measure.Tablespoons, Measure.Milliliters) => 15,
+            (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
 
             _ => null

@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 namespace Core.Dtos.Recipe;
 
 /// <summary>
-/// Exercises listed on the website
+/// DTO class for Recipe.cs
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeDto
@@ -32,6 +32,9 @@ public class RecipeDto
     [Display(Name = "Servings")]
     public int Servings { get; set; } = RecipeConsts.ServingsDefault;
 
+    [Display(Name = "Measure")]
+    public Measure Measure { get; set; } = Measure.None;
+
     [Display(Name = "Adjustable Servings")]
     public bool AdjustableServings { get; set; }
 
@@ -52,7 +55,6 @@ public class RecipeDto
     public virtual IList<RecipeInstructionDto> Instructions { get; set; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is RecipeDto other
         && other.Id == Id;
 }

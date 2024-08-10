@@ -60,8 +60,9 @@ public partial class UserController
                     Notes = recipe.Notes,
                     Enabled = recipe.Enabled,
                     Section = recipe.Section,
-                    CookTime = recipe.CookTime,
+                    Measure = recipe.Measure,
                     Servings = recipe.Servings,
+                    CookTime = recipe.CookTime,
                     PrepTime = recipe.PrepTime,
                     Equipment = recipe.Equipment,
                     AdjustableServings = recipe.AdjustableServings,
@@ -94,6 +95,7 @@ public partial class UserController
                 existingRecipe.Notes = recipe.Notes;
                 existingRecipe.Section = recipe.Section;
                 existingRecipe.Enabled = recipe.Enabled;
+                existingRecipe.Measure = recipe.Measure;
                 existingRecipe.Servings = recipe.Servings;
                 existingRecipe.CookTime = recipe.CookTime;
                 existingRecipe.PrepTime = recipe.PrepTime;
