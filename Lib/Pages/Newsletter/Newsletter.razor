@@ -40,12 +40,11 @@ else
             <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" />
         }
 
-        <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.BreakfastRecipes" Theme="RecipeTheme.Warmup" Title="@(new RecipeSection.Titles("Breakfast"))" />
-        <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.LunchRecipes" Theme="RecipeTheme.Main" Title="@(new RecipeSection.Titles("Lunch"))" />
-        <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.DinnerRecipes" Theme="RecipeTheme.Main" Title="@(new RecipeSection.Titles("Dinner"))" />
-        <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.SideRecipes" Theme="RecipeTheme.Cooldown" Title="@(new RecipeSection.Titles("Sides"))" />
-        <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.SnackRecipes" Theme="RecipeTheme.Other" Title="@(new RecipeSection.Titles("Snacks"))" />
-        <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.DessertRecipes" Theme="RecipeTheme.Other" Title="@(new RecipeSection.Titles("Desserts"))" />
+        @foreach (var section in Enum.GetValues<Section>().OrderBy(s => s.GetDisplayName32(DisplayType.Order).Length).ThenBy(s => s.GetDisplayName32(DisplayType.Order)))
+        {
+            <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.Recipes.Where(r => r.Section == section).ToList()" Theme="section.AsTheme()" Title="@(new RecipeSection.Titles(section.GetDisplayName32()))" />
+        }
+
         <Lib.Pages.Shared.Ingredient.IngredientSection User="Model.User" Ingredients="Model.DebugIngredients" Title="@(new IngredientSection.Titles("Ingredients"))" />
     </div>
 

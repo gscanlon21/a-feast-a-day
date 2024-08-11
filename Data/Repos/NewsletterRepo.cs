@@ -147,7 +147,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            DinnerRecipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            Recipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
             DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList(),
         };
 
@@ -178,12 +178,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            DinnerRecipes = dinnerRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            SideRecipes = sideRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            LunchRecipes = lunchRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            DessertRecipes = dessertRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            SnackRecipes = snackRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            BreakfastRecipes = breakfastRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            Recipes = allRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
         };
 
         // Other exercises. Refresh every day.
@@ -197,10 +192,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
-        List<QueryResults> dinnerRecipes = [], lunchRecipes = [], snackRecipes = [], sideRecipes = [], dessertRecipes = [], breakfastRecipes = [];
+        List<QueryResults> recipes = [];
         foreach (var section in EnumExtensions.GetSingleValues32<Section>())
         {
-            var recipes = (await new QueryBuilder(section)
+            recipes.AddRange((await new QueryBuilder(section)
                 .WithUser(user)
                 .WithRecipes(options =>
                 {
@@ -210,34 +205,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .Query(serviceScopeFactory))
                 // Re-order the recipes to match their original order.
                 // May be null when the user substitutes in a recipe for an ingredient after the first feast was sent.
-                .OrderBy(e => newsletter.UserFeastRecipes.FirstOrDefault(nv => nv.RecipeId == e.Recipe.Id)?.Order ?? -1);
-
-            switch (section)
-            {
-                case Section.Debug:
-                case Section.Dinner:
-                    dinnerRecipes.AddRange(recipes);
-                    break;
-                case Section.Lunch:
-                    lunchRecipes.AddRange(recipes);
-                    break;
-                case Section.Breakfast:
-                    breakfastRecipes.AddRange(recipes);
-                    break;
-                case Section.Sides:
-                    sideRecipes.AddRange(recipes);
-                    break;
-                case Section.Dessert:
-                    dessertRecipes.AddRange(recipes);
-                    break;
-                case Section.Snacks:
-                    snackRecipes.AddRange(recipes);
-                    break;
-            }
+                .OrderBy(e => newsletter.UserFeastRecipes.FirstOrDefault(nv => nv.RecipeId == e.Recipe.Id)?.Order ?? -1));
         }
 
-        var allRecipes = dinnerRecipes.Concat(lunchRecipes).Concat(breakfastRecipes).Concat(sideRecipes).Concat(snackRecipes).Concat(dessertRecipes);
-        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, recipes.SelectMany(r => r.RecipeIngredients).ToList());
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
@@ -245,12 +216,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             User = userViewModel,
             Verbosity = user.Verbosity,
             ShoppingList = shoppingList,
-            DinnerRecipes = dinnerRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            DessertRecipes = dessertRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            SideRecipes = sideRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            SnackRecipes = snackRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            BreakfastRecipes = breakfastRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            LunchRecipes = lunchRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
         };
 

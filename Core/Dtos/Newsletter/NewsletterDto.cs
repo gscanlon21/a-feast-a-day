@@ -19,14 +19,8 @@ public class NewsletterDto
 
     public required ShoppingListDto ShoppingList { get; init; }
 
-    public List<NewsletterRecipeDto> BreakfastRecipes { get; set; } = [];
-    public List<NewsletterRecipeDto> LunchRecipes { get; set; } = [];
-    public List<NewsletterRecipeDto> DinnerRecipes { get; set; } = [];
-    public List<NewsletterRecipeDto> SideRecipes { get; set; } = [];
-    public List<NewsletterRecipeDto> DessertRecipes { get; set; } = [];
-    public List<NewsletterRecipeDto> SnackRecipes { get; set; } = [];
+    public List<NewsletterRecipeDto> Recipes { get; set; } = [];
     public List<IngredientDto> DebugIngredients { get; set; } = [];
-    public List<NewsletterRecipeDto> AllRecipes => BreakfastRecipes.Concat(LunchRecipes).Concat(DinnerRecipes).Concat(SideRecipes).Concat(DessertRecipes).ToList();
 
     /// <summary>
     /// How much detail to show in the newsletter.

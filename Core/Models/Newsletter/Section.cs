@@ -6,7 +6,7 @@ namespace Core.Models.Newsletter;
 [Flags]
 public enum Section
 {
-    [Display(Name = "None")]
+    [Display(Name = "Ingredient Recipes")]
     None = 0,
 
     [Display(Name = "Breakfast")]
@@ -37,9 +37,11 @@ public static class SectionExtensions
     public static RecipeTheme AsTheme(this Section section) => section switch
     {
         not Section.None when Section.Breakfast.HasFlag(section) => RecipeTheme.Warmup,
-        not Section.None when Section.Lunch.HasFlag(section) => RecipeTheme.Cooldown,
+        not Section.None when Section.Lunch.HasFlag(section) => RecipeTheme.Main,
         not Section.None when Section.Dinner.HasFlag(section) => RecipeTheme.Main,
+        not Section.None when Section.Sides.HasFlag(section) => RecipeTheme.Cooldown,
         not Section.None when Section.Dessert.HasFlag(section) => RecipeTheme.Other,
+        not Section.None when Section.Snacks.HasFlag(section) => RecipeTheme.Other,
         _ => RecipeTheme.None,
     };
 }
