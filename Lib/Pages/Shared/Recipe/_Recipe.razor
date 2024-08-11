@@ -61,6 +61,11 @@
                     <div style="margin-block:.5em;font-size:x-small;">@Model.Recipe.Notes</div>
                 }
 
+                @if (Verbosity.HasFlag(Verbosity.Debug))
+                {
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Section</b>: @Model.Recipe.Section.GetDisplayName32()</div>
+                }
+
                 @if (Verbosity.HasFlag(Verbosity.PrepTime))
                 {
                     <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @(Model.Recipe.PrepTime) min</div>
