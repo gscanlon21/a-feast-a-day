@@ -50,13 +50,13 @@ public class UserConsts
         | FootnoteType.HealthTips | FootnoteType.HealthFacts | FootnoteType.GoodVibes | FootnoteType.Mindfulness;
 
     /// <summary>
-    /// This shouldn't be too high (>8) or else the program will spend too much time trying 
+    /// This shouldn't be too high (>12) or else the program will spend too much time trying 
     /// to get the user in range and end up not working or overworking specific muscles in the interim.
     /// 
-    /// This shouldn't be too low (<8) or else the muscle target value will drop too much
+    /// This shouldn't be too low (<12) or else the muscle target value will drop too much
     /// during rest days and overwork the user the next time they see a workout.
     /// </summary>
-    public const int TrainingVolumeWeeks = 8;
+    public const int TrainingVolumeWeeks = 12;
 
     /// <summary>
     /// 8 because we want to leave the user with at least one week of data 
