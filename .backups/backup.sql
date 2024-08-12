@@ -161,7 +161,8 @@ CREATE TABLE public.recipe (
     "Servings" integer DEFAULT 0 NOT NULL,
     "AdjustableServings" boolean DEFAULT false NOT NULL,
     "Equipment" integer DEFAULT 0 NOT NULL,
-    "Image" text
+    "Image" text,
+    "Measure" integer DEFAULT 0 NOT NULL
 );
 
 
@@ -592,6 +593,7 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 20240707152620_SquashMigrations	9.0.0-preview.3.24172.4
 20240802002532_AddDebugLogs	9.0.0-preview.3.24172.4
 20240808162536_AddIngredientCategory	9.0.0-preview.3.24172.4
+20240810185633_AddRecipeMeasures	9.0.0-preview.3.24172.4
 \.
 
 
@@ -833,7 +835,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 6888	103	1984	\N	\N	3	0.2	f
 6889	103	62	\N	\N	3	27	f
 6734	78	2047	\N	\N	3	120	f
-6827	186	2047	\N	\N	3	148.8	f
 6890	103	2047	\N	\N	3	119	f
 6891	105	34359738368	\N	\N	2	170	f
 6892	105	1	\N	\N	3	1	f
@@ -868,6 +869,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7542	221	2047	\N	\N	3	261	f
 7206	189	131072	\N	\N	1	95	f
 7207	189	229376	\N	\N	1	95	f
+6827	186	2047	\N	\N	3	149	f
 6738	164	128	\N	\N	3	2	f
 6740	164	1	\N	\N	3	6	f
 6741	164	2048	\N	\N	2	185	f
@@ -1502,6 +1504,53 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7360	312	62	\N	\N	3	5	f
 7361	312	2047	\N	\N	3	20	f
 7495	171	2047	\N	\N	3	50	f
+7627	213	1	\N	\N	3	22	f
+7628	213	62	\N	\N	3	126	f
+7629	213	2047	\N	\N	3	711	f
+7630	186	128	\N	\N	3	5	f
+7631	186	256	\N	\N	3	2	f
+7632	186	2048	\N	\N	2	24	f
+7633	186	68719476736	\N	\N	2	105	f
+7634	186	34359738368	\N	\N	2	322	f
+7635	186	2	\N	\N	3	12	f
+7636	186	1	\N	\N	3	8	f
+7637	186	2251799813685248	\N	\N	2	35	f
+7638	186	9007199254740992	\N	\N	3	0.2	f
+7639	186	18014398509481984	\N	\N	3	0.4	f
+7640	186	36028797018963968	\N	\N	3	1	f
+7641	186	72057594037927936	\N	\N	3	1	f
+7642	186	144115188075855872	\N	\N	3	0.2	f
+7643	186	288230376151711744	\N	\N	3	0.4	f
+7644	186	576460752303423488	\N	\N	3	0.3	f
+7645	186	1152921504606846976	\N	\N	3	0.1	f
+7646	186	2305843009213693952	\N	\N	3	1	f
+7647	186	-9223372036854775808	\N	\N	3	0.2	f
+7648	186	4611686018427387904	\N	\N	3	0.2	f
+7649	186	4294967296	\N	\N	2	276	f
+7650	186	274877906944	\N	\N	1	0.1	f
+7651	186	2199023255552	\N	\N	2	0.1	f
+7652	186	17179869184	\N	\N	2	24	f
+7653	186	70368744177664	\N	\N	2	205	f
+7654	186	8796093022208	\N	\N	1	9	f
+7655	186	17592186044416	\N	\N	2	1	f
+7656	186	65536	\N	\N	1	17	f
+7657	186	131072	\N	\N	1	110	f
+7658	186	262144	\N	\N	2	0.1	f
+7659	186	33554432	\N	\N	1	1	f
+7660	186	524288	\N	\N	2	0.4	f
+7661	186	1048576	\N	\N	2	0.2	f
+7662	186	2097152	\N	\N	2	1	f
+7663	186	4194304	\N	\N	2	0.1	f
+7664	186	16777216	\N	\N	1	12	f
+7665	186	268435456	\N	\N	1	0.2	f
+7666	186	536870912	\N	\N	2	0.2	f
+7667	186	1536	\N	\N	3	0.5	f
+7668	186	402653184	\N	\N	1	0.2	f
+7669	186	3221225472	\N	\N	1	1	f
+7670	186	1792	\N	\N	3	2.5	f
+7671	186	229376	\N	\N	1	112	f
+7672	186	1984	\N	\N	3	8	f
+7673	186	62	\N	\N	3	12	f
 5501	15	2047	\N	\N	3	90	f
 5508	123	1125899906842624	\N	\N	3	0.1	f
 5538	123	549755813888	\N	\N	1	0.1	f
@@ -1699,7 +1748,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7626, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7673, true);
 
 
 --

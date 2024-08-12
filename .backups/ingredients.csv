@@ -21,7 +21,7 @@
 21	\N	Wild Rice	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2024-08-09	6	160	0
 22	\N	Slices of Bread	https://www.eatthismuch.com/calories/loaf-bread,3303048	\N	f	4	34	34	2024-06-15	0	34	0
 23	\N	Tortillas, Flour	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	0	45	45	2024-06-16	0	240	0
-24	\N	Boneless Chicken Breast	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
+24	\N	Boneless Chicken Breast	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	112	112	2024-06-13	0	112	0
 25	\N	Lean Ground Beef	https://www.eatthismuch.com/nutrition/ground-beef,5416	\N	f	0	28	28	-infinity	4	240	0
 26	\N	Sliced Ham	https://www.eatthismuch.com/food/nutrition/sliced-ham,905/	\N	f	0	28	28	-infinity	0	240	0
 27	\N	Slices of Turkey	https://www.eatthismuch.com/food/nutrition/deli-sliced-oven-roasted-turkey-breast,101465/	\N	f	0	13	51	2024-06-14	0	240	0
@@ -181,7 +181,7 @@
 183	\N	Milk, Cashew	\N	\N	f	64	240	100	-infinity	6	240	0
 184	\N	Milk, Rice	\N	\N	f	64	240	100	-infinity	6	240	0
 185	\N	Oats, Steel-Cut	\N	\N	f	0	240	100	-infinity	6	240	0
-186	\N	Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	3	244	244	-infinity	6	240	0
+186	\N	Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	3	244	244	2024-08-11	6	244	0
 187	\N	Eggs	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	-infinity	0	240	0
 188	\N	Rice	https://www.eatthismuch.com/food/nutrition/white-rice,4814/	\N	f	0	200	200	-infinity	6	200	0
 189	\N	Salted Butter	https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	1	14	14	2024-08-04	7	224	0
@@ -205,7 +205,7 @@
 209	\N	Mixed Vegetables	\N	\N	f	0	240	100	-infinity	6	240	0
 210	\N	Flatbread	https://www.eatthismuch.com/food/nutrition/whole-wheat-pita,2021396/	\N	f	4	71	71	2024-06-15	6	240	0
 212	\N	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	4	29	57	2024-07-15	0	57	0
-213	\N	Ciabatta Loaf	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	-infinity	0	240	0
+213	\N	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	4	257	257	2024-08-11	0	128.5	2
 214	\N	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/	\N	t	0	18	18	2024-07-28	7	288	0
 215	\N	Maple Syrup	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	14	14	2024-06-17	7	240	0
 216	\N	Bacon	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	16384	8	8	2024-07-08	0	24	0
@@ -270,7 +270,7 @@
 275	\N	Slices of Wheat Bread	https://www.eatthismuch.com/food/nutrition/whole-wheat-bread-sliced,1622558/	\N	f	4	30	60	2024-07-18	0	60	0
 276	\N	Chili Oil	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2024-07-09	7	120	0
 277	\N	Mixed Salad Leaves	\N	\N	f	0	14	14	-infinity	0	50	0
-278	\N	Extra Virgin Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	224	0
+278	\N	Extra Virgin Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	27	14	2024-06-13	9	224	0
 279	\N	Balsamic Vinegar | Sherry Vinegar	\N	\N	f	0	240	100	-infinity	6	240	0
 280	\N	Sherry Vinegar	\N	\N	f	0	240	100	-infinity	6	240	0
 281	\N	Roma Tomatoes	\N	\N	f	0	14	14	-infinity	0	240	0
@@ -351,7 +351,7 @@
 356	\N	Tagliatelle Pasta	https://www.eatthismuch.com/food/nutrition/spaghetti,4914/	\N	f	4	28.35	28.35	-infinity	4	240	0
 357	\N	Dijon Mustard	\N	\N	t	0	240	100	-infinity	6	240	0
 358	\N	Lemon Juice	https://www.eatthismuch.com/calories/lemons,1432	\N	f	33554432	84	84	-infinity	0	100	0
-359	\N	Lime Juice	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	0	240	0
+359	\N	Lime Juice	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	9	240	0
 360	\N	Kosher Salt & Pepper	\N	\N	t	0	240	100	-infinity	6	240	0
 361	\N	Elbow Macaroni, GF	\N	\N	f	0	240	100	-infinity	6	240	0
 362	\N	Red Lentil Elbow Macaroni	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -383,12 +383,12 @@
 388	\N	Chicken Thighs, Skin On, Bone In	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
 389	\N	Mixed Chopped Onion, Carrot, and Celery	\N	\N	f	0	240	100	-infinity	6	240	0
 390	\N	Halloumi Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	0	28	28	2024-06-12	4	224	0
-391	\N	Boneless Chicken Thighs	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
+391	\N	Skinless, Boneless Chicken Thighs	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
 392	\N	Pesto	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	2	28.35	28.35	2024-07-01	4	100	6
 393	\N	Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	2	28.35	28.35	2024-07-01	4	100	6
 394	\N	Pesto | Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	2	28.35	28.35	2024-07-01	4	100	6
 395	\N	Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	4	40	40	2024-06-19	6	240	0
-396	\N	Rustic Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	4	40	40	2024-06-19	6	240	0
+396	\N	Small Rustic Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	4	40	40	2024-06-19	6	240	0
 397	\N	Black Olives	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	240	0
 398	\N	Black Olives, with Pits	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	240	0
 399	\N	Brioche Buns	\N	\N	f	0	28	28	-infinity	0	240	0
@@ -407,7 +407,7 @@
 412	\N	Good Espresso	\N	\N	t	0	240	100	-infinity	6	240	0
 413	\N	All-Purpose Flour, GF	https://www.eatthismuch.com/food/nutrition/all-purpose-flour,101736/	\N	t	0	120	30	2024-06-26	6	240	0
 414	\N	Bread Flour, Unenriched, GF	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/	\N	f	0	137	137	-infinity	6	137	0
-415	\N	Grilled Chicken Breast	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
+415	\N	Grilled Chicken Breast	https://www.eatthismuch.com/calories/grilled-chicken-breast,6818	\N	f	0	28	84	2024-06-13	4	224	7
 416	\N	Chedder Jack Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	3	112	28	-infinity	6	112	0
 417	\N	Spring Mix	https://www.eatthismuch.com/food/nutrition/spring-onions,148275/	\N	f	0	100	100	-infinity	0	240	0
 418	\N	Canned Corn	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	8192	7.68	7.68	2024-07-19	7	128	0
