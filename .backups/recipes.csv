@@ -23,7 +23,7 @@
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	\N	0
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	0	\N	0
-43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	\N	0
+43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	egg-fried-rice.jpg	0
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	0	quinoa-pizza.jpg	0
 45	5-Ingredient Black Bean Soup	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	\N	\N	6	18	2	4	t	4	black-bean-soup.jpg	0
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	0	\N	0
@@ -90,3 +90,4 @@
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	0	honey-chicken-pecan-salad.jpg	0
 116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	16	citrus-dressing.jpg	6
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	0	chicken-avocado-chop.jpg	0
+119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	0	\N	7

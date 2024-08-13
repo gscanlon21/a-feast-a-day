@@ -56,7 +56,7 @@
 56	\N	Peanut Butter	\N	\N	f	0	240	100	-infinity	6	240	0
 57	\N	Chickpeas	\N	\N	f	0	240	100	-infinity	6	240	0
 58	\N	Baked Beans	\N	\N	f	0	240	100	-infinity	6	240	0
-59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	0	240	240	-infinity	6	240	0
+59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	2048	240	240	2024-08-13	6	240	0
 60	\N	Mustard	\N	\N	t	0	240	100	-infinity	6	240	0
 61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	14	14	2024-06-17	7	240	0
 62	\N	Soy Sauce	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -223,7 +223,7 @@
 228	\N	Brown Rice Flour	\N	\N	f	0	240	100	-infinity	6	240	0
 229	\N	Xanthan Gum	https://www.eatthismuch.com/food/nutrition/xanthan-gum,2997176/	\N	f	0	9	9	2024-07-30	7	144	0
 230	\N	Dry Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	3	244	244	2024-08-02	6	240	0
-231	\N	Garden Veggie Good Thins, GF	https://www.eatthismuch.com/nutrition/garlic-1-clove,339965	\N	f	0	14	14	-infinity	0	224	0
+231	\N	Garden Veggie Good Thins, GF	Box	\N	f	0	2	32	2024-08-13	0	224	0
 232	\N	Sabra Classic Humus	https://www.eatthismuch.com/nutrition/garlic-1-clove,339965	\N	f	0	14	14	-infinity	0	224	0
 233	\N	Sunflower Oil	https://www.eatthismuch.com/food/nutrition/raw-sunflower-seeds,135248/	\N	f	0	132	33	-infinity	6	132	0
 234	\N	Superfine Sugar	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -251,7 +251,7 @@
 256	\N	Frigo String Cheese Stick	\N	\N	f	0	240	100	-infinity	0	240	0
 257	\N	String Cheese Stick	\N	\N	f	0	240	100	-infinity	0	240	0
 258	\N	Naan | Pita	\N	\N	f	4	240	100	-infinity	0	240	0
-259	\N	Eggplant	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	-infinity	0	240	0
+259	\N	Eggplant	https://www.eatthismuch.com/calories/eggplant,1975	\N	f	0	548	548	2024-08-12	0	82	1
 260	\N	Plum Tomatoes	\N	\N	f	0	14	14	-infinity	0	240	0
 261	\N	Garlic and Cilantro Flavored Couscous	https://www.eatthismuch.com/calories/couscous-mix-roasted-garlic-olive-oil,2247010	\N	f	0	21.125	56	2024-08-10	4	169	4
 262	\N	Pepperoni	\N	\N	f	0	240	100	-infinity	0	240	0
@@ -299,7 +299,7 @@
 304	\N	Head of Boston Bibb Lettuce	\N	\N	f	0	14	14	-infinity	0	50	0
 305	\N	Leaves of Lettuce	https://www.eatthismuch.com/calories/lettuce,2015	\N	f	0	12	36	2024-07-25	0	36	0
 306	\N	Head of Butter Lettuce | Head of Boston Bibb Lettuce	\N	\N	f	0	14	14	-infinity	0	50	0
-307	\N	Ginger	\N	\N	f	0	14	14	-infinity	0	50	0
+307	\N	Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	1
 308	\N	Toasted Sesame Oil	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	64	216	13.6	2024-06-11	6	240	0
 309	\N	Gold Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	-infinity	0	170	0
 310	\N	Russet Potatoes	https://www.eatthismuch.com/food/nutrition/russet-potatoes,2092/	\N	f	0	213	369	2024-07-20	0	170	0
@@ -413,3 +413,8 @@
 418	\N	Canned Corn	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	8192	7.68	7.68	2024-07-19	7	128	0
 419	\N	Canned Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	-infinity	6	240	0
 420	\N	Orange Juice	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
+421	\N	Cornmeal	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2024-07-19	7	128	0
+422	\N	Flax Seeds	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	64	216	13.6	2024-06-11	6	240	0
+423	\N	Half & Half	\N	\N	f	0	240	240	-infinity	6	240	0
+456	\N	Pickled Capers	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	0	123	123	-infinity	0	240	0
+457	\N	Low Sodium Ketchup	https://www.eatthismuch.com/calories/ketchup,5816	\N	t	0	240	240	2024-08-13	6	240	0
