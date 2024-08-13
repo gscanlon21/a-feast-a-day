@@ -162,7 +162,7 @@ public partial class NewsletterRepo
             .Query(serviceScopeFactory);
     }
 
-    private async Task<IList<QueryResults>> GetDebugExercises(UserDto user)
+    private async Task<IList<QueryResults>> GetDebugRecipes(UserDto user)
     {
         return await new QueryBuilder(Section.Debug)
             .WithUser(user)

@@ -42,7 +42,7 @@ else
 
         @foreach (var section in Enum.GetValues<Section>().OrderBy(s => s.GetDisplayName32(DisplayType.Order).Length).ThenBy(s => s.GetDisplayName32(DisplayType.Order)))
         {
-            <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.Recipes.Where(r => r.Section == section).ToList()" Theme="section.AsTheme()" Title="@(new RecipeSection.Titles(section.GetDisplayName32()))" />
+            <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.Recipes.Where(r => r.Section == section).ToList()" Theme="section.AsTheme()" Title="@(new RecipeSection.Titles(section.GetSingleDisplayName()))" />
         }
 
         <Lib.Pages.Shared.Ingredient.IngredientSection User="Model.User" Ingredients="Model.DebugIngredients" Title="@(new IngredientSection.Titles("Ingredients"))" />

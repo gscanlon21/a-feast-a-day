@@ -136,7 +136,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     internal async Task<NewsletterDto?> Debug(FeastContext newsletterContext)
     {
         newsletterContext.User.Verbosity = Verbosity.Debug;
-        var debugRecipes = await GetDebugExercises(newsletterContext.User);
+        var debugRecipes = await GetDebugRecipes(newsletterContext.User);
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext);
 

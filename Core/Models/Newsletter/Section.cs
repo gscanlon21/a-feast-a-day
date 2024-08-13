@@ -6,7 +6,7 @@ namespace Core.Models.Newsletter;
 [Flags]
 public enum Section
 {
-    [Display(Name = "Ingredient Recipes")]
+    [Display(Name = "Prep")]
     None = 0,
 
     [Display(Name = "Breakfast")]
