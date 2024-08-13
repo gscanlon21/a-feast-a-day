@@ -195,9 +195,10 @@ public class UserRepo
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
-            // Look at feasts only that are within the last X weeks.
+            // Include this week's data or filter out this week's data.
+            .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
+            // Look at newsletters only that are within the last X weeks.
             .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            .Where(n => includeToday || n.Date != user.StartOfWeekOffset)
             .GroupBy(n => n.Date)
             .Select(g => new
             {
@@ -215,8 +216,9 @@ public class UserRepo
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
         {
-            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
-            var actualWeeks = (user.StartOfWeekOffset.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
+            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
+            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
+            var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
@@ -264,9 +266,10 @@ public class UserRepo
                                 .ThenInclude(r => r.Ingredient)
                                     .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
-            // Look at feasts only that are within the last X weeks.
+            // Include this week's data or filter out this week's data.
+            .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
+            // Look at newsletters only that are within the last X weeks.
             .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            .Where(n => includeToday || n.Date != user.StartOfWeekOffset)
             .GroupBy(n => n.Date)
             .Select(g => new
             {
@@ -284,8 +287,9 @@ public class UserRepo
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
         {
-            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data.
-            var actualWeeks = (user.StartOfWeekOffset.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
+            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
+            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
+            var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
