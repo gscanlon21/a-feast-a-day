@@ -213,9 +213,9 @@ public partial class UserController
                 userRecipe.LastSeen = userRecipe.LastSeen.AddDays(7 * difference); // Add 70 days onto the LastSeen date.
             }
 
-            userRecipe.Notes = viewModel.Notes;
             userRecipe.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
             userRecipe.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
+            userRecipe.Notes = user.IsDemoUser ? null : viewModel.Notes;
 
             await context.SaveChangesAsync();
             return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
