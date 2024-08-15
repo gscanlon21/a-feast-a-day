@@ -2,7 +2,6 @@
 using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
-using Data.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
 namespace Core.Dtos.User;

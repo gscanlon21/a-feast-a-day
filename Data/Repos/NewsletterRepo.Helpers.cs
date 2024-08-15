@@ -1,9 +1,9 @@
 ﻿using Core.Consts;
 using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models;
-using Data.Models.Newsletter;
 using Microsoft.Extensions.DependencyInjection;
 using Web.Code;
 

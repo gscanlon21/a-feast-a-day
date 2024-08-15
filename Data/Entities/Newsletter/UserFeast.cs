@@ -1,5 +1,5 @@
 ﻿using Core.Dtos.User;
-using Data.Models.Newsletter;
+using Core.Models.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

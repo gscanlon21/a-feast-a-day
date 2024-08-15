@@ -1,7 +1,7 @@
 ﻿using Core.Dtos.User;
 using Core.Models.User;
 
-namespace Data.Models.Newsletter;
+namespace Core.Models.Newsletter;
 
 public class FeastContext
 {

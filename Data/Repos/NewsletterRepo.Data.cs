@@ -3,7 +3,6 @@ using Core.Models.Newsletter;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Data.Models;
-using Data.Models.Newsletter;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -178,7 +177,7 @@ public partial class NewsletterRepo
         using var scope = serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        var debugIngredients = await context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+        var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
             .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
@@ -186,12 +185,7 @@ public partial class NewsletterRepo
             .ThenBy(_ => EF.Functions.Random())
             .Take(2).ToListAsync();
 
-        foreach (var debugIngredient in debugIngredients)
-        {
-            debugIngredient.LastUpdated = DateHelpers.Today;
-            scopedCoreContext.Ingredients.Update(debugIngredient);
-        }
-
+        debugIngredients.ForEach(di => di.LastUpdated = DateHelpers.Today);
         await scopedCoreContext.SaveChangesAsync();
         return debugIngredients;
     }
