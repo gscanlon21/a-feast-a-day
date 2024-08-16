@@ -36,4 +36,10 @@ public enum Equipment
 
     [Display(Name = "Grill")]
     Grill = 1 << 9, // 512
+
+    [Display(Name = "Broiler")]
+    Broiler = 1 << 10, // 1024
+
+    [Display(Name = "Food Processor")]
+    FoodProcessor = 1 << 11 // 2048
 }
