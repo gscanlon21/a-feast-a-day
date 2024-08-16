@@ -20,6 +20,8 @@ public class RecipeOptions : IOptions
     /// </summary>
     public Dictionary<int, int>? RecipeIds { get; private set; }
 
+    public bool IgnorePrerequisites { get; set; }
+
     public void AddPastRecipes(ICollection<UserFeastRecipe> userFeastRecipes)
     {
         RecipeIds = userFeastRecipes

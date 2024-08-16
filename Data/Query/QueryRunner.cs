@@ -341,7 +341,7 @@ public class QueryRunner(Section section)
             .GroupBy(ri => ri.IngredientRecipeId!.Value).ToDictionary(g => g.Key, ri => 1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // No infinite recursion please.
-        if (!prerequisiteRecipeIds.Any())
+        if (!prerequisiteRecipeIds.Any() || RecipeOptions.IgnorePrerequisites)
         {
             return [];
         }

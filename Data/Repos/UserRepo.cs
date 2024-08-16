@@ -217,7 +217,7 @@ public class UserRepo
         if (weeklyFeasts.Count != 0)
         {
             // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
-            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key).EndOfWeek() : weeklyFeasts.Max(n => n.Key).EndOfNextWeek();
+            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
             var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
@@ -288,7 +288,7 @@ public class UserRepo
         if (weeklyFeasts.Count != 0)
         {
             // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
-            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key).EndOfWeek() : weeklyFeasts.Max(n => n.Key).EndOfNextWeek();
+            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
             var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)

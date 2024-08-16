@@ -36,12 +36,11 @@ public static class SectionExtensions
 {
     public static RecipeTheme AsTheme(this Section section) => section switch
     {
-        not Section.None when Section.Breakfast.HasFlag(section) => RecipeTheme.Warmup,
-        not Section.None when Section.Lunch.HasFlag(section) => RecipeTheme.Main,
-        not Section.None when Section.Dinner.HasFlag(section) => RecipeTheme.Main,
-        not Section.None when Section.Sides.HasFlag(section) => RecipeTheme.Cooldown,
-        not Section.None when Section.Dessert.HasFlag(section) => RecipeTheme.Other,
-        not Section.None when Section.Snacks.HasFlag(section) => RecipeTheme.Other,
+        Section.Breakfast => RecipeTheme.Warmup,
+        Section.Lunch or Section.Dinner => RecipeTheme.Main,
+        Section.Sides => RecipeTheme.Cooldown,
+        Section.Dessert => RecipeTheme.Other,
+        Section.Snacks => RecipeTheme.Extra,
         _ => RecipeTheme.None,
     };
 }
