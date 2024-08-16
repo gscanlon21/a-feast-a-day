@@ -1,9 +1,12 @@
 
 namespace Web.Views.Shared;
 
-public class _ValidationMessagePartialModel
+public class ValidationMessagePartialModel
 {
     public bool? WasUpdated { get; set; }
-    public string DefaultFailureMessage = "Something went wrong.";
-    public string DefaultSuccessMessage = "Your preferences have been saved. Changes will be reflected in the next feast.";
+
+    public bool GoBackOnSave { get; init; }
+
+    public const string DefaultFailureMessage = "Something went wrong.";
+    public const string DefaultSuccessMessage = "Your preferences have been saved. Changes will be reflected in the next feast.";
 }
