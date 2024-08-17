@@ -347,7 +347,7 @@ public class QueryRunner(Section section)
         }
 
         // This will filter out ignored prerequisite recipes.
-        return (await new QueryBuilder(Section.None)
+        return (await new QueryBuilder(Section.Prep)
             .WithUser(UserOptions)
             .WithRecipes(options => options.AddRecipes(prerequisiteRecipeIds))
             .Build()

@@ -192,8 +192,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
         List<QueryResults> recipes = [];
-        foreach (var section in EnumExtensions.GetSingleValues32<Section>())
+        foreach (var section in SectionExtensions.MainSections)
         {
+            // Querying for a section will also grab the prep recipes for that section.
             recipes.AddRange((await new QueryBuilder(section)
                 .WithUser(user)
                 .WithRecipes(options =>
