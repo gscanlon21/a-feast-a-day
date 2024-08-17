@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.3
+-- Dumped from database version 16.4
 -- Dumped by pg_dump version 16.1
 
 SET statement_timeout = 0;
@@ -730,12 +730,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 6710	54	1984	\N	\N	3	3	f
 6711	54	62	\N	\N	3	121	f
 6712	54	2047	\N	\N	3	662	f
-6715	129	128	\N	\N	3	6	f
-6716	129	68719476736	\N	\N	2	558	f
-6717	129	2	\N	\N	3	1	f
-6718	129	1	\N	\N	3	19	f
-6719	129	2048	\N	\N	2	60	f
-6720	129	4294967296	\N	\N	2	80	f
 6851	6	72057594037927936	\N	\N	3	0.1	f
 6852	6	288230376151711744	\N	\N	3	0.1	f
 6853	6	576460752303423488	\N	\N	3	0.1	f
@@ -748,10 +742,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 6860	6	4398046511104	\N	\N	2	0.2	f
 6861	6	70368744177664	\N	\N	2	66	f
 6862	6	8796093022208	\N	\N	1	2	f
-6721	129	48	\N	\N	3	1	f
-6722	129	1984	\N	\N	3	17	f
-6723	129	62	\N	\N	3	8	f
-6724	129	2047	\N	\N	3	266	f
 6725	20	1984	\N	\N	3	10	f
 6726	20	2047	\N	\N	3	626	f
 6746	38	34359738368	\N	\N	2	35	f
@@ -1158,6 +1148,8 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7723	59	1984	\N	\N	3	1	f
 7724	59	62	\N	\N	3	60	f
 7725	59	2047	\N	\N	3	233	f
+7738	386	2047	\N	\N	3	200	f
+7739	209	2047	\N	\N	3	162	f
 4744	24	68719476736	\N	\N	2	70	f
 4745	24	34359738368	\N	\N	2	340	f
 4747	24	1	\N	\N	3	27	f
@@ -1215,6 +1207,15 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7308	188	2047	\N	\N	3	716	f
 7411	224	2047	\N	\N	3	18	f
 7583	91	2047	\N	\N	3	130.8	f
+7726	368	2047	\N	\N	3	5	f
+7740	174	68719476736	\N	\N	2	10	f
+7741	174	2	\N	\N	3	1	f
+7742	174	1	\N	\N	3	1	f
+7743	174	67108864	\N	\N	2	45	f
+7744	174	48	\N	\N	3	2	f
+7745	174	229376	\N	\N	1	27	f
+7746	174	62	\N	\N	3	3	f
+7747	174	2047	\N	\N	3	15	f
 4818	1	128	\N	\N	3	0.1	f
 4820	1	68719476736	\N	\N	2	1.8	f
 4821	1	34359738368	\N	\N	2	194.7	f
@@ -1293,6 +1294,34 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7437	267	62	\N	\N	3	9	f
 7584	167	2047	\N	\N	3	308	f
 7585	220	2047	\N	\N	3	210	f
+7727	60	68719476736	\N	\N	2	166	f
+7728	60	34359738368	\N	\N	2	23	f
+7729	60	2	\N	\N	3	0.1	f
+7730	60	1	\N	\N	3	1	f
+7731	60	4294967296	\N	\N	2	9	f
+7732	60	2199023255552	\N	\N	2	0.2	f
+7733	60	48	\N	\N	3	1	f
+7734	60	1984	\N	\N	3	1	f
+7735	60	62	\N	\N	3	1	f
+7736	60	2047	\N	\N	3	9	f
+7737	136	2047	\N	\N	3	190	f
+7748	69	1	\N	\N	3	1	f
+7749	69	1984	\N	\N	3	1	f
+7750	69	62	\N	\N	3	3	f
+7751	69	2047	\N	\N	3	14	f
+6724	129	2047	\N	\N	3	243	f
+7752	129	128	\N	\N	3	6	f
+7753	129	64	\N	\N	3	0.5	f
+7754	129	2048	\N	\N	2	56	f
+7755	129	68719476736	\N	\N	2	566	f
+7756	129	34359738368	\N	\N	2	252	f
+7757	129	2	\N	\N	3	3	f
+7758	129	1	\N	\N	3	12	f
+7759	129	4294967296	\N	\N	2	68	f
+7760	129	2199023255552	\N	\N	2	2	f
+7761	129	48	\N	\N	3	2	f
+7762	129	402653184	\N	\N	1	0.1	f
+7763	129	1984	\N	\N	3	19	f
 6964	75	68719476736	\N	\N	2	480	f
 7320	204	68719476736	\N	\N	2	60	f
 7438	284	128	\N	\N	3	4.4	f
@@ -1309,6 +1338,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7449	284	2047	\N	\N	3	119.1	f
 7586	147	2047	\N	\N	3	20	f
 7587	241	2047	\N	\N	3	30	f
+7764	129	62	\N	\N	3	7	f
 4156	126	2048	\N	\N	2	55	f
 4157	126	128	\N	\N	3	2.5	f
 4166	126	4294967296	\N	\N	2	100	f
@@ -1769,7 +1799,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7725, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7764, true);
 
 
 --

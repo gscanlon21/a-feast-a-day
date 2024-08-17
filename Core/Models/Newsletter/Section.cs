@@ -9,28 +9,28 @@ public enum Section
     [Display(Name = "None")]
     None = 0,
 
-    [Display(Name = "Prep")]
-    Prep = 1 << 0, // 1
-
     [Display(Name = "Breakfast")]
-    Breakfast = 1 << 1, // 2
+    Breakfast = 1 << 0, // 1
 
     [Display(Name = "Lunch")]
-    Lunch = 1 << 2, // 4
+    Lunch = 1 << 1, // 2
 
     [Display(Name = "Dinner")]
-    Dinner = 1 << 3, // 8
+    Dinner = 1 << 2, // 4
 
     [Display(Name = "Sides")]
-    Sides = 1 << 4, // 16
+    Sides = 1 << 3, // 8
 
     [Display(Name = "Snacks")]
-    Snacks = 1 << 5, // 32
+    Snacks = 1 << 4, // 16
 
     [Display(Name = "Dessert")]
-    Dessert = 1 << 6, // 64
+    Dessert = 1 << 5, // 32
 
-    Debug = 1 << 15, // 32768
+    [Display(Name = "Prep")]
+    Prep = 1 << 30, // 1073741824
+
+    Debug = 1 << 31, // 2147483648
 
     All = Breakfast | Lunch | Dinner | Sides | Snacks | Dessert | Prep
 }
