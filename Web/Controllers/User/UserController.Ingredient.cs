@@ -16,13 +16,13 @@ public partial class UserController
     [Route("ingredient/add")]
     public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergy> allergens)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        context.Add(new Ingredient()
+        _context.Add(new Ingredient()
         {
             User = user,
             Name = name,
@@ -31,7 +31,7 @@ public partial class UserController
             Allergens = allergens.Aggregate(Allergy.None, (curr, next) => curr | next),
         });
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
         return RedirectToAction(nameof(Edit), new { email, token });
@@ -41,19 +41,19 @@ public partial class UserController
     [Route("ingredient/remove")]
     public async Task<IActionResult> RemoveIngredient(string email, string token, [FromForm] int ingredientId)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.Ingredients
+        await _context.Ingredients
             // The user has control of this footnote and is not a built-in footnote.
             .Where(f => f.UserId == user.Id)
             .Where(f => f.Id == ingredientId)
             .ExecuteDeleteAsync();
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
         return RedirectToAction(nameof(Edit), new { email, token });
@@ -64,13 +64,13 @@ public partial class UserController
     [Route("{ingredientId}/ignore-ingredient", Order = 2)]
     public async Task<IActionResult> IgnoreIngredient(string email, string token, int ingredientId)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userProgression = await context.UserIngredients
+        var userProgression = await _context.UserIngredients
             .Where(ue => ue.UserId == user.Id)
             .FirstOrDefaultAsync(ue => ue.IngredientId == ingredientId);
 
@@ -81,7 +81,7 @@ public partial class UserController
         }
 
         userProgression.Ignore = !userProgression.Ignore;
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, WasUpdated = true });
     }
@@ -92,13 +92,13 @@ public partial class UserController
     [HttpGet, Route("ingredient/{ingredientId}")]
     public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, bool? wasUpdated = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var ingredient = await context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+        var ingredient = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             .FirstOrDefaultAsync(r => r.Id == ingredientId);
@@ -119,7 +119,7 @@ public partial class UserController
     [Route("useringredient/post")]
     public async Task<IActionResult> ManageUserIngredientPost(string email, string token, int ingredientId, ManageIngredientViewModel viewModel)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -127,7 +127,7 @@ public partial class UserController
 
         if (ModelState.IsValid)
         {
-            var existingIngredient = await context.UserIngredients
+            var existingIngredient = await _context.UserIngredients
             .FirstOrDefaultAsync(r => r.IngredientId == ingredientId && r.UserId == user.Id);
             if (existingIngredient == null)
             {
@@ -136,7 +136,7 @@ public partial class UserController
 
             existingIngredient.SubstituteRecipeId = viewModel.UserIngredient.SubstituteRecipeId;
             existingIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
             return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, wasUpdated = true });
         }
@@ -148,13 +148,13 @@ public partial class UserController
     [Route("ingredient/post")]
     public async Task<IActionResult> ManageIngredientPost(string email, string token, Ingredient ingredient, List<Nutrient> nutrients)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var existingIngredient = await context.Ingredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
+        var existingIngredient = await _context.Ingredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
         if (existingIngredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -191,7 +191,7 @@ public partial class UserController
                 existingNutrient.Value = nutrient.Value;
                 if (nutrient.Value == 0)
                 {
-                    context.Nutrients.Remove(existingNutrient);
+                    _context.Nutrients.Remove(existingNutrient);
                 }
             }
             else if (nutrient.Value > 0)
@@ -206,7 +206,7 @@ public partial class UserController
             }
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         //TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
     }

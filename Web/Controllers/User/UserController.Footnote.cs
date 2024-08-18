@@ -14,13 +14,13 @@ public partial class UserController
     [Route("footnote/add")]
     public async Task<IActionResult> AddFootnote(string email, string token, [FromForm] string note, [FromForm] string? source)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        context.Add(new UserFootnote()
+        _context.Add(new UserFootnote()
         {
             User = user,
             Note = note,
@@ -28,7 +28,7 @@ public partial class UserController
             Type = FootnoteType.Custom
         });
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your footnotes have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
@@ -38,19 +38,19 @@ public partial class UserController
     [Route("footnote/remove")]
     public async Task<IActionResult> RemoveFootnote(string email, string token, [FromForm] int footnoteId)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.UserFootnotes
+        await _context.UserFootnotes
             // The user has control of this footnote and is not a built-in footnote.
             .Where(f => f.UserId == user.Id)
             .Where(f => f.Id == footnoteId)
             .ExecuteDeleteAsync();
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your footnotes have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });

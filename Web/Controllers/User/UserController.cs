@@ -13,8 +13,17 @@ namespace Web.Controllers.User;
 
 [Route($"u/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 1)]
 [Route($"user/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 2)]
-public partial class UserController(CoreContext context, UserRepo userRepo) : ViewController()
+public partial class UserController : ViewController
 {
+    private readonly CoreContext _context;
+    private readonly UserRepo _userRepo;
+
+    public UserController(CoreContext context, UserRepo userRepo)
+    {
+        _context = context;
+        _userRepo = userRepo;
+    }
+
     /// <summary>
     /// The name of the controller for routing purposes
     /// </summary>
@@ -42,7 +51,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("edit", Order = 3)]
     public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -65,7 +74,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
             return NotFound();
         }
 
-        viewModel.User = await userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
+        viewModel.User = await _userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (ModelState.IsValid)
         {
             try
@@ -78,8 +87,8 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 viewModel.User.MaxIngredients = viewModel.MaxIngredients;
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
 
-                context.UserFamilies.RemoveRange(context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
-                context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide)
+                _context.UserFamilies.RemoveRange(_context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
+                _context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide)
                     .Select(umm => new UserFamily()
                     {
                         UserId = umm.UserId,
@@ -89,8 +98,8 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                     })
                 );
 
-                context.UserServings.RemoveRange(context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
-                context.UserServings.AddRange(viewModel.UserServings
+                _context.UserServings.RemoveRange(_context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
+                _context.UserServings.AddRange(viewModel.UserServings
                     .Select(umm => new UserServing()
                     {
                         UserId = umm.UserId,
@@ -106,11 +115,11 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                     viewModel.User.NewsletterDisabledReason = viewModel.NewsletterEnabled ? null : UserDisabledByUserReason;
                 }
 
-                await context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!(context.Users?.Any(e => e.Email == viewModel.Email)).GetValueOrDefault())
+                if (!(_context.Users?.Any(e => e.Email == viewModel.Email)).GetValueOrDefault())
                 {
                     // User does not exist.
                     return NotFound();
@@ -136,7 +145,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("edit/advanced", Order = 2)]
     public async Task<IActionResult> EditAdvanced(string email, string token, AdvancedViewModel viewModel)
     {
-        var user = await userRepo.GetUser(email, token) ?? throw new ArgumentException(string.Empty, nameof(email));
+        var user = await _userRepo.GetUser(email, token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (ModelState.IsValid)
         {
             try
@@ -144,11 +153,11 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
                 user.FootnoteCountTop = viewModel.FootnoteCountTop;
                 user.FootnoteCountBottom = viewModel.FootnoteCountBottom;
 
-                await context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!(context.Users?.Any(e => e.Email == email)).GetValueOrDefault())
+                if (!(_context.Users?.Any(e => e.Email == email)).GetValueOrDefault())
                 {
                     // User does not exist
                     return NotFound();
@@ -176,7 +185,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("redirect", Order = 2)]
     public async Task<IActionResult> IAmStillHere(string email, string token, string? to = null, string? redirectTo = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -184,7 +193,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
 
         var userIsConfirmingAccount = !user.LastActive.HasValue;
         user.LastActive = DateOnly.FromDateTime(DateTime.UtcNow);
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         if (!string.IsNullOrWhiteSpace(to))
         {
@@ -210,7 +219,7 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("split/progress")]
     public async Task<IActionResult> AdvanceSplit(string email, string token)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -218,9 +227,9 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
 
         // Add a dummy newsletter to advance the workout split
         var newsletter = new Data.Entities.Newsletter.UserFeast(DateHelpers.Today, user);
-        context.UserFeasts.Add(newsletter);
+        _context.UserFeasts.Add(newsletter);
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your workout split has been advanced!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
@@ -232,19 +241,19 @@ public partial class UserController(CoreContext context, UserRepo userRepo) : Vi
     [Route("token/create")]
     public async Task<IActionResult> CreateToken(string email, string token)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
         // Delete old app tokens
-        await context.UserTokens
+        await _context.UserTokens
             .Where(ut => ut.UserId == user.Id)
             .Where(ut => ut.Expires == DateTime.MaxValue)
             .ExecuteDeleteAsync();
 
-        var newToken = await userRepo.AddUserToken(user, DateTime.MaxValue);
+        var newToken = await _userRepo.AddUserToken(user, DateTime.MaxValue);
         TempData[TempData_User.SuccessMessage] = $"Your new app token: {newToken}"; // For your security we wonʼt show this password again, so make sure youʼve got it right before you close this dialog.
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }

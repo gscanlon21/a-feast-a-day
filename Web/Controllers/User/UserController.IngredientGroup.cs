@@ -14,13 +14,13 @@ public partial class UserController
     [Route("muscle/reset")]
     public async Task<IActionResult> ResetMuscleRanges(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.UserNutrients
+        await _context.UserNutrients
             .Where(um => um.User.Id == user.Id)
             .Where(um => muscleGroups.HasFlag(um.Nutrient))
             .ExecuteDeleteAsync();
@@ -33,7 +33,7 @@ public partial class UserController
     [Route("muscle/start/decrease")]
     public async Task<IActionResult> DecreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -41,10 +41,10 @@ public partial class UserController
 
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserNutrients.Add(new UserNutrient()
+                _context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -59,12 +59,12 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserNutrients.Remove(userMuscleGroup);
+                    _context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your muscle target has been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
@@ -73,7 +73,7 @@ public partial class UserController
     [Route("muscle/start/increase")]
     public async Task<IActionResult> IncreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -81,10 +81,10 @@ public partial class UserController
 
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserNutrients.Add(new UserNutrient()
+                _context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -99,12 +99,12 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserNutrients.Remove(userMuscleGroup);
+                    _context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your muscle target has been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
@@ -113,7 +113,7 @@ public partial class UserController
     [Route("muscle/end/decrease")]
     public async Task<IActionResult> DecreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -121,10 +121,10 @@ public partial class UserController
 
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserNutrients.Add(new UserNutrient()
+                _context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -139,12 +139,12 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserNutrients.Remove(userMuscleGroup);
+                    _context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your muscle target has been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
@@ -153,7 +153,7 @@ public partial class UserController
     [Route("muscle/end/increase")]
     public async Task<IActionResult> IncreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -162,10 +162,10 @@ public partial class UserController
         var muscleTargetMax = UserNutrient.NutrientTargets.Values.MaxBy(v => v.End.Value).End.Value;
         foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
         {
-            var userMuscleGroup = await context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
+            var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
             {
-                context.UserNutrients.Add(new UserNutrient()
+                _context.UserNutrients.Add(new UserNutrient()
                 {
                     UserId = user.Id,
                     Nutrient = muscleGroup,
@@ -180,12 +180,12 @@ public partial class UserController
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userMuscleGroup.Range.Equals(UserNutrient.NutrientTargets[muscleGroup]))
                 {
-                    context.UserNutrients.Remove(userMuscleGroup);
+                    _context.UserNutrients.Remove(userMuscleGroup);
                 }
             }
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your muscle target has been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }

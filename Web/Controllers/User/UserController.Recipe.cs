@@ -16,19 +16,19 @@ public partial class UserController
     [Route("{recipeId}", Order = 1)]
     public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, bool? wasUpdated = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipe = await context.Recipes.AsNoTracking()
+        var recipe = await _context.Recipes.AsNoTracking()
             .Include(r => r.RecipeIngredients.OrderBy(ri => ri.Order))
             .Include(r => r.Instructions.OrderBy(i => i.Order))
             .FirstOrDefaultAsync(r => r.Id == recipeId);
 
         if (recipe == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
-        var hasUserRecipe = await context.UserRecipes.AnyAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
+        var hasUserRecipe = await _context.UserRecipes.AnyAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
         return View(new UserManageRecipeViewModel()
         {
             User = user,
@@ -42,7 +42,7 @@ public partial class UserController
     [HttpPost, Route("recipe/upsert")]
     public async Task<IActionResult> UpsertRecipe(string email, string token, UpsertRecipeModel recipe)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -53,7 +53,7 @@ public partial class UserController
             if (ModelState.IsValid)
             {
                 // Adding recipe.
-                context.Add(new Data.Entities.Recipe.Recipe()
+                _context.Add(new Data.Entities.Recipe.Recipe()
                 {
                     User = user,
                     Name = recipe.Name,
@@ -70,7 +70,7 @@ public partial class UserController
                     RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList()
                 });
 
-                await context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
                 return RedirectToAction(nameof(Edit), new { email, token });
             }
@@ -82,7 +82,7 @@ public partial class UserController
             if (ModelState.IsValid)
             {
                 // Editing recipe.
-                var existingRecipe = await context.Recipes
+                var existingRecipe = await _context.Recipes
                     .Include(r => r.Instructions)
                     .Include(r => r.RecipeIngredients)
                     .FirstOrDefaultAsync(r => r.Id == recipe.Id);
@@ -104,7 +104,7 @@ public partial class UserController
                 existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
                 existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
 
-                await context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
                 return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId = recipe.Id, wasUpdated = true });
             }
@@ -116,19 +116,19 @@ public partial class UserController
     [HttpPost, Route("recipe/remove")]
     public async Task<IActionResult> RemoveRecipe(string email, string token, [FromForm] int recipeId)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await context.Recipes
+        await _context.Recipes
             // The user has control of this footnote and is not a built-in footnote.
             .Where(f => f.UserId == user.Id)
             .Where(f => f.Id == recipeId)
             .ExecuteDeleteAsync();
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
@@ -139,13 +139,13 @@ public partial class UserController
     [Route("{recipeId}/ignore-recipe", Order = 2)]
     public async Task<IActionResult> IgnoreRecipe(string email, string token, int recipeId)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userProgression = await context.UserRecipes
+        var userProgression = await _context.UserRecipes
             .Where(ue => ue.UserId == user.Id)
             .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);
 
@@ -156,7 +156,7 @@ public partial class UserController
         }
 
         userProgression.Ignore = !userProgression.Ignore;
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
     }
@@ -166,13 +166,13 @@ public partial class UserController
     [Route("{recipeId}/refresh-recipe", Order = 2)]
     public async Task<IActionResult> RefreshRecipe(string email, string token, int recipeId)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userProgression = await context.UserRecipes
+        var userProgression = await _context.UserRecipes
             .Where(ue => ue.UserId == user.Id)
             .FirstOrDefaultAsync(ue => ue.RecipeId == recipeId);
 
@@ -184,7 +184,7 @@ public partial class UserController
 
         userProgression.RefreshAfter = null;
         userProgression.LastSeen = userProgression.LastSeen > DateHelpers.Today ? DateHelpers.Today : userProgression.LastSeen;
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
     }
@@ -196,13 +196,13 @@ public partial class UserController
     {
         if (ModelState.IsValid)
         {
-            var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+            var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
             if (user == null)
             {
                 return NotFound();
             }
 
-            var userRecipe = await context.UserRecipes
+            var userRecipe = await _context.UserRecipes
                 .Include(p => p.Recipe)
                 .FirstAsync(p => p.UserId == user.Id && p.RecipeId == recipeId);
 
@@ -217,7 +217,7 @@ public partial class UserController
             userRecipe.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
             userRecipe.Notes = user.IsDemoUser ? null : viewModel.Notes;
 
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
         }
 
