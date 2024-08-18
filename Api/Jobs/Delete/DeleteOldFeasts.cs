@@ -12,7 +12,7 @@ public class DeleteOldFeasts(ILogger<DeleteOldFeasts> logger, CoreContext coreCo
         try
         {
             await coreContext.UserFeasts.IgnoreQueryFilters()
-                .Where(u => u.Date < DateHelpers.Today.AddMonths(-1 * UserConsts.DeleteLogsAfterXMonths))
+                .Where(u => u.Date < DateHelpers.Today.AddMonths(-1 * UserConsts.DeleteFeastsAfterXMonths))
                 .ExecuteDeleteAsync();
         }
         catch (Exception e)

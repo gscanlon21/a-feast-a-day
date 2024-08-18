@@ -92,5 +92,5 @@ public class UserConsts
     /// <summary>
     /// How many months until the user's newsletter logs are deleted.
     /// </summary>
-    public const int DeleteLogsAfterXMonths = 12;
+    public const int DeleteFeastsAfterXMonths = 12;
 }
