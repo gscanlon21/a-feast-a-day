@@ -65,6 +65,7 @@ namespace Data.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
                     Allergens = table.Column<long>(type: "bigint", nullable: false),
+                    Category = table.Column<int>(type: "integer", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
                     GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
                     GramsPerCup = table.Column<double>(type: "double precision", nullable: false),
@@ -95,6 +96,7 @@ namespace Data.Migrations
                     PrepTime = table.Column<int>(type: "integer", nullable: false),
                     CookTime = table.Column<int>(type: "integer", nullable: false),
                     Servings = table.Column<int>(type: "integer", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
                     AdjustableServings = table.Column<bool>(type: "boolean", nullable: false),
                     Equipment = table.Column<int>(type: "integer", nullable: false),
                     Section = table.Column<int>(type: "integer", nullable: false),
@@ -170,7 +172,8 @@ namespace Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    Date = table.Column<DateOnly>(type: "date", nullable: false)
+                    Date = table.Column<DateOnly>(type: "date", nullable: false),
+                    Logs = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -333,8 +336,8 @@ namespace Data.Migrations
                     QuantityNumerator = table.Column<int>(type: "integer", nullable: false),
                     QuantityDenominator = table.Column<int>(type: "integer", nullable: false),
                     Order = table.Column<int>(type: "integer", nullable: false),
-                    Measure = table.Column<int>(type: "integer", nullable: false),
                     Optional = table.Column<bool>(type: "boolean", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
                     Attributes = table.Column<string>(type: "text", nullable: true),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     DisabledReason = table.Column<string>(type: "text", nullable: true)

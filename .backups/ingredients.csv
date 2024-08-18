@@ -112,7 +112,7 @@
 112	\N	Taco Seasoning	\N	\N	f	0	240	100	-infinity	0	240	0
 113	\N	Hamburger Buns	\N	\N	f	0	28	28	-infinity	0	240	0
 114	\N	Pork Fillet (Tenderloin)	\N	\N	f	0	240	100	-infinity	6	240	0
-115	\N	Dr. Pepper	\N	\N	f	0	240	100	-infinity	6	240	0
+115	\N	Dr. Pepper	https://www.eatthismuch.com/calories/dr-pepper,3105	\N	f	0	368	491	2024-08-17	0	246	5
 116	\N	Barbecue Sauce	\N	\N	f	0	240	100	-infinity	6	240	0
 117	\N	Garlic Texas Toast	https://www.eatthismuch.com/nutrition/garlic-texas-toast,3321895	\N	f	4	40	40	2024-07-02	0	80	0
 118	\N	Pizza Sauce	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -281,7 +281,7 @@
 286	\N	Penne Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,1581502/	\N	f	4	85	85	2024-06-10	6	85	0
 287	\N	Penne Pasta, GF	https://www.eatthismuch.com/food/nutrition/penne-pasta,101928/	\N	f	0	85	56	2024-06-10	6	85	0
 288	\N	Long Grain Rice	https://www.eatthismuch.com/food/nutrition/white-rice,4814/	\N	f	0	200	200	-infinity	6	240	0
-289	\N	Short Grain Rice	https://www.eatthismuch.com/food/nutrition/white-rice,4814/	\N	f	0	200	200	-infinity	6	240	0
+289	\N	White Rice, Short Grain	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
 290	\N	Ham Steak	https://www.eatthismuch.com/food/nutrition/sliced-ham,905/	\N	f	0	28	28	-infinity	0	240	0
 291	\N	Sharp Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	3	112	28	-infinity	6	112	0
 292	\N	Shredded Sharp Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	3	112	28	-infinity	6	112	0
@@ -423,7 +423,7 @@
 460	\N	Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	7
 461	\N	Pine Nuts	\N	\N	f	0	240	100	2024-06-12	6	240	0
 462	\N	Melon	\N	\N	f	0	240	100	-infinity	6	240	0
-463	\N	Grapes	\N	\N	f	0	240	100	-infinity	6	240	0
+463	\N	Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
 464	\N	Seedless White Grapes	\N	\N	f	0	240	100	-infinity	6	240	0
 465	\N	Grape Juice	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	0
 466	\N	White Grape Juice	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	0
@@ -435,4 +435,14 @@
 472	\N	Slices of Brioche Bread	\N	\N	f	4	24	24	-infinity	0	48	0
 473	\N	Dill	\N	\N	f	0	240	100	-infinity	6	240	0
 474	\N	Cider Vinegar	\N	\N	f	0	240	100	-infinity	6	240	0
-475	\N	White Wine Vinegar | Cider Vinegar	\N	\N	f	0	240	100	-infinity	6	240	0
+475	\N	White Wine Vinegar | Cider Vinegar	https://www.eatthismuch.com/calories/white-wine-vinegar,27797	\N	f	0	240	15	2024-08-18	6	240	3
+477	\N	Skim Milk	https://www.eatthismuch.com/food/nutrition/skim-milk,4070520/	\N	f	0	240	240	-infinity	6	240	0
+478	\N	Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
+479	\N	Red Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
+480	\N	Seedless Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
+481	\N	Seedless Red Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
+482	\N	White Grapes	\N	\N	f	0	240	100	-infinity	6	240	0
+483	\N	Seeded White Grapes	\N	\N	f	0	240	100	-infinity	6	240	0
+484	\N	Seeded Red Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
+485	\N	Seeded Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
+486	\N	Short Grain Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
