@@ -1,4 +1,5 @@
-﻿using Core.Dtos.Ingredient;
+﻿using Core.Code.Helpers;
+using Core.Dtos.Ingredient;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
@@ -12,7 +13,7 @@ public class NewsletterDto
     /// </summary>
     public readonly int FootnoteCount = 2;
 
-    public DateOnly Today { get; init; } = DateOnly.FromDateTime(DateTime.UtcNow);
+    public DateOnly Today { get; init; } = DateHelpers.Today;
 
     public required UserNewsletterDto User { get; init; }
     public required UserFeastDto UserFeast { get; init; }

@@ -20,7 +20,7 @@ public class NextFeastViewComponent(CoreContext context, UserRepo userRepo) : Vi
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
-        var nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateOnly.FromDateTime(DateTime.UtcNow) : DateOnly.FromDateTime(DateTime.UtcNow).AddDays(1);
+        var nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateHelpers.Today : DateHelpers.Today.AddDays(1);
         // Next send date is a rest day and user is not the debug user, next send date is the day after.
         while ((user.SendDay != nextSendDate.DayOfWeek && !user.Features.HasFlag(Features.Debug))
             // User was sent a newsletter for the next send date, next send date is the day after.

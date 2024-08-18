@@ -36,13 +36,11 @@ public class User : IUser
 
         Email = email.Trim();
         AcceptedTerms = acceptedTerms;
-
+        CreatedDate = DateHelpers.Today;
         SendDay = UserConsts.SendDayDefault;
         SendHour = UserConsts.SendHourDefault;
         Verbosity = UserConsts.VerbosityDefault;
         FootnoteType = UserConsts.FootnotesDefault;
-
-        CreatedDate = DateOnly.FromDateTime(DateTime.UtcNow);
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

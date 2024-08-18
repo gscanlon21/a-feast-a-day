@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Core.Code.Helpers;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace Core.Dtos.Newsletter;
@@ -21,7 +22,7 @@ public class UserEmailDto
     /// UTC date the email was created.
     /// </summary>
     [Required]
-    public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
+    public DateOnly Date { get; set; } = DateHelpers.Today;
 
     /// <summary>
     /// UTC datetime the email should send after.
