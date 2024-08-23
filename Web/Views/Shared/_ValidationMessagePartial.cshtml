@@ -4,21 +4,21 @@
 {
     <div class="alert alert-danger alert-dismissible mb-1" role="alert">
         <span>@(TempData[TempData_User.FailureMessage] ?? ValidationMessagePartialModel.DefaultFailureMessage)</span>
-        <button type="button" class="btn-close" data-dismiss=".alert" aria-label="Close"></button>
+        <button type="button" class="btn-close allow-demo" data-dismiss=".alert" aria-label="Close"></button>
     </div>
 }
 else if (TempData[TempData_User.WarningMessage] != null)
 {
     <div class="alert alert-warning alert-dismissible mb-1" role="alert">
         <span>@TempData[TempData_User.WarningMessage]</span>
-        <button type="button" class="btn-close" data-dismiss=".alert" aria-label="Close"></button>
+        <button type="button" class="btn-close allow-demo" data-dismiss=".alert" aria-label="Close"></button>
     </div>
 }
 else if (Model.WasUpdated == true || TempData[TempData_User.SuccessMessage] != null || TempData[TempData_User.SuccessMessage2] != null)
 {
     <div class="alert alert-success alert-dismissible mb-1" role="alert">
         <span>@(TempData[TempData_User.SuccessMessage2] ?? TempData[TempData_User.SuccessMessage] ?? ValidationMessagePartialModel.DefaultSuccessMessage)</span>
-        <button type="button" class="btn-close" data-dismiss=".alert" aria-label="Close"></button>
+        <button type="button" class="btn-close allow-demo" data-dismiss=".alert" aria-label="Close"></button>
         @* Don't persist the success message or scroll position after going back *@
         @if (Model.GoBackOnSave && TempData[TempData_User.SuccessMessage2] == null)
         {
