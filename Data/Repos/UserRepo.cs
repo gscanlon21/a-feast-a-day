@@ -132,8 +132,8 @@ public class UserRepo
         return (await _context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
             .Where(n => n.Date < user.StartOfWeekOffset)
-            // Only select 1 workout per day, the most recent.
-            .GroupBy(n => n.Date)
+            // Group by the week so there's only one feast returned per week.
+            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
             .Select(g => new
             {
                 g.Key,
@@ -199,7 +199,8 @@ public class UserRepo
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
             // Look at newsletters only that are within the last X weeks.
             .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            .GroupBy(n => n.Date)
+            // Group by the week so there's only one feast returned per week.
+            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
             .Select(g => new
             {
                 g.Key,
@@ -270,7 +271,8 @@ public class UserRepo
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
             // Look at newsletters only that are within the last X weeks.
             .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            .GroupBy(n => n.Date)
+            // Group by the week so there's only one feast returned per week.
+            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
             .Select(g => new
             {
                 g.Key,
@@ -365,7 +367,8 @@ public class UserRepo
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
             // Look at newsletters only that are within the last X weeks.
             .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            .GroupBy(n => n.Date)
+            // Group by the week so there's only one feast returned per week.
+            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
             .Select(g => new
             {
                 g.Key,
@@ -422,7 +425,8 @@ public class UserRepo
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
             // Look at newsletters only that are within the last X weeks.
             .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            .GroupBy(n => n.Date)
+            // Group by the week so there's only one feast returned per week.
+            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
             .Select(g => new
             {
                 g.Key,
