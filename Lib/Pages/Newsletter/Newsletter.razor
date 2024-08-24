@@ -23,7 +23,9 @@ else if (Model == null)
 else
 {
     var isDebugWorkout = Model.User.Features.HasFlag(Features.Debug);
-    <Lib.Pages.Shared.Newsletter._Preview Model='@($"Feasts")' />
+    var recipeNames = string.Join(", ", Model.Recipes.GroupBy(e => e.Recipe).Select(g => g.Key.Name));
+
+    <Lib.Pages.Shared.Newsletter._Preview Model='@($"{recipeNames}")' />
 
     <div style="margin-bottom:1rem;">
         <h6 style="margin-block:0;"><a target="_blank" href="@DH.NewsletterLink(Model.User, Model.Today)">@Model.Today.ToLongDateString()</a></h6>
