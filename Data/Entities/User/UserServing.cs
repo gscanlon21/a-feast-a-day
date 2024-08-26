@@ -10,10 +10,24 @@ namespace Data.Entities.User;
 [Table("user_serving")]
 public class UserServing
 {
-    public Section Section { get; init; }
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
+    public UserServing() { }
+
+    public UserServing(Section section)
+    {
+        Section = section;
+    }
+
+    public UserServing(User user, Section section) : this(section)
+    {
+        // Don't set User, so that EF Core doesn't add/update User.
+        UserId = user.Id;
+    }
+
+    public Section Section { get; private init; }
 
     [ForeignKey(nameof(Entities.User.User.Id))]
-    public int UserId { get; init; }
+    public int UserId { get; private init; }
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserServings))]
     public virtual User User { get; private init; } = null!;

@@ -88,27 +88,20 @@ public partial class UserController : ViewController
                 viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
 
                 _context.UserFamilies.RemoveRange(_context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
-                _context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide)
-                    .Select(umm => new UserFamily()
-                    {
-                        UserId = umm.UserId,
-                        Person = umm.Person,
-                        CaloriesPerDay = umm.CaloriesPerDay,
-                        Weight = umm.Weight
-                    })
-                );
+                _context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide).Select(umm => new UserFamily(viewModel.User)
+                {
+                    Person = umm.Person,
+                    CaloriesPerDay = umm.CaloriesPerDay,
+                    Weight = umm.Weight
+                }));
 
                 _context.UserServings.RemoveRange(_context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
-                _context.UserServings.AddRange(viewModel.UserServings
-                    .Select(umm => new UserServing()
-                    {
-                        UserId = umm.UserId,
-                        Count = umm.Count,
-                        AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
-                        AtLeastXNutrientsPerRecipe = umm.AtLeastXNutrientsPerRecipe,
-                        Section = umm.Section
-                    })
-                );
+                _context.UserServings.AddRange(viewModel.UserServings.Select(umm => new UserServing(viewModel.User, umm.Section)
+                {
+                    Count = umm.Count,
+                    AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
+                    AtLeastXNutrientsPerRecipe = umm.AtLeastXNutrientsPerRecipe,
+                }));
 
                 if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
                 {

@@ -54,7 +54,8 @@ public class IndexController(CoreContext context, UserRepo userRepo, CaptchaServ
             foreach (var section in UserServing.DefaultServings.Keys)
             {
                 // These records are required.
-                newUser.UserServings.Add(new UserServing()
+                // newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
+                newUser.UserServings.Add(new UserServing(section)
                 {
                     Count = UserServing.DefaultServings[section],
                     AtLeastXServingsPerRecipe = UserConsts.AtLeastXServingsPerRecipeDefault,

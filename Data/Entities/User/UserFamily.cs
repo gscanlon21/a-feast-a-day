@@ -20,6 +20,15 @@ public class UserFamily
         public const int WeightMax = 150;
     }
 
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
+    public UserFamily() { }
+
+    public UserFamily(User user)
+    {
+        // Don't set User, so that EF Core doesn't add/update User.
+        UserId = user.Id;
+    }
+
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
@@ -32,7 +41,7 @@ public class UserFamily
     public int CaloriesPerDay { get; init; } = Consts.CaloriesPerDayDefault;
 
     [ForeignKey(nameof(Entities.User.User.Id))]
-    public int UserId { get; init; }
+    public int UserId { get; private init; }
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFamilies))]
     public virtual User User { get; private init; } = null!;
