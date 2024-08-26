@@ -46,7 +46,7 @@
             }
             <div class="form-group mb-3">
                 <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
-                    <summary class=""><b class="">Edit @Html.DisplayNameFor(_ => Model.UserServings)</b></summary>
+                    <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserServings)</b></summary>
 
                     <div class="mt-1 ps-3">
                         @for (var i = 0; i < Model.UserServings.Count; i++)
@@ -54,7 +54,7 @@
                             <input type="hidden" asp-for="UserServings[i].UserId" />
                             <input type="hidden" asp-for="UserServings[i].Section" />
                             <div class="mb-3">
-                                <div class=""><b>@Model.UserServings[i].Section.GetDisplayName322()</b></div>
+                                <div><b>@Model.UserServings[i].Section.GetDisplayName322()</b></div>
 
                                 <div class="mb-1 form-group">
                                     <label asp-for="UserServings[i].Count" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].Count)</label>
@@ -127,7 +127,7 @@
 
             <div class="form-group mb-3">
                 <details class="mb-3" @((Model.WasUpdated == false || Model.UserFamilies.Count(f => f.Person != Person.None) == 0) ? "open='open'" : "")>
-                    <summary class=""><b class="">Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
+                    <summary><b>Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
 
                     <div class="mt-2 ps-3">
                         @for (int id = 0; id < Model.UserFamilies.Count; id++)
