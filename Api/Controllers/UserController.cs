@@ -91,7 +91,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     /// EXTERNAL. Get the user's weekly allergens.
     /// </summary>
     [HttpGet("Allergens")]
-    public async Task<IActionResult> GetAllergens(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int weeks = 1, bool includeToday = true)
+    public async Task<IActionResult> GetAllergens(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int weeks = 1, bool includeToday = false)
     {
         var user = await userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)

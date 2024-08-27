@@ -2,6 +2,9 @@
 
 namespace Core.Models.User;
 
+/// <summary>
+/// Keep this in sync with ADiaryADay's Allergy enum.
+/// </summary>
 [Flags]
 public enum Allergy : long
 {
@@ -166,6 +169,11 @@ public enum Allergy : long
 
     /// <summary>
     /// Sulfites are chemical compounds that contain a sulfur ion.
+    /// 
+    /// https://www.pacificcollege.edu/news/blog/2019/08/07/sulfa-sulfite-sulfate-and-sulfur-true-allergy-cross-allergy-or-no-allergy
+    /// While some individuals may be allergic to the action of sulfonamide antimicrobials and sulfites, 
+    /// they do not have true allergy to sulfur itself. True allergy to sulfur is virtually impossible, 
+    /// as sulfur is present in all living tissues and humans cannot survive without it.
     /// </summary>
     [Display(Name = "Sulfites")]
     Sulfites = 1 << 22, // 4194304
