@@ -58,7 +58,7 @@
 
                 @if (Verbosity.HasFlag(Verbosity.Notes))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;">@Model.Recipe.Notes</div>
+                    <div style="margin-block:.5em;font-size:x-small;word-break:break-word;">@Model.Recipe.Notes</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.Debug))
