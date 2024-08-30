@@ -1,4 +1,5 @@
-﻿using Core.Models.Recipe;
+﻿using Core.Consts;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data;
 using Data.Entities.Ingredient;
@@ -31,7 +32,7 @@ public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) :
             User = user
         };
 
-        while (recipe.RecipeIngredients.Count < 16)
+        while (recipe.RecipeIngredients.Count < RecipeConsts.MaxIngredients)
         {
             recipe.RecipeIngredients.Add(new RecipeIngredient
             {
@@ -39,7 +40,7 @@ public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) :
             });
         }
 
-        while (recipe.Instructions.Count < 16)
+        while (recipe.Instructions.Count < RecipeConsts.MaxInstructions)
         {
             recipe.Instructions.Add(new RecipeInstruction
             {
