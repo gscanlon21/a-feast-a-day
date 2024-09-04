@@ -1,4 +1,5 @@
 ﻿using Core.Code.Attributes;
+using Core.Models.Nutrients.SubNutrients;
 using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
@@ -178,6 +179,7 @@ public enum Nutrients : long
     [Display(Name = "Provitamin A Carotenoids", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
     ProvitaminACarotenoids = AlphaCarotene | BetaCarotene, // 98304
 
+    [SubNutrients<Carotenoids>]
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
     [Display(Name = "Carotenoids", GroupName = "Vitamins")]

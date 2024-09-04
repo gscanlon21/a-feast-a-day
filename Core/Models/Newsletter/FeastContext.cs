@@ -1,5 +1,4 @@
 ﻿using Core.Dtos.User;
-using Core.Models.User;
 
 namespace Core.Models.Newsletter;
 
@@ -12,7 +11,7 @@ public class FeastContext
     /// <summary>
     /// The user's average percent daily volume for each nutrient.
     /// </summary>
-    public required IDictionary<Nutrients, double?>? WeeklyNutrientsRDA { get; init; }
-    public required IDictionary<Nutrients, double?>? WeeklyNutrientsTUL { get; init; }
+    public required IDictionary<User.Nutrients, double?>? WeeklyNutrientsRDA { get; init; }
+    public required IDictionary<User.Nutrients, double?>? WeeklyNutrientsTUL { get; init; }
     public required double WeeklyNutrientsWeeks { get; init; }
 }
