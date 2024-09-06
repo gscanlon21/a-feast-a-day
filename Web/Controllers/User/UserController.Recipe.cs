@@ -12,8 +12,7 @@ public partial class UserController
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
-    [HttpGet]
-    [Route("{recipeId}", Order = 1)]
+    [HttpGet, Route("{recipeId}")]
     public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, bool? wasUpdated = null)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
@@ -29,7 +28,7 @@ public partial class UserController
 
         if (recipe == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
         var hasUserRecipe = await _context.UserRecipes.AnyAsync(r => r.UserId == user.Id && r.RecipeId == recipeId);
-        return View(new UserManageRecipeViewModel()
+        return View(nameof(ManageRecipe), new UserManageRecipeViewModel()
         {
             User = user,
             WasUpdated = wasUpdated,
