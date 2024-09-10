@@ -13,21 +13,22 @@ namespace Web.Components.User;
 
 
 /// <summary>
-/// Renders an alert box summary of when the user's next deload week will occur.
+/// Renders a list of the user's custom ingredients.
 /// </summary>
 public class IngredientsViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
 {
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "Ingredients";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
-        // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
+        // Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
         var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
         userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
 
+        // FIXME: Slow when the user has lots of ingredients.
         var userIngredients = await context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
