@@ -159,8 +159,7 @@ public class UserRepo
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
-        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: includeToday);
-        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(user, weeks, includeToday: includeToday);
+        var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: includeToday);
 
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
@@ -169,19 +168,13 @@ public class UserRepo
             return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
         });
 
-        return (weeks: strengthWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
+        return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
         {
             // If there is no RDA or TUL.
             if (familyNutrientServings[n] <= 0) { return null; }
 
-            if (weeklyNutrientVolumeFromRecipeIngredients[n].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[n].HasValue)
-            {
-                return rawValues ? familyNutrientServings[n] - (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault())
-                    : (weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault()) / familyNutrientServings[n] * 100;
-            }
-
-            return rawValues ? familyNutrientServings[n] - weeklyNutrientVolumeFromRecipeIngredients[n]
-                : weeklyNutrientVolumeFromRecipeIngredients[n] / familyNutrientServings[n] * 100;
+            return rawValues ? familyNutrientServings[n] - weeklyNutrientVolume[n]
+                : weeklyNutrientVolume[n] / familyNutrientServings[n] * 100;
         }));
     }
 
@@ -190,8 +183,8 @@ public class UserRepo
         var weeklyFeasts = await _context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
-                .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
+                .ThenInclude(r => r.UserFeastRecipeIngredients)
+                    .ThenInclude(r => r.RecipeIngredient)
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
@@ -205,14 +198,8 @@ public class UserRepo
             {
                 g.Key,
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+                UserFeastRecipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes.ToList()
             }).ToListAsync();
-
-        var userIngredients = await _context.UserIngredients
-           .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i!.Nutrients)
-           .Where(i => i.UserId == user.Id)
-           .ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
@@ -224,15 +211,13 @@ public class UserRepo
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
                 var monthlyMuscles = weeklyFeasts
-                    .SelectMany(feast => feast.Recipes
-                        .SelectMany(recipe => recipe.Recipe.RecipeIngredients
-                            .SelectMany(recipeIngredient =>
+                    .SelectMany(feast => feast.UserFeastRecipes
+                        .SelectMany(ufr => ufr.UserFeastRecipeIngredients
+                            .SelectMany(ufri =>
                             {
-                                var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                                var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
-                                return substitutedIngredient?.Nutrients.Select(nutrient =>
+                                return ufri.RecipeIngredient.Ingredient.Nutrients.Select(nutrient =>
                                 {
-                                    var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
+                                    var servingsOfIngredientUsed = ufri.RecipeIngredient.NumberOfServings(ufri.RecipeIngredient.Ingredient, ufr.Scale);
                                     var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
                                     var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
                                     return new
@@ -255,79 +240,6 @@ public class UserRepo
         return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
     }
 
-    private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredientRecipes(User user, int weeks, bool includeToday = false)
-    {
-        var weeklyFeasts = await _context.UserFeasts
-            .AsNoTracking().TagWithCallSite()
-            .Include(f => f.UserFeastRecipes)
-                .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
-                        .ThenInclude(r => r.IngredientRecipe)
-                            .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
-                                .ThenInclude(r => r.Ingredient)
-                                    .ThenInclude(r => r.Nutrients)
-            .Where(n => n.UserId == user.Id)
-            // Include this week's data or filter out this week's data.
-            .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
-            // Look at newsletters only that are within the last X weeks.
-            .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            // Group by the week so there's only one feast returned per week.
-            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
-            .Select(g => new
-            {
-                g.Key,
-                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
-            }).ToListAsync();
-
-        var userIngredients = await _context.UserIngredients
-           .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i!.Nutrients)
-           .Where(i => i.UserId == user.Id)
-           .ToListAsync();
-
-        // .Max/.Min throw exceptions when the collection is empty.
-        if (weeklyFeasts.Count != 0)
-        {
-            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
-            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
-            var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
-            // User must have more than one week of data before we return anything.
-            if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
-            {
-                var monthlyMuscles = weeklyFeasts
-                    .SelectMany(feast => feast.Recipes
-                        .SelectMany(recipe => recipe.Recipe.RecipeIngredients.SelectMany(ri => ri.IngredientRecipe.RecipeIngredients)
-                            .SelectMany(recipeIngredient =>
-                            {
-                                var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                                var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
-                                return substitutedIngredient?.Nutrients.Select(nutrient =>
-                                {
-                                    var servingsOfIngredientUsed = recipeIngredient.NumberOfServings(substitutedIngredient, recipe.Scale);
-                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
-                                    return new
-                                    {
-                                        Nutrient = nutrient.Nutrients,
-                                        GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe
-                                    };
-                                }) ?? [];
-                            })
-                        )
-                    ).ToList();
-
-                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m =>
-                {
-                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
-                }));
-            }
-        }
-
-        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
-    }
-
-
     /// <summary>
     /// Get the user's average percent daily value for each nutrient.
     /// </summary>
@@ -339,18 +251,8 @@ public class UserRepo
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
-        var (strengthWeeks, weeklyNutrientVolumeFromRecipeIngredients) = await GetWeeklyAllergensFromRecipeIngredients(user, weeks, includeToday: includeToday);
-        var (_, weeklyNutrientVolumeFromRecipeIngredientRecipes) = await GetWeeklyAllergensFromRecipeIngredientRecipes(user, weeks, includeToday: includeToday);
-
-        return (weeks: strengthWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(n => n, n =>
-        {
-            if (weeklyNutrientVolumeFromRecipeIngredients[n].HasValue && weeklyNutrientVolumeFromRecipeIngredientRecipes[n].HasValue)
-            {
-                return weeklyNutrientVolumeFromRecipeIngredients[n].GetValueOrDefault() + weeklyNutrientVolumeFromRecipeIngredientRecipes[n].GetValueOrDefault();
-            }
-
-            return weeklyNutrientVolumeFromRecipeIngredients[n];
-        }));
+        var (actualWeeks, weeklyAllergenVolume) = await GetWeeklyAllergensFromRecipeIngredients(user, weeks, includeToday: includeToday);
+        return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(n => n, n => weeklyAllergenVolume[n]));
     }
 
     private async Task<(double weeks, IDictionary<Allergy, double?> volume)> GetWeeklyAllergensFromRecipeIngredients(User user, int weeks, bool includeToday = false)
@@ -358,8 +260,8 @@ public class UserRepo
         var weeklyFeasts = await _context.UserFeasts
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
-                .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
+                .ThenInclude(r => r.UserFeastRecipeIngredients)
+                    .ThenInclude(r => r.RecipeIngredient)
                         .ThenInclude(r => r.Ingredient)
                             .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
@@ -373,7 +275,7 @@ public class UserRepo
             {
                 g.Key,
                 // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+                UserFeastRecipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
             }).ToListAsync();
 
         var userIngredients = await _context.UserIngredients
@@ -389,72 +291,9 @@ public class UserRepo
             var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
             var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
             var monthlyMuscles = weeklyFeasts
-                .SelectMany(feast => feast.Recipes
-                    .SelectMany(recipe => recipe.Recipe.RecipeIngredients
-                        .Select(recipeIngredient =>
-                        {
-                            var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                            var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
-                            return substitutedIngredient?.Allergens ?? Allergy.None;
-                        })
-                    )
-                ).ToList();
-
-            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(m => m, m =>
-            {
-                return (double?)monthlyMuscles.Sum(mm => (m.HasFlag(mm) && mm != Allergy.None) ? 1 : 0) / actualWeeks;
-            }));
-        }
-
-        return (weeks: 0, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(m => m, m => (double?)null));
-    }
-
-    private async Task<(double weeks, IDictionary<Allergy, double?> volume)> GetWeeklyAllergensFromRecipeIngredientRecipes(User user, int weeks, bool includeToday = false)
-    {
-        var weeklyFeasts = await _context.UserFeasts
-            .AsNoTracking().TagWithCallSite()
-            .Include(f => f.UserFeastRecipes)
-                .ThenInclude(r => r.Recipe)
-                    .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
-                        .ThenInclude(r => r.IngredientRecipe)
-                            .ThenInclude(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
-                                .ThenInclude(r => r.Ingredient)
-                                    .ThenInclude(r => r.Nutrients)
-            .Where(n => n.UserId == user.Id)
-            // Include this week's data or filter out this week's data.
-            .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
-            // Look at newsletters only that are within the last X weeks.
-            .Where(n => n.Date >= user.StartOfWeekOffset.AddDays(-7 * weeks))
-            // Group by the week so there's only one feast returned per week.
-            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
-            .Select(g => new
-            {
-                g.Key,
-                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                Recipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
-            }).ToListAsync();
-
-        var userIngredients = await _context.UserIngredients
-           .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i!.Nutrients)
-           .Where(i => i.UserId == user.Id)
-           .ToListAsync();
-
-        // .Max/.Min throw exceptions when the collection is empty.
-        if (weeklyFeasts.Count != 0)
-        {
-            // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
-            var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
-            var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
-            var monthlyMuscles = weeklyFeasts
-                .SelectMany(feast => feast.Recipes
-                    .SelectMany(recipe => recipe.Recipe.RecipeIngredients.SelectMany(ri => ri.IngredientRecipe.RecipeIngredients)
-                        .Select(recipeIngredient =>
-                        {
-                            var userIngredient = userIngredients.FirstOrDefault(ui => ui.IngredientId == recipeIngredient.IngredientId);
-                            var substitutedIngredient = userIngredient?.SubstituteIngredient ?? recipeIngredient.Ingredient;
-                            return substitutedIngredient?.Allergens ?? Allergy.None;
-                        })
+                .SelectMany(feast => feast.UserFeastRecipes
+                    .SelectMany(ufr => ufr.UserFeastRecipeIngredients
+                        .Select(ufri => ufri.RecipeIngredient.Ingredient.Allergens)
                     )
                 ).ToList();
 

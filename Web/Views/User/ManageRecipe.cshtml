@@ -16,11 +16,11 @@
 </div>
 
 <div class="alert alert-secondary">
-    <div class="row gy-2">
-        @* User must have created the recipe to be able to edit it. *@
-        @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
-        {
-            if (Model.HasUserRecipe)
+    @* User must have created the recipe to be able to edit it. *@
+    @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
+    {
+        <div class="row gy-3">
+            @if (Model.HasUserRecipe)
             {
                 <div class="col-lg-6">
                     @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
@@ -32,9 +32,11 @@
                 <h6 class="mb-1">Edit Recipe</h6>
                 @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe })
             </div>
-        }
-        else
-        {
+        </div>
+    }
+    else
+    {
+        <div class="row gy-2">
             <div class="col-lg-6">
                 @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
             </div>
@@ -42,8 +44,8 @@
             <div class="col-lg-6">
                 @await Component.InvokeAsync(ManageIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
             </div>
-        }
-    </div>
+        </div>
+    }
 </div>
 
 @section Scripts {

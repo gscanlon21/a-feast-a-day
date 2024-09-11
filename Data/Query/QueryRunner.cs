@@ -150,7 +150,7 @@ public class QueryRunner(Section section)
                 var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
 
                 // Swap or filter out optional ingredients that have allergens or are ignored
-                // and filter out recipes containing non-optional ingredients that have allergens or are ignored.
+                // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
                 foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
                     if (recipeIngredient.Ingredient != null)
@@ -356,7 +356,7 @@ public class QueryRunner(Section section)
     }
 
     /// <summary>
-    /// Get the alternative ingredients for all of the ingredients, ignored ignored alternative ingredients.
+    /// Get the alternative ingredients for all of the ingredients, ignoring ignored alternative ingredients.
     /// </summary>
     private async Task<IDictionary<int, List<Ingredient>>> GetAlternativeIngredientsForIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {

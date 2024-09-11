@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240911150612_AddUserFeastRecipeIngredient")]
+    partial class AddUserFeastRecipeIngredient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -258,7 +261,10 @@ namespace Data.Migrations
 
                     b.HasIndex("UserFeastId");
 
-                    b.ToTable("user_feast_recipe");
+                    b.ToTable("user_feast_recipe", t =>
+                        {
+                            t.HasComment("A day's workout routine");
+                        });
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
@@ -269,19 +275,25 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("RecipeIngredientId")
+                    b.Property<int>("IngredientId")
                         .HasColumnType("integer");
+
+                    b.Property<double>("Quantity")
+                        .HasColumnType("double precision");
 
                     b.Property<int>("UserFeastRecipeId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RecipeIngredientId");
+                    b.HasIndex("IngredientId");
 
                     b.HasIndex("UserFeastRecipeId");
 
-                    b.ToTable("user_feast_recipe_ingredient");
+                    b.ToTable("user_feast_recipe_ingredient", t =>
+                        {
+                            t.HasComment("A day's workout routine");
+                        });
                 });
 
             modelBuilder.Entity("Data.Entities.Recipe.Recipe", b =>
@@ -772,9 +784,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Recipe.RecipeIngredient", "RecipeIngredient")
+                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
                         .WithMany("UserFeastRecipeIngredients")
-                        .HasForeignKey("RecipeIngredientId")
+                        .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -784,7 +796,7 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("RecipeIngredient");
+                    b.Navigation("Ingredient");
 
                     b.Navigation("UserFeastRecipe");
                 });
@@ -945,6 +957,8 @@ namespace Data.Migrations
 
                     b.Navigation("RecipeIngredients");
 
+                    b.Navigation("UserFeastRecipeIngredients");
+
                     b.Navigation("UserIngredients");
 
                     b.Navigation("UserSubstituteIngredients");
@@ -973,11 +987,6 @@ namespace Data.Migrations
                     b.Navigation("UserRecipes");
 
                     b.Navigation("UserSubstituteRecipes");
-                });
-
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
-                {
-                    b.Navigation("UserFeastRecipeIngredients");
                 });
 
             modelBuilder.Entity("Data.Entities.User.User", b =>

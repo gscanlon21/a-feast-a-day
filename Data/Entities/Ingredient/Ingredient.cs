@@ -97,7 +97,6 @@ public class Ingredient
     public virtual ICollection<UserIngredient> UserSubstituteIngredients { get; private init; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is Ingredient other
         && other.Id == Id;
 

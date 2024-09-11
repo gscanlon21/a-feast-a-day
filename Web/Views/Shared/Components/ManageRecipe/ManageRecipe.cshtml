@@ -4,7 +4,7 @@
 @using Core.Consts
 
 <h6 class="mb-1">Recipe</h6>
-<div class="alert alert-light shadow">
+<div class="alert alert-light shadow mb-0">
     <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreRecipe)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
 
