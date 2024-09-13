@@ -139,7 +139,7 @@
         <div class="form-group mb-3">
             <label asp-for="Recipe.EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Equipment)</label>
             <select asp-for="Recipe.EquipmentBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"
-                    asp-items="@(EnumExtensions.GetSingleValues32<Equipment>().AsSelectListItems32())">
+                    asp-items="@(EnumExtensions.GetNotNoneValues32<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.GroupText))">
             </select>
             <span asp-validation-for="Recipe.EquipmentBinder" class="text-danger"></span>
             <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Equipment)</div>

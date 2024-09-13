@@ -66,18 +66,18 @@ public static class Filters
     /// <summary>
     ///     Filters exercises to whether they use certain equipment.
     /// </summary>
-    public static IQueryable<T> FilterEquipmentIds<T>(IQueryable<T> query, Equipment? equipments) where T : IRecipeCombo
+    public static IQueryable<T> FilterEquipment<T>(IQueryable<T> query, Equipment? equipment) where T : IRecipeCombo
     {
-        if (equipments.HasValue)
+        if (equipment.HasValue)
         {
-            if (equipments == Equipment.None)
+            if (equipment == Equipment.None)
             {
                 query = query.Where(i => i.Recipe.Equipment == Equipment.None);
             }
             else
             {
-                // Has any flag
-                query = query.Where(i => (i.Recipe.Equipment & equipments) != 0);
+                var allEquipment = equipment.Value.WithOptionalEquipment();
+                query = query.Where(i => allEquipment.HasFlag(i.Recipe.Equipment));
             }
         }
 

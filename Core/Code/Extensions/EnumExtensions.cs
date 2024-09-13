@@ -84,7 +84,7 @@ public static class EnumExtensions
     }
 
     /// <summary>
-    /// Returns enum values where the value has only 1 bit set
+    /// Returns enum values where the value has only 1 bit set.
     /// </summary>
     public static T[] GetSingleValues32<T>() where T : struct, Enum
     {
@@ -92,26 +92,16 @@ public static class EnumExtensions
     }
 
     /// <summary>
-    /// Returns enum values where the value has only 1 bit set
+    /// Returns enum values where the value has only 1 or 2 bits set.
     /// </summary>
-    public static T[] GetSubValues32<T>(T value) where T : struct, Enum
+    public static T[] GetSingleOrDoubleValues32<T>() where T : struct, Enum
     {
-        return Enum.GetValues<T>()
-            .Where(e => e.PopCount() == 1)
-            .Where(e => value.HasFlag(e))
-            .ToArray();
+        List<int> bitList = [1, 2];
+        return Enum.GetValues<T>().Where(e => bitList.Contains(e.PopCount())).ToArray();
     }
 
     /// <summary>
-    /// Returns enum values where the value has only 1 bit set
-    /// </summary>
-    public static T[] GetMultiValues32<T>() where T : struct, Enum
-    {
-        return Enum.GetValues<T>().Where(e => e.PopCount() > 1).ToArray();
-    }
-
-    /// <summary>
-    /// Returns enum values where the value has 1 or more bits set
+    /// Returns enum values where the value has only 1 bit set.
     /// </summary>
     public static T[] GetSingleValuesExcludingAny32<T>(T excludes) where T : struct, Enum
     {
@@ -123,7 +113,26 @@ public static class EnumExtensions
     }
 
     /// <summary>
-    /// Returns enum values where the value has 1 or more bits set
+    /// Returns enum values where the value has more than 1 bit set.
+    /// </summary>
+    public static T[] GetMultiValues32<T>() where T : struct, Enum
+    {
+        return Enum.GetValues<T>().Where(e => e.PopCount() > 1).ToArray();
+    }
+
+    /// <summary>
+    /// Returns enum values where the value has only 1 bit set.
+    /// </summary>
+    public static T[] GetSubValues32<T>(T value) where T : struct, Enum
+    {
+        return Enum.GetValues<T>()
+            .Where(e => e.PopCount() == 1)
+            .Where(e => value.HasFlag(e))
+            .ToArray();
+    }
+
+    /// <summary>
+    /// Returns enum values where the value has 1 or more bits set.
     /// </summary>
     public static T[] GetNotNoneValues32<T>() where T : struct, Enum
     {
@@ -131,7 +140,7 @@ public static class EnumExtensions
     }
 
     /// <summary>
-    /// Returns enum values where the value has 1 or more bits set
+    /// Returns enum values where the value has 1 or more bits set.
     /// </summary>
     public static T[] GetValuesExcluding32<T>(params T[] excludes) where T : struct, Enum
     {

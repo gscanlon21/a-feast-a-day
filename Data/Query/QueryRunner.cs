@@ -111,9 +111,9 @@ public class QueryRunner(Section section)
         var filteredQuery = CreateFilteredRecipesQuery(context);
 
         filteredQuery = Filters.FilterSection(filteredQuery, section);
+        filteredQuery = Filters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
         filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Select(r => r.Key).ToList());
         filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (curr2, n2) => curr2 | n2), include: true);
-        filteredQuery = Filters.FilterEquipmentIds(filteredQuery, EquipmentOptions.Equipment);
 
         var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();
 
