@@ -5,7 +5,7 @@
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg	0
 23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	0	scalloped-potatoes-ham.jpg	0
 24	Fried Cabbage and Egg Noodles	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	\N	\N	6	15	5	4	t	0	cabbage-noodles.jpg	0
-25	Slow Cooker Chicken Tacos	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	4	360	10	8	t	0	slow-cooker-ckicken.jpg	0
+25	Slow Cooker Chicken	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	0	360	10	8	t	32	slow-cooker-ckicken.jpg	0
 26	Roasted Broccoli	Roasted broccoli is easy to make and so much more flavorsome than boiled. My favorite part is the roasted sliced stem pieces.	\N	\N	8	20	5	1	t	2	roasted-broccoli.jpg	0
 27	Garlic Toast Pizzas	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	\N	\N	6	10	5	2	t	2	\N	0
 28	Sauteed Green Beans	\N	\N	\N	8	7	0	2	t	0	sauteed-green-beans.jpg	0
@@ -31,7 +31,7 @@
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	0	avocado-cakes.jpg	0
 49	Easy Mini Bagel Pizzas	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	\N	\N	6	10	10	2	t	0	\N	0
 50	Simple 4-Ingredient Egg Salad with Mayo	https://www.lifeisbutadish.com/momos-egg-salad/	\N	\N	1	5	10	1	t	0	egg-salad.jpg	0
-51	Grilled Garlic Naan	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	\N	\N	8	5	5	2	t	512	grilled-garlic-naan.jpg	0
+51	Grilled Garlic Naan	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	\N	\N	8	5	5	2	t	90112	grilled-garlic-naan.jpg	0
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg	0
 53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	0	old-fashioned-oatmeal.jpg	0
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg	0
@@ -91,19 +91,19 @@
 116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	16	citrus-dressing.jpg	6
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	0	chicken-avocado-chop.jpg	0
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	0	green-mayo.jpg	7
-120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	4	\N	0
+120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	4	potato-salad.jpg	0
 121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can on pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	8	0	5	4	t	0	melon-pineapple-grape-cocktail.jpg	0
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	4	soft-boiled-egg.jpg	0
 123	Sweet and Sour Cucumber with Fresh Dill	This salad can be kept in the refrigerator for up to a week.	\N	\N	8	0	10	4	t	0	cucumber-dill.jpg	0
 124	Pan-Fried Chicken with Pesto	\N	\N	\N	4	18	2	4	t	4	pesto-chicken.jpg	0
-125	Pesto	\N	\N	\N	0	5	1	1	t	16	pesto.jpg	6
+125	Pesto	\N	\N	\N	0	5	1	1	t	34816	pesto.jpg	6
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	4	\N	0
 127	Roast Chicken Pitta Pockets	\N	\N	\N	6	2	13	6	t	0	\N	0
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	4	16	4	4	t	4	chicken-soy-sauce.jpg	0
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	0	honey-mustard-chicken.jpg	0
-130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	4	\N	0
+130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	4	lemon-grass-pork-burger.jpg	0
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	6	t	4	\N	0
-132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	\N	0
+132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	tandori-chicken-kebabs.jpg	0
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	4	stir-fried-chicken-basil-chilli.jpg	0
 134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0
 135	Easiest Baked Chicken Breast	https://iowagirleats.com/easiest-baked-chicken-breast/ . If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. I almost always use Ken's Zesty Italian salad dressing, but your favorite balsamic vinegar, lemon vinaigrette, or Asian-style dressing are all fine to use. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	4	10	0	1	t	0	baked-chicken-breast.jpg	0
@@ -128,3 +128,10 @@
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	2	3	2	2	t	4	\N	0
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	6	pancakes-pears.jpg	0
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	8	0	6	6	t	0	\N	0
+158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	0	\N	0
+159	Clementines with Star Anise	Tangerines or seedless oranges can be used instead of clementines.	\N	\N	8	12	6	6	t	4	\N	0
+160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	\N	\N	6	8	8	4	t	4	mexican-tacos.jpg	0
+161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	90112	\N	0
+162	Rhubarb and Ginger Trifles	\N	\N	\N	32	0	4	4	t	0	\N	0
+163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	32	12	8	12	t	2	\N	0
+164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	\N	0

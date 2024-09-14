@@ -5,7 +5,7 @@
 
 
 <div class="alert alert-light shadow mb-3" role="alert">
-    <form id="ingredient-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.ManageIngredientPost)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+    <form id="ingredient-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.UpsertIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
         <input asp-for="Ingredient.Id" type="hidden" class="form-control" />
 
         <div class="form-group mb-3">

@@ -130,7 +130,7 @@
         <div class="form-group mb-3">
             <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
             <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="6"
-                    asp-items="@(EnumExtensions.GetSingleValuesExcludingAny32<Section>(Section.Prep).AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value))">
+                    asp-items="@(EnumExtensions.GetSingleValuesExcludingAny32(Section.Prep).AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value))">
             </select>
             <span asp-validation-for="Recipe.SectionBinder" class="text-danger"></span>
             <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Section)</div>

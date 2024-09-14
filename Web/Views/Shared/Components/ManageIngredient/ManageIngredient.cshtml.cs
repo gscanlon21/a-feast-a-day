@@ -29,7 +29,7 @@ public class ManageIngredientViewModel : IValidatableObject
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
-        if (UserIngredient.SubstituteIngredientId.HasValue && UserIngredient.SubstituteRecipeId.HasValue)
+        if (UserIngredient?.SubstituteIngredientId.HasValue == true && UserIngredient?.SubstituteRecipeId.HasValue == true)
         {
             yield return new ValidationResult($"Both Substitute Ingredient and Substitute Recipe cannot have values.", [nameof(UserIngredient)]);
         }

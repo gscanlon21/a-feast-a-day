@@ -86,19 +86,22 @@ public class QueryBuilder
         return this;
     }
 
-    public QueryBuilder WithUser(UserDto user, bool ignoreIgnored = false)
+    public QueryBuilder WithUser(UserDto user, bool ignoreIgnored = false, bool ignoreMissingEquipment = false)
     {
         UserOptions = new UserOptions(user)
         {
             IgnoreIgnored = ignoreIgnored,
+            IgnoreMissingEquipment = ignoreMissingEquipment,
         };
 
         return this;
     }
 
-    public QueryBuilder WithUser(UserOptions userOptions, bool? ignoreIgnored = null)
+    public QueryBuilder WithUser(UserOptions userOptions, bool? ignoreIgnored = null, bool? ignoreMissingEquipment = null)
     {
         userOptions.IgnoreIgnored = ignoreIgnored ?? userOptions.IgnoreIgnored;
+        userOptions.IgnoreMissingEquipment = ignoreMissingEquipment ?? userOptions.IgnoreMissingEquipment;
+
         UserOptions = userOptions;
         return this;
     }

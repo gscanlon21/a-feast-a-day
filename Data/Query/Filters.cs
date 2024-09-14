@@ -15,14 +15,14 @@ public interface IRecipeCombo
 public static class Filters
 {
     /// <summary>
-    /// Make sure the exercise is for the correct workout type
+    /// Make sure the recipe is for the correct section.
     /// </summary>
     public static IQueryable<T> FilterSection<T>(IQueryable<T> query, Section? value) where T : IRecipeCombo
     {
-        // Debug should be able to see all exercises.
-        if (value.HasValue && value != Section.None && value != Section.Debug)
+        // Debug should be able to see all exercises. When querying for prep recipes, don't filter.
+        if (value.HasValue && value != Section.None && value != Section.Debug && value != Section.Prep)
         {
-            // Has any flag
+            // Has any flag.
             query = query.Where(vm => (vm.Recipe.Section & value.Value) != 0);
         }
 
@@ -30,7 +30,7 @@ public static class Filters
     }
 
     /// <summary>
-    /// Filter down to these specific exercises
+    /// Filter down to these specific exercises.
     /// </summary>
     public static IQueryable<T> FilterRecipes<T>(IQueryable<T> query, IList<int>? exerciseIds) where T : IRecipeCombo
     {

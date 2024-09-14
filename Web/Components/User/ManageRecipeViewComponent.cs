@@ -29,7 +29,7 @@ public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory
 
         if (userRecipe == null) { return Content(""); }
         var recipeDto = (await new QueryBuilder(Section.None)
-            .WithUser(user, ignoreIgnored: true)
+            .WithUser(user, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
                 x.AddRecipes([recipe]);
