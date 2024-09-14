@@ -197,8 +197,9 @@ public class UserRepo
             .Select(g => new
             {
                 g.Key,
-                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                UserFeastRecipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes.ToList()
+                // For the demo/test accounts. Multiple newsletters may be sent in one day,
+                // ... so order by the most recently created and select the first.
+                g.OrderByDescending(n => n.Id).First().UserFeastRecipes
             }).ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
@@ -213,6 +214,8 @@ public class UserRepo
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
+                            // Recipe ingredient recipes are logged separately, skip those.
+                            .Where(ufri => ufri.RecipeIngredient.IngredientId.HasValue)
                             .SelectMany(ufri =>
                             {
                                 return ufri.RecipeIngredient.Ingredient.Nutrients.Select(nutrient =>
@@ -274,8 +277,9 @@ public class UserRepo
             .Select(g => new
             {
                 g.Key,
-                // For the demo/test accounts. Multiple newsletters may be sent in one day, so order by the most recently created and select first.
-                UserFeastRecipes = g.OrderByDescending(n => n.Id).First().UserFeastRecipes
+                // For the demo/test accounts. Multiple newsletters may be sent in one day,
+                // ... so order by the most recently created and select the first.
+                g.OrderByDescending(n => n.Id).First().UserFeastRecipes
             }).ToListAsync();
 
         var userIngredients = await _context.UserIngredients
@@ -293,6 +297,8 @@ public class UserRepo
             var monthlyMuscles = weeklyFeasts
                 .SelectMany(feast => feast.UserFeastRecipes
                     .SelectMany(ufr => ufr.UserFeastRecipeIngredients
+                        // Recipe ingredient recipes are logged separately, skip those.
+                        .Where(ufri => ufri.RecipeIngredient.IngredientId.HasValue)
                         .Select(ufri => ufri.RecipeIngredient.Ingredient.Allergens)
                     )
                 ).ToList();
