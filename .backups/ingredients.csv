@@ -246,7 +246,7 @@
 251	\N	Mint Leaves	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	15	15	2024-06-12	0	100	0
 252	\N	Three Wishes Cinnamon Grain Free Cereal	https://www.eatthismuch.com/calories/grain-free-cereal-cinnamon,3131931	\N	f	0	245	35	-infinity	0	35	0
 253	\N	Cereal	https://www.eatthismuch.com/calories/honey-nut-cheerios,1026	\N	f	0	245	35	-infinity	0	35	0
-254	\N	Margarine	https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	1	14	14	-infinity	7	224	0
+254	\N	Salted Margarine	https://www.eatthismuch.com/calories/margarine,348	\N	t	0	113	14	2024-09-14	0	224	6
 255	\N	Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2024-07-28	0	130	0
 256	\N	Frigo String Cheese Stick	\N	\N	f	0	240	100	-infinity	0	240	0
 257	\N	String Cheese Stick	\N	\N	f	0	240	100	-infinity	0	240	0
@@ -335,7 +335,7 @@
 340	\N	Bourbon	\N	\N	f	0	240	100	-infinity	6	240	0
 341	\N	Ear of Sweet Corn	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2024-07-19	0	128	0
 342	\N	Passion Fruit	\N	\N	f	0	240	100	-infinity	6	240	0
-343	\N	White Wine, Sweet	\N	\N	f	0	240	100	-infinity	6	240	0
+343	\N	White Wine, Sweet	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	67108864	29.4	147	2024-09-14	9	235.2	5
 344	\N	White Wine, Dry	\N	\N	f	0	240	100	-infinity	6	240	0
 345	\N	Whipping Cream	\N	\N	f	0	240	100	-infinity	6	240	0
 346	\N	Oranges	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
@@ -492,3 +492,8 @@
 557	\N	Thai Fish Sauce	\N	\N	f	128	16	16	-infinity	7	256	3
 558	\N	Lean Ground Beef | Lean Ground Turkey	https://www.eatthismuch.com/nutrition/ground-beef,5416	\N	f	0	28	28	-infinity	4	240	0
 559	\N	Crumbled Queso Blanco | Crumbled Anjeado Cheese | Grated Chedder Cheese | Grated Monterey Jack Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	3	112	28	-infinity	6	112	6
+560	\N	Rhubarb Compote	\N	\N	f	0	240	100	-infinity	6	240	0
+561	\N	Gingernut Biscuits (Gingersnaps)	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+562	\N	Extra Thick Double (Heavy) Cream	https://www.eatthismuch.com/calories/heavy-cream,1743420	\N	f	3	15	15	2024-07-26	7	240	6
+563	\N	Unsalted Margarine	NO https://www.eatthismuch.com/calories/margarine,348	\N	t	0	113	14	2024-09-14	0	224	6
+564	\N	Margarine	https://www.eatthismuch.com/calories/margarine,348	\N	t	0	113	14	2024-09-14	0	224	6

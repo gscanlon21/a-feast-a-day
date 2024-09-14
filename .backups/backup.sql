@@ -730,6 +730,8 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7893	163	1	\N	\N	3	8	f
 7894	163	1984	\N	\N	3	0.4	f
 7895	163	62	\N	\N	3	13	f
+7953	343	2047	\N	\N	3	121	f
+7954	254	2047	\N	\N	3	100	f
 6843	6	68719476736	\N	\N	2	33	f
 6844	6	34359738368	\N	\N	2	316	f
 4391	180	4294967296	\N	\N	2	300	f
@@ -1971,7 +1973,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7952, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 7954, true);
 
 
 --
