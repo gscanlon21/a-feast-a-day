@@ -40,11 +40,11 @@ public class QueryRunner(Section section)
         public bool UserOwnsEquipment { get; } = queryResult.UserOwnsEquipment;
 
         public override int GetHashCode() => HashCode.Combine(Recipe.Id);
-
         public override bool Equals(object? obj) => obj is InProgressQueryResults other
             && other.Recipe.Id == Recipe.Id;
     }
 
+    [DebuggerDisplay("{Ingredient}: {UserIngredient}")]
     private class IngredientUserIngredient
     {
         public Ingredient Ingredient { get; init; } = null!;
@@ -367,17 +367,15 @@ public class QueryRunner(Section section)
         };
 
         var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-        return (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id))
-            .Select(i => new
+        return (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id)).Select(i => new
+        {
+            IngredientId = i.Id,
+            AlternativeIngredients = i.Alternatives.Select(a => new IngredientUserIngredient()
             {
-                IngredientId = i.Id,
-                AlternativeIngredients = i.Alternatives.Select(a => new IngredientUserIngredient()
-                {
-                    Ingredient = a.AlternativeIngredient,
-                    UserIngredient = i.UserIngredients.First(ei => ei.UserId == UserOptions.Id)
-                })
+                Ingredient = a.AlternativeIngredient,
+                UserIngredient = a.AlternativeIngredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id)
             })
-            .ToListAsync()).ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Where(noIgnoredOrAllergicIngredients).Select(ai => ai.Ingredient).ToList());
+        }).ToListAsync()).ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Where(noIgnoredOrAllergicIngredients).Select(ai => ai.Ingredient).ToList());
     }
 
     /// <summary>
