@@ -24,9 +24,8 @@ public class RecipeOptions : IOptions
 
     public void AddPastRecipes(ICollection<UserFeastRecipe> userFeastRecipes)
     {
-        RecipeIds = userFeastRecipes
-            .Where(nv => _section == nv.Section || _section == Section.None)
-            .ToDictionary(nv => nv.RecipeId, nv => nv.Scale);
+        RecipeIds = userFeastRecipes.Where(ufr => _section == ufr.Section || _section == Section.None)
+            .GroupBy(ufr => ufr.RecipeId).ToDictionary(g => g.Key, g => g.Sum(ufr => ufr.Scale));
     }
 
     /// <summary>
