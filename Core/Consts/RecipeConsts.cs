@@ -10,6 +10,6 @@ public class RecipeConsts
     public const int ServingsDefault = 1;
     public const int ServingsMax = 12;
 
-    public const int MaxIngredients = 20;
-    public const int MaxInstructions = 10;
+    public const int MaxIngredients = 16;
+    public const int MaxInstructions = 8;
 }
