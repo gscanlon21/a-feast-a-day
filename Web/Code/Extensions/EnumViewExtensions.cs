@@ -34,7 +34,7 @@ public static class EnumViewExtensions
                     .ThenBy(v => v.GetSingleDisplayName());
                 break;
             case EnumOrdering.Order:
-                // Careful about nulls
+                // Careful about nulls.
                 orderedValues = orderedValues
                     .ThenBy(v => v.GetSingleDisplayName(DisplayType.Order).Length)
                     .ThenBy(v => v.GetSingleDisplayName(DisplayType.Order));

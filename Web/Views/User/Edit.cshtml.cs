@@ -12,7 +12,7 @@ namespace Web.Views.User;
 
 
 /// <summary>
-/// For CRUD actions
+/// For CRUD actions.
 /// </summary>
 public class UserEditViewModel
 {
@@ -22,17 +22,20 @@ public class UserEditViewModel
     public UserEditViewModel(Data.Entities.User.User user, string token)
     {
         User = user;
+        Token = token;
         Email = user.Email;
         SendDay = user.SendDay;
-        NewsletterEnabled = user.NewsletterEnabled;
-        NewsletterDisabledReason = user.NewsletterDisabledReason;
+        SendHour = user.SendHour;
         Verbosity = user.Verbosity;
         FootnoteType = user.FootnoteType;
-        SendHour = user.SendHour;
-        Equipment = user.Equipment;
         MaxIngredients = user.MaxIngredients;
         ExcludeAllergens = user.ExcludeAllergens;
-        Token = token;
+        NewsletterEnabled = user.NewsletterEnabled;
+        NewsletterDisabledReason = user.NewsletterDisabledReason;
+        // In case a single equipment becomes a double, keep it checked.
+        Equipment = EnumExtensions.GetSingleOrDoubleValues32<Equipment>()
+            .Where(e => user.Equipment.HasAnyFlag32(e))
+            .Aggregate(user.Equipment, (c, n) => c | n);
     }
 
     [ValidateNever]
