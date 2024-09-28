@@ -24,7 +24,7 @@
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	\N	0
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	0	\N	0
 43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	egg-fried-rice.jpg	0
-44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	0	quinoa-pizza.jpg	0
+44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	167936	quinoa-pizza.jpg	0
 45	5-Ingredient Black Bean Soup	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	\N	\N	6	18	2	4	t	4	black-bean-soup.jpg	0
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	34816	basic-energy-balls.jpg	0
 47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	banana-ice-cream.jpg	0
@@ -38,7 +38,7 @@
 55	Oven Roasted Asparagus	\N	\N	\N	8	10	5	1	t	0	parmesan-roasted-asparagus.jpg	0
 56	Microwave Macaroni and Cheese in a Mug	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	\N	\N	6	5	5	1	t	0	mac-n-cheese-mug.jpg	0
 57	Flying Saucers	https://www.tasteofhome.com/recipes/flying-saucers/	\N	\N	14	5	5	4	t	0	\N	0
-58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	\N	0
+58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	fruity-peanut-butter-pitas.jpg	0
 59	Popcorn	\N	\N	\N	16	5	0	1	t	0	\N	0
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-and-salsa.jpg	0
 61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	8	pita-bowl-salad.jpg	0
@@ -72,9 +72,9 @@
 89	Homemade Crunchy Taco Hamburger Helper	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	\N	\N	4	15	5	5	t	4	taco-hamburger-helper.jpg	0
 90	Mini BBQ Cheddar Meatloaves	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	\N	\N	4	15	5	4	t	2	chedder-meatloaf.jpg	0
 91	Large Batch Homemade Taco Seasoning	https://iowagirleats.com/large-batch-homemade-taco-seasoning	\N	\N	0	0	5	1	t	0	taco-seasoning.jpg	0
-92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	6	5	5	2	t	4	chicken-lemon-garlic.jpg	0
+92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	6	5	5	2	t	0	chicken-lemon-garlic.jpg	0
 93	Pork Kebab with BBQ Sauce	\N	\N	\N	6	10	5	4	t	4	bbq-pork-kebab.jpg	0
-94	Balsamic Vinaigrette	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	\N	\N	0	0	5	4	t	0	balsamic-vinaigrette.jpg	0
+94	Balsamic Vinaigrette	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	\N	\N	0	0	5	1	t	0	balsamic-vinaigrette.jpg	6
 95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	\N	\N	8	10	5	4	t	4	sweet-corn-bacon.jpg	0
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	4	t	0	fruit-skewers.jpg	0
 97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	0	quinoa-pizza.jpg	0
@@ -88,7 +88,7 @@
 113	Multigrain Pancake Batter	\N	\N	\N	1	10	5	6	t	4	\N	0
 114	Honey Dijon Mustard Dressing	\N	\N	\N	0	0	5	1	t	0	honey-mustard-dressing.jpg	6
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	0	honey-chicken-pecan-salad.jpg	0
-116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	16	citrus-dressing.jpg	6
+116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	34816	citrus-dressing.jpg	6
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	0	chicken-avocado-chop.jpg	0
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	0	green-mayo.jpg	7
 120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	4	potato-salad.jpg	0
@@ -107,7 +107,7 @@
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	4	stir-fried-chicken-basil-chilli.jpg	0
 134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0
 135	Easiest Baked Chicken Breast	https://iowagirleats.com/easiest-baked-chicken-breast/ . If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. I almost always use Ken's Zesty Italian salad dressing, but your favorite balsamic vinegar, lemon vinaigrette, or Asian-style dressing are all fine to use. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	4	10	0	1	t	0	baked-chicken-breast.jpg	0
-136	Easy Chicken Fried Rice	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	\N	\N	4	10	0	1	t	4	chicken-fried-rice.jpg	0
+136	Easy Chicken Fried Rice	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	\N	\N	4	10	0	1	t	0	chicken-fried-rice.jpg	0
 137	Meatballs	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	\N	\N	0	25	5	12	t	2	meatballs.jpg	0
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	\N	\N	4	10	7	6	t	4	chicken-vegetable-salad.jpg	0
 139	Crock Pot Salsa Chicken	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card - I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs — or a mixture of these and chicken breasts — to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	4	300	5	4	t	32	crock-pot-salsa-chicken.jpg	0
@@ -137,7 +137,10 @@
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	6	\N	0
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	4	crispy-cabbage.jpg	0
-168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	4	\N	0
+168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	\N	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	4	\N	0
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4	\N	0
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	4	\N	0
+172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	1	\N	0
+173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	90112	\N	0
+174	Pan-Fried Gammon with Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	0	\N	0
