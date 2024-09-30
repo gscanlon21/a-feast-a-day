@@ -7,7 +7,7 @@ using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
-using Web.Views.Shared.Components.Ignored;
+using Web.Views.Shared.Components.IgnoredRecipes;
 
 namespace Web.Components.User;
 
@@ -15,20 +15,31 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
 /// </summary>
-public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory) : ViewComponent
+public class IgnoredRecipesViewComponent : ViewComponent
 {
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
-    public const string Name = "Ignored";
+    public const string Name = "IgnoredRecipes";
+
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+
+    public IgnoredRecipesViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    {
+        _serviceScopeFactory = serviceScopeFactory;
+        _userRepo = userRepo;
+        _context = context;
+    }
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
         var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
-        userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
+        userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
 
-        var userRecipes = await context.UserRecipes
+        var userRecipes = await _context.UserRecipes
             .Where(r => r.UserId == user.Id)
             .Where(r => r.Ignore)
             .Select(r => r.Recipe)
@@ -42,9 +53,9 @@ public class IgnoredViewComponent(CoreContext context, UserRepo userRepo, IServi
                 x.AddRecipes(userRecipes);
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
 
-        return View("Ignored", new IgnoredViewModel()
+        return View("IgnoredRecipes", new IgnoredRecipesViewModel()
         {
             UserNewsletter = userNewsletter,
             IgnoredRecipes = ignoredRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),

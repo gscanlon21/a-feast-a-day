@@ -1,4 +1,5 @@
 ﻿@model Views.Shared.Components.ManageIngredient.ManageIngredientViewModel
+@using Lib.Pages.Shared.Ingredient
 @using System.Numerics
 @using Core.Models.Recipe
 @using Core.Consts
@@ -14,7 +15,7 @@
             <label for="Recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
             <div class="input-group">
                 <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@Model.Ingredient.Name</textarea>
-                <input type="submit" value="@(Model.UserIngredient.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
+                <input type="submit" value="@(Model.UserIngredient.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" />
             </div>
             <span asp-validation-for="Ingredient" class="text-danger"></span>
             <div id="Recipe-help" class="form-text">
@@ -56,4 +57,10 @@
     <component type="typeof(Microsoft.AspNetCore.Components.CascadingValue<Core.Dtos.User.UserNewsletterDto?>)" render-mode="Static" param-Value="null">
         <component type="typeof(Lib.Pages.Shared.Ingredient._Ingredient)" render-mode="Static" param-Model='Model.Ingredient' />
     </component>
+
+    <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.Ingredients' param-Title='new IngredientSection.Titles("Alternative Ingredients")' />
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" model='new ValidationScriptsPartialViewModel() { IsDemoUser = Model.User.IsDemoUser }' />
+}

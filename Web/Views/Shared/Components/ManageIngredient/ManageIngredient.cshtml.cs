@@ -1,5 +1,5 @@
 ﻿using Core.Dtos.Ingredient;
-using Core.Models.Newsletter;
+using Core.Dtos.User;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
@@ -19,13 +19,23 @@ public class ManageIngredientViewModel : IValidatableObject
     [ValidateNever, Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
     public required Data.Entities.User.UserIngredient UserIngredient { get; init; }
 
+    /// <summary>
+    /// Recipes that the user is able to select as an ingredient alternative.
+    /// </summary>
     [ValidateNever]
     public required IList<Data.Entities.Recipe.Recipe> Recipes { get; init; }
 
+    /// <summary>
+    /// The ingredient's alternative ingredients.
+    /// </summary>
     [ValidateNever]
-    public required IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; }
+    public required IList<IngredientDto> Ingredients { get; init; }
 
-    public Verbosity RecipeVerbosity => Verbosity.Images;
+    /// <summary>
+    /// Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
+    /// </summary>
+    [ValidateNever]
+    public required UserNewsletterDto UserNewsletter { get; init; }
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {

@@ -3,9 +3,9 @@ using Core.Dtos.User;
 using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.Views.Shared.Components.Ignored;
+namespace Web.Views.Shared.Components.IgnoredRecipes;
 
-public class IgnoredViewModel
+public class IgnoredRecipesViewModel
 {
     [Display(Name = "Ignored Recipes")]
     public required IList<NewsletterRecipeDto> IgnoredRecipes { get; init; }

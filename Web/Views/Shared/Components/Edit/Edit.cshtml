@@ -361,6 +361,7 @@
         @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })
         @await Component.InvokeAsync(IngredientsViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(IgnoredViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(IgnoredRecipesViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(IgnoredIngredientsViewComponent.Name, new { Model.User })
     </div>
 </div>
