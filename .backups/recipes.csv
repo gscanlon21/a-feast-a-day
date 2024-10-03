@@ -22,7 +22,7 @@
 39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	0	linguine-avocado-tomato-lime.jpg	0
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	\N	0
-42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	0	\N	0
+42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	0	baked-banana-porridge.jpg	0
 43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	egg-fried-rice.jpg	0
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	167936	quinoa-pizza.jpg	0
 45	5-Ingredient Black Bean Soup	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	\N	\N	6	18	2	4	t	4	black-bean-soup.jpg	0
@@ -39,7 +39,7 @@
 56	Microwave Macaroni and Cheese in a Mug	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	\N	\N	6	5	5	1	t	0	mac-n-cheese-mug.jpg	0
 57	Flying Saucers	https://www.tasteofhome.com/recipes/flying-saucers/	\N	\N	14	5	5	4	t	0	\N	0
 58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	fruity-peanut-butter-pitas.jpg	0
-59	Popcorn	\N	\N	\N	16	5	0	1	t	0	\N	0
+59	Popcorn	\N	\N	\N	16	5	0	1	t	0	popcorn.jpg	0
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-and-salsa.jpg	0
 61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	8	pita-bowl-salad.jpg	0
 62	Edamame & Veggie Rice Bowl	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	\N	\N	3	5	5	1	t	0	edamame-veggie-rice-bowl.jpg	0
@@ -127,15 +127,16 @@
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	0	potato-olive-salad.jpg	0
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	2	3	2	2	t	4	\N	0
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	6	pancakes-pears.jpg	0
+156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	2	\N	0
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	8	0	6	6	t	4	fruit-skewers.jpg	0
 158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	0	fruit-skewers.jpg	0
-159	Clementines with Star Anise	Tangerines or seedless oranges can be used instead of clementines.	\N	\N	8	12	6	6	t	4	\N	0
+159	Clementines with Star Anise	Tangerines or seedless oranges can be used instead of clementines.	\N	\N	8	12	6	6	t	4	clementines-star-anise.jpg	0
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	\N	\N	6	8	8	4	t	4	mexican-tacos.jpg	0
 161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	90112	\N	0
 162	Rhubarb and Ginger Trifles	\N	\N	\N	32	0	4	4	t	0	rhubarb-ginger-trifles.jpg	0
 163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	32	12	8	12	t	2	portuguese-custard-tarts.jpg	0
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0
-165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	6	\N	0
+165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	2	lemon-parmesan-capellini.jpg	0
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	4	crispy-cabbage.jpg	0
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	\N	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	4	\N	0
@@ -144,3 +145,10 @@
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	1	\N	0
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	90112	\N	0
 174	Pan-Fried Gammon with Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	0	\N	0
+175	Chocolate and Prune Refrigerator Bars	\N	\N	\N	32	0	5	12	t	0	\N	0
+176	Stewed Okra with Tomatoes	\N	\N	\N	8	25	2	4	t	524292	\N	0
+177	Stuffed Sweet Peppers	Use red or orange (bell) peppers if you prefer, or a combination of the two.	\N	\N	6	15	5	4	t	524292	\N	0
+178	Homemade Venison Sausages 	If you find yourself with more sausages than you need for one meal, freeze the surplus in an airtight container for no more than a month. Be sure to thaw the sausages completely before cooking.	\N	\N	0	12	5	3	t	0	\N	5
+180	Crock Pot Sausage and Peppers	https://iowagirleats.com/crock-pot-sausage-and-peppers	\N	\N	4	300	20	8	t	32	\N	0
+181	5 Ingredient Sloppy Joes	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	\N	\N	6	10	5	4	t	524292	\N	0
+182	Beef and Noodles	https://www.saltandlavender.com/easy-beef-and-noodles/	\N	\N	6	20	10	4	t	524292	\N	0
