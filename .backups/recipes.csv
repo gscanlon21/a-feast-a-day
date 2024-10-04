@@ -85,7 +85,7 @@
 102	Colcannon	\N	\N	\N	10	10	5	3	t	4	colcannon.jpg	0
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	4	\N	0
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	4	ham-gruyere-melt.jpg	0
-113	Multigrain Pancake Batter	\N	\N	\N	1	10	5	6	t	4	\N	0
+113	Multigrain Pancake Batter	\N	\N	\N	1	10	5	6	t	4	buttermilk-pancakes.jpg	0
 114	Honey Dijon Mustard Dressing	\N	\N	\N	0	0	5	1	t	0	honey-mustard-dressing.jpg	6
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	0	honey-chicken-pecan-salad.jpg	0
 116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	34816	citrus-dressing.jpg	6
@@ -122,7 +122,6 @@
 148	Muhammara	\N	\N	\N	0	0	8	4	t	2048	\N	0
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	8	15	8	2	t	4	irish-champ.jpg	0
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	4	\N	0
-151	Honey Mustard Chicken	Chicken thighs have a rich flavour, but if you want to cut down on fat, use four chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	0	\N	0
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	4	spaghetti-lemon.jpg	0
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	0	potato-olive-salad.jpg	0
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	2	3	2	2	t	4	\N	0
@@ -141,14 +140,17 @@
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	\N	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	4	\N	0
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4	\N	0
-171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	4	\N	0
-172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	1	\N	0
+171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	4	lemon-posset.jpg	0
+172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	1	chocolate-banana-fool.jpg	0
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	90112	\N	0
 174	Pan-Fried Gammon with Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	0	\N	0
 175	Chocolate and Prune Refrigerator Bars	\N	\N	\N	32	0	5	12	t	0	\N	0
 176	Stewed Okra with Tomatoes	\N	\N	\N	8	25	2	4	t	524292	\N	0
-177	Stuffed Sweet Peppers	Use red or orange (bell) peppers if you prefer, or a combination of the two.	\N	\N	6	15	5	4	t	524292	\N	0
+177	Stuffed Sweet Peppers	Use red or orange (bell) peppers if you prefer, or a combination of the two.	\N	\N	6	15	5	4	t	524292	stuffed-peppers.jpg	0
 178	Homemade Venison Sausages 	If you find yourself with more sausages than you need for one meal, freeze the surplus in an airtight container for no more than a month. Be sure to thaw the sausages completely before cooking.	\N	\N	0	12	5	3	t	0	\N	5
 180	Crock Pot Sausage and Peppers	https://iowagirleats.com/crock-pot-sausage-and-peppers	\N	\N	4	300	20	8	t	32	\N	0
-181	5 Ingredient Sloppy Joes	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	\N	\N	6	10	5	4	t	524292	\N	0
-182	Beef and Noodles	https://www.saltandlavender.com/easy-beef-and-noodles/	\N	\N	6	20	10	4	t	524292	\N	0
+181	5 Ingredient Sloppy Joes	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	\N	\N	6	10	5	4	t	524292	sloppy-joes.jpg	0
+182	Beef and Noodles	https://www.saltandlavender.com/easy-beef-and-noodles/	\N	\N	6	20	10	4	t	524292	beef-noodles.jpg	0
+184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	559108	\N	0
+185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	524292	\N	0
+186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	6	15	10	1	t	524292	\N	0

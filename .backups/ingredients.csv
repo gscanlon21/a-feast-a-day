@@ -8,23 +8,23 @@
 8	\N	Red Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
 9	\N	Avocados	https://www.eatthismuch.com/food/nutrition/avocados,1334/	\N	f	0	201	201	-infinity	0	240	1
 10	\N	Strawberries	\N	\N	f	0	240	100	-infinity	6	240	0
-11	\N	Bananas	https://www.eatthismuch.com/food/nutrition/bananas,2120235	\N	f	0	240	126	2024-06-12	0	240	0
+11	\N	Bananas	https://www.eatthismuch.com/calories/banana-1337	\N	f	0	118	118	2024-06-12	0	118	1
 12	\N	Limes	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	0	240	0
 13	\N	Cilantro (Coriander)	\N	\N	f	0	240	100	-infinity	6	240	0
 14	\N	Basil Leaves	https://www.eatthismuch.com/food/nutrition/basil,178	\N	f	0	2	2	-infinity	7	240	0
 15	\N	Yellow Potatoes	https://www.eatthismuch.com/food/nutrition/yellow-potato,528851/	\N	f	0	113	113	2024-06-16	0	113	0
 16	\N	Spinach	https://www.eatthismuch.com/food/nutrition/spinach,2170/	\N	f	0	30	30	2024-06-10	6	30	0
 17	\N	Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	0	123	123	-infinity	0	240	0
-18	\N	Breadcrumbs	\N	\N	f	4	240	100	-infinity	6	240	0
+18	\N	Breadcrumbs	https://www.eatthismuch.com/calories/bread-crumbs-4029	\N	f	4	108	108	2024-10-03	6	108	4
 19	\N	Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti,4874 - Enriched is most popular, so using that as default.	\N	f	4	28	28	2024-08-03	4	224	0
-20	\N	Quinoa	https://www.eatthismuch.com/food/nutrition/quinoa,4800	\N	f	0	170	170	2024-06-27	6	240	0
+20	\N	Quinoa	https://www.eatthismuch.com/food/nutrition/quinoa,4800	\N	f	0	170	170	2024-06-27	6	240	4
 21	\N	Wild Rice	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2024-08-09	6	160	0
 22	\N	Slices of Bread	https://www.eatthismuch.com/calories/loaf-bread,3303048	\N	f	4	34	34	2024-06-15	0	34	0
 23	\N	Tortillas, Flour	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	4	45	45	2024-06-16	0	240	0
 24	\N	Boneless Chicken Breast	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	112	112	2024-06-13	0	112	0
-25	\N	90% Lean Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5411	\N	f	0	28	28	-infinity	4	224	8
-26	\N	Sliced Ham	https://www.eatthismuch.com/food/nutrition/sliced-ham,905/	\N	f	0	28	28	-infinity	0	240	0
-27	\N	Slices of Turkey	https://www.eatthismuch.com/food/nutrition/deli-sliced-oven-roasted-turkey-breast,101465/	\N	f	0	13	51	2024-06-14	0	240	0
+25	\N	90% Lean Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5411	\N	f	0	28	28	2024-10-04	4	224	8
+26	\N	Sliced Ham	https://www.eatthismuch.com/food/nutrition/sliced-ham,905/	\N	f	0	28	28	-infinity	0	240	8
+27	\N	Slices of Turkey	https://www.eatthismuch.com/food/nutrition/deli-sliced-oven-roasted-turkey-breast,101465/	\N	f	0	13	51	2024-06-14	0	240	8
 28	\N	Eggs, Brown	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-06-18	0	240	0
 29	\N	Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	3	14	14	2024-08-20	7	224	6
 30	\N	Shredded Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	3	112	28	-infinity	6	112	6
@@ -41,7 +41,7 @@
 41	\N	Active Dry Yeast	https://www.eatthismuch.com/food/nutrition/yeast,4278/	\N	f	0	4	7	2024-08-25	8	192	4
 42	\N	Chocolate Chips	\N	\N	f	0	240	100	2024-06-09	6	240	0
 43	\N	Cocoa Powder	\N	\N	f	0	240	100	2024-06-21	6	240	0
-44	\N	Powdered Sugar	\N	\N	f	0	240	100	-infinity	6	240	0
+44	\N	Powdered Sugar	Missing minor nutrients. https://www.eatthismuch.com/calories/powdered-sugars-4645	\N	f	0	100	100	2024-10-05	6	100	4
 45	\N	9" Pie Crust	https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	0	194	194	2024-07-07	0	194	0
 46	\N	Pizza Crust	\N	\N	f	0	240	100	-infinity	6	240	0
 47	\N	Chicken Stock	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -86,7 +86,7 @@
 86	\N	Red Wine	\N	\N	f	0	240	100	-infinity	6	240	0
 87	\N	Crackers	https://www.eatthismuch.com/food/nutrition/ritz-crackers,4370/	\N	f	0	3.3	3.3	2024-06-10	0	50	0
 88	\N	Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	32	146	146	-infinity	6	146	0
-89	\N	Pecans	https://www.eatthismuch.com/food/nutrition/pecans,2676/	\N	f	16	99	99	-infinity	6	99	0
+89	\N	Pecans	https://www.eatthismuch.com/food/nutrition/pecans,2676/	\N	f	16	99	99	-infinity	6	99	4
 90	\N	Black Walnuts	https://www.eatthismuch.com/calories/walnuts-2684	\N	f	16	125	125	2024-10-02	6	125	4
 91	\N	Unsalted Tortilla Chips	https://www.eatthismuch.com/food/nutrition/tortilla-chips,5763/	\N	f	8192	26	26	2024-08-05	6	26	0
 92	\N	Cashew Nuts	\N	\N	f	0	240	100	2024-06-12	6	240	0
@@ -110,7 +110,7 @@
 110	\N	Cabbage	\N	\N	f	0	240	100	-infinity	6	240	0
 111	\N	Chicken Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436	\N	f	0	240	240	2024-06-28	6	240	0
 112	\N	Taco Seasoning	https://www.eatthismuch.com/calories/taco-seasoning,100484	\N	f	0	3	6	2024-08-29	8	144	4
-113	\N	Hamburger Buns	\N	\N	f	0	28	28	-infinity	0	240	0
+113	\N	Hamburger Buns	\N	\N	f	4	28	28	-infinity	0	240	0
 114	\N	Pork Fillet (Tenderloin)	\N	\N	f	0	240	100	-infinity	6	240	0
 115	\N	Dr. Pepper	https://www.eatthismuch.com/calories/dr-pepper,3105	\N	f	0	368	491	2024-08-17	0	246	5
 116	\N	Barbecue Sauce	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -127,10 +127,10 @@
 127	\N	Apple Sauce	\N	\N	f	0	240	100	-infinity	6	240	0
 129	\N	Frozen Meatballs	https://www.eatthismuch.com/calories/meatballs-frozen-italian-style,484657	\N	f	0	28.25	85	2024-08-16	4	226	0
 130	\N	Molasses	\N	\N	f	0	240	100	-infinity	6	240	0
-131	\N	Pinto Beans	\N	\N	f	0	240	100	-infinity	6	240	0
+131	\N	Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	3
 132	\N	Elbow Macaroni	\N	\N	f	4	240	100	-infinity	6	240	0
 133	\N	Evaporated Milk	\N	\N	f	0	240	100	-infinity	6	240	0
-134	\N	Cheese, Pepper Jack	\N	\N	f	1	14	14	-infinity	4	240	0
+134	\N	Slices of Pepper Jack Cheese	\N	\N	f	1	14	14	-infinity	4	240	0
 135	\N	Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	1	28	28	2024-06-09	0	224	0
 136	\N	Tortillas, Whole-Wheat	https://www.eatthismuch.com/calories/whole-wheat-tortillas,101208	\N	f	4	34	68	2024-08-14	0	68	4
 137	\N	Linguine	https://www.eatthismuch.com/calories/linguine,2413373	\N	f	4	240	100	2024-06-30	6	240	0
@@ -144,7 +144,7 @@
 146	\N	Slices of Whole Wheat Rye Bread	\N	\N	f	0	24	24	-infinity	0	48	0
 147	\N	Cherry Tomatoes	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	0	17	85	2024-08-07	0	170	0
 148	\N	Salad Greens	\N	\N	f	0	240	100	2024-06-09	6	240	0
-149	\N	Green Peas	\N	\N	f	0	240	100	-infinity	6	240	0
+149	\N	Fresh Green Peas	\N	\N	f	0	240	100	-infinity	6	240	0
 150	\N	Celery	\N	\N	f	0	240	100	2024-06-12	6	240	0
 151	\N	Coconut Cream	https://www.eatthismuch.com/calories/coconut-cream,2658	\N	f	0	240	240	2024-09-10	6	240	3
 152	\N	Dates	\N	\N	f	0	240	100	2024-06-15	6	240	0
@@ -230,8 +230,8 @@
 235	\N	Chinese Cooking Wine	\N	\N	f	0	240	100	-infinity	6	240	0
 236	\N	Sherry	https://www.eatthismuch.com/calories/sherry-765630	\N	f	0	28	28	2024-10-02	4	224	3
 237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2024-08-23	6	240	0
-238	\N	Sesame Seeds	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	64	216	13.6	2024-06-11	6	240	0
-239	\N	Bean Thread Noodles	\N	\N	f	0	240	100	-infinity	6	240	0
+238	\N	Sesame Seeds	https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	64	144	9	2024-06-11	6	144	4
+239	\N	Bean Thread Noodles	https://www.eatthismuch.com/calories/chinese-noodles-3579	\N	f	0	140	140	2024-10-04	6	140	4
 240	\N	Rice Noodles	https://www.eatthismuch.com/food/nutrition/rice-noodles,4886/	\N	f	0	28.35	28.35	2024-07-17	4	226.8	0
 241	\N	Beansprouts	https://www.eatthismuch.com/calories/bean-sprouts,125521	\N	f	0	100	100	2024-08-07	6	100	0
 242	\N	Mooli (Daikon Radish)	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -301,9 +301,9 @@
 306	\N	Head of Butter Lettuce | Head of Boston Bibb Lettuce	\N	\N	f	0	14	14	-infinity	0	50	0
 307	\N	Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	1
 308	\N	Toasted Sesame Oil	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	64	216	13.6	2024-06-11	6	240	0
-309	\N	Gold Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	-infinity	0	170	0
+309	\N	Gold Potatoes	https://www.eatthismuch.com/calories/gold-potatoes-1654114	\N	f	0	148	148	2024-10-05	0	148	1
 310	\N	Russet Potatoes	https://www.eatthismuch.com/food/nutrition/russet-potatoes,2092/	\N	f	0	213	369	2024-07-20	0	170	0
-311	\N	Purple Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	-infinity	0	170	0
+311	\N	Purple Potatoes	https://www.eatthismuch.com/calories/purple-potatoes-3336013	\N	f	0	37.67	113	2024-10-03	0	113	1
 312	\N	Mirin Rice WIne	https://www.eatthismuch.com/calories/mirin,1837647	\N	f	0	14	14	-infinity	7	224	0
 313	\N	Japanese Cooking Wine (Sake)	https://www.eatthismuch.com/calories/sake,5783	\N	f	0	29	29	2024-09-08	9	232	3
 314	\N	Citrus-Lime Vinaigrette	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -391,7 +391,7 @@
 396	\N	Small Rustic Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	4	40	40	2024-06-19	6	240	0
 397	\N	Black Olives	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	240	0
 398	\N	Black Olives, with Pits	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	240	0
-399	\N	Brioche Buns	https://www.eatthismuch.com/calories/brioche-buns-448797	\N	f	0	85	85	2024-09-27	0	85	4
+399	\N	Brioche Buns	https://www.eatthismuch.com/calories/brioche-buns-448797	\N	f	4	85	85	2024-09-27	0	85	4
 400	\N	Turkey Sausage	https://www.eatthismuch.com/calories/turkey-sausage,994	\N	f	0	28	28	2024-09-05	4	224	8
 401	\N	Sausages	https://www.eatthismuch.com/food/nutrition/italian-sausage,952/	\N	f	0	83	83	2024-07-23	0	100	0
 402	\N	Chorizo	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	2	28.35	28.35	2024-07-01	4	100	6
@@ -401,7 +401,7 @@
 406	\N	Deluxe Fruit and Nut Mix	\N	\N	f	0	240	100	2024-06-12	6	240	0
 407	\N	Fruit and Nut Mix	\N	\N	f	0	240	100	2024-06-12	6	240	0
 408	\N	Fruit Jam	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	0
-409	\N	Dark Chocolate (70%)	\N	\N	f	0	240	100	2024-06-09	6	240	0
+409	\N	Dark Chocolate (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	168	168	2024-06-09	6	168	4
 410	\N	Tahini	\N	\N	f	0	240	100	2024-06-09	6	240	0
 411	\N	Shortbread Cookies	\N	\N	f	0	240	100	2024-06-09	6	240	0
 412	\N	Good Espresso	\N	\N	t	0	240	100	-infinity	6	240	0
@@ -414,7 +414,7 @@
 419	\N	Canned Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	-infinity	6	240	0
 420	\N	Orange Juice	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 421	\N	Cornmeal	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2024-07-19	7	128	0
-422	\N	Flax Seeds	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	64	216	13.6	2024-06-11	6	240	0
+422	\N	Flax Seeds	https://www.eatthismuch.com/calories/flaxseed-2710	\N	f	0	168	168	2024-06-11	6	168	4
 423	\N	Half & Half	\N	\N	f	0	240	240	-infinity	6	240	0
 456	\N	Pickled Capers	https://www.eatthismuch.com/calories/capers-pickled,2884023	\N	f	0	5	5	2024-09-18	0	160	3
 457	\N	Low Sodium Ketchup	https://www.eatthismuch.com/calories/ketchup,5816	\N	t	0	240	240	2024-08-13	6	240	0
@@ -489,7 +489,7 @@
 554	\N	Sweet Dessert Wine	https://www.eatthismuch.com/calories/wine,3068	\N	f	67108864	29.43	103	2024-09-17	9	235.44	5
 555	\N	Taco Shells	\N	\N	f	0	4520	152	2024-08-26	0	152	1
 556	\N	Iceberg Lettuce	\N	\N	f	0	14	14	-infinity	0	50	0
-557	\N	Thai Fish Sauce	\N	\N	f	128	16	16	-infinity	7	256	3
+557	\N	Thai Fish Sauce	https://www.eatthismuch.com/calories/fish-sauce-747	\N	f	512	18	18	2024-10-06	7	288	3
 558	\N	Lean Ground Beef | Lean Ground Turkey	https://www.eatthismuch.com/nutrition/ground-beef,5416	\N	f	0	28	28	-infinity	4	240	0
 559	\N	Crumbled Queso Blanco | Crumbled Anjeado Cheese | Grated Chedder Cheese | Grated Monterey Jack Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	3	112	28	2024-09-17	6	112	6
 560	\N	Rhubarb Compote	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -501,7 +501,7 @@
 566	\N	Roast Pork	\N	\N	f	0	9	54	2024-09-04	0	227	8
 567	\N	Chedder Cheese | Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	1	28	28	2024-06-09	0	224	0
 568	\N	Ready-Made Puff Pastry	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
-569	\N	Ready-Made Custard	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+569	\N	Ready-Made Custard	https://www.eatthismuch.com/calories/fresh-custard-148019	\N	f	0	125	125	2024-08-26	6	125	6
 570	\N	Confectioners' Sugar	\N	\N	f	0	240	100	-infinity	6	240	0
 571	\N	Slices of American Cheese, unfortified	https://www.eatthismuch.com/calories/american-cheese,123	\N	f	3	21	28	2024-09-21	0	224	6
 572	\N	Slices of American Cheese	https://www.eatthismuch.com/calories/american-cheese,5748	\N	f	3	21	28	2024-09-21	0	224	6
@@ -522,3 +522,15 @@
 587	\N	Red Lentil Penne Pasta	https://www.eatthismuch.com/calories/penne-red-lentil-1772385	\N	f	0	28	56	2024-06-10	4	224	4
 588	\N	Dried Apricots	\N	\N	f	0	150	150	2024-09-25	0	150	1
 589	\N	Dried Peaches	https://www.eatthismuch.com/calories/peaches,1484	\N	f	0	150	150	2024-09-25	0	150	1
+590	\N	Chestnuts	https://www.eatthismuch.com/food/nutrition/water-chestnuts,155522/	\N	f	0	228	114	2024-06-12	6	228	0
+591	\N	Hamburger Buns, GF	\N	\N	f	0	28	28	-infinity	0	240	0
+592	\N	Black Olive Tapenade	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	240	0
+593	\N	Thai Red Curry Paste	\N	\N	f	128	16	16	-infinity	7	256	3
+594	\N	Butternut Squash	\N	\N	f	0	4520	152	2024-08-26	0	152	1
+595	\N	Mushrooms	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+596	\N	Kaffir Lime Leaves	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	0	240	0
+597	\N	Yellow Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
+598	\N	Green Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
+599	\N	Orange Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
+600	\N	Frozen Green Peas	\N	\N	f	0	240	100	-infinity	6	240	0
+601	\N	Cajun Seasoning	https://www.eatthismuch.com/calories/taco-seasoning,100484	\N	f	0	3	6	2024-08-29	8	144	4
