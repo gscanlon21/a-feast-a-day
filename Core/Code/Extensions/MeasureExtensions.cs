@@ -80,17 +80,18 @@ public static class MeasureExtensions
             (Measure.Milligrams, Measure.Grams) => 0.001,
 
             // Fluid conversions.
+            (Measure.Gallons, Measure.Cups) => 16,
             (Measure.Cups, Measure.Gallons) => 0.0625,
             (Measure.Cups, Measure.Tablespoons) => 16,
             (Measure.Cups, Measure.Teaspoons) => 48,
             (Measure.Cups, Measure.Milliliters) => 240,
-            (Measure.Gallons, Measure.Cups) => 16,
             (Measure.FluidOunces, Measure.Cups) => 0.125,
             (Measure.Tablespoons, Measure.Cups) => 0.0625,
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Tablespoons, Measure.Milliliters) => 15,
             (Measure.Teaspoons, Measure.Cups) => 0.0208333,
             (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
+            (Measure.Milliliters, Measure.Cups) => 0.00416666667,
 
             _ => null
         };
