@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data;
@@ -51,20 +52,21 @@ public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) :
         return View("UpsertRecipe", new UpsertRecipeViewModel()
         {
             User = user,
-            Recipe = recipe.AsType<UpsertRecipeModel, Recipe>()!,
             Recipes = await GetRecipes(user),
             Ingredients = await GetIngredients(user),
+            Recipe = recipe.AsType<UpsertRecipeModel, Recipe>()!,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 
     private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
     {
+        var singleOrNoneSections = EnumExtensions.GetSingleOrNoneValues32<Section>();
         return await context.Recipes.AsNoTracking()
             .Where(r => r.UserId == null || r.UserId == user.Id)
             .Where(r => r.Equipment == Equipment.None || user.Equipment.HasFlag(r.Equipment))
             // Some ingredients recipes can stand on their own, such as a simple salad that can be used in a sandwich.
-            //.Where(r => r.Section == Section.None)
+            .Where(r => singleOrNoneSections.Contains(r.Section))
             .OrderBy(r => r.Name)
             .ToListAsync();
     }

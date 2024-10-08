@@ -17,8 +17,8 @@ public class UpsertRecipeViewModel
 
     public UpsertRecipeModel Recipe { get; set; } = null!;
 
-    public IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; } = [];
     public IList<Data.Entities.Recipe.Recipe> Recipes { get; init; } = [];
+    public IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; } = [];
 }
 
 public class UpsertRecipeModel : IValidatableObject

@@ -35,6 +35,7 @@ public class UserNutrient
         [Nutrients.Lithium] = 100..300,
         [Nutrients.Proteins] = 100..200,
         [Nutrients.Carbohydrates] = 100..200,
+        [Nutrients.NetCarbohydrates] = 100..200,
         [Nutrients.Starch] = 100..200,
         [Nutrients.Oligosaccharides] = 100..200,
         [Nutrients.SolubleFiber] = 100..200,

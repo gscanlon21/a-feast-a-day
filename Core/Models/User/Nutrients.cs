@@ -16,6 +16,9 @@ public enum Nutrients : long
     [Display(Order = 100, Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1L << 0, // 1
 
+    /// <summary>
+    /// Does not include sugar alcohols.
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Order = 80, Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
@@ -47,9 +50,14 @@ public enum Nutrients : long
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(150, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
+    [DailyAllowance(300, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Order = 70, ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
+
+    [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(250, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
+    [Display(Order = 70, ShortName = "Net Carbs", Name = "Net Carbohydrates", GroupName = "Carbohydrates")]
+    NetCarbohydrates = Sugar | Starch | Oligosaccharides, // 14
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]

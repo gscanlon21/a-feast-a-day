@@ -1887,6 +1887,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7941	418	2047	\N	\N	3	116	f
 7994	548	2047	\N	\N	3	67	f
 7995	293	2047	\N	\N	3	9	f
+8199	423	2047	\N	\N	3	40	f
 5501	15	2047	\N	\N	3	90	f
 5508	123	1125899906842624	\N	\N	3	0.1	f
 5538	123	549755813888	\N	\N	1	0.1	f
@@ -1956,6 +1957,20 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7943	33	2047	\N	\N	3	338	f
 7996	279	2047	\N	\N	3	224	f
 7997	273	2047	\N	\N	3	60	f
+8200	157	2047	\N	\N	3	101	f
+8201	157	68719476736	\N	\N	2	2	f
+8202	157	34359738368	\N	\N	2	206	f
+8203	157	2	\N	\N	3	17	f
+8204	157	1	\N	\N	3	1	f
+8205	157	4294967296	\N	\N	2	16	f
+8206	157	2199023255552	\N	\N	2	0.3	f
+8207	157	48	\N	\N	3	6	f
+8208	157	1984	\N	\N	3	0.2	f
+8209	157	62	\N	\N	3	27	f
+8210	338	2047	\N	\N	3	100	f
+8211	337	2047	\N	\N	3	100	f
+8212	603	2047	\N	\N	3	346	f
+8213	157	12	\N	\N	3	22	f
 5653	39	2047	\N	\N	3	64	f
 7040	195	128	\N	\N	3	0.3	f
 7041	195	256	\N	\N	3	0.2	f
@@ -2004,6 +2019,15 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8010	197	1984	\N	\N	3	3	f
 8011	197	62	\N	\N	3	24	f
 7051	195	2047	\N	\N	3	495	f
+8214	570	68719476736	\N	\N	2	2	f
+8215	570	34359738368	\N	\N	2	2	f
+8216	570	2	\N	\N	3	98	f
+8217	570	4294967296	\N	\N	2	1	f
+8218	570	2199023255552	\N	\N	2	0.1	f
+8219	570	12	\N	\N	3	100	f
+8220	570	62	\N	\N	3	100	f
+8221	570	2047	\N	\N	3	389	f
+8222	274	2047	\N	\N	3	70	f
 7052	26	128	\N	\N	3	0.8	f
 5729	49	2047	\N	\N	3	50	f
 7053	26	256	\N	\N	3	1.2	f
@@ -2218,7 +2242,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 8198, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 8222, true);
 
 
 --

@@ -1,6 +1,5 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
-using Core.Models.User;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Repos;
