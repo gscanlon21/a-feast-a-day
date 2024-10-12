@@ -1287,6 +1287,14 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7977	233	2047	\N	\N	3	120	f
 8076	311	2047	\N	\N	3	80	f
 8077	18	2047	\N	\N	3	427	f
+8314	130	68719476736	\N	\N	2	7	f
+8315	130	34359738368	\N	\N	2	293	f
+8316	130	2	\N	\N	3	15	f
+8317	130	4294967296	\N	\N	2	41	f
+8318	130	2199023255552	\N	\N	2	1	f
+8319	130	14	\N	\N	3	15	f
+8320	130	62	\N	\N	3	15	f
+8321	130	2047	\N	\N	3	58	f
 4744	24	68719476736	\N	\N	2	70	f
 4745	24	34359738368	\N	\N	2	340	f
 4747	24	1	\N	\N	3	27	f
@@ -1386,6 +1394,13 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8103	25	3221225472	\N	\N	1	0.2	f
 8104	25	1792	\N	\N	3	1.1	f
 8105	25	229376	\N	\N	1	1	f
+8322	127	68719476736	\N	\N	2	5	f
+8323	127	34359738368	\N	\N	2	181	f
+8324	127	2	\N	\N	3	23	f
+8325	127	1	\N	\N	3	0.4	f
+8326	127	4294967296	\N	\N	2	10	f
+8327	127	2199023255552	\N	\N	2	1	f
+8328	127	48	\N	\N	3	3	f
 4818	1	128	\N	\N	3	0.1	f
 4820	1	68719476736	\N	\N	2	1.8	f
 4821	1	34359738368	\N	\N	2	194.7	f
@@ -1516,6 +1531,10 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8111	44	2199023255552	\N	\N	2	0.1	f
 8112	44	62	\N	\N	3	100	f
 8113	44	2047	\N	\N	3	389	f
+8329	127	14	\N	\N	3	25	f
+8330	127	1984	\N	\N	3	0.2	f
+8331	127	62	\N	\N	3	27	f
+8332	127	2047	\N	\N	3	102	f
 4156	126	2048	\N	\N	2	55	f
 4157	126	128	\N	\N	3	2.5	f
 4166	126	4294967296	\N	\N	2	100	f
@@ -1581,6 +1600,8 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8123	131	1984	\N	\N	3	2	f
 8124	131	62	\N	\N	3	121	f
 8125	131	2047	\N	\N	3	670	f
+8333	641	2047	\N	\N	3	30	f
+8334	642	2047	\N	\N	3	30	f
 4969	55	2047	\N	\N	3	131.1	f
 5187	166	48	\N	\N	3	6	f
 5195	166	1984	\N	\N	3	1.5	f
@@ -1845,6 +1866,8 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8196	326	2199023255552	\N	\N	2	0.3	f
 8197	326	402653184	\N	\N	1	0.1	f
 8198	326	1984	\N	\N	3	1	f
+8335	351	2047	\N	\N	3	4	f
+8336	494	2047	\N	\N	3	49	f
 5425	102	2047	\N	\N	3	687	f
 7022	117	128	\N	\N	3	2	f
 7023	117	68719476736	\N	\N	2	200	f
@@ -2323,7 +2346,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 8313, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 8336, true);
 
 
 --
