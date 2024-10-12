@@ -249,7 +249,8 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 Category = group.Key.Ingredient!.Category,
                 Measure = group.Key.Ingredient.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
-                Quantity = Math.Max(1, (int)Math.Ceiling(totalQuantity)),
+                // Rounds up after the first fifth: round 4.19 down to 4, round 4.20 up to 5. 
+                Quantity = Math.Max(1, (int)Math.Ceiling(Math.Floor(totalQuantity * 5) / 5)),
             });
         }
 
