@@ -50,7 +50,7 @@
 67	French Toast	\N	\N	\N	3	15	5	1	t	4	french-toast.jpg	0
 68	Cheese and Crackers	\N	\N	\N	18	0	5	1	t	0	cheese-meat-crackers.jpg	0
 69	Chopped Eggs and Onions	\N	\N	\N	10	12	3	4	t	4	egg-salad-alt.jpg	0
-70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	4	t	0	guacamole.jpg	0
+70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	1	t	0	guacamole.jpg	6
 71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	0	guacamole-chip.jpg	0
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	t	128	white-bread.jpg	0
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settles, shake the bottle before using.	\N	\N	0	155	5	6	t	128	white-bread.jpg	0
@@ -152,7 +152,7 @@
 181	5 Ingredient Sloppy Joes	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	\N	\N	6	10	5	4	t	524292	sloppy-joes.jpg	0
 182	Beef and Noodles	https://www.saltandlavender.com/easy-beef-and-noodles/	\N	\N	6	20	10	4	t	524292	beef-noodles.jpg	0
 184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	559108	\N	0
-185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	524292	\N	0
+185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	524292	pasta-vegetables.jpg	0
 186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	6	15	10	1	t	524292	grilled-chicken-sandwich.jpg	0
 187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	\N	\N	3	5	3	4	t	524292	\N	0
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	10	0	12	4	t	0	vegetable-salad.jpg	0
@@ -163,3 +163,5 @@
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	262145	date-snickers.jpg	0
 194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	524292	\N	0
 195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	524292	\N	0
+196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	524292	\N	0
+197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	524292	\N	0
