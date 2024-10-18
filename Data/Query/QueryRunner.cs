@@ -69,7 +69,7 @@ public class QueryRunner(Section section)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
-            .Where(r => r.User.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= r.User.MaxIngredients)
+            .Where(r => UserOptions.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= UserOptions.MaxIngredients)
             // Don't grab recipes that we want to ignore.
             .Where(vm => !ExclusionOptions.RecipeIds.Contains(vm.Id))
             .Select(r => new RecipesQueryResults()
