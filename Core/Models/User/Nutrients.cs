@@ -308,7 +308,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
-    [Display(ShortName = "Vitamin K1", Name = "Vitamin K1 (Phylloquinone, )", GroupName = "Vitamins")]
+    [Display(ShortName = "Vitamin K1", Name = "Vitamin K1 (Phylloquinone)", GroupName = "Vitamins")]
     VitaminK1 = 1L << 30, // 1073741824
 
     [DefaultMeasure(Measure.Micrograms)]
