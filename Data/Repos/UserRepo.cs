@@ -117,8 +117,8 @@ public class UserRepo
             .Include(uw => uw.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date <= user.StartOfWeekOffset)
-            // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
-            // Dummy records that are created when the user advances their workout split may also have the same date.
+            // For the demo/test accounts. Multiple newsletters may be sent in one day,
+            // ... so order by the most recently created and select the first.
             .OrderByDescending(n => n.Date)
             .ThenByDescending(n => n.Id)
             .FirstOrDefaultAsync();
@@ -137,8 +137,8 @@ public class UserRepo
             .Select(g => new
             {
                 g.Key,
-                // For testing/demo. When two newsletters get sent in the same day, I want a different exercise set.
-                // Dummy records that are created when the user advances their workout split may also have the same date.
+                // For the demo/test accounts. Multiple newsletters may be sent in one day,
+                // ... so order by the most recently created and select the first.
                 Feast = g.OrderByDescending(n => n.Id).First()
             })
             .OrderByDescending(n => n.Key)

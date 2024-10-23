@@ -206,28 +206,6 @@ public partial class UserController : ViewController
     }
 
     #endregion
-    #region Workout Split
-
-    [HttpPost]
-    [Route("split/progress")]
-    public async Task<IActionResult> AdvanceSplit(string email, string token)
-    {
-        var user = await _userRepo.GetUser(email, token);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        // Add a dummy newsletter to advance the workout split
-        var newsletter = new Data.Entities.Newsletter.UserFeast(DateHelpers.Today, user);
-        _context.UserFeasts.Add(newsletter);
-
-        await _context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your workout split has been advanced!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
-    }
-
-    #endregion
     #region User Tokens
 
     [HttpPost]
