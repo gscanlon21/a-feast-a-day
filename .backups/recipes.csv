@@ -12,10 +12,10 @@
 29	Garlic Parmesan Asparagus	\N	\N	\N	8	5	5	2	t	4	parmesan-roasted-asparagus.jpg	0
 30	Curry Scramble	\N	\N	\N	3	10	5	2	t	0	curry-scramble.jpg	0
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	4	420	15	6	t	1	\N	0
-32	Crock Pot Baked Potatoes	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	\N	\N	10	480	5	4	t	0	crockpot-baked-potatoes.jpg	0
+32	Crock Pot Baked Potatoes	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	\N	\N	8	480	5	4	t	32	crockpot-baked-potatoes.jpg	0
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	32	spaghetti-meatballs.jpg	0
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	2	t	1	kielbasa.jpg	0
-35	Crockpot BBQ Pinto Beans	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	\N	\N	4	480	15	6	f	32	bbq-pinto-beans.jpg	0
+35	Crockpot BBQ Pinto Beans	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	\N	\N	8	480	15	6	f	32	bbq-pinto-beans.jpg	0
 36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	32	mac-n-cheese-mug.jpg	0
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg	0
 38	Black Bean Fajita Skillet	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0
@@ -138,7 +138,7 @@
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	2	lemon-parmesan-capellini.jpg	0
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	4	crispy-cabbage.jpg	0
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	524292	steak-pickled-walnut-sauce-alt.jpg	0
-169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	4	\N	0
+169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	0	vanilla-cafe-latte.jpg	0
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4	\N	0
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	4	lemon-posset.jpg	0
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	1	chocolate-banana-fool.jpg	0
@@ -154,7 +154,7 @@
 184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	559108	\N	0
 185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	524292	pasta-vegetables.jpg	0
 186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	6	15	10	1	t	524292	grilled-chicken-sandwich.jpg	0
-187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	\N	\N	3	5	3	4	t	524292	\N	0
+187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	\N	\N	3	5	3	4	t	524292	oatmeal-pancakes.jpg	0
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	10	0	12	4	t	0	vegetable-salad.jpg	0
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	0	vegetable-salad.jpg	0
 190	Fusilli with Sausage	\N	\N	\N	6	15	5	4	t	614404	eliche-with-sausage.jpg	0
@@ -165,3 +165,14 @@
 195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	524292	\N	0
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	524292	\N	0
 197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	524292	\N	0
+232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
+233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	\N	0
+234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	2	\N	0
+235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	524292	rosemary-lemon-tea.jpg	0
+236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	34816	\N	0
+237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
+238	Anti-Allergy Tea	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	\N	\N	8	5	5	1	t	0	\N	0
+239	Okra Fries	https://www.drkarafitzgerald.com/recipe/okra-fries/	\N	\N	24	0	0	4	t	2	okra-fries.jpg	0
+240	Choconut-Mint Squares	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	\N	\N	32	5	5	4	t	524292	\N	0
+241	Party Coleslaw	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	\N	\N	8	0	15	4	t	0	\N	0
+242	BPA - Banishing Fruit Salad	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	\N	\N	8	0	10	4	t	0	\N	0
