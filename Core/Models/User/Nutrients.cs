@@ -35,17 +35,17 @@ public enum Nutrients : long
     Starch = 1L << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(4, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
+    [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
     SolubleFiber = 1L << 4, // 16
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
+    [DailyAllowance(15, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Name = "Insoluble Fiber", GroupName = "Carbohydrates / Fiber")]
     InsolubleFiber = 1L << 5, // 32
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(14, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
+    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Order = 90, Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
