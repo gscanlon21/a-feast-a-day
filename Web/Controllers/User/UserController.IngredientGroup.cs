@@ -10,9 +10,8 @@ namespace Web.Controllers.User;
 
 public partial class UserController
 {
-    [HttpPost]
-    [Route("muscle/reset")]
-    public async Task<IActionResult> ResetMuscleRanges(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
+    [HttpPost, Route("nutrient/reset")]
+    public async Task<IActionResult> ResetNutrientRanges(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrient)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -22,16 +21,15 @@ public partial class UserController
 
         await _context.UserNutrients
             .Where(um => um.User.Id == user.Id)
-            .Where(um => muscleGroups.HasFlag(um.Nutrient))
+            .Where(um => nutrient.HasFlag(um.Nutrient))
             .ExecuteDeleteAsync();
 
-        TempData[TempData_User.SuccessMessage] = "Your muscle targets have been updated!";
+        TempData[TempData_User.SuccessMessage] = "Your nutrient targets have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 
-    [HttpPost]
-    [Route("muscle/start/decrease")]
-    public async Task<IActionResult> DecreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
+    [HttpPost, Route("nutrient/start/decrease")]
+    public async Task<IActionResult> DecreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrient)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -39,7 +37,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => nutrient.HasFlag(mg)))
         {
             var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -69,9 +67,8 @@ public partial class UserController
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 
-    [HttpPost]
-    [Route("muscle/start/increase")]
-    public async Task<IActionResult> IncreaseStartMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
+    [HttpPost, Route("nutrient/start/increase")]
+    public async Task<IActionResult> IncreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrient)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -79,7 +76,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => nutrient.HasFlag(mg)))
         {
             var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -109,9 +106,8 @@ public partial class UserController
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 
-    [HttpPost]
-    [Route("muscle/end/decrease")]
-    public async Task<IActionResult> DecreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
+    [HttpPost, Route("nutrient/end/decrease")]
+    public async Task<IActionResult> DecreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrient)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -119,7 +115,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => nutrient.HasFlag(mg)))
         {
             var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)
@@ -149,9 +145,8 @@ public partial class UserController
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 
-    [HttpPost]
-    [Route("muscle/end/increase")]
-    public async Task<IActionResult> IncreaseEndMuscleRange(string email, string token, [Bind(Prefix = "muscleGroup")] Nutrients muscleGroups)
+    [HttpPost, Route("nutrient/end/increase")]
+    public async Task<IActionResult> IncreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrient)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -160,7 +155,7 @@ public partial class UserController
         }
 
         var muscleTargetMax = UserNutrient.NutrientTargets.Values.MaxBy(v => v.End.Value).End.Value;
-        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => muscleGroups.HasFlag(mg)))
+        foreach (var muscleGroup in UserNutrient.NutrientTargets.Keys.Where(mg => nutrient.HasFlag(mg)))
         {
             var userMuscleGroup = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == muscleGroup);
             if (userMuscleGroup == null)

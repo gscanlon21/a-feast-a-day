@@ -24,11 +24,11 @@
         .Select(kv => Model.GetNutrientTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
-        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(DisplayType.GroupName))
-        .ThenBy(mt => mt.IngredientGroup.GetSingleDisplayName(DisplayType.Name))
+        .ThenBy(mt => mt.NutrientGroup.GetSingleDisplayName(DisplayType.GroupName))
+        .ThenBy(mt => mt.NutrientGroup.GetSingleDisplayName(DisplayType.Name))
         .Append(new NutrientViewModel.NutrientTarget()
         {
-            IngredientGroup = Nutrients.All,
+            NutrientGroup = Nutrients.All,
             ShowButtons = true,
             Start = 0,
             End = 100,
@@ -40,25 +40,25 @@
         }))
         {
             <div style="display:flex;column-gap:1ch;flex-wrap:wrap;">
-                <div style="display:flex;flex:1 0 14ch;">@nutrientTarget.IngredientGroup.GetSingleDisplayName()</div>
+                <div style="display:flex;flex:1 0 14ch;">@nutrientTarget.NutrientGroup.GetSingleDisplayName()</div>
 
                 <div style="display:flex;flex:99999 0 275px;gap:1ch;align-items:center;">
                     <div style="display:flex;justify-content:space-between;">
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetMuscleRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@nutrientTarget.IngredientGroup" method="post">
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetNutrientRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                                 <img src="/images/user/restore-filled.svg">
                             </button>
                         </form>
 
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseStartMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@nutrientTarget.IngredientGroup" method="post">
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseStartNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowDecreaseStart ? "" : "disabled")>
                                 <img src="/images/user/minus.svg">
                             </button>
                         </form>
 
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseStartMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@nutrientTarget.IngredientGroup" method="post">
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseStartNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowIncreaseStart ? "" : "disabled")>
                                 <img src="/images/user/add.svg">
@@ -85,14 +85,14 @@
                         </div>
                     </div>
                     <div style="display:flex;justify-content:space-between;">
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseEndMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@nutrientTarget.IngredientGroup" method="post">
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseEndNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowDecreaseEnd ? "" : "disabled")>
                                 <img src="/images/user/minus.svg">
                             </button>
                         </form>
 
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseEndMuscleRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-muscleGroup="@nutrientTarget.IngredientGroup" method="post">
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseEndNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowIncreaseEnd ? "" : "disabled")>
                                 <img src="/images/user/add.svg">

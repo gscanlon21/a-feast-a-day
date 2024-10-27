@@ -54,7 +54,7 @@
         <div class="form-group mb-3">
             <label asp-for="Ingredient.Category" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Category)</label>
             <select asp-for="Ingredient.Category" class="form-control overflow-auto" aria-describedby="category-help" 
-                    asp-items="@(Enum.GetValues<Category>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+                    asp-items="@(Enum.GetValues<Category>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Order))">
             </select>
             <span asp-validation-for="Ingredient.Category" class="text-danger"></span>
             <div id="category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Category)</div>

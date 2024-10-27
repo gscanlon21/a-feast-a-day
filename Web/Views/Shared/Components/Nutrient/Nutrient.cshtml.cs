@@ -30,7 +30,7 @@ public class NutrientViewModel
         var start = sumRDA / sumTUL * userMuscleTarget.Start.Value ?? 0;
         return new NutrientTarget()
         {
-            IngredientGroup = defaultRange.Key,
+            NutrientGroup = defaultRange.Key,
             UserMuscleTarget = userMuscleTarget,
             Start = start,
             Middle = sumRDA / sumTUL * 100 ?? 0,
@@ -46,7 +46,7 @@ public class NutrientViewModel
 
     public class NutrientTarget
     {
-        public required Nutrients IngredientGroup { get; init; }
+        public required Nutrients NutrientGroup { get; init; }
         public required Range UserMuscleTarget { get; init; }
 
         public required double Start { get; init; }
