@@ -92,7 +92,7 @@
                 }
 
                 <ul style="padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var ingredient in Model.RecipeIngredients.OrderBy(ri => ri.Order))
+                    @foreach (var ingredient in Model.RecipeIngredients)
                     {
                         <li style="margin-block:.35em;list-style-type:disc;">
                             @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName(DisplayType.ShortName)) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))

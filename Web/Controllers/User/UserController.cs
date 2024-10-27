@@ -37,8 +37,7 @@ public partial class UserController : ViewController
     /// <summary>
     /// Message to show to the user when a link has expired.
     /// </summary>
-    public const string LinkExpiredMessage
-        = "This link has expired.";
+    public const string LinkExpiredMessage = "This link has expired.";
 
     #region Edit User
 
@@ -143,6 +142,7 @@ public partial class UserController : ViewController
         {
             try
             {
+                user.IngredientOrder = viewModel.IngredientOrder;
                 user.FootnoteCountTop = viewModel.FootnoteCountTop;
                 user.FootnoteCountBottom = viewModel.FootnoteCountBottom;
 
@@ -152,7 +152,7 @@ public partial class UserController : ViewController
             {
                 if (!(_context.Users?.Any(e => e.Email == email)).GetValueOrDefault())
                 {
-                    // User does not exist
+                    // User does not exist.
                     return NotFound();
                 }
                 else
@@ -208,8 +208,7 @@ public partial class UserController : ViewController
     #endregion
     #region User Tokens
 
-    [HttpPost]
-    [Route("token/create")]
+    [HttpPost, Route("token/create")]
     public async Task<IActionResult> CreateToken(string email, string token)
     {
         var user = await _userRepo.GetUser(email, token);

@@ -1,4 +1,6 @@
 ﻿@model AdvancedViewModel
+@using Web.Code.Extensions
+@using Core.Models.Ingredients
 @using Core.Models.Recipe
 @using Data.Entities.User
 @using Core.Consts
@@ -11,6 +13,15 @@
          class="alert alert-secondary">
 
         <div class="mb-3">
+            <div class="form-group mb-3">
+                <label asp-for="IngredientOrder" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientOrder)</label>
+                <select asp-for="IngredientOrder" class="form-control" aria-describedby="ingredients-help"
+                        asp-items="@EnumExtensions.GetDisplayValues<IngredientOrder>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value)">
+                </select>
+                <span asp-validation-for="IngredientOrder" class="text-danger"></span>
+                <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.IngredientOrder)</div>
+            </div>
+
             <div class="form-group mb-3">
                 <label asp-for="FootnoteCountTop" class="control-label">@Html.DisplayNameFor(_ => Model.FootnoteCountTop)</label>
                 <div style="display:flex;column-gap:1ex;">

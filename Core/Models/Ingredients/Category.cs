@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Core.Models.Ingredient;
+namespace Core.Models.Ingredients;
 
 [Flags]
 public enum Category

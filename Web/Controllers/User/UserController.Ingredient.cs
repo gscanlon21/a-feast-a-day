@@ -1,4 +1,4 @@
-﻿using Core.Models.Ingredient;
+﻿using Core.Models.Ingredients;
 using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.User;

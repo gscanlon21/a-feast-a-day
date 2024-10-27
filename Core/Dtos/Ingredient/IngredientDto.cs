@@ -1,5 +1,5 @@
 ﻿using Core.Dtos.User;
-using Core.Models.Ingredient;
+using Core.Models.Ingredients;
 using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 namespace Core.Dtos.Ingredient;
 
 /// <summary>
-/// Exercises listed on the website
+/// DTO for an ingredient.
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class IngredientDto
@@ -73,7 +73,6 @@ public class IngredientDto
     public ICollection<NutrientDto> Nutrients { get; set; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is IngredientDto other
         && other.Id == Id;
 }

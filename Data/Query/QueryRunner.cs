@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Ingredient;
@@ -217,9 +218,17 @@ public class QueryRunner(Section section)
             // Set nutrients on the recipe after all the ingredient swapping has taken place.
             recipe.Nutrients = allNutrients.Where(n => recipe.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
 
+            // Order the recipe ingredients based on user preferences.
+            var recipeIngredients = UserOptions.IngredientOrder switch
+            {
+                IngredientOrder.OrderUsed => recipe.RecipeIngredients.OrderBy(ri => ri.Order).ToList(),
+                IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderByDescending(ri => ri.Measure.ToGramsOrMillilitersOrDefault(ri.Quantity.ToDouble())).ToList(),
+                _ => throw new ArgumentOutOfRangeException(nameof(UserOptions.IngredientOrder)),
+            };
+
             // Scale the recipe.
             var scale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1;
-            orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe)
+            orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipeIngredients, recipe.UserRecipe)
             {
                 Scale = scale,
             });

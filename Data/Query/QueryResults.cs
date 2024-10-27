@@ -56,6 +56,7 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
 public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 {
     public int Id { get; init; } = recipeIngredient.Id;
+    public int Order { get; init; } = recipeIngredient.Order;
     public Measure Measure { get; init; } = recipeIngredient.Measure;
     public string? Attributes { get; init; } = recipeIngredient.Attributes;
     public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;

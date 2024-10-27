@@ -1,6 +1,7 @@
 ﻿using Core.Consts;
 using Core.Interfaces.User;
 using Core.Models.Footnote;
+using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
@@ -136,6 +137,11 @@ public class User : IUser
     public Features Features { get; set; } = Features.None;
 
     #region Advanced Preferences
+
+    /// <summary>
+    /// Order of how ingredients are listed in a recipe.
+    /// </summary>
+    public IngredientOrder IngredientOrder { get; set; } = UserConsts.IngredientOrderDefault;
 
     [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
     public int FootnoteCountTop { get; set; } = UserConsts.FootnoteCountTopDefault;
