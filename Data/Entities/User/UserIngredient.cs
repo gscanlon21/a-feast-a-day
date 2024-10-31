@@ -33,7 +33,6 @@ public class UserIngredient
     public virtual Recipe.Recipe? SubstituteRecipe { get; private init; }
 
     public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
-
     public override bool Equals(object? obj) => obj is UserIngredient other
         && other.UserId == UserId
         && other.IngredientId == IngredientId;

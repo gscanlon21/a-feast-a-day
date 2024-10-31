@@ -31,13 +31,12 @@ public class QueryRunner(Section section)
     }
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
-    private class InProgressQueryResults(RecipesQueryResults queryResult) :
-        IRecipeCombo
+    private class InProgressQueryResults(RecipesQueryResults queryResult) : IRecipeCombo
     {
-        public IList<Nutrient> Nutrients { get; set; } = queryResult.Nutrients;
         public Recipe Recipe { get; } = queryResult.Recipe;
-        public List<RecipeIngredientQueryResults> RecipeIngredients { get; set; } = queryResult.RecipeIngredients;
         public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
+        public IList<Nutrient> Nutrients { get; set; } = queryResult.Nutrients;
+        public List<RecipeIngredientQueryResults> RecipeIngredients { get; set; } = queryResult.RecipeIngredients;
         public bool UserOwnsEquipment { get; } = queryResult.UserOwnsEquipment;
 
         public override int GetHashCode() => HashCode.Combine(Recipe.Id);
@@ -66,7 +65,6 @@ public class QueryRunner(Section section)
             .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                 .ThenInclude(ri => ri.Ingredient)
                     .ThenInclude(i => i.UserIngredients.Where(ui => ui.UserId == UserOptions.Id))
-                        .ThenInclude(ui => ui.SubstituteIngredient)
             .Where(ev => ev.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -129,20 +127,6 @@ public class QueryRunner(Section section)
             await AddMissingUserRecords(context, queryResults);
 
             // Swap in user ingredients before querying for prerequisite recipes.
-            queryResults.ForEach(qr => qr.RecipeIngredients.ForEach(ri =>
-            {
-                if (ri.UserIngredient?.SubstituteRecipeId.HasValue == true)
-                {
-                    ri.Ingredient = null;
-                    ri.IngredientRecipeId = ri.UserIngredient!.SubstituteRecipeId;
-                }
-                else
-                {
-                    // Fall back to use the ingredient for when a new UserIngredient is created, the substitute ingredient doesn't yet exist.
-                    ri.Ingredient = ri.UserIngredient?.SubstituteIngredient ?? ri.Ingredient;
-                }
-            }));
-
             var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
             var ingredientAlternatives = await GetAlternativeIngredientsForIngredients(context, queryResults);
             foreach (var queryResult in queryResults)
@@ -154,12 +138,14 @@ public class QueryRunner(Section section)
                 // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
                 foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
-                    if (recipeIngredient.Ingredient != null)
+                    if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Switch the ingredient with another if it conflicts with allergens of if the user ignored it.
                         if (recipeIngredient.Ingredient!.Allergens.HasAnyFlag32(UserOptions.Allergens) || recipeIngredient.UserIngredient?.Ignore == true)
                         {
-                            recipeIngredient.Ingredient = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient.Id, out var alternatives) ? alternatives.FirstOrDefault() : null;
+                            var substitution = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient.Id, out var subs) ? subs.FirstOrDefault() : null;
+                            recipeIngredient.UserIngredient = substitution?.UserIngredient;
+                            recipeIngredient.Ingredient = substitution?.Ingredient;
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
@@ -167,13 +153,15 @@ public class QueryRunner(Section section)
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                         }
+                        // If the ingredient was ignored or conflicts with allergens
+                        // ... and is not optional, skip the whole recipe.
                         else if (!recipeIngredient.Optional)
                         {
                             ignoreRecipe = true;
                             break;
                         }
                     }
-                    else
+                    else if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
                     {
                         // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipes filtered out already.
                         recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId!.Value);
@@ -182,6 +170,8 @@ public class QueryRunner(Section section)
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                         }
+                        // If the recipe ingredient was ignored or conflicts with allergens
+                        // ... and is not optional, skip the whole recipe.
                         else if (!recipeIngredient.Optional)
                         {
                             ignoreRecipe = true;
@@ -345,7 +335,7 @@ public class QueryRunner(Section section)
     private async Task<IList<QueryResults>> GetPrerequisiteRecipes(IServiceScopeFactory factory, IList<InProgressQueryResults> filteredResults)
     {
         // Query for prerequisites ingredient recipes here so we can check check their ignored status before finalizing recipes.
-        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.IngredientRecipeId.HasValue))
+        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe))
             // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
             .GroupBy(ri => ri.IngredientRecipeId!.Value).ToDictionary(g => g.Key, ri => 1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
@@ -367,24 +357,35 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the alternative ingredients for all of the ingredients, ignoring ignored alternative ingredients.
     /// </summary>
-    private async Task<IDictionary<int, List<Ingredient>>> GetAlternativeIngredientsForIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
+    private async Task<IDictionary<int, List<IngredientUserIngredient>>> GetAlternativeIngredientsForIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
         // Don't select ignored alternative ingredients or alternative ingredients containing allergens.
-        var noIgnoredOrAllergicIngredients = (IngredientUserIngredient ingredient) =>
+        var noIgnoredOrAllergicIngredients = (IngredientUserIngredient? ingredient) =>
         {
-            return !ingredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens) && ingredient.UserIngredient?.Ignore != true;
+            return ingredient != null && !ingredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens) && ingredient.UserIngredient?.Ignore != true;
         };
 
         var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         return (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id)).Select(i => new
         {
             IngredientId = i.Id,
+            i.UserIngredients.First(a => a.UserId == UserOptions.Id).SubstituteIngredient,
             AlternativeIngredients = i.Alternatives.Select(a => new IngredientUserIngredient()
             {
                 Ingredient = a.AlternativeIngredient,
                 UserIngredient = a.AlternativeIngredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id)
             })
-        }).ToListAsync()).ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Where(noIgnoredOrAllergicIngredients).Select(ai => ai.Ingredient).ToList());
+        }).Select(i => new
+        {
+            i.IngredientId,
+            i.AlternativeIngredients,
+            // If the user has a substitute ingredient, prepend that to the list of substitutions.
+            SubstitureIngredient = i.SubstituteIngredient == null ? null : new IngredientUserIngredient()
+            {
+                Ingredient = i.SubstituteIngredient,
+                UserIngredient = context.UserIngredients.First(ui => ui.IngredientId == i.SubstituteIngredient.Id && ui.UserId == UserOptions.Id)
+            },
+        }).ToListAsync()).ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Prepend(i.SubstitureIngredient).Where(noIgnoredOrAllergicIngredients).Select(a => a!).ToList());
     }
 
     /// <summary>
@@ -411,7 +412,7 @@ public class QueryRunner(Section section)
         }
 
         foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
-            .Where(i => i.UserIngredientRecipe == null && i.IngredientRecipeId.HasValue))
+            .Where(i => i.UserIngredientRecipe == null && i.RawIngredientRecipeId.HasValue))
         {
             ingredient.UserIngredientRecipe = new UserRecipe()
             {

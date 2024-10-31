@@ -1,7 +1,7 @@
 1	Lentil Soup	\N	\N	\N	4	360	20	4	t	4	lentil-soup.jpg	0
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	2	t	0	sausage-spaghetti.jpg	0
 17	Vegetarian Stir-Fry	Save time and money by purchasing a package of frozen vegetables. These vegetables are typically picked at their peak and frozen quickly to lock in their natural nutrients while also maintaining flavor. The seasoning from the rice, oil, and sauce will provide plenty of flavors to keep this meal from being anything but bland. For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	4	vegetable-stir-fry.jpg	0
-19	Egg in a Pepper	\N	\N	\N	1	5	0	1	t	0	egg-in-a-pepper.jpg	0
+19	Egg in a Pepper	\N	\N	\N	1	5	1	1	t	0	egg-in-a-pepper.jpg	0
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg	0
 23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	0	scalloped-potatoes-ham.jpg	0
 24	Fried Cabbage and Egg Noodles	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	\N	\N	6	15	5	4	t	0	cabbage-noodles.jpg	0
@@ -10,11 +10,11 @@
 27	Garlic Toast Pizzas	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	\N	\N	6	10	5	2	t	2	\N	0
 28	Sauteed Green Beans	\N	\N	\N	8	7	0	2	t	0	sauteed-green-beans.jpg	0
 29	Garlic Parmesan Asparagus	\N	\N	\N	8	5	5	2	t	4	parmesan-roasted-asparagus.jpg	0
-30	Curry Scramble	\N	\N	\N	3	10	5	2	t	0	curry-scramble.jpg	0
+30	Curry Scramble	\N	\N	\N	3	10	5	2	t	524292	curry-scramble.jpg	0
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	4	420	15	6	t	1	\N	0
 32	Crock Pot Baked Potatoes	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	\N	\N	8	480	5	4	t	32	crockpot-baked-potatoes.jpg	0
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	32	spaghetti-meatballs.jpg	0
-34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	2	t	1	kielbasa.jpg	0
+34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	32	kielbasa.jpg	0
 35	Crockpot BBQ Pinto Beans	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	\N	\N	8	480	15	6	f	32	bbq-pinto-beans.jpg	0
 36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	32	mac-n-cheese-mug.jpg	0
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg	0
@@ -62,7 +62,7 @@
 79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	4	fettucine-alfredo.jpg	0
 80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	4	eggplant-mint-couscous-salad.jpg	0
 81	Griddle Potatoes	\N	\N	\N	8	8	10	4	t	4	griddle-potatoes.jpg	0
-82	Chicken Salad	\N	\N	\N	10	0	5	1	t	0	chicken-salad.jpg	0
+82	Chicken Salad	\N	\N	\N	10	0	5	2	t	0	chicken-salad.jpg	0
 83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	32	60	60	4	t	2	springerle-cookies.jpg	0
 84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	10	12	3	4	t	0	egg-bacon-salad.jpg	0
 85	Pasta Fresca	https://iowagirleats.com/pasta-fresca/	\N	\N	6	15	5	4	t	4	pasta-fresca.jpg	0
@@ -105,7 +105,7 @@
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	6	t	4	cajun-spiced-chicken.jpg	0
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	tandori-chicken-kebabs.jpg	0
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	524292	stir-fried-chicken-basil-chilli.jpg	0
-134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0
+134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	2	oven-burgers.jpg	0
 135	Easiest Baked Chicken Breast	https://iowagirleats.com/easiest-baked-chicken-breast/ . If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. I almost always use Ken's Zesty Italian salad dressing, but your favorite balsamic vinegar, lemon vinaigrette, or Asian-style dressing are all fine to use. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	4	10	0	1	t	0	baked-chicken-breast.jpg	0
 136	Easy Chicken Fried Rice	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	\N	\N	4	10	0	2	t	0	chicken-fried-rice.jpg	0
 137	Meatballs	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	\N	\N	0	25	5	12	t	2	meatballs.jpg	0
@@ -161,8 +161,8 @@
 191	Croûtons	\N	\N	\N	0	10	2	2	t	524292	croutons.jpg	6
 192	Eliche with Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	6	20	5	4	t	524292	eliche-with-sausage.jpg	0
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	262145	date-snickers.jpg	0
-194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	524292	\N	0
-195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	524292	\N	0
+194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	524292	pasta-asparagus-cream.jpg	0
+195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	524292	pasta-broccoli-artichokes.jpg	0
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	524292	\N	0
 197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	524292	\N	0
 232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
@@ -172,10 +172,21 @@
 236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	34816	\N	0
 237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
 238	Anti-Allergy Tea	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	\N	\N	8	5	5	1	t	0	\N	0
-239	Okra Fries	https://www.drkarafitzgerald.com/recipe/okra-fries/	\N	\N	24	0	0	4	t	2	okra-fries.jpg	0
+239	Okra Fries	https://www.drkarafitzgerald.com/recipe/okra-fries/	\N	\N	24	25	5	4	t	2	okra-fries.jpg	0
 240	Choconut-Mint Squares	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	\N	\N	32	5	5	4	t	524292	\N	0
-241	Party Coleslaw	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	\N	\N	8	0	15	4	t	0	\N	0
+241	Party Coleslaw	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	\N	\N	8	0	15	4	t	0	party-coleslaw.jpg	0
 242	BPA - Banishing Fruit Salad	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	\N	\N	8	0	10	4	t	0	\N	0
-243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	0	10	4	t	0	\N	0
+243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	0	10	4	t	524292	\N	0
 244	Strawberry Mint Vinaigrette	https://www.drkarafitzgerald.com/recipe/strawberry-mint-vinaigrette/	\N	\N	0	0	10	1	t	167936	\N	6
 245	Methylation Trail Mix	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	\N	\N	16	20	5	10	t	2	\N	0
+246	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	45	20	2	t	0	\N	0
+247	Gluten-Free Nut Crunch Snack	https://www.drkarafitzgerald.com/recipe/gluten-free-nut-crunch-snack/	\N	\N	16	0	5	4	t	2	\N	0
+248	Fennel Soup	https://www.drkarafitzgerald.com/recipe/fennel-soup/	\N	\N	6	45	5	4	t	524292	\N	0
+249	Sesame-Ginger Carrots	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	\N	\N	8	45	5	5	t	2	\N	0
+250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO. - https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	\N	\N	4	30	20	4	t	2	\N	0
+251	Tahini-Lemon Dressing	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	\N	\N	0	0	5	1	t	0	\N	6
+252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	\N	0
+253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. - https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	\N	\N	16	120	10	5	t	34816	\N	0
+254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	559108	\N	6
+255	Cashew Mayo	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	\N	\N	0	0	10	2	t	0	\N	6
+256	Anti-aging Pesto	Can substitute lemon juice with that of lime To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	0	\N	6

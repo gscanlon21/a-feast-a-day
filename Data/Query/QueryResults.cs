@@ -62,21 +62,36 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
-    public Ingredient? Ingredient { get; internal set; } = recipeIngredient.Ingredient;
-    public int? IngredientRecipeId { get; internal set; } = recipeIngredient.IngredientRecipeId;
+    internal int? RawIngredientRecipeId { get; init; } = recipeIngredient.IngredientRecipeId;
 
-    // We don't .Include these or we use these later in the query so they can't be set in the constructor.
-    public required bool Optional { get; init; }
-    public required UserIngredient? UserIngredient { get; set; }
+    // We don't .Include these b/c we use these later in the query, so they can't be set in the constructor.
     public required UserRecipe? UserIngredientRecipe { get; set; }
+    public required UserIngredient? UserIngredient { get; set; }
+    public required bool Optional { get; init; }
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
+    public int? IngredientRecipeId => UserIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;
     public string Name => Ingredient?.Name ?? IngredientRecipe?.Recipe.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
     public QueryResults? IngredientRecipe { get; internal set; }
+    public Ingredient? Ingredient { get; internal set; } = recipeIngredient.Ingredient;
+    public RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
+    {
+        (not null, _, _, _) => RecipeIngredientType.Ingredient,
+        (_, not null, _, _) => RecipeIngredientType.IngredientRecipe,
+        (_, _, not null, _) => RecipeIngredientType.Ingredient,
+        (_, _, _, not null) => RecipeIngredientType.IngredientRecipe,
+        _ => throw new InvalidOperationException(),
+    };
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other
         && other.Id == Id;
+}
+
+public enum RecipeIngredientType
+{
+    Ingredient,
+    IngredientRecipe
 }

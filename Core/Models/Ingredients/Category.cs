@@ -79,7 +79,7 @@ public enum Category
     [Display(Name = "Nuts", Order = 24)]
     Nuts = 1 << 19, // 524288
 
-    [Display(Name = "Snacks", Order = 25)]
+    [Display(Name = "Chips", Order = 25)]
     Chips = 1 << 20, // 1048576
 
     [Display(Name = "Snacks", Order = 26)]
