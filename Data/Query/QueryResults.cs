@@ -1,5 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
+using Data.Code.Extensions;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
@@ -76,7 +77,8 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 
     public QueryResults? IngredientRecipe { get; internal set; }
     public Ingredient? Ingredient { get; internal set; } = recipeIngredient.Ingredient;
-    public RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
+    internal double Size => ((Ingredient != null && Measure != Measure.None) ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
+    internal RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
     {
         (not null, _, _, _) => RecipeIngredientType.Ingredient,
         (_, not null, _, _) => RecipeIngredientType.IngredientRecipe,
@@ -86,12 +88,11 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     };
 
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other
-        && other.Id == Id;
+    public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other && other.Id == Id;
 }
 
 public enum RecipeIngredientType
 {
+    IngredientRecipe,
     Ingredient,
-    IngredientRecipe
 }

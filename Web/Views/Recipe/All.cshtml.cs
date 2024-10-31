@@ -14,7 +14,7 @@ public class RecipesViewModel
 
     public Verbosity Verbosity => Verbosity.Debug;
 
-    [Display(Name = "Exercise Name")]
+    [Display(Name = "Recipe Name")]
     public string? Name { get; init; }
 
     [Display(Name = "Section")]

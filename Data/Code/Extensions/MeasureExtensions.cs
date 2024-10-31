@@ -24,13 +24,8 @@ public static class MeasureExtensions
             return measure switch
             {
                 Measure.None => ingredient.GramsPerMeasure,
-
-                _ when MeasureConsts.DryMeasures.Contains(measure)
-                    => measure.ToMeasure(Measure.Grams),
-
-                _ when MeasureConsts.LiquidMeasures.Contains(measure)
-                    => measure.ToMeasure(Measure.Cups) * ingredient.GramsPerCup,
-
+                _ when MeasureConsts.DryMeasures.Contains(measure) => measure.ToMeasure(Measure.Grams),
+                _ when MeasureConsts.LiquidMeasures.Contains(measure) => measure.ToMeasure(Measure.Cups) * ingredient.GramsPerCup,
                 _ => throw new MissingMeasureException($"Missing measure: {measure}")
             };
         }
