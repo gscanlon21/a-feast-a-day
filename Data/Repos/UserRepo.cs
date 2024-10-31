@@ -220,7 +220,7 @@ public class UserRepo
                             {
                                 return ufri.RecipeIngredient.Ingredient.Nutrients.Select(nutrient =>
                                 {
-                                    var servingsOfIngredientUsed = ufri.RecipeIngredient.NumberOfServings(ufri.RecipeIngredient.Ingredient, ufr.Scale);
+                                    var servingsOfIngredientUsed = ufri.RecipeIngredient.NumberOfServings(ufr.Scale);
                                     var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
                                     var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
                                     return new

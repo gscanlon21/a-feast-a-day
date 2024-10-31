@@ -211,16 +211,13 @@ public class QueryRunner(Section section)
             // Order the recipe ingredients based on user preferences.
             var recipeIngredients = UserOptions.IngredientOrder switch
             {
-                IngredientOrder.OrderUsed => recipe.RecipeIngredients.OrderBy(ri => ri.Order).ToList(),
-                IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderByDescending(ri => ri.Measure.ToGramsOrMillilitersOrDefault(ri.Quantity.ToDouble())).ToList(),
-                _ => throw new ArgumentOutOfRangeException(nameof(UserOptions.IngredientOrder)),
+                IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size).ToList(),
+                IngredientOrder.OrderUsed or _ => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order).ToList(),
             };
 
-            // Scale the recipe.
-            var scale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1;
             orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipeIngredients, recipe.UserRecipe)
             {
-                Scale = scale,
+                Scale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1,
             });
         }
 
