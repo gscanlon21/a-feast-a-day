@@ -141,7 +141,7 @@ public class QueryRunner(Section section)
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Switch the ingredient with another if it conflicts with allergens of if the user ignored it.
-                        if (recipeIngredient.Ingredient!.Allergens.HasAnyFlag32(UserOptions.Allergens) || recipeIngredient.UserIngredient?.Ignore == true)
+                        if (recipeIngredient.Ingredient!.Allergens.HasAnyFlag32(UserOptions.Allergens) || recipeIngredient.UserIngredient?.Ignore == true || recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true)
                         {
                             var substitution = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient.Id, out var subs) ? subs.FirstOrDefault() : null;
                             recipeIngredient.UserIngredient = substitution?.UserIngredient;
