@@ -1,5 +1,5 @@
 1	Lentil Soup	\N	\N	\N	4	360	20	4	t	4	lentil-soup.jpg	0
-8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	2	t	0	sausage-spaghetti.jpg	0
+8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	1	t	524292	sausage-spaghetti.jpg	0
 17	Vegetarian Stir-Fry	Save time and money by purchasing a package of frozen vegetables. These vegetables are typically picked at their peak and frozen quickly to lock in their natural nutrients while also maintaining flavor. The seasoning from the rice, oil, and sauce will provide plenty of flavors to keep this meal from being anything but bland. For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	4	vegetable-stir-fry.jpg	0
 19	Egg in a Pepper	\N	\N	\N	1	5	1	1	t	0	egg-in-a-pepper.jpg	0
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg	0
@@ -18,7 +18,7 @@
 35	Crockpot BBQ Pinto Beans	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	\N	\N	8	480	15	6	f	32	bbq-pinto-beans.jpg	0
 36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	32	mac-n-cheese-mug.jpg	0
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg	0
-38	Black Bean Fajita Skillet	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0
+38	Black Bean Fajita Skillet	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	524292	black-bean-fajita-skillet.jpg	0
 39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	0	linguine-avocado-tomato-lime.jpg	0
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	\N	0
@@ -102,7 +102,7 @@
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	4	16	4	4	t	4	chicken-soy-sauce.jpg	0
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	0	honey-mustard-chicken.jpg	0
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	4	lemon-grass-pork-burger.jpg	0
-131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	6	t	4	cajun-spiced-chicken.jpg	0
+131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	6	t	524292	cajun-spiced-chicken.jpg	0
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	tandori-chicken-kebabs.jpg	0
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	524292	stir-fried-chicken-basil-chilli.jpg	0
 134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	2	oven-burgers.jpg	0
@@ -111,7 +111,7 @@
 137	Meatballs	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	\N	\N	0	25	5	12	t	2	meatballs.jpg	0
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	\N	\N	4	10	7	6	t	4	chicken-vegetable-salad.jpg	0
 139	Crock Pot Salsa Chicken	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card - I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs — or a mixture of these and chicken breasts — to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	4	300	5	4	t	32	crock-pot-salsa-chicken.jpg	0
-140	Spiced Chicken Risotto with Mint	Use the same quantity of pumpkin or butternut squash in place of the carrots. To make a vegetarian version, omit the chicken and add a drained 400g/14oz can of chickpeas to the rice just before the end of cooking.	\N	\N	6	15	5	4	t	4	\N	0
+140	Spiced Chicken Risotto with Mint	Use the same quantity of pumpkin or butternut squash in place of the carrots. To make a vegetarian version, omit the chicken and add a drained 400g/14oz can of chickpeas to the rice just before the end of cooking.	\N	\N	6	15	5	4	t	4	gluten-free-risotto.jpg	0
 141	Chicken Fried Rice	If you don't have any cold cooked rice in the refrigerator, you can still make this stir-fry if you have a couple of pouches of instant or express long grain or basmati rice in the cupboard. This type of rice cooks in under 2 minutes. For a stir-fry, the rice should be cold, so spread it out on a baking sheet after cooking and fan it to cool it quickly.	\N	\N	4	10	5	4	t	4	chicken-fried-rice.jpg	0
 142	Frothy Hot Chocolate	You could use Mexican chocolate, which is flavoured with almonds, cinnamon and vanilla, and sweetened with sugar. All the ingredients are crushed together in a special mortar, and heated over coals. The powdered mixture is then shaped into discs, which can be bought in specialist stores.	\N	\N	32	4	3	4	t	4	hot-chocolate.jpg	0
 143	Banana Smoothie with Chocolate Sauce	Pouring chocolate sauce like this cools it slightly on the way down, so that it thickens on contact with the cold smoothie.	\N	\N	32	10	5	2	t	20	chocolate-banana-smoothie.jpg	0
@@ -119,7 +119,7 @@
 145	Panettone French Toast	A generous portion of chilled mixed berry fruits such as raspberries, blackberries, morello cherries and blueberries perfectly complements the richness of this snack.	\N	\N	35	6	2	4	t	524292	panettone-french-toast-alt.jpg	0
 146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato purée.	\N	\N	24	7	3	6	t	2	\N	0
 147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	16	0	5	1	t	2048	hummus.jpg	0
-148	Muhammara	\N	\N	\N	0	0	8	4	t	2048	\N	0
+148	Muhammara	\N	\N	\N	0	0	8	4	t	2048	muhammara.jpg	0
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	8	15	8	2	t	4	irish-champ.jpg	0
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	4	\N	0
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	4	spaghetti-lemon.jpg	0
@@ -165,24 +165,24 @@
 195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	524292	pasta-broccoli-artichokes.jpg	0
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	524292	\N	0
 197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	524292	\N	0
-232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
-233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	\N	0
-234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	2	\N	0
+232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	655380	blueberry-gummies.jpg	0
+233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	chocolate-mint-muffins.jpg	0
+234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	2	oven-baked-beet-chips.jpg	0
 235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	524292	rosemary-lemon-tea.jpg	0
 236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	34816	\N	0
 237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
-238	Anti-Allergy Tea	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	\N	\N	8	5	5	1	t	0	\N	0
+238	Anti-Allergy Tea	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	\N	\N	8	5	5	1	t	0	rosemary-lemon-tea.jpg	0
 239	Okra Fries	https://www.drkarafitzgerald.com/recipe/okra-fries/	\N	\N	24	25	5	4	t	2	okra-fries.jpg	0
-240	Choconut-Mint Squares	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	\N	\N	32	5	5	4	t	524292	\N	0
+240	Choconut-Mint Squares	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	\N	\N	32	5	5	4	t	524292	chocolate-mint-squares.jpg	0
 241	Party Coleslaw	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	\N	\N	8	0	15	4	t	0	party-coleslaw.jpg	0
 242	BPA - Banishing Fruit Salad	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	\N	\N	8	0	10	4	t	0	\N	0
 243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	0	10	4	t	524292	\N	0
 244	Strawberry Mint Vinaigrette	https://www.drkarafitzgerald.com/recipe/strawberry-mint-vinaigrette/	\N	\N	0	0	10	1	t	167936	\N	6
-245	Methylation Trail Mix	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	\N	\N	16	20	5	10	t	2	\N	0
+245	Methylation Trail Mix	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	\N	\N	16	20	5	10	t	2	trail-mix.jpg	0
 246	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	45	20	2	t	0	\N	0
 247	Gluten-Free Nut Crunch Snack	https://www.drkarafitzgerald.com/recipe/gluten-free-nut-crunch-snack/	\N	\N	16	0	5	4	t	2	\N	0
-248	Fennel Soup	https://www.drkarafitzgerald.com/recipe/fennel-soup/	\N	\N	6	45	5	4	t	524292	\N	0
-249	Sesame-Ginger Carrots	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	\N	\N	8	45	5	5	t	2	\N	0
+248	Fennel Soup	https://www.drkarafitzgerald.com/recipe/fennel-soup/	\N	\N	6	45	5	4	t	524292	fennel-soup.jpg	0
+249	Sesame-Ginger Carrots	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	\N	\N	8	45	5	5	t	2	sesame-ginger-carrots.jpg	0
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO. - https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	\N	\N	4	30	20	4	t	2	\N	0
 251	Tahini-Lemon Dressing	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	\N	\N	0	0	5	1	t	0	\N	6
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	\N	0
@@ -190,3 +190,5 @@
 254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	559108	\N	6
 255	Cashew Mayo	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	\N	\N	0	0	10	2	t	0	\N	6
 256	Anti-aging Pesto	Can substitute lemon juice with that of lime To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	0	\N	6
+257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice. - https://www.glutenfreepalate.com/gluten-free-risotto/	\N	\N	6	40	5	4	t	524292	gluten-free-risotto.jpg	0
+259	Chicken Liver Pate	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	\N	\N	8	0	0	1	t	0	\N	0
