@@ -53,12 +53,11 @@ public class RecipeIngredient
 
     public string? DisabledReason { get; init; } = null;
 
-
+    /// <summary>
+    /// Used in the edit form: whether the form field is hidden or not.
+    /// </summary>
     [NotMapped]
     public bool Hide { get; set; }
-
-    [NotMapped]
-    public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
     [NotMapped]
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);

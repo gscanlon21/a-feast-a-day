@@ -20,7 +20,7 @@ public class ShoppingListItem
         IsCustom = false;
         Measure = dto.Measure;
         Quantity = dto.Quantity;
-        Order = dto.Category.GetDisplayName32(DisplayType.Order);
+        Order = dto.Category.GetSingleDisplayName(DisplayType.Order);
         // Don't trigger the property changed event.
         _isChecked = dto.SkipShoppingList;
     }
