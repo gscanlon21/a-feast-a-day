@@ -62,11 +62,11 @@
 
         <div class="form-group mb-3">
             <label asp-for="Ingredient.AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Allergens)</label>
-            <select asp-for="Ingredient.AllergenBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
-                    asp-items="@(EnumExtensions.GetSingleValues32<Allergy>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+            <select asp-for="Ingredient.AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="@Model.AllergenSelect.Count"
+                    asp-items="@(Model.AllergenSelect.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
             </select>
             <span asp-validation-for="Ingredient.AllergenBinder" class="text-danger"></span>
-            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Allergens)</div>
+            <div id="allergy-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Allergens)</div>
         </div>
 
         @for (var i = 0; i < Model.Nutrients.Count; i++)

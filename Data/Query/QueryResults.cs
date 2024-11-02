@@ -60,7 +60,6 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public int Order { get; init; } = recipeIngredient.Order;
     public Measure Measure { get; init; } = recipeIngredient.Measure;
     public string? Attributes { get; init; } = recipeIngredient.Attributes;
-    public bool SkipShoppingList { get; init; } = recipeIngredient.SkipShoppingList;
     public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
     public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
     internal int? RawIngredientRecipeId { get; init; } = recipeIngredient.IngredientRecipeId;
@@ -74,6 +73,7 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
     public int? IngredientRecipeId => UserIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;
     public string Name => Ingredient?.Name ?? IngredientRecipe?.Recipe.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
+    public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
     public QueryResults? IngredientRecipe { get; internal set; }
     public Ingredient? Ingredient { get; internal set; } = recipeIngredient.Ingredient;

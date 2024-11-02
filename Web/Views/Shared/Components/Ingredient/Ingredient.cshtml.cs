@@ -1,4 +1,6 @@
-﻿namespace Web.Views.Shared.Components.Ingredient;
+﻿using Core.Models.User;
+
+namespace Web.Views.Shared.Components.Ingredient;
 
 public class IngredientViewModel
 {
@@ -7,4 +9,6 @@ public class IngredientViewModel
     public required Data.Entities.Ingredient.Ingredient Ingredient { get; set; } = null!;
 
     public required IList<Data.Entities.User.Nutrient> Nutrients { get; set; }
+
+    public IList<Allergy> AllergenSelect => EnumExtensions.GetSingleValues32<Allergy>();
 }
