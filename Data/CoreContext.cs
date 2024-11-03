@@ -12,6 +12,7 @@ namespace Data;
 /// </summary>
 public class CoreContext : DbContext
 {
+    [Obsolete("Public parameterless constructor required for EF Core.", error: true)]
     public CoreContext() : base() { }
     public CoreContext(DbContextOptions<CoreContext> context) : base(context) { }
 
@@ -40,7 +41,6 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserServing>().HasKey(sc => new { sc.UserId, sc.Section });
         modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
-
 
         ////////// Query Filters //////////
         modelBuilder.Entity<Recipe>().HasQueryFilter(p => p.DisabledReason == null);

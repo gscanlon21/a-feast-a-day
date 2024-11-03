@@ -64,7 +64,7 @@ public static class Filters
     }
 
     /// <summary>
-    ///     Filters exercises to whether they use certain equipment.
+    /// Filters recipes to whether they use certain equipment.
     /// </summary>
     public static IQueryable<T> FilterEquipment<T>(IQueryable<T> query, Equipment? equipment) where T : IRecipeCombo
     {
