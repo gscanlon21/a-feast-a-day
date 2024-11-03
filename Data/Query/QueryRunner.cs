@@ -1,6 +1,5 @@
 ﻿using Core.Models.Ingredients;
 using Core.Models.Newsletter;
-using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
@@ -23,11 +22,10 @@ public class QueryRunner(Section section)
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     public class RecipesQueryResults : IRecipeCombo
     {
-        public IList<Nutrient> Nutrients { get; init; } = null!;
         public Recipe Recipe { get; init; } = null!;
-        public List<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = null!;
         public UserRecipe UserRecipe { get; init; } = null!;
-        public bool UserOwnsEquipment { get; init; }
+        public IList<Nutrient> Nutrients { get; init; } = null!;
+        public List<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = null!;
     }
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
@@ -37,7 +35,6 @@ public class QueryRunner(Section section)
         public UserRecipe? UserRecipe { get; set; } = queryResult.UserRecipe;
         public IList<Nutrient> Nutrients { get; set; } = queryResult.Nutrients;
         public List<RecipeIngredientQueryResults> RecipeIngredients { get; set; } = queryResult.RecipeIngredients;
-        public bool UserOwnsEquipment { get; } = queryResult.UserOwnsEquipment;
 
         public override int GetHashCode() => HashCode.Combine(Recipe.Id);
         public override bool Equals(object? obj) => obj is InProgressQueryResults other
@@ -80,15 +77,8 @@ public class QueryRunner(Section section)
                     Optional = ri.Optional,
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
-                }).ToList(),
-                UserOwnsEquipment = UserOptions.NoUser
-                    // The recipe does not require any equipment.
-                    || r.Equipment == Equipment.None
-                    // The user owns all of the equipment for the recipe.
-                    || UserOptions.Equipment.HasFlag(r.Equipment)
+                }).ToList()
             })
-            // Filter down to recipes the user owns equipment for.
-            .Where(vm => UserOptions.IgnoreMissingEquipment || vm.UserOwnsEquipment)
             // Don't grab recipes that the user wants to ignore.
             .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
         // Don't filter out ignored or allergen provoking ingredients here because we want to try to swap substitutes in first.
@@ -314,9 +304,9 @@ public class QueryRunner(Section section)
         // REFACTORME
         return section switch
         {
-            // Not in a workout context, order by name.
+            // Not in a feast context, order by name.
             Section.None => [.. finalResults.Take(take).OrderBy(vm => vm.Recipe.Name)],
-            // We are in a workout context, keep the result order.
+            // We are in a feast context, keep the result order.
             _ => finalResults.Take(take).ToList()
         };
     }
@@ -349,6 +339,7 @@ public class QueryRunner(Section section)
         // This will filter out ignored prerequisite recipes.
         return (await new QueryBuilder(Section.Prep)
             .WithUser(UserOptions)
+            .WithEquipment(EquipmentOptions.Equipment)
             .WithRecipes(options => options.AddRecipes(prerequisiteRecipeIds))
             .Build()
             .Query(factory))

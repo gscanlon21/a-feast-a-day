@@ -11,6 +11,7 @@ using Data.Entities.Ingredient;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models;
+using Data.Models.Newsletter;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -105,7 +106,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletterContext = await BuildFeastContext(user, token, date.Value);
         if (newsletterContext == null)
         {
-            // See if a previous workout exists, we send that back down so the app doesn't render nothing on rest days.
+            // See if a previous feast exists, we send that back down so the app doesn't render nothing on rest days.
             var currentFeast = await userRepo.GetCurrentFeast(user);
             if (currentFeast == null)
             {
@@ -137,7 +138,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         newsletterContext.User.Verbosity = Verbosity.Debug;
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
-        var userViewModel = new UserNewsletterDto(newsletterContext);
+        var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto, User>()!, newsletterContext.Token);
 
         var shoppingList = await GetShoppingList(newsletter, debugRecipes.SelectMany(r => r.RecipeIngredients).ToList());
         var viewModel = new NewsletterDto
@@ -169,21 +170,16 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
         var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.RecipeIngredients).ToList());
+        await UpdateLastSeenDate(recipes: dinnerRecipes.Concat(sideRecipes).Concat(snackRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
 
-        var userViewModel = new UserNewsletterDto(newsletterContext);
-        var viewModel = new NewsletterDto
+        return new NewsletterDto
         {
-            User = userViewModel,
             ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
             Recipes = allRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            User = new UserNewsletterDto(newsletterContext.User.AsType<UserDto, User>()!, newsletterContext.Token),
         };
-
-        // Other exercises. Refresh every day.
-        await UpdateLastSeenDate(recipes: dinnerRecipes.Concat(sideRecipes).Concat(snackRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
-
-        return viewModel;
     }
 
     /// <summary>

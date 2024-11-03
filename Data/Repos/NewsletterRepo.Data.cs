@@ -1,8 +1,8 @@
-﻿using Core.Dtos.User;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Data.Models;
+using Data.Models.Newsletter;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +13,7 @@ public partial class NewsletterRepo
 {
     internal async Task<IList<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var breakfastServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Breakfast) ?? new UserServingDto();
+        var breakfastServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Breakfast) ?? new UserServing(Section.Breakfast);
         var scale = breakfastServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
@@ -38,7 +38,7 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var lunchServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Lunch) ?? new UserServingDto();
+        var lunchServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Lunch) ?? new UserServing(Section.Lunch);
         var scale = lunchServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
@@ -63,7 +63,7 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var dinnerServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Dinner) ?? new UserServingDto();
+        var dinnerServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Dinner) ?? new UserServing(Section.Dinner);
         var scale = dinnerServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
@@ -88,7 +88,7 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var sideServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Sides) ?? new UserServingDto();
+        var sideServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Sides) ?? new UserServing(Section.Sides);
         var scale = sideServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
@@ -113,7 +113,7 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var snackServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Snacks) ?? new UserServingDto();
+        var snackServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Snacks) ?? new UserServing(Section.Snacks);
         var scale = snackServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
@@ -138,7 +138,7 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var dessertServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Dessert) ?? new UserServingDto();
+        var dessertServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Dessert) ?? new UserServing(Section.Dessert);
         var scale = dessertServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
         return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
@@ -161,7 +161,7 @@ public partial class NewsletterRepo
             .Query(serviceScopeFactory);
     }
 
-    private async Task<IList<QueryResults>> GetDebugRecipes(UserDto user)
+    private async Task<IList<QueryResults>> GetDebugRecipes(User user)
     {
         return await new QueryBuilder(Section.Debug)
             .WithUser(user)
@@ -170,7 +170,7 @@ public partial class NewsletterRepo
     }
 
     /// <summary>
-    /// Grab x-many exercises that the user hasn't seen in a long time.
+    /// Grab x-many ingredients that the user hasn't seen in a long time.
     /// </summary>
     private async Task<IList<Ingredient>> GetDebugIngredients()
     {

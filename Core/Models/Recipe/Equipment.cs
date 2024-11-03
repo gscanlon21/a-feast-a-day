@@ -9,49 +9,59 @@ public enum Equipment : long
     None = 0,
 
     [Display(Name = "Microwave", Order = 1)]
-    Microwave = 1 << 0 | 1 << 18, // 1 + 262144 = 262145
+    Microwave = 1 << 0 | 1L << 20, // 1 + 1048576
 
     [Display(Name = "Oven", Order = 2)]
-    Oven = 1 << 1, // 2
+    Oven = 1 << 1 | 1L << 21, // 2 + 2097152
 
     [Display(Name = "Stove", Order = 3)]
-    Stove = 1 << 2 | 1 << 19, // 4 + 524288 = 524292
+    Stove = 1 << 2 | 1L << 22, // 4 + 4194304 
 
-    [Display(Name = "Toaster", Order = 4)]
-    Toaster = 1 << 3, // 8
+    [Display(Name = "Grill", Order = 4)]
+    Grill = 1 << 3 | 1L << 23, // 8 + 8388608
 
-    [Display(Name = "Blender", Order = 5)]
-    Blender = 1 << 4 | 1 << 17, // 16 + 131072 = 131088
+    [Display(Name = "Broiler", Order = 5)]
+    Broiler = 1 << 4 | 1L << 24, // 16 + 16777216
 
-    [Display(Name = "Slow Cooker", Order = 6)]
-    SlowCooker = 1 << 5, // 32
+    [Display(Name = "Toaster", Order = 6)]
+    Toaster = 1 << 5 | 1L << 25, // 32 + 33554432
 
     [Display(Name = "Toaster Oven", Order = 7)]
-    ToasterOven = 1 << 6, // 64
+    ToasterOven = 1 << 6 | 1L << 26, // 64 + 67108864
 
-    [Display(Name = "Bread Maker", Order = 8)]
-    BreadMaker = 1 << 7, // 128
+    [Display(Name = "Blender", Order = 8)]
+    Blender = 1 << 7 | 1L << 27, // 128 + 134217728
 
-    [Display(Name = "Air Fryer", Order = 9)]
-    AirFryer = 1 << 8, // 256
+    [Display(Name = "Food Processor", Order = 9)]
+    FoodProcessor = 1 << 8 | 1L << 28, // 256 + 268435456
 
-    [Display(Name = "Grill", Order = 10)]
-    Grill = 1 << 9 | 1 << 16, // 512 + 65536 = 66048
+    [Display(Name = "Immersion Blender", Order = 10)]
+    ImmersionBlender = 1 << 9 | 1L << 29, // 512 + 536870912
 
-    [Display(Name = "Broiler", Order = 11)]
-    Broiler = 1 << 10 | 1 << 14, // 1024 + 16384 = 17408
+    [Display(Name = "Slow Cooker", Order = 11)]
+    SlowCooker = 1 << 10 | 1L << 30, // 1024 + 1073741824
 
-    [Display(Name = "Food Processor", Order = 12)]
-    FoodProcessor = 1 << 11 | 1 << 15, // 2048 + 32768 = 34816
+    [Display(Name = "Mortar & Pestle", Order = 12)]
+    MortarPestle = 1 << 11 | 1L << 31, // 2048 + 2147483648
 
-    [Display(Name = "Blender | Food Processor", Order = 13)]
-    BlenderFoodProcessor = 1 << 12 | 1 << 17 | 1 << 15, // 4096 + 131072 + 32768 = 167936
+    [Display(Name = "Air Fryer", Order = 13)]
+    AirFryer = 1 << 12 | 1L << 32, // 4096 + 4294967296
 
-    [Display(Name = "Grill | Broiler", Order = 14)]
-    GrillBroiler = 1 << 13 | 1 << 16 | 1 << 14, // 8192 + 65536 + 16384 = 90112
+    [Display(Name = "Bread Maker", Order = 14)]
+    BreadMaker = 1 << 13 | 1L << 33, // 8192 + 8589934592
 
-    [Display(Name = "Microwave | Stove", Order = 15)]
-    MicrowaveStove = 1 << 20 | 1 << 18 | 1 << 19, // 1048576 + 262144 + 524288 = 1835008
+    [Display(Name = "Dehydrator", Order = 15)]
+    Dehydrator = 1 << 14 | 1L << 34, // 16384 + 17179869184
+
+
+    [Display(Name = "Grill | Broiler", Order = 62)]
+    GrillBroiler = 1L << 61 | 1L << 23 | 1L << 24, // 2305843009213693952 + 8388608 + 16777216
+
+    [Display(Name = "Microwave | Stove", Order = 63)]
+    MicrowaveStove = 1L << 62 | 1L << 20 | 1L << 22, // 4611686018427387904 + 1048576 + 4194304
+
+    [Display(Name = "Blender | Food Processor", Order = 64)]
+    BlenderFoodProcessor = 1L << 63 | 1L << 27 | 1L << 28, // 9223372036854775808 + 134217728 + 268435456
 }
 
 public static class EquipmentExtensions

@@ -1,5 +1,4 @@
-﻿using Core.Dtos.User;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Entities.User;
 using Data.Query.Options;
@@ -61,7 +60,7 @@ public class QueryBuilder
     /// <summary>
     /// Filter variations down to have this equipment.
     /// </summary>
-    public QueryBuilder WithEquipment(Equipment equipments, Action<EquipmentOptions>? builder = null)
+    public QueryBuilder WithEquipment(Equipment? equipments, Action<EquipmentOptions>? builder = null)
     {
         var options = EquipmentOptions ?? new EquipmentOptions(equipments);
         builder?.Invoke(options);
@@ -80,27 +79,19 @@ public class QueryBuilder
         UserOptions = new UserOptions(user)
         {
             IgnoreIgnored = ignoreIgnored,
-            IgnoreMissingEquipment = ignoreMissingEquipment,
         };
 
-        return this;
-    }
-
-    public QueryBuilder WithUser(UserDto user, bool ignoreIgnored = false, bool ignoreMissingEquipment = false)
-    {
-        UserOptions = new UserOptions(user)
+        EquipmentOptions = new EquipmentOptions()
         {
-            IgnoreIgnored = ignoreIgnored,
-            IgnoreMissingEquipment = ignoreMissingEquipment,
+            Equipment = !ignoreMissingEquipment ? user.Equipment : null
         };
 
         return this;
     }
 
-    public QueryBuilder WithUser(UserOptions userOptions, bool? ignoreIgnored = null, bool? ignoreMissingEquipment = null)
+    public QueryBuilder WithUser(UserOptions userOptions, bool? ignoreIgnored = null)
     {
         userOptions.IgnoreIgnored = ignoreIgnored ?? userOptions.IgnoreIgnored;
-        userOptions.IgnoreMissingEquipment = ignoreMissingEquipment ?? userOptions.IgnoreMissingEquipment;
 
         UserOptions = userOptions;
         return this;
