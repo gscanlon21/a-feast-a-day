@@ -15,7 +15,6 @@ public class UserNewsletterDto
     [Obsolete("Public parameterless constructor for model binding.", error: true)]
     public UserNewsletterDto() { }
 
-    public UserNewsletterDto(FeastContext context) : this(context.User, context.Token) { }
     public UserNewsletterDto(UserDto user, string token)
     {
         Id = user.Id;

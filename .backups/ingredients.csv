@@ -3,8 +3,8 @@
 3	\N	Yellow Onions	https://www.eatthismuch.com/food/nutrition/yellow-onion,89980/	\N	f	0	148	148	2024-06-13	0	240	1
 4	\N	Lemons	https://www.eatthismuch.com/calories/lemons-1433	\N	f	33554432	108	108	2024-10-22	0	216	1
 5	\N	Garlic Cloves	https://www.eatthismuch.com/calories/garlic-clove,7480	\N	f	0	8	4	2024-08-29	0	224	2
-6	\N	Broccoli	https://www.eatthismuch.com/food/nutrition/broccoli,1885?a=1.0989%3A0	\N	f	0	91	91	-infinity	6	91	0
-7	\N	Large Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	0
+6	\N	Broccoli	https://www.eatthismuch.com/food/nutrition/broccoli,1885?a=1.0989%3A0	\N	f	0	91	91	-infinity	6	91	2
+7	\N	Large Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	2
 8	\N	Red Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	2048	119	119	2024-08-24	0	119	1
 9	\N	Avocados	https://www.eatthismuch.com/food/nutrition/avocados,1334/	\N	f	0	201	201	2024-10-23	0	201	1
 10	\N	Fresh Strawberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	-infinity	0	144	1
@@ -69,10 +69,10 @@
 70	\N	Cinnamon	\N	\N	t	0	240	100	-infinity	6	240	0
 71	\N	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195	\N	t	0	10	10	2024-10-18	7	160	131072
 72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	7	7	2024-08-26	7	112	3
-73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	f	0	7	7	2024-08-30	7	112	4
+73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
 74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2024-07-14	8	288	0
 75	\N	Kosher Salt	https://www.eatthismuch.com/food/nutrition/kosher-salt-coarse,2313857/	\N	t	0	4.8	1.2	-infinity	8	273.12	0
-76	\N	Unrefined Coconut Oil	\N	\N	f	0	240	100	-infinity	6	240	65536
+76	\N	Unrefined Coconut Oil	aka. Virgin Coconut Oil. https://www.eatthismuch.com/calories/coconut-oil-unrefined-2065164	\N	f	0	28	14	-infinity	4	224	65536
 77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	t	0	28	14	2024-06-13	9	224	65536
 78	\N	Vegetable Oil	https://www.eatthismuch.com/calories/vegetable-oil,373	\N	t	0	14	14	2024-08-20	7	224	3
 79	\N	Canola Oil	\N	\N	t	0	240	100	-infinity	6	240	3
@@ -124,7 +124,7 @@
 125	\N	Cardamom	\N	\N	f	0	16	8	-infinity	4	96	65536
 126	\N	Kielbasa Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880	\N	f	16384	28	56	2024-06-11	4	224	268435456
 127	\N	Apple Sauce, Unsweetened	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	244	244	-infinity	6	244	256
-129	\N	Frozen Meatballs	https://www.eatthismuch.com/calories/meatballs-frozen-italian-style,484657	\N	f	0	28.25	85	2024-08-16	4	226	0
+129	\N	Frozen Meatballs	https://www.eatthismuch.com/calories/meatballs-frozen-italian-style,484657	\N	f	16384	28.25	85	2024-08-16	4	226	134217728
 130	\N	Molasses	https://www.eatthismuch.com/calories/molasses-4624	\N	f	0	40	20	2024-10-12	9	320	3
 131	\N	Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	3
 132	\N	Elbow Macaroni	\N	\N	f	4	240	100	-infinity	6	240	0
@@ -276,7 +276,7 @@
 282	\N	Balsamic Vinaigrette	\N	\N	f	0	240	100	2024-07-31	6	240	0
 283	\N	Feta Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	2	28.35	28.35	2024-07-01	4	100	4194304
 284	\N	Parmesan Cheese | Feta Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	2	28.35	28.35	2024-07-01	4	100	0
-285	\N	Salt & Black Pepper	\N	\N	t	0	240	100	-infinity	6	240	0
+285	\N	Salt & Black Pepper	\N	\N	t	0	28	14	-infinity	4	224	131072
 286	\N	Penne Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,1581502/	\N	f	4	85	85	2024-06-10	6	85	0
 287	\N	Penne Pasta, GF	https://www.eatthismuch.com/food/nutrition/penne-pasta,101928/	\N	f	0	85	56	2024-06-10	6	85	0
 288	\N	Long Grain Rice	https://www.eatthismuch.com/food/nutrition/white-rice,4814/	\N	f	0	200	200	-infinity	6	240	0
@@ -460,8 +460,8 @@
 500	\N	Natural (Plain) Yogurt	https://www.eatthismuch.com/calories/plain-yogurt-96	\N	f	0	245	245	2024-10-16	6	245	6
 501	\N	Ice Cubes	\N	\N	f	0	8	4	2024-08-29	0	224	1
 502	\N	Golden (Light Corn) Syrup	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	8192	13.6	13.6	2024-06-22	7	240	208
-503	\N	Dried Thyme	\N	\N	f	0	15	15	2024-06-12	0	100	0
-504	\N	Cayenne Pepper	https://www.eatthismuch.com/calories/cayenne-pepper,206	\N	t	0	10	5	2024-09-13	4	80	4
+503	\N	Dried Thyme	\N	\N	f	0	15	15	2024-06-12	0	100	131072
+504	\N	Cayenne Pepper	https://www.eatthismuch.com/calories/cayenne-pepper,206	\N	t	0	10	5	2024-09-13	4	80	131072
 505	\N	Puy Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2024-06-16	6	192	4
 506	\N	Dried Chervil	https://www.eatthismuch.com/calories/chervil-183	\N	f	0	2	2	2024-10-10	7	32	3
 507	\N	Chervil | Parsley	\N	\N	f	0	240	100	-infinity	6	240	0
@@ -557,7 +557,7 @@
 624	\N	Fresh Radicchio Leaves 	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	1
 625	\N	Fresh Blackberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	-infinity	0	144	1
 626	\N	Fresh Raspberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	-infinity	0	144	1
-627	\N	Medjool Dates	https://www.eatthismuch.com/calories/dates-1591	\N	f	0	24	24	2024-06-15	6	192	1
+627	\N	Medjool Dates	https://www.eatthismuch.com/calories/dates-1591	\N	f	0	24	24	2024-06-15	0	192	1
 628	\N	Coconut Milk (Plain)	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	6
 629	\N	Coconut Milk (Vanilla)	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	6
 630	\N	Almond Milk (Vanilla)	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	16	240	240	-infinity	6	240	6

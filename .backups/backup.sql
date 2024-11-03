@@ -2966,6 +2966,33 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9014	369	1984	\N	\N	3	2	f
 9015	369	62	\N	\N	3	34	f
 9016	369	2047	\N	\N	3	190	f
+9017	627	68719476736	\N	\N	2	0.2	f
+9018	627	34359738368	\N	\N	2	167	f
+9019	627	2	\N	\N	3	16	f
+9020	627	1	\N	\N	3	0.4	f
+9021	627	2251799813685248	\N	\N	2	2	f
+9022	627	4294967296	\N	\N	2	15	f
+9023	627	274877906944	\N	\N	1	0.1	f
+9024	627	2199023255552	\N	\N	2	0.2	f
+9025	627	17179869184	\N	\N	2	13	f
+9026	627	4398046511104	\N	\N	2	0.1	f
+9027	627	70368744177664	\N	\N	2	15	f
+9028	627	17592186044416	\N	\N	2	0.1	f
+9029	627	65536	\N	\N	1	21	f
+9030	627	1048576	\N	\N	2	0.4	f
+9031	627	2097152	\N	\N	2	0.2	f
+9032	627	4194304	\N	\N	2	0.1	f
+9033	627	16777216	\N	\N	1	4	f
+9034	627	48	\N	\N	3	2	f
+9035	627	3221225472	\N	\N	1	1	f
+9036	627	14	\N	\N	3	16	f
+9037	627	229376	\N	\N	1	2	f
+9038	627	62	\N	\N	3	18	f
+9039	76	128	\N	\N	3	13	f
+9040	76	256	\N	\N	3	1	f
+9041	76	1792	\N	\N	3	1	f
+9042	76	1984	\N	\N	3	14	f
+9043	76	2047	\N	\N	3	120	f
 \.
 
 
@@ -2980,7 +3007,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9016, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9043, true);
 
 
 --

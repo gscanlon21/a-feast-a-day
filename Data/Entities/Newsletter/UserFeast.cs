@@ -1,10 +1,8 @@
-﻿using Core.Dtos.User;
-using Core.Models.Newsletter;
+﻿using Data.Models.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
-using Web.Code;
 
 namespace Data.Entities.Newsletter;
 
@@ -17,7 +15,7 @@ public class UserFeast
     [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
     public UserFeast() { }
 
-    internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User.AsType<User.User, UserDto>()!) { }
+    internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User) { }
 
     public UserFeast(DateOnly date, User.User user)
     {
