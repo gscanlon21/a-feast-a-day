@@ -628,6 +628,7 @@ COPY public.footnote ("Id", "Note", "Source", "Type") FROM stdin;
 4	Lemon juice prevents avocado flesh from discolouring once it is exposed to air.	\N	1
 5	Keep pancakes warm by wrapping them in foil and placing them in the oven at a low temperature.	\N	1
 6	A 4-quart saute pan is enough for cooking for two.	\N	1
+7	A recent study found that restricting sugar in the first 1,000 days of life (after conception and up to 2 years of age) reduced the lifetime risk of diabetes by 35%, the risk of hypertension by 20%, and the risk of obesity by 30%.	https://www.science.org/doi/10.1126/science.adn5421	8
 \.
 
 
@@ -3130,6 +3131,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9210	304	1984	\N	\N	3	0.1	f
 9211	304	62	\N	\N	3	1	f
 9212	304	2047	\N	\N	3	7	f
+9213	352	128	\N	\N	3	0.3	f
+9214	352	68719476736	\N	\N	2	88	f
+9215	352	34359738368	\N	\N	2	1474	f
+9216	352	2	\N	\N	3	43	f
+9217	352	1	\N	\N	3	5	f
+9218	352	4294967296	\N	\N	2	50	f
+9219	352	2199023255552	\N	\N	2	1	f
+9220	352	48	\N	\N	3	5	f
+9221	352	14	\N	\N	3	40	f
+9222	352	1984	\N	\N	3	1	f
+9223	352	62	\N	\N	3	45	f
+9224	352	2047	\N	\N	3	188	f
 \.
 
 
@@ -3137,14 +3150,14 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 -- Name: footnote_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."footnote_Id_seq"', 6, true);
+SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 
 
 --
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9212, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9224, true);
 
 
 --

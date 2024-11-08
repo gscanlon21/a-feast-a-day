@@ -75,7 +75,7 @@ public class UserDto : IUser
     /// What allergens does the user want in their newsletter?
     /// </summary>
     [Required]
-    public Allergy ExcludeAllergens { get; set; }
+    public Allergens ExcludeAllergens { get; set; }
 
     /// <summary>
     /// When was the user last active?

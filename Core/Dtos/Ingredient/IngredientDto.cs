@@ -29,7 +29,7 @@ public class IngredientDto
     public bool SkipShoppingList { get; set; }
 
     [Display(Name = "Allergens")]
-    public Allergy Allergens { get; set; }
+    public Allergens Allergens { get; set; }
 
     [Display(Name = "Category")]
     public Category Category { get; set; }

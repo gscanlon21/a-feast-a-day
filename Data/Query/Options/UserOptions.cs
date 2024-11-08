@@ -8,7 +8,7 @@ public class UserOptions : IOptions
     public bool NoUser { get; } = true;
 
     public int Id { get; }
-    public Allergy Allergens { get; }
+    public Allergens Allergens { get; }
     public int? MaxIngredients { get; }
     public IngredientOrder IngredientOrder { get; }
     public DateOnly CreatedDate { get; }

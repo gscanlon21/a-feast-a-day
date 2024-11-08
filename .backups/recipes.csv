@@ -81,7 +81,7 @@
 98	Loaded Deviled Eggs	https://iowagirleats.com/loaded-deviled-eggs/	\N	\N	25	20	5	4	t	0	loaded-deviled-eggs.jpg	0
 99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	0	\N	0
 100	Buttermilk Pancakes	\N	\N	\N	3	12	2	4	t	0	buttermilk-pancakes.jpg	0
-101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	2	12	3	4	t	0	linguine-arugula.jpg	0
+101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	2	12	3	2	t	4194308	linguine-arugula.jpg	0
 102	Colcannon	\N	\N	\N	10	10	5	3	t	0	colcannon.jpg	0
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	0	\N	0
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	12	3	4	t	0	\N	0
@@ -146,7 +146,7 @@
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	0	lemon-parmesan-capellini.jpg	0
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	0	crispy-cabbage.jpg	0
-167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	0	\N	0
+167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	0	chocolate-banana-smoothie.jpg	0
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	steak-pickled-walnut-sauce-alt.jpg	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	0	vanilla-cafe-latte.jpg	0
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4194308	\N	0
@@ -163,9 +163,9 @@
 181	5 Ingredient Sloppy Joes	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	\N	\N	6	10	5	4	t	0	sloppy-joes.jpg	0
 182	Beef and Noodles	https://www.saltandlavender.com/easy-beef-and-noodles/	\N	\N	4	20	10	4	t	0	beef-noodles.jpg	0
 183	Chestnut Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	2	5	10	2	t	0	\N	0
-184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	0	\N	0
+184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	4611686018834235396	pasta-pesto.jpg	0
 185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	0	pasta-vegetables.jpg	0
-186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	6	15	10	1	t	0	grilled-chicken-sandwich.jpg	0
+186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	6	15	10	1	t	4194308	grilled-chicken-sandwich.jpg	0
 187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	\N	\N	3	5	3	4	t	0	oatmeal-pancakes.jpg	0
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	10	0	12	4	t	0	vegetable-salad.jpg	0
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	0	vegetable-salad.jpg	0
@@ -181,7 +181,7 @@
 231	Pork with Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	4194308	\N	0
 232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
 233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	chocolate-mint-muffins.jpg	0
-234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	0	oven-baked-beet-chips.jpg	0
+234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	2097154	oven-baked-beet-chips.jpg	0
 235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	0	rosemary-lemon-tea.jpg	0
 236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	0	nutty-lemon-snack-balls.jpg	0
 237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
@@ -210,15 +210,16 @@
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	0	\N	0
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	0	\N	0
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	0	\N	0
-263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	0	20	3	t	0	\N	0
-264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	0	\N	0
+263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	0	20	3	t	0	tahini-carrot-slaw.jpg	0
+264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	0	egg-fried-rice.jpg	0
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	0	\N	0
 266	Sweet Potato Cauliflower Curry	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	\N	\N	4	55	5	4	t	0	\N	0
 267	Curried Mung Bean Soup	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	\N	\N	4	45	15	4	t	0	\N	0
 268	Orange Flower Water	https://thishealthytable.com/blog/orange-blossom-water/	\N	\N	0	120	5	1	t	0	\N	6
 269	Rose Water	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	\N	\N	0	20	5	1	t	4194308	\N	6
-270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	2	t	4194308	\N	0
+270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	2	t	4194308	chicken-lettuce-cups.jpg	0
 271	Traditional Stuffing	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	\N	\N	8	55	5	4	t	270532866	\N	0
 272	Fragrant Spiced Rice	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	\N	\N	8	10	5	4	t	0	\N	0
 305	Exercise Recovery Drink	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	\N	0
-306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	\N	0
+306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0
+307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	\N	0

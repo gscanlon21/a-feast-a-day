@@ -15,6 +15,11 @@
     <div><small><b>Send Day</b> - @User.SendDay.ToString()</small></div>
 
     <div><small><b>Footnotes</b> - @User.FootnoteType.GetDisplayName32()</small></div>
+    <div>
+        <small>
+            <b>Equipment</b> - @User.Equipment.GetDisplayName32(), @(new MarkupString(String.Join(", ", EnumExtensions.GetMultiValues64(excludingAny: User.Equipment).Select(e => $"<span style='color:red'>{e.GetSingleDisplayName()}</span>"))))
+        </small>
+    </div>
 
     <div style="margin-top:1ex;"><a target="_blank" href="@DH.UserLink(User, "")">Manage Preferences</a></div>
 

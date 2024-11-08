@@ -79,7 +79,7 @@ public class UserEditViewModel
 
     [Required]
     [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]
-    public Allergy ExcludeAllergens { get; set; }
+    public Allergens ExcludeAllergens { get; set; }
 
     [Required]
     [Display(Name = "Cooking Equipment", Description = "What cooking equipment do you have access to?")]
@@ -109,10 +109,10 @@ public class UserEditViewModel
         set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
-    public Allergy[]? AllergyBinder
+    public Allergens[]? AllergyBinder
     {
-        get => Enum.GetValues<Allergy>().Where(e => ExcludeAllergens.HasFlag(e)).ToArray();
-        set => ExcludeAllergens = value?.Aggregate(Allergy.None, (a, e) => a | e) ?? Allergy.None;
+        get => Enum.GetValues<Allergens>().Where(e => ExcludeAllergens.HasFlag(e)).ToArray();
+        set => ExcludeAllergens = value?.Aggregate(Allergens.None, (a, e) => a | e) ?? Allergens.None;
     }
 
     public FootnoteType[]? FootnoteTypeBinder

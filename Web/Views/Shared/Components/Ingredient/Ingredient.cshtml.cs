@@ -10,5 +10,5 @@ public class IngredientViewModel
 
     public required IList<Data.Entities.User.Nutrient> Nutrients { get; set; }
 
-    public IList<Allergy> AllergenSelect => EnumExtensions.GetSingleValues32<Allergy>();
+    public IList<Allergens> AllergenSelect => EnumExtensions.GetSingleValues64<Allergens>();
 }

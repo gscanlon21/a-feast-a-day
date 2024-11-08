@@ -42,7 +42,7 @@ public class RecipeDto
 
     public Section Section { get; set; }
 
-    public Allergy Allergens { get; set; }
+    public Allergens Allergens { get; set; }
 
     public string? Image { get; set; } = null;
 

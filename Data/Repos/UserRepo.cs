@@ -250,15 +250,15 @@ public class UserRepo
     /// If true, returns how much left of a nutrient to work per week.
     /// If false, returns returns the percentage a nutrient has been worked.
     /// </param>
-    public async Task<(double weeks, IDictionary<Allergy, double?>? volume)> GetWeeklyAllergens(User user, int weeks, bool includeToday = false)
+    public async Task<(double weeks, IDictionary<Allergens, double?>? volume)> GetWeeklyAllergens(User user, int weeks, bool includeToday = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
         var (actualWeeks, weeklyAllergenVolume) = await GetWeeklyAllergensFromRecipeIngredients(user, weeks, includeToday: includeToday);
-        return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(n => n, n => weeklyAllergenVolume[n]));
+        return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(n => n, n => weeklyAllergenVolume[n]));
     }
 
-    private async Task<(double weeks, IDictionary<Allergy, double?> volume)> GetWeeklyAllergensFromRecipeIngredients(User user, int weeks, bool includeToday = false)
+    private async Task<(double weeks, IDictionary<Allergens, double?> volume)> GetWeeklyAllergensFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await _context.UserFeasts
             .AsNoTracking().TagWithCallSite()
@@ -303,13 +303,13 @@ public class UserRepo
                     )
                 ).ToList();
 
-            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(m => m, m =>
+            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(m => m, m =>
             {
-                return (double?)monthlyMuscles.Sum(mm => (m.HasFlag(mm) && mm != Allergy.None) ? 1 : 0) / actualWeeks;
+                return (double?)monthlyMuscles.Sum(mm => (m.HasFlag(mm) && mm != Allergens.None) ? 1 : 0) / actualWeeks;
             }));
         }
 
-        return (weeks: 0, volume: EnumExtensions.GetValuesExcluding32(Allergy.None).ToDictionary(m => m, m => (double?)null));
+        return (weeks: 0, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(m => m, m => (double?)null));
     }
 }
 

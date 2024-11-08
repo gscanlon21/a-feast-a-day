@@ -34,10 +34,10 @@ public class TestEnumViewExtensions
     }
 
     [TestMethod]
-    public async Task GetSingleValues32_ReturnsSingleValues()
+    public async Task GetSingleValues64_ReturnsSingleValues()
     {
         var expected = new TestEnumFlags[] { TestEnumFlags.B, TestEnumFlags.C, TestEnumFlags.D, TestEnumFlags.E };
-        Assert.IsTrue(expected.SequenceEqual(EnumExtensions.GetSingleValues32<TestEnumFlags>().OrderBy(e => e)));
+        Assert.IsTrue(expected.SequenceEqual(EnumExtensions.GetSingleValues64<TestEnumFlags>().OrderBy(e => e)));
     }
 
     [TestMethod]

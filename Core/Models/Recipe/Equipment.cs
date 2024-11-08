@@ -54,17 +54,20 @@ public enum Equipment : long
     Dehydrator = 1 << 14 | 1L << 34, // 16384 + 17179869184
 
 
-    [Display(Name = "Grill | Broiler", Order = 61)]
-    GrillBroiler = 1L << 60 | 1L << 23 | 1L << 24, // 1152921504606846976 + 8388608 + 16777216
+    [Display(Name = "Grill | Broiler", Order = 60)]
+    GrillBroiler = 1L << 59 | 1L << 23 | 1L << 24,
 
-    [Display(Name = "Microwave | Stove", Order = 62)]
-    MicrowaveStove = 1L << 61 | 1L << 20 | 1L << 22, // 2305843009213693952 + 1048576 + 4194304
+    [Display(Name = "Microwave | Stove", Order = 61)]
+    MicrowaveStove = 1L << 60 | 1L << 20 | 1L << 22,
 
-    [Display(Name = "Food Processor | Blender", Order = 63)]
-    FoodProcessorBlender = 1L << 62 | 1L << 27 | 1L << 28, // 4611686018427387904 + 134217728 + 268435456
+    [Display(Name = "Food Processor | Blender", Order = 62)]
+    FoodProcessorBlender = 1L << 61 | 1L << 27 | 1L << 28,
 
-    [Display(Name = "Food Processor | Mortar & Pestle", Order = 64)]
-    FoodProcessorMortarPestle = 1L << 63 | 1L << 28 | 1L << 31, // 9223372036854775808 + 268435456 + 2147483648
+    [Display(Name = "Food Processor | Mortar & Pestle", Order = 63)]
+    FoodProcessorMortarPestle = 1L << 62 | 1L << 28 | 1L << 31,
+
+    [Display(Name = "Food Processor | Mortar & Pestle | Blender", Order = 64)]
+    FoodProcessorMortarPestleBlender = 1L << 63 | 1L << 27 | 1L << 28 | 1L << 31,
 }
 
 public static class EquipmentExtensions
@@ -76,7 +79,7 @@ public static class EquipmentExtensions
             return equipment;
         }
 
-        return EnumExtensions.GetMultiValues32<Equipment>()
+        return EnumExtensions.GetMultiValues64<Equipment>()
             .Where(e => equipment.HasAnyFlag32(e))
             .Aggregate(equipment, (c, n) => c | n);
     }

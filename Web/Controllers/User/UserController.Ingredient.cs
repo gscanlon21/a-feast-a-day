@@ -13,7 +13,7 @@ namespace Web.Controllers.User;
 public partial class UserController
 {
     [HttpPost, Route("ingredient/add")]
-    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergy> allergens)
+    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergens> allergens)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -27,7 +27,7 @@ public partial class UserController
             Name = name,
             Category = category,
             //Nutrients = nutrients,
-            Allergens = allergens.Aggregate(Allergy.None, (curr, next) => curr | next),
+            Allergens = allergens.Aggregate(Allergens.None, (curr, next) => curr | next),
         });
 
         await _context.SaveChangesAsync();

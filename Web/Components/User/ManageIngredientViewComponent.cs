@@ -65,9 +65,10 @@ public class ManageIngredientViewComponent : ViewComponent
 
     private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
     {
+        var allEquipment = user.Equipment.WithOptionalEquipment();
         return await _context.Recipes.AsNoTracking()
             .Where(r => r.UserId == null || r.UserId == user.Id)
-            .Where(r => r.Equipment == Equipment.None || user.Equipment.HasFlag(r.Equipment))
+            .Where(r => allEquipment.HasFlag(r.Equipment))
             // Some ingredients recipes can stand on their own, such as a simple salad that can be used in a sandwich.
             //.Where(r => r.Section == Section.None)
             .OrderBy(r => r.Name)

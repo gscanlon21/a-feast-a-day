@@ -189,7 +189,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     {
         List<QueryResults> recipes = [];
         // Exclude fetching prep recipes, querying for a section will also return the prep recipes used.
-        foreach (var section in EnumExtensions.GetSingleValuesExcludingAny32(Section.Prep))
+        foreach (var section in EnumExtensions.GetSingleValues64(excludingAny: Section.Prep))
         {
             recipes.AddRange((await new QueryBuilder(section)
                 .WithUser(user)

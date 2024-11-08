@@ -36,7 +36,7 @@ public class Ingredient
     public bool SkipShoppingList { get; set; }
 
     [Display(Name = "Allergens")]
-    public Allergy Allergens { get; set; }
+    public Allergens Allergens { get; set; }
 
     [Display(Name = "Category")]
     public Category Category { get; set; }
@@ -101,9 +101,9 @@ public class Ingredient
         && other.Id == Id;
 
     [NotMapped]
-    public Allergy[]? AllergenBinder
+    public Allergens[]? AllergenBinder
     {
-        get => Enum.GetValues<Allergy>().Where(e => Allergens.HasFlag(e)).ToArray();
-        set => Allergens = value?.Aggregate(Allergy.None, (a, e) => a | e) ?? Allergy.None;
+        get => Enum.GetValues<Allergens>().Where(e => Allergens.HasFlag(e)).ToArray();
+        set => Allergens = value?.Aggregate(Allergens.None, (a, e) => a | e) ?? Allergens.None;
     }
 }
