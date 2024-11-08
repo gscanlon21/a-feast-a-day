@@ -37,7 +37,7 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
 
         var recipes = await new QueryBuilder()
             // Include disabled recipes.
-            .WithUser(user, ignoreIgnored: true, ignoreMissingEquipment: true)
+            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
                 x.AddRecipes(userRecipes);

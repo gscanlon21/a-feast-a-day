@@ -32,7 +32,6 @@ public class ManageIngredientViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient ingredient, UserManageIngredientViewModel.Params parameters)
     {
-
         // Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
         var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
         userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
