@@ -128,6 +128,29 @@ public class QueryRunner(Section section)
                 // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
                 foreach (var recipeIngredient in queryResult.RecipeIngredients)
                 {
+                    // Check this first so we can fallback to an ingredient if the recipe fails.
+                    if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
+                    {
+                        // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
+                        recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId!.Value)
+                            // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
+                            ?? prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId!.Value);
+
+                        // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
+                        if (recipeIngredient.IngredientRecipe != null)
+                        {
+                            finalRecipeIngredients.Add(recipeIngredient);
+                            continue;
+                        }
+                        // If the recipe ingredient was a substitute for a regular ingredient, fallback to that ingredient.
+                        else if (recipeIngredient.UserIngredient?.SubstituteRecipeId.HasValue == true
+                            // Make sure we fallback to an ingredient and not another recipe.
+                            && !recipeIngredient.RawIngredientRecipeId.HasValue)
+                        {
+                            recipeIngredient.UserIngredient.SubstituteRecipeId = null;
+                        }
+                    }
+
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Swap the ingredient if the user ignored it.
@@ -146,31 +169,16 @@ public class QueryRunner(Section section)
                         if (recipeIngredient.Ingredient != null)
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
-                        }
-                        // If the ingredient was ignored or conflicts with allergens
-                        // ... and is not optional, skip the whole recipe.
-                        else if (!recipeIngredient.Optional)
-                        {
-                            ignoreRecipe = true;
-                            break;
+                            continue;
                         }
                     }
-                    else if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
+
+                    // If the ingredient was ignored or conflicts with allergens
+                    // ... and is not optional, skip the whole recipe.
+                    if (!recipeIngredient.Optional)
                     {
-                        // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipes filtered out already.
-                        recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId!.Value);
-                        // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
-                        if (recipeIngredient.IngredientRecipe != null)
-                        {
-                            finalRecipeIngredients.Add(recipeIngredient);
-                        }
-                        // If the recipe ingredient was ignored or conflicts with allergens
-                        // ... and is not optional, skip the whole recipe.
-                        else if (!recipeIngredient.Optional)
-                        {
-                            ignoreRecipe = true;
-                            break;
-                        }
+                        ignoreRecipe = true;
+                        break;
                     }
                 }
 
@@ -249,7 +257,7 @@ public class QueryRunner(Section section)
                     continue;
                 }
 
-                // Choose exercises that cover at least X nutrients in the targeted nutrient set.
+                // Choose recipes that cover at least X nutrients in the targeted nutrient set.
                 if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
                 {
                     var unworkedNutrients = GetUnworkedNutrients(finalResults);
@@ -327,8 +335,10 @@ public class QueryRunner(Section section)
     {
         // Query for prerequisites ingredient recipes here so we can check check their ignored status before finalizing recipes.
         var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe))
+            // Search for both the substituted recipe ingredient and the raw recipe ingredient, so we can fallback if one conflicts with allergens.
+            .SelectMany(ri => new List<int?>(2) { ri.IngredientRecipeId, ri.RawIngredientRecipeId }).Where(rid => rid.HasValue).Distinct()
             // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
-            .GroupBy(ri => ri.IngredientRecipeId!.Value).ToDictionary(g => g.Key, ri => 1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
+            .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => 1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // No infinite recursion please.
         if (!prerequisiteRecipeIds.Any() || RecipeOptions.IgnorePrerequisites)
@@ -351,11 +361,11 @@ public class QueryRunner(Section section)
     /// </summary>
     private async Task<IDictionary<int, List<IngredientUserIngredient>>> GetAlternativeIngredientsForIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
-        // Don't select ignored alternative ingredients or alternative ingredients containing allergens.
-        var noIgnoredOrAllergicIngredients = (IngredientUserIngredient? ingredient) =>
+        bool noIgnoredOrAllergicIngredients(IngredientUserIngredient? ingredient)
         {
+            // Don't select ignored alternative ingredients or alternative ingredients containing allergens.
             return ingredient != null && !ingredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens) && ingredient.UserIngredient?.Ignore != true;
-        };
+        }
 
         var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         return (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id)).Select(i => new

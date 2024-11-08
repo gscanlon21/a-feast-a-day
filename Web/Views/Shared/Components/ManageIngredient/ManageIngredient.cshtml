@@ -4,6 +4,13 @@
 @using Core.Models.Recipe
 @using Core.Consts
 
+@if (Model.UserIngredient.SubstituteRecipeId.HasValue == true && !Model.Recipes.Select(r => r.Id).Contains(Model.UserIngredient.SubstituteRecipeId.Value))
+{
+    <div class="alert alert-warning">
+        Your current selected substitute recipe conflicts with your allergens or equipment. Please select a new substitution.
+    </div>
+}
+
 <h6 class="mb-1">Ingredient</h6>
 <div class="alert alert-light shadow">
     <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreIngredient)" method="post"

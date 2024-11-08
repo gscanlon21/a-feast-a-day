@@ -1,6 +1,7 @@
 ﻿using Core.Consts;
 using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Data.Models;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,8 @@ using Web.Views.Recipe;
 
 namespace Web.Controllers.Recipe;
 
-[Route("recipe")]
+[Route("recipe", Order = 1)]
+[Route("recipes", Order = 2)]
 public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) : ViewController()
 {
     /// <summary>
@@ -18,7 +20,9 @@ public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) 
     /// </summary>
     public const string Name = "Recipe";
 
-    [Route("all"), ResponseCompression(Enabled = !DebugConsts.IsDebug)]
+    [Route("", Order = 2)]
+    [Route("all", Order = 1)]
+    [ResponseCompression(Enabled = !DebugConsts.IsDebug)]
     public async Task<IActionResult> All(RecipesViewModel? viewModel = null)
     {
         viewModel ??= new RecipesViewModel();
@@ -34,10 +38,15 @@ public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) 
             .Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!)
             .ToList();
 
+        if (viewModel.Equipment.HasValue)
+        {
+            viewModel.Recipes = viewModel.Recipes.Where(vm => vm.Recipe.Equipment != Equipment.None).ToList();
+        }
+
         if (!string.IsNullOrWhiteSpace(viewModel.Name))
         {
-            viewModel.Recipes = viewModel.Recipes.Where(e =>
-                e.Recipe.Name.Contains(viewModel.Name, StringComparison.OrdinalIgnoreCase)
+            viewModel.Recipes = viewModel.Recipes.Where(vm =>
+                vm.Recipe.Name.Contains(viewModel.Name, StringComparison.OrdinalIgnoreCase)
             ).ToList();
         }
 

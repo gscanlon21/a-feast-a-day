@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.User;
 
+/// <summary>
+/// https://ods.od.nih.gov/HealthInformation/nutrientrecommendations.aspx
+/// </summary>
 [Flags]
 public enum Nutrients : long
 {
@@ -50,12 +53,14 @@ public enum Nutrients : long
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(300, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
+    [DailyAllowance(275, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Order = 70, ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(250, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.PregnantWomen)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.BreastfeedingWomen)]
     [Display(Order = 70, ShortName = "Net Carbs", Name = "Net Carbohydrates", GroupName = "Carbohydrates")]
     NetCarbohydrates = Sugar | Starch | Oligosaccharides, // 14
 

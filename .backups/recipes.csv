@@ -3,7 +3,7 @@
 17	Vegetarian Stir-Fry	Save time and money by purchasing a package of frozen vegetables. These vegetables are typically picked at their peak and frozen quickly to lock in their natural nutrients while also maintaining flavor. The seasoning from the rice, oil, and sauce will provide plenty of flavors to keep this meal from being anything but bland. For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	0	vegetable-stir-fry.jpg	0
 19	Egg in a Pepper	\N	\N	\N	1	5	1	1	t	0	egg-in-a-pepper.jpg	0
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg	0
-23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	0	scalloped-potatoes-ham.jpg	0
+23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	2097154	scalloped-potatoes-ham.jpg	0
 24	Fried Cabbage and Egg Noodles	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	\N	\N	6	15	5	4	t	0	cabbage-noodles.jpg	0
 25	Slow Cooker Chicken	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	0	360	10	1	t	0	slow-cooker-ckicken.jpg	5
 26	Roasted Broccoli	Roasted broccoli is easy to make and so much more flavorsome than boiled. My favorite part is the roasted sliced stem pieces.	\N	\N	8	20	5	1	t	0	roasted-broccoli.jpg	0
@@ -19,7 +19,7 @@
 36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	0	mac-n-cheese-mug.jpg	0
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg	0
 38	Black Bean Fajita Skillet	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0
-39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	0	linguine-avocado-tomato-lime.jpg	0
+39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	4194308	linguine-avocado-tomato-lime.jpg	0
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	\N	0
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	4194308	baked-banana-porridge.jpg	0
@@ -31,7 +31,7 @@
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	0	avocado-cakes.jpg	0
 49	Easy Mini Bagel Pizzas	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	\N	\N	6	10	10	2	t	0	\N	0
 50	Simple 4-Ingredient Egg Salad with Mayo	https://www.lifeisbutadish.com/momos-egg-salad/	\N	\N	1	5	10	1	t	0	egg-salad.jpg	0
-51	Grilled Garlic Naan	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	\N	\N	8	5	5	2	t	0	grilled-garlic-naan.jpg	0
+51	Grilled Garlic Naan	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	\N	\N	8	5	5	2	t	4194308	grilled-garlic-naan.jpg	0
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg	0
 53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	0	old-fashioned-oatmeal.jpg	0
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg	0
@@ -63,7 +63,7 @@
 80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	0	eggplant-mint-couscous-salad.jpg	0
 81	Griddle Potatoes	\N	\N	\N	8	8	10	4	t	0	griddle-potatoes.jpg	0
 82	Chicken Salad	\N	\N	\N	10	0	5	2	t	0	chicken-salad.jpg	0
-83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	32	60	60	4	t	0	springerle-cookies.jpg	0
+83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	32	60	60	4	t	2097154	springerle-cookies.jpg	0
 84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	10	12	3	4	t	0	egg-bacon-salad.jpg	0
 85	Pasta Fresca	https://iowagirleats.com/pasta-fresca/	\N	\N	6	15	5	4	t	0	pasta-fresca.jpg	0
 86	Cheesy Ham and Broccoli Rice Skillet	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	\N	\N	6	15	5	3	t	0	cheesy-ham-broccoli-rice.jpg	0
@@ -86,7 +86,7 @@
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	0	\N	0
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	12	3	4	t	0	\N	0
 105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	25	5	4	t	0	\N	0
-106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	0	\N	0
+106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	4194308	garlic-chicken.jpg	0
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	0	ham-gruyere-melt.jpg	0
 108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	120	10	8	t	0	\N	0
 109	Grilled Fattoush Salad	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	10	15	10	4	t	0	grilled-fattoush-salad.jpg	0
@@ -105,7 +105,7 @@
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	0	soft-boiled-egg.jpg	0
 123	Sweet and Sour Cucumber with Fresh Dill	This salad can be kept in the refrigerator for up to a week.	\N	\N	8	0	10	4	t	0	cucumber-dill.jpg	0
 124	Pan-Fried Chicken with Pesto	\N	\N	\N	4	18	2	4	t	0	pesto-chicken.jpg	0
-125	Pesto	\N	\N	\N	0	5	1	1	t	0	pesto.jpg	6
+125	Pesto	\N	\N	\N	0	5	1	1	t	-9223372034304638976	pesto.jpg	6
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	0	bacon-shops-apple-cider-sauce.jpg	0
 127	Roast Chicken Pitta Pockets	\N	\N	\N	6	2	13	6	t	0	\N	0
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	4	16	4	4	t	0	chicken-soy-sauce.jpg	0
@@ -123,7 +123,7 @@
 140	Spiced Chicken Risotto with Mint	Use the same quantity of pumpkin or butternut squash in place of the carrots. To make a vegetarian version, omit the chicken and add a drained 400g/14oz can of chickpeas to the rice just before the end of cooking.	\N	\N	6	15	5	4	t	0	gluten-free-risotto.jpg	0
 141	Chicken Fried Rice	If you don't have any cold cooked rice in the refrigerator, you can still make this stir-fry if you have a couple of pouches of instant or express long grain or basmati rice in the cupboard. This type of rice cooks in under 2 minutes. For a stir-fry, the rice should be cold, so spread it out on a baking sheet after cooking and fan it to cool it quickly.	\N	\N	4	10	5	4	t	0	chicken-fried-rice.jpg	0
 142	Frothy Hot Chocolate	You could use Mexican chocolate, which is flavoured with almonds, cinnamon and vanilla, and sweetened with sugar. All the ingredients are crushed together in a special mortar, and heated over coals. The powdered mixture is then shaped into discs, which can be bought in specialist stores.	\N	\N	32	4	3	4	t	0	hot-chocolate.jpg	0
-143	Banana Smoothie with Chocolate Sauce	Pouring chocolate sauce like this cools it slightly on the way down, so that it thickens on contact with the cold smoothie.	\N	\N	32	10	5	2	t	0	chocolate-banana-smoothie.jpg	0
+143	Banana Smoothie with Chocolate Sauce	Pouring chocolate sauce like this cools it slightly on the way down, so that it thickens on contact with the cold smoothie.	\N	\N	32	10	5	2	t	2305843009616347136	chocolate-banana-smoothie.jpg	0
 144	Cantaloupe Melon Salad	When you need just a small amount of sifted icing (confectioners') sugar, use a tea strainer. Spoon the sugar into the strainer, then lightly tap the side with the spoon so that the sifted sugar drifts down evenly. Though tempting when you're in a hurry, mashing the sugar in the strainer will not quicken the time it takes to sift through!	\N	\N	40	5	3	4	t	0	cantaloupe-melon-salad.jpg	0
 145	Panettone French Toast	A generous portion of chilled mixed berry fruits such as raspberries, blackberries, morello cherries and blueberries perfectly complements the richness of this snack.	\N	\N	35	6	2	4	t	0	panettone-french-toast-alt.jpg	0
 146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato purée.	\N	\N	24	7	3	6	t	0	\N	0
@@ -135,18 +135,18 @@
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	0	potato-olive-salad.jpg	0
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	2	3	2	2	t	0	cinnamon-toast.jpg	0
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	0	pancakes-pears.jpg	0
-156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	0	banana-ice-cream.jpg	0
+156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	2097154	banana-ice-cream.jpg	0
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	8	0	6	6	t	0	fruit-skewers.jpg	0
 158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	0	fruit-skewers.jpg	0
 159	Clementines with Star Anise	\N	\N	\N	8	12	6	6	t	0	clementines-star-anise.jpg	0
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	\N	\N	6	8	8	4	t	0	mexican-tacos.jpg	0
-161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	0	\N	0
+161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	576460752328589312	\N	0
 162	Rhubarb and Ginger Trifles	\N	\N	\N	32	0	4	4	t	0	rhubarb-ginger-trifles.jpg	0
 163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	32	12	8	12	t	0	portuguese-custard-tarts.jpg	0
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	0	lemon-parmesan-capellini.jpg	0
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	0	crispy-cabbage.jpg	0
-167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	0	chocolate-banana-smoothie.jpg	0
+167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	2305843009616347136	chocolate-banana-smoothie.jpg	0
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	steak-pickled-walnut-sauce-alt.jpg	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	0	vanilla-cafe-latte.jpg	0
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4194308	\N	0
@@ -170,7 +170,7 @@
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	10	0	12	4	t	0	vegetable-salad.jpg	0
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	0	vegetable-salad.jpg	0
 190	Fusilli with Sausage	\N	\N	\N	6	15	5	4	t	0	eliche-with-sausage.jpg	0
-191	Croûtons	\N	\N	\N	0	10	2	2	t	0	croutons.jpg	6
+191	Croûtons	\N	\N	\N	0	10	2	1	t	4194308	croutons.jpg	6
 192	Eliche with Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	6	20	5	4	t	0	eliche-with-sausage.jpg	0
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	0	date-snickers.jpg	0
 194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	0	pasta-asparagus-cream.jpg	0
@@ -182,8 +182,8 @@
 232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
 233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	chocolate-mint-muffins.jpg	0
 234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	2097154	oven-baked-beet-chips.jpg	0
-235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	0	rosemary-lemon-tea.jpg	0
-236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	0	nutty-lemon-snack-balls.jpg	0
+235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	2147485696	rosemary-lemon-tea.jpg	0
+236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	268435712	nutty-lemon-snack-balls.jpg	0
 237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
 238	Anti-Allergy Tea	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	\N	\N	8	5	5	1	t	0	rosemary-lemon-tea.jpg	0
 239	Okra Fries	https://www.drkarafitzgerald.com/recipe/okra-fries/	\N	\N	24	25	5	4	t	0	okra-fries.jpg	0
@@ -203,11 +203,11 @@
 253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. - https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	\N	\N	16	120	10	5	t	17179885568	apricot-butter-bars.jpg	0
 254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	0	\N	6
 255	Cashew Mayo	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	\N	\N	0	0	10	2	t	0	\N	6
-256	Anti-aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	-9223372034438856704	anti-aging-pesto.jpg	6
+256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	-9223372034304638976	anti-aging-pesto.jpg	6
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice. - https://www.glutenfreepalate.com/gluten-free-risotto/	\N	\N	6	40	5	4	t	0	gluten-free-risotto.jpg	0
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	20	2	2	t	0	korean-eggs-rice.jpg	0
-259	Chicken Liver Pate	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	\N	\N	8	0	0	1	t	0	chicken-liver-pate.jpg	0
-260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	0	\N	0
+259	Chicken Liver Pate	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	\N	\N	8	0	0	1	t	2305843009620541444	chicken-liver-pate.jpg	0
+260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	4194308	\N	0
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	0	\N	0
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	0	\N	0
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	0	20	3	t	0	tahini-carrot-slaw.jpg	0
@@ -223,3 +223,6 @@
 305	Exercise Recovery Drink	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	\N	0
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0
 307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	\N	0
+308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	-9223372034304638976	pesto.jpg	6
+309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
+310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	0	\N	6

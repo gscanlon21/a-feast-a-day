@@ -11,9 +11,8 @@ using Web.Views.Shared.Components.IgnoredRecipes;
 
 namespace Web.Components.User;
 
-
 /// <summary>
-/// Renders an alert box summary of when the user's next deload week will occur.
+/// Renders the user's ignored recipes.
 /// </summary>
 public class IgnoredRecipesViewComponent : ViewComponent
 {
@@ -47,7 +46,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
 
         var ignoredRecipes = await new QueryBuilder()
             // Include disabled recipes.
-            .WithUser(user, ignoreIgnored: true)
+            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
                 x.AddRecipes(userRecipes);

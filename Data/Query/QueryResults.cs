@@ -71,7 +71,7 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
     public int? IngredientRecipeId => UserIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;
-    public string Name => Ingredient?.Name ?? IngredientRecipe?.Recipe.Name ?? "";
+    public string Name => IngredientRecipe?.Recipe.Name ?? Ingredient?.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 

@@ -74,9 +74,9 @@ public class QueryBuilder
     /// TODO: Refactor user options to better select what is filtered and what isn't.
     /// ..... (prerequisites, progressions, equipment, no use caution when new, unique exercises).
     /// </summary>
-    public QueryBuilder WithUser(User user, bool ignoreIgnored = false, bool ignoreMissingEquipment = false)
+    public QueryBuilder WithUser(User user, bool ignoreAllergens = false, bool ignoreIgnored = false, bool ignoreMissingEquipment = false)
     {
-        UserOptions = new UserOptions(user)
+        UserOptions = new UserOptions(user, ignoreAllergens: ignoreAllergens)
         {
             IgnoreIgnored = ignoreIgnored,
         };
