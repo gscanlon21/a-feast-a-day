@@ -14,7 +14,7 @@ namespace Data.Entities.Newsletter;
 [DebuggerDisplay("{GetDebuggerDisplay(),nq}")]
 public class UserFeastRecipeIngredient
 {
-    [Obsolete("Public parameterless constructor for model binding.", error: true)]
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFeastRecipeIngredient() { }
 
     internal UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient)

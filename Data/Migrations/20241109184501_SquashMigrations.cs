@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -37,7 +38,7 @@ namespace Data.Migrations
                     AcceptedTerms = table.Column<bool>(type: "boolean", nullable: false),
                     FootnoteType = table.Column<int>(type: "integer", nullable: false),
                     SendDay = table.Column<int>(type: "integer", nullable: false),
-                    Equipment = table.Column<int>(type: "integer", nullable: false),
+                    Equipment = table.Column<long>(type: "bigint", nullable: false),
                     SendHour = table.Column<int>(type: "integer", nullable: false),
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
                     CreatedDate = table.Column<DateOnly>(type: "date", nullable: false),
@@ -46,6 +47,7 @@ namespace Data.Migrations
                     LastActive = table.Column<DateOnly>(type: "date", nullable: true),
                     NewsletterDisabledReason = table.Column<string>(type: "text", nullable: true),
                     Features = table.Column<int>(type: "integer", nullable: false),
+                    IngredientOrder = table.Column<int>(type: "integer", nullable: false),
                     FootnoteCountTop = table.Column<int>(type: "integer", nullable: false),
                     FootnoteCountBottom = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -98,7 +100,7 @@ namespace Data.Migrations
                     Servings = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     AdjustableServings = table.Column<bool>(type: "boolean", nullable: false),
-                    Equipment = table.Column<int>(type: "integer", nullable: false),
+                    Equipment = table.Column<long>(type: "bigint", nullable: false),
                     Section = table.Column<int>(type: "integer", nullable: false),
                     Image = table.Column<string>(type: "text", nullable: true),
                     Notes = table.Column<string>(type: "text", nullable: true),
@@ -184,8 +186,7 @@ namespace Data.Migrations
                         principalTable: "user",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "A day's workout routine");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_footnote",
@@ -463,10 +464,10 @@ namespace Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Scale = table.Column<int>(type: "integer", nullable: false),
-                    UserFeastId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
-                    Order = table.Column<int>(type: "integer", nullable: false),
-                    Section = table.Column<int>(type: "integer", nullable: false)
+                    UserFeastId = table.Column<int>(type: "integer", nullable: false),
+                    Section = table.Column<int>(type: "integer", nullable: false),
+                    Order = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -483,8 +484,33 @@ namespace Data.Migrations
                         principalTable: "user_feast",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "user_feast_recipe_ingredient",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RecipeIngredientId = table.Column<int>(type: "integer", nullable: false),
+                    UserFeastRecipeId = table.Column<int>(type: "integer", nullable: false)
                 },
-                comment: "A day's workout routine");
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_feast_recipe_ingredient", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_user_feast_recipe_ingredient_recipe_ingredient_RecipeIngred~",
+                        column: x => x.RecipeIngredientId,
+                        principalTable: "recipe_ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_user_feast_recipe_ingredient_user_feast_recipe_UserFeastRec~",
+                        column: x => x.UserFeastRecipeId,
+                        principalTable: "user_feast_recipe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ingredient_UserId",
@@ -558,6 +584,16 @@ namespace Data.Migrations
                 column: "UserFeastId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_user_feast_recipe_ingredient_RecipeIngredientId",
+                table: "user_feast_recipe_ingredient",
+                column: "RecipeIngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_feast_recipe_ingredient_UserFeastRecipeId",
+                table: "user_feast_recipe_ingredient",
+                column: "UserFeastRecipeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_user_footnote_UserId",
                 table: "user_footnote",
                 column: "UserId");
@@ -601,9 +637,6 @@ namespace Data.Migrations
                 name: "nutrient");
 
             migrationBuilder.DropTable(
-                name: "recipe_ingredient");
-
-            migrationBuilder.DropTable(
                 name: "recipe_instruction");
 
             migrationBuilder.DropTable(
@@ -613,7 +646,7 @@ namespace Data.Migrations
                 name: "user_family");
 
             migrationBuilder.DropTable(
-                name: "user_feast_recipe");
+                name: "user_feast_recipe_ingredient");
 
             migrationBuilder.DropTable(
                 name: "user_footnote");
@@ -634,13 +667,19 @@ namespace Data.Migrations
                 name: "user_token");
 
             migrationBuilder.DropTable(
-                name: "user_feast");
+                name: "recipe_ingredient");
+
+            migrationBuilder.DropTable(
+                name: "user_feast_recipe");
 
             migrationBuilder.DropTable(
                 name: "ingredient");
 
             migrationBuilder.DropTable(
                 name: "recipe");
+
+            migrationBuilder.DropTable(
+                name: "user_feast");
 
             migrationBuilder.DropTable(
                 name: "user");

@@ -22,7 +22,7 @@ namespace Data.Entities.User;
 [DebuggerDisplay("Email = {Email}, LastActive = {LastActive}")]
 public class User : IUser
 {
-    [Obsolete("Public parameterless constructor for model binding.", error: true)]
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public User() { }
 
     /// <summary>
@@ -182,7 +182,7 @@ public class User : IUser
     [JsonInclude, InverseProperty(nameof(UserServing.User))]
     public virtual ICollection<UserServing> UserServings { get; init; } = [];
 
-    [JsonIgnore/*, InverseProperty(nameof(UserFeast.User))*/]
+    [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
     public virtual ICollection<UserFeast> UserFeasts { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Recipe.Recipe.User))]

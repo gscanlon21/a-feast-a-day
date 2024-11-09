@@ -223,10 +223,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_feast", t =>
-                        {
-                            t.HasComment("A day's workout routine");
-                        });
+                    b.ToTable("user_feast");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
@@ -747,11 +744,13 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", null)
+                    b.HasOne("Data.Entities.User.User", "User")
                         .WithMany("UserFeasts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>

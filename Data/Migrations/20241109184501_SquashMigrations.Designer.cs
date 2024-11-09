@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20240911150612_AddUserFeastRecipeIngredient")]
-    partial class AddUserFeastRecipeIngredient
+    [Migration("20241109184501_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -226,10 +226,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_feast", t =>
-                        {
-                            t.HasComment("A day's workout routine");
-                        });
+                    b.ToTable("user_feast");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
@@ -261,10 +258,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserFeastId");
 
-                    b.ToTable("user_feast_recipe", t =>
-                        {
-                            t.HasComment("A day's workout routine");
-                        });
+                    b.ToTable("user_feast_recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
@@ -275,25 +269,19 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("IngredientId")
+                    b.Property<int>("RecipeIngredientId")
                         .HasColumnType("integer");
-
-                    b.Property<double>("Quantity")
-                        .HasColumnType("double precision");
 
                     b.Property<int>("UserFeastRecipeId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IngredientId");
+                    b.HasIndex("RecipeIngredientId");
 
                     b.HasIndex("UserFeastRecipeId");
 
-                    b.ToTable("user_feast_recipe_ingredient", t =>
-                        {
-                            t.HasComment("A day's workout routine");
-                        });
+                    b.ToTable("user_feast_recipe_ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipe.Recipe", b =>
@@ -313,8 +301,8 @@ namespace Data.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
-                    b.Property<int>("Equipment")
-                        .HasColumnType("integer");
+                    b.Property<long>("Equipment")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Image")
                         .HasColumnType("text");
@@ -497,8 +485,8 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Equipment")
-                        .HasColumnType("integer");
+                    b.Property<long>("Equipment")
+                        .HasColumnType("bigint");
 
                     b.Property<long>("ExcludeAllergens")
                         .HasColumnType("bigint");
@@ -513,6 +501,9 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("FootnoteType")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("IngredientOrder")
                         .HasColumnType("integer");
 
                     b.Property<DateOnly?>("LastActive")
@@ -756,11 +747,13 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", null)
+                    b.HasOne("Data.Entities.User.User", "User")
                         .WithMany("UserFeasts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
@@ -784,9 +777,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
+                    b.HasOne("Data.Entities.Recipe.RecipeIngredient", "RecipeIngredient")
                         .WithMany("UserFeastRecipeIngredients")
-                        .HasForeignKey("IngredientId")
+                        .HasForeignKey("RecipeIngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -796,7 +789,7 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Ingredient");
+                    b.Navigation("RecipeIngredient");
 
                     b.Navigation("UserFeastRecipe");
                 });
@@ -957,8 +950,6 @@ namespace Data.Migrations
 
                     b.Navigation("RecipeIngredients");
 
-                    b.Navigation("UserFeastRecipeIngredients");
-
                     b.Navigation("UserIngredients");
 
                     b.Navigation("UserSubstituteIngredients");
@@ -987,6 +978,11 @@ namespace Data.Migrations
                     b.Navigation("UserRecipes");
 
                     b.Navigation("UserSubstituteRecipes");
+                });
+
+            modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
+                {
+                    b.Navigation("UserFeastRecipeIngredients");
                 });
 
             modelBuilder.Entity("Data.Entities.User.User", b =>

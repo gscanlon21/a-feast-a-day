@@ -1,5 +1,4 @@
 ﻿using Data.Models.Newsletter;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -7,12 +6,12 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Newsletter;
 
 /// <summary>
-/// A day's workout routine.
+/// A user's weekly feast.
 /// </summary>
-[Table("user_feast"), Comment("A day's workout routine")]
+[Table("user_feast")]
 public class UserFeast
 {
-    [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFeast() { }
 
     internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User) { }
@@ -31,15 +30,15 @@ public class UserFeast
     public int UserId { get; private init; }
 
     /// <summary>
-    /// The date the workout is for, using the user's UTC offset date.
+    /// The date the feast is for, using the user's UTC offset date.
     /// </summary>
     [Required]
     public DateOnly Date { get; private init; }
 
     public string? Logs { get; private init; }
 
-    //[JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFeasts))]
-    //public virtual User.User User { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFeasts))]
+    public virtual User.User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;

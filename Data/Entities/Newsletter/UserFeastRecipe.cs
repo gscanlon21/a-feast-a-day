@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Data.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -13,16 +14,18 @@ namespace Data.Entities.Newsletter;
 [DebuggerDisplay("{GetDebuggerDisplay(),nq}")]
 public class UserFeastRecipe
 {
-    [Obsolete("Public parameterless constructor for model binding.", error: true)]
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFeastRecipe() { }
 
-    public UserFeastRecipe(UserFeast newsletter, Recipe.Recipe recipe, int scale)
+    public UserFeastRecipe(UserFeast newsletter, QueryResults queryResults, int order)
     {
-        // Don't set UserFeast, so that EF Core doesn't add/update UserFeast.
-        UserFeastId = newsletter.Id;
+        Order = order;
+        Scale = queryResults.Scale;
+        Section = queryResults.Section;
         // Don't set Recipe, so that EF Core doesn't add/update Recipe.
-        RecipeId = recipe.Id;
-        Scale = scale;
+        RecipeId = queryResults.Recipe.Id;
+        // Don't set UserFeast, so that EF Core doesn't add/update UserFeast.
+        UserFeastId = newsletter.Id; 
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -30,19 +33,20 @@ public class UserFeastRecipe
 
     public int Scale { get; private init; }
 
-    public int UserFeastId { get; private init; }
-
     public int RecipeId { get; private init; }
 
-    /// <summary>
-    /// The order of each exercise in each section.
-    /// </summary>
-    public int Order { get; init; }
+    public int UserFeastId { get; private init; }
 
     /// <summary>
     /// What section of the newsletter is this?
     /// </summary>
-    public Section Section { get; init; }
+    public Section Section { get; private init; }
+
+    /// <summary>
+    /// The order of each recipe in each section.
+    /// </summary>
+    public int Order { get; private init; }
+
 
     [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserFeastRecipes))]
     public virtual Recipe.Recipe Recipe { get; private init; } = null!;
@@ -52,6 +56,7 @@ public class UserFeastRecipe
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.UserFeastRecipe))]
     public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; init; } = null!;
+
 
     private string GetDebuggerDisplay()
     {

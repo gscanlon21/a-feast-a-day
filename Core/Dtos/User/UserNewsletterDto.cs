@@ -12,7 +12,7 @@ namespace Core.Dtos.User;
 /// </summary>
 public class UserNewsletterDto
 {
-    [Obsolete("Public parameterless constructor for model binding.", error: true)]
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserNewsletterDto() { }
 
     public UserNewsletterDto(UserDto user, string token)

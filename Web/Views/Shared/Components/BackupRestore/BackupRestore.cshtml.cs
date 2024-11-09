@@ -3,7 +3,7 @@ namespace Web.Views.Shared.Components.BackupRestore;
 
 public class BackupRestoreViewModel
 {
-    [Obsolete("Public parameterless constructor for model binding.", error: true)]
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public BackupRestoreViewModel() { }
 
     public BackupRestoreViewModel(Data.Entities.User.User user, string token)
