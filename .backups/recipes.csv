@@ -57,7 +57,7 @@
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	0	basil-quesadilla.jpg	0
 75	Garlic Infused Olive Oil	\N	\N	\N	0	0	5	5	t	0	garlic-olive-oil.jpg	7
 76	Minty Courgette Linguine	\N	\N	\N	6	15	5	3	t	0	zucchini-linguine.jpg	0
-77	Cereal	\N	\N	\N	1	0	0	4	f	0	cereal.jpg	0
+77	Cereal w/ Fruit	\N	\N	\N	1	0	1	4	f	0	cereal.jpg	0
 78	String Cheese	\N	\N	\N	16	0	0	1	t	0	string-cheese.jpg	0
 79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	0	fettucine-alfredo.jpg	0
 80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	0	eggplant-mint-couscous-salad.jpg	0
@@ -158,7 +158,7 @@
 176	Stewed Okra with Tomatoes	\N	\N	\N	8	25	2	4	t	0	\N	0
 177	Stuffed Sweet Peppers	Use red or orange (bell) peppers if you prefer, or a combination of the two.	\N	\N	6	15	5	4	t	0	stuffed-peppers.jpg	0
 178	Homemade Venison Sausages 	If you find yourself with more sausages than you need for one meal, freeze the surplus in an airtight container for no more than a month. Be sure to thaw the sausages completely before cooking.	\N	\N	0	12	5	3	t	0	grilled-sausages.jpg	5
-179	Thai Red Chicken & Butternut Squash Soup	https://www.jamieoliver.com/recipes/chicken/thai-red-chicken-soup	\N	\N	4	90	10	6	t	0	thai-chicken-squash-soup.jpg	0
+179	Thai Red Chicken & Butternut Squash Soup	https://www.jamieoliver.com/recipes/chicken/thai-red-chicken-soup	\N	\N	4	90	10	6	t	34359771136	thai-chicken-squash-soup.jpg	0
 180	Crock Pot Sausage and Peppers	https://iowagirleats.com/crock-pot-sausage-and-peppers	\N	\N	4	300	20	8	t	0	grilled-sausages.jpg	0
 181	5 Ingredient Sloppy Joes	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	\N	\N	6	10	5	4	t	0	sloppy-joes.jpg	0
 182	Beef and Noodles	https://www.saltandlavender.com/easy-beef-and-noodles/	\N	\N	4	20	10	4	t	0	beef-noodles.jpg	0
@@ -226,3 +226,4 @@
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	-9223372034304638976	pesto.jpg	6
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	0	\N	6
+311	Sausage & Apple Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	35	10	4	t	2097154	\N	0

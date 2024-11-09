@@ -140,7 +140,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto, User>()!, newsletterContext.Token);
 
-        var shoppingList = await GetShoppingList(newsletter, debugRecipes.SelectMany(r => r.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, debugRecipes);
         var viewModel = new NewsletterDto
         {
             User = userViewModel,
@@ -166,11 +166,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         var sideRecipes = await GetSideRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes));
         var snackRecipes = await GetSnackRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes));
         var dessertRecipes = await GetDessertRecipes(newsletterContext, exclude: breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes).Concat(snackRecipes));
-        var allRecipes = dinnerRecipes.Concat(sideRecipes).Concat(lunchRecipes).Concat(snackRecipes).Concat(dessertRecipes).Concat(breakfastRecipes).ToList();
+        var allRecipes = breakfastRecipes.Concat(lunchRecipes).Concat(dinnerRecipes).Concat(sideRecipes).Concat(snackRecipes).Concat(dessertRecipes).ToList();
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
-        var shoppingList = await GetShoppingList(newsletter, allRecipes.SelectMany(r => r.RecipeIngredients).ToList());
-        await UpdateLastSeenDate(recipes: dinnerRecipes.Concat(sideRecipes).Concat(snackRecipes).Concat(lunchRecipes).Concat(dessertRecipes).Concat(breakfastRecipes));
+        var shoppingList = await GetShoppingList(newsletter, allRecipes);
+        await UpdateLastSeenDate(recipes: allRecipes);
 
         return new NewsletterDto
         {
@@ -204,7 +204,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                 .OrderBy(e => newsletter.UserFeastRecipes.FirstOrDefault(nv => nv.RecipeId == e.Recipe.Id)?.Order ?? -1));
         }
 
-        var shoppingList = await GetShoppingList(newsletter, recipes.SelectMany(r => r.RecipeIngredients).ToList());
+        var shoppingList = await GetShoppingList(newsletter, recipes);
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
@@ -228,11 +228,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<RecipeIngredientQueryResults> recipeIngredients)
+    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<QueryResults> recipes)
     {
         var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
-        foreach (var group in recipeIngredients.Where(ri => ri.Ingredient != null)
+        foreach (var group in recipes.SelectMany(r => r.RecipeIngredients).Where(ri => ri.Ingredient != null)
             .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer()).OrderBy(l => l.Key.SkipShoppingList)
             .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order).Length)
             .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order))

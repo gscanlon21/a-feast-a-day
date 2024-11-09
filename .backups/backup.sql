@@ -1201,6 +1201,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 812	598
 812	599
 615	646
+814	813
+814	172
+172	813
+813	172
 \.
 
 
@@ -3778,6 +3782,279 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9285	203	62	\N	\N	3	21	f
 9286	206	4294967296	\N	\N	2	6	f
 9287	206	2199023255552	\N	\N	2	6	f
+9288	491	68719476736	\N	\N	2	135	f
+9289	491	2	\N	\N	3	3	f
+9290	491	1	\N	\N	3	3	f
+9291	491	14	\N	\N	3	25	f
+9292	491	62	\N	\N	3	25	f
+9293	491	2047	\N	\N	3	110	f
+9294	516	68719476736	\N	\N	2	5	f
+9295	516	34359738368	\N	\N	2	5	f
+9296	516	2	\N	\N	3	0.1	f
+9297	516	4294967296	\N	\N	2	14	f
+9298	516	2199023255552	\N	\N	2	0.1	f
+9299	516	17179869184	\N	\N	2	2	f
+9300	516	4398046511104	\N	\N	2	0.1	f
+9301	516	70368744177664	\N	\N	2	10	f
+9302	516	8796093022208	\N	\N	1	1	f
+9303	516	14	\N	\N	3	0.1	f
+9304	516	62	\N	\N	3	0.1	f
+9305	516	2047	\N	\N	3	43	f
+9306	669	128	\N	\N	3	0.1	f
+9307	669	68719476736	\N	\N	2	2	f
+9308	669	34359738368	\N	\N	2	84	f
+9309	669	2	\N	\N	3	13	f
+9310	669	1	\N	\N	3	1	f
+9311	669	4294967296	\N	\N	2	12	f
+9312	669	2199023255552	\N	\N	2	0.3	f
+9313	669	48	\N	\N	3	4	f
+9314	669	14	\N	\N	3	15	f
+9315	669	1984	\N	\N	3	1	f
+9316	669	62	\N	\N	3	19	f
+9317	669	2047	\N	\N	3	79	f
+9318	116	68719476736	\N	\N	2	180	f
+9319	116	34359738368	\N	\N	2	41	f
+9320	116	2	\N	\N	3	6	f
+9321	116	1	\N	\N	3	0.1	f
+9322	116	4294967296	\N	\N	2	6	f
+9323	116	2199023255552	\N	\N	2	0.1	f
+9324	116	48	\N	\N	3	0.2	f
+9325	116	14	\N	\N	3	7	f
+9326	116	1984	\N	\N	3	0.1	f
+9327	116	62	\N	\N	3	7	f
+9328	116	2047	\N	\N	3	30	f
+9329	687	128	\N	\N	3	41	f
+9330	687	256	\N	\N	3	21	f
+9331	687	64	\N	\N	3	0.1	f
+9332	687	2048	\N	\N	2	5	f
+9333	687	68719476736	\N	\N	2	34	f
+9334	687	34359738368	\N	\N	2	1201	f
+9335	687	2	\N	\N	3	40	f
+9336	687	1	\N	\N	3	13	f
+9337	687	1536	\N	\N	3	2	f
+9338	687	48	\N	\N	3	18	f
+9339	687	1792	\N	\N	3	23	f
+9340	687	14	\N	\N	3	59	f
+9341	687	1984	\N	\N	3	72	f
+9342	687	62	\N	\N	3	77	f
+9343	687	2047	\N	\N	3	1005	f
+9344	250	128	\N	\N	3	0.2	f
+9345	250	68719476736	\N	\N	2	16	f
+9346	250	34359738368	\N	\N	2	512	f
+9347	250	2	\N	\N	3	5	f
+9348	250	1	\N	\N	3	2	f
+9349	250	4294967296	\N	\N	2	31	f
+9350	250	2199023255552	\N	\N	2	1	f
+9351	250	48	\N	\N	3	2	f
+9352	250	14	\N	\N	3	4	f
+9353	250	1984	\N	\N	3	1	f
+9354	250	62	\N	\N	3	6	f
+9355	250	2047	\N	\N	3	33	f
+9356	401	128	\N	\N	3	8	f
+9357	401	2048	\N	\N	2	47	f
+9358	401	68719476736	\N	\N	2	1002	f
+9359	401	34359738368	\N	\N	2	252	f
+9360	401	2	\N	\N	3	1	f
+9361	401	1	\N	\N	3	16	f
+9362	401	4294967296	\N	\N	2	17	f
+9363	401	2199023255552	\N	\N	2	1	f
+9364	401	48	\N	\N	3	0.1	f
+9365	401	402653184	\N	\N	1	1	f
+9366	401	14	\N	\N	3	3	f
+9367	401	1984	\N	\N	3	23	f
+9368	401	62	\N	\N	3	4	f
+9369	401	2047	\N	\N	3	286	f
+9370	639	128	\N	\N	3	5	f
+9371	639	256	\N	\N	3	3	f
+9372	639	2048	\N	\N	2	2	f
+9373	639	68719476736	\N	\N	2	7	f
+9374	639	34359738368	\N	\N	2	158	f
+9375	639	2	\N	\N	3	14	f
+9376	639	1	\N	\N	3	1	f
+9377	639	4294967296	\N	\N	2	16	f
+9378	639	2199023255552	\N	\N	2	2	f
+9379	639	1536	\N	\N	3	0.3	f
+9380	639	48	\N	\N	3	2	f
+9381	639	1792	\N	\N	3	3.3	f
+9382	639	14	\N	\N	3	15	f
+9383	639	1984	\N	\N	3	9	f
+9384	639	62	\N	\N	3	17	f
+9385	639	2047	\N	\N	3	155	f
+9386	808	128	\N	\N	3	0.1	f
+9387	808	68719476736	\N	\N	2	2	f
+9388	808	34359738368	\N	\N	2	84	f
+9389	808	2	\N	\N	3	13	f
+9390	808	1	\N	\N	3	1	f
+9391	808	4294967296	\N	\N	2	12	f
+9392	808	2199023255552	\N	\N	2	0.3	f
+9393	808	48	\N	\N	3	4	f
+9394	808	14	\N	\N	3	15	f
+9395	808	1984	\N	\N	3	1	f
+9396	808	62	\N	\N	3	19	f
+9397	808	2047	\N	\N	3	79	f
+9398	222	68719476736	\N	\N	2	4	f
+9399	222	34359738368	\N	\N	2	161	f
+9400	222	2	\N	\N	3	5	f
+9401	222	1	\N	\N	3	1	f
+9402	222	4294967296	\N	\N	2	25	f
+9403	222	2199023255552	\N	\N	2	0.2	f
+9404	222	48	\N	\N	3	2	f
+9405	222	14	\N	\N	3	8	f
+9406	222	1984	\N	\N	3	0.1	f
+9407	222	62	\N	\N	3	10	f
+9408	222	2047	\N	\N	3	44	f
+9409	602	128	\N	\N	3	2	f
+9410	602	2	\N	\N	3	1	f
+9411	602	1	\N	\N	3	6	f
+9412	602	4294967296	\N	\N	2	40	f
+9413	602	48	\N	\N	3	4	f
+9414	602	14	\N	\N	3	1	f
+9415	602	1984	\N	\N	3	18	f
+9416	602	62	\N	\N	3	5	f
+9417	602	2047	\N	\N	3	190	f
+9418	150	68719476736	\N	\N	2	32	f
+9419	150	34359738368	\N	\N	2	104	f
+9420	150	2	\N	\N	3	1	f
+9421	150	1	\N	\N	3	0.3	f
+9422	150	4294967296	\N	\N	2	16	f
+9423	150	2199023255552	\N	\N	2	0.1	f
+9424	150	48	\N	\N	3	1	f
+9425	150	14	\N	\N	3	1	f
+9426	150	1984	\N	\N	3	0.1	f
+9427	150	62	\N	\N	3	1	f
+9428	150	2047	\N	\N	3	6	f
+9429	251	34359738368	\N	\N	2	5	f
+9430	285	128	\N	\N	3	0.1	f
+9431	285	68719476736	\N	\N	2	1	f
+9432	285	34359738368	\N	\N	2	85	f
+9433	285	1	\N	\N	3	1	f
+9434	285	4294967296	\N	\N	2	28	f
+9435	285	2199023255552	\N	\N	2	1	f
+9436	285	48	\N	\N	3	2	f
+9437	285	14	\N	\N	3	2	f
+9438	285	1984	\N	\N	3	0.2	f
+9439	285	62	\N	\N	3	4	f
+9440	285	2047	\N	\N	3	16	f
+9441	264	128	\N	\N	3	0.1	f
+9442	264	68719476736	\N	\N	2	18	f
+9443	264	34359738368	\N	\N	2	1539	f
+9444	264	2	\N	\N	3	2	f
+9445	264	1	\N	\N	3	8	f
+9446	264	4294967296	\N	\N	2	48	f
+9447	264	2199023255552	\N	\N	2	3	f
+9448	264	48	\N	\N	3	5	f
+9449	264	14	\N	\N	3	62	f
+9450	264	1984	\N	\N	3	0.3	f
+9451	264	62	\N	\N	3	67	f
+9452	264	2047	\N	\N	3	292	f
+9453	288	128	\N	\N	3	0.3	f
+9454	288	68719476736	\N	\N	2	9	f
+9455	288	34359738368	\N	\N	2	213	f
+9456	288	2	\N	\N	3	0.2	f
+9457	288	1	\N	\N	3	13	f
+9458	288	4294967296	\N	\N	2	52	f
+9459	288	2199023255552	\N	\N	2	1	f
+9460	288	48	\N	\N	3	2	f
+9461	288	14	\N	\N	3	146	f
+9462	288	1984	\N	\N	3	1	f
+9463	288	62	\N	\N	3	148	f
+9464	288	2047	\N	\N	3	675	f
+9465	805	128	\N	\N	3	0.5	f
+9466	805	2048	\N	\N	2	25	f
+9467	805	68719476736	\N	\N	2	160	f
+9468	805	34359738368	\N	\N	2	140	f
+9469	805	2	\N	\N	3	1	f
+9470	805	1	\N	\N	3	25	f
+9471	805	4294967296	\N	\N	2	140	f
+9472	805	2199023255552	\N	\N	2	0.3	f
+9473	805	14	\N	\N	3	3	f
+9474	805	1984	\N	\N	3	1	f
+9475	805	62	\N	\N	3	3	f
+9476	805	2047	\N	\N	3	120	f
+9477	686	128	\N	\N	3	3	f
+9478	686	34359738368	\N	\N	2	80	f
+9479	686	1	\N	\N	3	1	f
+9480	686	2199023255552	\N	\N	2	1	f
+9481	686	48	\N	\N	3	5	f
+9482	686	14	\N	\N	3	3	f
+9483	686	1984	\N	\N	3	4	f
+9484	686	62	\N	\N	3	8	f
+9485	686	2047	\N	\N	3	50	f
+9486	736	68719476736	\N	\N	2	50	f
+9487	736	34359738368	\N	\N	2	230	f
+9488	736	2	\N	\N	3	3	f
+9489	736	1	\N	\N	3	1	f
+9490	736	4294967296	\N	\N	2	24	f
+9491	736	2199023255552	\N	\N	2	0.2	f
+9492	736	48	\N	\N	3	2	f
+9493	736	14	\N	\N	3	5	f
+9494	736	1984	\N	\N	3	0.2	f
+9495	736	62	\N	\N	3	7	f
+9496	736	2047	\N	\N	3	30	f
+9497	419	128	\N	\N	3	1	f
+9498	419	68719476736	\N	\N	2	10	f
+9499	419	34359738368	\N	\N	2	2877	f
+9500	419	2	\N	\N	3	4	f
+9501	419	1	\N	\N	3	42	f
+9502	419	4294967296	\N	\N	2	239	f
+9503	419	2199023255552	\N	\N	2	10	f
+9504	419	48	\N	\N	3	30	f
+9505	419	14	\N	\N	3	91	f
+9506	419	1984	\N	\N	3	3	f
+9507	419	62	\N	\N	3	121	f
+9508	419	2047	\N	\N	3	662	f
+9509	113	128	\N	\N	3	1	f
+9510	113	68719476736	\N	\N	2	197	f
+9511	113	34359738368	\N	\N	2	69	f
+9512	113	2	\N	\N	3	3	f
+9513	113	1	\N	\N	3	4	f
+9514	113	4294967296	\N	\N	2	41	f
+9515	113	2199023255552	\N	\N	2	2	f
+9516	113	48	\N	\N	3	2	f
+9517	113	14	\N	\N	3	18	f
+9518	113	1984	\N	\N	3	3	f
+9519	113	62	\N	\N	3	19	f
+9520	113	2047	\N	\N	3	113	f
+9521	215	68719476736	\N	\N	2	2	f
+9522	215	34359738368	\N	\N	2	42	f
+9523	215	2	\N	\N	3	12	f
+9524	215	4294967296	\N	\N	2	20	f
+9525	215	14	\N	\N	3	13	f
+9526	215	62	\N	\N	3	13	f
+9527	215	2047	\N	\N	3	52	f
+9528	597	68719476736	\N	\N	2	5	f
+9529	597	34359738368	\N	\N	2	251	f
+9530	597	2	\N	\N	3	5	f
+9531	597	1	\N	\N	3	1	f
+9532	597	4294967296	\N	\N	2	8	f
+9533	597	2199023255552	\N	\N	2	1	f
+9534	597	48	\N	\N	3	2	f
+9535	597	14	\N	\N	3	5	f
+9536	597	1984	\N	\N	3	0.4	f
+9537	597	62	\N	\N	3	7	f
+9538	597	2047	\N	\N	3	37	f
+9539	152	68719476736	\N	\N	2	0.2	f
+9540	152	34359738368	\N	\N	2	167	f
+9541	152	2	\N	\N	3	16	f
+9542	152	1	\N	\N	3	0.4	f
+9543	152	4294967296	\N	\N	2	15	f
+9544	152	2199023255552	\N	\N	2	0.2	f
+9545	152	48	\N	\N	3	2	f
+9546	152	14	\N	\N	3	16	f
+9547	152	62	\N	\N	3	18	f
+9548	152	2047	\N	\N	3	66	f
+9549	789	128	\N	\N	3	0.2	f
+9550	789	68719476736	\N	\N	2	2	f
+9551	789	34359738368	\N	\N	2	348	f
+9552	789	2	\N	\N	3	28	f
+9553	789	1	\N	\N	3	2	f
+9554	789	4294967296	\N	\N	2	23	f
+9555	789	2199023255552	\N	\N	2	0.3	f
+9556	789	48	\N	\N	3	3	f
+9557	789	14	\N	\N	3	28	f
+9558	789	1984	\N	\N	3	1	f
+9559	789	62	\N	\N	3	31	f
+9560	789	2047	\N	\N	3	124	f
 \.
 
 
@@ -3875,8 +4152,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1119	8	\N	\N	66	8	1	\N	74	f	\N	3
 4883	0	\N	\N	159	1	1	\N	12	f	\N	0
 4884	6	\N	\N	159	2	3	, such as Sauternes	554	f	\N	1
-1451	12	\N	\N	77	2	1	\N	186	f	\N	0
-1452	0	\N	\N	77	1	1	\N	253	f	\N	1
 2393	8	\N	\N	79	8	1	\N	285	t	\N	4
 3439	0	\N	\N	50	1	2	\N	\N	f	65	0
 1185	0	\N	\N	78	1	1	\N	257	f	\N	0
@@ -4187,6 +4462,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3477	0	\N	\N	165	1	1	, finely grated rind	4	f	\N	7
 3478	8	\N	\N	165	8	1	\N	285	f	\N	8
 4914	7	\N	\N	186	1	1	\N	77	f	\N	5
+5202	0	\N	\N	179	1	4	\N	24	f	\N	0
 884	0	\N	\N	52	1	2	\N	22	f	\N	0
 885	6	\N	\N	52	4	1	, ripe	9	f	\N	0
 886	4	\N	\N	52	1	3	, cooked, sliced	24	f	\N	0
@@ -4198,6 +4474,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1093	8	\N	\N	72	1	1	 (5g)	214	f	\N	4
 1094	7	\N	\N	72	1	1	 (14g)	190	f	\N	5
 1095	8	\N	\N	72	1	1	 (3g)	41	f	\N	6
+5203	0	\N	\N	179	1	1	\N	594	f	\N	1
 3520	4	\N	\N	180	1	28	, crushed	17	t	\N	7
 2511	4	\N	\N	85	1	12	\N	286	f	\N	0
 2512	7	\N	\N	85	1	2	\N	278	f	\N	1
@@ -4223,11 +4500,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1202	7	\N	\N	56	1	4	\N	30	f	\N	4
 3539	4	\N	\N	183	1	6	\N	590	f	\N	2
 3540	0	\N	\N	183	1	4	\N	187	f	\N	3
+5204	6	\N	\N	179	2	1	\N	13	f	\N	2
+5205	3	\N	\N	179	1	100	, about ½ cups	593	f	\N	3
+5206	10	\N	\N	179	1	400	, about 1¾ cups	178	f	\N	4
+5207	8	\N	\N	179	8	1	\N	692	f	\N	5
 1721	6	\N	\N	100	1	2	\N	38	f	\N	0
 1722	8	\N	\N	100	2	3	\N	35	f	\N	1
+5214	12	\N	\N	77	2	1	\N	186	f	\N	0
 1723	7	\N	\N	100	1	3	\N	36	f	\N	2
 1724	6	\N	\N	100	4	5	(buttermilk)	186	f	\N	3
 1725	7	\N	\N	100	1	1	\N	29	f	\N	4
+5215	0	\N	\N	77	1	1	\N	253	f	\N	1
+5216	0	\N	\N	77	1	4	\N	814	t	\N	2
 3835	7	\N	\N	75	1	5	\N	77	f	\N	0
 3836	0	\N	\N	75	1	1	, chopped	5	f	\N	1
 3916	0	\N	\N	196	1	4	, cut into strips	324	f	\N	10
@@ -4540,6 +4824,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5152	6	\N	\N	23	2	5	\N	31	f	\N	5
 5153	0	\N	\N	23	1	6	, thinly sliced (6 cups)	15	f	\N	6
 5154	5	\N	\N	23	2	1	, thinly sliced (1 cups)	26	f	\N	7
+5217	0	\N	\N	311	1	2	\N	105	f	\N	0
 2802	7	\N	\N	138	1	2	\N	77	f	\N	7
 2803	0	\N	\N	138	1	8	, finely chopped	225	f	\N	8
 2804	0	\N	\N	138	1	1	, crushed	5	f	\N	9
@@ -4586,6 +4871,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5163	0	\N	\N	39	1	2	, chopped	17	t	\N	3
 5164	6	\N	\N	39	2	1	, chopped	13	f	\N	4
 5165	0	\N	\N	39	1	1	, finely chopped	105	f	\N	5
+5218	0	\N	\N	311	1	2	\N	1	f	\N	1
 2858	5	\N	\N	149	2	3	\N	264	f	\N	0
 2859	0	\N	\N	149	1	6	, chopped	144	f	\N	1
 2860	6	\N	\N	149	4	5	\N	186	f	\N	2
@@ -4599,12 +4885,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2868	6	\N	\N	142	1	4	\N	186	f	\N	0
 2869	0	\N	\N	142	1	1	\N	493	f	\N	1
 2870	4	\N	\N	142	1	3	, grated	409	f	\N	2
+5219	0	\N	\N	311	1	4	(PARSNIPS)	581	f	\N	2
+5220	0	\N	\N	311	1	12	(CHIPOLATA OR SMALL PORK SAUSAGES)	401	f	\N	3
 3878	5	\N	\N	133	1	1	, diced	324	f	\N	0
 3879	0	\N	\N	133	1	4	, thinly sliced	5	f	\N	1
 3537	4	\N	\N	183	1	5	\N	286	f	\N	0
 3880	0	\N	\N	133	1	2	,seeded and finely chopped	224	t	\N	2
 3881	7	\N	\N	133	1	3	\N	78	f	\N	3
 3882	7	\N	\N	133	1	3	\N	557	t	\N	4
+5221	7	\N	\N	311	1	1	\N	39	f	\N	4
 2914	0	\N	\N	152	1	12	\N	19	f	\N	0
 2915	7	\N	\N	152	1	6	\N	278	f	\N	1
 2916	0	\N	\N	152	1	1	, juiced	4	f	\N	2
@@ -4705,11 +4994,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3518	8	\N	\N	180	4	1	(RED CHILI PEPPER FLAKES)	68	f	\N	5
 3519	4	\N	\N	180	1	28	(TOMATO SAUCE)	17	f	\N	6
 3554	8	\N	\N	110	1	4	\N	592	f	\N	4
-3555	0	\N	\N	179	1	4	\N	24	f	\N	0
-3556	0	\N	\N	179	1	1	\N	594	f	\N	1
-3557	6	\N	\N	179	2	1	\N	13	f	\N	2
-3558	3	\N	\N	179	1	100	\N	593	f	\N	3
-3559	10	\N	\N	179	1	400	\N	178	f	\N	4
 3886	5	\N	\N	178	1	2	\N	643	f	\N	0
 3887	5	\N	\N	178	1	1	\N	644	f	\N	1
 3888	7	\N	\N	178	1	1	\N	214	f	\N	2
@@ -5306,9 +5590,11 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 1447	Put the toasts on baking sheets, sprinkle with herbs and pepper to taste and drizzle with oil. Bake for 5 minutes or until the mozzarella has melted and is bubbling. Leave the toasts to settle for a few minutes before serving.	\N	\N	146	1
 745	Stack the cheese, meat and crackers. Eat them stacked.	\N	\N	68	0
 1469	Heat the oil in a wok. Add the onion and stir-fry over a medium heat for 1 minute, then add the garlic and ginger and stir-fry for 2 minutes more.	\N	\N	141	0
+2845	Sit the chicken in a large, deep pan.	\N	\N	179	0
 604	Combine the mayonnaise and mustard; spread about 1 tablespoon into each pita half. 	\N	\N	57	0
 605	Stuff each with one lettuce leaf, two slices of bologna, one slice of ham and two slices of tomato.	\N	\N	57	1
 1470	Push the onion mixture to the sides of the wok, where it will keep warm but not cook, add the chicken to the centre and stir-fry for 2 minutes. Add the rice and toss well. Stir-fry over a high heat for about 3 minutes more, until the chicken is cooked through.	\N	\N	141	1
+2846	Carefully halve the squash lengthways, then cut into 3cm chunks, discarding the seeds.	\N	\N	179	1
 1471	Stir in the sliced red pepper, corn, chilli oil and curry powder, with salt to taste. Toss over the heat for 1 minute. Stir in the beaten eggs and cook for 1 minute more, while the eggs lightly cook. Garnish with the spring onion shreds and serve.	\N	\N	141	2
 1472	Tear and large salad leaves into smaller pieces. Arrange, with the spinach leaves, on a serving dish. Add the watercress and toss to mix.	\N	\N	138	0
 1473	In a small bowl, mix together the chilli sauce, dry sherry, light soy sauce and tomato ketchup and set aside.	\N	\N	138	1
@@ -5373,8 +5659,13 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 2781	Heat the oil/ghee in a large pot. Add the chicken livers, onion, garlic and sauté gently until cooked through, about 15-20 minutes.	\N	\N	259	0
 2782	Add the cream and thyme and transfer everything to a food processor. Process until smooth and creamy, about 2-3 minutes.	\N	\N	259	1
 2783	Add salt and pepper to taste, and process to combine well. Transfer the mixture to a container (with lid) and store in the refrigerator. It will thicken as it cools.	\N	\N	259	2
+2847	Slice the coriander stalks, add to the pan with the squash, curry paste and coconut milk, then pour in 1 litre of water. Cover and simmer on a medium heat for 1 hour 20 minutes.	\N	\N	179	2
+2848	Use tongs to remove the chicken to a platter. Spoon any fat from the surface of the soup over the chicken, then sprinkle with half the coriander leaves.	\N	\N	179	3
 1098	Pour about 1/4 cup batter per pancake onto a 375°F (medium heat) preheated griddle.	\N	\N	113	4
 1099	Cook for about 1 to 1-1/2 minutes per side. or until done. Turn once.	\N	\N	113	5
+2849	Serve with 2 forks for divvying up the meat at the table. Use a potato masher to crush some of the squash, giving your soup a thicker texture.	\N	\N	179	4
+2850	Taste, season to perfection with sea salt and black pepper, then divide between six bowls and sprinkle with the remaining coriander.	\N	\N	179	5
+2851	Shred and add chicken, as you dig in.	\N	\N	179	6
 852	Melt butter in skillet then, when it begins to foam, start swirling skillet until the butter reaches caramel brown in color. Add sweet corn, green onions, bourbon, maple syrup, salt, and pepper then turn the heat up slightly and toss to combine. Saute for 7-8 minutes or until corn is tender and caramelized, stirring every so often. Add bacon back in then taste and adjust salt and pepper if necessary.	\N	\N	95	1
 595	Combine the Potato Starch, Brown Rice Flower, and Xanthan Gum in a bowl and mix well.	\N	\N	73	0
 596	Add the ingredients to the baking pan in the order listed.	\N	\N	73	1
@@ -5383,6 +5674,7 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 1410	Place chicken breasts into the bottom of a 6-quart crock pot then sprinkle on Homemade Taco Seasoning ingredients and pour in salsa. Stir to combine then cover and cook on LOW for 4 hours or HIGH for 2 hours, or until the chicken shreds easily with two forks. The shredded chicken will soak up the cooking liquid as it sits.	\N	\N	139	0
 2334	Whisk all ingredients in a medium bowl. Add more oil to thin if needed. Serve immediately or store in the refrigerator for up to 5 days.	\N	\N	251	0
 2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	\N	\N	238	0
+2854	Combine 3/4 cup milk and 1 cup cereal. Top with a peache or nectarine cut into bite size pieces.	\N	\N	77	0
 143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and veg.	\N	\N	41	0
 144	Return the pasta and veg to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	\N	\N	41	1
 924	Pour the lentils into a big pot and add water within an inch of the top of the pot. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling. When the pot boils, turn down the heat a little so it doesn't boil over and let cook. While waiting for the pot to cook, wash the potatoes and cut them up into small cubes, then add them to the pot. Cook until the lentils and potatoes are done.	\N	\N	1	0
@@ -5436,7 +5728,6 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 980	Brown the chicken thighs all over in a large non-stick casserole pan on a high heat with 2 tablespoons of olive oil, then remove to a plate.	\N	\N	108	0
 751	Arrange rice, veggies, edamame and avocado in a 4-cup sealable container or bowl. 	\N	\N	62	0
 752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	\N	\N	62	1
-783	Combine 3/4 cup milk and 1 cup cereal. Serve.	\N	\N	77	0
 784	Cut the pork into 2.5cm/1in cubes. Cut the spring onions into 2.5cm/1in-long sticks.	\N	\N	93	0
 785	Preheat the grill (broiler) to high. Oil the wire rack and spread out the pork cubes on it. Grill (broil) the pork until the juices drip, then dip the pieces in the barbecue sauce and put back on the grill. Grill until cooked through, repeating the dipping process twice more. Set aside and keep warm.	\N	\N	93	1
 981	Tip in the mixed veg and soften for 5 minutes, then put the chicken back into the pan with 2 tablespoons of red wine vinegar and allow it to cook away. Scrunch in the tomatoes through clean hands, then pour in 1 can's worth of water. Bring to a boil, then leave to blip away on a low heat for 1 hour, or until the chicken is falling off the bone, stirring occasionally.	\N	\N	108	1
@@ -5524,9 +5815,11 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 1819	Add the lemon juice and parsley and season with salt and pepper to tase. Serve hot with lemon wedges, garnished with flat leaf parsley.	\N	\N	92	2
 1846	Drain the pasta, return it to the pan and toss with the sauce. Season to taste and sprinkle with a little shopped fresh parsley and more grated lemon rind, if you like. Serve with the hot herb bread.	\N	\N	165	5
 2787	To serve, slit each banana open with a knife and open out the skins to reveal the tender flesh. Transfer to serving plates and serve with scoops of ice cream. Pour the sauce over.	\N	\N	156	2
+2855	Preheat the oven to 350°F. Place a large non-stick ovenproof frying pan on a medium-high heat. Peel the onions, cut into quarters, and quickly break apart into petals directly into the pan, tossing regularly, then add 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Quarter and core the apples, then toss into the pan. Use a vegetable peeler to peel the parsnips into long strips. Stir 1 tablespoon of red wine vinegar into the frying pan, then pile the parsnips on top of the apples and onions.	\N	\N	311	0
 1415	Add the tomatoes and chicken stock to the pan and bring to a boil. Cover and simmer for about 10 minutes.	\N	\N	140	2
 1416	Meanwhile, make the relish by mixing all the ingredients in a bowl.	\N	\N	140	3
 1417	When the rice if almost cooked, fork in the chicken and heat through. Serve with the relish.	\N	\N	140	4
+2856	Lay the sausages on top, the drizzle with 1 tablespoon of olive oil and add a pinch of black pepper from a height. Bake for 30 minutes, then drizzle over the honey and return to the oven for 5 minutes, or until golden and delicious.	\N	\N	311	1
 1246	Halve the avocados, remove their stones (pits) and, using a spood, scoop out their flesh into a bowl.	\N	\N	70	0
 1247	Mash the flesh well with a large fork or potato masher.	\N	\N	70	1
 1248	Finely chop the chilies, garlic and shallot, then stir into the mashed avocado with the olive oil and lemon juice. Add salt to taste.	\N	\N	70	2
@@ -5829,13 +6122,6 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 1893	Meanwhile, drain the peppers and cut the Manchego into 4 slices (discarding any rind).	\N	\N	110	3
 1894	Carefully stuff the peppers with the Manchego slices, then cook in the pan until starting to ooze, turning occasionally.	\N	\N	110	4
 1895	To serve, spread 1 tablespoon of olive tapenade over the base of each bun. Place a sausage patty on each one, then top with the Manchego-stuffed peppers and the bun lids, and get stuck in.	\N	\N	110	5
-1896	Sit the chicken in a large, deep pan.	\N	\N	179	0
-1897	Carefully halve the squash lengthways, then cut into 3cm chunks, discarding the seeds.	\N	\N	179	1
-1898	Slice the coriander stalks, add to the pan with the squash, curry paste and coconut milk, then pour in 1 litre of water. Cover and simmer on a medium heat for 1 hour 20 minutes.	\N	\N	179	2
-1899	Use tongs to remove the chicken to a platter. Spoon any fat from the surface of the soup over the chicken, then sprinkle with half the coriander leaves.	\N	\N	179	3
-1900	Serve with 2 forks for divvying up the meat at the table. Use a potato masher to crush some of the squash, giving your soup a thicker texture.	\N	\N	179	4
-1901	Taste, season to perfection with sea salt and black pepper, then divide between six bowls and sprinkle with the remaining coriander.	\N	\N	179	5
-1902	Shred and add chicken, as you dig in.	\N	\N	179	6
 2811	Peel and chop the bananas, then mash them with a fork.	\N	\N	143	0
 2812	Place all the smoothie ingredients in a blender or food processor and blend until smooth.	\N	\N	143	1
 2813	Pour into big, tall glasses, then pour in some chocolate sauce from a height. The sauce will swirl around the glasses to give a marbled effect.	\N	\N	143	2
@@ -6041,7 +6327,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9287, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9560, true);
 
 
 --

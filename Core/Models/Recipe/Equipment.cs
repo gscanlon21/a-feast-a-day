@@ -53,6 +53,9 @@ public enum Equipment : long
     [Display(Name = "Dehydrator", Order = 15)]
     Dehydrator = 1 << 14 | 1L << 34, // 16384 + 17179869184
 
+    [Display(Name = "Potato Masher", Order = 16)]
+    PotatoMasher = 1 << 15 | 1L << 35, // 32768 + 34359738368
+
 
     [Display(Name = "Grill | Broiler", Order = 60)]
     GrillBroiler = 1L << 59 | 1L << 23 | 1L << 24,
