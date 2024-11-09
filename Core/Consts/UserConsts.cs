@@ -78,9 +78,19 @@ public class UserConsts
     public const int MaxUserFrequencies = 7;
 
     /// <summary>
-    /// How much to increment the user_muscle_strength target ranges with each increment?
+    /// How much to increment the user_nutrient target ranges with each increment?
     /// </summary>
     public const int IncrementNutrientTargetBy = 10;
+
+    /// <summary>
+    /// The percent relative to the nutrient's RDA that is used in the nutrient targets.
+    /// </summary>
+    public const int NutrientTargetDefaultPercent = 100;
+
+    /// <summary>
+    /// The max percent relative to the RDA to use as the nutrients default target range.
+    /// </summary>
+    public const int NutrientTargetMaxPercent = 200;
 
     /// <summary>
     /// How many months until the user's account is disabled for inactivity.

@@ -1,6 +1,5 @@
 ﻿using Core.Consts;
 using Core.Models.User;
-using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query.Options;
 
@@ -73,11 +72,11 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     {
         // Base 1 target for each targeted Nutrient group. If we've already worked this Nutrient, reduce the Nutrient target volume.
         // Keep all Nutrient groups in our target dict so we exclude overworked Nutrients.
-        NutrientTargetsRDA = UserNutrient.NutrientTargets.Keys.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
+        NutrientTargetsRDA = NutrientHelpers.All.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
 
         // Base 1 target for each targeted Nutrient group. If we've already worked this Nutrient, reduce the Nutrient target volume.
         // Keep all Nutrient groups in our target dict so we exclude overworked Nutrients.
-        NutrientTargetsTUL = UserNutrient.NutrientTargets.Keys.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
+        NutrientTargetsTUL = NutrientHelpers.All.ToDictionary(mt => mt, mt => Nutrients.Any(mg => mt.HasFlag(mg)) ? 1d : 0);
 
         return this;
     }

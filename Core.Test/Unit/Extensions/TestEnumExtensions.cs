@@ -98,7 +98,7 @@ public class TestEnumViewExtensions
     public async Task GetMultiValues_ReturnsExpected()
     {
         var expected = new TestEnumFlags[] { TestEnumFlags.BE };
-        Assert.IsTrue(expected.SequenceEqual(EnumExtensions.GetMultiValues32<TestEnumFlags>().OrderBy(e => e)));
+        Assert.IsTrue(expected.SequenceEqual(EnumExtensions.GetMultiValues64<TestEnumFlags>().OrderBy(e => e)));
     }
 
     [TestMethod]
@@ -119,6 +119,6 @@ public class TestEnumViewExtensions
     public async Task GetSingleValuesExcludingAny_ReturnsExpected()
     {
         var expected = new TestEnumFlags[] { TestEnumFlags.C, TestEnumFlags.D };
-        Assert.IsTrue(expected.SequenceEqual(EnumExtensions.GetSingleValuesExcludingAny32(TestEnumFlags.BE).OrderBy(e => e)));
+        Assert.IsTrue(expected.SequenceEqual(EnumExtensions.GetSingleValues64(excludingAny: TestEnumFlags.BE).OrderBy(e => e)));
     }
 }

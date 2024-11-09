@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Data.Models;
@@ -18,7 +19,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All.ToList())
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
@@ -43,7 +44,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
@@ -68,7 +69,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
@@ -93,7 +94,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
@@ -118,7 +119,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
@@ -143,7 +144,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, UserNutrient.NutrientTargets.Select(mt => mt.Key).ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {

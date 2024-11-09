@@ -6,6 +6,7 @@ namespace Core.Models.User;
 
 /// <summary>
 /// https://ods.od.nih.gov/HealthInformation/nutrientrecommendations.aspx
+/// https://www.dietaryguidelines.gov/resources/2020-2025-dietary-guidelines-online-materials
 /// </summary>
 [Flags]
 public enum Nutrients : long
@@ -15,7 +16,7 @@ public enum Nutrients : long
     // Macronutrients
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(75, 225, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
+    [DailyAllowance(10, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Order = 100, Name = "Proteins", GroupName = "Proteins")]
     Proteins = 1L << 0, // 1
 
@@ -38,6 +39,13 @@ public enum Nutrients : long
     Starch = 1L << 3, // 8
 
     [DefaultMeasure(Measure.Grams)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.PregnantWomen)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.BreastfeedingWomen)]
+    [Display(Order = 70, ShortName = "Net Carbs", Name = "Net Carbohydrates", GroupName = "Carbohydrates")]
+    NetCarbohydrates = Sugar | Starch | Oligosaccharides, // 14
+
+    [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(10, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
     [Display(Name = "Soluble Fiber", GroupName = "Carbohydrates / Fiber")]
     SolubleFiber = 1L << 4, // 16
@@ -53,16 +61,9 @@ public enum Nutrients : long
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(275, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4)]
+    [DailyAllowance(45, 65, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
     [Display(Order = 70, ShortName = "Carbs", Name = "Carbohydrates", GroupName = "Carbohydrates")]
     Carbohydrates = Sugar | Starch | DietaryFiber | InsolubleFiber | Oligosaccharides, // 62
-
-    [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.PregnantWomen)]
-    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.BreastfeedingWomen)]
-    [Display(Order = 70, ShortName = "Net Carbs", Name = "Net Carbohydrates", GroupName = "Carbohydrates")]
-    NetCarbohydrates = Sugar | Starch | Oligosaccharides, // 14
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
@@ -100,7 +101,7 @@ public enum Nutrients : long
     UnsaturatedFats = MonounsaturatedFats | PolyunsaturatedFats, // 1792
 
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(25, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
+    [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Order = 10, Name = "Fats", GroupName = "Fats")]
     Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
 
@@ -110,7 +111,7 @@ public enum Nutrients : long
     /// The total amount of fat, as well as the grams of trans and saturated fats, are still listed on the updated label.
     /// </summary>
     [DefaultMeasure(Measure.None)]
-    [DailyAllowance(1000, 1500, Measure.None, Multiplier.Kilocalorie)]
+    [DailyAllowance(1000, 1250, Measure.None, Multiplier.Kilocalorie)]
     [Display(Order = 0, Name = "Calories", GroupName = "Calories")]
     Calories = Proteins
         | Sugar | Oligosaccharides | Starch | SolubleFiber | InsolubleFiber
@@ -572,9 +573,9 @@ public enum Nutrients : long
     //[Display(Name = "Tyrosine", GroupName = "Micronutrients")]
     //Tyrosine = 1L << 63, // 2251799813685248,
 
-    All = Proteins | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
+    All = Proteins | DietaryCholesterol
+        | Starch | SolubleFiber | InsolubleFiber | Sugar | Oligosaccharides
         | MonounsaturatedFats | Omega3 | Omega6 | SaturatedFats | TransFats
-        | DietaryCholesterol
         | Flavanoids | NonFlavanoids | NonProvitaminACarotenoids
         | AlphaCarotene | BetaCarotene | Retinol
         | VitaminB1 | VitaminB2 | VitaminB3 | VitaminB5 | VitaminB6 | VitaminB7 | VitaminB9 | VitaminB12
@@ -582,6 +583,30 @@ public enum Nutrients : long
         | Calcium | Chloride | Magnesium | Potassium | Sodium
         | Chromium | Copper | Fluoride | Iodine | Iron | Manganese | Selenium | Zinc | Molybdenum | Phosphorus | Sulfur | Boron | Vanadium
         | Choline | Betaine | Lithium
-        | Histidine | Isoleucine | Leucine | Lysine | Methionine | Phenylalanine | Threonine | Tryptophan | Valine
-        | Arginine | Glycine
+        | Histidine | Isoleucine | Leucine | Lysine | Methionine | Phenylalanine | Threonine | Tryptophan | Valine | Arginine | Glycine
+}
+
+public static class NutrientHelpers
+{
+    public static readonly List<Nutrients> All = [
+        Nutrients.Vanadium, Nutrients.Lithium, Nutrients.Proteins, Nutrients.Carbohydrates,
+        Nutrients.NetCarbohydrates, Nutrients.Starch, Nutrients.Oligosaccharides, Nutrients.SolubleFiber,
+        Nutrients.InsolubleFiber, Nutrients.DietaryFiber, Nutrients.Calcium, Nutrients.Chloride,
+        Nutrients.Chromium, Nutrients.Copper, Nutrients.Fluoride, Nutrients.Iodine,
+        Nutrients.Magnesium, Nutrients.Manganese, Nutrients.Molybdenum, Nutrients.Phosphorus,
+        Nutrients.Potassium, Nutrients.Selenium, Nutrients.Sulfur, Nutrients.Boron,
+        Nutrients.VitaminB1, Nutrients.VitaminB2, Nutrients.VitaminB3, Nutrients.VitaminB5,
+        Nutrients.VitaminB6, Nutrients.VitaminB7, Nutrients.VitaminB9, Nutrients.VitaminB12,
+        Nutrients.VitaminA, Nutrients.VitaminC, Nutrients.NonProvitaminACarotenoids, Nutrients.AlphaCarotene,
+        Nutrients.BetaCarotene, Nutrients.ProvitaminACarotenoids, Nutrients.Carotenoids, Nutrients.Flavanoids,
+        Nutrients.NonFlavanoids, Nutrients.Polyphenols, Nutrients.Retinol, Nutrients.VitaminD2,
+        Nutrients.VitaminD3, Nutrients.VitaminD, Nutrients.VitaminE, Nutrients.VitaminK1,
+        Nutrients.VitaminK2, Nutrients.VitaminK, Nutrients.Zinc, Nutrients.Choline,
+        Nutrients.Betaine, Nutrients.Histidine, Nutrients.Isoleucine, Nutrients.Leucine,
+        Nutrients.Lysine, Nutrients.Phenylalanine, Nutrients.Methionine, Nutrients.Threonine,
+        Nutrients.Tryptophan, Nutrients.Valine, Nutrients.Arginine, Nutrients.Glycine,
+        Nutrients.Iron, Nutrients.Calories, Nutrients.Fats, Nutrients.Sodium,
+        Nutrients.Sugar, Nutrients.MonounsaturatedFats, Nutrients.Omega3, Nutrients.Omega6,
+        Nutrients.PolyunsaturatedFats, Nutrients.UnsaturatedFats, Nutrients.SaturatedFats, Nutrients.TransFats,
+    ];
 }

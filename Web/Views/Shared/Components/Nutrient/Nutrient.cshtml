@@ -20,7 +20,7 @@
 </div>
 <div class="alert alert-primary" role="alert">
     <div style="display:flex;flex-direction:column;row-gap:1ex;">
-        @foreach (var nutrientTarget in UserNutrient.NutrientTargets
+        @foreach (var nutrientTarget in NutrientHelpers.All
         .Select(kv => Model.GetNutrientTarget(kv))
         .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
         .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
@@ -36,7 +36,6 @@
             DefaultStart = 0,
             DefaultEnd = 100,
             ValueInRange = 50,
-            UserMuscleTarget = new Range(Convert.ToInt32(Model.MaxRangeValue) / 4, Convert.ToInt32(Model.MaxRangeValue) / 4 * 3),
         }))
         {
             <div style="display:flex;column-gap:1ch;flex-wrap:wrap;">

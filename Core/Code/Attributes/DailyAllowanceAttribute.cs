@@ -33,4 +33,5 @@ public class DailyAllowanceAttribute(double rda, double tul, Measure measure, Mu
     public double InternalTUL { private get; set; } = tul;
     public double? RDA => InternalRDA >= 0 ? InternalRDA : null;
     public double? TUL => InternalTUL >= 0 ? InternalTUL : null;
+    public int TULPercent => (TUL.HasValue && RDA.HasValue) ? (int)Math.Ceiling(TUL.Value / RDA.Value * 100) : 200;
 }

@@ -168,7 +168,7 @@ public class UserRepo
             return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
         });
 
-        return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(n => n, n =>
+        return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
             // If there is no RDA or TUL.
             if (familyNutrientServings[n] <= 0) { return null; }
@@ -233,14 +233,14 @@ public class UserRepo
                         )
                     ).ToList();
 
-                return (weeks: actualWeeks, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m =>
+                return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(m => m, m =>
                 {
                     return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
                 }));
             }
         }
 
-        return (weeks: 0, volume: UserNutrient.NutrientTargets.Keys.ToDictionary(m => m, m => (double?)null));
+        return (weeks: 0, volume: NutrientHelpers.All.ToDictionary(m => m, m => (double?)null));
     }
 
     /// <summary>
