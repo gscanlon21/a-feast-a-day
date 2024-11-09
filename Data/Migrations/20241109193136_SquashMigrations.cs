@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -25,8 +24,7 @@ namespace Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_footnote", x => x.Id);
-                },
-                comment: "Sage advice");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user",
@@ -54,8 +52,7 @@ namespace Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_user", x => x.Id);
-                },
-                comment: "User who signed up for the newsletter");
+                });
 
             migrationBuilder.CreateTable(
                 name: "ingredient",
@@ -84,8 +81,7 @@ namespace Data.Migrations
                         column: x => x.UserId,
                         principalTable: "user",
                         principalColumn: "Id");
-                },
-                comment: "Recipes listed on the website");
+                });
 
             migrationBuilder.CreateTable(
                 name: "recipe",
@@ -114,8 +110,7 @@ namespace Data.Migrations
                         column: x => x.UserId,
                         principalTable: "user",
                         principalColumn: "Id");
-                },
-                comment: "Recipes listed on the website");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_email",
@@ -142,8 +137,7 @@ namespace Data.Migrations
                         principalTable: "user",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "A day's workout routine");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_family",
@@ -209,8 +203,7 @@ namespace Data.Migrations
                         principalTable: "user",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "Sage advice");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_nutrient",
@@ -272,8 +265,7 @@ namespace Data.Migrations
                         principalTable: "user",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "Auth tokens for a user");
+                });
 
             migrationBuilder.CreateTable(
                 name: "ingredient_alternative",
@@ -297,8 +289,7 @@ namespace Data.Migrations
                         principalTable: "ingredient",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "Alternative ingredients");
+                });
 
             migrationBuilder.CreateTable(
                 name: "nutrient",
@@ -322,8 +313,7 @@ namespace Data.Migrations
                         column: x => x.IngredientId,
                         principalTable: "ingredient",
                         principalColumn: "Id");
-                },
-                comment: "Recipes listed on the website");
+                });
 
             migrationBuilder.CreateTable(
                 name: "recipe_ingredient",
@@ -362,8 +352,7 @@ namespace Data.Migrations
                         principalTable: "recipe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "A recipe's ingredients");
+                });
 
             migrationBuilder.CreateTable(
                 name: "recipe_instruction",
@@ -371,9 +360,8 @@ namespace Data.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Notes = table.Column<string>(type: "text", nullable: true),
                     Order = table.Column<int>(type: "integer", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
                     DisabledReason = table.Column<string>(type: "text", nullable: true),
                     RecipeId = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -386,8 +374,7 @@ namespace Data.Migrations
                         principalTable: "recipe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "Recipes listed on the website");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_ingredient",
@@ -454,8 +441,7 @@ namespace Data.Migrations
                         principalTable: "user",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                },
-                comment: "User's progression level of an exercise");
+                });
 
             migrationBuilder.CreateTable(
                 name: "user_feast_recipe",
@@ -492,16 +478,18 @@ namespace Data.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    RecipeIngredientId = table.Column<int>(type: "integer", nullable: false),
+                    IngredientId = table.Column<int>(type: "integer", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    Quantity = table.Column<double>(type: "double precision", nullable: false),
                     UserFeastRecipeId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_user_feast_recipe_ingredient", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_user_feast_recipe_ingredient_recipe_ingredient_RecipeIngred~",
-                        column: x => x.RecipeIngredientId,
-                        principalTable: "recipe_ingredient",
+                        name: "FK_user_feast_recipe_ingredient_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -584,9 +572,9 @@ namespace Data.Migrations
                 column: "UserFeastId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_user_feast_recipe_ingredient_RecipeIngredientId",
+                name: "IX_user_feast_recipe_ingredient_IngredientId",
                 table: "user_feast_recipe_ingredient",
-                column: "RecipeIngredientId");
+                column: "IngredientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_feast_recipe_ingredient_UserFeastRecipeId",
@@ -637,6 +625,9 @@ namespace Data.Migrations
                 name: "nutrient");
 
             migrationBuilder.DropTable(
+                name: "recipe_ingredient");
+
+            migrationBuilder.DropTable(
                 name: "recipe_instruction");
 
             migrationBuilder.DropTable(
@@ -665,9 +656,6 @@ namespace Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "user_token");
-
-            migrationBuilder.DropTable(
-                name: "recipe_ingredient");
 
             migrationBuilder.DropTable(
                 name: "user_feast_recipe");

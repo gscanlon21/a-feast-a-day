@@ -4,7 +4,6 @@ using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -13,9 +12,9 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Recipe;
 
 /// <summary>
-/// Exercises listed on the website
+/// Recipes listed on the website
 /// </summary>
-[Table("recipe"), Comment("Recipes listed on the website")]
+[Table("recipe")]
 [DebuggerDisplay("{Name,nq}")]
 public class Recipe
 {

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
@@ -8,7 +7,7 @@ namespace Data.Entities.Ingredient;
 /// <summary>
 /// Pre-requisite exercises for other exercises
 /// </summary>
-[Table("ingredient_alternative"), Comment("Alternative ingredients")]
+[Table("ingredient_alternative")]
 [DebuggerDisplay("{Ingredient} alt is {AlternativeIngredient}")]
 public class IngredientAlternative
 {

@@ -471,7 +471,7 @@ public class QueryRunner(Section section)
     }
 
     /// <summary>
-    /// Returns the muscles targeted by any of the items in the list as a dictionary with their count of how often they occur.
+    /// Returns the nutrients targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
     private static double WorkedAnyNutrientCount(ICollection<QueryResults> list, Nutrients nutrients, int weightDivisor = 1)
     {

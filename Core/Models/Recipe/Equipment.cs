@@ -57,20 +57,36 @@ public enum Equipment : long
     PotatoMasher = 1 << 15 | 1L << 35, // 32768 + 34359738368
 
 
-    [Display(Name = "Grill | Broiler", Order = 60)]
-    GrillBroiler = 1L << 59 | 1L << 23 | 1L << 24,
+    [Display(Name = "Grill | Broiler", Order = 41)]
+    GrillBroiler = 1L << 40 | 1L << 23 | 1L << 24,
 
-    [Display(Name = "Microwave | Stove", Order = 61)]
-    MicrowaveStove = 1L << 60 | 1L << 20 | 1L << 22,
+    [Display(Name = "Microwave | Stove", Order = 42)]
+    MicrowaveStove = 1L << 41 | 1L << 20 | 1L << 22,
 
-    [Display(Name = "Food Processor | Blender", Order = 62)]
-    FoodProcessorBlender = 1L << 61 | 1L << 27 | 1L << 28,
 
-    [Display(Name = "Food Processor | Mortar & Pestle", Order = 63)]
-    FoodProcessorMortarPestle = 1L << 62 | 1L << 28 | 1L << 31,
+    [Display(Name = "Immersion Blender | Potato Masher", Order = 57)]
+    ImmersionBlenderPotatoMasher = 1L << 56 | 1L << 29 | 1L << 35,
 
-    [Display(Name = "Food Processor | Mortar & Pestle | Blender", Order = 64)]
-    FoodProcessorMortarPestleBlender = 1L << 63 | 1L << 27 | 1L << 28 | 1L << 31,
+    [Display(Name = "Food Processor | Blender", Order = 58)]
+    FoodProcessorBlender = 1L << 57 | 1L << 28 | 1L << 27,
+
+    [Display(Name = "Food Processor | Mortar & Pestle", Order = 59)]
+    FoodProcessorMortarPestle = 1L << 58 | 1L << 28 | 1L << 31,
+
+    [Display(Name = "Food Processor | Potato Masher", Order = 60)]
+    FoodProcessorPotatoMasher = 1L << 59 | 1L << 28 | 1L << 35,
+
+    [Display(Name = "Food Processor | Mortar & Pestle | Blender", Order = 61)]
+    FoodProcessorMortarPestleBlender = 1L << 60 | 1L << 28 | 1L << 31 | 1L << 27,
+
+    [Display(Name = "Food Processor | Immersion Blender | Blender", Order = 62)]
+    FoodProcessorImmersionBlenderBlender = 1L << 61 | 1L << 29 | 1L << 28 | 1L << 27,
+
+    [Display(Name = "Food Processor | Potato Masher | Mortar & Pestle", Order = 63)]
+    FoodProcessorPotatoMasherMortarPestle = 1L << 62 | 1L << 28 | 1L << 35 | 1L << 31,
+
+    [Display(Name = "Food Processor | Potato Masher | Mortar & Pestle | Blender", Order = 64)]
+    FoodProcessorPotatoMasherMortarPestleBlender = 1L << 63 | 1L << 28 | 1L << 35 | 1L << 31 | 1L << 27,
 }
 
 public static class EquipmentExtensions

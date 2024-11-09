@@ -1,8 +1,8 @@
 ﻿using Core.Models.Ingredients;
 using Core.Models.User;
+using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
 using Data.Entities.User;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -11,9 +11,9 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Ingredient;
 
 /// <summary>
-/// Exercises listed on the website
+/// Recipes listed on the website.
 /// </summary>
-[Table("ingredient"), Comment("Recipes listed on the website")]
+[Table("ingredient")]
 [DebuggerDisplay("{Name,nq}")]
 public class Ingredient
 {
@@ -96,9 +96,8 @@ public class Ingredient
     [JsonIgnore, InverseProperty(nameof(UserIngredient.SubstituteIngredient))]
     public virtual ICollection<UserIngredient> UserSubstituteIngredients { get; private init; } = [];
 
-    public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is Ingredient other
-        && other.Id == Id;
+    [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.Ingredient))]
+    public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; private init; } = null!;
 
     [NotMapped]
     public Allergens[]? AllergenBinder
@@ -106,4 +105,8 @@ public class Ingredient
         get => Enum.GetValues<Allergens>().Where(e => Allergens.HasFlag(e)).ToArray();
         set => Allergens = value?.Aggregate(Allergens.None, (a, e) => a | e) ?? Allergens.None;
     }
+
+    public override int GetHashCode() => HashCode.Combine(Id);
+    public override bool Equals(object? obj) => obj is Ingredient other
+        && other.Id == Id;
 }

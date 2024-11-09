@@ -43,7 +43,9 @@ public partial class NewsletterRepo
                 var recipe = recipes[i];
                 context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, recipe, i)
                 {
-                    UserFeastRecipeIngredients = recipe.RecipeIngredients.Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
+                    UserFeastRecipeIngredients = recipe.RecipeIngredients
+                        .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+                        .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
                 });
             }
         }

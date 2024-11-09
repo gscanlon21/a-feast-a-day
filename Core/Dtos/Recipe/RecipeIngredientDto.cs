@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Core.Dtos.User;
 
 /// <summary>
-/// Exercises listed on the website
+/// The ingredients of a recipe.
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeIngredientDto

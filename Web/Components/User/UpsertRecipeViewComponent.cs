@@ -16,7 +16,7 @@ namespace Web.Components.User;
 public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
 {
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "UpsertRecipe";
 
