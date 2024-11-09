@@ -4,7 +4,6 @@ using Data.Entities.User;
 
 namespace Web.Views.Shared.Components.Nutrient;
 
-
 public class NutrientViewModel
 {
     public required string Token { get; set; }
@@ -14,12 +13,21 @@ public class NutrientViewModel
 
     public double WeeksOfData { get; set; }
 
+    public Nutrients UsersWorkedNutrients { get; init; }
+
     public required IDictionary<Nutrients, double?> WeeklyVolume { get; set; }
 
-    public Nutrients UsersWorkedMuscles { get; init; }
-
-    // The max value (seconds of time-under-tension) of the range display
-    //public double MaxRangeValue => NutrientHelpers.All.Values.Max(r => r.End.Value);
+    public NutrientTarget AllNutrientTarget => new()
+    {
+        NutrientGroup = Nutrients.All,
+        ShowButtons = true,
+        Start = 0,
+        End = 100,
+        Middle = 50,
+        DefaultStart = 0,
+        DefaultEnd = 100,
+        ValueInRange = 50,
+    };
 
     public NutrientTarget GetNutrientTarget(Nutrients nutrient)
     {
@@ -39,7 +47,7 @@ public class NutrientViewModel
             DefaultEnd = sumRDA / sumTUL * defaultRange.End.Value ?? 100,
             ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * start)
                 : Math.Min(101, WeeklyVolume[nutrient] ?? 0),
-            ShowButtons = UsersWorkedMuscles.HasFlag(nutrient),
+            ShowButtons = UsersWorkedNutrients.HasFlag(nutrient),
             Increment = sumRDA / sumTUL * UserConsts.IncrementNutrientTargetBy ?? UserConsts.IncrementNutrientTargetBy,
         };
     }

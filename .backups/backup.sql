@@ -3405,7 +3405,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8035	248	1984	\N	\N	3	2	f
 8036	248	62	\N	\N	3	1	f
 8037	248	2047	\N	\N	3	46	f
-8038	203	2047	\N	\N	3	122	f
 8248	598	128	\N	\N	3	0.1	f
 8249	598	68719476736	\N	\N	2	4	f
 8250	598	34359738368	\N	\N	2	208	f
@@ -3417,6 +3416,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8256	598	14	\N	\N	3	3	f
 8257	598	1984	\N	\N	3	0.2	f
 8258	598	62	\N	\N	3	6	f
+8038	203	2047	\N	\N	3	106	f
 7131	160	128	\N	\N	3	1.5	f
 6186	177	3221225472	\N	\N	1	0.3	f
 7132	160	2048	\N	\N	2	15	f
@@ -3765,6 +3765,19 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9272	619	62	\N	\N	3	34	f
 9273	619	2047	\N	\N	3	200	f
 9274	206	14	\N	\N	3	1	f
+9275	203	128	\N	\N	3	0.2	f
+9276	203	68719476736	\N	\N	2	2	f
+9277	203	34359738368	\N	\N	2	78	f
+9278	203	2	\N	\N	3	0.3	f
+9279	203	1	\N	\N	3	3	f
+9280	203	4294967296	\N	\N	2	1	f
+9281	203	2199023255552	\N	\N	2	1	f
+9282	203	48	\N	\N	3	4	f
+9283	203	14	\N	\N	3	17	f
+9284	203	1984	\N	\N	3	1	f
+9285	203	62	\N	\N	3	21	f
+9286	206	4294967296	\N	\N	2	6	f
+9287	206	2199023255552	\N	\N	2	6	f
 \.
 
 
@@ -3904,7 +3917,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3821	0	\N	\N	158	1	1	\N	346	f	\N	2
 3822	6	\N	\N	158	2	1	, halved	589	f	\N	3
 3823	6	\N	\N	158	2	1	, halved	588	f	\N	4
+5192	0	\N	\N	106	1	2	\N	387	f	\N	1
 1766	0	\N	\N	104	1	4	, smoked	381	f	\N	4
+5193	4	\N	\N	106	1	12	\N	57	f	\N	2
 1784	5	\N	\N	108	1	2	\N	388	f	\N	0
 1385	5	\N	\N	89	1	1	\N	25	f	\N	0
 1386	0	\N	\N	89	2	1	, chopped	316	f	\N	1
@@ -3913,6 +3928,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1389	6	\N	\N	89	4	7	\N	111	f	\N	4
 1390	6	\N	\N	89	1	1	\N	288	f	\N	5
 1391	6	\N	\N	89	1	1	\N	292	f	\N	6
+5194	4	\N	\N	106	1	8	\N	206	f	\N	3
+5195	8	\N	\N	106	2	3	\N	383	f	\N	4
 1785	5	\N	\N	108	1	1	\N	389	f	\N	1
 1786	4	\N	\N	108	1	28	\N	260	t	\N	2
 1787	5	\N	\N	108	4	5	\N	132	f	\N	3
@@ -4130,7 +4147,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4906	0	\N	\N	234	1	6	\N	671	f	\N	0
 3470	6	\N	\N	165	4	1	\N	29	f	\N	0
 3471	0	\N	\N	165	1	1	, crushed	5	f	\N	1
-541	6	\N	\N	59	1	1	\N	203	f	\N	0
 4907	7	\N	\N	234	1	2	\N	278	f	\N	1
 4384	7	\N	\N	194	1	2	, such as basil, parsley, chervil, marjoram and oregano.	712	t	\N	6
 4385	8	\N	\N	194	8	1	\N	285	f	\N	7
@@ -4765,11 +4781,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4214	7	\N	\N	246	1	2	\N	76	f	\N	0
 4215	0	\N	\N	246	1	2	, halved and thinly sliced	222	f	\N	1
 4216	0	\N	\N	246	1	2	, cut into 11/2-inch cubes	387	f	\N	2
-5178	0	\N	\N	106	1	4	\N	5	f	\N	0
-5179	0	\N	\N	106	1	2	\N	387	f	\N	1
-5180	4	\N	\N	106	1	12	\N	57	f	\N	2
-5181	4	\N	\N	106	2	17	\N	206	f	\N	3
-5182	8	\N	\N	106	2	3	\N	383	f	\N	4
 5183	0	\N	\N	123	1	1	, thinly sliced	155	f	\N	0
 5184	0	\N	\N	123	1	2	, thinly sliced	222	f	\N	1
 5185	7	\N	\N	123	1	3	\N	36	f	\N	2
@@ -4986,6 +4997,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4254	0	\N	\N	195	1	20	, pitted and chopped	397	t	\N	8
 4255	7	\N	\N	195	1	2	, chopped	2	t	\N	9
 4256	8	\N	\N	195	8	1	\N	285	f	\N	10
+5190	6	\N	\N	59	1	1	\N	203	f	\N	0
 4266	0	\N	\N	19	1	1	\N	8	f	\N	0
 4267	0	\N	\N	19	1	2	\N	187	f	\N	1
 4473	6	\N	\N	232	1	1	\N	670	f	\N	0
@@ -5226,6 +5238,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5096	6	\N	\N	156	2	1	, toasted and roughly chopped, for the sauce	602	f	\N	4
 5097	7	\N	\N	156	1	3	, for the sauce	502	f	\N	5
 5098	0	\N	\N	156	1	1	, juiced, for the sauce	4	f	\N	6
+5191	0	\N	\N	106	1	4	\N	5	f	\N	0
 \.
 
 
@@ -5330,7 +5343,6 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 263	Serve on buns.	\N	\N	31	4
 179	Heat 2 tbsp of the oil in a large wok over a high heat, then add the onion and fry until lightly browned, around 5 mins. Add the rice, stir and toast for about 3 mins, then move to the side of the pan.	\N	\N	43	1
 180	Add the remaining oil, then tip in the egg mixture. Leave to cook a little, then mix in with the rice – stir vigorously to coat the grains or, if you prefer the egg chunkier, allow to set for a little longer before breaking up and stirring through. Tip into a serving bowl and scatter over the spring onion to serve. You can also add sesame oil, ground white pepper and a splash of soy sauce to season.	\N	\N	43	2
-272	Pop the popcorn in the microwave.	\N	\N	59	0
 606	Add the ingredients to the Baking Pan in the order listed.	\N	\N	72	0
 607	Select Course No. 1 and press the START button. 	\N	\N	72	1
 2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract.	\N	\N	233	0
@@ -5938,13 +5950,8 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 2634	Place the eggs on your plates — I like one facing up and one facing down. From a height, drizzle over the hoisin (loosening with a splash of water first, if needed). Drain and scatter over the scallions and chilies, stab the yolks, and enjoy.	\N	\N	264	2
 2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove. Put three-quarters of the seeds into a pestle and mortar with a pinch of sea salt, and pound until fairly fine. Peel and add the garlic, then smash to a paste. Squeese in the lemon juice, then muddle in 1 tablespoon of extra virgin olive oil and a tiny drebble of red wine vinegar to make a delicious tahini-style dressing.	\N	\N	263	0
 2636	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	\N	263	1
-2825	Peel the garlic cloves and slice lengthways, then place in a large non-stick frying pan on a high heat with 1 tablespoon of olive oil, stirring regularly. Slice each chicken breast lengthways into 3 strips, then toss with a pinch of sea salt and black pepper.	\N	\N	106	0
 2640	Put a grill pan on high heat. Cut the two cheeks off the mango, slice each into three lengthways, then slice off the skin and discard. Dice all of the flech into ½-inch cubes. Scrunch the stone over a bowl, to extract any pulp and juice, mix with the hoisin to make a dressing, and divide between two little bowls.	\N	\N	270	0
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. then grill for 2-3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	\N	\N	270	1
-2826	Once the garlic is nicely golden, quickly remove from the pan with a slotted spoon, leaving the flavored oil behind.	\N	\N	106	1
-2827	Go in with the chicken and cook for 5 minutes, or until golden and cooked through, turning regularly.	\N	\N	106	2
-2828	Remove the chicken from the pan and tip in the chickpeas (juices and all). Add the spinach, along with most of the garlic and 1 tablespoon of red wine vinegar, then toss over the heat until the spinach has wilted and the chickpeas are hot through.	\N	\N	106	3
-2829	Season to perfection with salt and pepper, then return the chicken to the pan and finish with the reserved garlic and a generous dusting on sumac.	\N	\N	106	4
 2830	In a bowl, mix together the sliced cucumber and onion, season with salt and toss together until thouroughly combined. Leave to stand in a cool place for 5-10 minutes.	\N	\N	123	0
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	\N	123	1
 2128	Divide the broccoli florets into tiny sprigs. Cut the leeks and asparagus diagonally into 5cm/2in lengths. Trim the fennel bulb and but into wedges.	\N	\N	185	0
@@ -5971,6 +5978,7 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 2642	Divide up the mango and the hoisin bowls. Slice chicken and arrange on the plates, then tuck in, using the lettuce cups as a receptable to hold everything.	\N	\N	270	2
 2643	Place a large non-stick frying pan on a medium heat and toast the peanuts as it heats up, tossing regularly, then remove and set aside, leaving the pan on the heat. Meanwhile, score the chicken lengthways at ½-inch intervals, going about halfway through. In a bowl, toss the chicken with 1 tablespoon each of olive oil, red wine vinegar, and black bean sauce to coat. Cook in the hot pan for 3 minutes on each side, or until dark, gnarly, and cooked through.	\N	\N	261	0
 2644	Cook the noodles in large pan of boiling salted water according to the package instructions. Trim the broccolini (halving and thick stalks lengthways) and add to the water for the last 2 minutes.Remove the chicken to a board. Use tongs to carefully drag the just-cooked noodles and broccolini with a bit of their water straight into the frying pan. Pound half the peanuts in a pestle and mortar until fine, toss into the pan with the remaining black bean sauce until well mixed, then divide between your plates. Slice the chicken and place on top, scatter over the remaining peanuts, drizzle with a little extra virgin olive oil, and dig in.	\N	\N	261	1
+2832	Pop the popcorn in the microwave.	\N	\N	59	0
 2181	Place sugar in your food processor or blender. Any small chopper or even a coffee bean grinder works. (Process in batches if needed.) You can skip the food processor/blender and just mix the sugar and vanilla bean seeds in a bowl with a whisk, but you’ll get better flavor if you pulse the two together.	\N	\N	237	0
 2182	Cut the vanilla bean pod in half lengthwise. Use a knife to scrape out the seeds. Place the seeds on top of the sugar. (Save the empty beans/pods.) Use a spoon or another knife to scrape the seeds off the knife—they’re sticky and clumpy.	\N	\N	237	1
 2183	Pulse/blend/whisk until all the seeds are broken up and blended, about 10-12 pulses. If you notice extra large clumps, feel free to keep pulsing/whisking or sift them out. Pour vanilla sugar into your jar or container.	\N	\N	237	2
@@ -5992,10 +6000,15 @@ COPY public.recipe_instruction ("Id", "Name", "Notes", "DisabledReason", "Recipe
 2390	Tip the drained pasta into the pea and potato pan, finely grate in the pecorino, then toss together, adding spashes of cooking water to loosen, if needed. Season to perfection, and finish with an extra grating of pecorino and a drizzle of extra virgin olive oil, if you like. 	\N	\N	105	2
 2323	Place all ingredients in a mixing bowl.	\N	\N	82	0
 2324	Using a rubber spatula, mix ingredients together until thoroughly blended.	\N	\N	82	1
+2833	Peel the garlic cloves and slice lengthways, then place in a large non-stick frying pan on a high heat with 1 tablespoon of olive oil, stirring regularly. Slice each chicken breast lengthways into 3 strips, then toss with a pinch of sea salt and black pepper.	\N	\N	106	0
+2834	Once the garlic is nicely golden, quickly remove from the pan with a slotted spoon, leaving the flavored oil behind.	\N	\N	106	1
 2653	Place the flour in a bowl and add plenty of seasoning. Turn the pork in the flour mixture to coat them lightly.	\N	\N	231	0
 2654	Melt the butter in a heavy frying pan and cook the pork for 1 minute on each side.	\N	\N	231	1
 2655	Add the sliced leeks to the pan and cook for 3 minutes. Stir in the mustard seeds. Pour in the wine. Cook gently for 10 minutes, turning the pork occasionally. Peel, core and slice the apples.	\N	\N	231	2
 2656	Add the sliced apples and double cream and simmer for 3 minutes, or until the pork is fully cooked and the sauce is thick, rich and creamy. Taste for seasoning, then stir in the chopped parsley and serve at once.	\N	\N	231	3
+2835	Go in with the chicken and cook for 5 minutes, or until golden and cooked through, turning regularly.	\N	\N	106	2
+2836	Remove the chicken from the pan and tip in the chickpeas (juices and all). Add the spinach, along with most of the garlic and 1 tablespoon of red wine vinegar, then toss over the heat until the spinach has wilted and the chickpeas are hot through.	\N	\N	106	3
+2837	Season to perfection with salt and pepper, then return the chicken to the pan and finish with the reserved garlic and a generous dusting on sumac.	\N	\N	106	4
 2661	Using a sharp knife, cut off and discard any thick stems from the broccoli and cut the broccoli into long thin florets.	\N	\N	170	0
 2662	Spread out the sesame seeds in a small frying pan and dry-fry over a medium heat until toasted. Do not leave them unattended as they will readily burn if left just a fraction too long.	\N	\N	170	1
 2663	Heat the olive oil in a wok or large frying pan and add the broccoli. Stir-fry for 3-4 minutes, or until tender, adding a splash of water if the pan becomes too dry.	\N	\N	170	2
@@ -6028,7 +6041,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9274, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9287, true);
 
 
 --

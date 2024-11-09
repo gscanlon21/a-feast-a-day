@@ -9,8 +9,12 @@ public static class NutrientExtensions
 {
     public static Range DefaultRange(this Nutrients nutrient, Person person = Person.Adult)
     {
-        var maxPercent = Math.Min(UserConsts.NutrientTargetMaxPercent, nutrient.DailyAllowance(person).TULPercent);
-        return new Range(UserConsts.NutrientTargetDefaultPercent, maxPercent);
+        var dailyAllowance = nutrient.DailyAllowance(person);
+        return dailyAllowance.Measure switch
+        {
+            Measure.Percent => new Range(UserConsts.NutrientTargetDefaultPercent, dailyAllowance.TULPercent),
+            _ => new Range(UserConsts.NutrientTargetDefaultPercent, Math.Min(UserConsts.NutrientTargetMaxPercent, dailyAllowance.TULPercent))
+        };
     }
 
     public static SubNutrientsAttributeInternal? GetSkillType(this Nutrients nutrients)

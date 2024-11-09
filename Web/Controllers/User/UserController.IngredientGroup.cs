@@ -168,12 +168,12 @@ public partial class UserController
                     UserId = user.Id,
                     Nutrient = nutrient,
                     Start = defaultRange.Start.Value,
-                    End = Math.Min(UserConsts.NutrientTargetMaxPercent, defaultRange.End.Value + UserConsts.IncrementNutrientTargetBy)
+                    End = Math.Min(defaultRange.End.Value, defaultRange.End.Value + UserConsts.IncrementNutrientTargetBy)
                 });
             }
             else
             {
-                userNutrient.End = Math.Min(UserConsts.NutrientTargetMaxPercent, userNutrient.End + UserConsts.IncrementNutrientTargetBy);
+                userNutrient.End = Math.Min(defaultRange.End.Value, userNutrient.End + UserConsts.IncrementNutrientTargetBy);
 
                 // If the user target matches the default, delete this range so that any default updates take effect.
                 if (userNutrient.Range.Equals(defaultRange))

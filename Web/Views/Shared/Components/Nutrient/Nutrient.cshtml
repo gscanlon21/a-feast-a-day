@@ -21,22 +21,12 @@
 <div class="alert alert-primary" role="alert">
     <div style="display:flex;flex-direction:column;row-gap:1ex;">
         @foreach (var nutrientTarget in NutrientHelpers.All
-        .Select(kv => Model.GetNutrientTarget(kv))
-        .OrderByDescending(mt => mt.ShowButtons ? mt.Start : mt.DefaultStart)
-        .ThenByDescending(mt => mt.ShowButtons ? mt.End : mt.DefaultEnd)
-        .ThenBy(mt => mt.NutrientGroup.GetSingleDisplayName(DisplayType.GroupName))
-        .ThenBy(mt => mt.NutrientGroup.GetSingleDisplayName(DisplayType.Name))
-        .Append(new NutrientViewModel.NutrientTarget()
-        {
-            NutrientGroup = Nutrients.All,
-            ShowButtons = true,
-            Start = 0,
-            End = 100,
-            Middle = 50,
-            DefaultStart = 0,
-            DefaultEnd = 100,
-            ValueInRange = 50,
-        }))
+            .Select(kv => Model.GetNutrientTarget(kv))
+            .OrderByDescending(nt => nt.ShowButtons ? nt.Start : nt.DefaultStart)
+            .ThenByDescending(nt => nt.ShowButtons ? nt.End : nt.DefaultEnd)
+            .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.GroupName))
+            .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.Name))
+            .Append(Model.AllNutrientTarget))
         {
             <div style="display:flex;column-gap:1ch;flex-wrap:wrap;">
                 <div style="display:flex;flex:1 0 14ch;">@nutrientTarget.NutrientGroup.GetSingleDisplayName()</div>
