@@ -17,7 +17,7 @@ namespace Data.Entities.User;
 /// <summary>
 /// User who signed up for the newsletter.
 /// </summary>
-[Table("user"), Comment("User who signed up for the newsletter")]
+[Table("user")]
 [Index(nameof(Email), IsUnique = true)]
 [DebuggerDisplay("Email = {Email}, LastActive = {LastActive}")]
 public class User : IUser

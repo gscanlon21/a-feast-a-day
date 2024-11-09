@@ -1,5 +1,4 @@
 ﻿using Core.Consts;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -10,7 +9,7 @@ namespace Data.Entities.User;
 /// <summary>
 /// User's progression level of an exercise.
 /// </summary>
-[Table("user_recipe"), Comment("User's progression level of an exercise")]
+[Table("user_recipe")]
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipe
 {

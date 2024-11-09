@@ -1,5 +1,4 @@
 ﻿using Core.Models.User;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -7,11 +6,10 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
 
-
 /// <summary>
-/// Exercises listed on the website
+/// Nutrients for an ingredient.
 /// </summary>
-[Table("nutrient"), Comment("Recipes listed on the website")]
+[Table("nutrient")]
 [DebuggerDisplay("{Nutrients}: {Measure} - {Value}")]
 public class Nutrient
 {

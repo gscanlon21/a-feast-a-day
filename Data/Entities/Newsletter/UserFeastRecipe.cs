@@ -25,7 +25,7 @@ public class UserFeastRecipe
         // Don't set Recipe, so that EF Core doesn't add/update Recipe.
         RecipeId = queryResults.Recipe.Id;
         // Don't set UserFeast, so that EF Core doesn't add/update UserFeast.
-        UserFeastId = newsletter.Id; 
+        UserFeastId = newsletter.Id;
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

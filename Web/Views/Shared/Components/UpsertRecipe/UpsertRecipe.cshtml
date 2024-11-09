@@ -154,6 +154,7 @@
                     <div id="custom-ingredient-@id" class="mb-4 custom-ingredient @(userIngredient.Hide ? "d-none" : "")" data-day="@id">
                         <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.RecipeIngredients[id].Hide" />
                         <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" />
+                        <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Id" />
 
                         <div class="form-group row">
                             <div class="col-auto">
@@ -276,6 +277,7 @@
                         <div class="row">
                             <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
                             <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
+                            <input type="hidden" asp-for="Recipe.Instructions[id].Id" />
 
                             <div class="form-group mb-3 col" style="min-width:200px;">
                                 <label asp-for="Recipe.Instructions[id].Name" class="control-label">Step @(id + 1)</label>

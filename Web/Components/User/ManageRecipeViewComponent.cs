@@ -15,7 +15,7 @@ namespace Web.Components.User;
 public class ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory serviceScopeFactory) : ViewComponent
 {
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "ManageRecipe";
 

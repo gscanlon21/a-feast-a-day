@@ -1,7 +1,5 @@
 ﻿using Core.Models.User;
-using Data.Entities.Newsletter;
 using Fractions;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -12,12 +10,13 @@ namespace Data.Entities.Recipe;
 /// <summary>
 /// A recipe's ingredients.
 /// </summary>
-[Table("recipe_ingredient"), Comment("A recipe's ingredients")]
+[Table("recipe_ingredient")]
 [DebuggerDisplay("Id = {Id}, {Recipe}: {Ingredient}")]
 public class RecipeIngredient
 {
+    // Not private so json can bind to it.
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; private init; }
+    public int Id { get; init; }
 
     [Display(Name = "Recipe")]
     public int RecipeId { get; init; }
@@ -71,9 +70,6 @@ public class RecipeIngredient
 
     [JsonInclude, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredientRecipes))]
     public virtual Recipe IngredientRecipe { get; set; } = null!;
-
-    [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.RecipeIngredient))]
-    public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; private init; } = null!;
 
 
     public override int GetHashCode() => HashCode.Combine(Id);

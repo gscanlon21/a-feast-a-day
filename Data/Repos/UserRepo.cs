@@ -184,9 +184,8 @@ public class UserRepo
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.UserFeastRecipeIngredients)
-                    .ThenInclude(r => r.RecipeIngredient)
-                        .ThenInclude(r => r.Ingredient)
-                            .ThenInclude(r => r.Nutrients)
+                    .ThenInclude(r => r.Ingredient)
+                        .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
             // Include this week's data or filter out this week's data.
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
@@ -214,13 +213,11 @@ public class UserRepo
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            // Recipe ingredient recipes are logged separately, skip those.
-                            .Where(ufri => ufri.RecipeIngredient.IngredientId.HasValue)
                             .SelectMany(ufri =>
                             {
-                                return ufri.RecipeIngredient.Ingredient.Nutrients.Select(nutrient =>
+                                return ufri.Ingredient.Nutrients.Select(nutrient =>
                                 {
-                                    var servingsOfIngredientUsed = ufri.RecipeIngredient.NumberOfServings(ufr.Scale);
+                                    var servingsOfIngredientUsed = ufri.NumberOfServings(ufr.Scale);
                                     var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
                                     var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
                                     return new
@@ -264,9 +261,8 @@ public class UserRepo
             .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.UserFeastRecipeIngredients)
-                    .ThenInclude(r => r.RecipeIngredient)
-                        .ThenInclude(r => r.Ingredient)
-                            .ThenInclude(r => r.Nutrients)
+                    .ThenInclude(r => r.Ingredient)
+                        .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
             // Include this week's data or filter out this week's data.
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
@@ -294,18 +290,16 @@ public class UserRepo
             // sa. Drop 4 weeks down to 3.5 weeks if we only have 3.5 weeks of data. Use the max newsletter date instead of today for backfilling support.
             var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
             var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
-            var monthlyMuscles = weeklyFeasts
+            var monthlyAllergens = weeklyFeasts
                 .SelectMany(feast => feast.UserFeastRecipes
                     .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                        // Recipe ingredient recipes are logged separately, skip those.
-                        .Where(ufri => ufri.RecipeIngredient.IngredientId.HasValue)
-                        .Select(ufri => ufri.RecipeIngredient.Ingredient.Allergens)
+                        .Select(ufri => ufri.Ingredient.Allergens)
                     )
                 ).ToList();
 
             return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(m => m, m =>
             {
-                return (double?)monthlyMuscles.Sum(mm => (m.HasFlag(mm) && mm != Allergens.None) ? 1 : 0) / actualWeeks;
+                return (double?)monthlyAllergens.Sum(mm => (m.HasFlag(mm) && mm != Allergens.None) ? 1 : 0) / actualWeeks;
             }));
         }
 

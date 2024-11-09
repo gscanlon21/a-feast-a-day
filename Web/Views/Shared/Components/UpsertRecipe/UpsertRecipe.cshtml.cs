@@ -27,9 +27,6 @@ public class UpsertRecipeModel : IValidatableObject
 
     public int? UserId { get; init; }
 
-    /// <summary>
-    /// Friendly name.
-    /// </summary>
     [Required]
     public string Name { get; set; } = null!;
 

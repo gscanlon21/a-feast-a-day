@@ -42,10 +42,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("footnote", t =>
-                        {
-                            t.HasComment("Sage advice");
-                        });
+                    b.ToTable("footnote");
                 });
 
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
@@ -76,10 +73,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_footnote", t =>
-                        {
-                            t.HasComment("Sage advice");
-                        });
+                    b.ToTable("user_footnote");
                 });
 
             modelBuilder.Entity("Data.Entities.Ingredient.Ingredient", b =>
@@ -131,10 +125,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ingredient", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
-                        });
+                    b.ToTable("ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Ingredient.IngredientAlternative", b =>
@@ -149,10 +140,7 @@ namespace Data.Migrations
 
                     b.HasIndex("AlternativeIngredientId");
 
-                    b.ToTable("ingredient_alternative", t =>
-                        {
-                            t.HasComment("Alternative ingredients");
-                        });
+                    b.ToTable("ingredient_alternative");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
@@ -196,10 +184,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_email", t =>
-                        {
-                            t.HasComment("A day's workout routine");
-                        });
+                    b.ToTable("user_email");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
@@ -266,15 +251,21 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("RecipeIngredientId")
+                    b.Property<int>("IngredientId")
                         .HasColumnType("integer");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Quantity")
+                        .HasColumnType("double precision");
 
                     b.Property<int>("UserFeastRecipeId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RecipeIngredientId");
+                    b.HasIndex("IngredientId");
 
                     b.HasIndex("UserFeastRecipeId");
 
@@ -330,10 +321,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("recipe", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
-                        });
+                    b.ToTable("recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
@@ -385,10 +373,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("recipe_ingredient", t =>
-                        {
-                            t.HasComment("A recipe's ingredients");
-                        });
+                    b.ToTable("recipe_ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipe.RecipeInstruction", b =>
@@ -406,9 +391,6 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
                     b.Property<int>("Order")
                         .HasColumnType("integer");
 
@@ -419,10 +401,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("recipe_instruction", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
-                        });
+                    b.ToTable("recipe_instruction");
                 });
 
             modelBuilder.Entity("Data.Entities.User.Nutrient", b =>
@@ -458,10 +437,7 @@ namespace Data.Migrations
 
                     b.HasIndex("IngredientId");
 
-                    b.ToTable("nutrient", t =>
-                        {
-                            t.HasComment("Recipes listed on the website");
-                        });
+                    b.ToTable("nutrient");
                 });
 
             modelBuilder.Entity("Data.Entities.User.User", b =>
@@ -526,10 +502,7 @@ namespace Data.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("user", t =>
-                        {
-                            t.HasComment("User who signed up for the newsletter");
-                        });
+                    b.ToTable("user");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserFamily", b =>
@@ -636,10 +609,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("user_recipe", t =>
-                        {
-                            t.HasComment("User's progression level of an exercise");
-                        });
+                    b.ToTable("user_recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserServing", b =>
@@ -686,10 +656,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId", "Token");
 
-                    b.ToTable("user_token", t =>
-                        {
-                            t.HasComment("Auth tokens for a user");
-                        });
+                    b.ToTable("user_token");
                 });
 
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
@@ -774,9 +741,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Recipe.RecipeIngredient", "RecipeIngredient")
+                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
                         .WithMany("UserFeastRecipeIngredients")
-                        .HasForeignKey("RecipeIngredientId")
+                        .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -786,7 +753,7 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("RecipeIngredient");
+                    b.Navigation("Ingredient");
 
                     b.Navigation("UserFeastRecipe");
                 });
@@ -947,6 +914,8 @@ namespace Data.Migrations
 
                     b.Navigation("RecipeIngredients");
 
+                    b.Navigation("UserFeastRecipeIngredients");
+
                     b.Navigation("UserIngredients");
 
                     b.Navigation("UserSubstituteIngredients");
@@ -975,11 +944,6 @@ namespace Data.Migrations
                     b.Navigation("UserRecipes");
 
                     b.Navigation("UserSubstituteRecipes");
-                });
-
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
-                {
-                    b.Navigation("UserFeastRecipeIngredients");
                 });
 
             modelBuilder.Entity("Data.Entities.User.User", b =>

@@ -1,14 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Data.Entities.Newsletter;
 
 /// <summary>
-/// A day's workout routine.
+/// A week's feast email.
 /// </summary>
-[Table("user_email"), Comment("A day's workout routine")]
+[Table("user_email")]
 public class UserEmail
 {
     [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]

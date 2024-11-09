@@ -11,7 +11,7 @@ namespace Data.Entities.User;
 /// TODO Scopes.
 /// TODO Single-use tokens.
 /// </summary>
-[Table("user_token"), Comment("Auth tokens for a user")]
+[Table("user_token")]
 [Index(nameof(UserId), nameof(Token), IsUnique = false)]
 public class UserToken
 {
