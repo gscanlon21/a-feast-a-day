@@ -112,7 +112,8 @@ public class IndexController : ViewController
             // Need a token for if the user chooses to manage their preferences after signup.
             var token = await _userRepo.AddUserToken(newUser, durationDays: 1);
 
-            // Back-fill several weeks of workout data so muscle targets can take effect immediately. TODO do this when switching away from IsNewToFitness.
+            // Back-fill several weeks of workout data so muscle targets can take effect immediately.
+            // TODO Do this when switching family members, so nutrient adjustments aren't so drastic.
             await _newsletterService.Backfill(newUser.Email, token);
 
             TempData[TempData_User.SuccessMessage] = "Thank you! Please accept the account confirmation email in your inbox to begin receiving recipes.";

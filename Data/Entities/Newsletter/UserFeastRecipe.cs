@@ -20,7 +20,7 @@ public class UserFeastRecipe
     public UserFeastRecipe(UserFeast newsletter, QueryResults queryResults, int order)
     {
         Order = order;
-        Scale = queryResults.Scale;
+        Scale = queryResults.GetScale;
         Section = queryResults.Section;
         // Don't set Recipe, so that EF Core doesn't add/update Recipe.
         RecipeId = queryResults.Recipe.Id;

@@ -9,40 +9,32 @@ namespace Core.Code.Extensions;
 public static class MeasureExtensions
 {
     /// <summary>
-    /// Finds the exact conversion factor from one measure to grams.
+    /// Returns the exact conversion factor from one measure to grams.
     /// Throws an exception when there is no exact conversion.
     /// </summary>
     public static double ToGrams(this Measure measure, double quantity = 1)
     {
+        if (measure == Measure.None)
+        {
+            return quantity;
+        }
+
         return quantity * measure.ToMeasure(Measure.Grams);
     }
 
     /// <summary>
-    /// Finds the exact conversion factor from one measure to grams.
-    /// Returns the input quantity when there is no exact conversion.
+    /// Returns the exact conversion factor from one measure to grams,
+    /// ... or the exact milliliter conversion if there is no conversion to grams.
+    /// Throws an exception when there is no exact conversion.
     /// </summary>
-    public static double ToGramsOrDefault(this Measure measure, double quantity)
+    public static double ToGramsOrMilliliters(this Measure measure, double quantity = 1)
     {
-        return (quantity * measure.ToMeasureOrNull(Measure.Grams)) ?? quantity;
-    }
+        if (measure == Measure.None) 
+        { 
+            return quantity; 
+        }
 
-    /// <summary>
-    /// Finds the exact conversion factor from one measure to grams.
-    /// Returns null when there is no exact conversion.
-    /// </summary>
-    public static double? ToGramsOrNull(this Measure measure, double quantity = 1)
-    {
-        return quantity * measure.ToMeasureOrNull(Measure.Grams);
-    }
-
-    /// <summary>
-    /// Finds the exact conversion factor from one measure to grams.
-    /// Returns the exact milliliter conversion if there is no conversion to grams.
-    /// Returns the input quantity when there is no exact conversion.
-    /// </summary>
-    public static double ToGramsOrMillilitersOrDefault(this Measure measure, double quantity)
-    {
-        return (quantity * (measure.ToMeasureOrNull(Measure.Grams) ?? measure.ToMeasureOrNull(Measure.Milliliters))) ?? quantity;
+        return quantity * (measure.ToMeasureOrNull(Measure.Grams) ?? measure.ToMeasure(Measure.Milliliters));
     }
 
     /// <summary>
@@ -63,7 +55,7 @@ public static class MeasureExtensions
     /// Finds the exact conversion factor from one measure to another.
     /// Returns null when there is no exact conversion.
     /// </summary>
-    public static double? ToMeasureOrNull(this Measure fromMeasure, Measure toMeasure)
+    private static double? ToMeasureOrNull(this Measure fromMeasure, Measure toMeasure)
     {
         return (fromMeasure, toMeasure) switch
         {
@@ -71,27 +63,28 @@ public static class MeasureExtensions
 
             // Dry conversions.
             (Measure.Pounds, Measure.Ounces) => 16,
+            (Measure.Ounces, Measure.Pounds) => 1d / 16,
             (Measure.Pounds, Measure.Grams) => 453.59237,
+            (Measure.Grams, Measure.Pounds) => 1d / 453.59237,
             (Measure.Ounces, Measure.Grams) => 28.3495231,
-            (Measure.Ounces, Measure.Pounds) => 0.0625,
-            (Measure.Grams, Measure.Ounces) => 0.0353,
-            (Measure.Grams, Measure.Pounds) => 0.00220462442,
-            (Measure.Micrograms, Measure.Grams) => 0.000001,
-            (Measure.Milligrams, Measure.Grams) => 0.001,
+            (Measure.Grams, Measure.Ounces) => 1d / 28.3495231,
+            (Measure.Micrograms, Measure.Grams) => 1d / 1000000,
+            (Measure.Milligrams, Measure.Grams) => 1d / 1000,
 
             // Fluid conversions.
             (Measure.Gallons, Measure.Cups) => 16,
-            (Measure.Cups, Measure.Gallons) => 0.0625,
+            (Measure.Cups, Measure.Gallons) => 1d / 16,
+            (Measure.Cups, Measure.FluidOunces) => 8,
+            (Measure.FluidOunces, Measure.Cups) => 1d / 8,
             (Measure.Cups, Measure.Tablespoons) => 16,
+            (Measure.Tablespoons, Measure.Cups) => 1d / 16,
             (Measure.Cups, Measure.Teaspoons) => 48,
+            (Measure.Teaspoons, Measure.Cups) => 1d / 48,
             (Measure.Cups, Measure.Milliliters) => 240,
-            (Measure.FluidOunces, Measure.Cups) => 0.125,
-            (Measure.Tablespoons, Measure.Cups) => 0.0625,
+            (Measure.Milliliters, Measure.Cups) => 1d / 240,
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
+            (Measure.Teaspoons, Measure.Tablespoons) => 1d / 3,
             (Measure.Tablespoons, Measure.Milliliters) => 15,
-            (Measure.Teaspoons, Measure.Cups) => 0.0208333,
-            (Measure.Teaspoons, Measure.Tablespoons) => 0.333,
-            (Measure.Milliliters, Measure.Cups) => 0.00416666667,
 
             _ => null
         };

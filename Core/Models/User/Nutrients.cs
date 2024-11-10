@@ -111,7 +111,7 @@ public enum Nutrients : long
     /// The total amount of fat, as well as the grams of trans and saturated fats, are still listed on the updated label.
     /// </summary>
     [DefaultMeasure(Measure.None)]
-    [DailyAllowance(1000, 1250, Measure.None, Multiplier.Kilocalorie)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie)]
     [Display(Order = 0, Name = "Calories", GroupName = "Calories")]
     Calories = Proteins
         | Sugar | Oligosaccharides | Starch | SolubleFiber | InsolubleFiber

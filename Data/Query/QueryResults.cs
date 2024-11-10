@@ -14,27 +14,40 @@ namespace Data.Models;
 [DebuggerDisplay("{Section}: {Recipe}")]
 public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe) : IRecipeCombo
 {
+    private double _scale = 1;
+
     public Section Section { get; init; } = section;
     public Recipe Recipe { get; init; } = recipe;
     public UserRecipe? UserRecipe { get; init; } = userRecipe;
     public IList<Nutrient> Nutrients { get; init; } = nutrients;
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
 
-    private int _scale = 1;
-    public int Scale
+    /// <summary>
+    /// Rounded scale.
+    /// </summary>
+    public int GetScale => (int)Math.Ceiling(_scale);
+
+    /// <summary>
+    /// Precise scale.
+    /// </summary>
+    internal double SetScale
     {
         get => _scale;
-        internal set
+        set
         {
-            // Scale the servings.
-            Recipe.Servings *= value;
-            Recipe.Servings /= _scale;
-
-            // Scale the recipe ingredient quantities.
-            foreach (var ingredient in RecipeIngredients)
+            var newScale = (int)Math.Ceiling(value);
+            if (newScale != GetScale)
             {
-                ingredient.QuantityNumerator *= value;
-                ingredient.QuantityNumerator /= _scale;
+                // Scale the servings.
+                Recipe.Servings *= newScale;
+                Recipe.Servings /= GetScale;
+
+                // Scale the recipe ingredient quantities.
+                foreach (var ingredient in RecipeIngredients)
+                {
+                    ingredient.QuantityNumerator *= newScale;
+                    ingredient.QuantityNumerator /= GetScale;
+                }
             }
 
             _scale = value;
@@ -47,7 +60,7 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
     [JsonIgnore]
     internal IDictionary<QueryResults, double> PrerequisiteRecipes => RecipeIngredients
         .Where(ri => ri.IngredientRecipe != null).GroupBy(ri => ri.IngredientRecipe)
-        .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMillilitersOrDefault(r.Quantity.ToDouble())));
+        .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble())));
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);
     public override bool Equals(object? obj) => obj is QueryResults other

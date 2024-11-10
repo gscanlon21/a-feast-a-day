@@ -219,7 +219,7 @@ public class QueryRunner(Section section)
 
             orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipeIngredients, recipe.UserRecipe)
             {
-                Scale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1,
+                SetScale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1,
             });
         }
 
@@ -238,7 +238,7 @@ public class QueryRunner(Section section)
                     if (recipe.Recipe.AdjustableServings && recipe.RecipeIngredients.All(r => r.IngredientRecipe?.Recipe.AdjustableServings != false))
                     {
                         // Scaling the recipe will also scale the recipe ingredient quantities with then effects ingredient recipe scales.
-                        recipe.Scale = (int)Math.Ceiling(ServingsOptions.AtLeastXServingsPerRecipe.Value / (double)recipe.Recipe.Servings);
+                        recipe.SetScale = ServingsOptions.AtLeastXServingsPerRecipe.Value / (double)recipe.Recipe.Servings;
                     }
                     // The recipe does not work enough servings that we are trying to target.
                     // Allow recipes that have a refresh date since we want to show those continuously until that date.
@@ -285,14 +285,14 @@ public class QueryRunner(Section section)
                     foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
                     {
                         // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.
-                        prerequisiteRecipe.Key.Scale = (int)Math.Ceiling(prerequisiteRecipe.Value / prerequisiteRecipe.Key.Recipe.Measure.ToGramsOrMillilitersOrDefault(prerequisiteRecipe.Key.Recipe.Servings));
+                        prerequisiteRecipe.Key.SetScale = prerequisiteRecipe.Value / prerequisiteRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prerequisiteRecipe.Key.Recipe.Servings);
 
-                        // Prerequisite recipe already exists, scale it.
-                        if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe))
+                        // Prerequisite recipe already exists and is scalable, scale it.
+                        if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe) && existingIngredientRecipe.Recipe.AdjustableServings)
                         {
                             // FIXME: Scale is stored as int and rounds up, so if two recipe ingredients from distinct recipes
-                            // only use a fraction of the recipe, the scale will end up being more than doubled.
-                            existingIngredientRecipe.Scale += prerequisiteRecipe.Key.Scale;
+                            // ... only use a fraction of the recipe, the scale will end up being more than doubled.
+                            existingIngredientRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
                         }
                         else
                         {
@@ -478,7 +478,7 @@ public class QueryRunner(Section section)
         return list.Sum(r =>
         {
             var nutrient = r.Nutrients.FirstOrDefault(n => n.Nutrients == nutrients);
-            return r.Scale * nutrient?.Measure.ToGrams(nutrient.Value) ?? 0;
+            return r.SetScale * nutrient?.Measure.ToGrams(nutrient.Value) ?? 0;
         }) / weightDivisor;
     }
 }
