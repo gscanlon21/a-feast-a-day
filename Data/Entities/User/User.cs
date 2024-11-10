@@ -40,6 +40,7 @@ public class User : IUser
         CreatedDate = DateHelpers.Today;
         SendDay = UserConsts.SendDayDefault;
         SendHour = UserConsts.SendHourDefault;
+        Equipment = UserConsts.EquipmentDefault;
         Verbosity = UserConsts.VerbosityDefault;
         FootnoteType = UserConsts.FootnotesDefault;
     }

@@ -20,7 +20,6 @@ public class UserFamily
         public const int WeightMax = 150;
     }
 
-    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFamily() { }
 
     public UserFamily(User user)

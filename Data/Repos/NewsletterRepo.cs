@@ -1,4 +1,5 @@
-﻿using Core.Dtos.Ingredient;
+﻿using Core.Code;
+using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
@@ -64,22 +65,25 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         return footnotes;
     }
 
-    /// <summary>
-    /// Root route for building out the the workout routine newsletter.
-    /// </summary>
-    /// <param name="date">The utc date to send the newsletter for.</param>
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true);
-        if (user == null)
-        {
-            return null;
-        }
+        var user = await userRepo.GetUserStrict(email, token, includeServings: true, includeFamilies: true, allowDemoUser: true);
+        return await Newsletter(user, token, date);
+    }
 
-        logger.Log(LogLevel.Information, "Building newsletter for user {Id}", user.Id);
-
-        // Is the user requesting an old newsletter? Newsletters are weekly so shimmy the date over to the start of the week.
+    /// <summary>
+    /// Root route for building out the weekly feast newsletter.
+    /// </summary>
+    /// <param name="date">The utc date to send the newsletter for.</param>
+    public async Task<NewsletterDto?> Newsletter(User user, string token, DateOnly? date = null)
+    {
+        // Newsletters are weekly so shimmy the date over to the start of the week.
         date ??= user.StartOfWeekOffset;
+
+        logger.Log(LogLevel.Information, "User {Id}: Building feast for {date}", user.Id, date);
+        Logs.AppendLog(user, $"{date}: Building feast with options Allergens={user.ExcludeAllergens}");
+
+        // Is the user requesting an old newsletter?
         var oldNewsletter = await context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
@@ -89,16 +93,21 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             .OrderByDescending(n => n.Id)
             .FirstOrDefaultAsync();
 
-        // A newsletter was found.
-        if (oldNewsletter != null)
+        // Always send a new newsletter for today only for the demo and test users.
+        var isDemoAndDateIsToday = date == user.StartOfWeekOffset && (user.Features.HasFlag(Features.Demo) || user.Features.HasFlag(Features.Test));
+        if (oldNewsletter != null && !isDemoAndDateIsToday)
         {
-            logger.Log(LogLevel.Information, "Returning old newsletter for user {Id}", user.Id);
+            // An old newsletter was found.
+            logger.Log(LogLevel.Information, "Returning old feast for user {Id}", user.Id);
+            Logs.AppendLog(user, $"{date}: Returning old feast");
             return await NewsletterOld(user, token, date.Value, oldNewsletter);
         }
-        // A newsletter was not found and the date is not one we want to render a new newsletter for.
-        else if (date != user.StartOfWeekOffset)
+        // Don't allow backfilling feasts over 1 year ago or in the future.
+        else if (date.Value.AddYears(1) < user.StartOfWeekOffset || date > user.StartOfWeekOffset)
         {
-            logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
+            // A newsletter was not found and the date is not one we want to render a new newsletter for.
+            logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
+            Logs.AppendLog(user, $"{date}: Returning no feast");
             return null;
         }
 
@@ -110,23 +119,26 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             var currentFeast = await userRepo.GetCurrentFeast(user);
             if (currentFeast == null)
             {
-                logger.Log(LogLevel.Information, "Returning no newsletter for user {Id}", user.Id);
+                logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
+                Logs.AppendLog(user, $"{date}: Returning no feast");
                 return null;
             }
 
-            logger.Log(LogLevel.Information, "Returning current newsletter for user {Id}", user.Id);
+            logger.Log(LogLevel.Information, "Returning current feast for user {Id}", user.Id);
+            Logs.AppendLog(user, $"{date}: Returning current feast");
             return await NewsletterOld(user, token, currentFeast.Date, currentFeast);
         }
 
         // User is a debug user. They should see the DebugNewsletter instead.
         if (user.Features.HasFlag(Features.Debug))
         {
-            logger.Log(LogLevel.Information, "Returning debug newsletter for user {Id}", user.Id);
+            logger.Log(LogLevel.Information, "Returning debug feast for user {Id}", user.Id);
+            Logs.AppendLog(user, $"{date}: Returning debug feast");
             return await Debug(newsletterContext);
         }
 
-        // Current day should be a strengthening workout.
-        logger.Log(LogLevel.Information, "Returning on day newsletter for user {Id}", user.Id);
+        logger.Log(LogLevel.Information, "Returning on day feast for user {Id}", user.Id);
+        Logs.AppendLog(user, $"{date}: Returning on day feast");
         return await OnDayNewsletter(newsletterContext);
     }
 
@@ -183,7 +195,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
     }
 
     /// <summary>
-    /// Root route for building out the the workout routine newsletter based on a date.
+    /// Root route for building out the workout routine newsletter based on a date.
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {

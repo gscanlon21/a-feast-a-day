@@ -40,8 +40,8 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.PregnantWomen)]
-    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.PregnantWoman)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.BreastfeedingWoman)]
     [Display(Order = 70, ShortName = "Net Carbs", Name = "Net Carbohydrates", GroupName = "Carbohydrates")]
     NetCarbohydrates = Sugar | Starch | Oligosaccharides, // 14
 
@@ -216,38 +216,38 @@ public enum Nutrients : long
     /// Histamine liberator? Increases histamine blood levels by liberating histamine from mast cells.
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(1.4, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantOrBreastfeedingWomen)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(1.4, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantOrBreastfeedingWoman)]
     [Display(ShortName = "Vitamin B1", Name = "Vitamin B1 (Thiamine)", GroupName = "Vitamins")]
     VitaminB1 = 1L << 18, // 262144
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(1.4, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(1.6, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(1.4, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(1.6, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(ShortName = "Vitamin B2", Name = "Vitamin B2 (Riboflavin)", GroupName = "Vitamins")]
     VitaminB2 = 1L << 19, // 524288
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(16, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(14, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(17, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(16, -1, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(14, -1, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(17, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(ShortName = "Vitamin B3", Name = "Vitamin B3 (Niacin)", GroupName = "Vitamins")]
     VitaminB3 = 1L << 20, // 1048576
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult)]
-    [DailyAllowance(6, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(6, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(ShortName = "Vitamin B5", Name = "Vitamin B5 (Pantothenic Acid)", GroupName = "Vitamins")]
     VitaminB5 = 1L << 21, // 2097152
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.YoungAdult)]
-    [DailyAllowance(1.5, -1, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyWomen)]
-    [DailyAllowance(1.7, -1, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyMen)]
+    [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult)]
+    [DailyAllowance(1.5, -1, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyWoman)]
+    [DailyAllowance(1.7, -1, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyMan)]
     [Display(ShortName = "Vitamin B6", Name = "Vitamin B6 (Pyridoxine)", GroupName = "Vitamins")]
     VitaminB6 = 1L << 22, // 4194304
 
@@ -258,7 +258,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
-    [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(ShortName = "Vitamin B7", Name = "Vitamin B7 (Biotin)", GroupName = "Vitamins")]
     VitaminB7 = 1L << 23, // 8388608
 
@@ -270,62 +270,62 @@ public enum Nutrients : long
     /// https://education.seekinghealth.com/folic-acid-side-effects/
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(400, -1, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
-    [DailyAllowance(600, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(500, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(400, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
+    [DailyAllowance(600, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(500, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(ShortName = "Vitamin B9", Name = "Vitamin B9 (Folate)", GroupName = "Vitamins", Description = "Use the DFE (dietary folate equivalent) value.")]
     VitaminB9 = 1L << 24, // 16777216
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
+    [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [Display(ShortName = "Vitamin B12", Name = "Vitamin B12 (Cobalamin)", GroupName = "Vitamins")]
     VitaminB12 = 1L << 25, // 33554432
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
+    [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
     [Display(ShortName = "Vitamin C", Name = "Vitamin C (Ascorbic Acid)", GroupName = "Vitamins")]
     VitaminC = 1L << 26, // 67108864
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
+    [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
     [Display(ShortName = "Vitamin D2", Name = "Vitamin D2 (Ergocalciferol)", GroupName = "Vitamins")]
     VitaminD2 = 1L << 27, // 134217728
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
+    [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
     [Display(ShortName = "Vitamin D3", Name = "Vitamin D3 (Cholecalciferol)", GroupName = "Vitamins")]
     VitaminD3 = 1L << 28, // 268435456
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.YoungAdult)]
+    [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
     [Display(ShortName = "Vitamin D", Name = "Vitamin D (Calciferol)", GroupName = "Vitamins")]
     VitaminD = VitaminD2 | VitaminD3, // 402653184
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult | Person.PregnantWomen)]
-    [DailyAllowance(19, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult | Person.PregnantWoman)]
+    [DailyAllowance(19, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(ShortName = "Vitamin E", Name = "Vitamin E (Alpha-Tocopherol)", GroupName = "Vitamins")]
     VitaminE = 1L << 29, // 536870912
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
+    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
     [Display(ShortName = "Vitamin K1", Name = "Vitamin K1 (Phylloquinone)", GroupName = "Vitamins")]
     VitaminK1 = 1L << 30, // 1073741824
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
+    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
     [Display(ShortName = "Vitamin K2", Name = "Vitamin K2 (Menadione)", GroupName = "Vitamins")]
     VitaminK2 = 1L << 31, // 2147483648
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
+    [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
     [Display(ShortName = "Vitamin K", Name = "Vitamin K (Phylloquinone, Menadione)", GroupName = "Vitamins")]
     VitaminK = VitaminK1 | VitaminK2, // 3221225472
 
@@ -342,8 +342,8 @@ public enum Nutrients : long
     Chloride = 1L << 33, // 8589934592
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(400, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(350, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
+    [DailyAllowance(400, -1, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(350, -1, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
     [Display(Name = "Magnesium", GroupName = "Minerals")]
     Magnesium = 1L << 34, // 17179869184
 
@@ -360,9 +360,9 @@ public enum Nutrients : long
     // Trace Minerals
 
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(25, -1, Measure.Micrograms, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(40, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantOrBreastfeedingWomen)]
+    [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(25, -1, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(40, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantOrBreastfeedingWoman)]
     [Display(Name = "Chromium", GroupName = "Minerals")]
     Chromium = 1L << 37, // 137438953472
 
@@ -378,44 +378,44 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(150, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
-    [DailyAllowance(220, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(290, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(220, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(290, -1, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(Name = "Iodine", GroupName = "Minerals")]
     Iodine = 1L << 40, // 1099511627776
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(27, 45, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(9, 45, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
-    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyWomen)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(27, 45, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(9, 45, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWoman)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, For = Person.ElderlyWoman)]
     [Display(Name = "Iron", GroupName = "Minerals")]
     Iron = 1L << 41, // 2199023255552
 
     [DefaultMeasure(Measure.Milligrams)]
-    [DailyAllowance(2.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.Men)]
-    [DailyAllowance(1.8, -1, Measure.Milligrams, Multiplier.Person, For = Person.Women)]
-    [DailyAllowance(2.0, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(2.6, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(2.3, -1, Measure.Milligrams, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(1.8, -1, Measure.Milligrams, Multiplier.Person, For = Person.Woman)]
+    [DailyAllowance(2.0, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(2.6, -1, Measure.Milligrams, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(Name = "Manganese", GroupName = "Minerals")]
     Manganese = 1L << 42, // 4398046511104
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(55, 400, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
-    [DailyAllowance(60, 400, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWomen)]
-    [DailyAllowance(70, 400, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(60, 400, Measure.Micrograms, Multiplier.Person, For = Person.PregnantWoman)]
+    [DailyAllowance(70, 400, Measure.Micrograms, Multiplier.Person, For = Person.BreastfeedingWoman)]
     [Display(Name = "Selenium", GroupName = "Minerals")]
     Selenium = 1L << 43, // 8796093022208
 
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.Person, For = Person.Adult)]
-    [DailyAllowance(12, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantOrBreastfeedingWomen)]
+    [DailyAllowance(12, -1, Measure.Milligrams, Multiplier.Person, For = Person.PregnantOrBreastfeedingWoman)]
     [Display(Name = "Zinc", GroupName = "Minerals")]
     Zinc = 1L << 44, // 17592186044416
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
-    [DailyAllowance(50, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantOrBreastfeedingWomen)]
+    [DailyAllowance(50, -1, Measure.Micrograms, Multiplier.Person, For = Person.PregnantOrBreastfeedingWoman)]
     [Display(Name = "Molybdenum", GroupName = "Minerals")]
     Molybdenum = 1L << 45, // 35184372088832
 
@@ -505,7 +505,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(33, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
-    [DailyAllowance(35, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantOrBreastfeedingWomen)]
+    [DailyAllowance(35, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantOrBreastfeedingWoman)]
     [Display(Name = "Phenylalanine", GroupName = "Amino Acids / Essential")]
     Phenylalanine = 1L << 58, // 288230376151711744
 
@@ -516,8 +516,8 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(4, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantWomen)]
-    [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.BreastfeedingWomen)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantWoman)]
+    [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.BreastfeedingWoman)]
     [Display(Name = "Tryptophan", GroupName = "Amino Acids / Essential")]
     Tryptophan = 1L << 60, // 1152921504606846976
 

@@ -1,4 +1,5 @@
 ﻿using Core.Consts;
+using Core.Dtos;
 using Core.Dtos.Footnote;
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
@@ -41,12 +42,18 @@ public class NewsletterService
     }
 
     /// <summary>
-    /// Root route for building out the the workout routine newsletter.
+    /// Root route for building out the weekly feast newsletter.
     /// </summary>
     public async Task<ApiResult<NewsletterDto>> Newsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null)
     {
         var client = date.HasValue ? Client.Web : Client.App;
         var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Newsletter?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}&date={date}&client={client}");
         return await ApiResult<NewsletterDto>.FromResponse(response);
+    }
+
+    public async Task<ApiResult<EmptyDto>> Backfill(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    {
+        var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Backfill?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
+        return await ApiResult<EmptyDto>.FromResponse(response);
     }
 }

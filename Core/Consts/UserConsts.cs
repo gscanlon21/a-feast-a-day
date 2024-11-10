@@ -1,6 +1,7 @@
 ﻿using Core.Models.Footnote;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
+using Core.Models.Recipe;
 
 namespace Core.Consts;
 
@@ -45,6 +46,8 @@ public class UserConsts
 
     public const DayOfWeek SendDayDefault = DayOfWeek.Sunday;
 
+    public const Equipment EquipmentDefault = Equipment.Oven | Equipment.Stove;
+
     public const IngredientOrder IngredientOrderDefault = IngredientOrder.OrderUsed;
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
@@ -59,7 +62,7 @@ public class UserConsts
     /// This shouldn't be too low (<12) or else the muscle target value will drop too much
     /// during rest days and overwork the user the next time they see a workout.
     /// </summary>
-    public const int TrainingVolumeWeeks = 12;
+    public const int NutrientVolumeWeeks = 12;
 
     /// <summary>
     /// 8 because we want to leave the user with at least one week of data 

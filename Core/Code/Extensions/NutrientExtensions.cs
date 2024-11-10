@@ -47,7 +47,7 @@ public static class NutrientExtensions
 
     public static string DailyAllowanceDisplayName(this Nutrients nutrients)
     {
-        var attribute = nutrients.DailyAllowance(Person.YoungAdult);
+        var attribute = nutrients.DailyAllowance(Person.Adult);
         if (attribute != null)
         {
             return $@"({(attribute.RDA, attribute.TUL) switch
