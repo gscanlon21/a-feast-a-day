@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Data.Interfaces.Recipe;
 using Data.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,7 +16,7 @@ namespace Data.Entities.Newsletter;
 /// </summary>
 [Table("user_feast_recipe_ingredient")]
 [DebuggerDisplay("{GetDebuggerDisplay(),nq}")]
-public class UserFeastRecipeIngredient
+public class UserFeastRecipeIngredient : IRecipeIngredient
 {
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFeastRecipeIngredient() { }
@@ -47,6 +48,14 @@ public class UserFeastRecipeIngredient
     [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.UserFeastRecipeIngredients))]
     public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
 
+    [NotMapped]
+    public double GetQuantity => Quantity;
+
+    [NotMapped]
+    public Measure GetMeasure => Measure;
+
+    [NotMapped]
+    public Ingredient.Ingredient? GetIngredient => Ingredient;
 
     private string GetDebuggerDisplay()
     {

@@ -80,8 +80,8 @@
                                     <div style="display:flex;column-gap:1ex;">
                                         <output name="OutputAtLeastXServingsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)">@Model.UserServings[i].AtLeastXServingsPerRecipe</output>
                                         <div style="display:flex;width:100%;">
-                                            <input asp-for="UserServings[i].AtLeastXServingsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                   step="1" min="1" max="9"
+                                            <input asp-for="UserServings[i].AtLeastXServingsPerRecipe" type="range" style="width:100%;" aria-describedby="user-servings-help@(i)"
+                                                   step="1" min="@UserConsts.AtLeastXServingsPerRecipeMin" max="@UserConsts.AtLeastXServingsPerRecipeMax"
                                                    oninput="OutputAtLeastXServingsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXServingsPerRecipe@(i)" />
                                             <datalist id="ListAtLeastXServingsPerRecipe@(i)">
                                                 <option value="@UserConsts.AtLeastXServingsPerRecipeDefault"></option>
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <span asp-validation-for="UserServings[i].AtLeastXServingsPerRecipe" class="text-danger"></span>
-                                    <div id="refresh-functional-help" class="form-text">
+                                    <div id="user-servings-help@(i)" class="form-text">
                                         @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)
                                     </div>
                                 </div>
@@ -100,8 +100,8 @@
                                         <div style="display:flex;column-gap:1ex;">
                                             <output name="OutputAtLeastXNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)">@Model.UserServings[i].AtLeastXNutrientsPerRecipe</output>
                                             <div style="display:flex;width:100%;">
-                                                <input asp-for="UserServings[i].AtLeastXNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                       step="1" min="1" max="9"
+                                                <input asp-for="UserServings[i].AtLeastXNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="user-nutrients-help@(i)"
+                                                       step="1" min="@UserConsts.AtLeastXNutrientsPerRecipeMin" max="@UserConsts.AtLeastXNutrientsPerRecipeMax"
                                                        oninput="OutputAtLeastXNutrientsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXNutrientsPerRecipe@(i)" />
                                                 <datalist id="ListAtLeastXNutrientsPerRecipe@(i)">
                                                     <option value="@UserConsts.AtLeastXNutrientsPerRecipeDefault"></option>
@@ -109,7 +109,7 @@
                                             </div>
                                         </div>
                                         <span asp-validation-for="UserServings[i].AtLeastXNutrientsPerRecipe" class="text-danger"></span>
-                                        <div id="refresh-functional-help" class="form-text">
+                                        <div id="user-nutrients-help@(i)" class="form-text">
                                             @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)
                                         </div>
                                     </div>

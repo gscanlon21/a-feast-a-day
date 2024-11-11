@@ -4,6 +4,7 @@ using Data.Code.Extensions;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
+using Data.Interfaces.Recipe;
 using Data.Query;
 using Fractions;
 using System.Diagnostics;
@@ -62,12 +63,18 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
         .Where(ri => ri.IngredientRecipe != null).GroupBy(ri => ri.IngredientRecipe)
         .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble())));
 
+    /// <summary>
+    /// Included prerequisite recipe nutrients.
+    /// </summary>
+    [JsonIgnore]
+    internal List<Nutrient> AllNutrients => [.. Nutrients, .. PrerequisiteRecipes.SelectMany(pr => pr.Key.Nutrients)];
+
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);
     public override bool Equals(object? obj) => obj is QueryResults other
         && other.Recipe.Id == Recipe.Id;
 }
 
-public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
+public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient) : IRecipeIngredient
 {
     public int Id { get; init; } = recipeIngredient.Id;
     public int Order { get; init; } = recipeIngredient.Order;
@@ -100,6 +107,9 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient)
         _ => throw new InvalidOperationException(),
     };
 
+    public Measure GetMeasure => Measure;
+    public Ingredient? GetIngredient => Ingredient;
+    public double GetQuantity => Quantity.ToDouble();
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other && other.Id == Id;
 }

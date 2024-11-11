@@ -36,13 +36,13 @@ public class UserConsts
     public const int FootnoteCountBottomDefault = 2;
     public const int FootnoteCountMax = 4;
 
+    public const int AtLeastXServingsPerRecipeMin = 1;
+    public const int AtLeastXServingsPerRecipeDefault = 3;
+    public const int AtLeastXServingsPerRecipeMax = 6;
+
     public const int AtLeastXNutrientsPerRecipeMin = 1;
     public const int AtLeastXNutrientsPerRecipeDefault = 6;
     public const int AtLeastXNutrientsPerRecipeMax = 9;
-
-    public const int AtLeastXServingsPerRecipeMin = 1;
-    public const int AtLeastXServingsPerRecipeDefault = 3;
-    public const int AtLeastXServingsPerRecipeMax = 9;
 
     public const DayOfWeek SendDayDefault = DayOfWeek.Sunday;
 

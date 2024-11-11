@@ -1,4 +1,6 @@
-﻿using Core.Consts;
+﻿using Core.Code;
+using Core.Consts;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Models.Newsletter;
 using Data.Query.Options;
@@ -17,7 +19,7 @@ public interface INutrientBuilderTargets : INutrientBuilderNoContext
 
 public interface INutrientBuilderFinalNoContext
 {
-    NutrientOptions Build();
+    NutrientOptions Build(Section section);
 }
 
 public interface INutrientBuilderFinal : INutrientBuilderFinalNoContext
@@ -114,8 +116,26 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
         return this;
     }
 
-    public NutrientOptions Build()
+    public NutrientOptions Build(Section section)
     {
+        if (Context?.User != null)
+        {
+            if (Nutrients.Any())
+            {
+                Logs.AppendLog(Context.User, $"Nutrients for {section}:{Environment.NewLine}{string.Join(", ", Nutrients)}");
+            }
+
+            if (NutrientTargetsRDA.Any())
+            {
+                Logs.AppendLog(Context.User, $"Nutrient targets RDA for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsRDA)}");
+            }
+
+            if (NutrientTargetsTUL.Any())
+            {
+                Logs.AppendLog(Context.User, $"Nutrient targets TUL for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsTUL)}");
+            }
+        }
+
         return new NutrientOptions(Nutrients, NutrientTargetsRDA, NutrientTargetsTUL);
     }
 }

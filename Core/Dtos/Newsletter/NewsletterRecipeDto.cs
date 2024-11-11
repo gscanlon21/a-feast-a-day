@@ -23,7 +23,6 @@ public class NewsletterRecipeDto
     public UserRecipeDto? UserRecipe { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Recipe);
-
     public override bool Equals(object? obj) => obj is NewsletterRecipeDto other
         && other.Recipe == Recipe;
 }

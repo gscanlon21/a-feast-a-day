@@ -10,6 +10,28 @@ namespace Web.Controllers.User;
 
 public partial class UserController
 {
+    /// <summary>
+    /// Clears nutrient target data over 1 month old.
+    /// </summary>
+    [HttpPost, Route("nutrient/clear")]
+    public async Task<IActionResult> ClearNutrientTargetData(string email, string token)
+    {
+        var user = await _userRepo.GetUser(email, token);
+        if (user == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        await _context.UserFeasts.Where(uw => uw.UserId == user.Id)
+            .Where(uw => uw.Date != DateHelpers.Today).ExecuteDeleteAsync();
+
+        // Back-fill several weeks of workout data so nutrient targets can take effect immediately.
+        await _newsletterService.Backfill(user.Email, token);
+
+        TempData[TempData_User.SuccessMessage] = "Your nutrient target data has been reset!";
+        return RedirectToAction(nameof(UserController.Edit), new { email, token });
+    }
+
     [HttpPost, Route("nutrient/reset")]
     public async Task<IActionResult> ResetNutrientRanges(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
     {

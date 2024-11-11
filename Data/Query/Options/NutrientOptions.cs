@@ -1,7 +1,6 @@
 ﻿using Core.Consts;
 using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
-using System.Linq.Expressions;
 
 namespace Data.Query.Options;
 
@@ -28,13 +27,6 @@ public class NutrientOptions : IOptions
     /// </summary>
     public IDictionary<Nutrients, double> NutrientTargetsRDA { get; } = new Dictionary<Nutrients, double>();
     public IDictionary<Nutrients, double> NutrientTargetsTUL { get; } = new Dictionary<Nutrients, double>();
-
-    /// <summary>
-    /// This says what (strengthening/secondary/stretching) muscles we should abide by when selecting variations.
-    /// </summary>
-    public Expression<Func<IRecipeCombo, Dictionary<Nutrients, double>>> NutrientTarget { get; set; } = v
-        => EnumExtensions.GetValuesExcluding32(Core.Models.User.Nutrients.All, Core.Models.User.Nutrients.None).ToDictionary(n => n, n
-            => v.Nutrients.Where(nu => nu.Nutrients == n).Sum(n => n.Measure.ToGrams(n.Value)));
 
     /// <summary>
     /// Makes sure each variations works at least x unique nutrients to be chosen.

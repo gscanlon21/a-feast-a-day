@@ -2,6 +2,7 @@
 using Data;
 using Data.Entities.User;
 using Data.Repos;
+using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
@@ -15,17 +16,19 @@ namespace Web.Controllers.User;
 [Route($"user/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 2)]
 public partial class UserController : ViewController
 {
+    private readonly NewsletterService _newsletterService;
     private readonly CoreContext _context;
     private readonly UserRepo _userRepo;
 
-    public UserController(CoreContext context, UserRepo userRepo)
+    public UserController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService)
     {
         _context = context;
         _userRepo = userRepo;
+        _newsletterService = newsletterService;
     }
 
     /// <summary>
-    /// The name of the controller for routing purposes
+    /// The name of the controller for routing purposes.
     /// </summary>
     public const string Name = "User";
 
@@ -74,59 +77,67 @@ public partial class UserController : ViewController
         }
 
         viewModel.User = await _userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            try
-            {
-                viewModel.User.Verbosity = viewModel.Verbosity;
-                viewModel.User.FootnoteType = viewModel.FootnoteType;
-                viewModel.User.SendDay = viewModel.SendDay;
-                viewModel.User.SendHour = viewModel.SendHour;
-                viewModel.User.Equipment = viewModel.Equipment;
-                viewModel.User.MaxIngredients = viewModel.MaxIngredients;
-                viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
-
-                _context.UserFamilies.RemoveRange(_context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id));
-                _context.UserFamilies.AddRange(viewModel.UserFamilies.Where(f => !f.Hide).Select(umm => new UserFamily(viewModel.User)
-                {
-                    Person = umm.Person,
-                    CaloriesPerDay = umm.CaloriesPerDay,
-                    Weight = umm.Weight
-                }));
-
-                _context.UserServings.RemoveRange(_context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
-                _context.UserServings.AddRange(viewModel.UserServings.Select(umm => new UserServing(viewModel.User, umm.Section)
-                {
-                    Count = umm.Count,
-                    AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
-                    AtLeastXNutrientsPerRecipe = umm.AtLeastXNutrientsPerRecipe,
-                }));
-
-                if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
-                {
-                    viewModel.User.NewsletterDisabledReason = viewModel.NewsletterEnabled ? null : UserDisabledByUserReason;
-                }
-
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!(_context.Users?.Any(e => e.Email == viewModel.Email)).GetValueOrDefault())
-                {
-                    // User does not exist.
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToAction(nameof(Edit), new { email, token, WasUpdated = true });
+            viewModel.WasUpdated = false;
+            return View("Edit", viewModel);
         }
 
-        viewModel.WasUpdated = false;
-        return View("Edit", viewModel);
+        try
+        {
+            viewModel.User.Verbosity = viewModel.Verbosity;
+            viewModel.User.FootnoteType = viewModel.FootnoteType;
+            viewModel.User.SendDay = viewModel.SendDay;
+            viewModel.User.SendHour = viewModel.SendHour;
+            viewModel.User.Equipment = viewModel.Equipment;
+            viewModel.User.MaxIngredients = viewModel.MaxIngredients;
+            viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
+
+            var oldUserFamilies = await _context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id).ToListAsync();
+            var newUserFamilies = viewModel.UserFamilies.Where(f => !f.Hide).Select(umm => new UserFamily(viewModel.User)
+            {
+                Person = umm.Person,
+                CaloriesPerDay = umm.CaloriesPerDay,
+                Weight = umm.Weight
+            });
+            _context.UserFamilies.RemoveRange(oldUserFamilies);
+            _context.UserFamilies.AddRange(newUserFamilies);
+
+            _context.UserServings.RemoveRange(_context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
+            _context.UserServings.AddRange(viewModel.UserServings.Select(umm => new UserServing(viewModel.User, umm.Section)
+            {
+                Count = umm.Count,
+                AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
+                AtLeastXNutrientsPerRecipe = umm.AtLeastXNutrientsPerRecipe,
+            }));
+
+            if (viewModel.User.NewsletterEnabled != viewModel.NewsletterEnabled)
+            {
+                viewModel.User.NewsletterDisabledReason = viewModel.NewsletterEnabled ? null : UserDisabledByUserReason;
+            }
+
+            await _context.SaveChangesAsync();
+
+            if (!oldUserFamilies.SequenceEqual(newUserFamilies, new UserFamily.PersonComparer()))
+            {
+                // Back-fill new nutrient target data when switching family members, so we're not weighting with old data.
+                return await ClearNutrientTargetData(viewModel.User.Email, viewModel.Token);
+            }
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!(_context.Users?.Any(e => e.Email == viewModel.Email)).GetValueOrDefault())
+            {
+                // User does not exist.
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        return RedirectToAction(nameof(Edit), new { email, token, WasUpdated = true });
     }
 
     #endregion

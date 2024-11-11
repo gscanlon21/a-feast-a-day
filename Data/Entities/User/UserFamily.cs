@@ -44,4 +44,15 @@ public class UserFamily
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFamilies))]
     public virtual User User { get; private init; } = null!;
+
+    public override int GetHashCode() => HashCode.Combine(Id);
+    public override bool Equals(object? obj) => obj is UserFamily other
+        && other.Id == Id;
+
+    public class PersonComparer : IEqualityComparer<UserFamily>
+    {
+        public int GetHashCode(UserFamily e) => HashCode.Combine(e.Person);
+        public bool Equals(UserFamily? a, UserFamily? b)
+            => a?.Person == b?.Person;
+    }
 }

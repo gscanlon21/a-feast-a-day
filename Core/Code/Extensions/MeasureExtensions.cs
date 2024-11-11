@@ -29,9 +29,9 @@ public static class MeasureExtensions
     /// </summary>
     public static double ToGramsOrMilliliters(this Measure measure, double quantity = 1)
     {
-        if (measure == Measure.None) 
-        { 
-            return quantity; 
+        if (measure == Measure.None)
+        {
+            return quantity;
         }
 
         return quantity * (measure.ToMeasureOrNull(Measure.Grams) ?? measure.ToMeasure(Measure.Milliliters));

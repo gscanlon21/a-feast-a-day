@@ -4,16 +4,24 @@ using Web.Views.Shared.Components.PastFeasts;
 
 namespace Web.Components.User;
 
-public class PastFeastsViewComponent(UserRepo userRepo) : ViewComponent
+public class PastFeastsViewComponent : ViewComponent
 {
+    private readonly UserRepo _userRepo;
+
+    public PastFeastsViewComponent(UserRepo userRepo)
+    {
+        _userRepo = userRepo;
+    }
+
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "PastFeasts";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
-        var pastFeasts = await userRepo.GetPastFeasts(user);
+        var count = int.TryParse(Request.Query["count"], out int countTmp) ? countTmp : (int?)null;
+        var pastFeasts = await _userRepo.GetPastFeasts(user, count);
         if (!pastFeasts.Any())
         {
             return Content("");
@@ -22,8 +30,8 @@ public class PastFeastsViewComponent(UserRepo userRepo) : ViewComponent
         return View("PastFeasts", new PastFeastsViewModel()
         {
             User = user,
-            Token = await userRepo.AddUserToken(user, durationDays: 1),
             PastFeasts = pastFeasts,
+            Token = await _userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.User;
+using Data.Code.Extensions;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
@@ -223,7 +224,6 @@ public class QueryRunner(Section section)
             });
         }
 
-        var nutrientTarget = NutrientOptions.NutrientTarget.Compile();
         var finalResults = new HashSet<QueryResults>();
         do
         {
@@ -250,9 +250,10 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                // Don't overwork nutrients.
-                var overworkedNutrients = GetOverworkedNutrients(finalResults);
-                if (overworkedNutrients.Any(mg => nutrientTarget(recipe).ContainsKey(mg)))
+                // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
+                // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
+                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)]);
+                if (recipe.AllNutrients.Where(n => n.Value > 0).Any(n => overworkedNutrients.Contains(n.Nutrients)))
                 {
                     continue;
                 }
@@ -273,7 +274,7 @@ public class QueryRunner(Section section)
                     // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
                     // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
                     var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1 : NutrientOptions.AtLeastXNutrientsPerRecipe.Value;
-                    if (unworkedNutrients.Count(mg => nutrientTarget(recipe).ContainsKey(mg)) < Math.Max(1, nutrientsToWork))
+                    if (recipe.AllNutrients.Count(n => n.Value > 0) < Math.Max(1, nutrientsToWork))
                     {
                         continue;
                     }
@@ -322,7 +323,7 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private async Task<List<Nutrient>> GetNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults)
+    private static async Task<List<Nutrient>> GetNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults)
     {
         var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         return await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).ToListAsync();
@@ -450,35 +451,36 @@ public class QueryRunner(Section section)
 
     private List<Nutrients> GetUnworkedNutrients(ICollection<QueryResults> finalResults)
     {
-        // Not using Nutrients because NutrientTargets can contain unions 
+        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults);
+        // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsRDA.Where(kv =>
         {
             // We are targeting this nutrient.
-            return NutrientOptions.Nutrients.Any(mg => kv.Key.HasFlag(mg))
+            return !NutrientOptions.Nutrients.Any(mg => kv.Key.HasFlag(mg))
                 // We have not overconsumed this nutrient.
-                && WorkedAnyNutrientCount(finalResults, kv.Key) < kv.Value;
+                || !allNutrientsWorked.TryGetValue(kv.Key, out double workedAmount) || workedAmount < kv.Value;
         }).Select(kv => kv.Key).ToList();
     }
 
     private List<Nutrients> GetOverworkedNutrients(ICollection<QueryResults> finalResults)
     {
+        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsTUL.Where(kv =>
         {
             // We have consumed too much of this nutrient.
-            return WorkedAnyNutrientCount(finalResults, kv.Key) >= kv.Value;
+            return allNutrientsWorked.TryGetValue(kv.Key, out double workedAmount) && workedAmount >= kv.Value;
         }).Select(kv => kv.Key).ToList();
     }
 
     /// <summary>
     /// Returns the nutrients targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
-    private static double WorkedAnyNutrientCount(ICollection<QueryResults> list, Nutrients nutrients, int weightDivisor = 1)
+    private static IDictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list)
     {
-        return list.Sum(r =>
-        {
-            var nutrient = r.Nutrients.FirstOrDefault(n => n.Nutrients == nutrients);
-            return r.SetScale * nutrient?.Measure.ToGrams(nutrient.Value) ?? 0;
-        }) / weightDivisor;
+        return list.SelectMany(ufr => ufr.RecipeIngredients
+            .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)
+            .SelectMany(ufri => ufri.GetNutrients(ufr.GetScale))
+        ).GroupBy(a => a.Key).ToDictionary(a => a.Key, a => a.Sum(b => b.Value));
     }
 }

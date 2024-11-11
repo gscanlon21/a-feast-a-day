@@ -51,7 +51,7 @@ public class QueryBuilder
     /// </summary>
     public QueryBuilder WithNutrients(INutrientBuilderFinalNoContext builder, Action<NutrientOptions>? optionsBuilder = null)
     {
-        var options = builder.Build();
+        var options = builder.Build(Section);
         optionsBuilder?.Invoke(options);
         NutrientOptions = options;
         return this;

@@ -127,9 +127,9 @@ public class UserRepo
     /// <summary>
     /// Get the last 7 days of feasts for the user. Excludes the current feast.
     /// </summary>
-    public async Task<IList<UserFeast>> GetPastFeasts(User user)
+    public async Task<IList<UserFeast>> GetPastFeasts(User user, int? count = null)
     {
-        return (await _context.UserFeasts
+        return (await _context.UserFeasts.AsNoTracking()
             .Where(uw => uw.UserId == user.Id)
             .Where(n => n.Date < user.StartOfWeekOffset)
             // Group by the week so there's only one feast returned per week.
@@ -142,7 +142,7 @@ public class UserRepo
                 Feast = g.OrderByDescending(n => n.Id).First()
             })
             .OrderByDescending(n => n.Key)
-            .Take(7)
+            .Take(count ?? 7)
             .ToListAsync())
             .Select(n => n.Feast)
             .ToList();
@@ -173,8 +173,10 @@ public class UserRepo
             // If there is no RDA or TUL.
             if (familyNutrientServings[n] <= 0) { return null; }
 
-            return rawValues ? familyNutrientServings[n] - weeklyNutrientVolume[n]
-                : weeklyNutrientVolume[n] / familyNutrientServings[n] * 100;
+            // Return the percentage that each nutrient has been worked this week.
+            return !rawValues ? (weeklyNutrientVolume[n] / familyNutrientServings[n] * 100)
+                // Return how much left of each nutrient to work each week. Default to max per week.
+                : ((familyNutrientServings[n] - weeklyNutrientVolume[n]) ?? familyNutrientServings[n]);
         }));
     }
 
@@ -213,26 +215,13 @@ public class UserRepo
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            .SelectMany(ufri =>
-                            {
-                                return ufri.Ingredient.Nutrients.Select(nutrient =>
-                                {
-                                    var servingsOfIngredientUsed = ufri.NumberOfServings(ufr.Scale);
-                                    var gramsOfNutrientPerServing = nutrient.Measure.ToGrams(nutrient.Value);
-                                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing;
-                                    return new
-                                    {
-                                        Nutrient = nutrient.Nutrients,
-                                        GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe,
-                                    };
-                                }) ?? [];
-                            })
+                            .SelectMany(ufri => ufri.GetNutrients(ufr.Scale))
                         )
                     ).ToList();
 
                 return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(m => m, m =>
                 {
-                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Nutrient) ? mm.GramsOfNutrientPerRecipe : 0) / actualWeeks;
+                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Key) ? mm.Value : 0) / actualWeeks;
                 }));
             }
         }

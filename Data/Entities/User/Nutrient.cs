@@ -10,7 +10,7 @@ namespace Data.Entities.User;
 /// Nutrients for an ingredient.
 /// </summary>
 [Table("nutrient")]
-[DebuggerDisplay("{Nutrients}: {Measure} - {Value}")]
+[DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class Nutrient
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
