@@ -81,7 +81,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         date ??= user.StartOfWeekOffset;
 
         logger.Log(LogLevel.Information, "User {Id}: Building feast for {date}", user.Id, date);
-        Logs.AppendLog(user, $"{date}: Building feast with options Allergens={user.ExcludeAllergens}");
+        Logs.AppendLog(user, $"{date}: Building feast with options Allergens={user.Allergens}");
 
         // Is the user requesting an old newsletter?
         var oldNewsletter = await context.UserFeasts.AsNoTracking()

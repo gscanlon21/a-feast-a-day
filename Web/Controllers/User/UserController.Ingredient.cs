@@ -97,7 +97,9 @@ public partial class UserController
         }
 
         var ingredient = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
-            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
+            // The ingredient alternatives, include their nutrients so we can show those on the page.
+            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient).ThenInclude(ai => ai.Nutrients)
+            // For which ingredients is this ingredient is an alternative of. No nutrients.
             .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             .FirstOrDefaultAsync(r => r.Id == ingredientId);
 

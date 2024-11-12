@@ -128,7 +128,7 @@
 130	\N	Molasses	https://www.eatthismuch.com/calories/molasses-4624	\N	f	0	40	20	2024-10-12	9	320	3
 131	\N	Raw Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	2048
 132	\N	Elbow Macaroni	\N	\N	f	0	240	100	-infinity	6	240	0
-133	\N	Evaporated Milk	\N	\N	f	0	240	100	-infinity	6	240	0
+133	\N	Evaporated Milk	https://www.eatthismuch.com/calories/evaporated-milk-3338368	\N	f	324	32	32	2024-11-11	9	256	512
 134	\N	Slices of Pepper Jack Cheese	\N	\N	f	256	14	14	-infinity	4	240	8388608
 135	\N	Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	256	28	28	2024-06-09	0	224	0
 136	\N	Tortillas, Whole-Wheat	https://www.eatthismuch.com/calories/whole-wheat-tortillas,101208	\N	f	0	34	68	2024-08-14	0	68	4
@@ -215,7 +215,7 @@
 221	\N	Slices of Sourdough Bread	https://www.eatthismuch.com/calories/sourdough-bread,3991	\N	f	32	96	96	-infinity	0	224	64
 222	\N	Onions	https://www.eatthismuch.com/calories/onions-2042	\N	f	0	110	110	2024-06-13	0	110	2
 223	\N	Molasses | Honey	https://www.eatthismuch.com/calories/molasses-4624 | https://www.eatthismuch.com/calories/honey-4620	\N	f	0	20	20	2024-10-01	7	320	928
-224	\N	Red Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
+224	\N	Fresh Red Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
 225	\N	Shallot	https://www.eatthismuch.com/calories/shallots,2316	\N	f	0	43	43	2024-09-24	0	43	1
 226	\N	Yellow Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5522	\N	f	2	28	28	2024-11-10	4	26	2097152
 227	\N	Potato Starch	https://www.eatthismuch.com/food/nutrition/potato-starch,730100/	\N	f	0	13	13	2024-07-06	7	130	0
@@ -231,7 +231,7 @@
 237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2024-08-23	6	240	0
 238	\N	Light Sesame Seeds	https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	0	144	9	2024-06-11	6	144	4
 239	\N	Bean Thread Noodles	https://www.eatthismuch.com/calories/chinese-noodles-3579	\N	f	0	140	140	2024-10-04	6	140	4
-240	\N	Rice Noodles	https://www.eatthismuch.com/food/nutrition/rice-noodles,4886/	\N	f	0	28.35	28.35	2024-07-17	4	226.8	0
+240	\N	Fine Rice Noodles	https://www.eatthismuch.com/food/nutrition/rice-noodles,4886/	\N	f	0	28.35	28.35	2024-07-17	4	226.8	0
 241	\N	Bean Sprouts	https://www.eatthismuch.com/calories/bean-sprouts,125521	\N	f	0	100	100	2024-08-07	6	100	0
 242	\N	Daikon Radish	https://www.eatthismuch.com/calories/daikon-radish-129147	\N	f	0	100	50	2024-10-24	0	100	1
 243	\N	Sesame Paste	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	0	216	13.6	2024-06-11	6	240	0
@@ -509,7 +509,7 @@
 577	\N	Fresh Thyme	\N	\N	f	0	15	15	2024-06-12	0	100	3
 578	\N	Thyme	\N	\N	f	0	15	15	2024-06-12	0	100	0
 579	\N	Chipotle Chilies in Adobo Sauce	https://www.eatthismuch.com/calories/chipotle-chilis-in-adobo-sauce-2396171	\N	f	0	45	45	2024-09-26	0	90	3
-580	\N	Green Chilies	\N	\N	f	0	45	45	-infinity	0	90	2
+580	\N	Fresh Green Chilies	https://www.eatthismuch.com/calories/green-chiles-1665591	\N	f	0	60	30	2024-11-11	0	240	2
 581	\N	Dried Parsley	\N	\N	f	0	240	100	2024-09-26	6	240	0
 582	\N	Beef Fillet (Fillet Mignon)	https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	0	37.67	113	2024-10-17	4	113	8
 583	\N	Pickled Walnut Juice	\N	\N	f	0	84	84	-infinity	0	100	0
@@ -658,7 +658,7 @@
 728	\N	Head of Broccolini	https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
 729	\N	Fresh Podded Green Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2
 730	\N	Mixed-Color Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
-731	\N	Yellow Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
+731	\N	Fresh Yellow Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
 732	\N	Frozen Broccoli	https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
 733	\N	Head of Cauliflower	\N	\N	f	0	160	160	2024-08-09	0	160	0
 734	\N	Frozen Cauliflower	\N	\N	f	0	160	160	2024-08-09	6	160	0
@@ -724,3 +724,8 @@
 822	\N	Light Vanilla Ice Cream	https://www.eatthismuch.com/calories/vanilla-ice-cream-4469	\N	f	0	216	13.6	2024-06-11	6	240	234881024
 823	\N	Rich Vanilla Ice Cream	https://www.eatthismuch.com/calories/vanilla-ice-cream-4470	\N	f	0	216	13.6	2024-06-11	6	240	234881024
 824	\N	Bok Choy	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	1
+825	\N	Frozen Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
+826	\N	Fresh Podded Snap Peas | Frozen Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
+827	\N	Fresh Podded Snap Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2
+828	\N	Fresh Podded Snap Peas | Frozen Podded Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	145	145	-infinity	6	145	1
+829	\N	Chili Jam	https://www.eatthismuch.com/calories/chili-sauce-857	\N	f	0	245	245	2024-10-13	6	245	3

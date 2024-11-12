@@ -85,13 +85,13 @@ public partial class UserController : ViewController
 
         try
         {
-            viewModel.User.Verbosity = viewModel.Verbosity;
-            viewModel.User.FootnoteType = viewModel.FootnoteType;
             viewModel.User.SendDay = viewModel.SendDay;
             viewModel.User.SendHour = viewModel.SendHour;
             viewModel.User.Equipment = viewModel.Equipment;
+            viewModel.User.Allergens = viewModel.Allergens;
+            viewModel.User.Verbosity = viewModel.Verbosity;
+            viewModel.User.FootnoteType = viewModel.FootnoteType;
             viewModel.User.MaxIngredients = viewModel.MaxIngredients;
-            viewModel.User.ExcludeAllergens = viewModel.ExcludeAllergens;
 
             var oldUserFamilies = await _context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id).ToListAsync();
             var newUserFamilies = viewModel.UserFamilies.Where(f => !f.Hide).Select(umm => new UserFamily(viewModel.User)

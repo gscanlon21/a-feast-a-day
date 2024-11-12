@@ -1,6 +1,8 @@
-﻿using Core.Code.Helpers;
+﻿using Core.Code.Extensions;
+using Core.Code.Helpers;
 using Core.Consts;
 using Core.Models.Footnote;
+using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
@@ -18,12 +20,15 @@ public class UserNewsletterDto
     public UserNewsletterDto(UserDto user, string token)
     {
         Email = user.Email;
-        Features = user.Features;
-        Equipment = user.Equipment;
-        FootnoteType = user.FootnoteType;
-        LastActive = user.LastActive;
         SendDay = user.SendDay;
+        Features = user.Features;
         Verbosity = user.Verbosity;
+        Equipment = user.Equipment;
+        Allergens = user.Allergens;
+        LastActive = user.LastActive;
+        FootnoteType = user.FootnoteType;
+        MaxIngredients = user.MaxIngredients;
+        IngredientOrder = user.IngredientOrder;
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
         Token = token;
@@ -35,6 +40,8 @@ public class UserNewsletterDto
 
     public Features Features { get; init; }
 
+    public Allergens Allergens { get; init; }
+
     public Equipment Equipment { get; init; }
 
     public FootnoteType FootnoteType { get; init; }
@@ -43,11 +50,21 @@ public class UserNewsletterDto
 
     public DayOfWeek SendDay { get; init; }
 
+    public int? MaxIngredients { get; init; }
+
     public Verbosity Verbosity { get; init; }
 
     public int FootnoteCountTop { get; init; }
 
     public int FootnoteCountBottom { get; init; }
+
+    public IngredientOrder IngredientOrder { get; set; }
+
+    public bool IsDemoUser => Features.HasFlag(Features.Demo);
+    
+    public IList<Allergens> AllergenList => EnumExtensions.GetSingleValues64<Allergens>().Where(a => Allergens.HasFlag(a)).ToList();
+
+    public Allergens AntiAllergens => EnumExtensions.GetSingleValues64(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);
 
     public bool IsAlmostInactive => LastActive.HasValue && LastActive.Value < DateHelpers.Today.AddMonths(-1 * (UserConsts.DisableAfterXMonths - 1));
 }

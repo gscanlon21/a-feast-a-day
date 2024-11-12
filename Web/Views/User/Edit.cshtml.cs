@@ -27,9 +27,9 @@ public class UserEditViewModel
         SendDay = user.SendDay;
         SendHour = user.SendHour;
         Verbosity = user.Verbosity;
+        Allergens = user.Allergens;
         FootnoteType = user.FootnoteType;
         MaxIngredients = user.MaxIngredients;
-        ExcludeAllergens = user.ExcludeAllergens;
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         // In case a single equipment becomes a double, keep it checked.
@@ -78,8 +78,8 @@ public class UserEditViewModel
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
     [Required]
-    [Display(Name = "Exclude Allergens", Description = "What allergens to exclude?")]
-    public Allergens ExcludeAllergens { get; set; }
+    [Display(Name = "Allergens", Description = "What allergens to exclude?")]
+    public Allergens Allergens { get; set; }
 
     [Required]
     [Display(Name = "Cooking Equipment", Description = "What cooking equipment do you have access to?")]
@@ -109,10 +109,10 @@ public class UserEditViewModel
         set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
-    public Allergens[]? AllergyBinder
+    public Allergens[]? AllergenBinder
     {
-        get => Enum.GetValues<Allergens>().Where(e => ExcludeAllergens.HasFlag(e)).ToArray();
-        set => ExcludeAllergens = value?.Aggregate(Allergens.None, (a, e) => a | e) ?? Allergens.None;
+        get => Enum.GetValues<Allergens>().Where(e => Allergens.HasFlag(e)).ToArray();
+        set => Allergens = value?.Aggregate(Allergens.None, (a, e) => a | e) ?? Allergens.None;
     }
 
     public FootnoteType[]? FootnoteTypeBinder

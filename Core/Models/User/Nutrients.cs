@@ -25,7 +25,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4)]
-    [Display(Order = 80, Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
+    [Display(Order = 90, Name = "Sugar", GroupName = "Carbohydrates / Sugar", Description = "Monosaccharides: Glucose, Fructose; Disaccharides: Sucrose, Maltose, Lactose.")]
     Sugar = 1L << 1, // 2
 
     [DefaultMeasure(Measure.Grams)]
@@ -57,7 +57,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(25, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4)]
-    [Display(Order = 90, Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
+    [Display(Order = 80, Name = "Dietary Fiber", GroupName = "Carbohydrates / Fiber")]
     DietaryFiber = SolubleFiber | InsolubleFiber, // 48
 
     [DefaultMeasure(Measure.Grams)]

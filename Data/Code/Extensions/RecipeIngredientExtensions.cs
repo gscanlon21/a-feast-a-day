@@ -24,7 +24,7 @@ public static class UserFeastRecipeIngredientExtensions
         {
             return new Dictionary<Nutrients, double>();
         }
-        
+
         var recipeIngredientNutrients = nutrients?.NullIfEmpty()?.Where(n => n.IngredientId == recipeIngredient.GetIngredient!.Id);
         return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
         {

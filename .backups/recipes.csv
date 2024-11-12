@@ -76,7 +76,7 @@
 93	Pork Kebab with BBQ Sauce	\N	\N	\N	6	10	5	4	t	0	bbq-pork-kebab.jpg	0
 94	Balsamic Vinaigrette	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	\N	\N	0	0	5	1	t	0	balsamic-vinaigrette.jpg	6
 95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	\N	\N	8	10	5	4	t	0	sweet-corn-bacon.jpg	0
-96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	4	t	0	fruit-skewers.jpg	0
+96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	3	t	0	fruit-skewers.jpg	0
 97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	0	quinoa-pizza.jpg	0
 98	Loaded Deviled Eggs	https://iowagirleats.com/loaded-deviled-eggs/	\N	\N	25	20	5	4	t	0	loaded-deviled-eggs.jpg	0
 99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	0	\N	0
@@ -130,7 +130,7 @@
 147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	0	0	5	1	t	-9223371999944900608	hummus.jpg	6
 148	Muhammara	\N	\N	\N	0	0	8	4	t	0	muhammara.jpg	0
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	8	15	8	2	t	0	irish-champ.jpg	0
-150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	0	\N	0
+150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	0	spiced-lentils-rice.jpg	0
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	0	spaghetti-lemon.jpg	0
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	4194308	potato-olive-salad.jpg	0
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	2	3	2	2	t	0	cinnamon-toast.jpg	0
@@ -140,7 +140,7 @@
 158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	0	fruit-skewers.jpg	0
 159	Clementines with Star Anise	\N	\N	\N	8	12	6	6	t	0	clementines-star-anise.jpg	0
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	\N	\N	6	8	8	4	t	0	mexican-tacos.jpg	0
-161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	576460752328589312	\N	0
+161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	576460752328589312	bbq-pork-kebab.jpg	0
 162	Rhubarb and Ginger Trifles	\N	\N	\N	32	0	4	4	t	0	rhubarb-ginger-trifles.jpg	0
 163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	32	12	8	12	t	0	portuguese-custard-tarts.jpg	0
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0
@@ -181,7 +181,7 @@
 231	Pork with Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	4194308	\N	0
 232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
 233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	chocolate-mint-muffins.jpg	0
-234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	5	4	t	2097154	oven-baked-beet-chips.jpg	0
+234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	35	4	t	2097154	oven-baked-beet-chips.jpg	0
 235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	2147485696	rosemary-lemon-tea.jpg	0
 236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	268435712	nutty-lemon-snack-balls.jpg	0
 237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
@@ -222,10 +222,15 @@
 272	Fragrant Spiced Rice	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	\N	\N	8	10	5	4	t	0	\N	0
 305	Exercise Recovery Drink	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	\N	0
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0
-307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	\N	0
+307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	spiced-lentils-rice.jpg	0
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	-9223372034304638976	pesto.jpg	6
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	2199028498432	hot-chocolate-sauce.jpg	6
 311	Sausage & Apple Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	35	10	4	t	2097154	\N	0
 312	Black Bean Sauce	https://www.food.com/recipe/mexican-black-bean-sauce-280411	\N	\N	0	10	5	1	t	2305843009616347136	\N	6
 313	Hoisin Bok Choy Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
+314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	chicken-noodle-stir-fry.jpg	0
+315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	20	6	4	t	6291462	\N	0
+316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	3	2	t	4194308	\N	0
+317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	10	4	t	6291462	\N	0
+318	Ham & Egg Curried Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	0	2	t	4194308	\N	0

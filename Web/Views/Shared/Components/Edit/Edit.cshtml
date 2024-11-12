@@ -259,12 +259,12 @@
             </div>
 
             <div class="form-group mb-3">
-                <label asp-for="AllergyBinder" class="control-label">@Html.DisplayNameFor(_ => Model.ExcludeAllergens)</label>
-                <select asp-for="AllergyBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="5"
+                <label asp-for="AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.AllergenBinder)</label>
+                <select asp-for="AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="5"
                         asp-items="@(EnumExtensions.GetSingleValues64<Allergens>().AsSelectListItems32())">
                 </select>
-                <span asp-validation-for="AllergyBinder" class="text-danger"></span>
-                <div id="allergy-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.ExcludeAllergens)</div>
+                <span asp-validation-for="AllergenBinder" class="text-danger"></span>
+                <div id="allergy-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.AllergenBinder)</div>
             </div>
 
             @if (Model.User.IsDemoUser)

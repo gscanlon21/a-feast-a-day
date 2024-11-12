@@ -24,6 +24,6 @@ public class UserOptions : IOptions
         CreatedDate = user.CreatedDate;
         MaxIngredients = user.MaxIngredients;
         IngredientOrder = user.IngredientOrder;
-        Allergens = ignoreAllergens ? Allergens.None : user.ExcludeAllergens;
+        Allergens = ignoreAllergens ? Allergens.None : user.Allergens;
     }
 }

@@ -175,8 +175,8 @@ public class UserRepo
 
             // Return the percentage that each nutrient has been worked this week.
             return !rawValues ? (weeklyNutrientVolume[n] / familyNutrientServings[n] * 100)
-                // Return how much left of each nutrient to work each week. Default to max per week.
-                : ((familyNutrientServings[n] - weeklyNutrientVolume[n]) ?? familyNutrientServings[n]);
+                // Return how much left of each nutrient to work each week adjusted based on prev weeks. Defaults to max per week.
+                : ((familyNutrientServings[n] + familyNutrientServings[n] - weeklyNutrientVolume[n]) ?? familyNutrientServings[n]);
         }));
     }
 

@@ -118,7 +118,7 @@ public class User : IUser
     /// What allergens does the user want in their newsletter?
     /// </summary>
     [Required]
-    public Allergens ExcludeAllergens { get; set; }
+    public Allergens Allergens { get; set; }
 
     /// <summary>
     /// When was the user last active?
@@ -180,7 +180,7 @@ public class User : IUser
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; init; } = [];
 
-    [JsonInclude, InverseProperty(nameof(UserServing.User))]
+    [JsonIgnore, InverseProperty(nameof(UserServing.User))]
     public virtual ICollection<UserServing> UserServings { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]

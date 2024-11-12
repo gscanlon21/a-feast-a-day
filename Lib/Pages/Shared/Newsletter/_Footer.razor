@@ -14,10 +14,17 @@
 {
     <div><small><b>Send Day</b> - @User.SendDay.ToString()</small></div>
 
+    <div><small><b>Max Ingredients</b> - @User.MaxIngredients</small></div>
+    <div><small><b>Ingredient Order</b> - @User.IngredientOrder.GetSingleDisplayName()</small></div>
     <div><small><b>Footnotes</b> - @User.FootnoteType.GetDisplayName32()</small></div>
     <div>
         <small>
-                <b>Equipment</b> - @User.Equipment.GetDisplayName32(), @(new MarkupString(String.Join(", ", EnumExtensions.GetMultiValues64(excludingAny: User.Equipment).Select(e => $"<span style='color:red'>{e.GetSingleDisplayName()}</span>"))))
+            <b>Allergens</b> - @User.AntiAllergens.GetDisplayName32(), @(new MarkupString(String.Join(", ", User.AllergenList.Select(e => $"<span style='color:red'>{e.GetSingleDisplayName()}</span>"))))
+        </small>
+    </div>
+    <div>
+        <small>
+            <b>Equipment</b> - @User.Equipment.GetDisplayName32(), @(new MarkupString(String.Join(", ", EnumExtensions.GetMultiValues64(excludingAny: User.Equipment).Select(e => $"<span style='color:red'>{e.GetSingleDisplayName()}</span>"))))
         </small>
     </div>
 
