@@ -14,11 +14,15 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Token" />
             <input type="hidden" asp-for="Email" />
-            <div class="form-group mb-3">
-                <label for="disabled-email" class="control-label">@Html.DisplayNameFor(_ => Model.Email)</label>
-                <input id="disabled-email" value="@Model.Email" class="form-control" disabled="disabled" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
+
+            @if (!Model.User.IsDemoUser) 
+            {
+                <div class="form-group mb-3">
+                    <label for="disabled-email" class="control-label">@Html.DisplayNameFor(_ => Model.Email)</label>
+                    <input id="disabled-email" value="@Model.Email" class="form-control" disabled="disabled" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            }
 
             <div class="form-group mb-3">
                 <label asp-for="SendDay" class="control-label">@Html.DisplayNameFor(_ => Model.SendDay)</label>

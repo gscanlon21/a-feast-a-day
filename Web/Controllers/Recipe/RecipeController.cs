@@ -2,7 +2,7 @@
 using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Data.Models;
+using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Web.Code;

@@ -2,8 +2,8 @@
 using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
-using Data.Models;
 using Data.Models.Newsletter;
+using Data.Query;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

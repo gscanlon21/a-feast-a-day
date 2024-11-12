@@ -61,7 +61,7 @@ public class UserNewsletterDto
     public IngredientOrder IngredientOrder { get; set; }
 
     public bool IsDemoUser => Features.HasFlag(Features.Demo);
-    
+
     public IList<Allergens> AllergenList => EnumExtensions.GetSingleValues64<Allergens>().Where(a => Allergens.HasFlag(a)).ToList();
 
     public Allergens AntiAllergens => EnumExtensions.GetSingleValues64(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);

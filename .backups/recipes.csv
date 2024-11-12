@@ -40,7 +40,7 @@
 57	Flying Saucers	https://www.tasteofhome.com/recipes/flying-saucers/	\N	\N	14	5	5	4	t	0	\N	0
 58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	fruity-peanut-butter-pitas.jpg	0
 59	Popcorn	\N	\N	\N	16	5	0	1	t	1048577	popcorn.jpg	0
-60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-and-salsa.jpg	0
+60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-salsa-alt.jpg	0
 61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	0	pita-bowl-salad.jpg	0
 62	Edamame & Veggie Rice Bowl	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	\N	\N	3	5	5	1	t	0	edamame-veggie-rice-bowl.jpg	0
 63	Grilled Sausage-Basil Pizzas	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	\N	\N	4	15	15	4	t	0	grilled-sausage-basil-pizza.jpg	0
@@ -85,7 +85,7 @@
 102	Colcannon	\N	\N	\N	10	10	5	3	t	0	colcannon.jpg	0
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	0	\N	0
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	12	3	4	t	0	\N	0
-105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	25	5	4	t	0	\N	0
+105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	25	5	4	t	0	sweet-pea-orecchiette-alt.jpg	0
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	4194308	garlic-chicken.jpg	0
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	0	ham-gruyere-melt.jpg	0
 108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	120	10	8	t	0	\N	0
@@ -140,7 +140,7 @@
 158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	0	fruit-skewers.jpg	0
 159	Clementines with Star Anise	\N	\N	\N	8	12	6	6	t	0	clementines-star-anise.jpg	0
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	\N	\N	6	8	8	4	t	0	mexican-tacos.jpg	0
-161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	576460752328589312	bbq-pork-kebab.jpg	0
+161	Pork on Lemon Grass Sticks	Slimmer versions of these pork sticks are perfect for parties. The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	14	8	6	4	t	1099536793600	bbq-pork-kebab.jpg	0
 162	Rhubarb and Ginger Trifles	\N	\N	\N	32	0	4	4	t	0	rhubarb-ginger-trifles.jpg	0
 163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	32	12	8	12	t	0	portuguese-custard-tarts.jpg	0
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0
@@ -190,7 +190,7 @@
 240	Choconut-Mint Squares	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	\N	\N	32	5	5	4	t	0	chocolate-mint-squares.jpg	0
 241	Party Coleslaw	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	\N	\N	8	0	15	4	t	0	party-coleslaw.jpg	0
 242	BPA-Banishing Fruit Salad	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	\N	\N	8	0	10	4	t	0	\N	0
-243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	0	10	4	t	0	one-pan-veggies.jpg	0
+243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	0	10	4	t	4194308	one-pan-veggies.jpg	0
 244	Strawberry Mint Vinaigrette	https://www.drkarafitzgerald.com/recipe/strawberry-mint-vinaigrette/	\N	\N	0	0	10	1	t	0	\N	6
 245	Methylation Trail Mix	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	\N	\N	16	20	5	10	t	0	trail-mix.jpg	0
 246	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	45	20	2	t	0	\N	0
@@ -214,13 +214,13 @@
 264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	0	egg-fried-rice.jpg	0
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	0	\N	0
 266	Sweet Potato Cauliflower Curry	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	\N	\N	4	55	5	4	t	0	\N	0
-267	Curried Mung Bean Soup	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	\N	\N	4	45	15	4	t	0	\N	0
+267	Curried Mung Bean Soup	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	\N	\N	4	45	15	4	t	0	curried-mung-bean-soup-alt.jpg	0
 268	Orange Flower Water	https://thishealthytable.com/blog/orange-blossom-water/	\N	\N	0	120	5	1	t	0	\N	6
 269	Rose Water	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	\N	\N	0	20	5	1	t	4194308	\N	6
 270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	2	t	4194308	chicken-lettuce-cups.jpg	0
 271	Traditional Stuffing	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	\N	\N	8	55	5	4	t	270532866	\N	0
 272	Fragrant Spiced Rice	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	\N	\N	8	10	5	4	t	0	\N	0
-305	Exercise Recovery Drink	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	\N	0
+305	Exercise Recovery Smoothie	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	exercise-recovery-smoothie.jpg	0
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0
 307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	spiced-lentils-rice.jpg	0
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	-9223372034304638976	pesto.jpg	6
@@ -228,9 +228,10 @@
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	2199028498432	hot-chocolate-sauce.jpg	6
 311	Sausage & Apple Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	35	10	4	t	2097154	\N	0
 312	Black Bean Sauce	https://www.food.com/recipe/mexican-black-bean-sauce-280411	\N	\N	0	10	5	1	t	2305843009616347136	\N	6
-313	Hoisin Bok Choy Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
+313	Hoisin Bok Choy Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	hoisin-bok-choy-rice.jpg	0
 314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	chicken-noodle-stir-fry.jpg	0
-315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	20	6	4	t	6291462	\N	0
-316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	3	2	t	4194308	\N	0
+315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	20	6	4	t	6291462	baked-saffron-rice.jpg	0
+316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	3	2	t	4194308	black-tahini-noodles.jpg	0
 317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	10	4	t	6291462	\N	0
 318	Ham & Egg Curried Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	0	2	t	4194308	\N	0
+319	Chorizo, Sweet Potato and Black Bean Rice Skillet	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	\N	\N	4	30	10	6	t	4194308	\N	0

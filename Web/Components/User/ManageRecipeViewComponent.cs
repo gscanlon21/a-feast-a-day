@@ -2,7 +2,7 @@
 using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Recipe;
-using Data.Models;
+using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

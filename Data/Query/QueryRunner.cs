@@ -5,7 +5,6 @@ using Data.Code.Extensions;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
-using Data.Models;
 using Data.Query.Builders;
 using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
@@ -483,7 +482,7 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Returns the nutrients targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
-    private static IDictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list)
+    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list)
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)

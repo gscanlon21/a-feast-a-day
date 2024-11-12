@@ -72,7 +72,6 @@ public class CreateBackfill : IJob, IScheduled
     public static async Task Schedule(IScheduler scheduler)
     {
         var job = JobBuilder.Create<CreateBackfill>().WithIdentity(JobKey).StoreDurably(true).Build();
-        var trigger = TriggerBuilder.Create().WithIdentity(TriggerKey).StartNow().Build();
         await scheduler.AddJob(job, replace: true);
     }
 

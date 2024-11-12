@@ -5,12 +5,11 @@ using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Interfaces.Recipe;
-using Data.Query;
 using Fractions;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Models;
+namespace Data.Query;
 
 [DebuggerDisplay("{Section}: {Recipe}")]
 public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe) : IRecipeCombo

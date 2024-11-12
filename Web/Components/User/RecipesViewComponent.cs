@@ -2,7 +2,7 @@
 using Core.Dtos.User;
 using Core.Models.User;
 using Data;
-using Data.Models;
+using Data.Query;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
