@@ -269,11 +269,17 @@ public class QueryRunner(Section section)
                         break;
                     }
 
+                    // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
+                    var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
                     // The recipe does not work enough unique nutrients that we are trying to target.
                     // Allow recipes that have a refresh date since we want to show those continuously until that date.
                     // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
                     // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
-                    var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1 : NutrientOptions.AtLeastXNutrientsPerRecipe.Value;
+                    var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(e => e.UserRecipe?.RefreshAfter == null)) ? 1
+                        // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
+                        // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
+                        : (NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
+
                     if (recipe.AllNutrients.Count(n => n.Value > 0) < Math.Max(1, nutrientsToWork))
                     {
                         continue;
@@ -480,7 +486,7 @@ public class QueryRunner(Section section)
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)
-            .SelectMany(ufri => ufri.GetNutrients(ufr.GetScale))
+            .SelectMany(ufri => ufri.GetNutrients())
         ).GroupBy(a => a.Key).ToDictionary(a => a.Key, a => a.Sum(b => b.Value));
     }
 }

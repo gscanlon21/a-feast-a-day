@@ -37,6 +37,9 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
     public Measure Measure { get; private init; }
 
+    /// <summary>
+    /// This value is set after recipe scaling is applied.
+    /// </summary>
     public double Quantity { get; private init; } = 1;
 
     public int UserFeastRecipeId { get; private init; }

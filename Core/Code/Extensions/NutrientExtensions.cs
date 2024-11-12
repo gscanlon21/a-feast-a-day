@@ -1,5 +1,4 @@
 ﻿using Core.Code.Attributes;
-using Core.Consts;
 using Core.Models.User;
 using System.Reflection;
 
@@ -7,17 +6,7 @@ namespace Core.Code.Extensions;
 
 public static class NutrientExtensions
 {
-    public static Range DefaultRange(this Nutrients nutrient, Person person = Person.Adult)
-    {
-        var dailyAllowance = nutrient.DailyAllowance(person);
-        return dailyAllowance.Measure switch
-        {
-            Measure.Percent => new Range(UserConsts.NutrientTargetDefaultPercent, dailyAllowance.TULPercent),
-            _ => new Range(UserConsts.NutrientTargetDefaultPercent, Math.Min(UserConsts.NutrientTargetMaxPercent, dailyAllowance.TULPercent))
-        };
-    }
-
-    public static SubNutrientsAttributeInternal? GetSkillType(this Nutrients nutrients)
+    public static SubNutrientsAttributeInternal? GetSubNutrients(this Nutrients nutrients)
     {
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)

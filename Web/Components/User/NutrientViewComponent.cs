@@ -44,8 +44,9 @@ public class NutrientViewComponent : ViewComponent
             Weeks = weeks,
             WeeksOfData = weeksOfData,
             WeeklyVolume = weeklyMuscles,
-            UsersWorkedNutrients = Nutrients.All,
             Token = await _userRepo.AddUserToken(user, durationDays: 1),
+            // Removing calories since that should be changed from a user family.
+            UsersWorkedNutrients = NutrientHelpers.All.Where(n => n != Nutrients.Calories).ToList(),
         });
     }
 }

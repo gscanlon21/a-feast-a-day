@@ -89,6 +89,10 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     /// </summary>
     public INutrientBuilderFinal AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true, double scale = 1)
     {
+        // Add some padding to the upper-bounds of the RDA and TUL since targets are split into groups,
+        // ... makes it harder to choose recipes that are heavy in one or two nutrients.
+        scale += scale * UserConsts.IncrementNutrientTargetBy / 100d;
+
         if (Context?.WeeklyNutrientsRDA != null)
         {
             foreach (var key in NutrientTargetsRDA.Keys)
@@ -96,7 +100,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
                 // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
                 if (Context.WeeklyNutrientsRDA[key].HasValue)
                 {
-                    NutrientTargetsRDA[key] = Context.WeeklyNutrientsRDA[key]!.Value * Math.Min(1, scale + (scale * UserConsts.IncrementNutrientTargetBy / 100d));
+                    NutrientTargetsRDA[key] = Context.WeeklyNutrientsRDA[key]!.Value * Math.Min(1, scale);
                 }
             }
         }
@@ -108,7 +112,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
                 // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
                 if (Context.WeeklyNutrientsTUL[key].HasValue)
                 {
-                    NutrientTargetsTUL[key] = Context.WeeklyNutrientsTUL[key]!.Value * scale;
+                    NutrientTargetsTUL[key] = Context.WeeklyNutrientsTUL[key]!.Value * Math.Max(1, scale);
                 }
             }
         }

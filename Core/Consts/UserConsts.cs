@@ -91,9 +91,9 @@ public class UserConsts
     public const int NutrientTargetDefaultPercent = 100;
 
     /// <summary>
-    /// The max percent relative to the RDA to use as the nutrients default target range.
+    /// The max percent relative to the RDA to use as the nutrients default target TUL when there is none.
     /// </summary>
-    public const int NutrientTargetMaxPercent = 200;
+    public const int NutrientTargetTULDefault = 1000;
 
     /// <summary>
     /// How many months until the user's account is disabled for inactivity.

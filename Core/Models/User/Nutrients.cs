@@ -193,6 +193,9 @@ public enum Nutrients : long
     [Display(Name = "Provitamin A Carotenoids", GroupName = "Vitamins", Description = "Alpha-carotene and beta-carotene.")]
     ProvitaminACarotenoids = AlphaCarotene | BetaCarotene, // 98304
 
+    /// <summary>
+    /// Precursors to vitamin A.
+    /// </summary>
     [SubNutrients<Carotenoids>]
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(10, 100, Measure.Milligrams, Multiplier.Person)]
@@ -200,15 +203,22 @@ public enum Nutrients : long
     Carotenoids = NonProvitaminACarotenoids | ProvitaminACarotenoids, // 114688
 
     /// <summary>
-    /// Retinoids.
+    /// Preformed vitamin A.
+    /// https://nutritionsource.hsph.harvard.edu/vitamin-a/
     /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
+    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
     [Display(Name = "Retinol", GroupName = "Vitamins", Description = "1 mcg of retinol is 1 mcg of vitamin A.")]
     Retinol = 1L << 17, // 131072
 
+    /// <summary>
+    /// Includes preformed Vitamin A (Retinols) and Provitamin A Carotenoids.
+    /// https://nutritionsource.hsph.harvard.edu/vitamin-a/
+    /// </summary>
     [DefaultMeasure(Measure.Micrograms)]
-    [DailyAllowance(750, 3000, Measure.Micrograms, Multiplier.Person)]
+    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
+    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
     [Display(Name = "Vitamin A", GroupName = "Vitamins")]
     VitaminA = Retinol | ProvitaminACarotenoids, // 229376
 
@@ -467,78 +477,100 @@ public enum Nutrients : long
 
     // Essential Amino Acids
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(11, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
-    [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Histidine", GroupName = "Amino Acids / Essential")]
     Histidine = 1L << 53, // 9007199254740992
 
     /// <summary>
     /// Branched-chain amino-acid.
+    /// https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2020.622391/full
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
     /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(19, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Isoleucine", GroupName = "Amino Acids / Essential")]
     Isoleucine = 1L << 54, // 18014398509481984
 
     /// <summary>
     /// Branched-chain amino-acid.
+    /// https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2020.622391/full
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
     /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(80, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
-    [DailyAllowance(120, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Leucine", GroupName = "Amino Acids / Essential")]
     Leucine = 1L << 55, // 36028797018963968
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(38, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Lysine", GroupName = "Amino Acids / Essential")]
     Lysine = 1L << 56, // 72057594037927936
 
     /// <summary>
     /// Methyl donor.
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
     /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(14, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Methionine", GroupName = "Amino Acids / Essential")]
     Methionine = 1L << 57, // 144115188075855872
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(33, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
-    [DailyAllowance(35, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantOrBreastfeedingWoman)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Phenylalanine", GroupName = "Amino Acids / Essential")]
     Phenylalanine = 1L << 58, // 288230376151711744
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(73, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Threonine", GroupName = "Amino Acids / Essential")]
     Threonine = 1L << 59, // 576460752303423488
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(4, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.PregnantWoman)]
-    [DailyAllowance(7, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.BreastfeedingWoman)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Tryptophan", GroupName = "Amino Acids / Essential")]
     Tryptophan = 1L << 60, // 1152921504606846976
 
     /// <summary>
     /// Branched-chain amino-acid.
+    /// https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2020.622391/full
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
     /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Adult)]
-    [DailyAllowance(25, -1, Measure.Milligrams, Multiplier.KilogramOfBodyweight, For = Person.Teens)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Valine", GroupName = "Amino Acids / Essential")]
     Valine = 1L << 61, // 2305843009213693952
 
     // Semi-essential Amino Acids
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(6, 30, Measure.Grams, Multiplier.Person)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Arginine", GroupName = "Amino Acids / Semi-essential")]
     Arginine = 1L << 62, // 4611686018427387904
 
+    /// <summary>
+    /// https://www.sciencedirect.com/science/article/pii/S2161831323002892
+    /// </summary>
     [DefaultMeasure(Measure.Grams)]
-    [DailyAllowance(.8, -1, Measure.Grams, Multiplier.KilogramOfBodyweight)]
+    [DailyAllowance(.5, 10, Measure.Grams, Multiplier.Person)]
     [Display(Name = "Glycine", GroupName = "Amino Acids / Nonessential")]
     Glycine = 1L << 63, // 9223372036854775808
 

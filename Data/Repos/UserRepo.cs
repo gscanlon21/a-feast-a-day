@@ -215,7 +215,7 @@ public class UserRepo
                 var monthlyMuscles = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            .SelectMany(ufri => ufri.GetNutrients(ufr.Scale))
+                            .SelectMany(ufri => ufri.GetNutrients())
                         )
                     ).ToList();
 

@@ -1,5 +1,6 @@
 ﻿using Core.Consts;
 using Core.Models.User;
+using Data.Code.Extensions;
 using Data.Entities.User;
 
 namespace Web.Views.Shared.Components.Nutrient;
@@ -13,48 +14,50 @@ public class NutrientViewModel
 
     public double WeeksOfData { get; set; }
 
-    public Nutrients UsersWorkedNutrients { get; init; }
+    public IList<Nutrients> UsersWorkedNutrients { get; init; } = [];
 
     public required IDictionary<Nutrients, double?> WeeklyVolume { get; set; }
 
-    public NutrientTarget AllNutrientTarget => new()
+    public NutrientTarget AllNutrientTarget => new(Nutrients.All)
     {
-        NutrientGroup = Nutrients.All,
-        ShowButtons = true,
         Start = 0,
         End = 100,
         Middle = 50,
         DefaultStart = 0,
         DefaultEnd = 100,
         ValueInRange = 50,
+        ShowButtons = true,
     };
 
     public NutrientTarget GetNutrientTarget(Nutrients nutrient)
     {
-        var defaultRange = nutrient.DefaultRange();
+        var defaultRange = User.UserFamilies.DefaultRange(nutrient);
         var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range ?? defaultRange;
 
         var sumRDA = User.UserFamilies.Average(f => nutrient.DailyAllowance(f.Person).RDA);
         var sumTUL = User.UserFamilies.Average(f => nutrient.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
         var start = sumRDA / sumTUL * userNutrientTarget.Start.Value ?? 0;
-        return new NutrientTarget()
+        return new NutrientTarget(nutrient)
         {
-            NutrientGroup = nutrient,
             Start = start,
             Middle = sumRDA / sumTUL * 100 ?? 0,
             End = sumRDA / sumTUL * userNutrientTarget.End.Value ?? 100,
             DefaultStart = sumRDA / sumTUL * defaultRange.Start.Value ?? 0,
             DefaultEnd = sumRDA / sumTUL * defaultRange.End.Value ?? 100,
-            ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * start)
-                : Math.Min(101, WeeklyVolume[nutrient] ?? 0),
-            ShowButtons = UsersWorkedNutrients.HasFlag(nutrient),
+            ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * start) : Math.Min(101, WeeklyVolume[nutrient] ?? 0),
             Increment = sumRDA / sumTUL * UserConsts.IncrementNutrientTargetBy ?? UserConsts.IncrementNutrientTargetBy,
+            ShowButtons = UsersWorkedNutrients.Contains(nutrient),
         };
     }
 
     public class NutrientTarget
     {
-        public required Nutrients NutrientGroup { get; init; }
+        public NutrientTarget(Nutrients nutrientGroup)
+        {
+            NutrientGroup = nutrientGroup;
+        }
+
+        public Nutrients NutrientGroup { get; }
 
         public required double Start { get; init; }
         /// <summary>
