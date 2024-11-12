@@ -19,7 +19,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All.ToList())
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {

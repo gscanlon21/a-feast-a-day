@@ -43,7 +43,7 @@ public static class Filters
     }
 
     /// <summary>
-    /// Make sure the exercise works a specific muscle group
+    /// Make sure the recipe works a specific nutrient.
     /// </summary>
     public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, Nutrients? nutrients, bool include) where T : IRecipeCombo
     {
@@ -51,12 +51,11 @@ public static class Filters
         {
             if (include)
             {
-                query = query.Where(r => r.Recipe.RecipeIngredients.Any(i => (i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients)))));
+                query = query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients))));
             }
             else
             {
-                // If a recovery muscle is set, don't choose any exercises that work the injured muscle
-                query = query.Where(r => r.Recipe.RecipeIngredients.All(i => (i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients)))));
+                query = query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients))));
             }
         }
 

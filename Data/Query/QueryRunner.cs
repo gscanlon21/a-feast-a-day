@@ -280,6 +280,7 @@ public class QueryRunner(Section section)
                         // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
                         : (NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
 
+                    // Include the prerequisite recipes in this calculation.
                     if (recipe.AllNutrients.Count(n => n.Value > 0) < Math.Max(1, nutrientsToWork))
                     {
                         continue;
@@ -486,7 +487,7 @@ public class QueryRunner(Section section)
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)
-            .SelectMany(ufri => ufri.GetNutrients())
+            .SelectMany(ufri => ufri.GetNutrients(ufr.Nutrients))
         ).GroupBy(a => a.Key).ToDictionary(a => a.Key, a => a.Sum(b => b.Value));
     }
 }

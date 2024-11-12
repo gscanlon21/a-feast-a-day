@@ -91,7 +91,10 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
     {
         // Add some padding to the upper-bounds of the RDA and TUL since targets are split into groups,
         // ... makes it harder to choose recipes that are heavy in one or two nutrients.
-        scale += scale * UserConsts.IncrementNutrientTargetBy / 100d;
+        if (Context?.WeeklyNutrientsWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
+        {
+            scale += scale * UserConsts.IncrementNutrientTargetBy / 100d;
+        }
 
         if (Context?.WeeklyNutrientsRDA != null)
         {
@@ -112,7 +115,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
                 // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
                 if (Context.WeeklyNutrientsTUL[key].HasValue)
                 {
-                    NutrientTargetsTUL[key] = Context.WeeklyNutrientsTUL[key]!.Value * Math.Max(1, scale);
+                    NutrientTargetsTUL[key] = Context.WeeklyNutrientsTUL[key]!.Value * Math.Min(1, scale);
                 }
             }
         }

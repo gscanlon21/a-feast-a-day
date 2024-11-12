@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Data.Entities.User;
 using Data.Interfaces.Recipe;
 
 namespace Data.Code.Extensions;
@@ -17,14 +18,15 @@ public static class UserFeastRecipeIngredientExtensions
         return recipeIngredient.GetQuantity * recipeIngredient.GetMeasure.ToGramsWithContext(recipeIngredient.GetIngredient);
     }
 
-    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient)
+    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, IList<Nutrient>? nutrients = null)
     {
         if (recipeIngredient.GetIngredient == null)
         {
             return new Dictionary<Nutrients, double>();
         }
-
-        return recipeIngredient.GetIngredient!.Nutrients.Select(nutrient =>
+        
+        var recipeIngredientNutrients = nutrients?.NullIfEmpty()?.Where(n => n.IngredientId == recipeIngredient.GetIngredient!.Id);
+        return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
         {
             var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
             var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient);
