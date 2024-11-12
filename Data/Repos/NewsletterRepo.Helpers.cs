@@ -12,7 +12,7 @@ public partial class NewsletterRepo
     /// <summary>
     /// Common properties surrounding today's feast.
     /// </summary>
-    internal async Task<FeastContext?> BuildFeastContext(User user, string token, DateOnly date)
+    internal async Task<FeastContext> BuildFeastContext(User user, string token, DateOnly date)
     {
         var (weeks, volumeRDA) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true);
         var (_, volumeTUL) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true, tul: true);

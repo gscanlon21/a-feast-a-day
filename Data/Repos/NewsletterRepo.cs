@@ -111,27 +111,10 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             return null;
         }
 
-        // Context may be null on rest days.
         var newsletterContext = await BuildFeastContext(user, token, date.Value);
-        if (newsletterContext == null)
-        {
-            // See if a previous feast exists, we send that back down so the app doesn't render nothing on rest days.
-            var currentFeast = await userRepo.GetCurrentFeast(user);
-            if (currentFeast == null)
-            {
-                logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
-                Logs.AppendLog(user, $"{date}: Returning no feast");
-                return null;
-            }
-
-            logger.Log(LogLevel.Information, "Returning current feast for user {Id}", user.Id);
-            Logs.AppendLog(user, $"{date}: Returning current feast");
-            return await NewsletterOld(user, token, currentFeast.Date, currentFeast);
-        }
-
-        // User is a debug user. They should see the DebugNewsletter instead.
         if (user.Features.HasFlag(Features.Debug))
         {
+            // User is a debug user. They should see the DebugNewsletter instead.
             logger.Log(LogLevel.Information, "Returning debug feast for user {Id}", user.Id);
             Logs.AppendLog(user, $"{date}: Returning debug feast");
             return await Debug(newsletterContext);
