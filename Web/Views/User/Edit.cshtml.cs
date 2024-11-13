@@ -133,6 +133,7 @@ public class UserEditViewModel
         [Display(Name = "Calories Per Day")]
         public int CaloriesPerDay { get; init; } = UserFamily.Consts.CaloriesPerDayDefault;
 
+        [Required]
         [Display(Name = "Person")]
         public Person Person { get; init; }
 

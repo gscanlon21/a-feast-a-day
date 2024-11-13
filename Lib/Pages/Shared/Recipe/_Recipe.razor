@@ -89,6 +89,8 @@
                 @if (Verbosity.HasFlag(Verbosity.Debug))
                 {
                     <div style="margin-block:.5em;font-size:x-small;"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
+
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment.GetDisplayName32()</div>
                 }
 
                 <ul style="padding-inline-start:2ch;font-size:.85em;">

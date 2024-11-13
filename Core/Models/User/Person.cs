@@ -5,7 +5,6 @@ namespace Core.Models.User;
 [Flags]
 public enum Person
 {
-    [Display(Name = "")]
     None = 0,
 
     [Display(Name = "Man")]

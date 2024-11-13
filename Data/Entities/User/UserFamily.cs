@@ -5,12 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
 
-
 [Table("user_family")]
 public class UserFamily
 {
     public static class Consts
     {
+        public static readonly Person PersonDefault = Person.Adult;
+
         public const int CaloriesPerDayMin = 1500;
         public const int CaloriesPerDayDefault = 2000;
         public const int CaloriesPerDayMax = 3000;
@@ -31,7 +32,8 @@ public class UserFamily
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
-    public Person Person { get; init; }
+    [Required]
+    public Person Person { get; init; } = Consts.PersonDefault;
 
     [Range(Consts.WeightMin, Consts.WeightMax)]
     public int Weight { get; init; } = Consts.WeightDefault;

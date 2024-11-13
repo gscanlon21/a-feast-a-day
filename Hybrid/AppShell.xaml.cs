@@ -12,6 +12,8 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
 
+        CurrentItem = DefaultPage;
+
         //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
         //Routing.RegisterRoute(nameof(NewsletterPage), typeof(NewsletterPage));
 

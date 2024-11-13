@@ -1,6 +1,5 @@
 ﻿using Core.Consts;
 using Core.Models.Options;
-using Core.Models.User;
 using Data;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
@@ -77,7 +76,7 @@ public class IndexController : ViewController
             // These records are required. newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
             newUser.UserFamilies.Add(new UserFamily()
             {
-                Person = Person.Adult,
+                Person = UserFamily.Consts.PersonDefault,
                 Weight = UserFamily.Consts.WeightDefault,
                 CaloriesPerDay = UserFamily.Consts.CaloriesPerDayDefault,
             });
