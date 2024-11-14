@@ -84,12 +84,15 @@
                 @if (Verbosity.HasFlag(Verbosity.Servings))
                 {
                     <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Recipe.Servings @Model.Recipe.Measure.GetSingleDisplayName(DisplayType.ShortName)</div>
+
+                    @if (Verbosity.HasFlag(Verbosity.Debug))
+                    {
+                        <div style="margin-block:.5em;font-size:x-small;"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
+                    }
                 }
 
-                @if (Verbosity.HasFlag(Verbosity.Debug))
+                @if (Verbosity.HasFlag(Verbosity.Equipment) && (Model.Recipe.Equipment != Equipment.None || Verbosity.HasFlag(Verbosity.Debug)))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
-
                     <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment.GetDisplayName32()</div>
                 }
 
