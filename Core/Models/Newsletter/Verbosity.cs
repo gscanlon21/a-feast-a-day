@@ -60,9 +60,15 @@ public enum Verbosity
     Allergens = 1 << 7, // 128
 
     /// <summary>
+    /// Show recipe's equipment.
+    /// </summary>
+    [Display(Name = "Equipment")]
+    Equipment = 1 << 8, // 256
+
+    /// <summary>
     /// This is not user-facing. 
     /// It should not have a Display attribute. 
     /// </summary>
-    Debug = Images | CookTime | PrepTime | TotalTime | Servings | Notes | CommonIngredients | Allergens
+    Debug = Images | CookTime | PrepTime | TotalTime | Servings | Notes | CommonIngredients | Allergens | Equipment
         | 1 << 30 // 1073741824
 }
