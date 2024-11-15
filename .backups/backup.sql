@@ -4317,6 +4317,44 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9875	830	62	\N	\N	3	14	f
 9876	830	2047	\N	\N	3	110	f
 9877	48	14	\N	\N	3	13	f
+9878	376	68719476736	\N	\N	2	14	f
+9879	376	34359738368	\N	\N	2	112	f
+9880	376	2	\N	\N	3	0.1	f
+9881	376	1	\N	\N	3	1	f
+9882	376	4294967296	\N	\N	2	41	f
+9883	376	2199023255552	\N	\N	2	0.1	f
+9884	376	48	\N	\N	3	0.2	f
+9885	376	14	\N	\N	3	0.3	f
+9886	376	62	\N	\N	3	0.4	f
+9887	376	2047	\N	\N	3	4	f
+9888	114	256	\N	\N	3	0.4	f
+9889	114	2251799813685248	\N	\N	2	23	f
+9890	114	9007199254740992	\N	\N	3	0.3	f
+9891	114	18014398509481984	\N	\N	3	0.3	f
+9892	114	36028797018963968	\N	\N	3	0.5	f
+9893	114	72057594037927936	\N	\N	3	1	f
+9894	114	144115188075855872	\N	\N	3	0.2	f
+9895	114	288230376151711744	\N	\N	3	0.2	f
+9896	114	576460752303423488	\N	\N	3	0.3	f
+9897	114	1152921504606846976	\N	\N	3	0.1	f
+9898	114	2305843009213693952	\N	\N	3	0.3	f
+9899	114	-9223372036854775808	\N	\N	3	0.3	f
+9900	114	4611686018427387904	\N	\N	3	0.4	f
+9901	114	1024	\N	\N	3	0.1	f
+9902	114	17179869184	\N	\N	2	8	f
+9903	114	70368744177664	\N	\N	2	69	f
+9904	114	8796093022208	\N	\N	1	9	f
+9905	114	17592186044416	\N	\N	2	1	f
+9906	114	262144	\N	\N	2	0.3	f
+9907	114	33554432	\N	\N	1	0.1	f
+9908	114	524288	\N	\N	2	0.1	f
+9909	114	1048576	\N	\N	2	2	f
+9910	114	2097152	\N	\N	2	0.2	f
+9911	114	4194304	\N	\N	2	0.2	f
+9912	114	268435456	\N	\N	1	0.1	f
+9913	114	536870912	\N	\N	2	0.1	f
+9914	114	1536	\N	\N	3	0.2	f
+9915	114	1792	\N	\N	3	0.6	f
 \.
 
 
@@ -4329,9 +4367,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2375	0	\N	\N	69	1	6	\N	144	f	\N	1
 2376	0	\N	\N	69	1	1	, finely chopped	3	t	\N	2
 2377	7	\N	\N	69	1	4	\N	61	f	\N	3
-1655	5	\N	\N	99	1	1	\N	122	f	\N	0
-1656	5	\N	\N	99	1	1	, dried	356	f	\N	1
-1657	4	\N	\N	99	1	8	, cut into fingers	26	f	\N	2
 2378	7	\N	\N	69	1	1	, chopped	2	t	\N	4
 2379	7	\N	\N	69	1	1	, to taste	60	t	\N	5
 2380	8	\N	\N	69	8	1	\N	285	t	\N	6
@@ -4350,13 +4385,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4379	6	\N	\N	194	1	3	\N	711	f	\N	1
 4380	7	\N	\N	194	1	2	\N	29	f	\N	2
 4381	6	\N	\N	194	1	1	\N	562	f	\N	3
-1658	0	\N	\N	99	1	2	, sliced	\N	f	65	3
 1266	6	\N	\N	29	1	1	, trimmed	122	f	\N	0
 1267	0	\N	\N	29	1	1	, minced	5	f	\N	1
 1268	7	\N	\N	29	1	2	, melted	29	f	\N	2
-1659	4	\N	\N	99	1	2	\N	95	t	\N	4
-1660	8	\N	\N	99	4	1	\N	285	t	\N	5
-1661	4	\N	\N	99	1	2	, cooked (for dressing)	264	f	\N	6
 1269	7	\N	\N	29	1	1	, grated	95	f	\N	3
 1158	6	\N	\N	58	4	1	\N	56	f	\N	0
 1159	0	\N	\N	58	1	2	, pocket halved	166	f	\N	1
@@ -4372,13 +4403,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2724	6	\N	\N	146	1	1	(SUN_DRIED TOMATO PURéE (PASTE))	17	f	\N	1
 1762	4	\N	\N	104	1	10	\N	286	f	\N	0
 2725	4	\N	\N	146	1	5	, chopped	119	f	\N	2
-1662	7	\N	\N	99	1	5	(for dressing)	77	f	\N	7
 1763	4	\N	\N	104	1	12	\N	122	f	\N	1
 1764	0	\N	\N	104	1	4	\N	187	f	\N	2
 2726	8	\N	\N	146	1	2	\N	322	t	\N	3
 2727	7	\N	\N	146	1	2	\N	77	f	\N	4
 2728	8	\N	\N	146	8	1	\N	67	t	\N	5
 1765	4	\N	\N	104	4	7	\N	379	f	\N	3
+1655	5	\N	\N	99	1	1	\N	122	f	\N	0
+1656	5	\N	\N	99	1	1	, dried	356	f	\N	1
+1657	4	\N	\N	99	1	8	, cut into fingers	26	f	\N	2
+1658	0	\N	\N	99	1	2	, sliced	\N	f	65	3
+1659	4	\N	\N	99	1	2	\N	95	t	\N	4
+1660	8	\N	\N	99	4	1	\N	285	t	\N	5
+1661	4	\N	\N	99	1	2	, cooked (for dressing)	264	f	\N	6
+1662	7	\N	\N	99	1	5	(for dressing)	77	f	\N	7
 3082	0	\N	\N	132	1	4	\N	324	f	\N	0
 3083	0	\N	\N	132	2	1	, juiced	4	f	\N	1
 3084	7	\N	\N	132	1	3	\N	549	f	\N	2
@@ -4427,8 +4465,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1215	6	\N	\N	63	2	1	, thinly sliced	14	f	\N	6
 2990	0	\N	\N	155	1	8	\N	\N	f	100	0
 2991	6	\N	\N	155	4	1	\N	29	f	\N	1
-1663	7	\N	\N	99	1	1	(lemon juice) (for dressing)	4	f	\N	8
-1664	8	\N	\N	99	1	2	(for dressing)	357	t	\N	9
 1239	6	\N	\N	64	1	2	, minced	5	f	\N	0
 1240	0	\N	\N	64	2	1	\N	212	f	\N	1
 1241	7	\N	\N	64	1	2	\N	77	f	\N	2
@@ -4438,7 +4474,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1245	6	\N	\N	64	1	1	, shredded	119	f	\N	6
 1246	7	\N	\N	64	1	1	, grated	95	f	\N	7
 1247	0	\N	\N	64	1	12	\N	262	t	\N	8
-1665	6	\N	\N	99	2	1	(for dressing)	246	f	\N	10
 1726	7	\N	\N	100	1	1	, or Shortening in place of Butter and Oil	78	f	\N	5
 1727	6	\N	\N	100	4	1	, to serve	39	f	\N	6
 1728	0	\N	\N	100	1	1	\N	187	f	\N	7
@@ -4484,6 +4519,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1792	4	\N	\N	109	1	12	\N	404	t	\N	3
 1793	0	\N	\N	109	1	4	\N	166	f	\N	4
 1766	0	\N	\N	104	1	4	\N	381	f	\N	4
+1663	7	\N	\N	99	1	1	(lemon juice) (for dressing)	4	f	\N	8
+1664	8	\N	\N	99	1	2	(for dressing)	357	t	\N	9
+1665	6	\N	\N	99	2	1	(for dressing)	246	f	\N	10
 2530	4	\N	\N	36	1	8	\N	132	f	\N	0
 2531	7	\N	\N	36	1	2	\N	29	f	\N	1
 2532	8	\N	\N	36	1	2	\N	77	f	\N	2
@@ -5540,6 +5578,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4352	6	\N	\N	243	1	2	, finely chopped or chiffonade	16	f	\N	4
 4353	7	\N	\N	243	1	1	\N	699	f	\N	5
 4354	8	\N	\N	243	8	1	\N	692	f	\N	6
+5333	4	\N	\N	323	1	5	\N	356	f	\N	0
+5334	0	\N	\N	323	1	3	, raw	401	f	\N	1
+5335	4	\N	\N	323	2	1	\N	2	f	\N	2
+5336	0	\N	\N	323	1	1	\N	187	f	\N	3
+5337	4	\N	\N	323	1	1	\N	95	t	\N	4
 4200	6	\N	\N	244	1	2	\N	10	f	\N	0
 4201	0	\N	\N	244	1	8	\N	251	f	\N	1
 4202	6	\N	\N	244	4	1	(AGAVE)	122	t	\N	2
@@ -5775,8 +5818,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4815	7	\N	\N	263	1	2	\N	788	f	\N	0
 4816	0	\N	\N	263	2	1	\N	5	f	\N	1
 4817	0	\N	\N	263	1	1	\N	4	f	\N	2
-4818	4	\N	\N	263	1	10	, mixed-color	7	f	\N	3
-4819	0	\N	\N	263	1	2	\N	1	f	\N	4
 5042	7	\N	\N	307	1	2	\N	802	f	\N	2
 5043	4	\N	\N	307	1	7	\N	801	f	\N	3
 5044	4	\N	\N	307	1	8	, cooked	328	f	\N	4
@@ -5794,6 +5835,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5059	0	\N	\N	241	2	1	, minced	222	t	\N	6
 5060	7	\N	\N	241	1	1	\N	695	t	\N	7
 5061	8	\N	\N	241	8	1	\N	692	f	\N	8
+4818	4	\N	\N	263	1	10	\N	841	f	\N	3
+4819	0	\N	\N	263	1	2	\N	1	f	\N	4
 2239	0	\N	\N	121	2	1	\N	352	f	\N	0
 4805	0	\N	\N	265	1	1	\N	730	f	\N	0
 4806	0	\N	\N	265	1	4	\N	187	f	\N	1
@@ -5869,17 +5912,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2515	Mix the ingredients.	\N	247	3
 2516	Bake for 15-20 minutes until lightly browned. Let is cool before putting in storage container.	\N	247	4
 2776	Place all the ingredients into a high-speed blender and blend until completely smooth. Serve immediately.	\N	305	0
-905	Snap the asparagus spears and discard the tough woody ends. Cut the spears in half and cook the thicker halves in boiling salted water for 12 minutes, adding the tips after 6 minutes. 	\N	99	0
 1087	Place hot ingredients on top of the salad in the center of the avocado ring, being careful not to cover avocados, and serve with ciabatta crisp.	\N	115	3
 2519	Heat oven to 190°C/375°F. Mash up one banana half, then mix it with the oats, cinnamon, milk, 300ml/1¼ cups water and a pinch of salt, and pour into a baking dish. Top with the remaining banana halves and scatter over the walnuts.	\N	42	0
-906	Meanwhile, cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	\N	99	1
 2520	Bake for 20-25 mins until the oats are creamy and have absorbed most of the liquid.	\N	42	1
 1317	Place ham in a nonstick 8-inch pan or griddle over medium heat and cook for 1 minute; flip and cook for another minute to heat through.	\N	107	2
 216	Eat the sunflower seeds.	\N	54	0
 584	Preheat oven to 425°. Place Texas toast in a 15x10x1-in. baking pan. Bake 5 minutes.	\N	27	0
 1318	Spread Dijonaise evenly over the non-buttered sides of both slices of bread.	\N	107	3
-907	Drain the asparagus. Reserve the tips. Purée the remainder with the dressing ingredients until smooth.	\N	99	2
-908	Drain the pasta, toss with the asparagus sauce and cool slightly. Divide among four pasta plates. Top with the ham, hard-boiled eggs and asparagus tips. Shave Parmesan cheese over the top.	\N	99	3
 1319	Place warm ham on one side of bread and top with one slice of cheese. Place tomato slices on the other slice of bread along with the other slice of cheese.	\N	107	4
 585	Spread toast with pizza sauce; top with pepperoni and cheese.	\N	27	1
 586	Bake until cheese is melted, 4-5 minutes longer.	\N	27	2
@@ -5894,6 +5933,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1709	Combine chicken broth and taco seasoning mix in a bowl.	\N	25	0
 1710	Place chicken in a slow cooker. Pour chicken broth mixture over chicken	\N	25	1
 1711	Cook on Low for 6 to 8 hours. Shred chicken.	\N	25	2
+905	Snap the asparagus spears and discard the tough woody ends. Cut the spears in half and cook the thicker halves in boiling salted water for 12 minutes, adding the tips after 6 minutes. 	\N	99	0
+906	Meanwhile, cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	\N	99	1
+907	Drain the asparagus. Reserve the tips. Purée the remainder with the dressing ingredients until smooth.	\N	99	2
+908	Drain the pasta, toss with the asparagus sauce and cool slightly. Divide among four pasta plates. Top with the ham, hard-boiled eggs and asparagus tips. Shave Parmesan cheese over the top.	\N	99	3
 1796	Heat the oil in a large heavy frying pan over a medium heat, and cook the chops for 10-15 minutes, browningwell on both sides. Remove the chops from the pan and keep warm.	\N	126	0
 1797	Add the butter and apples to the frying pan and cook until the juices begin to turn brown.	\N	126	1
 1798	Add the garlic and sugar, and cook for 1 minute, then stir in the cider, cider vinegar, mustard and chopped thyme. Boil for a few minutes until reduced to a saucy consistency. Season to taste.	\N	126	2
@@ -6666,7 +6709,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 961	Finely slice the pancetta, then place in a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil and a generous pinch of black pepper and cook for 4 minutes, or until golden and crisp. Add the asparagus to the pancetta for 3 minutes, then drain the pasta, reserving a cupful of starchy cooking water.	\N	104	1
 962	Tip the pasta into the pancetta pan, toss and stir everything together, then remove from the heat and wait 2 minutes for the pan to cool slightly (if the pan's too hot, it'll scramble; get it right and it'll be smooth, silky and deliciously elegant).	\N	104	2
 963	Loosen the egg mixture with a spash of cooking water, then pour over the pasta, tossing and stirring vigorously - the egg will gently cook in the residual heat. Season to perfection. Adjust the consistency with extra cooking water, if needed, and finish with a pinch of pepper and an extra grating of cheese, if you like.	\N	104	3
-2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove. Put three-quarters of the seeds into a pestle and mortar with a pinch of sea salt, and pound until fairly fine. Peel and add the garlic, then smash to a paste. Squeese in the lemon juice, then muddle in 1 tablespoon of extra virgin olive oil and a tiny drebble of red wine vinegar to make a delicious tahini-style dressing.	\N	263	0
+2925	Cook the pasta in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Meanwhile, squeeze the sausage meat out of the skins, then, with wet hands, quickly shape into 18 even-sized balls. Roll and coat them in black pepper, then cook in a non-stick frying pan on a medium-heat with ½ a tablespoon of olive oil until golden and cooked through, tossing regularly, then turn the heat off.	\N	323	0
+2926	Finely chop the parsley, stalks and all, beat it with the egg and a splash of pasta cooking water, then finely graze and mix in most of the Parmesan.	\N	323	1
+2927	Toss the grained pasta into the sausage pan, pour in the egg mixture, and toss for 1 minute off the heat (the egg will gently cook in the residual heat). Loosen with a good splash of reserved cooking water, season to perfection with sea salt and pepper, and finely grate over the remaining Parmesan.	\N	323	2
+2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove. Put three-quarters of the seeds into a pestle and mortar with a pinch of sea salt, and pound until fairly fine. Peel and add the garlic, then smash to a paste. Squeeze in the lemon juice, then muddle in 1 tablespoon of extra virgin olive oil and a tiny drebble of red wine vinegar to make a delicious tahini-style dressing.	\N	263	0
 2636	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	263	1
 \.
 
@@ -6682,7 +6728,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9877, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9915, true);
 
 
 --

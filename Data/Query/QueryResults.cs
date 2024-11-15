@@ -103,7 +103,7 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient) : I
         (_, not null, _, _) => RecipeIngredientType.IngredientRecipe,
         (_, _, not null, _) => RecipeIngredientType.Ingredient,
         (_, _, _, not null) => RecipeIngredientType.IngredientRecipe,
-        _ => throw new InvalidOperationException(),
+        _ => throw new InvalidOperationException("Missing ingredient or recipe."),
     };
 
     public Measure GetMeasure => Measure;
