@@ -4,6 +4,7 @@ using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -17,8 +18,8 @@ public class UpsertRecipeViewModel
 
     public UpsertRecipeModel Recipe { get; set; } = null!;
 
-    public IList<Data.Entities.Recipe.Recipe> Recipes { get; init; } = [];
-    public IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; } = [];
+    public IList<SelectListItem> RecipeSelect { get; init; } = [];
+    public IList<SelectListItem> IngredientSelect { get; init; } = [];
 }
 
 public class UpsertRecipeModel : IValidatableObject
@@ -98,7 +99,12 @@ public class UpsertRecipeModel : IValidatableObject
         {
             if (recipeIngredient.IngredientId.HasValue && recipeIngredient.IngredientRecipeId.HasValue)
             {
-                yield return new ValidationResult($"Both Ingredient and Recipe cannot have values.", [nameof(RecipeIngredients)]);
+                yield return new ValidationResult($"Both the Ingredient and the Recipe cannot have values.", [nameof(RecipeIngredients)]);
+            }
+
+            if (!recipeIngredient.IngredientId.HasValue && !recipeIngredient.IngredientRecipeId.HasValue)
+            {
+                yield return new ValidationResult($"Either the Ingredient or the Recipe must have a value.", [nameof(RecipeIngredients)]);
             }
         }
     }

@@ -110,7 +110,7 @@
 111	\N	Chicken Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436	\N	f	0	240	240	2024-06-28	6	240	928
 112	\N	Taco Seasoning	https://www.eatthismuch.com/calories/taco-seasoning,100484	\N	f	0	3	6	2024-08-29	8	144	131072
 113	\N	Hamburger Buns	https://www.eatthismuch.com/calories/hamburger-bun-4256	\N	f	262176	43	43	-infinity	0	43	64
-114	\N	Pork Fillet (Tenderloin)	https://www.eatthismuch.com/calories/pork-tenderloin-1785	\N	f	0	28	28	-infinity	4	224	8388608
+114	\N	Pork Fillet (Tenderloin)	https://www.eatthismuch.com/calories/pork-tenderloin-1785	\N	f	0	28	28	2024-11-15	4	224	268435456
 115	\N	Dr. Pepper	https://www.eatthismuch.com/calories/dr-pepper,3105	\N	f	0	368	491	2024-08-17	0	246	5
 116	\N	Barbecue (BBQ) Sauce	https://www.eatthismuch.com/calories/barbecue-sauce-730	\N	f	0	36	18	-infinity	9	288	32
 117	\N	Garlic Texas Toast	https://www.eatthismuch.com/nutrition/garlic-texas-toast,3321895	\N	f	0	40	40	2024-07-02	0	80	0
@@ -366,7 +366,7 @@
 373	\N	Cabbage | Kale	https://www.eatthismuch.com/calories/cabbage,1902	\N	f	0	89	908	2024-08-31	6	89	1
 374	\N	Naan, GF	\N	\N	f	0	240	100	2024-08-06	0	240	0
 375	\N	Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2024-06-15	0	61	2
-376	\N	Watercress	https://www.eatthismuch.com/calories/meatballs-frozen,587209	\N	f	0	28.25	113	-infinity	4	226	0
+376	\N	Watercress	https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2024-11-15	4	34	2
 377	\N	Jarred Roasted Red Peppers	https://www.eatthismuch.com/calories/meatballs-frozen,587209	\N	f	0	28.25	113	-infinity	4	226	0
 378	\N	Pecorino Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	4194304
 379	\N	Pecorino Cheese | Parmesan Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	4194304

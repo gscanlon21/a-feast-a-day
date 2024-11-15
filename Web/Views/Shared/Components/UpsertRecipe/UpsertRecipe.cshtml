@@ -146,7 +146,8 @@
         </div>
 
         <div class="mb-3" >
-            <b>Edit Ingredients</b>
+            <div><b>Edit Ingredients</b></div>
+            <span asp-validation-for="Recipe.RecipeIngredients" class="text-danger"></span>
             <div class="mt-1 ps-3">
                 @for (int id = 0; id < Model.Recipe.RecipeIngredients.Count; id++)
                 {
@@ -188,18 +189,14 @@
                         <div class="form-group row">
                             <div class="col">
                                 <label asp-for="Recipe.RecipeIngredients[id].IngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientId)</label>
-                                <select asp-for="Recipe.RecipeIngredients[id].IngredientId" class="form-control searchable" aria-describedby="ingredient-help"
-                                        asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
-                                </select>
+                                <select asp-for="Recipe.RecipeIngredients[id].IngredientId" asp-items="@Model.IngredientSelect" class="form-control searchable" aria-describedby="ingredient-help"></select>
                                 <span asp-validation-for="Recipe.RecipeIngredients[id].IngredientId" class="text-danger"></span>
                                 <span id="ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].IngredientId)</span>
                             </div>
 
                             <div class="col">
                                 <label asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientRecipeId)</label>
-                                <select asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="form-control searchable" aria-describedby="ingredient-recipe-help"
-                                        asp-items="@(Model.Recipes.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
-                                </select>
+                                <select asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" asp-items="@Model.RecipeSelect" class="form-control searchable" aria-describedby="ingredient-recipe-help"></select>
                                 <span asp-validation-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="text-danger"></span>
                                 <span id="ingredient-recipe-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].IngredientRecipeId)</span>
                             </div>
@@ -268,7 +265,8 @@
         </div>
 
         <div class="mb-3">
-            <b>Edit Instructions</b>
+            <div><b>Edit Instructions</b></div>
+            <span asp-validation-for="Recipe.Instructions" class="text-danger"></span>
             <div class="mt-1 ps-3">
                 @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
                 {

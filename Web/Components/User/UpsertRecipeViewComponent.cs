@@ -1,12 +1,11 @@
 ﻿using Core.Consts;
-using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data;
-using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Web.Code;
 using Web.Views.Shared.Components.UpsertRecipe;
@@ -52,30 +51,36 @@ public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) :
         return View("UpsertRecipe", new UpsertRecipeViewModel()
         {
             User = user,
-            Recipes = await GetRecipes(user),
-            Ingredients = await GetIngredients(user),
+            RecipeSelect = await GetRecipeSelect(user),
+            IngredientSelect = await GetIngredientSelect(user),
             Recipe = recipe.AsType<UpsertRecipeModel, Recipe>()!,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 
-    private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
+    private async Task<IList<SelectListItem>> GetRecipeSelect(Data.Entities.User.User user)
     {
-        var singleOrNoneSections = EnumExtensions.GetSingleOrNoneValues32<Section>();
-        return await context.Recipes.AsNoTracking()
+        var allEquipment = user.Equipment.WithOptionalEquipment();
+        return (await context.Recipes.AsNoTracking()
             .Where(r => r.UserId == null || r.UserId == user.Id)
-            .Where(r => r.Equipment == Equipment.None || user.Equipment.HasFlag(r.Equipment))
+            .Where(r => allEquipment.HasFlag(r.Equipment))
             // Some ingredients recipes can stand on their own, such as a simple salad that can be used in a sandwich.
-            .Where(r => singleOrNoneSections.Contains(r.Section))
+            //.Where(r => singleOrNoneSections.Contains(r.Section)) // This doesn't work for Hard Boiled Eggs.
             .OrderBy(r => r.Name)
-            .ToListAsync();
+            .ToListAsync())
+            .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
+            .Prepend(new SelectListItem())
+            .ToList();
     }
 
-    private async Task<IList<Ingredient>> GetIngredients(Data.Entities.User.User user)
+    private async Task<IList<SelectListItem>> GetIngredientSelect(Data.Entities.User.User user)
     {
-        return await context.Ingredients.AsNoTracking()
+        return (await context.Ingredients.AsNoTracking()
             .Where(i => i.UserId == null || i.UserId == user.Id)
             .OrderBy(i => i.Name)
-            .ToListAsync();
+            .ToListAsync())
+            .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
+            .Prepend(new SelectListItem())
+            .ToList();
     }
 }
