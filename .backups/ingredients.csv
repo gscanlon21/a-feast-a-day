@@ -123,7 +123,7 @@
 124	\N	Curry Powder	\N	\N	f	0	16	8	-infinity	4	96	65536
 125	\N	Cardamom	\N	\N	f	0	16	8	-infinity	4	96	65536
 126	\N	Kielbasa Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880	\N	f	0	28	56	2024-06-11	4	224	268435456
-127	\N	Apple Sauce, Unsweetened	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	244	244	-infinity	6	244	256
+127	\N	Apple Sauce, Unsweetened	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	28	244	2024-11-16	4	244	256
 129	\N	Frozen Meatballs	https://www.eatthismuch.com/calories/meatballs-frozen-italian-style,484657	\N	f	0	28.25	85	2024-08-16	4	226	134217728
 130	\N	Molasses	https://www.eatthismuch.com/calories/molasses-4624	\N	f	0	40	20	2024-10-12	9	320	3
 131	\N	Raw Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	2048
@@ -471,7 +471,7 @@
 515	\N	Paprika | Cayenne Pepper	https://www.eatthismuch.com/calories/paprika-203 | https://www.eatthismuch.com/calories/cayenne-pepper-206	\N	t	0	12	6	2024-10-28	4	96	2048
 516	\N	Vinegar	https://www.eatthismuch.com/calories/vinegar-227	\N	f	0	29.875	239	2024-11-09	9	239	32
 517	\N	Light Brown Sugar	https://www.eatthismuch.com/food/nutrition/brown-sugar,4643	\N	f	0	145	145	2024-07-12	6	145	4
-518	\N	Crème Fraîche	\N	\N	f	0	240	100	-infinity	6	240	0
+518	\N	Crème Fraîche	https://www.eatthismuch.com/calories/creme-fraiche-1706554	\N	f	324	28	30	2024-11-16	4	240	29360128
 519	\N	Fromage Frais	https://www.eatthismuch.com/calories/fromage-frais-163884	\N	f	0	100	100	2024-11-03	6	100	8388608
 520	\N	Crème Fraîche | Fromage Frais	\N	\N	f	0	240	100	-infinity	6	240	0
 546	\N	Vanilla Ice Cream	https://www.eatthismuch.com/calories/vanilla-ice-cream-4476	\N	f	0	28	132	2024-06-11	4	132	234881024

@@ -218,6 +218,7 @@ public partial class UserController
                 var difference = viewModel.LagRefreshXWeeks - userRecipe.LagRefreshXWeeks; // 11 new - 1 old = 10 weeks.
                 var refreshAfterOrTodayWithLag = (userRecipe.RefreshAfter ?? DateHelpers.Today).AddDays(7 * difference);
                 userRecipe.RefreshAfter = refreshAfterOrTodayWithLag > DateHelpers.Today ? refreshAfterOrTodayWithLag : null;
+                // NOTE: Not updating the LastSeen date if RefreshAfter is null, so the user may see this recipe again tomorrow.
             }
 
             userRecipe.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;

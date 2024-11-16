@@ -52,15 +52,24 @@ public enum Measure
     [Display(Name = "Gallons", ShortName = "gal")]
     Gallons = 12,
 
-    [Display(Name = "Percent", ShortName = "%")]
-    Percent = 13,
+    [Display(Name = "Pints", ShortName = "pt")]
+    Pints = 13,
 
-    [Display(Name = "IU")]
-    IU = 14,
+    // This changes depending on the substance.
+    //[Display(Name = "IU")]
+    //IU = 99,
+
+    [Display(Name = "Percent", ShortName = "%")]
+    Percent = 100,
 }
 
 public static class MeasureConsts
 {
+    /// <summary>
+    /// Nutrient measures.
+    /// </summary>
+    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Percent/*, Measure.IU*/];
+
     /// <summary>
     /// Measures used to measure dry ingredients.
     /// </summary>
@@ -69,12 +78,7 @@ public static class MeasureConsts
     /// <summary>
     /// Measures used to measure liquids.
     /// </summary>
-    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters, Measure.Gallons];
-
-    /// <summary>
-    /// Nutrient measures.
-    /// </summary>
-    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Percent, Measure.IU];
+    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters, Measure.Gallons, Measure.Pints];
 }
 
 /* Swap two measures.

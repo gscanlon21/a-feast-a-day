@@ -4363,6 +4363,35 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9913	114	536870912	\N	\N	2	0.1	f
 9914	114	1536	\N	\N	3	0.2	f
 9915	114	1792	\N	\N	3	0.6	f
+9916	127	2251799813685248	\N	\N	2	5	f
+9917	127	274877906944	\N	\N	1	0.1	f
+9918	127	17179869184	\N	\N	2	7	f
+9919	127	4398046511104	\N	\N	2	0.1	f
+9920	127	70368744177664	\N	\N	2	12	f
+9921	127	8796093022208	\N	\N	1	1	f
+9922	127	17592186044416	\N	\N	2	0.1	f
+9923	127	65536	\N	\N	1	32	f
+9924	127	262144	\N	\N	2	0.1	f
+9925	127	524288	\N	\N	2	0.1	f
+9926	127	1048576	\N	\N	2	0.2	f
+9927	127	2097152	\N	\N	2	0.1	f
+9928	127	4194304	\N	\N	2	0.1	f
+9929	127	16777216	\N	\N	1	7	f
+9930	127	67108864	\N	\N	2	2	f
+9931	127	536870912	\N	\N	2	0.4	f
+9932	127	3221225472	\N	\N	1	1	f
+9933	127	229376	\N	\N	1	2	f
+9934	518	128	\N	\N	3	7	f
+9935	518	2048	\N	\N	2	45	f
+9936	518	68719476736	\N	\N	2	10	f
+9937	518	34359738368	\N	\N	2	24	f
+9938	518	2	\N	\N	3	0.5	f
+9939	518	1	\N	\N	3	0.5	f
+9940	518	4294967296	\N	\N	2	16	f
+9941	518	14	\N	\N	3	0.5	f
+9942	518	1984	\N	\N	3	12	f
+9943	518	62	\N	\N	3	0.5	f
+9944	518	2047	\N	\N	3	110	f
 \.
 
 
@@ -4425,6 +4454,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1660	8	\N	\N	99	4	1	\N	285	t	\N	5
 1661	4	\N	\N	99	1	2	, cooked (for dressing)	264	f	\N	6
 1662	7	\N	\N	99	1	5	(for dressing)	77	f	\N	7
+4504	0	\N	\N	257	1	1	, for serving	144	f	\N	8
 3082	0	\N	\N	132	1	4	\N	324	f	\N	0
 3083	0	\N	\N	132	2	1	, juiced	4	f	\N	1
 3084	7	\N	\N	132	1	3	\N	549	f	\N	2
@@ -4559,6 +4589,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5315	6	\N	\N	319	2	1	(SALSA VERDE)	48	f	\N	6
 5316	6	\N	\N	319	2	1	(LONG_GRAIN WHITE RICE)	97	f	\N	7
 5317	8	\N	\N	319	1	1	, chopped	13	t	\N	8
+5338	6	\N	\N	324	1	2	\N	171	f	\N	0
+5339	7	\N	\N	324	1	2	\N	\N	f	262	1
 4892	6	\N	\N	258	3	2	\N	266	f	\N	1
 1366	6	\N	\N	68	4	1	\N	134	f	\N	0
 1367	6	\N	\N	68	4	1	\N	87	f	\N	1
@@ -5691,7 +5723,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4501	6	\N	\N	257	2	1	, grated	95	t	\N	5
 4502	7	\N	\N	257	1	1	\N	77	f	\N	6
 4503	8	\N	\N	257	4	1	\N	285	f	\N	7
-4504	0	, tops only	\N	257	1	1	, for serving	144	f	\N	8
 4525	8	\N	\N	131	1	2	\N	73	f	\N	5
 4526	8	\N	\N	131	4	1	\N	143	f	\N	6
 4527	8	\N	\N	131	1	1	\N	503	f	\N	7
@@ -6116,6 +6147,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2338	Add the spinach and stir until just wilted. Remove from heat.	\N	243	3
 1276	Cut onion in half then each half into thin slices OR, chop the onion. Melt butter in a large skillet or pot over medium heat then add onions and a dash of salt. Cook, stirring every couple of minutes, until onions are golden brown and caramelized, about 20 minutes. Turn heat down if onions start to burn. Set aside to cool slightly - can be made up to several days ahead of time.	\N	90	0
 1277	Preheat oven to 425 degrees. In a large bowl combine ground beef, egg, Worcestershire sauce, 2 Tablespoons BBQ sauce, bread crumbs, salt, pepper, cheese cubes, and caramelized onions, then mix until just combined. Divide mixture into 4 equal-sized portions then form into loaves and place on a foil-lined, non-stick-sprayed baking sheet. Spread 1 Tablespoon BBQ sauce over each loaf then bake for 20 minutes, or until no longer pink in the center, and then serve.	\N	90	1
+2448	Pour broth and water into the pan, add salt and pepper, and mix.	\N	257	3
 984	Taste the sauce and season to perfection. To serve, stir the pasta into the sauce and grate in most of the halloumi. Finish drizzled with 1 tablespoon of extra virgin olive oil and with the remaining halloumi grated over the top.	\N	108	4
 985	Place a grill pan on high heat. Drizzle 5 tablespoons of extra virgin olive oil and 2 tablespoons of red wine vinegar into a large shallow serving bowl, season with a pinch of sea salt and black pepper, mix in the sumac and put aside.	\N	109	0
 986	Peel the onions and slice into 1/2-inch rounds, then grill until softened and nicely charred on both sides, using tongs to transfer them straight to the dressing as you go.	\N	109	1
@@ -6145,6 +6177,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2344	Puree soup, whisk in coconut milk.	\N	248	3
 2345	Ladle into bowls. Garnish with chives and bacon.	\N	248	4
 2346	Set the oven to 400F. Line 2 large baking sheets with parchment paper.	\N	249	0
+2449	Cover the pan with a lid and cook the risotto for 10 minutes. Then you need to check the readiness of the rice and add water or broth until the rice is cooked and acquires a creamy texture.	\N	257	4
+2450	Ready rice should not be completely boiled, but it should be sticky. Serve the risotto with Parmesan, green onions, and peppers.	\N	257	5
 753	Brown ground beef with shallot in a large skillet over medium-high heat. Drain then return to the skillet. Add taco seasoning, salsa, and chicken broth then bring to a boil. Stir in rice then place a lid on top and reduce heat to low. Simmer for 15-20 minutes or until rice is tender then remove from heat and stir in cheddar cheese until melted. Place lid back on the skillet then let sit for 5 minutes before serving with toppings.	\N	89	0
 754	Toppings: tortilla chips, salsa, sliced avocado, chopped green onions.	\N	89	1
 1413	Mix the diced chicken with half the garlic and the tumeric. Heat a little of the oil in a pan, add the chicken and fry until the chicken has cooked thoroughly. Remove from the pan and set aside.	\N	140	0
@@ -6693,12 +6727,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2391	Heat oil in a large skillet over medium heat. Add fajita vegetables and sauté until tender, about 10 minutes.	\N	38	0
 2392	Stir in black beans, seasoning and salt; cook, stirring, until heated through, about 1 minute.	\N	38	1
 2393	Divide the vegetables and beans between two bowls and top each with 2 tablespoons cheese, if using.	\N	38	2
-2445	Sauté the onion in olive oil for 5 minutes on low heat.	\N	257	0
-2446	Pour white wine into the pan, stir, and simmer for 7 minutes.	\N	257	1
-2447	Add arborio rice, mix everything, and fry everything together for 5 minutes.	\N	257	2
-2448	Pour broth and water into the pan, add salt and pepper, and mix.	\N	257	3
-2449	Cover the pan with a lid and cook the risotto for 10 minutes. Then you need to check the readiness of the rice and add water or broth until the rice is cooked and acquires a creamy texture.	\N	257	4
-2450	Ready rice should not be completely boiled, but it should be sticky. Serve the risotto with Parmesan, green onions, and peppers.	\N	257	5
 2856	Lay the sausages on top, the drizzle with 1 tablespoon of olive oil and add a pinch of black pepper from a height. Bake for 30 minutes, then drizzle over the honey and return to the oven for 5 minutes, or until golden and delicious.	\N	311	1
 2909	Preheat the oven to 350°F. Place a large shallow casserole pan on a high heat. Peel and quarter the onions and quickly break apart into petals straight into the pan. Char for 4 minutes, tossing regularly. Reduce to a medium heat and stir in 1 tablespoon of olive oil and the salami, then rice, followed 1 minute later by 5 cups of boiling kettle water and the mascarphone. Finely grate and stir in the Parmesan with a pinch of sea salt and place pepper.	\N	317	0
 2910	Transfer the pan to the oven for 40 minutes, or until the rice has absorbed all the liquid and is just cooked through. Drizzle 1 tablespoon of extra virgin olive oil and dish up, seasoning to perfection at the table.	\N	317	1
@@ -6711,6 +6739,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2670	Peel the clementines. Cut some of them in half and place them all in a large dish. Pour over the wine and chill before serving.	\N	159	2
 2915	Preheat the oven to 350°F. Halve the cherry tomatoes, peel and finely slice the garlic, and tear the bread into bite-sized chunks. Place it all in a 14x12-inch roasting pan, pour in the beans and their juice, drizzle with 1 tablespoon of olive oil and red wine vinegar, add a splash of water, and mix it all together. Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	\N	320	0
 2916	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	\N	320	1
+2445	Sauté the onion in olive oil for 5 minutes on low heat.	\N	257	0
+2446	Pour white wine into the pan, stir, and simmer for 7 minutes.	\N	257	1
+2447	Add arborio rice, mix everything, and fry everything together for 5 minutes.	\N	257	2
 2918	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through. Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	1
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	\N	262	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	\N	262	1
@@ -6722,6 +6753,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2927	Toss the grained pasta into the sausage pan, pour in the egg mixture, and toss for 1 minute off the heat (the egg will gently cook in the residual heat). Loosen with a good splash of reserved cooking water, season to perfection with sea salt and pepper, and finely grate over the remaining Parmesan.	\N	323	2
 2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove. Put three-quarters of the seeds into a pestle and mortar with a pinch of sea salt, and pound until fairly fine. Peel and add the garlic, then smash to a paste. Squeeze in the lemon juice, then muddle in 1 tablespoon of extra virgin olive oil and a tiny drebble of red wine vinegar to make a delicious tahini-style dressing.	\N	263	0
 2636	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	263	1
+2928	Combine buttermilk and heavy cream in a non-reactive container. Cover and allow to rest at room temperature until thickened to desired texture, about 12 hours. Store in the refrigerator for up to 2 weeks.	\N	324	0
 \.
 
 
@@ -6736,7 +6768,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9915, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9944, true);
 
 
 --
