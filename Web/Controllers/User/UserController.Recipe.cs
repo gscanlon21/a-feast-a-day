@@ -212,6 +212,14 @@ public partial class UserController
                 userRecipe.LastSeen = userRecipe.LastSeen.AddDays(7 * difference); // Add 70 days onto the LastSeen date.
             }
 
+            // Apply refresh lagging immediately.
+            if (viewModel.LagRefreshXWeeks != userRecipe.LagRefreshXWeeks)
+            {
+                var difference = viewModel.LagRefreshXWeeks - userRecipe.LagRefreshXWeeks; // 11 new - 1 old = 10 weeks.
+                var refreshAfterOrTodayWithLag = (userRecipe.RefreshAfter ?? DateHelpers.Today).AddDays(7 * difference);
+                userRecipe.RefreshAfter = refreshAfterOrTodayWithLag > DateHelpers.Today ? refreshAfterOrTodayWithLag : null;
+            }
+
             userRecipe.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
             userRecipe.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
             userRecipe.Notes = user.IsDemoUser ? null : viewModel.Notes;
