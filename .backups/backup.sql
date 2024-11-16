@@ -1152,6 +1152,14 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 836	266
 637	838
 839	840
+831	699
+831	73
+102	844
+102	843
+735	57
+735	843
+735	844
+735	842
 \.
 
 
