@@ -12,7 +12,7 @@ public class UnsupportedClientViewComponent : ViewComponent
 
     public UnsupportedClientViewComponent() { }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         var unsupportedClient = GetUnsupportedClient(user);
         if (unsupportedClient == UnsupportedClientViewModel.UnsupportedClient.None)

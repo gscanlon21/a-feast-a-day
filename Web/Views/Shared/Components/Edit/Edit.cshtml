@@ -338,7 +338,7 @@
             </div>
         </form>
       
-        @await Component.InvokeAsync(AdvancedViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(AdvancedViewComponent.Name, new { Model.User, Model.Token })
 
         <details class="mb-25">
             <summary class="mb-1 h5">New Recipe</summary>
@@ -354,18 +354,18 @@
     </div>
 
     <div id="info" class="col">
-        @await Component.InvokeAsync(ConfirmationViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(UnsupportedClientViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(CurrentFeastViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(NextFeastViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(PastFeastsViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(NutrientViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(BackupRestoreViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(IngredientsViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(IgnoredRecipesViewComponent.Name, new { Model.User })
-        @await Component.InvokeAsync(IgnoredIngredientsViewComponent.Name, new { Model.User })
+        @await Component.InvokeAsync(ConfirmationViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(UnsupportedClientViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(CurrentFeastViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(NextFeastViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(PastFeastsViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(NutrientViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(BackupRestoreViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(IngredientsViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(IgnoredRecipesViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(IgnoredIngredientsViewComponent.Name, new { Model.User, Model.Token })
     </div>
 </div>

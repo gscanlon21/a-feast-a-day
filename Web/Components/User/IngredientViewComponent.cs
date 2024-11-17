@@ -9,16 +9,25 @@ using Web.Views.Shared.Components.Ingredient;
 
 namespace Web.Components.User;
 
-public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
+public class IngredientViewComponent : ViewComponent
 {
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+
+    public IngredientViewComponent(CoreContext context, UserRepo userRepo)
+    {
+        _context = context;
+        _userRepo = userRepo;
+    }
+
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "Ingredient";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient? ingredient = null)
     {
-        var userIngredients = await context.Ingredients
+        var userIngredients = await _context.Ingredients
             .Where(i => i.UserId == user.Id
                 // The user is an admin who is allowed to edit base ingredients.
                 || (user.Features.HasFlag(Features.Admin) && i.UserId == null))
@@ -51,7 +60,7 @@ public class IngredientViewComponent(CoreContext context, UserRepo userRepo) : V
         {
             User = user,
             Nutrients = nutrients,
-            Token = await userRepo.AddUserToken(user, durationDays: 1),
+            Token = await _userRepo.AddUserToken(user, durationDays: 1),
             Ingredient = ingredient ?? new Ingredient()
             {
                 UserId = user.Id

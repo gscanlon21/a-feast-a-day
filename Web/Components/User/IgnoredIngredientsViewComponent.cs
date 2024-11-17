@@ -23,16 +23,14 @@ public class IgnoredIngredientsViewComponent : ViewComponent
 
     private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
-    private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public IgnoredIngredientsViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    public IgnoredIngredientsViewComponent(CoreContext context, UserRepo userRepo)
     {
-        _serviceScopeFactory = serviceScopeFactory;
         _userRepo = userRepo;
         _context = context;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
         var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;

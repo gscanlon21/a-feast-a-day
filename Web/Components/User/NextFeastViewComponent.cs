@@ -1,7 +1,6 @@
 ﻿using Core.Consts;
 using Core.Models.User;
 using Data;
-using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.NextFeast;
@@ -11,20 +10,27 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders an alert box summary of when the user's next feast will become available.
 /// </summary>
-public class NextFeastViewComponent(CoreContext context, UserRepo userRepo) : ViewComponent
+public class NextFeastViewComponent : ViewComponent
 {
+    private readonly CoreContext _context;
+
+    public NextFeastViewComponent(CoreContext context)
+    {
+        _context = context;
+    }
+
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "NextFeast";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         var nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateHelpers.Today : DateHelpers.Today.AddDays(1);
         // Next send date is a rest day and user is not the debug user, next send date is the day after.
         while ((user.SendDay != nextSendDate.DayOfWeek && !user.Features.HasFlag(Features.Debug))
             // User was sent a newsletter for the next send date, next send date is the day after.
-            || await context.UserEmails
+            || await _context.UserEmails
                 .Where(n => n.UserId == user.Id)
                 .Where(n => n.Subject == NewsletterConsts.SubjectFeast)
                 .AnyAsync(n => n.Date == nextSendDate)
@@ -38,7 +44,7 @@ public class NextFeastViewComponent(CoreContext context, UserRepo userRepo) : Vi
         return View("NextFeast", new NextFeastViewModel()
         {
             User = user,
-            Token = await userRepo.AddUserToken(user, durationDays: 1),
+            Token = token,
             TimeUntilNextSend = timeUntilNextSend,
         });
     }

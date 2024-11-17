@@ -21,7 +21,7 @@ public class ConfirmationViewComponent : ViewComponent
         _userRepo = userRepo;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         if (user.LastActive.HasValue)
         {

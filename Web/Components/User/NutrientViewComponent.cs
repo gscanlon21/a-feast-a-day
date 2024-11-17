@@ -25,7 +25,7 @@ public class NutrientViewComponent : ViewComponent
     public const string Name = "Nutrient";
 
     [SuppressMessage("Style", "IDE0075:Simplify conditional expression", Justification = "Easier to read as is.")]
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         if (user == null)
         {
@@ -43,10 +43,10 @@ public class NutrientViewComponent : ViewComponent
         return View("Nutrient", new NutrientViewModel()
         {
             User = user,
+            Token = token,
             Weeks = weeks,
             WeeksOfData = weeksOfData,
             WeeklyVolume = weeklyMuscles,
-            Token = await _userRepo.AddUserToken(user, durationDays: 1),
             // Removing calories since that should be changed from a user family.
             UsersWorkedNutrients = NutrientHelpers.All.Where(n => n != Nutrients.Calories).ToList(),
         });

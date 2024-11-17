@@ -18,7 +18,7 @@ public class PastFeastsViewComponent : ViewComponent
     /// </summary>
     public const string Name = "PastFeasts";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         var count = int.TryParse(Request.Query["count"], out int countTmp) ? countTmp : (int?)null;
         var pastFeasts = await _userRepo.GetPastFeasts(user, count);
@@ -30,8 +30,8 @@ public class PastFeastsViewComponent : ViewComponent
         return View("PastFeasts", new PastFeastsViewModel()
         {
             User = user,
+            Token = token,
             PastFeasts = pastFeasts,
-            Token = await _userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 }
