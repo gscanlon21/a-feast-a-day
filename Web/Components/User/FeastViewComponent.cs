@@ -4,10 +4,17 @@ using Web.Views.Shared.Components.CurrentFeast;
 
 namespace Web.Components.User;
 
-public class CurrentFeastViewComponent(UserRepo userRepo) : ViewComponent
+public class CurrentFeastViewComponent : ViewComponent
 {
+    private readonly UserRepo _userRepo;
+
+    public CurrentFeastViewComponent(UserRepo userRepo)
+    {
+        _userRepo = userRepo;
+    }
+
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "CurrentFeast";
 
@@ -22,7 +29,7 @@ public class CurrentFeastViewComponent(UserRepo userRepo) : ViewComponent
         return View("CurrentFeast", new CurrentFeastViewModel()
         {
             User = user,
-            Token = await userRepo.AddUserToken(user, durationDays: 1),
+            Token = await _userRepo.AddUserToken(user, durationDays: 1),
         });
     }
 }
