@@ -47,19 +47,19 @@ public static class Filters
     /// </summary>
     public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, Nutrients? nutrients, bool include) where T : IRecipeCombo
     {
-        if (nutrients.HasValue && nutrients != Nutrients.None)
+        if (!nutrients.HasValue || nutrients == Nutrients.None || nutrients == Nutrients.All)
         {
-            if (include)
-            {
-                query = query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients))));
-            }
-            else
-            {
-                query = query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients))));
-            }
+            return query;
         }
 
-        return query;
+        if (include)
+        {
+            return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients))));
+        }
+        else
+        {
+            return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients))));
+        }
     }
 
     /// <summary>

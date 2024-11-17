@@ -637,7 +637,7 @@ public static class NutrientHelpers
         Nutrients.Betaine, Nutrients.Histidine, Nutrients.Isoleucine, Nutrients.Leucine,
         Nutrients.Lysine, Nutrients.Phenylalanine, Nutrients.Methionine, Nutrients.Threonine,
         Nutrients.Tryptophan, Nutrients.Valine, Nutrients.Arginine, Nutrients.Glycine,
-        Nutrients.Iron, Nutrients.Calories, Nutrients.Fats, Nutrients.Sodium,
+        Nutrients.Iron, Nutrients.Calories, Nutrients.Fats, Nutrients.Sodium, Nutrients.DietaryCholesterol,
         Nutrients.Sugar, Nutrients.MonounsaturatedFats, Nutrients.Omega3, Nutrients.Omega6,
         Nutrients.PolyunsaturatedFats, Nutrients.UnsaturatedFats, Nutrients.SaturatedFats, Nutrients.TransFats,
     ];

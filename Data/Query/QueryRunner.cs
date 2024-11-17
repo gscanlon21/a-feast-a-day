@@ -57,12 +57,14 @@ public class QueryRunner(Section section)
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
-        return context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateFilteredRecipesQuery))
+        // AsSplitQuery is marginally slower, but there are no significant outliers as seen with AsSingleQuery.
+        return context.Recipes.AsSplitQuery().IgnoreQueryFilters()
+            .TagWith(nameof(CreateFilteredRecipesQuery))
             .Include(r => r.Instructions)
             .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
                 .ThenInclude(ri => ri.Ingredient)
                     .ThenInclude(i => i.UserIngredients.Where(ui => ui.UserId == UserOptions.Id))
-            .Where(ev => ev.DisabledReason == null)
+            .Where(r => r.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
             .Where(r => UserOptions.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= UserOptions.MaxIngredients)
@@ -102,7 +104,7 @@ public class QueryRunner(Section section)
         filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
         filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Select(r => r.Key).ToList());
-        filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (curr2, n2) => curr2 | n2), include: true);
+        filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n), include: true);
 
         var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();
 

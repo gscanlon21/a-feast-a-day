@@ -16,7 +16,7 @@ public class Nutrient
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    public int? IngredientId { get; init; }
+    public int IngredientId { get; init; }
 
     /// <summary>
     /// If it has atleast 10% RDA per serving.
@@ -40,7 +40,6 @@ public class Nutrient
     public virtual Ingredient.Ingredient? Ingredient { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is Nutrient other
         && other.Id == Id;
 

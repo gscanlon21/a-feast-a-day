@@ -183,11 +183,9 @@ public class UserRepo
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await _context.UserFeasts
-            .AsNoTracking().TagWithCallSite()
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.UserFeastRecipeIngredients)
-                    .ThenInclude(r => r.Ingredient)
-                        .ThenInclude(r => r.Nutrients)
+                    .ThenInclude(ufri => ufri.Ingredient)
             .Where(n => n.UserId == user.Id)
             // Include this week's data or filter out this week's data.
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
@@ -201,7 +199,7 @@ public class UserRepo
                 // For the demo/test accounts. Multiple newsletters may be sent in one day,
                 // ... so order by the most recently created and select the first.
                 g.OrderByDescending(n => n.Id).First().UserFeastRecipes
-            }).ToListAsync();
+            }).AsNoTracking().TagWithCallSite().ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)
@@ -212,16 +210,18 @@ public class UserRepo
             // User must have more than one week of data before we return anything.
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
-                var monthlyMuscles = weeklyFeasts
+                var allIngredients = weeklyFeasts.SelectMany(f => f.UserFeastRecipes.SelectMany(r => r.UserFeastRecipeIngredients).Select(i => i.IngredientId)).ToList();
+                var allNutrients = await _context.Nutrients.Where(n => allIngredients.Contains(n.IngredientId)).ToListAsync();
+                var nutrientsWorked = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            .SelectMany(ufri => ufri.GetNutrients())
+                            .SelectMany(ufri => ufri.GetNutrients(allNutrients))
                         )
                     ).ToList();
 
                 return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(m => m, m =>
                 {
-                    return (double?)monthlyMuscles.Sum(mm => m.HasFlag(mm.Key) ? mm.Value : 0) / actualWeeks;
+                    return (double?)nutrientsWorked.Sum(mm => m.HasFlag(mm.Key) ? mm.Value : 0) / actualWeeks;
                 }));
             }
         }
