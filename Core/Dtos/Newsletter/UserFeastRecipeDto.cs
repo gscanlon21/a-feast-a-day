@@ -1,5 +1,4 @@
-﻿using Core.Dtos.Recipe;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 
 namespace Core.Dtos.Newsletter;
 
@@ -8,15 +7,6 @@ namespace Core.Dtos.Newsletter;
 /// </summary>
 public class UserFeastRecipeDto
 {
-    public UserFeastRecipeDto() { }
-
-    public UserFeastRecipeDto(UserFeastDto newsletter, RecipeDto userRecipe, int scale)
-    {
-        UserFeastId = newsletter.Id;
-        RecipeId = userRecipe.Id;
-        Scale = scale;
-    }
-
     public int Id { get; init; }
 
     public int Scale { get; init; }

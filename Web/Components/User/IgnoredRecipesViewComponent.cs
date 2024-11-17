@@ -44,6 +44,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
             .Select(r => r.Recipe)
             .ToListAsync();
 
+        // FIXME: This may be slow if the user has a lot of ignored recipes.
         var ignoredRecipes = await new QueryBuilder()
             // Include disabled recipes.
             .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)

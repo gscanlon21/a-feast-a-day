@@ -2,6 +2,7 @@
 using Core.Models.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.CodeAnalysis;
 using Web.Views.Shared.Components.Nutrient;
 
 namespace Web.Components.User;
@@ -23,6 +24,7 @@ public class NutrientViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Nutrient";
 
+    [SuppressMessage("Style", "IDE0075:Simplify conditional expression", Justification = "Easier to read as is.")]
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user)
     {
         if (user == null)

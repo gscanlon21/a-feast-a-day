@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
 namespace Core.Dtos.User;
@@ -7,7 +6,6 @@ namespace Core.Dtos.User;
 /// <summary>
 /// User's progression level of an exercise.
 /// </summary>
-[Table("user_recipe")]
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipeDto
 {
@@ -39,7 +37,6 @@ public class UserRecipeDto
     public DateOnly LastSeen { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
-
     public override bool Equals(object? obj) => obj is UserRecipeDto other
         && other.RecipeId == RecipeId
         && other.UserId == UserId;

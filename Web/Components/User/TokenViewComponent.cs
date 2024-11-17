@@ -4,10 +4,20 @@ using Web.Views.Shared.Components.Token;
 
 namespace Web.Components.User;
 
-public class TokenViewComponent(UserRepo userRepo) : ViewComponent
+/// <summary>
+/// Lets the user generate an app access token.
+/// </summary>
+public class TokenViewComponent : ViewComponent
 {
+    private readonly UserRepo _userRepo;
+
+    public TokenViewComponent(UserRepo userRepo)
+    {
+        _userRepo = userRepo;
+    }
+
     /// <summary>
-    /// For routing
+    /// For routing.
     /// </summary>
     public const string Name = "Token";
 
@@ -16,7 +26,7 @@ public class TokenViewComponent(UserRepo userRepo) : ViewComponent
         return View("Token", new TokenViewModel()
         {
             User = user,
-            Token = await userRepo.AddUserToken(user, 2)
+            Token = await _userRepo.AddUserToken(user, 1)
         });
     }
 }

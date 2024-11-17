@@ -1,10 +1,10 @@
-﻿using Data.Entities.Newsletter;
+﻿using Data.Models.Newsletter;
 
 namespace Web.Views.Shared.Components.PastFeasts;
 
 public class PastFeastsViewModel
 {
-    public IList<UserFeast> PastFeasts { get; init; } = null!;
+    public IList<PastFeast> PastFeasts { get; init; } = null!;
 
     public Data.Entities.User.User User { get; init; } = null!;
 

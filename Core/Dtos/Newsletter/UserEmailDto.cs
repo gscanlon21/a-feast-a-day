@@ -10,7 +10,7 @@ namespace Core.Dtos.Newsletter;
 /// </summary>
 public class UserEmailDto
 {
-    [Obsolete("Public parameterless constructor required for EF Core .AsSplitQuery()", error: true)]
+    [Obsolete("Public parameterless constructor required for EF Core.", error: true)]
     public UserEmailDto() { }
 
     public UserEmailDto(User.UserDto user)

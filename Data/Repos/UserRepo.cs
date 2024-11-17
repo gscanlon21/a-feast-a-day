@@ -4,6 +4,7 @@ using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
+using Data.Models.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
@@ -127,25 +128,18 @@ public class UserRepo
     /// <summary>
     /// Get the last 7 days of feasts for the user. Excludes the current feast.
     /// </summary>
-    public async Task<IList<UserFeast>> GetPastFeasts(User user, int? count = null)
+    public async Task<IList<PastFeast>> GetPastFeasts(User user, int? count = null)
     {
-        return (await _context.UserFeasts.AsNoTracking()
+        return await _context.UserFeasts
             .Where(uw => uw.UserId == user.Id)
             .Where(n => n.Date < user.StartOfWeekOffset)
-            // Group by the week so there's only one feast returned per week.
+            // Select the most recent feast per send week.
             .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
-            .Select(g => new
-            {
-                g.Key,
-                // For the demo/test accounts. Multiple newsletters may be sent in one day,
-                // ... so order by the most recently created and select the first.
-                Feast = g.OrderByDescending(n => n.Id).First()
-            })
-            .OrderByDescending(n => n.Key)
-            .Take(count ?? 7)
-            .ToListAsync())
-            .Select(n => n.Feast)
-            .ToList();
+            .OrderByDescending(n => n.Key) /// Order after grouping.
+            // Can't be passed through the constructor or it's slow.
+            .Select(g => new PastFeast() { Date = g.OrderByDescending(n => n.Id).First().Date })
+            .Take(count ?? 7).IgnoreQueryFilters().AsNoTracking()
+            .ToListAsync();
     }
 
     /// <summary>

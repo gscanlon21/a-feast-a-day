@@ -8,11 +8,6 @@ namespace Core.Dtos.Newsletter;
 
 public class NewsletterDto
 {
-    /// <summary>
-    /// The number of footnotes to show in the newsletter
-    /// </summary>
-    public readonly int FootnoteCount = 2;
-
     public DateOnly Today { get; init; } = DateHelpers.Today;
 
     public required UserNewsletterDto User { get; init; }

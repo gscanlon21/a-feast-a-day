@@ -1,8 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿namespace Core.Dtos.User;
 
-namespace Core.Dtos.User;
-
-[Table("user_ingredient")]
 public class UserIngredientDto
 {
     public int UserId { get; init; }
