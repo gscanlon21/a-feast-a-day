@@ -60,6 +60,22 @@ public partial class NewsletterController : ControllerBase
     }
 
     /// <summary>
+    /// Get the user's past newsletters.
+    /// </summary>
+    [HttpGet("Newsletters")]
+    public async Task<IActionResult> GetNewsletters(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
+    {
+        var user = await _userRepo.GetUser(email, token);
+        if (user == null)
+        {
+            return StatusCode(StatusCodes.Status204NoContent);
+        }
+
+        var feasts = await _userRepo.GetPastFeasts(user);
+        return StatusCode(StatusCodes.Status200OK, feasts);
+    }
+
+    /// <summary>
     /// Root route for building out the weekly feast newsletter.
     /// </summary>
     [HttpGet("Backfill")]

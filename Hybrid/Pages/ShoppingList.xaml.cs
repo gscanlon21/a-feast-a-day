@@ -96,7 +96,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
             try
             {
                 var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), 0);
-                var shoppingList = (await _userService.GetShoppingList(_preferences.Email.Value, _preferences.Token.Value)).Result;
+                var shoppingList = (await _userService.GetShoppingList(_preferences.Email.Value, _preferences.Token.Value)).GetValueOrDefault();
                 if (shoppingList != null)
                 {
                     // If the week has changed, reset the shopping list.

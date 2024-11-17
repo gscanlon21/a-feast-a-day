@@ -11,15 +11,24 @@ namespace Api.Controllers;
 /// </summary>
 [ApiController]
 [Route("[controller]")]
-public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScopeFactory) : ControllerBase
+public class UserController : ControllerBase
 {
+    private readonly UserRepo _userRepo;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+
+    public UserController(UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    {
+        _userRepo = userRepo;
+        _serviceScopeFactory = serviceScopeFactory;
+    }
+
     /// <summary>
     /// Get the user.
     /// </summary>
     [HttpGet("User")]
     public async Task<IActionResult> GetUser(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return StatusCode(StatusCodes.Status204NoContent);
@@ -29,34 +38,18 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     }
 
     /// <summary>
-    /// Get the user's past feasts.
-    /// </summary>
-    [HttpGet("Feasts")]
-    public async Task<IActionResult> GetFeasts(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
-    {
-        var user = await userRepo.GetUser(email, token);
-        if (user == null)
-        {
-            return StatusCode(StatusCodes.Status204NoContent);
-        }
-
-        var feasts = await userRepo.GetPastFeasts(user);
-        return StatusCode(StatusCodes.Status200OK, feasts);
-    }
-
-    /// <summary>
     /// Get the user's current shopping list.
     /// </summary>
     [HttpGet("ShoppingList")]
     public async Task<IActionResult> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null)
         {
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        var currentFeast = await userRepo.GetCurrentFeast(user);
+        var currentFeast = await _userRepo.GetCurrentFeast(user);
         if (currentFeast == null) { return StatusCode(StatusCodes.Status204NoContent); }
 
         var recipes = await new QueryBuilder(Section.None)
@@ -66,7 +59,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
                 options.AddPastRecipes(currentFeast.UserFeastRecipes);
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
 
         var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast, recipes);
         return StatusCode(StatusCodes.Status200OK, shoppingList);
@@ -78,7 +71,7 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     [HttpPost("LogException")]
     public async Task LogException([FromForm] string? email, [FromForm] string? token, [FromForm] string? message)
     {
-        var user = await userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token);
         if (user == null || string.IsNullOrWhiteSpace(message))
         {
             return;
@@ -93,13 +86,13 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     [HttpGet("Allergens")]
     public async Task<IActionResult> GetAllergens(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int weeks = 1, bool includeToday = false)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        var weeklyAllergens = await userRepo.GetWeeklyAllergens(user, weeks: weeks, includeToday: includeToday);
+        var weeklyAllergens = await _userRepo.GetWeeklyAllergens(user, weeks: weeks, includeToday: includeToday);
         if (weeklyAllergens.weeks <= 0) { return StatusCode(StatusCodes.Status204NoContent); }
 
         return StatusCode(StatusCodes.Status200OK, weeklyAllergens.volume);
@@ -111,13 +104,13 @@ public class UserController(UserRepo userRepo, IServiceScopeFactory serviceScope
     [HttpGet("Nutrients")]
     public async Task<IActionResult> GetNutrients(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int weeks = 1, bool rawValues = true, bool tul = false, bool includeToday = true)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        var weeklyNutrients = await userRepo.GetWeeklyNutrientVolume(user, weeks: weeks, rawValues: rawValues, tul: tul, includeToday: includeToday);
+        var weeklyNutrients = await _userRepo.GetWeeklyNutrientVolume(user, weeks: weeks, rawValues: rawValues, tul: tul, includeToday: includeToday);
         if (weeklyNutrients.weeks <= 0) { return StatusCode(StatusCodes.Status204NoContent); }
 
         return StatusCode(StatusCodes.Status200OK, weeklyNutrients.volume);

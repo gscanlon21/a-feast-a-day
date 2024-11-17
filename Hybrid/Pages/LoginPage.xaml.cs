@@ -42,7 +42,7 @@ public partial class LoginPage : ContentPage
         if (Application.Current != null && !string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Token))
         {
             var user = await _userService.GetUser(Email, Token);
-            if (user != null)
+            if (user.IsSuccessStatusCode && user.HasValue)
             {
                 Preferences.Default.Set(nameof(PreferenceKeys.Email), Email);
                 Preferences.Default.Set(nameof(PreferenceKeys.Token), Token);

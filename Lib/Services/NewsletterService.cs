@@ -50,6 +50,12 @@ public class NewsletterService
         return await ApiResult<NewsletterDto>.FromResponse(response);
     }
 
+    public async Task<ApiResult<IList<UserFeastDto>>> GetNewsletters(string email, string token)
+    {
+        var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Newsletters?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");
+        return await ApiResult<IList<UserFeastDto>>.FromResponse(response);
+    }
+
     public async Task<ApiResult<EmptyDto>> Backfill(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
         var response = await _httpClient.GetAsync($"{_siteSettings.Value.ApiUri.AbsolutePath}/newsletter/Backfill?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}");

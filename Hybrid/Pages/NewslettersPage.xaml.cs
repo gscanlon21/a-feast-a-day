@@ -21,7 +21,7 @@ public partial class NewslettersPage : ContentPage
 
 public partial class NewslettersPageViewModel : ObservableObject
 {
-    private readonly UserService _userService;
+    private readonly NewsletterService _newsletterService;
     private readonly UserPreferences _preferences;
 
     public INavigation Navigation { get; set; } = null!;
@@ -30,12 +30,12 @@ public partial class NewslettersPageViewModel : ObservableObject
 
     public IAsyncRelayCommand LoadCommand { get; }
 
-    public NewslettersPageViewModel(UserService userService, UserPreferences preferences)
+    public NewslettersPageViewModel(NewsletterService newsletterService, UserPreferences preferences)
     {
-        _userService = userService;
+        _newsletterService = newsletterService;
         _preferences = preferences;
 
-        LoadCommand = new AsyncRelayCommand(LoadRecipesAsync);
+        LoadCommand = new AsyncRelayCommand(LoadNewslettersAsync);
         NewsletterCommand = new Command<UserFeastDto>(async (UserFeastDto arg) =>
         {
             await Navigation.PushAsync(new NewsletterPage(arg.Date));
@@ -46,12 +46,12 @@ public partial class NewslettersPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableCollection<UserFeastDto>? _recipes = null;
+    public ObservableCollection<UserFeastDto>? _newsletters = null;
 
-    private async Task LoadRecipesAsync()
+    private async Task LoadNewslettersAsync()
     {
-        var pastFeasts = await _userService.GetFeasts(_preferences.Email.Value, _preferences.Token.Value);
-        Recipes = new ObservableCollection<UserFeastDto>(pastFeasts.Result ?? []);
+        var newsletters = await _newsletterService.GetNewsletters(_preferences.Email.Value, _preferences.Token.Value);
+        Newsletters = new ObservableCollection<UserFeastDto>(newsletters.GetValueOrDefault([]));
 
         Loading = false;
     }
