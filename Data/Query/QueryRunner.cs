@@ -96,6 +96,12 @@ public class QueryRunner(Section section)
     /// </summary>
     public async Task<IList<QueryResults>> Query(IServiceScopeFactory factory, int take = int.MaxValue)
     {
+        // Short-circut when this is set without any data. No results are returned.
+        if (RecipeOptions.RecipeIds?.Any() == false)
+        {
+            return [];
+        }
+
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
 

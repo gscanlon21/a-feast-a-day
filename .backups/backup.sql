@@ -2549,17 +2549,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 5273	22	2047	\N	\N	3	80	f
 5349	23	2047	\N	\N	3	130	f
 7021	117	2047	\N	\N	3	140	f
-7347	89	128	\N	\N	3	6.1	f
-7348	89	256	\N	\N	3	40.4	f
-7349	89	34359738368	\N	\N	2	405.9	f
-7350	89	2	\N	\N	3	3.9	f
-7351	89	1	\N	\N	3	9.1	f
-7352	89	1536	\N	\N	3	61.8	f
-7353	89	48	\N	\N	3	9.5	f
-7354	89	1792	\N	\N	3	21.4	f
-7355	89	1984	\N	\N	3	71.3	f
-7356	89	62	\N	\N	3	13.7	f
-7357	89	2047	\N	\N	3	684.1	f
 7494	305	2047	\N	\N	3	5	f
 7796	364	1984	\N	\N	3	4	f
 7797	364	62	\N	\N	3	34	f
@@ -4456,6 +4445,63 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9991	116	3221225472	\N	\N	1	0.3	f
 9992	116	229376	\N	\N	1	2	f
 9993	846	2047	\N	\N	3	30	f
+9994	194	128	\N	\N	3	0.1	f
+9995	194	68719476736	\N	\N	2	29	f
+9996	194	34359738368	\N	\N	2	26	f
+9997	194	2	\N	\N	3	0.1	f
+9998	194	1	\N	\N	3	1	f
+9999	194	4294967296	\N	\N	2	1	f
+10000	194	2199023255552	\N	\N	2	0.1	f
+10001	194	48	\N	\N	3	0.4	f
+10002	194	14	\N	\N	3	7	f
+10003	194	1984	\N	\N	3	0.3	f
+10004	194	62	\N	\N	3	7	f
+10005	194	2047	\N	\N	3	35	f
+7347	89	128	\N	\N	3	6	f
+7348	89	256	\N	\N	3	40	f
+7349	89	34359738368	\N	\N	2	406	f
+7350	89	2	\N	\N	3	4	f
+7351	89	1	\N	\N	3	9	f
+7352	89	1536	\N	\N	3	21	f
+7353	89	48	\N	\N	3	10	f
+7354	89	1792	\N	\N	3	61	f
+7355	89	1984	\N	\N	3	71	f
+7356	89	62	\N	\N	3	14	f
+7357	89	2047	\N	\N	3	684	f
+10006	89	2251799813685248	\N	\N	2	40	f
+10007	89	9007199254740992	\N	\N	3	0.3	f
+10008	89	18014398509481984	\N	\N	3	0.3	f
+10009	89	36028797018963968	\N	\N	3	1	f
+10010	89	72057594037927936	\N	\N	3	0.3	f
+10011	89	144115188075855872	\N	\N	3	0.2	f
+10012	89	288230376151711744	\N	\N	3	0.4	f
+10013	89	576460752303423488	\N	\N	3	0.3	f
+10014	89	1152921504606846976	\N	\N	3	0.1	f
+10015	89	2305843009213693952	\N	\N	3	0.4	f
+10016	89	-9223372036854775808	\N	\N	3	0.4	f
+10017	89	4611686018427387904	\N	\N	3	1	f
+10018	89	8	\N	\N	3	0.5	f
+10019	89	4294967296	\N	\N	2	69	f
+10020	89	274877906944	\N	\N	1	1	f
+10021	89	549755813888	\N	\N	1	10	f
+10022	89	2199023255552	\N	\N	2	3	f
+10023	89	17179869184	\N	\N	2	120	f
+10024	89	4398046511104	\N	\N	2	4	f
+10025	89	70368744177664	\N	\N	2	274	f
+10026	89	8796093022208	\N	\N	1	4	f
+10027	89	17592186044416	\N	\N	2	4	f
+10028	89	65536	\N	\N	1	29	f
+10029	89	262144	\N	\N	2	1	f
+10030	89	524288	\N	\N	2	0.1	f
+10031	89	1048576	\N	\N	2	1	f
+10032	89	2097152	\N	\N	2	1	f
+10033	89	4194304	\N	\N	2	0.2	f
+10034	89	16777216	\N	\N	1	22	f
+10035	89	67108864	\N	\N	2	1	f
+10036	89	536870912	\N	\N	2	1	f
+10037	89	3221225472	\N	\N	1	3	f
+10038	89	14	\N	\N	3	4	f
+10039	89	229376	\N	\N	1	3	f
 \.
 
 
@@ -5410,11 +5456,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3938	8	\N	\N	198	4	1	\N	75	f	\N	4
 2656	4	\N	\N	86	1	6	, chopped into small florets	6	f	\N	2
 2657	4	\N	\N	86	1	8	, chopped into bite-sized pieces	290	f	\N	3
+5347	0	\N	\N	326	1	1	, 14 oz	259	f	\N	0
 4950	6	\N	\N	184	2	7	\N	145	f	\N	0
 4951	6	\N	\N	184	1	1	\N	392	f	\N	1
 4952	6	\N	\N	184	4	1	, to garnish	14	f	\N	2
 4953	6	\N	\N	184	4	1	, to serve	95	t	\N	3
 4954	8	\N	\N	184	8	1	\N	285	f	\N	4
+5348	0	\N	\N	326	1	4	\N	144	f	\N	1
+5349	0	\N	\N	326	1	1	(FRESH RED CHILI | Fresh Yellow Chili)	224	f	\N	2
+5350	4	\N	\N	326	4	3	\N	88	f	\N	3
+5351	7	\N	\N	326	1	2	\N	100	f	\N	4
 3283	6	\N	\N	88	4	1	\N	62	f	\N	0
 3284	6	\N	\N	88	4	1	\N	312	f	\N	1
 3285	6	\N	\N	88	4	1	\N	313	f	\N	2
@@ -6828,6 +6879,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove. Put three-quarters of the seeds into a pestle and mortar with a pinch of sea salt, and pound until fairly fine. Peel and add the garlic, then smash to a paste. Squeeze in the lemon juice, then muddle in 1 tablespoon of extra virgin olive oil and a tiny drebble of red wine vinegar to make a delicious tahini-style dressing.	\N	263	0
 2636	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	263	1
 2928	Combine buttermilk and heavy cream in a non-reactive container. Cover and allow to rest at room temperature until thickened to desired texture, about 12 hours. Store in the refrigerator for up to 2 weeks.	\N	324	0
+2932	Put a 10-inch non-stick frying pan on a high heat and pour in 1 cup of water. Halve the eggplant lengthways, quickly slash the flesh of each half a few times and place skin-side up in the pan, then season with sea salt and black pepper. Cover and cook for 10 minutes, or until it boils dry and begins to sizzle (listen for the change in sound). Meanwhile, trim the scallions. Cut the whites into 1¼-inch lengths at an angle and put aside. Seed the chili and finely slice lengthways with the green part of the scallions. Place both in a bowl of ice-cold water and put aside to crisp up.	\N	326	0
+2933	When the eggplant starts to sizze, add 1 tablespoon of olive oil, the white scallions, and the peanuts to the pan, stirring regularly. After 2 minutes, add a splash of water, drizzle in the teriyaki, and reduce to a medium heat. Turn the eggplant, jiggle the pan and let it get sticky for a few minutes, then dish up, sprinkled with the drained green scallions and chili.	\N	326	1
 \.
 
 
@@ -6842,7 +6895,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 9993, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10059, true);
 
 
 --
