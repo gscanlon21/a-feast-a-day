@@ -36,8 +36,8 @@
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group row mb-3 mt-3">
-            <div class="col">
+        <div class="form-group row row-gap-2 my-3">
+            <div class="col-md">
                 <label asp-for="UserIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteIngredientId)</label>
                 <select asp-for="UserIngredient.SubstituteIngredientId" class="form-control searchable" aria-describedby="ingredient-help"
                         asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
@@ -46,7 +46,7 @@
                 <span id="ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserIngredient.SubstituteIngredientId)</span>
             </div>
 
-            <div class="col">
+            <div class="col-md">
                 <label asp-for="UserIngredient.SubstituteRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteRecipeId)</label>
                 <select asp-for="UserIngredient.SubstituteRecipeId" class="form-control searchable" aria-describedby="ingredient-recipe-help"
                         asp-items="@(Model.Recipes.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary allow-demo" />
+            <input type="submit" value="Save" class="btn btn-primary" />
         </div>
     </form>
 
