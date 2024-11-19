@@ -147,6 +147,7 @@ public class QueryRunner(Section section)
                         // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
                         if (recipeIngredient.IngredientRecipe != null)
                         {
+                            recipeIngredient.Ingredient = null;
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
                         }
