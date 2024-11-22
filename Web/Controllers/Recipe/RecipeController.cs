@@ -1,11 +1,8 @@
-﻿using Core.Consts;
-using Core.Dtos.Newsletter;
+﻿using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
-using Web.Code;
 using Web.Code.Attributes;
 using Web.Views.Recipe;
 
@@ -13,7 +10,7 @@ namespace Web.Controllers.Recipe;
 
 [Route("recipe", Order = 1)]
 [Route("recipes", Order = 2)]
-public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) : ViewController()
+public class RecipeController(IServiceScopeFactory serviceScopeFactory) : ViewController()
 {
     /// <summary>
     /// The name of the controller for routing purposes
@@ -35,7 +32,7 @@ public partial class RecipeController(IServiceScopeFactory serviceScopeFactory) 
         }
 
         viewModel.Recipes = (await queryBuilder.Build().Query(serviceScopeFactory))
-            .Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!)
+            .Select(r => r.AsType<NewsletterRecipeDto>()!)
             .ToList();
 
         if (viewModel.Equipment.HasValue)

@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Data.Entities.Newsletter;
+﻿using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query;
@@ -14,8 +13,8 @@ public partial class NewsletterRepo
     /// </summary>
     internal async Task<FeastContext> BuildFeastContext(User user, string token, DateOnly date)
     {
-        var (weeks, volumeRDA) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true);
-        var (_, volumeTUL) = await userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true, tul: true);
+        var (weeks, volumeRDA) = await _userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true);
+        var (_, volumeTUL) = await _userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true, tul: true);
         return new FeastContext()
         {
             Date = date,
@@ -33,15 +32,15 @@ public partial class NewsletterRepo
     internal async Task<UserFeast> CreateAndAddNewsletterToContext(FeastContext newsletterContext, IList<QueryResults>? recipes = null)
     {
         var newsletter = new UserFeast(newsletterContext.Date, newsletterContext);
-        context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
-        await context.SaveChangesAsync();
+        _context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
+        await _context.SaveChangesAsync();
 
         if (recipes != null)
         {
             for (var i = 0; i < recipes.Count; i++)
             {
                 var recipe = recipes[i];
-                context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, recipe, i)
+                _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, recipe, i)
                 {
                     UserFeastRecipeIngredients = recipe.RecipeIngredients
                         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
@@ -50,7 +49,7 @@ public partial class NewsletterRepo
             }
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         return newsletter;
     }
 
@@ -62,7 +61,7 @@ public partial class NewsletterRepo
     /// </param>
     internal async Task UpdateLastSeenDate(IEnumerable<QueryResults> recipes)
     {
-        using var scope = serviceScopeFactory.CreateScope();
+        using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
         foreach (var recipe in recipes.DistinctBy(e => e.UserRecipe))

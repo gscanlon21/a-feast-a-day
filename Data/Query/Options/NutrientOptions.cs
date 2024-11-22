@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.User;
+﻿using Core.Models.User;
 using System.ComponentModel.DataAnnotations;
 
 namespace Data.Query.Options;

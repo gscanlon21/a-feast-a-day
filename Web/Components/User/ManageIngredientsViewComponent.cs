@@ -1,11 +1,9 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
 using Data;
-using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Code;
 using Web.Views.Shared.Components.ManageIngredients;
 using Web.Views.User;
 
@@ -33,13 +31,13 @@ public class ManageIngredientsViewComponent(CoreContext context) : ViewComponent
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
             .Where(i => recipeIngredientIds.Contains(i.Id)).ToListAsync();
 
-        var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
+        var userNewsletter = user.AsType<UserNewsletterDto>()!;
         userNewsletter.Token = parameters.Token;
         return View("ManageIngredients", new ManageIngredientsViewModel()
         {
             User = userNewsletter,
             Parameters = parameters,
-            Ingredients = ingredients.Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList(),
+            Ingredients = ingredients.Select(i => i.AsType<IngredientDto>()!).ToList(),
         });
     }
 }

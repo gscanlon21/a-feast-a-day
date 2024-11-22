@@ -34,7 +34,7 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
     }
 
     internal async Task<IList<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
@@ -59,7 +59,7 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
     }
 
     internal async Task<IList<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
@@ -84,7 +84,7 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
     }
 
     internal async Task<IList<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
@@ -109,7 +109,7 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
     }
 
     internal async Task<IList<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
@@ -134,7 +134,7 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
     }
 
     internal async Task<IList<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
@@ -159,7 +159,7 @@ public partial class NewsletterRepo
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
     }
 
     private async Task<IList<QueryResults>> GetDebugRecipes(User user)
@@ -167,7 +167,7 @@ public partial class NewsletterRepo
         return await new QueryBuilder(Section.Debug)
             .WithUser(user)
             .Build()
-            .Query(serviceScopeFactory, take: 1);
+            .Query(_serviceScopeFactory, take: 1);
     }
 
     /// <summary>
@@ -175,7 +175,7 @@ public partial class NewsletterRepo
     /// </summary>
     private async Task<IList<Ingredient>> GetDebugIngredients()
     {
-        using var scope = serviceScopeFactory.CreateScope();
+        using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
         var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)

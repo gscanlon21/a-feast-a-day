@@ -1,5 +1,4 @@
-﻿using Core.Code;
-using Core.Dtos.Ingredient;
+﻿using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
@@ -8,7 +7,6 @@ using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.Footnote;
-using Data.Entities.Ingredient;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
@@ -17,16 +15,28 @@ using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Web.Code;
 
 namespace Data.Repos;
 
-public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+public partial class NewsletterRepo
 {
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+    private readonly ILogger<NewsletterRepo> _logger;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+
+    public NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    {
+        _logger = logger;
+        _context = context;
+        _userRepo = userRepo;
+        _serviceScopeFactory = serviceScopeFactory;
+    }
+
     public async Task<IList<Footnote>> GetFootnotes(string? email, string? token, int count = 1)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
-        var footnotes = await context.Footnotes
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
+        var footnotes = await _context.Footnotes
             // Apply the user's footnote type preferences. Has any flag.
             .Where(f => user == null || (f.Type & user.FootnoteType) != 0)
             .OrderBy(_ => EF.Functions.Random())
@@ -38,14 +48,14 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
 
     public async Task<IList<UserFootnote>> GetUserFootnotes(string? email, string? token, int count = 1)
     {
-        var user = await userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         ArgumentNullException.ThrowIfNull(user);
         if (!user.FootnoteType.HasFlag(FootnoteType.Custom))
         {
             return [];
         }
 
-        var footnotes = await context.UserFootnotes
+        var footnotes = await _context.UserFootnotes
             .Where(f => f.Type == FootnoteType.Custom)
             .Where(f => f.UserId == user.Id)
             // Keep the same footnotes over the course of a day.
@@ -61,13 +71,13 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             footnote.UserLastSeen = DateHelpers.Today;
         }
 
-        await context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
         return footnotes;
     }
 
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
-        var user = await userRepo.GetUserStrict(email, token, includeServings: true, includeFamilies: true, allowDemoUser: true);
+        var user = await _userRepo.GetUserStrict(email, token, includeServings: true, includeFamilies: true, allowDemoUser: true);
         return await Newsletter(user, token, date);
     }
 
@@ -80,11 +90,11 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         // Newsletters are weekly so shimmy the date over to the start of the week.
         date ??= user.StartOfWeekOffset;
 
-        logger.Log(LogLevel.Information, "User {Id}: Building feast for {date}", user.Id, date);
+        _logger.Log(LogLevel.Information, "User {Id}: Building feast for {date}", user.Id, date);
         Logs.AppendLog(user, $"{date}: Building feast with options Allergens={user.Allergens}");
 
         // Is the user requesting an old newsletter?
-        var oldNewsletter = await context.UserFeasts.AsNoTracking()
+        var oldNewsletter = await _context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date == date)
@@ -98,7 +108,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         if (oldNewsletter != null && !isDemoAndDateIsToday)
         {
             // An old newsletter was found.
-            logger.Log(LogLevel.Information, "Returning old feast for user {Id}", user.Id);
+            _logger.Log(LogLevel.Information, "Returning old feast for user {Id}", user.Id);
             Logs.AppendLog(user, $"{date}: Returning old feast");
             return await NewsletterOld(user, token, date.Value, oldNewsletter);
         }
@@ -106,7 +116,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         else if (date.Value.AddYears(1) < user.StartOfWeekOffset || date > user.StartOfWeekOffset)
         {
             // A newsletter was not found and the date is not one we want to render a new newsletter for.
-            logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
+            _logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
             Logs.AppendLog(user, $"{date}: Returning no feast");
             return null;
         }
@@ -115,12 +125,12 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         if (user.Features.HasFlag(Features.Debug))
         {
             // User is a debug user. They should see the DebugNewsletter instead.
-            logger.Log(LogLevel.Information, "Returning debug feast for user {Id}", user.Id);
+            _logger.Log(LogLevel.Information, "Returning debug feast for user {Id}", user.Id);
             Logs.AppendLog(user, $"{date}: Returning debug feast");
             return await Debug(newsletterContext);
         }
 
-        logger.Log(LogLevel.Information, "Returning on day feast for user {Id}", user.Id);
+        _logger.Log(LogLevel.Information, "Returning on day feast for user {Id}", user.Id);
         Logs.AppendLog(user, $"{date}: Returning on day feast");
         return await OnDayNewsletter(newsletterContext);
     }
@@ -133,7 +143,7 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         newsletterContext.User.Verbosity = Verbosity.Debug;
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
-        var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto, User>()!, newsletterContext.Token);
+        var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto>()!, newsletterContext.Token);
 
         var shoppingList = await GetShoppingList(newsletter, debugRecipes);
         var viewModel = new NewsletterDto
@@ -141,9 +151,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
             User = userViewModel,
             ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
-            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            Recipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList(),
+            UserFeast = newsletter.AsType<UserFeastDto>()!,
+            Recipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
+            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto>()!).ToList(),
         };
 
         await UpdateLastSeenDate(debugRecipes);
@@ -171,9 +181,9 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
         {
             ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
-            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
-            Recipes = allRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            User = new UserNewsletterDto(newsletterContext.User.AsType<UserDto, User>()!, newsletterContext.Token),
+            UserFeast = newsletter.AsType<UserFeastDto>()!,
+            Recipes = allRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
+            User = new UserNewsletterDto(newsletterContext.User.AsType<UserDto>()!, newsletterContext.Token),
         };
     }
 
@@ -193,28 +203,28 @@ public partial class NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext 
                     options.AddPastRecipes(newsletter.UserFeastRecipes);
                 })
                 .Build()
-                .Query(serviceScopeFactory))
+                .Query(_serviceScopeFactory))
                 // Re-order the recipes to match their original order.
                 // May be null when the user substitutes in a recipe for an ingredient after the first feast was sent.
                 .OrderBy(e => newsletter.UserFeastRecipes.FirstOrDefault(nv => nv.RecipeId == e.Recipe.Id)?.Order ?? -1));
         }
 
         var shoppingList = await GetShoppingList(newsletter, recipes);
-        var userViewModel = new UserNewsletterDto(user.AsType<UserDto, User>()!, token);
+        var userViewModel = new UserNewsletterDto(user.AsType<UserDto>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
-            Today = date,
+            Date = date,
             User = userViewModel,
             Verbosity = user.Verbosity,
             ShoppingList = shoppingList,
-            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
-            UserFeast = newsletter.AsType<UserFeastDto, UserFeast>()!,
+            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
+            UserFeast = newsletter.AsType<UserFeastDto>()!,
         };
 
         if (user.Features.HasFlag(Features.Debug))
         {
-            var ingredients = await context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == date).ToListAsync();
-            newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto, Ingredient>()!).ToList();
+            var ingredients = await _context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == date).ToListAsync();
+            newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto>()!).ToList();
         }
 
         return newsletterViewModel;

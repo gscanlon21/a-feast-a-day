@@ -56,7 +56,7 @@
 57	\N	Chickpeas	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
 58	\N	Baked Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	3
 59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	0	240	240	2024-08-13	6	240	0
-60	\N	Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	3
+60	\N	Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	32
 61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	28	14	2024-06-17	4	224	32
 62	\N	Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3618	\N	f	294944	32	16	2024-10-27	9	256	8192
 63	\N	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2024-07-04	7	100	0
@@ -346,7 +346,7 @@
 354	\N	Frozen Carrot Slices	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	0
 355	\N	Chickpea Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-chickpea-pasta,1880907	\N	f	0	28	56	2024-08-10	4	224	4
 356	\N	Tagliatelle Pasta	https://www.eatthismuch.com/food/nutrition/spaghetti,4914/	\N	f	32	28.35	28.35	-infinity	4	240	0
-357	\N	Dijon Mustard	https://www.eatthismuch.com/calories/dijon-mustard,5815	\N	t	0	240	15	2024-09-03	6	240	3
+357	\N	Dijon Mustard	https://www.eatthismuch.com/calories/dijon-mustard,5815	\N	t	0	240	15	2024-09-03	6	240	32
 358	\N	Lemon Juice	https://www.eatthismuch.com/calories/lemons,1432	\N	f	0	84	84	-infinity	0	100	0
 359	\N	Lime Juice	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	9	240	0
 360	\N	Kosher Salt & Black Pepper	https://www.eatthismuch.com/calories/kosher-salt-coarse,2018021	\N	t	0	4	1	2024-09-16	8	128	131072
@@ -424,7 +424,7 @@
 465	\N	Grape Juice	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	0
 466	\N	White Grape Juice	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	32
 467	\N	Pineapple	https://www.eatthismuch.com/calories/pineapple-1513	\N	f	0	905	165	2024-11-20	0	165	1
-468	\N	Wholegrain Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	3
+468	\N	Wholegrain Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	32
 469	\N	Clear Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	21	2024-06-17	9	336	32
 470	\N	Cloudy Honey	aka. Raw Honey. https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	21	21	2024-06-17	7	240	0
 471	\N	Whole Star Anise	https://www.eatthismuch.com/calories/star-anise,310340	\N	f	0	7	7	2024-09-11	0	112	4

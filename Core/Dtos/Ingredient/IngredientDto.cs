@@ -14,8 +14,6 @@ public class IngredientDto
 {
     public int Id { get; init; }
 
-    public int? UserId { get; init; }
-
     /// <summary>
     /// Friendly name.
     /// </summary>
@@ -51,11 +49,6 @@ public class IngredientDto
     /// </summary>
     [Display(Name = "Notes")]
     public string? Notes { get; set; } = null;
-
-    /// <summary>
-    /// When was this ingredient last checked, for debug user.
-    /// </summary>
-    public DateOnly LastUpdated { get; set; }
 
     /// <summary>
     /// These are the alternate ingredients.

@@ -1,11 +1,9 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
 using Data;
-using Data.Entities.Ingredient;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Code;
 using Web.Views.Shared.Components.IgnoredIngredients;
 
 namespace Web.Components.User;
@@ -33,7 +31,7 @@ public class IgnoredIngredientsViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
-        var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
+        var userNewsletter = user.AsType<UserNewsletterDto>()!;
         userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
 
         // FIXME: Slow when the user has lots of ingredients.
@@ -47,7 +45,7 @@ public class IgnoredIngredientsViewComponent : ViewComponent
         return View("IgnoredIngredients", new IgnoredIngredientsViewModel()
         {
             UserNewsletter = userNewsletter,
-            IgnoredIngredients = ignoredIngredients.Select(r => r.AsType<IngredientDto, Ingredient>()!).ToList(),
+            IgnoredIngredients = ignoredIngredients.Select(r => r.AsType<IngredientDto>()!).ToList(),
         });
     }
 }

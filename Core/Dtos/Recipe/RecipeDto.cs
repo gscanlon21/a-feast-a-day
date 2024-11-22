@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using System.ComponentModel.DataAnnotations;

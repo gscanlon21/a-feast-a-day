@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
@@ -9,8 +8,7 @@ namespace Api.Controllers;
 /// <summary>
 /// User helpers.
 /// </summary>
-[ApiController]
-[Route("[controller]")]
+[ApiController, Route("[controller]")]
 public class UserController : ControllerBase
 {
     private readonly UserRepo _userRepo;

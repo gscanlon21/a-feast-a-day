@@ -9,8 +9,6 @@ namespace Core.Dtos.Newsletter;
 [DebuggerDisplay("{Section,nq}: {Variation,nq}")]
 public class NewsletterRecipeDto
 {
-    public int Scale { get; set; } = 1;
-
     public Section Section { get; init; }
 
     [JsonInclude]

@@ -1,1 +1,2 @@
-﻿global using Core.Models;
+﻿global using Core.Consts;
+global using Core.Models;

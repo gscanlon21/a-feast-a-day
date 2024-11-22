@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

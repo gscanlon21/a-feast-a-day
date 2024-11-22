@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Data.Repos;
+﻿using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
 using Web.Views.Index;
@@ -8,7 +7,7 @@ namespace Web.Controllers.Newsletter;
 
 [Route("n", Order = 1)]
 [Route("newsletter", Order = 2)]
-public partial class NewsletterController(NewsletterRepo newsletterService) : ViewController()
+public class NewsletterController(NewsletterRepo newsletterService) : ViewController()
 {
     /// <summary>
     /// The name of the controller for routing purposes.

@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.Newsletter;
+﻿using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;

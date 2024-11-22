@@ -2,11 +2,9 @@
 using Core.Dtos.User;
 using Core.Models.User;
 using Data;
-using Data.Entities.Ingredient;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Code;
 using Web.Views.Shared.Components.Ingredients;
 
 namespace Web.Components.User;
@@ -34,7 +32,7 @@ public class IngredientsViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
-        var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
+        var userNewsletter = user.AsType<UserNewsletterDto>()!;
         userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
 
         // FIXME: Slow when the user has lots of ingredients.
@@ -50,7 +48,7 @@ public class IngredientsViewComponent : ViewComponent
         return View("Ingredients", new IngredientsViewModel()
         {
             UserNewsletter = userNewsletter,
-            Ingredients = userIngredients.Select(i => i.AsType<IngredientDto, Ingredient>()!).ToList(),
+            Ingredients = userIngredients.Select(i => i.AsType<IngredientDto>()!).ToList(),
         });
     }
 }

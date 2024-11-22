@@ -1,12 +1,10 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Data;
-using Data.Query;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Code;
 using Web.Views.Shared.Components.IgnoredRecipes;
 
 namespace Web.Components.User;
@@ -35,7 +33,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
-        var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
+        var userNewsletter = user.AsType<UserNewsletterDto>()!;
         userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
 
         var userRecipes = await _context.UserRecipes
@@ -58,7 +56,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
         return View("IgnoredRecipes", new IgnoredRecipesViewModel()
         {
             UserNewsletter = userNewsletter,
-            IgnoredRecipes = ignoredRecipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            IgnoredRecipes = ignoredRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
         });
     }
 }

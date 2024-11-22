@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.Recipe;
+﻿using Core.Models.Recipe;
 using Core.Models.User;
 using Data;
 using Data.Entities.Recipe;
@@ -7,7 +6,6 @@ using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Web.Code;
 using Web.Views.Shared.Components.UpsertRecipe;
 
 namespace Web.Components.User;
@@ -51,9 +49,9 @@ public class UpsertRecipeViewComponent(CoreContext context, UserRepo userRepo) :
         return View("UpsertRecipe", new UpsertRecipeViewModel()
         {
             User = user,
+            Recipe = recipe.AsType<UpsertRecipeModel>()!,
             RecipeSelect = await GetRecipeSelect(user),
             IngredientSelect = await GetIngredientSelect(user),
-            Recipe = recipe.AsType<UpsertRecipeModel, Recipe>()!,
             Token = await userRepo.AddUserToken(user, durationDays: 1),
         });
     }

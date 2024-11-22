@@ -1,5 +1,4 @@
-﻿using Core.Consts;
-using Core.Models.Ingredients;
+﻿using Core.Models.Ingredients;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Shared.Components.Advanced;

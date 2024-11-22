@@ -2,12 +2,10 @@
 using Core.Dtos.User;
 using Core.Models.User;
 using Data;
-using Data.Query;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Code;
 using Web.Views.Shared.Components.Recipes;
 
 namespace Web.Components.User;
@@ -16,8 +14,19 @@ namespace Web.Components.User;
 /// <summary>
 /// Renders a list of the user's custom recipes.
 /// </summary>
-public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory) : ViewComponent
+public class RecipesViewComponent : ViewComponent
 {
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+
+    public RecipesViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    {
+        _context = context;
+        _userRepo = userRepo;
+        _serviceScopeFactory = serviceScopeFactory;
+    }
+
     /// <summary>
     /// For routing.
     /// </summary>
@@ -26,10 +35,10 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         // Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
-        var userNewsletter = user.AsType<UserNewsletterDto, Data.Entities.User.User>()!;
-        userNewsletter.Token = await userRepo.AddUserToken(user, durationDays: 1);
+        var userNewsletter = user.AsType<UserNewsletterDto>()!;
+        userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
 
-        var userRecipes = await context.Recipes
+        var userRecipes = await _context.Recipes
             .Where(r => r.UserId == user.Id
                 // The user is an admin who is allowed to edit base recipes.
                 || (user.Features.HasFlag(Features.Admin) && r.UserId == null))
@@ -44,12 +53,12 @@ public class RecipesViewComponent(CoreContext context, UserRepo userRepo, IServi
                 x.IgnorePrerequisites = true;
             })
             .Build()
-            .Query(serviceScopeFactory);
+            .Query(_serviceScopeFactory);
 
         return View("Recipes", new RecipesViewModel()
         {
             UserNewsletter = userNewsletter,
-            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto, QueryResults>()!).ToList(),
+            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
         });
     }
 }
