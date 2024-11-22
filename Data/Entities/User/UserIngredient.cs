@@ -7,11 +7,7 @@ namespace Data.Entities.User;
 [Table("user_ingredient")]
 public class UserIngredient
 {
-    [ForeignKey(nameof(Entities.User.User.Id))]
     public int UserId { get; init; }
-
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredients))]
-    public virtual User User { get; private init; } = null!;
 
     public int IngredientId { get; set; }
 
@@ -21,7 +17,15 @@ public class UserIngredient
     [Display(Name = "or Substitute Recipe")]
     public int? SubstituteRecipeId { get; set; }
 
+    public string? Notes { get; set; }
+
     public bool Ignore { get; set; }
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredients))]
+    public virtual User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserIngredients))]
     public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
@@ -31,6 +35,9 @@ public class UserIngredient
 
     [JsonIgnore, InverseProperty(nameof(Recipe.Recipe.UserSubstituteRecipes))]
     public virtual Recipe.Recipe? SubstituteRecipe { get; private init; }
+
+    #endregion Navigation Properties
+
 
     public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
     public override bool Equals(object? obj) => obj is UserIngredient other

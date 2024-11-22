@@ -93,7 +93,7 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
         // ... makes it harder to choose recipes that are heavy in one or two nutrients.
         if (Context?.WeeklyNutrientsWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
         {
-            scale += scale * UserConsts.IncrementNutrientTargetBy / 100d;
+            scale *= UserConsts.NutrientTargetsScale;
         }
 
         if (Context?.WeeklyNutrientsRDA != null)

@@ -1,39 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace Core.Dtos.User;
 
 /// <summary>
-/// User's progression level of an exercise.
+/// User's preferences for a recipe.
 /// </summary>
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipeDto
 {
-    [Required]
-    public int UserId { get; init; }
-
-    [Required]
     public int RecipeId { get; init; }
 
-    /// <summary>
-    /// Don't show this exercise or any of it's variations to the user
-    /// </summary>
-    [Required]
-    public bool Ignore { get; set; }
+    public int UserId { get; init; }
 
     public int Scale { get; set; } = 1;
 
     public string? Notes { get; init; }
 
     /// <summary>
-    /// Multiplier for how often this exercise is choosen. Weights the LastSeen date.
+    /// When was this recipe last seen in the user's newsletter.
     /// </summary>
-    public bool Favorite { get; set; }
-
-    /// <summary>
-    /// When was this exercise last seen in the user's newsletter.
-    /// </summary>
-    [Required]
     public DateOnly LastSeen { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);

@@ -36,6 +36,12 @@
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+        <div class="form-group mb-3 mt-3">
+            <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.Notes)</label>
+            <input type="text" asp-for="UserIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserIngredient.Notes" />
+            <span asp-validation-for="UserIngredient.Notes" class="text-danger"></span>
+        </div>
+
         <div class="form-group row row-gap-2 my-3">
             <div class="col-md">
                 <label asp-for="UserIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteIngredientId)</label>

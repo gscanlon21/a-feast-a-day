@@ -135,6 +135,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        existingUserIngredient.Notes = viewModel.UserIngredient.Notes;
         existingUserIngredient.SubstituteRecipeId = viewModel.UserIngredient.SubstituteRecipeId;
         existingUserIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
         await _context.SaveChangesAsync();

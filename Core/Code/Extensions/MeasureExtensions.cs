@@ -85,6 +85,7 @@ public static class MeasureExtensions
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Teaspoons, Measure.Tablespoons) => 1d / 3,
             (Measure.Tablespoons, Measure.Milliliters) => 15,
+            (Measure.FluidOunces, Measure.Milliliters) => 30,
 
             _ => null
         };

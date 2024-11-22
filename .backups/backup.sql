@@ -401,7 +401,8 @@ CREATE TABLE public.user_ingredient (
     "IngredientId" integer NOT NULL,
     "SubstituteIngredientId" integer,
     "Ignore" boolean DEFAULT false NOT NULL,
-    "SubstituteRecipeId" integer
+    "SubstituteRecipeId" integer,
+    "Notes" text
 );
 
 
@@ -536,6 +537,7 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 20241109193136_SquashMigrations	9.0.0-preview.3.24172.4
 20241112191820_RenameAllergensCol	9.0.0-preview.3.24172.4
 20241117004315_RemoveNullabilityFromCol	9.0.0-preview.3.24172.4
+20241122184513_AddNotesToUserIngredient	9.0.0
 \.
 
 
@@ -1178,6 +1180,11 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 116	846
 848	224
 848	731
+98	849
+849	329
+849	328
+121	850
+850	121
 \.
 
 
@@ -2587,7 +2594,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8196	326	2199023255552	\N	\N	2	0.3	f
 8197	326	402653184	\N	\N	1	0.1	f
 8198	326	1984	\N	\N	3	1	f
-8335	351	2047	\N	\N	3	4	f
 8336	494	2047	\N	\N	3	49	f
 8384	500	2047	\N	\N	3	149	f
 8385	46	2047	\N	\N	3	140	f
@@ -4618,6 +4624,60 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10171	754	1984	\N	\N	3	2	f
 10172	754	62	\N	\N	3	4	f
 10173	754	2047	\N	\N	3	34	f
+10174	808	256	\N	\N	3	0.1	f
+10175	808	2251799813685248	\N	\N	2	8	f
+10176	808	274877906944	\N	\N	1	0.1	f
+10177	808	17179869184	\N	\N	2	8	f
+10178	808	4398046511104	\N	\N	2	0.2	f
+10179	808	70368744177664	\N	\N	2	17	f
+10180	808	8796093022208	\N	\N	1	0.2	f
+10181	808	17592186044416	\N	\N	2	0.1	f
+10182	808	65536	\N	\N	1	43	f
+10183	808	524288	\N	\N	2	0.1	f
+10184	808	1048576	\N	\N	2	1	f
+10185	808	2097152	\N	\N	2	0.2	f
+10186	808	4194304	\N	\N	2	0.1	f
+10187	808	16777216	\N	\N	1	11	f
+10188	808	67108864	\N	\N	2	4	f
+10189	808	536870912	\N	\N	2	1	f
+10190	808	1536	\N	\N	3	0.4	f
+10191	808	3221225472	\N	\N	1	25	f
+10192	808	1792	\N	\N	3	0.5	f
+10193	808	229376	\N	\N	1	3	f
+10194	98	128	\N	\N	3	1	f
+10195	98	68719476736	\N	\N	2	8	f
+10196	98	34359738368	\N	\N	2	509	f
+10197	98	1	\N	\N	3	14	f
+10198	98	4294967296	\N	\N	2	63	f
+10199	98	2199023255552	\N	\N	2	3	f
+10200	98	48	\N	\N	3	6	f
+10201	98	14	\N	\N	3	138	f
+10202	98	62	\N	\N	3	145	f
+10203	844	2047	\N	\N	3	676	f
+10204	803	2047	\N	\N	3	676	f
+10205	803	128	\N	\N	3	0.3	f
+10206	803	68719476736	\N	\N	2	12	f
+10207	803	34359738368	\N	\N	2	1300	f
+10208	803	2	\N	\N	3	4	f
+10209	803	1	\N	\N	3	47	f
+10210	803	4294967296	\N	\N	2	67	f
+10211	803	2199023255552	\N	\N	2	12	f
+10212	803	48	\N	\N	3	21	f
+10213	803	14	\N	\N	3	101	f
+10214	803	1984	\N	\N	3	2	f
+10215	803	62	\N	\N	3	122	f
+10216	844	128	\N	\N	3	0.3	f
+10217	844	68719476736	\N	\N	2	12	f
+10218	844	34359738368	\N	\N	2	1300	f
+10219	844	2	\N	\N	3	4	f
+10220	844	1	\N	\N	3	47	f
+10221	844	4294967296	\N	\N	2	67	f
+10222	844	2199023255552	\N	\N	2	12	f
+10223	844	48	\N	\N	3	21	f
+10224	844	14	\N	\N	3	101	f
+10225	844	1984	\N	\N	3	2	f
+10226	844	62	\N	\N	3	122	f
+10227	690	2047	\N	\N	3	64	f
 \.
 
 
@@ -4662,6 +4722,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1164	8	\N	\N	58	8	1	\N	70	t	\N	6
 4382	7	\N	\N	194	1	2	\N	344	f	\N	4
 4383	6	\N	\N	194	1	1	, grated	95	t	\N	5
+1378	6	\N	\N	62	2	1	, cooked	188	f	\N	0
+1379	6	\N	\N	62	1	1	, roasted	209	f	\N	1
+1380	6	\N	\N	62	4	1	\N	834	f	\N	2
 2723	6	\N	\N	146	1	3	( SFILATINI (THIN CIABATTA LOAF))	213	f	\N	0
 2724	6	\N	\N	146	1	1	(SUN_DRIED TOMATO PURéE (PASTE))	17	f	\N	1
 1762	4	\N	\N	104	1	10	\N	286	f	\N	0
@@ -4672,6 +4735,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2727	7	\N	\N	146	1	2	\N	77	f	\N	4
 2728	8	\N	\N	146	8	1	\N	67	t	\N	5
 1765	4	\N	\N	104	4	7	\N	379	f	\N	3
+1381	7	\N	\N	62	1	2	, chopped	13	t	\N	3
+1382	6	\N	\N	62	4	1	, diced	9	f	\N	4
+1383	7	\N	\N	62	1	2	\N	144	t	\N	5
+1384	7	\N	\N	62	1	2	\N	314	t	\N	6
 1655	5	\N	\N	99	1	1	\N	122	f	\N	0
 1656	5	\N	\N	99	1	1	, dried	356	f	\N	1
 1657	4	\N	\N	99	1	8	, cut into fingers	26	f	\N	2
@@ -4685,18 +4752,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3083	0	\N	\N	132	2	1	, juiced	4	f	\N	1
 3084	7	\N	\N	132	1	3	\N	549	f	\N	2
 3085	7	\N	\N	132	1	3	\N	500	f	\N	3
+5396	4	\N	\N	362	4	7	(FINELY SLICED BRESAOLA)	262	f	\N	0
+5397	0	\N	\N	362	1	4	\N	187	f	\N	1
+5398	0	\N	\N	362	1	2	(MIXED-COLOR ENDIVES)	1	f	\N	2
 3086	0	\N	\N	132	1	1	, crushed	5	f	\N	4
-1378	6	\N	\N	62	2	1	, cooked	188	f	\N	0
-1379	6	\N	\N	62	1	1	, roasted	209	f	\N	1
-1380	6	\N	\N	62	4	1	\N	207	f	\N	2
-1381	7	\N	\N	62	1	2	, chopped	13	t	\N	3
-1382	6	\N	\N	62	4	1	, diced	9	f	\N	4
-1383	7	\N	\N	62	1	2	\N	144	t	\N	5
-1384	7	\N	\N	62	1	2	\N	314	t	\N	6
 3087	7	\N	\N	132	1	1	, cut into wedges and separated into layers	222	f	\N	5
 3088	7	\N	\N	132	1	2	\N	13	f	\N	6
 3089	8	\N	\N	132	1	1	, to garnish	13	t	\N	7
 3090	8	\N	\N	132	8	1	\N	285	t	\N	8
+5399	0	\N	\N	362	1	1	\N	4	f	\N	3
+5400	4	\N	\N	362	3	1	\N	95	t	\N	4
 3211	0	\N	\N	162	1	12	\N	561	f	\N	0
 3212	6	\N	\N	162	4	1	\N	560	f	\N	1
 3213	6	\N	\N	162	1	2	\N	562	f	\N	2
@@ -4817,6 +4882,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5317	8	\N	\N	319	1	1	, chopped	13	t	\N	8
 5338	6	\N	\N	324	1	2	\N	171	f	\N	0
 5339	7	\N	\N	324	1	2	\N	\N	f	262	1
+2174	6	\N	\N	98	4	1	, minced, pickled	565	t	\N	2
+2175	0	\N	\N	98	1	1	, whole slices for garnish	565	t	\N	3
 4892	6	\N	\N	258	3	2	\N	266	f	\N	1
 1366	6	\N	\N	68	4	1	\N	134	f	\N	0
 1367	6	\N	\N	68	4	1	\N	87	f	\N	1
@@ -5221,8 +5288,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3527	0	\N	\N	181	1	4	\N	113	t	\N	5
 2172	0	\N	\N	98	1	12	\N	\N	f	65	0
 2173	6	\N	\N	98	2	1	\N	61	f	\N	1
-2174	6	\N	\N	98	4	1	, minced, pickled	351	t	\N	2
-2175	0	\N	\N	98	1	1	, whole slices for garnish	351	t	\N	3
 2176	8	\N	\N	98	1	2	\N	83	f	\N	4
 2177	8	\N	\N	98	1	2	\N	60	f	\N	5
 2178	8	\N	\N	98	2	1	, smoked	73	t	\N	6
@@ -5504,6 +5569,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5344	0	\N	\N	325	2	1	, diced	105	f	\N	4
 5345	6	\N	\N	325	4	1	(BLUEBERRIES)	669	f	\N	5
 5346	4	\N	\N	325	1	6	(WILD SALMON), cooked and flaked	267	f	\N	6
+5401	6	\N	\N	363	4	1	\N	77	f	\N	0
+5402	0	\N	\N	363	1	1	, juiced	346	f	\N	1
 2914	0	\N	\N	152	1	12	\N	19	f	\N	0
 2915	7	\N	\N	152	1	6	\N	278	f	\N	1
 2916	0	\N	\N	152	1	1	, juiced	4	f	\N	2
@@ -5641,6 +5708,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4632	6	\N	\N	267	1	1	, shredded	736	f	\N	8
 4633	6	\N	\N	267	1	5	\N	246	f	\N	9
 4634	8	\N	\N	267	1	1	\N	285	f	\N	10
+5403	0	\N	\N	363	1	3	, juiced	12	f	\N	2
+5404	8	\N	\N	363	1	1	, finely diced	565	t	\N	3
 3437	0	\N	\N	173	1	4	\N	305	f	\N	9
 3438	8	\N	\N	173	8	1	\N	285	f	\N	10
 5380	0	\N	\N	359	1	1	\N	11	f	\N	0
@@ -5649,6 +5718,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5383	7	\N	\N	359	1	1	\N	43	f	\N	3
 5384	6	\N	\N	359	4	3	(OR RASPBERRIES)	608	f	\N	4
 5385	6	\N	\N	359	1	1	\N	501	f	\N	5
+5405	6	\N	\N	363	4	1	, finely chopped	13	t	\N	4
+5406	8	\N	\N	363	8	1	\N	285	f	\N	5
 3607	0	\N	\N	177	1	4	, halved lengthways and seeded	597	f	\N	0
 3608	0	\N	\N	177	1	3	, finely chopped	5	f	\N	1
 3609	0	\N	\N	177	1	2	roots, finely chopped	13	f	\N	2
@@ -5914,10 +5985,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4375	8	\N	\N	239	1	1	, granules	5	f	\N	3
 4376	8	\N	\N	239	1	2	\N	80	f	\N	4
 4377	7	\N	\N	239	1	2	\N	676	f	\N	5
-4988	7	\N	\N	125	1	6	\N	77	f	\N	0
-4989	6	\N	\N	125	2	1	\N	461	f	\N	1
-4990	6	\N	\N	125	3	2	\N	95	f	\N	2
-4991	6	\N	\N	125	1	1	\N	14	f	\N	3
 4430	7	\N	\N	38	1	1	\N	77	f	\N	0
 4431	4	\N	\N	38	1	8	\N	54	f	\N	1
 4432	0	\N	\N	38	1	1	, sliced	8	f	\N	2
@@ -5925,9 +5992,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4434	8	\N	\N	38	8	1	\N	75	f	\N	4
 4435	6	\N	\N	38	4	1	\N	30	t	\N	5
 4436	8	\N	\N	38	2	1	(salt-free Southwest-style seasoning blend)	112	f	\N	6
-4992	6	\N	\N	125	4	1	\N	2	f	\N	4
-4993	0	\N	\N	125	1	2	, crushed 	5	f	\N	5
-4994	8	\N	\N	125	8	1	\N	285	t	\N	6
 4246	7	\N	\N	195	1	7	\N	77	f	\N	0
 4247	0	\N	\N	195	1	1	, seeded and thinly sliced	8	f	\N	1
 4248	0	\N	\N	195	1	1	, halved and thinly sliced	222	f	\N	2
@@ -5981,6 +6045,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4526	8	\N	\N	131	4	1	\N	143	f	\N	6
 4527	8	\N	\N	131	1	1	\N	503	f	\N	7
 4528	8	\N	\N	131	2	3	\N	285	f	\N	8
+4988	7	\N	\N	125	1	6	\N	77	f	\N	0
+4989	6	\N	\N	125	2	1	\N	461	f	\N	1
+4990	6	\N	\N	125	3	2	\N	95	f	\N	2
+4991	6	\N	\N	125	1	1	\N	14	f	\N	3
+4992	6	\N	\N	125	4	1	\N	2	f	\N	4
+4993	0	\N	\N	125	1	2	, crushed 	5	f	\N	5
+4994	8	\N	\N	125	8	1	\N	285	t	\N	6
 4554	6	\N	\N	91	2	1	\N	68	f	\N	0
 4555	7	\N	\N	91	1	2	\N	68	f	\N	1
 4556	7	\N	\N	91	1	3	\N	143	f	\N	2
@@ -6375,6 +6446,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1432	Meanwhile, melt butter in a large skillet over low heat. Add cabbage and season with salt and pepper. Cover and cook until the cabbage begins to brown, 5 to 7 minutes.	\N	24	1
 1433	Add cooked noodles; cook and stir until the noodles begin to brown, about 5 minutes.	\N	24	2
 1720	Store in an airtight container and refrigerate.	\N	114	2
+751	Arrange rice, veggies, edamame and avocado in a 4-cup sealable container or bowl. 	\N	62	0
+752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	\N	62	1
 1804	In a food processor, combine oranges and lime juices, honey, garlic and 2 of the 4 chipotle peppers.	\N	116	0
 1805	Process and slowly (and we mean slowly, like a slow drizzle) add oil to incorporate.	\N	116	1
 666	Grill sausages, covered, over medium heat until a thermometer reads 160°, 10-12 minutes, turning occasionally. Cut into 1/4-in. slices.	\N	63	0
@@ -6386,8 +6459,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1808	Put the chocolate pieces in a heatproof bowl and melt in the microwave on high power for 1-2 minutes. Stir, then set aside. If you do not have a microwave, put the chocolate in a heatproof bowl and place it over a pan on gently simmering water and leave until melted, stirring frequently to ensure all the pieces get melted.	\N	172	0
 1809	Pout the custard into a bowl and gently fold in the melted chocolate to make a rippled effect.	\N	172	1
 980	Brown the chicken thighs all over in a large non-stick casserole pan on a high heat with 2 tablespoons of olive oil, then remove to a plate.	\N	108	0
-751	Arrange rice, veggies, edamame and avocado in a 4-cup sealable container or bowl. 	\N	62	0
-752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	\N	62	1
 784	Cut the pork into 2.5cm/1in cubes. Cut the spring onions into 2.5cm/1in-long sticks.	\N	93	0
 785	Preheat the grill (broiler) to high. Oil the wire rack and spread out the pork cubes on it. Grill (broil) the pork until the juices drip, then dip the pieces in the barbecue sauce and put back on the grill. Grill until cooked through, repeating the dipping process twice more. Set aside and keep warm.	\N	93	1
 981	Tip in the mixed veg and soften for 5 minutes, then put the chicken back into the pan with 2 tablespoons of red wine vinegar and allow it to cook away. Scrunch in the tomatoes through clean hands, then pour in 1 can's worth of water. Bring to a boil, then leave to blip away on a low heat for 1 hour, or until the chicken is falling off the bone, stirring occasionally.	\N	108	1
@@ -6496,7 +6567,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2681	Toss the mixture quickly to mix all the flavours together and ensure the pasta is well coated with the oil. Serve immediately, sprinkled with the remaining Parmesan.	\N	101	3
 2903	Stir the Worcestershire sauce and chili jam  into the chicken pan and let the jam melt, then add the sugar snaps and noodles. Toss over the heat for 2 minutes, adding a splash of reserved noodle water to loosen, if needed. Taste and season to perfection with sea salt and black pepper, then dish up and sprinkle over the reserved crispy chicken skin.	\N	314	2
 2919	Place the ingredients in your slow cooker in order: dark chocolate chips, milk chocolate chips, peanuts, white chocolate chips, and peanut butter. Don't stir.	\N	322	0
-2735	Place all the ingredients in a food processor and process until smooth and well mixed.	\N	125	0
 2920	Place the lid on your slow cooker and set it to high for 1 hour.	\N	322	1
 1728	Cut the pork into thin shreds and put these on top of the refried beans. Top with the tomato slices. Drain the jalapeno strips and put them on top of the tomato slices. Add the cheese and sprinkle with coriander leaves.	\N	164	3
 1729	Turn the top halves of the bread or rolls over so that the cut sides are uppermost, and spread these with creme fraiche. Sandwich back together again and serve. 	\N	164	4
@@ -6733,7 +6803,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2687	Warm a medium skillet over medium-high heat. Add the olive oil and chicken and cook for about 7 minutes per side, or until the chicken is cooked through.	\N	186	2
 2688	Top the chicken with the cheese and give it a minute to melt.	\N	186	3
 2689	Toast the bun, then top with the mayonaise and the chicken.	\N	186	4
+2735	Place all the ingredients in a food processor and process until smooth and well mixed.	\N	125	0
 2801	Break up the chocolate and put into a bowl over a pan of barely simmering water. Leave undisturbed for 10 minutes, until the chocolate has melted, then add the water, syrup and butter and stir until smooth.	\N	310	0
+2972	Add all of the ingredients to a bowl and whisk together. 	\N	363	0
 1883	Cook the pasta in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of starchy cooking water. With 4 minutes to go, finely slice the pancetta and plate in a large non-stick frying pan on a medium heat with 1 tablespoon of olive oil. Once sizzling, crumble in the chestnuts and add a generous pinch of black pepper, then stir regularly until golden and crisp.	\N	183	0
 1884	Meanwhile, separate the eggs, putting the yolks into a bowl (save the whites for making meringues another day), then finely grate in the cheese and mix together. Tip the drained pasta into the chestnut pan, then remove from the heat and wait 2 minutes for the pan to cool slightly (if the pan's too hot, it'll scramble; get it right and it'll be smooth, silky and deliciously elegant). Loosen the egg mixture with a splash of the reserved cooking water, the pour over the pasta, tossing and stirring vigorously—the egg will gently cook in the residual heat. Season to perfection. Adjust the consistency with extra cooking water, if needed, and finish with a fine grating on cheese, if you like.	\N	183	1
 2567	Set the oven to 375F.	\N	271	0
@@ -7018,6 +7090,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	\N	360	1
 2968	Scrub the beets clean, reserving any nice leaves, then finely slice into matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Dress with ½ a tablespoon each of extra virgin olive oil and red wine vinegar, the horseradish, and crème fraîche, then season to perfection with sea salt and black pepper. Delicately toss with the watercress and any reserved beet leaves.	\N	361	0
 2969	Divide up the bresaola between your plates, followed by the beet salad, then drizzle with 1 teaspoon of extra virgin olive oil, and serve.	\N	361	1
+2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. As soon as it's set, use a rubber spatula to ease it away at the sides, and out onto a board. Repeat with the remaining egg. Cool, roll up, and finely slice.	\N	362	0
+2971	Trim and finely slice the endives. Dress with the lemon juice and ½ a tablespoon of extra virgin olive oil, then toss with the egg ribbons, taste, and season to perfection with sea salt and black pepper. Pile in the center of the bresaola, shave over the Parmesan, then finish with a little extra virgin olive oil.	\N	362	1
 \.
 
 
@@ -7032,7 +7106,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10173, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10227, true);
 
 
 --

@@ -2,10 +2,10 @@
 using Core.Models.User;
 using System.Diagnostics;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.ShoppingList;
 
 /// <summary>
-/// Exercises listed on the website
+/// Ingredients used in a feast.
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class ShoppingListItemDto
@@ -17,13 +17,13 @@ public class ShoppingListItemDto
     /// </summary>
     public string? Attributes { get; init; }
 
-    public int Quantity { get; set; } = 1;
+    public Category Category { get; init; }
 
-    public Category Category { get; set; }
+    public Measure Measure { get; init; }
 
-    public Measure Measure { get; set; }
+    public int Quantity { get; init; } = 1;
 
-    public bool Optional { get; set; }
+    public bool Optional { get; init; }
 
     public bool SkipShoppingList { get; init; }
 

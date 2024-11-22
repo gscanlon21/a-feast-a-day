@@ -76,6 +76,11 @@ public class UserConsts
     public const int NutrientTargetsTakeEffectAfterXWeeks = 1;
 
     /// <summary>
+    /// Add some padding to the upper-bounds of the nutrient targets.
+    /// </summary>
+    public const double NutrientTargetsScale = 1.05;
+
+    /// <summary>
     /// How many custom user_frequency records do we allow per user?
     /// </summary>
     public const int MaxUserFrequencies = 7;

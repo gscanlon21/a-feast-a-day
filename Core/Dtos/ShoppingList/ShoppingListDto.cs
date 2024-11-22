@@ -1,5 +1,4 @@
-﻿using Core.Dtos.User;
-
+﻿
 namespace Core.Dtos.ShoppingList;
 
 public class ShoppingListDto

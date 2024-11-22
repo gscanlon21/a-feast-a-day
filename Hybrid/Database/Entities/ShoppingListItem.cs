@@ -1,4 +1,4 @@
-﻿using Core.Dtos.User;
+﻿using Core.Dtos.ShoppingList;
 using Core.Models.User;
 using SQLite;
 using System.ComponentModel;
