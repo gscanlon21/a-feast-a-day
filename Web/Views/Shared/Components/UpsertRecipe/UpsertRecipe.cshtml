@@ -217,7 +217,7 @@
                 }
                 <div class="btn-group">
                     <button id="custom-ingredient-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                    <button id="custom-ingredient-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                    <button id="custom-ingredient-remove-button" type="button" class="btn btn-outline-secondary @(Model.Recipe.RecipeIngredients.Count(i => !i.Hide) == 1 ? "d-none" : "")">Remove</button>
                 </div>
             </div>
 
@@ -286,7 +286,7 @@
                 }
                 <div class="btn-group">
                     <button id="custom-instruction-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                    <button id="custom-instruction-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                    <button id="custom-instruction-remove-button" type="button" class="btn btn-outline-secondary @(Model.Recipe.Instructions.Count(i => !i.Hide) == 1 ? "d-none" : "")">Remove</button>
                 </div>
             </div>
 

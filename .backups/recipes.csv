@@ -149,7 +149,7 @@
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	2305843009616347136	chocolate-banana-smoothie.jpg	0
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	steak-pickled-walnut-sauce-alt.jpg	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	0	vanilla-cafe-latte.jpg	0
-170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4194308	\N	0
+170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4194308	broccoli-soy-sauce.jpg	0
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	0	lemon-posset.jpg	0
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	0	chocolate-banana-fool.jpg	0
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	1099540987908	burgers-relish.jpg	0
@@ -178,7 +178,7 @@
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	0	\N	0
 197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	0	\N	0
 198	5-Ingredient Guacamole	Serve with Tortilla Chips. https://asassyspoon.com/guacamole/#wprm-recipe-container-2857	\N	\N	0	0	10	1	t	2147485696	guacamole.jpg	6
-231	Pork with Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	4194308	\N	0
+231	Pork with Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	4194308	pork-apples.jpg	0
 232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
 233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	chocolate-mint-muffins.jpg	0
 234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	35	4	t	2097154	oven-baked-beet-chips.jpg	0
@@ -201,7 +201,7 @@
 251	Tahini-Lemon Dressing	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	\N	\N	0	0	5	1	t	0	\N	6
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	hummus-vegetables.jpg	0
 253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. - https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	\N	\N	16	120	10	5	t	17179885568	apricot-butter-bars.jpg	0
-254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	0	\N	6
+254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	144115188482703364	hummus.jpg	6
 255	Cashew Mayo	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	\N	\N	0	0	10	2	t	0	\N	6
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	-9223372034304638976	anti-aging-pesto.jpg	6
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice. - https://www.glutenfreepalate.com/gluten-free-risotto/	\N	\N	6	40	5	4	t	4194308	gluten-free-risotto.jpg	0
@@ -238,7 +238,7 @@
 320	Comforting Sausage Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	45	10	4	t	2097154	\N	0
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	2	2	t	1099536793600	\N	0
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version. https://www.glutenfreepalate.com/crockpot-christmas-crack/	\N	\N	32	60	5	4	t	1073742848	\N	0
-323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	4194308	\N	0
+323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	4194308	sausage-carbonara.jpg	0
 324	Crème Fraîche	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	\N	\N	0	0	5	1	t	0	\N	6
 325	Anti-Allergy Salad	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	\N	\N	8	10	5	2	t	0	\N	0
 326	Sticky Teriyaki Aubergine	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	teriyaki-aubergine.jpg	0
@@ -247,3 +247,7 @@
 361	Beef, Beets, & Horseradish	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	14	2	t	0	\N	0
 362	Egg Ribbon Salad	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
 363	Citrus-Lime Vinaigrette	https://downshiftology.com/recipes/citrus-lime-vinaigrette/#wprm-recipe-container-32469	\N	\N	0	0	5	4	t	0	citrus-dressing.jpg	9
+364	Crispy Garlicky Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	5	2	t	272630020	\N	0
+365	Potato & Artichoke Al Forno	From Jamie Oliver's 5 Ingredients	\N	\N	4	80	9	6	t	2097154	\N	0
+366	Company Pickle Chunks	Makes 7 pints. - Lolly Wehrli	\N	\N	0	0	0	1	t	0	\N	0
+367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	8	2	2	t	4194308	\N	0

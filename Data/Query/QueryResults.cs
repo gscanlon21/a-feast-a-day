@@ -73,20 +73,22 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
         && other.Recipe.Id == Recipe.Id;
 }
 
-public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient) : IRecipeIngredient
+public class RecipeIngredientQueryResults : IRecipeIngredient
 {
-    public int Id { get; init; } = recipeIngredient.Id;
-    public int Order { get; init; } = recipeIngredient.Order;
-    public Measure Measure { get; init; } = recipeIngredient.Measure;
-    public string? Attributes { get; init; } = recipeIngredient.Attributes;
-    public int QuantityNumerator { get; set; } = recipeIngredient.QuantityNumerator;
-    public int QuantityDenominator { get; init; } = recipeIngredient.QuantityDenominator;
-    internal int? RawIngredientRecipeId { get; init; } = recipeIngredient.IngredientRecipeId;
-
-    // We don't .Include these b/c we use these later in the query, so they can't be set in the constructor.
-    public required UserRecipe? UserIngredientRecipe { get; set; }
-    public required UserIngredient? UserIngredient { get; set; }
+    public required int Id { get; init; }
+    public required int Order { get; init; }
     public required bool Optional { get; init; }
+    public required Measure Measure { get; init; }
+    public required string? Attributes { get; init; }
+    public required int QuantityNumerator { get; set; }
+    public required int QuantityDenominator { get; init; }
+    public required int? RawIngredientRecipeId { get; init; }
+
+    public required UserRecipe? UserIngredientRecipe { get; set; }
+    public QueryResults? IngredientRecipe { get; internal set; }
+
+    public required UserIngredient? UserIngredient { get; set; }
+    public required Ingredient? Ingredient { get; set; }
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
     public int? IngredientRecipeId => UserIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;
@@ -94,8 +96,6 @@ public class RecipeIngredientQueryResults(RecipeIngredient recipeIngredient) : I
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
-    public QueryResults? IngredientRecipe { get; internal set; }
-    public Ingredient? Ingredient { get; internal set; } = recipeIngredient.Ingredient;
     internal double Size => ((Ingredient != null && Measure != Measure.None) ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
     internal RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
     {

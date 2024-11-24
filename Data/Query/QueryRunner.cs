@@ -57,13 +57,8 @@ public class QueryRunner(Section section)
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
-        // AsSplitQuery is marginally slower, but there are no significant outliers as seen with AsSingleQuery.
-        return context.Recipes.AsSplitQuery().IgnoreQueryFilters()
-            .TagWith(nameof(CreateFilteredRecipesQuery))
+        return context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateFilteredRecipesQuery))
             .Include(r => r.Instructions)
-            .Include(r => r.RecipeIngredients.Where(ri => ri.IngredientId.HasValue))
-                .ThenInclude(ri => ri.Ingredient)
-                    .ThenInclude(i => i.UserIngredients.Where(ui => ui.UserId == UserOptions.Id))
             .Where(r => r.DisabledReason == null)
             .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes over our max ingredient count.
@@ -74,9 +69,18 @@ public class QueryRunner(Section section)
             {
                 Recipe = r,
                 UserRecipe = r.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
-                RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults(ri)
+                // Pull these out of the constructor so that EF Core can optimize the query.
+                RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults()
                 {
+                    Id = ri.Id,
+                    Order = ri.Order,
+                    Measure = ri.Measure,
                     Optional = ri.Optional,
+                    Attributes = ri.Attributes,
+                    Ingredient = ri.Ingredient,
+                    QuantityNumerator = ri.QuantityNumerator,
+                    QuantityDenominator = ri.QuantityDenominator,
+                    RawIngredientRecipeId = ri.IngredientRecipeId,
                     UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
                 }).ToList()

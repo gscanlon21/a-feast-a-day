@@ -1185,6 +1185,28 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 849	328
 121	850
 850	121
+855	497
+855	817
+854	497
+854	817
+854	853
+856	372
+856	16
+856	206
+856	801
+858	857
+858	608
+859	180
+859	179
+859	178
+859	161
+859	162
+859	183
+859	182
+859	181
+859	184
+860	859
+860	123
 \.
 
 
@@ -4678,6 +4700,63 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10225	844	1984	\N	\N	3	2	f
 10226	844	62	\N	\N	3	122	f
 10227	690	2047	\N	\N	3	64	f
+10228	802	128	\N	\N	3	2	f
+10229	802	68719476736	\N	\N	2	1	f
+10230	802	1	\N	\N	3	2	f
+10231	802	48	\N	\N	3	3	f
+10232	802	14	\N	\N	3	13	f
+10233	802	1984	\N	\N	3	16	f
+10234	802	62	\N	\N	3	16	f
+10235	802	2047	\N	\N	3	216	f
+10236	497	34359738368	\N	\N	2	200	f
+10237	497	1	\N	\N	3	3	f
+10238	497	2199023255552	\N	\N	2	4	f
+10239	497	48	\N	\N	3	3	f
+10240	497	14	\N	\N	3	5	f
+10241	497	62	\N	\N	3	8	f
+10242	497	2047	\N	\N	3	40	f
+10243	707	68719476736	\N	\N	2	20	f
+10244	707	34359738368	\N	\N	2	161	f
+10245	707	2	\N	\N	3	2	f
+10246	707	1	\N	\N	3	1	f
+10247	707	4294967296	\N	\N	2	25	f
+10248	707	2199023255552	\N	\N	2	0.3	f
+10249	707	48	\N	\N	3	2	f
+10250	707	14	\N	\N	3	2	f
+10251	707	1984	\N	\N	3	0.1	f
+10252	707	62	\N	\N	3	4	f
+10253	707	2047	\N	\N	3	19	f
+10254	419	256	\N	\N	3	0.2	f
+10255	419	2251799813685248	\N	\N	2	129	f
+10256	419	9007199254740992	\N	\N	3	1	f
+10257	419	18014398509481984	\N	\N	3	2	f
+10258	419	36028797018963968	\N	\N	3	3	f
+10259	419	72057594037927936	\N	\N	3	3	f
+10260	419	144115188075855872	\N	\N	3	1	f
+10261	419	288230376151711744	\N	\N	3	2	f
+10262	419	576460752303423488	\N	\N	3	2	f
+10263	419	1152921504606846976	\N	\N	3	0.5	f
+10264	419	2305843009213693952	\N	\N	3	2	f
+10265	419	-9223372036854775808	\N	\N	3	2	f
+10266	419	4611686018427387904	\N	\N	3	3	f
+10267	419	274877906944	\N	\N	1	2	f
+10268	419	17179869184	\N	\N	2	332	f
+10269	419	4398046511104	\N	\N	2	2	f
+10270	419	70368744177664	\N	\N	2	683	f
+10271	419	8796093022208	\N	\N	1	6	f
+10272	419	17592186044416	\N	\N	2	7	f
+10273	419	262144	\N	\N	2	2	f
+10274	419	524288	\N	\N	2	0.4	f
+10275	419	1048576	\N	\N	2	4	f
+10276	419	2097152	\N	\N	2	2	f
+10277	419	4194304	\N	\N	2	1	f
+10278	419	16777216	\N	\N	1	861	f
+10279	419	536870912	\N	\N	2	0.4	f
+10280	419	1536	\N	\N	3	1	f
+10281	419	3221225472	\N	\N	1	11	f
+10282	419	1792	\N	\N	3	1.2	f
+10283	358	2047	\N	\N	3	3	f
+10284	132	2047	\N	\N	3	210	f
 \.
 
 
@@ -4762,6 +4841,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3090	8	\N	\N	132	8	1	\N	285	t	\N	8
 5399	0	\N	\N	362	1	1	\N	4	f	\N	3
 5400	4	\N	\N	362	3	1	\N	95	t	\N	4
+5412	0	\N	\N	365	4	7	(BABY WHITE POTATOES)	548	f	\N	0
+5413	0	\N	\N	365	1	2	\N	661	f	\N	1
+5414	4	\N	\N	365	1	10	(ARTICHOKE HEARTS IN OIL)	694	f	\N	2
+5415	4	\N	\N	365	4	7	\N	95	f	\N	3
+5416	7	\N	\N	365	1	6	\N	171	f	\N	4
+5417	0	\N	\N	366	1	10	, med	155	f	\N	0
+5418	6	\N	\N	366	1	8	, less (7 cups)	36	f	\N	1
+5419	7	\N	\N	366	1	2	(MIXED PICKLING SPICES)	168	f	\N	2
+5420	8	\N	\N	366	1	5	(COARSE-MEDIUM SALT)	214	f	\N	3
+5421	6	\N	\N	366	1	4	(CIDER VIENGAR?)	80	f	\N	4
 3211	0	\N	\N	162	1	12	\N	561	f	\N	0
 3212	6	\N	\N	162	4	1	\N	560	f	\N	1
 3213	6	\N	\N	162	1	2	\N	562	f	\N	2
@@ -4885,6 +4974,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2174	6	\N	\N	98	4	1	, minced, pickled	565	t	\N	2
 2175	0	\N	\N	98	1	1	, whole slices for garnish	565	t	\N	3
 4892	6	\N	\N	258	3	2	\N	266	f	\N	1
+5422	0	\N	\N	367	1	6	\N	144	f	\N	0
 1366	6	\N	\N	68	4	1	\N	134	f	\N	0
 1367	6	\N	\N	68	4	1	\N	87	f	\N	1
 1368	6	\N	\N	68	4	1	\N	104	f	\N	2
@@ -4924,6 +5014,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5267	7	\N	\N	84	1	1	\N	279	f	\N	5
 5268	4	\N	\N	84	1	2	, shaved	95	t	\N	6
 5269	8	\N	\N	84	1	1	\N	67	f	\N	7
+5423	4	\N	\N	367	1	8	, cooked	328	f	\N	1
+5424	7	\N	\N	367	1	2	\N	829	f	\N	2
+5425	0	\N	\N	367	1	2	\N	187	f	\N	3
+5426	4	\N	\N	367	1	5	(SILKEN TOFU)	671	t	\N	4
 2782	7	\N	\N	141	1	2	\N	499	f	\N	0
 2783	0	\N	\N	141	1	1	, finely chopped	222	f	\N	1
 2784	0	\N	\N	141	1	2	, chopped	5	f	\N	2
@@ -5712,14 +5806,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5404	8	\N	\N	363	1	1	, finely diced	565	t	\N	3
 3437	0	\N	\N	173	1	4	\N	305	f	\N	9
 3438	8	\N	\N	173	8	1	\N	285	f	\N	10
-5380	0	\N	\N	359	1	1	\N	11	f	\N	0
-5381	6	\N	\N	359	1	1	(SPINACH | KALE)	16	f	\N	1
-5382	4	\N	\N	359	1	8	(OR DAIRY FREE MILK)	123	f	\N	2
-5383	7	\N	\N	359	1	1	\N	43	f	\N	3
-5384	6	\N	\N	359	4	3	(OR RASPBERRIES)	608	f	\N	4
-5385	6	\N	\N	359	1	1	\N	501	f	\N	5
 5405	6	\N	\N	363	4	1	, finely chopped	13	t	\N	4
 5406	8	\N	\N	363	8	1	\N	285	f	\N	5
+5380	0	\N	\N	359	1	1	\N	11	f	\N	0
+5381	6	\N	\N	359	1	1	\N	856	f	\N	1
+5382	4	\N	\N	359	1	8	\N	860	f	\N	2
+5383	7	\N	\N	359	1	1	\N	43	f	\N	3
 3607	0	\N	\N	177	1	4	, halved lengthways and seeded	597	f	\N	0
 3608	0	\N	\N	177	1	3	, finely chopped	5	f	\N	1
 3609	0	\N	\N	177	1	2	roots, finely chopped	13	f	\N	2
@@ -5826,6 +5918,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5388	4	\N	\N	360	1	10	(WHOLE-WHEAT PENNE)	286	f	\N	2
 5389	0	\N	\N	360	1	4	\N	5	f	\N	3
 5390	4	\N	\N	360	1	14	\N	260	f	\N	4
+4395	6	\N	\N	254	1	1	\N	123	f	\N	3
+4396	0	\N	\N	254	1	1	, or alternatively use 1/2 tsp alcohol-free vanilla flavor	493	f	\N	4
+4397	8	\N	\N	254	8	1	\N	214	f	\N	5
+4398	7	\N	\N	254	1	1	\N	215	t	\N	6
+5385	6	\N	\N	359	1	1	\N	501	f	\N	5
+5407	0	\N	\N	364	1	2	\N	387	f	\N	0
 3750	4	\N	\N	111	1	10	\N	409	f	\N	0
 3751	6	\N	\N	111	4	1	\N	410	f	\N	1
 3752	4	\N	\N	111	1	10	\N	406	t	\N	2
@@ -5833,13 +5931,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3754	7	\N	\N	111	1	2	\N	408	t	\N	4
 4347	7	\N	\N	251	1	1	, chopped. Also optional!	2	t	\N	6
 5189	8	\N	\N	123	8	1	\N	214	t	\N	6
-4392	6	\N	\N	254	1	1	\N	92	f	\N	0
-4393	6	\N	\N	254	4	1	(BRAZIL NUTS), approx. 5	461	f	\N	1
-4394	6	\N	\N	254	4	1	\N	89	f	\N	2
-4395	6	\N	\N	254	1	1	\N	123	f	\N	3
-4396	0	\N	\N	254	1	1	, or alternatively use 1/2 tsp alcohol-free vanilla flavor	493	f	\N	4
-4397	8	\N	\N	254	8	1	\N	214	f	\N	5
-4398	7	\N	\N	254	1	1	\N	215	f	\N	6
+5408	0	\N	\N	364	1	2	(SLICES OF WHOLE_WHEAT BREAD WITH SEEDS)	169	f	\N	1
+5409	0	\N	\N	364	1	1	\N	5	f	\N	2
+5410	0	\N	\N	364	1	1	\N	4	f	\N	3
+5411	4	\N	\N	364	4	7	\N	368	f	\N	4
 4418	5	\N	\N	134	1	2	, 90/10 or 93/7 fat recommended	25	f	\N	0
 4419	0	\N	\N	134	1	8	\N	113	f	\N	1
 4420	0	\N	\N	134	1	1	\N	511	t	\N	2
@@ -5863,6 +5958,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4423	8	\N	\N	134	2	1	, crushed finely	510	f	\N	5
 4424	8	\N	\N	134	2	1	\N	713	f	\N	6
 4437	0	\N	\N	238	1	1	\N	715	f	\N	0
+4392	6	\N	\N	254	1	1	\N	92	f	\N	0
+4393	6	\N	\N	254	4	1	, approx. 5	851	f	\N	1
+4394	6	\N	\N	254	4	1	\N	89	f	\N	2
+5384	6	\N	\N	359	4	3	\N	858	f	\N	4
 4019	6	\N	\N	185	1	3	\N	286	f	\N	0
 4020	6	\N	\N	185	1	1	\N	6	f	\N	1
 4043	6	\N	\N	187	2	1	\N	663	f	\N	0
@@ -6892,10 +6991,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2291	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Drain, then transfer to a large serving bowl. Add 30ml/2 tbsp of the oil and toss well to coat.	\N	195	2
 2292	Add the artichokes, broccoli, olives, parsley, onion mixture and remaining oil to the pasta. Toss to blend. Leave to stand for at least 5 minutes before serving.	\N	195	3
 2818	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful or cooking water. Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the zucchini. Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan.	\N	260	0
-2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	\N	254	0
-2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	\N	254	1
-2368	Process until completely smooth and creamy. This may take 5 minutes or so, depending on your food processor. You will need to scrape down the sides intermittently to ensure everything gets incorporated.	\N	254	2
-2369	Serve immediately, drizzled with a touch more maple syrup.	\N	254	3
 2583	Top with avocado slices and enjoy!	\N	250	5
 2584	In large sauté pan, heat the oil over medium heat. Add the bay leaf, cardamom pods, cinnamon stick, cumin seeds and curry or chili powder, if using. Warm the spices gently until they become fragrant.	\N	272	0
 2585	Add the onion and sauté for 7-10 minutes until translucent. Add the garlic and cook another few minutes before adding the rice.	\N	272	1
@@ -6915,6 +7010,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2504	Heat the oil in a large saucepan. Add the spices and toast them in the oil until they become nicely fragrant. Add the onions and cook, stirring, for 5-7 minutes. Add the garlic and cook 1-2 minutes more.	\N	267	1
 2505	Add the remaining ingredients, bring to a boil and simmer until the beans are tender, about 45 minutes. Check seasonings and adjust as necessary.	\N	267	2
 2506	Optionally serve topped with alfalfa sprouts.	\N	267	3
+2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	\N	254	0
+2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	\N	254	1
+2369	Serve immediately, drizzled with a touch more maple syrup.	\N	254	3
 2820	Cook the pasta according to pack instructions – about 10 mins. Meanwhile, put the lime juice and zest in a medium bowl with the avocado, tomatoes, coriander, onion and chilli, if using, and mix well.	\N	39	0
 2821	Drain the pasta, toss into the bowl and mix well. Serve straight away while still warm, or cold.	\N	39	1
 2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	\N	136	0
@@ -7085,13 +7183,21 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1825	Make a spicy relish by cooking the remaining shallot with the garlic and green chilli in the olive oil for 2-3 minutes, until softened.	\N	173	2
 1826	Add the canned ratatouille to the pan containing the vegetables. Bring to the boil, then simmer for 5 minutes.	\N	173	3
 1827	Meanwhile, preheat the grill (broiler) and cook the burgers for about 5 minutes on each side, until browned and cooked through. Meanwhile, split the burger buns. Arrange lettuce leaves on the bun bases, add the burgers and top with warm relish and the bun tops. 	\N	173	4
-2965	Place all of the above ingredients in a high-speed blender and enjoy right away.	\N	359	0
 2966	To make a quick chili oil, halve and seed the chilies. Fill a clean heatproof jar with olive oil, then pour it into a non-stick frying pan on a medium-low heat and add the chilies to confit. Meanwhile, put a pan of boiling salted water on for the pasta. Halve the eggplants lengthways and blanch in the water, covered, for 5 minutes, then lift out, leaving the water to boil. Carefully scoop the soft chilies into the jar, then spoon in the oil, leaving 2 tablespoons in the pan (keep the jar of chili oil to add a kick to future meals). Chop the eggplant into 1¼-inch chunks, add to the pan with a pinch of sea salt and black pepper, then turn the heat up to high, stirring regularly.	\N	360	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	\N	360	1
 2968	Scrub the beets clean, reserving any nice leaves, then finely slice into matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Dress with ½ a tablespoon each of extra virgin olive oil and red wine vinegar, the horseradish, and crème fraîche, then season to perfection with sea salt and black pepper. Delicately toss with the watercress and any reserved beet leaves.	\N	361	0
 2969	Divide up the bresaola between your plates, followed by the beet salad, then drizzle with 1 teaspoon of extra virgin olive oil, and serve.	\N	361	1
 2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. As soon as it's set, use a rubber spatula to ease it away at the sides, and out onto a board. Repeat with the remaining egg. Cool, roll up, and finely slice.	\N	362	0
 2971	Trim and finely slice the endives. Dress with the lemon juice and ½ a tablespoon of extra virgin olive oil, then toss with the egg ribbons, taste, and season to perfection with sea salt and black pepper. Pile in the center of the bresaola, shave over the Parmesan, then finish with a little extra virgin olive oil.	\N	362	1
+2978	Put a large non-stick frying pan on a medium-high heat. Trim and finely slice the scallions and fry with 1 tablespoon of olive oil for 1 minute. Add the rice, chili jam, a splash of water, and a pinch of sea salt and black pepper, then toss for 2 minutes until everything is well coated.	\N	367	0
+2368	Process until completely smooth and creamy. This may take 5 minutes or so, depending on your food processor. You will need to scrape down the sides intermittently to ensure everything gets incorporated.	\N	254	2
+2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	\N	367	1
+2965	Place all of the above ingredients in a high-speed blender and enjoy right away.	\N	359	0
+2973	Place the chicken breasts between two large sheets of parchment paper, and whack with the base of a large non-stick frying pan to flatten them to about ½ inch thick. Tear the bread into a food processor, then peel, chop, and add the garlic, and blitz into fairly fine crumbs. Pour the crumbs over the chicken, roughly pat onto each side, then re-cover with the paper and whack again, to hammer the crumbs into the chicken and flatten them further.	\N	364	0
+2974	Put the pan on a medium heat. Fry the crumbled chicken 1 tablespoon of olive oil for 3 minutes on each side, or until crisp, golden, and cooked through. Slice, plate up, season to perfection with sea salt and black pepper, sprinkle with lemon-dressed arugula, and serve with lemon wedges, for squeezing over.	\N	364	1
+2975	Preheat the oven to 400°F. Halve any large potatoes. Trim the fennel, pick and reserve any leafy tops, finely slice the stalky part, then halve the bulb and cut into ½-inch slices. Put it all into a 12x14-inch roasting pan, halve the artichokes and add with 2 tablespoons of oil from the jar, as well as a really good pinch of black pepper, then toss it all together. Pour in 1¼ cups of water, cover the pan tightly with aluminum foil, and back for 1 hour.	\N	365	0
+2976	In a bowl, finely grate half the Parmesan into the cream and loosen with a splash of water. When the time's up, remove the pan from the oven, discard the foil, spoon over the cream mixture, and finely grate over the remaining Parmesan. Bake for a final 20 minutes, or until golden and cooked through, then sprinkle over any reserved fennel tops before serving.	\N	365	1
+2977	Cover cucumbers with boiling water. Let stand until next morning; drain. Repeat procedure the next 3 mornings. On the fifth day, drain and slice in 1/2-inch pieces. Combine remaining ingredients; bring to boiling and pour over cucumbers. Let stand 2 days. On third day, bring to boiling and seal in hot sterilized jars.  Makes 7 pints.	\N	366	0
 \.
 
 
@@ -7106,7 +7212,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10227, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10284, true);
 
 
 --
