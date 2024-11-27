@@ -457,7 +457,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(1, 25, Measure.Grams, Multiplier.Person)]
     [Display(Order = 500, Name = "Lithium", GroupName = "Micronutrients")]
-    Lithium = 1L << 50, // 1125899906842624 
+    Lithium = 1L << 50, // 1125899906842624
 
     /// <summary>
     /// Methyl donor.
@@ -473,7 +473,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person)]
     [Display(Order = 520, Name = "Betaine", GroupName = "Micronutrients")]
-    Betaine = 1L << 52, // 4503599627370496  
+    Betaine = 1L << 52, // 4503599627370496
 
     // Essential Amino Acids
 
