@@ -27,7 +27,7 @@
 27	\N	Slices of Turkey	https://www.eatthismuch.com/food/nutrition/deli-sliced-oven-roasted-turkey-breast,101465/	\N	f	0	13	51	2024-06-14	0	240	8
 28	\N	Eggs, Brown	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-06-18	0	200	16777216
 29	\N	Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2024-08-20	7	224	29360128
-30	\N	Shredded Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	112	28	-infinity	6	112	8388608
+30	\N	Shredded Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	112	28	2024-11-27	6	112	8388608
 31	\N	Whole Milk (Cow), unenriched	https://www.eatthismuch.com/calories/whole-milk-161	\N	f	0	244	244	2024-10-20	6	244	4194304
 32	\N	Sour Cream	https://www.eatthismuch.com/food/nutrition/sour-cream,55/	\N	f	0	230	230	2024-06-09	6	240	0
 33	\N	Greek Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
@@ -487,7 +487,7 @@
 557	\N	Thai Fish Sauce	https://www.eatthismuch.com/calories/fish-sauce-747	\N	f	0	18	18	2024-10-06	7	288	3
 558	\N	Lean Ground Beef | Lean Ground Turkey	https://www.eatthismuch.com/nutrition/ground-beef,5416	\N	f	0	28	28	-infinity	4	240	0
 559	\N	Crumbled Queso Blanco | Crumbled Anjeado Cheese | Grated Chedder Cheese | Grated Monterey Jack Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	112	28	2024-09-17	6	112	6
-560	\N	Rhubarb Compote	\N	\N	f	0	240	100	-infinity	6	240	0
+560	\N	Rhubarb Compote	https://www.eatthismuch.com/calories/rhubarb-compot-2981817	\N	f	0	28	644	2024-11-27	4	224	16
 561	\N	Gingernut Biscuits (Gingersnaps)	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	262176	4520	152	2024-08-26	0	152	262144
 562	\N	Double Cream	https://www.eatthismuch.com/calories/english-double-cream-3336811	\N	f	0	28	28	2024-07-26	9	224	4194304
 563	\N	Unsalted Margarine	https://www.eatthismuch.com/calories/margarine-354	\N	t	0	112	14	2024-09-14	0	224	6

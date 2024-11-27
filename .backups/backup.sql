@@ -4757,6 +4757,15 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10282	419	1792	\N	\N	3	1.2	f
 10283	358	2047	\N	\N	3	3	f
 10284	132	2047	\N	\N	3	210	f
+10285	560	2047	\N	\N	3	528	f
+10286	30	128	\N	\N	3	4	f
+10287	30	2048	\N	\N	2	20	f
+10288	30	68719476736	\N	\N	2	240	f
+10289	30	1	\N	\N	3	7	f
+10290	30	4294967296	\N	\N	2	200	f
+10291	30	14	\N	\N	3	1	f
+10292	30	1984	\N	\N	3	6	f
+10293	30	62	\N	\N	3	1	f
 \.
 
 
@@ -5812,6 +5821,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5381	6	\N	\N	359	1	1	\N	856	f	\N	1
 5382	4	\N	\N	359	1	8	\N	860	f	\N	2
 5383	7	\N	\N	359	1	1	\N	43	f	\N	3
+5089	6	\N	\N	259	4	1	, from grass-fed cows	171	f	\N	4
+5090	8	\N	\N	259	1	1	, or 1/2 tsp dried	577	t	\N	5
+5091	8	\N	\N	259	8	1	, to taste	285	f	\N	6
+5427	4	\N	\N	368	1	12	(fresh rhubarb), trimmed and cut into 1/2 inch pieces	560	f	\N	0
+5428	6	\N	\N	368	2	1	\N	36	f	\N	1
 3607	0	\N	\N	177	1	4	, halved lengthways and seeded	597	f	\N	0
 3608	0	\N	\N	177	1	3	, finely chopped	5	f	\N	1
 3609	0	\N	\N	177	1	2	roots, finely chopped	13	f	\N	2
@@ -6278,6 +6292,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4756	6	\N	\N	272	1	4	, cooked	98	f	\N	9
 4757	6	\N	\N	272	3	1	\N	13	f	\N	10
 4758	8	\N	\N	272	8	1	\N	285	f	\N	11
+5085	7	\N	\N	259	1	6	, from grass-fed cows	723	f	\N	0
 4815	7	\N	\N	263	1	2	\N	788	f	\N	0
 4816	0	\N	\N	263	2	1	\N	5	f	\N	1
 4817	0	\N	\N	263	1	1	\N	4	f	\N	2
@@ -6300,6 +6315,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5061	8	\N	\N	241	8	1	\N	692	f	\N	8
 4818	4	\N	\N	263	1	10	\N	841	f	\N	3
 4819	0	\N	\N	263	1	2	\N	1	f	\N	4
+5086	5	\N	\N	259	1	1	, about 1 lb-best if trimmed	724	f	\N	1
+5087	0	\N	\N	259	1	1	, chopped	222	f	\N	2
+5088	0	\N	\N	259	1	2	, chopped	5	f	\N	3
 2239	0	\N	\N	121	2	1	\N	352	f	\N	0
 4805	0	\N	\N	265	1	1	\N	730	f	\N	0
 4806	0	\N	\N	265	1	4	\N	187	f	\N	1
@@ -6324,8 +6342,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5075	6	\N	\N	305	1	1	\N	806	f	\N	5
 5076	8	\N	\N	305	8	1	\N	348	f	\N	6
 5077	0	\N	\N	305	1	2	\N	501	t	\N	7
-5085	7	\N	\N	259	1	6	, from grass-fed cows	723	f	\N	0
-5086	5	\N	\N	259	1	1	, about 1 lb-best if trimmed	724	f	\N	1
 4855	0	\N	\N	231	1	4	\N	114	f	\N	0
 4856	7	\N	\N	231	1	2	\N	38	f	\N	1
 4857	7	\N	\N	231	1	2	\N	29	f	\N	2
@@ -6336,11 +6352,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4862	6	\N	\N	231	3	2	\N	562	f	\N	7
 4863	7	\N	\N	231	1	2	, chopped	2	f	\N	8
 4864	8	\N	\N	231	8	1	\N	285	f	\N	9
-5087	0	\N	\N	259	1	1	, chopped	222	f	\N	2
-5088	0	\N	\N	259	1	2	, chopped	5	f	\N	3
-5089	6	\N	\N	259	4	1	, from grass-fed cows	171	f	\N	4
-5090	8	\N	\N	259	1	1	, or 1/2 tsp dried	577	f	\N	5
-5091	8	\N	\N	259	8	1	, to taste	285	f	\N	6
 4870	4	\N	\N	170	1	8	\N	794	f	\N	0
 4871	7	\N	\N	170	1	1	\N	238	f	\N	1
 4872	7	\N	\N	170	1	1	\N	77	f	\N	2
@@ -6484,9 +6495,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1095	In a separate large mixing bowl; whisk together eggs, half & half, evaporated milk and water until blended.	\N	113	1
 1096	Slowly pour dry ingredients into wet ingredients while whisking constantly. Batter will be thick.	\N	113	2
 1097	Add melted, room temperature butter last, whisking until ingredients are throroughly combined.	\N	113	3
-2781	Heat the oil/ghee in a large pot. Add the chicken livers, onion, garlic and sauté gently until cooked through, about 15-20 minutes.	\N	259	0
-2782	Add the cream and thyme and transfer everything to a food processor. Process until smooth and creamy, about 2-3 minutes.	\N	259	1
-2783	Add salt and pepper to taste, and process to combine well. Transfer the mixture to a container (with lid) and store in the refrigerator. It will thicken as it cools.	\N	259	2
 2847	Slice the coriander stalks, add to the pan with the squash, curry paste and coconut milk, then pour in 1 litre of water. Cover and simmer on a medium heat for 1 hour 20 minutes.	\N	179	2
 2848	Use tongs to remove the chicken to a platter. Spoon any fat from the surface of the soup over the chicken, then sprinkle with half the coriander leaves.	\N	179	3
 1098	Pour about 1/4 cup batter per pancake onto a 375°F (medium heat) preheated griddle.	\N	113	4
@@ -6563,7 +6571,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 981	Tip in the mixed veg and soften for 5 minutes, then put the chicken back into the pan with 2 tablespoons of red wine vinegar and allow it to cook away. Scrunch in the tomatoes through clean hands, then pour in 1 can's worth of water. Bring to a boil, then leave to blip away on a low heat for 1 hour, or until the chicken is falling off the bone, stirring occasionally.	\N	108	1
 982	When the time's up, cook the pasta in a pan of boiling salted water according to the package instructions, then drain. 	\N	108	2
 983	Meanwhile, strip all the chicken meat from the bones and shred apart with forks, returning it to the sauce as you go and discarding any skin and bones.	\N	108	3
-2784	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	259	3
 2335	Heat a large skillet or wok over low-medium heat. Add the ghee and allow it to melt.	\N	243	0
 939	In a food processor or a large mixing bowl, mix together the plain flour, the baking soda and enough sugar to taste. Add the egg, blend or stir to mix, then gradually pour in just enough of the buttermilk to make a thick, smooth batter.	\N	100	0
 940	Heat a heavy pan and add the butter and oil, or fat. Place spoonfuls of the batter on to the hot pan and cook for 2-3 minutes until bubbles rise to the surface. Flip the pancakes over and cook for a further 2-3 minutes. Remove from the pan and serve warm with honey.	\N	100	1
@@ -7031,15 +7038,18 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2929	First combine the flaxseed oil with the parsley and season generously with salt and pepper. Set aside.	\N	325	0
 2930	Next toss together the remaining ingredients and place in two salad bowls.	\N	325	1
 2931	Drizzle with the parsley dressing and serve immediately with a nice tall glass of water to keep you hydrated!	\N	325	2
+2782	Add the cream and thyme and transfer everything to a food processor. Process until smooth and creamy, about 2-3 minutes.	\N	259	1
 2299	Heat a non-stick skillet over medium heat. Place bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2 to 3 minutes. Flip and cook until desired doneness is reached, 2 to 3 minutes more; season with salt and ground black pepper.	\N	19	0
 2370	Soak cashews in water for at least 2 hours or overnight.	\N	255	0
 2371	Place cashews, with their soaking liquid, and remaining ingredients in a food processor or blender and process on high for about 5 minutes. You may need to scrape the sides down intermittently. It’s done when the mixture is completely smooth and no longer tastes grainy.	\N	255	1
 2372	You can add more liquid if you’d like the dressing thinner.	\N	255	2
 2373	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	255	3
+2783	Add salt and pepper to taste, and process to combine well. Transfer the mixture to a container (with lid) and store in the refrigerator. It will thicken as it cools.	\N	259	2
 2464	Drizzle 5ml/t tsp melted butter on to each chicken piece. Place them in the frying pan in an even layer, two or three at a time, and cook for 2-3 minutes, until the underside begins to blacken. Turn the chicken over and cook the other side for 2-3 minutes more. Remove from the pan and keep hot while cooking successive batches. Serve hot with salad leaves and pepper strips.	\N	131	4
 2481	Cut the dates in half (and remove the pits). Add about 1 teaspoon peanut butter (or less, depending on the size of the date) and a generous sprinkle of crushed peanuts. Place the halves back together and form them into a bar shape with your fingers (pressing down to round the corners). 	\N	193	0
 2482	Place the chocolate in a liquid measuring cup with the ½ teaspoon coconut oil and heat in 10 second bursts in the microwave until melted. 	\N	193	1
 2483	Use 2 forks to dip in each of the dates, then shake off the extra chocolate. Place the dates on a parchment-lined baking sheet. If desired, add a small chocolate drizzle with a fork to the top. Freeze 5 minutes to set, then enjoy. Store refrigerated for up to 2 weeks (allow the dates to come to room temperature for about 15 minutes before enjoying).	\N	193	2
+2784	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	259	3
 2714	Cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	\N	184	0
 2715	Drain the pasta well, then add it to the bowl of pesto and toss to coat. Serve immediately, garnished with the fresh basil leaves. Hand shaved Parmesan around separately.	\N	184	1
 2764	Peel and finely chop the red onion, place in a bowl, cover with 4 tablespoons of red wine vinegar, and add a very good pinch of sea salt. Lower the eggs into a pan of vigorously simmering water and boil for 5½ minutes exactly. Line up the asparagus, trim off the woody ends, and place in a colander above the eggs, covered, to steam while the eggs cook. Meanwhile, pick the tarragon leaves.	\N	309	0
@@ -7198,6 +7208,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2975	Preheat the oven to 400°F. Halve any large potatoes. Trim the fennel, pick and reserve any leafy tops, finely slice the stalky part, then halve the bulb and cut into ½-inch slices. Put it all into a 12x14-inch roasting pan, halve the artichokes and add with 2 tablespoons of oil from the jar, as well as a really good pinch of black pepper, then toss it all together. Pour in 1¼ cups of water, cover the pan tightly with aluminum foil, and back for 1 hour.	\N	365	0
 2976	In a bowl, finely grate half the Parmesan into the cream and loosen with a splash of water. When the time's up, remove the pan from the oven, discard the foil, spoon over the cream mixture, and finely grate over the remaining Parmesan. Bake for a final 20 minutes, or until golden and cooked through, then sprinkle over any reserved fennel tops before serving.	\N	365	1
 2977	Cover cucumbers with boiling water. Let stand until next morning; drain. Repeat procedure the next 3 mornings. On the fifth day, drain and slice in 1/2-inch pieces. Combine remaining ingredients; bring to boiling and pour over cucumbers. Let stand 2 days. On third day, bring to boiling and seal in hot sterilized jars.  Makes 7 pints.	\N	366	0
+2781	Heat the oil/ghee in a large pot. Add the chicken livers, onion, garlic and sauté gently until cooked through, about 15-20 minutes.	\N	259	0
+2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	\N	368	0
+2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	\N	368	1
 \.
 
 
@@ -7212,7 +7225,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10284, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10293, true);
 
 
 --
