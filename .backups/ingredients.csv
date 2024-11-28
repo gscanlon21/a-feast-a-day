@@ -596,7 +596,7 @@
 666	\N	Lemons, without Peel	https://www.eatthismuch.com/calories/lemons-1432	\N	f	0	108	108	2024-10-22	0	216	1
 667	\N	Refried Beans, fat-free	https://www.eatthismuch.com/calories/refried-beans-3653	\N	f	0	444	444	2024-10-23	6	444	0
 668	\N	Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3600	\N	f	0	444	444	2024-10-23	6	444	0
-669	\N	Frozen Blueberries	https://www.eatthismuch.com/calories/blueberries-frozen-1346	\N	f	0	155	155	-infinity	6	155	33554432
+669	\N	Frozen Blueberries	https://www.eatthismuch.com/calories/blueberries-frozen-1346	\N	f	0	155	155	2024-11-28	6	155	33554432
 670	\N	Frozen Wild Blueberries	\N	\N	f	0	240	100	-infinity	6	240	7
 671	\N	Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2024-06-14	0	82	2
 673	\N	Vanilla Sugar	\N	\N	f	0	240	100	-infinity	6	240	4
@@ -655,7 +655,7 @@
 727	\N	White Vinegar | Lemon Juice	https://www.eatthismuch.com/food/nutrition/white-wine-vinegar,27797/	\N	f	0	14	14	2024-06-15	7	240	0
 728	\N	Head of Broccolini	https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
 729	\N	Fresh Podded Green Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2
-730	\N	Fresh Mixed-Color Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
+730	\N	Fresh Mixed-Color Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
 731	\N	Fresh Yellow Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	-infinity	0	90	2
 732	\N	Frozen Broccoli	https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
 733	\N	Head of Cauliflower	\N	\N	f	0	160	160	2024-08-09	0	160	0
