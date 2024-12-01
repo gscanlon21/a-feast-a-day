@@ -553,6 +553,7 @@ COPY public.footnote ("Id", "Note", "Source", "Type") FROM stdin;
 5	Keep pancakes warm by wrapping them in foil and placing them in the oven at a low temperature.	\N	1
 6	A 4-quart saute pan is enough for cooking for two.	\N	1
 7	A recent study found that restricting sugar in the first 1,000 days of life (after conception and up to 2 years of age) reduced the lifetime risk of diabetes by 35%, the risk of hypertension by 20%, and the risk of obesity by 30%.	https://www.science.org/doi/10.1126/science.adn5421	8
+8	Gluten is often pointed to as a culprit in autoimmune thyroid diseases (Graves and Hashimoto’s). However, a 2003 study showed that only about 5% of patients with autoimmune thyroiditis also had immune reactions to gluten. While that isn’t a huge percentage, it may be worth trialing a gluten-free diet if you have an autoimmune thyroid disease.	https://www.geneticlifehacks.com/thyroid-issues-and-genetics/	4
 \.
 
 
@@ -4943,6 +4944,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5419	7	\N	\N	366	1	2	(MIXED PICKLING SPICES)	168	f	\N	2
 5420	8	\N	\N	366	1	5	(COARSE-MEDIUM SALT)	214	f	\N	3
 5421	6	\N	\N	366	1	4	(CIDER VIENGAR?)	80	f	\N	4
+5434	0	\N	\N	370	1	10	\N	224	f	\N	0
+5435	0	\N	\N	370	1	4	\N	5	f	\N	1
+5436	0	\N	\N	370	1	2	\N	377	f	\N	2
+5437	3	\N	\N	370	1	500	(JAM SUGAR)	36	f	\N	3
 3211	0	\N	\N	162	1	12	\N	561	f	\N	0
 3212	6	\N	\N	162	4	1	\N	560	f	\N	1
 3213	6	\N	\N	162	1	2	\N	562	f	\N	2
@@ -4950,6 +4955,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3231	0	\N	\N	157	1	2	\N	346	f	\N	1
 3232	0	\N	\N	157	1	2	\N	172	f	\N	2
 3233	0	\N	\N	157	1	20	\N	10	f	\N	3
+5438	10	\N	\N	370	1	500	\N	475	f	\N	4
+5439	0	\N	\N	370	1	2	(FRESH Scotch bonnet chillies)	224	f	\N	5
 3234	0	\N	\N	157	1	1	, juiced	4	f	\N	4
 3235	7	\N	\N	157	1	1	\N	551	t	\N	5
 3236	8	\N	\N	157	1	1	, to taste	44	t	\N	6
@@ -7301,6 +7308,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1744	Finally, add the eggs, and scramble with the ingredients until cooked to your preference. Serve.	\N	17	3
 2982	Preheat the oven to 350°F. Quickly scrub the sweet potatoes clean, then slice into 1¼-inch rounds. Place in a 10x12-inch roasting pan with the whole unpeeled garlic bulb, and toss with 1 tablespoon each of olive oil and red wine vinegar, a pinch of sea salt and black pepper, and the Cajun spice. Arrange in a flat layer and roast for 1 hour, or until soft, gnarly, and carmelized.	\N	369	0
 2983	Once done, squeeze all the soft, sweet, creamy, mild roasted garlic out of the skins into the yogurt, mash together, then season to perfection. Trim and finely slice the scallions. Spoon the yogurt across a plate or platter, stack the sweet potato on top, drizzle with ½ a tablespoon of extra virgin olive oil, spinkle over the scallions, dish up and enjoy.	\N	369	1
+2984	Trim, halve and deseed the red chillies (use rubber gloves to protect your hands, if you like), and peel the garlic cloves, then place in a food processor with the peppers and pulse until finely chopped.	\N	370	0
+2985	Scrape the chilli mixture into a high-sided pan over a medium-high heat, add the sugar and vinegar, then give everything a good stir.	\N	370	1
+2986	Prick the Scotch bonnets with a sharp knife and add to the pan with 1 teaspoon of sea salt. Bring to the boil, then turn the heat down to low and simmer gently for 20 to 25 minutes, or until thick, glossy and reduced by half.	\N	370	2
+2987	Pour into sterilised jam jars (leave the Scotch bonnets in, if you like it hot, otherwise remove) and store in a cool dark place until needed.	\N	370	3
 \.
 
 
@@ -7308,7 +7319,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 -- Name: footnote_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."footnote_Id_seq"', 7, true);
+SELECT pg_catalog.setval('public."footnote_Id_seq"', 8, true);
 
 
 --

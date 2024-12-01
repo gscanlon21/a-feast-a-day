@@ -7,11 +7,10 @@ namespace Hybrid.Code;
 /// <summary> 
 /// Represents a dynamic data collection that provides notifications when items get added, removed, or when the whole list is refreshed. 
 /// </summary> 
-/// <typeparam name="T"></typeparam> 
 public class ObservableRangeCollection<T> : ObservableCollection<T>
 {
-    public Func<T, object>? SortingSelector { get; set; }
     public bool Descending { get; set; }
+    public Func<T, object>? SortingSelector { get; set; }
     protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     {
         base.OnCollectionChanged(e);
@@ -71,17 +70,13 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
 
         if (notificationMode == NotifyCollectionChangedAction.Reset)
         {
-            RaiseChangeNotificationEvents(action: NotifyCollectionChangedAction.Reset);
+            RaiseChangeNotificationEvents(NotifyCollectionChangedAction.Reset);
 
             return;
         }
 
         var changedItems = collection is List<T> list ? list : new List<T>(collection);
-
-        RaiseChangeNotificationEvents(
-            action: NotifyCollectionChangedAction.Add,
-            changedItems: changedItems,
-            startingIndex: startIndex);
+        RaiseChangeNotificationEvents(NotifyCollectionChangedAction.Add, changedItems, startIndex);
     }
 
     /// <summary> 
@@ -108,18 +103,19 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
 
             if (raiseEvents)
             {
-                RaiseChangeNotificationEvents(action: NotifyCollectionChangedAction.Reset);
+                RaiseChangeNotificationEvents(NotifyCollectionChangedAction.Reset);
             }
 
             return;
         }
 
+        // Can't use a foreach because changedItems is intended to be (carefully) modified.
         var changedItems = new List<T>(collection);
         for (var i = 0; i < changedItems.Count; i++)
         {
             if (!Items.Remove(changedItems[i]))
             {
-                changedItems.RemoveAt(i); //Can't use a foreach because changedItems is intended to be (carefully) modified
+                changedItems.RemoveAt(i);
                 i--;
             }
         }
@@ -129,9 +125,7 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
             return;
         }
 
-        RaiseChangeNotificationEvents(
-            action: NotifyCollectionChangedAction.Remove,
-            changedItems: changedItems);
+        RaiseChangeNotificationEvents(NotifyCollectionChangedAction.Remove, changedItems);
     }
 
     /// <summary> 
@@ -161,7 +155,7 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
             return;
         }
 
-        RaiseChangeNotificationEvents(action: NotifyCollectionChangedAction.Reset);
+        RaiseChangeNotificationEvents(NotifyCollectionChangedAction.Reset);
     }
 
     private bool AddArrangeCore(IEnumerable<T> collection)
@@ -172,6 +166,7 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
             Items.Add(item);
             itemAdded = true;
         }
+
         return itemAdded;
     }
 
@@ -186,7 +181,7 @@ public class ObservableRangeCollection<T> : ObservableCollection<T>
         }
         else
         {
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs(action, changedItems: changedItems, startingIndex: startingIndex));
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(action, changedItems, startingIndex));
         }
     }
 
