@@ -31,8 +31,8 @@ public class ShoppingListItem
     public string Name { get; init; } = null!;
     public Measure Measure { get; init; }
     public string? Order { get; init; }
-    public int Quantity { get; set; }
     public bool IsCustom { get; init; }
+    public int? Quantity { get; set; }
 
     [NotMapped]
     private bool _isChecked;

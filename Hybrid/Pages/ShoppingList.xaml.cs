@@ -62,7 +62,6 @@ public partial class ShoppingListPageViewModel : ObservableObject
             {
                 Name = IngredientEntry,
                 IsCustom = true,
-                Quantity = 1,
             };
 
             Ingredients.Add(item);
