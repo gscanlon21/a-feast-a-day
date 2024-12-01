@@ -30,36 +30,40 @@
                Text="{Binding IngredientEntry}"
                ReturnCommand="{Binding WhenCompletedCommand}"/>
 
-        <RefreshView Grid.Row="1" IsRefreshing="{Binding Loading}" Command="{Binding LoadCommand}" >
-            <ListView ItemsSource="{Binding Ingredients}" SelectionMode="None" HasUnevenRows="True" x:Name="myCollectionView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnDefinitions="Auto,*" >
-                                <CheckBox Grid.Column="0" IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
-                                    <CheckBox.Behaviors>
-                                        <toolkit:EventToCommandBehavior
-                                            Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference myCollectionView}}"
-                                            CommandParameter="{Binding .}"
-                                            EventName="CheckedChanged" />
-                                    </CheckBox.Behaviors>
-                                </CheckBox>
+        <RefreshView Grid.Row="1" IsRefreshing="{Binding Loading}" Command="{Binding LoadCommand}">
+            <ScrollView>
+                <ListView x:Name="shoppingListView"
+                          ItemsSource="{Binding Ingredients}"
+                          SelectionMode="None" HasUnevenRows="True"
+                          VerticalScrollBarVisibility="Never">
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnDefinitions="Auto,*" >
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
+                                        <CheckBox.Behaviors>
+                                            <toolkit:EventToCommandBehavior
+                                                Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference shoppingListView}}"
+                                                CommandParameter="{Binding .}"
+                                                EventName="CheckedChanged" />
+                                        </CheckBox.Behaviors>
+                                    </CheckBox>
 
-                                <StackLayout Grid.Column="1" Padding="15,10" >
-                                    <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Title'}" LineBreakMode="WordWrap"
-                                           FontAttributes="Bold"
-                                           FontSize="16"
-                                           Padding="0,0,0,1"
-                                           TextColor="{StaticResource Primary}"/>
+                                    <StackLayout Grid.Column="1" Margin="15,10" >
+                                        <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Title'}" LineBreakMode="WordWrap"
+                                               FontSize="16" FontAttributes="Bold"
+                                               TextColor="{StaticResource Primary}"/>
 
-                                    <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Description'}" LineBreakMode="WordWrap"
-                                           IsVisible="{Binding Source={RelativeSource Self}, Path=Text, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                        <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Description'}" LineBreakMode="WordWrap"
+                                               IsVisible="{Binding Source={RelativeSource Self}, Path=Text, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </RefreshView>
     </Grid>
 </ContentPage>
