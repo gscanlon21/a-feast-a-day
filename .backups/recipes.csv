@@ -1,6 +1,6 @@
 1	Lentil Soup	\N	\N	\N	4	360	20	4	t	0	lentil-soup.jpg	0
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	1	t	0	sausage-spaghetti.jpg	0
-17	Vegetarian Stir-Fry	Save time and money by purchasing a package of frozen vegetables. These vegetables are typically picked at their peak and frozen quickly to lock in their natural nutrients while also maintaining flavor. The seasoning from the rice, oil, and sauce will provide plenty of flavors to keep this meal from being anything but bland. For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	0	vegetable-stir-fry.jpg	0
+17	Vegetarian Stir-Fry	For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	4194308	vegetable-stir-fry.jpg	0
 19	Egg in a Pepper	\N	\N	\N	1	5	1	1	t	0	egg-in-a-pepper.jpg	0
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	0	bean-cheese-quesadilla.jpg	0
 23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	2097154	scalloped-potatoes-ham.jpg	0
@@ -205,9 +205,9 @@
 255	Cashew Mayo	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	\N	\N	0	0	10	2	t	0	\N	6
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	-9223372034304638976	anti-aging-pesto.jpg	6
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice. - https://www.glutenfreepalate.com/gluten-free-risotto/	\N	\N	6	40	5	4	t	4194308	gluten-free-risotto.jpg	0
-258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	20	2	2	t	0	korean-eggs-rice.jpg	0
+258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	20	2	2	t	4194308	korean-eggs-rice.jpg	0
 259	Chicken Liver Pate	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	\N	\N	8	25	5	1	t	4194308	chicken-liver-pate.jpg	0
-260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	4194308	\N	0
+260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	4194308	zucchini-linguine.jpg	0
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	4194308	chicken-noodle-stir-fry.jpg	0
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	0	buttermilk.jpg	6
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	0	20	3	t	0	tahini-carrot-slaw.jpg	0
@@ -217,7 +217,7 @@
 267	Curried Mung Bean Soup	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	\N	\N	4	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0
 268	Orange Flower Water	https://thishealthytable.com/blog/orange-blossom-water/	\N	\N	0	120	5	1	t	0	\N	6
 269	Rose Water	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	\N	\N	0	20	5	1	t	4194308	\N	6
-270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	2	t	4194308	chicken-lettuce-cups.jpg	0
+270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	3	t	4194308	chicken-lettuce-cups.jpg	0
 271	Traditional Stuffing	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	\N	\N	8	55	5	4	t	270532866	\N	0
 272	Fragrant Spiced Rice	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	\N	\N	8	10	5	4	t	0	\N	0
 305	Exercise Recovery Smoothie	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	exercise-recovery-smoothie.jpg	0
@@ -250,5 +250,6 @@
 364	Crispy Garlicky Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	5	2	t	272630020	\N	0
 365	Potato & Artichoke Al Forno	From Jamie Oliver's 5 Ingredients	\N	\N	4	80	9	6	t	2097154	\N	0
 366	Company Pickle Chunks	Makes 7 pints. - Lolly Wehrli	\N	\N	0	0	0	1	t	0	\N	0
-367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	8	2	2	t	4194308	\N	0
+367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	8	2	2	t	4194308	egg-fried-rice.jpg	0
 368	Rhubarb Compote	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	\N	\N	0	25	5	1	t	4194308	\N	6
+369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	4	60	9	4	t	2097154	\N	0
