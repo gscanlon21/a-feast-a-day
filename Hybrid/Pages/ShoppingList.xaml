@@ -8,6 +8,7 @@
              xmlns:newsletter="clr-namespace:Hybrid.Database.Entities;assembly=Hybrid"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Hybrid.ShoppingListPage"
+             x:Name="shoppingListPage"
              Title="Shopping List">
 
     <ContentPage.Behaviors>
@@ -25,17 +26,16 @@
     </ContentPage.Resources>
 
     <Grid ColumnDefinitions="*" RowDefinitions="50,*" RowSpacing="-5">
-        <Entry x:Name="IngredientEntry"
-               Placeholder="Add Ingredient"
+        <Entry Placeholder="Add Ingredient"
                Text="{Binding IngredientEntry}"
                ReturnCommand="{Binding WhenCompletedCommand}"/>
 
         <RefreshView Grid.Row="1" IsRefreshing="{Binding Loading}" Command="{Binding LoadCommand}">
             <ScrollView>
-                <ListView x:Name="shoppingListView"
+                <ListView SizeChanged="ListView_SizeChanged"
                           ItemsSource="{Binding Ingredients}"
-                          SelectionMode="None" HasUnevenRows="True"
-                          VerticalScrollBarVisibility="Never">
+                          VerticalScrollBarVisibility="Never"
+                          SelectionMode="None" HasUnevenRows="True">
                     
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -44,7 +44,7 @@
                                     <CheckBox Grid.Column="0" IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
                                         <CheckBox.Behaviors>
                                             <toolkit:EventToCommandBehavior
-                                                Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference shoppingListView}}"
+                                                Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference shoppingListPage}}"
                                                 CommandParameter="{Binding .}"
                                                 EventName="CheckedChanged" />
                                         </CheckBox.Behaviors>

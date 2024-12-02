@@ -16,6 +16,16 @@ public partial class ShoppingListPage : ContentPage
         viewModel.Navigation = Navigation;
         BindingContext = viewModel;
     }
+
+    private void ListView_SizeChanged(object? sender, EventArgs e)
+    {
+        if (sender is ListView shoppingListView)
+        {
+            // Nested scroll to prevent ui or list reordering issues.
+            // Set the HeightRequest to prevent nested scroll issues.
+            shoppingListView.HeightRequest = shoppingListView.Height;
+        }
+    }
 }
 
 public partial class ShoppingListPageViewModel : ObservableObject
