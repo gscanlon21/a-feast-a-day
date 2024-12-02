@@ -17,13 +17,13 @@ public partial class ShoppingListPage : ContentPage
         BindingContext = viewModel;
     }
 
-    private void ListView_SizeChanged(object? sender, EventArgs e)
+    private void ScrollView_SizeChanged(object sender, EventArgs e)
     {
-        if (sender is ListView shoppingListView)
+        if (sender is ScrollView scrollView)
         {
-            // Nested scroll to prevent ui or list reordering issues.
-            // Set the HeightRequest to prevent nested scroll issues.
-            shoppingListView.HeightRequest = shoppingListView.Height;
+            // Nested scroll to prevent list reordering issues.
+            // Set the height to limit nested scrolling issues.
+            shoppingListView.HeightRequest = scrollView.Height;
         }
     }
 }
