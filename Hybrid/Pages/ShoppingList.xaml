@@ -24,7 +24,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid ColumnDefinitions="*" RowDefinitions="50,*" RowSpacing="-5">
+    <Grid ColumnDefinitions="*" RowDefinitions="50,*" RowSpacing="-6">
         <Entry Placeholder="Add Ingredient"
                Text="{Binding IngredientEntry}"
                ReturnCommand="{Binding WhenCompletedCommand}"/>
@@ -38,8 +38,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid ColumnDefinitions="Auto,*" >
-                                    <CheckBox Grid.Column="0" IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
+                                <Grid ColumnDefinitions="60,*" >
+                                    <CheckBox IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
                                         <CheckBox.Behaviors>
                                             <toolkit:EventToCommandBehavior
                                                 Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference shoppingListView}}"
@@ -48,7 +48,7 @@
                                         </CheckBox.Behaviors>
                                     </CheckBox>
 
-                                    <StackLayout Grid.Column="1" Margin="15,10" >
+                                    <StackLayout Grid.Column="1" Margin="0,10" >
                                         <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Title'}" LineBreakMode="WordWrap"
                                                FontSize="16" FontAttributes="Bold"
                                                TextColor="{StaticResource Primary}"/>
