@@ -30,11 +30,10 @@
                ReturnCommand="{Binding WhenCompletedCommand}"/>
 
         <RefreshView Grid.Row="1" IsRefreshing="{Binding Loading}" Command="{Binding LoadCommand}">
-            <ScrollView SizeChanged="ScrollView_SizeChanged">
-                <ListView ItemsSource="{Binding Ingredients}"
-                          SelectionMode="None" HasUnevenRows="True"
-                          VerticalScrollBarVisibility="Never"
-                          x:Name="shoppingListView">
+            <ScrollView SizeChanged="ScrollView_SizeChanged" VerticalScrollBarVisibility="Never">
+                <ListView x:Name="shoppingListView"
+                          ItemsSource="{Binding Ingredients}"
+                          SelectionMode="None" HasUnevenRows="True">
                     
                     <ListView.ItemTemplate>
                         <DataTemplate>
