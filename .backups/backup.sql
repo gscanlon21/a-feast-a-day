@@ -1210,6 +1210,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 860	123
 250	861
 863	862
+868	866
+868	867
 \.
 
 
@@ -4850,6 +4852,23 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10372	224	14	\N	\N	3	3	f
 10373	224	1984	\N	\N	3	0.2	f
 10374	224	62	\N	\N	3	4	f
+10375	64	2047	\N	\N	3	25	f
+10376	800	68719476736	\N	\N	2	1	f
+10377	800	34359738368	\N	\N	2	54	f
+10378	800	1	\N	\N	3	0.4	f
+10379	800	4294967296	\N	\N	2	21	f
+10380	800	2199023255552	\N	\N	2	1	f
+10381	800	48	\N	\N	3	0.1	f
+10382	800	14	\N	\N	3	1	f
+10383	800	1984	\N	\N	3	0.1	f
+10384	800	62	\N	\N	3	1	f
+10385	800	2047	\N	\N	3	5	f
+10386	643	2047	\N	\N	3	140	f
+10387	477	1	\N	\N	3	8	f
+10388	477	14	\N	\N	3	13	f
+10389	477	1984	\N	\N	3	0.4	f
+10390	477	62	\N	\N	3	13	f
+10391	477	2047	\N	\N	3	89	f
 \.
 
 
@@ -5239,11 +5258,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5102	8	\N	\N	161	2	1	\N	36	f	\N	3
 5103	7	\N	\N	161	1	1	\N	62	t	\N	4
 5104	8	\N	\N	161	8	1	\N	285	f	\N	5
-5318	5	\N	\N	320	4	5	\N	404	t	\N	0
-5319	0	\N	\N	320	1	4	\N	5	f	\N	1
-5320	4	\N	\N	320	1	7	(ROSEMARY FOCACCIA)	677	f	\N	2
-5321	4	\N	\N	320	1	23	(WHITE BEANS)	266	f	\N	3
-5322	0	\N	\N	320	1	12	(CHIPOLATA OF SMALL PORK SAUSAGES)	126	f	\N	4
 2654	6	\N	\N	86	2	5	\N	111	f	\N	0
 390	6	\N	\N	43	1	1	\N	188	f	\N	0
 318	6	\N	\N	41	2	1	, frozen peas	145	f	\N	0
@@ -5906,6 +5920,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5091	8	\N	\N	259	8	1	, to taste	285	f	\N	6
 5427	4	\N	\N	368	1	12	(fresh rhubarb), trimmed and cut into 1/2 inch pieces	560	f	\N	0
 5428	6	\N	\N	368	2	1	\N	36	f	\N	1
+5318	5	\N	\N	320	4	5	\N	404	t	\N	0
 3607	0	\N	\N	177	1	4	, halved lengthways and seeded	597	f	\N	0
 3608	0	\N	\N	177	1	3	, finely chopped	5	f	\N	1
 3609	0	\N	\N	177	1	2	roots, finely chopped	13	f	\N	2
@@ -6068,6 +6083,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4020	6	\N	\N	185	1	1	\N	6	f	\N	1
 4894	4	\N	\N	258	1	1	\N	13	t	\N	3
 4895	0	\N	\N	258	1	4	\N	187	f	\N	4
+5319	0	\N	\N	320	1	4	\N	5	f	\N	1
+5320	4	\N	\N	320	1	7	\N	864	f	\N	2
+5321	4	\N	\N	320	1	23	\N	865	f	\N	3
+5322	0	\N	\N	320	1	12	\N	868	f	\N	4
 4043	6	\N	\N	187	2	1	\N	663	f	\N	0
 4044	7	\N	\N	187	1	2	\N	185	f	\N	1
 4045	0	\N	\N	187	1	1	\N	187	f	\N	2
@@ -7262,11 +7281,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2668	Thinly pare 1 or 2 strips of rind from the lime. Put them in a pan, with the dessert wine, sugar, star anise and cinnamon stick. Split the vanilla pod and add the seeds to the pan. Bring to a boil, then lower the heat and simmer for 10 minutes.	\N	159	0
 2669	Remove the pan from the heat and leave to cool, then stir in the liqueur.	\N	159	1
 2670	Peel the clementines. Cut some of them in half and place them all in a large dish. Pour over the wine and chill before serving.	\N	159	2
-2915	Preheat the oven to 350°F. Halve the cherry tomatoes, peel and finely slice the garlic, and tear the bread into bite-sized chunks. Place it all in a 14x12-inch roasting pan, pour in the beans and their juice, drizzle with 1 tablespoon of olive oil and red wine vinegar, add a splash of water, and mix it all together. Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	\N	320	0
-2916	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	\N	320	1
 2445	Sauté the onion in olive oil for 5 minutes on low heat.	\N	257	0
 2446	Pour white wine into the pan, stir, and simmer for 7 minutes.	\N	257	1
 2447	Add arborio rice, mix everything, and fry everything together for 5 minutes.	\N	257	2
+2915	Preheat the oven to 350°F. Halve the cherry tomatoes, peel and finely slice the garlic, and tear the bread into bite-sized chunks. Place it all in a 14x12-inch roasting pan, pour in the beans and their juice, drizzle with 1 tablespoon of olive oil and red wine vinegar, add a splash of water, and mix it all together. Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	\N	320	0
+2916	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	\N	320	1
 2918	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through. Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	1
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	\N	262	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	\N	262	1
@@ -7326,7 +7345,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 8, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10374, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10391, true);
 
 
 --

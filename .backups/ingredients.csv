@@ -60,7 +60,7 @@
 61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	28	14	2024-06-17	4	224	32
 62	\N	Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3618	\N	f	294944	32	16	2024-10-27	9	256	8192
 63	\N	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2024-07-04	7	100	0
-64	\N	Hot Sauce	\N	\N	f	0	240	100	-infinity	6	240	0
+64	\N	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965	\N	f	0	28	240	2024-12-02	4	240	256
 65	\N	Buffalo Sauce	https://www.eatthismuch.com/calories/buffalo-wing-sauce-1721937	\N	f	0	14	14	2024-10-10	7	224	3
 66	\N	Ranch Dressing	https://www.eatthismuch.com/food/nutrition/ranch-dressing,272/	\N	f	0	14.5	14.5	2024-07-29	7	232	0
 67	\N	Black Pepper	https://www.eatthismuch.com/calories/pepper,205	\N	t	0	6	6	2024-09-03	7	96	131072
@@ -431,7 +431,7 @@
 472	\N	Slices of Brioche Bread	https://www.eatthismuch.com/calories/brioche-bread-2871822	\N	f	32	40	40	2024-10-29	0	80	2
 473	\N	Fresh Dill	https://www.eatthismuch.com/calories/dill-219	\N	f	0	0.6	0.6	2024-10-01	7	9.6	1
 475	\N	White Wine Vinegar | Apple Cider Vinegar	https://www.eatthismuch.com/calories/white-wine-vinegar,27797 | https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	240	15	2024-08-18	6	240	32
-477	\N	Skim Milk	https://www.eatthismuch.com/food/nutrition/skim-milk,4070520/	\N	f	320	240	240	-infinity	6	240	4194304
+477	\N	Skim Milk	https://www.eatthismuch.com/calories/skim-milk-7096	\N	f	320	240	240	2024-12-03	6	240	4194304
 478	\N	Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
 479	\N	Red Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
 480	\N	Seedless Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
@@ -570,7 +570,7 @@
 640	\N	Prunes	Dried Plums.	\N	f	0	240	100	2024-06-15	6	240	1
 641	\N	Graham Crackers	https://www.eatthismuch.com/calories/graham-crackers-4097	\N	f	0	7	7	2024-06-10	0	50	4
 642	\N	Graham Crackers, GF	https://www.eatthismuch.com/calories/graham-crackers-4097	\N	f	0	7	7	2024-06-10	0	50	4
-643	\N	Ground Venison	https://www.eatthismuch.com/calories/ground-beef-5421	\N	f	0	28	28	-infinity	4	224	8
+643	\N	Ground Venison	https://www.eatthismuch.com/calories/ground-venison-all-natural-2136768	\N	f	0	28	113	2024-12-03	4	224	268435456
 644	\N	Ground Pork	https://www.eatthismuch.com/calories/ground-pork-1786	\N	f	0	28	28	-infinity	4	224	268435456
 645	\N	Peppers Sauce	https://www.eatthismuch.com/calories/peppers-sauce-856	\N	f	0	245	245	2024-10-13	6	245	3
 646	\N	Marinara Sauce	https://www.eatthismuch.com/food/nutrition/pasta-sauce,871/	\N	f	512	257	257	2024-06-14	6	240	256
@@ -697,7 +697,7 @@
 797	\N	Clementines | Tangerines	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 798	\N	Clementines | Tangerines | Seedless Oranges	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 799	\N	Seedless Oranges	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2024-06-14	0	131	1
-800	\N	Tarragon	\N	\N	f	0	4	2	-infinity	4	32	2
+800	\N	Tarragon	https://www.eatthismuch.com/calories/tarragon-215	\N	f	0	28	2	2024-12-02	4	32	131072
 801	\N	Fresh Mixed-Color Kale	https://www.eatthismuch.com/calories/kale,1995	\N	f	0	67	67	2024-09-11	6	67	1
 802	\N	Balti Curry Paste	https://www.eatthismuch.com/calories/balti-sauce-152832	\N	f	0	28	120	2024-11-24	4	180	256
 803	\N	Red Split Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2024-06-16	6	192	2048
@@ -760,3 +760,8 @@
 861	\N	Fresh Mixed-Color Zucchini	https://www.eatthismuch.com/calories/zucchini-2183	\N	f	0	196	196	2024-06-12	0	196	2
 862	\N	Silken Tofu	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	32768	50	50	2024-11-03	0	200	8192
 863	\N	Tofu	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	32768	50	50	2024-08-31	0	200	8192
+864	\N	Rosemary Focaccia	https://www.eatthismuch.com/calories/loaf-bread,3303048	\N	f	32	34	34	2024-06-15	0	34	64
+865	\N	White Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	4
+866	\N	Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
+867	\N	Chipolata	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
+868	\N	Chipolata | Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
