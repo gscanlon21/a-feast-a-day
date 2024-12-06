@@ -166,6 +166,10 @@ public partial class NewsletterRepo
     {
         return await new QueryBuilder(Section.Debug)
             .WithUser(user)
+            .WithRecipes(options =>
+            {
+                options.IgnorePrerequisites = true;
+            })
             .Build()
             .Query(_serviceScopeFactory, take: 1);
     }
