@@ -13,6 +13,13 @@ namespace Data.Entities.User;
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class Nutrient
 {
+    public class Consts
+    {
+        public const double ValueMin = 0;
+        public const double ValueStep = .1;
+        public const double ValueMax = 100000;
+    }
+
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
@@ -25,6 +32,7 @@ public class Nutrient
 
     public Measure Measure { get; set; }
 
+    [Range(Consts.ValueMin, Consts.ValueMax)]
     public double Value { get; set; }
 
     public bool Synthetic { get; set; }

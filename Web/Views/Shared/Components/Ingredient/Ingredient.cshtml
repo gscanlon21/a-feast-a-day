@@ -2,7 +2,7 @@
 @using Core.Models.Ingredients
 @using Core.Models.Recipe
 @using Web.Code.Extensions
-
+@using Data.Entities.User
 
 <div class="alert alert-light shadow mb-3" role="alert">
     <form id="ingredient-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.UpsertIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
@@ -78,7 +78,7 @@
                 <div class="form-group col order-md-last">
                     <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
 
-                    <input type="number" asp-for="Nutrients[i].Value" step="0.1" min="0" max="10000" class="form-control" />
+                    <input type="number" asp-for="Nutrients[i].Value" step="@Nutrient.Consts.ValueStep" min="@Nutrient.Consts.ValueMin" max="@Nutrient.Consts.ValueMax" class="form-control" />
                     <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
                     <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(DisplayType.Description)</div>
                 </div>
