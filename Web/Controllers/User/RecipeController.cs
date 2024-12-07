@@ -154,6 +154,34 @@ public class RecipeController : ViewController
     }
 
     [HttpPost, Route("{section:section}/{recipeId}/[action]")]
+    public async Task<IActionResult> SkipRecipe(string email, string token, int recipeId, Section section)
+    {
+        var user = await _userRepo.GetUser(email, token);
+        if (user == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var userRecipe = await _context.UserRecipes
+            .Where(ur => ur.RecipeId == recipeId)
+            .Where(ur => ur.Section == section)
+            .Where(ur => ur.UserId == user.Id)
+            .FirstAsync();
+
+        // May be null if the recipe was soft/hard deleted.
+        if (userRecipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        bool unskipped = !userRecipe.IgnoreUntil.HasValue || userRecipe.IgnoreUntil == DateOnly.MaxValue;
+        userRecipe.IgnoreUntil = unskipped ? DateHelpers.Today.AddMonths(1) : null;
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
+    }
+
+    [HttpPost, Route("{section:section}/{recipeId}/[action]")]
     public async Task<IActionResult> IgnoreRecipe(string email, string token, int recipeId, Section section)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -168,13 +196,13 @@ public class RecipeController : ViewController
             .Where(ur => ur.UserId == user.Id)
             .FirstAsync();
 
-        // May be null if the exercise was soft/hard deleted
+        // May be null if the recipe was soft/hard deleted.
         if (userRecipe == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        userRecipe.Ignore = !userRecipe.Ignore;
+        userRecipe.IgnoreUntil = userRecipe.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null;
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });

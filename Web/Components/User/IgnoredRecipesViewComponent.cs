@@ -4,7 +4,6 @@ using Core.Models.Newsletter;
 using Data;
 using Data.Query;
 using Data.Query.Builders;
-using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.IgnoredRecipes;
@@ -21,15 +20,13 @@ public class IgnoredRecipesViewComponent : ViewComponent
     /// </summary>
     public const string Name = "IgnoredRecipes";
 
-    private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public IgnoredRecipesViewComponent(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    public IgnoredRecipesViewComponent(CoreContext context, IServiceScopeFactory serviceScopeFactory)
     {
-        _serviceScopeFactory = serviceScopeFactory;
-        _userRepo = userRepo;
         _context = context;
+        _serviceScopeFactory = serviceScopeFactory;
     }
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
@@ -39,13 +36,13 @@ public class IgnoredRecipesViewComponent : ViewComponent
         userNewsletter.Token = token;
 
         var userRecipes = user.UserRecipes.NullIfEmpty()?
+            .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
             .Where(ur => ur.Section != Section.None)
-            .Where(ur => ur.Ignore)
             .ToList();
         userRecipes ??= await _context.UserRecipes.AsNoTracking()
+            .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
             .Where(ur => ur.Section != Section.None)
             .Where(ur => ur.UserId == user.Id)
-            .Where(ur => ur.Ignore)
             .ToListAsync();
 
         var ignoredRecipes = new List<QueryResults>();

@@ -30,8 +30,7 @@ public class UserRecipe
     /// <summary>
     /// Don't show this recipe to the user.
     /// </summary>
-    [Required]
-    public bool Ignore { get; set; }
+    public DateOnly? IgnoreUntil { get; set; }
 
     /// <summary>
     /// When was this recipe last seen in the user's newsletter.

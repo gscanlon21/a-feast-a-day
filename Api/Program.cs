@@ -102,6 +102,7 @@ var scheduler = await schedulerFactory.GetScheduler();
 await CreateEmails.Schedule(scheduler);
 await CreateFeasts.Schedule(scheduler);
 await CreateBackfill.Schedule(scheduler);
+await EnableSkippedRecipes.Schedule(scheduler);
 await DisableInactiveUsers.Schedule(scheduler);
 await DisableErroredUsers.Schedule(scheduler);
 await DeleteInactiveUsers.Schedule(scheduler);

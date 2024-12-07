@@ -85,7 +85,7 @@ public class QueryRunner(Section section)
                 }).ToList()
             })
             // Don't grab recipes that the user wants to ignore.
-            .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.Ignore != true);
+            .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.IgnoreUntil.HasValue != true);
         // Don't filter out ignored or allergen provoking ingredients here because we want to try to swap substitutes in first.
         // ... The user should ignore the recipe if they don't want a recipe with a specific ingredient that has alternatives.
         //-Don't grab recipes that use ingredients that the user wants to ignore.
