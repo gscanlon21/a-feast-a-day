@@ -104,17 +104,17 @@ public partial class ShoppingListPageViewModel : ObservableObject
         {
             try
             {
-                var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), 0);
+                var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), string.Empty);
                 var shoppingList = (await _userService.GetShoppingList(_preferences.Email.Value, _preferences.Token.Value)).GetValueOrDefault();
                 if (shoppingList != null)
                 {
-                    // If the week has changed, reset the shopping list.
-                    if (shoppingListHash != shoppingList!.NewsletterId)
+                    // If the recipes changed, reset the shopping list.
+                    if (shoppingListHash != shoppingList.Hash)
                     {
                         _ = await _localDatabase.DeleteItemsAsync();
 
-                        // Update the shopping list hash so we don't reset again until next week.
-                        Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList!.NewsletterId);
+                        // Update the shopping list hash, so we don't reset again until next week.
+                        Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList.Hash);
                     }
 
                     // Merge local and remote items into the db.

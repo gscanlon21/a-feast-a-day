@@ -246,6 +246,7 @@ public partial class NewsletterRepo
             var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!));
             shoppingList.Add(new ShoppingListItemDto()
             {
+                Id = group.Key.Id,
                 Name = group.Key.Name,
                 Category = group.Key.Ingredient!.Category,
                 Measure = group.Key.Ingredient.DefaultMeasure,
@@ -257,7 +258,6 @@ public partial class NewsletterRepo
 
         return new ShoppingListDto()
         {
-            NewsletterId = newsletter.Id,
             ShoppingList = shoppingList
         };
     }
