@@ -4,24 +4,37 @@
 @using Web.Code.Extensions
 
 <div class="alert alert-light shadow mb-3" role="alert">
-    <form id="recipe-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+    <form id="recipe-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" method="post"
+          asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
+        
         <input asp-for="Recipe.Id" type="hidden" class="form-control" />
 
         <div class="form-group mb-3">
             <label asp-for="Recipe.Name" class="control-label">Name</label>
             <input asp-for="Recipe.Name" type="text" class="form-control" required="required" />
         </div>
+
         <div class="form-group mb-3">
             <label asp-for="Recipe.Notes" class="control-label">Notes</label>
             <input asp-for="Recipe.Notes" type="text" class="form-control" />
         </div>
-        <div class="form-group form-check mb-3">
-            <div>
-                <span><label asp-for="Recipe.AdjustableServings" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.AdjustableServings)</label></span>
-                <input class="form-check-input allow-demo" asp-for="Recipe.AdjustableServings" aria-describedby="fitness-help" />
-            </div>
-            <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
-            <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
+            <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="6"
+                    asp-items="@(EnumExtensions.GetSingleValues64(excludingAny: Section.Prep).AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value))">
+            </select>
+            <span asp-validation-for="Recipe.SectionBinder" class="text-danger"></span>
+            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Section)</div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Recipe.EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Equipment)</label>
+            <select asp-for="Recipe.EquipmentBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"
+                    asp-items="@(EnumExtensions.GetNotNoneValues32<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Order))">
+            </select>
+            <span asp-validation-for="Recipe.EquipmentBinder" class="text-danger"></span>
+            <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Equipment)</div>
         </div>
 
         <div class="form-group mb-5 mt-3">
@@ -126,23 +139,14 @@
                 <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Measure)</span>
             </div>
         </div>
-     
-        <div class="form-group mb-3">
-            <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
-            <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="6"
-                    asp-items="@(EnumExtensions.GetSingleValues64(excludingAny: Section.Prep).AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value))">
-            </select>
-            <span asp-validation-for="Recipe.SectionBinder" class="text-danger"></span>
-            <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Section)</div>
-        </div>
 
-        <div class="form-group mb-3">
-            <label asp-for="Recipe.EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Equipment)</label>
-            <select asp-for="Recipe.EquipmentBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"
-                    asp-items="@(EnumExtensions.GetNotNoneValues32<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Order))">
-            </select>
-            <span asp-validation-for="Recipe.EquipmentBinder" class="text-danger"></span>
-            <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Equipment)</div>
+        <div class="form-group form-check mb-3">
+            <div>
+                <span><label asp-for="Recipe.AdjustableServings" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.AdjustableServings)</label></span>
+                <input class="form-check-input allow-demo" asp-for="Recipe.AdjustableServings" aria-describedby="adjustable-servings-help" />
+            </div>
+            <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
+            <div id="adjustable-servings-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
         </div>
 
         <div class="mb-3" >
@@ -354,10 +358,12 @@
         @if (Model.Recipe.Id != default)
         {
             <div class="col-auto">
-                <form id="delete-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <form id="delete-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RemoveRecipe)" method="post"
+                      asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
+                    
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    
                     <input type="hidden" name="RecipeId" asp-for="@Model.Recipe.Id" />
-
                     <input type="submit" value="Delete" class="btn btn-outline-danger" form="delete-form" />
                 </form>
             </div>
@@ -365,10 +371,11 @@
         else
         {
             <div class="col-auto">
-                @* TODO *@
-                <form id="import-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <form id="import-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" method="post"
+                      asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
+                    
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+                    
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <input id="file-input" class="btn btn-outline-secondary" style="width:27ch;" disabled="disabled" type="file" name="Recipe" />
                         <input type="submit" value="Import" class="btn btn-outline-secondary" form="import-form" disabled="disabled" />

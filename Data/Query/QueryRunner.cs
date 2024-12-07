@@ -223,17 +223,17 @@ public class QueryRunner(Section section)
             recipe.Nutrients = allNutrients.Where(n => recipe.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
 
             // Order the recipe ingredients based on user preferences.
-            var recipeIngredients = UserOptions.IngredientOrder switch
+            recipe.RecipeIngredients = UserOptions.IngredientOrder switch
             {
+                not IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order).ToList(),
                 IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size).ToList(),
-                IngredientOrder.OrderUsed or _ => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order).ToList(),
             };
 
-            // Scaling the recipe will also scale the recipe ingredient quantities with then effects ingredient recipe scales.
-            var userRecipeScale = recipe.UserRecipe != null ? recipe.UserRecipe.Servings / (double)recipe.Recipe.Servings : 1;
-            orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipeIngredients, recipe.UserRecipe)
+            orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe)
             {
-                SetScale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int? scale) == true && scale.HasValue ? scale.Value : userRecipeScale,
+                // Scaling the recipe will also scale the recipe ingredient quantities which then affects ingredient recipe scales.
+                SetScale = (RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int? scale) == true && scale.HasValue) ? scale.Value
+                    : (recipe.UserRecipe != null && recipe.Recipe.AdjustableServings) ? recipe.UserRecipe.Servings / (double)recipe.Recipe.Servings : 1,
             });
         }
 
@@ -294,7 +294,7 @@ public class QueryRunner(Section section)
                             // ... only use a fraction of the recipe, the scale will end up being more than doubled.
                             existingIngredientRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
                         }
-                        else
+                        else if (!RecipeOptions.IgnorePrerequisites)
                         {
                             finalResults.Add(prerequisiteRecipe.Key);
                         }
@@ -338,20 +338,12 @@ public class QueryRunner(Section section)
             // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
-        // No infinite recursion please.
-        if (!prerequisiteRecipeIds.Any() || RecipeOptions.IgnorePrerequisites)
-        {
-            return [];
-        }
-
-        // This will filter out ignored prerequisite recipes.
-        return (await new QueryBuilder(Section.Prep)
+        // This will filter out ignored prerequisite recipes. No infinite recursion please. 
+        return prerequisiteRecipeIds.Any() ? await new QueryBuilder(Section.Prep)
             .WithUser(UserOptions)
             .WithEquipment(EquipmentOptions.Equipment)
             .WithRecipes(options => options.AddRecipes(prerequisiteRecipeIds))
-            .Build()
-            .Query(factory))
-            .ToList();
+            .Build().Query(factory) : [];
     }
 
     /// <summary>

@@ -109,7 +109,7 @@
 110	\N	Head of Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	f	0	908	908	2024-11-06	0	89	2
 111	\N	Chicken Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436	\N	f	0	240	240	2024-06-28	6	240	928
 112	\N	Taco Seasoning	https://www.eatthismuch.com/calories/taco-seasoning,100484	\N	f	0	3	6	2024-08-29	8	144	131072
-113	\N	Hamburger Buns	https://www.eatthismuch.com/calories/hamburger-bun-4256	\N	f	262176	43	43	-infinity	0	43	64
+113	\N	Hamburger Buns	https://www.eatthismuch.com/calories/hamburger-bun-4256	\N	f	262176	43	43	2024-12-05	0	43	64
 114	\N	Pork Fillet (Tenderloin)	https://www.eatthismuch.com/calories/pork-tenderloin-1785	\N	f	0	28	28	2024-11-15	4	224	268435456
 115	\N	Dr. Pepper	https://www.eatthismuch.com/calories/dr-pepper,3105	\N	f	0	368	491	2024-08-17	0	246	5
 116	\N	Barbecue Sauce	https://www.eatthismuch.com/calories/barbecue-sauce-730	\N	f	32	36	18	2024-11-17	9	288	32
@@ -244,9 +244,9 @@
 250	\N	Fresh Zucchini	https://www.eatthismuch.com/calories/zucchini-2183	\N	f	0	196	196	2024-06-12	0	196	2
 251	\N	Mint Leaves	https://www.eatthismuch.com/calories/mint-91252	\N	f	0	28	3	2024-06-12	4	48	3
 252	\N	Three Wishes Cinnamon Grain Free Cereal	https://www.eatthismuch.com/calories/grain-free-cereal-cinnamon,3131931	\N	f	0	245	35	2024-09-20	0	35	4
-253	\N	Cereal	https://www.eatthismuch.com/calories/honey-nut-cheerios,1026	\N	f	0	245	35	-infinity	0	35	0
+253	\N	Cereal	https://www.eatthismuch.com/calories/honey-nut-cheerios,1026	\N	f	262176	234	39	2024-12-06	0	39	7168
 254	\N	Salted Margarine	https://www.eatthismuch.com/calories/margarine,348	\N	t	0	113	14	2024-09-14	0	224	131072
-255	\N	Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2024-07-28	0	130	0
+255	\N	Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2024-07-28	0	130	2
 257	\N	Frigo String Cheese Sticks	https://www.eatthismuch.com/calories/string-cheese-471958	\N	f	260	28	28	2024-10-22	0	112	8388608
 258	\N	Naan | Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	0	64	64	2024-10-25	0	64	2
 259	\N	Eggplant	https://www.eatthismuch.com/calories/eggplant,1975	\N	f	0	548	548	2024-08-12	0	82	2
@@ -286,7 +286,7 @@
 293	\N	Low Sodium Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3748	\N	f	294944	32	16	2024-09-22	9	256	3
 294	\N	Low Sodium Tamari Sauce	Tamari sauce generally does not contain wheat. https://www.eatthismuch.com/calories/soy-sauce-3619	\N	f	32768	36	18	2024-10-29	9	288	8192
 295	\N	Tamari Sauce	Tamari sauce generally does not contain wheat. https://www.eatthismuch.com/calories/soy-sauce-3619	\N	f	32768	36	18	2024-11-13	9	288	8192
-296	\N	Pumpkin Seeds	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	18.66	28	-infinity	4	149.28	1048576
+296	\N	Pumpkin Seeds	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
 297	\N	Tamari | Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce-3619	\N	f	0	36	18	2024-10-30	9	288	16
 298	\N	Coconut Sugar	aka. Coconut Palm Sugar	\N	f	0	240	100	2024-08-23	6	240	4
 299	\N	White Pepper	\N	\N	t	0	240	100	-infinity	8	240	0
@@ -341,7 +341,7 @@
 348	\N	Pink Himalayan Salt	https://www.eatthismuch.com/calories/himalayan-pink-salt,152245	\N	t	0	4	1	2024-08-08	8	192	131072
 349	\N	Kosher Salt | Pink Himalayan Salt	https://www.eatthismuch.com/food/nutrition/kosher-salt-coarse,2313857/	\N	t	0	4	1	2024-09-30	8	192	131072
 350	\N	Steak Seasoning	\N	\N	f	0	240	100	-infinity	0	240	0
-352	\N	Cantaloupe Melon	https://www.eatthismuch.com/calories/melons-1450	\N	f	0	552	552	-infinity	0	156	1
+352	\N	Cantaloupe Melon	https://www.eatthismuch.com/calories/melons-1450	\N	f	0	552	552	2024-12-05	0	156	1
 353	\N	Baby Carrots	https://www.eatthismuch.com/calories/baby-carrots,2569	\N	f	0	246	246	2024-08-22	6	246	1
 354	\N	Frozen Carrot Slices	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	0
 355	\N	Chickpea Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-chickpea-pasta,1880907	\N	f	0	28	56	2024-08-10	4	224	4
@@ -571,7 +571,7 @@
 641	\N	Graham Crackers	https://www.eatthismuch.com/calories/graham-crackers-4097	\N	f	0	7	7	2024-06-10	0	50	4
 642	\N	Graham Crackers, GF	https://www.eatthismuch.com/calories/graham-crackers-4097	\N	f	0	7	7	2024-06-10	0	50	4
 643	\N	Ground Venison	https://www.eatthismuch.com/calories/ground-venison-all-natural-2136768	\N	f	0	28	113	2024-12-03	4	224	268435456
-644	\N	Ground Pork	https://www.eatthismuch.com/calories/ground-pork-1786	\N	f	0	28	28	-infinity	4	224	268435456
+644	\N	Ground Pork	https://www.eatthismuch.com/calories/ground-pork-1786	\N	f	0	28	28	2024-12-06	4	224	268435456
 645	\N	Peppers Sauce	https://www.eatthismuch.com/calories/peppers-sauce-856	\N	f	0	245	245	2024-10-13	6	245	3
 646	\N	Marinara Sauce	https://www.eatthismuch.com/food/nutrition/pasta-sauce,871/	\N	f	512	257	257	2024-06-14	6	240	256
 647	\N	Rigatoni Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,1581502/	\N	f	32	85	85	2024-06-10	6	85	4096
@@ -632,7 +632,7 @@
 703	\N	Cabbage Leaves	\N	\N	f	0	240	100	-infinity	6	240	1
 704	\N	Head of Savoy Cabbage	\N	\N	f	0	240	100	-infinity	6	240	1
 705	\N	Head of Napa Cabbage	\N	\N	f	0	240	100	-infinity	6	240	1
-706	\N	Napa Cabbage Leaves	\N	\N	f	0	240	100	-infinity	6	240	1
+706	\N	Napa Cabbage Leaves	https://www.eatthismuch.com/calories/cabbage-2578	\N	f	0	28	109	2024-12-04	0	109	2
 707	\N	Savoy Cabbage Leaves	https://www.eatthismuch.com/calories/cabbage-1906	\N	f	0	28	70	2024-11-25	0	70	2
 708	\N	Ghee	Type of clarified butter. https://www.eatthismuch.com/calories/ghee-2265017	\N	f	4	28	14	2024-08-20	4	224	29360128
 709	\N	Chives | Green Onions (Scallions)	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	3	3	2024-06-25	7	240	2
@@ -765,3 +765,7 @@
 866	\N	Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
 867	\N	Chipolata	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
 868	\N	Chipolata | Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
+869	\N	Wild Salmon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+870	\N	Flaxseed Oil	https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	-infinity	9	224	32768
+871	\N	Fresh Blueberries	https://www.eatthismuch.com/calories/blueberries-1343	\N	f	0	148	148	2024-11-28	6	148	1
+872	\N	Broccoli Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2

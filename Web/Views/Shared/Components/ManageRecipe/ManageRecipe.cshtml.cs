@@ -25,11 +25,11 @@ public class ManageRecipeViewModel
     public int Servings { get; init; } = RecipeConsts.ServingsDefault;
 
     [Required, Range(UserConsts.LagRefreshXWeeksMin, UserConsts.LagRefreshXWeeksMax)]
-    [Display(Name = "Lag Refresh by X Weeks", Description = "Add a delay before this recipe is recycled from your workouts.")]
+    [Display(Name = "Lag Refresh by X Weeks", Description = "Add a delay before this recipe is recycled from your feasts.")]
     public int LagRefreshXWeeks { get; init; }
 
     [Required, Range(UserConsts.PadRefreshXWeeksMin, UserConsts.PadRefreshXWeeksMax)]
-    [Display(Name = "Pad Refresh by X Weeks", Description = "Add a delay before this recipe is recirculated back into your workouts.")]
+    [Display(Name = "Pad Refresh by X Weeks", Description = "Add a delay before this recipe is recirculated back into your feasts.")]
     public int PadRefreshXWeeks { get; init; }
 
     [Display(Name = "Notes")]

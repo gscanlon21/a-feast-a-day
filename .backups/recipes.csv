@@ -115,7 +115,7 @@
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	tandori-chicken-kebabs.jpg	0
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	0	stir-fried-chicken-basil-chilli.jpg	0
 134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0
-135	Easiest Baked Chicken Breast	https://iowagirleats.com/easiest-baked-chicken-breast/ . If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. I almost always use Ken's Zesty Italian salad dressing, but your favorite balsamic vinegar, lemon vinaigrette, or Asian-style dressing are all fine to use. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	4	10	0	1	t	0	baked-chicken-breast.jpg	0
+135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. I almost always use Ken's Zesty Italian salad dressing, but your favorite balsamic vinegar, lemon vinaigrette, or Asian-style dressing are all fine to use. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed. - https://iowagirleats.com/easiest-baked-chicken-breast/	\N	\N	4	20	10	1	t	2097154	baked-chicken-breast.jpg	0
 136	Easy Chicken Fried Rice	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	\N	\N	4	10	0	2	t	0	chicken-fried-rice.jpg	0
 137	Meatballs	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	\N	\N	0	25	5	12	t	0	meatballs.jpg	0
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	\N	\N	4	10	7	6	t	0	chicken-vegetable-salad.jpg	0
@@ -181,7 +181,7 @@
 231	Pork with Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	4194308	pork-apples.jpg	0
 232	Collagen Packed Blueberry Gummies	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0
 233	Keto Mint Chocolate Chip Dessert	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	\N	\N	32	120	5	2	t	0	chocolate-mint-muffins.jpg	0
-234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	35	4	t	2097154	oven-baked-beet-chips.jpg	0
+234	Oven Baked Beet Chips	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	\N	\N	16	55	35	2	t	2097154	oven-baked-beet-chips.jpg	0
 235	Rosemary-Lemon Tea	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	\N	\N	8	5	5	1	t	2147485696	rosemary-lemon-tea.jpg	0
 236	Nutty-Lemon Snack Balls	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	\N	\N	16	55	5	3	t	268435712	nutty-lemon-snack-balls.jpg	0
 237	Vanilla Sugar	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	\N	\N	0	0	10	2	t	0	\N	6
@@ -190,7 +190,7 @@
 240	Choconut-Mint Squares	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	\N	\N	32	5	5	4	t	0	chocolate-mint-squares.jpg	0
 241	Party Coleslaw	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	\N	\N	8	0	15	4	t	0	party-coleslaw.jpg	0
 242	BPA-Banishing Fruit Salad	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	\N	\N	8	0	10	4	t	0	cantaloupe-melon-salad.jpg	0
-243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	0	10	4	t	4194308	one-pan-veggies.jpg	0
+243	Versatile One-Pan Veggies	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	\N	\N	10	18	2	4	t	4194308	one-pan-veggies.jpg	0
 244	Strawberry Mint Vinaigrette	https://www.drkarafitzgerald.com/recipe/strawberry-mint-vinaigrette/	\N	\N	0	0	10	1	t	144115188478509056	strawberry-mint-vinaigrette.jpg	6
 245	Methylation Trail Mix	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	\N	\N	16	20	5	10	t	0	trail-mix.jpg	0
 246	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	45	20	2	t	0	\N	0
@@ -240,7 +240,7 @@
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version. https://www.glutenfreepalate.com/crockpot-christmas-crack/	\N	\N	32	60	5	4	t	1073742848	\N	0
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	4194308	sausage-carbonara.jpg	0
 324	Crème Fraîche	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	\N	\N	0	0	5	1	t	0	\N	6
-325	Anti-Allergy Salad	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	\N	\N	8	10	5	2	t	0	\N	0
+325	Anti-Allergy Salad	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	\N	\N	8	10	5	2	t	0	anti-allergy-salad.jpg	0
 326	Sticky Teriyaki Aubergine	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	teriyaki-aubergine.jpg	0
 359	Healthy Chocolate Smoothie	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/	\N	\N	24	0	5	2	t	134217856	\N	0
 360	Eggplant Penne Arrabbiata	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	8	4	t	4194308	\N	0
@@ -252,5 +252,6 @@
 366	Company Pickle Chunks	Makes 7 pints. - Lolly Wehrli	\N	\N	0	0	0	1	t	0	\N	0
 367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	8	2	2	t	4194308	egg-fried-rice.jpg	0
 368	Rhubarb Compote	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	\N	\N	0	25	5	1	t	4194308	\N	6
-369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	4	60	9	4	t	2097154	\N	0
+369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	4	60	9	4	t	2097154	cajun-sweet-potatoes.jpg	0
 370	Chili Jam	https://www.jamieoliver.com/recipes/dressings-condiments/chilli-jam/	\N	\N	0	30	10	1	t	4194308	\N	6
+371	Super Green Spaghetti	From Jamie Oliver's 5 Ingredients	\N	\N	3	12	1	2	t	4194308	\N	0

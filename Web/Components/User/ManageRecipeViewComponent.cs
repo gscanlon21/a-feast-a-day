@@ -1,5 +1,4 @@
 ﻿using Core.Dtos.Newsletter;
-using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Recipe;
 using Data.Query.Builders;

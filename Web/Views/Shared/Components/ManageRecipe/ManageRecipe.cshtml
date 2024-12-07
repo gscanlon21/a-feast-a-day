@@ -60,7 +60,55 @@
             </div>
         }
 
-        @if (Model.Recipe.Recipe.AdjustableServings) 
+        @if (Model.Parameters.Section != Section.Prep) 
+        {
+            <div class="form-group mb-3 mt-3">
+                <label asp-for="LagRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.LagRefreshXWeeks)</label>
+                <div style="display:flex;column-gap:1ex;">
+                    <output name="refreshFunctionalOutput" for="@Html.IdFor(_ => Model.LagRefreshXWeeks)">@Model.LagRefreshXWeeks</output>
+                    <div style="display:flex;width:100%;">
+                        <input asp-for="LagRefreshXWeeks" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                               min="@UserConsts.LagRefreshXWeeksMin" max="@UserConsts.LagRefreshXWeeksMax"
+                               oninput="refreshFunctionalOutput.value = this.valueAsNumber" />
+                    </div>
+                </div>
+                <span asp-validation-for="LagRefreshXWeeks" class="text-danger"></span>
+                <details id="refresh-functional-help" class="form-text">
+                    <summary>@Html.DisplayDescriptionFor(_ => Model.LagRefreshXWeeks)</summary>
+
+                    <div class="mt-1">
+                        <span>The Weekly Nutritional Targets feature takes precedence over this.</span>
+                    </div>
+                </details>
+            </div>
+
+            <div class="form-group mb-3 mt-3">
+                <label asp-for="PadRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.PadRefreshXWeeks)</label>
+                <div style="display:flex;column-gap:1ex;">
+                    <output name="delayFunctionalOutput" for="@Html.IdFor(_ => Model.PadRefreshXWeeks)">@Model.PadRefreshXWeeks</output>
+                    <div style="display:flex;width:100%;">
+                        <input asp-for="PadRefreshXWeeks" type="range" style="width:100%;" aria-describedby="delay-functional-help"
+                               min="@UserConsts.PadRefreshXWeeksMin" max="@UserConsts.PadRefreshXWeeksMax"
+                               oninput="delayFunctionalOutput.value = this.valueAsNumber" />
+                    </div>
+                </div>
+                <span asp-validation-for="PadRefreshXWeeks" class="text-danger"></span>
+                <details id="delay-functional-help" class="form-text">
+                    <summary>@Html.DisplayDescriptionFor(_ => Model.PadRefreshXWeeks)</summary>
+
+                    <div class="mt-1">
+                        <span>This may not apply if there are no other recipes available.</span>
+                    </div>
+                </details>
+            </div>
+        }
+        else 
+        {
+            <input asp-for="LagRefreshXWeeks" type="hidden" />
+            <input asp-for="PadRefreshXWeeks" type="hidden" />
+        }
+
+        @if (Model.Recipe.Recipe.AdjustableServings)
         {
             <div class="form-group mb-3 mt-3">
                 <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
@@ -76,51 +124,10 @@
                 <div id="scale-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Servings)</div>
             </div>
         }
-        else 
+        else
         {
             <input asp-for="Servings" type="hidden" value="@Model.Recipe.Recipe.Servings" />
         }
-
-        <div class="form-group mb-3 mt-3">
-            <label asp-for="LagRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.LagRefreshXWeeks)</label>
-            <div style="display:flex;column-gap:1ex;">
-                <output name="refreshFunctionalOutput" for="@Html.IdFor(_ => Model.LagRefreshXWeeks)">@Model.LagRefreshXWeeks</output>
-                <div style="display:flex;width:100%;">
-                    <input asp-for="LagRefreshXWeeks" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                           min="@UserConsts.LagRefreshXWeeksMin" max="@UserConsts.LagRefreshXWeeksMax"
-                           oninput="refreshFunctionalOutput.value = this.valueAsNumber" />
-                </div>
-            </div>
-            <span asp-validation-for="LagRefreshXWeeks" class="text-danger"></span>
-            <details id="refresh-functional-help" class="form-text">
-                <summary>@Html.DisplayDescriptionFor(_ => Model.LagRefreshXWeeks)</summary>
-
-                <div class="mt-1">
-                    <span>The Weekly Nutritional Targets feature takes precedence over this.</span>
-                </div>
-            </details>
-        </div>
-
-        <div class="form-group mb-3 mt-3">
-            <label asp-for="PadRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.PadRefreshXWeeks)</label>
-            <div style="display:flex;column-gap:1ex;">
-                <output name="delayFunctionalOutput" for="@Html.IdFor(_ => Model.PadRefreshXWeeks)">@Model.PadRefreshXWeeks</output>
-                <div style="display:flex;width:100%;">
-                    <input asp-for="PadRefreshXWeeks" type="range" style="width:100%;" aria-describedby="delay-functional-help"
-                           min="@UserConsts.PadRefreshXWeeksMin" max="@UserConsts.PadRefreshXWeeksMax"
-                           oninput="delayFunctionalOutput.value = this.valueAsNumber" />
-                </div>
-            </div>
-            <span asp-validation-for="PadRefreshXWeeks" class="text-danger"></span>
-            <details id="delay-functional-help" class="form-text">
-                <summary>@Html.DisplayDescriptionFor(_ => Model.PadRefreshXWeeks)</summary>
-
-                <div class="mt-1">
-                    <span>This may not apply if there are no other recipes available.</span>
-                </div>
-            </details>
-        </div>
-
 
         <div class="form-group">
             <input type="submit" value="Save" class="btn btn-primary allow-demo" />

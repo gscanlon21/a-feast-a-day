@@ -130,7 +130,7 @@ public class RecipeController : ViewController
 
             await _context.SaveChangesAsync();
             TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
-            return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId = recipe.Id, wasUpdated = true });
+            return RedirectToAction(nameof(ManageRecipe), new { email, token, section, recipeId = recipe.Id, wasUpdated = true });
         }
     }
 
@@ -177,7 +177,7 @@ public class RecipeController : ViewController
         userRecipe.Ignore = !userRecipe.Ignore;
         await _context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
 
     [HttpPost, Route("{section:section}/{recipeId}/[action]")]
@@ -205,7 +205,7 @@ public class RecipeController : ViewController
         userRecipe.LastSeen = userRecipe.LastSeen > DateHelpers.Today ? DateHelpers.Today : userRecipe.LastSeen;
         await _context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = true });
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
 
     [HttpPost, Route("{section:section}/{recipeId}/[action]")]
@@ -213,7 +213,7 @@ public class RecipeController : ViewController
     {
         if (!ModelState.IsValid)
         {
-            return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, WasUpdated = false });
+            return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = false });
         }
 
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);

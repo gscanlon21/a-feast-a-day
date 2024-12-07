@@ -12,6 +12,7 @@ namespace Web.Views.Shared.Components.UpsertRecipe;
 
 public class UpsertRecipeViewModel
 {
+    public Section Section { get; init; }
     public string Token { get; init; } = null!;
     public Data.Entities.User.User User { get; init; } = null!;
 
@@ -24,8 +25,6 @@ public class UpsertRecipeViewModel
 public class UpsertRecipeModel : IValidatableObject
 {
     public int Id { get; init; }
-
-    public int? UserId { get; init; }
 
     [Required]
     public string Name { get; set; } = null!;
@@ -66,10 +65,6 @@ public class UpsertRecipeModel : IValidatableObject
 
     [JsonInclude, ValidateNever]
     public IList<RecipeInstruction> Instructions { get; set; } = [];
-
-    public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is UpsertRecipeModel other
-        && other.Id == Id;
 
     [NotMapped]
     public Section[]? SectionBinder
