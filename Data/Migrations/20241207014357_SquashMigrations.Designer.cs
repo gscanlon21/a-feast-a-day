@@ -12,15 +12,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20241112191820_RenameAllergensCol")]
-    partial class RenameAllergensCol
+    [Migration("20241207014357_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0-preview.3.24172.4")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -418,7 +418,7 @@ namespace Data.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
-                    b.Property<int?>("IngredientId")
+                    b.Property<int>("IngredientId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Measure")
@@ -546,6 +546,9 @@ namespace Data.Migrations
                     b.Property<bool>("Ignore")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
                     b.Property<int?>("SubstituteIngredientId")
                         .HasColumnType("integer");
 
@@ -590,6 +593,9 @@ namespace Data.Migrations
                     b.Property<int>("RecipeId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Section")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("Ignore")
                         .HasColumnType("boolean");
 
@@ -608,14 +614,17 @@ namespace Data.Migrations
                     b.Property<DateOnly?>("RefreshAfter")
                         .HasColumnType("date");
 
-                    b.HasKey("UserId", "RecipeId");
+                    b.Property<int>("Servings")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "RecipeId", "Section");
 
                     b.HasIndex("RecipeId");
 
                     b.ToTable("user_recipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserServing", b =>
+            modelBuilder.Entity("Data.Entities.User.UserSection", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -626,15 +635,12 @@ namespace Data.Migrations
                     b.Property<int>("AtLeastXNutrientsPerRecipe")
                         .HasColumnType("integer");
 
-                    b.Property<int>("AtLeastXServingsPerRecipe")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Count")
+                    b.Property<int>("Weight")
                         .HasColumnType("integer");
 
                     b.HasKey("UserId", "Section");
 
-                    b.ToTable("user_serving");
+                    b.ToTable("user_section");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserToken", b =>
@@ -808,7 +814,9 @@ namespace Data.Migrations
                 {
                     b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
                         .WithMany("Nutrients")
-                        .HasForeignKey("IngredientId");
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Ingredient");
                 });
@@ -885,10 +893,10 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserServing", b =>
+            modelBuilder.Entity("Data.Entities.User.UserSection", b =>
                 {
                     b.HasOne("Data.Entities.User.User", "User")
-                        .WithMany("UserServings")
+                        .WithMany("UserSections")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -969,7 +977,7 @@ namespace Data.Migrations
 
                     b.Navigation("UserRecipes");
 
-                    b.Navigation("UserServings");
+                    b.Navigation("UserSections");
 
                     b.Navigation("UserTokens");
                 });

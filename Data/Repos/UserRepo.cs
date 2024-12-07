@@ -63,7 +63,7 @@ public class UserRepo
 
         if (includeServings)
         {
-            query = query.Include(u => u.UserServings);
+            query = query.Include(u => u.UserSections);
         }
 
         if (includeFamilies)

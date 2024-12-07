@@ -49,11 +49,10 @@ public class QueryRunner(Section section)
     }
 
     public required UserOptions UserOptions { get; init; }
-    public required ServingsOptions ServingsOptions { get; init; }
-    public required ExclusionOptions ExclusionOptions { get; init; }
     public required RecipeOptions RecipeOptions { get; init; }
     public required NutrientOptions NutrientOptions { get; init; }
     public required EquipmentOptions EquipmentOptions { get; init; }
+    public required ExclusionOptions ExclusionOptions { get; init; }
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
@@ -68,8 +67,8 @@ public class QueryRunner(Section section)
             .Select(r => new RecipesQueryResults()
             {
                 Recipe = r,
-                UserRecipe = r.UserRecipes.First(ue => ue.UserId == UserOptions.Id),
-                // Pull these out of the constructor so that EF Core can optimize the query.
+                UserRecipe = r.UserRecipes.First(ur => ur.UserId == UserOptions.Id && ur.Section == section),
+                // Pull these out of the constructor so that Entity Framework Core can optimize the query.
                 RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults()
                 {
                     Id = ri.Id,
@@ -81,8 +80,8 @@ public class QueryRunner(Section section)
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
-                    UserIngredient = ri.Ingredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id),
-                    UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ei => ei.UserId == UserOptions.Id),
+                    UserIngredient = ri.Ingredient.UserIngredients.First(ui => ui.UserId == UserOptions.Id),
+                    UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id && ur.Section == section),
                 }).ToList()
             })
             // Don't grab recipes that the user wants to ignore.
@@ -230,9 +229,11 @@ public class QueryRunner(Section section)
                 IngredientOrder.OrderUsed or _ => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order).ToList(),
             };
 
+            // Scaling the recipe will also scale the recipe ingredient quantities with then effects ingredient recipe scales.
+            var userRecipeScale = recipe.UserRecipe != null ? recipe.UserRecipe.Servings / (double)recipe.Recipe.Servings : 1;
             orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipeIngredients, recipe.UserRecipe)
             {
-                SetScale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scaleTemp) == true ? scaleTemp : 1,
+                SetScale = RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int scale) == true ? scale : userRecipeScale,
             });
         }
 
@@ -241,27 +242,6 @@ public class QueryRunner(Section section)
         {
             foreach (var recipe in orderedResults)
             {
-                var servingsSoFar = finalResults.Aggregate(0, (curr, next) => curr + next.Recipe.Servings);
-                if (ServingsOptions.AtLeastXServingsPerRecipe.HasValue
-                    // Don't choose recipes under our desired number of servings.
-                    && recipe.Recipe.Servings < ServingsOptions.AtLeastXServingsPerRecipe.Value)
-                {
-                    // If the recipe and all prerequisite recipes are adjustable.
-                    if (recipe.Recipe.AdjustableServings && recipe.RecipeIngredients.All(r => r.IngredientRecipe?.Recipe.AdjustableServings != false))
-                    {
-                        // Scaling the recipe will also scale the recipe ingredient quantities with then effects ingredient recipe scales.
-                        recipe.SetScale = ServingsOptions.AtLeastXServingsPerRecipe.Value / (double)recipe.Recipe.Servings;
-                    }
-                    // The recipe does not work enough servings that we are trying to target.
-                    // Allow recipes that have a refresh date since we want to show those continuously until that date.
-                    // Allow the first recipe with any serving so the user does not get stuck from seeing certain recipes
-                    // ... if, for example, a prerequisite only works one serving and that serving is otherwise worked by other recipes.
-                    else if (recipe.UserRecipe?.RefreshAfter == null && finalResults.Any(r => r.UserRecipe?.RefreshAfter == null))
-                    {
-                        continue;
-                    }
-                }
-
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                 // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
                 var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)]);
@@ -325,9 +305,7 @@ public class QueryRunner(Section section)
             }
         }
         // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
-        while ((ServingsOptions.AtLeastXServingsPerRecipe.HasValue && --ServingsOptions.AtLeastXServingsPerRecipe >= 1)
-            || (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1)
-        );
+        while (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1);
 
         // REFACTORME
         return section switch
@@ -423,6 +401,7 @@ public class QueryRunner(Section section)
         {
             queryResult.UserRecipe = new UserRecipe()
             {
+                Section = section,
                 UserId = UserOptions.Id,
                 RecipeId = queryResult.Recipe.Id
             };
@@ -438,6 +417,7 @@ public class QueryRunner(Section section)
         {
             ingredient.UserIngredientRecipe = new UserRecipe()
             {
+                Section = section,
                 UserId = UserOptions.Id,
                 RecipeId = ingredient.IngredientRecipeId!.Value
             };

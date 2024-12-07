@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -41,7 +42,7 @@ namespace Data.Migrations
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
                     CreatedDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Verbosity = table.Column<int>(type: "integer", nullable: false),
-                    ExcludeAllergens = table.Column<long>(type: "bigint", nullable: false),
+                    Allergens = table.Column<long>(type: "bigint", nullable: false),
                     LastActive = table.Column<DateOnly>(type: "date", nullable: true),
                     NewsletterDisabledReason = table.Column<string>(type: "text", nullable: true),
                     Features = table.Column<int>(type: "integer", nullable: false),
@@ -226,20 +227,19 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "user_serving",
+                name: "user_section",
                 columns: table => new
                 {
                     Section = table.Column<int>(type: "integer", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    Count = table.Column<int>(type: "integer", nullable: false),
-                    AtLeastXNutrientsPerRecipe = table.Column<int>(type: "integer", nullable: false),
-                    AtLeastXServingsPerRecipe = table.Column<int>(type: "integer", nullable: false)
+                    Weight = table.Column<int>(type: "integer", nullable: false),
+                    AtLeastXNutrientsPerRecipe = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_serving", x => new { x.UserId, x.Section });
+                    table.PrimaryKey("PK_user_section", x => new { x.UserId, x.Section });
                     table.ForeignKey(
-                        name: "FK_user_serving_user_UserId",
+                        name: "FK_user_section_user_UserId",
                         column: x => x.UserId,
                         principalTable: "user",
                         principalColumn: "Id",
@@ -297,7 +297,7 @@ namespace Data.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    IngredientId = table.Column<int>(type: "integer", nullable: true),
+                    IngredientId = table.Column<int>(type: "integer", nullable: false),
                     Nutrients = table.Column<long>(type: "bigint", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
@@ -312,7 +312,8 @@ namespace Data.Migrations
                         name: "FK_nutrient_ingredient_IngredientId",
                         column: x => x.IngredientId,
                         principalTable: "ingredient",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -384,6 +385,7 @@ namespace Data.Migrations
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
                     SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
+                    Notes = table.Column<string>(type: "text", nullable: true),
                     Ignore = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
@@ -419,8 +421,10 @@ namespace Data.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
-                    Ignore = table.Column<bool>(type: "boolean", nullable: false),
+                    Section = table.Column<int>(type: "integer", nullable: false),
+                    Servings = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
+                    Ignore = table.Column<bool>(type: "boolean", nullable: false),
                     LastSeen = table.Column<DateOnly>(type: "date", nullable: false),
                     RefreshAfter = table.Column<DateOnly>(type: "date", nullable: true),
                     LagRefreshXWeeks = table.Column<int>(type: "integer", nullable: false),
@@ -428,7 +432,7 @@ namespace Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_recipe", x => new { x.UserId, x.RecipeId });
+                    table.PrimaryKey("PK_user_recipe", x => new { x.UserId, x.RecipeId, x.Section });
                     table.ForeignKey(
                         name: "FK_user_recipe_recipe_RecipeId",
                         column: x => x.RecipeId,
@@ -652,7 +656,7 @@ namespace Data.Migrations
                 name: "user_recipe");
 
             migrationBuilder.DropTable(
-                name: "user_serving");
+                name: "user_section");
 
             migrationBuilder.DropTable(
                 name: "user_token");

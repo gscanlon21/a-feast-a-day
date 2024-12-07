@@ -1,7 +1,10 @@
 ﻿using Core.Models.Ingredients;
 using Core.Models.User;
+using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
+using Data.Repos;
+using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
@@ -10,9 +13,26 @@ using Web.Views.User;
 
 namespace Web.Controllers.User;
 
-public partial class UserController
+[Route($"{UserRoute}/{Name}")]
+public class IngredientController : ViewController
 {
-    [HttpPost, Route("ingredient/add")]
+    private readonly NewsletterService _newsletterService;
+    private readonly CoreContext _context;
+    private readonly UserRepo _userRepo;
+
+    public IngredientController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService)
+    {
+        _context = context;
+        _userRepo = userRepo;
+        _newsletterService = newsletterService;
+    }
+
+    /// <summary>
+    /// The name of the controller for routing purposes.
+    /// </summary>
+    public const string Name = "Ingredient";
+
+    [HttpPost, Route("[action]")]
     public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergens> allergens)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -33,10 +53,10 @@ public partial class UserController
         await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(Edit), new { email, token });
+        return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
     }
 
-    [HttpPost, Route("ingredient/remove")]
+    [HttpPost, Route("[action]")]
     public async Task<IActionResult> RemoveIngredient(string email, string token, [FromForm] int ingredientId)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -54,12 +74,10 @@ public partial class UserController
         await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(Edit), new { email, token });
+        return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
     }
 
-    [HttpPost]
-    [Route("{ingredientId}/ii", Order = 1)]
-    [Route("{ingredientId}/ignore-ingredient", Order = 2)]
+    [HttpPost, Route("[action]/{ingredientId}")]
     public async Task<IActionResult> IgnoreIngredient(string email, string token, int ingredientId)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -87,7 +105,7 @@ public partial class UserController
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
-    [HttpGet, Route("ingredient/{ingredientId}")]
+    [HttpGet, Route("{ingredientId}")]
     public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, bool? wasUpdated = null)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
@@ -115,7 +133,7 @@ public partial class UserController
         });
     }
 
-    [HttpPost, Route("ingredient/{ingredientId}")]
+    [HttpPost, Route("{ingredientId}")]
     public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, ManageIngredientViewModel viewModel)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -143,7 +161,7 @@ public partial class UserController
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, wasUpdated = true });
     }
 
-    [HttpPost, Route("ingredient/upsert")]
+    [HttpPost, Route("[action]")]
     public async Task<IActionResult> UpsertIngredient(string email, string token, Ingredient ingredient, List<Nutrient> nutrients)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -205,7 +223,7 @@ public partial class UserController
         }
 
         await _context.SaveChangesAsync();
-        //TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
+        TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
     }
 }

@@ -14,8 +14,8 @@ public partial class NewsletterRepo
 {
     internal async Task<IList<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var breakfastServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Breakfast) ?? new UserServing(Section.Breakfast);
-        var scale = breakfastServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
+        var breakfastServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Breakfast) ?? new UserSection(Section.Breakfast);
+        var scale = breakfastServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
@@ -25,10 +25,6 @@ public partial class NewsletterRepo
                 {
                     options.AtLeastXNutrientsPerRecipe = breakfastServing.AtLeastXNutrientsPerRecipe;
                 })
-            .WithServingsOptions(options =>
-            {
-                options.AtLeastXServingsPerRecipe = breakfastServing.AtLeastXServingsPerRecipe;
-            })
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
@@ -39,8 +35,8 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var lunchServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Lunch) ?? new UserServing(Section.Lunch);
-        var scale = lunchServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
+        var lunchServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Lunch) ?? new UserSection(Section.Lunch);
+        var scale = lunchServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
@@ -50,10 +46,6 @@ public partial class NewsletterRepo
                 {
                     options.AtLeastXNutrientsPerRecipe = lunchServing.AtLeastXNutrientsPerRecipe;
                 })
-            .WithServingsOptions(options =>
-            {
-                options.AtLeastXServingsPerRecipe = lunchServing.AtLeastXServingsPerRecipe;
-            })
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
@@ -64,8 +56,8 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var dinnerServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Dinner) ?? new UserServing(Section.Dinner);
-        var scale = dinnerServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
+        var dinnerServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Dinner) ?? new UserSection(Section.Dinner);
+        var scale = dinnerServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
@@ -75,10 +67,6 @@ public partial class NewsletterRepo
                 {
                     options.AtLeastXNutrientsPerRecipe = dinnerServing.AtLeastXNutrientsPerRecipe;
                 })
-            .WithServingsOptions(options =>
-            {
-                options.AtLeastXServingsPerRecipe = dinnerServing.AtLeastXServingsPerRecipe;
-            })
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
@@ -89,8 +77,8 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var sideServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Sides) ?? new UserServing(Section.Sides);
-        var scale = sideServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
+        var sideServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Sides) ?? new UserSection(Section.Sides);
+        var scale = sideServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
@@ -100,10 +88,6 @@ public partial class NewsletterRepo
                 {
                     options.AtLeastXNutrientsPerRecipe = sideServing.AtLeastXNutrientsPerRecipe;
                 })
-            .WithServingsOptions(options =>
-            {
-                options.AtLeastXServingsPerRecipe = sideServing.AtLeastXServingsPerRecipe;
-            })
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
@@ -114,8 +98,8 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var snackServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Snacks) ?? new UserServing(Section.Snacks);
-        var scale = snackServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
+        var snackServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Snacks) ?? new UserSection(Section.Snacks);
+        var scale = snackServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
@@ -125,10 +109,6 @@ public partial class NewsletterRepo
                 {
                     options.AtLeastXNutrientsPerRecipe = snackServing.AtLeastXNutrientsPerRecipe;
                 })
-            .WithServingsOptions(options =>
-            {
-                options.AtLeastXServingsPerRecipe = snackServing.AtLeastXServingsPerRecipe;
-            })
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
@@ -139,8 +119,8 @@ public partial class NewsletterRepo
 
     internal async Task<IList<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
-        var dessertServing = newsletterContext.User.UserServings.FirstOrDefault(us => us.Section == Section.Dessert) ?? new UserServing(Section.Dessert);
-        var scale = dessertServing.Count / (double)newsletterContext.User.UserServings.Sum(us => us.Count);
+        var dessertServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Dessert) ?? new UserSection(Section.Dessert);
+        var scale = dessertServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
             .WithNutrients(NutrientTargetsBuilder
@@ -150,10 +130,6 @@ public partial class NewsletterRepo
                 {
                     options.AtLeastXNutrientsPerRecipe = dessertServing.AtLeastXNutrientsPerRecipe;
                 })
-            .WithServingsOptions(options =>
-            {
-                options.AtLeastXServingsPerRecipe = dessertServing.AtLeastXServingsPerRecipe;
-            })
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));

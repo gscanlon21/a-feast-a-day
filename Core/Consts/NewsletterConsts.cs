@@ -2,7 +2,7 @@
 namespace Core.Consts;
 
 /// <summary>
-/// Shared user consts for Functions and Web.
+/// Shared newsletter consts.
 /// </summary>
 public class NewsletterConsts
 {

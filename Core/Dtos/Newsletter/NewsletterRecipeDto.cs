@@ -15,10 +15,10 @@ public class NewsletterRecipeDto
     public RecipeDto Recipe { get; init; } = null!;
 
     [JsonInclude]
-    public IList<RecipeIngredientDto> RecipeIngredients { get; init; } = [];
+    public UserRecipeDto? UserRecipe { get; set; }
 
     [JsonInclude]
-    public UserRecipeDto? UserRecipe { get; set; }
+    public IList<RecipeIngredientDto> RecipeIngredients { get; init; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Recipe);
     public override bool Equals(object? obj) => obj is NewsletterRecipeDto other

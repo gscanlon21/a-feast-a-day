@@ -3,10 +3,10 @@
 @using Core.Models.Recipe
 @using Core.Consts
 
-<h6 class="mb-1">Recipe</h6>
+<h6 class="mb-1">Recipe - @Model.Parameters.Section.GetSingleDisplayName(DisplayType.ShortName)</h6>
 <div class="alert alert-light shadow mb-0">
-    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreRecipe)" method="post"
-          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
+    <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.IgnoreRecipe)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -23,8 +23,8 @@
         </div>
     </form>
 
-    <form asp-controller="@UserController.Name" class="row mb-3" asp-action="@nameof(UserController.RefreshRecipe)" method="post"
-          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
+    <form asp-controller="@RecipeController.Name" class="row mb-3" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -42,8 +42,8 @@
         </div>
     </form>
 
-    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.LogRecipe)" method="post" class="mb-4"
-          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId">
+    <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.LogRecipe)" method="post" class="mb-4"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -58,6 +58,27 @@
             <div class="alert alert-info callout">
                 Customize how long you want to see exercises before they refresh.
             </div>
+        }
+
+        @if (Model.Recipe.Recipe.AdjustableServings) 
+        {
+            <div class="form-group mb-3 mt-3">
+                <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
+                <div style="display:flex;column-gap:1ex;">
+                    <output name="scaleOutput" for="@Html.IdFor(_ => Model.Servings)">@Model.Servings</output>
+                    <div style="display:flex;width:100%;">
+                        <input asp-for="Servings" type="range" style="width:100%;" aria-describedby="scale-help"
+                               min="@RecipeConsts.ServingsMin" max="@RecipeConsts.ServingsMax" step="@RecipeConsts.ServingsStep"
+                               oninput="scaleOutput.value = this.valueAsNumber" />
+                    </div>
+                </div>
+                <span asp-validation-for="Servings" class="text-danger"></span>
+                <div id="scale-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Servings)</div>
+            </div>
+        }
+        else 
+        {
+            <input asp-for="Servings" type="hidden" value="@Model.Recipe.Recipe.Servings" />
         }
 
         <div class="form-group mb-3 mt-3">

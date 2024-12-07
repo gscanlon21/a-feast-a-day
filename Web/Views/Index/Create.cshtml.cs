@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using Web.Code.Attributes.Data;
+using Web.Controllers;
 using Web.Controllers.Index;
 
 namespace Web.Views.Index;
-
 
 /// <summary>
 /// For CRUD actions
 /// </summary>
 public class UserLoginViewModel
 {
-    public const string EmailRegex = @"\s*\S+@\S+\.\S+\s*";
     public const string EmailRegexError = "Please enter a valid email address.";
 
     /// <summary>
@@ -29,7 +28,7 @@ public class UserLoginViewModel
     public bool? WasUnsubscribed { get; set; }
 
     [DataType(DataType.EmailAddress)]
-    [Required, RegularExpression(EmailRegex, ErrorMessage = EmailRegexError)]
+    [Required, RegularExpression(ViewController.EmailRegex, ErrorMessage = EmailRegexError)]
     [Display(Name = "Email", Description = "")]
     public string Email { get; init; } = null!;
 

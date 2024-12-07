@@ -590,6 +590,9 @@ namespace Data.Migrations
                     b.Property<int>("RecipeId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Section")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("Ignore")
                         .HasColumnType("boolean");
 
@@ -608,14 +611,17 @@ namespace Data.Migrations
                     b.Property<DateOnly?>("RefreshAfter")
                         .HasColumnType("date");
 
-                    b.HasKey("UserId", "RecipeId");
+                    b.Property<int>("Servings")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "RecipeId", "Section");
 
                     b.HasIndex("RecipeId");
 
                     b.ToTable("user_recipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserServing", b =>
+            modelBuilder.Entity("Data.Entities.User.UserSection", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -626,15 +632,12 @@ namespace Data.Migrations
                     b.Property<int>("AtLeastXNutrientsPerRecipe")
                         .HasColumnType("integer");
 
-                    b.Property<int>("AtLeastXServingsPerRecipe")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Count")
+                    b.Property<int>("Weight")
                         .HasColumnType("integer");
 
                     b.HasKey("UserId", "Section");
 
-                    b.ToTable("user_serving");
+                    b.ToTable("user_section");
                 });
 
             modelBuilder.Entity("Data.Entities.User.UserToken", b =>
@@ -887,10 +890,10 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserServing", b =>
+            modelBuilder.Entity("Data.Entities.User.UserSection", b =>
                 {
                     b.HasOne("Data.Entities.User.User", "User")
-                        .WithMany("UserServings")
+                        .WithMany("UserSections")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -971,7 +974,7 @@ namespace Data.Migrations
 
                     b.Navigation("UserRecipes");
 
-                    b.Navigation("UserServings");
+                    b.Navigation("UserSections");
 
                     b.Navigation("UserTokens");
                 });

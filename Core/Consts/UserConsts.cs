@@ -6,7 +6,7 @@ using Core.Models.Recipe;
 namespace Core.Consts;
 
 /// <summary>
-/// Shared user consts for Functions and Web.
+/// Shared user consts.
 /// </summary>
 public class UserConsts
 {
@@ -20,8 +20,8 @@ public class UserConsts
     public const int IngredientsMin = 4;
     public const int IngredientsMax = 10;
 
-    public const int WeeklyServingsMin = 0;
-    public const int WeeklyServingsMax = 35;
+    public const int SectionWeightMin = 0;
+    public const int SectionWeightMax = 35;
 
     public const int LagRefreshXWeeksMin = 0;
     public const int LagRefreshXWeeksDefault = 0;
@@ -35,10 +35,6 @@ public class UserConsts
     public const int FootnoteCountTopDefault = 2;
     public const int FootnoteCountBottomDefault = 2;
     public const int FootnoteCountMax = 4;
-
-    public const int AtLeastXServingsPerRecipeMin = 1;
-    public const int AtLeastXServingsPerRecipeDefault = 3;
-    public const int AtLeastXServingsPerRecipeMax = 6;
 
     public const int AtLeastXNutrientsPerRecipeMin = 1;
     public const int AtLeastXNutrientsPerRecipeDefault = 6;

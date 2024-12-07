@@ -7,8 +7,10 @@ namespace Data.Entities.User;
 [Table("user_ingredient")]
 public class UserIngredient
 {
+    [Required]
     public int UserId { get; init; }
 
+    [Required]
     public int IngredientId { get; set; }
 
     [Display(Name = "Substitute Ingredient")]
@@ -19,6 +21,7 @@ public class UserIngredient
 
     public string? Notes { get; set; }
 
+    [Required]
     public bool Ignore { get; set; }
 
 
@@ -41,6 +44,6 @@ public class UserIngredient
 
     public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
     public override bool Equals(object? obj) => obj is UserIngredient other
-        && other.UserId == UserId
-        && other.IngredientId == IngredientId;
+        && other.IngredientId == IngredientId
+        && other.UserId == UserId;
 }

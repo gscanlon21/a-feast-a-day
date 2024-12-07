@@ -36,14 +36,14 @@ public class EditViewComponent : ViewComponent
 
     private static async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
     {
-        foreach (var section in UserServing.DefaultServings.Keys.OrderBy(mg => mg))
+        foreach (var section in UserSection.DefaultWeight.Keys.OrderBy(mg => mg))
         {
-            var userMuscleMobility = viewModel.User.UserServings.SingleOrDefault(umm => umm.Section == section);
-            viewModel.UserServings.Add(userMuscleMobility != null ? new UserEditViewModel.UserServingViewModel(userMuscleMobility) : new UserEditViewModel.UserServingViewModel()
+            var userMuscleMobility = viewModel.User.UserSections.SingleOrDefault(umm => umm.Section == section);
+            viewModel.UserSections.Add(userMuscleMobility != null ? new UserEditViewModel.UserSectionViewModel(userMuscleMobility) : new UserEditViewModel.UserSectionViewModel()
             {
-                UserId = viewModel.User.Id,
                 Section = section,
-                Count = UserServing.DefaultServings.TryGetValue(section, out int countTmp) ? countTmp : 0
+                UserId = viewModel.User.Id,
+                Weight = UserSection.DefaultWeight.TryGetValue(section, out int countTmp) ? countTmp : 0
             });
         }
 
