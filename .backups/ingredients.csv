@@ -28,7 +28,7 @@
 28	\N	Eggs, Brown	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-06-18	0	200	16777216
 29	\N	Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2024-08-20	7	224	29360128
 30	\N	Shredded Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	112	28	2024-11-27	6	112	8388608
-31	\N	Whole Milk (Cow), unenriched	https://www.eatthismuch.com/calories/whole-milk-161	\N	f	0	244	244	2024-10-20	6	244	4194304
+31	\N	Whole Milk (Cow), unenriched	https://www.eatthismuch.com/calories/whole-milk-161	\N	f	320	244	244	2024-10-20	6	244	4194304
 32	\N	Sour Cream	https://www.eatthismuch.com/food/nutrition/sour-cream,55/	\N	f	0	230	230	2024-06-09	6	240	0
 33	\N	Greek Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
 34	\N	Baking Powder	https://www.eatthismuch.com/food/nutrition/baking-powder,4274	\N	t	0	15	15	2024-06-20	7	240	0
@@ -39,7 +39,7 @@
 39	\N	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	21	2024-06-17	9	336	928
 40	\N	Vanilla Extract	https://www.eatthismuch.com/calories/vanilla-extract,224	\N	t	0	13	13	2024-09-19	7	208	3
 41	\N	Active Dry Yeast	https://www.eatthismuch.com/food/nutrition/yeast,4278/	\N	f	0	4	7	2024-08-25	8	192	4
-43	\N	Cocoa Powder	\N	\N	f	0	240	100	2024-06-21	6	240	0
+43	\N	Cocoa Powder	\N	\N	f	0	240	100	2024-06-21	6	240	16384
 44	\N	Powdered Sugar	Missing minor nutrients. https://www.eatthismuch.com/calories/powdered-sugars-4645	\N	f	0	100	100	2024-10-05	6	100	4
 45	\N	9" Pie Crust	https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	0	194	194	2024-07-07	0	194	0
 46	\N	Pizza Crust	https://www.eatthismuch.com/calories/pizza-crust-1841250	\N	f	0	212	53	2024-10-16	0	53	2
@@ -71,7 +71,7 @@
 72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	7	7	2024-08-26	7	112	3
 73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
 74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2024-07-14	8	288	131072
-75	\N	Kosher Salt	https://www.eatthismuch.com/food/nutrition/kosher-salt-coarse,2313857/	\N	t	0	4.8	1.2	-infinity	8	273.12	131072
+75	\N	Kosher Salt	https://www.eatthismuch.com/calories/kosher-salt-1938979	\N	t	0	28	1	2024-12-07	4	192	131072
 76	\N	Unrefined Coconut Oil	aka. Virgin Coconut Oil. https://www.eatthismuch.com/calories/coconut-oil-unrefined-2065164	\N	f	0	28	14	-infinity	4	224	65536
 77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	t	0	28	14	2024-06-13	9	224	65536
 78	\N	Vegetable Oil	https://www.eatthismuch.com/calories/vegetable-oil,373	\N	t	0	14	14	2024-08-20	7	224	3
@@ -135,7 +135,7 @@
 137	\N	Linguine	https://www.eatthismuch.com/calories/linguine,2413373	\N	f	0	240	100	2024-06-30	6	240	4096
 139	\N	Slices of Rye Bread	\N	\N	f	32	24	24	-infinity	0	48	2
 140	\N	Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	3	3	2024-06-25	7	240	0
-141	\N	Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2024-07-27	6	80	0
+141	\N	Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2024-07-27	6	80	16288
 142	\N	Porridge Oats	https://www.eatthismuch.com/food/nutrition/porridge-oats,152950/	\N	f	0	30	30	2024-07-03	0	80	0
 143	\N	Cumin	https://www.eatthismuch.com/calories/cumin-189	\N	t	0	28	9	2024-11-30	4	144	131072
 144	\N	Green Onions (Scallions)	https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	15	15	2024-10-11	0	150	2
@@ -232,7 +232,7 @@
 238	\N	Light Sesame Seeds	https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	144	9	2024-06-11	6	144	131072
 239	\N	Bean Thread Noodles	https://www.eatthismuch.com/calories/chinese-noodles-3579	\N	f	0	140	140	2024-10-04	6	140	4
 240	\N	Fine Rice Noodles	https://www.eatthismuch.com/food/nutrition/rice-noodles,4886/	\N	f	4096	28	28	2024-07-17	4	224	4096
-241	\N	Bean Sprouts	https://www.eatthismuch.com/calories/bean-sprouts,125521	\N	f	0	100	100	2024-08-07	6	100	0
+241	\N	Bean Sprouts	https://www.eatthismuch.com/calories/bean-sprouts-2121498	\N	f	0	28	85	2024-08-07	4	113.33	2048
 242	\N	Daikon Radish	https://www.eatthismuch.com/calories/daikon-radish-129147	\N	f	0	100	50	2024-10-24	0	100	1
 243	\N	Sesame Paste	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	0	216	13.6	2024-06-11	6	240	0
 244	\N	Sweet Chili Sauce	\N	\N	f	0	240	100	-infinity	6	240	32
@@ -281,7 +281,7 @@
 288	\N	Unnriched Long Grain Rice	https://www.eatthismuch.com/calories/white-rice-4917	\N	f	0	185	185	-infinity	6	185	1024
 289	\N	Short Grain White Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
 290	\N	Ham Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/ham-steak-2254561	\N	f	0	168	84	-infinity	0	224	268435456
-291	\N	Sharp Chedder Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	112	28	-infinity	6	112	0
+291	\N	Sharp Chedder Cheese	https://www.eatthismuch.com/calories/sharp-cheddar-cheese-shredded-1693122	\N	f	256	28	28	2024-12-07	4	112	8388608
 292	\N	Shredded Sharp Chedder Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	260	28	28	2024-11-17	4	113	8388608
 293	\N	Low Sodium Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3748	\N	f	294944	32	16	2024-09-22	9	256	3
 294	\N	Low Sodium Tamari Sauce	Tamari sauce generally does not contain wheat. https://www.eatthismuch.com/calories/soy-sauce-3619	\N	f	32768	36	18	2024-10-29	9	288	8192
@@ -591,8 +591,8 @@
 661	\N	Fennel Bulbs	https://www.eatthismuch.com/calories/fennel-2566	\N	f	0	234	234	2024-06-13	0	234	2
 662	\N	Single Espresso	https://www.eatthismuch.com/calories/espresso-102737	\N	t	0	240	100	2024-10-19	6	240	0
 663	\N	Whole-Wheat Flour	https://www.eatthismuch.com/food/nutrition/all-purpose-flour,101736/	\N	t	262176	120	30	2024-06-26	6	240	32768
-664	\N	Whole Milk (Cow), enriched	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	0	244	244	2024-10-20	6	244	6
-665	\N	Whole Milk (Cow)	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	0	244	244	2024-10-20	6	244	6
+664	\N	Whole Milk (Cow), enriched	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
+665	\N	Whole Milk (Cow)	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
 666	\N	Lemons, without Peel	https://www.eatthismuch.com/calories/lemons-1432	\N	f	0	108	108	2024-10-22	0	216	1
 667	\N	Refried Beans, fat-free	https://www.eatthismuch.com/calories/refried-beans-3653	\N	f	0	444	444	2024-10-23	6	444	0
 668	\N	Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3600	\N	f	0	444	444	2024-10-23	6	444	0
@@ -752,11 +752,11 @@
 853	\N	Frozen Snow Peas	\N	\N	f	0	240	100	2024-11-24	6	240	0
 854	\N	Fresh Podded Snow Peas | Frozen Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
 855	\N	Fresh Podded Snow Peas | Frozen Podded Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	145	145	-infinity	6	145	1
-856	\N	Fresh Spinach | Fresh Kale	\N	\N	f	0	0	0	-infinity	0	0	0
+856	\N	Fresh Spinach | Fresh Kale	https://www.eatthismuch.com/calories/spinach-2170	\N	f	0	28	30	-infinity	4	30	2
 857	\N	Frozen Raspberries	\N	\N	f	0	240	100	-infinity	6	240	0
-858	\N	Frozen Strawberries | Frozen Raspberries	\N	\N	f	0	240	100	-infinity	6	240	0
+858	\N	Frozen Strawberries | Frozen Raspberries	https://www.eatthismuch.com/calories/whole-fresh-frozen-strawberries-100309	\N	f	0	28	140	-infinity	4	140	33554432
 859	\N	Dairy-Free Milk	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	6
-860	\N	Water | Dairy-Free Milk	\N	\N	f	0	0	0	-infinity	0	0	0
+860	\N	Water | Dairy-Free Milk	\N	\N	f	0	30	240	-infinity	9	240	29360128
 861	\N	Fresh Mixed-Color Zucchini	https://www.eatthismuch.com/calories/zucchini-2183	\N	f	0	196	196	2024-06-12	0	196	2
 862	\N	Silken Tofu	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	32768	50	50	2024-11-03	0	200	8192
 863	\N	Tofu	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	32768	50	50	2024-08-31	0	200	8192
@@ -769,3 +769,5 @@
 870	\N	Flaxseed Oil	https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	-infinity	9	224	32768
 871	\N	Fresh Blueberries	https://www.eatthismuch.com/calories/blueberries-1343	\N	f	0	148	148	2024-11-28	6	148	1
 872	\N	Broccoli Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2
+902	\N	Chamomile Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2024-07-22	0	236.56	0
+903	\N	Radish Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2
