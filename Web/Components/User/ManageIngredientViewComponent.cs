@@ -33,7 +33,7 @@ public class ManageIngredientViewComponent : ViewComponent
     {
         // Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
         var userNewsletter = user.AsType<UserNewsletterDto>()!;
-        userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
+        userNewsletter.Token = parameters.Token;
 
         var userIngredient = await _context.UserIngredients.AsNoTracking()
             .FirstOrDefaultAsync(r => r.UserId == user.Id && r.IngredientId == parameters.IngredientId);

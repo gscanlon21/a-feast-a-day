@@ -27,7 +27,23 @@ public class UpsertRecipeModel : IValidatableObject
     public int Id { get; init; }
 
     [Required]
+    [Display(Name = "Section")]
+    public Section Section { get; set; }
+
+    [Required]
+    [Display(Name = "Equipment")]
+    public Equipment Equipment { get; set; }
+
+    [Display(Name = "Measure")]
+    public Measure Measure { get; set; } = Measure.None;
+
+    [Required]
     public string Name { get; set; } = null!;
+
+    /// <summary>
+    /// Notes about the recipe (externally shown).
+    /// </summary>
+    public string? Notes { get; set; } = null;
 
     [Display(Name = "Prep Time")]
     public int PrepTime { get; set; }
@@ -39,32 +55,16 @@ public class UpsertRecipeModel : IValidatableObject
     [Display(Name = "Servings")]
     public int Servings { get; set; } = RecipeConsts.ServingsDefault;
 
-    [Display(Name = "Measure")]
-    public Measure Measure { get; set; } = Measure.None;
-
     [Display(Name = "Adjustable Servings")]
     public bool AdjustableServings { get; set; } = true;
-
-    [Required]
-    public Equipment Equipment { get; set; }
-
-    [Required]
-    public Section Section { get; set; }
-
-    public string? Image { get; set; } = null;
-
-    /// <summary>
-    /// Notes about the recipe (externally shown).
-    /// </summary>
-    public string? Notes { get; set; } = null;
 
     public string? DisabledReason { get; set; } = null;
 
     [JsonInclude, ValidateNever]
-    public IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
+    public IList<RecipeInstruction> Instructions { get; set; } = [];
 
     [JsonInclude, ValidateNever]
-    public IList<RecipeInstruction> Instructions { get; set; } = [];
+    public IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
 
     [NotMapped]
     public Section[]? SectionBinder

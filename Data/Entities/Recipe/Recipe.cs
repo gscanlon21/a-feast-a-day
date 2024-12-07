@@ -11,7 +11,7 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Recipe;
 
 /// <summary>
-/// Recipes listed on the website
+/// Recipes listed on the website.
 /// </summary>
 [Table("recipe")]
 [DebuggerDisplay("{Name,nq}")]
@@ -22,33 +22,17 @@ public class Recipe
 
     public int? UserId { get; init; }
 
-    /// <summary>
-    /// Friendly name.
-    /// </summary>
     [Required]
-    public string Name { get; set; } = null!;
-
-    [Display(Name = "Prep Time")]
-    public int PrepTime { get; set; }
-
-    [Display(Name = "Cook Time")]
-    public int CookTime { get; set; }
-
-    [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
-    [Display(Name = "Servings")]
-    public int Servings { get; set; } = RecipeConsts.ServingsDefault;
-
-    [Display(Name = "Measure")]
-    public Measure Measure { get; set; } = Measure.None;
-
-    [Display(Name = "Adjustable Servings")]
-    public bool AdjustableServings { get; set; } = true;
+    public Section Section { get; set; }
 
     [Required]
     public Equipment Equipment { get; set; }
 
     [Required]
-    public Section Section { get; set; }
+    public Measure Measure { get; set; } = Measure.None;
+
+    [Required]
+    public string Name { get; set; } = null!;
 
     public string? Image { get; set; } = null;
 
@@ -56,6 +40,18 @@ public class Recipe
     /// Notes about the recipe (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
+
+    [Required]
+    public int PrepTime { get; set; }
+
+    [Required]
+    public int CookTime { get; set; }
+
+    [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
+    public int Servings { get; set; } = RecipeConsts.ServingsDefault;
+
+    [Required]
+    public bool AdjustableServings { get; set; } = true;
 
     public string? DisabledReason { get; set; } = null;
 
@@ -81,7 +77,6 @@ public class Recipe
     public virtual ICollection<UserIngredient> UserSubstituteRecipes { get; private init; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is Recipe other
         && other.Id == Id;
 

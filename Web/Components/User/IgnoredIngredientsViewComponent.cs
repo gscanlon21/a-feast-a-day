@@ -32,7 +32,7 @@ public class IgnoredIngredientsViewComponent : ViewComponent
     {
         // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
         var userNewsletter = user.AsType<UserNewsletterDto>()!;
-        userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
+        userNewsletter.Token = token;
 
         // FIXME: Slow when the user has lots of ingredients.
         var ignoredIngredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)

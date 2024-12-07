@@ -2,8 +2,7 @@
 @using Core.Models.Recipe
 @using Core.Models.User
 
-
-@if (Model.IgnoredRecipes != null && Model.IgnoredRecipes.Any())
+@if (Model.IgnoredRecipes.Any())
 {
     <details class="mt-4 mb-25">
         <summary class="mb-1 h5">
@@ -11,6 +10,16 @@
             <span class="float-end">@Model.IgnoredRecipes.Count()</span>
         </summary>
 
-        <component type="typeof(Lib.Pages.Shared.Recipe.RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.IgnoredRecipes' param-Theme='RecipeTheme.None' param-Verbosity="Model.Verbosity" />
+        @foreach (var group in Model.IgnoredRecipes.GroupBy(v => v.Section).OrderBy(g => g.Key))
+        {
+            <details class="ms-3 mt-4 mb-25">
+                <summary class="mb-1 h5">
+                    @group.Key.GetSingleDisplayName()
+                    <span class="float-end">@group.Count()</span>
+                </summary>
+
+                <component type="typeof(Lib.Pages.Shared.Recipe.RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='group' param-Theme='group.Key.AsTheme()' param-Verbosity="Model.Verbosity" />
+            </details>
+        }
     </details>
 }

@@ -67,17 +67,17 @@
 
                 @if (Verbosity.HasFlag(Verbosity.PrepTime))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @(Model.Recipe.PrepTime) min</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @Model.Recipe.PrepTime min</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.CookTime))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @(Model.Recipe.CookTime) min</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @Model.Recipe.CookTime min</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.TotalTime))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @(Model.Recipe.PrepTime + Model.Recipe.CookTime) min</div>
+                    <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @Model.Recipe.TotalTime min</div>
                 }
 
                 @if (Verbosity.HasFlag(Verbosity.Servings))

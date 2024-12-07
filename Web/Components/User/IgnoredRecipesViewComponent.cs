@@ -1,6 +1,8 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Data;
+using Data.Query;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
@@ -32,26 +34,33 @@ public class IgnoredRecipesViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
-        // Need a user context so the manage link is clickable and the user can un-ignore an exercise/variation.
+        // Need a user context so the manage link is clickable and the user can un-ignore a recipe.
         var userNewsletter = user.AsType<UserNewsletterDto>()!;
-        userNewsletter.Token = await _userRepo.AddUserToken(user, durationDays: 1);
+        userNewsletter.Token = token;
 
-        var userRecipes = await _context.UserRecipes
-            .Where(r => r.UserId == user.Id)
-            .Where(r => r.Ignore)
-            .Select(r => r.Recipe)
+        var userRecipes = user.UserRecipes.NullIfEmpty()?
+            .Where(ur => ur.Section != Section.None)
+            .Where(ur => ur.Ignore)
+            .ToList();
+        userRecipes ??= await _context.UserRecipes.AsNoTracking()
+            .Where(ur => ur.Section != Section.None)
+            .Where(ur => ur.UserId == user.Id)
+            .Where(ur => ur.Ignore)
             .ToListAsync();
 
-        // FIXME: This may be slow if the user has a lot of ignored recipes.
-        var ignoredRecipes = await new QueryBuilder()
-            // Include disabled recipes.
-            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
-            .WithRecipes(x =>
-            {
-                x.AddRecipes(userRecipes);
-            })
-            .Build()
-            .Query(_serviceScopeFactory);
+        var ignoredRecipes = new List<QueryResults>();
+        // PERF: This may be slow if the user has a lot of ignored recipes.
+        foreach (var sectionGroup in userRecipes.GroupBy(ur => ur.Section))
+        {
+            ignoredRecipes.AddRange(await new QueryBuilder(sectionGroup.Key)
+                .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
+                .WithRecipes(x =>
+                {
+                    x.AddRecipes(sectionGroup);
+                })
+                .Build()
+                .Query(_serviceScopeFactory));
+        }
 
         return View("IgnoredRecipes", new IgnoredRecipesViewModel()
         {

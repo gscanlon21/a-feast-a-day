@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
+using Data.Entities.User;
 
 namespace Data.Query.Options;
 
@@ -45,6 +46,25 @@ public class RecipeOptions : IOptions
             }
         }
     }
+
+    /// <summary>
+    /// Only select these recipes.
+    /// </summary>
+    public void AddRecipes(IEnumerable<UserRecipe>? recipes)
+    {
+        if (recipes != null)
+        {
+            if (RecipeIds == null)
+            {
+                RecipeIds = recipes.ToDictionary(nv => nv.RecipeId, nv => (int?)1);
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+        }
+    }
+
 
     /// <summary>
     /// Only select these recipes.

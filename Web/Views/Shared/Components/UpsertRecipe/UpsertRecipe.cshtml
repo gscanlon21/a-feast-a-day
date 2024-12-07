@@ -106,7 +106,7 @@
                 <div style="display:flex;column-gap:1ex;">
                     <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;"
                            oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
-                    <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+                    <div style="display:flex;flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
                         <input type="range" style="width:100%;"
                                name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks1" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
                                min="1" max="10" step="1" value="@Model.Recipe.Servings"

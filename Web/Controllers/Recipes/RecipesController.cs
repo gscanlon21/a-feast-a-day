@@ -8,7 +8,7 @@ using Web.Views.Recipe;
 
 namespace Web.Controllers.Recipes;
 
-[Route("{Name}")]
+[Route($"{Name}")]
 public class RecipesController : ViewController
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;

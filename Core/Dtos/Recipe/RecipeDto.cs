@@ -1,7 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
@@ -15,39 +14,23 @@ public class RecipeDto
 {
     public int Id { get; init; }
 
-    public Section Section { get; set; }
+    public Section Section { get; init; }
+    public Measure Measure { get; init; }
+    public Equipment Equipment { get; init; }
 
-    public Equipment Equipment { get; set; }
+    public string Name { get; init; } = null!;
+    public string? Notes { get; init; } = null;
+    public string? Image { get; init; } = null;
 
-    public string? Image { get; set; } = null;
+    public int Servings { get; init; }
+    public bool AdjustableServings { get; init; }
 
-    /// <summary>
-    /// Friendly name.
-    /// </summary>
-    public string Name { get; set; } = null!;
-
-    [Display(Name = "Prep Time")]
-    public int PrepTime { get; set; }
-
-    [Display(Name = "Cook Time")]
-    public int CookTime { get; set; }
-
-    [Display(Name = "Servings")]
-    public int Servings { get; set; } = RecipeConsts.ServingsDefault;
-
-    [Display(Name = "Measure")]
-    public Measure Measure { get; set; } = Measure.None;
-
-    [Display(Name = "Adjustable Servings")]
-    public bool AdjustableServings { get; set; }
-
-    /// <summary>
-    /// Notes about the recipe (externally shown).
-    /// </summary>
-    public string? Notes { get; set; } = null;
+    public int PrepTime { get; init; }
+    public int CookTime { get; init; }
+    public int TotalTime => PrepTime + CookTime;
 
     [JsonInclude]
-    public virtual IList<RecipeInstructionDto> Instructions { get; set; } = [];
+    public virtual IList<RecipeInstructionDto> Instructions { get; init; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeDto other
