@@ -3,9 +3,8 @@ using System.Diagnostics;
 
 namespace Core.Dtos.User;
 
-
 /// <summary>
-/// Exercises listed on the website
+/// Recipes listed on the website
 /// </summary>
 [DebuggerDisplay("{Nutrients}: {Measure} - {Value}")]
 public class NutrientDto

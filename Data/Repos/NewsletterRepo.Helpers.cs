@@ -57,7 +57,7 @@ public partial class NewsletterRepo
     ///     Updates the last seen date of the exercise by the user.
     /// </summary>
     /// <param name="refreshAfter">
-    ///     When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same exercises in each workout.
+    ///     When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same recipes in each feast.
     /// </param>
     internal async Task UpdateLastSeenDate(IEnumerable<QueryResults> recipes)
     {
@@ -66,11 +66,11 @@ public partial class NewsletterRepo
 
         foreach (var recipe in recipes.DistinctBy(e => e.UserRecipe))
         {
-            // >= so that today is the last day seeing the same exercises and tomorrow the exercises will refresh.
+            // >= so that today is the last day seeing the same recipes and tomorrow the recipes will refresh.
             if (recipe.UserRecipe != null && (recipe.UserRecipe.RefreshAfter == null || DateHelpers.Today >= recipe.UserRecipe.RefreshAfter))
             {
                 var refreshAfter = recipe.UserRecipe.LagRefreshXWeeks == 0 ? (DateOnly?)null : DateHelpers.StartOfWeek.AddDays(7 * recipe.UserRecipe.LagRefreshXWeeks);
-                // If refresh after is today, we want to see a different exercises tomorrow so update the last seen date.
+                // If refresh after is today, we want to see a different recipes tomorrow so update the last seen date.
                 if (recipe.UserRecipe.RefreshAfter == null && refreshAfter.HasValue && refreshAfter.Value > DateHelpers.Today)
                 {
                     recipe.UserRecipe.RefreshAfter = refreshAfter.Value;

@@ -19,7 +19,7 @@ public class QueryBuilder
     private EquipmentOptions? EquipmentOptions;
 
     /// <summary>
-    /// Looks for similar buckets of exercise variations.
+    /// Looks for similar buckets of recipes.
     /// </summary>
     public QueryBuilder()
     {
@@ -27,7 +27,7 @@ public class QueryBuilder
     }
 
     /// <summary>
-    /// Looks for similar buckets of exercise variations.
+    /// Looks for similar buckets of recipes.
     /// </summary>
     public QueryBuilder(Section section)
     {
@@ -35,7 +35,7 @@ public class QueryBuilder
     }
 
     /// <summary>
-    /// Show exercises that work these unique muscle groups.
+    /// Show recipes that work these unique nutrient groups.
     /// </summary>
     public QueryBuilder WithNutrients(INutrientBuilderFinalNoContext builder, Action<NutrientOptions>? optionsBuilder = null)
     {
@@ -46,7 +46,7 @@ public class QueryBuilder
     }
 
     /// <summary>
-    /// Filter variations down to have this equipment.
+    /// Filter recipes down to have this equipment.
     /// </summary>
     public QueryBuilder WithEquipment(Equipment? equipments, Action<EquipmentOptions>? builder = null)
     {
@@ -57,10 +57,10 @@ public class QueryBuilder
     }
 
     /// <summary>
-    /// Filter variations down to the user's progressions.
+    /// Filter recipes down to the user's progressions.
     /// 
     /// TODO: Refactor user options to better select what is filtered and what isn't.
-    /// ..... (prerequisites, progressions, equipment, no use caution when new, unique exercises).
+    /// ..... (prerequisites, progressions, equipment, no use caution when new, unique recipes).
     /// </summary>
     public QueryBuilder WithUser(User user, bool ignoreAllergens = false, bool ignoreIgnored = false, bool ignoreMissingEquipment = false)
     {

@@ -1,7 +1,7 @@
 ﻿namespace Core.Models.Recipe;
 
 /// <summary>
-/// Color schemes for exercises.
+/// Color schemes for recipes.
 /// </summary>
 public enum RecipeTheme
 {

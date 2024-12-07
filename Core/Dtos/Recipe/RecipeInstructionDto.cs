@@ -3,7 +3,7 @@
 namespace Core.Dtos.Recipe;
 
 /// <summary>
-/// Exercises listed on the website
+/// Recipes listed on the website
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeInstructionDto

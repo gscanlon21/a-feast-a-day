@@ -1,13 +1,15 @@
-﻿
+﻿using System.Diagnostics;
+
 namespace Core.Dtos.ShoppingList;
 
+[DebuggerDisplay("{Hash,nq}")]
 public class ShoppingListDto
 {
     public required int NewsletterId { get; init; }
-
     public required IList<ShoppingListItemDto> ShoppingList { get; init; } = [];
 
-    public override int GetHashCode() => NewsletterId.GetHashCode();
-    public override bool Equals(object? obj) => obj is ShoppingListDto other
-        && other.NewsletterId.Equals(NewsletterId);
+    /// <summary>
+    /// Add the item count so if the user ignores a recipe, the list changes.
+    /// </summary>
+    public int Hash => unchecked(unchecked(NewsletterId * 100) + ShoppingList.Count);
 }

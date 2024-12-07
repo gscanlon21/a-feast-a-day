@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Ingredient;
 
 /// <summary>
-/// Pre-requisite exercises for other exercises
+/// Pre-requisite recipes for other recipes.
 /// </summary>
 [Table("ingredient_alternative")]
 [DebuggerDisplay("{Ingredient} alt is {AlternativeIngredient}")]

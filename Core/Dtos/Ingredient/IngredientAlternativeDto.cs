@@ -3,7 +3,7 @@
 namespace Core.Dtos.Ingredient;
 
 /// <summary>
-/// Pre-requisite exercises for other exercises
+/// Pre-requisite recipes for other recipes.
 /// </summary>
 [DebuggerDisplay("{IngredientId} alt is {AlternativeIngredient}")]
 public class IngredientAlternativeDto

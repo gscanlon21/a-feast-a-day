@@ -15,7 +15,7 @@ using System.Security.Cryptography;
 namespace Data.Query;
 
 /// <summary>
-/// Builds and runs an EF Core query for selecting exercises.
+/// Builds and runs an EF Core query for selecting recipes.
 /// </summary>
 public class QueryRunner(Section section)
 {
@@ -214,7 +214,7 @@ public class QueryRunner(Section section)
             // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
             // ... and we may see two randomly alternating recipes for the LagRefreshXWeeks duration.
             .ThenBy(a => a.UserRecipe?.LastSeen.DayNumber)
-            // Mostly for the demo, show mostly random exercises.
+            // Mostly for the demo, show mostly random recipes.
             .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
             // Don't re-order the list on each read.
             .ToList())

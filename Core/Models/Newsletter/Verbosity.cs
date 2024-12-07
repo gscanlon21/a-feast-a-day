@@ -17,7 +17,7 @@ public enum Verbosity
     Images = 1 << 0, // 1
 
     /// <summary>
-    /// Show exercises images to the user.
+    /// Show prep time to the user.
     /// </summary>
     [Display(Name = "Prep Time")]
     PrepTime = 1 << 1, // 2

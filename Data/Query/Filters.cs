@@ -19,7 +19,7 @@ public static class Filters
     /// </summary>
     public static IQueryable<T> FilterSection<T>(IQueryable<T> query, Section? value) where T : IRecipeCombo
     {
-        // Debug should be able to see all exercises. When querying for prep recipes, don't filter.
+        // Debug should be able to see all recipes. When querying for prep recipes, don't filter.
         if (value.HasValue && value != Section.None && value != Section.Debug && value != Section.Prep)
         {
             // Has any flag.
@@ -30,7 +30,7 @@ public static class Filters
     }
 
     /// <summary>
-    /// Filter down to these specific exercises.
+    /// Filter down to these specific recipes.
     /// </summary>
     public static IQueryable<T> FilterRecipes<T>(IQueryable<T> query, IList<int>? exerciseIds) where T : IRecipeCombo
     {
