@@ -18,14 +18,14 @@ public class RecipeOptions : IOptions
     /// <summary>
     /// RecipeId:Scale.
     /// </summary>
-    public Dictionary<int, int>? RecipeIds { get; private set; }
+    public Dictionary<int, int?>? RecipeIds { get; private set; }
 
     public bool IgnorePrerequisites { get; set; }
 
     public void AddPastRecipes(ICollection<UserFeastRecipe> userFeastRecipes)
     {
         RecipeIds = userFeastRecipes.Where(ufr => _section == ufr.Section || _section == Section.None)
-            .GroupBy(ufr => ufr.RecipeId).ToDictionary(g => g.Key, g => g.Sum(ufr => ufr.Scale));
+            .GroupBy(ufr => ufr.RecipeId).ToDictionary(g => g.Key, g => (int?)g.Sum(ufr => ufr.Scale));
     }
 
     /// <summary>
@@ -37,7 +37,7 @@ public class RecipeOptions : IOptions
         {
             if (RecipeIds == null)
             {
-                RecipeIds = recipes.ToDictionary(nv => nv.Id, nv => 1);
+                RecipeIds = recipes.ToDictionary(nv => nv.Id, nv => (int?)1);
             }
             else
             {
@@ -49,7 +49,7 @@ public class RecipeOptions : IOptions
     /// <summary>
     /// Only select these recipes.
     /// </summary>
-    public void AddRecipes(Dictionary<int, int>? recipeIds)
+    public void AddRecipes(Dictionary<int, int?>? recipeIds)
     {
         if (recipeIds != null)
         {

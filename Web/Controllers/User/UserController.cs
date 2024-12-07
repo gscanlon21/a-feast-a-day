@@ -36,11 +36,6 @@ public partial class UserController : ViewController
     /// </summary>
     public const string UserDisabledByUserReason = "Disabled by user.";
 
-    /// <summary>
-    /// Message to show to the user when a link has expired.
-    /// </summary>
-    public const string LinkExpiredMessage = "This link has expired.";
-
     #region Edit User
 
     /// <summary>
@@ -102,11 +97,10 @@ public partial class UserController : ViewController
             _context.UserFamilies.RemoveRange(oldUserFamilies);
             _context.UserFamilies.AddRange(newUserFamilies);
 
-            _context.UserServings.RemoveRange(_context.UserServings.Where(uf => uf.UserId == viewModel.User.Id));
-            _context.UserServings.AddRange(viewModel.UserServings.Select(umm => new UserServing(viewModel.User, umm.Section)
+            _context.UserSections.RemoveRange(_context.UserSections.Where(uf => uf.UserId == viewModel.User.Id));
+            _context.UserSections.AddRange(viewModel.UserSections.Select(umm => new UserSection(viewModel.User, umm.Section)
             {
-                Count = umm.Count,
-                AtLeastXServingsPerRecipe = umm.AtLeastXServingsPerRecipe,
+                Weight = umm.Weight,
                 AtLeastXNutrientsPerRecipe = umm.AtLeastXNutrientsPerRecipe,
             }));
 

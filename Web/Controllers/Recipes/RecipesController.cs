@@ -6,19 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Web.Code.Attributes;
 using Web.Views.Recipe;
 
-namespace Web.Controllers.Recipe;
+namespace Web.Controllers.Recipes;
 
-[Route("recipe", Order = 1)]
-[Route("recipes", Order = 2)]
-public class RecipeController(IServiceScopeFactory serviceScopeFactory) : ViewController()
+[Route("{Name}")]
+public class RecipesController : ViewController
 {
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+
+    public RecipesController(IServiceScopeFactory serviceScopeFactory)
+    {
+        _serviceScopeFactory = serviceScopeFactory;
+    }
+
     /// <summary>
     /// The name of the controller for routing purposes
     /// </summary>
-    public const string Name = "Recipe";
+    public const string Name = "Recipes";
 
-    [Route("", Order = 2)]
-    [Route("all", Order = 1)]
+    [Route("")]
     [ResponseCompression(Enabled = !DebugConsts.IsDebug)]
     public async Task<IActionResult> All(RecipesViewModel? viewModel = null)
     {
@@ -31,7 +36,7 @@ public class RecipeController(IServiceScopeFactory serviceScopeFactory) : ViewCo
             queryBuilder = queryBuilder.WithEquipment(viewModel.Equipment.Value);
         }
 
-        viewModel.Recipes = (await queryBuilder.Build().Query(serviceScopeFactory))
+        viewModel.Recipes = (await queryBuilder.Build().Query(_serviceScopeFactory))
             .Select(r => r.AsType<NewsletterRecipeDto>()!)
             .ToList();
 

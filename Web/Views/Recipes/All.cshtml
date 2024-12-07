@@ -1,10 +1,10 @@
 ﻿@model Views.Recipe.RecipesViewModel
 @using System.Numerics
 @using Core.Models.Recipe
-@using Web.Controllers.Recipe
 @using Web.Code.Extensions
 @using Core.Models.User
 @using Core.Models
+@using Web.Controllers.Recipes
 
 @{
     ViewData[ViewData_Blank.Title] = "Recipes";
@@ -13,7 +13,7 @@
 <details class="alert alert-secondary mb-0" style="position:fixed;top:0;right:0;z-index:1;overflow:auto;max-height:100vh;">
     <summary class="cursor--pointer">@(Model.FormHasData ? "*" : "")Filter Recipes</summary>
 
-    <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.All)" method="get" style="margin-top:1rem"
+    <form asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)" method="get" style="margin-top:1rem"
           onsubmit="submitButton.disabled=true;">
         <div style="margin-bottom:1ex;">
             <label asp-for="Name" class="control-label">@Html.DisplayNameFor(_ => Model.Name)</label>
@@ -36,7 +36,7 @@
                 <input type="submit" value="Apply" class="btn btn-secondary" name="submitButton" />
             </div>
             <div class="col-auto">
-                <a class="btn btn-outline-secondary" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.All)">Clear</a>
+                <a class="btn btn-outline-secondary" asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)">Clear</a>
             </div>
         </div>
     </form>

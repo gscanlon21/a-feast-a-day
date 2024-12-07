@@ -5,8 +5,8 @@ using Data.Entities.Recipe;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Web.Views.Recipe;
 using Web.Views.Shared.Components.ManageRecipe;
-using Web.Views.User;
 
 namespace Web.Components.User;
 
@@ -28,23 +28,27 @@ public class ManageRecipeViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
     {
-        var userRecipe = await _context.UserRecipes.AsNoTracking().FirstOrDefaultAsync(r => r.UserId == user.Id && r.RecipeId == parameters.RecipeId);
-        if (userRecipe == null)
-        {
-            return Content("");
-        }
+        var userRecipe = await _context.UserRecipes.AsNoTracking()
+            .Where(r => r.RecipeId == parameters.RecipeId)
+            .Where(r => r.Section == parameters.Section)
+            .Where(r => r.UserId == user.Id)
+            .FirstOrDefaultAsync();
 
         if (userRecipe == null) { return Content(""); }
-        var recipeDto = (await new QueryBuilder(Section.None)
+        var recipeDto = (await new QueryBuilder(parameters.Section)
             .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
-                x.AddRecipes([recipe]);
+                // Don't return more than one recipe if the recipe has ingredient recipes.
+                x.IgnorePrerequisites = true;
+                x.AddRecipes(new Dictionary<int, int?>
+                {
+                    [recipe.Id] = null,
+                });
             })
             .Build()
             .Query(_serviceScopeFactory))
-            // May return more than one recipe if the recipe has ingredient recipes.
-            .FirstOrDefault(r => r.Recipe.Id == recipe.Id);
+            .FirstOrDefault();
 
         if (recipeDto == null) { return Content(""); }
         return View("ManageRecipe", new ManageRecipeViewModel()
@@ -53,6 +57,7 @@ public class ManageRecipeViewComponent : ViewComponent
             UserRecipe = userRecipe,
             Parameters = parameters,
             Notes = userRecipe.Notes,
+            Servings = userRecipe.Servings,
             LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,
             PadRefreshXWeeks = userRecipe.PadRefreshXWeeks,
             Recipe = recipeDto.AsType<NewsletterRecipeDto>()!,

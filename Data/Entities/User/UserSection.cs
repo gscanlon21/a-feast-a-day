@@ -5,19 +5,18 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
 
-
-[Table("user_serving")]
-public class UserServing
+[Table("user_section")]
+public class UserSection
 {
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
-    public UserServing() { }
+    public UserSection() { }
 
-    public UserServing(Section section)
+    public UserSection(Section section)
     {
         Section = section;
     }
 
-    public UserServing(User user, Section section) : this(section)
+    public UserSection(User user, Section section) : this(section)
     {
         // Don't set User, so that EF Core doesn't add/update User.
         UserId = user.Id;
@@ -28,22 +27,19 @@ public class UserServing
     [ForeignKey(nameof(Entities.User.User.Id))]
     public int UserId { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserServings))]
+    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserSections))]
     public virtual User User { get; private init; } = null!;
 
-    [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
-    public int Count { get; set; }
+    [Range(UserConsts.SectionWeightMin, UserConsts.SectionWeightMax)]
+    public int Weight { get; set; }
 
     [Range(UserConsts.AtLeastXNutrientsPerRecipeMin, UserConsts.AtLeastXNutrientsPerRecipeMax)]
     public int AtLeastXNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXNutrientsPerRecipeDefault;
 
-    [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]
-    public int AtLeastXServingsPerRecipe { get; set; } = UserConsts.AtLeastXServingsPerRecipeDefault;
-
     /// <summary>
-    /// The volume each muscle group should be exposed to each week.
+    /// The volume each section should be exposed to each week.
     /// </summary>
-    public static readonly IDictionary<Section, int> DefaultServings = new Dictionary<Section, int>
+    public static readonly IDictionary<Section, int> DefaultWeight = new Dictionary<Section, int>
     {
         [Section.Breakfast] = 5,
         [Section.Dessert] = 2,

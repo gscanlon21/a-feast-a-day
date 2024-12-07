@@ -13,7 +13,7 @@
 
 <h6 class="mb-1">Ingredient</h6>
 <div class="alert alert-light shadow">
-    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IgnoreIngredient)" method="post"
+    <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.IgnoreIngredient)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-ingredientId="@Model.Parameters.IngredientId">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,7 +31,7 @@
         </div>
     </form>
 
-    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ManageIngredient)" method="post" class="mb-4"
+    <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.ManageIngredient)" method="post" class="mb-4"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-ingredientId="@Model.Ingredient.Id" >
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>

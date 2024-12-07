@@ -50,61 +50,42 @@
             }
             <div class="form-group mb-3">
                 <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
-                    <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserServings)</b></summary>
+                    <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserSections)</b></summary>
 
                     <div class="mt-1 ps-3">
-                        @for (var i = 0; i < Model.UserServings.Count; i++)
+                        @for (var i = 0; i < Model.UserSections.Count; i++)
                         {
-                            <input type="hidden" asp-for="UserServings[i].UserId" />
-                            <input type="hidden" asp-for="UserServings[i].Section" />
+                            <input type="hidden" asp-for="UserSections[i].UserId" />
+                            <input type="hidden" asp-for="UserSections[i].Section" />
                             <div class="mb-3">
-                                <div><b>@Model.UserServings[i].Section.GetDisplayName322()</b></div>
+                                <div><b>@Model.UserSections[i].Section.GetDisplayName322()</b></div>
 
                                 <div class="mb-1 form-group">
-                                    <label asp-for="UserServings[i].Count" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].Count)</label>
+                                    <label asp-for="UserSections[i].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].Weight)</label>
                                     <div style="display:flex;column-gap:1ch;">
-                                        <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserServings[i])">@Model.UserServings[i].Count</output>
+                                        <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserSections[i])">@Model.UserSections[i].Weight</output>
                                         <div style="display:flex;width:100%;">
-                                            <input asp-for="UserServings[i].Count" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
-                                                   min="@UserConsts.WeeklyServingsMin" max="@UserConsts.WeeklyServingsMax"
+                                            <input asp-for="UserSections[i].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                   min="@UserConsts.SectionWeightMin" max="@UserConsts.SectionWeightMax"
                                                    oninput="mobilityMusclesOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
                                             <datalist id="mobilityMusclesList@(i)">
-                                                <option value="@(UserServing.DefaultServings.TryGetValue(Model.UserServings[i].Section, out int countTmp) ? countTmp : 0)"></option>
+                                                <option value="@(UserSection.DefaultWeight.TryGetValue(Model.UserSections[i].Section, out int countTmp) ? countTmp : 0)"></option>
                                             </datalist>
                                         </div>
                                     </div>
-                                    <span asp-validation-for="UserServings[i].Count" class="text-danger"></span>
+                                    <span asp-validation-for="UserSections[i].Weight" class="text-danger"></span>
                                     <div id="refresh-functional-help" class="form-text">
-                                        <p>@Html.DisplayDescriptionFor(_ => Model.UserServings[i].Count)</p>
-                                    </div>
-                                </div>
-
-                                <div class="mb-1 form-group">
-                                    <label asp-for="UserServings[i].AtLeastXServingsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)</label>
-                                    <div style="display:flex;column-gap:1ex;">
-                                        <output name="OutputAtLeastXServingsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)">@Model.UserServings[i].AtLeastXServingsPerRecipe</output>
-                                        <div style="display:flex;width:100%;">
-                                            <input asp-for="UserServings[i].AtLeastXServingsPerRecipe" type="range" style="width:100%;" aria-describedby="user-servings-help@(i)"
-                                                   step="1" min="@UserConsts.AtLeastXServingsPerRecipeMin" max="@UserConsts.AtLeastXServingsPerRecipeMax"
-                                                   oninput="OutputAtLeastXServingsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXServingsPerRecipe@(i)" />
-                                            <datalist id="ListAtLeastXServingsPerRecipe@(i)">
-                                                <option value="@UserConsts.AtLeastXServingsPerRecipeDefault"></option>
-                                            </datalist>
-                                        </div>
-                                    </div>
-                                    <span asp-validation-for="UserServings[i].AtLeastXServingsPerRecipe" class="text-danger"></span>
-                                    <div id="user-servings-help@(i)" class="form-text">
-                                        @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXServingsPerRecipe)
+                                        <p>@Html.DisplayDescriptionFor(_ => Model.UserSections[i].Weight)</p>
                                     </div>
                                 </div>
 
                                 <div class="mb-1">
                                     <div class="form-group mb-3">
-                                        <label asp-for="UserServings[i].AtLeastXNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)</label>
+                                        <label asp-for="UserSections[i].AtLeastXNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)</label>
                                         <div style="display:flex;column-gap:1ex;">
-                                            <output name="OutputAtLeastXNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)">@Model.UserServings[i].AtLeastXNutrientsPerRecipe</output>
+                                            <output name="OutputAtLeastXNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)">@Model.UserSections[i].AtLeastXNutrientsPerRecipe</output>
                                             <div style="display:flex;width:100%;">
-                                                <input asp-for="UserServings[i].AtLeastXNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="user-nutrients-help@(i)"
+                                                <input asp-for="UserSections[i].AtLeastXNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="user-nutrients-help@(i)"
                                                        step="1" min="@UserConsts.AtLeastXNutrientsPerRecipeMin" max="@UserConsts.AtLeastXNutrientsPerRecipeMax"
                                                        oninput="OutputAtLeastXNutrientsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXNutrientsPerRecipe@(i)" />
                                                 <datalist id="ListAtLeastXNutrientsPerRecipe@(i)">
@@ -112,21 +93,20 @@
                                                 </datalist>
                                             </div>
                                         </div>
-                                        <span asp-validation-for="UserServings[i].AtLeastXNutrientsPerRecipe" class="text-danger"></span>
+                                        <span asp-validation-for="UserSections[i].AtLeastXNutrientsPerRecipe" class="text-danger"></span>
                                         <div id="user-nutrients-help@(i)" class="form-text">
-                                            @Html.DisplayDescriptionFor(_ => Model.UserServings[i].AtLeastXNutrientsPerRecipe)
+                                            @Html.DisplayDescriptionFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         }
-
-                        <span asp-validation-for="UserServings" class="text-danger"></span>
-                        <div id="mobility-muscles-help" class="form-text">
-                            @Html.DisplayDescriptionFor(_ => Model.UserServings)
-                        </div>
                     </div>
                 </details>
+                <span asp-validation-for="UserSections" class="text-danger"></span>
+                <div id="user-sections-help" class="form-text">
+                    @Html.DisplayDescriptionFor(_ => Model.UserSections)
+                </div>
             </div>
 
             <div class="form-group mb-3">
@@ -239,6 +219,10 @@
                         });
                     </script>
                 </details>
+                <span asp-validation-for="UserFamilies" class="text-danger"></span>
+                <div id="user-families-help" class="form-text">
+                    @Html.DisplayDescriptionFor(_ => Model.UserFamilies)
+                </div>
             </div>
 
             @if (Model.User.IsDemoUser)

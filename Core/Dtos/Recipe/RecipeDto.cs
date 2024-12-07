@@ -15,7 +15,11 @@ public class RecipeDto
 {
     public int Id { get; init; }
 
-    public int? UserId { get; init; }
+    public Section Section { get; set; }
+
+    public Equipment Equipment { get; set; }
+
+    public string? Image { get; set; } = null;
 
     /// <summary>
     /// Friendly name.
@@ -36,14 +40,6 @@ public class RecipeDto
 
     [Display(Name = "Adjustable Servings")]
     public bool AdjustableServings { get; set; }
-
-    public Equipment Equipment { get; set; }
-
-    public Section Section { get; set; }
-
-    public Allergens Allergens { get; set; }
-
-    public string? Image { get; set; } = null;
 
     /// <summary>
     /// Notes about the recipe (externally shown).

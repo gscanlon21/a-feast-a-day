@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Core.Models.Newsletter;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
@@ -13,21 +14,27 @@ namespace Data.Entities.User;
 public class UserRecipe
 {
     [Required]
-    public int UserId { get; init; }
+    public required int UserId { get; init; }
 
     [Required]
-    public int RecipeId { get; init; }
+    public required int RecipeId { get; init; }
 
-    /// <summary>
-    /// Don't show this exercise or any of it's variations to the user
-    /// </summary>
     [Required]
-    public bool Ignore { get; set; }
+    public required Section Section { get; init; }
+
+    [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
+    public int Servings { get; set; } = RecipeConsts.ServingsDefault;
 
     public string? Notes { get; set; }
 
     /// <summary>
-    /// When was this exercise last seen in the user's newsletter.
+    /// Don't show this recipe to the user.
+    /// </summary>
+    [Required]
+    public bool Ignore { get; set; }
+
+    /// <summary>
+    /// When was this recipe last seen in the user's newsletter.
     /// </summary>
     [Required]
     public DateOnly LastSeen { get; set; }
@@ -39,13 +46,13 @@ public class UserRecipe
     public DateOnly? RefreshAfter { get; set; }
 
     /// <summary>
-    /// How often to refresh exercises.
+    /// How often to refresh recipes.
     /// </summary>
     [Required, Range(UserConsts.LagRefreshXWeeksMin, UserConsts.LagRefreshXWeeksMax)]
     public int LagRefreshXWeeks { get; set; } = UserConsts.LagRefreshXWeeksDefault;
 
     /// <summary>
-    /// How often to refresh exercises.
+    /// How often to refresh recipes.
     /// </summary>
     [Required, Range(UserConsts.PadRefreshXWeeksMin, UserConsts.PadRefreshXWeeksMax)]
     public int PadRefreshXWeeks { get; set; } = UserConsts.PadRefreshXWeeksDefault;
@@ -58,8 +65,8 @@ public class UserRecipe
     public virtual User User { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
-
     public override bool Equals(object? obj) => obj is UserRecipe other
         && other.RecipeId == RecipeId
+        && other.Section == Section
         && other.UserId == UserId;
 }

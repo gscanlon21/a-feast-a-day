@@ -70,10 +70,10 @@ public class UserEditViewModel
     [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive with each recipe?")]
     public Verbosity Verbosity { get; set; }
 
-    [Display(Name = "Weekly Servings", Description = "Customize weekly servings.")]
-    public IList<UserServingViewModel> UserServings { get; set; } = [];
+    [Display(Name = "Recipe Sections")]
+    public IList<UserSectionViewModel> UserSections { get; set; } = [];
 
-    [Display(Name = "Family Members", Description = "Customize family members.")]
+    [Display(Name = "Family Members")]
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
     [Required]
@@ -139,33 +139,28 @@ public class UserEditViewModel
         public bool Hide { get; set; }
     }
 
-    public class UserServingViewModel
+    public class UserSectionViewModel
     {
-        public UserServingViewModel() { }
+        public UserSectionViewModel() { }
 
-        public UserServingViewModel(UserServing userMuscleMobility)
+        public UserSectionViewModel(UserSection userSection)
         {
-            UserId = userMuscleMobility.UserId;
-            Section = userMuscleMobility.Section;
-            Count = userMuscleMobility.Count;
-            AtLeastXServingsPerRecipe = userMuscleMobility.AtLeastXServingsPerRecipe;
-            AtLeastXNutrientsPerRecipe = userMuscleMobility.AtLeastXNutrientsPerRecipe;
+            Weight = userSection.Weight;
+            UserId = userSection.UserId;
+            Section = userSection.Section;
+            AtLeastXNutrientsPerRecipe = userSection.AtLeastXNutrientsPerRecipe;
         }
-
-        public Section Section { get; init; }
 
         public int UserId { get; init; }
 
-        [Display(Name = "Servings", Description = "A relative weight of servings.")]
-        [Range(UserConsts.WeeklyServingsMin, UserConsts.WeeklyServingsMax)]
-        public int Count { get; set; }
+        public Section Section { get; init; }
+
+        [Display(Name = "Weight", Description = "A relative weight of servings.")]
+        [Range(UserConsts.SectionWeightMin, UserConsts.SectionWeightMax)]
+        public int Weight { get; set; }
 
         [Display(Name = "At Least X Nutrients Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
         [Range(UserConsts.AtLeastXNutrientsPerRecipeMin, UserConsts.AtLeastXNutrientsPerRecipeMax)]
         public int AtLeastXNutrientsPerRecipe { get; set; } = UserConsts.AtLeastXNutrientsPerRecipeDefault;
-
-        [Display(Name = "At Least X Servings Per Recipe", Description = "A higher value will result in fewer recipes and decreased recipe variety.")]
-        [Range(UserConsts.AtLeastXServingsPerRecipeMin, UserConsts.AtLeastXServingsPerRecipeMax)]
-        public int AtLeastXServingsPerRecipe { get; set; } = UserConsts.AtLeastXServingsPerRecipeDefault;
     }
 }

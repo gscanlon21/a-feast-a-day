@@ -179,8 +179,8 @@ public class User : IUser
     [JsonIgnore, InverseProperty(nameof(UserToken.User))]
     public virtual ICollection<UserToken> UserTokens { get; init; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(UserServing.User))]
-    public virtual ICollection<UserServing> UserServings { get; init; } = [];
+    [JsonIgnore, InverseProperty(nameof(UserSection.User))]
+    public virtual ICollection<UserSection> UserSections { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
     public virtual ICollection<UserFeast> UserFeasts { get; init; } = null!;

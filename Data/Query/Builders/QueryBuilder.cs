@@ -14,7 +14,6 @@ public class QueryBuilder
 
     private UserOptions? UserOptions;
     private NutrientOptions? NutrientOptions;
-    private ServingsOptions? ServingsOptions;
     private ExclusionOptions? ExclusionOptions;
     private RecipeOptions? RecipeOptions;
     private EquipmentOptions? EquipmentOptions;
@@ -33,17 +32,6 @@ public class QueryBuilder
     public QueryBuilder(Section section)
     {
         Section = section;
-    }
-
-    /// <summary>
-    /// What progression level should we cap exercise's at?
-    /// </summary>
-    public QueryBuilder WithServingsOptions(Action<ServingsOptions>? builder = null)
-    {
-        var options = ServingsOptions ?? new ServingsOptions();
-        builder?.Invoke(options);
-        ServingsOptions = options;
-        return this;
     }
 
     /// <summary>
@@ -121,11 +109,10 @@ public class QueryBuilder
         return new QueryRunner(Section)
         {
             UserOptions = UserOptions ?? new UserOptions(),
-            NutrientOptions = NutrientOptions ?? new NutrientOptions(),
-            ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
-            ServingsOptions = ServingsOptions ?? new ServingsOptions(),
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),
+            NutrientOptions = NutrientOptions ?? new NutrientOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
+            ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
         };
     }
 }

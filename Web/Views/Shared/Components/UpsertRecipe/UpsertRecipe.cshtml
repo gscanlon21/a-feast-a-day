@@ -4,7 +4,7 @@
 @using Web.Code.Extensions
 
 <div class="alert alert-light shadow mb-3" role="alert">
-    <form id="recipe-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+    <form id="recipe-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
         <input asp-for="Recipe.Id" type="hidden" class="form-control" />
 
         <div class="form-group mb-3">
@@ -354,7 +354,7 @@
         @if (Model.Recipe.Id != default)
         {
             <div class="col-auto">
-                <form id="delete-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <form id="delete-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RemoveRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" name="RecipeId" asp-for="@Model.Recipe.Id" />
 
@@ -366,7 +366,7 @@
         {
             <div class="col-auto">
                 @* TODO *@
-                <form id="import-form" asp-controller="@UserController.Name" asp-action="@nameof(UserController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+                <form id="import-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="btn-group" role="group" aria-label="Basic example">

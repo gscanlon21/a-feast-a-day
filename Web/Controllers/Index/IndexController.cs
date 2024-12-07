@@ -81,13 +81,12 @@ public class IndexController : ViewController
             });
 
             // These records are required.
-            foreach (var section in UserServing.DefaultServings.Keys)
+            foreach (var section in UserSection.DefaultWeight.Keys)
             {
                 // newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
-                newUser.UserServings.Add(new UserServing(section)
+                newUser.UserSections.Add(new UserSection(section)
                 {
-                    Count = UserServing.DefaultServings[section],
-                    AtLeastXServingsPerRecipe = UserConsts.AtLeastXServingsPerRecipeDefault,
+                    Weight = UserSection.DefaultWeight[section],
                     AtLeastXNutrientsPerRecipe = UserConsts.AtLeastXNutrientsPerRecipeDefault,
                 });
             }

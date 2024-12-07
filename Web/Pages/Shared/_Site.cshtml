@@ -1,4 +1,4 @@
-﻿@using Web.Controllers.Recipe
+﻿@using Web.Controllers.Recipes
 
 @{
     Layout = "_Blank";
@@ -29,7 +29,7 @@
             </div>
             
             <div class="col-auto">
-                <a class="text-dark px-1 hover" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.All)">Recipes</a>
+                <a class="text-dark px-1 hover" asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)">Recipes</a>
             </div>
         </div>
     </div>
