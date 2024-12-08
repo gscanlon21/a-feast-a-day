@@ -63,7 +63,7 @@ public class UserRecipe
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
     public virtual User User { get; private init; } = null!;
 
-    public override int GetHashCode() => HashCode.Combine(UserId, RecipeId);
+    public override int GetHashCode() => HashCode.Combine(UserId, Section, RecipeId);
     public override bool Equals(object? obj) => obj is UserRecipe other
         && other.RecipeId == RecipeId
         && other.Section == Section

@@ -52,8 +52,9 @@ public class UserIngredient
     #endregion Navigation Properties
 
 
-    public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
+    public override int GetHashCode() => HashCode.Combine(UserId, RecipeId, IngredientId);
     public override bool Equals(object? obj) => obj is UserIngredient other
         && other.IngredientId == IngredientId
+        && other.RecipeId == RecipeId
         && other.UserId == UserId;
 }
