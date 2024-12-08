@@ -1,26 +1,32 @@
 ﻿using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
-using Web.Views.Index;
 
 namespace Web.Controllers.Newsletter;
 
-[Route("n", Order = 1)]
-[Route("newsletter", Order = 2)]
-public class NewsletterController(NewsletterRepo newsletterService) : ViewController()
+[Route("demo", Order = 3)]
+[Route($"n/{UserRoute}", Order = 1)]
+[Route($"newsletter/{UserRoute}", Order = 2)]
+public class NewsletterController : ViewController
 {
+    private readonly NewsletterRepo _newsletterRepo;
+
+    public NewsletterController(NewsletterRepo newsletterRepo)
+    {
+        _newsletterRepo = newsletterRepo;
+    }
+
     /// <summary>
     /// The name of the controller for routing purposes.
     /// </summary>
     public const string Name = "Newsletter";
 
     /// <summary>
-    /// Root route for building out the workout routine newsletter.
+    /// Root route for building out the meal plan newsletter.
     /// </summary>
     [HttpGet]
-    [Route($"{{email:regex({UserCreateViewModel.EmailRegex})}}/{{date}}", Order = 1)]
-    [Route($"{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 2)]
-    [Route("demo", Order = 3)]
+    [Route("", Order = 2)]
+    [Route($"{{date}}", Order = 1)]
     public async Task<IActionResult> Newsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null, Client client = Client.Web, bool hideFooter = false)
     {
         //Response.GetTypedHeaders().LastModified = newsletter?.UserWorkout.DateTime;
@@ -32,7 +38,7 @@ public class NewsletterController(NewsletterRepo newsletterService) : ViewContro
             NoStore = true,
         };
 
-        var newsletter = await newsletterService.Newsletter(email, token, date);
+        var newsletter = await _newsletterRepo.Newsletter(email, token, date);
         if (newsletter != null)
         {
             newsletter.Client = client;

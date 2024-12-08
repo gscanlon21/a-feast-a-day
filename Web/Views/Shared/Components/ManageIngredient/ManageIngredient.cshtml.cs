@@ -2,13 +2,14 @@
 using Core.Dtos.User;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
+using Web.Views.Ingredient;
 
 namespace Web.Views.Shared.Components.ManageIngredient;
 
 public class ManageIngredientViewModel : IValidatableObject
 {
     [ValidateNever]
-    public required User.UserManageIngredientViewModel.Params Parameters { get; init; }
+    public required UserManageIngredientViewModel.Params Parameters { get; init; }
 
     [ValidateNever]
     public required Data.Entities.User.User User { get; init; }

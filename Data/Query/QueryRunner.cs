@@ -166,9 +166,10 @@ public class QueryRunner(Section section)
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Swap the ingredient if the user ignored it.
-                        if (recipeIngredient.UserIngredient?.Ignore == true
+                        // Disabled now that ingredients are managed per recipe.
+                        if (/*recipeIngredient.UserIngredient?.Ignore == true ||*/
                             // Or if the user is substituting in a different ingredient.
-                            || recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true
+                            recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true
                             // Or if the ingredient conflicts with the user's allergens.
                             || recipeIngredient.Ingredient!.Allergens.HasAnyFlag32(UserOptions.Allergens))
                         {

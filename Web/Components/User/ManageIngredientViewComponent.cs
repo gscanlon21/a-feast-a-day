@@ -4,11 +4,10 @@ using Core.Models.Recipe;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
-using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Web.Views.Ingredient;
 using Web.Views.Shared.Components.ManageIngredient;
-using Web.Views.User;
 
 namespace Web.Components.User;
 
@@ -19,21 +18,15 @@ public class ManageIngredientViewComponent : ViewComponent
     /// </summary>
     public const string Name = "ManageIngredient";
 
-    private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
 
-    public ManageIngredientViewComponent(CoreContext context, UserRepo userRepo)
+    public ManageIngredientViewComponent(CoreContext context)
     {
-        _userRepo = userRepo;
         _context = context;
     }
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient ingredient, UserManageIngredientViewModel.Params parameters)
     {
-        // Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
-        var userNewsletter = user.AsType<UserNewsletterDto>()!;
-        userNewsletter.Token = parameters.Token;
-
         var userIngredient = await _context.UserIngredients.AsNoTracking()
             .Where(ui => ui.IngredientId == parameters.IngredientId)
             .Where(ui => ui.RecipeId == parameters.RecipeId)
@@ -46,10 +39,10 @@ public class ManageIngredientViewComponent : ViewComponent
         {
             User = user,
             Parameters = parameters,
-            UserNewsletter = userNewsletter,
             UserIngredient = userIngredient,
             Recipes = await GetRecipes(user),
             Ingredient = ingredient.AsType<IngredientDto>()!,
+            UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, parameters.Token),
             Ingredients = ingredient.Alternatives.Select(ai => ai.AlternativeIngredient.AsType<IngredientDto>()!).ToList(),
         });
     }

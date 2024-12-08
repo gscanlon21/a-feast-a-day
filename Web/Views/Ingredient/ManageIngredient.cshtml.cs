@@ -1,4 +1,4 @@
-﻿namespace Web.Views.User;
+﻿namespace Web.Views.Ingredient;
 
 public class UserManageIngredientViewModel
 {

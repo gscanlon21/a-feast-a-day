@@ -5,14 +5,13 @@ using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
-using Web.Views.Index;
 using Web.Views.Shared.Components.Advanced;
 using Web.Views.User;
 
 namespace Web.Controllers.User;
 
-[Route($"u/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 1)]
-[Route($"user/{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 2)]
+[Route($"u/{UserRoute}", Order = 1)]
+[Route($"user/{UserRoute}", Order = 2)]
 public partial class UserController : ViewController
 {
     private readonly NewsletterService _newsletterService;

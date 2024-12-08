@@ -4,9 +4,14 @@ using Microsoft.Extensions.Options;
 
 namespace Lib;
 
-public class DisplayHelper(IOptions<SiteSettings> siteSettings)
+public class DisplayHelper
 {
-    private readonly IOptions<SiteSettings> _siteSettings = siteSettings;
+    private readonly IOptions<SiteSettings> _siteSettings;
+
+    public DisplayHelper(IOptions<SiteSettings> siteSettings)
+    {
+        _siteSettings = siteSettings;
+    }
 
     public string NewsletterLink(UserNewsletterDto? user, DateOnly today)
     {
@@ -16,6 +21,26 @@ public class DisplayHelper(IOptions<SiteSettings> siteSettings)
         }
 
         return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/n/{Uri.EscapeDataString(user.Email)}/{today:O}?token={Uri.EscapeDataString(user.Token)}";
+    }
+
+    public string RecipeLink(UserNewsletterDto? user, string toPath)
+    {
+        if (user == null)
+        {
+            return string.Empty;
+        }
+
+        return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/r/{Uri.EscapeDataString(user.Email)}/{toPath.Trim('/')}?token={Uri.EscapeDataString(user.Token)}";
+    }
+
+    public string IngredientLink(UserNewsletterDto? user, string toPath)
+    {
+        if (user == null)
+        {
+            return string.Empty;
+        }
+
+        return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/i/{Uri.EscapeDataString(user.Email)}/{toPath.Trim('/')}?token={Uri.EscapeDataString(user.Token)}";
     }
 
     public string UserLink(UserNewsletterDto? user, string toPath)
@@ -38,16 +63,4 @@ public class DisplayHelper(IOptions<SiteSettings> siteSettings)
         //toPath = $"u/{Uri.EscapeDataString(_User.Email)}/{toPath.Trim('/')}?token={Uri.EscapeDataString(_User.Token)}";
         return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/u/{Uri.EscapeDataString(user.Email)}/r?token={Uri.EscapeDataString(user.Token)}"; // &to={Uri.EscapeDataString(toPath)}
     }
-
-    /*
-    public string ExternalActiveLink(string toUrl)
-    {
-        if (_User == null)
-        {
-            return toUrl;
-        }
-
-        return $"{_siteSettings.Value.WebLink}/u/{Uri.EscapeDataString(_User.Email)}/r?to={Uri.EscapeDataString(toUrl)}&token={Uri.EscapeDataString(_User.Token)}";
-    }
-    */
 }

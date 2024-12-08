@@ -5,14 +5,16 @@ using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
+using Web.Controllers.User;
 using Web.Views.Recipe;
 using Web.Views.Shared.Components.ManageRecipe;
 using Web.Views.Shared.Components.UpsertRecipe;
 using Web.Views.User;
 
-namespace Web.Controllers.User;
+namespace Web.Controllers.Recipes;
 
-[Route($"{UserRoute}/{Name}")]
+[Route($"r/{UserRoute}", Order = 1)]
+[Route($"recipe/{UserRoute}", Order = 2)]
 public class RecipeController : ViewController
 {
     private readonly NewsletterService _newsletterService;
@@ -134,7 +136,7 @@ public class RecipeController : ViewController
         }
     }
 
-    [HttpPost, Route("{section:section}/[action]")]
+    [HttpPost, Route("[action]")]
     public async Task<IActionResult> RemoveRecipe(string email, string token, [FromForm] int recipeId)
     {
         var user = await _userRepo.GetUser(email, token);

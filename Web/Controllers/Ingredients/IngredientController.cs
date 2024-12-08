@@ -8,12 +8,15 @@ using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
+using Web.Controllers.User;
+using Web.Views.Ingredient;
 using Web.Views.Shared.Components.ManageIngredient;
 using Web.Views.User;
 
-namespace Web.Controllers.User;
+namespace Web.Controllers.Ingredients;
 
-[Route($"{UserRoute}/{Name}")]
+[Route($"i/{UserRoute}", Order = 1)]
+[Route($"ingredient/{UserRoute}", Order = 2)]
 public class IngredientController : ViewController
 {
     private readonly NewsletterService _newsletterService;

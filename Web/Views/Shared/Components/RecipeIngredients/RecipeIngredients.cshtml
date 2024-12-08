@@ -1,0 +1,25 @@
+﻿@model RecipeIngredientsViewModel
+@using System.Numerics
+@using Core.Models.Recipe
+@using Core.Consts
+
+<details class="mt-4">
+    <summary class="mb-1 h5">
+        <span>@Html.DisplayNameFor(_ => Model.Ingredients)</span>
+        <span class="float-end">@Model.Ingredients.Count()</span>
+    </summary>
+
+    <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.User" param-RecipeId="Model.Parameters.RecipeId" param-Ingredients='Model.Ingredients' />
+</details>
+
+@if (Model.IgnoredIngredients?.Any() == true)
+{
+    <details class="mt-4 mb-25">
+        <summary class="mb-1 h5">
+            <span>@Html.DisplayNameFor(_ => Model.IgnoredIngredients)</span>
+            <span class="float-end">@Model.IgnoredIngredients.Count()</span>
+        </summary>
+
+        <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.User" param-RecipeId="Model.Parameters.RecipeId" param-Ingredients='Model.IgnoredIngredients' />
+    </details>
+}

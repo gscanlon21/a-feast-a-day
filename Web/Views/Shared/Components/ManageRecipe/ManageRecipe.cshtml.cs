@@ -14,7 +14,7 @@ public class ManageRecipeViewModel
     [ValidateNever]
     public required Data.Entities.User.User User { get; init; }
 
-    [ValidateNever, Display(Name = "Recipe", Description = "Ignore this recipe.")]
+    [ValidateNever, Display(Name = "Recipe", Description = "Ignore this recipe for just this section.")]
     public required NewsletterRecipeDto Recipe { get; init; }
 
     [ValidateNever, Display(Name = "Refreshes After", Description = "Refresh this recipe—the next feast will try and select a new recipe if available.")]
