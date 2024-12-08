@@ -1,8 +1,8 @@
 ﻿using Core.Models.User;
 
-namespace Web.Views.Shared.Components.Ingredient;
+namespace Web.Views.Shared.Components.UpsertIngredient;
 
-public class IngredientViewModel
+public class UpsertIngredientViewModel
 {
     public string Token { get; init; } = null!;
     public Data.Entities.User.User User { get; init; } = null!;

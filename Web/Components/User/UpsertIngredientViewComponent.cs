@@ -5,16 +5,16 @@ using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Views.Shared.Components.Ingredient;
+using Web.Views.Shared.Components.UpsertIngredient;
 
 namespace Web.Components.User;
 
-public class IngredientViewComponent : ViewComponent
+public class UpsertIngredientViewComponent : ViewComponent
 {
     private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
 
-    public IngredientViewComponent(CoreContext context, UserRepo userRepo)
+    public UpsertIngredientViewComponent(CoreContext context, UserRepo userRepo)
     {
         _context = context;
         _userRepo = userRepo;
@@ -23,7 +23,7 @@ public class IngredientViewComponent : ViewComponent
     /// <summary>
     /// For routing.
     /// </summary>
-    public const string Name = "Ingredient";
+    public const string Name = "UpsertIngredient";
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient? ingredient = null)
     {
@@ -56,7 +56,7 @@ public class IngredientViewComponent : ViewComponent
             }
         }
 
-        return View("Ingredient", new IngredientViewModel()
+        return View("UpsertIngredient", new UpsertIngredientViewModel()
         {
             User = user,
             Nutrients = nutrients,

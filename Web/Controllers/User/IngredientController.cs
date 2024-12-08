@@ -231,6 +231,6 @@ public class IngredientController : ViewController
 
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, wasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, recipeId = 0, wasUpdated = true });
     }
 }

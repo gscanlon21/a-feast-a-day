@@ -4,7 +4,6 @@ using Core.Models.Recipe;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.Recipe;
-using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,17 +40,8 @@ public class ManageIngredientViewComponent : ViewComponent
             .Where(ui => ui.UserId == user.Id)
             .FirstOrDefaultAsync();
 
-        if (userIngredient == null)
-        {
-            userIngredient = new UserIngredient()
-            {
-                UserId = user.Id,
-                IngredientId = ingredient.Id,
-            };
-            _context.UserIngredients.Add(userIngredient);
-            await _context.SaveChangesAsync();
-        }
-
+        // Must be managed from a recipe context.
+        if (userIngredient == null) { return Content(""); }
         return View("ManageIngredient", new ManageIngredientViewModel()
         {
             User = user,

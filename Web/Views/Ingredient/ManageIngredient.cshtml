@@ -28,7 +28,7 @@
         {
             <div class="col">
                 <h6 class="mb-1">Edit Ingredient</h6>
-                @await Component.InvokeAsync(IngredientViewComponent.Name, new { Model.User, Model.Ingredient })
+                @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient })
             </div>
         }
     </div>

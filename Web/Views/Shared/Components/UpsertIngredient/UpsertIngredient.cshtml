@@ -1,11 +1,13 @@
-﻿@model Web.Views.Shared.Components.Ingredient.IngredientViewModel
+﻿@model UpsertIngredientViewModel
 @using Core.Models.Ingredients
 @using Core.Models.Recipe
 @using Web.Code.Extensions
 @using Data.Entities.User
 
 <div class="alert alert-light shadow mb-3" role="alert">
-    <form id="ingredient-form" asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.UpsertIngredient)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" method="post">
+    <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.UpsertIngredient)"
+          asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" id="ingredient-form" method="post">
+        
         <input asp-for="Ingredient.Id" type="hidden" class="form-control" />
 
         <div class="form-group mb-3">
