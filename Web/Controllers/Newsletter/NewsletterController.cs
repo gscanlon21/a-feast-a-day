@@ -1,12 +1,11 @@
 ﻿using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
-using Web.Views.Index;
 
 namespace Web.Controllers.Newsletter;
 
-[Route("n", Order = 1)]
-[Route("newsletter", Order = 2)]
+[Route($"n/{UserRoute}", Order = 1)]
+[Route($"newsletter/{UserRoute}", Order = 2)]
 public class NewsletterController(NewsletterRepo newsletterService) : ViewController()
 {
     /// <summary>
@@ -15,12 +14,12 @@ public class NewsletterController(NewsletterRepo newsletterService) : ViewContro
     public const string Name = "Newsletter";
 
     /// <summary>
-    /// Root route for building out the workout routine newsletter.
+    /// Root route for building out the meal plan newsletter.
     /// </summary>
     [HttpGet]
-    [Route($"{{email:regex({UserCreateViewModel.EmailRegex})}}/{{date}}", Order = 1)]
-    [Route($"{{email:regex({UserCreateViewModel.EmailRegex})}}", Order = 2)]
-    [Route("demo", Order = 3)]
+    [Route($"{{date}}", Order = 1)]
+    [Route("demo", Order = 2)]
+    [Route("", Order = 3)]
     public async Task<IActionResult> Newsletter(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, DateOnly? date = null, Client client = Client.Web, bool hideFooter = false)
     {
         //Response.GetTypedHeaders().LastModified = newsletter?.UserWorkout.DateTime;

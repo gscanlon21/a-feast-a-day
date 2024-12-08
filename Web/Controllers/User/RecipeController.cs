@@ -12,7 +12,8 @@ using Web.Views.User;
 
 namespace Web.Controllers.User;
 
-[Route($"{UserRoute}/{Name}")]
+[Route($"r/{UserRoute}", Order = 1)]
+[Route($"recipe/{UserRoute}", Order = 2)]
 public class RecipeController : ViewController
 {
     private readonly NewsletterService _newsletterService;

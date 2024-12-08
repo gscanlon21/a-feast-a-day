@@ -41,7 +41,7 @@
     @if (User != null)
     {
         <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
-            <a class="allow-demo" target="_blank" href="@DH.UserLink(User, $"Recipe/{Model.Section}/{Model.Recipe.Id}")">Manage</a>
+            <a class="allow-demo" target="_blank" href="@DH.RecipeLink(User, $"{Model.Section}/{Model.Recipe.Id}")">Manage</a>
         </small>
     }
          
