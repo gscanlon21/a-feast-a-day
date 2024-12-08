@@ -23,7 +23,7 @@
 23	\N	Tortillas, Flour	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	32	45	45	2024-06-16	0	240	0
 24	\N	Boneless Chicken Breasts	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	112	112	2024-06-13	0	112	268435456
 25	\N	90% Lean Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5411	\N	f	0	28	28	2024-10-04	4	224	8
-26	\N	Sliced Ham	https://www.eatthismuch.com/food/nutrition/sliced-ham,905/	\N	f	0	28	28	-infinity	0	240	268435456
+26	\N	Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
 27	\N	Slices of Turkey	https://www.eatthismuch.com/food/nutrition/deli-sliced-oven-roasted-turkey-breast,101465/	\N	f	0	13	51	2024-06-14	0	240	8
 28	\N	Eggs, Brown	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-06-18	0	200	16777216
 29	\N	Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2024-08-20	7	224	29360128
@@ -72,7 +72,7 @@
 73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
 74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2024-07-14	8	288	131072
 75	\N	Kosher Salt	https://www.eatthismuch.com/calories/kosher-salt-1938979	\N	t	0	28	1	2024-12-07	4	192	131072
-76	\N	Unrefined Coconut Oil	aka. Virgin Coconut Oil. https://www.eatthismuch.com/calories/coconut-oil-unrefined-2065164	\N	f	0	28	14	-infinity	4	224	65536
+76	\N	Unrefined Coconut Oil	aka. Virgin Coconut Oil. https://www.eatthismuch.com/calories/coconut-oil-unrefined-2065164	\N	f	0	28	14	2024-12-09	4	224	65536
 77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	t	0	28	14	2024-06-13	9	224	65536
 78	\N	Vegetable Oil	https://www.eatthismuch.com/calories/vegetable-oil,373	\N	t	0	14	14	2024-08-20	7	224	3
 79	\N	Canola Oil	\N	\N	t	0	240	100	-infinity	6	240	3
@@ -150,7 +150,7 @@
 153	\N	Rice Cakes, Brown	https://www.eatthismuch.com/food/nutrition/brown-rice-cakes,4204545	\N	f	0	35	35	2024-06-11	0	240	0
 154	\N	Rice Cakes, White	https://www.eatthismuch.com/calories/rice-cakes,1659711	\N	f	0	10	10	2024-08-03	0	40	0
 155	\N	Cucumbers	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	301	301	2024-06-12	0	240	1
-156	\N	Brussel Sprouts	\N	\N	f	0	240	100	-infinity	6	240	0
+156	\N	Brussel Sprouts	https://www.eatthismuch.com/calories/brussels-sprouts-1893	\N	f	0	28	88	2024-12-10	4	88	2
 157	\N	Fresh Pears	Missing minor nutrients. https://www.eatthismuch.com/calories/pears-1499	\N	f	0	178	178	2024-10-08	0	178	1
 158	\N	Sunflower Seeds	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	33	2024-09-12	6	132	1048576
 159	\N	Watermelon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
@@ -751,7 +751,7 @@
 851	\N	Brazil Nuts	\N	\N	f	0	240	100	2024-06-12	6	240	1048576
 853	\N	Frozen Snow Peas	\N	\N	f	0	240	100	2024-11-24	6	240	0
 854	\N	Fresh Podded Snow Peas | Frozen Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
-855	\N	Fresh Podded Snow Peas | Frozen Podded Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	145	145	-infinity	6	145	1
+855	\N	Fresh Podded Snow Peas | Frozen Podded Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2024-12-09	4	63	2
 856	\N	Fresh Spinach | Fresh Kale	https://www.eatthismuch.com/calories/spinach-2170	\N	f	0	28	30	-infinity	4	30	2
 857	\N	Frozen Raspberries	\N	\N	f	0	240	100	-infinity	6	240	0
 858	\N	Frozen Strawberries | Frozen Raspberries	https://www.eatthismuch.com/calories/whole-fresh-frozen-strawberries-100309	\N	f	0	28	140	-infinity	4	140	33554432
@@ -771,3 +771,4 @@
 872	\N	Broccoli Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2
 902	\N	Chamomile Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2024-07-22	0	236.56	0
 903	\N	Radish Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2
+904	\N	Lean Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-904	\N	f	0	28	28	2024-12-10	0	224	268435456

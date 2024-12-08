@@ -3004,19 +3004,11 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8961	556	62	\N	\N	3	2	f
 8962	556	2047	\N	\N	3	8	f
 8963	725	68719476736	\N	\N	2	6	f
-7052	26	128	\N	\N	3	0.8	f
 5729	49	2047	\N	\N	3	50	f
-7053	26	256	\N	\N	3	1.2	f
 7054	26	2048	\N	\N	2	16	f
 7055	26	68719476736	\N	\N	2	320	f
-7056	26	34359738368	\N	\N	2	80.4	f
-7057	26	1	\N	\N	3	4.6	f
 7058	26	1536	\N	\N	3	0.2	f
 7059	26	48	\N	\N	3	0.4	f
-7060	26	1792	\N	\N	3	1.4	f
-7061	26	1984	\N	\N	3	2.4	f
-7062	26	62	\N	\N	3	1.1	f
-7063	26	2047	\N	\N	3	45.6	f
 7522	214	68719476736	\N	\N	2	6976.4	f
 7523	255	229376	\N	\N	1	921.7	f
 7853	82	68719476736	\N	\N	2	19	f
@@ -3110,6 +3102,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8638	387	2199023255552	\N	\N	2	0.4	f
 8639	387	1984	\N	\N	3	1	f
 7524	255	2047	\N	\N	3	112	f
+7052	26	128	\N	\N	3	1	f
 5805	61	2047	\N	\N	3	94	f
 5888	165	2047	\N	\N	3	100.5	f
 7064	15	2	\N	\N	3	5	f
@@ -5058,6 +5051,40 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10570	828	1984	\N	\N	3	0.1	f
 10571	828	62	\N	\N	3	5	f
 10572	828	2047	\N	\N	3	26	f
+10573	855	68719476736	\N	\N	2	3	f
+10574	855	34359738368	\N	\N	2	126	f
+10575	855	2	\N	\N	3	3	f
+10576	855	1	\N	\N	3	2	f
+10577	855	4294967296	\N	\N	2	27	f
+10578	855	2199023255552	\N	\N	2	1	f
+10579	855	48	\N	\N	3	2	f
+10580	855	14	\N	\N	3	3	f
+10581	855	1984	\N	\N	3	0.1	f
+10582	855	62	\N	\N	3	5	f
+10583	855	2047	\N	\N	3	26	f
+7053	26	256	\N	\N	3	1	f
+7056	26	34359738368	\N	\N	2	80	f
+7057	26	1	\N	\N	3	5	f
+7060	26	1792	\N	\N	3	1.2	f
+7061	26	1984	\N	\N	3	2	f
+7062	26	62	\N	\N	3	1	f
+7063	26	2047	\N	\N	3	46	f
+10584	26	4294967296	\N	\N	2	7	f
+10585	26	2199023255552	\N	\N	2	0.3	f
+10586	26	402653184	\N	\N	1	0.2	f
+10587	26	14	\N	\N	3	1	f
+10588	156	128	\N	\N	3	0.1	f
+10589	156	68719476736	\N	\N	2	22	f
+10590	156	34359738368	\N	\N	2	342	f
+10591	156	2	\N	\N	3	2	f
+10592	156	1	\N	\N	3	3	f
+10593	156	4294967296	\N	\N	2	37	f
+10594	156	2199023255552	\N	\N	2	1	f
+10595	156	48	\N	\N	3	3	f
+10596	156	14	\N	\N	3	5	f
+10597	156	1984	\N	\N	3	0.3	f
+10598	156	62	\N	\N	3	8	f
+10599	156	2047	\N	\N	3	38	f
 \.
 
 
@@ -6254,13 +6281,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5157	4	\N	\N	260	2	1	\N	251	f	\N	2
 5158	4	\N	\N	260	1	1	\N	95	t	\N	3
 5159	0	\N	\N	260	1	1	\N	4	f	\N	4
-4891	7	\N	\N	258	1	1	\N	238	f	\N	0
-4892	6	\N	\N	258	3	2	\N	266	f	\N	1
-4893	4	\N	\N	258	1	5	\N	718	f	\N	2
 4019	6	\N	\N	185	1	3	\N	286	f	\N	0
 4020	6	\N	\N	185	1	1	\N	6	f	\N	1
-4894	4	\N	\N	258	1	1	\N	13	t	\N	3
-4895	0	\N	\N	258	1	4	\N	187	f	\N	4
 5319	0	\N	\N	320	1	4	\N	5	f	\N	1
 5320	4	\N	\N	320	1	7	\N	864	f	\N	2
 5321	4	\N	\N	320	1	23	\N	865	f	\N	3
@@ -6680,6 +6702,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5153	0	\N	\N	23	1	6	, thinly sliced (6 cups)	15	f	\N	6
 5154	5	\N	\N	23	2	1	, thinly sliced (1 cups)	26	f	\N	7
 4437	0	\N	\N	238	1	1	\N	715	f	\N	0
+4891	7	\N	\N	258	1	1	\N	238	f	\N	0
+4892	6	\N	\N	258	3	2	\N	266	f	\N	1
+4893	4	\N	\N	258	1	5	\N	718	t	\N	2
+4894	4	\N	\N	258	1	1	\N	13	t	\N	3
+4895	0	\N	\N	258	1	4	\N	187	f	\N	4
 \.
 
 
@@ -7519,7 +7546,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	\N	367	1
 2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	\N	368	0
 2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	\N	368	1
-2673	Loosen the edges with a spatula, then slide it out onto a plate — I like to fold one half back on itself to expose the underside. Scatter over the toasted sesame seeds, pick over the remaining cilantro leaves, then tuck on in.	\N	258	2
 2640	Put a grill pan on high heat. Cut the two cheeks off the mango, slice each into three lengthways, then slice off the skin and discard. Dice all of the flech into ½-inch cubes. Scrunch the stone over a bowl, to extract any pulp and juice, mix with the hoisin to make a dressing, and divide between two little bowls.	\N	270	0
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. then grill for 2-3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	\N	270	1
 1744	Finally, add the eggs, and scramble with the ingredients until cooked to your preference. Serve.	\N	17	3
@@ -7536,6 +7562,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2991	Dip the crackers in the hummus. Enjoy!	\N	373	0
 2815	In 2-quart saucepan, melt 3 tablespoons of the butter over medium heat. Cook onion in butter about 2 minutes, stirring occasionally, until tender. Stir in flour, salt and pepper. Cook, stirring constantly, until smooth and bubbly; remove from heat. Stir in milk. Heat to boiling, stirring constantly. Boil and stir 1 minute.	\N	23	1
 2817	Cover and bake 30 minutes. Uncover and bake 1 hour to 1 hour 10 minutes longer or until potatoes are tender. Let stand 5 to 10 minutes before serving (sauce thickens as it stands).	\N	23	3
+2673	Loosen the edges with a spatula, then slide it out onto a plate — I like to fold one half back on itself to expose the underside. Scatter over the toasted sesame seeds, pick over the remaining cilantro leaves, then tuck on in.	\N	258	2
 \.
 
 
@@ -7550,7 +7577,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 8, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10572, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10599, true);
 
 
 --
