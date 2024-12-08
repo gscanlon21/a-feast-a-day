@@ -179,7 +179,7 @@ public class QueryRunner(Section section)
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
-                        if (recipeIngredient.Ingredient != null)
+                        if (recipeIngredient.Ingredient != null && recipeIngredient.UserIngredient?.Ignore != true)
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
