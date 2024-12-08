@@ -4,11 +4,18 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
 
+/// <summary>
+/// Not using RecipeIngredientId because we want to be able to 
+/// ... re-order RecipeIngredients without changing user preferences.
+/// </summary>
 [Table("user_ingredient")]
 public class UserIngredient
 {
     [Required]
     public int UserId { get; init; }
+
+    [Required]
+    public int RecipeId { get; set; }
 
     [Required]
     public int IngredientId { get; set; }
@@ -30,13 +37,16 @@ public class UserIngredient
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserIngredients))]
     public virtual User User { get; private init; } = null!;
 
+    [JsonIgnore, InverseProperty(nameof(Recipe.UserIngredients))]
+    public virtual Recipe.Recipe Recipe { get; private init; } = null!;
+
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserIngredients))]
     public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Ingredient.UserSubstituteIngredients))]
     public virtual Ingredient.Ingredient? SubstituteIngredient { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Recipe.Recipe.UserSubstituteRecipes))]
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserSubstituteRecipes))]
     public virtual Recipe.Recipe? SubstituteRecipe { get; private init; }
 
     #endregion Navigation Properties

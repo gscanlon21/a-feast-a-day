@@ -36,7 +36,10 @@ public class ManageIngredientViewComponent : ViewComponent
         userNewsletter.Token = parameters.Token;
 
         var userIngredient = await _context.UserIngredients.AsNoTracking()
-            .FirstOrDefaultAsync(r => r.UserId == user.Id && r.IngredientId == parameters.IngredientId);
+            .Where(ui => ui.IngredientId == parameters.IngredientId)
+            .Where(ui => ui.RecipeId == parameters.RecipeId)
+            .Where(ui => ui.UserId == user.Id)
+            .FirstOrDefaultAsync();
 
         if (userIngredient == null)
         {

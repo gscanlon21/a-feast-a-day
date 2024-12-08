@@ -13,7 +13,7 @@
             @foreach (var ingredient in Ingredients.OrderBy(e => e.Name))
             {    
                 <CascadingValue Value="User">
-                    <_Ingredient Model="ingredient" />
+                    <_Ingredient Model="ingredient" RecipeId="RecipeId" />
                 </CascadingValue>
             }
         </div>
@@ -29,7 +29,7 @@
             @foreach (var item in Ingredients)
             {
                 <CascadingValue Value="User">
-                    <_Ingredient Model="item" />
+                    <_Ingredient Model="item" RecipeId="RecipeId" />
                 </CascadingValue>
             }
         </div>
@@ -41,6 +41,9 @@
 }
 
 @code {
+    [Parameter]
+    public int RecipeId { get; init; }
+
     [Parameter]
     public Titles? Title { get; init; }
 

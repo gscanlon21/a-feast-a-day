@@ -38,8 +38,8 @@ public class CoreContext : DbContext
         ////////// Keys //////////
         modelBuilder.Entity<UserSection>().HasKey(sc => new { sc.UserId, sc.Section });
         modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
-        modelBuilder.Entity<UserIngredient>().HasKey(sc => new { sc.UserId, sc.IngredientId });
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId, sc.Section });
+        modelBuilder.Entity<UserIngredient>().HasKey(sc => new { sc.UserId, sc.IngredientId, sc.RecipeId });
         modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
 
         ////////// Query Filters //////////

@@ -77,8 +77,8 @@ public class IngredientController : ViewController
         return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
     }
 
-    [HttpPost, Route("[action]/{ingredientId}")]
-    public async Task<IActionResult> IgnoreIngredient(string email, string token, int ingredientId)
+    [HttpPost, Route("[action]/{recipeId}/{ingredientId}")]
+    public async Task<IActionResult> IgnoreIngredient(string email, string token, int recipeId, int ingredientId)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -87,8 +87,10 @@ public class IngredientController : ViewController
         }
 
         var userIngredient = await _context.UserIngredients
-            .Where(ue => ue.UserId == user.Id)
-            .FirstOrDefaultAsync(ue => ue.IngredientId == ingredientId);
+            .Where(ui => ui.IngredientId == ingredientId)
+            .Where(ui => ui.RecipeId == recipeId)
+            .Where(ui => ui.UserId == user.Id)
+            .FirstOrDefaultAsync();
 
         // May be null if the ingredient was soft/hard deleted.
         if (userIngredient == null)
@@ -99,14 +101,14 @@ public class IngredientController : ViewController
         userIngredient.Ignore = !userIngredient.Ignore;
         await _context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, WasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, recipeId, ingredientId, WasUpdated = true });
     }
 
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
-    [HttpGet, Route("{ingredientId}")]
-    public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, bool? wasUpdated = null)
+    [HttpGet, Route("{recipeId}/{ingredientId}")]
+    public async Task<IActionResult> ManageIngredient(string email, string token, int recipeId, int ingredientId, bool? wasUpdated = null)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
@@ -129,12 +131,12 @@ public class IngredientController : ViewController
             Ingredient = ingredient,
             WasUpdated = wasUpdated,
             HasUserIngredient = true,
-            Parameters = new UserManageIngredientViewModel.Params(email, token, ingredientId)
+            Parameters = new UserManageIngredientViewModel.Params(email, token, recipeId, ingredientId)
         });
     }
 
-    [HttpPost, Route("{ingredientId}")]
-    public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, ManageIngredientViewModel viewModel)
+    [HttpPost, Route("{recipeId}/{ingredientId}")]
+    public async Task<IActionResult> ManageIngredient(string email, string token, int recipeId, int ingredientId, ManageIngredientViewModel viewModel)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -144,10 +146,15 @@ public class IngredientController : ViewController
 
         if (!ModelState.IsValid)
         {
-            return await ManageIngredient(email, token, ingredientId, wasUpdated: false);
+            return await ManageIngredient(email, token, recipeId, ingredientId, wasUpdated: false);
         }
 
-        var existingUserIngredient = await _context.UserIngredients.FirstOrDefaultAsync(r => r.IngredientId == ingredientId && r.UserId == user.Id);
+        var existingUserIngredient = await _context.UserIngredients
+            .Where(ui => ui.IngredientId == ingredientId)
+            .Where(ui => ui.RecipeId == recipeId)
+            .Where(ui => ui.UserId == user.Id)
+            .FirstOrDefaultAsync();
+
         if (existingUserIngredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -158,7 +165,7 @@ public class IngredientController : ViewController
         existingUserIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
         await _context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, wasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, recipeId, ingredientId, wasUpdated = true });
     }
 
     [HttpPost, Route("[action]")]

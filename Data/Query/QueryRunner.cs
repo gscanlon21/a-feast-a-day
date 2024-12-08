@@ -80,7 +80,7 @@ public class QueryRunner(Section section)
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
-                    UserIngredient = ri.Ingredient.UserIngredients.First(ui => ui.UserId == UserOptions.Id),
+                    UserIngredient = ri.Ingredient.UserIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeId == ri.RecipeId),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id && ur.Section == section),
                 }).ToList()
             })
@@ -421,19 +421,23 @@ public class QueryRunner(Section section)
         }
 
         var ingredientsCreated = new HashSet<UserIngredient>();
-        foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
-            .Where(i => i.UserIngredient == null && i.Ingredient != null))
+        foreach (var queryResult in queryResults)
         {
-            ingredient.UserIngredient = new UserIngredient()
+            foreach (var ingredient in queryResult.RecipeIngredients
+                .Where(i => i.UserIngredient == null && i.Ingredient != null))
             {
-                UserId = UserOptions.Id,
-                IngredientId = ingredient.Ingredient!.Id,
-                SubstituteIngredientId = ingredient.Ingredient!.Id,
-            };
+                ingredient.UserIngredient = new UserIngredient()
+                {
+                    UserId = UserOptions.Id,
+                    RecipeId = queryResult.Recipe.Id,
+                    IngredientId = ingredient.Ingredient!.Id,
+                    SubstituteIngredientId = ingredient.Ingredient!.Id,
+                };
 
-            if (ingredientsCreated.Add(ingredient.UserIngredient))
-            {
-                context.UserIngredients.Add(ingredient.UserIngredient);
+                if (ingredientsCreated.Add(ingredient.UserIngredient))
+                {
+                    context.UserIngredients.Add(ingredient.UserIngredient);
+                }
             }
         }
 
