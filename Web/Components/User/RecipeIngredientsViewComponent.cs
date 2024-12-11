@@ -30,15 +30,16 @@ public class RecipeIngredientsViewComponent : ViewComponent
     {
         var recipeIngredientIds = recipe.RecipeIngredients.Select(ri => ri.IngredientId).ToList();
         var ingredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
-            .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
-            .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
+            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
+            .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
+            .Where(i => !i.UserIngredients.First(ui => ui.UserId == user.Id).Ignore)
             .Where(i => recipeIngredientIds.Contains(i.Id))
             .OrderBy(f => f.Name)
             .ToListAsync();
 
         var ignoredIngredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
-            .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Where(i => i.UserIngredients.First(ui => ui.UserId == user.Id).Ignore)
             .Where(i => recipeIngredientIds.Contains(i.Id))
             .OrderBy(f => f.Name)
