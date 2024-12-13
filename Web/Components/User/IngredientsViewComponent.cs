@@ -27,13 +27,15 @@ public class IngredientsViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
+        var all = bool.TryParse(Request.Query["all"], out bool allTmp) 
+            && allTmp && user.Features.HasFlag(Features.Admin);
+
         // FIXME: Slow when the user has lots of ingredients.
         var userIngredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
-            .Where(i => i.UserId == user.Id
-                // The user is an admin who is allowed to edit base ingredients.
-                || (user.Features.HasFlag(Features.Admin) && i.UserId == null))
+            // The user is an admin who is allowed to edit base ingredients.
+            .Where(i => i.UserId == user.Id || (all && i.UserId == null))
             .OrderBy(f => f.Name)
             .ToListAsync();
 

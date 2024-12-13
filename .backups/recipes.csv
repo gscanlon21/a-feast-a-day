@@ -16,7 +16,7 @@
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	0	spaghetti-meatballs.jpg	0
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	0	kielbasa.jpg	0
 35	Crockpot BBQ Pinto Beans	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	\N	\N	8	480	15	6	f	0	bbq-pinto-beans.jpg	0
-36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	0	mac-n-cheese-mug.jpg	0
+36	Slow Cooker Macaroni and Cheese Recipe	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	\N	\N	6	120	10	4	t	1073742848	mac-n-cheese-mug.jpg	0
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	0	black-bean-quesadillas.jpg	0
 38	Black Bean Fajita Skillet	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0
 39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	4194308	linguine-avocado-tomato-lime.jpg	0
@@ -96,7 +96,7 @@
 113	Multigrain Pancake Batter	\N	\N	\N	1	10	5	6	t	0	buttermilk-pancakes.jpg	0
 114	Honey Dijon Mustard Dressing	\N	\N	\N	0	0	5	1	t	0	honey-mustard-dressing.jpg	6
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	0	honey-chicken-pecan-salad.jpg	0
-116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	0	citrus-dressing.jpg	6
+116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	268435712	citrus-dressing.jpg	6
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	0	chicken-avocado-chop.jpg	0
 118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	15	1	2	t	0	\N	0
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	0	green-mayo.jpg	7
@@ -130,7 +130,7 @@
 147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	0	0	5	1	t	-9223371999944900608	hummus.jpg	6
 148	Muhammara	\N	\N	\N	0	0	8	4	t	0	muhammara.jpg	0
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	8	15	8	2	t	0	irish-champ.jpg	0
-150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	0	spiced-lentils-rice.jpg	0
+150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	4194308	spiced-lentils-rice.jpg	0
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	0	spaghetti-lemon.jpg	0
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	4194308	potato-olive-salad.jpg	0
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	2	3	2	2	t	0	cinnamon-toast.jpg	0
@@ -155,7 +155,7 @@
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	1099540987908	burgers-relish.jpg	0
 174	Pan-Fried Gammon with Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	0	fried-gammon.jpg	0
 175	Chocolate and Prune Refrigerator Bars	\N	\N	\N	32	120	5	12	t	0	chocolate-prune-refrigerator-bars.jpg	0
-176	Stewed Okra with Tomatoes	\N	\N	\N	8	25	2	4	t	0	\N	0
+176	Stewed Okra with Tomatoes	\N	\N	\N	8	25	2	4	t	4194308	\N	0
 177	Stuffed Sweet Peppers	Use red or orange (bell) peppers if you prefer, or a combination of the two.	\N	\N	6	15	5	4	t	0	stuffed-peppers.jpg	0
 178	Homemade Venison Sausages 	If you find yourself with more sausages than you need for one meal, freeze the surplus in an airtight container for no more than a month. Be sure to thaw the sausages completely before cooking.	\N	\N	0	12	5	3	t	0	grilled-sausages.jpg	5
 179	Thai Red Chicken & Butternut Squash Soup	https://www.jamieoliver.com/recipes/chicken/thai-red-chicken-soup	\N	\N	4	90	10	6	t	34359771136	thai-chicken-squash-soup.jpg	0
@@ -224,7 +224,7 @@
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0
 307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	spiced-lentils-rice.jpg	0
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	-9223372034304638976	pesto.jpg	6
-309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0
+309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	asparagus-eggs-dressing.jpg	0
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	2199028498432	hot-chocolate-sauce.jpg	6
 311	Sausage & Apple Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	35	10	4	t	2097154	\N	0
 312	Black Bean Sauce	https://www.food.com/recipe/mexican-black-bean-sauce-280411	\N	\N	0	10	5	1	t	2305843009616347136	\N	6
@@ -257,3 +257,5 @@
 371	Super Green Spaghetti	From Jamie Oliver's 5 Ingredients	\N	\N	3	12	1	2	t	4194308	\N	0
 372	Lemony Arugula Farfalle	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	7	10	5	6	t	4194308	\N	0
 373	Hummus and Crackers	\N	\N	\N	16	0	1	1	t	0	hummus-vegetables.jpg	0
+374	Egg & Mango Chutney Flatbreads	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	2	2	t	4194308	\N	0
+375	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	25	5	2	t	4194308	\N	0

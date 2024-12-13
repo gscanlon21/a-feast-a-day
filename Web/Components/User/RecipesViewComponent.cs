@@ -30,10 +30,13 @@ public class RecipesViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
-        var userRecipes = await _context.Recipes
-            .Where(r => r.UserId == user.Id
-                // The user is an admin who is allowed to edit base recipes.
-                || (user.Features.HasFlag(Features.Admin) && r.UserId == null))
+        var all = bool.TryParse(Request.Query["all"], out bool allTmp) 
+            && allTmp && user.Features.HasFlag(Features.Admin);
+
+        // FIXME: Slow when the user has lots of recipes.
+        var userRecipes = await _context.Recipes.AsNoTracking()
+            // The user is an admin who is allowed to edit base recipes.
+            .Where(r => r.UserId == user.Id || (all && r.UserId == null))
             .ToListAsync();
 
         var recipes = await new QueryBuilder()
