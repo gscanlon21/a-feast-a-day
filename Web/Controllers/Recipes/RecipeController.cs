@@ -9,7 +9,6 @@ using Web.Controllers.User;
 using Web.Views.Recipe;
 using Web.Views.Shared.Components.ManageRecipe;
 using Web.Views.Shared.Components.UpsertRecipe;
-using Web.Views.User;
 
 namespace Web.Controllers.Recipes;
 

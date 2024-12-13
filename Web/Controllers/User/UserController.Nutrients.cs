@@ -4,7 +4,6 @@ using Data.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
-using Web.Views.User;
 
 namespace Web.Controllers.User;
 

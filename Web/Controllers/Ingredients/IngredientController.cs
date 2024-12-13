@@ -11,7 +11,6 @@ using Web.Code.TempData;
 using Web.Controllers.User;
 using Web.Views.Ingredient;
 using Web.Views.Shared.Components.ManageIngredient;
-using Web.Views.User;
 
 namespace Web.Controllers.Ingredients;
 
