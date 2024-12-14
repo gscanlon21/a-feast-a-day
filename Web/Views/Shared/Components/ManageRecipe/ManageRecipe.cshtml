@@ -18,8 +18,10 @@
         <label for="recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe)</label>
         <div class="input-group">
             <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
-            <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil.HasValue && Model.UserRecipe.IgnoreUntil != DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
-            <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil.HasValue && Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
+            <div class="row m-0 input-group-vertical max-width--min-content">
+                <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil.HasValue && Model.UserRecipe.IgnoreUntil != DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
+                <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil.HasValue && Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
+            </div>
         </div>
         <span asp-validation-for="Recipe" class="text-danger"></span>
         <div id="recipe-help" class="form-text">

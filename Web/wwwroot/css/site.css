@@ -168,6 +168,10 @@ main {
     white-space: nowrap;
 }
 
+.max-width--min-content {
+    max-width: min-content;
+}
+
 /********** Shared Styles **********/
 
 .primary-heading {
