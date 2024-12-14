@@ -22,15 +22,12 @@ public class NutrientDto
 
     public double Value { get; set; }
 
-    public bool Synthetic { get; set; }
-
     /// <summary>
     /// Notes about the nutrient (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
 
     public override int GetHashCode() => HashCode.Combine(Id);
-
     public override bool Equals(object? obj) => obj is NutrientDto other
         && other.Id == Id;
 }

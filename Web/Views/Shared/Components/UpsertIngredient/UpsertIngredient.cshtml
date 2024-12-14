@@ -91,13 +91,6 @@
                             asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
                     </select>
                     <span asp-validation-for="Nutrients[i].Measure" class="text-danger"></span>
-
-                    <div class="form-check mt-1">
-                        <label asp-for="Nutrients[i].Synthetic" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Synthetic)</label>
-                        <input class="form-check-input" asp-for="Nutrients[i].Synthetic" aria-describedby="synthetic-help" />
-                        <span asp-validation-for="Nutrients[i].Synthetic" class="text-danger"></span>
-                        <div id="synthetic-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Nutrients[i].Synthetic)</div>
-                    </div>
                 </div>
             </div>
         }

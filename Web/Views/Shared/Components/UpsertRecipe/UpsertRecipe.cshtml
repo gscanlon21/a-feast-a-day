@@ -212,9 +212,9 @@
 
                             <div class="form-check mt-1">
                                 <label asp-for="Recipe.RecipeIngredients[id].Optional" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Optional)</label>
-                                <input class="form-check-input" asp-for="Recipe.RecipeIngredients[id].Optional" aria-describedby="synthetic-help" />
+                                <input class="form-check-input" asp-for="Recipe.RecipeIngredients[id].Optional" aria-describedby="optional-help" />
                                 <span asp-validation-for="Recipe.RecipeIngredients[id].Optional" class="text-danger"></span>
-                                <div id="synthetic-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Optional)</div>
+                                <div id="optional-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Optional)</div>
                             </div>
                         </div>
                     </div>
