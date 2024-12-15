@@ -34,6 +34,8 @@ public class Recipe
     [Required]
     public string Name { get; set; } = null!;
 
+    public string? Link { get; set; } = null;
+
     public string? Image { get; set; } = null;
 
     /// <summary>

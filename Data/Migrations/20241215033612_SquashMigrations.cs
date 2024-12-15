@@ -90,16 +90,17 @@ namespace Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: true),
+                    Section = table.Column<int>(type: "integer", nullable: false),
+                    Equipment = table.Column<long>(type: "bigint", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
+                    Link = table.Column<string>(type: "text", nullable: true),
+                    Image = table.Column<string>(type: "text", nullable: true),
+                    Notes = table.Column<string>(type: "text", nullable: true),
                     PrepTime = table.Column<int>(type: "integer", nullable: false),
                     CookTime = table.Column<int>(type: "integer", nullable: false),
                     Servings = table.Column<int>(type: "integer", nullable: false),
-                    Measure = table.Column<int>(type: "integer", nullable: false),
                     AdjustableServings = table.Column<bool>(type: "boolean", nullable: false),
-                    Equipment = table.Column<long>(type: "bigint", nullable: false),
-                    Section = table.Column<int>(type: "integer", nullable: false),
-                    Image = table.Column<string>(type: "text", nullable: true),
-                    Notes = table.Column<string>(type: "text", nullable: true),
                     DisabledReason = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -300,7 +301,6 @@ namespace Data.Migrations
                     Nutrients = table.Column<long>(type: "bigint", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
-                    Synthetic = table.Column<bool>(type: "boolean", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     DisabledReason = table.Column<string>(type: "text", nullable: true)
                 },
@@ -381,6 +381,7 @@ namespace Data.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false),
+                    RecipeId = table.Column<int>(type: "integer", nullable: false),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
                     SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
@@ -389,7 +390,7 @@ namespace Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_ingredient", x => new { x.UserId, x.IngredientId });
+                    table.PrimaryKey("PK_user_ingredient", x => new { x.UserId, x.IngredientId, x.RecipeId });
                     table.ForeignKey(
                         name: "FK_user_ingredient_ingredient_IngredientId",
                         column: x => x.IngredientId,
@@ -401,6 +402,12 @@ namespace Data.Migrations
                         column: x => x.SubstituteIngredientId,
                         principalTable: "ingredient",
                         principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_user_ingredient_recipe_RecipeId",
+                        column: x => x.RecipeId,
+                        principalTable: "recipe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_user_ingredient_recipe_SubstituteRecipeId",
                         column: x => x.SubstituteRecipeId,
@@ -423,7 +430,7 @@ namespace Data.Migrations
                     Section = table.Column<int>(type: "integer", nullable: false),
                     Servings = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
-                    Ignore = table.Column<bool>(type: "boolean", nullable: false),
+                    IgnoreUntil = table.Column<DateOnly>(type: "date", nullable: true),
                     LastSeen = table.Column<DateOnly>(type: "date", nullable: false),
                     RefreshAfter = table.Column<DateOnly>(type: "date", nullable: true),
                     LagRefreshXWeeks = table.Column<int>(type: "integer", nullable: false),
@@ -593,6 +600,11 @@ namespace Data.Migrations
                 name: "IX_user_ingredient_IngredientId",
                 table: "user_ingredient",
                 column: "IngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_ingredient_RecipeId",
+                table: "user_ingredient",
+                column: "RecipeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_ingredient_SubstituteIngredientId",

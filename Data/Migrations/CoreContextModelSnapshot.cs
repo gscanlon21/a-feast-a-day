@@ -295,6 +295,9 @@ namespace Data.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
+                    b.Property<string>("Link")
+                        .HasColumnType("text");
+
                     b.Property<int>("Measure")
                         .HasColumnType("integer");
 
