@@ -30,7 +30,7 @@ public class RecipesViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
-        var all = bool.TryParse(Request.Query["all"], out bool allTmp) 
+        var all = bool.TryParse(Request.Query["all"], out bool allTmp)
             && allTmp && user.Features.HasFlag(Features.Admin);
 
         // FIXME: Slow when the user has lots of recipes.

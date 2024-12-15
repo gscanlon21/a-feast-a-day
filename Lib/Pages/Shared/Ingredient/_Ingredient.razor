@@ -39,8 +39,8 @@
                 <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Measure</b>: @Model.GramsPerMeasure</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Cup</b>: @Model.GramsPerCup</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName322()</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName32()</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName2()</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName()</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Category</b>: @Model.Category.GetSingleDisplayName()</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Alternatives</b>: @string.Join(", ", Model.Alternatives.Select(ai => ai.AlternativeIngredient.Name))</div>
                 <div style="margin-block:.5em;font-size:x-small;"><b>Is Alternative Of</b>: @string.Join(", ", Model.AlternativeIngredients.Select(ai => ai.Ingredient.Name))</div>

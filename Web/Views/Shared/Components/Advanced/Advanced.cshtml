@@ -16,7 +16,7 @@
             <div class="form-group mb-3">
                 <label asp-for="IngredientOrder" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientOrder)</label>
                 <select asp-for="IngredientOrder" class="form-control" aria-describedby="ingredients-help"
-                        asp-items="@EnumExtensions.GetDisplayValues<IngredientOrder>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value)">
+                        asp-items="@EnumExtensions.GetDisplayValues<IngredientOrder>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Value)">
                 </select>
                 <span asp-validation-for="IngredientOrder" class="text-danger"></span>
                 <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.IngredientOrder)</div>
@@ -37,7 +37,7 @@
                 </div>
                 <span asp-validation-for="FootnoteCountTop" class="text-danger"></span>
                 <div id="refresh-functional-help" class="form-text">
-                    Footnote types that are shown above each workout: @FootnoteType.Custom.GetDisplayName32().
+                    Footnote types that are shown above each workout: @FootnoteType.Custom.GetDisplayName().
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                 </div>
                 <span asp-validation-for="FootnoteCountBottom" class="text-danger"></span>
                 <div id="refresh-functional-help" class="form-text">
-                    Footnote types that are shown below each workout: @FootnoteType.System.GetDisplayName32().
+                    Footnote types that are shown below each workout: @FootnoteType.System.GetDisplayName().
                 </div>
             </div>
         </div>

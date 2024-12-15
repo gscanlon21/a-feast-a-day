@@ -10,5 +10,5 @@ public class UpsertIngredientViewModel
 
     public required IList<Data.Entities.User.Nutrient> Nutrients { get; set; }
 
-    public IList<Allergens> AllergenSelect => EnumExtensions.GetSingleValues64<Allergens>();
+    public IList<Allergens> AllergenSelect => EnumExtensions.GetSingleValues<Allergens>();
 }
