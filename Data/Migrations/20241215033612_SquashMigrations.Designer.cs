@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20241207014357_SquashMigrations")]
+    [Migration("20241215033612_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -298,6 +298,9 @@ namespace Data.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
+                    b.Property<string>("Link")
+                        .HasColumnType("text");
+
                     b.Property<int>("Measure")
                         .HasColumnType("integer");
 
@@ -430,9 +433,6 @@ namespace Data.Migrations
                     b.Property<long>("Nutrients")
                         .HasColumnType("bigint");
 
-                    b.Property<bool>("Synthetic")
-                        .HasColumnType("boolean");
-
                     b.Property<double>("Value")
                         .HasColumnType("double precision");
 
@@ -543,6 +543,9 @@ namespace Data.Migrations
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("Ignore")
                         .HasColumnType("boolean");
 
@@ -555,9 +558,11 @@ namespace Data.Migrations
                     b.Property<int?>("SubstituteRecipeId")
                         .HasColumnType("integer");
 
-                    b.HasKey("UserId", "IngredientId");
+                    b.HasKey("UserId", "IngredientId", "RecipeId");
 
                     b.HasIndex("IngredientId");
+
+                    b.HasIndex("RecipeId");
 
                     b.HasIndex("SubstituteIngredientId");
 
@@ -596,8 +601,8 @@ namespace Data.Migrations
                     b.Property<int>("Section")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("Ignore")
-                        .HasColumnType("boolean");
+                    b.Property<DateOnly?>("IgnoreUntil")
+                        .HasColumnType("date");
 
                     b.Property<int>("LagRefreshXWeeks")
                         .HasColumnType("integer");
@@ -840,6 +845,12 @@ namespace Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Data.Entities.Recipe.Recipe", "Recipe")
+                        .WithMany("UserIngredients")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Data.Entities.Ingredient.Ingredient", "SubstituteIngredient")
                         .WithMany("UserSubstituteIngredients")
                         .HasForeignKey("SubstituteIngredientId");
@@ -855,6 +866,8 @@ namespace Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Ingredient");
+
+                    b.Navigation("Recipe");
 
                     b.Navigation("SubstituteIngredient");
 
@@ -951,6 +964,8 @@ namespace Data.Migrations
                     b.Navigation("RecipeIngredients");
 
                     b.Navigation("UserFeastRecipes");
+
+                    b.Navigation("UserIngredients");
 
                     b.Navigation("UserRecipes");
 

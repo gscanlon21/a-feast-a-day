@@ -52,7 +52,14 @@
             @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
             <div style="padding-inline-end:1.1ch">
                 <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
-                    <span style="text-decoration:underline;">@(Model.Recipe.Name)</span>
+                    @if (string.IsNullOrWhiteSpace(Model.Recipe.Link))
+                    {
+                        <span style="text-decoration:underline;">@Model.Recipe.Name</span>
+                    }
+                    else
+                    {
+                        <a class="allow-demo" target="_blank" href="@Model.Recipe.Link">@Model.Recipe.Name</a>
+                    }
                 </h3>
 
                 @if (Verbosity.HasFlag(Verbosity.Notes))

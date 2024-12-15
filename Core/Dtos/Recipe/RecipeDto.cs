@@ -19,6 +19,7 @@ public class RecipeDto
     public Equipment Equipment { get; init; }
 
     public string Name { get; init; } = null!;
+    public string? Link { get; init; } = null;
     public string? Notes { get; init; } = null;
     public string? Image { get; init; } = null;
 

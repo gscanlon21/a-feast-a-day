@@ -82,6 +82,7 @@ public class RecipeController : ViewController
             {
                 User = user,
                 Name = recipe.Name,
+                Link = recipe.Link,
                 Notes = recipe.Notes,
                 Enabled = recipe.Enabled,
                 Section = recipe.Section,
@@ -117,6 +118,7 @@ public class RecipeController : ViewController
             }
 
             existingRecipe.Name = recipe.Name;
+            existingRecipe.Link = recipe.Link;
             existingRecipe.Notes = recipe.Notes;
             existingRecipe.Section = recipe.Section;
             existingRecipe.Enabled = recipe.Enabled;

@@ -40,6 +40,8 @@ public class UpsertRecipeModel : IValidatableObject
     [Required]
     public string Name { get; set; } = null!;
 
+    public string? Link { get; set; } = null;
+
     /// <summary>
     /// Notes about the recipe (externally shown).
     /// </summary>
