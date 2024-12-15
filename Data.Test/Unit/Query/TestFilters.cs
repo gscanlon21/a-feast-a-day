@@ -35,7 +35,7 @@ public class TestFilters : RealDatabase
     [TestMethod]
     public async Task FilterEquipment_ReturnsFiltered()
     {
-        foreach (var filter in EnumExtensions.GetNotNoneValues32<Equipment>())
+        foreach (var filter in EnumExtensions.GetNotNoneValues<Equipment>())
         {
             var results = Filters.FilterEquipment(Query!, filter).Where(r => r.Recipe.Equipment != Equipment.None).ToList();
             Assert.IsTrue(results.All(r => filter.WithOptionalEquipment().HasFlag(r.Recipe.Equipment)));

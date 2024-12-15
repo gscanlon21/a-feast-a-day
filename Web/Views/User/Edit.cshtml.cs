@@ -32,8 +32,8 @@ public class UserEditViewModel
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         // In case a single equipment becomes a double, keep it checked.
-        Equipment = EnumExtensions.GetSingleOrDoubleValues32<Equipment>()
-            .Where(e => user.Equipment.HasAnyFlag32(e))
+        Equipment = EnumExtensions.GetSingleOrDoubleValues<Equipment>()
+            .Where(e => user.Equipment.HasAnyFlag(e))
             .Aggregate(user.Equipment, (c, n) => c | n);
     }
 

@@ -33,7 +33,7 @@
 33	\N	Greek Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
 34	\N	Baking Powder	https://www.eatthismuch.com/food/nutrition/baking-powder,4274	\N	t	0	15	15	2024-06-20	7	240	0
 35	\N	Baking Soda	https://www.eatthismuch.com/food/nutrition/baking-soda,4275	\N	t	0	14	14	2024-06-29	7	233	0
-36	\N	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	t	0	200	200	-infinity	6	200	114688
+36	\N	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	t	0	28	200	2024-12-14	4	200	114688
 37	\N	Dark Brown Sugar	https://www.eatthismuch.com/food/nutrition/brown-sugar,4643	\N	t	0	145	145	2024-07-12	6	145	114688
 38	\N	All-Purpose Flour	https://www.eatthismuch.com/food/nutrition/all-purpose-flour,101736/	\N	t	262176	120	30	2024-06-26	6	240	32768
 39	\N	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	21	2024-06-17	9	336	928
@@ -129,7 +129,7 @@
 131	\N	Raw Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	2048
 132	\N	Elbow Macaroni	https://www.eatthismuch.com/calories/elbow-macaroni-pasta-100154	\N	f	262176	28	56	2024-11-26	4	112	4096
 133	\N	Evaporated Milk	https://www.eatthismuch.com/calories/evaporated-milk-3338368	\N	f	324	32	32	2024-11-11	9	256	512
-134	\N	Slices of Pepper Jack Cheese	\N	\N	f	256	14	14	-infinity	4	240	8388608
+134	\N	Slices of Pepper Jack Cheese	https://www.eatthismuch.com/calories/pepper-jack-cheese-slices-1865126	\N	f	256	21	21	2024-12-14	0	168	8388608
 135	\N	Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	256	28	28	2024-06-09	0	224	0
 136	\N	Tortillas, Whole-Wheat	https://www.eatthismuch.com/calories/whole-wheat-tortillas,101208	\N	f	0	34	68	2024-08-14	0	68	4
 137	\N	Linguine	https://www.eatthismuch.com/calories/linguine,2413373	\N	f	0	240	100	2024-06-30	6	240	4096
@@ -331,7 +331,7 @@
 338	\N	Challenge Butter	https://www.eatthismuch.com/calories/butter-unsalted-2304327	\N	t	0	14	14	2024-10-08	7	224	6
 339	\N	Maple-Glazed Bacon Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
 340	\N	Bourbon	\N	\N	f	0	240	100	-infinity	6	240	262144
-341	\N	Ear of Sweet Corn	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2024-07-19	0	128	0
+341	\N	Ear of Sweet Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	102	102	2024-07-19	0	102	2
 342	\N	Passion Fruit	https://www.eatthismuch.com/calories/passion-fruit-1481	\N	f	0	18	18	-infinity	0	236	1
 343	\N	White Wine, Sweet	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2024-09-14	9	235.2	5
 344	\N	White Wine, Dry	https://www.eatthismuch.com/calories/white-wine-3079	\N	f	0	29.4	147	2024-10-14	9	235.2	524288

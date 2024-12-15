@@ -22,7 +22,7 @@
         <div class="form-group mb-3">
             <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
             <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="6"
-                    asp-items="@(EnumExtensions.GetSingleValues64(excludingAny: Section.Prep).AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value))">
+                    asp-items="@(EnumExtensions.GetSingleValues(excludingAny: Section.Prep).AsSelectListItems(EnumViewExtensions.EnumOrdering.Value))">
             </select>
             <span asp-validation-for="Recipe.SectionBinder" class="text-danger"></span>
             <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Section)</div>
@@ -31,7 +31,7 @@
         <div class="form-group mb-3">
             <label asp-for="Recipe.EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Equipment)</label>
             <select asp-for="Recipe.EquipmentBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"
-                    asp-items="@(EnumExtensions.GetNotNoneValues32<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Order))">
+                    asp-items="@(EnumExtensions.GetNotNoneValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
             </select>
             <span asp-validation-for="Recipe.EquipmentBinder" class="text-danger"></span>
             <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Equipment)</div>
@@ -133,7 +133,7 @@
             <div class="col-auto">
                 <label asp-for="Recipe.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Measure)</label>
                 <select asp-for="Recipe.Measure" class="form-control" aria-describedby="measure-help"
-                        asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems32())">
+                        asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems())">
                 </select>
                 <span asp-validation-for="Recipe.Measure" class="text-danger"></span>
                 <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Measure)</span>
@@ -183,7 +183,7 @@
                             <div class="col">
                                 <label asp-for="Recipe.RecipeIngredients[id].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Measure)</label>
                                 <select asp-for="Recipe.RecipeIngredients[id].Measure" class="form-control" aria-describedby="measure-help"
-                                        asp-items="@(EnumExtensions.GetValuesExcluding32(Measure.Percent/*, Measure.IU*/).AsSelectListItems32())">
+                                        asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).AsSelectListItems())">
                                 </select>
                                 <span asp-validation-for="Recipe.RecipeIngredients[id].Measure" class="text-danger"></span>
                                 <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Measure)</span>

@@ -98,8 +98,8 @@ public static class EquipmentExtensions
             return equipment;
         }
 
-        return EnumExtensions.GetMultiValues64<Equipment>()
-            .Where(e => equipment.HasAnyFlag32(e))
+        return EnumExtensions.GetMultiValues<Equipment>()
+            .Where(e => equipment.HasAnyFlag(e))
             .Aggregate(equipment, (c, n) => c | n);
     }
 }

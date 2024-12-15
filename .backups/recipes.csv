@@ -47,7 +47,7 @@
 64	French Bread Pizza	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	0	french-bread-pizza.jpg	0
 65	Hard Boiled Eggs	\N	\N	\N	17	10	2	1	t	4194308	hardboiled-eggs.jpg	0
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	0	frittata-base.jpg	0
-67	French Toast	\N	\N	\N	3	15	5	1	t	0	french-toast.jpg	0
+67	French Toast	\N	\N	\N	3	15	5	1	t	6291462	french-toast.jpg	0
 68	Cheese and Crackers	\N	\N	\N	18	0	5	1	t	0	cheese-meat-crackers.jpg	0
 69	Chopped Eggs and Onions	\N	\N	\N	10	12	3	4	t	0	egg-salad-alt.jpg	0
 70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	1	t	0	guacamole.jpg	6
@@ -147,7 +147,7 @@
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	0	lemon-parmesan-capellini.jpg	0
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	0	crispy-cabbage.jpg	0
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	2305843009616347136	chocolate-banana-smoothie.jpg	0
-168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	0	steak-pickled-walnut-sauce-alt.jpg	0
+168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	4194308	steak-pickled-walnut-sauce-alt.jpg	0
 169	Vanilla Caffe Latte	\N	\N	\N	32	8	3	2	t	0	vanilla-cafe-latte.jpg	0
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	4194308	broccoli-soy-sauce.jpg	0
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	0	lemon-posset.jpg	0
@@ -260,3 +260,5 @@
 374	Egg & Mango Chutney Flatbreads	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	2	2	t	4194308	\N	0
 375	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	25	5	2	t	4194308	\N	0
 376	Plain Cauliflower Rice	Suitable for freezing. - https://www.easypeasyfoodie.com/plain-cauliflower-rice/#recipe	\N	\N	0	5	5	2	t	0	\N	0
+377	Chicken Fajita Sheet Pan	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	\N	\N	4	25	10	4	t	2097154	\N	0
+378	Creamy Fennel Kale Chicken Salad	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	\N	\N	2	25	5	4	t	6291462	\N	0

@@ -164,7 +164,7 @@ public class UserRepo
         var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: includeToday);
 
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
-        var familyNutrientServings = EnumExtensions.GetValuesExcluding32(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
+        var familyNutrientServings = EnumExtensions.GetValuesExcluding(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
             var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
             return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
@@ -238,7 +238,7 @@ public class UserRepo
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
         var (actualWeeks, weeklyAllergenVolume) = await GetWeeklyAllergensFromRecipeIngredients(user, weeks, includeToday: includeToday);
-        return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(n => n, n => weeklyAllergenVolume[n]));
+        return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding(Allergens.None).ToDictionary(n => n, n => weeklyAllergenVolume[n]));
     }
 
     private async Task<(double weeks, IDictionary<Allergens, double?> volume)> GetWeeklyAllergensFromRecipeIngredients(User user, int weeks, bool includeToday = false)
@@ -278,13 +278,13 @@ public class UserRepo
                     )
                 ).ToList();
 
-            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(m => m, m =>
+            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding(Allergens.None).ToDictionary(m => m, m =>
             {
                 return (double?)monthlyAllergens.Sum(mm => (m.HasFlag(mm) && mm != Allergens.None) ? 1 : 0) / actualWeeks;
             }));
         }
 
-        return (weeks: 0, volume: EnumExtensions.GetValuesExcluding32(Allergens.None).ToDictionary(m => m, m => (double?)null));
+        return (weeks: 0, volume: EnumExtensions.GetValuesExcluding(Allergens.None).ToDictionary(m => m, m => (double?)null));
     }
 }
 

@@ -27,7 +27,7 @@
             <div class="form-group mb-3">
                 <label asp-for="SendDay" class="control-label">@Html.DisplayNameFor(_ => Model.SendDay)</label>
                 <select asp-for="SendDay" class="form-control overflow-auto" aria-describedby="rest-help"
-                        asp-items="@(Enum.GetValues<DayOfWeek>().AsSelectListItems32())">
+                        asp-items="@(Enum.GetValues<DayOfWeek>().AsSelectListItems())">
                 </select>
                 <span asp-validation-for="SendDay" class="text-danger"></span>
                 <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDay)</div>
@@ -58,7 +58,7 @@
                             <input type="hidden" asp-for="UserSections[i].UserId" />
                             <input type="hidden" asp-for="UserSections[i].Section" />
                             <div class="mb-3">
-                                <div><b>@Model.UserSections[i].Section.GetDisplayName322()</b></div>
+                                <div><b>@Model.UserSections[i].Section.GetDisplayName2()</b></div>
 
                                 <div class="mb-1 form-group">
                                     <label asp-for="UserSections[i].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].Weight)</label>
@@ -125,7 +125,7 @@
                                     <div class="form-group mb-2">
                                         <label asp-for="UserFamilies[id].Person" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Person)</label>
                                         <select asp-for="UserFamilies[id].Person" class="form-control overflow-auto" aria-describedby="footnote-help"
-                                                asp-items='@(EnumExtensions.GetDisplayValues<Person>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Value))'>
+                                                asp-items='@(EnumExtensions.GetDisplayValues<Person>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Value))'>
                                         </select>
                                         <span asp-validation-for="UserFamilies[id].Person" class="text-danger"></span>
                                         <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Person)</div>
@@ -234,7 +234,7 @@
             <div class="form-group mb-3">
                 <label asp-for="EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Equipment)</label>
                 <select asp-for="EquipmentBinder" class="form-control overflow-auto" aria-describedby="equipment-help" size="5"
-                        asp-items="@(EnumExtensions.GetSingleOrDoubleValues32<Equipment>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Order))">
+                        asp-items="@(EnumExtensions.GetSingleOrDoubleValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
                 </select>
                 <span asp-validation-for="EquipmentBinder" class="text-danger"></span>
                 <details id="equipment-help" class="form-text">
@@ -249,7 +249,7 @@
             <div class="form-group mb-3">
                 <label asp-for="AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Allergens)</label>
                 <select asp-for="AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="5"
-                        asp-items="@(EnumExtensions.GetSingleValues64<Allergens>().AsSelectListItems32())">
+                        asp-items="@(EnumExtensions.GetSingleValues<Allergens>().AsSelectListItems())">
                 </select>
                 <span asp-validation-for="AllergenBinder" class="text-danger"></span>
                 <div id="allergy-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Allergens)</div>
@@ -265,7 +265,7 @@
             <div class="form-group mb-3">
                 <label asp-for="FootnoteTypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.FootnoteType)</label>
                 <select asp-for="FootnoteTypeBinder" class="form-control overflow-auto" aria-describedby="footnote-help" size="5"
-                        asp-items='@(EnumExtensions.GetSingleValues64<FootnoteType>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))'>
+                        asp-items='@(EnumExtensions.GetSingleValues<FootnoteType>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text))'>
                 </select>
                 <span asp-validation-for="FootnoteTypeBinder" class="text-danger"></span>
                 <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.FootnoteType)</div>
@@ -273,7 +273,7 @@
             <div class="form-group mb-3">
                 <label asp-for="VerbosityBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Verbosity)</label>
                 <select asp-for="VerbosityBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
-                        asp-items="@(EnumExtensions.GetDisplayValues<Verbosity>().AsSelectListItems32(EnumViewExtensions.EnumOrdering.Text))">
+                        asp-items="@(EnumExtensions.GetDisplayValues<Verbosity>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text))">
                 </select>
                 <span asp-validation-for="VerbosityBinder" class="text-danger"></span>
                 <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Verbosity)</div>

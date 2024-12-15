@@ -171,7 +171,7 @@ public class QueryRunner(Section section)
                             // Or if the user is substituting in a different ingredient.
                             recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true
                             // Or if the ingredient conflicts with the user's allergens.
-                            || recipeIngredient.Ingredient!.Allergens.HasAnyFlag32(UserOptions.Allergens))
+                            || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens))
                         {
                             var substitution = ingredientAlternatives.TryGetValue(recipeIngredient.Ingredient!.Id, out var subs) ? subs.FirstOrDefault() : null;
                             recipeIngredient.UserIngredient = substitution?.UserIngredient;
@@ -355,7 +355,7 @@ public class QueryRunner(Section section)
         bool noIgnoredOrAllergicIngredients(IngredientUserIngredient? ingredient)
         {
             // Don't select ignored alternative ingredients or alternative ingredients containing allergens.
-            return ingredient != null && !ingredient.Ingredient.Allergens.HasAnyFlag32(UserOptions.Allergens) && ingredient.UserIngredient?.Ignore != true;
+            return ingredient != null && !ingredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens) && ingredient.UserIngredient?.Ignore != true;
         }
 
         var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();

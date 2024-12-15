@@ -1915,6 +1915,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8872	671	2199023255552	\N	\N	2	1
 8873	671	48	\N	\N	3	2
 8874	671	14	\N	\N	3	6
+10647	134	128	\N	\N	3	4
 4698	3	4294967296	\N	\N	2	40
 4704	3	2199023255552	\N	\N	2	0.3
 4731	3	48	\N	\N	3	3
@@ -5141,6 +5142,63 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10644	505	1984	\N	\N	3	2
 10645	505	62	\N	\N	3	122
 10646	505	2047	\N	\N	3	676
+10648	134	2048	\N	\N	2	20
+10649	134	68719476736	\N	\N	2	140
+10650	134	1	\N	\N	3	5
+10651	134	4294967296	\N	\N	2	150
+10652	134	229376	\N	\N	1	60
+10653	134	1984	\N	\N	3	7
+10654	134	2047	\N	\N	3	80
+10655	36	8796093022208	\N	\N	1	1
+10656	834	68719476736	\N	\N	2	7
+10657	834	34359738368	\N	\N	2	569
+10658	834	2	\N	\N	3	3
+10659	834	1	\N	\N	3	12
+10660	834	2251799813685248	\N	\N	2	66
+10661	834	9007199254740992	\N	\N	3	0.3
+10662	834	18014398509481984	\N	\N	3	0.3
+10663	834	36028797018963968	\N	\N	3	1
+10664	834	72057594037927936	\N	\N	3	1
+10665	834	144115188075855872	\N	\N	3	0.2
+10666	834	288230376151711744	\N	\N	3	1
+10667	834	576460752303423488	\N	\N	3	0.4
+10668	834	1152921504606846976	\N	\N	3	0.1
+10669	834	2305843009213693952	\N	\N	3	0.3
+10670	834	-9223372036854775808	\N	\N	3	0.5
+10671	834	4611686018427387904	\N	\N	3	1
+10672	834	4294967296	\N	\N	2	71
+10673	834	274877906944	\N	\N	1	0.4
+10674	834	2199023255552	\N	\N	2	2
+10675	834	17179869184	\N	\N	2	72
+10676	834	4398046511104	\N	\N	2	1
+10677	834	70368744177664	\N	\N	2	190
+10678	834	17592186044416	\N	\N	2	2
+10679	834	262144	\N	\N	2	0.2
+10680	834	524288	\N	\N	2	0.3
+10681	834	1048576	\N	\N	2	1
+10682	834	2097152	\N	\N	2	1
+10683	834	4194304	\N	\N	2	0.2
+10684	834	16777216	\N	\N	1	358
+10685	834	67108864	\N	\N	2	11
+10686	834	536870912	\N	\N	2	1
+10687	834	48	\N	\N	3	6
+10688	834	3221225472	\N	\N	1	37
+10689	834	14	\N	\N	3	4
+10690	834	1984	\N	\N	3	6
+10691	834	62	\N	\N	3	10
+10692	834	2047	\N	\N	3	130
+10693	341	128	\N	\N	3	0.3
+10694	341	68719476736	\N	\N	2	15
+10695	341	34359738368	\N	\N	2	275
+10696	341	2	\N	\N	3	6
+10697	341	1	\N	\N	3	3
+10698	341	4294967296	\N	\N	2	2
+10699	341	2199023255552	\N	\N	2	1
+10700	341	48	\N	\N	3	2
+10701	341	14	\N	\N	3	17
+10702	341	1984	\N	\N	3	1
+10703	341	62	\N	\N	3	19
+10704	341	2047	\N	\N	3	88
 \.
 
 
@@ -5448,12 +5506,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2355	8	\N	\N	70	1	1	\N	2	t	\N	5
 2356	0	\N	\N	70	1	1	\N	225	t	\N	6
 719	0	\N	\N	47	1	2	, ripe	11	f	\N	0
-866	0	\N	\N	67	1	1	\N	\N	f	66	0
-867	0	\N	\N	67	1	4	\N	221	f	\N	0
-868	7	\N	\N	67	1	2	\N	215	f	\N	0
-869	7	\N	\N	67	1	1	\N	79	f	\N	0
-870	6	\N	\N	67	4	1	\N	89	t	\N	0
-871	0	\N	\N	67	1	1	\N	216	t	\N	0
 2144	6	\N	\N	117	1	2	, chopped	174	f	\N	0
 2145	6	\N	\N	117	1	2	\N	368	f	\N	1
 4905	8	\N	\N	101	8	1	\N	285	t	\N	4
@@ -5546,6 +5598,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1807	0	\N	\N	112	1	2	\N	187	f	\N	3
 1808	6	\N	\N	112	4	3	\N	234	f	\N	4
 5343	0	\N	\N	325	1	1	, cored and cut into cubes	1	f	\N	3
+866	0	\N	\N	67	1	1	\N	\N	f	66	0
+867	0	\N	\N	67	1	4	\N	221	f	\N	1
+868	7	\N	\N	67	1	2	\N	215	f	\N	2
+869	7	\N	\N	67	1	1	\N	79	f	\N	3
+870	6	\N	\N	67	4	1	\N	89	t	\N	4
+871	0	\N	\N	67	1	1	\N	216	t	\N	5
 3373	8	\N	\N	126	1	2	, chopped	577	f	\N	9
 3374	8	\N	\N	126	4	1	\N	285	t	\N	10
 3375	8	\N	\N	126	1	1	, to garnish	577	t	\N	11
@@ -6178,6 +6236,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5427	4	\N	\N	368	1	12	(fresh rhubarb), trimmed and cut into 1/2 inch pieces	560	f	\N	0
 5428	6	\N	\N	368	2	1	\N	36	f	\N	1
 5318	5	\N	\N	320	4	5	\N	404	t	\N	0
+3649	0	\N	\N	168	1	8	\N	582	f	\N	0
 3607	0	\N	\N	177	1	4	, halved lengthways and seeded	597	f	\N	0
 3608	0	\N	\N	177	1	3	, finely chopped	5	f	\N	1
 3609	0	\N	\N	177	1	2	roots, finely chopped	13	f	\N	2
@@ -6187,6 +6246,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3613	8	\N	\N	177	2	1	\N	36	f	\N	6
 3614	0	\N	\N	177	1	3	, finely chopped	596	t	\N	7
 3615	8	\N	\N	177	1	1	\N	593	t	\N	8
+3650	0	\N	\N	168	1	4	, sliced	222	f	\N	1
+3651	7	\N	\N	168	1	6	\N	29	f	\N	2
 4033	0	\N	\N	32	1	4	\N	264	f	\N	0
 4034	7	\N	\N	32	1	2	\N	77	f	\N	1
 4035	8	\N	\N	32	4	1	, ground	349	t	\N	2
@@ -6196,12 +6257,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4089	6	\N	\N	169	1	1	, or very strong coffee	412	f	\N	1
 4090	7	\N	\N	169	1	3	, plus extra to taste	673	f	\N	2
 4091	4	\N	\N	169	1	4	, grated	409	f	\N	3
-3649	0	\N	\N	168	1	8	\N	582	f	\N	0
-3650	0	\N	\N	168	1	4	, sliced	222	f	\N	1
-3651	7	\N	\N	168	1	6	\N	29	f	\N	2
-3652	7	\N	\N	168	1	1	\N	78	f	\N	3
-3653	7	\N	\N	168	1	1	\N	583	f	\N	4
-3654	8	\N	\N	168	4	1	\N	285	f	\N	5
 3655	0	\N	\N	188	1	1	, seeded	8	f	\N	0
 3656	0	\N	\N	188	1	1	, seeded	598	f	\N	1
 3657	0	\N	\N	188	1	1	, seeded	597	f	\N	2
@@ -6779,6 +6834,26 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1573	8	\N	\N	95	2	3	, real	215	f	\N	5
 1574	8	\N	\N	95	2	1	\N	285	t	\N	6
 5467	0	\N	\N	376	1	1	\N	733	f	\N	0
+3652	7	\N	\N	168	1	1	\N	78	f	\N	3
+3653	7	\N	\N	168	1	1	\N	583	f	\N	4
+3654	8	\N	\N	168	4	1	\N	285	f	\N	5
+5468	0	\N	\N	377	1	2	, sliced into strips	387	f	\N	0
+5469	0	\N	\N	377	1	1	, sliced	8	f	\N	1
+5470	0	\N	\N	377	1	1	, sliced	597	f	\N	2
+5471	0	\N	\N	377	1	1	, sliced	105	f	\N	3
+5472	7	\N	\N	377	1	2	\N	77	f	\N	4
+5473	8	\N	\N	377	1	1	\N	68	f	\N	5
+5474	8	\N	\N	377	1	1	\N	143	f	\N	6
+5475	8	\N	\N	377	4	1	\N	285	f	\N	7
+5476	0	\N	\N	378	1	2	(MEDIUM LEEKS), thinly sliced	659	f	\N	0
+5477	0	\N	\N	378	1	2	, cored and thinly sliced	661	f	\N	1
+5478	6	\N	\N	378	4	1	\N	176	f	\N	2
+5479	8	\N	\N	378	8	1	\N	67	f	\N	3
+5480	6	\N	\N	378	1	5	, chopped	372	f	\N	4
+5481	5	\N	\N	378	1	1	(organic chicken breast cutlets, skinless)	387	f	\N	5
+5482	6	\N	\N	378	2	1	(organic, low-Sodium chicken broth)	111	f	\N	6
+5483	6	\N	\N	378	4	1	(almond yogurt), unsweetened	500	f	\N	7
+5484	7	\N	\N	378	1	1	\N	468	t	\N	8
 \.
 
 
@@ -6933,13 +7008,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 652	Serve.	\N	78	0
 2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	\N	238	0
 852	Melt butter in skillet then, when it begins to foam, start swirling skillet until the butter reaches caramel brown in color. Add sweet corn, green onions, bourbon, maple syrup, salt, and pepper then turn the heat up slightly and toss to combine. Saute for 7-8 minutes or until corn is tender and caramelized, stirring every so often. Add bacon back in then taste and adjust salt and pepper if necessary.	\N	95	1
-686	Gather the ingredients. Preheat oven to 425 F.	\N	64	0
 465	Preheat the oven to 350°F	\N	67	0
 466	Dip the bread in the frittata base and let it soak for about 1 minute.	\N	67	1
 467	In a large skillet, heat the oil over medium-high heat. 	\N	67	2
-468	Shake any excess egg mixture off the bread, put the bread in the pan, and cook for 2 to 3 minutes per side, until the bread turns golden brown. Arrange on a baking sheet and transfer to the oven for about 10 minutes.	\N	67	3
-469	Put the bacon in the skillet and cook it until crispy, about 4 to 5 minutes. Add the pecans and maple syrup to the pan, boil for 1 minute, then remove from the heat.	\N	67	4
-470	Take the french toast out of the oven, put it on two places, and pour the maple-bacon syrup over the top. 	\N	67	5
+686	Gather the ingredients. Preheat oven to 425 F.	\N	64	0
 687	Stir the garlic, melted butter, olive oil, and half of the chopped parsley together in a small bowl.	\N	64	1
 688	Lay the pieces of bread out on a sheet tray. Top the French bread pieces with the butter mixture, completely coating the top of each piece. 	\N	64	2
 689	Bake the bread in the preheated oven on the center rack for about 3 to 5 minutes or until the tops are golden brown and crisp.	\N	64	3
@@ -6947,6 +7019,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 691	Top with an equal amount of mozzarella and parmesan cheese and pepperoni. Return to the oven and bake for about 5 to 7 minutes or until the cheese is melted and slightly browned.	\N	64	5
 692	Remove from the oven and top with remaining chopped parsley.	\N	64	6
 693	Serve immediately with extra Parmesan cheese.	\N	64	7
+468	Shake any excess egg mixture off the bread, put the bread in the pan, and cook for 2 to 3 minutes per side, until the bread turns golden brown. Arrange on a baking sheet and transfer to the oven for about 10 minutes.	\N	67	3
 706	In a large skillet, bring 1/2 in. water to a boil over medium heat.	\N	29	0
 707	Add asparagus and garlic; cook, covered, until asparagus is crisp-tender, 3-5 minutes; drain.	\N	29	1
 708	Toss asparagus with butter and cheese. Serve.	\N	29	2
@@ -7364,9 +7437,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2811	Peel and chop the bananas, then mash them with a fork.	\N	143	0
 2812	Place all the smoothie ingredients in a blender or food processor and blend until smooth.	\N	143	1
 2813	Pour into big, tall glasses, then pour in some chocolate sauce from a height. The sauce will swirl around the glasses to give a marbled effect.	\N	143	2
-1945	Heat the oil and half the butter in a frying pan and cook the steaks for 4-5 minutes on each side until almost done. Keep the steaks warm while you cook the onions.	\N	168	0
-1946	Once you have taken the steaks out of the pan, melt the remaining butter then add the sliced onions. Increase the heat and stir to brown and soften the onions, scraping the base of the pan.	\N	168	1
-1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2
 1948	Using a sharp knife, finely dice the red, green and yellow peppers, carrot, cucumber and tomatoes and place them in a large mixing bowl.	\N	188	0
 1949	Add the garlic, spring onions, coriander, gill, parsley, mint and chilli, is using, to the chopped vegetables and toss together to combine.	\N	188	1
 1950	Pour the olive oil and lemon juice over the vegetables, season with salt and pepper to taste and toss together. Chill before serving.	\N	188	2
@@ -7391,8 +7461,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2860	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Just before draining the pasta, add a ladleful or two of the cooking water to the sausage sauce and stir it in well. Taste the sauce to check the seasoning.	\N	192	3
 2861	Finely shred the radicchio leaves. Drain the cooked pasta and turn it into the pan of sausage sauce. Add the shredded radicchio and toss well to combine everything thoroughly. Serve immediately.	\N	192	4
 1556	When cool enough to handle, slice the potato chunks and put them in a bowl.	\N	153	1
+1945	Heat the oil and half the butter in a frying pan and cook the steaks for 4-5 minutes on each side until almost done. Keep the steaks warm while you cook the onions.	\N	168	0
+1946	Once you have taken the steaks out of the pan, melt the remaining butter then add the sliced onions. Increase the heat and stir to brown and soften the onions, scraping the base of the pan.	\N	168	1
 2814	Heat oven to 350°F. Spray 2-quart casserole with cooking spray.	\N	23	0
 2816	Mix potatoes and ham in casserole; gently press down so surface is even. Pour sauce over potato mixture. Cut remaining 1 tablespoon butter into small pieces; sprinkle over potatoes.	\N	23	2
+1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2
 2578	Preheat oven to 400°F.	\N	250	0
 2579	Dice potatoes and zucchini separately and set aside. Chop cauliflower and arugula separately and set aside.	\N	250	1
 2289	Heat 30ml/2 tbsp of the oil in a non-stick frying pan. Add the red pepper and onion and cook over a low heat for 8-10 minutes, or until the vegetables are just soft, stirring occasionally.	\N	195	0
@@ -7647,6 +7720,19 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2998	In a separate medium skillet, heat the other tablespoon of coconut oil and sauté the cauliflower until it is just tender, about 10 minutes, adding salt and pepper as needed.	\N	375	4
 2999	Serve the creamy chicken over a bed of cooked cauliflower rice topped with the fresh chives.	\N	375	5
 3003	For extra flavour, stir less and allow the cauliflower to brown slightly – this will give your cauliflower rice a slightly richer, nuttier flavour, reminiscent of roasted cauliflower.	\N	376	3
+469	Put the bacon in the skillet and cook it until crispy, about 4 to 5 minutes. Add the pecans and maple syrup to the pan, boil for 1 minute, then remove from the heat.	\N	67	4
+470	Take the french toast out of the oven, put it on two places, and pour the maple-bacon syrup over the top. 	\N	67	5
+3004	Preheat the oven to 400°F (200°C).	\N	377	0
+3005	Place the chicken strips, bell peppers, and onion on a sheet pan.	\N	377	1
+3006	Drizzle with olive oil, sprinkle with chili powder, cumin, salt, and pepper.	\N	377	2
+3007	Roast for 20-25 minutes, until the chicken is cooked through and the vegetables are tender.	\N	377	3
+3008	Preheat oven to 400° F.	\N	378	0
+3009	On a baking sheet, place prepared fennel and leeks.	\N	378	1
+3010	Toss vegetables with 2 tablespoons avocado oil, Himalayan salt, and dash of black pepper.	\N	378	2
+3011	In a separate bowl, massage kale with 1 tablespoon avocado oil, dash of salt and pepper, and set the kale aside.	\N	378	3
+3012	Bake fennel and leeks for 40 minutes and add kale to the baking sheet for the last 10-12 minutes of baking.	\N	378	4
+3013	Heat 1 tablespoon avocado oil in a large pan, over medium heat. Add chicken and sauté until lightly cooked, about 3-4 minutes per side.	\N	378	5
+3014	In a small bowl, mix almond yogurt, chicken broth, and mustard and pour on top of chicken.	\N	378	6
 \.
 
 
@@ -7661,7 +7747,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 8, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10646, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10704, true);
 
 
 --

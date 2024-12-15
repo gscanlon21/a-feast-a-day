@@ -35,7 +35,7 @@ public class UpsertIngredientViewComponent : ViewComponent
             .ToListAsync();
 
         var nutrients = new List<Nutrient>();
-        foreach (var nutrient in EnumExtensions.GetValuesExcluding32(Nutrients.None, Nutrients.All)
+        foreach (var nutrient in EnumExtensions.GetValuesExcluding(Nutrients.None, Nutrients.All)
             .OrderBy(n => n.GetSingleDisplayName(DisplayType.Order).Length)
             .ThenBy(n => n.GetSingleDisplayName(DisplayType.Order))
             .ThenBy(n => n.GetSingleDisplayName(DisplayType.GroupName))

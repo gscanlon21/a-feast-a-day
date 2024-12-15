@@ -61,9 +61,9 @@ public class UserNewsletterDto
 
     public bool IsDemoUser => Features.HasFlag(Features.Demo);
 
-    public IList<Allergens> AllergenList => EnumExtensions.GetSingleValues64<Allergens>().Where(a => Allergens.HasFlag(a)).ToList();
+    public IList<Allergens> AllergenList => EnumExtensions.GetSingleValues<Allergens>().Where(a => Allergens.HasFlag(a)).ToList();
 
-    public Allergens AntiAllergens => EnumExtensions.GetSingleValues64(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);
+    public Allergens AntiAllergens => EnumExtensions.GetSingleValues(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);
 
     public bool IsAlmostInactive => LastActive.HasValue && LastActive.Value < DateHelpers.Today.AddMonths(-1 * (UserConsts.DisableAfterXMonths - 1));
 }
