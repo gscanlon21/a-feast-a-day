@@ -34,12 +34,10 @@ public class ManageRecipeViewComponent : ViewComponent
             .FirstOrDefaultAsync();
 
         if (userRecipe == null) { return Content(""); }
-        var recipeDto = (await new QueryBuilder(parameters.Section)
+        var recipeDtos = (await new QueryBuilder(parameters.Section)
             .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
-                // Don't return more than one recipe if the recipe has ingredient recipes.
-                x.IgnorePrerequisites = true;
                 x.AddRecipes(new Dictionary<int, int?>
                 {
                     [recipe.Id] = null,
@@ -47,19 +45,25 @@ public class ManageRecipeViewComponent : ViewComponent
             })
             .Build()
             .Query(_serviceScopeFactory))
-            .FirstOrDefault();
+            .Select(r => r.AsType<NewsletterRecipeDto>()!);
 
-        if (recipeDto == null) { return Content(""); }
+        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);
+        if (recipeDto == null)
+        {
+            return Content("");
+        }
+
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,
+            Recipe = recipeDto,
             UserRecipe = userRecipe,
             Parameters = parameters,
             Notes = userRecipe.Notes,
             Servings = userRecipe.Servings,
             LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,
             PadRefreshXWeeks = userRecipe.PadRefreshXWeeks,
-            Recipe = recipeDto.AsType<NewsletterRecipeDto>()!,
+            PrepRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
         });
     }
 }

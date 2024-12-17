@@ -1,7 +1,7 @@
 ﻿@model Views.Shared.Components.ManageRecipe.ManageRecipeViewModel
-@using System.Numerics
-@using Core.Models.Recipe
-@using Core.Consts
+@using Lib.Pages.Shared.Recipe
+@using Microsoft.AspNetCore.Components
+@using Core.Dtos.User
 
 <h6 class="mb-1">Recipe - @Model.Parameters.Section.GetSingleDisplayName(DisplayType.ShortName)</h6>
 <div class="alert alert-light shadow mb-0">
@@ -140,7 +140,9 @@
         </div>
     </form>
 
-    <component type="typeof(Microsoft.AspNetCore.Components.CascadingValue<Core.Dtos.User.UserNewsletterDto?>)" render-mode="Static" param-Value="null">
-        <component type="typeof(Lib.Pages.Shared.Recipe._Recipe)" render-mode="Static" param-Model='Model.Recipe' param-Verbosity="Model.RecipeVerbosity" />
+    <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
+        <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.Recipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Parameters.Section.AsTheme()" />
     </component>
+
+    <component type="typeof(RecipeSection)" render-mode="Static" param-Recipes='Model.PrepRecipes' param-Verbosity="Model.Verbosity" param-Title="@(new RecipeSection.Titles("Prep"))"/>
 </div>

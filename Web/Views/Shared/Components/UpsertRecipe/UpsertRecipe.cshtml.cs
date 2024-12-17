@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;

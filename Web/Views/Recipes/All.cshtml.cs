@@ -1,6 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
-using Core.Models.Recipe;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.Recipe;

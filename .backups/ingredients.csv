@@ -140,7 +140,7 @@
 143	\N	Cumin	https://www.eatthismuch.com/calories/cumin-189	\N	t	0	28	9	2024-11-30	4	144	131072
 144	\N	Green Onions (Scallions)	https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	15	15	2024-10-11	0	150	2
 145	\N	Fusilli Pasta	https://www.eatthismuch.com/calories/fusilli-pasta,2321079	\N	f	32	107	80	2024-06-10	6	107	4096
-146	\N	Slices of Whole Wheat Rye Bread	\N	\N	f	32	24	24	-infinity	0	48	64
+146	\N	Slices of Whole Wheat Rye Bread	https://www.eatthismuch.com/calories/rye-bread-4015	\N	f	32	32	32	2024-12-17	0	64	64
 147	\N	Cherry Tomatoes	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	0	17	85	2024-08-07	0	170	0
 148	\N	Salad Greens	\N	\N	f	0	240	100	2024-06-09	6	240	0
 149	\N	Fresh Podded Green Peas | Frozen Green Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
@@ -602,7 +602,7 @@
 673	\N	Vanilla Sugar	https://www.eatthismuch.com/calories/vanilla-sugar-4187475	\N	f	0	28	14	2024-12-08	4	336	114688
 674	\N	Red Radish	\N	\N	f	0	100	50	2024-10-24	0	100	1
 675	\N	Fresh Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12	100	2024-08-26	0	100	1
-676	\N	Avocado Oil | Olive Oil	\N	\N	f	0	240	100	-infinity	6	240	3
+676	\N	Avocado Oil | Olive Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
 677	\N	Fresh Rosemary	\N	\N	f	0	4	4	2024-09-26	7	64	1
 678	\N	Beef Gelatin	https://www.eatthismuch.com/calories/beef-gelatin-1857579	\N	f	0	20	10	2024-06-21	4	160	4
 679	\N	Coconut Butter | Coconut Cream	\N	\N	f	0	100	100	-infinity	0	100	3
@@ -698,7 +698,7 @@
 798	\N	Clementines | Tangerines | Seedless Oranges	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 799	\N	Seedless Oranges	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2024-06-14	0	131	1
 800	\N	Tarragon	https://www.eatthismuch.com/calories/tarragon-215	\N	f	0	28	2	2024-12-02	4	32	131072
-801	\N	Fresh Mixed-Color Kale	https://www.eatthismuch.com/calories/kale,1995	\N	f	0	67	67	2024-09-11	6	67	1
+801	\N	Fresh Mixed-Color Kale	https://www.eatthismuch.com/calories/kale,1995	\N	f	0	67	67	2024-09-11	6	67	2
 802	\N	Balti Curry Paste	https://www.eatthismuch.com/calories/balti-sauce-152832	\N	f	0	28	120	2024-11-24	4	180	256
 803	\N	Red Split Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2024-06-16	6	192	2048
 804	\N	Red Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2024-06-16	6	192	4
@@ -777,3 +777,5 @@
 907	\N	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	\N	f	0	60	15	2024-08-23	6	60	928
 908	\N	Raw Mixed Nuts | Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
 909	\N	Raw Mixed Nuts	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
+910	\N	Bay Leaves	https://www.eatthismuch.com/calories/mint-91252	\N	f	0	28	3	2024-06-12	4	48	3
+911	\N	Curry Powder | Chili Powder	\N	\N	f	0	16	8	-infinity	4	96	65536

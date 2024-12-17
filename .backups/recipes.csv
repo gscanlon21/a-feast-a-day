@@ -47,7 +47,7 @@
 64	French Bread Pizza	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	0	french-bread-pizza.jpg	0	\N
 65	Hard Boiled Eggs	\N	\N	\N	17	10	2	1	t	4194308	hardboiled-eggs.jpg	0	\N
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	0	frittata-base.jpg	0	\N
-67	French Toast	\N	\N	\N	3	15	5	1	t	6291462	french-toast.jpg	0	\N
+67	French Toast	\N	\N	\N	3	15	5	2	t	6291462	french-toast.jpg	0	\N
 68	Cheese and Crackers	\N	\N	\N	18	0	5	1	t	0	cheese-meat-crackers.jpg	0	\N
 69	Chopped Eggs and Onions	\N	\N	\N	10	12	3	4	t	0	egg-salad-alt.jpg	0	\N
 70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	1	t	0	guacamole.jpg	6	\N
@@ -219,7 +219,7 @@
 269	Rose Water	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	\N	\N	0	20	5	1	t	4194308	\N	6	\N
 270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	3	t	4194308	chicken-lettuce-cups.jpg	0	\N
 271	Traditional Stuffing	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	\N	\N	8	55	5	4	t	270532866	\N	0	\N
-272	Fragrant Spiced Rice	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	\N	\N	8	10	5	4	t	0	\N	0	\N
+272	Fragrant Spiced Rice	\N	\N	\N	8	10	5	4	t	4194308	baked-saffron-rice.jpg	0	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/
 305	Exercise Recovery Smoothie	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	\N	\N	16	0	5	1	t	134217856	exercise-recovery-smoothie.jpg	0	\N
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0	\N
 307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	spiced-lentils-rice.jpg	0	\N
@@ -263,3 +263,5 @@
 377	Chicken Fajita Sheet Pan	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	\N	\N	4	25	10	4	t	2097154	\N	0	\N
 378	Creamy Fennel Kale Chicken Salad	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	\N	\N	2	25	5	4	t	6291462	\N	0	\N
 379	Easy Sauteéd Zucchini	\N	\N	\N	8	8	2	2	t	4194308	\N	0	https://simply-delicious-food.com/easy-sauteed-zucchini/
+380	Dark Chocolate-Covered Almonds	\N	\N	\N	48	30	15	4	t	0	\N	0	https://www.healthline.com/recipes/chocolate-covered-almonds
+381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	4	15	5	2	t	4194308	\N	0	https://www.healthline.com/recipes/zucchini-noodles-pesto

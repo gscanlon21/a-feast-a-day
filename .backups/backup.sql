@@ -1229,6 +1229,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 906	691
 908	788
 908	909
+911	68
+911	124
 \.
 
 
@@ -5240,6 +5242,49 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10743	520	1984	\N	\N	3	11
 10744	520	62	\N	\N	3	1
 10745	520	2047	\N	\N	3	110
+10746	861	128	\N	\N	3	0.2
+10747	861	68719476736	\N	\N	2	16
+10748	861	34359738368	\N	\N	2	512
+10749	861	2	\N	\N	3	5
+10750	861	1	\N	\N	3	2
+10751	861	4294967296	\N	\N	2	31
+10752	861	2199023255552	\N	\N	2	1
+10753	861	48	\N	\N	3	2
+10754	861	14	\N	\N	3	4
+10755	861	1984	\N	\N	3	1
+10756	861	62	\N	\N	3	6
+10757	861	2047	\N	\N	3	33
+10758	801	128	\N	\N	3	0.1
+10759	801	68719476736	\N	\N	2	25
+10760	801	34359738368	\N	\N	2	329
+10761	801	2	\N	\N	3	2
+10762	801	1	\N	\N	3	3
+10763	801	4294967296	\N	\N	2	101
+10764	801	2199023255552	\N	\N	2	1
+10765	801	48	\N	\N	3	2
+10766	801	14	\N	\N	3	3
+10767	801	1984	\N	\N	3	1
+10768	801	62	\N	\N	3	6
+10769	801	2047	\N	\N	3	33
+10770	146	128	\N	\N	3	0.2
+10771	146	68719476736	\N	\N	2	193
+10772	146	34359738368	\N	\N	2	53
+10773	146	2	\N	\N	3	1
+10774	146	1	\N	\N	3	3
+10775	146	4294967296	\N	\N	2	23
+10776	146	2199023255552	\N	\N	2	1
+10777	146	48	\N	\N	3	2
+10778	146	14	\N	\N	3	14
+10779	146	1984	\N	\N	3	1
+10780	146	62	\N	\N	3	15
+10781	146	2047	\N	\N	3	83
+10782	676	128	\N	\N	3	2
+10783	676	68719476736	\N	\N	2	0.3
+10784	676	34359738368	\N	\N	2	0.1
+10785	676	4294967296	\N	\N	2	0.1
+10786	676	2199023255552	\N	\N	2	0.1
+10787	676	1984	\N	\N	3	14
+10788	676	2047	\N	\N	3	119
 \.
 
 
@@ -5631,15 +5676,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5340	6	\N	\N	325	4	1	\N	870	f	\N	0
 5341	6	\N	\N	325	4	1	, finely chopped	2	f	\N	1
 5342	6	\N	\N	325	2	3	\N	872	f	\N	2
+866	0	\N	\N	67	1	1	\N	\N	f	66	0
 1804	4	\N	\N	112	1	5	\N	409	f	\N	0
 1805	4	\N	\N	112	2	9	\N	190	f	\N	1
 1806	7	\N	\N	112	1	3	\N	412	f	\N	2
 1807	0	\N	\N	112	1	2	\N	187	f	\N	3
 1808	6	\N	\N	112	4	3	\N	234	f	\N	4
-5343	0	\N	\N	325	1	1	, cored and cut into cubes	1	f	\N	3
-866	0	\N	\N	67	1	1	\N	\N	f	66	0
 867	0	\N	\N	67	1	4	\N	221	f	\N	1
 868	7	\N	\N	67	1	2	\N	215	f	\N	2
+5343	0	\N	\N	325	1	1	, cored and cut into cubes	1	f	\N	3
 869	7	\N	\N	67	1	1	\N	79	f	\N	3
 870	6	\N	\N	67	4	1	\N	89	t	\N	4
 871	0	\N	\N	67	1	1	\N	216	t	\N	5
@@ -6733,18 +6778,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4744	0	\N	\N	250	4	1	, juiced	4	f	\N	9
 4745	8	\N	\N	250	8	1	\N	285	f	\N	10
 4746	0	\N	\N	250	1	2	, sliced	9	t	\N	11
-4747	7	\N	\N	272	1	2	\N	722	f	\N	0
-4748	0	\N	\N	272	1	1	(BAY LEAF)	703	t	\N	1
-4749	0	\N	\N	272	1	6	(CARDAMOM PODS)	125	f	\N	2
-4750	0	\N	\N	272	1	1	\N	552	f	\N	3
-4751	8	\N	\N	272	1	1	\N	699	f	\N	4
-4752	7	\N	\N	272	1	1	(CUMIN SEEDS)	143	f	\N	5
-4753	8	\N	\N	272	2	1	(CURRY POWDER | CHILI POWDER), to taste (depending on how hot you like it)	124	t	\N	6
-4754	0	\N	\N	272	1	1	, minced	222	f	\N	7
-4755	0	\N	\N	272	1	2	, minced	5	f	\N	8
-4756	6	\N	\N	272	1	4	, cooked	98	f	\N	9
-4757	6	\N	\N	272	3	1	\N	13	f	\N	10
-4758	8	\N	\N	272	8	1	\N	285	f	\N	11
 4825	0	\N	\N	270	1	1	\N	789	f	\N	0
 4826	7	\N	\N	270	1	2	\N	321	f	\N	1
 4827	0	\N	\N	270	1	2	\N	387	f	\N	2
@@ -6787,6 +6820,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4812	7	\N	\N	264	1	2	, raw, light and dark	752	f	\N	2
 4813	0	\N	\N	264	1	4	\N	187	f	\N	3
 4814	7	\N	\N	264	1	2	\N	321	f	\N	4
+4747	7	\N	\N	272	1	2	\N	722	f	\N	0
+4748	0	\N	\N	272	1	1	\N	910	t	\N	1
+4749	0	\N	\N	272	1	6	\N	753	f	\N	2
+4750	0	\N	\N	272	1	1	\N	552	f	\N	3
+4751	8	\N	\N	272	1	1	\N	699	f	\N	4
 5070	6	\N	\N	305	2	1	\N	808	f	\N	0
 5071	6	\N	\N	305	2	1	, seeded and peeled	352	f	\N	1
 5072	6	\N	\N	305	4	1	, unflavored or vanilla (see link in introduction)	805	f	\N	2
@@ -6795,6 +6833,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5075	6	\N	\N	305	1	1	\N	806	f	\N	5
 5076	8	\N	\N	305	8	1	\N	348	f	\N	6
 5077	0	\N	\N	305	1	2	\N	501	t	\N	7
+4752	7	\N	\N	272	1	1	\N	754	f	\N	5
+4753	8	\N	\N	272	2	1	, to taste	911	t	\N	6
+4754	0	\N	\N	272	1	1	, minced	222	f	\N	7
+4755	0	\N	\N	272	1	2	, minced	5	f	\N	8
 4855	0	\N	\N	231	1	4	\N	114	f	\N	0
 4856	7	\N	\N	231	1	2	\N	38	f	\N	1
 4857	7	\N	\N	231	1	2	\N	29	f	\N	2
@@ -6902,6 +6944,19 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5489	0	\N	\N	379	1	2	, crushed	5	t	\N	2
 5490	8	\N	\N	379	4	1	, to taste	285	t	\N	3
 5491	0	\N	\N	379	2	1	, juiced, to taste	4	t	\N	4
+4756	6	\N	\N	272	1	4	, cooked	98	f	\N	9
+4757	6	\N	\N	272	3	1	\N	13	f	\N	10
+4758	8	\N	\N	272	8	1	\N	285	f	\N	11
+5492	6	\N	\N	380	4	3	\N	614	f	\N	0
+5493	6	\N	\N	380	2	3	\N	807	f	\N	1
+5494	8	\N	\N	380	4	1	\N	74	f	\N	2
+5495	0	\N	\N	381	1	4	\N	250	f	\N	0
+5496	4	\N	\N	381	1	12	, sliced into strips	387	f	\N	1
+5497	8	\N	\N	381	2	3	\N	29	f	\N	2
+5498	6	\N	\N	381	2	1	\N	111	f	\N	3
+5499	6	\N	\N	381	2	1	\N	171	f	\N	4
+5500	6	\N	\N	381	2	1	\N	392	f	\N	5
+5501	6	\N	\N	381	1	1	, shredded	95	t	\N	6
 \.
 
 
@@ -7059,6 +7114,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 465	Preheat the oven to 350°F	\N	67	0
 466	Dip the bread in the frittata base and let it soak for about 1 minute.	\N	67	1
 467	In a large skillet, heat the oil over medium-high heat. 	\N	67	2
+468	Shake any excess egg mixture off the bread, put the bread in the pan, and cook for 2 to 3 minutes per side, until the bread turns golden brown. Arrange on a baking sheet and transfer to the oven for about 10 minutes.	\N	67	3
 686	Gather the ingredients. Preheat oven to 425 F.	\N	64	0
 687	Stir the garlic, melted butter, olive oil, and half of the chopped parsley together in a small bowl.	\N	64	1
 688	Lay the pieces of bread out on a sheet tray. Top the French bread pieces with the butter mixture, completely coating the top of each piece. 	\N	64	2
@@ -7067,7 +7123,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 691	Top with an equal amount of mozzarella and parmesan cheese and pepperoni. Return to the oven and bake for about 5 to 7 minutes or until the cheese is melted and slightly browned.	\N	64	5
 692	Remove from the oven and top with remaining chopped parsley.	\N	64	6
 693	Serve immediately with extra Parmesan cheese.	\N	64	7
-468	Shake any excess egg mixture off the bread, put the bread in the pan, and cook for 2 to 3 minutes per side, until the bread turns golden brown. Arrange on a baking sheet and transfer to the oven for about 10 minutes.	\N	67	3
 706	In a large skillet, bring 1/2 in. water to a boil over medium heat.	\N	29	0
 707	Add asparagus and garlic; cook, covered, until asparagus is crisp-tender, 3-5 minutes; drain.	\N	29	1
 708	Toss asparagus with butter and cheese. Serve.	\N	29	2
@@ -7526,10 +7581,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2291	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Drain, then transfer to a large serving bowl. Add 30ml/2 tbsp of the oil and toss well to coat.	\N	195	2
 2292	Add the artichokes, broccoli, olives, parsley, onion mixture and remaining oil to the pasta. Toss to blend. Leave to stand for at least 5 minutes before serving.	\N	195	3
 2583	Top with avocado slices and enjoy!	\N	250	5
-2584	In large sauté pan, heat the oil over medium heat. Add the bay leaf, cardamom pods, cinnamon stick, cumin seeds and curry or chili powder, if using. Warm the spices gently until they become fragrant.	\N	272	0
-2585	Add the onion and sauté for 7-10 minutes until translucent. Add the garlic and cook another few minutes before adding the rice.	\N	272	1
-2586	Stir frequently until the rice is fully heated through and completely coated in the spices.	\N	272	2
-2587	Take off the heat. Transfer to a serving dish and top with the cilantro leaves.	\N	272	3
 2614	Rip off and reserve the top leafy half of the mint. Put the stalks in a pan of boiling salted water, then add the beans and peas and cook for 4 minutes. Meanwhile, halve and seed the chili and finely chop with the top leafy half of the mint. Place in a bowl, finely grate over a little lemon zest, then squeeze in all the juice. Add 2 tablespoons of extra virgin olive oil, mix, taste, and season to perfection with sea salt and black pepper.	\N	306	0
 2615	Drain the beans and peas, reserving a cupful of cooking water and discarding the mint stalks. Pinch the skins off any larger beans, then pour the beans and peas onto a platter, toss with a few splashes of reserved cooking water, then spoon over the dressing. Drizzle with 1 more tablespoon of extra virgin olive oil and toss together at the table before tucking in.	\N	306	1
 2503	The night before, put your mung beans to soak in a pan with 6-8 cups of water. When ready to use, drain and rinse the beans. Set aside.	\N	267	0
@@ -7547,6 +7598,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	\N	254	1
 2369	Serve immediately, drizzled with a touch more maple syrup.	\N	254	3
 2818	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful or cooking water. Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the zucchini. Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan.	\N	260	0
+2584	In large sauté pan, heat the oil over medium heat. Add the bay leaf, cardamom pods, cinnamon stick, cumin seeds and curry or chili powder, if using. Warm the spices gently until they become fragrant.	\N	272	0
+2585	Add the onion and sauté for 7-10 minutes until translucent. Add the garlic and cook another few minutes before adding the rice.	\N	272	1
+2586	Stir frequently until the rice is fully heated through and completely coated in the spices.	\N	272	2
+2587	Take off the heat. Transfer to a serving dish and top with the cilantro leaves.	\N	272	3
 2820	Cook the pasta according to pack instructions – about 10 mins. Meanwhile, put the lime juice and zest in a medium bowl with the avocado, tomatoes, coriander, onion and chilli, if using, and mix well.	\N	39	0
 2821	Drain the pasta, toss into the bowl and mix well. Serve straight away while still warm, or cold.	\N	39	1
 2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	\N	136	0
@@ -7762,12 +7817,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1502	Transfer the lentil mixture and juices to warmed plates or bowls. Crumble the remaining feta cheese on top and sprinkle with the fresh herbs to garnish. Serve the lentils immediately.	\N	150	2
 2995	Add the chicken and sauté 3 to 4 minutes more.	\N	375	1
 2996	Add the remaining ingredients, including salt and pepper to taste, except for the cauliflower and chives, and cook for another 5 to 10 minutes, until the chicken is cooked through.	\N	375	2
+3019	Line a baking sheet with parchment paper.	\N	380	0
 2997	Meanwhile, prepare the cauliflower. If you are using fresh cauliflower, cut it into florets and then pulse in a food processor until the texture resembles rice.	\N	375	3
 2998	In a separate medium skillet, heat the other tablespoon of coconut oil and sauté the cauliflower until it is just tender, about 10 minutes, adding salt and pepper as needed.	\N	375	4
 2999	Serve the creamy chicken over a bed of cooked cauliflower rice topped with the fresh chives.	\N	375	5
 3003	For extra flavour, stir less and allow the cauliflower to brown slightly – this will give your cauliflower rice a slightly richer, nuttier flavour, reminiscent of roasted cauliflower.	\N	376	3
-469	Put the bacon in the skillet and cook it until crispy, about 4 to 5 minutes. Add the pecans and maple syrup to the pan, boil for 1 minute, then remove from the heat.	\N	67	4
-470	Take the french toast out of the oven, put it on two places, and pour the maple-bacon syrup over the top. 	\N	67	5
 3004	Preheat the oven to 400°F (200°C).	\N	377	0
 3005	Place the chicken strips, bell peppers, and onion on a sheet pan.	\N	377	1
 3006	Drizzle with olive oil, sprinkle with chili powder, cumin, salt, and pepper.	\N	377	2
@@ -7784,6 +7838,17 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3016	Heat the oil in a large skillet or frying pan over medium-high heat.	\N	379	1
 3017	Add the zucchini and saute for 7-10 minutes, tossing regularly to ensure even cooking.	\N	379	2
 3018	Add the crushed garlic and cook for another minute then season with salt, pepper and lemon.	\N	379	3
+469	Put the bacon in the skillet and cook it until crispy, about 4 to 5 minutes. Add the pecans and maple syrup to the pan, boil for 1 minute, then remove from the heat.	\N	67	4
+470	Take the french toast out of the oven, put it on two places, and pour the maple-bacon syrup over the top. 	\N	67	5
+3020	Place chocolate chips in a medium-sized microwave-safe bowl. Microwave in 30-second increments, stirring in between, until fully melted.	\N	380	1
+3021	Add almonds to the bowl and toss to coat in melted chocolate.	\N	380	2
+3022	Transfer almonds one-by-one to prepared baking sheet, leaving any excess chocolate in the bowl. Sprinkle lightly with sea salt.	\N	380	3
+3023	Refrigerate until set, about 30 minutes. Enjoy 1/4 cup per serving. Store almonds for future snacking in an airtight container in the refrigerator for up to 2 weeks.	\N	380	4
+3024	Peel zucchini lengthwise with a vegetable peeler into long, thin strips. (Or, use a spiralizer or a sharp knife.) Pat with a paper towel and set aside.	\N	381	0
+3025	Season chicken with salt and pepper. Heat butter in a skillet over medium heat. Add chicken and cook 8 minutes, flipping occasionally, until mostly cooked through. Transfer to a plate.	\N	381	1
+3026	Add the chicken broth to the empty skillet over medium heat, scraping any browned bits off the bottom of the pan. When liquid has reduced by half, reduce heat to medium-low, then add cream, pesto and ½ cup parmesan cheese. Simmer, stirring regularly, 3 minutes, until warmed through.	\N	381	2
+3027	Add the chicken and zucchini noodles to the skillet; stir to coat in the sauce. Cook 5 minutes, until zucchini has softened and chicken is cooked through. Season with salt and pepper to taste.	\N	381	3
+3028	Divide into bowls and top with remaining ½ cup parmesan. Enjoy!	\N	381	4
 \.
 
 
@@ -7798,7 +7863,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 9, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10745, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10788, true);
 
 
 --

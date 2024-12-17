@@ -35,5 +35,8 @@ public class ManageRecipeViewModel
     [Display(Name = "Notes")]
     public string? Notes { get; init; }
 
-    public Verbosity RecipeVerbosity => User?.Verbosity ?? Verbosity.Images;
+    [ValidateNever]
+    public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
+
+    public Verbosity Verbosity => User?.Verbosity ?? Verbosity.Images;
 }
