@@ -358,15 +358,17 @@ public class QueryRunner(Section section)
             return ingredient != null && !ingredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens) && ingredient.UserIngredient?.Ignore != true;
         }
 
-        var allQueryResultIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-        return (await context.Ingredients.Where(i => allQueryResultIngredientIds.Contains(i.Id)).Select(i => new
+        var allQueryResultRecipeIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Ingredient != null).Select(ri => ri.Id)).ToList();
+        return (await context.RecipeIngredients.Where(ri => allQueryResultRecipeIngredientIds.Contains(ri.Id)).Select(ri => new
         {
-            IngredientId = i.Id,
-            i.UserIngredients.First(a => a.UserId == UserOptions.Id).SubstituteIngredient,
-            AlternativeIngredients = i.Alternatives.Select(a => new IngredientUserIngredient()
+            IngredientId = ri.Ingredient.Id,
+            ri.Ingredient.UserIngredients.Where(ui => ui.RecipeId == ri.RecipeId).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
+            AlternativeIngredients = ri.Ingredient.Alternatives.Select(a => new IngredientUserIngredient()
             {
                 Ingredient = a.AlternativeIngredient,
-                UserIngredient = a.AlternativeIngredient.UserIngredients.First(ei => ei.UserId == UserOptions.Id)
+                UserIngredient = a.AlternativeIngredient.UserIngredients
+                    .Where(ui => ui.UserId == UserOptions.Id)
+                    .First(ui => ui.RecipeId == ri.RecipeId)
             })
         }).Select(i => new
         {
@@ -376,9 +378,14 @@ public class QueryRunner(Section section)
             SubstitureIngredient = i.SubstituteIngredient == null ? null : new IngredientUserIngredient()
             {
                 Ingredient = i.SubstituteIngredient,
-                UserIngredient = context.UserIngredients.First(ui => ui.IngredientId == i.SubstituteIngredient.Id && ui.UserId == UserOptions.Id)
+                UserIngredient = context.UserIngredients
+                    .Where(ui => ui.RecipeId == ui.RecipeId)
+                    .Where(ui => ui.UserId == UserOptions.Id)
+                    .First(ui => ui.IngredientId == i.SubstituteIngredient.Id)
             },
-        }).ToListAsync()).ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Prepend(i.SubstitureIngredient).Where(noIgnoredOrAllergicIngredients).Select(a => a!).ToList());
+        }).ToListAsync())
+        .DistinctBy(i => i.IngredientId)
+        .ToDictionary(i => i.IngredientId, i => i.AlternativeIngredients.Prepend(i.SubstitureIngredient).Where(noIgnoredOrAllergicIngredients).Select(i => i!).ToList());
     }
 
     /// <summary>
