@@ -75,7 +75,7 @@
 76	\N	Unrefined Coconut Oil	aka. Virgin Coconut Oil. https://www.eatthismuch.com/calories/coconut-oil-unrefined-2065164	\N	f	0	28	14	2024-12-09	4	224	65536
 77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	t	0	28	14	2024-06-13	9	224	65536
 78	\N	Vegetable Oil	https://www.eatthismuch.com/calories/vegetable-oil,373	\N	t	0	14	14	2024-08-20	7	224	3
-79	\N	Canola Oil	\N	\N	t	0	240	100	-infinity	6	240	3
+79	\N	Canola Oil	https://www.eatthismuch.com/calories/canola-oil-329	\N	t	0	28	14	2024-12-22	9	224	65536
 80	\N	Apple Cider Vinegar	TODO: Fix Nutrients. aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	30	15	-infinity	9	240	32
 81	\N	Balsamic Vinegar	https://www.eatthismuch.com/calories/balsamic-vinegar,235	\N	f	0	255	255	2024-09-15	6	255	32
 82	\N	Red Wine Vinegar	https://www.eatthismuch.com/calories/red-wine-vinegar,234	\N	f	0	239	239	2024-08-24	6	239	3
@@ -99,7 +99,7 @@
 100	\N	Teriyaki Sauce	https://www.eatthismuch.com/calories/teriyaki-sauce,711	\N	f	0	288	18	2024-09-07	6	288	3
 101	\N	Light Sesame Oil	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	0	216	13.6	2024-06-11	6	240	65536
 102	\N	Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2024-06-16	6	192	4
-103	\N	Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	-infinity	0	170	1
+103	\N	Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
 104	\N	Summer Sausage	https://www.eatthismuch.com/food/nutrition/summer-sausage,2122087/	\N	f	0	56	56	2024-10-18	4	224	8
 105	\N	Red Onions	https://www.eatthismuch.com/food/nutrition/red-onion,129104/	\N	f	0	110	110	-infinity	0	110	2
 106	\N	Beef Bouilion Cubes	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072
@@ -379,7 +379,7 @@
 388	\N	Chicken Thighs, Skin On, Bone In	https://www.eatthismuch.com/calories/chicken-thigh-480	\N	f	0	94	94	2024-06-13	0	94	268435456
 389	\N	Frozen Mixed Chopped Onion, Carrot, and Celery	https://www.eatthismuch.com/calories/mixed-vegetables-2256	\N	f	0	225	225	2024-12-15	6	225	67108864
 390	\N	Halloumi Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	256	28	28	2024-06-12	4	224	0
-391	\N	Skinless, Boneless Chicken Thighs	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
+391	\N	Boneless Skinless Chicken Thighs	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
 392	\N	Pesto	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
 393	\N	Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
 394	\N	Pesto | Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
@@ -534,7 +534,7 @@
 604	\N	Slices of Panettone Bread	\N	\N	f	32	34	34	2024-06-15	0	34	64
 605	\N	Butter | Sunflower Oil	\N	\N	t	0	14	14	2024-08-20	7	224	6
 606	\N	Butter | Oil	\N	\N	t	0	14	14	2024-08-20	7	224	6
-607	\N	Fresh Mixed-Berries	\N	\N	f	0	240	100	-infinity	6	240	0
+607	\N	Frozen Mixed-Berries	https://www.eatthismuch.com/calories/mixed-berries-87958	\N	f	0	28	140	2024-12-22	4	140	33554432
 608	\N	Frozen Strawberries	\N	\N	f	0	240	100	-infinity	6	240	0
 609	\N	Slices of Whole Grain Bread, GF	https://www.eatthismuch.com/calories/gluten-free-whole-grain-bread-2114723	\N	f	0	26	26	2024-10-09	0	52	2
 610	\N	Gammon Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/gammon-7453	\N	f	0	453.592	453.592	2024-10-14	0	240	8
@@ -562,7 +562,7 @@
 632	\N	Pink Lady Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 633	\N	Cosmic Crisp Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 634	\N	Honeycrisp Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	182	1
-635	\N	Granny Smith Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
+635	\N	Granny Smith Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	182	1
 636	\N	Milk Chocolate Bar (40%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	168	168	2024-06-09	6	168	4
 637	\N	Milk Chocolate Chips (40%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	168	168	2024-06-09	6	168	4
 638	\N	Dark Chocolate (70%)	\N	\N	f	0	240	100	2024-06-09	6	240	4
@@ -601,7 +601,7 @@
 671	\N	Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2024-06-14	0	82	2
 673	\N	Vanilla Sugar	https://www.eatthismuch.com/calories/vanilla-sugar-4187475	\N	f	0	28	14	2024-12-08	4	336	114688
 674	\N	Red Radish	\N	\N	f	0	100	50	2024-10-24	0	100	1
-675	\N	Fresh Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12	100	2024-08-26	0	100	1
+675	\N	Fresh Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2024-08-26	0	100	2
 676	\N	Avocado Oil | Olive Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
 677	\N	Fresh Rosemary	\N	\N	f	0	4	4	2024-09-26	7	64	1
 678	\N	Beef Gelatin	https://www.eatthismuch.com/calories/beef-gelatin-1857579	\N	f	0	20	10	2024-06-21	4	160	4
@@ -615,7 +615,7 @@
 686	\N	Sugar-Free Dark Chocolate (70%)	https://www.eatthismuch.com/calories/baking-chips-dark-chocolate-1730128	\N	f	0	28	14	2024-06-09	4	224	16384
 687	\N	Sugar-Free Dark Chocolate Chips (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	28	168	2024-06-09	4	168	16384
 688	\N	Sugar-Free Dark Chocolate Bar (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	168	168	2024-06-09	6	168	4
-689	\N	Frozen Okra	https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	28	2024-08-26	0	224	1
+689	\N	Frozen Okra	https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	28	2024-08-26	0	224	67108864
 690	\N	Honey | Coconut Sugar | Stevia	https://www.eatthismuch.com/calories/honey-4620	\N	f	0	28	21	-infinity	4	336	32
 691	\N	Dry Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2024-08-09	6	113.33	1024
 692	\N	Sea Salt & Black Pepper	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2024-07-14	8	288	131072
@@ -753,7 +753,7 @@
 854	\N	Fresh Podded Snow Peas | Frozen Snow Peas	https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2024-12-12	4	63	2
 855	\N	Fresh Podded Snow Peas | Frozen Podded Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2024-12-09	4	63	2
 856	\N	Fresh Spinach | Fresh Kale	https://www.eatthismuch.com/calories/spinach-2170	\N	f	0	28	30	-infinity	4	30	2
-857	\N	Frozen Raspberries	\N	\N	f	0	240	100	-infinity	6	240	0
+857	\N	Frozen Raspberries	https://www.eatthismuch.com/calories/raspberries-1547	\N	f	0	123	123	2024-12-21	6	123	33554432
 858	\N	Frozen Strawberries | Frozen Raspberries	https://www.eatthismuch.com/calories/whole-fresh-frozen-strawberries-100309	\N	f	0	28	140	-infinity	4	140	33554432
 859	\N	Dairy-Free Milk	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	6
 860	\N	Water | Dairy-Free Milk	\N	\N	f	0	30	240	-infinity	9	240	29360128
@@ -772,7 +772,7 @@
 902	\N	Chamomile Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2024-07-22	0	236.56	0
 903	\N	Radish Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2
 904	\N	Lean Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-904	\N	f	0	28	28	2024-12-10	0	224	268435456
-905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12	100	2024-08-26	0	100	1
+905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2024-08-26	0	100	2
 906	\N	Frozen Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2024-08-09	6	113.33	1024
 907	\N	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	\N	f	0	60	15	2024-08-23	6	60	928
 908	\N	Raw Mixed Nuts | Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
@@ -781,3 +781,7 @@
 911	\N	Curry Powder | Chili Powder	\N	\N	f	0	16	8	-infinity	4	96	65536
 912	\N	Macadamia Nuts	\N	\N	f	0	23	23	-infinity	4	23	4
 913	\N	Cashew Nuts | Macadamia Nuts	\N	\N	f	0	23	23	-infinity	4	23	4
+914	\N	Brown Rice Noodles	https://www.eatthismuch.com/food/nutrition/rice-noodles,4886/	\N	f	4096	28	28	2024-07-17	4	224	4096
+915	\N	Thin Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	0	257	257	2024-08-11	0	128.5	2
+916	\N	Chicken Legs	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2024-06-13	0	224	0
+917	\N	Oranges | Blood Oranges	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2024-06-14	0	131	1

@@ -1233,6 +1233,14 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") F
 911	124
 913	92
 913	912
+914	240
+240	914
+915	213
+213	915
+916	387
+916	24
+917	347
+917	346
 \.
 
 
@@ -5350,6 +5358,42 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 10849	204	2	\N	\N	3	1
 10850	204	4294967296	\N	\N	2	25
 10851	204	14	\N	\N	3	2
+10852	635	2047	\N	\N	3	95
+10853	635	128	\N	\N	3	0.1
+10854	635	68719476736	\N	\N	2	2
+10855	635	34359738368	\N	\N	2	195
+10856	635	2	\N	\N	3	19
+10857	635	1	\N	\N	3	0.5
+10858	635	4294967296	\N	\N	2	11
+10859	635	2199023255552	\N	\N	2	0.2
+10860	635	48	\N	\N	3	4
+10861	635	14	\N	\N	3	21
+10862	635	1984	\N	\N	3	0.3
+10863	635	62	\N	\N	3	25
+10864	857	68719476736	\N	\N	2	1
+10865	857	34359738368	\N	\N	2	186
+10866	857	2	\N	\N	3	5
+10867	857	1	\N	\N	3	1
+10868	857	4294967296	\N	\N	2	31
+10869	857	2199023255552	\N	\N	2	1
+10870	857	48	\N	\N	3	8
+10871	857	14	\N	\N	3	7
+10872	857	1984	\N	\N	3	1
+10873	857	62	\N	\N	3	15
+10874	857	2047	\N	\N	3	64
+10875	607	34359738368	\N	\N	2	180
+10876	607	1	\N	\N	3	1
+10877	607	4294967296	\N	\N	2	20
+10878	607	2199023255552	\N	\N	2	0.3
+10879	607	48	\N	\N	3	5
+10880	607	14	\N	\N	3	12
+10881	607	1984	\N	\N	3	0.5
+10882	607	62	\N	\N	3	17
+10883	607	2047	\N	\N	3	80
+10884	79	128	\N	\N	3	1
+10885	79	64	\N	\N	3	0.1
+10886	79	1984	\N	\N	3	14
+10887	79	2047	\N	\N	3	124
 \.
 
 
@@ -5397,15 +5441,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1378	6	\N	\N	62	2	1	, cooked	188	f	\N	0
 1379	6	\N	\N	62	1	1	, roasted	209	f	\N	1
 1380	6	\N	\N	62	4	1	\N	834	f	\N	2
-2723	6	\N	\N	146	1	3	( SFILATINI (THIN CIABATTA LOAF))	213	f	\N	0
-2724	6	\N	\N	146	1	1	(SUN_DRIED TOMATO PURéE (PASTE))	17	f	\N	1
 1762	4	\N	\N	104	1	10	\N	286	f	\N	0
-2725	4	\N	\N	146	1	5	, chopped	119	f	\N	2
 1763	4	\N	\N	104	1	12	\N	122	f	\N	1
 1764	0	\N	\N	104	1	4	\N	187	f	\N	2
-2726	8	\N	\N	146	1	2	\N	322	t	\N	3
-2727	7	\N	\N	146	1	2	\N	77	f	\N	4
-2728	8	\N	\N	146	8	1	\N	67	t	\N	5
 1765	4	\N	\N	104	4	7	\N	379	f	\N	3
 1381	7	\N	\N	62	1	2	, chopped	13	t	\N	3
 1382	6	\N	\N	62	4	1	, diced	9	f	\N	4
@@ -5457,6 +5495,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3233	0	\N	\N	157	1	20	\N	10	f	\N	3
 5438	10	\N	\N	370	1	500	\N	475	f	\N	4
 5439	0	\N	\N	370	1	2	(FRESH Scotch bonnet chillies)	224	f	\N	5
+2723	6	\N	\N	146	1	3	\N	915	f	\N	0
+2724	6	\N	\N	146	1	1	\N	830	f	\N	1
 3234	0	\N	\N	157	1	1	, juiced	4	f	\N	4
 3235	7	\N	\N	157	1	1	\N	551	t	\N	5
 3236	8	\N	\N	157	1	1	, to taste	44	t	\N	6
@@ -5616,14 +5656,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2790	8	\N	\N	141	1	1	\N	276	f	\N	8
 2791	8	\N	\N	141	1	1	\N	124	f	\N	9
 2792	0	\N	\N	141	1	2	, beaten	187	f	\N	10
-450	6	\N	\N	55	1	1	\N	122	f	\N	0
 2793	8	\N	\N	141	8	1	\N	214	f	\N	11
 2794	0	\N	\N	141	1	2	, shredded, to garnish	144	f	\N	12
 1697	6	\N	\N	1	1	1	\N	102	f	\N	0
 1698	5	\N	\N	1	2	1	\N	104	f	\N	1
 1699	0	\N	\N	1	1	4	\N	103	f	\N	2
 1700	0	\N	\N	1	1	1	\N	105	f	\N	3
-451	7	\N	\N	55	1	1	\N	77	f	\N	0
 2795	4	\N	\N	138	1	2	\N	277	f	\N	0
 1701	0	\N	\N	1	1	1	\N	106	f	\N	4
 1702	0	\N	\N	1	1	1	\N	5	f	\N	5
@@ -5647,6 +5685,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1569	7	\N	\N	95	1	3	\N	338	f	\N	1
 1570	0	\N	\N	95	1	3	, kernels cut off cob (about 4 cups)	341	f	\N	2
 1571	0	\N	\N	95	1	2	, chopped	302	f	\N	3
+450	6	\N	\N	55	2	1	\N	122	f	\N	0
+451	7	\N	\N	55	1	1	\N	77	f	\N	1
 2350	0	\N	\N	70	1	2	, ripe	9	f	\N	0
 2351	0	\N	\N	70	1	1	\N	5	f	\N	1
 2352	7	\N	\N	70	1	2	\N	77	f	\N	2
@@ -5880,10 +5920,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2432	4	\N	\N	81	1	1	\N	29	f	\N	2
 2433	7	\N	\N	81	1	1	\N	77	f	\N	3
 2434	8	\N	\N	81	8	1	\N	285	t	\N	4
-2213	7	\N	\N	124	1	1	\N	77	f	\N	0
-2214	0	\N	\N	124	1	4	\N	324	f	\N	1
-2215	8	\N	\N	124	1	1	, to garnish	14	t	\N	2
-2216	6	\N	\N	124	1	1	\N	\N	f	125	3
 2667	6	\N	\N	140	1	3	\N	47	f	\N	8
 2668	0	\N	\N	140	1	3	, diced (FOR LEMON AND MINT RELISH)	17	f	\N	9
 2669	7	\N	\N	140	1	1	, chopped (FOR LEMON AND MINT RELISH)	251	f	\N	10
@@ -5951,6 +5987,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3388	6	\N	\N	116	2	1	\N	278	f	\N	5
 3389	8	\N	\N	116	4	1	, to taste	285	t	\N	6
 2357	0	\N	\N	70	1	1	, seeded	224	t	\N	7
+2213	8	\N	\N	124	1	1	\N	77	f	\N	0
+2214	0	\N	\N	124	1	1	\N	324	f	\N	1
+2215	8	\N	\N	124	4	1	, to garnish	14	t	\N	2
+2216	6	\N	\N	124	4	1	\N	392	f	\N	3
 3522	5	\N	\N	181	1	1	\N	488	f	\N	0
 3523	6	\N	\N	181	2	1	\N	59	f	\N	1
 3524	6	\N	\N	181	4	1	\N	60	t	\N	2
@@ -7027,6 +7067,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5504	5	\N	\N	382	4	5	(LEAN STEWING BEEF)	488	f	\N	2
 5505	0	\N	\N	382	1	10	\N	910	f	\N	3
 5506	0	\N	\N	382	1	8	\N	5	f	\N	4
+2725	4	\N	\N	146	1	5	, chopped	119	f	\N	2
+2726	8	\N	\N	146	1	2	\N	322	t	\N	3
+2727	7	\N	\N	146	1	2	\N	77	f	\N	4
+2728	8	\N	\N	146	8	1	\N	67	t	\N	5
+5507	0	\N	\N	383	1	2	\N	916	f	\N	0
+5508	0	\N	\N	383	1	8	\N	144	f	\N	1
+5509	0	\N	\N	383	1	1	\N	730	f	\N	2
+5510	0	\N	\N	383	1	2	(ORANGES | BLOOD ORANGES)	347	f	\N	3
+5511	7	\N	\N	383	1	2	\N	321	f	\N	4
 \.
 
 
@@ -7086,8 +7135,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1403	Cover and let simmer for 8 minutes.	\N	122	2
 1404	Rinse eggs under cold water until they are chilled. Serve.	\N	122	3
 2525	Add cauliflower rice and chickpeas to the curry and cook for 5 minutes. Stir in the lime juice and season with more salt, if needed. Serve garnished with chopped cilantro.	\N	266	4
-1446	Preheat the oven to 220°C/425°F. Also preheat the grill (broiler). Cut each sfilatino on the diagonal into 12-15 slices, discarding the ends. Grill (broil) until lightly toasted on both sides. Spread sun-dried tomato purée on one side of each slice of toast. Arrange the mozzarella over the tomato purée.	\N	146	0
-1447	Put the toasts on baking sheets, sprinkle with herbs and pepper to taste and drizzle with oil. Bake for 5 minutes or until the mozzarella has melted and is bubbling. Leave the toasts to settle for a few minutes before serving.	\N	146	1
 745	Stack the cheese, meat and crackers. Eat them stacked.	\N	68	0
 1469	Heat the oil in a wok. Add the onion and stir-fry over a medium heat for 1 minute, then add the garlic and ginger and stir-fry for 2 minutes more.	\N	141	0
 2845	Sit the chicken in a large, deep pan.	\N	179	0
@@ -7109,17 +7156,19 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1489	Break the Granary bread into small pieces and place in a food processor or blender with all the remaining ingredients except the extra virgin olive oil. Blend together until the ingredients are finely chopped.	\N	148	0
 1490	With the motor running, slowly drizzle the extra virgin olive oil into the food processor or blender and process until the mixture forms a smooth paste. Tip the muhummara into a serving dish. Serve at room temperature.	\N	148	1
 644	Stir all ingredients together in a medium saucepan. Heat over medium-high heat until simmering.	\N	45	0
-217	Preheat the oven to 425 degrees Fahrenheit. 	\N	55	0
-218	Place the trimmed asparagus in an even layer on a baking sheet and drizzle it with olive oil. Roll the stalks in the oil to ensure it coats every inch. 	\N	55	1
-219	Place the asparagus in the center rack in the oven, and bake it for 10-12 minutes. When it is fork-tender, it’s done cooking. 	\N	55	2
 2921	Remove the lid and stir all the ingredients together until the white chocolate chips are melted and all the ingredients are combined.	\N	322	2
 2922	Drop the Christmas candy mixture by a tablespoonful onto a parchment or wax-lined baking sheet.	\N	322	3
 2923	Allow the candy to set up completely at room temperature, or in the refrigerator for 2 hours. If you need it sooner you can place the sheet pan in the freezer for 30 minutes.	\N	322	4
 2924	Store in the refrigerator or freezer.	\N	322	5
+217	Preheat the oven to 425 degrees Fahrenheit. 	\N	55	0
 645	Reduce heat to medium-low, cover and simmer for at least 10 minutes, stirring occasionally.	\N	45	1
 646	Serve soup warm topped with additional fresh cilantro as garnish.	\N	45	2
 658	In a large microwavable mug or large bowl add in the macaroni and the water. You need a large mug as the water will boil up.	\N	56	0
 659	Microwave for roughly 3 ½ minutes (1200w microwave). You want the pasta to be fully cooked.	\N	56	1
+218	Place the trimmed asparagus in an even layer on a baking sheet and drizzle it with olive oil. Roll the stalks in the oil to ensure it coats every inch. 	\N	55	1
+219	Place the asparagus in the center rack in the oven, and bake it for 10-12 minutes. When it is fork-tender, it’s done cooking. 	\N	55	2
+1446	Preheat the oven to 220°C/425°F. Also preheat the grill (broiler). Cut each sfilatino on the diagonal into 12-15 slices, discarding the ends. Grill (broil) until lightly toasted on both sides. Spread sun-dried tomato purée on one side of each slice of toast. Arrange the mozzarella over the tomato purée.	\N	146	0
+1447	Put the toasts on baking sheets, sprinkle with herbs and pepper to taste and drizzle with oil. Bake for 5 minutes or until the mozzarella has melted and is bubbling. Leave the toasts to settle for a few minutes before serving.	\N	146	1
 660	Pour off the remaining cooking water.	\N	56	2
 661	Stir in the milk, cornstarch and shredded cheese and microwave for a final 60 seconds to create your sauce. Stir well, season with salt and pepper and enjoy.	\N	56	3
 400	Combine beans, cheese and 1/4 cup salsa in a medium bowl. Place tortillas on a work surface. Spread 1/2 cup filling on half of each tortilla. Fold tortillas in half, pressing gently to flatten.	\N	37	0
@@ -7338,9 +7387,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1820	Once you've got all your ingredients in the blender, blend it up until it's completely smooth. Then pour your patter onto your prepared pan and smooth it over with your spatula.	\N	44	0
 1821	Bake the pizza crust for about 15 minutes, then flip it over and bake another 10 – 15 minutes.	\N	44	1
 1822	Final step: top your pizza with your desired toppings, pop it back in the oven and let everything cook/melt. Slice it up and you're ready to eat!	\N	44	2
-1178	Heat the 15mL/1 tbsp oil in a frying pan. Add the chicken breasts and cook gently for about 15 minutes, turning several times until they are tender, lightly browned and thoroughly cooked. 	\N	124	0
-1179	Remove the chicken from the pan, cover and keep hot. Reduce the heat slightly, then add the pesto to the pan and cook gently, stirring constantly, for a few minutes, or until the pesto has warmed through.	\N	124	1
-1180	Put the cooked chicken on a plate, pour the warm pesto over the top, then garnish with basil leaves and serve immediately.	\N	124	2
 2748	Trim ½” off cilantro ends and remove any woody stalks, wash thoroughly in a salad spinner and spin dry.	\N	256	0
 2749	Pulse pepitas and garlic in a food processor until minced.	\N	256	1
 2750	Add cilantro, lemon juice, salt, and pulse until chopped fine (or as desired).	\N	256	2
@@ -7919,6 +7965,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1502	Transfer the lentil mixture and juices to warmed plates or bowls. Crumble the remaining feta cheese on top and sprinkle with the fresh herbs to garnish. Serve the lentils immediately.	\N	150	2
 3029	Preheat the oven to 325°F. Place a large shallow casserole pan on a high heat. Seed the peppers and chop into fingers, then place into the pan with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the allspice. Chop the beef a similar size and stir into the pan with the bay. Crush in the unpeeled garlic through a garlic crusher and fry for 2 minutes, tossing regularly.	\N	382	0
 3030	Add 2 tablespoons of red wine vinegar and 2 cups of water to the pan. Cover, then cook in the oven for 2 hours, or until dark and sticky. Loosen with a splash of water, if needed, mix up, taste, season to perfection, and serve.	\N	382	1
+1178	Heat the 15mL/1 tbsp oil in a frying pan. Add the chicken breasts and cook gently for about 15 minutes, turning several times until they are tender, lightly browned and thoroughly cooked. 	\N	124	0
+1179	Remove the chicken from the pan, cover and keep hot. Reduce the heat slightly, then add the pesto to the pan and cook gently, stirring constantly, for a few minutes, or until the pesto has warmed through.	\N	124	1
+1180	Put the cooked chicken on a plate, pour the warm pesto over the top, then garnish with basil leaves and serve immediately.	\N	124	2
+3031	Preheat the oven to 350°F. Put a non-stick overproof frying pan on a high heat. Pull off the chicken skin, put both skin and legs into the pan, season with sea salt and black pepper, and let the fat render out and the chicken get golden for 5 minutes, turning halfway, while you trim the scallions and halve across the middle, putting the green halves aside. Toss the white scallions into the pan, then transfer to the oven for 15 minutes. Meanwhile, seed the chilies, then finely slice lengthways with the green scallions and pop both into a bowl of ice cold water to curl and crisp up. Peel the oranges, finely slice into rounds, and arrange on your plates.	\N	383	0
+3032	Remove the chicken skin and soft scallions from the pan and put aside. Cook the chicken for 10 more minutes, or until tender and cooked through. In a bowl, loosen the hoisin with a splash of red wine vinegar, then spoon over the chicken. Leave it in the oven while you drain and divide up the salad. Sit the chicken and soft scallions on top and crack over the crispy skin.	\N	383	1
 \.
 
 
@@ -7933,7 +7984,7 @@ SELECT pg_catalog.setval('public."footnote_Id_seq"', 9, true);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10851, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 10887, true);
 
 
 --
