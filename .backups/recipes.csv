@@ -30,7 +30,7 @@
 47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	banana-ice-cream.jpg	0	\N
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	0	avocado-cakes.jpg	0	\N
 49	Easy Mini Bagel Pizzas	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	\N	\N	6	10	10	2	t	0	\N	0	\N
-50	Simple 4-Ingredient Egg Salad with Mayo	https://www.lifeisbutadish.com/momos-egg-salad/	\N	\N	1	5	10	1	t	0	egg-salad.jpg	0	\N
+50	Simple 4-Ingredient Egg Salad with Mayo	\N	\N	\N	1	5	10	1	t	0	egg-salad.jpg	0	https://www.lifeisbutadish.com/momos-egg-salad/
 51	Grilled Garlic Naan	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	\N	\N	8	5	5	2	t	4194308	grilled-garlic-naan.jpg	0	\N
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg	0	\N
 53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	4194308	old-fashioned-oatmeal.jpg	0	\N
@@ -111,7 +111,7 @@
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	4	16	4	4	t	0	chicken-soy-sauce.jpg	0	\N
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	0	honey-mustard-chicken.jpg	0	\N
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	0	lemon-grass-pork-burger.jpg	0	\N
-131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	6	t	0	cajun-spiced-chicken.jpg	0	\N
+131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	4194308	cajun-spiced-chicken.jpg	0	\N
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	tandori-chicken-kebabs.jpg	0	\N
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	0	stir-fried-chicken-basil-chilli.jpg	0	\N
 134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0	\N
@@ -202,11 +202,11 @@
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	hummus-vegetables.jpg	0	\N
 253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. - https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	\N	\N	16	120	10	5	t	17179885568	apricot-butter-bars.jpg	0	\N
 254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	144115188482703364	hummus.jpg	6	\N
-255	Cashew Mayo	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	\N	\N	0	0	10	2	t	0	\N	6	\N
+255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	144115188478509056	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	-9223372034304638976	anti-aging-pesto.jpg	6	\N
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice. - https://www.glutenfreepalate.com/gluten-free-risotto/	\N	\N	6	40	5	4	t	4194308	gluten-free-risotto.jpg	0	\N
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	20	2	2	t	4194308	korean-eggs-rice.jpg	0	\N
-259	Chicken Liver Pate	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	\N	\N	8	25	5	1	t	4194308	chicken-liver-pate.jpg	0	\N
+259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	\N	8	25	5	1	t	4194308	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	4194308	zucchini-linguine.jpg	0	\N
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	4194308	chicken-noodle-stir-fry.jpg	0	\N
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	0	buttermilk.jpg	6	\N
@@ -214,7 +214,7 @@
 264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	0	egg-fried-rice.jpg	0	\N
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	0	\N	0	\N
 266	Sweet Potato Cauliflower Curry	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	\N	\N	4	55	5	4	t	0	\N	0	\N
-267	Curried Mung Bean Soup	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	\N	\N	4	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0	\N
+267	Curried Mung Bean Soup	\N	\N	\N	4	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/
 268	Orange Flower Water	https://thishealthytable.com/blog/orange-blossom-water/	\N	\N	0	120	5	1	t	0	\N	6	\N
 269	Rose Water	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	\N	\N	0	20	5	1	t	4194308	\N	6	\N
 270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	3	t	4194308	chicken-lettuce-cups.jpg	0	\N
@@ -242,7 +242,7 @@
 324	Crème Fraîche	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	\N	\N	0	0	5	1	t	0	\N	6	\N
 325	Anti-Allergy Salad	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	\N	\N	8	10	5	2	t	0	anti-allergy-salad.jpg	0	\N
 326	Sticky Teriyaki Aubergine	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	teriyaki-aubergine.jpg	0	\N
-359	Healthy Chocolate Smoothie	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/	\N	\N	24	0	5	2	t	134217856	healthy-chocolate-smoothie.jpg	0	\N
+359	Healthy Chocolate Smoothie	\N	\N	\N	24	0	5	2	t	134217856	healthy-chocolate-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/
 360	Eggplant Penne Arrabbiata	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	8	4	t	4194308	\N	0	\N
 361	Beef, Beets, & Horseradish	From Jamie Oliver's 5 Ingredients	\N	\N	11	0	14	2	t	0	\N	0	\N
 362	Egg Ribbon Salad	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	\N	0	\N
@@ -265,3 +265,4 @@
 379	Easy Sauteéd Zucchini	\N	\N	\N	8	8	2	2	t	4194308	\N	0	https://simply-delicious-food.com/easy-sauteed-zucchini/
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	48	30	15	4	t	0	\N	0	https://www.healthline.com/recipes/chocolate-covered-almonds
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	4	15	5	2	t	4194308	\N	0	https://www.healthline.com/recipes/zucchini-noodles-pesto
+382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	4	120	9	4	t	6291462	\N	0	\N

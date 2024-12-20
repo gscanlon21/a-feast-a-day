@@ -7,7 +7,7 @@
 7	\N	Large Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	2
 8	\N	Red Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
 9	\N	Avocados	https://www.eatthismuch.com/food/nutrition/avocados,1334/	\N	f	0	201	201	2024-10-23	0	201	1
-10	\N	Fresh Strawberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	-infinity	0	144	1
+10	\N	Fresh Strawberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	2024-12-19	0	144	1
 11	\N	Bananas	https://www.eatthismuch.com/calories/banana-1337	\N	f	0	118	118	2024-06-12	0	118	1
 12	\N	Limes	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	0	240	1
 13	\N	Fresh Cilantro (Coriander)	https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	f	0	2	1	2024-12-13	4	16	2
@@ -82,7 +82,7 @@
 83	\N	White Vinegar	https://www.eatthismuch.com/food/nutrition/distilled-white-vinegar,4175275/	\N	f	0	230	14	2024-06-13	6	240	0
 84	\N	White Wine Vinegar	https://www.eatthismuch.com/food/nutrition/white-wine-vinegar,27797/	\N	f	0	14	14	2024-06-15	7	240	32
 85	\N	White Wine	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2024-08-22	9	235.2	524288
-86	\N	Red Wine	\N	\N	f	0	240	100	-infinity	6	240	0
+86	\N	Red Wine	https://www.eatthismuch.com/calories/red-wine-3070	\N	f	0	29.4	147	2024-12-18	9	235.2	524288
 87	\N	Crackers	https://www.eatthismuch.com/food/nutrition/ritz-crackers,4370/	\N	f	0	3.3	3.3	2024-06-10	0	50	262144
 88	\N	Unsalted Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	2048	28	146	2024-10-12	4	146	1048576
 89	\N	Pecans	https://www.eatthismuch.com/food/nutrition/pecans,2676/	\N	f	0	28	99	2024-11-18	4	99	1048576
@@ -197,7 +197,7 @@
 201	\N	Creamy Peanut Butter (Reduced Fat)	https://www.eatthismuch.com/calories/creamy-reduced-fat-peanut-butter,542598	\N	f	0	17	17	2024-07-30	7	272	0
 202	\N	Mini Bagels, Whole Grain	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2024-06-19	6	240	0
 203	\N	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506	\N	f	2	28	28	2024-09-29	4	224	3145728
-204	\N	Hearts of Palm Linguine	https://www.eatthismuch.com/calories/hearts-of-palm-linguine,2265395	\N	f	0	25	75	-infinity	4	200	0
+204	\N	Hearts of Palm Linguine	https://www.eatthismuch.com/calories/linguine-hearts-of-palm-1846301	\N	f	0	28	75	2024-12-20	4	75	4096
 205	\N	Mixed Beans	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	256
 206	\N	Fresh Baby Spinach	https://www.eatthismuch.com/calories/baby-spinach,6336	\N	f	0	28	60	2024-06-09	4	30	2
 207	\N	Frozen Podded Edamame Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	28	118	2024-07-16	4	118	67108864
@@ -304,7 +304,7 @@
 311	\N	Purple Potatoes	https://www.eatthismuch.com/calories/purple-potatoes-3336013	\N	f	0	37.67	113	2024-10-03	0	113	1
 312	\N	Mirin Rice WIne	https://www.eatthismuch.com/calories/mirin,1837647	\N	f	0	28	14	2024-12-13	9	224	8192
 313	\N	Japanese Cooking Wine (Sake)	https://www.eatthismuch.com/calories/sake,5783	\N	f	0	29	29	2024-09-08	9	232	8192
-314	\N	Citrus-Lime Vinaigrette	\N	\N	f	0	240	100	-infinity	6	240	32
+314	\N	Citrus-Lime Vinaigrette	https://www.eatthismuch.com/calories/citrus-lime-vinaigrette-2391809	\N	f	0	28	43	2024-12-20	9	224	32
 315	\N	Slices of French Bread, GF	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	0	29	57	2024-07-15	0	57	64
 316	\N	Shallot | Small Onion	https://www.eatthismuch.com/calories/shallots-2316	\N	f	0	43	43	2024-09-27	0	86	1
 317	\N	Worcestershire Sauce	https://www.eatthismuch.com/food/nutrition/pasta-sauce,871/	\N	f	0	257	257	2024-06-14	6	240	0
@@ -553,7 +553,7 @@
 623	\N	Red Lentil Eliche Pasta	https://www.eatthismuch.com/calories/fusilli-pasta,2321079	\N	f	0	107	80	2024-06-10	6	240	4
 624	\N	Fresh Radicchio Leaves 	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	3
 625	\N	Fresh Blackberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	-infinity	0	144	1
-626	\N	Fresh Raspberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	16	144	-infinity	0	144	1
+626	\N	Fresh Raspberries	https://www.eatthismuch.com/calories/raspberries-1547	\N	f	0	28	123	2024-12-18	4	123	1
 627	\N	Medjool Dates	https://www.eatthismuch.com/calories/dates-1591	\N	f	0	24	24	2024-06-15	0	192	1
 628	\N	Coconut Milk (Plain)	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	6
 629	\N	Coconut Milk (Vanilla)	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	6
@@ -630,7 +630,7 @@
 701	\N	Dry Mixed Beans	https://www.eatthismuch.com/calories/mixed-beans,144621 OR https://www.eatthismuch.com/calories/mixed-beans,1618198	\N	f	0	140	35	2024-09-13	6	140	4
 702	\N	Low Sodium Pasta Sauce	https://www.eatthismuch.com/food/nutrition/pasta-sauce,871/	\N	f	0	257	257	2024-06-14	6	240	0
 703	\N	Cabbage Leaves	\N	\N	f	0	240	100	-infinity	6	240	1
-704	\N	Head of Savoy Cabbage	\N	\N	f	0	240	100	-infinity	6	240	1
+704	\N	Head of Savoy Cabbage	https://www.eatthismuch.com/calories/cabbage-1906	\N	f	0	908	70	2024-12-19	0	70	2
 705	\N	Head of Napa Cabbage	\N	\N	f	0	240	100	-infinity	6	240	1
 706	\N	Napa Cabbage Leaves	https://www.eatthismuch.com/calories/cabbage-2578	\N	f	0	28	109	2024-12-04	0	109	2
 707	\N	Savoy Cabbage Leaves	https://www.eatthismuch.com/calories/cabbage-1906	\N	f	0	28	70	2024-11-25	0	70	2
@@ -779,3 +779,5 @@
 909	\N	Raw Mixed Nuts	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
 910	\N	Bay Leaves	https://www.eatthismuch.com/calories/mint-91252	\N	f	0	28	3	2024-06-12	4	48	3
 911	\N	Curry Powder | Chili Powder	\N	\N	f	0	16	8	-infinity	4	96	65536
+912	\N	Macadamia Nuts	\N	\N	f	0	23	23	-infinity	4	23	4
+913	\N	Cashew Nuts | Macadamia Nuts	\N	\N	f	0	23	23	-infinity	4	23	4
