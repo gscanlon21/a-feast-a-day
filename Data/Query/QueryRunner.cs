@@ -374,7 +374,7 @@ public class QueryRunner(Section section)
                 {
                     Ingredient = alt.AlternativeIngredient,
                     UserIngredient = alt.AlternativeIngredient.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ri.RecipeId)
-                }).Where(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0).Where(i => i.UserIngredient!.Ignore != true).FirstOrDefault()
+                }).Where(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0).FirstOrDefault(i => i.UserIngredient!.Ignore != true)
             }).ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
                 if (ri.SubIngredient == null) { return ri.AltIngredient; }
