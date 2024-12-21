@@ -370,16 +370,16 @@ public class QueryRunner(Section section)
                     Ingredient = ri.SubstituteIngredient,
                     UserIngredient = ri.SubstituteIngredient!.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ui.RecipeId)
                 },
-                AltIngredient = ri.Ingredient.Alternatives.Select(alt => new IngredientUserIngredient()
+                AltsIngredient = ri.Ingredient.Alternatives.Select(ia => new IngredientUserIngredient()
                 {
-                    Ingredient = alt.AlternativeIngredient,
-                    UserIngredient = alt.AlternativeIngredient.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ri.RecipeId)
+                    Ingredient = ia.AlternativeIngredient,
+                    UserIngredient = ia.AlternativeIngredient.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ri.RecipeId)
                 }).Where(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0).FirstOrDefault(i => i.UserIngredient!.Ignore != true)
             }).ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
-                if (ri.SubIngredient == null) { return ri.AltIngredient; }
+                if (ri.SubIngredient == null) { return ri.AltsIngredient; }
                 // Prefer a substitute ingredient over a random alternative ingredient.
-                return (ri.SubIngredient.UserIngredient?.Ignore != true && !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)) ? ri.SubIngredient : ri.AltIngredient;
+                return (ri.SubIngredient.UserIngredient?.Ignore != true && !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)) ? ri.SubIngredient : ri.AltsIngredient;
             });
     }
 
