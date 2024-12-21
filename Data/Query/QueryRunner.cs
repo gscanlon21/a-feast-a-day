@@ -377,7 +377,7 @@ public class QueryRunner(Section section)
                 }).Where(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0).Where(i => i.UserIngredient!.Ignore != true).FirstOrDefault()
             }).ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
-                if (ri.SubIngredient == null) { return ri.SubIngredient; }
+                if (ri.SubIngredient == null) { return ri.AltIngredient; }
                 // Prefer a substitute ingredient over a random alternative ingredient.
                 return (ri.SubIngredient.UserIngredient?.Ignore != true && !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)) ? ri.SubIngredient : ri.AltIngredient;
             });
