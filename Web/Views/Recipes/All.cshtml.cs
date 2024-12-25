@@ -2,8 +2,7 @@
 using Core.Models.Newsletter;
 using System.ComponentModel.DataAnnotations;
 
-namespace Web.Views.Recipe;
-
+namespace Web.Views.Recipes;
 
 public class RecipesViewModel
 {
@@ -13,7 +12,7 @@ public class RecipesViewModel
 
     public Verbosity Verbosity => Verbosity.Debug;
 
-    [Display(Name = "Recipe Name")]
+    [Display(Name = "Name")]
     public string? Name { get; init; }
 
     [Display(Name = "Section")]

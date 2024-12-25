@@ -1,5 +1,6 @@
 ﻿using Core.Models.Ingredients;
 using Core.Models.User;
+using Data.Entities.Genetics;
 using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
 using Data.Entities.User;
@@ -98,6 +99,9 @@ public class Ingredient
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.Ingredient))]
     public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; private init; } = null!;
+
+    [JsonIgnore, InverseProperty(nameof(StudyIngredient.Ingredient))]
+    public virtual ICollection<StudyIngredient> StudyIngredients { get; private init; } = null!;
 
     [NotMapped]
     public Allergens[]? AllergenBinder

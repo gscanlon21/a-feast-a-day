@@ -146,19 +146,16 @@ public partial class NewsletterRepo
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto>()!, newsletterContext.Token);
 
-        var shoppingList = await GetShoppingList(newsletter, debugRecipes);
-        var viewModel = new NewsletterDto
+        await UpdateLastSeenDate(debugRecipes);
+        return new NewsletterDto
         {
             User = userViewModel,
-            ShoppingList = shoppingList,
             Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto>()!,
+            ShoppingList = await GetShoppingList(newsletter, debugRecipes),
             Recipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
             DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto>()!).ToList(),
         };
-
-        await UpdateLastSeenDate(debugRecipes);
-        return viewModel;
     }
 
     /// <summary>

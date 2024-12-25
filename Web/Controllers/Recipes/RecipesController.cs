@@ -3,7 +3,7 @@ using Core.Models.Newsletter;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Web.Code.Attributes;
-using Web.Views.Recipe;
+using Web.Views.Recipes;
 
 namespace Web.Controllers.Recipes;
 

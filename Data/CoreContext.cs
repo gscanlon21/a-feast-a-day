@@ -1,4 +1,5 @@
 ﻿using Data.Entities.Footnote;
+using Data.Entities.Genetics;
 using Data.Entities.Ingredient;
 using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
@@ -42,6 +43,7 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId, sc.Section });
         modelBuilder.Entity<UserIngredient>().HasKey(sc => new { sc.UserId, sc.IngredientId, sc.RecipeId });
         modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
+        modelBuilder.Entity<StudyIngredient>().HasKey(sc => new { sc.StudyId, sc.IngredientId });
 
         ////////// Query Filters //////////
         modelBuilder.Entity<Recipe>().HasQueryFilter(p => p.DisabledReason == null);
@@ -49,6 +51,7 @@ public class CoreContext : DbContext
         modelBuilder.Entity<RecipeInstruction>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);
         modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
+        modelBuilder.Entity<UserIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipeIngredient>().HasQueryFilter(p => p.UserFeastRecipe.Recipe.DisabledReason == null);
     }

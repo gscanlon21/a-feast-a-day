@@ -1,0 +1,66 @@
+﻿@model GeneticsViewModel
+@inject IOptions<SiteSettings> SiteSettings
+
+<div class="alert alert-dark" role="alert">
+    <details>
+        <summary>
+            <div class="d-inline-flex w-100 row align-items-center gy-2">
+                <div class="col">
+                    <div>Upload Genetics</div>
+                </div>
+                <div class="col-auto pe-0">
+                    <input id="g-upload" type="file" class="btn btn-outline-secondary d-none" />
+                    <div class="input-group">
+                        <label for="g-upload" class="btn btn-outline-secondary">Choose File</label>
+                        <input id="g-filename" type="text" class="form-control border-secondary text-secondary" value="No file choosen" disabled="disabled">
+                    </div>
+                </div>
+            </div>
+        </summary>
+
+        <div class="mt-3 small">Upload a genetics file for personalized recommendations.</div>
+    </details>
+</div>
+
+<script type="module">
+    const dbName = 'adiaryaday';
+    const storeName = 'genetics';
+
+    const db = window.tdb(dbName, 1, storeName);
+    db.openDB();
+
+    // There an event for this?
+    // Doesn't work on page load.
+    setTimeout(() => {
+        // Set the filename if the file exists.
+        db.get(storeName, 'name', (filename) => {
+            if (filename) {
+                document.getElementById('g-filename').value = filename;
+            }
+        });
+    }, 1000);
+
+    document.getElementById('g-upload').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const fileReader = new FileReader();
+
+        fileReader.onload = function (evt) {
+            document.getElementById('g-filename').value = file.name;
+            db.upsert(storeName, 'name', file.name);
+
+            const map = new Map();
+            for (const line of evt.target.result.split('\n')) {
+                if (line.length <= 1 || line.startsWith('#')) {
+                    continue;
+                }
+
+                const tline = line.split('\t');
+                map.set(tline[0], tline[3]);
+            }
+            
+            db.upsert(storeName, 'data', map);
+        };
+
+        fileReader.readAsText(file);
+    });
+</script>
