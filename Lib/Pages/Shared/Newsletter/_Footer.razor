@@ -12,6 +12,7 @@
 
 @if (!User.Features.HasFlag(Features.Demo))
 {
+    <hr style="margin-block:1ex;">
     <div><small><b>Send Day</b> - @User.SendDay.ToString()</small></div>
 
     <div><small><b>Max Ingredients</b> - @User.MaxIngredients</small></div>

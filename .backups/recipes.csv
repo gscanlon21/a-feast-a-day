@@ -37,12 +37,12 @@
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg	0	\N
 55	Oven Roasted Asparagus	\N	\N	\N	8	10	5	1	t	0	parmesan-roasted-asparagus.jpg	0	\N
 56	Microwave Macaroni and Cheese in a Mug	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	\N	\N	6	5	5	1	t	0	mac-n-cheese-mug.jpg	0	\N
-57	Flying Saucers	https://www.tasteofhome.com/recipes/flying-saucers/	\N	\N	14	5	5	4	t	0	\N	0	\N
+57	Flying Saucers	\N	\N	\N	14	5	5	4	t	0	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/flying-saucers/
 58	Fruity Peanut Butter Pitas	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	\N	\N	11	0	5	2	t	0	fruity-peanut-butter-pitas.jpg	0	\N
 59	Popcorn	\N	\N	\N	16	5	0	1	t	1048577	popcorn.jpg	0	\N
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-salsa-alt.jpg	0	\N
 61	Toasted Pita Bowl Salad	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	\N	\N	3	12	20	2	t	0	pita-bowl-salad.jpg	0	\N
-62	Edamame & Veggie Rice Bowl	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	\N	\N	3	5	5	1	t	0	edamame-veggie-rice-bowl.jpg	0	\N
+62	Edamame & Veggie Rice Bowl	\N	\N	\N	3	5	5	2	t	0	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/
 63	Grilled Sausage-Basil Pizzas	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	\N	\N	4	15	15	4	t	0	grilled-sausage-basil-pizza.jpg	0	\N
 64	French Bread Pizza	https://www.thespruceeats.com/french-bread-pizza-4845402	\N	\N	4	15	5	4	t	0	french-bread-pizza.jpg	0	\N
 65	Hard Boiled Eggs	\N	\N	\N	17	10	2	1	t	4194308	hardboiled-eggs.jpg	0	\N
@@ -68,7 +68,7 @@
 85	Pasta Fresca	https://iowagirleats.com/pasta-fresca/	\N	\N	6	15	5	4	t	0	pasta-fresca.jpg	0	\N
 86	Cheesy Ham and Broccoli Rice Skillet	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	\N	\N	6	15	5	3	t	4194308	cheesy-ham-broccoli-rice.jpg	0	\N
 87	Korean Beef Lettuce Wraps	https://iowagirleats.com/korean-beef-lettuce-wraps/	\N	\N	6	15	5	4	t	0	chicken-lettuce-wraps.jpg	0	\N
-88	Homemade Teriyaki Sauce	https://www.recipetineats.com/homemade-teriyaki-sauce/	\N	\N	0	10	5	1	t	0	teriyaki-sauce.jpg	6	\N
+88	Homemade Teriyaki Sauce	https://www.recipetineats.com/homemade-teriyaki-sauce/	\N	\N	0	10	5	1	t	4194308	teriyaki-sauce.jpg	6	\N
 89	Homemade Crunchy Taco Hamburger Helper	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	\N	\N	4	15	5	5	t	0	taco-hamburger-helper.jpg	0	\N
 90	Mini BBQ Cheddar Meatloaves	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	\N	\N	4	15	5	4	t	0	chedder-meatloaf.jpg	0	\N
 91	Large Batch Homemade Taco Seasoning	https://iowagirleats.com/large-batch-homemade-taco-seasoning	\N	\N	0	0	5	1	t	0	taco-seasoning.jpg	6	\N
@@ -112,7 +112,7 @@
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	0	honey-mustard-chicken.jpg	0	\N
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	0	lemon-grass-pork-burger.jpg	0	\N
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	4194308	cajun-spiced-chicken.jpg	0	\N
-132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	0	tandori-chicken-kebabs.jpg	0	\N
+132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	1099536793600	tandori-chicken-kebabs.jpg	0	\N
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	0	stir-fried-chicken-basil-chilli.jpg	0	\N
 134	Oven Burgers	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0	\N
 135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed. - https://iowagirleats.com/easiest-baked-chicken-breast/	\N	\N	4	20	10	1	t	2097154	baked-chicken-breast.jpg	0	\N
@@ -195,12 +195,12 @@
 245	Methylation Trail Mix	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	\N	\N	16	20	5	10	t	0	trail-mix.jpg	0	\N
 246	Creamy Garlicky Chicken With Cauliflower Rice	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	\N	\N	4	45	20	2	t	0	\N	0	\N
 247	Gluten-Free Nut Crunch Snack	https://www.drkarafitzgerald.com/recipe/gluten-free-nut-crunch-snack/	\N	\N	16	0	5	4	t	2097154	nut-crunch-snack.jpg	0	\N
-248	Fennel Soup	https://www.drkarafitzgerald.com/recipe/fennel-soup/	\N	\N	6	45	5	4	t	72057628938731524	fennel-soup.jpg	0	\N
+248	Fennel Soup	\N	\N	\N	6	45	5	4	t	72057628938731524	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/
 249	Sesame-Ginger Carrots	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	\N	\N	8	45	5	5	t	0	sesame-ginger-carrots.jpg	0	\N
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO. - https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	\N	\N	4	30	20	4	t	6291462	turkey-veggies.jpg	0	\N
 251	Tahini-Lemon Dressing	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	\N	\N	0	0	5	1	t	0	\N	6	\N
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	hummus-vegetables.jpg	0	\N
-253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. - https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	\N	\N	16	120	10	5	t	17179885568	apricot-butter-bars.jpg	0	\N
+253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use.	\N	\N	16	120	10	5	t	17179885568	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/
 254	Maple-Pecan Dip	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	\N	\N	0	0	10	1	t	144115188482703364	hummus.jpg	6	\N
 255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	144115188478509056	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days. - https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	\N	\N	0	0	5	1	t	-9223372034304638976	anti-aging-pesto.jpg	6	\N
@@ -211,7 +211,7 @@
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	4194308	chicken-noodle-stir-fry.jpg	0	\N
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	0	buttermilk.jpg	6	\N
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	0	20	3	t	0	tahini-carrot-slaw.jpg	0	\N
-264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	0	egg-fried-rice.jpg	0	\N
+264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	4194308	egg-fried-rice.jpg	0	\N
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	0	\N	0	\N
 266	Sweet Potato Cauliflower Curry	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	\N	\N	4	55	5	4	t	0	\N	0	\N
 267	Curried Mung Bean Soup	\N	\N	\N	4	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/
@@ -239,7 +239,7 @@
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	2	2	t	1099536793600	\N	0	\N
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version. https://www.glutenfreepalate.com/crockpot-christmas-crack/	\N	\N	32	60	5	4	t	1073742848	\N	0	\N
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	4194308	sausage-carbonara.jpg	0	\N
-324	Crème Fraîche	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	\N	\N	0	0	5	1	t	0	\N	6	\N
+324	Crème Fraîche	\N	\N	\N	0	0	5	1	t	0	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step
 325	Anti-Allergy Salad	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	\N	\N	8	10	5	2	t	0	anti-allergy-salad.jpg	0	\N
 326	Sticky Teriyaki Aubergine	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	teriyaki-aubergine.jpg	0	\N
 359	Healthy Chocolate Smoothie	\N	\N	\N	24	0	5	2	t	134217856	healthy-chocolate-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/
@@ -265,5 +265,8 @@
 379	Easy Sauteéd Zucchini	\N	\N	\N	8	8	2	2	t	4194308	\N	0	https://simply-delicious-food.com/easy-sauteed-zucchini/
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	48	30	15	4	t	0	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	4	15	5	2	t	4194308	\N	0	https://www.healthline.com/recipes/zucchini-noodles-pesto
-382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	4	120	9	4	t	6291462	\N	0	\N
-383	Sticky Hoisin Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	25	5	2	t	6291462	\N	0	\N
+382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	4	120	9	4	t	6291462	beef-stew.jpg	0	\N
+383	Sticky Hoisin Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	25	5	2	t	6291462	sticky-hoissin-chicken.jpg	0	\N
+384	Carrot & Grain Salad	\N	\N	\N	3	15	3	2	t	4194308	\N	0	From Jamie Oliver's 5 Ingredients
+385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	6	2	t	4194308	\N	0	\N
+386	Chicken with Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	4194308	\N	0	\N
