@@ -186,7 +186,7 @@ public partial class NewsletterRepo
     }
 
     /// <summary>
-    /// Root route for building out the workout routine newsletter based on a date.
+    /// Re-builds the newsletter for a specific date.
     /// </summary>
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
     {
