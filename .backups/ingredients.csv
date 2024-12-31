@@ -173,7 +173,7 @@
 176	\N	Avocado Oil	https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	-infinity	9	224	32768
 177	\N	Corn Oil	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	0	13.6	13.6	2024-06-22	7	240	0
 178	\N	Coconut Milk	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
-179	\N	Oat Milk	\N	\N	f	0	240	100	-infinity	6	240	0
+179	\N	Oat Milk	https://www.eatthismuch.com/calories/oat-milk-1690079	\N	f	1024	240	240	2024-12-29	6	240	29360128
 180	\N	Quinoa Milk, Vanilla	https://www.eatthismuch.com/food/nutrition/quinoa-milk-vanilla,2308361	\N	f	0	240	240	2024-06-11	6	240	0
 181	\N	Hemp Milk	\N	\N	f	0	240	100	-infinity	6	240	0
 182	\N	Macadamia Milk	https://www.eatthismuch.com/calories/macadamia-milk,1609220	\N	f	0	244.8	244.8	2024-06-24	6	240	0
@@ -252,7 +252,7 @@
 259	\N	Eggplant	https://www.eatthismuch.com/calories/eggplant,1975	\N	f	0	548	548	2024-08-12	0	82	2
 260	\N	Plum Tomatoes	https://www.eatthismuch.com/calories/plum-tomato,89975	\N	f	0	148	148	2024-09-09	0	227	1
 261	\N	Couscous	https://www.eatthismuch.com/calories/couscous-4793	\N	f	0	173	173	2024-08-10	6	173	4
-262	\N	Pepperoni	\N	\N	f	0	240	100	-infinity	0	240	0
+262	\N	Pepperoni	https://www.eatthismuch.com/calories/pepperoni-925	\N	f	0	28	28	2024-12-30	4	224	268435456
 263	\N	Pork/Beef Pepperoni	https://www.eatthismuch.com/food/nutrition/pepperoni,925/	\N	f	0	2	28	2024-07-11	0	224	0
 264	\N	Potatoes	https://www.eatthismuch.com/calories/russet-potatoes-2092	\N	f	0	369	369	2024-06-16	0	150	2
 265	\N	White Jasmine Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/white-jasmine-rice-1655821	\N	f	4096	180	45	2024-09-30	6	180	1024
@@ -372,7 +372,7 @@
 380	\N	Smoked Pancetta Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
 381	\N	Smoked Pancetta Slices | Smoked Bacon Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
 382	\N	Orecchiette	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
-383	\N	Sumac	https://www.eatthismuch.com/calories/sumac-540983	\N	f	0	24	4	-infinity	4	128	131072
+383	\N	Sumac	https://www.eatthismuch.com/calories/sumac-540983	\N	f	0	28	4	2024-12-31	4	192	131072
 385	\N	Gomiti Pasta	\N	\N	f	32	240	100	2024-09-28	6	240	4
 386	\N	Tubular Pasta	https://www.eatthismuch.com/calories/elbows,468629	\N	f	32	23	56	2024-08-15	4	184	0
 387	\N	Boneless Skinless Chicken Breasts	https://www.eatthismuch.com/calories/boneless-skinless-breast-fillets-2730224	\N	f	0	112	112	2024-06-13	0	224	268435456
@@ -520,7 +520,7 @@
 590	\N	Chestnuts	https://www.eatthismuch.com/food/nutrition/water-chestnuts,155522/	\N	f	0	228	114	2024-06-12	6	228	524288
 591	\N	Hamburger Buns, GF	https://www.eatthismuch.com/calories/hamburger-buns-gluten-free-1786165	\N	f	0	79	79	2024-10-21	0	79	2
 592	\N	Black Olive Tapenade	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2024-06-13	7	240	0
-593	\N	Thai Red Curry Paste	\N	\N	f	0	16	16	-infinity	7	256	3
+593	\N	Thai Red Curry Paste	https://www.eatthismuch.com/calories/red-curry-paste-490608	\N	f	0	28	15	2024-12-29	4	240	8192
 594	\N	Butternut Squash	\N	\N	f	0	4520	152	2024-08-26	0	152	1
 595	\N	Mushrooms	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
 596	\N	Kaffir Lime Leaves	https://www.eatthismuch.com/calories/limes,1438	\N	f	0	67	67	2024-06-10	0	240	1
@@ -557,7 +557,7 @@
 627	\N	Medjool Dates	https://www.eatthismuch.com/calories/dates-1591	\N	f	0	24	24	2024-06-15	0	192	1
 628	\N	Coconut Milk (Plain)	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	6
 629	\N	Coconut Milk (Vanilla)	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	6
-630	\N	Almond Milk (Vanilla)	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	-infinity	6	240	4194304
+630	\N	Almond Milk (Vanilla)	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-12-30	6	240	4194304
 631	\N	Almond Milk (Plain)	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-11-01	6	240	4194304
 632	\N	Pink Lady Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 633	\N	Cosmic Crisp Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
@@ -754,7 +754,7 @@
 855	\N	Fresh Podded Snow Peas | Frozen Podded Snow Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2024-12-09	4	63	2
 856	\N	Fresh Spinach | Fresh Kale	https://www.eatthismuch.com/calories/spinach-2170 - https://www.eatthismuch.com/calories/kale-1995	\N	f	0	28	30	2024-12-28	4	30	2
 857	\N	Frozen Raspberries	https://www.eatthismuch.com/calories/raspberries-1547	\N	f	0	123	123	2024-12-21	6	123	33554432
-858	\N	Frozen Strawberries | Frozen Raspberries	https://www.eatthismuch.com/calories/whole-fresh-frozen-strawberries-100309	\N	f	0	28	140	-infinity	4	140	33554432
+858	\N	Frozen Strawberries | Frozen Raspberries	https://www.eatthismuch.com/calories/strawberries-1560	\N	f	0	28	149	2024-12-31	4	149	33554432
 859	\N	Dairy-Free Milk	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	6
 860	\N	Water | Dairy-Free Milk	https://www.eatthismuch.com/calories/water-3203	\N	f	0	29.625	237	2024-12-26	9	237	29360128
 861	\N	Fresh Mixed-Color Zucchini	https://www.eatthismuch.com/calories/zucchini-2183	\N	f	0	196	196	2024-06-12	0	196	2

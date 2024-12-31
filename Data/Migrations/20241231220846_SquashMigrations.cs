@@ -27,6 +27,21 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "gene",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    DisabledReason = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_gene", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "user",
                 columns: table => new
                 {
@@ -52,6 +67,28 @@ namespace Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_user", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "snp",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    DisabledReason = table.Column<string>(type: "text", nullable: true),
+                    GeneId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_snp", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_snp_gene_GeneId",
+                        column: x => x.GeneId,
+                        principalTable: "gene",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -263,6 +300,29 @@ namespace Data.Migrations
                         name: "FK_user_token_user_UserId",
                         column: x => x.UserId,
                         principalTable: "user",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "study",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    Source = table.Column<string>(type: "text", nullable: false),
+                    DisabledReason = table.Column<string>(type: "text", nullable: true),
+                    SNPId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_study", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_study_snp_SNPId",
+                        column: x => x.SNPId,
+                        principalTable: "snp",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -483,6 +543,30 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "study_ingredient",
+                columns: table => new
+                {
+                    StudyId = table.Column<int>(type: "integer", nullable: false),
+                    IngredientId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_study_ingredient", x => new { x.StudyId, x.IngredientId });
+                    table.ForeignKey(
+                        name: "FK_study_ingredient_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_study_ingredient_study_StudyId",
+                        column: x => x.StudyId,
+                        principalTable: "study",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "user_feast_recipe_ingredient",
                 columns: table => new
                 {
@@ -549,6 +633,21 @@ namespace Data.Migrations
                 name: "IX_recipe_instruction_RecipeId",
                 table: "recipe_instruction",
                 column: "RecipeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_snp_GeneId",
+                table: "snp",
+                column: "GeneId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_study_SNPId",
+                table: "study",
+                column: "SNPId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_study_ingredient_IngredientId",
+                table: "study_ingredient",
+                column: "IngredientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_Email",
@@ -646,6 +745,9 @@ namespace Data.Migrations
                 name: "recipe_instruction");
 
             migrationBuilder.DropTable(
+                name: "study_ingredient");
+
+            migrationBuilder.DropTable(
                 name: "user_email");
 
             migrationBuilder.DropTable(
@@ -673,16 +775,25 @@ namespace Data.Migrations
                 name: "user_token");
 
             migrationBuilder.DropTable(
+                name: "study");
+
+            migrationBuilder.DropTable(
                 name: "user_feast_recipe");
 
             migrationBuilder.DropTable(
                 name: "ingredient");
 
             migrationBuilder.DropTable(
+                name: "snp");
+
+            migrationBuilder.DropTable(
                 name: "recipe");
 
             migrationBuilder.DropTable(
                 name: "user_feast");
+
+            migrationBuilder.DropTable(
+                name: "gene");
 
             migrationBuilder.DropTable(
                 name: "user");
