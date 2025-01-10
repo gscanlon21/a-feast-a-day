@@ -193,20 +193,16 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userRecipe = await _context.UserRecipes
+        var userRecipes = await _context.UserRecipes
             .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
-            .FirstAsync();
+            .ToListAsync();
 
-        // May be null if the recipe was soft/hard deleted.
-        if (userRecipe == null)
+        foreach (var userRecipe in userRecipes)
         {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+            userRecipe.IgnoreUntil = userRecipe.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null;
+            await _context.SaveChangesAsync();
         }
-
-        userRecipe.IgnoreUntil = userRecipe.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null;
-        await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
