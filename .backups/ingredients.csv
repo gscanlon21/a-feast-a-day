@@ -66,7 +66,7 @@
 67	\N	Black Pepper	https://www.eatthismuch.com/calories/pepper,205	\N	t	0	6	6	2024-09-03	7	96	131072
 68	\N	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2024-07-09	7	120	0
 69	\N	Red Pepper Flakes	https://www.eatthismuch.com/calories/crushed-red-pepper-flakes,5832	\N	t	0	1	1	2024-08-16	7	16	4
-70	\N	Cinnamon	\N	\N	t	0	240	100	-infinity	6	240	131072
+70	\N	Cinnamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
 71	\N	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195	\N	t	0	10	10	2024-10-18	7	160	131072
 72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	7	7	2024-08-26	7	112	3
 73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
@@ -225,7 +225,7 @@
 231	\N	Garden Veggie Good Thins, GF	Box	\N	f	4096	2	32	2024-08-13	0	224	262144
 232	\N	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679	\N	f	0	28	28	2024-10-21	7	224	3
 233	\N	Sunflower Oil	https://www.eatthismuch.com/calories/sunflower-oil,292	\N	f	0	14	14	2024-09-18	7	224	3
-234	\N	Superfine Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	f	0	200	200	-infinity	6	200	114688
+234	\N	Superfine Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	f	0	28	200	2025-01-16	4	200	114688
 235	\N	Chinese Cooking Wine	\N	\N	f	0	240	100	-infinity	6	240	0
 236	\N	Sherry	https://www.eatthismuch.com/calories/sherry-765630	\N	f	0	28	28	2024-10-02	4	224	3
 237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2024-08-23	6	240	0
@@ -339,7 +339,7 @@
 347	\N	Blood Oranges	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	0
 348	\N	Pink Himalayan Salt	https://www.eatthismuch.com/calories/himalayan-pink-salt,152245	\N	t	0	4	1	2024-08-08	8	192	131072
 349	\N	Kosher Salt | Pink Himalayan Salt	https://www.eatthismuch.com/food/nutrition/kosher-salt-coarse,2313857/	\N	t	0	4	1	2024-09-30	8	192	131072
-350	\N	Steak Seasoning	\N	\N	f	0	240	100	-infinity	0	240	0
+350	\N	Steak Seasoning	https://www.eatthismuch.com/calories/steak-seasoning-2721614	\N	f	0	28	1	2025-01-18	4	192	0
 352	\N	Cantaloupe Melon	https://www.eatthismuch.com/calories/melons-1450	\N	f	0	552	552	2024-12-05	0	156	1
 353	\N	Baby Carrots	https://www.eatthismuch.com/calories/baby-carrots,2569	\N	f	0	246	246	2024-08-22	6	246	1
 354	\N	Frozen Carrot Slices	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	0
@@ -534,7 +534,7 @@
 605	\N	Butter | Sunflower Oil	\N	\N	t	0	14	14	2024-08-20	7	224	6
 606	\N	Butter | Oil	\N	\N	t	0	14	14	2024-08-20	7	224	6
 607	\N	Frozen Mixed-Berries	https://www.eatthismuch.com/calories/mixed-berries-87958	\N	f	0	28	140	2024-12-22	4	140	33554432
-608	\N	Frozen Strawberries	\N	\N	f	0	240	100	-infinity	6	240	0
+608	\N	Frozen Strawberries	https://www.eatthismuch.com/calories/strawberries-1560	\N	f	0	28	149	2025-01-16	4	149	33554432
 609	\N	Slices of Whole Grain Bread, GF	https://www.eatthismuch.com/calories/gluten-free-whole-grain-bread-2114723	\N	f	0	26	26	2024-10-09	0	52	2
 610	\N	Gammon Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/gammon-7453	\N	f	0	453.592	453.592	2024-10-14	0	240	268435456
 611	\N	Fresh Chervil	https://www.eatthismuch.com/calories/chervil-183	\N	f	0	2	2	2024-10-10	7	32	3
@@ -682,10 +682,10 @@
 784	\N	Fresh Podded Fava Beans | Frozen Fava Beans	https://www.eatthismuch.com/calories/fava-beans-2580	\N	f	0	28	126	2024-10-17	4	126	2048
 785	\N	Lemons | Limes	https://www.eatthismuch.com/calories/lemons-1433	\N	f	0	108	108	2024-10-22	0	216	1
 786	\N	Pumpkin Seeds | Pepitas	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	18.66	28	-infinity	4	149.28	1048576
-787	\N	Pepitas	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	18.66	28	-infinity	4	149.28	1048576
+787	\N	Pepitas	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	18.66	28	2025-01-17	4	149.28	1048576
 788	\N	Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
 789	\N	Mangos	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2024-06-14	0	207	1
-790	\N	Watercress Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	-infinity	4	34	2
+790	\N	Watercress Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 791	\N	Black Bean Sauce	https://www.eatthismuch.com/calories/black-bean-sauce-464282	\N	f	0	32	32	2024-10-17	9	256	8192
 792	\N	Unenriched Medium Egg Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	262176	28	38	2024-07-24	4	38	4096
 793	\N	Mustard Seeds	https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	0	144	9	2024-06-11	6	144	131072
@@ -714,14 +714,14 @@
 816	\N	Frozen Podded Lima Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	118	118	2024-07-16	6	118	67108864
 817	\N	Frozen Podded Snow Peas	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	118	118	2024-07-16	6	118	67108864
 818	\N	Frozen Podded Snap Peas	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	118	118	2024-07-16	6	118	67108864
-819	\N	Fresh Podded Green Peas | Frozen Podded Green Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	145	145	-infinity	6	145	1
+819	\N	Fresh Podded Green Peas | Frozen Podded Green Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2025-01-15	4	63	2
 820	\N	Fresh Podded Fava Beans | Frozen Podded Fava Beans	https://www.eatthismuch.com/calories/fava-beans-2580	\N	f	0	126	126	2024-10-17	6	126	2048
 821	\N	Parsnips	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	1
 822	\N	Light Vanilla Ice Cream	https://www.eatthismuch.com/calories/vanilla-ice-cream-4469	\N	f	0	216	13.6	2024-06-11	6	240	234881024
 823	\N	Rich Vanilla Ice Cream	https://www.eatthismuch.com/calories/vanilla-ice-cream-4470	\N	f	0	216	13.6	2024-06-11	6	240	234881024
 824	\N	Bok Choy	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2024-06-14	0	240	1
 825	\N	Frozen Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
-826	\N	Fresh Podded Snap Peas | Frozen Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	-infinity	4	145	2
+826	\N	Fresh Podded Snap Peas | Frozen Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	2025-01-17	4	145	2
 827	\N	Fresh Podded Snap Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2
 828	\N	Fresh Podded Snap Peas | Frozen Podded Snap Peas	https://www.eatthismuch.com/calories/peas-2060	\N	f	0	63	63	2024-12-08	6	63	2
 829	\N	Chili Jam	https://www.eatthismuch.com/calories/chili-sauce-857	\N	f	0	245	245	2024-10-13	6	245	3
@@ -801,3 +801,5 @@
 965	\N	Plain Coconut Yogurt	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
 966	\N	Coconut Milk | Plain Coconut Yogurt	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
 967	\N	Gluten-Free Egg Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	0	4.75	38	2024-07-24	4	38	4096
+968	\N	Apple Cider Vinegar | Lemon Juice	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	30	239	2025-01-07	9	239	32
+969	\N	Salt & Pepper	https://www.eatthismuch.com/calories/pepper-205	\N	t	0	28	6	2024-11-12	4	96	131072

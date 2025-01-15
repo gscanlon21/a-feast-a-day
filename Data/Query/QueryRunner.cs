@@ -291,8 +291,6 @@ public class QueryRunner(Section section)
                         // Prerequisite recipe already exists and is scalable, scale it.
                         if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe) && existingIngredientRecipe.Recipe.AdjustableServings)
                         {
-                            // FIXME: Scale is stored as int and rounds up, so if two recipe ingredients from distinct recipes
-                            // ... only use a fraction of the recipe, the scale will end up being more than doubled.
                             existingIngredientRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
                         }
                         else if (!RecipeOptions.IgnorePrerequisites)
