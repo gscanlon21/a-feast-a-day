@@ -50,11 +50,11 @@
                         oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
                     <input type="range" style="width:100%;" id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
-                            name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" list="hashmarks2"
-                            min="0" max="60" step="5" value="@Model.Recipe.PrepTime"
-                            oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
+                           name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" list="preptime-hashmarks"
+                           min="0" max="60" step="5" value="@Model.Recipe.PrepTime"
+                           oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
 
-                    <datalist id="hashmarks2" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                    <datalist id="preptime-hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
                         <option value="0"></option>
                         <option value="15"></option>
                         <option value="30"></option>
@@ -80,12 +80,12 @@
                 <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;"
                         oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                    <input type="range" style="width:100%;"
-                            name="@Html.IdFor(_ => Model.Recipe.CookTime)Input" list="hashmarks3" id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
-                            min="0" max="120" step="5" value="@Model.Recipe.CookTime"
-                            oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
+                    <input type="range" style="width:100%;" list="cooktime-hashmarks"
+                           name="@Html.IdFor(_ => Model.Recipe.CookTime)Input" id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
+                           min="0" max="120" step="5" value="@Model.Recipe.CookTime"
+                           oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
 
-                    <datalist id="hashmarks3" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                    <datalist id="cooktime-hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
                         <option value="0"></option>
                         <option value="30"></option>
                         <option value="60"></option>
@@ -110,14 +110,14 @@
                 <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
                 <div style="display:flex;column-gap:1ex;">
                     <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;"
-                           oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
+                           oninput="@Html.IdFor(_ => Model.Recipe.Servings)-input.value = this.valueAsNumber" />
                     <div style="display:flex;flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
-                        <input type="range" style="width:100%;"
-                               name="@Html.IdFor(_ => Model.Recipe.Servings)Input" list="hashmarks1" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
+                        <input type="range" style="width:100%;" list="servings-hashmarks"
+                               name="@Html.IdFor(_ => Model.Recipe.Servings)-input" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
                                min="1" max="10" step="1" value="@Model.Recipe.Servings"
                                oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
 
-                        <datalist id="hashmarks1" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                        <datalist id="servings-hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
                             <option value="2"></option>
                             <option value="4"></option>
                             <option value="6"></option>
@@ -125,11 +125,11 @@
                             <option value="10"></option>
 
                             <!-- These need to be separate from the <option> elements because those have their position attribute overridden (from absolute to static) on Firefox -->
-                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</span>
-                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</span>
-                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</span>
-                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(80% - .5ch)">8</span>
-                            <span style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</span>
+                            <span onclick="@(Html.IdFor(_ => Model.Recipe.Servings)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.Servings)-input').value = this.dataset.value" data-value="2" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(14% - .5ch)">2</span>
+                            <span onclick="@(Html.IdFor(_ => Model.Recipe.Servings)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.Servings)-input').value = this.dataset.value" data-value="4" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(36% - .5ch)">4</span>
+                            <span onclick="@(Html.IdFor(_ => Model.Recipe.Servings)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.Servings)-input').value = this.dataset.value" data-value="6" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(58% - .5ch)">6</span>
+                            <span onclick="@(Html.IdFor(_ => Model.Recipe.Servings)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.Servings)-input').value = this.dataset.value" data-value="8" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;left:calc(80% - .5ch)">8</span>
+                            <span onclick="@(Html.IdFor(_ => Model.Recipe.Servings)).value = document.getElementById('@Html.IdFor(_ => Model.Recipe.Servings)-input').value = this.dataset.value" data-value="10" style="white-space:nowrap;text-decoration:underline;cursor:pointer;position:absolute;right:-2.5ch">10</span>
                         </datalist>
                     </div>
                 </div>

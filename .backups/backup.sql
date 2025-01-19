@@ -6003,6 +6003,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 11406	70	1984	\N	\N	3	0.1
 11407	70	62	\N	\N	3	6
 11408	70	2047	\N	\N	3	19
+11409	870	128	\N	\N	3	1
+11410	870	256	\N	\N	3	3
+11411	870	512	\N	\N	3	7
+11412	870	1024	\N	\N	3	2
+11413	870	4294967296	\N	\N	2	0.1
+11414	870	70368744177664	\N	\N	2	0.1
+11415	870	536870912	\N	\N	2	0.1
+11416	870	1536	\N	\N	3	9
+11417	870	3221225472	\N	\N	1	1
+11418	870	1792	\N	\N	3	12
+11419	870	1984	\N	\N	3	14
+11420	870	2047	\N	\N	3	120
 \.
 
 
@@ -7795,6 +7807,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5619	7	\N	\N	398	1	1	\N	123	f	\N	7
 5620	0	\N	\N	398	1	1	, wedged, for garnish	12	t	\N	8
 5621	7	\N	\N	398	1	1	, for garnish	13	t	\N	9
+5622	0	\N	\N	399	1	1	(WHOLE CHICKEN), cut into pieces	24	f	\N	0
+5623	6	\N	\N	399	1	2	\N	736	f	\N	1
+5624	6	\N	\N	399	1	2	\N	156	f	\N	2
+5625	6	\N	\N	399	1	2	\N	123	f	\N	3
+5626	7	\N	\N	399	1	1	\N	964	f	\N	4
+5627	8	\N	\N	399	4	1	, to taste	74	f	\N	5
 \.
 
 
@@ -8438,6 +8456,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2583	Top with avocado slices and enjoy!	\N	250	5
 2614	Rip off and reserve the top leafy half of the mint. Put the stalks in a pan of boiling salted water, then add the beans and peas and cook for 4 minutes. Meanwhile, halve and seed the chili and finely chop with the top leafy half of the mint. Place in a bowl, finely grate over a little lemon zest, then squeeze in all the juice. Add 2 tablespoons of extra virgin olive oil, mix, taste, and season to perfection with sea salt and black pepper.	\N	306	0
 2615	Drain the beans and peas, reserving a cupful of cooking water and discarding the mint stalks. Pinch the skins off any larger beans, then pour the beans and peas onto a platter, toss with a few splashes of reserved cooking water, then spoon over the dressing. Drizzle with 1 more tablespoon of extra virgin olive oil and toss together at the table before tucking in.	\N	306	1
+3091	Combine in a dutch oven and bake at 350°F for 2 hours.	\N	399	0
 2426	In a small saucepan over low heat, bring everything except the gelatin to a gentle boil.	\N	232	0
 2427	Take off the heat and stir until the coconut is melted and well combined.	\N	232	1
 2428	Put the warm blueberry mixture into a blender and add the gelatin powder. Process until completely smooth (will be fairly thick).	\N	232	2
@@ -8792,7 +8811,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 11408, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 11420, true);
 
 
 --
