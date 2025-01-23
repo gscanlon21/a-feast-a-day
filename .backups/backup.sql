@@ -6015,6 +6015,74 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 11418	870	1792	\N	\N	3	12
 11419	870	1984	\N	\N	3	14
 11420	870	2047	\N	\N	3	120
+11421	703	128	\N	\N	3	0.3
+11422	703	68719476736	\N	\N	2	163
+11423	703	34359738368	\N	\N	2	1544
+11424	703	2	\N	\N	3	29
+11425	703	1	\N	\N	3	12
+11426	703	4294967296	\N	\N	2	363
+11427	703	2199023255552	\N	\N	2	4
+11428	703	48	\N	\N	3	23
+11429	703	14	\N	\N	3	30
+11430	703	1984	\N	\N	3	1
+11431	703	62	\N	\N	3	53
+11432	703	2047	\N	\N	3	227
+11433	809	68719476736	\N	\N	2	2
+11434	809	34359738368	\N	\N	2	211
+11435	809	2	\N	\N	3	16
+11436	809	1	\N	\N	3	2
+11437	809	4294967296	\N	\N	2	44
+11438	809	2199023255552	\N	\N	2	1
+11439	809	48	\N	\N	3	8
+11440	809	14	\N	\N	3	16
+11441	809	1984	\N	\N	3	1
+11442	809	62	\N	\N	3	24
+11443	809	2047	\N	\N	3	97
+11444	365	34359738368	\N	\N	2	518
+11445	365	2	\N	\N	3	1
+11446	365	1	\N	\N	3	14
+11447	365	4294967296	\N	\N	2	17
+11448	365	2199023255552	\N	\N	2	3
+11449	365	48	\N	\N	3	6
+11450	365	14	\N	\N	3	28
+11451	365	1984	\N	\N	3	2
+11452	365	62	\N	\N	3	34
+11453	365	2047	\N	\N	3	190
+11454	872	68719476736	\N	\N	2	25
+11455	872	1	\N	\N	3	2
+11456	872	4294967296	\N	\N	2	78
+11457	872	2199023255552	\N	\N	2	1
+11458	872	48	\N	\N	3	4
+11459	872	14	\N	\N	3	1
+11460	872	1984	\N	\N	3	0.5
+11461	872	62	\N	\N	3	5
+11462	872	2047	\N	\N	3	35
+11463	748	128	\N	\N	3	1
+11464	748	2048	\N	\N	2	20
+11465	748	68719476736	\N	\N	2	17
+11466	748	34359738368	\N	\N	2	68
+11467	748	1	\N	\N	3	6
+11468	748	4294967296	\N	\N	2	5
+11469	748	2199023255552	\N	\N	2	0.3
+11470	748	402653184	\N	\N	1	0.1
+11471	748	1984	\N	\N	3	2
+11472	748	2047	\N	\N	3	42
+11473	235	68719476736	\N	\N	2	175
+11474	235	14	\N	\N	3	2
+11475	235	62	\N	\N	3	2
+11476	235	2047	\N	\N	3	20
+11477	825	128	\N	\N	3	0.1
+11478	825	68719476736	\N	\N	2	145
+11479	825	34359738368	\N	\N	2	205
+11480	825	2	\N	\N	3	7
+11481	825	1	\N	\N	3	7
+11482	825	4294967296	\N	\N	2	29
+11483	825	2199023255552	\N	\N	2	2
+11484	825	48	\N	\N	3	6
+11485	825	14	\N	\N	3	12
+11486	825	1984	\N	\N	3	1
+11487	825	62	\N	\N	3	18
+11488	825	2047	\N	\N	3	103
 \.
 
 
@@ -6726,7 +6794,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3924	7	\N	\N	197	1	3	\N	62	f	\N	2
 3925	7	\N	\N	197	1	1	(RICE WINE | DRY SHERRY)	312	f	\N	3
 3926	7	\N	\N	197	1	1	(DARK SESAME OIL)	101	f	\N	4
-5217	0	\N	\N	311	1	2	\N	105	f	\N	0
 3316	0	\N	\N	144	2	1	\N	352	f	\N	0
 3317	6	\N	\N	144	1	1	\N	10	f	\N	1
 3318	7	\N	\N	144	1	1	, plus extra for dusting	570	t	\N	2
@@ -6770,6 +6837,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3031	6	\N	\N	135	4	1	\N	547	f	\N	1
 3032	8	\N	\N	135	4	1	\N	73	f	\N	2
 3541	4	\N	\N	183	4	3	, plus extra to serve	379	t	\N	4
+5217	0	\N	\N	311	1	2	\N	105	f	\N	0
 3033	8	\N	\N	135	8	1	\N	71	f	\N	3
 5147	7	\N	\N	23	1	4	\N	29	f	\N	0
 5148	6	\N	\N	23	1	1	, finely chopped (1/4 cup)	3	f	\N	1
@@ -6828,7 +6896,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2959	7	\N	\N	147	1	4	\N	410	f	\N	1
 2960	0	\N	\N	147	1	2	\N	5	f	\N	2
 2961	0	\N	\N	147	1	1	, juiced	4	f	\N	3
-5218	0	\N	\N	311	1	2	\N	1	f	\N	1
 2839	0	\N	\N	148	2	3	, day-old or toasted	273	f	\N	0
 2840	0	\N	\N	148	1	3	, roasted, skinned, and chopped	8	f	\N	1
 2841	0	\N	\N	148	1	2	, roasted, skinned, and chopped	224	f	\N	2
@@ -6858,13 +6925,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3880	0	\N	\N	133	1	2	,seeded and finely chopped	224	t	\N	2
 3881	7	\N	\N	133	1	3	\N	78	f	\N	3
 3882	7	\N	\N	133	1	3	\N	557	t	\N	4
-5219	0	\N	\N	311	1	4	\N	821	f	\N	2
-5220	0	\N	\N	311	1	12	(CHIPOLATA OR SMALL PORK SAUSAGES)	401	f	\N	3
 5119	4	\N	\N	310	1	6	\N	638	f	\N	0
 5120	7	\N	\N	310	1	4	, for the sauce	123	f	\N	1
 5121	7	\N	\N	310	1	1	\N	502	f	\N	2
 5122	7	\N	\N	310	1	1	\N	29	f	\N	3
-5221	7	\N	\N	311	1	1	\N	39	f	\N	4
 5326	7	\N	\N	321	1	2	\N	56	f	\N	3
 5327	0	\N	\N	321	1	1	\N	224	f	\N	4
 5401	6	\N	\N	363	4	1	\N	77	f	\N	0
@@ -6893,6 +6957,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2918	8	\N	\N	152	8	1	\N	285	f	\N	4
 4321	6	\N	\N	82	4	3	, diced small	150	t	\N	3
 4322	6	\N	\N	82	3	1	\N	61	f	\N	4
+5218	0	\N	\N	311	1	2	\N	1	f	\N	1
+5219	0	\N	\N	311	1	4	\N	821	f	\N	2
+5220	0	\N	\N	311	1	12	\N	868	f	\N	3
+5221	7	\N	\N	311	1	1	\N	39	f	\N	4
 2947	7	\N	\N	154	1	6	, softened	29	f	\N	0
 2948	8	\N	\N	154	1	2	\N	70	f	\N	1
 2949	7	\N	\N	154	1	2	, plus extra to serve	234	f	\N	2
@@ -7813,6 +7881,27 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5625	6	\N	\N	399	1	2	\N	123	f	\N	3
 5626	7	\N	\N	399	1	1	\N	964	f	\N	4
 5627	8	\N	\N	399	4	1	, to taste	74	f	\N	5
+5628	0	\N	\N	400	1	3	\N	17	t	\N	0
+5629	0	\N	\N	400	1	1	, peeled and pitted	9	f	\N	1
+5630	0	\N	\N	400	1	2	, peeled	\N	f	65	2
+5631	7	\N	\N	400	1	1	\N	965	f	\N	3
+5632	8	\N	\N	400	2	1	\N	74	f	\N	4
+5633	6	\N	\N	400	4	3	\N	747	f	\N	5
+5634	6	\N	\N	401	1	1	, rinsed well	20	f	\N	0
+5635	0	\N	\N	401	1	2	\N	123	f	\N	1
+5636	6	\N	\N	401	1	1	, cut into thin slices	155	f	\N	2
+5637	6	\N	\N	401	1	1	\N	57	f	\N	3
+5638	6	\N	\N	401	1	1	, cut in half	147	f	\N	4
+5639	6	\N	\N	401	2	1	\N	334	f	\N	5
+5640	6	\N	\N	401	1	1	(LEMON AND HERB DRESSING, p148)	358	f	\N	6
+5641	6	\N	\N	402	1	4	, sliced	10	f	\N	0
+5642	7	\N	\N	402	1	1	\N	215	f	\N	1
+5643	6	\N	\N	402	1	2	\N	871	f	\N	2
+5644	6	\N	\N	402	1	2	, diced	159	f	\N	3
+5645	6	\N	\N	402	1	1	(JICAMA), diced	159	t	\N	4
+5646	0	\N	\N	402	1	1	, juiced	12	f	\N	5
+5647	7	\N	\N	402	2	3	\N	39	f	\N	6
+5648	7	\N	\N	402	1	1	, minced	251	f	\N	7
 \.
 
 
@@ -8113,7 +8202,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1248	Finely chop the chilies, garlic and shallot, then stir into the mashed avocado with the olive oil and lemon juice. Add salt to taste.	\N	70	2
 1249	Spoon the mixture into a small serving bowl. Drizzle over a little olive oil and scatter with a few flat leaf parsley leaves. Serve.	\N	70	3
 2889	Place a poached egg on each salad. Top with thin Parmesan shavings and a little ground black pepper.	\N	84	3
-2855	Preheat the oven to 350°F. Place a large non-stick ovenproof frying pan on a medium-high heat. Peel the onions, cut into quarters, and quickly break apart into petals directly into the pan, tossing regularly, then add 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Quarter and core the apples, then toss into the pan. Use a vegetable peeler to peel the parsnips into long strips. Stir 1 tablespoon of red wine vinegar into the frying pan, then pile the parsnips on top of the apples and onions.	\N	311	0
 2133	Wash and dry your potatoes.	\N	32	0
 2134	Once the potatoes are washed and dried you are going to place each one on a piece of aluminum foil large enough for it to be wrapped inside. Drizzle each potato with about a little olive oil and sprinkle with a little salt.	\N	32	1
 2135	Rub the oil and salt into each potato and then wrap them up in the foil and place them flat in the bottom of the crock pot.	\N	32	2
@@ -8130,6 +8218,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1820	Once you've got all your ingredients in the blender, blend it up until it's completely smooth. Then pour your patter onto your prepared pan and smooth it over with your spatula.	\N	44	0
 1821	Bake the pizza crust for about 15 minutes, then flip it over and bake another 10 – 15 minutes.	\N	44	1
 1822	Final step: top your pizza with your desired toppings, pop it back in the oven and let everything cook/melt. Slice it up and you're ready to eat!	\N	44	2
+2855	Preheat the oven to 350°F. Place a large non-stick ovenproof frying pan on a medium-high heat. Peel the onions, cut into quarters, and quickly break apart into petals directly into the pan, tossing regularly, then add 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Quarter and core the apples, then toss into the pan. Use a vegetable peeler to peel the parsnips into long strips. Stir 1 tablespoon of red wine vinegar into the frying pan, then pile the parsnips on top of the apples and onions.	\N	311	0
 1728	Cut the pork into thin shreds and put these on top of the refried beans. Top with the tomato slices. Drain the jalapeno strips and put them on top of the tomato slices. Add the cheese and sprinkle with coriander leaves.	\N	164	3
 1729	Turn the top halves of the bread or rolls over so that the cut sides are uppermost, and spread these with creme fraiche. Sandwich back together again and serve. 	\N	164	4
 2748	Trim ½” off cilantro ends and remove any woody stalks, wash thoroughly in a salad spinner and spin dry.	\N	256	0
@@ -8367,6 +8456,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1622	Preheat the grill (broiler). Thread alternate pieces of chicken and onion on to four skewers (pre-soaked in water if wooden).	\N	132	1
 692	Remove from the oven and top with remaining chopped parsley.	\N	64	6
 693	Serve immediately with extra Parmesan cheese.	\N	64	7
+3092	Dice the tomatoes, and chop the avocado and hard boiled eggs. Combine them in a large bowl.	\N	400	0
+3093	Add the coconut yogurt and the sauerkraut. Toss and serve.	\N	400	1
 2972	Add all of the ingredients to a bowl and whisk together. 	\N	363	0
 3083	Add to a slow cooker and cook on low for 8 hours.	\N	396	2
 3084	Serve with steamed rice or cauliflower rice.	\N	396	3
@@ -8375,11 +8466,14 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1965	Cook the steaks for 3-4 minutes on each side, then pour in the cider. Allow to boil for a couple of minutes, then stir in the cream and cook for 1-2 minutes, or until thickened. Season with salt and pepper. and serve immediately.	\N	174	1
 2754	In a food processor, combine all ingredients and blend until a sticky dough is formed. It doesn’t have to be completely smooth, but it does have to stick together!	\N	236	0
 2755	Remove the processing blade and form into 1-inch balls.	\N	236	1
+3094	Cook 1 cup of quinoa per package instructions.	\N	401	0
+3095	Add the quinoa into a bowl, fluff with a fork and allow it to cool.	\N	401	1
 2567	Set the oven to 375F.	\N	271	0
 2568	Heat the oil in a large sauté pan over medium heat. Add the onions, celery and garlic and cook, stirring, until softened (about 20-30 minutes, depending on the size of your vegetable pieces). Take off the heat.	\N	271	1
 2569	In a food processor, add the chicken livers, bacon, almond meal, non-dairy milk, thyme, sage, salt and pepper and pulse to chop the livers and combine thoroughly. Add the sautéed veggies and pulse to mix through.	\N	271	2
 2570	Fill a medium baking dish with the stuffing mixture. Bake in the oven for 30 minutes or until thoroughly cooked through and starting to brown on top.	\N	271	3
 2571	Serve immediately, along with the rest of your feast!	\N	271	4
+3096	Add the cucumbers, chickpeas, cherry tomatoes and corn to the bowl of quinoa and mix. Toss dressing over the salad.	\N	401	2
 2002	Arrange the cucumber, potato and pepper slices and the pitted olives on a serving plate or in a dish.	\N	189	0
 2003	Sprinkle the chopped fresh chilli over the salad and season with salt, if you like. (Olives tend to be very salty.)	\N	189	1
 2004	Sprinkle the garlic, spring onions, olive oil, white wine vinegar and lemon juice over the salad. Chill before serving, sprinkled with the chopped mint leaves and coriander leaves.	\N	189	2
@@ -8441,6 +8535,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2
 3085	Add all ingredients into a salad bowl.	\N	397	0
 3086	Toss, mix and enjoy.	\N	397	1
+3097	Place strawberries in a large bowl and toss in the maple syrup. Toss to coat.	\N	402	0
+3098	Add blueberries, watermelon, and jicama to the bowl.	\N	402	1
+3099	In a small bowl, stir together lime juice, honey and mint. Pour over fruit and toss to coat.	\N	402	2
 2578	Preheat oven to 400°F.	\N	250	0
 2579	Dice potatoes and zucchini separately and set aside. Chop cauliflower and arugula separately and set aside.	\N	250	1
 2289	Heat 30ml/2 tbsp of the oil in a non-stick frying pan. Add the red pepper and onion and cook over a low heat for 8-10 minutes, or until the vegetables are just soft, stirring occasionally.	\N	195	0
@@ -8614,7 +8711,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2391	Heat oil in a large skillet over medium heat. Add fajita vegetables and sauté until tender, about 10 minutes.	\N	38	0
 2392	Stir in black beans, seasoning and salt; cook, stirring, until heated through, about 1 minute.	\N	38	1
 2393	Divide the vegetables and beans between two bowls and top each with 2 tablespoons cheese, if using.	\N	38	2
-2856	Lay the sausages on top, the drizzle with 1 tablespoon of olive oil and add a pinch of black pepper from a height. Bake for 30 minutes, then drizzle over the honey and return to the oven for 5 minutes, or until golden and delicious.	\N	311	1
 2909	Preheat the oven to 350°F. Place a large shallow casserole pan on a high heat. Peel and quarter the onions and quickly break apart into petals straight into the pan. Char for 4 minutes, tossing regularly. Reduce to a medium heat and stir in 1 tablespoon of olive oil and the salami, then rice, followed 1 minute later by 5 cups of boiling kettle water and the mascarphone. Finely grate and stir in the Parmesan with a pinch of sea salt and place pepper.	\N	317	0
 2910	Transfer the pan to the oven for 40 minutes, or until the rice has absorbed all the liquid and is just cooked through. Drizzle 1 tablespoon of extra virgin olive oil and dish up, seasoning to perfection at the table.	\N	317	1
 2911	Cook the noodles in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Meanwhile, trim and finely slice the scallions, and finely slice the ham.	\N	318	0
@@ -8630,6 +8726,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2915	Preheat the oven to 350°F. Halve the cherry tomatoes, peel and finely slice the garlic, and tear the bread into bite-sized chunks. Place it all in a 14x12-inch roasting pan, pour in the beans and their juice, drizzle with 1 tablespoon of olive oil and red wine vinegar, add a splash of water, and mix it all together. Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	\N	320	0
 2916	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	\N	320	1
 2324	Using a rubber spatula, mix ingredients together until thoroughly blended.	\N	82	1
+2856	Lay the sausages on top, the drizzle with 1 tablespoon of olive oil and add a pinch of black pepper from a height. Bake for 30 minutes, then drizzle over the honey and return to the oven for 5 minutes, or until golden and delicious.	\N	311	1
 2918	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through. Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	1
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	\N	262	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	\N	262	1
@@ -8811,7 +8908,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 11420, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 11488, true);
 
 
 --
