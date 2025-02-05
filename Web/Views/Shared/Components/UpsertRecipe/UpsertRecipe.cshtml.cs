@@ -59,6 +59,9 @@ public class UpsertRecipeModel : IValidatableObject
     [Display(Name = "Adjustable Servings")]
     public bool AdjustableServings { get; set; } = true;
 
+    [Display(Name = "Base Recipe")]
+    public bool BaseRecipe { get; set; } = false;
+
     public string? DisabledReason { get; set; } = null;
 
     [JsonInclude, ValidateNever]

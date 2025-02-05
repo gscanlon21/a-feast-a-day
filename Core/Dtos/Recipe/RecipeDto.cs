@@ -24,6 +24,7 @@ public class RecipeDto
     public string? Image { get; init; } = null;
 
     public int Servings { get; init; }
+    public bool BaseRecipe { get; init; }
     public bool AdjustableServings { get; init; }
 
     public int PrepTime { get; init; }

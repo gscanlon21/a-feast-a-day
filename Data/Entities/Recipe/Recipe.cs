@@ -53,6 +53,9 @@ public class Recipe
     public int Servings { get; set; } = RecipeConsts.ServingsDefault;
 
     [Required]
+    public bool BaseRecipe { get; set; } = false;
+
+    [Required]
     public bool AdjustableServings { get; set; } = true;
 
     public string? DisabledReason { get; set; } = null;

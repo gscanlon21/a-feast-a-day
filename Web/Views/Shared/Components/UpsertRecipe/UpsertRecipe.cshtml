@@ -49,8 +49,9 @@
                 <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;"
                         oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                    <input type="range" style="width:100%;" id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
-                           name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" list="preptime-hashmarks"
+                    <input type="range" class="w-100" list="preptime-hashmarks" 
+                           id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
+                           name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" 
                            min="0" max="60" step="5" value="@Model.Recipe.PrepTime"
                            oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
 
@@ -80,8 +81,9 @@
                 <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;"
                         oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
                 <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
-                    <input type="range" style="width:100%;" list="cooktime-hashmarks"
-                           name="@Html.IdFor(_ => Model.Recipe.CookTime)Input" id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
+                    <input type="range" class="w-100" list="cooktime-hashmarks"
+                           id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
+                           name="@Html.IdFor(_ => Model.Recipe.CookTime)Input"
                            min="0" max="120" step="5" value="@Model.Recipe.CookTime"
                            oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
 
@@ -110,10 +112,11 @@
                 <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
                 <div style="display:flex;column-gap:1ex;">
                     <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;"
-                           oninput="@Html.IdFor(_ => Model.Recipe.Servings)-input.value = this.valueAsNumber" />
+                           oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
                     <div style="display:flex;flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
-                        <input type="range" style="width:100%;" list="servings-hashmarks"
-                               name="@Html.IdFor(_ => Model.Recipe.Servings)-input" id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
+                        <input type="range" class="w-100" list="servings-hashmarks"
+                               id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
+                               name="@Html.IdFor(_ => Model.Recipe.Servings)Input"
                                min="1" max="10" step="1" value="@Model.Recipe.Servings"
                                oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
 
@@ -145,13 +148,23 @@
             </div>
         </div>
 
-        <div class="form-group form-check mb-3">
-            <div>
-                <span><label asp-for="Recipe.AdjustableServings" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.AdjustableServings)</label></span>
-                <input class="form-check-input allow-demo" asp-for="Recipe.AdjustableServings" aria-describedby="adjustable-servings-help" />
+        <div class="row mb-3">
+            <div class="col form-group">
+                <div class="form-check">
+                    <span><label asp-for="Recipe.AdjustableServings" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.AdjustableServings)</label></span>
+                    <input class="form-check-input allow-demo" asp-for="Recipe.AdjustableServings" aria-describedby="adjustable-servings-help" />
+                </div>
+                <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
+                <div id="adjustable-servings-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
             </div>
-            <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
-            <div id="adjustable-servings-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
+            <div class="col-auto form-group">
+                <div class="form-check">
+                    <span><label asp-for="Recipe.BaseRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.BaseRecipe)</label></span>
+                    <input class="form-check-input allow-demo" asp-for="Recipe.BaseRecipe" aria-describedby="base-recipe-help" />
+                </div>
+                <span asp-validation-for="Recipe.BaseRecipe" class="text-danger"></span>
+                <div id="base-recipe-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.BaseRecipe)</div>
+            </div>
         </div>
 
         <div class="mb-3" >

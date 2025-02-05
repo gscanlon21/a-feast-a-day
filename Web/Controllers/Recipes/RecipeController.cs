@@ -91,6 +91,7 @@ public class RecipeController : ViewController
                 CookTime = recipe.CookTime,
                 PrepTime = recipe.PrepTime,
                 Equipment = recipe.Equipment,
+                BaseRecipe = recipe.BaseRecipe,
                 AdjustableServings = recipe.AdjustableServings,
                 Instructions = recipe.Instructions.Where(i => !i.Hide).ToList(),
                 RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList()
@@ -127,6 +128,7 @@ public class RecipeController : ViewController
             existingRecipe.CookTime = recipe.CookTime;
             existingRecipe.PrepTime = recipe.PrepTime;
             existingRecipe.Equipment = recipe.Equipment;
+            existingRecipe.BaseRecipe = recipe.BaseRecipe;
             existingRecipe.AdjustableServings = recipe.AdjustableServings;
             existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
             existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();

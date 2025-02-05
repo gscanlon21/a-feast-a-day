@@ -72,8 +72,7 @@ public class UpsertRecipeViewComponent : ViewComponent
         return (await _context.Recipes.AsNoTracking().TagWithCallSite()
             .Where(r => r.UserId == null || r.UserId == user.Id)
             .Where(r => allEquipment.HasFlag(r.Equipment))
-            // Some ingredients recipes can stand on their own, such as a simple salad that can be used in a sandwich.
-            //.Where(r => singleOrNoneSections.Contains(r.Section)) // This doesn't work for Hard Boiled Eggs.
+            .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)
             .ToListAsync())
             .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
