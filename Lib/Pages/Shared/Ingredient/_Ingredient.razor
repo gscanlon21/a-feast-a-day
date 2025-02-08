@@ -9,43 +9,33 @@
 @using Core.Models.Newsletter
 @using Core.Dtos.Ingredient
 
-@*
-    Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
-*@
-<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;justify-content:space-between;
+@* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
+<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;
             border-bottom:4px solid currentColor;border-image-slice:1;outline:1px solid currentColor;background-color:transparent;">
 
-    @if (User != null)
-    {
-        @* Check min and max progression ranges so they don't ignore an exercise outside of their progression range. *@
-        <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
-            <a class="allow-demo" target="_blank" href="@DH.IngredientLink(User, $"{RecipeId}/{Model.Id}")">Manage</a>
-        </small>
-    }
+    <div> @* For margin collapse. *@
+        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:1ch;">
+            <span style="flex:1 1 auto;">
+                <span style="text-decoration:underline;">@Model.Name</span>
+            </span>
 
-    @* div for margin-collapse between text content and image. *@
-    <div>
-        @* min-height so the Manage link doesn't overlap the image. *@
-        <div style="min-height:5ch;">
-            @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
-            <div style="padding-inline-end:1.1ch">
-                <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
-                    <span style="text-decoration:underline;">@Model.Name</span>
-                </h3>
+            @if (User != null)
+            {
+                <a class="allow-demo" style="text-decoration:none;margin:-10px -10px 0 0;padding:10px 10px 0 0;" target="_blank" href="@DH.IngredientLink(User, $"{RecipeId}/{Model.Id}")">&#127760;</a>
+            }
+        </h3>
 
-                <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Notes</b>: @Model.Notes</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Default Measure</b>: @Model.DefaultMeasure.GetSingleDisplayName()</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Measure</b>: @Model.GramsPerMeasure</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Cup</b>: @Model.GramsPerCup</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName2()</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName()</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Category</b>: @Model.Category.GetSingleDisplayName()</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Alternatives</b>: @string.Join(", ", Model.Alternatives.Select(ai => ai.AlternativeIngredient.Name))</div>
-                <div style="margin-block:.5em;font-size:x-small;"><b>Is Alternative Of</b>: @string.Join(", ", Model.AlternativeIngredients.Select(ai => ai.Ingredient.Name))</div>
-            </div>
-        </div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Notes</b>: @Model.Notes</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Default Measure</b>: @Model.DefaultMeasure.GetSingleDisplayName()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Measure</b>: @Model.GramsPerMeasure</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Cup</b>: @Model.GramsPerCup</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Nutrients</b>: @Model.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n.Nutrients).GetDisplayName2()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Category</b>: @Model.Category.GetSingleDisplayName()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Alternatives</b>: @string.Join(", ", Model.Alternatives.Select(ai => ai.AlternativeIngredient.Name))</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Is Alternative Of</b>: @string.Join(", ", Model.AlternativeIngredients.Select(ai => ai.Ingredient.Name))</div>
     </div>
 </div>
 
