@@ -32,112 +32,103 @@
     };
 }
 
-@*
-    Use `em` for spacing and font sizes--it's more consistent across fonts/mediums.
-*@
-<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;justify-content:space-between;
+@* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
+<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;
             border-bottom:4px solid @borderColor;border-image-slice:1;outline:1px solid @borderColor;background-color:@backgroundColor;">
-    
-    @if (User != null)
-    {
-        <small style="position:absolute;right:0;top:0;padding-inline:1ch;writing-mode:vertical-lr;">
-            <a class="allow-demo" target="_blank" href="@DH.RecipeLink(User, $"{Model.Section}/{Model.Recipe.Id}")">Manage</a>
-        </small>
-    }
          
-    @* div for margin-collapse between text content and image. *@
-    <div>
-        @* min-height so the Manage link doesn't overlap the image. *@
-        <div style="min-height:5ch;">
-            @* padding-inline-end so title and instruction text doesn't overlap with the Manage link. *@
-            <div style="padding-inline-end:1.1ch">
-                <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;">
-                    @if (string.IsNullOrWhiteSpace(Model.Recipe.Link))
-                    {
-                        <span style="text-decoration:underline;">@Model.Recipe.Name</span>
-                    }
-                    else
-                    {
-                        <a class="allow-demo" target="_blank" href="@Model.Recipe.Link">@Model.Recipe.Name</a>
-                    }
-                </h3>
-
-                @if (Verbosity.HasFlag(Verbosity.Notes))
+    <div> @* For margin collapse. *@
+        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:1ch;">
+            <span style="flex:1 1 auto;">
+                @if (string.IsNullOrWhiteSpace(Model.Recipe.Link))
                 {
-                    <div style="margin-block:.5em;font-size:x-small;word-break:break-word;">@Model.Recipe.Notes</div>
+                    <span style="text-decoration:underline;">@Model.Recipe.Name</span>
                 }
-
-                @if (Verbosity.HasFlag(Verbosity.Debug))
+                else
                 {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Section</b>: @Model.Recipe.Section.GetDisplayName()</div>
+                    <a class="allow-demo" target="_blank" href="@Model.Recipe.Link">@Model.Recipe.Name</a>
                 }
+            </span>
 
-                @if (Verbosity.HasFlag(Verbosity.PrepTime))
-                {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @Model.Recipe.PrepTime min</div>
-                }
-
-                @if (Verbosity.HasFlag(Verbosity.CookTime))
-                {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @Model.Recipe.CookTime min</div>
-                }
-
-                @if (Verbosity.HasFlag(Verbosity.TotalTime))
-                {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @Model.Recipe.TotalTime min</div>
-                }
-
-                @if (Verbosity.HasFlag(Verbosity.Servings))
-                {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Recipe.Servings @Model.Recipe.Measure.GetSingleDisplayName(DisplayType.ShortName)</div>
-
-                    @if (Verbosity.HasFlag(Verbosity.Debug))
-                    {
-                        <div style="margin-block:.5em;font-size:x-small;"><b>Base Recipe</b>: @Model.Recipe.BaseRecipe</div>
-                        <div style="margin-block:.5em;font-size:x-small;"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
-                    }
-                }
-
-                @if (Verbosity.HasFlag(Verbosity.Equipment) && (Model.Recipe.Equipment != Equipment.None || Verbosity.HasFlag(Verbosity.Debug)))
-                {
-                    <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment.GetDisplayName()</div>
-                }
-
-                <ul style="margin-block:1em;padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var ingredient in Model.RecipeIngredients)
-                    {
-                        <li style="margin-block:.35em;list-style-type:disc;">
-                            @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName(DisplayType.ShortName)) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
-                        </li>
-                    }
-                </ul>
-
-                <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
-                    @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))
-                    {
-                        <li style="margin-block:.35em;list-style-type:decimal;">
-                            @instruction.Name
-                        </li>
-                    }
-                </ul>
-            </div>
-
-            @if (!string.IsNullOrWhiteSpace(Model.UserRecipe?.Notes))
+            @if (User != null)
             {
-                <div style="margin-block:.5em;">
-                    <small>@Model.UserRecipe.Notes</small>
-                </div>
+                <a class="allow-demo" style="text-decoration:none;margin:-10px -10px 0 0;padding:10px 10px 0 0;" target="_blank" href="@DH.RecipeLink(User, $"{Model.Section}/{Model.Recipe.Id}")">&#127760;</a>
             }
-        </div>
+        </h3>
 
-        @if (Verbosity.HasFlag(Verbosity.Images))
+        @if (Verbosity.HasFlag(Verbosity.Notes))
         {
-            var staticSrc = $"{SiteSettings.Value.CdnLink}/static/{Model.Recipe.Image}";
-            // If we want to reduce layout shift with aspect-ratio, that really needs to be included on the table with the image because our images don't have consistent aspect ratios. 
-            // Setting min-height (200 / (25/14)) gets us close though. 25/14 is, for the most part, our widest aspect-ratio.
-            <img style="display:block;margin-top:1ex;height:auto;min-height:112px;max-height:200px;max-width:100%;object-fit:contain;object-position:left top;" loading="lazy" src="@staticSrc">
+            <div style="margin-block:.5em;font-size:x-small;word-break:break-word;">@Model.Recipe.Notes</div>
+        }
+
+        @if (Verbosity.HasFlag(Verbosity.Debug))
+        {
+            <div style="margin-block:.5em;font-size:x-small;"><b>Section</b>: @Model.Recipe.Section.GetDisplayName()</div>
+        }
+
+        @if (Verbosity.HasFlag(Verbosity.PrepTime))
+        {
+            <div style="margin-block:.5em;font-size:x-small;"><b>Prep time</b>: @Model.Recipe.PrepTime min</div>
+        }
+
+        @if (Verbosity.HasFlag(Verbosity.CookTime))
+        {
+            <div style="margin-block:.5em;font-size:x-small;"><b>Cook time</b>: @Model.Recipe.CookTime min</div>
+        }
+
+        @if (Verbosity.HasFlag(Verbosity.TotalTime))
+        {
+            <div style="margin-block:.5em;font-size:x-small;"><b>Total time</b>: @Model.Recipe.TotalTime min</div>
+        }
+
+        @if (Verbosity.HasFlag(Verbosity.Servings))
+        {
+            <div style="margin-block:.5em;font-size:x-small;"><b>Servings</b>: @Model.Recipe.Servings @Model.Recipe.Measure.GetSingleDisplayName(DisplayType.ShortName)</div>
+
+            @if (Verbosity.HasFlag(Verbosity.Debug))
+            {
+                <div style="margin-block:.5em;font-size:x-small;"><b>Base Recipe</b>: @Model.Recipe.BaseRecipe</div>
+                <div style="margin-block:.5em;font-size:x-small;"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
+            }
+        }
+
+        @if (Verbosity.HasFlag(Verbosity.Equipment) && (Model.Recipe.Equipment != Equipment.None || Verbosity.HasFlag(Verbosity.Debug)))
+        {
+            <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment.GetDisplayName()</div>
+        }
+
+        <ul style="margin-block:1em;padding-inline-start:2ch;font-size:.85em;">
+            @foreach (var ingredient in Model.RecipeIngredients)
+            {
+                <li style="margin-block:.35em;list-style-type:disc;">
+                    @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName(DisplayType.ShortName)) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
+                </li>
+            }
+        </ul>
+
+        <ul style="margin-block:0;padding-inline-start:2ch;font-size:.85em;">
+            @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))
+            {
+                <li style="margin-block:.35em;list-style-type:decimal;">
+                    @instruction.Name
+                </li>
+            }
+        </ul>
+
+        @if (!string.IsNullOrWhiteSpace(Model.UserRecipe?.Notes))
+        {
+            <div style="margin-block:.5em;">
+                <small>@Model.UserRecipe.Notes</small>
+            </div>
         }
     </div>
+
+    @if (Verbosity.HasFlag(Verbosity.Images))
+    {
+        var staticSrc = $"{SiteSettings.Value.CdnLink}/static/{Model.Recipe.Image}";
+        // If we want to reduce layout shift with aspect-ratio, that really needs to be included on the table with the image because our images don't have consistent aspect ratios. 
+        // Setting min-height (200 / (25/14)) gets us close though. 25/14 is, for the most part, our widest aspect-ratio.
+        <img style="display:block;height:auto;min-height:112px;max-height:200px;max-width:100%;object-fit:contain;object-position:left top;" loading="lazy" src="@staticSrc">
+    }
 </div>
 
 @code {
