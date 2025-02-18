@@ -4,15 +4,19 @@
              xmlns:local="clr-namespace:Hybrid"
              xmlns:converter="clr-namespace:Hybrid.Converters"
              xmlns:pages="clr-namespace:Hybrid.Pages"
+             xmlns:entities="clr-namespace:Hybrid.Database.Entities"
              xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              xmlns:newsletter="clr-namespace:Hybrid.Database.Entities;assembly=Hybrid"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="local:ShoppingListPageViewModel"
              x:Class="Hybrid.ShoppingListPage"
+             x:Name="ShoppingList"
              Title="Shopping List">
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior
             EventName="Appearing"
+            BindingContext="{Binding Path=BindingContext, Source={x:Reference ShoppingList}}"
             Command="{Binding LoadCommand}" />
     </ContentPage.Behaviors>
 
@@ -36,13 +40,14 @@
                           SelectionMode="None" HasUnevenRows="True">
                     
                     <ListView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="entities:ShoppingListItem">
                             <ViewCell>
                                 <Grid ColumnDefinitions="60,*" >
-                                    <CheckBox IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
+                                    <CheckBox x:Name="Checkbox" IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}">
                                         <CheckBox.Behaviors>
                                             <toolkit:EventToCommandBehavior
                                                 Command="{Binding BindingContext.WhenCheckedCommand, Source={x:Reference shoppingListView}}"
+                                                BindingContext="{Binding Path=BindingContext, Source={x:Reference Checkbox}}"
                                                 CommandParameter="{Binding .}"
                                                 EventName="CheckedChanged" />
                                         </CheckBox.Behaviors>
