@@ -9,7 +9,7 @@ public class ShoppingListDto
     public required IList<ShoppingListItemDto> ShoppingList { get; init; } = [];
 
     /// <summary>
-    /// Add the item count so if the user ignores a recipe, the list changes.
+    /// Hash to differ different shopping lists.
     /// </summary>
-    public int Hash => unchecked(unchecked(NewsletterId * 100) + ShoppingList.Count);
+    public int Hash => NewsletterId;
 }

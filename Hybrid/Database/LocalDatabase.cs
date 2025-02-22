@@ -60,12 +60,22 @@ public class LocalDatabase
     /// Remove all non-custom items and checked custom items.
     /// </summary>
     /// <returns></returns>
-    public async Task<int> DeleteItemsAsync()
+    public async Task<int> DeleteItemsAsync(bool includeCustomChecked = false)
     {
         await Init();
-        return await Database.ExecuteAsync($@"
+
+        if (includeCustomChecked)
+        {
+            return await Database.ExecuteAsync($@"
 DELETE FROM [{nameof(ShoppingListItem)}] 
 WHERE [{nameof(ShoppingListItem.IsCustom)}] = 0
 OR [{nameof(ShoppingListItem.IsChecked)}] = 1");
+        }
+        else
+        {
+            return await Database.ExecuteAsync($@"
+DELETE FROM [{nameof(ShoppingListItem)}] 
+WHERE [{nameof(ShoppingListItem.IsCustom)}] = 0");
+        }
     }
 }

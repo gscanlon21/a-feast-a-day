@@ -108,10 +108,11 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 var shoppingList = (await _userService.GetShoppingList(_preferences.Email.Value, _preferences.Token.Value)).GetValueOrDefault();
                 if (shoppingList != null)
                 {
-                    // If the recipes changed, reset the shopping list.
+                    // If the newsletter changed, reset the shopping list.
                     if (shoppingListHash != shoppingList.Hash)
                     {
-                        _ = await _localDatabase.DeleteItemsAsync();
+                        // Delete all items except for custom items that haven't been checked.
+                        _ = await _localDatabase.DeleteItemsAsync(includeCustomChecked: true);
 
                         // Update the shopping list hash, so we don't reset again until next week.
                         Preferences.Default.Set(nameof(PreferenceKeys.ShoppingListHash), shoppingList.Hash);
@@ -120,19 +121,15 @@ public partial class ShoppingListPageViewModel : ObservableObject
                     // Merge local and remote items into the db.
                     var localItems = await _localDatabase.GetItemsAsync();
                     var remoteItems = shoppingList.ShoppingList.Select(sl => new ShoppingListItem(sl)).ToList();
+                    // Clear the local database of non-custom items for a refresh of remote items.
+                    _ = await _localDatabase.DeleteItemsAsync(includeCustomChecked: false);
+
                     foreach (var remoteItem in remoteItems)
                     {
-                        if (!localItems.Contains(remoteItem))
-                        {
-                            await _localDatabase.SaveItemAsync(remoteItem);
-                        }
-                    }
-                    foreach (var localItem in localItems)
-                    {
-                        if (!localItem.IsCustom && !remoteItems.Contains(localItem))
-                        {
-                            await _localDatabase.DeleteItemAsync(localItem);
-                        }
+                        // Keeping the checked status for the remote items.
+                        var localItem = localItems.FirstOrDefault(li => li.Equals(remoteItem));
+                        remoteItem.IsChecked = localItem?.IsChecked ?? remoteItem.IsChecked;
+                        await _localDatabase.SaveItemAsync(remoteItem);
                     }
 
                     // Re-pull the list from the db so the Ids are up to date.
