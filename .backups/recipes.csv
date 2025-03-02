@@ -80,7 +80,7 @@
 97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	0	quinoa-pizza.jpg	0	\N	f
 98	Loaded Deviled Eggs	\N	\N	\N	25	20	5	4	t	0	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f
 99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	4194308	pasta-asparagus-cream.jpg	0	\N	f
-100	Buttermilk Pancakes	\N	\N	\N	3	12	2	4	t	0	buttermilk-pancakes.jpg	0	\N	f
+100	Buttermilk Pancakes	\N	\N	\N	3	12	2	4	t	4194308	buttermilk-pancakes.jpg	0	\N	t
 101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	2	12	3	2	t	4194308	linguine-arugula.jpg	0	\N	f
 102	Colcannon	\N	\N	\N	8	10	5	3	t	4194308	colcannon.jpg	0	\N	f
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	0	\N	0	\N	f
@@ -106,7 +106,7 @@
 123	Sweet and Sour Cucumber with Fresh Dill	This salad can be kept in the refrigerator for up to a week.	\N	\N	8	0	10	4	t	0	cucumber-dill.jpg	0	\N	f
 124	Pan-Fried Chicken with Pesto	\N	\N	\N	4	18	2	1	t	4194308	pesto-chicken.jpg	0	\N	f
 125	Pesto	\N	\N	\N	0	0	5	1	t	268435712	pesto.jpg	6	\N	f
-126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	0	bacon-shops-apple-cider-sauce.jpg	0	\N	f
+126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	4194308	bacon-shops-apple-cider-sauce.jpg	0	\N	f
 127	Roast Chicken Pitta Pockets	\N	\N	\N	6	2	13	6	t	0	\N	0	\N	f
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	4	16	4	4	t	0	chicken-soy-sauce.jpg	0	\N	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	2097154	honey-mustard-chicken.jpg	0	\N	f
@@ -134,7 +134,7 @@
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	0	spaghetti-lemon.jpg	0	\N	f
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	4194308	potato-olive-salad.jpg	0	\N	f
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	32	3	2	2	t	33554464	cinnamon-toast.jpg	0	\N	f
-155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	0	pancakes-pears.jpg	0	\N	f
+155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	6291462	pancakes-pears.jpg	0	\N	f
 156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	2097154	banana-ice-cream.jpg	0	\N	f
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	8	0	6	6	t	0	fruit-skewers.jpg	0	\N	f
 158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	0	fruit-skewers.jpg	0	\N	f
@@ -164,7 +164,7 @@
 182	Beef and Noodles	\N	\N	\N	4	20	10	4	t	0	beef-noodles.jpg	0	https://www.saltandlavender.com/easy-beef-and-noodles/	f
 183	Chestnut Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	5	10	2	t	4194308	sausage-carbonara.jpg	0	\N	f
 184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	4611686018834235396	pasta-pesto.jpg	0	\N	f
-185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	0	pasta-vegetables.jpg	0	\N	f
+185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	4194308	pasta-vegetables.jpg	0	\N	f
 186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	6	15	10	1	t	4194308	grilled-chicken-sandwich.jpg	0	\N	f
 187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	\N	\N	3	5	3	4	t	0	oatmeal-pancakes.jpg	0	\N	f
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	10	0	12	4	t	0	vegetable-salad.jpg	0	\N	f
@@ -232,15 +232,15 @@
 314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	chicken-noodle-stir-fry.jpg	0	\N	f
 315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	20	6	4	t	6291462	baked-saffron-rice.jpg	0	\N	f
 316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	3	2	t	4194308	black-tahini-noodles.jpg	0	\N	f
-317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	10	4	t	6291462	\N	0	\N	f
+317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	10	4	t	6291462	italian-baked-rice.jpg	0	\N	f
 318	Ham & Egg Curried Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	0	2	t	4194308	ham-egg-curried-noodles.jpg	0	\N	f
-319	Chorizo, Sweet Potato and Black Bean Rice Skillet	\N	\N	\N	4	30	10	6	t	4194308	\N	0	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	f
+319	Chorizo, Sweet Potato and Black Bean Rice Skillet	\N	\N	\N	4	30	10	6	t	4194308	chorizo-sweet-potato-black-beans-rice.jpg	0	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	f
 320	Comforting Sausage Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	45	10	4	t	2097154	sausage-bake.jpg	0	\N	f
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	2	2	t	1099536793600	\N	0	\N	f
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version.	\N	\N	32	60	5	4	t	1073742848	\N	0	https://www.glutenfreepalate.com/crockpot-christmas-crack/	f
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	4194308	sausage-carbonara.jpg	0	\N	f
 324	Crème Fraîche	\N	\N	\N	0	0	5	1	t	0	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	f
-325	Anti-Allergy Salad	\N	\N	\N	8	10	5	2	t	0	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f
+325	Anti-Allergy Salad	\N	\N	\N	10	10	5	2	t	0	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f
 326	Sticky Teriyaki Aubergine	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	teriyaki-aubergine.jpg	0	\N	f
 359	Healthy Chocolate Smoothie	\N	\N	\N	24	0	5	2	t	134217856	healthy-chocolate-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/	f
 360	Eggplant Penne Arrabbiata	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	8	4	t	4194308	eggplant-penne-arrabbiata.jpg	0	\N	f
@@ -296,15 +296,26 @@
 410	Cauliflower Mash	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	15	5	4	t	138412164	cauliflower-rice.jpg	0	\N	f
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	0	cauliflower-rice.jpg	6	\N	t
 412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	4194308	cauliflower-rice.jpg	0	\N	f
-413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	0	\N	0	\N	f
+413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	0	pumpkin-pudding.jpg	0	\N	f
 414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	\N	6	\N	t
 415	Strawberry, Mint and Cucumber Spa Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	4	4	t	0	\N	0	\N	f
 416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	10	5	4	t	4194308	\N	0	\N	f
 417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	3	30	10	6	t	2097154	egg-bites.jpg	0	\N	f
 418	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	3	30	10	6	t	2097154	egg-bites.jpg	0	\N	f
-419	Thai Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	\N	6	\N	t
+419	Thai Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	thai-dressing.jpg	6	\N	t
 420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	2097154	\N	0	\N	f
-421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	144115188478509056	\N	6	\N	t
+421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	144115188478509056	honey-lemon-dijon-dip.jpg	6	\N	t
 422	Lemon Energy Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	5	12	t	268435712	\N	0	\N	f
 423	Steamed Kale	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	4194308	\N	0	\N	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	\N	\N	1	5	5	2	t	0	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f
+425	Bacon Wrapped Avocado Slices	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	11	20	5	4	t	2097154	bacon-wrapped-avocado.jpg	0	\N	f
+426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	0	\N	6	\N	t
+427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	11	0	10	4	t	0	\N	0	\N	f
+428	Hot Lemon Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	2	1	1	t	0	\N	0	\N	f
+429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	3	1	t	0	\N	0	\N	f
+430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	10	2	t	0	\N	0	\N	f
+431	Glow Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	10	1	t	0	\N	0	\N	f
+432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	0	\N	0	\N	t
+465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	3	1	t	0	\N	0	\N	f
+466	Yogurt and Granola	\N	\N	\N	17	0	1	1	t	0	\N	0	\N	f
+467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	1	1	t	0	\N	0	\N	f
