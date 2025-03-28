@@ -75,7 +75,7 @@ public class CreateFeasts : IJob, IScheduled
             // User's send time is now.
             .Where(u => u.SendHour == currentHour)
             // User's send day is now or user is the Debug user-send emails more often.
-            .Where(u => u.SendDay == currentDay || DebugConsts.DebugDays.Contains(u.SendDay))
+            .Where(u => u.SendDay == currentDay || (u.Features.HasFlag(Features.Debug) && DebugConsts.DebugDays.Contains(u.SendDay)))
             // User is not a test or demo user.
             .Where(u => !u.Email.EndsWith(_siteSettings.Value.Domain) || u.Features.HasFlag(Features.Test) || u.Features.HasFlag(Features.Debug))
             .ToListAsync())
