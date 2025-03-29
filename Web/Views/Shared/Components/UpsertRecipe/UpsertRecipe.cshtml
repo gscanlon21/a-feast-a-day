@@ -157,6 +157,14 @@
                 <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
                 <div id="adjustable-servings-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
             </div>
+            <div class="col form-group">
+                <div class="form-check">
+                    <span><label asp-for="Recipe.KeepIngredientOrder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.KeepIngredientOrder)</label></span>
+                    <input class="form-check-input allow-demo" asp-for="Recipe.KeepIngredientOrder" aria-describedby="keep-order-help" />
+                </div>
+                <span asp-validation-for="Recipe.KeepIngredientOrder" class="text-danger"></span>
+                <div id="keep-order-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.KeepIngredientOrder)</div>
+            </div>
             <div class="col-auto form-group">
                 <div class="form-check">
                     <span><label asp-for="Recipe.BaseRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.BaseRecipe)</label></span>

@@ -62,6 +62,9 @@ public class UpsertRecipeModel : IValidatableObject
     [Display(Name = "Base Recipe")]
     public bool BaseRecipe { get; set; } = false;
 
+    [Display(Name = "Keep Ingredient Order")]
+    public bool KeepIngredientOrder { get; set; } = false;
+
     public string? DisabledReason { get; set; } = null;
 
     [JsonInclude, ValidateNever]

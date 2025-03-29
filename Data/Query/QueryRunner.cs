@@ -224,11 +224,11 @@ public class QueryRunner(Section section)
             recipe.Nutrients = allNutrients.Where(n => recipe.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
 
             // Order the recipe ingredients based on user preferences.
-            recipe.RecipeIngredients = UserOptions.IngredientOrder switch
+            recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
             {
-                not IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order).ToList(),
-                IngredientOrder.LargeToSmall => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size).ToList(),
-            };
+                (false, IngredientOrder.LargeToSmall) => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size),
+                _ => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order),
+            }).ToList();
 
             orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe)
             {

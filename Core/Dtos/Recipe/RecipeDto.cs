@@ -26,6 +26,7 @@ public class RecipeDto
     public int Servings { get; init; }
     public bool BaseRecipe { get; init; }
     public bool AdjustableServings { get; init; }
+    public bool KeepIngredientOrder { get; init; }
 
     public int PrepTime { get; init; }
     public int CookTime { get; init; }

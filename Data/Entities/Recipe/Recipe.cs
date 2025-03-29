@@ -58,6 +58,9 @@ public class Recipe
     [Required]
     public bool AdjustableServings { get; set; } = true;
 
+    [Required]
+    public bool KeepIngredientOrder { get; set; } = false;
+
     public string? DisabledReason { get; set; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.Recipes))]
