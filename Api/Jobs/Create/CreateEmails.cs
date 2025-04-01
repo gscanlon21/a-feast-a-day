@@ -95,7 +95,7 @@ public class CreateEmails : IJob, IScheduled
             // User's send time is now.
             .Where(u => u.SendHour == currentHour)
             // User's send day is now or user is the Debug user-send emails more often.
-            .Where(u => u.Features.HasFlag(Features.Debug) ? DebugConsts.DebugDays.Contains(u.SendDay) : u.SendDay == currentDay)
+            .Where(u => u.Features.HasFlag(Features.Debug) ? DebugConsts.DebugDays.Contains(currentDay) : u.SendDay == currentDay)
             // User has not received an email today.
             .Where(u => !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectFeast).Any(un => un.Date == DateHelpers.Today))
             // User is not a test or demo user.
