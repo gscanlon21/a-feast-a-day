@@ -3,7 +3,7 @@
 @using Core.Models.User
 @using Web.Code.Extensions
 
-<div class="alert alert-light shadow mb-3" role="alert">
+<div class="alert alert-secondary shadow mb-3" role="alert">
     <form id="recipe-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" method="post"
           asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
         
