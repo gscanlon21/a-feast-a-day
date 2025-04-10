@@ -8,5 +8,5 @@ public class ValidationMessagePartialModel
     public bool GoBackOnSave { get; init; }
 
     public const string DefaultFailureMessage = "Something went wrong.";
-    public const string DefaultSuccessMessage = "Your preferences have been saved. Changes will be reflected in the next feast.";
+    public const string DefaultSuccessMessage = "Your preferences have been saved. Changes will be reflected soon.";
 }

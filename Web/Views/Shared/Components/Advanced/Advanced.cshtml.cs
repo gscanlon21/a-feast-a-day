@@ -25,12 +25,12 @@ public class AdvancedViewModel
     public string Token { get; init; } = null!;
     public string Email { get; init; } = null!;
 
-    [Display(Name = "Ingredient Order", Description = "What order should ingredients be listed in a recipe?")]
+    [Display(Name = "Ingredient Order", Description = "How should recipe ingredients be ordered?")]
     public IngredientOrder IngredientOrder { get; set; }
 
-    [Display(Name = "Number of Footnotes (Top)")]
+    [Display(Name = "Number of User Footnotes", Description = "User footnotes are shown above each feast.")]
     public int FootnoteCountTop { get; set; }
 
-    [Display(Name = "Number of Footnotes (Bottom)")]
+    [Display(Name = "Number of System Footnotes", Description = "System footnotes are shown below each feast.")]
     public int FootnoteCountBottom { get; set; }
 }
