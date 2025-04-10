@@ -143,9 +143,15 @@ public class User : IUser
     /// </summary>
     public IngredientOrder IngredientOrder { get; set; } = UserConsts.IngredientOrderDefault;
 
+    /// <summary>
+    /// User footnotes.
+    /// </summary>
     [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
     public int FootnoteCountTop { get; set; } = UserConsts.FootnoteCountTopDefault;
 
+    /// <summary>
+    /// System footnotes.
+    /// </summary>
     [Range(UserConsts.FootnoteCountMin, UserConsts.FootnoteCountMax)]
     public int FootnoteCountBottom { get; set; } = UserConsts.FootnoteCountBottomDefault;
 

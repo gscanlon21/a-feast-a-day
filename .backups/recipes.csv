@@ -19,21 +19,21 @@
 36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	6	120	10	4	t	1073742848	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	4194308	black-bean-quesadillas.jpg	0	\N	f	f
 38	Black Bean Fajita Skillet	\N	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	f	f
-39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	2	t	4194308	linguine-avocado-tomato-lime.jpg	0	\N	f	f
+39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	1	t	4194308	linguine-avocado-tomato-lime.jpg	0	\N	f	f
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0	\N	f	f
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	4194308	baked-banana-porridge.jpg	0	\N	f	f
 43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	egg-fried-rice.jpg	0	\N	f	f
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	0	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
-46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	0	basic-energy-balls.jpg	0	\N	f	f
+46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	268435712	basic-energy-balls.jpg	0	\N	f	f
 47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	banana-ice-cream.jpg	0	\N	f	f
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	0	avocado-cakes.jpg	0	\N	f	f
 49	Easy Mini Bagel Pizzas	\N	\N	\N	6	10	10	2	t	0	\N	0	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	f	f
 50	Simple 4-Ingredient Egg Salad with Mayo	\N	\N	\N	1	5	10	1	t	0	egg-salad.jpg	0	https://www.lifeisbutadish.com/momos-egg-salad/	f	f
 51	Grilled Garlic Naan	\N	\N	\N	8	5	5	2	t	4194308	grilled-garlic-naan.jpg	0	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	f	f
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg	0	\N	f	f
-53	Old-Fashioned Oatmeal	Unlike quick-cooking oats, old-fashioned oatmeal has time to turn extra-creamy and luscious with just a few minutes more of cooking time. With a bit of milk and the toppings of your choice, this oatmeal recipe can be your go-to morning staple for a filling, healthy breakfast.	\N	\N	3	15	0	1	t	4194308	old-fashioned-oatmeal.jpg	0	\N	f	f
+53	Old-Fashioned Oatmeal	Combinations to try: 1 soft-boiled egg + 1/3 cup sauteed spinach + 1 teaspoon chili crisp or togarashi seasoning (omit honey and cinnamon from base recipe) 1/4 cup shredded carrot + 1 tablespoon chopped toasted walnuts + 1 tablespoon golden raisins + 1/4 teaspoon cinnamon 1/2 medium banana, sliced + 1 tablespoon peanut butter + 1 teaspoon chia seeds + 1 teaspoon brown sugar 1/4 cup blueberries + 1 tablespoon toasted coconut flakes + 1 tablespoon chopped toasted macadamia nuts + 1 teaspoon honey 1/4 cup sliced peaches + 2 tablespoons cinnamon granola + 2 tablespoons vanilla yogurt	\N	\N	3	15	0	1	t	4194308	old-fashioned-oatmeal.jpg	0	\N	f	f
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg	0	\N	f	f
 55	Oven Roasted Asparagus	\N	\N	\N	8	10	5	1	t	2097154	parmesan-roasted-asparagus.jpg	0	\N	f	f
 56	Microwave Macaroni and Cheese in a Mug	\N	\N	\N	6	5	5	1	t	0	mac-n-cheese-mug.jpg	0	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	f	f
@@ -41,7 +41,7 @@
 58	Fruity Peanut Butter Pitas	\N	\N	\N	11	0	5	2	t	0	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	f	f
 59	Popcorn	\N	\N	\N	16	5	0	1	t	1048577	popcorn.jpg	0	\N	f	f
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-salsa-alt.jpg	0	\N	f	f
-61	Toasted Pita Bowl Salad	\N	\N	\N	3	12	20	2	t	0	pita-bowl-salad.jpg	0	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	f	f
+61	Toasted Pita Bowl Salad	\N	\N	\N	3	12	20	2	t	2097154	pita-bowl-salad.jpg	0	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	f	f
 62	Edamame & Veggie Rice Bowl	\N	\N	\N	3	5	5	2	t	0	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	f	f
 63	Grilled Sausage-Basil Pizzas	\N	\N	\N	4	15	15	4	t	0	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
 64	French Bread Pizza	\N	\N	\N	4	15	5	4	t	2097154	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
@@ -70,7 +70,7 @@
 87	Korean Beef Lettuce Wraps	\N	\N	\N	6	15	5	4	t	0	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
 88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	4194308	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	f	f
 89	Homemade Crunchy Taco Hamburger Helper	\N	\N	\N	4	15	5	5	t	0	taco-hamburger-helper.jpg	0	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	f	f
-90	Mini BBQ Cheddar Meatloaves	\N	\N	\N	4	15	5	4	t	0	chedder-meatloaf.jpg	0	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	f	f
+90	Mini BBQ Cheddar Meatloaves	\N	\N	\N	4	15	5	4	t	2097154	chedder-meatloaf.jpg	0	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	f	f
 91	Large Batch Homemade Taco Seasoning	\N	\N	\N	0	0	5	1	t	0	taco-seasoning.jpg	6	https://iowagirleats.com/large-batch-homemade-taco-seasoning	f	f
 92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	6	5	5	2	t	0	chicken-lemon-garlic.jpg	0	\N	f	f
 93	Pork Kebab with BBQ Sauce	\N	\N	\N	6	10	5	4	t	1099536793600	bbq-pork-kebab.jpg	0	\N	f	f
@@ -114,7 +114,7 @@
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	4194308	cajun-spiced-chicken.jpg	0	\N	f	f
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	1099536793600	tandori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	4194308	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
-134	Oven Burgers	\N	\N	\N	4	0	0	4	t	0	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
+134	Oven Burgers	\N	\N	\N	4	25	10	4	t	2097154	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
 135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	4	20	10	1	t	2097154	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	f	f
 136	Easy Chicken Fried Rice	\N	\N	\N	4	10	0	2	t	0	chicken-fried-rice.jpg	0	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	f	f
 137	Meatballs	\N	\N	\N	0	25	5	12	t	0	meatballs.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	f	f
@@ -198,7 +198,7 @@
 248	Fennel Soup	\N	\N	\N	6	45	5	4	t	72057628938731524	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/	f	f
 249	Sesame-Ginger Carrots	\N	\N	\N	8	45	5	5	t	2097154	sesame-ginger-carrots.jpg	0	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	f	f
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO.	\N	\N	4	30	20	4	t	6291462	turkey-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	f	f
-251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	0	\N	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
+251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	0	honey-mustard-dressing.jpg	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	hummus-vegetables.jpg	0	\N	f	f
 253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use.	\N	\N	16	120	10	5	t	17179885568	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
 254	Maple-Pecan Dip	\N	\N	\N	0	0	10	1	t	144115188482703364	hummus.jpg	6	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	f	f
@@ -227,7 +227,7 @@
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	asparagus-eggs-dressing.jpg	0	\N	f	f
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	2199028498432	hot-chocolate-sauce.jpg	6	\N	f	f
 311	Sausage & Apple Bake	From Jamie Oliver's 5 Ingredients	\N	\N	4	35	10	4	t	2097154	sausage-apple-bake.jpg	0	\N	f	f
-312	Black Bean Sauce	\N	\N	\N	0	10	5	1	t	2305843009616347136	\N	6	https://www.food.com/recipe/mexican-black-bean-sauce-280411	f	f
+312	Black Bean Sauce	\N	\N	\N	0	10	5	1	t	4194308	black-bean-sauce.jpg	6	https://www.food.com/recipe/mexican-black-bean-sauce-280411	t	f
 313	Hoisin Bok Choy Rice	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	4194308	hoisin-bok-choy-rice.jpg	0	\N	f	f
 314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	6	15	5	2	t	4194308	chicken-noodle-stir-fry.jpg	0	\N	f	f
 315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	20	6	4	t	6291462	baked-saffron-rice.jpg	0	\N	f	f
@@ -262,7 +262,7 @@
 376	Plain Cauliflower Rice	Suitable for freezing.	\N	\N	0	5	5	2	t	4194308	cauliflower-rice.jpg	6	https://www.easypeasyfoodie.com/plain-cauliflower-rice/#recipe	f	f
 377	Chicken Fajita Sheet Pan	\N	\N	\N	4	25	10	4	t	2097154	chicken-fajita-sheet-pan.jpg	0	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	f	f
 378	Creamy Fennel Kale Chicken Salad	\N	\N	\N	2	25	5	4	t	6291462	\N	0	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	f	f
-379	Easy Sauteéd Zucchini	\N	\N	\N	8	8	2	2	t	4194308	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
+379	Easy Sauteéd Zucchini	\N	\N	\N	8	8	2	1	t	4194308	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	48	30	15	4	t	1048577	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	4	15	5	2	t	4194308	zucchini-linguine.jpg	0	https://www.healthline.com/recipes/zucchini-noodles-pesto	f	f
 382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	4	120	9	4	t	6291462	beef-stew.jpg	0	\N	f	f
@@ -297,9 +297,9 @@
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	0	cauliflower-rice.jpg	6	\N	t	f
 412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	4194308	cauliflower-rice.jpg	0	\N	f	f
 413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	0	pumpkin-pudding.jpg	0	\N	f	f
-414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	\N	6	\N	t	f
+414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	honey-mustard-dressing.jpg	6	\N	t	f
 415	Strawberry, Mint and Cucumber Spa Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	4	4	t	0	\N	0	\N	f	f
-416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	10	5	4	t	4194308	cucumber-turkey-pizza.jpg	0	\N	f	f
+416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	10	5	4	t	4194308	cucumber-turkey-pizza.jpg	0	\N	f	t
 417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	3	30	10	6	t	2097154	egg-bites.jpg	0	\N	f	f
 418	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	3	30	10	6	t	2097154	egg-bites.jpg	0	\N	f	f
 419	Thai Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	thai-dressing.jpg	6	\N	t	f
@@ -309,20 +309,35 @@
 423	Steamed Kale	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	4194308	\N	0	\N	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	\N	\N	1	5	5	2	t	0	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	11	20	5	4	t	2097154	bacon-wrapped-avocado.jpg	0	\N	f	f
-426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	0	\N	6	\N	t	f
+426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	0	honey-mustard-dressing.jpg	6	\N	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	11	0	10	4	t	0	\N	0	\N	f	f
 428	Hot Lemon Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	2	1	1	t	0	\N	0	\N	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	3	1	t	0	\N	0	\N	f	f
 430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	10	2	t	0	\N	0	\N	f	f
 431	Glow Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	10	1	t	0	\N	0	\N	f	f
-432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	0	\N	0	\N	t	f
+432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	0	honey-mustard-dressing.jpg	0	\N	t	f
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	3	1	t	0	\N	0	\N	f	f
 466	Yogurt and Granola	\N	\N	\N	17	0	1	1	t	0	\N	0	\N	f	f
 467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	1	1	t	0	\N	0	\N	f	f
 468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	2	5	1	t	0	\N	0	\N	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	10	0	10	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 470	Pumpkin Maca Latte	\N	\N	\N	8	2	4	1	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-471	Honey-Mustard Dressing	\N	\N	\N	0	0	5	4	t	0	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-472	Lemon & Herb Dressing	\N	\N	\N	0	0	5	4	t	0	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+471	Honey-Mustard Dressing	\N	\N	\N	0	0	5	4	t	0	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+472	Lemon & Herb Dressing	\N	\N	\N	0	0	5	4	t	0	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 473	Divine Avocado Chocolate Chip Cookies	\N	\N	\N	32	10	5	12	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 474	Coconut Sour Cream	\N	\N	\N	0	0	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	24	0	5	2	t	0	\N	6	\N	t	f
+476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+477	Digestive Slaw	\N	\N	\N	8	0	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+478	Everyday Salad	\N	\N	\N	8	0	10	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+481	Everyday Dressing	\N	\N	\N	0	0	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+484	Rice	\N	\N	\N	0	30	0	1	t	0	cauliflower-rice.jpg	6	\N	t	f
+485	Honey Chicken	TODO Find an actual recipe for this.	\N	\N	6	25	5	2	t	6291462	honey-mustard-chicken.jpg	0	\N	f	f
+486	Strawberries & Cream	\N	\N	\N	32	0	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+487	Rainbow Roasted Vegetables	\N	\N	\N	8	25	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+488	Yogurt & Granola	\N	\N	\N	56	0	5	1	t	0	\N	0	\N	f	f
+521	Maca Latte	\N	\N	\N	48	2	4	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
