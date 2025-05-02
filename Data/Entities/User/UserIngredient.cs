@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -19,6 +20,11 @@ public class UserIngredient
 
     [Required]
     public int IngredientId { get; set; }
+
+    [DefaultValue(RecipeConsts.IngredientScaleDefault)]
+    [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
+    [Display(Name = "Substitute Scale")]
+    public double SubstituteScale { get; set; } = RecipeConsts.IngredientScaleDefault;
 
     [Display(Name = "Substitute Ingredient")]
     public int? SubstituteIngredientId { get; set; }

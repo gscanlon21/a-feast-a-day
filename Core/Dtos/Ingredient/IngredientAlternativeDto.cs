@@ -15,4 +15,6 @@ public class IngredientAlternativeDto
     public IngredientDto Ingredient { get; init; } = null!;
 
     public IngredientDto AlternativeIngredient { get; init; } = null!;
+
+    public double Scale { get; init; } = 1;
 }

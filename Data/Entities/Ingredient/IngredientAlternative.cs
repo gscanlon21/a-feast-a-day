@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
@@ -32,4 +34,8 @@ public class IngredientAlternative
     /// </summary>
     [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.AlternativeIngredients))]
     public virtual Ingredient AlternativeIngredient { get; private init; } = null!;
+
+    [DefaultValue(RecipeConsts.IngredientScaleDefault)]
+    [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
+    public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;
 }

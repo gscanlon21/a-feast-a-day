@@ -62,6 +62,22 @@
             </div>
         </div>
 
+        <div class="form-group mb-3">
+            <label asp-for="UserIngredient.SubstituteScale" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteScale)</label>
+            <div style="display:flex;column-gap:1ch;">
+                <output name="substituteScale" for="@Html.IdFor(_ => Model.UserIngredient.SubstituteScale)">@Model.UserIngredient.SubstituteScale</output>
+                <div style="display:flex;width:100%;">
+                    <input asp-for="UserIngredient.SubstituteScale" type="range" style="width:100%;" aria-describedby="substitute-scale-help"
+                           min="@RecipeConsts.IngredientScaleMin" max="@RecipeConsts.IngredientScaleMax" step="@RecipeConsts.IngredientScaleStep" 
+                           oninput="substituteScale.value = this.valueAsNumber" />
+                </div>
+            </div>
+            <span asp-validation-for="UserIngredient.SubstituteScale" class="text-danger"></span>
+            <div id="substitute-scale-help" class="form-text">
+                <p>@Html.DisplayDescriptionFor(_ => Model.UserIngredient.SubstituteScale)</p>
+            </div>
+        </div>
+
         <div class="form-group">
             <input type="submit" value="Save" class="btn btn-primary" />
         </div>

@@ -21,7 +21,7 @@
 38	Black Bean Fajita Skillet	\N	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	f	f
 39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	1	t	4194308	linguine-avocado-tomato-lime.jpg	0	\N	f	f
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0	\N	f	f
-41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	0	pasta-asparagus-cream.jpg	0	\N	f	f
+41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	4194308	baked-banana-porridge.jpg	0	\N	f	f
 43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	egg-fried-rice.jpg	0	\N	f	f
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
@@ -289,7 +289,7 @@
 403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	10	5	2	t	2097154	roasted-kale.jpg	0	\N	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	10	1	t	134217856	\N	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	3	1	t	2147485696	\N	0	\N	f	f
-406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	5	10	t	134217856	\N	0	\N	f	f
+406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	5	10	t	134217856	berry-parfait-dessert.jpg	0	\N	f	f
 407	Apples and Peanut Butter	\N	\N	\N	24	0	1	1	t	0	peanut-butter-apples.jpg	0	\N	f	f
 408	Baked Zucchini	\N	\N	\N	24	10	5	2	t	2097154	zucchini.jpg	0	\N	f	f
 409	Pumpkin Bread	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	45	15	10	t	0	\N	0	\N	f	f
@@ -319,7 +319,7 @@
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	3	1	t	0	\N	0	\N	f	f
 466	Yogurt and Granola	\N	\N	\N	17	0	1	1	t	0	\N	0	\N	f	f
 467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	0	1	1	t	0	\N	0	\N	f	f
-468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	2	5	1	t	0	\N	0	\N	f	f
+468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	2	5	1	t	0	rosemary-lemon-tea.jpg	0	\N	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	10	0	10	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 470	Pumpkin Maca Latte	\N	\N	\N	8	2	4	1	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 471	Honey-Mustard Dressing	\N	\N	\N	0	0	5	4	t	0	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -341,3 +341,15 @@
 487	Rainbow Roasted Vegetables	\N	\N	\N	8	25	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 488	Yogurt & Granola	\N	\N	\N	56	0	5	1	t	0	\N	0	\N	f	f
 521	Maca Latte	\N	\N	\N	48	2	4	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	0	30	15	4	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+523	Banana Pancakes	\N	\N	\N	35	5	5	1	t	4194308	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	16	0	4	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+525	Tomato & Avocado Salsa w/ Cucumber Bite	\N	\N	\N	26	0	10	2	t	0	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+526	Pizza w/ Beans	\N	\N	\N	4	20	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
+527	Tumeric Ginger Tea	\N	\N	\N	8	2	3	1	t	0	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+528	Mango Salsa	\N	\N	\N	0	0	10	6	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+529	Polyphenol Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+530	Chicken Salsa Roll-Ups	\N	\N	\N	18	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+531	Chocolate Cherry Smoothie	\N	\N	\N	32	1	4	2	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+532	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	8	30	10	4	t	144115188480606210	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	8	10	5	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

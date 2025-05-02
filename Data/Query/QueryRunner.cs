@@ -7,6 +7,7 @@ using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Query.Builders;
 using Data.Query.Options;
+using Fractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
@@ -44,6 +45,7 @@ public class QueryRunner(Section section)
     [DebuggerDisplay("{Ingredient}: {UserIngredient}")]
     private class IngredientUserIngredient
     {
+        public double Scale { get; init; } = 1;
         public Ingredient Ingredient { get; init; } = null!;
         public UserIngredient? UserIngredient { get; init; }
     }
@@ -176,10 +178,16 @@ public class QueryRunner(Section section)
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
                             recipeIngredient.UserIngredient = substitution?.UserIngredient;
                             recipeIngredient.Ingredient = substitution?.Ingredient;
+                            if (substitution != null)
+                            {
+                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(substitution.Scale));
+                                recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
+                                recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
+                            }
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
-                        if (recipeIngredient.Ingredient != null && recipeIngredient.UserIngredient?.Ignore != true)
+                        if (recipeIngredient.Ingredient != null && (recipeIngredient.UserIngredient?.Ignore != true || UserOptions.IgnoreIgnored))
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
@@ -358,6 +366,7 @@ public class QueryRunner(Section section)
                 ri.Id,
                 ri.RecipeId,
                 ri.Ingredient,
+                ri.Ingredient.UserIngredients.Where(ui => ui.RecipeId == ri.RecipeId).First(ui => ui.UserId == UserOptions.Id).SubstituteScale,
                 ri.Ingredient.UserIngredients.Where(ui => ui.RecipeId == ri.RecipeId).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
             })
             .Select(ri => new
@@ -365,11 +374,13 @@ public class QueryRunner(Section section)
                 ri.Id,
                 SubIngredient = ri.SubstituteIngredient == null ? null : new IngredientUserIngredient()
                 {
+                    Scale = ri.SubstituteScale,
                     Ingredient = ri.SubstituteIngredient,
                     UserIngredient = ri.SubstituteIngredient!.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ui.RecipeId)
                 },
                 AltsIngredient = ri.Ingredient.Alternatives.Select(ia => new IngredientUserIngredient()
                 {
+                    Scale = ia.Scale,
                     Ingredient = ia.AlternativeIngredient,
                     UserIngredient = ia.AlternativeIngredient.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ri.RecipeId)
                 }).Where(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0).FirstOrDefault(i => i.UserIngredient!.Ignore != true)
