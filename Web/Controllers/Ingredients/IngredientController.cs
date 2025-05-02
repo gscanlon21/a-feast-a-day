@@ -163,6 +163,7 @@ public class IngredientController : ViewController
         }
 
         existingUserIngredient.Notes = viewModel.UserIngredient.Notes;
+        existingUserIngredient.SubstituteScale = viewModel.UserIngredient.SubstituteScale;
         existingUserIngredient.SubstituteRecipeId = viewModel.UserIngredient.SubstituteRecipeId;
         existingUserIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
         await _context.SaveChangesAsync();

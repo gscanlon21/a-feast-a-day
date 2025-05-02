@@ -81,7 +81,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required Measure Measure { get; init; }
     public required string? Attributes { get; init; }
     public required int QuantityNumerator { get; set; }
-    public required int QuantityDenominator { get; init; }
+    public required int QuantityDenominator { get; set; }
     public required int? RawIngredientRecipeId { get; init; }
 
     public required UserRecipe? UserIngredientRecipe { get; set; }

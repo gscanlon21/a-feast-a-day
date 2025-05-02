@@ -124,7 +124,8 @@ CREATE TABLE public.ingredient (
 
 CREATE TABLE public.ingredient_alternative (
     "IngredientId" integer NOT NULL,
-    "AlternativeIngredientId" integer NOT NULL
+    "AlternativeIngredientId" integer NOT NULL,
+    "Scale" double precision DEFAULT 1.0 NOT NULL
 );
 
 
@@ -497,7 +498,8 @@ CREATE TABLE public.user_ingredient (
     "Ignore" boolean DEFAULT false NOT NULL,
     "SubstituteRecipeId" integer,
     "Notes" text,
-    "RecipeId" integer DEFAULT 0 NOT NULL
+    "RecipeId" integer DEFAULT 0 NOT NULL,
+    "SubstituteScale" double precision DEFAULT 1.0 NOT NULL
 );
 
 
@@ -633,6 +635,8 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 20241231220846_SquashMigrations	9.0.0
 20250205202951_AddBaseRecipeToRecipe	9.0.1
 20250329201954_AddKeepIngredientOrder	9.0.3
+20250502151801_AddSubScale	9.0.4
+20250502153202_AddDefVal	9.0.4
 \.
 
 
@@ -665,744 +669,769 @@ COPY public.gene ("Id", "Name", "Notes", "DisabledReason") FROM stdin;
 -- Data for Name: ingredient_alternative; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId") FROM stdin;
-187	28
-187	164
-186	184
-186	183
-186	182
-186	181
-186	180
-186	179
-186	178
-186	163
-186	162
-186	161
-186	160
-186	31
-204	137
-137	204
-19	218
-214	74
-214	75
-75	74
-74	75
-214	219
-75	219
-74	219
-219	75
-219	74
-221	220
-135	95
-135	96
-135	119
-135	134
-135	30
-134	135
-134	96
-134	119
-134	95
-134	30
-119	135
-119	95
-119	96
-119	134
-119	30
-96	135
-96	119
-96	95
-96	134
-96	30
-95	135
-95	119
-95	96
-95	134
-95	30
-30	135
-30	134
-30	119
-30	96
-30	95
-3	144
-3	217
-3	105
-105	144
-105	217
-105	3
-144	217
-144	3
-144	105
-217	144
-217	3
-217	105
-222	105
-222	217
-222	3
-222	144
-39	130
-130	39
-223	39
-223	130
-139	146
-226	91
-103	15
-15	103
-237	236
-237	235
-248	26
-248	249
-253	252
-258	166
-258	167
-166	200
-247	135
-262	120
-262	263
-264	15
-264	103
-188	98
-188	21
-188	97
-188	265
-188	266
-1	269
-77	278
-279	280
-279	81
-284	95
-284	283
-286	287
-97	289
-97	288
-30	292
-297	62
-297	294
-297	293
-297	295
-62	295
-62	294
-62	293
-299	67
-67	299
-300	39
-300	36
-300	298
-222	302
-305	174
-306	304
-306	303
-264	310
-264	309
-264	311
-212	315
-316	222
-316	225
-316	217
-316	105
-316	3
-316	302
-319	291
-288	265
-288	266
-171	325
-137	327
-288	329
-288	328
-19	330
-286	331
-87	231
-333	109
-333	332
-29	338
-29	337
-29	336
-190	337
-189	336
-338	337
-338	336
-334	341
-85	344
-85	343
-171	345
-349	348
-349	75
-60	357
-132	364
-132	363
-132	362
-132	361
-19	365
-19	355
-19	367
-19	366
-137	371
-137	370
-137	369
-373	110
-373	372
-167	374
-258	375
-258	374
-166	375
-258	200
-94	129
-129	94
-379	95
-379	378
-381	380
-381	216
-381	339
-386	132
-386	361
-386	362
-386	363
-386	364
-386	385
-394	393
-394	392
-395	396
-401	400
-401	94
-401	126
-147	404
-155	405
-407	406
-38	413
-195	414
-283	95
-59	457
-368	206
-460	459
-460	209
-463	464
-465	466
-60	468
-39	470
-39	469
-475	84
-475	80
-477	163
-482	464
-482	483
-479	484
-479	481
-478	485
-478	480
-463	485
-463	484
-463	483
-463	482
-463	481
-463	480
-463	479
-463	478
-188	289
-188	486
-486	289
-191	23
-191	170
-191	136
-191	487
-488	25
-285	489
-307	490
-490	307
-18	491
-288	492
-494	244
-494	301
-496	295
-102	505
-507	506
-507	2
-509	388
-509	391
-515	73
-515	504
-516	81
-516	82
-516	83
-516	84
-516	245
-516	280
-516	80
-517	37
-37	517
-520	518
-520	519
-558	25
-29	563
-29	254
-190	563
-189	254
-29	564
-564	563
-564	254
-559	30
-567	319
-567	135
-44	570
-570	44
-572	511
-572	571
-511	571
-571	511
-573	322
-322	573
-312	313
-313	312
-577	503
-503	577
-578	577
-578	503
-405	155
-585	330
-585	19
-585	218
-585	355
-585	367
-585	366
-585	365
-286	587
-286	586
-287	331
-287	587
-287	586
-113	591
-149	600
-600	149
-601	112
-112	601
-603	94
-605	233
-605	29
-606	29
-606	233
-608	10
-10	608
-609	274
-274	609
-275	273
-273	275
-507	611
-507	581
-611	2
-506	581
-2	611
-581	506
-581	2
-2	581
-611	506
-506	611
-612	37
-612	517
-614	409
-409	614
-201	56
-56	201
-145	620
-145	619
-617	620
-617	619
-617	621
-617	618
-145	621
-145	618
-145	617
-617	145
-616	621
-616	618
-616	617
-616	620
-616	619
-616	145
-616	623
-616	622
-624	174
-624	368
-627	152
-152	627
-178	629
-178	628
-161	631
-161	630
-178	161
-161	178
-1	635
-1	634
-1	633
-1	632
-639	637
-639	636
-638	614
-638	409
-641	642
-645	494
-494	645
-651	648
-651	649
-651	650
-647	648
-647	649
-647	650
-647	651
-286	651
-286	650
-286	649
-286	648
-286	647
-287	651
-287	650
-287	649
-287	648
-647	587
-647	586
-647	331
-647	287
-647	286
-651	587
-651	586
-651	287
-651	331
-652	228
-652	653
-228	653
-653	228
-101	656
-656	101
-657	656
-657	101
-663	228
-665	31
-665	664
-31	664
-664	31
-667	93
-93	667
-668	93
-668	667
-670	669
-669	670
-674	242
-242	674
-676	77
-676	176
-176	77
-77	176
-676	278
-176	278
-278	176
-151	680
-680	151
-679	151
-679	680
-684	681
-681	684
-685	684
-685	681
-409	688
-614	687
-638	687
-638	688
-638	686
-686	688
-686	687
-675	689
-689	675
-690	39
-690	681
-690	298
-690	469
-690	470
-293	294
-295	294
-695	238
-238	695
-696	698
-696	697
-697	698
-698	697
-696	241
-696	156
-700	701
-701	700
-205	701
-205	700
-702	55
-55	702
-110	705
-110	704
-703	707
-703	706
-709	140
-710	140
-140	710
-160	179
-160	162
-160	161
-163	179
-163	162
-163	161
-163	178
-160	178
-720	719
-719	720
-721	719
-721	720
-328	266
-266	328
-188	328
-98	328
-188	329
-98	329
-266	265
-265	266
-328	329
-329	328
-709	144
-126	94
-126	603
-723	278
-723	77
-723	708
-727	358
-727	83
-137	330
-728	6
-6	728
-730	224
-730	580
-224	580
-580	224
-580	731
-224	731
-731	224
-731	580
-730	731
-736	7
-736	353
-7	353
-353	7
-742	741
-742	739
-739	741
-741	739
-558	749
-752	238
-752	695
-784	717
-784	783
-717	783
-783	717
-149	714
-149	729
-785	12
-785	4
-786	787
-786	296
-6	794
-794	6
-797	796
-797	553
-553	796
-796	553
-798	799
-799	346
-346	799
-798	796
-798	553
-804	803
-102	804
-102	803
-808	670
-808	669
-808	809
-811	598
-811	597
-811	8
-811	599
-812	8
-812	597
-812	598
-812	599
-615	646
-814	813
-814	172
-172	813
-813	172
-502	215
-784	815
-784	816
-784	207
-815	816
-815	207
-819	714
-819	729
-820	815
-820	717
-791	321
-791	100
-791	295
-791	294
-88	726
-726	88
-823	546
-823	822
-822	823
-822	546
-546	823
-546	822
-737	830
-24	387
-24	324
-387	324
-324	387
-730	833
-224	833
-784	834
-834	207
-207	834
-165	202
-836	288
-836	492
-836	329
-836	265
-836	328
-836	266
-637	838
-839	840
-831	699
-831	73
-102	844
-102	843
-735	57
-735	843
-735	844
-735	842
-116	846
-848	224
-848	731
-98	849
-849	329
-849	328
-121	850
-850	121
-855	497
-855	817
-854	497
-854	817
-854	853
-856	372
-856	16
-856	206
-856	801
-858	857
-858	608
-859	180
-859	179
-859	178
-859	161
-859	162
-859	183
-859	182
-859	181
-859	184
-860	859
-860	123
-250	861
-863	862
-868	866
-868	867
-547	278
-547	77
-665	179
-665	162
-665	161
-790	903
-790	241
-79	78
-79	176
-79	278
-79	870
-905	689
-905	675
-505	844
-691	906
-906	691
-908	788
-908	909
-911	68
-911	124
-913	92
-913	912
-914	240
-240	914
-915	213
-213	915
-916	387
-916	24
-917	347
-917	346
-951	953
-951	952
-321	295
-321	116
-321	62
-321	100
-954	587
-954	586
-954	331
-286	954
-97	960
-964	76
-964	722
-906	734
-734	906
-966	965
-965	178
-178	965
-333	967
-333	240
-333	914
-968	358
-968	80
-969	285
-969	360
-969	489
-969	692
-969	693
-972	807
-972	92
-972	89
-100	973
-321	973
-976	123
-976	806
-806	123
-123	806
-979	473
-979	140
-980	123
-980	111
-980	613
-985	339
-985	216
-987	36
-987	298
-988	749
-988	748
-317	989
-317	63
-989	63
-1000	999
-1000	111
-966	628
-1004	1006
-1004	178
-1006	965
-1007	1006
-1007	151
-1008	607
+COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "Scale") FROM stdin;
+113	275	2
+187	28	1
+187	164	1
+186	184	1
+841	7	1
+7	841	1
+479	481	1
+599	811	1
+598	811	1
+597	811	1
+8	811	1
+690	39	1
+690	681	1
+1008	871	1
+1008	626	1
+1008	625	1
+1008	10	1
+186	183	1
+186	182	1
+186	181	1
+186	180	1
+186	179	1
+186	178	1
+186	163	1
+186	162	1
+186	161	1
+186	160	1
+186	31	1
+204	137	1
+137	204	1
+19	218	1
+214	74	1
+214	75	1
+75	74	1
+74	75	1
+214	219	1
+75	219	1
+74	219	1
+219	75	1
+219	74	1
+221	220	1
+135	95	1
+135	96	1
+135	119	1
+135	134	1
+135	30	1
+134	135	1
+134	96	1
+134	119	1
+134	95	1
+134	30	1
+119	135	1
+119	95	1
+119	96	1
+119	134	1
+119	30	1
+96	135	1
+96	119	1
+96	95	1
+96	134	1
+96	30	1
+95	135	1
+95	119	1
+95	96	1
+95	134	1
+95	30	1
+30	135	1
+30	134	1
+30	119	1
+30	96	1
+30	95	1
+3	144	1
+3	217	1
+3	105	1
+105	144	1
+105	217	1
+105	3	1
+144	217	1
+144	3	1
+144	105	1
+217	144	1
+217	3	1
+217	105	1
+222	105	1
+222	217	1
+222	3	1
+222	144	1
+39	130	1
+130	39	1
+223	39	1
+223	130	1
+139	146	1
+226	91	1
+103	15	1
+15	103	1
+237	236	1
+237	235	1
+248	26	1
+248	249	1
+253	252	1
+258	166	1
+258	167	1
+166	200	1
+247	135	1
+262	120	1
+262	263	1
+264	15	1
+264	103	1
+188	98	1
+188	21	1
+188	97	1
+188	265	1
+188	266	1
+1	269	1
+77	278	1
+279	280	1
+279	81	1
+284	95	1
+284	283	1
+286	287	1
+97	289	1
+97	288	1
+30	292	1
+297	62	1
+297	294	1
+297	293	1
+297	295	1
+913	92	1
+913	912	1
+914	240	1
+240	914	1
+915	213	1
+213	915	1
+916	387	1
+62	295	1
+62	294	1
+62	293	1
+299	67	1
+67	299	1
+300	39	1
+300	36	1
+300	298	1
+222	302	1
+305	174	1
+306	304	1
+306	303	1
+264	310	1
+264	309	1
+264	311	1
+212	315	1
+316	222	1
+316	225	1
+316	217	1
+316	105	1
+316	3	1
+316	302	1
+319	291	1
+288	265	1
+288	266	1
+171	325	1
+137	327	1
+288	329	1
+288	328	1
+19	330	1
+286	331	1
+87	231	1
+333	109	1
+333	332	1
+29	338	1
+29	337	1
+29	336	1
+190	337	1
+189	336	1
+338	337	1
+338	336	1
+334	341	1
+85	344	1
+85	343	1
+171	345	1
+349	348	1
+349	75	1
+60	357	1
+132	364	1
+132	363	1
+132	362	1
+132	361	1
+19	365	1
+19	355	1
+19	367	1
+19	366	1
+137	371	1
+137	370	1
+137	369	1
+373	110	1
+373	372	1
+167	374	1
+258	375	1
+258	374	1
+166	375	1
+258	200	1
+94	129	1
+129	94	1
+379	95	1
+379	378	1
+381	380	1
+381	216	1
+381	339	1
+386	132	1
+386	361	1
+386	362	1
+386	363	1
+386	364	1
+386	385	1
+394	393	1
+394	392	1
+395	396	1
+401	400	1
+401	94	1
+401	126	1
+147	404	1
+155	405	1
+407	406	1
+38	413	1
+195	414	1
+283	95	1
+59	457	1
+368	206	1
+460	459	1
+460	209	1
+463	464	1
+465	466	1
+60	468	1
+39	470	1
+39	469	1
+475	84	1
+475	80	1
+477	163	1
+482	464	1
+482	483	1
+479	484	1
+478	485	1
+478	480	1
+463	485	1
+463	484	1
+463	483	1
+463	482	1
+463	481	1
+463	480	1
+463	479	1
+463	478	1
+188	289	1
+188	486	1
+486	289	1
+191	23	1
+191	170	1
+191	136	1
+191	487	1
+488	25	1
+285	489	1
+307	490	1
+490	307	1
+18	491	1
+288	492	1
+494	244	1
+494	301	1
+496	295	1
+102	505	1
+507	506	1
+507	2	1
+509	388	1
+509	391	1
+515	73	1
+515	504	1
+516	81	1
+516	82	1
+516	83	1
+516	84	1
+516	245	1
+516	280	1
+516	80	1
+517	37	1
+37	517	1
+520	518	1
+520	519	1
+558	25	1
+29	563	1
+29	254	1
+190	563	1
+189	254	1
+29	564	1
+564	563	1
+564	254	1
+559	30	1
+567	319	1
+567	135	1
+44	570	1
+570	44	1
+572	511	1
+572	571	1
+511	571	1
+571	511	1
+573	322	1
+322	573	1
+312	313	1
+313	312	1
+577	503	1
+503	577	1
+578	577	1
+578	503	1
+405	155	1
+585	330	1
+585	19	1
+585	218	1
+585	355	1
+585	367	1
+585	366	1
+585	365	1
+286	587	1
+286	586	1
+287	331	1
+287	587	1
+287	586	1
+113	591	1
+149	600	1
+600	149	1
+601	112	1
+112	601	1
+603	94	1
+605	233	1
+605	29	1
+606	29	1
+606	233	1
+608	10	1
+10	608	1
+609	274	1
+274	609	1
+275	273	1
+273	275	1
+507	611	1
+507	581	1
+611	2	1
+506	581	1
+2	611	1
+581	506	1
+581	2	1
+2	581	1
+611	506	1
+506	611	1
+612	37	1
+612	517	1
+614	409	1
+409	614	1
+201	56	1
+56	201	1
+145	620	1
+145	619	1
+617	620	1
+617	619	1
+617	621	1
+617	618	1
+145	621	1
+145	618	1
+145	617	1
+617	145	1
+616	621	1
+616	618	1
+616	617	1
+616	620	1
+616	619	1
+616	145	1
+616	623	1
+616	622	1
+624	174	1
+624	368	1
+627	152	1
+152	627	1
+178	629	1
+178	628	1
+161	631	1
+161	630	1
+178	161	1
+161	178	1
+1	635	1
+1	634	1
+1	633	1
+1	632	1
+639	637	1
+639	636	1
+638	614	1
+638	409	1
+641	642	1
+645	494	1
+494	645	1
+651	648	1
+651	649	1
+651	650	1
+647	648	1
+647	649	1
+647	650	1
+647	651	1
+286	651	1
+286	650	1
+286	649	1
+286	648	1
+286	647	1
+287	651	1
+287	650	1
+287	649	1
+287	648	1
+647	587	1
+647	586	1
+647	331	1
+647	287	1
+647	286	1
+651	587	1
+651	586	1
+651	287	1
+651	331	1
+652	228	1
+652	653	1
+228	653	1
+653	228	1
+101	656	1
+656	101	1
+657	656	1
+657	101	1
+663	228	1
+665	31	1
+665	664	1
+31	664	1
+664	31	1
+667	93	1
+93	667	1
+668	93	1
+668	667	1
+670	669	1
+669	670	1
+674	242	1
+242	674	1
+676	77	1
+676	176	1
+176	77	1
+77	176	1
+676	278	1
+176	278	1
+278	176	1
+151	680	1
+680	151	1
+679	151	1
+679	680	1
+684	681	1
+681	684	1
+685	684	1
+685	681	1
+409	688	1
+614	687	1
+638	687	1
+638	688	1
+638	686	1
+686	688	1
+686	687	1
+675	689	1
+689	675	1
+690	298	1
+690	469	1
+690	470	1
+293	294	1
+295	294	1
+695	238	1
+238	695	1
+696	698	1
+696	697	1
+697	698	1
+698	697	1
+696	241	1
+696	156	1
+700	701	1
+701	700	1
+205	701	1
+205	700	1
+702	55	1
+55	702	1
+110	705	1
+110	704	1
+703	707	1
+703	706	1
+709	140	1
+710	140	1
+140	710	1
+160	179	1
+160	162	1
+160	161	1
+163	179	1
+163	162	1
+163	161	1
+163	178	1
+160	178	1
+720	719	1
+719	720	1
+721	719	1
+721	720	1
+328	266	1
+266	328	1
+188	328	1
+98	328	1
+188	329	1
+98	329	1
+266	265	1
+265	266	1
+328	329	1
+329	328	1
+709	144	1
+126	94	1
+126	603	1
+723	278	1
+723	77	1
+723	708	1
+727	358	1
+727	83	1
+137	330	1
+728	6	1
+6	728	1
+730	224	1
+730	580	1
+224	580	1
+580	224	1
+580	731	1
+224	731	1
+731	224	1
+731	580	1
+730	731	1
+736	7	1
+736	353	1
+7	353	1
+353	7	1
+742	741	1
+742	739	1
+739	741	1
+741	739	1
+558	749	1
+752	238	1
+752	695	1
+784	717	1
+784	783	1
+717	783	1
+783	717	1
+149	714	1
+149	729	1
+785	12	1
+785	4	1
+786	787	1
+786	296	1
+6	794	1
+794	6	1
+797	796	1
+797	553	1
+553	796	1
+796	553	1
+798	799	1
+799	346	1
+346	799	1
+798	796	1
+798	553	1
+804	803	1
+102	804	1
+102	803	1
+808	670	1
+808	669	1
+808	809	1
+811	598	1
+811	597	1
+811	8	1
+811	599	1
+812	8	1
+812	597	1
+812	598	1
+812	599	1
+615	646	1
+814	813	1
+814	172	1
+172	813	1
+813	172	1
+502	215	1
+784	815	1
+784	816	1
+784	207	1
+815	816	1
+815	207	1
+819	714	1
+819	729	1
+820	815	1
+820	717	1
+791	321	1
+791	100	1
+791	295	1
+791	294	1
+88	726	1
+726	88	1
+823	546	1
+823	822	1
+822	823	1
+822	546	1
+546	823	1
+546	822	1
+737	830	1
+24	387	1
+24	324	1
+387	324	1
+324	387	1
+730	833	1
+224	833	1
+784	834	1
+834	207	1
+207	834	1
+165	202	1
+836	288	1
+836	492	1
+836	329	1
+836	265	1
+836	328	1
+836	266	1
+637	838	1
+839	840	1
+831	699	1
+831	73	1
+102	844	1
+102	843	1
+735	57	1
+735	843	1
+735	844	1
+735	842	1
+116	846	1
+848	224	1
+848	731	1
+98	849	1
+849	329	1
+849	328	1
+121	850	1
+850	121	1
+855	497	1
+855	817	1
+854	497	1
+854	817	1
+854	853	1
+856	372	1
+856	16	1
+856	206	1
+856	801	1
+858	857	1
+858	608	1
+859	180	1
+859	179	1
+859	178	1
+859	161	1
+859	162	1
+859	183	1
+859	182	1
+859	181	1
+859	184	1
+860	859	1
+860	123	1
+250	861	1
+863	862	1
+868	866	1
+868	867	1
+547	278	1
+547	77	1
+665	179	1
+665	162	1
+665	161	1
+790	903	1
+790	241	1
+79	78	1
+79	176	1
+79	278	1
+79	870	1
+905	689	1
+905	675	1
+505	844	1
+691	906	1
+906	691	1
+908	788	1
+908	909	1
+911	68	1
+911	124	1
+916	24	1
+917	347	1
+917	346	1
+951	953	1
+951	952	1
+321	295	1
+321	116	1
+321	62	1
+321	100	1
+954	587	1
+954	586	1
+954	331	1
+286	954	1
+97	960	1
+964	76	1
+964	722	1
+906	734	1
+734	906	1
+966	965	1
+965	178	1
+178	965	1
+333	967	1
+333	240	1
+333	914	1
+968	358	1
+968	80	1
+969	285	1
+969	360	1
+969	489	1
+969	692	1
+969	693	1
+972	807	1
+972	92	1
+972	89	1
+100	973	1
+321	973	1
+976	123	1
+976	806	1
+806	123	1
+123	806	1
+979	473	1
+979	140	1
+980	123	1
+980	111	1
+980	613	1
+985	339	1
+985	216	1
+987	36	1
+987	298	1
+988	749	1
+988	748	1
+317	989	1
+317	63	1
+989	63	1
+1000	999	1
+1000	111	1
+966	628	1
+1004	1006	1
+1004	178	1
+1006	965	1
+1007	1006	1
+1007	151	1
+1008	607	1
+11	1009	1
+964	1010	1
+722	1010	1
+76	1010	1
+1010	722	1
+1010	76	1
+388	24	1
+388	975	1
+916	975	1
+388	916	1
+1043	635	1
+1	1043	1
+870	101	1
+870	278	1
 \.
 
 
@@ -1462,7 +1491,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8463	362	2199023255552	\N	\N	2	4
 8464	362	48	\N	\N	3	6
 8465	362	14	\N	\N	3	29
-6713	198	2047	\N	\N	3	89
 8466	362	1984	\N	\N	3	1
 8467	362	62	\N	\N	3	35
 8468	207	68719476736	\N	\N	2	7
@@ -1497,6 +1525,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 4232	101	128	\N	\N	3	2
 4329	153	68719476736	\N	\N	2	35
 4333	153	1	\N	\N	3	1
+6713	198	2047	\N	\N	3	95
 3625	28	1984	\N	\N	3	5
 6833	158	128	\N	\N	3	2
 6678	187	68719476736	\N	\N	2	71
@@ -2762,7 +2791,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7793	364	4294967296	\N	\N	2	60
 7794	364	2199023255552	\N	\N	2	3
 7795	364	48	\N	\N	3	10
-5273	22	2047	\N	\N	3	80
 5349	23	2047	\N	\N	3	130
 7021	117	2047	\N	\N	3	140
 7494	305	2047	\N	\N	3	5
@@ -2856,6 +2884,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8186	27	68719476736	\N	\N	2	240
 8187	27	1	\N	\N	3	4
 8189	27	62	\N	\N	3	1
+5273	22	2047	\N	\N	3	67
 5425	102	2047	\N	\N	3	687
 7022	117	128	\N	\N	3	2
 7023	117	68719476736	\N	\N	2	200
@@ -7310,6 +7339,51 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 12775	737	1984	\N	\N	3	1
 12776	737	62	\N	\N	3	50
 12777	737	2047	\N	\N	3	215
+12778	1009	128	\N	\N	3	0.1
+12779	1009	68719476736	\N	\N	2	1
+12780	1009	34359738368	\N	\N	2	422
+12781	1009	2	\N	\N	3	14
+12782	1009	1	\N	\N	3	1
+12783	1009	4294967296	\N	\N	2	6
+12784	1009	2199023255552	\N	\N	2	0.3
+12785	1009	48	\N	\N	3	3
+12786	1009	14	\N	\N	3	24
+12787	1009	1984	\N	\N	3	0.4
+12788	1009	62	\N	\N	3	27
+12789	1009	2047	\N	\N	3	105
+12790	198	128	\N	\N	3	3
+12791	198	64	\N	\N	3	0.1
+12792	198	2048	\N	\N	2	25
+12793	198	68719476736	\N	\N	2	352
+12794	198	34359738368	\N	\N	2	46
+12795	198	1	\N	\N	3	3
+12796	198	4294967296	\N	\N	2	56
+12797	198	2199023255552	\N	\N	2	0.3
+12798	198	14	\N	\N	3	1
+12799	198	1984	\N	\N	3	9
+12800	198	62	\N	\N	3	1
+12801	797	68719476736	\N	\N	2	2
+12802	797	34359738368	\N	\N	2	146
+12803	797	2	\N	\N	3	9
+12804	797	1	\N	\N	3	1
+12805	797	4294967296	\N	\N	2	33
+12806	797	2199023255552	\N	\N	2	0.1
+12807	797	48	\N	\N	3	2
+12808	797	14	\N	\N	3	10
+12809	797	1984	\N	\N	3	0.3
+12810	797	62	\N	\N	3	12
+12811	797	2047	\N	\N	3	47
+12812	22	128	\N	\N	3	0.2
+12813	22	68719476736	\N	\N	2	123
+12814	22	34359738368	\N	\N	2	32
+12815	22	2	\N	\N	3	1
+12816	22	1	\N	\N	3	2
+12817	22	4294967296	\N	\N	2	36
+12818	22	2199023255552	\N	\N	2	1
+12819	22	48	\N	\N	3	1
+12820	22	14	\N	\N	3	12
+12821	22	1984	\N	\N	3	1
+12822	22	62	\N	\N	3	12
 \.
 
 
@@ -7575,7 +7649,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1570	0	\N	\N	95	1	3	, kernels cut off cob (about 4 cups)	341	f	\N	2
 1571	0	\N	\N	95	1	2	, chopped	302	f	\N	3
 317	6	\N	\N	41	1	1	\N	145	f	\N	0
-319	6	\N	\N	41	1	1	, woody ends removed, cut into lengths	122	f	\N	0
+319	6	\N	\N	41	1	1	, woody ends removed, cut into lengths	122	f	\N	2
 450	6	\N	\N	55	2	1	\N	122	f	\N	0
 451	7	\N	\N	55	1	1	\N	77	f	\N	1
 1084	6	\N	\N	57	2	1	\N	61	f	\N	0
@@ -7631,7 +7705,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4830	4	\N	\N	261	1	1	\N	88	f	\N	0
 4831	0	\N	\N	261	1	2	\N	387	f	\N	1
 982	6	\N	\N	40	1	1	, drained	205	f	\N	0
-320	6	\N	\N	41	2	1	, zested and juiced	4	f	\N	0
 4832	7	\N	\N	261	1	2	\N	791	f	\N	2
 4833	4	\N	\N	261	1	5	\N	792	f	\N	3
 3909	0	\N	\N	196	1	1	, seeded and sliced	224	f	\N	3
@@ -7667,15 +7740,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5104	8	\N	\N	161	8	1	\N	285	f	\N	5
 2654	6	\N	\N	86	2	5	\N	111	f	\N	0
 390	6	\N	\N	43	1	1	\N	188	f	\N	0
-318	6	\N	\N	41	2	1	, frozen peas	145	f	\N	0
-321	6	\N	\N	41	2	1	, with chives	30	f	\N	0
 391	7	\N	\N	43	1	3	\N	78	f	\N	0
 2655	6	\N	\N	86	1	1	\N	836	f	\N	1
 440	6	\N	\N	49	1	4	, split	165	f	\N	0
 2658	4	\N	\N	86	1	6	\N	292	f	\N	4
+318	6	\N	\N	41	2	1	, frozen peas	145	f	\N	1
+320	6	\N	\N	41	2	1	, zested and juiced	4	f	\N	3
+321	6	\N	\N	41	2	1	, with chives	30	f	\N	4
 866	0	\N	\N	67	1	1	\N	\N	f	66	0
 867	0	\N	\N	67	1	4	\N	221	f	\N	1
 868	7	\N	\N	67	1	2	\N	215	f	\N	2
+5340	6	\N	\N	325	8	1	\N	870	f	\N	0
 869	7	\N	\N	67	1	1	\N	79	f	\N	3
 870	6	\N	\N	67	4	1	\N	89	t	\N	4
 871	0	\N	\N	67	1	1	\N	216	t	\N	5
@@ -7697,8 +7772,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3366	0	\N	\N	126	1	2	, peeled, cored and sliced	1	f	\N	2
 3367	7	\N	\N	126	2	1	\N	29	f	\N	3
 3368	0	\N	\N	126	1	2	, finely chopped	5	f	\N	4
-5340	6	\N	\N	325	4	1	\N	870	f	\N	0
-5341	6	\N	\N	325	4	1	, finely chopped	2	f	\N	1
+5341	6	\N	\N	325	8	1	, finely chopped	2	f	\N	1
 5342	6	\N	\N	325	2	3	\N	872	f	\N	2
 5343	0	\N	\N	325	1	1	, cored and cut into cubes	1	f	\N	3
 3470	6	\N	\N	165	4	1	\N	29	f	\N	0
@@ -8163,12 +8237,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2950	0	\N	\N	154	1	4	\N	22	f	\N	3
 3881	7	\N	\N	133	1	3	\N	78	f	\N	3
 3882	7	\N	\N	133	1	3	\N	557	t	\N	4
-5344	0	\N	\N	325	2	1	, diced	105	f	\N	4
-5345	6	\N	\N	325	4	1	\N	871	f	\N	5
-5346	4	\N	\N	325	1	6	, cooked and flaked	869	t	\N	6
 5163	0	\N	\N	39	1	1	, chopped	17	t	\N	3
 5164	6	\N	\N	39	2	1	, chopped	13	f	\N	4
 5165	0	\N	\N	39	1	1	, finely chopped	105	f	\N	5
+5344	0	\N	\N	325	2	1	, diced	105	f	\N	4
 2938	6	\N	\N	137	1	1	\N	18	f	\N	0
 2939	7	\N	\N	137	1	2	\N	512	f	\N	1
 2940	7	\N	\N	137	1	1	\N	323	f	\N	2
@@ -8178,6 +8250,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2944	6	\N	\N	137	4	3	\N	186	f	\N	6
 2945	5	\N	\N	137	1	2	\N	488	f	\N	7
 2946	0	\N	\N	137	1	2	\N	187	f	\N	8
+5345	6	\N	\N	325	4	1	\N	871	f	\N	5
+5346	4	\N	\N	325	1	6	, cooked and flaked	869	t	\N	6
 5279	6	\N	\N	313	3	2	\N	266	f	\N	0
 5280	0	\N	\N	313	1	2	\N	144	f	\N	1
 5281	0	\N	\N	313	1	2	\N	730	f	\N	2
@@ -9416,11 +9490,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5962	0	\N	\N	487	4	1	, to taste	74	t	\N	6
 5963	6	\N	\N	488	2	1	(YOGURT)	500	f	\N	0
 5964	6	\N	\N	488	4	1	\N	739	f	\N	1
-5996	7	\N	\N	521	1	1	(MACA POWDER)	364	f	\N	0
-5997	7	\N	\N	521	1	1	\N	178	f	\N	1
-5998	8	\N	\N	521	1	1	\N	70	f	\N	2
-5999	8	\N	\N	521	1	1	, to taste	681	t	\N	3
-6000	6	\N	\N	521	1	1	\N	993	f	\N	4
 6001	5	\N	\N	522	2	1	, halved	156	f	\N	0
 6002	0	\N	\N	522	1	2	, chopped	255	f	\N	1
 6003	0	\N	\N	522	1	1	, thinly sliced	222	f	\N	2
@@ -9432,6 +9501,55 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6009	6	\N	\N	522	3	1	(DRIED CRANBERRIES)	641	f	\N	8
 6010	6	\N	\N	522	4	1	, chopped	90	f	\N	9
 6011	6	\N	\N	522	2	1	\N	\N	f	414	10
+6016	12	\N	\N	524	1	1	\N	123	f	\N	0
+6017	0	\N	\N	524	1	1	, quartered	4	f	\N	1
+6018	0	\N	\N	524	1	1	, quartered	12	f	\N	2
+6019	6	\N	\N	524	1	1	, diced	1043	f	\N	3
+5996	7	\N	\N	521	1	1	\N	1044	f	\N	0
+5997	7	\N	\N	521	1	1	\N	178	f	\N	1
+5998	8	\N	\N	521	1	1	\N	70	f	\N	2
+5999	8	\N	\N	521	1	1	, to taste	681	t	\N	3
+6000	6	\N	\N	521	1	1	\N	993	f	\N	4
+6020	0	\N	\N	525	1	1	, peeled and chopped small	9	f	\N	0
+6021	6	\N	\N	525	1	1	, chopped small	147	t	\N	1
+6022	0	\N	\N	525	1	1	, juiced	4	f	\N	2
+6023	8	\N	\N	525	2	1	\N	323	f	\N	3
+6024	8	\N	\N	525	4	1	, to taste	692	t	\N	4
+6025	8	\N	\N	525	2	1	\N	322	f	\N	5
+6026	7	\N	\N	525	1	2	, chopped	13	f	\N	6
+6027	0	\N	\N	525	1	2	, sliced	155	f	\N	7
+6028	0	\N	\N	526	1	1	\N	46	f	\N	0
+6029	6	\N	\N	526	2	1	\N	58	f	\N	1
+6030	8	\N	\N	527	1	1	\N	699	f	\N	0
+6031	8	\N	\N	527	1	1	\N	307	f	\N	1
+6032	8	\N	\N	527	8	1	\N	214	t	\N	2
+6033	8	\N	\N	527	8	1	\N	70	f	\N	3
+6034	6	\N	\N	527	1	1	\N	993	f	\N	4
+6035	0	\N	\N	527	2	1	, juiced	4	f	\N	5
+6036	8	\N	\N	527	4	1	, to taste	681	f	\N	6
+6037	7	\N	\N	527	1	1	, or other nut milk of choice	161	t	\N	7
+6038	6	\N	\N	528	4	1	\N	178	f	\N	0
+6039	0	\N	\N	528	1	2	, juiced	12	f	\N	1
+6040	6	\N	\N	528	1	1	, peeled and diced	789	f	\N	2
+6041	6	\N	\N	528	4	1	, diced	155	f	\N	3
+6042	7	\N	\N	528	1	2	, diced	105	f	\N	4
+6043	7	\N	\N	528	1	1	, chopped	13	f	\N	5
+6044	8	\N	\N	528	1	1	, grated or chopped	307	f	\N	6
+6045	4	\N	\N	528	1	1	, for serving	174	t	\N	7
+6046	6	\N	\N	529	1	2	, chopped, not frozen	6	f	\N	0
+6047	0	\N	\N	529	1	1	, peeled and diced	346	f	\N	1
+6048	0	\N	\N	529	1	1	, diced, seeds removed	597	f	\N	2
+6049	6	\N	\N	529	2	1	\N	90	f	\N	3
+6050	6	\N	\N	529	2	1	\N	871	f	\N	4
+6051	6	\N	\N	529	4	1	(DRIED CRANBERRIES)	809	f	\N	5
+6052	6	\N	\N	529	4	1	, chopped	872	f	\N	6
+6053	6	\N	\N	529	4	1	, chopped	473	f	\N	7
+6054	0	\N	\N	529	1	1	, juiced	4	f	\N	8
+6055	6	\N	\N	529	4	1	\N	278	f	\N	9
+6012	8	\N	\N	523	1	1	\N	1010	f	\N	0
+6013	0	\N	\N	523	1	1	\N	11	f	\N	1
+6014	0	\N	\N	523	1	1	\N	187	f	\N	2
+6015	6	\N	\N	523	4	1	, for garnishing	1008	t	\N	3
 \.
 
 
@@ -9597,8 +9715,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2887	Divide the salad leaves between two plates. Remove the croutons from the pan and arrange them over the leaves.	\N	84	1
 595	Combine the Potato Starch, Brown Rice Flower, and Xanthan Gum in a bowl and mix well.	\N	73	0
 2854	Combine 3/4 cup milk and 1 cup cereal. Top with a peache or nectarine cut into bite size pieces.	\N	77	0
-143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and veg.	\N	41	0
-144	Return the pasta and veg to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	\N	41	1
 924	Pour the lentils into a big pot and add water within an inch of the top of the pot. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling. When the pot boils, turn down the heat a little so it doesn't boil over and let cook. While waiting for the pot to cook, wash the potatoes and cut them up into small cubes, then add them to the pot. Cook until the lentils and potatoes are done.	\N	1	0
 639	In a small bowl, blend the peanut butter, allspice, cinnamon and nutmeg.	\N	58	0
 640	Spread inside pita bread halves; fill with apple and banana slices.	\N	58	1
@@ -9624,6 +9740,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 689	Bake the bread in the preheated oven on the center rack for about 3 to 5 minutes or until the tops are golden brown and crisp.	\N	64	3
 690	Remove the bread from the oven, and top each one with your desired amount of sauce.	\N	64	4
 3244	Add bacon back in then taste and adjust salt and pepper if necessary.	\N	95	3
+143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	\N	41	0
+144	Return the pasta and vegetables to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	\N	41	1
 706	In a large skillet, bring 1/2 in. water to a boil over medium heat.	\N	29	0
 707	Add asparagus and garlic; cook, covered, until asparagus is crisp-tender, 3-5 minutes; drain.	\N	29	1
 708	Toss asparagus with butter and cheese. Serve.	\N	29	2
@@ -10196,6 +10314,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2481	Cut the dates in half (and remove the pits). Add about 1 teaspoon peanut butter (or less, depending on the size of the date) and a generous sprinkle of crushed peanuts. Place the halves back together and form them into a bar shape with your fingers (pressing down to round the corners). 	\N	193	0
 2482	Place the chocolate in a liquid measuring cup with the ½ teaspoon coconut oil and heat in 10 second bursts in the microwave until melted. 	\N	193	1
 2483	Use 2 forks to dip in each of the dates, then shake off the extra chocolate. Place the dates on a parchment-lined baking sheet. If desired, add a small chocolate drizzle with a fork to the top. Freeze 5 minutes to set, then enjoy. Store refrigerated for up to 2 weeks (allow the dates to come to room temperature for about 15 minutes before enjoying).	\N	193	2
+3329	In a large bowl, mix the first 8 ingredients (avocado through cilantro).	\N	525	0
+3330	Serve salsa with sliced cucumbers.	\N	525	1
 2464	Drizzle 5ml/t tsp melted butter on to each chicken piece. Place them in the frying pan in an even layer, two or three at a time, and cook for 2-3 minutes, until the underside begins to blacken. Turn the chicken over and cook the other side for 2-3 minutes more. Remove from the pan and keep hot while cooking successive batches. Serve hot with salad leaves and pepper strips.	\N	131	4
 2370	Soak cashews in water for at least 2 hours or overnight.	\N	255	0
 2371	Place cashews, with their soaking liquid, and remaining ingredients in a food processor or blender and process on high for about 5 minutes. You may need to scrape the sides down intermittently. It’s done when the mixture is completely smooth and no longer tastes grainy.	\N	255	1
@@ -10211,9 +10331,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2068	Heat about 3.5cm/1½ oil in a clean wok. When hot, shallow-fry the chicken for 3-4 minutes until crisp and golden.	\N	196	4
 2069	To serve, divide the noodle mixture between warmed plates or bowls and top each serving with the chicken.	\N	196	5
 3113	Dip the apples in the peanut butter. Enjoy!	\N	407	0
-2929	First combine the flaxseed oil with the parsley and season generously with salt and pepper. Set aside.	\N	325	0
-2930	Next toss together the remaining ingredients and place in two salad bowls.	\N	325	1
-2931	Drizzle with the parsley dressing and serve immediately with a nice tall glass of water to keep you hydrated!	\N	325	2
 3261	Cook 1 cup of quinoa per package instructions.	\N	479	0
 3262	Place the quinoa into a bowl, fluff with a fork and allow to cool.	\N	479	1
 2824	Dip the vegetables in the hummus. Enjoy!	\N	252	0
@@ -10224,11 +10341,14 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2-4 hours to get completely firm. Remove and slice into 1” squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	\N	240	2
 3265	Chill overnight.	\N	479	4
 3266	Serve at room temperature or refrigerate and serve cold.	\N	479	5
+3331	Preheat the oven according to pizza instructions.	\N	526	0
+3332	Heat the baked beans on the stove. Bake the pizza according to package instructions.	\N	526	1
 2484	Break the chocolate into small pieces and place in a heatproof bowl. Add the butter and melt in the microwave on high for 1-2 minutes. Stir to mix and set aside. (Alternatively, place the chocolate pieces and butter in a bowl over a pan of gently simmering water and leave until melted, stirring frequently.)	\N	175	0
 2485	Put the biscuits in a plastic bag and seal, the bash into small pieces with a rolling pin. Alternatively, break up the biscuits in a food processor but do not let them become too fine. Use the pulse button.	\N	175	1
 2486	Roughly chop the prunes and stir into the melted chocolate with the bisuits. Spoon the mixture into a 20cm/8in square cake tin (pan) and smooth out any lumps with the back of the spoon. Chill for 1-2 hours until set. Remove the cake from the refrigerator and using a sharp knife, cut into 12 bars.	\N	175	2
 2630	Finely slice the chilies (use as much as you dare!). Sprinkle half of them into a 12-inch non-stick frying pan on a medium heat with 1 tablespoon of olive oil. Once they start to sizzle, evenly crack in the eggs, then spoon the black beans and just half the juice from the can in and around the eggs. Season with sea salt and black pepper, cover, and cook the eggs to your liking.	\N	265	0
 2631	Meanwhile, halve, peel, and pit the avocado, slice into thin wedges, dress with the lime juice, and season to perfection. Arrange the avocado around the pan, scatter over the rest of the chilies, stab the egg yolks, and dish up.	\N	265	1
+3333	Top the baked beans on the pizza. Serve hot.	\N	526	2
 1557	Sprinkle the garlic, vinegar, cumin and cayenne or paprika over the salad. Drizzle with olive oil and sprinkle over coriander and olives.	\N	153	2
 2899	Cook the rice in a pan of boiling salted water according to the package instructions, then drain. Meanwhile, trim and finely slice the scallions, putting the white slices into a bowl. Seed and finely chop the chilies, add to the bowl with 1 tablespoon of red wine vinegar and a little sea salt and black pepper, and mix well to make a dressing.	\N	313	0
 3068	Remove from the oven and let the chickpeas cool on the baking sheet. They will continue to crisp as they cool. Enjoy immediately as a snack, salad topper, or side dish.	\N	392	4
@@ -10277,6 +10397,14 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2147	Rub both pitas with the tablespoon of olive oil and sprinkle evenly with the 1/2 teaspoon of za'atar. Microwave for 20 seconds to make them pliable.	\N	61	2
 2148	To form the bowl, drape them over a small, oven-safe bowl or even the back of a muffin tin cup. If you have nothing like that, you can also form balls out of aluminum foil and drape the pitas over them. Bake both the chickpeas and pitas for 12 minutes.	\N	61	3
 2149	While the pita and chickpeas are in the oven, make the dressing by whisking together the olive oil, lemon juice, tahini, and za'atar.	\N	61	4
+3322	Melt coconut oil in a pan. Blend banana and egg in a mixer until batter consistency is achieved (30 sec to 1 minute).	\N	523	0
+3323	Pour batter into the pan. Cook for 2-3 minutes and then flip, cooking for an additional 1-2 minutes.	\N	523	1
+3324	Cut strawberries in half to garnish.	\N	523	2
+3334	Combine the tumeric, ginger, salt and cinnamon, and place in a large mug.	\N	527	0
+3335	Add the hot water slowly as you whisk the liquid.	\N	527	1
+3336	Add the lemon and stevia.	\N	527	2
+3337	Alternatively, add all ingredients to a blender and blend until smooth.	\N	527	3
+3338	Top off with almond milk, if desired, and enjoy!	\N	527	4
 2832	Pop the popcorn in the microwave.	\N	59	0
 2319	Cut the kielbasa into 1-inch pieces and combine them with the brown sugar, applesauce, mustard, and garlic in a 3-quart slow cooker.	\N	34	0
 2320	Cover and cook on low for 6 to 8 hours or until the sausage is thoroughly heated and the sauce is bubbly.	\N	34	1
@@ -10347,6 +10475,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2446	Pour white wine into the pan, stir, and simmer for 7 minutes.	\N	257	1
 2447	Add arborio rice, mix everything, and fry everything together for 5 minutes.	\N	257	2
 2387	Place a slice of cheese onto each burger patty then return to the oven for 1 minute to let the cheese melt. Transfer cheeseburgers to buns then serve.	\N	134	3
+3327	Place the fruits in the large pitcher of filtered water.	\N	524	0
+3328	Sip throughout the day.	\N	524	1
+3339	In a small bowl, whisk together the coconut milk and lime juice.	\N	528	0
+3340	Place the mango, cucumber, onion, cilantro, and ginger in a medium-sized bowl, and mix thoroughly.	\N	528	1
+3341	Pour the coconut mixture over the mango and vegetable mixture, and let it sit for at least 15 minutes.	\N	528	2
+3342	Enjoy over chicken or fish, or in romaine lettuce-leaf wrappers.	\N	528	3
 2918	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through. Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	1
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	\N	262	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	\N	262	1
@@ -10380,6 +10514,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3271	Reduce heat to low and stir in Dairy-Free Pesto. Cook until the asparagus is tender, about 1-2 minutes.	\N	482	2
 3272	Sprinkle with pine nuts and enjoy!	\N	482	3
 3139	In a small bowl, mix the remaining ingredients with sea salt and pepper to taste, spoon over turkey, and serve.	\N	416	2
+3343	Mix together and enjoy!	\N	529	0
 1825	Make a spicy relish by cooking the remaining shallot with the garlic and green chilli in the olive oil for 2-3 minutes, until softened.	\N	173	2
 1826	Add the canned ratatouille to the pan containing the vegetables. Bring to the boil, then simmer for 5 minutes.	\N	173	3
 1827	Meanwhile, preheat the grill (broiler) and cook the burgers for about 5 minutes on each side, until browned and cooked through. Meanwhile, split the burger buns. Arrange lettuce leaves on the bun bases, add the burgers and top with warm relish and the bun tops. 	\N	173	4
@@ -10431,6 +10566,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1253	Top with milk, sweetener, cinnamon, dried fruits or nuts, if desired.	\N	53	3
 3276	Cook the chicken.	\N	485	0
 3277	Serve with honey.	\N	485	1
+2929	First combine the flaxseed oil with the parsley and season generously with salt and pepper. Set aside.	\N	325	0
+2930	Next toss together the remaining ingredients and place in two salad bowls.	\N	325	1
+2931	Drizzle with the parsley dressing and serve immediately with a nice tall glass of water to keep you hydrated!	\N	325	2
 2997	Meanwhile, prepare the cauliflower. If you are using fresh cauliflower, cut it into florets and then pulse in a food processor until the texture resembles rice.	\N	375	3
 2998	In a separate medium skillet, heat the other tablespoon of coconut oil and sauté the cauliflower until it is just tender, about 10 minutes, adding salt and pepper as needed.	\N	375	4
 2999	Serve the creamy chicken over a bed of cooked cauliflower rice topped with the fresh chives.	\N	375	5
@@ -10592,7 +10730,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 12777, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 12822, true);
 
 
 --

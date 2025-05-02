@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250502151801_AddSubScale")]
+    partial class AddSubScale
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,9 +238,7 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<double>("Scale")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("double precision")
-                        .HasDefaultValue(1.0);
+                        .HasColumnType("double precision");
 
                     b.HasKey("IngredientId", "AlternativeIngredientId");
 
@@ -665,9 +666,7 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<double>("SubstituteScale")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("double precision")
-                        .HasDefaultValue(1.0);
+                        .HasColumnType("double precision");
 
                     b.HasKey("UserId", "IngredientId", "RecipeId");
 

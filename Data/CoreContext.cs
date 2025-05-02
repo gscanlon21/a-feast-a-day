@@ -5,6 +5,8 @@ using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
 using Data.Entities.User;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace Data;
 
@@ -54,5 +56,20 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipeIngredient>().HasQueryFilter(p => p.UserFeastRecipe.Recipe.DisabledReason == null);
+
+        // Set the default value of the db columns be attributes.
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            foreach (var property in entityType.GetProperties())
+            {
+                if (((MemberInfo?)property.PropertyInfo ?? property.FieldInfo) is MemberInfo memberInfo)
+                {
+                    if (Attribute.GetCustomAttribute(memberInfo, typeof(DefaultValueAttribute)) is DefaultValueAttribute defaultValue)
+                    {
+                        property.SetDefaultValue(defaultValue.Value);
+                    }
+                }
+            }
+        }
     }
 }
