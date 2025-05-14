@@ -7422,6 +7422,16 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 12864	122	48	\N	\N	3	0.3
 12865	122	14	\N	\N	3	0.3
 12866	122	62	\N	\N	3	1
+12867	640	128	\N	\N	3	0.1
+12868	640	68719476736	\N	\N	2	7
+12869	640	34359738368	\N	\N	2	1397
+12870	640	1	\N	\N	3	5
+12871	640	4294967296	\N	\N	2	95
+12872	640	2199023255552	\N	\N	2	5
+12873	640	14	\N	\N	3	118
+12874	640	1984	\N	\N	3	1
+12875	640	62	\N	\N	3	118
+12876	640	2047	\N	\N	3	447
 \.
 
 
@@ -9614,6 +9624,24 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6079	5	\N	\N	533	1	1	(BABY POTATOES), with skins	353	f	\N	0
 6080	7	\N	\N	533	1	1	, chopped	473	f	\N	1
 6081	7	\N	\N	533	1	1	\N	77	f	\N	2
+6082	0	\N	\N	534	1	2	, peeled and coarsely chopped	1043	f	\N	0
+6083	6	\N	\N	534	1	1	\N	353	f	\N	1
+6084	0	\N	\N	534	2	1	, juiced	4	f	\N	2
+6085	6	\N	\N	535	2	3	\N	807	f	\N	0
+6086	0	\N	\N	535	1	20	, unsweetened	627	f	\N	1
+6087	6	\N	\N	535	3	1	(CAROB POWDER)	124	f	\N	2
+6088	0	\N	\N	535	1	1	, juiced and zested	346	f	\N	3
+6089	8	\N	\N	535	4	1	, to taste	74	f	\N	4
+6090	5	\N	\N	536	1	1	\N	988	f	\N	0
+6091	8	\N	\N	536	1	2	, ground	510	f	\N	1
+6092	8	\N	\N	536	2	1	\N	71	f	\N	2
+6093	8	\N	\N	536	4	1	, to taste	692	t	\N	3
+6094	7	\N	\N	536	1	2	(AVOCADO OIL | COCONUT OIL)	176	f	\N	4
+6095	6	\N	\N	537	4	1	\N	80	f	\N	0
+6096	8	\N	\N	537	1	2	\N	176	f	\N	1
+6097	7	\N	\N	537	1	2	\N	991	f	\N	2
+6098	8	\N	\N	537	1	2	\N	39	f	\N	3
+6099	0	\N	\N	537	1	1	, zested	346	f	\N	4
 \.
 
 
@@ -9811,6 +9839,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3244	Add bacon back in then taste and adjust salt and pepper if necessary.	\N	95	3
 143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	\N	41	0
 144	Return the pasta and vegetables to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	\N	41	1
+3359	Place apples and carrots in a food processor. Process on high for 1 to 2 minutes until the apples and carrots are finely chopped. You may also use a box grater to shred the carrots and apples if you prefer.	\N	534	0
+3360	Drizzle with lemon juice.	\N	534	1
 706	In a large skillet, bring 1/2 in. water to a boil over medium heat.	\N	29	0
 707	Add asparagus and garlic; cook, covered, until asparagus is crisp-tender, 3-5 minutes; drain.	\N	29	1
 708	Toss asparagus with butter and cheese. Serve.	\N	29	2
@@ -9853,6 +9883,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3127	Using a grater, on the medium grate side, grate the cauliflower chunks until no more remain.	\N	411	1
 2759	Pour the drink into a tall, chilled glass and serve immediately.	\N	167	2
 1235	Mash the avocado and spread evenly on the rice cakes. Sprinkle with sea salt. 	\N	48	0
+3361	Line an 8x8" baking dish with parchment paper and set aside. 	\N	535	0
+3362	In a food processor, add nuts and pulse until they become small, crumbly bits.	\N	535	1
+3363	Remove and place into a medium-size bowl. Cut open and de-pit the dates.	\N	535	2
+3364	In the same food processor, add dates and pulse about 5 times, until slighly chopped.	\N	535	3
 2448	Pour broth and water into the pan, add salt and pepper, and mix.	\N	257	3
 2449	Cover the pan with a lid and cook the risotto for 10 minutes. Then you need to check the readiness of the rice and add water or broth until the rice is cooked and acquires a creamy texture.	\N	257	4
 2450	Ready rice should not be completely boiled, but it should be sticky. Serve the risotto with Parmesan, green onions, and peppers.	\N	257	5
@@ -9895,6 +9929,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3247	Make small balls (about 1 tablespoon of batter) and put them on a parchment-lined baking sheet.	\N	473	2
 3248	Bake for 8-10 minutes.	\N	473	3
 3249	Remove and let cool.	\N	473	4
+3365	Add the remaining ingredients (carob powder through sea salt), and process until the mixture forms into a doughy consistency.	\N	535	4
+3366	Add the mixture to the bowl with the nuts, and mix to combine. Press the mixture into the lined baking dish evenly. Freeze for 30 minutes or until firm.	\N	535	5
+3367	Slice into squares and serve.	\N	535	6
 753	Brown ground beef with shallot in a large skillet over medium-high heat. Drain then return to the skillet. Add taco seasoning, salsa, and chicken broth then bring to a boil. Stir in rice then place a lid on top and reduce heat to low. Simmer for 15-20 minutes or until rice is tender then remove from heat and stir in cheddar cheese until melted. Place lid back on the skillet then let sit for 5 minutes before serving with toppings.	\N	89	0
 754	Toppings: tortilla chips, salsa, sliced avocado, chopped green onions.	\N	89	1
 1413	Mix the diced chicken with half the garlic and the tumeric. Heat a little of the oil in a pan, add the chicken and fry until the chicken has cooked thoroughly. Remove from the pan and set aside.	\N	140	0
@@ -10001,6 +10038,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1928	Bring the water in the steamer to the boil, then lower the heat to a simmer. Steam until the flesh feels tender when tested with a knife tip. Serve hot.	\N	177	3
 2260	Stir in the flour and cook for another 1-2 minutes, stirring often (this cooks the raw flour taste out).	\N	182	3
 2261	Gradually pour in the beef broth while stirring until the flour has dissolved and scraping any stuck-on bits from the bottom of the pan.	\N	182	4
+3368	In a medium-sized mixing bowl, combine and mix the first 5 ingredients (ground turkey through salt and black pepper), and refrigerate for at least 30 minutes to firm the meat texture. 	\N	536	0
+3369	Once the mixture has been cooled, form into patties and place on a lined plate.	\N	536	1
 1734	Combine ingredients in a large saucepan over high heat. The larger the pan, the faster it will reduce. For me it takes about 10 minutes, but it depends on the size of the pan you use.	\N	88	0
 1735	Bring to boil, then turn heat down and simmer until it reduces by half. The consistency should be like a light syrup.	\N	88	1
 1736	Bring to room temperature before using.	\N	88	2
@@ -10051,6 +10090,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1823	Put the shallots in a bowl with boiling water to cover. Leave for 1-2 minutes, then slip off the skins and chop the shallots finely.	\N	173	0
 1603	To make ahead: Add the chicken breasts, Italian dressing, and seasonings to a gallon-size Ziplock bag then seal and squish to coat. Press out all the air then reseal and refrigerate for 30 minutes or up to 24 hours. Pour the entire contents of the bag into the nonstick sprayed baking dish then bake as directed above.	\N	135	3
 1277	Preheat oven to 425°F. In a large bowl combine ground beef, egg, Worcestershire sauce, 2 Tablespoons BBQ sauce, bread crumbs, salt, pepper, cheese cubes, and caramelized onions, then mix until just combined. Divide mixture into 4 equal-sized portions then form into loaves and place on a foil-lined, non-stick-sprayed baking sheet. Spread 1 Tablespoon BBQ sauce over each loaf then bake for 20 minutes, or until no longer pink in the center, and then serve.	\N	90	1
+3370	In a large skillet, heat oil on medium heat. Once oil is hot, add the patties. Cook for about five minutes per side, or until no longer pink in the middle.	\N	536	2
 1261	Mash the potatoes. Chop the kale or cabbage, add it to the potatoes and mix. Stir in a little milk if the mash if too stiff.	\N	102	0
 1262	Melt a little butter in a frying pan over a medium heat and add the onion. Cook for 3-4 minutes until softened. Remove and mix well with the potato and kale or cabbage.	\N	102	1
 1263	Add the remainder of the butter to the hot pan. When very hot, turn the potato mixture on to the pan and spread it out. Fry until brown, then cut it roughly into pices and continue frying until they are crisp and brown.	\N	102	2
@@ -10081,6 +10121,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2405	Remove mixture from oven, place on plate and set on counter. When cool, combine seed and nut mixture with coconut flakes, cinnamon, chocolate chips. Mix to combine. Enjoy!	\N	245	2
 2795	Grill until golden brown on bottom.	\N	51	3
 1824	Mix half the shallots with the beef in a bowl. Add the chopped parsley and tomato ketchup, with salt and pepper to taste. Mix well with clean hands. Divide the mixture into four. Knead each portion into a ball, then flatten it into a burger.	\N	173	1
+3371	In a small bowl, whisk together all ingredients, and season to taste with salt and pepper.	\N	537	0
 1315	Preheat the broiler. Mix the Dijon Mustard and Mayonaise to make Dijonnaise.	\N	107	0
 1316	Butter both pieces of brioche and place in a nonstick 10-inch pan or onto a griddle over medium heat, butter side down.	\N	107	1
 2682	Cut off ends and slice beets very thin using a knife or mandolin. Place in a medium bowl and drizzle with the EVOO and sea salt. Toss. Let sit for 30 minutes.	\N	234	0
@@ -10809,7 +10850,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 12866, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 12876, true);
 
 
 --
