@@ -363,7 +363,7 @@
 372	\N	Fresh Kale	https://www.eatthismuch.com/calories/kale,1995	\N	f	0	67	67	2024-09-11	6	67	1
 373	\N	Fresh Cabbage | Fresh Kale	https://www.eatthismuch.com/calories/cabbage,1902	\N	f	0	89	908	2024-08-31	6	89	1
 374	\N	Naan, GF	\N	\N	f	0	240	100	2024-08-06	0	240	0
-375	\N	Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2024-06-15	0	61	2
+375	\N	Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2025-05-11	0	61	4
 376	\N	Watercress	https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2024-11-15	4	34	2
 377	\N	Jarred Roasted Red Peppers	https://www.eatthismuch.com/calories/red-peppers-2530	\N	f	0	28	140	2024-11-19	4	140	512
 378	\N	Pecorino Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	4194304
@@ -566,7 +566,7 @@
 637	\N	Milk Chocolate Chips (40%)	https://www.eatthismuch.com/calories/dark-chocolate-4766	\N	f	0	28	28	2024-12-15	4	224	16384
 638	\N	Dark Chocolate (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	28	168	2024-12-25	4	168	16384
 639	\N	Milk Chocolate (40%)	https://www.eatthismuch.com/calories/dark-chocolate-4766	\N	f	0	28	28	2025-02-02	4	168	16384
-640	\N	Prunes	Dried Plums.	\N	f	0	240	100	2024-06-15	6	240	1
+640	\N	Prunes	Dried Plums. https://www.eatthismuch.com/calories/prunes-1535	\N	f	0	132	132	2025-05-11	6	132	1
 641	\N	Graham Crackers	https://www.eatthismuch.com/calories/graham-crackers-4097	\N	f	0	7	7	2025-02-17	0	50	262144
 642	\N	Gluten-Free Graham Crackers	https://www.eatthismuch.com/calories/graham-crackers-4097	\N	f	0	7	7	2025-02-14	0	84	262144
 643	\N	Ground Venison	https://www.eatthismuch.com/calories/ground-venison-all-natural-2136768	\N	f	0	28	113	2024-12-03	4	224	268435456
@@ -846,3 +846,12 @@
 1043	\N	Green Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-29	0	182	1
 1044	\N	Maca Powder	\N	\N	f	0	240	100	2024-06-21	6	240	16384
 1045	\N	Frozen Pizza	https://www.eatthismuch.com/calories/pizza-crust-1841250	\N	f	0	212	53	2024-10-16	0	53	2
+1046	\N	Creamy Peanut Butter (Organic)	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
+1047	\N	Package Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2024-07-27	0	120	16288
+1048	\N	Purely Elizabeth Banana Nut Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
+1049	\N	Purely Elizabeth Dark Chocolate Chunk Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
+1050	\N	Purely Elizabeth Blueberry Flax Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
+1051	\N	Purely Elizabeth Classic Cinnamon Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
+1052	\N	Purely Elizabeth Original Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2024-07-27	0	120	16288
+1053	\N	Avocado Oil | Coconut Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
+1054	\N	Baby Potatoes	https://www.eatthismuch.com/food/nutrition/yellow-potato,528851/	\N	f	0	113	113	2024-06-16	0	113	2
