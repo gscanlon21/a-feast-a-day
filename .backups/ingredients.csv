@@ -160,7 +160,7 @@
 163	\N	Cow Milk (Skim)	https://www.eatthismuch.com/calories/skim-milk,7096	\N	f	320	240	240	2024-08-30	6	240	4194304
 164	\N	Eggs, White	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-08-31	0	200	16777216
 165	\N	Mini Bagels	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2024-06-19	6	240	4
-166	\N	Pita	https://www.eatthismuch.com/calories/pita-2286290	\N	f	262176	48	48	2024-06-15	0	48	4
+166	\N	Loaves of Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-18	0	64	4
 167	\N	Naan	https://www.eatthismuch.com/calories/naan,201876	\N	f	262176	140	140	2024-08-06	0	100	4
 168	\N	Allspice	https://www.eatthismuch.com/calories/allspice-176	\N	f	0	12	6	2024-10-26	4	96	4
 169	\N	Slices of Multigrain Bread	https://www.eatthismuch.com/calories/multigrain-bread,7887	\N	f	32	25	50	2024-09-05	0	50	2
@@ -193,7 +193,7 @@
 196	\N	Cornstarch	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2024-07-19	7	128	0
 197	\N	Slices of White Bread, GF	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	2024-09-24	0	48	4
 198	\N	Bologna	https://www.eatthismuch.com/calories/bologna-999	\N	f	0	28	28	2025-05-03	4	224	268435456
-200	\N	Pita, Whole Wheat	https://www.eatthismuch.com/food/nutrition/whole-wheat-pita,2021396/	\N	f	262176	71	71	2024-06-15	6	240	4
+200	\N	Loaves of Whole-Wheat Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
 201	\N	Creamy Peanut Butter (Reduced Fat)	https://www.eatthismuch.com/calories/creamy-reduced-fat-peanut-butter,542598	\N	f	0	17	17	2024-07-30	7	272	0
 202	\N	Mini Bagels, Whole Grain	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2024-06-19	6	240	0
 203	\N	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506	\N	f	2	28	28	2024-09-29	4	224	3145728
@@ -202,7 +202,7 @@
 206	\N	Fresh Baby Spinach	https://www.eatthismuch.com/calories/baby-spinach,6336	\N	f	0	28	60	2025-02-02	4	30	2
 207	\N	Frozen Podded Edamame Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	28	118	2024-07-16	4	118	67108864
 209	\N	Frozen Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	67108864
-210	\N	Flatbread	https://www.eatthismuch.com/food/nutrition/whole-wheat-pita,2021396/	\N	f	0	71	71	2024-06-15	6	240	0
+210	\N	Loaves of Flatbread	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-18	0	64	4
 212	\N	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	32	29	57	2024-07-15	0	57	64
 213	\N	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	0	257	257	2024-08-11	0	128.5	2
 214	\N	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/	\N	t	0	18	18	2024-07-28	7	288	131072
@@ -363,7 +363,7 @@
 372	\N	Fresh Kale	https://www.eatthismuch.com/calories/kale,1995	\N	f	0	67	67	2024-09-11	6	67	1
 373	\N	Fresh Cabbage | Fresh Kale	https://www.eatthismuch.com/calories/cabbage,1902	\N	f	0	89	908	2024-08-31	6	89	1
 374	\N	Naan, GF	\N	\N	f	0	240	100	2024-08-06	0	240	0
-375	\N	Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2025-05-11	0	61	4
+375	\N	Loaves of Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2025-05-11	0	61	4
 376	\N	Watercress	https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2024-11-15	4	34	2
 377	\N	Jarred Roasted Red Peppers	https://www.eatthismuch.com/calories/red-peppers-2530	\N	f	0	28	140	2024-11-19	4	140	512
 378	\N	Pecorino Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	4194304
@@ -758,7 +758,7 @@
 861	\N	Fresh Mixed-Color Zucchini	https://www.eatthismuch.com/calories/zucchini-2183	\N	f	0	196	196	2025-03-06	0	196	2
 862	\N	Silken Tofu	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	32768	50	50	2024-11-03	0	200	8192
 863	\N	Tofu	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	32768	50	50	2024-08-31	0	200	8192
-864	\N	Rosemary Focaccia	https://www.eatthismuch.com/calories/loaf-bread,3303048	\N	f	32	34	34	2024-06-15	0	34	64
+864	\N	Rosemary Focaccia	https://www.eatthismuch.com/calories/focaccia-italian-flatbread-plain-479584	\N	f	262176	57	57	2025-05-17	0	57	4
 865	\N	White Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	4
 866	\N	Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
 867	\N	Chipolata	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
@@ -854,4 +854,9 @@
 1051	\N	Purely Elizabeth Classic Cinnamon Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
 1052	\N	Purely Elizabeth Original Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2024-07-27	0	120	16288
 1053	\N	Avocado Oil | Coconut Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
-1054	\N	Baby Potatoes	https://www.eatthismuch.com/food/nutrition/yellow-potato,528851/	\N	f	0	113	113	2024-06-16	0	113	2
+1054	\N	Baby Potatoes	https://www.eatthismuch.com/calories/potato-2091?a=0.4607%3A3	\N	f	0	170	170	2024-06-16	0	170	2
+1055	\N	Jif Natural Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
+1056	\N	Schnucks Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
+1057	\N	Loaves of White Pita (Unenriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
+1058	\N	Loaves of White Pita (Enriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
+1059	\N	Loaves of Flatbread, GF	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	0	64	64	2025-05-18	0	64	4

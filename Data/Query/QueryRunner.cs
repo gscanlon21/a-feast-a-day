@@ -58,7 +58,8 @@ public class QueryRunner(Section section)
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
-        return context.Recipes.IgnoreQueryFilters().TagWith(nameof(CreateFilteredRecipesQuery))
+        return context.Recipes.TagWith(nameof(CreateFilteredRecipesQuery))
+            .IgnoreQueryFilters().AsSplitQuery()
             .Include(r => r.Instructions)
             .Where(r => r.DisabledReason == null)
             // Don't grab recipes that we want to ignore.
@@ -254,7 +255,7 @@ public class QueryRunner(Section section)
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                 // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
                 var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)]);
-                if (recipe.AllNutrients.Where(n => n.Value > 0).Any(n => overworkedNutrients.Contains(n.Nutrients)))
+                if (overworkedNutrients != null && recipe.AllNutrients.Where(n => n.Value > 0).Any(n => overworkedNutrients.Contains(n.Nutrients)))
                 {
                     continue;
                 }
@@ -263,28 +264,30 @@ public class QueryRunner(Section section)
                 if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
                 {
                     var unworkedNutrients = GetUnworkedNutrients(finalResults);
-
-                    // We've already worked all unique nutrients.
-                    if (unworkedNutrients.Count == 0)
+                    if (unworkedNutrients != null)
                     {
-                        break;
-                    }
+                        // We've already worked all unique nutrients.
+                        if (unworkedNutrients.Count == 0)
+                        {
+                            break;
+                        }
 
-                    // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
-                    var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
-                    // The recipe does not work enough unique nutrients that we are trying to target.
-                    // Allow recipes that have a refresh date since we want to show those continuously until that date.
-                    // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
-                    // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
-                    var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(e => e.UserRecipe?.RefreshAfter == null)) ? 1
-                        // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
-                        // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
-                        : (NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
+                        // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
+                        var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
+                        // The recipe does not work enough unique nutrients that we are trying to target.
+                        // Allow recipes that have a refresh date since we want to show those continuously until that date.
+                        // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
+                        // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
+                        var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(e => e.UserRecipe?.RefreshAfter == null)) ? 1
+                            // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
+                            // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
+                            : (NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
 
-                    // Include the prerequisite recipes in this calculation.
-                    if (recipe.AllNutrients.Count(n => n.Value > 0) < Math.Max(1, nutrientsToWork))
-                    {
-                        continue;
+                        // Include the prerequisite recipes in this calculation.
+                        if (recipe.AllNutrients.Count(n => n.Value > 0) < Math.Max(1, nutrientsToWork))
+                        {
+                            continue;
+                        }
                     }
                 }
 
@@ -456,8 +459,10 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients> GetUnworkedNutrients(ICollection<QueryResults> finalResults)
+    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults)
     {
+        if (NutrientOptions.NutrientTargetsRDA == null) { return null; }
+
         var allNutrientsWorked = WorkedAmountOfNutrient(finalResults);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsRDA.Where(kv =>
@@ -469,8 +474,10 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients> GetOverworkedNutrients(ICollection<QueryResults> finalResults)
+    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults)
     {
+        if (NutrientOptions.NutrientTargetsTUL == null) { return null; }
+
         var allNutrientsWorked = WorkedAmountOfNutrient(finalResults);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsTUL.Where(kv =>

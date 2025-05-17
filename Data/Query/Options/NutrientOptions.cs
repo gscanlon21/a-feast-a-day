@@ -24,8 +24,8 @@ public class NutrientOptions : IOptions
     /// <summary>
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
-    public IDictionary<Nutrients, double> NutrientTargetsRDA { get; } = new Dictionary<Nutrients, double>();
-    public IDictionary<Nutrients, double> NutrientTargetsTUL { get; } = new Dictionary<Nutrients, double>();
+    public IDictionary<Nutrients, double>? NutrientTargetsRDA { get; }
+    public IDictionary<Nutrients, double>? NutrientTargetsTUL { get; }
 
     /// <summary>
     /// Makes sure each variations works at least x unique nutrients to be chosen.

@@ -14,5 +14,5 @@ public static class DebugConsts
     /// <summary>
     /// Days of the week to send the debug newsletter.
     /// </summary>
-    public static readonly DayOfWeek[] DebugDays = [DayOfWeek.Saturday, DayOfWeek.Sunday];
+    public static readonly DayOfWeek[] DebugDays = [DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday];
 }
