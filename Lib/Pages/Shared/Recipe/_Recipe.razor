@@ -35,17 +35,17 @@
 @* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
 <div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;
             border-bottom:4px solid @borderColor;border-image-slice:1;outline:1px solid @borderColor;background-color:@backgroundColor;">
-         
+
     <div> @* For margin collapse. *@
         <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:.8ch;">
             <span style="flex:1 1 auto;">
-                @if (string.IsNullOrWhiteSpace(Model.Recipe.Link))
+                @if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
                 {
-                    <span style="text-decoration:underline;">@Model.Recipe.Name</span>
+                    <a class="allow-demo" target="_blank" href="@Model.Recipe.Link">@Model.Recipe.Name</a>
                 }
                 else
                 {
-                    <a class="allow-demo" target="_blank" href="@Model.Recipe.Link">@Model.Recipe.Name</a>
+                    <span style="text-decoration:underline;">@Model.Recipe.Name</span>
                 }
             </span>
 
@@ -57,6 +57,10 @@
 
         @if (Verbosity.HasFlag(Verbosity.Notes))
         {
+            if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && !Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
+            {
+                <div style="margin-block:.5em;font-size:x-small;word-break:break-word;">@Model.Recipe.Link</div>
+            }
             <div style="margin-block:.5em;font-size:x-small;word-break:break-word;">@Model.Recipe.Notes</div>
         }
 

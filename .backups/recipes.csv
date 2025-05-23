@@ -1,4 +1,4 @@
-1	Lentil Soup	\N	\N	\N	4	360	20	4	t	0	lentil-soup.jpg	0	\N	f	f
+1	Lentil Soup	Thoroughly wash the lentils before cooking with them.	\N	\N	4	360	20	4	t	0	lentil-soup.jpg	0	\N	f	f
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	1	t	4194308	sausage-spaghetti.jpg	0	\N	f	f
 17	Vegetarian Stir-Fry	For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	4194308	vegetable-stir-fry.jpg	0	\N	f	f
 19	Egg in a Pepper	\N	\N	\N	3	5	1	1	t	4194308	egg-in-a-pepper.jpg	0	\N	f	f
@@ -55,7 +55,7 @@
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	t	0	white-bread.jpg	0	\N	f	f
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	t	8589942784	white-bread.jpg	0	\N	t	f
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	0	basil-quesadilla.jpg	0	\N	f	f
-75	Garlic Infused Olive Oil	\N	\N	\N	0	0	5	5	t	0	garlic-olive-oil.jpg	7	\N	f	f
+75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121°F.	\N	\N	0	5	5	5	t	4194308	garlic-olive-oil.jpg	7	\N	f	f
 76	Minty Courgette Linguine	\N	\N	\N	6	15	5	3	t	0	zucchini-linguine.jpg	0	\N	f	f
 77	Cereal w/ Fruit	\N	\N	\N	1	0	1	4	f	0	cereal.jpg	0	\N	f	f
 78	String Cheese	\N	\N	\N	16	0	0	1	t	0	string-cheese.jpg	0	\N	f	f
@@ -176,7 +176,7 @@
 194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
 195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	0	pasta-broccoli-artichokes.jpg	0	\N	f	f
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	0	\N	0	\N	f	f
-197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	0	\N	0	\N	f	f
+197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	4194308	beef-noodles.jpg	0	\N	f	f
 198	5-Ingredient Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	10	1	t	2147485696	guacamole.jpg	6	https://asassyspoon.com/guacamole/#wprm-recipe-container-2857	f	f
 231	Pork with Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	4194308	pork-apples.jpg	0	\N	f	f
 232	Collagen Packed Blueberry Gummies	\N	\N	\N	16	120	15	2	t	0	blueberry-gummies.jpg	0	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	f	f
@@ -292,7 +292,7 @@
 407	Apples and Peanut Butter	\N	\N	\N	24	0	1	1	t	0	peanut-butter-apples.jpg	0	\N	f	f
 408	Baked Zucchini	\N	\N	\N	24	10	5	2	t	2097154	zucchini.jpg	0	\N	f	f
 409	Pumpkin Bread	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	45	15	10	t	0	\N	0	\N	f	f
-410	Cauliflower Mash	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	15	5	4	t	138412164	cauliflower-rice.jpg	0	\N	t	f
+410	Cauliflower Mash	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	15	5	2	t	138412164	cauliflower-rice.jpg	6	\N	t	f
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	0	cauliflower-rice.jpg	6	\N	t	f
 412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	4194308	cauliflower-rice.jpg	0	\N	f	f
 413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	0	pumpkin-pudding.jpg	0	\N	f	f
@@ -337,7 +337,7 @@
 484	Rice	\N	\N	\N	0	30	0	1	t	0	cauliflower-rice.jpg	6	\N	t	f
 485	Honey Chicken	TODO Find an actual recipe for this.	\N	\N	6	25	5	2	t	6291462	honey-mustard-chicken.jpg	0	\N	f	f
 486	Strawberries & Cream	\N	\N	\N	32	0	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-487	Rainbow Roasted Vegetables	\N	\N	\N	8	25	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+487	Rainbow Roasted Vegetables	\N	\N	\N	8	25	15	4	t	2097154	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 521	Maca Latte	\N	\N	\N	48	2	4	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	0	30	15	4	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 523	Banana Pancakes	\N	\N	\N	35	5	5	1	t	4194308	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -354,11 +354,36 @@
 534	Digestive Apple Carrot Salad	\N	\N	\N	10	0	15	2	t	0	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	0	0	5	8	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 536	Turkey Breakfast Sausage	\N	\N	\N	3	10	5	4	t	0	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	4	t	0	citrus-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 538	Lamb Juice	\N	\N	\N	8	0	5	1	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 539	Hot Oatmeal	\N	\N	\N	3	5	5	1	t	4194308	old-fashioned-oatmeal.jpg	0	\N	f	f
 540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	4	15	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 541	Shrimp Fried Rice	\N	\N	\N	4	15	10	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-542	Sautéed Chicken & Garlic Cauliflower Mash	\N	\N	\N	4	10	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+542	Sautéed Chicken & Garlic Cauliflower Mash	\N	\N	\N	4	10	5	2	t	4194308	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	268435712	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	4194308	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+546	Sesame Almond Dressing	\N	\N	\N	0	0	5	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
+547	Burgers	\N	\N	\N	4	45	15	4	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+548	Fajita Seasoning	\N	\N	\N	0	0	5	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+551	Bentonite Clay Juice	\N	\N	\N	8	0	5	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+552	Charcoal Juice	\N	\N	\N	8	0	10	2	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+553	Adobo	\N	\N	\N	4	120	5	8	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	8	6	5	4	t	4194308	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+555	Green Beans with Almonds	\N	\N	\N	8	15	5	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+556	Hashi-Mayo	\N	\N	\N	0	0	10	1	t	134217856	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+557	Cinnamon Vanilla Smoothie	\N	\N	\N	8	0	10	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+558	Feel So Good Smoothie	\N	\N	\N	8	0	10	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+559	Bone Broth	\N	\N	\N	0	90	15	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+560	Fermented Cabbage Salad	\N	\N	\N	8	0	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+561	Heirloom Tomator and Beet Salad	\N	\N	\N	8	45	15	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+562	Wild Salmon & Broccoli Frittata	\N	\N	\N	6	15	5	6	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+563	Greek Salmon	Serve with Katy's Greek Salad.	\N	\N	4	30	5	2	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+564	Roasted Vegetables	\N	\N	\N	8	35	10	6	t	2097154	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+565	Rainbow Stir-Fry Veggies	\N	\N	\N	8	25	10	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+566	Tuna Salad	\N	\N	\N	10	0	10	1	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+567	Turkey & Walnut Salad	\N	\N	\N	10	40	10	4	t	4194308	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	6291462	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+569	Spinach & Strawberry Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
