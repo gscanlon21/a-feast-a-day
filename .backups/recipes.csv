@@ -1,4 +1,4 @@
-1	Lentil Soup	Thoroughly wash the lentils before cooking with them.	\N	\N	4	360	20	4	t	0	lentil-soup.jpg	0	\N	f	f
+1	Lentil Soup	Thoroughly wash the lentils before cooking with them.	\N	\N	4	360	20	4	t	4194308	lentil-soup.jpg	0	\N	f	f
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	6	20	5	1	t	4194308	sausage-spaghetti.jpg	0	\N	f	f
 17	Vegetarian Stir-Fry	For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	4194308	vegetable-stir-fry.jpg	0	\N	f	f
 19	Egg in a Pepper	\N	\N	\N	3	5	1	1	t	4194308	egg-in-a-pepper.jpg	0	\N	f	f
@@ -209,7 +209,7 @@
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	4194308	zucchini-linguine.jpg	0	\N	f	f
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	4194308	chicken-noodle-stir-fry.jpg	0	\N	f	f
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	0	buttermilk.jpg	6	\N	f	f
-263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	0	20	3	t	0	tahini-carrot-slaw.jpg	0	\N	f	f
+263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	10	10	10	2	t	4194308	tahini-carrot-slaw.jpg	0	\N	f	f
 264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	3	7	3	2	t	4194308	asian-fried-eggs-alt.jpg	0	\N	f	f
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	3	10	5	2	t	0	\N	0	\N	f	f
 266	Sweet Potato Cauliflower Curry	\N	\N	\N	4	55	5	4	t	0	cauliflower-curry.jpg	0	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	f	f
@@ -347,7 +347,7 @@
 527	Tumeric Ginger Tea	\N	\N	\N	8	2	3	1	t	0	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 528	Mango Salsa	\N	\N	\N	0	0	10	6	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 529	Polyphenol Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-530	Chicken Salsa Roll-Ups	\N	\N	\N	18	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+530	Chicken Salsa Roll-Ups	\N	\N	\N	18	0	10	2	t	0	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	32	1	4	2	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 532	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	8	30	10	4	t	144115188480606210	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	8	10	5	4	t	4194308	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -387,3 +387,6 @@
 567	Turkey & Walnut Salad	\N	\N	\N	10	40	10	4	t	4194308	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	6291462	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 569	Spinach & Strawberry Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+570	Watermelon	\N	\N	\N	8	0	5	2	t	0	\N	0	\N	f	f
+571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+572	Microgreens Salad	\N	\N	\N	8	20	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
