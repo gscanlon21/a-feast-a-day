@@ -47,7 +47,6 @@ public class QueryRunner(Section section)
     {
         public double Scale { get; init; } = 1;
         public Ingredient Ingredient { get; init; } = null!;
-        public UserIngredient? UserIngredient { get; init; }
     }
 
     public required UserOptions UserOptions { get; init; }
@@ -127,9 +126,8 @@ public class QueryRunner(Section section)
         }
         else
         {
-            // Do this before querying alternatives so that the user records also exist for the alternatives.
+            // Do this before querying prerequisites..
             await AddMissingUserRecords(context, queryResults);
-
             // Swap in user ingredients before querying for prerequisite recipes.
             var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
             var recipeIngredientAlt = await GetAltIngredientForRecipeIngredients(context, queryResults);
@@ -168,17 +166,17 @@ public class QueryRunner(Section section)
 
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
-                        // Swap the ingredient if the user ignored it.
-                        // ^Disabled now that ingredients are managed per recipe.
-                        if (/*recipeIngredient.UserIngredient?.Ignore == true ||*/
-                            // Or if the user is substituting in a different ingredient.
-                            recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true
-                            // Or if the ingredient conflicts with the user's allergens.
-                            || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens))
+                        // Don't swap the ingredient if the user ignored it.
+                        if (recipeIngredient.UserIngredient?.Ignore != true
+                            // And if the user is substituting in a different ingredient.
+                            && (recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true
+                                // Or if any of the ingredient's allergens conflict w/ the user's allergens.
+                                || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens)))
                         {
+                            // Substitution and alternative ingredients don't have user ingredient records.
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
-                            recipeIngredient.UserIngredient = substitution?.UserIngredient;
                             recipeIngredient.Ingredient = substitution?.Ingredient;
+                            recipeIngredient.UserIngredient = null;
                             if (substitution != null)
                             {
                                 var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(substitution.Scale));
@@ -379,19 +377,17 @@ public class QueryRunner(Section section)
                 {
                     Scale = ri.SubstituteScale,
                     Ingredient = ri.SubstituteIngredient,
-                    UserIngredient = ri.SubstituteIngredient!.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ui.RecipeId)
                 },
                 AltsIngredient = ri.Ingredient.Alternatives.Select(ia => new IngredientUserIngredient()
                 {
                     Scale = ia.Scale,
                     Ingredient = ia.AlternativeIngredient,
-                    UserIngredient = ia.AlternativeIngredient.UserIngredients.Where(ui => ui.UserId == UserOptions.Id).First(ui => ui.RecipeId == ri.RecipeId)
-                }).Where(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0).FirstOrDefault(i => i.UserIngredient!.Ignore != true)
+                }).FirstOrDefault(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0)
             }).ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
                 if (ri.SubIngredient == null) { return ri.AltsIngredient; }
                 // Prefer a substitute ingredient over a random alternative ingredient.
-                return (ri.SubIngredient.UserIngredient?.Ignore != true && !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)) ? ri.SubIngredient : ri.AltsIngredient;
+                return (!ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)) ? ri.SubIngredient : ri.AltsIngredient;
             });
     }
 
@@ -446,7 +442,6 @@ public class QueryRunner(Section section)
                     UserId = UserOptions.Id,
                     RecipeId = queryResult.Recipe.Id,
                     IngredientId = ingredient.Ingredient!.Id,
-                    SubstituteIngredientId = ingredient.Ingredient!.Id,
                 };
 
                 if (ingredientsCreated.Add(ingredient.UserIngredient))

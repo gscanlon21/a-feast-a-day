@@ -73,6 +73,7 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
         && other.Recipe.Id == Recipe.Id;
 }
 
+[DebuggerDisplay("{Id}: {Name}")]
 public class RecipeIngredientQueryResults : IRecipeIngredient
 {
     public required int Id { get; init; }
