@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -137,7 +138,9 @@ namespace Data.Migrations
                     PrepTime = table.Column<int>(type: "integer", nullable: false),
                     CookTime = table.Column<int>(type: "integer", nullable: false),
                     Servings = table.Column<int>(type: "integer", nullable: false),
+                    BaseRecipe = table.Column<bool>(type: "boolean", nullable: false),
                     AdjustableServings = table.Column<bool>(type: "boolean", nullable: false),
+                    KeepIngredientOrder = table.Column<bool>(type: "boolean", nullable: false),
                     DisabledReason = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -332,7 +335,8 @@ namespace Data.Migrations
                 columns: table => new
                 {
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
-                    AlternativeIngredientId = table.Column<int>(type: "integer", nullable: false)
+                    AlternativeIngredientId = table.Column<int>(type: "integer", nullable: false),
+                    Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0)
                 },
                 constraints: table =>
                 {
@@ -443,6 +447,7 @@ namespace Data.Migrations
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
+                    SubstituteScale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
                     SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
                     SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "text", nullable: true),

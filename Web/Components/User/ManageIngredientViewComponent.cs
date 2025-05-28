@@ -32,29 +32,37 @@ public class ManageIngredientViewComponent : ViewComponent
             .Where(ui => ui.UserId == user.Id)
             .FirstOrDefaultAsync();
 
+        var recipeIngredient = await _context.RecipeIngredients.AsNoTracking()
+            .Where(ri => ri.IngredientId == parameters.IngredientId)
+            .Where(ri => ri.RecipeId == parameters.RecipeId)
+            .FirstOrDefaultAsync();
+
         // Must be managed from a recipe context.
         if (userIngredient == null) { return Content(""); }
+        if (recipeIngredient == null) { return Content(""); }
         return View("ManageIngredient", new ManageIngredientViewModel()
         {
             User = user,
             Parameters = parameters,
             UserIngredient = userIngredient,
             Recipes = await GetRecipes(user),
+            RecipeIngredient = recipeIngredient,
             Ingredient = ingredient.AsType<IngredientDto>()!,
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, parameters.Token),
             Ingredients = ingredient.Alternatives.Select(ai => ai.AlternativeIngredient.AsType<IngredientDto>()!).ToList(),
         });
     }
 
+    /// <summary>
+    /// Get recipes that the user is able to select as an ingredient alternative.
+    /// </summary>
     private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
     {
         var allEquipment = user.Equipment.WithOptionalEquipment();
-        return await _context.Recipes.AsNoTracking()
+        return await _context.Recipes.AsNoTracking().TagWithCallSite()
             .Where(r => r.UserId == null || r.UserId == user.Id)
             .Where(r => allEquipment.HasFlag(r.Equipment))
-            // Some ingredients recipes can stand on their own,
-            // ... such as a salad that can be used in a sandwich.
-            //.Where(r => r.Section == Section.None)
+            .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)
             .ToListAsync();
     }

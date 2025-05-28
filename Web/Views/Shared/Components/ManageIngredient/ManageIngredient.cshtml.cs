@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
+using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using Web.Views.Ingredient;
@@ -20,6 +21,9 @@ public class ManageIngredientViewModel : IValidatableObject
     [ValidateNever, Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
     public required Data.Entities.User.UserIngredient UserIngredient { get; init; }
 
+    [ValidateNever]
+    public required RecipeIngredient RecipeIngredient { get; init; }
+
     /// <summary>
     /// Recipes that the user is able to select as an ingredient alternative.
     /// </summary>
@@ -37,6 +41,11 @@ public class ManageIngredientViewModel : IValidatableObject
     /// </summary>
     [ValidateNever]
     public required UserNewsletterDto UserNewsletter { get; init; }
+
+    /// <summary>
+    /// Don't allow ignoring non-optional ingredients if they aren't areadly ignored.
+    /// </summary>
+    public bool DenyIgnoringIngredient => !RecipeIngredient.Optional && !UserIngredient.Ignore;
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {

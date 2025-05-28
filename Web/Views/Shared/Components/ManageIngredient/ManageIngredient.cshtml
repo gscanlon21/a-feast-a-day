@@ -22,7 +22,7 @@
             <label for="Recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
             <div class="input-group">
                 <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@Model.Ingredient.Name</textarea>
-                <input type="submit" value="@(Model.UserIngredient.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" />
+                <input type="submit" value="@(Model.UserIngredient.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" @(Model.DenyIgnoringIngredient ? "disabled='disabled'" : "") />
             </div>
             <span asp-validation-for="Ingredient" class="text-danger"></span>
             <div id="Recipe-help" class="form-text">
