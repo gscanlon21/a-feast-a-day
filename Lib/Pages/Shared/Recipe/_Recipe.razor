@@ -131,8 +131,8 @@
     {
         var staticSrc = $"{SiteSettings.Value.CdnLink}/static/{Model.Recipe.Image}";
         // If we want to reduce layout shift with aspect-ratio, that really needs to be included on the table with the image because our images don't have consistent aspect ratios. 
-        // Setting min-height (200 / (25/14)) gets us close though. 25/14 is, for the most part, our widest aspect-ratio.
-        <img style="display:block;height:auto;min-height:112px;max-height:200px;max-width:100%;object-fit:contain;object-position:left top;" loading="lazy" src="@staticSrc">
+        // Setting min-height (max-height / (25/14)) gets us close though. 25/14 is, for the most part, our widest aspect-ratio.
+        <img style="display:block;height:auto;min-height:112px;max-height:224px;max-width:100%;object-fit:contain;object-position:left top;" loading="lazy" src="@staticSrc">
     }
 </div>
 
