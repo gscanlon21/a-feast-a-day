@@ -233,6 +233,7 @@ public class QueryRunner(Section section)
             // Order the recipe ingredients based on user preferences.
             recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
             {
+                (false, IngredientOrder.OptionalLast) => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size),
                 (false, IngredientOrder.LargeToSmall) => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size),
                 _ => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order),
             }).ToList();
