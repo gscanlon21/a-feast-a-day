@@ -230,10 +230,11 @@ public class QueryRunner(Section section)
             // Set nutrients on the recipe after all the ingredient swapping has taken place.
             recipe.Nutrients = allNutrients.Where(n => recipe.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
 
-            // Order the recipe ingredients based on user preferences.
+            // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
             recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
             {
-                (false, IngredientOrder.LargeToSmall) => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Size),
+                (false, IngredientOrder.OptionalLast) => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
+                (false, IngredientOrder.LargeToSmall) => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Weight).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Weight),
                 _ => recipe.RecipeIngredients.OrderBy(ri => ri.Type).ThenBy(ri => ri.Order),
             }).ToList();
 

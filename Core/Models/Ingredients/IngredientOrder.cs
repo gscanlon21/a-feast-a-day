@@ -9,4 +9,7 @@ public enum IngredientOrder
 
     [Display(Name = "Large to Small")]
     LargeToSmall = 1,
+
+    [Display(Name = "Optional Last")]
+    OptionalLast = 2,
 }

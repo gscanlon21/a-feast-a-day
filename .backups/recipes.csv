@@ -19,7 +19,7 @@
 36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	6	120	10	4	t	1073742848	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	4194308	black-bean-quesadillas.jpg	0	\N	f	f
 38	Black Bean Fajita Skillet	\N	\N	\N	4	10	5	2	t	0	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	f	f
-39	Linguine with Avocado, Tomato & Lime	Use guacamole ingredients to make this low-calorie vegan linguine which can also be served cold as a pasta salad.	\N	\N	6	10	20	1	t	4194308	linguine-avocado-tomato-lime.jpg	0	\N	f	f
+39	Linguine w/ Avocado, Tomato, & Lime	\N	\N	\N	6	10	20	1	t	4194308	linguine-avocado-tomato-lime.jpg	0	https://www.bbcgoodfood.com/recipes/linguine-avocado-tomato-lime	f	f
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0	\N	f	f
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	4194308	baked-banana-porridge.jpg	0	\N	f	f
@@ -378,7 +378,7 @@
 558	Feel So Good Smoothie	\N	\N	\N	8	0	10	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 559	Bone Broth	\N	\N	\N	0	90	15	1	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 560	Fermented Cabbage Salad	\N	\N	\N	8	0	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-561	Heirloom Tomator and Beet Salad	\N	\N	\N	8	45	15	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+561	Heirloom Tomato and Beet Salad	\N	\N	\N	8	45	15	2	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 562	Wild Salmon & Broccoli Frittata	\N	\N	\N	6	15	5	6	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 563	Greek Salmon	Serve with Katy's Greek Salad.	\N	\N	4	30	5	2	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 564	Roasted Vegetables	\N	\N	\N	8	35	10	6	t	2097154	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -386,8 +386,8 @@
 566	Tuna Salad	\N	\N	\N	10	0	10	1	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 567	Turkey & Walnut Salad	\N	\N	\N	10	40	10	4	t	4194308	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	6291462	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-569	Spinach & Strawberry Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-570	Watermelon	\N	\N	\N	8	0	5	2	t	0	\N	0	\N	f	f
+569	Spinach & Strawberry Salad	\N	\N	\N	10	0	10	2	t	0	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+570	Cut Watermelon	\N	\N	\N	8	0	5	2	t	0	watermelon.jpg	0	\N	f	f
 571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 572	Microgreens Salad	\N	\N	\N	8	20	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 573	Katy's Greek Salad	\N	\N	\N	10	0	12	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -396,3 +396,5 @@
 576	Thai Chicken Salad	\N	\N	\N	10	16	10	2	t	4294971392	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+579	Fermented Cabbage	\N	\N	\N	0	0	60	2	t	0	\N	6	\N	t	f
+580	Blueberry Chicken Salad	\N	\N	\N	6	30	10	4	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

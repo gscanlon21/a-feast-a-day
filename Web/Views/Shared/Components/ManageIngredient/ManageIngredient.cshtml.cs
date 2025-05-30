@@ -45,6 +45,7 @@ public class ManageIngredientViewModel : IValidatableObject
     /// <summary>
     /// Don't allow ignoring non-optional ingredients if they aren't areadly ignored.
     /// </summary>
+    [ValidateNever]
     public bool DenyIgnoringIngredient => !RecipeIngredient.Optional && !UserIngredient.Ignore;
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

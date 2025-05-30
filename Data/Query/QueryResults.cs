@@ -97,7 +97,10 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
 
-    internal double Size => ((Ingredient != null && Measure != Measure.None) ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
+    /// <summary>
+    /// The number of grams this ingredient weights.
+    /// </summary>
+    internal double Weight => ((Ingredient != null && Measure != Measure.None) ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
     internal RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
     {
         (not null, _, _, _) => RecipeIngredientType.Ingredient,
