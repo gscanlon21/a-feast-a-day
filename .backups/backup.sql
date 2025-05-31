@@ -683,6 +683,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 391	387	1
 1073	1074	1
 1073	174	1
+1083	397	1
+1083	1082	1
+1082	956	1
 187	28	1
 187	164	1
 186	184	1
@@ -3051,7 +3054,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8398	54	4611686018427387904	\N	\N	3	3
 8399	54	274877906944	\N	\N	1	2
 8400	54	17179869184	\N	\N	2	332
-5501	15	2047	\N	\N	3	90
 5508	123	1125899906842624	\N	\N	3	0.1
 5538	123	549755813888	\N	\N	1	0.1
 7033	142	128	\N	\N	3	0.4
@@ -3365,11 +3367,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 5197	166	2047	\N	\N	3	170
 5805	61	2047	\N	\N	3	94
 5888	165	2047	\N	\N	3	100.5
-7064	15	2	\N	\N	3	5
-7065	15	1	\N	\N	3	2
-7066	15	4294967296	\N	\N	2	250
-7067	15	48	\N	\N	3	1
-7068	15	62	\N	\N	3	27
 8913	721	1	\N	\N	3	3
 7525	205	2047	\N	\N	3	100
 7873	56	128	\N	\N	3	2
@@ -7819,6 +7816,49 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13214	1008	1984	\N	\N	3	0.5
 13215	1008	62	\N	\N	3	17
 13216	1008	2047	\N	\N	3	80
+5501	15	2047	\N	\N	3	284
+13217	15	128	\N	\N	3	0.1
+13218	15	68719476736	\N	\N	2	22
+13219	15	34359738368	\N	\N	2	1553
+13220	15	2	\N	\N	3	3
+13221	15	1	\N	\N	3	7
+13222	15	4294967296	\N	\N	2	44
+13223	15	2199023255552	\N	\N	2	3
+13224	15	48	\N	\N	3	8
+13225	15	14	\N	\N	3	56
+13226	15	1984	\N	\N	3	0.3
+13227	15	62	\N	\N	3	64
+13228	52	2047	\N	\N	3	2
+13229	15	2251799813685248	\N	\N	2	45
+13230	15	9007199254740992	\N	\N	3	0.1
+13231	15	18014398509481984	\N	\N	3	0.2
+13232	15	36028797018963968	\N	\N	3	0.4
+13233	15	72057594037927936	\N	\N	3	0.4
+13234	15	144115188075855872	\N	\N	3	0.1
+13235	15	288230376151711744	\N	\N	3	0.3
+13236	15	576460752303423488	\N	\N	3	0.2
+13237	15	1152921504606846976	\N	\N	3	0.1
+13238	15	2305843009213693952	\N	\N	3	0.4
+13239	15	-9223372036854775808	\N	\N	3	0.2
+13240	15	4611686018427387904	\N	\N	3	0.4
+13241	15	8	\N	\N	3	57
+13242	15	274877906944	\N	\N	1	0.4
+13243	15	17179869184	\N	\N	2	85
+13244	15	4398046511104	\N	\N	2	1
+13245	15	70368744177664	\N	\N	2	210
+13246	15	8796093022208	\N	\N	1	1
+13247	15	17592186044416	\N	\N	2	1
+13248	15	65536	\N	\N	1	4
+13249	15	262144	\N	\N	2	0.3
+13250	15	524288	\N	\N	2	0.1
+13251	15	1048576	\N	\N	2	4
+13252	15	2097152	\N	\N	2	1
+13253	15	4194304	\N	\N	2	1
+13254	15	16777216	\N	\N	1	59
+13255	15	67108864	\N	\N	2	73
+13256	15	1536	\N	\N	3	0.2
+13257	15	3221225472	\N	\N	1	7
+13258	15	1792	\N	\N	3	0.2
 \.
 
 
@@ -10011,8 +10051,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6117	6	\N	\N	540	4	1	\N	991	f	\N	10
 6118	8	\N	\N	540	1	1	\N	39	f	\N	11
 6119	7	\N	\N	540	1	1	\N	657	f	\N	12
-6105	0	\N	\N	539	1	1	\N	1047	f	\N	0
-6106	6	\N	\N	539	2	1	\N	993	f	\N	1
 6090	5	\N	\N	536	1	1	\N	988	f	\N	0
 6091	8	\N	\N	536	1	2	, ground	510	f	\N	1
 6092	8	\N	\N	536	2	1	\N	71	f	\N	2
@@ -10080,6 +10118,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6183	7	\N	\N	550	1	1	(FLAKY OR COARSE SEA SALT	74	f	\N	2
 6184	8	\N	\N	550	1	3	\N	71	f	\N	3
 6185	8	\N	\N	550	1	3	\N	323	f	\N	4
+6105	0	\N	\N	539	1	1	\N	1047	f	\N	0
+6106	6	\N	\N	539	4	1	\N	993	f	\N	1
 6186	0	\N	\N	551	1	1	, sliced in half	346	f	\N	0
 6187	6	\N	\N	551	1	1	\N	806	f	\N	1
 6188	8	\N	\N	551	1	1	, such as Yerba Prima	1067	f	\N	2
@@ -10320,6 +10360,26 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6402	0	\N	\N	39	2	1	, deseeded and finely chopped	224	t	\N	6
 5873	6	\N	\N	470	1	1	\N	993	f	\N	5
 5874	8	\N	\N	470	4	1	(PUMPKIN PIE SPICE)	296	f	\N	6
+6410	0	\N	\N	582	1	2	, diced	255	f	\N	0
+6411	6	\N	\N	582	1	1	, cooked	57	f	\N	1
+6412	7	\N	\N	582	1	2	\N	77	f	\N	2
+6413	7	\N	\N	582	1	2	\N	73	t	\N	3
+6414	8	\N	\N	582	1	1	\N	323	f	\N	4
+6415	8	\N	\N	582	2	1	\N	71	f	\N	5
+6416	8	\N	\N	582	1	1	\N	143	f	\N	6
+6417	8	\N	\N	582	4	1	, to taste	692	t	\N	7
+6418	0	\N	\N	582	1	6	, nitrate & additive-free, chopped	985	f	\N	8
+6419	6	\N	\N	582	1	6	\N	368	f	\N	9
+6420	0	\N	\N	582	2	1	, chopped	155	f	\N	10
+6421	0	\N	\N	582	1	1	, peeled, pitted and sliced	9	f	\N	11
+6422	6	\N	\N	582	2	1	\N	\N	t	471	12
+6403	6	\N	\N	581	1	1	, cubed	159	f	\N	0
+6404	6	\N	\N	581	1	1	, peeled, diced	155	f	\N	1
+6405	0	\N	\N	581	1	1	, diced	9	f	\N	2
+6406	6	\N	\N	581	2	1	\N	1082	f	\N	3
+6407	6	\N	\N	581	4	1	\N	158	f	\N	4
+6408	7	\N	\N	581	1	1	\N	81	f	\N	5
+6409	8	\N	\N	581	4	1	, to taste	74	t	\N	6
 \.
 
 
@@ -11158,10 +11218,16 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2486	Roughly chop the prunes and stir into the melted chocolate with the bisuits. Spoon the mixture into a 20cm/8in square cake tin (pan) and smooth out any lumps with the back of the spoon. Chill for 1-2 hours until set. Remove the cake from the refrigerator and using a sharp knife, cut into 12 bars.	\N	175	2
 2630	Finely slice the chilies (use as much as you dare!). Sprinkle half of them into a 12-inch non-stick frying pan on a medium heat with 1 tablespoon of olive oil. Once they start to sizzle, evenly crack in the eggs, then spoon the black beans and just half the juice from the can in and around the eggs. Season with sea salt and black pepper, cover, and cook the eggs to your liking.	\N	265	0
 2631	Meanwhile, halve, peel, and pit the avocado, slice into thin wedges, dress with the lime juice, and season to perfection. Arrange the avocado around the pan, scatter over the rest of the chilies, stab the egg yolks, and dish up.	\N	265	1
-3373	Pour the hot water over the Oatmeal. Enjoy!	\N	539	0
 1557	Sprinkle the garlic, vinegar, cumin and cayenne or paprika over the salad. Drizzle with olive oil and sprinkle over coriander and olives.	\N	153	2
+3508	Preheat the oven to 425°F.	\N	582	0
 2899	Cook the rice in a pan of boiling salted water according to the package instructions, then drain. Meanwhile, trim and finely slice the scallions, putting the white slices into a bowl. Seed and finely chop the chilies, add to the bowl with 1 tablespoon of red wine vinegar and a little sea salt and black pepper, and mix well to make a dressing.	\N	313	0
 3068	Remove from the oven and let the chickpeas cool on the baking sheet. They will continue to crisp as they cool. Enjoy immediately as a snack, salad topper, or side dish.	\N	392	4
+3509	Toss the sweet potatoes and chickpeas with olive oil and spread on a baking sheet. Bake for 40 minutes, tossing the sweet potatoes and chickpeas at the 20 minute mark.	\N	582	1
+3510	While the sweet potato mixture is roasting, cook bacon in a skillet until crisp, about 12 minutes. Remove and set aside on a paper towel-lined plate. 	\N	582	2
+3511	In a large bowl, combine the arugula and cucumbers.	\N	582	3
+3512	Once cooked, combine the roasted sweet potatoes and chickpeas with the arugula and cucumbers. Add the Honey-Mustard Dressing and toss to combine. Top the salad with bacon and sliced avocado.	\N	582	4
+3507	Add all ingredients into a salad bowl, toss, and enjoy.	\N	581	0
+3373	Pour the hot water over the Oatmeal. Enjoy!	\N	539	0
 2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	\N	264	0
 3038	Carefully remove the fillets (the long finger shaped muscle on the back of each breast) and reserve for another use.	\N	386	0
 3039	Place each chicken breast between two sheets of clear film (plastic wrap) and pound with the flat side of a meat hammer or roll out with a rolling pin to flatten to about 1cm/½in thick. Season with the cayenne pepper.	\N	386	1
@@ -11656,7 +11722,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13216, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13258, true);
 
 
 --

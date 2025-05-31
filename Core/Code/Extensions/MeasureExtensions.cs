@@ -55,38 +55,65 @@ public static class MeasureExtensions
     /// Finds the exact conversion factor from one measure to another.
     /// Returns null when there is no exact conversion.
     /// </summary>
+    /// Read these from right to left. 
+    /// sa. There are 16 ounces in a pound. 
     private static double? ToMeasureOrNull(this Measure fromMeasure, Measure toMeasure)
     {
         return (fromMeasure, toMeasure) switch
         {
             _ when fromMeasure == toMeasure => 1,
 
-            // Dry conversions.
+            #region Dry Conversions
+
             (Measure.Pounds, Measure.Ounces) => 16,
             (Measure.Ounces, Measure.Pounds) => 1d / 16,
+
             (Measure.Pounds, Measure.Grams) => 453.59237,
             (Measure.Grams, Measure.Pounds) => 1d / 453.59237,
+
             (Measure.Ounces, Measure.Grams) => 28.3495231,
             (Measure.Grams, Measure.Ounces) => 1d / 28.3495231,
+
+            (Measure.Grams, Measure.Micrograms) => 1000000,
             (Measure.Micrograms, Measure.Grams) => 1d / 1000000,
+
+            (Measure.Grams, Measure.Milligrams) => 1000,
             (Measure.Milligrams, Measure.Grams) => 1d / 1000,
 
-            // Fluid conversions.
+            #endregion
+            #region Fluid Conversions
+
+            (Measure.Gallons, Measure.Milliliters) => 3785.41178,
+            (Measure.Milliliters, Measure.Gallons) => 1d / 3785.41178,
+
             (Measure.Gallons, Measure.Cups) => 16,
             (Measure.Cups, Measure.Gallons) => 1d / 16,
+
             (Measure.Cups, Measure.FluidOunces) => 8,
             (Measure.FluidOunces, Measure.Cups) => 1d / 8,
+
             (Measure.Cups, Measure.Tablespoons) => 16,
             (Measure.Tablespoons, Measure.Cups) => 1d / 16,
+
             (Measure.Cups, Measure.Teaspoons) => 48,
             (Measure.Teaspoons, Measure.Cups) => 1d / 48,
+
             (Measure.Cups, Measure.Milliliters) => 240,
             (Measure.Milliliters, Measure.Cups) => 1d / 240,
+
             (Measure.Tablespoons, Measure.Teaspoons) => 3,
             (Measure.Teaspoons, Measure.Tablespoons) => 1d / 3,
+
             (Measure.Teaspoons, Measure.Milliliters) => 5,
+            (Measure.Milliliters, Measure.Teaspoons) => 1d / 5,
+
             (Measure.Tablespoons, Measure.Milliliters) => 15,
+            (Measure.Milliliters, Measure.Tablespoons) => 1d / 15,
+
             (Measure.FluidOunces, Measure.Milliliters) => 30,
+            (Measure.Milliliters, Measure.FluidOunces) => 1d / 30,
+
+            #endregion
 
             _ => null
         };
