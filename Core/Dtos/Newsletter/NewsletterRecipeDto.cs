@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Core.Dtos.Newsletter;
 
-[DebuggerDisplay("{Section,nq}: {Variation,nq}")]
+[DebuggerDisplay("{Section,nq}: {Recipe,nq}")]
 public class NewsletterRecipeDto
 {
     public Section Section { get; init; }

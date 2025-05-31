@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.Ingredient;
@@ -101,7 +102,16 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     /// The number of grams this ingredient weights.
     /// </summary>
     internal double Weight => ((Ingredient != null && Measure != Measure.None) ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
-    internal RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
+
+    public Measure GetMeasure => Measure;
+    public Ingredient? GetIngredient => Ingredient;
+    public double GetQuantity => Quantity.ToDouble();
+
+    /// <summary>
+    /// Is this recipe's ingredient an ingredient or a recipe?
+    /// </summary>
+    /// Public so that the dto can bind this.
+    public RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
     {
         (not null, _, _, _) => RecipeIngredientType.Ingredient,
         (_, not null, _, _) => RecipeIngredientType.IngredientRecipe,
@@ -110,15 +120,6 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
         _ => throw new InvalidOperationException("Missing ingredient or recipe."),
     };
 
-    public Measure GetMeasure => Measure;
-    public Ingredient? GetIngredient => Ingredient;
-    public double GetQuantity => Quantity.ToDouble();
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other && other.Id == Id;
-}
-
-public enum RecipeIngredientType
-{
-    IngredientRecipe,
-    Ingredient,
 }

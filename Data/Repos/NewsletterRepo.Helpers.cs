@@ -1,4 +1,5 @@
-﻿using Data.Entities.Newsletter;
+﻿using Core.Models.Recipe;
+using Data.Entities.Newsletter;
 using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query;

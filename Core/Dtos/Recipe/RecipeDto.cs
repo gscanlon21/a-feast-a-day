@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Core.Dtos.Recipe;
 
 /// <summary>
-/// DTO class for Recipe.cs
+/// DTO for Recipe.cs
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeDto

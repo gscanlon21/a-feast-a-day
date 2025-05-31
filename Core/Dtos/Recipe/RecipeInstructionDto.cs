@@ -3,15 +3,13 @@
 namespace Core.Dtos.Recipe;
 
 /// <summary>
-/// Recipes listed on the website
+/// DTO for RecipeInstruction.cs
 /// </summary>
 [DebuggerDisplay("{Name,nq}")]
 public class RecipeInstructionDto
 {
     public int Id { get; init; }
-
     public int Order { get; init; }
-
     public string Name { get; init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
