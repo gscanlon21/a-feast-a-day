@@ -810,7 +810,7 @@
 975	\N	Whole Chicken	https://www.eatthismuch.com/calories/whole-chicken-134184	\N	f	0	1344	85	2025-03-18	0	224	268435456
 976	\N	Water | Coconut Water	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	32
 977	\N	Small White Potatoes	https://www.eatthismuch.com/food/nutrition/yellow-potato,528851/	\N	f	0	113	113	2024-06-16	0	113	2
-978	\N	White Potatoes	https://www.eatthismuch.com/calories/russet-potatoes-2092	\N	f	0	369	369	2024-06-16	0	150	2
+978	\N	White Potatoes	https://www.eatthismuch.com/calories/potato-2091	\N	f	0	369	369	2025-06-01	0	369	2
 979	\N	Dill | Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	3	3	2024-06-25	7	240	3
 980	\N	Broth | Water	https://www.eatthismuch.com/calories/beef-broth-2899468	\N	f	0	240	240	2024-06-28	6	240	3
 981	\N	Jicama	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
@@ -853,7 +853,7 @@
 1051	\N	Purely Elizabeth Classic Cinnamon Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
 1052	\N	Purely Elizabeth Original Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2024-07-27	0	120	16288
 1053	\N	Avocado Oil | Coconut Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
-1054	\N	Baby Potatoes	https://www.eatthismuch.com/calories/potato-2091?a=0.4607%3A3	\N	f	0	170	170	2024-06-16	0	170	2
+1054	\N	Baby Potatoes	https://www.eatthismuch.com/calories/potato-2091?a=0.4607%3A3	\N	f	0	170	170	2025-06-01	0	170	2
 1055	\N	Jif Natural Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
 1056	\N	Schnucks Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
 1057	\N	Loaves of White Pita (Unenriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4

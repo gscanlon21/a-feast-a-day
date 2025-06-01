@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.User;
 using Data;
 using Data.Repos;
 using Lib.Services;
@@ -150,11 +151,15 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        await _context.Recipes
-            // The user has control of this recipe and is not a built-in recipe.
-            .Where(f => f.UserId == user.Id)
-            .Where(f => f.Id == recipeId)
-            .ExecuteDeleteAsync();
+        // The user has control of this recipe and is not a built-in recipe.
+        // Always try to delete recipes for the user because debug users can have their own recipes as well.
+        await _context.Recipes.Where(r => r.UserId == user.Id).Where(r => r.Id == recipeId).ExecuteDeleteAsync();
+
+        if (user.Features.HasFlag(Features.Debug))
+        {
+            // The recipe does not have a user and is a system recipe.
+            await _context.Recipes.Where(r => r.UserId == null).Where(r => r.Id == recipeId).ExecuteDeleteAsync();
+        }
 
         TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
         return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });

@@ -23,7 +23,6 @@
 40	Saucy Bean Baked Eggs	\N	\N	\N	1	15	5	2	t	0	bean-baked-eggs.jpg	0	\N	f	f
 41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	1	25	5	2	t	4194308	baked-banana-porridge.jpg	0	\N	f	f
-43	Easy Egg-Fried Rice	Make your own healthy egg-fried rice with our easy recipe. Use leftover rice, or cook and dry it on a plate before using so it doesn't stick to the wok	\N	\N	2	10	10	4	t	0	egg-fried-rice.jpg	0	\N	f	f
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	0	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	268435712	basic-energy-balls.jpg	0	\N	f	f
@@ -277,7 +276,7 @@
 392	Roasted Chickpeas	Let the chickpeas cool completely on the baking sheet after roasting. They will continue to crisp up as they cool. Try sweet styles (maple syrup and cinnamon), spicy versions (chili powder or cayenne), earthy-herbaceous blends (rosemary or thyme), or cheesy twists (nutritional yeast or Parmesan).  Enjoy roasted chickpeas as a crunchy snack, a salad or soup topper, in grain bowls, or as part of a party mix with nuts, pretzels, and dried fruit. 	\N	\N	16	35	10	4	t	2097154	\N	0	https://insanelygoodrecipes.com/roasted-chickpeas/	f	f
 393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	0	15	2	t	0	cucumber-dill.jpg	0	\N	f	f
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	15	5	2	t	4194308	oven-baked-beet-chips.jpg	0	\N	f	f
-395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	30	5	2	t	2097154	sesame-ginger-carrots.jpg	0	\N	f	f
+395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	30	5	2	t	2097154	sesame-ginger-carrots.jpg	0	\N	f	t
 396	Tandoori Chicken	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	60	2	t	2097154	\N	0	\N	f	f
 397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	0	\N	0	\N	f	f
 398	Maple Lime Pork Roast	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	360	10	4	t	1077937156	\N	0	\N	f	f
@@ -400,3 +399,5 @@
 580	Blueberry Chicken Salad	\N	\N	\N	6	30	10	4	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 581	Summer Watermelon Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 582	Sweet Potato & Arugula Salad	\N	\N	\N	10	40	10	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+583	Salmon Cakes	\N	\N	\N	6	10	10	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+584	Pizza Egg Bites	\N	\N	\N	6	35	10	2	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

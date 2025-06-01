@@ -7859,6 +7859,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13256	15	1536	\N	\N	3	0.2
 13257	15	3221225472	\N	\N	1	7
 13258	15	1792	\N	\N	3	0.2
+13259	978	128	\N	\N	3	0.1
+13260	978	68719476736	\N	\N	2	22
+13261	978	34359738368	\N	\N	2	1553
+13262	978	2	\N	\N	3	3
+13263	978	1	\N	\N	3	7
+13264	978	4294967296	\N	\N	2	44
+13265	978	2199023255552	\N	\N	2	3
+13266	978	48	\N	\N	3	8
+13267	978	14	\N	\N	3	56
+13268	978	1984	\N	\N	3	0.3
+13269	978	62	\N	\N	3	64
+13270	978	2047	\N	\N	3	284
 \.
 
 
@@ -8184,7 +8196,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4833	4	\N	\N	261	1	5	\N	792	f	\N	3
 3909	0	\N	\N	196	1	1	, seeded and sliced	224	f	\N	3
 3910	0	\N	\N	196	2	1	, very thinly sliced	8	f	\N	4
-392	6	\N	\N	43	1	1	, finely chopped	3	f	\N	0
 4834	4	\N	\N	261	1	7	\N	728	f	\N	4
 3911	0	\N	\N	196	1	2	, peeled and cut into thin strips	7	f	\N	5
 5107	0	\N	\N	51	1	2	, minced	5	f	\N	0
@@ -8192,8 +8203,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 983	6	\N	\N	40	1	1	\N	16	f	\N	0
 984	0	\N	\N	40	1	4	\N	187	f	\N	0
 5109	7	\N	\N	51	1	1	, melted	29	f	\N	2
-393	6	\N	\N	43	1	4	, beaten	187	f	\N	0
-394	6	\N	\N	43	1	2	, sliced, to serve	144	f	\N	0
 3912	4	\N	\N	196	1	11	(CHINESE BROCCOLI), roughly sliced	6	f	\N	6
 3914	7	\N	\N	196	1	3	\N	62	f	\N	8
 3915	8	\N	\N	196	1	1	\N	234	f	\N	9
@@ -8214,8 +8223,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5103	7	\N	\N	161	1	1	\N	62	t	\N	4
 5104	8	\N	\N	161	8	1	\N	285	f	\N	5
 2654	6	\N	\N	86	2	5	\N	111	f	\N	0
-390	6	\N	\N	43	1	1	\N	188	f	\N	0
-391	7	\N	\N	43	1	3	\N	78	f	\N	0
 2655	6	\N	\N	86	1	1	\N	836	f	\N	1
 440	6	\N	\N	49	1	4	, split	165	f	\N	0
 2658	4	\N	\N	86	1	6	\N	292	f	\N	4
@@ -9549,20 +9556,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5584	7	\N	\N	394	1	1	\N	80	f	\N	2
 5585	0	\N	\N	394	2	1	, juiced	4	f	\N	3
 5586	8	\N	\N	394	8	1	, to taste	74	f	\N	4
-5587	5	\N	\N	395	1	1	\N	736	f	\N	0
-5588	7	\N	\N	395	1	2	\N	77	f	\N	1
-5589	7	\N	\N	395	1	1	\N	39	f	\N	2
 5553	6	\N	\N	390	2	1	\N	215	f	\N	0
 5554	6	\N	\N	390	4	1	\N	130	f	\N	1
 5555	7	\N	\N	390	1	1	\N	340	f	\N	2
 5556	7	\N	\N	390	1	2	\N	468	f	\N	3
 5557	8	\N	\N	390	2	1	\N	360	f	\N	4
 5558	0	\N	\N	390	1	2	\N	1003	f	\N	5
+5587	5	\N	\N	395	1	1	\N	736	f	\N	0
+5588	7	\N	\N	395	1	2	\N	77	f	\N	1
+5589	7	\N	\N	395	1	1	\N	39	f	\N	2
 5511	7	\N	\N	383	1	2	\N	321	f	\N	4
-5590	0	\N	\N	395	1	1	, juiced	12	f	\N	3
-5591	8	\N	\N	395	4	1	\N	692	f	\N	4
-5592	7	\N	\N	395	1	1	, chopped	2	f	\N	5
-5593	7	\N	\N	395	1	1	, chopped	473	f	\N	6
 5658	0	\N	\N	405	1	1	, juiced	12	f	\N	0
 5659	6	\N	\N	405	2	1	\N	251	f	\N	1
 5660	8	\N	\N	405	2	1	\N	490	f	\N	2
@@ -9637,6 +9640,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5645	6	\N	\N	402	1	1	, diced	981	t	\N	4
 5646	0	\N	\N	402	1	1	, juiced	12	f	\N	5
 5647	7	\N	\N	402	2	3	\N	39	t	\N	6
+5590	0	\N	\N	395	1	1	, juiced	12	f	\N	3
+5591	8	\N	\N	395	4	1	\N	692	f	\N	4
+5592	7	\N	\N	395	1	1	, chopped	2	f	\N	5
+5593	7	\N	\N	395	1	1	, chopped	473	f	\N	6
 5663	0	\N	\N	406	1	1	\N	9	f	\N	0
 5664	9	\N	\N	406	1	8	\N	178	f	\N	1
 5665	8	\N	\N	406	2	1	, to taste	681	t	\N	2
@@ -10380,6 +10387,24 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6407	6	\N	\N	581	4	1	\N	158	f	\N	4
 6408	7	\N	\N	581	1	1	\N	81	f	\N	5
 6409	8	\N	\N	581	4	1	, to taste	74	t	\N	6
+6423	0	\N	\N	583	1	1	(POUCHES/CANS OF PINK WILD-CAUGHT SALMON)	869	f	\N	0
+6424	0	\N	\N	583	1	1	\N	187	f	\N	1
+6425	6	\N	\N	583	4	1	(PORK PANKO)	318	f	\N	2
+6426	7	\N	\N	583	1	2	\N	\N	f	556	3
+6427	7	\N	\N	583	1	2	, finely diced	105	f	\N	4
+6428	8	\N	\N	583	4	1	\N	71	f	\N	5
+6429	8	\N	\N	583	4	1	, to taste	692	t	\N	6
+6430	7	\N	\N	583	1	1	\N	176	f	\N	7
+6431	6	\N	\N	583	4	1	\N	\N	f	544	8
+6432	5	\N	\N	584	3	1	(ITALIAN SAUSAGE)	603	f	\N	0
+6433	0	\N	\N	584	3	1	, minced	3	f	\N	1
+6434	0	\N	\N	584	1	2	, minced	5	f	\N	2
+6435	6	\N	\N	584	4	3	\N	118	f	\N	3
+6436	7	\N	\N	584	1	1	, chopped	14	f	\N	4
+6437	8	\N	\N	584	4	1	, to taste	692	t	\N	5
+6438	0	\N	\N	584	1	6	\N	187	f	\N	6
+6439	0	\N	\N	584	1	12	(PEPPERONI SLICES)	262	t	\N	7
+6440	8	\N	\N	584	1	1	\N	964	f	\N	8
 \.
 
 
@@ -10492,11 +10517,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 260	Cover and cook on low 7-9 hours or until meat is tender.	\N	31	1
 261	Remove meat; cool slightly. Discard cooking juices.	\N	31	2
 401	Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 2 quesadillas and cook, turning once, until golden on both sides, 2 to 4 minutes total. Transfer to a cutting board and tent with foil to keep warm. Repeat with the remaining 1 teaspoon oil and quesadillas. Serve the quesadillas with avocado and the remaining salsa.	\N	37	1
-178	Cook the rice following pack instructions, then drain, spread it out to steam-dry and set aside.	\N	43	0
 262	Shred meat with 2 forks and return to slow cooker. Stir in barbecue sauce; heat through.	\N	31	3
 263	Serve on buns.	\N	31	4
-179	Heat 2 tbsp of the oil in a large wok over a high heat, then add the onion and fry until lightly browned, around 5 mins. Add the rice, stir and toast for about 3 mins, then move to the side of the pan.	\N	43	1
-180	Add the remaining oil, then tip in the egg mixture. Leave to cook a little, then mix in with the rice – stir vigorously to coat the grains or, if you prefer the egg chunkier, allow to set for a little longer before breaking up and stirring through. Tip into a serving bowl and scatter over the spring onion to serve. You can also add sesame oil, ground white pepper and a splash of soy sauce to season.	\N	43	2
 568	Lay tortillas flat on a clean work surface. Spread refried beans down the middle third from top to bottom, leaving a 1-inch space halfway down to allow for a fold. Sprinkle cheese on top, lightly pressing into the beans.	\N	20	0
 606	Add the ingredients to the Baking Pan in the order listed.	\N	72	0
 607	Select Course No. 1 and press the START button. 	\N	72	1
@@ -10795,12 +10817,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1003	Meanwhile, whisk the eggs and sugar together until pale and doubles in size, then carefully fold in the melted chocolate mixture.	\N	112	1
 1004	Boil the kettle. Divide the mixture between 6 coffee cups or ramekins and put them into a roasting pan. Place the pan in the oven,the carefully pour in enough boiling kettle water to come halfway up the side of the cups. Bake for exactly 20 minutes, then carefully remove from the oven and leave to cool in the water for 2 hours.	\N	112	2
 1005	To serve, I sometimes shave over some extra chocolate, or add fresh fruit like cherries, blood oranges, or wild strawberries, with a dollup of yogurt or creme fraiche.	\N	112	3
-3075	Preheat the oven to 400°F.	\N	395	0
-3076	Line a baking sheet with parchment paper.	\N	395	1
-3077	Slice the carrots lengthwise and set aside.	\N	395	2
-3078	In a large bowl, combine the olive oil through the dill.	\N	395	3
-3079	Add the carrot slices and toss to combine.	\N	395	4
-3080	Pour the tossed carrots onto the lined baking sheet, in a single layer, and bake for 25-30 minutes, or until tender.	\N	395	5
 1303	Preheat the oven to 190°C/375°F. Put the chicken thighs in a single layer roasting pan, 	\N	129	0
 1374	Add rice and 1-1/2 cups water to a small saucepan then bring to a boil. Turn heat down to low then cover and simmer for 10 minutes (water should just barely be at a simmer).	\N	87	0
 1375	Remove pan from heat then let sit for 5 minutes before removing the lid and fluffing with a fork. Set aside.	\N	87	1
@@ -11367,6 +11383,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2927	Toss the grained pasta into the sausage pan, pour in the egg mixture, and toss for 1 minute off the heat (the egg will gently cook in the residual heat). Loosen with a good splash of reserved cooking water, season to perfection with sea salt and pepper, and finely grate over the remaining Parmesan.	\N	323	2
 2932	Put a 10-inch non-stick frying pan on a high heat and pour in 1 cup of water. Halve the eggplant lengthways, quickly slash the flesh of each half a few times and place skin-side up in the pan, then season with sea salt and black pepper. Cover and cook for 10 minutes, or until it boils dry and begins to sizzle (listen for the change in sound). Meanwhile, trim the scallions. Cut the whites into 1¼-inch lengths at an angle and put aside. Seed the chili and finely slice lengthways with the green part of the scallions. Place both in a bowl of ice-cold water and put aside to crisp up.	\N	326	0
 2636	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	263	1
+3075	Preheat the oven to 400°F.	\N	395	0
 2933	When the eggplant starts to sizze, add 1 tablespoon of olive oil, the white scallions, and the peanuts to the pan, stirring regularly. After 2 minutes, add a splash of water, drizzle in the teriyaki, and reduce to a medium heat. Turn the eggplant, jiggle the pan and let it get sticky for a few minutes, then dish up, sprinkled with the drained green scallions and chili.	\N	326	1
 3169	Whisk in unsweetened almond milk until smooth. Note that chickpea flour makes lumps easily. To avoid that, whisk vigorously until no more is left. It's OK to have a few lumps, but the less, the better it tastes! You can also blend the batter in a blender for an ultra-smooth texture.	\N	424	1
 2928	Combine buttermilk and heavy cream in a non-reactive container. Cover and allow to rest at room temperature until thickened to desired texture, about 12 hours. Store in the refrigerator for up to 2 weeks.	\N	324	0
@@ -11389,6 +11406,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3139	In a small bowl, mix the remaining ingredients with sea salt and pepper to taste, spoon over turkey, and serve.	\N	416	2
 3343	Mix together and enjoy!	\N	529	0
 3368	In a medium-sized mixing bowl, combine and mix the first 5 ingredients (ground turkey through salt and black pepper), and refrigerate for at least 30 minutes to firm the meat texture. 	\N	536	0
+3076	Line a baking sheet with parchment paper.	\N	395	1
+3077	Slice the carrots lengthwise and set aside.	\N	395	2
+3078	In a large bowl, combine the olive oil through the dill.	\N	395	3
+3079	Add the carrot slices and toss to combine.	\N	395	4
+3080	Pour the tossed carrots onto the lined baking sheet, in a single layer, and bake for 25-30 minutes, or until tender.	\N	395	5
 1825	Make a spicy relish by cooking the remaining shallot with the garlic and green chilli in the olive oil for 2-3 minutes, until softened.	\N	173	2
 1826	Add the canned ratatouille to the pan containing the vegetables. Bring to the boil, then simmer for 5 minutes.	\N	173	3
 1827	Meanwhile, preheat the grill (broiler) and cook the burgers for about 5 minutes on each side, until browned and cooked through. Meanwhile, split the burger buns. Arrange lettuce leaves on the bun bases, add the burgers and top with warm relish and the bun tops. 	\N	173	4
@@ -11418,6 +11440,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3403	Serve with white or brown rice, quinoa, or cauliflower rice. Alternatively, you can serve over sautéed greens.	\N	553	2
 3404	Heat a large skillet over medium heat and add the avocado oil. Add the cauliflower rice and onion and cook for 5 minutes, or until desired texture is achieved.	\N	554	0
 3405	Add the garlic, and cook for 1 minute, until fragrant.	\N	554	1
+3517	Preheat the oven to 350°F.	\N	584	0
 2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	\N	368	0
 2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	\N	368	1
 2640	Put a grill pan on high heat. Cut the two cheeks off the mango, slice each into three lengthways, then slice off the skin and discard. Dice all of the flech into ½-inch cubes. Scrunch the stone over a bowl, to extract any pulp and juice, mix with the hoisin to make a dressing, and divide between two little bowls.	\N	270	0
@@ -11677,6 +11700,16 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3436	Season the salmon with sea salt, pepper, basil and lemon.	\N	563	1
 3437	Place in the oven and bake for 30 minutes.	\N	563	2
 3499	TODO	\N	579	0
+3514	In a large bowl, mix the salmon through garlic powder. Season to taste with salt and pepper. Form patties with mixture (4 large of 5-6 small).	\N	583	0
+3515	In a non-stick skillet, heat the oil over medium-high heat and cook patties for 4-5 minutes, until each side is golden brown and crispy.	\N	583	1
+3516	Serve salmon cakes drizzled with avocado cream on top.	\N	583	2
+3518	Line a dozen muffin tins with silicone or paper muffin liners (eggs can be sticky).	\N	584	1
+3519	Melt coconut oil in a pan over medium heat. Add the Italian sausage, and break into small pieces.	\N	584	2
+3520	Add the onions and garlic, and cook until the onions are translucent and the sausage pieces are browned and cooked through.	\N	584	3
+3521	Transfer the sausage, onion and garlic mixture into a large bowl. Add the pizza sauce through eggs. Mix to combine.	\N	584	4
+3522	Pour mixture into lined muffin tins, leaving a little room in the muffin cups since the eggs will puff up while they cook.	\N	584	5
+3523	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	\N	584	6
+3524	Top with a pepperonli slice (optional), and bake for 30-35 minutes, until the middles are set and not jiggly.	\N	584	7
 \.
 
 
@@ -11722,7 +11755,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13258, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13270, true);
 
 
 --
