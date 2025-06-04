@@ -703,6 +703,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1068	387	1
 14	1075	1
 1075	14	1
+964	77	1
+964	278	1
+1010	278	1
+76	278	1
 479	481	1
 599	811	1
 598	811	1
@@ -10364,6 +10368,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6399	0	\N	\N	580	1	2	, sliced (mostly green parts)	144	f	\N	8
 6400	0	\N	\N	580	1	1	, sliced into 8 wedges	4	f	\N	9
 6401	0	\N	\N	580	1	8	, washed and dried	1073	f	\N	10
+6452	7	\N	\N	586	1	2	, divided	1053	f	\N	0
+6453	0	\N	\N	586	1	1	(LEEK), chopped	659	f	\N	1
+6454	0	\N	\N	586	1	1	, minced	5	f	\N	2
 6402	0	\N	\N	39	2	1	, deseeded and finely chopped	224	t	\N	6
 5873	6	\N	\N	470	1	1	\N	993	f	\N	5
 5874	8	\N	\N	470	4	1	(PUMPKIN PIE SPICE)	296	f	\N	6
@@ -10405,6 +10412,22 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6438	0	\N	\N	584	1	6	\N	187	f	\N	6
 6439	0	\N	\N	584	1	12	(PEPPERONI SLICES)	262	t	\N	7
 6440	8	\N	\N	584	1	1	\N	964	f	\N	8
+6441	7	\N	\N	585	1	2	\N	1053	f	\N	0
+6442	5	\N	\N	585	1	2	, cut into chunks	918	f	\N	1
+6443	8	\N	\N	585	4	1	, to taste	692	t	\N	2
+6444	0	\N	\N	585	1	1	, diced	222	f	\N	3
+6445	0	\N	\N	585	1	4	(MEDIUM CARROTS), peeled and diced	7	f	\N	4
+6446	0	\N	\N	585	1	2	, diced	150	f	\N	5
+6447	0	\N	\N	585	1	6	\N	5	f	\N	6
+6448	7	\N	\N	585	1	2	(FENNEL), chopped	661	f	\N	7
+6449	7	\N	\N	585	1	3	\N	81	f	\N	8
+6450	6	\N	\N	585	1	6	\N	\N	f	559	9
+6451	6	\N	\N	585	1	2	, chopped and destemmed	372	f	\N	10
+6455	0	\N	\N	586	1	1	, chopped	150	f	\N	3
+6456	6	\N	\N	586	1	3	\N	\N	f	559	4
+6457	6	\N	\N	586	1	4	(BROCCOLI STALKS AND FLORETS), chopped	728	f	\N	5
+6458	6	\N	\N	586	1	2	(FULL_FAT COCONUT MILK)	178	f	\N	6
+6459	8	\N	\N	586	4	1	, to taste	692	t	\N	7
 \.
 
 
@@ -11710,6 +11733,16 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3522	Pour mixture into lined muffin tins, leaving a little room in the muffin cups since the eggs will puff up while they cook.	\N	584	5
 3523	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	\N	584	6
 3524	Top with a pepperonli slice (optional), and bake for 30-35 minutes, until the middles are set and not jiggly.	\N	584	7
+3525	In a large cooking pot over medium heat, heat oil and add meat, stir to coat in coil, and sprinkle in liberally with salt and pepper. Cook meat until browned on all sides, about 7-10 minutes. Remove meat from the pot and set aside.	\N	585	0
+3526	In the same heated pot, add the next 4 ingredients (onions through garlic) and cook until soft and fragrant, about 5 minutes. Add fennel and cook for another 1 to 2 minutes. Return meat to the pot along with the broth and vinegar. Bring to a boil, lower temperature to low, then over and cook for 2 hours and 15 min. Add kale and cook for 5 more minutes, or until they are wiltened and softened.	\N	585	1
+3527	Heat the coconut oil in a soup pot on medium-heat. Add the leeks and cook until softened, about 6 minutes.	\N	586	0
+3528	Add the garlic, and sauté until fragrant, about 1 minute.	\N	586	1
+3529	Add the celery, broccoli, and bone broth and bring to a boil, reduce the heat to simmer for 5 minutes.	\N	586	2
+3530	Add the coconut milk and simmer until heated through, about 3 minutes.	\N	586	3
+3531	Remove from the heat and let cool slightly.	\N	586	4
+3532	Purée the soup in batches in a high-speed blender until combines. (When blending hot liquids, make sure the top of the blender is vented to let the steam escape.)	\N	586	5
+3533	Return to the pot, bring back to a simmer, and add salt and pepper to taste.	\N	586	6
+3534	Serve warm.	\N	586	7
 \.
 
 
