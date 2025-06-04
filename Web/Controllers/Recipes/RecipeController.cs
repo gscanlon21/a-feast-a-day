@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
+using Data.Entities.Recipe;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -76,10 +77,10 @@ public class RecipeController : ViewController
             // Adding recipe.
             if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
+                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token, Recipe = recipe.AsType<Recipe>()! });
             }
 
-            _context.Add(new Data.Entities.Recipe.Recipe()
+            _context.Add(new Recipe()
             {
                 User = user,
                 Name = recipe.Name,

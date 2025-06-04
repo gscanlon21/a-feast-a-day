@@ -2,7 +2,6 @@
 using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data;
-using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,29 +34,28 @@ public class IgnoredRecipesViewComponent : ViewComponent
         var userNewsletter = user.AsType<UserNewsletterDto>()!;
         userNewsletter.Token = token;
 
+        // See if the user recipes exist on the user obj.
         var userRecipes = user.UserRecipes.NullIfEmpty()?
             .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
             .Where(ur => ur.Section != Section.None)
             .ToList();
+
+        // If they don't, pull them from the database.
         userRecipes ??= await _context.UserRecipes.AsNoTracking()
             .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
             .Where(ur => ur.Section != Section.None)
             .Where(ur => ur.UserId == user.Id)
             .ToListAsync();
 
-        var ignoredRecipes = new List<QueryResults>();
-        // PERF: This may be slow if the user has a lot of ignored recipes.
-        foreach (var sectionGroup in userRecipes.GroupBy(ur => ur.Section))
-        {
-            ignoredRecipes.AddRange(await new QueryBuilder(sectionGroup.Key)
-                .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
-                .WithRecipes(x =>
-                {
-                    x.AddRecipes(sectionGroup);
-                })
-                .Build()
-                .Query(_serviceScopeFactory));
-        }
+        // Recipes are ignored across all sections at once.
+        var ignoredRecipes = await new QueryBuilder(Section.None)
+            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
+            .WithRecipes(x =>
+            {
+                x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
+            })
+            .Build()
+            .Query(_serviceScopeFactory);
 
         return View("IgnoredRecipes", new IgnoredRecipesViewModel()
         {

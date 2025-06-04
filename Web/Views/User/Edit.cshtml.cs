@@ -95,6 +95,9 @@ public class UserEditViewModel
     [Display(Name = "Send Day", Description = "What days do you want to receive new recipes?")]
     public DayOfWeek SendDay { get; set; }
 
+    [ValidateNever]
+    public Data.Entities.Recipe.Recipe? Recipe { get; init; }
+
     public Verbosity[]? VerbosityBinder
     {
         get => Enum.GetValues<Verbosity>().Where(e => Verbosity.HasFlag(e)).ToArray();

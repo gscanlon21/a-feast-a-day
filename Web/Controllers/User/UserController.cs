@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Repos;
 using Lib.Services;
@@ -44,7 +45,7 @@ public partial class UserController : ViewController
     [Route("", Order = 1)]
     [Route("e", Order = 2)]
     [Route("edit", Order = 3)]
-    public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
+    public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null, Recipe? recipe = null)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
         if (user == null)
@@ -54,7 +55,8 @@ public partial class UserController : ViewController
 
         return View("Edit", new UserEditViewModel(user, token)
         {
-            WasUpdated = wasUpdated
+            Recipe = recipe,
+            WasUpdated = wasUpdated,
         });
     }
 

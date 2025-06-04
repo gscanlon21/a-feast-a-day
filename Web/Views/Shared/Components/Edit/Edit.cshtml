@@ -327,7 +327,7 @@
         <details class="mb-25">
             <summary class="mb-1 h5">New Recipe</summary>
 
-            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User })
+            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe })
         </details>
 
         <details class="mb-25">

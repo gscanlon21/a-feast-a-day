@@ -70,8 +70,8 @@ public class UpsertRecipeViewComponent : ViewComponent
     {
         var allEquipment = user.Equipment.WithOptionalEquipment();
         return (await _context.Recipes.AsNoTracking().TagWithCallSite()
+            .Where(r => r.UserId == null || allEquipment.HasFlag(r.Equipment))
             .Where(r => r.UserId == null || r.UserId == user.Id)
-            .Where(r => allEquipment.HasFlag(r.Equipment))
             .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)
             .ToListAsync())

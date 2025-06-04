@@ -1,4 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
+using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Recipe;
 using Data.Query.Builders;
@@ -34,7 +35,8 @@ public class ManageRecipeViewComponent : ViewComponent
             .FirstOrDefaultAsync();
 
         if (userRecipe == null) { return Content(""); }
-        var recipeDtos = (await new QueryBuilder(parameters.Section)
+        // Use Section.None so our recipe isn't filtered out.
+        var recipeDtos = (await new QueryBuilder(Section.None)
             .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {

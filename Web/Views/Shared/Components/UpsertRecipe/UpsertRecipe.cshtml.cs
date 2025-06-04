@@ -96,6 +96,11 @@ public class UpsertRecipeModel : IValidatableObject
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
+        if (!BaseRecipe && Section == Section.None)
+        {
+            yield return new ValidationResult($"Section cannot be null when not a base recipe.", [nameof(Section), nameof(BaseRecipe)]);
+        }
+
         foreach (var recipeIngredient in RecipeIngredients.Where(ri => !ri.Hide))
         {
             if (recipeIngredient.IngredientId.HasValue && recipeIngredient.IngredientRecipeId.HasValue)

@@ -133,7 +133,7 @@
 135	\N	Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	256	28	28	2025-01-29	0	224	8388608
 136	\N	Whole-Wheat Tortillas	https://www.eatthismuch.com/calories/whole-wheat-tortillas,101208	\N	f	0	34	68	2024-08-14	0	68	4
 137	\N	Linguine	https://www.eatthismuch.com/calories/linguine,2413373	\N	f	0	240	100	2024-06-30	6	240	4096
-139	\N	Slices of Rye Bread	https://www.eatthismuch.com/calories/rye-bread-4015	\N	f	32	32	32	2025-01-04	0	64	64
+139	\N	Slices of Rye Bread	https://www.eatthismuch.com/calories/rye-bread-4015	\N	f	262176	32	32	2025-01-04	0	64	64
 140	\N	Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	3	3	2024-06-25	7	240	0
 141	\N	Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2024-07-27	6	80	16288
 142	\N	Porridge Oats	https://www.eatthismuch.com/food/nutrition/porridge-oats,152950/	\N	f	0	30	30	2024-07-03	0	80	0
@@ -261,7 +261,7 @@
 268	\N	Seedless Raisins	https://www.eatthismuch.com/calories/raisins-1544	\N	f	0	28	145	2025-03-01	4	145	3
 269	\N	Fuji Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-25	0	182	1
 270	\N	Anise Seeds	https://www.eatthismuch.com/calories/anise-seed-177	\N	f	0	14	7	2025-05-24	4	112	131072
-271	\N	Anise Liquid	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	0	45	45	2024-06-16	0	240	0
+271	\N	Anise Liquid	https://www.eatthismuch.com/calories/anise-seed-177	\N	f	0	7	7	2025-06-06	7	112	131072
 272	\N	Fettuccine Noodles	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	0	45	45	2024-06-16	4	112	0
 273	\N	Slices of Whole Wheat Bread	https://www.eatthismuch.com/calories/100-whole-wheat-sliced-bread,99392	\N	f	32	26	26	2024-09-23	0	52	4
 274	\N	Slices of Whole Grain Bread	https://www.eatthismuch.com/calories/whole-grain-bread-99469	\N	f	32	26	26	2024-10-09	0	52	2
@@ -310,7 +310,7 @@
 319	\N	Chedder Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	256	28	28	2024-10-15	4	224	6
 320	\N	Sweet Onions	https://www.eatthismuch.com/calories/sweet-onions-1590816	\N	f	0	148	160	2025-03-21	0	160	2
 321	\N	Hoisin Sauce	https://www.eatthismuch.com/calories/hoisin-sauce-161930	\N	f	32768	30	15	2025-04-13	9	240	8192
-322	\N	Dried Oregano	https://www.eatthismuch.com/calories/oregano,202	\N	f	0	3	3	2024-09-21	7	48	4
+322	\N	Dried Oregano	https://www.eatthismuch.com/calories/oregano,202	\N	f	0	28	3	2024-09-21	4	48	131072
 323	\N	Onion Powder	https://www.eatthismuch.com/calories/onion-powder,201	\N	t	0	7	7	2024-08-01	7	112	131072
 324	\N	Boneless Skinless Chicken Breast Fillets	https://www.eatthismuch.com/calories/chicken-breast-fillets-boneless-skinless-4111814	\N	f	0	112	112	2025-03-16	0	224	268435456
 325	\N	Silk Heavy Cream	https://www.eatthismuch.com/calories/whipping-cream-dairy-free-heavy-alternative-1590080	\N	f	0	32	16	2024-10-25	9	256	6
@@ -457,7 +457,7 @@
 502	\N	Golden (Light Corn) Syrup	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	0	13.6	13.6	2024-06-22	7	240	114688
 503	\N	Dried Thyme	https://www.eatthismuch.com/calories/thyme-216	\N	f	0	28	3	2025-03-05	4	48	131072
 504	\N	Cayenne Pepper	https://www.eatthismuch.com/calories/cayenne-pepper,206	\N	t	0	10	5	2024-09-13	4	80	131072
-505	\N	Puy Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2024-06-16	6	192	4
+505	\N	Puy Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2025-06-06	6	192	2048
 506	\N	Dried Chervil	https://www.eatthismuch.com/calories/chervil-183	\N	f	0	2	2	2024-10-10	7	32	3
 507	\N	Fresh Chervil | Fresh Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-11-30	4	64	2
 509	\N	Chicken Thighs	https://www.eatthismuch.com/food/nutrition/boneless-chicken-breasts,4204785	\N	f	0	28	112	2025-03-24	0	224	0
@@ -506,7 +506,7 @@
 578	\N	Thyme	https://www.eatthismuch.com/calories/thyme-223	\N	f	0	28	2	2025-02-28	4	32	3
 579	\N	Chipotle Chilies in Adobo Sauce	https://www.eatthismuch.com/calories/chipotle-chilis-in-adobo-sauce-2396171	\N	f	0	45	45	2024-09-26	0	90	3
 580	\N	Fresh Green Chilies	https://www.eatthismuch.com/calories/green-chiles-1665591	\N	f	0	60	30	2024-11-11	0	240	2
-581	\N	Dried Parsley	\N	\N	f	0	240	100	2024-09-26	6	240	0
+581	\N	Dried Parsley	https://www.eatthismuch.com/calories/parsley-204	\N	f	0	28	2	2024-09-26	4	32	131072
 582	\N	Beef Fillet (Fillet Mignon)	https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	0	37.67	113	2024-10-17	4	113	8
 583	\N	Pickled Walnut Juice	\N	\N	f	0	28	224	2024-11-23	9	224	256
 584	\N	Light Cream	\N	\N	f	0	15	15	2024-07-26	7	240	6
@@ -883,3 +883,7 @@
 1081	\N	Broccolini Crowns	https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
 1082	\N	Green Olives	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-19	4	134	512
 1083	\N	Olives	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-19	4	134	512
+1084	\N	Mixed Roasting Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	2
+1085	\N	Frozen Mixed Roasting Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	67108864
+1086	\N	Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2024-07-29	4	224	2
+1087	\N	Sliced Almonds	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	0	146	146	2024-10-12	6	146	1048576

@@ -32,11 +32,11 @@ public static class Filters
     /// <summary>
     /// Filter down to these specific recipes.
     /// </summary>
-    public static IQueryable<T> FilterRecipes<T>(IQueryable<T> query, IList<int>? exerciseIds) where T : IRecipeCombo
+    public static IQueryable<T> FilterRecipes<T>(IQueryable<T> query, ICollection<int>? recipeIds) where T : IRecipeCombo
     {
-        if (exerciseIds != null)
+        if (recipeIds != null)
         {
-            query = query.Where(vm => exerciseIds.Contains(vm.Recipe.Id));
+            query = query.Where(vm => recipeIds.Contains(vm.Recipe.Id));
         }
 
         return query;

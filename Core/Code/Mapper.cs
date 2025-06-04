@@ -7,7 +7,9 @@ public static class Mapper
 {
     private static readonly JsonSerializerOptions Options = new()
     {
-        ReferenceHandler = ReferenceHandler.Preserve
+        ReferenceHandler = ReferenceHandler.Preserve,
+        // Reduce the size of the serilized string for memory usage.
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
     };
 
     public static T? AsType<T>(this object from) where T : new()
