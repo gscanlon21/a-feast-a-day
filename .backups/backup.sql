@@ -1504,6 +1504,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1071	800	1
 800	1071	1
 736	841	1
+1088	17	1
 \.
 
 
@@ -7881,6 +7882,51 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13270	978	2047	\N	\N	3	284
 13271	271	2047	\N	\N	3	23
 13272	581	2047	\N	\N	3	5
+13273	844	256	\N	\N	3	0.4
+13274	844	2251799813685248	\N	\N	2	185
+13275	844	9007199254740992	\N	\N	3	1
+13276	844	18014398509481984	\N	\N	3	2
+13277	844	36028797018963968	\N	\N	3	3
+13278	844	72057594037927936	\N	\N	3	3
+13279	844	144115188075855872	\N	\N	3	0.4
+13280	844	288230376151711744	\N	\N	3	2
+13281	844	576460752303423488	\N	\N	3	2
+13282	844	1152921504606846976	\N	\N	3	0.4
+13283	844	2305843009213693952	\N	\N	3	2
+13284	844	-9223372036854775808	\N	\N	3	2
+13285	844	4611686018427387904	\N	\N	3	4
+13286	844	8	\N	\N	3	96
+13287	844	274877906944	\N	\N	1	1
+13288	844	17179869184	\N	\N	2	90
+13289	844	4398046511104	\N	\N	2	3
+13290	844	70368744177664	\N	\N	2	540
+13291	844	8796093022208	\N	\N	1	0.2
+13292	844	17592186044416	\N	\N	2	6
+13293	844	65536	\N	\N	1	44
+13294	844	262144	\N	\N	2	2
+13295	844	524288	\N	\N	2	0.4
+13296	844	1048576	\N	\N	2	5
+13297	844	2097152	\N	\N	2	4
+13298	844	4194304	\N	\N	2	1
+13299	844	16777216	\N	\N	1	920
+13300	844	67108864	\N	\N	2	9
+13301	844	536870912	\N	\N	2	1
+13302	844	1536	\N	\N	3	1
+13303	844	3221225472	\N	\N	1	10
+13304	844	1792	\N	\N	3	1.4
+13305	844	229376	\N	\N	1	4
+13306	487	128	\N	\N	3	0.1
+13307	487	68719476736	\N	\N	2	11
+13308	487	34359738368	\N	\N	2	45
+13309	487	2	\N	\N	3	0.2
+13310	487	1	\N	\N	3	1
+13311	487	4294967296	\N	\N	2	19
+13312	487	2199023255552	\N	\N	2	0.3
+13313	487	48	\N	\N	3	2
+13314	487	14	\N	\N	3	9
+13315	487	1984	\N	\N	3	1
+13316	487	62	\N	\N	3	11
+13317	487	2047	\N	\N	3	52
 \.
 
 
@@ -10462,6 +10508,27 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6485	0	\N	\N	590	1	1	, juiced, divided	12	f	\N	5
 6486	6	\N	\N	590	4	1	\N	965	f	\N	6
 6487	6	\N	\N	590	4	1	, chopped	13	t	\N	7
+6488	7	\N	\N	591	1	1	\N	964	f	\N	0
+6489	0	\N	\N	591	1	1	, peeled and diced	105	f	\N	1
+6490	0	\N	\N	591	1	2	, diced	1063	f	\N	2
+6491	0	\N	\N	591	2	1	, chopped	110	f	\N	3
+6492	0	\N	\N	591	1	1	\N	597	f	\N	4
+6493	5	\N	\N	591	1	1	\N	988	f	\N	5
+6494	7	\N	\N	591	1	1	\N	699	f	\N	6
+6495	4	\N	\N	591	1	15	(TOMATOES), diced	17	f	\N	7
+6496	4	\N	\N	591	1	15	\N	151	f	\N	8
+6497	0	\N	\N	591	2	5	cooked, or cauliflower rice	188	t	\N	9
+6498	4	\N	\N	592	1	24	(WHITE FISH)	557	f	\N	0
+6499	8	\N	\N	592	4	1	, to taste	692	t	\N	1
+6500	7	\N	\N	592	1	2	\N	77	f	\N	2
+6501	0	\N	\N	592	1	4	, or 2 coconut wraps	305	f	\N	3
+6502	0	\N	\N	592	1	4	(TOMATOES), seeded and chopped	17	f	\N	4
+6503	0	\N	\N	592	1	2	, peeled, pitted and chopped	9	f	\N	5
+6504	0	\N	\N	592	1	1	, peeled and diced	789	f	\N	6
+6505	0	\N	\N	592	1	1	, deseeded and chopped	597	f	\N	7
+6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
+6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
+6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
 \.
 
 
@@ -11517,8 +11584,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2
 3233	Pour hot water over peppermint leaves and let steep for at least 5 minutes. Strain or leave in, and drink hot or let cool, and drink at room temperature.	\N	468	0
 3278	Blend all the ingredients in a  high-speed blender, on high, until smooth.	\N	486	0
-2917	Turn the broiler on to medium-high. Score the chicken breasts on a criss-cross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place criss-cross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat  while you peel and finely grate the garlic in a bowl. Squeeze in the juice from 1½ limes, stir in the peanut butter, and loosen with enough water to give you a spoonable consistency. Finely slice the chili, then mix through the sauce, taste, and season to perfection.	\N	321	0
-2918	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through. Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	1
+2917	Turn the broiler on to medium-high.	\N	321	0
+2918	Score the chicken breasts on a criss-cross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place criss-cross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat  while you peel and finely grate the garlic in a bowl. Squeeze in the juice from 1½ limes, stir in the peanut butter, and loosen with enough water to give you a spoonable consistency. Finely slice the chili, then mix through the sauce, taste, and season to perfection.	\N	321	1
 3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0
 3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1
 3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2
@@ -11793,6 +11860,19 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3548	Heat a grill to medium-high heat, and add the steak, cooking to your preferred level of doneness, 2-5 minutes per side.	\N	590	5
 3549	Remove the steak and let rest until the sweet potatoes are don.e	\N	590	6
 3550	Remove sweet potatoes from the oven, and cut in half. Add the steak, and then top with the cowboy caviar. Top with avocado mash and drizzle with yogurt-lime sauce.	\N	590	7
+3551	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through.	\N	321	2
+3552	Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	3
+3553	In a large skillet, over medium high heat, add the coconut oil. When melted, add the onion and cook until translucent, about 5 minutes.	\N	591	0
+3554	Add the zucchini, cabbage and bell pepper, and cook until softened, about 5 minutes.	\N	591	1
+3555	Next, add the ground turkey and tumeric, and cook until browned, about 5 minutes.	\N	591	2
+3556	Add in the canned tomatoes and coconut cream and let simmer for 20 minutes.	\N	591	3
+3557	When done, serve over cauliflower rice, or regular rice.	\N	591	4
+3558	Preheat the oven to 350F.	\N	592	0
+3559	Season the fish with salt, pepper and olive oil.	\N	592	1
+3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	\N	592	2
+3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3
+3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4
+3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5
 \.
 
 
@@ -11838,7 +11918,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13272, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13317, true);
 
 
 --

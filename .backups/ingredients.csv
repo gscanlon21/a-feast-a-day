@@ -439,7 +439,7 @@
 484	\N	Seeded Red Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
 485	\N	Seeded Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
 486	\N	Short Grain Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
-487	\N	Tortillas, GF	https://www.eatthismuch.com/calories/flour-tortillas,101262	\N	f	0	45	45	2024-06-16	0	240	0
+487	\N	Tortillas, GF	https://www.eatthismuch.com/calories/tortillas-4267	\N	f	0	24	24	2025-06-07	0	96	16288
 488	\N	80% Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5421	\N	f	0	28	28	2024-10-26	4	224	8
 489	\N	Salt & White Pepper	\N	\N	t	0	28	14	2024-12-24	4	224	131072
 490	\N	Ground Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	1
@@ -738,7 +738,7 @@
 841	\N	Large Mixed-Color Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	2
 842	\N	Garbanzo Beans	https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	207	2024-10-17	4	207	2048
 843	\N	Brown Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-25	6	192	2048
-844	\N	Green Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2024-06-16	6	192	2048
+844	\N	Green Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2025-06-07	6	192	2048
 845	\N	Agave	https://www.eatthismuch.com/calories/asparagus-spears-1624112	\N	f	0	16	80	2024-08-05	0	112	1
 846	\N	Gluten-Free Barbecue Sauce	https://www.eatthismuch.com/calories/barbecue-sauce-730	\N	f	0	36	18	2024-11-17	9	288	32
 847	\N	Ratatouille	https://www.eatthismuch.com/calories/pasta-sauce-849	\N	f	0	257	257	2025-03-27	6	257	256
@@ -887,3 +887,4 @@
 1085	\N	Frozen Mixed Roasting Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	67108864
 1086	\N	Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2024-07-29	4	224	2
 1087	\N	Sliced Almonds	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	0	146	146	2024-10-12	6	146	1048576
+1088	\N	Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	512	111	111	2024-11-05	0	111	2
