@@ -77,7 +77,8 @@ public class RecipeController : ViewController
             // Adding recipe.
             if (!ModelState.IsValid)
             {
-                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token, Recipe = recipe.AsType<Recipe>()! });
+                TempData[TempData_Recipe.Recipe] = recipe.AsType<Recipe>()!;
+                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
             }
 
             _context.Add(new Recipe()
