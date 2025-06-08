@@ -15,6 +15,8 @@ public partial class NewsletterRepo
     internal async Task<IList<QueryResults>> GetBreakfastRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var breakfastServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Breakfast) ?? new UserSection(Section.Breakfast);
+        if (breakfastServing.Weight == 0) return [];
+
         var scale = breakfastServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
@@ -36,6 +38,8 @@ public partial class NewsletterRepo
     internal async Task<IList<QueryResults>> GetLunchRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var lunchServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Lunch) ?? new UserSection(Section.Lunch);
+        if (lunchServing.Weight == 0) return [];
+
         var scale = lunchServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
@@ -57,6 +61,8 @@ public partial class NewsletterRepo
     internal async Task<IList<QueryResults>> GetDinnerRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var dinnerServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Dinner) ?? new UserSection(Section.Dinner);
+        if (dinnerServing.Weight == 0) return [];
+
         var scale = dinnerServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
@@ -78,6 +84,8 @@ public partial class NewsletterRepo
     internal async Task<IList<QueryResults>> GetSideRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var sideServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Sides) ?? new UserSection(Section.Sides);
+        if (sideServing.Weight == 0) return [];
+
         var scale = sideServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
@@ -99,6 +107,8 @@ public partial class NewsletterRepo
     internal async Task<IList<QueryResults>> GetSnackRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var snackServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Snacks) ?? new UserSection(Section.Snacks);
+        if (snackServing.Weight == 0) return [];
+
         var scale = snackServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
@@ -117,9 +127,34 @@ public partial class NewsletterRepo
             .Query(_serviceScopeFactory);
     }
 
+    internal async Task<IList<QueryResults>> GetDrinkRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
+    {
+        var drinkServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Drinks) ?? new UserSection(Section.Drinks);
+        if (drinkServing.Weight == 0) return [];
+
+        var scale = drinkServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
+        return await new QueryBuilder(Section.Drinks)
+            .WithUser(newsletterContext.User)
+            .WithNutrients(NutrientTargetsBuilder
+                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrientTargets()
+                .AdjustNutrientTargets(scale: scale), options =>
+                {
+                    options.AtLeastXNutrientsPerRecipe = drinkServing.AtLeastXNutrientsPerRecipe;
+                })
+            .WithExcludeRecipes(x =>
+            {
+                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+            })
+            .Build()
+            .Query(_serviceScopeFactory);
+    }
+
     internal async Task<IList<QueryResults>> GetDessertRecipes(FeastContext newsletterContext, IEnumerable<QueryResults>? exclude = null)
     {
         var dessertServing = newsletterContext.User.UserSections.FirstOrDefault(us => us.Section == Section.Dessert) ?? new UserSection(Section.Dessert);
+        if (dessertServing.Weight == 0) return [];
+
         var scale = dessertServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)

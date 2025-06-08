@@ -30,9 +30,12 @@ public enum Section
     [Display(Name = "Dessert", Order = 7)]
     Dessert = 1 << 6, // 64
 
+    [Display(Name = "Drinks", Order = 8)]
+    Drinks = 1 << 7, // 128
+
     Debug = 1 << 30, // 1073741824
 
-    All = Breakfast | Lunch | Dinner | Sides | Snacks | Dessert | Prep
+    All = Prep | Breakfast | Lunch | Dinner | Sides | Snacks | Dessert | Drinks
 }
 
 public static class SectionExtensions
@@ -45,7 +48,7 @@ public static class SectionExtensions
         Section.Lunch or Section.Dinner => RecipeTheme.Main,
         Section.Sides => RecipeTheme.Cooldown,
         Section.Snacks => RecipeTheme.Extra,
-        Section.Dessert => RecipeTheme.Other,
+        Section.Dessert or Section.Drinks => RecipeTheme.Other,
         _ => RecipeTheme.None,
     };
 }
