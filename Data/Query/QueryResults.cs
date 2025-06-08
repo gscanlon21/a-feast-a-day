@@ -101,7 +101,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     /// <summary>
     /// The number of grams this ingredient weights.
     /// </summary>
-    internal double Weight => ((Ingredient != null && Measure != Measure.None) ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
+    internal double Weight => (Ingredient != null ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
 
     public Measure GetMeasure => Measure;
     public Ingredient? GetIngredient => Ingredient;
