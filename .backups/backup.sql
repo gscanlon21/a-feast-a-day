@@ -686,6 +686,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1083	397	1
 1083	1082	1
 1082	956	1
+119	1090	1
 187	28	1
 187	164	1
 186	184	1
@@ -707,6 +708,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 964	278	1
 1010	278	1
 76	278	1
+45	1091	1
 479	481	1
 599	811	1
 598	811	1
@@ -7939,6 +7941,20 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13327	977	1984	\N	\N	3	0.2
 13328	977	62	\N	\N	3	30
 13329	977	2047	\N	\N	3	131
+13330	39	2251799813685248	\N	\N	2	0.5
+13331	39	549755813888	\N	\N	1	1
+13332	39	17179869184	\N	\N	2	0.4
+13333	39	70368744177664	\N	\N	2	1
+13334	39	8796093022208	\N	\N	1	0.2
+13335	39	16777216	\N	\N	1	0.4
+13336	39	67108864	\N	\N	2	0.1
+13337	469	2251799813685248	\N	\N	2	0.5
+13338	469	549755813888	\N	\N	1	1
+13339	469	17179869184	\N	\N	2	0.4
+13340	469	70368744177664	\N	\N	2	1
+13341	469	8796093022208	\N	\N	1	0.2
+13342	469	16777216	\N	\N	1	0.4
+13343	469	67108864	\N	\N	2	0.1
 \.
 
 
@@ -10569,13 +10585,19 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6534	6	\N	\N	595	1	4	(MIXED BABY GREENS)	710	f	\N	6
 6535	7	\N	\N	595	1	4	\N	77	f	\N	7
 6536	7	\N	\N	595	1	2	\N	81	f	\N	8
-6537	0	\N	\N	596	1	1	, (GF, DF)	45	f	\N	0
+6544	6	\N	\N	597	2	1	\N	420	f	\N	0
+6545	6	\N	\N	597	2	1	\N	789	f	\N	1
+6546	6	\N	\N	597	4	1	(COLLAGEN)	805	f	\N	2
+6537	0	\N	\N	596	1	1	\N	1091	f	\N	0
 6538	0	\N	\N	596	1	6	\N	187	f	\N	1
-6539	6	\N	\N	596	2	1	(DF)	119	f	\N	2
-6540	6	\N	\N	596	2	1	(BROCCOLI), finely chopped	1080	f	\N	3
+6539	6	\N	\N	596	2	1	\N	1090	f	\N	2
+6540	6	\N	\N	596	2	1	, finely chopped	6	f	\N	3
 6541	6	\N	\N	596	4	1	, chopped	140	f	\N	4
-6542	4	\N	\N	596	1	4	(SMOKED SALMON), diced into ½ inch pieces.	216	f	\N	5
+6542	4	\N	\N	596	1	4	, diced into ½ inch pieces.	1089	f	\N	5
 6543	6	\N	\N	596	2	1	\N	178	f	\N	6
+6547	6	\N	\N	597	2	1	\N	178	f	\N	3
+6548	0	\N	\N	597	4	1	\N	9	f	\N	4
+6549	0	\N	\N	597	1	4	\N	1074	f	\N	5
 \.
 
 
@@ -11931,6 +11953,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3573	Mix in cheese, broccoli, chives, salmon and coconut milk.	\N	596	2
 3574	Add ingredients into the pie shell.	\N	596	3
 3575	Bake for 60 minutes, or until a toothpick comes out clean when you poke it into the quiche and the center is set.	\N	596	4
+3576	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	597	0
 \.
 
 
@@ -11976,7 +11999,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13329, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13343, true);
 
 
 --

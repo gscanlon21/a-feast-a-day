@@ -120,6 +120,8 @@ public class QueryRunner(Section section)
 
         var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();
 
+        // When you perform comparisons with nullable types, if the value of one of the nullable types
+        // ... is null and the other is not, all comparisons evaluate to false except for != (not equal).
         var filteredResults = new List<InProgressQueryResults>();
         if (UserOptions.NoUser)
         {
