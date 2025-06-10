@@ -59,18 +59,13 @@ public partial class NewsletterRepo
             .Where(f => f.Type == FootnoteType.Custom)
             .Where(f => f.UserId == user.Id)
             // Keep the same footnotes over the course of a day.
-            .OrderByDescending(f => f.UserLastSeen == DateHelpers.Today)
-            // Then choose the least seen.
-            .ThenBy(f => f.UserLastSeen)
+            .OrderByDescending(f => f.LastSeen == DateHelpers.Today)
+            .ThenBy(f => f.LastSeen.GetValueOrDefault())
             .ThenBy(_ => EF.Functions.Random())
             .Take(count)
             .ToListAsync();
 
-        foreach (var footnote in footnotes)
-        {
-            footnote.UserLastSeen = DateHelpers.Today;
-        }
-
+        footnotes.ForEach(f => f.LastSeen = DateHelpers.Today);
         await _context.SaveChangesAsync();
         return footnotes;
     }

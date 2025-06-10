@@ -34,14 +34,15 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="form-group">
-            <label for="exercise-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
+            <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
             <div class="input-group">
-                <input type="text" id="exercise-date" class="form-control" disabled="disabled" aria-describedby="exercise-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen).ToString("O"))" />
+                <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" 
+                       value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
                 <input type="submit" value="Refresh" class="btn btn-outline-secondary allow-demo" />
             </div>
 
             <span asp-validation-for="UserRecipe" class="text-danger"></span>
-            <div id="exercise-date-help" class="form-text">
+            <div id="recipe-date-help" class="form-text">
                 @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
             </div>
         </div>

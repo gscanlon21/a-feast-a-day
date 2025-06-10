@@ -229,7 +229,7 @@ namespace Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    UserLastSeen = table.Column<DateOnly>(type: "date", nullable: false),
+                    LastSeen = table.Column<DateOnly>(type: "date", nullable: true),
                     Note = table.Column<string>(type: "text", nullable: false),
                     Source = table.Column<string>(type: "text", nullable: true),
                     Type = table.Column<int>(type: "integer", nullable: false)
@@ -495,7 +495,7 @@ namespace Data.Migrations
                     Servings = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     IgnoreUntil = table.Column<DateOnly>(type: "date", nullable: true),
-                    LastSeen = table.Column<DateOnly>(type: "date", nullable: false),
+                    LastSeen = table.Column<DateOnly>(type: "date", nullable: true),
                     RefreshAfter = table.Column<DateOnly>(type: "date", nullable: true),
                     LagRefreshXWeeks = table.Column<int>(type: "integer", nullable: false),
                     PadRefreshXWeeks = table.Column<int>(type: "integer", nullable: false)

@@ -222,7 +222,7 @@ public class QueryRunner(Section section)
             // NOTE: When the two recipe's LastSeen dates are the same:
             // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
             // ... and we may see two randomly alternating recipes for the LagRefreshXWeeks duration.
-            .ThenBy(a => a.UserRecipe?.LastSeen.DayNumber)
+            .ThenBy(a => a.UserRecipe?.LastSeen?.DayNumber)
             // Mostly for the demo, show mostly random recipes.
             .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
             // Don't re-order the list on each read.
@@ -273,7 +273,7 @@ public class QueryRunner(Section section)
                         }
 
                         // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
-                        var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
+                        var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
                         // The recipe does not work enough unique nutrients that we are trying to target.
                         // Allow recipes that have a refresh date since we want to show those continuously until that date.
                         // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes

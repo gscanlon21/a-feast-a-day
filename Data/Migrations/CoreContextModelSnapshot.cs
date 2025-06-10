@@ -53,6 +53,9 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateOnly?>("LastSeen")
+                        .HasColumnType("date");
+
                     b.Property<string>("Note")
                         .IsRequired()
                         .HasColumnType("text");
@@ -65,9 +68,6 @@ namespace Data.Migrations
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
-
-                    b.Property<DateOnly>("UserLastSeen")
-                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -718,7 +718,7 @@ namespace Data.Migrations
                     b.Property<int>("LagRefreshXWeeks")
                         .HasColumnType("integer");
 
-                    b.Property<DateOnly>("LastSeen")
+                    b.Property<DateOnly?>("LastSeen")
                         .HasColumnType("date");
 
                     b.Property<string>("Notes")

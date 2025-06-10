@@ -271,7 +271,7 @@ public class RecipeController : ViewController
         if (viewModel.PadRefreshXWeeks != userRecipe.PadRefreshXWeeks && userRecipe.LastSeen > DateOnly.MinValue)
         {
             var difference = viewModel.PadRefreshXWeeks - userRecipe.PadRefreshXWeeks; // 11 new - 1 old = 10 weeks.
-            userRecipe.LastSeen = userRecipe.LastSeen.AddDays(7 * difference); // Add 70 days onto the LastSeen date.
+            userRecipe.LastSeen = userRecipe.LastSeen?.AddDays(7 * difference); // Add 70 days onto the LastSeen date.
         }
 
         // Apply refresh lagging immediately.

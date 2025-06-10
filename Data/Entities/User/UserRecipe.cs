@@ -35,8 +35,7 @@ public class UserRecipe
     /// <summary>
     /// When was this recipe last seen in the user's newsletter.
     /// </summary>
-    [Required]
-    public DateOnly LastSeen { get; set; }
+    public DateOnly? LastSeen { get; set; }
 
     /// <summary>
     /// If this is set, will not update the LastSeen date until this date is reached.
