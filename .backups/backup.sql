@@ -7955,6 +7955,30 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13341	469	8796093022208	\N	\N	1	0.2
 13342	469	16777216	\N	\N	1	0.4
 13343	469	67108864	\N	\N	2	0.1
+13344	470	68719476736	\N	\N	2	1
+13345	470	34359738368	\N	\N	2	11
+13346	470	2	\N	\N	3	17
+13347	470	1	\N	\N	3	0.1
+13348	470	4294967296	\N	\N	2	1
+13349	470	2199023255552	\N	\N	2	0.1
+13350	470	14	\N	\N	3	17
+13351	470	62	\N	\N	3	17
+13352	470	2047	\N	\N	3	64
+13353	61	256	\N	\N	3	2
+13354	61	2251799813685248	\N	\N	2	5
+13355	61	512	\N	\N	3	1
+13356	61	1024	\N	\N	3	5
+13357	61	17179869184	\N	\N	2	0.1
+13358	61	70368744177664	\N	\N	2	3
+13359	61	8796093022208	\N	\N	1	0.3
+13360	61	65536	\N	\N	1	1
+13361	61	131072	\N	\N	1	2
+13362	61	16777216	\N	\N	1	1
+13363	61	536870912	\N	\N	2	0.5
+13364	61	1536	\N	\N	3	6
+13365	61	3221225472	\N	\N	1	22
+13366	61	1792	\N	\N	3	8
+13367	61	229376	\N	\N	1	2
 \.
 
 
@@ -10304,7 +10328,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6249	0	\N	\N	560	1	1	, peeled, finely diced	1043	f	\N	1
 6466	8	\N	\N	587	1	1	\N	74	f	\N	6
 6467	6	\N	\N	587	1	1	\N	123	f	\N	7
+6554	0	\N	\N	598	1	1	\N	150	f	\N	4
 6256	7	\N	\N	561	1	1	\N	14	t	\N	6
+6555	0	\N	\N	598	2	1	, small	155	f	\N	5
+6556	0	\N	\N	598	2	1	, juiced	4	f	\N	6
+6557	0	\N	\N	598	1	1	, juiced	12	f	\N	7
+6558	6	\N	\N	598	4	1	\N	805	f	\N	8
 6287	7	\N	\N	567	1	1	\N	77	f	\N	0
 6288	5	\N	\N	567	1	1	, cubed	1061	f	\N	1
 6269	8	\N	\N	564	1	1	\N	322	f	\N	2
@@ -10317,6 +10346,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6214	0	\N	\N	555	2	1	, juiced	4	f	\N	4
 6215	8	\N	\N	555	4	1	, to taste	692	t	\N	5
 6272	8	\N	\N	564	1	1	\N	71	f	\N	5
+6559	7	\N	\N	598	1	1	, liquified	964	f	\N	9
 3931	4	\N	\N	197	1	2	, finely shredded	26	f	\N	9
 3932	0	\N	\N	197	1	4	, finely chopped	144	f	\N	10
 3933	8	\N	\N	197	8	1	\N	285	f	\N	11
@@ -10576,15 +10606,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6525	6	\N	\N	594	1	1	(GREENS)	148	f	\N	7
 6526	4	\N	\N	594	1	1	\N	805	f	\N	8
 6527	0	\N	\N	594	1	1	, soaked in hot water for 5 minutes	152	t	\N	9
-6528	8	\N	\N	595	1	4	\N	77	f	\N	0
-6529	0	\N	\N	595	1	4	, finely chopped	5	f	\N	1
-6530	7	\N	\N	595	1	4	(CAPERS	159	f	\N	2
-6531	0	\N	\N	595	1	4	(HADDOCK FILLETS), 6-ounces each	114	f	\N	3
-6532	0	\N	\N	595	1	2	, juiced and zested	4	f	\N	4
-6533	8	\N	\N	595	4	1	, to taste	692	t	\N	5
-6534	6	\N	\N	595	1	4	(MIXED BABY GREENS)	710	f	\N	6
-6535	7	\N	\N	595	1	4	\N	77	f	\N	7
-6536	7	\N	\N	595	1	2	\N	81	f	\N	8
 6544	6	\N	\N	597	2	1	\N	420	f	\N	0
 6545	6	\N	\N	597	2	1	\N	789	f	\N	1
 6546	6	\N	\N	597	4	1	(COLLAGEN)	805	f	\N	2
@@ -10598,6 +10619,26 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6547	6	\N	\N	597	2	1	\N	178	f	\N	3
 6548	0	\N	\N	597	4	1	\N	9	f	\N	4
 6549	0	\N	\N	597	1	4	\N	1074	f	\N	5
+6550	6	\N	\N	598	1	1	\N	806	f	\N	0
+6551	6	\N	\N	598	1	1	(GREENS)	121	f	\N	1
+6552	0	\N	\N	598	2	1	\N	1043	f	\N	2
+6553	7	\N	\N	598	1	1	\N	738	f	\N	3
+6560	6	\N	\N	599	1	1	(LETTUCE)	305	f	\N	0
+6561	6	\N	\N	599	2	1	\N	1062	f	\N	1
+6562	0	\N	\N	599	1	1	, diced	155	f	\N	2
+6563	6	\N	\N	599	1	1	\N	1092	f	\N	3
+6528	8	\N	\N	595	1	4	\N	77	f	\N	0
+6529	0	\N	\N	595	1	4	, finely chopped	5	f	\N	1
+6530	7	\N	\N	595	1	4	\N	1093	f	\N	2
+6531	0	\N	\N	595	1	4	(HADDOCK FILLETS), 6-ounces each	114	f	\N	3
+6532	0	\N	\N	595	1	2	, juiced and zested	4	f	\N	4
+6533	8	\N	\N	595	4	1	, to taste	692	t	\N	5
+6534	6	\N	\N	595	1	4	(MIXED BABY GREENS)	710	f	\N	6
+6535	7	\N	\N	595	1	4	\N	77	f	\N	7
+6536	7	\N	\N	595	1	2	\N	81	f	\N	8
+6564	6	\N	\N	600	1	1	(PITTED FROZEN CHERRIES)	354	f	\N	0
+6565	6	\N	\N	600	1	1	\N	806	f	\N	1
+6566	6	\N	\N	600	4	1	(COLLAGEN POWDER)	805	f	\N	2
 \.
 
 
@@ -11927,6 +11968,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3550	Remove sweet potatoes from the oven, and cut in half. Add the steak, and then top with the cowboy caviar. Top with avocado mash and drizzle with yogurt-lime sauce.	\N	590	7
 3551	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through.	\N	321	2
 1600	Preheat the oven to 400°F, then spray a 9x13" baking pan with nonstick spray.	\N	135	0
+3577	Add all ingredients into a high speed blender.	\N	598	0
+3578	Blend on high for 30 seconds to 1 minute, until smooth.	\N	598	1
 3552	Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	3
 3553	In a large skillet, over medium high heat, add the coconut oil. When melted, add the onion and cook until translucent, about 5 minutes.	\N	591	0
 3554	Add the zucchini, cabbage and bell pepper, and cook until softened, about 5 minutes.	\N	591	1
@@ -11939,21 +11982,23 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3
 3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4
 3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5
+3570	Serve alongside mixed greens, olive oil, vinegar, salt and pepper.	\N	595	2
+3580	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	600	0
 3564	Blend in the Vitamix and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	\N	593	0
 3565	Remove date from hot water.	\N	594	0
 3566	Add all ingredients into a high speed blender.	\N	594	1
 3567	Blend on high for 30 seconds to 1 minute	\N	594	2
 1601	Place the chicken breasts into the bottom of the baking pan then drizzle on the Italian dressing and sprinkle on seasonings  to taste. Use tongs or your hands to flip the chicken breasts to coat in the dressing and seasonings then arrange into an even layer.	\N	135	1
 1602	Bake for 20 minutes or until the thickest part of the largest chicken breast reaches an internal temperature of 165 degrees as read by a digital instant-read thermometer. Let the chicken rest for 15-30 minutes before serving and/or slicing.	\N	135	2
-3568	In a large skillet over medium-high heat, heat oil, garlic and capers. Cook until the garlic becomes fragrant, about 3 minutes.	\N	595	0
-3569	Add the fish and lemon zest, and cook each side for 5 minutes until it browns and is cooked throughout. Drizzle with fresh lemon juice on top, season to taste with salt and pepper, and serve with cooked capers and garlic.	\N	595	1
-3570	Serve alongside mixed greens, olive oil, vinegar, salt and pepper.	\N	595	2
 3571	Preheat the oven to 350°F.	\N	596	0
 3572	Break open 6 eggs, add them to a bowl, and mix.	\N	596	1
 3573	Mix in cheese, broccoli, chives, salmon and coconut milk.	\N	596	2
 3574	Add ingredients into the pie shell.	\N	596	3
 3575	Bake for 60 minutes, or until a toothpick comes out clean when you poke it into the quiche and the center is set.	\N	596	4
 3576	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	597	0
+3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	599	0
+3568	In a large skillet over medium-high heat, heat oil, garlic and capers. Cook until the garlic becomes fragrant, about 3 minutes.	\N	595	0
+3569	Add the fish and lemon zest, and cook each side for 5 minutes until it browns and is cooked throughout. Drizzle with fresh lemon juice on top, season to taste with salt and pepper, and serve with cooked capers and garlic.	\N	595	1
 \.
 
 
@@ -11999,7 +12044,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13343, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13367, true);
 
 
 --

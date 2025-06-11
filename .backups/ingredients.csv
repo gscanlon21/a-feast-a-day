@@ -57,7 +57,7 @@
 58	\N	Baked Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	3
 59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	0	240	240	2024-08-13	6	240	0
 60	\N	Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	32
-61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	28	14	2024-06-17	4	224	32
+61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	28	14	2025-06-12	4	224	32
 62	\N	Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3618	\N	f	294944	32	16	2024-10-27	9	256	8192
 63	\N	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2024-07-04	7	100	0
 64	\N	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965	\N	f	0	28	240	2024-12-02	4	240	256
@@ -119,7 +119,7 @@
 120	\N	Turkey Pepperoni	\N	\N	f	0	240	100	2024-08-02	0	240	0
 121	\N	Fresh Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2024-07-29	4	224	2
 122	\N	Asparagus Spears	https://www.eatthismuch.com/calories/asparagus-1838	\N	f	0	16	18	2024-08-05	0	128	2
-123	\N	Water	\N	\N	t	0	240	240	2024-06-17	6	240	0
+123	\N	Water	\N	\N	t	0	240	240	2025-06-11	6	240	0
 124	\N	Curry Powder	https://www.eatthismuch.com/calories/curry-powder-190	\N	f	0	28	6	2025-01-02	4	96	131072
 125	\N	Cardamom	https://www.eatthismuch.com/calories/cardamom-181	\N	f	0	28	6	2024-12-16	4	96	131072
 126	\N	Kielbasa Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880	\N	f	0	28	56	2025-02-22	4	224	268435456
@@ -424,7 +424,7 @@
 467	\N	Fresh Pineapple	https://www.eatthismuch.com/calories/pineapple-1513	\N	f	0	905	165	2024-11-20	0	165	1
 468	\N	Wholegrain Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	32
 469	\N	Clear Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	21	2025-06-10	9	336	928
-470	\N	Cloudy Honey	aka. Raw Honey. https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	21	21	2024-06-17	7	240	0
+470	\N	Cloudy Honey	aka. Raw Honey. https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	21	2025-06-11	9	336	928
 471	\N	Whole Star Anise	https://www.eatthismuch.com/calories/star-anise,310340	\N	f	0	7	7	2024-09-11	0	112	4
 472	\N	Slices of Brioche Bread	https://www.eatthismuch.com/calories/brioche-bread-2871822	\N	f	32	40	40	2024-10-29	0	80	2
 473	\N	Fresh Dill	https://www.eatthismuch.com/calories/dill-219	\N	f	0	28	0.6	2024-10-01	4	9.6	3
@@ -667,7 +667,7 @@
 741	\N	Muesli	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	33	2024-09-12	6	132	1048576
 742	\N	Granola | Muesli	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	33	2024-09-12	6	132	1048576
 743	\N	Orange Flower Blossoms	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2025-03-28	0	131	1
-744	\N	Distilled Water	\N	\N	t	0	240	240	2024-06-17	6	240	0
+744	\N	Distilled Water	\N	\N	t	0	240	240	2025-06-12	6	240	0
 745	\N	Rose Petals	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2025-04-06	0	131	1
 746	\N	Rose Water	\N	\N	f	0	182	182	2025-04-26	0	240	0
 747	\N	Sauerkraut	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
@@ -891,3 +891,5 @@
 1089	\N	Smoked Salmon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
 1090	\N	Mozzarella Cheese, DF	Dairy-Free. https://www.eatthismuch.com/calories/mozzarella-cheese,26	\N	f	0	28	28	2024-09-12	4	224	8388608
 1091	\N	9" Pie Crust, GF, DF	Gluten-Free. Dairy-Free. https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	0	194	194	2024-07-07	0	194	0
+1092	\N	Sparkling Water	\N	\N	t	0	240	240	2025-06-12	6	240	0
+1093	\N	Capers	https://www.eatthismuch.com/calories/capers-pickled,2884023	\N	f	0	5	5	2024-09-18	0	160	3
