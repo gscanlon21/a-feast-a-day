@@ -170,7 +170,13 @@ public partial class NewsletterRepo
 
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, allRecipes);
         var shoppingList = await GetShoppingList(newsletter, allRecipes);
-        await UpdateLastSeenDate(recipes: allRecipes);
+
+        if (!newsletterContext.IsBackfill)
+        {
+            // Don't update the last seen dates when backfilling feast data
+            // ... so that the user's current feasts are unaffected.
+            await UpdateLastSeenDate(recipes: allRecipes);
+        }
 
         return new NewsletterDto
         {

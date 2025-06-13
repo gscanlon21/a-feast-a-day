@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Query;
 
@@ -55,6 +56,7 @@ public class QueryRunner(Section section)
     public required NutrientOptions NutrientOptions { get; init; }
     public required EquipmentOptions EquipmentOptions { get; init; }
     public required ExclusionOptions ExclusionOptions { get; init; }
+    public required SelectionOptions SelectionOptions { get; init; }
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
@@ -213,22 +215,33 @@ public class QueryRunner(Section section)
             }
         }
 
+        // OrderBy must come after the query or you get cartesian explosion.
+        List<InProgressQueryResults> orderedResults;
+        if (SelectionOptions.Randomized)
+        {
+            // Randomize the order. Useful for the backfill because those feasts don't update the last seen date.
+            orderedResults = filteredResults.OrderBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue)).ToList();
+        }
+        else
+        {
+            // Order by recipes that are still pending refresh.
+            orderedResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
+                // Show recipes that the user has rarely seen.
+                // NOTE: When the two recipe's LastSeen dates are the same:
+                // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
+                // ... and we may see two randomly alternating recipes for the LagRefreshXWeeks duration.
+                .ThenBy(a => a.UserRecipe?.LastSeen?.DayNumber, NullOrder.NullsFirst)
+                // Mostly for the demo, show mostly random recipes.
+                .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
+                // Don't re-order the list on each read.
+                .ToList();
+        }
+
         // Set nutrients on the recipe after all the ingredient swapping has taken place.
         var allNutrients = await GetNutrients(context, filteredResults);
         // OrderBy must come after the query or you get cartesian explosion.
-        var orderedResults = new List<QueryResults>();
-        foreach (var recipe in filteredResults
-            // Order by recipes that are still pending refresh.
-            .OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue)
-            // Show recipes that the user has rarely seen.
-            // NOTE: When the two recipe's LastSeen dates are the same:
-            // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
-            // ... and we may see two randomly alternating recipes for the LagRefreshXWeeks duration.
-            .ThenBy(a => a.UserRecipe?.LastSeen?.DayNumber)
-            // Mostly for the demo, show mostly random recipes.
-            .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
-            // Don't re-order the list on each read.
-            .ToList())
+        var recipeResults = new List<QueryResults>();
+        foreach (var recipe in orderedResults)
         {
             // Set nutrients on the recipe after all the ingredient swapping has taken place.
             recipe.Nutrients = allNutrients.Where(n => recipe.RecipeIngredients.Select(ri => ri.Ingredient?.Id).Contains(n.IngredientId)).ToList();
@@ -241,7 +254,7 @@ public class QueryRunner(Section section)
                 _ => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Order),
             }).ToList();
 
-            orderedResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe)
+            recipeResults.Add(new QueryResults(section, recipe.Recipe, recipe.Nutrients, recipe.RecipeIngredients, recipe.UserRecipe)
             {
                 // Scaling the recipe will also scale the recipe ingredient quantities which then affects ingredient recipe scales.
                 SetScale = (RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int? scale) == true && scale.HasValue) ? scale.Value
@@ -252,7 +265,7 @@ public class QueryRunner(Section section)
         var finalResults = new HashSet<QueryResults>();
         do
         {
-            foreach (var recipe in orderedResults)
+            foreach (var recipe in recipeResults)
             {
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                 // Don't select all nutrients for prior results since those will include the prerequisite recipes already.

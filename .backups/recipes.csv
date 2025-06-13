@@ -215,7 +215,7 @@
 267	Curried Mung Bean Soup	\N	\N	\N	4	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
 268	Orange Flower Water	\N	\N	\N	0	120	5	1	t	0	\N	6	https://thishealthytable.com/blog/orange-blossom-water/	f	f
 269	Rose Water	\N	\N	\N	0	20	5	1	t	4194308	rose-water.jpg	6	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	f	f
-270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	3	t	4194308	chicken-lettuce-cups.jpg	0	\N	f	f
+270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	2	3	t	4194308	chicken-lettuce-cups.jpg	0	\N	f	f
 271	Traditional Stuffing	\N	\N	\N	8	55	5	4	t	270532866	traditional-stuffing.jpg	0	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	f	f
 272	Fragrant Spiced Rice	\N	\N	\N	8	10	5	4	t	4194308	baked-saffron-rice.jpg	0	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	f	f
 305	Exercise Recovery Smoothie	\N	\N	\N	128	0	5	1	t	134217856	exercise-recovery-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	f	f
@@ -417,3 +417,5 @@
 598	Tropical Green Smoothie	\N	\N	\N	128	0	6	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	134217856	\N	0	\N	f	f
 600	Pain Away Smoothie	\N	\N	\N	128	0	5	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+601	Cowboy Caviar	\N	\N	\N	0	0	20	3	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+602	Cobb Salad	\N	\N	\N	8	40	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

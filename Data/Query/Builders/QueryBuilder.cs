@@ -13,10 +13,11 @@ public class QueryBuilder
     private readonly Section Section;
 
     private UserOptions? UserOptions;
+    private RecipeOptions? RecipeOptions;
     private NutrientOptions? NutrientOptions;
     private ExclusionOptions? ExclusionOptions;
-    private RecipeOptions? RecipeOptions;
     private EquipmentOptions? EquipmentOptions;
+    private SelectionOptions? SelectionOptions;
 
     /// <summary>
     /// Looks for similar buckets of recipes.
@@ -85,6 +86,17 @@ public class QueryBuilder
         return this;
     }
 
+    /// <summary>
+    /// What progression level should we cap exercise's at?
+    /// </summary>
+    public QueryBuilder WithSelectionOptions(Action<SelectionOptions>? builder = null)
+    {
+        var options = SelectionOptions ?? new SelectionOptions();
+        builder?.Invoke(options);
+        SelectionOptions = options;
+        return this;
+    }
+
     public QueryBuilder WithExcludeRecipes(Action<ExclusionOptions>? builder = null)
     {
         var options = ExclusionOptions ?? new ExclusionOptions();
@@ -113,6 +125,7 @@ public class QueryBuilder
             NutrientOptions = NutrientOptions ?? new NutrientOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
+            SelectionOptions = SelectionOptions ?? new SelectionOptions(),
         };
     }
 }

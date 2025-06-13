@@ -31,6 +31,10 @@ public partial class NewsletterRepo
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
+            })
             .Build()
             .Query(_serviceScopeFactory);
     }
@@ -53,6 +57,10 @@ public partial class NewsletterRepo
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+            })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -77,6 +85,10 @@ public partial class NewsletterRepo
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
+            })
             .Build()
             .Query(_serviceScopeFactory);
     }
@@ -99,6 +111,10 @@ public partial class NewsletterRepo
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+            })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -123,6 +139,10 @@ public partial class NewsletterRepo
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
+            })
             .Build()
             .Query(_serviceScopeFactory);
     }
@@ -146,6 +166,10 @@ public partial class NewsletterRepo
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
             })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
+            })
             .Build()
             .Query(_serviceScopeFactory);
     }
@@ -168,6 +192,10 @@ public partial class NewsletterRepo
             .WithExcludeRecipes(x =>
             {
                 x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+            })
+            .WithSelectionOptions(options =>
+            {
+                options.Randomized = newsletterContext.IsBackfill;
             })
             .Build()
             .Query(_serviceScopeFactory);
