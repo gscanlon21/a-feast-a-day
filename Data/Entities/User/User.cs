@@ -87,15 +87,15 @@ public class User : IUser
     public int? MaxIngredients { get; set; }
 
     /// <summary>
+    /// Offset of today taking into account the user's SendHour.
+    /// </summary>
+    public DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
+
+    /// <summary>
     /// Offset of today taking into account the user's SendHour and SendDay.
     /// </summary>
     public DateOnly StartOfWeekOffset => Features.HasFlag(Features.Debug) ? TodayOffset
         : TodayOffset.AddDays(-1 * WeekdayDifference);
-
-    /// <summary>
-    /// Offset of today taking into account the user's SendHour.
-    /// </summary>
-    private DateOnly TodayOffset => DateOnly.FromDateTime(DateTime.UtcNow.AddHours(-1 * SendHour));
 
     private int WeekdayDifference => SendDay > TodayOffset.DayOfWeek
         ? 7 - Math.Abs((int)SendDay - (int)TodayOffset.DayOfWeek)
