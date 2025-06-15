@@ -188,8 +188,9 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        // Make sure the skip date persists for at least the feast's week...may carry over into next week as well.
         bool unskipped = !userRecipe.IgnoreUntil.HasValue || userRecipe.IgnoreUntil == DateOnly.MaxValue;
-        userRecipe.IgnoreUntil = unskipped ? DateHelpers.Today.AddMonths(1) : null;
+        userRecipe.IgnoreUntil = unskipped ? user.StartOfWeekOffset.AddDays(7) : null;
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
