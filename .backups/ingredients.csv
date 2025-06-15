@@ -159,7 +159,7 @@
 162	\N	Soy Milk	https://www.eatthismuch.com/calories/soy-milk-6715	\N	f	32768	240	250	2025-01-04	6	240	2097152
 163	\N	Cow Milk (Skim)	https://www.eatthismuch.com/calories/skim-milk,7096	\N	f	320	240	240	2024-08-30	6	240	4194304
 164	\N	Eggs, White	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-08-31	0	200	16777216
-165	\N	Mini Bagels	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2024-06-19	6	240	4
+165	\N	Mini Bagels	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	786464	40	40	2025-06-16	0	240	4
 166	\N	Loaves of Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-18	0	64	4
 167	\N	Naan	https://www.eatthismuch.com/calories/naan,201876	\N	f	262176	140	140	2024-08-06	0	100	4
 168	\N	Allspice	https://www.eatthismuch.com/calories/allspice-176	\N	f	0	12	6	2024-10-26	4	96	4
@@ -195,7 +195,7 @@
 198	\N	Bologna	https://www.eatthismuch.com/calories/bologna-999	\N	f	0	28	28	2025-05-03	4	224	268435456
 200	\N	Loaves of Whole-Wheat Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
 201	\N	Creamy Peanut Butter (Reduced Fat)	https://www.eatthismuch.com/calories/creamy-reduced-fat-peanut-butter,542598	\N	f	0	17	17	2024-07-30	7	272	0
-202	\N	Mini Bagels, Whole Grain	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2024-06-19	6	240	0
+202	\N	Mini Bagels, Whole Grain	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2025-06-15	6	240	64
 203	\N	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506	\N	f	2	28	28	2024-09-29	4	224	3145728
 204	\N	Hearts of Palm Linguine	https://www.eatthismuch.com/calories/linguine-hearts-of-palm-1846301	\N	f	0	28	75	2024-12-20	4	75	4096
 205	\N	Mixed Beans	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	256
@@ -381,8 +381,8 @@
 392	\N	Pesto	https://www.eatthismuch.com/calories/pesto-2443368	\N	f	0	28	60	2024-07-01	4	240	128
 393	\N	Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
 394	\N	Pesto | Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
-395	\N	Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	0	40	40	2024-06-19	6	240	0
-396	\N	Small Rustic Baguette	https://www.eatthismuch.com/calories/baguettes-2053200	\N	f	262176	141	47	2024-06-19	0	47	4
+395	\N	Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	786464	240	240	2025-06-15	0	240	4
+396	\N	Small Rustic Baguette	https://www.eatthismuch.com/calories/baguettes-2053200	\N	f	786464	141	47	2025-06-16	0	47	4
 397	\N	Black Olives	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-19	4	134	512
 398	\N	Large Black Olives, with Pits	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-15	4	134	512
 399	\N	Brioche Buns	https://www.eatthismuch.com/calories/brioche-buns-448797	\N	f	0	85	85	2024-09-27	0	85	4
@@ -699,7 +699,7 @@
 802	\N	Balti Curry Paste	https://www.eatthismuch.com/calories/balti-sauce-152832	\N	f	0	28	120	2024-11-24	4	180	256
 803	\N	Red Split Lentils	https://www.eatthismuch.com/calories/lentils-3634	\N	f	0	192	192	2025-06-09	6	192	2048
 804	\N	Red Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-24	6	192	2048
-805	\N	Protein Powder	https://www.eatthismuch.com/calories/protein-powder-1643743	\N	t	0	32	32	2024-06-20	0	128	-2147483648
+805	\N	Protein Powder	https://www.eatthismuch.com/calories/protein-powder-1643743	\N	t	0	32	32	2025-06-17	0	128	-2147483648
 806	\N	Coconut Water	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	32
 807	\N	Almonds	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	0	146	146	2024-10-12	6	146	1048576
 808	\N	Frozen Blueberries | Frozen Blackberries	https://www.eatthismuch.com/calories/blueberries-frozen-1346	\N	f	0	155	155	2024-11-22	6	155	33554432
@@ -893,8 +893,15 @@
 1091	\N	9" Pie Crust, GF, DF	Gluten-Free. Dairy-Free. https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	0	194	194	2024-07-07	0	194	0
 1092	\N	Sparkling Water	\N	\N	t	0	240	240	2025-06-12	6	240	0
 1093	\N	Capers	https://www.eatthismuch.com/calories/capers-pickled,2884023	\N	f	0	5	5	2024-09-18	0	160	3
-1094	\N	Collagen Powder	https://www.eatthismuch.com/calories/protein-powder-1643743	\N	t	0	32	32	2024-06-20	0	128	-2147483648
+1094	\N	Collagen Powder	https://www.eatthismuch.com/calories/collagen-powder-3116322	\N	t	0	28	7	2025-06-17	4	224	-2147483648
 1095	\N	Escarole	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1096	\N	Turnip Greens	aka. Turnip Tops. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1097	\N	Radish Greens	aka. Radish Tops. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1098	\N	Dandelion Greens	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
+1099	\N	Greens	https://www.eatthismuch.com/calories/mixed-greens-salad-2146257	\N	f	0	39	156	2025-02-01	6	39	2
+1100	\N	Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	8388608
+1101	\N	Pitted Frozen Cherries	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	512	17	85	2024-08-07	0	170	1
+1102	\N	Honey | Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
+1103	\N	Beef Tallow	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072
+1104	\N	Coconut Oil | Beef Tallow	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072
+1105	\N	Smoked Kielbasa Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880	\N	f	0	28	56	2025-02-22	4	224	268435456

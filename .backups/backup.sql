@@ -691,6 +691,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 790	13	1
 790	14	1
 790	206	1
+1102	469	1
+1102	215	1
+1102	470	1
+1102	39	1
 187	28	1
 187	164	1
 186	184	1
@@ -714,6 +718,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 76	278	1
 45	1091	1
 790	697	1
+1104	964	1
+1104	1103	1
+1104	722	1
+1104	76	1
 479	481	1
 599	811	1
 598	811	1
@@ -738,6 +746,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 547	282	1
 695	752	1
 238	752	1
+126	1105	1
 690	39	1
 690	681	1
 1008	871	1
@@ -765,6 +774,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 790	1096	1
 790	1097	1
 790	368	1
+1100	1090	1
 186	183	1
 186	182	1
 186	181	1
@@ -1519,6 +1529,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1088	17	1
 790	144	1
 790	140	1
+22	275	1
+22	609	1
+22	220	1
 \.
 
 
@@ -8028,6 +8041,9 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13402	28	1536	\N	\N	3	1
 13403	28	3221225472	\N	\N	1	0.2
 13404	28	1792	\N	\N	3	3
+13405	1094	68719476736	\N	\N	2	40
+13406	1094	1	\N	\N	3	6
+13407	1094	2047	\N	\N	3	25
 \.
 
 
@@ -10377,12 +10393,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6249	0	\N	\N	560	1	1	, peeled, finely diced	1043	f	\N	1
 6466	8	\N	\N	587	1	1	\N	74	f	\N	6
 6467	6	\N	\N	587	1	1	\N	123	f	\N	7
-6554	0	\N	\N	598	1	1	\N	150	f	\N	4
 6256	7	\N	\N	561	1	1	\N	14	t	\N	6
-6555	0	\N	\N	598	2	1	, small	155	f	\N	5
-6556	0	\N	\N	598	2	1	, juiced	4	f	\N	6
-6557	0	\N	\N	598	1	1	, juiced	12	f	\N	7
-6558	6	\N	\N	598	4	1	\N	805	f	\N	8
 6287	7	\N	\N	567	1	1	\N	77	f	\N	0
 6288	5	\N	\N	567	1	1	, cubed	1061	f	\N	1
 6269	8	\N	\N	564	1	1	\N	322	f	\N	2
@@ -10395,7 +10406,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6214	0	\N	\N	555	2	1	, juiced	4	f	\N	4
 6215	8	\N	\N	555	4	1	, to taste	692	t	\N	5
 6272	8	\N	\N	564	1	1	\N	71	f	\N	5
-6559	7	\N	\N	598	1	1	, liquified	964	f	\N	9
+6554	0	\N	\N	598	1	1	\N	150	f	\N	4
+6555	0	\N	\N	598	2	1	, small	155	f	\N	5
 3931	4	\N	\N	197	1	2	, finely shredded	26	f	\N	9
 3932	0	\N	\N	197	1	4	, finely chopped	144	f	\N	10
 3933	8	\N	\N	197	8	1	\N	285	f	\N	11
@@ -10662,16 +10674,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6541	6	\N	\N	596	4	1	, chopped	140	f	\N	4
 6542	4	\N	\N	596	1	4	, diced into ½ inch pieces.	1089	f	\N	5
 6543	6	\N	\N	596	2	1	\N	178	f	\N	6
-6550	6	\N	\N	598	1	1	\N	806	f	\N	0
-6551	6	\N	\N	598	1	1	(GREENS)	121	f	\N	1
-6552	0	\N	\N	598	2	1	\N	1043	f	\N	2
-6553	7	\N	\N	598	1	1	\N	738	f	\N	3
 6544	6	\N	\N	597	2	1	\N	420	f	\N	0
 6545	6	\N	\N	597	2	1	\N	789	f	\N	1
 6546	6	\N	\N	597	4	1	\N	1094	f	\N	2
 6547	6	\N	\N	597	2	1	\N	178	f	\N	3
 6548	0	\N	\N	597	4	1	\N	9	f	\N	4
 6549	0	\N	\N	597	1	4	\N	1074	f	\N	5
+6550	6	\N	\N	598	1	1	\N	806	f	\N	0
+6551	6	\N	\N	598	1	1	\N	1099	f	\N	1
+6552	0	\N	\N	598	2	1	\N	1043	f	\N	2
+6553	7	\N	\N	598	1	1	\N	738	f	\N	3
 6560	6	\N	\N	599	1	1	(LETTUCE)	305	f	\N	0
 6561	6	\N	\N	599	2	1	\N	1062	f	\N	1
 6562	0	\N	\N	599	1	1	, diced	155	f	\N	2
@@ -10685,9 +10697,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6534	6	\N	\N	595	1	4	(MIXED BABY GREENS)	710	f	\N	6
 6535	7	\N	\N	595	1	4	\N	77	f	\N	7
 6536	7	\N	\N	595	1	2	\N	81	f	\N	8
-6564	6	\N	\N	600	1	1	(PITTED FROZEN CHERRIES)	354	f	\N	0
-6565	6	\N	\N	600	1	1	\N	806	f	\N	1
-6566	6	\N	\N	600	4	1	(COLLAGEN POWDER)	805	f	\N	2
 6567	6	\N	\N	601	1	2	, cooked	54	f	\N	0
 6568	6	\N	\N	601	1	1	, chopped	1088	f	\N	1
 6569	6	\N	\N	601	2	1	\N	13	f	\N	2
@@ -10709,6 +10718,45 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6585	8	\N	\N	602	4	1	, to taste	692	t	\N	6
 6586	6	\N	\N	602	1	1	\N	\N	t	480	7
 6587	0	\N	\N	602	1	1	, peeled, pitted, and chopped	9	f	\N	8
+6556	0	\N	\N	598	2	1	, juiced	4	f	\N	6
+6557	0	\N	\N	598	1	1	, juiced	12	f	\N	7
+6558	6	\N	\N	598	4	1	\N	805	f	\N	8
+6559	7	\N	\N	598	1	1	, liquified	964	f	\N	9
+6588	4	\N	\N	603	1	8	(COOKED SALMON RECIPE), chopped	1089	f	\N	0
+6589	0	\N	\N	603	1	1	, peeled, pitted and chopped	789	f	\N	1
+6590	0	\N	\N	603	1	1	, peeled, pitted and chopped	9	f	\N	2
+6591	6	\N	\N	603	4	1	\N	\N	f	556	3
+6592	4	\N	\N	604	1	1	\N	983	f	\N	0
+6593	0	\N	\N	605	1	2	\N	191	f	\N	0
+6594	4	\N	\N	605	1	1	(COOKED CHICKEN RECIPE)	415	f	\N	1
+6595	4	\N	\N	605	1	1	\N	1090	f	\N	2
+6596	4	\N	\N	605	2	1	\N	48	t	\N	3
+6597	0	\N	\N	606	1	2	\N	22	f	\N	0
+6598	4	\N	\N	606	1	1	\N	56	f	\N	1
+6599	4	\N	\N	606	1	1	\N	49	f	\N	2
+6564	6	\N	\N	600	1	1	\N	1101	f	\N	0
+6565	6	\N	\N	600	1	1	\N	806	f	\N	1
+6566	6	\N	\N	600	4	1	\N	1094	f	\N	2
+6600	7	\N	\N	607	1	1	, for cooking	1104	f	\N	0
+6601	0	\N	\N	607	1	1	, diced	217	f	\N	1
+6602	5	\N	\N	607	4	3	, cut in half	156	f	\N	2
+6603	5	\N	\N	607	2	1	, diced into ½-inch cubes, or sweet potatoes, or butternut squash.	1054	f	\N	3
+6604	4	\N	\N	607	1	12	, uncured, sliced into ¼-½ inch slices	1105	f	\N	4
+6605	6	\N	\N	607	2	1	\N	60	f	\N	5
+6606	6	\N	\N	607	2	1	\N	80	f	\N	6
+6607	6	\N	\N	607	4	1	\N	1102	f	\N	7
+6608	7	\N	\N	608	1	1	(ARROWROOT STARCH)	196	f	\N	0
+6609	8	\N	\N	608	2	1	\N	73	t	\N	1
+6610	8	\N	\N	608	2	1	\N	323	f	\N	2
+6611	8	\N	\N	608	2	1	\N	71	f	\N	3
+6612	8	\N	\N	608	4	1	\N	503	f	\N	4
+6613	8	\N	\N	608	4	1	, to taste	692	t	\N	5
+6614	0	\N	\N	608	1	4	(SKINLESS HADDOCK FILLETS), about 1-inch thick; 6 ounces each	326	f	\N	6
+6615	7	\N	\N	608	1	4	, divided	964	f	\N	7
+6616	0	\N	\N	608	1	2	, minced	5	f	\N	8
+6617	0	\N	\N	608	2	1	, juiced	4	f	\N	9
+6618	7	\N	\N	608	1	2	, chopped	2	f	\N	10
+6619	7	\N	\N	608	1	2	, chopped	573	f	\N	11
 \.
 
 
@@ -11143,6 +11191,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1823	Put the shallots in a bowl with boiling water to cover. Leave for 1-2 minutes, then slip off the skins and chop the shallots finely.	\N	173	0
 3179	Start at the bottom of one wedge, and wrap the bacon around the wedge, stretching slightly to cover from end to end. Place on the parchment-lined baking sheet.	\N	425	3
 1277	Preheat oven to 425°F. In a large bowl combine ground beef, egg, Worcestershire sauce, 2 Tablespoons BBQ sauce, bread crumbs, salt, pepper, cheese cubes, and caramelized onions, then mix until just combined. Divide mixture into 4 equal-sized portions then form into loaves and place on a foil-lined, non-stick-sprayed baking sheet. Spread 1 Tablespoon BBQ sauce over each loaf then bake for 20 minutes, or until no longer pink in the center, and then serve.	\N	90	1
+3592	Combine all three.	\N	606	0
 3396	Store in an airtight container.	\N	550	1
 3276	Cook the chicken.	\N	485	0
 3277	Serve with honey.	\N	485	1
@@ -12036,9 +12085,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3549	Remove the steak and let rest until the sweet potatoes are don.e	\N	590	6
 3550	Remove sweet potatoes from the oven, and cut in half. Add the steak, and then top with the cowboy caviar. Top with avocado mash and drizzle with yogurt-lime sauce.	\N	590	7
 3551	Flip the chicken over, spoon over the sauce, then transfer to the broiler, roughly 4 inches from the heat, for 5 minutes, or until gnarly and cooked through.	\N	321	2
-1600	Preheat the oven to 400°F, then spray a 9x13" baking pan with nonstick spray.	\N	135	0
 3577	Add all ingredients into a high speed blender.	\N	598	0
 3578	Blend on high for 30 seconds to 1 minute, until smooth.	\N	598	1
+1600	Preheat the oven to 400°F, then spray a 9x13" baking pan with nonstick spray.	\N	135	0
+3591	Cook the quesadilla and serve warm.	\N	605	0
 3552	Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	\N	321	3
 3553	In a large skillet, over medium high heat, add the coconut oil. When melted, add the onion and cook until translucent, about 5 minutes.	\N	591	0
 3554	Add the zucchini, cabbage and bell pepper, and cook until softened, about 5 minutes.	\N	591	1
@@ -12052,7 +12102,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4
 3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5
 3570	Serve alongside mixed greens, olive oil, vinegar, salt and pepper.	\N	595	2
-3580	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	600	0
 3564	Blend in the Vitamix and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	\N	593	0
 3565	Remove date from hot water.	\N	594	0
 3566	Add all ingredients into a high speed blender.	\N	594	1
@@ -12069,6 +12118,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3586	Next, prepare your veggies. Chop the green onion into small pieces, and chop the tomatoes into small chunks.	\N	602	4
 3587	Chop the chicken into 1-inch pieces. Assemble the salad - layer the mixed greens first, then the onion and tomatoes.	\N	602	5
 3588	Add the dressing and mix until combined. Top with chicken and bacon. Slice the avocado and add to the salad.	\N	602	6
+3589	Add the salmon, mango and avocado into a bowl. Toss with mayo and serve.	\N	603	0
+3590	Unshell the pistachios. Eat the pistachios. Enjoy the pistachios.	\N	604	0
+3580	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	600	0
 3571	Preheat the oven to 350°F.	\N	596	0
 3572	Break open 6 eggs, add them to a bowl, and mix.	\N	596	1
 3573	Mix in cheese, broccoli, chives, salmon and coconut milk.	\N	596	2
@@ -12077,6 +12129,19 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	599	0
 3568	In a large skillet over medium-high heat, heat oil, garlic and capers. Cook until the garlic becomes fragrant, about 3 minutes.	\N	595	0
 3569	Add the fish and lemon zest, and cook each side for 5 minutes until it browns and is cooked throughout. Drizzle with fresh lemon juice on top, season to taste with salt and pepper, and serve with cooked capers and garlic.	\N	595	1
+3598	In a small mixing bowl, whisk together the arrowroot starch through salt and pepper.	\N	608	0
+3599	Pat dry the haddock filets, and sprinkle the arrowroot mixture over the filets, on both sides. Set aside.	\N	608	1
+3600	Add 1 tablespoon coconut oil to a skillet over medium-high heat.	\N	608	2
+3601	Add the haddock and sear until golden brown and cooked through on each side, and flakes with a fork, about 3-4 minutes per side. Transfer to a plate and set aside.	\N	608	3
+3602	Reduce heat to medium-low. Melt remaining 3 tablespoons of coconut oil in the same skillet.	\N	608	4
+3593	In a large skillet, over medium-high heat, add the coconut oil or beef tallow. When melted, add the onion and cook until translucent, about 5 minutes.	\N	607	0
+3594	Add the Brussel sprouts and potatoes, and continue cooking for 5 another 5 minutes.	\N	607	1
+3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	\N	607	2
+3596	Season with sea salt to taste.	\N	607	3
+3597	Mix the mustard, apple cider vinegar and honey/maple syrup in a blender, and use as a dip, or pour over the dish.	\N	607	4
+3603	Add garlic and sauté for about 30 seconds.	\N	608	5
+3604	Remove from heat; stir in bone broth and lemon juice.	\N	608	6
+3605	Pour sauce over haddock filets. Top with parsley and oregano, and serve warm.	\N	608	7
 \.
 
 
@@ -12122,7 +12187,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13404, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13407, true);
 
 
 --
