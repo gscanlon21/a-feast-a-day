@@ -114,7 +114,7 @@
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	12	12	18	4	t	1099536793600	tandori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	6	15	5	4	t	4194308	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
 134	Oven Burgers	\N	\N	\N	4	25	10	4	t	2097154	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
-135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	8	20	10	1	t	2097154	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	f	f
+135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	8	20	10	1	t	2097154	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
 136	Easy Chicken Fried Rice	\N	\N	\N	4	10	0	2	t	0	chicken-fried-rice.jpg	0	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	f	f
 137	Meatballs	\N	\N	\N	0	25	5	12	t	0	meatballs.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	f	f
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	Too many ingredients.	\N	4	10	7	6	t	0	chicken-vegetable-salad.jpg	0	\N	f	f
@@ -212,7 +212,7 @@
 264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	6	7	3	2	t	4194308	asian-fried-eggs-alt.jpg	0	\N	f	f
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	0	\N	0	\N	f	f
 266	Sweet Potato Cauliflower Curry	\N	\N	\N	4	55	5	4	t	0	cauliflower-curry.jpg	0	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	f	f
-267	Curried Mung Bean Soup	\N	\N	\N	4	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
+267	Curried Mung Bean Soup	\N	\N	\N	8	45	15	4	t	4194308	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
 268	Orange Flower Water	\N	\N	\N	0	120	5	1	t	0	\N	6	https://thishealthytable.com/blog/orange-blossom-water/	f	f
 269	Rose Water	\N	\N	\N	0	20	5	1	t	4194308	rose-water.jpg	6	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	f	f
 270	Hoisin Chicken Lettuce Cups	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	2	3	t	4194308	chicken-lettuce-cups.jpg	0	\N	f	f
@@ -301,7 +301,7 @@
 417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	2097154	egg-bites.jpg	0	\N	f	f
 418	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	2097154	egg-bites.jpg	0	\N	f	f
 419	Thai Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	0	thai-dressing.jpg	6	\N	t	f
-420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	2097154	\N	0	\N	f	f
+420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	2097154	kielbasa.jpg	0	\N	f	f
 421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	144115188478509056	honey-lemon-dijon-dip.jpg	6	\N	t	f
 422	Lemon Energy Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	5	12	t	268435712	lemon-energy-bites.jpg	0	\N	f	f
 423	Steamed Kale	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	4194308	\N	0	\N	f	f
@@ -418,10 +418,10 @@
 599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	134217856	\N	0	\N	f	f
 600	Pain Away Smoothie	\N	\N	\N	128	0	5	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 601	Cowboy Caviar	\N	\N	\N	0	0	20	3	t	0	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-602	Cobb Salad	\N	\N	\N	8	40	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+602	Cobb Salad	\N	\N	\N	8	40	15	4	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 603	SAM Salad (Salmon, Avocado, Mango)	\N	\N	\N	28	0	7	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-604	Shelled Pistachios	\N	\N	\N	32	0	5	1	t	0	\N	0	\N	f	f
-605	Chicken Quesadillas	\N	\N	\N	12	5	5	1	t	4194308	\N	0	\N	f	f
-606	Peanut Butter & Jelly	\N	\N	\N	6	0	5	2	t	0	\N	0	\N	f	f
-607	Kielbasa Skillet	\N	\N	\N	8	15	10	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+604	Shelled Pistachios	\N	\N	\N	32	0	5	1	t	0	pistachios.jpg	0	\N	f	f
+605	Chicken Quesadillas	\N	\N	\N	12	10	5	1	t	4194308	black-bean-quesadillas.jpg	0	\N	f	f
+606	Peanut Butter & Jelly	\N	\N	\N	6	0	5	1	t	0	fruity-peanut-butter-pitas.jpg	0	\N	f	f
+607	Kielbasa Skillet	\N	\N	\N	8	15	10	2	t	4194308	kielbasa.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 608	Herbed Lemon & Garlic Haddock	\N	\N	\N	8	10	10	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
