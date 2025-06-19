@@ -8,6 +8,10 @@ namespace Core.Models.Newsletter;
 [Flags]
 public enum Verbosity
 {
+    /// <summary>
+    /// This is not user-facing. 
+    /// It should not have a Display attribute.
+    /// </summary>
     None = 0,
 
     /// <summary>
@@ -67,8 +71,14 @@ public enum Verbosity
 
     /// <summary>
     /// This is not user-facing. 
+    /// It should not have a Display attribute.
+    /// </summary>
+    All = Images | PrepTime | CookTime | TotalTime | Servings | Notes | CommonIngredients | Allergens | Equipment
+        | 1 << 29, // 536870912 
+
+    /// <summary>
+    /// This is not user-facing. 
     /// It should not have a Display attribute. 
     /// </summary>
-    Debug = Images | CookTime | PrepTime | TotalTime | Servings | Notes | CommonIngredients | Allergens | Equipment
-        | 1 << 30 // 1073741824
+    Debug = All | 1 << 30 // 1073741824
 }

@@ -32,6 +32,13 @@ public class UserIngredient
     [Display(Name = "or Substitute Recipe")]
     public int? SubstituteRecipeId { get; set; }
 
+    // More granular fine tuning of substitutions?
+    // I'm leaving these disabled for now because it complicates things
+    // ... when taking into account recipe serving size adjustments.
+    //public int? SubstituteQuantityDenominator { get; set; }
+    //public int? SubstituteQuantityNumerator { get; set; }
+    //public Measure SubstituteMeasure { get; set; }
+
     public string? Notes { get; set; }
 
     [Required]
