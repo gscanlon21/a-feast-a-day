@@ -3,7 +3,7 @@
 @using Core.Models.User
 
 <div class="list-group mb-3">
-    <a href="@Url.ActionLink(nameof(NewsletterController.Newsletter), NewsletterController.Name, new { Model.User.Email, Model.Token, Client = Client.Web })"
+    <a href="@Url.ActionLink(nameof(NewsletterController.Newsletter), NewsletterController.Name, new { Model.User.Email, Model.Token, Client = Client.Web }, Uri.UriSchemeHttps)"
        class="list-group-item list-group-item-info list-group-item-action active hover allow-demo">
         <div class="row gx-3 gy-1">
             <h5 class="mb-0">Current Feast</h5>

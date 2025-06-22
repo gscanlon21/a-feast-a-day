@@ -306,7 +306,8 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                if (!finalResults.Contains(recipe))
+                // TODO: Should not include prerequisiste recipes in take count.
+                if (!finalResults.Contains(recipe) && finalResults.Count < take)
                 {
                     // Prepend the recipe's prerequisite recipes.
                     foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
@@ -336,9 +337,9 @@ public class QueryRunner(Section section)
         return section switch
         {
             // Not in a feast context, order by name.
-            Section.None => [.. finalResults.Take(take).OrderBy(vm => vm.Recipe.Name)],
+            Section.None => [.. finalResults.OrderBy(vm => vm.Recipe.Name)],
             // We are in a feast context, keep the result order.
-            _ => finalResults.Take(take).ToList()
+            _ => finalResults.ToList()
         };
     }
 
