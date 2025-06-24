@@ -10,7 +10,7 @@
     ViewData[ViewData_Blank.Title] = "Recipes";
 }
 
-<details class="alert alert-secondary mb-0" style="position:fixed;top:0;right:0;z-index:1;overflow:auto;max-height:100vh;">
+<details class="alert alert-secondary mb-0" style="position:fixed;top:0;right:0;z-index:1;overflow:auto;max-height:100vh;" @(Model.FormOpen ? "open" : "")>
     <summary class="cursor--pointer">@(Model.FormHasData ? "*" : "")Filter Recipes</summary>
 
     <form asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)" method="get" style="margin-top:1rem"
@@ -36,7 +36,7 @@
                 <input type="submit" value="Apply" class="btn btn-secondary" name="submitButton" />
             </div>
             <div class="col-auto">
-                <a class="btn btn-outline-secondary" asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)">Clear</a>
+                <a class="btn btn-outline-secondary" asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)" asp-route-formOpen="true">Clear</a>
             </div>
         </div>
     </form>
