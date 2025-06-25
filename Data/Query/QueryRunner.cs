@@ -67,7 +67,7 @@ public class QueryRunner(Section section)
             // Don't grab recipes that we want to ignore.
             .Where(r => !ExclusionOptions.RecipeIds.Contains(r.Id))
             // Make sure the user owns or is able to see the recipes.
-            .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
+            .Where(r => r.UserId == null || r.UserId == RecipeOptions.UserId)
             // Don't grab recipes that have too many non-optional ingredients.
             .Where(r => UserOptions.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= UserOptions.MaxIngredients)
             .Select(r => new RecipesQueryResults()
@@ -91,12 +91,12 @@ public class QueryRunner(Section section)
                 }).ToList()
             })
             // Don't grab recipes that the user wants to ignore.
-            .Where(vm => UserOptions.IgnoreIgnored || vm.UserRecipe.IgnoreUntil.HasValue != true);
+            .Where(vm => vm.UserRecipe.IgnoreUntil.HasValue != true);
         // It's faster to check for ignored recipe ingredients where we check for allergens.
         //-Don't grab recipes that use ingredients that the user wants to ignore. 
-        //.Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient!.Ignore != true))
+        //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient!.Ignore != true))
         //-Don't grab recipes that use ingredient recipes that the user wants to ignore.
-        //.Where(vm => UserOptions.IgnoreIgnored || vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe!.IgnoreUntil.HasValue != true));
+        //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe!.IgnoreUntil.HasValue != true));
     }
 
     /// <summary>
@@ -192,7 +192,7 @@ public class QueryRunner(Section section)
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
-                        if (recipeIngredient.Ingredient != null && (recipeIngredient.UserIngredient?.Ignore != true || UserOptions.IgnoreIgnored))
+                        if (recipeIngredient.Ingredient != null && (recipeIngredient.UserIngredient?.Ignore != true))
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;

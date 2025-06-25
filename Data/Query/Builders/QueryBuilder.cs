@@ -63,25 +63,16 @@ public class QueryBuilder
     /// TODO: Refactor user options to better select what is filtered and what isn't.
     /// ..... (prerequisites, progressions, equipment, no use caution when new, unique recipes).
     /// </summary>
-    public QueryBuilder WithUser(User user, bool ignoreAllergens = false, bool ignoreIgnored = false, bool ignoreMissingEquipment = false)
+    public QueryBuilder WithUser(User user)
     {
-        UserOptions = new UserOptions(user, ignoreAllergens: ignoreAllergens)
-        {
-            IgnoreIgnored = ignoreIgnored,
-        };
-
-        EquipmentOptions = new EquipmentOptions()
-        {
-            Equipment = !ignoreMissingEquipment ? user.Equipment : null
-        };
-
-        return this;
+        UserOptions = new UserOptions(user);
+        RecipeOptions = new RecipeOptions(Section, user.Id);
+        return WithEquipment(user.Equipment);
     }
 
-    public QueryBuilder WithUser(UserOptions userOptions, bool? ignoreIgnored = null)
+    public QueryBuilder WithUser(UserOptions userOptions)
     {
-        userOptions.IgnoreIgnored = ignoreIgnored ?? userOptions.IgnoreIgnored;
-
+        RecipeOptions = new RecipeOptions(Section, userOptions.Id);
         UserOptions = userOptions;
         return this;
     }

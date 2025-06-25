@@ -13,17 +13,15 @@ public class UserOptions : IOptions
     public DateOnly CreatedDate { get; }
     public IngredientOrder IngredientOrder { get; }
 
-    public bool IgnoreIgnored { get; set; } = false;
-
     public UserOptions() { }
 
-    public UserOptions(Entities.User.User user, bool ignoreAllergens = false)
+    public UserOptions(Entities.User.User user)
     {
-        NoUser = false;
         Id = user.Id;
+        NoUser = false;
+        Allergens = user.Allergens;
         CreatedDate = user.CreatedDate;
         MaxIngredients = user.MaxIngredients;
         IngredientOrder = user.IngredientOrder;
-        Allergens = ignoreAllergens ? Allergens.None : user.Allergens;
     }
 }

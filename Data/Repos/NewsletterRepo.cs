@@ -195,7 +195,7 @@ public partial class NewsletterRepo
     {
         List<QueryResults> recipes = [];
         // Exclude fetching prep recipes, querying for a section will also return the prep recipes used.
-        foreach (var section in EnumExtensions.GetSingleValues(excludingAny: Section.Prep))
+        foreach (var section in EnumExtensions.GetSingleValues(excludingAny: Section.Prep | Section.Debug))
         {
             recipes.AddRange((await new QueryBuilder(section)
                 .WithUser(user)

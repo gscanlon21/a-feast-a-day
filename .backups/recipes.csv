@@ -80,7 +80,7 @@
 98	Loaded Deviled Eggs	\N	\N	\N	25	20	5	4	t	0	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
 99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
 100	Buttermilk Pancakes	\N	\N	\N	6	12	2	4	t	4194308	buttermilk-pancakes.jpg	0	\N	t	f
-101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	6	12	3	2	t	4194308	linguine-arugula.jpg	0	\N	f	f
+101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	20	12	3	2	t	4194308	linguine-arugula.jpg	0	\N	f	f
 102	Colcannon	\N	\N	\N	16	10	5	3	t	4194308	colcannon.jpg	0	\N	f	f
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	0	\N	0	\N	f	f
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	12	3	4	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
@@ -194,7 +194,7 @@
 245	Methylation Trail Mix	\N	\N	\N	16	20	5	10	t	0	trail-mix.jpg	0	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	f	f
 247	Gluten-Free Nut Crunch Snack	\N	\N	\N	16	0	5	4	t	2097154	nut-crunch-snack.jpg	0	https://www.drkarafitzgerald.com/recipe/gluten-free-nut-crunch-snack/	f	f
 248	Fennel Soup	\N	\N	\N	6	45	5	4	t	72057628938731524	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/	f	f
-249	Sesame-Ginger Carrots	\N	\N	\N	8	45	5	5	t	2097154	sesame-ginger-carrots.jpg	0	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	f	f
+249	Sesame-Ginger Carrots	\N	\N	\N	16	45	5	5	t	2097154	sesame-ginger-carrots.jpg	0	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	f	f
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO.	\N	\N	4	30	20	4	t	6291462	turkey-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	f	f
 251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	0	honey-mustard-dressing.jpg	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	0	hummus-vegetables.jpg	0	\N	f	f
@@ -342,7 +342,7 @@
 523	Banana Pancakes	\N	\N	\N	35	5	5	1	t	4194308	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	128	0	4	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 525	Tomato & Avocado Salsa w/ Cucumber Bite	\N	\N	\N	26	0	10	2	t	0	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-526	Pizza w/ Beans	\N	\N	\N	4	20	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
+526	Pizza w/ Beans	\N	\N	\N	8	20	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
 527	Tumeric Ginger Tea	\N	\N	\N	128	2	3	1	t	0	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 528	Mango Salsa	\N	\N	\N	0	0	10	6	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 529	Polyphenol Salad	\N	\N	\N	10	0	10	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -386,7 +386,7 @@
 567	Turkey & Walnut Salad	\N	\N	\N	28	40	10	4	t	4194308	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	6291462	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	2	t	0	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-570	Cut Watermelon	\N	\N	\N	8	0	5	2	t	0	watermelon.jpg	0	\N	f	f
+570	Cut Watermelon	\N	\N	\N	16	0	5	2	t	0	watermelon.jpg	0	\N	f	f
 571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 572	Microgreens Salad	\N	\N	\N	8	20	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -425,3 +425,5 @@
 606	Peanut Butter & Jelly	\N	\N	\N	6	0	5	1	t	0	fruity-peanut-butter-pitas.jpg	0	\N	f	f
 607	Kielbasa Skillet	\N	\N	\N	8	15	10	2	t	4194308	kielbasa.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 608	Herbed Lemon & Garlic Haddock	\N	\N	\N	8	10	10	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+609	Roasted Beet, Pear, & Onion Soup	\N	\N	\N	8	120	15	2	t	136315010	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+610	Root Cause Detox Soup	\N	Too many ingredients.	\N	8	40	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

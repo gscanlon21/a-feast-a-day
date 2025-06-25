@@ -16,12 +16,19 @@ public class RecipeOptions : IOptions
         _section = section;
     }
 
+    public RecipeOptions(Section section, int? userId) : this(section)
+    {
+        UserId = userId;
+    }
+
+    public int? UserId { get; set; }
+
+    public bool IgnorePrerequisites { get; set; }
+
     /// <summary>
     /// RecipeId:Scale.
     /// </summary>
     public Dictionary<int, int?>? RecipeIds { get; private set; }
-
-    public bool IgnorePrerequisites { get; set; }
 
     public void AddPastRecipes(ICollection<UserFeastRecipe> userFeastRecipes)
     {

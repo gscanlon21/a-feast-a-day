@@ -47,6 +47,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
         var ignoredRecipes = await new QueryBuilder(Section.None)
             .WithRecipes(x =>
             {
+                x.UserId = user.Id;
                 x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
             })
             .Build()

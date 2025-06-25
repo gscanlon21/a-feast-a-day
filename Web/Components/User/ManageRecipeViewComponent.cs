@@ -39,6 +39,7 @@ public class ManageRecipeViewComponent : ViewComponent
         var recipeDtos = (await new QueryBuilder(Section.None)
             .WithRecipes(x =>
             {
+                x.UserId = user.Id;
                 x.AddRecipes(new Dictionary<int, int?>
                 {
                     [recipe.Id] = null,

@@ -59,6 +59,7 @@ public class UserController : ControllerBase
                 .WithUser(user)
                 .WithRecipes(options =>
                 {
+                    options.UserId = user.Id;
                     options.AddPastRecipes(currentFeast.UserFeastRecipes);
                 })
                 .Build()

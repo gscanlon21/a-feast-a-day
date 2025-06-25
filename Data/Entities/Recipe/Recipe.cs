@@ -14,7 +14,7 @@ namespace Data.Entities.Recipe;
 /// Recipes listed on the website.
 /// </summary>
 [Table("recipe")]
-[DebuggerDisplay("{Name,nq}")]
+[DebuggerDisplay("{Id}: {Name,nq}")]
 public class Recipe
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

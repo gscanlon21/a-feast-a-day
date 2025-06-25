@@ -39,11 +39,11 @@ public class RecipesViewComponent : ViewComponent
             .Where(r => r.UserId == user.Id || (all && r.UserId == null))
             .ToListAsync();
 
+        // This should include disabled recipes.
         var recipes = await new QueryBuilder()
-            // Include disabled recipes.
-            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
+                x.UserId = user.Id;
                 x.AddRecipes(userRecipes);
                 x.IgnorePrerequisites = true;
             })
