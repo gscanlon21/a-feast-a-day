@@ -30,10 +30,6 @@ public class IgnoredRecipesViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
-        // Need a user context so the manage link is clickable and the user can un-ignore a recipe.
-        var userNewsletter = user.AsType<UserNewsletterDto>()!;
-        userNewsletter.Token = token;
-
         // See if the user recipes exist on the user obj.
         var userRecipes = user.UserRecipes.NullIfEmpty()?
             .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
@@ -49,7 +45,6 @@ public class IgnoredRecipesViewComponent : ViewComponent
 
         // Recipes are ignored across all sections at once.
         var ignoredRecipes = await new QueryBuilder(Section.None)
-            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
                 x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
@@ -57,6 +52,8 @@ public class IgnoredRecipesViewComponent : ViewComponent
             .Build()
             .Query(_serviceScopeFactory);
 
+        // Need a user context so the manage link is clickable and the user can un-ignore a recipe.
+        var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);
         return View("IgnoredRecipes", new IgnoredRecipesViewModel()
         {
             UserNewsletter = userNewsletter,

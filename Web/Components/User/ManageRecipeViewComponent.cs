@@ -37,7 +37,6 @@ public class ManageRecipeViewComponent : ViewComponent
         if (userRecipe == null) { return Content(""); }
         // Use Section.None so our recipe isn't filtered out.
         var recipeDtos = (await new QueryBuilder(Section.None)
-            .WithUser(user, ignoreAllergens: true, ignoreIgnored: true, ignoreMissingEquipment: true)
             .WithRecipes(x =>
             {
                 x.AddRecipes(new Dictionary<int, int?>

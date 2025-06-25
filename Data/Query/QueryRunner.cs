@@ -131,8 +131,9 @@ public class QueryRunner(Section section)
         }
         else
         {
-            // Do this before querying prerequisites..
+            // Do this before querying prerequisites.
             await AddMissingUserRecords(context, queryResults);
+
             // Swap in user ingredients before querying for prerequisite recipes.
             var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
             var recipeIngredientAlt = await GetAltIngredientForRecipeIngredients(context, queryResults);
