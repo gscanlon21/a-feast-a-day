@@ -1,0 +1,7 @@
+﻿.hashmark-label {
+    text-decoration: underline;
+    white-space: nowrap;
+    position: absolute;
+    cursor: pointer;
+    top: .2ch;
+}
