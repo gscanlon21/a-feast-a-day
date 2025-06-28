@@ -102,7 +102,7 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Queries the db for the data.
     /// </summary>
-    public async Task<IList<QueryResults>> Query(IServiceScopeFactory factory, int take = int.MaxValue)
+    public async Task<IList<QueryResults>> Query(IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue)
     {
         // Short-circut when this is set without any data. No results are returned.
         if (RecipeOptions.RecipeIds?.Any() == false)
@@ -334,11 +334,10 @@ public class QueryRunner(Section section)
         // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
         while (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1);
 
-        // REFACTORME
-        return section switch
+        return orderBy switch
         {
             // Not in a feast context, order by name.
-            Section.None => [.. finalResults.OrderBy(vm => vm.Recipe.Name)],
+            OrderBy.Name => [.. finalResults.OrderBy(vm => vm.Recipe.Name)],
             // We are in a feast context, keep the result order.
             _ => finalResults.ToList()
         };

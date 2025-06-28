@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Models.Newsletter;
+using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Web.Code.Attributes;
@@ -35,7 +36,8 @@ public class RecipesController : ViewController
             queryBuilder = queryBuilder.WithEquipment(viewModel.Equipment.Value);
         }
 
-        viewModel.Recipes = (await queryBuilder.Build().Query(_serviceScopeFactory))
+        viewModel.Recipes = (await queryBuilder.Build()
+            .Query(_serviceScopeFactory, OrderBy.Name))
             .Select(r => r.AsType<NewsletterRecipeDto>()!)
             .ToList();
 
