@@ -127,6 +127,22 @@ public class QueryRunner(Section section)
         var filteredResults = new List<InProgressQueryResults>();
         if (UserOptions.NoUser)
         {
+            // Add in the prerequisite recipe ingredients.
+            var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
+            foreach (var queryResult in queryResults)
+            {
+                foreach (var recipeIngredient in queryResult.RecipeIngredients)
+                {
+                    if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
+                    {
+                        // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
+                        recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId)
+                            // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
+                            ?? prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId);
+                    }
+                }
+            }
+
             filteredResults = queryResults;
         }
         else

@@ -10358,15 +10358,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6081	7	\N	\N	533	1	1	\N	77	f	\N	2
 6100	8	\N	\N	55	8	1	, to taste	692	t	\N	2
 6130	5	\N	\N	542	1	1	\N	391	f	\N	1
-6120	7	\N	\N	541	1	2	\N	964	f	\N	0
-6121	6	\N	\N	541	1	2	, chopped	222	f	\N	1
-6122	0	\N	\N	541	1	4	, minced	5	f	\N	2
-6123	4	\N	\N	541	1	16	(SHRIMP), peeled and deveined	24	f	\N	3
-6124	0	\N	\N	541	1	2	, chopped	7	f	\N	4
-6125	6	\N	\N	541	1	1	\N	144	f	\N	5
-6126	6	\N	\N	541	1	4	\N	\N	f	411	6
-6127	0	\N	\N	541	1	4	, beaten	187	f	\N	7
-6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
 6135	0	\N	\N	543	1	2	, juiced	4	f	\N	0
 6136	7	\N	\N	543	1	4	\N	461	f	\N	1
 6137	6	\N	\N	543	1	2	\N	14	f	\N	2
@@ -10426,6 +10417,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6187	6	\N	\N	551	1	1	\N	806	f	\N	1
 6188	8	\N	\N	551	1	1	, such as Yerba Prima	1067	f	\N	2
 6189	8	\N	\N	551	4	1	\N	74	f	\N	3
+6120	7	\N	\N	541	1	2	\N	964	f	\N	0
+6121	6	\N	\N	541	1	2	, chopped	222	f	\N	1
+6122	0	\N	\N	541	1	4	, minced	5	f	\N	2
+6123	4	\N	\N	541	1	16	, peeled and deveined	1111	f	\N	3
+6124	0	\N	\N	541	1	2	, chopped	7	f	\N	4
 6093	8	\N	\N	536	4	1	, to taste	692	t	\N	3
 6094	7	\N	\N	536	1	2	\N	1053	f	\N	4
 6131	8	\N	\N	542	4	1	, to taste	692	t	\N	2
@@ -10900,6 +10896,21 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6640	6	\N	\N	610	1	8	\N	\N	f	559	12
 6641	6	\N	\N	610	1	2	(MIXED GREENS), chopped	1099	f	\N	13
 6642	8	\N	\N	610	4	1	, to taste	692	t	\N	14
+6125	6	\N	\N	541	1	1	\N	144	f	\N	5
+6126	6	\N	\N	541	1	4	\N	\N	f	411	6
+6127	0	\N	\N	541	1	4	, beaten	187	f	\N	7
+6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
+6643	7	\N	\N	611	1	3	, divided	964	f	\N	0
+6644	6	\N	\N	611	1	1	, diced	594	f	\N	1
+6645	0	\N	\N	611	2	1	, diced	222	f	\N	2
+6646	0	\N	\N	611	1	2	, peeled and chopped	671	f	\N	3
+6647	8	\N	\N	611	4	1	, to taste	692	t	\N	4
+6648	6	\N	\N	611	1	1	, diced	6	f	\N	5
+6649	7	\N	\N	611	1	1	, grated	307	f	\N	6
+6650	0	\N	\N	611	1	2	, minced	5	f	\N	7
+6651	5	\N	\N	611	1	1	(SKIRT STEAK), cubed into 1" cubes.	610	f	\N	8
+6652	6	\N	\N	611	1	2	, de-stemmed and sliced thin	372	f	\N	9
+6653	7	\N	\N	611	1	2	\N	81	f	\N	10
 \.
 
 
@@ -11961,9 +11972,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3278	Blend all the ingredients in a  high-speed blender, on high, until smooth.	\N	486	0
 2917	Turn the broiler on to medium-high.	\N	321	0
 2918	Score the chicken breasts on a criss-cross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place criss-cross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat  while you peel and finely grate the garlic in a bowl. Squeeze in the juice from 1½ limes, stir in the peanut butter, and loosen with enough water to give you a spoonable consistency. Finely slice the chili, then mix through the sauce, taste, and season to perfection.	\N	321	1
-3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0
-3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1
-3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2
 3406	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	\N	554	2
 3407	Season to taste with salt and pepper.	\N	554	3
 3422	Stove Top: Place the chicken, vinegar, and vegetables in a stockpot. Fill with water to 1 inch below the top of the stockpot. Bring to a boil, reduce the heat to medium-low, and simmer for 8 to 12 hours.	\N	559	2
@@ -11974,8 +11982,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3432	Heat the tablespoon of avocado oil over medium heat for 1 minute, then add the salmon and broccoli. Cook for about 4 more minutes, or until the edges have whitened and are solid.	\N	562	2
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4
+3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0
+3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0
 3345	On a large serving platter, layer the sliced meat, spinach and avocado with the salsa.	\N	530	1
 3426	Preheat the oven to 375°F.	\N	561	0
@@ -11987,6 +11997,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3449	In a large skillet over medium heat, heat the oil. To the oil, add the turkey, salt and pepper. Cook for 10 minutes, until turkey is cooked through. Remove the turkey and let it cool.	\N	567	0
 3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	\N	567	1
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2
+3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1
 2913	Add extra virgin olive oil to a large skillet over heat that's just a touch above medium. Add sweet potatoes and shallots then saute for 4-5 minutes, or until potatoes are just starting to turn tender. Add chorizo then turn heat up slightly and saute until cooked through, breaking chorizo up as it cooks.	\N	319	0
 2914	Add black beans, chicken broth, and salsa verde to the skillet then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15-18 minutes, adding a splash more chicken broth near the end if needed. Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	\N	319	1
 3008	Preheat oven to 400° F.	\N	378	0
@@ -12293,6 +12304,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3611	Add the garlic, ginger, tumeric, onion, celery, sweet potato and carrots. Cook, stirring constantly until onions are translucent, about 10 minutes.	\N	610	1
 3612	Add the cherry tomatoes and the bone broth; simmer for about 30 minutes, until vegetables are tender.	\N	610	2
 3613	Remove the soup from the stove, and add the mixed greens. Season generously with salt and pepper.	\N	610	3
+3614	Heat a skillet over medium-high heat. Add 1 tablespoon coconut oil, and add the beef seasoned with salt and pepper. Cook until cooked through, about 5 minutes. Set aside and keep warm.	\N	611	0
+3615	Add remaining oil, then add the butternut squash, onions, and beets. Cook until the vegetables are softened, about 15 minutes.	\N	611	1
+3616	Add the broccoli, garlic, and ginger, and cook for another 5 minutes until broccoli is bright green and garlic and ginger are fragrant.	\N	611	2
+3617	Add beef back into the skillet, along with the kale and balsamic vinegar. Cook until the kale is just wilted - about 1 minute.	\N	611	3
+3618	Stir fry until meat is browned and all other ingredients are at desired texture.	\N	611	4
 \.
 
 

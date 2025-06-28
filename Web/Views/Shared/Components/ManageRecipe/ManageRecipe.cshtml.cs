@@ -1,4 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
@@ -13,6 +14,9 @@ public class ManageRecipeViewModel
 
     [ValidateNever]
     public required Data.Entities.User.User User { get; init; }
+
+    [ValidateNever]
+    public required UserNewsletterDto UserNewsletter { get; init; }
 
     [ValidateNever, Display(Name = "Recipe", Description = "Ignore this recipe for just this section.")]
     public required NewsletterRecipeDto Recipe { get; init; }

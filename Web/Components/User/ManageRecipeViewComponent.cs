@@ -1,4 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Recipe;
@@ -55,6 +56,8 @@ public class ManageRecipeViewComponent : ViewComponent
             return Content("");
         }
 
+        // Need a user context so the manage link is clickable and the user can un-ignore a prerequisite recipe.
+        var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, parameters.Token);
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,
@@ -63,6 +66,7 @@ public class ManageRecipeViewComponent : ViewComponent
             Parameters = parameters,
             Notes = userRecipe.Notes,
             Servings = userRecipe.Servings,
+            UserNewsletter = userNewsletter,
             LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,
             PadRefreshXWeeks = userRecipe.PadRefreshXWeeks,
             PrepRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
