@@ -107,7 +107,7 @@ public partial class NewsletterRepo
             // An old newsletter was found.
             _logger.Log(LogLevel.Information, "Returning old feast for user {Id}", user.Id);
             Logs.AppendLog(user, $"{date}: Returning old feast");
-            return await NewsletterOld(user, token, date.Value, oldNewsletter);
+            return await NewsletterOld(user, token, oldNewsletter);
         }
         // Don't allow backfilling feasts over 1 year ago or in the future.
         else if (date.Value.AddYears(1) < user.StartOfWeekOffset || date > user.StartOfWeekOffset)
@@ -191,7 +191,7 @@ public partial class NewsletterRepo
     /// <summary>
     /// Re-builds the newsletter for a specific date.
     /// </summary>
-    private async Task<NewsletterDto?> NewsletterOld(User user, string token, DateOnly date, UserFeast newsletter)
+    private async Task<NewsletterDto?> NewsletterOld(User user, string token, UserFeast newsletter)
     {
         List<QueryResults> recipes = [];
         // Exclude fetching prep recipes, querying for a section will also return the prep recipes used.
@@ -214,8 +214,8 @@ public partial class NewsletterRepo
         var userViewModel = new UserNewsletterDto(user.AsType<UserDto>()!, token);
         var newsletterViewModel = new NewsletterDto
         {
-            Date = date,
             User = userViewModel,
+            Date = newsletter.Date,
             Verbosity = user.Verbosity,
             ShoppingList = shoppingList,
             Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
@@ -224,7 +224,7 @@ public partial class NewsletterRepo
 
         if (user.Features.HasFlag(Features.Debug))
         {
-            var ingredients = await _context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == date).ToListAsync();
+            var ingredients = await _context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == newsletter.Date).ToListAsync();
             newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto>()!).ToList();
         }
 

@@ -2500,18 +2500,11 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 4890	1	229376	\N	\N	1	5
 4892	1	62	\N	\N	3	25
 7320	204	68719476736	\N	\N	2	60
-7438	284	128	\N	\N	3	4.4
 7439	284	256	\N	\N	3	2
 7440	284	64	\N	\N	3	0.2
-7441	284	2048	\N	\N	2	24.4
-7442	284	68719476736	\N	\N	2	511.4
 7443	284	34359738368	\N	\N	2	51
-7444	284	1	\N	\N	3	8.1
 7445	284	1536	\N	\N	3	0.4
 7446	284	1792	\N	\N	3	2.4
-7447	284	1984	\N	\N	3	7.9
-7448	284	62	\N	\N	3	3.9
-7449	284	2047	\N	\N	3	119.1
 7586	147	2047	\N	\N	3	20
 7587	241	2047	\N	\N	3	30
 7764	129	62	\N	\N	3	7
@@ -2599,6 +2592,13 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8743	28	2	\N	\N	3	0.2
 6964	75	68719476736	\N	\N	2	530
 7905	99	2047	\N	\N	3	45
+7438	284	128	\N	\N	3	4
+7441	284	2048	\N	\N	2	24
+7442	284	68719476736	\N	\N	2	511
+7444	284	1	\N	\N	3	8
+7447	284	1984	\N	\N	3	8
+7448	284	62	\N	\N	3	4
+7449	284	2047	\N	\N	3	119
 6965	9	128	\N	\N	3	4
 6973	9	1984	\N	\N	3	29
 6966	9	256	\N	\N	3	19.7
@@ -8164,6 +8164,50 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13518	38	4294967296	\N	\N	2	19
 13519	38	14	\N	\N	3	92
 13520	38	1984	\N	\N	3	1
+13521	370	34359738368	\N	\N	2	518
+13522	370	2	\N	\N	3	1
+13523	370	1	\N	\N	3	14
+13524	370	4294967296	\N	\N	2	17
+13525	370	2199023255552	\N	\N	2	3
+13526	370	48	\N	\N	3	6
+13527	370	14	\N	\N	3	28
+13528	370	1984	\N	\N	3	2
+13529	370	62	\N	\N	3	34
+13530	370	2047	\N	\N	3	190
+13531	371	2047	\N	\N	3	190
+13532	327	2047	\N	\N	3	190
+13533	394	128	\N	\N	3	4
+13534	394	2048	\N	\N	2	5
+13535	394	68719476736	\N	\N	2	480
+13536	394	1	\N	\N	3	3
+13537	394	4294967296	\N	\N	2	100
+13538	394	2199023255552	\N	\N	2	0.5
+13539	394	48	\N	\N	3	1
+13540	394	14	\N	\N	3	2
+13541	394	1984	\N	\N	3	27
+13542	394	62	\N	\N	3	3
+13543	394	2047	\N	\N	3	260
+13544	747	2047	\N	\N	3	27
+13545	284	4294967296	\N	\N	2	242
+13546	284	2199023255552	\N	\N	2	0.1
+13547	284	402653184	\N	\N	1	0.1
+13548	284	14	\N	\N	3	4
+13549	379	128	\N	\N	3	4
+13550	379	256	\N	\N	3	2
+13551	379	64	\N	\N	3	0.2
+13552	379	2048	\N	\N	2	24
+13553	379	68719476736	\N	\N	2	511
+13554	379	34359738368	\N	\N	2	51
+13555	379	1	\N	\N	3	8
+13556	379	4294967296	\N	\N	2	242
+13557	379	2199023255552	\N	\N	2	0.1
+13558	379	1536	\N	\N	3	0.4
+13559	379	402653184	\N	\N	1	0.1
+13560	379	1792	\N	\N	3	2.4
+13561	379	14	\N	\N	3	4
+13562	379	1984	\N	\N	3	8
+13563	379	62	\N	\N	3	4
+13564	379	2047	\N	\N	3	119
 \.
 
 
@@ -8778,11 +8822,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3101	0	\N	\N	130	1	1	, outer layers discarded and centre part chopped finely	550	f	\N	2
 3102	7	\N	\N	130	1	2	\N	233	f	\N	3
 3103	8	\N	\N	130	8	1	\N	285	f	\N	4
-3847	5	\N	\N	76	1	1	\N	137	f	\N	0
-3848	0	\N	\N	76	1	1	, sliced	250	f	\N	1
-3849	0	\N	\N	76	1	1	, roughly chopped	251	f	\N	2
-3850	7	\N	\N	76	1	5	\N	\N	f	75	3
-3851	8	\N	\N	76	4	1	\N	285	t	\N	4
 2536	8	\N	\N	36	8	1	\N	360	t	\N	6
 4314	5	\N	\N	34	1	2	, fully cooked	126	f	\N	0
 4315	6	\N	\N	34	4	3	\N	37	f	\N	1
@@ -8790,6 +8829,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3237	0	\N	\N	166	1	1	\N	110	f	\N	0
 3159	7	\N	\N	160	1	1	\N	77	f	\N	0
 3160	4	\N	\N	160	1	9	\N	558	f	\N	1
+3847	5	\N	\N	76	1	1	\N	137	f	\N	0
+3848	0	\N	\N	76	1	1	, sliced	250	f	\N	1
 2310	0	\N	\N	127	1	1	\N	155	f	\N	0
 2311	0	\N	\N	127	1	3	, peeled, seeded and chopped	17	f	\N	1
 2312	0	\N	\N	127	1	2	, chopped	144	f	\N	2
@@ -8799,6 +8840,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2316	0	\N	\N	127	2	1	(PRESERVED LEMON?), finely chopped	4	f	\N	6
 2317	7	\N	\N	127	1	3	\N	410	f	\N	7
 2318	0	\N	\N	127	1	1	, juiced	4	f	\N	8
+3849	0	\N	\N	76	1	1	, roughly chopped	251	f	\N	2
 3161	0	\N	\N	160	1	2	, crushed	5	f	\N	2
 3162	8	\N	\N	160	1	1	, ground	143	f	\N	3
 2319	0	\N	\N	127	1	2	, crushed	5	f	\N	9
@@ -8833,6 +8875,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2445	6	\N	\N	26	1	1	\N	6	f	\N	0
 2446	7	\N	\N	26	1	2	\N	77	f	\N	1
 2447	8	\N	\N	26	8	1	\N	285	t	\N	2
+3850	7	\N	\N	76	1	5	\N	\N	f	75	3
+3851	8	\N	\N	76	4	1	\N	285	t	\N	4
 2520	8	\N	\N	85	4	1	\N	285	t	\N	9
 3866	0	\N	\N	136	1	1	\N	187	f	\N	5
 3867	7	\N	\N	136	1	3	, divided	101	f	\N	6
@@ -9266,11 +9310,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5157	4	\N	\N	260	2	1	\N	251	f	\N	2
 5158	4	\N	\N	260	1	1	\N	95	t	\N	3
 5159	0	\N	\N	260	1	1	\N	4	f	\N	4
-5183	0	\N	\N	123	1	1	, thinly sliced	155	f	\N	0
-5184	0	\N	\N	123	2	1	, thinly sliced	222	f	\N	1
-5185	7	\N	\N	123	1	3	\N	36	f	\N	2
-5186	7	\N	\N	123	1	5	\N	475	f	\N	3
-5187	7	\N	\N	123	1	2	\N	123	f	\N	4
 4019	6	\N	\N	185	1	3	\N	286	f	\N	0
 4020	6	\N	\N	185	1	1	\N	6	f	\N	1
 5319	0	\N	\N	320	1	4	\N	5	f	\N	1
@@ -9295,6 +9334,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5409	0	\N	\N	364	1	1	\N	5	f	\N	2
 5410	0	\N	\N	364	1	1	\N	4	f	\N	3
 5411	4	\N	\N	364	4	7	\N	368	f	\N	4
+5183	0	\N	\N	123	1	1	, thinly sliced	155	f	\N	0
+5184	0	\N	\N	123	2	1	, thinly sliced	222	f	\N	1
+5185	7	\N	\N	123	1	3	\N	36	f	\N	2
+5186	7	\N	\N	123	1	5	\N	475	f	\N	3
+5187	7	\N	\N	123	1	2	\N	123	f	\N	4
 4067	5	\N	\N	35	1	1	, dried	131	f	\N	0
 4068	6	\N	\N	35	1	3	\N	123	f	\N	1
 4069	4	\N	\N	35	1	18	\N	116	f	\N	2
@@ -10137,11 +10181,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5868	7	\N	\N	470	1	1	\N	1044	f	\N	0
 5869	7	\N	\N	470	1	1	\N	178	f	\N	1
 5870	8	\N	\N	470	1	1	\N	70	f	\N	2
+5188	7	\N	\N	123	1	2	, chopped	473	f	\N	5
+5189	8	\N	\N	123	8	1	\N	214	t	\N	6
 5773	0	\N	\N	425	1	2	, firm, just ripe (you don't want them mushy)	9	f	\N	0
 5774	0	\N	\N	425	1	8	\N	985	f	\N	1
 5775	7	\N	\N	425	1	1	\N	\N	t	421	2
-5188	7	\N	\N	123	1	2	, chopped	473	f	\N	5
-5189	8	\N	\N	123	8	1	\N	214	t	\N	6
 5875	6	\N	\N	471	4	1	\N	77	f	\N	0
 5876	7	\N	\N	471	1	2	\N	39	f	\N	1
 5877	7	\N	\N	471	1	2	\N	357	f	\N	2
@@ -10750,17 +10794,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6495	4	\N	\N	591	1	15	(TOMATOES), diced	17	f	\N	7
 6496	4	\N	\N	591	1	15	\N	151	f	\N	8
 6497	0	\N	\N	591	2	5	cooked, or cauliflower rice	188	t	\N	9
-6498	4	\N	\N	592	1	24	(WHITE FISH)	557	f	\N	0
-6499	8	\N	\N	592	4	1	, to taste	692	t	\N	1
-6500	7	\N	\N	592	1	2	\N	77	f	\N	2
-6501	0	\N	\N	592	1	4	, or 2 coconut wraps	305	f	\N	3
-6502	0	\N	\N	592	1	4	(TOMATOES), seeded and chopped	17	f	\N	4
-6503	0	\N	\N	592	1	2	, peeled, pitted and chopped	9	f	\N	5
-6504	0	\N	\N	592	1	1	, peeled and diced	789	f	\N	6
-6505	0	\N	\N	592	1	1	, deseeded and chopped	597	f	\N	7
-6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
-6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
-6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
 6509	0	\N	\N	593	2	1	\N	9	f	\N	0
 6510	0	\N	\N	593	1	1	(SMALL CUCUMBER), chopped	155	f	\N	1
 6511	0	\N	\N	593	1	1	(SMALL CARROT, chopped	353	f	\N	2
@@ -10800,6 +10833,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6082	0	\N	\N	534	1	2	, peeled and coarsely chopped	1043	f	\N	0
 6083	6	\N	\N	534	1	1	\N	353	f	\N	1
 6084	0	\N	\N	534	2	1	, juiced	4	f	\N	2
+6498	4	\N	\N	592	1	24	\N	1113	f	\N	0
+6499	8	\N	\N	592	4	1	, to taste	692	t	\N	1
+6500	7	\N	\N	592	1	2	\N	77	f	\N	2
+6501	0	\N	\N	592	1	4	, or 2 coconut wraps	305	f	\N	3
+6502	0	\N	\N	592	1	4	, seeded and chopped	1088	f	\N	4
+6503	0	\N	\N	592	1	2	, peeled, pitted and chopped	9	f	\N	5
+6504	0	\N	\N	592	1	1	, peeled and diced	789	f	\N	6
+6505	0	\N	\N	592	1	1	, deseeded and chopped	597	f	\N	7
 6560	6	\N	\N	599	1	1	(LETTUCE)	305	f	\N	0
 6561	6	\N	\N	599	2	1	\N	1062	f	\N	1
 6562	0	\N	\N	599	1	1	, diced	155	f	\N	2
@@ -10908,9 +10949,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6648	6	\N	\N	611	1	1	, diced	6	f	\N	5
 6649	7	\N	\N	611	1	1	, grated	307	f	\N	6
 6650	0	\N	\N	611	1	2	, minced	5	f	\N	7
-6651	5	\N	\N	611	1	1	(SKIRT STEAK), cubed into 1" cubes.	610	f	\N	8
+6651	5	\N	\N	611	1	1	, cubed into 1" cubes.	1112	f	\N	8
 6652	6	\N	\N	611	1	2	, de-stemmed and sliced thin	372	f	\N	9
 6653	7	\N	\N	611	1	2	\N	81	f	\N	10
+6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
+6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
+6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
 \.
 
 
@@ -11207,6 +11251,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 859	Eat chips with salsa.	\N	60	0
 3130	Season to taste with salt and pepper.	\N	412	2
 2786	Meanwhile, make the sauce. Melt the butter in a small pan. Add the hazelnuts and cook gently for 1 minute. Add the syrup and lemon juice and heat, stirring, for 1 minute more.	\N	156	1
+2034	Cook the pasta in a large pan of slightly salted boiling water for 10-12 minutes.	\N	76	0
 1817	Remove the little fillet from the back of each breast portion. If the breast still looks fatter than a finger, bat it with a rolling pin to make it thinner. Slice all the chicken meat into strips.	\N	92	0
 2076	In a mortar, add the avocado and mash using the pestle. Add the red onion, lime juice, cilantro and salt.	\N	198	0
 2726	Put the basil leaves, garlic and pine nuts in a blender or food processor. Add 60ml/4 tbsp of the olive oil. Process until the ingredients are finely chopped, scraping down the sides of the bowl twice.	\N	308	0
@@ -11226,17 +11271,16 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1294	Season with salt and pepper to taste and spread them on a non-stick baking sheet. Grill (broil) for 5-6 minutes, turning occasionaly, until golden brown.	\N	80	1
 1295	Meanwhile, prepare the flavoured couscous according to the instructions on the packet.,	\N	80	2
 1296	Stir the grilled eggplant (and tomatoes) and chopped fresh mint into the garlic and coriander (cilantro) couscous, toss thouroughly and serve immediately.	\N	80	3
+2035	Meanwhile, heat 3 tbsp of the oil in a large frying pan and add the zucchini. Fry for 2-3 minutes, stirring occasionally, until they are golden.	\N	76	1
 3500	Preheat the oven to 400°F.	\N	580	0
 1727	Set the top of each piece of bread or roll aside and spread the bottom halves with a nice thick layer of refried beans. Make sure the pasta is evenly spread, as it will help to hold the next layer in place.	\N	164	2
 3501	Place the chicken on a lined baking sheet, and season with salt, pepper and avocado oil. Roast in the oven for 30 minutes, or until an internal temperature of 165°F is reached.	\N	580	1
-2034	Cook the pasta in a large pan of slightly salted boiling water for 10-12 minutes.	\N	76	0
-2035	Meanwhile, heat 3 tbsp of the oil in a large frying pan and add the zucchini. Fry for 2-3 minutes, stirring occasionally, until they are golden.	\N	76	1
-2036	Drain the pasta well and toss with the zucchini and chopped mint. Season with salt and pepper, drizzle over the remaining oil and serve immediately.	\N	76	2
 3502	Remove the chicken from the oven and set aside to cool.	\N	580	2
 3503	Once cooled, chop the chicken and add to a bowl, along with the remaining ingredients. Start with ⅓ cup of mayo and add more to your liking. Season with salt and pepper, to taste.	\N	580	3
 3504	Divide the mixture between the 8 lettuce leaves.	\N	580	4
 3505	Serve with lemon wedges.	\N	580	5
 1846	Drain the pasta, return it to the pan and toss with the sauce. Season to taste and sprinkle with a little shopped fresh parsley and more grated lemon rind, if you like. Serve with the hot herb bread.	\N	165	5
+2036	Drain the pasta well and toss with the zucchini and chopped mint. Season with salt and pepper, drizzle over the remaining oil and serve immediately.	\N	76	2
 2787	To serve, slit each banana open with a knife and open out the skins to reveal the tender flesh. Transfer to serving plates and serve with scoops of ice cream. Pour the sauce over.	\N	156	2
 1415	Add the tomatoes and chicken stock to the pan and bring to a boil. Cover and simmer for about 10 minutes.	\N	140	2
 1416	Meanwhile, make the relish by mixing all the ingredients in a bowl.	\N	140	3
@@ -11748,7 +11792,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3107	Add all ingredients to a blender for 20 seconds.	\N	404	1
 3605	Pour sauce over haddock filets. Top with parsley and oregano, and serve warm.	\N	608	7
 3331	Preheat the oven according to pizza instructions.	\N	526	0
-2830	In a bowl, mix together the sliced cucumber and onion, season with salt and toss together until thouroughly combined. Leave to stand in a cool place for 5-10 minutes.	\N	123	0
 2128	Divide the broccoli florets into tiny sprigs. Cut the leeks and asparagus diagonally into 5cm/2in lengths. Trim the fennel bulb and but into wedges.	\N	185	0
 2129	Cook all the vegetables in boiling salted water until just tender.	\N	185	1
 2132	Serve the pasta at once with a generous sprinkling of freshly grated Parmesan.	\N	185	4
@@ -11757,6 +11800,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3163	Form the dough into 1 tablespoon portions and roll between your hands to form balls.	\N	422	2
 1555	Chop the new potatoes into chunkes. Put them in a pan, pour in water to cover and add the salt and sugar. Bring to the boil, then reduce the heat and boil gently for about 10 minutes, or until the potatoes are just tender. Drain well and leave in a colander to cool.	\N	153	0
 3164	Refrigerate for at least 2 hours, then serve and enjoy!	\N	422	3
+2830	In a bowl, mix together the sliced cucumber and onion, season with salt and toss together until thouroughly combined. Leave to stand in a cool place for 5-10 minutes.	\N	123	0
 2788	Place the minced pork, crushed garlic, chopped coriander root, sugar and soy sauce in a large bowl. Season with salt and pepper to taste and mix well.	\N	161	0
 2789	Divide into eight portions and mould each one into a ball. It may help to dampen your hands before shaping the mixture, to prevent it from sticking.	\N	161	1
 2790	Stick a length of lemon grass halfway into each ball, then press the meat mixture around the lemon grass to make a shape like a chicken leg.	\N	161	2
@@ -11983,7 +12027,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4
 3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2
-2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0
 3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0
@@ -11998,6 +12041,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	\N	567	1
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2
 3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1
+2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1
 2913	Add extra virgin olive oil to a large skillet over heat that's just a touch above medium. Add sweet potatoes and shallots then saute for 4-5 minutes, or until potatoes are just starting to turn tender. Add chorizo then turn heat up slightly and saute until cooked through, breaking chorizo up as it cooks.	\N	319	0
 2914	Add black beans, chicken broth, and salsa verde to the skillet then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15-18 minutes, adding a splash more chicken broth near the end if needed. Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	\N	319	1
 3008	Preheat oven to 400° F.	\N	378	0
@@ -12257,12 +12301,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3555	Next, add the ground turkey and tumeric, and cook until browned, about 5 minutes.	\N	591	2
 3556	Add in the canned tomatoes and coconut cream and let simmer for 20 minutes.	\N	591	3
 3557	When done, serve over cauliflower rice, or regular rice.	\N	591	4
-3558	Preheat the oven to 350F.	\N	592	0
-3559	Season the fish with salt, pepper and olive oil.	\N	592	1
-3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	\N	592	2
-3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3
-3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4
-3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5
 3570	Serve alongside mixed greens, olive oil, vinegar, salt and pepper.	\N	595	2
 3564	Blend in the Vitamix and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	\N	593	0
 3565	Remove date from hot water.	\N	594	0
@@ -12294,6 +12332,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3584	Create an ice bath in a large bowl and set aside. Oncer the timer goes off, immediately remove eggs and place in the ice bath.	\N	602	2
 3585	In a medium skillet, add the bacon, and cook until crisp, about 12 minutes. Set aside on a plate lined with a paper towel.	\N	602	3
 3586	Next, prepare your veggies. Chop the green onion into small pieces, and chop the tomatoes into small chunks.	\N	602	4
+3558	Preheat the oven to 350°F.	\N	592	0
+3559	Season the fish with salt, pepper and olive oil.	\N	592	1
+3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	\N	592	2
+3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3
+3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4
+3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5
 3591	Cook the quesadilla and serve warm.	\N	605	0
 3587	Chop the chicken into 1-inch pieces. Assemble the salad - layer the mixed greens first, then the onion and tomatoes.	\N	602	5
 3588	Add the dressing and mix until combined. Top with chicken and bacon. Slice the avocado and add to the salad.	\N	602	6
@@ -12354,7 +12398,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13520, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13564, true);
 
 
 --
