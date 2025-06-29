@@ -8164,6 +8164,16 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13518	38	4294967296	\N	\N	2	19
 13519	38	14	\N	\N	3	92
 13520	38	1984	\N	\N	3	1
+13521	370	34359738368	\N	\N	2	518
+13522	370	2	\N	\N	3	1
+13523	370	1	\N	\N	3	14
+13524	370	4294967296	\N	\N	2	17
+13525	370	2199023255552	\N	\N	2	3
+13526	370	48	\N	\N	3	6
+13527	370	14	\N	\N	3	28
+13528	370	1984	\N	\N	3	2
+13529	370	62	\N	\N	3	34
+13530	370	2047	\N	\N	3	190
 \.
 
 
@@ -9266,11 +9276,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5157	4	\N	\N	260	2	1	\N	251	f	\N	2
 5158	4	\N	\N	260	1	1	\N	95	t	\N	3
 5159	0	\N	\N	260	1	1	\N	4	f	\N	4
-5183	0	\N	\N	123	1	1	, thinly sliced	155	f	\N	0
-5184	0	\N	\N	123	2	1	, thinly sliced	222	f	\N	1
-5185	7	\N	\N	123	1	3	\N	36	f	\N	2
-5186	7	\N	\N	123	1	5	\N	475	f	\N	3
-5187	7	\N	\N	123	1	2	\N	123	f	\N	4
 4019	6	\N	\N	185	1	3	\N	286	f	\N	0
 4020	6	\N	\N	185	1	1	\N	6	f	\N	1
 5319	0	\N	\N	320	1	4	\N	5	f	\N	1
@@ -9295,6 +9300,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5409	0	\N	\N	364	1	1	\N	5	f	\N	2
 5410	0	\N	\N	364	1	1	\N	4	f	\N	3
 5411	4	\N	\N	364	4	7	\N	368	f	\N	4
+5183	0	\N	\N	123	1	1	, thinly sliced	155	f	\N	0
+5184	0	\N	\N	123	2	1	, thinly sliced	222	f	\N	1
+5185	7	\N	\N	123	1	3	\N	36	f	\N	2
+5186	7	\N	\N	123	1	5	\N	475	f	\N	3
+5187	7	\N	\N	123	1	2	\N	123	f	\N	4
 4067	5	\N	\N	35	1	1	, dried	131	f	\N	0
 4068	6	\N	\N	35	1	3	\N	123	f	\N	1
 4069	4	\N	\N	35	1	18	\N	116	f	\N	2
@@ -10137,11 +10147,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5868	7	\N	\N	470	1	1	\N	1044	f	\N	0
 5869	7	\N	\N	470	1	1	\N	178	f	\N	1
 5870	8	\N	\N	470	1	1	\N	70	f	\N	2
+5188	7	\N	\N	123	1	2	, chopped	473	f	\N	5
+5189	8	\N	\N	123	8	1	\N	214	t	\N	6
 5773	0	\N	\N	425	1	2	, firm, just ripe (you don't want them mushy)	9	f	\N	0
 5774	0	\N	\N	425	1	8	\N	985	f	\N	1
 5775	7	\N	\N	425	1	1	\N	\N	t	421	2
-5188	7	\N	\N	123	1	2	, chopped	473	f	\N	5
-5189	8	\N	\N	123	8	1	\N	214	t	\N	6
 5875	6	\N	\N	471	4	1	\N	77	f	\N	0
 5876	7	\N	\N	471	1	2	\N	39	f	\N	1
 5877	7	\N	\N	471	1	2	\N	357	f	\N	2
@@ -10908,7 +10918,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6648	6	\N	\N	611	1	1	, diced	6	f	\N	5
 6649	7	\N	\N	611	1	1	, grated	307	f	\N	6
 6650	0	\N	\N	611	1	2	, minced	5	f	\N	7
-6651	5	\N	\N	611	1	1	(SKIRT STEAK), cubed into 1" cubes.	610	f	\N	8
+6651	5	\N	\N	611	1	1	, cubed into 1" cubes.	1112	f	\N	8
 6652	6	\N	\N	611	1	2	, de-stemmed and sliced thin	372	f	\N	9
 6653	7	\N	\N	611	1	2	\N	81	f	\N	10
 \.
@@ -11748,7 +11758,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3107	Add all ingredients to a blender for 20 seconds.	\N	404	1
 3605	Pour sauce over haddock filets. Top with parsley and oregano, and serve warm.	\N	608	7
 3331	Preheat the oven according to pizza instructions.	\N	526	0
-2830	In a bowl, mix together the sliced cucumber and onion, season with salt and toss together until thouroughly combined. Leave to stand in a cool place for 5-10 minutes.	\N	123	0
 2128	Divide the broccoli florets into tiny sprigs. Cut the leeks and asparagus diagonally into 5cm/2in lengths. Trim the fennel bulb and but into wedges.	\N	185	0
 2129	Cook all the vegetables in boiling salted water until just tender.	\N	185	1
 2132	Serve the pasta at once with a generous sprinkling of freshly grated Parmesan.	\N	185	4
@@ -11757,6 +11766,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3163	Form the dough into 1 tablespoon portions and roll between your hands to form balls.	\N	422	2
 1555	Chop the new potatoes into chunkes. Put them in a pan, pour in water to cover and add the salt and sugar. Bring to the boil, then reduce the heat and boil gently for about 10 minutes, or until the potatoes are just tender. Drain well and leave in a colander to cool.	\N	153	0
 3164	Refrigerate for at least 2 hours, then serve and enjoy!	\N	422	3
+2830	In a bowl, mix together the sliced cucumber and onion, season with salt and toss together until thouroughly combined. Leave to stand in a cool place for 5-10 minutes.	\N	123	0
 2788	Place the minced pork, crushed garlic, chopped coriander root, sugar and soy sauce in a large bowl. Season with salt and pepper to taste and mix well.	\N	161	0
 2789	Divide into eight portions and mould each one into a ball. It may help to dampen your hands before shaping the mixture, to prevent it from sticking.	\N	161	1
 2790	Stick a length of lemon grass halfway into each ball, then press the meat mixture around the lemon grass to make a shape like a chicken leg.	\N	161	2
@@ -11983,7 +11993,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4
 3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2
-2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0
 3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0
@@ -11998,6 +12007,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	\N	567	1
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2
 3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1
+2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1
 2913	Add extra virgin olive oil to a large skillet over heat that's just a touch above medium. Add sweet potatoes and shallots then saute for 4-5 minutes, or until potatoes are just starting to turn tender. Add chorizo then turn heat up slightly and saute until cooked through, breaking chorizo up as it cooks.	\N	319	0
 2914	Add black beans, chicken broth, and salsa verde to the skillet then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15-18 minutes, adding a splash more chicken broth near the end if needed. Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	\N	319	1
 3008	Preheat oven to 400° F.	\N	378	0
@@ -12354,7 +12364,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13520, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13530, true);
 
 
 --
