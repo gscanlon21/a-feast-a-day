@@ -1,11 +1,13 @@
 ﻿using Core.Models.Newsletter;
-using Core.Models.User;
 using Data;
 using Data.Entities.Recipe;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using Web.Code.TempData;
 using Web.Views.Shared.Components.UpsertRecipe;
 
 namespace Web.Components.User;
@@ -26,32 +28,43 @@ public class UpsertRecipeViewComponent : ViewComponent
     /// </summary>
     public const string Name = "UpsertRecipe";
 
+    /// <param name="recipe">The existing recipe to edit.</param>
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe? recipe = null, Section section = Section.None)
     {
-        // User must own the recipe to be able to edit it.
-        if (recipe != null && recipe.UserId != user.Id && !user.Features.HasFlag(Features.Admin))
+        // Restore the failed recipe if the upsert model validation failed.
+        var upsertRecipeString = TempData[TempData_Recipe.UpsertRecipe]?.ToString();
+        var upsertRecipe = upsertRecipeString != null ? JsonSerializer.Deserialize<UpsertRecipeModel>(upsertRecipeString) : null;
+
+        if (upsertRecipe != null)
         {
-            return Content("");
+            // Show error messages to the user.
+            var validationErrors = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(upsertRecipe, new ValidationContext(upsertRecipe), validationErrors, validateAllProperties: true))
+            {
+                foreach (var error in validationErrors)
+                {
+                    foreach (var member in error.MemberNames)
+                    {
+                        ModelState.AddModelError($"recipe.{member}", error.ErrorMessage ?? "Invalid value.");
+                    }
+                }
+            }
         }
 
-        recipe ??= new Recipe()
+        upsertRecipe ??= recipe?.AsType<UpsertRecipeModel>() ?? new UpsertRecipeModel();
+        while (upsertRecipe.RecipeIngredients.Count < RecipeConsts.MaxIngredients)
         {
-            User = user
-        };
-
-        while (recipe.RecipeIngredients.Count < RecipeConsts.MaxIngredients)
-        {
-            recipe.RecipeIngredients.Add(new RecipeIngredient
+            upsertRecipe.RecipeIngredients.Add(new RecipeIngredient
             {
-                Hide = recipe.RecipeIngredients.Count > 0
+                Hide = upsertRecipe.RecipeIngredients.Count > 0
             });
         }
 
-        while (recipe.Instructions.Count < RecipeConsts.MaxInstructions)
+        while (upsertRecipe.Instructions.Count < RecipeConsts.MaxInstructions)
         {
-            recipe.Instructions.Add(new RecipeInstruction
+            upsertRecipe.Instructions.Add(new RecipeInstruction
             {
-                Hide = recipe.Instructions.Count > 0
+                Hide = upsertRecipe.Instructions.Count > 0
             });
         }
 
@@ -59,7 +72,7 @@ public class UpsertRecipeViewComponent : ViewComponent
         {
             User = user,
             Section = section,
-            Recipe = recipe.AsType<UpsertRecipeModel>()!,
+            Recipe = upsertRecipe,
             RecipeSelect = await GetRecipeSelect(user),
             IngredientSelect = await GetIngredientSelect(user),
             Token = await _userRepo.AddUserToken(user, durationDays: 1),

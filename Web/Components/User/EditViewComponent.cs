@@ -1,7 +1,7 @@
 ﻿using Data.Entities.User;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
-using Web.Views.User;
+using Web.Views.Shared.Components.Edit;
 
 namespace Web.Components.User;
 
@@ -31,15 +31,15 @@ public class EditViewComponent : ViewComponent
         }
 
         var token = await _userRepo.AddUserToken(user, durationDays: 1);
-        return View("Edit", await PopulateUserEditViewModel(new UserEditViewModel(user, token)));
+        return View("Edit", await PopulateUserEditViewModel(new EditComponentViewModel(user, token)));
     }
 
-    private static async Task<UserEditViewModel> PopulateUserEditViewModel(UserEditViewModel viewModel)
+    private static async Task<EditComponentViewModel> PopulateUserEditViewModel(EditComponentViewModel viewModel)
     {
         foreach (var section in UserSection.DefaultWeight.Keys.OrderBy(mg => mg))
         {
             var userMuscleMobility = viewModel.User.UserSections.SingleOrDefault(umm => umm.Section == section);
-            viewModel.UserSections.Add(userMuscleMobility != null ? new UserEditViewModel.UserSectionViewModel(userMuscleMobility) : new UserEditViewModel.UserSectionViewModel()
+            viewModel.UserSections.Add(userMuscleMobility != null ? new EditComponentViewModel.UserSectionViewModel(userMuscleMobility) : new EditComponentViewModel.UserSectionViewModel()
             {
                 Section = section,
                 UserId = viewModel.User.Id,
@@ -49,7 +49,7 @@ public class EditViewComponent : ViewComponent
 
         foreach (var family in viewModel.User.UserFamilies)
         {
-            viewModel.UserFamilies.Add(new UserEditViewModel.UserFamilyViewModel()
+            viewModel.UserFamilies.Add(new EditComponentViewModel.UserFamilyViewModel()
             {
                 Person = family.Person,
                 CaloriesPerDay = family.CaloriesPerDay,
@@ -60,7 +60,7 @@ public class EditViewComponent : ViewComponent
 
         while (viewModel.UserFamilies.Count < 10)
         {
-            viewModel.UserFamilies.Add(new UserEditViewModel.UserFamilyViewModel()
+            viewModel.UserFamilies.Add(new EditComponentViewModel.UserFamilyViewModel()
             {
                 UserId = viewModel.User.Id,
                 Hide = viewModel.UserFamilies.Count > 0,

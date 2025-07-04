@@ -8,5 +8,5 @@ public static class TempData_Recipe
     /// <summary>
     /// Used to transfer the recipe between contols.
     /// </summary>
-    public const string Recipe = "RECIPE_RECIPE";
+    public const string UpsertRecipe = "RECIPE_UPSERTRECIPE";
 }

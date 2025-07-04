@@ -1,5 +1,4 @@
 ﻿using Data;
-using Data.Entities.Recipe;
 using Data.Entities.User;
 using Data.Repos;
 using Lib.Services;
@@ -7,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
 using Web.Views.Shared.Components.Advanced;
+using Web.Views.Shared.Components.Edit;
 using Web.Views.User;
 
 namespace Web.Controllers.User;
@@ -53,10 +53,8 @@ public partial class UserController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipe = TempData[TempData_Recipe.Recipe] as Recipe;
-        return View("Edit", new UserEditViewModel(user, token)
+        return View("Edit", new UserEditViewModel(user)
         {
-            Recipe = recipe,
             WasUpdated = wasUpdated,
         });
     }
@@ -65,7 +63,7 @@ public partial class UserController : ViewController
     [Route("", Order = 1)]
     [Route("e", Order = 2)]
     [Route("edit", Order = 3)]
-    public async Task<IActionResult> Edit(string email, string token, UserEditViewModel viewModel)
+    public async Task<IActionResult> Edit(string email, string token, EditComponentViewModel viewModel)
     {
         if (token != viewModel.Token || email != viewModel.Email)
         {

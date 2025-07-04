@@ -18,6 +18,10 @@ builder.Configuration.AddCustomEnvironmentVariables();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
+// Memory session storage used for tempdata cache.
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
 // Disable the anti-forgery cookie. We don't authenticate using cookies.
 builder.Services.AddAntiforgery(options => { options.Cookie.Expiration = TimeSpan.Zero; });
 builder.Services.AddRazorPages(options =>
@@ -25,7 +29,7 @@ builder.Services.AddRazorPages(options =>
     // Ignore anti-forgery tokens by default. We don't authenticate using cookies.
     // https://security.stackexchange.com/questions/62080/is-csrf-possible-if-i-dont-even-use-cookies
     options.Conventions.ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
-});
+}).AddSessionStateTempDataProvider();
 
 // Don't need.
 //builder.Services.AddServerSideBlazor();
@@ -94,6 +98,8 @@ builder.Services.AddHsts(options =>
 });
 
 var app = builder.Build();
+
+app.UseSession();
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {

@@ -1,4 +1,4 @@
-﻿@model UserEditViewModel
+﻿@model EditComponentViewModel
 @using System.Numerics
 @using Core.Models.Recipe
 @using Core.Models.User
@@ -173,7 +173,7 @@
                         }
                         <div class="btn-group">
                             <button id="custom-family-add-button" type="button" class="btn btn-outline-primary">Add</button>
-                            <button id="custom-family-remove-button" type="button" class="btn btn-outline-secondary">Remove</button>
+                            <button id="custom-family-remove-button" type="button" class="btn btn-outline-secondary @(Model.UserFamilies.Count(i => !i.Hide) == 1 ? "d-none" : "")">Remove</button>
                         </div>
                     </div>
 
@@ -327,7 +327,7 @@
         <details class="mb-25">
             <summary class="mb-1 h5">New Recipe</summary>
 
-            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe })
+            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User })
         </details>
 
         <details class="mb-25">

@@ -6,6 +6,7 @@ using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using Web.Code.TempData;
 using Web.Controllers.User;
 using Web.Views.Recipe;
@@ -77,8 +78,8 @@ public class RecipeController : ViewController
             // Adding recipe.
             if (!ModelState.IsValid)
             {
-                TempData[TempData_Recipe.Recipe] = recipe.AsType<Recipe>()!;
-                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
+                TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe);
+                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token, WasUpdated = false });
             }
 
             _context.Add(new Recipe()

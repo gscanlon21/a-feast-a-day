@@ -20,7 +20,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        return View(new UserEditViewModel(user, token));
+        return View(new DeleteViewModel(user, token));
     }
 
     [HttpPost]
