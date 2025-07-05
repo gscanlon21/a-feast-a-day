@@ -36,14 +36,19 @@ public class NutrientViewModel
         var sumRDA = User.UserFamilies.Average(f => nutrient.DailyAllowance(f.Person).RDA);
         var sumTUL = User.UserFamilies.Average(f => nutrient.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
         var start = sumRDA / sumTUL * userNutrientTarget.Start.Value ?? 0;
+
+        // Show default nutrient targets when backfilling data.
+        var userValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * start) : Math.Min(101, WeeklyVolume[nutrient] ?? 0);
+        var valueInRange = User.CreatedDate == DateHelpers.Today ? 0 : userValueInRange;
+
         return new NutrientTarget(nutrient)
         {
             Start = start,
+            ValueInRange = valueInRange,
             Middle = sumRDA / sumTUL * 100 ?? 0,
             End = sumRDA / sumTUL * userNutrientTarget.End.Value ?? 100,
             DefaultStart = sumRDA / sumTUL * defaultRange.Start.Value ?? 0,
             DefaultEnd = sumRDA / sumTUL * defaultRange.End.Value ?? 100,
-            ValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * start) : Math.Min(101, WeeklyVolume[nutrient] ?? 0),
             Increment = sumRDA / sumTUL * UserConsts.IncrementNutrientTargetBy ?? UserConsts.IncrementNutrientTargetBy,
             ShowButtons = UsersWorkedNutrients.Contains(nutrient),
         };
