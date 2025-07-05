@@ -42,5 +42,9 @@ public class ManageRecipeViewModel
     [ValidateNever]
     public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
 
-    public Verbosity Verbosity => User?.Verbosity ?? Verbosity.Images;
+    /// <summary>
+    /// Verbosity of the recipe.
+    /// Notes are always included.
+    /// </summary>
+    public Verbosity Verbosity => (User?.Verbosity ?? Verbosity.Images) | Verbosity.Notes;
 }

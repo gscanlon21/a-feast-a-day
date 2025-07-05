@@ -19,7 +19,7 @@
 19	\N	Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti,4874 - Enriched is most popular, so using that as default.	\N	f	32	28	28	2024-08-03	4	112	0
 20	\N	Quinoa	https://www.eatthismuch.com/food/nutrition/quinoa,4800	\N	f	0	170	170	2025-06-25	6	240	4
 21	\N	Wild Rice	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2024-08-09	6	160	0
-22	\N	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021	\N	f	32	25	25	2025-05-04	0	50	64
+22	\N	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021	\N	f	786464	25	25	2025-05-04	0	50	64
 23	\N	Flour Tortillas	https://www.eatthismuch.com/calories/tortillas-4268	\N	f	262176	46	46	2025-05-30	0	92	1024
 24	\N	Boneless Chicken Breasts	https://www.eatthismuch.com/calories/chicken-breast-446	\N	f	0	145	145	2025-03-14	0	145	268435456
 25	\N	90% Lean Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5411	\N	f	0	28	28	2024-10-04	4	224	8
@@ -273,7 +273,7 @@
 280	\N	Sherry Vinegar	https://www.eatthismuch.com/calories/sherry-vinegar-12742	\N	f	0	30	15	2024-11-08	9	240	32
 281	\N	Roma Tomatoes	https://www.eatthismuch.com/calories/roma-tomatoes,1221839	\N	f	0	62	62	2024-08-28	0	124	1
 282	\N	Balsamic Vinaigrette	\N	\N	f	0	240	100	2024-07-31	6	240	0
-283	\N	Feta Cheese	https://www.eatthismuch.com/calories/feta-cheese-19	\N	f	256	28	28	2024-07-01	4	224	8388608
+283	\N	Feta Cheese	https://www.eatthismuch.com/calories/feta-cheese-19	\N	f	256	28	28	2025-07-05	4	224	8388608
 284	\N	Parmesan Cheese | Feta Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28	28	2025-07-03	4	224	8388608
 285	\N	Salt & Black Pepper	https://www.eatthismuch.com/calories/pepper-205	\N	t	0	28	6	2024-11-12	4	96	131072
 286	\N	Penne Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,1581502/	\N	f	262176	28	85	2025-02-12	4	85	4096
@@ -388,7 +388,7 @@
 399	\N	Brioche Buns	https://www.eatthismuch.com/calories/brioche-buns-448797	\N	f	0	85	85	2024-09-27	0	85	4
 400	\N	Turkey Sausage	https://www.eatthismuch.com/calories/turkey-sausage,994	\N	f	0	28	28	2024-09-05	4	224	8
 401	\N	Sausages	https://www.eatthismuch.com/food/nutrition/italian-sausage,952/	\N	f	0	83	83	2024-07-23	0	166	268435456
-402	\N	Chorizo	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2024-07-01	4	100	6
+402	\N	Chorizo	https://www.eatthismuch.com/calories/pork-and-beef-chorizo-895	\N	f	0	28	28	2025-07-05	4	224	268435456
 403	\N	Manchego Cheese	https://www.eatthismuch.com/calories/manchego-cheese-1955570	\N	f	256	28	28	2025-03-11	4	224	8388608
 404	\N	Mixed-Color Cherry Tomatoes	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	512	17	85	2024-08-07	0	170	1
 405	\N	English Cucumbers	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	301	301	2025-03-09	0	104	2
@@ -916,3 +916,7 @@
 1114	\N	Cauliflower	\N	\N	f	0	160	160	2024-08-09	0	160	2
 1116	\N	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	f	0	33	908	2025-01-20	0	99	2
 1117	\N	Pumpkin Pie Spice	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
+1118	\N	Mixed-Color Baby Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
+1119	\N	Creamy Horseradish	\N	\N	f	0	100	50	2024-10-24	0	100	1
+1120	\N	Reduced-Fat Crème Fraîche	https://www.eatthismuch.com/calories/creme-fraiche-1706554	\N	f	324	28	30	2024-11-16	4	240	29360128
+1121	\N	Bresaola	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456

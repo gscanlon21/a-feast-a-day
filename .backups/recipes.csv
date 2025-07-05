@@ -26,12 +26,12 @@
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	2097154	quinoa-pizza.jpg	0	\N	f	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	0	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	268435712	basic-energy-balls.jpg	0	\N	f	f
-47	Banana “nice” Cream	\N	\N	\N	32	120	5	1	t	0	banana-ice-cream.jpg	0	\N	f	f
+47	Banana “nice” Cream	\N	\N	\N	64	120	5	1	t	268435712	banana-ice-cream.jpg	0	\N	f	f
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	0	avocado-cakes.jpg	0	\N	f	f
 49	Easy Mini Bagel Pizzas	\N	\N	\N	6	10	10	2	t	0	\N	0	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	f	f
 50	Simple 4-Ingredient Egg Salad with Mayo	\N	\N	\N	2	5	10	1	t	0	egg-salad.jpg	0	https://www.lifeisbutadish.com/momos-egg-salad/	f	f
 51	Grilled Garlic Naan	\N	\N	\N	16	5	5	2	t	4194308	grilled-garlic-naan.jpg	0	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	f	f
-52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	2	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg	0	\N	f	f
+52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	4	5	5	1	t	0	avocado-tomato-chicken-brushetta.jpg	0	\N	f	f
 53	Old-Fashioned Oatmeal	Combinations to try: 1 soft-boiled egg + 1/3 cup sauteed spinach + 1 teaspoon chili crisp or togarashi seasoning (omit honey and cinnamon from base recipe) 1/4 cup shredded carrot + 1 tablespoon chopped toasted walnuts + 1 tablespoon golden raisins + 1/4 teaspoon cinnamon 1/2 medium banana, sliced + 1 tablespoon peanut butter + 1 teaspoon chia seeds + 1 teaspoon brown sugar 1/4 cup blueberries + 1 tablespoon toasted coconut flakes + 1 tablespoon chopped toasted macadamia nuts + 1 teaspoon honey 1/4 cup sliced peaches + 2 tablespoons cinnamon granola + 2 tablespoons vanilla yogurt	Too complicated.	\N	6	15	0	1	t	4194308	old-fashioned-oatmeal.jpg	0	\N	f	f
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	0	sunflower-seeds.jpg	0	\N	f	f
 55	Oven Roasted Asparagus	\N	\N	\N	16	10	5	1	t	2097154	parmesan-roasted-asparagus.jpg	0	\N	f	f
@@ -41,7 +41,7 @@
 59	Popcorn	\N	\N	\N	16	5	0	1	t	1048577	popcorn.jpg	0	\N	f	f
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	0	chips-salsa-alt.jpg	0	\N	f	f
 61	Toasted Pita Bowl Salad	\N	\N	\N	6	12	20	2	t	2097154	pita-bowl-salad.jpg	0	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	f	f
-62	Edamame & Veggie Rice Bowl	\N	\N	\N	6	5	5	2	t	0	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	f	f
+62	Edamame & Veggie Rice Bowl	\N	\N	\N	12	5	5	2	t	0	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	f	f
 63	Grilled Sausage-Basil Pizzas	\N	\N	\N	4	15	15	4	t	0	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
 64	French Bread Pizza	\N	\N	\N	4	15	5	4	t	2097154	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
 65	Hard Boiled Eggs	\N	\N	\N	17	10	2	1	t	4194308	hardboiled-eggs.jpg	0	\N	t	f
@@ -84,7 +84,7 @@
 102	Colcannon	\N	\N	\N	16	10	5	3	t	4194308	colcannon.jpg	0	\N	f	f
 103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	0	\N	0	\N	f	f
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	12	3	4	t	4194308	pasta-asparagus-cream.jpg	0	\N	f	f
-105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	25	5	4	t	4194308	sweet-pea-orecchiette-alt.jpg	0	\N	f	f
+105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	25	5	4	t	4194308	sweet-pea-orecchiette-alt.jpg	0	\N	f	f
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	4194308	garlic-chicken.jpg	0	\N	f	f
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	0	ham-gruyere-melt.jpg	0	\N	f	f
 108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	120	10	8	t	0	\N	0	\N	f	f
@@ -97,7 +97,7 @@
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	0	honey-chicken-pecan-salad.jpg	0	\N	f	f
 116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	268435712	citrus-dressing.jpg	6	\N	f	f
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	0	chicken-avocado-chop.jpg	0	\N	f	f
-118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	15	1	2	t	0	\N	0	\N	f	f
+118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	15	1	2	t	0	\N	0	\N	f	f
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	0	green-mayo.jpg	7	\N	f	f
 120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	0	potato-salad.jpg	0	\N	f	f
 121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can on pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	8	0	5	4	t	0	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
@@ -140,7 +140,7 @@
 159	Clementines with Star Anise	\N	\N	\N	8	12	6	6	t	0	clementines-star-anise.jpg	0	\N	f	f
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	Too many ingredients.	\N	6	8	8	4	t	4194308	mexican-tacos.jpg	0	\N	f	f
 161	Pork on Lemon Grass Sticks	The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	8	8	6	4	t	1099536793600	bbq-pork-kebab.jpg	0	\N	f	f
-162	Rhubarb and Ginger Trifles	\N	\N	\N	32	0	4	4	t	0	rhubarb-ginger-trifles.jpg	0	\N	f	f
+162	Rhubarb and Ginger Trifles	\N	\N	\N	64	0	4	4	t	0	rhubarb-ginger-trifles.jpg	0	\N	f	f
 163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	64	12	8	12	t	0	portuguese-custard-tarts.jpg	0	\N	f	f
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	0	mexican-tortas.jpg	0	\N	f	f
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	0	lemon-parmesan-capellini.jpg	0	\N	f	f
@@ -219,7 +219,7 @@
 271	Traditional Stuffing	\N	\N	\N	16	55	5	4	t	270532866	traditional-stuffing.jpg	0	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	f	f
 272	Fragrant Spiced Rice	\N	\N	\N	8	10	5	4	t	4194308	baked-saffron-rice.jpg	0	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	f	f
 305	Exercise Recovery Smoothie	\N	\N	\N	128	0	5	1	t	134217856	exercise-recovery-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	f	f
-306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	22	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0	\N	f	f
+306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	10	4	t	4194308	peas-beans-chili-mint.jpg	0	\N	f	f
 307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	4194308	spiced-lentils-rice.jpg	0	\N	f	f
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	-9223372034304638976	pesto.jpg	6	\N	f	f
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	5	2	t	4194308	asparagus-eggs-dressing.jpg	0	\N	f	f
@@ -311,7 +311,7 @@
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	11	0	10	4	t	0	\N	0	\N	f	f
 428	Hot Lemon Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	1	1	t	0	\N	0	\N	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	0	\N	0	\N	f	f
-430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	10	2	t	0	\N	0	\N	f	f
+430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	2	t	0	\N	0	\N	f	f
 431	Glow Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	0	\N	0	\N	f	f
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	0	honey-mustard-dressing.jpg	0	\N	t	f
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	0	\N	0	\N	f	f
@@ -325,7 +325,7 @@
 473	Divine Avocado Chocolate Chip Cookies	\N	\N	\N	32	10	5	12	t	2097154	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 474	Coconut Sour Cream	\N	\N	\N	0	0	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	24	0	5	2	t	0	\N	6	\N	t	f
-476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	4194308	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 478	Everyday Salad	\N	\N	\N	8	0	10	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -334,7 +334,7 @@
 482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	4	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 484	Rice	\N	\N	\N	0	30	0	1	t	0	cauliflower-rice.jpg	6	\N	t	f
-485	Honey Chicken	TODO Find an actual recipe for this.	\N	\N	8	25	5	2	t	6291462	honey-mustard-chicken.jpg	0	\N	f	f
+485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	6291462	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
 486	Strawberries & Cream	\N	\N	\N	32	0	5	2	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 487	Rainbow Roasted Vegetables	\N	\N	\N	16	25	15	4	t	2097154	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 521	Maca Latte	\N	\N	\N	128	2	4	1	t	134217856	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -352,7 +352,7 @@
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	20	10	5	4	t	4194308	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	0	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	0	0	5	8	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-536	Turkey Breakfast Sausage	\N	\N	\N	6	10	5	4	t	0	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+536	Turkey Breakfast Sausage	\N	\N	\N	6	10	35	4	t	4194308	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	4	t	0	citrus-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 538	Lamb Juice	\N	\N	\N	128	0	5	1	t	0	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 539	Hot Oatmeal	\N	\N	\N	6	5	5	1	t	4194308	old-fashioned-oatmeal.jpg	0	\N	f	f
@@ -428,3 +428,5 @@
 609	Roasted Beet, Pear, & Onion Soup	\N	\N	\N	8	120	15	2	t	136315010	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 610	Root Cause Detox Soup	\N	Too many ingredients.	\N	8	40	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 611	Beef Stir-Fry	\N	\N	\N	8	25	15	2	t	4194308	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+613	Boiled Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	8	t	4194308	boiled-chicken-breasts.jpg	4	\N	t	f
+614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	4194308	\N	0	\N	f	f
