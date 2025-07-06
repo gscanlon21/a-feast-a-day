@@ -8416,6 +8416,19 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13752	283	3221225472	\N	\N	1	1
 13753	283	1792	\N	\N	3	1.2
 13754	283	229376	\N	\N	1	35
+13755	595	128	\N	\N	3	0.1
+13756	595	68719476736	\N	\N	2	15
+13757	595	34359738368	\N	\N	2	361
+13758	595	2	\N	\N	3	1
+13759	595	1	\N	\N	3	3
+13760	595	4294967296	\N	\N	2	3
+13761	595	2199023255552	\N	\N	2	1
+13762	595	48	\N	\N	3	2
+13763	595	402653184	\N	\N	1	1
+13764	595	14	\N	\N	3	3
+13765	595	1984	\N	\N	3	0.4
+13766	595	62	\N	\N	3	5
+13767	595	2047	\N	\N	3	28
 \.
 
 
@@ -8970,12 +8983,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4023	6	\N	\N	185	1	2	\N	149	f	\N	4
 4024	4	\N	\N	185	1	4	\N	659	t	\N	5
 4025	0	\N	\N	185	1	1	, chopped	225	f	\N	6
-3522	5	\N	\N	181	1	1	\N	488	f	\N	0
-3523	6	\N	\N	181	2	1	\N	59	f	\N	1
-3524	6	\N	\N	181	4	1	\N	60	t	\N	2
-3525	0	\N	\N	181	1	1	, chopped	3	f	\N	3
-3526	7	\N	\N	181	1	2	\N	37	f	\N	4
-3527	0	\N	\N	181	1	4	\N	113	t	\N	5
 4026	7	\N	\N	185	1	1	\N	2	t	\N	7
 4027	7	\N	\N	185	1	1	\N	577	t	\N	8
 2458	0	\N	\N	128	1	4	\N	324	f	\N	0
@@ -8996,6 +9003,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3486	8	\N	\N	176	4	1	\N	70	t	\N	3
 3487	8	\N	\N	176	4	1	\N	143	t	\N	4
 2007	7	\N	\N	118	1	2	\N	394	t	\N	4
+3522	5	\N	\N	181	1	1	\N	488	f	\N	0
+3523	6	\N	\N	181	2	1	\N	59	f	\N	1
+3524	6	\N	\N	181	4	1	\N	60	t	\N	2
+3525	0	\N	\N	181	1	1	, chopped	3	f	\N	3
+3526	7	\N	\N	181	1	2	\N	37	f	\N	4
+3527	0	\N	\N	181	1	4	\N	113	t	\N	5
 2172	0	\N	\N	98	1	12	\N	\N	f	65	0
 2173	6	\N	\N	98	2	1	\N	61	f	\N	1
 2176	8	\N	\N	98	1	2	\N	83	f	\N	4
@@ -9841,13 +9854,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4783	4	\N	\N	306	1	7	\N	149	f	\N	2
 4784	0	\N	\N	306	1	1	\N	224	f	\N	3
 5085	7	\N	\N	259	1	6	, from grass-fed cows	723	f	\N	0
-4825	0	\N	\N	270	1	1	\N	789	f	\N	0
-4826	7	\N	\N	270	1	2	\N	321	f	\N	1
-4827	0	\N	\N	270	1	2	\N	387	f	\N	2
 5042	7	\N	\N	307	1	2	\N	802	f	\N	2
 5043	4	\N	\N	307	1	7	\N	801	f	\N	3
 5044	4	\N	\N	307	1	8	, cooked	328	f	\N	4
-4828	0	\N	\N	270	1	1	, 10 oz	658	f	\N	3
 5086	5	\N	\N	259	1	1	, about 1 lb-best if trimmed	724	f	\N	1
 5087	0	\N	\N	259	1	1	, chopped	222	f	\N	2
 5088	0	\N	\N	259	1	2	, chopped	5	f	\N	3
@@ -9908,6 +9917,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5191	0	\N	\N	106	1	4	\N	5	f	\N	0
 4818	4	\N	\N	263	1	4	\N	841	f	\N	3
 4819	0	\N	\N	263	1	1	\N	1	f	\N	4
+4825	0	\N	\N	270	1	1	\N	789	f	\N	0
+4826	7	\N	\N	270	1	2	\N	321	f	\N	1
+4827	0	\N	\N	270	1	2	\N	387	f	\N	2
+4828	0	\N	\N	270	1	1	, 10 oz	658	f	\N	3
 4829	6	\N	\N	270	1	1	\N	790	t	\N	4
 5053	7	\N	\N	241	1	2	\N	61	f	\N	0
 5054	7	\N	\N	241	1	3	\N	77	f	\N	1
@@ -11525,13 +11538,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1729	Turn the top halves of the bread or rolls over so that the cut sides are uppermost, and spread these with creme fraiche. Sandwich back together again and serve. 	\N	164	4
 3250	Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	\N	320	2
 3251	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	\N	320	3
+1872	Add ground beef to a medium pot and cook it stirring from time to time, over medium heat until browned and until all the liquid evaporates. Add the onion and cook for 2 to 3 minutes.	\N	181	0
 2888	Wipe the pan clean with kitchen paper. Then heat the olive oil in the pan, add the garlic and vinegar and cook over high heat for 1 minute. Pour the warm dressing over the salads.	\N	84	2
 2889	Place a poached egg on each salad. Top with thin Parmesan shavings and a little ground black pepper.	\N	84	3
 2679	Heat about 60ml/4 tbsp of the olive oil in the pasta pan, then add the drained pasta and rocket. Toss over a medium heat for 1-2 minutes, or until the rocket is just wilted, then remove the pan from the heat.	\N	101	1
 2748	Trim ½” off cilantro ends and remove any woody stalks, wash thoroughly in a salad spinner and spin dry.	\N	256	0
 2749	Pulse pepitas and garlic in a food processor until minced.	\N	256	1
 2750	Add cilantro, lemon juice, salt, and pulse until chopped fine (or as desired).	\N	256	2
-1872	Add ground beef to a medium pot and cook it stirring from time to time, over medium heat until browned and until all the liquid evaporates. Add the onion and cook for 2 to 3 minutes.	\N	181	0
 2751	Pour olive oil in slowly and process until desired consistency.	\N	256	3
 2752	Taste and adjust salt and lemon/lime juice.	\N	256	4
 2753	Serve on eggs, baked/poached fish, shrimp, chicken, pork, black beans, chili, and/or steamed vegetables.	\N	256	5
@@ -11637,7 +11650,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2270	Place all the ingredients in the blender and blend until completely smooth.	\N	244	0
 2271	Store the vinaigrette in a mason jar with a tight-fitting lid and store it in refrigerator for 3-5 days. Shake well before using.	\N	244	1
 1868	Drizzle a small amount of vegetable oil in a large skillet over medium/medium-high heat (6/10 on the heat scale.) Add half or a third of the sausages (depending on how big your skillet is,) then brown for a minute or two on all four sides, or until golden brown, then transfer to a 6-quart crock pot (sausage does not need to be cooked all the way through.) Repeat with remaining sausage then add to crock pot.	\N	180	0
-1873	Add in brown sugar, mustard, and ketchup. Stir to combine.	\N	181	1
 1080	Halve the chicken thighs, then season with sea salt and black pepper. Place in a large on-stick frying pan on a medium heat with 1/2 a tablespoon of olive oil and cook for 15 minutes, or until golden and cooked through, turning regularly.	\N	118	0
 1081	Slice the baguette in half lengthways and place in the pan to quickly toast and soak up all the tasty cooking juices.	\N	118	1
 2792	Stir butter and garlic together.	\N	51	0
@@ -11656,6 +11668,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3137	In a large skillet over medium heat, heat the olive oil. To the skillet, add the next 4 ingredients (onion through salt and pepper). Cook for 5 to 10 minutes, until the turkey is cooked through.	\N	416	0
 3138	Arrange the cucumber slices in a single layer on a large platter. Spoon mashed avocado onto each slice, then top with ground turkey.	\N	416	1
 1082	Drain the pepper and slice lengthways into slivers, pit and tear the olives, then add them both to the pan and cook for a couple of minutes, tossing occasionally.	\N	118	2
+1873	Add in brown sugar, mustard, and ketchup. Stir to combine.	\N	181	1
 2550	Crush the orange blossoms in a mortar and pestle until they are a paste. Let sit for 2 hours.	\N	268	0
 2551	Combine the petal paste and distilled water in a Ball jar. Stir and cover. Let sit for 2 weeks.	\N	268	1
 1496	Peel, cut up and boil the potatoes in salted water for about 15 minutes until tender, Drain and return to the pan.	\N	149	0
@@ -11707,6 +11720,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1775	Meanwhile, scoop out the seeds from the half of the melon using a spoon. Using a sharp knife, remove the skin, then cut the flesh from the wedges.	\N	144	2
 2796	Remove; cut each naan in half.	\N	51	4
 2563	Combine all ingredients in a bowl and enjoy!	\N	242	0
+1874	Let it simmer on low for about 5 minutes to combine the flavors.	\N	181	2
 2460	Slice each chicken breast in half horizontally, making two pieces of about the same thickness. Flatten them slightly with the heel of you hand.	\N	131	0
 2461	Put the butter in a small pan and melt over a low heat. Do not let it brown.	\N	131	1
 2462	Mix the remaining ingredients in a bowl. Brush the chicken on both sides with a little of the melted butter. Sprinkle evenly with the seasoning mix.	\N	131	2
@@ -11727,14 +11741,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1869	Turn heat up to medium-high then add onions to skillet, season with salt and pepper, then saute until just beginning to become tender, 3-4 minutes. Transfer to the crock pot.	\N	180	1
 1870	Add bell peppers to skillet, season with salt and pepper, then saute until crisp tender, 4-5 minutes, adding a drizzle more oil if necessary to keep peppers from burning. Add garlic then saute for 1 more minute, and then transfer peppers and garlic to crock pot.	\N	180	2
 1871	Add red chili pepper flakes, a little pit of salt and pepper, tomato sauce, crushed tomatoes, and chicken broth to crock pot then cover and cook on low for 5-6 hours or until sausages are very tender. Serve over pasta or inside rolls with provolone cheese on top.	\N	180	3
-1874	Let it simmer on low for about 5 minutes to combine the flavors.	\N	181	2
-1875	Serve on buns, optionally you can serve with your favorite sides.	\N	181	3
 1704	Place the cabbage on a board and shred the leaves finely. Wash under cold running water, shake well and blot on kitchen paper to dry thoroughly.	\N	166	1
 1705	Heat a wok or wide-based flameproof casserole over a fairly high heat. Heat the oil and add the cabbage. Stir-fry for 2-3 minutes, using one or two wooden spoons to seem the cabbage moving so that it cooks evenly but is still crunchy. Season with salt and pepper and serve immediately.	\N	166	2
 2989	Pour 1½ tablespoons of extra virgin olive oil into a blender, then finely grate in the Parmesan. Use tongs to carefully transfer the cavolo leaves and garlic straight into the blender and blitz for a few minutes until super-smooth. Taste and season to perfection with sea salt and black pepper.	\N	371	1
 3254	Drain the pasta, reserving a cupful of cooking water. Return the pasta to the pan and toss with the vibrant green sauce, loosening with a splash of reserved cooking water, if needed, then divide between your plates. Dot over the ricotta, drizzle with a tiny bit of extra virgin olive oil, and tuck right in.	\N	371	2
 2457	Over high heat, bring a large pot of water to a boil; add pasta and cook just short of al dente, about 8 – 10 minutes. Drain pasta and set aside to keep warm. 	\N	8	0
 2459	Toss in a few basil leaves, stir and begin plating. Finish with grated cheese to taste. Serve.	\N	8	2
+1875	Serve on buns, optionally you can serve with your favorite sides.	\N	181	3
 1611	Scrape or rub off the skins from the new potatoes and cook in salted water with the mint for about 10 minutes, or until just tender. Drain and allow to cool a little, then turn into a salad bowl.	\N	120	0
 1612	Heat the oil in a frying pan, then add the onion and cook until just softening. Add the diced bacon to the pan and cook for 3-5 minutes, until beginning to crisp up.	\N	120	1
 1613	Add the garlic and cook for another minute or so, and then add the chopped herbs, the vinegar, mustard and seasoning to taste, remembering that the bacon may be salty.	\N	120	2
@@ -12181,6 +12194,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2990	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water. Meanwhile, plast most of the argular in a blender, finely grate in the lemon zest and squeeze in all the juice. Drizzle in 6 tablespoons of extra virgin olive oil, then add the Parmesan, 2 tablespoons of starchy cooking water and most of the pistachios, and whiz until smooth. When the time's up, toss the pasta and sauce together, loosening with a splash of starchy cooking water, if needed. Finely chop the remaining pistachios and sprinkle the remaining arugula over the top. Finish with an extra grating of Parmesan and a drizzle of extra virgin olive oil.	\N	372	0
 3185	In a large bowl, add the cabbage through onion, and set aside.	\N	427	0
 3186	Pour the Honey Lemon Mustard Dressing into the large bowl of vegetables and mix well.	\N	427	1
+2640	Put a grill pan on high heat. Cut the two cheeks off the mango, slice each into three lengthways, then slice off the skin and discard. Dice all of the flech into ½-inch cubes. Scrunch the stone over a bowl, to extract any pulp and juice, mix with the hoisin to make a dressing, and divide between two little bowls.	\N	270	0
 2988	Cook the pasta in a pan of boiling salted water according to the package instructions. Meanwhile, peel the garlic. Tear the stems out of the cavolo and discard, adding the leaves and the garlic to the pasta pan for 5 minutes.	\N	371	0
 2992	Lower the eggs into a pan of vigorously simmering water and boil for 5½ minutes exactly, then refresh under cold water until cool enough to handle, and peel. Meanwhile, put a large non-stick frying pan on a medium-high heat. In a bowl, mix the flour with a little pinch of sea salt, 4 heaping tablespoons of yogurt, and 1 tablespoon of olive oil until you have a dough. Halve, then roll out each piece on a flour-dusted surface until just under ¼ inch thick. Cook for 3 minutes, or until golden, turning halfway.	\N	374	0
 2993	Dot the mango chutney and remaining yogurt over the breads. Halve the soft-boiled eggs and arrange on top, smashing them in with a fork, if you like. Finely slice the chili and scatter over (as much as you dare!), drizzle with a little extra virgin olive oil, and season with salt and black pepper from a height.	\N	374	1
@@ -12194,7 +12208,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3232	Add sea salt, to taste.	\N	467	1
 3438	Preheat the oven to 400°F.	\N	564	0
 1252	Remove from heat, cover and let stand for 2 to 3 minutes.	\N	53	2
-2640	Put a grill pan on high heat. Cut the two cheeks off the mango, slice each into three lengthways, then slice off the skin and discard. Dice all of the flech into ½-inch cubes. Scrunch the stone over a bowl, to extract any pulp and juice, mix with the hoisin to make a dressing, and divide between two little bowls.	\N	270	0
 1253	Top with milk, sweetener, cinnamon, dried fruits or nuts, if desired.	\N	53	3
 2141	Mix the flour, oatmeal and salt in a bowl, beat in the egg and add enough buttermilk or milk to make a creamy batter of the same consistency as that used for ordinary pancakes.	\N	187	0
 2142	Thoroughly heat a griddle or cast-iron frying pan over a medium-hot heat. When very hot, grease the surface lightly with butter or oil.	\N	187	1
@@ -12505,7 +12518,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1601	Place the chicken breasts into the bottom of the baking pan then drizzle on the Italian dressing and sprinkle on seasonings  to taste. Use tongs or your hands to flip the chicken breasts to coat in the dressing and seasonings then arrange into an even layer.	\N	135	1
 1602	Bake for 20 minutes or until the thickest part of the largest chicken breast reaches an internal temperature of 165 degrees as read by a digital instant-read thermometer. Let the chicken rest for 15-30 minutes before serving and/or slicing.	\N	135	2
 3576	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	597	0
-2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. then grill for 2-3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	\N	270	1
 2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	\N	367	1
 3589	Add the salmon, mango and avocado into a bowl. Toss with mayo and serve.	\N	603	0
 3590	Unshell the pistachios. Eat the pistachios. Enjoy the pistachios.	\N	604	0
@@ -12523,6 +12535,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	\N	607	2
 3596	Season with sea salt to taste.	\N	607	3
 3597	Mix the mustard, apple cider vinegar and honey/maple syrup in a blender, and use as a dip, or pour over the dish.	\N	607	4
+2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. then grill for 2-3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	\N	270	1
 3582	Preheat the oven to 375°F. SPrinkle chicken breast with salt and pepper, place on a baking tray, and cook in the oven for 35-50 minutes, or until internal temperature reaches 165F. Set aside when cooked.	\N	602	0
 3583	Place eggs in an empty pot, cover with water, and bring to a boil over high heat. Set a timer for 8 minutes once the water starts to boil.	\N	602	1
 3584	Create an ice bath in a large bowl and set aside. Oncer the timer goes off, immediately remove eggs and place in the ice bath.	\N	602	2
@@ -12620,7 +12633,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13754, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13767, true);
 
 
 --

@@ -151,6 +151,24 @@ public class UserRepo
     }
 
     /// <summary>
+    /// Common properties surrounding today's feast.
+    /// </summary>
+    public async Task<FeastContext> BuildFeastContext(User user, string token, DateOnly date)
+    {
+        var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true);
+        var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true, tul: true);
+        return new FeastContext()
+        {
+            Date = date,
+            User = user,
+            Token = token,
+            WeeklyNutrientsWeeks = weeks,
+            WeeklyNutrientsRDA = volumeRDA,
+            WeeklyNutrientsTUL = volumeTUL,
+        };
+    }
+
+    /// <summary>
     /// Get the user's average percent daily value for each nutrient.
     /// </summary>
     /// <param name="rawValues">

@@ -18,27 +18,31 @@
         <div class="input-group">
             <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
             <div class="row m-0 input-group-vertical max-width--min-content">
-                <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil.HasValue && Model.UserRecipe.IgnoreUntil != DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
-                <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil.HasValue && Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" @(Model.User.IsDemoUser ? "disabled='disabled'" : "") />
+                <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil.GetValueOrDefault() != DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
+                <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil.GetValueOrDefault() == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
             </div>
         </div>
+
         <span asp-validation-for="Recipe" class="text-danger"></span>
         <div id="recipe-help" class="form-text">
             @Html.DisplayDescriptionFor(_ => Model.Recipe)
         </div>
     </div>
-    
-    <form asp-controller="@RecipeController.Name" class="row mb-3" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
+
+    <form id="swap-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.SwapRecipe)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
-
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+    </form>
+    <form id="refresh-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
+    </form>
+    
+    <div class="form-group mb-3">
         <div class="form-group">
             <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
             <div class="input-group">
-                <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" 
-                       value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
-                <input type="submit" value="Refresh" class="btn btn-outline-secondary allow-demo" />
+                <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
+                <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
+                <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary btn-sm" />
             </div>
 
             <span asp-validation-for="UserRecipe" class="text-danger"></span>
@@ -46,7 +50,7 @@
                 @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
             </div>
         </div>
-    </form>
+    </div>
 
     <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.LogRecipe)" method="post" class="mb-4"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">

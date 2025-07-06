@@ -1,7 +1,10 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
+using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
+using Data.Entities.User;
+using Data.Query.Builders;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +22,17 @@ namespace Web.Controllers.Recipes;
 [Route($"recipe/{UserRoute}", Order = 2)]
 public class RecipeController : ViewController
 {
+    private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly NewsletterService _newsletterService;
     private readonly CoreContext _context;
     private readonly UserRepo _userRepo;
 
-    public RecipeController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService)
+    public RecipeController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
         _userRepo = userRepo;
         _newsletterService = newsletterService;
+        _serviceScopeFactory = serviceScopeFactory;
     }
 
     /// <summary>
@@ -194,6 +199,82 @@ public class RecipeController : ViewController
         userRecipe.IgnoreUntil = unskipped ? user.StartOfWeekOffset.AddDays(7) : null;
         await _context.SaveChangesAsync();
 
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
+    }
+
+    [HttpPost, Route("{section:section}/{recipeId}/[action]")]
+    public async Task<IActionResult> SwapRecipe(string email, string token, int recipeId, Section section)
+    {
+        var user = await _userRepo.GetUser(email, token, includeServings: true, includeFamilies: true);
+        if (user == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var userRecipe = await _context.UserRecipes
+            .Where(ur => ur.RecipeId == recipeId)
+            .Where(ur => ur.Section == section)
+            .Where(ur => ur.UserId == user.Id)
+            .FirstAsync();
+
+        // May be null if the recipe was soft/hard deleted.
+        if (userRecipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var userFeast = await _userRepo.GetCurrentFeast(user);
+        if (userFeast == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var feastRecipe = userFeast.UserFeastRecipes.FirstOrDefault(ufr => ufr.RecipeId == recipeId);
+        if (feastRecipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        // Delete the old recipe before querying to free up the nutrients.
+        await _context.UserFeastRecipes.Where(ufr => ufr.Id == feastRecipe.Id).ExecuteDeleteAsync();
+
+        var context = await _userRepo.BuildFeastContext(user, token, userFeast.Date);
+        var serving = context.User.UserSections.FirstOrDefault(us => us.Section == feastRecipe.Section) ?? new UserSection(feastRecipe.Section);
+        if (serving.Weight > 0)
+        {
+            var scale = serving.Weight / (double)context.User.UserSections.Sum(us => us.Weight);
+
+            var newRecipe = (await new QueryBuilder(feastRecipe.Section)
+                .WithUser(user)
+                .WithNutrients(NutrientTargetsBuilder
+                    .WithNutrients(context, NutrientHelpers.All)
+                    .WithNutrientTargets()
+                    .AdjustNutrientTargets(scale: 1), options =>
+                    {
+                        options.AtLeastXNutrientsPerRecipe = serving.AtLeastXNutrientsPerRecipe;
+                    })
+                .WithExcludeRecipes(x =>
+                {
+                    x.RecipeIds = userFeast.UserFeastRecipes.Select(ufr => ufr.RecipeId).ToList();
+                })
+                .WithSelectionOptions(options =>
+                {
+                    options.Randomized = context.IsBackfill;
+                })
+                .Build()
+                .Query(_serviceScopeFactory, take: 1))
+                .FirstOrDefault();
+
+            if (newRecipe == null)
+            {
+                return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+            }
+
+            _context.UserFeastRecipes.Add(new UserFeastRecipe(userFeast, newRecipe, feastRecipe.Order));
+            await _context.SaveChangesAsync();
+        }
+
+        TempData[TempData_User.SuccessMessage] = "Your recipe has been swapped. Reload the feast to view the new recipe.";
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
 

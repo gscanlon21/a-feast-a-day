@@ -88,15 +88,13 @@ public partial class NewsletterRepo
         date ??= user.StartOfWeekOffset;
 
         _logger.Log(LogLevel.Information, "User {Id}: Building feast for {date}", user.Id, date);
-        Logs.AppendLog(user, $"{date}: Building feast with options Allergens={user.Allergens}");
+        UserLogs.Log(user, $"{date}: Building feast with options Allergens={user.Allergens}");
 
         // Is the user requesting an old newsletter?
         var oldNewsletter = await _context.UserFeasts.AsNoTracking()
             .Include(n => n.UserFeastRecipes)
             .Where(n => n.UserId == user.Id)
             .Where(n => n.Date == date)
-            // Always send a new newsletter for the demo and test users.
-            .Where(n => !user.Features.HasFlag(Features.Demo) && !user.Features.HasFlag(Features.Test))
             .OrderByDescending(n => n.Id)
             .FirstOrDefaultAsync();
 
@@ -106,7 +104,7 @@ public partial class NewsletterRepo
         {
             // An old newsletter was found.
             _logger.Log(LogLevel.Information, "Returning old feast for user {Id}", user.Id);
-            Logs.AppendLog(user, $"{date}: Returning old feast");
+            UserLogs.Log(user, $"{date}: Returning old feast");
             return await NewsletterOld(user, token, oldNewsletter);
         }
         // Don't allow backfilling feasts over 1 year ago or in the future.
@@ -114,21 +112,21 @@ public partial class NewsletterRepo
         {
             // A newsletter was not found and the date is not one we want to render a new newsletter for.
             _logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
-            Logs.AppendLog(user, $"{date}: Returning no feast");
+            UserLogs.Log(user, $"{date}: Returning no feast");
             return null;
         }
 
-        var newsletterContext = await BuildFeastContext(user, token, date.Value);
+        var newsletterContext = await _userRepo.BuildFeastContext(user, token, date.Value);
         if (user.Features.HasFlag(Features.Debug))
         {
             // User is a debug user. They should see the DebugNewsletter instead.
             _logger.Log(LogLevel.Information, "Returning debug feast for user {Id}", user.Id);
-            Logs.AppendLog(user, $"{date}: Returning debug feast");
+            UserLogs.Log(user, $"{date}: Returning debug feast");
             return await Debug(newsletterContext);
         }
 
         _logger.Log(LogLevel.Information, "Returning on day feast for user {Id}", user.Id);
-        Logs.AppendLog(user, $"{date}: Returning on day feast");
+        UserLogs.Log(user, $"{date}: Returning on day feast");
         return await OnDayNewsletter(newsletterContext);
     }
 

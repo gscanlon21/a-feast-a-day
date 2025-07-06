@@ -1,6 +1,5 @@
 ﻿using Core.Models.Recipe;
 using Data.Entities.Newsletter;
-using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,24 +8,6 @@ namespace Data.Repos;
 
 public partial class NewsletterRepo
 {
-    /// <summary>
-    /// Common properties surrounding today's feast.
-    /// </summary>
-    internal async Task<FeastContext> BuildFeastContext(User user, string token, DateOnly date)
-    {
-        var (weeks, volumeRDA) = await _userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true);
-        var (_, volumeTUL) = await _userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true, tul: true);
-        return new FeastContext()
-        {
-            Date = date,
-            User = user,
-            Token = token,
-            WeeklyNutrientsWeeks = weeks,
-            WeeklyNutrientsRDA = volumeRDA,
-            WeeklyNutrientsTUL = volumeTUL,
-        };
-    }
-
     /// <summary>
     /// Creates a new instance of the newsletter and saves it.
     /// </summary>

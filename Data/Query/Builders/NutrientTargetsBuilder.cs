@@ -127,17 +127,17 @@ public class NutrientTargetsBuilder : IOptions, INutrientBuilderNoContext, INutr
         {
             if (Nutrients.Any())
             {
-                Logs.AppendLog(Context.User, $"Nutrients for {section}:{Environment.NewLine}{string.Join(", ", Nutrients)}");
+                UserLogs.Log(Context.User, $"Nutrients for {section}:{Environment.NewLine}{string.Join(", ", Nutrients)}");
             }
 
             if (NutrientTargetsRDA.Any())
             {
-                Logs.AppendLog(Context.User, $"Nutrient targets RDA for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsRDA)}");
+                UserLogs.Log(Context.User, $"Nutrient targets RDA for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsRDA)}");
             }
 
             if (NutrientTargetsTUL.Any())
             {
-                Logs.AppendLog(Context.User, $"Nutrient targets TUL for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsTUL)}");
+                UserLogs.Log(Context.User, $"Nutrient targets TUL for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsTUL)}");
             }
         }
 

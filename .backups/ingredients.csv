@@ -520,7 +520,7 @@
 592	\N	Black Olive Tapenade	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2025-03-19	7	240	0
 593	\N	Thai Red Curry Paste	https://www.eatthismuch.com/calories/red-curry-paste-490608	\N	f	0	28	15	2024-12-29	4	240	8192
 594	\N	Butternut Squash	\N	\N	f	0	4520	152	2024-08-26	0	152	1
-595	\N	Mushrooms	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+595	\N	Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
 596	\N	Kaffir Lime Leaves	https://www.eatthismuch.com/calories/kaffir-lime-leaves-1612556	\N	f	0	15	30	2025-02-13	0	240	3
 597	\N	Yellow Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	2
 598	\N	Green Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2024-08-24	0	119	1
@@ -917,6 +917,6 @@
 1116	\N	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	f	0	33	908	2025-01-20	0	99	2
 1117	\N	Pumpkin Pie Spice	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
 1118	\N	Mixed-Color Baby Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
-1119	\N	Creamy Horseradish	\N	\N	f	0	100	50	2024-10-24	0	100	1
+1119	\N	Creamy Horseradish	\N	\N	f	0	28	50	2024-10-24	4	100	32
 1120	\N	Reduced-Fat Crème Fraîche	https://www.eatthismuch.com/calories/creme-fraiche-1706554	\N	f	324	28	30	2024-11-16	4	240	29360128
-1121	\N	Bresaola	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
+1121	\N	Bresaola	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	4	224	268435456
