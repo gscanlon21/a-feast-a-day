@@ -1,0 +1,89 @@
+﻿@model ManageRecipeIngredientViewModel
+@using Lib.Pages.Shared.Ingredient
+@using System.Numerics
+@using Core.Models.Recipe
+@using Core.Consts
+@using Web.Controllers.RecipeIngredients;
+
+@if (Model.UserRecipeIngredient.SubstituteRecipeId.HasValue == true && !Model.Recipes.Select(r => r.Id).Contains(Model.UserRecipeIngredient.SubstituteRecipeId.Value))
+{
+    <div class="alert alert-warning">
+        Your selected substitution conflicts with your allergens or equipment. Please select a new substitution.
+    </div>
+}
+
+<div class="alert alert-light shadow mb-0">
+    <form asp-controller="@IngredientController.Name" asp-action="@nameof(RecipeIngredientController.IgnoreRecipeIngredient)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeIngredientId="@Model.Parameters.RecipeIngredientId">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label for="Recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.RecipeIngredient)</label>
+            <div class="input-group">
+                <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@(Model.RecipeIngredient.Ingredient?.Name ?? Model.RecipeIngredient.IngredientRecipe.Name)</textarea>
+                <input type="submit" value="@(Model.UserRecipeIngredient.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" @(Model.DenyIgnoringIngredient ? "disabled='disabled'" : "") />
+            </div>
+            <span asp-validation-for="RecipeIngredient" class="text-danger"></span>
+            <div id="Recipe-help" class="form-text">
+                @Html.DisplayDescriptionFor(_ => Model.RecipeIngredient)
+            </div>
+        </div>
+    </form>
+
+    <form asp-controller="@IngredientController.Name" asp-action="@nameof(RecipeIngredientController.ManageRecipeIngredient)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeIngredientId="@Model.Parameters.RecipeIngredientId">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3 mt-3">
+            <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Notes)</label>
+            <input type="text" asp-for="UserRecipeIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserRecipeIngredient.Notes" />
+            <span asp-validation-for="UserRecipeIngredient.Notes" class="text-danger"></span>
+        </div>
+
+        <div class="row row-gap-2 my-3">
+            <div class="col-md">
+                <label asp-for="UserRecipeIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteIngredientId)</label>
+                <select asp-for="UserRecipeIngredient.SubstituteIngredientId" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-help"
+                        asp-items="@(Model.Ingredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
+                </select>
+                <span asp-validation-for="UserRecipeIngredient.SubstituteIngredientId" class="text-danger"></span>
+                <span id="ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.SubstituteIngredientId)</span>
+            </div>
+
+            <div class="col-md">
+                <label asp-for="UserRecipeIngredient.SubstituteRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteRecipeId)</label>
+                <select asp-for="UserRecipeIngredient.SubstituteRecipeId" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-recipe-help"
+                        asp-items="@(Model.Recipes.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
+                </select>
+                <span asp-validation-for="UserRecipeIngredient.SubstituteRecipeId" class="text-danger"></span>
+                <span id="ingredient-recipe-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.SubstituteRecipeId)</span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UserRecipeIngredient.SubstituteScale" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteScale)</label>
+            <div style="display:flex;column-gap:1ch;">
+                <output name="substituteScale" for="@Html.IdFor(_ => Model.UserRecipeIngredient.SubstituteScale)">@Model.UserRecipeIngredient.SubstituteScale</output>
+                <div style="display:flex;width:100%;">
+                    <input asp-for="UserRecipeIngredient.SubstituteScale" type="range" style="width:100%;" aria-describedby="substitute-scale-help"
+                           min="@RecipeConsts.IngredientScaleMin" max="@RecipeConsts.IngredientScaleMax" step="@RecipeConsts.IngredientScaleStep" 
+                           oninput="substituteScale.value = this.valueAsNumber" />
+                </div>
+            </div>
+            <span asp-validation-for="UserRecipeIngredient.SubstituteScale" class="text-danger"></span>
+            <div id="substitute-scale-help" class="form-text">
+                <p>@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.SubstituteScale)</p>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" model='new ValidationScriptsPartialViewModel() { IsDemoUser = Model.User.IsDemoUser }' />
+}

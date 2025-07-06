@@ -1,5 +1,4 @@
-﻿using Core.Dtos.Ingredient;
-using Core.Dtos.User;
+﻿using Core.Dtos.User;
 using Data;
 using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc;
@@ -28,29 +27,18 @@ public class RecipeIngredientsViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
     {
-        var recipeIngredientIds = recipe.RecipeIngredients.Select(ri => ri.IngredientId).ToList();
-        var ingredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
-            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
-            .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
-            .Where(i => !i.UserIngredients.First(ui => ui.UserId == user.Id && ui.RecipeId == recipe.Id).Ignore)
-            .Where(i => recipeIngredientIds.Contains(i.Id))
-            .OrderBy(f => f.Name)
-            .ToListAsync();
-
-        var ignoredIngredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
-            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
-            .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
-            .Where(i => i.UserIngredients.First(ui => ui.UserId == user.Id && ui.RecipeId == recipe.Id).Ignore)
-            .Where(i => recipeIngredientIds.Contains(i.Id))
-            .OrderBy(f => f.Name)
+        var recipeIngredients = await _context.RecipeIngredients
+            .Include(ri => ri.Ingredient)
+            .Include(ri => ri.IngredientRecipe)
+            .Where(ri => ri.RecipeId == recipe.Id)
+            .OrderBy(ri => ri.Order)
             .ToListAsync();
 
         return View("RecipeIngredients", new RecipeIngredientsViewModel()
         {
             Parameters = parameters,
+            RecipeIngredients = recipeIngredients,
             User = new UserNewsletterDto(user.AsType<UserDto>()!, parameters.Token),
-            Ingredients = ingredients.Select(i => i.AsType<IngredientDto>()!).ToList(),
-            IgnoredIngredients = ignoredIngredients.Select(i => i.AsType<IngredientDto>()!).ToList(),
         });
     }
 }

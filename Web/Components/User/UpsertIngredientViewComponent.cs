@@ -27,6 +27,12 @@ public class UpsertIngredientViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient? ingredient = null)
     {
+        // User must've created the ingredient to be able to edit it.
+        if (ingredient != null && ingredient.UserId != user.Id && !user.Features.HasFlag(Features.Admin))
+        {
+            return Content("");
+        }
+
         var userIngredients = await _context.Ingredients
             .Where(i => i.UserId == user.Id
                 // The user is an admin who is allowed to edit base ingredients.

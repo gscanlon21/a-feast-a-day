@@ -74,7 +74,7 @@ public class UserRepo
 
         if (includeIngredients)
         {
-            query = query.Include(u => u.UserIngredients);
+            query = query.Include(u => u.UserRecipeIngredients);
         }
 
         var user = await query
@@ -276,7 +276,7 @@ public class UserRepo
             .Select(g => new { g.Key, g.OrderByDescending(n => n.Id).First().UserFeastRecipes })
             .IgnoreQueryFilters().AsNoTracking().TagWithCallSite().ToListAsync();
 
-        var userIngredients = await _context.UserIngredients
+        var userIngredients = await _context.UserRecipeIngredients
            .IgnoreQueryFilters().AsNoTracking()
            .Include(i => i.SubstituteIngredient)
                .ThenInclude(i => i!.Nutrients)

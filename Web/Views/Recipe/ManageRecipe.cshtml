@@ -16,33 +16,31 @@
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
 </div>
 
-@* User must have created the recipe to be able to edit it. *@
-@if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
+@if (Model.HasUserRecipe)
 {
-    <div class="row gy-3">
-        @if (Model.HasUserRecipe)
-        {
-            <div class="col-lg-6">
-                @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
-                @await Component.InvokeAsync(RecipeIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
-            </div>
-        }
-
-        <div class="col-lg-6">
-            <h5 class="mb-1">Edit Recipe</h5>
-            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters.Section })
-        </div>
-    </div>
-}
-else
-{
-    <div class="row gy-2">
+    <div class="row gy-4">
         <div class="col-lg-6">
             @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
         </div>
-
+        
         <div class="col-lg-6">
             @await Component.InvokeAsync(RecipeIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
+            @* User must have created the recipe to be able to edit it. *@
+            @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
+            {
+                <h5 class="mt-4 mb-1">Edit Recipe</h5>
+                @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters.Section })
+            }
+        </div>
+    </div>
+}
+@* User must have created the recipe to be able to edit it. *@
+else if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
+{
+    <div class="row gy-4">
+        <div class="col">
+            <h5 class="mb-1">Edit Recipe</h5>
+            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters.Section })
         </div>
     </div>
 }

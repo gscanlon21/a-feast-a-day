@@ -89,11 +89,11 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required UserRecipe? UserIngredientRecipe { get; set; }
     public QueryResults? IngredientRecipe { get; internal set; }
 
-    public required UserIngredient? UserIngredient { get; set; }
     public required Ingredient? Ingredient { get; set; }
+    public required UserRecipeIngredient? UserRecipeIngredient { get; set; }
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
-    public int? IngredientRecipeId => UserIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;
+    public int? IngredientRecipeId => UserRecipeIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;
     public string Name => IngredientRecipe?.Recipe.Name ?? Ingredient?.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
@@ -111,7 +111,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     /// Is this recipe's ingredient an ingredient or a recipe?
     /// </summary>
     /// Public so that the dto can bind this.
-    public RecipeIngredientType Type => (UserIngredient?.SubstituteIngredientId, UserIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
+    public RecipeIngredientType Type => (UserRecipeIngredient?.SubstituteIngredientId, UserRecipeIngredient?.SubstituteRecipeId, Ingredient, IngredientRecipeId) switch
     {
         (not null, _, _, _) => RecipeIngredientType.Ingredient,
         (_, not null, _, _) => RecipeIngredientType.IngredientRecipe,

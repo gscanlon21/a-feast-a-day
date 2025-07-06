@@ -2,24 +2,18 @@
 @using System.Numerics
 @using Core.Models.Recipe
 @using Core.Consts
+@using Web.Controllers.RecipeIngredients
 
-<details class="mt-4" open="open">
-    <summary class="mb-1 h5">
-        <span>@Html.DisplayNameFor(_ => Model.Ingredients)</span>
-        <span class="float-end">@Model.Ingredients.Count()</span>
-    </summary>
-
-    <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.User" param-RecipeId="Model.Parameters.RecipeId" param-Ingredients='Model.Ingredients' />
-</details>
-
-@if (Model.IgnoredIngredients?.Any() == true)
-{
-    <details class="mt-4 mb-25">
-        <summary class="mb-1 h5">
-            <span>@Html.DisplayNameFor(_ => Model.IgnoredIngredients)</span>
-            <span class="float-end">@Model.IgnoredIngredients.Count()</span>
-        </summary>
-
-        <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.User" param-RecipeId="Model.Parameters.RecipeId" param-Ingredients='Model.IgnoredIngredients' />
-    </details>
-}
+<h5 class="mb-1">Manage Recipe Ingredients</h5>
+<div class="list-group mb-3">
+    @foreach (var recipeIngredient in Model.RecipeIngredients)
+    {
+        <a asp-action="@nameof(RecipeIngredientController.ManageRecipeIngredient)" asp-controller="@RecipeIngredientController.Name"
+           asp-route-recipeIngredientId="@recipeIngredient.Id" asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token"
+           class="list-group-item list-group-item-dark list-group-item-action allow-demo">
+            <div class="row gx-3 gy-1">
+                <h6 class="mb-1 font-weight--normal">@(recipeIngredient.Ingredient?.Name ?? recipeIngredient.IngredientRecipe.Name)</h6>
+            </div>
+        </a>
+    }
+</div>

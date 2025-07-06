@@ -67,7 +67,7 @@ public class UpsertRecipeModel : IValidatableObject
     public IList<RecipeInstruction> Instructions { get; set; } = [];
 
     [JsonInclude, ValidateNever]
-    public IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
+    public IList<Data.Entities.Recipe.RecipeIngredient> RecipeIngredients { get; set; } = [];
 
     [NotMapped]
     public Section[]? SectionBinder

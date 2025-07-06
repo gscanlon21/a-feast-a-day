@@ -86,8 +86,8 @@ public class QueryRunner(Section section)
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
-                    UserIngredient = ri.Ingredient.UserIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeId == ri.RecipeId),
                     UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id && ur.Section == section),
+                    UserRecipeIngredient = ri.UserRecipeIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeIngredientId == ri.Id),
                 }).ToList()
             })
             // Don't grab recipes that the user wants to ignore.
@@ -178,27 +178,27 @@ public class QueryRunner(Section section)
                             continue;
                         }
                         // If the recipe ingredient was a substitute for a regular ingredient, fallback to that ingredient.
-                        else if (recipeIngredient.UserIngredient?.SubstituteRecipeId.HasValue == true
+                        else if (recipeIngredient.UserRecipeIngredient?.SubstituteRecipeId.HasValue == true
                             // Make sure we fallback to an ingredient and not another recipe.
                             && !recipeIngredient.RawIngredientRecipeId.HasValue)
                         {
-                            recipeIngredient.UserIngredient.SubstituteRecipeId = null;
+                            recipeIngredient.UserRecipeIngredient.SubstituteRecipeId = null;
                         }
                     }
 
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Don't swap the ingredient if the user ignored it.
-                        if (recipeIngredient.UserIngredient?.Ignore != true
+                        if (recipeIngredient.UserRecipeIngredient?.Ignore != true
                             // And if the user is substituting in a different ingredient.
-                            && (recipeIngredient.UserIngredient?.SubstituteIngredientId.HasValue == true
+                            && (recipeIngredient.UserRecipeIngredient?.SubstituteIngredientId.HasValue == true
                                 // Or if any of the ingredient's allergens conflict w/ the user's allergens.
                                 || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens)))
                         {
                             // Substitution and alternative ingredients don't have user ingredient records.
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
                             recipeIngredient.Ingredient = substitution?.Ingredient;
-                            recipeIngredient.UserIngredient = null;
+                            recipeIngredient.UserRecipeIngredient = null;
                             if (substitution != null)
                             {
                                 var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(substitution.Scale));
@@ -208,7 +208,7 @@ public class QueryRunner(Section section)
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
-                        if (recipeIngredient.Ingredient != null && (recipeIngredient.UserIngredient?.Ignore != true))
+                        if (recipeIngredient.Ingredient != null && (recipeIngredient.UserRecipeIngredient?.Ignore != true))
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
@@ -401,8 +401,8 @@ public class QueryRunner(Section section)
                 ri.Id,
                 ri.RecipeId,
                 ri.Ingredient,
-                ri.Ingredient.UserIngredients.Where(ui => ui.RecipeId == ri.RecipeId).First(ui => ui.UserId == UserOptions.Id).SubstituteScale,
-                ri.Ingredient.UserIngredients.Where(ui => ui.RecipeId == ri.RecipeId).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
+                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteScale,
+                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
             })
             .Select(ri => new
             {
@@ -435,6 +435,7 @@ public class QueryRunner(Section section)
         if (section == Section.None) { return; }
 
         var recipesCreated = new HashSet<UserRecipe>();
+        // Add user recipes for the main recipe query results.
         foreach (var queryResult in queryResults.Where(qr => qr.UserRecipe == null))
         {
             queryResult.UserRecipe = new UserRecipe()
@@ -450,38 +451,37 @@ public class QueryRunner(Section section)
             }
         }
 
-        foreach (var ingredient in queryResults.SelectMany(qr => qr.RecipeIngredients)
-            .Where(i => i.UserIngredientRecipe == null && i.RawIngredientRecipeId.HasValue))
+        var userRecipeIngredientsCreated = new HashSet<UserRecipeIngredient>();
+        foreach (var recipeIngredient in queryResults.SelectMany(qr => qr.RecipeIngredients))
         {
-            ingredient.UserIngredientRecipe = new UserRecipe()
+            // Add user recipe ingredients for all recipe ingredients.
+            if (recipeIngredient.UserRecipeIngredient == null)
             {
-                Section = section,
-                UserId = UserOptions.Id,
-                RecipeId = ingredient.IngredientRecipeId!.Value
-            };
-
-            if (recipesCreated.Add(ingredient.UserIngredientRecipe))
-            {
-                context.UserRecipes.Add(ingredient.UserIngredientRecipe);
-            }
-        }
-
-        var ingredientsCreated = new HashSet<UserIngredient>();
-        foreach (var queryResult in queryResults)
-        {
-            foreach (var ingredient in queryResult.RecipeIngredients
-                .Where(i => i.UserIngredient == null && i.Ingredient != null))
-            {
-                ingredient.UserIngredient = new UserIngredient()
+                recipeIngredient.UserRecipeIngredient = new UserRecipeIngredient()
                 {
                     UserId = UserOptions.Id,
-                    RecipeId = queryResult.Recipe.Id,
-                    IngredientId = ingredient.Ingredient!.Id,
+                    RecipeIngredientId = recipeIngredient.Id,
                 };
 
-                if (ingredientsCreated.Add(ingredient.UserIngredient))
+                if (userRecipeIngredientsCreated.Add(recipeIngredient.UserRecipeIngredient))
                 {
-                    context.UserIngredients.Add(ingredient.UserIngredient);
+                    context.UserRecipeIngredients.Add(recipeIngredient.UserRecipeIngredient);
+                }
+            }
+
+            // Add user recipes for the prep recipes.
+            if (recipeIngredient.UserIngredientRecipe == null && recipeIngredient.RawIngredientRecipeId.HasValue)
+            {
+                recipeIngredient.UserIngredientRecipe = new UserRecipe()
+                {
+                    Section = section,
+                    UserId = UserOptions.Id,
+                    RecipeId = recipeIngredient.IngredientRecipeId!.Value
+                };
+
+                if (recipesCreated.Add(recipeIngredient.UserIngredientRecipe))
+                {
+                    context.UserRecipes.Add(recipeIngredient.UserIngredientRecipe);
                 }
             }
         }

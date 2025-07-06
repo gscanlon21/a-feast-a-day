@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
 using Web.Controllers.User;
 using Web.Views.Ingredient;
-using Web.Views.Shared.Components.ManageIngredient;
 
 namespace Web.Controllers.Ingredients;
 
@@ -79,33 +78,6 @@ public class IngredientController : ViewController
         return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
     }
 
-    [HttpPost, Route("[action]/{recipeId}/{ingredientId}")]
-    public async Task<IActionResult> IgnoreIngredient(string email, string token, int recipeId, int ingredientId)
-    {
-        var user = await _userRepo.GetUser(email, token);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        var userIngredient = await _context.UserIngredients
-            .Where(ui => ui.IngredientId == ingredientId)
-            .Where(ui => ui.RecipeId == recipeId)
-            .Where(ui => ui.UserId == user.Id)
-            .FirstOrDefaultAsync();
-
-        // May be null if the ingredient was soft/hard deleted.
-        if (userIngredient == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        userIngredient.Ignore = !userIngredient.Ignore;
-        await _context.SaveChangesAsync();
-
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, recipeId, ingredientId, WasUpdated = true });
-    }
-
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
@@ -135,40 +107,6 @@ public class IngredientController : ViewController
             HasUserIngredient = true,
             Parameters = new UserManageIngredientViewModel.Params(email, token, recipeId, ingredientId)
         });
-    }
-
-    [HttpPost, Route("{recipeId}/{ingredientId}")]
-    public async Task<IActionResult> ManageIngredient(string email, string token, int recipeId, int ingredientId, ManageIngredientViewModel viewModel)
-    {
-        var user = await _userRepo.GetUser(email, token);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        if (!ModelState.IsValid)
-        {
-            return await ManageIngredient(email, token, recipeId, ingredientId, wasUpdated: false);
-        }
-
-        var existingUserIngredient = await _context.UserIngredients
-            .Where(ui => ui.IngredientId == ingredientId)
-            .Where(ui => ui.RecipeId == recipeId)
-            .Where(ui => ui.UserId == user.Id)
-            .FirstOrDefaultAsync();
-
-        if (existingUserIngredient == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        existingUserIngredient.Notes = viewModel.UserIngredient.Notes;
-        existingUserIngredient.SubstituteScale = viewModel.UserIngredient.SubstituteScale;
-        existingUserIngredient.SubstituteRecipeId = viewModel.UserIngredient.SubstituteRecipeId;
-        existingUserIngredient.SubstituteIngredientId = viewModel.UserIngredient.SubstituteIngredientId;
-        await _context.SaveChangesAsync();
-
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, recipeId, ingredientId, wasUpdated = true });
     }
 
     [HttpPost, Route("[action]")]

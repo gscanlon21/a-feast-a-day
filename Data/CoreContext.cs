@@ -32,9 +32,9 @@ public class CoreContext : DbContext
     public DbSet<UserSection> UserSections { get; set; } = null!;
     public DbSet<UserFootnote> UserFootnotes { get; set; } = null!;
     public DbSet<UserNutrient> UserNutrients { get; set; } = null!;
-    public DbSet<UserIngredient> UserIngredients { get; set; } = null!;
     public DbSet<UserFeastRecipe> UserFeastRecipes { get; set; } = null!;
     public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
+    public DbSet<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
     public DbSet<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,7 +43,7 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserSection>().HasKey(sc => new { sc.UserId, sc.Section });
         modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserRecipe>().HasKey(sc => new { sc.UserId, sc.RecipeId, sc.Section });
-        modelBuilder.Entity<UserIngredient>().HasKey(sc => new { sc.UserId, sc.IngredientId, sc.RecipeId });
+        modelBuilder.Entity<UserRecipeIngredient>().HasKey(sc => new { sc.UserId, sc.RecipeIngredientId });
         modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
         modelBuilder.Entity<StudyIngredient>().HasKey(sc => new { sc.StudyId, sc.IngredientId });
 
@@ -53,8 +53,8 @@ public class CoreContext : DbContext
         modelBuilder.Entity<RecipeInstruction>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserToken>().HasQueryFilter(p => p.Expires > DateTime.UtcNow);
         modelBuilder.Entity<UserRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
-        modelBuilder.Entity<UserIngredient>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
+        modelBuilder.Entity<UserRecipeIngredient>().HasQueryFilter(p => p.RecipeIngredient.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipeIngredient>().HasQueryFilter(p => p.UserFeastRecipe.Recipe.DisabledReason == null);
 
         // Set the default value of the db columns be attributes.

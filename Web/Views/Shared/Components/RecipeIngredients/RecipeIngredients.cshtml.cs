@@ -1,6 +1,4 @@
-﻿using Core.Dtos.Ingredient;
-using Core.Dtos.User;
-using Core.Models.Newsletter;
+﻿using Core.Dtos.User;
 using System.ComponentModel.DataAnnotations;
 using Web.Views.Recipe;
 
@@ -10,13 +8,8 @@ public class RecipeIngredientsViewModel
 {
     public required UserManageRecipeViewModel.Params Parameters { get; init; }
 
-    [Display(Name = "Ignored Ingredients")]
-    public required IList<IngredientDto> IgnoredIngredients { get; init; }
-
-    [Display(Name = "Ingredients")]
-    public required IList<IngredientDto> Ingredients { get; init; }
+    [Display(Name = "Recipe Ingredients")]
+    public required IList<Data.Entities.Recipe.RecipeIngredient> RecipeIngredients { get; init; }
 
     public required UserNewsletterDto User { get; init; }
-
-    public Verbosity IngredientVerbosity => User?.Verbosity ?? Verbosity.Images;
 }

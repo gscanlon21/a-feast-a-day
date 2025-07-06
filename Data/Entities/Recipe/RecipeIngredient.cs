@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Data.Entities.User;
 using Fractions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -70,6 +71,9 @@ public class RecipeIngredient
 
     [JsonInclude, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredientRecipes))]
     public virtual Recipe IngredientRecipe { get; set; } = null!;
+
+    [JsonInclude, InverseProperty(nameof(UserRecipeIngredient.RecipeIngredient))]
+    public virtual ICollection<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
 
 
     public override int GetHashCode() => HashCode.Combine(Id);

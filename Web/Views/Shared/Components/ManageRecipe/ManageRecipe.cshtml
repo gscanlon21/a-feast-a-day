@@ -1,4 +1,4 @@
-﻿@model Views.Shared.Components.ManageRecipe.ManageRecipeViewModel
+﻿@model ManageRecipeViewModel
 @using Lib.Pages.Shared.Recipe
 @using Microsoft.AspNetCore.Components
 @using Core.Dtos.User
@@ -17,13 +17,13 @@
         <label for="recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe)</label>
         <div class="input-group">
             <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
-            <div class="row m-0 input-group-vertical max-width--min-content">
-                @if (!Model.Recipe.Recipe.BaseRecipe) 
-                {
+            @if (Model.Parameters.Section != Section.Prep)
+            {
+                <div class="row m-0 input-group-vertical max-width--min-content">
                     <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil < DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
-                }
-                <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
-            </div>
+                    <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
+                </div>
+            }
         </div>
 
         <span asp-validation-for="Recipe" class="text-danger"></span>
@@ -32,28 +32,31 @@
         </div>
     </div>
 
-    <form id="swap-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.SwapRecipe)" method="post"
-          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
-    </form>
-    <form id="refresh-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
-          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
-    </form>
+    @if (Model.Parameters.Section != Section.Prep) 
+    {
+        <form id="swap-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.SwapRecipe)" method="post"
+              asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
+        </form>
+        <form id="refresh-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
+              asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
+        </form>
     
-    <div class="mb-3">
-        <div>
-            <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
-            <div class="input-group">
-                <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
-                <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
-                <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
-            </div>
+        <div class="mb-3">
+            <div>
+                <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
+                <div class="input-group">
+                    <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
+                    <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
+                    <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
+                </div>
 
-            <span asp-validation-for="UserRecipe" class="text-danger"></span>
-            <div id="recipe-date-help" class="form-text">
-                @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
+                <span asp-validation-for="UserRecipe" class="text-danger"></span>
+                <div id="recipe-date-help" class="form-text">
+                    @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
+                </div>
             </div>
         </div>
-    </div>
+    }
 
     <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.LogRecipe)" method="post" class="mb-4"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
@@ -66,15 +69,15 @@
             <span asp-validation-for="Notes" class="text-danger"></span>
         </div>
 
-        @if (Model.User.IsDemoUser)
-        {
-            <div class="alert alert-info callout">
-                Customize how long you want to see recipes before they refresh.
-            </div>
-        }
-
         @if (Model.Parameters.Section != Section.Prep) 
         {
+            if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
+                    Customize how long you want to see recipes before they refresh.
+                </div>
+            }
+
             <div class="mb-3 mt-3">
                 <label asp-for="LagRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.LagRefreshXWeeks)</label>
                 <div style="display:flex;column-gap:1ex;">

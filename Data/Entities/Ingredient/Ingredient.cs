@@ -91,11 +91,11 @@ public class Ingredient
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual ICollection<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(UserIngredient.Ingredient))]
-    public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];
+    //[JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.Ingredient))]
+    //public virtual ICollection<UserRecipeIngredient> UserIngredients { get; private init; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(UserIngredient.SubstituteIngredient))]
-    public virtual ICollection<UserIngredient> UserSubstituteIngredients { get; private init; } = [];
+    [JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.SubstituteIngredient))]
+    public virtual ICollection<UserRecipeIngredient> UserSubstituteIngredients { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.Ingredient))]
     public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; private init; } = null!;

@@ -440,52 +440,6 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "user_ingredient",
-                columns: table => new
-                {
-                    UserId = table.Column<int>(type: "integer", nullable: false),
-                    RecipeId = table.Column<int>(type: "integer", nullable: false),
-                    IngredientId = table.Column<int>(type: "integer", nullable: false),
-                    SubstituteScale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
-                    SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
-                    SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
-                    Notes = table.Column<string>(type: "text", nullable: true),
-                    Ignore = table.Column<bool>(type: "boolean", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_user_ingredient", x => new { x.UserId, x.IngredientId, x.RecipeId });
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_ingredient_IngredientId",
-                        column: x => x.IngredientId,
-                        principalTable: "ingredient",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_ingredient_SubstituteIngredientId",
-                        column: x => x.SubstituteIngredientId,
-                        principalTable: "ingredient",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_recipe_RecipeId",
-                        column: x => x.RecipeId,
-                        principalTable: "recipe",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_recipe_SubstituteRecipeId",
-                        column: x => x.SubstituteRecipeId,
-                        principalTable: "recipe",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_user_ingredient_user_UserId",
-                        column: x => x.UserId,
-                        principalTable: "user",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "user_recipe",
                 columns: table => new
                 {
@@ -566,6 +520,45 @@ namespace Data.Migrations
                         name: "FK_study_ingredient_study_StudyId",
                         column: x => x.StudyId,
                         principalTable: "study",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "user_recipe_ingredient",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "integer", nullable: false),
+                    RecipeIngredientId = table.Column<int>(type: "integer", nullable: false),
+                    SubstituteScale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
+                    SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
+                    SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    Ignore = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_recipe_ingredient", x => new { x.UserId, x.RecipeIngredientId });
+                    table.ForeignKey(
+                        name: "FK_user_recipe_ingredient_ingredient_SubstituteIngredientId",
+                        column: x => x.SubstituteIngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_user_recipe_ingredient_recipe_SubstituteRecipeId",
+                        column: x => x.SubstituteRecipeId,
+                        principalTable: "recipe",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_user_recipe_ingredient_recipe_ingredient_RecipeIngredientId",
+                        column: x => x.RecipeIngredientId,
+                        principalTable: "recipe_ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_user_recipe_ingredient_user_UserId",
+                        column: x => x.UserId,
+                        principalTable: "user",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -700,29 +693,24 @@ namespace Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_user_ingredient_IngredientId",
-                table: "user_ingredient",
-                column: "IngredientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_user_ingredient_RecipeId",
-                table: "user_ingredient",
-                column: "RecipeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_user_ingredient_SubstituteIngredientId",
-                table: "user_ingredient",
-                column: "SubstituteIngredientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_user_ingredient_SubstituteRecipeId",
-                table: "user_ingredient",
-                column: "SubstituteRecipeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_user_recipe_RecipeId",
                 table: "user_recipe",
                 column: "RecipeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_recipe_ingredient_RecipeIngredientId",
+                table: "user_recipe_ingredient",
+                column: "RecipeIngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_recipe_ingredient_SubstituteIngredientId",
+                table: "user_recipe_ingredient",
+                column: "SubstituteIngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_recipe_ingredient_SubstituteRecipeId",
+                table: "user_recipe_ingredient",
+                column: "SubstituteRecipeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_token_UserId_Token",
@@ -743,9 +731,6 @@ namespace Data.Migrations
                 name: "nutrient");
 
             migrationBuilder.DropTable(
-                name: "recipe_ingredient");
-
-            migrationBuilder.DropTable(
                 name: "recipe_instruction");
 
             migrationBuilder.DropTable(
@@ -764,13 +749,13 @@ namespace Data.Migrations
                 name: "user_footnote");
 
             migrationBuilder.DropTable(
-                name: "user_ingredient");
-
-            migrationBuilder.DropTable(
                 name: "user_nutrient");
 
             migrationBuilder.DropTable(
                 name: "user_recipe");
+
+            migrationBuilder.DropTable(
+                name: "user_recipe_ingredient");
 
             migrationBuilder.DropTable(
                 name: "user_section");
@@ -785,16 +770,19 @@ namespace Data.Migrations
                 name: "user_feast_recipe");
 
             migrationBuilder.DropTable(
-                name: "ingredient");
+                name: "recipe_ingredient");
 
             migrationBuilder.DropTable(
                 name: "snp");
 
             migrationBuilder.DropTable(
-                name: "recipe");
+                name: "user_feast");
 
             migrationBuilder.DropTable(
-                name: "user_feast");
+                name: "ingredient");
+
+            migrationBuilder.DropTable(
+                name: "recipe");
 
             migrationBuilder.DropTable(
                 name: "gene");

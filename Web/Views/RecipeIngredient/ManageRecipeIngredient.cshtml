@@ -1,26 +1,23 @@
-﻿@model UserManageIngredientViewModel
+﻿@model UserManageRecipeIngredientViewModel
 @using Core.Models.Recipe
 @using Web.Code.Extensions
 
 @{
-    ViewData[ViewData_Blank.Title] = "Ingredient";
+    ViewData[ViewData_Blank.Title] = "Recipe Ingredient";
 }
 
 <div class="row gy-2 mb-2 mt-1 justify-content-between align-items-end">
     <div class="col-auto mb-3">
-        <h1 class="primary-heading">Ingredient</h1>
+        <h1 class="primary-heading">Recipe Ingredient</h1>
     </div>
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
 </div>
 
-<div class="alert alert-secondary">
     <div class="row gy-2">
-        <div class="col">
-            <h6 class="mb-1">Edit Ingredient</h6>
-            @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient })
+        <div class="col-lg-6">
+            @await Component.InvokeAsync(ManageRecipeIngredientViewComponent.Name, new { Model.User, Model.RecipeIngredient, Model.Parameters })
         </div>
     </div>
-</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" model='new ValidationScriptsPartialViewModel() { IsDemoUser = Model.User.IsDemoUser }' />

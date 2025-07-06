@@ -71,17 +71,14 @@ public class Recipe
     [JsonInclude, InverseProperty(nameof(RecipeInstruction.Recipe))]
     public virtual IList<RecipeInstruction> Instructions { get; set; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(UserIngredient.Recipe))]
-    public virtual ICollection<UserIngredient> UserIngredients { get; private init; } = [];
-
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.Recipe))]
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserRecipe.Recipe))]
     public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(UserIngredient.SubstituteRecipe))]
-    public virtual ICollection<UserIngredient> UserSubstituteRecipes { get; private init; } = [];
+    [JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.SubstituteRecipe))]
+    public virtual ICollection<UserRecipeIngredient> UserSubstituteRecipes { get; private init; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Recipe other

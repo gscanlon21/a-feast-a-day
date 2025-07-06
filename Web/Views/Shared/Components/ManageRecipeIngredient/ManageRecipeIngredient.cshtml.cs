@@ -1,28 +1,24 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
-using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
-using Web.Views.Ingredient;
+using Web.Views.RecipeIngredient;
 
-namespace Web.Views.Shared.Components.ManageIngredient;
+namespace Web.Views.Shared.Components.ManageRecipeIngredient;
 
-public class ManageIngredientViewModel : IValidatableObject
+public class ManageRecipeIngredientViewModel : IValidatableObject
 {
     [ValidateNever]
-    public required UserManageIngredientViewModel.Params Parameters { get; init; }
+    public required UserManageRecipeIngredientViewModel.Params Parameters { get; init; }
 
     [ValidateNever]
     public required Data.Entities.User.User User { get; init; }
 
-    [ValidateNever, Display(Name = "Ingredient", Description = "Ignore this ingredient.")]
-    public required IngredientDto Ingredient { get; init; }
-
     [ValidateNever, Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
-    public required Data.Entities.User.UserIngredient UserIngredient { get; init; }
+    public required Data.Entities.User.UserRecipeIngredient UserRecipeIngredient { get; init; }
 
-    [ValidateNever]
-    public required RecipeIngredient RecipeIngredient { get; init; }
+    [ValidateNever, Display(Name = "Recipe Ingredient", Description = "Ignore this recipe's ingredient.")]
+    public required Data.Entities.Recipe.RecipeIngredient RecipeIngredient { get; init; }
 
     /// <summary>
     /// Recipes that the user is able to select as an ingredient alternative.
@@ -46,13 +42,13 @@ public class ManageIngredientViewModel : IValidatableObject
     /// Don't allow ignoring non-optional ingredients if they aren't areadly ignored.
     /// </summary>
     [ValidateNever]
-    public bool DenyIgnoringIngredient => !RecipeIngredient.Optional && !UserIngredient.Ignore;
+    public bool DenyIgnoringIngredient => !RecipeIngredient.Optional && !UserRecipeIngredient.Ignore;
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
-        if (UserIngredient?.SubstituteIngredientId.HasValue == true && UserIngredient?.SubstituteRecipeId.HasValue == true)
+        if (UserRecipeIngredient?.SubstituteIngredientId.HasValue == true && UserRecipeIngredient?.SubstituteRecipeId.HasValue == true)
         {
-            yield return new ValidationResult($"Both Substitute Ingredient and Substitute Recipe cannot have values.", [nameof(UserIngredient)]);
+            yield return new ValidationResult($"Both Substitute Ingredient and Substitute Recipe cannot have values.", [nameof(UserRecipeIngredient)]);
         }
     }
 }

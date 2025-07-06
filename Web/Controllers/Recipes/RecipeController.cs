@@ -181,6 +181,7 @@ public class RecipeController : ViewController
         }
 
         var userRecipe = await _context.UserRecipes
+            .Where(ur => ur.Section != Section.Prep)
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
@@ -210,6 +211,7 @@ public class RecipeController : ViewController
         }
 
         var userRecipe = await _context.UserRecipes
+            .Where(ur => ur.Section != Section.Prep)
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
@@ -286,18 +288,13 @@ public class RecipeController : ViewController
         }
 
         var userRecipes = await _context.UserRecipes
+            .Where(ur => ur.Section != Section.Prep)
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.UserId == user.Id)
             .ToListAsync();
 
         foreach (var userRecipe in userRecipes)
         {
-            // Don't ignore the base "None" section if ignoring other sections.
-            if (section != Section.None && userRecipe.Section == Section.None)
-            {
-                continue;
-            }
-
             userRecipe.IgnoreUntil = userRecipe.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null;
             await _context.SaveChangesAsync();
         }
@@ -315,6 +312,7 @@ public class RecipeController : ViewController
         }
 
         var userRecipe = await _context.UserRecipes
+            .Where(ur => ur.Section != Section.Prep)
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
