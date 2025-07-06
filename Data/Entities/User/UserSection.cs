@@ -42,10 +42,10 @@ public class UserSection
     public static readonly IDictionary<Section, int> DefaultWeight = new Dictionary<Section, int>
     {
         [Section.Breakfast] = 5,
-        [Section.Lunch] = 7,
+        [Section.Lunch] = 6,
         [Section.Dinner] = 7,
         [Section.Sides] = 4,
-        [Section.Snacks] = 4,
+        [Section.Snacks] = 3,
         [Section.Dessert] = 2,
         [Section.Drinks] = 1,
     };

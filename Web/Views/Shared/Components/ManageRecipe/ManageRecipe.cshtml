@@ -18,8 +18,8 @@
         <div class="input-group">
             <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
             <div class="row m-0 input-group-vertical max-width--min-content">
-                <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil.GetValueOrDefault() != DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
-                <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil.GetValueOrDefault() == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
+                <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil < DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
+                <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
             </div>
         </div>
 
@@ -42,7 +42,7 @@
             <div class="input-group">
                 <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
                 <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
-                <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary btn-sm" />
+                <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
             </div>
 
             <span asp-validation-for="UserRecipe" class="text-danger"></span>
