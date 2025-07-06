@@ -18,7 +18,7 @@
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label for="Recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
             <div class="input-group">
                 <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@Model.Ingredient.Name</textarea>
@@ -36,13 +36,13 @@
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group mb-3 mt-3">
+        <div class="mb-3 mt-3">
             <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.Notes)</label>
             <input type="text" asp-for="UserIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserIngredient.Notes" />
             <span asp-validation-for="UserIngredient.Notes" class="text-danger"></span>
         </div>
 
-        <div class="form-group row row-gap-2 my-3">
+        <div class="row row-gap-2 my-3">
             <div class="col-md">
                 <label asp-for="UserIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteIngredientId)</label>
                 <select asp-for="UserIngredient.SubstituteIngredientId" class="form-control searchable" aria-describedby="ingredient-help"
@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="UserIngredient.SubstituteScale" class="control-label">@Html.DisplayNameFor(_ => Model.UserIngredient.SubstituteScale)</label>
             <div style="display:flex;column-gap:1ch;">
                 <output name="substituteScale" for="@Html.IdFor(_ => Model.UserIngredient.SubstituteScale)">@Model.UserIngredient.SubstituteScale</output>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div>
             <input type="submit" value="Save" class="btn btn-primary" />
         </div>
     </form>

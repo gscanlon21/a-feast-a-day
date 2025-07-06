@@ -223,7 +223,7 @@
 229	\N	Xanthan Gum	https://www.eatthismuch.com/food/nutrition/xanthan-gum,2997176/	\N	f	0	9	9	2024-07-30	7	144	0
 230	\N	Dry Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	0	244	244	2024-08-02	6	240	0
 231	\N	Garden Veggie Good Thins, GF	Box	\N	f	4096	2	32	2024-08-13	0	224	262144
-232	\N	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679	\N	f	0	28	28	2024-10-21	7	224	3
+232	\N	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679	\N	f	0	28	30	2024-10-21	4	240	8
 233	\N	Sunflower Oil	https://www.eatthismuch.com/calories/sunflower-oil,292	\N	f	0	14	14	2024-09-18	7	224	3
 234	\N	Superfine Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	f	0	28	200	2025-01-16	4	200	114688
 235	\N	Chinese Cooking Wine	https://www.eatthismuch.com/calories/rice-cooking-wine-551415	\N	f	0	30	30	2025-01-23	9	240	8192
@@ -378,7 +378,7 @@
 389	\N	Frozen Mixed Chopped Onion, Carrot, and Celery	https://www.eatthismuch.com/calories/mixed-vegetables-2256	\N	f	0	225	225	2024-12-15	6	225	67108864
 390	\N	Halloumi Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	256	28	28	2025-03-04	4	224	0
 391	\N	Boneless Skinless Chicken Thighs	https://www.eatthismuch.com/calories/boneless-skinless-chicken-thighs-4591083	\N	f	0	28	112	2025-03-23	0	224	268435456
-392	\N	Pesto	https://www.eatthismuch.com/calories/pesto-2443368	\N	f	0	28	60	2024-07-01	4	240	128
+392	\N	Pesto	https://www.eatthismuch.com/calories/sauce-pesto-ready-to-serve-shelf-stable-470389	\N	f	0	28	61	2025-07-06	4	244	128
 393	\N	Pistou	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	0	28.35	28.35	2025-07-04	4	100	6
 394	\N	Pesto | Pistou	https://www.eatthismuch.com/calories/basil-pesto-144308	\N	f	0	28	60	2025-07-01	4	240	512
 395	\N	Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	786464	240	240	2025-06-15	0	240	4
@@ -824,7 +824,7 @@
 989	\N	Steak Sauce	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2024-07-04	7	100	0
 990	\N	Pumpkin Purée	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
 991	\N	Coconut Aminos	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
-992	\N	Mascarpone Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	8388608
+992	\N	Mascarpone Cheese	https://www.eatthismuch.com/calories/mascarpone-fresh-cheese-129296	\N	f	256	28	28	2025-07-06	4	224	8388608
 993	\N	Hot Water	\N	\N	t	0	240	240	2025-06-13	6	240	0
 994	\N	Chlorophyll	\N	\N	t	0	240	240	2025-06-14	6	240	0
 995	\N	Cashew Butter	https://www.eatthismuch.com/calories/cashew-milk-2895383	\N	f	0	240	100	2024-11-02	6	240	4194304
@@ -919,4 +919,4 @@
 1118	\N	Mixed-Color Baby Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
 1119	\N	Creamy Horseradish	\N	\N	f	0	28	50	2024-10-24	4	100	32
 1120	\N	Reduced-Fat Crème Fraîche	https://www.eatthismuch.com/calories/creme-fraiche-1706554	\N	f	324	28	30	2024-11-16	4	240	29360128
-1121	\N	Bresaola	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	4	224	268435456
+1121	\N	Bresaola	https://www.eatthismuch.com/calories/cured-beef-thin-sliced-beef-2792	\N	f	0	28	28	2024-12-10	4	224	268435456

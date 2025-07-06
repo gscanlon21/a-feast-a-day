@@ -1,5 +1,4 @@
 ﻿using Core.Models.Newsletter;
-using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
@@ -24,9 +23,6 @@ public class Recipe
 
     [Required]
     public Section Section { get; set; }
-
-    [Required]
-    public Equipment Equipment { get; set; }
 
     [Required]
     public Measure Measure { get; set; } = Measure.None;

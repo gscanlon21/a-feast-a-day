@@ -71,12 +71,14 @@ public static class Filters
         {
             if (equipment == Equipment.None)
             {
-                query = query.Where(i => i.Recipe.Equipment == Equipment.None);
+                query = query.Where(r => r.Recipe.Instructions.All(i => i.Equipment == Equipment.None));
             }
             else
             {
-                var allEquipment = equipment.Value.WithOptionalEquipment();
-                query = query.Where(i => allEquipment.HasFlag(i.Recipe.Equipment));
+                query = query.Where(r => r.Recipe.Instructions.All(i =>
+                    i.Equipment == Equipment.None // Has an flag:
+                    || (i.Equipment & equipment.Value) != 0
+                ));
             }
         }
 

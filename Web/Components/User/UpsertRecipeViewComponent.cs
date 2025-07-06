@@ -81,9 +81,8 @@ public class UpsertRecipeViewComponent : ViewComponent
 
     private async Task<IList<SelectListItem>> GetRecipeSelect(Data.Entities.User.User user)
     {
-        var allEquipment = user.Equipment.WithOptionalEquipment();
-        return (await _context.Recipes.AsNoTracking().TagWithCallSite()
-            .Where(r => r.UserId == null || allEquipment.HasFlag(r.Equipment))
+        return (await _context.Recipes.AsNoTracking().TagWithCallSite() // Has any flag:
+            .Where(r => r.UserId == null || r.Instructions.All(i => (i.Equipment & user.Equipment) != 0 || i.Equipment == Equipment.None))
             .Where(r => r.UserId == null || r.UserId == user.Id)
             .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)

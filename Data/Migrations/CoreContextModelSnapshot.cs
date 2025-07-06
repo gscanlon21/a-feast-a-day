@@ -17,7 +17,7 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.5")
+                .HasAnnotation("ProductVersion", "9.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -395,9 +395,6 @@ namespace Data.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
-                    b.Property<long>("Equipment")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("Image")
                         .HasColumnType("text");
 
@@ -499,6 +496,9 @@ namespace Data.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
+                    b.Property<int>("Equipment")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -570,8 +570,8 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("Equipment")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Equipment")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Features")
                         .HasColumnType("integer");

@@ -51,7 +51,7 @@ namespace Data.Migrations
                     AcceptedTerms = table.Column<bool>(type: "boolean", nullable: false),
                     FootnoteType = table.Column<int>(type: "integer", nullable: false),
                     SendDay = table.Column<int>(type: "integer", nullable: false),
-                    Equipment = table.Column<long>(type: "bigint", nullable: false),
+                    Equipment = table.Column<int>(type: "integer", nullable: false),
                     SendHour = table.Column<int>(type: "integer", nullable: false),
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
                     CreatedDate = table.Column<DateOnly>(type: "date", nullable: false),
@@ -128,7 +128,6 @@ namespace Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: true),
                     Section = table.Column<int>(type: "integer", nullable: false),
-                    Equipment = table.Column<long>(type: "bigint", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Link = table.Column<string>(type: "text", nullable: true),
@@ -424,6 +423,7 @@ namespace Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Order = table.Column<int>(type: "integer", nullable: false),
+                    Equipment = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     DisabledReason = table.Column<string>(type: "text", nullable: true),
                     RecipeId = table.Column<int>(type: "integer", nullable: false)

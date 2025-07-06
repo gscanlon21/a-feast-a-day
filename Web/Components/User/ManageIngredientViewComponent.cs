@@ -58,10 +58,9 @@ public class ManageIngredientViewComponent : ViewComponent
     /// </summary>
     private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
     {
-        var allEquipment = user.Equipment.WithOptionalEquipment();
         return await _context.Recipes.AsNoTracking().TagWithCallSite()
-            .Where(r => r.UserId == null || r.UserId == user.Id)
-            .Where(r => allEquipment.HasFlag(r.Equipment))
+            .Where(r => r.UserId == null || r.UserId == user.Id) // Has any flag:
+            .Where(r => r.Instructions.All(i => (i.Equipment & user.Equipment) != 0 || i.Equipment == Equipment.None))
             .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)
             .ToListAsync();

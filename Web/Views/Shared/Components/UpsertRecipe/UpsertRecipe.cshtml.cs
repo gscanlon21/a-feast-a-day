@@ -29,10 +29,6 @@ public class UpsertRecipeModel : IValidatableObject
     [Display(Name = "Section")]
     public Section Section { get; set; }
 
-    [Required]
-    [Display(Name = "Equipment")]
-    public Equipment Equipment { get; set; }
-
     [Display(Name = "Measure")]
     public Measure Measure { get; set; } = Measure.None;
 
@@ -78,13 +74,6 @@ public class UpsertRecipeModel : IValidatableObject
     {
         get => Enum.GetValues<Section>().Where(e => Section.HasFlag(e)).ToArray();
         set => Section = value?.Aggregate(Section.None, (a, e) => a | e) ?? Section.None;
-    }
-
-    [NotMapped]
-    public Equipment[]? EquipmentBinder
-    {
-        get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
-        set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
     [NotMapped]

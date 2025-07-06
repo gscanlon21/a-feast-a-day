@@ -99,7 +99,6 @@ public class RecipeController : ViewController
                 Servings = recipe.Servings,
                 CookTime = recipe.CookTime,
                 PrepTime = recipe.PrepTime,
-                Equipment = recipe.Equipment,
                 BaseRecipe = recipe.BaseRecipe,
                 AdjustableServings = recipe.AdjustableServings,
                 KeepIngredientOrder = recipe.KeepIngredientOrder,
@@ -137,7 +136,6 @@ public class RecipeController : ViewController
             existingRecipe.Servings = recipe.Servings;
             existingRecipe.CookTime = recipe.CookTime;
             existingRecipe.PrepTime = recipe.PrepTime;
-            existingRecipe.Equipment = recipe.Equipment;
             existingRecipe.BaseRecipe = recipe.BaseRecipe;
             existingRecipe.AdjustableServings = recipe.AdjustableServings;
             existingRecipe.KeepIngredientOrder = recipe.KeepIngredientOrder;
@@ -294,6 +292,12 @@ public class RecipeController : ViewController
 
         foreach (var userRecipe in userRecipes)
         {
+            // Don't ignore the base "None" section if ignoring other sections.
+            if (section != Section.None && userRecipe.Section == Section.None)
+            {
+                continue;
+            }
+
             userRecipe.IgnoreUntil = userRecipe.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null;
             await _context.SaveChangesAsync();
         }

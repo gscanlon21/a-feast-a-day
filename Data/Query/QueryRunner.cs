@@ -416,7 +416,8 @@ public class QueryRunner(Section section)
                 {
                     Scale = ia.Scale,
                     Ingredient = ia.AlternativeIngredient,
-                }).FirstOrDefault(i => /* Has any flag: */ (i.Ingredient.Allergens & UserOptions.Allergens) == 0)
+                    // Should be no overlap between ingredient allergens and user allergens.
+                }).FirstOrDefault(i => (i.Ingredient.Allergens & UserOptions.Allergens) == 0)
             }).ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
                 if (ri.SubIngredient == null) { return ri.AltsIngredient; }

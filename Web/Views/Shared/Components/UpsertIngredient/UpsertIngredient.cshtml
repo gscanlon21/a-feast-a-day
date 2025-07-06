@@ -10,15 +10,15 @@
         
         <input asp-for="Ingredient.Id" type="hidden" class="form-control" />
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.Name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Name)</label>
             <input asp-for="Ingredient.Name" type="text" class="form-control" required="required" />
         </div>
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Notes)</label>
             <input asp-for="Ingredient.Notes" type="text" class="form-control" />
         </div>
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.DefaultMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.DefaultMeasure)</label>
             <select asp-for="Ingredient.DefaultMeasure" class="form-control" aria-describedby="measure-help"
                     asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems())">
@@ -26,25 +26,25 @@
             <span asp-validation-for="Ingredient.DefaultMeasure" class="text-danger"></span>
             <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
         </div>
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.GramsPerMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerMeasure)</label>
             <input asp-for="Ingredient.GramsPerMeasure" type="text" class="form-control" aria-describedby="grams-measure-help" />
             <span asp-validation-for="Ingredient.GramsPerMeasure" class="text-danger"></span>
             <span id="grams-measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerMeasure)</span>
         </div>
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.GramsPerCup" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerCup)</label>
             <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" aria-describedby="grams-cup-help" />
             <span asp-validation-for="Ingredient.GramsPerCup" class="text-danger"></span>
             <span id="grams-cups-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerCup)</span>
         </div>
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.GramsPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerServing)</label>
             <input asp-for="Ingredient.GramsPerServing" type="text" class="form-control" aria-describedby="grams-serving-help" />
             <span asp-validation-for="Ingredient.GramsPerServing" class="text-danger"></span>
             <span id="grams-serving-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerServing)</span>
         </div>
-        <div class="form-group form-check mb-3">
+        <div class="form-check mb-3">
             <div>
                 <span><label asp-for="Ingredient.SkipShoppingList" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.SkipShoppingList)</label></span>
                 <input class="form-check-input" asp-for="Ingredient.SkipShoppingList" aria-describedby="fitness-help" />
@@ -53,7 +53,7 @@
             <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.SkipShoppingList)</div>
         </div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.Category" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Category)</label>
             <select asp-for="Ingredient.Category" class="form-control overflow-auto" aria-describedby="category-help" 
                     asp-items="@(Enum.GetValues<Category>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
@@ -62,7 +62,7 @@
             <div id="category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Category)</div>
         </div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Ingredient.AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Allergens)</label>
             <select asp-for="Ingredient.AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="@Model.AllergenSelect.Count"
                     asp-items="@(Model.AllergenSelect.AsSelectListItems(EnumViewExtensions.EnumOrdering.Text))">
@@ -77,7 +77,7 @@
             <div class="mb-3 row">
                 <input type="hidden" asp-for="Nutrients[i].Nutrients" />
 
-                <div class="form-group col order-md-last">
+                <div class="col order-md-last">
                     <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
 
                     <input type="number" asp-for="Nutrients[i].Value" step="@Nutrient.Consts.ValueStep" min="@Nutrient.Consts.ValueMin" max="@Nutrient.Consts.ValueMax" class="form-control" />
@@ -85,7 +85,7 @@
                     <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(DisplayType.Description)</div>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="col-md-3">
                     <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
                     <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto"
                             asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
@@ -95,7 +95,7 @@
             </div>
         }
 
-        <div class="row form-group justify-content-end gy-2">
+        <div class="row justify-content-end gy-2">
             <div class="col">
                 <input type="submit" value="Save" class="btn btn-secondary" form="ingredient-form" />
             </div>

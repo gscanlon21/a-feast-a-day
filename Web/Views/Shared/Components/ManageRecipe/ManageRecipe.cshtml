@@ -13,12 +13,15 @@
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
     </form>
 
-    <div class="form-group mb-3">
+    <div class="mb-3">
         <label for="recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe)</label>
         <div class="input-group">
             <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
             <div class="row m-0 input-group-vertical max-width--min-content">
-                <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil < DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
+                @if (!Model.Recipe.Recipe.BaseRecipe) 
+                {
+                    <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil < DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
+                }
                 <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
             </div>
         </div>
@@ -36,8 +39,8 @@
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
     </form>
     
-    <div class="form-group mb-3">
-        <div class="form-group">
+    <div class="mb-3">
+        <div>
             <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
             <div class="input-group">
                 <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
@@ -57,7 +60,7 @@
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group mb-3 mt-3">
+        <div class="mb-3 mt-3">
             <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Notes)</label>
             <input type="text" asp-for="Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.Notes" />
             <span asp-validation-for="Notes" class="text-danger"></span>
@@ -72,7 +75,7 @@
 
         @if (Model.Parameters.Section != Section.Prep) 
         {
-            <div class="form-group mb-3 mt-3">
+            <div class="mb-3 mt-3">
                 <label asp-for="LagRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.LagRefreshXWeeks)</label>
                 <div style="display:flex;column-gap:1ex;">
                     <output name="refreshFunctionalOutput" for="@Html.IdFor(_ => Model.LagRefreshXWeeks)">@Model.LagRefreshXWeeks</output>
@@ -92,7 +95,7 @@
                 </details>
             </div>
 
-            <div class="form-group mb-3 mt-3">
+            <div class="mb-3 mt-3">
                 <label asp-for="PadRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.PadRefreshXWeeks)</label>
                 <div style="display:flex;column-gap:1ex;">
                     <output name="delayFunctionalOutput" for="@Html.IdFor(_ => Model.PadRefreshXWeeks)">@Model.PadRefreshXWeeks</output>
@@ -120,7 +123,7 @@
 
         @if (Model.Recipe.Recipe.AdjustableServings)
         {
-            <div class="form-group mb-3 mt-3">
+            <div class="mb-3 mt-3">
                 <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
                 <div style="display:flex;column-gap:1ex;">
                     <output name="scaleOutput" for="@Html.IdFor(_ => Model.Servings)">@Model.Servings</output>
@@ -139,7 +142,7 @@
             <input asp-for="Servings" type="hidden" value="@Model.Recipe.Recipe.Servings" />
         }
 
-        <div class="form-group">
+        <div>
             <input type="submit" value="Save" class="btn btn-primary allow-demo" />
         </div>
     </form>

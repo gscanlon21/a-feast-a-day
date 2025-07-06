@@ -17,14 +17,14 @@
 
             @if (!Model.User.IsDemoUser) 
             {
-                <div class="form-group mb-3">
+                <div class="mb-3">
                     <label for="disabled-email" class="control-label">@Html.DisplayNameFor(_ => Model.Email)</label>
                     <input id="disabled-email" value="@Model.Email" class="form-control" disabled="disabled" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
             }
 
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="SendDay" class="control-label">@Html.DisplayNameFor(_ => Model.SendDay)</label>
                 <select asp-for="SendDay" class="form-control overflow-auto" aria-describedby="rest-help"
                         asp-items="@(Enum.GetValues<DayOfWeek>().AsSelectListItems())">
@@ -33,7 +33,7 @@
                 <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.SendDay)</div>
             </div>
 
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="MaxIngredients" class="control-label">@Html.DisplayNameFor(_ => Model.MaxIngredients)</label>
                 <select asp-for="MaxIngredients" class="form-control" aria-describedby="ingredients-help"
                         asp-items="@(Enumerable.Range(4, 6).Select(h => new SelectListItem() { Text = $"{h}", Value = $"{h}" }).Prepend(new SelectListItem()))">
@@ -48,7 +48,7 @@
                     Customize weekly servings.
                 </div>
             }
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
                     <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserSections)</b></summary>
 
@@ -60,7 +60,7 @@
                             <div class="mb-3">
                                 <div><b>@Model.UserSections[i].Section.GetDisplayName2()</b></div>
 
-                                <div class="mb-1 form-group">
+                                <div class="mb-1 ">
                                     <label asp-for="UserSections[i].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].Weight)</label>
                                     <div style="display:flex;column-gap:1ch;">
                                         <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserSections[i])">@Model.UserSections[i].Weight</output>
@@ -80,7 +80,7 @@
                                 </div>
 
                                 <div class="mb-1">
-                                    <div class="form-group mb-3">
+                                    <div class="mb-3">
                                         <label asp-for="UserSections[i].AtLeastXNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)</label>
                                         <div style="display:flex;column-gap:1ex;">
                                             <output name="OutputAtLeastXNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)">@Model.UserSections[i].AtLeastXNutrientsPerRecipe</output>
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <details class="mb-3" @((Model.WasUpdated == false || Model.UserFamilies.Count(f => f.Person != Person.None) == 0) ? "open='open'" : "")>
                     <summary><b>Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
 
@@ -122,7 +122,7 @@
                                     <input id="hide-family-input-@id" type="hidden" asp-for="UserFamilies[id].Hide" />
                                     <input type="hidden" asp-for="UserFamilies[id].UserId" value="@Model.User.Id" />
 
-                                    <div class="form-group mb-2">
+                                    <div class="mb-2">
                                         <label asp-for="UserFamilies[id].Person" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Person)</label>
                                         <select asp-for="UserFamilies[id].Person" class="form-control overflow-auto" aria-describedby="footnote-help"
                                                 asp-items='@(EnumExtensions.GetDisplayValues<Person>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Value))'>
@@ -131,7 +131,7 @@
                                         <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Person)</div>
                                     </div>
 
-                                    <div class="form-group mb-2">
+                                    <div class="mb-2">
                                         <label asp-for="UserFamilies[id].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Weight)</label>
                                         <div style="display:flex;column-gap:1ex;">
                                             <output name="OutputFamilyWeight@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].Weight)">@Model.UserFamilies[id].Weight</output>
@@ -150,7 +150,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group mb-3">
+                                    <div class="mb-3">
                                         <label asp-for="UserFamilies[id].CaloriesPerDay" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].CaloriesPerDay)</label>
                                         <div style="display:flex;column-gap:1ex;">
                                             <output name="OutputFamilyCalories@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].CaloriesPerDay)">@Model.UserFamilies[id].CaloriesPerDay</output>
@@ -231,7 +231,7 @@
                     Recipes are chosen from equipment you have access to.
                 </div>
             }
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Equipment)</label>
                 <select asp-for="EquipmentBinder" class="form-control overflow-auto" aria-describedby="equipment-help" size="5"
                         asp-items="@(EnumExtensions.GetSingleOrDoubleValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
@@ -246,7 +246,7 @@
                 </details>
             </div>
 
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Allergens)</label>
                 <select asp-for="AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="5"
                         asp-items="@(EnumExtensions.GetSingleValues<Allergens>().AsSelectListItems())">
@@ -262,7 +262,7 @@
                 </div>
             }
 
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="FootnoteTypeBinder" class="control-label">@Html.DisplayNameFor(_ => Model.FootnoteType)</label>
                 <select asp-for="FootnoteTypeBinder" class="form-control overflow-auto" aria-describedby="footnote-help" size="5"
                         asp-items='@(EnumExtensions.GetSingleValues<FootnoteType>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text))'>
@@ -270,7 +270,7 @@
                 <span asp-validation-for="FootnoteTypeBinder" class="text-danger"></span>
                 <div id="footnote-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.FootnoteType)</div>
             </div>
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="VerbosityBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Verbosity)</label>
                 <select asp-for="VerbosityBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="5"
                         asp-items="@(EnumExtensions.GetDisplayValues<Verbosity>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text))">
@@ -279,7 +279,7 @@
                 <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Verbosity)</div>
             </div>
 
-            <div class="form-group mb-3">
+            <div class="mb-3">
                 <label asp-for="SendHour" class="control-label">@Html.DisplayNameFor(_ => Model.SendHour)</label>
                 <select asp-for="SendHour" class="form-control" aria-describedby="time-help"
                         asp-items="@(Enumerable.Range(0, 24).Select(h => new SelectListItem() { Text = $"{h}", Value = $"{h}" }))">
@@ -299,7 +299,7 @@
                 </details>
             </div>
 
-            <div class="form-group form-check mb-3">
+            <div class="form-check mb-3">
                 <label asp-for="NewsletterEnabled" class="control-label">@Html.DisplayNameFor(_ => Model.NewsletterEnabled)</label>
                 <input class="form-check-input" asp-for="NewsletterEnabled" aria-describedby="disabled-help" />
                 <span asp-validation-for="NewsletterEnabled" class="text-danger"></span>
@@ -312,7 +312,7 @@
                 </div>
             </div>
 
-            <div class="row form-group">
+            <div class="row ">
                 <div class="col">
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>

@@ -37,8 +37,8 @@ public class TestFilters : RealDatabase
     {
         foreach (var filter in EnumExtensions.GetNotNoneValues<Equipment>())
         {
-            var results = Filters.FilterEquipment(Query!, filter).Where(r => r.Recipe.Equipment != Equipment.None).ToList();
-            Assert.IsTrue(results.All(r => filter.WithOptionalEquipment().HasFlag(r.Recipe.Equipment)));
+            var results = Filters.FilterEquipment(Query!, filter).Where(r => r.Recipe.Instructions.All(i => i.Equipment != Equipment.None)).ToList();
+            Assert.IsTrue(results.All(r => r.Recipe.Instructions.All(i => filter.HasFlag(i.Equipment))));
         }
     }
 }

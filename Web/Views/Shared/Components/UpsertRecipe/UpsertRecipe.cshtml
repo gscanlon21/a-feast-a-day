@@ -1,4 +1,4 @@
-﻿@model Web.Views.Shared.Components.UpsertRecipe.UpsertRecipeViewModel
+﻿@model UpsertRecipeViewModel
 @using Core.Models.Recipe
 @using Core.Models.User
 @using Web.Code.Extensions
@@ -9,22 +9,22 @@
         
         <input asp-for="Recipe.Id" type="hidden" class="form-control" />
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Recipe.Name" class="control-label">Name</label>
             <input asp-for="Recipe.Name" type="text" class="form-control" required="required" />
         </div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Recipe.Link" class="control-label">Source</label>
             <input asp-for="Recipe.Link" type="text" class="form-control" />
         </div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Recipe.Notes" class="control-label">Notes</label>
             <input asp-for="Recipe.Notes" type="text" class="form-control" />
         </div>
 
-        <div class="form-group mb-3">
+        <div class="mb-3">
             <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
             <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="verbosity-help" size="7"
                     asp-items="@(EnumExtensions.GetSingleValues(excludingAny: Section.Prep | Section.Debug).AsSelectListItems(EnumViewExtensions.EnumOrdering.Value))">
@@ -33,16 +33,7 @@
             <div id="verbosity-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Section)</div>
         </div>
 
-        <div class="form-group mb-3">
-            <label asp-for="Recipe.EquipmentBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Equipment)</label>
-            <select asp-for="Recipe.EquipmentBinder" class="form-control overflow-auto" aria-describedby="rest-help" size="5"
-                    asp-items="@(EnumExtensions.GetNotNoneValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
-            </select>
-            <span asp-validation-for="Recipe.EquipmentBinder" class="text-danger"></span>
-            <div id="rest-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Equipment)</div>
-        </div>
-
-        <div class="form-group mb-5 mt-3">
+        <div class="mb-5 mt-3">
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>
             <div><span asp-validation-for="Recipe.PrepTime" class="text-danger"></span></div>
             <div style="display:flex;column-gap:1ex;">
@@ -74,7 +65,7 @@
             <div id="@Html.IdFor(_ => Model.Recipe.PrepTime)-help" class="form-text"></div>
         </div>
 
-        <div class="form-group mb-5 mt-3">
+        <div class="mb-5 mt-3">
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.CookTime)</label>
             <div><span asp-validation-for="Recipe.CookTime" class="text-danger"></span></div>
             <div style="display:flex;column-gap:1ex;">
@@ -106,7 +97,7 @@
             <div id="@Html.IdFor(_ => Model.Recipe.CookTime)-help" class="form-text"></div>
         </div>
 
-        <div class="form-group mb-3 mt-3 row">
+        <div class="mb-3 mt-3 row">
             <div class="col">
                 <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
                 <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
@@ -149,7 +140,7 @@
         </div>
 
         <div class="row row-gap-1 mb-3">
-            <div class="col-md col-lg-12 col-xl form-group">
+            <div class="col-md col-lg-12 col-xl ">
                 <div class="form-check">
                     <span><label asp-for="Recipe.AdjustableServings" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.AdjustableServings)</label></span>
                     <input class="form-check-input allow-demo" asp-for="Recipe.AdjustableServings" aria-describedby="adjustable-servings-help" />
@@ -157,7 +148,7 @@
                 <span asp-validation-for="Recipe.AdjustableServings" class="text-danger"></span>
                 <div id="adjustable-servings-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.AdjustableServings)</div>
             </div>
-            <div class="col-md col-lg-12 col-xl form-group">
+            <div class="col-md col-lg-12 col-xl ">
                 <div class="form-check">
                     <span><label asp-for="Recipe.KeepIngredientOrder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.KeepIngredientOrder)</label></span>
                     <input class="form-check-input allow-demo" asp-for="Recipe.KeepIngredientOrder" aria-describedby="keep-order-help" />
@@ -165,7 +156,7 @@
                 <span asp-validation-for="Recipe.KeepIngredientOrder" class="text-danger"></span>
                 <div id="keep-order-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.KeepIngredientOrder)</div>
             </div>
-            <div class="col-md-auto col-lg-12 col-xl-auto form-group">
+            <div class="col-md-auto col-lg-12 col-xl-auto ">
                 <div class="form-check">
                     <span><label asp-for="Recipe.BaseRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.BaseRecipe)</label></span>
                     <input class="form-check-input allow-demo" asp-for="Recipe.BaseRecipe" aria-describedby="base-recipe-help" />
@@ -187,7 +178,7 @@
                         <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" />
                         <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Id" />
 
-                        <div class="form-group row">
+                        <div class="row">
                             <div class="col-auto">
                                 <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator)</label>
                                 <div><span asp-validation-for="Recipe.RecipeIngredients[id].QuantityNumerator" class="text-danger"></span></div>
@@ -216,7 +207,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="row">
                             <div class="col">
                                 <label asp-for="Recipe.RecipeIngredients[id].IngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientId)</label>
                                 <select asp-for="Recipe.RecipeIngredients[id].IngredientId" asp-items="@Model.IngredientSelect" class="form-control searchable" aria-describedby="ingredient-help"></select>
@@ -232,7 +223,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div>
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
                             <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" />
 
@@ -301,17 +292,26 @@
                 @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
                 {
                     var userInstruction = Model.Recipe.Instructions[id];
-                    <div id="custom-instruction-@id" class="custom-instruction @(userInstruction.Hide ? "d-none" : "")" data-day="@id">
-                        <div class="row">
-                            <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
-                            <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
-                            <input type="hidden" asp-for="Recipe.Instructions[id].Id" />
+                    <div id="custom-instruction-@id" class="custom-instruction mb-3 @(userInstruction.Hide ? "d-none" : "")" data-day="@id">
+                        <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
+                        <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
+                        <input type="hidden" asp-for="Recipe.Instructions[id].Id" />
 
-                            <div class="form-group mb-3 col" style="min-width:200px;">
-                                <label asp-for="Recipe.Instructions[id].Name" class="control-label">Step @(id + 1)</label>
-                                <input asp-for="Recipe.Instructions[id].Name" type="text" class="form-control" required="required" />
-                            </div>
-                        </div>
+                        <label asp-for="Recipe.Instructions[id].Name" class="control-label">Step @(id + 1)</label>
+                        <textarea asp-for="Recipe.Instructions[id].Name" type="text" class="form-control" required="required"></textarea>
+                        <details style="margin-top:-.25ex;">
+                            <summary>
+                                <div class="row w-100 d-inline-flex">
+                                    <div class="col form-text">@Html.DisplayNameFor(_ => Model.Recipe.Instructions[id].Equipment)</div>
+                                    <div class="col-auto form-text">@Model.Recipe.Instructions[id].Equipment.PopCount()</div>
+                                </div>
+                            </summary>
+                            <select asp-for="Recipe.Instructions[id].EquipmentBinder" class="form-control overflow-auto" aria-describedby="equipment-help" size="5"
+                                    asp-items="@(EnumExtensions.GetNotNoneValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                            </select>
+                            <span asp-validation-for="Recipe.Instructions[id].EquipmentBinder" class="text-danger"></span>
+                            <div id="equipment-help" class="form-text mt-0">@Html.DisplayDescriptionFor(_ => Model.Recipe.Instructions[id].Equipment)</div>
+                        </details>
                     </div>
                 }
                 <div class="btn-group">
@@ -363,7 +363,7 @@
             </script>
         </div>
 
-        <div class="form-group form-check mb-3">
+        <div class="form-check mb-3">
             <label asp-for="Recipe.Enabled" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Enabled)</label>
             <input class="form-check-input" asp-for="Recipe.Enabled" aria-describedby="disabled-help" />
             <span asp-validation-for="Recipe.Enabled" class="text-danger"></span>
@@ -377,7 +377,7 @@
         </div>
     </form>
 
-    <div class="row form-group justify-content-end gy-2">
+    <div class="row justify-content-end gy-2">
         <div class="col">
             <input type="submit" value="Save" class="btn btn-secondary" form="recipe-form" />
         </div>
