@@ -246,6 +246,12 @@
                 </details>
             </div>
 
+            @if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
+                    Exclude recipes containing certain ingredients.
+                </div>
+            }
             <div class="mb-3">
                 <label asp-for="AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Allergens)</label>
                 <select asp-for="AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="5"
@@ -327,13 +333,17 @@
         <details class="mb-25">
             <summary class="mb-1 h5">New Recipe</summary>
 
-            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User })
+            <div class="alert alert-secondary shadow mb-3">
+                @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User })
+            </div>
         </details>
 
         <details class="mb-25">
             <summary class="mb-1 h5">New Ingredient</summary>
 
-            @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User })
+            <div class="alert alert-secondary shadow mb-0">
+                @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User })
+            </div>
         </details>
     </div>
 
@@ -348,6 +358,7 @@
         @await Component.InvokeAsync(MicrobiomeViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(BackupRestoreViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(AWorkoutADayViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(IngredientsViewComponent.Name, new { Model.User, Model.Token })

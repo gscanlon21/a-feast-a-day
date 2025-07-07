@@ -12,7 +12,7 @@ The program [Obtainium](https://github.com/ImranR98/Obtainium) can be used for a
 
 - Customize how many people you are cooking for and their servings sizes.
 - Customize how long you want to see or hide recipes before they refresh.
-- Customize how much each nutrient is being targeted. Meal plans are automatically adjusted to remove nutrient imbalances.
+- Customize how much of each nutrient to consume. Meal plans are automatically adjusted to remove nutrient imbalances.
 - Recipes are chosen from equipment you have access to — no recipes that require a blender if you don't have one.
 - Optional health and cooking tips.
 - Ignore unwanted recipes.

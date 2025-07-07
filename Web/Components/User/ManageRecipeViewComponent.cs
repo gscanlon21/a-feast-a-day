@@ -1,9 +1,5 @@
-﻿using Core.Dtos.Newsletter;
-using Core.Dtos.User;
-using Core.Models.Newsletter;
-using Data;
+﻿using Data;
 using Data.Entities.Recipe;
-using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Recipe;
@@ -31,45 +27,20 @@ public class ManageRecipeViewComponent : ViewComponent
     {
         var userRecipe = await _context.UserRecipes.AsNoTracking()
             .Where(r => r.RecipeId == parameters.RecipeId)
-            .Where(r => r.Section == parameters.Section)
             .Where(r => r.UserId == user.Id)
             .FirstOrDefaultAsync();
 
         if (userRecipe == null) { return Content(""); }
-        // Use Section.None so our recipe isn't filtered out.
-        var recipeDtos = (await new QueryBuilder(Section.None)
-            .WithRecipes(x =>
-            {
-                x.UserId = user.Id;
-                x.AddRecipes(new Dictionary<int, int?>
-                {
-                    [recipe.Id] = null,
-                });
-            })
-            .Build()
-            .Query(_serviceScopeFactory))
-            .Select(r => r.AsType<NewsletterRecipeDto>()!);
-
-        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);
-        if (recipeDto == null)
-        {
-            return Content("");
-        }
-
-        // Need a user context so the manage link is clickable and the user can un-ignore a prerequisite recipe.
-        var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, parameters.Token);
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,
-            Recipe = recipeDto,
+            Recipe = recipe,
             UserRecipe = userRecipe,
             Parameters = parameters,
             Notes = userRecipe.Notes,
             Servings = userRecipe.Servings,
-            UserNewsletter = userNewsletter,
             LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,
             PadRefreshXWeeks = userRecipe.PadRefreshXWeeks,
-            PrepRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
         });
     }
 }

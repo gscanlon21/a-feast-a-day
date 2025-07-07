@@ -288,7 +288,7 @@ namespace Data.Migrations
                 name: "user_token",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Token = table.Column<string>(type: "text", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
@@ -445,7 +445,6 @@ namespace Data.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
-                    Section = table.Column<int>(type: "integer", nullable: false),
                     Servings = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     IgnoreUntil = table.Column<DateOnly>(type: "date", nullable: true),
@@ -456,7 +455,7 @@ namespace Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_user_recipe", x => new { x.UserId, x.RecipeId, x.Section });
+                    table.PrimaryKey("PK_user_recipe", x => new { x.UserId, x.RecipeId });
                     table.ForeignKey(
                         name: "FK_user_recipe_recipe_RecipeId",
                         column: x => x.RecipeId,
@@ -475,7 +474,7 @@ namespace Data.Migrations
                 name: "user_feast_recipe",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Scale = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
@@ -567,12 +566,12 @@ namespace Data.Migrations
                 name: "user_feast_recipe_ingredient",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Quantity = table.Column<double>(type: "double precision", nullable: false),
-                    UserFeastRecipeId = table.Column<int>(type: "integer", nullable: false)
+                    UserFeastRecipeId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {

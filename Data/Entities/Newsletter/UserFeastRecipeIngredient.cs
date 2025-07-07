@@ -31,7 +31,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; private init; }
+    public long Id { get; private init; }
 
     public int IngredientId { get; init; }
 
@@ -42,7 +42,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     /// </summary>
     public double Quantity { get; private init; } = 1;
 
-    public int UserFeastRecipeId { get; private init; }
+    public long UserFeastRecipeId { get; private init; }
 
 
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeastRecipe.UserFeastRecipeIngredients))]

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20250707005835_SquashMigrations")]
+    [Migration("20250708204835_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -319,11 +319,11 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<int>("Order")
                         .HasColumnType("integer");
@@ -351,11 +351,11 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
@@ -366,8 +366,8 @@ namespace Data.Migrations
                     b.Property<double>("Quantity")
                         .HasColumnType("double precision");
 
-                    b.Property<int>("UserFeastRecipeId")
-                        .HasColumnType("integer");
+                    b.Property<long>("UserFeastRecipeId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -671,9 +671,6 @@ namespace Data.Migrations
                     b.Property<int>("RecipeId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Section")
-                        .HasColumnType("integer");
-
                     b.Property<DateOnly?>("IgnoreUntil")
                         .HasColumnType("date");
 
@@ -695,7 +692,7 @@ namespace Data.Migrations
                     b.Property<int>("Servings")
                         .HasColumnType("integer");
 
-                    b.HasKey("UserId", "RecipeId", "Section");
+                    b.HasKey("UserId", "RecipeId");
 
                     b.HasIndex("RecipeId");
 
@@ -759,11 +756,11 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.User.UserToken", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("Expires")
                         .HasColumnType("timestamp with time zone");

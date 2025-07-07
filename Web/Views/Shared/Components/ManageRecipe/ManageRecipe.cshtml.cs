@@ -1,7 +1,4 @@
-﻿using Core.Dtos.Newsletter;
-using Core.Dtos.User;
-using Core.Models.Newsletter;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using Web.Views.Recipe;
 
@@ -15,11 +12,8 @@ public class ManageRecipeViewModel
     [ValidateNever]
     public required Data.Entities.User.User User { get; init; }
 
-    [ValidateNever]
-    public required UserNewsletterDto UserNewsletter { get; init; }
-
-    [ValidateNever, Display(Name = "Recipe", Description = "Ignore this recipe for just this section.")]
-    public required NewsletterRecipeDto Recipe { get; init; }
+    [ValidateNever, Display(Name = "Recipe", Description = "Ignore this recipe for all sections.")]
+    public required Data.Entities.Recipe.Recipe Recipe { get; init; }
 
     [ValidateNever, Display(Name = "Refreshes After", Description = "Refresh this recipe—the next feast will try and select a new recipe if available.")]
     public required Data.Entities.User.UserRecipe UserRecipe { get; init; }
@@ -38,13 +32,4 @@ public class ManageRecipeViewModel
 
     [Display(Name = "Notes")]
     public string? Notes { get; init; }
-
-    [ValidateNever]
-    public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
-
-    /// <summary>
-    /// Verbosity of the recipe.
-    /// Notes are always included.
-    /// </summary>
-    public Verbosity Verbosity => (User?.Verbosity ?? Verbosity.Images) | Verbosity.Notes;
 }

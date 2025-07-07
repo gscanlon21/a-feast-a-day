@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.User;
 using Data;
 using Data.Entities.Recipe;
 using Data.Repos;
@@ -31,6 +32,12 @@ public class UpsertRecipeViewComponent : ViewComponent
     /// <param name="recipe">The existing recipe to edit.</param>
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe? recipe = null, Section section = Section.None)
     {
+        // User must have created the recipe to be able to edit it.
+        if (recipe != null && user.Id != recipe.UserId && !user.Features.HasFlag(Features.Admin))
+        {
+            return Content("");
+        }
+
         // Restore the failed recipe if the upsert model validation failed.
         var upsertRecipeString = TempData[TempData_Recipe.UpsertRecipe]?.ToString();
         var upsertRecipe = upsertRecipeString != null ? JsonSerializer.Deserialize<UpsertRecipeModel>(upsertRecipeString) : null;

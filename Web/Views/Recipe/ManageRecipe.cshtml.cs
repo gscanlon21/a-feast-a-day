@@ -1,4 +1,6 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Dtos.Newsletter;
+using Core.Dtos.User;
+using Core.Models.Newsletter;
 
 namespace Web.Views.Recipe;
 
@@ -15,7 +17,17 @@ public class UserManageRecipeViewModel
 
     public required Params Parameters { get; init; }
 
-    public required bool HasUserRecipe { get; init; }
-
     public bool? WasUpdated { get; init; }
+
+    public required UserNewsletterDto UserNewsletter { get; init; }
+
+    public required NewsletterRecipeDto NewsletterRecipe { get; init; }
+
+    public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
+
+    /// <summary>
+    /// Verbosity of the recipe.
+    /// Notes are always included.
+    /// </summary>
+    public Verbosity Verbosity => (User?.Verbosity ?? Verbosity.Images) | Verbosity.Notes;
 }

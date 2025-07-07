@@ -58,21 +58,19 @@ public class QueryBuilder
     }
 
     /// <summary>
-    /// Filter recipes down to the user's progressions.
-    /// 
-    /// TODO: Refactor user options to better select what is filtered and what isn't.
-    /// ..... (prerequisites, progressions, equipment, no use caution when new, unique recipes).
+    /// Filter recipes according to the user's preferences.
     /// </summary>
-    public QueryBuilder WithUser(User user)
+    /// <param name="ignoreHardFiltering">
+    /// Ignores ignored recipes and equipment filtering.
+    /// </param>
+    public QueryBuilder WithUser(User user, bool ignoreHardFiltering = false)
     {
-        UserOptions = new UserOptions(user);
-        RecipeOptions = new RecipeOptions(Section, user.Id);
-        return WithEquipment(user.Equipment);
+        UserOptions = new UserOptions(user) { IgnoreIgnored = ignoreHardFiltering };
+        return WithEquipment(ignoreHardFiltering ? Equipment.All : user.Equipment);
     }
 
     public QueryBuilder WithUser(UserOptions userOptions)
     {
-        RecipeOptions = new RecipeOptions(Section, userOptions.Id);
         UserOptions = userOptions;
         return this;
     }

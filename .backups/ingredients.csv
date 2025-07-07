@@ -113,7 +113,7 @@
 114	\N	Pork Fillet (Tenderloin)	https://www.eatthismuch.com/calories/pork-tenderloin-1785	\N	f	0	28	28	2024-11-15	4	224	268435456
 115	\N	Dr. Pepper	https://www.eatthismuch.com/calories/dr-pepper,3105	\N	f	0	368	491	2024-08-17	0	246	5
 116	\N	Barbecue Sauce	https://www.eatthismuch.com/calories/barbecue-sauce-730	\N	f	32	36	18	2024-11-17	9	288	32
-117	\N	Garlic Texas Toast	https://www.eatthismuch.com/nutrition/garlic-texas-toast,3321895	\N	f	786464	40	40	2024-07-02	0	80	4
+117	\N	Garlic Texas Toast	https://www.eatthismuch.com/nutrition/garlic-texas-toast,3321895	\N	f	786464	40	40	2025-07-08	0	80	4
 118	\N	Pizza Sauce	https://www.eatthismuch.com/calories/pizza-sauce,732	\N	f	0	252	252	2024-09-20	6	252	3
 119	\N	Mozzarella Cheese	https://www.eatthismuch.com/calories/mozzarella-cheese,26	\N	f	256	28	28	2024-09-12	4	224	8388608
 120	\N	Turkey Pepperoni	\N	\N	f	0	240	100	2024-08-02	0	240	0
@@ -136,7 +136,7 @@
 139	\N	Slices of Rye Bread	https://www.eatthismuch.com/calories/rye-bread-4015	\N	f	262176	32	32	2025-01-04	0	64	64
 140	\N	Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	28	3	2025-06-22	4	48	3
 141	\N	Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2024-07-27	6	80	16288
-142	\N	Porridge Oats	https://www.eatthismuch.com/food/nutrition/porridge-oats,152950/	\N	f	0	30	30	2024-07-03	0	80	0
+142	\N	Porridge Oats	https://www.eatthismuch.com/calories/rolled-oats-5821	\N	f	0	28	80	2025-07-08	4	80	1024
 143	\N	Cumin	https://www.eatthismuch.com/calories/cumin-189	\N	t	0	28	9	2024-11-30	4	144	131072
 144	\N	Green Onions (Scallions)	https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	15	15	2024-10-11	0	150	2
 145	\N	Fusilli Pasta	https://www.eatthismuch.com/calories/pasta-fusilli-127691	\N	f	262176	28	85	2025-02-17	4	85	4096
@@ -365,7 +365,7 @@
 375	\N	Loaves of Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2025-05-11	0	61	4
 376	\N	Watercress	https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2024-11-15	4	34	2
 377	\N	Jarred Roasted Red Peppers	https://www.eatthismuch.com/calories/red-peppers-2530	\N	f	0	28	140	2024-11-19	4	140	512
-378	\N	Pecorino Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	4194304
+378	\N	Pecorino Cheese	https://www.eatthismuch.com/calories/romano-cheese-38	\N	f	256	28	28	2025-07-07	4	224	4194304
 379	\N	Pecorino Cheese | Parmesan Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28	28	2025-07-03	4	224	8388608
 380	\N	Smoked Pancetta Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
 381	\N	Smoked Pancetta Slices | Smoked Bacon Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
@@ -531,7 +531,7 @@
 603	\N	Pork Italian Sausage, Raw	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
 604	\N	Slices of Panettone Bread	https://www.eatthismuch.com/calories/panettone-2312615	\N	f	786464	80	80	2025-05-23	0	80	4
 605	\N	Butter | Sunflower Oil	\N	\N	t	0	14	14	2024-08-20	7	224	6
-606	\N	Butter | Oil	\N	\N	t	0	14	14	2024-08-20	7	224	6
+606	\N	Butter | Oil	https://www.eatthismuch.com/calories/butter-121	\N	t	0	28	14	2024-08-20	4	224	114688
 607	\N	Frozen Mixed-Berries	https://www.eatthismuch.com/calories/mixed-berries-87958	\N	f	0	28	140	2024-12-22	4	140	33554432
 608	\N	Frozen Strawberries	https://www.eatthismuch.com/calories/strawberries-1560	\N	f	0	28	149	2025-01-16	4	149	33554432
 609	\N	Slices of Whole Grain Bread, GF	https://www.eatthismuch.com/calories/gluten-free-whole-grain-bread-2114723	\N	f	0	26	26	2024-10-09	0	52	2
@@ -899,7 +899,7 @@
 1097	\N	Radish Greens	aka. Radish Tops. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1098	\N	Dandelion Greens	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1099	\N	Greens	https://www.eatthismuch.com/calories/mixed-greens-salad-2146257	\N	f	0	39	156	2025-02-01	6	39	2
-1100	\N	Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	8388608
+1100	\N	Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28	28	2025-07-07	4	224	8388608
 1101	\N	Pitted Frozen Cherries	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	512	17	85	2024-08-07	0	170	1
 1102	\N	Honey | Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
 1103	\N	Beef Tallow	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072

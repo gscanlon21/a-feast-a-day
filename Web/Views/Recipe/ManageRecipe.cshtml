@@ -1,7 +1,10 @@
 ﻿@model UserManageRecipeViewModel
 @using System.Numerics
+@using Core.Dtos.User
 @using Core.Models.Recipe
 @using Core.Consts
+@using Lib.Pages.Shared.Recipe
+@using Microsoft.AspNetCore.Components
 @using Web.Components
 
 @{
@@ -16,34 +19,38 @@
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
 </div>
 
-@if (Model.HasUserRecipe)
-{
-    <div class="row gy-4">
-        <div class="col-lg-6">
-            @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
-        </div>
-        
-        <div class="col-lg-6">
-            @await Component.InvokeAsync(RecipeIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
-            @* User must have created the recipe to be able to edit it. *@
-            @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
-            {
-                <h5 class="mt-4 mb-1">Edit Recipe</h5>
+<div class="row gy-4">
+    <div class="col-lg-6">
+        @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
+    </div>
+
+    <div class="col-lg-6">
+        <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
+            <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Parameters.Section.AsTheme()" />
+        </component>
+
+        @* User must have created the recipe to be able to edit it. *@
+        @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
+        {
+            <h5 class="mt-4 mb-1">Edit Recipe</h5>
+            <div class="alert alert-secondary shadow mb-0">
                 @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters.Section })
-            }
-        </div>
+            </div>
+        }
+
+        @if (Model.PrepRecipes.Any())
+        {
+            <details class="mt-4 mb-1">
+                <summary class="mb-1 h5">
+                    <span>Prep Recipes</span>
+                    <span class="float-end">@Model.PrepRecipes.Count</span>
+                </summary>
+
+                <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.PrepRecipes' param-Verbosity="Model.Verbosity" param-Title="@(new RecipeSection.Titles(string.Empty))" />
+            </details>
+        }
     </div>
-}
-@* User must have created the recipe to be able to edit it. *@
-else if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))
-{
-    <div class="row gy-4">
-        <div class="col">
-            <h5 class="mb-1">Edit Recipe</h5>
-            @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters.Section })
-        </div>
-    </div>
-}
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" model='new ValidationScriptsPartialViewModel() { IsDemoUser = Model.User.IsDemoUser }' />

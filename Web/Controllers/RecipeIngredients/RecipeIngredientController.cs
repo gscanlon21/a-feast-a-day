@@ -1,9 +1,14 @@
-﻿using Data;
+﻿using Core.Dtos.Ingredient;
+using Core.Dtos.Newsletter;
+using Core.Dtos.User;
+using Core.Models.Newsletter;
+using Data;
+using Data.Entities.Recipe;
+using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.RecipeIngredient;
-using Web.Views.Shared.Components.ManageRecipeIngredient;
 
 namespace Web.Controllers.RecipeIngredients;
 
@@ -11,13 +16,15 @@ namespace Web.Controllers.RecipeIngredients;
 [Route($"recipe/ingredient/{UserRoute}", Order = 2)]
 public class RecipeIngredientController : ViewController
 {
+    private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly CoreContext _context;
     private readonly UserRepo _userRepo;
 
-    public RecipeIngredientController(CoreContext context, UserRepo userRepo)
+    public RecipeIngredientController(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
         _userRepo = userRepo;
+        _serviceScopeFactory = serviceScopeFactory;
     }
 
     /// <summary>
@@ -36,7 +43,6 @@ public class RecipeIngredientController : ViewController
 
         var userIngredient = await _context.UserRecipeIngredients
             .Where(ui => ui.RecipeIngredientId == recipeIngredientId)
-            //.Where(ui => ui.RecipeId == recipeId)
             .Where(ui => ui.UserId == user.Id)
             .FirstOrDefaultAsync();
 
@@ -73,18 +79,54 @@ public class RecipeIngredientController : ViewController
             .FirstOrDefaultAsync(r => r.Id == recipeIngredientId);
 
         if (recipeIngredient == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
+
+        var userRecipeIngredient = await _context.UserRecipeIngredients.AsNoTracking()
+            .Where(ui => ui.RecipeIngredientId == recipeIngredientId)
+            //.Where(ui => ui.RecipeId == parameters.RecipeId)
+            .Where(ui => ui.UserId == user.Id)
+            .FirstOrDefaultAsync();
+
+        var substitutionRecipes = await GetRecipes(user);
+        var recipeDtos = (await new QueryBuilder(Section.None)
+            .WithUser(user, ignoreHardFiltering: true)
+            .WithRecipes(x =>
+            {
+                x.AddRecipes(substitutionRecipes);
+                x.AddRecipes(new Dictionary<int, int?>
+                {
+                    [recipeIngredient.RecipeId] = null,
+                });
+            })
+            .Build()
+            .Query(_serviceScopeFactory))
+            .Select(r => r.AsType<NewsletterRecipeDto>()!);
+
+        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipeIngredient.RecipeId);
+        if (recipeDto == null)
+        {
+            return Content("");
+        }
+
+        // Must be managed from a recipe context.
+        if (userRecipeIngredient == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
         return View(nameof(ManageRecipeIngredient), new UserManageRecipeIngredientViewModel()
         {
             User = user,
             Token = token,
+            Recipe = recipeDto,
             WasUpdated = wasUpdated,
+            Recipes = substitutionRecipes,
             RecipeIngredient = recipeIngredient,
-            Parameters = new UserManageRecipeIngredientViewModel.Params(email, token, recipeIngredientId)
+            UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
+            UserRecipeIngredient = new UserRecipeIngredientViewModel(userRecipeIngredient),
+            AltRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
+            Ingredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient.AsType<IngredientDto>()!).ToList() ?? [],
         });
     }
 
     [HttpPost, Route("{recipeIngredientId}")]
-    public async Task<IActionResult> ManageRecipeIngredient(string email, string token, int recipeIngredientId, ManageRecipeIngredientViewModel viewModel)
+    public async Task<IActionResult> ManageRecipeIngredient(string email, string token, int recipeIngredientId,
+        [Bind(Prefix = nameof(UserManageRecipeIngredientViewModel.UserRecipeIngredient))] UserRecipeIngredientViewModel viewModel)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -107,12 +149,25 @@ public class RecipeIngredientController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        existingUserRecipeIngredient.Notes = viewModel.UserRecipeIngredient.Notes;
-        existingUserRecipeIngredient.SubstituteScale = viewModel.UserRecipeIngredient.SubstituteScale;
-        existingUserRecipeIngredient.SubstituteRecipeId = viewModel.UserRecipeIngredient.SubstituteRecipeId;
-        existingUserRecipeIngredient.SubstituteIngredientId = viewModel.UserRecipeIngredient.SubstituteIngredientId;
+        existingUserRecipeIngredient.Notes = viewModel.Notes;
+        existingUserRecipeIngredient.SubstituteScale = viewModel.SubstituteScale;
+        existingUserRecipeIngredient.SubstituteRecipeId = viewModel.SubstituteRecipeId;
+        existingUserRecipeIngredient.SubstituteIngredientId = viewModel.SubstituteIngredientId;
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipeIngredient), new { email, token, recipeIngredientId, wasUpdated = true });
+    }
+
+    /// <summary>
+    /// Get recipes that the user is able to select as an ingredient alternative.
+    /// </summary>
+    private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
+    {
+        return await _context.Recipes.AsNoTracking().TagWithCallSite()
+            .Where(r => r.UserId == null || r.UserId == user.Id) // Has any flag:
+            .Where(r => r.Instructions.All(i => (i.Equipment & user.Equipment) != 0 || i.Equipment == Equipment.None))
+            .Where(r => r.BaseRecipe)
+            .OrderBy(r => r.Name)
+            .ToListAsync();
     }
 }

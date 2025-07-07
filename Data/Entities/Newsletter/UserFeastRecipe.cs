@@ -29,7 +29,7 @@ public class UserFeastRecipe
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; private init; }
+    public long Id { get; private init; }
 
     public int Scale { get; private init; }
 

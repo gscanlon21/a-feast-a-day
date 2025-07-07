@@ -172,6 +172,10 @@ main {
     max-width: min-content;
 }
 
+.min-width--max-content {
+    min-width: max-content;
+}
+
 /********** Shared Styles **********/
 
 .primary-heading {

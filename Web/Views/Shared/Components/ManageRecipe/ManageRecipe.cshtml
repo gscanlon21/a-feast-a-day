@@ -16,12 +16,12 @@
     <div class="mb-3">
         <label for="recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe)</label>
         <div class="input-group">
-            <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Recipe.Name</textarea>
+            <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Recipe.Name</textarea>
             @if (Model.Parameters.Section != Section.Prep)
             {
                 <div class="row m-0 input-group-vertical max-width--min-content">
-                    <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil < DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
                     <input type="submit" form="ignore-form" value="@(Model.UserRecipe.IgnoreUntil == DateOnly.MaxValue ? "Ignored" : "Ignore")" class="btn btn-outline-secondary btn-sm" />
+                    <input type="submit" form="skip-form" value="@(Model.UserRecipe.IgnoreUntil < DateOnly.MaxValue ? "Skipped" : "Skip")" class="btn btn-outline-secondary btn-sm" />
                 </div>
             }
         </div>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    @if (Model.Parameters.Section != Section.Prep) 
+    @if (Model.Parameters.Section != Section.Prep && Model.Parameters.Section != Section.None) 
     {
         <form id="swap-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.SwapRecipe)" method="post"
               asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
@@ -40,25 +40,30 @@
         <form id="refresh-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
               asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
         </form>
+
+        if (Model.User.IsDemoUser)
+        {
+            <div class="alert alert-info callout">
+                Swap recipes if you would rather cook something else.
+            </div>
+        }
     
         <div class="mb-3">
-            <div>
-                <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
-                <div class="input-group">
-                    <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
-                    <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
-                    <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
-                </div>
+            <label for="recipe-date" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipe)</label>
+            <div class="input-group">
+                <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
+                <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
+                <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
+            </div>
 
-                <span asp-validation-for="UserRecipe" class="text-danger"></span>
-                <div id="recipe-date-help" class="form-text">
-                    @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
-                </div>
+            <span asp-validation-for="UserRecipe" class="text-danger"></span>
+            <div id="recipe-date-help" class="form-text">
+                @Html.DisplayDescriptionFor(_ => Model.UserRecipe)
             </div>
         </div>
     }
 
-    <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.LogRecipe)" method="post" class="mb-4"
+    <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.LogRecipe)" method="post" class="mb-3"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -69,7 +74,7 @@
             <span asp-validation-for="Notes" class="text-danger"></span>
         </div>
 
-        @if (Model.Parameters.Section != Section.Prep) 
+        @if (Model.Parameters.Section != Section.Prep)
         {
             if (Model.User.IsDemoUser)
             {
@@ -124,8 +129,15 @@
             <input asp-for="PadRefreshXWeeks" type="hidden" />
         }
 
-        @if (Model.Recipe.Recipe.AdjustableServings)
+        @if (Model.Recipe.AdjustableServings)
         {
+            if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
+                    Adjust how many servings each recipe should be scaled for.
+                </div>
+            }
+
             <div class="mb-3 mt-3">
                 <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
                 <div style="display:flex;column-gap:1ex;">
@@ -142,7 +154,7 @@
         }
         else
         {
-            <input asp-for="Servings" type="hidden" value="@Model.Recipe.Recipe.Servings" />
+            <input asp-for="Servings" type="hidden" value="@Model.Recipe.Servings" />
         }
 
         <div>
@@ -150,9 +162,12 @@
         </div>
     </form>
 
-    <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
-        <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.Recipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Parameters.Section.AsTheme()" />
-    </component>
+    @if (Model.User.IsDemoUser)
+    {
+        <div class="alert alert-info callout mb-3">
+            Click into ingredients to ignore and swap them.
+        </div>
+    }
 
-    <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.PrepRecipes' param-Verbosity="Model.Verbosity" param-Title="@(new RecipeSection.Titles("Prep"))"/>
+    @await Component.InvokeAsync(RecipeIngredientsViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
 </div>

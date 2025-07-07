@@ -60,20 +60,20 @@ public class QueryRunner(Section section)
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
-        return context.Recipes.TagWith(nameof(CreateFilteredRecipesQuery))
+        var query = context.Recipes.TagWith(nameof(CreateFilteredRecipesQuery))
             .IgnoreQueryFilters().AsSplitQuery()
             .Include(r => r.Instructions)
             .Where(r => r.DisabledReason == null)
             // Don't grab recipes that we want to ignore.
             .Where(r => !ExclusionOptions.RecipeIds.Contains(r.Id))
             // Make sure the user owns or is able to see the recipes.
-            .Where(r => r.UserId == null || r.UserId == RecipeOptions.UserId)
+            .Where(r => r.UserId == null || r.UserId == UserOptions.Id)
             // Don't grab recipes that have too many non-optional ingredients.
             .Where(r => UserOptions.MaxIngredients == null || r.RecipeIngredients.Count(i => !i.Ingredient.SkipShoppingList) <= UserOptions.MaxIngredients)
             .Select(r => new RecipesQueryResults()
             {
                 Recipe = r,
-                UserRecipe = r.UserRecipes.First(ur => ur.UserId == UserOptions.Id && ur.Section == section),
+                UserRecipe = r.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
                 // Pull these out of the constructor so that Entity Framework Core can optimize the query.
                 RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults()
                 {
@@ -86,17 +86,23 @@ public class QueryRunner(Section section)
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
-                    UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id && ur.Section == section),
+                    UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
                     UserRecipeIngredient = ri.UserRecipeIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeIngredientId == ri.Id),
                 }).ToList()
-            })
+            });
+
+        if (!UserOptions.IgnoreIgnored)
+        {
             // Don't grab recipes that the user wants to ignore.
-            .Where(vm => vm.UserRecipe.IgnoreUntil.HasValue != true);
-        // It's faster to check for ignored recipe ingredients where we check for allergens.
-        //-Don't grab recipes that use ingredients that the user wants to ignore. 
-        //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient!.Ignore != true))
-        //-Don't grab recipes that use ingredient recipes that the user wants to ignore.
-        //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe!.IgnoreUntil.HasValue != true));
+            query = query.Where(vm => vm.UserRecipe.IgnoreUntil.HasValue != true);
+            // It's faster to check for ignored recipe ingredients where we check for allergens.
+            //-Don't grab recipes that use ingredients that the user wants to ignore. 
+            //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient!.Ignore != true))
+            //-Don't grab recipes that use ingredient recipes that the user wants to ignore.
+            //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredientRecipe!.IgnoreUntil.HasValue != true));
+        }
+
+        return query;
     }
 
     /// <summary>
@@ -432,7 +438,7 @@ public class QueryRunner(Section section)
     private async Task AddMissingUserRecords(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
         // User is not viewing a newsletter, don't log.
-        if (section == Section.None) { return; }
+        if (UserOptions.NoUser) { return; }
 
         var recipesCreated = new HashSet<UserRecipe>();
         // Add user recipes for the main recipe query results.
@@ -440,7 +446,6 @@ public class QueryRunner(Section section)
         {
             queryResult.UserRecipe = new UserRecipe()
             {
-                Section = section,
                 UserId = UserOptions.Id,
                 RecipeId = queryResult.Recipe.Id
             };
@@ -474,7 +479,6 @@ public class QueryRunner(Section section)
             {
                 recipeIngredient.UserIngredientRecipe = new UserRecipe()
                 {
-                    Section = section,
                     UserId = UserOptions.Id,
                     RecipeId = recipeIngredient.IngredientRecipeId!.Value
                 };

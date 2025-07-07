@@ -88,7 +88,7 @@
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	garlic-chicken.jpg	0	\N	f	f
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	ham-gruyere-melt.jpg	0	\N	f	f
 108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	120	10	8	t	\N	0	\N	f	f
-109	Grilled Fattoush Salad	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	10	15	10	4	t	grilled-fattoush-salad.jpg	0	\N	f	f
+109	Grilled Fattoush Salad	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	20	15	10	4	t	grilled-fattoush-salad.jpg	0	\N	f	f
 110	Sausage Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	15	3	4	t	sausage-sandwich.jpg	0	\N	f	f
 111	Tahini Rocky Road	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	20	12	t	tahini-rocky-road.jpg	0	\N	f	f
 112	Jools' Chocolate Dreams	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	40	6	t	jools-chocolate-dreams.jpg	0	\N	f	f
@@ -100,7 +100,7 @@
 118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	15	1	2	t	\N	0	\N	f	f
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	green-mayo.jpg	7	\N	f	f
 120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	potato-salad.jpg	0	\N	f	f
-121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can on pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	8	0	5	4	t	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
+121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can of pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	16	0	5	4	t	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	soft-boiled-egg.jpg	0	\N	f	f
 123	Sweet and Sour Cucumber with Fresh Dill	This salad can be kept in the refrigerator for up to a week.	\N	\N	20	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
 124	Pan-Fried Chicken with Pesto	\N	\N	\N	4	18	2	1	t	pesto-chicken.jpg	0	\N	f	f
@@ -114,7 +114,7 @@
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
 134	Oven Burgers	\N	\N	\N	4	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
-135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	8	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
+135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	0	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
 136	Easy Chicken Fried Rice	\N	\N	\N	4	10	0	2	t	chicken-fried-rice.jpg	0	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	f	f
 137	Meatballs	\N	\N	\N	0	25	5	12	t	meatballs.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	f	f
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	Too many ingredients.	\N	4	10	7	6	t	chicken-vegetable-salad.jpg	0	\N	f	f
@@ -287,7 +287,7 @@
 403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	10	5	2	t	roasted-kale.jpg	0	\N	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	\N	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
-406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	5	10	t	berry-parfait-dessert.jpg	0	\N	f	f
+406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	\N	f	f
 407	Apples and Peanut Butter	\N	\N	\N	48	0	1	1	t	peanut-butter-apples.jpg	0	\N	f	f
 408	Baked Zucchini	\N	\N	\N	16	10	5	2	t	zucchini.jpg	0	\N	f	f
 409	Pumpkin Bread	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	45	15	10	t	\N	0	\N	f	f
@@ -385,7 +385,7 @@
 566	Tuna Salad	\N	\N	\N	10	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 567	Turkey & Walnut Salad	\N	\N	\N	28	40	10	4	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	2	t	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	3	t	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 570	Cut Watermelon	\N	\N	\N	16	0	5	2	t	watermelon.jpg	0	\N	f	f
 571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 572	Microgreens Salad	\N	\N	\N	8	20	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

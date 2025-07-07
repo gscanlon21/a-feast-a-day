@@ -1,4 +1,6 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Dtos.Newsletter;
+using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
 using Data.Entities.Newsletter;
@@ -57,14 +59,42 @@ public class RecipeController : ViewController
             .Include(r => r.Instructions.OrderBy(i => i.Order))
             .FirstOrDefaultAsync(r => r.Id == recipeId);
 
-        if (recipe == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
-        var hasUserRecipe = await _context.UserRecipes.AnyAsync(ur => ur.UserId == user.Id && ur.RecipeId == recipeId && ur.Section == section);
+        if (recipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        // Use Section.None so our recipe isn't filtered out.
+        var recipeDtos = (await new QueryBuilder(Section.None)
+            // Need to pass in a user to generate a Section.None UserRecipe record.
+            .WithUser(user, ignoreHardFiltering: true)
+            .WithRecipes(x =>
+            {
+                x.AddRecipes(new Dictionary<int, int?>
+                {
+                    [recipe.Id] = null,
+                });
+            })
+            .Build()
+            .Query(_serviceScopeFactory))
+            .Select(r => r.AsType<NewsletterRecipeDto>()!);
+
+        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);
+        if (recipeDto == null)
+        {
+            return Content("");
+        }
+
+        // Need a user context so the manage link is clickable and the user can un-ignore a prerequisite recipe.
+        var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);
         return View(nameof(ManageRecipe), new UserManageRecipeViewModel()
         {
             User = user,
             Recipe = recipe,
             WasUpdated = wasUpdated,
-            HasUserRecipe = hasUserRecipe,
+            NewsletterRecipe = recipeDto,
+            UserNewsletter = userNewsletter,
+            PrepRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
             Parameters = new UserManageRecipeViewModel.Params(email, token, recipeId, section)
         });
     }
@@ -181,9 +211,7 @@ public class RecipeController : ViewController
         }
 
         var userRecipe = await _context.UserRecipes
-            .Where(ur => ur.Section != Section.Prep)
             .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
             .FirstAsync();
 
@@ -211,9 +239,7 @@ public class RecipeController : ViewController
         }
 
         var userRecipe = await _context.UserRecipes
-            .Where(ur => ur.Section != Section.Prep)
             .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
             .FirstAsync();
 
@@ -287,19 +313,10 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userRecipes = await _context.UserRecipes
-            .Where(ur => ur.Section != Section.Prep)
-            .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.UserId == user.Id)
-            .ToListAsync();
+        var rowsAffected = await _context.UserRecipes.Where(ur => ur.UserId == user.Id).Where(ur => ur.RecipeId == recipeId)
+            .ExecuteUpdateAsync(c => c.SetProperty(ur => ur.IgnoreUntil, ur => ur.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null));
 
-        foreach (var userRecipe in userRecipes)
-        {
-            userRecipe.IgnoreUntil = userRecipe.IgnoreUntil != DateOnly.MaxValue ? DateOnly.MaxValue : null;
-            await _context.SaveChangesAsync();
-        }
-
-        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = rowsAffected > 0 });
     }
 
     [HttpPost, Route("{section:section}/{recipeId}/[action]")]
@@ -311,24 +328,10 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userRecipe = await _context.UserRecipes
-            .Where(ur => ur.Section != Section.Prep)
-            .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.Section == section)
-            .Where(ur => ur.UserId == user.Id)
-            .FirstAsync();
+        var rowsAffected = await _context.UserRecipes.Where(ur => ur.UserId == user.Id).Where(ur => ur.RecipeId == recipeId).ExecuteUpdateAsync(c =>
+            c.SetProperty(ur => ur.RefreshAfter, ur => null).SetProperty(ur => ur.IgnoreUntil, ur => ur.LastSeen > DateHelpers.Today ? DateHelpers.Today : ur.LastSeen));
 
-        // May be null if the recipe was soft/hard deleted.
-        if (userRecipe == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        userRecipe.RefreshAfter = null;
-        userRecipe.LastSeen = userRecipe.LastSeen > DateHelpers.Today ? DateHelpers.Today : userRecipe.LastSeen;
-        await _context.SaveChangesAsync();
-
-        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
+        return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = rowsAffected > 0 });
     }
 
     [HttpPost, Route("{section:section}/{recipeId}/[action]")]
@@ -342,12 +345,11 @@ public class RecipeController : ViewController
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
         {
-            return NotFound();
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
         var userRecipe = await _context.UserRecipes
             .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.Section == section)
             .Where(ur => ur.UserId == user.Id)
             .Include(ur => ur.Recipe)
             .FirstAsync();

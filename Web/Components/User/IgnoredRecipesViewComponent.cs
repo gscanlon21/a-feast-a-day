@@ -33,21 +33,19 @@ public class IgnoredRecipesViewComponent : ViewComponent
         // See if the user recipes exist on the user obj.
         var userRecipes = user.UserRecipes.NullIfEmpty()?
             .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
-            .Where(ur => ur.Section != Section.None)
             .ToList();
 
         // If they don't, pull them from the database.
         userRecipes ??= await _context.UserRecipes.AsNoTracking()
             .Where(ur => ur.IgnoreUntil == DateOnly.MaxValue)
-            .Where(ur => ur.Section != Section.None)
             .Where(ur => ur.UserId == user.Id)
             .ToListAsync();
 
         // Recipes are ignored across all sections at once.
         var ignoredRecipes = await new QueryBuilder(Section.None)
+            .WithUser(user, ignoreHardFiltering: true)
             .WithRecipes(x =>
             {
-                x.UserId = user.Id;
                 x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
             })
             .Build()

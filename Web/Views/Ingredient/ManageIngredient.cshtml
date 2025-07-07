@@ -13,12 +13,11 @@
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
 </div>
 
-<div class="alert alert-secondary">
-    <div class="row gy-2">
-        <div class="col">
-            <h6 class="mb-1">Edit Ingredient</h6>
+<div class="row gy-4">
+    <div class="col-lg-6">
+        <div class="alert alert-light shadow mb-0">
             @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient })
-        </div>
+        </div>        
     </div>
 </div>
 

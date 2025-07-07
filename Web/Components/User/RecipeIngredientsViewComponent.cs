@@ -1,5 +1,4 @@
-﻿using Core.Dtos.User;
-using Data;
+﻿using Data;
 using Data.Entities.Recipe;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -27,18 +26,22 @@ public class RecipeIngredientsViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
     {
-        var recipeIngredients = await _context.RecipeIngredients
-            .Include(ri => ri.Ingredient)
-            .Include(ri => ri.IngredientRecipe)
-            .Where(ri => ri.RecipeId == recipe.Id)
-            .OrderBy(ri => ri.Order)
+        var recipeIngredients = await _context.UserRecipeIngredients
+            .Include(ri => ri.SubstituteIngredient).Include(ri => ri.SubstituteRecipe)
+            .Include(ri => ri.RecipeIngredient).ThenInclude(ri => ri.IngredientRecipe)
+            .Include(ri => ri.RecipeIngredient).ThenInclude(ri => ri.Ingredient)
+            .Where(ri => ri.RecipeIngredient.RecipeId == recipe.Id)
+            .Where(ri => ri.UserId == user.Id)
+            .OrderBy(ri => ri.RecipeIngredient.Order)
             .ToListAsync();
 
+        // May be empty if the user hasn't seen this recipe.
+        if (!recipeIngredients.Any()) { return Content(""); }
         return View("RecipeIngredients", new RecipeIngredientsViewModel()
         {
-            Parameters = parameters,
-            RecipeIngredients = recipeIngredients,
-            User = new UserNewsletterDto(user.AsType<UserDto>()!, parameters.Token),
+            User = user,
+            Token = parameters.Token,
+            UserRecipeIngredients = recipeIngredients,
         });
     }
 }
