@@ -41,17 +41,7 @@ public class RecipeOptions : IOptions
     /// </summary>
     public void AddRecipes(IEnumerable<Recipe>? recipes)
     {
-        if (recipes != null)
-        {
-            if (RecipeIds == null)
-            {
-                RecipeIds = recipes.ToDictionary(nv => nv.Id, nv => (int?)1);
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-        }
+        AddRecipes(recipes?.ToDictionary(nv => nv.Id, nv => (int?)1));
     }
 
     /// <summary>
@@ -59,19 +49,8 @@ public class RecipeOptions : IOptions
     /// </summary>
     public void AddRecipes(IEnumerable<UserRecipe>? recipes)
     {
-        if (recipes != null)
-        {
-            if (RecipeIds == null)
-            {
-                RecipeIds = recipes.ToDictionary(nv => nv.RecipeId, nv => (int?)1);
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-        }
+        AddRecipes(recipes?.ToDictionary(nv => nv.RecipeId, nv => (int?)1));
     }
-
 
     /// <summary>
     /// Only select these recipes.
@@ -86,7 +65,10 @@ public class RecipeOptions : IOptions
             }
             else
             {
-                throw new NotImplementedException();
+                foreach (var kvp in recipeIds)
+                {
+                    RecipeIds.TryAdd(kvp.Key, kvp.Value);
+                }
             }
         }
     }

@@ -8481,6 +8481,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13819	232	14	\N	\N	3	3
 13820	232	1984	\N	\N	3	6
 13821	232	62	\N	\N	3	5
+13822	378	2047	\N	\N	3	110
 \.
 
 
@@ -9009,10 +9010,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2004	0	\N	\N	118	1	1	(7 oz)	396	f	\N	1
 2005	4	\N	\N	118	1	1	(1 large)	377	f	\N	2
 2006	4	\N	\N	118	1	1	(8 total)	398	f	\N	3
-2240	4	\N	\N	121	1	8	, halved	464	f	\N	1
-2241	6	\N	\N	121	2	1	\N	466	f	\N	2
-2242	4	\N	\N	121	1	8	\N	467	f	\N	3
-2243	8	\N	\N	121	1	1	, to garnish	251	t	\N	4
 3387	0	\N	\N	116	1	4	, divided	579	f	\N	4
 2091	0	\N	\N	103	1	4	\N	324	f	\N	0
 2092	0	\N	\N	103	1	1	, juiced	4	f	\N	1
@@ -9061,6 +9058,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3525	0	\N	\N	181	1	1	, chopped	3	f	\N	3
 3526	7	\N	\N	181	1	2	\N	37	f	\N	4
 3527	0	\N	\N	181	1	4	\N	113	t	\N	5
+2240	4	\N	\N	121	1	8	, halved	464	f	\N	1
+2241	6	\N	\N	121	2	1	\N	466	f	\N	2
+2242	4	\N	\N	121	1	8	\N	467	f	\N	3
+2243	8	\N	\N	121	1	1	, to garnish	251	t	\N	4
 2172	0	\N	\N	98	1	12	\N	\N	f	65	0
 2173	6	\N	\N	98	2	1	\N	61	f	\N	1
 2176	8	\N	\N	98	1	2	\N	83	f	\N	4
@@ -9750,8 +9751,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4477	7	\N	\N	232	1	4	\N	678	f	\N	4
 5299	0	\N	\N	317	1	2	\N	222	f	\N	0
 5300	4	\N	\N	317	1	2	\N	835	f	\N	1
-4266	0	\N	\N	19	1	1	\N	8	f	\N	0
-4267	0	\N	\N	19	1	2	\N	187	f	\N	1
 5301	6	\N	\N	317	2	3	\N	721	f	\N	2
 5302	7	\N	\N	317	1	1	\N	992	f	\N	3
 5303	4	\N	\N	317	2	3	\N	95	f	\N	4
@@ -9770,6 +9769,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4994	8	\N	\N	125	8	1	\N	285	t	\N	6
 5307	8	\N	\N	318	1	2	\N	124	f	\N	3
 5308	0	\N	\N	318	1	2	\N	187	f	\N	4
+4266	0	\N	\N	19	1	1	\N	8	f	\N	0
+4267	0	\N	\N	19	1	2	\N	187	f	\N	1
 4525	8	\N	\N	131	1	1	\N	73	f	\N	5
 4526	8	\N	\N	131	4	1	\N	143	f	\N	6
 4527	8	\N	\N	131	2	1	\N	503	f	\N	7
@@ -9920,7 +9921,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4810	0	\N	\N	264	1	2	\N	144	f	\N	0
 4811	0	\N	\N	264	1	1	\N	730	f	\N	1
 4812	7	\N	\N	264	1	2	, raw, light and dark	752	f	\N	2
-2239	0	\N	\N	121	2	1	\N	352	f	\N	0
 4805	0	\N	\N	265	1	1	\N	730	f	\N	0
 4806	0	\N	\N	265	1	4	\N	187	f	\N	1
 4807	4	\N	\N	265	1	15	\N	419	f	\N	2
@@ -9945,6 +9945,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4753	8	\N	\N	272	2	1	, to taste	911	t	\N	6
 4754	0	\N	\N	272	1	1	, minced	222	f	\N	7
 4755	0	\N	\N	272	1	2	, minced	5	f	\N	8
+2239	0	\N	\N	121	2	1	\N	352	f	\N	0
 4855	0	\N	\N	231	1	4	\N	114	f	\N	0
 4856	7	\N	\N	231	1	2	\N	38	f	\N	1
 4857	7	\N	\N	231	1	2	\N	29	f	\N	2
@@ -11357,8 +11358,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 607	Select Course No. 1 and press the START button. 	\N	72	1	0
 569	Fold the left side over the beans, then the right side on top, so the two sides are overlapping in the middle. Fold in half vertically so the bottom edge meets the top edge.	\N	20	1	0
 2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract.	\N	233	0	0
-3121	Place bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2 to 3 minutes.	\N	19	1	0
-3122	Flip and cook until desired doneness is reached, 2 to 3 minutes more; season with salt and ground black pepper.	\N	19	2	0
 2237	Mix in the sugar-free chocolate.	\N	233	1	0
 2238	Divide the mixture into 10 muffin cups and freeze for at least two hours.	\N	233	2	0
 212	Preheat the oven to 425 degrees F (220 degrees C). Line a baking sheet with aluminum foil.	\N	49	0	0
@@ -11379,6 +11378,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 288	Cover the crock pot and cook on low for 5 to 7 hours or until pasta is tender and meatballs are thoroughly heated to 160 F as measured with a meat thermometer, stirring once with a large spoon during the cooking time. This method will make the pasta quite soft, like Spaghetti-Os.	\N	33	1	0
 289	Serve with grated cheese, if desired. Enjoy!	\N	33	2	0
 851	Add bacon to a large skillet over medium heat. Cook until crispy then remove to a paper towel-lined plate to drain and set aside. Remove bacon grease from skillet.	\N	95	0	0
+3122	Flip and cook until desired doneness is reached, 2 to 3 minutes more; season with salt and ground black pepper.	\N	19	2	0
 3469	Roll up each slice in a lettuce leaf and serve.	\N	530	2	0
 3384	In a food processor, combine the lemon juice, pine nuts, and basil, and process until just combined. Slowly add in the olive oil, and pulse until emulsified. Season to taste with sea salt and pepper.	\N	543	0	0
 3385	Combine avocado. coconut cream, cilantro, avocado oil, and lemon juice in a blender, then purée until smooth.	\N	544	0	0
@@ -11387,6 +11387,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	\N	408	1	0
 475	Toast bread. Mash avocado with a fork and spread onto one piece of toast.	\N	52	0	0
 476	Top with sliced chicken, sliced tomato and the second piece of toast.	\N	52	1	0
+3121	Place bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2 to 3 minutes.	\N	19	1	4
 1094	In a medium bowl, whisk together flour, sugar, baking soda, baking powder, oats, cornmeal, flax seeds and sesame seeds until blended.	\N	113	0	0
 1095	In a separate large mixing bowl; whisk together eggs, half & half, evaporated milk and water until blended.	\N	113	1	0
 1096	Slowly pour dry ingredients into wet ingredients while whisking constantly. Batter will be thick.	\N	113	2	0
@@ -12695,7 +12696,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13821, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13822, true);
 
 
 --

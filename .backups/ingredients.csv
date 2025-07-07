@@ -365,7 +365,7 @@
 375	\N	Loaves of Pita, GF	https://www.eatthismuch.com/calories/gluten-free-pita-bread-2509579	\N	f	0	122	61	2025-05-11	0	61	4
 376	\N	Watercress	https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2024-11-15	4	34	2
 377	\N	Jarred Roasted Red Peppers	https://www.eatthismuch.com/calories/red-peppers-2530	\N	f	0	28	140	2024-11-19	4	140	512
-378	\N	Pecorino Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	4194304
+378	\N	Pecorino Cheese	https://www.eatthismuch.com/calories/romano-cheese-38	\N	f	256	28	28	2025-07-07	4	224	4194304
 379	\N	Pecorino Cheese | Parmesan Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28	28	2025-07-03	4	224	8388608
 380	\N	Smoked Pancetta Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
 381	\N	Smoked Pancetta Slices | Smoked Bacon Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	0
@@ -899,7 +899,7 @@
 1097	\N	Radish Greens	aka. Radish Tops. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1098	\N	Dandelion Greens	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1099	\N	Greens	https://www.eatthismuch.com/calories/mixed-greens-salad-2146257	\N	f	0	39	156	2025-02-01	6	39	2
-1100	\N	Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2024-07-01	4	100	8388608
+1100	\N	Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28	28	2025-07-07	4	224	8388608
 1101	\N	Pitted Frozen Cherries	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	512	17	85	2024-08-07	0	170	1
 1102	\N	Honey | Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
 1103	\N	Beef Tallow	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072

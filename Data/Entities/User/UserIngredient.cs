@@ -21,13 +21,10 @@ public class UserRecipeIngredient
 
     [DefaultValue(RecipeConsts.IngredientScaleDefault)]
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    [Display(Name = "Substitute Scale")]
     public double SubstituteScale { get; set; } = RecipeConsts.IngredientScaleDefault;
 
-    [Display(Name = "Substitute Ingredient")]
     public int? SubstituteIngredientId { get; set; }
 
-    [Display(Name = "or Substitute Recipe")]
     public int? SubstituteRecipeId { get; set; }
 
     // More granular fine tuning of substitutions?

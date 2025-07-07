@@ -348,6 +348,7 @@
         @await Component.InvokeAsync(MicrobiomeViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(BackupRestoreViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(AWorkoutADayViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(FootnoteViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(RecipesViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(IngredientsViewComponent.Name, new { Model.User, Model.Token })
