@@ -21,7 +21,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFeastRecipeIngredient() { }
 
-    internal UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient)
+    public UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient)
     {
         Measure = recipeIngredient.Measure;
         Quantity = recipeIngredient.Quantity.ToDouble();
@@ -29,27 +29,34 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
         IngredientId = recipeIngredient.Ingredient!.Id;
     }
 
-
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; private init; }
 
     public int IngredientId { get; init; }
 
-    public Measure Measure { get; private init; }
+    /// <summary>
+    /// Don't need to set this as long as it's inserted at the same time UserFeastRecipe is.
+    /// </summary>
+    public long UserFeastRecipeId { get; private init; }
 
     /// <summary>
     /// This value is set after recipe scaling is applied.
     /// </summary>
     public double Quantity { get; private init; } = 1;
 
-    public long UserFeastRecipeId { get; private init; }
+    public Measure Measure { get; private init; }
 
+
+    #region Navigation Properties
 
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeastRecipe.UserFeastRecipeIngredients))]
     public virtual UserFeastRecipe UserFeastRecipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.UserFeastRecipeIngredients))]
     public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
+
+    #endregion
+
 
     [NotMapped]
     public double GetQuantity => Quantity;

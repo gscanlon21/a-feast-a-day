@@ -262,6 +262,7 @@ public class RecipeController : ViewController
         }
 
         // Delete the old recipe before querying to free up the nutrients.
+        // This will also cascade delete the UserFeastRecipeIngredients b/c they are foreign keyed.
         await _context.UserFeastRecipes.Where(ufr => ufr.Id == feastRecipe.Id).ExecuteDeleteAsync();
 
         var context = await _userRepo.BuildFeastContext(user, token, userFeast.Date);
@@ -296,7 +297,14 @@ public class RecipeController : ViewController
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
             }
 
-            _context.UserFeastRecipes.Add(new UserFeastRecipe(userFeast, newRecipe, feastRecipe.Order));
+            // Add the recipe and its ingredients to the newsletter for nutrient calculations.
+            _context.UserFeastRecipes.Add(new UserFeastRecipe(userFeast, newRecipe, feastRecipe.Order)
+            {
+                UserFeastRecipeIngredients = newRecipe.RecipeIngredients
+                        .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+                        .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
+            });
+
             await _context.SaveChangesAsync();
         }
 
