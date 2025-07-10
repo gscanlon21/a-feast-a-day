@@ -1,5 +1,5 @@
-﻿using Core.Models.Newsletter;
-using Core.Models.Recipe;
+﻿using Core.Code.Extensions;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
@@ -16,7 +16,6 @@ public class RecipeDto
 
     public Section Section { get; init; }
     public Measure Measure { get; init; }
-    public Equipment Equipment { get; init; }
 
     public string Name { get; init; } = null!;
     public string? Link { get; init; } = null;
@@ -34,6 +33,10 @@ public class RecipeDto
 
     [JsonInclude]
     public virtual IList<RecipeInstructionDto> Instructions { get; init; } = [];
+
+    public string Equipment => string.Join(" & ", Instructions
+        .Where(i => i.Equipment != Models.Recipe.Equipment.None)
+        .Select(i => i.Equipment.GetDisplayName(separator: " | ")));
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeDto other

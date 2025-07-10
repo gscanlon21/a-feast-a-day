@@ -96,9 +96,9 @@
             }
         }
 
-        @if (Verbosity.HasFlag(Verbosity.Equipment) && (Model.Recipe.Equipment != Equipment.None || Verbosity.HasFlag(Verbosity.Debug)))
+        @if (Verbosity.HasFlag(Verbosity.Equipment) && (!string.IsNullOrWhiteSpace(Model.Recipe.Equipment) || Verbosity.HasFlag(Verbosity.Debug)))
         {
-            <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment.GetDisplayName()</div>
+            <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment</div>
         }
 
         <ul style="margin-block:1em;padding-inline-start:2ch;font-size:.85em;">

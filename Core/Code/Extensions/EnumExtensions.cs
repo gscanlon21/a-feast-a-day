@@ -147,7 +147,7 @@ public static class EnumExtensions
     /// <summary>
     /// Returns the values of the [DisplayName] attributes for each flag in the enum.
     /// </summary>
-    public static string GetDisplayName(this Enum flags, DisplayType nameType = DisplayType.Name, bool includeAnyMatching = false)
+    public static string GetDisplayName(this Enum flags, DisplayType nameType = DisplayType.Name, bool includeAnyMatching = false, string separator = ", ")
     {
         if (flags == null)
         {
@@ -180,7 +180,7 @@ public static class EnumExtensions
             }
         }
 
-        return string.Join(", ", names);
+        return string.Join(separator, names);
     }
 
     /// <summary>

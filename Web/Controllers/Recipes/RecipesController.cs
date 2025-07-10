@@ -43,7 +43,7 @@ public class RecipesController : ViewController
 
         if (viewModel.Equipment.HasValue)
         {
-            viewModel.Recipes = viewModel.Recipes.Where(vm => vm.Recipe.Equipment != Equipment.None).ToList();
+            viewModel.Recipes = viewModel.Recipes.Where(vm => !string.IsNullOrWhiteSpace(vm.Recipe.Equipment)).ToList();
         }
 
         if (!string.IsNullOrWhiteSpace(viewModel.Name))

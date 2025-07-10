@@ -32,6 +32,7 @@ public class RecipeInstruction
     [NotMapped]
     public bool Hide { get; init; }
 
+
     [NotMapped]
     public Equipment[]? EquipmentBinder
     {
@@ -39,8 +40,14 @@ public class RecipeInstruction
         set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
+
+    #region Navigation Properties
+
     [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.Instructions))]
     public virtual Recipe Recipe { get; private init; } = null!;
+
+    #endregion
+
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeInstruction other
