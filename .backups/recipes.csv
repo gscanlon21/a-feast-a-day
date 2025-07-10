@@ -1,4 +1,4 @@
-1	Lentil Soup	Thoroughly wash the lentils before cooking with them.	\N	\N	4	360	20	4	t	lentil-soup.jpg	0	\N	f	f
+1	Lentil Soup	Thoroughly wash the lentils before cooking with them.	\N	\N	8	360	20	4	t	lentil-soup.jpg	0	\N	f	f
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	12	20	5	1	t	sausage-spaghetti.jpg	0	\N	f	f
 17	Vegetarian Stir-Fry	For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	vegetable-stir-fry.jpg	0	\N	f	f
 19	Egg in a Pepper	\N	\N	\N	6	5	1	1	t	egg-in-a-pepper.jpg	0	\N	f	f
@@ -72,7 +72,7 @@
 90	Mini BBQ Cheddar Meatloaves	\N	\N	\N	4	15	5	4	t	chedder-meatloaf.jpg	0	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	f	f
 91	Large Batch Homemade Taco Seasoning	\N	\N	\N	0	0	5	1	t	taco-seasoning.jpg	6	https://iowagirleats.com/large-batch-homemade-taco-seasoning	t	f
 92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	12	5	5	2	t	chicken-lemon-garlic.jpg	0	\N	f	f
-93	Pork Kebab with BBQ Sauce	\N	\N	\N	6	10	5	4	t	bbq-pork-kebab.jpg	0	\N	f	f
+93	Pork Kebab with BBQ Sauce	\N	\N	\N	12	10	5	4	t	bbq-pork-kebab.jpg	0	\N	f	f
 94	Balsamic Vinaigrette	\N	\N	\N	0	0	5	1	t	balsamic-vinaigrette.jpg	6	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	f	f
 95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	\N	\N	\N	8	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
@@ -327,7 +327,7 @@
 475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	24	0	5	2	t	\N	6	\N	t	f
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-478	Everyday Salad	\N	\N	\N	8	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+478	Everyday Salad	\N	\N	\N	20	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -392,7 +392,7 @@
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 574	Turkish Salad	\N	\N	\N	10	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 575	Turkey Taco Salad	\N	\N	\N	10	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-576	Thai Chicken Salad	\N	\N	\N	10	16	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 579	Fermented Cabbage	\N	\N	\N	0	0	60	2	t	\N	6	\N	t	f

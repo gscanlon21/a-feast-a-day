@@ -13,7 +13,7 @@
 <div class="row gy-2 mb-2 mt-1 justify-content-between align-items-end">
     <div class="col-auto mb-3">
         <h1 class="primary-heading">Recipe Ingredient</h1>
-        <h2 class="sub-heading ps-1"> @Model.Recipe.Recipe.Name</h2>
+        <h2 class="sub-heading mt-0 ps-1"> @Model.Recipe.Recipe.Name</h2>
     </div>
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
     @if (Model.UserRecipeIngredient.SubstituteRecipeId.HasValue == true && !Model.Recipes.Select(r => r.Id).Contains(Model.UserRecipeIngredient.SubstituteRecipeId.Value))
@@ -106,6 +106,23 @@
                 </div>
             </form>
         </div>
+
+        @if (Model.AltRecipes.Count > Model.PrepRecipes.Count)
+        {
+            <details class="mt-4 mb-1">
+                <summary class="mb-1 h5">
+                    <span>Base Recipes</span>
+                    <span class="float-end">@Model.AltRecipes.Count</span>
+                </summary>
+
+                <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.AltRecipes' param-Verbosity="Verbosity.Images" param-Title="@(new RecipeSection.Titles(string.Empty))" />
+            </details>
+        }
+        else
+        {
+            var query = new QueryBuilder(Context.Request.Query.Append(new("showBase", new Microsoft.Extensions.Primitives.StringValues("true"))).ToDictionary());
+            <h5 class="mt-4"><a href="@Context.Request.Scheme://@Context.Request.Host@Context.Request.Path@query.ToQueryString()">Show Base Recipes</a></h5>
+        }
     </div>
 
     <div class="col-lg-6">
@@ -113,14 +130,17 @@
             <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.Recipe' param-Verbosity="Verbosity.Images" param-Theme="Section.None.AsTheme()" />
         </component>
 
-        <details class="mt-4 mb-1">
-            <summary class="mb-1 h5">
-                <span>Base Recipes</span>
-                <span class="float-end">@Model.AltRecipes.Count</span>
-            </summary>
+        @if (Model.PrepRecipes.Any())
+        {
+            <details class="mt-4 mb-1">
+                <summary class="mb-1 h5">
+                    <span>Prep Recipes</span>
+                    <span class="float-end">@Model.PrepRecipes.Count</span>
+                </summary>
 
-            <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.AltRecipes' param-Verbosity="Verbosity.Images" param-Title="@(new RecipeSection.Titles(string.Empty))" />
-        </details>
+                <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.PrepRecipes' param-Verbosity="Verbosity.Images" param-Title="@(new RecipeSection.Titles(string.Empty))" />
+            </details>
+        }
     </div>
 </div>
 

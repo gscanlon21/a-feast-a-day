@@ -113,7 +113,7 @@ public class RecipeController : ViewController
             // Adding recipe.
             if (!ModelState.IsValid)
             {
-                TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe);
+                TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe); // Post-Redirect-Get for GoBackOnSave.
                 return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token, WasUpdated = false });
             }
 
@@ -145,7 +145,8 @@ public class RecipeController : ViewController
             // Editing recipe.
             if (!ModelState.IsValid)
             {
-                return await ManageRecipe(email, token, recipe.Id, section, wasUpdated: false);
+                TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe); // Post-Redirect-Get for GoBackOnSave.
+                return RedirectToAction(nameof(ManageRecipe), new { email, token, section, RecipeId = recipe.Id, WasUpdated = false });
             }
 
             var existingRecipe = await _context.Recipes

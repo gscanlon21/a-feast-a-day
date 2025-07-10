@@ -59,7 +59,7 @@
 60	\N	Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	32
 61	\N	Mayo	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	28	14	2025-06-12	4	224	32
 62	\N	Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3618	\N	f	294944	32	16	2024-10-27	9	256	8192
-63	\N	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2024-07-04	7	100	32
+63	\N	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2025-07-09	7	100	32
 64	\N	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965	\N	f	0	28	240	2024-12-02	4	240	256
 65	\N	Buffalo Sauce	https://www.eatthismuch.com/calories/buffalo-wing-sauce-1721937	\N	f	0	14	14	2024-10-10	7	224	3
 66	\N	Ranch Dressing	https://www.eatthismuch.com/food/nutrition/ranch-dressing,272/	\N	f	0	14.5	14.5	2024-07-29	7	232	0
@@ -154,7 +154,7 @@
 157	\N	Fresh Pears	Missing minor nutrients. https://www.eatthismuch.com/calories/pears-1499	\N	f	0	178	178	2024-10-08	0	178	1
 158	\N	Sunflower Seeds	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	33	2024-09-12	6	132	1048576
 159	\N	Watermelon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
-160	\N	Cow Milk (1%)	https://www.eatthismuch.com/food/nutrition/1-milk,129602/	\N	f	0	240	240	2024-07-05	6	240	6
+160	\N	Cow Milk (1%)	https://www.eatthismuch.com/food/nutrition/1-milk,129602/	\N	f	0	240	240	2025-07-10	6	240	4194304
 161	\N	Almond Milk	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	4194304
 162	\N	Soy Milk	https://www.eatthismuch.com/calories/soy-milk-6715	\N	f	32768	240	250	2025-01-04	6	240	2097152
 163	\N	Cow Milk (Skim)	https://www.eatthismuch.com/calories/skim-milk,7096	\N	f	320	240	240	2024-08-30	6	240	4194304
@@ -218,7 +218,7 @@
 224	\N	Fresh Red Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-29	0	90	2
 225	\N	Shallots	https://www.eatthismuch.com/calories/shallots,2316	\N	f	0	43	43	2024-09-24	0	43	1
 226	\N	Yellow Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5522	\N	f	2	28	28	2024-11-10	4	26	2097152
-227	\N	Potato Starch	https://www.eatthismuch.com/food/nutrition/potato-starch,730100/	\N	f	0	13	13	2024-07-06	7	130	0
+227	\N	Potato Starch	https://www.eatthismuch.com/food/nutrition/potato-starch,730100/	\N	f	0	13	13	2025-07-10	7	130	16288
 228	\N	Brown Rice Flour	https://www.eatthismuch.com/calories/rice-flour-4847	\N	f	4096	28	158	2024-11-19	4	158	32768
 229	\N	Xanthan Gum	https://www.eatthismuch.com/food/nutrition/xanthan-gum,2997176/	\N	f	0	9	9	2024-07-30	7	144	0
 230	\N	Dry Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	0	244	244	2024-08-02	6	240	0
@@ -812,7 +812,7 @@
 977	\N	Small White Potatoes	https://www.eatthismuch.com/calories/potato-2091?a=0.4607%3A3	\N	f	0	170	170	2025-06-08	0	170	2
 978	\N	White Potatoes	https://www.eatthismuch.com/calories/potato-2091	\N	f	0	369	369	2025-06-01	0	369	2
 979	\N	Dill | Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	28	3	2025-06-23	4	48	3
-980	\N	Broth | Water	https://www.eatthismuch.com/calories/beef-broth-2899468	\N	f	0	240	240	2025-06-26	6	240	3
+980	\N	Broth | Water	https://www.eatthismuch.com/calories/beef-broth-2899468	\N	f	0	30	240	2025-06-26	9	240	928
 981	\N	Jicama	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
 982	\N	Farfalle Pasta	https://www.eatthismuch.com/calories/farfalle-pasta-1923824	\N	f	262176	28	56	2025-02-15	4	84	4096
 983	\N	Shelled Pistachios	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	2048	28	146	2024-10-12	4	146	1048576
@@ -821,7 +821,7 @@
 986	\N	Chickpea Flour	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
 987	\N	Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	t	0	28	200	2024-12-14	4	200	114688
 988	\N	Ground Turkey	https://www.eatthismuch.com/calories/ground-turkey-581	\N	f	0	28	29	2025-01-22	4	224	268435456
-989	\N	Steak Sauce	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2024-07-04	7	100	0
+989	\N	Steak Sauce	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2025-07-09	7	100	32
 990	\N	Pumpkin Purée	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
 991	\N	Coconut Aminos	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
 992	\N	Mascarpone Cheese	https://www.eatthismuch.com/calories/mascarpone-fresh-cheese-129296	\N	f	256	28	28	2025-07-06	4	224	8388608

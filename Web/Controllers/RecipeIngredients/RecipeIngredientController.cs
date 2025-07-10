@@ -8,6 +8,8 @@ using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Web.Code.Extensions;
+using Web.Code.TempData;
 using Web.Views.RecipeIngredient;
 
 namespace Web.Controllers.RecipeIngredients;
@@ -71,55 +73,60 @@ public class RecipeIngredientController : ViewController
         }
 
         var recipeIngredient = await _context.RecipeIngredients.AsNoTracking()
-            .Include(i => i.IngredientRecipe).Include(i => i.Ingredient).ThenInclude(i => i.Nutrients)
-            // The ingredient alternatives, include their nutrients so we can show those on the page.
-            .Include(i => i.Ingredient).ThenInclude(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient).ThenInclude(ai => ai.Nutrients)
-            // For which ingredients is this ingredient is an alternative of. Don't need to include the nutrients for this.
-            .Include(i => i.Ingredient).ThenInclude(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
+            .Include(i => i.Ingredient).ThenInclude(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
             .FirstOrDefaultAsync(r => r.Id == recipeIngredientId);
 
-        if (recipeIngredient == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
+        if (recipeIngredient == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
 
         var userRecipeIngredient = await _context.UserRecipeIngredients.AsNoTracking()
             .Where(ui => ui.RecipeIngredientId == recipeIngredientId)
-            //.Where(ui => ui.RecipeId == parameters.RecipeId)
             .Where(ui => ui.UserId == user.Id)
             .FirstOrDefaultAsync();
 
+        if (userRecipeIngredient == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
         var substitutionRecipes = await GetRecipes(user);
-        var recipeDtos = (await new QueryBuilder(Section.None)
+        var recipes = await new QueryBuilder(Section.None)
             .WithUser(user, ignoreHardFiltering: true)
             .WithRecipes(x =>
             {
-                x.AddRecipes(substitutionRecipes);
+                if (bool.TryParse(Request.Query["showBase"], out bool showBase) && showBase)
+                {
+                    x.AddRecipes(substitutionRecipes);
+                }
                 x.AddRecipes(new Dictionary<int, int?>
                 {
                     [recipeIngredient.RecipeId] = null,
                 });
             })
             .Build()
-            .Query(_serviceScopeFactory))
-            .Select(r => r.AsType<NewsletterRecipeDto>()!);
+            .Query(_serviceScopeFactory);
 
-        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipeIngredient.RecipeId);
-        if (recipeDto == null)
+        var recipe = recipes.FirstOrDefault(r => r.Recipe.Id == recipeIngredient.RecipeId);
+        if (recipe == null)
         {
             return Content("");
         }
 
-        // Must be managed from a recipe context.
-        if (userRecipeIngredient == null) { return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage)); }
+        var prepRecipes = recipes.Where(r => recipe.RecipeIngredients.Select(ri => ri.IngredientRecipeId).Contains(r.Recipe.Id)).ToList();
         return View(nameof(ManageRecipeIngredient), new UserManageRecipeIngredientViewModel()
         {
             User = user,
             Token = token,
-            Recipe = recipeDto,
             WasUpdated = wasUpdated,
             Recipes = substitutionRecipes,
             RecipeIngredient = recipeIngredient,
+            Recipe = recipe.AsType<NewsletterRecipeDto>()!,
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
             UserRecipeIngredient = new UserRecipeIngredientViewModel(userRecipeIngredient),
-            AltRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
+            PrepRecipes = prepRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
+            AltRecipes = recipes.ExceptBy([recipe.Recipe.Id], r => r.Recipe.Id).Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
             Ingredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient.AsType<IngredientDto>()!).ToList() ?? [],
         });
     }
@@ -136,7 +143,8 @@ public class RecipeIngredientController : ViewController
 
         if (!ModelState.IsValid)
         {
-            return await ManageRecipeIngredient(email, token, recipeIngredientId, wasUpdated: false);
+            TempData[TempData_User.FailureMessage] = ModelState.GetHtmlListOfErrors(); // Post-Redirect-Get for GoBackOnSave.
+            return RedirectToAction(nameof(ManageRecipeIngredient), new { email, token, recipeIngredientId, WasUpdated = false });
         }
 
         var existingUserRecipeIngredient = await _context.UserRecipeIngredients

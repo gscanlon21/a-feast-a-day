@@ -24,6 +24,7 @@ public class UserManageRecipeIngredientViewModel
     /// </summary>
     public required IList<Data.Entities.Recipe.Recipe> Recipes { get; init; }
 
+    public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
     public required IList<NewsletterRecipeDto> AltRecipes { get; init; }
 
     public required NewsletterRecipeDto Recipe { get; init; }
