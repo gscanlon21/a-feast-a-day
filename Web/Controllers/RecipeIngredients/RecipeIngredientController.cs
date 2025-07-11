@@ -111,7 +111,7 @@ public class RecipeIngredientController : ViewController
         var recipe = recipes.FirstOrDefault(r => r.Recipe.Id == recipeIngredient.RecipeId);
         if (recipe == null)
         {
-            return Content("");
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
         var prepRecipes = recipes.Where(r => recipe.RecipeIngredients.Select(ri => ri.IngredientRecipeId).Contains(r.Recipe.Id)).ToList();
