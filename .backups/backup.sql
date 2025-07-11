@@ -9269,6 +9269,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2959	7	\N	\N	147	1	4	\N	410	f	\N	1
 2960	0	\N	\N	147	1	2	\N	5	f	\N	2
 2961	0	\N	\N	147	1	1	, juiced	4	f	\N	3
+2858	5	\N	\N	149	2	3	\N	264	f	\N	0
 2839	0	\N	\N	148	2	3	, day-old or toasted	273	f	\N	0
 2840	0	\N	\N	148	1	3	, roasted, skinned, and chopped	8	f	\N	1
 2841	0	\N	\N	148	1	2	, roasted, skinned, and chopped	224	f	\N	2
@@ -9279,18 +9280,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2846	8	\N	\N	148	2	1	\N	143	f	\N	7
 2847	8	\N	\N	148	2	1	\N	36	f	\N	8
 2848	7	\N	\N	148	1	7	\N	278	f	\N	9
-2858	5	\N	\N	149	2	3	\N	264	f	\N	0
-2859	0	\N	\N	149	1	6	, chopped	144	f	\N	1
-2860	6	\N	\N	149	4	5	\N	186	f	\N	2
-2861	8	\N	\N	149	8	1	\N	285	t	\N	3
-2862	8	\N	\N	149	1	1	, to serve	29	t	\N	4
 2868	6	\N	\N	142	1	4	\N	186	f	\N	0
 2869	0	\N	\N	142	1	1	\N	493	f	\N	1
 2870	4	\N	\N	142	1	3	, grated	409	f	\N	2
+2859	0	\N	\N	149	1	6	, chopped	144	f	\N	1
 5119	4	\N	\N	310	1	6	\N	638	f	\N	0
 5120	7	\N	\N	310	1	4	, for the sauce	123	f	\N	1
 5121	7	\N	\N	310	1	1	\N	502	f	\N	2
 5122	7	\N	\N	310	1	1	\N	29	f	\N	3
+2860	6	\N	\N	149	4	5	\N	186	f	\N	2
 5401	6	\N	\N	363	4	1	\N	77	f	\N	0
 5402	0	\N	\N	363	1	1	, juiced	346	f	\N	1
 5218	0	\N	\N	311	1	2	\N	1	f	\N	1
@@ -9323,6 +9321,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2948	8	\N	\N	154	1	2	\N	70	f	\N	1
 2949	7	\N	\N	154	1	2	, plus extra to serve	234	f	\N	2
 2950	0	\N	\N	154	1	4	\N	22	f	\N	3
+2861	8	\N	\N	149	8	1	\N	285	t	\N	3
+2862	8	\N	\N	149	1	1	, to serve	29	t	\N	4
 5160	4	\N	\N	39	1	2	\N	137	f	\N	0
 5161	0	\N	\N	39	1	1	, zested and juiced	12	f	\N	1
 5326	7	\N	\N	321	1	2	\N	56	f	\N	3
@@ -10097,6 +10097,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5504	5	\N	\N	382	4	5	\N	918	f	\N	2
 5505	0	\N	\N	382	1	10	\N	910	t	\N	3
 5506	0	\N	\N	382	1	8	\N	5	f	\N	4
+5517	7	\N	\N	385	1	1	\N	238	f	\N	0
+5518	0	\N	\N	385	1	4	\N	750	f	\N	1
+5519	7	\N	\N	385	1	2	\N	100	f	\N	2
+5520	0	\N	\N	385	1	1	\N	224	f	\N	3
 5512	4	\N	\N	384	1	12	(MIXED-COLOR BABY HEIRLOOM CARROTS)	353	f	\N	0
 5513	0	\N	\N	384	1	1	(POMEGRANATE)	159	f	\N	1
 5514	4	\N	\N	384	1	2	\N	251	f	\N	2
@@ -10160,6 +10164,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5532	4	\N	\N	387	1	3	\N	957	f	\N	2
 4633	6	\N	\N	267	1	5	\N	246	f	\N	9
 4634	8	\N	\N	267	1	1	\N	285	f	\N	10
+5521	0	\N	\N	385	1	2	\N	144	f	\N	4
 5582	0	\N	\N	394	1	4	, peeled	671	f	\N	0
 5583	6	\N	\N	394	4	1	, chopped	2	f	\N	1
 5584	7	\N	\N	394	1	1	\N	80	f	\N	2
@@ -10176,11 +10181,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3088	7	\N	\N	132	1	2	\N	13	f	\N	6
 3089	8	\N	\N	132	1	1	, to garnish	13	t	\N	7
 3090	8	\N	\N	132	8	1	\N	285	t	\N	8
-5517	7	\N	\N	385	1	1	\N	238	f	\N	0
-5518	0	\N	\N	385	1	4	\N	750	f	\N	1
-5519	7	\N	\N	385	1	2	\N	100	f	\N	2
-5520	0	\N	\N	385	1	1	\N	224	f	\N	3
-5521	0	\N	\N	385	1	2	\N	144	f	\N	4
 5628	0	\N	\N	400	1	3	\N	17	t	\N	0
 5629	0	\N	\N	400	1	1	, peeled and pitted	9	f	\N	1
 5601	6	\N	\N	397	1	1	(BROCCOLI FLORETS), cut into small pieces, (use fresh, not frozen)	6	f	\N	0
@@ -10550,7 +10550,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5947	0	\N	\N	485	1	2	\N	387	f	\N	0
 5948	6	\N	\N	485	4	1	\N	39	f	\N	1
 5910	0	\N	\N	478	1	1	, chopped	17	f	\N	2
-5911	6	\N	\N	478	4	1	(OLIVES), pitted and chopped	397	f	\N	3
+5911	6	\N	\N	478	4	1	, pitted and chopped	1083	f	\N	3
 5912	6	\N	\N	478	4	1	, shaved	736	f	\N	4
 6001	5	\N	\N	522	2	1	, halved	156	f	\N	0
 6002	0	\N	\N	522	1	2	, chopped	255	f	\N	1
@@ -11226,6 +11226,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5802	0	\N	\N	430	1	1	, juiced	4	f	\N	7
 5803	7	\N	\N	430	1	2	\N	278	f	\N	8
 5804	8	\N	\N	430	8	1	, to taste	692	t	\N	9
+5913	6	\N	\N	478	1	1	(BABY LETTUCE GREENS)	305	f	\N	5
+5914	6	\N	\N	478	2	1	, cooked	6	f	\N	6
+5915	0	\N	\N	478	1	1	\N	\N	f	483	7
+6673	0	\N	\N	615	1	2	(SLICES OF PROSCIUTTO CHEESE)	571	f	\N	0
+6674	0	\N	\N	615	1	4	\N	387	f	\N	1
+6675	8	\N	\N	615	1	4	\N	14	f	\N	2
+6676	7	\N	\N	615	1	2	\N	77	f	\N	3
+6677	7	\N	\N	615	1	1	\N	29	f	\N	4
+6678	6	\N	\N	615	2	1	\N	344	f	\N	5
+6679	0	\N	\N	615	1	2	(SLICES FONTINA CHEESE), or Gruyere or Emmenthal	572	f	\N	6
+6680	8	\N	\N	615	4	1	\N	285	t	\N	7
 6662	0	\N	\N	614	1	4	\N	\N	f	65	0
 6663	7	\N	\N	614	1	2	, for filling	61	f	\N	1
 6664	8	\N	\N	614	1	1	, for filling	357	f	\N	2
@@ -11236,13 +11247,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6659	8	\N	\N	485	8	1	\N	69	t	\N	4
 6660	6	\N	\N	485	1	1	, to serve	\N	t	484	5
 6661	7	\N	\N	485	1	2	, sliced, to serve	144	t	\N	6
+6681	6	\N	\N	615	1	1	, to serve	277	t	\N	8
+6671	8	\N	\N	385	2	1	\N	82	t	\N	5
 6667	8	\N	\N	614	8	1	, for filling	75	t	\N	5
 6668	0	\N	\N	614	1	4	\N	22	f	\N	6
 6669	8	\N	\N	614	2	1	, for bread	29	t	\N	7
 6670	0	\N	\N	614	1	4	\N	305	t	\N	8
 6655	0	\N	\N	613	1	1	\N	387	f	\N	0
 6656	8	\N	\N	613	8	1	\N	214	t	\N	1
-6671	8	\N	\N	385	2	1	\N	82	t	\N	5
 6672	8	\N	\N	263	8	1	\N	285	t	\N	5
 6364	0	\N	\N	576	2	1	, sliced	105	f	\N	6
 6365	7	\N	\N	576	1	2	, chopped	144	f	\N	7
@@ -11251,9 +11263,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6594	4	\N	\N	605	1	2	\N	119	f	\N	1
 6595	4	\N	\N	605	1	1	\N	415	f	\N	2
 6596	4	\N	\N	605	2	1	\N	48	t	\N	3
-5913	6	\N	\N	478	1	1	(BABY LETTUCE GREENS)	305	f	\N	5
-5914	6	\N	\N	478	2	1	(BROCCOLI), cooked	872	f	\N	6
-5915	0	\N	\N	478	1	1	(GODDESS OF DETOOX DRESSING, p145)	159	f	\N	7
 \.
 
 
@@ -11732,10 +11741,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1873	Add in brown sugar, mustard, and ketchup. Stir to combine.	\N	181	1	0
 2550	Crush the orange blossoms in a mortar and pestle until they are a paste. Let sit for 2 hours.	\N	268	0	0
 2551	Combine the petal paste and distilled water in a Ball jar. Stir and cover. Let sit for 2 weeks.	\N	268	1	0
-1496	Peel, cut up and boil the potatoes in salted water for about 15 minutes until tender, Drain and return to the pan.	\N	149	0	0
-1497	Meanwhile, simmer the spring onions for 5 minutes in the milk in a heavy pan. (Alternatively, bring the milk to boiling point on its own if you prefer the spring onions raw.)	\N	149	1	0
-1498	Cover the potatoes with a clean cloth and dry them at the side of the stove for a few minutes before mashing them well. Beat in the boiling milk and spring onions. Working over the heat so that the champ is kept very hot, beat until the consistency is like well-creamed potatoes. Add more milk if necessary.	\N	149	2	0
-1499	Season well with pepper and salt. To serve, divide the champ between heated bowls and make a well in the centre of each. Add a knob (pat) of butter. Dip the champ into the melting butter as you eat.	\N	149	3	0
 3140	Preheat the oven to 350°F. Line 12 muffin tins with muffin liners.	\N	417	0	0
 1503	Pour the milk into a pan, split the vanilla pod lengthways using a sharp knife to reveal the seeds, and add it to the milk; the vanilla seeds and the pod will flavour the milk.	\N	142	0	0
 1504	Add the chocolate. The amount to use depends on personal taste - start with a smaller amount if you are unsure of the flavour and taste it at the beginning of step 3, adding more if necessary.	\N	142	1	0
@@ -11754,6 +11759,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2065	Heat the sunflower oil in a wok, then add the garlic, chilli, red pepper, carrots and broccoli or greens and stir-fry over a high heat for 2-3 minutes.	\N	196	1	0
 1829	Give the egg salad a taste, then adjust the seasonings to your liking. Store in the fridge in an airtight container. Serve cold, and enjoy!	\N	50	1	0
 1741	Add oil to a large pan over medium high heat. Tilting the pan away from you, add the vegetables and sauté over high heat until just tender and browned. 	\N	17	0	0
+1496	Peel, cut up and boil the potatoes in salted water for about 15 minutes until tender, Drain and return to the pan.	\N	149	0	0
 1500	Place the lentils in a heavy pan with the measured water. Bring to a boil, reduce the heat and cover the pan. Simmer gently for about 20 minutes, until the lentils are just tender and most of the water has been absorbed.	\N	150	0	0
 2558	Add the rose petals to a saucepan, then cover with the water.	\N	269	0	0
 2559	Turn the heat to high and bring to a boil.	\N	269	1	0
@@ -11763,6 +11769,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1532	Toss the pasta over a medium to high heat for 1-2 minutes. Serve immediately in four warmed bowls.	\N	152	2	0
 2561	Turn off the heat and let sit and steep for 1 hour.	\N	269	3	0
 2562	Strain, bottle and enjoy!	\N	269	4	0
+1497	Meanwhile, simmer the spring onions for 5 minutes in the milk in a heavy pan. (Alternatively, bring the milk to boiling point on its own if you prefer the spring onions raw.)	\N	149	1	0
 1501	Crumble half the feta cheese into the pan. Add the sun-dried tomato purêe, chopped chervil or flat leaf parsley and a little salt and freshly ground black pepper. Heat through for 1 minute.	\N	150	1	0
 1541	Preheat oven to 375°F. Line 2 baking sheets with aluminum foil and spray with gluten-free cooking spray.	\N	137	0	0
 1542	In a small bowl stir together the gluten-free breadcrumbs, Italian seasoning, onion powder, salt, nutmeg, and minced garlic. Stir in the milk and let sit for 2-3 minutes. 	\N	137	1	0
@@ -12364,8 +12371,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3412	Add the lemon juice, salt and pepper, and then top with the sliced almonds. Add the green beans and sauté until warmed through, about 1-2 minutes.	\N	555	4	0
 1502	Transfer the lentil mixture and juices to warmed plates or bowls. Crumble the remaining feta cheese on top and sprinkle with the fresh herbs to garnish. Serve the lentils immediately.	\N	150	2	0
 3030	Add 2 tablespoons of red wine vinegar and 2 cups of water to the pan. Cover, then cook in the oven for 2 hours, or until dark and sticky. Loosen with a splash of water, if needed, mix up, taste, season to perfection, and serve.	\N	382	1	0
-3036	Toast the sesame seeds in a dry 8-inch non-stick frying pan on a medium heat until lightly golden, then remove to a plate. Still on the heat, sit the wings in the pan — they should fit snugly. Let them color for 1 minute on each side, then add the teriyaki and just cover the wings with water. Halve the chili lengthways and add to the pan. Simmer for 35 to 40 minutes, or until the chicken is tender and the sauce is nice and sticky, turning occasionally.	\N	385	0	4
-3037	Add a splash of red wine vinegar to the pan and jiggle around to pick up the gnarly bits. Trim and finely slice the scallions, scatter them over the chicken with the toasted sesame seeds, and get stuck in.	\N	385	1	0
 1178	Heat the 15mL/1 tbsp oil in a frying pan. Add the chicken breasts and cook gently for about 15 minutes, turning several times until they are tender, lightly browned and thoroughly cooked. 	\N	124	0	0
 1179	Remove the chicken from the pan, cover and keep hot. Reduce the heat slightly, then add the pesto to the pan and cook gently, stirring constantly, for a few minutes, or until the pesto has warmed through.	\N	124	1	0
 1180	Put the cooked chicken on a plate, pour the warm pesto over the top, then garnish with basil leaves and serve immediately.	\N	124	2	0
@@ -12378,6 +12383,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3021	Add almonds to the bowl and toss to coat in melted chocolate.	\N	380	2	0
 3022	Transfer almonds one-by-one to prepared baking sheet, leaving any excess chocolate in the bowl. Sprinkle lightly with sea salt.	\N	380	3	0
 3023	Refrigerate until set, about 30 minutes. Enjoy 1/4 cup per serving. Store almonds for future snacking in an airtight container in the refrigerator for up to 2 weeks.	\N	380	4	0
+3036	Toast the sesame seeds in a dry 8-inch non-stick frying pan on a medium heat until lightly golden, then remove to a plate. Still on the heat, sit the wings in the pan — they should fit snugly. Let them color for 1 minute on each side, then add the teriyaki and just cover the wings with water. Halve the chili lengthways and add to the pan. Simmer for 35 to 40 minutes, or until the chicken is tender and the sauce is nice and sticky, turning occasionally.	\N	385	0	4
+3037	Add a splash of red wine vinegar to the pan and jiggle around to pick up the gnarly bits. Trim and finely slice the scallions, scatter them over the chicken with the toasted sesame seeds, and get stuck in.	\N	385	1	0
 1654	Meanwhile, warm the taco shells according to the instructions on the packet. Do not let them get too crisp. Spoon the lettuce, onion, tomatoes and avocado slices into the taco shells. Top with sour cream followed by the minced beef or turkey mixture.	\N	160	1	0
 3348	Preheat the oven to 425°F.	\N	532	0	0
 3349	In a medium-size bowl, toss the cauliflower and garlic with 2 tablespoons of the olive oil, plus salt and pepper.	\N	532	1	0
@@ -12660,6 +12667,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 989	Quarter and add the tomatoes to the bowl. Slice the pitas in 3/4-inch strips, then toast on the grill pan. Toss everything together, season to perfection and serve straight away.	\N	109	4	0
 3628	Remove the chicken skin and soft scallions from the pan and put aside. Cook the chicken for 10 more minutes, or until tender and cooked through. In a bowl, loosen the hoisin with a splash of red wine vinegar, then spoon over the chicken. Leave it in the oven while you drain and divide up the salad. Sit the chicken and soft scallions on top and crack over the crispy skin.	\N	383	3	2
 787	Arrange the skewers on a platter. Sqeeze a little lemon juice over each skewer. Serve immediately, offering the remaining lemon wedges separately.	\N	93	3	0
+3629	Preheat the oven to 200C/400F. Lightly oil a baking dish.	\N	615	0	2
+3630	Using a very sharp knife, carefully make a horizontal slit from the side into each chicken breast.	\N	615	1	0
+3631	Cut the prosciutto slices in half crossways. Place them in the centre of each chicken breast with a basil sprig.	\N	615	2	0
+3632	Heat the oil and butter in a wide, heavy frying pan until foaming. Cook the chicken breasts over medium heat for 1-2 minutes on each side, until they change colour. Transfer to the baking dish. Add the wine to the pan juices, stir until sizzling, then pour over the chicken and season to taste.	\N	615	3	4
+3633	Top each chicken breast with a half slices of Fontina. Bake for 20 minutes, or until the chicken is cooked through. Serve hot, with young salad leaves.	\N	615	4	2
+1498	Cover the potatoes with a clean cloth and dry them at the side of the stove for a few minutes before mashing them well. Beat in the boiling milk and spring onions. Working over the heat so that the champ is kept very hot, beat until the consistency is like well-creamed potatoes. Add more milk if necessary.	\N	149	2	0
+1499	Season well with pepper and salt. To serve, divide the champ between heated bowls and make a well in the centre of each. Add a knob (pat) of butter. Dip the champ into the melting butter as you eat.	\N	149	3	0
 \.
 
 

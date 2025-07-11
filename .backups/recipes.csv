@@ -128,7 +128,7 @@
 146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato purée.	\N	\N	24	7	3	6	t	french-bread-pizza.jpg	0	\N	f	f
 147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	0	0	5	1	t	hummus.jpg	6	\N	f	f
 148	Muhammara	\N	\N	\N	0	0	8	4	t	muhammara.jpg	0	\N	f	f
-149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	8	15	8	2	t	irish-champ.jpg	0	\N	f	f
+149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	16	15	8	2	t	irish-champ.jpg	0	\N	f	f
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	spiced-lentils-rice.jpg	0	\N	f	f
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	spaghetti-lemon.jpg	0	\N	f	f
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
@@ -266,7 +266,7 @@
 382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	4	120	9	4	t	beef-stew.jpg	0	\N	f	f
 383	Sticky Hoisin Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	25	5	2	t	sticky-hoissin-chicken.jpg	0	\N	f	f
 384	Carrot & Grain Salad	\N	\N	\N	6	15	3	2	t	sesame-ginger-carrots.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
-385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	6	2	t	sticky-kickin-wings.jpg	0	\N	f	f
+385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	5	2	t	sticky-kickin-wings.jpg	0	\N	f	f
 386	Chicken with Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	\N	0	\N	f	f
 387	Marinated Mediterranean Olives	\N	\N	\N	48	0	0	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
 388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. Make sure your soy sauce is gluten-free. To Store: Keep in an airtight container in the fridge for up to 3 days. To Reheat: Heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Only reheat fried rice made with freshly cooked rice. Rice shouldn’t be reheated more than once.	\N	\N	6	10	20	4	t	\N	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
@@ -430,3 +430,4 @@
 611	Beef Stir-Fry	\N	\N	\N	8	25	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 613	Boiled Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	8	t	boiled-chicken-breasts.jpg	4	\N	t	f
 614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	egg-sandwich.jpg	0	https://www.recipetineats.com/egg-sandwich/	f	f
+615	Chicken with Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f

@@ -41,7 +41,7 @@
 41	\N	Active Dry Yeast	https://www.eatthismuch.com/food/nutrition/yeast,4278/	\N	f	0	4	7	2024-08-25	8	192	4
 43	\N	Cocoa Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
 44	\N	Powdered Sugar	Missing minor nutrients. https://www.eatthismuch.com/calories/powdered-sugars-4645	\N	f	0	100	100	2024-10-05	6	100	4
-45	\N	9" Pie Crust	https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	256	194	194	2024-07-07	0	194	0
+45	\N	9" Pie Crust	https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	256	194	194	2025-07-11	0	194	114688
 46	\N	Pizza Crust	https://www.eatthismuch.com/calories/pizza-crust-1841250	\N	f	0	212	53	2024-10-16	0	53	2
 47	\N	Chicken Stock	https://www.eatthismuch.com/calories/chicken-stock-742	\N	f	0	240	240	2024-12-27	6	240	928
 48	\N	Salsa	https://www.eatthismuch.com/food/nutrition/salsa,735/	\N	f	512	28	259	2024-08-19	4	259	256
@@ -905,7 +905,7 @@
 1103	\N	Beef Tallow	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072
 1104	\N	Coconut Oil | Beef Tallow	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072
 1105	\N	Smoked Kielbasa Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880	\N	f	0	28	56	2025-02-22	4	224	268435456
-1106	\N	Arrowroot Starch	https://www.eatthismuch.com/food/nutrition/potato-starch,730100/	\N	f	0	13	13	2024-07-06	7	130	0
+1106	\N	Arrowroot Starch	https://www.eatthismuch.com/food/nutrition/potato-starch,730100/	\N	f	0	13	13	2025-07-11	7	130	114688
 1107	\N	Skinless Haddock Fillets	https://www.eatthismuch.com/calories/pork-tenderloin-1785	\N	f	0	28	28	2024-11-15	4	224	268435456
 1108	\N	Low Sodium Baking Powder	https://www.eatthismuch.com/calories/baking-powder-4274	\N	t	0	28	15	2025-06-18	4	240	114688
 1109	\N	Potatoes | Sweet Potatoes | Butternut Squash	https://www.eatthismuch.com/calories/potato-2091	\N	f	0	369	369	2025-05-25	0	150	2
