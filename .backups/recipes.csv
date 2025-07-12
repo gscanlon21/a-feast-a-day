@@ -74,7 +74,7 @@
 92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	12	5	5	2	t	chicken-lemon-garlic.jpg	0	\N	f	f
 93	Pork Kebab with BBQ Sauce	\N	\N	\N	12	10	5	4	t	bbq-pork-kebab.jpg	0	\N	f	f
 94	Balsamic Vinaigrette	\N	\N	\N	0	0	5	1	t	balsamic-vinaigrette.jpg	6	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	f	f
-95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	\N	\N	\N	8	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
+95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	\N	\N	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
 97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
 98	Loaded Deviled Eggs	\N	\N	\N	25	20	5	4	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
@@ -198,7 +198,7 @@
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO.	\N	\N	4	30	20	4	t	turkey-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	f	f
 251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	honey-mustard-dressing.jpg	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	hummus-vegetables.jpg	0	\N	f	f
-253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use.	\N	\N	16	120	10	5	t	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
+253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use.	\N	\N	32	120	10	5	t	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
 254	Maple-Pecan Dip	\N	\N	\N	0	0	10	1	t	hummus.jpg	6	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	f	f
 255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	f	f
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	\N	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
@@ -313,7 +313,7 @@
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	2	t	\N	0	\N	f	f
 431	Glow Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	\N	0	\N	f	f
-432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	0	\N	t	f
+432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	17	0	1	1	t	\N	0	\N	f	f
 467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	1	1	t	\N	0	\N	f	f
@@ -431,3 +431,4 @@
 613	Boiled Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	8	t	boiled-chicken-breasts.jpg	4	\N	t	f
 614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	egg-sandwich.jpg	0	https://www.recipetineats.com/egg-sandwich/	f	f
 615	Chicken with Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
+616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f

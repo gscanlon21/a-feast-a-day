@@ -89,10 +89,10 @@
 90	\N	Black Walnuts	https://www.eatthismuch.com/calories/walnuts-2684	\N	f	0	28	125	2024-10-02	4	125	1048576
 91	\N	Unsalted White Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5763	\N	f	2	28	26	2024-08-05	4	26	2097152
 92	\N	Cashew Nuts	https://www.eatthismuch.com/calories/cashew-nuts-2642	\N	f	0	137	137	2025-03-10	6	137	1048576
-93	\N	Refried Beans, vegetarian	https://www.eatthismuch.com/food/nutrition/refried-beans,3652/	\N	f	0	444	444	2024-10-23	6	444	3
+93	\N	Vegetarian Refried Beans	https://www.eatthismuch.com/food/nutrition/refried-beans,3652/	\N	f	0	444	444	2024-10-23	6	444	512
 94	\N	Pork Italian Sausage, Cooked	https://www.eatthismuch.com/calories/italian-sausage-952	\N	f	0	83	83	2024-07-23	0	100	268435456
 95	\N	Parmesan Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2025-07-02	4	100	8388608
-96	\N	Mexican Cheese Blend, reduced fat	https://www.eatthismuch.com/calories/mexican-cheese,160	\N	f	256	28	28	2024-09-09	4	224	6
+96	\N	Reduced-Fat Mexican Cheese Blend	https://www.eatthismuch.com/calories/mexican-cheese,160	\N	f	256	28	28	2024-09-09	4	224	8388608
 97	\N	White Rice	https://www.eatthismuch.com/calories/white-rice-4917	\N	f	0	185	185	2024-12-25	6	185	1024
 98	\N	Brown Rice	https://www.eatthismuch.com/food/nutrition/brown-rice,4804	\N	f	4096	28	190	2024-11-22	4	190	1024
 99	\N	Frozen Stir-Fry Vegetables	https://www.eatthismuch.com/calories/stir-fry-vegetables-129616	\N	f	0	28	91	2024-09-04	4	91	67108864
@@ -185,7 +185,7 @@
 188	\N	Rice	https://www.eatthismuch.com/calories/white-rice,4806	\N	f	4096	185	185	2024-09-15	6	185	1024
 189	\N	Salted Butter	https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2024-08-04	7	224	131072
 190	\N	Unsalted Butter	https://www.eatthismuch.com/calories/butter,121	\N	t	0	14	14	2024-07-27	7	224	29360128
-191	\N	Tortillas	Missing minor nutrients. https://www.eatthismuch.com/calories/tortillas,4268	\N	f	0	46	46	2024-08-21	0	92	4
+191	\N	Tortillas	Missing minor nutrients. https://www.eatthismuch.com/calories/tortillas,4268	\N	f	0	46	46	2024-08-21	0	92	64
 192	\N	Sour Cream, Reduced Fat	https://www.eatthismuch.com/calories/sour-cream-54	\N	f	260	28	242	2025-02-04	4	242	29360128
 193	\N	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021	\N	f	32	25	25	2024-11-01	0	25	64
 194	\N	Rice Cakes	https://www.eatthismuch.com/calories/rice-cakes-4440	\N	f	0	9	9	2024-11-18	0	36	16
@@ -207,7 +207,7 @@
 213	\N	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	0	257	257	2024-08-11	0	128.5	2
 214	\N	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/	\N	t	0	18	18	2024-07-28	7	288	131072
 215	\N	Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
-216	\N	Smoked Bacon Slices	https://www.eatthismuch.com/food/nutrition/bacon,1797	\N	f	0	8	8	2024-07-08	0	24	268435456
+216	\N	Smoked Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-12	0	224	268435456
 217	\N	White Onions	https://www.eatthismuch.com/calories/white-onion-4076970	\N	f	0	94	94	2025-03-22	0	188	2
 218	\N	Gluten-Free Spaghetti, Barilla	https://www.eatthismuch.com/calories/gluten-free-spaghetti,1641880	\N	f	0	28	56	2024-08-08	4	224	4
 219	\N	Iodized Salt	https://www.eatthismuch.com/calories/salt-iodized,1926529	\N	t	0	8	2	2024-09-08	8	256	131072
@@ -294,7 +294,7 @@
 301	\N	Chili Garlic Sauce	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2024-07-09	7	120	0
 302	\N	Spring Onions	These have a slightly larger bulb at the base then Green Onions. https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	148	148	2025-03-20	0	240	2
 303	\N	Butter Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2024-09-16	0	55	2
-305	\N	Leaves of Lettuce	https://www.eatthismuch.com/calories/lettuce,2015	\N	f	0	12	36	2024-07-25	0	36	0
+305	\N	Leaves of Lettuce	https://www.eatthismuch.com/calories/lettuce,2015	\N	f	0	12	36	2024-07-25	0	36	2
 306	\N	Butter Lettuce Heads | Boston Bibb Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2025-01-03	0	55	2
 307	\N	Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	3
 309	\N	Gold Potatoes	https://www.eatthismuch.com/calories/gold-potatoes-1654114	\N	f	0	148	148	2024-10-05	0	148	1
@@ -442,7 +442,7 @@
 487	\N	Tortillas, GF	https://www.eatthismuch.com/calories/tortillas-4267	\N	f	0	24	24	2025-06-07	0	96	16288
 488	\N	80% Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5421	\N	f	0	28	28	2024-10-26	4	224	8
 489	\N	Salt & White Pepper	\N	\N	t	0	28	14	2024-12-24	4	224	131072
-490	\N	Ground Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	1
+490	\N	Ground Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	131072
 491	\N	Breadcrumbs, GF	https://www.eatthismuch.com/calories/bread-crumbs-gluten-free-1726491	\N	f	0	11.25	30	2024-11-09	4	90	64
 492	\N	Enriched Long Grain Rice	https://www.eatthismuch.com/calories/white-rice,4806	\N	f	0	185	185	2024-09-19	6	185	4
 493	\N	Vanilla Bean	aka. Vanilla Pod.	\N	f	0	8	4	2024-08-29	0	224	1
@@ -592,7 +592,7 @@
 664	\N	Whole Milk (Cow), enriched	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
 665	\N	Whole Milk (Cow)	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
 666	\N	Lemons, without Peel	https://www.eatthismuch.com/calories/lemons-1432	\N	f	0	108	108	2024-10-22	0	216	1
-667	\N	Refried Beans, fat-free	https://www.eatthismuch.com/calories/refried-beans-3653	\N	f	0	444	444	2024-10-23	6	444	0
+667	\N	Fat-Free Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3653	\N	f	0	444	444	2024-10-23	6	444	0
 668	\N	Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3600	\N	f	0	444	444	2024-10-23	6	444	0
 669	\N	Frozen Blueberries	https://www.eatthismuch.com/calories/blueberries-frozen-1346	\N	f	0	28	155	2024-11-28	4	155	33554432
 670	\N	Frozen Wild Blueberries	https://www.eatthismuch.com/calories/blueberries-wild-1345	\N	f	0	28	140	2025-01-12	4	140	33554432
@@ -874,7 +874,7 @@
 1072	\N	Tarragon	https://www.eatthismuch.com/calories/tarragon-215	\N	f	0	28	2	2024-12-02	4	32	131072
 1073	\N	Leaves of Romaine Lettuce | Leaves of Butter Lettuce	https://www.eatthismuch.com/calories/lettuce-2013	\N	f	0	23.5	47	2024-10-15	0	47	1
 1074	\N	Leaves of Butter Lettuce	aka. Leaves of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2024-09-16	0	55	2
-1075	\N	Dried Basil	https://www.eatthismuch.com/calories/basil-218	\N	f	0	0.5	0.5	2025-01-10	0	32	3
+1075	\N	Dried Basil	https://www.eatthismuch.com/calories/basil-178	\N	f	0	28	2	2025-01-10	4	32	131072
 1076	\N	Mixed-Color Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
 1077	\N	Gold Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
 1078	\N	Red Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
@@ -890,7 +890,7 @@
 1088	\N	Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	512	111	111	2024-11-05	0	111	2
 1089	\N	Smoked Salmon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
 1090	\N	Mozzarella Cheese, DF	Dairy-Free. https://www.eatthismuch.com/calories/mozzarella-cheese,26	\N	f	0	28	28	2024-09-12	4	224	8388608
-1091	\N	9" Pie Crust, GF, DF	Gluten-Free. Dairy-Free. https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	0	194	194	2024-07-07	0	194	0
+1091	\N	9" Pie Crust, GF, DF	Gluten-Free. Dairy-Free. https://www.eatthismuch.com/food/nutrition/pie-crust,4292/	\N	f	0	194	194	2025-07-12	0	194	0
 1092	\N	Sparkling Water	\N	\N	t	0	240	240	2025-06-12	6	240	0
 1093	\N	Capers	https://www.eatthismuch.com/calories/capers-pickled,2884023	\N	f	0	5	5	2024-09-18	0	160	3
 1094	\N	Collagen Powder	https://www.eatthismuch.com/calories/collagen-powder-3116322	\N	t	0	28	7	2025-06-17	4	224	-2147483648

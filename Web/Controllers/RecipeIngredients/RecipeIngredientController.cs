@@ -72,7 +72,9 @@ public class RecipeIngredientController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipeIngredient = await _context.RecipeIngredients.AsNoTracking()
+        // AlternativeIngredientss are required for the select list.
+        // IngredientRecipe is required for the name of the recipe ingredient.
+        var recipeIngredient = await _context.RecipeIngredients.AsNoTracking().Include(ri => ri.IngredientRecipe)
             .Include(i => i.Ingredient).ThenInclude(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
             .FirstOrDefaultAsync(r => r.Id == recipeIngredientId);
 

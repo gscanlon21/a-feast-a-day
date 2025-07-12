@@ -35,13 +35,13 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div class="mb-3">
-                    <label for="Recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.RecipeIngredient)</label>
+                    <label for="recipe-ingredient-name" class="control-label">@Html.DisplayNameFor(_ => Model.RecipeIngredient)</label>
                     <div class="input-group">
-                        <textarea id="Recipe-name" class="form-control" disabled="disabled" aria-describedby="Recipe-help" rows="1">@(Model.RecipeIngredient.Ingredient?.Name ?? Model.RecipeIngredient.IngredientRecipe.Name)</textarea>
+                        <textarea id="recipe-ingredient-name" class="form-control" disabled="disabled" aria-describedby="recipe-ingredient-help" rows="1">@(Model.RecipeIngredient.Ingredient?.Name ?? Model.RecipeIngredient.IngredientRecipe.Name)</textarea>
                         <input type="submit" value="@(Model.UserRecipeIngredient.Ignore ? "Ignored" : "Ignore")" class="btn btn-outline-secondary" @(Model.DenyIgnoringIngredient ? "disabled='disabled'" : "") />
                     </div>
                     <span asp-validation-for="RecipeIngredient" class="text-danger"></span>
-                    <div id="Recipe-help" class="form-text">
+                    <div id="recipe-ingredient-help" class="form-text">
                         @Html.DisplayDescriptionFor(_ => Model.RecipeIngredient)
                     </div>
                 </div>
@@ -109,7 +109,7 @@
 
         @if (Model.AltRecipes.Count > Model.PrepRecipes.Count)
         {
-            <details class="mt-4 mb-1">
+            <details class="mt-4 mb-1 pt-1">
                 <summary class="mb-1 h5">
                     <span>Base Recipes</span>
                     <span class="float-end">@Model.AltRecipes.Count</span>
