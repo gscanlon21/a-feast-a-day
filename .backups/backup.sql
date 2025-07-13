@@ -8527,6 +8527,24 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13865	93	2199023255552	\N	\N	2	8
 13866	93	1792	\N	\N	3	3
 13867	93	14	\N	\N	3	39
+13868	1003	128	\N	\N	3	2
+13869	1003	64	\N	\N	3	0.1
+13870	1003	2048	\N	\N	2	123
+13871	1003	68719476736	\N	\N	2	103
+13872	1003	34359738368	\N	\N	2	644
+13873	1003	1	\N	\N	3	39
+13874	1003	4294967296	\N	\N	2	32
+13875	1003	2199023255552	\N	\N	2	1
+13876	1003	402653184	\N	\N	1	1
+13877	1003	1984	\N	\N	3	7
+13878	1003	2047	\N	\N	3	226
+13879	382	1	\N	\N	3	7
+13880	382	2199023255552	\N	\N	2	1
+13881	382	48	\N	\N	3	2
+13882	382	14	\N	\N	3	39
+13883	382	1984	\N	\N	3	1
+13884	382	62	\N	\N	3	41
+13885	382	2047	\N	\N	3	200
 \.
 
 
@@ -10684,6 +10702,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6059	7	\N	\N	530	1	1	, chopped	13	f	\N	3
 6088	0	\N	\N	535	1	1	, juiced and zested	346	f	\N	3
 6089	8	\N	\N	535	4	1	, to taste	74	f	\N	4
+6120	7	\N	\N	541	1	2	\N	964	f	\N	0
 6101	0	\N	\N	538	1	1	\N	4	f	\N	0
 6102	0	\N	\N	538	1	1	\N	1043	f	\N	1
 6103	7	\N	\N	538	1	1	\N	251	f	\N	2
@@ -10705,6 +10724,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6080	7	\N	\N	533	1	1	, chopped	473	f	\N	1
 6081	7	\N	\N	533	1	1	\N	77	f	\N	2
 6100	8	\N	\N	55	8	1	, to taste	692	t	\N	2
+6121	6	\N	\N	541	1	2	, chopped	222	f	\N	1
 6135	0	\N	\N	543	1	2	, juiced	4	f	\N	0
 6136	7	\N	\N	543	1	4	\N	461	f	\N	1
 6137	6	\N	\N	543	1	2	\N	14	f	\N	2
@@ -10764,13 +10784,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6187	6	\N	\N	551	1	1	\N	806	f	\N	1
 6188	8	\N	\N	551	1	1	, such as Yerba Prima	1067	f	\N	2
 6189	8	\N	\N	551	4	1	\N	74	f	\N	3
-6120	7	\N	\N	541	1	2	\N	964	f	\N	0
-6121	6	\N	\N	541	1	2	, chopped	222	f	\N	1
+6093	8	\N	\N	536	4	1	, to taste	692	t	\N	3
+6094	7	\N	\N	536	1	2	\N	1053	f	\N	4
 6122	0	\N	\N	541	1	4	, minced	5	f	\N	2
 6123	4	\N	\N	541	1	16	, peeled and deveined	1111	f	\N	3
 6124	0	\N	\N	541	1	2	, chopped	7	f	\N	4
-6093	8	\N	\N	536	4	1	, to taste	692	t	\N	3
-6094	7	\N	\N	536	1	2	\N	1053	f	\N	4
 6129	7	\N	\N	542	1	1	\N	964	f	\N	0
 6130	5	\N	\N	542	1	1	\N	391	f	\N	1
 6131	8	\N	\N	542	4	1	, to taste	692	t	\N	2
@@ -11212,6 +11230,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6597	0	\N	\N	606	1	2	\N	22	f	\N	0
 6598	4	\N	\N	606	1	1	\N	56	f	\N	1
 6599	4	\N	\N	606	1	1	\N	49	f	\N	2
+6125	6	\N	\N	541	1	1	\N	144	f	\N	5
+6126	6	\N	\N	541	1	4	\N	\N	f	411	6
 6630	7	\N	\N	610	1	1	, grated	307	f	\N	2
 6631	7	\N	\N	610	1	1	, grated	699	f	\N	3
 6632	0	\N	\N	610	1	1	, peeled and diced small	222	f	\N	4
@@ -11233,10 +11253,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6640	6	\N	\N	610	1	8	\N	\N	f	559	12
 6641	6	\N	\N	610	1	2	(MIXED GREENS), chopped	1099	f	\N	13
 6642	8	\N	\N	610	4	1	, to taste	692	t	\N	14
-6125	6	\N	\N	541	1	1	\N	144	f	\N	5
-6126	6	\N	\N	541	1	4	\N	\N	f	411	6
 6127	0	\N	\N	541	1	4	, beaten	187	f	\N	7
-6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
 6643	7	\N	\N	611	1	3	, divided	964	f	\N	0
 6644	6	\N	\N	611	1	1	, diced	594	f	\N	1
 6645	0	\N	\N	611	2	1	, diced	222	f	\N	2
@@ -11307,6 +11324,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6596	4	\N	\N	605	2	1	\N	48	t	\N	3
 6686	6	\N	\N	616	1	1	(CHOCOLATE CHIPS)	614	f	\N	4
 6672	8	\N	\N	263	8	1	\N	285	t	\N	5
+6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
 \.
 
 
@@ -12338,6 +12356,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2	0
 3233	Pour hot water over peppermint leaves and let steep for at least 5 minutes. Strain or leave in, and drink hot or let cool, and drink at room temperature.	\N	468	0	0
 3278	Blend all the ingredients in a  high-speed blender, on high, until smooth.	\N	486	0	0
+3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0	4
+3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1	4
 3422	Stove Top: Place the chicken, vinegar, and vegetables in a stockpot. Fill with water to 1 inch below the top of the stockpot. Bring to a boil, reduce the heat to medium-low, and simmer for 8 to 12 hours.	\N	559	2	0
 3423	Season with salt and pepper to taste.	\N	559	3	0
 3424	Strain, pour into Mason jars, and refrigerate.	\N	559	4	0
@@ -12346,12 +12366,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3432	Heat the tablespoon of avocado oil over medium heat for 1 minute, then add the salmon and broccoli. Cook for about 4 more minutes, or until the edges have whitened and are solid.	\N	562	2	0
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3	0
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4	0
-3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2	0
 3406	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	\N	554	2	0
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0	0
-3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0	0
 3428	Toss the tomatoes with the basil, remaining 1 tablespoon of olive oil, garlic, and balsamic vinegar in a salad bowl.	\N	561	2	0
 3429	Peel and chop the cooked beets and add to the salad bowl, tossing to coat with the dressing.	\N	561	3	0
+3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2	4
 924	Pour the lentils into a big pot and add water. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling.	\N	1	0	0
 2917	Turn the broiler on to medium-high.	\N	321	0	16
 2918	Score the chicken breasts on a criss-cross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place criss-cross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat  while you peel and finely grate the garlic in a bowl. Squeeze in the juice from 1½ limes, stir in the peanut butter, and loosen with enough water to give you a spoonable consistency. Finely slice the chili, then mix through the sauce, taste, and season to perfection.	\N	321	1	0
@@ -12359,7 +12378,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3449	In a large skillet over medium heat, heat the oil. To the oil, add the turkey, salt and pepper. Cook for 10 minutes, until turkey is cooked through. Remove the turkey and let it cool.	\N	567	0	0
 3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	\N	567	1	0
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2	0
-3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1	0
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1	0
 3407	Season to taste with salt and pepper.	\N	554	3	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0	0
@@ -12769,7 +12787,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13867, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13885, true);
 
 
 --
