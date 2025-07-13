@@ -59,6 +59,9 @@ public class Recipe
 
     public string? DisabledReason { get; set; } = null;
 
+
+    #region Navigation Properties
+
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.Recipes))]
     public virtual User.User User { get; set; } = null!;
 
@@ -80,9 +83,8 @@ public class Recipe
     [JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.SubstituteRecipe))]
     public virtual ICollection<UserRecipeIngredient> UserSubstituteRecipes { get; private init; } = [];
 
-    public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is Recipe other
-        && other.Id == Id;
+    #endregion
+
 
     [NotMapped]
     public bool Enabled
@@ -90,4 +92,8 @@ public class Recipe
         get => string.IsNullOrWhiteSpace(DisabledReason);
         set => DisabledReason = value ? null : "Disabled by user";
     }
+
+    public override int GetHashCode() => HashCode.Combine(Id);
+    public override bool Equals(object? obj) => obj is Recipe other
+        && other.Id == Id;
 }
