@@ -8527,6 +8527,37 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13865	93	2199023255552	\N	\N	2	8
 13866	93	1792	\N	\N	3	3
 13867	93	14	\N	\N	3	39
+13868	1003	128	\N	\N	3	2
+13869	1003	64	\N	\N	3	0.1
+13870	1003	2048	\N	\N	2	123
+13871	1003	68719476736	\N	\N	2	103
+13872	1003	34359738368	\N	\N	2	644
+13873	1003	1	\N	\N	3	39
+13874	1003	4294967296	\N	\N	2	32
+13875	1003	2199023255552	\N	\N	2	1
+13876	1003	402653184	\N	\N	1	1
+13877	1003	1984	\N	\N	3	7
+13878	1003	2047	\N	\N	3	226
+13879	382	1	\N	\N	3	7
+13880	382	2199023255552	\N	\N	2	1
+13881	382	48	\N	\N	3	2
+13882	382	14	\N	\N	3	39
+13883	382	1984	\N	\N	3	1
+13884	382	62	\N	\N	3	41
+13885	382	2047	\N	\N	3	200
+13886	339	128	\N	\N	3	4
+13887	339	2048	\N	\N	2	19
+13888	339	68719476736	\N	\N	2	188
+13889	339	34359738368	\N	\N	2	56
+13890	339	2	\N	\N	3	0.3
+13891	339	1	\N	\N	3	4
+13892	339	4294967296	\N	\N	2	1
+13893	339	2199023255552	\N	\N	2	0.1
+13894	339	402653184	\N	\N	1	0.1
+13895	339	14	\N	\N	3	0.4
+13896	339	1984	\N	\N	3	11
+13897	339	62	\N	\N	3	0.4
+13898	339	2047	\N	\N	3	118
 \.
 
 
@@ -10768,7 +10799,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6121	6	\N	\N	541	1	2	, chopped	222	f	\N	1
 6122	0	\N	\N	541	1	4	, minced	5	f	\N	2
 6123	4	\N	\N	541	1	16	, peeled and deveined	1111	f	\N	3
-6124	0	\N	\N	541	1	2	, chopped	7	f	\N	4
 6093	8	\N	\N	536	4	1	, to taste	692	t	\N	3
 6094	7	\N	\N	536	1	2	\N	1053	f	\N	4
 6129	7	\N	\N	542	1	1	\N	964	f	\N	0
@@ -10776,6 +10806,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6131	8	\N	\N	542	4	1	, to taste	692	t	\N	2
 6132	0	\N	\N	542	1	1	, zested	4	f	\N	3
 6134	6	\N	\N	542	1	1	\N	\N	f	410	5
+6124	0	\N	\N	541	1	2	, chopped	7	f	\N	4
 6195	5	\N	\N	553	1	3	(DARK MEAT CHICKEN OR BONELESS PORK RIBS)	975	f	\N	0
 6196	6	\N	\N	553	1	1	\N	991	f	\N	1
 6197	6	\N	\N	553	1	1	\N	80	f	\N	2
@@ -11236,7 +11267,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6125	6	\N	\N	541	1	1	\N	144	f	\N	5
 6126	6	\N	\N	541	1	4	\N	\N	f	411	6
 6127	0	\N	\N	541	1	4	, beaten	187	f	\N	7
-6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
 6643	7	\N	\N	611	1	3	, divided	964	f	\N	0
 6644	6	\N	\N	611	1	1	, diced	594	f	\N	1
 6645	0	\N	\N	611	2	1	, diced	222	f	\N	2
@@ -11261,6 +11291,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5907	8	\N	\N	477	4	1	, to taste	692	t	\N	5
 6654	7	\N	\N	612	1	1	\N	675	f	\N	0
 5714	7	\N	\N	416	1	2	\N	13	t	\N	8
+6703	6	\N	\N	619	2	1	(DRIED CEP OR PROCINI MUSHROOMS)	595	f	\N	0
+6704	0	\N	\N	619	1	4	(PORK ESCALOPES (US scallops))	1003	f	\N	1
 5801	6	\N	\N	430	4	1	, chopped	872	f	\N	6
 5802	0	\N	\N	430	1	1	, juiced	4	f	\N	7
 5803	7	\N	\N	430	1	2	\N	278	f	\N	8
@@ -11298,6 +11330,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6670	0	\N	\N	614	1	4	\N	305	t	\N	8
 6655	0	\N	\N	613	1	1	\N	387	f	\N	0
 6656	8	\N	\N	613	8	1	\N	214	t	\N	1
+6705	8	\N	\N	619	1	2	\N	81	f	\N	2
 6364	0	\N	\N	576	2	1	, sliced	105	f	\N	6
 6365	7	\N	\N	576	1	2	, chopped	144	f	\N	7
 6366	6	\N	\N	576	4	1	\N	\N	f	419	8
@@ -11306,7 +11339,43 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6595	4	\N	\N	605	1	1	\N	415	f	\N	2
 6596	4	\N	\N	605	2	1	\N	48	t	\N	3
 6686	6	\N	\N	616	1	1	(CHOCOLATE CHIPS)	614	f	\N	4
+6706	0	\N	\N	619	1	8	\N	5	f	\N	3
+6707	7	\N	\N	619	1	1	\N	29	f	\N	4
+6708	7	\N	\N	619	1	3	(MARSALA)	746	f	\N	5
+6709	7	\N	\N	619	1	2	\N	677	f	\N	6
 6672	8	\N	\N	263	8	1	\N	285	t	\N	5
+6710	0	\N	\N	619	1	10	(JUNIPER BERRIES), crushed	1062	f	\N	7
+6687	0	\N	\N	617	1	1	, part-baked	213	f	\N	0
+6688	0	\N	\N	617	1	2	(RIBEYE STEAKS)	1112	f	\N	1
+6689	7	\N	\N	617	1	1	\N	77	f	\N	2
+6690	4	\N	\N	617	1	4	(GORGONZOLA CHEESE), sliced	378	f	\N	3
+6691	8	\N	\N	617	4	1	\N	285	t	\N	4
+6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
+6692	0	\N	\N	618	1	4	\N	387	f	\N	0
+6693	0	\N	\N	618	1	4	(SLICED SMOKED HAM), halved and rind removed	26	f	\N	1
+6694	0	\N	\N	618	2	7	, thinly sliced	247	f	\N	2
+6695	8	\N	\N	618	1	1	, for coating	38	f	\N	3
+6696	0	\N	\N	618	1	2	, beaten	187	f	\N	4
+6697	6	\N	\N	618	4	3	, dried	18	f	\N	5
+6698	8	\N	\N	618	1	1	\N	503	f	\N	6
+6699	7	\N	\N	618	1	6	\N	29	f	\N	7
+6700	7	\N	\N	618	1	4	\N	77	f	\N	8
+6701	8	\N	\N	618	4	1	, to taste	285	t	\N	9
+6702	6	\N	\N	618	1	1	, to serve	277	t	\N	10
+6711	8	\N	\N	619	4	1	\N	285	t	\N	8
+6712	6	\N	\N	619	1	1	(NOODLES AND GREEN VEGETABLES), to serve	459	t	\N	9
+6713	0	\N	\N	620	1	4	(MIXED-COLOR ROMANO PEPPERS)	811	f	\N	0
+6714	7	\N	\N	620	1	6	\N	278	f	\N	1
+6715	4	\N	\N	620	1	7	\N	119	f	\N	2
+6716	0	\N	\N	620	1	10	(SWEET CHERRY PEPPERS), finely chopped	599	f	\N	3
+6717	4	\N	\N	620	1	4	(RICOTTA SALATA)	1002	f	\N	4
+6718	7	\N	\N	620	1	2	, chopped	573	f	\N	5
+6719	0	\N	\N	620	1	24	\N	397	f	\N	6
+6720	0	\N	\N	620	1	2	, crushed	5	f	\N	7
+6721	8	\N	\N	620	4	1	\N	285	t	\N	8
+6722	6	\N	\N	620	1	1	, to serve	277	t	\N	9
+6723	0	\N	\N	620	1	1	, to serve	22	t	\N	10
+6724	7	\N	\N	620	1	1	, to serve	547	t	\N	11
 \.
 
 
@@ -12346,26 +12415,26 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3432	Heat the tablespoon of avocado oil over medium heat for 1 minute, then add the salmon and broccoli. Cook for about 4 more minutes, or until the edges have whitened and are solid.	\N	562	2	0
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3	0
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4	0
-3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2	0
+3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2	4
 3406	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	\N	554	2	0
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0	0
-3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0	0
 3428	Toss the tomatoes with the basil, remaining 1 tablespoon of olive oil, garlic, and balsamic vinegar in a salad bowl.	\N	561	2	0
 3429	Peel and chop the cooked beets and add to the salad bowl, tossing to coat with the dressing.	\N	561	3	0
 924	Pour the lentils into a big pot and add water. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling.	\N	1	0	0
 2917	Turn the broiler on to medium-high.	\N	321	0	16
 2918	Score the chicken breasts on a criss-cross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place criss-cross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat  while you peel and finely grate the garlic in a bowl. Squeeze in the juice from 1½ limes, stir in the peanut butter, and loosen with enough water to give you a spoonable consistency. Finely slice the chili, then mix through the sauce, taste, and season to perfection.	\N	321	1	0
 2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove.	\N	263	0	4
+3378	Heat a wok or large skillet over medium-high heat, melt the coconut oil, and add the onion and garlic to the pan. Cook for 3 minutes until the onion starts to soften, then add the shrimp and cook for 1 minute.	\N	541	0	4
 3449	In a large skillet over medium heat, heat the oil. To the oil, add the turkey, salt and pepper. Cook for 10 minutes, until turkey is cooked through. Remove the turkey and let it cool.	\N	567	0	0
 3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	\N	567	1	0
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2	0
-3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1	0
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1	0
 3407	Season to taste with salt and pepper.	\N	554	3	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0	0
 3345	On a large serving platter, layer the sliced meat, spinach and avocado with the salsa.	\N	530	1	0
 3426	Preheat the oven to 375°F.	\N	561	0	0
 3427	Rub 1 tablespoon of olive oil over the whole beets and roast in the oven for 40 minutes to 1 hour, until just tender when pierced, set aside to cool for 10 minutes.	\N	561	1	0
+3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1	4
 2913	Add extra virgin olive oil to a large skillet over heat that's just a touch above medium. Add sweet potatoes and shallots then saute for 4-5 minutes, or until potatoes are just starting to turn tender. Add chorizo then turn heat up slightly and saute until cooked through, breaking chorizo up as it cooks.	\N	319	0	0
 2914	Add black beans, chicken broth, and salsa verde to the skillet then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15-18 minutes, adding a splash more chicken broth near the end if needed. Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	\N	319	1	0
 3008	Preheat oven to 400° F.	\N	378	0	0
@@ -12700,6 +12769,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3506	Cut strawberries in half to garnish.	\N	523	3	0
 3623	Serve hot on steamed rice and garnished with sliced green onions.	\N	485	3	0
 3639	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	263	2	0
+3640	Bake the ciabatta according to the instructions on the packet. Remove from the oven and leave to rest while you cook the steak.	\N	617	0	2
+3641	Heat a griddle pan until hot. Brush the steaks with the olive oil and lay them on the griddle pan. Cook for 2–3 minutes on each side, depending on the thickness of the steaks.	\N	617	1	4
+3642	Remove the steaks and set them aside to rest. Meanwhile, cut the load in half and split each half horizontally.	\N	617	2	0
+3643	Cut the steaks in half lengthways, so each is only half as thick as before. Moisten the bread with the pan juices, then make into sandwiches using the steak and cheese. Season well and serve.	\N	617	3	0
+3644	Slit the chicken breasts about three-quarters of the way through, then open them up and lay them flat. Place a slice of ham on each cut side of the chicken, trimming to fit if necessary so that the ham does not hang over the edge.	\N	618	0	0
+3645	Top with the Gruyère slices, making sure that they are well within the ham slices. Fold over the chicken and reshape, pressing well to seal and ensuring that no cheese is visible.	\N	618	1	0
 3624	Place the eggs in a bowl and mash with a fork. Smaller egg white bits make a creamier filling.	\N	614	0	0
 3625	Add remaining filling ingredients and gently stir to combine.	\N	614	1	0
 3626	Butter the bread and top each slice with a lettuce lead. Divide the filling between 4 pieces of bread and spread evenly edge to edge.	\N	614	2	0
@@ -12724,6 +12799,20 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3636	Stir in the chocolate chips. Spoon the bread mixture into the 12 muffin cups.	\N	616	2	0
 3637	Transfer to the oven and bake for 22 to 25 minutes until the bread pudding cups are lightly browned and don't jiggle when you shake them.	\N	616	3	2
 3638	Let the bread pudding cool for 5 minutes in the pan, then remove them from the tin. Cool completely before storing in the fridge.	\N	616	4	0
+3646	Spoon the flour for coating into a shallow bowl. Pour the beaten eggs into another shallow bowl, and mix the breadcrumbs with the thyme and seasoning in a third bowl.	\N	618	2	0
+3647	Toss each stuffed breast in the flour, then coat in egg and breadcrumbs, shaking off any excess.	\N	618	3	0
+3648	Place half the butter and half the coil in one pan, and the remaining half measures in the other, and heat separately.	\N	618	4	0
+3649	When the fat stops foaming, gently slide in the coated breasts, two in each pan. Shallow fry over a medium-low heat for about 5 minutes each side, turning over carefully with a spatula. Drain on kitchen paper for a few seconds to soak up the excess fat. Serve immediately with the mixed leaf salad.	\N	618	5	0
+3650	Put the dried mushrooms in a bowl and just cover with hot water. Leave to stand. Bring a small pan of water to the boil and add the garlic cloves. Cook for 10 minutes until soft. Drain, put the garlic in a bowl and set aside.	\N	619	0	0
+3651	Meanwhile, place the pork escalopes on a board, brush with 5ml/1tsp of the vinegar and add a generous and even grinding of salt and black pepper.	\N	619	1	0
+3652	Melt the butter in a large frying pan. Add the pork and fry quickly until browned on the underside. Turn the meat over and cook for another minute.	\N	619	2	0
+3653	Add the Marsala and rosemary to the pan. Drain the dried mushrooms, saving the juices, and add them to the mixture. Stir in 60ml/4tbsp of the mushroom juices, then add the garlic cloves, juniper berries, and remaining vinegar.	\N	619	3	0
+3654	Simmer the mixture gently for about 3 minutes until the pork is cooked. Season lightly and serve hot with noodles and vegetables.	\N	619	4	0
+3655	Prepare a barbecue. Split the peppers lengthways and remove the seeds and membrane. Rub 15ml/1tbsp of the oil all over the peppers. Place them hollow-side uppermost.	\N	620	0	0
+3656	Slice the mozzarella and divide it equally among the pepper halves.	\N	620	1	0
+3657	Sprinkle over the chopped cherry peppers, season lightly and crumble the ricotta salata over the top, followed by the oregano leaves and olives. Mix the garlic with the remaining oil and add a little salt and pepper. Spoon about half of the mixture over the filling in the peppers.	\N	620	2	0
+3658	Once the flames have fied down, rake the coals to one side. Position a lightly oiled grill rack over the coals to heat. When the coals are medium-hot, or with a moderate coating of ash, place the filled peppers on the section of the grill rack that is not over the coals.	\N	620	3	0
+3659	Cover with a lid, or improvise with a wok lid or tended heave-duty foil. Cook for 6 minutes, then spoon the remaining oil mixture over the filling, replace the lid and continue to grill for 6–8 minutes more, or until the peppers are lightly charred, and the cheese has melted. Serve with a dressed green or leafy salad and bread.	\N	620	4	0
 \.
 
 
@@ -12769,7 +12858,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13867, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13898, true);
 
 
 --

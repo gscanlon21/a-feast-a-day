@@ -34,13 +34,13 @@ public class CreateBackfill : IJob, IScheduled
             // Reverse the dates (oldest to newest) so the feast nutrients are calculated properly. Create a feast for every week.
             var dates = new Stack<DateOnly>(Enumerable.Range(1, UserConsts.NutrientVolumeWeeks).Select(r => DateHelpers.Today.AddDays(-7 * r)));
 
-            // Run with max one at a time so the nutrient volumes are re-calculated with up-to-date data each week.
+            // Run max one at a time so the nutrient targets are re-calculated with up-to-date data each week.
             var options = new ParallelOptions() { MaxDegreeOfParallelism = 1, CancellationToken = context.CancellationToken };
             await Parallel.ForEachAsync(dates, options, async (date, cancellationToken) =>
             {
                 try
                 {
-                    // Create a new instance because we're in a parallel loop and CoreContext isn't thread-safe.
+                    // Create a new scope because we're in a parallel loop and context isn't thread-safe.
                     using var scope = _serviceScopeFactory.CreateScope();
                     var newsletterRepo = scope.ServiceProvider.GetRequiredService<NewsletterRepo>();
 

@@ -35,7 +35,7 @@ public class RecipeDto
     public virtual IList<RecipeInstructionDto> Instructions { get; init; } = [];
 
     public string Equipment => string.Join(" & ", Instructions
-        .DistinctBy(i => i.Equipment).OrderBy(i => i.Order)
+        .OrderBy(i => i.Order).DistinctBy(i => i.Equipment)
         .Where(i => i.Equipment != Models.Recipe.Equipment.None)
         .Select(i => i.Equipment.GetDisplayName(separator: " | ")));
 

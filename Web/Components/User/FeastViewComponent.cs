@@ -21,9 +21,19 @@ public class CurrentFeastViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
     {
         // User has not confirmed their account, let the backfill finish first.
+        // Feasts cannot send until the user has confirmed their account.
         if (!user.LastActive.HasValue)
         {
             return Content("");
+        }
+        else if (user.CreatedDate == DateHelpers.Today)
+        {
+            // Check to see if the backfill has finished filling the full amount of data.
+            var (weeks, _) = await _userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, includeToday: true);
+            if (weeks < UserConsts.NutrientVolumeWeeks)
+            {
+                return Content("");
+            }
         }
 
         // Use the persistent token so the user can bookmark this.
