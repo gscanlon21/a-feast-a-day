@@ -139,11 +139,13 @@ public class UserRepo
     public async Task<IList<PastFeast>> GetPastFeasts(User user, int? count = null)
     {
         return await _context.UserFeasts
-            .Where(uw => uw.UserId == user.Id)
-            .Where(n => n.Date < user.StartOfWeekOffset)
+            .Where(uf => uf.UserId == user.Id)
+            // Don't show backfill feasts to the user.
+            .Where(uf => uf.Date >= user.CreatedDate)
+            .Where(uf => uf.Date < user.StartOfWeekOffset)
             // Select the most recent feast per send week.
-            .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
-            .OrderByDescending(n => n.Key) /// Order after grouping.
+            .GroupBy(uf => uf.Date.AddDays(-1 * ((7 + (uf.Date.DayOfWeek - user.SendDay)) % 7)))
+            .OrderByDescending(g => g.Key) /// Order after grouping.
             // Can't be passed through the constructor or it's slow.
             .Select(g => new PastFeast() { Date = g.OrderByDescending(n => n.Id).First().Date })
             .Take(count ?? 7).IgnoreQueryFilters().AsNoTracking()

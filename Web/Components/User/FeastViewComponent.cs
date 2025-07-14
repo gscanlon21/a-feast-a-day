@@ -28,7 +28,7 @@ public class CurrentFeastViewComponent : ViewComponent
         }
         else if (user.CreatedDate == DateHelpers.Today)
         {
-            // Check to see if the backfill has finished filling the full amount of data.
+            // Check to see if the backfill has finished filling the full amount of data. So the nutrient targets are accurate.
             var (weeks, _) = await _userRepo.GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, includeToday: true);
             if (weeks < UserConsts.NutrientVolumeWeeks)
             {

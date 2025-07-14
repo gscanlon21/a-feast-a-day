@@ -136,7 +136,7 @@
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
 156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	banana-ice-cream.jpg	0	\N	f	f
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	8	0	6	6	t	fruit-skewers.jpg	0	\N	f	f
-158	Dried Fruit Salad	\N	\N	\N	8	12	6	4	t	fruit-skewers.jpg	0	\N	f	f
+158	Dried Fruit Salad	\N	\N	\N	16	12	6	4	t	fruit-skewers.jpg	0	\N	f	f
 159	Clementines with Star Anise	\N	\N	\N	8	12	6	6	t	clementines-star-anise.jpg	0	\N	f	f
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	Too many ingredients.	\N	6	8	8	4	t	mexican-tacos.jpg	0	\N	f	f
 161	Pork on Lemon Grass Sticks	The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	8	8	6	4	t	bbq-pork-kebab.jpg	0	\N	f	f
@@ -185,7 +185,7 @@
 236	Nutty-Lemon Snack Balls	Store in an air-tight container in the refrigerator for 1-2 weeks. Can also be frozen!	\N	\N	16	55	5	3	t	nutty-lemon-snack-balls.jpg	0	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	f	f
 237	Vanilla Sugar	\N	\N	\N	0	0	10	2	t	\N	6	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	f	f
 238	Anti-Allergy Tea	\N	\N	\N	128	5	5	1	t	rosemary-lemon-tea.jpg	0	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	f	f
-239	Okra Fries	\N	\N	\N	24	25	5	4	t	okra-fries.jpg	0	https://www.drkarafitzgerald.com/recipe/okra-fries/	f	f
+239	Okra Fries	\N	\N	\N	16	25	5	4	t	okra-fries.jpg	0	https://www.drkarafitzgerald.com/recipe/okra-fries/	f	f
 240	Choconut-Mint Squares	\N	\N	\N	32	5	5	4	t	chocolate-mint-squares.jpg	0	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	f	f
 241	Party Coleslaw	\N	\N	\N	20	0	15	4	t	party-coleslaw.jpg	0	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	f	f
 242	BPA-Banishing Fruit Salad	\N	\N	\N	20	0	10	4	t	cantaloupe-melon-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	f	f
@@ -269,7 +269,7 @@
 385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	5	2	t	sticky-kickin-wings.jpg	0	\N	f	f
 386	Chicken with Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	\N	0	\N	f	f
 387	Marinated Mediterranean Olives	\N	\N	\N	48	0	0	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
-388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. Make sure your soy sauce is gluten-free. To Store: Keep in an airtight container in the fridge for up to 3 days. To Reheat: Heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Only reheat fried rice made with freshly cooked rice. Rice shouldn’t be reheated more than once.	\N	\N	6	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
+388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldn’t be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
 389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	\N	0	\N	f	f
 390	Maple-Mustard-Glazed Pan-Seared Pork Chops	From The Food Lab by J. Kenji López-Alt	\N	\N	4	15	5	2	t	\N	0	\N	f	f
 391	Low Carb Cauliflower Fried Rice	\N	\N	\N	6	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
@@ -436,3 +436,5 @@
 618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	\N	\N	8	12	8	2	t	\N	0	\N	f	f
 619	Pork w/ Marsala and Juniper	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 620	Sweet Peppers Stuffed with Two Cheeses	The peppers can be cooked on a griddle if you prefer. It is a good idea to blanch them in boiling water before filling, to give them a head start.	Too complicated.	\N	4	15	5	4	t	\N	0	\N	f	f
+621	The Ultimate Grilled Cheese	\N	\N	\N	4	10	5	2	t	\N	0	\N	f	f
+622	Hefty Veggie Wrap	\N	\N	\N	4	0	5	2	t	\N	0	\N	f	f

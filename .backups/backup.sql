@@ -705,6 +705,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1118	710	1
 871	670	1
 871	669	1
+295	293	1
+295	62	1
+294	293	1
+294	62	1
 187	28	1
 187	164	1
 186	184	1
@@ -8558,6 +8562,32 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 13896	339	1984	\N	\N	3	11
 13897	339	62	\N	\N	3	0.4
 13898	339	2047	\N	\N	3	118
+13899	381	128	\N	\N	3	4
+13900	381	2048	\N	\N	2	19
+13901	381	68719476736	\N	\N	2	188
+13902	381	34359738368	\N	\N	2	56
+13903	381	2	\N	\N	3	0.3
+13904	381	1	\N	\N	3	4
+13905	381	4294967296	\N	\N	2	1
+13906	381	2199023255552	\N	\N	2	0.1
+13907	381	402653184	\N	\N	1	0.1
+13908	381	14	\N	\N	3	0.4
+13909	381	1984	\N	\N	3	11
+13910	381	62	\N	\N	3	0.4
+13911	381	2047	\N	\N	3	118
+13912	380	128	\N	\N	3	4
+13913	380	2048	\N	\N	2	19
+13914	380	68719476736	\N	\N	2	188
+13915	380	34359738368	\N	\N	2	56
+13916	380	2	\N	\N	3	0.3
+13917	380	1	\N	\N	3	4
+13918	380	4294967296	\N	\N	2	1
+13919	380	2199023255552	\N	\N	2	0.1
+13920	380	402653184	\N	\N	1	0.1
+13921	380	14	\N	\N	3	0.4
+13922	380	1984	\N	\N	3	11
+13923	380	62	\N	\N	3	0.4
+13924	380	2047	\N	\N	3	118
 \.
 
 
@@ -8567,7 +8597,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 
 COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "RecipeId", "QuantityDenominator", "QuantityNumerator", "Attributes", "IngredientId", "Optional", "IngredientRecipeId", "Order") FROM stdin;
 2634	0	\N	\N	122	1	1	\N	187	f	\N	0
-3819	0	\N	\N	158	1	1	\N	157	f	\N	0
 3211	0	\N	\N	162	1	12	\N	561	f	\N	0
 3212	6	\N	\N	162	4	1	\N	560	f	\N	1
 1762	4	\N	\N	104	1	10	\N	286	f	\N	0
@@ -8575,6 +8604,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1764	0	\N	\N	104	1	4	\N	187	f	\N	2
 1765	4	\N	\N	104	4	7	\N	379	f	\N	3
 3213	6	\N	\N	162	1	2	\N	562	f	\N	2
+3819	0	\N	\N	158	1	1	\N	157	f	\N	0
 1655	5	\N	\N	99	1	1	\N	122	f	\N	0
 1656	5	\N	\N	99	1	1	, dried	356	f	\N	1
 1657	4	\N	\N	99	1	8	, cut into fingers	26	f	\N	2
@@ -8681,10 +8711,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4888	0	\N	\N	159	1	1	\N	493	f	\N	5
 4889	7	\N	\N	159	1	2	, or other orange liqueur	795	f	\N	6
 4890	0	\N	\N	159	1	12	\N	798	f	\N	7
-3820	0	\N	\N	158	1	1	\N	1	f	\N	1
-3821	0	\N	\N	158	1	1	\N	346	f	\N	2
-3822	6	\N	\N	158	2	1	, halved	589	f	\N	3
-3823	6	\N	\N	158	2	1	, halved	588	f	\N	4
 1116	0	\N	\N	66	1	2	\N	187	f	\N	0
 5192	0	\N	\N	106	1	2	\N	387	f	\N	1
 5193	4	\N	\N	106	1	12	\N	57	f	\N	2
@@ -8702,6 +8728,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1727	6	\N	\N	100	4	1	, to serve	39	f	\N	6
 1728	0	\N	\N	100	1	1	\N	187	f	\N	7
 1185	0	\N	\N	78	1	1	\N	257	f	\N	0
+3820	0	\N	\N	158	1	1	\N	1	f	\N	1
+3821	0	\N	\N	158	1	1	\N	346	f	\N	2
 2530	4	\N	\N	36	1	8	\N	132	f	\N	0
 1785	5	\N	\N	108	1	1	\N	389	f	\N	1
 1786	4	\N	\N	108	1	28	\N	260	t	\N	2
@@ -8750,13 +8778,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5312	4	\N	\N	319	1	6	, pork	402	f	\N	3
 5313	6	\N	\N	319	2	1	\N	54	f	\N	4
 5314	6	\N	\N	319	4	7	\N	111	f	\N	5
+3822	6	\N	\N	158	2	1	, halved	589	f	\N	3
+3823	6	\N	\N	158	2	1	, halved	588	f	\N	4
 1789	7	\N	\N	109	2	3	\N	383	f	\N	0
 1790	0	\N	\N	109	1	3	\N	105	f	\N	1
 1791	0	\N	\N	109	1	2	\N	405	f	\N	2
 1792	4	\N	\N	109	1	12	\N	404	t	\N	3
 1793	0	\N	\N	109	1	4	\N	166	f	\N	4
-3824	6	\N	\N	158	2	1	\N	626	f	\N	5
-3825	6	\N	\N	158	2	1	\N	625	f	\N	6
 2174	6	\N	\N	98	4	1	, minced, pickled	565	t	\N	2
 2175	0	\N	\N	98	1	1	, whole slices for garnish	565	t	\N	3
 1366	6	\N	\N	68	4	1	\N	134	f	\N	0
@@ -8775,6 +8803,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5315	6	\N	\N	319	2	1	\N	959	f	\N	6
 5316	6	\N	\N	319	2	1	\N	960	f	\N	7
 5317	8	\N	\N	319	1	1	, chopped	13	t	\N	8
+3824	6	\N	\N	158	2	1	\N	626	f	\N	5
 4901	4	\N	\N	101	1	5	, dried	137	f	\N	0
 4902	6	\N	\N	101	4	1	\N	278	f	\N	1
 4903	4	\N	\N	101	1	2	, stalks removed, shredded	368	f	\N	2
@@ -8802,6 +8831,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2799	7	\N	\N	138	1	2	\N	495	f	\N	4
 2800	7	\N	\N	138	1	1	\N	496	f	\N	5
 2801	7	\N	\N	138	1	1	\N	59	f	\N	6
+3825	6	\N	\N	158	2	1	\N	625	f	\N	6
 317	6	\N	\N	41	1	1	\N	145	f	\N	0
 2702	4	\N	\N	24	1	16	\N	109	f	\N	0
 319	6	\N	\N	41	1	1	, woody ends removed, cut into lengths	122	f	\N	2
@@ -8867,10 +8897,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2154	8	\N	\N	117	1	1	, chopped, for garnish	2	t	\N	10
 2155	8	\N	\N	117	1	1	, chopped, for garnish	140	t	\N	11
 519	4	\N	\N	31	1	18	\N	116	f	\N	0
-3826	6	\N	\N	158	4	1	\N	234	f	\N	7
-3827	7	\N	\N	158	1	1	\N	469	f	\N	8
-3828	0	\N	\N	158	1	1	, juiced	4	f	\N	9
-3829	0	\N	\N	158	1	1	\N	552	t	\N	10
 3906	4	\N	\N	196	1	7	(THIN EGG NOODLES)	333	f	\N	0
 3907	7	\N	\N	196	1	2	\N	233	f	\N	1
 3908	0	\N	\N	196	1	2	, very thinly sliced	5	f	\N	2
@@ -8910,6 +8936,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5108	0	\N	\N	51	1	1	\N	167	f	\N	1
 866	6	\N	\N	67	2	1	\N	\N	f	66	0
 5109	7	\N	\N	51	1	1	, melted	29	f	\N	2
+3827	7	\N	\N	158	1	1	\N	469	f	\N	8
 719	0	\N	\N	47	1	2	, ripe	11	f	\N	0
 1804	4	\N	\N	112	1	5	\N	409	f	\N	0
 1805	4	\N	\N	112	2	9	\N	190	f	\N	1
@@ -8938,12 +8965,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 869	7	\N	\N	67	1	1	\N	79	f	\N	3
 986	0	\N	\N	40	1	1	, to serve	139	t	\N	4
 987	0	\N	\N	40	1	10	\N	147	t	\N	5
+3826	6	\N	\N	158	4	1	\N	234	f	\N	7
 5340	6	\N	\N	325	8	1	\N	870	f	\N	0
 5341	6	\N	\N	325	8	1	, finely chopped	2	f	\N	1
 5342	6	\N	\N	325	2	3	\N	872	f	\N	2
 5343	0	\N	\N	325	1	1	, cored and cut into cubes	1	f	\N	3
 870	6	\N	\N	67	4	1	\N	89	t	\N	4
 871	0	\N	\N	67	1	1	\N	216	t	\N	5
+3828	0	\N	\N	158	1	1	, juiced	4	f	\N	9
+3829	0	\N	\N	158	1	1	\N	552	t	\N	10
 3470	6	\N	\N	165	4	1	\N	29	f	\N	0
 3471	0	\N	\N	165	1	1	, crushed	5	f	\N	1
 518	6	\N	\N	31	1	1	\N	115	t	\N	0
@@ -9788,12 +9818,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4428	4	\N	\N	105	1	10	, dried	382	f	\N	3
 4429	4	\N	\N	105	1	3	, plus extra to serve	378	f	\N	4
 5395	4	\N	\N	361	2	3	\N	1121	f	\N	4
-4372	5	\N	\N	239	1	1	\N	675	f	\N	0
-4373	8	\N	\N	239	1	2	\N	74	f	\N	1
-4374	8	\N	\N	239	1	2	\N	13	f	\N	2
-4375	8	\N	\N	239	1	1	, granules	5	f	\N	3
-4376	8	\N	\N	239	1	2	\N	80	f	\N	4
-4377	7	\N	\N	239	1	2	\N	676	f	\N	5
 4430	7	\N	\N	38	1	1	\N	77	f	\N	0
 4431	4	\N	\N	38	1	8	\N	54	f	\N	1
 4432	0	\N	\N	38	1	1	, sliced	8	f	\N	2
@@ -9813,6 +9837,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4255	7	\N	\N	195	1	2	, chopped	2	t	\N	9
 4256	8	\N	\N	195	8	1	\N	285	f	\N	10
 5190	6	\N	\N	59	1	1	\N	203	f	\N	0
+4373	8	\N	\N	239	1	2	\N	74	f	\N	1
+4374	8	\N	\N	239	1	2	\N	13	f	\N	2
+4375	8	\N	\N	239	1	1	, granules	5	f	\N	3
+4376	8	\N	\N	239	1	2	\N	80	f	\N	4
 5289	0	\N	\N	315	1	2	\N	105	f	\N	0
 5290	8	\N	\N	315	2	1	\N	831	f	\N	1
 5291	7	\N	\N	315	1	4	\N	500	f	\N	2
@@ -9827,6 +9855,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4477	7	\N	\N	232	1	4	\N	678	f	\N	4
 5299	0	\N	\N	317	1	2	\N	222	f	\N	0
 5300	4	\N	\N	317	1	2	\N	835	f	\N	1
+4377	7	\N	\N	239	1	2	\N	676	f	\N	5
 5301	6	\N	\N	317	2	3	\N	721	f	\N	2
 5302	7	\N	\N	317	1	1	\N	992	f	\N	3
 5303	4	\N	\N	317	2	3	\N	95	f	\N	4
@@ -9851,6 +9880,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4526	8	\N	\N	131	4	1	\N	143	f	\N	6
 4527	8	\N	\N	131	2	1	\N	503	f	\N	7
 4528	8	\N	\N	131	1	1	\N	285	f	\N	8
+4372	5	\N	\N	239	1	1	\N	675	f	\N	0
 4496	6	\N	\N	257	1	1	\N	721	f	\N	0
 4497	0	\N	\N	257	1	1	, chopped	222	f	\N	1
 4498	6	\N	\N	257	1	2	\N	111	f	\N	2
@@ -10192,16 +10222,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5509	0	\N	\N	383	1	1	\N	730	f	\N	2
 1047	6	\N	\N	27	1	2	, shredded	119	f	\N	2
 1048	4	\N	\N	27	1	12	\N	117	f	\N	3
-5536	7	\N	\N	388	1	2	, divided	78	f	\N	0
-5537	6	\N	\N	388	2	1	, diced	222	f	\N	1
-5538	6	\N	\N	388	2	1	, partially thawed	600	f	\N	2
-5539	6	\N	\N	388	2	1	, partially thawed	354	f	\N	3
-5540	0	\N	\N	388	1	1	, finely minced	5	f	\N	4
-5541	6	\N	\N	388	1	2	, cooked & cooled	97	f	\N	5
-5542	0	\N	\N	388	1	2	\N	187	f	\N	6
-5543	7	\N	\N	388	1	1	\N	656	f	\N	7
-5544	7	\N	\N	388	1	2	, gluten-free	62	f	\N	8
-5545	7	\N	\N	388	1	3	, sliced, for garnish	144	t	\N	9
 5546	7	\N	\N	389	1	1	\N	61	f	\N	0
 5547	0	\N	\N	389	1	2	\N	274	f	\N	1
 5548	0	\N	\N	389	1	3	\N	216	f	\N	2
@@ -10251,6 +10271,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3088	7	\N	\N	132	1	2	\N	13	f	\N	6
 3089	8	\N	\N	132	1	1	, to garnish	13	t	\N	7
 3090	8	\N	\N	132	8	1	\N	285	t	\N	8
+5536	7	\N	\N	388	1	2	, divided	78	f	\N	0
+5537	6	\N	\N	388	2	1	, diced	222	f	\N	1
+5538	6	\N	\N	388	2	1	, partially thawed	600	f	\N	2
+5539	6	\N	\N	388	2	1	, partially thawed	354	f	\N	3
 5628	0	\N	\N	400	1	3	\N	17	t	\N	0
 5629	0	\N	\N	400	1	1	, peeled and pitted	9	f	\N	1
 5601	6	\N	\N	397	1	1	(BROCCOLI FLORETS), cut into small pieces, (use fresh, not frozen)	6	f	\N	0
@@ -11376,6 +11400,21 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6722	6	\N	\N	620	1	1	, to serve	277	t	\N	9
 6723	0	\N	\N	620	1	1	, to serve	22	t	\N	10
 6724	7	\N	\N	620	1	1	, to serve	547	t	\N	11
+5540	0	\N	\N	388	1	1	, finely minced	5	f	\N	4
+5541	6	\N	\N	388	1	2	, cooked & cooled	97	f	\N	5
+5542	0	\N	\N	388	1	2	\N	187	f	\N	6
+5543	7	\N	\N	388	1	1	\N	656	f	\N	7
+5544	7	\N	\N	388	1	2	\N	295	f	\N	8
+5545	7	\N	\N	388	1	3	, sliced, for garnish	144	t	\N	9
+6725	7	\N	\N	621	1	5	, at room temperature, divided	189	f	\N	0
+6726	0	\N	\N	621	1	4	\N	221	f	\N	1
+6727	0	\N	\N	621	1	2	(SLICES OF APPLEWOOD SMOKED CHEDDER CHEESE)	319	f	\N	2
+6728	0	\N	\N	621	1	2	(SLICES OF SWISS CHEESE)	319	f	\N	3
+6729	0	\N	\N	621	1	2	(SLICES OF PROVOLONE CHEESE)	319	f	\N	4
+6730	7	\N	\N	622	1	2	\N	232	f	\N	0
+6731	0	\N	\N	622	1	1	, 12-inch	136	f	\N	1
+6732	6	\N	\N	622	1	1	(ROASTED VEGETABLES)	1084	f	\N	2
+6733	6	\N	\N	622	1	1	\N	206	f	\N	3
 \.
 
 
@@ -11818,11 +11857,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1266	Cook the pasta in a large pan of lightly salted boiling water for about 3 minutes.	\N	79	1	0
 1267	Turn on the heat under the pan of cream to low, add the cooked pasta all at once and toss until it is coated in the sauce.	\N	79	2	0
 1268	Taste for seasoning and serve immediately, topped with extra Parmesan cheese.	\N	79	3	0
-2350	Preheat the oven to 400 degrees Fahrenheit.	\N	239	0	0
-2351	In large bowl, toss the okra in with wet ingredients first. Next, add all dry ingredients and mix well to incorporate, feel free to use your hands.	\N	239	1	0
-2352	Spread the okra out on a sheet pan, single layer, so they all have a chance to get a bit crispy.	\N	239	2	0
-2353	Roast for 12 minutes then remove from oven, stir and return to oven for another 12-13 minutes, or until crispy, but not burnt.	\N	239	3	0
-2354	Remove from oven and serve.	\N	239	4	0
 2403	Preheat oven to 375 degrees. While oven is pre-heating, place coconut oil in oven-safe container, inside oven to melt, about three minutes.	\N	245	0	0
 2404	In mixing bowl, combine pumpkin seeds, sunflower seeds, cashews and coconut oil. Season with sea salt and mix well. Spread on rimmed baking sheet in a single layer. Toast until golden, about 6-8 minutes, stirring halfway through.	\N	245	1	0
 2405	Remove mixture from oven, place on plate and set on counter. When cool, combine seed and nut mixture with coconut flakes, cinnamon, chocolate chips. Mix to combine. Enjoy!	\N	245	2	0
@@ -11838,6 +11872,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2792	Stir butter and garlic together.	\N	51	0	0
 2793	Place naan on grill rack; grill over medium-high heat until bottom is golden brown, about 2 minutes.	\N	51	1	0
 2794	Flip and brush top with garlic butter.	\N	51	2	0
+2350	Preheat the oven to 400 degrees Fahrenheit.	\N	239	0	0
+2351	In large bowl, toss the okra in with wet ingredients first. Next, add all dry ingredients and mix well to incorporate, feel free to use your hands.	\N	239	1	0
+2352	Spread the okra out on a sheet pan, single layer, so they all have a chance to get a bit crispy.	\N	239	2	0
+2353	Roast for 12 minutes then remove from oven, stir and return to oven for another 12-13 minutes, or until crispy, but not burnt.	\N	239	3	0
+2354	Remove from oven and serve.	\N	239	4	0
 1850	Heat the tomatoes and the cinnamon, cumin and cloves with half the coriander in a pan, then season to taste with salt and freshly ground black pepper and bring to the boil.	\N	176	0	0
 2682	Cut off ends and slice beets very thin using a knife or mandolin. Place in a medium bowl and drizzle with the EVOO and sea salt. Toss. Let sit for 30 minutes.	\N	234	0	0
 3443	Remove the vegetables from the oven and let cool slightly before serving.	\N	564	5	0
@@ -12068,9 +12107,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2578	Preheat oven to 400°F.	\N	250	0	0
 2579	Dice potatoes and zucchini separately and set aside. Chop cauliflower and arugula separately and set aside.	\N	250	1	0
 2289	Heat 30ml/2 tbsp of the oil in a non-stick frying pan. Add the red pepper and onion and cook over a low heat for 8-10 minutes, or until the vegetables are just soft, stirring occasionally.	\N	195	0	0
-2021	Place the dried fruit in a large pan and add 600ml/1 pint/2½ cups water.	\N	158	0	0
-2022	Peel and core the pear and apple, then dice. Remove peel and pith from the orange and cut into wedges. Add all the cut fruit to the pan with the raspberries and blackberries.	\N	158	1	0
-2023	Pour in a further 150ml/¼ pint/⅔ cup water, the cinnamon, sugar and honey, and bring to the boil. Cover and simmer for 10 minutes, then remove the pan from the heat. Stir in the lemon juice. Leave to cool completely, then transfer the fruit and syrup to a bowl and chill for 1-2 hours before serving.	\N	158	2	0
 2580	Mix diced potatoes and chopped cauliflower with 1 tablespoon of avocado oil and 1-2 teaspoons of salt. Roast in the oven until tender and browning.	\N	250	2	0
 2581	Heat a medium skillet and saute turkey using 1 tablespoon avocado oil. Add desired spices and salt and pepper to taste. Cook until brown. Once cooked, add diced zucchini, and cook for 5 minutes.	\N	250	3	0
 2582	In a mixing bowl, mix cooked vegetables, cooked turkey, arugula, pine nuts, sauerkraut with EVOO, and a squeeze of lemon.	\N	250	4	0
@@ -12095,7 +12131,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	\N	254	1	0
 2369	Serve immediately, drizzled with a touch more maple syrup.	\N	254	3	0
 2818	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful or cooking water. Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the zucchini. Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan.	\N	260	0	0
+2021	Place the dried fruit in a large pan and add 600ml/1 pint/2½ cups water.	\N	158	0	0
 3259	Toss all ingredients and serve.	\N	477	0	0
+2022	Peel and core the pear and apple, then dice. Remove peel and pith from the orange and cut into wedges. Add all the cut fruit to the pan with the raspberries and blackberries.	\N	158	1	0
+2023	Pour in a further 150ml/¼ pint/⅔ cup water, the cinnamon, sugar and honey, and bring to the boil. Cover and simmer for 10 minutes, then remove the pan from the heat. Stir in the lemon juice. Leave to cool completely, then transfer the fruit and syrup to a bowl and chill for 1-2 hours before serving.	\N	158	2	0
 2584	In large sauté pan, heat the oil over medium heat. Add the bay leaf, cardamom pods, cinnamon stick, cumin seeds and curry or chili powder, if using. Warm the spices gently until they become fragrant.	\N	272	0	0
 2585	Add the onion and sauté for 7-10 minutes until translucent. Add the garlic and cook another few minutes before adding the rice.	\N	272	1	0
 2586	Stir frequently until the rice is fully heated through and completely coated in the spices.	\N	272	2	0
@@ -12514,12 +12553,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2-3 minutes.	\N	264	1	0
 1884	Meanwhile, separate the eggs, putting the yolks into a bowl (save the whites for making meringues another day), then finely grate in the cheese and mix together. Tip the drained pasta into the chestnut pan, then remove from the heat and wait 2 minutes for the pan to cool slightly (if the pan's too hot, it'll scramble; get it right and it'll be smooth, silky and deliciously elegant). Loosen the egg mixture with a splash of the reserved cooking water, then pour over the pasta, tossing and stirring vigorously—the egg will gently cook in the residual heat. Season to perfection. Adjust the consistency with extra cooking water, if needed, and finish with a fine grating on cheese, if you like.	\N	183	1	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	\N	360	1	0
-3043	Heat 1 tablespoon of vegetable oil in a large skillet or wok over medium-high heat. Add the diced onion and sauté until it becomes translucent, about 2-3 minutes.	\N	388	0	0
-3044	Add the partially thawed peas, carrots, and minced garlic to the skillet. Sauté for 2-3 minutes until the vegetables are tender.	\N	388	1	0
-3045	Push the vegetables to the side of the skillet, and add the remaining 1 tablespoon of vegetable oil. Lightly beat the eggs, pour them into the pan and scramble until fully cooked.	\N	388	2	0
-3046	Add the cooked rice to the skillet, breaking up any clumps with a spatula. Stir-fry the rice with the vegetables and eggs for about 3-4 minutes, allowing it to heat through and slightly crisp up.	\N	388	3	0
-3047	Pour the toasted sesame oil and gluten-free soy sauce over the rice. Stir well to evenly coat the rice and distribute the flavors.	\N	388	4	0
-3048	Remove from heat and garnish with sliced green onions, if desired. Serve hot and enjoy.	\N	388	5	0
 3056	Place the thawed cauliflower in small batches in a food processor fitted with the steel blade. Pulse in short bursts just until it resembles grains of rice. Place the riced cauliflower in a tea towel or fine mesh nut milk bag, and squeeze until all of the water has been removed. Expect about 1 cup liquid total. Line a medium-size bowl with paper towels, place the riced, dried cauliflower in the bowl, and set it aside.	\N	391	0	0
 3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. Peel off long thick strips of lemon zest and place in a bowl with the olives. Squeeze the lemon then top with 3 times as much extra virgin olive oil. Add salt, pepper and the crushed coriander seeds. Pour the dressing over the olives and leave to marinate. The longer you leave them, the better they’ll taste.	\N	387	0	0
 3057	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	\N	391	1	0
@@ -12534,6 +12567,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3066	Remove the chickpeas from the oven and transfer them to a bowl while still warm. Toss with olive oil to coat evenly, then add salt, garlic powder, smoked paprika, black pepper, cayenne pepper, and cumin. Mix well to distribute the flavors.	\N	392	2	0
 3067	Return the seasoned chickpeas to the baking sheet, spreading them out in a single layer. Roast for an additional 15–20 minutes, shaking the pan or stirring every 10 minutes to ensure even cooking. Keep an eye on them during the last few minutes to prevent burning.	\N	392	3	0
 2900	Halve the bok choy lengthways and place in a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil. Once charred, toss in the grees scallion slices, then stir in the hoisin. Let it glaze for 1 minute, then mix in the rice for 1 final minute. Spoon over the chili dressing, and serve up.	\N	313	1	0
+3043	Heat 1 tablespoon of vegetable oil in a large skillet or wok over medium-high heat. Add the diced onion and sauté until it becomes translucent, about 2-3 minutes.	\N	388	0	4
+3044	Add the partially thawed peas, carrots, and minced garlic to the skillet. Sauté for 2-3 minutes until the vegetables are tender.	\N	388	1	4
+3045	Push the vegetables to the side of the skillet, and add the remaining 1 tablespoon of vegetable oil. Lightly beat the eggs, pour them into the pan and scramble until fully cooked.	\N	388	2	4
+3046	Add the cooked rice to the skillet, breaking up any clumps with a spatula. Stir-fry the rice with the vegetables and eggs for about 3-4 minutes, allowing it to heat through and slightly crisp up.	\N	388	3	4
+3047	Pour the toasted sesame oil and gluten-free soy sauce over the rice. Stir well to evenly coat the rice and distribute the flavors.	\N	388	4	4
+3048	Remove from heat and garnish with sliced green onions, if desired. Serve hot and enjoy.	\N	388	5	0
 2075	Add the remaining soy sauce and seasong with salt and ground black pepper. Return the chicken and any juices to the noodle mixture, add the chopped spring onions and give the mixture a final stir. Serve at once.	\N	197	5	0
 3456	Preheat the oven to 400°F.	\N	568	0	0
 3087	In a large heavy-bottom skillet, salt pork and sear until the outside starts to darken. Place the pork in a slow cooker.	\N	398	0	0
@@ -12813,6 +12852,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3657	Sprinkle over the chopped cherry peppers, season lightly and crumble the ricotta salata over the top, followed by the oregano leaves and olives. Mix the garlic with the remaining oil and add a little salt and pepper. Spoon about half of the mixture over the filling in the peppers.	\N	620	2	0
 3658	Once the flames have fied down, rake the coals to one side. Position a lightly oiled grill rack over the coals to heat. When the coals are medium-hot, or with a moderate coating of ash, place the filled peppers on the section of the grill rack that is not over the coals.	\N	620	3	0
 3659	Cover with a lid, or improvise with a wok lid or tended heave-duty foil. Cook for 6 minutes, then spoon the remaining oil mixture over the filling, replace the lid and continue to grill for 6–8 minutes more, or until the peppers are lightly charred, and the cheese has melted. Serve with a dressed green or leafy salad and bread.	\N	620	4	0
+3660	Butter each side of the 4 slices of bread on one side with 1 tablespoon of butter.	\N	621	0	0
+3661	Heat a large skillet over medium heat. Add the remaining 1 tablespoon of butter to the pan and throw 2 slices of bread in, butter-side up. Cook the bread for 1 minute.	\N	621	1	0
+3662	Flip the bread butter-side down and top each with a slice of Cheddar, Swiss, and provolone cheese. Top with the remaining bread, butter-side up. Cook the sandwich on one side until the bread is golden brown, then flip and do the same thing on the other side.	\N	621	2	0
+3663	Take the grilled cheeses out of the pan and put them on a wire rack to chill out for 2 minutes, then cut and serve.	\N	621	3	0
+3664	Spread the hummus evenly on the tortilla. Put the vegetables in the center of the tortilla and top with the spinach. Roll the bottom of the tortilla up over the vegetables, then fold the sides into the center. Pull back on the rolled tortilla to tighten it, then roll forward to finish the wrap.	\N	622	0	0
 \.
 
 
@@ -12858,7 +12902,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13898, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 13924, true);
 
 
 --
