@@ -608,7 +608,7 @@
 681	\N	Stevia Powder	https://www.eatthismuch.com/calories/stevia-powder-1636778	\N	f	0	28	1	2025-07-16	4	224	114688
 682	\N	Natural Peppermint Flavor (Alcohol-Free)	\N	\N	t	0	15	15	2025-06-18	7	240	3
 683	\N	Mint Extract	\N	\N	t	0	13	13	2024-09-19	7	208	3
-684	\N	Monk Fruit Powder	\N	\N	f	0	7.5	7.5	2024-07-09	7	120	114688
+684	\N	Monk Fruit Powder	https://www.eatthismuch.com/calories/monkfruit-sweetener-1962211	\N	f	0	28	8	2025-07-19	4	192	114688
 685	\N	Monk Fruit Powder | Stevia Powder	\N	\N	f	0	7.5	7.5	2025-07-17	7	120	114688
 686	\N	Sugar-Free Dark Chocolate (70%)	https://www.eatthismuch.com/calories/baking-chips-dark-chocolate-1730128	\N	f	0	28	14	2025-02-03	4	224	16384
 687	\N	Sugar-Free Dark Chocolate Chips (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	28	168	2025-01-31	4	168	16384
@@ -727,7 +727,7 @@
 830	\N	Sun-Dried Tomato Paste	aka. Sun-Dried Tomato Puree. https://www.eatthismuch.com/calories/sun-dried-tomato-paste-1801202	\N	f	0	28	30	2025-04-04	4	240	256
 831	\N	Saffron	https://www.eatthismuch.com/calories/saffron-212	\N	f	0	28	0.7	2025-01-11	4	33.6	131072
 832	\N	Dried Sage	\N	\N	f	0	4	4	2024-09-26	7	64	1
-833	\N	Dried Red Chili Pepper	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2024-07-09	7	120	0
+833	\N	Dried Red Chili Pepper	https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	\N	t	0	28	1	2025-07-19	4	16	131072
 834	\N	Frozen Edamame Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	28	118	2024-07-16	4	118	67108864
 835	\N	Sliced Fennel Salami	https://www.eatthismuch.com/calories/hard-salami,1805029	\N	f	0	5.6	28	2024-09-01	0	100	8
 836	\N	Long Grain Rice	https://www.eatthismuch.com/calories/white-rice,4806	\N	f	0	185	185	2024-09-19	6	185	4
@@ -922,3 +922,4 @@
 1121	\N	Bresaola	https://www.eatthismuch.com/calories/cured-beef-thin-sliced-beef-2792	\N	f	0	28	28	2024-12-10	4	224	268435456
 1122	\N	Green Cabbage | Purple Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	f	0	33	908	2025-01-20	0	99	2
 1123	\N	Chicken Eggs | Duck Eggs	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-11-03	0	200	16777216
+1124	\N	Fresh Baby Lettuce	https://www.eatthismuch.com/calories/baby-spinach,6336	\N	f	0	28	60	2025-02-02	4	30	2

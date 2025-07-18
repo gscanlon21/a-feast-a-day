@@ -102,7 +102,7 @@
 120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	potato-salad.jpg	0	\N	f	f
 121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can of pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	16	0	5	4	t	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	soft-boiled-egg.jpg	0	\N	f	f
-123	Sweet and Sour Cucumber with Fresh Dill	This salad can be kept in the refrigerator for up to a week.	\N	\N	20	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
+123	Sweet and Sour Cucumber	This salad can be kept in the refrigerator for up to a week.	\N	\N	20	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
 124	Pan-Fried Chicken with Pesto	\N	\N	\N	4	18	2	1	t	pesto-chicken.jpg	0	\N	f	f
 125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
@@ -327,12 +327,12 @@
 475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	24	0	5	2	t	\N	6	\N	t	f
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-478	Everyday Salad	\N	\N	\N	20	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+478	Everyday Salad	\N	\N	\N	20	0	10	4	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 484	Rice	\N	\N	\N	0	30	0	1	t	cauliflower-rice.jpg	6	\N	t	f
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
 486	Strawberries & Cream	\N	\N	\N	32	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

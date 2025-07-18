@@ -1,5 +1,4 @@
-﻿using Core.Dtos.Ingredient;
-using Core.Dtos.Newsletter;
+﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Data.Entities.User;
 using System.ComponentModel;
@@ -32,7 +31,7 @@ public class UserManageRecipeIngredientViewModel
     /// <summary>
     /// The ingredient's alternative ingredients.
     /// </summary>
-    public required IList<IngredientDto> Ingredients { get; init; }
+    public required IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; }
 
     /// <summary>
     /// Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.
@@ -55,16 +54,16 @@ public class UserRecipeIngredientViewModel : IValidatableObject
     public UserRecipeIngredientViewModel(UserRecipeIngredient userRecipeIngredient)
     {
         Notes = userRecipeIngredient.Notes;
+        Scale = userRecipeIngredient.Scale;
         Ignore = userRecipeIngredient.Ignore;
-        SubstituteScale = userRecipeIngredient.SubstituteScale;
         SubstituteRecipeId = userRecipeIngredient.SubstituteRecipeId;
         SubstituteIngredientId = userRecipeIngredient.SubstituteIngredientId;
     }
 
     [DefaultValue(RecipeConsts.IngredientScaleDefault)]
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    [Display(Name = "Substitute Scale")]
-    public double SubstituteScale { get; set; } = RecipeConsts.IngredientScaleDefault;
+    [Display(Name = "Scale")]
+    public double Scale { get; set; } = RecipeConsts.IngredientScaleDefault;
 
     [Display(Name = "Substitute Ingredient")]
     public int? SubstituteIngredientId { get; set; }

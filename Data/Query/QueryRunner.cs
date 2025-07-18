@@ -86,7 +86,7 @@ public class QueryRunner(Section section)
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
-                    UserIngredientRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
+                    UserRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
                     UserRecipeIngredient = ri.UserRecipeIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeIngredientId == ri.Id),
                 }).ToList()
             });
@@ -179,7 +179,17 @@ public class QueryRunner(Section section)
                         // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
                         if (recipeIngredient.IngredientRecipe != null)
                         {
+                            // Set to null in case this ingredient recipe is a substitute for an ingredient.
                             recipeIngredient.Ingredient = null;
+
+                            // Only scale the ingredient recipe if it is not going to fallback to an ingredient.
+                            if (recipeIngredient.UserRecipeIngredient?.Scale != null && recipeIngredient.UserRecipeIngredient.Scale != RecipeConsts.IngredientScaleDefault)
+                            {
+                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(recipeIngredient.UserRecipeIngredient.Scale));
+                                recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
+                                recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
+                            }
+
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
                         }
@@ -205,12 +215,21 @@ public class QueryRunner(Section section)
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
                             recipeIngredient.Ingredient = substitution?.Ingredient;
                             recipeIngredient.UserRecipeIngredient = null;
+
                             if (substitution != null)
                             {
+                                // Scale the substitution using the user's preferences or the alternative ingredient's scale.
                                 var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(substitution.Scale));
                                 recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
                                 recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
                             }
+                        }
+                        // If this ingredient isn't being swapped (which may use its own scale), then scale the ingredient according to the user's preferences.
+                        else if (recipeIngredient.UserRecipeIngredient?.Scale != null && recipeIngredient.UserRecipeIngredient.Scale != RecipeConsts.IngredientScaleDefault)
+                        {
+                            var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(recipeIngredient.UserRecipeIngredient.Scale));
+                            recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
+                            recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
@@ -407,7 +426,7 @@ public class QueryRunner(Section section)
                 ri.Id,
                 ri.RecipeId,
                 ri.Ingredient,
-                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteScale,
+                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).Scale,
                 ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
             })
             .Select(ri => new
@@ -415,7 +434,7 @@ public class QueryRunner(Section section)
                 ri.Id,
                 SubIngredient = ri.SubstituteIngredient == null ? null : new IngredientUserIngredient()
                 {
-                    Scale = ri.SubstituteScale,
+                    Scale = ri.Scale,
                     Ingredient = ri.SubstituteIngredient,
                 },
                 AltsIngredient = ri.Ingredient.Alternatives.Select(ia => new IngredientUserIngredient()
@@ -475,17 +494,17 @@ public class QueryRunner(Section section)
             }
 
             // Add user recipes for the prep recipes.
-            if (recipeIngredient.UserIngredientRecipe == null && recipeIngredient.RawIngredientRecipeId.HasValue)
+            if (recipeIngredient.UserRecipe == null && recipeIngredient.RawIngredientRecipeId.HasValue)
             {
-                recipeIngredient.UserIngredientRecipe = new UserRecipe()
+                recipeIngredient.UserRecipe = new UserRecipe()
                 {
                     UserId = UserOptions.Id,
                     RecipeId = recipeIngredient.IngredientRecipeId!.Value
                 };
 
-                if (recipesCreated.Add(recipeIngredient.UserIngredientRecipe))
+                if (recipesCreated.Add(recipeIngredient.UserRecipe))
                 {
-                    context.UserRecipes.Add(recipeIngredient.UserIngredientRecipe);
+                    context.UserRecipes.Add(recipeIngredient.UserRecipe);
                 }
             }
         }
