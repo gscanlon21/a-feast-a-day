@@ -21,7 +21,7 @@ public class UserRecipeIngredient
 
     [DefaultValue(RecipeConsts.IngredientScaleDefault)]
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    public double SubstituteScale { get; set; } = RecipeConsts.IngredientScaleDefault;
+    public double Scale { get; set; } = RecipeConsts.IngredientScaleDefault;
 
     public int? SubstituteIngredientId { get; set; }
 

@@ -445,13 +445,13 @@ namespace Data.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
-                    Servings = table.Column<int>(type: "integer", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     IgnoreUntil = table.Column<DateOnly>(type: "date", nullable: true),
                     LastSeen = table.Column<DateOnly>(type: "date", nullable: true),
                     RefreshAfter = table.Column<DateOnly>(type: "date", nullable: true),
                     LagRefreshXWeeks = table.Column<int>(type: "integer", nullable: false),
-                    PadRefreshXWeeks = table.Column<int>(type: "integer", nullable: false)
+                    PadRefreshXWeeks = table.Column<int>(type: "integer", nullable: false),
+                    Servings = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -529,7 +529,7 @@ namespace Data.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeIngredientId = table.Column<int>(type: "integer", nullable: false),
-                    SubstituteScale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
+                    Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
                     SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
                     SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "text", nullable: true),
@@ -569,9 +569,9 @@ namespace Data.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
-                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    UserFeastRecipeId = table.Column<long>(type: "bigint", nullable: false),
                     Quantity = table.Column<double>(type: "double precision", nullable: false),
-                    UserFeastRecipeId = table.Column<long>(type: "bigint", nullable: false)
+                    Measure = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

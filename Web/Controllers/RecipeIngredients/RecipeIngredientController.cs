@@ -1,5 +1,4 @@
-﻿using Core.Dtos.Ingredient;
-using Core.Dtos.Newsletter;
+﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data;
@@ -128,8 +127,8 @@ public class RecipeIngredientController : ViewController
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
             UserRecipeIngredient = new UserRecipeIngredientViewModel(userRecipeIngredient),
             PrepRecipes = prepRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
+            Ingredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).ToList() ?? [],
             AltRecipes = recipes.ExceptBy([recipe.Recipe.Id], r => r.Recipe.Id).Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
-            Ingredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient.AsType<IngredientDto>()!).ToList() ?? [],
         });
     }
 
@@ -160,7 +159,7 @@ public class RecipeIngredientController : ViewController
         }
 
         existingUserRecipeIngredient.Notes = viewModel.Notes;
-        existingUserRecipeIngredient.SubstituteScale = viewModel.SubstituteScale;
+        existingUserRecipeIngredient.Scale = viewModel.Scale;
         existingUserRecipeIngredient.SubstituteRecipeId = viewModel.SubstituteRecipeId;
         existingUserRecipeIngredient.SubstituteIngredientId = viewModel.SubstituteIngredientId;
         await _context.SaveChangesAsync();

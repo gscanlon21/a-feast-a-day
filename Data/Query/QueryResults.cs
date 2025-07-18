@@ -86,8 +86,8 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required int QuantityDenominator { get; set; }
     public required int? RawIngredientRecipeId { get; init; }
 
-    public required UserRecipe? UserIngredientRecipe { get; set; }
     public QueryResults? IngredientRecipe { get; internal set; }
+    public required UserRecipe? UserRecipe { get; set; }
 
     public required Ingredient? Ingredient { get; set; }
     public required UserRecipeIngredient? UserRecipeIngredient { get; set; }
