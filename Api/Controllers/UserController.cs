@@ -1,4 +1,5 @@
-﻿using Data.Query;
+﻿using Core.Models.Newsletter;
+using Data.Query;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
@@ -52,7 +53,10 @@ public class UserController : ControllerBase
 
         var recipes = new List<QueryResults>();
         // PERF: This may be slow since it queries for each section.
-        foreach (var sectionGroup in currentFeast.UserFeastRecipes.GroupBy(ur => ur.Section))
+        // Exclude fetching prep recipes, querying for a section will also return the prep recipes used.
+        foreach (var sectionGroup in currentFeast.UserFeastRecipes
+            .Where(ufr => ufr.Section != Section.Prep)
+            .GroupBy(ufr => ufr.Section))
         {
             // Pass in the section so that the UserRecipe is correct.
             recipes.AddRange(await new QueryBuilder(sectionGroup.Key)
