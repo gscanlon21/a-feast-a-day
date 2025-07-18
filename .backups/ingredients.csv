@@ -64,7 +64,7 @@
 65	\N	Buffalo Sauce	https://www.eatthismuch.com/calories/buffalo-wing-sauce-1721937	\N	f	0	14	14	2024-10-10	7	224	3
 66	\N	Ranch Dressing	https://www.eatthismuch.com/food/nutrition/ranch-dressing,272/	\N	f	0	14.5	14.5	2024-07-29	7	232	0
 67	\N	Black Pepper	https://www.eatthismuch.com/calories/pepper,205	\N	t	0	6	6	2024-09-03	7	96	131072
-68	\N	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2024-07-09	7	120	0
+68	\N	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	131072
 69	\N	Red Pepper Flakes	https://www.eatthismuch.com/calories/crushed-red-pepper-flakes,5832	\N	t	0	1	1	2024-08-16	7	16	4
 70	\N	Cinnamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
 71	\N	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195	\N	t	0	10	10	2024-10-18	7	160	131072
@@ -291,7 +291,7 @@
 298	\N	Coconut Sugar	aka. Coconut Palm Sugar	\N	f	0	240	100	2024-08-23	6	240	4
 299	\N	White Pepper	https://www.eatthismuch.com/calories/pepper-207	\N	t	0	28	7	2025-01-13	4	112	131072
 300	\N	Coconut Sugar | Granulated Sugar | Honey	https://www.eatthismuch.com/calories/sugar-4644 | https://www.eatthismuch.com/calories/honey-4620	\N	f	0	200	200	2024-10-28	6	200	1792
-301	\N	Chili Garlic Sauce	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2024-07-09	7	120	0
+301	\N	Chili Garlic Sauce	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	256
 302	\N	Spring Onions	These have a slightly larger bulb at the base then Green Onions. https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	148	148	2025-03-20	0	240	2
 303	\N	Butter Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2024-09-16	0	55	2
 305	\N	Leaves of Lettuce	https://www.eatthismuch.com/calories/lettuce,2015	\N	f	0	12	36	2024-07-25	0	36	2

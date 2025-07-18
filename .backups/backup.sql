@@ -10405,8 +10405,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5677	6	\N	\N	409	4	3	(PUMPKIN PUREE)	296	f	\N	6
 5678	6	\N	\N	409	4	1	, melted	964	f	\N	7
 5679	6	\N	\N	409	4	1	\N	215	f	\N	8
-5706	7	\N	\N	416	1	1	\N	77	f	\N	0
-5707	0	\N	\N	416	2	1	, diced	222	f	\N	1
 5686	7	\N	\N	412	1	1	\N	676	f	\N	0
 5696	7	\N	\N	414	1	2	\N	176	f	\N	0
 5697	7	\N	\N	414	1	2	\N	81	f	\N	1
@@ -10486,11 +10484,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5700	8	\N	\N	414	2	1	\N	503	f	\N	4
 5687	6	\N	\N	412	1	1	\N	\N	f	411	1
 5688	8	\N	\N	412	8	1	, to taste	692	f	\N	2
-5708	5	\N	\N	416	1	1	\N	988	f	\N	2
 5683	8	\N	\N	410	4	1	, to taste	74	f	\N	3
 5684	7	\N	\N	410	1	1	, chopped	979	t	\N	4
 5701	8	\N	\N	414	8	1	, to taste	969	f	\N	5
 5648	7	\N	\N	402	1	1	, minced	251	t	\N	7
+5706	7	\N	\N	416	1	1	\N	77	f	\N	0
+5707	0	\N	\N	416	2	1	, diced	222	f	\N	1
+5708	5	\N	\N	416	1	1	\N	988	f	\N	2
 5767	6	\N	\N	424	1	1	\N	986	f	\N	0
 5768	8	\N	\N	424	1	2	, or 1 teaspoon baking soda	34	f	\N	1
 5769	7	\N	\N	424	1	3	, coconut sugar or sugar-free erythritol/Monk fruit	987	f	\N	2
@@ -10646,8 +10646,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5935	6	\N	\N	482	1	1	, tough ends trimmed	122	f	\N	1
 5936	6	\N	\N	482	1	1	\N	\N	f	543	2
 5937	7	\N	\N	482	1	2	\N	461	f	\N	3
-5709	8	\N	\N	416	8	1	, to taste	692	f	\N	3
-5710	0	\N	\N	416	1	1	, sliced into rounds	155	f	\N	4
 5908	0	\N	\N	478	1	2	, boiled, peeled and sliced	187	f	\N	0
 5885	7	\N	\N	408	1	1	\N	77	f	\N	1
 5886	8	\N	\N	408	4	1	\N	692	f	\N	2
@@ -10655,13 +10653,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5932	0	\N	\N	481	1	2	, juiced	4	f	\N	1
 5933	7	\N	\N	481	1	1	\N	1075	f	\N	2
 5909	0	\N	\N	478	1	1	, chopped	155	f	\N	1
-5711	6	\N	\N	416	4	1	, mashed	9	f	\N	5
 5902	6	\N	\N	477	1	4	, shredded	1116	f	\N	0
 5903	6	\N	\N	477	1	2	, shredded	736	f	\N	1
 5904	7	\N	\N	477	1	2	\N	80	f	\N	2
 5905	7	\N	\N	477	1	2	\N	215	f	\N	3
-5712	0	\N	\N	416	1	1	, diced	17	t	\N	6
-5713	0	\N	\N	416	1	1	, juiced	12	f	\N	7
 5871	7	\N	\N	470	1	1	\N	990	f	\N	3
 5872	8	\N	\N	470	1	1	, to taste	681	f	\N	4
 5899	0	\N	\N	476	1	1	, juiced	12	f	\N	2
@@ -10672,6 +10667,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5910	0	\N	\N	478	1	1	, chopped	17	f	\N	2
 5911	6	\N	\N	478	4	1	, pitted and chopped	1083	f	\N	3
 5912	6	\N	\N	478	4	1	, shaved	736	f	\N	4
+5709	8	\N	\N	416	8	1	, to taste	692	f	\N	3
+5710	0	\N	\N	416	1	1	, sliced into rounds	155	f	\N	4
+5711	6	\N	\N	416	4	1	, mashed	9	f	\N	5
+5712	0	\N	\N	416	1	1	, diced	17	t	\N	6
+5713	0	\N	\N	416	1	1	, juiced	12	f	\N	7
 6001	5	\N	\N	522	2	1	, halved	156	f	\N	0
 6002	0	\N	\N	522	1	2	, chopped	255	f	\N	1
 6003	0	\N	\N	522	1	1	, thinly sliced	222	f	\N	2
@@ -11334,7 +11334,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5906	7	\N	\N	477	1	2	\N	77	f	\N	4
 5907	8	\N	\N	477	4	1	, to taste	692	t	\N	5
 6654	7	\N	\N	612	1	1	\N	675	f	\N	0
-5714	7	\N	\N	416	1	2	\N	13	t	\N	8
 6703	6	\N	\N	619	2	1	(DRIED CEP OR PROCINI MUSHROOMS)	595	f	\N	0
 6704	0	\N	\N	619	1	4	(PORK ESCALOPES (US scallops))	1003	f	\N	1
 5801	6	\N	\N	430	4	1	, chopped	872	f	\N	6
@@ -11448,6 +11447,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6420	0	\N	\N	582	2	1	, chopped	155	f	\N	10
 6421	0	\N	\N	582	1	1	, peeled, pitted and sliced	9	f	\N	11
 6422	6	\N	\N	582	2	1	\N	\N	t	471	12
+5714	7	\N	\N	416	1	2	\N	13	t	\N	8
+6741	6	\N	\N	624	2	3	\N	38	f	\N	0
+6742	6	\N	\N	624	4	1	\N	234	f	\N	1
+6743	8	\N	\N	624	1	2	\N	34	f	\N	2
+6744	8	\N	\N	624	4	1	\N	214	f	\N	3
+6745	0	\N	\N	624	1	2	\N	187	f	\N	4
+6746	7	\N	\N	624	1	4	, melted	29	f	\N	5
+6747	6	\N	\N	624	4	3	\N	186	f	\N	6
+6748	8	\N	\N	624	1	1	\N	40	f	\N	7
+6749	8	\N	\N	624	1	1	, rind-only, grated	4	f	\N	8
+6750	6	\N	\N	624	2	3	\N	871	f	\N	9
 \.
 
 
@@ -11915,8 +11925,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3443	Remove the vegetables from the oven and let cool slightly before serving.	\N	564	5	0
 2795	Grill until golden brown on bottom.	\N	51	3	0
 1740	Spoon the custard into the pastry cases and dust with the icing sugar. Place the tarts under a preheated hot grill (broiler) and cook until the sugar carmelizes. Remove from the heat and leave to cool before serving.	\N	163	3	0
-3137	In a large skillet over medium heat, heat the olive oil. To the skillet, add the next 4 ingredients (onion through salt and pepper). Cook for 5 to 10 minutes, until the turkey is cooked through.	\N	416	0	0
-3138	Arrange the cucumber slices in a single layer on a large platter. Spoon mashed avocado onto each slice, then top with ground turkey.	\N	416	1	0
 1082	Drain the pepper and slice lengthways into slivers, pit and tear the olives, then add them both to the pan and cook for a couple of minutes, tossing occasionally.	\N	118	2	0
 1873	Add in brown sugar, mustard, and ketchup. Stir to combine.	\N	181	1	0
 2544	Add the ingredients to a food processor and combine well until a ball of thick paste is formed	\N	253	0	0
@@ -11924,6 +11932,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2546	Cover the mixture with the excess paper and flatten slightly	\N	253	2	0
 2547	Roll out with a rolling pin until the mixture forms a flat slab about 1.5 cm thick	\N	253	3	0
 2548	Dehydrate for approximately 12 hours at 125 degrees.	\N	253	4	0
+3137	In a large skillet over medium heat, heat the olive oil. To the skillet, add the next 4 ingredients (onion through salt and pepper). Cook for 5 to 10 minutes, until the turkey is cooked through.	\N	416	0	4
+3138	Arrange the cucumber slices in a single layer on a large platter. Spoon mashed avocado onto each slice, then top with ground turkey.	\N	416	1	0
 2550	Crush the orange blossoms in a mortar and pestle until they are a paste. Let sit for 2 hours.	\N	268	0	0
 2551	Combine the petal paste and distilled water in a Ball jar. Stir and cover. Let sit for 2 weeks.	\N	268	1	0
 3140	Preheat the oven to 350°F. Line 12 muffin tins with muffin liners.	\N	417	0	0
@@ -12897,6 +12907,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3510	While the sweet potato mixture is roasting, cook bacon in a skillet until crisp, about 12 minutes. Remove and set aside on a paper towel-lined plate. 	\N	582	2	0
 3511	In a large bowl, combine the arugula and cucumbers.	\N	582	3	0
 3512	Once cooked, combine the roasted sweet potatoes and chickpeas with the arugula and cucumbers. Add the Honey-Mustard Dressing and toss to combine. Top the salad with bacon and sliced avocado.	\N	582	4	0
+3672	Preheat the oven to 200C/400F. Arrange 12 paper muffin cases on a baking tray or grease a 12-cup muffin pan.	\N	624	0	0
+3673	Sift the flour, sugar, baking powder and salt into a large mixing bowl. In another bowl, whisk the eggs until blended. Add the melted butter, milk, vanilla and lemon rind to the eggs and stir thouroughly to combine.	\N	624	1	0
+3674	Make a well in the dry ingredients and pour in the egg mixture. With a large metal spoon, stir until the flour is just moistened, but not smooth.	\N	624	2	0
+3675	Add the blueberries to the muffin mixture and gently fold in, being careful not to crush the berries.	\N	624	3	0
+3676	Spoon the batter into the paper cases or muffin pan, leaving enough room for the muffins to rise.	\N	624	4	0
+3677	Bake for 20–25 minutes, until the tops spring back when toughed lightly. Leave for 5 minutes, then turn out on to a wire rack top cool a little before serving.	\N	624	5	0
 \.
 
 
