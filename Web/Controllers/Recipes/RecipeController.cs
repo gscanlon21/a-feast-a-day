@@ -265,6 +265,8 @@ public class RecipeController : ViewController
         // Delete the old recipe before querying to free up the nutrients.
         // This will also cascade delete the UserFeastRecipeIngredients b/c they are foreign keyed.
         await _context.UserFeastRecipes.Where(ufr => ufr.Id == feastRecipe.Id).ExecuteDeleteAsync();
+        // FIXME: Also delete the prep recipes, so they aren't included in the nutient tracking.
+        // ... That's not easy b/c the prep recipe may be scaled if it's used in another recipe.
 
         var context = await _userRepo.BuildFeastContext(user, token, userFeast.Date);
         var serving = context.User.UserSections.FirstOrDefault(us => us.Section == feastRecipe.Section) ?? new UserSection(feastRecipe.Section);
@@ -272,7 +274,7 @@ public class RecipeController : ViewController
         {
             var scale = serving.Weight / (double)context.User.UserSections.Sum(us => us.Weight);
 
-            var newRecipe = (await new QueryBuilder(feastRecipe.Section)
+            var newRecipes = await new QueryBuilder(feastRecipe.Section)
                 .WithUser(user)
                 .WithNutrients(NutrientTargetsBuilder
                     .WithNutrients(context, NutrientHelpers.All)
@@ -290,21 +292,24 @@ public class RecipeController : ViewController
                     options.Randomized = context.IsBackfill;
                 })
                 .Build()
-                .Query(_serviceScopeFactory, take: 1))
-                .FirstOrDefault();
+                .Query(_serviceScopeFactory, take: 1);
 
-            if (newRecipe == null)
+            if (!newRecipes.Any())
             {
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
             }
 
-            // Add the recipe and its ingredients to the newsletter for nutrient calculations.
-            _context.UserFeastRecipes.Add(new UserFeastRecipe(userFeast, newRecipe, feastRecipe.Order)
+            // There may be a prep recipe as well.
+            foreach (var newRecipe in newRecipes)
             {
-                UserFeastRecipeIngredients = newRecipe.RecipeIngredients
-                        .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
-                        .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
-            });
+                // Add the recipe and its ingredients to the newsletter for nutrient calculations.
+                _context.UserFeastRecipes.Add(new UserFeastRecipe(userFeast, newRecipe, feastRecipe.Order)
+                {
+                    UserFeastRecipeIngredients = newRecipe.RecipeIngredients
+                            .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+                            .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
+                });
+            }
 
             await _context.SaveChangesAsync();
         }
