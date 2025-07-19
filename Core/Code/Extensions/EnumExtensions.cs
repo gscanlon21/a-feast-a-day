@@ -186,6 +186,32 @@ public static class EnumExtensions
     /// <summary>
     /// Returns the value of the [DisplayName] attribute.
     /// </summary>
+    public static bool HasDisplay(this Enum @enum, DisplayType nameType = DisplayType.Name)
+    {
+        var memberInfo = @enum.GetType().GetMember(@enum.ToString());
+        if (memberInfo != null && memberInfo.Length > 0)
+        {
+            var attribute = memberInfo[0].GetCustomAttribute<DisplayAttribute>(true);
+            if (attribute != null)
+            {
+                return nameType switch
+                {
+                    DisplayType.Name => !string.IsNullOrWhiteSpace(attribute.GetName()),
+                    DisplayType.ShortName => !string.IsNullOrWhiteSpace(attribute.GetShortName()),
+                    DisplayType.GroupName => !string.IsNullOrWhiteSpace(attribute.GetGroupName()),
+                    DisplayType.Description => !string.IsNullOrWhiteSpace(attribute.GetDescription()),
+                    DisplayType.Order => attribute.GetOrder().HasValue,
+                    _ => false
+                };
+            }
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Returns the value of the [DisplayName] attribute.
+    /// </summary>
     public static string GetSingleDisplayName(this Enum @enum, DisplayType nameType = DisplayType.Name)
     {
         var memberInfo = @enum.GetType().GetMember(@enum.ToString());

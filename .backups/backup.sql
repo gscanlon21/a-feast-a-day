@@ -9937,11 +9937,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5304	4	\N	\N	318	1	5	\N	333	f	\N	0
 5305	0	\N	\N	318	1	4	\N	144	f	\N	1
 5306	4	\N	\N	318	2	7	\N	955	f	\N	2
-5429	0	\N	\N	369	1	4	\N	255	f	\N	0
-5430	0	\N	\N	369	1	10	, 1 bulb	5	f	\N	1
 5431	8	\N	\N	369	1	1	\N	601	f	\N	2
 5432	6	\N	\N	369	4	3	\N	33	f	\N	3
 5433	0	\N	\N	369	1	4	\N	144	f	\N	4
+5429	0	\N	\N	369	1	4	\N	255	f	\N	0
+5430	0	\N	\N	369	1	1	\N	1125	f	\N	1
 4582	6	\N	\N	175	4	1	\N	190	f	\N	1
 4583	4	\N	\N	175	1	4	\N	641	f	\N	2
 4584	6	\N	\N	175	2	1	\N	640	t	\N	3
@@ -11427,6 +11427,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6731	0	\N	\N	622	1	1	, 12-inch	136	f	\N	1
 6732	6	\N	\N	622	1	1	\N	\N	f	625	2
 6733	6	\N	\N	622	1	1	\N	206	f	\N	3
+6758	7	\N	\N	369	1	4	\N	77	f	\N	5
+6759	7	\N	\N	369	1	4	\N	82	f	\N	6
+6760	8	\N	\N	369	4	1	\N	692	t	\N	7
 5540	0	\N	\N	388	1	1	, finely minced	5	f	\N	4
 5541	6	\N	\N	388	1	2	, cooked & cooled	97	f	\N	5
 5542	0	\N	\N	388	1	2	\N	187	f	\N	6

@@ -138,7 +138,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Flavanoids", GroupName = "Anti-oxidants")]
+    //[Display(Name = "Flavanoids", GroupName = "Anti-oxidants")]
     Flavanoids = 1L << 12, // 4096
 
     /// <summary>
@@ -147,7 +147,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Phenolic Acids", GroupName = "Anti-oxidants")]
+    //[Display(Name = "Phenolic Acids", GroupName = "Anti-oxidants")]
     NonFlavanoids = 1L << 13, // 8192
 
     /// <summary>
@@ -156,7 +156,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Polyphenols", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
+    //[Display(Name = "Polyphenols", GroupName = "Anti-oxidants", Description = "Flavonoids, Phenolic acids, Polyphenolic amides, Stilbenoids (Resveratrol).")]
     Polyphenols = Flavanoids | NonFlavanoids, // 12288
 
     /// <summary>
@@ -300,13 +300,13 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
-    [Display(ShortName = "Vitamin D2", Name = "Vitamin D2 (Ergocalciferol)", GroupName = "Vitamins")]
+    //[Display(ShortName = "Vitamin D2", Name = "Vitamin D2 (Ergocalciferol)", GroupName = "Vitamins")]
     VitaminD2 = 1L << 27, // 134217728
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, For = Person.Adult)]
     [DailyAllowance(25, 100, Measure.Micrograms, Multiplier.Person, For = Person.Elderly)]
-    [Display(ShortName = "Vitamin D3", Name = "Vitamin D3 (Cholecalciferol)", GroupName = "Vitamins")]
+    //[Display(ShortName = "Vitamin D3", Name = "Vitamin D3 (Cholecalciferol)", GroupName = "Vitamins")]
     VitaminD3 = 1L << 28, // 268435456
 
     [DefaultMeasure(Measure.Micrograms)]
@@ -324,13 +324,13 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
-    [Display(ShortName = "Vitamin K1", Name = "Vitamin K1 (Phylloquinone)", GroupName = "Vitamins")]
+    //[Display(ShortName = "Vitamin K1", Name = "Vitamin K1 (Phylloquinone)", GroupName = "Vitamins")]
     VitaminK1 = 1L << 30, // 1073741824
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, For = Person.Woman)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, For = Person.Man)]
-    [Display(ShortName = "Vitamin K2", Name = "Vitamin K2 (Menadione)", GroupName = "Vitamins")]
+    //[Display(ShortName = "Vitamin K2", Name = "Vitamin K2 (Menadione)", GroupName = "Vitamins")]
     VitaminK2 = 1L << 31, // 2147483648
 
     [DefaultMeasure(Measure.Micrograms)]
@@ -383,7 +383,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Micrograms)]
     [DailyAllowance(2.5, 10, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Fluoride", GroupName = "Minerals")]
+    //[Display(Name = "Fluoride", GroupName = "Minerals")]
     Fluoride = 1L << 39, // 549755813888
 
     [DefaultMeasure(Measure.Micrograms)]
@@ -439,7 +439,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(850, -1, Measure.Milligrams, Multiplier.Person)]
-    [Display(Name = "Sulfur", GroupName = "Minerals")]
+    //[Display(Name = "Sulfur", GroupName = "Minerals")]
     Sulfur = 1L << 47, // 140737488355328
 
     [DefaultMeasure(Measure.Milligrams)]
@@ -456,7 +456,7 @@ public enum Nutrients : long
 
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(1, 25, Measure.Grams, Multiplier.Person)]
-    [Display(Order = 500, Name = "Lithium", GroupName = "Micronutrients")]
+    //[Display(Order = 500, Name = "Lithium", GroupName = "Micronutrients")]
     Lithium = 1L << 50, // 1125899906842624
 
     /// <summary>
@@ -472,7 +472,7 @@ public enum Nutrients : long
     /// </summary>
     [DefaultMeasure(Measure.Milligrams)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person)]
-    [Display(Order = 520, Name = "Betaine", GroupName = "Micronutrients")]
+    //[Display(Order = 520, Name = "Betaine", GroupName = "Micronutrients")]
     Betaine = 1L << 52, // 4503599627370496
 
     // Essential Amino Acids

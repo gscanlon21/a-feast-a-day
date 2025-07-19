@@ -73,25 +73,34 @@
     @for (var i = 0; i < Model.Nutrients.Count; i++)
     {
         var nutrient = Model.Nutrients[i];
-        <div class="mb-3 row">
+        if (nutrient.Nutrients.HasDisplay())
+        {
+            <div class="mb-3 row">
+                <input type="hidden" asp-for="Nutrients[i].Nutrients" />
+
+                <div class="col order-md-last">
+                    <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
+
+                    <input type="number" asp-for="Nutrients[i].Value" step="@Nutrient.Consts.ValueStep" min="@Nutrient.Consts.ValueMin" max="@Nutrient.Consts.ValueMax" class="form-control" />
+                    <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
+                    <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(DisplayType.Description)</div>
+                </div>
+
+                <div class="col-md-3">
+                    <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
+                    <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto"
+                            asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
+                    </select>
+                    <span asp-validation-for="Nutrients[i].Measure" class="text-danger"></span>
+                </div>
+            </div>
+        }
+        else
+        {
             <input type="hidden" asp-for="Nutrients[i].Nutrients" />
-
-            <div class="col order-md-last">
-                <label asp-for="Nutrients[i].Nutrients" class="control-label">@nutrient.Nutrients.GetSingleDisplayName() @nutrient.Nutrients.DailyAllowanceDisplayName()</label>
-
-                <input type="number" asp-for="Nutrients[i].Value" step="@Nutrient.Consts.ValueStep" min="@Nutrient.Consts.ValueMin" max="@Nutrient.Consts.ValueMax" class="form-control" />
-                <span asp-validation-for="Ingredient.Nutrients[i].Nutrients" class="text-danger"></span>
-                <div id="verbosity-help" class="form-text">@nutrient.Nutrients.GetSingleDisplayName(DisplayType.Description)</div>
-            </div>
-
-            <div class="col-md-3">
-                <label asp-for="Nutrients[i].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Nutrients[i].Measure)</label>
-                <select asp-for="Nutrients[i].Measure" class="form-control overflow-auto"
-                        asp-items='@(MeasureConsts.StandardMeasures.AsSelectListItems(EnumViewExtensions.EnumOrdering.Text, nutrient.Nutrients.DefaultMeasure()))'>
-                </select>
-                <span asp-validation-for="Nutrients[i].Measure" class="text-danger"></span>
-            </div>
-        </div>
+            <input type="hidden" asp-for="Nutrients[i].Measure" />
+            <input type="hidden" asp-for="Nutrients[i].Value" />
+        }
     }
 
     <div class="row justify-content-end gy-2">

@@ -29,6 +29,7 @@
 <div class="alert alert-primary" role="alert">
     <div style="display:flex;flex-direction:column;row-gap:1ex;">
         @foreach (var nutrientTarget in NutrientHelpers.All
+            .Where(kv => kv.HasDisplay(DisplayType.Name))
             .Select(kv => Model.GetNutrientTarget(kv))
             .OrderByDescending(nt => nt.ShowButtons ? nt.Start : nt.DefaultStart)
             .ThenByDescending(nt => nt.ShowButtons ? nt.End : nt.DefaultEnd)
