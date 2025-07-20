@@ -1,4 +1,5 @@
-﻿using Core.Models.Recipe;
+﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Data.Entities.Newsletter;
 using Data.Models.Newsletter;
 using Data.Query;
@@ -19,15 +20,32 @@ public partial class NewsletterRepo
 
         if (recipes != null)
         {
-            for (var i = 0; i < recipes.Count; i++)
+            // Ignoring base preps here because those may be scaled with other preps.
+            var mainRecipes = recipes.Where(r => r.Section != Section.Prep).ToList();
+            for (var i = 0; i < mainRecipes.Count; i++)
             {
-                var recipe = recipes[i];
+                var recipe = mainRecipes[i];
                 _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, recipe, i)
                 {
                     UserFeastRecipeIngredients = recipe.RecipeIngredients
                         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
                         .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
                 });
+
+                // Using the prerequisite recipes instead of prep section recipes so that we can
+                // ... swap recipes with their preps even if they were scaled with other preps.
+                var prepRecipes = recipe.PrerequisiteRecipes.Select(pr => pr.Key).ToList();
+                for (var i2 = 0; i2 < prepRecipes.Count; i2++)
+                {
+                    var prepRecipe = prepRecipes[i2];
+                    _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, prepRecipe, i2)
+                    {
+                        ParentRecipeId = recipe.Recipe.Id,
+                        UserFeastRecipeIngredients = prepRecipe.RecipeIngredients
+                            .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+                            .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
+                    });
+                }
             }
         }
 

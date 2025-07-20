@@ -77,6 +77,9 @@ public class Recipe
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.Recipe))]
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;
 
+    [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.ParentRecipe))]
+    public virtual ICollection<UserFeastRecipe> UserFeastParentRecipes { get; private init; } = null!;
+
     [JsonIgnore, InverseProperty(nameof(UserRecipe.Recipe))]
     public virtual ICollection<UserRecipe> UserRecipes { get; private init; } = null!;
 

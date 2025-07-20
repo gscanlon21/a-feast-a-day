@@ -477,6 +477,7 @@ namespace Data.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Scale = table.Column<int>(type: "integer", nullable: false),
+                    ParentRecipeId = table.Column<int>(type: "integer", nullable: true),
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
                     UserFeastId = table.Column<int>(type: "integer", nullable: false),
                     Section = table.Column<int>(type: "integer", nullable: false),
@@ -485,6 +486,11 @@ namespace Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_user_feast_recipe", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_user_feast_recipe_recipe_ParentRecipeId",
+                        column: x => x.ParentRecipeId,
+                        principalTable: "recipe",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_user_feast_recipe_recipe_RecipeId",
                         column: x => x.RecipeId,
@@ -665,6 +671,11 @@ namespace Data.Migrations
                 name: "IX_user_feast_UserId",
                 table: "user_feast",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_user_feast_recipe_ParentRecipeId",
+                table: "user_feast_recipe",
+                column: "ParentRecipeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_feast_recipe_RecipeId",

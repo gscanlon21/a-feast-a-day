@@ -256,17 +256,17 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var feastRecipe = userFeast.UserFeastRecipes.FirstOrDefault(ufr => ufr.RecipeId == recipeId);
-        if (feastRecipe == null)
+        // There cannot be duplicate recipes in the feast so it should be fine selecting be recipe id.
+        var feastRecipe = userFeast.UserFeastRecipes.SingleOrDefault(ufr => ufr.RecipeId == recipeId);
+        if (feastRecipe == null || feastRecipe.Section == Section.Prep)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
         // Delete the old recipe before querying to free up the nutrients.
         // This will also cascade delete the UserFeastRecipeIngredients b/c they are foreign keyed.
-        await _context.UserFeastRecipes.Where(ufr => ufr.Id == feastRecipe.Id).ExecuteDeleteAsync();
-        // FIXME: Also delete the prep recipes, so they aren't included in the nutient tracking.
-        // ... That's not easy b/c the prep recipe may be scaled if it's used in another recipe.
+        await _context.UserFeastRecipes.Where(ufr => ufr.RecipeId == feastRecipe.RecipeId).ExecuteDeleteAsync();
+        await _context.UserFeastRecipes.Where(ufr => ufr.ParentRecipeId == feastRecipe.RecipeId).ExecuteDeleteAsync();
 
         var context = await _userRepo.BuildFeastContext(user, token, userFeast.Date);
         var serving = context.User.UserSections.FirstOrDefault(us => us.Section == feastRecipe.Section) ?? new UserSection(feastRecipe.Section);

@@ -33,12 +33,14 @@ public class UserFeastRecipe
 
     public int Scale { get; private init; }
 
+    public int? ParentRecipeId { get; init; }
+
     public int RecipeId { get; private init; }
 
     public int UserFeastId { get; private init; }
 
     /// <summary>
-    /// What section of the newsletter is this?
+    /// Where does this recipe reside in the feast?
     /// </summary>
     public Section Section { get; private init; }
 
@@ -48,6 +50,11 @@ public class UserFeastRecipe
     public int Order { get; private init; }
 
 
+    #region NavigationProperties
+
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserFeastParentRecipes))]
+    public virtual Recipe.Recipe ParentRecipe { get; private init; } = null!;
+
     [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserFeastRecipes))]
     public virtual Recipe.Recipe Recipe { get; private init; } = null!;
 
@@ -56,6 +63,8 @@ public class UserFeastRecipe
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.UserFeastRecipe))]
     public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; init; } = null!;
+
+    #endregion
 
 
     private string GetDebuggerDisplay()

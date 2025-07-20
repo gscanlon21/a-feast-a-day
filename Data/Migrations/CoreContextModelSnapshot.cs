@@ -325,6 +325,9 @@ namespace Data.Migrations
                     b.Property<int>("Order")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("ParentRecipeId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("RecipeId")
                         .HasColumnType("integer");
 
@@ -338,6 +341,8 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ParentRecipeId");
 
                     b.HasIndex("RecipeId");
 
@@ -880,6 +885,10 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
                 {
+                    b.HasOne("Data.Entities.Recipe.Recipe", "ParentRecipe")
+                        .WithMany("UserFeastParentRecipes")
+                        .HasForeignKey("ParentRecipeId");
+
                     b.HasOne("Data.Entities.Recipe.Recipe", "Recipe")
                         .WithMany("UserFeastRecipes")
                         .HasForeignKey("RecipeId")
@@ -891,6 +900,8 @@ namespace Data.Migrations
                         .HasForeignKey("UserFeastId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ParentRecipe");
 
                     b.Navigation("Recipe");
 
@@ -1113,6 +1124,8 @@ namespace Data.Migrations
                     b.Navigation("RecipeIngredientRecipes");
 
                     b.Navigation("RecipeIngredients");
+
+                    b.Navigation("UserFeastParentRecipes");
 
                     b.Navigation("UserFeastRecipes");
 
