@@ -12,7 +12,7 @@
 29	Garlic Parmesan Asparagus	\N	\N	\N	16	5	5	2	t	parmesan-roasted-asparagus.jpg	0	\N	f	f
 30	Curry Scramble	\N	\N	\N	6	10	5	2	t	curry-scramble.jpg	0	\N	f	f
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	4	420	15	6	t	bbq-pulled-pork-sandwich.jpg	0	\N	f	f
-32	Crock Pot Baked Potatoes	\N	\N	\N	8	480	5	4	t	crockpot-baked-potatoes.jpg	0	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	f	f
+32	Crock Pot Baked Potatoes	\N	\N	\N	16	480	5	4	t	crockpot-baked-potatoes.jpg	0	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	f	f
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	kielbasa.jpg	0	\N	f	f
 35	Crockpot BBQ Pinto Beans	\N	\N	\N	8	480	15	6	f	bbq-pinto-beans.jpg	0	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	f	f
@@ -387,7 +387,7 @@
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	3	t	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 570	Cut Watermelon	\N	\N	\N	16	0	5	4	t	watermelon.jpg	0	\N	f	f
-571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 572	Microgreens Salad	\N	\N	\N	8	20	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 574	Turkish Salad	\N	\N	\N	10	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -428,7 +428,7 @@
 609	Roasted Beet, Pear, & Onion Soup	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 610	Root Cause Detox Soup	\N	Too many ingredients.	\N	8	40	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 611	Beef Stir-Fry	\N	\N	\N	8	25	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-613	Boiled Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	8	t	boiled-chicken-breasts.jpg	4	\N	t	f
+613	Poached Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	8	t	boiled-chicken-breasts.jpg	4	\N	t	f
 614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	egg-sandwich.jpg	0	https://www.recipetineats.com/egg-sandwich/	f	f
 615	Chicken with Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
 616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f
@@ -440,3 +440,6 @@
 622	Hefty Veggie Wrap	\N	\N	\N	4	0	5	2	t	\N	0	\N	f	f
 623	Almond and Raspberry Roll	\N	\N	\N	64	15	15	4	f	\N	0	\N	f	f
 624	Blueberry Muffins	\N	\N	\N	64	30	10	12	f	\N	0	\N	f	f
+625	Pan Roasted Vegetables 	\N	\N	\N	0	35	10	2	t	\N	6	\N	t	f
+626	Hot Chocolate Rum Souffles	\N	\N	\N	64	15	10	6	t	\N	0	\N	f	f
+627	Cinnamon and Apricot Souffles	\N	\N	\N	64	15	10	4	t	\N	0	\N	f	f

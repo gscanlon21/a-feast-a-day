@@ -237,7 +237,7 @@
 243	\N	Sesame Paste	https://www.eatthismuch.com/calories/sesame-paste-2047774	\N	f	8192	28	16	2025-02-22	4	256	8192
 244	\N	Sweet Chili Sauce	https://www.eatthismuch.com/calories/sweet-chili-sauce-1754871	\N	f	0	28	14	2024-12-12	4	224	32
 245	\N	Rice Vinegar	https://www.eatthismuch.com/calories/rice-vinegar-1675526	\N	f	0	30	30	2024-10-30	9	240	4096
-246	\N	Vegetable Stock	https://www.eatthismuch.com/food/nutrition/vegetable-stock,90206/	\N	f	0	237	237	2024-07-10	6	237	928
+246	\N	Vegetable Stock	https://www.eatthismuch.com/food/nutrition/vegetable-stock,90206/	\N	f	0	30	237	2025-07-20	9	237	928
 247	\N	Gruyère Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	256	28	28	2025-03-03	0	224	6
 248	\N	Sliced Ham | Sliced Salami	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-09-29	0	224	8
 249	\N	Sliced Salami	https://www.eatthismuch.com/calories/hard-salami,1805029	\N	f	0	5.6	28	2024-09-01	0	100	8
@@ -253,7 +253,7 @@
 260	\N	Plum Tomatoes	https://www.eatthismuch.com/calories/plum-tomato,89975	\N	f	0	148	148	2024-09-09	0	227	1
 261	\N	Couscous	https://www.eatthismuch.com/calories/couscous-4793	\N	f	0	173	173	2024-08-10	6	173	4
 262	\N	Pepperoni	https://www.eatthismuch.com/calories/pepperoni-925	\N	f	0	28	28	2024-12-30	4	224	268435456
-263	\N	Pork/Beef Pepperoni	https://www.eatthismuch.com/food/nutrition/pepperoni,925/	\N	f	0	2	28	2024-07-11	0	224	0
+263	\N	Pork/Beef Pepperoni	https://www.eatthismuch.com/food/nutrition/pepperoni,925/	\N	f	0	2	28	2025-07-20	0	224	0
 264	\N	Potatoes	https://www.eatthismuch.com/calories/potato-2091	\N	f	0	369	369	2025-05-25	0	150	2
 265	\N	White Jasmine Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/white-jasmine-rice-1655821	\N	f	4096	180	45	2024-09-30	6	180	1024
 266	\N	White Basmati Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/basmati-rice,45283	\N	f	4096	199	199	2024-07-13	6	199	1024

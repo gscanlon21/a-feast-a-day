@@ -137,7 +137,7 @@ public partial class NewsletterRepo
     {
         newsletterContext.User.Verbosity = Verbosity.Debug;
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
-        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, recipes: debugRecipes);
+        var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto>()!, newsletterContext.Token);
 
         await UpdateLastSeenDate(debugRecipes);

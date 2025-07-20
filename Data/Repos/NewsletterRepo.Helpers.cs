@@ -12,40 +12,42 @@ public partial class NewsletterRepo
     /// <summary>
     /// Creates a new instance of the newsletter and saves it.
     /// </summary>
-    internal async Task<UserFeast> CreateAndAddNewsletterToContext(FeastContext newsletterContext, IList<QueryResults>? recipes = null)
+    internal async Task<UserFeast> CreateAndAddNewsletterToContext(FeastContext newsletterContext, IList<QueryResults> recipes)
     {
         var newsletter = new UserFeast(newsletterContext.Date, newsletterContext);
         _context.UserFeasts.Add(newsletter); // Sets the newsletter.Id after changes are saved.
         await _context.SaveChangesAsync();
 
-        if (recipes != null)
+        for (var i = 0; i < recipes.Count; i++)
         {
-            // Ignoring base preps here because those may be scaled with other preps.
-            var mainRecipes = recipes.Where(r => r.Section != Section.Prep).ToList();
-            for (var i = 0; i < mainRecipes.Count; i++)
+            var recipe = recipes[i];
+            // Ignoring base preps here because
+            // ... those may be scaled with other preps.
+            if (recipe.Section == Section.Prep)
             {
-                var recipe = mainRecipes[i];
-                _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, recipe, i)
+                continue;
+            }
+
+            // NOTE: Base recipes should be unique and shouldn't include duplicates.
+            _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, recipe, i)
+            {
+                UserFeastRecipeIngredients = recipe.RecipeIngredients
+                    .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+                    .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
+            });
+
+            // Using the prerequisite recipes instead of prep section recipes so that we can
+            // ... swap recipes with their preps even if they were scaled with other preps.
+            foreach (var prepRecipe in recipe.PrerequisiteRecipes)
+            {
+                // Order doesn't matter because prep recipes are always requeryed from main recipes.
+                _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, prepRecipe.Key, i)
                 {
-                    UserFeastRecipeIngredients = recipe.RecipeIngredients
+                    ParentRecipeId = recipe.Recipe.Id,
+                    UserFeastRecipeIngredients = prepRecipe.Key.RecipeIngredients
                         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
                         .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
                 });
-
-                // Using the prerequisite recipes instead of prep section recipes so that we can
-                // ... swap recipes with their preps even if they were scaled with other preps.
-                var prepRecipes = recipe.PrerequisiteRecipes.Select(pr => pr.Key).ToList();
-                for (var i2 = 0; i2 < prepRecipes.Count; i2++)
-                {
-                    var prepRecipe = prepRecipes[i2];
-                    _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, prepRecipe, i2)
-                    {
-                        ParentRecipeId = recipe.Recipe.Id,
-                        UserFeastRecipeIngredients = prepRecipe.RecipeIngredients
-                            .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
-                            .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
-                    });
-                }
             }
         }
 
@@ -54,10 +56,10 @@ public partial class NewsletterRepo
     }
 
     /// <summary>
-    ///     Updates the last seen date of the exercise by the user.
+    /// Updates the last seen date of the recipe by the user.
     /// </summary>
     /// <param name="refreshAfter">
-    ///     When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same recipes in each feast.
+    /// When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same recipes in each feast.
     /// </param>
     internal async Task UpdateLastSeenDate(IEnumerable<QueryResults> recipes)
     {
