@@ -29,11 +29,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -56,11 +58,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -83,11 +87,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -110,11 +116,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -137,11 +145,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -164,11 +174,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);
@@ -191,11 +203,13 @@ public partial class NewsletterRepo
                 })
             .WithExcludeRecipes(x =>
             {
-                x.AddExcludeRecipes(exclude?.Select(r => r.Recipe));
+                x.AddExcludeRecipes(exclude);
             })
             .WithSelectionOptions(options =>
             {
                 options.Randomized = newsletterContext.IsBackfill;
+                // Scale serving-adjustable prep recipes.
+                options.AddScaleRecipes(exclude);
             })
             .Build()
             .Query(_serviceScopeFactory);

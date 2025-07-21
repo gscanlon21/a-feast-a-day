@@ -148,7 +148,7 @@
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
-170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	8	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
+170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	20	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	32	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	burgers-relish.jpg	0	\N	f	f
@@ -393,7 +393,7 @@
 574	Turkish Salad	\N	\N	\N	10	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 575	Turkey Taco Salad	\N	\N	\N	10	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 579	Fermented Cabbage	\N	\N	\N	0	0	60	2	t	\N	6	\N	t	f
 580	Blueberry Chicken Salad	\N	\N	\N	6	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -406,7 +406,7 @@
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	4	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	\N	\N	\N	4	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cauliflower-rice.jpg	6	\N	t	f
-590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	\N	\N	8	60	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	\N	\N	8	60	10	4	t	stuffed-peppers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 592	Fish Tacos	\N	\N	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 593	Green Mean Fighting Machine	\N	\N	\N	32	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -432,10 +432,10 @@
 614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	egg-sandwich.jpg	0	https://www.recipetineats.com/egg-sandwich/	f	f
 615	Chicken with Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
 616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f
-617	Steak and Blue Cheese on Ciabatta	Part-baked bread cooks in about 8 minutes in a hot oven, but if even that is too long, just warm a regular baked ciabatta or French stick.	\N	\N	8	15	5	2	t	\N	0	\N	f	f
+617	Steak and Blue Cheese on Ciabatta	Part-baked bread cooks in about 8 minutes in a hot oven, but if even that is too long, just warm a regular baked ciabatta or French stick.	\N	\N	8	15	5	2	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	\N	\N	8	12	8	2	t	\N	0	\N	f	f
 619	Pork w/ Marsala and Juniper	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
-620	Sweet Peppers Stuffed with Two Cheeses	The peppers can be cooked on a griddle if you prefer. It is a good idea to blanch them in boiling water before filling, to give them a head start.	Too complicated.	\N	4	15	5	4	t	\N	0	\N	f	f
+620	Sweet Peppers Stuffed with Two Cheeses	The peppers can be cooked on a griddle if you prefer. It is a good idea to blanch them in boiling water before filling, to give them a head start.	Too complicated.	\N	4	15	5	4	t	stuffed-peppers.jpg	0	\N	f	f
 621	The Ultimate Grilled Cheese	\N	\N	\N	4	10	5	2	t	\N	0	\N	f	f
 622	Hefty Veggie Wrap	\N	\N	\N	4	0	5	2	t	\N	0	\N	f	f
 623	Almond and Raspberry Roll	\N	\N	\N	64	15	15	4	f	\N	0	\N	f	f
@@ -443,3 +443,5 @@
 625	Pan Roasted Vegetables 	\N	\N	\N	0	35	10	2	t	\N	6	\N	t	f
 626	Hot Chocolate Rum Souffles	\N	\N	\N	64	15	10	6	t	\N	0	\N	f	f
 627	Cinnamon and Apricot Souffles	\N	\N	\N	64	15	10	4	t	\N	0	\N	f	f
+628	Slow Cooker Chickpeas	\N	\N	\N	0	120	0	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
+629	Stovetop Chickpeas	\N	\N	\N	0	120	60	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f

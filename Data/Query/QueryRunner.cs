@@ -362,6 +362,11 @@ public class QueryRunner(Section section)
                         {
                             existingIngredientRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
                         }
+                        // If the prerequisite recipes already exists in our feast, then scale it.
+                        else if (SelectionOptions.PrepRecipes.TryGetValue(prerequisiteRecipe.Key, out var prepRecipe) && prepRecipe.Recipe.AdjustableServings)
+                        {
+                            prepRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
+                        }
                         else if (!RecipeOptions.IgnorePrerequisites)
                         {
                             finalResults.Add(prerequisiteRecipe.Key);

@@ -1,6 +1,4 @@
-﻿using Data.Entities.Recipe;
-
-namespace Data.Query.Options;
+﻿namespace Data.Query.Options;
 
 public class ExclusionOptions : IOptions
 {
@@ -12,11 +10,11 @@ public class ExclusionOptions : IOptions
     /// <summary>
     /// Exclude any of these recipes from being chosen.
     /// </summary>
-    internal void AddExcludeRecipes(IEnumerable<Recipe>? recipes)
+    internal void AddExcludeRecipes(IEnumerable<QueryResults>? recipes)
     {
         if (recipes != null)
         {
-            RecipeIds.AddRange(recipes.Select(e => e.Id));
+            RecipeIds.AddRange(recipes.Select(e => e.Recipe.Id));
         }
     }
 }

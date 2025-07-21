@@ -202,6 +202,11 @@ public partial class NewsletterRepo
                     // This filters to only past recipes of the section.
                     options.AddPastRecipes(newsletter.UserFeastRecipes);
                 })
+                .WithSelectionOptions(options =>
+                {
+                    // Scale serving-adjustable prep recipes.
+                    options.AddScaleRecipes(recipes);
+                })
                 .Build()
                 .Query(_serviceScopeFactory))
                 // Re-order the recipes to match their original order.
