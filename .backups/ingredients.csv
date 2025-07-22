@@ -70,7 +70,7 @@
 71	\N	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195	\N	t	0	10	10	2024-10-18	7	160	131072
 72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	7	7	2024-08-26	7	112	3
 73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
-74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2024-07-14	8	288	131072
+74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2025-07-24	8	288	131072
 75	\N	Kosher Salt	https://www.eatthismuch.com/calories/kosher-salt-1938979	\N	t	0	28	1	2024-12-07	4	192	131072
 76	\N	Unrefined Coconut Oil	aka. Virgin Coconut Oil. https://www.eatthismuch.com/calories/coconut-oil-unrefined-2065164	\N	f	0	28	14	2024-12-09	4	224	65536
 77	\N	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	t	0	28	14	2025-03-23	9	224	65536
@@ -256,7 +256,7 @@
 263	\N	Pork/Beef Pepperoni	https://www.eatthismuch.com/food/nutrition/pepperoni,925/	\N	f	0	2	28	2025-07-20	0	224	0
 264	\N	Potatoes	https://www.eatthismuch.com/calories/potato-2091	\N	f	0	369	369	2025-05-25	0	150	2
 265	\N	White Jasmine Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/white-jasmine-rice-1655821	\N	f	4096	180	45	2024-09-30	6	180	1024
-266	\N	White Basmati Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/basmati-rice,45283	\N	f	4096	199	199	2024-07-13	6	199	1024
+266	\N	White Basmati Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/basmati-rice,45283	\N	f	4096	28	199	2025-07-23	4	199	1024
 267	\N	Water Chestnuts	https://www.eatthismuch.com/food/nutrition/water-chestnuts,155522/	\N	f	0	228	114	2025-03-08	6	228	928
 268	\N	Seedless Raisins	https://www.eatthismuch.com/calories/raisins-1544	\N	f	0	28	145	2025-03-01	4	145	3
 269	\N	Fuji Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-25	0	182	1
@@ -303,7 +303,7 @@
 312	\N	Mirin Rice Wine	https://www.eatthismuch.com/calories/mirin,1837647	\N	f	0	28	14	2024-12-13	9	224	8192
 313	\N	Japanese Cooking Wine (Sake)	https://www.eatthismuch.com/calories/sake,5783	\N	f	0	29	29	2024-09-08	9	232	8192
 314	\N	Citrus-Lime Vinaigrette	https://www.eatthismuch.com/calories/citrus-lime-vinaigrette-2391809	\N	f	0	28	43	2024-12-20	9	224	32
-315	\N	Slices of French Bread, GF	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	0	29	57	2024-07-15	0	57	64
+315	\N	Slices of French Bread, GF	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	0	29	57	2025-07-24	0	57	64
 316	\N	Shallot | Small Onion	https://www.eatthismuch.com/calories/shallots-2316	\N	f	0	43	43	2024-09-27	0	86	1
 317	\N	Worcestershire Sauce	https://www.eatthismuch.com/food/nutrition/pasta-sauce,871/	\N	f	0	257	257	2025-04-04	6	240	32
 318	\N	Panko-style Breadcrumbs, GF	https://www.eatthismuch.com/calories/gluten-free-panko-style-bread-crumbs-4063429	\N	f	0	112	28	2024-10-27	6	112	16
@@ -316,7 +316,7 @@
 325	\N	Silk Heavy Cream	https://www.eatthismuch.com/calories/whipping-cream-dairy-free-heavy-alternative-1590080	\N	f	0	32	16	2024-10-25	9	256	6
 326	\N	Lean Pork Fillet (Tenderloin)	https://www.eatthismuch.com/calories/pork-tenderloin,1785	\N	f	0	28	28	2024-09-06	4	224	8
 327	\N	Linguine, GF	https://www.eatthismuch.com/calories/spaghetti-red-lentil-2133787	\N	f	0	28	56	2025-06-30	4	224	4096
-328	\N	Brown Basmati Rice	This is a long grain brown rice. https://www.eatthismuch.com/calories/basmati-rice,45283	\N	f	4096	28	199	2024-07-13	4	199	1024
+328	\N	Brown Basmati Rice	This is a long grain brown rice. https://www.eatthismuch.com/calories/basmati-rice,45283	\N	f	4096	28	199	2025-07-22	4	199	1024
 329	\N	Brown Jasmine Rice	This is a long grain brown rice. https://www.eatthismuch.com/calories/brown-jasmine-rice-1699348	\N	f	4096	28	49	2024-11-08	4	196	1024
 330	\N	Red Lentil Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-red-lentil-2133787	\N	f	0	28	56	2024-10-24	4	112	4096
 331	\N	Yellow Pea Penne Pasta	https://www.eatthismuch.com/calories/yellow-peas-rotini-pasta-4608763	\N	f	0	28	56	2025-02-12	4	84	4096
@@ -537,7 +537,7 @@
 609	\N	Slices of Whole Grain Bread, GF	https://www.eatthismuch.com/calories/gluten-free-whole-grain-bread-2114723	\N	f	0	26	26	2024-10-09	0	52	2
 610	\N	Gammon Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/gammon-7453	\N	f	0	453.592	453.592	2024-10-14	0	240	268435456
 611	\N	Fresh Chervil	https://www.eatthismuch.com/calories/chervil-183	\N	f	0	2	2	2024-10-10	7	32	3
-612	\N	Brown Sugar	https://www.eatthismuch.com/food/nutrition/brown-sugar,4643	\N	f	0	145	145	2024-07-12	6	145	4
+612	\N	Brown Sugar	https://www.eatthismuch.com/food/nutrition/brown-sugar,4643	\N	f	0	28	145	2025-07-22	4	145	114688
 613	\N	Beef Broth	https://www.eatthismuch.com/calories/beef-broth-2899468	\N	f	0	240	240	2025-06-27	6	240	928
 614	\N	Dark Chocolate Chips (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	28	168	2024-12-20	4	168	16384
 615	\N	Tomato Sauce	https://www.eatthismuch.com/calories/tomato-sauce-2235	\N	f	512	245	245	2025-03-31	6	245	256
@@ -616,7 +616,7 @@
 689	\N	Frozen Okra	https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	28	2024-08-26	0	224	67108864
 690	\N	Honey | Coconut Sugar | Stevia	https://www.eatthismuch.com/calories/honey-4620	\N	f	0	28	21	2025-01-24	4	336	32
 691	\N	Dry Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2024-08-09	6	113.33	1024
-692	\N	Sea Salt & Black Pepper	https://www.eatthismuch.com/calories/salt-221 - https://www.eatthismuch.com/calories/pepper-205	\N	t	0	6	18	2024-07-14	8	288	131072
+692	\N	Sea Salt & Black Pepper	Averaging the grams and using the higher nutrient value of the two: https://www.eatthismuch.com/calories/salt-221 - https://www.eatthismuch.com/calories/pepper-205	\N	t	0	28	12	2025-07-23	4	192	131072
 693	\N	Iodized Salt & Black Pepper	https://www.eatthismuch.com/calories/salt-iodized,1926529	\N	t	0	8	2	2024-09-08	8	256	131072
 694	\N	Marinated Artichoke Hearts	https://www.eatthismuch.com/calories/asparagus-spears-1624112	\N	f	0	16	80	2024-08-05	0	112	1
 695	\N	Dark Sesame Seeds	aka Unhulled Sesame Seeds.  https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-20	4	144	131072

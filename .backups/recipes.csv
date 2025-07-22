@@ -281,11 +281,11 @@
 397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	\N	0	\N	f	f
 398	Maple Lime Pork Roast	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	360	10	4	t	\N	0	\N	f	f
 399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
-400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	\N	0	\N	f	f
+400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	20	10	4	t	\N	0	\N	f	f
 402	Fruit Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	\N	f	f
 403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	10	5	2	t	roasted-kale.jpg	0	\N	f	f
-404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	\N	0	\N	f	f
+404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	\N	f	f
 407	Apples and Peanut Butter	\N	\N	\N	48	0	1	1	t	peanut-butter-apples.jpg	0	\N	f	f
@@ -302,7 +302,7 @@
 418	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
 419	Thai Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	thai-dressing.jpg	6	\N	t	f
 420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	kielbasa.jpg	0	\N	f	f
-421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	honey-lemon-dijon-dip.jpg	6	\N	t	f
+421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-lemon-dijon-dip.jpg	9	\N	t	t
 422	Lemon Energy Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	5	12	t	lemon-energy-bites.jpg	0	\N	f	f
 423	Steamed Kale	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	\N	0	\N	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
@@ -347,7 +347,7 @@
 528	Mango Salsa	\N	\N	\N	0	0	10	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 529	Polyphenol Salad	\N	\N	\N	10	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 532	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	20	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -373,8 +373,8 @@
 554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	16	6	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 555	Green Beans with Almonds	\N	\N	\N	16	15	5	4	t	green-beans-almonds.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 556	Hashi-Mayo	\N	\N	\N	0	0	10	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-557	Cinnamon Vanilla Smoothie	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-558	Feel So Good Smoothie	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+557	Cinnamon Vanilla Smoothie	\N	\N	\N	128	0	10	1	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+558	Feel So Good Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 559	Bone Broth	\N	\N	\N	0	90	15	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 560	Fermented Cabbage Salad	\N	\N	\N	8	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 561	Heirloom Tomato and Beet Salad	\N	\N	\N	20	45	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -410,13 +410,13 @@
 591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 592	Fish Tacos	\N	\N	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 593	Green Mean Fighting Machine	\N	\N	\N	32	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-594	Golden Green Smoothie	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+594	Golden Green Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 595	Pan Fried Haddock	\N	\N	\N	12	13	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 596	Gluten and Dairy-Free Quiche	\N	\N	\N	8	60	15	4	t	quiche.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-597	Smooth Skin Smoothie	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-598	Tropical Green Smoothie	\N	\N	\N	128	0	6	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	\N	0	\N	f	f
-600	Pain Away Smoothie	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+597	Smooth Skin Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+598	Tropical Green Smoothie	\N	\N	\N	128	0	6	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
+600	Pain Away Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 601	Cowboy Caviar	\N	\N	\N	0	0	20	3	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 602	Cobb Salad	\N	\N	\N	8	40	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 603	SAM Salad (Salmon, Avocado, Mango)	\N	\N	\N	28	0	7	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -445,3 +445,6 @@
 627	Cinnamon and Apricot Souffles	\N	\N	\N	64	15	10	4	t	\N	0	\N	f	f
 628	Slow Cooker Chickpeas	\N	\N	\N	0	120	0	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
 629	Stovetop Chickpeas	\N	\N	\N	0	120	60	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
+630	Pecan Toffee Shortbread	\N	\N	\N	64	20	10	10	t	\N	0	\N	f	f
+631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
+632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
