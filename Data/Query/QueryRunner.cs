@@ -44,7 +44,7 @@ public class QueryRunner(Section section)
             && other.Recipe.Id == Recipe.Id;
     }
 
-    [DebuggerDisplay("{Ingredient}: {UserIngredient}")]
+    [DebuggerDisplay("{Ingredient}: {Scale}")]
     private class IngredientUserIngredient
     {
         public double Scale { get; init; } = 1;
@@ -423,7 +423,7 @@ public class QueryRunner(Section section)
     /// </summary>
     private async Task<IDictionary<int, IngredientUserIngredient?>> GetAltIngredientForRecipeIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
-        var recipeIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Ingredient != null).Select(ri => ri.Id)).ToList();
+        var recipeIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Id)).ToList();
         return (await context.RecipeIngredients.TagWithCallSite().AsNoTracking()
             .Where(ri => recipeIngredientIds.Contains(ri.Id))
             .Select(ri => new

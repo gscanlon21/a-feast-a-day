@@ -60,13 +60,10 @@ public class QueryBuilder
     /// <summary>
     /// Filter recipes according to the user's preferences.
     /// </summary>
-    /// <param name="ignoreHardFiltering">
-    /// Ignores ignored recipes and equipment filtering.
-    /// </param>
-    public QueryBuilder WithUser(User user, bool ignoreHardFiltering = false)
+    public QueryBuilder WithUser(User user)
     {
-        UserOptions = new UserOptions(user) { IgnoreIgnored = ignoreHardFiltering };
-        return WithEquipment(ignoreHardFiltering ? Equipment.All : user.Equipment);
+        UserOptions = new UserOptions(user);
+        return WithEquipment(user.Equipment);
     }
 
     public QueryBuilder WithUser(UserOptions userOptions)
