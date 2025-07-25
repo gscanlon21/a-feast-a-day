@@ -140,7 +140,7 @@ public partial class NewsletterRepo
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto>()!, newsletterContext.Token);
 
-        await UpdateLastSeenDate(debugRecipes);
+        await _userRepo.UpdateLastSeenDate(debugRecipes);
         return new NewsletterDto
         {
             User = userViewModel,
@@ -173,7 +173,7 @@ public partial class NewsletterRepo
         {
             // Don't update the last seen dates when backfilling feast data
             // ... so that the user's current feasts are unaffected.
-            await UpdateLastSeenDate(recipes: allRecipes);
+            await _userRepo.UpdateLastSeenDate(recipes: allRecipes);
         }
 
         return new NewsletterDto

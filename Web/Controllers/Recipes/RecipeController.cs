@@ -300,6 +300,7 @@ public class RecipeController : ViewController
             }
 
             // There may be a prep recipe as well.
+            await _userRepo.UpdateLastSeenDate(newRecipes);
             foreach (var newRecipe in newRecipes)
             {
                 // Add the recipe and its ingredients to the newsletter for nutrient calculations.

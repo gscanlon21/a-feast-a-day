@@ -3,7 +3,6 @@ using Core.Models.Recipe;
 using Data.Entities.Newsletter;
 using Data.Models.Newsletter;
 using Data.Query;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Data.Repos;
 
@@ -53,39 +52,5 @@ public partial class NewsletterRepo
 
         await _context.SaveChangesAsync();
         return newsletter;
-    }
-
-    /// <summary>
-    /// Updates the last seen date of the recipe by the user.
-    /// </summary>
-    /// <param name="refreshAfter">
-    /// When set and the date is > Today, hold off on refreshing the LastSeen date so that we see the same recipes in each feast.
-    /// </param>
-    internal async Task UpdateLastSeenDate(IEnumerable<QueryResults> recipes)
-    {
-        using var scope = _serviceScopeFactory.CreateScope();
-        using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
-
-        foreach (var recipe in recipes.DistinctBy(e => e.UserRecipe))
-        {
-            // >= so that today is the last day seeing the same recipes and tomorrow the recipes will refresh.
-            if (recipe.UserRecipe != null && (recipe.UserRecipe.RefreshAfter == null || DateHelpers.Today >= recipe.UserRecipe.RefreshAfter))
-            {
-                var refreshAfter = recipe.UserRecipe.LagRefreshXWeeks == 0 ? (DateOnly?)null : DateHelpers.StartOfWeek.AddDays(7 * recipe.UserRecipe.LagRefreshXWeeks);
-                // If refresh after is today, we want to see a different recipes tomorrow so update the last seen date.
-                if (recipe.UserRecipe.RefreshAfter == null && refreshAfter.HasValue && refreshAfter.Value > DateHelpers.Today)
-                {
-                    recipe.UserRecipe.RefreshAfter = refreshAfter.Value;
-                }
-                else
-                {
-                    recipe.UserRecipe.RefreshAfter = null;
-                    recipe.UserRecipe.LastSeen = DateHelpers.Today.AddDays(7 * recipe.UserRecipe.PadRefreshXWeeks);
-                }
-                scopedCoreContext.UserRecipes.Update(recipe.UserRecipe);
-            }
-        }
-
-        await scopedCoreContext.SaveChangesAsync();
     }
 }
