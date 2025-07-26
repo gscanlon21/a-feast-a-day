@@ -31,7 +31,7 @@ public class TestCreateFeasts : FakeDatabase
         mockHttpClientFactory.Setup(m => m.CreateClient(It.IsAny<string>())).Returns(mockHttpClient.Object);
 
         var mockLoggerNewsletterJob = new Mock<ILogger<CreateFeasts>>();
-        var userRepo = new UserRepo(Context);
+        var userRepo = new UserRepo(Context, mockSsf.Object);
 
         NewsletterJob = new CreateFeasts(
             mockLoggerNewsletterJob.Object,

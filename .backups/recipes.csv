@@ -205,7 +205,7 @@
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice.	\N	\N	6	40	5	4	t	gluten-free-risotto.jpg	0	https://www.glutenfreepalate.com/gluten-free-risotto/	f	f
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	2	2	t	korean-eggs-rice.jpg	0	\N	f	f
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
-260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	2	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
+260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	4	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	f	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
@@ -366,7 +366,7 @@
 547	Burgers	\N	\N	\N	8	45	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 548	Fajita Seasoning	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	\N	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 551	Bentonite Clay Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 552	Charcoal Juice	\N	\N	\N	128	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 553	Adobo	\N	\N	\N	4	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -388,7 +388,7 @@
 569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	3	t	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 570	Cut Watermelon	\N	\N	\N	16	0	5	4	t	watermelon.jpg	0	\N	f	f
 571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-572	Microgreens Salad	\N	\N	\N	8	20	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+572	Microgreens Salad	\N	\N	\N	20	20	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 574	Turkish Salad	\N	\N	\N	10	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 575	Turkey Taco Salad	\N	\N	\N	10	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -448,3 +448,4 @@
 630	Pecan Toffee Shortbread	\N	\N	\N	64	20	10	10	t	\N	0	\N	f	f
 631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
 632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
+633	Pork and Pineapple Coconut Curry	\N	\N	\N	8	17	3	4	t	\N	0	\N	f	f

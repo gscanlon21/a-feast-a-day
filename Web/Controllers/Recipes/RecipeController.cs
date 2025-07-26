@@ -64,9 +64,8 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        // Use Section.None so our recipe isn't filtered out.
-        var recipeDtos = (await new QueryBuilder(Section.None)
-            // Need to pass in a user to generate a Section.None UserRecipe record.
+        var recipeDtos = (await new QueryBuilder()
+            // Pass in the user so we can select their recipes.
             .WithUser(user, ignoreHardFiltering: true)
             .WithRecipes(x =>
             {

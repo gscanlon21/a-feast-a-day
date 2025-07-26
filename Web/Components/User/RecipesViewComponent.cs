@@ -41,6 +41,7 @@ public class RecipesViewComponent : ViewComponent
 
         // This should include disabled recipes.
         var recipes = await new QueryBuilder()
+            // Pass in the user so we can select their recipes.
             .WithUser(user, ignoreHardFiltering: true)
             .WithRecipes(x =>
             {

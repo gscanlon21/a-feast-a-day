@@ -1,6 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
-using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Recipe;
 using Data.Query.Builders;
@@ -93,7 +92,8 @@ public class RecipeIngredientController : ViewController
         }
 
         var substitutionRecipes = await GetRecipes(user);
-        var recipes = await new QueryBuilder(Section.None)
+        var recipes = await new QueryBuilder()
+            // Pass in the user so we can select their base recipes.
             .WithUser(user, ignoreHardFiltering: true)
             .WithRecipes(x =>
             {
@@ -116,18 +116,21 @@ public class RecipeIngredientController : ViewController
         }
 
         var prepRecipes = recipes.Where(r => recipe.RecipeIngredients.Select(ri => ri.IngredientRecipeId).Contains(r.Recipe.Id)).ToList();
+        var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).ToList()
+            ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
+
         return View(nameof(ManageRecipeIngredient), new UserManageRecipeIngredientViewModel()
         {
             User = user,
             Token = token,
             WasUpdated = wasUpdated,
             Recipes = substitutionRecipes,
+            Ingredients = substituteIngredients,
             RecipeIngredient = recipeIngredient,
             Recipe = recipe.AsType<NewsletterRecipeDto>()!,
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
             UserRecipeIngredient = new UserRecipeIngredientViewModel(userRecipeIngredient),
             PrepRecipes = prepRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
-            Ingredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).ToList() ?? [],
             AltRecipes = recipes.ExceptBy([recipe.Recipe.Id], r => r.Recipe.Id).Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
         });
     }
