@@ -268,7 +268,7 @@
 384	Carrot & Grain Salad	\N	\N	\N	6	15	3	2	t	sesame-ginger-carrots.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	5	2	t	sticky-kickin-wings.jpg	0	\N	f	f
 386	Chicken with Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	\N	0	\N	f	f
-387	Marinated Mediterranean Olives	\N	\N	\N	48	0	0	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
+387	Marinated Mediterranean Olives	\N	\N	\N	48	0	5	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
 388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldn’t be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
 389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	\N	0	\N	f	f
 390	Maple-Mustard-Glazed Pan-Seared Pork Chops	From The Food Lab by J. Kenji López-Alt	\N	\N	4	15	5	2	t	\N	0	\N	f	f
@@ -449,3 +449,5 @@
 631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
 632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
 633	Pork and Pineapple Coconut Curry	\N	\N	\N	8	17	3	4	t	\N	0	\N	f	f
+634	Satay Sauce	\N	\N	\N	0	5	5	1	t	\N	6	\N	t	f
+635	Pork and Pineapple Satay	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f

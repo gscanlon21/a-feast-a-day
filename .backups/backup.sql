@@ -723,6 +723,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1083	1170	1
 397	1171	1
 956	1167	1
+1104	278	1
+1104	77	1
 187	28	1
 187	164	1
 186	184	1
@@ -762,6 +764,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 504	73	1
 1082	1169	1
 957	1168	1
+708	278	1
+708	77	1
 479	481	1
 599	811	1
 598	811	1
@@ -8702,6 +8706,29 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14012	818	1984	\N	\N	3	0.4
 14013	818	62	\N	\N	3	10
 14014	818	2047	\N	\N	3	60
+14015	816	128	\N	\N	3	0.4
+14016	816	68719476736	\N	\N	2	26
+14017	816	34359738368	\N	\N	2	2834
+14018	816	2	\N	\N	3	17
+14019	816	1	\N	\N	3	42
+14020	816	4294967296	\N	\N	2	164
+14021	816	2199023255552	\N	\N	2	13
+14022	816	48	\N	\N	3	42
+14023	816	14	\N	\N	3	85
+14024	816	1984	\N	\N	3	2
+14025	816	62	\N	\N	3	127
+14026	816	2047	\N	\N	3	677
+14027	817	128	\N	\N	3	0.1
+14028	817	68719476736	\N	\N	2	6
+14029	817	34359738368	\N	\N	2	276
+14030	817	1	\N	\N	3	4
+14031	817	4294967296	\N	\N	2	72
+14032	817	2199023255552	\N	\N	2	3
+14033	817	48	\N	\N	3	4
+14034	817	14	\N	\N	3	6
+14035	817	1984	\N	\N	3	0.4
+14036	817	62	\N	\N	3	10
+14037	817	2047	\N	\N	3	60
 \.
 
 
@@ -10306,6 +10333,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5570	7	\N	\N	392	1	2	\N	77	f	\N	1
 5571	8	\N	\N	392	1	1	\N	214	f	\N	2
 5572	8	\N	\N	392	2	1	\N	71	f	\N	3
+5530	7	\N	\N	387	2	3	\N	958	f	\N	0
+5531	0	\N	\N	387	1	1	\N	4	f	\N	1
+5532	4	\N	\N	387	1	3	\N	957	f	\N	2
+5533	4	\N	\N	387	1	3	\N	956	f	\N	3
+5534	8	\N	\N	387	1	1	\N	278	f	\N	4
 5517	7	\N	\N	385	1	1	\N	238	f	\N	0
 5518	0	\N	\N	385	1	4	\N	750	f	\N	1
 5519	7	\N	\N	385	1	2	\N	100	f	\N	2
@@ -10357,9 +10389,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5555	7	\N	\N	390	1	1	\N	340	f	\N	2
 5556	7	\N	\N	390	1	2	\N	468	f	\N	3
 5557	8	\N	\N	390	2	1	\N	360	f	\N	4
-5530	7	\N	\N	387	2	3	\N	958	f	\N	0
-5531	0	\N	\N	387	1	1	\N	4	f	\N	1
-5532	4	\N	\N	387	1	3	\N	957	f	\N	2
 4633	6	\N	\N	267	1	5	\N	246	f	\N	9
 4634	8	\N	\N	267	1	1	\N	285	f	\N	10
 5521	0	\N	\N	385	1	2	\N	144	f	\N	4
@@ -10369,9 +10398,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5587	5	\N	\N	395	1	1	\N	736	f	\N	0
 5588	7	\N	\N	395	1	2	\N	77	f	\N	1
 5589	7	\N	\N	395	1	1	\N	39	f	\N	2
-5533	4	\N	\N	387	1	3	\N	956	f	\N	3
-5534	8	\N	\N	387	1	1	\N	278	f	\N	4
-5535	8	\N	\N	387	8	1	\N	692	f	\N	5
 5510	0	\N	\N	383	1	2	\N	917	f	\N	3
 5511	7	\N	\N	383	1	2	\N	321	f	\N	4
 5585	0	\N	\N	394	2	1	, juiced	4	t	\N	3
@@ -10388,6 +10414,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5538	6	\N	\N	388	2	1	, partially thawed	600	f	\N	2
 5539	6	\N	\N	388	2	1	, partially thawed	354	f	\N	3
 5506	0	\N	\N	382	1	8	\N	5	f	\N	4
+5535	8	\N	\N	387	8	1	\N	692	f	\N	5
 5558	0	\N	\N	390	1	2	\N	1003	f	\N	5
 5641	6	\N	\N	402	1	4	, sliced	10	f	\N	0
 5642	7	\N	\N	402	1	1	\N	215	f	\N	1
@@ -10998,12 +11025,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6284	7	\N	\N	566	1	1	, chopped	144	f	\N	2
 6285	0	\N	\N	566	1	1	, finely chopped	150	f	\N	3
 6286	6	\N	\N	566	4	1	, chopped	2	f	\N	4
-6202	7	\N	\N	554	1	1	\N	77	f	\N	0
 3930	4	\N	\N	197	1	4	\N	241	f	\N	8
 6267	6	\N	\N	564	1	4	, such as peppers, mushrooms, broccoli, onion	1084	f	\N	0
 6268	7	\N	\N	564	1	2	\N	176	f	\N	1
-6203	6	\N	\N	554	1	1	\N	\N	f	411	1
-6204	0	\N	\N	554	2	1	, diced small	222	f	\N	2
 6263	4	\N	\N	563	1	4	\N	869	f	\N	0
 6264	8	\N	\N	563	4	1	, to taste	692	t	\N	1
 6265	8	\N	\N	563	1	1	\N	1075	f	\N	2
@@ -11033,9 +11057,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6801	0	\N	\N	632	1	1	\N	396	f	\N	5
 6802	6	\N	\N	632	1	2	\N	206	f	\N	6
 6803	9	\N	\N	633	1	14	\N	178	f	\N	0
-6205	0	\N	\N	554	1	1	, minced	5	f	\N	3
-6206	0	\N	\N	554	2	1	, juiced	4	f	\N	4
-6207	8	\N	\N	554	1	2	\N	573	f	\N	5
 6250	7	\N	\N	561	1	2	, divided	77	f	\N	0
 6251	0	\N	\N	561	1	2	\N	1076	f	\N	1
 6252	0	\N	\N	561	1	2	, chopped	1079	f	\N	2
@@ -11345,6 +11366,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6590	0	\N	\N	603	1	1	, peeled, pitted and chopped	9	f	\N	2
 6591	6	\N	\N	603	4	1	\N	\N	f	556	3
 6592	4	\N	\N	604	1	1	\N	983	f	\N	0
+6600	7	\N	\N	607	1	1	, for cooking	1104	f	\N	0
 6618	7	\N	\N	608	1	2	, chopped	2	f	\N	10
 6619	7	\N	\N	608	1	2	, chopped	573	f	\N	11
 6620	0	\N	\N	609	1	6	, tops and bottoms removed (keep skin on)	671	f	\N	0
@@ -11385,15 +11407,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6631	7	\N	\N	610	1	1	, grated	699	f	\N	3
 6632	0	\N	\N	610	1	1	, peeled and diced small	222	f	\N	4
 6633	0	\N	\N	610	1	2	, diced	150	f	\N	5
-6600	7	\N	\N	607	1	1	, for cooking	1104	f	\N	0
+6634	0	\N	\N	610	1	2	(SMALL CARROTS), peeled and diced	736	f	\N	6
 6601	0	\N	\N	607	1	1	, diced	217	f	\N	1
 6602	5	\N	\N	607	4	3	, cut in half	156	f	\N	2
-6634	0	\N	\N	610	1	2	(SMALL CARROTS), peeled and diced	736	f	\N	6
-6603	5	\N	\N	607	2	1	, diced into ½-inch cubes.	1109	f	\N	3
-6604	4	\N	\N	607	1	12	, uncured, sliced into ¼-½ inch slices	1105	f	\N	4
-6605	6	\N	\N	607	2	1	\N	60	f	\N	5
-6606	6	\N	\N	607	2	1	\N	80	f	\N	6
-6607	6	\N	\N	607	4	1	\N	1102	f	\N	7
 6635	0	\N	\N	610	1	1	, peeled and diced	255	f	\N	7
 6636	6	\N	\N	610	1	1	, whole	147	f	\N	8
 6637	0	\N	\N	610	1	1	, diced	250	f	\N	9
@@ -11420,8 +11436,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
 6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
 6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
-6208	8	\N	\N	554	1	2	\N	2	f	\N	6
-6209	8	\N	\N	554	4	1	, to taste	692	t	\N	7
 6060	0	\N	\N	530	1	1	, juiced	12	f	\N	4
 6025	8	\N	\N	525	2	1	\N	322	f	\N	5
 6026	7	\N	\N	525	1	2	, chopped	13	f	\N	6
@@ -11502,6 +11516,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6715	4	\N	\N	620	1	7	\N	119	f	\N	2
 6689	7	\N	\N	617	1	1	\N	77	f	\N	2
 6691	8	\N	\N	617	4	1	\N	285	t	\N	4
+6208	8	\N	\N	554	1	2	\N	2	f	\N	6
+6209	8	\N	\N	554	4	1	, to taste	692	t	\N	7
 6716	0	\N	\N	620	1	10	(SWEET CHERRY PEPPERS), finely chopped	599	f	\N	3
 6717	4	\N	\N	620	1	4	(RICOTTA SALATA)	1002	f	\N	4
 6718	7	\N	\N	620	1	2	, chopped	573	f	\N	5
@@ -11607,6 +11623,35 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6809	0	\N	\N	633	1	2	, torn	596	t	\N	6
 6810	0	\N	\N	633	2	1	\N	467	f	\N	7
 6811	0	\N	\N	633	1	1	, seeded and finely chopped	224	t	\N	8
+6202	7	\N	\N	554	1	1	\N	77	f	\N	0
+6203	6	\N	\N	554	1	1	\N	\N	f	411	1
+6204	0	\N	\N	554	2	1	, diced small	222	f	\N	2
+6205	0	\N	\N	554	1	1	, minced	5	f	\N	3
+6206	0	\N	\N	554	2	1	, juiced	4	f	\N	4
+6207	8	\N	\N	554	1	2	\N	573	f	\N	5
+6603	5	\N	\N	607	2	1	, diced into ½-inch cubes.	1109	f	\N	3
+6604	4	\N	\N	607	1	12	, uncured, sliced into ¼-½ inch slices	1105	f	\N	4
+6605	6	\N	\N	607	2	1	\N	60	t	\N	5
+6606	6	\N	\N	607	2	1	\N	80	t	\N	6
+6607	6	\N	\N	607	4	1	\N	1102	t	\N	7
+6812	8	\N	\N	607	4	1	\N	74	t	\N	8
+6813	6	\N	\N	634	4	3	\N	178	f	\N	0
+6814	6	\N	\N	634	3	1	(CRUNCHY PEANUT BUTTER)	56	f	\N	1
+6815	0	\N	\N	634	1	1	, crushed	5	f	\N	2
+6816	8	\N	\N	634	1	2	\N	62	f	\N	3
+6817	8	\N	\N	634	1	1	(DARK MUSCOVADO SUGAR)	36	f	\N	4
+6818	5	\N	\N	635	4	5	\N	114	f	\N	0
+6819	0	\N	\N	635	1	1	, chopped	222	f	\N	1
+6820	0	\N	\N	635	1	1	, chopped	5	f	\N	2
+6821	7	\N	\N	635	1	4	\N	62	f	\N	3
+6822	0	\N	\N	635	2	1	, rind-only, grated	4	f	\N	4
+6823	8	\N	\N	635	1	1	(GROUND CUMIN)	143	f	\N	5
+6824	8	\N	\N	635	1	1	(GROUND CORIANDER)	958	f	\N	6
+6825	8	\N	\N	635	1	1	(GROUND TUMERIC)	699	f	\N	7
+6826	8	\N	\N	635	1	1	(DARK MUSCAVADO SUGAR (MOLASSES))	130	f	\N	8
+6827	0	\N	\N	635	1	1	, peeled and diced, or an 8oz can of pineapple chunks	467	f	\N	9
+6828	7	\N	\N	635	1	1	, to garnish	2	t	\N	10
+6829	6	\N	\N	635	1	1	\N	\N	f	634	11
 \.
 
 
@@ -12574,8 +12619,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3184	Combine all ingredients in a small bowl, and season to taste with salt and pepper.	\N	426	0	0
 3230	Add the granola to the yogurt. Enjoy!	\N	466	0	0
 2966	To make a quick chili oil, halve and seed the chilies. Fill a clean heatproof jar with olive oil, then pour it into a non-stick frying pan on a medium-low heat and add the chilies to confit. Meanwhile, put a pan of boiling salted water on for the pasta. Halve the eggplants lengthways and blanch in the water, covered, for 5 minutes, then lift out, leaving the water to boil. Carefully scoop the soft chilies into the jar, then spoon in the oil, leaving 2 tablespoons in the pan (keep the jar of chili oil to add a kick to future meals). Chop the eggplant into 1¼-inch chunks, add to the pan with a pinch of sea salt and black pepper, then turn the heat up to high, stirring regularly.	\N	360	0	0
-3404	Heat a large skillet over medium heat and add the avocado oil. Add the cauliflower rice and onion and cook for 5 minutes, or until desired texture is achieved.	\N	554	0	0
-3405	Add the garlic, and cook for 1 minute, until fragrant.	\N	554	1	0
 2965	Place all of the above ingredients in a high-speed blender and enjoy right away.	\N	359	0	0
 2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. As soon as it's set, use a rubber spatula to ease it away at the sides, and out onto a board. Repeat with the remaining egg. Cool, roll up, and finely slice.	\N	362	0	0
 2971	Trim and finely slice the endives. Dress with the lemon juice and ½ a tablespoon of extra virgin olive oil, then toss with the egg ribbons, taste, and season to perfection with sea salt and black pepper. Pile in the center of the bresaola, shave over the Parmesan, then finish with a little extra virgin olive oil.	\N	362	1	0
@@ -12585,7 +12628,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3403	Serve with white or brown rice, quinoa, or cauliflower rice. Alternatively, you can serve over sautéed greens.	\N	553	2	0
 3517	Preheat the oven to 350°F.	\N	584	0	0
 3354	Fill a medium-sized pot with water and bring it to a boil.	\N	533	0	0
+3404	Heat a large skillet over medium heat and add the avocado oil.	\N	554	0	4
 2973	Place the chicken breasts between two large sheets of parchment paper, and whack with the base of a large non-stick frying pan to flatten them to about ½ inch thick. Tear the bread into a food processor, then peel, chop, and add the garlic, and blitz into fairly fine crumbs. Pour the crumbs over the chicken, roughly pat onto each side, then re-cover with the paper and whack again, to hammer the crumbs into the chicken and flatten them further.	\N	364	0	256
+3405	Add the cauliflower rice and onion and cook for 5 minutes, or until desired texture is achieved.	\N	554	1	4
 2968	Scrub the beets clean, reserving any nice leaves, then finely slice into matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Dress with ½ a tablespoon each of extra virgin olive oil and red wine vinegar, the horseradish, and crème fraîche, then season to perfection with sea salt and black pepper. Delicately toss with the watercress and any reserved beet leaves.	\N	361	0	0
 2969	Divide up the bresaola between your plates, followed by the beet salad, then drizzle with 1 teaspoon of extra virgin olive oil, and serve.	\N	361	1	0
 3273	Place all ingredients in a high-powered blender and mix until a creamy consistency is achieved.	\N	483	0	128
@@ -12638,10 +12683,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3	0
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4	0
 3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2	4
-3406	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	\N	554	2	0
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0	0
 3428	Toss the tomatoes with the basil, remaining 1 tablespoon of olive oil, garlic, and balsamic vinegar in a salad bowl.	\N	561	2	0
 3429	Peel and chop the cooked beets and add to the salad bowl, tossing to coat with the dressing.	\N	561	3	0
+3406	Add the garlic, and cook for 1 minute, until fragrant.	\N	554	2	4
 924	Pour the lentils into a big pot and add water. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling.	\N	1	0	0
 2917	Turn the broiler on to medium-high.	\N	321	0	16
 2918	Score the chicken breasts on a criss-cross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place criss-cross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat  while you peel and finely grate the garlic in a bowl. Squeeze in the juice from 1½ limes, stir in the peanut butter, and loosen with enough water to give you a spoonable consistency. Finely slice the chili, then mix through the sauce, taste, and season to perfection.	\N	321	1	0
@@ -12651,7 +12696,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	\N	567	1	0
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2	0
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1	0
-3407	Season to taste with salt and pepper.	\N	554	3	0
+3407	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	\N	554	3	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0	0
 3345	On a large serving platter, layer the sliced meat, spinach and avocado with the salsa.	\N	530	1	0
 3426	Preheat the oven to 375°F.	\N	561	0	0
@@ -12736,8 +12781,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2-3 minutes.	\N	264	1	0
 1884	Meanwhile, separate the eggs, putting the yolks into a bowl (save the whites for making meringues another day), then finely grate in the cheese and mix together. Tip the drained pasta into the chestnut pan, then remove from the heat and wait 2 minutes for the pan to cool slightly (if the pan's too hot, it'll scramble; get it right and it'll be smooth, silky and deliciously elegant). Loosen the egg mixture with a splash of the reserved cooking water, then pour over the pasta, tossing and stirring vigorously—the egg will gently cook in the residual heat. Season to perfection. Adjust the consistency with extra cooking water, if needed, and finish with a fine grating on cheese, if you like.	\N	183	1	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	\N	360	1	0
-3056	Place the thawed cauliflower in small batches in a food processor fitted with the steel blade. Pulse in short bursts just until it resembles grains of rice. Place the riced cauliflower in a tea towel or fine mesh nut milk bag, and squeeze until all of the water has been removed. Expect about 1 cup liquid total. Line a medium-size bowl with paper towels, place the riced, dried cauliflower in the bowl, and set it aside.	\N	391	0	0
 3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. Peel off long thick strips of lemon zest and place in a bowl with the olives. Squeeze the lemon then top with 3 times as much extra virgin olive oil. Add salt, pepper and the crushed coriander seeds. Pour the dressing over the olives and leave to marinate. The longer you leave them, the better they’ll taste.	\N	387	0	0
+3056	Place the thawed cauliflower in small batches in a food processor fitted with the steel blade. Pulse in short bursts just until it resembles grains of rice. Place the riced cauliflower in a tea towel or fine mesh nut milk bag, and squeeze until all of the water has been removed. Expect about 1 cup liquid total. Line a medium-size bowl with paper towels, place the riced, dried cauliflower in the bowl, and set it aside.	\N	391	0	0
 3057	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	\N	391	1	0
 3058	Add the garlic, and continue to sauté for another 2 minutes or until the garlic is fragrant and the onion is translucent.	\N	391	2	0
 3059	Add the dried, riced cauliflower, then the sesame oil, tamari and mirin to the pan, and mix to combine. Add the frozen peas and carrots, and mix gently to combine.	\N	391	3	0
@@ -12920,6 +12965,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3576	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	597	0	0
 3589	Add the salmon, mango and avocado into a bowl. Toss with mayo and serve.	\N	603	0	0
 3590	Unshell the pistachios. Eat the pistachios. Enjoy the pistachios.	\N	604	0	0
+3593	In a large skillet, over medium-high heat, add the coconut oil or beef tallow. When melted, add the onion and cook until translucent, about 5 minutes.	\N	607	0	0
 3571	Preheat the oven to 350°F.	\N	596	0	0
 3572	Break open 6 eggs, add them to a bowl, and mix.	\N	596	1	0
 3573	Mix in cheese, broccoli, chives, salmon and coconut milk.	\N	596	2	0
@@ -12928,26 +12974,25 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	599	0	0
 3568	In a large skillet over medium-high heat, heat oil, garlic and capers. Cook until the garlic becomes fragrant, about 3 minutes.	\N	595	0	0
 3569	Add the fish and lemon zest, and cook each side for 5 minutes until it browns and is cooked throughout. Drizzle with fresh lemon juice on top, season to taste with salt and pepper, and serve with cooked capers and garlic.	\N	595	1	0
-3593	In a large skillet, over medium-high heat, add the coconut oil or beef tallow. When melted, add the onion and cook until translucent, about 5 minutes.	\N	607	0	0
-3594	Add the Brussel sprouts and potatoes, and continue cooking for another 5 minutes.	\N	607	1	0
-3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	\N	607	2	0
-3596	Season with sea salt to taste.	\N	607	3	0
-3597	Mix the mustard, apple cider vinegar and honey/maple syrup in a blender, and use as a dip, or pour over the dish.	\N	607	4	0
 1601	Place the chicken breasts into the bottom of the baking pan then drizzle on the Italian dressing and sprinkle on seasonings  to taste. Use tongs or your hands to flip the chicken breasts to coat in the dressing and seasonings then arrange into an even layer.	\N	135	1	0
 1602	Bake for 20 minutes or until the thickest part of the largest chicken breast reaches an internal temperature of 165 degrees as read by a digital instant-read thermometer. Let the chicken rest for 15-30 minutes before serving and/or slicing.	\N	135	2	0
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. then grill for 2-3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	\N	270	1	0
 2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	\N	367	1	0
+3594	Add the Brussel sprouts and potatoes, and continue cooking for another 5 minutes.	\N	607	1	0
 3582	Preheat the oven to 375°F. SPrinkle chicken breast with salt and pepper, place on a baking tray, and cook in the oven for 35-50 minutes, or until internal temperature reaches 165F. Set aside when cooked.	\N	602	0	0
 3583	Place eggs in an empty pot, cover with water, and bring to a boil over high heat. Set a timer for 8 minutes once the water starts to boil.	\N	602	1	0
 3584	Create an ice bath in a large bowl and set aside. Oncer the timer goes off, immediately remove eggs and place in the ice bath.	\N	602	2	0
 3585	In a medium skillet, add the bacon, and cook until crisp, about 12 minutes. Set aside on a plate lined with a paper towel.	\N	602	3	0
 3586	Next, prepare your veggies. Chop the green onion into small pieces, and chop the tomatoes into small chunks.	\N	602	4	0
+3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	\N	607	2	0
 3558	Preheat the oven to 350°F.	\N	592	0	0
 3559	Season the fish with salt, pepper and olive oil.	\N	592	1	0
 3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	\N	592	2	0
 3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3	0
 3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4	0
 3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5	0
+3596	Season with sea salt to taste.	\N	607	3	0
+3597	Whisk together the mustard, apple cider vinegar and honey/maple syrup in a bowl, and use as a dip, or pour over the dish.	\N	607	4	0
 3591	Cook the quesadilla and serve warm.	\N	605	0	4
 1928	Bring the water in the steamer to the boil, then lower the heat to a simmer. Steam until the flesh feels tender when tested with a knife tip. Serve hot.	\N	177	3	0
 3587	Chop the chicken into 1-inch pieces. Assemble the salad - layer the mixed greens first, then the onion and tomatoes.	\N	602	5	0
@@ -13104,6 +13149,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3717	Ladle a little of the coconut cream into a bowl and stir in the red curry paste. Return the mixture to the pan and stir until well mixed. Cook, stirring occasionally, for about 3 minutes, until the paste is fragrant.	\N	633	3	0
 3718	Add the sliced pork and stir in the fish sauce, sugar and tamarind juice. Cook, stirring constantly for 2–3 minutes, until the sugar has dissolved, and the pork is no longer pink.	\N	633	4	0
 3719	Add the remaining coconut milk and the lime leaves. Bring to the boil, then stir in the pineapple. Reduce the heat and simmer gently for 3 minutes, or until the pork is fully cooked. Sprinkle over the chilli and serve.	\N	633	5	0
+3720	Season to taste with salt and pepper.	\N	554	4	0
+3721	Pour the coconut milk into a small pan and stir in the peanut butter. Stir in the remaining sauce ingredients and heat gently on the hob or over the barbecue, stirring until smooth and hot. Cover and keep warm.	\N	634	0	0
+3722	Trim any fat from the pork fillet and cut it into 2.5cm/1in cubes. Place the meat in a large bowl.	\N	635	0	0
+3723	Place the onion, garlic, soy sauce, lemon rind, spices and sugar in a blender or food processor. Add two pieces of pineapple and process until the mixture is well combined and almost smooth.	\N	635	1	0
+3724	Add the paste to the pork, tossing well to coat evenly. Thread the pieces of pork on to bamboo skewers, with the remaining pineapple chunks. Preheat the grill (broiler) , or light the barbecue.	\N	635	2	0
+3725	Cook the pork and pineapple skewers under the grill (broiler) or on a medium-hot barbecue for 10–12 minutes, turning occasionally, until golden brown and thoroughly cooked. Garnish with parley and serve with the satay sauce.	\N	635	3	0
 \.
 
 
@@ -13149,7 +13200,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14014, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14037, true);
 
 
 --

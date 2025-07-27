@@ -710,8 +710,8 @@
 813	\N	Fresh Nectarines	https://www.eatthismuch.com/calories/nectarines-1458	\N	f	0	142	142	2024-09-25	0	142	1
 814	\N	Fresh Peaches | Fresh Nectarines	https://www.eatthismuch.com/calories/peaches,1484	\N	f	0	150	150	2024-09-25	0	150	1
 815	\N	Frozen Podded Fava Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	67108864
-816	\N	Frozen Podded Lima Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	118	118	2024-07-16	6	118	67108864
-817	\N	Frozen Podded Snow Peas	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	118	118	2024-07-16	6	118	67108864
+816	\N	Frozen Podded Lima Beans	https://www.eatthismuch.com/calories/lima-beans-3571	\N	f	0	28	202	2025-07-27	4	202	67108864
+817	\N	Frozen Podded Snow Peas	https://www.eatthismuch.com/calories/peas-2062	\N	f	0	28	144	2025-07-27	4	144	67108864
 818	\N	Frozen Podded Snap Peas	https://www.eatthismuch.com/calories/peas-2062	\N	f	0	28	144	2025-07-26	4	144	67108864
 819	\N	Fresh Podded Green Peas | Frozen Podded Green Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2025-01-15	4	63	2
 820	\N	Fresh Podded Fava Beans | Frozen Podded Fava Beans	https://www.eatthismuch.com/calories/fava-beans-2580	\N	f	0	126	126	2024-10-17	6	126	2048
@@ -941,3 +941,4 @@
 1170	\N	Olives, pitted	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-19	4	134	512
 1171	\N	Black Olives, pitted	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-19	4	134	512
 1172	\N	Frozen Lima Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	118	118	2024-07-16	6	118	67108864
+1173	\N	Pea Sprouts	https://www.eatthismuch.com/calories/peas-2071	\N	f	0	28	88	2024-12-10	4	88	2
