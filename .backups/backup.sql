@@ -8729,6 +8729,48 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14035	817	1984	\N	\N	3	0.4
 14036	817	62	\N	\N	3	10
 14037	817	2047	\N	\N	3	60
+14038	1172	128	\N	\N	3	0.4
+14039	1172	68719476736	\N	\N	2	26
+14040	1172	34359738368	\N	\N	2	2834
+14041	1172	2	\N	\N	3	17
+14042	1172	1	\N	\N	3	42
+14043	1172	4294967296	\N	\N	2	163
+14044	1172	2199023255552	\N	\N	2	13
+14045	1172	48	\N	\N	3	42
+14046	1172	14	\N	\N	3	85
+14047	1172	1984	\N	\N	3	2
+14048	1172	62	\N	\N	3	127
+14049	1172	2047	\N	\N	3	677
+14050	914	68719476736	\N	\N	2	52
+14051	914	34359738368	\N	\N	2	9
+14052	914	1	\N	\N	3	2
+14053	914	4294967296	\N	\N	2	5
+14054	914	2199023255552	\N	\N	2	0.2
+14055	914	48	\N	\N	3	0.5
+14056	914	14	\N	\N	3	22
+14057	914	1984	\N	\N	3	0.2
+14058	914	62	\N	\N	3	23
+14059	914	2047	\N	\N	3	103
+14060	335	68719476736	\N	\N	2	360
+14061	335	34359738368	\N	\N	2	135
+14062	335	1	\N	\N	3	2
+14063	335	2199023255552	\N	\N	2	0.3
+14064	335	48	\N	\N	3	2
+14065	335	14	\N	\N	3	18
+14066	335	62	\N	\N	3	20
+14067	335	2047	\N	\N	3	90
+14068	334	128	\N	\N	3	0.3
+14069	334	68719476736	\N	\N	2	15
+14070	334	34359738368	\N	\N	2	275
+14071	334	2	\N	\N	3	6
+14072	334	1	\N	\N	3	3
+14073	334	4294967296	\N	\N	2	2
+14074	334	2199023255552	\N	\N	2	1
+14075	334	48	\N	\N	3	2
+14076	334	14	\N	\N	3	17
+14077	334	1984	\N	\N	3	1
+14078	334	62	\N	\N	3	19
+14079	334	2047	\N	\N	3	88
 \.
 
 
@@ -10389,15 +10431,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5555	7	\N	\N	390	1	1	\N	340	f	\N	2
 5556	7	\N	\N	390	1	2	\N	468	f	\N	3
 5557	8	\N	\N	390	2	1	\N	360	f	\N	4
+5587	5	\N	\N	395	1	1	\N	736	f	\N	0
+5588	7	\N	\N	395	1	2	\N	77	f	\N	1
+5589	7	\N	\N	395	1	1	\N	39	f	\N	2
 4633	6	\N	\N	267	1	5	\N	246	f	\N	9
 4634	8	\N	\N	267	1	1	\N	285	f	\N	10
 5521	0	\N	\N	385	1	2	\N	144	f	\N	4
 5582	0	\N	\N	394	1	4	, peeled	671	f	\N	0
 5583	6	\N	\N	394	4	1	, chopped	2	t	\N	1
 5584	7	\N	\N	394	1	1	\N	80	t	\N	2
-5587	5	\N	\N	395	1	1	\N	736	f	\N	0
-5588	7	\N	\N	395	1	2	\N	77	f	\N	1
-5589	7	\N	\N	395	1	1	\N	39	f	\N	2
 5510	0	\N	\N	383	1	2	\N	917	f	\N	3
 5511	7	\N	\N	383	1	2	\N	321	f	\N	4
 5585	0	\N	\N	394	2	1	, juiced	4	t	\N	3
@@ -10446,11 +10488,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4501	6	\N	\N	257	2	1	, grated	95	t	\N	5
 4502	7	\N	\N	257	1	1	\N	77	f	\N	6
 4503	8	\N	\N	257	4	1	\N	285	f	\N	7
-5653	4	\N	\N	404	1	8	, full-fat	178	f	\N	0
-5654	7	\N	\N	404	1	1	(DANDY BLEND)	681	f	\N	1
-5655	7	\N	\N	404	1	4	\N	805	f	\N	2
-5656	7	\N	\N	404	1	1	(COLLAGEN PEPTIDES)	805	f	\N	3
-5657	0	\N	\N	404	1	4	, omit if making smoothie hot	501	t	\N	4
 5577	0	\N	\N	393	1	2	, peeled and thinly sliced (about 1½ cups)	155	f	\N	0
 5578	7	\N	\N	393	1	1	, finely chopped	473	t	\N	1
 5579	6	\N	\N	393	3	1	\N	966	f	\N	2
@@ -10464,6 +10501,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5597	8	\N	\N	396	1	1	\N	73	f	\N	3
 5598	8	\N	\N	396	1	1	\N	699	f	\N	4
 5599	8	\N	\N	396	1	1	\N	71	f	\N	5
+5590	0	\N	\N	395	1	1	, juiced	12	f	\N	3
+5591	8	\N	\N	395	4	1	\N	692	f	\N	4
+5592	7	\N	\N	395	1	1	, chopped	2	f	\N	5
+5653	4	\N	\N	404	1	8	, full-fat	178	f	\N	0
 4323	6	\N	\N	82	3	1	, diced small	269	f	\N	5
 5498	6	\N	\N	381	4	1	\N	111	f	\N	3
 5499	6	\N	\N	381	4	1	\N	171	f	\N	4
@@ -10489,10 +10530,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5631	7	\N	\N	400	1	1	\N	965	f	\N	3
 5632	6	\N	\N	400	4	3	\N	747	f	\N	4
 5633	8	\N	\N	400	4	1	\N	74	t	\N	5
-5590	0	\N	\N	395	1	1	, juiced	12	f	\N	3
-5591	8	\N	\N	395	4	1	\N	692	f	\N	4
-5592	7	\N	\N	395	1	1	, chopped	2	f	\N	5
-5593	7	\N	\N	395	1	1	, chopped	473	f	\N	6
 5501	6	\N	\N	381	2	1	, shredded	95	t	\N	6
 5634	6	\N	\N	401	1	1	, rinsed well	20	f	\N	0
 5635	0	\N	\N	401	1	2	\N	123	f	\N	1
@@ -10510,6 +10547,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5667	6	\N	\N	406	4	1	\N	1008	f	\N	4
 5646	0	\N	\N	402	1	1	, juiced	12	f	\N	5
 5647	7	\N	\N	402	2	3	\N	39	t	\N	6
+5654	7	\N	\N	404	1	1	\N	1174	f	\N	1
+5655	7	\N	\N	404	1	4	\N	805	f	\N	2
+5656	7	\N	\N	404	1	1	\N	1094	f	\N	3
+5657	0	\N	\N	404	1	4	, omit if making smoothie hot	501	t	\N	4
+5593	7	\N	\N	395	1	1	, chopped	473	f	\N	6
 5600	6	\N	\N	396	2	1	, cubed	594	t	\N	6
 5671	6	\N	\N	409	4	5	(ALMOND FLOUR)	38	f	\N	0
 5672	8	\N	\N	409	1	1	\N	70	f	\N	1
@@ -10589,7 +10631,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5680	0	\N	\N	410	1	1	\N	733	f	\N	0
 5681	7	\N	\N	410	1	1	\N	964	f	\N	1
 5682	7	\N	\N	410	1	2	, organic	980	f	\N	2
-5670	0	\N	\N	408	1	1	\N	250	f	\N	0
 5699	7	\N	\N	414	1	1	\N	357	f	\N	3
 5700	8	\N	\N	414	2	1	\N	503	f	\N	4
 5687	6	\N	\N	412	1	1	\N	\N	f	411	1
@@ -10606,6 +10647,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5749	0	\N	\N	421	1	1	, minced	5	f	\N	4
 5750	7	\N	\N	421	1	1	, minced	2	f	\N	5
 5751	8	\N	\N	421	8	1	, to taste	692	t	\N	6
+5670	0	\N	\N	408	1	1	\N	250	f	\N	0
 5767	6	\N	\N	424	1	1	\N	986	f	\N	0
 5768	8	\N	\N	424	1	2	, or 1 teaspoon baking soda	34	f	\N	1
 5769	7	\N	\N	424	1	3	, coconut sugar or sugar-free erythritol/Monk fruit	987	f	\N	2
@@ -10754,9 +10796,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5935	6	\N	\N	482	1	1	, tough ends trimmed	122	f	\N	1
 5936	6	\N	\N	482	1	1	\N	\N	f	543	2
 5937	7	\N	\N	482	1	2	\N	461	f	\N	3
-5908	0	\N	\N	478	1	2	, peeled and sliced	\N	f	65	0
 5885	7	\N	\N	408	1	1	\N	77	f	\N	1
 5886	8	\N	\N	408	4	1	\N	692	f	\N	2
+5908	0	\N	\N	478	1	2	, peeled and sliced	\N	f	65	0
 5931	7	\N	\N	481	1	1	\N	278	f	\N	0
 5932	0	\N	\N	481	1	2	, juiced	4	f	\N	1
 5933	7	\N	\N	481	1	1	\N	1075	f	\N	2
@@ -11553,11 +11595,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5543	7	\N	\N	388	1	1	\N	656	f	\N	7
 5544	7	\N	\N	388	1	2	\N	295	f	\N	8
 5545	7	\N	\N	388	1	3	, sliced, for garnish	144	t	\N	9
-6725	7	\N	\N	621	1	5	, at room temperature, divided	189	f	\N	0
-6726	0	\N	\N	621	1	4	\N	221	f	\N	1
-6727	0	\N	\N	621	1	2	(SLICES OF APPLEWOOD SMOKED CHEDDER CHEESE)	319	f	\N	2
-6728	0	\N	\N	621	1	2	(SLICES OF SWISS CHEESE)	319	f	\N	3
-6729	0	\N	\N	621	1	2	(SLICES OF PROVOLONE CHEESE)	319	f	\N	4
 6734	0	\N	\N	623	1	3	\N	187	f	\N	0
 6735	7	\N	\N	623	1	6	\N	234	f	\N	1
 6736	6	\N	\N	623	2	1	\N	38	f	\N	2
@@ -11652,6 +11689,56 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6827	0	\N	\N	635	1	1	, peeled and diced, or an 8oz can of pineapple chunks	467	f	\N	9
 6828	7	\N	\N	635	1	1	, to garnish	2	t	\N	10
 6829	6	\N	\N	635	1	1	\N	\N	f	634	11
+6830	5	\N	\N	636	1	1	(SIRLOIN STEAK)	1130	f	\N	0
+6831	7	\N	\N	636	1	3	\N	\N	f	75	1
+6832	7	\N	\N	636	1	3	\N	62	f	\N	2
+6833	0	\N	\N	636	1	2	, peeled, pitted, and finely sliced	789	f	\N	3
+6834	8	\N	\N	636	4	1	\N	67	t	\N	4
+6835	6	\N	\N	637	1	1	, at toom temperature, diced	190	f	\N	0
+6836	6	\N	\N	637	2	1	\N	234	f	\N	1
+6837	6	\N	\N	637	4	9	\N	38	f	\N	2
+6838	6	\N	\N	637	2	1	(UNSWEETENED COCOA POWDER), plus extra for dusting	43	f	\N	3
+6839	6	\N	\N	637	4	1	, finely chopped	983	f	\N	4
+6725	7	\N	\N	621	1	5	, at room temperature, divided	189	f	\N	0
+6726	0	\N	\N	621	1	4	\N	221	f	\N	1
+6727	0	\N	\N	621	1	2	\N	1179	f	\N	2
+6728	0	\N	\N	621	1	2	\N	1176	f	\N	3
+6729	0	\N	\N	621	1	2	\N	1178	f	\N	4
+6840	4	\N	\N	638	1	121	(RINDLESS BACK (LEAN) BACON RASHERS (STRIPS))	985	f	\N	0
+6841	8	\N	\N	638	1	1	\N	84	f	\N	1
+6842	0	\N	\N	638	1	4	\N	187	f	\N	2
+6843	0	\N	\N	638	1	4	(ENGLISH MUFFINS)	405	f	\N	3
+6844	7	\N	\N	638	1	1	, for spreading	29	f	\N	4
+6845	8	\N	\N	638	4	1	\N	67	f	\N	5
+6846	0	\N	\N	638	1	2	, yolks-only, for the hollandaise sauce	187	f	\N	6
+6847	8	\N	\N	638	1	1	, for the hollandaise sauce	84	f	\N	7
+6848	7	\N	\N	638	1	6	, for the hollandaise sauce	29	f	\N	8
+6849	4	\N	\N	639	1	12	(LEAN PORK)	326	f	\N	0
+6850	7	\N	\N	639	1	2	\N	78	f	\N	1
+6851	0	\N	\N	639	1	4	, thinly slices	5	f	\N	2
+6852	0	\N	\N	639	1	1	(SMALL RED ONION), sliced	105	f	\N	3
+6853	7	\N	\N	639	1	2	\N	557	f	\N	4
+6854	7	\N	\N	639	1	1	\N	36	f	\N	5
+6855	0	\N	\N	639	1	1	, seeded and diced	8	f	\N	6
+6856	0	\N	\N	639	2	1	, seeded and very thinly sliced	155	f	\N	7
+6857	0	\N	\N	639	1	2	, cut into wedges	260	f	\N	8
+6858	4	\N	\N	639	1	4	, cut into small chunks	467	f	\N	9
+6859	0	\N	\N	639	1	2	, cut into short lengths	302	f	\N	10
+6860	8	\N	\N	639	4	1	, ground	67	f	\N	11
+6861	7	\N	\N	639	1	1	, to garnish	13	f	\N	12
+6862	7	\N	\N	639	1	1	, shreded, to garnish	302	f	\N	13
+6863	4	\N	\N	640	1	18	\N	188	f	\N	0
+6864	7	\N	\N	640	1	3	\N	78	f	\N	1
+6865	0	\N	\N	640	1	1	, chopped	222	f	\N	2
+6866	7	\N	\N	640	1	1	, chopped	5	f	\N	3
+6867	4	\N	\N	640	1	4	(PORK), cut into small cubes	114	f	\N	4
+6868	0	\N	\N	640	1	2	, beaten	187	f	\N	5
+6869	7	\N	\N	640	1	2	\N	557	f	\N	6
+6870	7	\N	\N	640	1	1	(DARK SOY SAUCE)	62	f	\N	7
+6871	8	\N	\N	640	2	1	\N	234	f	\N	8
+6872	0	\N	\N	640	1	4	, finely sliced, for garnish	302	f	\N	9
+6873	0	\N	\N	640	1	2	, sliced, for garnish	224	f	\N	10
+6874	0	\N	\N	640	1	1	, cut into wedges, for garnish	12	f	\N	11
 \.
 
 
@@ -11704,9 +11791,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2516	Bake for 15-20 minutes until lightly browned. Let is cool before putting in storage container.	\N	247	4	0
 3240	Combine all ingredients in a small bowl. Season to taste with salt and pepper.	\N	472	0	0
 3356	Drain the water and transfer potatoes to a dish.	\N	533	2	0
-3114	Preheat the oven to 425°F. 	\N	408	0	0
 3196	In a small bowl, combine the honey through lemon juice. Season to taste with salt and pepper.	\N	432	0	0
 2773	In a large mixing bowl, whisk the mayonnaise together with the olive oil. Add all the prepared vegetables and toss to combine well. Season with salt and pepper to taste.	\N	241	0	0
+3114	Preheat the oven to 425°F. 	\N	408	0	2
 2774	Transfer to a serving dish and sprinkle with black sesame seeds.	\N	241	1	0
 389	Coarsely slice the ripe bananas into small chunks, set on a plate or baking sheet, and freeze 1-2 hours.	\N	47	0	0
 390	Once frozen, add banana chunks to a food processor and blend until creamy, scraping down the sides as necessary. 	\N	47	1	0
@@ -11764,6 +11851,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 607	Select Course No. 1 and press the START button. 	\N	72	1	0
 569	Fold the left side over the beans, then the right side on top, so the two sides are overlapping in the middle. Fold in half vertically so the bottom edge meets the top edge.	\N	20	1	0
 2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract.	\N	233	0	0
+3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	\N	408	1	0
+3242	Place the zucchini in a non-stick baking dish and bake for 10 to 15 minutes, or until tender.	\N	408	2	2
 2237	Mix in the sugar-free chocolate.	\N	233	1	0
 2238	Divide the mixture into 10 muffin cups and freeze for at least two hours.	\N	233	2	0
 212	Preheat the oven to 425 degrees F (220 degrees C). Line a baking sheet with aluminum foil.	\N	49	0	0
@@ -11780,7 +11869,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 570	Place the quesadillas into the toaster slots and set the toaster to medium heat. Toast for 1 cycle. Carefully remove quesadillas and reverse the vertical fold, so that the inside is now the outside. Return to the toaster and toast until lightly browned, about half a toasting cycle.	\N	20	2	0
 571	Carefully remove the hot quesadillas to a plate. Cut in half at the fold to make 4 pieces.	\N	20	3	0
 287	Combine the spaghetti pasta, spaghetti sauce, frozen meatballs, and water in a 4-quart slow cooker and mix to combine. Make sure that the pasta is submerged in the liquid in the crock pot.	\N	33	0	0
-3242	Place the zucchini in a non-stick baking dish and bake for 10 to 15 minutes, or until tender.	\N	408	2	0
 288	Cover the crock pot and cook on low for 5 to 7 hours or until pasta is tender and meatballs are thoroughly heated to 160 F as measured with a meat thermometer, stirring once with a large spoon during the cooking time. This method will make the pasta quite soft, like Spaghetti-Os.	\N	33	1	0
 289	Serve with grated cheese, if desired. Enjoy!	\N	33	2	0
 3122	Flip and cook until desired doneness is reached, 2 to 3 minutes more; season with salt and ground black pepper.	\N	19	2	0
@@ -11789,7 +11877,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3385	Combine avocado. coconut cream, cilantro, avocado oil, and lemon juice in a blender, then purée until smooth.	\N	544	0	0
 3386	Add water to thin. Season to taste with salt and pepper.	\N	544	1	0
 3358	Serve as a side.	\N	533	4	0
-3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	\N	408	1	0
 3384	In a food processor, combine the lemon juice, pine nuts, and basil, and process until just combined. Slowly add in the olive oil, and pulse until emulsified. Season to taste with sea salt and pepper.	\N	543	0	256
 475	Toast bread. Mash avocado with a fork and spread onto one piece of toast.	\N	52	0	0
 476	Top with sliced chicken, sliced tomato and the second piece of toast.	\N	52	1	0
@@ -12453,10 +12540,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 691	Top with an equal amount of mozzarella and parmesan cheese and pepperoni. Return to the oven and bake for about 5 to 7 minutes or until the cheese is melted and slightly browned.	\N	64	5	0
 3001	Place a wok (or large non-stick frying pan) over a medium-high heat for one minute.	\N	376	1	0
 3002	Tip the cauliflower into the wok and stir-fry for 2 minutes or until the cauliflower is piping hot.	\N	376	2	0
-3106	If making smoothie hot, heat the milk on your stove top, until warm, about 3 minutes.	\N	404	0	0
-3107	Add all ingredients to a blender for 20 seconds.	\N	404	1	0
 3605	Pour sauce over haddock filets. Top with parsley and oregano, and serve warm.	\N	608	7	0
 3331	Preheat the oven according to pizza instructions.	\N	526	0	0
+3106	If making smoothie hot, heat the milk on your stove top, until warm, about 3 minutes.	\N	404	0	0
+3107	Add all ingredients to a blender for 20 seconds.	\N	404	1	128
 3322	Melt coconut oil in a pan.	\N	523	0	4
 2128	Divide the broccoli florets into tiny sprigs. Cut the leeks and asparagus diagonally into 5cm/2in lengths. Trim the fennel bulb and but into wedges.	\N	185	0	0
 2129	Cook all the vegetables in boiling salted water until just tender.	\N	185	1	0
@@ -12580,7 +12667,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2926	Finely chop the parsley, stalks and all, beat it with the egg and a splash of pasta cooking water, then finely graze and mix in most of the Parmesan.	\N	323	1	0
 2927	Toss the grained pasta into the sausage pan, pour in the egg mixture, and toss for 1 minute off the heat (the egg will gently cook in the residual heat). Loosen with a good splash of reserved cooking water, season to perfection with sea salt and pepper, and finely grate over the remaining Parmesan.	\N	323	2	0
 3176	Preheat the oven to 450°F. Place a piece of parchment paper on a large rimmed baking sheet and set aside.	\N	425	0	2
-3075	Preheat the oven to 400°F.	\N	395	0	0
 3619	Eat okra	\N	612	0	0
 3169	Whisk in unsweetened almond milk until smooth. Note that chickpea flour makes lumps easily. To avoid that, whisk vigorously until no more is left. It's OK to have a few lumps, but the less, the better it tastes! You can also blend the batter in a blender for an ultra-smooth texture.	\N	424	1	0
 2928	Combine buttermilk and heavy cream in a non-reactive container. Cover and allow to rest at room temperature until thickened to desired texture, about 12 hours. Store in the refrigerator for up to 2 weeks.	\N	324	0	0
@@ -12591,13 +12677,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3343	Mix together and enjoy!	\N	529	0	0
 3269	Heat oil in a large skillet over medium-high heat. Add asparagus and sauté until golden brown, about 3-5 minutes.	\N	482	0	0
 3270	In a small skillet, over medium heat, add the pine nuts, and sauté until lightly browned. Immediately remove from heat and set aside.	\N	482	1	0
+3075	Preheat the oven to 400°F. Line a baking sheet with parchment paper.	\N	395	0	2
 3139	In a small bowl, mix the remaining ingredients with sea salt and pepper to taste, spoon over turkey, and serve.	\N	416	2	0
-3076	Line a baking sheet with parchment paper.	\N	395	1	0
-3077	Slice the carrots lengthwise and set aside.	\N	395	2	0
-3078	In a large bowl, combine the olive oil through the dill.	\N	395	3	0
-3079	Add the carrot slices and toss to combine.	\N	395	4	0
 2636	Put three-quarters of the seeds into a pestle and mortar with a pinch of sea salt, and pound until fairly fine. Peel and add the garlic, then smash to a paste. Squeeze in the lemon juice, then muddle in 1 tablespoon of extra virgin olive oil and a tiny drebble of red wine vinegar to make a delicious tahini-style dressing.	\N	263	1	2048
-3080	Pour the tossed carrots onto the lined baking sheet, in a single layer, and bake for 25-30 minutes, or until tender.	\N	395	5	0
+3076	Slice the carrots lengthwise and set aside.	\N	395	1	0
+3077	In a large bowl, combine the olive oil through the dill.	\N	395	2	0
+3078	Add the carrot slices and toss to combine.	\N	395	3	0
+3079	Pour the tossed carrots onto the lined baking sheet, in a single layer, and bake for 25–30 minutes, or until tender.	\N	395	4	2
 3606	Preheat the oven to 400°F.	\N	609	0	0
 3607	Individually wrap the beets, pears, and onion with tinfoil.	\N	609	1	0
 3608	Bake for 90-120 minutes, checking halfway for doneness.	\N	609	2	0
@@ -13072,10 +13158,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3657	Sprinkle over the chopped cherry peppers, season lightly and crumble the ricotta salata over the top, followed by the oregano leaves and olives. Mix the garlic with the remaining oil and add a little salt and pepper. Spoon about half of the mixture over the filling in the peppers.	\N	620	2	0
 3658	Once the flames have fied down, rake the coals to one side. Position a lightly oiled grill rack over the coals to heat. When the coals are medium-hot, or with a moderate coating of ash, place the filled peppers on the section of the grill rack that is not over the coals.	\N	620	3	0
 3659	Cover with a lid, or improvise with a wok lid or tended heave-duty foil. Cook for 6 minutes, then spoon the remaining oil mixture over the filling, replace the lid and continue to grill for 6–8 minutes more, or until the peppers are lightly charred, and the cheese has melted. Serve with a dressed green or leafy salad and bread.	\N	620	4	0
-3660	Butter each side of the 4 slices of bread on one side with 1 tablespoon of butter.	\N	621	0	0
-3661	Heat a large skillet over medium heat. Add the remaining 1 tablespoon of butter to the pan and throw 2 slices of bread in, butter-side up. Cook the bread for 1 minute.	\N	621	1	0
-3662	Flip the bread butter-side down and top each with a slice of Cheddar, Swiss, and provolone cheese. Top with the remaining bread, butter-side up. Cook the sandwich on one side until the bread is golden brown, then flip and do the same thing on the other side.	\N	621	2	0
-3663	Take the grilled cheeses out of the pan and put them on a wire rack to chill out for 2 minutes, then cut and serve.	\N	621	3	0
 3665	Preheat the oven to 200C/400F. Grease a 33 x 23cm/13 x 9in Swiss roll tin (jelly roll pan) and line with baking parchment. Grease the paper. 	\N	623	0	0
 3666	Whisk the eggs and sugar in a heatproof bowl until blended. Place the bowl over a pan of simmering water and whisk until thick and pale.	\N	623	1	0
 3667	Whisk off the heat until cool. Sift over the flour and almonds, and fold them in to the mixture gently.	\N	623	2	0
@@ -13100,6 +13182,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3679	In a large bowl, combine the zucchini, tomatoes, bell pepper, onion, and sweet potato. Add the olive oil and season with salt and pepper. Stir or toss to mix evenly.	\N	625	1	0
 3680	Spread the vegetables out on the lines sheet pan. Roast them in the oven for 12 minutes, flip them over, and continue roasting for 15-20 minutes longer, until they're tender.	\N	625	2	2
 2983	Once done, squeeze all the soft, sweet, creamy, mild roasted garlic out of the skins into the yogurt, mash together, then season to perfection. Trim and finely slice the scallions. Spoon the yogurt across a plate or platter, stack the sweet potato on top, drizzle with ½ a tablespoon of extra virgin olive oil, spinkle over the scallions, dish up and enjoy.	\N	369	1	0
+3660	Butter each side of the 4 slices of bread on one side with 1 tablespoon of butter.	\N	621	0	0
+3661	Heat a large skillet over medium heat. Add the remaining 1 tablespoon of butter to the pan and throw 2 slices of bread in, butter-side up. Cook the bread for 1 minute.	\N	621	1	4
 3664	Spread the hummus evenly on the tortilla. Put the vegetables in the center of the tortilla and top with the spinach. Roll the bottom of the tortilla up over the vegetables, then fold the sides into the center. Pull back on the rolled tortilla to tighten it, then roll forward to finish the wrap.	\N	622	0	0
 3681	Preheat the oven to 190C/375F. Place a baking sheet in the oven.	\N	626	0	0
 3682	Mix 15ml/1 tbsp of the cocoa with 15ml/1 tbsp of the sugar in a bowl. Grease six 150ml/8fl oz/1 cup ramekins. Pour the cocoa and sugar mixture into each of the dishes in turn, rotating them so that they are evenly coated.	\N	626	1	0
@@ -13111,6 +13195,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3688	Using a hand-held electric mixer, whisk the egg yolk mixture until it is thick and pale in colour. Whish the egg whites with clean beaters until they are stiff enough to hold soft peaks.	\N	627	2	0
 3689	Using a metal spoon or spatula, fold the egg whites evenly into the yolk mixture. Spoon into the prepared dishes. Bake the souffles for 12–15 minutes, until well risen and lightly browned. Serve at once.	\N	627	3	0
 2136	Once your crock pot is full you’re going to cook the potatoes for 4 hours on high or 7-8 hours on low. When the potatoes are done you will be easily able to pierce them with a fork. Top the potatoes with your favorite toppings.	\N	32	3	1024
+3732	Bake for 15–20 minutes. Do not allow to brown at all or the cookies will taste bitter.	\N	637	3	0
+3733	Remove the pan from the oven and dust the surface with cocoa powder. Cut through the marked sections with a round-bladed knife and leave to cool completely before removing them from the pan.	\N	637	4	0
 3690	Peel the onions, cut into quarters, and quickly break apart into petals directly into the pan, tossing regularly, then add 1 tablespoon of olive oil and a pinch of sea salt and black pepper.	\N	311	2	4
 3691	Quarter and core the apples, then toss into the pan. 	\N	311	3	4
 3692	Use a vegetable peeler to peel the parsnips into long strips. Stir 1 tablespoon of red wine vinegar into the frying pan, then pile the parsnips on top of the apples and onions.	\N	311	4	4
@@ -13129,6 +13215,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3699	Put the coffee in a bowl and pour the hot water over. Leave to infuse for 4 minutes, then strain through a fine sieve (strainer).	\N	630	1	0
 3700	Meanwhile, cream the butter, peanut butter, sugar and coffee together until light. Sift the cornflour and flour together and mix in to make a smooth dough.	\N	630	2	0
 3701	Press into the base of the pan and prick all over with a fork. Make for 20 minutes. To make the topping, put the butter, sugar, and syrup in a pan, and heat until melted. Bring to the boil.	\N	630	3	0
+3662	Flip the bread butter-side down and top each with a slice of Cheddar, Swiss, and provolone cheese. Top with the remaining bread, butter-side up. Cook the sandwich on one side until the bread is golden brown, then flip and do the same thing on the other side.	\N	621	2	4
+3663	Take the grilled cheeses out of the pan and put them on a wire rack to chill out for 2 minutes, then cut and serve.	\N	621	3	0
+3734	Preheat the grill (broiler) and cook the bacon for 5–8 minutes, turning once, or until crisp on both sides. Keep warm.	\N	638	0	0
+3735	Fill a large frying pan with water and bring to the boil. Add the vinegar and regulate the heat so that the water simmers. Crack the eggs into the water and poach them for 3–4 minutes, or slightly longer for firm eggs.	\N	638	1	0
 3702	Allow to simmer for 5 minutes, then stir in the chopped nuts. When the shortbread is baked, spread the topping over the base. Leave in the pan until cold, then cut into fingers. Remove from the pan and serve.	\N	630	4	0
 3703	Cook the rice in a large pan of lightly salted boiling water for 10–12 minutes, until tender, but still al dente. Be careful not to overcook it.	\N	631	0	4
 3704	Drain the rice well in a sieve (strainer), rinse thoroughly under cold running water and drain again. Leave the rice to cool while you prepare the ingredients for the dressing.	\N	631	1	0
@@ -13155,6 +13245,25 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3723	Place the onion, garlic, soy sauce, lemon rind, spices and sugar in a blender or food processor. Add two pieces of pineapple and process until the mixture is well combined and almost smooth.	\N	635	1	0
 3724	Add the paste to the pork, tossing well to coat evenly. Thread the pieces of pork on to bamboo skewers, with the remaining pineapple chunks. Preheat the grill (broiler) , or light the barbecue.	\N	635	2	0
 3725	Cook the pork and pineapple skewers under the grill (broiler) or on a medium-hot barbecue for 10–12 minutes, turning occasionally, until golden brown and thoroughly cooked. Garnish with parley and serve with the satay sauce.	\N	635	3	0
+3726	Put the steak in a shallow, non-metallic dish and pour over the oil and soy sauce. Season with pepper and turn the steaks to coat them in the marinade. Marinate for at least 10 minutes, longer if you can spare the time. Two hours in a covered bowl in the refrigerator would be ideal.	\N	636	0	0
+3727	Heat a griddle until hot. Remove the steak from the marinade and place on the griddle. Cook for 3–5 minutes on each side, moving the steak halfway through if you want a crisscross pattern.	\N	636	1	0
+3728	Transfer the steak to a board and leave to rest for 2 minutes. Meanwhile, heat the marinade in a pan. Cook for a few seconds, then remove from the heat. Slice the steak thinly and arrange on four serving plates with the mangoes. Drizzle over the pan juices and serve with some salad leaves dressed with lemon and oil.	\N	636	2	0
+3729	Preheat the oven to 180C/350F and line a shallow 23cm/9in round sandwich pan with baking parchment.	\N	637	0	0
+3730	Place the butter and sugar in a bowl and beat until light and creamy. Sift the flour and cocoa powder together, and add the flour mixture to the butter and work it in with your hands until the mixture is smooth. Knead until it is soft and pliable then press it into the prepared pan.	\N	637	1	0
+3731	Using the back of a tablespoon, spread the mixture evenly in the pan. Sprinkle the pistachio nuts over the top and press them in gently. Prick with a fork then mark into 16 segments using a round-bladed knife.	\N	637	2	0
+3736	Split and toast the muffins while the eggs are cooking. Spread with butter and place on warmed plates.	\N	638	2	0
+3737	To make the hollandaise sauce, process the egg yolks and while wine vinegar in a blender or food processor. Melt the butter. With the motor still running, very gradually add the hot melted butter through the feeder tube. The hot butter will cook the yolks to make a thick, glossy sauce. Switch off the machine as soon as all the butter has been added, and the sauce has thickened. Season to taste.	\N	638	3	0
+3738	Arrange the bacon on the muffins and add a poached egg to each. Top with a spoonful of sauce and grind over some black pepper. Serve immediately.	\N	638	4	0
+3739	Cut the pork into thin strips. This is easier to do if you freeze it for 30 minutes first.	\N	639	0	0
+3740	Heat the oil in a wok or large frying pan. Add the garlic. Cook over a medium heat until golden, then add the pork and stir-fry for 4–5 minutes. Add the onion slices and toss to mix.	\N	639	1	0
+3741	Add the fish sauce, sugar and ground black pepper to taste. Toss the mixture over the heat for 3-4 minutes more.	\N	639	2	0
+3742	Stir in the red pepper, cucumber, tomatoes, pineapple and spring onions. Stir-fry for 3–4 minutes more, then spoon into a bowl. Garnish with the coriander and spring onions and serve.	\N	639	3	0
+3743	Cook the rice according to package instructions. Spread out and leave to cool.	\N	640	0	0
+3744	Heat the oil in a wok or large frying pan. Add the onion and garlic and cook for about 2 minutes, until softened.	\N	640	1	0
+3745	Add the pork to the softened onion and garlic. Stir-fry until the pork changes color and is cooked.	\N	640	2	0
+3746	Add the eggs and cook until scrambled into small lumps.	\N	640	3	0
+3747	Add the rice and continue to stir and toss, to coat it with the oil and prevent it from sticking.	\N	640	4	0
+3748	Stir in the fish sauce, soy sauce and sugar and mix well. Continue to fry until the rice is thoroughly heated. Spoon into warmed individual bowls and serve, garnished with sliced spring onions, chillies, and lime wedges.	\N	640	5	0
 \.
 
 
@@ -13200,7 +13309,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14037, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14079, true);
 
 
 --
