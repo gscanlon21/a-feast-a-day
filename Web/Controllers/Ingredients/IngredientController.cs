@@ -143,7 +143,7 @@ public class IngredientController : ViewController
         }
         else 
         {
-            _context.Add(new Ingredient()
+            existingIngredient = new Ingredient()
             {
                 UserId = user.Id,
                 Name = ingredient.Name,
@@ -155,11 +155,13 @@ public class IngredientController : ViewController
                 GramsPerMeasure = ingredient.GramsPerMeasure,
                 GramsPerServing = ingredient.GramsPerServing,
                 SkipShoppingList = ingredient.SkipShoppingList,
-            });
+             };
+           
+            _context.Ingredients.Add(existingIngredient);
         } 
 
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, recipeId = 0, wasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = existingIngredient.Id, recipeId = 0, wasUpdated = true });
     }
 }
