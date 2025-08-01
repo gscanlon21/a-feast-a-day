@@ -117,7 +117,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
         (_, not null, _, _) => RecipeIngredientType.IngredientRecipe,
         (_, _, not null, _) => RecipeIngredientType.Ingredient,
         (_, _, _, not null) => RecipeIngredientType.IngredientRecipe,
-        _ => throw new InvalidOperationException("Missing ingredient or recipe."),
+        _ => RecipeIngredientType.None,
     };
 
     public override int GetHashCode() => HashCode.Combine(Id);

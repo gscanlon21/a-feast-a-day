@@ -166,7 +166,8 @@ public class QueryRunner(Section section)
 
                 // Swap or filter out optional ingredients that have allergens or are ignored
                 // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
-                foreach (var recipeIngredient in queryResult.RecipeIngredients)
+                // Allow recipes with ingredients that the user has ignored and are no longer optional so the user can still manage it.
+                foreach (var recipeIngredient in queryResult.RecipeIngredients.Where(ri => ri.UserRecipeIngredient?.Ignore != true))
                 {
                     // Check this first so we can fallback to an ingredient if the recipe fails.
                     if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
@@ -204,12 +205,10 @@ public class QueryRunner(Section section)
 
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
-                        // Don't swap the ingredient if the user ignored it.
-                        if (recipeIngredient.UserRecipeIngredient?.Ignore != true
-                            // And if the user is substituting in a different ingredient.
-                            && (recipeIngredient.UserRecipeIngredient?.SubstituteIngredientId.HasValue == true
-                                // Or if any of the ingredient's allergens conflict w/ the user's allergens.
-                                || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens)))
+                        // Don't swap if the user is substituting in a different ingredient.
+                        if (recipeIngredient.UserRecipeIngredient?.SubstituteIngredientId.HasValue == true
+                            // Or if any of the ingredient's allergens conflict with the user's allergens.
+                            || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens))
                         {
                             // Substitution and alternative ingredients don't have user ingredient records.
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
@@ -233,7 +232,7 @@ public class QueryRunner(Section section)
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
-                        if (recipeIngredient.Ingredient != null && recipeIngredient.UserRecipeIngredient?.Ignore != true)
+                        if (recipeIngredient.Ingredient != null)
                         {
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
@@ -403,8 +402,9 @@ public class QueryRunner(Section section)
     /// </summary>
     private async Task<IList<QueryResults>> GetPrerequisiteRecipes(IServiceScopeFactory factory, IList<InProgressQueryResults> filteredResults)
     {
-        // Query for prerequisites ingredient recipes here so we can check check their ignored status before finalizing recipes.
-        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe))
+        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients
+            // Query for prerequisites ingredient recipes here so we can check their ignored status before finalizing recipes.
+            .Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe)).Where(ri => ri.UserRecipeIngredient?.Ignore != true)
             // Search for both the substituted recipe ingredient and the raw recipe ingredient, so we can fallback if one conflicts with allergens.
             .SelectMany(ri => new List<int?>(2) { ri.IngredientRecipeId, ri.RawIngredientRecipeId }).Where(rid => rid.HasValue).Distinct()
             // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
