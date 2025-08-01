@@ -8779,6 +8779,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14077	334	1984	\N	\N	3	1
 14078	334	62	\N	\N	3	19
 14079	334	2047	\N	\N	3	88
+14080	498	128	\N	\N	3	0.3
+14081	498	68719476736	\N	\N	2	15
+14082	498	34359738368	\N	\N	2	275
+14083	498	2	\N	\N	3	6
+14084	498	1	\N	\N	3	3
+14085	498	4294967296	\N	\N	2	2
+14086	498	2199023255552	\N	\N	2	1
+14087	498	48	\N	\N	3	2
+14088	498	14	\N	\N	3	17
+14089	498	1984	\N	\N	3	1
+14090	498	62	\N	\N	3	19
+14091	498	2047	\N	\N	3	88
 \.
 
 
@@ -11363,14 +11375,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6330	0	\N	\N	573	1	2	\N	1088	t	\N	3
 6331	0	\N	\N	573	1	1	\N	598	f	\N	4
 6332	0	\N	\N	573	2	1	\N	105	f	\N	5
-6498	4	\N	\N	592	1	24	\N	1113	f	\N	0
-6499	8	\N	\N	592	4	1	, to taste	692	t	\N	1
-6500	7	\N	\N	592	1	2	\N	77	f	\N	2
-6501	0	\N	\N	592	1	4	, or 2 coconut wraps	305	f	\N	3
-6502	0	\N	\N	592	1	4	, seeded and chopped	1088	f	\N	4
-6503	0	\N	\N	592	1	2	, peeled, pitted and chopped	9	f	\N	5
-6504	0	\N	\N	592	1	1	, peeled and diced	789	f	\N	6
-6505	0	\N	\N	592	1	1	, deseeded and chopped	597	f	\N	7
 6333	6	\N	\N	573	4	1	\N	\N	t	481	6
 5474	8	\N	\N	377	1	1	\N	143	f	\N	6
 5475	8	\N	\N	377	4	1	\N	285	f	\N	7
@@ -11382,6 +11386,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6485	0	\N	\N	590	1	1	, juiced, divided	12	f	\N	5
 6486	6	\N	\N	590	4	1	\N	965	f	\N	6
 6487	6	\N	\N	590	4	1	, chopped	13	t	\N	7
+6498	4	\N	\N	592	1	24	\N	1113	f	\N	0
+6499	8	\N	\N	592	4	1	, to taste	692	t	\N	1
+6500	7	\N	\N	592	1	2	\N	77	f	\N	2
+6501	0	\N	\N	592	1	4	, or 2 coconut wraps	305	f	\N	3
+6502	0	\N	\N	592	1	4	, seeded and chopped	1088	f	\N	4
+6503	0	\N	\N	592	1	2	, peeled, pitted and chopped	9	f	\N	5
+6504	0	\N	\N	592	1	1	, peeled and diced	789	f	\N	6
+6505	0	\N	\N	592	1	1	, deseeded and chopped	597	f	\N	7
 6560	6	\N	\N	599	1	1	(LETTUCE)	305	f	\N	0
 6561	6	\N	\N	599	2	1	\N	1062	f	\N	1
 6562	0	\N	\N	599	1	1	, diced	155	f	\N	2
@@ -11482,9 +11494,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6651	5	\N	\N	611	1	1	, cubed into 1" cubes.	1112	f	\N	8
 6652	6	\N	\N	611	1	2	, de-stemmed and sliced thin	372	f	\N	9
 6653	7	\N	\N	611	1	2	\N	81	f	\N	10
-6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
-6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
-6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
 6060	0	\N	\N	530	1	1	, juiced	12	f	\N	4
 6025	8	\N	\N	525	2	1	\N	322	f	\N	5
 6026	7	\N	\N	525	1	2	, chopped	13	f	\N	6
@@ -11567,6 +11576,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6691	8	\N	\N	617	4	1	\N	285	t	\N	4
 6208	8	\N	\N	554	1	2	\N	2	f	\N	6
 6209	8	\N	\N	554	4	1	, to taste	692	t	\N	7
+6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
+6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
+6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
 6716	0	\N	\N	620	1	10	(SWEET CHERRY PEPPERS), finely chopped	599	f	\N	3
 6717	4	\N	\N	620	1	4	(RICOTTA SALATA)	1002	f	\N	4
 6718	7	\N	\N	620	1	2	, chopped	573	f	\N	5
@@ -11747,6 +11759,19 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6873	0	\N	\N	640	1	2	, sliced, for garnish	224	f	\N	10
 6874	0	\N	\N	640	1	1	, cut into wedges, for garnish	12	f	\N	11
 6536	7	\N	\N	595	1	2	\N	81	f	\N	8
+6875	0	\N	\N	641	1	3	\N	9	f	\N	0
+6876	0	\N	\N	641	1	2	, juiced	4	f	\N	1
+6877	8	\N	\N	641	2	1	\N	214	f	\N	2
+6878	8	\N	\N	641	1	1	\N	67	t	\N	3
+6879	6	\N	\N	641	1	1	\N	\N	f	474	4
+6880	6	\N	\N	641	2	1	\N	\N	f	556	5
+6881	6	\N	\N	641	4	1	\N	112	f	\N	6
+6882	6	\N	\N	641	1	1	(BEAN DIP)	\N	f	312	7
+6883	6	\N	\N	641	2	1	and tops, chopped	1082	f	\N	8
+6884	0	\N	\N	641	1	2	, chopped and drained	1088	f	\N	9
+6885	6	\N	\N	641	1	1	, sliced	397	f	\N	10
+6886	4	\N	\N	641	1	4	\N	1100	f	\N	11
+6887	4	\N	\N	641	1	4	(TORTILLA CHIPS)	226	f	\N	12
 \.
 
 
@@ -13068,6 +13093,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	\N	599	0	0
 3569	Add the fish and lemon zest, and cook each side for 5 minutes until it browns and is cooked throughout. Drizzle with fresh lemon juice on top, season to taste with salt and pepper, and serve with cooked capers and garlic.	\N	595	1	0
 3570	Serve alongside mixed greens, olive oil, vinegar, salt and pepper.	\N	595	2	0
+3558	Preheat the oven to 350°F.	\N	592	0	2
+3559	Season the fish with salt, pepper and olive oil.	\N	592	1	0
+3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	\N	592	2	2
+3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3	0
+3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4	0
 1601	Place the chicken breasts into the bottom of the baking pan then drizzle on the Italian dressing and sprinkle on seasonings  to taste. Use tongs or your hands to flip the chicken breasts to coat in the dressing and seasonings then arrange into an even layer.	\N	135	1	0
 1602	Bake for 20 minutes or until the thickest part of the largest chicken breast reaches an internal temperature of 165 degrees as read by a digital instant-read thermometer. Let the chicken rest for 15-30 minutes before serving and/or slicing.	\N	135	2	0
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. then grill for 2-3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	\N	270	1	0
@@ -13079,14 +13109,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3585	In a medium skillet, add the bacon, and cook until crisp, about 12 minutes. Set aside on a plate lined with a paper towel.	\N	602	3	0
 3586	Next, prepare your veggies. Chop the green onion into small pieces, and chop the tomatoes into small chunks.	\N	602	4	0
 3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	\N	607	2	0
-3558	Preheat the oven to 350°F.	\N	592	0	0
-3559	Season the fish with salt, pepper and olive oil.	\N	592	1	0
-3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	\N	592	2	0
-3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	\N	592	3	0
-3562	Add a dollop of coconut yogurt and/or guacamole.	\N	592	4	0
-3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5	0
 3596	Season with sea salt to taste.	\N	607	3	0
 3597	Whisk together the mustard, apple cider vinegar and honey/maple syrup in a bowl, and use as a dip, or pour over the dish.	\N	607	4	0
+3563	Garnish with cilantro and squeeze a quarter of lime over top.	\N	592	5	0
 3591	Cook the quesadilla and serve warm.	\N	605	0	4
 1928	Bring the water in the steamer to the boil, then lower the heat to a simmer. Steam until the flesh feels tender when tested with a knife tip. Serve hot.	\N	177	3	0
 3587	Chop the chicken into 1-inch pieces. Assemble the salad - layer the mixed greens first, then the onion and tomatoes.	\N	602	5	0
@@ -13272,6 +13297,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3746	Add the eggs and cook until scrambled into small lumps.	\N	640	3	0
 3747	Add the rice and continue to stir and toss, to coat it with the oil and prevent it from sticking.	\N	640	4	0
 3748	Stir in the fish sauce, soy sauce and sugar and mix well. Continue to fry until the rice is thoroughly heated. Spoon into warmed individual bowls and serve, garnished with sliced spring onions, chillies, and lime wedges.	\N	640	5	0
+3749	Peel, pit and mash the avocados and mix with lemon juice, salt and pepper.	\N	641	0	0
+3750	In another dish, combine the sour cream, mayo, and taco mix. Set aside.	\N	641	1	0
+3751	Layer in this order: Spread bean dip. Top with avocado mixture. Spread on sour cream mixture. Sprinkle onions and tomatoes. Cover with cheese and olives.	\N	641	2	0
+3752	Serve immediately with tortilla chips (or chill until you serve).	\N	641	3	0
 \.
 
 
@@ -13317,7 +13346,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14079, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14091, true);
 
 
 --
