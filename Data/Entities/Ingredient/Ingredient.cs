@@ -68,7 +68,7 @@ public class Ingredient
     public string? DisabledReason { get; private init; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.User.User.Ingredients))]
-    public virtual User.User? User { get; set; }
+    public virtual User.User? User { get; private init; }
 
     /// <summary>
     /// Nutrients per serving.
