@@ -145,11 +145,16 @@ public class IngredientController : ViewController
         {
             _context.Add(new Ingredient()
             {
-                User = user,
-                Name = name,
-                Category = category,
-                //Nutrients = nutrients,
-                Allergens = allergens.Aggregate(Allergens.None, (curr, next) => curr | next),
+                UserId = user.Id,
+                Name = ingredient.Name,
+                Notes = ingredient.Notes,
+                Category = ingredient.Category,
+                Allergens = ingredient.Allergens,
+                GramsPerCup = ingredient.GramsPerCup,
+                DefaultMeasure = ingredient.DefaultMeasure,
+                GramsPerMeasure = ingredient.GramsPerMeasure,
+                GramsPerServing = ingredient.GramsPerServing,
+                SkipShoppingList = ingredient.SkipShoppingList,
             });
         } 
 
