@@ -49,7 +49,7 @@
 50	\N	Grape Jam	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	0
 51	\N	Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/	\N	f	0	28.35	28.35	2024-08-04	4	226.8	0
 52	\N	Coffee	https://www.eatthismuch.com/calories/coffee-3126	\N	f	0	237	237	2025-05-31	6	237	131072
-53	\N	Earl Gray Tea	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2024-07-22	0	236.56	0
+53	\N	Earl Gray Tea	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-04	0	236.56	0
 54	\N	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	4
 55	\N	Pasta Sauce	https://www.eatthismuch.com/calories/pasta-sauce-849	\N	f	0	257	257	2025-03-30	6	257	256
 56	\N	Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
@@ -90,7 +90,7 @@
 91	\N	Unsalted White Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5763	\N	f	2	28	26	2024-08-05	4	26	2097152
 92	\N	Cashew Nuts	https://www.eatthismuch.com/calories/cashew-nuts-2642	\N	f	0	137	137	2025-03-10	6	137	1048576
 93	\N	Vegetarian Refried Beans	https://www.eatthismuch.com/food/nutrition/refried-beans,3652/	\N	f	0	444	444	2024-10-23	6	444	512
-94	\N	Pork Italian Sausage, Cooked	https://www.eatthismuch.com/calories/italian-sausage-952	\N	f	0	83	83	2024-07-23	0	100	268435456
+94	\N	Pork Italian Sausage, Cooked	https://www.eatthismuch.com/calories/italian-sausage-952	\N	f	0	83	83	2025-08-05	0	100	268435456
 95	\N	Parmesan Cheese	https://www.eatthismuch.com/food/nutrition/parmesan-cheese,32/	\N	f	256	28.35	28.35	2025-07-02	4	100	8388608
 96	\N	Reduced-Fat Mexican Cheese Blend	https://www.eatthismuch.com/calories/mexican-cheese,160	\N	f	256	28	28	2024-09-09	4	224	8388608
 97	\N	White Rice	https://www.eatthismuch.com/calories/white-rice-4917	\N	f	0	185	185	2024-12-25	6	185	1024
@@ -164,14 +164,14 @@
 167	\N	Naan	https://www.eatthismuch.com/calories/naan,201876	\N	f	262176	140	140	2024-08-06	0	100	4
 168	\N	Allspice	https://www.eatthismuch.com/calories/allspice-176	\N	f	0	12	6	2024-10-26	4	96	4
 169	\N	Slices of Multigrain Bread	https://www.eatthismuch.com/calories/multigrain-bread,7887	\N	f	32	25	50	2024-09-05	0	50	2
-170	\N	Corn Tortillas	https://www.eatthismuch.com/calories/corn-tortillas-1679435	\N	f	0	26	52	2024-12-11	0	104	1024
+170	\N	Corn Tortillas	https://www.eatthismuch.com/calories/corn-tortillas-1679435	\N	f	2	26	52	2024-12-11	0	104	1024
 171	\N	Heavy Cream	https://www.eatthismuch.com/calories/heavy-cream,1743420	\N	f	0	15	15	2024-07-26	7	240	4194304
 172	\N	Fresh Peaches	https://www.eatthismuch.com/calories/peaches,1484	\N	f	0	150	150	2024-09-25	0	150	1
 173	\N	Plums	https://www.eatthismuch.com/calories/plums-1526	\N	f	0	66	66	2025-03-25	0	66	1
 174	\N	Leaves of Romaine Lettuce	https://www.eatthismuch.com/calories/lettuce-2013	\N	f	0	23.5	47	2024-10-15	0	47	1
 175	\N	Grape Tomatoes	https://www.eatthismuch.com/calories/grape-tomatoes,1221838	\N	f	0	149	149	2024-09-02	6	149	1
 176	\N	Avocado Oil	https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2025-01-03	9	224	32768
-177	\N	Corn Oil	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	0	13.6	13.6	2025-06-21	7	240	0
+177	\N	Corn Oil	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	2	13.6	13.6	2025-06-21	7	240	0
 178	\N	Coconut Milk	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
 179	\N	Oat Milk	https://www.eatthismuch.com/calories/oat-milk-1690079	\N	f	1024	240	240	2024-12-29	6	240	29360128
 180	\N	Quinoa Milk, Vanilla	https://www.eatthismuch.com/food/nutrition/quinoa-milk-vanilla,2308361	\N	f	0	240	240	2025-02-19	6	240	4194304
@@ -190,7 +190,7 @@
 193	\N	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021	\N	f	32	25	25	2024-11-01	0	25	64
 194	\N	Rice Cakes	https://www.eatthismuch.com/calories/rice-cakes-4440	\N	f	0	9	9	2024-11-18	0	36	16
 195	\N	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/	\N	f	32	137	137	2024-09-28	6	137	4
-196	\N	Cornstarch	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2025-07-31	7	128	114688
+196	\N	Cornstarch	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	2	7.68	7.68	2025-07-31	7	128	114688
 197	\N	Slices of White Bread, GF	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	2024-09-24	0	48	4
 198	\N	Bologna	https://www.eatthismuch.com/calories/bologna-999	\N	f	0	28	28	2025-05-03	4	224	268435456
 200	\N	Loaves of Whole-Wheat Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
@@ -298,7 +298,7 @@
 306	\N	Butter Lettuce Heads | Boston Bibb Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2025-01-03	0	55	2
 307	\N	Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	3
 309	\N	Gold Potatoes	https://www.eatthismuch.com/calories/gold-potatoes-1654114	\N	f	0	148	148	2024-10-05	0	148	1
-310	\N	Russet Potatoes	https://www.eatthismuch.com/food/nutrition/russet-potatoes,2092/	\N	f	0	213	369	2024-07-20	0	170	0
+310	\N	Russet Potatoes	https://www.eatthismuch.com/food/nutrition/russet-potatoes,2092/	\N	f	0	213	369	2025-08-03	0	150	2
 311	\N	Purple Potatoes	https://www.eatthismuch.com/calories/purple-potatoes-3336013	\N	f	0	37.67	113	2024-10-03	0	113	1
 312	\N	Mirin Rice Wine	https://www.eatthismuch.com/calories/mirin,1837647	\N	f	0	28	14	2024-12-13	9	224	8192
 313	\N	Japanese Cooking Wine (Sake)	https://www.eatthismuch.com/calories/sake,5783	\N	f	0	29	29	2024-09-08	9	232	8192
@@ -322,14 +322,14 @@
 331	\N	Yellow Pea Penne Pasta	https://www.eatthismuch.com/calories/yellow-peas-rotini-pasta-4608763	\N	f	0	28	56	2025-02-12	4	84	4096
 332	\N	Egg Noodles, Enriched	https://www.eatthismuch.com/calories/egg-noodles,4864	\N	f	262176	28	28	2024-07-24	4	38	4
 333	\N	Egg Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	262176	4.75	38	2024-07-24	4	38	4096
-334	\N	Ear of Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	0	102	102	2025-07-31	0	102	2
-335	\N	Sweet Corn	https://www.eatthismuch.com/calories/sweet-corn-161446	\N	t	0	28	28	2025-07-30	4	224	512
+334	\N	Ear of Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	102	102	2025-07-31	0	102	2
+335	\N	Sweet Corn	https://www.eatthismuch.com/calories/sweet-corn-161446	\N	t	2	28	28	2025-07-30	4	224	512
 336	\N	Challenge Butter, Salted	https://www.eatthismuch.com/calories/challenge-salted-butter,549893	\N	t	0	14	14	2024-08-09	7	224	131072
 337	\N	Challenge Butter, Unsalted	https://www.eatthismuch.com/calories/butter-unsalted-2304327	\N	t	0	14	14	2024-12-23	7	224	29360128
 338	\N	Challenge Butter	https://www.eatthismuch.com/calories/butter-unsalted-2304327	\N	t	0	14	14	2024-10-08	7	224	6
 339	\N	Maple-Glazed Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-14	0	224	268435456
 340	\N	Bourbon	https://www.eatthismuch.com/calories/bourbon-78636	\N	f	0	30	57	2025-01-07	9	240	524288
-341	\N	Ear of Sweet Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	102	102	2024-07-19	0	102	2
+341	\N	Ear of Sweet Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	102	102	2025-08-01	0	102	2
 342	\N	Passion Fruit	https://www.eatthismuch.com/calories/passion-fruit-1481	\N	f	0	18	18	2025-01-01	0	236	1
 343	\N	White Wine, Sweet	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2024-09-14	9	235.2	5
 344	\N	White Wine, Dry	https://www.eatthismuch.com/calories/white-wine-3079	\N	f	0	29.4	147	2024-10-14	9	235.2	524288
@@ -404,10 +404,10 @@
 415	\N	Grilled Chicken Breast	https://www.eatthismuch.com/calories/chicken-breast-grilled-1632083	\N	f	0	28	84	2025-03-18	4	224	134217728
 416	\N	Chedder Jack Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	28	28	2025-01-01	4	112	8388608
 417	\N	Spring Mix	https://www.eatthismuch.com/calories/spring-mix,1847259	\N	f	0	42.5	85	2024-08-28	6	42.5	1
-418	\N	Canned Corn	https://www.eatthismuch.com/calories/corn,1949	\N	t	0	164	164	2024-07-19	6	164	3
+418	\N	Canned Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 419	\N	Canned Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	28	194	2024-11-25	4	194	512
 420	\N	Orange Juice	https://www.eatthismuch.com/calories/orange-juice-1468	\N	f	0	249	249	2025-04-05	0	249	524288
-421	\N	Cornmeal	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2025-07-30	7	128	0
+421	\N	Cornmeal	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	2	7.68	7.68	2025-07-30	7	128	0
 422	\N	Flax Seeds	https://www.eatthismuch.com/calories/flaxseed-2710	\N	f	0	28	168	2025-02-27	4	168	1048576
 423	\N	Half & Half	https://www.eatthismuch.com/calories/half-half-2178552	\N	f	0	240	36	2024-10-07	6	240	6
 456	\N	Pickled Capers	https://www.eatthismuch.com/calories/capers-pickled,2884023	\N	f	0	5	5	2024-09-18	0	160	3
@@ -450,11 +450,11 @@
 495	\N	Dry Sherry	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	0	244	244	2024-08-02	6	240	0
 496	\N	Light Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce-3748	\N	f	32768	32	16	2024-12-01	9	256	8192
 497	\N	Fresh Podded Snow Peas	https://www.eatthismuch.com/calories/snow-peas-129118	\N	f	0	28	100	2024-11-24	4	100	2
-498	\N	Canned Baby Corn	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/	\N	t	0	7.68	7.68	2024-07-19	7	128	0
+498	\N	Canned Baby Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	28	102	2025-08-01	4	145	512
 499	\N	Peanut Oil	https://www.eatthismuch.com/calories/peanut-oil-263	\N	f	0	28	14	2024-11-05	9	224	65536
 500	\N	Regular Yogurt	aka Natural Yogurt; Plain Yogurt. https://www.eatthismuch.com/calories/plain-yogurt-96	\N	f	256	28	245	2024-10-16	4	245	29360128
 501	\N	Ice Cubes	\N	\N	t	0	8	4	2024-08-29	0	224	0
-502	\N	Golden (Light Corn) Syrup	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	0	13.6	13.6	2025-06-20	7	240	114688
+502	\N	Light Corn Syrup	aka: Golden Syrup. https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	2	13.6	13.6	2025-06-20	7	240	114688
 503	\N	Dried Thyme	https://www.eatthismuch.com/calories/thyme-216	\N	f	0	28	3	2025-03-05	4	48	131072
 504	\N	Cayenne Pepper	https://www.eatthismuch.com/calories/cayenne-pepper,206	\N	t	0	10	5	2024-09-13	4	80	131072
 505	\N	Puy Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2025-06-06	6	192	2048
@@ -639,7 +639,7 @@
 712	\N	Fresh Mixed Herbs (Basil, Parsley, Chervil, Marjoram, Oregano)	https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	f	0	2	1	2024-11-06	4	16	2
 713	\N	Dried Minced Garlic	https://www.eatthismuch.com/calories/garlic-powder-195	\N	f	0	10	10	2024-10-18	7	160	4
 714	\N	Frozen Podded Green Peas	aka. Frozen Pea Pods. In pods. https://www.eatthismuch.com/calories/peas-2062	\N	f	0	144	144	2024-11-04	6	144	67108864
-715	\N	Nettle Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2024-07-22	0	236.56	0
+715	\N	Nettle Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-04	0	236.56	0
 717	\N	Fresh Podded Fava Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	2
 718	\N	Kimchee	https://www.eatthismuch.com/calories/kimchi-136023	\N	f	0	28	28	2025-03-31	0	224	8192
 719	\N	Brown Arborio Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
@@ -760,13 +760,13 @@
 864	\N	Rosemary Focaccia	https://www.eatthismuch.com/calories/focaccia-italian-flatbread-plain-479584	\N	f	262176	57	57	2025-05-17	0	57	4
 865	\N	Canned White Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	4
 866	\N	Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
-867	\N	Chipolata	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
+867	\N	Chipolata	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2025-08-05	0	100	268435456
 868	\N	Chipolata | Small Pork Sausages 	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2024-07-23	0	100	268435456
 869	\N	Wild Salmon	https://www.eatthismuch.com/calories/atlantic-salmon-3329	\N	f	0	112	28	2024-08-26	0	224	134217728
 870	\N	Flaxseed Oil	aka. Virgin Flaxseed Oil. https://www.eatthismuch.com/calories/flaxseed-oil-5700	\N	f	0	28	14	2025-01-19	9	224	65536
 871	\N	Fresh Blueberries	https://www.eatthismuch.com/calories/blueberries-1343	\N	f	0	28	148	2024-11-28	4	148	1
 872	\N	Broccoli Sprouts	https://www.eatthismuch.com/calories/broccoli-sprouts-2670889	\N	f	0	28	84	2025-01-21	4	224	2
-902	\N	Chamomile Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2024-07-22	0	236.56	0
+902	\N	Chamomile Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-03	0	236.56	0
 903	\N	Radish Sprouts	https://www.eatthismuch.com/calories/radish-seeds-2315	\N	f	0	28	38	2025-01-14	4	38	2
 904	\N	Lean Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-904	\N	f	0	28	28	2024-12-10	0	224	268435456
 905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038 | https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	100	2024-08-26	0	100	2
@@ -950,3 +950,6 @@
 1179	\N	Slices of Applewood Smoked Chedder Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	256	28	28	2024-10-15	4	224	6
 1180	\N	Applewood Smoked Chedder Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	256	28	28	2024-10-15	4	224	6
 1181	\N	Mixed Baby Greens	https://www.eatthismuch.com/calories/mixed-greens-salad-2146257	\N	f	0	39	156	2025-02-01	6	39	2
+1182	\N	Dark Corn Syrup	https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	2	13.6	13.6	2025-06-20	7	240	114688
+1183	\N	Flour	\N	\N	f	262176	28	28	2025-08-02	0	224	114688
+1184	\N	Sirloin Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/gammon-7453	\N	f	0	453.592	453.592	2024-10-14	0	240	268435456

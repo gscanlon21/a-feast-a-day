@@ -406,9 +406,9 @@
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	4	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	\N	\N	\N	4	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cauliflower-rice.jpg	6	\N	t	f
-590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	\N	\N	8	60	10	4	t	stuffed-peppers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	Too complicated.	\N	8	60	10	4	t	stuffed-peppers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-592	Fish Tacos	\N	\N	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+592	Fish Tacos	\N	I don't like fish tacos.	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 593	Green Mean Fighting Machine	\N	\N	\N	32	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 594	Golden Green Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 595	Pan Fried Haddock	\N	\N	\N	12	13	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -456,3 +456,6 @@
 638	Bacon and Egg Muffins Hollandaise	Eggs that are a week or more old will not keep their shape when poached, so for the best results, use very fresh eggs. To make sure that you don't break the yolk, crack the eggs into a cup before carefully adding them to the gently simmering water.	\N	\N	6	10	5	4	t	\N	0	\N	f	f
 639	Sweet and Sour Pork Thai-Style	\N	\N	\N	8	14	6	4	t	\N	0	\N	f	f
 640	Fried Pork with Scrambled Egg	\N	\N	\N	8	12	5	4	t	\N	0	\N	f	f
+641	Tex Mex 7 Layer Dip	\N	Too many ingredients.	\N	16	0	10	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+642	Salad in a Glass	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+643	Root Cause Clense Smoothie	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
