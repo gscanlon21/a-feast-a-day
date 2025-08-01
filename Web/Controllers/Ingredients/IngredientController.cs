@@ -123,6 +123,18 @@ public class IngredientController : ViewController
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
+        else 
+        {
+        _context.Add(new Ingredient()
+        {
+            User = user,
+            Name = name,
+            Category = category,
+            //Nutrients = nutrients,
+            Allergens = allergens.Aggregate(Allergens.None, (curr, next) => curr | next),
+        });
+
+        }
 
         existingIngredient.Name = ingredient.Name;
         existingIngredient.Notes = ingredient.Notes;
