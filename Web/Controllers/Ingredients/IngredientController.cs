@@ -34,30 +34,6 @@ public class IngredientController : ViewController
     public const string Name = "Ingredient";
 
     [HttpPost, Route("[action]")]
-    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergens> allergens)
-    {
-        var user = await _userRepo.GetUser(email, token);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        _context.Add(new Ingredient()
-        {
-            User = user,
-            Name = name,
-            Category = category,
-            //Nutrients = nutrients,
-            Allergens = allergens.Aggregate(Allergens.None, (curr, next) => curr | next),
-        });
-
-        await _context.SaveChangesAsync();
-
-        TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
-    }
-
-    [HttpPost, Route("[action]")]
     public async Task<IActionResult> RemoveIngredient(string email, string token, [FromForm] int ingredientId)
     {
         var user = await _userRepo.GetUser(email, token);
