@@ -34,30 +34,6 @@ public class IngredientController : ViewController
     public const string Name = "Ingredient";
 
     [HttpPost, Route("[action]")]
-    public async Task<IActionResult> AddIngredient(string email, string token, [FromForm] string name, [FromForm] Nutrients nutrients, [FromForm] Category category, [FromForm] IList<Allergens> allergens)
-    {
-        var user = await _userRepo.GetUser(email, token);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        _context.Add(new Ingredient()
-        {
-            User = user,
-            Name = name,
-            Category = category,
-            //Nutrients = nutrients,
-            Allergens = allergens.Aggregate(Allergens.None, (curr, next) => curr | next),
-        });
-
-        await _context.SaveChangesAsync();
-
-        TempData[TempData_User.SuccessMessage] = "Your ingredients have been updated!";
-        return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token });
-    }
-
-    [HttpPost, Route("[action]")]
     public async Task<IActionResult> RemoveIngredient(string email, string token, [FromForm] int ingredientId)
     {
         var user = await _userRepo.GetUser(email, token);
@@ -119,57 +95,73 @@ public class IngredientController : ViewController
         }
 
         var existingIngredient = await _context.Ingredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
-        if (existingIngredient == null)
+        if (existingIngredient != null)
         {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
+            existingIngredient.Name = ingredient.Name;
+            existingIngredient.Notes = ingredient.Notes;
+            existingIngredient.Category = ingredient.Category;
+            existingIngredient.Allergens = ingredient.Allergens;
+            existingIngredient.GramsPerCup = ingredient.GramsPerCup;
+            existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
+            existingIngredient.GramsPerMeasure = ingredient.GramsPerMeasure;
+            existingIngredient.GramsPerServing = ingredient.GramsPerServing;
+            existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
 
-        existingIngredient.Name = ingredient.Name;
-        existingIngredient.Notes = ingredient.Notes;
-        existingIngredient.Category = ingredient.Category;
-        existingIngredient.Allergens = ingredient.Allergens;
-        existingIngredient.GramsPerCup = ingredient.GramsPerCup;
-        existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
-        existingIngredient.GramsPerMeasure = ingredient.GramsPerMeasure;
-        existingIngredient.GramsPerServing = ingredient.GramsPerServing;
-        existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
-
-        foreach (var nutrient in nutrients.OrderBy(n => n.Nutrients.PopCount()))
-        {
-            // Sum all the parts of a nutrient if it was left empty.
-            // FIXME: Not all of the precursors get converted into a nutrient. Need a conversion percentage.
-            //if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
-            //{
-            //    nutrient.Measure = Measure.Grams;
-            //    nutrient.Value = nutrients
-            //        .Where(n => BitOperations.PopCount((ulong)n.Nutrients) == 1)
-            //        .Where(n => nutrient.Nutrients.HasFlag(n.Nutrients))
-            //        .Sum(n => n.Measure.ToGrams(n.Value));
-            //}
-
-            var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
-            if (existingNutrient != null)
+            foreach (var nutrient in nutrients.OrderBy(n => n.Nutrients.PopCount()))
             {
-                existingNutrient.Measure = nutrient.Measure;
-                existingNutrient.Value = nutrient.Value;
-                if (nutrient.Value == 0)
+                // Sum all the parts of a nutrient if it was left empty.
+                // FIXME: Not all of the precursors get converted into a nutrient. Need a conversion percentage.
+                //if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
+                //{
+                //    nutrient.Measure = Measure.Grams;
+                //    nutrient.Value = nutrients
+                //        .Where(n => BitOperations.PopCount((ulong)n.Nutrients) == 1)
+                //        .Where(n => nutrient.Nutrients.HasFlag(n.Nutrients))
+                //        .Sum(n => n.Measure.ToGrams(n.Value));
+                //}
+
+                var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
+                if (existingNutrient != null)
                 {
-                    _context.Nutrients.Remove(existingNutrient);
+                    existingNutrient.Measure = nutrient.Measure;
+                    existingNutrient.Value = nutrient.Value;
+                    if (nutrient.Value == 0)
+                    {
+                        _context.Nutrients.Remove(existingNutrient);
+                    }
+                }
+                else if (nutrient.Value > 0)
+                {
+                    existingIngredient.Nutrients.Add(new Nutrient()
+                    {
+                        Nutrients = nutrient.Nutrients,
+                        Measure = nutrient.Measure,
+                        Value = nutrient.Value,
+                    });
                 }
             }
-            else if (nutrient.Value > 0)
-            {
-                existingIngredient.Nutrients.Add(new Nutrient()
-                {
-                    Nutrients = nutrient.Nutrients,
-                    Measure = nutrient.Measure,
-                    Value = nutrient.Value,
-                });
-            }
         }
+        else 
+        {
+            existingIngredient = new Ingredient()
+            {
+                UserId = user.Id,
+                Name = ingredient.Name,
+                Notes = ingredient.Notes,
+                Category = ingredient.Category,
+                Allergens = ingredient.Allergens,
+                GramsPerCup = ingredient.GramsPerCup,
+                DefaultMeasure = ingredient.DefaultMeasure,
+                GramsPerMeasure = ingredient.GramsPerMeasure,
+                GramsPerServing = ingredient.GramsPerServing,
+                SkipShoppingList = ingredient.SkipShoppingList,
+             };
+           
+            _context.Ingredients.Add(existingIngredient);
+        } 
 
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
-        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredient.Id, recipeId = 0, wasUpdated = true });
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = existingIngredient.Id, recipeId = 0, wasUpdated = true });
     }
 }
