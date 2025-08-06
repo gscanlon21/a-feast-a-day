@@ -21,7 +21,7 @@ public class UserManageRecipeViewModel
 
     public required UserNewsletterDto UserNewsletter { get; init; }
 
-    public required NewsletterRecipeDto NewsletterRecipe { get; init; }
+    public required NewsletterRecipeDto? NewsletterRecipe { get; init; }
 
     public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
 

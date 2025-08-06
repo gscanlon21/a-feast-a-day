@@ -25,9 +25,12 @@
     </div>
 
     <div class="col-lg-6">
-        <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
-            <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Parameters.Section.AsTheme()" />
-        </component>
+        @if (Model.NewsletterRecipe != null)
+        {
+            <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
+                <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Parameters.Section.AsTheme()" />
+            </component>
+        }
 
         @* User must have created the recipe to be able to edit it. *@
         @if (Model.User.Id == Model.Recipe.UserId || Model.User.Features.HasFlag(Features.Admin))

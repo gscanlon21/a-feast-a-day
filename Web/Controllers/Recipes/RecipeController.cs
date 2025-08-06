@@ -78,14 +78,11 @@ public class RecipeController : ViewController
             .Query(_serviceScopeFactory))
             .Select(r => r.AsType<NewsletterRecipeDto>()!);
 
-        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);
-        if (recipeDto == null)
-        {
-            return Content("");
-        }
 
         // Need a user context so the manage link is clickable and the user can un-ignore a prerequisite recipe.
         var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);
+        // May be null if the user has allergens that conflict with an ingredient.
+        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);
         return View(nameof(ManageRecipe), new UserManageRecipeViewModel()
         {
             User = user,
@@ -93,7 +90,7 @@ public class RecipeController : ViewController
             WasUpdated = wasUpdated,
             NewsletterRecipe = recipeDto,
             UserNewsletter = userNewsletter,
-            PrepRecipes = recipeDtos.ExceptBy([recipeDto.Recipe.Id], r => r.Recipe.Id).ToList(),
+            PrepRecipes = recipeDtos.ExceptBy([recipeDto?.Recipe.Id], r => r.Recipe.Id).ToList(),
             Parameters = new UserManageRecipeViewModel.Params(email, token, recipeId, section)
         });
     }

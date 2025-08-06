@@ -15,7 +15,7 @@
 32	Crock Pot Baked Potatoes	\N	\N	\N	16	480	5	4	t	crockpot-baked-potatoes.jpg	0	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	f	f
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	kielbasa.jpg	0	\N	f	f
-35	Crockpot BBQ Pinto Beans	\N	\N	\N	8	480	15	6	f	bbq-pinto-beans.jpg	0	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	f	f
+35	Crockpot BBQ Pinto Beans	\N	\N	\N	16	480	15	6	f	bbq-pinto-beans.jpg	0	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	f	f
 36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	6	120	10	4	t	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	6	10	5	4	t	black-bean-quesadillas.jpg	0	\N	f	f
 38	Black Bean Fajita Skillet	\N	\N	\N	4	10	5	2	t	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	f	f
@@ -279,7 +279,7 @@
 395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	30	5	2	t	sesame-ginger-carrots.jpg	0	\N	f	t
 396	Tandoori Chicken	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	60	2	t	\N	0	\N	f	f
 397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	\N	0	\N	f	f
-398	Maple Lime Pork Roast	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	360	10	4	t	\N	0	\N	f	f
+398	Maple Lime Pork Roast	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	360	10	4	t	\N	0	\N	f	f
 399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	20	10	4	t	\N	0	\N	f	f
@@ -349,7 +349,7 @@
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 532	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	20	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	16	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	0	0	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 536	Turkey Breakfast Sausage	\N	\N	\N	6	10	35	4	t	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -428,7 +428,7 @@
 609	Roasted Beet, Pear, & Onion Soup	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 610	Root Cause Detox Soup	\N	Too many ingredients.	\N	8	40	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 611	Beef Stir-Fry	\N	\N	\N	8	25	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-613	Poached Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	8	t	boiled-chicken-breasts.jpg	4	\N	t	f
+613	Poached Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	1	t	boiled-chicken-breasts.jpg	0	\N	t	f
 614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	egg-sandwich.jpg	0	https://www.recipetineats.com/egg-sandwich/	f	f
 615	Chicken with Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
 616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f
@@ -443,7 +443,7 @@
 625	Pan Roasted Vegetables 	\N	\N	\N	0	35	10	2	t	\N	6	\N	t	f
 626	Hot Chocolate Rum Souffles	\N	\N	\N	64	15	10	6	t	\N	0	\N	f	f
 627	Cinnamon and Apricot Souffles	\N	\N	\N	64	15	10	4	t	\N	0	\N	f	f
-628	Slow Cooker Chickpeas	\N	\N	\N	0	120	0	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
+628	Slow Cooker Chickpeas	\N	\N	\N	0	240	10	2	f	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
 629	Stovetop Chickpeas	\N	\N	\N	0	120	60	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
 630	Pecan Toffee Shortbread	\N	\N	\N	64	20	10	10	t	\N	0	\N	f	f
 631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
@@ -459,3 +459,6 @@
 641	Tex Mex 7 Layer Dip	\N	Too many ingredients.	\N	16	0	10	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 642	Salad in a Glass	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 643	Root Cause Clense Smoothie	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+644	Beef Strips with Orange and Ginger	Marinating the meat for longer will make it more tender, as the marinade will break down and tenderize the flesh. Just before serving, toss the stir-fry with 5ml/1 tsp sesame oil. If you haven't any sesame oil, use flavored chili oil, or a sut oil, such as hazelnut or walnut.	\N	\N	8	5	15	2	t	\N	0	\N	f	f
+645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes (US scallops) with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	\N	0	\N	f	f
+646	Pepper Steaks with Chive Butter	\N	\N	\N	8	12	4	4	t	\N	0	\N	f	f

@@ -1,5 +1,4 @@
-﻿using Core.Models.Ingredients;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Data;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
@@ -141,7 +140,7 @@ public class IngredientController : ViewController
                 }
             }
         }
-        else 
+        else
         {
             existingIngredient = new Ingredient()
             {
@@ -155,10 +154,10 @@ public class IngredientController : ViewController
                 GramsPerMeasure = ingredient.GramsPerMeasure,
                 GramsPerServing = ingredient.GramsPerServing,
                 SkipShoppingList = ingredient.SkipShoppingList,
-             };
-           
+            };
+
             _context.Ingredients.Add(existingIngredient);
-        } 
+        }
 
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
