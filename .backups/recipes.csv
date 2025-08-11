@@ -309,7 +309,7 @@
 425	Bacon Wrapped Avocado Slices	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	\N	f	f
 426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	honey-mustard-dressing.jpg	6	\N	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
-428	Hot Lemon Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	1	1	t	\N	0	\N	f	f
+428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	2	t	\N	0	\N	f	f
 431	Glow Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	\N	0	\N	f	f
@@ -460,5 +460,6 @@
 642	Salad in a Glass	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 643	Root Cause Clense Smoothie	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 644	Beef Strips with Orange and Ginger	Marinating the meat for longer will make it more tender, as the marinade will break down and tenderize the flesh. Just before serving, toss the stir-fry with 5ml/1 tsp sesame oil. If you haven't any sesame oil, use flavored chili oil, or a sut oil, such as hazelnut or walnut.	\N	\N	8	5	15	2	t	\N	0	\N	f	f
-645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes (US scallops) with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	\N	0	\N	f	f
+645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	\N	0	\N	f	f
 646	Pepper Steaks with Chive Butter	\N	\N	\N	8	12	4	4	t	\N	0	\N	f	f
+647	Slow Cooker Lamb Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

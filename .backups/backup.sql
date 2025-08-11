@@ -652,6 +652,10 @@ COPY public.footnote ("Id", "Note", "Source", "Type") FROM stdin;
 10	Chew your food at least 20-30 times before swallowing.	\N	1
 11	Take a short walk after each meal to aid in digestion.	\N	1
 12	Support your migrating motor complex by spacing your meals 5-6 hours apart without snacking in between each meal.	\N	1
+13	Once stomach acid-producing cells are lost, they do not regenerate. However, certain strategies can help improve digestion. Betaine HCL (500–2000 mg at meals) is the most effective, while vinegar (like apple cider vinegar) can also help. B. subtilis probiotic drinks, particularly when fermented properly, may play a crucial role in managing the microbial imbalances caused by low stomach acid. While these approaches may not prevent stomach atrophy or cancer, they can support digestion and gut health.	Dr. William Davis	8
+14	Drugs like Prilosec and Protonix are frequently prescribed for presumed excess stomach acid, artificially creating the same effects as atrophic gastritis. This can lead to nutrient deficiencies, bacterial overgrowth, and long-term digestive dysfunction. Low stomach acid is also linked to vitamin B12 and iron deficiencies, which can cause anemia and require alternative supplementation methods like sublingual or injectable forms.	Dr. William Davis	8
+15	Although rarely diagnosed, hypochlorhydria affects an estimated 5–10% of the population and increases with age. It is even more common in those with digestive issues like bloating, heartburn, or slowed digestion. Causes include autoimmune gastritis (often linked to Hashimoto’s thyroiditis), H. pylori infection, and long-term use of acid-suppressing drugs like proton pump inhibitors (PPIs).	Dr. William Davis	8
+16	The normal pH of the stomach (1.5–3.0) is highly acidic, allowing for the breakdown of proteins, fats, and other nutrients. It also acts as a defense system, killing harmful bacteria like E. coli and Klebsiella before they can colonize the small intestine. When stomach acid is low (hypochlorhydria), digestion slows, nutrient absorption decreases, and harmful microbes can flourish, leading to conditions like small intestinal bacterial overgrowth (SIBO).	Dr. William Davis	8
 \.
 
 
@@ -733,6 +737,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1054	103	1
 13	144	1
 111	123	1
+1193	495	1
+1193	1192	1
 187	28	1
 187	164	1
 186	184	1
@@ -789,6 +795,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 171	178	1
 171	628	1
 171	629	1
+1194	32	1
+1194	518	1
 479	481	1
 599	811	1
 598	811	1
@@ -820,6 +828,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1121	962	1
 33	1006	1
 784	1172	1
+5	71	1
 690	39	1
 690	681	1
 1008	871	1
@@ -8913,6 +8922,33 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14196	654	1984	\N	\N	3	2
 14197	654	62	\N	\N	3	27
 14198	654	2047	\N	\N	3	146
+14199	655	128	\N	\N	3	0.4
+14200	655	2048	\N	\N	2	32
+14201	655	68719476736	\N	\N	2	8
+14202	655	34359738368	\N	\N	2	93
+14203	655	2	\N	\N	3	1
+14204	655	1	\N	\N	3	5
+14205	655	4294967296	\N	\N	2	13
+14206	655	2199023255552	\N	\N	2	1
+14207	655	48	\N	\N	3	1
+14208	655	402653184	\N	\N	1	0.1
+14209	655	14	\N	\N	3	26
+14210	655	1984	\N	\N	3	2
+14211	655	62	\N	\N	3	27
+14212	655	2047	\N	\N	3	146
+14213	305	2251799813685248	\N	\N	2	5
+14214	305	17179869184	\N	\N	2	5
+14215	305	4398046511104	\N	\N	2	0.1
+14216	305	70368744177664	\N	\N	2	10
+14217	305	8796093022208	\N	\N	1	0.2
+14218	305	17592186044416	\N	\N	2	0.1
+14219	305	65536	\N	\N	1	1599
+14220	305	1048576	\N	\N	2	0.1
+14221	305	16777216	\N	\N	1	14
+14222	305	67108864	\N	\N	2	3
+14223	305	536870912	\N	\N	2	0.1
+14224	305	3221225472	\N	\N	1	45
+14225	305	229376	\N	\N	1	133
 \.
 
 
@@ -10581,6 +10617,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5587	5	\N	\N	395	1	1	\N	736	f	\N	0
 5588	7	\N	\N	395	1	2	\N	77	f	\N	1
 5589	7	\N	\N	395	1	1	\N	39	f	\N	2
+5502	0	\N	\N	382	1	4	\N	811	f	\N	0
 5510	0	\N	\N	383	1	2	\N	917	f	\N	3
 5511	7	\N	\N	383	1	2	\N	321	f	\N	4
 5585	0	\N	\N	394	2	1	, juiced	4	t	\N	3
@@ -10588,15 +10625,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3088	7	\N	\N	132	1	2	\N	13	f	\N	6
 3089	8	\N	\N	132	1	1	, to garnish	13	t	\N	7
 3090	8	\N	\N	132	8	1	\N	285	t	\N	8
-5502	0	\N	\N	382	1	4	\N	811	f	\N	0
 5503	7	\N	\N	382	1	1	, ground	168	f	\N	1
 5504	5	\N	\N	382	4	5	\N	918	f	\N	2
 5505	0	\N	\N	382	1	10	\N	910	t	\N	3
+5506	0	\N	\N	382	1	8	\N	5	f	\N	4
 5536	7	\N	\N	388	1	2	, divided	78	f	\N	0
 5537	6	\N	\N	388	2	1	, diced	222	f	\N	1
 5538	6	\N	\N	388	2	1	, partially thawed	600	f	\N	2
 5539	6	\N	\N	388	2	1	, partially thawed	354	f	\N	3
-5506	0	\N	\N	382	1	8	\N	5	f	\N	4
 5535	8	\N	\N	387	8	1	\N	692	f	\N	5
 5558	0	\N	\N	390	1	2	\N	1003	f	\N	5
 5641	6	\N	\N	402	1	4	, sliced	10	f	\N	0
@@ -10797,9 +10833,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5777	7	\N	\N	426	1	1	, ground	143	f	\N	1
 5778	7	\N	\N	426	1	2	\N	39	f	\N	2
 5779	7	\N	\N	426	1	3	\N	77	f	\N	3
-5786	0	\N	\N	428	1	1	, juiced	4	f	\N	0
-5787	6	\N	\N	428	1	1	, hot	123	f	\N	1
-5788	8	\N	\N	428	1	1	, to taste	681	t	\N	2
 4028	7	\N	\N	185	1	1	\N	660	t	\N	9
 4029	6	\N	\N	185	4	5	\N	562	f	\N	10
 5805	0	\N	\N	431	1	2	\N	7	f	\N	0
@@ -10868,11 +10901,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5816	8	\N	\N	432	8	1	, to taste	692	t	\N	5
 5188	7	\N	\N	123	1	2	, chopped	473	t	\N	5
 5189	8	\N	\N	123	8	1	\N	214	t	\N	6
+5786	0	\N	\N	428	1	1	, juiced	4	f	\N	0
+5787	6	\N	\N	428	1	1	\N	993	f	\N	1
 5780	5	\N	\N	427	1	1	, diced	1122	f	\N	0
 5781	0	\N	\N	427	1	2	, diced	150	f	\N	1
 5782	0	\N	\N	427	1	2	, peeled and diced	7	f	\N	2
 5783	0	\N	\N	427	1	1	, diced	597	f	\N	3
 5784	0	\N	\N	427	1	1	, diced	222	f	\N	4
+5788	8	\N	\N	428	1	1	, to taste	681	t	\N	2
 5785	6	\N	\N	427	2	1	\N	\N	f	432	5
 5875	6	\N	\N	471	4	1	\N	77	f	\N	0
 5876	7	\N	\N	471	1	2	\N	39	f	\N	1
@@ -11921,15 +11957,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5742	0	\N	\N	420	1	1	\N	6	f	\N	7
 5743	0	\N	\N	420	1	1	, diced	105	f	\N	8
 5744	0	\N	\N	420	1	2	, sliced	250	f	\N	9
-6919	7	\N	\N	645	1	1	\N	38	f	\N	0
-6920	0	\N	\N	645	1	4	(VEAL ESCALOPES (US SCALLOPS))	144	f	\N	1
-6921	7	\N	\N	645	1	2	\N	233	f	\N	2
-6922	0	\N	\N	645	1	1	, chopped	225	f	\N	3
-6923	6	\N	\N	645	1	2	(OYSTER MUSCHROOMS), sliced	45	f	\N	4
-6924	7	\N	\N	645	1	2	(MARSALA OR MEDIUM-DRY SHERRY)	845	f	\N	5
-6925	6	\N	\N	645	1	1	(OR SOUR CREAM)	518	f	\N	6
-6926	7	\N	\N	645	1	2	, chopped	800	f	\N	7
-6927	8	\N	\N	645	4	1	\N	285	f	\N	8
 6928	0	\N	\N	646	1	4	(BEEF TENDERLOIN (FILLETS) OR SIRLOIN BEAF STEAKS)	114	f	\N	0
 6929	7	\N	\N	646	3	1	\N	77	f	\N	1
 6930	7	\N	\N	646	1	1	(BLACK AND WHITE PEPPERCORNS), coarsely crushed	598	f	\N	2
@@ -11943,11 +11970,33 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5619	7	\N	\N	398	1	1	\N	123	f	\N	7
 5620	0	\N	\N	398	1	1	, wedged, for garnish	12	t	\N	8
 5621	7	\N	\N	398	1	1	, for garnish	13	t	\N	9
+6919	7	\N	\N	645	1	1	\N	38	f	\N	0
+6920	0	\N	\N	645	1	4	\N	1190	f	\N	1
+6921	7	\N	\N	645	1	2	\N	233	f	\N	2
+6922	0	\N	\N	645	1	1	, chopped	225	f	\N	3
 6938	8	\N	\N	628	2	1	\N	35	f	\N	1
 6939	6	\N	\N	628	1	7	\N	123	f	\N	2
 6940	8	\N	\N	628	4	1	\N	75	f	\N	3
 6941	0	\N	\N	628	1	2	, to taste	910	t	\N	4
 6942	0	\N	\N	628	1	2	, lightly smashed	5	t	\N	5
+6923	6	\N	\N	645	1	2	, sliced	1191	f	\N	4
+6924	7	\N	\N	645	1	2	\N	1193	f	\N	5
+6925	6	\N	\N	645	1	1	\N	1194	f	\N	6
+6943	7	\N	\N	382	1	1	\N	77	f	\N	5
+6944	8	\N	\N	382	8	1	\N	692	t	\N	6
+6945	5	\N	\N	647	1	2	(BEEF OR LAMB STEW MEAT), cut into 1 inch cubes	918	f	\N	0
+6946	8	\N	\N	647	2	1	\N	285	f	\N	1
+6947	0	\N	\N	647	1	1	, minced	5	f	\N	2
+6926	7	\N	\N	645	1	2	, chopped	800	f	\N	7
+6948	0	\N	\N	647	1	1	\N	910	f	\N	3
+6949	8	\N	\N	647	1	1	\N	73	f	\N	4
+6927	8	\N	\N	645	4	1	\N	285	f	\N	8
+6950	0	\N	\N	647	1	1	, chopped	222	f	\N	5
+6951	6	\N	\N	647	1	1	, chopped	736	f	\N	6
+6952	6	\N	\N	647	2	3	\N	\N	f	559	7
+6953	0	\N	\N	647	1	1	, chopped	150	f	\N	8
+6954	6	\N	\N	647	1	2	\N	206	f	\N	9
+6955	6	\N	\N	647	1	1	, chopped, to garnish	13	t	\N	10
 \.
 
 
@@ -12961,11 +13010,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2997	Meanwhile, prepare the cauliflower. If you are using fresh cauliflower, cut it into florets and then pulse in a food processor until the texture resembles rice.	\N	375	3	0
 2998	In a separate medium skillet, heat the other tablespoon of coconut oil and sauté the cauliflower until it is just tender, about 10 minutes, adding salt and pepper as needed.	\N	375	4	0
 2999	Serve the creamy chicken over a bed of cooked cauliflower rice topped with the fresh chives.	\N	375	5	0
-3187	Combine all ingredients together and drink first thing in the morning, instead of caffeine.	\N	428	0	0
 1946	Once you have taken the steaks out of the pan, melt the remaining butter then add the sliced onions. Increase the heat and stir to brown and soften the onions, scraping the base of the pan.	\N	168	1	0
 1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2	0
 3233	Pour hot water over peppermint leaves and let steep for at least 5 minutes. Strain or leave in, and drink hot or let cool, and drink at room temperature.	\N	468	0	0
 3278	Blend all the ingredients in a  high-speed blender, on high, until smooth.	\N	486	0	0
+3187	Combine all the ingredients together in a mug and enjoy.	\N	428	0	0
 3422	Stove Top: Place the chicken, vinegar, and vegetables in a stockpot. Fill with water to 1 inch below the top of the stockpot. Bring to a boil, reduce the heat to medium-low, and simmer for 8 to 12 hours.	\N	559	2	0
 3423	Season with salt and pepper to taste.	\N	559	3	0
 3424	Strain, pour into Mason jars, and refrigerate.	\N	559	4	0
@@ -13478,18 +13527,21 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3756	Drain the liquid from the meat and set aside, then mix the meat with the soy sauce, cornstarch and ginger, making sure the meat is evenly covered.	\N	644	1	0
 3757	Heat the oil in a wok or large frying pan and add the beef. Stir-fry for 1 minute until lightly colored, then add the carrot strips and stir-fry for another 2-3 minutes.	\N	644	2	0
 3758	Stir in the spring onions and reserved liquid, then cook, stirring, until boiling and thickened. Serve hot with noodles or rice.	\N	644	3	0
-3759	Season the flour and use to dust the veal, then set the meat aside.	\N	645	0	0
-3760	Heat the oil in a large frying pan and cook the shallot and mushrooms for 5 minutes. Add the escallops and cook over a high heat for about 1(1/2) minutes on each side. Pour in the Marsala or sherry and cook until reduced by half.	\N	645	1	0
-3761	Remove the escalopes from the pan. Stir in the crème fraîche, tarragon and seasoning into the juices in the pan and simmer gently for 3–5 minutes, or until the sauce it thick and creamy.	\N	645	2	0
-3762	Return the escalopes to the pan and heat through for 1 minute before serving with the sauce, noodles and broccoli.	\N	645	3	0
 3763	Make the chive butter. Beat the butter until soft, add the chives and season with salt and pepper. Beat until well mixed, then shape into a roll, wrap in foil and chill.	\N	646	0	0
 3764	Brush the steaks with a little olive oil and press crushed peppercorns on to both sides.	\N	646	1	0
 3765	Run the cut surface of the garlic over a frying pan. Melt the butter in the remaining oil. When hot, add the steaks and fry quickly, allowing 3(1/2)-4 minutes on each side for medium-rare. Lift out with tongs, place on a serving dish and keep hot while you make the sauce.	\N	646	2	0
 3766	Add the brandy and stock to the pan, boil rapidly until reduced by half, then season with salt and pepper to taste. Slice the chive butter and put a piece on top of each steak. Spoon a little sauce on to each plate. Garnish each steak with a chive bundle and serve with a simple vegetable accompaniment, such as boiled new potatoes.	\N	646	3	0
 1819	Add the lemon juice and parsley and season with salt and pepper to taste. Serve hot with lemon wedges, garnished with flat leaf parsley.	\N	92	2	0
 3090	Slice roast thin and pour sauce over it. Serve with lime wedges and cilantro.	\N	398	3	0
+3759	Season the flour and use to dust the veal, then set the meat aside.	\N	645	0	0
+3760	Heat the oil in a large frying pan and cook the shallot and mushrooms for 5 minutes. Add the escallops and cook over a high heat for about 1(1/2) minutes on each side. Pour in the Marsala or sherry and cook until reduced by half.	\N	645	1	4
+3761	Remove the escalopes from the pan. Stir in the crème fraîche, tarragon and seasoning into the juices in the pan and simmer gently for 3–5 minutes, or until the sauce it thick and creamy.	\N	645	2	4
 3695	In a 2½-quart slow cooker, put the chickpeas, 1/2 teaspoon baking soda, 7 cups water, a big pinch of kosher salt, bay leaf, and garlic.	\N	628	0	1024
 3767	Cover and cook on high heat for 4 hours, or low heat for 6 to 8 hours, or until tender.	\N	628	1	1024
+3762	Return the escalopes to the pan and heat through for 1 minute before serving with the sauce, noodles and broccoli.	\N	645	3	4
+3768	Add all ingredients, except for the baby spinach and cilantro, into a slow cooker.	\N	647	0	1024
+3769	Cook on low for 8–10 hours.	\N	647	1	0
+3770	When done, stir in the spinach, top with cilantro, and serve warm.	\N	647	2	0
 \.
 
 
@@ -13521,7 +13573,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: footnote_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."footnote_Id_seq"', 12, true);
+SELECT pg_catalog.setval('public."footnote_Id_seq"', 16, true);
 
 
 --
@@ -13535,7 +13587,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14198, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14225, true);
 
 
 --
