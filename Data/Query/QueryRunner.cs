@@ -186,7 +186,7 @@ public class QueryRunner(Section section)
                             // Only scale the ingredient recipe if it is not going to fallback to an ingredient.
                             if (recipeIngredient.UserRecipeIngredient?.Scale != null && recipeIngredient.UserRecipeIngredient.Scale != RecipeConsts.IngredientScaleDefault)
                             {
-                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(recipeIngredient.UserRecipeIngredient.Scale));
+                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(recipeIngredient.UserRecipeIngredient.Scale));
                                 recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
                                 recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
                             }
@@ -218,7 +218,7 @@ public class QueryRunner(Section section)
                             if (substitution != null)
                             {
                                 // Scale the substitution using the user's preferences or the alternative ingredient's scale.
-                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(substitution.Scale));
+                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(substitution.Scale));
                                 recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
                                 recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
                             }
@@ -226,7 +226,7 @@ public class QueryRunner(Section section)
                         // If this ingredient isn't being swapped (which may use its own scale), then scale the ingredient according to the user's preferences.
                         else if (recipeIngredient.UserRecipeIngredient?.Scale != null && recipeIngredient.UserRecipeIngredient.Scale != RecipeConsts.IngredientScaleDefault)
                         {
-                            var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDouble(recipeIngredient.UserRecipeIngredient.Scale));
+                            var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(recipeIngredient.UserRecipeIngredient.Scale));
                             recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
                             recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
                         }
