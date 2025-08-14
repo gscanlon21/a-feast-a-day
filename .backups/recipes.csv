@@ -11,7 +11,7 @@
 28	Sauteed Green Beans	\N	\N	\N	16	7	0	2	t	sauteed-green-beans.jpg	0	\N	f	f
 29	Garlic Parmesan Asparagus	\N	\N	\N	16	5	5	2	t	parmesan-roasted-asparagus.jpg	0	\N	f	f
 30	Curry Scramble	\N	\N	\N	6	10	5	2	t	curry-scramble.jpg	0	\N	f	f
-31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	4	420	15	6	t	bbq-pulled-pork-sandwich.jpg	0	\N	f	f
+31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	8	420	15	6	t	bbq-pulled-pork-sandwich.jpg	0	\N	f	f
 32	Crock Pot Baked Potatoes	\N	\N	\N	16	480	5	4	t	crockpot-baked-potatoes.jpg	0	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	f	f
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	kielbasa.jpg	0	\N	f	f
@@ -55,7 +55,7 @@
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	t	white-bread.jpg	0	\N	t	f
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	basil-quesadilla.jpg	0	\N	f	f
 75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121°F.	\N	\N	0	5	5	5	t	garlic-olive-oil.jpg	7	\N	t	f
-76	Minty Courgette Linguine	\N	\N	\N	6	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
+76	Minty Courgette Linguine	\N	\N	\N	12	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
 77	Cereal w/ Fruit	\N	\N	\N	2	0	1	4	f	cereal.jpg	0	\N	f	f
 78	String Cheese	\N	\N	\N	32	0	0	1	t	string-cheese.jpg	0	\N	f	f
 79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	fettucine-alfredo.jpg	0	\N	f	f
@@ -130,7 +130,7 @@
 148	Muhammara	\N	\N	\N	0	0	8	4	t	muhammara.jpg	0	\N	f	f
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	16	15	8	2	t	irish-champ.jpg	0	\N	f	f
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	spiced-lentils-rice.jpg	0	\N	f	f
-152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	6	15	2	4	t	spaghetti-lemon.jpg	0	\N	f	f
+152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	12	15	2	4	t	spaghetti-lemon.jpg	0	\N	f	f
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	32	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
@@ -162,7 +162,7 @@
 181	5 Ingredient Sloppy Joes	\N	\N	\N	12	10	5	4	t	sloppy-joes.jpg	0	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	f	f
 182	Beef and Noodles	\N	\N	\N	4	20	10	4	t	beef-noodles.jpg	0	https://www.saltandlavender.com/easy-beef-and-noodles/	f	f
 183	Chestnut Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	5	10	2	t	sausage-carbonara.jpg	0	\N	f	f
-184	Pasta with Fresh Pesto	\N	\N	\N	2	12	4	4	t	pasta-pesto.jpg	0	\N	f	f
+184	Pasta with Fresh Pesto	\N	\N	\N	4	12	4	4	t	pasta-pesto.jpg	0	\N	f	f
 185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	pasta-vegetables.jpg	0	\N	f	f
 186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	12	15	10	1	t	grilled-chicken-sandwich.jpg	0	\N	f	f
 187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
@@ -202,7 +202,7 @@
 254	Maple-Pecan Dip	\N	\N	\N	0	0	10	1	t	hummus.jpg	6	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	f	f
 255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	f	f
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	\N	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
-257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice.	\N	\N	6	40	5	4	t	gluten-free-risotto.jpg	0	https://www.glutenfreepalate.com/gluten-free-risotto/	f	f
+257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice.	\N	\N	20	40	5	4	t	gluten-free-risotto.jpg	0	https://www.glutenfreepalate.com/gluten-free-risotto/	f	f
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	2	2	t	korean-eggs-rice.jpg	0	\N	f	f
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	4	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
@@ -328,7 +328,7 @@
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 478	Everyday Salad	\N	\N	\N	20	0	10	4	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	quinoa-tabouli.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -382,7 +382,7 @@
 563	Greek Salmon	Serve with Katy's Greek Salad.	\N	\N	4	30	5	1	t	greek-salmon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 564	Roasted Vegetables	\N	\N	\N	16	35	10	6	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 565	Rainbow Stir-Fry Veggies	\N	\N	\N	8	25	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-566	Tuna Salad	\N	\N	\N	10	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+566	Tuna Salad	\N	\N	\N	20	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 567	Turkey & Walnut Salad	\N	\N	\N	28	40	10	4	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	3	t	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -405,7 +405,7 @@
 586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	4	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	\N	\N	\N	4	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cauliflower-rice.jpg	6	\N	t	f
+589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cooled-rice.jpg	6	\N	t	f
 590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	Too complicated.	\N	8	60	10	4	t	stuffed-peppers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 592	Fish Tacos	\N	I don't like fish tacos.	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -463,3 +463,6 @@
 645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	\N	0	\N	f	f
 646	Pepper Steaks with Chive Butter	\N	\N	\N	8	12	4	4	t	\N	0	\N	f	f
 647	Slow Cooker Lamb Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+648	A Very Berry Pie	filling maple syrup should be optional	\N	\N	64	20	30	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+649	Seven Layer Russian Shuba Salad	\N	\N	\N	16	80	20	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+650	Cooked Quinoa	\N	\N	\N	0	25	5	2	t	\N	6	\N	t	f
