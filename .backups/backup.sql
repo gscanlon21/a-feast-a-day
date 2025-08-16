@@ -740,6 +740,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1193	495	1
 1193	1192	1
 388	387	1
+824	1116	1
 187	28	1
 187	164	1
 186	184	1
@@ -9424,14 +9425,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1174	6	\N	\N	45	2	1	, chopped	13	t	\N	2
 1175	8	\N	\N	45	1	2	, ground	143	f	\N	3
 1176	0	\N	\N	45	1	1	, minced	5	f	\N	4
-2454	0	\N	\N	129	1	8	\N	388	f	\N	0
 5204	6	\N	\N	179	2	1	\N	13	f	\N	2
 5205	3	\N	\N	179	1	100	, about ½ cups	593	f	\N	3
 5206	10	\N	\N	179	1	400	, about 1¾ cups	178	f	\N	4
 5207	8	\N	\N	179	8	1	\N	692	f	\N	5
-2455	7	\N	\N	129	1	4	\N	468	f	\N	1
-2456	7	\N	\N	129	1	4	\N	469	f	\N	2
-2457	8	\N	\N	129	8	1	\N	285	t	\N	3
 4384	7	\N	\N	194	1	2	, such as basil, parsley, chervil, marjoram and oregano.	712	t	\N	6
 4385	8	\N	\N	194	8	1	\N	285	f	\N	7
 3373	8	\N	\N	126	1	2	, chopped	577	f	\N	9
@@ -9462,12 +9459,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1200	7	\N	\N	56	1	4	\N	186	f	\N	2
 518	6	\N	\N	31	1	1	\N	115	t	\N	1
 520	6	\N	\N	31	1	6	\N	113	f	\N	3
+2454	0	\N	\N	129	1	4	\N	388	f	\N	0
+2455	7	\N	\N	129	1	2	\N	468	f	\N	1
 1201	8	\N	\N	56	2	1	\N	196	f	\N	3
 1202	7	\N	\N	56	1	4	\N	30	f	\N	4
 5323	0	\N	\N	321	1	2	\N	387	f	\N	0
 5324	0	\N	\N	321	1	2	\N	12	f	\N	1
 5325	0	\N	\N	321	1	4	\N	5	f	\N	2
 887	6	\N	\N	52	4	1	, sliced	17	f	\N	3
+2456	7	\N	\N	129	1	2	\N	469	f	\N	2
+2457	8	\N	\N	129	8	1	\N	285	t	\N	3
 3916	0	\N	\N	196	1	4	, cut into strips	324	f	\N	10
 3917	0	\N	\N	196	1	2	, whites only, slightly beaten	187	f	\N	11
 3918	6	\N	\N	196	1	1	(RICE FLOUR)	228	f	\N	12
@@ -12050,6 +12051,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6972	6	\N	\N	650	1	1	, rinsed well	20	f	\N	0
 5923	0	\N	\N	479	1	1	, juiced	4	f	\N	7
 6971	8	\N	\N	479	4	1	, to taste	692	t	\N	9
+6973	6	\N	\N	651	4	3	, divided	36	f	\N	0
+6974	8	\N	\N	651	1	1	(GARAM MASALA)	61	f	\N	1
+6975	8	\N	\N	651	4	1	\N	214	f	\N	2
+6976	6	\N	\N	651	1	2	(UNSALTED MIXED NUTS)	909	f	\N	3
+6977	6	\N	\N	651	2	1	\N	123	f	\N	4
 \.
 
 
@@ -12425,12 +12431,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1003	Meanwhile, whisk the eggs and sugar together until pale and doubles in size, then carefully fold in the melted chocolate mixture.	\N	112	1	0
 1004	Boil the kettle. Divide the mixture between 6 coffee cups or ramekins and put them into a roasting pan. Place the pan in the oven,the carefully pour in enough boiling kettle water to come halfway up the side of the cups. Bake for exactly 20 minutes, then carefully remove from the oven and leave to cool in the water for 2 hours.	\N	112	2	0
 1005	To serve, I sometimes shave over some extra chocolate, or add fresh fruit like cherries, blood oranges, or wild strawberries, with a dollup of yogurt or creme fraiche.	\N	112	3	0
-1303	Preheat the oven to 190°C/375°F. Put the chicken thighs in a single layer roasting pan, 	\N	129	0	0
 1374	Add rice and 1-1/2 cups water to a small saucepan then bring to a boil. Turn heat down to low then cover and simmer for 10 minutes (water should just barely be at a simmer).	\N	87	0	0
 1375	Remove pan from heat then let sit for 5 minutes before removing the lid and fluffing with a fork. Set aside.	\N	87	1	0
 1376	Meanwhile, whisk together gluten-free Tamari or soy sauce, coconut sugar, chili garlic sauce, ground ginger, and sesame seeds in a small dish then set aside.	\N	87	2	0
-1304	Mix together the mustard and honey, season with salt and ground black pepper to taste and brush the mixture all over the chicken thighs.	\N	129	1	0
-1305	Cook for 25-30 minutes, brushing the chicken with the pan juices occasionally, until cooked through. (To check the chicken is cooked through, skewer it with a sharp knife; the juices should run clear.)	\N	129	2	0
 1250	Combine water (or milk) and salt in a small saucepan. Bring to a boil.	\N	53	0	0
 1251	Stir in oats and reduce heat to medium; cook, stirring occasionally, for 5 minutes.	\N	53	1	0
 3394	In a small bowl, whisk the lime juice through honey. Season to taste with salt and pepper.	\N	549	0	0
@@ -12446,6 +12449,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1688	To serve, sprinkle the reserved crushed biscuits over the trifles and serve immediately.	\N	162	3	0
 3369	Once the mixture has been cooled, form into patties and place on a lined plate.	\N	536	1	0
 786	Trim the spring onions and gently grill until soft and slightly brown on the outside. Do not dip in the barbecue sauce. Thread about four pieces of pork and three spring onion pieces on to each of the eight bamboo skewers.	\N	93	2	0
+1303	Preheat the oven to 190°C/375°F. Put the chicken thighs in a single layer roasting pan, 	\N	129	0	0
+1304	Mix together the mustard and honey, season with salt and ground black pepper to taste and brush the mixture all over the chicken thighs.	\N	129	1	0
+1305	Cook for 25-30 minutes, brushing the chicken with the pan juices occasionally, until cooked through. (To check the chicken is cooked through, skewer it with a sharp knife; the juices should run clear.)	\N	129	2	0
 2262	Continue cooking for another 5-10 minutes (stir occasionally) or until the gravy has thickened to your liking. If it gets too thick, add in a splash more beef broth.	\N	182	5	0
 2263	Drain the cooked egg noodles, add them to the skillet, and toss with the beef mixture. Season with salt & pepper if needed and serve immediately.	\N	182	6	0
 3135	Place the fruits and vegetables in the large pitcher of filtered water.	\N	415	0	0
@@ -13609,6 +13615,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3784	Repeat with grated egg yolks and 3 more tablespoons of mayo. Repeat with grated egg whites and 3 more tablespoons of mayo.	\N	649	6	0
 3785	Lastly, repeat with grated beets and 3 more tablespoons of mayo. Place into the refrigerator and let rest overnight, or at least 6 hours, before serving.	\N	649	7	0
 3786	Cook 1 cup of quinoa per package instructions.	\N	650	0	0
+3787	In a medium bowl, combine 1/4 cup of sugar, the garam masala, and salt. Set aside.	\N	651	0	0
+3788	Warm a medium skillet over medium-high heat. Add the nuts and roast them, keeping them moving for about 4 minutes, or until they start to brown.	\N	651	1	0
+3789	Pour the remaining 1/2 cup of sugar over the nuts along with the water. Bring the mixture to a boil, reduce the heat to medium, and cook until the mixture starts to turn a light brown, usually within 3 minutes.	\N	651	2	0
+3790	Use a slotted spoon to take the nuts out of the pan and put them in the bowl with the sugar and spice. Toss the nuts to evenly coat them.	\N	651	3	0
+3791	Spread the nuts out on a baking sheet and let cool for 1 hour. Store the nuts in an airtight container.	\N	651	4	0
 \.
 
 

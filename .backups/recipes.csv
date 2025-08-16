@@ -108,7 +108,7 @@
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
 127	Roast Chicken Pitta Pockets	\N	\N	\N	6	2	13	6	t	\N	0	\N	f	f
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
-129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	4	t	honey-mustard-chicken.jpg	0	\N	f	f
+129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandori-chicken-kebabs.jpg	0	\N	f	f
@@ -466,3 +466,4 @@
 648	A Very Berry Pie	filling maple syrup should be optional	\N	\N	64	20	30	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 649	Seven Layer Russian Shuba Salad	\N	\N	\N	16	80	20	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 650	Cooked Quinoa	\N	\N	\N	0	25	5	2	t	\N	6	\N	t	f
+651	Spiced Nuts	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients.	\N	\N	32	10	5	2	t	\N	6	\N	f	f
