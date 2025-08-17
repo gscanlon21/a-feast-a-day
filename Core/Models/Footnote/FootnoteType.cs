@@ -42,7 +42,7 @@ public enum FootnoteType
     /// sa. Never give up!
     /// </summary>
     [Display(Name = "Cooking Motivation")]
-    LifeMotivation = 1 << 4, // 16
+    CookingMotivation = 1 << 4, // 16
 
     /// <summary>
     /// Life affirmations. 
@@ -50,7 +50,7 @@ public enum FootnoteType
     /// sa. I'm a thoughtful and interesting person.
     /// </summary>
     [Display(Name = "Cooking Affirmations")]
-    LifeAffirmations = 1 << 5, // 32
+    CookingAffirmations = 1 << 5, // 32
 
     /// <summary>
     /// Mindfulness
@@ -76,5 +76,5 @@ public enum FootnoteType
 
     System = All & ~Custom, // FitnessTips | FitnessFacts | FitnessMotivation | FitnessAffirmations | HealthTips | HealthFacts | GoodVibes | Mindfulness
 
-    All = CookingTips | IngredientTips | HealthTips | HealthFacts | LifeMotivation | LifeAffirmations | GoodVibes | Mindfulness | Custom
+    All = CookingTips | IngredientTips | HealthTips | HealthFacts | CookingMotivation | CookingAffirmations | GoodVibes | Mindfulness | Custom
 }

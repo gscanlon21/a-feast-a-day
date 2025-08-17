@@ -656,6 +656,62 @@ COPY public.footnote ("Id", "Note", "Source", "Type") FROM stdin;
 14	Drugs like Prilosec and Protonix are frequently prescribed for presumed excess stomach acid, artificially creating the same effects as atrophic gastritis. This can lead to nutrient deficiencies, bacterial overgrowth, and long-term digestive dysfunction. Low stomach acid is also linked to vitamin B12 and iron deficiencies, which can cause anemia and require alternative supplementation methods like sublingual or injectable forms.	Dr. William Davis	8
 15	Although rarely diagnosed, hypochlorhydria affects an estimated 5–10% of the population and increases with age. It is even more common in those with digestive issues like bloating, heartburn, or slowed digestion. Causes include autoimmune gastritis (often linked to Hashimoto’s thyroiditis), H. pylori infection, and long-term use of acid-suppressing drugs like proton pump inhibitors (PPIs).	Dr. William Davis	8
 16	The normal pH of the stomach (1.5–3.0) is highly acidic, allowing for the breakdown of proteins, fats, and other nutrients. It also acts as a defense system, killing harmful bacteria like E. coli and Klebsiella before they can colonize the small intestine. When stomach acid is low (hypochlorhydria), digestion slows, nutrient absorption decreases, and harmful microbes can flourish, leading to conditions like small intestinal bacterial overgrowth (SIBO).	Dr. William Davis	8
+17	Be mindful of your posture throughout the day, and realign yourself regularly.	\N	4
+18	Paying attention to posture can help you look and feel better.	https://www.health.harvard.edu/pain/posture-and-back-health	4
+20	On the days people drank coffee, they took an average of 1,000 extra steps per day. But they slept about 36 fewer minutes per night, on average.	https://www.health.harvard.edu/heart-health/does-coffee-help-or-harm-your-heart	8
+21	Adults who stay well-hydrated appear to be healthier, develop fewer chronic conditions, such as heart and lung disease, and live longer than those who may not get sufficient fluids.	https://www.nih.gov/news-events/news-releases/good-hydration-linked-healthy-aging	8
+22	Breathe deeply. You are in the present moment.	\N	64
+23	Bring awareness into the moment.	\N	64
+24	You are awesome!	\N	128
+25	Expose your eyes to natural light.	\N	4
+26	A truly ergonomic workstation is one that you regularly push away from.	\N	4
+27	Look away from screens and squeeze your eyes shut periodically to maintain good eye health.	https://www.health.harvard.edu/diseases-and-conditions/electronic-screen-alert-avoid-this-vision-risk	4
+28	Practicing everyday mindfulness can also improve your memory and concentration skills and help you feel less distracted and better able to manage crises.	https://www.health.harvard.edu/blog/evoking-calm-practicing-mindfulness-in-daily-life-helps-202110142617	4
+29	When life gives you lemons, stick them on your barbell. Conquer life's lemons!	\N	16
+30	Be better, not bitter.	\N	32
+31	Enjoy the simple things.	\N	64
+33	When sitting down, keep your chin parallel to the floor; your shoulders, hips, and knees at even heights; and your knees and feet pointing straight ahead.	https://www.health.harvard.edu/staying-healthy/why-good-posture-matters	4
+34	Both unprocessed and processed red meat are linked to higher risks of cardiovascular disease and diabetes, with no apparent difference in risk between men and women.	https://www.health.harvard.edu/staying-healthy/men-women-and-red-meat-risk-maybe-both-sexes-should-put-down-the-burger	8
+35	All of my accomplishments matter.	\N	32
+36	Take a moment to pause and come back to the present.	\N	64
+37	Are you aware? How does your body feel? 	\N	64
+38	Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness.	\N	64
+39	Enjoy the little things.	\N	64
+40	Have a beautiful day!	\N	128
+41	Studies show that spending time outdoors can decrease a child's risk of developing myopia.	https://www.health.harvard.edu/blog/curbing-nearsightedness-in-children-can-outdoor-time-help-202212152868	8
+19	Reward yourself after achieving special cooking related milestones. Nothing motivates like success!	\N	16
+32	Reward yourself with a delicious snack after a completed meal!	\N	16
+42	Berries. From strawberries and blackberries to cranberries and blue­berries, these gemlike fruits are particularly potent in antioxidant and anti-inflammatory activity. Along with fiber and vitamin C, berries possess plant pigment phytochemicals, such as anthocyanins and ellagic acid, which may be behind their health benefits. Studies have linked increased berry consumption with lower risks of heart disease, Alzheimer's disease, and diabetes.	Harvard Medical School	8
+43	Apples. Maybe it's true what they say about an apple a day. A study of nearly 35,000 women, found that consumption of this fruit—along with its relative, pears—was linked with a lower risk of death from heart disease. The star components of apples—fiber, vitamin C, pectin, and polyphenols—have been associated, primarily in animal studies, with anti-inflammatory effects and an increase in beneficial microbes in the gut.	Harvard Medical School	8
+44	Stone fruits. Cherries, peaches, apricots, and plums are all examples of stone fruits. These fruits contain fiber, vitamin C, potassium, and a variety of phytochemicals associated with their colors. For example, cherries have garnered the lion's share of the research among stone fruits. Some studies suggest that cherries can reduce pain and soreness after exercise as well as a reduced risk of gout attacks. The high levels of phenolic compounds in cherries, which have been linked to reduced inflammation, may be behind those benefits.	Harvard Medical School	8
+46	Waking up earlier is healthier than going to bed later when trying to limit the damage of sleep deprivation.	https://www.sciencedirect.com/science/article/abs/pii/S0195666323024583	8
+47	The most powerful way to protect the brain is to live a healthy lifestyle. The healthy habits to include are summed up with the acronym SHIELD: Sleep at least seven hours a night, Handle stress, Interact with friends, Exercise daily, Learn new things, and eat a healthy Diet.	https://www.health.harvard.edu/mind-and-mood/shield-your-brain-from-decline	4
+48	Citrus. Oranges, grapefruit, lemons, and limes are famously rich in vitamin C. They also contain fiber, potassium, calcium, B vitamins, copper, and anti-inflammatory phytochemicals such as flavonoids and carotenoids. Though there is little human research on citrus, the nutrients found in citrus fruits have been associated with heart-protective effects.	Harvard Medical School	8
+49	Pomegranates. Those tiny pomegranate seeds contain big rewards of vitamins C and K, potassium, fiber, and potent phytochemicals such as anthocyanin and resveratrol. These nutrients may be behind the potential benefits of eating pomegranates.	Harvard Medical School	8
+50	Grapes. These succulent fruits are burst­ing with fiber, vitamins C and K, and powerful phytochemicals.	Harvard Medical School	8
+51	People who'd averaged at least 12 hours a day sitting were 63% likelier to develop dementia than those who'd spent less than 10 hours daily in a chair. Furthermore, exercise didn't seem to change those odds, since among people who sat for 10 hours or more daily, those who worked out were as prone to dementia as those who exercised very little.	https://www.health.harvard.edu/mind-and-mood/long-hours-sitting-can-raise-dementia-odds-despite-exercise	8
+52	By harnessing the power of vasoconstriction and vasodilation, [cold water] therapies stimulate blood flow, deliver oxygen and nutrients, and remove cellular waste more efficiently.	https://coldplungeculture.com/do-ice-baths-improve-circulation/	8
+53	Spending just three hours a day outside soaking up natural light can make a huge difference on vision. It can help lower the risk of children and young adults developing myopia, or nearsightedness as it’s commonly known.	https://www.rebuildyourvision.com/blog/vision-conditions/nearsightedness/natural-light-essential-normal-eye-development	8
+54	My best is always good enough.	\N	32
+55	An examination of four studies that together included more than 8,600 people found that eating more saturated fat led to a 39% higher risk for Alzheimer's and more than double the risk for dementia in general. For each additional 4 grams per day of saturated fat people consumed, the risk for dementia increased by 15%.	https://www.health.harvard.edu/healthbeat/brain-draining-foods	8
+56	Red meat, butter, cream, whole milk. All of these animal-based foods are high in saturated fat, which raises blood levels of unhealthy LDL cholesterol. When cholesterol builds up in arteries, it sets off a chain of events that can ultimately lead to a stroke.	https://www.health.harvard.edu/healthbeat/brain-draining-foods	8
+57	My curiosity is stronger than my fear.	\N	32
+58	I am unaffected by the judgement of others.	\N	32
+59	Each day I do the best I can.	\N	32
+60	I embrace both my good and bad qualities.	\N	32
+61	I am not defined by laziness, self-doubt, or numbers.	\N	32
+62	I am worthy and deserve respect.	\N	32
+63	Let go of greed, aversion, and delusion.	\N	64
+64	Close your eyes and take a few deep breaths.	\N	64
+65	You are beautiful!	\N	128
+66	:)	\N	128
+67	Eating too many foods made with refined flour can affect your blood pressure and diabetes risk over time. Look for foods labeled "100% whole grain" to maximize the fiber and nutrient content of the grain products you buy.	https://www.health.harvard.edu/healthbeat/brain-draining-foods	4
+68	I accept who I am.	\N	32
+69	I will not be put down by people or external circumstances.	\N	32
+70	I believe in myself.	\N	32
+72	I can do this.	\N	32
+45	My cooking goals are attainable.	\N	64
+71	I am confident and capable.	\N	32
 \.
 
 
@@ -741,6 +797,15 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1193	1192	1
 388	387	1
 824	1116	1
+195	228	1
+1183	228	1
+1183	414	1
+38	414	1
+38	228	1
+1183	413	1
+195	413	1
+1201	1200	1
+1201	43	1
 187	28	1
 187	164	1
 186	184	1
@@ -800,6 +865,11 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1194	32	1
 1194	518	1
 155	1199	1
+380	985	1
+380	216	1
+380	339	1
+380	1202	1
+380	1203	1
 479	481	1
 599	811	1
 598	811	1
@@ -3396,8 +3466,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7055	26	68719476736	\N	\N	2	320
 7058	26	1536	\N	\N	3	0.2
 7059	26	48	\N	\N	3	0.4
-7522	214	68719476736	\N	\N	2	6976.4
-7523	255	229376	\N	\N	1	921.7
 7853	82	68719476736	\N	\N	2	19
 7854	82	34359738368	\N	\N	2	93
 7855	82	1	\N	\N	3	0.1
@@ -3490,6 +3558,8 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7052	26	128	\N	\N	3	1
 8624	105	14	\N	\N	3	8
 5197	166	2047	\N	\N	3	170
+7522	214	68719476736	\N	\N	2	6976
+7523	255	229376	\N	\N	1	922
 5805	61	2047	\N	\N	3	94
 5888	165	2047	\N	\N	3	100.5
 8913	721	1	\N	\N	3	3
@@ -8986,6 +9056,57 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14254	1048	1984	\N	\N	3	4
 14255	1048	62	\N	\N	3	26
 14256	1048	2047	\N	\N	3	160
+14257	1050	34359738368	\N	\N	2	119
+14258	1050	1	\N	\N	3	5
+14259	1050	4294967296	\N	\N	2	25
+14260	1050	2199023255552	\N	\N	2	2
+14261	1050	48	\N	\N	3	5
+14262	1050	14	\N	\N	3	21
+14263	1050	1984	\N	\N	3	4
+14264	1050	62	\N	\N	3	26
+14265	1050	2047	\N	\N	3	160
+14266	214	34359738368	\N	\N	2	1
+14267	214	4294967296	\N	\N	2	4
+14268	214	2199023255552	\N	\N	2	0.1
+14269	214	17179869184	\N	\N	2	0.2
+14270	255	2251799813685248	\N	\N	2	16
+14271	255	18014398509481984	\N	\N	3	0.1
+14272	255	36028797018963968	\N	\N	3	0.1
+14273	255	72057594037927936	\N	\N	3	0.1
+14274	255	288230376151711744	\N	\N	3	0.1
+14275	255	576460752303423488	\N	\N	3	0.1
+14276	255	2305843009213693952	\N	\N	3	0.1
+14277	255	-9223372036854775808	\N	\N	3	0.1
+14278	255	4611686018427387904	\N	\N	3	0.1
+14279	255	8	\N	\N	3	16
+14280	255	274877906944	\N	\N	1	0.2
+14281	255	17179869184	\N	\N	2	33
+14282	255	4398046511104	\N	\N	2	0.3
+14283	255	70368744177664	\N	\N	2	61
+14284	255	8796093022208	\N	\N	1	1
+14285	255	17592186044416	\N	\N	2	0.4
+14286	255	65536	\N	\N	1	11062
+14287	255	262144	\N	\N	2	0.1
+14288	255	524288	\N	\N	2	0.1
+14289	255	1048576	\N	\N	2	1
+14290	255	2097152	\N	\N	2	1
+14291	255	4194304	\N	\N	2	0.3
+14292	255	16777216	\N	\N	1	14
+14293	255	67108864	\N	\N	2	3
+14294	255	536870912	\N	\N	2	0.3
+14295	255	3221225472	\N	\N	1	2
+14296	850	128	\N	\N	3	0.1
+14297	850	68719476736	\N	\N	2	4
+14298	850	34359738368	\N	\N	2	225
+14299	850	2	\N	\N	3	3
+14300	850	1	\N	\N	3	2
+14301	850	4294967296	\N	\N	2	51
+14302	850	2199023255552	\N	\N	2	1
+14303	850	48	\N	\N	3	3
+14304	850	14	\N	\N	3	6
+14305	850	1984	\N	\N	3	0.3
+14306	850	62	\N	\N	3	9
+14307	850	2047	\N	\N	3	47
 \.
 
 
@@ -9396,13 +9517,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3478	8	\N	\N	165	8	1	\N	285	f	\N	8
 1045	4	\N	\N	27	2	7	\N	120	f	\N	0
 5202	0	\N	\N	179	1	4	\N	24	f	\N	0
-1089	6	\N	\N	72	4	3	 (180g, approx 180mL)	123	f	\N	0
-1090	6	\N	\N	72	1	2	 (260g)	195	f	\N	1
-1091	7	\N	\N	72	2	3	 (18g)	36	f	\N	2
-1092	7	\N	\N	72	2	3	 (6g)	230	f	\N	3
-1093	8	\N	\N	72	1	1	 (5g)	214	f	\N	4
-1094	7	\N	\N	72	1	1	 (14g)	190	f	\N	5
-1095	8	\N	\N	72	1	1	 (3g)	41	f	\N	6
 5203	0	\N	\N	179	1	1	\N	594	f	\N	1
 3520	4	\N	\N	180	1	28	, crushed	17	t	\N	7
 1046	6	\N	\N	27	2	1	\N	118	f	\N	1
@@ -9425,10 +9539,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1174	6	\N	\N	45	2	1	, chopped	13	t	\N	2
 1175	8	\N	\N	45	1	2	, ground	143	f	\N	3
 1176	0	\N	\N	45	1	1	, minced	5	f	\N	4
+1089	6	\N	\N	72	4	3	 (180g, approx 180mL)	123	f	\N	0
 5204	6	\N	\N	179	2	1	\N	13	f	\N	2
 5205	3	\N	\N	179	1	100	, about ½ cups	593	f	\N	3
 5206	10	\N	\N	179	1	400	, about 1¾ cups	178	f	\N	4
 5207	8	\N	\N	179	8	1	\N	692	f	\N	5
+1090	6	\N	\N	72	1	2	 (260g)	195	f	\N	1
+1091	7	\N	\N	72	2	3	 (18g)	36	f	\N	2
+1092	7	\N	\N	72	2	3	 (6g)	230	f	\N	3
 4384	7	\N	\N	194	1	2	, such as basil, parsley, chervil, marjoram and oregano.	712	t	\N	6
 4385	8	\N	\N	194	8	1	\N	285	f	\N	7
 3373	8	\N	\N	126	1	2	, chopped	577	f	\N	9
@@ -9469,6 +9587,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 887	6	\N	\N	52	4	1	, sliced	17	f	\N	3
 2456	7	\N	\N	129	1	2	\N	469	f	\N	2
 2457	8	\N	\N	129	8	1	\N	285	t	\N	3
+1093	8	\N	\N	72	1	1	 (5g)	214	f	\N	4
+1094	7	\N	\N	72	1	1	 (14g)	190	f	\N	5
+1095	8	\N	\N	72	1	1	 (3g)	41	f	\N	6
 3916	0	\N	\N	196	1	4	, cut into strips	324	f	\N	10
 3917	0	\N	\N	196	1	2	, whites only, slightly beaten	187	f	\N	11
 3918	6	\N	\N	196	1	1	(RICE FLOUR)	228	f	\N	12
@@ -10957,12 +11078,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5882	8	\N	\N	472	2	1	(DRIED BASIL)	14	f	\N	3
 5883	8	\N	\N	472	2	1	\N	71	f	\N	4
 5884	8	\N	\N	472	8	1	, to taste	969	f	\N	5
-5887	0	\N	\N	473	1	1	, peeled, pitted, and mashed	9	f	\N	0
-5888	0	\N	\N	473	1	1	\N	187	f	\N	1
-5889	6	\N	\N	473	2	1	\N	298	f	\N	2
-5890	6	\N	\N	473	2	1	(COCOA POWDER | CAROB POWDER)	43	f	\N	3
-5891	6	\N	\N	473	2	1	\N	614	f	\N	4
-5892	8	\N	\N	473	2	1	\N	34	f	\N	5
 5893	4	\N	\N	474	1	14	\N	151	f	\N	0
 5894	0	\N	\N	474	1	1	, juiced and zested	12	f	\N	1
 5895	8	\N	\N	474	8	1	\N	214	f	\N	2
@@ -11029,6 +11144,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5942	0	\N	\N	483	1	1	\N	5	f	\N	4
 5943	0	\N	\N	483	1	1	, juiced	12	f	\N	5
 5944	0	\N	\N	483	4	1	, to taste	74	t	\N	6
+5887	0	\N	\N	473	1	1	, peeled, pitted, and mashed	9	f	\N	0
+5888	0	\N	\N	473	1	1	\N	187	f	\N	1
+5889	6	\N	\N	473	2	1	\N	298	f	\N	2
+5890	6	\N	\N	473	2	1	\N	1201	f	\N	3
+5891	6	\N	\N	473	2	1	\N	614	f	\N	4
 5917	6	\N	\N	479	1	1	, minced	2	f	\N	1
 5918	6	\N	\N	479	2	1	, minced	251	f	\N	2
 5919	6	\N	\N	479	4	1	, minced	105	f	\N	3
@@ -11036,6 +11156,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5921	6	\N	\N	479	1	1	, sliced in halves or quarters	147	t	\N	5
 5922	0	\N	\N	479	1	2	, chopped small	1199	f	\N	6
 5924	6	\N	\N	479	3	1	\N	278	f	\N	8
+5892	8	\N	\N	473	2	1	\N	34	f	\N	5
 6001	5	\N	\N	522	2	1	, halved	156	f	\N	0
 6002	0	\N	\N	522	1	2	, chopped	255	f	\N	1
 6003	0	\N	\N	522	1	1	, thinly sliced	222	f	\N	2
@@ -11269,12 +11390,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6279	0	\N	\N	565	2	1	(PURPLE CABBAGE), chopped	311	f	\N	5
 6280	0	\N	\N	565	1	2	(PURPLE SWEET POTATOES), diced small	255	f	\N	6
 6281	8	\N	\N	565	4	1	, to taste	692	t	\N	7
-6282	6	\N	\N	566	4	1	\N	\N	f	556	0
 3930	4	\N	\N	197	1	4	\N	241	f	\N	8
 6267	6	\N	\N	564	1	4	, such as peppers, mushrooms, broccoli, onion	1084	f	\N	0
 6268	7	\N	\N	564	1	2	\N	176	f	\N	1
-6283	4	\N	\N	566	1	5	(OLIVE OIL PACKED TUNA)	51	f	\N	1
-6284	7	\N	\N	566	1	1	, chopped	144	f	\N	2
 6263	4	\N	\N	563	1	4	\N	869	f	\N	0
 6264	8	\N	\N	563	4	1	, to taste	692	t	\N	1
 6265	8	\N	\N	563	1	1	\N	1075	f	\N	2
@@ -11304,8 +11422,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6801	0	\N	\N	632	1	1	\N	396	f	\N	5
 6802	6	\N	\N	632	1	2	\N	206	f	\N	6
 6803	9	\N	\N	633	1	14	\N	178	f	\N	0
-6285	0	\N	\N	566	1	1	, finely chopped	150	f	\N	3
-6286	6	\N	\N	566	4	1	, chopped	2	f	\N	4
+6282	6	\N	\N	566	4	1	\N	\N	f	556	0
 6250	7	\N	\N	561	1	2	, divided	77	f	\N	0
 6251	0	\N	\N	561	1	2	\N	1076	f	\N	1
 6252	0	\N	\N	561	1	2	, chopped	1079	f	\N	2
@@ -11317,6 +11434,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6805	4	\N	\N	633	1	14	(PORK LOIN STEAKS), trimmed and thinly slices	114	f	\N	2
 6806	7	\N	\N	633	1	1	\N	557	f	\N	3
 6807	8	\N	\N	633	1	1	(PALM SUGAR | BROWN SUGAR)	204	f	\N	4
+6283	4	\N	\N	566	1	5	\N	1205	f	\N	1
+6284	7	\N	\N	566	1	1	, chopped	144	f	\N	2
+6285	0	\N	\N	566	1	1	, finely chopped	150	f	\N	3
+6286	6	\N	\N	566	4	1	, chopped	2	f	\N	4
 3931	4	\N	\N	197	1	2	, finely shredded	26	f	\N	9
 3932	0	\N	\N	197	1	4	, finely chopped	144	f	\N	10
 3933	8	\N	\N	197	8	1	\N	285	f	\N	11
@@ -12056,6 +12177,25 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6975	8	\N	\N	651	4	1	\N	214	f	\N	2
 6976	6	\N	\N	651	1	2	(UNSALTED MIXED NUTS)	909	f	\N	3
 6977	6	\N	\N	651	2	1	\N	123	f	\N	4
+6985	6	\N	\N	653	4	3	, plus 1 Tbsp water. 194g (approx. 194mL)	123	f	\N	0
+6986	6	\N	\N	653	4	9	, 293g	195	f	\N	1
+6987	7	\N	\N	653	2	1	, 6g	36	f	\N	2
+6988	7	\N	\N	653	2	3	, 6g	230	f	\N	3
+6989	8	\N	\N	653	1	1	, 5g	214	f	\N	4
+6990	8	\N	\N	653	1	1	, 3g	41	f	\N	5
+6978	6	\N	\N	652	8	7	, 210g (approx. 210mL)	123	f	\N	0
+6979	6	\N	\N	652	4	9	, 293g	195	f	\N	1
+6980	7	\N	\N	652	2	3	, 18g	36	f	\N	2
+6981	7	\N	\N	652	2	3	, 6g	230	f	\N	3
+6982	8	\N	\N	652	1	1	, 5g	214	f	\N	4
+6983	7	\N	\N	652	1	1	, 14g	190	f	\N	5
+6984	8	\N	\N	652	1	1	(RAPID RISE YEAST), 3g	41	f	\N	6
+6991	8	\N	\N	654	8	1	\N	214	f	\N	0
+6992	4	\N	\N	654	1	2	\N	19	f	\N	1
+6993	6	\N	\N	654	2	1	, diced	380	f	\N	2
+6994	0	\N	\N	654	1	3	(EGG YOLKS), yolks only	187	f	\N	3
+6995	6	\N	\N	654	4	1	, plus extra to garnish	95	f	\N	4
+6996	8	\N	\N	654	8	1	, ground	67	f	\N	5
 \.
 
 
@@ -12159,8 +12299,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 400	Combine beans, cheese and 1/4 cup salsa in a medium bowl. Place tortillas on a work surface. Spread 1/2 cup filling on half of each tortilla. Fold tortillas in half, pressing gently to flatten.	\N	37	0	0
 401	Heat 1 teaspoon oil in a large nonstick skillet over medium heat. Add 2 quesadillas and cook, turning once, until golden on both sides, 2 to 4 minutes total. Transfer to a cutting board and tent with foil to keep warm. Repeat with the remaining 1 teaspoon oil and quesadillas. Serve the quesadillas with avocado and the remaining salsa.	\N	37	1	0
 259	Place pork in a 3-qt. slow cooker. Pour Dr Pepper over top.	\N	31	0	0
-606	Add the ingredients to the Baking Pan in the order listed.	\N	72	0	0
-607	Select Course No. 1 and press the START button. 	\N	72	1	0
 260	Cover and cook on low 7-9 hours or until meat is tender.	\N	31	1	0
 2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract.	\N	233	0	0
 3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	\N	408	1	0
@@ -12197,6 +12335,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 263	Serve on buns.	\N	31	4	0
 3121	Place bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2 to 3 minutes.	\N	19	1	4
 476	Top with sliced chicken, sliced tomato and the second piece of toast.	\N	52	1	0
+606	Add the ingredients to the Baking Pan in the order listed.	\N	72	0	8192
+607	Select Course No. 1 and press the START button. 	\N	72	1	8192
 1094	In a medium bowl, whisk together flour, sugar, baking soda, baking powder, oats, cornmeal, flax seeds and sesame seeds until blended.	\N	113	0	0
 1095	In a separate large mixing bowl; whisk together eggs, half & half, evaporated milk and water until blended.	\N	113	1	0
 1096	Slowly pour dry ingredients into wet ingredients while whisking constantly. Batter will be thick.	\N	113	2	0
@@ -12219,9 +12359,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3074	Dice beets and toss with parsley, apple cider vinegar, lemon juice and sea salt.	\N	394	2	0
 2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	\N	238	0	0
 1410	Place chicken breasts into the bottom of a 6-quart crock pot then sprinkle on Homemade Taco Seasoning ingredients and pour in salsa. Stir to combine then cover and cook on LOW for 4 hours or HIGH for 2 hours, or until the chicken shreds easily with two forks. The shredded chicken will soak up the cooking liquid as it sits.	\N	139	0	0
-596	Add the ingredients to the baking pan in the order listed.	\N	73	1	0
-597	Select COURSE No. 23 and press START.	\N	73	2	0
-598	When the add beep sounds, thoroughly scrape down the flour and other ingredients from the sides of the baking pan to the bottom using a rubber spatula.	\N	73	3	0
+596	Add the ingredients to the baking pan in the order listed.	\N	73	1	8192
+597	Select COURSE No. 7 and press START.	\N	73	2	8192
+598	When the add beep sounds, thoroughly scrape down the flour and other ingredients from the sides of the baking pan to the bottom using a rubber spatula.	\N	73	3	8192
 465	Preheat the oven to 350°F	\N	67	0	0
 686	Gather the ingredients. Preheat oven to 425°F.	\N	64	0	0
 687	Stir the garlic, melted butter, olive oil, and half of the chopped parsley together in a small bowl.	\N	64	1	0
@@ -12286,6 +12426,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1433	Add cooked noodles; cook and stir until the noodles begin to brown, about 5 minutes.	\N	24	2	0
 545	Heat the grill to medium. Make four indentations in the mixture using the back of a spoon, then crack one egg in each. Nestle the ham in the mixture, then grill for 4-5 mins, or until the whites are set and the yolks runny. 	\N	40	2	0
 546	Serve with rye bread, if you like.	\N	40	3	0
+3245	Preheat the oven to 350°F. Line a baking sheet with parchment.	\N	473	0	2
+3246	Mix all ingredients together in a medium-sized bowl.	\N	473	1	0
+3247	Make small balls (about 1 tablespoon of batter) and put them on a parchment-lined baking sheet.	\N	473	2	0
 984	Taste the sauce and season to perfection. To serve, stir the pasta into the sauce and grate in most of the halloumi. Finish drizzled with 1 tablespoon of extra virgin olive oil and with the remaining halloumi grated over the top.	\N	108	4	0
 3391	Form 8-12 patties and lay them on a baking dish.	\N	547	2	0
 1810	Peel and slice the bananas and stir these into the chocolate and custard mixture. Spoon into four glasses. If you have time, chill for at least 30 minutes before serving.	\N	172	2	0
@@ -12303,7 +12446,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2342	Add onion, cook for 4 minutes, stirring frequently. Add fennel and cook for 5 minutes.	\N	248	1	0
 2343	Add stock. Simmer until vegetables are tender, 35-40 minutes.	\N	248	2	0
 939	In a food processor or a large mixing bowl, mix together the plain flour, the baking soda and enough sugar to taste. Add the egg, blend or stir to mix, then gradually pour in just enough of the buttermilk to make a thick, smooth batter.	\N	100	0	0
-3245	Preheat the oven to 350°F.	\N	473	0	0
 1343	Cook the macaroni in boiling salted water following package directions.	\N	36	0	0
 1344	Drain in a colander and rinse with hot water. Drain well.	\N	36	1	0
 1345	Generously butter the sides and bottom of a 3 1/2- to 4-quart slow cooker.	\N	36	2	0
@@ -12314,12 +12456,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2338	Add the spinach and stir until just wilted. Remove from heat.	\N	243	3	0
 2344	Puree soup, whisk in coconut milk.	\N	248	3	0
 2345	Ladle into bowls. Garnish with chives and bacon.	\N	248	4	0
-3246	Mix all ingredients together in a medium-sized bowl.	\N	473	1	0
 2346	Set the oven to 400F. Line 2 large baking sheets with parchment paper.	\N	249	0	0
 2450	Ready rice should not be completely boiled, but it should be sticky. Serve the risotto with Parmesan, green onions, and peppers.	\N	257	5	0
-3247	Make small balls (about 1 tablespoon of batter) and put them on a parchment-lined baking sheet.	\N	473	2	0
-3248	Bake for 8-10 minutes.	\N	473	3	0
-3249	Remove and let cool.	\N	473	4	0
 3365	Add the remaining ingredients (carob powder through sea salt), and process until the mixture forms into a doughy consistency.	\N	535	4	0
 3366	Add the mixture to the bowl with the nuts, and mix to combine. Press the mixture into the lined baking dish evenly. Freeze for 30 minutes or until firm.	\N	535	5	0
 3367	Slice into squares and serve.	\N	535	6	0
@@ -12332,6 +12470,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3128	In a pan, heat the oil over a medium heat.	\N	412	0	4
 3129	Add the cauliflower rice, and stir constantly for about 5 minutes, or until desired texture is achieved.	\N	412	1	4
 2448	Pour broth and water into the pan, add salt and pepper, and mix.	\N	257	3	0
+3248	Bake for 8-10 minutes.	\N	473	3	2
+3249	Remove and let cool.	\N	473	4	0
 753	Brown ground beef with shallot in a large skillet over medium-high heat. Drain then return to the skillet. Add taco seasoning, salsa, and chicken broth then bring to a boil. Stir in rice then place a lid on top and reduce heat to low. Simmer for 15-20 minutes or until rice is tender then remove from heat and stir in cheddar cheese until melted. Place lid back on the skillet then let sit for 5 minutes before serving with toppings.	\N	89	0	0
 754	Toppings: tortilla chips, salsa, sliced avocado, chopped green onions.	\N	89	1	0
 1413	Mix the diced chicken with half the garlic and the tumeric. Heat a little of the oil in a pan, add the chicken and fry until the chicken has cooked thoroughly. Remove from the pan and set aside.	\N	140	0	0
@@ -12760,7 +12900,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	\N	254	0	0
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	\N	254	1	0
 2369	Serve immediately, drizzled with a touch more maple syrup.	\N	254	3	0
-3448	Combine the mayo, along with the remaining ingredients, in a bowl. Serve immediately.	\N	566	0	0
 2021	Place the dried fruit in a large pan and add 600ml/1 pint/2½ cups water.	\N	158	0	0
 3259	Toss all ingredients and serve.	\N	477	0	0
 2022	Peel and core the pear and apple, then dice. Remove peel and pith from the orange and cut into wedges. Add all the cut fruit to the pan with the raspberries and blackberries.	\N	158	1	0
@@ -12776,6 +12915,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2505	Add the remaining ingredients, bring to a boil and simmer until the beans are tender, about 45 minutes. Check seasonings and adjust as necessary.	\N	267	2	0
 2506	Optionally serve topped with alfalfa sprouts.	\N	267	3	0
 2818	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful or cooking water. Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the zucchini. Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan.	\N	260	0	0
+3448	Combine the mayo, along with the remaining ingredients, in a bowl. Serve immediately.	\N	566	0	0
 3154	Preheat the oven to 400°F.	\N	420	0	2
 3155	Slice kielbasa into ¼ to ½ inch slices and set aside.	\N	420	1	0
 3156	Combine the olive oil, garlic and lemon juice.	\N	420	2	0
@@ -13620,6 +13760,15 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3789	Pour the remaining 1/2 cup of sugar over the nuts along with the water. Bring the mixture to a boil, reduce the heat to medium, and cook until the mixture starts to turn a light brown, usually within 3 minutes.	\N	651	2	0
 3790	Use a slotted spoon to take the nuts out of the pan and put them in the bowl with the sugar and spice. Toss the nuts to evenly coat them.	\N	651	3	0
 3791	Spread the nuts out on a baking sheet and let cool for 1 hour. Store the nuts in an airtight container.	\N	651	4	0
+3794	Add the ingredients to the Baking Pan in the order listed.	\N	653	0	8192
+3795	Select Course No. 2 and press start.	\N	653	1	8192
+3792	Add the ingredients to the Baking Pan in the order listed.	\N	652	0	8192
+3793	Press the COURSE button to select Course No. 3 and press the START button.	\N	652	1	8192
+3796	Bring a medium pot of salted water to a boil. Add the pasta and cook according to package directions.	\N	654	0	0
+3797	Meanwhile, warm a medium skillet over medium heat. Add the pancetta and cook 4–5 minutes, until crispy. Hold the pancetta and the rendered fat in the pan.	\N	654	1	0
+3798	In a medium bowl, whisk together the egg yolks, 1/4 cup of Parmesan, and the pepper. Whisk 2 tablespoons of the water from the pasta pot into the egg yolk mixture.	\N	654	2	0
+3799	Drain the pasta and immediately add it to the bowl with the egg yolks. As soon as the pasta goes in the bowl, stir it with a set of tongs until the sauce is creamy. Add the pancetta along with 1 teaspoon of fat from the pan and continue to stir for another minute.	\N	654	3	0
+3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	\N	654	4	0
 \.
 
 
@@ -13651,7 +13800,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: footnote_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."footnote_Id_seq"', 16, true);
+SELECT pg_catalog.setval('public."footnote_Id_seq"', 76, true);
 
 
 --
@@ -13665,7 +13814,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14256, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14307, true);
 
 
 --

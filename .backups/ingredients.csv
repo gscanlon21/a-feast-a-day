@@ -205,7 +205,7 @@
 210	\N	Loaves of Flatbread	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-18	0	64	4
 212	\N	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	32	29	57	2025-07-25	0	57	64
 213	\N	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	262176	257	257	2024-08-11	0	128.5	2
-214	\N	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/	\N	t	0	18	18	2024-07-28	7	288	131072
+214	\N	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/	\N	t	0	18	18	2025-08-17	7	288	131072
 215	\N	Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
 216	\N	Smoked Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-12	0	224	268435456
 217	\N	White Onions	https://www.eatthismuch.com/calories/white-onion-4076970	\N	f	0	94	94	2025-03-22	0	188	2
@@ -246,7 +246,7 @@
 252	\N	Three Wishes Cinnamon Grain Free Cereal	https://www.eatthismuch.com/calories/grain-free-cereal-cinnamon,3131931	\N	f	0	245	35	2024-09-20	0	35	4
 253	\N	Cereal	https://www.eatthismuch.com/calories/honey-nut-cheerios,1026	\N	f	262176	234	39	2024-12-06	0	39	7168
 254	\N	Salted Margarine	https://www.eatthismuch.com/calories/margarine,348	\N	t	0	113	14	2024-09-14	0	224	131072
-255	\N	Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2024-07-28	0	130	2
+255	\N	Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2025-08-18	0	133	2
 257	\N	Frigo String Cheese Sticks	https://www.eatthismuch.com/calories/string-cheese-471958	\N	f	260	28	28	2024-10-22	0	112	8388608
 258	\N	Naan | Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	0	64	64	2024-10-25	0	64	2
 259	\N	Eggplant	https://www.eatthismuch.com/calories/eggplant,1975	\N	f	512	548	548	2024-08-12	0	82	2
@@ -744,7 +744,7 @@
 847	\N	Ratatouille	https://www.eatthismuch.com/calories/pasta-sauce-849	\N	f	0	257	257	2025-03-27	6	257	256
 848	\N	Fresh Red Chilies | Fresh Yellow Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-29	0	90	2
 849	\N	Long-Grain Brown Rice	https://www.eatthismuch.com/calories/brown-rice-4801	\N	f	4096	28	190	2024-11-22	4	190	1024
-850	\N	Frozen Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2024-07-29	4	224	67108864
+850	\N	Frozen Green Beans	https://www.eatthismuch.com/calories/green-beans-1873	\N	f	0	28	121	2025-08-18	4	121	67108864
 851	\N	Brazil Nuts	https://www.eatthismuch.com/calories/brazil-nuts-90109	\N	f	0	28	28	2025-03-06	4	224	1048576
 853	\N	Frozen Snow Peas	\N	\N	f	0	240	100	2024-11-24	6	240	0
 854	\N	Fresh Podded Snow Peas | Frozen Snow Peas	https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	63	2024-12-12	4	63	2
@@ -849,7 +849,7 @@
 1047	\N	Package Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-16	0	120	16288
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-15	0	120	16288
 1049	\N	Purely Elizabeth Dark Chocolate Chunk Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	1024	40	40	2025-08-13	0	120	16288
-1050	\N	Purely Elizabeth Blueberry Flax Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	80	80	2024-07-27	6	80	16288
+1050	\N	Purely Elizabeth Blueberry Flax Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-17	0	120	16288
 1051	\N	Purely Elizabeth Classic Cinnamon Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-14	0	120	16288
 1052	\N	Purely Elizabeth Original Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-16	0	120	16288
 1053	\N	Avocado Oil | Coconut Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
@@ -968,3 +968,9 @@
 1197	\N	Mixed-Grains	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2024-08-09	6	160	0
 1198	\N	Fresh Flat-Leaf Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-09-26	4	64	3
 1199	\N	Small Cucumbers	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	301	301	2025-03-04	0	240	2
+1200	\N	Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
+1201	\N	Cocoa Powder | Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
+1202	\N	Thin Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-16	0	224	268435456
+1203	\N	Thick Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-16	0	224	268435456
+1204	\N	Canned Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/	\N	f	0	28.35	28.35	2024-08-04	4	226.8	0
+1205	\N	Olive Oil Canned Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/	\N	f	0	28.35	28.35	2024-08-04	4	226.8	0

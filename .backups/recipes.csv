@@ -51,8 +51,8 @@
 69	Chopped Eggs and Onions	\N	\N	\N	20	12	3	4	t	egg-salad-alt.jpg	0	\N	f	f
 70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	1	t	guacamole.jpg	6	\N	f	f
 71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	guacamole-chip.jpg	0	\N	f	f
-72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	t	white-bread.jpg	0	\N	f	f
-73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	t	white-bread.jpg	0	\N	t	f
+72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	f	white-bread.jpg	0	\N	t	t
+73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	f	white-bread.jpg	0	\N	t	t
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	basil-quesadilla.jpg	0	\N	f	f
 75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121°F.	\N	\N	0	5	5	5	t	garlic-olive-oil.jpg	7	\N	t	f
 76	Minty Courgette Linguine	\N	\N	\N	12	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
@@ -322,7 +322,7 @@
 470	Pumpkin Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 471	Honey-Mustard Dressing	\N	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 472	Lemon & Herb Dressing	\N	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-473	Divine Avocado Chocolate Chip Cookies	\N	\N	\N	32	10	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+473	Divine Avocado Chocolate Chip Cookies	\N	\N	\N	32	10	5	12	f	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 474	Coconut Sour Cream	\N	\N	\N	0	0	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	24	0	5	2	t	\N	6	\N	t	f
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -333,7 +333,7 @@
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-484	Rice	\N	\N	\N	0	30	0	1	t	cauliflower-rice.jpg	6	\N	t	f
+484	Rice	\N	\N	\N	0	30	0	1	t	rice.jpg	6	\N	t	f
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
 486	Strawberries & Cream	\N	\N	\N	32	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 487	Rainbow Roasted Vegetables	\N	\N	\N	16	25	15	4	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -467,3 +467,6 @@
 649	Seven Layer Russian Shuba Salad	\N	\N	\N	16	80	20	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 650	Cooked Quinoa	\N	\N	\N	0	25	5	2	t	\N	6	\N	t	f
 651	Spiced Nuts	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients.	\N	\N	32	10	5	2	t	\N	6	\N	f	f
+652	Slices of Quick Basic White Bread	Do not use the timer function.	\N	\N	0	120	20	6	f	\N	0	\N	t	t
+653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	\N	0	\N	t	t
+654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	\N	0	\N	f	f
