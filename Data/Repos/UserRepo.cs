@@ -147,7 +147,9 @@ public class UserRepo
             .Where(uf => uf.UserId == user.Id)
             // Don't show backfill feasts to the user.
             .Where(uf => uf.Date >= user.CreatedDate)
-            .Where(uf => uf.Date < user.StartOfWeekOffset)
+            // Using NotEqual in case the user changes from
+            // ... a late send day to an early one mid-week.
+            .Where(uf => uf.Date != user.StartOfWeekOffset)
             // Select the most recent feast per send week.
             .GroupBy(uf => uf.Date.AddDays(-1 * ((7 + (uf.Date.DayOfWeek - user.SendDay)) % 7)))
             .OrderByDescending(g => g.Key) /// Order after grouping.
