@@ -62,7 +62,7 @@
 63	\N	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/	\N	f	0	16	16	2025-07-09	7	100	32
 64	\N	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965	\N	f	0	28	240	2024-12-02	4	240	256
 65	\N	Buffalo Sauce	https://www.eatthismuch.com/calories/buffalo-wing-sauce-1721937	\N	f	0	14	14	2024-10-10	7	224	3
-66	\N	Ranch Dressing	https://www.eatthismuch.com/food/nutrition/ranch-dressing,272/	\N	f	0	14.5	14.5	2024-07-29	7	232	0
+66	\N	Ranch Dressing	https://www.eatthismuch.com/calories/ranch-dressing-365	\N	f	0	15	15	2025-08-19	7	240	32
 67	\N	Black Pepper	https://www.eatthismuch.com/calories/pepper,205	\N	t	0	6	6	2024-09-03	7	96	131072
 68	\N	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	131072
 69	\N	Red Pepper Flakes	https://www.eatthismuch.com/calories/crushed-red-pepper-flakes,5832	\N	t	0	1	1	2024-08-16	7	16	4
@@ -117,7 +117,7 @@
 118	\N	Pizza Sauce	https://www.eatthismuch.com/calories/pizza-sauce,732	\N	f	0	252	252	2024-09-20	6	252	3
 119	\N	Mozzarella Cheese	https://www.eatthismuch.com/calories/mozzarella-cheese,26	\N	f	256	28	28	2024-09-12	4	224	8388608
 120	\N	Turkey Pepperoni	\N	\N	f	0	240	100	2024-08-02	0	240	0
-121	\N	Fresh Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2024-07-29	4	224	2
+121	\N	Fresh Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2025-08-20	4	224	2
 122	\N	Asparagus Spears	https://www.eatthismuch.com/calories/asparagus-1838	\N	f	0	16	18	2024-08-05	0	128	2
 123	\N	Water	\N	\N	t	0	240	240	2025-06-11	6	240	0
 124	\N	Curry Powder	https://www.eatthismuch.com/calories/curry-powder-190	\N	f	0	28	6	2025-01-02	4	96	131072
@@ -472,7 +472,7 @@
 519	\N	Fromage Frais	https://www.eatthismuch.com/calories/fromage-frais-163884	\N	f	0	100	100	2024-11-03	6	100	8388608
 520	\N	Crème Fraîche | Fromage Frais	https://www.eatthismuch.com/calories/creme-fraiche-433603	\N	f	260	28	28	2024-12-16	4	224	29360128
 546	\N	Vanilla Ice Cream	https://www.eatthismuch.com/calories/vanilla-ice-cream-4476	\N	f	4	28	132	2025-02-25	4	132	234881024
-547	\N	Italian Salad Dressing	https://www.eatthismuch.com/calories/italian-dressing-271	\N	f	0	30	15	2024-07-29	9	240	3
+547	\N	Italian Salad Dressing	https://www.eatthismuch.com/calories/italian-dressing-271	\N	f	0	30	15	2025-08-20	9	240	32
 548	\N	Small New Potatoes	https://www.eatthismuch.com/calories/whole-new-potatoes,100017	\N	f	0	52.7	158	2024-09-22	0	158	1
 549	\N	Tandori Paste	https://www.eatthismuch.com/calories/tandoori-paste-198348	\N	f	0	28	30	2025-02-25	4	240	8192
 550	\N	Lemon Grass Stalk	https://www.eatthismuch.com/calories/lemongrass-90852	\N	f	0	17	34	2025-03-05	0	68	2
@@ -885,7 +885,7 @@
 1083	\N	Olives	https://www.eatthismuch.com/calories/olives-1460	\N	f	0	28	134	2025-03-19	4	134	512
 1084	\N	Mixed Roasting Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2024-08-15	4	225	2
 1085	\N	Frozen Mixed Roasting Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	67108864
-1086	\N	Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2024-07-29	4	224	2
+1086	\N	Green Beans	https://www.eatthismuch.com/nutrition/green-beans,1868	\N	f	0	28	28	2025-08-19	4	100	2
 1087	\N	Sliced Almonds	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	0	146	146	2024-10-12	6	146	1048576
 1088	\N	Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	512	111	111	2024-11-05	0	111	2
 1089	\N	Smoked Salmon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1

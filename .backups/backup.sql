@@ -710,7 +710,7 @@ COPY public.footnote ("Id", "Note", "Source", "Type") FROM stdin;
 69	I will not be put down by people or external circumstances.	\N	32
 70	I believe in myself.	\N	32
 72	I can do this.	\N	32
-45	My cooking goals are attainable.	\N	64
+45	My cooking goals are attainable.	\N	32
 71	I am confident and capable.	\N	32
 \.
 
@@ -806,6 +806,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 195	413	1
 1201	1200	1
 1201	43	1
+225	144	1
 187	28	1
 187	164	1
 186	184	1
@@ -3791,7 +3792,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7089	37	16777216	\N	\N	1	1
 7090	37	62	\N	\N	3	142
 7091	37	2047	\N	\N	3	551
-7526	66	2047	\N	\N	3	73.9
 7073	41	2047	\N	\N	3	23
 7886	178	2047	\N	\N	3	552
 7887	482	2047	\N	\N	3	87
@@ -3840,6 +3840,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 7113	88	2199023255552	\N	\N	2	7
 7114	88	17179869184	\N	\N	2	245
 6040	34	2047	\N	\N	3	7
+7526	66	2047	\N	\N	3	63
 7131	160	128	\N	\N	3	1.5
 6186	177	3221225472	\N	\N	1	0.3
 7132	160	2048	\N	\N	2	15
@@ -9107,6 +9108,42 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14305	850	1984	\N	\N	3	0.3
 14306	850	62	\N	\N	3	9
 14307	850	2047	\N	\N	3	47
+14308	1086	2251799813685248	\N	\N	2	4
+14309	1086	8	\N	\N	3	0.2
+14310	1086	17179869184	\N	\N	2	7
+14311	1086	4398046511104	\N	\N	2	0.1
+14312	1086	70368744177664	\N	\N	2	11
+14313	1086	8796093022208	\N	\N	1	0.2
+14314	1086	17592186044416	\N	\N	2	0.1
+14315	1086	32768	\N	\N	1	20
+14316	1086	65536	\N	\N	1	107
+14317	1086	1048576	\N	\N	2	0.2
+14318	1086	2097152	\N	\N	2	0.1
+14319	1086	16777216	\N	\N	1	9
+14320	1086	67108864	\N	\N	2	3
+14321	1086	536870912	\N	\N	2	0.1
+14322	1086	3221225472	\N	\N	1	4
+14323	1086	229376	\N	\N	1	10
+14324	66	128	\N	\N	3	1
+14325	66	64	\N	\N	3	0.1
+14326	66	2048	\N	\N	2	4
+14327	66	68719476736	\N	\N	2	135
+14328	66	34359738368	\N	\N	2	10
+14329	66	2	\N	\N	3	1
+14330	66	1	\N	\N	3	0.2
+14331	66	4294967296	\N	\N	2	4
+14332	66	14	\N	\N	3	1
+14333	66	1984	\N	\N	3	7
+14334	66	62	\N	\N	3	1
+14335	547	128	\N	\N	3	0.4
+14336	547	68719476736	\N	\N	2	146
+14337	547	34359738368	\N	\N	2	12
+14338	547	2	\N	\N	3	2
+14339	547	1	\N	\N	3	0.1
+14340	547	4294967296	\N	\N	2	2
+14341	547	14	\N	\N	3	2
+14342	547	1984	\N	\N	3	3
+14343	547	62	\N	\N	3	2
 \.
 
 
@@ -11390,9 +11427,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6279	0	\N	\N	565	2	1	(PURPLE CABBAGE), chopped	311	f	\N	5
 6280	0	\N	\N	565	1	2	(PURPLE SWEET POTATOES), diced small	255	f	\N	6
 6281	8	\N	\N	565	4	1	, to taste	692	t	\N	7
+6250	7	\N	\N	561	1	2	, divided	77	f	\N	0
 3930	4	\N	\N	197	1	4	\N	241	f	\N	8
 6267	6	\N	\N	564	1	4	, such as peppers, mushrooms, broccoli, onion	1084	f	\N	0
 6268	7	\N	\N	564	1	2	\N	176	f	\N	1
+6251	0	\N	\N	561	1	2	\N	1076	f	\N	1
+6252	0	\N	\N	561	1	2	, chopped	1079	f	\N	2
 6263	4	\N	\N	563	1	4	\N	869	f	\N	0
 6264	8	\N	\N	563	4	1	, to taste	692	t	\N	1
 6265	8	\N	\N	563	1	1	\N	1075	f	\N	2
@@ -11422,14 +11462,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6801	0	\N	\N	632	1	1	\N	396	f	\N	5
 6802	6	\N	\N	632	1	2	\N	206	f	\N	6
 6803	9	\N	\N	633	1	14	\N	178	f	\N	0
-6282	6	\N	\N	566	4	1	\N	\N	f	556	0
-6250	7	\N	\N	561	1	2	, divided	77	f	\N	0
-6251	0	\N	\N	561	1	2	\N	1076	f	\N	1
-6252	0	\N	\N	561	1	2	, chopped	1079	f	\N	2
 6253	0	\N	\N	561	1	1	, minced superfine	5	f	\N	3
 6254	7	\N	\N	561	1	3	\N	81	f	\N	4
-6255	8	\N	\N	561	4	1	, to taste	692	t	\N	5
-6256	7	\N	\N	561	1	1	\N	14	t	\N	6
+6282	6	\N	\N	566	4	1	\N	\N	f	556	0
 6804	8	\N	\N	633	1	2	\N	593	f	\N	1
 6805	4	\N	\N	633	1	14	(PORK LOIN STEAKS), trimmed and thinly slices	114	f	\N	2
 6806	7	\N	\N	633	1	1	\N	557	f	\N	3
@@ -11438,6 +11473,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6284	7	\N	\N	566	1	1	, chopped	144	f	\N	2
 6285	0	\N	\N	566	1	1	, finely chopped	150	f	\N	3
 6286	6	\N	\N	566	4	1	, chopped	2	f	\N	4
+6255	8	\N	\N	561	4	1	, to taste	692	t	\N	5
 3931	4	\N	\N	197	1	2	, finely shredded	26	f	\N	9
 3932	0	\N	\N	197	1	4	, finely chopped	144	f	\N	10
 3933	8	\N	\N	197	8	1	\N	285	f	\N	11
@@ -12196,6 +12232,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6994	0	\N	\N	654	1	3	(EGG YOLKS), yolks only	187	f	\N	3
 6995	6	\N	\N	654	4	1	, plus extra to garnish	95	f	\N	4
 6996	8	\N	\N	654	8	1	, ground	67	f	\N	5
+6997	6	\N	\N	655	1	1	\N	1006	f	\N	0
+6998	7	\N	\N	655	1	1	\N	1087	f	\N	1
+6999	7	\N	\N	655	1	1	\N	614	f	\N	2
+6256	7	\N	\N	561	1	1	\N	14	t	\N	6
+7000	0	\N	\N	656	1	2	(BOSC PEARS), cored and peeled	157	f	\N	0
+7001	6	\N	\N	656	1	2	\N	123	f	\N	1
+7002	0	\N	\N	656	2	1	\N	552	f	\N	2
+7003	6	\N	\N	656	2	1	\N	39	f	\N	3
+7004	6	\N	\N	656	4	1	(BOURBON CARAMEL SAUCE)	748	f	\N	4
+7005	6	\N	\N	656	2	1	\N	546	t	\N	5
 \.
 
 
@@ -13221,9 +13267,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	\N	562	3	0
 3434	Remove from the oven, top with the chopped green onion, and serve.	\N	562	4	0
 3380	Clear a circle in the center of the pan and pour in beaten eggs. Stir to scramble the eggs and then combine with the other ingredients. Season with salt and pepper to taste.	\N	541	2	4
+3426	Preheat the oven to 375°F.	\N	561	0	2
+3427	Rub 1 tablespoon of olive oil over the whole beets and roast in the oven for 40 minutes to 1 hour, until just tender when pierced. Set aside to cool for 10 minutes.	\N	561	1	2
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0	0
-3428	Toss the tomatoes with the basil, remaining 1 tablespoon of olive oil, garlic, and balsamic vinegar in a salad bowl.	\N	561	2	0
-3429	Peel and chop the cooked beets and add to the salad bowl, tossing to coat with the dressing.	\N	561	3	0
 3406	Add the garlic, and cook for 1 minute, until fragrant.	\N	554	2	4
 924	Pour the lentils into a big pot and add water. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling.	\N	1	0	0
 2917	Turn the broiler on to medium-high.	\N	321	0	16
@@ -13235,11 +13281,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3451	Add the vinaigrette to the turkey mixture and toss to combine.	\N	567	2	0
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	\N	123	1	0
 3407	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	\N	554	3	0
+3428	Toss the tomatoes with the basil, remaining 1 tablespoon of olive oil, garlic, and balsamic vinegar in a salad bowl.	\N	561	2	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	\N	530	0	0
 3345	On a large serving platter, layer the sliced meat, spinach and avocado with the salsa.	\N	530	1	0
-3426	Preheat the oven to 375°F.	\N	561	0	0
-3427	Rub 1 tablespoon of olive oil over the whole beets and roast in the oven for 40 minutes to 1 hour, until just tender when pierced, set aside to cool for 10 minutes.	\N	561	1	0
 3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	\N	541	1	4
+3429	Peel and chop the cooked beets and add to the salad bowl, tossing to coat with the dressing.	\N	561	3	0
 2913	Add extra virgin olive oil to a large skillet over heat that's just a touch above medium. Add sweet potatoes and shallots then saute for 4-5 minutes, or until potatoes are just starting to turn tender. Add chorizo then turn heat up slightly and saute until cooked through, breaking chorizo up as it cooks.	\N	319	0	0
 2914	Add black beans, chicken broth, and salsa verde to the skillet then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15-18 minutes, adding a splash more chicken broth near the end if needed. Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	\N	319	1	0
 3008	Preheat oven to 400° F.	\N	378	0	0
@@ -13769,6 +13815,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3798	In a medium bowl, whisk together the egg yolks, 1/4 cup of Parmesan, and the pepper. Whisk 2 tablespoons of the water from the pasta pot into the egg yolk mixture.	\N	654	2	0
 3799	Drain the pasta and immediately add it to the bowl with the egg yolks. As soon as the pasta goes in the bowl, stir it with a set of tongs until the sauce is creamy. Add the pancetta along with 1 teaspoon of fat from the pan and continue to stir for another minute.	\N	654	3	0
 3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	\N	654	4	0
+3801	Combine all three. Serve and enjoy.	\N	655	0	0
+3802	In a medium pot, combine the pears, water, cinnamon stick, and honey. Bring to a boil over high heat, then turn the heat to low, cover, and simmer for 15 to 20 minutes, until the pears are tender.	\N	656	0	0
+3803	Take the pears out of the liquid and let them cool.	\N	656	1	0
+3804	Increase the heat under the pot to medium-high and cook until the liquid is as thick as pancake syrup, about 8 to 10 minutes. Discard the cinnamon stick and stir the caramel sauce into the reduced liquid.	\N	656	2	0
+3805	Scoop the ice cream and place it in a bowl beside the pear. Pour the caramel sauce over the pears and ice cream and serve.	\N	656	3	0
 \.
 
 
@@ -13814,7 +13865,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14307, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14343, true);
 
 
 --
