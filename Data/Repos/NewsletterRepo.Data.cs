@@ -33,6 +33,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);
@@ -62,6 +63,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);
@@ -91,6 +93,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);
@@ -120,6 +123,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);
@@ -149,6 +153,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);
@@ -178,6 +183,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);
@@ -207,6 +213,7 @@ public partial class NewsletterRepo
             })
             .WithSelectionOptions(options =>
             {
+                options.IncludeSkippedRecipes = newsletterContext.IsBackfill;
                 options.Randomized = newsletterContext.IsBackfill;
                 // Scale serving-adjustable prep recipes.
                 options.AddScaleRecipes(exclude);

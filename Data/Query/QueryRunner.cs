@@ -93,8 +93,18 @@ public class QueryRunner(Section section)
 
         if (!UserOptions.IgnoreIgnored)
         {
-            // Don't grab recipes that the user wants to ignore.
-            query = query.Where(vm => vm.UserRecipe.IgnoreUntil.HasValue != true);
+            // Including skipped recipes for past feasts.
+            if (!SelectionOptions.IncludeSkippedRecipes)
+            {
+                // Don't grab recipes that the user wants to ignore.
+                query = query.Where(vm => vm.UserRecipe.IgnoreUntil.HasValue != true);
+            }
+            else
+            {
+                // Don't grab recipes that the user wants to ignore.
+                query = query.Where(vm => vm.UserRecipe.IgnoreUntil != DateOnly.MaxValue);
+            }
+
             // It's faster to check for ignored recipe ingredients where we check for allergens.
             //-Don't grab recipes that use ingredients that the user wants to ignore. 
             //.Where(vm => vm.RecipeIngredients.All(ri => ri.Optional || ri.UserIngredient!.Ignore != true))

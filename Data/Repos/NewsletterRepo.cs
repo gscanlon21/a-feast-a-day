@@ -204,6 +204,8 @@ public partial class NewsletterRepo
                 })
                 .WithSelectionOptions(options =>
                 {
+                    // Include skipped recipes in the old feasts. Enable skipping for the current week.
+                    options.IncludeSkippedRecipes = newsletter.Date != user.StartOfWeekOffset;
                     // Scale serving-adjustable prep recipes.
                     options.AddScaleRecipes(recipes);
                 })

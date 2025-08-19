@@ -12,6 +12,8 @@ public class SelectionOptions : IOptions
     /// </summary>
     public bool Randomized { get; set; } = false;
 
+    public bool IncludeSkippedRecipes { get; set; } = false;
+
     public HashSet<QueryResults> PrepRecipes { get; set; } = [];
 
     /// <summary>
