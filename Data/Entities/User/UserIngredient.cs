@@ -1,6 +1,5 @@
 ﻿using Core.Models.User;
 using Data.Entities.Recipe;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -32,7 +31,7 @@ public class UserRecipeIngredient
 
     public int? SubstituteIngredientId { get; set; }
 
-    
+
     public string? Notes { get; set; }
 
     [Required]

@@ -62,7 +62,7 @@ public static class EnumerableExtensions
         };
     }
 
-    public static IOrderedEnumerable<T> OrderBy<T, TKey>(this IEnumerable<T> list, Func<T, TKey> keySelector, NullOrder nullOrder)
+    public static IOrderedEnumerable<T> OrderBy<T, TKey>(this IEnumerable<T> list, Func<T, TKey?> keySelector, NullOrder nullOrder)
         where TKey : class
     {
         return nullOrder switch
@@ -73,7 +73,7 @@ public static class EnumerableExtensions
         };
     }
 
-    public static IOrderedEnumerable<T> ThenBy<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey> keySelector, NullOrder nullOrder)
+    public static IOrderedEnumerable<T> ThenBy<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey?> keySelector, NullOrder nullOrder)
         where TKey : class
     {
         return nullOrder switch
@@ -84,7 +84,7 @@ public static class EnumerableExtensions
         };
     }
 
-    public static IOrderedEnumerable<T> OrderByDescending<T, TKey>(this IEnumerable<T> list, Func<T, TKey> keySelector, NullOrder nullOrder)
+    public static IOrderedEnumerable<T> OrderByDescending<T, TKey>(this IEnumerable<T> list, Func<T, TKey?> keySelector, NullOrder nullOrder)
         where TKey : class
     {
         return nullOrder switch
@@ -95,7 +95,7 @@ public static class EnumerableExtensions
         };
     }
 
-    public static IOrderedEnumerable<T> ThenByDescending<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey> keySelector, NullOrder nullOrder)
+    public static IOrderedEnumerable<T> ThenByDescending<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey?> keySelector, NullOrder nullOrder)
         where TKey : class
     {
         return nullOrder switch
@@ -106,7 +106,7 @@ public static class EnumerableExtensions
         };
     }
 
-    internal class ClassComparer<T> : IComparer<T> where T : class
+    internal class ClassComparer<T> : IComparer<T?> where T : class
     {
         public static ClassComparer<T> Larger => new ClassComparer<T>(true);
         public static ClassComparer<T> Smaller => new ClassComparer<T>(false);

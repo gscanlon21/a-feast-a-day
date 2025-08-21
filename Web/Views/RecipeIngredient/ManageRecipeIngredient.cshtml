@@ -87,7 +87,7 @@
                     <div class="col">
                         <label asp-for="UserRecipeIngredient.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Measure)</label>
                         <select asp-for="UserRecipeIngredient.Measure" class="form-control" aria-describedby="measure-help"
-                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).AsSelectListItems())">
+                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).Cast<Measure?>().Prepend(null).AsSelectListItems(nullValueText: "Default"))">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.Measure" class="text-danger"></span>
                         <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.Measure)</span>

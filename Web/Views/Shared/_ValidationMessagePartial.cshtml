@@ -38,6 +38,11 @@ else if (Model.WasUpdated == true || TempData[TempData_User.SuccessMessage] != n
             if (event.persisted) {
                 window.location.reload();
             }
+
+            // Remove the WasUpdated param so it doesn't flip.
+            const params = new URLSearchParams(location.search);
+            params.delete('wasUpdated'); params.delete('WasUpdated');
+            history.replaceState({}, document.title, `${location.pathname}?${params}`);
         };
     </script>
 }
