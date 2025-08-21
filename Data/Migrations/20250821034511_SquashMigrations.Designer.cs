@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20250720045944_SquashMigrations")]
+    [Migration("20250821034511_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.7")
+                .HasAnnotation("ProductVersion", "9.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -474,10 +474,14 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("QuantityDenominator")
-                        .HasColumnType("integer");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
 
                     b.Property<int>("QuantityNumerator")
-                        .HasColumnType("integer");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
 
                     b.Property<int>("RecipeId")
                         .HasColumnType("integer");
@@ -715,13 +719,17 @@ namespace Data.Migrations
                     b.Property<bool>("Ignore")
                         .HasColumnType("boolean");
 
+                    b.Property<int?>("Measure")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<double>("Scale")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("double precision")
-                        .HasDefaultValue(1.0);
+                    b.Property<int?>("QuantityDenominator")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("QuantityNumerator")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("SubstituteIngredientId")
                         .HasColumnType("integer");

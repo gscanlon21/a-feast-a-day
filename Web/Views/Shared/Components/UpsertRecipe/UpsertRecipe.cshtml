@@ -177,7 +177,7 @@
                     <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" />
                     <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Id" />
 
-                    <div class="row">
+                    <div class="row row-gap-1 my-2">
                         <div class="col-auto">
                             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator)</label>
                             <div><span asp-validation-for="Recipe.RecipeIngredients[id].QuantityNumerator" class="text-danger"></span></div>
@@ -206,17 +206,17 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col">
+                    <div class="row row-gap-1 mb-2">
+                        <div class="col-md">
                             <label asp-for="Recipe.RecipeIngredients[id].IngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientId)</label>
-                            <select asp-for="Recipe.RecipeIngredients[id].IngredientId" asp-items="@Model.IngredientSelect" class="form-control searchable" aria-describedby="ingredient-help"></select>
+                            <select asp-for="Recipe.RecipeIngredients[id].IngredientId" asp-items="@Model.IngredientSelect" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-help"></select>
                             <span asp-validation-for="Recipe.RecipeIngredients[id].IngredientId" class="text-danger"></span>
                             <span id="ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].IngredientId)</span>
                         </div>
 
-                        <div class="col">
+                        <div class="col-md">
                             <label asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].IngredientRecipeId)</label>
-                            <select asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" asp-items="@Model.RecipeSelect" class="form-control searchable" aria-describedby="ingredient-recipe-help"></select>
+                            <select asp-for="Recipe.RecipeIngredients[id].IngredientRecipeId" asp-items="@Model.RecipeSelect" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-recipe-help"></select>
                             <span asp-validation-for="Recipe.RecipeIngredients[id].IngredientRecipeId" class="text-danger"></span>
                             <span id="ingredient-recipe-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].IngredientRecipeId)</span>
                         </div>
@@ -291,7 +291,7 @@
             @for (int id = 0; id < Model.Recipe.Instructions.Count; id++)
             {
                 var userInstruction = Model.Recipe.Instructions[id];
-                <div id="custom-instruction-@id" class="custom-instruction mb-3 @(userInstruction.Hide ? "d-none" : "")" data-day="@id">
+                <div id="custom-instruction-@id" class="custom-instruction my-2 @(userInstruction.Hide ? "d-none" : "")" data-day="@id">
                     <input id="hide-instruction-input-@id" type="hidden" asp-for="Recipe.Instructions[id].Hide" />
                     <input type="hidden" asp-for="Recipe.Instructions[id].Order" value="@id" />
                     <input type="hidden" asp-for="Recipe.Instructions[id].Id" />

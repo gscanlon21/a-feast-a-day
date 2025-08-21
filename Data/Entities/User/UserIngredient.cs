@@ -1,4 +1,5 @@
-﻿using Data.Entities.Recipe;
+﻿using Core.Models.User;
+using Data.Entities.Recipe;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,21 +20,19 @@ public class UserRecipeIngredient
     [Required]
     public int RecipeIngredientId { get; set; }
 
-    [DefaultValue(RecipeConsts.IngredientScaleDefault)]
-    [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    public double Scale { get; set; } = RecipeConsts.IngredientScaleDefault;
 
-    public int? SubstituteIngredientId { get; set; }
+    public Measure? Measure { get; set; }
+
+    public int? QuantityNumerator { get; set; }
+
+    public int? QuantityDenominator { get; set; }
+
 
     public int? SubstituteRecipeId { get; set; }
 
-    // More granular fine tuning of substitutions?
-    // I'm leaving these disabled for now because it complicates things
-    // ... when taking into account recipe serving size adjustments.
-    //public int? SubstituteQuantityDenominator { get; set; }
-    //public int? SubstituteQuantityNumerator { get; set; }
-    //public Measure SubstituteMeasure { get; set; }
+    public int? SubstituteIngredientId { get; set; }
 
+    
     public string? Notes { get; set; }
 
     [Required]

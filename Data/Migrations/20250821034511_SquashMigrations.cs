@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -386,8 +387,8 @@ namespace Data.Migrations
                     RecipeId = table.Column<int>(type: "integer", nullable: false),
                     IngredientId = table.Column<int>(type: "integer", nullable: true),
                     IngredientRecipeId = table.Column<int>(type: "integer", nullable: true),
-                    QuantityNumerator = table.Column<int>(type: "integer", nullable: false),
-                    QuantityDenominator = table.Column<int>(type: "integer", nullable: false),
+                    QuantityNumerator = table.Column<int>(type: "integer", nullable: false, defaultValue: 1),
+                    QuantityDenominator = table.Column<int>(type: "integer", nullable: false, defaultValue: 1),
                     Order = table.Column<int>(type: "integer", nullable: false),
                     Optional = table.Column<bool>(type: "boolean", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
@@ -535,9 +536,11 @@ namespace Data.Migrations
                 {
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     RecipeIngredientId = table.Column<int>(type: "integer", nullable: false),
-                    Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
-                    SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
+                    Measure = table.Column<int>(type: "integer", nullable: true),
+                    QuantityNumerator = table.Column<int>(type: "integer", nullable: true),
+                    QuantityDenominator = table.Column<int>(type: "integer", nullable: true),
                     SubstituteRecipeId = table.Column<int>(type: "integer", nullable: true),
+                    SubstituteIngredientId = table.Column<int>(type: "integer", nullable: true),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     Ignore = table.Column<bool>(type: "boolean", nullable: false)
                 },

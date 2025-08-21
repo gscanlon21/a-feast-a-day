@@ -61,11 +61,47 @@
                 @if (Model.User.IsDemoUser)
                 {
                     <div class="alert alert-info callout">
+                        Fine-tune the quantities of ingredients.
+                    </div>
+                }
+
+                <div class="row my-3">
+                    <div class="col-auto">
+                        <label class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.QuantityNumerator)</label>
+                        <div><span asp-validation-for="UserRecipeIngredient.QuantityNumerator" class="text-danger"></span></div>
+                        <div><span asp-validation-for="UserRecipeIngredient.QuantityDenominator" class="text-danger"></span></div>
+                        <div class="row gx-2">
+                            <div class="col-auto">
+                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator))" type="number" asp-for="UserRecipeIngredient.QuantityNumerator" style="width:5ch;height:fit-content;" />
+                            </div>
+                            <div class="col-auto px-0">
+                                <span>/</span>
+                            </div>
+                            <div class="col-auto">
+                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityDenominator))" type="number" asp-for="UserRecipeIngredient.QuantityDenominator" style="width:5ch;height:fit-content;" />
+                            </div>
+                        </div>
+                        <div id="@Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator)-help" class="form-text"></div>
+                    </div>
+
+                    <div class="col">
+                        <label asp-for="UserRecipeIngredient.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Measure)</label>
+                        <select asp-for="UserRecipeIngredient.Measure" class="form-control" aria-describedby="measure-help"
+                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).AsSelectListItems())">
+                        </select>
+                        <span asp-validation-for="UserRecipeIngredient.Measure" class="text-danger"></span>
+                        <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.Measure)</span>
+                    </div>
+                </div>
+
+                @if (Model.User.IsDemoUser)
+                {
+                    <div class="alert alert-info callout">
                         Substitute ingredients with similar ingredients or your own custom recipes.
                     </div>
                 }
 
-                <div class="row row-gap-2 my-3">
+                <div class="row row-gap-2 mb-3">
                     <div class="col-md">
                         <label asp-for="UserRecipeIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteIngredientId)</label>
                         <select asp-for="UserRecipeIngredient.SubstituteIngredientId" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-help"
@@ -82,22 +118,6 @@
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.SubstituteRecipeId" class="text-danger"></span>
                         <span id="ingredient-recipe-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.SubstituteRecipeId)</span>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="UserRecipeIngredient.Scale" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Scale)</label>
-                    <div style="display:flex;column-gap:1ch;">
-                        <output name="scale" for="@Html.IdFor(_ => Model.UserRecipeIngredient.Scale)">@Model.UserRecipeIngredient.Scale</output>
-                        <div style="display:flex;width:100%;">
-                            <input asp-for="UserRecipeIngredient.Scale" type="range" style="width:100%;" aria-describedby="scale-help"
-                                   min="@RecipeConsts.IngredientScaleMin" max="@RecipeConsts.IngredientScaleMax" step="@RecipeConsts.IngredientScaleStep"
-                                   oninput="scale.value = this.valueAsNumber" />
-                        </div>
-                    </div>
-                    <span asp-validation-for="UserRecipeIngredient.Scale" class="text-danger"></span>
-                    <div id="scale-help" class="form-text">
-                        <p>@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.Scale)</p>
                     </div>
                 </div>
 

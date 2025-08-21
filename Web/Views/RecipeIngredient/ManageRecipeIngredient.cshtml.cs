@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
+using Core.Models.User;
 using Data.Entities.User;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -54,16 +55,24 @@ public class UserRecipeIngredientViewModel : IValidatableObject
     public UserRecipeIngredientViewModel(UserRecipeIngredient userRecipeIngredient)
     {
         Notes = userRecipeIngredient.Notes;
-        Scale = userRecipeIngredient.Scale;
         Ignore = userRecipeIngredient.Ignore;
-        SubstituteRecipeId = userRecipeIngredient.SubstituteRecipeId;
+        Measure = userRecipeIngredient.Measure;
+        QuantityNumerator = userRecipeIngredient.QuantityNumerator;
+        QuantityDenominator = userRecipeIngredient.QuantityDenominator;
         SubstituteIngredientId = userRecipeIngredient.SubstituteIngredientId;
+        SubstituteRecipeId = userRecipeIngredient.SubstituteRecipeId;
     }
 
-    [DefaultValue(RecipeConsts.IngredientScaleDefault)]
-    [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    [Display(Name = "Scale")]
-    public double Scale { get; set; } = RecipeConsts.IngredientScaleDefault;
+    [Display(Name = "Measure")]
+    public Measure? Measure { get; set; }
+
+    [Display(Name = "Quantity")]
+    [Range(RecipeConsts.QuantityNumeratorMin, RecipeConsts.QuantityNumeratorMax)]
+    public int? QuantityNumerator { get; set; }
+
+    [Display(Name = "Quantity")]
+    [Range(RecipeConsts.QuantityDenominatorMin, RecipeConsts.QuantityDenominatorMax)]
+    public int? QuantityDenominator { get; set; }
 
     [Display(Name = "Substitute Ingredient")]
     public int? SubstituteIngredientId { get; set; }
@@ -81,6 +90,21 @@ public class UserRecipeIngredientViewModel : IValidatableObject
         if (SubstituteIngredientId.HasValue == true && SubstituteRecipeId.HasValue == true)
         {
             yield return new ValidationResult($"Both Substitute Ingredient and Substitute Recipe cannot have values.", [nameof(UserRecipeIngredient)]);
+        }
+
+        if (QuantityNumerator.HasValue && !QuantityDenominator.HasValue)
+        {
+            yield return new ValidationResult($"Quantity's denominator must have a value if Quantity's numerator is set.", [nameof(QuantityDenominator)]);
+        }
+
+        if (QuantityDenominator.HasValue && !QuantityNumerator.HasValue)
+        {
+            yield return new ValidationResult($"Quantity's numerator must have a value if Quantity's denominator is set.", [nameof(QuantityNumerator)]);
+        }
+
+        if (QuantityNumerator.HasValue && QuantityDenominator.HasValue && !Measure.HasValue)
+        {
+            yield return new ValidationResult($"Measure must have a value if Quantity is set.", [nameof(QuantityNumerator)]);
         }
     }
 }

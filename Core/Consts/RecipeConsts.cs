@@ -18,4 +18,12 @@ public class RecipeConsts
     public const double IngredientScaleStep = 0.1;
     public const double IngredientScaleDefault = 1.0;
     public const double IngredientScaleMax = 2.0;
+
+    public const int QuantityNumeratorMin = 1;
+    public const int QuantityNumeratorDefault = 1;
+    public const int QuantityNumeratorMax = 1000;
+
+    public const int QuantityDenominatorMin = 1;
+    public const int QuantityDenominatorDefault = 1;
+    public const int QuantityDenominatorMax = 16;
 }

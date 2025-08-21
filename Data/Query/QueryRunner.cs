@@ -48,7 +48,10 @@ public class QueryRunner(Section section)
     private class IngredientUserIngredient
     {
         public double Scale { get; init; } = 1;
-        public Ingredient Ingredient { get; init; } = null!;
+        public Measure? Measure { get; init; }
+        public int? QuantityNumerator { get; init; }
+        public int? QuantityDenominator { get; init; }
+        public required Ingredient Ingredient { get; init; } = null!;
     }
 
     public required UserOptions UserOptions { get; init; }
@@ -194,11 +197,11 @@ public class QueryRunner(Section section)
                             recipeIngredient.Ingredient = null;
 
                             // Only scale the ingredient recipe if it is not going to fallback to an ingredient.
-                            if (recipeIngredient.UserRecipeIngredient?.Scale != null && recipeIngredient.UserRecipeIngredient.Scale != RecipeConsts.IngredientScaleDefault)
+                            if (recipeIngredient.UserRecipeIngredient?.Measure.HasValue == true)
                             {
-                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(recipeIngredient.UserRecipeIngredient.Scale));
-                                recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
-                                recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
+                                recipeIngredient.Measure = recipeIngredient.UserRecipeIngredient.Measure.Value;
+                                recipeIngredient.QuantityNumerator = recipeIngredient.UserRecipeIngredient.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
+                                recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
                             }
 
                             finalRecipeIngredients.Add(recipeIngredient);
@@ -225,20 +228,28 @@ public class QueryRunner(Section section)
                             recipeIngredient.Ingredient = substitution?.Ingredient;
                             recipeIngredient.UserRecipeIngredient = null;
 
-                            if (substitution != null)
+                            // If we substituted in a system alternative ingredient.
+                            if (substitution != null && substitution.Scale != RecipeConsts.IngredientScaleDefault)
                             {
                                 // Scale the substitution using the user's preferences or the alternative ingredient's scale.
                                 var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(substitution.Scale));
                                 recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
                                 recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
                             }
+                            // Else if we substituted in a user substitution.
+                            else if (substitution != null && substitution.Measure.HasValue)
+                            {
+                                recipeIngredient.Measure = substitution.Measure.Value;
+                                recipeIngredient.QuantityNumerator = substitution.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
+                                recipeIngredient.QuantityDenominator = substitution.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
+                            }
                         }
                         // If this ingredient isn't being swapped (which may use its own scale), then scale the ingredient according to the user's preferences.
-                        else if (recipeIngredient.UserRecipeIngredient?.Scale != null && recipeIngredient.UserRecipeIngredient.Scale != RecipeConsts.IngredientScaleDefault)
+                        else if (recipeIngredient.UserRecipeIngredient?.Measure.HasValue == true)
                         {
-                            var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(recipeIngredient.UserRecipeIngredient.Scale));
-                            recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
-                            recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
+                            recipeIngredient.Measure = recipeIngredient.UserRecipeIngredient.Measure.Value;
+                            recipeIngredient.QuantityNumerator = recipeIngredient.UserRecipeIngredient.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
+                            recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
                         }
 
                         // Filter out optional ingredients that the user ignored or has allergens for.
@@ -441,7 +452,9 @@ public class QueryRunner(Section section)
                 ri.Id,
                 ri.RecipeId,
                 ri.Ingredient,
-                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).Scale,
+                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).Measure,
+                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).QuantityNumerator,
+                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).QuantityDenominator,
                 ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
             })
             .Select(ri => new
@@ -449,8 +462,10 @@ public class QueryRunner(Section section)
                 ri.Id,
                 SubIngredient = ri.SubstituteIngredient == null ? null : new IngredientUserIngredient()
                 {
-                    Scale = ri.Scale,
+                    Measure = ri.Measure,
                     Ingredient = ri.SubstituteIngredient,
+                    QuantityNumerator = ri.QuantityNumerator,
+                    QuantityDenominator = ri.QuantityDenominator,
                 },
                 AltsIngredient = ri.Ingredient.Alternatives.Select(ia => new IngredientUserIngredient()
                 {

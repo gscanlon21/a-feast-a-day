@@ -1,6 +1,7 @@
 ﻿using Core.Models.User;
 using Data.Entities.User;
 using Fractions;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -19,6 +20,7 @@ public class RecipeIngredient
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Required]
     [Display(Name = "Recipe")]
     public int RecipeId { get; init; }
 
@@ -28,14 +30,20 @@ public class RecipeIngredient
     [Display(Name = "or Recipe")]
     public int? IngredientRecipeId { get; init; }
 
-    [Range(1, 1000), Display(Name = "Quantity")]
-    public int QuantityNumerator { get; set; } = 1;
+    [Display(Name = "Quantity")]
+    [Required, DefaultValue(RecipeConsts.QuantityNumeratorDefault)]
+    [Range(RecipeConsts.QuantityNumeratorMin, RecipeConsts.QuantityNumeratorMax)]
+    public int QuantityNumerator { get; set; } = RecipeConsts.QuantityNumeratorDefault;
 
-    [Range(1, 16), Display(Name = "Quantity")]
-    public int QuantityDenominator { get; set; } = 1;
+    [Display(Name = "Quantity")]
+    [Required, DefaultValue(RecipeConsts.QuantityDenominatorDefault)]
+    [Range(RecipeConsts.QuantityDenominatorMin, RecipeConsts.QuantityDenominatorMax)]
+    public int QuantityDenominator { get; set; } = RecipeConsts.QuantityDenominatorDefault;
 
+    [Required]
     public int Order { get; set; }
 
+    [Required]
     public bool Optional { get; set; }
 
     [Required]

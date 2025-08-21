@@ -162,9 +162,11 @@ public class RecipeIngredientController : ViewController
         }
 
         existingUserRecipeIngredient.Notes = viewModel.Notes;
-        existingUserRecipeIngredient.Scale = viewModel.Scale;
-        existingUserRecipeIngredient.SubstituteRecipeId = viewModel.SubstituteRecipeId;
+        existingUserRecipeIngredient.Measure = viewModel.Measure;
+        existingUserRecipeIngredient.QuantityNumerator = viewModel.QuantityNumerator;
+        existingUserRecipeIngredient.QuantityDenominator = viewModel.QuantityDenominator;
         existingUserRecipeIngredient.SubstituteIngredientId = viewModel.SubstituteIngredientId;
+        existingUserRecipeIngredient.SubstituteRecipeId = viewModel.SubstituteRecipeId;
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipeIngredient), new { email, token, recipeIngredientId, wasUpdated = true });
