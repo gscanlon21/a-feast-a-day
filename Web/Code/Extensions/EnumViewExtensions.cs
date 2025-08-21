@@ -55,7 +55,8 @@ public static class EnumViewExtensions
 
         return orderedValues.Select(v => new SelectListItem()
         {
-            Value = v == null ? null : Convert.ToInt64(v).ToString(),
+            // Need to use an empty string so it posts null and not the name.
+            Value = v == null ? string.Empty : Convert.ToInt64(v).ToString(),
             Text = v == null ? nullValueText : v.GetSingleDisplayNameOrNull().NullIfEmpty() ?? noValueText,
             Selected = selectedValue.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(selectedValue) : !v.HasValue,
         })
