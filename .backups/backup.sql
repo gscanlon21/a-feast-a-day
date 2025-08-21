@@ -3862,7 +3862,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 6190	177	1984	\N	\N	3	13.6
 6192	177	2047	\N	\N	3	122.4
 7140	160	2047	\N	\N	3	120
-7527	201	2047	\N	\N	3	100
 7528	229	2047	\N	\N	3	5
 8856	342	68719476736	\N	\N	2	5
 8857	342	34359738368	\N	\N	2	63
@@ -3880,6 +3879,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 8933	631	1	\N	\N	3	1
 8934	631	4294967296	\N	\N	2	199
 8935	631	48	\N	\N	3	1
+7527	201	2047	\N	\N	3	78
 8936	631	14	\N	\N	3	7
 8937	631	1984	\N	\N	3	2
 7888	281	2047	\N	\N	3	11
@@ -9146,6 +9146,39 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14341	547	14	\N	\N	3	2
 14342	547	1984	\N	\N	3	3
 14343	547	62	\N	\N	3	2
+14344	201	128	\N	\N	3	1
+14345	201	68719476736	\N	\N	2	81
+14346	201	34359738368	\N	\N	2	100
+14347	201	2	\N	\N	3	1
+14348	201	1	\N	\N	3	4
+14349	201	4294967296	\N	\N	2	5
+14350	201	2199023255552	\N	\N	2	0.3
+14351	201	48	\N	\N	3	1
+14352	201	14	\N	\N	3	5
+14353	201	1984	\N	\N	3	5
+14354	201	62	\N	\N	3	5
+14355	408	68719476736	\N	\N	2	6
+14356	408	34359738368	\N	\N	2	15
+14357	408	2	\N	\N	3	10
+14358	408	1	\N	\N	3	0.1
+14359	408	4294967296	\N	\N	2	4
+14360	408	2199023255552	\N	\N	2	0.1
+14361	408	48	\N	\N	3	0.2
+14362	408	14	\N	\N	3	14
+14363	408	62	\N	\N	3	14
+14364	408	2047	\N	\N	3	56
+14365	466	128	\N	\N	3	0.1
+14366	466	68719476736	\N	\N	2	13
+14367	466	34359738368	\N	\N	2	263
+14368	466	2	\N	\N	3	36
+14369	466	1	\N	\N	3	1
+14370	466	4294967296	\N	\N	2	28
+14371	466	2199023255552	\N	\N	2	1
+14372	466	48	\N	\N	3	1
+14373	466	14	\N	\N	3	37
+14374	466	1984	\N	\N	3	0.3
+14375	466	62	\N	\N	3	37
+14376	466	2047	\N	\N	3	152
 \.
 
 
@@ -9886,9 +9919,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3275	4	\N	\N	164	1	4	\N	567	f	\N	6
 3276	4	\N	\N	164	1	1	\N	13	t	\N	7
 3277	7	\N	\N	164	1	2	\N	518	t	\N	8
-3414	0	\N	\N	92	1	4	, finely chopped	5	f	\N	1
+3414	0	\N	\N	92	1	2	, finely chopped	5	f	\N	1
 3415	0	\N	\N	92	1	1	, finely chopped	225	t	\N	2
-3416	7	\N	\N	92	1	2	\N	77	f	\N	3
+3416	7	\N	\N	92	1	1	\N	77	f	\N	3
 3929	4	\N	\N	197	1	2	, trimmed	497	f	\N	7
 3417	0	\N	\N	92	1	1	, juiced	4	f	\N	4
 3418	8	\N	\N	92	1	1	\N	73	t	\N	5
@@ -9955,10 +9988,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5220	0	\N	\N	311	1	12	\N	868	f	\N	3
 3425	8	\N	\N	44	1	1	\N	34	f	\N	2
 3426	8	\N	\N	44	1	1	\N	77	f	\N	3
-2914	0	\N	\N	152	1	12	\N	19	f	\N	0
-2915	7	\N	\N	152	1	6	\N	278	f	\N	1
+2914	4	\N	\N	152	1	8	\N	19	f	\N	0
+2915	7	\N	\N	152	1	2	\N	278	f	\N	1
 2916	0	\N	\N	152	1	1	, juiced	4	f	\N	2
-2917	0	\N	\N	152	1	2	, cut into very thin slivers	5	f	\N	3
+2917	0	\N	\N	152	1	1	, cut into very thin slivers	5	f	\N	3
 2918	8	\N	\N	152	8	1	\N	285	f	\N	4
 3427	8	\N	\N	44	8	1	\N	74	t	\N	4
 5344	0	\N	\N	325	2	1	, diced	105	f	\N	4
@@ -10067,13 +10100,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3883	8	\N	\N	133	1	2	\N	62	f	\N	5
 3884	8	\N	\N	133	1	2	\N	36	f	\N	6
 3885	6	\N	\N	133	2	1	\N	14	t	\N	7
-4950	6	\N	\N	184	2	7	\N	145	f	\N	0
 3283	6	\N	\N	88	4	1	\N	62	f	\N	0
 3284	6	\N	\N	88	4	1	\N	312	f	\N	1
 3285	6	\N	\N	88	4	1	\N	313	f	\N	2
 3436	0	\N	\N	173	1	4	\N	113	f	\N	8
 3286	6	\N	\N	88	4	1	\N	123	f	\N	3
-4951	6	\N	\N	184	1	1	\N	392	f	\N	1
 3934	0	\N	\N	198	1	2	\N	9	f	\N	0
 3935	6	\N	\N	198	4	1	, chopped	105	f	\N	1
 3936	0	\N	\N	198	1	1	, juiced	12	f	\N	2
@@ -10084,8 +10115,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5281	0	\N	\N	313	1	2	\N	730	f	\N	2
 5282	0	\N	\N	313	1	1	, 8 oz	824	f	\N	3
 5283	7	\N	\N	313	1	2	\N	321	f	\N	4
-4952	6	\N	\N	184	4	1	, to garnish	14	f	\N	2
-4953	6	\N	\N	184	4	1	, to serve	95	t	\N	3
 4030	7	\N	\N	185	1	3	\N	29	f	\N	11
 4031	8	\N	\N	185	8	1	\N	285	f	\N	12
 3294	0	\N	\N	17	1	2	, beaten	187	f	\N	4
@@ -10098,6 +10127,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5349	0	\N	\N	326	1	1	\N	848	f	\N	2
 5350	4	\N	\N	326	4	3	\N	88	f	\N	3
 5351	7	\N	\N	326	1	2	\N	100	f	\N	4
+4950	4	\N	\N	184	1	8	\N	145	f	\N	0
+4951	4	\N	\N	184	1	6	\N	392	f	\N	1
+4952	7	\N	\N	184	1	2	, to garnish	14	t	\N	2
+4953	7	\N	\N	184	1	2	, to serve	95	t	\N	3
 4954	8	\N	\N	184	8	1	\N	285	f	\N	4
 3554	8	\N	\N	110	1	4	\N	592	f	\N	4
 3886	5	\N	\N	178	1	2	\N	643	f	\N	0
@@ -11902,17 +11935,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6672	8	\N	\N	263	8	1	\N	285	t	\N	5
 6710	0	\N	\N	619	1	10	(JUNIPER BERRIES), crushed	1062	f	\N	7
 6128	8	\N	\N	541	4	1	, to taste	692	t	\N	8
-6692	0	\N	\N	618	1	4	\N	387	f	\N	0
-6693	0	\N	\N	618	1	4	(SLICED SMOKED HAM), halved and rind removed	26	f	\N	1
-6694	0	\N	\N	618	2	7	, thinly sliced	247	f	\N	2
-6695	8	\N	\N	618	1	1	, for coating	38	f	\N	3
-6696	0	\N	\N	618	1	2	, beaten	187	f	\N	4
-6697	6	\N	\N	618	4	3	, dried	18	f	\N	5
-6698	8	\N	\N	618	1	1	\N	503	f	\N	6
-6699	7	\N	\N	618	1	6	\N	29	f	\N	7
-6700	7	\N	\N	618	1	4	\N	77	f	\N	8
-6701	8	\N	\N	618	4	1	, to taste	285	t	\N	9
-6702	6	\N	\N	618	1	1	, to serve	277	t	\N	10
 6711	8	\N	\N	619	4	1	\N	285	t	\N	8
 6712	6	\N	\N	619	1	1	(NOODLES AND GREEN VEGETABLES), to serve	459	t	\N	9
 6713	0	\N	\N	620	1	4	(MIXED-COLOR ROMANO PEPPERS)	811	f	\N	0
@@ -11925,6 +11947,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6506	7	\N	\N	592	1	4	, and/or guacamole	1006	f	\N	8
 6507	6	\N	\N	592	4	1	, chopped	13	t	\N	9
 6508	0	\N	\N	592	1	1	, quartered	12	t	\N	10
+6692	0	\N	\N	618	1	4	\N	387	f	\N	0
+6693	0	\N	\N	618	1	4	, halved and rind removed	1207	f	\N	1
+6694	4	\N	\N	618	2	7	, thinly sliced	247	f	\N	2
+6695	8	\N	\N	618	1	1	, for coating	38	f	\N	3
 6716	0	\N	\N	620	1	10	(SWEET CHERRY PEPPERS), finely chopped	599	f	\N	3
 6717	4	\N	\N	620	1	4	(RICOTTA SALATA)	1002	f	\N	4
 6718	7	\N	\N	620	1	2	, chopped	573	f	\N	5
@@ -12130,16 +12156,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6897	8	\N	\N	642	2	1	(CINNAMON POWDER)	70	f	\N	9
 6898	8	\N	\N	642	8	1	\N	74	f	\N	10
 6899	8	\N	\N	642	1	1	, to taste	80	f	\N	11
-6900	6	\N	\N	643	2	1	\N	1181	f	\N	0
-6901	0	\N	\N	643	1	1	(SMALL CARROT)	353	f	\N	1
-6902	0	\N	\N	643	3	1	\N	9	f	\N	2
-6903	0	\N	\N	643	2	1	\N	150	f	\N	3
-6904	0	\N	\N	643	1	1	(SMALL CUCUMBER)	155	f	\N	4
-6905	7	\N	\N	643	1	2	\N	14	f	\N	5
-6906	6	\N	\N	643	3	2	\N	178	f	\N	6
-6907	8	\N	\N	643	1	1	\N	738	f	\N	7
-6908	6	\N	\N	643	4	1	\N	805	f	\N	8
-6909	8	\N	\N	643	8	1	, to taste	74	t	\N	9
 6910	5	\N	\N	644	1	1	(LEAN BEEF STEAK, BEEF TENDERLOIN, BEEF SIRLOIN), cut into thin strips	326	f	\N	0
 6911	0	\N	\N	644	1	1	, grated and juiced	346	f	\N	1
 6912	7	\N	\N	644	1	1	\N	496	f	\N	2
@@ -12191,6 +12207,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6952	6	\N	\N	647	2	3	\N	\N	f	559	7
 6953	0	\N	\N	647	1	1	, chopped	150	f	\N	8
 6954	6	\N	\N	647	1	2	\N	206	f	\N	9
+6900	6	\N	\N	643	2	1	\N	1181	f	\N	0
 6955	6	\N	\N	647	1	1	, chopped, to garnish	13	t	\N	10
 6956	6	\N	\N	648	1	3	(CASSAVA FLOUR), for the crust	38	f	\N	0
 6957	8	\N	\N	648	1	1	, for the crust	74	f	\N	1
@@ -12207,6 +12224,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6968	4	\N	\N	649	1	12	(CANNED SALMON)	869	f	\N	4
 6969	0	\N	\N	649	2	1	\N	3	f	\N	5
 6970	6	\N	\N	649	4	3	\N	\N	f	556	6
+6696	0	\N	\N	618	1	2	, beaten	187	f	\N	4
+6697	6	\N	\N	618	4	3	, dried	18	f	\N	5
+6698	8	\N	\N	618	1	1	\N	503	f	\N	6
+6699	7	\N	\N	618	1	6	\N	29	f	\N	7
+6700	7	\N	\N	618	1	4	\N	77	f	\N	8
+6701	8	\N	\N	618	4	1	, to taste	285	t	\N	9
 6972	6	\N	\N	650	1	1	, rinsed well	20	f	\N	0
 5923	0	\N	\N	479	1	1	, juiced	4	f	\N	7
 6971	8	\N	\N	479	4	1	, to taste	692	t	\N	9
@@ -12244,6 +12267,39 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7003	6	\N	\N	656	2	1	\N	39	f	\N	3
 7004	6	\N	\N	656	4	1	(BOURBON CARAMEL SAUCE)	748	f	\N	4
 7005	6	\N	\N	656	2	1	\N	546	t	\N	5
+6901	0	\N	\N	643	1	1	\N	1206	f	\N	1
+6902	0	\N	\N	643	3	1	\N	9	f	\N	2
+6903	0	\N	\N	643	2	1	\N	150	f	\N	3
+6904	0	\N	\N	643	1	1	\N	1199	f	\N	4
+6905	7	\N	\N	643	1	2	\N	14	f	\N	5
+6906	6	\N	\N	643	3	2	\N	178	f	\N	6
+6907	8	\N	\N	643	1	1	\N	738	f	\N	7
+6908	6	\N	\N	643	4	1	\N	805	f	\N	8
+6909	8	\N	\N	643	8	1	, to taste	74	t	\N	9
+7006	6	\N	\N	657	1	1	(WHOLE MILK)	665	f	\N	0
+7007	6	\N	\N	657	2	1	\N	669	f	\N	1
+7008	0	\N	\N	657	1	1	, cut up	11	f	\N	2
+7009	7	\N	\N	657	1	2	\N	738	f	\N	3
+7010	6	\N	\N	657	2	1	(YOGURT)	33	f	\N	4
+7011	6	\N	\N	658	1	1	(WHOLE MILK)	665	f	\N	0
+7012	6	\N	\N	658	1	1	(FROZEN MANGO CHUNKS)	789	f	\N	1
+7013	6	\N	\N	658	2	1	, packed	16	f	\N	2
+7014	6	\N	\N	658	2	1	, packed, midribs discarded	372	f	\N	3
+7015	6	\N	\N	658	2	1	(YOGURT)	33	f	\N	4
+6702	6	\N	\N	618	1	1	, to serve	277	t	\N	10
+7023	0	\N	\N	660	1	1	(HOMEADE TURKEY SAUSAGE PATTY), or a cooked breakfast sausage (preferably turkey)	\N	f	312	0
+7024	8	\N	\N	660	1	1	\N	79	f	\N	1
+7025	6	\N	\N	660	4	1	(BLACK BEAN SALSA)	\N	f	312	2
+7026	0	\N	\N	660	1	2	, beaten	187	f	\N	3
+7027	7	\N	\N	660	1	2	, grated	319	f	\N	4
+7028	0	\N	\N	660	1	1	, 12-inch	136	f	\N	5
+7016	6	\N	\N	659	1	1	, peeled, diced	255	f	\N	0
+7017	7	\N	\N	659	1	1	\N	77	f	\N	1
+7018	8	\N	\N	659	8	1	\N	969	f	\N	2
+7019	6	\N	\N	659	4	1	, diced	402	f	\N	3
+7020	6	\N	\N	659	4	1	(BLACK BEAN SALSA)	\N	f	312	4
+7021	0	\N	\N	659	1	2	\N	187	f	\N	5
+7022	7	\N	\N	659	1	2	, grated	319	t	\N	6
 \.
 
 
@@ -12976,20 +13032,19 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2044	Add butter then, once melted, add cooked chicken and rice and then toss to combine. Drizzle in tamari, toss to combine, then serve.	\N	136	3	0
 2299	Heat a non-stick skillet over medium heat.	\N	19	0	0
 3160	Combine the honey through the parsley in a blender or food processor, until combined. Season to taste with salt and pepper.	\N	421	0	384
-2714	Cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	\N	184	0	0
 2464	Drizzle 5ml/t tsp melted butter on to each chicken piece. Place them in the frying pan in an even layer, two or three at a time, and cook for 2-3 minutes, until the underside begins to blacken. Turn the chicken over and cook the other side for 2-3 minutes more. Remove from the pan and keep hot while cooking successive batches. Serve hot with salad leaves and pepper strips.	\N	131	4	0
 2056	Combine all the sausage ingredients, except the flour and oil, in a bowl. Take a small piece of the mixture and fry it in a little oil in a heavy frying pan, then taste to check the seasoning for the batch. Adjust if necessary.	\N	178	0	0
 2057	Form the mixture into chipolata-size sausages using floured hands.	\N	178	1	0
 2058	Heat the oil in a large, heavy frying pan and shallow-fry the sausages for 10 minutes or until they are golden brown and cooked right through.	\N	178	2	0
 2059	If you use a large pan, you'll be able to fry some onion rings alongside the sausages. At the same time, grill (broil) mushrooms and halved tomatoes to serve on the side.	\N	178	3	0
 3260	Combine all ingredients in a large bowl and serve.	\N	478	0	0
-2715	Drain the pasta well, then add it to the bowl of pesto and toss to coat. Serve immediately, garnished with the fresh basil leaves. Hand shaved Parmesan around separately.	\N	184	1	0
 3400	In a blender, add the lemon and orange juice, as well as the coconut water through activated charcoal, and blend for 30 seconds until combined.	\N	552	1	0
 1299	Season with salt and pepper and roast in the preheated oven for 20 minutes.	\N	26	2	0
 3321	Top each with 1-2 cucumber slices and a small sprig of dill, parsley, or cilantro.	\N	48	1	0
 2481	Cut the dates in half (and remove the pits). Add about 1 teaspoon peanut butter (or less, depending on the size of the date) and a generous sprinkle of crushed peanuts. Place the halves back together and form them into a bar shape with your fingers (pressing down to round the corners). 	\N	193	0	0
 2482	Place the chocolate in a liquid measuring cup with the ½ teaspoon coconut oil and heat in 10 second bursts in the microwave until melted. 	\N	193	1	0
 2483	Use 2 forks to dip in each of the dates, then shake off the extra chocolate. Place the dates on a parchment-lined baking sheet. If desired, add a small chocolate drizzle with a fork to the top. Freeze 5 minutes to set, then enjoy. Store refrigerated for up to 2 weeks (allow the dates to come to room temperature for about 15 minutes before enjoying).	\N	193	2	0
+2714	Cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	\N	184	0	0
 2370	Soak cashews in water for at least 2 hours or overnight.	\N	255	0	0
 2371	Place cashews, with their soaking liquid, and remaining ingredients in a food processor or blender and process on high for about 5 minutes. You may need to scrape the sides down intermittently. It’s done when the mixture is completely smooth and no longer tastes grainy.	\N	255	1	0
 2052	Add the chicken to the wok or pan and stir-fry until it changes colour.	\N	133	1	0
@@ -13006,6 +13061,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2051	Heat the oil in a wok or large frying pan. Add the garlic and chilies and stir-fry over a medium heat for 1-2 minutes.	\N	133	0	0
 2054	Stir in the Thai basil leaves.	\N	133	3	0
 2055	Spoon the entire mixture on to a warm serving platter or individual serving dishes and garnish with the sliced chillies and basil leaves.	\N	133	4	0
+2715	Drain the pasta well, then add it to the bowl of pesto and toss to coat. Serve immediately, garnished with the fresh basil leaves. Hand shaved Parmesan around separately.	\N	184	1	0
 2066	Add the sauces and sugar to the wok and cook for a further 2-3 minutes. Add the drained noodles, toss to combine, then remove from the heat, cover and keep warm.	\N	196	2	0
 2067	Dip the chicken strips into the egg white. Combine the rice flour and five-spice powder in a shallow dish and season. Add the chicken strips to the flour mixture and toss to coat.	\N	196	3	0
 2068	Heat about 3.5cm/1½ oil in a clean wok. When hot, shallow-fry the chicken for 3-4 minutes until crisp and golden.	\N	196	4	0
@@ -13616,8 +13672,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3620	Place boneless, skinless chicken breasts in a skillet or saucepan. Add lightly salted water to cover and bring to a boil.	\N	613	0	4
 3623	Serve hot on steamed rice and garnished with sliced green onions.	\N	485	3	0
 3639	Wash the carrots, then finely slice into matchsticks with a good knife or using the julienne cutter on a mandolin (use the guard!). Core and slice the apples the same way, then toss both with the tahini dressing. Taste, season to perfection with salt and black pepper, then scatter over the remaining seeds.	\N	263	2	0
-3644	Slit the chicken breasts about three-quarters of the way through, then open them up and lay them flat. Place a slice of ham on each cut side of the chicken, trimming to fit if necessary so that the ham does not hang over the edge.	\N	618	0	0
-3645	Top with the Gruyère slices, making sure that they are well within the ham slices. Fold over the chicken and reshape, pressing well to seal and ensuring that no cheese is visible.	\N	618	1	0
 3624	Place the eggs in a bowl and mash with a fork. Smaller egg white bits make a creamier filling.	\N	614	0	0
 3625	Add remaining filling ingredients and gently stir to combine.	\N	614	1	0
 3626	Butter the bread and top each slice with a lettuce lead. Divide the filling between 4 pieces of bread and spread evenly edge to edge.	\N	614	2	0
@@ -13642,12 +13696,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3636	Stir in the chocolate chips. Spoon the bread mixture into the 12 muffin cups.	\N	616	2	0
 3637	Transfer to the oven and bake for 22 to 25 minutes until the bread pudding cups are lightly browned and don't jiggle when you shake them.	\N	616	3	2
 3638	Let the bread pudding cool for 5 minutes in the pan, then remove them from the tin. Cool completely before storing in the fridge.	\N	616	4	0
-3646	Spoon the flour for coating into a shallow bowl. Pour the beaten eggs into another shallow bowl, and mix the breadcrumbs with the thyme and seasoning in a third bowl.	\N	618	2	0
-3647	Toss each stuffed breast in the flour, then coat in egg and breadcrumbs, shaking off any excess.	\N	618	3	0
-3648	Place half the butter and half the coil in one pan, and the remaining half measures in the other, and heat separately.	\N	618	4	0
-3649	When the fat stops foaming, gently slide in the coated breasts, two in each pan. Shallow fry over a medium-low heat for about 5 minutes each side, turning over carefully with a spatula. Drain on kitchen paper for a few seconds to soak up the excess fat. Serve immediately with the mixed leaf salad.	\N	618	5	0
 3650	Put the dried mushrooms in a bowl and just cover with hot water. Leave to stand. Bring a small pan of water to the boil and add the garlic cloves. Cook for 10 minutes until soft. Drain, put the garlic in a bowl and set aside.	\N	619	0	0
 3651	Meanwhile, place the pork escalopes on a board, brush with 5ml/1tsp of the vinegar and add a generous and even grinding of salt and black pepper.	\N	619	1	0
+3644	Slit the chicken breasts about three-quarters of the way through, then open them up and lay them flat. Place a slice of ham on each cut side of the chicken, trimming to fit if necessary so that the ham does not hang over the edge.	\N	618	0	0
+3645	Top with the Gruyère slices, making sure that they are well within the ham slices. Fold over the chicken and reshape, pressing well to seal and ensuring that no cheese is visible.	\N	618	1	0
+3646	Spoon the flour for coating into a shallow bowl. Pour the beaten eggs into another shallow bowl, and mix the breadcrumbs with the thyme and seasoning in a third bowl.	\N	618	2	0
+3647	Toss each stuffed breast in the flour, then coat in egg and breadcrumbs, shaking off any excess.	\N	618	3	0
 3652	Melt the butter in a large frying pan. Add the pork and fry quickly until browned on the underside. Turn the meat over and cook for another minute.	\N	619	2	0
 3653	Add the Marsala and rosemary to the pan. Drain the dried mushrooms, saving the juices, and add them to the mixture. Stir in 60ml/4tbsp of the mushroom juices, then add the garlic cloves, juniper berries, and remaining vinegar.	\N	619	3	0
 3654	Simmer the mixture gently for about 3 minutes until the pork is cooked. Season lightly and serve hot with noodles and vegetables.	\N	619	4	0
@@ -13768,7 +13822,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3751	Layer in this order: Spread bean dip. Top with avocado mixture. Spread on sour cream mixture. Sprinkle onions and tomatoes. Cover with cheese and olives.	\N	641	2	0
 3752	Serve immediately with tortilla chips (or chill until you serve).	\N	641	3	0
 3753	In a blender, blend until desired consistency is reached.	\N	642	0	128
-3754	Blend together and enjoy.	\N	643	0	128
 3755	Place the beef strips in a bowl and sprinkle over the orange rind and juice. If possible, leave to marinate for 10 minutes, or up to 30 minutes if you can spare the time.	\N	644	0	0
 3756	Drain the liquid from the meat and set aside, then mix the meat with the soy sauce, cornstarch and ginger, making sure the meat is evenly covered.	\N	644	1	0
 3757	Heat the oil in a wok or large frying pan and add the beef. Stir-fry for 1 minute until lightly colored, then add the carrot strips and stir-fry for another 2-3 minutes.	\N	644	2	0
@@ -13777,7 +13830,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3764	Brush the steaks with a little olive oil and press crushed peppercorns on to both sides.	\N	646	1	0
 3765	Run the cut surface of the garlic over a frying pan. Melt the butter in the remaining oil. When hot, add the steaks and fry quickly, allowing 3(1/2)-4 minutes on each side for medium-rare. Lift out with tongs, place on a serving dish and keep hot while you make the sauce.	\N	646	2	0
 3766	Add the brandy and stock to the pan, boil rapidly until reduced by half, then season with salt and pepper to taste. Slice the chive butter and put a piece on top of each steak. Spoon a little sauce on to each plate. Garnish each steak with a chive bundle and serve with a simple vegetable accompaniment, such as boiled new potatoes.	\N	646	3	0
-1819	Add the lemon juice and parsley and season with salt and pepper to taste. Serve hot with lemon wedges, garnished with flat leaf parsley.	\N	92	2	0
 3090	Slice roast thin and pour sauce over it. Serve with lime wedges and cilantro.	\N	398	3	0
 3759	Season the flour and use to dust the veal, then set the meat aside.	\N	645	0	0
 3760	Heat the oil in a large frying pan and cook the shallot and mushrooms for 5 minutes. Add the escallops and cook over a high heat for about 1(1/2) minutes on each side. Pour in the Marsala or sherry and cook until reduced by half.	\N	645	1	4
@@ -13822,6 +13874,22 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3803	Take the pears out of the liquid and let them cool.	\N	656	1	0
 3804	Increase the heat under the pot to medium-high and cook until the liquid is as thick as pancake syrup, about 8 to 10 minutes. Discard the cinnamon stick and stir the caramel sauce into the reduced liquid.	\N	656	2	0
 3805	Scoop the ice cream and place it in a bowl beside the pear. Pour the caramel sauce over the pears and ice cream and serve.	\N	656	3	0
+3754	Blend together and enjoy.	\N	643	0	128
+3806	In a blender, combine the milk, blueberries, banana, chia seeds, and yogurt and purée until it's the consistency of a thick milkshake.	\N	657	0	0
+3807	In a blender, combine the milk, mango, spinach, kale, and yogurt and purée until it's the consistency of a thick milkshake.	\N	658	0	0
+1819	Add the lemon juice and parsley and season with salt and pepper to taste. Serve hot with lemon wedges, garnished with flat leaf parsley.	\N	92	2	0
+3808	Drain on kitchen paper for a few seconds to soak up the excess fat. Serve immediately with the mixed leaf salad.	\N	618	6	0
+3809	Preheat the oven to 400F.	\N	659	0	0
+3813	Break the sausage patty into 1-inch pieces.	\N	660	0	0
+3814	Warm a nonstick medium skillet over medium heat. Add the oil and the sausage and brown the sausage. Add the salsa and cook for another minute.	\N	660	1	0
+3815	Pour the eggs into the pan and stir for 1 minute. Add the cheddar and cook until the eggs are cooked, about 2 minutes.	\N	660	2	0
+3648	Place half the butter and half the coil in one pan, and the remaining half measures in the other, and heat separately.	\N	618	4	4
+3649	When the fat stops foaming, gently slide in the coated breasts, two in each pan. Shallow fry over a medium-low heat for about 5 minutes each side, turning over carefully with a spatula.	\N	618	5	4
+3810	In a 9-inch ovenproof skillet, combine the sweet potato and olive oil and season with salt and pepper. Toss to combine.	\N	659	1	0
+3811	Transfer to the oven and roast for 15 minutes. Add the chorizo to the pan and bake for another 10 minutes, or until the sweet potatoes soften.	\N	659	2	0
+3812	Take the pan out of the oven and spoon the salsa around evenly. Break the eggs into the pan, top with the cheddar, and bake for another 5 to 10 minutes depending on how you like your eggs. Serve hot.	\N	659	3	0
+3816	Put the egg and sausage mixture in the center of the tortilla, and fold the bottom third of the tortilla up and over the mixture. Fold the two sides of the tortilla into the center and foll forward to seal.	\N	660	3	0
+3817	Serve with sour cream or guacamole.	\N	660	4	0
 \.
 
 
@@ -13867,7 +13935,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14343, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14376, true);
 
 
 --

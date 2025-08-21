@@ -17,7 +17,7 @@ public static class EnumViewExtensions
     /// 
     /// The default value for the enum, 0, will always come first.
     /// </summary>
-    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default, T? selectedValue = default)
+    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default)
         where T : struct, Enum
     {
         return values.Cast<T?>().AsSelectListItems(order: order, defaultValue: defaultValue, selectedValue: selectedValue);

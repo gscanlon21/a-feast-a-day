@@ -52,7 +52,7 @@
 53	\N	Earl Gray Tea	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-04	0	236.56	0
 54	\N	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	4
 55	\N	Pasta Sauce	https://www.eatthismuch.com/calories/pasta-sauce-849	\N	f	0	257	257	2025-03-30	6	257	256
-56	\N	Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
+56	\N	Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
 57	\N	Chickpeas	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
 58	\N	Baked Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
 59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	0	240	240	2024-08-13	6	240	0
@@ -138,7 +138,7 @@
 141	\N	Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2025-08-15	6	80	16288
 142	\N	Porridge Oats	https://www.eatthismuch.com/calories/rolled-oats-5821	\N	f	0	28	80	2025-07-08	4	80	1024
 143	\N	Cumin	https://www.eatthismuch.com/calories/cumin-189	\N	t	0	28	9	2024-11-30	4	144	131072
-144	\N	Green Onions (Scallions)	https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	15	15	2024-10-11	0	150	2
+144	\N	Green Onions	aka: Scallions. https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	15	15	2024-10-11	0	150	2
 145	\N	Fusilli Pasta	https://www.eatthismuch.com/calories/pasta-fusilli-127691	\N	f	262176	28	85	2025-02-17	4	85	4096
 146	\N	Slices of Whole Wheat Rye Bread	https://www.eatthismuch.com/calories/rye-bread-4015	\N	f	32	32	32	2024-12-17	0	64	64
 147	\N	Cherry Tomatoes	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	512	17	85	2024-08-07	0	170	1
@@ -194,7 +194,7 @@
 197	\N	Slices of White Bread, GF	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008	\N	f	0	24	24	2024-09-24	0	48	4
 198	\N	Bologna	https://www.eatthismuch.com/calories/bologna-999	\N	f	0	28	28	2025-05-03	4	224	268435456
 200	\N	Loaves of Whole-Wheat Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
-201	\N	Creamy Peanut Butter (Reduced Fat)	https://www.eatthismuch.com/calories/creamy-reduced-fat-peanut-butter,542598	\N	f	0	17	17	2024-07-30	7	272	0
+201	\N	Creamy Peanut Butter (Reduced Fat)	https://www.eatthismuch.com/calories/peanut-butter-3637	\N	f	2048	15	15	2025-08-21	7	240	128
 202	\N	Mini Bagels, Whole Grain	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	262176	40	40	2025-06-15	6	240	64
 203	\N	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506	\N	f	2	28	28	2024-09-29	4	224	3145728
 204	\N	Hearts of Palm Linguine	https://www.eatthismuch.com/calories/linguine-hearts-of-palm-1846301	\N	f	0	28	75	2024-12-20	4	75	4096
@@ -220,7 +220,7 @@
 226	\N	Yellow Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5522	\N	f	2	28	28	2024-11-10	4	26	2097152
 227	\N	Potato Starch	https://www.eatthismuch.com/food/nutrition/potato-starch,730100/	\N	f	0	13	13	2025-07-10	7	130	16288
 228	\N	Brown Rice Flour	https://www.eatthismuch.com/calories/rice-flour-4847	\N	f	4096	28	158	2024-11-19	4	158	32768
-229	\N	Xanthan Gum	https://www.eatthismuch.com/food/nutrition/xanthan-gum,2997176/	\N	f	0	9	9	2024-07-30	7	144	0
+229	\N	Xanthan Gum	https://www.eatthismuch.com/food/nutrition/xanthan-gum,2997176/	\N	f	0	9	9	2025-08-21	7	144	0
 230	\N	Dry Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/	\N	f	0	244	244	2024-08-02	6	240	0
 231	\N	Garden Veggie Good Thins, GF	Box	\N	f	4096	2	32	2024-08-13	0	224	262144
 232	\N	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679	\N	f	0	28	30	2024-10-21	4	240	8
@@ -292,7 +292,7 @@
 299	\N	White Pepper	https://www.eatthismuch.com/calories/pepper-207	\N	t	0	28	7	2025-01-13	4	112	131072
 300	\N	Coconut Sugar | Granulated Sugar | Honey	https://www.eatthismuch.com/calories/sugar-4644 | https://www.eatthismuch.com/calories/honey-4620	\N	f	0	200	200	2024-10-28	6	200	1792
 301	\N	Chili Garlic Sauce	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	256
-302	\N	Spring Onions	These have a slightly larger bulb at the base then Green Onions. https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	148	148	2025-03-20	0	240	2
+302	\N	Spring Onions	These have a slightly larger bulb at the base than Green Onions. https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	148	148	2025-03-20	0	240	2
 303	\N	Butter Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2024-09-16	0	55	2
 305	\N	Leaves of Lettuce	https://www.eatthismuch.com/calories/lettuce,2015	\N	f	0	12	36	2025-08-11	0	36	2
 306	\N	Butter Lettuce Heads | Boston Bibb Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2025-01-03	0	55	2
@@ -394,7 +394,7 @@
 405	\N	English Cucumbers	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	301	301	2025-03-09	0	104	2
 406	\N	Deluxe Fruit and Nut Mix	https://www.eatthismuch.com/calories/deluxe-fruit-nut-mix-1762329	\N	f	0	28	50	2025-03-03	4	150	1048576
 407	\N	Fruit and Nut Mix	https://www.eatthismuch.com/calories/fruit-nut-mix-152627	\N	f	0	28	40	2025-03-08	4	224	1048576
-408	\N	Fruit Jam	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	128
+408	\N	Fruit Jam	https://www.eatthismuch.com/calories/jams-and-preserves-4621	\N	f	0	20	20	2025-08-22	7	320	128
 409	\N	Dark Chocolate Bar (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	28	168	2025-01-01	4	168	16384
 410	\N	Tahini (Sesame Seed Paste)	https://www.eatthismuch.com/calories/tahini-162105	\N	f	0	28	28	2025-02-04	4	224	8192
 411	\N	Shortbread Cookies	https://www.eatthismuch.com/calories/shortbread-cookies-1981045	\N	f	262176	9.5	57	2025-01-31	0	114	262144
@@ -420,7 +420,7 @@
 463	\N	Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	151	151	2024-08-17	6	151	1
 464	\N	Seedless White Grapes	https://www.eatthismuch.com/calories/organic-white-seedless-table-grapes-3100885	\N	f	0	4.9	49	2025-01-02	0	98	1
 465	\N	Grape Juice	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	0
-466	\N	White Grape Juice	https://www.eatthismuch.com/calories/concord-grape-jam,1686002	\N	f	0	17	17	2024-07-31	7	136	32
+466	\N	White Grape Juice	https://www.eatthismuch.com/calories/grape-juice-1419	\N	f	0	32	253	2025-08-22	9	253	32
 467	\N	Fresh Pineapple	https://www.eatthismuch.com/calories/pineapple-1513	\N	f	0	905	165	2024-11-20	0	165	1
 468	\N	Wholegrain Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	15	15	2024-08-14	7	240	32
 469	\N	Clear Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	21	2025-06-10	9	336	928
@@ -451,7 +451,7 @@
 496	\N	Light Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce-3748	\N	f	32768	32	16	2024-12-01	9	256	8192
 497	\N	Fresh Podded Snow Peas	https://www.eatthismuch.com/calories/snow-peas-129118	\N	f	0	28	100	2024-11-24	4	100	2
 498	\N	Canned Baby Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	28	102	2025-08-01	4	145	512
-499	\N	Peanut Oil	https://www.eatthismuch.com/calories/peanut-oil-263	\N	f	0	28	14	2024-11-05	9	224	65536
+499	\N	Peanut Oil	https://www.eatthismuch.com/calories/peanut-oil-263	\N	f	2048	28	14	2024-11-05	9	224	65536
 500	\N	Regular Yogurt	aka Natural Yogurt; Plain Yogurt. https://www.eatthismuch.com/calories/plain-yogurt-96	\N	f	256	28	245	2024-10-16	4	245	29360128
 501	\N	Ice Cubes	\N	\N	t	0	8	4	2024-08-29	0	224	0
 502	\N	Light Corn Syrup	aka: Golden Syrup. https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	2	13.6	13.6	2025-06-20	7	240	114688
@@ -633,7 +633,7 @@
 706	\N	Napa Cabbage Leaves	https://www.eatthismuch.com/calories/cabbage-2578	\N	f	0	28	109	2024-12-04	0	109	2
 707	\N	Savoy Cabbage Leaves	https://www.eatthismuch.com/calories/cabbage-1906	\N	f	0	28	70	2024-11-25	0	70	2
 708	\N	Ghee	Type of clarified butter. https://www.eatthismuch.com/calories/ghee-2265017	\N	f	4	28	14	2024-08-20	4	224	29360128
-709	\N	Chives | Green Onions (Scallions)	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	28	3	2025-06-23	4	48	3
+709	\N	Chives | Green Onions	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	28	3	2025-06-23	4	48	3
 710	\N	Baby Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-06-22	0	164	2
 711	\N	Garganelli Pasta	https://www.eatthismuch.com/calories/penne-135502	\N	f	32	28	56	2025-01-06	4	112	4096
 712	\N	Fresh Mixed Herbs (Basil, Parsley, Chervil, Marjoram, Oregano)	https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	f	0	2	1	2024-11-06	4	16	2
@@ -845,7 +845,7 @@
 1043	\N	Green Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-29	0	182	1
 1044	\N	Maca Powder	\N	\N	f	0	240	100	2025-06-19	6	240	16384
 1045	\N	Frozen Pizza	https://www.eatthismuch.com/calories/pizza-rising-crust-four-cheese-original-4628381	\N	f	0	741.333333	139	2024-10-16	0	139	234881024
-1046	\N	Creamy Peanut Butter (Organic)	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
+1046	\N	Creamy Peanut Butter (Organic)	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
 1047	\N	Package Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-16	0	120	16288
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-15	0	120	16288
 1049	\N	Purely Elizabeth Dark Chocolate Chunk Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	1024	40	40	2025-08-13	0	120	16288
@@ -854,8 +854,8 @@
 1052	\N	Purely Elizabeth Original Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-16	0	120	16288
 1053	\N	Avocado Oil | Coconut Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
 1054	\N	Baby Potatoes	https://www.eatthismuch.com/calories/potato-2091?a=0.4607%3A3	\N	f	0	170	170	2025-06-01	0	170	2
-1055	\N	Jif Natural Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
-1056	\N	Schnucks Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	0	32	16	2024-08-25	4	256	128
+1055	\N	Jif Natural Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
+1056	\N	Schnucks Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
 1057	\N	Loaves of White Pita (Unenriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
 1058	\N	Loaves of White Pita (Enriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
 1059	\N	Loaves of Flatbread, GF	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	0	64	64	2025-05-18	0	64	4
@@ -974,3 +974,5 @@
 1203	\N	Thick Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-16	0	224	268435456
 1204	\N	Canned Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/	\N	f	0	28.35	28.35	2024-08-04	4	226.8	0
 1205	\N	Olive Oil Canned Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/	\N	f	0	28.35	28.35	2024-08-04	4	226.8	0
+1206	\N	Small Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	2
+1207	\N	Sliced Smoked Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456

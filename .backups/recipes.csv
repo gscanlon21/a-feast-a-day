@@ -130,7 +130,7 @@
 148	Muhammara	\N	\N	\N	0	0	8	4	t	muhammara.jpg	0	\N	f	f
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	16	15	8	2	t	irish-champ.jpg	0	\N	f	f
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	spiced-lentils-rice.jpg	0	\N	f	f
-152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	12	15	2	4	t	spaghetti-lemon.jpg	0	\N	f	f
+152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	12	15	2	2	t	spaghetti-lemon.jpg	0	\N	f	f
 153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	32	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
@@ -162,7 +162,7 @@
 181	5 Ingredient Sloppy Joes	\N	\N	\N	12	10	5	4	t	sloppy-joes.jpg	0	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	f	f
 182	Beef and Noodles	\N	\N	\N	4	20	10	4	t	beef-noodles.jpg	0	https://www.saltandlavender.com/easy-beef-and-noodles/	f	f
 183	Chestnut Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	5	10	2	t	sausage-carbonara.jpg	0	\N	f	f
-184	Pasta with Fresh Pesto	\N	\N	\N	4	12	4	4	t	pasta-pesto.jpg	0	\N	f	f
+184	Pasta with Fresh Pesto	\N	\N	\N	4	12	4	2	t	pasta-pesto.jpg	0	\N	f	f
 185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	pasta-vegetables.jpg	0	\N	f	f
 186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	12	15	10	1	t	grilled-chicken-sandwich.jpg	0	\N	f	f
 187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
@@ -433,7 +433,7 @@
 615	Chicken with Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
 616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f
 617	Steak and Blue Cheese on Ciabatta	Part-baked bread cooks in about 8 minutes in a hot oven, but if even that is too long, just warm a regular baked ciabatta or French stick.	\N	\N	8	15	5	2	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
-618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	\N	\N	8	12	8	2	t	\N	0	\N	f	f
+618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	\N	\N	8	12	8	4	t	\N	0	\N	f	f
 619	Pork w/ Marsala and Juniper	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 620	Sweet Peppers Stuffed with Two Cheeses	The peppers can be cooked on a griddle if you prefer. It is a good idea to blanch them in boiling water before filling, to give them a head start.	Too complicated.	\N	4	15	5	4	t	stuffed-peppers.jpg	0	\N	f	f
 621	The Ultimate Grilled Cheese	\N	\N	\N	4	10	5	2	t	\N	0	\N	f	f
@@ -458,7 +458,7 @@
 640	Fried Pork with Scrambled Egg	\N	\N	\N	8	12	5	4	t	\N	0	\N	f	f
 641	Tex Mex 7 Layer Dip	\N	Too many ingredients.	\N	16	0	10	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 642	Salad in a Glass	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-643	Root Cause Clense Smoothie	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+643	Root Cause Clense Smoothie	\N	Too many ingredients.	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 644	Beef Strips with Orange and Ginger	Marinating the meat for longer will make it more tender, as the marinade will break down and tenderize the flesh. Just before serving, toss the stir-fry with 5ml/1 tsp sesame oil. If you haven't any sesame oil, use flavored chili oil, or a sut oil, such as hazelnut or walnut.	\N	\N	8	5	15	2	t	\N	0	\N	f	f
 645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	\N	0	\N	f	f
 646	Pepper Steaks with Chive Butter	\N	\N	\N	8	12	4	4	t	\N	0	\N	f	f
@@ -472,3 +472,7 @@
 654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	\N	0	\N	f	f
 655	Coconut Yogurt and Chocolate Almonds	\N	\N	\N	32	0	5	2	t	\N	0	\N	f	f
 656	Poached Pears	\N	\N	\N	16	25	5	2	t	\N	0	\N	f	f
+657	Blue Power Boost Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
+658	Green Power Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
+659	Black Bean and Chorizo Breakfast Skillet	\N	\N	\N	12	35	5	1	t	\N	0	\N	f	f
+660	Quick and Easy Breakfast Burrito	If you like things a little spicier, add a few fresh or pickled jalapeños.	\N	\N	2	15	10	1	t	\N	0	\N	f	f
