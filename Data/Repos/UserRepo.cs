@@ -228,7 +228,8 @@ public class UserRepo
         var familyNutrientServings = EnumExtensions.GetValuesExcluding(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
         {
             var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
-            return gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
+            var weeklyGramsOfRDATUL = gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
+            return rawValues ? (weeklyGramsOfRDATUL + (weeklyGramsOfRDATUL / weeks)) : weeklyGramsOfRDATUL;
         });
 
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
@@ -238,8 +239,8 @@ public class UserRepo
 
             // Return the percentage that each nutrient has been worked this week.
             return !rawValues ? (weeklyNutrientVolume[n] / familyNutrientServings[n] * 100)
-                // Return how much left of each nutrient to work each week adjusted based on prev weeks. Defaults to max per week.
-                : ((familyNutrientServings[n] + familyNutrientServings[n] - weeklyNutrientVolume[n]) ?? familyNutrientServings[n]);
+                // Return how much left of each nutrient to work each week. Defaults to max per week.
+                : ((familyNutrientServings[n] - weeklyNutrientVolume[n]) ?? familyNutrientServings[n]);
         }));
     }
 

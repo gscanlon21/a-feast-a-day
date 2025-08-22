@@ -306,7 +306,7 @@
                             </div>
                         </summary>
                         <select asp-for="Recipe.Instructions[id].EquipmentBinder" class="form-control overflow-auto" aria-describedby="equipment-help" size="5"
-                                asp-items="@(EnumExtensions.GetNotNoneValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                                asp-items="@(EnumExtensions.GetSingleValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
                         </select>
                         <span asp-validation-for="Recipe.Instructions[id].EquipmentBinder" class="text-danger"></span>
                         <div id="equipment-help" class="form-text mt-0">@Html.DisplayDescriptionFor(_ => Model.Recipe.Instructions[id].Equipment)</div>

@@ -103,7 +103,7 @@ public enum Nutrients : long
     [DefaultMeasure(Measure.Grams)]
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9)]
     [Display(Order = 10, Name = "Fats", GroupName = "Fats")]
-    Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1920
+    Fats = UnsaturatedFats | SaturatedFats | TransFats, // 1984
 
     /// <summary>
     /// On the new nutrition facts label, the number of calories from fat has been removed entirely. 

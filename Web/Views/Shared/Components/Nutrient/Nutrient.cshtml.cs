@@ -6,16 +6,16 @@ namespace Web.Views.Shared.Components.Nutrient;
 
 public class NutrientViewModel
 {
-    public required string Token { get; set; }
-    public required Data.Entities.User.User User { get; set; }
+    public required string Token { get; init; }
+    public required Data.Entities.User.User User { get; init; }
 
-    public int Weeks { get; set; }
+    public required int Weeks { get; init; }
 
-    public double WeeksOfData { get; set; }
+    public required double WeeksOfData { get; init; }
 
-    public IList<Nutrients> UsersWorkedNutrients { get; init; } = [];
+    public required IList<Nutrients> UsersWorkedNutrients { get; init; } = [];
 
-    public required IDictionary<Nutrients, double?> WeeklyVolume { get; set; }
+    public required IDictionary<Nutrients, double?> WeeklyVolume { get; init; }
 
     public NutrientTarget AllNutrientTarget => new(Nutrients.All)
     {
