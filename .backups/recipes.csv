@@ -66,7 +66,7 @@
 84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	20	12	3	4	t	egg-bacon-salad.jpg	0	\N	f	f
 85	Pasta Fresca	\N	\N	\N	6	15	5	4	t	pasta-fresca.jpg	0	https://iowagirleats.com/pasta-fresca/	f	f
 86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	6	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
-87	Korean Beef Lettuce Wraps	\N	\N	\N	6	15	5	4	t	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
+87	Korean Beef Lettuce Wraps	\N	\N	\N	12	15	5	4	t	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
 88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	f	f
 89	Homemade Crunchy Taco Hamburger Helper	\N	\N	\N	4	15	5	5	t	taco-hamburger-helper.jpg	0	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	f	f
 90	Mini BBQ Cheddar Meatloaves	\N	\N	\N	4	15	5	4	t	chedder-meatloaf.jpg	0	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	f	f
@@ -145,7 +145,7 @@
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	mexican-tortas.jpg	0	\N	f	f
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	lemon-parmesan-capellini.jpg	0	\N	f	f
 166	Crispy Cabbage	\N	\N	\N	8	3	3	4	t	crispy-cabbage.jpg	0	\N	f	f
-167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	32	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
+167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	128	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	20	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
@@ -261,7 +261,7 @@
 377	Chicken Fajita Sheet Pan	\N	\N	\N	8	25	10	4	t	chicken-fajita-sheet-pan.jpg	0	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	f	f
 378	Creamy Fennel Kale Chicken Salad	\N	\N	\N	2	25	5	4	t	\N	0	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	f	f
 379	Easy Sauteéd Zucchini	\N	\N	\N	16	8	2	1	t	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
-380	Dark Chocolate-Covered Almonds	\N	\N	\N	48	30	15	4	t	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
+380	Dark Chocolate-Covered Almonds	\N	\N	\N	32	30	15	1	t	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	8	15	5	2	t	zucchini-linguine.jpg	0	https://www.healthline.com/recipes/zucchini-noodles-pesto	f	f
 382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	8	120	9	4	t	beef-stew.jpg	0	\N	f	f
 383	Sticky Hoisin Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	25	5	2	t	sticky-hoissin-chicken.jpg	0	\N	f	f
@@ -284,7 +284,7 @@
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	20	10	4	t	\N	0	\N	f	f
 402	Fruit Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	\N	f	f
-403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	24	10	5	2	t	roasted-kale.jpg	0	\N	f	f
+403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	48	10	5	2	t	roasted-kale.jpg	0	\N	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	\N	f	f

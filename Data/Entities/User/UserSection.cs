@@ -38,6 +38,12 @@ public class UserSection
 
     /// <summary>
     /// The volume each section should be exposed to each week.
+    /// 
+    /// <para>
+    /// Deserts and Drinks are disabled by default:
+    /// Deserts severly alter the nutrient targets.
+    /// Drinks tend not to have enough nutrients.
+    /// </para>
     /// </summary>
     public static readonly IDictionary<Section, int> DefaultWeight = new Dictionary<Section, int>
     {
@@ -46,7 +52,7 @@ public class UserSection
         [Section.Dinner] = 7,
         [Section.Sides] = 4,
         [Section.Snacks] = 3,
-        [Section.Dessert] = 2,
-        [Section.Drinks] = 1,
+        [Section.Dessert] = 0,
+        [Section.Drinks] = 0,
     };
 }

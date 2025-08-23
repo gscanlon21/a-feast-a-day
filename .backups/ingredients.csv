@@ -815,8 +815,8 @@
 980	\N	Broth | Water	https://www.eatthismuch.com/calories/beef-broth-2899468	\N	f	0	30	240	2025-06-26	9	240	928
 981	\N	Jicama	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
 982	\N	Farfalle Pasta	https://www.eatthismuch.com/calories/farfalle-pasta-1923824	\N	f	262176	28	56	2025-02-15	4	84	4096
-983	\N	Shelled Pistachios	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	2048	28	146	2024-10-12	4	146	1048576
-984	\N	Shelled Unsalted Pistachios	https://www.eatthismuch.com/food/nutrition/peanuts,3584/	\N	f	2048	28	146	2024-10-12	4	146	1048576
+983	\N	Shelled Pistachios	https://www.eatthismuch.com/calories/pistachio-nuts-2682	\N	f	0	28	123	2024-10-12	4	123	1048576
+984	\N	Shelled Unsalted Pistachios	https://www.eatthismuch.com/calories/pistachio-nuts-2682	\N	f	0	28	123	2024-10-12	4	123	1048576
 985	\N	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-16	0	224	268435456
 986	\N	Chickpea Flour	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
 987	\N	Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	t	0	28	200	2024-12-14	4	200	114688
@@ -845,7 +845,7 @@
 1043	\N	Green Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-29	0	182	1
 1044	\N	Maca Powder	\N	\N	f	0	240	100	2025-06-19	6	240	16384
 1045	\N	Frozen Pizza	https://www.eatthismuch.com/calories/pizza-rising-crust-four-cheese-original-4628381	\N	f	0	741.333333	139	2024-10-16	0	139	234881024
-1046	\N	Creamy Peanut Butter (Organic)	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
+1046	\N	Organic Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
 1047	\N	Package Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-16	0	120	16288
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-15	0	120	16288
 1049	\N	Purely Elizabeth Dark Chocolate Chunk Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	1024	40	40	2025-08-13	0	120	16288
@@ -976,3 +976,9 @@
 1205	\N	Olive Oil Canned Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/	\N	f	0	28.35	28.35	2024-08-04	4	226.8	0
 1206	\N	Small Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2024-08-01	0	72	2
 1207	\N	Sliced Smoked Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
+1208	\N	Medium Leeks	\N	\N	f	0	246	246	2024-08-22	6	246	1
+1209	\N	Organic Chicken Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436	\N	f	0	240	240	2025-06-26	6	240	928
+1210	\N	Organic Low-Sodium Chicken Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436	\N	f	0	240	240	2025-06-26	6	240	928
+1211	\N	Almond Yogurt	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
+1212	\N	Boneless Skinless Chicken Breast Cutlets	https://www.eatthismuch.com/calories/chicken-breast-446	\N	f	0	145	145	2025-03-14	0	145	268435456
+1213	\N	Organic Boneless Skinless Chicken Breast Cutlets	https://www.eatthismuch.com/calories/chicken-breast-446	\N	f	0	145	145	2025-03-14	0	145	268435456
