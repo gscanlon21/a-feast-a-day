@@ -64,10 +64,13 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
         .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble())));
 
     /// <summary>
-    /// Included prerequisite recipe nutrients.
+    /// Includes prerequisite recipe nutrients.
+    /// Only includes nutrients with a value.
     /// </summary>
     [JsonIgnore]
-    internal List<Nutrient> AllNutrients => [.. Nutrients, .. PrerequisiteRecipes.SelectMany(pr => pr.Key.Nutrients)];
+    internal List<Nutrients> UniqueWorkedNutrients => [ .. Nutrients.Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
+        .. PrerequisiteRecipes.SelectMany(pr => pr.Key.Nutrients).Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
+    ];
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);
     public override bool Equals(object? obj) => obj is QueryResults other

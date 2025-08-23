@@ -300,7 +300,7 @@ public class QueryRunner(Section section)
         }
 
         // Set nutrients on the recipe after all the ingredient swapping has taken place.
-        var allNutrients = await GetNutrients(context, filteredResults);
+        var allNutrients = await GetRecipeNutrients(context, filteredResults);
         // OrderBy must come after the query or you get cartesian explosion.
         var recipeResults = new List<QueryResults>();
         foreach (var recipe in orderedResults)
@@ -329,15 +329,20 @@ public class QueryRunner(Section section)
         {
             foreach (var recipe in recipeResults)
             {
-                // Allow the least seen recipe to skip this. Makes it so no recipe gets 'stuck'.
-                // ... Depending on their ingredients, they may never succeed this check. sa. Pie.
-                // Always let refreshing recipes through, and then take the first one w/o refresh.
-                if (finalResults.Any(r => r.UserRecipe?.RefreshAfter == null))
+                // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
+                // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
+                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)]);
+                if (overworkedNutrients != null)
                 {
-                    // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
-                    // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
-                    var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)]);
-                    if (overworkedNutrients != null && recipe.AllNutrients.Where(n => n.Value > 0).Any(n => overworkedNutrients.Contains(n.Nutrients)))
+                    // Find the number of weeks since this recipe has been seen. If the last seen date is in the future (has refresh padding), then use zero weeks.
+                    var weeksFromLastSeen = Math.Max(0, DateHelpers.Today.DayNumber - (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
+                    // If there are no non-refreshing recipes selected, loosen the nutrients-to-overwork restriction so we prioritize least seen recipes.
+                    var nutrientsToOverwork = finalResults.Any(r => r.UserRecipe?.RefreshAfter == null) ? 0
+                        // Buffer by one available recipe per week to reduce the frequency even more.
+                        : Math.Max(0, weeksFromLastSeen - (int)Math.Floor(recipeResults.Count / 7d));
+
+                    // This way, recipes that overwork a lot of nutrients are spaced out more than the healthier recipes.
+                    if (overworkedNutrients.Count(recipe.UniqueWorkedNutrients.Contains) > nutrientsToOverwork)
                     {
                         continue;
                     }
@@ -354,7 +359,7 @@ public class QueryRunner(Section section)
                         {
                             break;
                         }
-                        
+
                         // This makes it harder to see a recipe that still has refresh padding because it has to work more nutrients.
                         // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
                         var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
@@ -365,10 +370,10 @@ public class QueryRunner(Section section)
                         var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1
                             // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
                             // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
-                            : (NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
+                            : Math.Max(1, NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
 
                         // Include the prerequisite recipes in this calculation.
-                        if (recipe.AllNutrients.Count(n => n.Value > 0) < Math.Max(1, nutrientsToWork))
+                        if (recipe.UniqueWorkedNutrients.Count < nutrientsToWork)
                         {
                             continue;
                         }
@@ -419,10 +424,10 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<List<Nutrient>> GetNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults)
+    private static async Task<List<Nutrient>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults)
     {
         var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-        return await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).ToListAsync();
+        return await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).Where(n => n.Value > 0).ToListAsync();
     }
 
     /// <summary>
