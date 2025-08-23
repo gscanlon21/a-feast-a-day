@@ -368,10 +368,10 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                // TODO: Should not include prerequisiste recipes in take count.
-                if (!finalResults.Contains(recipe) && finalResults.Count < take)
+                // Not including the prep recipes in the take count because those aren't a part of the section.
+                if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == section) < take)
                 {
-                    // Prepend the recipe's prerequisite recipes.
+                    // Prepend the recipe's prerequisite recipes if there are any.
                     foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
                     {
                         // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.

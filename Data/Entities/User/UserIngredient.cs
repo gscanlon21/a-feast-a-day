@@ -2,6 +2,7 @@
 using Data.Entities.Recipe;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 namespace Data.Entities.User;
@@ -11,6 +12,7 @@ namespace Data.Entities.User;
 /// ... re-order RecipeIngredients without changing user preferences.
 /// </summary>
 [Table("user_recipe_ingredient")]
+[DebuggerDisplay("User {UserId}; RecipeIngredient {RecipeIngredientId}")]
 public class UserRecipeIngredient
 {
     [Required]
