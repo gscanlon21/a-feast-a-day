@@ -179,7 +179,7 @@ public class QueryRunner(Section section)
 
                 // Swap or filter out optional ingredients that have allergens or are ignored
                 // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
-                // Allow recipes with ingredients that the user has ignored and are no longer optional so the user can still manage it.
+                // Allow recipes with ingredients that have been ignored and are no longer optional so the user can still manage it.
                 foreach (var recipeIngredient in queryResult.RecipeIngredients.Where(ri => ri.UserRecipeIngredient?.Ignore != true))
                 {
                     // Check this first so we can fallback to an ingredient if the recipe fails.
