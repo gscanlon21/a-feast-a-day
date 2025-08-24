@@ -58,7 +58,10 @@ public enum Equipment
     [Display(Name = "Refrigerator", Order = 17)]
     Refrigerator = 1 << 16, // 65536
 
+    [Display(Name = "Freezer", Order = 18)]
+    Freezer = 1 << 17, // 131072
+
 
     All = Microwave | Oven | Stove | Grill | Broiler | Toaster | ToasterOven | Blender | FoodProcessor | ImmersionBlender
-        | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator
+        | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator | Freezer
 }
