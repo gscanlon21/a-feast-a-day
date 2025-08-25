@@ -399,7 +399,7 @@
 580	Blueberry Chicken Salad	\N	\N	\N	6	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 581	Summer Watermelon Salad	\N	\N	\N	20	0	10	2	t	watermelon-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 582	Sweet Potato & Arugula Salad	\N	\N	\N	20	40	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-583	Salmon Cakes	\N	\N	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+583	Salmon Cakes	\N	Too complicated. Too many prep recipes.	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 584	Pizza Egg Bites	\N	\N	\N	6	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -480,3 +480,5 @@
 662	Creamy Avocado-Lime Dressing	\N	\N	\N	0	0	5	12	t	\N	9	\N	t	f
 663	Arugula and Prosciutto Salad	\N	\N	\N	20	0	5	2	t	\N	0	\N	f	f
 664	Mom's Shepherd's Pie	\N	\N	\N	64	60	30	6	t	\N	0	\N	f	f
+697	Taco Juice	An ounce of tequila in this is also very good. 	Has weird ingredients.	\N	128	0	5	2	t	\N	0	\N	f	f
+698	Coconut-Ginger Tonic	An ounce of gin or vodka makes this special drink even more special.	\N	\N	128	0	5	2	t	\N	0	\N	f	f

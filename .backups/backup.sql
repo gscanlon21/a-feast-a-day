@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 17.5
+-- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.5
 
 SET statement_timeout = 0;
@@ -9276,6 +9276,53 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14478	188	3221225472	\N	\N	1	0.2
 14479	188	1792	\N	\N	3	0.7
 14480	188	14	\N	\N	3	146
+14484	323	68719476736	\N	\N	2	5
+14485	323	34359738368	\N	\N	2	68
+14486	323	2	\N	\N	3	0.5
+14487	323	1	\N	\N	3	1
+14488	323	2251799813685248	\N	\N	2	3
+14489	323	4611686018427387904	\N	\N	3	0.1
+14490	323	4294967296	\N	\N	2	26
+14491	323	2199023255552	\N	\N	2	0.3
+14492	323	17179869184	\N	\N	2	8
+14493	323	4398046511104	\N	\N	2	0.1
+14494	323	70368744177664	\N	\N	2	22
+14495	323	8796093022208	\N	\N	1	1
+14496	323	17592186044416	\N	\N	2	0.3
+14497	323	2097152	\N	\N	2	0.1
+14498	323	16777216	\N	\N	1	4
+14499	323	67108864	\N	\N	2	2
+14500	323	48	\N	\N	3	1
+14501	323	3221225472	\N	\N	1	0.3
+14502	323	14	\N	\N	3	4
+14503	323	1984	\N	\N	3	0.1
+14504	323	62	\N	\N	3	5
+14505	736	2251799813685248	\N	\N	2	6
+14506	736	18014398509481984	\N	\N	3	0.1
+14507	736	36028797018963968	\N	\N	3	0.1
+14508	736	72057594037927936	\N	\N	3	0.1
+14509	736	576460752303423488	\N	\N	3	0.1
+14510	736	4611686018427387904	\N	\N	3	0.1
+14511	736	16384	\N	\N	1	1
+14512	736	17179869184	\N	\N	2	9
+14513	736	4398046511104	\N	\N	2	0.1
+14514	736	70368744177664	\N	\N	2	25
+14515	736	8796093022208	\N	\N	1	0.1
+14516	736	17592186044416	\N	\N	2	0.2
+14517	736	32768	\N	\N	1	2503
+14518	736	65536	\N	\N	1	5965
+14519	736	1048576	\N	\N	2	1
+14520	736	2097152	\N	\N	2	0.2
+14521	736	4194304	\N	\N	2	0.1
+14522	736	16777216	\N	\N	1	14
+14523	736	67108864	\N	\N	2	4
+14524	736	536870912	\N	\N	2	0.5
+14525	736	1536	\N	\N	3	0.1
+14526	736	98304	\N	\N	1	8468
+14527	736	3221225472	\N	\N	1	10
+14528	736	1792	\N	\N	3	0.1
+14529	736	114688	\N	\N	1	8468
+14530	736	229376	\N	\N	1	601
 \.
 
 
@@ -12427,6 +12474,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6794	8	\N	\N	631	1	1	, for dressing	357	f	\N	7
 6795	8	\N	\N	631	4	1	, for dressing	285	f	\N	8
 6262	6	\N	\N	562	2	1	, for garnish	144	f	\N	5
+7085	0	\N	\N	697	1	6	(CILANTRO LEAVES)	13	f	\N	0
+7086	8	\N	\N	697	4	1	\N	68	f	\N	1
+7087	0	\N	\N	697	1	1	, juiced and zested	12	f	\N	2
+7088	6	\N	\N	697	1	1	(ORANGE-PINEAPPLE JUICE)	420	f	\N	3
+7089	6	\N	\N	697	1	1	\N	1092	f	\N	4
+7090	6	\N	\N	698	1	1	\N	806	f	\N	0
+7091	0	\N	\N	698	1	1	, juiced	12	f	\N	1
+7092	8	\N	\N	698	2	1	, grated	307	f	\N	2
+7093	8	\N	\N	698	4	1	\N	214	f	\N	3
+7094	6	\N	\N	698	1	1	, crushed	501	f	\N	4
+7095	6	\N	\N	698	1	1	(TONIC WATER)	993	f	\N	5
 \.
 
 
@@ -14032,6 +14090,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3704	Drain the rice well in a sieve (strainer), rinse thoroughly under cold running water and drain again. Leave the rice to cool while you prepare the ingredients for the dressing.	\N	631	1	0
 3705	Meanwhile, make the dressing by whisking all the ingredients together. Transfer the rice to a bowl and add half the dressing to moisten it and cool it further.	\N	631	2	0
 3706	Add the spring onions, peppers, tomatoes and parsley or coriander with the remaining dressing, and toss well to mix. Season with salt and pepper to taste.	\N	631	3	0
+3861	Dividing evenly, put the cilantro, chili powder, lime zest, and lime juice in the bottom of two tall glasses and smash it a bit with the end of a wooden spoon.	\N	697	0	0
+3862	Stir in the orange-pineapple juice and fill the glass with ice. Top it off with sparkling water and enjoy.	\N	697	1	0
+3863	In a blender, combine the coconut water, lime juice, ginger, salt, and ice and blend until smooth. Divide the blended mix between two tall glasses and top with tonic water.	\N	698	0	0
 \.
 
 
@@ -14077,7 +14138,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14480, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14530, true);
 
 
 --
