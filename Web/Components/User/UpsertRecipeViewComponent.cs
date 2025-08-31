@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
+using Web.Code.Extensions;
 using Web.Code.TempData;
 using Web.Views.Shared.Components.UpsertRecipe;
 
@@ -39,9 +39,7 @@ public class UpsertRecipeViewComponent : ViewComponent
         }
 
         // Restore the failed recipe if the upsert model validation failed.
-        var upsertRecipeString = TempData[TempData_Recipe.UpsertRecipe]?.ToString();
-        var upsertRecipe = upsertRecipeString != null ? JsonSerializer.Deserialize<UpsertRecipeModel>(upsertRecipeString) : null;
-
+        var upsertRecipe = TempData.ReadModel<UpsertRecipeModel>(TempData_Recipe.UpsertRecipe);
         if (upsertRecipe != null)
         {
             // Show error messages to the user.

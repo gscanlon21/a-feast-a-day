@@ -6,6 +6,7 @@ using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using Web.Code.Extensions;
 using Web.Code.TempData;
 using Web.Views.RecipeIngredient;
@@ -119,6 +120,8 @@ public class RecipeIngredientController : ViewController
         var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).ToList()
             ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
 
+        // Restore the failed UserRecipeIngredient if the upsert model validation failed.
+        var viewModel = TempData.ReadModel<UserRecipeIngredientViewModel>(nameof(UserRecipeIngredientViewModel));
         return View(nameof(ManageRecipeIngredient), new UserManageRecipeIngredientViewModel()
         {
             User = user,
@@ -129,8 +132,8 @@ public class RecipeIngredientController : ViewController
             RecipeIngredient = recipeIngredient,
             Recipe = recipe.AsType<NewsletterRecipeDto>()!,
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
-            UserRecipeIngredient = new UserRecipeIngredientViewModel(userRecipeIngredient),
             PrepRecipes = prepRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
+            UserRecipeIngredient = viewModel ?? new UserRecipeIngredientViewModel(userRecipeIngredient),
             AltRecipes = recipes.ExceptBy([recipe.Recipe.Id], r => r.Recipe.Id).Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
         });
     }
@@ -147,6 +150,7 @@ public class RecipeIngredientController : ViewController
 
         if (!ModelState.IsValid)
         {
+            TempData[nameof(UserRecipeIngredientViewModel)] = JsonSerializer.Serialize(viewModel);
             TempData[TempData_User.FailureMessage] = ModelState.GetHtmlListOfErrors(); // Post-Redirect-Get for GoBackOnSave.
             return RedirectToAction(nameof(ManageRecipeIngredient), new { email, token, recipeIngredientId, WasUpdated = false });
         }

@@ -402,7 +402,7 @@
 583	Salmon Cakes	\N	Too complicated. Too many prep recipes.	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 584	Pizza Egg Bites	\N	\N	\N	6	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	4	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	\N	\N	\N	4	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cooled-rice.jpg	6	\N	t	f
@@ -469,7 +469,7 @@
 651	Spiced Nuts	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients.	\N	\N	32	10	5	2	t	\N	6	\N	f	f
 652	Slices of Quick Basic White Bread	Do not use the timer function.	\N	\N	0	120	20	6	f	\N	0	\N	t	t
 653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	\N	0	\N	t	t
-654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	\N	0	\N	f	f
+654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
 655	Coconut Yogurt and Chocolate Almonds	\N	\N	\N	32	0	5	2	t	\N	0	\N	f	f
 656	Poached Pears	\N	\N	\N	16	25	5	2	t	\N	0	\N	f	f
 657	Blue Power Boost Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
