@@ -3,7 +3,7 @@
 17	Vegetarian Stir-Fry	For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	vegetable-stir-fry.jpg	0	\N	f	f
 19	Egg in a Pepper	\N	\N	\N	6	5	1	1	t	egg-in-a-pepper.jpg	0	\N	f	f
 20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	bean-cheese-quesadilla.jpg	0	\N	f	f
-23	Ham and Scalloped Potatoes	\N	\N	\N	4	100	20	6	t	scalloped-potatoes-ham.jpg	0	\N	f	f
+23	Ham and Scalloped Potatoes	\N	\N	\N	8	100	20	6	t	scalloped-potatoes-ham.jpg	0	\N	f	f
 24	Fried Cabbage and Egg Noodles	\N	\N	\N	4	15	5	4	t	cabbage-noodles.jpg	0	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	f	f
 25	Slow Cooker Chicken	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	0	360	10	1	t	slow-cooker-ckicken.jpg	5	\N	f	f
 26	Roasted Broccoli	\N	\N	\N	16	20	5	1	t	roasted-broccoli.jpg	0	\N	f	f
@@ -68,14 +68,14 @@
 86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	6	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
 87	Korean Beef Lettuce Wraps	\N	\N	\N	12	15	5	4	t	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
 88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	f	f
-89	Homemade Crunchy Taco Hamburger Helper	\N	\N	\N	4	15	5	5	t	taco-hamburger-helper.jpg	0	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	f	f
+89	Homemade Crunchy Taco Hamburger Helper	\N	\N	\N	4	20	5	5	t	taco-hamburger-helper.jpg	0	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	f	f
 90	Mini BBQ Cheddar Meatloaves	\N	\N	\N	4	15	5	4	t	chedder-meatloaf.jpg	0	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	f	f
 91	Large Batch Homemade Taco Seasoning	\N	\N	\N	0	0	5	1	t	taco-seasoning.jpg	6	https://iowagirleats.com/large-batch-homemade-taco-seasoning	t	f
 92	Chicken with Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	12	5	5	2	t	chicken-lemon-garlic.jpg	0	\N	f	f
 93	Pork Kebab with BBQ Sauce	\N	\N	\N	12	10	5	4	t	bbq-pork-kebab.jpg	0	\N	f	f
 94	Balsamic Vinaigrette	\N	\N	\N	0	0	5	1	t	balsamic-vinaigrette.jpg	6	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	f	f
 95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	\N	\N	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
-96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	8	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
+96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
 97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
 98	Loaded Deviled Eggs	\N	\N	\N	25	20	5	4	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
 99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
@@ -87,7 +87,7 @@
 105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	25	5	4	t	sweet-pea-orecchiette-alt.jpg	0	\N	f	f
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	garlic-chicken.jpg	0	\N	f	f
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	ham-gruyere-melt.jpg	0	\N	f	f
-108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	120	10	8	t	\N	0	\N	f	f
+108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	120	10	8	t	\N	0	\N	f	f
 109	Grilled Fattoush Salad	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	20	15	10	4	t	grilled-fattoush-salad.jpg	0	\N	f	f
 110	Sausage Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	15	3	4	t	sausage-sandwich.jpg	0	\N	f	f
 111	Tahini Rocky Road	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	20	12	t	tahini-rocky-road.jpg	0	\N	f	f
@@ -102,7 +102,7 @@
 120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	potato-salad.jpg	0	\N	f	f
 121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can of pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	16	0	5	4	t	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	soft-boiled-egg.jpg	0	\N	f	f
-123	Sweet and Sour Cucumber	This salad can be kept in the refrigerator for up to a week.	\N	\N	20	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
+123	Sweet and Sour Cucumber	This salad can be kept in the refrigerator for up to a week.	\N	\N	16	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
 124	Pan-Fried Chicken w/ Pesto	\N	\N	\N	12	18	2	2	t	pesto-chicken.jpg	0	\N	f	f
 125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
@@ -113,12 +113,12 @@
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
-134	Oven Burgers	\N	\N	\N	4	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
+134	Oven Burgers	\N	\N	\N	8	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
 135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	0	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
 136	Easy Chicken Fried Rice	\N	\N	\N	4	10	0	2	t	chicken-fried-rice.jpg	0	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice - How I make my rice: add 1 cup long grain white rice (I like Lundberg Farms) 1-3/4 cup water, a drizzle of extra virgin olive oil, and pinch of salt to a small saucepan. Bring to a simmer then place a lid on top and turn heat down to medium-low. The water should barely be bubbling. Cook for 10 minutes then remove pan from the heat and let sit with the lid on for 5 minutes. Fluff rice with a fork then spread out onto a plate to cool. Yields: 3 cups cooked rice.	f	f
 137	Meatballs	\N	\N	\N	0	25	5	12	t	meatballs.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	f	f
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	Too many ingredients.	\N	4	10	7	6	t	chicken-vegetable-salad.jpg	0	\N	f	f
-139	Crock Pot Salsa Chicken	I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs — or a mixture of these and chicken breasts — to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	4	300	5	4	t	crock-pot-salsa-chicken.jpg	0	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card	f	f
+139	Crock Pot Salsa Chicken	I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs — or a mixture of these and chicken breasts — to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	8	300	5	4	t	crock-pot-salsa-chicken.jpg	0	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card	f	f
 140	Spiced Chicken Risotto with Mint	Use the same quantity of pumpkin or butternut squash in place of the carrots. To make a vegetarian version, omit the chicken and add a drained 400g/14oz can of chickpeas to the rice just before the end of cooking.	\N	\N	6	15	5	4	t	gluten-free-risotto.jpg	0	\N	f	f
 141	Chicken Fried Rice	If you don't have any cold cooked rice in the refrigerator, you can still make this stir-fry if you have a couple of pouches of instant or express long grain or basmati rice in the cupboard. This type of rice cooks in under 2 minutes. For a stir-fry, the rice should be cold, so spread it out on a baking sheet after cooking and fan it to cool it quickly.	\N	\N	4	10	5	4	t	chicken-fried-rice.jpg	0	\N	f	f
 142	Frothy Hot Chocolate	You could use Mexican chocolate, which is flavoured with almonds, cinnamon and vanilla, and sweetened with sugar. All the ingredients are crushed together in a special mortar, and heated over coals. The powdered mixture is then shaped into discs, which can be bought in specialist stores.	\N	\N	32	4	3	4	t	hot-chocolate.jpg	0	\N	f	f
@@ -131,7 +131,7 @@
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	16	15	8	2	t	irish-champ.jpg	0	\N	f	f
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	spiced-lentils-rice.jpg	0	\N	f	f
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	12	15	2	2	t	spaghetti-lemon.jpg	0	\N	f	f
-153	Spicy Potato and Olive Salad	\N	\N	\N	8	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
+153	Spicy Potato and Olive Salad	\N	\N	\N	16	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	32	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
 156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	banana-ice-cream.jpg	0	\N	f	f
@@ -158,7 +158,7 @@
 177	Stuffed Sweet Peppers	Use red or orange (bell) peppers if you prefer, or a combination of the two.	\N	\N	12	15	5	4	t	stuffed-peppers.jpg	0	\N	f	f
 178	Homemade Venison Sausages 	If you find yourself with more sausages than you need for one meal, freeze the surplus in an airtight container for no more than a month. Be sure to thaw the sausages completely before cooking.	\N	\N	0	12	5	3	t	grilled-sausages.jpg	5	\N	f	f
 179	Thai Red Chicken & Butternut Squash Soup	\N	\N	\N	4	90	10	6	t	thai-chicken-squash-soup.jpg	0	https://www.jamieoliver.com/recipes/chicken/thai-red-chicken-soup	f	f
-180	Crock Pot Sausage and Peppers	\N	\N	\N	4	300	20	8	t	grilled-sausages.jpg	0	https://iowagirleats.com/crock-pot-sausage-and-peppers	f	f
+180	Crock Pot Sausage and Peppers	\N	\N	\N	8	300	20	8	t	grilled-sausages.jpg	0	https://iowagirleats.com/crock-pot-sausage-and-peppers	f	f
 181	5 Ingredient Sloppy Joes	\N	\N	\N	12	10	5	4	t	sloppy-joes.jpg	0	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	f	f
 182	Beef and Noodles	\N	\N	\N	4	20	10	4	t	beef-noodles.jpg	0	https://www.saltandlavender.com/easy-beef-and-noodles/	f	f
 183	Chestnut Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	5	10	2	t	sausage-carbonara.jpg	0	\N	f	f
@@ -186,7 +186,7 @@
 237	Vanilla Sugar	\N	\N	\N	0	0	10	2	t	\N	6	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	f	f
 238	Anti-Allergy Tea	\N	\N	\N	128	5	5	1	t	rosemary-lemon-tea.jpg	0	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	f	f
 239	Okra Fries	\N	\N	\N	16	25	5	4	t	okra-fries.jpg	0	https://www.drkarafitzgerald.com/recipe/okra-fries/	f	f
-240	Choconut-Mint Squares	\N	\N	\N	32	5	5	4	t	chocolate-mint-squares.jpg	0	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	f	f
+240	Choconut-Mint Squares	*Chocolate is prone to separating if you heat it too much, so using a double boiler method is a good way to avoid that happening. First find a heat-proof bowl that will suspend when placed into a saucepan without touching the bottom. Fill the saucepan with about 2-3 inches of water and heat to a simmer. Then place the bowl on top so that the steam from the water heats the bowl and its contents	\N	\N	32	5	5	4	t	chocolate-mint-squares.jpg	0	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	f	f
 241	Party Coleslaw	\N	\N	\N	20	0	15	4	t	party-coleslaw.jpg	0	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	f	f
 242	BPA-Banishing Fruit Salad	\N	\N	\N	20	0	10	4	t	cantaloupe-melon-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	f	f
 243	Versatile One-Pan Veggies	\N	\N	\N	10	18	2	4	t	one-pan-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	f	f
@@ -259,7 +259,7 @@
 375	Creamy Garlicky Chicken With Cauliflower Rice	\N	\N	\N	4	25	5	2	t	garlic-chicken.jpg	0	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	f	f
 376	Plain Cauliflower Rice	Suitable for freezing.	\N	\N	0	5	5	2	t	cauliflower-rice.jpg	6	https://www.easypeasyfoodie.com/plain-cauliflower-rice/#recipe	f	f
 377	Chicken Fajita Sheet Pan	\N	\N	\N	8	25	10	4	t	chicken-fajita-sheet-pan.jpg	0	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	f	f
-378	Creamy Fennel Kale Chicken Salad	\N	\N	\N	2	25	5	4	t	\N	0	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	f	f
+378	Creamy Fennel Kale Chicken Salad	\N	\N	\N	8	25	5	4	t	\N	0	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	f	f
 379	Easy Sauteéd Zucchini	\N	\N	\N	16	8	2	1	t	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	32	30	15	1	t	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	8	15	5	2	t	zucchini-linguine.jpg	0	https://www.healthline.com/recipes/zucchini-noodles-pesto	f	f
@@ -293,10 +293,10 @@
 409	Pumpkin Bread	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	45	15	10	t	\N	0	\N	f	f
 410	Cauliflower Mash	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	cauliflower-rice.jpg	6	\N	t	f
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	cauliflower-rice.jpg	6	\N	t	f
-412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	5	5	4	t	cauliflower-rice.jpg	0	\N	f	f
+412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	5	5	2	t	cauliflower-rice.jpg	0	\N	f	f
 413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	pumpkin-pudding.jpg	0	\N	f	f
 414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	\N	t	f
-415	Strawberry, Mint and Cucumber Spa Water	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	4	4	t	\N	0	\N	f	f
+415	Strawberry, Mint and Cucumber Spa Water	\N	\N	\N	128	0	5	1	t	\N	12	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	12	10	5	4	t	cucumber-turkey-pizza.jpg	0	\N	f	t
 417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
 418	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
@@ -312,7 +312,7 @@
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	2	t	\N	0	\N	f	f
-431	Glow Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	\N	0	\N	f	f
+431	Glow Juice	\N	Requires a masticating juicer.	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	17	0	1	1	t	\N	0	\N	f	f
@@ -376,7 +376,7 @@
 557	Cinnamon Vanilla Smoothie	\N	\N	\N	128	0	10	1	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 558	Feel So Good Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 559	Bone Broth	\N	\N	\N	0	90	15	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-560	Fermented Cabbage Salad	\N	\N	\N	20	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+560	Fermented Cabbage Salad	\N	Fermenting Cabbage takes too long.	\N	20	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 561	Heirloom Tomato and Beet Salad	\N	\N	\N	20	45	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 562	Wild Salmon & Broccoli Frittata	\N	These directions don't make any sense.	\N	6	15	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 563	Greek Salmon	Serve with Katy's Greek Salad.	\N	\N	4	30	5	1	t	greek-salmon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -395,7 +395,7 @@
 576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-579	Fermented Cabbage	\N	\N	\N	0	0	60	2	t	\N	6	\N	t	f
+579	Fermented Cabbage	\N	Takes too long.	\N	0	0	60	2	t	\N	6	\N	t	f
 580	Blueberry Chicken Salad	\N	\N	\N	6	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 581	Summer Watermelon Salad	\N	\N	\N	20	0	10	2	t	watermelon-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 582	Sweet Potato & Arugula Salad	\N	\N	\N	20	40	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -412,7 +412,7 @@
 593	Green Mean Fighting Machine	\N	\N	\N	32	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 594	Golden Green Smoothie	\N	Too many ingredients for a drink.	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 595	Pan Fried Haddock	\N	\N	\N	12	13	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-596	Gluten and Dairy-Free Quiche	\N	\N	\N	8	60	15	4	t	quiche.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+596	Quiche	\N	\N	\N	8	60	15	4	t	quiche.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 597	Smooth Skin Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 598	Tropical Green Smoothie	\N	\N	\N	128	0	6	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
@@ -495,3 +495,24 @@
 709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	\N	0	\N	f	f
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
 711	Hungry, Hungry Hummus	Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	\N	\N	0	0	10	2	t	\N	6	\N	t	f
+712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	\N	6	\N	f	f
+713	Mushroom Ragu	\N	\N	\N	0	30	5	2	t	\N	6	\N	t	f
+714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	\N	0	\N	f	f
+715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	\N	0	\N	f	f
+716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	\N	0	\N	f	f
+717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f
+718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	\N	6	\N	t	f
+719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	\N	9	\N	t	f
+720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
+721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	6	t	\N	9	\N	t	f
+722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	\N	6	\N	t	f
+723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
+724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	\N	0	\N	f	f
+725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	\N	0	\N	f	f
+726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
+727	Dal	\N	\N	\N	8	40	5	2	t	\N	0	\N	f	f
+728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	\N	6	\N	f	f
+729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	\N	0	\N	f	f
+730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
+731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
+732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
