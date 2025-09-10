@@ -22,13 +22,13 @@
         <div style="margin-bottom:1ex;">
             <label asp-for="Section" class="control-label">@Html.DisplayNameFor(_ => Model.Section)</label>
             <select asp-for="Section" class="form-control"
-                    asp-items='@(SectionExtensions.MainSections.AsSelectListItems(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem() { Text = "" }))'>
+                    asp-items='@(SectionExtensions.RecipeSections.AsSelectListItems(EnumViewExtensions.EnumOrdering.Value).Prepend(new SelectListItem()))'>
             </select>
         </div>
         <div style="margin-bottom:1ex;">
             <label asp-for="Equipment" class="control-label">@Html.DisplayNameFor(_ => Model.Equipment)</label>
             <select asp-for="Equipment" class="form-control"
-                    asp-items='@(EnumExtensions.GetDisplayValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem() { Text = "" }))'>
+                    asp-items='@(EnumExtensions.GetDisplayValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem()))'>
             </select>
         </div>
         <div class="row pt-1">

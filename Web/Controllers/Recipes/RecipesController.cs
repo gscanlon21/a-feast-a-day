@@ -46,6 +46,11 @@ public class RecipesController : ViewController
             viewModel.Recipes = viewModel.Recipes.Where(vm => !string.IsNullOrWhiteSpace(vm.Recipe.Equipment)).ToList();
         }
 
+        if (viewModel.Section == Section.Prep)
+        {
+            viewModel.Recipes = viewModel.Recipes.Where(vm => vm.Recipe.BaseRecipe).ToList();
+        }
+
         if (!string.IsNullOrWhiteSpace(viewModel.Name))
         {
             viewModel.Recipes = viewModel.Recipes.Where(vm =>

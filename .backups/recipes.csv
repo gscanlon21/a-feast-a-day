@@ -335,7 +335,7 @@
 483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 484	Rice	\N	\N	\N	0	30	0	1	t	rice.jpg	6	\N	t	f
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
-486	Strawberries & Cream	\N	\N	\N	32	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+486	Strawberries & Cream	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 487	Rainbow Roasted Vegetables	\N	\N	\N	16	25	15	4	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 521	Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	0	30	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -516,3 +516,4 @@
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
 732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
+733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	\N	0	\N	t	f

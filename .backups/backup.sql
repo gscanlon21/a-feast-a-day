@@ -908,6 +908,11 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 699	1279	1
 699	1278	1
 1288	1287	1
+1296	1010	1
+1296	964	1
+1296	722	1
+1296	76	1
+1296	151	1
 479	481	1
 599	811	1
 598	811	1
@@ -951,6 +956,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 319	1272	1
 1286	150	1
 981	635	1
+805	1298	1
+805	1297	1
+1297	1298	1
+1298	1297	1
 690	39	1
 690	681	1
 1008	871	1
@@ -997,6 +1006,11 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 269	633	1
 269	632	1
 733	734	1
+805	1299	1
+1299	1298	1
+1298	1299	1
+1297	1299	1
+1299	1297	1
 186	183	1
 186	182	1
 186	181	1
@@ -11261,6 +11275,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4756	6	\N	\N	272	1	4	, cooked	98	f	\N	9
 4757	6	\N	\N	272	3	1	\N	13	f	\N	10
 4758	8	\N	\N	272	8	1	\N	285	f	\N	11
+5949	6	\N	\N	486	2	1	\N	10	f	\N	0
 3440	7	\N	\N	50	1	2	\N	61	f	\N	1
 3441	8	\N	\N	50	8	1	\N	285	t	\N	2
 4629	8	\N	\N	267	2	1	\N	70	f	\N	5
@@ -11433,6 +11448,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5611	8	\N	\N	397	4	1	, to taste	74	f	\N	10
 7270	8	\N	\N	725	8	1	\N	285	f	\N	7
 4323	0	\N	\N	82	1	1	, diced small	269	f	\N	5
+5950	6	\N	\N	486	2	1	\N	871	f	\N	1
+5951	6	\N	\N	486	1	1	\N	178	f	\N	2
+5952	7	\N	\N	486	1	1	\N	738	t	\N	3
+5953	8	\N	\N	486	1	1	\N	1296	t	\N	4
+5954	0	\N	\N	486	1	1	, juiced	4	t	\N	5
 5577	0	\N	\N	393	1	2	, peeled and thinly sliced (about 1½ cups)	155	f	\N	0
 5578	7	\N	\N	393	1	1	, finely chopped	473	t	\N	1
 5579	6	\N	\N	393	3	1	\N	966	f	\N	2
@@ -11529,11 +11549,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5686	7	\N	\N	412	1	1	\N	676	f	\N	0
 5687	6	\N	\N	412	1	1	\N	\N	f	411	1
 5688	8	\N	\N	412	8	1	, to taste	692	f	\N	2
+5955	6	\N	\N	486	4	1	, or add 1 teaspoon of vanilla to plain protein powder	1297	t	\N	6
 4317	0	\N	\N	34	1	2	\N	5	f	\N	3
 5702	12	\N	\N	415	1	1	\N	123	f	\N	0
 5703	6	\N	\N	415	4	1	, halved	251	f	\N	1
 5704	6	\N	\N	415	2	1	, diced	10	f	\N	2
 5705	6	\N	\N	415	2	1	, diced	155	f	\N	3
+7319	4	\N	\N	733	1	15	, drained and rinsed	419	f	\N	0
 5760	6	\N	\N	423	1	4	\N	372	f	\N	0
 5761	0	\N	\N	423	1	2	\N	5	f	\N	1
 5762	0	\N	\N	423	2	1	, chopped	222	f	\N	2
@@ -11541,6 +11563,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5764	6	\N	\N	423	4	1	\N	77	f	\N	4
 5765	0	\N	\N	423	1	1	, juiced	4	f	\N	5
 5766	8	\N	\N	423	8	1	, to taste	74	t	\N	6
+7320	8	\N	\N	733	1	2	(MISO PASTE)	243	f	\N	1
+7321	8	\N	\N	733	2	1	\N	323	f	\N	2
 5269	8	\N	\N	84	1	1	\N	67	f	\N	7
 4368	5	\N	\N	249	1	2	, I used rainbow carrots. Chopped into similar sized spears	7	f	\N	6
 5689	6	\N	\N	413	1	1	\N	990	f	\N	0
@@ -11740,13 +11764,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5930	7	\N	\N	480	1	2	(FRESH MIXED HERBS, such as Parsley, Dill or Chives)	712	f	\N	5
 5945	6	\N	\N	484	2	1	\N	188	f	\N	0
 5946	6	\N	\N	484	1	1	\N	123	f	\N	1
-5949	6	\N	\N	486	2	1	\N	10	f	\N	0
-5950	6	\N	\N	486	2	1	\N	871	f	\N	1
-5951	6	\N	\N	486	1	1	\N	178	f	\N	2
-5952	7	\N	\N	486	1	1	\N	738	f	\N	3
-5953	7	\N	\N	486	1	1	(COCONUT OIL | COCONUT CREAM)	151	f	\N	4
-5954	0	\N	\N	486	1	1	, juiced	4	f	\N	5
-5955	6	\N	\N	486	4	1	(VANILLA FLAVORED PROTEIN POWDER), or add 1 teaspoon of vanilla to plain protein powder	805	f	\N	6
 5897	7	\N	\N	476	1	1	\N	176	f	\N	0
 5898	6	\N	\N	476	1	2	\N	\N	f	411	1
 5934	7	\N	\N	482	1	1	\N	176	f	\N	0
@@ -11819,6 +11836,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4423	8	\N	\N	134	2	1	, crushed finely	510	f	\N	5
 4424	8	\N	\N	134	2	1	\N	713	f	\N	6
 7142	6	\N	\N	706	1	1	, diced	402	f	\N	4
+7322	8	\N	\N	733	2	1	\N	71	f	\N	3
+7323	6	\N	\N	733	4	1	(FINE DRIED BREAD CRUMBS, (?RECIPE?))	18	f	\N	4
 6016	12	\N	\N	524	1	1	\N	123	f	\N	0
 6017	0	\N	\N	524	1	1	, quartered	4	f	\N	1
 6018	0	\N	\N	524	1	1	, quartered	12	f	\N	2
@@ -11828,6 +11847,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5998	8	\N	\N	521	1	1	\N	70	f	\N	2
 5999	8	\N	\N	521	1	1	, to taste	681	t	\N	3
 6000	6	\N	\N	521	1	1	\N	993	f	\N	4
+7324	8	\N	\N	733	4	1	\N	285	f	\N	5
+7325	7	\N	\N	733	1	2	\N	123	f	\N	6
 6038	6	\N	\N	528	4	1	\N	178	f	\N	0
 6039	0	\N	\N	528	1	2	, juiced	12	f	\N	1
 6040	6	\N	\N	528	1	1	, peeled and diced	789	f	\N	2
@@ -13996,7 +14017,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1946	Once you have taken the steaks out of the pan, melt the remaining butter then add the sliced onions. Increase the heat and stir to brown and soften the onions, scraping the base of the pan.	\N	168	1	0
 1947	Add the pickled walnut juice and cook for a few minutes. Season to taste with salt and ground black pepper. Serve the beef on warmed plates and spoon the onions and juices over.	\N	168	2	0
 3233	Pour hot water over peppermint leaves and let steep for at least 5 minutes. Strain or leave in, and drink hot or let cool, and drink at room temperature.	\N	468	0	0
-3278	Blend all the ingredients in a  high-speed blender, on high, until smooth.	\N	486	0	0
 3187	Combine all the ingredients together in a mug and enjoy.	\N	428	0	0
 3422	Stove Top: Place the chicken, vinegar, and vegetables in a stockpot. Fill with water to 1 inch below the top of the stockpot. Bring to a boil, reduce the heat to medium-low, and simmer for 8 to 12 hours.	\N	559	2	0
 3423	Season with salt and pepper to taste.	\N	559	3	0
@@ -14005,6 +14025,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3426	Preheat the oven to 375°F.	\N	561	0	2
 3427	Rub 1 tablespoon of olive oil over the whole beets and roast in the oven for 40 minutes to 1 hour, until just tender when pierced. Set aside to cool for 10 minutes.	\N	561	1	2
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	\N	570	0	0
+3278	Blend all the ingredients in a high-speed blender, on high, until smooth.	\N	486	0	128
 3406	Add the garlic, and cook for 1 minute, until fragrant.	\N	554	2	4
 924	Pour the lentils into a big pot and add water. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling.	\N	1	0	0
 2917	Turn the broiler on to medium-high.	\N	321	0	16
@@ -14699,6 +14720,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3970	Drain the potatoes in a colander. Let them sit in the colander for at least 3 minutes to steam-dry.	\N	732	1	0
 3971	While the potatoes are sitting, put the cream and butter in the potato pot along with some salt and pepper. Heat the cream and butter just until the butter melts.	\N	732	2	0
 3972	Return the potatoes and garlic to the pot and mash with a potato masher until smooth. Taste the potatoes and season with a little more salt and pepper if needed.	\N	732	3	0
+3973	Preheat the oven to 350F. Line a baking sheet with parchment paper.	\N	733	0	2
+3974	Pat the black beans dry with paper towels and put them in a food processor. Add the miso, onion powder, garlic powder, bread crumbs, salt, pepper, and water and pulse until the mixture comes together and is sticky.	\N	733	1	33024
+3975	Divide the black bean mixture into 4 even portions and form into patties. Place the patties on the lined baking sheet and bake for 22 minutes, flipping about halfway through, until lightly golden on both sides.	\N	733	2	2
+3976	Remove the patties from the oven and serve or let cool. If you are serving them later, reheat them in a hot pan with a bit of oil.	\N	733	3	0
 \.
 
 
