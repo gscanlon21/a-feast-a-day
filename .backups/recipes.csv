@@ -21,7 +21,7 @@
 38	Black Bean Fajita Skillet	\N	\N	\N	4	10	5	2	t	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/ - You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	f	f
 39	Linguine w/ Avocado, Tomato, & Lime	\N	\N	\N	6	10	20	2	t	linguine-avocado-tomato-lime.jpg	0	https://www.bbcgoodfood.com/recipes/linguine-avocado-tomato-lime	f	f
 40	Saucy Bean Baked Eggs	\N	\N	\N	6	15	5	2	t	bean-baked-eggs.jpg	0	\N	f	f
-41	Creamy Pasta with Asparagus & Peas	Take five ingredients and whip up this simple green vegetable fusilli supper for two, plus hit 3 of your 5-a-day	\N	\N	10	12	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
+41	Creamy Pasta with Asparagus & Peas	\N	\N	\N	12	12	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	2	25	5	2	t	baked-banana-porridge.jpg	0	https://www.bbcgoodfood.com/recipes/baked-banana-porridge	f	f
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	quinoa-pizza.jpg	0	\N	f	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
@@ -170,7 +170,7 @@
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 190	Fusilli with Sausage	\N	\N	\N	6	15	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 191	Croûtons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
-192	Eliche with Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	6	20	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
+192	Eliche with Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	12	20	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	date-snickers.jpg	0	\N	f	f
 194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 195	Pasta with Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	pasta-broccoli-artichokes.jpg	0	\N	f	f
@@ -510,10 +510,15 @@
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	\N	0	\N	f	f
 725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	\N	0	\N	f	f
 726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
-727	Dal	\N	\N	\N	8	40	5	2	t	\N	0	\N	f	f
+727	Dal	\N	\N	\N	8	40	5	2	t	dal.jpg	0	\N	f	f
 728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	\N	6	\N	f	f
 729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	\N	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
 732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
 733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	\N	0	\N	t	f
+734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
+735	Zucchini Pesto Pasta	For added protein, you can add a cooked and sliced chicken breast, or cooked and diced bacon strips.	\N	\N	4	10	5	1	t	\N	0	\N	f	f
+736	Pea and Prosciutto Risotto	\N	Risotto base is not good.	\N	16	25	5	2	t	\N	0	\N	f	f
+737	Risotto Base	If you can;t find Arborio rice, use Carnaroli rice instead.	Risotto base is not good.	\N	0	25	5	1	t	\N	6	\N	t	f
+738	Fire-Roasted Red Pepper Dip	\N	Requires weird equipment.	\N	0	15	35	2	t	\N	6	\N	t	f

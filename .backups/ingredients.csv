@@ -18,7 +18,7 @@
 18	\N	Breadcrumbs	https://www.eatthismuch.com/calories/bread-crumbs-4029	\N	f	32	108	108	2024-10-03	6	108	4
 19	\N	Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-4914	\N	f	32	28	28	2025-08-31	4	112	4096
 20	\N	Quinoa	https://www.eatthismuch.com/food/nutrition/quinoa,4800	\N	f	0	170	170	2025-06-25	6	240	4
-21	\N	Wild Rice	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2024-08-09	6	160	0
+21	\N	Wild Rice	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	28	160	2025-09-12	4	160	1024
 22	\N	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021	\N	f	786464	25	25	2025-05-04	0	50	64
 23	\N	Flour Tortillas	https://www.eatthismuch.com/calories/tortillas-4268	\N	f	262176	46	46	2025-05-30	0	92	1024
 24	\N	Boneless Chicken Breasts	https://www.eatthismuch.com/calories/chicken-breast-446	\N	f	0	145	145	2025-03-14	0	145	268435456
@@ -65,7 +65,6 @@
 66	\N	Ranch Dressing	https://www.eatthismuch.com/calories/ranch-dressing-365	\N	f	0	15	15	2025-08-19	7	240	32
 67	\N	Black Pepper	https://www.eatthismuch.com/calories/pepper,205	\N	t	0	6	6	2024-09-03	7	96	131072
 68	\N	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	131072
-69	\N	Red Pepper Flakes	https://www.eatthismuch.com/calories/crushed-red-pepper-flakes,5832	\N	t	0	1	1	2024-08-16	7	16	4
 70	\N	Cinnamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
 71	\N	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195	\N	t	0	10	10	2024-10-18	7	160	131072
 72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	7	7	2024-08-26	7	112	3
@@ -324,7 +323,7 @@
 333	\N	Egg Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	262176	4.75	38	2025-08-09	4	38	4096
 334	\N	Ear of Corn	https://www.eatthismuch.com/calories/corn-1946	\N	t	2	102	102	2025-07-31	0	102	2
 335	\N	Sweet Corn	https://www.eatthismuch.com/calories/sweet-corn-161446	\N	t	2	28	28	2025-07-30	4	224	512
-336	\N	Challenge Butter, Salted	https://www.eatthismuch.com/calories/challenge-salted-butter,549893	\N	t	0	14	14	2024-08-09	7	224	131072
+336	\N	Salted Challenge Butter	https://www.eatthismuch.com/calories/challenge-salted-butter,549893	\N	f	0	14	14	2025-09-11	7	224	29360128
 337	\N	Challenge Butter, Unsalted	https://www.eatthismuch.com/calories/butter-unsalted-2304327	\N	t	0	14	14	2024-12-23	7	224	29360128
 338	\N	Challenge Butter	https://www.eatthismuch.com/calories/butter-unsalted-2304327	\N	t	0	14	14	2024-10-08	7	224	6
 339	\N	Maple-Glazed Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-14	0	224	268435456
@@ -615,7 +614,7 @@
 688	\N	Sugar-Free Dark Chocolate Bar (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	84	168	2025-01-10	0	168	16384
 689	\N	Frozen Okra	https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	28	2024-08-26	0	224	67108864
 690	\N	Honey | Coconut Sugar | Stevia	https://www.eatthismuch.com/calories/honey-4620	\N	f	0	28	21	2025-01-24	4	336	32
-691	\N	Dry Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2024-08-09	6	113.33	1024
+691	\N	Dry Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2025-09-11	6	113.33	1024
 692	\N	Sea Salt & Black Pepper	Averaging the grams and using the higher nutrient value of the two: https://www.eatthismuch.com/calories/salt-221 - https://www.eatthismuch.com/calories/pepper-205	\N	t	0	28	12	2025-07-23	4	192	131072
 693	\N	Iodized Salt & Black Pepper	https://www.eatthismuch.com/calories/salt-iodized,1926529	\N	t	0	8	2	2024-09-08	8	256	131072
 694	\N	Marinated Artichoke Hearts	https://www.eatthismuch.com/calories/asparagus-spears-1624112	\N	f	0	16	80	2025-09-04	0	112	1
@@ -637,7 +636,7 @@
 710	\N	Baby Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-06-22	0	164	2
 711	\N	Garganelli Pasta	https://www.eatthismuch.com/calories/penne-135502	\N	f	32	28	56	2025-01-06	4	112	4096
 712	\N	Fresh Mixed Herbs (Basil, Parsley, Chervil, Marjoram, Oregano)	https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	f	0	2	1	2024-11-06	4	16	2
-713	\N	Dried Minced Garlic	https://www.eatthismuch.com/calories/garlic-powder-195	\N	f	0	10	10	2024-10-18	7	160	4
+713	\N	Dried Minced Garlic	aka: Garlic Flakes - https://www.eatthismuch.com/calories/garlic-powder-195	\N	f	0	10	10	2024-10-18	7	160	4
 714	\N	Frozen Podded Green Peas	aka. Frozen Pea Pods. In pods. https://www.eatthismuch.com/calories/peas-2062	\N	f	0	144	144	2024-11-04	6	144	67108864
 715	\N	Nettle Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-04	0	236.56	0
 717	\N	Fresh Podded Fava Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	2
@@ -656,8 +655,8 @@
 730	\N	Fresh Mixed-Color Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
 731	\N	Fresh Yellow Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2025-01-05	0	90	1
 732	\N	Frozen Broccoli	https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
-733	\N	Cauliflower Heads	\N	\N	f	0	160	160	2024-08-09	0	160	2
-734	\N	Frozen Cauliflower Florets	\N	\N	f	0	160	160	2024-08-09	6	160	0
+733	\N	Cauliflower Heads	https://www.eatthismuch.com/calories/cauliflower-1921	\N	f	0	588	107	2025-09-13	0	107	2
+734	\N	Frozen Cauliflower Florets	https://www.eatthismuch.com/calories/cauliflower-1923	\N	f	0	28	132	2025-09-14	4	132	67108864
 735	\N	Mung Beans	https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	207	2024-10-17	4	207	2048
 736	\N	Carrots	https://www.eatthismuch.com/calories/carrots-1914	\N	f	0	28	72	2025-08-25	4	128	2
 737	\N	Tomato Paste	https://www.eatthismuch.com/calories/tomato-paste-2232	\N	f	512	262	262	2025-04-27	6	262	256
@@ -727,7 +726,7 @@
 830	\N	Sun-Dried Tomato Paste	aka. Sun-Dried Tomato Puree. https://www.eatthismuch.com/calories/sun-dried-tomato-paste-1801202	\N	f	0	28	30	2025-04-04	4	240	256
 831	\N	Saffron	https://www.eatthismuch.com/calories/saffron-212	\N	f	0	28	0.7	2025-01-11	4	33.6	131072
 832	\N	Dried Sage	\N	\N	f	0	4	4	2024-09-26	7	64	1
-833	\N	Dried Red Chili Pepper	https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	\N	t	0	28	1	2025-07-19	4	16	131072
+833	\N	Crushed Red Pepper Flakes	aka: Dried Red Pepper Flakes - https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	\N	t	0	28	1	2025-07-19	4	16	131072
 834	\N	Frozen Edamame Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/	\N	f	0	28	118	2025-07-25	4	118	67108864
 835	\N	Sliced Fennel Salami	https://www.eatthismuch.com/calories/hard-salami,1805029	\N	f	0	5.6	28	2024-09-01	0	100	8
 836	\N	Long Grain Rice	https://www.eatthismuch.com/calories/white-rice,4806	\N	f	0	185	185	2024-09-19	6	185	4
@@ -770,7 +769,7 @@
 903	\N	Radish Sprouts	https://www.eatthismuch.com/calories/radish-seeds-2315	\N	f	0	28	38	2025-01-14	4	38	2
 904	\N	Lean Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-904	\N	f	0	28	28	2024-12-10	0	224	268435456
 905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038 | https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	100	2024-08-26	0	100	2
-906	\N	Frozen Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2024-08-09	6	113.33	1024
+906	\N	Frozen Cauliflower Rice	aka. Riced Cauliflower - https://www.eatthismuch.com/calories/cauliflower-1923	\N	f	0	28	132	2025-09-12	4	132	67108864
 907	\N	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	\N	f	0	60	15	2024-08-23	6	60	928
 908	\N	Raw Mixed Nuts | Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
 909	\N	Raw Mixed Nuts	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
@@ -913,7 +912,7 @@
 1111	\N	Shrimp	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-29	0	182	1
 1112	\N	Skirt Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/gammon-7453	\N	f	0	453.592	453.592	2024-10-14	0	240	268435456
 1113	\N	White Fish	https://www.eatthismuch.com/calories/fish-sauce-747	\N	f	0	18	18	2024-10-06	7	288	3
-1114	\N	Cauliflower	\N	\N	f	0	160	160	2024-08-09	0	160	2
+1114	\N	Cauliflower	https://www.eatthismuch.com/calories/cauliflower-1921	\N	f	0	28	107	2025-09-13	4	107	2
 1116	\N	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	f	0	33	908	2025-01-20	0	99	2
 1117	\N	Pumpkin Pie Spice	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
 1118	\N	Mixed-Color Baby Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
@@ -965,7 +964,7 @@
 1194	\N	Crème Fraîche | Sour Cream	https://www.eatthismuch.com/calories/creme-fraiche-1706554	\N	f	324	28	30	2024-11-16	4	240	29360128
 1195	\N	Pomegranate	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
 1196	\N	Small Mixed-Color Heirloom Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	50	72	2025-08-24	0	72	2
-1197	\N	Mixed Grains	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2024-08-09	6	160	0
+1197	\N	Mixed Grains	https://www.eatthismuch.com/calories/wild-rice,4845	\N	f	0	160	160	2025-09-14	6	160	0
 1198	\N	Fresh Flat-Leaf Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-09-26	4	64	3
 1199	\N	Small Cucumbers	https://www.eatthismuch.com/food/nutrition/cucumber,1971/	\N	f	0	301	301	2025-03-04	0	240	2
 1200	\N	Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
@@ -1039,3 +1038,13 @@
 1297	\N	Vanilla Protein Powder	https://www.eatthismuch.com/calories/protein-powder-1643743	\N	t	0	32	32	2025-06-17	0	128	-2147483648
 1298	\N	Chocolate Protein Powder	https://www.eatthismuch.com/calories/protein-powder-1643743	\N	t	0	32	32	2025-06-17	0	128	-2147483648
 1299	\N	Plain Protein Powder	https://www.eatthismuch.com/calories/protein-powder-1643743	\N	t	0	32	32	2025-06-17	0	128	-2147483648
+1300	\N	Raw Red Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-24	6	192	2048
+1301	\N	Fresh Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	3
+1302	\N	Crushed Chili Pepper Flakes	aka: Dried Chili Pepper Flakes - https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	\N	t	0	28	1	2025-07-19	4	16	131072
+1303	\N	Red Lentils | Green Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-24	6	192	2048
+1304	\N	White Wine | Vegetable Broth	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2024-08-22	9	235.2	524288
+1305	\N	Raw Green Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-24	6	192	2048
+1306	\N	Sambal Oelek	aka: Chili Paste - https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	131072
+1307	\N	Canned Chickpeas	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
+1308	\N	Garlic	https://www.eatthismuch.com/calories/garlic-clove,7480	\N	f	0	8	4	2024-08-29	0	224	3
+1309	\N	Green Cauliflower Heads	https://www.eatthismuch.com/calories/cauliflower-2574	\N	f	0	160	160	2025-09-13	0	160	2
