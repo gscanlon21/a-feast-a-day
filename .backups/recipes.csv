@@ -49,7 +49,7 @@
 67	French Toast	\N	\N	\N	6	15	5	2	t	french-toast.jpg	0	\N	f	f
 68	Cheese and Crackers	\N	\N	\N	18	0	5	1	t	cheese-meat-crackers.jpg	0	\N	f	f
 69	Chopped Eggs and Onions	\N	\N	\N	20	12	3	4	t	egg-salad-alt.jpg	0	\N	f	f
-70	Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	5	1	t	guacamole.jpg	6	\N	f	f
+70	Guacamole	Serve with Tortilla Chips.	Has too many ingredients.	\N	0	0	5	1	t	guacamole.jpg	6	\N	f	f
 71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	guacamole-chip.jpg	0	\N	f	f
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	f	white-bread.jpg	0	\N	t	t
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	f	white-bread.jpg	0	\N	t	t
@@ -291,7 +291,7 @@
 407	Apples and Peanut Butter	\N	\N	\N	48	0	1	1	t	peanut-butter-apples.jpg	0	\N	f	f
 408	Baked Zucchini	\N	\N	\N	16	10	5	2	t	zucchini.jpg	0	\N	f	f
 409	Pumpkin Bread	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	45	15	10	t	\N	0	\N	f	f
-410	Cauliflower Mash	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	cauliflower-rice.jpg	6	\N	t	f
+410	Cauliflower Mash	\N	\N	\N	16	15	5	2	t	cauliflower-rice.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	cauliflower-rice.jpg	6	\N	t	f
 412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	5	5	2	t	cauliflower-rice.jpg	0	\N	f	f
 413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	pumpkin-pudding.jpg	0	\N	f	f
@@ -522,3 +522,5 @@
 736	Pea and Prosciutto Risotto	\N	Risotto base is not good.	\N	16	25	5	2	t	\N	0	\N	f	f
 737	Risotto Base	If you can;t find Arborio rice, use Carnaroli rice instead.	Risotto base is not good.	\N	0	25	5	1	t	\N	6	\N	t	f
 738	Fire-Roasted Red Pepper Dip	\N	Requires weird equipment.	\N	0	15	35	2	t	\N	6	\N	t	f
+739	Soba Noodle Salad	You can substitute the bok choy for cabbage. Garnish this dish with black and white sesame seeds and thinly sliced scallions.	\N	\N	20	0	10	2	t	\N	0	\N	f	f
+740	Classic-ish Niçoise Salad	To make the salad more substantial, add 1 cup spinach, and 1 cup cooked penne noodles.	\N	\N	16	5	10	2	t	\N	0	\N	f	f

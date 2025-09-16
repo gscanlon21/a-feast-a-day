@@ -9716,6 +9716,31 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14820	734	1984	\N	\N	3	0.4
 14821	734	62	\N	\N	3	6
 14822	734	2047	\N	\N	3	32
+14823	261	256	\N	\N	3	0.2
+14824	261	9007199254740992	\N	\N	3	0.4
+14825	261	18014398509481984	\N	\N	3	1
+14826	261	36028797018963968	\N	\N	3	2
+14827	261	72057594037927936	\N	\N	3	0.4
+14828	261	144115188075855872	\N	\N	3	0.3
+14829	261	288230376151711744	\N	\N	3	1
+14830	261	576460752303423488	\N	\N	3	1
+14831	261	1152921504606846976	\N	\N	3	0.3
+14832	261	2305843009213693952	\N	\N	3	1
+14833	261	-9223372036854775808	\N	\N	3	1
+14834	261	4611686018427387904	\N	\N	3	1
+14835	261	274877906944	\N	\N	1	0.4
+14836	261	17179869184	\N	\N	2	76
+14837	261	4398046511104	\N	\N	2	1
+14838	261	70368744177664	\N	\N	2	294
+14839	261	17592186044416	\N	\N	2	1
+14840	261	262144	\N	\N	2	0.3
+14841	261	524288	\N	\N	2	0.1
+14842	261	1048576	\N	\N	2	6
+14843	261	2097152	\N	\N	2	2
+14844	261	4194304	\N	\N	2	0.2
+14845	261	16777216	\N	\N	1	35
+14846	261	1536	\N	\N	3	0.4
+14847	261	1792	\N	\N	3	0.6
 \.
 
 
@@ -9964,11 +9989,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7171	4	\N	\N	711	1	16	, drained and rinsed	1307	f	\N	0
 2793	8	\N	\N	141	8	1	\N	214	f	\N	11
 2794	0	\N	\N	141	1	2	, shredded, to garnish	144	f	\N	12
+1004	0	\N	\N	71	1	1	\N	\N	f	198	0
 2795	4	\N	\N	138	1	2	\N	277	f	\N	0
 2796	4	\N	\N	138	1	2	\N	206	f	\N	1
 2797	4	\N	\N	138	1	2	\N	376	f	\N	2
 2798	7	\N	\N	138	1	2	\N	494	f	\N	3
-1004	0	\N	\N	71	1	1	\N	\N	f	70	0
 1005	4	\N	\N	71	1	4	\N	226	f	\N	0
 2799	7	\N	\N	138	1	2	\N	495	f	\N	4
 2800	7	\N	\N	138	1	1	\N	496	f	\N	5
@@ -10064,8 +10089,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 442	6	\N	\N	49	3	1	\N	134	f	\N	0
 443	6	\N	\N	49	4	1	\N	120	f	\N	0
 3913	7	\N	\N	196	1	3	\N	321	f	\N	7
-7306	0	\N	\N	731	1	1	\N	1250	f	\N	0
-7307	7	\N	\N	731	1	2	\N	77	f	\N	1
 5099	6	\N	\N	161	2	3	, minced	644	f	\N	0
 5100	0	\N	\N	161	1	4	, crushed	5	f	\N	1
 5101	0	\N	\N	161	1	4	 roots, finely chopped	13	f	\N	2
@@ -10078,9 +10101,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1575	4	\N	\N	96	1	8	, hulled and halved (2 cups)	10	f	\N	0
 1577	0	\N	\N	96	1	1	\N	342	f	\N	2
 2654	6	\N	\N	86	2	5	\N	111	f	\N	0
-7308	8	\N	\N	731	8	1	, ground	67	f	\N	2
+7306	0	\N	\N	731	1	1	\N	1250	f	\N	0
 2655	6	\N	\N	86	1	1	\N	836	f	\N	1
 440	6	\N	\N	49	1	4	, split	165	f	\N	0
+7307	7	\N	\N	731	1	1	\N	77	f	\N	1
+7308	8	\N	\N	731	8	1	, ground	67	t	\N	2
 2658	4	\N	\N	86	1	6	\N	292	f	\N	4
 4905	8	\N	\N	101	8	1	\N	285	t	\N	4
 5107	0	\N	\N	51	1	2	, minced	5	f	\N	0
@@ -10344,16 +10369,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2017	0	\N	\N	115	1	1	, sliced (4 slices avocado)	9	f	\N	9
 2018	0	\N	\N	115	1	1	, buttered	213	t	\N	10
 4313	6	\N	\N	30	1	2	, sliced or chopped	17	t	\N	4
-7309	6	\N	\N	731	4	1	\N	62	f	\N	3
 2535	6	\N	\N	36	1	2	, or 8 ounces	30	f	\N	5
 3099	6	\N	\N	130	1	2	, 1lb	25	f	\N	0
 3100	7	\N	\N	130	1	1	, grated	307	f	\N	1
 3101	0	\N	\N	130	1	1	, outer layers discarded and centre part chopped finely	550	f	\N	2
 3102	7	\N	\N	130	1	2	\N	233	f	\N	3
 3103	8	\N	\N	130	8	1	\N	285	f	\N	4
+7309	6	\N	\N	731	4	1	\N	62	f	\N	3
 7310	7	\N	\N	731	1	3	\N	36	f	\N	4
-7311	8	\N	\N	731	8	1	\N	214	f	\N	5
-7312	6	\N	\N	731	2	1	(GUACAMOLE)	\N	t	703	6
 2536	8	\N	\N	36	8	1	\N	360	t	\N	6
 4314	5	\N	\N	34	1	2	, fully cooked	126	f	\N	0
 4315	6	\N	\N	34	4	3	\N	37	f	\N	1
@@ -10407,6 +10430,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2445	6	\N	\N	26	1	1	\N	6	f	\N	0
 2446	7	\N	\N	26	1	2	\N	77	f	\N	1
 2447	8	\N	\N	26	8	1	\N	285	t	\N	2
+7311	8	\N	\N	731	8	1	\N	214	t	\N	5
+7312	6	\N	\N	731	2	1	\N	\N	t	703	6
 3847	5	\N	\N	76	1	1	\N	137	f	\N	0
 3848	0	\N	\N	76	1	1	, sliced	250	f	\N	1
 3849	0	\N	\N	76	1	1	, roughly chopped	251	f	\N	2
@@ -11382,6 +11407,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5495	0	\N	\N	381	1	2	\N	250	f	\N	0
 5496	4	\N	\N	381	1	6	, sliced into strips	387	f	\N	1
 5497	8	\N	\N	381	1	1	\N	29	f	\N	2
+7359	5	\N	\N	740	1	1	, cooked	1086	f	\N	0
 2361	7	\N	\N	53	1	2	\N	186	f	\N	3
 2362	8	\N	\N	53	1	1	\N	39	f	\N	4
 2363	8	\N	\N	53	1	1	\N	70	t	\N	5
@@ -11676,15 +11702,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5757	7	\N	\N	422	1	2	\N	215	f	\N	5
 5758	0	\N	\N	422	1	1	, zested and juiced	12	f	\N	6
 5698	7	\N	\N	414	1	2	\N	215	f	\N	2
-5680	0	\N	\N	410	1	1	\N	733	f	\N	0
-5681	7	\N	\N	410	1	1	\N	964	f	\N	1
-5682	7	\N	\N	410	1	2	, organic	980	f	\N	2
 5715	0	\N	\N	417	1	1	, chopped small	812	f	\N	0
 5699	7	\N	\N	414	1	1	\N	357	f	\N	3
 5700	8	\N	\N	414	2	1	\N	503	f	\N	4
 5747	7	\N	\N	421	1	2	\N	77	f	\N	2
-5683	8	\N	\N	410	4	1	, to taste	74	f	\N	3
-5684	7	\N	\N	410	1	1	, chopped	979	t	\N	4
 5701	8	\N	\N	414	8	1	, to taste	969	f	\N	5
 5648	7	\N	\N	402	1	1	, minced	251	t	\N	7
 5706	7	\N	\N	416	1	1	\N	77	f	\N	0
@@ -12025,6 +12046,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6100	8	\N	\N	55	8	1	, to taste	692	t	\N	2
 4428	4	\N	\N	105	1	10	, dried	382	f	\N	3
 4429	4	\N	\N	105	1	3	, plus extra to serve	378	f	\N	4
+7360	6	\N	\N	740	4	1	\N	123	f	\N	1
+7361	6	\N	\N	740	1	1	, halved	147	f	\N	2
+7362	6	\N	\N	740	2	1	(Niçoise olives)	397	f	\N	3
+7363	6	\N	\N	740	4	1	\N	\N	f	721	4
 6140	0	\N	\N	544	1	1	\N	9	f	\N	0
 6141	6	\N	\N	544	4	1	\N	151	f	\N	1
 6142	7	\N	\N	544	1	3	\N	13	f	\N	2
@@ -12334,6 +12359,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5874	8	\N	\N	470	4	1	\N	1117	f	\N	6
 7352	7	\N	\N	738	1	1	\N	77	f	\N	4
 7353	8	\N	\N	738	8	1	\N	285	f	\N	5
+7364	4	\N	\N	740	1	5	, drained	1204	f	\N	5
+7365	8	\N	\N	740	8	1	\N	285	f	\N	6
 6423	0	\N	\N	583	1	1	(POUCHES/CANS OF PINK WILD-CAUGHT SALMON)	869	f	\N	0
 6424	0	\N	\N	583	1	1	\N	187	f	\N	1
 6425	6	\N	\N	583	4	1	(PORK PANKO)	318	f	\N	2
@@ -12516,8 +12543,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7290	8	\N	\N	728	4	1	\N	285	f	\N	6
 7270	8	\N	\N	725	8	1	\N	285	f	\N	7
 6600	7	\N	\N	607	1	1	, for cooking	1104	f	\N	0
+7354	6	\N	\N	739	1	2	(SOBA NOODLES), cooked, rinsed in cold water	333	f	\N	0
 7282	6	\N	\N	727	1	3	\N	123	f	\N	6
 7283	8	\N	\N	727	8	1	\N	285	t	\N	7
+7355	6	\N	\N	739	2	1	, grated	736	f	\N	1
 6620	0	\N	\N	609	1	6	, tops and bottoms removed (keep skin on)	671	f	\N	0
 6579	5	\N	\N	602	1	1	\N	387	f	\N	0
 6621	0	\N	\N	609	1	2	, tops removed (keep skin on)	157	f	\N	1
@@ -12845,10 +12874,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6542	4	\N	\N	596	1	4	, diced into ½ inch pieces.	1089	f	\N	5
 6543	6	\N	\N	596	2	1	\N	178	f	\N	6
 7335	7	\N	\N	735	1	2	, grated	95	f	\N	6
+7356	6	\N	\N	739	2	1	, thinly sliced	824	f	\N	2
 6849	4	\N	\N	639	1	12	\N	326	f	\N	0
 6850	7	\N	\N	639	1	2	\N	78	f	\N	1
 6851	0	\N	\N	639	1	4	, thinly slices	5	f	\N	2
 6852	0	\N	\N	639	1	1	, sliced	1216	f	\N	3
+7357	6	\N	\N	739	2	1	, thinly sliced	8	f	\N	3
+7358	6	\N	\N	739	4	1	\N	\N	f	720	4
 6536	7	\N	\N	595	1	2	\N	81	f	\N	8
 6875	0	\N	\N	641	1	3	\N	9	f	\N	0
 6876	0	\N	\N	641	1	2	, juiced	4	f	\N	1
@@ -12935,6 +12967,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6862	7	\N	\N	639	1	1	, shreded, to garnish	302	f	\N	13
 7231	8	\N	\N	719	1	2	, aka. Chili Paste	1306	f	\N	4
 7232	7	\N	\N	719	1	1	, grated	1301	f	\N	5
+5680	0	\N	\N	410	1	1	\N	733	f	\N	0
+5681	7	\N	\N	410	1	1	\N	964	f	\N	1
+5682	7	\N	\N	410	1	2	, organic	980	f	\N	2
+5683	8	\N	\N	410	4	1	, to taste	74	f	\N	3
+5684	7	\N	\N	410	1	1	, chopped	979	t	\N	4
 6928	0	\N	\N	646	1	4	(BEEF TENDERLOIN (FILLETS) OR SIRLOIN BEAF STEAKS)	114	f	\N	0
 6929	7	\N	\N	646	3	1	\N	77	f	\N	1
 6930	7	\N	\N	646	1	1	(BLACK AND WHITE PEPPERCORNS), coarsely crushed	598	f	\N	2
@@ -13706,9 +13743,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2735	Place all the ingredients in a food processor and process until smooth and well mixed.	\N	125	0	0
 2801	Break up the chocolate and put into a bowl over a pan of barely simmering water. Leave undisturbed for 10 minutes, until the chocolate has melted, then add the water, syrup and butter and stir until smooth.	\N	310	0	0
 2372	You can add more liquid if you’d like the dressing thinner.	\N	255	2	0
-3123	Lightly steam the cauliflower.	\N	410	0	0
-3124	Add all ingredients to a blender and mix on high.	\N	410	1	128
-3125	Top with chopped dill/chives.	\N	410	2	0
 692	Remove from the oven and top with remaining chopped parsley.	\N	64	6	0
 693	Serve immediately with extra Parmesan cheese.	\N	64	7	0
 1779	Blend the pitted, coarsely chopped dates, unsweetened shredded coconut (or any variety of finely chopped nuts, except peanuts), and cinnamon in a food processor.	\N	46	0	0
@@ -13727,6 +13761,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3055	Cook the chops as directed. While the chops are resting, pour off the fat from the skillet. Add the maple syrup mixture, return to medium-high heat, and cook, scraping up the browned bits from the bottom of the pan, until the mixture is reduced by half and syrupy.	\N	390	1	4
 3446	Add the sweet potato and continue to cook until cooked through, about 15-20 minutes.	\N	565	2	0
 3447	Season with salt and pepper.	\N	565	3	0
+3123	Lightly steam the cauliflower.	\N	410	0	0
+3124	Add all ingredients to a blender and mix on high.	\N	410	1	128
+3125	Top with chopped dill/chives.	\N	410	2	0
 2972	Add all of the ingredients to a bowl and whisk together. 	\N	363	0	0
 3083	Add to a slow cooker and cook on low for 8 hours.	\N	396	2	0
 217	Preheat the oven to 425°F. 	\N	55	0	0
@@ -14810,7 +14847,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1871	Add red chili pepper flakes, a little pit of salt and pepper, tomato sauce, crushed tomatoes, and chicken broth to crock pot then cover and cook on low for 5-6 hours or until sausages are very tender. Serve over pasta or inside rolls with provolone cheese on top.	\N	180	3	0
 3962	If using a blender, place the lemon juice, eggs and salt in a high-speed blender and start blending. Slowly add the oil into the blender to emulsify the eggs and oil, for 2–3 minutes.\r\n	\N	556	1	0
 3963	For an immersion blender, place the lemon juice, eggs, salt and oil, in that order, in a clear jar or container that the immersion blender can fit snugly into. Start blending and watch the mixture (about 30-45 seconds). Once it starts to turn off-white at the bottom of the jar, slowly start to pull the blender upward. Stop once the entire mixture is off-white (when it is emulsified).	\N	556	2	0
-3964	Preheat the oven to 375F.	\N	731	0	2
 3919	In a large pot with a tight-fitting lid over medium-heat, cook the bacon for about 5 minutes, or until browned. Add the rice, tomato, and allspice and cook for another 2 to 3 minutes.	\N	717	0	0
 3921	Remove from the heat and let it sit, with the lid on, for another 5 minutes.	\N	717	2	0
 3922	Fluff the rice with a fork, season it with salt and pepper, and serve.	\N	717	3	0
@@ -14827,15 +14863,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3953	In a medium bowl, combine the broccoli, olive oil, Parmesan, pepper flakes, and salt. Toss to evenly coat the broccoli.	\N	729	1	0
 3954	Spread the broccoli on the lined pan and roast for 17 to 20 minutes, until the broccoli is slightly dark and crisp.	\N	729	2	2
 3955	Squeeze the lemon juice over the broccoli and eat.	\N	729	3	0
-3965	Peel the sweet potato and cut it into finger-size pieces. Put the fingers in a large bowl, drizzle with olive oil, and season with pepper. Toss to evenly coat the fingers.	\N	731	1	0
-3966	Spread the sweet potato fingers out onto a sheet pan and roast for 20 minutes. Flip the sweet potatoes and roast for another 10 to 15 minutes, until they are tender.	\N	731	2	2
 3957	Preheat the oven to 350F.	\N	730	0	2
 3958	Arrange the baguette slices on a sheet pan and drizzle them with the olive oil. Season the bread with salt and pepper and bake for 10 to 12 minutes, until the bread is crisp.	\N	730	1	0
 3959	Warm a medium skillet over medium heat and add the bacon. Cook for about 5 minutes.	\N	730	2	0
 3960	Drain off all but 1 tablespoon of the bacon fat. Add the pears to the pan and cook for 2 minutes. Add the water and sugar and cook for 8 to 10 minutes, until the mixture is thick. Remove from the heat and let cool.	\N	730	3	0
 3961	Spread a thin layer of blue cheese on each of the crostini. Top the cheese with the cooled bacon and pear mixture and enjoy.	\N	730	4	0
-3967	While the potato fingers are cooking, in a small pot, combine soy sauce and sugar and bring to a boil. Reduce the heat to a simmer and cook about 5 minutes, or until thick. Remove from the heat and let cool.	\N	731	3	4
-3968	Take the sweet potatoes out of the oven, season with salt, drizzle with the sweet soy glaze, and serve with guacamole on the side.	\N	731	4	0
 3969	In a medium bowl, add the potatoes with enough water to cover them. Add a pinch of salt. Bring to a boil over high heat and boil for 5 minutes. Add the whole cloves of garlic and continue to cook until the potatoes are tender, approximately 15 minutes.	\N	732	0	0
 3970	Drain the potatoes in a colander. Let them sit in the colander for at least 3 minutes to steam-dry.	\N	732	1	0
 3971	While the potatoes are sitting, put the cream and butter in the potato pot along with some salt and pepper. Heat the cream and butter just until the butter melts.	\N	732	2	0
@@ -14843,6 +14875,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3973	Preheat the oven to 350F. Line a baking sheet with parchment paper.	\N	733	0	2
 3974	Pat the black beans dry with paper towels and put them in a food processor. Add the miso, onion powder, garlic powder, bread crumbs, salt, pepper, and water and pulse until the mixture comes together and is sticky.	\N	733	1	33024
 3975	Divide the black bean mixture into 4 even portions and form into patties. Place the patties on the lined baking sheet and bake for 22 minutes, flipping about halfway through, until lightly golden on both sides.	\N	733	2	2
+3964	Preheat the oven to 375°F.	\N	731	0	2
+3965	Peel the sweet potato and cut it into finger-size pieces. Put the fingers in a large bowl, drizzle with olive oil, and season with pepper. Toss to evenly coat the fingers.	\N	731	1	0
+3966	Spread the sweet potato fingers out onto a sheet pan and roast for 20 minutes. Flip the sweet potatoes and roast for another 10 to 15 minutes, until they are tender.	\N	731	2	2
 3976	Remove the patties from the oven and serve or let cool. If you are serving them later, reheat them in a hot pan with a bit of oil.	\N	733	3	0
 2860	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Just before draining the pasta, add a ladleful or two of the cooking water to the sausage sauce and stir it in well. Taste the sauce to check the seasoning.	\N	192	3	0
 2861	Finely shred the radicchio leaves. Drain the cooked pasta and turn it into the pan of sausage sauce. Add the shredded radicchio and toss well to combine everything thoroughly. Serve immediately.	\N	192	4	0
@@ -14850,6 +14885,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3945	Sprinkle the curry powder into the pot and cook for 30 seconds. Add the lentils and water and bring to a boil. Reduce the heat to low and simmer for 25 to 30 minutes, until the lentils are tender.	\N	727	1	0
 3946	Taste the dal and add salt and pepper if it needs it.	\N	727	2	0
 3942	Season the lentils with salt and pepper and serve with your favorite protein.	\N	725	3	0
+3994	Cook the green beans according to package directions.	\N	740	0	0
+3995	Put the green beans in a medium bowl along with the tomatoes, olives, and vinaigrette. Toss to coat.	\N	740	1	0
 3977	Fill a pot with water. Set a steaming basket above the water and lay the asparagus in the basket. Bring the water to a boil and cover the pot and steaming basket with a lid. Steam for 7 minutes.	\N	734	0	4
 3978	Put the zucchini noodles in a microwave-safe dish along with the water. Cover the dish tightly with plastic wrap and cook in the microwave on high for 90 seconds.	\N	735	0	0
 3979	Warm a medium skillet over medium-high heat. Add the olive oil and cherry tomatoes and cook the tomatoes until they start to pop, about 3 to 4 minutes.	\N	735	1	0
@@ -14866,6 +14903,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3990	Put the peppers in a metal bowl and cover very tightly with plastic wrap. Let sit for 10 minutes.	\N	738	1	0
 3991	Rub the peppers with a kitchen towel to remove the skins. Remove then stems and seeds from the peppers and discard. Let the peppers cool to room temperature.	\N	738	2	0
 3992	Transfer the peppers to a food processor and add the feta, mint, and 1 tablespoon of olive oil. Pulse the mixture until it is completely combined. Add the remaining 1 tablespoon of oil if the mixture isn't coming together. Season with salt and black pepper to taste.	\N	738	3	256
+3996	Add the tuna and gently stir into the salad. Season with salt and pepper and serve.	\N	740	2	0
+3967	While the potato fingers are cooking, in a small pot, combine soy sauce and sugar and bring to a boil. Reduce the heat to a simmer and cook about 5 minutes, or until thick. Remove from the heat and let cool.	\N	731	3	4
+3968	Take the sweet potatoes out of the oven, season with salt, drizzle with the sweet soy glaze, and serve with guacamole on the side.	\N	731	4	0
+3993	In a medium bowl, toss together the noodles, carrot, bok choy, and bell pepper. Add the dressing and toss to coat the noodles and vegetables.	\N	739	0	0
 \.
 
 
@@ -14911,7 +14952,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14822, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14847, true);
 
 
 --
