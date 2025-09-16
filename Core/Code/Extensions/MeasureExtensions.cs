@@ -89,6 +89,15 @@ public static class MeasureExtensions
             (Measure.Gallons, Measure.Cups) => 16,
             (Measure.Cups, Measure.Gallons) => 1d / 16,
 
+            (Measure.Quarts, Measure.Cups) => 4,
+            (Measure.Cups, Measure.Quarts) => 1d / 4,
+
+            (Measure.Gallons, Measure.Quarts) => 4,
+            (Measure.Quarts, Measure.Gallons) => 1d / 4,
+
+            (Measure.Quarts, Measure.Milliliters) => 946.352946,
+            (Measure.Milliliters, Measure.Quarts) => 1d / 946.352946,
+
             (Measure.Cups, Measure.FluidOunces) => 8,
             (Measure.FluidOunces, Measure.Cups) => 1d / 8,
 
