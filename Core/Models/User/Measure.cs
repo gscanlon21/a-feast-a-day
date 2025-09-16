@@ -55,6 +55,9 @@ public enum Measure
     [Display(Name = "Pints", ShortName = "pt")]
     Pints = 13,
 
+    [Display(Name = "Quarts", ShortName = "qt")]
+    Quarts = 14,
+
     // This changes depending on the substance.
     //[Display(Name = "IU")]
     //IU = 99,
@@ -78,7 +81,7 @@ public static class MeasureConsts
     /// <summary>
     /// Measures used to measure liquids.
     /// </summary>
-    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters, Measure.Gallons, Measure.Pints];
+    public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters, Measure.Gallons, Measure.Pints, Measure.Quarts];
 }
 
 /* Swap two measures.
