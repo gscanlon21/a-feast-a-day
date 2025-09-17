@@ -132,7 +132,7 @@
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	spiced-lentils-rice.jpg	0	\N	f	f
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	12	15	2	2	t	spaghetti-lemon.jpg	0	\N	f	f
 153	Spicy Potato and Olive Salad	\N	\N	\N	16	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
-154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	32	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
+154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	64	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
 156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	banana-ice-cream.jpg	0	\N	f	f
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	16	0	6	6	t	fruit-skewers.jpg	0	\N	f	f
@@ -414,7 +414,7 @@
 595	Pan Fried Haddock	\N	\N	\N	12	13	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 596	Quiche	\N	\N	\N	8	60	15	4	t	quiche.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 597	Smooth Skin Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-598	Tropical Green Smoothie	\N	\N	\N	128	0	6	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+598	Tropical Green Smoothie	\N	Too many ingredients/	\N	128	0	6	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 600	Pain Away Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 601	Cowboy Caviar	\N	\N	\N	0	0	20	3	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -524,3 +524,4 @@
 738	Fire-Roasted Red Pepper Dip	\N	Requires weird equipment.	\N	0	15	35	2	t	\N	6	\N	t	f
 739	Soba Noodle Salad	You can substitute the bok choy for cabbage. Garnish this dish with black and white sesame seeds and thinly sliced scallions.	\N	\N	20	0	10	2	t	\N	0	\N	f	f
 740	Classic-ish Niçoise Salad	To make the salad more substantial, add 1 cup spinach, and 1 cup cooked penne noodles.	\N	\N	16	5	10	2	t	\N	0	\N	f	f
+741	Roasted Vegetable and Goat Cheese Salad	\N	\N	\N	16	0	15	2	t	\N	0	\N	f	f

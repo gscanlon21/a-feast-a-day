@@ -203,7 +203,7 @@
 209	\N	Frozen Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	225	225	2024-08-15	6	225	67108864
 210	\N	Loaves of Flatbread	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-18	0	64	4
 212	\N	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925	\N	f	32	29	57	2025-07-25	0	57	64
-213	\N	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	262176	257	257	2024-08-11	0	128.5	2
+213	\N	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825	\N	f	262176	257	257	2025-09-17	0	128.5	2
 214	\N	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/	\N	t	0	18	18	2025-08-17	7	288	131072
 215	\N	Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
 216	\N	Smoked Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722	\N	f	0	12	28	2025-07-12	0	224	268435456
@@ -295,7 +295,7 @@
 303	\N	Butter Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2024-09-16	0	55	2
 305	\N	Leaves of Lettuce	https://www.eatthismuch.com/calories/lettuce,2015	\N	f	0	12	36	2025-08-11	0	36	2
 306	\N	Butter Lettuce Heads | Boston Bibb Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	55	2025-01-03	0	55	2
-307	\N	Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2024-08-12	7	80	3
+307	\N	Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2025-09-17	7	80	3
 309	\N	Gold Potatoes	https://www.eatthismuch.com/calories/gold-potatoes-1654114	\N	f	0	148	148	2024-10-05	0	148	1
 310	\N	Russet Potatoes	https://www.eatthismuch.com/food/nutrition/russet-potatoes,2092/	\N	f	0	213	369	2025-08-03	0	150	2
 311	\N	Purple Potatoes	https://www.eatthismuch.com/calories/purple-potatoes-3336013	\N	f	0	37.67	113	2024-10-03	0	113	1
@@ -1048,3 +1048,5 @@
 1307	\N	Canned Chickpeas	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
 1308	\N	Garlic	https://www.eatthismuch.com/calories/garlic-clove,7480	\N	f	0	8	4	2024-08-29	0	224	3
 1309	\N	Green Cauliflower Heads	https://www.eatthismuch.com/calories/cauliflower-2574	\N	f	0	160	160	2025-09-13	0	160	2
+1310	\N	Canned Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	2048
+1311	\N	Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	2048
