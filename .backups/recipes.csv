@@ -504,7 +504,7 @@
 718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	\N	6	\N	t	f
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	\N	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
-721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	6	t	\N	9	\N	t	f
+721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
 722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	\N	6	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	\N	0	\N	f	f
@@ -525,3 +525,11 @@
 739	Soba Noodle Salad	You can substitute the bok choy for cabbage. Garnish this dish with black and white sesame seeds and thinly sliced scallions.	\N	\N	20	0	10	2	t	\N	0	\N	f	f
 740	Classic-ish Niçoise Salad	To make the salad more substantial, add 1 cup spinach, and 1 cup cooked penne noodles.	\N	\N	16	5	10	2	t	\N	0	\N	f	f
 741	Roasted Vegetable and Goat Cheese Salad	\N	\N	\N	16	0	15	2	t	\N	0	\N	f	f
+742	Chicken Parmesan	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
+743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
+744	Pear & Gorgonzola Farfalle	\N	\N	\N	4	15	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
+745	Beef Stroganoff	\N	\N	\N	8	35	10	2	t	\N	0	\N	f	f
+746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+747	Paleo Banana Muffins	\N	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+748	Chickpea Burgers	\N	\N	\N	8	40	40	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+749	Cornish Game Hens	\N	\N	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

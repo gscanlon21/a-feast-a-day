@@ -839,6 +839,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1311	1310	1
 1310	131	1
 131	1310	1
+842	1314	1
+57	1314	1
 187	28	1
 187	164	1
 186	184	1
@@ -926,6 +928,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 224	1302	1
 57	1307	1
 246	123	1
+1318	127	1
+1318	1319	1
+1319	127	1
+127	1319	1
 479	481	1
 599	811	1
 598	811	1
@@ -977,6 +983,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1308	1308	1
 1308	71	1
 1308	5	1
+57	842	1
+842	57	1
 690	39	1
 690	681	1
 1008	871	1
@@ -1030,6 +1038,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1299	1297	1
 145	587	1
 1308	713	1
+1313	1307	1
+1307	1313	1
+57	1313	1
+842	1313	1
 186	183	1
 186	182	1
 186	181	1
@@ -1816,6 +1828,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1303	1300	1
 1304	999	1
 1304	85	1
+842	1315	1
+57	1315	1
+1315	1314	1
+1314	1315	1
 \.
 
 
@@ -9757,6 +9773,90 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14856	307	14	\N	\N	3	3
 14857	307	1984	\N	\N	3	0.2
 14858	307	62	\N	\N	3	4
+14859	1301	128	\N	\N	3	0.1
+14860	1301	68719476736	\N	\N	2	1
+14861	1301	34359738368	\N	\N	2	71
+14862	1301	2	\N	\N	3	0.2
+14863	1301	1	\N	\N	3	0.5
+14864	1301	4294967296	\N	\N	2	6
+14865	1301	2199023255552	\N	\N	2	1
+14866	1301	48	\N	\N	3	1
+14867	1301	14	\N	\N	3	3
+14868	1301	1984	\N	\N	3	0.2
+14869	1301	62	\N	\N	3	4
+14870	1301	2047	\N	\N	3	18
+14871	490	2251799813685248	\N	\N	2	2
+14872	490	17179869184	\N	\N	2	12
+14873	490	4398046511104	\N	\N	2	2
+14874	490	70368744177664	\N	\N	2	9
+14875	490	8796093022208	\N	\N	1	3
+14876	490	17592186044416	\N	\N	2	0.2
+14877	490	65536	\N	\N	1	1
+14878	490	1048576	\N	\N	2	1
+14879	490	16777216	\N	\N	1	1
+14880	490	1536	\N	\N	3	0.1
+14881	490	1792	\N	\N	3	0.1
+14882	490	229376	\N	\N	1	0.1
+14883	259	256	\N	\N	3	0.1
+14884	259	2251799813685248	\N	\N	2	38
+14885	259	9007199254740992	\N	\N	3	0.1
+14886	259	18014398509481984	\N	\N	3	0.2
+14887	259	36028797018963968	\N	\N	3	0.4
+14888	259	72057594037927936	\N	\N	3	0.3
+14889	259	144115188075855872	\N	\N	3	0.1
+14890	259	288230376151711744	\N	\N	3	0.2
+14891	259	576460752303423488	\N	\N	3	0.2
+14892	259	2305843009213693952	\N	\N	3	0.3
+14893	259	-9223372036854775808	\N	\N	3	0.2
+14894	259	4611686018427387904	\N	\N	3	0.3
+14895	259	274877906944	\N	\N	1	0.4
+14896	259	17179869184	\N	\N	2	77
+14897	259	4398046511104	\N	\N	2	1
+14898	259	70368744177664	\N	\N	2	132
+14899	259	8796093022208	\N	\N	1	2
+14900	259	17592186044416	\N	\N	2	1
+14901	259	65536	\N	\N	1	77
+14902	259	262144	\N	\N	2	0.2
+14903	259	524288	\N	\N	2	0.2
+14904	259	1048576	\N	\N	2	4
+14905	259	2097152	\N	\N	2	2
+14906	259	4194304	\N	\N	2	0.5
+14907	259	16777216	\N	\N	1	121
+14908	259	67108864	\N	\N	2	12
+14909	259	536870912	\N	\N	2	2
+14910	259	1536	\N	\N	3	0.4
+14911	259	3221225472	\N	\N	1	19
+14912	259	1792	\N	\N	3	0.5
+14913	259	229376	\N	\N	1	5
+14914	59	256	\N	\N	3	0.1
+14915	59	2251799813685248	\N	\N	2	30
+14916	59	9007199254740992	\N	\N	3	0.1
+14917	59	18014398509481984	\N	\N	3	0.1
+14918	59	36028797018963968	\N	\N	3	0.2
+14919	59	72057594037927936	\N	\N	3	0.2
+14920	59	288230376151711744	\N	\N	3	0.1
+14921	59	576460752303423488	\N	\N	3	0.2
+14922	59	2305843009213693952	\N	\N	3	0.1
+14923	59	-9223372036854775808	\N	\N	3	0.1
+14924	59	4611686018427387904	\N	\N	3	0.1
+14925	59	16384	\N	\N	1	40102
+14926	59	274877906944	\N	\N	1	0.4
+14927	59	17179869184	\N	\N	2	46
+14928	59	4398046511104	\N	\N	2	0.3
+14929	59	70368744177664	\N	\N	2	79
+14930	59	8796093022208	\N	\N	1	1
+14931	59	17592186044416	\N	\N	2	1
+14932	59	524288	\N	\N	2	0.3
+14933	59	1048576	\N	\N	2	3
+14934	59	4194304	\N	\N	2	0.4
+14935	59	16777216	\N	\N	1	24
+14936	59	67108864	\N	\N	2	36
+14937	59	536870912	\N	\N	2	4
+14938	59	1536	\N	\N	3	0.3
+14939	59	3221225472	\N	\N	1	7
+14940	59	1792	\N	\N	3	0.4
+14941	59	14	\N	\N	3	60
+14942	59	229376	\N	\N	1	113
 \.
 
 
@@ -9887,11 +9987,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1116	0	\N	\N	66	1	2	\N	187	f	\N	0
 7146	7	\N	\N	707	1	1	\N	77	f	\N	0
 7147	6	\N	\N	707	1	2	, diced	222	f	\N	1
-5192	0	\N	\N	106	1	2	\N	387	f	\N	1
-5193	4	\N	\N	106	1	12	\N	57	f	\N	2
 7148	6	\N	\N	707	1	1	(CELERY), diced	150	f	\N	2
-5194	4	\N	\N	106	1	8	\N	206	f	\N	3
-5195	8	\N	\N	106	2	3	\N	383	f	\N	4
+5192	0	\N	\N	106	1	2	\N	387	f	\N	1
+5193	4	\N	\N	106	1	12	\N	1307	f	\N	2
 1726	7	\N	\N	100	1	1	, or Shortening in place of Butter and Oil	78	f	\N	5
 1727	6	\N	\N	100	4	1	, to serve	39	f	\N	6
 1728	0	\N	\N	100	1	1	\N	187	f	\N	7
@@ -9949,6 +10047,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 1791	0	\N	\N	109	1	2	\N	405	f	\N	2
 1792	4	\N	\N	109	1	12	\N	404	t	\N	3
 1793	0	\N	\N	109	1	4	\N	166	f	\N	4
+5194	4	\N	\N	106	1	8	\N	206	f	\N	3
 1385	5	\N	\N	89	1	1	\N	25	f	\N	0
 1386	0	\N	\N	89	2	1	, chopped	316	f	\N	1
 1387	0	\N	\N	89	1	1	\N	112	f	\N	2
@@ -9960,6 +10059,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7139	6	\N	\N	706	1	1	, diced	222	f	\N	1
 7140	6	\N	\N	706	1	1	, diced	1286	f	\N	2
 7141	0	\N	\N	706	1	2	, sliced	5	t	\N	3
+5195	8	\N	\N	106	2	3	\N	383	f	\N	4
 7149	4	\N	\N	707	1	15	(CRUSHED TOMATOES)	996	f	\N	3
 1366	4	\N	\N	68	1	1	, sliced	319	f	\N	0
 2174	6	\N	\N	98	4	1	, minced, pickled	565	t	\N	2
@@ -10006,6 +10106,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2793	8	\N	\N	141	8	1	\N	214	f	\N	11
 2794	0	\N	\N	141	1	2	, shredded, to garnish	144	f	\N	12
 1004	0	\N	\N	71	1	1	\N	\N	f	198	0
+4627	8	\N	\N	267	1	1	\N	699	f	\N	3
+4628	8	\N	\N	267	1	1	\N	504	t	\N	4
 2795	4	\N	\N	138	1	2	\N	277	f	\N	0
 2796	4	\N	\N	138	1	2	\N	206	f	\N	1
 2797	4	\N	\N	138	1	2	\N	376	f	\N	2
@@ -10454,6 +10556,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3850	7	\N	\N	76	1	5	\N	\N	f	75	3
 2520	8	\N	\N	85	4	1	\N	285	t	\N	9
 3851	8	\N	\N	76	4	1	\N	285	t	\N	4
+4629	8	\N	\N	267	2	1	\N	70	f	\N	5
+4630	6	\N	\N	267	1	1	, diced	222	f	\N	6
+4631	0	\N	\N	267	1	3	, minced	5	f	\N	7
+4632	6	\N	\N	267	1	1	, shredded	736	f	\N	8
+7374	6	\N	\N	267	2	1	, to top	1312	t	\N	11
+7397	5	\N	\N	745	1	1	\N	488	f	\N	0
 3866	0	\N	\N	136	1	1	\N	187	f	\N	5
 3867	7	\N	\N	136	1	3	, divided	101	f	\N	6
 3868	7	\N	\N	136	1	1	\N	29	f	\N	7
@@ -10780,9 +10888,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5091	8	\N	\N	259	8	1	, to taste	285	f	\N	6
 5427	4	\N	\N	368	1	12	(fresh rhubarb), trimmed and cut into 1/2 inch pieces	560	f	\N	0
 5428	6	\N	\N	368	2	1	\N	36	f	\N	1
-4626	7	\N	\N	267	1	1	\N	143	f	\N	2
-4627	8	\N	\N	267	1	1	\N	699	f	\N	3
-4628	8	\N	\N	267	1	1	\N	504	t	\N	4
+4625	7	\N	\N	267	1	4	\N	722	f	\N	1
 5380	0	\N	\N	359	1	1	\N	11	f	\N	0
 4086	6	\N	\N	237	1	2	\N	36	f	\N	0
 5381	6	\N	\N	359	1	1	\N	856	f	\N	1
@@ -10794,8 +10900,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3650	0	\N	\N	168	1	2	, sliced	222	f	\N	1
 3651	7	\N	\N	168	1	6	\N	29	f	\N	2
 7198	6	\N	\N	714	4	3	(RECIPE: STIR_FRY SAUCE, p151)	99	f	\N	5
-4624	6	\N	\N	267	2	3	, dried, soaked for 12-24 hours then rinsed	735	f	\N	0
-4625	7	\N	\N	267	1	4	\N	722	f	\N	1
 4087	0	\N	\N	237	1	1	\N	493	f	\N	1
 4088	6	\N	\N	169	1	3	\N	186	f	\N	0
 4089	6	\N	\N	169	1	1	, or very strong coffee	412	f	\N	1
@@ -10811,19 +10915,19 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7201	7	\N	\N	715	1	1	\N	77	f	\N	1
 7202	8	\N	\N	715	8	1	\N	285	f	\N	2
 7203	7	\N	\N	715	1	1	\N	189	f	\N	3
+4158	4	\N	\N	233	1	16	\N	151	f	\N	0
+4159	6	\N	\N	233	8	1	\N	685	f	\N	1
+4160	8	\N	\N	233	1	1	\N	683	f	\N	2
+4161	8	\N	\N	233	1	1	\N	40	f	\N	3
+4162	4	\N	\N	233	5	9	, cut up into tiny bits.	686	f	\N	4
 4035	8	\N	\N	32	4	1	, ground	349	t	\N	2
 3614	0	\N	\N	177	1	3	, finely chopped	596	t	\N	7
 3615	8	\N	\N	177	1	1	\N	593	t	\N	8
-4158	4	\N	\N	233	1	16	\N	151	f	\N	0
-4159	6	\N	\N	233	8	1	\N	685	f	\N	1
 3681	0	\N	\N	145	1	4	, halved	604	f	\N	0
 3682	0	\N	\N	145	1	2	\N	187	f	\N	1
 3683	7	\N	\N	145	1	2	\N	605	f	\N	2
 3684	7	\N	\N	145	1	1	, to serve	234	t	\N	3
 3685	6	\N	\N	145	2	1	, to serve	607	t	\N	4
-4160	8	\N	\N	233	1	1	\N	683	f	\N	2
-4161	8	\N	\N	233	1	1	\N	40	f	\N	3
-4162	4	\N	\N	233	5	9	, cut up into tiny bits. Such as Lily's stevia-sweetened dark chocolate.	686	f	\N	4
 3655	0	\N	\N	188	1	3	, seeded	811	f	\N	0
 3656	0	\N	\N	188	1	1	, juiced	4	f	\N	1
 3657	8	\N	\N	188	8	1	\N	285	f	\N	2
@@ -11264,11 +11368,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7236	8	\N	\N	720	1	1	(FRESH GINGER), grated	307	f	\N	3
 7237	8	\N	\N	720	4	1	, ground	67	f	\N	4
 7238	6	\N	\N	720	4	1	\N	657	f	\N	5
-7239	7	\N	\N	721	1	2	\N	82	f	\N	0
-7240	7	\N	\N	721	1	1	\N	357	f	\N	1
-7241	7	\N	\N	721	1	1	\N	39	f	\N	2
-7242	8	\N	\N	721	4	1	\N	214	f	\N	3
-7243	8	\N	\N	721	4	1	, ground	67	f	\N	4
 5085	7	\N	\N	259	1	6	, from grass-fed cows	723	f	\N	0
 4825	0	\N	\N	270	1	1	\N	789	f	\N	0
 4826	7	\N	\N	270	1	2	\N	321	f	\N	1
@@ -11280,7 +11379,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5086	5	\N	\N	259	1	1	, about 1 lb-best if trimmed	724	f	\N	1
 5087	0	\N	\N	259	1	1	, chopped	222	f	\N	2
 5088	0	\N	\N	259	1	2	, chopped	5	f	\N	3
-7244	6	\N	\N	721	2	1	\N	77	f	\N	5
 4810	0	\N	\N	264	1	2	\N	144	f	\N	0
 4811	0	\N	\N	264	1	1	\N	730	f	\N	1
 4812	7	\N	\N	264	1	2	, raw, light and dark	752	f	\N	2
@@ -11290,6 +11388,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4747	7	\N	\N	272	1	2	\N	722	f	\N	0
 4748	0	\N	\N	272	1	1	\N	910	t	\N	1
 7246	6	\N	\N	722	2	1	\N	77	f	\N	1
+5191	0	\N	\N	106	1	4	\N	5	f	\N	0
 4749	0	\N	\N	272	1	6	\N	753	f	\N	2
 4750	0	\N	\N	272	1	1	\N	552	f	\N	3
 4751	8	\N	\N	272	1	1	\N	699	f	\N	4
@@ -11318,6 +11417,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4862	6	\N	\N	231	3	2	\N	562	f	\N	7
 4863	7	\N	\N	231	1	2	, chopped	2	f	\N	8
 4864	8	\N	\N	231	8	1	\N	285	f	\N	9
+7239	7	\N	\N	721	1	2	\N	82	f	\N	0
+7240	7	\N	\N	721	1	1	\N	357	f	\N	1
 5092	0	\N	\N	156	1	4	, unpeeled	11	f	\N	0
 5093	0	\N	\N	156	2	1	, juiced	4	f	\N	1
 5094	6	\N	\N	156	1	1	\N	546	f	\N	2
@@ -11325,7 +11426,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5096	6	\N	\N	156	2	1	, toasted and roughly chopped, for the sauce	602	f	\N	4
 5097	7	\N	\N	156	1	3	, for the sauce	502	f	\N	5
 5098	0	\N	\N	156	1	1	, juiced, for the sauce	4	f	\N	6
-5191	0	\N	\N	106	1	4	\N	5	f	\N	0
 4872	7	\N	\N	170	1	1	\N	77	f	\N	2
 4873	7	\N	\N	170	1	1	\N	62	f	\N	3
 4829	6	\N	\N	270	1	1	\N	790	t	\N	4
@@ -11349,6 +11449,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5061	8	\N	\N	241	8	1	\N	692	f	\N	8
 4784	0	\N	\N	306	1	1	\N	224	f	\N	3
 4785	0	\N	\N	306	1	1	\N	4	f	\N	4
+7241	7	\N	\N	721	1	1	\N	39	f	\N	2
+7242	8	\N	\N	721	4	1	, ground	285	f	\N	3
+7243	6	\N	\N	721	2	1	\N	77	f	\N	4
 5492	6	\N	\N	380	8	1	\N	614	f	\N	0
 7247	6	\N	\N	722	4	1	\N	461	f	\N	2
 5476	0	\N	\N	378	1	2	, thinly sliced	1208	f	\N	0
@@ -11402,9 +11505,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 3440	7	\N	\N	50	1	2	\N	61	f	\N	1
 3441	8	\N	\N	50	8	1	\N	285	t	\N	2
 7345	6	\N	\N	737	2	1	\N	721	f	\N	3
-4629	8	\N	\N	267	2	1	\N	70	f	\N	5
-4630	6	\N	\N	267	1	1	, diced	222	f	\N	6
-4631	0	\N	\N	267	1	3	, minced	5	f	\N	7
 5467	0	\N	\N	376	1	1	\N	733	f	\N	0
 5445	5	\N	\N	372	1	1	\N	982	f	\N	0
 5446	4	\N	\N	372	1	4	\N	368	f	\N	1
@@ -11431,7 +11531,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4906	0	\N	\N	234	1	2	, thinly sliced	671	f	\N	0
 4907	7	\N	\N	234	1	1	\N	278	f	\N	1
 4908	8	\N	\N	234	8	1	\N	74	f	\N	2
-4632	6	\N	\N	267	1	1	, shredded	736	f	\N	8
 4891	7	\N	\N	258	1	1	\N	238	f	\N	0
 1574	8	\N	\N	95	2	1	\N	285	t	\N	6
 5454	7	\N	\N	374	1	6	\N	500	f	\N	2
@@ -11504,6 +11603,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7260	7	\N	\N	724	1	2	\N	189	f	\N	3
 7261	6	\N	\N	724	4	1	\N	95	f	\N	4
 7262	8	\N	\N	724	8	1	\N	285	f	\N	5
+4633	6	\N	\N	267	1	5	\N	246	f	\N	9
+4634	8	\N	\N	267	4	1	\N	285	f	\N	10
 5553	6	\N	\N	390	2	1	\N	215	f	\N	0
 5554	6	\N	\N	390	4	1	\N	130	f	\N	1
 5555	7	\N	\N	390	1	1	\N	340	f	\N	2
@@ -11511,8 +11612,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5557	8	\N	\N	390	2	1	\N	360	f	\N	4
 5512	4	\N	\N	384	1	12	\N	1196	f	\N	0
 5513	0	\N	\N	384	1	1	\N	1195	t	\N	1
-4633	6	\N	\N	267	1	5	\N	246	f	\N	9
-4634	8	\N	\N	267	1	1	\N	285	f	\N	10
 5521	0	\N	\N	385	1	2	\N	144	f	\N	4
 5582	0	\N	\N	394	1	4	, peeled	671	f	\N	0
 5583	6	\N	\N	394	4	1	, chopped	2	t	\N	1
@@ -12041,7 +12140,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6102	0	\N	\N	538	1	1	\N	1043	f	\N	1
 6103	7	\N	\N	538	1	1	\N	251	f	\N	2
 6104	0	\N	\N	538	1	1	\N	671	f	\N	3
-4427	4	\N	\N	105	1	12	\N	600	f	\N	2
 6107	0	\N	\N	540	1	2	, cubed	387	f	\N	0
 6108	0	\N	\N	540	1	1	, cut into wedges	222	f	\N	1
 6109	6	\N	\N	540	1	1	(BROCCOLI FLORETS)	872	f	\N	2
@@ -12059,8 +12157,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6080	7	\N	\N	533	1	1	, chopped	473	t	\N	1
 6081	7	\N	\N	533	1	1	\N	77	f	\N	2
 6100	8	\N	\N	55	8	1	, to taste	692	t	\N	2
-4428	4	\N	\N	105	1	10	, dried	382	f	\N	3
-4429	4	\N	\N	105	1	3	, plus extra to serve	378	f	\N	4
 7360	6	\N	\N	740	4	1	\N	123	f	\N	1
 7361	6	\N	\N	740	1	1	, halved	147	f	\N	2
 7362	6	\N	\N	740	2	1	(Niçoise olives)	397	f	\N	3
@@ -12473,18 +12569,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6545	6	\N	\N	597	2	1	\N	789	f	\N	1
 6546	6	\N	\N	597	4	1	\N	1094	f	\N	2
 6547	6	\N	\N	597	2	1	\N	178	f	\N	3
-7276	7	\N	\N	727	1	2	\N	77	f	\N	0
-7277	6	\N	\N	727	2	1	, diced	222	f	\N	1
-7278	7	\N	\N	727	1	1	, grated	1301	t	\N	2
-7279	7	\N	\N	727	1	1	\N	737	f	\N	3
-7280	7	\N	\N	727	1	1	\N	124	f	\N	4
-7281	6	\N	\N	727	2	1	, rinsed	1300	f	\N	5
 6548	0	\N	\N	597	4	1	\N	9	f	\N	4
 6549	0	\N	\N	597	1	4	\N	1074	f	\N	5
 6550	6	\N	\N	598	1	1	\N	806	f	\N	0
 6551	6	\N	\N	598	1	1	\N	1099	f	\N	1
 6552	0	\N	\N	598	2	1	\N	1043	f	\N	2
 6553	7	\N	\N	598	1	1	\N	738	f	\N	3
+7276	7	\N	\N	727	1	2	\N	77	f	\N	0
+7277	6	\N	\N	727	2	1	, diced	222	f	\N	1
+7278	7	\N	\N	727	1	1	, grated	1301	t	\N	2
+7279	7	\N	\N	727	1	1	\N	737	f	\N	3
+7280	7	\N	\N	727	1	1	\N	124	f	\N	4
+7281	6	\N	\N	727	2	1	, rinsed	1300	f	\N	5
 6327	6	\N	\N	573	1	1	\N	957	f	\N	0
 6328	0	\N	\N	573	1	1	\N	155	f	\N	1
 6082	0	\N	\N	534	1	2	, peeled and coarsely chopped	1043	f	\N	0
@@ -12555,10 +12651,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7270	8	\N	\N	725	8	1	\N	285	f	\N	7
 6600	7	\N	\N	607	1	1	, for cooking	1104	f	\N	0
 7354	6	\N	\N	739	1	2	(SOBA NOODLES), cooked, rinsed in cold water	333	f	\N	0
-7282	6	\N	\N	727	1	3	\N	123	f	\N	6
-7283	8	\N	\N	727	8	1	\N	285	t	\N	7
 7355	6	\N	\N	739	2	1	, grated	736	f	\N	1
 6558	6	\N	\N	598	4	1	\N	805	f	\N	8
+7373	8	\N	\N	106	8	1	\N	285	t	\N	6
+7282	6	\N	\N	727	1	3	\N	123	f	\N	6
+7283	8	\N	\N	727	8	1	\N	285	t	\N	7
 6620	0	\N	\N	609	1	6	, tops and bottoms removed (keep skin on)	671	f	\N	0
 6579	5	\N	\N	602	1	1	\N	387	f	\N	0
 6621	0	\N	\N	609	1	2	, tops removed (keep skin on)	157	f	\N	1
@@ -12679,6 +12776,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7332	0	\N	\N	735	1	12	\N	147	f	\N	3
 7333	7	\N	\N	735	1	2	(PESTO)	\N	f	722	4
 7334	8	\N	\N	735	8	1	\N	285	f	\N	5
+7381	7	\N	\N	743	1	1	\N	79	f	\N	0
 6706	0	\N	\N	619	1	8	\N	5	f	\N	3
 6707	7	\N	\N	619	1	1	\N	29	f	\N	4
 6708	7	\N	\N	619	1	3	(MARSALA)	746	f	\N	5
@@ -12902,6 +13000,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7357	6	\N	\N	739	2	1	, thinly sliced	8	f	\N	3
 7358	6	\N	\N	739	4	1	\N	\N	f	720	4
 7371	8	\N	\N	741	8	1	\N	285	f	\N	5
+4624	6	\N	\N	267	2	3	, dried, soaked for 12-24 hours then rinsed	735	f	\N	0
 6536	7	\N	\N	595	1	2	\N	81	f	\N	8
 6875	0	\N	\N	641	1	3	\N	9	f	\N	0
 6876	0	\N	\N	641	1	2	, juiced	4	f	\N	1
@@ -13001,6 +13100,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6933	7	\N	\N	646	1	2	(BRANDY)	851	f	\N	5
 6934	6	\N	\N	646	1	1	(READY_MADE JELLIED BEEF STOCK)	613	f	\N	6
 7204	7	\N	\N	716	1	1	\N	77	f	\N	0
+4626	7	\N	\N	267	1	1	\N	143	f	\N	2
 6955	6	\N	\N	647	1	1	, chopped, to garnish	13	t	\N	10
 6956	6	\N	\N	648	1	3	(CASSAVA FLOUR), for the crust	38	f	\N	0
 6957	8	\N	\N	648	1	1	, for the crust	74	f	\N	1
@@ -13090,11 +13190,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6995	6	\N	\N	654	4	1	, plus extra to garnish	95	f	\N	4
 6996	8	\N	\N	654	8	1	, ground	67	f	\N	5
 7341	7	\N	\N	736	1	1	\N	189	f	\N	5
-6973	6	\N	\N	651	4	3	, divided	36	f	\N	0
-6974	8	\N	\N	651	1	1	\N	1256	f	\N	1
-6975	8	\N	\N	651	4	1	\N	214	f	\N	2
-6976	6	\N	\N	651	1	2	\N	1257	f	\N	3
-6977	6	\N	\N	651	2	1	\N	123	f	\N	4
 6964	0	\N	\N	649	1	2	, green leafy tops removed and cut into quarters	671	f	\N	0
 6965	0	\N	\N	649	1	2	\N	1270	f	\N	1
 6966	0	\N	\N	649	1	3	\N	7	f	\N	2
@@ -13146,12 +13241,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7087	0	\N	\N	697	1	1	, juiced and zested	12	f	\N	2
 7088	6	\N	\N	697	1	1	(ORANGE-PINEAPPLE JUICE)	420	f	\N	3
 7089	6	\N	\N	697	1	1	\N	1092	f	\N	4
-7090	6	\N	\N	698	1	1	\N	806	f	\N	0
-7091	0	\N	\N	698	1	1	, juiced	12	f	\N	1
-7092	8	\N	\N	698	2	1	, grated	307	f	\N	2
-7093	8	\N	\N	698	4	1	\N	214	f	\N	3
-7094	6	\N	\N	698	1	1	, crushed	501	f	\N	4
-7095	6	\N	\N	698	1	1	(TONIC WATER)	993	f	\N	5
 7096	6	\N	\N	699	1	6	, sliced and peeled	635	f	\N	0
 7097	6	\N	\N	699	2	1	, packed	517	f	\N	1
 7098	7	\N	\N	699	1	2	\N	196	f	\N	2
@@ -13194,6 +13283,77 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7134	7	\N	\N	705	1	1	, plus more to taste	358	f	\N	4
 7135	7	\N	\N	705	1	2	\N	77	f	\N	5
 7136	8	\N	\N	705	4	1	\N	285	f	\N	6
+7375	0	\N	\N	742	1	8	(OVEN-BAKED CHICKEN FINGERS, p102)	\N	f	135	0
+7376	6	\N	\N	742	1	2	, divided	\N	f	723	1
+7377	7	\N	\N	742	1	4	(GRATED PARMESAN CHEESE), grated, divided	95	f	\N	2
+7372	7	\N	\N	106	1	1	\N	77	f	\N	5
+7090	6	\N	\N	698	1	1	\N	806	f	\N	0
+7093	8	\N	\N	698	4	1	\N	214	f	\N	3
+7378	6	\N	\N	742	4	1	(SHREDDED MOZZARELLA CHEESE), shredded	119	f	\N	3
+7379	4	\N	\N	742	1	4	, dried	19	f	\N	4
+7380	8	\N	\N	742	8	1	\N	285	t	\N	5
+6973	6	\N	\N	651	4	3	, divided	36	f	\N	0
+6974	8	\N	\N	651	1	1	\N	1256	f	\N	1
+6975	8	\N	\N	651	4	1	\N	214	f	\N	2
+6976	6	\N	\N	651	1	2	\N	1257	f	\N	3
+6977	6	\N	\N	651	2	1	\N	123	f	\N	4
+7382	6	\N	\N	743	4	1	, diced	222	f	\N	1
+7383	6	\N	\N	743	4	1	, diced	598	f	\N	2
+7384	6	\N	\N	743	4	1	, diced	8	f	\N	3
+7385	8	\N	\N	743	8	1	\N	285	f	\N	4
+7386	6	\N	\N	743	1	1	\N	862	f	\N	5
+4427	4	\N	\N	105	1	12	\N	600	f	\N	2
+4428	4	\N	\N	105	1	10	, dried	382	f	\N	3
+4429	4	\N	\N	105	1	3	, plus extra to serve	378	t	\N	4
+7387	7	\N	\N	105	1	2	\N	77	f	\N	5
+7388	6	\N	\N	105	1	1	\N	1316	f	\N	6
+7091	0	\N	\N	698	1	1	, juiced	12	f	\N	1
+7092	8	\N	\N	698	2	1	, grated	307	f	\N	2
+7094	6	\N	\N	698	1	1	, crushed	501	f	\N	4
+7095	6	\N	\N	698	1	1	\N	1317	f	\N	5
+7389	4	\N	\N	744	1	5	, dried	982	f	\N	0
+7390	4	\N	\N	744	2	5	\N	1131	f	\N	1
+7391	0	\N	\N	744	2	1	(1/2 RADICCHIO OR 2 RED ENDIVES)	105	f	\N	2
+7392	0	\N	\N	744	1	2	, super-ripe	157	f	\N	3
+7393	4	\N	\N	744	1	1	(SHELLED WALNUT HALVES)	1069	f	\N	4
+7394	8	\N	\N	744	1	1	\N	82	t	\N	5
+7395	8	\N	\N	744	8	1	\N	692	t	\N	6
+7396	8	\N	\N	744	1	1	\N	278	t	\N	7
+7398	6	\N	\N	746	1	2	(ALMOND FLOUR), for crust	1129	f	\N	0
+7399	6	\N	\N	746	2	1	, melted, for crust	964	f	\N	1
+7400	7	\N	\N	746	1	4	, for crust	1102	f	\N	2
+7401	8	\N	\N	746	1	1	, for crust	40	f	\N	3
+7402	4	\N	\N	746	1	26	(JAR BAKED APPLE CHUNKS OR SLICES), for filling	1	f	\N	4
+7403	6	\N	\N	746	1	1	, for filling	1062	f	\N	5
+7404	6	\N	\N	746	2	1	(BLACKBERRIES), for filling	625	f	\N	6
+7405	6	\N	\N	747	4	5	(ALMOND FLOUR)	1129	f	\N	0
+7406	8	\N	\N	747	1	2	\N	34	f	\N	1
+7407	8	\N	\N	747	4	1	\N	35	f	\N	2
+7408	8	\N	\N	747	1	1	\N	70	f	\N	3
+7409	6	\N	\N	747	2	1	\N	127	f	\N	4
+7410	0	\N	\N	747	1	2	\N	187	f	\N	5
+7411	0	\N	\N	747	1	3	, ripe, mashed	11	f	\N	6
+7412	6	\N	\N	747	2	1	(COCONUT), shaved	574	t	\N	7
+7413	6	\N	\N	747	2	1	\N	1062	t	\N	8
+7414	6	\N	\N	747	2	1	\N	1069	t	\N	9
+7415	6	\N	\N	747	4	1	(POPPY SEEDS)	203	t	\N	10
+7416	7	\N	\N	747	1	1	\N	1268	t	\N	11
+7417	6	\N	\N	747	4	1	\N	39	t	\N	12
+7418	7	\N	\N	748	1	3	, divided	176	f	\N	0
+7419	0	\N	\N	748	1	1	(SMALL ONIONS)	222	f	\N	1
+7420	0	\N	\N	748	1	2	\N	5	f	\N	2
+7421	6	\N	\N	748	2	3	\N	\N	f	629	3
+7422	6	\N	\N	748	4	1	, roughly chopped	2	f	\N	4
+7423	7	\N	\N	748	1	2	\N	1106	f	\N	5
+7424	8	\N	\N	748	8	1	, to taste	692	t	\N	6
+7425	7	\N	\N	748	1	4	, divided	986	f	\N	7
+7426	0	\N	\N	749	1	4	(CORNISH GAME HENS)	159	f	\N	0
+7427	7	\N	\N	749	1	23	, divided	176	f	\N	1
+7428	8	\N	\N	749	8	1	, to taste	692	t	\N	2
+7429	0	\N	\N	749	1	1	, sliced into wedges	4	f	\N	3
+7430	7	\N	\N	749	1	8	, divided	677	f	\N	4
+7431	0	\N	\N	749	1	1	, cloves divided, peeled and mashed	1125	f	\N	5
+7432	6	\N	\N	749	3	2	\N	\N	f	559	6
 \.
 
 
@@ -13296,11 +13456,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2924	Store in the refrigerator or freezer.	\N	322	5	0
 259	Place pork in a 3-qt. slow cooker. Pour Dr Pepper over top.	\N	31	0	0
 260	Cover and cook on low 7-9 hours or until meat is tender.	\N	31	1	0
-2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract.	\N	233	0	0
 3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	\N	408	1	0
 3242	Place the zucchini in a non-stick baking dish and bake for 10 to 15 minutes, or until tender.	\N	408	2	2
-2237	Mix in the sugar-free chocolate.	\N	233	1	0
-2238	Divide the mixture into 10 muffin cups and freeze for at least two hours.	\N	233	2	0
 212	Preheat the oven to 425 degrees F (220 degrees C). Line a baking sheet with aluminum foil.	\N	49	0	0
 213	Arrange bagels, cut-side up, on the prepared baking sheet. Spoon a thin layer of pizza sauce over each bagel half and sprinkle with pizza cheese. Place two pepperoni slices onto each bagel half.	\N	49	1	0
 214	Bake in the preheated oven until cheese is melted and pepperoni is lightly browned, about 6 minutes.	\N	49	2	0
@@ -13335,6 +13492,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 607	Select Course No. 1 and press the START button. 	\N	72	1	8192
 400	Combine beans, cheese and ¼ cup of salsa in a medium bowl. Place tortillas on a work surface. Spread ½ cup of filling on half of each tortilla. Fold tortillas in half, pressing gently to flatten.	\N	37	0	0
 401	Heat half of the oil in a large nonstick skillet over medium heat. Add 2 quesadillas and cook, turning once, until golden on both sides, 2 to 4 minutes total. Transfer to a cutting board and tent with foil to keep warm. Repeat with the remaining oil and quesadillas. Serve the quesadillas with avocado and the remaining salsa.	\N	37	1	4
+2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract. Mix in the sugar-free chocolate.	\N	233	0	0
+2237	Divide the mixture into 10 muffin cups, and freeze for at least two hours.	\N	233	1	131072
 1094	In a medium bowl, whisk together flour, sugar, baking soda, baking powder, oats, cornmeal, flax seeds and sesame seeds until blended.	\N	113	0	0
 1095	In a separate large mixing bowl; whisk together eggs, half & half, evaporated milk and water until blended.	\N	113	1	0
 1096	Slowly pour dry ingredients into wet ingredients while whisking constantly. Batter will be thick.	\N	113	2	0
@@ -13891,6 +14050,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	\N	254	0	0
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	\N	254	1	0
 2369	Serve immediately, drizzled with a touch more maple syrup.	\N	254	3	0
+2503	The night before, put your mung beans to soak in a pan with 6–8 cups of water. When ready to use, drain and rinse the beans. Set aside.	\N	267	0	0
 2021	Place the dried fruit in a large pan and add 600ml/1 pint/2½ cups water.	\N	158	0	0
 3259	Toss all ingredients and serve.	\N	477	0	0
 2022	Peel and core the pear and apple, then dice. Remove peel and pith from the orange and cut into wedges. Add all the cut fruit to the pan with the raspberries and blackberries.	\N	158	1	0
@@ -13901,12 +14061,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2587	Take off the heat. Transfer to a serving dish and top with the cilantro leaves.	\N	272	3	0
 3320	When the veggies are done, remove from the oven and sprinkle with dried cranberries, and chopped walnuts. Drizzle with the Maple Syrup Balsamic dressing and enjoy!	\N	522	3	0
 3091	Combine in a dutch oven and bake at 350°F for 2 hours.	\N	399	0	0
-2503	The night before, put your mung beans to soak in a pan with 6-8 cups of water. When ready to use, drain and rinse the beans. Set aside.	\N	267	0	0
-2504	Heat the oil in a large saucepan. Add the spices and toast them in the oil until they become nicely fragrant. Add the onions and cook, stirring, for 5-7 minutes. Add the garlic and cook 1-2 minutes more.	\N	267	1	0
-2505	Add the remaining ingredients, bring to a boil and simmer until the beans are tender, about 45 minutes. Check seasonings and adjust as necessary.	\N	267	2	0
-2506	Optionally serve topped with alfalfa sprouts.	\N	267	3	0
+2504	Heat the oil in a large saucepan. Add the spices and toast them in the oil until they become nicely fragrant. Add the onions and cook, stirring, for 5–7 minutes. Add the garlic and cook 1–2 minutes more.	\N	267	1	4
 2818	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful or cooking water. Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the zucchini. Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan.	\N	260	0	0
 3448	Combine the mayo, along with the remaining ingredients, in a bowl. Serve immediately.	\N	566	0	0
+2505	Add the remaining ingredients, bring to a boil and simmer until the beans are tender, about 45 minutes. Check seasonings and adjust as necessary.	\N	267	2	4
 3154	Preheat the oven to 400°F.	\N	420	0	2
 3155	Slice kielbasa into ¼ to ½ inch slices and set aside.	\N	420	1	0
 3156	Combine the olive oil, garlic and lemon juice.	\N	420	2	0
@@ -14050,23 +14208,18 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3166	Turn heat to medium, and stir fry for a few minutes, until kale wilts.	\N	423	1	0
 3167	Take out of wok and toss with olive oil, lemon and sea salt to taste.	\N	423	2	0
 2904	Preheat the oven to 400°F. Peel and finely chop the red onions. Place a 12x10-inch roasting pan on a high heat on the stove, pour in 1 tablespoon of olive oil, add the onions, and fry for 4 minutes, or until soft and sweet, stirring regularly. Meanwhile, place half the saffron in 2½ cups of boiling kettle water. In a bowl, cover the remaining saffron with 1 tablespoon of boiling water, steep for 10 seconds, then mix with the yogurt and put aside.	\N	315	0	0
-2388	Peel the potatoes and chop into 1/2-inch cubes, trim and slice the scallions, then place in a large non-stick frying pan on a high heat with 2 tablespoons of olive oil and 1 cup of boiling kettle water. Reduce to a simmer, then cover and cook for 15 minutes, or until the potatoes are just tender, adding the peas for the last 5 minutes, stirring occasionally.	\N	105	0	0
+2388	Peel the potatoes and chop into ½-inch cubes, trim and slice the scallions, then place in a large non-stick frying pan on a high heat with 2 tablespoons of olive oil and 1 cup of boiling kettle water. Reduce to a simmer, then cover and cook for 15 minutes, or until the potatoes are just tender, adding the peas for the last 5 minutes, stirring occasionally.	\N	105	0	4
 2642	Divide up the mango and the hoisin bowls. Slice chicken and arrange on the plates, then tuck in, using the lettuce cups as a receptable to hold everything.	\N	270	2	0
-2389	Meanwhile, cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water.	\N	105	1	0
+2389	Meanwhile, cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water.	\N	105	1	4
 2894	Coat a 2 quart saucepan with vegetable spray and heat; add garlic and shallots; saute 2 minutes.	\N	312	0	0
 2895	Add white wine, sherry, black beans and one and a half cups of broth; simmer 6 to 8 minutes.	\N	312	1	0
 2896	Blend with a blender or food processor until smooth.	\N	312	2	0
 2897	Pour the pureed beans back into the pan, and warm puree, add chili powder and enough additional broth to make sauce the consistency of heavy cream.	\N	312	3	0
 2898	Season with cilantro, salt and pepper.	\N	312	4	0
-2833	Peel the garlic cloves and slice lengthways, then place in a large non-stick frying pan on a high heat with 1 tablespoon of olive oil, stirring regularly. Slice each chicken breast lengthways into 3 strips, then toss with a pinch of sea salt and black pepper.	\N	106	0	0
-2834	Once the garlic is nicely golden, quickly remove from the pan with a slotted spoon, leaving the flavored oil behind.	\N	106	1	0
 2653	Place the flour in a bowl and add plenty of seasoning. Turn the pork in the flour mixture to coat them lightly.	\N	231	0	0
 2654	Melt the butter in a heavy frying pan and cook the pork for 1 minute on each side.	\N	231	1	0
 2655	Add the sliced leeks to the pan and cook for 3 minutes. Stir in the mustard seeds. Pour in the wine. Cook gently for 10 minutes, turning the pork occasionally. Peel, core and slice the apples.	\N	231	2	0
 2656	Add the sliced apples and double cream and simmer for 3 minutes, or until the pork is fully cooked and the sauce is thick, rich and creamy. Taste for seasoning, then stir in the chopped parsley and serve at once.	\N	231	3	0
-2835	Go in with the chicken and cook for 5 minutes, or until golden and cooked through, turning regularly.	\N	106	2	0
-2836	Remove the chicken from the pan and tip in the chickpeas (juices and all). Add the spinach, along with most of the garlic and 1 tablespoon of red wine vinegar, then toss over the heat until the spinach has wilted and the chickpeas are hot through.	\N	106	3	0
-2837	Season to perfection with salt and pepper, then return the chicken to the pan and finish with the reserved garlic and a generous dusting on sumac.	\N	106	4	0
 2391	Heat oil in a large skillet over medium heat. Add fajita vegetables and sauté until tender, about 10 minutes.	\N	38	0	0
 2392	Stir in black beans, seasoning and salt; cook, stirring, until heated through, about 1 minute.	\N	38	1	0
 2393	Divide the vegetables and beans between two bowls and top each with 2 tablespoons cheese, if using.	\N	38	2	0
@@ -14074,11 +14227,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3172	Cook 2-3 minutes on one side or until the sides are half set, bubbles form in the center, and it is easy to flip without breaking.	\N	424	4	0
 3173	Slide a spatula under the pancake and flip over. Cook 1 more minute on the other side or until the center is set and the pancake is fluffy.	\N	424	5	0
 3174	Cool on a rack and repeat until no more batter left. You should be able to make 8 medium size pancakes from this batter.	\N	424	6	0
+2833	Peel the garlic cloves and slice lengthways, then place in a large non-stick frying pan on a high heat with 1 tablespoon of olive oil, stirring regularly. Slice each chicken breast lengthways into 3 strips, then toss with a pinch of sea salt and black pepper.	\N	106	0	4
 2909	Preheat the oven to 350°F. Place a large shallow casserole pan on a high heat. Peel and quarter the onions and quickly break apart into petals straight into the pan. Char for 4 minutes, tossing regularly. Reduce to a medium heat and stir in 1 tablespoon of olive oil and the salami, then rice, followed 1 minute later by 5 cups of boiling kettle water and the mascarphone. Finely grate and stir in the Parmesan with a pinch of sea salt and place pepper.	\N	317	0	0
 2906	Spoon the saffron yogurt over the rice, drizzle it all with 1 tablespoon of extra virgin olive oil, fork and mix it all together, and dish up.	\N	315	2	0
 2668	Thinly pare 1 or 2 strips of rind from the lime. Put them in a pan, with the dessert wine, sugar, star anise and cinnamon stick. Split the vanilla pod and add the seeds to the pan. Bring to a boil, then lower the heat and simmer for 10 minutes.	\N	159	0	0
 2669	Remove the pan from the heat and leave to cool, then stir in the liqueur.	\N	159	1	0
 2670	Peel the clementines. Cut some of them in half and place them all in a large dish. Pour over the wine and chill before serving.	\N	159	2	0
+2834	Once the garlic is nicely golden, quickly remove from the pan with a slotted spoon, leaving the flavored oil behind.	\N	106	1	4
 2661	Using a sharp knife, cut off and discard any thick stems from the broccoli and cut the broccoli into long thin florets.	\N	170	0	0
 2662	Spread out the sesame seeds in a small frying pan and dry-fry over a medium heat until toasted. Do not leave them unattended as they will readily burn if left just a fraction too long.	\N	170	1	0
 2911	Cook the noodles in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Meanwhile, trim and finely slice the scallions, and finely slice the ham.	\N	318	0	0
@@ -14097,8 +14252,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3342	Enjoy over chicken or fish, or in romaine lettuce-leaf wrappers.	\N	528	3	0
 3377	Serve warm.	\N	540	3	0
 3268	In a small bowl, combine all ingredients.	\N	481	0	0
+2835	Go in with the chicken and cook for 5 minutes, or until golden and cooked through, turning regularly.	\N	106	2	4
 2446	Pour white wine into the pan, stir, and simmer for 7 minutes.	\N	257	1	0
 2447	Add arborio rice, mix everything, and fry everything together for 5 minutes.	\N	257	2	0
+2837	Season to perfection with salt and pepper, then return the chicken to the pan and finish with the reserved garlic and a generous dusting of sumac.	\N	106	4	4
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	\N	262	0	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	\N	262	1	0
 3168	In a mixing bowl, whisk the chickpea flour, baking powder, sugar until well combined, and no lumps show.	\N	424	0	0
@@ -14739,16 +14896,16 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3809	Preheat the oven to 400F.	\N	659	0	0
 3796	Bring a medium pot of salted water to a boil. Add the pasta and cook according to package directions.	\N	654	0	4
 3778	Fill a large pot with water and bring to a boil. Add the beets, potatoes and carrots, reduce the heat to medium-low, and cook for 30–45 minutes, until the vegetables are tender.	\N	649	0	4
-3787	In a medium bowl, combine 1/4 cup of sugar, the garam masala, and salt. Set aside.	\N	651	0	0
-3788	Warm a medium skillet over medium-high heat. Add the nuts and roast them, keeping them moving for about 4 minutes, or until they start to brown.	\N	651	1	0
-3789	Pour the remaining 1/2 cup of sugar over the nuts along with the water. Bring the mixture to a boil, reduce the heat to medium, and cook until the mixture starts to turn a light brown, usually within 3 minutes.	\N	651	2	0
 3790	Use a slotted spoon to take the nuts out of the pan and put them in the bowl with the sugar and spice. Toss the nuts to evenly coat them.	\N	651	3	0
 3779	Meanwhile, fill a second, small pot with water, add the eggs, and bring the water to a boil, then reduce the heat to medium-low. Cook for 15 minutes. Remove the eggs, potatoes, carrots and beets from both pots, with tongs. Set them all aside in a bowl and let them come to room temperature before handling.	\N	649	1	4
 3780	Remove the salmon from the can and flake it into a large salad bowl. Chop half of the white onion and add it to the bowl, on top of the salmon.	\N	649	2	0
+3787	In a medium bowl, combine ¼ cup of sugar, the garam masala, and salt. Set aside.	\N	651	0	0
+3788	Warm a medium skillet over medium-high heat. Add the nuts and roast them, keeping them moving for about 4 minutes, or until they start to brown.	\N	651	1	4
 3797	Meanwhile, warm a medium skillet over medium heat. Add the pancetta and cook 4–5 minutes, until crispy. Hold the pancetta and the rendered fat in the pan.	\N	654	1	4
 3798	In a medium bowl, whisk together the egg yolks, 1/4 cup of Parmesan, and the pepper. Whisk 2 tablespoons of the water from the pasta pot into the egg yolk mixture.	\N	654	2	4
 3799	Drain the pasta and immediately add it to the bowl with the egg yolks. As soon as the pasta goes in the bowl, stir it with a set of tongs until the sauce is creamy. Add the pancetta along with 1 teaspoon of fat from the pan and continue to stir for another minute.	\N	654	3	0
 3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	\N	654	4	0
+3789	Pour the remaining ½ cup of sugar over the nuts along with the water. Bring the mixture to a boil, reduce the heat to medium, and cook until the mixture starts to turn a light brown, usually within 3 minutes.	\N	651	2	4
 3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	\N	568	5	0
 3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	\N	568	6	0
 3103	Place kale onto a prepared baking sheet, and spread out evenly.	\N	403	3	0
@@ -14780,7 +14937,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3706	Add the spring onions, peppers, tomatoes and parsley or coriander with the remaining dressing, and toss well to mix. Season with salt and pepper to taste.	\N	631	3	0
 3861	Dividing evenly, put the cilantro, chili powder, lime zest, and lime juice in the bottom of two tall glasses and smash it a bit with the end of a wooden spoon.	\N	697	0	0
 3862	Stir in the orange-pineapple juice and fill the glass with ice. Top it off with sparkling water and enjoy.	\N	697	1	0
-3863	In a blender, combine the coconut water, lime juice, ginger, salt, and ice and blend until smooth. Divide the blended mix between two tall glasses and top with tonic water.	\N	698	0	0
 3864	Position a rack in the center of the oven and preheat the oven to 400F. Line a baking sheet with parchment paper.	\N	699	0	0
 3865	In a large bowl, toss the sliced apples with the brown sugar, cornstarch, cinnamon, and salt.	\N	699	1	0
 3866	Lay the puff pastry out on the lined baking sheet. Spread the apples in an even layer over the pastry, leaving a 1/2-inch border around the outside edges.	\N	699	2	0
@@ -14792,7 +14948,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3810	In a 9-inch ovenproof skillet, combine the sweet potato and olive oil and season with salt and pepper. Toss to combine.	\N	659	1	0
 3811	Transfer to the oven and roast for 15 minutes. Add the chorizo to the pan and bake for another 10 minutes, or until the sweet potatoes soften.	\N	659	2	0
 3812	Take the pan out of the oven and spoon the salsa around evenly. Break the eggs into the pan, top with the cheddar, and bake for another 5 to 10 minutes depending on how you like your eggs. Serve hot.	\N	659	3	0
-3791	Spread the nuts out on a baking sheet and let cool for 1 hour. Store the nuts in an airtight container.	\N	651	4	0
+3863	In a blender, combine the coconut water, lime juice, ginger, salt, and ice and blend until smooth. Divide the blended mix between two tall glasses and top with tonic water.	\N	698	0	128
+4009	TODO Find Simple Recipe	\N	745	0	0
+4010	Preheat the oven to 350F.	\N	746	0	2
 3766	Add the brandy and stock to the pan, boil rapidly until reduced by half, then season with salt and pepper to taste. Slice the chive butter and put a piece on top of each steak. Spoon a little sauce on to each plate. Garnish each steak with a chive bundle and serve with a simple vegetable accompaniment, such as boiled new potatoes.	\N	646	3	0
 3875	In a bowl, with an electric mixer, beat the cream cheese until it is smooth. Add the heavy cream and sugar and beat until it is fully combined. Add the cocoa to the mix and beat on low until it is fully mixed in.	\N	701	0	0
 3876	Grab four 16-ounce cups and put the cookie crumbs in the bottom of the cups. Top with the cheese mixture. Cover the cups with plastic wrap and refrigerate for 1 hour to set.	\N	701	1	0
@@ -14826,6 +14984,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3888	Taste the soup, season with more salt and pepper if needed, and serve.	\N	706	2	0
 3904	Spread the mixture onto the lined pan. Transfer to the oven and bake the granola for 30 minutes, giving it a stir every 10 minutes or so.	\N	712	2	2
 3905	Let the mixture cool for 2 hours at room temperature, then put it in an airtight container.	\N	712	3	0
+3791	Spread the nuts out on a baking sheet and let cool for 1 hour. Store the nuts in an airtight container.	\N	651	4	0
 3906	Warm a medium pot over medium heat. Add the olive oil, mushrooms, and onions and cook 5 to 8 minutes, until the onion is soft, and the mushrooms are cooked through.	\N	713	0	0
 3907	Add the tomato paste and cook for another 2 to 3 minutes, stirring constantly.	\N	713	1	0
 3908	Add the red wine and cook for 2 minutes. Add the water and rosemary and simmer the sauce for 15 minutes, or until thick. Season with salt and pepper.	\N	713	2	0
@@ -14841,9 +15000,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3923	In a medium pot, whisk together the ketchup, water, brown sugar, vinegar, mustard, black pepper, cayenne, and salt. Bring to a boil over high heat, then reduce the heat to low and simmer, whisking, for 5 minutes.	\N	718	0	0
 3924	Remove from the heat. Let it cool slightly, then transfer to a mason jar or another heatproof, airtight container. Store in the fridge for up to 1 month.	\N	718	1	0
 3926	In a medium bowl, whisk together the vinegar, soy sauce, honey, ginger, and pepper. Slowly whisk in the sesame oil, a few drops at a time until all of it has been incorporated.	\N	720	0	0
-3927	In a medium bowl, whisk together the vinegar, Dijon mustard, honey, salt and pepper.	\N	721	0	0
-3928	While whisking, add the oil very slowly. This is crucial, because if you add the oil all at once, the vinaigrette will fall apart. You need the mechanical agitation of whisking to break up the oil droplets so they can bond with the vinegar.	\N	721	1	0
-3929	After all the oil has been whisked in, continue to whisk it like crazy for about 30 seconds more.	\N	721	2	0
 3930	Pick off the stems at the ends of the basil leaves and discard. Wash the basil well and pat dry with a paper towel.	\N	722	0	0
 3931	In a blender, combine the basil, olive oil, pine nuts, and Parmesan. Pulse the mixture until it's smooth and creamy. Stir the salt into the pesto.	\N	722	1	128
 3932	Pour the tomatoes into a bowl and crush them into small pieces. Make sure to keep the tomatoes below the surface of the liquid when you squeeze them--this will prevent them from spraying everywhere.	\N	723	0	0
@@ -14860,9 +15016,18 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3937	Whisk the cornmeal into the boiling water, reduce the heat to medium, and cook, stirring constantly, for 15 to 20 minutes, until it has the consistency of scrambled eggs.	\N	724	1	4
 3938	Remove the polenta from the heat and stir in the butter and Parmesan. Season the polenta with salt and pepper. Eat it as is or serve it as a side dish.	\N	724	2	0
 3925	In a small bowl, mix the cornstarch and water. Add the cornstarch mixture to a medium pot along with the soy sauce, honey, sambal oelek, and ginger. Bring the pot to a boil, reduce the heat to low, and simmer it for 5 minutes.	\N	719	0	4
+4011	Crust: Mix almond flour, coconut oil, honey/maple syrup, and vanilla in a mixer.	\N	746	1	0
+4012	Use the mixture to fill a round pie pan.	\N	746	2	0
+4013	Filling: Mix all ingredients and add into the pie crust.	\N	746	3	0
 3915	In a medium pot, heat the olive oil over medium heat. Add the onion and cook for about 5 minutes, or until soft and translucent. Add the garlic and cook for another minute. Sprinkle on the chili powder and cook for another minute.	\N	716	0	0
 3916	Add the beans and water to the pot and bring it all to a boil. Reduce the heat to low and cook the mixture for 4 to 5 minutes, until about half the water has evaporated or been absorbed.	\N	716	1	0
 3917	Remove the pot from the heat and mash the beans using a potato masher.	\N	716	2	0
+3927	In a medium bowl, whisk together the vinegar, Dijon mustard, honey, salt and pepper.	\N	721	0	0
+3928	While whisking, add the oil very slowly. This is crucial, because if you add the oil all at once, the vinaigrette will fall apart. You need the mechanical agitation of whisking to break up the oil droplets so they can bond with the vinegar.	\N	721	1	0
+3929	After all the oil has been whisked in, continue to whisk it like crazy for about 30 seconds more.	\N	721	2	0
+4014	Bake for 30–45 minutes.	\N	746	4	2
+4015	Add all the ingredients to a food processor, and pulse until all ingredients are blended and a thick dough forms, about 3–5 minutes.	\N	747	0	0
+4016	When the ingredients are well incorporated, remove the blade from the food processor so you can work with the dough.	\N	747	1	0
 983	Meanwhile, strip all the chicken meat from the bones and shred apart with forks, returning it to the sauce as you go and discarding any skin and bones.	\N	108	3	0
 3884	Carefully drain off the bacon fat, leaving the bacon in the pan. Add the cream-style corn and milk to the pot and heat the chowder over medium heat for about 10 minutes, or until it's hot. Do not boil! Add the cooked potatoes to the chowder and let them cook for 2 minutes to absorb some of the flavor. Season the chowder with salt and pepper and serve.	\N	704	2	4
 1871	Add red chili pepper flakes, a little pit of salt and pepper, tomato sauce, crushed tomatoes, and chicken broth to crock pot then cover and cook on low for 5-6 hours or until sausages are very tender. Serve over pasta or inside rolls with provolone cheese on top.	\N	180	3	0
@@ -14902,9 +15067,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3976	Remove the patties from the oven and serve or let cool. If you are serving them later, reheat them in a hot pan with a bit of oil.	\N	733	3	0
 2860	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Just before draining the pasta, add a ladleful or two of the cooking water to the sausage sauce and stir it in well. Taste the sauce to check the seasoning.	\N	192	3	0
 2861	Finely shred the radicchio leaves. Drain the cooked pasta and turn it into the pan of sausage sauce. Add the shredded radicchio and toss well to combine everything thoroughly. Serve immediately.	\N	192	4	0
-3944	Warm a medium pot over medium heat. Add the olive oil and onion and cook for 5 minutes, or until soft. Add the ginger and cook for 30 seconds. Add the tomato paste and cook for 1 minute.	\N	727	0	0
-3945	Sprinkle the curry powder into the pot and cook for 30 seconds. Add the lentils and water and bring to a boil. Reduce the heat to low and simmer for 25 to 30 minutes, until the lentils are tender.	\N	727	1	0
-3946	Taste the dal and add salt and pepper if it needs it.	\N	727	2	0
+4017	Form the dough into 1 tablespoon portions and roll between your hands to form balls.	\N	747	2	0
+4018	Refrigerate for at least 2 hours, then serve and enjoy!	\N	747	3	0
+4019	In a large cast iron pan, over medium heat, add 1 tablespoon of the avocado oil. Add the onion and garlic, and cook until slightly golden but not burned. Remove from heat and allow to cool.	\N	748	0	0
 3942	Season the lentils with salt and pepper and serve with your favorite protein.	\N	725	3	0
 3994	Cook the green beans according to package directions.	\N	740	0	0
 3995	Put the green beans in a medium bowl along with the tomatoes, olives, and vinaigrette. Toss to coat.	\N	740	1	0
@@ -14931,6 +15096,31 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3993	In a medium bowl, toss together the noodles, carrot, bok choy, and bell pepper. Add the dressing and toss to coat the noodles and vegetables.	\N	739	0	0
 3998	Add the arugula to the bowl and stir using a set of tongs. Plate the salad, top with the goat cheese, drizzle with the olive oil, and season with salt and pepper.	\N	741	1	0
 3918	Mix the lime juice into the beans, give them a taste, and season them with salt and pepper as needed.	\N	716	3	0
+4004	Warm a medium nonstick skillet over medium heat. Add the oil, onion, and bell peppers and season with salt and black pepper. Cook the mixture for about 5 minutes, or until the peppers soften, and the onions start to turn translucent.	\N	743	0	0
+3999	Preheat the oven to 375°F.	\N	742	0	2
+4000	Put the cooked chicken fingers in a small baking dish. Spoon 1 cup of marinara sauce over the chicken and cover with 2 tablespoons of Parmesan and all the mozzarella. Cover the pan with aluminum foil and bake in the oven for 20 minute.	\N	742	1	2
+4001	Bring a large pot of salted water to a boil and cook the pasta according to package directions.	\N	742	2	4
+4002	Drain the pasta into a colander and let sit for a few minutes. Meanwhile, add the remaining 1 cup marinara sauce to the pasta pot, return the pot to the heat, and heat the sauce until it starts to bubble. As soon as the sauce is bubbling hot, remove the pot from the heat, add the pasta, and stir to coat it in the sauce.	\N	742	3	4
+4003	Divide the pasta between two bowls and top with the chicken and remaining 2 tablespoons Parmesan. Season with salt and pepper, and serve.	\N	742	4	0
+2836	Remove the chicken from the pan and tip in the chickpeas (juices and all). Add the spinach, along with most of the garlic and 1 tablespoon of red wine vinegar, then toss over the heat until the spinach has wilted and the chickpeas are hot through.	\N	106	3	4
+4005	Add the tofu, break it up with a spoon, and cook for 3 to 4 minutes, until the tofu is hot. Serve.	\N	743	1	0
+3946	Taste the dal and add salt and pepper if it needs it.	\N	727	2	0
+3944	Warm a medium pot over medium heat. Add the olive oil and onion and cook for 5 minutes, or until soft. Add the ginger and cook for 30 seconds. Add the tomato paste and cook for 1 minute.	\N	727	0	4
+3945	Sprinkle the curry powder into the pot and cook for 30 seconds. Add the lentils and water and bring to a boil. Reduce the heat to low and simmer for 25 to 30 minutes, until the lentils are tender.	\N	727	1	4
+4006	Cook the pasta in a medium pan of boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Melt the cheese in a heatproof bowl above the pasta while it cooks, removing carefully when gooey.	\N	744	0	4
+4007	Meanwhile, slide the radicchio 1/2 inch thick. Place it in a large dry non-stick frying pan on a high heat to char for 5 minutes, turning halfway. Peel the pears with a vegetable peeler, then quarter, core, and finely slice lengthways. Toss into the pan, crumble in most of the walnuts, add a splash of pasta cooking water, reduce to a medium heat and pop the lid on, then leave to caramelize slightly.	\N	744	1	4
+4008	Toss the drained pasta and oozy Gorgonzola into the pear pan with a splash of red wine vinegar, and a splash of reserved cooking water, if needed. Taste, season to perfection with sea salt and black pepper, crumble over the remaining walnuts, and drizzle with 1 teaspoon of extra virgin olive oil.	\N	744	2	0
+4020	In a food processor, process the chickpeas until they turn into a slightly textured paste. Be sure to turn off the food processor and scrape down the sides to get all the chickpeas ground up. Add in the onion, garlic, salt, and pepper, and mix to fully combine. Turn the food processor off and stir in the chopped parsley and arrowroot starch.	\N	748	1	0
+4021	Take a large plate and sprinkle a few tablespoons of chickpea flour onto it. Using a spoon, scoop some of the mixture into your hands and shape into a ball, the size of a golf ball, and then press gently to make a patty. Drop into the chickpea flour to coat evenly. If too much flour sticks to the patty, then gently dust it off with your fingers or a pastry brush. You should have a very light coating all over the patties/burgers.	\N	748	2	0
+4022	Reheat that same cast iron pan to medium heat. Drizzle the remainder of the oil and place the patties in to cook. Cook for about 2–3 minutes on each side until the bottom is nicely browned.	\N	748	3	0
+4023	Preheat the oven to 450F.	\N	749	0	0
+4024	Lightly rub the Cornish hens with 1 tablespoon of the olive oil and season to taste with salt and pepper. Divide the lemon wedges into four, and stuff the cavity of the Cornish hens with lemon and one rosemary sprig.	\N	749	1	0
+4025	In a roasting pan, large enough to hold the four Cornish hens, place them in the middle and add garlic cloves to the pan. Roast them in the oven for 25 minutes.	\N	749	2	0
+4026	Lower the oven temperature to 350F. In a small bowl, whisk together the bone broth and the remaining 2 tablespoons of oil. Pour the mixture over the Cornish hens. Place back in the oven and roast for another 25 minutes, basting with juices from the pan every 10 minutes.	\N	749	3	0
+4027	Continue to cook until the skins are lightly browned, and the internal temperature reaches 165F.	\N	749	4	0
+4028	Transfer hens to a plate, ensuring that no juice is in the cavities of the Cornish hens. Tent hens with aluminum foil to keep warm and set aside. 	\N	749	5	0
+4029	Transfer the juices and garlic cloves to a saucepan, and boil until liquids reduce and thicken slightly, about 5 minutes.	\N	749	6	0
+4030	Arrange the Cornish hens on individual plates. Serve with sauce, and a sprig of rosemary for garnish.	\N	749	7	0
 \.
 
 
@@ -14976,7 +15166,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14858, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14942, true);
 
 
 --
