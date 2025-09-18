@@ -182,6 +182,12 @@ public class QueryRunner(Section section)
                 // Allow recipes with ingredients that have been ignored and are no longer optional so the user can still manage it.
                 foreach (var recipeIngredient in queryResult.RecipeIngredients.Where(ri => ri.UserRecipeIngredient?.Ignore != true))
                 {
+                    // Swap in the user's recipe ingredient notes if available.
+                    if (!string.IsNullOrWhiteSpace(recipeIngredient.UserRecipeIngredient?.Notes))
+                    {
+                        recipeIngredient.Attributes = recipeIngredient.UserRecipeIngredient.Notes;
+                    }
+
                     // Check this first so we can fallback to an ingredient if the recipe fails.
                     if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
                     {
