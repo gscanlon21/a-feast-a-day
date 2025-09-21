@@ -9857,6 +9857,25 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 14940	59	1792	\N	\N	3	0.4
 14941	59	14	\N	\N	3	60
 14942	59	229376	\N	\N	1	113
+14943	457	68719476736	\N	\N	2	3
+14944	457	34359738368	\N	\N	2	57
+14945	457	1	\N	\N	3	0.3
+14946	457	4294967296	\N	\N	2	3
+14947	457	2199023255552	\N	\N	2	0.1
+14948	457	14	\N	\N	3	4
+14949	457	62	\N	\N	3	4
+14950	457	2047	\N	\N	3	15
+14951	468	68719476736	\N	\N	2	166
+14952	468	34359738368	\N	\N	2	23
+14953	468	2	\N	\N	3	0.1
+14954	468	1	\N	\N	3	1
+14955	468	4294967296	\N	\N	2	9
+14956	468	2199023255552	\N	\N	2	0.2
+14957	468	48	\N	\N	3	1
+14958	468	14	\N	\N	3	0.3
+14959	468	1984	\N	\N	3	1
+14960	468	62	\N	\N	3	1
+14961	468	2047	\N	\N	3	9
 \.
 
 
@@ -11981,6 +12000,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5946	6	\N	\N	484	1	1	\N	123	f	\N	1
 5897	7	\N	\N	476	1	1	\N	176	f	\N	0
 5898	6	\N	\N	476	1	2	\N	\N	f	411	1
+5899	0	\N	\N	476	1	1	, juiced	12	f	\N	2
+5900	6	\N	\N	476	4	1	, chopped	13	f	\N	3
+5901	8	\N	\N	476	8	1	, to taste	692	t	\N	4
 5934	7	\N	\N	482	1	1	\N	176	f	\N	0
 5935	6	\N	\N	482	1	1	, tough ends trimmed	122	f	\N	1
 5936	6	\N	\N	482	1	1	\N	\N	f	543	2
@@ -11999,9 +12021,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5905	7	\N	\N	477	1	2	\N	215	f	\N	3
 5871	7	\N	\N	470	1	1	\N	990	f	\N	3
 5872	8	\N	\N	470	1	1	, to taste	681	f	\N	4
-5899	0	\N	\N	476	1	1	, juiced	12	f	\N	2
-5900	6	\N	\N	476	4	1	, chopped	13	f	\N	3
-5901	8	\N	\N	476	8	1	, to taste	692	t	\N	4
 5947	0	\N	\N	485	1	2	\N	387	f	\N	0
 5948	6	\N	\N	485	4	1	\N	39	f	\N	1
 5910	0	\N	\N	478	1	1	, chopped	17	t	\N	2
@@ -12651,12 +12670,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7270	8	\N	\N	725	8	1	\N	285	f	\N	7
 6600	7	\N	\N	607	1	1	, for cooking	1104	f	\N	0
 7354	6	\N	\N	739	1	2	(SOBA NOODLES), cooked, rinsed in cold water	333	f	\N	0
+7433	4	\N	\N	750	1	7	\N	784	f	\N	0
+7434	4	\N	\N	750	1	1	\N	807	f	\N	1
 7355	6	\N	\N	739	2	1	, grated	736	f	\N	1
 6558	6	\N	\N	598	4	1	\N	805	f	\N	8
 7373	8	\N	\N	106	8	1	\N	285	t	\N	6
 7282	6	\N	\N	727	1	3	\N	123	f	\N	6
 7283	8	\N	\N	727	8	1	\N	285	t	\N	7
 6620	0	\N	\N	609	1	6	, tops and bottoms removed (keep skin on)	671	f	\N	0
+7435	4	\N	\N	750	1	17	\N	377	f	\N	2
 6579	5	\N	\N	602	1	1	\N	387	f	\N	0
 6621	0	\N	\N	609	1	2	, tops removed (keep skin on)	157	f	\N	1
 6622	0	\N	\N	609	1	1	, peeled	222	f	\N	2
@@ -13354,6 +13376,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7430	7	\N	\N	749	1	8	, divided	677	f	\N	4
 7431	0	\N	\N	749	1	1	, cloves divided, peeled and mashed	1125	f	\N	5
 7432	6	\N	\N	749	3	2	\N	\N	f	559	6
+7436	4	\N	\N	750	2	1	\N	2	f	\N	3
+7437	4	\N	\N	750	1	1	\N	403	f	\N	4
 \.
 
 
@@ -13955,8 +13979,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3069	Mix all ingredients together in a large bowl.	\N	393	0	0
 3070	Refrigerate until ready to use.	\N	393	1	0
 3071	Serve with hot meals.	\N	393	2	0
-3255	Heat a large skillet over a medium heat and add the avocado oil. Add the cauliflower rice and cook for 5 minutes, or until desired texture is achieved.	\N	476	0	0
-3256	Remove the pan from the heat and stir in the lime juice and cilantro.	\N	476	1	0
+3255	Heat a large skillet over a medium heat and add the avocado oil.	\N	476	0	4
+3256	Add the cauliflower rice and cook for 5 minutes, or until desired texture is achieved.	\N	476	1	4
 3084	Serve with steamed rice or cauliflower rice.	\N	396	3	0
 2002	Arrange the cucumber, potato and pepper slices and the pitted olives on a serving plate or in a dish.	\N	189	0	0
 2003	Sprinkle the chopped fresh chilli over the salad and season with salt, if you like. (Olives tend to be very salty.)	\N	189	1	0
@@ -13982,7 +14006,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2567	Set the oven to 375F.	\N	271	0	0
 2568	Heat the oil in a large sauté pan over medium heat. Add the onions, celery and garlic and cook, stirring, until softened (about 20-30 minutes, depending on the size of your vegetable pieces). Take off the heat.	\N	271	1	0
 2569	In a food processor, add the chicken livers, bacon, almond meal, non-dairy milk, thyme, sage, salt and pepper and pulse to chop the livers and combine thoroughly. Add the sautéed veggies and pulse to mix through.	\N	271	2	0
-3257	Season to taste with salt and pepper.	\N	476	2	0
+3257	Remove the pan from the heat and stir in the lime juice and cilantro.	\N	476	2	0
 3028	Divide into bowls and top with remaining ½ cup parmesan. Enjoy!	\N	381	4	0
 1883	Cook the pasta in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of starchy cooking water. With 4 minutes to go, finely slice the pancetta and plate in a large non-stick frying pan on a medium heat with 1 tablespoon of olive oil. Once sizzling, crumble in the chestnuts and add a generous pinch of black pepper, then stir regularly until golden and crisp.	\N	183	0	0
 2814	Heat oven to 350°F. Spray 2-quart casserole with cooking spray.	\N	23	0	0
@@ -15121,6 +15145,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4028	Transfer hens to a plate, ensuring that no juice is in the cavities of the Cornish hens. Tent hens with aluminum foil to keep warm and set aside. 	\N	749	5	0
 4029	Transfer the juices and garlic cloves to a saucepan, and boil until liquids reduce and thicken slightly, about 5 minutes.	\N	749	6	0
 4030	Arrange the Cornish hens on individual plates. Serve with sauce, and a sprig of rosemary for garnish.	\N	749	7	0
+4031	Season to taste with salt and pepper.	\N	476	3	0
+4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans. Toast the almonds in a dry grill pan on a medium heat until lightly golden, tossing regularly, then remove and finely slice.	\N	750	0	4
+4033	Drain the peppers and open out flat, then char on the hot grill until bar-marked on one side only. Remove and slice 1/2 inch thick. Finely slice the parsley stalks, pick the leaves, then toss with the fava beans, peppers, 1&1/2 tablespoons of extra virgin olive oil, and 1 tablespoon each of red wine vinegar and brine from the pepper jar. Taste, season to perfection with sea salt and black pepper, and divide between your plates.	\N	750	1	0
+4034	Finely shave over the cheese with a vegetable peeler, drizzle with 1 teaspoon of extra virgin olive oil, scatter over the almonds, and serve.	\N	750	2	0
 \.
 
 
@@ -15166,7 +15194,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14942, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 14961, true);
 
 
 --

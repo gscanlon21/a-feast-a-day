@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Entities.User;
+using Data.Query.Builders.NutrientTargets;
 using Data.Query.Options;
 
 namespace Data.Query.Builders;
@@ -38,7 +39,7 @@ public class QueryBuilder
     /// <summary>
     /// Show recipes that work these unique nutrient groups.
     /// </summary>
-    public QueryBuilder WithNutrients(INutrientBuilderFinalNoContext builder, Action<NutrientOptions>? optionsBuilder = null)
+    public QueryBuilder WithNutrients(INutrientTargetsBuilder builder, Action<NutrientOptions>? optionsBuilder = null)
     {
         var options = builder.Build(Section);
         optionsBuilder?.Invoke(options);

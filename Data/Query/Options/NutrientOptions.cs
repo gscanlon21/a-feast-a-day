@@ -9,7 +9,7 @@ public class NutrientOptions : IOptions
 
     public NutrientOptions() { }
 
-    public NutrientOptions(IList<Nutrients> nutrients, IDictionary<Nutrients, double> nutrientTargetsRDA, IDictionary<Nutrients, double> nutrientTargetsTUL)
+    public NutrientOptions(IList<Nutrients> nutrients, Dictionary<Nutrients, double> nutrientTargetsRDA, Dictionary<Nutrients, double> nutrientTargetsTUL)
     {
         Nutrients = nutrients;
         NutrientTargetsRDA = nutrientTargetsRDA;

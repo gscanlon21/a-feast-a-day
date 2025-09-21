@@ -20,9 +20,8 @@ public partial class NewsletterRepo
         var scale = breakfastServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = breakfastServing.AtLeastXNutrientsPerRecipe;
@@ -50,9 +49,8 @@ public partial class NewsletterRepo
         var scale = lunchServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = lunchServing.AtLeastXNutrientsPerRecipe;
@@ -80,9 +78,8 @@ public partial class NewsletterRepo
         var scale = dinnerServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = dinnerServing.AtLeastXNutrientsPerRecipe;
@@ -110,9 +107,8 @@ public partial class NewsletterRepo
         var scale = sideServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = sideServing.AtLeastXNutrientsPerRecipe;
@@ -140,9 +136,8 @@ public partial class NewsletterRepo
         var scale = snackServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = snackServing.AtLeastXNutrientsPerRecipe;
@@ -170,9 +165,8 @@ public partial class NewsletterRepo
         var scale = drinkServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Drinks)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = drinkServing.AtLeastXNutrientsPerRecipe;
@@ -200,9 +194,8 @@ public partial class NewsletterRepo
         var scale = dessertServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
-            .WithNutrients(NutrientTargetsBuilder
+            .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
-                .WithNutrientTargets()
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = dessertServing.AtLeastXNutrientsPerRecipe;

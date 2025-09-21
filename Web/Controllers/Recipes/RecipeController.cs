@@ -272,9 +272,8 @@ public class RecipeController : ViewController
 
             var newRecipes = await new QueryBuilder(feastRecipe.Section)
                 .WithUser(user)
-                .WithNutrients(NutrientTargetsBuilder
+                .WithNutrients(NutrientTargetsContextBuilder
                     .WithNutrients(context, NutrientHelpers.All)
-                    .WithNutrientTargets()
                     .AdjustNutrientTargets(scale: 1), options =>
                     {
                         options.AtLeastXNutrientsPerRecipe = serving.AtLeastXNutrientsPerRecipe;
