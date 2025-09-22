@@ -28,7 +28,7 @@ else
     <Lib.Pages.Shared.Newsletter._Preview Model='@($"{recipeNames}")' />
 
     <div style="margin-bottom:1rem;">
-        <h6 style="margin-block:0;"><a target="_blank" href="@DH.NewsletterLink(Model.User, Model.Date)">@Model.Date.ToLongDateString()</a></h6>
+        <h6 style="margin-block:0;"><a target="_blank" href="@DH.NewsletterLink(Model.User, Model.UserFeast.Date)">@Model.UserFeast.Date.ToLongDateString()</a></h6>
         <h1 style="margin-block:0;">Weekly Meal Plan</h1>
     </div>
 

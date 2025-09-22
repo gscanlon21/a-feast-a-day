@@ -221,7 +221,6 @@ public partial class NewsletterRepo
         var newsletterViewModel = new NewsletterDto
         {
             User = userViewModel,
-            Date = newsletter.Date,
             Verbosity = user.Verbosity,
             ShoppingList = shoppingList,
             Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
