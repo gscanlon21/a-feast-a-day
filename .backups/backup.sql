@@ -12428,17 +12428,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6315	6	\N	\N	571	1	2	, chopped	372	f	\N	4
 6367	6	\N	\N	577	1	1	\N	\N	f	629	0
 6368	0	\N	\N	577	1	1	, chopped into bite-sized pieces	6	f	\N	1
-6295	0	\N	\N	568	1	4	\N	869	f	\N	0
-6296	7	\N	\N	568	1	2	\N	964	f	\N	1
-6297	7	\N	\N	568	1	1	\N	490	f	\N	2
-6298	8	\N	\N	568	4	1	, to taste	692	t	\N	3
-6299	6	\N	\N	568	1	4	(MIXED-BABY GREENS), spinach, chard, kale, arugula, etc	148	f	\N	4
-6300	7	\N	\N	568	1	2	\N	991	f	\N	5
 6316	6	\N	\N	571	4	1	\N	\N	t	549	5
 6133	8	\N	\N	542	1	1	, chopped	577	t	\N	4
-6301	7	\N	\N	568	1	2	\N	358	f	\N	6
-6302	7	\N	\N	568	1	1	, minced	5	f	\N	7
-6303	0	\N	\N	568	1	1	, wedged, for garnish	4	f	\N	8
 6317	6	\N	\N	572	2	1	\N	81	f	\N	0
 6318	6	\N	\N	572	4	1	\N	1102	f	\N	1
 6319	6	\N	\N	572	1	4	, chopped	1133	f	\N	2
@@ -13378,6 +13369,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7432	6	\N	\N	749	3	2	\N	\N	f	559	6
 7436	4	\N	\N	750	2	1	\N	2	f	\N	3
 7437	4	\N	\N	750	1	1	\N	403	f	\N	4
+6295	0	\N	\N	568	1	4	\N	869	f	\N	0
+6296	7	\N	\N	568	1	2	\N	964	f	\N	1
+6297	7	\N	\N	568	1	1	\N	490	f	\N	2
+6298	8	\N	\N	568	4	1	, to taste	692	t	\N	3
+6299	6	\N	\N	568	1	4	, spinach, chard, kale, arugula, etc	1181	f	\N	4
+6300	7	\N	\N	568	1	2	\N	991	f	\N	5
+6301	7	\N	\N	568	1	2	\N	358	f	\N	6
+6302	7	\N	\N	568	1	1	, minced	5	f	\N	7
+6303	0	\N	\N	568	1	1	, wedged, for garnish	4	t	\N	8
+7438	0	\N	\N	751	1	1	\N	405	f	\N	0
+7439	0	\N	\N	751	1	2	\N	166	f	\N	1
+7440	4	\N	\N	751	1	15	(CANNED SLICED PEACHES), in juice	172	f	\N	2
+7441	4	\N	\N	751	1	4	\N	277	f	\N	3
+7442	4	\N	\N	751	1	2	\N	390	f	\N	4
 \.
 
 
@@ -14523,31 +14528,31 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2130	Remove the vegetables with a slotted spoon and keep hot. Melt the butter in a separate pan, add the chopped shallot and cook, stirring occasionally, until softened, but not browned. Stir in the herbs and cream and cook for a few minutes, until slightly thickened.	\N	185	2	0
 2131	Meanwhile, cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes. Drain well and add to the sauce with the vegetables. Toss gently and season with black pepper.	\N	185	3	0
 3112	Add the berries on top and enjoy.	\N	406	1	0
+3456	Preheat the oven to 400°F.	\N	568	0	0
 2074	Drain the noodles, rinse them under cold water, then drain them again. Pat them dry with kitchen paper and add to the wok. Continue to stir-fry until the noodles are heated through.	\N	197	4	0
 3109	Combine the remaining ingredients in a glass.	\N	405	1	0
 3110	Alternatively, place all ingredients into a blender and blend.	\N	405	2	0
 3413	Get out a blender or immersion blender.	\N	556	0	640
-3456	Preheat the oven to 400°F.	\N	568	0	0
 1948	Using a sharp knife, finely dice the red, green and yellow peppers, carrot, cucumber and tomatoes and place them in a large mixing bowl.	\N	188	0	0
 1949	Add the garlic, spring onions, coriander, gill, parsley, mint and chilli, is using, to the chopped vegetables and toss together to combine.	\N	188	1	0
+3457	Line a large baking sheet with parchment paper.	\N	568	1	2
 3466	In a large bowl, combine the first 5 ingredients (mango through kale).	\N	571	0	0
 3467	Pour the dressing over the salad. Toss and serve.	\N	571	1	0
 3027	Add the chicken and zucchini noodles to the skillet; stir to coat in the sauce. Cook 5 minutes, until zucchini has softened and chicken is cooked through. Season with salt and pepper to taste.	\N	381	3	4
 3194	Using a masticating juicer, slowly feed the vegetables and fruit (including the peels) into the juicer until all produce has been processed.	\N	431	0	0
-3457	Line a large baking sheet with parchment paper.	\N	568	1	0
-3458	Season the salmon with sea salt, pepper and 1 tablespoon of coconut oil, melted. Top with ground ginger.	\N	568	2	0
 3087	In a large heavy-bottom skillet, salt pork and sear until the outside starts to darken. Place the pork in a slow cooker.	\N	398	0	0
 3088	In a small bowl, whisk together the oil, maple syrup, coconut aminos, lime juice, garlic and water. Pour mixture over pork. Cook for 6 hours on low, or 4 hours on high. When pork is finished, remove to a cutting board to rest.	\N	398	1	0
 3089	Pour juices from the slow cooker into a medium saucepan. Cook the sauce over medium-high heat, reducing by about ⅓ of the original amount.	\N	398	2	0
-3459	Place fillets on the lined baking sheet, place in the oven, and bake for 15 minutes, or until the fish is cooked through and flakes easily with a fork.	\N	568	3	0
-3460	While the salmon is baking, heat a large skillet over medium-high heat, add the remaining coconut oil, and add the greens.	\N	568	4	0
-3463	Top the greens with salmon fillets, and a wedge of lemon.	\N	568	7	0
 3470	To a small saucepan, add balsamic vinegar and honey (or maple syrup), turn the heat to medium, and bring to a simmer.	\N	572	0	4
 3195	Pour in a glass, add the pepper, stir and enjoy.	\N	431	1	0
 3417	Combine all ingredients in a blender, and blend until smooth.	\N	557	0	128
 3351	Remove the cauliflower from the oven and transfer it to a food processor or blender.	\N	532	3	0
 3352	Add 2 tablespoons of olive oil, tahini, lemon juice, and garlic, and blend until smooth.	\N	532	4	0
 3353	Top with 1 teaspoon olive oil and serve with fresh veggies.	\N	532	5	0
+3458	Season the salmon with sea salt, pepper and 1 tablespoon of coconut oil, melted. Top with ground ginger.	\N	568	2	0
+3459	Place fillets on the lined baking sheet, place in the oven, and bake for 15 minutes, or until the fish is cooked through and flakes easily with a fork.	\N	568	3	2
+3460	While the salmon is baking, heat a large skillet over medium-high heat, add the remaining coconut oil, and add the greens.	\N	568	4	4
+3463	Top the greens with salmon fillets, and a wedge of lemon.	\N	568	7	0
 2764	Peel and finely chop the red onion, place in a bowl, cover with 4 tablespoons of red wine vinegar, and add a very good pinch of sea salt.	\N	309	0	0
 2765	Lower the eggs into a pan of vigorously simmering water and boil for 5½ minutes exactly. Line up the asparagus, trim off the woody ends, and place in a colander above the eggs, covered, to steam while the eggs cook. Meanwhile, pick the tarragon leaves.	\N	309	1	0
 2766	In a bowl, whisk the mustard with 6 tablespoons of extra virgin olive oil, adding it gradually, then pour in the soaking vinegar from the onion through a sieve, whisking constantly. Taste and season to perfection with black pepper.	\N	309	2	0
@@ -14930,8 +14935,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3799	Drain the pasta and immediately add it to the bowl with the egg yolks. As soon as the pasta goes in the bowl, stir it with a set of tongs until the sauce is creamy. Add the pancetta along with 1 teaspoon of fat from the pan and continue to stir for another minute.	\N	654	3	0
 3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	\N	654	4	0
 3789	Pour the remaining ½ cup of sugar over the nuts along with the water. Bring the mixture to a boil, reduce the heat to medium, and cook until the mixture starts to turn a light brown, usually within 3 minutes.	\N	651	2	4
-3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	\N	568	5	0
-3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	\N	568	6	0
 3103	Place kale onto a prepared baking sheet, and spread out evenly.	\N	403	3	0
 3104	Bake for 10 to 12 minutes, or until the leaves are slightly crispy.	\N	403	4	0
 3869	Preheat the oven to 400F. Line a baking sheet with parchment paper.	\N	700	0	0
@@ -15149,6 +15152,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans. Toast the almonds in a dry grill pan on a medium heat until lightly golden, tossing regularly, then remove and finely slice.	\N	750	0	4
 4033	Drain the peppers and open out flat, then char on the hot grill until bar-marked on one side only. Remove and slice 1/2 inch thick. Finely slice the parsley stalks, pick the leaves, then toss with the fava beans, peppers, 1&1/2 tablespoons of extra virgin olive oil, and 1 tablespoon each of red wine vinegar and brine from the pepper jar. Taste, season to perfection with sea salt and black pepper, and divide between your plates.	\N	750	1	0
 4034	Finely shave over the cheese with a vegetable peeler, drizzle with 1 teaspoon of extra virgin olive oil, scatter over the almonds, and serve.	\N	750	2	0
+3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	\N	568	5	4
+3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	\N	568	6	0
+4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. Toast the pitas until golden, then slice into strips and arrange around the edges of two plates.	\N	751	0	4
+4036	Place a large non-stick frying pan on a high heat. Drain and roughly chop the peaches (reserving the juice), then place in the pan with a good splash of the reserved juice, and season with pepper. Warm through for a few minutes while you toss the salad leaves with the dressed cucumber, and plate up. Remove the peaches to a bowl, give the pan a quick wipe with a ball of paper towel, then use the fine side of a box grater to grate half the halloumi over the surface of the pan (like a lacy doily). Leave on the heat for 1 to 2 minutes, or until golden on one side, then tip directly over one of the plates, using a spatula to each it away from the pan, if needed. Repeat with the remaining halloumi for the second plate. Spoon over the peaches, and tuck straight in.	\N	751	1	4
 \.
 
 
