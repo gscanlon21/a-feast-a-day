@@ -261,8 +261,8 @@ public class RecipeController : ViewController
 
         // Delete the old recipe before querying to free up the nutrients.
         // This will also cascade delete the UserFeastRecipeIngredients b/c they are foreign keyed.
-        await _context.UserFeastRecipes.Where(ufr => ufr.RecipeId == feastRecipe.RecipeId).ExecuteDeleteAsync();
-        await _context.UserFeastRecipes.Where(ufr => ufr.ParentRecipeId == feastRecipe.RecipeId).ExecuteDeleteAsync();
+        await _context.UserFeastRecipes.Where(ufr => ufr.UserFeastId == userFeast.Id).Where(ufr => ufr.RecipeId == feastRecipe.RecipeId).ExecuteDeleteAsync();
+        await _context.UserFeastRecipes.Where(ufr => ufr.UserFeastId == userFeast.Id).Where(ufr => ufr.ParentRecipeId == feastRecipe.RecipeId).ExecuteDeleteAsync();
 
         var context = await _userRepo.BuildFeastContext(user, token, userFeast.Date);
         var serving = context.User.UserSections.FirstOrDefault(us => us.Section == feastRecipe.Section) ?? new UserSection(feastRecipe.Section);

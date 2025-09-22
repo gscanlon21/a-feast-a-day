@@ -1,5 +1,6 @@
 ﻿using Data;
 using Data.Entities.Recipe;
+using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Recipe;
@@ -9,13 +10,13 @@ namespace Web.Components.User;
 
 public class ManageRecipeViewComponent : ViewComponent
 {
+    private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
-    private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public ManageRecipeViewComponent(CoreContext context, IServiceScopeFactory serviceScopeFactory)
+    public ManageRecipeViewComponent(CoreContext context, UserRepo userRepo)
     {
         _context = context;
-        _serviceScopeFactory = serviceScopeFactory;
+        _userRepo = userRepo;
     }
 
     /// <summary>
@@ -30,11 +31,23 @@ public class ManageRecipeViewComponent : ViewComponent
             .Where(r => r.UserId == user.Id)
             .FirstOrDefaultAsync();
 
-        if (userRecipe == null) { return Content(""); }
+        if (userRecipe == null)
+        {
+            return Content("");
+        }
+
+        var userFeast = await _userRepo.GetCurrentFeast(user);
+        if (userFeast == null)
+        {
+            return Content("");
+        }
+
+        var swappable = await _context.UserFeastRecipes.Where(ufr => ufr.UserFeastId == userFeast.Id).AnyAsync(ufr => ufr.RecipeId == parameters.RecipeId);
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,
             Recipe = recipe,
+            Swappable = swappable,
             UserRecipe = userRecipe,
             Parameters = parameters,
             Notes = userRecipe.Notes,

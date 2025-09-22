@@ -41,7 +41,7 @@
               asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
         </form>
 
-        if (Model.User.IsDemoUser)
+        if (Model.User.IsDemoUser && Model.Swappable)
         {
             <div class="alert alert-info callout">
                 Swap recipes if you would rather cook something else.
@@ -53,7 +53,10 @@
             <div class="input-group">
                 <input type="text" id="recipe-date" class="form-control" disabled="disabled" aria-describedby="recipe-date-help" rows="1" value="@((Model.UserRecipe.RefreshAfter ?? Model.UserRecipe.LastSeen ?? DateHelpers.Today).ToString("O"))" />
                 <input type="submit" form="refresh-form" value="Refresh" class="btn btn-outline-secondary allow-demo" />
-                <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
+                @if (Model.Swappable)
+                {
+                    <input type="submit" form="swap-form" value="Swap" class="btn btn-outline-secondary" />
+                }
             </div>
 
             <span asp-validation-for="UserRecipe" class="text-danger"></span>

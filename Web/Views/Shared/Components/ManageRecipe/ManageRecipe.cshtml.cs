@@ -6,6 +6,8 @@ namespace Web.Views.Shared.Components.ManageRecipe;
 
 public class ManageRecipeViewModel
 {
+    public bool Swappable { get; init; } = false;
+
     [ValidateNever]
     public required UserManageRecipeViewModel.Params Parameters { get; init; }
 
