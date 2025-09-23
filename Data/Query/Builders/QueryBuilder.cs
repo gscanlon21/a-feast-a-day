@@ -1,5 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
+using Data.Code.Exceptions;
 using Data.Entities.User;
 using Data.Query.Builders.NutrientTargets;
 using Data.Query.Options;
@@ -41,9 +42,9 @@ public class QueryBuilder
     /// </summary>
     public QueryBuilder WithNutrients(INutrientTargetsBuilder builder, Action<NutrientOptions>? optionsBuilder = null)
     {
-        var options = builder.Build(Section);
-        optionsBuilder?.Invoke(options);
-        NutrientOptions = options;
+        InvalidOptionsException.ThrowIfAlreadySet(NutrientOptions);
+        NutrientOptions = builder.Build(Section);
+        optionsBuilder?.Invoke(NutrientOptions);
         return this;
     }
 
@@ -52,27 +53,28 @@ public class QueryBuilder
     /// </summary>
     public QueryBuilder WithEquipment(Equipment? equipments, Action<EquipmentOptions>? builder = null)
     {
-        var options = EquipmentOptions ?? new EquipmentOptions(equipments);
-        builder?.Invoke(options);
-        EquipmentOptions = options;
+        InvalidOptionsException.ThrowIfAlreadySet(EquipmentOptions);
+        EquipmentOptions ??= new EquipmentOptions(equipments);
+        builder?.Invoke(EquipmentOptions);
         return this;
     }
 
     /// <summary>
     /// Filter recipes according to the user's preferences.
     /// </summary>
-    /// <param name="ignoreHardFiltering">
-    /// Ignores ignored recipes and equipment filtering.
-    /// </param>
-    public QueryBuilder WithUser(User user, bool ignoreHardFiltering = false)
+    public QueryBuilder WithUser(User user, Action<UserOptions>? builder = null)
     {
-        UserOptions = new UserOptions(user) { IgnoreIgnored = ignoreHardFiltering };
-        return WithEquipment(ignoreHardFiltering ? Equipment.All : user.Equipment);
+        InvalidOptionsException.ThrowIfAlreadySet(UserOptions);
+        UserOptions ??= new UserOptions(user);
+        builder?.Invoke(UserOptions);
+        return this;
     }
 
-    public QueryBuilder WithUser(UserOptions userOptions)
+    public QueryBuilder WithUser(UserOptions userOptions, Action<UserOptions>? builder = null)
     {
-        UserOptions = userOptions;
+        InvalidOptionsException.ThrowIfAlreadySet(UserOptions);
+        UserOptions ??= userOptions;
+        builder?.Invoke(UserOptions);
         return this;
     }
 
@@ -81,25 +83,25 @@ public class QueryBuilder
     /// </summary>
     public QueryBuilder WithSelectionOptions(Action<SelectionOptions>? builder = null)
     {
-        var options = SelectionOptions ?? new SelectionOptions();
-        builder?.Invoke(options);
-        SelectionOptions = options;
+        InvalidOptionsException.ThrowIfAlreadySet(SelectionOptions);
+        SelectionOptions ??= new SelectionOptions();
+        builder?.Invoke(SelectionOptions);
         return this;
     }
 
     public QueryBuilder WithExcludeRecipes(Action<ExclusionOptions>? builder = null)
     {
-        var options = ExclusionOptions ?? new ExclusionOptions();
-        builder?.Invoke(options);
-        ExclusionOptions = options;
+        InvalidOptionsException.ThrowIfAlreadySet(ExclusionOptions);
+        ExclusionOptions ??= new ExclusionOptions();
+        builder?.Invoke(ExclusionOptions);
         return this;
     }
 
     public QueryBuilder WithRecipes(Action<RecipeOptions>? builder = null)
     {
-        var options = RecipeOptions ?? new RecipeOptions(Section);
-        builder?.Invoke(options);
-        RecipeOptions = options;
+        InvalidOptionsException.ThrowIfAlreadySet(RecipeOptions);
+        RecipeOptions ??= new RecipeOptions(Section);
+        builder?.Invoke(RecipeOptions);
         return this;
     }
 

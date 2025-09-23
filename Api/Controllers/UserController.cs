@@ -61,6 +61,7 @@ public class UserController : ControllerBase
             // Pass in the section so that the UserRecipe is correct.
             recipes.AddRange(await new QueryBuilder(sectionGroup.Key)
                 .WithUser(user)
+                .WithEquipment(user.Equipment)
                 .WithRecipes(options =>
                 {
                     options.AddPastRecipes(currentFeast.UserFeastRecipes);

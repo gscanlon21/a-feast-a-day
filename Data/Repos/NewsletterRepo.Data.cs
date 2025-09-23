@@ -1,4 +1,5 @@
 ﻿using Core.Models.Newsletter;
+using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Ingredient;
 using Data.Entities.User;
@@ -20,6 +21,7 @@ public partial class NewsletterRepo
         var scale = breakfastServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Breakfast)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -49,6 +51,7 @@ public partial class NewsletterRepo
         var scale = lunchServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Lunch)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -78,6 +81,7 @@ public partial class NewsletterRepo
         var scale = dinnerServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dinner)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -107,6 +111,7 @@ public partial class NewsletterRepo
         var scale = sideServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Sides)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -136,6 +141,7 @@ public partial class NewsletterRepo
         var scale = snackServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Snacks)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -165,6 +171,7 @@ public partial class NewsletterRepo
         var scale = drinkServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Drinks)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -194,6 +201,7 @@ public partial class NewsletterRepo
         var scale = dessertServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
         return await new QueryBuilder(Section.Dessert)
             .WithUser(newsletterContext.User)
+            .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
                 .AdjustNutrientTargets(scale: scale), options =>
@@ -219,6 +227,7 @@ public partial class NewsletterRepo
     {
         return await new QueryBuilder(Section.Debug)
             .WithUser(user)
+            .WithEquipment(Equipment.All)
             .WithRecipes(options =>
             {
                 options.IgnorePrerequisites = true;

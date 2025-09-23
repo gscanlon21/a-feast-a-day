@@ -66,7 +66,11 @@ public class RecipeController : ViewController
 
         var recipeDtos = (await new QueryBuilder()
             // Pass in the user so we can select their recipes.
-            .WithUser(user, ignoreHardFiltering: true)
+            .WithUser(user, options =>
+            {
+                options.IgnoreIgnored = true;
+            })
+            .WithEquipment(Equipment.All)
             .WithRecipes(x =>
             {
                 x.AddRecipes(new Dictionary<int, int?>
@@ -272,6 +276,7 @@ public class RecipeController : ViewController
 
             var newRecipes = await new QueryBuilder(feastRecipe.Section)
                 .WithUser(user)
+                .WithEquipment(user.Equipment)
                 .WithNutrients(NutrientTargetsContextBuilder
                     .WithNutrients(context, NutrientHelpers.All)
                     .AdjustNutrientTargets(scale: 1), options =>

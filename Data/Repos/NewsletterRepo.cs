@@ -197,6 +197,7 @@ public partial class NewsletterRepo
         {
             recipes.AddRange((await new QueryBuilder(section)
                 .WithUser(user)
+                .WithEquipment(user.Equipment)
                 .WithRecipes(options =>
                 {
                     // This filters to only past recipes of the section.

@@ -449,9 +449,14 @@ public class QueryRunner(Section section)
             // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
-        // This will filter out ignored prerequisite recipes. No infinite recursion please. 
+        // This will filter out base recipes missing equipemnt. No infinite recursion please. 
         return prerequisiteRecipeIds.Any() ? await new QueryBuilder(Section.Prep)
-            .WithUser(UserOptions)
+            .WithUser(UserOptions, options =>
+            {
+                // Keep ignored base recipes, user should ignore the recipe ingredient if they need to ignore this.
+                // This allows the user to ignore "Sides" recipes that also function as base recipes.
+                options.IgnoreIgnored = true;
+            })
             .WithEquipment(EquipmentOptions.Equipment)
             .WithRecipes(options => options.AddRecipes(prerequisiteRecipeIds))
             .Build().Query(factory) : [];

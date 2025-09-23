@@ -95,7 +95,11 @@ public class RecipeIngredientController : ViewController
         var substitutionRecipes = await GetRecipes(user);
         var recipes = await new QueryBuilder()
             // Pass in the user so we can select their base recipes.
-            .WithUser(user, ignoreHardFiltering: true)
+            .WithUser(user, options =>
+            {
+                options.IgnoreIgnored = true;
+            })
+            .WithEquipment(Equipment.All)
             .WithRecipes(x =>
             {
                 if (bool.TryParse(Request.Query["showBase"], out bool showBase) && showBase)

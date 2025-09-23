@@ -6,7 +6,7 @@ namespace Data.Query.Options;
 public class UserOptions : IOptions
 {
     public bool NoUser { get; } = true;
-    public bool IgnoreIgnored { get; init; } = false;
+    public bool IgnoreIgnored { get; set; } = false;
 
     public int Id { get; }
     public int? MaxIngredients { get; }
