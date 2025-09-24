@@ -56,13 +56,13 @@
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	basil-quesadilla.jpg	0	\N	f	f
 75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121°F.	\N	\N	0	5	5	5	t	garlic-olive-oil.jpg	7	\N	t	f
 76	Minty Courgette Linguine	\N	\N	\N	12	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
-77	Cereal w/ Fruit	\N	\N	\N	2	0	1	4	f	cereal.jpg	0	\N	f	f
+77	Cereal w/ Fruit	\N	\N	\N	2	0	1	4	t	cereal.jpg	0	\N	f	f
 78	String Cheese	\N	\N	\N	32	0	0	1	t	string-cheese.jpg	0	\N	f	f
 79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	fettucine-alfredo.jpg	0	\N	f	f
 80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	eggplant-mint-couscous-salad.jpg	0	\N	f	f
 81	Griddle Potatoes	\N	\N	\N	16	8	10	4	t	griddle-potatoes.jpg	0	\N	f	f
 82	Chicken Salad	\N	\N	\N	20	0	5	2	t	chicken-salad.jpg	0	\N	f	f
-83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	32	60	60	4	t	springerle-cookies.jpg	0	\N	f	f
+83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	64	60	60	4	t	springerle-cookies.jpg	0	Lolly Wehrli	f	f
 84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	20	12	3	4	t	egg-bacon-salad.jpg	0	\N	f	f
 85	Pasta Fresca	\N	\N	\N	6	15	5	4	t	pasta-fresca.jpg	0	https://iowagirleats.com/pasta-fresca/	f	f
 86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	6	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
@@ -109,7 +109,7 @@
 127	Roast Chicken Pitta Pockets	\N	\N	\N	6	2	13	6	t	\N	0	\N	f	f
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
-130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	4	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
+130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
 132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
@@ -133,7 +133,7 @@
 152	Spaghetti with Lemon	Spaghetti is the best type of pasta for this recipe, because the olive oil and lemon juice cling to its long thin strands. If you are out of spaghetti, use another dried long pasta instead, such as spaghettini, linguine or tagliatelle.	\N	\N	12	15	2	2	t	spaghetti-lemon.jpg	0	\N	f	f
 153	Spicy Potato and Olive Salad	\N	\N	\N	16	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	64	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
-155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	33	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
+155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	64	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
 156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	banana-ice-cream.jpg	0	\N	f	f
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	16	0	6	6	t	fruit-skewers.jpg	0	\N	f	f
 158	Dried Fruit Salad	\N	\N	\N	16	12	6	4	t	fruit-skewers.jpg	0	\N	f	f
@@ -149,7 +149,7 @@
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	4	20	2	4	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	20	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
-171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	32	8	2	4	t	lemon-posset.jpg	0	\N	f	f
+171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	64	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	burgers-relish.jpg	0	\N	f	f
 174	Pan-Fried Gammon with Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	fried-gammon.jpg	0	\N	f	f
@@ -193,7 +193,7 @@
 244	Strawberry Mint Vinaigrette	\N	\N	\N	0	0	10	1	t	strawberry-mint-vinaigrette.jpg	6	https://www.drkarafitzgerald.com/recipe/strawberry-mint-vinaigrette/	f	f
 245	Methylation Trail Mix	\N	\N	\N	16	20	5	10	t	trail-mix.jpg	0	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	f	f
 247	Gluten-Free Nut Crunch Snack	\N	\N	\N	16	0	5	4	t	nut-crunch-snack.jpg	0	https://www.drkarafitzgerald.com/recipe/gluten-free-nut-crunch-snack/	f	f
-248	Fennel Soup	\N	\N	\N	6	45	5	4	t	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/	f	f
+248	Fennel Soup	\N	\N	\N	12	45	5	4	t	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/	f	f
 249	Sesame-Ginger Carrots	\N	\N	\N	16	45	5	5	t	sesame-ginger-carrots.jpg	0	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	f	f
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO.	\N	\N	4	30	20	4	t	turkey-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	f	f
 251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	honey-mustard-dressing.jpg	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
@@ -220,7 +220,7 @@
 272	Fragrant Spiced Rice	\N	\N	\N	8	10	5	4	t	baked-saffron-rice.jpg	0	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	f	f
 305	Exercise Recovery Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	f	f
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	10	4	t	peas-beans-chili-mint.jpg	0	\N	f	f
-307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	5	3	t	spiced-lentils-rice.jpg	0	\N	f	f
+307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	20	5	3	t	spiced-lentils-rice.jpg	0	\N	f	f
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	5	2	t	asparagus-eggs-dressing.jpg	0	\N	f	f
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	hot-chocolate-sauce.jpg	6	\N	f	f
@@ -282,7 +282,7 @@
 398	Maple Lime Pork Roast	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	360	10	4	t	\N	0	\N	f	f
 399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
-401	Quinoa Chickpea Summer Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	20	10	4	t	\N	0	\N	f	f
+401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 402	Fruit Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	\N	f	f
 403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	48	10	5	2	t	roasted-kale.jpg	0	\N	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
@@ -299,7 +299,7 @@
 415	Strawberry, Mint and Cucumber Spa Water	\N	\N	\N	128	0	5	1	t	\N	12	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	12	10	5	4	t	cucumber-turkey-pizza.jpg	0	\N	f	t
 417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
-418	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
+418	Egg Bites	\N	\N	\N	6	30	10	6	t	egg-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 419	Thai Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	1	t	thai-dressing.jpg	6	\N	t	f
 420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	kielbasa.jpg	0	\N	f	f
 421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-lemon-dijon-dip.jpg	9	\N	t	t
@@ -340,7 +340,7 @@
 521	Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	0	30	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 523	Banana Pancakes	\N	\N	\N	66	5	5	1	t	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	128	0	4	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 525	Tomato & Avocado Salsa w/ Cucumber Bite	\N	\N	\N	20	0	10	2	t	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 526	Pizza w/ Beans	\N	\N	\N	8	20	5	2	t	quinoa-pizza.jpg	0	\N	f	f
 527	Tumeric Ginger Tea	\N	\N	\N	128	2	3	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -424,7 +424,7 @@
 605	Chicken Quesadillas	\N	\N	\N	12	10	5	1	t	black-bean-quesadillas.jpg	0	\N	f	f
 606	Peanut Butter & Jelly	\N	\N	\N	6	0	5	1	t	fruity-peanut-butter-pitas.jpg	0	\N	f	f
 607	Kielbasa Skillet	\N	\N	\N	8	15	10	2	t	kielbasa.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-608	Herbed Lemon & Garlic Haddock	\N	\N	\N	8	10	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+608	Herbed Lemon & Garlic Haddock	\N	Too many ingredients. Requires Bone Broth. Too complicated.	\N	8	10	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 609	Roasted Beet, Pear, & Onion Soup	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 610	Root Cause Detox Soup	\N	Too many ingredients.	\N	8	40	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 611	Beef Stir-Fry	\N	\N	\N	8	25	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -499,7 +499,7 @@
 713	Mushroom Ragu	\N	\N	\N	0	30	5	2	t	\N	6	\N	t	f
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	\N	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	\N	0	\N	f	f
-716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	\N	0	\N	f	f
+716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	\N	0	\N	t	f
 717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f
 718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	\N	6	\N	t	f
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	\N	9	\N	t	f
@@ -528,10 +528,16 @@
 742	Chicken Parmesan	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
 743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
 744	Pear & Gorgonzola Farfalle	\N	\N	\N	4	15	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
-745	Beef Stroganoff	\N	\N	\N	8	35	10	2	t	\N	0	\N	f	f
+745	Beef Stroganoff	\N	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
 746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 747	Paleo Banana Muffins	\N	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 748	Chickpea Burgers	\N	\N	\N	8	40	40	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 749	Cornish Game Hens	\N	\N	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 750	Fava Bean Salad	\N	\N	\N	20	10	5	2	t	\N	0	From Jamie Oliver's Five Ingredients	f	f
 751	Island Salad	\N	\N	\N	20	5	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+752	Couscous & Chicken Bake	\N	\N	\N	8	60	15	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+785	Tasty Chickpea Soup	\N	\N	\N	8	30	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+786	Green Gazpacho	\N	\N	\N	4	10	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+787	Naked Salad Tunisienne	\N	\N	\N	20	0	18	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
