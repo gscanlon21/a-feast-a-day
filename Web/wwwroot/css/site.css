@@ -110,8 +110,8 @@ html[data-bs-theme="dark"] .select2-container--bootstrap-5 .select2-dropdown .se
 /********** Sticky Footer **********/
 
 html {
-    min-height: 100%;
     display: flex;
+    min-height: 100%;
     justify-content: center;
 }
 

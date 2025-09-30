@@ -50,7 +50,7 @@ else
         <Lib.Pages.Shared.Ingredient.IngredientSection User="Model.User" Ingredients="Model.DebugIngredients" Title="@(new IngredientSection.Titles("Ingredients"))" />
     </div>
 
-    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" />
+    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" HideFooter="Model.HideFooter" />
 
     @if (!Model.HideFooter)
     {

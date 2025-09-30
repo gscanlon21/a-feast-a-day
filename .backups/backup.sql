@@ -10039,6 +10039,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15091	478	62	\N	\N	3	27
 15092	478	2047	\N	\N	3	104
 15093	1342	2047	\N	\N	3	0.1
+15094	485	128	\N	\N	3	0.1
+15095	485	68719476736	\N	\N	2	3
+15096	485	34359738368	\N	\N	2	288
+15097	485	2	\N	\N	3	23
+15098	485	1	\N	\N	3	1
+15099	485	4294967296	\N	\N	2	15
+15100	485	2199023255552	\N	\N	2	1
+15101	485	48	\N	\N	3	1
+15102	485	14	\N	\N	3	26
+15103	485	1984	\N	\N	3	0.2
+15104	485	62	\N	\N	3	27
+15105	485	2047	\N	\N	3	104
 \.
 
 
@@ -13572,15 +13584,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7496	4	\N	\N	787	1	1	\N	251	t	\N	4
 5608	6	\N	\N	397	4	1	, optional	1340	t	\N	7
 5609	6	\N	\N	397	2	1	\N	\N	t	556	8
+7507	0	\N	\N	790	1	6	\N	391	f	\N	0
 6355	6	\N	\N	575	3	1	, chopped	812	f	\N	9
 6356	6	\N	\N	575	4	1	, sliced	397	f	\N	10
 5610	8	\N	\N	397	1	1	\N	215	f	\N	9
 5611	8	\N	\N	397	4	1	, to taste	74	t	\N	10
+7508	6	\N	\N	790	4	1	(PLAIN YOGURT)	965	f	\N	1
+7509	8	\N	\N	790	1	2	(BAHARAT SPICE MIX), plus extra to serve	1327	f	\N	2
+7510	0	\N	\N	790	1	2	\N	4	f	\N	3
+7511	0	\N	\N	790	1	1	\N	1125	f	\N	4
 5607	6	\N	\N	397	4	1	\N	871	f	\N	6
 7502	5	\N	\N	789	1	2	\N	103	f	\N	0
 7503	0	\N	\N	789	1	2	\N	222	f	\N	1
 7504	4	\N	\N	789	4	3	\N	573	t	\N	2
-7505	0	\N	\N	789	1	2	\N	4	f	\N	3
+7505	0	\N	\N	789	1	2	, peeled and cut in half	4	f	\N	3
 7506	0	\N	\N	789	1	4	\N	916	f	\N	4
 \.
 
@@ -15363,8 +15380,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4076	Peel the onion, quarter and seed the tomatoes, core the apple and trim the cucumber, then take care to very finely dice everything. Pick the baby mint leaves and reserve for garnish, then very finely chop the rest, discarding the stems. Dress everything with 3 tablespoons of extra virgin olive oil and 2 tablespoons of red wine vinegar, then season to perfection with sea salt and black pepper and scatter over the reserved mint leaves. Great served with warm flatbreads.	\N	787	0	0
 4077	Tear off the top leafy half of the mint, then finely chop and place in a bowl. Put the stems into another bowl with the couscous, just cover with boiling kettle water, season with sea salt and cover. Leave to hydrate. Halve the pomegranate and, holding one half cut-side down in your fingers, bash the back of it with a spoon so all the seeds tumble into the mint bowl, then repeat with the other half. Cut the cucumber into a 1/4-inch dice and add to the bowl with 2 tablespoons each of extra virgin olive oil and red wine vinegar. Toss well and season to perfection.	\N	788	0	0
 4078	Put a large non-stick frying pan on a medium-high heat. Score the chicken breasts lengthways at 1/2-inch intervals, going about halfway through. Rub with 1 tablespoon of olive oil and a pinch of salt and black pepper, then squeeze over the juice from a few pomegranate seeds (nicked from the salsa). Cook for 8 minutes, or until gnarly and cooked through, turning regularly. Discard the mint stems from the couscous, fluff up with a fork, mix in half the salsa and divide between plates. Slice the chicken and arrange on top, with the remaining salsa. Finish with extra virgin olive oil, if you like.	\N	788	1	0
-4079	Remove the top rack from the oven, then preheat to 400°F. Scrub the potatoes, chop in erratic ¾- to 2-inch chunks and place in a large baking dish. Peel and quarter the onions, then break apart into petals and add to the dish. Strip half the oregano leaves into a pestle and mortar and pound to a paste with a pinch of sea salt and black pepper, then muddle in 2 tablespoons each of olive oil and red wine vinegar. Drizzle most of the marinade into the dish, toss together well and roast for 10 minutes.	\N	789	0	2
-4080	Meanwhile, use a vegetable peeler to strip the peel from the lemons, then slice the lemons in half. Toss the chicken legs in the reserved marinade. When the time's up, arrange the chicken directly on the bars of the top rack and return it to the oven, so the delicious juices rain down onto the spuds below. Throw the lemon halves into the baking dish, then roast for 1 hour, or until everything is golden, shaking up the potatoes and onions halfway and tossing through the remaining oregano leaves and lemon strips for the last 15 minutes. Carefully remove the chicken from the oven, along with the veg, and squeeze over the jammy roasted lemon halves, to serve.	\N	789	1	2
+4079	Remove the top rack from the oven, then preheat to 400°F. Use a vegetable peeler to strip the peel from the lemons, then slice the lemons in half.	\N	789	0	2
+4080	Scrub the potatoes, chop in erratic ¾- to 2-inch chunks and place in a large baking dish. Peel and quarter the onions, then break apart into petals and add to the dish.	\N	789	1	0
+4081	Strip half the oregano leaves into a pestle and mortar and pound to a paste with a pinch of sea salt and black pepper, then muddle in 2 tablespoons each of olive oil and red wine vinegar. Drizzle most of the marinade into the dish, toss together well and roast for 10 minutes. Toss the chicken legs in the reserved marinade.	\N	789	2	2
+4082	When the time's up, arrange the chicken directly on the bars of the top rack and return it to the oven, so the delicious juices rain down onto the spuds below. Throw the lemon halves into the baking dish, then roast for 1 hour, or until everything is golden, shaking up the potatoes and onions halfway and tossing through the remaining oregano leaves and lemon strips for the last 15 minutes. 	\N	789	3	2
+4083	Carefully remove the chicken from the oven, along with the veg, and squeeze over the jammy roasted lemon halves, to serve.	\N	789	4	0
+4084	Place the chicken thighs in a bowl with the yogurt, spice mix, 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Cut 6 thin slices off one of the lemons and put aside, then squeeze the juice from the rest of the lemon into the bowl. Toss everything together really well, then cover and leave to marinate in the fridge for at least 2 hours, preferable overnight.	\N	790	0	0
+4085	Preheat the oven to 400F. Thread the chicken and lemon slices onto one large metal skewer, alternating chicken and lemon slices, and rest it over a roasting pan that's slightly smaller than the skewer (so that the meat is suspended above the pan). Slice the garlic bulb in half and place cut side down in the pan. Halve and throw in the remaining lemon, then roast for 40 minutes, or until gnarly and cooked through. To serve, slice the chicken off the skewer, squeeze the sweet roasted garlic out of its papery skins and toss with the chicken, and sprinkle over a little extra baharat spice. Drizzle over any pan juices, and serve the jammy lemon alongside, for squeezing over. Delicious served with flatbreads, salad and pickles.	\N	790	1	0
 \.
 
 
@@ -15410,7 +15432,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15093, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15105, true);
 
 
 --
