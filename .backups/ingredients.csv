@@ -278,7 +278,7 @@
 286	\N	Penne Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,1581502/	\N	f	262176	28	85	2025-02-12	4	85	4096
 287	\N	Gluten-Free Penne Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,101928/	\N	f	0	28	56	2025-02-10	4	84	4096
 288	\N	Unenriched Long Grain Rice	https://www.eatthismuch.com/calories/white-rice-4917	\N	f	0	185	185	2024-12-27	6	185	1024
-289	\N	Short Grain White Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
+289	\N	Short Grain White Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	4096	28	200	2025-10-03	4	200	1024
 290	\N	Ham Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/ham-steak-2254561	\N	f	0	168	84	2025-01-05	0	224	268435456
 291	\N	Sharp Chedder Cheese	https://www.eatthismuch.com/calories/sharp-cheddar-cheese-shredded-1693122	\N	f	256	28	28	2024-12-07	4	112	8388608
 292	\N	Shredded Sharp Chedder Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	260	28	28	2024-11-17	4	113	8388608
@@ -350,7 +350,7 @@
 361	\N	Elbow Macaroni, GF	https://www.eatthismuch.com/calories/elbows-gluten-free-2017186	\N	f	0	28	56	2024-11-23	4	224	4096
 362	\N	Red Lentil Elbow Macaroni	https://www.eatthismuch.com/calories/red-lentils-elbow-4097029	\N	f	0	28	56	2024-10-31	4	224	1024
 363	\N	Green Lentil Elbow Macaroni	https://www.eatthismuch.com/calories/green-lentil-elbow-macaroni,2240891 - https://www.eatthismuch.com/calories/green-lentil-pasta-elbow-macaroni,2095654	\N	f	0	28.33	85	2024-09-06	4	226.65	4
-364	\N	Chickpea Elbow Macaroni	https://www.eatthismuch.com/calories/elbow-pasta-gluten-free-chickpea,4196453	\N	f	0	23	56	2024-08-19	4	224	4
+364	\N	Chickpea Elbow Macaroni	https://www.eatthismuch.com/calories/elbow-pasta-gluten-free-chickpea,4196453	\N	f	0	23	56	2025-10-04	4	224	4096
 365	\N	Green Lentil Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-red-lentil-2133787	\N	f	0	28	56	2025-01-21	4	112	4096
 366	\N	Unenriched Spaghetti Pasta	https://www.eatthismuch.com/food/nutrition/spaghetti,4914/	\N	f	262176	28	28	2025-08-30	4	112	4096
 367	\N	Enriched Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-4874	\N	f	262176	28	28	2025-08-30	4	112	4096
@@ -437,7 +437,7 @@
 483	\N	Seeded White Grapes	https://www.eatthismuch.com/calories/organic-white-seedless-table-grapes-3100885	\N	f	0	4.9	49	2024-12-15	0	98	1
 484	\N	Seeded Red Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	28	151	2025-09-27	4	151	1
 485	\N	Seeded Green Grapes	https://www.eatthismuch.com/calories/grapes,1416	\N	f	0	28	151	2025-09-30	4	151	1
-486	\N	Short Grain Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
+486	\N	Short Grain Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	4096	28	200	2025-10-02	4	200	1024
 487	\N	Tortillas, GF	https://www.eatthismuch.com/calories/tortillas-4267	\N	f	0	24	24	2025-06-07	0	96	16288
 488	\N	80% Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5421	\N	f	0	28	28	2024-10-26	4	224	8
 489	\N	Salt & White Pepper	\N	\N	t	0	28	14	2024-12-24	4	224	131072
@@ -641,9 +641,9 @@
 715	\N	Nettle Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-04	0	236.56	0
 717	\N	Fresh Podded Fava Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	2
 718	\N	Kimchee	https://www.eatthismuch.com/calories/kimchi-136023	\N	f	0	28	28	2025-03-31	0	224	8192
-719	\N	Brown Arborio Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
-720	\N	White Arborio Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
-721	\N	Arborio Rice	https://www.eatthismuch.com/calories/arborio-rice-135650	\N	f	0	180	45	2024-08-18	6	180	1024
+719	\N	Brown Arborio Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	4096	28	200	2025-10-01	4	200	1024
+720	\N	White Arborio Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	4096	28	200	2025-10-01	4	200	1024
+721	\N	Arborio Rice	https://www.eatthismuch.com/calories/arborio-rice-135650	\N	f	4096	28	45	2025-10-02	4	180	1024
 722	\N	Refined Coconut Oil	https://www.eatthismuch.com/calories/refined-coconut-oil-1740204	\N	f	0	28	14	2025-01-09	4	224	65536
 723	\N	Olive Oil | Ghee	Type of clarified butter. https://www.eatthismuch.com/food/nutrition/butter,1	\N	f	0	14	14	2024-08-20	7	224	65536
 724	\N	Organic Chicken Livers	https://www.eatthismuch.com/calories/chicken-liver-416	\N	f	0	56	28	2025-02-03	0	224	268435456
@@ -790,8 +790,8 @@
 956	\N	Green Queen Olives	https://www.eatthismuch.com/calories/olives-1462	\N	f	0	28	134	2025-03-15	4	134	512
 957	\N	Kalamata Olives	https://www.eatthismuch.com/calories/kalamata-olives-1979222	\N	f	0	28	15	2025-03-17	4	112	512
 958	\N	Coriander Seeds	https://www.eatthismuch.com/calories/coriander-seed-188	\N	f	0	28	5	2024-09-12	4	80	131072
-959	\N	Salsa Verde	https://www.eatthismuch.com/food/nutrition/salsa,735/	\N	f	512	28	259	2024-08-19	4	259	256
-960	\N	Long Grain White Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	0	200	200	2024-08-18	6	200	4
+959	\N	Salsa Verde	https://www.eatthismuch.com/food/nutrition/salsa,735/	\N	f	512	28	259	2025-10-04	4	259	256
+960	\N	Long Grain White Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	4096	28	200	2025-10-03	4	200	1024
 961	\N	Almond Meal	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	4194304
 962	\N	Sliced Bresaola	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
 963	\N	Mixed-Color Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
@@ -1081,3 +1081,9 @@
 1340	\N	Dried Cranberries	https://www.eatthismuch.com/calories/blueberries-1343	\N	f	0	28	148	2024-11-28	4	148	1
 1341	\N	Pink Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/	\N	f	0	182	182	2025-03-29	0	182	1
 1342	\N	Fresh Basil	https://www.eatthismuch.com/calories/basil-218	\N	f	0	28	0.5	2025-01-10	4	32	3
+1343	\N	Baharat Spice Mix	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
+1344	\N	Plain Yogurt	aka Natural Yogurt; Plain Yogurt. https://www.eatthismuch.com/calories/plain-yogurt-96	\N	f	256	28	245	2024-10-16	4	245	29360128
+1345	\N	Large Red Onions	https://www.eatthismuch.com/calories/onions-2042	\N	f	0	110	110	2024-12-25	0	110	2
+1346	\N	Duck Breast Fillets	https://www.eatthismuch.com/calories/turkey-breast-560	\N	f	0	780	780	2025-03-27	0	260	268435456
+1347	\N	Boneless Chicken Breast Fillets	Fillet is a type of cut. A smaller cut of meat. https://www.eatthismuch.com/calories/chicken-breast-fillets-boneless-skinless-4111814	\N	f	0	112	112	2025-03-16	0	224	268435456
+1348	\N	Coffee Grounds	https://www.eatthismuch.com/calories/coffee-3126	\N	f	0	237	237	2025-05-31	6	237	131072
