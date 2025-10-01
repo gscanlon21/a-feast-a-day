@@ -23,7 +23,7 @@
 40	Saucy Bean Baked Eggs	\N	\N	\N	6	15	5	2	t	bean-baked-eggs.jpg	0	\N	f	f
 41	Creamy Pasta with Asparagus & Peas	\N	\N	\N	12	12	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	2	25	5	2	t	baked-banana-porridge.jpg	0	https://www.bbcgoodfood.com/recipes/baked-banana-porridge	f	f
-44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	quinoa-pizza.jpg	0	\N	f	f
+44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	quinoa-pizza.jpg	0	\N	t	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	basic-energy-balls.jpg	0	\N	f	f
 47	Banana “nice” Cream	\N	\N	\N	64	120	5	1	t	banana-ice-cream.jpg	0	\N	f	f
@@ -65,7 +65,7 @@
 83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	64	60	60	4	t	springerle-cookies.jpg	0	Lolly Wehrli	f	f
 84	Warm Dressed Salad with Poached Eggs	\N	\N	\N	20	12	3	4	t	egg-bacon-salad.jpg	0	\N	f	f
 85	Pasta Fresca	\N	\N	\N	6	15	5	4	t	pasta-fresca.jpg	0	https://iowagirleats.com/pasta-fresca/	f	f
-86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	6	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
+86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	12	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
 87	Korean Beef Lettuce Wraps	\N	\N	\N	12	15	5	4	t	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
 88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	f	f
 89	Homemade Crunchy Taco Hamburger Helper	\N	\N	\N	4	20	5	5	t	taco-hamburger-helper.jpg	0	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	f	f
@@ -76,13 +76,13 @@
 94	Balsamic Vinaigrette	\N	\N	\N	0	0	5	1	t	balsamic-vinaigrette.jpg	6	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	f	f
 95	Sweet Corn with Maple-Bourbon Brown Butter and Bacon	\N	\N	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
-97	Quinoa Pepperoni Pizza	\N	\N	\N	6	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
+97	Quinoa Pepperoni Pizza	\N	\N	\N	12	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
 98	Loaded Deviled Eggs	\N	\N	\N	25	20	5	4	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
 99	Warm Pasta Salad with Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 100	Buttermilk Pancakes	\N	\N	\N	6	12	2	4	t	buttermilk-pancakes.jpg	0	\N	t	f
 101	Linguine with Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	20	12	3	2	t	linguine-arugula.jpg	0	\N	f	f
 102	Colcannon	\N	\N	\N	16	10	5	3	t	colcannon.jpg	0	\N	f	f
-103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	6	12	4	4	t	\N	0	\N	f	f
+103	Crumbed Chicken with Green Mayonaise	\N	\N	\N	12	12	4	4	t	\N	0	\N	f	f
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	12	3	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	25	5	4	t	sweet-pea-orecchiette-alt.jpg	0	\N	f	f
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	garlic-chicken.jpg	0	\N	f	f
@@ -98,7 +98,7 @@
 116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	citrus-dressing.jpg	6	\N	f	f
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	chicken-avocado-chop.jpg	0	\N	f	f
 118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	15	1	2	t	\N	0	\N	f	f
-119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	green-mayo.jpg	7	\N	f	f
+119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	green-mayo.jpg	7	\N	t	f
 120	Warm Potato Salad with Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	potato-salad.jpg	0	\N	f	f
 121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can of pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	16	0	5	4	t	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	soft-boiled-egg.jpg	0	\N	f	f
@@ -363,7 +363,7 @@
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 546	Sesame Almond Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
-547	Burgers	\N	\N	\N	8	45	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+547	Burgers	\N	\N	\N	0	45	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 548	Fajita Seasoning	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	\N	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -542,3 +542,13 @@
 788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 790	Baharat Chicken Shish	\N	\N	\N	8	45	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+791	Tortilla Frittata	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+824	Oven-Baked Chicken Fingers	\N	\N	\N	8	30	15	4	t	\N	0	\N	t	f
+825	Quick Crispy Duck	\N	\N	\N	12	20	2	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+826	Chicken Traybake	\N	\N	\N	8	55	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+827	Chicken & Merguez Stew	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+828	Crispy Paprika Chicken	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+829	Herby Steak & Crispy Potatoes	\N	\N	\N	8	25	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+830	Caveman Roasted Turkey Legs	You can substitute chicken legs for the turkey legs, but cut total cooking time down by about 15 minutes.	\N	\N	8	60	5	2	t	\N	0	\N	f	f
+831	Over-Hard Eggs	\N	\N	\N	0	7	0	2	t	\N	0	From the First Watch cookbook.	t	f
+832	Microwaved Bacon Slices	\N	\N	\N	0	5	0	1	t	\N	0	\N	t	f
