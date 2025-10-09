@@ -169,12 +169,12 @@ public class RecipeIngredientController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        existingUserRecipeIngredient.Notes = viewModel.Notes;
         existingUserRecipeIngredient.Measure = viewModel.Measure;
         existingUserRecipeIngredient.QuantityNumerator = viewModel.QuantityNumerator;
         existingUserRecipeIngredient.QuantityDenominator = viewModel.QuantityDenominator;
         existingUserRecipeIngredient.SubstituteIngredientId = viewModel.SubstituteIngredientId;
         existingUserRecipeIngredient.SubstituteRecipeId = viewModel.SubstituteRecipeId;
+        existingUserRecipeIngredient.Notes = viewModel.Notes?.NullIfEmpty();
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(ManageRecipeIngredient), new { email, token, recipeIngredientId, wasUpdated = true });

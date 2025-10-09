@@ -33,7 +33,9 @@ public class UserRecipeIngredient
 
     public int? SubstituteIngredientId { get; set; }
 
-
+    /// <summary>
+    /// Whitespace is allowed, so the user can hide the default system attributes.
+    /// </summary>
     public string? Notes { get; set; }
 
     [Required]

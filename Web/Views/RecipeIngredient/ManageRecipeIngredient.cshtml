@@ -53,7 +53,7 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div class="mb-3 mt-3">
-                    <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Notes)</label>
+                    <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Notes)@(Model.UserRecipeIngredient.Notes.IsWhiteSpace() ? "*" : "")</label>
                     <input type="text" asp-for="UserRecipeIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserRecipeIngredient.Notes" />
                     <span asp-validation-for="UserRecipeIngredient.Notes" class="text-danger"></span>
                 </div>

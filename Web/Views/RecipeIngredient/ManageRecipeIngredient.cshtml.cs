@@ -79,6 +79,10 @@ public class UserRecipeIngredientViewModel : IValidatableObject
     [Display(Name = "or Substitute Recipe")]
     public int? SubstituteRecipeId { get; set; }
 
+    /// <summary>
+    /// Whitespace is allowed, so the user can hide the default system attributes.
+    /// </summary>
+    [DisplayFormat(ConvertEmptyStringToNull = false)]
     public string? Notes { get; set; }
 
     [Required]
