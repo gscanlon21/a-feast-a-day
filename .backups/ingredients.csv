@@ -530,7 +530,7 @@
 603	\N	Pork Italian Sausage, Raw	https://www.eatthismuch.com/calories/italian-sausage-912	\N	f	0	100	100	2025-08-07	0	100	268435456
 604	\N	Slices of Panettone Bread	https://www.eatthismuch.com/calories/panettone-2312615	\N	f	786464	80	80	2025-05-23	0	80	4
 605	\N	Butter | Sunflower Oil	\N	\N	t	0	14	14	2025-10-08	7	224	65536
-606	\N	Butter | Oil	https://www.eatthismuch.com/calories/butter-121	\N	t	0	28	14	2024-08-20	4	224	114688
+606	\N	Butter | Oil	https://www.eatthismuch.com/calories/butter-121	\N	t	0	28	14	2025-10-09	4	224	114688
 607	\N	Frozen Mixed-Berries	https://www.eatthismuch.com/calories/mixed-berries-87958	\N	f	0	28	140	2024-12-22	4	140	33554432
 608	\N	Frozen Strawberries	https://www.eatthismuch.com/calories/strawberries-1560	\N	f	0	28	149	2025-01-16	4	149	33554432
 609	\N	Slices of Whole Grain Bread, GF	https://www.eatthismuch.com/calories/gluten-free-whole-grain-bread-2114723	\N	f	0	26	26	2024-10-09	0	52	2
@@ -784,7 +784,7 @@
 918	\N	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355	\N	f	0	28	84	2025-01-12	4	224	268435456
 951	\N	Nut Butter | Seed Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2025-10-08	7	224	29360128
 952	\N	Seed Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2025-10-05	7	224	29360128
-953	\N	Nut Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2024-08-20	7	224	29360128
+953	\N	Nut Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2025-10-09	7	224	29360128
 954	\N	Whole-Wheat Penne Pasta	https://www.eatthismuch.com/food/nutrition/penne-pasta,1581502/	\N	f	32	85	85	2025-02-05	6	85	4096
 955	\N	Roast Ham	Not sliced. https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	4	224	268435456
 956	\N	Green Queen Olives	https://www.eatthismuch.com/calories/olives-1462	\N	f	0	28	134	2025-03-15	4	134	512
@@ -1018,15 +1018,15 @@
 1277	\N	Canned Pickled Jalepeños	https://www.eatthismuch.com/calories/jalapeno-peppers-2586	\N	f	0	38	38	2024-10-20	0	114	1
 1278	\N	Tumeric Root	https://www.eatthismuch.com/calories/turmeric-217	\N	t	0	14	7	2024-08-29	4	112	131072
 1279	\N	Tumeric Powder	https://www.eatthismuch.com/calories/turmeric-217	\N	t	0	14	7	2024-08-29	4	112	131072
-1280	\N	Kidney Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
-1281	\N	Red Kidney Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
-1282	\N	Canned Kidney Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
-1283	\N	Canned Red Kidney Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
+1280	\N	Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	254	254	2024-08-21	6	254	512
+1281	\N	Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3530	\N	f	0	28	184	2025-10-10	4	184	2048
+1282	\N	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527	\N	f	0	254	254	2024-08-21	6	254	512
+1283	\N	Canned Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3532	\N	f	0	254	254	2024-08-21	6	254	512
 1284	\N	Canned Cream-Style Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 1285	\N	Canned Sweet Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 1286	\N	Celery	https://www.eatthismuch.com/calories/celery-1927	\N	f	0	28	40	2025-03-12	4	101	2
-1287	\N	Canned Cannellini Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
-1288	\N	Cannellini Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
+1287	\N	Canned Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3549	\N	f	0	28	262	2025-10-10	4	262	512
+1288	\N	Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	254	254	2024-08-21	6	254	512
 1289	\N	Broccolini Florets	Just the tips - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
 1290	\N	Broccoli Florets	Just the tips - https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
 1291	\N	Broccolini	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
@@ -1089,3 +1089,19 @@
 1348	\N	Coffee Grounds	https://www.eatthismuch.com/calories/coffee-3126	\N	f	0	237	237	2025-05-31	6	237	131072
 1350	\N	Jarred Sun-Dried Tomatoes	https://www.eatthismuch.com/food/nutrition/tomatoes,2226/	\N	f	512	111	111	2024-11-05	0	111	2
 1351	\N	Slices of Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752	\N	f	256	28	28	2025-01-29	0	224	8388608
+1352	\N	Large Oranges	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2025-04-01	0	131	1
+1353	\N	Purple Broccolini	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
+1354	\N	Turkey Drumsticks	https://www.eatthismuch.com/calories/turkey-breast-560	\N	f	0	780	780	2025-03-27	0	260	268435456
+1355	\N	Smoked Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
+1356	\N	Mixed-Color Tomatoes	https://www.eatthismuch.com/calories/cherry-tomatoes-1221840	\N	f	512	17	149	2025-09-07	0	149	2
+1357	\N	Medium Mixed-Color Tomatoes	https://www.eatthismuch.com/calories/cherry-tomatoes-1221840	\N	f	512	17	149	2025-09-07	0	149	2
+1358	\N	Merguez Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880	\N	f	0	28	56	2025-02-22	4	224	268435456
+1359	\N	Fajita Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
+1360	\N	Frozen Fajita Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
+1361	\N	Whole Milk	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
+1362	\N	Fresh Mangos	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
+1363	\N	Frozen Mango Chunks	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
+1364	\N	Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
+1365	\N	Raw Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	254	254	2024-08-21	6	254	512
+1366	\N	Raw Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3530	\N	f	0	254	254	2025-10-10	6	254	512
+1367	\N	Raw Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	254	254	2024-08-21	6	254	512
