@@ -1,4 +1,10 @@
-﻿.list-group-numbered > li::before {
+﻿
+small.badge {
+    /* Sometimes the text is not centered, try to fix that. */
+    padding-block-end: calc(var(--bs-badge-padding-y) * 1.04);
+}
+
+.list-group-numbered > li::before {
     position: absolute;
 }
 
