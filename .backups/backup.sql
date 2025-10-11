@@ -1025,6 +1025,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1361	31	1
 789	1362	1
 789	1363	1
+58	1368	1
 690	39	1
 690	681	1
 1008	871	1
@@ -10168,6 +10169,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15196	1281	1984	\N	\N	3	2
 15197	1281	62	\N	\N	3	113
 15198	1281	2047	\N	\N	3	620
+15199	1368	128	\N	\N	3	0.2
+15200	1368	68719476736	\N	\N	2	871
+15201	1368	34359738368	\N	\N	2	569
+15202	1368	2	\N	\N	3	20
+15203	1368	1	\N	\N	3	12
+15204	1368	4294967296	\N	\N	2	86
+15205	1368	2199023255552	\N	\N	2	3
+15206	1368	48	\N	\N	3	10
+15207	1368	14	\N	\N	3	43
+15208	1368	1984	\N	\N	3	1
+15209	1368	62	\N	\N	3	54
+15210	1368	2047	\N	\N	3	239
 \.
 
 
@@ -12423,13 +12436,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7363	6	\N	\N	740	4	1	\N	\N	f	721	4
 6165	6	\N	\N	547	1	4	\N	1267	f	\N	0
 6166	0	\N	\N	547	1	1	, diced	217	f	\N	1
-6140	0	\N	\N	544	1	1	\N	9	f	\N	0
-6141	6	\N	\N	544	4	1	\N	151	f	\N	1
-6142	7	\N	\N	544	1	3	\N	13	f	\N	2
-6143	7	\N	\N	544	1	1	, to thin	176	f	\N	3
-6144	0	\N	\N	544	1	1	, juiced	4	f	\N	4
-6145	8	\N	\N	544	1	1	, to desired thickness	123	f	\N	5
-6146	8	\N	\N	544	4	1	, to taste	692	t	\N	6
 6147	4	\N	\N	545	1	6	\N	737	f	\N	0
 6148	6	\N	\N	545	1	1	(BONE BROTH RECIPE OR WATER)	123	f	\N	1
 6149	8	\N	\N	545	4	1	\N	322	f	\N	2
@@ -12441,6 +12447,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6155	8	\N	\N	545	8	1	, to taste	692	t	\N	8
 6167	6	\N	\N	547	2	1	, chopped	595	t	\N	2
 6168	0	\N	\N	547	1	1	\N	187	f	\N	3
+6140	0	\N	\N	544	1	1	\N	9	f	\N	0
 6170	8	\N	\N	548	1	2	\N	323	f	\N	0
 6171	8	\N	\N	548	1	1	(CUMIN POWDER)	143	f	\N	1
 6172	8	\N	\N	548	1	1	\N	71	f	\N	2
@@ -12452,8 +12459,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6178	7	\N	\N	549	1	2	\N	77	f	\N	2
 6179	8	\N	\N	549	1	2	\N	39	f	\N	3
 6180	8	\N	\N	549	4	1	, to taste	692	t	\N	4
+6141	6	\N	\N	544	4	1	\N	151	f	\N	1
+6142	7	\N	\N	544	1	3	\N	13	f	\N	2
 6105	0	\N	\N	539	1	1	\N	1047	f	\N	0
 6106	6	\N	\N	539	4	1	\N	993	f	\N	1
+6143	7	\N	\N	544	1	1	, to thin	176	f	\N	3
+6144	0	\N	\N	544	1	1	, juiced	4	f	\N	4
 6120	7	\N	\N	541	1	2	\N	964	f	\N	0
 6121	6	\N	\N	541	1	2	, chopped	222	f	\N	1
 6122	0	\N	\N	541	1	4	, minced	5	f	\N	2
@@ -13772,6 +13783,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7594	4	\N	\N	834	1	8	, cooked	1197	f	\N	2
 7595	8	\N	\N	834	1	2	(HARISSA	1343	f	\N	3
 7596	0	\N	\N	834	1	2	(LARGE EGGS	187	f	\N	4
+7597	4	\N	\N	835	1	14	\N	264	f	\N	0
+7598	0	\N	\N	835	1	2	\N	916	f	\N	1
+7599	0	\N	\N	835	1	6	\N	5	f	\N	2
+7600	4	\N	\N	835	1	1	\N	677	f	\N	3
+7601	0	\N	\N	835	1	1	\N	4	f	\N	4
+6145	8	\N	\N	544	1	1	, to desired thickness	123	f	\N	5
+6146	8	\N	\N	544	4	1	, to taste	692	t	\N	6
 \.
 
 
@@ -13871,6 +13889,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3116	Combine all dry ingredients in a bowl and mix (flour through baking soda).	\N	409	1	0
 3117	Add in the eggs, pumpkin puree, melted coconut oil, and maple syrup, and mix well until combined.	\N	409	2	0
 3118	Pour into a greased loaf pan and bake for 45-60 minutes.	\N	409	3	2
+3386	Add water to thin. Season to taste with salt and pepper.	\N	544	1	0
 259	Place pork in a 3-qt. slow cooker. Pour Dr Pepper over top.	\N	31	0	0
 260	Cover and cook on low 7-9 hours or until meat is tender.	\N	31	1	0
 3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	\N	408	1	0
@@ -13891,8 +13910,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3122	Flip and cook until desired doneness is reached, 2 to 3 minutes more; season with salt and ground black pepper.	\N	19	2	0
 851	Add bacon to a large skillet over medium heat. Cook until crispy then remove to a paper towel-lined plate to drain and set aside. Remove bacon grease from skillet.	\N	95	0	0
 3469	Roll up each slice in a lettuce leaf and serve.	\N	530	2	0
-3385	Combine avocado. coconut cream, cilantro, avocado oil, and lemon juice in a blender, then purée until smooth.	\N	544	0	0
-3386	Add water to thin. Season to taste with salt and pepper.	\N	544	1	0
 3357	Lightly mash with a potato masher, and mix in the olive oil and chopped dill. Serve warm.	\N	533	3	0
 568	Lay tortillas flat on a clean work surface. Spread refried beans down the middle third from top to bottom, leaving a 1-inch space halfway down to allow for a fold. Sprinkle cheese on top, lightly pressing into the beans.	\N	20	0	0
 3384	In a food processor, combine the lemon juice, pine nuts, and basil, and process until just combined. Slowly add in the olive oil, and pulse until emulsified. Season to taste with sea salt and pepper.	\N	543	0	256
@@ -13911,6 +13928,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3051	On the other slice of bread, place tomato slices and the other slice of cheese on top of the tomato.	\N	389	2	0
 3052	Add spring mix to the bacon-egg side, then close the sandwich.	\N	389	3	0
 3053	Serve with lemon-dressed greens.	\N	389	4	0
+3385	Combine avocado. coconut cream, cilantro, avocado oil, and lemon juice in a blender, then purée until smooth.	\N	544	0	128
 1094	In a medium bowl, whisk together flour, sugar, baking soda, baking powder, oats, cornmeal, flax seeds and sesame seeds until blended.	\N	113	0	0
 1095	In a separate large mixing bowl; whisk together eggs, half & half, evaporated milk and water until blended.	\N	113	1	0
 1096	Slowly pour dry ingredients into wet ingredients while whisking constantly. Batter will be thick.	\N	113	2	0
@@ -15594,6 +15612,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4134	Preheat the oven to 400°F. Scrub the potatoes and chop into 1¼-inch chunks. Chop the peppers roughly the same size, removing the seeds and stems. Place it all in a large roasting pan and toss with 1 tablespoon of olive oil and a little sea salt and black pepper. Using a large, sharp knife, carefully cut the chicken in half. Drizzle with 1 tablespoon each of olive oil and red wine vinegar, then rub all over with the paprika and a pinch of salt and pepper. Put the pan of veg on the bottom rack of the oven, sit the chicken halves skin-side up directly on the oven rack above, then roast for 40 minutes.	\N	828	0	0
 4135	When the time's up, rub the thyme with a drizzle of olive oil. Pull out the pan of veg, give it a good shake, then strip and scatter over half the thyme. Lay the rest of the thyme sprigs on top of the chicken and roast for a final 5 minutes, or until everything is beautifully cooked through, then serve.	\N	828	1	0
 4149	Quarter the eggplants, then cook for 6 minutes under a hot broiler, or until softened and lightly charred, turning regularly. Remove to a board and roughly chop. Peel and finely slice the garlic, plate it in a large non-stick frying pan on a medium heat with 1 tablespoon of olive oil and fry until lightly golden, then remove half to a plate for garnish. Add half the chopped eggplant to the pan with the rest of the garlic, along with the spice mix, cook for a few minutes, then add the lentils and 6 cups of water. Halve the pomegranate, then, holding one half cut-side down in the palm of your hand, bash the back with a spoon so all the seeds tumble out into a bowl and a good squeeze of juice. Squeeze the rest of the juice into the pan, then simmer on medium for 45 minutes, or until the lentils are tender.	\N	833	0	16
+4153	Preheat the oven to 350°F. Scrub the potatoes, slice just under ¼ inch thick, and place in a 12- x 10-inch roasting pan with the chicken, ½ a tablespoon of olive oil, and a pinch of sea salt and black pepper. Lightly squash and add the unpeeled garlic cloves, toss well, then arrange the spuds in a fairly even layer. Sit the chicken legs directly on the bars of the oven, skin-side up, with the pan of potatoes directly underneath. Bake 40 minutes.	\N	835	0	2
+4154	When the time's up, mix up the potatoes in the tasty pan juices, then sit the chicken on top. Strip the rosemary leaves off the sprigs, use a vegetable peeler to peel strips of lemon zest, then toss both in 1 teaspoon of olive oil and sprinkle into the pan. Squeeze over half the lemon juice, then return to the oven for a final 10 minutes, or until the chicken is tender and super-golden.	\N	835	1	2
 \.
 
 
@@ -15639,7 +15659,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15198, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15210, true);
 
 
 --
