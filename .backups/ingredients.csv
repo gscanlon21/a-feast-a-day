@@ -54,7 +54,7 @@
 55	\N	Pasta Sauce	https://www.eatthismuch.com/calories/pasta-sauce-849	\N	f	0	257	257	2025-03-30	6	257	256
 56	\N	Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
 57	\N	Chickpeas	aka: Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
-58	\N	Baked Beans	https://www.eatthismuch.com/calories/baked-beans,3506	\N	f	0	254	254	2024-08-21	6	254	512
+58	\N	Baked Beans	https://www.eatthismuch.com/calories/baked-beans-3506	\N	f	0	28	254	2025-10-11	4	254	512
 59	\N	Ketchup	https://www.eatthismuch.com/food/nutrition/ketchup,5817/	\N	t	512	28	240	2025-09-20	4	240	32
 60	\N	Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	28	15	2025-09-22	4	240	32
 61	\N	Mayonnaise	https://www.eatthismuch.com/calories/mayonnaise,253	\N	f	0	28	14	2025-06-12	4	224	32
@@ -184,7 +184,7 @@
 188	\N	Rice	https://www.eatthismuch.com/calories/white-rice-4917 - Good rice images by StockImageFactory	\N	f	4096	28	185	2024-09-15	4	185	1024
 189	\N	Salted Butter	https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	14	2025-09-02	7	224	29360128
 190	\N	Unsalted Butter	https://www.eatthismuch.com/calories/butter,121	\N	t	0	14	14	2025-08-14	7	224	29360128
-191	\N	Tortillas	Missing minor nutrients. https://www.eatthismuch.com/calories/tortillas,4268	\N	f	0	46	46	2024-08-21	0	92	64
+191	\N	Tortillas	Missing minor nutrients. https://www.eatthismuch.com/calories/tortillas,4268	\N	f	0	46	46	2025-10-11	0	92	64
 192	\N	Sour Cream, Reduced Fat	https://www.eatthismuch.com/calories/sour-cream-54	\N	f	260	28	242	2025-02-04	4	242	29360128
 193	\N	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021	\N	f	32	25	25	2024-11-01	0	25	64
 194	\N	Rice Cakes	https://www.eatthismuch.com/calories/rice-cakes-4440	\N	f	0	9	9	2024-11-18	0	36	16
@@ -1018,10 +1018,10 @@
 1277	\N	Canned Pickled Jalepeños	https://www.eatthismuch.com/calories/jalapeno-peppers-2586	\N	f	0	38	38	2024-10-20	0	114	1
 1278	\N	Tumeric Root	https://www.eatthismuch.com/calories/turmeric-217	\N	t	0	14	7	2024-08-29	4	112	131072
 1279	\N	Tumeric Powder	https://www.eatthismuch.com/calories/turmeric-217	\N	t	0	14	7	2024-08-29	4	112	131072
-1280	\N	Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	254	254	2024-08-21	6	254	512
+1280	\N	Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	28	184	2025-10-12	4	184	2048
 1281	\N	Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3530	\N	f	0	28	184	2025-10-10	4	184	2048
 1282	\N	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527	\N	f	0	254	254	2024-08-21	6	254	512
-1283	\N	Canned Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3532	\N	f	0	254	254	2024-08-21	6	254	512
+1283	\N	Canned Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3532	\N	f	0	28	256	2025-10-13	4	256	512
 1284	\N	Canned Cream-Style Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 1285	\N	Canned Sweet Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 1286	\N	Celery	https://www.eatthismuch.com/calories/celery-1927	\N	f	0	28	40	2025-03-12	4	101	2
@@ -1102,6 +1102,9 @@
 1362	\N	Fresh Mangos	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
 1363	\N	Frozen Mango Chunks	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
 1364	\N	Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
-1365	\N	Raw Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	254	254	2024-08-21	6	254	512
+1365	\N	Raw Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	28	202	2025-10-12	4	202	2048
 1366	\N	Raw Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3530	\N	f	0	254	254	2025-10-10	6	254	512
-1367	\N	Raw Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	254	254	2024-08-21	6	254	512
+1367	\N	Raw Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	28	184	2025-10-13	4	184	2048
+1368	\N	Canned Baked Beans	https://www.eatthismuch.com/calories/baked-beans-3506	\N	f	0	28	254	2025-10-11	4	254	512
+1369	\N	Fresh Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
+1370	\N	Large Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1

@@ -106,12 +106,12 @@
 124	Pan-Fried Chicken w/ Pesto	\N	\N	\N	12	18	2	2	t	pesto-chicken.jpg	0	\N	f	f
 125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
-127	Roast Chicken Pitta Pockets	\N	\N	\N	6	2	13	6	t	\N	0	\N	f	f
+127	Roast Chicken Pitta Pockets	\N	\N	\N	12	2	13	6	t	\N	0	\N	f	f
 128	Soy Sauce and Star Anise Chicken	\N	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
-132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandori-chicken-kebabs.jpg	0	\N	f	f
+132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandoori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
 134	Oven Burgers	\N	\N	\N	8	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
 135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	0	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
@@ -270,16 +270,16 @@
 386	Chicken with Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	\N	0	\N	f	f
 387	Marinated Mediterranean Olives	\N	\N	\N	48	0	5	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
 388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldn’t be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
-389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	\N	0	\N	f	f
+389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	first-watch-blte.jpg	0	\N	f	f
 390	Maple-Mustard-Glazed Pan-Seared Pork Chops	From The Food Lab by J. Kenji López-Alt	\N	\N	4	15	5	2	t	\N	0	\N	f	f
 391	Low Carb Cauliflower Fried Rice	\N	\N	\N	6	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
 392	Roasted Chickpeas	Let the chickpeas cool completely on the baking sheet after roasting. They will continue to crisp up as they cool. Try sweet styles (maple syrup and cinnamon), spicy versions (chili powder or cayenne), earthy-herbaceous blends (rosemary or thyme), or cheesy twists (nutritional yeast or Parmesan).  Enjoy roasted chickpeas as a crunchy snack, a salad or soup topper, in grain bowls, or as part of a party mix with nuts, pretzels, and dried fruit. 	\N	\N	32	35	10	4	t	\N	0	https://insanelygoodrecipes.com/roasted-chickpeas/	t	f
 393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	\N	f	f
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
 395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	30	5	2	t	sesame-ginger-carrots.jpg	0	\N	f	t
-396	Tandoori Chicken	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	60	2	t	\N	0	\N	f	f
+396	Tandoori Chicken	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	\N	f	f
 397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	\N	0	\N	f	f
-398	Maple Lime Pork Roast	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	360	10	4	t	\N	0	\N	f	f
+398	Maple Lime Pork Roast	\N	\N	\N	8	360	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -348,7 +348,7 @@
 529	Polyphenol Salad	\N	\N	\N	10	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-532	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	20	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+532	Cauliflower Hummus	\N	\N	\N	0	30	10	2	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	16	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	0	0	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -489,7 +489,7 @@
 703	Killer Guacamole	\N	\N	\N	0	0	10	12	t	\N	4	\N	t	f
 704	Bacon and Corn Chowder	\N	\N	\N	8	35	10	4	t	\N	0	\N	f	f
 705	Quinoa Tabbouloeh	\N	\N	\N	16	0	70	2	t	\N	6	\N	f	f
-706	White Bean and Chorizo Soup	\N	\N	\N	8	45	10	6	t	\N	0	\N	f	f
+706	White Bean and Chorizo Soup	\N	\N	\N	8	45	10	6	t	white-bean-chorizo-soup.jpg	0	\N	f	f
 707	Tomato Vegetable Soup	Optionally add a can of chickpeas for protein.	\N	\N	8	30	10	6	t	\N	0	\N	f	f
 708	Orange Soda Pop	You can add some lemon and lime zest to make more of a citrus soda.	\N	\N	128	15	65	4	t	\N	0	\N	f	f
 709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	\N	0	\N	f	f
@@ -508,11 +508,11 @@
 722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	\N	6	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	\N	0	\N	f	f
-725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	\N	0	\N	f	f
+725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	f
 726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
 727	Dal	\N	\N	\N	8	40	5	2	t	dal.jpg	0	\N	f	f
 728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	\N	6	\N	f	f
-729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	\N	0	\N	f	f
+729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	roasted-broccoli.jpg	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
 732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
@@ -538,19 +538,24 @@
 752	Couscous & Chicken Bake	\N	\N	\N	8	60	15	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 785	Tasty Chickpea Soup	\N	\N	\N	8	30	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 786	Green Gazpacho	\N	\N	\N	4	10	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-787	Naked Salad Tunisienne	\N	\N	\N	20	0	18	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+787	Naked Salad Tunisienne	\N	\N	\N	20	0	18	4	t	naked-salad-tunisienne.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-790	Baharat Chicken Shish	\N	\N	\N	8	45	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	chicken-chips.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+790	Baharat Chicken Shish	\N	\N	\N	8	45	10	4	t	baharat-chicken-shish.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 791	Tortilla Frittata	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 824	Oven-Baked Chicken Fingers	\N	\N	\N	8	30	15	4	t	\N	0	\N	t	f
 825	Quick Crispy Duck	\N	\N	\N	12	20	2	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 826	Chicken Traybake	\N	\N	\N	8	55	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 827	Chicken & Merguez Stew	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-828	Crispy Paprika Chicken	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+828	Crispy Paprika Chicken	\N	\N	\N	8	55	5	4	t	crispy-paprika-chicken.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 829	Herby Steak & Crispy Potatoes	\N	\N	\N	8	25	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 830	Caveman Roasted Turkey Legs	You can substitute chicken legs for the turkey legs, but cut total cooking time down by about 15 minutes.	\N	\N	8	60	5	2	t	\N	0	\N	f	f
-831	Over-Hard Eggs	\N	\N	\N	0	7	0	2	t	\N	0	From the First Watch cookbook.	t	f
+831	Over-Hard Eggs	\N	\N	\N	0	7	0	2	t	over-hard-eggs.jpg	0	From the First Watch cookbook.	t	f
 832	Microwaved Bacon Slices	\N	\N	\N	0	5	0	1	t	\N	0	\N	t	f
 833	Rummaniyeh	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 834	Glorius Stuffed Squash	\N	\N	\N	8	70	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+835	Herby Chicken Traybake	\N	\N	\N	8	50	8	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
+836	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	20	0	0	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+837	Harissa Chicken Traybake	\N	\N	\N	8	50	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
+838	Sweet Chicken Surprise	\N	\N	\N	8	40	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
+839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	\N	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
