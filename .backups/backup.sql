@@ -10235,6 +10235,69 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15256	1283	1984	\N	\N	3	1
 15257	1283	62	\N	\N	3	38
 15258	1283	2047	\N	\N	3	207
+15259	1288	128	\N	\N	3	0.4
+15260	1288	68719476736	\N	\N	2	32
+15261	1288	34359738368	\N	\N	2	3626
+15262	1288	2	\N	\N	3	4
+15263	1288	1	\N	\N	3	47
+15264	1288	4294967296	\N	\N	2	485
+15265	1288	2199023255552	\N	\N	2	21
+15266	1288	48	\N	\N	3	31
+15267	1288	14	\N	\N	3	91
+15268	1288	1984	\N	\N	3	2
+15269	1288	62	\N	\N	3	122
+15270	1288	2047	\N	\N	3	673
+15271	1282	128	\N	\N	3	0.4
+15272	1282	68719476736	\N	\N	2	758
+15273	1282	34359738368	\N	\N	2	607
+15274	1282	2	\N	\N	3	5
+15275	1282	1	\N	\N	3	13
+15276	1282	4294967296	\N	\N	2	87
+15277	1282	2199023255552	\N	\N	2	3
+15278	1282	48	\N	\N	3	11
+15279	1282	14	\N	\N	3	26
+15280	1282	1984	\N	\N	3	2
+15281	1282	62	\N	\N	3	37
+15282	1282	2047	\N	\N	3	215
+15283	353	2251799813685248	\N	\N	2	18
+15284	353	18014398509481984	\N	\N	3	0.1
+15285	353	36028797018963968	\N	\N	3	0.1
+15286	353	72057594037927936	\N	\N	3	0.1
+15287	353	288230376151711744	\N	\N	3	0.1
+15288	353	576460752303423488	\N	\N	3	0.1
+15289	353	2305843009213693952	\N	\N	3	0.1
+15290	353	-9223372036854775808	\N	\N	3	0.1
+15291	353	4611686018427387904	\N	\N	3	0.1
+15292	353	274877906944	\N	\N	1	0.2
+15293	353	17179869184	\N	\N	2	25
+15294	353	4398046511104	\N	\N	2	0.4
+15295	353	70368744177664	\N	\N	2	69
+15296	353	8796093022208	\N	\N	1	2
+15297	353	17592186044416	\N	\N	2	0.4
+15298	353	32768	\N	\N	1	9267
+15299	353	65536	\N	\N	1	15722
+15300	353	262144	\N	\N	2	0.1
+15301	353	524288	\N	\N	2	0.1
+15302	353	1048576	\N	\N	2	1
+15303	353	2097152	\N	\N	2	1
+15304	353	4194304	\N	\N	2	0.3
+15305	353	16777216	\N	\N	1	66
+15306	353	67108864	\N	\N	2	6
+15307	353	1536	\N	\N	3	0.2
+15308	353	3221225472	\N	\N	1	23
+15309	353	1792	\N	\N	3	0.2
+15310	353	229376	\N	\N	1	1697
+15311	659	68719476736	\N	\N	2	18
+15312	659	34359738368	\N	\N	2	160
+15313	659	2	\N	\N	3	3
+15314	659	1	\N	\N	3	1
+15315	659	4294967296	\N	\N	2	53
+15316	659	2199023255552	\N	\N	2	2
+15317	659	48	\N	\N	3	2
+15318	659	14	\N	\N	3	11
+15319	659	1984	\N	\N	3	0.3
+15320	659	62	\N	\N	3	13
+15321	659	2047	\N	\N	3	54
 \.
 
 
@@ -12374,6 +12437,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7142	6	\N	\N	706	1	1	, diced	402	f	\N	4
 7322	8	\N	\N	733	2	1	\N	71	f	\N	3
 7323	6	\N	\N	733	4	1	(FINE DRIED BREAD CRUMBS, (?RECIPE?))	18	f	\N	4
+6038	6	\N	\N	528	4	1	\N	178	f	\N	0
+6039	0	\N	\N	528	1	2	, juiced	12	f	\N	1
+6040	6	\N	\N	528	1	1	, peeled and diced	789	f	\N	2
 5996	7	\N	\N	521	1	1	\N	1044	f	\N	0
 5997	7	\N	\N	521	1	1	\N	178	f	\N	1
 5998	8	\N	\N	521	1	1	\N	70	f	\N	2
@@ -12383,14 +12449,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7325	7	\N	\N	733	1	2	\N	123	f	\N	6
 6070	0	\N	\N	532	1	1	, cut into florets	733	f	\N	0
 6071	0	\N	\N	532	1	4	, roughly chopped	5	f	\N	1
-6038	6	\N	\N	528	4	1	\N	178	f	\N	0
-6039	0	\N	\N	528	1	2	, juiced	12	f	\N	1
-6040	6	\N	\N	528	1	1	, peeled and diced	789	f	\N	2
-6041	6	\N	\N	528	4	1	, diced	155	f	\N	3
-6042	7	\N	\N	528	1	2	, diced	105	f	\N	4
-6043	7	\N	\N	528	1	1	, chopped	13	f	\N	5
-6044	8	\N	\N	528	1	1	, grated or chopped	307	f	\N	6
-6045	4	\N	\N	528	1	1	, for serving	174	t	\N	7
 6046	6	\N	\N	529	1	2	, chopped, not frozen	6	f	\N	0
 6047	0	\N	\N	529	1	1	, peeled and diced	346	f	\N	1
 6048	0	\N	\N	529	1	1	, diced, seeds removed	597	f	\N	2
@@ -12404,8 +12462,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6468	7	\N	\N	588	1	2	\N	176	f	\N	0
 6072	7	\N	\N	532	1	2	\N	176	f	\N	2
 6469	0	\N	\N	588	1	1	, chopped	217	f	\N	1
+6041	6	\N	\N	528	4	1	, diced	155	f	\N	3
 6470	0	\N	\N	588	1	3	, chopped	5	f	\N	2
 6471	0	\N	\N	588	1	2	, red/yellow, chopped	811	f	\N	3
+6042	7	\N	\N	528	1	2	, diced	105	f	\N	4
+6043	7	\N	\N	528	1	1	, chopped	13	t	\N	5
+6044	8	\N	\N	528	1	1	, grated or chopped	307	t	\N	6
+6045	4	\N	\N	528	1	1	, for serving	174	t	\N	7
 6065	6	\N	\N	531	1	1	(FROZEN CHERRIES)	147	f	\N	0
 6066	7	\N	\N	531	1	2	(CACAO OR CAROB POWDER)	43	f	\N	1
 6067	6	\N	\N	531	2	1	\N	178	f	\N	2
@@ -12795,21 +12858,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6449	7	\N	\N	585	1	3	\N	81	f	\N	8
 6450	6	\N	\N	585	1	6	\N	\N	f	559	9
 6451	6	\N	\N	585	1	2	, chopped and destemmed	372	f	\N	10
+6410	0	\N	\N	582	1	2	, diced	255	f	\N	0
 6460	0	\N	\N	587	1	1	(JAR OF SAUERKRAUT | ONE CABBAGE), shredded	110	f	\N	0
 6461	6	\N	\N	587	1	1	(STEW VEGETABLES), such as celery, broccoli, carrot, shredded	209	f	\N	1
 6462	0	\N	\N	587	1	2	, cubed	387	f	\N	2
 6463	4	\N	\N	587	1	4	(GROUND TURKEY | GROUND PORK)	988	f	\N	3
 6464	7	\N	\N	587	1	1	\N	1075	f	\N	4
 6465	7	\N	\N	587	1	1	\N	73	t	\N	5
-6410	0	\N	\N	582	1	2	, diced	255	f	\N	0
 6411	6	\N	\N	582	1	1	, cooked	57	f	\N	1
-6412	7	\N	\N	582	1	2	\N	77	f	\N	2
-6413	7	\N	\N	582	1	2	\N	73	t	\N	3
-6414	8	\N	\N	582	1	1	\N	323	f	\N	4
-6415	8	\N	\N	582	2	1	\N	71	f	\N	5
-6416	8	\N	\N	582	1	1	\N	143	f	\N	6
-6417	8	\N	\N	582	4	1	, to taste	692	t	\N	7
-6418	0	\N	\N	582	1	6	, nitrate & additive-free, chopped	985	f	\N	8
 6369	0	\N	\N	577	1	1	, cored and sliced thin	1126	f	\N	2
 6370	0	\N	\N	577	1	2	, peeled and grated	7	f	\N	3
 6371	0	\N	\N	577	1	1	, diced	8	f	\N	4
@@ -13135,10 +13191,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6738	7	\N	\N	623	1	1	, for dusting	234	t	\N	4
 6739	6	\N	\N	623	1	1	\N	562	f	\N	5
 6740	6	\N	\N	623	3	4	\N	626	f	\N	6
-6419	6	\N	\N	582	1	6	\N	368	f	\N	9
-6420	0	\N	\N	582	2	1	, chopped	155	f	\N	10
-6421	0	\N	\N	582	1	1	, peeled, pitted and sliced	9	f	\N	11
-6422	6	\N	\N	582	2	1	\N	\N	t	471	12
 5714	7	\N	\N	416	1	2	\N	13	t	\N	8
 6766	8	\N	\N	627	1	1	(FLOUR), for dusting	38	f	\N	1
 6767	0	\N	\N	627	1	3	\N	187	f	\N	2
@@ -13186,6 +13238,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6778	6	\N	\N	630	2	1	, softened	29	f	\N	2
 6779	7	\N	\N	630	1	2	\N	56	f	\N	3
 6780	6	\N	\N	630	2	1	\N	234	f	\N	4
+6419	6	\N	\N	582	1	6	\N	368	f	\N	9
+6420	0	\N	\N	582	2	1	, chopped	155	f	\N	10
+6421	0	\N	\N	582	1	1	, peeled, pitted and sliced	9	f	\N	11
+6422	6	\N	\N	582	2	1	\N	\N	t	471	12
 6781	6	\N	\N	630	3	2	\N	196	f	\N	5
 6782	6	\N	\N	630	3	5	\N	38	f	\N	6
 6808	7	\N	\N	633	1	1	(TAMARIND JUICE), made by mixing tamaring paste with warm water	295	f	\N	5
@@ -13860,6 +13916,26 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 2320	0	\N	\N	127	1	6	\N	166	f	\N	10
 2321	0	\N	\N	127	1	2	, cut into strips	387	f	\N	11
 2322	8	\N	\N	127	8	1	\N	285	t	\N	12
+7620	5	\N	\N	840	1	2	, dicced about ½ to 1 inch thick	250	f	\N	0
+7621	7	\N	\N	840	1	1	(CANOLA OIL | OLIVE OIL	79	f	\N	1
+7622	7	\N	\N	840	2	1	(FIRST WATCH SEASONING, p26	601	f	\N	2
+6412	7	\N	\N	582	1	2	\N	77	f	\N	2
+6413	7	\N	\N	582	1	2	\N	73	t	\N	3
+6414	8	\N	\N	582	1	1	\N	323	f	\N	4
+6415	8	\N	\N	582	2	1	\N	71	f	\N	5
+6416	8	\N	\N	582	1	1	\N	143	f	\N	6
+6417	8	\N	\N	582	4	1	, to taste	692	t	\N	7
+6418	0	\N	\N	582	1	6	, nitrate & additive-free, chopped	985	f	\N	8
+7623	6	\N	\N	841	1	6	\N	141	f	\N	0
+7624	6	\N	\N	841	1	1	\N	158	f	\N	1
+7625	6	\N	\N	841	1	2	(WHEAT GERM	200	f	\N	2
+7626	6	\N	\N	841	2	3	, slivered	807	f	\N	3
+7627	7	\N	\N	841	1	1	\N	70	f	\N	4
+7628	6	\N	\N	841	1	1	\N	215	f	\N	5
+7629	6	\N	\N	841	2	1	\N	612	f	\N	6
+7630	6	\N	\N	841	2	1	\N	79	f	\N	7
+7631	6	\N	\N	841	4	1	(AGAVE SYRUP	845	f	\N	8
+7632	7	\N	\N	841	1	2	\N	40	f	\N	9
 \.
 
 
@@ -14611,14 +14687,13 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2068	Heat about 3.5cm/1½ oil in a clean wok. When hot, shallow-fry the chicken for 3-4 minutes until crisp and golden.	\N	196	4	0
 2069	To serve, divide the noodle mixture between warmed plates or bowls and top each serving with the chicken.	\N	196	5	0
 3507	Add all ingredients into a salad bowl, toss, and enjoy.	\N	581	0	0
-3508	Preheat the oven to 425°F.	\N	582	0	0
-3509	Toss the sweet potatoes and chickpeas with olive oil and spread on a baking sheet. Bake for 40 minutes, tossing the sweet potatoes and chickpeas at the 20 minute mark.	\N	582	1	0
 3261	Place the quinoa into a bowl, fluff with a fork, and let cool.	\N	479	0	0
 2824	Dip the vegetables in the hummus. Enjoy!	\N	252	0	0
 2484	Break the chocolate into small pieces and place in a heatproof bowl. Add the butter and melt in the microwave on high for 1-2 minutes. Stir to mix and set aside. (Alternatively, place the chocolate pieces and butter in a bowl over a pan of gently simmering water and leave until melted, stirring frequently.)	\N	175	0	0
 2485	Put the biscuits in a plastic bag and seal, the bash into small pieces with a rolling pin. Alternatively, break up the biscuits in a food processor but do not let them become too fine. Use the pulse button.	\N	175	1	0
 2486	Roughly chop the prunes and stir into the melted chocolate with the bisuits. Spoon the mixture into a 20cm/8in square cake tin (pan) and smooth out any lumps with the back of the spoon. Chill for 1-2 hours until set. Remove the cake from the refrigerator and using a sharp knife, cut into 12 bars.	\N	175	2	0
 3113	Dip the apples in the peanut butter. Enjoy!	\N	407	0	0
+3508	Preheat the oven to 425°F.	\N	582	0	2
 3542	Cook the rice according to package instructions.	\N	589	1	0
 3373	Pour the hot water over the Oatmeal. Enjoy!	\N	539	0	0
 2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	\N	264	0	0
@@ -14630,6 +14705,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 691	Top with an equal amount of mozzarella and parmesan cheese and pepperoni. Return to the oven and bake for about 5 to 7 minutes or until the cheese is melted and slightly browned.	\N	64	5	0
 3001	Place a wok (or large non-stick frying pan) over a medium-high heat for one minute.	\N	376	1	0
 3002	Tip the cauliflower into the wok and stir-fry for 2 minutes or until the cauliflower is piping hot.	\N	376	2	0
+3509	Toss the sweet potatoes and chickpeas with olive oil and spread on a baking sheet. Bake for 40 minutes, tossing the sweet potatoes and chickpeas at the 20 minute mark.	\N	582	1	2
 3262	Add the next 6 ingredients (parsley through cucumbers) to the bowl of fluffed quinoa.	\N	479	1	0
 3106	If making smoothie hot, heat the milk on your stove top, until warm, about 3 minutes.	\N	404	0	0
 3107	Add all ingredients to a blender for 20 seconds.	\N	404	1	128
@@ -14742,8 +14818,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2910	Transfer the pan to the oven for 40 minutes, or until the rice has absorbed all the liquid and is just cooked through. Drizzle 1 tablespoon of extra virgin olive oil and dish up, seasoning to perfection at the table.	\N	317	1	0
 3339	In a small bowl, whisk together the coconut milk and lime juice.	\N	528	0	0
 3340	Place the mango, cucumber, onion, cilantro, and ginger in a medium-sized bowl, and mix thoroughly.	\N	528	1	0
-3341	Pour the coconut mixture over the mango and vegetable mixture, and let it sit for at least 15 minutes.	\N	528	2	0
-3342	Enjoy over chicken or fish, or in romaine lettuce-leaf wrappers.	\N	528	3	0
 3377	Serve warm.	\N	540	3	0
 3268	In a small bowl, combine all ingredients.	\N	481	0	0
 2835	Go in with the chicken and cook for 5 minutes, or until golden and cooked through, turning regularly.	\N	106	2	4
@@ -14754,7 +14828,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2392	Stir in black beans, seasoning and salt; cook, stirring, until heated through, about 1 minute.	\N	38	1	0
 3327	Place the fruits in a large pitcher of filtered water.	\N	524	0	0
 3328	Sip throughout the day.	\N	524	1	0
+3341	Pour the coconut mixture over the mango and vegetable mixture, and let it sit for at least 15 minutes.	\N	528	2	0
 2393	Divide the vegetables and beans between two bowls and top each with 2 tablespoons cheese, if using.	\N	38	2	0
+3342	Enjoy over chicken or fish, or in romaine lettuce-leaf wrappers.	\N	528	3	0
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	\N	262	0	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	\N	262	1	0
 3168	In a mixing bowl, whisk the chickpea flour, baking powder, sugar until well combined, and no lumps show.	\N	424	0	0
@@ -15252,9 +15328,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3671	Whip the reserved cream until is just holds its shape, and spoon or pipe a line across the top of the roll in the center. Trim both ends of the roulade. Decorate the cream with the reserved raspberries and toasted almond flakes.	\N	623	6	0
 3097	Place strawberries in a large bowl and toss in the maple syrup. Toss to coat.	\N	402	0	0
 3099	In a small bowl, stir together lime juice, honey and mint. Pour over fruit and toss to coat.	\N	402	2	0
-3510	While the sweet potato mixture is roasting, cook bacon in a skillet until crisp, about 12 minutes. Remove and set aside on a paper towel-lined plate. 	\N	582	2	0
-3511	In a large bowl, combine the arugula and cucumbers.	\N	582	3	0
-3512	Once cooked, combine the roasted sweet potatoes and chickpeas with the arugula and cucumbers. Add the Honey-Mustard Dressing and toss to combine. Top the salad with bacon and sliced avocado.	\N	582	4	0
 3776	Roll out the remaining third of the crust and place on top.	\N	648	5	0
 3678	Preheat the oven to 400F. Line a sheet pan with parchment paper.	\N	625	0	2
 3679	In a large bowl, combine the zucchini, tomatoes, bell pepper, onion, and sweet potato. Add the olive oil and season with salt and pepper. Stir or toss to mix evenly.	\N	625	1	0
@@ -15264,6 +15337,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3660	Butter each side of the 4 slices of bread on one side with 1 tablespoon of butter.	\N	621	0	0
 3661	Heat a large skillet over medium heat. Add the remaining 1 tablespoon of butter to the pan and throw 2 slices of bread in, butter-side up. Cook the bread for 1 minute.	\N	621	1	4
 3777	Bake for 15 to 20 minutes until the fruit is cooked through, and the top is lightly browned.	\N	648	6	0
+3510	While the sweet potato mixture is roasting, cook bacon in a skillet until crisp, about 12 minutes. Remove and set aside on a paper towel-lined plate. 	\N	582	2	4
+3511	In a large bowl, combine the arugula and cucumbers.	\N	582	3	0
+3512	Once cooked, combine the roasted sweet potatoes and chickpeas with the arugula and cucumbers. Add the Honey-Mustard Dressing and toss to combine. Top the salad with bacon and sliced avocado.	\N	582	4	0
 3672	Preheat the oven to 400°F. Arrange 12 paper muffin cases on a baking tray or grease a 12-cup muffin pan.	\N	624	0	2
 3673	Sift the flour, sugar, baking powder and salt into a large mixing bowl. In another bowl, whisk the eggs until blended. Add the melted butter, milk, vanilla and lemon rind to the eggs and stir thoroughly to combine.	\N	624	1	0
 3674	Make a well in the dry ingredients and pour in the egg mixture. With a large metal spoon, stir until the flour is just moistened, but not smooth.	\N	624	2	0
@@ -15695,7 +15771,20 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4165	Add more juice if needed to submerge the lemons (you may need up to an additional 1/2 cup) and add a couple more tablespoons of kosher salt to the top.	\N	839	4	0
 4166	Close the lid to the jar and let it sit at room temperature on the counter for a few days. Turn the jar upside down every so often. After a few days put the jar of lemons in the refrigerator for at least 3 weeks, until the rinds of the lemons soften. Turn the jar upside down occasionally while storing in the refrigerator.	\N	839	5	0
 4167	To use preserved lemons in cooking, remove one from the jar and rinse it to remove the salt. Discard any seeds. Remove the pulp. Thinly slice or chop the preserved lemon rind to use in a recipe.	\N	839	6	0
+4174	In a large mixing bowl, combine oats, sunflower seeds, wheat germ, almonds and cinnamon; mix ingredients two times to distribute the cinnamon evenly.	\N	841	0	0
 1227	Preheat the grill (broiler) to hot. Lightly toast the pitta breads well until they puff up. (Alternatively, lightly toast the breads in a toaster.) Open the breads and stuff them liberally with the chicken and salad. Drizzle a generous amount of tahini sauce into each one and serve with any extra salad.)	\N	127	2	0
+4168	Preheat the oven to 375°F.	\N	840	0	0
+4169	In a mixing bowl, combine zucchini, oil and seasoning and toss well until zucchini is evenly coated.	\N	840	1	0
+4170	Line a sheet pan with parchment paper and transfer the contents of the bowl onto the pan, spreading zucchini evenly across the surface.	\N	840	2	0
+4171	Bake for 10 minutes. Stir, using a rubber spatula, and bake for 10 more minutes.	\N	840	3	0
+4172	Remove from oven and cool.	\N	840	4	0
+4173	Store zucchini in an airtight container and refrigerate until ready to use.	\N	840	5	0
+4175	In another mixing bowl, combine maple syrup, brown sugar, oil, agave and vanilla. Mix using a wire whisk. Pour over dry ingredients.	\N	841	1	0
+4176	Using a rubber spatula or your hands, mix into granola until all dry ingredients are evenly coated.	\N	841	2	0
+4177	Split mix evenly on 2 greased sheet pans. Spread out the mix in a single layer on both trays. Do not press the granola down.	\N	841	3	0
+4178	Bake at 300°F for 20 minutes. When golden brown, remove from oven and cool completely at room temperature.	\N	841	4	2
+4179	Once granola is completely cool, break into ideal-sized pieces (about the size of a quarter).	\N	841	5	0
+4180	Transfer to an airtight container and store in a dry plate for up to 1 week.	\N	841	6	0
 \.
 
 
@@ -15741,7 +15830,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15258, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15321, true);
 
 
 --

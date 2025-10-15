@@ -4,9 +4,6 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("mcs_taxon")]
 [DebuggerDisplay("{Name,nq}")]
 public class MCS_Taxon

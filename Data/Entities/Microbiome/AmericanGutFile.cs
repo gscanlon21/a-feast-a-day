@@ -1,15 +1,21 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-internal class AmericanGutFile
+namespace Data.Entities.Microbiome;
+
+[Table("AmericanGutFile")]
+public class AmericanGutFile
 {
-}
+    [Key]
+    [Column(Order = 0)]
+    [Required]
+    public string TaxName { get; set; } = string.Empty;
 
-/*CREATE TYPE [dbo].[AmericanGutFile] AS TABLE(
-	[tax_name] [varchar](100) NOT NULL,
-	[tax_rank] [varchar](50) NOT NULL,
-	[count_norm] [int] NOT NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[tax_name] ASC,
-	[tax_rank] ASC
-)*/
+    [Key]
+    [Column(Order = 1)]
+    [Required]
+    public string TaxRank { get; set; } = string.Empty;
+
+    [Required]
+    public int CountNorm { get; set; }
+}

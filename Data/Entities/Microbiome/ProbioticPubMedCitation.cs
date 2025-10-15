@@ -4,9 +4,6 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("probiotic_pubmed_citation")]
 [DebuggerDisplay("{Name,nq}")]
 public class ProbioticPubMedCitation

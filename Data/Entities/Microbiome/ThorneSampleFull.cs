@@ -4,9 +4,7 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
+
 [Table("thorne_sample_full")]
 [DebuggerDisplay("{Name,nq}")]
 public class ThorneSampleFull

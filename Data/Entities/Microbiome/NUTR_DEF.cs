@@ -5,9 +5,6 @@ using System.Diagnostics;
 namespace Data.Entities.Microbiome;
 
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("nutr_def")]
 [DebuggerDisplay("{Name,nq}")]
 public class NUTR_DEF

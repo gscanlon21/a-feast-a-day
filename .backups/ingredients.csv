@@ -339,7 +339,7 @@
 349	\N	Kosher Salt | Pink Himalayan Salt	https://www.eatthismuch.com/food/nutrition/kosher-salt-coarse,2313857/	\N	t	0	4	1	2024-09-30	8	192	131072
 350	\N	Steak Seasoning	https://www.eatthismuch.com/calories/steak-seasoning-2721614	\N	f	0	28	1	2025-01-18	4	192	0
 352	\N	Cantaloupe Melon	https://www.eatthismuch.com/calories/melons-1450	\N	f	0	552	552	2024-12-05	0	156	1
-353	\N	Baby Carrots	https://www.eatthismuch.com/calories/baby-carrots,2569	\N	f	0	28	246	2024-08-22	4	246	2
+353	\N	Baby Carrots	https://www.eatthismuch.com/calories/baby-carrots,2569	\N	f	0	28	246	2025-10-15	4	246	2
 354	\N	Frozen Carrot Slices	https://www.eatthismuch.com/calories/carrots-1918	\N	f	0	28	128	2025-08-26	4	128	67108864
 355	\N	Chickpea Spaghetti Pasta	https://www.eatthismuch.com/calories/spaghetti-chickpea-pasta,1880907	\N	f	0	28	56	2025-09-15	4	112	4096
 356	\N	Tagliatelle Pasta	https://www.eatthismuch.com/calories/tagliatelle-pasta-4121232	\N	f	32	28	42	2024-12-23	4	112	4096
@@ -583,7 +583,7 @@
 656	\N	Dark Sesame Oil	aka. Roasted Sesame Oil; Toasted Sesame Oil - https://www.eatthismuch.com/calories/sesame-oil-268	\N	f	0	28	14	2025-02-21	9	224	65536
 657	\N	Sesame Oil	https://www.eatthismuch.com/food/nutrition/sesame-oil,2628816/	\N	f	0	216	13.6	2025-02-24	6	240	0
 658	\N	Romaine Lettuce Heads	https://www.eatthismuch.com/calories/lettuce-2013	\N	f	0	626	47	2024-10-15	0	47	1
-659	\N	Baby Leeks	\N	\N	f	0	246	246	2024-08-22	6	246	1
+659	\N	Baby Leeks	https://www.eatthismuch.com/calories/leeks-2008	\N	f	0	89	89	2025-10-15	0	89	2
 660	\N	Fresh Sage	\N	\N	f	0	4	4	2024-09-26	7	64	1
 661	\N	Fennel Bulbs	https://www.eatthismuch.com/calories/fennel-2566	\N	f	0	234	234	2025-03-14	0	234	2
 662	\N	Single Espresso	https://www.eatthismuch.com/calories/espresso-102737	\N	t	0	240	100	2024-10-19	6	240	0
@@ -1020,13 +1020,13 @@
 1279	\N	Tumeric Powder	https://www.eatthismuch.com/calories/turmeric-217	\N	t	0	14	7	2024-08-29	4	112	131072
 1280	\N	Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	28	184	2025-10-12	4	184	2048
 1281	\N	Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3530	\N	f	0	28	184	2025-10-10	4	184	2048
-1282	\N	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527	\N	f	0	254	254	2024-08-21	6	254	512
+1282	\N	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527	\N	f	0	28	256	2025-10-14	4	256	512
 1283	\N	Canned Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3532	\N	f	0	28	256	2025-10-13	4	256	512
 1284	\N	Canned Cream-Style Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 1285	\N	Canned Sweet Corn	https://www.eatthismuch.com/calories/corn,1949	\N	f	2	164	164	2025-08-02	6	164	512
 1286	\N	Celery	https://www.eatthismuch.com/calories/celery-1927	\N	f	0	28	40	2025-03-12	4	101	2
 1287	\N	Canned Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3549	\N	f	0	28	262	2025-10-10	4	262	512
-1288	\N	Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	254	254	2024-08-21	6	254	512
+1288	\N	Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	28	202	2025-10-14	4	202	2048
 1289	\N	Broccolini Florets	Just the tips - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2
 1290	\N	Broccoli Florets	Just the tips - https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
 1291	\N	Broccolini	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2

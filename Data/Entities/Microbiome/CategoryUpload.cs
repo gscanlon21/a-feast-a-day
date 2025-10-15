@@ -4,9 +4,6 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("category_upload")]
 [DebuggerDisplay("{Name,nq}")]
 public class CategoryUpload
@@ -14,21 +11,25 @@ public class CategoryUpload
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public string? Phylum { get; set; }
+
+    public string? Class { get; set; }
+
+    public string? Order { get; set; }
+
+    public string? Family { get; set; }
+
+    public string? Genus { get; set; }
+
+    public string? Species { get; set; }
+
+    public double? Rawcount { get; set; }
+
+    public double? Ratio { get; set; }
+
+    public int? Taxon { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[CategoryUpload](
-	[Phylum] [varchar](50) NULL,
-	[Class] [varchar](50) NULL,
-	[Order] [varchar](50) NULL,
-	[Family] [varchar](50) NULL,
-	[Genus] [varchar](50) NULL,
-	[Species] [varchar](255) NULL,
-	[rawcount] [float] NULL,
-	[ratio] [float] NULL,
-	[taxon] [int] NULL
-)
-*/

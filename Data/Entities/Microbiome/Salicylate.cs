@@ -4,9 +4,6 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("salicylate")]
 [DebuggerDisplay("{Name,nq}")]
 public class Salicylate

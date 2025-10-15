@@ -4,39 +4,50 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
-[Table("antibacterial_activity")]
+[Table("_antibacterial_activity")]
 [DebuggerDisplay("{Name,nq}")]
 public class AntibacterialActivity
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public int? Mid2 { get; set; }
+
+    public string? F1 { get; set; }
+
+    public string? F2 { get; set; }
+
+    public string? F3 { get; set; }
+
+    public double? F4 { get; set; }
+
+    public string? F5 { get; set; }
+
+    public string? F6 { get; set; }
+
+    public string? F7 { get; set; }
+
+    [Column("lowest MIC found")]
+    public string? LowestMICFound { get; set; }
+
+    public double? F9 { get; set; }
+
+    public double? F10 { get; set; }
+
+    public string? F11 { get; set; }
+
+    public string? F12 { get; set; }
+
+    public string? F13 { get; set; }
+
+    public string? F14 { get; set; }
+
+    public string? F15 { get; set; }
+
+    public string? F16 { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[_Antibacterial_activity](
-	[Mid2] [int] NULL,
-	[F1] [nvarchar](255) NULL,
-	[F2] [nvarchar](255) NULL,
-	[F3] [nvarchar](255) NULL,
-	[F4] [float] NULL,
-	[F5] [nvarchar](255) NULL,
-	[F6] [nvarchar](255) NULL,
-	[F7] [nvarchar](255) NULL,
-	[lowest MIC found] [nvarchar](255) NULL,
-	[F9] [float] NULL,
-	[F10] [float] NULL,
-	[F11] [nvarchar](255) NULL,
-	[F12] [nvarchar](255) NULL,
-	[F13] [nvarchar](255) NULL,
-	[F14] [nvarchar](255) NULL,
-	[F15] [nvarchar](255) NULL,
-	[F16] [nvarchar](255) NULL
-)
-*/

@@ -1,21 +1,32 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("Bacteria2Bacteria")]
 class Bacteria2Bacteria
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int TaxonA { get; set; }
 
-/*CREATE TABLE [dbo].[Bacteria2Bacteria](
-	[TaxonA] [int] NOT NULL,
-	[TaxonB] [int] NOT NULL,
-	[Slope] [float] NOT NULL,
-	[Intecept] [float] NOT NULL,
-	[R2] [float] NOT NULL,
-	[Obs] [int] NOT NULL,
-	[Source] [varchar](20) NOT NULL,
- CONSTRAINT [PK_Bacteria2Bacteria] PRIMARY KEY CLUSTERED 
-(
-	[TaxonA] ASC,
-	[TaxonB] ASC,
-	[Source] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int TaxonB { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public string Source { get; set; } = string.Empty;
+
+    [Required]
+    public double Slope { get; set; }
+
+    [Required]
+    public double Intecept { get; set; }  // Preserves the SQL spelling
+
+    [Required]
+    public double R2 { get; set; }
+
+    [Required]
+    public int Obs { get; set; }
+}

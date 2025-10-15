@@ -1,14 +1,16 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-class FlavonoidsModifier2
+namespace Data.Entities.Microbiome;
+
+[Table("FlavonoidsModifier2")]
+public class FlavonoidsModifier2
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public string FId { get; set; } = string.Empty;
 
-/*CREATE TABLE [dbo].[FlavonoidsModifier2](
-	[FId] [nvarchar](5) NOT NULL,
-	[Mid2] [int] NOT NULL,
- CONSTRAINT [PK_FlavonoidsModifier2] PRIMARY KEY CLUSTERED 
-(
-	[FId] ASC,
-	[Mid2] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Mid2 { get; set; }
+}

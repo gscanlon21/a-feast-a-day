@@ -1,14 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("BatchProcess")]
 class BatchProcess
 {
-}
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
+    public int ScopeId { get; set; }
 
-/*CREATE TABLE [dbo].[BatchProcess](
-	[AsOf] [datetime] NOT NULL,
-	[Scope] [nvarchar](max) NOT NULL,
-	[ScopeId] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [PK_BatchProcess] PRIMARY KEY CLUSTERED 
-(
-	[ScopeId] ASC
-)*/
+    [Required]
+    public DateTime AsOf { get; set; }
+
+    [Required]
+    public string Scope { get; set; } = string.Empty;
+}

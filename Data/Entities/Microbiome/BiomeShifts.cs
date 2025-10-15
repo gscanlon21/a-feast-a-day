@@ -1,14 +1,15 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("BiomeShifts")]
 internal class BiomeShifts
 {
-}
+    [Key]
+    [Required]
+    public int Taxon { get; set; }
 
-/*CREATE TYPE [dbo].[BiomeShifts] AS TABLE(
-	[Taxon] [int] NOT NULL,
-	[Shift] [float] NOT NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[Taxon] ASC
-)WITH (IGNORE_DUP_KEY = OFF)
-)*/
+    [Required]
+    public double Shift { get; set; }
+}

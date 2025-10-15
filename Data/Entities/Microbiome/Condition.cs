@@ -5,9 +5,6 @@ using System.Diagnostics;
 namespace Data.Entities.Microbiome;
 
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("condition")]
 [DebuggerDisplay("{Name,nq}")]
 public class Condition

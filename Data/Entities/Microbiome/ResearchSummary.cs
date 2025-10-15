@@ -4,9 +4,6 @@ using System.Diagnostics;
 
 namespace Data.Entities.Microbiome;
 
-/// <summary>
-/// Recipes listed on the website.
-/// </summary>
 [Table("research_summary")]
 [DebuggerDisplay("{Name,nq}")]
 public class ResearchSummary

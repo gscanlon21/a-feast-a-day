@@ -1,14 +1,24 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-class EUProbiotics
+namespace Data.Entities.Microbiome;
+
+// [EU].[Probiotics]
+[Table("Probiotics", Schema = "EU")]
+public class EU_Probiotic
 {
-}
+    [Required]
+    public string TaxName { get; set; } = string.Empty;
 
-/*CREATE TABLE [EU].[Probiotics](
-	[tax_name] [nvarchar](200) NOT NULL,
-	[Strain] [nvarchar](100) NULL,
-	[Veterinary] [bit] NOT NULL,
-	[ProSpeciesId] [int] NULL,
-	[Research] [bit] NOT NULL,
-	[Mid2] [int] NULL
-) ON [PRIMARY]*/
+    public string? Strain { get; set; }
+
+    [Required]
+    public bool Veterinary { get; set; }
+
+    public int? ProSpeciesId { get; set; }
+
+    [Required]
+    public bool Research { get; set; }
+
+    public int? Mid2 { get; set; }
+}
