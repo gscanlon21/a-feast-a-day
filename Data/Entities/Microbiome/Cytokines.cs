@@ -1,20 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-internal class Cytokines
+namespace Data.Entities.Microbiome;
+
+public class Cytokines
 {
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int CyId { get; set; }
+    public string Cytokine { get; set; } = string.Empty;
+    public string? AltName { get; set; }
+    public string? Description { get; set; }
+    public bool? AcuteInflammation { get; set; }
+    public bool? ChronicInflammation { get; set; }
+    public bool? CellularResponse { get; set; }
+    public bool? Interferons { get; set; }
+    public bool? TransformingGrowthFactor { get; set; }
 }
-
-/*CREATE TABLE [dbo].[Cytokines](
-	[CyId] [int] IDENTITY(1,1) NOT NULL,
-	[Cytokine] [nvarchar](100) NOT NULL,
-	[AltName] [nvarchar](max) NULL,
-	[Description] [nvarchar](max) NULL,
-	[AcuteInflammation] [bit] NULL,
-	[ChronicInflammation] [bit] NULL,
-	[CellularResponse] [bit] NULL,
-	[Interferons] [bit] NULL,
-	[TransformingGrowthFactor] [bit] NULL,
- CONSTRAINT [PK_Cytokines] PRIMARY KEY CLUSTERED 
-(
-	[CyId] ASC
-)*/

@@ -2,10 +2,9 @@
 
 internal class DistinctCondition
 {
+    public int Taxon { get; set; }
+
+    // varchar(1)
+    public string Direction { get; set; } = string.Empty;
 }
 
-
-/*CREATE TABLE [dbo].[DistinctCondition](
-	[Taxon] [int] NOT NULL,
-	[Direction] [varchar](1) NOT NULL
-)*/

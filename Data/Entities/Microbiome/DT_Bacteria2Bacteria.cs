@@ -2,14 +2,11 @@
 
 internal class DT_Bacteria2Bacteria
 {
+    public int TaxonA { get; set; }
+    public int TaxonB { get; set; }
+    public double Slope { get; set; }
+    public double Intecept { get; set; }  // Note: "Intecept" matches the SQL column name
+    public double R2 { get; set; }
+    public int Obs { get; set; }
+    public string? Source { get; set; }
 }
-
-/*CREATE TYPE [dbo].[DT_Bacteria2Bacteria] AS TABLE(
-	[TaxonA] [int] NOT NULL,
-	[TaxonB] [int] NOT NULL,
-	[Slope] [float] NOT NULL,
-	[Intecept] [float] NOT NULL,
-	[R2] [float] NOT NULL,
-	[Obs] [int] NOT NULL,
-	[Source] [varchar](20) NULL
-)*/
