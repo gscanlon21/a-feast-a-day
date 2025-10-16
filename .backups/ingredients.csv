@@ -1002,7 +1002,7 @@
 1261	\N	Fresh Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	28	3	2025-06-22	4	48	3
 1262	\N	Full-Fat Coconut Milk	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
 1263	\N	Broccoli Heads	Includes the stalk - https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
-1264	\N	Leeks	\N	\N	f	0	246	246	2024-08-22	6	246	1
+1264	\N	Leeks	https://www.eatthismuch.com/calories/leeks-2008	\N	f	0	89	89	2025-10-16	0	89	2
 1265	\N	Slices of Prosciutto Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	256	28	28	2024-10-15	4	224	6
 1266	\N	Slices of Fontina Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9	\N	f	256	28	28	2024-10-15	4	224	6
 1267	\N	Ground Pork | Ground Beef | Ground Turkey	https://www.eatthismuch.com/calories/ground-pork-1786	\N	f	0	28	28	2024-12-06	4	224	268435456
@@ -1042,7 +1042,7 @@
 1301	\N	Fresh Ginger	https://www.eatthismuch.com/calories/ginger,196	\N	f	0	5	5	2025-09-18	7	80	3
 1302	\N	Crushed Chili Pepper Flakes	aka: Dried Chili Pepper Flakes - https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	\N	t	0	28	1	2025-07-19	4	16	131072
 1303	\N	Red Lentils | Green Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-24	6	192	2048
-1304	\N	White Wine | Vegetable Broth	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2024-08-22	9	235.2	524288
+1304	\N	White Wine | Vegetable Broth	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2025-10-16	9	235.2	524288
 1305	\N	Raw Green Lentils	https://www.eatthismuch.com/calories/lentils,3634	\N	f	0	192	192	2025-05-24	6	192	2048
 1306	\N	Sambal Oelek	aka: Chili Paste - https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	131072
 1307	\N	Canned Chickpeas	aka: Canned Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
@@ -1108,3 +1108,7 @@
 1368	\N	Canned Baked Beans	https://www.eatthismuch.com/calories/baked-beans-3506	\N	f	0	28	254	2025-10-11	4	254	512
 1369	\N	Fresh Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
 1370	\N	Large Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
+1371	\N	Sesame Seeds	aka Hulled and Unhulled Sesame Seeds. https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-23	4	144	131072
+1372	\N	Shaved Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
+1373	\N	Slices of Gruyère Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	256	28	28	2025-03-03	0	224	6
+1374	\N	Cooked Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
