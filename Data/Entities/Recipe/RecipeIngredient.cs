@@ -25,10 +25,10 @@ public class RecipeIngredient
     public int RecipeId { get; init; }
 
     [Display(Name = "Ingredient")]
-    public int? IngredientId { get; init; }
+    public int? IngredientId { get; set; }
 
     [Display(Name = "or Recipe")]
-    public int? IngredientRecipeId { get; init; }
+    public int? IngredientRecipeId { get; set; }
 
     [Display(Name = "Quantity")]
     [Required, DefaultValue(RecipeConsts.QuantityNumeratorDefault)]

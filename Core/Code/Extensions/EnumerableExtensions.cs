@@ -3,6 +3,15 @@
 public static class EnumerableExtensions
 {
     /// <summary>
+    /// Returns the only element in the sequence if it exists, otherwise returns default.
+    /// Does not throw an exception if there is more than one matching element in the set.
+    /// </summary>
+    public static TSource? OnlyOrDefault<TSource>(this IEnumerable<TSource> source)
+    {
+        return source.Count() == 1 ? source.Single() : default;
+    }
+
+    /// <summary>
     /// Returns null if the source list does not contain any items.
     /// </summary>
     public static IEnumerable<TSource>? NullIfEmpty<TSource>(this IEnumerable<TSource>? source)
@@ -16,6 +25,46 @@ public static class EnumerableExtensions
     public static bool AllIfAny<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
     {
         return source.Any() && source.All(predicate);
+    }
+
+    public static IOrderedEnumerable<T> OrderByFalseToTrue<T>(this IEnumerable<T> list, Func<T, bool> keySelector)
+    {
+        return list.OrderBy(keySelector);
+    }
+
+    public static IOrderedEnumerable<T> OrderByTrueToFalse<T>(this IEnumerable<T> list, Func<T, bool> keySelector)
+    {
+        return list.OrderByDescending(keySelector);
+    }
+
+    public static IOrderedEnumerable<T> ThenByFalseToTrue<T>(this IOrderedEnumerable<T> list, Func<T, bool> keySelector)
+    {
+        return list.ThenBy(keySelector);
+    }
+
+    public static IOrderedEnumerable<T> ThenByTrueToFalse<T>(this IOrderedEnumerable<T> list, Func<T, bool> keySelector)
+    {
+        return list.ThenByDescending(keySelector);
+    }
+
+    public static IOrderedEnumerable<T> OrderByFalseToTrue<T>(this IEnumerable<T> list, Func<T, bool?> keySelector, NullOrder nullOrder)
+    {
+        return list.OrderBy(keySelector, nullOrder);
+    }
+
+    public static IOrderedEnumerable<T> OrderByTrueToFalse<T>(this IEnumerable<T> list, Func<T, bool?> keySelector, NullOrder nullOrder)
+    {
+        return list.OrderByDescending(keySelector, nullOrder);
+    }
+
+    public static IOrderedEnumerable<T> ThenByFalseToTrue<T>(this IOrderedEnumerable<T> list, Func<T, bool?> keySelector, NullOrder nullOrder)
+    {
+        return list.ThenBy(keySelector, nullOrder);
+    }
+
+    public static IOrderedEnumerable<T> ThenByTrueToFalse<T>(this IOrderedEnumerable<T> list, Func<T, bool?> keySelector, NullOrder nullOrder)
+    {
+        return list.ThenByDescending(keySelector, nullOrder);
     }
 
     public static IOrderedEnumerable<T> OrderBy<T, TKey>(this IEnumerable<T> list, Func<T, TKey?> keySelector, NullOrder nullOrder)

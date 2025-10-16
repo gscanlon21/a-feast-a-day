@@ -171,7 +171,30 @@ public class RecipeController : ViewController
             existingRecipe.AdjustableServings = recipe.AdjustableServings;
             existingRecipe.KeepIngredientOrder = recipe.KeepIngredientOrder;
             existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
-            existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
+
+            List<RecipeIngredient> recipeIngredients = [];
+            // Swap recipe ingredients, so that a user's ignore/swap preferences persist.
+            foreach (var recipeIngredient in recipe.RecipeIngredients.Where(i => !i.Hide)
+                .GroupJoin(existingRecipe.RecipeIngredients, o => o.Id, i => i.Id, (o, i) => (New: o, Old: i.SingleOrDefault()))
+                .GroupJoin(recipe.RecipeIngredients.Where(i => !i.Hide), // Try to match ingredients that moved around by ids.
+                    o => o.New.IngredientId ?? o.New.IngredientRecipeId, i => i.IngredientId ?? i.IngredientRecipeId,
+                    (o, i) => (o.Old, o.New, Swap: i.SingleOrDefault(x => x.Id == o.Old?.Id) ?? i.OnlyOrDefault())))
+            {
+                recipeIngredients.Add(new RecipeIngredient()
+                {
+                    Order = recipeIngredient.New.Order,
+                    Measure = recipeIngredient.New.Measure,
+                    Optional = recipeIngredient.New.Optional,
+                    IngredientId = recipeIngredient.New.IngredientId,
+                    IngredientRecipeId = recipeIngredient.New.IngredientRecipeId,
+                    QuantityDenominator = recipeIngredient.New.QuantityDenominator,
+                    QuantityNumerator = recipeIngredient.New.QuantityNumerator,
+                    // Give it a new id if we can't match it in the old list.
+                    Id = recipeIngredient.Swap?.Id ?? 0,
+                });
+            }
+
+            existingRecipe.RecipeIngredients = recipeIngredients;
 
             await _context.SaveChangesAsync();
             TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
