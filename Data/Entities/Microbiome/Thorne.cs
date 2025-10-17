@@ -16,4 +16,4 @@ internal class Thorne
 	[STRAIN] [nvarchar](255) NULL,
 	[ThorneId] [int] NOT NULL,
 	[Taxon] [int] NULL
-) ON [PRIMARY]*/
+) */

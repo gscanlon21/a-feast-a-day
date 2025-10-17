@@ -11,18 +11,20 @@ public class SpecialConditionsTax
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SymptomId { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Taxon { get; set; }
+
+    public double? Q4High { get; set; }
+
+    public int? Obs { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*CREATE TABLE [dbo].[SpecialConditionsTax](
-	[SymptomId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Q4High] [float] NULL,
-	[Obs] [int] NULL,
- CONSTRAINT [PK_SpecialConditionsTax] PRIMARY KEY CLUSTERED 
-(
-	[SymptomId] ASC,
-	[Taxon] ASC
-)*/

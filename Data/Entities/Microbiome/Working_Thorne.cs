@@ -23,4 +23,4 @@ class Working_Thorne
 	[P80] [float] NULL,
 	[Percentile] [float] NULL,
 	[Taxon] [int] NULL
-) ON [PRIMARY]*/
+) */

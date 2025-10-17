@@ -10,4 +10,4 @@ class Test_Eu
 	[percentile] [float] NULL,
 	[q15] [float] NULL,
 	[q85] [float] NULL
-) ON [PRIMARY]*/
+) */

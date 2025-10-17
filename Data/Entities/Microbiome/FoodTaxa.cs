@@ -11,15 +11,15 @@ public class FoodTaxa
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    [Required]
+    public int FoodId { get; set; }
+
+    public double? Amt { get; set; }
+
+    public int? Taxon { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[FoodTaxa](
-	[FoodId] [int] NOT NULL,
-	[Amt] [float] NULL,
-	[Taxon] [int] NULL
-)
-*/

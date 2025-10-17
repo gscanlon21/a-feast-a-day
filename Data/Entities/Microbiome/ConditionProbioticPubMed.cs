@@ -1,16 +1,19 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class ConditionProbioticPubMed
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int CondId { get; set; }
 
-/*CREATE TABLE [dbo].[ConditionProbioticPubMed](
-	[CondId] [int] NOT NULL,
-	[Psid] [int] NOT NULL,
-	[Cid] [int] NOT NULL,
- CONSTRAINT [PK_ConditionProbioticPubMed] PRIMARY KEY CLUSTERED 
-(
-	[CondId] ASC,
-	[Psid] ASC,
-	[Cid] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Psid { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Cid { get; set; }
+}

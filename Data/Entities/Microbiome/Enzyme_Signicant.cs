@@ -12,4 +12,4 @@ class Enzyme_Signicant
 	[Above85] [float] NULL,
 	[direction] [nvarchar](9) NOT NULL,
 	[Chi2] [float] NULL
-) ON [PRIMARY]*/
+) */

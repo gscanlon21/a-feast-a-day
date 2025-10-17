@@ -13,6 +13,6 @@ CREATE TABLE [dbo].[Food_Edges](
 	[sampleId] [float] NULL,
 	[taxonId] [float] NULL,
 	[weight] [float] NULL
-) ON [PRIMARY]
+) 
 GO
 * */

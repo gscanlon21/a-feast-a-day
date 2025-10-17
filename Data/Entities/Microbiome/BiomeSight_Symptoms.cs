@@ -12,6 +12,6 @@ internal class BiomeSight_Symptoms
 	[SymptomCategory] [varchar](100) NULL,
 	[SymptomSubCategory] [varchar](100) NULL,
 	[SymptomId] [int] NULL
-) ON [PRIMARY]
+) 
 GO
 */

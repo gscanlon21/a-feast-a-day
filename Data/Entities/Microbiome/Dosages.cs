@@ -1,21 +1,30 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-internal class Dosages
+namespace Data.Entities.Microbiome;
+
+[Table("Dosages")]
+public class Dosages
 {
-}
+    [Key, Column(Order = 0)]
+    public int DosageId { get; set; }
 
-/*CREATE TABLE [dbo].[Dosages](
-	[DosageId] [int] IDENTITY(1,1) NOT NULL,
-	[Mid2] [int] NOT NULL,
-	[Cid] [int] NULL,
-	[TrialName] [varchar](max) NULL,
-	[TrialUrl] [varchar](255) NULL,
-	[Units] [varchar](100) NOT NULL,
-	[Dosage] [float] NOT NULL,
-	[Effective] [bit] NULL,
-	[Toxic] [bit] NULL,
- CONSTRAINT [PK_Dosages] PRIMARY KEY CLUSTERED 
-(
-	[DosageId] ASC,
-	[Mid2] ASC
-)*/
+    [Key, Column(Order = 1)]
+    public int Mid2 { get; set; }
+
+    public int? Cid { get; set; }
+
+    public string? TrialName { get; set; }
+
+    public string? TrialUrl { get; set; }
+
+    [Required]
+    public string Units { get; set; } = string.Empty;
+
+    [Required]
+    public double Dosage { get; set; }
+
+    public bool? Effective { get; set; }
+
+    public bool? Toxic { get; set; }
+}

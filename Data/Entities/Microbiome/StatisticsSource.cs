@@ -1,10 +1,10 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("statistics_source")]
 class StatisticsSource
 {
+    public string Source { get; set; } = string.Empty;
+    public double? Total { get; set; }
 }
-
-/*CREATE TABLE [statistics].[Source](
-	[source] [varchar](16) NOT NULL,
-	[Total] [float] NULL
-) ON [PRIMARY]*/

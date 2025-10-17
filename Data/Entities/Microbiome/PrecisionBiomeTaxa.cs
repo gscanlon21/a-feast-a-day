@@ -41,6 +41,6 @@ CREATE TABLE [dbo].[PrecisionBiomeTaxa](
 	[q80_abundance] [float] NULL,
 	[q90_abundance] [float] NULL,
 	[q100_abundance] [float] NULL
-) ON [PRIMARY]
+) 
 GO
 */

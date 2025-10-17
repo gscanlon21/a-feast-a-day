@@ -1,18 +1,25 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class ConditionModifier2
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public string ConditionCode { get; set; } = string.Empty;
 
-/*CREATE TABLE [dbo].[ConditionModifier2](
-	[ConditionCode] [varchar](3) NOT NULL,
-	[Cid] [int] NOT NULL,
-	[Mid2] [int] NOT NULL,
-	[Impact] [varchar](1) NOT NULL,
-	[Comment] [varchar](max) NOT NULL,
- CONSTRAINT [PK_ConditionModifier2] PRIMARY KEY CLUSTERED 
-(
-	[ConditionCode] ASC,
-	[Cid] ASC,
-	[Mid2] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Cid { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Mid2 { get; set; }
+
+    [Required]
+    public string Impact { get; set; } = string.Empty;
+
+    [Required]
+    public string Comment { get; set; } = string.Empty;
+}

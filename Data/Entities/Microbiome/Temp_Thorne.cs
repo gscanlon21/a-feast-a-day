@@ -10,4 +10,4 @@ class Temp_Thorne
 	[Percentile] [float] NULL,
 	[Per20] [float] NULL,
 	[Per80] [float] NULL
-) ON [PRIMARY]*/
+) */
