@@ -1038,6 +1038,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 789	1363	1
 58	1368	1
 174	658	1
+1376	39	1
+1376	215	1
+1376	1375	1
 690	39	1
 690	681	1
 1008	871	1
@@ -1917,6 +1920,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 209	1369	1
 1369	209	1
 247	1373	1
+1378	125	1
+1378	1377	1
+1378	70	1
 \.
 
 
@@ -10319,6 +10325,65 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15330	1264	1984	\N	\N	3	0.3
 15331	1264	62	\N	\N	3	13
 15332	1264	2047	\N	\N	3	54
+15333	92	256	\N	\N	3	33
+15334	92	9007199254740992	\N	\N	3	1
+15335	92	18014398509481984	\N	\N	3	1
+15336	92	36028797018963968	\N	\N	3	2
+15337	92	72057594037927936	\N	\N	3	1
+15338	92	144115188075855872	\N	\N	3	0.5
+15339	92	288230376151711744	\N	\N	3	1
+15340	92	576460752303423488	\N	\N	3	1
+15341	92	1152921504606846976	\N	\N	3	0.4
+15342	92	2305843009213693952	\N	\N	3	1
+15343	92	-9223372036854775808	\N	\N	3	1
+15344	92	4611686018427387904	\N	\N	3	3
+15345	92	274877906944	\N	\N	1	3
+15346	92	17179869184	\N	\N	2	400
+15347	92	4398046511104	\N	\N	2	2
+15348	92	70368744177664	\N	\N	2	812
+15349	92	8796093022208	\N	\N	1	27
+15350	92	17592186044416	\N	\N	2	8
+15351	92	262144	\N	\N	2	1
+15352	92	524288	\N	\N	2	0.1
+15353	92	1048576	\N	\N	2	1
+15354	92	2097152	\N	\N	2	1
+15355	92	4194304	\N	\N	2	1
+15356	92	16777216	\N	\N	1	34
+15357	92	67108864	\N	\N	2	1
+15358	92	536870912	\N	\N	2	1
+15359	92	1536	\N	\N	3	11
+15360	92	3221225472	\N	\N	1	47
+15361	92	1792	\N	\N	3	44
+15362	807	256	\N	\N	3	45
+15363	807	2251799813685248	\N	\N	2	75
+15364	807	9007199254740992	\N	\N	3	1
+15365	807	18014398509481984	\N	\N	3	1
+15366	807	36028797018963968	\N	\N	3	2
+15367	807	72057594037927936	\N	\N	3	1
+15368	807	144115188075855872	\N	\N	3	0.2
+15369	807	288230376151711744	\N	\N	3	2
+15370	807	576460752303423488	\N	\N	3	1
+15371	807	1152921504606846976	\N	\N	3	0.3
+15372	807	2305843009213693952	\N	\N	3	1
+15373	807	-9223372036854775808	\N	\N	3	2
+15374	807	4611686018427387904	\N	\N	3	4
+15375	807	1024	\N	\N	3	18
+15376	807	274877906944	\N	\N	1	1
+15377	807	17179869184	\N	\N	2	386
+15378	807	4398046511104	\N	\N	2	3
+15379	807	70368744177664	\N	\N	2	688
+15380	807	8796093022208	\N	\N	1	6
+15381	807	17592186044416	\N	\N	2	4
+15382	807	65536	\N	\N	1	1
+15383	807	262144	\N	\N	2	0.3
+15384	807	524288	\N	\N	2	2
+15385	807	1048576	\N	\N	2	5
+15386	807	2097152	\N	\N	2	1
+15387	807	4194304	\N	\N	2	0.2
+15388	807	16777216	\N	\N	1	63
+15389	807	536870912	\N	\N	2	37
+15390	807	1536	\N	\N	3	18
+15391	807	1792	\N	\N	3	63
 \.
 
 
@@ -11496,7 +11561,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6870	7	\N	\N	640	1	1	\N	1294	f	\N	7
 4364	0	\N	\N	249	1	1	, juiced	12	f	\N	2
 6871	8	\N	\N	640	2	1	\N	234	f	\N	8
-4482	4	\N	\N	240	2	5	\N	638	f	\N	0
 4438	0	\N	\N	238	1	1	\N	902	f	\N	1
 4439	7	\N	\N	238	1	1	\N	470	f	\N	2
 4440	8	\N	\N	238	2	1	\N	307	f	\N	3
@@ -11512,9 +11576,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5335	4	\N	\N	323	2	1	\N	2	f	\N	2
 5336	0	\N	\N	323	1	1	\N	187	f	\N	3
 5337	4	\N	\N	323	1	1	\N	95	t	\N	4
-4483	6	\N	\N	240	3	1	, sa. Nutiva's coconut manna.	680	t	\N	1
-4484	8	\N	\N	240	1	1	\N	682	f	\N	2
-4485	8	\N	\N	240	2	1	\N	681	t	\N	3
 6872	0	\N	\N	640	1	4	, finely sliced, for garnish	302	t	\N	9
 4449	8	\N	\N	245	4	1	\N	74	f	\N	4
 4450	6	\N	\N	245	2	1	\N	574	f	\N	5
@@ -11529,6 +11590,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4205	6	\N	\N	244	3	1	\N	77	f	\N	5
 4522	8	\N	\N	131	2	1	\N	71	f	\N	2
 4523	8	\N	\N	131	1	1	\N	323	f	\N	3
+4482	4	\N	\N	240	2	5	\N	638	f	\N	0
+4483	6	\N	\N	240	3	1	\N	680	f	\N	1
+4484	8	\N	\N	240	1	1	\N	682	f	\N	2
+4485	8	\N	\N	240	2	1	\N	681	t	\N	3
 4067	5	\N	\N	35	1	1	, dried	131	f	\N	0
 4399	6	\N	\N	255	2	1	\N	913	f	\N	0
 4400	6	\N	\N	255	2	1	\N	123	f	\N	1
@@ -11685,10 +11750,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4582	6	\N	\N	175	4	1	\N	190	f	\N	1
 4583	4	\N	\N	175	1	4	\N	641	f	\N	2
 4584	6	\N	\N	175	2	1	\N	640	t	\N	3
-4642	6	\N	\N	247	1	1	\N	972	f	\N	0
-4643	6	\N	\N	247	1	1	\N	296	f	\N	1
-4644	6	\N	\N	247	1	1	\N	158	f	\N	2
-4645	6	\N	\N	247	2	1	\N	238	t	\N	3
 5009	6	\N	\N	256	1	1	, 1 large or 2 small bunches	13	f	\N	0
 5010	6	\N	\N	256	4	1	\N	786	t	\N	1
 5011	0	\N	\N	256	1	1	, peeled	5	f	\N	2
@@ -11725,8 +11786,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 4671	8	\N	\N	266	1	1	, chopped	13	t	\N	12
 5022	0	\N	\N	167	1	1	, peeled and halved	11	f	\N	0
 5023	6	\N	\N	167	4	1	\N	33	f	\N	1
-4646	8	\N	\N	247	1	1	, or your favorite spice, pumpkin spice, cardamom etc	70	f	\N	4
-4648	7	\N	\N	247	2	3	\N	77	f	\N	6
 5024	0	\N	\N	167	1	1	\N	187	f	\N	2
 4702	0	\N	\N	242	1	1	, segmented	346	f	\N	0
 4703	6	\N	\N	242	2	1	, halved	463	f	\N	1
@@ -11778,6 +11837,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 5019	0	\N	\N	236	1	1	, zested	4	f	\N	3
 5020	0	\N	\N	236	1	1	, juiced	4	f	\N	4
 5021	8	\N	\N	236	4	1	\N	214	f	\N	5
+4642	6	\N	\N	247	1	1	\N	89	f	\N	0
+4643	6	\N	\N	247	1	1	\N	92	t	\N	1
+4644	6	\N	\N	247	1	1	\N	807	t	\N	2
+4645	6	\N	\N	247	1	1	\N	296	t	\N	3
+4646	6	\N	\N	247	1	1	\N	158	f	\N	4
+4648	8	\N	\N	247	1	1	\N	1378	f	\N	6
 4737	0	\N	\N	250	1	1	, diced into ¼ inch cubes	250	f	\N	2
 4738	6	\N	\N	250	1	2	, chopped	368	f	\N	3
 4739	7	\N	\N	250	1	2	\N	176	f	\N	4
@@ -13900,7 +13965,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 6145	8	\N	\N	544	1	1	, to desired thickness	123	f	\N	5
 6146	8	\N	\N	544	4	1	, to taste	692	t	\N	6
 7633	7	\N	\N	34	1	2	\N	357	t	\N	4
-4647	7	\N	\N	247	1	1	, honey or brown rice syrup	215	f	\N	5
 7634	6	\N	\N	576	4	1	\N	\N	t	419	9
 7635	8	\N	\N	629	1	1	\N	35	f	\N	1
 7602	6	\N	\N	836	1	1	\N	\N	f	532	0
@@ -13964,12 +14028,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "Notes", "DisabledReason", "Reci
 7630	6	\N	\N	841	2	1	\N	79	f	\N	7
 7631	6	\N	\N	841	4	1	(AGAVE SYRUP	845	f	\N	8
 7632	7	\N	\N	841	1	2	\N	40	f	\N	9
+4647	6	\N	\N	247	2	1	\N	1371	t	\N	5
+7646	7	\N	\N	247	1	1	\N	1376	f	\N	7
 7639	7	\N	\N	842	1	1	\N	29	f	\N	0
 7640	6	\N	\N	842	4	3	\N	\N	f	843	1
 7641	4	\N	\N	842	4	9	, shaved	1374	f	\N	2
 7642	0	\N	\N	842	1	2	\N	1373	f	\N	3
 7643	7	\N	\N	842	1	1	, chopped, for garnish	2	t	\N	4
 7644	7	\N	\N	842	1	1	, chopped, for garnish	1261	t	\N	5
+7647	7	\N	\N	247	2	3	\N	77	f	\N	8
 \.
 
 
@@ -14001,7 +14068,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 1402	Bring the water up to a rolling boil using high heat. Then remove from heat.	\N	122	1	0
 1321	To serve, cut in half.	\N	107	6	0
 586	Bake until cheese is melted, 4-5 minutes longer.	\N	27	2	0
-2512	Preheat the oven to 325°F.	\N	247	0	2
 1709	Combine chicken broth and taco seasoning mix in a bowl.	\N	25	0	0
 1710	Place chicken in a slow cooker. Pour chicken broth mixture over chicken	\N	25	1	0
 1711	Cook on Low for 6 to 8 hours. Shred chicken.	\N	25	2	0
@@ -14009,9 +14075,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 906	Meanwhile, cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	\N	99	1	0
 907	Drain the asparagus. Reserve the tips. Purée the remainder with the dressing ingredients until smooth.	\N	99	2	0
 908	Drain the pasta, toss with the asparagus sauce and cool slightly. Divide among four pasta plates. Top with the ham, hard-boiled eggs and asparagus tips. Shave Parmesan cheese over the top.	\N	99	3	0
-2513	Combine nuts and seeds on a cookie sheet.	\N	247	1	0
-2514	Add oil, maple syrup, and spice(s). Mix the ingredients.	\N	247	2	0
-2515	Bake for 15–20 minutes until lightly browned. Let it cool before putting in storage container.	\N	247	3	2
+2512	Preheat the oven to 325°F.	\N	247	0	2
 3356	Drain the water and transfer potatoes to a dish.	\N	533	2	0
 216	Eat the sunflower seeds.	\N	54	0	0
 3196	In a small bowl, combine the honey through lemon juice. Season to taste with salt and pepper.	\N	432	0	0
@@ -14026,6 +14090,9 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2520	Bake for 20–25 mins until the oats are creamy and have absorbed most of the liquid.	\N	42	1	2
 3238	To make the vinaigrette: Combine all ingredients in a glass jar and shake until combined.	\N	471	0	0
 3239	Add salt and pepper, to taste.	\N	471	1	0
+2513	Combine nuts and seeds on a cookie sheet.	\N	247	1	0
+2514	Add oil, maple syrup, and spice(s). Mix the ingredients.	\N	247	2	0
+2515	Bake for 15–20 minutes until lightly browned.	\N	247	3	2
 1403	Cover and let simmer for 8 minutes.	\N	122	2	0
 1404	Rinse eggs under cold water until they are chilled. Serve.	\N	122	3	0
 2525	Add cauliflower rice and chickpeas to the curry and cook for 5 minutes. Stir in the lime juice and season with more salt, if needed. Serve garnished with chopped cilantro.	\N	266	4	0
@@ -14720,6 +14787,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2068	Heat about 3.5cm/1½ oil in a clean wok. When hot, shallow-fry the chicken for 3-4 minutes until crisp and golden.	\N	196	4	0
 2069	To serve, divide the noodle mixture between warmed plates or bowls and top each serving with the chicken.	\N	196	5	0
 3507	Add all ingredients into a salad bowl, toss, and enjoy.	\N	581	0	0
+2436	First soften the coconut over a double boiler*, then add the peppermint and stevia (if using) and stir well to combine. Break the chocolate into 1” pieces and add to the mixture, still over the double boiler. Stir briefly to combine then leave to soften without stirring.	\N	240	0	0
 3261	Place the quinoa into a bowl, fluff with a fork, and let cool.	\N	479	0	0
 2824	Dip the vegetables in the hummus. Enjoy!	\N	252	0	0
 2484	Break the chocolate into small pieces and place in a heatproof bowl. Add the butter and melt in the microwave on high for 1-2 minutes. Stir to mix and set aside. (Alternatively, place the chocolate pieces and butter in a bowl over a pan of gently simmering water and leave until melted, stirring frequently.)	\N	175	0	0
@@ -14749,7 +14817,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3331	Preheat the oven according to package directions. Bake the pizza according to package directions.	\N	526	0	2
 3068	Remove from the oven and let the chickpeas cool on the baking sheet. They will continue to crisp as they cool. Enjoy immediately as a snack, salad topper, or side dish.	\N	392	4	0
 1557	Sprinkle the garlic, vinegar, cumin and cayenne or paprika over the salad. Drizzle with olive oil and sprinkle over coriander and olives.	\N	153	2	0
-2436	First soften the coconut over a double boiler*, then add the peppermint and stevia (if using) and stir well to combine. Break the chocolate into 1” pieces and add to the mixture, still over the double boiler. Stir briefly to combine then leave to soften without stirring.	\N	240	0	0
 2437	After 5–10 minutes, when the chocolate is completely soft, swirl briefly with a fork to create a pattern.	\N	240	1	0
 2630	Finely slice the chilies (use as much as you dare!). Sprinkle half of them into a 12-inch non-stick frying pan on a medium heat with 1 tablespoon of olive oil. Once they start to sizzle, evenly crack in the eggs, then spoon the black beans and just half the juice from the can in and around the eggs. Season with sea salt and black pepper, cover, and cook the eggs to your liking.	\N	265	0	0
 2631	Meanwhile, halve, peel, and pit the avocado, slice into thin wedges, dress with the lime juice, and season to perfection. Arrange the avocado around the pan, scatter over the rest of the chilies, stab the egg yolks, and dish up.	\N	265	1	0
@@ -15598,7 +15665,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3926	In a medium bowl, whisk together the vinegar, soy sauce, honey, ginger, and pepper. Slowly whisk in the sesame oil, a few drops at a time until all of it has been incorporated.	\N	720	0	0
 3939	Warm a medium pot over medium heat. Add the olive oil, onion, carrot, and celery and cook the vegetables for 5 to 6 minutes, until the onions are translucent, and the carrots are soft. Make sure to give them a shake or stir every minute or so.	\N	725	0	0
 3920	Add the beans and water and bring to a boil. Reduce the heat to low, cover, and simmer the rice for 17 minutes. 	\N	717	1	0
-2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	\N	240	2	0
 3940	Add the wine and cook for another 2 minutes.	\N	725	1	0
 3941	Add the lentils and water to the pot, bring to a boil, then reduce to a simmer and cook for 30 minutes, or until the lentils are tender.	\N	725	2	0
 982	When the time's up, cook the pasta in a pan of boiling salted water according to the package instructions, then drain. 	\N	108	2	0
@@ -15623,6 +15689,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3911	Pour in the sauce and cook for 2 more minutes, or until thick. Taste and season with salt and pepper.	\N	714	2	4
 3931	In a blender, combine the basil, olive oil, pine nuts, and Parmesan. Pulse the mixture until it's smooth and creamy. Stir the salt into the pesto.	\N	722	1	128
 3934	Add the garlic and cook for 1 minute. Add the tomatoes and sugar and cook the sauce for 15 minutes to thicken and meld the flavors.	\N	723	2	0
+2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	\N	240	2	0
 983	Meanwhile, strip all the chicken meat from the bones and shred apart with forks, returning it to the sauce as you go and discarding any skin and bones.	\N	108	3	0
 3884	Carefully drain off the bacon fat, leaving the bacon in the pan. Add the cream-style corn and milk to the pot and heat the chowder over medium heat for about 10 minutes, or until it's hot. Do not boil! Add the cooked potatoes to the chowder and let them cook for 2 minutes to absorb some of the flavor. Season the chowder with salt and pepper and serve.	\N	704	2	4
 1871	Add red chili pepper flakes, a little pit of salt and pepper, tomato sauce, crushed tomatoes, and chicken broth to crock pot then cover and cook on low for 5-6 hours or until sausages are very tender. Serve over pasta or inside rolls with provolone cheese on top.	\N	180	3	0
@@ -15829,6 +15896,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4187	Separate the edges of the omelet from the pan with the spatula and spread ham evenly over the top half of the omelet (from 9 o'clock position to 3 o'clock position) to ensure ham in every bite.	\N	842	2	0
 4188	Add a slice of Gruyère cheese. Fold in half and top with the other slice of Gruyère cheese.	\N	842	3	0
 4189	Transfer to a plate and top with fresh herbs.	\N	842	4	0
+4192	Let it cool before putting in storage container.	\N	247	4	0
 \.
 
 
@@ -15874,7 +15942,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15332, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15391, true);
 
 
 --
