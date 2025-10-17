@@ -185,6 +185,7 @@ public class RecipeController : ViewController
                     Order = recipeIngredient.New.Order,
                     Measure = recipeIngredient.New.Measure,
                     Optional = recipeIngredient.New.Optional,
+                    Attributes = recipeIngredient.New.Attributes,
                     IngredientId = recipeIngredient.New.IngredientId,
                     IngredientRecipeId = recipeIngredient.New.IngredientRecipeId,
                     QuantityDenominator = recipeIngredient.New.QuantityDenominator,

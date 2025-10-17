@@ -54,11 +54,6 @@ public class RecipeIngredient
     /// </summary>
     public string? Attributes { get; init; }
 
-    /// <summary>
-    /// Notes about the recipe ingredient (externally shown).
-    /// </summary>
-    public string? Notes { get; init; } = null;
-
     public string? DisabledReason { get; init; } = null;
 
     /// <summary>
