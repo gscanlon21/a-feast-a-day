@@ -180,16 +180,8 @@ public class RecipeController : ViewController
                     o => o.New.IngredientId ?? o.New.IngredientRecipeId, i => i.IngredientId ?? i.IngredientRecipeId,
                     (o, i) => (o.Old, o.New, Swap: i.SingleOrDefault(x => x.Id == o.Old?.Id) ?? i.OnlyOrDefault())))
             {
-                recipeIngredients.Add(new RecipeIngredient()
+                recipeIngredients.Add(new RecipeIngredient(existingRecipe, recipeIngredient.New)
                 {
-                    Order = recipeIngredient.New.Order,
-                    Measure = recipeIngredient.New.Measure,
-                    Optional = recipeIngredient.New.Optional,
-                    Attributes = recipeIngredient.New.Attributes,
-                    IngredientId = recipeIngredient.New.IngredientId,
-                    IngredientRecipeId = recipeIngredient.New.IngredientRecipeId,
-                    QuantityDenominator = recipeIngredient.New.QuantityDenominator,
-                    QuantityNumerator = recipeIngredient.New.QuantityNumerator,
                     // Give it a new id if we can't match it in the old list.
                     Id = recipeIngredient.Swap?.Id ?? 0,
                 });

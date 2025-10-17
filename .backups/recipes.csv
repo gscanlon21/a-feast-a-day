@@ -392,7 +392,7 @@
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 574	Turkish Salad	\N	\N	\N	10	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 575	Turkey Taco Salad	\N	\N	\N	10	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	thai-chicken-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 579	Fermented Cabbage	\N	Takes too long.	\N	0	0	60	2	t	\N	6	\N	t	f
@@ -563,3 +563,9 @@
 841	First Watch Granola	To add another layer of flavor, feel free to add about 1 to 2 cups of your favorite dried cranberries or dried cherries after the granola has cooled completely.	\N	\N	0	0	0	8	t	\N	6	From the First Watch cookbook. 	t	f
 842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 843	Whipped Eggs	\N	\N	\N	0	0	5	1	t	\N	0	From the First Watch cookbook. 	t	f
+844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
+845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
+846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
+847	Avocado Mash	\N	\N	\N	0	0	0	1	t	\N	6	From the First Watch cookbook. 	t	f
+848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	\N	6	From the First Watch cookbook. 	t	f
+849	Avocado Toast	\N	\N	\N	4	0	0	1	t	\N	0	From the First Watch cookbook. 	f	f

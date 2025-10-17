@@ -59,7 +59,7 @@ public class UpsertRecipeViewComponent : ViewComponent
         upsertRecipe ??= recipe?.AsType<UpsertRecipeModel>() ?? new UpsertRecipeModel();
         while (upsertRecipe.RecipeIngredients.Count < RecipeConsts.MaxIngredients)
         {
-            upsertRecipe.RecipeIngredients.Add(new RecipeIngredient
+            upsertRecipe.RecipeIngredients.Add(new RecipeIngredient()
             {
                 Hide = upsertRecipe.RecipeIngredients.Count > 0
             });
@@ -67,7 +67,7 @@ public class UpsertRecipeViewComponent : ViewComponent
 
         while (upsertRecipe.Instructions.Count < RecipeConsts.MaxInstructions)
         {
-            upsertRecipe.Instructions.Add(new RecipeInstruction
+            upsertRecipe.Instructions.Add(new RecipeInstruction()
             {
                 Hide = upsertRecipe.Instructions.Count > 0
             });

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20250821034511_SquashMigrations")]
+    [Migration("20251017160714_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.8")
+                .HasAnnotation("ProductVersion", "9.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -463,9 +463,6 @@ namespace Data.Migrations
 
                     b.Property<int>("Measure")
                         .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
 
                     b.Property<bool>("Optional")
                         .HasColumnType("boolean");

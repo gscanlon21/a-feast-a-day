@@ -16,6 +16,27 @@ namespace Data.Entities.Recipe;
 [DebuggerDisplay("Id = {Id}, {Recipe}: {Ingredient}")]
 public class RecipeIngredient
 {
+    /// <summary>
+    /// Public parameterless constructor required for model binding.
+    /// </summary>
+    public RecipeIngredient() { }
+
+    /// <summary>
+    /// Creates a clone of the recipe ingredient with a new id.
+    /// </summary>
+    public RecipeIngredient(Recipe recipe, RecipeIngredient recipeIngredient)
+    {
+        RecipeId = recipe.Id;
+        Order = recipeIngredient.Order;
+        Measure = recipeIngredient.Measure;
+        Optional = recipeIngredient.Optional;
+        Attributes = recipeIngredient.Attributes;
+        IngredientId = recipeIngredient.IngredientId;
+        IngredientRecipeId = recipeIngredient.IngredientRecipeId;
+        QuantityDenominator = recipeIngredient.QuantityDenominator;
+        QuantityNumerator = recipeIngredient.QuantityNumerator;
+    }
+
     // Not private so json can bind to it.
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
