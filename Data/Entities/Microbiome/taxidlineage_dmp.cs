@@ -1,5 +1,8 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("ncbi_taxidlineage_dmp")]
 class taxidlineage_dmp
 {
 }

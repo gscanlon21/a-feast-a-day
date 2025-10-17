@@ -1,23 +1,31 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("statistics_condition")]
 class StatisticsCondition
 {
+    [Key, Column(Order = 0)]
+    public string Source { get; set; } = string.Empty;
+
+    [Key, Column(Order = 1)]
+    public string ConditionCode { get; set; } = string.Empty;
+
+    public double? Mean { get; set; }
+
+    public double? SD { get; set; }
+
+    public double? BoxLow { get; set; }
+
+    public double? BoxHigh { get; set; }
+
+    public double? KMLow { get; set; }
+
+    public double? KMHigh { get; set; }
+
+    public double? Count { get; set; }
+
+    public double? Median { get; set; }
 }
 
-/*CREATE TABLE [statistics].[Condition](
-	[source] [varchar](16) NOT NULL,
-	[ConditionCode] [varchar](16) NOT NULL,
-	[Mean] [float] NULL,
-	[SD] [float] NULL,
-	[BoxLow] [float] NULL,
-	[BoxHigh] [float] NULL,
-	[KMLow] [float] NULL,
-	[KMHigh] [float] NULL,
-	[Count] [float] NULL,
-	[Median] [float] NULL,
- CONSTRAINT [PK_Condition_1] PRIMARY KEY CLUSTERED 
-(
-	[source] ASC,
-	[ConditionCode] ASC
-)
-) */

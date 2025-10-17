@@ -15,7 +15,10 @@ public class Salicylate
     [Display(Name = "Food")]
     public string Food { get; set; } = null!;
 
+    // [float] NULL,
     public float? FreeSa { get; set; }
+
+    // [numeric](6, 2) NULL
     public decimal? BoundSa { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);
