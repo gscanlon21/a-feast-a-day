@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20251017160714_SquashMigrations")]
+    [Migration("20251018162734_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />

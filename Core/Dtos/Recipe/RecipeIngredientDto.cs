@@ -18,11 +18,12 @@ public class RecipeIngredientDto
     /// </summary>
     public string? Attributes { get; init; }
 
-    public bool Optional { get; set; }
-    public Measure Measure { get; set; }
-    public RecipeIngredientType Type { get; set; }
+    public bool Optional { get; init; }
+    public Measure Measure { get; init; }
+    public RecipeIngredientType Type { get; init; }
+    public bool IsUnwantedAndHasAlternatives { get; init; }
 
-    public int QuantityNumerator { get; set; } = 1;
-    public int QuantityDenominator { get; set; } = 1;
+    public int QuantityNumerator { get; init; } = 1;
+    public int QuantityDenominator { get; init; } = 1;
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 }

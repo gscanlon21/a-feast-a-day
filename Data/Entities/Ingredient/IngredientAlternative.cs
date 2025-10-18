@@ -35,6 +35,9 @@ public class IngredientAlternative
     [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.AlternativeIngredients))]
     public virtual Ingredient AlternativeIngredient { get; private init; } = null!;
 
+    /// <summary>
+    /// How to scale the quantity of the alternative.
+    /// </summary>
     [DefaultValue(RecipeConsts.IngredientScaleDefault)]
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
     public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;

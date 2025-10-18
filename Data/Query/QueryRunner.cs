@@ -150,15 +150,12 @@ public class QueryRunner(Section section)
             var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
             foreach (var queryResult in queryResults)
             {
-                foreach (var recipeIngredient in queryResult.RecipeIngredients)
+                foreach (var recipeIngredientRecipe in queryResult.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe))
                 {
-                    if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
-                    {
-                        // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
-                        recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId)
-                            // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
-                            ?? prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId);
-                    }
+                    // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
+                    recipeIngredientRecipe.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredientRecipe.IngredientRecipeId)
+                        // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
+                        ?? prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredientRecipe.RawIngredientRecipeId);
                 }
             }
 
@@ -232,7 +229,15 @@ public class QueryRunner(Section section)
                         {
                             // Substitution and alternative ingredients don't have user ingredient records.
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
+                            if (substitution?.Ingredient.Equals(recipeIngredient.Ingredient) == true)
+                            {
+                                // If this gets set, the user's scale won't be applied.
+                                recipeIngredient.IsUnwantedAndHasAlternatives = true;
+                            }
+
+                            // Always swap in the ingredient so we know to ignore if necessary.
                             recipeIngredient.Ingredient = substitution?.Ingredient;
+                            // If user is swapping an ingredient for the recipe.
                             recipeIngredient.UserRecipeIngredient = null;
 
                             // If we substituted in a system alternative ingredient.
@@ -484,6 +489,8 @@ public class QueryRunner(Section section)
             .Select(ri => new
             {
                 ri.Id,
+                Ingredient = new IngredientUserIngredient() { Scale = 1, Ingredient = ri.Ingredient },
+                HasAlternatives = ri.Ingredient.Alternatives.Any(i => (i.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
                 SubIngredient = ri.SubstituteIngredient == null ? null : new IngredientUserIngredient()
                 {
                     Measure = ri.Measure,
@@ -491,17 +498,17 @@ public class QueryRunner(Section section)
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                 },
-                AltsIngredient = ri.Ingredient.Alternatives.Select(ia => new IngredientUserIngredient()
-                {
-                    Scale = ia.Scale,
-                    Ingredient = ia.AlternativeIngredient,
-                    // Should be no overlap between ingredient allergens and user allergens.
-                }).FirstOrDefault(i => (i.Ingredient.Allergens & UserOptions.Allergens) == 0)
-            }).ToListAsync()).ToDictionary(ri => ri.Id, ri =>
+            })
+            .ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
-                if (ri.SubIngredient == null) { return ri.AltsIngredient; }
-                // Prefer a substitute ingredient over a random alternative ingredient.
-                return (!ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)) ? ri.SubIngredient : ri.AltsIngredient;
+                // If the substitute ingredient that the user is swapping in for doesn't conflict with allergens, use it.
+                if (ri.SubIngredient != null && !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens))
+                {
+                    return ri.SubIngredient;
+                }
+
+                // If there are alternatives availble, return the base ingredient so the user can pick one.
+                return ri.HasAlternatives ? ri.Ingredient : null;
             });
     }
 
