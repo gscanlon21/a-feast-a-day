@@ -1,7 +1,7 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Dtos.Ingredient;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
-using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Data.Models.Newsletter;
 using Data.Query;
@@ -225,7 +225,7 @@ public partial class NewsletterRepo
 
     private async Task<IList<QueryResults>> GetDebugRecipes(User user)
     {
-        return await new QueryBuilder(Section.Debug)
+        var debugRecipes = await new QueryBuilder(Section.Debug)
             .WithUser(user)
             .WithEquipment(Equipment.All)
             .WithRecipes(options =>
@@ -233,27 +233,61 @@ public partial class NewsletterRepo
                 options.IgnorePrerequisites = true;
             })
             .Build()
-            .Query(_serviceScopeFactory, take: 1);
+            .Query(_serviceScopeFactory);
+
+        foreach (var debugRecipe in debugRecipes)
+        {
+            // If a recipe has a recipe ingredient that uses a different measure type than the prep recipe.
+            if (debugRecipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe)
+                .Any(ri => ri.Measure != Measure.None && ri.IngredientRecipe?.Recipe.Measure == Measure.None))
+            {
+                UserLogs.Log(user, $"Recipe:{debugRecipe.Recipe.Id} \"{debugRecipe.Recipe.Name}\" has an invalid configuration: 1.");
+            }
+
+            // If a recipe has a recipe ingredient that uses a different measure type than the prep recipe.
+            if (debugRecipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe)
+                .Any(ri => ri.Measure == Measure.None && ri.IngredientRecipe?.Recipe.Measure != Measure.None))
+            {
+                UserLogs.Log(user, $"Recipe:{debugRecipe.Recipe.Id} \"{debugRecipe.Recipe.Name}\" has an invalid configuration: 2.");
+            }
+        }
+
+        return debugRecipes.Take(1).ToList();
     }
 
     /// <summary>
     /// Grab x-many ingredients that the user hasn't seen in a long time.
     /// </summary>
-    private async Task<IList<Ingredient>> GetDebugIngredients()
+    private async IAsyncEnumerable<IngredientDto> GetDebugIngredients(User user)
     {
         using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
+        // OrderBy must come after the query or you get cartesian explosion.
         var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
+            .ToArrayAsync();
+
+        foreach (var debugIngredient in debugIngredients)
+        {
+            // If an ingredient has no nutrients.
+            if (!debugIngredient.Nutrients.Any(n => n.Value > 0))
+            {
+                UserLogs.Log(user, $"Ingredient:{debugIngredient.Id} \"{debugIngredient.Name}\" has an invalid configuration: 1.");
+            }
+        }
+
+        Random.Shared.Shuffle(debugIngredients);
+        foreach (var debugIngredient in debugIngredients
             .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
             .ThenBy(i => i.LastUpdated)
-            .ThenBy(_ => EF.Functions.Random())
-            .Take(2).ToListAsync();
+            .Take(2))
+        {
+            debugIngredient.LastUpdated = DateHelpers.Today;
+            yield return debugIngredient.AsType<IngredientDto>()!;
+        }
 
-        debugIngredients.ForEach(di => di.LastUpdated = DateHelpers.Today);
         await scopedCoreContext.SaveChangesAsync();
-        return debugIngredients;
     }
 }

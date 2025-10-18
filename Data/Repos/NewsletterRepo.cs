@@ -135,8 +135,10 @@ public partial class NewsletterRepo
     /// </summary>
     internal async Task<NewsletterDto?> Debug(FeastContext newsletterContext)
     {
-        newsletterContext.User.Verbosity = Verbosity.Debug;
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
+        var debugIngredients = await GetDebugIngredients(newsletterContext.User).ToListAsync();
+
+        // Query for ingredients before saving the newsletter, so debug logs can be saved to it.
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, debugRecipes);
         var userViewModel = new UserNewsletterDto(newsletterContext.User.AsType<UserDto>()!, newsletterContext.Token);
 
@@ -144,11 +146,11 @@ public partial class NewsletterRepo
         return new NewsletterDto
         {
             User = userViewModel,
+            DebugIngredients = debugIngredients,
             Verbosity = newsletterContext.User.Verbosity,
             UserFeast = newsletter.AsType<UserFeastDto>()!,
             ShoppingList = await GetShoppingList(newsletter, debugRecipes),
             Recipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
-            DebugIngredients = (await GetDebugIngredients()).Select(i => i.AsType<IngredientDto>()!).ToList(),
         };
     }
 

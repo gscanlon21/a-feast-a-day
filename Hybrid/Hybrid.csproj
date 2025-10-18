@@ -70,15 +70,15 @@
 
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-      <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.111" />
-      <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.111" />
+      <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.120" />
       <PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.10" />
       <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
       <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.10" />
       <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
       <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
-      <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.111" />
+      <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.120" />
     </ItemGroup>
 
     <ItemGroup>
