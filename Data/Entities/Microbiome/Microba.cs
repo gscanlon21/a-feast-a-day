@@ -11,15 +11,15 @@ public class Microba
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    public int Taxon { get; set; }
+
+    public string? TaxRank { get; set; }
+
+    [Required]
+    public string GtdbName { get; set; } = string.Empty;
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[Microba](
-	[Taxon] [int] NOT NULL,
-	[Tax_Rank] [varchar](20) NULL,
-	[gtdbName] [varchar](50) NOT NULL
-)
-*/

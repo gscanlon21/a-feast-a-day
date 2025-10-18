@@ -11,18 +11,20 @@ public class MicrobaMap
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    public string Phylum { get; set; } = string.Empty;
+
+    public string? Family { get; set; }
+
+    public string? Genus { get; set; }
+
+    public string? Species { get; set; }
+
+    public int? Taxon { get; set; }
+
+    public string? Working { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[MicrobaMap](
-	[Phylum] [varchar](100) NOT NULL,
-	[Family] [varchar](100) NULL,
-	[Genus] [varchar](100) NULL,
-	[Species] [varchar](100) NULL,
-	[Taxon] [int] NULL,
-	[wORKING] [varchar](100) NULL
-)
-*/

@@ -11,21 +11,27 @@ public class MicrobaSamples
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    public int SampleId { get; set; }
+
+    [Required]
+    public string Phylum { get; set; } = string.Empty;
+
+    public string? Family { get; set; }
+
+    public string? Genus { get; set; }
+
+    public string? Species { get; set; }
+
+    public double? Abundance { get; set; }
+
+    public double? RangeLow { get; set; }
+
+    public double? RangeHigh { get; set; }
+
+    public int? Taxon { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[MicrobaSamples](
-	[sampleId] [int] NOT NULL,
-	[Phylum] [varchar](100) NOT NULL,
-	[Family] [varchar](100) NULL,
-	[Genus] [varchar](100) NULL,
-	[Species] [varchar](100) NULL,
-	[Abundance] [float] NULL,
-	[RangeLow] [float] NULL,
-	[RangeHigh] [float] NULL,
-	[Taxon] [int] NULL
-)
-*/

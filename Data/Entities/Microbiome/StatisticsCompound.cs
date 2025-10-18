@@ -1,29 +1,30 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
 [Table("statistics_compound")]
 internal class StatisticsCompound
 {
-}
+    [Key, Column(Order = 0)]
+    public string Source { get; set; } = string.Empty;
 
-/*
- 
-CREATE TABLE [statistics].[Compound](
-	[source] [varchar](16) NOT NULL,
-	[Compound] [int] NOT NULL,
-	[Mean] [float] NULL,
-	[SD] [float] NULL,
-	[BoxLow] [float] NULL,
-	[BoxHigh] [float] NULL,
-	[KMLow] [float] NULL,
-	[KMHigh] [float] NULL,
-	[Count] [float] NULL,
-	[Median] [float] NULL,
- CONSTRAINT [PK_Compound] PRIMARY KEY CLUSTERED 
-(
-	[source] ASC,
-	[Compound] ASC
-)
- 
- */
+    [Key, Column(Order = 1)]
+    public int Compound { get; set; }
+
+    public double? Mean { get; set; }
+
+    public double? SD { get; set; }
+
+    public double? BoxLow { get; set; }
+
+    public double? BoxHigh { get; set; }
+
+    public double? KMLow { get; set; }
+
+    public double? KMHigh { get; set; }
+
+    public double? Count { get; set; }
+
+    public double? Median { get; set; }
+}

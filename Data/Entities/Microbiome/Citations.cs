@@ -1,21 +1,30 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class Citations
 {
-}
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Cid { get; set; }
 
-/*CREATE TABLE [dbo].[Citations](
-	[Cid] [int] IDENTITY(1,1) NOT NULL,
-	[uri] [varchar](255) NOT NULL,
-	[Abstract] [nvarchar](max) NULL,
-	[Citation] [nvarchar](max) NULL,
-	[PMID] [varchar](20) NULL,
-	[PMCID] [varchar](20) NULL,
-	[DOI] [varchar](100) NULL,
-	[DirectUrl] [varchar](255) NULL,
-	[JSON] [varchar](max) NULL,
-	[AuditorId] [int] NULL,
- CONSTRAINT [PK_Citations] PRIMARY KEY CLUSTERED 
-(
-	[Cid] ASC
-)*/
+    [Required]
+    [Column("uri")]
+    public string Uri { get; set; } = string.Empty;
+
+    public string? Abstract { get; set; }
+
+    public string? Citation { get; set; }
+
+    public string? PMID { get; set; }
+
+    public string? PMCID { get; set; }
+
+    public string? DOI { get; set; }
+
+    public string? DirectUrl { get; set; }
+
+    public string? JSON { get; set; }
+
+    public int? AuditorId { get; set; }
+}
