@@ -10433,6 +10433,43 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15405	298	14	\N	\N	3	3
 15406	298	62	\N	\N	3	3
 15407	298	2047	\N	\N	3	10
+15408	907	128	\N	\N	3	24
+15409	907	68719476736	\N	\N	2	16
+15410	907	34359738368	\N	\N	2	285
+15411	907	2	\N	\N	3	5
+15412	907	1	\N	\N	3	3
+15413	907	4294967296	\N	\N	2	11
+15414	907	2199023255552	\N	\N	2	2
+15415	907	48	\N	\N	3	7
+15416	907	14	\N	\N	3	5
+15417	907	1984	\N	\N	3	27
+15418	907	62	\N	\N	3	12
+15419	907	2047	\N	\N	3	283
+15420	1336	128	\N	\N	3	4
+15421	1336	2048	\N	\N	2	19
+15422	1336	68719476736	\N	\N	2	188
+15423	1336	34359738368	\N	\N	2	56
+15424	1336	2	\N	\N	3	0.3
+15425	1336	1	\N	\N	3	4
+15426	1336	4294967296	\N	\N	2	1
+15427	1336	2199023255552	\N	\N	2	0.1
+15428	1336	402653184	\N	\N	1	0.1
+15429	1336	14	\N	\N	3	0.4
+15430	1336	1984	\N	\N	3	11
+15431	1336	62	\N	\N	3	0.4
+15432	1336	2047	\N	\N	3	118
+15433	1362	128	\N	\N	3	0.2
+15434	1362	68719476736	\N	\N	2	2
+15435	1362	34359738368	\N	\N	2	348
+15436	1362	2	\N	\N	3	28
+15437	1362	1	\N	\N	3	2
+15438	1362	4294967296	\N	\N	2	23
+15439	1362	2199023255552	\N	\N	2	0.3
+15440	1362	48	\N	\N	3	3
+15441	1362	14	\N	\N	3	28
+15442	1362	1984	\N	\N	3	1
+15443	1362	62	\N	\N	3	31
+15444	1362	2047	\N	\N	3	124
 \.
 
 
@@ -14127,6 +14164,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7694	0	\N	849	1	1	, wedged, for garnish	4	t	\N	5
 7695	7	\N	849	1	1	, for garnish	2	t	\N	6
 7696	7	\N	849	1	1	, for garnish	1261	t	\N	7
+7702	6	\N	851	1	1	\N	612	f	\N	0
+7703	7	\N	851	1	1	\N	67	f	\N	1
+7704	8	\N	851	1	1	\N	504	f	\N	2
+7705	6	\N	851	2	1	\N	215	f	\N	3
+7706	6	\N	851	2	1	\N	123	f	\N	4
+7707	0	\N	851	1	8	\N	985	f	\N	5
 \.
 
 
@@ -16019,6 +16062,11 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4209	Slice toast in half and drizzle Avocado Mash with olive oil and sprinkle with Maldon sea salt.	\N	849	3	0
 4210	Serve on a plate with eggs and a lemon wedge.	\N	849	4	0
 4211	Garnish Avocado Toast and eggs with fresh herbs and serve immediately.	\N	849	5	0
+4225	Whisk sugar, black pepper, cayenne pepper, syrup and water together in a large bowl. Set aside.	\N	851	0	0
+4226	Preheat oven to 325°F. Place a roasting rack on a sheet pan lined with parchment paper.	\N	851	1	2
+4227	Drag slices of bacon through the glaze mixture and place on a prepared sheet pan.	\N	851	2	0
+4228	Bake for 15 minutes. Rotate pan and cook for another 5 minutes, making sure not to overcook.	\N	851	3	2
+4229	When bacon is cooked to desired crispiness, set aside until ready to serve.	\N	851	4	0
 \.
 
 
@@ -16064,7 +16112,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15407, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15444, true);
 
 
 --

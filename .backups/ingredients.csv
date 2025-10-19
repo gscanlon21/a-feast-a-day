@@ -227,7 +227,7 @@
 234	\N	Superfine Sugar	https://www.eatthismuch.com/calories/sugar-4644	\N	f	0	28	200	2025-01-16	4	200	114688
 235	\N	Chinese Cooking Wine	https://www.eatthismuch.com/calories/rice-cooking-wine-551415	\N	f	0	30	30	2025-01-23	9	240	8192
 236	\N	Sherry	https://www.eatthismuch.com/calories/sherry-765630	\N	f	0	28	28	2024-10-02	4	224	3
-237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2024-08-23	6	240	0
+237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2025-10-19	6	240	524288
 238	\N	Light Sesame Seeds	aka Hulled Sesame Seeds.  https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-26	4	144	131072
 239	\N	Bean Thread Noodles	https://www.eatthismuch.com/calories/chinese-noodles-3579	\N	f	0	140	140	2024-10-04	6	112	4
 240	\N	Fine Rice Noodles	https://www.eatthismuch.com/food/nutrition/rice-noodles,4886/	\N	f	4096	28	28	2025-07-28	4	112	4096
@@ -770,7 +770,7 @@
 904	\N	Lean Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-904	\N	f	0	28	28	2024-12-10	0	224	268435456
 905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038 | https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	100	2024-08-26	0	100	2
 906	\N	Frozen Cauliflower Rice	aka. Riced Cauliflower - https://www.eatthismuch.com/calories/cauliflower-1923	\N	f	0	28	132	2025-09-12	4	132	67108864
-907	\N	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	\N	f	0	60	15	2024-08-23	6	60	928
+907	\N	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/coconut-meat-2653	\N	f	0	28	80	2025-10-19	4	80	928
 908	\N	Raw Mixed Nuts | Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
 909	\N	Raw Mixed Nuts	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
 910	\N	Bay Leaves	https://www.eatthismuch.com/calories/bay-leaf-179	\N	f	0	28	2	2025-03-09	4	32	3
@@ -1099,7 +1099,7 @@
 1359	\N	Fajita Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
 1360	\N	Frozen Fajita Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
 1361	\N	Whole Milk	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
-1362	\N	Fresh Mangos	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
+1362	\N	Fresh Mangos	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	165	1
 1363	\N	Frozen Mango Chunks	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
 1364	\N	Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
 1365	\N	Raw Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	28	202	2025-10-12	4	202	2048
