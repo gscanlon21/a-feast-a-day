@@ -64,6 +64,11 @@ else
                 <pre>@Model.UserFeast.Logs</pre>
             </details>
         }
+        else if (isDebugWorkout && !string.IsNullOrWhiteSpace(Model.UserFeast.Logs))
+        {
+            <hr style="margin-block:1ex;">
+            <pre>@Model.UserFeast.Logs</pre>
+        }
     }
 }
 
