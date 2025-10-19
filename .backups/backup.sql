@@ -1955,6 +1955,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1378	125	1
 1378	1377	1
 1378	70	1
+74	1390	1
 \.
 
 
@@ -14047,7 +14048,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7617	4	\N	838	1	2	\N	800	t	\N	4
 7618	0	\N	839	1	8	\N	4	f	\N	0
 7619	6	\N	839	2	1	\N	75	f	\N	1
-7645	0	\N	843	1	1	\N	187	f	\N	0
 2314	8	\N	127	1	1	, finely chopped	2	t	\N	4
 2315	8	\N	127	1	1	, finely chopped	251	t	\N	5
 2316	0	\N	127	2	1	, finely chopped	\N	t	839	6
@@ -14080,12 +14080,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7683	8	\N	847	2	1	(FIRST WATCH SEASONING)	\N	f	841	2
 4647	6	\N	247	2	1	\N	1371	t	\N	5
 7646	7	\N	247	1	1	\N	1376	f	\N	7
-7639	7	\N	842	1	1	\N	29	f	\N	0
-7640	6	\N	842	4	3	\N	\N	f	843	1
-7641	4	\N	842	4	9	, shaved	1374	f	\N	2
-7642	0	\N	842	1	2	\N	1373	f	\N	3
-7643	7	\N	842	1	1	, chopped, for garnish	2	t	\N	4
-7644	7	\N	842	1	1	, chopped, for garnish	1261	t	\N	5
+7645	0	\N	843	1	1	\N	187	f	\N	0
 7647	7	\N	247	2	3	\N	77	f	\N	8
 7684	6	\N	848	1	2	\N	75	f	\N	0
 7685	6	\N	848	2	1	\N	67	f	\N	1
@@ -14104,14 +14099,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7680	6	\N	846	4	1	, finely sliced	1082	f	\N	9
 7688	7	\N	848	2	3	\N	73	f	\N	4
 7661	8	\N	844	1	1	(WHIPPED BUTTER)	345	f	\N	0
-7689	0	\N	849	1	1	(THICK SLICE WHOLE-GRAIN ARTISAN BREAD	604	f	\N	0
-7690	0	\N	849	1	2	\N	187	f	\N	1
-7691	6	\N	849	4	3	\N	\N	f	847	2
-7692	8	\N	849	2	1	\N	278	f	\N	3
-7693	8	\N	849	8	1	(MALDON SEA SALT)	74	f	\N	4
-7694	0	\N	849	1	1	, wedged, for garnish	4	t	\N	5
-7695	7	\N	849	1	1	, for garnish	2	t	\N	6
-7696	7	\N	849	1	1	, for garnish	1261	t	\N	7
+7639	7	\N	842	1	1	\N	29	f	\N	0
+7640	0	\N	842	1	4	, ¾ cup	\N	f	843	1
+7641	4	\N	842	4	9	, shaved	1374	f	\N	2
+7642	0	\N	842	1	2	\N	1373	f	\N	3
+7643	7	\N	842	1	1	, chopped, for garnish	2	t	\N	4
+7644	7	\N	842	1	1	, chopped, for garnish	1261	t	\N	5
 7662	0	\N	844	1	1	\N	399	f	\N	1
 7663	0	\N	844	1	1	\N	\N	f	845	2
 7664	0	\N	844	1	1	\N	1373	f	\N	3
@@ -14126,6 +14119,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7699	6	\N	850	3	2	(VANILLA GREEK YOGURT)	33	f	\N	1
 7700	6	\N	850	1	2	(FRESH FRUIT), mixed, divided	1198	f	\N	2
 7701	8	\N	850	1	1	(POWDERED CINNAMON SUGAR)	44	t	\N	3
+7689	0	\N	849	1	1	(THICK SLICE WHOLE-GRAIN ARTISAN BREAD	604	f	\N	0
+7690	0	\N	849	1	2	\N	187	f	\N	1
+7691	6	\N	849	4	3	\N	\N	f	847	2
+7692	8	\N	849	2	1	\N	278	f	\N	3
+7693	8	\N	849	8	1	\N	1390	f	\N	4
+7694	0	\N	849	1	1	, wedged, for garnish	4	t	\N	5
+7695	7	\N	849	1	1	, for garnish	2	t	\N	6
+7696	7	\N	849	1	1	, for garnish	1261	t	\N	7
 \.
 
 
@@ -15985,16 +15986,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4179	Once granola is completely cool, break into ideal-sized pieces (about the size of a quarter).	\N	841	5	0
 4180	Transfer to an airtight container and store in a dry plate for up to 1 week.	\N	841	6	0
 4181	- For the quick soak method, put the chickpeas in a pot and add 6 cups of water. Bring to a boil and cook for 2 minute. Turn the heat off, cover and let the chickpeas soak for 1 hour.	\N	629	2	0
-4190	This preparation works great for omelets and frittatas. Use a whisk or hand blender to mix cracked eggs in a bowl until frothy. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just shipped in will result in a nice, fluffy finished product. 	\N	843	0	0
-4191	If cooking the eggs, add whipped eggs to a buttered, nonstick, non-heated pan and cook over medium low heat. Work with a rubber spatula by pushing and pulling the edges to create big ridges. When eggs are cooked, finish folded or open-faced.	\N	843	1	0
 4216	Drizzle with Thai dressing and garnish with chopped green onions and sesame seeds.	\N	576	3	0
 4217	Add a splash of red wine vinegar to the pan and jiggle around to pick up the gnarly bits. Trim and finely slice the scallions, scatter them over the chicken with the toasted sesame seeds, and get stuck in.	\N	385	2	0
 4218	Place 1/4 cup granola in a bowl.	\N	850	0	0
 4219	Add 1/3 cup yogurt.	\N	850	1	0
-4186	As soon as the bottom of the omelet has started to set, work with a rubber spatula by pulling the edges toward the center and allowing uncooked egg to run underneath the cooked areas. Continue until the omelet is still slightly wet.	\N	842	1	4
-4187	Separate the edges of the omelet from the pan with the spatula and spread ham evenly over the top half of the omelet (from 9 o'clock position to 3 o'clock position) to ensure ham in every bite.	\N	842	2	0
-4188	Add a slice of Gruyère cheese. Fold in half and top with the other slice of Gruyère cheese.	\N	842	3	0
-4189	Transfer to a plate and top with fresh herbs.	\N	842	4	0
 4220	Add 4 pieces of fresh fruit.	\N	850	2	0
 4221	Add 1/3 cup yogurt.	\N	850	3	0
 4222	Add 1/4 cup granola.	\N	850	4	0
@@ -16005,19 +16000,25 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 4203	Keep in the refrigerator for at least 2 hours prior to serving, to entire optimum temperature.	\N	847	3	0
 4204	In a mixing bowl, combine ingredients thoroughly to evenly distribute.	\N	848	0	0
 4205	Place in an airtight storage container and store in a dry place.	\N	848	1	0
+4223	Top with 12 pieces of fresh fruit and finish with powdered cinnamon sugar.	\N	850	5	0
+4224	Serve on a plate with a fresh-baked muffin and a large spoon.	\N	850	6	0
+4186	As soon as the bottom of the omelet has started to set, work with a rubber spatula by pulling the edges toward the center and allowing uncooked egg to run underneath the cooked areas. Continue until the omelet is still slightly wet.	\N	842	1	4
+4187	Separate the edges of the omelet from the pan with the spatula and spread ham evenly over the top half of the omelet (from 9 o'clock position to 3 o'clock position) to ensure ham in every bite.	\N	842	2	0
+4188	Add a slice of Gruyère cheese. Fold in half and top with the other slice of Gruyère cheese.	\N	842	3	0
+4193	Preheat broiler (if desired).	\N	844	0	0
+4212	Butter the bottom brioche bun only and place it butter-side down in a nonstick 8-inch pan or griddle to brown, about 2 minutes.	\N	844	1	4
+4213	In a separate nonstick 8-inch pan, top Over-Easy Egg with cheese. Place under broiler (if desired) to help melt the cheese.	\N	844	2	0
+4214	Spread mayonnaise on the bottom bun and build the sandwich by adding the bacon in an X and top with the cheesy egg.	\N	844	3	0
+4215	Spread Avocado Mash on the top bun. In a small bowl, combine arugula and vinaigrette. Place lemon-dressed arugula on top of the egg, place the top of the bun on the sandwich.	\N	844	4	0
+4189	Transfer to a plate and top with fresh herbs.	\N	842	4	0
+4190	This preparation works great for omelets and frittatas. Use a whisk or hand blender to mix cracked eggs in a bowl until frothy. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just shipped in will result in a nice, fluffy finished product. 	\N	843	0	0
+4191	If cooking the eggs, add whipped eggs to a buttered, nonstick, non-heated pan and cook over medium low heat. Work with a rubber spatula by pushing and pulling the edges to create big ridges. When eggs are cooked, finish folded or open-faced.	\N	843	1	0
 4206	Toast 1 slice of bread.	\N	849	0	100
 4207	Cook eggs, any style.	\N	849	1	0
 4208	As eggs are cooking, spread toast evenly with Avocado Mash, retaining a rustic and chunky layer.	\N	849	2	0
 4209	Slice toast in half and drizzle Avocado Mash with olive oil and sprinkle with Maldon sea salt.	\N	849	3	0
 4210	Serve on a plate with eggs and a lemon wedge.	\N	849	4	0
 4211	Garnish Avocado Toast and eggs with fresh herbs and serve immediately.	\N	849	5	0
-4223	Top with 12 pieces of fresh fruit and finish with powdered cinnamon sugar.	\N	850	5	0
-4224	Serve on a plate with a fresh-baked muffin and a large spoon.	\N	850	6	0
-4193	Preheat broiler (if desired).	\N	844	0	0
-4212	Butter the bottom brioche bun only and place it butter-side down in a nonstick 8-inch pan or griddle to brown, about 2 minutes.	\N	844	1	4
-4213	In a separate nonstick 8-inch pan, top Over-Easy Egg with cheese. Place under broiler (if desired) to help melt the cheese.	\N	844	2	0
-4214	Spread mayonnaise on the bottom bun and build the sandwich by adding the bacon in an X and top with the cheesy egg.	\N	844	3	0
-4215	Spread Avocado Mash on the top bun. In a small bowl, combine arugula and vinaigrette. Place lemon-dressed arugula on top of the egg, place the top of the bun on the sandwich.	\N	844	4	0
 \.
 
 
