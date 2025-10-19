@@ -1,15 +1,15 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class gtDbMap
 {
+    [Key, Required]
+    public string NcbiName { get; set; } = string.Empty;
+
+    public string? GtdbNames { get; set; }
+
+    public int? Taxon { get; set; }
+
+    public string? Rank { get; set; }
 }
-
-
-/*
- 
- CREATE TABLE [dbo].[gtDbMap](
-	[NcbiName] [varchar](200) NOT NULL,
-	[GtdbNames] [varchar](max) NULL,
-	[Taxon] [int] NULL,
-	[Rank] [varchar](50) NULL
- )*/
