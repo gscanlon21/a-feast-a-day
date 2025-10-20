@@ -521,9 +521,9 @@
 594	\N	Butternut Squash	\N	\N	f	0	4520	152	2024-08-26	0	152	1
 595	\N	Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
 596	\N	Kaffir Lime Leaves	https://www.eatthismuch.com/calories/kaffir-lime-leaves-1612556	\N	f	0	15	30	2025-02-13	0	240	3
-597	\N	Yellow Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	2
-598	\N	Green Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2024-08-24	0	119	1
-599	\N	Orange Bell Peppers	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
+597	\N	Yellow Bell Peppers	https://www.eatthismuch.com/calories/yellow-peppers-2560	\N	f	0	186	186	2025-10-20	0	186	2
+598	\N	Green Bell Peppers	https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2025-10-21	0	119	2
+599	\N	Orange Bell Peppers	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2025-10-21	0	119	2
 600	\N	Frozen Green Peas	aka. Podless Frozen Peas. - https://www.eatthismuch.com/calories/peas-2069	\N	f	0	28	134	2024-10-31	4	134	67108864
 601	\N	Cajun Seasoning	https://www.eatthismuch.com/calories/taco-seasoning,100484	\N	f	0	3	6	2024-08-29	8	144	131072
 602	\N	Hazelnuts	https://www.eatthismuch.com/calories/hazelnuts-123851	\N	f	0	28	32	2025-03-01	4	128	1048576
@@ -705,7 +705,7 @@
 809	\N	Frozen Blackberries	https://www.eatthismuch.com/calories/blackberries-frozen-1342	\N	f	0	28	151	2025-01-20	4	151	33554432
 810	\N	Chocolate Sauce	https://www.eatthismuch.com/calories/chocolate-sauce-2501421	\N	f	0	40	40	2024-12-01	9	320	32
 811	\N	Mixed-Color Bell Peppers	https://www.eatthismuch.com/calories/red-bell-pepper-2440, https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2024-08-24	0	119	2
-812	\N	Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2024-08-24	0	119	1
+812	\N	Bell Peppers	https://www.eatthismuch.com/calories/red-bell-pepper-2440	\N	f	0	119	119	2025-10-20	0	92	2
 813	\N	Fresh Nectarines	https://www.eatthismuch.com/calories/nectarines-1458	\N	f	0	142	142	2024-09-25	0	142	1
 814	\N	Fresh Peaches | Fresh Nectarines	https://www.eatthismuch.com/calories/peaches,1484	\N	f	0	150	150	2024-09-25	0	150	1
 815	\N	Frozen Podded Fava Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512	\N	f	0	194	194	2024-10-17	6	194	67108864
@@ -1100,7 +1100,7 @@
 1360	\N	Frozen Fajita Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
 1361	\N	Whole Milk	https://www.eatthismuch.com/calories/whole-milk-65	\N	f	320	244	244	2024-10-20	6	244	4194304
 1362	\N	Fresh Mangos	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	165	1
-1363	\N	Frozen Mango Chunks	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
+1363	\N	Frozen Mango Chunks	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	28	207	2025-03-26	4	165	33554432
 1364	\N	Yogurt	https://www.eatthismuch.com/calories/greek-yogurt,5810	\N	f	0	240	240	2024-09-07	6	240	29360128
 1365	\N	Raw Cannellini Beans	https://www.eatthismuch.com/calories/white-beans-3547	\N	f	0	28	202	2025-10-12	4	202	2048
 1366	\N	Raw Red Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3530	\N	f	0	254	254	2025-10-10	6	254	512
@@ -1127,4 +1127,4 @@
 1387	\N	Juniper Berries	https://www.eatthismuch.com/calories/blueberries-1343	\N	f	0	28	148	2024-11-28	4	148	1
 1388	\N	Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	262176	4.75	38	2025-08-09	4	38	4096
 1389	\N	Green Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
-1390	\N	Maldon Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2025-07-24	8	288	131072
+1390	\N	Maldon Sea Salt	https://www.eatthismuch.com/calories/sea-salt-flakes-2375249	\N	t	0	28	2	2025-07-24	4	384	131072

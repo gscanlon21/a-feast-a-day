@@ -283,7 +283,7 @@
 399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-402	Fruit Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	\N	f	f
+402	Fruit Salad	\N	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	48	10	5	2	t	roasted-kale.jpg	0	\N	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
@@ -571,3 +571,4 @@
 849	Avocado Toast	\N	\N	\N	4	0	0	1	t	\N	0	From the First Watch cookbook. 	f	f
 850	Sunrise Granola Bowl	\N	\N	\N	4	0	15	1	t	\N	0	From the First Watch cookbook. 	f	f
 851	Million Dollar Bacon	\N	\N	\N	16	20	5	4	t	\N	0	From the First Watch cookbook. 	f	f
+852	Rainbow Toast	\N	\N	\N	4	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f

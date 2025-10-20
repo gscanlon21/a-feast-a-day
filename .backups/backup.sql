@@ -4653,17 +4653,9 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 9525	215	14	\N	\N	3	13
 9526	215	62	\N	\N	3	13
 9527	215	2047	\N	\N	3	52
-9528	597	68719476736	\N	\N	2	5
-9529	597	34359738368	\N	\N	2	251
-9530	597	2	\N	\N	3	5
-9531	597	1	\N	\N	3	1
-9532	597	4294967296	\N	\N	2	8
 9533	597	2199023255552	\N	\N	2	1
 9534	597	48	\N	\N	3	2
-9535	597	14	\N	\N	3	5
 9536	597	1984	\N	\N	3	0.4
-9537	597	62	\N	\N	3	7
-9538	597	2047	\N	\N	3	37
 9539	152	68719476736	\N	\N	2	0.2
 9540	152	34359738368	\N	\N	2	167
 9541	152	2	\N	\N	3	16
@@ -10470,6 +10462,58 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15442	1362	1984	\N	\N	3	1
 15443	1362	62	\N	\N	3	31
 15444	1362	2047	\N	\N	3	124
+15445	1363	2047	\N	\N	3	124
+9528	597	68719476736	\N	\N	2	4
+9529	597	34359738368	\N	\N	2	394
+9531	597	1	\N	\N	3	2
+9532	597	4294967296	\N	\N	2	20
+9535	597	14	\N	\N	3	10
+9537	597	62	\N	\N	3	12
+9538	597	2047	\N	\N	3	50
+15446	597	128	\N	\N	3	0.1
+15447	812	2047	\N	\N	3	37
+15448	598	2251799813685248	\N	\N	2	7
+15449	598	288230376151711744	\N	\N	3	0.1
+15450	598	274877906944	\N	\N	1	0.1
+15451	598	17179869184	\N	\N	2	12
+15452	598	4398046511104	\N	\N	2	0.1
+15453	598	70368744177664	\N	\N	2	24
+15454	598	17592186044416	\N	\N	2	0.2
+15455	598	32768	\N	\N	1	25
+15456	598	65536	\N	\N	1	248
+15457	598	262144	\N	\N	2	0.1
+15458	598	1048576	\N	\N	2	1
+15459	598	2097152	\N	\N	2	0.1
+15460	598	4194304	\N	\N	2	0.3
+15461	598	16777216	\N	\N	1	12
+15462	598	67108864	\N	\N	2	96
+15463	598	536870912	\N	\N	2	0.4
+15464	598	1536	\N	\N	3	0.1
+15465	598	3221225472	\N	\N	1	9
+15466	598	1792	\N	\N	3	0.1
+15467	598	229376	\N	\N	1	21
+15468	599	2251799813685248	\N	\N	2	7
+15469	599	288230376151711744	\N	\N	3	0.1
+15470	599	17179869184	\N	\N	2	14
+15471	599	4398046511104	\N	\N	2	0.1
+15472	599	70368744177664	\N	\N	2	31
+15473	599	8796093022208	\N	\N	1	0.1
+15474	599	17592186044416	\N	\N	2	0.3
+15475	599	32768	\N	\N	1	24
+15476	599	65536	\N	\N	1	1933
+15477	599	262144	\N	\N	2	0.1
+15478	599	524288	\N	\N	2	0.1
+15479	599	1048576	\N	\N	2	1
+15480	599	2097152	\N	\N	2	0.4
+15481	599	4194304	\N	\N	2	0.3
+15482	599	16777216	\N	\N	1	55
+15483	599	67108864	\N	\N	2	152
+15484	599	536870912	\N	\N	2	2
+15485	599	1536	\N	\N	3	0.1
+15486	599	3221225472	\N	\N	1	6
+15487	599	1792	\N	\N	3	0.1
+15488	599	229376	\N	\N	1	187
+15489	1390	68719476736	\N	\N	2	580
 \.
 
 
@@ -12290,7 +12334,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 5581	8	\N	393	4	1	\N	692	t	\N	4
 5645	6	\N	402	1	1	, diced	981	t	\N	4
 5667	6	\N	406	4	1	\N	1008	f	\N	4
-5646	0	\N	402	1	1	, juiced	12	f	\N	5
+5646	0	\N	402	1	1	, juiced	12	t	\N	5
 5647	7	\N	402	2	3	\N	39	t	\N	6
 5654	7	\N	404	1	1	\N	1174	f	\N	1
 5655	7	\N	404	1	4	\N	805	f	\N	2
@@ -14170,6 +14214,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7705	6	\N	851	2	1	\N	215	f	\N	3
 7706	6	\N	851	2	1	\N	123	f	\N	4
 7707	0	\N	851	1	8	\N	985	f	\N	5
+7708	0	\N	852	1	1	\N	472	f	\N	0
+7709	7	\N	852	1	3	(WHIPPED RICOTTA CHEESE)	1002	f	\N	1
+7710	6	\N	852	4	1	, quartered	10	f	\N	2
+7711	6	\N	852	4	1	, diced	1362	f	\N	3
+7712	6	\N	852	8	1	\N	625	t	\N	4
+7713	6	\N	852	8	1	\N	871	t	\N	5
+7714	7	\N	852	1	2	\N	\N	f	841	6
+7715	7	\N	852	1	1	\N	39	f	\N	7
 \.
 
 
@@ -15558,8 +15610,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3669	Invert the cake in its tin on to baking parchment dusted with caster sugar. Leave to cool, then remove the tin and lining paper.	\N	623	4	0
 3670	Reserve a little cream, then whip the remainder until it holds its shape. Fold in all but 8 raspberries and spread the mixture over the cooled cake, leaving a narrow border. Roll the cake up and sprinkle with caster sugar.	\N	623	5	0
 3671	Whip the reserved cream until is just holds its shape, and spoon or pipe a line across the top of the roll in the center. Trim both ends of the roulade. Decorate the cream with the reserved raspberries and toasted almond flakes.	\N	623	6	0
-3097	Place strawberries in a large bowl and toss in the maple syrup. Toss to coat.	\N	402	0	0
-3099	In a small bowl, stir together lime juice, honey and mint. Pour over fruit and toss to coat.	\N	402	2	0
 3776	Roll out the remaining third of the crust and place on top.	\N	648	5	0
 3678	Preheat the oven to 400F. Line a sheet pan with parchment paper.	\N	625	0	2
 3679	In a large bowl, combine the zucchini, tomatoes, bell pepper, onion, and sweet potato. Add the olive oil and season with salt and pepper. Stir or toss to mix evenly.	\N	625	1	0
@@ -15582,6 +15632,8 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3652	Melt the butter in a large frying pan. Add the pork and fry quickly until browned on the underside. Turn the meat over and cook for another minute.	\N	619	2	4
 3653	Add the Marsala and rosemary to the pan. Drain the dried mushrooms, saving the juices, and add them to the mixture. Stir in 4 tbsps of the mushroom juices, then add the garlic cloves, juniper berries, and remaining vinegar.	\N	619	3	4
 3654	Simmer the mixture gently for about 3 minutes until the pork is cooked. Season lightly and serve hot with noodles and vegetables.	\N	619	4	4
+3097	Place strawberries in a large bowl and toss to coat in the maple syrup.	\N	402	0	0
+3099	In a small bowl, stir together lime juice, honey and mint. Pour over fruit and toss to coat.	\N	402	2	0
 3664	Spread the hummus evenly on the tortilla. Put the vegetables in the center of the tortilla and top with the spinach. Roll the bottom of the tortilla up over the vegetables, then fold the sides into the center. Pull back on the rolled tortilla to tighten it, then roll forward to finish the wrap.	\N	622	0	0
 3681	Preheat the oven to 190C/375F. Place a baking sheet in the oven.	\N	626	0	0
 3682	Mix 15ml/1 tbsp of the cocoa with 15ml/1 tbsp of the sugar in a bowl. Grease six 150ml/8fl oz/1 cup ramekins. Pour the cocoa and sugar mixture into each of the dishes in turn, rotating them so that they are evenly coated.	\N	626	1	0
@@ -15614,6 +15666,12 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3700	Meanwhile, cream the butter, peanut butter, sugar and coffee together until light. Sift the cornflour and flour together and mix in to make a smooth dough.	\N	630	2	0
 3696	Soak the chickpeas. You can either soak them overnight or try the quick soaking method. 	\N	629	0	4
 3697	- To soak overnight, put the chickpeas in a large bowl and add plenty of water to cover the chickpeas by a good 3 inches. Set aside for 24 hours. 	\N	629	1	4
+4230	Toast the brioche.	\N	852	0	0
+4231	Slice toast vertically into 3 pieces and spread evenly with whipped ricotta.	\N	852	1	0
+4232	Place toast in the center of a plate, making sure to retain shape.	\N	852	2	0
+4233	Using a spoon, carefully lay strawberries in a horizontal line across the top of the toast.	\N	852	3	0
+4234	Repeat with the diced mango, below the strawberries, and then with the blackberries and blueberries below the mango.	\N	852	4	0
+4235	Sprinkle granola over the top of the toast, then drizzle evenly with honey and serve immediately.	\N	852	5	0
 3707	Take the steak out of the fridge and let it sit at room temperature for 30 minutes before cooking.	\N	632	0	0
 3708	Preheat the oven to 400F.	\N	632	1	0
 3709	Preheat a medium skillet over medium-high heat. Add 1 tablespoon of olive oil. Season the room-temperature steak well with salt and pepper. Add to the pan and sear for 3 minutes on each side. Take the steak out of the pan, place it on a plate, and let it rest for 5 minutes.	\N	632	2	0
@@ -16112,7 +16170,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15444, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15489, true);
 
 
 --
