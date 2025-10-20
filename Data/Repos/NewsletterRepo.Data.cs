@@ -271,8 +271,8 @@ public partial class NewsletterRepo
 
         foreach (var debugIngredient in debugIngredients)
         {
-            // If an ingredient has no nutrients.
-            if (!debugIngredient.Nutrients.Any(n => n.Value > 0))
+            // If an ingredient has no nutrients and the ingredient isn't a composite ingredient.
+            if (!debugIngredient.Nutrients.Any(n => n.Value > 0) && !debugIngredient.Name.Contains('|'))
             {
                 UserLogs.Log(user, $"Ingredient:{debugIngredient.Id} \"{debugIngredient.Name}\" has an invalid configuration: 1.");
             }
