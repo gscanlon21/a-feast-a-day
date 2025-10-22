@@ -2,17 +2,10 @@
 
 internal class Food_Edges
 {
+    public double? SampleId { get; set; }
+
+    public double? TaxonId { get; set; }
+
+    public double? Weight { get; set; }
 }
 
-/*
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Food_Edges](
-	[sampleId] [float] NULL,
-	[taxonId] [float] NULL,
-	[weight] [float] NULL
-) 
-GO
-* */

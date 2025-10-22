@@ -1,13 +1,14 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Sources
 {
-}
+    [Key]
+    [Required]
+    public string Source { get; set; } = null!;
 
-/*CREATE TABLE [dbo].[Sources](
-	[source] [varchar](50) NOT NULL,
-	[SourceId] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [PK_Sources] PRIMARY KEY CLUSTERED 
-(
-	[source] ASC
-)*/
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int SourceId { get; set; }
+}

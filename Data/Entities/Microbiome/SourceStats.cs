@@ -1,16 +1,21 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class SourceStats
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Source { get; set; }
 
-/*CREATE TABLE [dbo].[SourceStats](
-	[Source] [varchar](20) NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Frequency] [float] NOT NULL,
-	[Average] [float] NOT NULL,
- CONSTRAINT [PK_SourceStats] PRIMARY KEY CLUSTERED 
-(
-	[Source] ASC,
-	[Taxon] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Taxon { get; set; }
+
+    [Required]
+    public double Frequency { get; set; }
+
+    [Required]
+    public double Average { get; set; }
+}

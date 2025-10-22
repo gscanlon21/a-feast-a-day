@@ -11,23 +11,28 @@ public class LabSamples
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int LabSampleId { get; set; }
+
+    [Required]
+    public DateTime AddDate { get; set; }
+
+    [Required]
+    public string LabTitle { get; set; } = string.Empty;
+
+    [Required]
+    public string LabCode { get; set; } = string.Empty;
+
+    public string? LabDate { get; set; }
+
+    public string? LabNotes { get; set; }
+
+    public int? SampleId { get; set; }
+
+    public int? PDFEmail { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[LabSamples](
-	[LabSampleId] [int] IDENTITY(1,1) NOT NULL,
-	[AddDate] [datetime] NOT NULL,
-	[LabTitle] [nvarchar](max) NOT NULL,
-	[LabCode] [varchar](10) NOT NULL,
-	[LabDate] [varchar](20) NULL,
-	[LabNotes] [nvarchar](max) NULL,
-	[SampleId] [int] NULL,
-	[PDFEmail] [int] NULL,
- CONSTRAINT [PK_LabSamples] PRIMARY KEY CLUSTERED 
-(
-	[LabSampleId] ASC
-)
-*/

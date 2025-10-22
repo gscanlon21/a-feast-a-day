@@ -12,18 +12,15 @@ public class NetCompound
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Required]
+    public int Cpid { get; set; }
+
+    public double? KMLow { get; set; }
+
+    public double? KMHigh { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[NetCompound](
-	[Cpid] [int] NOT NULL,
-	[KMLow] [float] NULL,
-	[KMHigh] [float] NULL,
- CONSTRAINT [PK_NetCompound] PRIMARY KEY CLUSTERED 
-(
-	[Cpid] ASC
-)
-*/

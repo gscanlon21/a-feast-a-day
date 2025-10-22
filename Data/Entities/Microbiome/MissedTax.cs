@@ -1,18 +1,29 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class MissedTax
 {
-}
+    [Required]
+    public string Kingdom { get; set; }
 
-/*CREATE TABLE [dbo].[MissedTax](
-	[Kingdom] [varchar](100) NOT NULL,
-	[Phylum] [varchar](100) NOT NULL,
-	[Class] [varchar](100) NULL,
-	[Order] [varchar](100) NULL,
-	[Family] [varchar](100) NULL,
-	[Genus] [varchar](100) NULL,
-	[Species] [varchar](100) NULL,
-	[Count] [float] NOT NULL,
-	[Count_Norm] [float] NULL,
-	[Taxon] [int] NULL
-) */
+    [Required]
+    public string Phylum { get; set; }
+
+    public string? Class { get; set; }
+
+    public string? Order { get; set; }
+
+    public string? Family { get; set; }
+
+    public string? Genus { get; set; }
+
+    public string? Species { get; set; }
+
+    [Required]
+    public double Count { get; set; }
+
+    public double? Count_Norm { get; set; }
+
+    public int? Taxon { get; set; }
+}

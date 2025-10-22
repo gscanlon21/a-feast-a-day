@@ -1,13 +1,13 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class OtherStats
 {
+    [Key, Required]
+    public string StatsName { get; set; }
+
+    [Required]
+    public double Count { get; set; }
 }
 
-/*CREATE TABLE [dbo].[OtherStats](
-	[StatsName] [varchar](50) NOT NULL,
-	[Count] [float] NOT NULL,
- CONSTRAINT [PK_OtherStats] PRIMARY KEY CLUSTERED 
-(
-	[StatsName] ASC
-)*/

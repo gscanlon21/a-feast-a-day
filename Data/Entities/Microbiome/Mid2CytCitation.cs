@@ -1,18 +1,26 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Mid2CytCitation
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Mid2 { get; set; }
 
-/*CREATE TABLE [dbo].[Mid2CytCitation](
-	[mid2] [int] NOT NULL,
-	[cyid] [int] NOT NULL,
-	[cid] [int] NOT NULL,
-	[Change] [int] NOT NULL,
-	[RuleId] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [PK_Mid2CytCitation] PRIMARY KEY CLUSTERED 
-(
-	[mid2] ASC,
-	[cyid] ASC,
-	[cid] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Cyid { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Cid { get; set; }
+
+    [Required]
+    public int Change { get; set; }
+
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public int RuleId { get; set; }
+}

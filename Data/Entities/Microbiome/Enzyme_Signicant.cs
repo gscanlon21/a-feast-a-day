@@ -1,15 +1,21 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 class Enzyme_Signicant
 {
-}
+    public string? Source { get; set; }
 
-/*CREATE TABLE [dbo].[Enzyme_Signicant](
-	[Source] [nvarchar](20) NULL,
-	[ECKey] [nvarchar](20) NULL,
-	[WithSymptoms] [float] NULL,
-	[Below15] [float] NULL,
-	[Above85] [float] NULL,
-	[direction] [nvarchar](9) NOT NULL,
-	[Chi2] [float] NULL
-) */
+    public string? ECKey { get; set; }
+
+    public double? WithSymptoms { get; set; }
+
+    public double? Below15 { get; set; }
+
+    public double? Above85 { get; set; }
+
+    [Required]
+    public string Direction { get; set; } = string.Empty;
+
+    public double? Chi2 { get; set; }
+}

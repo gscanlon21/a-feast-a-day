@@ -1,18 +1,23 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class SampleSuggestions
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SampleId { get; set; }
 
-/*CREATE TABLE [dbo].[SampleSuggestions](
-	[SampleId] [int] NOT NULL,
-	[AsOf] [datetime] NOT NULL,
-	[Mod2] [int] NOT NULL,
-	[Avoid] [float] NULL,
-	[Take] [float] NULL,
- CONSTRAINT [PK_SampleSuggestions] PRIMARY KEY CLUSTERED 
-(
-	[SampleId] ASC,
-	[AsOf] ASC,
-	[Mod2] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public DateTime AsOf { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Mod2 { get; set; }
+
+    public double? Avoid { get; set; }
+
+    public double? Take { get; set; }
+}

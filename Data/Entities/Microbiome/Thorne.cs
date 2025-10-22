@@ -1,19 +1,30 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class Thorne
 {
-}
+    public string Domain { get; set; }
 
-/*CREATE TABLE [dbo].[Thorne](
-	[DOMAIN] [nvarchar](255) NULL,
-	[KINGDOM] [nvarchar](255) NULL,
-	[PHYLUM] [nvarchar](255) NULL,
-	[CLASS] [nvarchar](255) NULL,
-	[ORDER] [nvarchar](255) NULL,
-	[FAMILY] [nvarchar](255) NULL,
-	[GENUS] [nvarchar](255) NULL,
-	[SPECIES] [nvarchar](255) NULL,
-	[STRAIN] [nvarchar](255) NULL,
-	[ThorneId] [int] NOT NULL,
-	[Taxon] [int] NULL
-) */
+    public string Kingdom { get; set; }
+
+    public string Phylum { get; set; }
+
+    public string Class { get; set; }
+
+    public string Order { get; set; }
+
+    public string Family { get; set; }
+
+    public string Genus { get; set; }
+
+    public string Species { get; set; }
+
+    public string Strain { get; set; }
+
+    [Key]
+    [Required]
+    public int ThorneId { get; set; }
+
+    public int? Taxon { get; set; }
+}

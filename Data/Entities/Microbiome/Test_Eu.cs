@@ -2,12 +2,14 @@
 
 class Test_Eu
 {
+    public int? Taxon { get; set; }
+
+    public double? Percentage { get; set; }
+
+    public double? Percentile { get; set; }
+
+    public double? Q15 { get; set; }
+
+    public double? Q85 { get; set; }
 }
 
-/*CREATE TABLE [dbo].[Test_Eu](
-	[taxon] [int] NULL,
-	[percentage] [float] NULL,
-	[percentile] [float] NULL,
-	[q15] [float] NULL,
-	[q85] [float] NULL
-) */

@@ -1,65 +1,110 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Users
 {
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public int UserId { get; set; }
+
+    [Required]
+    public string Email { get; set; }
+
+    [Required]
+    public int SequenceId { get; set; }
+
+    [Required]
+    public DateTime SamplingTime { get; set; }
+
+    [Required]
+    public DateTime UploadDate { get; set; }
+
+    [Required]
+    public string Person { get; set; }
+
+    [Required]
+    public string Source { get; set; }
+
+    public int? SourceId { get; set; }
+
+    [Required]
+    public string SampleName { get; set; }
+
+    public string? ClinicEmail { get; set; }
+
+    // XML type
+    public string? CustomSelection { get; set; }
+
+    [Required]
+    public int MatchSampleId { get; set; }
+
+    public double? SymptomHealth { get; set; }
+    public double? ConditionHealth { get; set; }
+
+    // AS (((((((([source]+':')+CONVERT([nvarchar](10),[sampling_time],(126)))+'  ')+[person])+' ')+case when [Biofilmcount]>(600) then N' 🛑' when [Biofilmcount]>(50) then N' ⚠️' else N'' end)+case when [dlacticcount]>(270) then N' ⚗️' else N'' end)+case when [histaminecount]>(15) then N' 🤧' when [histaminecount]>(1000) then N' 🤢' else N'' end),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? Title { get; set; }
+
+    public double? Hash { get; set; }
+    public int? Custom { get; set; }
+    public int? TaxonCount { get; set; }
+    public int? Symptoms { get; set; }
+    public int? SameSymptomsAs { get; set; }
+    public int? FastQId { get; set; }
+    public double? Chi2 { get; set; }
+    public double? Chi2AdjPercentile { get; set; }
+
+    //  AS (CONVERT([int],(100.0)*((1.0)-[SymptomHealth]))),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public int? SymptomPercent { get; set; }
+
+    //  AS (CONVERT([int],(100.0)*((1.0)-[ConditionHealth]))),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public int? ConditionPercent { get; set; }
+
+    public string? Consultant { get; set; }
+
+    public string? PersonEmail { get; set; }
+
+    public string? UploadFileName { get; set; }
+    public int? BiomeSightId { get; set; }
+    public DateTime? RecalcDate { get; set; }
+    public double? Shannon { get; set; }
+    public double? Simpson { get; set; }
+    public double? Chao { get; set; }
+    public double? ShannonRank { get; set; }
+    public double? SimpsonRank { get; set; }
+    public double? ChaoRank { get; set; }
+
+    [Required]
+    public double Antiinflammatory { get; set; }
+
+    public int? PdfEmail { get; set; }
+
+    [Required]
+    public double Histamine { get; set; }
+
+    [Required]
+    public double Butyrate { get; set; }
+
+    [Required]
+    public bool IsUnique { get; set; }
+
+    public int? JasonCount { get; set; }
+    public int? OralBacteriaCount { get; set; }
+    public int? OralTaxaCount { get; set; }
+    public int? KeySymptomBacteriaCnt { get; set; }
+    public int? HealthPredictors { get; set; }
+
+    [Required]
+    public int BioFilmCount { get; set; }
+
+    [Required]
+    public int DLacticCount { get; set; }
+
+    [Required]
+    public int HistamineCount { get; set; }
 }
 
-
-
-/*
-CREATE TABLE [dbo].[Users](
-	[UserId] [int] IDENTITY(1,1) NOT NULL,
-	[Email] [varchar](255) NOT NULL,
-	[SequenceId] [int] NOT NULL,
-	[sampling_time] [smalldatetime] NOT NULL,
-	[UploadDate] [datetime] NOT NULL,
-	[Person] [nvarchar](max) NOT NULL,
-	[Source] [varchar](20) NOT NULL,
-	[SourceId] [int] NULL,
-	[SampleName] [varchar](max) NOT NULL,
-	[ClinicEmail] [varchar](max) NULL,
-	[CustomSelection] [xml] NULL,
-	[MatchSampleId] [int] NOT NULL,
-	[SymptomHealth] [float] NULL,
-	[ConditionHealth] [float] NULL,
-	[_Title]  AS (((((((([source]+':')+CONVERT([nvarchar](10),[sampling_time],(126)))+'  ')+[person])+' ')+case when [Biofilmcount]>(600) then N' 🛑' when [Biofilmcount]>(50) then N' ⚠️' else N'' end)+case when [dlacticcount]>(270) then N' ⚗️' else N'' end)+case when [histaminecount]>(15) then N' 🤧' when [histaminecount]>(1000) then N' 🤢' else N'' end),
-	[Hash] [float] NULL,
-	[Custom] [int] NULL,
-	[TaxonCount] [int] NULL,
-	[Symptoms] [int] NULL,
-	[SameSymptomsAs] [int] NULL,
-	[FastQId] [int] NULL,
-	[Chi2] [float] NULL,
-	[Chi2AdjPercentile] [float] NULL,
-	[SymptomPercent]  AS (CONVERT([int],(100.0)*((1.0)-[SymptomHealth]))),
-	[ConditionPercent]  AS (CONVERT([int],(100.0)*((1.0)-[ConditionHealth]))),
-	[Consultant] [varchar](255) NULL,
-	[PersonEmail] [varchar](255) NULL,
-	[UploadFileName] [varchar](max) NULL,
-	[BiomeSightId] [int] NULL,
-	[RecalcDate] [datetime] NULL,
-	[Shannon] [float] NULL,
-	[Simpson] [float] NULL,
-	[Chao] [float] NULL,
-	[ShannonRank] [float] NULL,
-	[SimpsonRank] [float] NULL,
-	[ChaoRank] [float] NULL,
-	[antiinflammatory] [float] NOT NULL,
-	[PdfEmail] [int] NULL,
-	[histamine] [float] NOT NULL,
-	[butyrate] [float] NOT NULL,
-	[IsUnique] [bit] NOT NULL,
-	[JasonCount] [int] NULL,
-	[OralBacteriaCount] [int] NULL,
-	[OralTaxaCount] [int] NULL,
-	[KeySymptomBacteriaCnt] [int] NULL,
-	[HealthPredictors] [int] NULL,
-	[BioFilmCount] [int] NOT NULL,
-	[DLacticCount] [int] NOT NULL,
-	[HistamineCount] [int] NOT NULL,
- CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
-(
-	[UserId] ASC
-)
-
-GO*/

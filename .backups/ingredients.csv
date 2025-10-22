@@ -5,7 +5,7 @@
 5	\N	Garlic Cloves	https://www.eatthismuch.com/calories/garlic-clove,7480	\N	f	0	8	4	2024-08-29	0	224	3
 6	\N	Broccoli	https://www.eatthismuch.com/food/nutrition/broccoli,1885	\N	f	0	608	91	2024-11-04	0	91	2
 7	\N	Large Carrots	https://www.eatthismuch.com/calories/carrots,1914	\N	f	0	72	72	2025-08-27	0	128	2
-8	\N	Red Bell Peppers	Missing minor nutrients - https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
+8	\N	Red Bell Peppers	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	512	119	119	2025-10-23	0	149	2
 9	\N	Avocados	https://www.eatthismuch.com/food/nutrition/avocados,1334/	\N	f	0	201	201	2024-10-23	0	201	1
 10	\N	Fresh Strawberries	https://www.eatthismuch.com/calories/strawberries-1558	\N	f	0	28	144	2024-12-19	4	144	1
 11	\N	Bananas	https://www.eatthismuch.com/calories/banana-1337	\N	f	0	118	118	2025-03-11	0	118	1
@@ -77,7 +77,7 @@
 79	\N	Canola Oil	https://www.eatthismuch.com/calories/canola-oil-329	\N	t	0	28	14	2024-12-22	9	224	65536
 80	\N	Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	30	239	2025-01-07	9	239	32
 81	\N	Balsamic Vinegar	https://www.eatthismuch.com/calories/balsamic-vinegar,235	\N	f	0	30	255	2024-09-15	9	255	32
-82	\N	Red Wine Vinegar	https://www.eatthismuch.com/calories/red-wine-vinegar,234	\N	f	0	30	239	2024-08-24	9	239	3
+82	\N	Red Wine Vinegar	https://www.eatthismuch.com/calories/red-wine-vinegar,234	\N	f	0	30	239	2025-10-23	9	239	3
 83	\N	White Vinegar	https://www.eatthismuch.com/calories/distilled-white-vinegar-4130562	\N	f	0	30	15	2025-03-21	9	240	32
 84	\N	White Wine Vinegar	https://www.eatthismuch.com/food/nutrition/white-wine-vinegar,27797/	\N	f	0	14	14	2025-05-10	7	240	3
 85	\N	White Wine	https://www.eatthismuch.com/calories/white-wine,3079	\N	f	0	29.4	147	2025-10-17	9	235.2	524288
@@ -704,7 +704,7 @@
 808	\N	Frozen Blueberries | Frozen Blackberries	https://www.eatthismuch.com/calories/blueberries-frozen-1346	\N	f	0	155	155	2024-11-22	6	155	33554432
 809	\N	Frozen Blackberries	https://www.eatthismuch.com/calories/blackberries-frozen-1342	\N	f	0	28	151	2025-01-20	4	151	33554432
 810	\N	Chocolate Sauce	https://www.eatthismuch.com/calories/chocolate-sauce-2501421	\N	f	0	40	40	2024-12-01	9	320	32
-811	\N	Mixed-Color Bell Peppers	https://www.eatthismuch.com/calories/red-bell-pepper-2440, https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2024-08-24	0	119	2
+811	\N	Mixed-Color Bell Peppers	https://www.eatthismuch.com/calories/yellow-peppers-2560	\N	f	0	186	186	2025-10-22	0	186	2
 812	\N	Bell Peppers	https://www.eatthismuch.com/calories/red-bell-pepper-2440	\N	f	0	119	119	2025-10-20	0	92	2
 813	\N	Fresh Nectarines	https://www.eatthismuch.com/calories/nectarines-1458	\N	f	0	142	142	2024-09-25	0	142	1
 814	\N	Fresh Peaches | Fresh Nectarines	https://www.eatthismuch.com/calories/peaches,1484	\N	f	0	150	150	2024-09-25	0	150	1
@@ -987,7 +987,7 @@
 1217	\N	Fresh Parsley | Fresh Cilantro	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-11-30	4	64	2
 1218	\N	Chocolate Chips	https://www.eatthismuch.com/calories/dark-chocolate-4766	\N	f	0	28	28	2024-12-15	4	224	16384
 1248	\N	Purple Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2025-08-18	0	133	2
-1249	\N	Orange Bell Peppers | Orange Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2024-08-24	0	119	1
+1249	\N	Orange Bell Peppers | Orange Sweet Potatoes	https://www.eatthismuch.com/calories/yellow-peppers-2560	\N	f	0	186	186	2025-10-22	0	186	2
 1250	\N	Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2025-08-18	0	133	2
 1251	\N	Cherry Tomatoes | Red Bell Peppers	https://www.eatthismuch.com/calories/tomato-cherry,129095	\N	f	512	17	85	2025-09-08	0	170	2
 1252	\N	Purple Cabbage	aka: Red Cabbage Heads. https://www.eatthismuch.com/calories/cabbage-1902	\N	f	0	908	908	2024-11-06	0	89	2
@@ -1083,7 +1083,7 @@
 1342	\N	Fresh Basil	https://www.eatthismuch.com/calories/basil-218	\N	f	0	28	0.5	2025-01-10	4	32	3
 1343	\N	Baharat Spice Mix	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111	\N	f	0	28	28	2024-12-04	4	149.33	1048576
 1344	\N	Plain Yogurt	aka Natural Yogurt; Plain Yogurt. https://www.eatthismuch.com/calories/plain-yogurt-96	\N	f	256	28	245	2024-10-16	4	245	29360128
-1345	\N	Large Red Onions	https://www.eatthismuch.com/calories/onions-2042	\N	f	0	110	110	2024-12-25	0	110	2
+1345	\N	Large Red Onions	https://www.eatthismuch.com/calories/onions-2042?a=1.36364%3A4	\N	f	0	150	150	2024-12-25	0	150	2
 1346	\N	Duck Breast Fillets	https://www.eatthismuch.com/calories/turkey-breast-560	\N	f	0	780	780	2025-03-27	0	260	268435456
 1347	\N	Boneless Chicken Breast Fillets	Fillet is a type of cut. A smaller cut of meat. https://www.eatthismuch.com/calories/chicken-breast-fillets-boneless-skinless-4111814	\N	f	0	112	112	2025-03-16	0	224	268435456
 1348	\N	Coffee Grounds	https://www.eatthismuch.com/calories/coffee-3126	\N	f	0	237	237	2025-05-31	6	237	131072
@@ -1108,7 +1108,7 @@
 1368	\N	Canned Baked Beans	https://www.eatthismuch.com/calories/baked-beans-3506	\N	f	0	28	254	2025-10-11	4	254	512
 1369	\N	Fresh Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
 1370	\N	Large Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
-1371	\N	Sesame Seeds	aka Hulled and Unhulled Sesame Seeds. https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-23	4	144	131072
+1371	\N	Sesame Seeds	https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-23	4	144	131072
 1372	\N	Shaved Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
 1373	\N	Slices of Gruyère Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	256	28	28	2025-03-03	0	224	6
 1374	\N	Cooked Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
@@ -1128,3 +1128,7 @@
 1388	\N	Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	262176	4.75	38	2025-08-09	4	38	4096
 1389	\N	Green Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
 1390	\N	Maldon Sea Salt	https://www.eatthismuch.com/calories/sea-salt-flakes-2375249	\N	t	0	28	2	2025-07-24	4	384	131072
+1391	\N	Navel Oranges	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	131	131	2025-04-12	0	131	1
+1392	\N	Mixed-Berries	https://www.eatthismuch.com/calories/mixed-berries-87958	\N	f	0	28	140	2024-12-22	4	140	1
+1393	\N	Palm Shortening	https://www.eatthismuch.com/calories/shortbread-cookies-1981045	\N	f	262176	9.5	57	2025-01-31	0	114	262144
+1394	\N	Cassava Flour	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048

@@ -1,19 +1,30 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class Symptoms
 {
-}
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int SymptomId { get; set; }
 
-/*CREATE TABLE [dbo].[Symptoms](
-	[SymptomId] [int] IDENTITY(1,1) NOT NULL,
-	[SymptomName] [varchar](255) NOT NULL,
-	[SymptomUri] [varchar](255) NOT NULL,
-	[SymptomCnt] [int] NOT NULL,
-	[AddDate] [datetime] NOT NULL,
-	[StudyName] [varchar](50) NULL,
-	[ICDCode] [varchar](50) NULL,
-	[useSymptom] [bit] NOT NULL,
- CONSTRAINT [PK_Symptoms] PRIMARY KEY CLUSTERED 
-(
-	[SymptomId] ASC
-)*/
+    [Required]
+    public string SymptomName { get; set; }
+
+    [Required]
+    public string SymptomUri { get; set; }
+
+    [Required]
+    public int SymptomCnt { get; set; }
+
+    [Required]
+    public DateTime AddDate { get; set; }
+
+    public string StudyName { get; set; }
+
+    public string ICDCode { get; set; }
+
+    [Required]
+    public bool UseSymptom { get; set; }
+}

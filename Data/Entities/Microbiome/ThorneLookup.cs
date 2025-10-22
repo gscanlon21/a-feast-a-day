@@ -1,10 +1,12 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 class ThorneLookup
 {
-}
+    [Key]
+    [Required]
+    public string TKey { get; set; }
 
-/*CREATE TABLE [dbo].[ThorneLookup](
-	[TKey] [nvarchar](2295) NOT NULL,
-	[Taxon] [int] NULL
-) */
+    public int? Taxon { get; set; }
+}

@@ -11,43 +11,79 @@ public class Conditions
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    public string ConditionName { get; set; }
+
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int CondId { get; set; }
+
+    [Required]
+    public string ConditionCode { get; set; }
+
+    public string? GMRepoName { get; set; }
+
+    public string? ProbioticSearch { get; set; }
+
+    public double? Prevelance { get; set; }
+
+    [Required]
+    public int TaxonCount { get; set; }
+
+    public string? OtherName { get; set; }
+
+    public string? ConditionUri { get; set; }
+
+    public int? SymptomId { get; set; }
+
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public int ConditionId { get; private set; }
+
+    public double? MaxValue { get; set; }
+
+    public double? MinValue { get; set; }
+
+    // AS ('/Library/Bacteria?ConditionCode='+[ConditionCode]),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string BacteriaUrl { get; private set; }
+
+    // AS ([ConditionUri]),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string Url { get; private set; }
+
+    // AS ('/Library/Statistics?ConditionCode='+[ConditionCode]),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string StatisticsUrl { get; private set; }
+
+    public double? KmLow { get; set; }
+
+    public double? KmHigh { get; set; }
+
+    // AS (round([KMLow],(2))),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double? NormalLow { get; private set; }
+
+    // AS (round([KMHigh],(2))),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double? NormalHigh { get; private set; }
+
+    // AS ([OtherName]),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string AltName { get; private set; }
+
+    public string? ICDCode { get; set; }
+
+    public string? Description { get; set; }
+
+    public string? cy { get; set; }
+    public string? da { get; set; }
+    public string? de { get; set; }
+    public string? es { get; set; }
+    public string? fr { get; set; }
+    public string? it { get; set; }
+    public string? se { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*CREATE TABLE [dbo].[Conditions](
-	[CondId] [int] IDENTITY(1,1) NOT NULL,
-	[ConditionCode] [varchar](3) NOT NULL,
-	[ConditionName] [varchar](255) NOT NULL,
-	[GMRepoName] [varchar](100) NULL,
-	[ProbioticSearch] [nvarchar](50) NULL,
-	[Prevelance] [float] NULL,
-	[TaxonCount] [int] NOT NULL,
-	[OtherName] [varchar](2000) NULL,
-	[ConditionUri] [varchar](255) NULL,
-	[SymptomId] [int] NULL,
-	[ConditionId]  AS ([CondId]),
-	[MaxValue] [float] NULL,
-	[MinValue] [float] NULL,
-	[BacteriaUrl]  AS ('/Library/Bacteria?ConditionCode='+[ConditionCode]),
-	[Url]  AS ([ConditionUri]),
-	[StatisticsUrl]  AS ('/Library/Statistics?ConditionCode='+[ConditionCode]),
-	[KmLow] [float] NULL,
-	[KmHigh] [float] NULL,
-	[NormalLow]  AS (round([KMLow],(2))),
-	[NormalHigh]  AS (round([KMHigh],(2))),
-	[AltName]  AS ([OtherName]),
-	[ICDCode] [varchar](50) NULL,
-	[Description] [nvarchar](max) NULL,
-	[cy] [nvarchar](max) NULL,
-	[da] [nvarchar](max) NULL,
-	[de] [nvarchar](max) NULL,
-	[es] [nvarchar](max) NULL,
-	[fr] [nvarchar](max) NULL,
-	[it] [nvarchar](max) NULL,
-	[se] [nvarchar](max) NULL,
- CONSTRAINT [PK_Conditions] PRIMARY KEY CLUSTERED 
-(
-	[ConditionName] ASC
-)*/

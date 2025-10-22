@@ -1,16 +1,22 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class UserLabs
 {
-}
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public int ULId { get; set; }
 
-/*CREATE TABLE [dbo].[UserLabs](
-	[ULId] [int] IDENTITY(1,1) NOT NULL,
-	[LG] [varchar](1) NOT NULL,
-	[Email] [varchar](255) NOT NULL,
-	[TakenDate] [date] NOT NULL,
-	[Person] [varchar](100) NULL,
- CONSTRAINT [PK_UserLabs] PRIMARY KEY CLUSTERED 
-(
-	[ULId] ASC
-)*/
+    [Required]
+    public string LG { get; set; }
+
+    [Required]
+    public string Email { get; set; }
+
+    [Required]
+    public DateTime TakenDate { get; set; }
+
+    public string? Person { get; set; }
+}

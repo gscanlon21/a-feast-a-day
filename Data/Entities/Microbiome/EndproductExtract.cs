@@ -1,11 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class EndproductExtract
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int EpId { get; set; }
 
-/*CREATE TABLE [dbo].[EndproductExtract](
-	[epid] [int] NOT NULL,
-	[cid] [int] NOT NULL,
-	[extract] [nvarchar](max) NULL
-*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Cid { get; set; }
+
+    public string? Extract { get; set; }
+}

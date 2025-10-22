@@ -1,14 +1,14 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class OTUTaxon
 {
-}
+    [Key, Required]
+    public int OTUNumber { get; set; }
 
-/*CREATE TABLE [dbo].[OTUTaxon](
-	[OTUNumber] [int] NOT NULL,
-	[Taxon] [int] NULL,
-	[OTUName] [varchar](200) NOT NULL,
- CONSTRAINT [PK_OTUTaxon] PRIMARY KEY CLUSTERED 
-(
-	[OTUNumber] ASC
-)*/
+    public int? Taxon { get; set; }
+
+    [Required]
+    public string OTUName { get; set; }
+}

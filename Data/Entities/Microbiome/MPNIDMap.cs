@@ -1,13 +1,12 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class MPNIDMap
 {
-}
+    [Key, Required]
+    public int OldNId { get; set; }
 
-/*CREATE TABLE [dbo].[MPNIDMap](
-	[OldNId] [int] NOT NULL,
-	[MpNID] [int] NOT NULL,
- CONSTRAINT [PK_MPNIDMap] PRIMARY KEY CLUSTERED 
-(
-	[OldNId] ASC
-)*/
+    [Required]
+    public int MpNID { get; set; }
+}

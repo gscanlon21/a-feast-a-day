@@ -1,31 +1,53 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class StatsTable_Taxon
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Source { get; set; }
 
-/*CREATE TABLE [dbo].[StatsTable_Taxon](
-	[source] [varchar](20) NOT NULL,
-	[taxon] [int] NOT NULL,
-	[obs] [int] NULL,
-	[percentiles] [varchar](max) NULL,
-	[mean] [float] NULL,
-	[stddev] [float] NULL,
-	[median] [float] NULL,
-	[lowlimit] [float] NULL,
-	[highlimit] [float] NULL,
-	[lowpercentile] [float] NULL,
-	[highpercentile] [float] NULL,
-	[lowpercentage] [float] NULL,
-	[highpercentage] [float] NULL,
-	[boxplotlow] [float] NULL,
-	[boxplothigh] [float] NULL,
-	[lablow]  AS (case when ([mean]-(1.96)*[Stddev])>(0) then round([mean]-(1.96)*[Stddev],(1)) else (0) end),
-	[labhigh]  AS (round([mean]+(1.96)*[Stddev],(1))),
-	[P15] [float] NULL,
-	[P85] [float] NULL,
- CONSTRAINT [PK_StatsTable_Taxon] PRIMARY KEY CLUSTERED 
-(
-	[source] ASC,
-	[taxon] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Taxon { get; set; }
+
+    public int? Obs { get; set; }
+
+    public string Percentiles { get; set; }
+
+    public double? Mean { get; set; }
+
+    public double? StdDev { get; set; }
+
+    public double? Median { get; set; }
+
+    public double? LowLimit { get; set; }
+
+    public double? HighLimit { get; set; }
+
+    public double? LowPercentile { get; set; }
+
+    public double? HighPercentile { get; set; }
+
+    public double? LowPercentage { get; set; }
+
+    public double? HighPercentage { get; set; }
+
+    public double? BoxPlotLow { get; set; }
+
+    public double? BoxPlotHigh { get; set; }
+
+    public double? P15 { get; set; }
+
+    public double? P85 { get; set; }
+
+    //  AS (case when ([mean]-(1.96)*[Stddev])>(0) then round([mean]-(1.96)*[Stddev],(1)) else (0) end),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double? LabLow { get; private set; }
+
+    //  AS (round([mean]+(1.96)*[Stddev],(1))),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double? LabHigh { get; private set; }
+}

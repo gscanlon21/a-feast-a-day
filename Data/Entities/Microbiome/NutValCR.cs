@@ -11,21 +11,26 @@ public class NutValCR
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public string? NDBNo { get; set; }
+
+    public string? NutrientName { get; set; }
+
+    public string? NutrrNo { get; set; }
+
+    public double? XbarAdj { get; set; }
+
+    public double? SE { get; set; }
+
+    public double? N { get; set; }
+
+    public float? Low { get; set; }
+
+    public float? High { get; set; }
+
+    public string? CC { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[Nut_Val_CR](
-	[NDB_No] [nvarchar](5) NULL,
-	[Nutrient name] [nvarchar](45) NULL,
-	[Nutrr_no] [nvarchar](3) NULL,
-	[xbar_adj] [float] NULL,
-	[SE] [float] NULL,
-	[N] [float] NULL,
-	[Low] [real] NULL,
-	[High] [real] NULL,
-	[CC] [nvarchar](255) NULL
-)
-*/

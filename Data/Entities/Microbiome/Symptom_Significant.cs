@@ -2,14 +2,14 @@
 
 internal class Symptom_Significant
 {
+    public int? SymptomId { get; set; }
+
+    public string Source { get; set; }
+
+    public int? TaxonCnt { get; set; }
+
+    public int? CompoundCnt { get; set; }
+
+    public int? EnzymeCnt { get; set; }
 }
 
-/*
-CREATE TABLE [dbo].[Symptom_Significant](
-	[SymptomId] [int] NULL,
-	[Source] [nvarchar](20) NULL,
-	[TaxonCnt] [int] NULL,
-	[CompoundCnt] [int] NULL,
-	[EnzymeCnt] [int] NULL
-) 
- */

@@ -11,14 +11,14 @@ public class Metabolism
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Required]
+    public int MId { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[Metabolism](
-	[MId] [int] NOT NULL,
-	[Name] [nvarchar](100) NOT NULL
-)
-*/

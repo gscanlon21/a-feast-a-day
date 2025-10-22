@@ -1,11 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class ValidHierarchy
 {
+    [Required]
+    [StringLength(100)]
+    public string TaxRank { get; set; }
+
+    [Required]
+    [StringLength(100)]
+    public string ParentRank { get; set; }
+
+    public int? Cnt { get; set; }
 }
 
-/*CREATE TABLE [dbo].[ValidHierarchy](
-	[tax_rank] [varchar](100) NOT NULL,
-	[parent_rank] [varchar](100) NOT NULL,
-	[Cnt] [int] NULL
-) */

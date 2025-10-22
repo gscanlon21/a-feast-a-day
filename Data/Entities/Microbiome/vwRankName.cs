@@ -1,12 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class vwRankName
 {
+    [Required]
+    public string Rank { get; set; }
+
+    [Required]
+    public string TaxonName { get; set; }
+
+    [Required]
+    public int Taxon { get; set; }
 }
 
-/*CREATE TABLE [dbo].[vwRankName](
-	[Rank] [varchar](20) NOT NULL,
-	[TaxonName] [varchar](255) NOT NULL,
-	[Taxon] [int] NOT NULL
-)*/
 

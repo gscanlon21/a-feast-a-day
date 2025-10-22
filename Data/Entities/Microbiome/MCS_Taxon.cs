@@ -11,14 +11,12 @@ public class MCS_Taxon
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Required]
+    public int Taxon { get; set; }
+
+    public string? ShiftIs { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[MCS_Taxon](
-	[Taxon] [int] NOT NULL,
-	[ShiftIs] [varchar](4) NULL
-)
-*/

@@ -1,14 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class OmbreJson
 {
+    [Required]
+    public DateTime PostedAt { get; set; }
+
+    public string? Json { get; set; }
+
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public int JsonId { get; set; }
 }
 
-/*CREATE TABLE [dbo].[OmbreJson](
-	[PostedAt] [datetime2](7) NOT NULL,
-	[Json] [varchar](max) NULL,
-	[JsonId] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [PK_OmbreJson] PRIMARY KEY CLUSTERED 
-(
-	[JsonId] ASC
-)*/

@@ -11,18 +11,13 @@ public class CitationLogic
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Required]
+    public string Logic { get; set; } = null!;
+
+    [Required]
+    public string Description { get; set; } = null!;
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-
-/*
-CREATE TABLE [dbo].[CitationLogic](
-	[Logic] [varchar](1) NOT NULL,
-	[Description] [varchar](50) NOT NULL,
- CONSTRAINT [PK_CitationLogic] PRIMARY KEY CLUSTERED 
-(
-	[Logic] ASC
-)
-*/

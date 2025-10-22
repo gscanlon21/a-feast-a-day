@@ -2,16 +2,14 @@
 
 internal class BiomeSight_Symptoms
 {
+    public int? SympId { get; set; }
+
+    public string? SymptomName { get; set; }
+
+    public string? SymptomCategory { get; set; }
+
+    public string? SymptomSubCategory { get; set; }
+
+    public int? SymptomId { get; set; }
 }
 
-
-/*
- * CREATE TABLE [BiomeSight].[Symptoms](
-	[SympId] [int] NULL,
-	[SymptomName] [varchar](100) NULL,
-	[SymptomCategory] [varchar](100) NULL,
-	[SymptomSubCategory] [varchar](100) NULL,
-	[SymptomId] [int] NULL
-) 
-GO
-*/

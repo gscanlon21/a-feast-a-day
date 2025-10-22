@@ -1,17 +1,22 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class SampleBacteria
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SampleId { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public DateTime AsOf { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Taxon { get; set; }
+
+    public double? SHift { get; set; }
 }
 
-/*CREATE TABLE [dbo].[SampleBacteria](
-	[SampleId] [int] NOT NULL,
-	[AsOf] [datetime] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[SHift] [float] NULL,
- CONSTRAINT [PK_SampleSampleBacteria] PRIMARY KEY CLUSTERED 
-(
-	[SampleId] ASC,
-	[AsOf] ASC,
-	[Taxon] ASC
-)*/

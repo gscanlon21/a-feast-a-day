@@ -1,19 +1,23 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class TaxonRatios
 {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int RatioId { get; set; }
+
+    [Required]
+    public string TopTaxon { get; set; }
+
+    [Required]
+    public string BottomTaxon { get; set; }
+
+    [Required]
+    public string RatioName { get; set; }
+
+    public string Description { get; set; }
 }
 
-/*
- 
- CREATE TABLE [dbo].[TaxonRatios](
-	[RatioId] [int] IDENTITY(1,1) NOT NULL,
-	[TopTaxon] [varchar](100) NOT NULL,
-	[BottomTaxon] [varchar](100) NOT NULL,
-	[RatioName] [nvarchar](50) NOT NULL,
-	[Description] [nvarchar](max) NULL,
- CONSTRAINT [PK_TaxonRatios] PRIMARY KEY CLUSTERED 
-(
-	[RatioId] ASC
-)
- */

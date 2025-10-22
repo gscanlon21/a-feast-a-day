@@ -1,11 +1,15 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class UserCompoundProbiotic
 {
-}
+    [Required]
+    public int UserId { get; set; }
 
-/*CREATE TABLE [dbo].[UserCompoundProbiotic](
-	[userId] [int] NOT NULL,
-	[taxon] [int] NOT NULL,
-	[bit] [int] NOT NULL
-) */
+    [Required]
+    public int Taxon { get; set; }
+
+    [Required]
+    public int Bit { get; set; }
+}

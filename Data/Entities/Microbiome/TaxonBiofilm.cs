@@ -1,17 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class TaxonBiofilm
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Taxon { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Cid { get; set; }
 }
 
 
-/*
- CREATE TABLE [dbo].[TaxonBiofilm](
-	[taxon] [int] NOT NULL,
-	[cid] [int] NOT NULL,
- CONSTRAINT [PK_TaxonBiofilm] PRIMARY KEY CLUSTERED 
-(
-	[taxon] ASC,
-	[cid] ASC
-)
- */

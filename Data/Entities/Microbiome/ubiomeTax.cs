@@ -1,46 +1,79 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class ubiomeTax
 {
+    [Key, Required]
+    public int Taxon { get; set; }
+
+    public int? Parent { get; set; }
+
+    [StringLength(200)]
+    public string? TaxName { get; set; }
+
+    [StringLength(20)]
+    public string? TaxRank { get; set; }
+
+    //  AS (('https://www.datapunk.net/substrata/display.pl?'+CONVERT([varchar](11),[taxon]))+'+S'),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? DatapunkUri { get; set; }
+
+    // AS ('https://www.ncbi.nlm.nih.gov/genomes/GenomesGroup.cgi?taxid='+CONVERT([varchar](11),[taxon])),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? GenomeUri { get; set; }
+
+    public double? Significance { get; set; }
+    public double? GutFrequency { get; set; }
+
+    public string? AltName { get; set; }
+
+    public double? MeanCount { get; set; }
+
+    // AS ('/library/details?taxon='+CONVERT([varchar](11),[taxon])) PERSISTED,
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? Url { get; set; }
+
+    // AS ('/library/details?taxon='+CONVERT([varchar](11),[taxon])),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? BacteriaUrl { get; set; }
+
+    // AS ('/Library/Statistics?taxon='+CONVERT([varchar](11),[taxon])),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? StatisticsUrl { get; set; }
+
+    public double? KMLow { get; set; }
+    public double? KMHigh { get; set; }
+
+    [StringLength(50)]
+    public string? Gram { get; set; }
+
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double? NormalLow { get; set; }
+
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double? NormalHigh { get; set; }
+
+    public double? LabLow { get; set; }
+    public double? LabHigh { get; set; }
+    public double? BoxPlotLow { get; set; }
+    public double? BoxPlotHigh { get; set; }
+    public int? SampleCount { get; set; }
+    public string? Description { get; set; }
+
+    [Required]
+    public bool OralBacteria { get; set; }
+
+    public int? HighAssociationCnt { get; set; }
+    public int? LowAssociationCnt { get; set; }
+    public int? ImageNo { get; set; }
+
+    //  AS ('http://www.ncbi.nlm.nih.gov/Taxonomy/taxi/images/'+CONVERT([varchar],[ImageNo])) PERSISTED,
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? ImageUrl { get; set; }
+
+    public double? Persistent { get; set; }
+    public string? RefChart { get; set; }
 }
 
-/*
- CREATE TABLE [dbo].[ubiomeTax](
-	[taxon] [int] NOT NULL,
-	[parent] [int] NULL,
-	[tax_name] [nvarchar](200) NULL,
-	[tax_rank] [varchar](20) NULL,
-	[datapunkUri]  AS (('https://www.datapunk.net/substrata/display.pl?'+CONVERT([varchar](11),[taxon]))+'+S'),
-	[genomeUri]  AS ('https://www.ncbi.nlm.nih.gov/genomes/GenomesGroup.cgi?taxid='+CONVERT([varchar](11),[taxon])),
-	[Significance] [float] NULL,
-	[GutFrequency] [float] NULL,
-	[AltName] [varchar](max) NULL,
-	[MeanCount] [float] NULL,
-	[url]  AS ('/library/details?taxon='+CONVERT([varchar](11),[taxon])) PERSISTED,
-	[bacteriaUrl]  AS ('/library/details?taxon='+CONVERT([varchar](11),[taxon])),
-	[StatisticsUrl]  AS ('/Library/Statistics?taxon='+CONVERT([varchar](11),[taxon])),
-	[KMLow] [float] NULL,
-	[KMHigh] [float] NULL,
-	[gram] [varchar](50) NULL,
-	[NormalLow]  AS ([KMLow]),
-	[NormalHigh]  AS ([KMHigh]),
-	[LabLow] [float] NULL,
-	[LabHigh] [float] NULL,
-	[BoxPlotLow] [float] NULL,
-	[BoxPlotHigh] [float] NULL,
-	[SampleCount] [int] NULL,
-	[description] [nvarchar](max) NULL,
-	[OralBacteria] [bit] NOT NULL,
-	[HighAssociationCnt] [int] NULL,
-	[LowAssociationCnt] [int] NULL,
-	[ImageNo] [int] NULL,
-	[ImageUrl]  AS ('http://www.ncbi.nlm.nih.gov/Taxonomy/taxi/images/'+CONVERT([varchar],[ImageNo])) PERSISTED,
-	[Persistent] [float] NULL,
-	[RefChart] [varchar](max) NULL,
- CONSTRAINT [PK_ubiomeTax] PRIMARY KEY CLUSTERED 
-(
-	[taxon] ASC
-)
-
-GO
- * */

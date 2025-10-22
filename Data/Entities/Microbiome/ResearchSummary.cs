@@ -11,25 +11,30 @@ public class ResearchSummary
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SymptomId { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Taxon { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public string Src { get; set; }
+
+    public double? WithMean { get; set; }
+
+    public double? WithoutMean { get; set; }
+
+    public double? TScore { get; set; }
+
+    public double? DF { get; set; }
+
+    [Required]
+    public string Probability { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[Research_Summary](
-	[SymptomId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Src] [varchar](20) NOT NULL,
-	[WithMean] [float] NULL,
-	[WithoutMean] [float] NULL,
-	[TScore] [float] NULL,
-	[DF] [float] NULL,
-	[Probability] [varchar](9) NOT NULL,
- CONSTRAINT [PK_Research_Summary] PRIMARY KEY CLUSTERED 
-(
-	[SymptomId] ASC,
-	[Taxon] ASC,
-	[Src] ASC
-)
-*/

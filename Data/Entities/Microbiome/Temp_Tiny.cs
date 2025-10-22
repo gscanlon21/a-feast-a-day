@@ -1,11 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class Temp_Tiny
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Rank { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
+    [Required]
+    public double Amount { get; set; }
 }
 
-/*CREATE TABLE [dbo].[Temp_Tiny](
-	[Rank] [varchar](200) NOT NULL,
-	[Name] [varchar](200) NOT NULL,
-	[Amount] [float] NOT NULL
-) */

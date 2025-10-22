@@ -1,13 +1,13 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class SIBO_Taxon
 {
-}
+    [Key]
+    [Required]
+    public int Taxon { get; set; }
 
-/*CREATE TABLE [dbo].[SIBO_Taxon](
-	[taxon] [int] NOT NULL,
-	[shiftis] [varchar](4) NOT NULL,
- CONSTRAINT [PK_SIBO_Taxons] PRIMARY KEY CLUSTERED 
-(
-	[taxon] ASC
-)*/
+    [Required]
+    public string Shiftis { get; set; }
+}

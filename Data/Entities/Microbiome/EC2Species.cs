@@ -1,16 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class EC2Species
 {
-}
+    [Required]
+    [Key, Column(Order = 0)]
+    public string ECKey { get; set; } = null!;
 
-/*CREATE TABLE [dbo].[EC2Species](
-	[ECKey] [varchar](20) NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Cnt] [float] NULL,
- CONSTRAINT [PK_EC2Species] PRIMARY KEY CLUSTERED 
-(
-	[ECKey] ASC,
-	[Taxon] ASC
-)
-) */
+    [Required]
+    [Key, Column(Order = 1)]
+    public int Taxon { get; set; }
+
+    public double? Cnt { get; set; }
+}

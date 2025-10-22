@@ -1,21 +1,31 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class ModifierType
 {
+    [Key, Required]
+    public string MType { get; set; }
+
+    [Required, Column("ModifierType")]
+    public string ModifierTypeName { get; set; }
+
+    public string? De2 { get; set; }
+
+    public string? Es2 { get; set; }
+
+    public string? Da2 { get; set; }
+
+    public string? Se2 { get; set; }
+
+    public string? Cy2 { get; set; }
+
+    public string? It2 { get; set; }
+
+    public string? Fr2 { get; set; }
+
+    [Required]
+    public int Skills { get; set; }
 }
 
-/*CREATE TABLE [dbo].[ModifierType](
-	[MType] [varchar](1) NOT NULL,
-	[ModifierType] [varchar](50) NOT NULL,
-	[de2] [nvarchar](255) NULL,
-	[es2] [nvarchar](255) NULL,
-	[da2] [nvarchar](255) NULL,
-	[se2] [nvarchar](255) NULL,
-	[cy2] [nvarchar](255) NULL,
-	[it2] [nvarchar](255) NULL,
-	[fr2] [nvarchar](255) NULL,
-	[skills] [int] NOT NULL,
- CONSTRAINT [PK_ModifierType] PRIMARY KEY CLUSTERED 
-(
-	[MType] ASC
-)*/

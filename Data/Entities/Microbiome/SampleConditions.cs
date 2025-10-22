@@ -11,21 +11,18 @@ public class SampleConditions
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SampleId { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int CondId { get; set; }
+
+    public int? Percentage { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-
-
-/*
-CREATE TABLE [dbo].[Sample_Conditions](
-	[SampleId] [int] NOT NULL,
-	[Condid] [int] NOT NULL,
-	[Percentage] [int] NULL,
- CONSTRAINT [PK_Sample_Conditions] PRIMARY KEY CLUSTERED 
-(
-	[SampleId] ASC,
-	[Condid] ASC
-)
-*/

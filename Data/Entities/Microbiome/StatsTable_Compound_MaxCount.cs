@@ -1,10 +1,12 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class StatsTable_Compound_MaxCount
 {
-}
+    [Key]
+    [Required]
+    public string Source { get; set; }
 
-/*CREATE TABLE [dbo].[StatsTable_Compound_MaxCount](
-	[source] [nvarchar](20) NOT NULL,
-	[MaxCount] [float] NULL
-) */
+    public double? MaxCount { get; set; }
+}

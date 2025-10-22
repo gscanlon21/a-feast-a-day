@@ -2,11 +2,11 @@
 
 internal class taxon_impacts
 {
-}
+    public int? Source { get; set; }
 
-/*CREATE TABLE [dbo].[taxon_impacts](
-	[source] [int] NULL,
-	[target] [int] NULL,
-	[chi2] [float] NULL,
-	[impact] [int] NULL
-) */
+    public int? Target { get; set; }
+
+    public double? Chi2 { get; set; }
+
+    public int? Impact { get; set; }
+}

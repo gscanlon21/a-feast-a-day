@@ -1,24 +1,20 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Food_Taxon
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public int FoodId { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public double TaxonID { get; set; }
+
+    public double? Weight { get; set; }
+
+    public int? Taxon { get; set; }
 }
 
-/*
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Food_Taxon](
-	[FoodId] [int] NOT NULL,
-	[taxonID] [float] NOT NULL,
-	[Weight] [float] NULL,
-	[Taxon] [int] NULL,
- CONSTRAINT [PK_Food_Taxon] PRIMARY KEY CLUSTERED 
-(
-	[FoodId] ASC,
-	[taxonID] ASC
-)
-) 
-GO
- * */

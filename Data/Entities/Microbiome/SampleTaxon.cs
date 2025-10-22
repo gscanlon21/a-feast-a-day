@@ -1,14 +1,23 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class SampleTaxon
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SampleId { get; set; }
 
-/*CREATE TABLE [dbo].[SampleTaxon](
-	[SampleId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Abundance] [float] NULL,
-	[Percentile] [float] NULL,
-	[Per20] [float] NULL,
-	[Per80] [float] NULL
-) */
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Taxon { get; set; }
+
+    public double? Abundance { get; set; }
+
+    public double? Percentile { get; set; }
+
+    public double? Per20 { get; set; }
+
+    public double? Per80 { get; set; }
+}

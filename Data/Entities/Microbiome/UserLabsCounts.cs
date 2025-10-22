@@ -1,12 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class UserLabsCounts
 {
+    [Required]
+    public int ULId { get; set; }
+
+    [Required]
+    public int Taxon { get; set; }
+
+    [Required]
+    public int Change { get; set; }
+
+    public double? Weight { get; set; }
 }
 
-/*CREATE TABLE [dbo].[UserLabsCounts](
-	[ULId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Change] [int] NOT NULL,
-	[Weight] [float] NULL
-) */

@@ -11,16 +11,13 @@ public class LogicApplied
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Required]
+    public string LogicCode { get; set; }
+
+    [Required]
+    public string Description { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-/*
-CREATE TABLE [dbo].[LogicApplied](
-	[LogicCode] [varchar](1) NOT NULL,
-	[Description] [varchar](100) NOT NULL,
- CONSTRAINT [PK_LogicApplied] PRIMARY KEY CLUSTERED 
-(
-	[LogicCode] ASC
-)
-*/

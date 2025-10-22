@@ -1,19 +1,27 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class OddsRatio
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Source { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int SymptomId { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Taxon { get; set; }
+
+    [Key, Column(Order = 3)]
+    [Required]
+    public string Direction { get; set; }
+
+    [Required]
+    public double Percentile { get; set; }
 }
 
-/*CREATE TABLE [dbo].[OddsRatio](
-	[Source] [varchar](20) NOT NULL,
-	[SymptomId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Percentile] [float] NOT NULL,
-	[Direction] [varchar](1) NOT NULL,
- CONSTRAINT [PK_OddsRatio] PRIMARY KEY CLUSTERED 
-(
-	[Source] ASC,
-	[SymptomId] ASC,
-	[Taxon] ASC,
-	[Direction] ASC
-)*/

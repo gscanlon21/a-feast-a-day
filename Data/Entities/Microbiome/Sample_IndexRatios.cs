@@ -1,17 +1,20 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class Sample_IndexRatios
 {
+    [Required]
+    [Key, Column(Order = 0)]
+    public int SequenceId { get; set; }
+
+    [Required]
+    [Key, Column(Order = 1)]
+    public string IndexName { get; set; } = null!;
+
+    public double? AValue { get; set; }
+
+    public decimal? Percentile { get; set; }
 }
 
-/*CREATE TABLE [dbo].[Sample_IndexRatios](
-	[sequenceId] [int] NOT NULL,
-	[IndexName] [varchar](50) NOT NULL,
-	[AValue] [float] NULL,
-	[Percentile] [numeric](3, 1) NULL,
- CONSTRAINT [PK_Sample_IndexRatios] PRIMARY KEY CLUSTERED 
-(
-	[sequenceId] ASC,
-	[IndexName] ASC
-)
-) */

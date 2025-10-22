@@ -1,20 +1,22 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class AutoImmuneFilter
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Taxon { get; set; }
 
-/*
- 
-CREATE TABLE [dbo].[AutoImmuneFilter](
-	[taxon] [int] NOT NULL,
-	[direction] [varchar](3) NOT NULL,
-	[Weight] [float] NOT NULL,
-	[Tax_rank] [varchar](100) NOT NULL,
- CONSTRAINT [PK_AutoImmuneFilter] PRIMARY KEY CLUSTERED 
-(
-	[taxon] ASC,
-	[direction] ASC
-)
- 
- */
+    [Key, Column(Order = 1)]
+    [Required]
+    public string Direction { get; set; } = null!;
+
+    [Required]
+    public double Weight { get; set; }
+
+    [Required]
+    [Column("Tax_rank")]
+    public string TaxRank { get; set; } = null!;
+}

@@ -1,20 +1,25 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class JasonH
 {
-}
+    [Required]
+    [Key, Column(Order = 0)]
+    public string Source { get; set; }
 
-/*
- CREATE TABLE [dbo].[JasonH](
-	[Source] [varchar](20) NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[LowValue] [float] NOT NULL,
-	[HighValue] [float] NOT NULL,
-	[LowPCile] [float] NULL,
-	[HighPCile] [float] NULL,
- CONSTRAINT [PK_JasonH] PRIMARY KEY CLUSTERED 
-(
-	[Source] ASC,
-	[Taxon] ASC
-)
- */
+    [Required]
+    [Key, Column(Order = 1)]
+    public int Taxon { get; set; }
+
+    [Required]
+    public double LowValue { get; set; }
+
+    [Required]
+    public double HighValue { get; set; }
+
+    public double? LowPCile { get; set; }
+
+    public double? HighPCile { get; set; }
+}

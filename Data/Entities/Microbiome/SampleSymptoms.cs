@@ -1,14 +1,15 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class SampleSymptoms
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int SequenceId { get; set; }
 
-/*CREATE TABLE [dbo].[SampleSymptoms](
-	[SequenceId] [int] NOT NULL,
-	[SymptomId] [int] NOT NULL,
- CONSTRAINT [PK_SampleSymptoms] PRIMARY KEY CLUSTERED 
-(
-	[SequenceId] ASC,
-	[SymptomId] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int SymptomId { get; set; }
+}

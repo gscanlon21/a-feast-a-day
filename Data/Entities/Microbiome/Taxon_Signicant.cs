@@ -1,15 +1,22 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class Taxon_Signicant
 {
-}
+    public string Source { get; set; }
 
-/*CREATE TABLE [dbo].[Taxon_Signicant](
-	[Source] [nvarchar](20) NULL,
-	[Taxon] [int] NULL,
-	[WithSymptoms] [float] NULL,
-	[Below15] [float] NULL,
-	[Above85] [float] NULL,
-	[direction] [nvarchar](9) NOT NULL,
-	[Chi2] [float] NULL
-) */
+    public int? Taxon { get; set; }
+
+    public double? WithSymptoms { get; set; }
+
+    public double? Below15 { get; set; }
+
+    public double? Above85 { get; set; }
+
+    [Required]
+    public string Direction { get; set; }
+
+    public double? Chi2 { get; set; }
+
+}

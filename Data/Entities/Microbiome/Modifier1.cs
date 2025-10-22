@@ -1,16 +1,20 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Modifier1
 {
-}
+    [Required]
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Mid1 { get; set; }
 
-/*CREATE TABLE [dbo].[Modifier1](
-	[Mid1] [int] IDENTITY(1,1) NOT NULL,
-	[Modifier1] [varchar](100) NOT NULL,
-	[Description] [varchar](max) NULL,
-	[Uri] [varchar](256) NULL,
-	[MType] [varchar](2) NULL,
- CONSTRAINT [PK_Modifier1] PRIMARY KEY CLUSTERED 
-(
-	[Mid1] ASC
-)*/
+    [Required, Column("Modifier1")]
+    public string Modifier1Name { get; set; } = null!;
+
+    public string? Description { get; set; }
+
+    public string? Uri { get; set; }
+
+    public string? MType { get; set; }
+}

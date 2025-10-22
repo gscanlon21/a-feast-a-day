@@ -1,23 +1,30 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class AtlasBiomedImport
 {
+    [Required]
+    public string Col1 { get; set; } = null!;
+
+    public string? Col2 { get; set; }
+
+    public string? Col3 { get; set; }
+
+    public string? Col4 { get; set; }
+
+    public string? Col5 { get; set; }
+
+    public string? Col6 { get; set; }
+
+    [Required]
+    public double PC { get; set; }
+
+    public int? OTU { get; set; }
+
+    public int? Taxon { get; set; }
+
+    public int? Count_Norm { get; set; }
+
+    public string? TaxRank { get; set; }
 }
-
-/*
- 
-CREATE TABLE [dbo].[AtlasBiomedImport](
-	[Col1] [varchar](100) NOT NULL,
-	[Col2] [varchar](100) NULL,
-	[Col3] [varchar](100) NULL,
-	[Col4] [varchar](100) NULL,
-	[Col5] [varchar](100) NULL,
-	[Col6] [varchar](max) NULL,
-	[PC] [float] NOT NULL,
-	[OTU] [int] NULL,
-	[Taxon] [int] NULL,
-	[count_Norm] [int] NULL,
-	[TaxRank] [varchar](20) NULL
-
-)
- */

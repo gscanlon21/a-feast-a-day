@@ -11,29 +11,49 @@ public class EndProduct
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int EpId { get; set; }
+
+    [Required, Column("EndProduct")]
+    public string EndProductName { get; set; } = string.Empty;
+
+    public double? AverageCount { get; set; }
+
+    public string? DataPunkUri { get; set; }
+
+    public double? StandardDeviation { get; set; }
+
+    [Required]
+    public int Cnt { get; set; }
+
+    public string? Json { get; set; } // varchar(max)
+
+    [Required]
+    public double Density { get; set; }
+
+    // AS ('/Library/EndProductProducers?epid='+CONVERT([varchar](11),[epid])) PERSISTED,
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? Url { get; private set; }
+
+    // AS ('/Library/Bacteria?epid='+CONVERT([varchar](11),[epid])),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? BacteriaUrl { get; private set; }
+
+    // AS ('/Library/Statistics?epid='+CONVERT([varchar](11),[epid])),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public string? StatisticsUrl { get; private set; }
+
+    public double? NormalLow { get; set; }
+
+    public double? NormalHigh { get; set; }
+
+    public int? Mid2 { get; set; }
+
+    public double? KMLow { get; set; }
+
+    public double? KMHigh { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*CREATE TABLE [dbo].[EndProduct](
-	[EpId] [int] IDENTITY(1,1) NOT NULL,
-	[EndProduct] [nvarchar](max) NOT NULL,
-	[AverageCount] [float] NULL,
-	[DataPunkUri] [varchar](255) NULL,
-	[StandardDeviation] [float] NULL,
-	[Cnt] [int] NOT NULL,
-	[Json] [varchar](max) NULL,
-	[Density] [float] NOT NULL,
-	[url]  AS ('/Library/EndProductProducers?epid='+CONVERT([varchar](11),[epid])) PERSISTED,
-	[BacteriaUrl]  AS ('/Library/Bacteria?epid='+CONVERT([varchar](11),[epid])),
-	[StatisticsUrl]  AS ('/Library/Statistics?epid='+CONVERT([varchar](11),[epid])),
-	[NormalLow] [float] NULL,
-	[NormalHigh] [float] NULL,
-	[Mid2] [int] NULL,
-	[KMLow] [float] NULL,
-	[KMHigh] [float] NULL,
- CONSTRAINT [PK_EndProduct] PRIMARY KEY CLUSTERED 
-(
-	[EpId] ASC
-)*/

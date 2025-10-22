@@ -1,17 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Mid1to2
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Mid1 { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Mid2 { get; set; }
+
+    public double? Direction { get; set; }
 }
 
-/*
-CREATE TABLE [dbo].[Mid1to2](
-	[Mid1] [int] NOT NULL,
-	[Mid2] [int] NOT NULL,
-	[Direction] [float] NULL,
- CONSTRAINT [PK_Mid1to2] PRIMARY KEY CLUSTERED 
-(
-	[Mid1] ASC,
-	[Mid2] ASC
-)
- */

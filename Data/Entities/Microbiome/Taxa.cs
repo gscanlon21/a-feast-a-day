@@ -12,29 +12,43 @@ public class Taxa
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public double? TaxonId { get; set; }
+
+    public int? Taxon { get; set; }
+
+    public string Label { get; set; }
+
+    public string Domain { get; set; }
+
+    public string Phylum { get; set; }
+
+    public string Class { get; set; }
+
+    public string Order { get; set; }
+
+    public string Family { get; set; }
+
+    public string Genus { get; set; }
+
+    public string Species { get; set; }
+
+    public string IdL6 { get; set; }
+
+    public string Taxonomy { get; set; }
+
+    public string IdeLevel { get; set; }
+
+    public string NCBIOutlink { get; set; }
+
+    public string BacterioNetOutlink { get; set; }
+
+    public string OmniHabitat { get; set; }
+
+    public string OmniPheno { get; set; }
+
+    public string OmniUse { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-
-/*CREATE TABLE [dbo].[Taxa](
-	[taxonId] [float] NULL,
-	[Taxon] [int] NULL,
-	[label] [nvarchar](255) NULL,
-	[domain] [nvarchar](255) NULL,
-	[phylum] [nvarchar](255) NULL,
-	[class] [nvarchar](255) NULL,
-	[order] [nvarchar](255) NULL,
-	[family] [nvarchar](255) NULL,
-	[genus] [nvarchar](255) NULL,
-	[species] [nvarchar](255) NULL,
-	[id_L6] [nvarchar](255) NULL,
-	[taxonomy] [nvarchar](255) NULL,
-	[idelevel] [nvarchar](255) NULL,
-	[NCBI_outlink] [nvarchar](255) NULL,
-	[BacterioNet_outlink] [nvarchar](255) NULL,
-	[Omni_habitat] [nvarchar](255) NULL,
-	[Omni_pheno] [nvarchar](255) NULL,
-	[Omni_use] [nvarchar](255) NULL
-)*/

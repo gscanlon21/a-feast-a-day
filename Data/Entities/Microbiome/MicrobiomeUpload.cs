@@ -11,17 +11,20 @@ public class MicrobiomeUpload
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public int? Taxon { get; set; }
+
+    [Required]
+    public string TaxName { get; set; }
+
+    public string? TaxRank { get; set; }
+
+    public int? Count { get; set; }
+
+    [Required]
+    public int CountNorm { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[MicrobiomeUpload](
-	[Taxon] [int] NULL,
-	[TaxName] [varchar](200) NOT NULL,
-	[TaxRank] [varchar](50) NULL,
-	[Count] [int] NULL,
-	[CountNorm] [int] NOT NULL
-)
-*/

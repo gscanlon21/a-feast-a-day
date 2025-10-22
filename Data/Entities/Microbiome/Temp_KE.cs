@@ -2,11 +2,8 @@
 
 internal class Temp_KE
 {
+    public long? No { get; set; }
+
+    public string Description { get; set; }
 }
 
-/*
- CREATE TABLE [dbo].[Temp_KE](
-	[No] [bigint] NULL,
-	[Description] [nvarchar](max) NULL
-)
- */

@@ -1,20 +1,23 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class StatsTable_TaxonRatio
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Source { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int RatioId { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public int Percentile { get; set; }
+
+    [Required]
+    public double Value { get; set; }
 }
 
-
-/*
- CREATE TABLE [dbo].[StatsTable_TaxonRatio](
-	[Source] [varchar](20) NOT NULL,
-	[RatioId] [int] NOT NULL,
-	[Percentile] [int] NOT NULL,
-	[Value] [float] NOT NULL,
- CONSTRAINT [PK_StatsTable_TaxonRatio] PRIMARY KEY CLUSTERED 
-(
-	[Source] ASC,
-	[RatioId] ASC,
-	[Percentile] ASC
-)
- */

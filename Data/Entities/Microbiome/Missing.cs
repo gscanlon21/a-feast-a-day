@@ -2,13 +2,16 @@
 
 internal class Missing
 {
+    public int? SampleId { get; set; }
+
+    public string? TKey { get; set; }
+
+    public double? Abundance { get; set; }
+
+    public double? Percentile { get; set; }
+
+    public double? Per20 { get; set; }
+
+    public double? Per80 { get; set; }
 }
 
-/*CREATE TABLE [dbo].[Missing](
-	[SampleId] [int] NULL,
-	[TKey] [nvarchar](255) NULL,
-	[Abundance] [float] NULL,
-	[Percentile] [float] NULL,
-	[Per20] [float] NULL,
-	[Per80] [float] NULL
-) */

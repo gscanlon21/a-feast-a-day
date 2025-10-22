@@ -1,26 +1,40 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 class Working_Thorne
 {
-}
+    [Required]
+    public string Domain { get; set; }
 
-/*CREATE TABLE [dbo].[Working_Thorne](
-	[Domain] [varchar](200) NOT NULL,
-	[KINGDOM] [varchar](200) NULL,
-	[PHYLUM] [varchar](200) NULL,
-	[CLASS] [varchar](200) NULL,
-	[ORDER] [varchar](200) NULL,
-	[FAMILY] [varchar](200) NULL,
-	[GENUS] [varchar](200) NULL,
-	[SPECIES] [varchar](200) NULL,
-	[SEROGROUP] [varchar](200) NULL,
-	[SEROTYPE] [varchar](200) NULL,
-	[SUBSPECIES] [varchar](200) NULL,
-	[STRAIN] [varchar](200) NULL,
-	[ISOLATE] [varchar](200) NULL,
-	[Abundance] [float] NULL,
-	[P20] [float] NULL,
-	[P80] [float] NULL,
-	[Percentile] [float] NULL,
-	[Taxon] [int] NULL
-) */
+    public string? Kingdom { get; set; }
+
+    public string? Phylum { get; set; }
+
+    public string? Class { get; set; }
+
+    public string? Order { get; set; }
+
+    public string? Family { get; set; }
+
+    public string? Genus { get; set; }
+
+    public string? Species { get; set; }
+
+    public string? Serogroup { get; set; }
+
+    public string? Serotype { get; set; }
+
+    public string? Subspecies { get; set; }
+
+    public string? Strain { get; set; }
+
+    public string? Isolate { get; set; }
+
+    public double? Abundance { get; set; }
+    public double? P20 { get; set; }
+    public double? P80 { get; set; }
+    public double? Percentile { get; set; }
+
+    public int? Taxon { get; set; }
+}

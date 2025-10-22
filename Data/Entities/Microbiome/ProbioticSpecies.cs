@@ -12,27 +12,41 @@ public class ProbioticSpecies
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int ProSpeciesId { get; set; }
+
+    [Required]
+    public string SpeciesName { get; set; } = string.Empty;
+
+    [Required]
+    public int Mid2 { get; set; }
+
+    [Required]
+    public bool Persists { get; set; }
+
+    [Required]
+    public bool NotHistamineProducer { get; set; }
+
+    [Required]
+    public bool HistamineProducer { get; set; }
+
+    public bool? LacticAcidProducer { get; set; }
+
+    public bool? DLacticAcid { get; set; }
+
+    public bool? LLacticAcid { get; set; }
+
+    public bool? BalancedLacticAcid { get; set; }
+
+    public bool? Bacteremia { get; set; }
+
+    public int? Taxon { get; set; }
+
+    public bool? GABA { get; set; }
+
+    public string? Features { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*CREATE TABLE [dbo].[ProbioticSpecies](
-	[ProSpeciesId] [int] IDENTITY(1,1) NOT NULL,
-	[SpeciesName] [varchar](255) NOT NULL,
-	[Mid2] [int] NOT NULL,
-	[Persists] [bit] NOT NULL,
-	[NotHistamineProducer] [bit] NOT NULL,
-	[HistamineProducer] [bit] NOT NULL,
-	[LacticAcidProducer] [bit] NULL,
-	[DLacticAcid] [bit] NULL,
-	[LLacticAcid] [bit] NULL,
-	[BalancedLacticAcid] [bit] NULL,
-	[Bacteremia] [bit] NULL,
-	[Taxon] [int] NULL,
-	[GABA] [bit] NULL,
-	[Features] [nvarchar](max) NULL,
- CONSTRAINT [PK_ProbioticSpecies] PRIMARY KEY CLUSTERED 
-(
-	[ProSpeciesId] ASC
-)*/

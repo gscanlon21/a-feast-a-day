@@ -1,18 +1,24 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class SourceSymptomEnzyme
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Source { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int SymptomId { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public string ECKey { get; set; }
+
+    public double? Chi2 { get; set; }
+
+    public string Direction { get; set; }
 }
 
-/*CREATE TABLE [dbo].[SourceSymptomEnzyme](
-	[Source] [varchar](20) NOT NULL,
-	[SymptomId] [int] NOT NULL,
-	[ECKey] [varchar](20) NOT NULL,
-	[Chi2] [float] NULL,
-	[direction] [varchar](4) NULL,
- CONSTRAINT [PK_SourceSymptomEnzyme] PRIMARY KEY CLUSTERED 
-(
-	[Source] ASC,
-	[SymptomId] ASC,
-	[ECKey] ASC
-)*/

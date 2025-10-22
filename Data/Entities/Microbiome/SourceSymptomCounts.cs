@@ -1,10 +1,13 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class SourceSymptomCounts
 {
+    [Key]
+    [Required]
+    public int SymptomId { get; set; }
+
+    public int? Associations { get; set; }
 }
 
-/*CREATE TABLE [dbo].[SourceSymptomCounts](
-	[symptomId] [int] NOT NULL,
-	[Associations] [int] NULL
-) */

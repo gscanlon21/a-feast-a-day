@@ -1,10 +1,12 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class StatsTable_Size
 {
-}
+    [Key]
+    [Required]
+    public string Source { get; set; }
 
-/*CREATE TABLE [dbo].[StatsTable_Size](
-	[source] [varchar](20) NOT NULL,
-	[Population] [int] NULL
-) */
+    public int? Population { get; set; }
+}

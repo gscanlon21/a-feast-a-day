@@ -1,12 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class V2_ModifierTaxon
 {
+    [Required]
+    public int Mid2 { get; set; }
+
+    [Required]
+    public int Taxon { get; set; }
+
+    public double? TaxonImpact { get; set; }
+
+    public double? Median { get; set; }
 }
 
-/*CREATE TABLE [dbo].[V2_ModifierTaxon](
-	[mid2] [int] NOT NULL,
-	[taxon] [int] NOT NULL,
-	[TaxonImpact] [float] NULL,
-	[Median] [float] NULL
-) */

@@ -1,11 +1,15 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class QA_Table
 {
+    [Key]
+    [Required]
+    public int SymptomId { get; set; }
+
+    public decimal? Matches { get; set; }
+
+    public double? Chi2Matches { get; set; }
 }
 
-/*CREATE TABLE [dbo].[QA_Table](
-	[SymptomId] [int] NOT NULL,
-	[Matches] [numeric](38, 23) NULL,
-	[Chi2Matches] [float] NULL
-) */

@@ -1,14 +1,15 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class ModifierParentChild
 {
-}
+    [Required]
+    [Key, Column(Order = 0)]
+    public int ParentMid { get; set; }
 
-/*CREATE TABLE [dbo].[ModifierParentChild](
-	[ParentMid] [int] NOT NULL,
-	[ChildMid] [int] NOT NULL,
- CONSTRAINT [PK_ModifierParentChild] PRIMARY KEY CLUSTERED 
-(
-	[ParentMid] ASC,
-	[ChildMid] ASC
-)*/
+    [Required]
+    [Key, Column(Order = 1)]
+    public int ChildMid { get; set; }
+}

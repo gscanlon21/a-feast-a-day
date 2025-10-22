@@ -1,16 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class KyberKompakt
 {
-}
+    [Required]
+    [Key, Column(Order = 0)]
+    public int Taxon { get; set; }
 
-/*CREATE TABLE [dbo].[KyberKompakt](
-	[Taxon] [int] NOT NULL,
-	[DisplayOrder] [int] NULL,
-	[LabGroup] [varchar](2) NOT NULL,
- CONSTRAINT [PK_KyberKompakt] PRIMARY KEY CLUSTERED 
-(
-	[Taxon] ASC,
-	[LabGroup] ASC
-)
-) */
+    [Required]
+    [Key, Column(Order = 1)]
+    public string LabGroup { get; set; }
+
+    public int? DisplayOrder { get; set; }
+}

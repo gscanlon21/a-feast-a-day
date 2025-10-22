@@ -1,13 +1,14 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class Temp_Microba
 {
-}
+    public int? Taxon { get; set; }
 
-/*
- CREATE TABLE [dbo].[Temp_Microba](
-	[taxon] [int] NULL,
-	[taxrank] [varchar](50) NOT NULL,
-	[name] [nvarchar](max) NOT NULL
-)
- */
+    [Required]
+    public string TaxRank { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+}

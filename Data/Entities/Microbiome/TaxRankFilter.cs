@@ -1,17 +1,13 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class TaxRankFilter
 {
+    [Key]
+    [Required]
+    public string TaxRank { get; set; }
+
+    [Required]
+    public int FilterId { get; set; }
 }
-
-
-/*
- CREATE TABLE [dbo].[TaxRankFilter](
-	[tax_rank] [varchar](20) NOT NULL,
-	[FilterId] [int] NOT NULL,
- CONSTRAINT [PK_TaxRankFilter] PRIMARY KEY CLUSTERED 
-(
-	[tax_rank] ASC
-)
- 
- */

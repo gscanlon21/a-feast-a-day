@@ -1,22 +1,32 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Data.Entities.Microbiome;
+
+[Table("statistics_product")]
 class statistics_Product
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public string Source { get; set; }
 
-/*CREATE TABLE [statistics].[Product](
-	[source] [varchar](16) NOT NULL,
-	[Product] [int] NOT NULL,
-	[Mean] [float] NULL,
-	[SD] [float] NULL,
-	[BoxLow] [float] NULL,
-	[BoxHigh] [float] NULL,
-	[KMLow] [float] NULL,
-	[KMHigh] [float] NULL,
-	[Count] [float] NULL,
-	[Median] [float] NULL,
- CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
-(
-	[source] ASC,
-	[Product] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Product { get; set; }
+
+    public double? Mean { get; set; }
+
+    public double? SD { get; set; }
+
+    public double? BoxLow { get; set; }
+
+    public double? BoxHigh { get; set; }
+
+    public double? KMLow { get; set; }
+
+    public double? KMHigh { get; set; }
+
+    public double? Count { get; set; }
+
+    public double? Median { get; set; }
+}

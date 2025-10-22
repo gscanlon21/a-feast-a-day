@@ -1,21 +1,29 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class UserCounts
 {
-}
+    [Key, Column(Order = 0)]
+    public int SampleId { get; set; }
 
-/*CREATE TABLE [dbo].[UserCounts](
-	[UserId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Count] [int] NULL,
-	[Count_Norm] [int] NOT NULL,
-	[SampleId] [int] NOT NULL,
-	[Percentile] [float] NULL,
-	[Percentage]  AS (round([Count_Norm]/(10000.0),(4))),
-	[ZeroPercentile] [float] NULL,
- CONSTRAINT [PK_UserCounts2] PRIMARY KEY CLUSTERED 
-(
-	[SampleId] ASC,
-	[Taxon] ASC
-)
-) */
+    [Key, Column(Order = 1)]
+    public int Taxon { get; set; }
+
+    [Required]
+    public int UserId { get; set; }
+
+    public int? Count { get; set; }
+
+    [Required]
+    public int Count_Norm { get; set; }
+
+    public double? Percentile { get; set; }
+
+    //  AS (round([Count_Norm]/(10000.0),(4))),
+    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+    public double Percentage { get; private set; }
+
+    public double? ZeroPercentile { get; set; }
+}

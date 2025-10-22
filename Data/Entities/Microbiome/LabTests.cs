@@ -1,20 +1,19 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class LabTests
 {
+    [Key, Required]
+    public string LG { get; set; }
+
+    [Required]
+    public string LabName { get; set; }
+
+    public int? Levels { get; set; }
+
+    public string? Url { get; set; }
+
+    public string? Email { get; set; }
 }
 
-
-/*
- 
- CREATE TABLE [dbo].[LabTests](
-	[LG] [varchar](2) NOT NULL,
-	[LabName] [varchar](max) NOT NULL,
-	[Levels] [int] NULL,
-	[Url] [varchar](255) NULL,
-	[Email] [varchar](255) NULL,
- CONSTRAINT [PK_LabTests] PRIMARY KEY CLUSTERED 
-(
-	[LG] ASC
-)
- */

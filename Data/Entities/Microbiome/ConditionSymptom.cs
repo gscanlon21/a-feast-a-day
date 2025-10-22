@@ -11,18 +11,15 @@ public class ConditionSymptom
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Required]
+    [Key, Column(Order = 0)]
+    public string ConditionCode { get; set; } = null!;
+
+    [Required]
+    [Key, Column(Order = 1)]
+    public int SymptomId { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TABLE [dbo].[ConditionSymptom](
-	[ConditionCode] [varchar](3) NOT NULL,
-	[SymptomId] [int] NOT NULL,
- CONSTRAINT [PK_ConditionSymptom] PRIMARY KEY CLUSTERED 
-(
-	[ConditionCode] ASC,
-	[SymptomId] ASC
-)
-*/

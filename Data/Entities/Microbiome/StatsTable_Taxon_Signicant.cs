@@ -1,24 +1,31 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class StatsTable_Taxon_Signicant
 {
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Taxon { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int SymptomId { get; set; }
+
+    [Key, Column(Order = 2)]
+    [Required]
+    public string Source { get; set; }
+
+    public double? Below15 { get; set; }
+
+    public double? Above15 { get; set; }
+
+    public double? WithSymptoms { get; set; }
+
+    public double? BelowChi2 { get; set; }
+
+    public double? AboveChi2 { get; set; }
 }
 
 
-/*
- CREATE TABLE [dbo].[StatsTable_Taxon_Signicant](
-	[Taxon] [int] NOT NULL,
-	[SymptomId] [int] NOT NULL,
-	[Source] [varchar](20) NOT NULL,
-	[Below15] [float] NULL,
-	[Above15] [float] NULL,
-	[WithSymptoms] [float] NULL,
-	[BelowChi2] [float] NULL,
-	[AboveChi2] [float] NULL,
- CONSTRAINT [PK_StatsTable_Taxon_Signicant] PRIMARY KEY CLUSTERED 
-(
-	[Taxon] ASC,
-	[SymptomId] ASC,
-	[Source] ASC
-)
- */

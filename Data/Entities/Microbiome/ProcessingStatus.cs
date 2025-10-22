@@ -12,17 +12,14 @@ public class ProcessingStatus
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key]
+    public string ProcessKey { get; set; } = string.Empty;
+
+    [Required]
+    public int LastId { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[ProcessingStatus](
-	[ProcessKey] [nvarchar](50) NOT NULL,
-	[LastId] [int] NOT NULL,
- CONSTRAINT [PK_ProcessingStatus] PRIMARY KEY CLUSTERED 
-(
-	[ProcessKey] ASC
-)
-*/

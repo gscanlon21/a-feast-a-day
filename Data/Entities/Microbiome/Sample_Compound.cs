@@ -1,15 +1,17 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class Sample_Compound
 {
-}
+    [Key, Column(Order = 0)]
+    [Required]
+    public int CPID { get; set; }
 
-/*CREATE TABLE [dbo].[Sample_Compound](
-	[CPID] [int] NOT NULL,
-	[Cnt] [float] NULL,
-	[Sampleid] [int] NOT NULL,
- CONSTRAINT [PK_Sample_Compound] PRIMARY KEY CLUSTERED 
-(
-	[CPID] ASC,
-	[Sampleid] ASC
-)*/
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Sampleid { get; set; }
+
+    public double? Cnt { get; set; }
+}

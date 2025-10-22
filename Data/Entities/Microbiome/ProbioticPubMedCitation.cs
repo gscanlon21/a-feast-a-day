@@ -11,19 +11,17 @@ public class ProbioticPubMedCitation
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Pcid { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public int Cid { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
 
-/*
-CREATE TABLE [dbo].[ProbioticPubMedCitation](
-	[Pcid] [int] NOT NULL,
-	[cid] [int] NOT NULL,
- CONSTRAINT [PK_ProbioticPubMedCitation] PRIMARY KEY CLUSTERED 
-(
-	[Pcid] ASC,
-	[cid] ASC
-)
-*/

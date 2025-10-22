@@ -1,14 +1,13 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class TScore
 {
-}
+    [Key, Required]
+    public int Df { get; set; }
 
-/*CREATE TABLE [dbo].[TScore](
-	[Df] [int] NOT NULL,
-	[P01] [float] NULL,
-	[P001] [float] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[Df] ASC
-)*/
+    public double? P01 { get; set; }
+
+    public double? P001 { get; set; }
+}

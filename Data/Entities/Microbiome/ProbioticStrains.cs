@@ -11,15 +11,14 @@ public class ProbioticStrains
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public int ProSpeciesId { get; set; }
+
+    public int? ParentTaxon { get; set; }
+
+    public int? Taxon { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
- CREATE TABLE [dbo].[ProbioticStrains](
-	[ProSpeciesId] [int] NOT NULL,
-	[ParentTaxon] [int] NULL,
-	[Taxon] [int] NULL
-)
- */

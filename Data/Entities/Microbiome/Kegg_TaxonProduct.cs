@@ -1,16 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class Kegg_TaxonProduct
 {
-}
+    [Required]
+    [Key, Column(Order = 0)]
+    public int Taxon { get; set; }
 
-/*CREATE TABLE [dbo].[Kegg_TaxonProduct](
-	[Taxon] [int] NOT NULL,
-	[Product] [int] NOT NULL,
-	[Cnt] [float] NOT NULL,
- CONSTRAINT [PK_Kegg_TaxonProduct] PRIMARY KEY CLUSTERED 
-(
-	[Taxon] ASC,
-	[Product] ASC
-)
-) */
+    [Required]
+    [Key, Column(Order = 1)]
+    public int Product { get; set; }
+
+    [Required]
+    public double Cnt { get; set; }
+}

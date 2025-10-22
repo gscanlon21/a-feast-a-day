@@ -12,35 +12,41 @@ public class PrecisionBiomeTaxa
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public string? Sample { get; set; }
+
+    public double? NcbiId { get; set; }
+
+    public string? Domain { get; set; }
+
+    public string? Kingdom { get; set; }
+
+    public string? Phylum { get; set; }
+
+    public string? Class { get; set; }
+
+    public string? Order { get; set; }
+
+    public string? Family { get; set; }
+
+    public string? Genus { get; set; }
+
+    public string? Species { get; set; }
+
+    public double? MeanAbundance { get; set; }
+    public double? Q0Abundance { get; set; }
+    public double? Q10Abundance { get; set; }
+    public double? Q20Abundance { get; set; }
+    public double? Q30Abundance { get; set; }
+    public double? Q40Abundance { get; set; }
+    public double? Q50Abundance { get; set; }
+    public double? Q60Abundance { get; set; }
+    public double? Q70Abundance { get; set; }
+    public double? Q80Abundance { get; set; }
+    public double? Q90Abundance { get; set; }
+    public double? Q100Abundance { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[PrecisionBiomeTaxa](
-	[Sample] [nvarchar](255) NULL,
-	[ncbi_id] [float] NULL,
-	[domain] [nvarchar](255) NULL,
-	[kingdom] [nvarchar](255) NULL,
-	[phylum] [nvarchar](255) NULL,
-	[class] [nvarchar](255) NULL,
-	[order] [nvarchar](255) NULL,
-	[family] [nvarchar](255) NULL,
-	[genus] [nvarchar](255) NULL,
-	[species] [nvarchar](255) NULL,
-	[mean_abundance] [float] NULL,
-	[q0_abundance] [float] NULL,
-	[q10_abundance] [float] NULL,
-	[q20_abundance] [float] NULL,
-	[q30_abundance] [float] NULL,
-	[q40_abundance] [float] NULL,
-	[q50_abundance] [float] NULL,
-	[q60_abundance] [float] NULL,
-	[q70_abundance] [float] NULL,
-	[q80_abundance] [float] NULL,
-	[q90_abundance] [float] NULL,
-	[q100_abundance] [float] NULL
-) 
-GO
-*/

@@ -1,12 +1,13 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class Statistics
 {
-}
+    [Key]
+    [Required]
+    public string StatsName { get; set; }
 
-/*
- CREATE TABLE [dbo].[Statistics](
-	[StatsName] [varchar](50) NOT NULL,
-	[Statistic] [float] NOT NULL
-) 
- */
+    [Required]
+    public double Statistic { get; set; }
+}

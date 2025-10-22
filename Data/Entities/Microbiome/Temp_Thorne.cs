@@ -2,12 +2,13 @@
 
 class Temp_Thorne
 {
-}
+    public string TKey { get; set; }
 
-/*CREATE TABLE [dbo].[Temp_THorne](
-	[TKey] [nvarchar](255) NULL,
-	[Abundance] [float] NULL,
-	[Percentile] [float] NULL,
-	[Per20] [float] NULL,
-	[Per80] [float] NULL
-) */
+    public double? Abundance { get; set; }
+
+    public double? Percentile { get; set; }
+
+    public double? Per20 { get; set; }
+
+    public double? Per80 { get; set; }
+}

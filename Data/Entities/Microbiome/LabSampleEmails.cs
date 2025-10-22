@@ -1,20 +1,16 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class LabSampleEmails
 {
+    [Required, Key, Column(Order = 0)]
+    public int LabSampleId { get; set; }
+
+    [Required, Key, Column(Order = 1)]
+    public string Email { get; set; } = string.Empty;
+
+    public DateTime? AddDate { get; set; }
 }
 
-
-/*
- 
-CREATE TABLE [dbo].[LabSampleEmails](
-	[LabSampleId] [int] NOT NULL,
-	[Email] [varchar](255) NOT NULL,
-	[AddDate] [datetime] NULL,
- CONSTRAINT [PK_LabSampleEmails] PRIMARY KEY CLUSTERED 
-(
-	[LabSampleId] ASC,
-	[Email] ASC
-)
- 
- */

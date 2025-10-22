@@ -1,20 +1,18 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 internal class KEGG_ProbioticEnzymes
 {
+    [Required]
+    [Key, Column(Order = 0)]
+    public string ECKey { get; set; }
+
+    [Required]
+    [Key, Column(Order = 1)]
+    public int Taxon { get; set; }
+
+    public double? Cnt { get; set; }
 }
 
-
-/*
- 
-CREATE TABLE [dbo].[KEGG_ProbioticEnzymes](
-	[ECKey] [varchar](20) NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Cnt] [float] NULL,
- CONSTRAINT [PK_KEGG_ProbioticEnzymes] PRIMARY KEY CLUSTERED 
-(
-	[ECKey] ASC,
-	[Taxon] ASC
-)
- 
- */

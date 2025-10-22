@@ -1,15 +1,16 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome;
 
 class TransferSample
 {
-}
+    [Key, Column(Order = 0)]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Required]
+    public int SampleId { get; set; }
 
-/*CREATE TABLE [dbo].[TransferSample](
-[SampleId] [int] IDENTITY(1,1) NOT NULL,
-[Token] [uniqueidentifier] NOT NULL,
- CONSTRAINT [PK_TransferSample] PRIMARY KEY CLUSTERED 
-(
-[SampleId] ASC,
-[Token] ASC
-)
-) */
+    [Key, Column(Order = 1)]
+    [Required]
+    public Guid Token { get; set; }
+}

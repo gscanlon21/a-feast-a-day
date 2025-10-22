@@ -12,20 +12,21 @@ public class ProbioticPubMedSellers
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    [Key, Column(Order = 0)]
+    [Required]
+    public int Psid { get; set; }
+
+    [Key, Column(Order = 1)]
+    [Required]
+    public string SellerName { get; set; }
+
+    [Required]
+    public string SellerUtl { get; set; }
+
+    public int? ProId { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
 
-/*
-CREATE TABLE [dbo].[ProbioticPubMedSellers](
-	[psid] [int] NOT NULL,
-	[SellerName] [varchar](100) NOT NULL,
-	[SellerUtl] [varchar](255) NOT NULL,
-	[ProId] [int] NULL,
- CONSTRAINT [PK_ProbioticPubMedSellers] PRIMARY KEY CLUSTERED 
-(
-	[psid] ASC,
-	[SellerName] ASC
-)
-*/

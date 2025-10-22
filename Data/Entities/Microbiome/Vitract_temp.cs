@@ -2,10 +2,9 @@
 
 internal class Vitract_temp
 {
-}
+    public int? Taxon { get; set; }
 
-/*CREATE TABLE [dbo].[Vitract_temp](
-	[Taxon] [int] NULL,
-	[Percentile] [float] NULL,
-	[CountNorm] [float] NULL
-)*/
+    public double? Percentile { get; set; }
+
+    public double? CountNorm { get; set; }
+}

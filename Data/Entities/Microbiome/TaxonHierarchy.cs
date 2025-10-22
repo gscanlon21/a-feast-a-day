@@ -1,17 +1,22 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome;
 
 internal class _TaxonHierarchy_
 {
-}
+    [Key]
+    [Required]
+    public int Taxon { get; set; }
 
-/*CREATE TABLE [dbo].[TaxonHierarchy](
-	[Taxon] [int] NOT NULL,
-	[ParentTaxon] [int] NOT NULL,
-	[Rank] [varchar](20) NOT NULL,
-	[Hierarchy] [varchar](max) NULL,
-	[TaxonName] [varchar](max) NULL,
-	[ImageNo] [int] NULL,
- CONSTRAINT [PK_TaxonHierarchy] PRIMARY KEY CLUSTERED 
-(
-	[Taxon] ASC
-)*/
+    [Required]
+    public int ParentTaxon { get; set; }
+
+    [Required]
+    public string Rank { get; set; }
+
+    public string Hierarchy { get; set; }
+
+    public string TaxonName { get; set; }
+
+    public int? ImageNo { get; set; }
+}
