@@ -311,8 +311,11 @@ public class QueryRunner(Section section)
                 .ToList();
         }
 
+        // Grab alt ingredients that are used to calculate more accurate nutrients.
+        var allAlternatives = await GetRecipeAlternatives(context, filteredResults);
         // Set nutrients on the recipe after all the ingredient swapping has taken place.
-        var allNutrients = await GetRecipeNutrients(context, filteredResults);
+        var allNutrients = await GetRecipeNutrients(context, filteredResults, allAlternatives);
+
         // OrderBy must come after the query or you get cartesian explosion.
         var recipeResults = new List<QueryResults>();
         foreach (var recipe in orderedResults)
@@ -343,7 +346,7 @@ public class QueryRunner(Section section)
             {
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                 // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
-                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)]);
+                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)], allAlternatives);
                 if (overworkedNutrients != null)
                 {
                     // Find the number of weeks since this recipe has been seen. If the last seen date is in the future (has refresh padding), then use zero weeks.
@@ -363,7 +366,7 @@ public class QueryRunner(Section section)
                 // Choose recipes that cover at least X nutrients in the targeted nutrient set.
                 if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
                 {
-                    var unworkedNutrients = GetUnworkedNutrients(finalResults);
+                    var unworkedNutrients = GetUnworkedNutrients(finalResults, allAlternatives);
                     if (unworkedNutrients != null)
                     {
                         // We've already worked all unique nutrients.
@@ -436,10 +439,19 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<List<Nutrient>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults)
+    private static async Task<List<Nutrient>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, IList<IngredientAlternative> alternativeIngredients)
+    {
+        var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).Union(alternativeIngredients.Select(ai => (int?)ai.AlternativeIngredientId)).ToList();
+        return await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).Where(n => n.Value > 0).ToListAsync();
+    }
+
+    /// <summary>
+    /// Get the nutrients that the recipes work.
+    /// </summary>
+    private static async Task<List<IngredientAlternative>> GetRecipeAlternatives(CoreContext context, IList<InProgressQueryResults> filteredResults)
     {
         var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
-        return await context.Nutrients.Where(n => allFilteredResultIngredientIds.Contains(n.IngredientId)).Where(n => n.Value > 0).ToListAsync();
+        return await context.IngredientAlternatives.Include(ia => ia.AlternativeIngredient).Where(ia => allFilteredResultIngredientIds.Contains(ia.IngredientId)).Where(ia => ia.IsAggregateElement).ToListAsync();
     }
 
     /// <summary>
@@ -573,11 +585,11 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults)
+    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults, IList<IngredientAlternative> alternativeIngredients)
     {
         if (NutrientOptions.NutrientTargetsRDA == null) { return null; }
 
-        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults);
+        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, alternativeIngredients);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsRDA.Where(kv =>
         {
@@ -588,11 +600,11 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults)
+    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults, IList<IngredientAlternative> alternativeIngredients)
     {
         if (NutrientOptions.NutrientTargetsTUL == null) { return null; }
 
-        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults);
+        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, alternativeIngredients);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsTUL.Where(kv =>
         {
@@ -604,11 +616,11 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Returns the nutrients targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
-    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list)
+    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list, IList<IngredientAlternative> alternativeIngredients)
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)
-            .SelectMany(ufri => ufri.GetNutrients(ufr.Nutrients))
+            .SelectMany(ufri => ufri.GetNutrients(ufr.Nutrients, alternativeIngredients.Where(ia => ia.IngredientId == ufri.GetIngredient!.Id).Select(ia => ia.AlternativeIngredient).ToList()))
         ).GroupBy(a => a.Key).ToDictionary(a => a.Key, a => a.Sum(b => b.Value));
     }
 }

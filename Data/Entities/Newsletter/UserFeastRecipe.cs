@@ -61,6 +61,9 @@ public class UserFeastRecipe
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeast.UserFeastRecipes))]
     public virtual UserFeast UserFeast { get; private init; } = null!;
 
+    /// <summary>
+    /// This pulls the user substituted ingredients.
+    /// </summary>
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipeIngredient.UserFeastRecipe))]
     public virtual ICollection<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; init; } = null!;
 

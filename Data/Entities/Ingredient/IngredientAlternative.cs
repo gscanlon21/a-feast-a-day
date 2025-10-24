@@ -41,4 +41,6 @@ public class IngredientAlternative
     [DefaultValue(RecipeConsts.IngredientScaleDefault)]
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
     public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;
+
+    public bool IsAggregateElement { get; set; }
 }

@@ -276,11 +276,14 @@ public class UserRepo
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
                 var allIngredients = weeklyFeasts.SelectMany(f => f.UserFeastRecipes.SelectMany(r => r.UserFeastRecipeIngredients).Select(i => i.IngredientId)).ToList();
-                var allNutrients = await _context.Nutrients.Where(n => allIngredients.Contains(n.IngredientId)).ToListAsync();
+                var altIngredients = await _context.IngredientAlternatives.Include(ia => ia.AlternativeIngredient).Where(ia => allIngredients.Contains(ia.IngredientId)).Where(ia => ia.IsAggregateElement).ToListAsync();
+
+                var normalIngredientIds = allIngredients.Union(altIngredients.Select(ai => ai.AlternativeIngredientId)).ToList();
+                var allNutrients = await _context.Nutrients.Where(n => normalIngredientIds.Contains(n.IngredientId)).ToListAsync();
                 var nutrientsWorked = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            .SelectMany(ufri => ufri.GetNutrients(allNutrients))
+                            .SelectMany(ufri => ufri.GetNutrients(allNutrients, altIngredients.Where(ai => ai.IngredientId == ufri.IngredientId).Select(ai => ai.AlternativeIngredient).ToList()))
                         )
                     ).ToList();
 
@@ -315,7 +318,6 @@ public class UserRepo
             .Include(f => f.UserFeastRecipes)
                 .ThenInclude(r => r.UserFeastRecipeIngredients)
                     .ThenInclude(r => r.Ingredient)
-                        .ThenInclude(r => r.Nutrients)
             .Where(n => n.UserId == user.Id)
             // Include this week's data or filter out this week's data.
             .Where(n => includeToday || n.Date < user.StartOfWeekOffset)
@@ -325,13 +327,6 @@ public class UserRepo
             .GroupBy(n => n.Date.AddDays(-1 * ((7 + (n.Date.DayOfWeek - user.SendDay)) % 7)))
             .Select(g => new { g.Key, g.OrderByDescending(n => n.Id).First().UserFeastRecipes })
             .IgnoreQueryFilters().AsNoTracking().TagWithCallSite().ToListAsync();
-
-        var userIngredients = await _context.UserRecipeIngredients
-           .IgnoreQueryFilters().AsNoTracking()
-           .Include(i => i.SubstituteIngredient)
-               .ThenInclude(i => i!.Nutrients)
-           .Where(i => i.UserId == user.Id)
-           .ToListAsync();
 
         // .Max/.Min throw exceptions when the collection is empty.
         if (weeklyFeasts.Count != 0)

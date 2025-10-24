@@ -36,6 +36,7 @@ public class CoreContext : DbContext
     public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
     public DbSet<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
     public DbSet<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; set; } = null!;
+    public DbSet<IngredientAlternative> IngredientAlternatives { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
