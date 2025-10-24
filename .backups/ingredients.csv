@@ -98,7 +98,7 @@
 100	\N	Teriyaki Sauce	https://www.eatthismuch.com/calories/teriyaki-sauce,711	\N	f	262176	36	18	2024-09-07	9	288	8192
 101	\N	Light Sesame Oil	aka. Unroasted Sesame Oil; Untoasted Sesame Oil - https://www.eatthismuch.com/calories/sesame-oil-268	\N	f	8192	28	14	2025-02-24	9	224	65536
 102	\N	Lentils	https://www.eatthismuch.com/calories/lentils-3566	\N	f	0	192	192	2025-05-30	6	192	2048
-103	\N	Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
+103	\N	Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	213	170	2024-12-21	0	150	2
 104	\N	Summer Sausage	https://www.eatthismuch.com/food/nutrition/summer-sausage,2122087/	\N	f	0	56	56	2024-10-18	4	224	8
 105	\N	Red Onions	https://www.eatthismuch.com/calories/onions-2042	\N	f	0	110	110	2024-12-25	0	110	2
 106	\N	Beef Bouilion Cubes	https://www.eatthismuch.com/calories/beef-bouillon-cubes-144152	\N	f	0	4	4	2024-12-11	0	128	131072
@@ -853,8 +853,8 @@
 1052	\N	Purely Elizabeth Original Oatmeal	https://www.eatthismuch.com/calories/superfood-oatmeal-organic-recipe-no-05-original-2154500	\N	f	0	40	40	2025-08-16	0	120	16288
 1053	\N	Avocado Oil | Coconut Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
 1054	\N	Baby Potatoes	https://www.eatthismuch.com/calories/potato-2091?a=0.4607%3A3	\N	f	0	170	170	2025-06-01	0	170	2
-1055	\N	Jif Natural Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
-1056	\N	Schnucks Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2024-08-25	4	256	128
+1055	\N	Jif Natural Creamy Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2025-10-24	4	256	128
+1056	\N	Schnucks Creamy Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	32	16	2025-10-24	4	256	128
 1057	\N	Loaves of White Pita (Unenriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
 1058	\N	Loaves of White Pita (Enriched)	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-17	0	64	4
 1059	\N	Loaves of Flatbread, GF	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	0	64	64	2025-05-18	0	64	4
@@ -1107,7 +1107,7 @@
 1367	\N	Raw Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525	\N	f	0	28	184	2025-10-13	4	184	2048
 1368	\N	Canned Baked Beans	https://www.eatthismuch.com/calories/baked-beans-3506	\N	f	0	28	254	2025-10-11	4	254	512
 1369	\N	Fresh Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256	\N	f	0	28	225	2025-09-24	4	225	67108864
-1370	\N	Large Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
+1370	\N	Large Red Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	369	170	2024-12-21	0	150	2
 1371	\N	Sesame Seeds	https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-23	4	144	131072
 1372	\N	Shaved Ham	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
 1373	\N	Slices of Gruyère Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23	\N	f	256	28	28	2025-03-03	0	224	6
