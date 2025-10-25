@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class ConditionDirection
+public class ConditionDirection
 {
     [Key]
     [Required]

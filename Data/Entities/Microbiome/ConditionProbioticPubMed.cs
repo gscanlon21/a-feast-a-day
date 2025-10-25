@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class ConditionProbioticPubMed
+public class ConditionProbioticPubMed
 {
     [Key, Column(Order = 0)]
     [Required]

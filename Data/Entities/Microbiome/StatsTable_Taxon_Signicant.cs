@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class StatsTable_Taxon_Signicant
+public class StatsTable_Taxon_Signicant
 {
     [Key, Column(Order = 0)]
     [Required]

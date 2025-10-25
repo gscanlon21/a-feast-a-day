@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class FoodTaxaName
+public class FoodTaxaName
 {
     [Key]
     [Required]

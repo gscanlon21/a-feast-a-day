@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class JasonH
+public class JasonH
 {
     [Required]
     [Key, Column(Order = 0)]

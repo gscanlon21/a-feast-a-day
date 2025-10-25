@@ -13,15 +13,18 @@ using System.Text.Json.Serialization;
 namespace Data.Query;
 
 [DebuggerDisplay("{Section}: {Recipe}")]
-public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrients, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe) : IRecipeCombo
+public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe) : IRecipeCombo
 {
     private double _scale = 1;
 
     public Section Section { get; init; } = section;
     public Recipe Recipe { get; init; } = recipe;
     public UserRecipe? UserRecipe { get; init; } = userRecipe;
-    public IList<Nutrient> Nutrients { get; init; } = nutrients;
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
+    public IList<Nutrient> Nutrients => RecipeIngredients
+        .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+        .SelectMany(ri => ri.GetIngredient!.Nutrients)
+        .ToList();
 
     /// <summary>
     /// Rounded scale.
@@ -68,7 +71,9 @@ public class QueryResults(Section section, Recipe recipe, IList<Nutrient> nutrie
     /// Only includes nutrients with a value.
     /// </summary>
     [JsonIgnore]
-    internal List<Nutrients> UniqueWorkedNutrients => [ .. Nutrients.Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
+    internal List<Nutrients> UniqueWorkedNutrients =>
+    [
+        .. Nutrients.Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
         .. PrerequisiteRecipes.SelectMany(pr => pr.Key.Nutrients).Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
     ];
 

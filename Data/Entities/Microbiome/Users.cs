@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class Users
+public class Users
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Required]

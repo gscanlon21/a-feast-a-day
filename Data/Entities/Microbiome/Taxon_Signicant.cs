@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class Taxon_Signicant
+public class Taxon_Signicant
 {
     public string Source { get; set; }
 

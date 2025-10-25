@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_KM
+public class dt_KM
 {
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_Ganzimmun
+public class dt_Ganzimmun
 {
 }
 

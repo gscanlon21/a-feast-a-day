@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class BiomeSight_Symptoms
+public class BiomeSight_Symptoms
 {
     public int? SympId { get; set; }
 

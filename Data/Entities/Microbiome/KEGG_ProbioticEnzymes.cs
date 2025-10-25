@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class KEGG_ProbioticEnzymes
+public class KEGG_ProbioticEnzymes
 {
     [Required]
     [Key, Column(Order = 0)]

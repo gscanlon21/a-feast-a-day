@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_Kegg_EnzymeMeta
+public class dt_Kegg_EnzymeMeta
 {
 }
 

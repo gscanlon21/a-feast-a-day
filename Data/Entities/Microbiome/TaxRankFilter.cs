@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class TaxRankFilter
+public class TaxRankFilter
 {
     [Key]
     [Required]

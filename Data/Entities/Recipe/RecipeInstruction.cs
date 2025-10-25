@@ -27,8 +27,6 @@ public class RecipeInstruction
     [Required]
     public string Name { get; init; } = null!;
 
-    public string? DisabledReason { get; init; } = null;
-
     [NotMapped]
     public bool Hide { get; init; }
 

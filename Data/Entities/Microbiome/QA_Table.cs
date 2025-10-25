@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class QA_Table
+public class QA_Table
 {
     [Key]
     [Required]

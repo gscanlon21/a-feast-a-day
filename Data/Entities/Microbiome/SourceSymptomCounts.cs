@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class SourceSymptomCounts
+public class SourceSymptomCounts
 {
     [Key]
     [Required]

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Microbiome;
 
 [Table("statistics_compound")]
-internal class StatisticsCompound
+public class StatisticsCompound
 {
     [Key, Column(Order = 0)]
     public string Source { get; set; } = string.Empty;

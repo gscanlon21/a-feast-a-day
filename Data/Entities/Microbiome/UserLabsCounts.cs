@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class UserLabsCounts
+public class UserLabsCounts
 {
     [Required]
     public int ULId { get; set; }

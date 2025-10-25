@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class ValidHierarchy
+public class ValidHierarchy
 {
     [Required]
     [StringLength(100)]

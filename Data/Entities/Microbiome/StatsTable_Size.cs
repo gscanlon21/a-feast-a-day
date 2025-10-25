@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class StatsTable_Size
+public class StatsTable_Size
 {
     [Key]
     [Required]

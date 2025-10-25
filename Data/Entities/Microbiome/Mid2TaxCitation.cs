@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class Mid2TaxCitation
+public class Mid2TaxCitation
 {
     [Required]
     [Key, Column(Order = 0)]

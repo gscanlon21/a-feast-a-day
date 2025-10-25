@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class MPDaily_Percentile
+public class MPDaily_Percentile
 {
 }
 

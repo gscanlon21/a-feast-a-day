@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -7,10 +8,11 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Ingredient;
 
 /// <summary>
-/// Pre-requisite recipes for other recipes.
+/// Maps an ingredient to it's alternatives.
 /// </summary>
 [Table("ingredient_alternative")]
-[DebuggerDisplay("{Ingredient} alt is {AlternativeIngredient}")]
+[DebuggerDisplay("{GetDebuggerDisplay(),nq}")]
+[Index(nameof(IngredientId), nameof(IsAggregateElement))]
 public class IngredientAlternative
 {
     /// <summary>
@@ -42,5 +44,19 @@ public class IngredientAlternative
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
     public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;
 
+    /// <summary>
+    /// Is this alternative ingredient a part of the whole base ingredient.
+    /// sa. "Mixed-Color Bell Peppers" having aggregate alt for each color.
+    /// </summary>
     public bool IsAggregateElement { get; set; }
+
+    private string GetDebuggerDisplay()
+    {
+        if (Ingredient != null && AlternativeIngredient != null)
+        {
+            return $"{Ingredient} alt is {AlternativeIngredient}";
+        }
+
+        return $"{IngredientId} alt is {AlternativeIngredientId}";
+    }
 }

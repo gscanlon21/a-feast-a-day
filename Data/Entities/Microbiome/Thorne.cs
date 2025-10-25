@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class Thorne
+public class Thorne
 {
     public string Domain { get; set; }
 

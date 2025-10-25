@@ -334,7 +334,8 @@ namespace Data.Migrations
                 {
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     AlternativeIngredientId = table.Column<int>(type: "integer", nullable: false),
-                    Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0)
+                    Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
+                    IsAggregateElement = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -363,8 +364,7 @@ namespace Data.Migrations
                     Nutrients = table.Column<long>(type: "bigint", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
-                    Notes = table.Column<string>(type: "text", nullable: true),
-                    DisabledReason = table.Column<string>(type: "text", nullable: true)
+                    Notes = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -391,8 +391,7 @@ namespace Data.Migrations
                     Order = table.Column<int>(type: "integer", nullable: false),
                     Optional = table.Column<bool>(type: "boolean", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
-                    Attributes = table.Column<string>(type: "text", nullable: true),
-                    DisabledReason = table.Column<string>(type: "text", nullable: true)
+                    Attributes = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -424,7 +423,6 @@ namespace Data.Migrations
                     Order = table.Column<int>(type: "integer", nullable: false),
                     Equipment = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    DisabledReason = table.Column<string>(type: "text", nullable: true),
                     RecipeId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -603,9 +601,20 @@ namespace Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ingredient_UserId_DisabledReason",
+                table: "ingredient",
+                column: "UserId",
+                filter: "\"DisabledReason\" IS NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ingredient_alternative_AlternativeIngredientId",
                 table: "ingredient_alternative",
                 column: "AlternativeIngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ingredient_alternative_IngredientId_IsAggregateElement",
+                table: "ingredient_alternative",
+                columns: new[] { "IngredientId", "IsAggregateElement" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_nutrient_IngredientId",
@@ -616,6 +625,12 @@ namespace Data.Migrations
                 name: "IX_recipe_UserId",
                 table: "recipe",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_recipe_UserId_DisabledReason",
+                table: "recipe",
+                column: "UserId",
+                filter: "\"DisabledReason\" IS NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_recipe_ingredient_IngredientId",

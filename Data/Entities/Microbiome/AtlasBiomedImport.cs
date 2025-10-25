@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class AtlasBiomedImport
+public class AtlasBiomedImport
 {
     [Required]
     public string Col1 { get; set; } = null!;

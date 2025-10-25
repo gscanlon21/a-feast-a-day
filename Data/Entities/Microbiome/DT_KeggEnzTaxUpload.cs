@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_KeggEnzTaxUpload
+public class DT_KeggEnzTaxUpload
 {
 }
 

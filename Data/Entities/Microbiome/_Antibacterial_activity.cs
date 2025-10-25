@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class _Antibacterial_activity
+public class _Antibacterial_activity
 {
     public int? Mid2 { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class KMCondition
+public class KMCondition
 {
 }
 

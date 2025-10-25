@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class Food_Taxon
+public class Food_Taxon
 {
     [Key, Column(Order = 0)]
     [Required]

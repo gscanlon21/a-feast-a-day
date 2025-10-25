@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class ModifierType
+public class ModifierType
 {
     [Key, Required]
     public string MType { get; set; }

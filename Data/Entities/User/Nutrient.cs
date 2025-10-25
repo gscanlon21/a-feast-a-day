@@ -1,4 +1,5 @@
 ﻿using Core.Models.User;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ namespace Data.Entities.User;
 /// Nutrients for an ingredient.
 /// </summary>
 [Table("nutrient")]
+[Index(nameof(IngredientId))]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class Nutrient
 {
@@ -39,8 +41,6 @@ public class Nutrient
     /// Notes about the variation (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
-
-    public string? DisabledReason { get; private init; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.Nutrients))]
     public virtual Ingredient.Ingredient? Ingredient { get; set; }

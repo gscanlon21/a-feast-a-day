@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class KEGG_ProbioticCompound
+public class KEGG_ProbioticCompound
 {
     [Key, Column(Order = 0)]
     [Required]

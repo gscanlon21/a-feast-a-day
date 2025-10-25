@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class LabTests
+public class LabTests
 {
     [Key, Required]
     public string LG { get; set; }

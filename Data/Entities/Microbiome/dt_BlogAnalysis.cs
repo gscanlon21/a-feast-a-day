@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_BlogAnalysis
+public class dt_BlogAnalysis
 {
 }
 

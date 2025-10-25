@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_EndProductPercentile
+public class DT_EndProductPercentile
 {
 }
 

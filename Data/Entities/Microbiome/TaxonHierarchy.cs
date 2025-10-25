@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class _TaxonHierarchy_
+public class _TaxonHierarchy_
 {
     [Key]
     [Required]

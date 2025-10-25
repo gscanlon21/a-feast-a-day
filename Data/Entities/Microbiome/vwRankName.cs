@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class vwRankName
+public class vwRankName
 {
     [Required]
     public string Rank { get; set; }

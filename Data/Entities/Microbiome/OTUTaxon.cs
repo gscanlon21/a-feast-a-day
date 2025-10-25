@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class OTUTaxon
+public class OTUTaxon
 {
     [Key, Required]
     public int OTUNumber { get; set; }

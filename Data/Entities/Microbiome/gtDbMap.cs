@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class gtDbMap
+public class gtDbMap
 {
     [Key, Required]
     public string NcbiName { get; set; } = string.Empty;

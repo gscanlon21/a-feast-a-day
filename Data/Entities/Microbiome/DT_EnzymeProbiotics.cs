@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_EnzymeProbiotics
+public class DT_EnzymeProbiotics
 {
 }
 

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class ConditionModifier2
+public class ConditionModifier2
 {
     [Key, Column(Order = 0)]
     [Required]

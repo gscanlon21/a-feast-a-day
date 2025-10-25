@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class tbl_Covid_US
+public class tbl_Covid_US
 {
 }
 

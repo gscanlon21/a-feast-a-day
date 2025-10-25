@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class Food_Edges
+public class Food_Edges
 {
     public double? SampleId { get; set; }
 

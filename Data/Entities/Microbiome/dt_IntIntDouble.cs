@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_IntIntDouble
+public class dt_IntIntDouble
 {
 }
 

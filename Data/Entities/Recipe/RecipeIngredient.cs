@@ -75,8 +75,6 @@ public class RecipeIngredient
     /// </summary>
     public string? Attributes { get; init; }
 
-    public string? DisabledReason { get; init; } = null;
-
     /// <summary>
     /// Used in the edit form: whether the form field is hidden or not.
     /// </summary>

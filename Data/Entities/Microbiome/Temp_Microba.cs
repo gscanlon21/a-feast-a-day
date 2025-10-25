@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class Temp_Microba
+public class Temp_Microba
 {
     public int? Taxon { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_MicrobaSamples
+public class dt_MicrobaSamples
 {
 }
 

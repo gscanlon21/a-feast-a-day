@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class OtherStats
+public class OtherStats
 {
     [Key, Required]
     public string StatsName { get; set; }

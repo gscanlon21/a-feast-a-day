@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Microbiome;
 
 [Table("BiomeShifts")]
-internal class BiomeShifts
+public class BiomeShifts
 {
     [Key]
     [Required]

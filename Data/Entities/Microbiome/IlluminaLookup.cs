@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class IlluminaLookup
+public class IlluminaLookup
 {
     public string? Kingdom { get; set; }
 

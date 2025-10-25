@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class Missing
+public class Missing
 {
     public int? SampleId { get; set; }
 

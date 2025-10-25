@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_CitationLinks
+public class DT_CitationLinks
 {
 }
 

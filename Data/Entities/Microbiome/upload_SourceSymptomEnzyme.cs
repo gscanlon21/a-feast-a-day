@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class upload_SourceSymptomEnzyme
+public class upload_SourceSymptomEnzyme
 {
 }
 

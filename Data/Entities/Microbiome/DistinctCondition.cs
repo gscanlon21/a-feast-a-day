@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DistinctCondition
+public class DistinctCondition
 {
     public int Taxon { get; set; }
 

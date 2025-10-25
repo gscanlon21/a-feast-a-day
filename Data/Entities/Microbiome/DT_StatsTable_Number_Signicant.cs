@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_StatsTable_Number_Signicant
+public class DT_StatsTable_Number_Signicant
 {
 }
 

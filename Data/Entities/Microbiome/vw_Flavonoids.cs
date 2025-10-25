@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class vw_Flavonoids
+public class vw_Flavonoids
 {
     [Required]
     public string NDBNo { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class V2_ModifierTaxon
+public class V2_ModifierTaxon
 {
     [Required]
     public int Mid2 { get; set; }

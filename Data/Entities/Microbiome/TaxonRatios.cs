@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class TaxonRatios
+public class TaxonRatios
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

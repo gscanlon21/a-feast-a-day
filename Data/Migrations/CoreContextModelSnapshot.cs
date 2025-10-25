@@ -223,6 +223,9 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
+                    b.HasIndex(new[] { "UserId" }, "IX_ingredient_UserId_DisabledReason")
+                        .HasFilter("\"DisabledReason\" IS NULL");
+
                     b.ToTable("ingredient");
                 });
 
@@ -245,6 +248,8 @@ namespace Data.Migrations
                     b.HasKey("IngredientId", "AlternativeIngredientId");
 
                     b.HasIndex("AlternativeIngredientId");
+
+                    b.HasIndex("IngredientId", "IsAggregateElement");
 
                     b.ToTable("ingredient_alternative");
                 });
@@ -438,6 +443,9 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
+                    b.HasIndex(new[] { "UserId" }, "IX_recipe_UserId_DisabledReason")
+                        .HasFilter("\"DisabledReason\" IS NULL");
+
                     b.ToTable("recipe");
                 });
 
@@ -450,9 +458,6 @@ namespace Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Attributes")
-                        .HasColumnType("text");
-
-                    b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
                     b.Property<int?>("IngredientId")
@@ -502,9 +507,6 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("DisabledReason")
-                        .HasColumnType("text");
-
                     b.Property<int>("Equipment")
                         .HasColumnType("integer");
 
@@ -532,9 +534,6 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("DisabledReason")
-                        .HasColumnType("text");
 
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");

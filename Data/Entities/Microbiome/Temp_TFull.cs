@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class Temp_TFull
+public class Temp_TFull
 {
     [Key]
     [Required]

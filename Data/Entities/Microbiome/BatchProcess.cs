@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Microbiome;
 
 [Table("BatchProcess")]
-class BatchProcess
+public class BatchProcess
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Key]
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ScopeId { get; set; }
 
     [Required]

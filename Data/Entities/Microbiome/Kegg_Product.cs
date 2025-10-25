@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class Kegg_Product
+public class Kegg_Product
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Pid { get; set; }

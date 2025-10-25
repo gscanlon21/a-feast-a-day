@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_ModulePercentile
+public class DT_ModulePercentile
 {
 }
 

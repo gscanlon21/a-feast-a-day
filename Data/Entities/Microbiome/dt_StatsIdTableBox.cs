@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_StatsIdTableBox
+public class dt_StatsIdTableBox
 {
 }
 

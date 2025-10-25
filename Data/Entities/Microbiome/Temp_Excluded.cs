@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class Temp_Excluded
+public class Temp_Excluded
 {
     [Key]
     [Required]

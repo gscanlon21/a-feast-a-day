@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class Research_SymptomsChi
+public class Research_SymptomsChi
 {
     [Key, Column(Order = 0)]
     [Required]

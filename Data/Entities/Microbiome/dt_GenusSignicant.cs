@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_GenusSignicant
+public class dt_GenusSignicant
 {
 }
 

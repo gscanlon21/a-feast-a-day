@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class tbl_Illumina
+public class tbl_Illumina
 {
 }
 

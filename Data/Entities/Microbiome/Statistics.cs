@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class Statistics
+public class Statistics
 {
     [Key]
     [Required]

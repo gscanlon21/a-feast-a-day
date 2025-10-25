@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_Bacteria2Bacteria
+public class DT_Bacteria2Bacteria
 {
     public int TaxonA { get; set; }
     public int TaxonB { get; set; }

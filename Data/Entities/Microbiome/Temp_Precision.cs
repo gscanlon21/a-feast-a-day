@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class Temp_Precision
+public class Temp_Precision
 {
     public int? Taxon { get; set; }
 

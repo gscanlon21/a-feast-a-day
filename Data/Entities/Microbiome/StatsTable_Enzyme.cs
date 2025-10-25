@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class StatsTable_Enzyme
+public class StatsTable_Enzyme
 {
     [Key, Column(Order = 0)]
     [Required]

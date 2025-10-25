@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class TScore
+public class TScore
 {
     [Key, Required]
     public int Df { get; set; }

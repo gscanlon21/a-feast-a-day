@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_CherryPick
+public class dt_CherryPick
 {
 }
 

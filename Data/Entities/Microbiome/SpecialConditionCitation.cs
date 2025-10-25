@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class SpecialConditionCitation
+public class SpecialConditionCitation
 {
     [Key, Column(Order = 0)]
     [Required]

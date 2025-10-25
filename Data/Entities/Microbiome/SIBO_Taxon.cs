@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class SIBO_Taxon
+public class SIBO_Taxon
 {
     [Key]
     [Required]

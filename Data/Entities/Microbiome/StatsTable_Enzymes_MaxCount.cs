@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class StatsTable_Enzymes_MaxCount
+public class StatsTable_Enzymes_MaxCount
 {
     [Key]
     [Required]

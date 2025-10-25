@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class Vitract_temp
+public class Vitract_temp
 {
     public int? Taxon { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class StatsTable_Taxon_MaxCount
+public class StatsTable_Taxon_MaxCount
 {
     [Key]
     [Required]

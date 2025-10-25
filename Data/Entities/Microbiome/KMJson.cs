@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class KMJson
+public class KMJson
 {
 }
 

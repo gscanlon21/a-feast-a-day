@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class SampleTaxonRatio
+public class SampleTaxonRatio
 {
     [Key, Column(Order = 0)]
     [Required]

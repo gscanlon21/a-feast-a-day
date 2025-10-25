@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class Modifier1
+public class Modifier1
 {
     [Required]
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -4,6 +4,7 @@ using Data.Entities.Genetics;
 using Data.Entities.Newsletter;
 using Data.Entities.Recipe;
 using Data.Entities.User;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -27,6 +28,7 @@ namespace Data.Entities.Ingredient;
 /// </para>
 /// </summary>
 [Table("ingredient")]
+[Index(nameof(UserId))]
 [DebuggerDisplay("{Name,nq}")]
 public class Ingredient
 {
@@ -86,7 +88,7 @@ public class Ingredient
     /// Nutrients per serving.
     /// </summary>
     [JsonInclude, InverseProperty(nameof(Nutrient.Ingredient))]
-    public virtual IList<Nutrient> Nutrients { get; private init; } = [];
+    public virtual IList<Nutrient> Nutrients { get; set; } = [];
 
     /// <summary>
     /// These are the alternate ingredients.

@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class MissedTax
+public class MissedTax
 {
     [Required]
     public string Kingdom { get; set; }

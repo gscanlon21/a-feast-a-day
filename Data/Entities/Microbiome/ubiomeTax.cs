@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class ubiomeTax
+public class ubiomeTax
 {
     [Key, Required]
     public int Taxon { get; set; }

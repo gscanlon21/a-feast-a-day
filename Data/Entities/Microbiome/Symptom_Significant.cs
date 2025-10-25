@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class Symptom_Significant
+public class Symptom_Significant
 {
     public int? SymptomId { get; set; }
 

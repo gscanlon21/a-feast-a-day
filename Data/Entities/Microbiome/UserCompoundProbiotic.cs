@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class UserCompoundProbiotic
+public class UserCompoundProbiotic
 {
     [Required]
     public int UserId { get; set; }

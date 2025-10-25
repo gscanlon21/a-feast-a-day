@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class CsvTable
+public class CsvTable
 {
     [Key, Required]
     public int Taxon { get; set; }

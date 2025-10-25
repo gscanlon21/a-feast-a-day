@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class MPNIDMap
+public class MPNIDMap
 {
     [Key, Required]
     public int OldNId { get; set; }

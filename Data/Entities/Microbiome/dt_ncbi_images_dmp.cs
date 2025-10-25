@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class dt_ncbi_images_dmp
+public class dt_ncbi_images_dmp
 {
 }
 

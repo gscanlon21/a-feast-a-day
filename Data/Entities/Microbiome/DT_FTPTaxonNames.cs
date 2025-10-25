@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_FTPTaxonNames
+public class DT_FTPTaxonNames
 {
 }
 

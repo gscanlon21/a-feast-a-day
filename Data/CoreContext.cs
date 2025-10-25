@@ -15,6 +15,8 @@ namespace Data;
 /// </summary>
 public class CoreContext : DbContext
 {
+    private const string DISABLED_REASON_IS_NULL = "\"DisabledReason\" IS NULL";
+
     [Obsolete("Public parameterless constructor required for EF Core.", error: true)]
     public CoreContext() : base() { }
     public CoreContext(DbContextOptions<CoreContext> context) : base(context) { }
@@ -57,6 +59,10 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserFeastRecipe>().HasQueryFilter(p => p.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserRecipeIngredient>().HasQueryFilter(p => p.RecipeIngredient.Recipe.DisabledReason == null);
         modelBuilder.Entity<UserFeastRecipeIngredient>().HasQueryFilter(p => p.UserFeastRecipe.Recipe.DisabledReason == null);
+
+        ////////// Partial Indexes ////////// Clone existing indexes to have a DisabledReason filter. Only filter out DisabledReason if there's a global query filter set for it.
+        modelBuilder.Entity<Recipe>().Metadata.GetIndexes().Where(index => index.GetFilter() == null).ToList().ForEach(index => modelBuilder.Entity<Recipe>().Metadata.AddIndex(index.Properties, $"{index.GetDatabaseName()}_DisabledReason").SetFilter(DISABLED_REASON_IS_NULL));
+        modelBuilder.Entity<Ingredient>().Metadata.GetIndexes().Where(index => index.GetFilter() == null).ToList().ForEach(index => modelBuilder.Entity<Ingredient>().Metadata.AddIndex(index.Properties, $"{index.GetDatabaseName()}_DisabledReason").SetFilter(DISABLED_REASON_IS_NULL));
 
         // Set the default value of the db columns be attributes.
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())

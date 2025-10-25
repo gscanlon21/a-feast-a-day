@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class GHMI_Data
+public class GHMI_Data
 {
     [Required]
     public string TaxonName { get; set; } = string.Empty;

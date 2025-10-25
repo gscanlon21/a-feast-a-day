@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-internal class vw_EndProductTaxon
+public class vw_EndProductTaxon
 {
     [Required]
     public int Epid { get; set; }

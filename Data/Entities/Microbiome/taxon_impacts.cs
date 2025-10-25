@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class taxon_impacts
+public class taxon_impacts
 {
     public int? Source { get; set; }
 

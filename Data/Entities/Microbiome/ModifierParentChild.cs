@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class ModifierParentChild
+public class ModifierParentChild
 {
     [Required]
     [Key, Column(Order = 0)]

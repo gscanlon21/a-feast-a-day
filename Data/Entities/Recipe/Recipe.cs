@@ -2,6 +2,7 @@
 using Core.Models.User;
 using Data.Entities.Newsletter;
 using Data.Entities.User;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -13,6 +14,7 @@ namespace Data.Entities.Recipe;
 /// Recipes listed on the website.
 /// </summary>
 [Table("recipe")]
+[Index(nameof(UserId))]
 [DebuggerDisplay("{Id}: {Name,nq}")]
 public class Recipe
 {

@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-internal class DT_KeggUpload_gn
+public class DT_KeggUpload_gn
 {
 }
 

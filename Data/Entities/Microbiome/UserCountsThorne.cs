@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-internal class UserCountsThorne
+public class UserCountsThorne
 {
     [Required]
     public int UserId { get; set; }

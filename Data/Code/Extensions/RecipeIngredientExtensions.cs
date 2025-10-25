@@ -1,5 +1,4 @@
 ﻿using Core.Models.User;
-using Data.Entities.Ingredient;
 using Data.Entities.User;
 using Data.Interfaces.Recipe;
 
@@ -19,17 +18,17 @@ public static class UserFeastRecipeIngredientExtensions
         return recipeIngredient.GetQuantity * recipeIngredient.GetMeasure.ToGramsWithContext(recipeIngredient.GetIngredient);
     }
 
-    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, IList<Nutrient>? nutrients = null, IList<Ingredient>? altIngredients = null)
+    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, Dictionary<int, List<Nutrient>>? nutrients = null, IList<int>? altIngredientIds = null)
     {
         if (recipeIngredient.GetIngredient == null)
         {
             return new Dictionary<Nutrients, double>();
         }
 
-        if (altIngredients?.Any() == true)
+        if (altIngredientIds?.Any() == true)
         {
-            var altIngredientNutrients = nutrients?.NullIfEmpty()?.Where(n => true == altIngredients?.Select(ai => ai.Id).Contains(n.IngredientId));
-            return (altIngredientNutrients ?? altIngredients.SelectMany(ai => ai.Nutrients)).Select(nutrient =>
+            var altIngredientNutrients = altIngredientIds.SelectMany(ai => nutrients?.GetValueOrDefault(ai) ?? []).NullIfEmpty();
+            return altIngredientNutrients?.Select(nutrient =>
             {
                 var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient);
@@ -39,7 +38,7 @@ public static class UserFeastRecipeIngredientExtensions
         }
         else
         {
-            var recipeIngredientNutrients = nutrients?.NullIfEmpty()?.Where(n => n.IngredientId == recipeIngredient.GetIngredient!.Id);
+            var recipeIngredientNutrients = nutrients?.GetValueOrDefault(recipeIngredient.GetIngredient!.Id);
             return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
             {
                 var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
