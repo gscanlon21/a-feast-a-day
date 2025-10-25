@@ -867,6 +867,12 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1385	1381	1	f
 1385	1382	1	f
 346	1391	1	f
+1397	1396	1	f
+1397	56	1	f
+56	1396	1	f
+1396	56	1	f
+1395	1274	1	f
+1274	1395	1	f
 187	28	1	f
 187	164	1	f
 186	184	1	f
@@ -980,6 +986,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1388	333	1	f
 78	278	1	f
 78	77	1	f
+1398	188	1	f
+1398	1388	1	f
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -10600,6 +10608,51 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "DisabledReaso
 15567	1370	1984	\N	\N	3	0.2
 15568	1370	62	\N	\N	3	27
 15569	1370	2047	\N	\N	3	119
+15570	1274	128	\N	\N	3	2
+15571	1274	68719476736	\N	\N	2	3
+15572	1274	34359738368	\N	\N	2	89
+15573	1274	2	\N	\N	3	2
+15574	1274	1	\N	\N	3	4
+15575	1274	4294967296	\N	\N	2	8
+15576	1274	2199023255552	\N	\N	2	0.3
+15577	1274	48	\N	\N	3	1
+15578	1274	14	\N	\N	3	3
+15579	1274	1984	\N	\N	3	8
+15580	1274	62	\N	\N	3	4
+15581	1274	2047	\N	\N	3	96
+15582	1395	128	\N	\N	3	2
+15583	1395	68719476736	\N	\N	2	68
+15584	1395	34359738368	\N	\N	2	89
+15585	1395	2	\N	\N	3	2
+15586	1395	1	\N	\N	3	4
+15587	1395	4294967296	\N	\N	2	8
+15588	1395	2199023255552	\N	\N	2	0.3
+15589	1395	48	\N	\N	3	1
+15590	1395	14	\N	\N	3	3
+15591	1395	1984	\N	\N	3	8
+15592	1395	62	\N	\N	3	4
+15593	1395	2047	\N	\N	3	96
+15594	1352	34359738368	\N	\N	2	237
+15595	1352	2	\N	\N	3	12
+15596	1352	1	\N	\N	3	1
+15597	1352	4294967296	\N	\N	2	52
+15598	1352	2199023255552	\N	\N	2	0.1
+15599	1352	48	\N	\N	3	3
+15600	1352	14	\N	\N	3	12
+15601	1352	1984	\N	\N	3	0.2
+15602	1352	62	\N	\N	3	15
+15603	1352	2047	\N	\N	3	62
+15604	1391	68719476736	\N	\N	2	1
+15605	1391	34359738368	\N	\N	2	232
+15606	1391	2	\N	\N	3	12
+15607	1391	1	\N	\N	3	1
+15608	1391	4294967296	\N	\N	2	60
+15609	1391	2199023255552	\N	\N	2	0.2
+15610	1391	48	\N	\N	3	3
+15611	1391	14	\N	\N	3	14
+15612	1391	1984	\N	\N	3	0.2
+15613	1391	62	\N	\N	3	18
+15614	1391	2047	\N	\N	3	69
 \.
 
 
@@ -11315,15 +11368,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 3245	7	\N	25	1	3	\N	112	f	\N	1
 3246	5	\N	25	1	1	\N	387	f	\N	2
 6866	7	\N	640	1	1	, chopped	5	f	\N	3
-3866	0	\N	136	1	1	\N	187	f	\N	5
-3867	8	\N	136	1	3	, divided	101	f	\N	6
 3927	7	\N	197	1	4	\N	78	f	\N	5
 3928	0	\N	197	1	2	, finely chopped	5	f	\N	6
 3287	4	\N	163	1	8	, thawed	568	f	\N	0
 3288	6	\N	163	4	3	\N	569	f	\N	1
 3289	7	\N	163	1	2	\N	570	f	\N	2
 3316	0	\N	144	2	1	\N	352	f	\N	0
-3868	7	\N	136	1	1	\N	29	f	\N	7
 3259	6	\N	114	2	1	\N	77	f	\N	0
 3260	6	\N	114	4	1	\N	81	f	\N	1
 3261	7	\N	114	1	1	\N	39	f	\N	2
@@ -11365,7 +11415,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 5144	6	\N	143	2	3	, for smoothie	420	f	\N	3
 5145	0	\N	143	1	10	, for smoothie	501	f	\N	4
 5146	4	\N	143	1	6	, heated	810	f	\N	5
-3869	7	\N	136	1	3	\N	62	f	\N	8
+3866	0	\N	136	1	1	\N	187	f	\N	5
+3867	8	\N	136	1	3	, divided	101	f	\N	6
 3033	8	\N	135	8	1	\N	71	f	\N	3
 2594	8	\N	87	1	1	, toasted, plus more for garnish	238	t	\N	5
 2595	8	\N	87	1	2	\N	101	f	\N	6
@@ -11376,6 +11427,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 2600	8	\N	87	2	1	\N	299	t	\N	11
 3238	7	\N	166	1	2	\N	77	f	\N	1
 3239	8	\N	166	8	1	\N	285	f	\N	2
+3868	7	\N	136	1	1	\N	29	f	\N	7
+3869	7	\N	136	1	3	\N	62	f	\N	8
 2802	7	\N	138	1	2	\N	77	f	\N	7
 2803	0	\N	138	1	8	, finely chopped	225	f	\N	8
 2804	0	\N	138	1	1	, crushed	5	f	\N	9
@@ -13190,8 +13243,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 5961	6	\N	487	4	1	\N	278	f	\N	5
 5962	8	\N	487	4	1	, to taste	74	t	\N	6
 7272	6	\N	726	4	1	(cANNED CORN | FROZEN CORN), cooked	418	f	\N	1
-6478	6	\N	589	2	1	\N	188	f	\N	0
-6479	6	\N	589	1	1	\N	123	f	\N	1
 7273	7	\N	726	1	2	\N	\N	f	662	2
 7274	6	\N	726	4	1	\N	\N	f	710	3
 6488	7	\N	591	1	1	\N	964	f	\N	0
@@ -13219,6 +13270,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 6546	6	\N	597	4	1	\N	1094	f	\N	2
 6547	6	\N	597	2	1	\N	178	f	\N	3
 6273	8	\N	564	4	1	, to taste	692	t	\N	6
+6478	6	\N	589	2	1	\N	188	f	\N	0
+6479	6	\N	589	2	1	\N	123	f	\N	1
 6548	0	\N	597	4	1	\N	9	f	\N	4
 6549	0	\N	597	1	4	\N	1074	f	\N	5
 6550	6	\N	598	1	1	\N	806	f	\N	0
@@ -13665,15 +13718,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7302	7	\N	730	1	2	\N	123	f	\N	5
 7303	7	\N	730	1	1	\N	36	f	\N	6
 7304	6	\N	730	2	1	(CRUMBLED BLUE CHEESE), at room temperature	319	f	\N	7
-6910	5	\N	644	1	1	(LEAN BEEF STEAK, BEEF TENDERLOIN, BEEF SIRLOIN), cut into thin strips	326	f	\N	0
-6911	0	\N	644	1	1	, grated and juiced	346	f	\N	1
-6912	7	\N	644	1	1	\N	496	f	\N	2
-6913	8	\N	644	1	1	\N	196	f	\N	3
-6914	7	\N	644	1	1	, finely chopped	307	f	\N	4
-6915	7	\N	644	1	1	\N	233	f	\N	5
-6916	0	\N	644	1	1	, cut into thin strips	7	f	\N	6
-6917	0	\N	644	1	2	, thinly sliced	144	f	\N	7
-6918	6	\N	644	1	1	(NOODLES | RICE), to serve	240	f	\N	8
 5742	0	\N	420	1	1	\N	6	f	\N	7
 5743	0	\N	420	1	1	, diced	105	f	\N	8
 5744	0	\N	420	1	2	, sliced	250	f	\N	9
@@ -13684,6 +13728,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 6865	0	\N	640	1	1	, chopped	222	f	\N	2
 7229	7	\N	719	1	3	\N	62	f	\N	2
 7230	7	\N	719	1	1	\N	39	f	\N	3
+6910	5	\N	644	1	1	(LEAN BEEF STEAK, BEEF TENDERLOIN, BEEF SIRLOIN), cut into thin strips	326	f	\N	0
 6919	7	\N	645	1	1	\N	38	f	\N	0
 6920	0	\N	645	1	4	\N	1190	f	\N	1
 6921	7	\N	645	1	2	\N	233	f	\N	2
@@ -13729,6 +13774,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 7204	7	\N	716	1	1	\N	77	f	\N	0
 4626	7	\N	267	1	1	\N	143	f	\N	2
 5619	7	\N	398	1	1	\N	123	f	\N	7
+6911	0	\N	644	1	1	, grated and juiced	346	f	\N	1
 6955	6	\N	647	1	1	, chopped, to garnish	13	t	\N	10
 7305	6	\N	317	1	5	\N	993	f	\N	5
 7336	0	\N	736	1	1	(RISOTTO BASE, p77)	159	f	\N	0
@@ -14308,6 +14354,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "DisabledReason", "RecipeId", "Q
 6961	6	\N	648	3	4	, for the crust	1393	f	\N	5
 6962	6	\N	648	1	5	, for the filling	1392	f	\N	6
 6963	6	\N	648	4	1	, for the filling	215	t	\N	7
+6912	7	\N	644	1	1	\N	496	f	\N	2
+6913	8	\N	644	1	1	\N	196	f	\N	3
+6914	7	\N	644	1	1	, finely chopped	307	f	\N	4
+6915	7	\N	644	1	1	\N	233	f	\N	5
+6916	0	\N	644	1	1	, cut into thin strips	7	f	\N	6
+6917	0	\N	644	1	2	, thinly sliced	144	f	\N	7
+6918	6	\N	644	1	1	, to serve	1398	f	\N	8
 \.
 
 
@@ -15028,6 +15081,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2058	Heat the oil in a large, heavy frying pan and shallow-fry the sausages for 10 minutes or until they are golden brown and cooked right through.	\N	178	2	0
 2059	If you use a large pan, you'll be able to fry some onion rings alongside the sausages. At the same time, grill (broil) mushrooms and halved tomatoes to serve on the side.	\N	178	3	0
 3260	Combine all ingredients in a large bowl and serve.	\N	478	0	0
+2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	\N	136	0	0
 3400	In a blender, add the lemon and orange juice, as well as the coconut water through activated charcoal, and blend for 30 seconds until combined.	\N	552	1	0
 1299	Season with salt and pepper and roast in the preheated oven for 20 minutes.	\N	26	2	0
 3321	Top each with 1-2 cucumber slices and a small sprig of dill, parsley, or cilantro.	\N	48	1	0
@@ -15037,20 +15091,19 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2714	Cook the pasta in a large pot of lightly salted boiling water for 10–12 minutes.	\N	184	0	4
 2370	Soak cashews in water for at least 2 hours or overnight.	\N	255	0	0
 2371	Place cashews, with their soaking liquid, and remaining ingredients in a food processor or blender and process on high for about 5 minutes. You may need to scrape the sides down intermittently. It’s done when the mixture is completely smooth and no longer tastes grainy.	\N	255	1	0
-2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	\N	136	0	0
 2782	Add the cream and thyme and transfer everything to a food processor. Process until smooth and creamy, about 2-3 minutes.	\N	259	1	0
 2783	Add salt and pepper to taste, and process to combine well. Transfer the mixture to a container (with lid) and store in the refrigerator. It will thicken as it cools.	\N	259	2	0
-2042	Heat another teaspoon oil in a large wok or skillet over high heat. Season chicken with white pepper and salt then add to hot skillet and stir fry until cooked through. Remove to a plate then set aside.	\N	136	1	0
 3372	Using a masticating juicer, slowly feed the vegetables and fruit (including the peels) into the juicer, until all produce has been processed.	\N	538	0	0
 3420	Slow Cooker: Place the chicken, vinegar, and vegetables in a slow cooker. Fill with water to 1 inch below the top of the slow cooker. cover, and cook on high for 8 to 12 hours.	\N	559	0	0
 3421	Electric Pressure Cooker: Place the chicken, vinegar, and vegetables into the pot of the pressure cooker. Fill two-thirds of the way up with water and secure the pressure cooker lid. Press the Manual button, set the pressure on high, and set the timer to 90 minutes.	\N	559	1	0
+2042	Heat another teaspoon oil in a large wok or skillet over high heat. Season chicken with white pepper and salt then add to hot skillet and stir fry until cooked through. Remove to a plate then set aside.	\N	136	1	0
+2043	Heat remaining teaspoon oil in the wok then add frozen vegetables. Stir fry until tender, 1-2 minutes, then add garlic and stir fry for 30 more seconds being careful not to let it burn. Push vegetables to the side of the wok then add egg and sesame oil mixture into the center and scramble.	\N	136	2	0
 3329	In a large bowl, mix the first 8 ingredients (avocado through cilantro).	\N	525	0	0
 3330	Serve salsa with sliced cucumbers.	\N	525	1	0
-2043	Heat remaining teaspoon oil in the wok then add frozen vegetables. Stir fry until tender, 1-2 minutes, then add garlic and stir fry for 30 more seconds being careful not to let it burn. Push vegetables to the side of the wok then add egg and sesame oil mixture into the center and scramble.	\N	136	2	0
-2044	Add butter then, once melted, add cooked chicken and rice and then toss to combine. Drizzle in tamari, toss to combine, then serve.	\N	136	3	0
 2051	Heat the oil in a wok or large frying pan. Add the garlic and chilies and stir-fry over a medium heat for 1-2 minutes.	\N	133	0	0
 2715	Drain the pasta well, then add it to a bowl of pesto and toss to coat.	\N	184	1	0
 2820	Cook the pasta according to pack instructions – about 10 mins. Meanwhile, put the lime juice and zest in a medium bowl with the avocado, tomatoes, coriander, onion and chilli, if using, and mix well.	\N	39	0	0
+2044	Add butter then, once melted, add cooked chicken and rice and then toss to combine. Drizzle in tamari, toss to combine, then serve.	\N	136	3	0
 2052	Add the chicken to the wok or pan and stir-fry until it changes colour.	\N	133	1	0
 2053	Stir in the Thai fish sauce, soy sauce and sugar. Continue to stir-fry the mixture for 3-4 minutes, or until the chicken is fully cooked with the sauce.	\N	133	2	0
 2054	Stir in the Thai basil leaves.	\N	133	3	0
@@ -15068,7 +15121,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 2486	Roughly chop the prunes and stir into the melted chocolate with the bisuits. Spoon the mixture into a 20cm/8in square cake tin (pan) and smooth out any lumps with the back of the spoon. Chill for 1-2 hours until set. Remove the cake from the refrigerator and using a sharp knife, cut into 12 bars.	\N	175	2	0
 3113	Dip the apples in the peanut butter. Enjoy!	\N	407	0	0
 3508	Preheat the oven to 425°F.	\N	582	0	2
-3542	Cook the rice according to package instructions.	\N	589	1	0
 3373	Pour the hot water over the Oatmeal. Enjoy!	\N	539	0	0
 2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	\N	264	0	0
 3038	Carefully remove the fillets (the long finger shaped muscle on the back of each breast) and reserve for another use.	\N	386	0	0
@@ -15090,6 +15142,7 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3331	Preheat the oven according to package directions. Bake the pizza according to package directions.	\N	526	0	2
 3068	Remove from the oven and let the chickpeas cool on the baking sheet. They will continue to crisp as they cool. Enjoy immediately as a snack, salad topper, or side dish.	\N	392	4	0
 1557	Sprinkle the garlic, vinegar, cumin and cayenne or paprika over the salad. Drizzle with olive oil and sprinkle over coriander and olives.	\N	153	2	0
+3542	Cook the rice according to package instructions.	\N	589	1	0
 2437	After 5–10 minutes, when the chocolate is completely soft, swirl briefly with a fork to create a pattern.	\N	240	1	0
 2630	Finely slice the chilies (use as much as you dare!). Sprinkle half of them into a 12-inch non-stick frying pan on a medium heat with 1 tablespoon of olive oil. Once they start to sizzle, evenly crack in the eggs, then spoon the black beans and just half the juice from the can in and around the eggs. Season with sea salt and black pepper, cover, and cook the eggs to your liking.	\N	265	0	0
 2631	Meanwhile, halve, peel, and pit the avocado, slice into thin wedges, dress with the lime juice, and season to perfection. Arrange the avocado around the pan, scatter over the rest of the chilies, stab the egg yolks, and dish up.	\N	265	1	0
@@ -15792,10 +15845,6 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3751	Layer in this order: Spread bean dip. Top with avocado mixture. Spread on sour cream mixture. Sprinkle onions and tomatoes. Cover with cheese and olives.	\N	641	2	0
 3752	Serve immediately with tortilla chips (or chill until you serve).	\N	641	3	0
 3753	In a blender, blend until desired consistency is reached.	\N	642	0	128
-3755	Place the beef strips in a bowl and sprinkle over the orange rind and juice. If possible, leave to marinate for 10 minutes, or up to 30 minutes if you can spare the time.	\N	644	0	0
-3756	Drain the liquid from the meat and set aside, then mix the meat with the soy sauce, cornstarch and ginger, making sure the meat is evenly covered.	\N	644	1	0
-3757	Heat the oil in a wok or large frying pan and add the beef. Stir-fry for 1 minute until lightly colored, then add the carrot strips and stir-fry for another 2-3 minutes.	\N	644	2	0
-3758	Stir in the spring onions and reserved liquid, then cook, stirring, until boiling and thickened. Serve hot with noodles or rice.	\N	644	3	0
 3090	Slice roast thin and pour sauce over it. Serve with lime wedges and cilantro.	\N	398	3	0
 3771	Preheat the oven to 400°F.	\N	648	0	2
 3759	Season the flour and use to dust the veal, then set the meat aside.	\N	645	0	0
@@ -15825,6 +15874,10 @@ COPY public.recipe_instruction ("Id", "Name", "DisabledReason", "RecipeId", "Ord
 3745	Add the eggs and cook until scrambled into small lumps.	\N	640	2	4
 3746	Add the rice and continue to stir and toss, to coat it with the oil and prevent it from sticking.	\N	640	3	4
 3747	Stir in the fish sauce, soy sauce and sugar and mix well. Continue to fry until the rice is thoroughly heated. Spoon into warmed individual bowls and serve, garnished with sliced spring onions, chillies, and lime wedges.	\N	640	4	4
+3755	Place the beef strips in a bowl and sprinkle over the orange rind and juice. If possible, leave to marinate for 10 minutes, or up to 30 minutes if you can spare the time.	\N	644	0	0
+3756	Drain the liquid from the meat and set aside, then mix the meat with the soy sauce, cornstarch and ginger, making sure the meat is evenly covered.	\N	644	1	0
+3757	Heat the oil in a wok or large frying pan and add the beef. Stir-fry for 1 minute until lightly colored, then add the carrot strips and stir-fry for another 2–3 minutes.	\N	644	2	4
+3758	Stir in the spring onions and reserved liquid, then cook, stirring, until boiling and thickened. Serve hot with noodles or rice.	\N	644	3	4
 3786	Cook 1 cup of quinoa per package instructions.	\N	650	0	0
 3794	Add the ingredients to the Baking Pan in the order listed.	\N	653	0	8192
 3795	Select Course No. 2 and press start.	\N	653	1	8192
@@ -16256,7 +16309,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15569, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15614, true);
 
 
 --
