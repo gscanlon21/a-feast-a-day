@@ -19,6 +19,10 @@
             @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient })
         </div>        
     </div>
+
+    <div class="col-lg-6">
+        @await Component.InvokeAsync(IngredientAlternativesViewComponent.Name, new { Model.User, Model.Ingredient })
+    </div>
 </div>
 
 @section Scripts {

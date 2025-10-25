@@ -1,0 +1,16 @@
+﻿@model IngredientAlternativesViewModel
+@using Core.Models.Recipe
+@using Core.Models.User
+
+
+@if (Model.PartialIngredients.Any())
+{
+    <h5>@Html.DisplayNameFor(_ => Model.PartialIngredients)</h5>
+    <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.PartialIngredients' />
+}
+
+@if (Model.AlternativeIngredients.Any())
+{
+    <h5>@Html.DisplayNameFor(_ => Model.AlternativeIngredients)</h5>
+    <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.AlternativeIngredients' />
+}
