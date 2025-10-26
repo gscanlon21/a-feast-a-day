@@ -13,18 +13,14 @@ public class NUTR_DEF
     public int Id { get; init; }
 
     [Key, Required]
-    public string NutrNo { get; set; }
+    public string NutrNo { get; set; } = null!;
 
-    [StringLength(255)]
     public string? NutrientName { get; set; }
 
-    [StringLength(250)]
     public string? FlavClass { get; set; }
 
-    [StringLength(20)]
     public string? Tagname { get; set; }
 
-    [StringLength(255)]
     public string? Unit { get; set; }
 
     public bool? MastCellStabilizer { get; set; }

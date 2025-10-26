@@ -6,19 +6,17 @@ namespace Data.Entities.Microbiome;
 
 
 [Table("special_purpose")]
-[DebuggerDisplay("{Name,nq}")]
+[DebuggerDisplay("{Id}: {Purpose}")]
 public class SpecialPurpose
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int SPid { get; set; }
+    [NotMapped]
+    public int SPid => Id;
 
     [Required]
-    [StringLength(50)]
-    public string Purpose { get; set; } = string.Empty;
+    public string Purpose { get; set; } = null!;
 
     public string? MoreInfo { get; set; }
 

@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-class Sample_Enzyme
+[Table("sample_enzyme")]
+public class Sample_Enzyme
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int SampleId { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
-    [StringLength(20)]
-    public string ECKey { get; set; }
+    [Key, Column(Order = 1)]
+    public string ECKey { get; set; } = null!;
 
     [Required]
     public int Cnt { get; set; }

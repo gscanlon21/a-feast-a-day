@@ -1,0 +1,15 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Entities.Microbiome.Types;
+
+[Table("TODO")]
+public class DT_Percentile
+{
+}
+
+/*CREATE TYPE [dbo].[DT_Percentile] AS TABLE(
+	[id] [int] NULL,
+	[dist] [varchar](max) NULL,
+	[NormalLow] [float] NULL,
+	[NormalHigh] [float] NULL
+)*/

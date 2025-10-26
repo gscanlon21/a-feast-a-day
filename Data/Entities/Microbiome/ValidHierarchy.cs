@@ -1,16 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
+[Table("valid_hierarchy")]
 public class ValidHierarchy
 {
     [Required]
-    [StringLength(100)]
-    public string TaxRank { get; set; }
+    public string TaxRank { get; set; } = null!;
 
     [Required]
-    [StringLength(100)]
-    public string ParentRank { get; set; }
+    public string ParentRank { get; set; } = null!;
 
     public int? Cnt { get; set; }
 }

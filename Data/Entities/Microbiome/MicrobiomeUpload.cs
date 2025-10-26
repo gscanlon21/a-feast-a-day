@@ -14,7 +14,7 @@ public class MicrobiomeUpload
     public int? Taxon { get; set; }
 
     [Required]
-    public string TaxName { get; set; }
+    public string TaxName { get; set; } = null!;
 
     public string? TaxRank { get; set; }
 
@@ -24,7 +24,7 @@ public class MicrobiomeUpload
     public int CountNorm { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is Salicylate other
+    public override bool Equals(object? obj) => obj is MicrobiomeUpload other
         && other.Id == Id;
 }
 

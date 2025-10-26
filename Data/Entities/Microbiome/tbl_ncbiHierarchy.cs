@@ -1,11 +1,20 @@
-﻿namespace Data.Entities.Microbiome;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-class tbl_ncbiHierarchy
+namespace Data.Entities.Microbiome;
+
+[Table("TODO")]
+public class tbl_ncbiHierarchy
 {
-}
+    [Key, Column("taxon")]
+    [Required]
+    public int Taxon { get; set; }
 
-/*CREATE TYPE [dbo].[tbl_ncbiHierarchy] AS TABLE(
-	[taxon] [int] NOT NULL,
-	[parent] [int] NOT NULL,
-	[rank] [varchar](15) NOT NULL
-)*/
+    [Column("parent")]
+    [Required]
+    public int Parent { get; set; }
+
+    [Column("rank")]
+    [Required]
+    public string Rank { get; set; } = string.Empty;
+}

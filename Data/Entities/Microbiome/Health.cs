@@ -3,13 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
+[Table("health")]
 public class Health
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int GMRepoID { get; set; }
 
-    [StringLength(100)]
     public string? Status { get; set; }
 
     [NotMapped]

@@ -26,7 +26,6 @@ public class MicrobaInsight
 
     public string? HighLevel { get; set; }
 
-    [StringLength(100)]
     public string? Adapt { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);

@@ -1084,6 +1084,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 29	76	1	f
 1392	607	1	f
 1392	1008	1	f
+209	99	1	f
 690	39	1	f
 690	681	1	f
 1008	871	1	f
@@ -1967,6 +1968,11 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 74	1390	1	f
 811	598	1	t
 811	599	1	t
+295	1399	1	f
+297	1399	1	f
+62	1399	1	f
+1399	295	1	f
+1399	62	1	f
 \.
 
 
@@ -11380,7 +11386,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3862	0	136	1	1	, cut into bite-sized pieces	387	f	\N	1
 3863	8	136	4	1	\N	489	f	\N	2
 3864	6	136	1	1	\N	209	f	\N	3
-3865	0	136	1	1	, pressed or minced	5	f	\N	4
+3865	0	136	1	1	, pressed or minced	5	t	\N	4
 1367	4	68	1	1	\N	87	f	\N	1
 3030	0	135	1	1	, pounded to an even thickness	24	f	\N	0
 3031	6	135	4	1	\N	547	f	\N	1
@@ -11415,12 +11421,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3245	7	25	1	3	\N	112	f	\N	1
 3246	5	25	1	1	\N	387	f	\N	2
 6866	7	640	1	1	, chopped	5	f	\N	3
+3866	0	136	1	1	\N	187	f	\N	5
+3867	8	136	1	3	, divided	101	f	\N	6
 3927	7	197	1	4	\N	78	f	\N	5
 3928	0	197	1	2	, finely chopped	5	f	\N	6
 3287	4	163	1	8	, thawed	568	f	\N	0
 3288	6	163	4	3	\N	569	f	\N	1
 3289	7	163	1	2	\N	570	f	\N	2
 3316	0	144	2	1	\N	352	f	\N	0
+3868	7	136	1	1	\N	29	f	\N	7
 3259	6	114	2	1	\N	77	f	\N	0
 3260	6	114	4	1	\N	81	f	\N	1
 3261	7	114	1	1	\N	39	f	\N	2
@@ -11462,8 +11471,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5144	6	143	2	3	, for smoothie	420	f	\N	3
 5145	0	143	1	10	, for smoothie	501	f	\N	4
 5146	4	143	1	6	, heated	810	f	\N	5
-3866	0	136	1	1	\N	187	f	\N	5
-3867	8	136	1	3	, divided	101	f	\N	6
+3869	7	136	1	3	\N	62	f	\N	8
 3033	8	135	8	1	\N	71	f	\N	3
 2594	8	87	1	1	, toasted, plus more for garnish	238	t	\N	5
 2595	8	87	1	2	\N	101	f	\N	6
@@ -11474,8 +11482,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2600	8	87	2	1	\N	299	t	\N	11
 3238	7	166	1	2	\N	77	f	\N	1
 3239	8	166	8	1	\N	285	f	\N	2
-3868	7	136	1	1	\N	29	f	\N	7
-3869	7	136	1	3	\N	62	f	\N	8
 2802	7	138	1	2	\N	77	f	\N	7
 2803	0	138	1	8	, finely chopped	225	f	\N	8
 2804	0	138	1	1	, crushed	5	f	\N	9
@@ -15133,7 +15139,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2058	Heat the oil in a large, heavy frying pan and shallow-fry the sausages for 10 minutes or until they are golden brown and cooked right through.	178	2	0
 2059	If you use a large pan, you'll be able to fry some onion rings alongside the sausages. At the same time, grill (broil) mushrooms and halved tomatoes to serve on the side.	178	3	0
 3260	Combine all ingredients in a large bowl and serve.	478	0	0
-2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	136	0	0
 3400	In a blender, add the lemon and orange juice, as well as the coconut water through activated charcoal, and blend for 30 seconds until combined.	552	1	0
 1299	Season with salt and pepper and roast in the preheated oven for 20 minutes.	26	2	0
 3321	Top each with 1-2 cucumber slices and a small sprig of dill, parsley, or cilantro.	48	1	0
@@ -15143,19 +15148,20 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2714	Cook the pasta in a large pot of lightly salted boiling water for 10–12 minutes.	184	0	4
 2370	Soak cashews in water for at least 2 hours or overnight.	255	0	0
 2371	Place cashews, with their soaking liquid, and remaining ingredients in a food processor or blender and process on high for about 5 minutes. You may need to scrape the sides down intermittently. It’s done when the mixture is completely smooth and no longer tastes grainy.	255	1	0
+2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	136	0	0
 2782	Add the cream and thyme and transfer everything to a food processor. Process until smooth and creamy, about 2-3 minutes.	259	1	0
 2783	Add salt and pepper to taste, and process to combine well. Transfer the mixture to a container (with lid) and store in the refrigerator. It will thicken as it cools.	259	2	0
+2042	Heat another teaspoon oil in a large wok or skillet over high heat. Season chicken with white pepper and salt then add to hot skillet and stir fry until cooked through. Remove to a plate then set aside.	136	1	0
 3372	Using a masticating juicer, slowly feed the vegetables and fruit (including the peels) into the juicer, until all produce has been processed.	538	0	0
 3420	Slow Cooker: Place the chicken, vinegar, and vegetables in a slow cooker. Fill with water to 1 inch below the top of the slow cooker. cover, and cook on high for 8 to 12 hours.	559	0	0
 3421	Electric Pressure Cooker: Place the chicken, vinegar, and vegetables into the pot of the pressure cooker. Fill two-thirds of the way up with water and secure the pressure cooker lid. Press the Manual button, set the pressure on high, and set the timer to 90 minutes.	559	1	0
-2042	Heat another teaspoon oil in a large wok or skillet over high heat. Season chicken with white pepper and salt then add to hot skillet and stir fry until cooked through. Remove to a plate then set aside.	136	1	0
-2043	Heat remaining teaspoon oil in the wok then add frozen vegetables. Stir fry until tender, 1-2 minutes, then add garlic and stir fry for 30 more seconds being careful not to let it burn. Push vegetables to the side of the wok then add egg and sesame oil mixture into the center and scramble.	136	2	0
 3329	In a large bowl, mix the first 8 ingredients (avocado through cilantro).	525	0	0
 3330	Serve salsa with sliced cucumbers.	525	1	0
+2043	Heat remaining teaspoon oil in the wok then add frozen vegetables. Stir fry until tender, 1-2 minutes, then add garlic and stir fry for 30 more seconds being careful not to let it burn. Push vegetables to the side of the wok then add egg and sesame oil mixture into the center and scramble.	136	2	0
+2044	Add butter then, once melted, add cooked chicken and rice and then toss to combine. Drizzle in tamari, toss to combine, then serve.	136	3	0
 2051	Heat the oil in a wok or large frying pan. Add the garlic and chilies and stir-fry over a medium heat for 1-2 minutes.	133	0	0
 2715	Drain the pasta well, then add it to a bowl of pesto and toss to coat.	184	1	0
 2820	Cook the pasta according to pack instructions – about 10 mins. Meanwhile, put the lime juice and zest in a medium bowl with the avocado, tomatoes, coriander, onion and chilli, if using, and mix well.	39	0	0
-2044	Add butter then, once melted, add cooked chicken and rice and then toss to combine. Drizzle in tamari, toss to combine, then serve.	136	3	0
 2052	Add the chicken to the wok or pan and stir-fry until it changes colour.	133	1	0
 2053	Stir in the Thai fish sauce, soy sauce and sugar. Continue to stir-fry the mixture for 3-4 minutes, or until the chicken is fully cooked with the sauce.	133	2	0
 2054	Stir in the Thai basil leaves.	133	3	0

@@ -5,21 +5,18 @@ using System.Diagnostics;
 namespace Data.Entities.Microbiome;
 
 [Table("special_conditions")]
-[DebuggerDisplay("{Name,nq}")]
+[DebuggerDisplay("{Id}")]
 public class SpecialConditions
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int SCId { get; set; }
+    [NotMapped]
+    public int SCId => Id;
 
     [Required]
-    [StringLength(100)]
-    public string SpecialCondition { get; set; } = string.Empty;
+    public string SpecialCondition { get; set; } = null!;
 
-    [StringLength(2)]
     public string? ConditionCode { get; set; }
 
     public int? SymptomId { get; set; }
