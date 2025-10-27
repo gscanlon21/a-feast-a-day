@@ -2,10 +2,7 @@
 
 public class DT_EnzymeProbiotics
 {
+    public string ECKey { get; set; }
+    public int? Cnt { get; set; }
+    public int? Missing { get; set; }
 }
-
-/*CREATE TYPE [dbo].[DT_EnzymeProbiotics] AS TABLE(
-	[ECKey] [varchar](20) NULL,
-	[Cnt] [int] NULL,
-	[Missing] [int] NULL
-)*/

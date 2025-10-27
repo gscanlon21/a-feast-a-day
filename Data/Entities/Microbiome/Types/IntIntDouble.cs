@@ -1,19 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome.Types;
 
 [Table("TODO")]
 public class IntIntDouble
 {
+    [Key, Column(Order = 0)]
+    public int SampleId { get; set; }
+
+    [Key, Column(Order = 1)]
+    public int Id { get; set; }
+
+    public double? Percent { get; set; }
 }
 
-/*CREATE TYPE [dbo].[IntIntDouble] AS TABLE(
-	[SampleId] [int] NOT NULL,
-	[Id] [int] NOT NULL,
-	[Percent] [float] NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[SampleId] ASC,
-	[Id] ASC
-)WITH (IGNORE_DUP_KEY = OFF)
-)*/

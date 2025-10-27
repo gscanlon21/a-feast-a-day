@@ -5,10 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class KMString
 {
+    public string Id { get; set; } = string.Empty;
+    public int? KmLow { get; set; }
+    public int? KmHigh { get; set; }
 }
-
-/*CREATE TYPE [dbo].[KMString] AS TABLE(
-	[Id] [varchar](30) NOT NULL,
-	[KmLow] [int] NULL,
-	[KmHigh] [int] NULL
-)*/

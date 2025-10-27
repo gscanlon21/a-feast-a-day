@@ -2,11 +2,9 @@
 
 public class DT_CitationLinks
 {
+    public int? Cid { get; set; }
+    public string Pmcid { get; set; }
+    public string Doi { get; set; }
+    public string DirectUrl { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_CitationLinks] AS TABLE(
-	[cid] [int] NULL,
-	[PMCID] [varchar](30) NULL,
-	[DOI] [varchar](max) NULL,
-	[DirectUrl] [varchar](max) NULL
-)*/

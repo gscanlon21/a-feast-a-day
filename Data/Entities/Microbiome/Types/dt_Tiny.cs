@@ -1,14 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome.Types;
 
-[Table("TODO")]
+[Table("dt_Tiny")]
 public class dt_Tiny
 {
-}
+    public string Rank { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
-/*CREATE TYPE [dbo].[dt_Tiny] AS TABLE(
-	[Rank] [varchar](200) NOT NULL,
-	[Name] [varchar](200) NOT NULL,
-	[Amount] [float] NOT NULL DEFAULT ((0))
-)*/
+    [DefaultValue(0)]
+    public double Amount { get; set; } = 0;
+}

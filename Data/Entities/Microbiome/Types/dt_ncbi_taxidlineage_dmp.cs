@@ -2,12 +2,9 @@
 
 namespace Data.Entities.Microbiome.Types;
 
-[Table("TODO")]
+[Table("dt_ncbi_taxidlineage_dmp")]
 public class dt_ncbi_taxidlineage_dmp
 {
+    public int? D_Taxon { get; set; }
+    public string? D_Hierarchy { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_ncbi_taxidlineage_dmp] AS TABLE(
-	[d_Taxon] [int] NULL,
-	[d_hierarchy] [nvarchar](max) NULL
-)*/

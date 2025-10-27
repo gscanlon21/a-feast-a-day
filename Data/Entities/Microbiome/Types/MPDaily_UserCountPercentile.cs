@@ -5,10 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class MPDaily_UserCountPercentile
 {
+    public int Taxon { get; set; }
+    public int CountNorm { get; set; }
+    public double? Percentile { get; set; }
 }
-
-/*CREATE TYPE [dbo].[MPDaily_UserCountPercentile] AS TABLE(
-	[Taxon] [int] NOT NULL,
-	[Count_norm] [int] NOT NULL,
-	[Percentile] [float] NULL
-)*/

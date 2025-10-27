@@ -2,13 +2,10 @@
 
 namespace Data.Entities.Microbiome.Types;
 
-[Table("TODO")]
+[Table("dt_newInformeDeMicrobiotaIntestinal")]
 public class dt_newInformeDeMicrobiotaIntestinal
 {
+    public int Taxon { get; set; }
+    public double? RawCount { get; set; }
+    public double? Percentage { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_newInformeDeMicrobiotaIntestinal] AS TABLE(
-	[Taxon] [int] NOT NULL,
-	[RawCount] [float] NULL,
-	[Percentage] [float] NULL
-)*/

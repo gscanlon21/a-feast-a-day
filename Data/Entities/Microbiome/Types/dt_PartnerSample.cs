@@ -5,9 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class dt_PartnerSample
 {
+    public int? Taxon { get; set; }
+    public double? CountNorm { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_PartnerSample] AS TABLE(
-	[Taxon] [int] NULL,
-	[Count_Norm] [float] NULL
-)*/

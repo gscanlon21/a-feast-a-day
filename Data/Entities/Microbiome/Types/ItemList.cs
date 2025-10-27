@@ -1,16 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome.Types;
 
 [Table("TODO")]
 public class ItemList
 {
+    [Key]
+    public int Item { get; set; }
 }
 
-/*CREATE TYPE [dbo].[ItemList] AS TABLE(
-	[item] [int] NOT NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[item] ASC
-)WITH (IGNORE_DUP_KEY = OFF)
-)*/

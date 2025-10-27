@@ -2,9 +2,7 @@
 
 public class dt_DemoGenus
 {
+    public int? Taxon { get; set; }
+    public double? Percentile { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_DemoGenus] AS TABLE(
-	[Taxon] [int] NULL,
-	[percentile] [float] NULL
-)*/

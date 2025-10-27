@@ -12,16 +12,12 @@ public class ThorneSample
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public string Domain { get; set; } = null!;
+    public double Abundance { get; set; }
+    public double? Percentile { get; set; }
+    public int? Taxon { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TYPE [dbo].[dt_ThorneSample] AS TABLE(
-	[Domain] [varchar](200) NOT NULL,
-	[Abundance] [float] NOT NULL DEFAULT ((0)),
-	[Percentile] [float] NULL DEFAULT ((0)),
-	[Taxon] [int] NULL
-)
-*/

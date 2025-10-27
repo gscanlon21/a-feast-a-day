@@ -1,14 +1,11 @@
-﻿namespace Data.Entities.Microbiome.Types;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome.Types;
 
 public class MPDaily_Percentile
 {
-}
+    [Key]
+    public int Id { get; set; }
 
-/*CREATE TYPE [dbo].[MPDaily_Percentile] AS TABLE(
-	[Id] [int] NOT NULL,
-	[Percentile] [float] NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (IGNORE_DUP_KEY = OFF)
-)*/
+    public double? Percentile { get; set; }
+}

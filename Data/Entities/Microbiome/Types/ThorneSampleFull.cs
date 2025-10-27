@@ -12,30 +12,26 @@ public class ThorneSampleFull
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
+    public string Domain { get; set; } = null!;
+    public string KINGDOM { get; set; } = null!;
+    public string PHYLUM { get; set; } = null!;
+    public string CLASS { get; set; } = null!;
+    public string ORDER { get; set; } = null!;
+    public string FAMILY { get; set; } = null!;
+    public string GENUS { get; set; } = null!;
+    public string SPECIES { get; set; } = null!;
+    public string SEROGROUP { get; set; } = null!;
+    public string SEROTYPE { get; set; } = null!;
+    public string SUBSPECIES { get; set; } = null!;
+    public string STRAIN { get; set; } = null!;
+    public string ISOLATE { get; set; } = null!;
+    public double? Abundance { get; set; }
+    public double? P20 { get; set; }
+    public double? P80 { get; set; }
+    public double? Percentile { get; set; }
+    public int? Taxon { get; set; }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
         && other.Id == Id;
 }
-
-/*
-CREATE TYPE [dbo].[dt_ThorneSampleFull] AS TABLE(
-	[Domain] [varchar](200) NOT NULL,
-	[KINGDOM] [varchar](200) NULL,
-	[PHYLUM] [varchar](200) NULL,
-	[CLASS] [varchar](200) NULL,
-	[ORDER] [varchar](200) NULL,
-	[FAMILY] [varchar](200) NULL,
-	[GENUS] [varchar](200) NULL,
-	[SPECIES] [varchar](200) NULL,
-	[SEROGROUP] [varchar](200) NULL,
-	[SEROTYPE] [varchar](200) NULL,
-	[SUBSPECIES] [varchar](200) NULL,
-	[STRAIN] [varchar](200) NULL,
-	[ISOLATE] [varchar](200) NULL,
-	[Abundance] [float] NULL,
-	[P20] [float] NULL,
-	[P80] [float] NULL,
-	[Percentile] [float] NULL,
-	[Taxon] [int] NULL
-)
-*/

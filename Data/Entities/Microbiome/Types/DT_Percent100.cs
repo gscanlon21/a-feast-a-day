@@ -5,10 +5,8 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class DT_Percent100
 {
+    public string? Key { get; set; }
+    public double? Value { get; set; }
+    public double? Percent { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_Percent100] AS TABLE(
-	[key] [varchar](50) NULL,
-	[value] [float] NULL,
-	[percent] [float] NULL
-)*/

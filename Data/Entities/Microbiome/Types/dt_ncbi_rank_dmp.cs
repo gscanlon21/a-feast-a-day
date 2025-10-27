@@ -2,13 +2,10 @@
 
 namespace Data.Entities.Microbiome.Types;
 
-[Table("TODO")]
+[Table("dt_ncbi_rank_dmp")]
 public class dt_ncbi_rank_dmp
 {
+    public int? D_Taxon { get; set; }
+    public int? D_ParentTaxon { get; set; }
+    public string? D_Rank { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_ncbi_rank_dmp] AS TABLE(
-	[d_Taxon] [int] NULL,
-	[d_parenttaxon] [int] NULL,
-	[d_rank] [nvarchar](max) NULL
-)*/

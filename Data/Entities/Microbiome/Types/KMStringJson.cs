@@ -1,16 +1,12 @@
-﻿namespace Data.Entities.Microbiome.Types;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome.Types;
 
 public class KMStringJson
 {
+    [Key]
+    public string Id { get; set; } = null!;
+    public int? KmLow { get; set; }
+    public int? KmHigh { get; set; }
 }
 
-
-/*CREATE TYPE [dbo].[KMStringJson] AS TABLE(
-	[Id] [varchar](30) NOT NULL,
-	[KmLow] [int] NULL,
-	[KmHigh] [int] NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (IGNORE_DUP_KEY = OFF)
-)*/

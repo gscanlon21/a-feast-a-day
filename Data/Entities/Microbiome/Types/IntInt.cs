@@ -1,17 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome.Types;
 
 [Table("TODO")]
 public class IntInt
 {
-}
+    [Key]
+    public int Id { get; set; }
 
-/*CREATE TYPE [dbo].[IntInt] AS TABLE(
-	[Id] [int] NOT NULL,
-	[ArrayIndex] [int] NOT NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (IGNORE_DUP_KEY = OFF)
-)*/
+    public int ArrayIndex { get; set; }
+}

@@ -2,11 +2,9 @@
 
 public class DT_EndProductPercentile
 {
+    public int? SampleId { get; set; }
+    public int? Epid { get; set; }
+    public int? Cnt { get; set; }
+    public double? Percentile { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_EndProductPercentile] AS TABLE(
-	[SampleId] [int] NULL,
-	[Epid] [int] NULL,
-	[Cnt] [int] NULL,
-	[Percentile] [float] NULL
-)*/

@@ -2,12 +2,9 @@
 
 public class dt_CherryPick
 {
+    public string Source { get; set; }
+    public int SymptomId { get; set; }
+    public int Taxon { get; set; }
+    public double Percentile { get; set; }
+    public string Direction { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_CherryPick] AS TABLE(
-	[Source] [varchar](20) NOT NULL,
-	[SymptomId] [int] NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[Percentile] [float] NOT NULL,
-	[Direction] [varchar](1) NOT NULL
-)*/

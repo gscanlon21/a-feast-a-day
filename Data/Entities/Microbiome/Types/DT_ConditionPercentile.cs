@@ -2,11 +2,9 @@
 
 public class DT_ConditionPercentile
 {
+    public int? SampleId { get; set; }
+    public int? Condid { get; set; }
+    public int? Matches { get; set; }
+    public double? Percentile { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_ConditionPercentile] AS TABLE(
-	[SampleId] [int] NULL,
-	[Condid] [int] NULL,
-	[Matches] [int] NULL,
-	[Percentile] [float] NULL
-)*/
