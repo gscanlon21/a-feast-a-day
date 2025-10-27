@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20251025233128_SquashMigrations")]
+    [Migration("20251027151800_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -241,7 +241,9 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<bool>("IsAggregateElement")
-                        .HasColumnType("boolean");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<double>("Scale")
                         .ValueGeneratedOnAdd()

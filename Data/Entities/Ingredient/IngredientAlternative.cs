@@ -48,6 +48,7 @@ public class IngredientAlternative
     /// Is this alternative ingredient a part of the whole base ingredient.
     /// sa. "Mixed-Color Bell Peppers" having aggregate alt for each color.
     /// </summary>
+    [DefaultValue(false)]
     public bool IsAggregateElement { get; set; }
 
     private string GetDebuggerDisplay()

@@ -238,7 +238,9 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<bool>("IsAggregateElement")
-                        .HasColumnType("boolean");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<double>("Scale")
                         .ValueGeneratedOnAdd()

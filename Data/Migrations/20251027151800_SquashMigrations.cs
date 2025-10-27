@@ -335,7 +335,7 @@ namespace Data.Migrations
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     AlternativeIngredientId = table.Column<int>(type: "integer", nullable: false),
                     Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
-                    IsAggregateElement = table.Column<bool>(type: "boolean", nullable: false)
+                    IsAggregateElement = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
