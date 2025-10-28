@@ -985,6 +985,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 78	77	1	f
 1398	188	1	f
 1398	1388	1	f
+1338	1401	1	f
+1338	1400	1	f
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -10759,6 +10761,31 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 15715	1355	14	\N	3	1
 15716	1355	1984	\N	3	1
 15717	1355	62	\N	3	4
+15718	1329	68719476736	\N	2	6
+15719	1329	34359738368	\N	2	292
+15720	1329	2	\N	3	3
+15721	1329	1	\N	3	1
+15722	1329	4294967296	\N	2	12
+15723	1329	2199023255552	\N	2	0.3
+15724	1329	48	\N	3	1
+15725	1329	14	\N	3	3
+15726	1329	1984	\N	3	0.2
+15727	1329	62	\N	3	5
+15728	1329	2047	\N	3	22
+15729	1381	2047	\N	3	28
+15730	1089	128	\N	3	0.3
+15731	1089	2048	\N	2	7
+15732	1089	68719476736	\N	2	191
+15733	1089	34359738368	\N	2	50
+15734	1089	1	\N	3	5
+15735	1089	4294967296	\N	2	3
+15736	1089	2199023255552	\N	2	0.2
+15737	1089	402653184	\N	1	5
+15738	1089	1984	\N	3	1
+15739	1089	2047	\N	3	33
+15740	1338	2047	\N	3	103
+15741	1400	2047	\N	3	103
+15742	1401	2047	\N	3	75
 \.
 
 
@@ -12621,13 +12648,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7320	8	733	1	2	(MISO PASTE)	243	f	\N	1
 7321	8	733	2	1	\N	323	f	\N	2
 4368	5	249	1	2	, I used rainbow carrots. Chopped into similar sized spears	7	f	\N	6
-5689	6	413	1	1	\N	990	f	\N	0
-5690	6	413	3	1	\N	738	f	\N	1
-5691	6	413	1	2	, full-fat	178	f	\N	2
-5692	8	413	1	1	\N	70	f	\N	3
-5693	8	413	1	1	\N	40	f	\N	4
-5694	8	413	8	1	\N	74	f	\N	5
-5695	7	413	1	3	\N	39	f	\N	6
 5728	7	419	1	2	\N	991	f	\N	0
 5729	7	419	1	2	\N	77	f	\N	1
 5730	0	419	1	2	, juiced	12	f	\N	2
@@ -12674,7 +12694,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5674	8	409	2	1	\N	74	f	\N	3
 5675	8	409	2	1	\N	35	f	\N	4
 5676	0	409	1	3	\N	187	f	\N	5
+5689	6	413	1	1	\N	990	f	\N	0
 4317	0	34	1	2	\N	5	f	\N	3
+5690	6	413	3	1	\N	738	f	\N	1
+5691	6	413	1	2	, full-fat	178	f	\N	2
+5692	8	413	1	1	\N	70	f	\N	3
+5693	8	413	1	1	\N	40	f	\N	4
 5735	5	420	1	1	\N	126	f	\N	0
 5736	6	420	4	1	\N	77	f	\N	1
 5737	8	420	1	1	\N	71	f	\N	2
@@ -12682,7 +12707,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5739	6	420	1	2	, quartered	1186	f	\N	4
 5740	0	420	1	2	, cut into large pieces	811	f	\N	5
 5741	6	420	1	2	\N	147	t	\N	6
+5694	8	413	8	1	\N	74	t	\N	5
 5759	8	422	8	1	\N	74	t	\N	7
+5695	7	413	1	3	\N	39	f	\N	6
 5677	6	409	4	3	\N	990	f	\N	6
 5678	6	409	4	1	, melted	964	f	\N	7
 5679	6	409	4	1	\N	215	f	\N	8
@@ -14420,6 +14447,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7642	0	842	1	2	\N	1373	f	\N	3
 7643	7	842	1	1	, chopped, for garnish	2	t	\N	4
 7644	7	842	1	1	, chopped, for garnish	1261	t	\N	5
+7721	0	854	1	1	(HEAD OF CELERY)	1286	f	\N	0
+7722	0	854	1	1	, with leafy tops	661	f	\N	1
+7723	5	854	1	9	\N	404	f	\N	2
+7724	0	854	4	1	\N	159	f	\N	3
 7662	0	844	1	1	\N	399	f	\N	1
 7663	0	844	1	1	\N	\N	f	845	2
 7664	0	844	1	1	\N	1373	f	\N	3
@@ -14428,6 +14459,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7667	7	844	1	2	\N	\N	f	847	6
 7668	6	844	2	1	\N	368	f	\N	7
 7669	7	844	1	1	\N	\N	t	846	8
+7725	4	854	1	9	(BALLS OF BUFFALO MOZARELLA	65	f	\N	4
 6712	6	619	1	1	, to serve	1388	t	\N	9
 7697	6	619	1	1	, to serve	1389	t	\N	10
 7698	6	850	2	1	\N	\N	f	841	0
@@ -14793,14 +14825,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2903	Stir the Worcestershire sauce and chili jam  into the chicken pan and let the jam melt, then add the sugar snaps and noodles. Toss over the heat for 2 minutes, adding a splash of reserved noodle water to loosen, if needed. Taste and season to perfection with sea salt and black pepper, then dish up and sprinkle over the reserved crispy chicken skin.	314	2	0
 1290	Transfer to a warmed serving dish and season with salt and pepper. Serve hot.	81	5	0
 2678	Cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes, then drain thouroughly.	101	0	0
-3131	In a large bowl, mix all of the ingredients until smooth.	413	0	0
-3132	Cover bowl and refrigerate for at least 2 hours. The longer it sits, the thicker it gets.	413	1	0
-3133	Serve chilled.	413	2	0
 1728	Cut the pork into thin shreds and put these on top of the refried beans. Top with the tomato slices. Drain the jalapeno strips and put them on top of the tomato slices. Add the cheese and sprinkle with coriander leaves.	164	3	0
 1729	Turn the top halves of the bread or rolls over so that the cut sides are uppermost, and spread these with creme fraiche. Sandwich back together again and serve. 	164	4	0
 3250	Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	320	2	0
 3251	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	320	3	0
 1872	Add ground beef to a medium pot and cook it stirring from time to time, over medium heat until browned and until all the liquid evaporates. Add the onion and cook for 2 to 3 minutes.	181	0	0
+3131	In a large bowl, mix all of the ingredients until smooth.	413	0	0
+3132	Cover bowl and refrigerate for at least 2 hours. The longer it sits, the thicker it gets.	413	1	65536
 2679	Heat about 60ml/4 tbsp of the olive oil in the pasta pan, then add the drained pasta and rocket. Toss over a medium heat for 1-2 minutes, or until the rocket is just wilted, then remove the pan from the heat.	101	1	0
 2748	Trim ½” off cilantro ends and remove any woody stalks, wash thoroughly in a salad spinner and spin dry.	256	0	0
 2749	Pulse pepitas and garlic in a food processor until minced.	256	1	0
@@ -14821,6 +14852,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2135	Rub the oil and salt into each potato and then wrap them up in the foil and place them flat in the bottom of the crock pot.	32	2	1024
 2920	Place the lid on your slow cooker and set it to high for 1 hour.	322	1	1024
 2889	Place a poached egg on each salad. Top with thin Parmesan shavings and a little ground black pepper.	84	3	0
+3133	Serve chilled.	413	2	0
 1152	In a large mixing bowl, combine romaine, arugula, chicken, corn, beans and feta. Toss with dressing and transfer to a salad bowl.	117	0	0
 1153	Garnish with fresh diced tomatoes, avocado slices, tortilla strips, and fresh herbs.	117	1	0
 3134	In a medium bowl, whisk together the avocado oil through the thyme. Add salt and pepper, to taste.	414	0	0
@@ -16343,6 +16375,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4219	Add 1/3 cup yogurt.	850	1	0
 4236	Preheat the oven to 350°F. Wash the potatoes and chop into 1¼-inch chunks. Trim the cauliflower stalk, remove any tough outer leaves, then chop the cauliflower and nice leaves the same size as the spuds. Finely slice the cilantro stalks (reserving the leaves in a bowl of cold water). In a 16- x 12-inch roasting pan, toss the veg and cilantro stalks with a pinch of sea salt and black pepper, and 1 tablespoon each of olive oil and red wine vinegar.	853	0	2
 4237	Sit the chicken in the pan and rub all over with the tikka paste, getting into all the nooks and crannies. Place the chicken directly on the bars of the oven, scrunch everything in the pan and place exactly underneath the chicken to catch the tasty juices. Roast for 1 hour, or until everything is golden and cooked through, turning the veg halfway. Sit the chicken on top of the veg to rest for 5 minutes, then sprinkle over the drained cilantro leaves and serve, tossing the veg in all the tasty juices before dishing up.	853	1	2
+4238	Strip off the outer stalks of celery (and save for another day) and pull off and reserve the pale yellow inner leaves. Trim and very finely slice the rest of the celery and place in a bowl. 	854	0	0
+4239	Reserving any leafy tops, trim and finely slice the fennel and halve or quarter the cherry tomatoes, then add to the bowl.	854	1	0
 4220	Add 4 pieces of fresh fruit.	850	2	0
 4221	Add 1/3 cup yogurt.	850	3	0
 4222	Add 1/4 cup granola.	850	4	0
@@ -16377,6 +16411,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4227	Drag slices of bacon through the glaze mixture and place on a prepared sheet pan.	851	2	0
 4228	Bake for 15 minutes. Rotate pan and cook for another 5 minutes, making sure not to overcook.	851	3	2
 4229	When bacon is cooked to desired crispiness, set aside until ready to serve.	851	4	0
+4240	Remove the watermelon rind, picking out any large seeds, then slice into ¾-inch cubes, adding to the bowl as you go.	854	2	0
+4241	Toss everything together with a good pinch of sea salt and black pepper, and 2 tablespoons each of extra virgin olive oil and red wine vinegar. 	854	3	0
+4242	Divide between plates or arrange on a large platter and spoon over the juices. Tear over the mozzarella, season with extra pepper, and scatter over the reserved celery leaves and fennel tops (if you have any).	854	4	0
 \.
 
 
@@ -16422,7 +16459,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15717, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15742, true);
 
 
 --

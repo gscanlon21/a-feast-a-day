@@ -2,10 +2,8 @@
 
 public class dt_Kegg_EnzymeMeta
 {
+    public string ECKey { get; set; }
+    public string? EnzymeName { get; set; }
+    public string? OtherName { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_Kegg_EnzymeMeta] AS TABLE(
-	[ECKey] [varchar](20) NOT NULL,
-	[EnzymeName] [varchar](max) NULL,
-	[OtherName] [varchar](max) NULL
-)*/

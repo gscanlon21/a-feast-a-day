@@ -2,9 +2,7 @@
 
 public class dt_Ganzimmun
 {
+    public int? TaxON { get; set; }
+    public double? Percent { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_Ganzimmun] AS TABLE(
-	[TaxON] [int] NULL,
-	[Percent] [float] NULL
-)*/

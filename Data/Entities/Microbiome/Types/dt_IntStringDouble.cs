@@ -2,10 +2,7 @@
 
 public class dt_IntStringDouble
 {
+    public int Id1 { get; set; }
+    public string Id2 { get; set; }
+    public double? Double { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_IntStringDouble] AS TABLE(
-	[Id1] [int] NOT NULL,
-	[Id2] [varchar](max) NOT NULL,
-	[Double] [float] NULL
-)*/

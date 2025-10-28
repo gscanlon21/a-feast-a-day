@@ -5,13 +5,10 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class dt_StatsChiTable
 {
+    public int? Taxon { get; set; }
+    public int? SymptomId { get; set; }
+    public int? Src { get; set; }
+    public double? Chi2 { get; set; }
+    public char? End { get; set; }
+    public char? Shift { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_StatsChiTable] AS TABLE(
-	[Taxon] [int] NULL,
-	[symptomid] [int] NULL,
-	[src] [int] NULL,
-	[chi2] [float] NULL,
-	[end] [char](1) NULL,
-	[shift] [char](1) NULL
-)*/

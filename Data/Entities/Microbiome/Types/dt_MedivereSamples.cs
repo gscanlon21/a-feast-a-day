@@ -5,12 +5,9 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class dt_MedivereSamples
 {
+    public string TaxRank { get; set; }
+    public string? TaxName { get; set; }
+    public int? Count { get; set; }
+    public int? CountNorm { get; set; }
+    public int Taxon { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_MedivereSamples] AS TABLE(
-	[TaxRank] [varchar](20) NOT NULL,
-	[TaxName] [varchar](max) NULL,
-	[Count] [int] NULL,
-	[CountNorm] [int] NULL,
-	[Taxon] [int] NOT NULL DEFAULT ((0))
-)*/

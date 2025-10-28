@@ -2,15 +2,13 @@
 
 public class DT_StatsTable_Number_Signicant
 {
+    public int Id { get; set; }
+    public int SymptomId { get; set; }
+    public string Source { get; set; } = string.Empty;
+    public double? Below15 { get; set; }
+    public double? Above15 { get; set; }
+    public double? WithSymptoms { get; set; }
+    public double? BelowChi2 { get; set; }
+    public double? AboveChi2 { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_StatsTable_Number_Signicant] AS TABLE(
-	[Id] [int] NOT NULL,
-	[SymptomId] [int] NOT NULL,
-	[Source] [varchar](20) NOT NULL,
-	[Below15] [float] NULL,
-	[Above15] [float] NULL,
-	[WithSymptoms] [float] NULL,
-	[BelowChi2] [float] NULL,
-	[AboveChi2] [float] NULL
-)*/

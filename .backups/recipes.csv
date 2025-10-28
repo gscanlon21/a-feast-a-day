@@ -294,7 +294,7 @@
 410	Cauliflower Mash	\N	\N	\N	16	15	5	2	t	cauliflower-rice.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	cauliflower-rice.jpg	6	\N	t	f
 412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	5	5	2	t	cauliflower-rice.jpg	0	\N	f	f
-413	Pumpkin Pie Spice Chia Seed Pudding	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	32	0	120	4	t	pumpkin-pudding.jpg	0	\N	f	f
+413	Pumpkin Pie Spice Chia Seed Pudding	\N	\N	\N	64	0	120	4	t	pumpkin-pudding.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	\N	t	f
 415	Strawberry, Mint and Cucumber Spa Water	\N	\N	\N	128	0	5	1	t	\N	12	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	12	10	5	4	t	cucumber-turkey-pizza.jpg	0	\N	f	t
@@ -573,3 +573,4 @@
 851	Million Dollar Bacon	\N	\N	\N	16	20	5	4	t	\N	0	From the First Watch cookbook. 	f	f
 852	Rainbow Toast	\N	\N	\N	4	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 853	Roast Tikka Chicken	\N	\N	\N	8	60	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
+854	Watermelon Salad	\N	\N	\N	16	0	15	6	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f

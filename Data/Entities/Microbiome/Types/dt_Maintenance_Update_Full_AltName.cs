@@ -5,9 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class dt_Maintenance_Update_Full_AltName
 {
+    public int? Taxon { get; set; }
+    public string? TaxonName { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_Maintenance_Update_Full_AltName] AS TABLE(
-	[taxon] [int] NULL,
-	[taxonname] [varchar](255) NULL
-)*/

@@ -2,9 +2,7 @@
 
 public class DT_KeggEnzTaxUpload
 {
+    public string Module { get; set; }
+    public string OrgCode { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_KeggEnzTaxUpload] AS TABLE(
-	[Module] [varchar](100) NOT NULL,
-	[OrgCode] [varchar](20) NOT NULL
-)*/

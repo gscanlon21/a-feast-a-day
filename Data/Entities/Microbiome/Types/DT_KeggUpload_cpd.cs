@@ -2,12 +2,9 @@
 
 public class DT_KeggUpload_cpd
 {
+    public string? Entry { get; set; }
+    public string? Name { get; set; }
+    public string? OtherName { get; set; }
+    public string? Formula { get; set; }
+    public double? Mass { get; set; }
 }
-
-/*CREATE TYPE [dbo].[DT_KeggUpload_cpd] AS TABLE(
-	[entry] [varchar](12) NULL,
-	[name] [varchar](256) NULL,
-	[Othername] [varchar](max) NULL,
-	[Formula] [varchar](50) NULL,
-	[Mass] [float] NULL
-)*/

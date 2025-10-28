@@ -2,10 +2,7 @@
 
 public class dt_ncbi_images_dmp
 {
+    public int? DTaxon { get; set; }
+    public int? DImageNo { get; set; }
 }
 
-
-/*CREATE TYPE [dbo].[dt_ncbi_images_dmp] AS TABLE(
-	[d_Taxon] [int] NULL,
-	[d_imageNo] [int] NULL
-)*/

@@ -5,11 +5,9 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class DT_Percentile
 {
+    public int? Id { get; set; }
+    public string? Dist { get; set; }
+    public double? NormalLow { get; set; }
+    public double? NormalHigh { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_Percentile] AS TABLE(
-	[id] [int] NULL,
-	[dist] [varchar](max) NULL,
-	[NormalLow] [float] NULL,
-	[NormalHigh] [float] NULL
-)*/

@@ -2,10 +2,7 @@
 
 public class DT_FTPTaxonNames
 {
+    public string? TaxonName { get; set; }
+    public int? Taxon { get; set; }
+    public string? NameType { get; set; }
 }
-
-/*CREATE TYPE [dbo].[DT_FTPTaxonNames] AS TABLE(
-	[TaxonName] [varchar](255) NULL,
-	[Taxon] [int] NULL,
-	[NameType] [varchar](1) NULL
-)*/

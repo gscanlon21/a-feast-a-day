@@ -2,11 +2,8 @@
 
 public class DT_ModulePercentile
 {
+    public int? SampleId { get; set; }
+    public int? KMid { get; set; }
+    public int? BacteriaCount { get; set; }
+    public double? Percentile { get; set; }
 }
-
-/*CREATE TYPE [dbo].[DT_ModulePercentile] AS TABLE(
-	[SampleId] [int] NULL,
-	[KMid] [int] NULL,
-	[BacteriaCount] [int] NULL,
-	[Percentile] [float] NULL
-)*/

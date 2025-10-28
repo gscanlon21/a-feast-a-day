@@ -2,12 +2,9 @@
 
 public class dt_KM
 {
+    public int Taxon { get; set; }
+    public double? Low { get; set; }
+    public double? High { get; set; }
+    public double? LowPc { get; set; }
+    public double? HighPc { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_KM] AS TABLE(
-	[taxon] [int] NOT NULL,
-	[low] [float] NULL,
-	[high] [float] NULL,
-	[lowpc] [float] NULL,
-	[highpc] [float] NULL
-)*/

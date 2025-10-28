@@ -5,10 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class dt_Perventile
 {
+    public double? Value { get; set; }
+    public double? Percentile { get; set; }
+    public string? Scope { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_Perventile] AS TABLE(
-	[value] [float] NULL,
-	[percentile] [float] NULL,
-	[scope] [varchar](20) NULL
-)*/

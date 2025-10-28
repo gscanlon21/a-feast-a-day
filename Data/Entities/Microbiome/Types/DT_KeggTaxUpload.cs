@@ -5,9 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class DT_KeggTaxUpload
 {
+    public string Module { get; set; }
+    public int Taxon { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_KeggTaxUpload] AS TABLE(
-	[Module] [varchar](100) NOT NULL,
-	[Taxon] [int] NOT NULL
-)*/

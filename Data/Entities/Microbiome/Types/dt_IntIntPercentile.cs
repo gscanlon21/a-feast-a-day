@@ -2,10 +2,7 @@
 
 public class dt_IntIntPercentile
 {
+    public int? Id1 { get; set; }
+    public int? Id2 { get; set; }
+    public double? Pc { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_IntIntPercentile] AS TABLE(
-	[Id1] [int] NULL,
-	[Id2] [int] NULL,
-	[pc] [float] NULL
-)*/

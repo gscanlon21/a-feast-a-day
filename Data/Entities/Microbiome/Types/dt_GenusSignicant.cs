@@ -2,16 +2,13 @@
 
 public class dt_GenusSignicant
 {
+    public string Source { get; set; }
+    public int Taxon { get; set; }
+    public int? SymptomId { get; set; }
+    public string? Direction { get; set; }
+    public decimal? HighValue { get; set; }
+    public decimal? LowValue { get; set; }
+    public double? Prevalence { get; set; }
+    public double? Chi2 { get; set; }
 }
 
-
-/*CREATE TYPE [dbo].[dt_GenusSignicant] AS TABLE(
-	[Source] [nvarchar](20) NOT NULL,
-	[Taxon] [int] NOT NULL,
-	[SymptomId] [int] NULL,
-	[Direction] [nvarchar](9) NULL,
-	[HighValue] [decimal](38, 1) NULL,
-	[LowValue] [decimal](38, 1) NULL,
-	[Prevalence] [float] NULL,
-	[Chi2] [float] NULL
-)*/

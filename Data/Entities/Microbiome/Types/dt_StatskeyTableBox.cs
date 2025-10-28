@@ -2,21 +2,19 @@
 
 public class dt_StatskeyTableBox
 {
+    public string Key { get; set; } = string.Empty;
+    public int? Obs { get; set; }
+    public string? Percentiles { get; set; }
+    public double? Mean { get; set; }
+    public double? Stddev { get; set; }
+    public double? Median { get; set; }
+    public double? Lowlimit { get; set; }
+    public double? Highlimit { get; set; }
+    public double? Lowpercentile { get; set; }
+    public double? Highpercentile { get; set; }
+    public double? Lowpercentage { get; set; }
+    public double? Highpercentage { get; set; }
+    public double? Boxplotlow { get; set; }
+    public double? Boxplothigh { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_StatskeyTableBox] AS TABLE(
-	[key] [varchar](20) NOT NULL,
-	[obs] [int] NULL,
-	[percentiles] [varchar](max) NULL,
-	[mean] [float] NULL,
-	[stddev] [float] NULL,
-	[median] [float] NULL,
-	[lowlimit] [float] NULL,
-	[highlimit] [float] NULL,
-	[lowpercentile] [float] NULL,
-	[highpercentile] [float] NULL,
-	[lowpercentage] [float] NULL,
-	[highpercentage] [float] NULL,
-	[boxplotlow] [float] NULL,
-	[boxplothigh] [float] NULL
-)*/

@@ -2,10 +2,7 @@
 
 public class dt_IntTripler
 {
+    public int? Id1 { get; set; }
+    public int? Id2 { get; set; }
+    public int? Id3 { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_IntTripler] AS TABLE(
-	[Id1] [int] NULL,
-	[Id2] [int] NULL,
-	[Id3] [int] NULL
-)*/

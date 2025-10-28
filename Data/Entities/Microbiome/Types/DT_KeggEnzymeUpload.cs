@@ -2,8 +2,6 @@
 
 public class DT_KeggEnzymeUpload
 {
+    public string EcKey { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_KeggEnzymeUpload] AS TABLE(
-	[EcKey] [varchar](20) NOT NULL
-)*/

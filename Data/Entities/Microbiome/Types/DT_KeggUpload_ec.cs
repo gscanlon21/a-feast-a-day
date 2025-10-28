@@ -1,16 +1,14 @@
-﻿namespace Data.Entities.Microbiome.Types;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Data.Entities.Microbiome.Types;
 
 public class DT_KeggUpload_ec
 {
+    [Key]
+    public string Entry { get; set; }
+    public string? Name { get; set; }
+    public string? SysName { get; set; }
+    public string? Substrate { get; set; }
+    public string? Product { get; set; }
 }
 
-/*CREATE TYPE [dbo].[DT_KeggUpload_ec] AS TABLE(
-	[entry] [varchar](25) NOT NULL,
-	[name] [varchar](4000) NULL,
-	[sysname] [varchar](400) NULL,
-	[substrate] [varchar](4000) NULL,
-	[product] [varchar](4000) NULL,
-	PRIMARY KEY CLUSTERED 
-(
-	[entry] ASC
-)*/

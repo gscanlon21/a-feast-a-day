@@ -2,15 +2,13 @@
 
 public class dt_MicrobaSamples
 {
+    public int? SampleId { get; set; }
+    public string Phylum { get; set; }
+    public string? Family { get; set; }
+    public string? Genus { get; set; }
+    public string? Species { get; set; }
+    public double Abundance { get; set; }
+    public double? RangeLow { get; set; }
+    public double? RangeHigh { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_MicrobaSamples] AS TABLE(
-	[sampleId] [int] NULL,
-	[Phylum] [varchar](100) NOT NULL,
-	[Family] [varchar](100) NULL,
-	[Genus] [varchar](100) NULL,
-	[Species] [varchar](100) NULL,
-	[Abundance] [float] NOT NULL DEFAULT ((0)),
-	[RangeLow] [float] NULL DEFAULT ((0)),
-	[RangeHigh] [float] NULL DEFAULT ((0))
-)*/

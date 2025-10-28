@@ -2,10 +2,8 @@
 
 public class dt_IntIntDouble
 {
+    public int Id1 { get; set; }
+    public int Id2 { get; set; }
+    public double? Double { get; set; }
 }
 
-/*CREATE TYPE [dbo].[dt_IntIntDouble] AS TABLE(
-	[Id1] [int] NOT NULL,
-	[Id2] [int] NOT NULL,
-	[Double] [float] NULL
-)*/

@@ -5,10 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 [Table("TODO")]
 public class dt_Precision
 {
+    public int? Taxon { get; set; }
+    public double? Percentage { get; set; }
+    public double? Percentile { get; set; }
 }
-
-/*CREATE TYPE [dbo].[dt_Precision] AS TABLE(
-	[taxon] [int] NULL,
-	[percentage] [float] NULL,
-	[percentile] [float] NULL
-)*/
