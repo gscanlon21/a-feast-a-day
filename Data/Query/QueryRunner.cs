@@ -292,8 +292,8 @@ public class QueryRunner(Section section)
             }
         }
 
-        // OrderBy must come after the query or you get cartesian explosion.
-        List<InProgressQueryResults> orderedResults;
+        // Order after the query or you get cartesian explosion. List size doesn't change.
+        var orderedResults = new List<InProgressQueryResults>(filteredResults.Count);
         if (SelectionOptions.Randomized)
         {
             // Randomize the order. Useful for the backfill because those feasts don't update the last seen date.
@@ -319,16 +319,15 @@ public class QueryRunner(Section section)
         // Set nutrients on the recipe after all the ingredient swapping has taken place.
         var allNutrients = await GetRecipeNutrients(context, filteredResults, allAlternatives);
 
-        // OrderBy must come after the query or you get cartesian explosion.
-        var recipeResults = new List<QueryResults>();
+        // List size doesn't change. Use the same capacity as the orderedResults.
+        var recipeResults = new List<QueryResults>(orderedResults.Count);
         foreach (var recipe in orderedResults)
         {
+            // Set the nutrients on the recipe ingredients after all the ingredient swapping has taken place.
             foreach (var recipeIngredient in recipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient))
             {
                 recipeIngredient.GetIngredient!.Nutrients = allNutrients.GetValueOrDefault(recipeIngredient.GetIngredient!.Id, []);
             }
-            // Set nutrients on the recipe after all the ingredient swapping has taken place.
-            //recipe.Nutrients = 
 
             // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
             recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
