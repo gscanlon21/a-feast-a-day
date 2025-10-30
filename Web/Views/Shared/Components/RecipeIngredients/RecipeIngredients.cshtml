@@ -23,9 +23,9 @@
                     </div>
                 }
             </div>
-            @if (!string.IsNullOrWhiteSpace(recipeIngredient.Notes))
+            @if (!string.IsNullOrWhiteSpace(recipeIngredient.Notes ?? recipeIngredient.RecipeIngredient.Attributes))
             {
-                <div><small>@recipeIngredient.Notes</small></div>
+                <div><small>@(recipeIngredient.Notes ?? recipeIngredient.RecipeIngredient.Attributes)</small></div>
             }
         </a>
     }

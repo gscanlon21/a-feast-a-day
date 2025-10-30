@@ -148,7 +148,7 @@
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	128	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
 168	Steak with Pickled Walnut Sauce	\N	\N	\N	8	20	2	4	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
-170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	20	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
+170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	16	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	64	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
 173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	burgers-relish.jpg	0	\N	f	f
@@ -304,7 +304,7 @@
 420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	kielbasa.jpg	0	\N	f	f
 421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-lemon-dijon-dip.jpg	9	\N	t	t
 422	Lemon Energy Bites	\N	\N	\N	16	0	5	12	t	lemon-energy-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-423	Steamed Kale	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	8	5	5	4	t	\N	0	\N	f	f
+423	Steamed Kale	\N	\N	\N	16	5	5	4	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	\N	f	f
 426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	honey-mustard-dressing.jpg	6	\N	t	f
@@ -574,3 +574,7 @@
 852	Rainbow Toast	\N	\N	\N	4	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 853	Roast Tikka Chicken	\N	\N	\N	8	60	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 854	Watermelon Salad	\N	\N	\N	16	0	15	6	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+855	Lemon Chicken with Roasted Potatoes	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
+856	Farmer's Biscuit Breakfast Sandwich	\N	\N	\N	6	15	5	1	t	\N	0	From the First Watch cookbook. 	f	f
+857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	\N	0	Erin | The Almond Eater	f	f
+858	Boiling Kettle Water	\N	\N	\N	0	0	0	1	t	\N	6	\N	t	f
