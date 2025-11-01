@@ -407,8 +407,20 @@ public class QueryRunner(Section section)
                     // Prepend the recipe's prerequisite recipes if there are any.
                     foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
                     {
-                        // Reduce the scale of the prerequisite recipe when the prerequisite's serving size is greater than 1.
-                        prerequisiteRecipe.Key.SetScale = prerequisiteRecipe.Value / prerequisiteRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prerequisiteRecipe.Key.Recipe.Servings);
+                        // Scale the prerequisite recipe based on the prerequisite's serving size and the recipe-ingredient-for-the-prerequisite's quantity.
+                        var noneRecipeIngredientsGrams = prerequisiteRecipe.Value.Where(ri => ri.Measure == Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
+                        var someRecipeIngredientsGrams = prerequisiteRecipe.Value.Where(ri => ri.Measure != Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
+                        if (someRecipeIngredientsGrams > 0 && prerequisiteRecipe.Key.Recipe.Measure == Measure.None)
+                        {
+                            // If the measures don't align, use the sum of the recipe ingredients times the recipe's servings b/c the recipe hasn't been scaled yet.
+                            var prerequisiteRecipeGrams = prerequisiteRecipe.Key.RecipeIngredients.Sum(ri => ri.ToGrams()) * prerequisiteRecipe.Key.Recipe.Servings;
+                            prerequisiteRecipe.Key.SetScale = ((noneRecipeIngredientsGrams * prerequisiteRecipeGrams) + someRecipeIngredientsGrams) / prerequisiteRecipeGrams;
+                        }
+                        else
+                        {
+                            // Normal scaling, divide the sum of the recipe ingredient's quantities by the serving size scaled prerequisite quantity.
+                            prerequisiteRecipe.Key.SetScale = (noneRecipeIngredientsGrams + someRecipeIngredientsGrams) / prerequisiteRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prerequisiteRecipe.Key.Recipe.Servings);
+                        }
 
                         // Prerequisite recipe already exists and is scalable, scale it.
                         if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe) && existingIngredientRecipe.Recipe.AdjustableServings)

@@ -62,9 +62,9 @@ public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredient
     /// Distinct ingredient recipes with the group's quantities summed.
     /// </summary>
     [JsonIgnore]
-    internal IDictionary<QueryResults, double> PrerequisiteRecipes => RecipeIngredients
+    internal IDictionary<QueryResults, List<RecipeIngredientQueryResults>> PrerequisiteRecipes => RecipeIngredients
         .Where(ri => ri.IngredientRecipe != null).GroupBy(ri => ri.IngredientRecipe)
-        .ToDictionary(ir => ir.Key!, ir => ir.Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble())));
+        .ToDictionary(ir => ir.Key!, ir => ir.ToList());
 
     /// <summary>
     /// Includes prerequisite recipe nutrients.
