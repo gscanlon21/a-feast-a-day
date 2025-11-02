@@ -476,7 +476,7 @@
 549	\N	Tandori Paste	https://www.eatthismuch.com/calories/tandoori-paste-198348	\N	f	0	28	30	2025-02-25	4	240	8192
 550	\N	Lemon Grass Stalk	https://www.eatthismuch.com/calories/lemongrass-90852	\N	f	0	17	34	2025-03-05	0	68	2
 551	\N	Orange Flower Water	\N	\N	f	0	182	182	2025-03-28	0	240	0
-552	\N	Cinnamon Stick	\N	\N	f	0	4520	152	2024-08-26	0	152	1
+552	\N	Cinnamon Sticks	\N	\N	f	0	4520	152	2024-08-26	0	152	1
 553	\N	Clementines	https://www.eatthismuch.com/calories/clementines-1599	\N	f	0	74	74	2025-04-19	0	148	1
 554	\N	Sweet Dessert Wine	https://www.eatthismuch.com/calories/wine,3068	\N	f	0	29.43	103	2024-09-17	9	235.44	5
 555	\N	Taco Shells	\N	\N	f	0	4520	152	2024-08-26	0	152	1
@@ -598,7 +598,7 @@
 671	\N	Beets	https://www.eatthismuch.com/calories/beets-1877	\N	f	0	82	82	2025-04-27	0	82	2
 673	\N	Vanilla Sugar	https://www.eatthismuch.com/calories/vanilla-sugar-4187475	\N	f	0	28	14	2024-12-08	4	336	114688
 674	\N	Red Radish	\N	\N	f	0	100	50	2024-10-24	0	100	1
-675	\N	Fresh Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2024-08-26	0	100	2
+675	\N	Fresh Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2025-11-02	0	100	2
 676	\N	Avocado Oil | Olive Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328	\N	f	0	28	14	2024-12-17	9	224	65536
 677	\N	Fresh Rosemary	\N	\N	f	0	4	4	2024-09-26	7	64	1
 678	\N	Beef Gelatin	https://www.eatthismuch.com/calories/beef-gelatin-1857579	\N	f	0	20	10	2025-06-19	4	160	4
@@ -812,7 +812,7 @@
 978	\N	White Potatoes	https://www.eatthismuch.com/calories/potato-2091	\N	f	0	369	369	2025-06-01	0	369	2
 979	\N	Dill | Chives	https://www.eatthismuch.com/food/nutrition/chives,1937/	\N	f	0	28	3	2025-06-23	4	48	3
 980	\N	Broth | Water	https://www.eatthismuch.com/calories/beef-broth-2899468	\N	f	0	30	240	2025-06-26	9	240	928
-981	\N	Jicama	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+981	\N	Yambean (Jicama)	https://www.eatthismuch.com/calories/yambean-jicama-2270	\N	f	0	659	659	2025-11-02	0	125	1
 982	\N	Farfalle Pasta	https://www.eatthismuch.com/calories/farfalle-pasta-1923824	\N	f	262176	28	56	2025-02-15	4	84	4096
 983	\N	Shelled Pistachios	https://www.eatthismuch.com/calories/pistachio-nuts-2682	\N	f	0	28	123	2024-10-12	4	123	1048576
 984	\N	Shelled Unsalted Pistachios	https://www.eatthismuch.com/calories/pistachio-nuts-2682	\N	f	0	28	123	2024-10-12	4	123	1048576
@@ -1053,7 +1053,7 @@
 1312	\N	Alfalfa Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1313	\N	Canned Garbanzo Beans	aka: Canned Chickpeas -. https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	207	2024-10-17	4	207	2048
 1314	\N	Dry Garbanzo Beans	aka: Dry Chickpeas -. https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	207	2024-10-17	4	207	2048
-1315	\N	Dry Chickpeas	aka: Dry Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
+1315	\N	Raw Chickpeas	aka: Dry Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	28	200	2024-09-02	4	200	2048
 1317	\N	Tonic Water	\N	\N	t	0	240	240	2025-06-11	6	240	0
 1318	\N	Applesauce	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	28	244	2024-11-16	4	244	256
 1319	\N	Sweetened Applesauce	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	28	244	2024-11-16	4	244	256
@@ -1138,9 +1138,12 @@
 1399	\N	Stir-Fry Sauce	Tamari sauce generally does not contain wheat. https://www.eatthismuch.com/calories/soy-sauce-3619	\N	f	32768	36	18	2024-11-13	9	288	8192
 1400	\N	Semisoft Goat Cheese	https://www.eatthismuch.com/calories/goat-cheese-133	\N	f	256	28	28	2024-10-15	4	224	8388608
 1401	\N	Soft Goat Cheese	https://www.eatthismuch.com/calories/goat-cheese-134	\N	f	256	28	28	2024-10-15	4	224	8388608
-1402	\N	Blue Cheese	https://www.eatthismuch.com/calories/goat-cheese-133	\N	f	256	28	28	2024-10-15	4	224	8388608
+1402	\N	Blue Cheese	https://www.eatthismuch.com/calories/blue-cheese-4	\N	f	256	28	28	2024-10-15	4	224	8388608
 1403	\N	Crumbled Blue Cheese	https://www.eatthismuch.com/calories/goat-cheese-133	\N	f	256	28	28	2024-10-15	4	224	8388608
 1404	\N	Small Baguette	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	786464	240	240	2025-06-15	0	240	4
 1405	\N	Navy Beans	https://www.eatthismuch.com/calories/navy-beans-3535	\N	f	0	28	208	2024-10-17	4	208	2048
 1406	\N	Raw Navy Beans	https://www.eatthismuch.com/calories/navy-beans-3535	\N	f	0	28	208	2024-10-17	4	208	2048
 1407	\N	Tzatziki	https://www.eatthismuch.com/calories/sesame-paste-2047774	\N	f	8192	28	16	2025-02-22	4	256	8192
+1408	\N	Ground Cinnamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
+1409	\N	Apricot Jam	https://www.eatthismuch.com/calories/jams-and-preserves-4621	\N	f	0	20	20	2025-08-22	7	320	128
+1410	\N	Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2025-11-02	0	100	2

@@ -871,6 +871,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1274	1395	1	f
 1397	1046	1	f
 1402	1403	1	f
+1410	675	1	f
+1410	689	1	f
 187	28	1	f
 187	164	1	f
 186	184	1	f
@@ -1988,6 +1990,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1399	62	1	f
 81	280	1	f
 280	81	1	f
+70	1408	1	f
 \.
 
 
@@ -10854,6 +10857,53 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 15796	1324	2047	\N	3	59
 15797	1323	2047	\N	3	59
 15798	1356	2047	\N	3	22
+15799	675	68719476736	\N	2	7
+15800	675	34359738368	\N	2	299
+15801	675	2	\N	3	1
+15802	675	1	\N	3	2
+15803	675	4294967296	\N	2	82
+15804	675	2199023255552	\N	2	1
+15805	675	48	\N	3	3
+15806	675	14	\N	3	4
+15807	675	1984	\N	3	0.2
+15808	675	62	\N	3	7
+15809	981	128	\N	3	0.1
+15810	981	68719476736	\N	2	26
+15811	981	34359738368	\N	2	989
+15812	981	2	\N	3	12
+15813	981	1	\N	3	5
+15814	981	4294967296	\N	2	79
+15815	981	2199023255552	\N	2	4
+15816	981	48	\N	3	32
+15817	981	14	\N	3	26
+15818	981	1984	\N	3	1
+15819	981	62	\N	3	58
+15820	981	2047	\N	3	250
+15821	1402	128	\N	3	5
+15822	1402	2048	\N	2	21
+15823	1402	68719476736	\N	2	325
+15824	1402	34359738368	\N	2	73
+15825	1402	2	\N	3	0.1
+15826	1402	1	\N	3	6
+15827	1402	4294967296	\N	2	150
+15828	1402	2199023255552	\N	2	0.1
+15829	1402	402653184	\N	1	0.1
+15830	1402	14	\N	3	1
+15831	1402	1984	\N	3	8
+15832	1402	62	\N	3	1
+15833	1402	2047	\N	3	100
+15834	1315	128	\N	3	1
+15835	1315	68719476736	\N	2	48
+15836	1315	34359738368	\N	2	1436
+15837	1315	2	\N	3	21
+15838	1315	1	\N	3	41
+15839	1315	4294967296	\N	2	114
+15840	1315	2199023255552	\N	2	9
+15841	1315	48	\N	3	24
+15842	1315	14	\N	3	102
+15843	1315	1984	\N	3	12
+15844	1315	62	\N	3	126
+15845	1315	2047	\N	3	756
 \.
 
 
@@ -13726,7 +13776,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6762	7	626	1	5	\N	234	f	\N	1
 6763	7	626	1	2	(DARK RUM)	86	f	\N	2
 6764	0	626	1	6	(EGG WHITES)	187	f	\N	3
-6765	8	627	1	1	, melted, for greasing	29	f	\N	0
 5540	0	388	1	1	, finely minced	5	f	\N	4
 5541	6	388	1	2	, cooked & cooled	97	f	\N	5
 5542	0	388	1	2	\N	187	f	\N	6
@@ -13742,10 +13791,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6739	6	623	1	1	\N	562	f	\N	5
 6740	6	623	3	4	\N	626	f	\N	6
 5714	7	416	1	2	\N	13	t	\N	8
-6766	8	627	1	1	(FLOUR), for dusting	38	f	\N	1
-6767	0	627	1	3	\N	187	f	\N	2
-6768	6	627	2	1	(APRICOT JAM)	588	f	\N	3
-6769	0	627	2	1	, grated	4	f	\N	4
 5914	6	478	2	1	, cooked	6	f	\N	6
 5915	6	478	4	1	\N	\N	t	483	7
 6751	6	625	2	1	, diced	250	f	\N	0
@@ -13756,7 +13801,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6756	7	625	1	2	\N	77	f	\N	5
 6757	8	625	4	1	\N	285	f	\N	6
 6730	7	622	1	2	\N	232	f	\N	0
-6770	8	627	1	1	(GROUND CINNAMON)	70	f	\N	5
 6796	0	632	1	1	(NEW YORK STRIP LOIN STEAK)	1112	f	\N	0
 6797	7	632	1	3	, divided	77	f	\N	1
 6798	8	632	4	1	\N	285	t	\N	2
@@ -13790,11 +13834,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6776	7	630	1	1	\N	1348	f	\N	0
 6775	6	629	1	1	\N	57	f	\N	0
 6777	7	630	1	1	\N	\N	f	858	1
+6765	8	627	1	1	, melted, for greasing	29	f	\N	0
 6778	6	630	2	1	, softened	29	f	\N	2
 6779	7	630	1	2	\N	56	f	\N	3
 6780	6	630	2	1	\N	234	f	\N	4
 6781	6	630	3	2	\N	196	f	\N	5
 6782	6	630	3	5	\N	38	f	\N	6
+6766	8	627	1	1	, for dusting	1183	f	\N	1
+6767	0	627	1	3	\N	187	f	\N	2
+6768	6	627	2	1	\N	1409	f	\N	3
+6769	0	627	2	1	, grated	4	f	\N	4
+6770	8	627	1	1	\N	1408	f	\N	5
 6808	7	633	1	1	(TAMARIND JUICE), made by mixing tamaring paste with warm water	295	f	\N	5
 6809	0	633	1	2	, torn	596	t	\N	6
 6810	0	633	2	1	\N	467	f	\N	7
@@ -14487,6 +14537,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4647	6	247	2	1	\N	1371	t	\N	5
 7646	7	247	1	1	\N	1376	f	\N	7
 7645	0	843	1	1	\N	187	f	\N	0
+7766	7	859	1	2	( Creole SEASONING)	151	f	\N	5
+7767	6	859	1	7	(OR WATER)	111	f	\N	6
+7768	5	859	1	1	(Andouille SEASUAGE), approx. 5 sausages	126	f	\N	7
+7769	0	859	1	3	, sliced, for garnish	1082	f	\N	8
 7647	7	247	2	3	\N	77	f	\N	8
 7684	6	848	1	2	\N	75	f	\N	0
 7685	6	848	2	1	\N	67	f	\N	1
@@ -14511,6 +14565,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7642	0	842	1	2	\N	1373	f	\N	3
 7643	7	842	1	1	, chopped, for garnish	2	t	\N	4
 7644	7	842	1	1	, chopped, for garnish	1261	t	\N	5
+7770	6	859	1	4	(WHITE RICE)	\N	f	484	9
 7721	0	854	1	1	(HEAD OF CELERY)	1286	f	\N	0
 7722	0	854	1	1	, with leafy tops	661	f	\N	1
 7723	5	854	1	9	\N	404	f	\N	2
@@ -14607,6 +14662,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7759	8	315	8	1	\N	692	t	\N	8
 6786	6	630	1	1	, roughly chopped, for topping	89	f	\N	10
 7447	4	752	1	10	\N	261	f	\N	4
+7761	0	859	1	1	, diced	598	f	\N	0
+7762	6	859	1	1	, diced small	3	f	\N	1
+7763	0	859	1	3	, diced small	150	f	\N	2
+7764	0	859	1	3	, peeled and minced	5	f	\N	3
+7765	5	859	1	1	(RAW RED BEANS), rinsed	1078	f	\N	4
 \.
 
 
@@ -16025,10 +16085,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3683	Mix the remaining cocoa powder with the dark rum.	626	2	0
 3684	Whisk the egg whites in a clean, grease-free bowl until they form stiff peaks. Whisk in the remaining sugar. Stir a generous spoonful of the whites into the cocoa mixture to lighten it, then fold in the remaining whites.	626	3	0
 3685	Divide the mixture among the dishes. Place on the hot baking sheet, and bake for 13–15 minutes, or until well risen. Dust with caster or icing sugar before serving immediately.	626	4	0
-3686	Preheat the oven to 190C/375F. Lightly grease four individual souffle dishes and dust them lightly with flour.	627	0	0
-3687	Separate the eggs, placing the yolks in one bowl and the whites in a second, grease-free bowl. Add the apricot jam, grated lemon rind, and cinnamon to the egg yolks.	627	1	0
-3688	Using a hand-held electric mixer, whisk the egg yolk mixture until it is thick and pale in colour. Whish the egg whites with clean beaters until they are stiff enough to hold soft peaks.	627	2	0
-3689	Using a metal spoon or spatula, fold the egg whites evenly into the yolk mixture. Spoon into the prepared dishes. Bake the souffles for 12–15 minutes, until well risen and lightly browned. Serve at once.	627	3	0
 2136	Once your crock pot is full you’re going to cook the potatoes for 4 hours on high or 7-8 hours on low. When the potatoes are done you will be easily able to pierce them with a fork. Top the potatoes with your favorite toppings.	32	3	1024
 3732	Bake for 15–20 minutes. Do not allow to brown at all or the cookies will taste bitter.	637	3	0
 3733	Remove the pan from the oven and dust the surface with cocoa powder. Cut through the marked sections with a round-bladed knife and leave to cool completely before removing them from the pan.	637	4	0
@@ -16057,6 +16113,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3698	Preheat the oven to 350°F. Lightly grease and line the base of a 7″ × 11″ pan with baking parchment.	630	0	2
 3699	Put the coffee in a bowl and pour the boiling water over. Leave to infuse for 4 minutes, then strain through a fine sieve (strainer).	630	1	0
 3700	Meanwhile, cream the butter, peanut butter, sugar and coffee together until light. Sift the cornflour and flour together and mix in to make a smooth dough.	630	2	0
+3686	Preheat the oven to 375°F. Lightly grease four individual souffle dishes and dust them lightly with flour.	627	0	2
+3687	Separate the eggs, placing the yolks in one bowl and the whites in a second, grease-free bowl. Add the apricot jam, grated lemon rind, and cinnamon to the egg yolks.	627	1	0
+3688	Using a hand-held electric mixer, whisk the egg yolk mixture until it is thick and pale in colour. Whish the egg whites with clean beaters until they are stiff enough to hold soft peaks.	627	2	0
 3707	Take the steak out of the fridge and let it sit at room temperature for 30 minutes before cooking.	632	0	0
 3708	Preheat the oven to 400F.	632	1	0
 3709	Preheat a medium skillet over medium-high heat. Add 1 tablespoon of olive oil. Season the room-temperature steak well with salt and pepper. Add to the pan and sear for 3 minutes on each side. Take the steak out of the pan, place it on a plate, and let it rest for 5 minutes.	632	2	0
@@ -16536,6 +16595,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4247	Stir the tomato paste, rice, and a pinch of sea salt and black pepper into the onion pan, then pour in the saffron water and bring to a boil. 	315	3	4
 4248	Once boiling, carefully transfer to the oven for 15 minutes, or until the rice has absorbed all the liquid, fluffed up beautifully, and is golden and crisp on top.	315	4	2
 4249	Spoon the saffron yogurt over the rice, drizzle it all with 1 tablespoon of extra virgin olive oil, fork and mix it all together, and dish up.	315	5	0
+3689	Using a metal spoon or spatula, fold the egg whites evenly into the yolk mixture. Spoon into the prepared dishes. Bake the souffles for 12–15 minutes, until well risen and lightly browned. Serve at once.	627	3	2
+4266	Prep pepper, yellow onion, celery, and garlic. Add to crock pot. Add beans, Creole seasoning, sausage and broth. Place lid on crock pot and cook for seven hours on high heat.	859	0	1024
+4267	When ready to serve, cook rice and slice green onions for garnish. Serve!	859	1	0
 4250	 Sit the chicken legs directly on the bars of the oven, skin-side up, with the pan of potatoes directly underneath. Bake 40 minutes.	835	2	2
 4251	When the time's up, mix up the potatoes in the tasty pan juices, then sit the chicken on top. 	835	3	0
 4252	Strip the rosemary leaves off the sprigs, use a vegetable peeler to peel strips of lemon zest, then toss both in 1 teaspoon of olive oil and sprinkle into the pan. 	835	4	0
@@ -16585,7 +16647,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15798, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15845, true);
 
 
 --
