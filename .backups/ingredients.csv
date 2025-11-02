@@ -157,7 +157,7 @@
 161	\N	Almond Milk	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	4194304
 162	\N	Soy Milk	https://www.eatthismuch.com/calories/soy-milk-6715	\N	f	32768	240	250	2025-01-04	6	240	2097152
 163	\N	Cow Milk (Skim)	https://www.eatthismuch.com/calories/skim-milk,7096	\N	f	320	240	240	2024-08-30	6	240	4194304
-164	\N	Eggs, White	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-08-31	0	200	16777216
+164	\N	White Eggs	https://www.eatthismuch.com/food/nutrition/egg,103/	\N	f	8	50	50	2024-08-31	0	200	16777216
 165	\N	Mini Bagels	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/	\N	f	786464	40	40	2025-06-16	0	240	4
 166	\N	Loaves of Pita	https://www.eatthismuch.com/calories/pita-bread-4002	\N	f	262176	64	64	2025-05-18	0	64	4
 167	\N	Naan	https://www.eatthismuch.com/calories/naan,201876	\N	f	262176	140	140	2025-09-07	0	100	4
@@ -476,10 +476,10 @@
 549	\N	Tandori Paste	https://www.eatthismuch.com/calories/tandoori-paste-198348	\N	f	0	28	30	2025-02-25	4	240	8192
 550	\N	Lemon Grass Stalk	https://www.eatthismuch.com/calories/lemongrass-90852	\N	f	0	17	34	2025-03-05	0	68	2
 551	\N	Orange Flower Water	\N	\N	f	0	182	182	2025-03-28	0	240	0
-552	\N	Cinnamon Sticks	\N	\N	f	0	4520	152	2024-08-26	0	152	1
+552	\N	Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	25	8	2025-11-04	0	125	131072
 553	\N	Clementines	https://www.eatthismuch.com/calories/clementines-1599	\N	f	0	74	74	2025-04-19	0	148	1
 554	\N	Sweet Dessert Wine	https://www.eatthismuch.com/calories/wine,3068	\N	f	0	29.43	103	2024-09-17	9	235.44	5
-555	\N	Taco Shells	\N	\N	f	0	4520	152	2024-08-26	0	152	1
+555	\N	Taco Shells	\N	\N	f	0	4520	152	2025-11-04	0	152	1
 556	\N	Iceberg Lettuce Heads	\N	\N	f	0	539	57	2024-11-02	0	57	2
 557	\N	Thai Fish Sauce	https://www.eatthismuch.com/calories/fish-sauce-747	\N	f	0	18	18	2024-10-06	7	288	3
 558	\N	Lean Ground Beef | Lean Ground Turkey	https://www.eatthismuch.com/calories/ground-beef-5411	\N	f	0	28	28	2025-01-10	4	224	268435456
@@ -612,7 +612,7 @@
 686	\N	Sugar-Free Dark Chocolate (70%)	https://www.eatthismuch.com/calories/baking-chips-dark-chocolate-1730128	\N	f	0	28	14	2025-02-03	4	224	16384
 687	\N	Sugar-Free Dark Chocolate Chips (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	28	168	2025-01-31	4	168	16384
 688	\N	Sugar-Free Dark Chocolate Bar (70%)	https://www.eatthismuch.com/calories/dark-chocolate-4768	\N	f	0	84	168	2025-01-10	0	168	16384
-689	\N	Frozen Okra	https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	28	2024-08-26	0	224	67108864
+689	\N	Frozen Okra	https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	28	2025-11-03	0	224	67108864
 690	\N	Honey | Coconut Sugar | Stevia	https://www.eatthismuch.com/calories/honey-4620	\N	f	0	28	21	2025-01-24	4	336	32
 691	\N	Dry Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	f	0	113.33	85	2025-09-11	6	113.33	1024
 692	\N	Sea Salt & Black Pepper	Averaging the grams and using the higher nutrient value of the two: https://www.eatthismuch.com/calories/salt-221 - https://www.eatthismuch.com/calories/pepper-205	\N	t	0	28	12	2025-07-23	4	192	131072
@@ -794,7 +794,7 @@
 960	\N	Long Grain White Rice	https://www.eatthismuch.com/calories/white-rice,4923	\N	f	4096	28	200	2025-10-03	4	200	1024
 961	\N	Almond Meal	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	4194304
 962	\N	Sliced Bresaola	https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	28	2024-12-10	0	224	268435456
-963	\N	Mixed-Color Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
+963	\N	Fresh Mixed-Color Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
 964	\N	Coconut Oil	https://www.eatthismuch.com/calories/coconut-oil-265	\N	f	0	28	14	2024-12-09	4	224	65536
 965	\N	Plain Coconut Yogurt	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
 966	\N	Plain Coconut Milk | Plain Coconut Yogurt	https://www.eatthismuch.com/calories/coconut-milk,2660	\N	f	0	240	240	2024-08-27	6	240	4194304
@@ -1147,3 +1147,15 @@
 1408	\N	Ground Cinnamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
 1409	\N	Apricot Jam	https://www.eatthismuch.com/calories/jams-and-preserves-4621	\N	f	0	20	20	2025-08-22	7	320	128
 1410	\N	Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2025-11-02	0	100	2
+1411	\N	Large Eggs	https://www.eatthismuch.com/calories/egg-103	\N	f	8	50	50	2024-11-03	0	243	16777216
+1412	\N	Fresh Italian Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-09-26	4	64	3
+1413	\N	Harissa (Chili Pepper Paste)	https://www.eatthismuch.com/calories/hard-cider-78370	\N	f	0	30	100	2024-11-10	9	240	32
+1414	\N	Large Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
+1415	\N	Walnut Halves	https://www.eatthismuch.com/calories/walnuts-2685	\N	f	0	125	125	2024-10-02	6	125	4
+1416	\N	Fresh Radicchio	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	3
+1417	\N	Fresh Red Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
+1418	\N	Radicchio | Red Endives	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	3
+1419	\N	Cacao Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
+1420	\N	Cacao Powder | Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
+1421	\N	Small Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	12.5	8	2025-11-04	0	125	131072
+1422	\N	Large Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	25	8	2025-11-04	0	125	131072
