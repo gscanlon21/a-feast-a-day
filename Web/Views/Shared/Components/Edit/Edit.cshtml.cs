@@ -28,6 +28,7 @@ public class EditComponentViewModel
         Allergens = user.Allergens;
         FootnoteType = user.FootnoteType;
         MaxIngredients = user.MaxIngredients;
+        FontSizeAdjust = user.FontSizeAdjust;
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         // In case a single equipment becomes a double, keep it checked.
@@ -86,6 +87,10 @@ public class EditComponentViewModel
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
     [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new recipes?")]
     public int SendHour { get; init; }
+
+    [Required, Range(UserConsts.FontSizeAdjustMin, UserConsts.FontSizeAdjustMax)]
+    [Display(Name = "Font Size Adjust", Description = "Font size adjustment.")]
+    public int FontSizeAdjust { get; init; }
 
     [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
     [Display(Name = "Maximum Ingredients", Description = "What's the maximum number of ingredients you'd like in your recipes?")]

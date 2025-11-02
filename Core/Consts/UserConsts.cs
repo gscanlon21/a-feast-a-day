@@ -17,6 +17,10 @@ public class UserConsts
     public const int SendHourDefault = 0;
     public const int SendHourMax = 23;
 
+    public const int FontSizeAdjustMin = 0;
+    public const int FontSizeAdjustDefault = 0;
+    public const int FontSizeAdjustMax = 4;
+
     public const int IngredientsMin = 4;
     public const int IngredientsMax = 10;
 

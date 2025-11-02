@@ -86,6 +86,7 @@ public partial class UserController : ViewController
             viewModel.User.Verbosity = viewModel.Verbosity;
             viewModel.User.FootnoteType = viewModel.FootnoteType;
             viewModel.User.MaxIngredients = viewModel.MaxIngredients;
+            viewModel.User.FontSizeAdjust = viewModel.FontSizeAdjust;
 
             var oldUserFamilies = await _context.UserFamilies.Where(uf => uf.UserId == viewModel.User.Id).ToListAsync();
             var newUserFamilies = viewModel.UserFamilies.Where(f => !f.Hide).Select(umm => new UserFamily(viewModel.User)
