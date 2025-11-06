@@ -5,3 +5,7 @@
     cursor: pointer;
     top: .2ch;
 }
+
+::deep .field-validation-valid {
+    display: none;
+}

@@ -67,7 +67,7 @@
 68	\N	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/	\N	t	0	7.5	7.5	2025-07-18	7	120	131072
 70	\N	Cinnamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
 71	\N	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195	\N	t	0	10	10	2024-10-18	7	160	131072
-72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	7	7	2024-08-26	7	112	3
+72	\N	Nutmeg	https://www.eatthismuch.com/calories/nutmeg,200	\N	f	0	28	7	2025-11-07	4	112	131072
 73	\N	Paprika	https://www.eatthismuch.com/calories/paprika,203	\N	t	0	7	7	2024-08-30	7	112	131072
 74	\N	Sea Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2025-07-24	8	288	131072
 75	\N	Kosher Salt	https://www.eatthismuch.com/calories/kosher-salt-1938979	\N	t	0	28	1	2024-12-07	4	192	131072
@@ -768,7 +768,7 @@
 902	\N	Chamomile Tea Bag	https://www.eatthismuch.com/food/nutrition/tea-earl-grey,1598998/	\N	f	0	29.57	236.56	2025-08-03	0	236.56	0
 903	\N	Radish Sprouts	https://www.eatthismuch.com/calories/radish-seeds-2315	\N	f	0	28	38	2025-01-14	4	38	2
 904	\N	Lean Sliced Ham	https://www.eatthismuch.com/calories/sliced-ham-904	\N	f	0	28	28	2024-12-10	0	224	268435456
-905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038 | https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	100	2024-08-26	0	100	2
+905	\N	Fresh Okra | Frozen Okra	https://www.eatthismuch.com/calories/okra-2038 | https://www.eatthismuch.com/calories/okra-2040	\N	f	0	14	100	2025-11-07	0	100	2
 906	\N	Frozen Cauliflower Rice	aka. Riced Cauliflower - https://www.eatthismuch.com/calories/cauliflower-1923	\N	f	0	28	132	2025-09-12	4	132	67108864
 907	\N	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/coconut-meat-2653	\N	f	0	28	80	2025-10-19	4	80	928
 908	\N	Raw Mixed Nuts | Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-beans-1618198	\N	f	0	140	35	2024-09-13	6	140	1048576
@@ -1059,7 +1059,7 @@
 1319	\N	Sweetened Applesauce	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	28	244	2024-11-16	4	244	256
 1320	\N	Almond Flour	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	4194304
 1321	\N	Small Onions	https://www.eatthismuch.com/calories/onions-2042	\N	f	0	70	110	2024-12-25	0	115	2
-1322	\N	Canned Peaches	https://www.eatthismuch.com/calories/peaches,1484	\N	f	0	150	150	2024-09-25	0	150	1
+1322	\N	Canned Peaches	https://www.eatthismuch.com/calories/peaches-1485	\N	f	0	28	244	2024-09-25	4	244	512
 1323	\N	Canned Sliced Peaches	https://www.eatthismuch.com/calories/peaches-1485	\N	f	0	28	244	2024-09-25	4	244	512
 1324	\N	Canned Diced Peaches	https://www.eatthismuch.com/calories/peaches-1485	\N	f	0	28	244	2024-09-25	4	244	512
 1325	\N	Canned Peach Halves	https://www.eatthismuch.com/calories/peaches-1485	\N	f	0	28	244	2024-09-25	4	244	512
@@ -1115,13 +1115,13 @@
 1376	\N	Maple Syrup | Honey | Brown Rice Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654	\N	f	0	40	20	2025-06-13	9	320	928
 1377	\N	Pumpkin Spice	https://www.eatthismuch.com/calories/pumpkin-pie-spice-210	\N	f	0	28	6	2024-12-04	4	96	131072
 1378	\N	Cinnamon | Pumpkin Spice | Cardamon	https://www.eatthismuch.com/calories/cinnamon-185	\N	t	0	28	8	2025-01-18	4	128	131072
-1379	\N	Cep Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
-1380	\N	Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
+1379	\N	Cep Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-06	0	86	3
+1380	\N	Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-08	0	86	3
 1381	\N	Dried Cep Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-10-28	0	86	3
 1382	\N	Dried Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-01	0	86	3
 1383	\N	Dried Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-10-31	0	86	3
-1384	\N	Dried Oyster Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
-1385	\N	Dried Cep Mushrooms | Dried Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
+1384	\N	Dried Oyster Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-08	0	86	3
+1385	\N	Dried Cep Mushrooms | Dried Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-06	0	86	3
 1386	\N	Pork Escalopes	https://www.eatthismuch.com/calories/chicken-breast-boneless-skinless-100467	\N	f	0	112	112	2025-03-20	0	224	268435456
 1387	\N	Juniper Berries	https://www.eatthismuch.com/calories/blueberries-1343	\N	f	0	28	148	2024-11-28	4	148	1
 1388	\N	Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912	\N	f	262176	4.75	38	2025-08-09	4	38	4096
@@ -1149,7 +1149,7 @@
 1410	\N	Okra	https://www.eatthismuch.com/calories/okra-2038	\N	f	0	12.5	100	2025-11-02	0	100	2
 1411	\N	Large Eggs	https://www.eatthismuch.com/calories/egg-103	\N	f	8	50	50	2024-11-03	0	243	16777216
 1412	\N	Fresh Italian Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-09-26	4	64	3
-1413	\N	Harissa (Chili Pepper Paste)	https://www.eatthismuch.com/calories/hard-cider-78370	\N	f	0	30	100	2024-11-10	9	240	32
+1413	\N	Harissa	https://www.eatthismuch.com/calories/harissa-3101216	\N	f	0	28	12	2024-11-10	4	224	8192
 1414	\N	Large Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
 1415	\N	Walnut Halves	https://www.eatthismuch.com/calories/walnuts-2685	\N	f	0	28	100	2024-10-02	4	100	1048576
 1416	\N	Fresh Radicchio	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	3
@@ -1160,6 +1160,13 @@
 1421	\N	Small Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	12.5	8	2025-11-04	0	125	131072
 1422	\N	Large Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	25	8	2025-11-04	0	125	131072
 1452	\N	Cornish Game Hens	https://www.eatthismuch.com/calories/whole-chicken-134184	\N	f	0	1344	85	2025-03-18	0	224	268435456
-1453	\N	Gluten-Free Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2025-08-15	6	80	16288
+1453	\N	Gluten-Free Rolled Oats	https://www.eatthismuch.com/calories/rolled-oats-5821	\N	f	0	28	80	2025-08-15	4	80	16288
 1454	\N	Gluten-Free Porridge Oats	https://www.eatthismuch.com/calories/rolled-oats-5821	\N	f	0	28	80	2025-07-08	4	80	1024
-1455	\N	Gluten-Free Steel-Cut Oats	aka. pinhead oats. https://www.eatthismuch.com/calories/oats-4803	\N	f	0	156	156	2024-10-11	6	156	4
+1455	\N	Gluten-Free Steel-Cut Oats	aka. pinhead oats. https://www.eatthismuch.com/calories/oats-4803	\N	f	0	28	156	2024-10-11	4	156	1024
+1456	\N	Rose Harissa	https://www.eatthismuch.com/calories/hard-cider-78370	\N	f	0	30	100	2024-11-10	9	240	32
+1457	\N	Large Red Kuri Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
+1458	\N	Large Butternut Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
+1459	\N	Large Kabocha Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
+1460	\N	Large Crown Prince Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
+1461	\N	Mild Harissa	https://www.eatthismuch.com/calories/harissa-mild-2121760	\N	f	0	28	15	2024-11-10	4	240	8192
+1462	\N	Spicy Harissa	https://www.eatthismuch.com/calories/harissa-3101216	\N	f	0	28	12	2024-11-10	4	224	8192

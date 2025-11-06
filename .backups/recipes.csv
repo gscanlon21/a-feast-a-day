@@ -284,7 +284,7 @@
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 402	Fruit Salad	\N	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	48	10	5	2	t	roasted-kale.jpg	0	\N	f	f
+403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	10	5	2	t	roasted-kale.jpg	0	\N	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	\N	f	f
@@ -566,7 +566,7 @@
 844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
 846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
-847	Avocado Mash	\N	\N	\N	0	0	0	1	t	\N	6	From the First Watch cookbook. 	t	f
+847	Avocado Mash	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
 848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	\N	6	From the First Watch cookbook. 	t	f
 849	Avocado Toast	\N	\N	\N	4	0	0	1	t	\N	0	From the First Watch cookbook. 	f	f
 850	Sunrise Granola Bowl	\N	\N	\N	4	0	15	1	t	\N	0	From the First Watch cookbook. 	f	f
@@ -577,8 +577,9 @@
 855	Lemon Chicken with Roasted Potatoes	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 856	Farmer's Biscuit Breakfast Sandwich	\N	\N	\N	6	15	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	\N	0	Erin | The Almond Eater	f	f
-858	Boiling Kettle Water	\N	\N	\N	0	0	0	1	t	\N	6	\N	t	f
+858	Boiling Kettle Water	\N	\N	\N	0	5	0	1	t	\N	6	\N	t	f
 859	Crock Pot Red Rice and Beans	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/crock-pot-red-beans-and-rice/	f	f
 860	Beef and Broccoli	\N	\N	\N	8	55	5	2	t	\N	0	\N	f	f
 861	Chicken and Mushroom Stir-Fry	\N	\N	\N	8	55	5	2	t	\N	0	\N	f	f
 862	Pico de Gallo	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
+863	Lima Beans on Toast	\N	\N	\N	12	15	3	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f

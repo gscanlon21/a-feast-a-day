@@ -180,8 +180,6 @@
                     <div class="row row-gap-1 my-2">
                         <div class="col-auto">
                             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator)</label>
-                            <div><span asp-validation-for="Recipe.RecipeIngredients[id].QuantityNumerator" class="text-danger"></span></div>
-                            <div><span asp-validation-for="Recipe.RecipeIngredients[id].QuantityDenominator" class="text-danger"></span></div>
                             <div class="row gx-2">
                                 <div class="col-auto">
                                     <input id="@(Html.IdFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator))" type="number" asp-for="Recipe.RecipeIngredients[id].QuantityNumerator" style="width:5ch;height:fit-content;" autocomplete="off" />
@@ -201,9 +199,12 @@
                             <select asp-for="Recipe.RecipeIngredients[id].Measure" class="form-control" aria-describedby="measure-help" autocomplete="off"
                                     asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).AsSelectListItems())">
                             </select>
-                            <span asp-validation-for="Recipe.RecipeIngredients[id].Measure" class="text-danger"></span>
                             <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Measure)</span>
                         </div>
+
+                        <span asp-validation-for="Recipe.RecipeIngredients[id].Measure" class="text-danger"></span>
+                        <span asp-validation-for="Recipe.RecipeIngredients[id].QuantityNumerator" class="text-danger"></span>
+                        <span asp-validation-for="Recipe.RecipeIngredients[id].QuantityDenominator" class="text-danger"></span>
                     </div>
 
                     <div class="row row-gap-1 mb-2">
