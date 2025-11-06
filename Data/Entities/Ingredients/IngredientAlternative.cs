@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Ingredient;
+namespace Data.Entities.Ingredients;
 
 /// <summary>
 /// Maps an ingredient to it's alternatives.
@@ -23,7 +23,7 @@ public class IngredientAlternative
     /// <summary>
     /// This is the ingredient that has an alternative.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.Alternatives))]
+    [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.Alternatives))]
     public virtual Ingredient Ingredient { get; private init; } = null!;
 
     /// <summary>
@@ -34,7 +34,7 @@ public class IngredientAlternative
     /// <summary>
     /// This is the alternative ingredient.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.AlternativeIngredients))]
+    [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.AlternativeIngredients))]
     public virtual Ingredient AlternativeIngredient { get; private init; } = null!;
 
     /// <summary>

@@ -1,5 +1,5 @@
 ﻿using Core.Models.User;
-using Data.Entities.Ingredient;
+using Data.Entities.Ingredients;
 
 namespace Data.Interfaces.Recipe;
 

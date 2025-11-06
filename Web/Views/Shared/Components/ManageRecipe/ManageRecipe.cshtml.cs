@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using Data.Entities.Users;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using Web.Views.Recipe;
 
@@ -12,13 +13,13 @@ public class ManageRecipeViewModel
     public required UserManageRecipeViewModel.Params Parameters { get; init; }
 
     [ValidateNever]
-    public required Data.Entities.User.User User { get; init; }
+    public required Data.Entities.Users.User User { get; init; }
 
     [ValidateNever, Display(Name = "Recipe", Description = "Ignore this recipe for all sections.")]
-    public required Data.Entities.Recipe.Recipe Recipe { get; init; }
+    public required Data.Entities.Recipes.Recipe Recipe { get; init; }
 
     [ValidateNever, Display(Name = "Refreshes After", Description = "Refresh this recipe—the next feast will try and select a new recipe if available.")]
-    public required Data.Entities.User.UserRecipe UserRecipe { get; init; }
+    public required UserRecipe UserRecipe { get; init; }
 
     [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
     [Display(Name = "Minimum Servings", Description = "Minimum servings the recipe should be scaled for.")]

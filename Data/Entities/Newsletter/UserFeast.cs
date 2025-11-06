@@ -17,7 +17,7 @@ public class UserFeast
 
     internal UserFeast(DateOnly date, FeastContext context) : this(date, context.User) { }
 
-    public UserFeast(DateOnly date, User.User user)
+    public UserFeast(DateOnly date, Users.User user)
     {
         Date = date;
         UserId = user.Id;
@@ -38,8 +38,8 @@ public class UserFeast
 
     public string? Logs { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFeasts))]
-    public virtual User.User User { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserFeasts))]
+    public virtual Users.User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]
     public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;

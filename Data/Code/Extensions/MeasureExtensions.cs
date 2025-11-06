@@ -1,6 +1,6 @@
 ﻿using Core.Code.Exceptions;
 using Core.Models.User;
-using Data.Entities.Ingredient;
+using Data.Entities.Ingredients;
 
 namespace Data.Code.Extensions;
 

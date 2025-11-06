@@ -2,9 +2,9 @@
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
-using Data.Entities.Ingredient;
-using Data.Entities.Recipe;
-using Data.Entities.User;
+using Data.Entities.Ingredients;
+using Data.Entities.Recipes;
+using Data.Entities.Users;
 using Data.Interfaces.Recipe;
 using Fractions;
 using System.Diagnostics;

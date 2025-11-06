@@ -1,5 +1,5 @@
 ﻿using Core.Models.User;
-using Data.Entities.User;
+using Data.Entities.Users;
 
 namespace Data.Models.Newsletter;
 

@@ -1,13 +1,13 @@
 ﻿using Core.Models.User;
 using Data;
-using Data.Entities.Ingredient;
-using Data.Entities.User;
+using Data.Entities.Ingredients;
+using Data.Entities.Users;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
-using Web.Controllers.User;
+using Web.Controllers.Users;
 using Web.Views.Ingredient;
 
 namespace Web.Controllers.Ingredients;

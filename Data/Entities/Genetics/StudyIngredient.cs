@@ -18,6 +18,6 @@ public class StudyIngredient
     [InverseProperty(nameof(Genetics.Study.StudyIngredients))]
     public virtual Study Study { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.StudyIngredients))]
-    public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.StudyIngredients))]
+    public virtual Ingredients.Ingredient Ingredient { get; private init; } = null!;
 }

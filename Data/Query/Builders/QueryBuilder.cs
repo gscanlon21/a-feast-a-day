@@ -1,7 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Code.Exceptions;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Data.Query.Builders.NutrientTargets;
 using Data.Query.Options;
 

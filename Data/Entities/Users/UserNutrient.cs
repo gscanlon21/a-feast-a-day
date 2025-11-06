@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Users;
 
 [Table("user_nutrient")]
 public class UserNutrient
@@ -11,10 +11,10 @@ public class UserNutrient
 
     public Nutrients Nutrient { get; init; }
 
-    [ForeignKey(nameof(Entities.User.User.Id))]
+    [ForeignKey(nameof(Users.User.Id))]
     public int UserId { get; init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserNutrients))]
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserNutrients))]
     public virtual User User { get; private init; } = null!;
 
     public int Start { get; set; }

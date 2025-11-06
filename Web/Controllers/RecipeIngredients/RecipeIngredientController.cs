@@ -1,7 +1,9 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Data;
-using Data.Entities.Recipe;
+using Data.Entities.Recipes;
+using Data.Entities.Users;
+using Data.Query;
 using Data.Query.Builders;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
@@ -73,9 +75,13 @@ public class RecipeIngredientController : ViewController
 
         // AlternativeIngredientss are required for the select list.
         // IngredientRecipe is required for the name of the recipe ingredient.
-        var recipeIngredient = await _context.RecipeIngredients.AsNoTracking().Include(ri => ri.IngredientRecipe)
-            .Include(i => i.Ingredient).ThenInclude(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient)
-            .FirstOrDefaultAsync(r => r.Id == recipeIngredientId);
+        var recipeIngredient = await _context.RecipeIngredients.AsNoTracking()
+            .Include(ri => ri.IngredientRecipe)
+            .Include(i => i.Ingredient)
+                .ThenInclude(i => i.Alternatives.Where(a => (a.AlternativeIngredient.Allergens & user.Allergens) == 0))
+                    .ThenInclude(ai => ai.AlternativeIngredient)
+            .Where(r => r.Id == recipeIngredientId)
+            .FirstOrDefaultAsync();
 
         if (recipeIngredient == null)
         {
@@ -92,28 +98,8 @@ public class RecipeIngredientController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var substitutionRecipes = await GetRecipes(user);
-        var recipes = await new QueryBuilder()
-            // Pass in the user so we can select their base recipes.
-            .WithUser(user, options =>
-            {
-                options.IgnoreIgnored = true;
-            })
-            .WithEquipment(Equipment.All)
-            .WithRecipes(x =>
-            {
-                if (bool.TryParse(Request.Query["showBase"], out bool showBase) && showBase)
-                {
-                    x.AddRecipes(substitutionRecipes);
-                }
-                x.AddRecipes(new Dictionary<int, int?>
-                {
-                    [recipeIngredient.RecipeId] = null,
-                });
-            })
-            .Build()
-            .Query(_serviceScopeFactory);
-
+        var substitutionRecipes = await GetBaseRecipes(user);
+        var recipes = await GetBaseRecipeResults(user, substitutionRecipes, recipeIngredient);
         var recipe = recipes.FirstOrDefault(r => r.Recipe.Id == recipeIngredient.RecipeId);
         if (recipe == null)
         {
@@ -122,6 +108,7 @@ public class RecipeIngredientController : ViewController
 
         var prepRecipes = recipes.Where(r => recipe.RecipeIngredients.Select(ri => ri.IngredientRecipeId).Contains(r.Recipe.Id)).ToList();
         var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).ToList()
+            // Not excluding allergens from a user's custom ingredients because I assume they know what they want.
             ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
 
         // Restore the failed UserRecipeIngredient if the upsert model validation failed.
@@ -183,7 +170,7 @@ public class RecipeIngredientController : ViewController
     /// <summary>
     /// Get recipes that the user is able to select as an ingredient alternative.
     /// </summary>
-    private async Task<IList<Recipe>> GetRecipes(Data.Entities.User.User user)
+    private async Task<IList<Recipe>> GetBaseRecipes(User user)
     {
         return await _context.Recipes.AsNoTracking().TagWithCallSite()
             .Where(r => r.UserId == null || r.UserId == user.Id) // Has any flag:
@@ -191,5 +178,32 @@ public class RecipeIngredientController : ViewController
             .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)
             .ToListAsync();
+    }
+
+    /// <summary>
+    /// Get query results for the base recipes and original recipe ingredient.
+    /// </summary>
+    private async Task<IList<QueryResults>> GetBaseRecipeResults(User user, IList<Recipe> baseRecipes, RecipeIngredient recipeIngredient)
+    {
+        return await new QueryBuilder()
+            // Pass in the user so we can select their base recipes.
+            .WithUser(user, options =>
+            {
+                options.IgnoreIgnored = true;
+            })
+            .WithEquipment(Equipment.All)
+            .WithRecipes(x =>
+            {
+                if (bool.TryParse(Request.Query["showBase"], out bool showBase) && showBase)
+                {
+                    x.AddRecipes(baseRecipes);
+                }
+                x.AddRecipes(new Dictionary<int, int?>
+                {
+                    [recipeIngredient.RecipeId] = null,
+                });
+            })
+            .Build()
+            .Query(_serviceScopeFactory);
     }
 }

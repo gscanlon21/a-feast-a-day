@@ -1,7 +1,7 @@
 ﻿using Core.Models.Options;
 using Data;
 using Data.Entities.Newsletter;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Web.Code.TempData;
-using Web.Controllers.User;
+using Web.Controllers.Users;
 using Web.Services;
 using Web.Views.Index;
 
@@ -70,7 +70,7 @@ public class IndexController : ViewController
     {
         if (ModelState.IsValid && _captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success != false)
         {
-            var newUser = new Data.Entities.User.User(viewModel.Email, viewModel.AcceptedTerms);
+            var newUser = new User(viewModel.Email, viewModel.AcceptedTerms);
 
             // These records are required. newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
             newUser.UserFamilies.Add(new UserFamily()
@@ -163,7 +163,7 @@ public class IndexController : ViewController
 
     #region Account Emails
 
-    private async Task SendConfirmationEmail(Data.Entities.User.User unauthenticatedUser)
+    private async Task SendConfirmationEmail(Data.Entities.Users.User unauthenticatedUser)
     {
         var token = await _userRepo.AddUserToken(unauthenticatedUser, durationDays: 100); // Needs to last at least 3 months by law for unsubscribe link.
         var userNewsletter = new UserEmail(unauthenticatedUser)
@@ -187,7 +187,7 @@ This is an account confirmation email for your newly created <a href='{_siteSett
         await _context.SaveChangesAsync();
     }
 
-    private async Task SendLoginEmail(Data.Entities.User.User unauthenticatedUser)
+    private async Task SendLoginEmail(Data.Entities.Users.User unauthenticatedUser)
     {
         var token = await _userRepo.AddUserToken(unauthenticatedUser, durationDays: 100); // Needs to last at least 3 months by law for unsubscribe link.
         var userNewsletter = new UserEmail(unauthenticatedUser)

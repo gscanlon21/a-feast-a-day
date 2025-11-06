@@ -10,7 +10,7 @@ public class GeneticsViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Genetics";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
     {
         return View("Genetics", new GeneticsViewModel()
         {

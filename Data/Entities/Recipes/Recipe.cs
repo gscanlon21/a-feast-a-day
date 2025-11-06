@@ -1,14 +1,14 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Entities.Newsletter;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Recipe;
+namespace Data.Entities.Recipes;
 
 /// <summary>
 /// Recipes listed on the website.
@@ -64,8 +64,8 @@ public class Recipe
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.Recipes))]
-    public virtual User.User User { get; set; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Users.User.Recipes))]
+    public virtual Users.User User { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(RecipeIngredient.Recipe))]
     public virtual List<RecipeIngredient> RecipeIngredients { get; set; } = [];

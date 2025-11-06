@@ -1,7 +1,7 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
 using Data;
-using Data.Entities.Ingredient;
+using Data.Entities.Ingredients;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,7 @@ public class IngredientAlternativesViewComponent : ViewComponent
         _userRepo = userRepo;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient ingredient)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient ingredient)
     {
         var partialIngredients = await GetAlternativeIngredients(ingredient, user, partial: true);
         var alternativeIngredients = await GetAlternativeIngredients(ingredient, user, partial: false);
@@ -39,7 +39,7 @@ public class IngredientAlternativesViewComponent : ViewComponent
         });
     }
 
-    private async Task<List<Ingredient>> GetAlternativeIngredients(Ingredient ingredient, Data.Entities.User.User user, bool partial)
+    private async Task<List<Ingredient>> GetAlternativeIngredients(Ingredient ingredient, Data.Entities.Users.User user, bool partial)
     {
         return await _context.IngredientAlternatives.AsNoTracking()
             .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.Nutrients)

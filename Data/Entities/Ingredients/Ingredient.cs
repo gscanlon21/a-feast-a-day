@@ -2,15 +2,15 @@
 using Core.Models.User;
 using Data.Entities.Genetics;
 using Data.Entities.Newsletter;
-using Data.Entities.Recipe;
-using Data.Entities.User;
+using Data.Entities.Recipes;
+using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Ingredient;
+namespace Data.Entities.Ingredients;
 
 /// <summary>
 /// Ingredient's used in recipes.
@@ -81,8 +81,8 @@ public class Ingredient
 
     public string? DisabledReason { get; private init; } = null;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.Ingredients))]
-    public virtual User.User? User { get; private init; }
+    [JsonIgnore, InverseProperty(nameof(Users.User.Ingredients))]
+    public virtual Users.User? User { get; private init; }
 
     /// <summary>
     /// Nutrients per serving.

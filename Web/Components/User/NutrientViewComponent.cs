@@ -24,7 +24,7 @@ public class NutrientViewComponent : ViewComponent
     public const string Name = "Nutrient";
 
     [SuppressMessage("Style", "IDE0075:Simplify conditional expression", Justification = "Easier to read as is.")]
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
     {
         if (user == null)
         {

@@ -52,11 +52,11 @@ public class UserFeastRecipe
 
     #region NavigationProperties
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserFeastParentRecipes))]
-    public virtual Recipe.Recipe ParentRecipe { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Recipes.Recipe.UserFeastParentRecipes))]
+    public virtual Recipes.Recipe ParentRecipe { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserFeastRecipes))]
-    public virtual Recipe.Recipe Recipe { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Recipes.Recipe.UserFeastRecipes))]
+    public virtual Recipes.Recipe Recipe { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeast.UserFeastRecipes))]
     public virtual UserFeast UserFeast { get; private init; } = null!;

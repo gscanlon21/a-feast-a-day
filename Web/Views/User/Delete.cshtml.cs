@@ -9,7 +9,7 @@ public class DeleteViewModel
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public DeleteViewModel() { }
 
-    public DeleteViewModel(Data.Entities.User.User user, string token)
+    public DeleteViewModel(Data.Entities.Users.User user, string token)
     {
         User = user;
         Token = token;
@@ -17,7 +17,7 @@ public class DeleteViewModel
     }
 
     [ValidateNever]
-    public Data.Entities.User.User User { get; set; } = null!;
+    public Data.Entities.Users.User User { get; set; } = null!;
 
     public string Token { get; set; } = null!;
 

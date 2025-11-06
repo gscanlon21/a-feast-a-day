@@ -27,7 +27,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
     {
         // See if the user recipes exist on the user obj.
         var userRecipes = user.UserRecipes.NullIfEmpty()?

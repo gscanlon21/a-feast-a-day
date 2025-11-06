@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Users;
 
 [Table("user_section")]
 public class UserSection
@@ -24,10 +24,10 @@ public class UserSection
 
     public Section Section { get; private init; }
 
-    [ForeignKey(nameof(Entities.User.User.Id))]
+    [ForeignKey(nameof(Users.User.Id))]
     public int UserId { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserSections))]
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserSections))]
     public virtual User User { get; private init; } = null!;
 
     [Range(UserConsts.SectionWeightMin, UserConsts.SectionWeightMax)]

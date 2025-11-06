@@ -1,13 +1,13 @@
 ﻿using Core.Models.User;
 using Data.Code.Extensions;
-using Data.Entities.User;
+using Data.Entities.Users;
 
 namespace Web.Views.Shared.Components.Nutrient;
 
 public class NutrientViewModel
 {
     public required string Token { get; init; }
-    public required Data.Entities.User.User User { get; init; }
+    public required Data.Entities.Users.User User { get; init; }
 
     public required int Weeks { get; init; }
 

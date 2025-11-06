@@ -1,4 +1,4 @@
-﻿using Data.Entities.User;
+﻿using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Edit;
@@ -22,7 +22,7 @@ public class EditViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Edit";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User? user = null)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User? user = null)
     {
         user ??= await _userRepo.GetUser(UserConsts.DemoUser, UserConsts.DemoToken, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
         if (user == null)

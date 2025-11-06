@@ -1,8 +1,8 @@
 ﻿@model UpsertIngredientViewModel
 @using Core.Models.Ingredients
 @using Core.Models.Recipe
+@using Data.Entities.Users
 @using Web.Code.Extensions
-@using Data.Entities.User
 
 <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.UpsertIngredient)"
         asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" id="ingredient-form" method="post">

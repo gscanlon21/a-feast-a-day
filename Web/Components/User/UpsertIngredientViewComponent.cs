@@ -1,7 +1,7 @@
 ﻿using Core.Models.User;
 using Data;
-using Data.Entities.Ingredient;
-using Data.Entities.User;
+using Data.Entities.Ingredients;
+using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,7 @@ public class UpsertIngredientViewComponent : ViewComponent
     /// </summary>
     public const string Name = "UpsertIngredient";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Ingredient? ingredient = null)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient? ingredient = null)
     {
         // User must've created the ingredient to be able to edit it.
         if (ingredient != null && ingredient.UserId != user.Id && !user.Features.HasFlag(Features.Admin))

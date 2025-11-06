@@ -11,9 +11,9 @@ public class UserManageRecipeViewModel
 {
     public record Params(string Email, string Token, int RecipeId, Section Section);
 
-    public required Data.Entities.Recipe.Recipe Recipe { get; init; }
+    public required Data.Entities.Recipes.Recipe Recipe { get; init; }
 
-    public Data.Entities.User.User User { get; init; } = null!;
+    public Data.Entities.Users.User User { get; init; } = null!;
 
     public required Params Parameters { get; init; }
 

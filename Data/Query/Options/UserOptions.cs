@@ -1,5 +1,6 @@
 ﻿using Core.Models.Ingredients;
 using Core.Models.User;
+using Data.Entities.Users;
 
 namespace Data.Query.Options;
 
@@ -16,7 +17,7 @@ public class UserOptions : IOptions
 
     public UserOptions() { }
 
-    public UserOptions(Entities.User.User user)
+    public UserOptions(User user)
     {
         Id = user.Id;
         NoUser = false;

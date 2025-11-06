@@ -37,6 +37,6 @@ public class UserFootnote : IFootnote
     [Required]
     public FootnoteType Type { get; init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFootnotes))]
-    public User.User User { get; init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserFootnotes))]
+    public Users.User User { get; init; } = null!;
 }

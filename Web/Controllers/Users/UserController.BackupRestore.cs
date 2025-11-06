@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Web.Controllers.User;
+namespace Web.Controllers.Users;
 
 public partial class UserController
 {

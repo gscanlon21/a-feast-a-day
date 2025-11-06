@@ -23,7 +23,7 @@ public class NextFeastViewComponent : ViewComponent
     /// </summary>
     public const string Name = "NextFeast";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
     {
         var nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateHelpers.Today : DateHelpers.Today.AddDays(1);
         // Next send date is a rest day and user is not the debug user, next send date is the day after.

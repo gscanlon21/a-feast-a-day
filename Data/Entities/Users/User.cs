@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Users;
 
 /// <summary>
 /// User who signed up for the newsletter.
@@ -194,14 +194,14 @@ public class User : IUser
     [JsonIgnore, InverseProperty(nameof(UserFeast.User))]
     public virtual ICollection<UserFeast> UserFeasts { get; init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Recipe.Recipe.User))]
-    public virtual ICollection<Recipe.Recipe> Recipes { get; init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.Recipes.Recipe.User))]
+    public virtual ICollection<Recipes.Recipe> Recipes { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserRecipe.User))]
     public virtual ICollection<UserRecipe> UserRecipes { get; init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Ingredient.Ingredient.User))]
-    public virtual ICollection<Ingredient.Ingredient> Ingredients { get; init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Entities.Ingredients.Ingredient.User))]
+    public virtual ICollection<Ingredients.Ingredient> Ingredients { get; init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserEmail.User))]
     public virtual ICollection<UserEmail> UserEmails { get; init; } = null!;

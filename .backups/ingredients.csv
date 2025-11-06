@@ -485,7 +485,7 @@
 558	\N	Lean Ground Beef | Lean Ground Turkey	https://www.eatthismuch.com/calories/ground-beef-5411	\N	f	0	28	28	2025-01-10	4	224	268435456
 559	\N	Crumbled Queso Blanco | Crumbled Anjeado Cheese | Grated Chedder Cheese | Grated Monterey Jack Cheese	https://www.eatthismuch.com/food/nutrition/shredded-cheddar-cheese,164892/	\N	f	256	112	28	2024-09-17	6	112	6
 560	\N	Rhubarb Compote	https://www.eatthismuch.com/calories/rhubarb-compot-2981817	\N	f	0	28	644	2024-11-27	4	224	16
-561	\N	Gingernut Biscuits (Gingersnaps)	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	262176	4520	152	2024-08-26	0	152	262144
+561	\N	Gingernut Biscuits (Gingersnaps)	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	262176	4520	152	2025-11-05	0	152	262144
 562	\N	Double Cream	https://www.eatthismuch.com/calories/english-double-cream-3336811	\N	f	0	28	28	2025-08-12	9	224	4194304
 563	\N	Unsalted Margarine	https://www.eatthismuch.com/calories/margarine-354	\N	t	0	112	14	2024-09-14	0	224	6
 564	\N	Margarine	https://www.eatthismuch.com/calories/margarine-354	\N	t	0	112	14	2024-09-14	0	224	29360128
@@ -518,7 +518,7 @@
 591	\N	Hamburger Buns, GF	https://www.eatthismuch.com/calories/hamburger-buns-gluten-free-1786165	\N	f	0	79	79	2024-10-21	0	79	64
 592	\N	Black Olive Tapenade	https://www.eatthismuch.com/food/nutrition/olive-oil,266/	\N	f	0	14	14	2025-03-19	7	240	0
 593	\N	Thai Red Curry Paste	https://www.eatthismuch.com/calories/red-curry-paste-490608	\N	f	0	28	15	2024-12-29	4	240	8192
-594	\N	Butternut Squash	\N	\N	f	0	4520	152	2024-08-26	0	152	1
+594	\N	Butternut Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-05	0	113	2
 595	\N	Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-10-31	0	86	3
 596	\N	Kaffir Lime Leaves	https://www.eatthismuch.com/calories/kaffir-lime-leaves-1612556	\N	f	0	15	30	2025-02-13	0	240	3
 597	\N	Yellow Bell Peppers	https://www.eatthismuch.com/calories/yellow-peppers-2560	\N	f	0	186	186	2025-10-20	0	186	2
@@ -1151,7 +1151,7 @@
 1412	\N	Fresh Italian Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-09-26	4	64	3
 1413	\N	Harissa (Chili Pepper Paste)	https://www.eatthismuch.com/calories/hard-cider-78370	\N	f	0	30	100	2024-11-10	9	240	32
 1414	\N	Large Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
-1415	\N	Walnut Halves	https://www.eatthismuch.com/calories/walnuts-2685	\N	f	0	125	125	2024-10-02	6	125	4
+1415	\N	Walnut Halves	https://www.eatthismuch.com/calories/walnuts-2685	\N	f	0	28	100	2024-10-02	4	100	1048576
 1416	\N	Fresh Radicchio	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	3
 1417	\N	Fresh Red Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/	\N	f	0	45	45	2024-11-28	0	90	2
 1418	\N	Radicchio | Red Endives	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	4	4	2024-09-26	7	64	3
@@ -1159,3 +1159,7 @@
 1420	\N	Cacao Powder | Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534	\N	f	0	28	86	2025-06-20	4	86	16384
 1421	\N	Small Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	12.5	8	2025-11-04	0	125	131072
 1422	\N	Large Cinnamon Sticks	https://www.eatthismuch.com/calories/cinnamon-185	\N	f	0	25	8	2025-11-04	0	125	131072
+1452	\N	Cornish Game Hens	https://www.eatthismuch.com/calories/whole-chicken-134184	\N	f	0	1344	85	2025-03-18	0	224	268435456
+1453	\N	Gluten-Free Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/	\N	f	0	80	80	2025-08-15	6	80	16288
+1454	\N	Gluten-Free Porridge Oats	https://www.eatthismuch.com/calories/rolled-oats-5821	\N	f	0	28	80	2025-07-08	4	80	1024
+1455	\N	Gluten-Free Steel-Cut Oats	aka. pinhead oats. https://www.eatthismuch.com/calories/oats-4803	\N	f	0	156	156	2024-10-11	6	156	4

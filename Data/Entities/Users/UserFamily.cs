@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Users;
 
 [Table("user_family")]
 public class UserFamily
@@ -41,10 +41,10 @@ public class UserFamily
     [Range(Consts.CaloriesPerDayMin, Consts.CaloriesPerDayMax)]
     public int CaloriesPerDay { get; init; } = Consts.CaloriesPerDayDefault;
 
-    [ForeignKey(nameof(Entities.User.User.Id))]
+    [ForeignKey(nameof(Users.User.Id))]
     public int UserId { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserFamilies))]
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserFamilies))]
     public virtual User User { get; private init; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);

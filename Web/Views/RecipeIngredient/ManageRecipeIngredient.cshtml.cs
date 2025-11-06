@@ -1,7 +1,7 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.User;
-using Data.Entities.User;
+using Data.Entities.Users;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.RecipeIngredient;
@@ -10,18 +10,18 @@ public class UserManageRecipeIngredientViewModel
 {
     public required string Token { get; init; }
 
-    public required Data.Entities.User.User User { get; init; }
+    public required Data.Entities.Users.User User { get; init; }
 
     [Display(ShortName = "Substitute", Name = "Substitute Ingredient")]
     public required UserRecipeIngredientViewModel UserRecipeIngredient { get; init; }
 
     [Display(Name = "Recipe Ingredient", Description = "Ignore this recipe's ingredient.")]
-    public required Data.Entities.Recipe.RecipeIngredient RecipeIngredient { get; init; }
+    public required Data.Entities.Recipes.RecipeIngredient RecipeIngredient { get; init; }
 
     /// <summary>
     /// Recipes that the user is able to select as an ingredient alternative.
     /// </summary>
-    public required IList<Data.Entities.Recipe.Recipe> Recipes { get; init; }
+    public required IList<Data.Entities.Recipes.Recipe> Recipes { get; init; }
 
     public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
     public required IList<NewsletterRecipeDto> AltRecipes { get; init; }
@@ -31,7 +31,7 @@ public class UserManageRecipeIngredientViewModel
     /// <summary>
     /// The ingredient's alternative ingredients.
     /// </summary>
-    public required IList<Data.Entities.Ingredient.Ingredient> Ingredients { get; init; }
+    public required IList<Data.Entities.Ingredients.Ingredient> Ingredients { get; init; }
 
     /// <summary>
     /// Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.

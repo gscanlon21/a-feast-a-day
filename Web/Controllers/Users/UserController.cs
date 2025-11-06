@@ -1,5 +1,5 @@
 ﻿using Data;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ using Web.Views.Shared.Components.Advanced;
 using Web.Views.Shared.Components.Edit;
 using Web.Views.User;
 
-namespace Web.Controllers.User;
+namespace Web.Controllers.Users;
 
 [Route($"u/{UserRoute}", Order = 1)]
 [Route($"user/{UserRoute}", Order = 2)]

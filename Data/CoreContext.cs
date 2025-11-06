@@ -1,9 +1,9 @@
 ﻿using Data.Entities.Footnote;
 using Data.Entities.Genetics;
-using Data.Entities.Ingredient;
+using Data.Entities.Ingredients;
 using Data.Entities.Newsletter;
-using Data.Entities.Recipe;
-using Data.Entities.User;
+using Data.Entities.Recipes;
+using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Reflection;

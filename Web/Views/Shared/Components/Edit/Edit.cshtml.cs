@@ -1,7 +1,7 @@
 ﻿using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using Web.Views.Index;
@@ -17,7 +17,7 @@ public class EditComponentViewModel
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public EditComponentViewModel() { }
 
-    public EditComponentViewModel(Data.Entities.User.User user, string token)
+    public EditComponentViewModel(Data.Entities.Users.User user, string token)
     {
         User = user;
         Token = token;
@@ -38,7 +38,7 @@ public class EditComponentViewModel
     }
 
     [ValidateNever]
-    public Data.Entities.User.User User { get; set; } = null!;
+    public Data.Entities.Users.User User { get; set; } = null!;
 
     public string Token { get; set; } = null!;
 

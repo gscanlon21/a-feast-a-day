@@ -52,8 +52,8 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     [JsonIgnore, InverseProperty(nameof(Newsletter.UserFeastRecipe.UserFeastRecipeIngredients))]
     public virtual UserFeastRecipe UserFeastRecipe { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Ingredient.Ingredient.UserFeastRecipeIngredients))]
-    public virtual Ingredient.Ingredient Ingredient { get; private init; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.UserFeastRecipeIngredients))]
+    public virtual Ingredients.Ingredient Ingredient { get; private init; } = null!;
 
     #endregion
 
@@ -65,7 +65,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public Measure GetMeasure => Measure;
 
     [NotMapped]
-    public Ingredient.Ingredient? GetIngredient => Ingredient;
+    public Ingredients.Ingredient? GetIngredient => Ingredient;
 
     private string GetDebuggerDisplay()
     {

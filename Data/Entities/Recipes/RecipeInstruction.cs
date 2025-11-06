@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Recipe;
+namespace Data.Entities.Recipes;
 
 /// <summary>
 /// A recipe's instructions.
@@ -41,7 +41,7 @@ public class RecipeInstruction
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.Instructions))]
+    [JsonIgnore, InverseProperty(nameof(Recipes.Recipe.Instructions))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
     #endregion

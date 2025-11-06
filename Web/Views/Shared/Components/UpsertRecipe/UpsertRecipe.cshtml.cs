@@ -1,6 +1,6 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
-using Data.Entities.Recipe;
+using Data.Entities.Recipes;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
@@ -13,7 +13,7 @@ public class UpsertRecipeViewModel
 {
     public Section Section { get; init; }
     public string Token { get; init; } = null!;
-    public Data.Entities.User.User User { get; init; } = null!;
+    public Data.Entities.Users.User User { get; init; } = null!;
 
     public UpsertRecipeModel Recipe { get; set; } = null!;
 
@@ -67,7 +67,7 @@ public class UpsertRecipeModel : IValidatableObject
     public IList<RecipeInstruction> Instructions { get; set; } = [];
 
     [JsonInclude, ValidateNever]
-    public IList<Data.Entities.Recipe.RecipeIngredient> RecipeIngredients { get; set; } = [];
+    public IList<Data.Entities.Recipes.RecipeIngredient> RecipeIngredients { get; set; } = [];
 
     [NotMapped]
     public Section[]? SectionBinder

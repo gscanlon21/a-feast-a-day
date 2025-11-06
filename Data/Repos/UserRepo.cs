@@ -2,9 +2,9 @@
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
-using Data.Entities.Ingredient;
+using Data.Entities.Ingredients;
 using Data.Entities.Newsletter;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Data.Models.Newsletter;
 using Data.Query;
 using Microsoft.EntityFrameworkCore;

@@ -1,7 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Data.Entities.Newsletter;
-using Data.Entities.Recipe;
-using Data.Entities.User;
+using Data.Entities.Recipes;
+using Data.Entities.Users;
 
 namespace Data.Query.Options;
 

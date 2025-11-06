@@ -1,5 +1,5 @@
 ﻿using Data;
-using Data.Entities.Recipe;
+using Data.Entities.Recipes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Recipe;
@@ -24,7 +24,7 @@ public class RecipeIngredientsViewComponent : ViewComponent
     /// </summary>
     public const string Name = "RecipeIngredients";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
     {
         var recipeIngredients = await _context.UserRecipeIngredients
             .Include(ri => ri.SubstituteIngredient).Include(ri => ri.SubstituteRecipe)

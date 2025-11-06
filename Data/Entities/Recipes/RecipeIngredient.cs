@@ -1,5 +1,5 @@
 ﻿using Core.Models.User;
-using Data.Entities.User;
+using Data.Entities.Users;
 using Fractions;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Recipe;
+namespace Data.Entities.Recipes;
 
 /// <summary>
 /// A recipe's ingredients.
@@ -85,13 +85,13 @@ public class RecipeIngredient
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredients))]
+    [JsonIgnore, InverseProperty(nameof(Recipes.Recipe.RecipeIngredients))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
-    [JsonInclude, InverseProperty(nameof(Entities.Ingredient.Ingredient.RecipeIngredients))]
-    public virtual Ingredient.Ingredient Ingredient { get; set; } = null!;
+    [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.RecipeIngredients))]
+    public virtual Ingredients.Ingredient Ingredient { get; set; } = null!;
 
-    [JsonInclude, InverseProperty(nameof(Entities.Recipe.Recipe.RecipeIngredientRecipes))]
+    [JsonInclude, InverseProperty(nameof(Recipes.Recipe.RecipeIngredientRecipes))]
     public virtual Recipe IngredientRecipe { get; set; } = null!;
 
     [JsonInclude, InverseProperty(nameof(UserRecipeIngredient.RecipeIngredient))]

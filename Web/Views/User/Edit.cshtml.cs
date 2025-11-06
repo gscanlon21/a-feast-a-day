@@ -10,13 +10,13 @@ public class UserEditViewModel
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserEditViewModel() { }
 
-    public UserEditViewModel(Data.Entities.User.User user)
+    public UserEditViewModel(Data.Entities.Users.User user)
     {
         User = user;
     }
 
     [ValidateNever]
-    public Data.Entities.User.User User { get; set; } = null!;
+    public Data.Entities.Users.User User { get; set; } = null!;
 
     /// <summary>
     /// If null, user has not yet tried to update.

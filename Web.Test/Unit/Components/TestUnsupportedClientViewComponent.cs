@@ -1,4 +1,5 @@
-﻿using Web.Components.User;
+﻿using Data.Entities.Users;
+using Web.Components.User;
 using Web.Views.Shared.Components.UnsupportedClient;
 
 namespace Web.Test.Unit.Components;
@@ -9,16 +10,16 @@ public class TestUnsupportedClientViewComponent
     [TestMethod]
     public async Task GetUnsupportedClientStatus_WhenUserIsGmail_ReturnsUnsupportedClientStatus()
     {
-        var user = new Data.Entities.User.User("test@gmail.com", acceptedTerms: true);
+        var user = new User("test@gmail.com", acceptedTerms: true);
         var status = UnsupportedClientViewComponent.GetUnsupportedClient(user);
-        Assert.AreEqual(status, UnsupportedClientViewModel.UnsupportedClient.Gmail);
+        Assert.AreEqual(UnsupportedClientViewModel.UnsupportedClient.Gmail, status);
     }
 
     [TestMethod]
     public async Task GetUnsupportedClientStatus_WhenUserIsFastmail_ReturnsSupportedClientStatus()
     {
-        var user = new Data.Entities.User.User("test@fastmail.com", acceptedTerms: true);
+        var user = new User("test@fastmail.com", acceptedTerms: true);
         var status = UnsupportedClientViewComponent.GetUnsupportedClient(user);
-        Assert.AreEqual(status, UnsupportedClientViewModel.UnsupportedClient.None);
+        Assert.AreEqual(UnsupportedClientViewModel.UnsupportedClient.None, status);
     }
 }

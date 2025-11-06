@@ -1,5 +1,5 @@
 ﻿using Data;
-using Data.Entities.Recipe;
+using Data.Entities.Recipes;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +24,7 @@ public class ManageRecipeViewComponent : ViewComponent
     /// </summary>
     public const string Name = "ManageRecipe";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
     {
         var userRecipe = await _context.UserRecipes.AsNoTracking()
             .Where(r => r.RecipeId == parameters.RecipeId)

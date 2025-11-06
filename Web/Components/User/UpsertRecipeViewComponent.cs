@@ -1,7 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
-using Data.Entities.Recipe;
+using Data.Entities.Recipes;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -30,7 +30,7 @@ public class UpsertRecipeViewComponent : ViewComponent
     public const string Name = "UpsertRecipe";
 
     /// <param name="recipe">The existing recipe to edit.</param>
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, Recipe? recipe = null, Section section = Section.None)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Recipe? recipe = null, Section section = Section.None)
     {
         // User must have created the recipe to be able to edit it.
         if (recipe != null && user.Id != recipe.UserId && !user.Features.HasFlag(Features.Admin))
@@ -84,7 +84,7 @@ public class UpsertRecipeViewComponent : ViewComponent
         });
     }
 
-    private async Task<IList<SelectListItem>> GetRecipeSelect(Data.Entities.User.User user)
+    private async Task<IList<SelectListItem>> GetRecipeSelect(Data.Entities.Users.User user)
     {
         return (await _context.Recipes.AsNoTracking().TagWithCallSite() // Has any flag:
             .Where(r => r.UserId == null || r.Instructions.All(i => (i.Equipment & user.Equipment) != 0 || i.Equipment == Equipment.None))
@@ -97,7 +97,7 @@ public class UpsertRecipeViewComponent : ViewComponent
             .ToList();
     }
 
-    private async Task<IList<SelectListItem>> GetIngredientSelect(Data.Entities.User.User user)
+    private async Task<IList<SelectListItem>> GetIngredientSelect(Data.Entities.Users.User user)
     {
         return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
             .Where(i => i.UserId == null || i.UserId == user.Id)

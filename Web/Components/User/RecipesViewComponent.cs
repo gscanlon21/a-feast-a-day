@@ -28,7 +28,7 @@ public class RecipesViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Recipes";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
     {
         var all = bool.TryParse(Request.Query["all"], out bool allTmp)
             && allTmp && user.Features.HasFlag(Features.Admin);

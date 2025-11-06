@@ -10,7 +10,7 @@ public class MicrobiomeViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Microbiome";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.User.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
     {
         return View("Microbiome", new MicrobiomeViewModel()
         {

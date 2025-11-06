@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Users;
 
 /// <summary>
 /// User's preferences for a recipe.
@@ -61,10 +61,10 @@ public class UserRecipe
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Entities.Recipe.Recipe.UserRecipes))]
-    public virtual Recipe.Recipe Recipe { get; set; } = null!;
+    [JsonIgnore, InverseProperty(nameof(Recipes.Recipe.UserRecipes))]
+    public virtual Recipes.Recipe Recipe { get; set; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipes))]
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserRecipes))]
     public virtual User User { get; private init; } = null!;
 
     #endregion

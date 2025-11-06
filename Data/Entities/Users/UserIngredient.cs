@@ -1,11 +1,11 @@
 ﻿using Core.Models.User;
-using Data.Entities.Recipe;
+using Data.Entities.Recipes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.User;
+namespace Data.Entities.Users;
 
 /// <summary>
 /// Not using RecipeIngredientId because we want to be able to 
@@ -44,17 +44,17 @@ public class UserRecipeIngredient
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Entities.User.User.UserRecipeIngredients))]
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserRecipeIngredients))]
     public virtual User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.UserRecipeIngredients))]
     public virtual RecipeIngredient RecipeIngredient { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(Ingredient.Ingredient.UserSubstituteIngredients))]
-    public virtual Ingredient.Ingredient? SubstituteIngredient { get; private init; }
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.UserSubstituteIngredients))]
+    public virtual Ingredients.Ingredient? SubstituteIngredient { get; private init; }
 
-    [JsonIgnore, InverseProperty(nameof(Recipe.Recipe.UserSubstituteRecipes))]
-    public virtual Recipe.Recipe? SubstituteRecipe { get; private init; }
+    [JsonIgnore, InverseProperty(nameof(Recipe.UserSubstituteRecipes))]
+    public virtual Recipe? SubstituteRecipe { get; private init; }
 
     #endregion Navigation Properties
 
