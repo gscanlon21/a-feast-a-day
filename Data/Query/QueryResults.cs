@@ -93,6 +93,10 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required int QuantityNumerator { get; set; }
     public required int QuantityDenominator { get; set; }
     public required int? RawIngredientRecipeId { get; init; }
+
+    /// <summary>
+    /// This ingredient should either be swapped or ignored by the user.
+    /// </summary>
     public bool IsUnwantedAndHasAlternatives { get; set; }
 
     public QueryResults? IngredientRecipe { get; internal set; }

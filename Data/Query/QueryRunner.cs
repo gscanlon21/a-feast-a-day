@@ -231,6 +231,7 @@ public class QueryRunner(Section section)
                             || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens))
                         {
                             // Substitution and alternative ingredients don't have user ingredient records.
+                            // This includes the base ingredient if it has substitutions available or if it is ignorable.
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
                             if (substitution?.Ingredient.Equals(recipeIngredient.Ingredient) == true)
                             {
@@ -523,6 +524,7 @@ public class QueryRunner(Section section)
 
     /// <summary>
     /// Get the alternative ingredients for all of the ingredients, ignoring ignored alternative ingredients.
+    /// Includes the base recipe ingredient's ingredient if it has substitutions available or if it is ignorable.
     /// </summary>
     private async Task<IDictionary<int, IngredientUserIngredient?>> GetAltIngredientForRecipeIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
@@ -538,10 +540,12 @@ public class QueryRunner(Section section)
                 ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).QuantityNumerator,
                 ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).QuantityDenominator,
                 ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
+                ri.Optional,
             })
             .Select(ri => new
             {
                 ri.Id,
+                ri.Optional,
                 Ingredient = new IngredientUserIngredient() { Scale = 1, Ingredient = ri.Ingredient },
                 HasAlternatives = ri.Ingredient.Alternatives.Any(i => (i.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
                 SubIngredient = ri.SubstituteIngredient == null ? null : new IngredientUserIngredient()
@@ -560,8 +564,9 @@ public class QueryRunner(Section section)
                     return ri.SubIngredient;
                 }
 
-                // If there are alternatives availble, return the base ingredient so the user can pick one.
-                return ri.HasAlternatives ? ri.Ingredient : null;
+                // If there are alternatives availble or the ingredient is ignorable,
+                // ... return the base ingredient so the user can pick another one.
+                return (ri.HasAlternatives || ri.Optional) ? ri.Ingredient : null;
             });
     }
 
