@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict VcdROHnkM7W4hNKAqJJn3LmQwyd5kUivUvIajIUsFfwE69uoqHrl1g0lexKa9q6
+\restrict QwfAk6vIdOctvYVHN9RvmtFbXqZY8odnFrfsjQ5r9JEewT0hk7aZAm9yCK4zmFl
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -1015,6 +1015,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 460	389	1	f
 209	389	1	f
 390	119	1	f
+4	1463	1	f
+60	1464	1	f
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -1136,6 +1138,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1414	1459	1	f
 1414	1458	1	f
 1414	1457	1	f
+1463	1465	1	f
+1465	1463	1	f
+4	1465	1	f
 690	39	1	f
 690	681	1	f
 1008	871	1	f
@@ -2037,6 +2042,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1002	39	1	f
 1002	469	1	f
 1002	470	1	f
+1468	1467	1	f
+1468	1466	1	f
+1467	1466	1	f
+1466	1467	1	f
 \.
 
 
@@ -11078,6 +11087,39 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 15988	72	62	\N	3	3
 15989	1461	2047	\N	3	10
 15990	1322	2047	\N	3	59
+15991	159	68719476736	\N	2	2
+15992	159	34359738368	\N	2	170
+15993	159	2	\N	3	9
+15994	159	1	\N	3	1
+15995	159	4294967296	\N	2	11
+15996	159	2199023255552	\N	2	0.4
+15997	159	48	\N	3	1
+15998	159	14	\N	3	11
+15999	159	1984	\N	3	0.2
+16000	159	62	\N	3	11
+16001	159	256	\N	3	0.1
+16002	159	2251799813685248	\N	2	6
+16003	159	72057594037927936	\N	3	0.1
+16004	159	4611686018427387904	\N	3	0.1
+16005	159	16384	\N	1	6889
+16006	159	274877906944	\N	1	0.1
+16007	159	17179869184	\N	2	15
+16008	159	4398046511104	\N	2	0.1
+16009	159	70368744177664	\N	2	17
+16010	159	8796093022208	\N	1	1
+16011	159	17592186044416	\N	2	0.2
+16012	159	65536	\N	1	461
+16013	159	262144	\N	2	0.1
+16014	159	1048576	\N	2	0.3
+16015	159	2097152	\N	2	0.3
+16016	159	4194304	\N	2	0.1
+16017	159	16777216	\N	1	5
+16018	159	67108864	\N	2	12
+16019	159	536870912	\N	2	0.1
+16020	159	1536	\N	3	0.1
+16021	159	3221225472	\N	1	0.2
+16022	159	1792	\N	3	0.2
+16023	159	229376	\N	1	43
 \.
 
 
@@ -14773,9 +14815,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7706	6	851	2	1	\N	123	f	\N	4
 7707	0	851	1	8	\N	985	f	\N	5
 7157	8	708	1	2	, juiced	4	f	\N	3
-7726	0	855	1	6	\N	388	f	\N	0
-7727	5	855	2	3	(baby Yukon or white baby potatoes work best) Cut in half (or quarter if larger)	1260	f	\N	1
-7728	0	855	1	1	(LARGE LEMONS), juiced	4	f	\N	2
 6961	6	648	3	4	, for the crust	1393	f	\N	5
 6962	6	648	1	5	, for the filling	1392	f	\N	6
 6963	6	648	4	1	, for the filling	215	t	\N	7
@@ -14791,12 +14830,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7718	4	853	1	1	\N	13	f	\N	2
 7719	0	853	1	1	\N	975	f	\N	3
 7720	7	853	1	2	(TIKKA CURRY PASTE	124	f	\N	4
-7729	0	855	1	1	, juiced	1352	f	\N	3
-7730	7	855	1	1	(SPICY BROWN MUSTARD	60	f	\N	4
-7731	7	855	1	2	\N	278	f	\N	5
-7732	8	855	8	1	\N	692	f	\N	6
-7733	7	855	1	1	\N	322	t	\N	7
-7734	4	855	1	1	, steamed	1290	f	\N	8
 7735	0	856	1	1	(BUTTERMILK BISCUIT)	303	f	\N	0
 7736	8	856	1	1	(WHIPPED BUTTER	345	f	\N	1
 7737	0	856	1	1	(ALL-NATURAL PORK SAUSAGE PATTY)	1358	f	\N	2
@@ -14819,6 +14852,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7754	8	835	1	1	\N	77	f	\N	6
 7755	8	835	4	1	\N	692	t	\N	7
 7760	6	858	1	1	\N	123	f	\N	0
+7726	0	855	1	6	\N	388	f	\N	0
 6786	6	630	1	1	, roughly chopped, for topping	89	f	\N	10
 7447	4	752	1	10	\N	261	f	\N	4
 7761	0	859	1	1	, diced	598	f	\N	0
@@ -14826,10 +14860,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7763	0	859	1	3	, diced small	150	f	\N	2
 7764	0	859	1	3	, peeled and minced	5	f	\N	3
 7765	5	859	1	1	(RAW RED BEANS), rinsed	1078	f	\N	4
+7727	5	855	2	3	, cut in half (or quarter if larger)	1468	f	\N	1
+7728	0	855	1	1	, juiced	1463	f	\N	2
 7708	0	852	1	1	\N	472	f	\N	0
 7709	7	852	1	3	, whipped	1002	f	\N	1
 7710	6	852	4	1	, quartered	10	f	\N	2
 7711	6	852	4	1	, diced	1362	f	\N	3
+7729	0	855	1	1	, juiced	1352	f	\N	3
+7730	7	855	1	1	\N	1464	f	\N	4
+7731	7	855	1	2	\N	278	f	\N	5
 7773	8	860	8	1	\N	285	f	\N	2
 7774	6	860	1	1	\N	1290	f	\N	3
 7775	7	860	1	2	\N	123	f	\N	4
@@ -14871,6 +14910,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7798	7	751	1	1	\N	278	f	\N	6
 7799	8	751	8	1	\N	692	t	\N	7
 7800	6	42	4	5	\N	123	f	\N	5
+7732	8	855	8	1	\N	692	f	\N	6
+7733	7	855	1	1	\N	322	t	\N	7
+7734	4	855	1	1	, steamed	1290	f	\N	8
 \.
 
 
@@ -16773,10 +16815,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4240	Remove the watermelon rind, picking out any large seeds, then slice into ¾-inch cubes, adding to the bowl as you go.	854	2	0
 4241	Toss everything together with a good pinch of sea salt and black pepper, and 2 tablespoons each of extra virgin olive oil and red wine vinegar. 	854	3	0
 4242	Divide between plates or arrange on a large platter and spoon over the juices. Tear over the mozzarella, season with extra pepper, and scatter over the reserved celery leaves and fennel tops (if you have any).	854	4	0
-4243	Preheat oven to 400 degrees, place oven rack in center position	855	0	2
+4243	Preheat oven to 400°F, place oven rack in center position.	855	0	2
 4244	While oven heats: place chicken thighs skin side up in roasting pan. Add cut potatoes all around and in between chicken pieces. In a bowl, juice your lemon and orange. Add spicy brown mustard and whisk. Pour over chicken and potatoes.	855	1	0
-4245	Drizzle potatoes and chicken with olive oil, then sprinkle generously with oregano, sea salt and pepper. Cover tightly with foil and place in the oven for 60 minutes. Remove foil and cook for 30 more minutes to brown chicken and potatoes.	855	2	2
-4246	en minutes before chicken is done, steam broccoli until desired tenderness is achieved. When chicken is done, remove form oven. Add broccoli to pan and serve. Be sure to spoon the liquid at the bottom of the pan over broccoli. Enjoy!	855	3	4
 4265	Boil the water in a kettle.	858	0	4
 4268	Warm a medium skillet over medium-high heat. Add 1 tablespoon of olive oil and the steak. Season the steak with salt and pepper. Cook only until browned, about 3–5 minutes. Take the steak out of the pan and set aside.	860	0	4
 4254	Preheat broiler (if desired).	856	0	0
@@ -16794,11 +16834,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4270	Wipe the pan out with a paper towel and return it to the heat. Add the remaining 1 tablespoon of oil along with the onion. Cook until onions are soft, about 3 minutes. Then, return the cooked steak to the pot.	860	2	4
 4271	Add the garlic and cook for 1 more minute. Return the broccoli to the pan along with the stir-fry sauce and cook for 2 more minutes.	860	3	4
 4036	Toast the pitas until golden, then slice into strips and arrange around the edges of two plates.	751	1	2
+4245	Drizzle potatoes and chicken with olive oil, then sprinkle generously with oregano, sea salt and pepper. Cover tightly with foil and place in the oven for 60 minutes. Remove foil and cook for 30 more minutes to brown chicken and potatoes.	855	2	2
 4272	Taste the stir-fry and season with salt and pepper as needed.	860	4	0
 4273	Warm a large skillet or wok over medium-high heat. Add the oil and chicken and cook for 4 to 5 minutes, until the chicken is browned.	861	0	4
 3689	Using a metal spoon or spatula, fold the egg whites evenly into the yolk mixture. Spoon into the prepared dishes. Bake the souffles for 12–15 minutes, until well risen and lightly browned. Serve at once.	627	3	2
 4266	Prep pepper, yellow onion, celery, and garlic. Add to crock pot. Add beans, Creole seasoning, sausage and broth. Place lid on crock pot and cook for seven hours on high heat.	859	0	1024
 4267	When ready to serve, cook rice and slice green onions for garnish. Serve!	859	1	0
+4246	Ten minutes before chicken is done, steam broccoli until desired tenderness is achieved. When chicken is done, remove from oven. Add broccoli to pan and serve. Be sure to spoon the liquid at the bottom of the pan over the broccoli. Enjoy!	855	3	4
 4250	 Sit the chicken legs directly on the bars of the oven, skin-side up, with the pan of potatoes directly underneath. Bake 40 minutes.	835	2	2
 4251	When the time's up, mix up the potatoes in the tasty pan juices, then sit the chicken on top. 	835	3	0
 4252	Strip the rosemary leaves off the sprigs, use a vegetable peeler to peel strips of lemon zest, then toss both in 1 teaspoon of olive oil and sprinkle into the pan. 	835	4	0
@@ -16872,7 +16914,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 15990, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16023, true);
 
 
 --
@@ -17536,5 +17578,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict VcdROHnkM7W4hNKAqJJn3LmQwyd5kUivUvIajIUsFfwE69uoqHrl1g0lexKa9q6
+\unrestrict QwfAk6vIdOctvYVHN9RvmtFbXqZY8odnFrfsjQ5r9JEewT0hk7aZAm9yCK4zmFl
 

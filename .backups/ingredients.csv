@@ -152,7 +152,7 @@
 156	\N	Brussel Sprouts	https://www.eatthismuch.com/calories/brussels-sprouts-1893	\N	f	0	19	88	2024-12-10	0	88	2
 157	\N	Fresh Pears	Missing minor nutrients. https://www.eatthismuch.com/calories/pears-1499	\N	f	0	178	178	2024-10-08	0	178	1
 158	\N	Sunflower Seeds	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	33	2024-09-12	6	132	1048576
-159	\N	Watermelon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2024-08-26	0	152	1
+159	\N	Watermelon	https://www.eatthismuch.com/calories/watermelon,1566	\N	f	0	4520	152	2025-11-09	0	152	1
 160	\N	Cow Milk (1%)	https://www.eatthismuch.com/food/nutrition/1-milk,129602/	\N	f	0	240	240	2025-07-10	6	240	4194304
 161	\N	Almond Milk	https://www.eatthismuch.com/calories/almond-milk-5812	\N	f	0	240	240	2024-10-19	6	240	4194304
 162	\N	Soy Milk	https://www.eatthismuch.com/calories/soy-milk-6715	\N	f	32768	240	250	2025-01-04	6	240	2097152
@@ -958,7 +958,7 @@
 1188	\N	Self-Rising Flour	https://www.eatthismuch.com/calories/wheat-flour-4926	\N	t	262176	28	125	2025-06-25	4	125	32768
 1189	\N	Mango Chutney	https://www.eatthismuch.com/calories/mangos-1448	\N	f	0	207	207	2025-03-26	0	207	1
 1190	\N	Veal Escalopes	https://www.eatthismuch.com/calories/chicken-breast-boneless-skinless-100467	\N	f	0	112	112	2025-03-20	0	224	268435456
-1191	\N	Oyster Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2024-08-26	0	86	3
+1191	\N	Oyster Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-09	0	86	3
 1192	\N	Marsala Wine	https://www.eatthismuch.com/calories/red-wine-3070	\N	f	0	29.4	147	2024-12-18	9	235.2	524288
 1193	\N	Marsala Wine | Dry Sherry	https://www.eatthismuch.com/calories/red-wine-3070	\N	f	0	29.4	147	2024-12-18	9	235.2	524288
 1194	\N	Crème Fraîche | Sour Cream	https://www.eatthismuch.com/calories/creme-fraiche-1706554	\N	f	324	28	30	2024-11-16	4	240	29360128
@@ -1170,3 +1170,9 @@
 1460	\N	Large Crown Prince Squash	https://www.eatthismuch.com/calories/squash-2291	\N	f	0	323	196	2025-11-03	0	113	2
 1461	\N	Mild Harissa	https://www.eatthismuch.com/calories/harissa-mild-2121760	\N	f	0	28	15	2024-11-10	4	240	8192
 1462	\N	Spicy Harissa	https://www.eatthismuch.com/calories/harissa-3101216	\N	f	0	28	12	2024-11-10	4	224	8192
+1463	\N	Large Lemons	https://www.eatthismuch.com/calories/lemons-1433	\N	f	0	108	108	2024-10-22	0	216	1
+1464	\N	Spicy Brown Mustard	https://www.eatthismuch.com/calories/mustard,220	\N	t	0	28	15	2025-09-22	4	240	32
+1465	\N	Small Lemons	https://www.eatthismuch.com/calories/lemons-1433	\N	f	0	108	108	2024-10-22	0	216	1
+1466	\N	Baby White Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
+1467	\N	Baby Yukon Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
+1468	\N	Baby Yukon Potatoes | Baby White Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/	\N	f	0	170	170	2024-12-21	0	170	1
