@@ -1,4 +1,5 @@
 ﻿using Core.Dtos.Ingredient;
+using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
@@ -263,7 +264,7 @@ public partial class NewsletterRepo
         using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        // Do a quick check that there are no invalid alternative ingredients (is an alt. of itself) that may mess with json serilization cycles.
+        // Do a quick check that there are no invalid alternative ingredients (is an altternative of itself).
         var invalidAlternatives = await _context.IngredientAlternatives.Where(ia => ia.IngredientId == ia.AlternativeIngredientId).ToListAsync();
         foreach (var invalidAlternative in invalidAlternatives)
         {
@@ -292,7 +293,47 @@ public partial class NewsletterRepo
             .Take(2))
         {
             debugIngredient.LastUpdated = DateHelpers.Today;
-            yield return debugIngredient.AsType<IngredientDto>()!;
+
+            // .AsType Mapper returns a cycle error
+            // even with ReferenceHandler.Preserve.
+            yield return new IngredientDto()
+            {
+                Id = debugIngredient.Id,
+                Name = debugIngredient.Name,
+                Notes = debugIngredient.Notes,
+                Category = debugIngredient.Category,
+                Allergens = debugIngredient.Allergens,
+                GramsPerCup = debugIngredient.GramsPerCup,
+                DefaultMeasure = debugIngredient.DefaultMeasure,
+                GramsPerMeasure = debugIngredient.GramsPerMeasure,
+                GramsPerServing = debugIngredient.GramsPerServing,
+                SkipShoppingList = debugIngredient.SkipShoppingList,
+                Nutrients = debugIngredient.Nutrients.Select(n => new NutrientDto()
+                {
+                    Id = n.Id,
+                    Value = n.Value,
+                    Notes = n.Notes,
+                    Measure = n.Measure,
+                    Nutrients = n.Nutrients,
+                    IngredientId = n.IngredientId,
+                }).ToList(),
+                Alternatives = debugIngredient.Alternatives.Select(a => new IngredientAlternativeDto()
+                {
+                    Scale = a.Scale,
+                    IngredientId = a.IngredientId,
+                    AlternativeIngredientId = a.AlternativeIngredientId,
+                    AlternativeIngredient = new IngredientDto(a.AlternativeIngredient.Name),
+                    Ingredient = new IngredientDto(a.Ingredient.Name),
+                }).ToList(),
+                AlternativeIngredients = debugIngredient.AlternativeIngredients.Select(ai => new IngredientAlternativeDto()
+                {
+                    Scale = ai.Scale,
+                    IngredientId = ai.IngredientId,
+                    AlternativeIngredientId = ai.AlternativeIngredientId,
+                    AlternativeIngredient = new IngredientDto(ai.AlternativeIngredient.Name),
+                    Ingredient = new IngredientDto(ai.Ingredient.Name),
+                }).ToList(),
+            };
         }
 
         await scopedCoreContext.SaveChangesAsync();

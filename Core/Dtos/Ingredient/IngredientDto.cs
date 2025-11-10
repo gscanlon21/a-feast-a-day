@@ -11,6 +11,12 @@ namespace Core.Dtos.Ingredient;
 [DebuggerDisplay("{Name,nq}")]
 public class IngredientDto
 {
+    public IngredientDto() { }
+    public IngredientDto(string name)
+    {
+        Name = name;
+    }
+
     public int Id { get; init; }
 
     public string Name { get; set; } = null!;
