@@ -263,6 +263,13 @@ public partial class NewsletterRepo
         using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
+        // Do a quick check that there are no invalid alternative ingredients (is an alt. of itself) that may mess with json serilization cycles.
+        var invalidAlternatives = await _context.IngredientAlternatives.Where(ia => ia.IngredientId == ia.AlternativeIngredientId).ToListAsync();
+        foreach (var invalidAlternative in invalidAlternatives)
+        {
+            UserLogs.Log(user, $"AlternativeIngredient:{invalidAlternative.IngredientId}:{invalidAlternative.AlternativeIngredientId} has an invalid configuration: 0.");
+        }
+
         // OrderBy must come after the query or you get cartesian explosion.
         var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)

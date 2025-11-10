@@ -13,8 +13,6 @@ public class IngredientDto
 {
     public int Id { get; init; }
 
-    public int RecipeId { get; init; }
-
     public string Name { get; set; } = null!;
 
     public bool SkipShoppingList { get; set; }
@@ -34,6 +32,11 @@ public class IngredientDto
     public string? Notes { get; set; } = null;
 
     /// <summary>
+    /// Nutrients per Serving Size (Grams).
+    /// </summary>
+    public ICollection<NutrientDto> Nutrients { get; set; } = [];
+
+    /// <summary>
     /// These are the alternate ingredients.
     /// </summary>
     public ICollection<IngredientAlternativeDto> Alternatives { get; init; } = [];
@@ -42,11 +45,6 @@ public class IngredientDto
     /// These are what ingredients this ingredient is an alternate of.
     /// </summary>
     public ICollection<IngredientAlternativeDto> AlternativeIngredients { get; init; } = [];
-
-    /// <summary>
-    /// Nutrients per Serving Size (Grams).
-    /// </summary>
-    public ICollection<NutrientDto> Nutrients { get; set; } = [];
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is IngredientDto other

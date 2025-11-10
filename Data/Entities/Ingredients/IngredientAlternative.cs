@@ -55,7 +55,7 @@ public class IngredientAlternative
     {
         if (Ingredient != null && AlternativeIngredient != null)
         {
-            return $"{Ingredient} alt is {AlternativeIngredient}";
+            return $"{Ingredient.Name} alt is {AlternativeIngredient.Name}";
         }
 
         return $"{IngredientId} alt is {AlternativeIngredientId}";
