@@ -447,7 +447,7 @@
 629	Stovetop Chickpeas	\N	\N	\N	0	120	60	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
 630	Pecan Toffee Shortbread	\N	\N	\N	64	20	10	10	t	\N	0	\N	f	f
 631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
-632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
+632	Steak Sandwiches	This sandwich is especially good when the baguette is brushed with a little Dijon mustard and topped with Swiss cheese.	\N	\N	8	20	40	2	t	\N	0	\N	f	f
 633	Pork and Pineapple Coconut Curry	\N	\N	\N	8	17	3	4	t	\N	0	\N	f	f
 634	Satay Sauce	\N	\N	\N	0	5	5	1	t	\N	6	\N	t	f
 635	Pork and Pineapple Satay	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
@@ -486,7 +486,7 @@
 700	Peach Galette	Swap out the ricotta cheese for 8 ounces cream cheese mixed with 2 tablespoons heavy cream.	Has weird ingredients.	\N	64	35	20	8	t	\N	0	\N	f	f
 701	No-Bake Chocolate Cheesecake Cups	You can buy chocolate cookie crumbs in the baking asile of the grocery store. Any leftover cookie crumbs can be used as a topping for ice cream or vanilla yogurt.	\N	\N	64	0	75	4	t	\N	0	\N	f	f
 702	Chocolate Truffles	255min prep time. Store the truffles in the fridge in an airtight container.	\N	\N	64	5	15	2	t	\N	0	\N	f	f
-703	Killer Guacamole	\N	\N	\N	0	0	10	12	t	\N	4	\N	t	f
+703	Killer Guacamole	\N	\N	\N	0	0	10	12	t	guacamole.jpg	4	\N	t	f
 704	Bacon and Corn Chowder	\N	\N	\N	8	35	10	4	t	\N	0	\N	f	f
 705	Quinoa Tabbouloeh	\N	\N	\N	16	0	70	2	t	\N	6	\N	f	f
 706	White Bean and Chorizo Soup	\N	\N	\N	8	45	10	6	t	white-bean-chorizo-soup.jpg	0	\N	f	f
@@ -498,7 +498,7 @@
 712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	\N	6	\N	f	f
 713	Mushroom Ragu	\N	\N	\N	0	30	5	2	t	\N	6	\N	t	f
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	\N	0	\N	f	f
-715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	\N	0	\N	f	f
+715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
 716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	\N	0	\N	t	f
 717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f
 718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	\N	6	\N	t	f
@@ -562,7 +562,7 @@
 840	Roasted Zucchini	\N	\N	\N	0	20	5	4	t	\N	6	From the First Watch cookbook. 	t	f
 841	First Watch Granola	To add another layer of flavor, feel free to add about 1 to 2 cups of your favorite dried cranberries or dried cherries after the granola has cooled completely.	\N	\N	0	0	0	8	t	\N	6	From the First Watch cookbook. 	t	f
 842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	\N	0	From the First Watch cookbook. 	f	f
-843	Whipped Eggs	\N	\N	\N	0	0	5	1	t	\N	0	From the First Watch cookbook. 	t	f
+843	Whipped Eggs	This preparation works great for omelets and frittatas.	\N	\N	0	0	5	1	t	\N	0	From the First Watch cookbook. 	t	f
 844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
 846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
@@ -579,7 +579,15 @@
 857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	\N	0	Erin | The Almond Eater	f	f
 858	Boiling Kettle Water	\N	\N	\N	0	5	0	1	t	\N	6	\N	t	f
 859	Crock Pot Red Rice and Beans	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/crock-pot-red-beans-and-rice/	f	f
-860	Beef and Broccoli	\N	\N	\N	8	55	5	2	t	\N	0	\N	f	f
+860	Beef and Broccoli	\N	\N	\N	8	55	5	2	t	beef-broccoli.jpg	0	\N	f	f
 861	Chicken and Mushroom Stir-Fry	\N	\N	\N	8	55	5	2	t	\N	0	\N	f	f
 862	Pico de Gallo	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
 863	Lima Beans on Toast	\N	\N	\N	12	15	3	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+864	Chicken and Lentil Soup	Storage: This soup will keep in the fridge for up to 3 days or can be portioned up and frozen for easy meal prep. Reheating: Reheat this soup thoroughly in the microwave or on the hob before eating. Do not reheat more than once.	\N	\N	8	25	5	4	t	\N	0	https://www.theglutenfreeblogger.com/chicken-and-lentil-soup/	f	f
+865	Sausage and Pepper Pasta Skillet	Other ingredients like onion, garlic, green bell pepper, and spinach can be added to the pasta to bulk it up a bit.	\N	\N	8	20	10	2	t	\N	0	\N	f	f
+866	Pan-Seared Steak with Whiskey Sauce	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
+867	Pulled Pork	\N	\N	\N	8	180	30	8	t	\N	0	\N	f	f
+868	Sweet and Sticky Pork Chops	\N	\N	\N	8	20	5	2	t	\N	0	\N	f	f
+869	Sausage and Cheese Grits	For a more substantial meal, top the grits with a poached or fried egg.	\N	\N	16	20	5	2	t	\N	0	\N	f	f
+870	Classic Eggs Benedict	You can add some sauteed spinach between the bacon and egg. You can also switch the bacon for smoked salmon. Or you can add 1 tablespoon of orange juice to the hollandaise sauce and halve the lemon juice for a touch of sweetness.	\N	\N	4	20	5	2	t	\N	0	\N	f	f
+871	Chicken, Bacon, Guacamole, and Bread	To add a bit more punch to this sandwich, top it with pepper Jack cheese or hot sauce.	\N	\N	12	30	10	1	t	\N	0	\N	f	f
