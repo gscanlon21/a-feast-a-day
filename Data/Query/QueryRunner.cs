@@ -87,6 +87,7 @@ public class QueryRunner(Section section)
                     Order = ri.Order,
                     Measure = ri.Measure,
                     Optional = ri.Optional,
+                    CookedOff = ri.CookedOff,
                     Attributes = ri.Attributes,
                     Ingredient = ri.Ingredient,
                     QuantityNumerator = ri.QuantityNumerator,

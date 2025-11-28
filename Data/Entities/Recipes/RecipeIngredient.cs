@@ -30,6 +30,7 @@ public class RecipeIngredient
         Order = recipeIngredient.Order;
         Measure = recipeIngredient.Measure;
         Optional = recipeIngredient.Optional;
+        CookedOff = recipeIngredient.CookedOff;
         Attributes = recipeIngredient.Attributes;
         IngredientId = recipeIngredient.IngredientId;
         IngredientRecipeId = recipeIngredient.IngredientRecipeId;
@@ -65,7 +66,12 @@ public class RecipeIngredient
     public int Order { get; set; }
 
     [Required]
+    [Display(Name = "Optional")]
     public bool Optional { get; set; }
+
+    [Required]
+    [Display(Name = "Cooked Off")]
+    public bool CookedOff { get; set; }
 
     [Required]
     public Measure Measure { get; set; }

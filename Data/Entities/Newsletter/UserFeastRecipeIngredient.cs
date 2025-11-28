@@ -24,6 +24,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient)
     {
         Measure = recipeIngredient.Measure;
+        CookedOff = recipeIngredient.CookedOff;
         Quantity = recipeIngredient.Quantity.ToDouble();
         // Don't set Ingredient, so that EF Core doesn't add/update Ingredient.
         IngredientId = recipeIngredient.Ingredient!.Id;
@@ -45,6 +46,8 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public double Quantity { get; private init; } = 1;
 
     public Measure Measure { get; private init; }
+
+    public bool CookedOff { get; set; }
 
 
     #region Navigation Properties
