@@ -254,8 +254,8 @@ public class UserRepo
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await _context.UserFeasts
-            .Include(f => f.UserFeastRecipes) // Only include ingredients that have nutrients.
-                .ThenInclude(r => r.UserFeastRecipeIngredients.Where(ufri => !ufri.CookedOff))
+            .Include(f => f.UserFeastRecipes)
+                .ThenInclude(r => r.UserFeastRecipeIngredients)
                     .ThenInclude(ufri => ufri.Ingredient)
             .Where(n => n.UserId == user.Id)
             // Include this week's data or filter out this week's data.

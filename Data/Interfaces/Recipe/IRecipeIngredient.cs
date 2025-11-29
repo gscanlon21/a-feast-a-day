@@ -13,4 +13,9 @@ public interface IRecipeIngredient
     Measure GetMeasure { get; }
 
     Ingredient? GetIngredient { get; }
+
+    /// <summary>
+    /// This ingredient provides fewer nutrients than normal.
+    /// </summary>
+    bool IsCookedOff { get; }
 }

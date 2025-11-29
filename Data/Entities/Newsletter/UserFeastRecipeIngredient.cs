@@ -47,7 +47,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
     public Measure Measure { get; private init; }
 
-    public bool CookedOff { get; set; }
+    public bool CookedOff { get; private init; }
 
 
     #region Navigation Properties
@@ -66,6 +66,9 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
     [NotMapped]
     public Measure GetMeasure => Measure;
+
+    [NotMapped]
+    public bool IsCookedOff => CookedOff;
 
     [NotMapped]
     public Ingredients.Ingredient? GetIngredient => Ingredient;

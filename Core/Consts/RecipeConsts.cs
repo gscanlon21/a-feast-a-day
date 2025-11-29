@@ -26,4 +26,9 @@ public class RecipeConsts
     public const int QuantityDenominatorMin = 1;
     public const int QuantityDenominatorDefault = 1;
     public const int QuantityDenominatorMax = 16;
+
+    /// <summary>
+    /// Decimal percent of nutrients left after cooking off.
+    /// </summary>
+    public const double NutrientsLeftAfterCooking = 0.25;
 }

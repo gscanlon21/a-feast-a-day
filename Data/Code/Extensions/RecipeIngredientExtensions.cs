@@ -25,6 +25,10 @@ public static class UserFeastRecipeIngredientExtensions
             return new Dictionary<Nutrients, double>();
         }
 
+        // Reduce the scale of nutrients if an ingredient is cooked off so it's not overweighted.
+        var scale = recipeIngredient.IsCookedOff ? RecipeConsts.NutrientsLeftAfterCooking : 1;
+
+        // If there are aggregate ingredients.
         if (altIngredientIds?.Any() == true)
         {
             var altIngredientNutrients = altIngredientIds.SelectMany(ai => nutrients?.GetValueOrDefault(ai) ?? []).NullIfEmpty();
@@ -33,7 +37,7 @@ public static class UserFeastRecipeIngredientExtensions
                 var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient);
                 var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value;
-                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
+                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe * scale };
             })?.GroupBy(kv => kv.Nutrient).ToDictionary(kv => kv.Key, kv => kv.Average(x => x.GramsOfNutrientPerRecipe)) ?? [];
         }
         else
@@ -44,7 +48,7 @@ public static class UserFeastRecipeIngredientExtensions
                 var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient);
                 var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value;
-                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
+                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe * scale };
             })?.ToDictionary(kv => kv.Nutrient, kv => kv.GramsOfNutrientPerRecipe) ?? [];
         }
     }
