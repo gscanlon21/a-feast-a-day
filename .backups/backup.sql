@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict TfeKnC7lujOp5AQgxt56jPQrqskgfDr0xaYa06dYT5Bd8EzFuKYxwTMCjwbiYuE
+\restrict 01yGp2hYO903g30p2eJhZPqbVoiKoJDiJHfBv8n00WMZhNNKEwbQhBFbZNfmRlD
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -12980,6 +12980,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5447	0	372	1	2	\N	4	f	\N	2	f
 5448	4	372	2	7	, plus extra to serve	95	t	\N	3	f
 5449	4	372	2	7	\N	984	t	\N	4	f
+5487	0	379	1	1	\N	250	f	\N	0	f
+5488	7	379	1	1	\N	77	f	\N	1	t
+5489	0	379	1	1	, crushed	5	t	\N	2	f
 7346	6	737	4	1	\N	85	f	\N	4	f
 7347	8	737	8	1	\N	285	f	\N	5	f
 5453	6	374	4	3	, plus extra for dusting	1188	f	\N	1	f
@@ -13003,11 +13006,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5454	7	374	1	6	\N	500	f	\N	2	f
 5455	7	374	1	2	\N	1189	f	\N	3	f
 5456	0	374	1	1	\N	224	t	\N	4	f
-5487	0	379	1	1	\N	250	f	\N	0	f
-5488	7	379	1	1	\N	77	f	\N	1	f
-5489	0	379	1	1	, crushed	5	t	\N	2	f
-5490	8	379	8	1	, to taste	285	t	\N	3	f
-5491	0	379	4	1	, juiced, to taste	4	t	\N	4	f
 4892	6	258	3	2	\N	266	f	\N	1	f
 4893	4	258	1	5	\N	718	f	\N	2	f
 4894	4	258	1	1	\N	13	t	\N	3	f
@@ -13037,6 +13035,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3652	7	168	1	1	\N	78	f	\N	3	f
 3653	7	168	1	1	\N	583	f	\N	4	f
 3654	8	168	4	1	\N	285	f	\N	5	f
+5490	8	379	8	1	, to taste	285	t	\N	3	f
+5491	0	379	4	1	, juiced, to taste	4	t	\N	4	f
 5493	6	380	4	1	\N	807	f	\N	1	f
 2725	4	146	1	5	, chopped	119	f	\N	2	f
 2726	8	146	1	2	\N	322	t	\N	3	f
@@ -15005,6 +15005,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7632	7	841	1	2	\N	40	f	\N	9	f
 4647	6	247	2	1	\N	1371	t	\N	5	f
 7646	7	247	1	1	\N	1376	f	\N	7	f
+7639	7	842	1	1	\N	29	f	\N	0	t
 7766	7	859	1	2	( Creole SEASONING)	151	f	\N	5	f
 7767	6	859	1	7	(OR WATER)	111	f	\N	6	f
 7768	5	859	1	1	(Andouille SEASUAGE), approx. 5 sausages	126	f	\N	7	f
@@ -15027,12 +15028,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7680	6	846	4	1	, finely sliced	1082	f	\N	9	f
 7688	7	848	2	3	\N	73	f	\N	4	f
 7661	8	844	1	1	(WHIPPED BUTTER)	345	f	\N	0	f
-7639	7	842	1	1	\N	29	f	\N	0	f
-7640	0	842	1	4	, ¾ cup	\N	f	843	1	f
-7641	4	842	4	9	, shaved	1374	f	\N	2	f
-7642	0	842	1	2	\N	1373	f	\N	3	f
-7643	7	842	1	1	, chopped, for garnish	2	t	\N	4	f
-7644	7	842	1	1	, chopped, for garnish	1261	t	\N	5	f
 7770	6	859	1	4	(WHITE RICE)	\N	f	484	9	f
 7602	6	836	1	1	\N	\N	f	532	0	f
 7681	0	847	1	3	, halved, peeled and pitted	9	f	\N	0	f
@@ -15041,12 +15036,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7771	7	860	1	3	, divided	77	f	\N	0	f
 7772	5	860	2	1	, thinly sliced across the grain	1497	f	\N	1	f
 7645	0	843	1	1	\N	187	f	\N	0	f
+7640	0	842	1	4	, ¾ cup	\N	f	843	1	f
 7603	8	836	1	1	\N	77	t	\N	1	f
+7641	4	842	4	9	, shaved	1374	f	\N	2	f
 7613	0	838	1	2	\N	916	f	\N	0	f
 7614	0	838	1	1	\N	1125	f	\N	1	f
 7615	4	838	1	8	\N	1508	f	\N	2	f
-7616	7	838	1	6	\N	1509	f	\N	3	f
+7616	7	838	1	6	\N	1509	f	\N	3	t
 7617	4	838	1	2	\N	800	t	\N	4	f
+7642	0	842	1	2	\N	1373	f	\N	3	f
+7643	7	842	1	1	, chopped, for garnish	2	t	\N	4	f
 7721	0	854	1	1	(HEAD OF CELERY)	1286	f	\N	0	f
 7722	0	854	1	1	, with leafy tops	661	f	\N	1	f
 7723	5	854	1	9	\N	404	f	\N	2	f
@@ -15255,6 +15254,24 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7871	8	104	7	1	\N	214	t	\N	5	t
 7872	7	104	1	1	\N	77	f	\N	6	t
 7873	8	104	8	1	\N	67	t	\N	7	f
+7904	7	838	2	1	\N	77	f	\N	5	t
+7905	8	838	8	1	\N	692	t	\N	6	f
+7906	7	838	1	1	\N	123	t	\N	7	f
+7644	7	842	1	1	, chopped, for garnish	1261	t	\N	5	f
+7907	6	904	1	1	\N	123	f	\N	0	f
+7908	6	904	1	1	(PORK SHOULDER | PORK BELLY), ½-inch cubed	866	f	\N	1	f
+7909	8	904	4	1	\N	214	f	\N	2	f
+7910	6	904	2	1	\N	\N	f	716	3	f
+7911	0	904	1	4	(TOSTADAS)	159	f	\N	4	f
+7912	6	904	4	1	, diced	1088	f	\N	5	f
+7913	6	904	4	1	\N	\N	f	703	6	f
+7914	6	904	4	1	\N	32	t	\N	7	f
+7915	0	905	1	1	, giblets removed	975	f	\N	0	f
+7916	7	905	1	2	\N	77	f	\N	1	f
+7917	8	905	1	2	(POULTRY SEASONING)	601	f	\N	2	f
+7918	8	905	1	1	\N	73	f	\N	3	f
+7919	8	905	1	1	\N	214	t	\N	4	f
+7920	8	905	2	1	\N	67	t	\N	5	f
 \.
 
 
@@ -16291,6 +16308,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3382	To the skillet, add the chicken, lemon zest, thyme, and salt & pepper. Cook for 5-10 minutes, until the chicken is cooked through.	542	1	4
 3346	Combine all ingredients in a high-speed blender.	531	0	128
 3347	Blend for 30 seconds to 1 minute, until desired consistency is achieved.	531	1	128
+3015	Heat the oil in a large skillet or frying pan over medium-high heat.	379	0	0
+3016	Wash and dry the zucchini, then slice into 1cm (⅓-inch) thick slices.	379	1	0
 3452	Cook over very low heat for 5 minutes or until a thermometer inserted into the oil registers 180ºF.	75	1	0
 3453	Remove from the heat and allow to cool completely at room temperature.	75	2	0
 3454	Transfer in a bottle and seal the lid. Optionally straining out the garlic.	75	3	0
@@ -16312,10 +16331,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3010	Toss vegetables with 1 tablespoon avocado oil, Himalayan salt, and dash of black pepper.	378	2	0
 3011	In a separate bowl, massage kale with 1 tablespoon avocado oil, dash of salt and pepper, and set the kale aside.	378	3	0
 3012	Bake fennel and leeks for 40 minutes and add kale to the baking sheet for the last 10–12 minutes of baking.	378	4	2
-3015	Heat the oil in a large skillet or frying pan over medium-high heat.	379	0	0
-3016	Wash and dry the zucchini, then slice into 1cm (⅓-inch) thick slices.	379	1	0
-3017	Sauté the zucchini for 7-10 minutes, tossing regularly to ensure even cooking.	379	2	0
-3018	Add the crushed garlic and cook for another minute then season with salt, pepper, and lemon.	379	3	0
 3412	Add the lemon juice, salt and pepper, and then top with the sliced almonds. Add the green beans and sauté until warmed through, about 1-2 minutes.	555	4	4
 3013	Heat 1 tablespoon avocado oil in a large pan, over medium heat. Add chicken and sauté until lightly cooked, about 3–4 minutes per side.	378	5	0
 3234	In a medium bowl, mix together the first 8 ingredients (tuna through cilantro).	469	0	0
@@ -16324,6 +16339,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3280	Line 2 baking sheets with parchment paper.	487	1	0
 3281	Add all of the veggies into a bowl, and toss with olive oil and sea salt to taste.	487	2	0
 3282	Place on a baking sheet and bake for 25–30 minutes, until tender.	487	3	2
+3017	Sauté the zucchini for 7-10 minutes, tossing regularly to ensure even cooking.	379	2	0
+3018	Add the crushed garlic and cook for another minute then season with salt, pepper, and lemon.	379	3	0
 1502	Transfer the lentil mixture and juices to warmed plates or bowls. Crumble the remaining feta cheese on top and sprinkle with the fresh herbs to garnish. Serve the lentils immediately.	150	2	0
 3029	Preheat the oven to 325°F. Place a large shallow casserole pan on a high heat. Seed the peppers and chop into fingers, then place into the pan with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the allspice. Chop the beef a similar size and stir into the pan with the bay. Crush in the unpeeled garlic through a garlic crusher and fry for 2 minutes, tossing regularly.	382	0	0
 3030	Add 2 tablespoons of red wine vinegar and 2 cups of water to the pan. Cover, then cook in the oven for 2 hours, or until dark and sticky. Loosen with a splash of water, if needed, mix up, taste, season to perfection, and serve.	382	1	0
@@ -17033,9 +17050,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4140	Season the turkey drumsticks generously with the seasoning blend. Use the oil to lightly coat a small roasting pan. Put the drumsticks in the pan, making sure they aren't touching, and roast them for 30 minutes.	830	2	2
 4141	Flip the turkey legs and roast them for another 30 minutes, or until a thermometer inserted into the thickest part of the meat registers 170°F.	830	3	2
 3998	Add the arugula to the bowl and stir using a set of tongs. Plate the salad, top with the goat cheese, drizzle with the olive oil, and season with salt and pepper.	741	1	0
-4185	In a 10-inch nonstick pan, heat butter over medium-high heat to lightly coat the pan, then add eggs.	842	0	4
 4074	Cut 8 thin slices of ciabatta, and toast until golden. 	786	0	96
 4075	Tear the remaining bread into a blender. Keep back a little of each of the remaining ingredients for garnish. Rip the parsley into the blender with the pistachios, chop and add the cucumber, and tear in the peppers, discarding the seeds and stems.	786	1	128
+4185	In a 10-inch nonstick pan, heat butter over medium-high heat to lightly coat the pan, then add eggs.	842	0	4
 4144	Sandwich the bacon in a single layer between two sheets of paper towel. Rest on a microwave-safe plate and microwave on high for 70 seconds. Add 50 seconds for each additional slice of bacon.	832	0	1
 4084	Place the chicken thighs in a bowl with the yogurt, spice mix, 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Cut 6 thin slices off one of the lemons and put aside, then squeeze the juice from the rest of the lemon into the bowl. Toss everything together really well, then cover and leave to marinate in the fridge for at least 2 hours, preferable overnight.	790	0	0
 4085	Preheat the oven to 400°F. Thread the chicken and lemon slices onto one large metal skewer, alternating chicken and lemon slices, and rest it over a roasting pan that's slightly smaller than the skewer (so that the meat is suspended above the pan). Slice the garlic bulb in half and place cut side down in the pan. Halve and throw in the remaining lemon, then roast for 40 minutes, or until gnarly and cooked through.	790	1	2
@@ -17128,15 +17145,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4205	Place in an airtight storage container and store in a dry place.	848	1	0
 4223	Top with 12 pieces of fresh fruit and finish with powdered cinnamon sugar.	850	5	0
 4224	Serve on a plate with a fresh-baked muffin and a large spoon.	850	6	0
-4186	As soon as the bottom of the omelet has started to set, work with a rubber spatula by pulling the edges toward the center and allowing uncooked egg to run underneath the cooked areas. Continue until the omelet is still slightly wet.	842	1	4
-4187	Separate the edges of the omelet from the pan with the spatula and spread ham evenly over the top half of the omelet (from 9 o'clock position to 3 o'clock position) to ensure ham in every bite.	842	2	0
-4188	Add a slice of Gruyère cheese. Fold in half and top with the other slice of Gruyère cheese.	842	3	0
 4193	Preheat broiler (if desired).	844	0	0
 4212	Butter the bottom brioche bun only and place it butter-side down in a nonstick 8-inch pan or griddle to brown, about 2 minutes.	844	1	4
 4213	In a separate nonstick 8-inch pan, top Over-Easy Egg with cheese. Place under broiler (if desired) to help melt the cheese.	844	2	0
 4214	Spread mayonnaise on the bottom bun and build the sandwich by adding the bacon in an X and top with the cheesy egg.	844	3	0
 4215	Spread Avocado Mash on the top bun. In a small bowl, combine arugula and vinaigrette. Place lemon-dressed arugula on top of the egg, place the top of the bun on the sandwich.	844	4	0
-4189	Transfer to a plate and top with fresh herbs.	842	4	0
+4186	As soon as the bottom of the omelet has started to set, work with a rubber spatula by pulling the edges toward the center and allowing uncooked egg to run underneath the cooked areas. Continue until the omelet is still slightly wet.	842	1	4
+4187	Separate the edges of the omelet from the pan with the spatula and spread ham evenly over the top half of the omelet (from 9 o'clock position to 3 o'clock position) to ensure ham in every bite.	842	2	0
 4206	Toast 1 slice of bread.	849	0	100
 4207	Cook eggs, any style.	849	1	0
 4208	As eggs are cooking, spread toast evenly with Avocado Mash, retaining a rustic and chunky layer.	849	2	0
@@ -17154,6 +17169,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4243	Preheat oven to 400°F, place oven rack in center position.	855	0	2
 4244	While oven heats: place chicken thighs skin side up in roasting pan. Add cut potatoes all around and in between chicken pieces. In a bowl, juice your lemon and orange. Add spicy brown mustard and whisk. Pour over chicken and potatoes.	855	1	0
 4190	Use a whisk or hand blender to mix cracked eggs in a bowl until frothy. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product. 	843	0	0
+4188	Add a slice of Gruyère cheese. Fold in half and top with the other slice of Gruyère cheese.	842	3	0
+4189	Transfer to a plate and top with fresh herbs.	842	4	0
 4265	Boil the water in a kettle.	858	0	4
 4254	Preheat broiler (if desired).	856	0	0
 4255	Slice biscuit in half, butter the cut side and grill, cut-side down, in a nonstick pan or griddle for 2 to 3 minutes, until golden brown.	856	1	4
@@ -17224,7 +17241,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4328	Fill a medium pot with about 3 inches of water. Bring the water to a gentle simmer over medium-low heat.	870	0	0
 4303	Fry for a couple of minutes until golden, then lightly squash the unpeeled garlic cloves with the heel of your hand and add to the pan. Pick in the grapes.	838	2	4
 4304	Turn the chicken skin-side up, pour in the vermouth, and transfer to the oven to roast for 40 minutes, or until the chicken is golden and tender, and the sauce is sticky and reduced.	838	3	2
-4305	Add a splash of water to the pan and give it a gentle shimmy to pick up all the sticky bits. Pick over the tarragon, and dish up.	838	4	0
 4191	If cooking the eggs, add whipped eggs to a buttered, nonstick, non-heated pan and cook over medium low heat. Work with a rubber spatula by pushing and pulling the edges to create big ridges. When eggs are cooked, finish folded or open-faced.	843	1	0
 4306	Position a rack in the center of the oven and turn the broiler to high.	865	0	16
 4307	Bring a large pot of salted water to a boil and cook the pasta according to package directions.	865	1	0
@@ -17254,6 +17270,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4332	Break the whole eggs into a small bowl, then gently pour them into the simmering water. Cook the eggs for 6 to 7 minutes, then use a slotted spoon to scoop them out of the water and onto a paper towel.	870	4	0
 4333	While the eggs are cooking, warm a medium skillet over medium-high heat. Add the oil and cook the bacon for about 2 minutes per side, or until browned on both sides.	870	5	0
 4334	Toast the English muffins and assemble the eggs Benedict by placing the bacon on the English muffins, putting the eggs on the bacon, and topping with the hollandaise sauce.	870	6	0
+4305	Add a splash of water to the pan and give it a gentle shimmy to pick up all the sticky bits. Pick over the tarragon, and dish up.	838	4	0
 4335	Pour in ¾ cup of cold water along with 3 tablespoons each of extra virgin olive oil and red wine vinegar, then season well with sea salt and black pepper. Whiz together, then add 10 oz of ice and blitz again until silky-smooth — you may need to work in batches. Taste and adjust the seasoning, if needed.	786	2	128
 4336	Serve sprinkled with the reserved garnishes (leave whole or finely chop in a delicate fashion, whatever you prefer) and a drizzle of extra virgin olive oil, if you like. An extra ice cube or two is always a nice touch, too. Serve the crispy toasts alongside for dunking.	786	3	0
 3712	Add the spinach to the skillet with the mushrooms and onions, season it with salt and pepper, and cook until the spinach is wilted. Remove from the heat and dish up on a plate with the steak.	632	5	0
@@ -17267,6 +17284,15 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4342	Tip the pasta into the pancetta pan, toss and stir everything together, then remove from the heat and wait 2 minutes for the pan to cool slightly (if the pan's too hot, it'll scramble; get it right, and it'll be smooth, silky and deliciously elegant).	104	4	0
 4343	Loosen the egg mixture with a splash of cooking water, then pour over the pasta, tossing and stirring vigorously - the egg will gently cook in the residual heat. 	104	5	0
 4344	Season to perfection. Adjust the consistency with extra cooking water, if needed, and finish with a pinch of pepper and an extra grating of cheese, if you like.	104	6	0
+4375	In a medium pot, combine the water, pork, and salt and bring to a boil over medium heat. Reduce the heat to low and simmer uncovered until all the water has evaporated. Continue to cook the pork, stirring every 2 to 3 minutes, until it's browned and crispy on all sides.	904	0	0
+4376	Meanwhile, heat the refried beans in the microwave on medium-high for about 1 minute, stop and stir them, then cook them for another minute or until hot.	904	1	0
+4377	Spread the beans on all 4 tostadas and top each with crispy pork and mozzarella. Put one tostada on top of the other to make two double-stack tostadas. Top each stack with guacamole and sour cream, if using.	904	2	0
+4378	Preheat the oven to 375F.	905	0	0
+4379	Pat the chicken dry inside and out with a paper towel. Rub the chicken all over with the olive oil.	905	1	0
+4380	In a small bowl, mix together the poultry seasoning, paprika, salt, and pepper.	905	2	0
+4381	Rub the spice blend all over the chicken, then place the chicken in a roasting pan with a rack, breast-side up.	905	3	0
+4382	Roast the chicken for 1 hour 30 minutes, or until a thermometer poked into the thickest part of the thigh and breast reaches a temperature of 170F.	905	4	0
+4383	Remove the chicken from the oven and let it rest for at least 20 minutes before slicing into it.	905	5	0
 \.
 
 
@@ -17976,5 +18002,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict TfeKnC7lujOp5AQgxt56jPQrqskgfDr0xaYa06dYT5Bd8EzFuKYxwTMCjwbiYuE
+\unrestrict 01yGp2hYO903g30p2eJhZPqbVoiKoJDiJHfBv8n00WMZhNNKEwbQhBFbZNfmRlD
 
