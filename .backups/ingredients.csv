@@ -1051,8 +1051,8 @@
 1311	\N	Pinto Beans	Missing minor nutrients. https://www.eatthismuch.com/calories/pinto-beans-3540	\N	f	0	193	193	2024-10-06	6	193	2048
 1312	\N	Alfalfa Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	34	2025-01-15	4	34	2
 1313	\N	Canned Garbanzo Beans	aka: Canned Chickpeas -. https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	207	2024-10-17	4	207	2048
-1314	\N	Dry Garbanzo Beans	aka: Dry Chickpeas -. https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	207	2024-10-17	4	207	2048
-1315	\N	Raw Chickpeas	aka: Dry Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	28	200	2024-09-02	4	200	2048
+1314	\N	Dry Garbanzo Beans	aka: Dry Chickpeas - https://www.eatthismuch.com/calories/chickpeas-3554	\N	f	0	28	200	2024-10-17	4	200	2048
+1315	\N	Raw Chickpeas	aka: Dry Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	28	200	2025-11-29	4	200	2048
 1317	\N	Tonic Water	\N	\N	t	0	240	240	2025-06-11	6	240	0
 1318	\N	Applesauce	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	28	244	2024-11-16	4	244	256
 1319	\N	Sweetened Applesauce	https://www.eatthismuch.com/calories/applesauce-1316	\N	f	0	28	244	2024-11-16	4	244	256
@@ -1129,7 +1129,7 @@
 1391	\N	Navel Oranges	https://www.eatthismuch.com/calories/oranges-1463	\N	f	0	140	140	2025-04-12	0	165	1
 1392	\N	Mixed-Berries	https://www.eatthismuch.com/calories/mixed-berries-87958	\N	f	0	28	140	2024-12-22	4	140	1
 1393	\N	Palm Shortening	https://www.eatthismuch.com/calories/shortbread-cookies-1981045	\N	f	262176	9.5	57	2025-01-31	0	114	262144
-1394	\N	Cassava Flour	https://www.eatthismuch.com/calories/chickpeas,3554	\N	f	0	200	200	2024-09-02	6	200	2048
+1394	\N	Cassava Flour	https://www.eatthismuch.com/calories/cassava-flour-1949133	\N	f	0	28	28	2025-11-29	4	150	32768
 1395	\N	Salted Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter,3595	\N	f	2048	28	16	2025-10-25	4	256	128
 1396	\N	Crunchy Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter-3734	\N	f	2048	32	16	2025-10-26	4	256	128
 1397	\N	Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter-3735	\N	f	2048	32	16	2025-10-27	4	256	128
