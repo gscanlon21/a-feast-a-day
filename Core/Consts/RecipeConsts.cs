@@ -30,5 +30,5 @@ public class RecipeConsts
     /// <summary>
     /// Decimal percent of nutrients left after cooking off.
     /// </summary>
-    public const double NutrientsLeftAfterCooking = 0.25;
+    public const double CookedOffNutrientScale = 0.5;
 }

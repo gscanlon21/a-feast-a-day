@@ -490,7 +490,7 @@
 704	Bacon and Corn Chowder	\N	\N	\N	8	35	10	4	t	\N	0	\N	f	f
 705	Quinoa Tabbouloeh	\N	\N	\N	16	0	70	2	t	\N	6	\N	f	f
 706	White Bean and Chorizo Soup	\N	\N	\N	8	45	10	6	t	white-bean-chorizo-soup.jpg	0	\N	f	f
-707	Tomato Vegetable Soup	Optionally add a can of chickpeas for protein.	\N	\N	8	30	10	6	t	\N	0	\N	f	f
+707	Tomato Vegetable Soup	\N	\N	\N	8	30	10	6	t	\N	0	\N	f	f
 708	Orange Soda Pop	You can add some lemon and lime zest to make more of a citrus soda.	\N	\N	128	15	65	4	t	\N	0	\N	f	f
 709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	\N	0	\N	f	f
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
@@ -593,3 +593,6 @@
 871	Chicken, Bacon, Guacamole, and Bread	To add a bit more punch to this sandwich, top it with pepper Jack cheese or hot sauce.	\N	\N	12	30	10	1	t	\N	0	\N	f	f
 904	Crispy Pork Tostadas	\N	\N	\N	8	20	5	2	t	\N	0	\N	f	f
 905	Classic Roast Chicken	\N	\N	\N	8	90	30	4	t	\N	0	\N	f	f
+906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
+907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	\N	0	\N	t	f
+908	The Cowboy Burger	Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	\N	\N	8	10	10	2	t	\N	0	\N	f	f

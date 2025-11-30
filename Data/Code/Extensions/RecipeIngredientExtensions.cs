@@ -26,7 +26,7 @@ public static class UserFeastRecipeIngredientExtensions
         }
 
         // Reduce the scale of nutrients if an ingredient is cooked off so it's not overweighted.
-        var scale = recipeIngredient.IsCookedOff ? RecipeConsts.NutrientsLeftAfterCooking : 1;
+        var scale = recipeIngredient.IsCookedOff ? RecipeConsts.CookedOffNutrientScale : 1;
 
         // If there are aggregate ingredients.
         if (altIngredientIds?.Any() == true)
