@@ -111,6 +111,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public string Name => IngredientRecipe?.Recipe.Name ?? Ingredient?.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
+    public bool Partial => Ingredient?.Name.Contains('|') ?? false;
 
     /// <summary>
     /// The number of grams this ingredient weights.

@@ -18,6 +18,7 @@ public class RecipeIngredientDto
     /// </summary>
     public string? Attributes { get; init; }
 
+    public bool Partial { get; init; }
     public bool Optional { get; init; }
     public Measure Measure { get; init; }
     public RecipeIngredientType Type { get; init; }
