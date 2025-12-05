@@ -1,5 +1,9 @@
 @media (prefers-color-scheme: dark) {
     .partial {
-        color: pink;
+        color: pink !important;
+    }
+
+    .is-unwanted-and-has-allergens {
+        color: crimson !important;
     }
 }
