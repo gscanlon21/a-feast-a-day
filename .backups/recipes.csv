@@ -2,7 +2,7 @@
 8	Weeknight Spaghetti	By utilizing Italian sausage, you get the flavor you love from say, a meatball, without the extra ingredients or workload.	\N	\N	12	20	5	1	t	sausage-spaghetti.jpg	0	\N	f	f
 17	Vegetarian Stir-Fry	For the true vegan, skip the egg and garnish the dish with either bean sprouts or sliced chives.	\N	\N	4	25	5	3	t	vegetable-stir-fry.jpg	0	\N	f	f
 19	Egg in a Pepper	\N	\N	\N	6	5	1	1	t	egg-in-a-pepper.jpg	0	\N	f	f
-20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	2	t	bean-cheese-quesadilla.jpg	0	\N	f	f
+20	Bean and Cheese Toasterdilla	Serve with sour cream and salsa.	\N	\N	2	5	10	1	t	bean-cheese-quesadilla.jpg	0	\N	f	f
 23	Ham and Scalloped Potatoes	\N	\N	\N	8	100	20	6	t	scalloped-potatoes-ham.jpg	0	\N	f	f
 24	Fried Cabbage and Egg Noodles	\N	\N	\N	4	15	5	4	t	cabbage-noodles.jpg	0	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	f	f
 25	Slow Cooker Chicken	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	0	360	10	1	t	slow-cooker-ckicken.jpg	5	\N	f	f
@@ -596,3 +596,8 @@
 906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
 907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	\N	0	\N	t	f
 908	The Cowboy Burger	Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	\N	\N	8	10	10	2	t	\N	0	\N	f	f
+909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	4	10	10	1	t	\N	0	\N	f	f
+910	Sweet Potato Tacos	Optionally, add some guacamole, fresh cilantro, jalepenos, and a squeeze of fresh lime juice.	\N	\N	4	25	10	1	t	\N	0	\N	f	f
+911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or 1/2 teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f
+944	Fermented Coconut Water	You will need to rest and renutrify your water kefir grains between batches.	\N	\N	0	55	5	8	t	\N	9	\N	t	f
+945	Skillet Fried Chicken	For a bit of a kick, add 1/4 teaspoon cayenne pepper to the flour and/or a few teaspoons of hot sauce to the buttermilk.	\N	\N	8	15	155	2	t	\N	0	\N	f	f
