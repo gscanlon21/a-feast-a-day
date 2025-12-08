@@ -27,6 +27,7 @@ public class UserNewsletterDto
         LastActive = user.LastActive;
         FootnoteType = user.FootnoteType;
         MaxIngredients = user.MaxIngredients;
+        FontSizeAdjust = user.FontSizeAdjust;
         IngredientOrder = user.IngredientOrder;
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
@@ -66,4 +67,6 @@ public class UserNewsletterDto
     public Allergens AntiAllergens => EnumExtensions.GetSingleValues(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);
 
     public bool IsAlmostInactive => LastActive.HasValue && LastActive.Value < DateHelpers.Today.AddMonths(-1 * (UserConsts.DisableAfterXMonths - 1));
+
+    public int FontSizeAdjust { get; init; }
 }

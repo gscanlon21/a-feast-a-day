@@ -37,7 +37,7 @@
             border-bottom:4px solid @borderColor;border-image-slice:1;outline:1px solid @borderColor;background-color:@backgroundColor;">
 
     <div> @* For margin collapse. *@
-        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:.8ch;">
+        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:@FontHelpers.AdjustEm(1.2, User?.FontSizeAdjust);line-height:1.2;display:flex;gap:.8ch;">
             <span style="flex:1 1 auto;">
                 @if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
                 {
@@ -101,7 +101,7 @@
             <div style="margin-block:.5em;font-size:x-small;"><b>Equipment</b>: @Model.Recipe.Equipment</div>
         }
 
-        <ul style="margin-block:1em;padding-inline-start:2ch;font-size:.85em;">
+        <ul style="margin-block:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.FontSizeAdjust);">
             @foreach (var ingredient in Model.RecipeIngredients)
             {
                 <li class="@ingredient.Partial.ToClass() @ingredient.IsUnwantedAndHasAlternatives.ToClass()"
