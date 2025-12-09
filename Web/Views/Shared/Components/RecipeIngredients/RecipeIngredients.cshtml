@@ -11,7 +11,7 @@
            asp-route-recipeIngredientId="@recipeIngredient.RecipeIngredient.Id" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token"
            class="list-group-item @(recipeIngredient.RecipeIngredient.Optional ? "list-group-item-dark" : "list-group-item-primary") list-group-item-action allow-demo">
             <div class="row gx-3 gy-1 justify-content-between">
-                <div class="col-auto font-weight--bold">@(recipeIngredient.RecipeIngredient.Ingredient?.Name ?? recipeIngredient.RecipeIngredient.IngredientRecipe.Name)</div>
+                <div class="col-auto font-weight--bold">@Model.GetName(recipeIngredient)</div>
                 @if (recipeIngredient.Ignore)
                 {
                     <div class="col-auto d-flex align-items-center"><small class="badge bg-secondary rounded-pill">Ignored</small></div>

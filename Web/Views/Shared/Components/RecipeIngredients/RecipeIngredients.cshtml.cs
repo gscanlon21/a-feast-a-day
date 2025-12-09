@@ -11,4 +11,12 @@ public class RecipeIngredientsViewModel
 
     [Display(Name = "Recipe Ingredients")]
     public required IList<UserRecipeIngredient> UserRecipeIngredients { get; init; }
+
+    /// <summary>
+    /// Get the ingredient's or recipe's name for this recipe ingredient.
+    /// </summary>
+    public string GetName(UserRecipeIngredient userRecipeIngredient)
+    {
+        return userRecipeIngredient.RecipeIngredient.Ingredient?.Name ?? userRecipeIngredient.RecipeIngredient.IngredientRecipe.Name;
+    }
 }

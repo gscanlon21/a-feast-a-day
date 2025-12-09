@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict fsKNek3TlgqA5fMoDs5HgJok5EEXyMgIv6YWcwJkODGQVxA4R0yhnO5CVJgOsnH
+\restrict Zhje3anwI3X84935YpWtxNLun0nulQeq0MelWxLb0EaGfTKobCgQddTTHAcIXbZ
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1047,6 +1047,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1557	1105	1	f
 1557	126	1	f
 126	1557	1	f
+692	74	1	t
+692	67	1	t
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -1188,6 +1190,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1465	1560	1	f
 1560	1465	1	f
 1560	1463	1	f
+1563	734	1	f
 690	39	1	f
 690	681	1	f
 1008	871	1	f
@@ -13739,19 +13742,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6103	7	538	1	1	\N	251	f	\N	2	f
 6104	0	538	1	1	\N	671	f	\N	3	f
 6186	0	551	1	1	, sliced in half	346	f	\N	0	f
-6107	0	540	1	2	, cubed	387	f	\N	0	f
-6108	0	540	1	1	, cut into wedges	222	f	\N	1	f
-6109	6	540	1	1	(BROCCOLI FLORETS)	872	f	\N	2	f
-6110	6	540	1	1	(CAULIFLOWER FLORETS)	734	f	\N	3	f
-6111	0	540	1	2	, peeled and sliced	7	f	\N	4	f
-6112	0	540	1	1	, seeded and sliced	812	f	\N	5	f
-6113	6	540	1	3	, chopped	16	f	\N	6	f
-6114	8	540	4	1	, to taste	692	t	\N	7	f
-6115	7	540	1	1	, grated	307	f	\N	8	f
-6116	0	540	1	1	, zested	346	f	\N	9	f
-6117	6	540	4	1	\N	991	f	\N	10	f
-6118	8	540	1	1	\N	39	f	\N	11	f
-6119	7	540	1	1	\N	657	f	\N	12	f
 6080	7	533	1	1	, chopped	473	t	\N	1	f
 6081	7	533	1	1	\N	77	f	\N	2	f
 6100	8	55	8	1	, to taste	692	t	\N	2	f
@@ -13792,12 +13782,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6106	6	539	4	1	\N	993	f	\N	1	f
 6143	7	544	1	1	, to thin	176	f	\N	3	f
 6144	0	544	1	1	, juiced	4	f	\N	4	f
+6107	0	540	1	2	, cubed	387	f	\N	0	f
+6108	0	540	1	1	, cut into wedges	222	f	\N	1	f
 6088	0	535	1	1	, juiced and zested	346	f	\N	3	f
 6120	7	541	1	2	\N	964	f	\N	0	f
 6121	6	541	1	2	, chopped	222	f	\N	1	f
 6122	0	541	1	4	, minced	5	f	\N	2	f
 6123	4	541	1	16	, peeled and deveined	1111	f	\N	3	f
 6089	8	535	4	1	, to taste	74	f	\N	4	f
+6109	6	540	1	1	\N	1290	f	\N	2	f
+6110	6	540	1	1	\N	1563	f	\N	3	f
+6111	0	540	1	2	, peeled and sliced	7	f	\N	4	f
 6135	0	543	1	2	, juiced	4	f	\N	0	f
 6136	7	543	1	4	\N	461	f	\N	1	f
 6137	6	543	1	2	\N	14	f	\N	2	f
@@ -13828,6 +13823,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6092	8	536	2	1	\N	71	f	\N	2	f
 6093	8	536	4	1	, to taste	692	t	\N	3	f
 6094	7	536	1	1	\N	1053	f	\N	4	f
+6112	0	540	1	1	, seeded and sliced	812	f	\N	5	f
 4321	6	82	2	1	, diced small	150	t	\N	3	f
 6221	6	557	4	1	\N	805	f	\N	0	f
 6222	6	557	1	1	\N	183	f	\N	1	f
@@ -14464,6 +14460,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6798	8	632	4	1	\N	285	t	\N	2	f
 6799	6	632	1	1	, sliced	222	f	\N	3	f
 6800	6	632	1	1	, sliced	595	f	\N	4	f
+6114	8	540	4	1	, to taste	692	t	\N	7	f
+6115	7	540	1	1	, grated	307	f	\N	8	f
+6116	0	540	1	1	, zested	346	f	\N	9	f
+6117	6	540	4	1	\N	991	f	\N	10	f
+6118	8	540	1	1	\N	39	f	\N	11	f
+6119	7	540	1	1	\N	657	f	\N	12	f
 6808	7	633	1	1	(TAMARIND JUICE), made by mixing tamaring paste with warm water	295	f	\N	5	f
 6809	0	633	1	2	, torn	596	t	\N	6	f
 6810	0	633	2	1	\N	467	f	\N	7	f
@@ -15365,6 +15367,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7822	0	865	1	2	\N	1557	f	\N	3	f
 7823	0	865	1	1	, sliced	8	f	\N	4	f
 7824	6	865	1	1	\N	\N	f	723	5	f
+6113	6	540	1	3	, chopped	16	f	\N	6	f
 7861	6	786	4	3	\N	1515	f	\N	5	f
 7862	7	786	1	3	\N	278	f	\N	6	f
 7863	7	786	1	3	\N	82	f	\N	7	f
@@ -16258,6 +16261,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3163	Form the dough into 1 tablespoon portions and roll between your hands to form balls.	422	2	0
 3164	Refrigerate for at least 2 hours, then serve and enjoy!	422	3	65536
 3334	Combine the tumeric, ginger, salt and cinnamon, and place in a large mug.	527	0	0
+3374	In a large bowl, toss the first 13 ingredients (chicken through honey) together.	540	0	0
 3267	In a medium bowl, whick together the olive oil through fresh mixed herbs. Add salt and pepper, to taste.	480	0	0
 2337	Add the cauliflower rice. Stir intermittently for 5-10 minutes, until cauliflower is tender.	243	2	0
 2339	Add in the turmeric and stir to combine.	243	4	0
@@ -16273,13 +16277,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2473	Mix all ingredients together then store in an airtight container or jar with a tight fitting lid.	91	0	0
 2474	To use: brown 1lb ground meat then add 2 - 2½ Tablespoons taco seasoning mix plus 1/3 cup broth or water and simmer until liquid has thickened, 1-2 minutes.	91	1	0
 2901	Pull the skin off the chicken. Place the skin in a large non-stick frying pan on a medium heat to render and get golden, turning occasionally. Cut the bones out of the thighs and chuck into the pan for bonus flavor, then chop the meat into ¾-inch pieces. Move the skin and bones to one side of the pan, then add the meat alongside and cook for 5 minutes, or until golden, stirring occasionally. Once crispy, remove, chop, and reserve the skin, discarding the bones.	314	0	0
-3374	In a large bowl, toss the first 13 ingredients (chicken through honey) together.	540	0	0
-3375	In a large skillet over medium heat, heat the sesame oil.	540	1	0
-3376	To the oil, add the contents of the bowl and stir. Cook for 10-15 minutes, until chicken is cooked through and vegetables are tender.	540	2	0
 2384	Preheat the oven to 375°F. Line a half sheet pan with foil and place a piece of parchment paper on top. Set aside.	134	0	0
 3335	Add the hot water slowly as you whisk the liquid.	527	1	0
 3336	Add the lemon and stevia.	527	2	0
 2902	Meanwhile, cook the noodles in boiling salted water accoding to the package instructions. Halve the sugar snaps lengthways. Once soft, drain the noodles, reserving a cupful of cooking water, then refresh under cold water. User scissors to snip the noodles into roughly 3-inch lengths.	314	1	0
+3375	In a large skillet over medium heat, heat the sesame oil.	540	1	4
 3337	Top off with almond milk, if desired, and enjoy!	527	3	0
 2788	Place the minced pork, crushed garlic, chopped coriander root, sugar and soy sauce in a large bowl. Season with salt and pepper to taste and mix well.	161	0	0
 2789	Divide into eight portions and mould each one into a ball. It may help to dampen your hands before shaping the mixture, to prevent it from sticking.	161	1	0
@@ -16289,6 +16291,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1555	Chop the new potatoes into chunks. Put them in a pan, pour in water to cover and add the salt and sugar. Bring to the boil, then reduce the heat and boil gently for about 10 minutes, or until the potatoes are just tender. Drain well and leave in a colander to cool.	153	0	0
 2385	Add ground beef to a large mixing bowl then sprinkle burger seasoning ingredients on top and mix to combine. Divide the mixture into quarters then divide each quarter into two to create a total of eight burger patties.	134	1	0
 2386	Place patties onto prepared baking sheet then bake for 20-25 minutes or until burgers reach an internal temperature of 160 degrees.	134	2	0
+3376	To the oil, add the contents of the bowl and stir. Cook for 10–15 minutes, until chicken is cooked through and vegetables are tender.	540	2	4
 2832	Pop the popcorn in the microwave.	59	0	0
 2319	Cut the kielbasa into 1-inch pieces and combine them with the brown sugar, applesauce, mustard, and garlic in a 3-quart slow cooker.	34	0	1024
 2320	Cover and cook on low for 6 to 8 hours or until the sausage is thoroughly heated and the sauce is bubbly.	34	1	1024
@@ -16345,7 +16348,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2910	Transfer the pan to the oven for 40 minutes, or until the rice has absorbed all the liquid and is just cooked through. Drizzle 1 tablespoon of extra virgin olive oil and dish up, seasoning to perfection at the table.	317	1	0
 3339	In a small bowl, whisk together the coconut milk and lime juice.	528	0	0
 3340	Place the mango, cucumber, onion, cilantro, and ginger in a medium-sized bowl, and mix thoroughly.	528	1	0
-3377	Serve warm.	540	3	0
 3268	In a small bowl, combine all ingredients.	481	0	0
 2835	Go in with the chicken and cook for 5 minutes, or until golden and cooked through, turning regularly.	106	2	4
 2446	Pour white wine into the pan, stir, and simmer for 7 minutes.	257	1	0
@@ -16360,6 +16362,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3342	Enjoy over chicken or fish, or in romaine lettuce-leaf wrappers.	528	3	0
 2661	Using a sharp knife, cut off and discard any thick stems from the broccoli and cut the broccoli into long thin florets.	170	0	0
 2662	Spread out the sesame seeds in a small frying pan and dry-fry over a medium heat until toasted. Do not leave them unattended as they will readily burn if left just a fraction too long.	170	1	0
+3377	Serve warm.	540	3	0
 2479	Pour the tablespoon of vinegar into a 1 cup measurer.  Fill the rest of the 1 cup measurer with milk. 	262	0	0
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	262	1	0
 3168	In a mixing bowl, whisk the chickpea flour, baking powder, sugar until well combined, and no lumps show.	424	0	0
@@ -18239,5 +18242,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict fsKNek3TlgqA5fMoDs5HgJok5EEXyMgIv6YWcwJkODGQVxA4R0yhnO5CVJgOsnH
+\unrestrict Zhje3anwI3X84935YpWtxNLun0nulQeq0MelWxLb0EaGfTKobCgQddTTHAcIXbZ
 
