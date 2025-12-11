@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Zhje3anwI3X84935YpWtxNLun0nulQeq0MelWxLb0EaGfTKobCgQddTTHAcIXbZ
+\restrict pQKT2LleIAg1NU6E3dzKaU3dLKjTF3tmfa4BavyC9QviNJdqXxSA1UYROlHv0xe
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1049,6 +1049,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 126	1557	1	f
 692	74	1	t
 692	67	1	t
+422	1572	1	f
+1558	1576	1	f
+1558	1575	1	f
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -1191,6 +1194,18 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1560	1465	1	f
 1560	1463	1	f
 1563	734	1	f
+1569	1571	1	f
+1569	1570	1	f
+1569	1564	1	f
+1569	1565	1	f
+1569	1566	1	f
+1569	1567	1	f
+1569	1568	1	f
+372	1574	1	f
+1579	1340	1	f
+1579	1578	1	f
+1578	1340	1	f
+1340	1578	1	f
 690	39	1	f
 690	681	1	f
 1008	871	1	f
@@ -3872,7 +3887,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 7870	8	2199023255552	\N	2	1
 7871	8	48	\N	3	2
 7872	8	62	\N	3	7
-7945	260	2047	\N	3	25
 8013	172	34359738368	\N	2	285
 8014	172	2	\N	3	13
 8015	172	1	\N	3	1
@@ -3946,6 +3960,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 5197	166	2047	\N	3	170
 7522	214	68719476736	\N	2	6976
 7523	255	229376	\N	1	922
+7945	260	2047	\N	3	22
 5805	61	2047	\N	3	94
 5888	165	2047	\N	3	100.5
 8913	721	1	\N	3	3
@@ -11534,6 +11549,115 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 16447	313	4294967296	\N	2	1
 16448	313	14	\N	3	1
 16449	313	62	\N	3	1
+16450	1328	68719476736	\N	2	6
+16451	1328	34359738368	\N	2	292
+16452	1328	2	\N	3	3
+16453	1328	1	\N	3	1
+16454	1328	4294967296	\N	2	12
+16455	1328	2199023255552	\N	2	0.3
+16456	1328	48	\N	3	1
+16457	1328	14	\N	3	3
+16458	1328	1984	\N	3	0.2
+16459	1328	62	\N	3	5
+16460	1328	2047	\N	3	22
+16461	260	68719476736	\N	2	6
+16462	260	34359738368	\N	2	292
+16463	260	2	\N	3	3
+16464	260	1	\N	3	1
+16465	260	4294967296	\N	2	12
+16466	260	2199023255552	\N	2	0.3
+16467	260	48	\N	3	1
+16468	260	14	\N	3	3
+16469	260	1984	\N	3	0.2
+16470	260	62	\N	3	5
+16471	1007	2047	\N	3	1
+16472	151	256	\N	3	4
+16473	151	9007199254740992	\N	3	0.2
+16474	151	18014398509481984	\N	3	0.3
+16475	151	36028797018963968	\N	3	1
+16476	151	72057594037927936	\N	3	0.4
+16477	151	144115188075855872	\N	3	0.2
+16478	151	288230376151711744	\N	3	0.4
+16479	151	576460752303423488	\N	3	0.3
+16480	151	1152921504606846976	\N	3	0.1
+16481	151	2305843009213693952	\N	3	1
+16482	151	-9223372036854775808	\N	3	0.4
+16483	151	4611686018427387904	\N	3	1
+16484	151	274877906944	\N	1	1
+16485	151	17179869184	\N	2	67
+16486	151	4398046511104	\N	2	3
+16487	151	70368744177664	\N	2	293
+16488	151	17592186044416	\N	2	2
+16489	151	262144	\N	2	0.1
+16490	151	1048576	\N	2	2
+16491	151	2097152	\N	2	1
+16492	151	4194304	\N	2	0.1
+16493	151	16777216	\N	1	55
+16494	151	67108864	\N	2	7
+16495	151	1536	\N	3	1
+16496	151	1792	\N	3	5
+16497	1564	2047	\N	3	1
+16498	1569	2047	\N	3	1
+16499	1571	2047	\N	3	1
+16500	1001	128	\N	3	0.1
+16501	1001	68719476736	\N	2	25
+16502	1001	34359738368	\N	2	329
+16503	1001	2	\N	3	2
+16504	1001	1	\N	3	3
+16505	1001	4294967296	\N	2	101
+16506	1001	2199023255552	\N	2	1
+16507	1001	48	\N	3	2
+16508	1001	14	\N	3	3
+16509	1001	1984	\N	3	1
+16510	1001	62	\N	3	6
+16511	1001	2047	\N	3	33
+16512	1565	2047	\N	3	1
+16513	1566	2047	\N	3	1
+16514	1567	2047	\N	3	1
+16515	1568	2047	\N	3	1
+16516	1570	2047	\N	3	1
+16517	1558	128	\N	3	4
+16518	1558	2048	\N	2	22
+16519	1558	68719476736	\N	2	178
+16520	1558	34359738368	\N	2	22
+16521	1558	2	\N	3	0.3
+16522	1558	1	\N	3	6
+16523	1558	4294967296	\N	2	143
+16524	1558	2199023255552	\N	2	0.1
+16525	1558	402653184	\N	1	0.1
+16526	1558	14	\N	3	1
+16527	1558	1984	\N	3	6
+16528	1558	62	\N	3	1
+16529	1558	2047	\N	3	85
+16530	1574	128	\N	3	0.1
+16531	1574	68719476736	\N	2	47
+16532	1574	34359738368	\N	2	302
+16533	1574	1	\N	3	2
+16534	1574	4294967296	\N	2	137
+16535	1574	2199023255552	\N	2	2
+16536	1574	48	\N	3	1
+16537	1574	14	\N	3	4
+16538	1574	1984	\N	3	0.4
+16539	1574	62	\N	3	6
+16540	1574	2047	\N	3	28
+16541	471	68719476736	\N	2	1
+16542	471	34359738368	\N	2	97
+16543	471	1	\N	3	1
+16544	471	4294967296	\N	2	43
+16545	471	2199023255552	\N	2	2
+16546	471	48	\N	3	1
+16547	471	14	\N	3	2
+16548	471	1984	\N	3	1
+16549	471	62	\N	3	3
+16550	1412	68719476736	\N	2	2
+16551	1412	34359738368	\N	2	21
+16552	1412	1	\N	3	0.1
+16553	1412	4294967296	\N	2	5
+16554	1412	2199023255552	\N	2	0.2
+16555	1412	48	\N	3	0.1
+16556	1412	14	\N	3	0.1
+16557	1412	62	\N	3	0.2
+16558	1412	2047	\N	3	1
 \.
 
 
@@ -11765,7 +11889,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2788	0	141	1	1	, seeded and sliced	8	f	\N	6	f
 2789	6	141	1	1	, drained	418	f	\N	7	f
 2790	8	141	1	1	\N	276	f	\N	8	f
-317	6	41	1	1	\N	145	f	\N	0	f
 2791	8	141	1	1	\N	124	f	\N	9	f
 2792	0	141	1	2	, beaten	187	f	\N	10	f
 7171	4	711	1	16	, drained and rinsed	1307	f	\N	0	f
@@ -11819,6 +11942,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 450	6	55	2	1	\N	122	f	\N	0	f
 451	7	55	1	1	\N	77	f	\N	1	f
 7152	6	707	1	12	\N	123	f	\N	6	f
+317	4	41	1	8	\N	145	f	\N	0	f
 2703	7	24	1	4	\N	29	f	\N	1	f
 2704	6	24	1	1	\N	110	f	\N	2	f
 5424	7	367	1	2	\N	829	f	\N	2	f
@@ -11866,9 +11990,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3912	4	196	1	11	(CHINESE BROCCOLI), roughly sliced	6	f	\N	6	f
 3914	7	196	1	3	\N	62	f	\N	8	f
 3915	8	196	1	1	\N	234	f	\N	9	f
-441	6	49	4	1	\N	118	f	\N	0	f
-442	6	49	3	1	\N	134	f	\N	0	f
-443	6	49	4	1	\N	120	f	\N	0	f
 3913	7	196	1	3	\N	321	f	\N	7	f
 5099	6	161	2	3	, minced	644	f	\N	0	f
 5100	0	161	1	4	, crushed	5	f	\N	1	f
@@ -11883,7 +12004,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1577	0	96	1	1	\N	342	f	\N	2	f
 7306	0	731	1	1	\N	1250	f	\N	0	f
 982	6	40	1	1	, drained	205	f	\N	0	f
-440	6	49	1	4	, split	165	f	\N	0	f
 7307	7	731	1	1	\N	77	f	\N	1	f
 7308	8	731	8	1	, ground	67	t	\N	2	f
 983	6	40	1	1	\N	16	f	\N	1	f
@@ -11928,8 +12048,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5341	6	325	8	1	, finely chopped	2	f	\N	1	f
 5342	6	325	2	3	\N	872	f	\N	2	f
 5343	0	325	1	1	, cored and cut into cubes	1	f	\N	3	f
+440	0	49	1	8	, split	165	f	\N	0	f
+441	6	49	4	1	\N	118	f	\N	1	f
 3828	0	158	1	1	, juiced	4	f	\N	9	f
 3829	0	158	1	1	\N	552	t	\N	10	f
+442	6	49	3	1	\N	134	f	\N	2	f
+443	0	49	1	16	\N	1577	t	\N	3	f
 3470	6	165	4	1	\N	29	f	\N	0	f
 3471	0	165	1	1	, crushed	5	f	\N	1	f
 3472	7	165	1	2	, chopped	2	f	\N	2	f
@@ -13009,7 +13133,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4811	0	264	1	1	\N	730	f	\N	1	f
 4812	7	264	1	2	, raw, light and dark	752	f	\N	2	f
 4813	0	264	1	4	\N	187	f	\N	3	f
-4814	7	264	1	2	\N	321	f	\N	4	f
 4747	7	272	1	2	\N	722	f	\N	0	f
 4748	0	272	1	1	\N	910	t	\N	1	f
 5191	0	106	1	4	\N	5	f	\N	0	f
@@ -13649,17 +13772,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6029	6	526	2	1	\N	58	f	\N	1	f
 1578	6	96	3	1	, medium dry or sweet	85	f	\N	3	f
 1579	7	96	1	1	, flavored with ginger, to serve	345	t	\N	4	f
-6001	5	522	2	1	, halved	156	f	\N	0	f
-6002	0	522	1	2	, chopped	255	f	\N	1	f
-6003	0	522	1	1	, thinly sliced	222	f	\N	2	f
-6004	8	522	2	1	\N	71	f	\N	3	f
-6005	8	522	2	1	\N	323	f	\N	4	f
-6006	8	522	4	1	, to taste	692	t	\N	5	f
-6007	6	522	4	1	\N	77	f	\N	6	f
-6008	8	522	4	1	\N	67	f	\N	7	f
-6009	6	522	3	1	(DRIED CRANBERRIES)	641	f	\N	8	f
-6010	6	522	4	1	, chopped	90	f	\N	9	f
-6011	6	522	2	1	\N	\N	f	414	10	f
 4423	8	134	2	1	, crushed finely	510	f	\N	5	f
 4424	8	134	2	1	\N	713	f	\N	6	f
 7142	6	706	1	1	, diced	402	f	\N	4	f
@@ -13730,11 +13842,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6193	8	552	2	1	\N	39	f	\N	3	f
 6079	5	533	1	1	, with skins	1054	f	\N	0	f
 6067	6	531	2	1	\N	178	f	\N	2	f
+6001	5	522	2	1	, halved	156	f	\N	0	f
 6057	6	530	4	1	, chopped	105	f	\N	1	f
 6058	7	530	1	1	\N	80	f	\N	2	f
 6059	7	530	1	1	, chopped	13	f	\N	3	f
+6002	0	522	1	2	, chopped	255	f	\N	1	f
+6003	0	522	1	1	, thinly sliced	222	f	\N	2	f
+6004	8	522	2	1	\N	71	t	\N	3	f
+6005	8	522	2	1	\N	323	t	\N	4	f
 6068	8	531	2	1	\N	40	f	\N	3	f
 6069	6	531	4	1	\N	805	t	\N	4	f
+6006	8	522	4	1	, to taste	692	t	\N	5	f
+6007	6	522	4	1	\N	77	f	\N	6	f
+6008	8	522	4	1	\N	67	t	\N	7	f
+6009	6	522	3	1	\N	1340	f	\N	8	f
 5154	5	23	2	1	, thinly sliced (1 cups)	26	f	\N	7	f
 7326	6	734	2	1	\N	122	f	\N	0	f
 6101	0	538	1	1	\N	4	f	\N	0	f
@@ -13942,8 +14063,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6063	0	530	1	1	, peeled and sliced	9	f	\N	7	f
 6064	0	530	1	8	\N	1073	f	\N	8	f
 7264	6	725	2	1	, diced	222	f	\N	1	f
-318	6	41	2	1	\N	600	f	\N	1	f
-319	6	41	1	1	, woody ends removed, cut into lengths	122	f	\N	2	f
 7265	6	725	4	1	, diced	736	f	\N	2	f
 6358	7	576	1	1	\N	77	f	\N	0	f
 7266	6	725	4	1	, diced	1286	f	\N	3	f
@@ -13971,6 +14090,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6343	0	574	2	1	, chopped	105	f	\N	8	f
 6344	6	574	2	1	(OLIVES), sliced	397	f	\N	9	f
 6345	6	574	1	2	\N	368	f	\N	10	f
+318	4	41	1	6	\N	600	f	\N	1	f
 6360	8	576	4	1	, to taste	692	t	\N	2	f
 6304	6	569	1	1	, diced	10	f	\N	0	f
 6305	6	569	1	1	, peeled and diced	155	f	\N	1	f
@@ -13978,6 +14098,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6307	6	569	1	3	, chopped	206	f	\N	3	f
 6308	6	569	4	1	\N	296	t	\N	4	f
 6309	7	569	1	1	\N	81	t	\N	5	f
+319	6	41	1	1	, woody ends removed, cut into lengths	122	f	\N	2	f
 6361	0	576	1	8	\N	174	f	\N	3	f
 6362	0	576	1	1	, sliced	8	f	\N	4	f
 6363	0	576	1	1	, sliced	597	f	\N	5	f
@@ -14026,8 +14147,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6455	0	586	1	1	, chopped	150	f	\N	3	f
 6456	6	586	1	3	\N	\N	f	559	4	f
 6457	6	586	1	4	, chopped	1263	f	\N	5	f
-320	6	41	2	1	, zested and juiced	4	f	\N	3	f
-321	6	41	2	1	, with chives	30	f	\N	4	f
 7348	0	738	1	2	\N	8	f	\N	0	f
 7349	0	738	1	1	\N	565	f	\N	1	f
 7350	6	738	1	1	, crumbled	283	f	\N	2	f
@@ -14083,6 +14202,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6383	0	578	1	1	, chopped	222	f	\N	5	f
 6384	0	578	1	3	(ALLSPICE BERRIES)	159	t	\N	6	f
 6385	0	578	1	2	\N	910	f	\N	7	f
+320	6	41	2	1	, zested and juiced	4	f	\N	3	f
 6369	0	577	1	1	, cored and sliced thin	1126	f	\N	2	f
 6370	0	577	1	2	, peeled and grated	7	f	\N	3	f
 6371	0	577	1	1	, diced	8	f	\N	4	f
@@ -14092,6 +14212,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6375	6	577	4	1	\N	\N	t	546	8	f
 6376	6	577	2	1	, unroasted, halved, chopped small	92	t	\N	9	f
 6402	0	39	2	1	, deseeded and finely chopped	224	t	\N	6	f
+321	6	41	2	1	\N	30	t	\N	4	f
 6377	0	577	1	1	, sliced into quarters	12	t	\N	10	f
 6476	4	588	1	28	(TOMATOES), with juice	17	f	\N	8	f
 6477	7	588	1	1	\N	81	f	\N	9	f
@@ -14119,15 +14240,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6496	4	591	1	15	\N	151	f	\N	8	f
 6497	0	591	2	5	cooked, or cauliflower rice	188	t	\N	9	f
 7275	7	726	1	2	, grated	319	f	\N	4	f
-6509	0	593	2	1	\N	9	f	\N	0	f
-6510	0	593	1	1	(SMALL CUCUMBER), chopped	155	f	\N	1	f
-6511	0	593	1	1	(SMALL CARROT, chopped	353	f	\N	2	f
-6512	0	593	1	1	, chopped	150	f	\N	3	f
-6513	7	593	1	1	(GROUND FLAXSEED)	870	f	\N	4	f
-6514	8	593	1	1	\N	1044	f	\N	5	f
-6515	8	593	1	1	(POWDERED GREENS)	1044	f	\N	6	f
-6516	4	593	1	1	\N	805	f	\N	7	f
-6517	6	593	2	3	, full-fat	178	f	\N	8	f
 6544	6	597	2	1	\N	420	f	\N	0	f
 6545	6	597	2	1	\N	789	f	\N	1	f
 6546	6	597	4	1	\N	1094	f	\N	2	f
@@ -14150,6 +14262,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7279	7	727	1	1	\N	737	f	\N	3	f
 7280	7	727	1	1	\N	124	f	\N	4	f
 7281	6	727	2	1	, rinsed	1300	f	\N	5	f
+6509	0	593	2	1	\N	9	f	\N	0	f
 6327	6	573	1	1	\N	957	f	\N	0	f
 6328	0	573	1	1	\N	155	f	\N	1	f
 6082	0	534	1	2	, peeled and coarsely chopped	1043	f	\N	0	f
@@ -14160,7 +14273,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6331	0	573	1	1	\N	598	f	\N	4	f
 6332	0	573	2	1	\N	105	f	\N	5	f
 6216	6	555	4	1	, sliced	1087	f	\N	6	f
+6510	0	593	1	1	, chopped	1199	f	\N	1	f
+6511	0	593	1	1	, chopped	1206	f	\N	2	f
+6512	0	593	1	1	, chopped	150	f	\N	3	f
 6333	6	573	4	1	\N	\N	t	481	6	f
+6513	7	593	1	1	\N	1572	f	\N	4	f
+6514	8	593	1	1	\N	1044	f	\N	5	f
 6480	0	590	1	4	\N	255	f	\N	0	f
 6481	4	590	1	8	\N	1184	f	\N	1	f
 6482	6	590	4	1	\N	\N	f	601	2	f
@@ -14177,6 +14295,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6504	0	592	1	1	, peeled and diced	789	f	\N	6	f
 6505	0	592	1	1	, deseeded and chopped	597	f	\N	7	f
 6487	6	590	4	1	, chopped	13	t	\N	7	f
+6516	4	593	1	1	\N	805	t	\N	7	f
 6518	8	594	1	1	\N	1259	f	\N	0	f
 6519	8	594	1	1	\N	490	f	\N	1	f
 6520	8	594	4	1	\N	67	t	\N	2	f
@@ -14234,13 +14353,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7289	6	728	1	1	\N	123	f	\N	5	f
 7290	8	728	4	1	\N	285	t	\N	6	f
 7354	6	739	1	2	, cooked, rinsed in cold water	1507	f	\N	0	f
-7355	6	739	2	1	, grated	736	f	\N	1	f
 6579	5	602	1	1	\N	387	f	\N	0	f
 6580	0	602	1	4	\N	187	f	\N	1	f
 6581	0	602	1	8	\N	985	f	\N	2	f
 6582	0	602	1	4	\N	144	t	\N	3	f
 6583	0	602	1	2	\N	1088	t	\N	4	f
 6584	6	602	1	1	\N	417	f	\N	5	f
+7355	6	739	2	1	, grated	736	f	\N	1	f
 6629	0	610	1	4	\N	5	f	\N	1	f
 6597	0	606	1	2	\N	22	f	\N	0	f
 6598	4	606	1	1	\N	56	f	\N	1	f
@@ -14466,6 +14585,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6117	6	540	4	1	\N	991	f	\N	10	f
 6118	8	540	1	1	\N	39	f	\N	11	f
 6119	7	540	1	1	\N	657	f	\N	12	f
+7999	5	946	1	1	\N	988	f	\N	0	f
+8000	0	946	1	2	, minced	5	f	\N	1	f
+8001	8	946	1	1	\N	1547	f	\N	2	f
+8002	8	946	4	3	\N	214	f	\N	3	f
 6808	7	633	1	1	(TAMARIND JUICE), made by mixing tamaring paste with warm water	295	f	\N	5	f
 6809	0	633	1	2	, torn	596	t	\N	6	f
 6810	0	633	2	1	\N	467	f	\N	7	f
@@ -14985,12 +15108,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7441	4	751	1	4	\N	277	f	\N	3	f
 7442	4	751	1	2	\N	390	t	\N	4	f
 7480	4	785	1	7	, dried	1330	f	\N	4	f
+8003	8	946	4	1	\N	504	f	\N	4	f
 7446	0	752	1	4	\N	105	f	\N	3	f
+8004	8	946	4	1	, ground	67	f	\N	5	f
+8005	8	946	8	1	, ground	70	f	\N	6	f
 7487	4	786	1	5	\N	1514	f	\N	0	f
 7488	4	786	1	1	\N	1412	t	\N	1	f
 7489	4	786	2	7	\N	984	f	\N	2	f
 7490	0	786	1	1	\N	405	f	\N	3	f
 7491	0	786	1	2	\N	598	f	\N	4	f
+8006	8	946	1	1	(CANOLA OIL | CORN OIL)	79	f	\N	7	f
+8007	8	947	1	1	\N	79	f	\N	0	f
+8008	0	947	1	1	\N	\N	f	946	1	f
 2098	8	103	4	1	\N	285	t	\N	7	f
 2099	6	103	2	1	\N	\N	f	119	8	f
 7545	6	824	4	3	\N	38	f	\N	0	f
@@ -15279,11 +15408,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7783	7	861	1	1	, sliced	1308	f	\N	4	f
 7784	6	861	4	3	\N	\N	f	719	5	f
 7785	8	861	8	1	\N	285	t	\N	6	f
-7786	0	862	1	6	, diced small	281	f	\N	0	f
-7787	6	862	1	1	, roughly chopped	13	f	\N	1	f
-7788	0	862	1	1	, deseeded and minced	565	f	\N	2	f
-7789	0	862	1	1	, juiced	12	f	\N	3	f
-7790	8	862	1	1	\N	75	f	\N	4	f
 7756	7	315	1	2	, divided	77	f	\N	5	f
 7757	6	315	2	5	\N	\N	f	858	6	f
 7758	7	315	1	1	\N	\N	f	858	7	f
@@ -15367,7 +15491,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7822	0	865	1	2	\N	1557	f	\N	3	f
 7823	0	865	1	1	, sliced	8	f	\N	4	f
 7824	6	865	1	1	\N	\N	f	723	5	f
+7786	0	862	1	6	, diced small	281	f	\N	0	f
 6113	6	540	1	3	, chopped	16	f	\N	6	f
+7787	6	862	1	1	, roughly chopped	13	f	\N	1	f
+7788	0	862	1	1	, deseeded and minced	565	f	\N	2	f
+7789	0	862	1	1	, juiced	12	f	\N	3	f
+7790	8	862	1	1	\N	75	f	\N	4	f
 7861	6	786	4	3	\N	1515	f	\N	5	f
 7862	7	786	1	3	\N	278	f	\N	6	f
 7863	7	786	1	3	\N	82	f	\N	7	f
@@ -15448,7 +15577,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7952	6	910	4	1	, grated	135	f	\N	3	f
 7953	6	910	4	1	\N	\N	f	710	4	f
 7954	7	910	1	2	\N	32	f	\N	5	f
-7990	9	944	1	8	\N	806	f	\N	0	f
 5400	4	362	3	1	\N	95	t	\N	4	f
 7955	7	362	1	1	, divided	278	t	\N	5	f
 7956	8	362	8	1	\N	692	t	\N	6	f
@@ -15460,7 +15588,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7962	8	911	2	1	\N	214	f	\N	5	f
 7963	8	911	8	1	, ground	67	f	\N	6	f
 7964	7	911	1	2	\N	77	f	\N	7	f
-7991	7	944	1	1	(water kefir grains)	1197	f	\N	1	f
 7992	0	945	1	2	\N	387	f	\N	0	f
 7993	6	945	4	1	(BUTTERMILK)	29	f	\N	1	f
 7994	6	945	2	1	\N	38	f	\N	2	f
@@ -15468,6 +15595,63 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7996	8	945	2	1	\N	214	f	\N	4	f
 7997	8	945	4	1	, ground	67	f	\N	5	f
 7998	6	945	1	1	\N	79	f	\N	6	f
+8009	0	947	1	1	\N	1411	f	\N	2	f
+8010	0	947	1	1	\N	1214	f	\N	3	f
+8011	0	947	1	1	\N	1176	f	\N	4	f
+8012	0	947	1	2	\N	725	f	\N	5	f
+8013	4	41	1	1	, for seasoning	140	t	\N	5	f
+8053	7	739	1	1	, for garnish	752	t	\N	5	f
+8024	0	950	1	7	\N	1569	f	\N	0	f
+8054	7	739	1	1	, thinly sliced, for garnish	144	t	\N	6	f
+8055	0	955	1	1	\N	1082	f	\N	0	f
+8056	7	955	1	1	\N	77	f	\N	1	f
+8057	0	955	1	2	, very thinly sliced	5	f	\N	2	f
+8058	6	955	2	1	(KIMCHI?)	718	f	\N	3	f
+8059	6	955	1	1	(COOLED STICKY RICE)	\N	f	589	4	f
+8060	7	955	1	1	\N	62	f	\N	5	f
+8061	8	955	8	1	\N	285	t	\N	6	f
+8062	7	956	1	1	\N	77	f	\N	0	f
+8063	6	956	2	1	(PORK LOIN | PORK SHOULDER), cut into small cubes	1552	f	\N	1	f
+8064	0	956	1	4	, sliced, whites and greens kept separate	1082	f	\N	2	f
+6515	8	593	1	1	\N	1573	f	\N	6	f
+6517	6	593	2	3	, full-fat	178	f	\N	8	f
+8025	7	951	1	1	\N	77	f	\N	0	f
+8026	6	951	2	1	, diced	222	f	\N	1	f
+8027	4	951	1	15	(CANNED CRUSHED TOMATOES	1548	f	\N	2	f
+8028	6	951	1	8	\N	1553	f	\N	3	f
+8029	6	951	1	1	, 1/2-inch diced	978	f	\N	4	f
+8030	0	951	1	2	\N	\N	f	907	5	f
+8031	8	951	8	1	\N	285	t	\N	6	f
+8032	6	952	2	1	(DRIED SKIITAKE MUSHROOMS	1384	f	\N	0	f
+8033	6	952	1	12	, divided	123	f	\N	1	f
+8034	7	952	1	1	\N	77	f	\N	2	f
+8035	5	952	1	1	\N	644	f	\N	3	f
+8036	6	952	1	1	, diced	222	f	\N	4	f
+8037	7	952	1	2	\N	1306	f	\N	5	f
+8038	7	952	1	2	\N	62	f	\N	6	f
+8039	8	952	8	1	\N	285	t	\N	7	f
+8065	6	956	2	1	(FROZEN PEAS & FROZEN CARROTS)	600	f	\N	3	f
+8066	6	956	1	1	(COOLED STICKY RICE)	\N	f	589	4	f
+8067	7	956	1	2	\N	62	f	\N	5	f
+8068	8	956	8	1	\N	214	f	\N	6	f
+6010	6	522	4	1	, chopped	90	f	\N	9	f
+6011	6	522	2	1	\N	\N	t	414	10	f
+8040	6	953	1	2	\N	171	f	\N	0	f
+8041	0	953	1	4	, yolks-only	1411	f	\N	1	f
+8042	6	953	2	1	\N	36	f	\N	2	f
+8043	7	953	1	4	\N	36	f	\N	3	f
+8044	8	953	1	1	\N	40	f	\N	4	f
+8045	6	954	1	1	\N	171	f	\N	0	f
+8046	6	954	1	1	, divided	36	f	\N	1	f
+8047	0	954	1	1	, grated and juiced	1391	f	\N	2	f
+8048	6	954	1	1	\N	992	f	\N	3	f
+8049	6	954	2	1	\N	993	f	\N	4	f
+8050	0	954	1	24	(LADYFINGER COOKIES	632	f	\N	5	f
+4814	7	264	1	2	\N	321	f	\N	4	f
+8051	8	264	1	1	\N	82	f	\N	5	f
+8052	7	264	1	1	\N	77	f	\N	6	f
+7990	9	944	1	8	\N	806	f	\N	0	f
+7991	7	944	1	1	\N	1580	f	\N	1	f
 \.
 
 
@@ -15571,9 +15755,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 260	Cover and cook on low 7-9 hours or until meat is tender.	31	1	0
 3241	Slice the zucchini into medium-thick slices and toss with olive oil, salt, and pepper.	408	1	0
 3242	Place the zucchini in a non-stick baking dish and bake for 10 to 15 minutes, or until tender.	408	2	2
-212	Preheat the oven to 425 degrees F (220 degrees C). Line a baking sheet with aluminum foil.	49	0	0
-213	Arrange bagels, cut-side up, on the prepared baking sheet. Spoon a thin layer of pizza sauce over each bagel half and sprinkle with pizza cheese. Place two pepperoni slices onto each bagel half.	49	1	0
-214	Bake in the preheated oven until cheese is melted and pepperoni is lightly browned, about 6 minutes.	49	2	0
 1955	Break the eggs into a bowl and whisk lightly, then tip them into a shallow dish. Heat the butter or oil in a large non-stick frying pan.	145	0	0
 1956	Dip the panettone slices in the egg and fry for 2-3 minutes on each side until golden brown. Drain, dust with sugar and serve with the berries.	145	1	0
 261	Remove meat; cool slightly. Discard cooking juices.	31	2	0
@@ -15586,7 +15767,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 851	Add bacon to a large skillet over medium heat. Cook until crispy then remove to a paper towel-lined plate to drain and set aside. Remove bacon grease from skillet.	95	0	0
 3469	Roll up each slice in a lettuce leaf and serve.	530	2	0
 3357	Lightly mash with a potato masher, and mix in the olive oil and chopped dill. Serve warm.	533	3	0
+213	Arrange bagels, cut-side up, on the prepared baking sheet. Spoon a thin layer of pizza sauce over each bagel half and sprinkle with pizza cheese. Place two pepperoni slices onto each bagel half.	49	1	0
 3384	In a food processor, combine the lemon juice, pine nuts, and basil, and process until just combined. Slowly add in the olive oil, and pulse until emulsified. Season to taste with sea salt and pepper.	543	0	256
+214	Bake in the preheated oven until cheese is melted and pepperoni is lightly browned, about 6 minutes.	49	2	2
 263	Serve on buns.	31	4	0
 3121	Place bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2 to 3 minutes.	19	1	4
 476	Top with sliced chicken, sliced tomato and the second piece of toast.	52	1	0
@@ -15605,6 +15788,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3053	Serve with lemon-dressed greens.	389	4	0
 3385	Combine avocado. coconut cream, cilantro, avocado oil, and lemon juice in a blender, then purée until smooth.	544	0	128
 571	Carefully remove the hot quesadillas to a plate. Cut in half at the fold to make 4 pieces.	20	3	0
+212	Preheat the oven to 425°F. Line a baking sheet with aluminum foil.	49	0	2
 1094	In a medium bowl, whisk together flour, sugar, baking soda, baking powder, oats, cornmeal, flax seeds and sesame seeds until blended.	113	0	0
 1095	In a separate large mixing bowl; whisk together eggs, half & half, evaporated milk and water until blended.	113	1	0
 1096	Slowly pour dry ingredients into wet ingredients while whisking constantly. Batter will be thick.	113	2	0
@@ -15615,12 +15799,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3359	Use a box grater or food processor to finely shred the apples and carrots.	534	0	0
 3360	Drizzle with lemon juice.	534	1	0
 2847	Slice the coriander stalks, add to the pan with the squash, curry paste and coconut milk, then pour in 1 litre of water. Cover and simmer on a medium heat for 1 hour 20 minutes.	179	2	0
-143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	41	0	0
 595	Combine the Potato Starch, Brown Rice Flower, and Xanthan Gum in a bowl and mix well.	73	0	0
 2334	Whisk all ingredients in a medium bowl. Add more oil to thin if needed.	251	0	0
 2854	Combine 3/4 cup milk and 1 cup cereal. Top with a peach or nectarine cut into bite size pieces.	77	0	0
-2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	238	0	0
+143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	41	0	0
 144	Return the pasta and vegetables to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	41	1	0
+2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	238	0	0
 596	Add the ingredients to the baking pan in the order listed.	73	1	8192
 597	Select COURSE No. 7 and press START.	73	2	8192
 598	When the add beep sounds, thoroughly scrape down the flour and other ingredients from the sides of the baking pan to the bottom using a rubber spatula.	73	3	8192
@@ -16107,13 +16291,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2859	Continue to fry the mixture, increasing the heat if necessary, until the sausage meat is brown all over and looks crumbly. Stir in the tomato sauce, then sprinkle in the wine, with salt and pepper to taste. Simmer over a low heat, stirring occasionally, for 10-12 minutes.	192	2	0
 3258	Serve immediately or store in the refrigerator for up to 5 days.	251	1	0
 2150	When the pita bowls have cooled off enough to handle, assemble the salads by adding equal amounts of the baby spinach, tomatoes, cucumbers, red onion and roasted chickpeas to each pita bowl. Top with the vinaigrette.	61	5	0
-3317	Preheat the oven to 425°F.	522	0	0
-3318	In a large bowl, add the Brussels sprouts through olive oil, and toss to coat.	522	1	0
 2027	In a saucepan place all the ingredients.	75	0	0
 2811	Peel and chop the bananas, then mash them with a fork.	143	0	0
 2812	Place all the smoothie ingredients in a blender or food processor and blend until smooth.	143	1	0
 2813	Pour into big, tall glasses, then pour in some chocolate sauce from a height. The sauce will swirl around the glasses to give a marbled effect.	143	2	0
 3098	Add blueberries, watermelon, and jicama to the bowl.	402	1	0
+3317	Preheat the oven to 425°F.	522	0	2
+3318	In a large bowl, add the Brussels sprouts through olive oil, and toss to coat.	522	1	0
 1966	Grill (broil) the sausages for 10-12 minutes until they are browned on all sides.	190	0	0
 1967	Meanwhile, heat the oil in a large pan, add the onion and garlic and cook for 3 minutes. Add the paprika, herbs and chilli sauce to taste, then the yellow pepper. Cook for 3 minutes more, stirring occasionally.	190	1	0
 1968	Pour in the canned tomatoes, breaking them up with a wooden spoon, then add salt and pepper to taste and stir well. Cook over a medium heat for 10-12 minutes, adding the vegetable stock gradually. Ad the same time, cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes.	190	2	0
@@ -16152,7 +16336,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2430	Refrigerate for 2 hours.	232	4	0
 2431	When set, gently tease out the contents onto a chopping board and cut into bite-sized pieces.	232	5	0
 2432	Store in the refrigerator for up to 5 days.	232	6	0
-3319	Arrange the Brussels sprouts mixture on a lined baking sheet, and bake in the oven for 15 minutes. Toss the veggies, and bake another 10-15 minutes, until tender.	522	2	0
 2818	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of cooking water. 	260	0	4
 2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	254	0	0
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	254	1	0
@@ -16166,12 +16349,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2585	Add the onion and sauté for 7-10 minutes until translucent. Add the garlic and cook another few minutes before adding the rice.	272	1	0
 2586	Stir frequently until the rice is fully heated through and completely coated in the spices.	272	2	0
 2587	Take off the heat. Transfer to a serving dish and top with the cilantro leaves.	272	3	0
-3320	When the veggies are done, remove from the oven and sprinkle with dried cranberries, and chopped walnuts. Drizzle with the Maple Syrup Balsamic dressing and enjoy!	522	3	0
 3091	Combine in a dutch oven and bake at 350°F for 2 hours.	399	0	0
 3105	Serve immediately.	403	5	0
+3320	When the veggies are done, remove from the oven and sprinkle with additional black pepper, the dried cranberries, and chopped walnuts. Drizzle with the Maple Syrup Balsamic dressing and enjoy!	522	3	0
 2504	Heat the oil in a large saucepan. Add the spices and toast them in the oil until they become nicely fragrant. Add the onions and cook, stirring, for 5–7 minutes. Add the garlic and cook 1–2 minutes more.	267	1	4
 3448	Combine the mayo, along with the remaining ingredients, in a bowl. Serve immediately.	566	0	0
 2505	Add the remaining ingredients, bring to a boil and simmer until the beans are tender, about 45 minutes. Check seasonings and adjust as necessary.	267	2	4
+3319	Arrange the Brussels sprouts mixture on a lined baking sheet, and bake in the oven for 15 minutes. Toss the veggies, and bake another 10–15 minutes, until tender.	522	2	2
 3154	Preheat the oven to 400°F.	420	0	2
 3155	Slice kielbasa into ¼ to ½ inch slices and set aside.	420	1	0
 3156	Combine the olive oil, garlic and lemon juice.	420	2	0
@@ -16220,6 +16404,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2069	To serve, divide the noodle mixture between warmed plates or bowls and top each serving with the chicken.	196	5	0
 3507	Add all ingredients into a salad bowl, toss, and enjoy.	581	0	0
 2436	First soften the coconut over a double boiler*, then add the peppermint and stevia (if using) and stir well to combine. Break the chocolate into 1” pieces and add to the mixture, still over the double boiler. Stir briefly to combine then leave to soften without stirring.	240	0	0
+2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	264	0	0
 3261	Place the quinoa into a bowl, fluff with a fork, and let cool.	479	0	0
 2824	Dip the vegetables in the hummus. Enjoy!	252	0	0
 2484	Break the chocolate into small pieces and place in a heatproof bowl. Add the butter and melt in the microwave on high for 1-2 minutes. Stir to mix and set aside. (Alternatively, place the chocolate pieces and butter in a bowl over a pan of gently simmering water and leave until melted, stirring frequently.)	175	0	0
@@ -16228,7 +16413,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3113	Dip the apples in the peanut butter. Enjoy!	407	0	0
 3508	Preheat the oven to 425°F.	582	0	2
 3373	Pour the hot water over the Oatmeal. Enjoy!	539	0	0
-2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	264	0	0
 3038	Carefully remove the fillets (the long finger shaped muscle on the back of each breast) and reserve for another use.	386	0	0
 3039	Place each chicken breast between two sheets of clear film (plastic wrap) and pound with the flat side of a meat hammer or roll out with a rolling pin to flatten to about 1cm/½in thick. Season with the cayenne pepper.	386	1	0
 3040	Heat 3-4 tbsp of the olive oil in a large heavy frying pan over a medium-high heat. Add the flattened chicken breasts and cook for 3-4 minutes until golden brown and just cooked, turning them once. Transfer the chicken to warmed serving plates and season with a little salt. Keep the chicken hot.	386	2	0
@@ -16552,9 +16736,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3020	Place chocolate chips in a medium-sized microwave-safe bowl. Microwave in 30-second increments, stirring in between, until fully melted.	380	1	1
 3024	Peel zucchini lengthwise with a vegetable peeler into long, thin strips. (Or, use a spiralizer or a sharp knife.) Pat with a paper towel and set aside.	381	0	0
 3037	Still on the heat, sit the wings in the pan — they should fit snugly. Let them color for 1 minute on each side, then add the teriyaki and just cover the wings with water. Halve the chili lengthways and add to the pan. Simmer for 35 to 40 minutes, or until the chicken is tender and the sauce is nice and sticky, turning occasionally.	385	1	4
-2634	Place the eggs on your plates — I like one facing up and one facing down. From a height, drizzle over the hoisin (loosening with a splash of water first, if needed). Drain and scatter over the scallions and chilies, stab the yolks, and enjoy.	264	2	0
 3350	On a large baking sheet lined with parchement paper, pour the contents of the bowl and cook for 30 minutes, until cauliflower is tender.	532	2	2
 3036	Toast the sesame seeds in a dry 8-inch non-stick frying pan on a medium heat until lightly golden, then remove to a plate.	385	0	4
+2634	Place the eggs on your plates — I like one facing up and one facing down. From a height, drizzle over the hoisin (loosening with a splash of water first, if needed). Drain and scatter over the scallions and chilies, stab the yolks, and enjoy.	264	2	0
 3025	Season chicken with salt and pepper. Heat butter in a skillet over medium heat. Add chicken and cook 8 minutes, flipping occasionally, until mostly cooked through. Transfer to a plate.	381	1	4
 1654	Meanwhile, warm the taco shells according to the instructions on the packet. Do not let them get too crisp. Spoon the lettuce, onion, tomatoes and avocado slices into the taco shells. Top with sour cream followed by the minced beef or turkey mixture.	160	1	0
 2907	Cook the noodles in boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Meanwhile, finely grate the zest of 1 lime, snip the cress, and put both aside. Toast the sesame seeds in a dry non-stick frying pan on a high heat for 1 minute, tossing regularly. Reserving one-quarter of the seeds, pound the rest in a pestle and mortar until fairly fine, then muddle in the teriyaki and the juice of 1 lime. Taste, season to perfection with sea salt and black pepper, and you've got a black tahini!	316	0	0
@@ -16572,7 +16756,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3349	In a medium-size bowl, toss the cauliflower and garlic with 2 tablespoons of the avocado oil, plus salt and pepper.	532	1	0
 3023	Refrigerate until set, about 30 minutes. Enjoy ¼ cup per serving. Store almonds for future snacking in an airtight container in the refrigerator for up to 2 weeks.	380	4	65536
 3041	Wipe out the frying pan and return to the heat. Add another 2-3 tbsp of olive oil and fry the garlic for 1 minute until golden and fragrant. Stir in the olives, cook for a further 1 minute, then stir in the tomatoes. Shred the basil leaves and stir into the olive and tomato mixture, then spoon it over the chicken and serve at once.	386	3	0
-2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2-3 minutes.	264	1	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	360	1	0
 3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. Peel off long thick strips of lemon zest and place in a bowl with the olives. Squeeze the lemon then top with 3 times as much extra virgin olive oil. Add salt, pepper and the crushed coriander seeds. Pour the dressing over the olives and leave to marinate. The longer you leave them, the better they’ll taste.	387	0	0
 3056	Place the thawed cauliflower in small batches in a food processor fitted with the steel blade. Pulse in short bursts just until it resembles grains of rice. Place the riced cauliflower in a tea towel or fine mesh nut milk bag, and squeeze until all of the water has been removed. Expect about 1 cup liquid total. Line a medium-size bowl with paper towels, place the riced, dried cauliflower in the bowl, and set it aside.	391	0	0
@@ -16585,6 +16768,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3062	Add the beaten eggs to the center of the pan and, stirring occasionally, scramble the eggs. Add more sesame oil by the half-teaspoonful as necessary to cook the eggs. Mix the scrambled eggs into the rest of the fried rice.	391	6	0
 3063	Sprinkle the fried rice with the remaining chopped scallions and serve immediately.	391	7	0
 2900	Halve the bok choy lengthways and place in a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil. Once charred, toss in the grees scallion slices, then stir in the hoisin. Let it glaze for 1 minute, then mix in the rice for 1 final minute. Spoon over the chili dressing, and serve up.	313	1	0
+2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2–3 minutes.	264	1	4
 3064	Preheat your oven to 400°F. Drain and rinse the chickpeas thoroughly, then spread them on a clean kitchen towel or paper towel. Pat them completely dry to remove moisture.	392	0	2
 3065	Spread the chickpeas in a single layer on a baking sheet (no oil or seasoning yet). Bake for 10–15 minutes, shaking the pan halfway through. This step helps dry them out for maximum crispiness.	392	1	2
 3043	Heat 1 tablespoon of vegetable oil in a large skillet or wok over medium-high heat. Add the diced onion and sauté until it becomes translucent, about 2-3 minutes.	388	0	4
@@ -16744,7 +16928,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3556	Add in the canned tomatoes and coconut cream and let simmer for 20 minutes.	591	3	0
 3557	When done, serve over cauliflower rice, or regular rice.	591	4	0
 3568	In a large skillet over medium-high heat, heat oil, garlic and capers. Cook until the garlic becomes fragrant, about 3 minutes.	595	0	4
-3564	Blend in the Vitamix and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	593	0	0
 3552	Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	321	3	0
 3580	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	600	0	128
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper, then grill for 2–3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	270	1	0
@@ -16769,6 +16952,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3583	Place eggs in an empty pot, cover with water, and bring to a boil over high heat. Set a timer for 8 minutes once the water starts to boil.	602	1	4
 2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	367	1	0
 3594	Add the Brussel sprouts and potatoes, and continue cooking for another 5 minutes.	607	1	0
+3564	Blend in a high-speed blender and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	593	0	128
 3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	607	2	0
 3574	Bake for 60 minutes, or until a toothpick comes out clean when you poke it and the center is set.	596	3	2
 3584	Create an ice bath in a large bowl and set aside. Oncer the timer goes off, immediately remove eggs and place in the ice bath.	602	2	0
@@ -16888,7 +17072,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4448	Combine the coconut water and water kefir grains in a clean glass jar.	944	1	0
 4449	Cover the jar with the cheesecloth and secure it with rubber band.	944	2	0
 4450	Leave it on the counter at room temperature for 24 hours or until it is fizzy. Time will depend on the room temperature.	944	3	0
-4451	Strain the water kefir grains out by using a fine mesh strainer.	944	4	0
 3681	Preheat the oven to 190C/375F. Place a baking sheet in the oven.	626	0	0
 3682	Mix 15ml/1 tbsp of the cocoa with 15ml/1 tbsp of the sugar in a bowl. Grease six 150ml/8fl oz/1 cup ramekins. Pour the cocoa and sugar mixture into each of the dishes in turn, rotating them so that they are evenly coated.	626	1	0
 3683	Mix the remaining cocoa powder with the dark rum.	626	2	0
@@ -16994,6 +17177,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3745	Add the eggs and cook until scrambled into small lumps.	640	2	4
 3746	Add the rice and continue to stir and toss, to coat it with the oil and prevent it from sticking.	640	3	4
 3747	Stir in the fish sauce, soy sauce and sugar and mix well. Continue to fry until the rice is thoroughly heated. Spoon into warmed individual bowls and serve, garnished with sliced spring onions, chillies, and lime wedges.	640	4	4
+4477	Chew the gum.	950	0	0
 3755	Place the beef strips in a bowl and sprinkle over the orange rind and juice. If possible, leave to marinate for 10 minutes, or up to 30 minutes if you can spare the time.	644	0	0
 3756	Drain the liquid from the meat and set aside, then mix the meat with the soy sauce, cornstarch and ginger, making sure the meat is evenly covered.	644	1	0
 3757	Heat the oil in a wok or large frying pan and add the beef. Stir-fry for 1 minute until lightly colored, then add the carrot strips and stir-fry for another 2–3 minutes.	644	2	4
@@ -17217,7 +17401,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3999	Preheat the oven to 375°F.	742	0	2
 4000	Put the cooked chicken fingers in a small baking dish. Spoon 1 cup of marinara sauce over the chicken and cover with 2 tablespoons of Parmesan and all the mozzarella. Cover the pan with aluminum foil and bake in the oven for 20 minute.	742	1	2
 3997	Put the roasted vegetables in a medium bowl. Add the balsamic and toss to coat. Let the vegetables marinate for 10 minutes.	741	0	0
-3993	In a medium bowl, toss together the noodles, carrot, bok choy, and bell pepper. Add the dressing and toss to coat the noodles and vegetables.	739	0	0
+3993	In a medium bowl, toss together the noodles, carrot, bok choy, and bell pepper.	739	0	0
 3944	Warm a medium pot over medium heat. Add the olive oil and onion and cook for 5 minutes, or until soft. Add the ginger and cook for 30 seconds. Add the tomato paste and cook for 1 minute.	727	0	4
 3945	Sprinkle the curry powder into the pot and cook for 30 seconds. Add the lentils and water and bring to a boil. Reduce the heat to low and simmer for 25 to 30 minutes, until the lentils are tender.	727	1	4
 4006	Cook the pasta in a medium pan of boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Melt the cheese in a heatproof bowl above the pasta while it cooks, removing carefully when gooey.	744	0	4
@@ -17415,11 +17599,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4253	Squeeze over the lemon juice, then return to the oven for a final 10 minutes, or until the chicken is tender and super-golden.	835	5	2
 4274	Add the mushrooms, onion, and garlic and cook for 4 to 5 minutes, stirring the ingredients every minute or so, until the onion and garlic just start to brown.	861	1	4
 4275	Add the sauce to the pan and cook for another 1 to 2 minutes, until the sauce is thick. Remove from the heat, taste the sauce, and season with salt and pepper.	861	2	4
-4276	Place all ingredients in a mixing bowl and toss to combine.	862	0	0
-4277	Store in an airtight container in the refrigerator.	862	1	0
 4247	Stir the tomato paste, rice, and a pinch of sea salt and black pepper into the onion pan, then pour in the saffron water and bring to a boil. 	315	3	4
 4248	Once boiling, carefully transfer to the oven for 15 minutes, or until the rice has absorbed all the liquid, fluffed up beautifully, and is golden and crisp on top.	315	4	2
 4249	Spoon the saffron yogurt over the rice, drizzle it all with 1 tablespoon of extra virgin olive oil, fork and mix it all together, and dish up.	315	5	0
+4276	Place all ingredients in a mixing bowl and toss to combine.	862	0	0
+4277	Store in an airtight container in the refrigerator.	862	1	65536
 4268	Warm a medium skillet over medium-high heat. Add 1 tablespoon of olive oil and the steak. Season the steak with salt and pepper. Cook only until browned, about 3–5 minutes. Take the steak out of the pan and set aside.	860	0	4
 4269	Set the skillet back over medium-high heat. Add 1 tablespoon of oil and the broccoli and sauté the broccoli for 2 minutes. Add the water to the pan, cover, and steam the broccoli for 2 minutes. Take the broccoli out of the pan and set aside.	860	1	4
 4270	Wipe the pan out with a paper towel and return it to the heat. Add the remaining 1 tablespoon of oil along with the onion. Cook until onions are soft, about 3 minutes. Then, return the cooked steak to the pot.	860	2	4
@@ -17530,9 +17714,50 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4150	Peel and finely slice the garlic, plate it in a large non-stick frying pan on a medium heat with 1 tablespoon of olive oil and fry until lightly golden, then remove half to a plate for garnish. 	833	1	4
 4414	Put the chicken in a large bowl and sprinkle with the lemon zest, lemon juice, pepper flakes, thyme, garlic, salt, pepper, and olive oil. Massage the herbs and spices into the chicken, cover the bowl, and refrigerate for 1 hour.	911	0	0
 4415	Preheat the oven to 400F. Line a sheet pan with parchment paper.	911	1	0
-4447	Ensure your water kefir grains are active.	944	0	0
 4456	In a large skillet, heat the oil and cook for 6 minutes. Flip and cook for another 6 to 7 minutes, until the internal temperature of the chicken reaches 165F.	945	4	0
 4457	Set the chicken on a wire rack and let it rest for 5 minutes before serving.	945	5	0
+4458	Preheat the oven to 375F. Line a baking sheet with parchment paper or aluminum foil.	946	0	0
+4459	In a medium bowl, combine the turkey, garlic, poultry seasoning, salt, cayenne, black pepper, and cinnamon and mix well.	946	1	0
+4460	Divide the turkey mixture into 6 even portions and roll into balls. Press the balls into patties about 1/8-inch thick and place on the lined baking sheet.	946	2	0
+4461	Bake the sausage patties for 12 minutes.	946	3	0
+4462	Heat a medium skillet over medium-high heat. Add the oil and sear the turkey sausage patties for about 3 minutes per side, or until browned.	946	4	0
+4463	Warm a medium skillet over medium heat. Add the oil along with the sausage patty. Crack the egg into the pan alongside the sausage and cook the sausage for about 3 minutes per side, or until browned on both sides and hot in the middle. Cook the egg to your preferred doneness. 	947	0	0
+4464	While the sausage and egg are cooking, toast the English muffin.	947	1	0
+4465	Once the sausage is heated and browned, put it on the English muffin. Top the sausage with the cheese, egg, lettuce, and the other half of the English muffin.	947	2	0
+4478	Warm a large pot over medium-high heat. Add the oil and onion and cook for 8 minutes, or until the onion starts to brown.	951	0	0
+4479	Add the tomatoes, beef stock, and potatoes. Bring to a boil and cook for 10 minutes.	951	1	0
+4480	Break the burgers into bite-size pieces and throw them into the soup. Reduce the heat to low and simmer for 10 more minutes.	951	2	0
+4481	Taste the soup and season with salt and pepper.	951	3	0
+4482	Soak the shiitake mushrooms in 4 cups of water in a medium bowl for 30 minutes.	952	0	0
+4483	Warm a large pot over medium-high heat. Add the olive oil, pork, and onion. Cook for 7 to 8 minutes, until the pork is browned and the onions are translucent.	952	1	0
+4484	Scoop the mushrooms out of the water and slice them nice and thin. Pour the mushroom soaking water, plus the remaining 8 cups of water, into the pot. Add the mushrooms along with the sambal, soy sauce, and salt and pepper to taste.	952	2	0
+4485	Bring the soup to a boil, then reduce the heat to low and simmer for 20 minutes to develop the flavors. Serve.	952	3	0
+4486	Preheat the oven to 325F.	953	0	2
+4487	In a medium pot, bring the cream to a boil. Remove from the heat and set aside.	953	1	4
+4488	In a heatproof medium bowl, whisk together the egg yolks and 1/2 cup of sugar until the yolks turn a pale yellow. Whisk the cream into the egg mixture, a few drops at a time, to start. Slowly add the rest of the cream and whisk until all the cream has been mixed into the eggs. Whisk in the vanilla.	953	2	0
+4489	Place a paper towel in the bottom of a roasting pan, then place four ramekins or ceramic mugs in the pan. Divide the egg mixture among the four 6-ounce ramekins, then fill the roasting pan with hot water until it reaches halfway up the sides of the ramekins.	953	3	0
+4490	Cover the roasting pan with foil and bake for 40 to 45 minutes, until the custard is set but still a little wobbly in the middle.	953	4	2
+4491	Take the ramekins out of the water, let cool slightly, then cover with plastic and refrigerate for 2 hours.	953	5	65536
+4492	Evenly sprinkle the top of each cup of custard with 1 tablespoon of sugar and use a kitchen blowtorch to brulé it just until the sugar is melted and browned.	953	6	0
+4493	In a medium bowl, with an electric mixer, whip the cream and 1/2 cup of sugar together until the cream holds firm peaks.	954	0	0
+4494	In a separate bowl, mix together the orange zest, orange juice, and mascarpone. Fold the whipped cream into the mascarpone mixture.	954	1	0
+4495	In a small bowl, stir together the hot water and remaining 1/2 cup of sugar.	954	2	0
+4496	Grab four 16-ounce cups and put a spoonful of mascarpone mixture in the bottom of each.	954	3	0
+4497	Dip a ladyfinger in the sugar water and put it on top of the mascarpone mixture in the cup. You may have to break the cookies. Spoon more of the mascarpone mixture over the cookie. Repeat until all the cookies and the mascarpone mixture are used up, making sure the last layer in each cup is mascarpone mixture.	954	4	0
+4498	Cover the cups and refrigerate for at least 2 hours before serving.	954	5	0
+4447	Ensure your water kefir grains are active.	944	0	0
+4451	Strain the water kefir grains out by using a fine mesh strainer.	944	4	0
+4499	Add the dressing and toss to coat the noodles and vegetables.	739	1	0
+4500	Garnish this dish with black and white sesame seeds and thinly sliced scallions.	739	2	0
+4501	Cut the scallions in half to separate the dark-green tops from the whites. Cut the roots off the white parts, leaving as much of the scallion as possible, then cut the whites into 1-inch lengths and set aside. Slice the green tops as thinly as you can on a slight angle and set those aside.	955	0	0
+4502	Warm a large nonstick skillet or wok over high heat. Add the oil, scallion whites, and garlic and sauté for 1 to 2 minutes. Add the kimchi and cook for another 1 to 2 minutes.	955	1	0
+4503	Add the rice to the pan and let it cook for 1 to 2 minutes without stirring, then stir and let it sit for another 1 to 2 minutes. Pour the soy sauce into the pan and stir until it's evenly distributed.	955	2	0
+4504	Season the fried rice with salt and pepper, garnish with the sliced scallion greens, and serve.	955	3	0
+4505	Warm a wok or large nonstick skillet over medium-high heat. Add the oil and pork to the pan. Leave the pork alone for 1 to 2 minutes, or until it is browned on the bottom. Give it a quick stir and leave it alone for another 1 to 2 minutes.	956	0	0
+4506	Throw the white bits of the scallions into the pan along with the peas and carrots and cook for 2 minutes.	956	1	0
+4507	Add the cooked rice to the pan, give it a stir, and (like the pork) leave it alone for 1 to 2 minutes. You want the rice to brown a bit on the bottom. Stir it and leave it alone for another 1 to 2 minutes.	956	2	0
+4508	Add the soy sauce and stir until it's evenly distributed.	956	3	0
+4509	Taste the rice and add a bit of salt if it needs it. Stir in the scallion greens and serve.	956	4	0
 \.
 
 
@@ -17578,7 +17803,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16449, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16558, true);
 
 
 --
@@ -18242,5 +18467,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Zhje3anwI3X84935YpWtxNLun0nulQeq0MelWxLb0EaGfTKobCgQddTTHAcIXbZ
+\unrestrict pQKT2LleIAg1NU6E3dzKaU3dLKjTF3tmfa4BavyC9QviNJdqXxSA1UYROlHv0xe
 
