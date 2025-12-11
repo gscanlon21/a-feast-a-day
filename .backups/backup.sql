@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Zhje3anwI3X84935YpWtxNLun0nulQeq0MelWxLb0EaGfTKobCgQddTTHAcIXbZ
+\restrict laG22IzB01Gy4TJCL53O0hxLBBjYwM7WT7kSxl6BEQyJ4ct6NBmA9X0KVmFikxX
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1191,6 +1191,13 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1560	1465	1	f
 1560	1463	1	f
 1563	734	1	f
+1569	1571	1	f
+1569	1570	1	f
+1569	1564	1	f
+1569	1565	1	f
+1569	1566	1	f
+1569	1567	1	f
+1569	1568	1	f
 690	39	1	f
 690	681	1	f
 1008	871	1	f
@@ -3872,7 +3879,6 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 7870	8	2199023255552	\N	2	1
 7871	8	48	\N	3	2
 7872	8	62	\N	3	7
-7945	260	2047	\N	3	25
 8013	172	34359738368	\N	2	285
 8014	172	2	\N	3	13
 8015	172	1	\N	3	1
@@ -3946,6 +3952,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 5197	166	2047	\N	3	170
 7522	214	68719476736	\N	2	6976
 7523	255	229376	\N	1	922
+7945	260	2047	\N	3	22
 5805	61	2047	\N	3	94
 5888	165	2047	\N	3	100.5
 8913	721	1	\N	3	3
@@ -11534,6 +11541,56 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 16447	313	4294967296	\N	2	1
 16448	313	14	\N	3	1
 16449	313	62	\N	3	1
+16450	1328	68719476736	\N	2	6
+16451	1328	34359738368	\N	2	292
+16452	1328	2	\N	3	3
+16453	1328	1	\N	3	1
+16454	1328	4294967296	\N	2	12
+16455	1328	2199023255552	\N	2	0.3
+16456	1328	48	\N	3	1
+16457	1328	14	\N	3	3
+16458	1328	1984	\N	3	0.2
+16459	1328	62	\N	3	5
+16460	1328	2047	\N	3	22
+16461	260	68719476736	\N	2	6
+16462	260	34359738368	\N	2	292
+16463	260	2	\N	3	3
+16464	260	1	\N	3	1
+16465	260	4294967296	\N	2	12
+16466	260	2199023255552	\N	2	0.3
+16467	260	48	\N	3	1
+16468	260	14	\N	3	3
+16469	260	1984	\N	3	0.2
+16470	260	62	\N	3	5
+16471	1007	2047	\N	3	1
+16472	151	256	\N	3	4
+16473	151	9007199254740992	\N	3	0.2
+16474	151	18014398509481984	\N	3	0.3
+16475	151	36028797018963968	\N	3	1
+16476	151	72057594037927936	\N	3	0.4
+16477	151	144115188075855872	\N	3	0.2
+16478	151	288230376151711744	\N	3	0.4
+16479	151	576460752303423488	\N	3	0.3
+16480	151	1152921504606846976	\N	3	0.1
+16481	151	2305843009213693952	\N	3	1
+16482	151	-9223372036854775808	\N	3	0.4
+16483	151	4611686018427387904	\N	3	1
+16484	151	274877906944	\N	1	1
+16485	151	17179869184	\N	2	67
+16486	151	4398046511104	\N	2	3
+16487	151	70368744177664	\N	2	293
+16488	151	17592186044416	\N	2	2
+16489	151	262144	\N	2	0.1
+16490	151	1048576	\N	2	2
+16491	151	2097152	\N	2	1
+16492	151	4194304	\N	2	0.1
+16493	151	16777216	\N	1	55
+16494	151	67108864	\N	2	7
+16495	151	1536	\N	3	1
+16496	151	1792	\N	3	5
+16497	1564	2047	\N	3	1
+16498	1569	2047	\N	3	1
+16499	1571	2047	\N	3	1
 \.
 
 
@@ -11765,7 +11822,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2788	0	141	1	1	, seeded and sliced	8	f	\N	6	f
 2789	6	141	1	1	, drained	418	f	\N	7	f
 2790	8	141	1	1	\N	276	f	\N	8	f
-317	6	41	1	1	\N	145	f	\N	0	f
 2791	8	141	1	1	\N	124	f	\N	9	f
 2792	0	141	1	2	, beaten	187	f	\N	10	f
 7171	4	711	1	16	, drained and rinsed	1307	f	\N	0	f
@@ -11819,6 +11875,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 450	6	55	2	1	\N	122	f	\N	0	f
 451	7	55	1	1	\N	77	f	\N	1	f
 7152	6	707	1	12	\N	123	f	\N	6	f
+317	4	41	1	8	\N	145	f	\N	0	f
 2703	7	24	1	4	\N	29	f	\N	1	f
 2704	6	24	1	1	\N	110	f	\N	2	f
 5424	7	367	1	2	\N	829	f	\N	2	f
@@ -13942,8 +13999,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6063	0	530	1	1	, peeled and sliced	9	f	\N	7	f
 6064	0	530	1	8	\N	1073	f	\N	8	f
 7264	6	725	2	1	, diced	222	f	\N	1	f
-318	6	41	2	1	\N	600	f	\N	1	f
-319	6	41	1	1	, woody ends removed, cut into lengths	122	f	\N	2	f
 7265	6	725	4	1	, diced	736	f	\N	2	f
 6358	7	576	1	1	\N	77	f	\N	0	f
 7266	6	725	4	1	, diced	1286	f	\N	3	f
@@ -13971,6 +14026,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6343	0	574	2	1	, chopped	105	f	\N	8	f
 6344	6	574	2	1	(OLIVES), sliced	397	f	\N	9	f
 6345	6	574	1	2	\N	368	f	\N	10	f
+318	4	41	1	6	\N	600	f	\N	1	f
 6360	8	576	4	1	, to taste	692	t	\N	2	f
 6304	6	569	1	1	, diced	10	f	\N	0	f
 6305	6	569	1	1	, peeled and diced	155	f	\N	1	f
@@ -13978,6 +14034,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6307	6	569	1	3	, chopped	206	f	\N	3	f
 6308	6	569	4	1	\N	296	t	\N	4	f
 6309	7	569	1	1	\N	81	t	\N	5	f
+319	6	41	1	1	, woody ends removed, cut into lengths	122	f	\N	2	f
 6361	0	576	1	8	\N	174	f	\N	3	f
 6362	0	576	1	1	, sliced	8	f	\N	4	f
 6363	0	576	1	1	, sliced	597	f	\N	5	f
@@ -14026,8 +14083,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6455	0	586	1	1	, chopped	150	f	\N	3	f
 6456	6	586	1	3	\N	\N	f	559	4	f
 6457	6	586	1	4	, chopped	1263	f	\N	5	f
-320	6	41	2	1	, zested and juiced	4	f	\N	3	f
-321	6	41	2	1	, with chives	30	f	\N	4	f
 7348	0	738	1	2	\N	8	f	\N	0	f
 7349	0	738	1	1	\N	565	f	\N	1	f
 7350	6	738	1	1	, crumbled	283	f	\N	2	f
@@ -14083,6 +14138,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6383	0	578	1	1	, chopped	222	f	\N	5	f
 6384	0	578	1	3	(ALLSPICE BERRIES)	159	t	\N	6	f
 6385	0	578	1	2	\N	910	f	\N	7	f
+320	6	41	2	1	, zested and juiced	4	f	\N	3	f
 6369	0	577	1	1	, cored and sliced thin	1126	f	\N	2	f
 6370	0	577	1	2	, peeled and grated	7	f	\N	3	f
 6371	0	577	1	1	, diced	8	f	\N	4	f
@@ -14092,6 +14148,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6375	6	577	4	1	\N	\N	t	546	8	f
 6376	6	577	2	1	, unroasted, halved, chopped small	92	t	\N	9	f
 6402	0	39	2	1	, deseeded and finely chopped	224	t	\N	6	f
+321	6	41	2	1	\N	30	t	\N	4	f
 6377	0	577	1	1	, sliced into quarters	12	t	\N	10	f
 6476	4	588	1	28	(TOMATOES), with juice	17	f	\N	8	f
 6477	7	588	1	1	\N	81	f	\N	9	f
@@ -14466,6 +14523,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6117	6	540	4	1	\N	991	f	\N	10	f
 6118	8	540	1	1	\N	39	f	\N	11	f
 6119	7	540	1	1	\N	657	f	\N	12	f
+7999	5	946	1	1	\N	988	f	\N	0	f
+8000	0	946	1	2	, minced	5	f	\N	1	f
+8001	8	946	1	1	\N	1547	f	\N	2	f
+8002	8	946	4	3	\N	214	f	\N	3	f
 6808	7	633	1	1	(TAMARIND JUICE), made by mixing tamaring paste with warm water	295	f	\N	5	f
 6809	0	633	1	2	, torn	596	t	\N	6	f
 6810	0	633	2	1	\N	467	f	\N	7	f
@@ -14985,12 +15046,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7441	4	751	1	4	\N	277	f	\N	3	f
 7442	4	751	1	2	\N	390	t	\N	4	f
 7480	4	785	1	7	, dried	1330	f	\N	4	f
+8003	8	946	4	1	\N	504	f	\N	4	f
 7446	0	752	1	4	\N	105	f	\N	3	f
+8004	8	946	4	1	, ground	67	f	\N	5	f
+8005	8	946	8	1	, ground	70	f	\N	6	f
 7487	4	786	1	5	\N	1514	f	\N	0	f
 7488	4	786	1	1	\N	1412	t	\N	1	f
 7489	4	786	2	7	\N	984	f	\N	2	f
 7490	0	786	1	1	\N	405	f	\N	3	f
 7491	0	786	1	2	\N	598	f	\N	4	f
+8006	8	946	1	1	(CANOLA OIL | CORN OIL)	79	f	\N	7	f
+8007	8	947	1	1	\N	79	f	\N	0	f
+8008	0	947	1	1	\N	\N	f	946	1	f
 2098	8	103	4	1	\N	285	t	\N	7	f
 2099	6	103	2	1	\N	\N	f	119	8	f
 7545	6	824	4	3	\N	38	f	\N	0	f
@@ -15279,11 +15346,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7783	7	861	1	1	, sliced	1308	f	\N	4	f
 7784	6	861	4	3	\N	\N	f	719	5	f
 7785	8	861	8	1	\N	285	t	\N	6	f
-7786	0	862	1	6	, diced small	281	f	\N	0	f
-7787	6	862	1	1	, roughly chopped	13	f	\N	1	f
-7788	0	862	1	1	, deseeded and minced	565	f	\N	2	f
-7789	0	862	1	1	, juiced	12	f	\N	3	f
-7790	8	862	1	1	\N	75	f	\N	4	f
 7756	7	315	1	2	, divided	77	f	\N	5	f
 7757	6	315	2	5	\N	\N	f	858	6	f
 7758	7	315	1	1	\N	\N	f	858	7	f
@@ -15367,7 +15429,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7822	0	865	1	2	\N	1557	f	\N	3	f
 7823	0	865	1	1	, sliced	8	f	\N	4	f
 7824	6	865	1	1	\N	\N	f	723	5	f
+7786	0	862	1	6	, diced small	281	f	\N	0	f
 6113	6	540	1	3	, chopped	16	f	\N	6	f
+7787	6	862	1	1	, roughly chopped	13	f	\N	1	f
+7788	0	862	1	1	, deseeded and minced	565	f	\N	2	f
+7789	0	862	1	1	, juiced	12	f	\N	3	f
+7790	8	862	1	1	\N	75	f	\N	4	f
 7861	6	786	4	3	\N	1515	f	\N	5	f
 7862	7	786	1	3	\N	278	f	\N	6	f
 7863	7	786	1	3	\N	82	f	\N	7	f
@@ -15468,6 +15535,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7996	8	945	2	1	\N	214	f	\N	4	f
 7997	8	945	4	1	, ground	67	f	\N	5	f
 7998	6	945	1	1	\N	79	f	\N	6	f
+8009	0	947	1	1	\N	1411	f	\N	2	f
+8010	0	947	1	1	\N	1214	f	\N	3	f
+8011	0	947	1	1	\N	1176	f	\N	4	f
+8012	0	947	1	2	\N	725	f	\N	5	f
+8013	4	41	1	1	, for seasoning	140	t	\N	5	f
+8024	0	950	1	7	\N	1569	f	\N	0	f
 \.
 
 
@@ -15615,12 +15688,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3359	Use a box grater or food processor to finely shred the apples and carrots.	534	0	0
 3360	Drizzle with lemon juice.	534	1	0
 2847	Slice the coriander stalks, add to the pan with the squash, curry paste and coconut milk, then pour in 1 litre of water. Cover and simmer on a medium heat for 1 hour 20 minutes.	179	2	0
-143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	41	0	0
 595	Combine the Potato Starch, Brown Rice Flower, and Xanthan Gum in a bowl and mix well.	73	0	0
 2334	Whisk all ingredients in a medium bowl. Add more oil to thin if needed.	251	0	0
 2854	Combine 3/4 cup milk and 1 cup cereal. Top with a peach or nectarine cut into bite size pieces.	77	0	0
-2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	238	0	0
+143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	41	0	0
 144	Return the pasta and vegetables to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	41	1	0
+2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	238	0	0
 596	Add the ingredients to the baking pan in the order listed.	73	1	8192
 597	Select COURSE No. 7 and press START.	73	2	8192
 598	When the add beep sounds, thoroughly scrape down the flour and other ingredients from the sides of the baking pan to the bottom using a rubber spatula.	73	3	8192
@@ -16994,6 +17067,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3745	Add the eggs and cook until scrambled into small lumps.	640	2	4
 3746	Add the rice and continue to stir and toss, to coat it with the oil and prevent it from sticking.	640	3	4
 3747	Stir in the fish sauce, soy sauce and sugar and mix well. Continue to fry until the rice is thoroughly heated. Spoon into warmed individual bowls and serve, garnished with sliced spring onions, chillies, and lime wedges.	640	4	4
+4477	Chew the gum.	950	0	0
 3755	Place the beef strips in a bowl and sprinkle over the orange rind and juice. If possible, leave to marinate for 10 minutes, or up to 30 minutes if you can spare the time.	644	0	0
 3756	Drain the liquid from the meat and set aside, then mix the meat with the soy sauce, cornstarch and ginger, making sure the meat is evenly covered.	644	1	0
 3757	Heat the oil in a wok or large frying pan and add the beef. Stir-fry for 1 minute until lightly colored, then add the carrot strips and stir-fry for another 2–3 minutes.	644	2	4
@@ -17415,11 +17489,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4253	Squeeze over the lemon juice, then return to the oven for a final 10 minutes, or until the chicken is tender and super-golden.	835	5	2
 4274	Add the mushrooms, onion, and garlic and cook for 4 to 5 minutes, stirring the ingredients every minute or so, until the onion and garlic just start to brown.	861	1	4
 4275	Add the sauce to the pan and cook for another 1 to 2 minutes, until the sauce is thick. Remove from the heat, taste the sauce, and season with salt and pepper.	861	2	4
-4276	Place all ingredients in a mixing bowl and toss to combine.	862	0	0
-4277	Store in an airtight container in the refrigerator.	862	1	0
 4247	Stir the tomato paste, rice, and a pinch of sea salt and black pepper into the onion pan, then pour in the saffron water and bring to a boil. 	315	3	4
 4248	Once boiling, carefully transfer to the oven for 15 minutes, or until the rice has absorbed all the liquid, fluffed up beautifully, and is golden and crisp on top.	315	4	2
 4249	Spoon the saffron yogurt over the rice, drizzle it all with 1 tablespoon of extra virgin olive oil, fork and mix it all together, and dish up.	315	5	0
+4276	Place all ingredients in a mixing bowl and toss to combine.	862	0	0
+4277	Store in an airtight container in the refrigerator.	862	1	65536
 4268	Warm a medium skillet over medium-high heat. Add 1 tablespoon of olive oil and the steak. Season the steak with salt and pepper. Cook only until browned, about 3–5 minutes. Take the steak out of the pan and set aside.	860	0	4
 4269	Set the skillet back over medium-high heat. Add 1 tablespoon of oil and the broccoli and sauté the broccoli for 2 minutes. Add the water to the pan, cover, and steam the broccoli for 2 minutes. Take the broccoli out of the pan and set aside.	860	1	4
 4270	Wipe the pan out with a paper towel and return it to the heat. Add the remaining 1 tablespoon of oil along with the onion. Cook until onions are soft, about 3 minutes. Then, return the cooked steak to the pot.	860	2	4
@@ -17533,6 +17607,14 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4447	Ensure your water kefir grains are active.	944	0	0
 4456	In a large skillet, heat the oil and cook for 6 minutes. Flip and cook for another 6 to 7 minutes, until the internal temperature of the chicken reaches 165F.	945	4	0
 4457	Set the chicken on a wire rack and let it rest for 5 minutes before serving.	945	5	0
+4458	Preheat the oven to 375F. Line a baking sheet with parchment paper or aluminum foil.	946	0	0
+4459	In a medium bowl, combine the turkey, garlic, poultry seasoning, salt, cayenne, black pepper, and cinnamon and mix well.	946	1	0
+4460	Divide the turkey mixture into 6 even portions and roll into balls. Press the balls into patties about 1/8-inch thick and place on the lined baking sheet.	946	2	0
+4461	Bake the sausage patties for 12 minutes.	946	3	0
+4462	Heat a medium skillet over medium-high heat. Add the oil and sear the turkey sausage patties for about 3 minutes per side, or until browned.	946	4	0
+4463	Warm a medium skillet over medium heat. Add the oil along with the sausage patty. Crack the egg into the pan alongside the sausage and cook the sausage for about 3 minutes per side, or until browned on both sides and hot in the middle. Cook the egg to your preferred doneness. 	947	0	0
+4464	While the sausage and egg are cooking, toast the English muffin.	947	1	0
+4465	Once the sausage is heated and browned, put it on the English muffin. Top the sausage with the cheese, egg, lettuce, and the other half of the English muffin.	947	2	0
 \.
 
 
@@ -17578,7 +17660,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16449, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16499, true);
 
 
 --
@@ -18242,5 +18324,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Zhje3anwI3X84935YpWtxNLun0nulQeq0MelWxLb0EaGfTKobCgQddTTHAcIXbZ
+\unrestrict laG22IzB01Gy4TJCL53O0hxLBBjYwM7WT7kSxl6BEQyJ4ct6NBmA9X0KVmFikxX
 

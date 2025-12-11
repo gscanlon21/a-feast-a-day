@@ -27,4 +27,7 @@ public class RecipeIngredientDto
     public int QuantityNumerator { get; init; } = 1;
     public int QuantityDenominator { get; init; } = 1;
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
+
+    public string GetFontWeight() => Type == RecipeIngredientType.IngredientRecipe ? "600" : "normal";
+    public string GetListStyleType() => Optional ? "circle" : "disc";
 }

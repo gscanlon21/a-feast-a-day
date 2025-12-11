@@ -21,7 +21,7 @@
 38	Black Bean Fajita Skillet	You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/	f	f
 39	Linguine w/ Avocado, Tomato, & Lime	\N	\N	\N	6	10	20	2	t	linguine-avocado-tomato-lime.jpg	0	https://www.bbcgoodfood.com/recipes/linguine-avocado-tomato-lime	f	f
 40	Saucy Bean Baked Eggs	\N	\N	\N	6	15	5	2	t	bean-baked-eggs.jpg	0	\N	f	f
-41	Creamy Pasta with Asparagus & Peas	\N	\N	\N	12	12	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
+41	Creamy Pasta with Asparagus & Peas	\N	\N	\N	12	10	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	2	25	5	2	t	baked-banana-porridge.jpg	0	https://www.bbcgoodfood.com/recipes/baked-banana-porridge	f	f
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	quinoa-pizza.jpg	0	\N	t	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
@@ -601,3 +601,6 @@
 911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or 1/2 teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f
 944	Fermented Coconut Water	You will need to rest and renutrify your water kefir grains between batches.	\N	\N	0	55	5	8	t	\N	9	\N	t	f
 945	Skillet Fried Chicken	For a bit of a kick, add 1/4 teaspoon cayenne pepper to the flour and/or a few teaspoons of hot sauce to the buttermilk.	\N	\N	8	15	155	2	t	\N	0	\N	f	f
+946	Homeade Turkey Sausage Patties	Store the leftovers in the fridge in an airtight container for up to 3 days. For longer storage, place in a resealable bag and freeze. Let the patties cool before storing. When ready to reuse, simply reheat in the microwave.	\N	\N	0	20	10	6	t	\N	0	\N	t	f
+947	Kick-Ass Turkey Sausage Breakfast Sandwich	Make the sandwich more substantial by adding tomato and avocado. Or, to take this in a different direction, mix together 1 teaspoon cranberry sauce and 2 tablespoons mayonaise and spread on the English muffin.	\N	\N	8	6	2	1	t	\N	0	\N	f	f
+950	Gum	\N	\N	\N	32	0	0	7	t	\N	0	\N	f	f
