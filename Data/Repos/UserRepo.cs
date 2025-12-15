@@ -157,11 +157,11 @@ public class UserRepo
             // Using NotEqual in case the user changes from
             // ... a late send day to an early one mid-week.
             .Where(uf => uf.Date != user.StartOfWeekOffset)
-            // Select the most recent feast per send week.
-            .GroupBy(uf => uf.Date.AddDays(-1 * ((7 + (uf.Date.DayOfWeek - user.SendDay)) % 7)))
-            .OrderByDescending(g => g.Key) /// Order after grouping.
+            // Select the most recent feast per send week. Disabling this b/c week offsets change.
+            //.GroupBy(uf => uf.Date.AddDays(-1 * ((7 + (uf.Date.DayOfWeek - user.SendDay)) % 7)))
+            .OrderByDescending(f => f.Date) /// Order by most recent.
             // Can't be passed through the constructor or it's slow.
-            .Select(g => new PastFeast() { Date = g.OrderByDescending(n => n.Id).First().Date })
+            .Select(f => new PastFeast() { Date = f.Date })
             .Take(count ?? 7).IgnoreQueryFilters().AsNoTracking()
             .ToListAsync();
     }
