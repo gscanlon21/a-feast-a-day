@@ -253,7 +253,7 @@
 369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	20	60	9	4	t	cajun-sweet-potatoes.jpg	0	\N	f	f
 370	Chili Jam	\N	\N	\N	0	30	10	1	t	chili-jam.jpg	6	https://www.jamieoliver.com/recipes/dressings-condiments/chilli-jam/	f	f
 371	Super Green Spaghetti	From Jamie Oliver's 5 Ingredients	\N	\N	6	12	1	2	t	green-spaghetti.jpg	0	\N	f	f
-372	Lemony Arugula Farfalle	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	7	10	5	6	t	linguine-arugula.jpg	0	\N	f	f
+372	Lemony Arugula Farfalle	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	10	5	6	t	linguine-arugula.jpg	0	\N	f	f
 373	Hummus and Crackers	\N	\N	\N	48	0	1	1	t	hummus-vegetables.jpg	0	\N	f	f
 374	Egg & Mango Chutney Flatbreads	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	2	t	\N	0	\N	f	f
 375	Creamy Garlicky Chicken With Cauliflower Rice	\N	\N	\N	4	25	5	2	t	garlic-chicken.jpg	0	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	f	f
@@ -510,7 +510,7 @@
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	\N	0	\N	f	f
 725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	f
 726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
-727	Dal	\N	\N	\N	8	40	5	2	t	dal.jpg	0	\N	f	f
+727	Dal	\N	\N	\N	12	40	5	2	t	dal.jpg	0	\N	f	f
 728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	\N	6	\N	f	f
 729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	roasted-broccoli.jpg	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
@@ -518,7 +518,7 @@
 732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
 733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	\N	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
-735	Zucchini Pesto Pasta	For added protein, you can add a cooked and sliced chicken breast, or cooked and diced bacon strips.	\N	\N	4	10	5	1	t	\N	0	\N	f	f
+735	Zucchini Pesto Pasta	For added protein, you can add a cooked and sliced chicken breast, or cooked and diced bacon strips.	\N	\N	4	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
 736	Pea and Prosciutto Risotto	\N	Risotto base is not good.	\N	16	25	5	2	t	\N	0	\N	f	f
 737	Risotto Base	If you can;t find Arborio rice, use Carnaroli rice instead.	Risotto base is not good.	\N	0	25	5	1	t	\N	6	\N	t	f
 738	Fire-Roasted Red Pepper Dip	\N	Requires weird equipment.	\N	0	15	35	2	t	\N	6	\N	t	f
@@ -559,10 +559,10 @@
 837	Harissa Chicken Traybake	\N	\N	\N	8	50	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 838	Sweet Chicken Surprise	\N	\N	\N	8	40	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	\N	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
-840	Roasted Zucchini	\N	\N	\N	0	20	5	4	t	\N	6	From the First Watch cookbook. 	t	f
+840	Roasted Zucchini	\N	\N	\N	0	20	5	4	t	zucchini.jpg	6	From the First Watch cookbook. 	t	f
 841	First Watch Granola	To add another layer of flavor, feel free to add about 1 to 2 cups of your favorite dried cranberries or dried cherries after the granola has cooled completely.	\N	\N	0	0	0	8	t	\N	6	From the First Watch cookbook. 	t	f
 842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	\N	0	From the First Watch cookbook. 	f	f
-843	Whipped Eggs	This preparation works great for omelets and frittatas.	\N	\N	0	0	5	1	t	\N	0	From the First Watch cookbook. 	t	f
+843	Whipped Eggs	This preparation works great for omelets and frittatas. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product.	\N	\N	0	0	5	1	t	\N	0	\N	t	f
 844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
 846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
@@ -596,7 +596,7 @@
 906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
 907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	\N	0	\N	t	f
 908	The Cowboy Burger	Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	\N	\N	8	10	10	2	t	\N	0	\N	f	f
-909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	4	10	10	1	t	\N	0	\N	f	f
+909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	12	10	10	1	t	\N	0	\N	f	f
 910	Sweet Potato Tacos	Optionally, add some guacamole, fresh cilantro, jalepenos, and a squeeze of fresh lime juice.	\N	\N	4	25	10	1	t	\N	0	\N	f	f
 911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or 1/2 teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f
 944	Fermented Coconut Water	You will need to rest and renutrify your water kefir grains between batches.	\N	\N	0	55	5	8	t	\N	9	\N	t	f
@@ -610,3 +610,13 @@
 954	Orange Tiramisu	You can use a different kind of sweet orange if you'd prefer, but try to get one that's about the size of a baseball.	\N	\N	64	0	135	4	t	\N	0	\N	f	f
 955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	8	10	5	2	t	\N	0	\N	f	f
 956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	\N	0	\N	f	f
+957	Chicken Noodle Soup	\N	\N	\N	8	45	10	4	t	\N	0	\N	f	f
+958	Fire-Roasted Tomato Soup	If you don't have a grill, you can roast the tomatoes in the oven. Preheat the oven to 400F. Halve the tomatoes lengthwise, drizzle them with olive oil, and place them cut-side up on a parchment-lined sheet pan. Bake them, without flipping over, for 30 to 35 minutes. Transfer to a bowl, cover, and peel as directed.	\N	\N	8	45	20	4	t	\N	0	\N	f	f
+959	Zucchini Noodles	If sautéing a large batch, cook the zucchini noodles in batches to avoid overcrowding. This helps them cook evenly and prevents them from becoming too soft. After spiraling, lightly salt the zucchini noodles and let them sit for 10-15 minutes. This helps draw out excess moisture. Then, gently pat them dry with a paper towel or clean kitchen cloth. You don’t need to peel the zucchini. The skin is edible, adds color, and contains nutrients. If you prefer a smoother texture, you can peel it, but it’s optional. A spiralizer works best for long, spaghetti-like noodles. However, you can also use a julienne peeler for thinner strands or a vegetable peeler to create wider ribbon-like noodles. Store your zoodles uncooked in an airtight container in the fridge for up to 3 days.  For the best texture, cook them just before serving.	\N	\N	0	0	5	1	t	zucchini-linguine.jpg	6	https://www.mamaknowsglutenfree.com/how-to-make-zucchini-noodles/	t	f
+960	Cranberry Jalapeno Cream Cheese Dip	\N	\N	\N	16	0	0	2	t	\N	0	https://sweetbeginningsblog.com/cranberry-jalapeno-cream-cheese-dip/#recipe	f	f
+961	Halloumi and Grape Salad	\N	\N	\N	16	2	2	4	t	\N	0	\N	f	f
+962	Warm Broad Bean and Feta Salad	\N	\N	\N	20	5	2	4	t	\N	0	\N	f	f
+963	Caesar Salad	Do not boil the eggs for longer than 1 minute; the whites should be milky, while the yolks remain raw. If you prefer to avoid lightly cooked eggs, substitute quartered hard-boiled eggs. For a tangier dressing, mix 2 tbsp white wine vinegar, 1 tbsp Worcestershire sauce, ½ tsp mustard powder, 1 tsp sugar, and and pepper in a screw-top jar, then add the oil and shake well.	\N	\N	20	2	10	6	t	\N	0	\N	f	f
+964	Chewy Flapjack Bars	Allow the baking parchment to hand over the edges of the tin; this makes the baked bars easier to remove.	\N	\N	32	20	8	12	t	\N	0	\N	f	f
+965	Giant Triple Chocolate Cookies	\N	\N	\N	64	15	10	12	t	\N	0	\N	f	f
+966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	10	5	1	t	\N	0	\N	t	f
