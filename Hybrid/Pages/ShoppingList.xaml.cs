@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Hybrid.Code;
 using Hybrid.Database;
 using Hybrid.Database.Entities;
 using Lib.Services;
+using System.Collections.ObjectModel;
 
 namespace Hybrid;
 
@@ -58,10 +58,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
     private bool _loading = true;
 
     [ObservableProperty]
-    public ObservableRangeCollection<ShoppingListItem> _ingredients = new()
-    {
-        SortingSelector = a => $"{a.IsChecked}-{a.Order?.Length}-{a.Order}-{a.Name}"
-    };
+    public ObservableCollection<ShoppingListItem> _ingredients = [];
 
     private async Task WhenCompleted()
     {
@@ -81,18 +78,18 @@ public partial class ShoppingListPageViewModel : ObservableObject
         IngredientEntry = "";
     }
 
-    private async Task WhenChecked(ShoppingListItem? obj)
+    private async Task WhenChecked(ShoppingListItem? checkedIngredient)
     {
-        if (obj != null && !Loading)
+        if (checkedIngredient != null && !Loading)
         {
             // Move the item to the end of the list.
-            Ingredients.RaiseObjectMoved(obj, Ingredients.IndexOf(obj), Ingredients.IndexOf(obj));
+            Ingredients.Move(Ingredients.IndexOf(checkedIngredient), OrderIngredients(Ingredients).IndexOf(checkedIngredient));
 
             // Save the checked status in the database.
-            if (await _localDatabase.GetItemAsync(obj.Id) is ShoppingListItem item)
+            if (await _localDatabase.GetItemAsync(checkedIngredient.Id) is ShoppingListItem dbIngredient)
             {
-                item.IsChecked = obj.IsChecked;
-                await _localDatabase.SaveItemAsync(item);
+                dbIngredient.IsChecked = checkedIngredient.IsChecked;
+                await _localDatabase.SaveItemAsync(dbIngredient);
             }
         }
     }
@@ -132,8 +129,10 @@ public partial class ShoppingListPageViewModel : ObservableObject
                         await _localDatabase.SaveItemAsync(remoteItem);
                     }
 
+                    // Reset the list.
+                    Ingredients.Clear();
                     // Re-pull the list from the db so the Ids are up to date.
-                    Ingredients.ReplaceRange(await _localDatabase.GetItemsAsync());
+                    Ingredients = new ObservableCollection<ShoppingListItem>(OrderIngredients(await _localDatabase.GetItemsAsync()));
                 }
             }
             finally
@@ -142,5 +141,10 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 Loading = false;
             }
         }
+    }
+
+    private static List<ShoppingListItem> OrderIngredients(IEnumerable<ShoppingListItem> ingredients)
+    {
+        return ingredients.OrderBy(i => i.IsChecked).ThenBy(i => i.Order?.Length).ThenBy(i => i.Order).ThenBy(i => i.Name).ToList();
     }
 }
