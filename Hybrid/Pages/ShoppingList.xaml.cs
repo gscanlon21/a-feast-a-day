@@ -71,7 +71,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
                 IsCustom = true,
             };
 
-            Ingredients.Add(item);
+            Ingredients.Insert(0, item);
             await _localDatabase.SaveItemAsync(item);
         }
 
