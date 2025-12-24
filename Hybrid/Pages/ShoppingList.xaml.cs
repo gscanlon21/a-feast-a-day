@@ -65,14 +65,14 @@ public partial class ShoppingListPageViewModel : ObservableObject
         if (!string.IsNullOrWhiteSpace(IngredientEntry)
             && !await _localDatabase.ContainsItemAsync(IngredientEntry))
         {
-            var item = new ShoppingListItem()
+            var newIngredient = new ShoppingListItem()
             {
                 Name = IngredientEntry,
                 IsCustom = true,
             };
 
-            Ingredients.Insert(0, item);
-            await _localDatabase.SaveItemAsync(item);
+            Ingredients.Insert(OrderIngredients([.. Ingredients, newIngredient]).IndexOf(newIngredient), newIngredient);
+            await _localDatabase.SaveItemAsync(newIngredient);
         }
 
         IngredientEntry = "";
