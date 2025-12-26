@@ -364,7 +364,7 @@
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 546	Sesame Almond Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
 547	Burgers	\N	\N	\N	0	45	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-548	Fajita Seasoning	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	\N	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	\N	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 551	Bentonite Clay Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -415,7 +415,7 @@
 596	Quiche	\N	\N	\N	8	60	15	4	t	quiche.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 597	Smooth Skin Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 598	Tropical Green Smoothie	\N	Too many ingredients/	\N	128	0	6	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-599	Cool Liver Reset Smoothie	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
+599	Cool Liver Reset Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 600	Pain Away Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 601	Cowboy Caviar	\N	\N	\N	0	0	20	3	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 602	Cobb Salad	\N	\N	\N	8	40	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

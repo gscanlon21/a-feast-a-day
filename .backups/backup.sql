@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict IlbWk6u5ELpgeb3a81w2PCulxGvebmtClyXrCMXTJkfhEQbRfEfH46SrAWbTRDT
+\restrict haD8XHnv6ZsJkYBSFuxm0gJxolHjER7y9E2ZCX5ENpiJU3JdoaDjdEvRVXAndKI
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1060,6 +1060,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 789	1595	1	f
 1595	172	1	t
 1595	1362	1	t
+77	499	1	f
+143	1596	1	f
+143	754	1	f
+564	254	1	t
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -1566,8 +1570,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 190	563	1	f
 189	254	1	f
 29	564	1	f
-564	563	1	f
-564	254	1	f
 559	30	1	f
 567	319	1	f
 567	135	1	f
@@ -1595,6 +1597,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 585	365	1	f
 286	587	1	f
 286	586	1	f
+564	563	1	t
 287	331	1	f
 287	587	1	f
 287	586	1	f
@@ -2434,14 +2437,13 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 7203	30	2047	\N	3	90
 7204	29	131072	\N	1	95
 7205	29	229376	\N	1	95
-7210	254	131072	\N	1	181.6
-7211	254	229376	\N	1	181.6
 7218	31	131072	\N	1	78
 7219	31	229376	\N	1	78
 7208	190	131072	\N	1	95
 7209	190	229376	\N	1	95
 7542	221	2047	\N	3	261
 7206	189	131072	\N	1	95
+7210	254	131072	\N	1	108
 8297	161	2047	\N	3	60
 6827	186	2047	\N	3	149
 6730	78	128	\N	3	1
@@ -2504,6 +2506,7 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 6895	105	2047	\N	3	44
 4464	11	67108864	\N	2	10
 7207	189	229376	\N	1	97
+7211	254	229376	\N	1	115
 6738	164	128	\N	3	2
 6740	164	1	\N	3	6
 6744	164	1984	\N	3	5
@@ -11762,6 +11765,60 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 16656	1257	62	\N	3	35
 16657	1257	2047	\N	3	814
 16680	908	2047	\N	3	1
+16681	563	256	\N	3	6
+16682	563	2251799813685248	\N	2	2
+16683	563	1024	\N	3	3
+16684	563	17179869184	\N	2	0.4
+16685	563	70368744177664	\N	2	1
+16686	563	65536	\N	1	87
+16687	563	131072	\N	1	109
+16688	563	16777216	\N	1	0.1
+16689	563	536870912	\N	2	1
+16690	563	1536	\N	3	3
+16691	563	3221225472	\N	1	13
+16692	563	1792	\N	3	9
+16693	563	229376	\N	1	116
+16694	700	2047	\N	3	1
+16695	254	128	\N	3	2
+16696	254	64	\N	3	2
+16697	254	68719476736	\N	2	105
+16698	254	34359738368	\N	2	3
+16699	254	4294967296	\N	2	0.4
+16700	254	14	\N	3	0.1
+16701	254	1984	\N	3	11
+16702	254	62	\N	3	0.1
+16703	254	256	\N	3	5
+16704	254	2251799813685248	\N	2	2
+16705	254	512	\N	3	0.3
+16706	254	17179869184	\N	2	0.4
+16707	254	70368744177664	\N	2	1
+16708	254	65536	\N	1	85
+16709	254	16777216	\N	1	0.1
+16710	254	536870912	\N	2	1
+16711	254	1536	\N	3	3
+16712	254	3221225472	\N	1	13
+16713	254	1792	\N	3	8
+16714	1284	128	\N	3	0.3
+16715	1284	68719476736	\N	2	303
+16716	1284	34359738368	\N	2	233
+16717	1284	2	\N	3	4
+16718	1284	1	\N	3	4
+16719	1284	4294967296	\N	2	5
+16720	1284	2199023255552	\N	2	0.5
+16721	1284	48	\N	3	4
+16722	1284	14	\N	3	21
+16723	1284	1984	\N	3	2
+16724	1284	62	\N	3	25
+16725	1284	2047	\N	3	116
+16726	1591	68719476736	\N	2	151
+16727	1591	34359738368	\N	2	180
+16728	1591	1	\N	3	1
+16729	1591	4294967296	\N	2	199
+16730	1591	48	\N	3	1
+16731	1591	14	\N	3	7
+16732	1591	1984	\N	3	2
+16733	1591	62	\N	3	8
+16734	1591	2047	\N	3	60
 \.
 
 
@@ -13989,12 +14046,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6167	6	547	2	1	, chopped	595	t	\N	2	f
 6168	0	547	1	1	\N	187	f	\N	3	f
 6140	0	544	1	1	\N	9	f	\N	0	f
-6170	8	548	1	2	\N	323	f	\N	0	f
-6171	8	548	1	1	(CUMIN POWDER)	143	f	\N	1	f
-6172	8	548	1	1	\N	71	f	\N	2	f
-6173	8	548	1	1	\N	73	f	\N	3	f
-6174	8	548	1	1	\N	322	f	\N	4	f
-6175	8	548	1	1	\N	214	f	\N	5	f
 6176	6	549	4	1	\N	359	f	\N	0	f
 6177	7	549	1	1	, grated	307	f	\N	1	f
 6178	7	549	1	2	\N	77	f	\N	2	f
@@ -14049,6 +14100,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6132	0	542	1	1	, zested	4	f	\N	3	f
 6112	0	540	1	1	, seeded and sliced	812	f	\N	5	f
 6134	6	542	1	1	\N	\N	f	410	5	f
+6170	8	548	1	2	\N	323	f	\N	0	f
+6171	8	548	1	1	\N	1596	f	\N	1	f
+6172	8	548	1	1	\N	71	f	\N	2	f
+6173	8	548	1	1	\N	73	f	\N	3	f
+6174	8	548	1	1	\N	322	f	\N	4	f
+6175	8	548	1	1	\N	214	f	\N	5	f
 4321	6	82	2	1	, diced small	150	t	\N	3	f
 6221	6	557	4	1	\N	805	f	\N	0	f
 6222	6	557	1	1	\N	183	f	\N	1	f
@@ -14412,6 +14469,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6527	0	594	1	1	, soaked in hot water for 5 minutes	152	t	\N	9	f
 7282	6	727	1	3	\N	123	f	\N	6	f
 7283	8	727	8	1	\N	285	t	\N	7	f
+6560	6	599	1	1	\N	1586	f	\N	0	f
 6567	6	601	1	2	, cooked	54	f	\N	0	f
 6568	6	601	1	1	, chopped	1088	f	\N	1	f
 6569	6	601	2	1	\N	13	f	\N	2	f
@@ -14435,10 +14493,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7434	4	750	1	1	\N	807	f	\N	1	f
 6558	6	598	4	1	\N	805	f	\N	8	f
 7373	8	106	8	1	\N	285	t	\N	6	f
+6561	6	599	2	1	\N	1062	f	\N	1	f
+6562	0	599	1	1	, diced	155	f	\N	2	f
 6620	0	609	1	6	, tops and bottoms removed (keep skin on)	671	f	\N	0	f
 7435	4	750	1	17	\N	377	f	\N	2	f
 7284	6	728	2	1	, diced	1336	f	\N	0	f
-6560	6	599	1	1	\N	1586	f	\N	0	f
 7285	7	728	1	2	\N	737	f	\N	1	f
 6621	0	609	1	2	, tops removed (keep skin on)	157	f	\N	1	f
 6622	0	609	1	1	, peeled	222	f	\N	2	f
@@ -14460,9 +14519,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6582	0	602	1	4	\N	144	t	\N	3	f
 6583	0	602	1	2	\N	1088	t	\N	4	f
 6584	6	602	1	1	\N	417	f	\N	5	f
-6561	6	599	2	1	\N	1062	f	\N	1	f
 7355	6	739	2	1	, grated	736	f	\N	1	f
-6562	0	599	1	1	, diced	155	f	\N	2	f
 6563	6	599	1	1	\N	1092	f	\N	3	f
 6629	0	610	1	4	\N	5	f	\N	1	f
 6597	0	606	1	2	\N	22	f	\N	0	f
@@ -15792,7 +15849,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8121	6	963	2	1	\N	358	f	\N	5	f
 8122	6	963	3	2	, grated	95	f	\N	6	f
 8123	8	963	8	1	\N	285	t	\N	7	f
-8145	8	966	1	1	\N	77	f	\N	2	f
 6761	6	626	2	1	\N	1268	f	\N	0	f
 6762	7	626	1	5	\N	234	f	\N	1	f
 6763	7	626	1	2	\N	1588	f	\N	2	f
@@ -15821,6 +15877,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8140	6	965	4	3	\N	517	f	\N	5	f
 8141	6	965	4	5	\N	1188	f	\N	6	f
 8142	6	965	4	3	(MACADAMIA NUT HALVES)	912	f	\N	7	f
+8143	0	966	1	1	\N	387	f	\N	0	f
+8144	8	966	2	1	\N	77	f	\N	1	t
+8145	8	966	8	1	\N	75	f	\N	2	f
 8078	0	958	1	6	\N	281	f	\N	0	f
 8079	7	958	1	3	, divided	77	f	\N	1	f
 8080	6	958	1	1	, diced	222	f	\N	2	f
@@ -15830,8 +15889,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8084	8	958	8	1	\N	285	t	\N	6	f
 7859	0	870	1	4	\N	1593	f	\N	6	f
 7860	0	870	1	2	, split in half	1214	f	\N	7	f
-8143	0	966	1	1	\N	387	f	\N	0	f
-8144	8	966	8	1	\N	75	f	\N	1	f
 \.
 
 
@@ -15990,9 +16047,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3359	Use a box grater or food processor to finely shred the apples and carrots.	534	0	0
 3360	Drizzle with lemon juice.	534	1	0
 2847	Slice the coriander stalks, add to the pan with the squash, curry paste and coconut milk, then pour in 1 litre of water. Cover and simmer on a medium heat for 1 hour 20 minutes.	179	2	0
+2854	Combine 3/4 cup milk and 1 cup cereal. Top with a peach or nectarine cut into bite size pieces.	77	0	0
 595	Combine the Potato Starch, Brown Rice Flower, and Xanthan Gum in a bowl and mix well.	73	0	0
 2334	Whisk all ingredients in a medium bowl. Add more oil to thin if needed.	251	0	0
-2854	Combine 3/4 cup milk and 1 cup cereal. Top with a peach or nectarine cut into bite size pieces.	77	0	0
 143	Cook the pasta following the pack instructions. Two minutes before the end of the cooking time, add the asparagus and peas. Boil everything together for the final 2 mins, then scoop out and reserve a cup of the cooking liquid from the pan before draining the pasta and vegetables.	41	0	0
 144	Return the pasta and vegetables to the pan and add the lemon zest, soft cheese and seasoning. Add a squeeze of lemon juice to taste and stir in 2-3 tbsp of the cooking liquid to loosen the sauce.	41	1	0
 2394	Place all ingredients in a tea cup or mug and cover with boiling water. Let steep for 5-10 minutes, then remove the tea bags, ginger and lemon. Relax and enjoy!	238	0	0
@@ -16214,9 +16271,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1153	Garnish with fresh diced tomatoes, avocado slices, tortilla strips, and fresh herbs.	117	1	0
 3134	In a medium bowl, whisk together the avocado oil through the thyme. Add salt and pepper, to taste.	414	0	0
 3395	In a small bowl, mix all of the ingredients together.	550	0	0
+3393	Combine all ingredients in a jar, and shake well until mixed.	548	0	0
 3252	Combine all ingredients in a small bowl and stir to mix well.	474	0	0
 1925	In a mortar or spice grinder pound or blend the garlic with the coriander roots. Scrape into a bowl.	177	0	2048
-3393	Combine all ingredients in a jar, and shake well until mixed.	548	0	0
 1734	Combine ingredients in a large saucepan over high heat. The larger the pan, the faster it will reduce. For me it takes about 10 minutes, but it depends on the size of the pan you use.	88	0	0
 1735	Bring to boil, then turn heat down and simmer until it reduces by half. The consistency should be like a light syrup.	88	1	0
 1736	Bring to room temperature before using.	88	2	0
@@ -16491,7 +16548,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2763	Take dough off of boards and cut the cookies apart. Sprinkle a cookie sheet with anise seeds, place cookies on it and let fry overnight. If in the morning the edges appear drier than the middle wet finger tip with water and trace along the edges of each cookie. This is so they will rise evenly. Bake in a slow oven (300-325 degrees) about twenty minutes.	83	1	0
 2754	In a food processor, combine all ingredients and blend until a sticky dough is formed. It doesn’t have to be completely smooth, but it does have to stick together!	236	0	256
 2755	Remove the processing blade and form into 1-inch balls.	236	1	0
-4564	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave the darn things alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally. If four minutes results in burning your chicken, then make note of that and use a lower temperature next time - it really depends on your stove.	966	1	4
 1556	When cool enough to handle, slice the potato chunks and put them in a bowl.	153	1	0
 2359	Stir the asparagus, wine and about half the Parmesan into the sauce. Drain the pasta and return it to the clean pan. Add the sauce and herbs and toss. Serve immediately with the remaining Parmesan.	194	4	0
 1890	Halve the brioche buns and quickly toast in a large dry non-stick frying pan on a medium-high heat, then put aside.	110	0	0
@@ -16545,7 +16601,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2291	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Drain, then transfer to a large serving bowl. Add 30ml/2 tbsp of the oil and toss well to coat.	195	2	0
 2292	Add the artichokes, broccoli, olives, parsley, onion mixture and remaining oil to the pasta. Toss to blend. Leave to stand for at least 5 minutes before serving.	195	3	0
 2583	Top with avocado slices and enjoy!	250	5	0
-4565	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3 or 4 minutes until the second side also releases easily and has a nice crust. Since we used thin cut chicken, it's almost surely cooked through, but you can check with an instant read thermometer. Thicker pieces of chicken will need a secondary, slower, and more gentle cooking to get up to temperature without overcooking.	966	2	4
 2426	In a small saucepan over low heat, bring everything except the gelatin to a gentle boil.	232	0	0
 2427	Take off the heat and stir until the coconut is melted and well combined.	232	1	0
 2428	Put the warm blueberry mixture into a blender and add the gelatin powder. Process until completely smooth (will be fairly thick).	232	2	0
@@ -16557,6 +16612,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	254	0	0
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	254	1	0
 2369	Serve immediately, drizzled with a touch more maple syrup.	254	3	0
+4565	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3 or 4 minutes until the second side also releases easily and has a nice crust. Since we used thin cut chicken, it's almost surely cooked through, but you can check with an instant read thermometer. Thicker pieces of chicken will need a secondary, slower, and more gentle cooking to get up to temperature without overcooking.	966	2	4
 2503	The night before, put your mung beans to soak in a pan with 6–8 cups of water. When ready to use, drain and rinse the beans. Set aside.	267	0	0
 2021	Place the dried fruit in a large pan and add 600ml/1 pint/2½ cups water.	158	0	0
 3259	Toss all ingredients and serve.	477	0	0
@@ -16624,6 +16680,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	264	0	0
 3261	Place the quinoa into a bowl, fluff with a fork, and let cool.	479	0	0
 2824	Dip the vegetables in the hummus. Enjoy!	252	0	0
+4564	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave the darn things alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally. If four minutes results in burning your chicken, then make note of that and use a lower temperature next time - it really depends on your stove.	966	1	4
 2484	Break the chocolate into small pieces and place in a heatproof bowl. Add the butter and melt in the microwave on high for 1-2 minutes. Stir to mix and set aside. (Alternatively, place the chocolate pieces and butter in a bowl over a pan of gently simmering water and leave until melted, stirring frequently.)	175	0	0
 2485	Put the biscuits in a plastic bag and seal, the bash into small pieces with a rolling pin. Alternatively, break up the biscuits in a food processor but do not let them become too fine. Use the pulse button.	175	1	0
 2486	Roughly chop the prunes and stir into the melted chocolate with the bisuits. Spoon the mixture into a 20cm/8in square cake tin (pan) and smooth out any lumps with the back of the spoon. Chill for 1-2 hours until set. Remove the cake from the refrigerator and using a sharp knife, cut into 12 bars.	175	2	0
@@ -17145,6 +17202,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3552	Finely grate over the remaining lime zest, then drizzle with 1 teaspoon of extra virgin olive oil. Serve with lime wedges, for squeezing over.	321	3	0
 3580	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	600	0	128
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper, then grill for 2–3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	270	1	0
+3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	599	0	128
 3589	Add the salmon, mango and avocado into a bowl. Toss with mayo and serve.	603	0	0
 3590	Unshell the pistachios. Eat the pistachios. Enjoy the pistachios.	604	0	0
 3593	In a large skillet, over medium-high heat, add the coconut oil or beef tallow. When melted, add the onion and cook until translucent, about 5 minutes.	607	0	0
@@ -17166,7 +17224,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	367	1	0
 3594	Add the Brussel sprouts and potatoes, and continue cooking for another 5 minutes.	607	1	0
 3564	Blend in a high-speed blender and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	593	0	128
-3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	599	0	0
 3595	Lastly, add the sausage to the skillet and cook for another 5 minutes, or until all of the veggies are cooked through.	607	2	0
 3574	Bake for 60 minutes, or until a toothpick comes out clean when you poke it and the center is set.	596	3	2
 3584	Create an ice bath in a large bowl and set aside. Oncer the timer goes off, immediately remove eggs and place in the ice bath.	602	2	0
@@ -18037,7 +18094,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16680, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16734, true);
 
 
 --
@@ -18701,5 +18758,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict IlbWk6u5ELpgeb3a81w2PCulxGvebmtClyXrCMXTJkfhEQbRfEfH46SrAWbTRDT
+\unrestrict haD8XHnv6ZsJkYBSFuxm0gJxolHjER7y9E2ZCX5ENpiJU3JdoaDjdEvRVXAndKI
 
