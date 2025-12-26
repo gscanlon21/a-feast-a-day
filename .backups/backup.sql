@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict haD8XHnv6ZsJkYBSFuxm0gJxolHjER7y9E2ZCX5ENpiJU3JdoaDjdEvRVXAndKI
+\restrict DRS4S5IN96cLfANygS3BIg96kW1FHMOz3yJOzbPrPWjuwjCZBylcnUmdUIXF3H3
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1064,6 +1064,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 143	1596	1	f
 143	754	1	f
 564	254	1	t
+1218	1597	1	f
+988	749	1	t
+988	748	1	t
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -2007,8 +2010,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 985	216	1	f
 987	36	1	f
 987	298	1	f
-988	749	1	f
-988	748	1	f
 317	989	1	f
 317	63	1	f
 989	63	1	f
@@ -11819,6 +11820,38 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 16732	1591	1984	\N	3	2
 16733	1591	62	\N	3	8
 16734	1591	2047	\N	3	60
+16735	20	14	\N	3	97
+16736	1130	128	\N	3	2
+16737	1130	64	\N	3	0.2
+16738	1130	2048	\N	2	60
+16739	1130	68719476736	\N	2	47
+16740	1130	34359738368	\N	2	252
+16741	1130	1	\N	3	19
+16742	1130	4294967296	\N	2	4
+16743	1130	2199023255552	\N	2	2
+16744	1130	402653184	\N	1	0.1
+16745	1130	1984	\N	3	5
+16746	1130	2047	\N	3	126
+16747	1578	68719476736	\N	2	7
+16748	1578	34359738368	\N	2	40
+16749	1578	1	\N	3	0.3
+16750	1578	4294967296	\N	2	6
+16751	1578	2199023255552	\N	2	0.3
+16752	1578	48	\N	3	2
+16753	1578	14	\N	3	2
+16754	1578	1984	\N	3	0.1
+16755	1578	62	\N	3	3
+16756	1578	2047	\N	3	16
+16757	1579	68719476736	\N	2	7
+16758	1579	34359738368	\N	2	40
+16759	1579	1	\N	3	0.3
+16760	1579	4294967296	\N	2	6
+16761	1579	2199023255552	\N	2	0.3
+16762	1579	48	\N	3	2
+16763	1579	14	\N	3	2
+16764	1579	1984	\N	3	0.1
+16765	1579	62	\N	3	3
+16766	1579	2047	\N	3	16
 \.
 
 
@@ -15017,13 +15050,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7009	7	657	1	2	\N	738	f	\N	3	f
 7010	6	657	2	1	\N	1364	f	\N	4	f
 7123	6	704	1	1	, peeled and diced	264	f	\N	0	f
-7112	6	702	2	1	\N	171	f	\N	0	f
-7113	6	702	1	1	(SEMISWEET CHOCOLATE CHIPS)	1218	f	\N	1	f
 5482	6	378	2	1	\N	1210	f	\N	6	f
 5483	6	378	4	1	, unsweetened	1211	f	\N	7	f
-7114	7	702	1	1	\N	189	f	\N	2	f
-7115	7	702	1	1	(RUM)	18	f	\N	3	f
-7116	6	702	4	1	(UNSWEETENED COCOA POWDER)	43	f	\N	4	f
 7038	6	662	2	1	(GUACAMOLE)	980	f	\N	0	f
 7039	6	662	2	1	\N	61	f	\N	1	f
 7040	0	662	1	1	, juiced	12	f	\N	2	f
@@ -15108,6 +15136,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7020	6	659	4	1	\N	\N	f	710	4	f
 7022	7	659	1	2	, grated	319	t	\N	6	f
 7377	7	742	1	4	, divided	1592	f	\N	2	f
+7112	6	702	2	1	\N	171	f	\N	0	f
+7113	6	702	1	1	\N	1597	f	\N	1	f
+7114	7	702	1	1	\N	189	f	\N	2	f
+7115	7	702	1	1	\N	1587	f	\N	3	f
+7116	6	702	4	1	\N	1268	f	\N	4	f
 6973	6	651	4	3	, divided	36	f	\N	0	f
 6974	8	651	1	1	\N	1256	f	\N	1	f
 6975	8	651	4	1	\N	214	f	\N	2	f
@@ -15880,6 +15913,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8143	0	966	1	1	\N	387	f	\N	0	f
 8144	8	966	2	1	\N	77	f	\N	1	t
 8145	8	966	8	1	\N	75	f	\N	2	f
+8146	4	967	1	4	(SEMISWEET CHOCOLATE), broken into pieces	1597	f	\N	0	f
+8147	6	967	1	1	\N	186	f	\N	1	f
 8078	0	958	1	6	\N	281	f	\N	0	f
 8079	7	958	1	3	, divided	77	f	\N	1	f
 8080	6	958	1	1	, diced	222	f	\N	2	f
@@ -15889,6 +15924,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8084	8	958	8	1	\N	285	t	\N	6	f
 7859	0	870	1	4	\N	1593	f	\N	6	f
 7860	0	870	1	2	, split in half	1214	f	\N	7	f
+8148	7	967	1	1	\N	234	f	\N	2	f
+8149	6	967	1	1	\N	546	f	\N	3	f
+8150	6	967	1	1	(CHOCOLATE ICE CREAM)	546	f	\N	4	f
+8151	6	967	4	1	(LIGHTLY WHIPPED CREAM)	345	t	\N	5	f
+8152	8	967	1	1	(CHOCOLATE), grated, to decorate	1218	t	\N	6	f
 \.
 
 
@@ -16722,6 +16762,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3324	Pour batter into the pan. Cook for 2–3 minutes and then flip, cooking for an additional 1–2 minutes.	523	2	4
 3164	Refrigerate for at least 2 hours, then serve and enjoy!	422	3	65536
 3334	Combine the tumeric, ginger, salt and cinnamon, and place in a large mug.	527	0	0
+4566	Put the chocolate in a heavy pan and add the milk and sugar. Heat gently, stirring with a wooden spoon, until the chocolate has melted, and the mixture is smooth. Pour into a bowl and set in a larger bowl of iced water to cool quickly.	967	0	0
+4567	Blend the cooled chocolate mixture with half of both ice creams in a blender or food processor until the mixture resembled chocolate milk.	967	1	0
+4568	Scoop the remaining ice cream alternately into two tall glasses: vanilla then chocolate.	967	2	0
+4569	Using a dessert-spoon, drizzle the chocolate milk over and around the ice cream in each glass, so that it dribbles down in swirls.	967	3	0
 3374	In a large bowl, toss the first 13 ingredients (chicken through honey) together.	540	0	0
 3267	In a medium bowl, whick together the olive oil through fresh mixed herbs. Add salt and pepper, to taste.	480	0	0
 2337	Add the cauliflower rice. Stir intermittently for 5-10 minutes, until cauliflower is tender.	243	2	0
@@ -16769,6 +16813,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2190	Pour the chocolate milk into the jug of coffee and whisk thoroughly. Serve in mugs or glasses.	169	3	0
 2317	In a large bowl, whisk eggs, milk, curry powder, salt, pepper and, if desired, cardamom until blended.	30	0	0
 2318	Place a lightly greased large nonstick skillet over medium heat. Pour in egg mixture; cook and stir until eggs are thickened and no liquid egg remains. Serve with tomatoes.	30	1	0
+4570	Top with lightly whipped cream and sprinkle over a little grated chocolate or some chocolate curls to decorate. Serve immediately.	967	4	0
 2642	Divide up the mango and the hoisin bowls. Slice chicken and arrange on the plates, then tuck in, using the lettuce cups as a receptable to hold everything.	270	2	0
 2388	Peel the potatoes and chop into ½-inch cubes, trim and slice the scallions, then place in a large non-stick frying pan on a high heat with 2 tablespoons of olive oil and 1 cup of boiling kettle water.	105	0	4
 2904	Preheat the oven to 400°F. 	315	0	2
@@ -17533,10 +17578,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3766	Add the brandy and stock to the pan, boil rapidly until reduced by half, then season with salt and pepper to taste. Slice the chive butter and put a piece on top of each steak. Spoon a little sauce on to each plate. Garnish each steak with a chive bundle and serve with a simple vegetable accompaniment, such as boiled new potatoes.	646	3	0
 3875	In a bowl, with an electric mixer, beat the cream cheese until it is smooth. Add the heavy cream and sugar and beat until it is fully combined. Add the cocoa to the mix and beat on low until it is fully mixed in.	701	0	0
 3876	Grab four 16-ounce cups and put the cookie crumbs in the bottom of the cups. Top with the cheese mixture. Cover the cups with plastic wrap and refrigerate for 1 hour to set.	701	1	0
-3877	In a small pot, bring the cream to a boil. Put the chocolate in a heatproof medium bowl. Pour the hot cream over the chocolate and let it sit for 2 to 3 minutes. Whisk the chocolate until smooth.	702	0	0
-3878	Whisk in the butter. Then whisk in the rum.	702	1	0
-3879	Lay plastic wrap directly on the surface of the chocolate and put it in the fridge for at least 4 hours.	702	2	0
-3880	Take the chocolate out of the fridge. Spoon out a tablespoon-size ball of chocolate and roll it in the cocoa powder. Repeat the process until all the chocolate mix has been rolled in the cocoa.	702	3	0
 3781	Once cooled, peel the beets, potatoes, carrots, and eggs. Separate the egg whites from the egg yolks.  Grate beets and potatoes using the large side of a box grater. Use the fine side of the box grater to grate the carrots, egg yolks, and egg.	649	3	0
 3782	To start the layering process, using a spoon, add the grated potatoes onto a large shallow serving dish. Spread into an even layer all across the dish. Next, add the salmon and onions over the potatoes. Spread into an even layer all the way across the potato layer.	649	4	0
 3783	Spread 3 tablespoons of mayo on top of the salmon and onions. Next, add the grated carrots, and 3 tablespoons of mayo.	649	5	0
@@ -17564,6 +17605,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3892	In a medium pot, combine the sugar, tap water, and orange zest strips. Bring to a boil, reduce the heat to low, and simmer for 10 minutes. Remove from the heat and let cool completely.	708	1	4
 3893	Take the zest strips out of the syrup and stir in the orange juice and lemon juice.	708	2	0
 3894	Divide the syrup among four glasses. Top each with 1 cup of sparkling water and finish with lots of ice. 	708	3	0
+3877	In a small pot, bring the cream to a boil. Put the chocolate in a heatproof medium bowl. Pour the hot cream over the chocolate and let it sit for 2 to 3 minutes. Whisk the chocolate until smooth.	702	0	0
+3878	Whisk in the butter. Then whisk in the rum.	702	1	0
+3879	Lay plastic wrap directly on the surface of the chocolate and put it in the fridge for at least 4 hours.	702	2	0
+3880	Take the chocolate out of the fridge. Spoon out a tablespoon-size ball of chocolate and roll it in the cocoa powder. Repeat the process until all the chocolate mix has been rolled in the cocoa.	702	3	0
 3906	Warm a medium pot over medium heat. Add the olive oil, mushrooms, and onions and cook 5 to 8 minutes, until the onion is soft, and the mushrooms are cooked through.	713	0	0
 3907	Add the tomato paste and cook for another 2 to 3 minutes, stirring constantly.	713	1	0
 3908	Add the red wine and cook for 2 minutes. Add the water and rosemary and simmer the sauce for 15 minutes, or until thick. Season with salt and pepper.	713	2	0
@@ -18094,7 +18139,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16734, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 16766, true);
 
 
 --
@@ -18758,5 +18803,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict haD8XHnv6ZsJkYBSFuxm0gJxolHjER7y9E2ZCX5ENpiJU3JdoaDjdEvRVXAndKI
+\unrestrict DRS4S5IN96cLfANygS3BIg96kW1FHMOz3yJOzbPrPWjuwjCZBylcnUmdUIXF3H3
 
