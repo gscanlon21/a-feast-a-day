@@ -290,6 +290,7 @@ public class RecipeController : ViewController
         {
             var scale = serving.Weight / (double)context.User.UserSections.Sum(us => us.Weight);
 
+            // This may return more than 1 recipe if there are prep recipes.
             var newRecipes = await new QueryBuilder(feastRecipe.Section)
                 .WithUser(user)
                 .WithEquipment(user.Equipment)
@@ -315,7 +316,7 @@ public class RecipeController : ViewController
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
             }
 
-            // There may be a prep recipe as well.
+            // There may be more than 1 recipe if there are prep recipes.
             await _userRepo.UpdateLastSeenDate(newRecipes);
             foreach (var newRecipe in newRecipes)
             {
@@ -326,12 +327,19 @@ public class RecipeController : ViewController
                             .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
                             .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
                 });
+
+                // Redirect the user to the new recipe.
+                if (newRecipe.Section != Section.Prep)
+                {
+                    recipeId = newRecipe.Recipe.Id;
+                }
             }
 
             await _context.SaveChangesAsync();
         }
 
-        TempData[TempData_User.SuccessMessage] = "Your recipe has been swapped. Reload the feast to view the new recipe.";
+        // Use SuccessMessage2 so we don't go back on save.
+        TempData[TempData_User.SuccessMessage2] = "Your recipe has been swapped. Refresh to view the new recipe.";
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });
     }
 
