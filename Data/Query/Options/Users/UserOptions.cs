@@ -2,7 +2,7 @@
 using Core.Models.User;
 using Data.Entities.Users;
 
-namespace Data.Query.Options;
+namespace Data.Query.Options.Users;
 
 public class UserOptions : IOptions
 {

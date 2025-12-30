@@ -7,12 +7,23 @@ namespace Data.Query.Builders;
 /// <summary>
 /// Builds out the QueryRunner class with option customization.
 /// </summary>
-public class QueryBuilder : QueryBuilderBase
+public class UserOptionsQueryBuilder : QueryBuilderBase
 {
+    private readonly UserOptions UserOptions;
+
     /// <summary>
     /// Looks for similar buckets of recipes.
     /// </summary>
-    public QueryBuilder(Section section) : base(section) { }
+    public UserOptionsQueryBuilder(UserOptions userOptions, Section section) : base(section)
+    {
+        UserOptions = userOptions;
+    }
+
+    public UserOptionsQueryBuilder WithUser(Action<UserOptions>? builder = null)
+    {
+        builder?.Invoke(UserOptions);
+        return this;
+    }
 
     /// <summary>
     /// Builds and returns the QueryRunner class with the options selected.
@@ -21,7 +32,7 @@ public class QueryBuilder : QueryBuilderBase
     {
         return new QueryRunner(Section)
         {
-            UserOptions = new UserOptions(),
+            UserOptions = UserOptions,
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),
             NutrientOptions = NutrientOptions ?? new NutrientOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),

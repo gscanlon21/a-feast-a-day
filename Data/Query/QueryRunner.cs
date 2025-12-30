@@ -8,6 +8,7 @@ using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Query.Builders;
 using Data.Query.Options;
+using Data.Query.Options.Users;
 using Fractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -511,8 +512,8 @@ public class QueryRunner(Section section)
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // This will filter out base recipes missing equipemnt. No infinite recursion please. 
-        return prerequisiteRecipeIds.Any() ? await new QueryBuilder(Section.Prep)
-            .WithUser(UserOptions, options =>
+        return prerequisiteRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Section.Prep)
+            .WithUser(options =>
             {
                 // Keep ignored base recipes, user should ignore the recipe ingredient if they need to ignore this.
                 // This allows the user to ignore "Sides" recipes that also function as base recipes.

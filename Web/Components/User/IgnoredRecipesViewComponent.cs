@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Data;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
@@ -40,9 +41,9 @@ public class IgnoredRecipesViewComponent : ViewComponent
             .Where(ur => ur.UserId == user.Id)
             .ToListAsync();
 
-        var ignoredRecipes = await new QueryBuilder()
+        var ignoredRecipes = await new UserQueryBuilder(user, Section.None)
             // Pass in the user so we can select their recipes.
-            .WithUser(user, options =>
+            .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
             })

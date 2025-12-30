@@ -64,9 +64,9 @@ public class RecipeController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipeDtos = (await new QueryBuilder()
+        var recipeDtos = (await new UserQueryBuilder(user, Section.None)
             // Pass in the user so we can select their recipes.
-            .WithUser(user, options =>
+            .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
             })
@@ -291,8 +291,7 @@ public class RecipeController : ViewController
             var scale = serving.Weight / (double)context.User.UserSections.Sum(us => us.Weight);
 
             // This may return more than 1 recipe if there are prep recipes.
-            var newRecipes = await new QueryBuilder(feastRecipe.Section)
-                .WithUser(user)
+            var newRecipes = await new UserQueryBuilder(user, feastRecipe.Section)
                 .WithEquipment(user.Equipment)
                 .WithNutrients(NutrientTargetsContextBuilder
                     .WithNutrients(context, NutrientHelpers.All)

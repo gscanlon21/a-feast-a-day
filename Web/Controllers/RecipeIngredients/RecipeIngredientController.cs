@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
@@ -185,9 +186,9 @@ public class RecipeIngredientController : ViewController
     /// </summary>
     private async Task<IList<QueryResults>> GetBaseRecipeResults(User user, IList<Recipe> baseRecipes, RecipeIngredient recipeIngredient)
     {
-        return await new QueryBuilder()
+        return await new UserQueryBuilder(user, Section.None)
             // Pass in the user so we can select their base recipes.
-            .WithUser(user, options =>
+            .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
             })

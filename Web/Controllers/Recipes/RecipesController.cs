@@ -38,7 +38,7 @@ public class RecipesController : ViewController
     {
         viewModel ??= new RecipesViewModel();
 
-        var queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None);
+        QueryBuilderBase queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None);
 
         if (viewModel.Equipment.HasValue)
         {

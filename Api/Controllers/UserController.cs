@@ -59,8 +59,7 @@ public class UserController : ControllerBase
             .GroupBy(ufr => ufr.Section))
         {
             // Pass in the section so that the UserRecipe is correct.
-            recipes.AddRange(await new QueryBuilder(sectionGroup.Key)
-                .WithUser(user)
+            recipes.AddRange(await new UserQueryBuilder(user, sectionGroup.Key)
                 .WithEquipment(user.Equipment)
                 .WithRecipes(options =>
                 {

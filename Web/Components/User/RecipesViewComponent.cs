@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
 using Data.Query.Builders;
@@ -40,9 +41,9 @@ public class RecipesViewComponent : ViewComponent
             .ToListAsync();
 
         // This should include disabled recipes.
-        var recipes = await new QueryBuilder()
+        var recipes = await new UserQueryBuilder(user, Section.None)
             // Pass in the user so we can select their recipes.
-            .WithUser(user, options =>
+            .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
             })

@@ -20,8 +20,7 @@ public partial class NewsletterRepo
         if (breakfastServing.Weight == 0) return [];
 
         var scale = breakfastServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Breakfast)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Breakfast)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -50,8 +49,7 @@ public partial class NewsletterRepo
         if (lunchServing.Weight == 0) return [];
 
         var scale = lunchServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Lunch)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Lunch)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -80,8 +78,7 @@ public partial class NewsletterRepo
         if (dinnerServing.Weight == 0) return [];
 
         var scale = dinnerServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Dinner)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Dinner)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -110,8 +107,7 @@ public partial class NewsletterRepo
         if (sideServing.Weight == 0) return [];
 
         var scale = sideServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Sides)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Sides)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -140,8 +136,7 @@ public partial class NewsletterRepo
         if (snackServing.Weight == 0) return [];
 
         var scale = snackServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Snacks)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Snacks)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -170,8 +165,7 @@ public partial class NewsletterRepo
         if (drinkServing.Weight == 0) return [];
 
         var scale = drinkServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Drinks)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Drinks)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -200,8 +194,7 @@ public partial class NewsletterRepo
         if (dessertServing.Weight == 0) return [];
 
         var scale = dessertServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new QueryBuilder(Section.Dessert)
-            .WithUser(newsletterContext.User)
+        return await new UserQueryBuilder(newsletterContext.User, Section.Dessert)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext, NutrientHelpers.All)
@@ -226,8 +219,7 @@ public partial class NewsletterRepo
 
     private async Task<IList<QueryResults>> GetDebugRecipes(User user)
     {
-        var debugRecipes = await new QueryBuilder(Section.Debug)
-            .WithUser(user)
+        var debugRecipes = await new UserQueryBuilder(user, Section.Debug)
             .WithEquipment(Equipment.All)
             .WithRecipes(options =>
             {
