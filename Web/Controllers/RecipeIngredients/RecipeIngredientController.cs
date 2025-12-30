@@ -108,7 +108,7 @@ public class RecipeIngredientController : ViewController
         }
 
         var prepRecipes = recipes.Where(r => recipe.RecipeIngredients.Select(ri => ri.IngredientRecipeId).Contains(r.Recipe.Id)).ToList();
-        var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).ToList()
+        var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).Where(ai => ai.DisabledReason == null).ToList()
             // Not excluding allergens from a user's custom ingredients because I assume they know what they want.
             ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
 

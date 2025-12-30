@@ -91,7 +91,8 @@ public class Ingredient
     public virtual IList<Nutrient> Nutrients { get; set; } = [];
 
     /// <summary>
-    /// These are the alternate ingredients.
+    /// These are the alternative ingredients.
+    /// AlternativeIngredient does not have a global query filter for DisabledReason.
     /// </summary>
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.Ingredient))]
     public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];

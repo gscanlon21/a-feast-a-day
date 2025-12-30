@@ -101,6 +101,7 @@ public class UpsertRecipeViewComponent : ViewComponent
     {
         return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
             .Where(i => i.UserId == null || i.UserId == user.Id)
+            .Where(i => i.DisabledReason == null)
             .OrderBy(i => i.Name)
             .ToListAsync())
             .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })

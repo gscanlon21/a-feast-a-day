@@ -28,17 +28,30 @@ public class CoreContext : DbContext
     public DbSet<UserToken> UserTokens { get; set; } = null!;
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
-    public DbSet<Ingredient> Ingredients { get; set; } = null!;
     public DbSet<UserRecipe> UserRecipes { get; set; } = null!;
     public DbSet<UserFamily> UserFamilies { get; set; } = null!;
     public DbSet<UserSection> UserSections { get; set; } = null!;
     public DbSet<UserFootnote> UserFootnotes { get; set; } = null!;
     public DbSet<UserNutrient> UserNutrients { get; set; } = null!;
     public DbSet<UserFeastRecipe> UserFeastRecipes { get; set; } = null!;
-    public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
     public DbSet<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
     public DbSet<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; set; } = null!;
+
+    /// <summary>
+    /// AlternativeIngredient does not have a global query filter for DisabledReason.
+    /// </summary>
     public DbSet<IngredientAlternative> IngredientAlternatives { get; set; } = null!;
+
+    /// <summary>
+    /// Ingredient does not have a global query filter for DisabledReason.
+    /// This shouldn't matter because the recipe can be updated and fixed.
+    /// </summary>
+    public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
+
+    /// <summary>
+    /// These do not have a global query filter for DisabledReason.
+    /// </summary>
+    public DbSet<Ingredient> Ingredients { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

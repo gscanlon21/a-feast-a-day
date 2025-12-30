@@ -487,6 +487,7 @@ public class QueryRunner(Section section)
         var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         return await context.IngredientAlternatives.AsNoTracking().TagWithCallSite()
             .Where(ia => allFilteredResultIngredientIds.Contains(ia.IngredientId))
+            .Where(ia => ia.AlternativeIngredient.DisabledReason == null)
             .Where(ia => ia.IsAggregateElement)
             // Select before grouping so EF Core can optimize.
             .Select(ia => new IngredientAlternative(/* EF can't optimize */)

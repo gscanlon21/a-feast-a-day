@@ -29,6 +29,10 @@ public class IngredientAlternativesViewComponent : ViewComponent
     {
         var partialIngredients = await GetAlternativeIngredients(ingredient, user, partial: true);
         var alternativeIngredients = await GetAlternativeIngredients(ingredient, user, partial: false);
+        if (!partialIngredients.Any() && !alternativeIngredients.Any()) 
+        { 
+            return Content(""); 
+        }
 
         var token = await _userRepo.AddUserToken(user, durationDays: 1);
         return View("IngredientAlternatives", new IngredientAlternativesViewModel()
@@ -47,6 +51,7 @@ public class IngredientAlternativesViewComponent : ViewComponent
             .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             // The user is an admin who is allowed to edit alternative ingredients. Or the user owns the ingredient.
             .Where(i => i.AlternativeIngredient.UserId == user.Id || i.AlternativeIngredient.UserId == null)
+            .Where(ia => ia.AlternativeIngredient.DisabledReason == null)
             .Where(ia => ia.IngredientId == ingredient.Id)
             .Where(ia => ia.IsAggregateElement == partial)
             .OrderBy(f => f.AlternativeIngredient.Name)
