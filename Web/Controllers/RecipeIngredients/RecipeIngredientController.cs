@@ -63,7 +63,7 @@ public class RecipeIngredientController : ViewController
     }
 
     /// <summary>
-    /// Shows a form to the user where they can update their Pounds lifted.
+    /// Shows a form to the user where they can manage their recipe ingredients.
     /// </summary>
     [HttpGet, Route("{recipeIngredientId}")]
     public async Task<IActionResult> ManageRecipeIngredient(string email, string token, int recipeIngredientId, bool? wasUpdated = null)

@@ -11,12 +11,12 @@ public class LabSampleBacteria
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int LabSampleId { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Taxon { get; set; }
 
     [Required]

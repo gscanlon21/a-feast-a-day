@@ -6,11 +6,11 @@ namespace Data.Entities.Microbiome;
 [Table("BiofilmReducers")]
 class BiofilmReducers
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int Mid2 { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Cid { get; set; }
 }

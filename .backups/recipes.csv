@@ -35,7 +35,7 @@
 53	Old-Fashioned Oatmeal	Combinations to try: 1 soft-boiled egg + 1/3 cup sauteed spinach + 1 teaspoon chili crisp or togarashi seasoning (omit honey and cinnamon from base recipe) 1/4 cup shredded carrot + 1 tablespoon chopped toasted walnuts + 1 tablespoon golden raisins + 1/4 teaspoon cinnamon 1/2 medium banana, sliced + 1 tablespoon peanut butter + 1 teaspoon chia seeds + 1 teaspoon brown sugar 1/4 cup blueberries + 1 tablespoon toasted coconut flakes + 1 tablespoon chopped toasted macadamia nuts + 1 teaspoon honey 1/4 cup sliced peaches + 2 tablespoons cinnamon granola + 2 tablespoons vanilla yogurt	Too complicated.	\N	6	15	0	1	t	old-fashioned-oatmeal.jpg	0	\N	f	f
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	sunflower-seeds.jpg	0	\N	f	f
 55	Oven Roasted Asparagus	\N	\N	\N	16	10	5	1	t	parmesan-roasted-asparagus.jpg	0	\N	f	f
-56	Microwave Macaroni and Cheese in a Mug	\N	\N	\N	6	5	5	1	t	mac-n-cheese-mug.jpg	0	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	f	f
+56	Microwave Macaroni and Cheese in a Mug	\N	Doesn't scale well.	\N	6	5	5	1	t	mac-n-cheese-mug.jpg	0	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	f	f
 57	Flying Saucers	\N	\N	\N	14	5	5	4	t	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/flying-saucers/	f	f
 58	Fruity Peanut Butter Pitas	\N	\N	\N	22	0	5	2	t	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	f	f
 59	Popcorn	\N	\N	\N	16	5	0	1	t	popcorn.jpg	0	\N	f	f
@@ -146,7 +146,6 @@
 165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	lemon-parmesan-capellini.jpg	0	\N	f	f
 166	Crispy Cabbage	\N	\N	\N	16	3	3	4	t	crispy-cabbage.jpg	0	\N	f	f
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	128	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
-168	Steak with Pickled Walnut Sauce	\N	\N	\N	8	20	2	4	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	16	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
@@ -315,7 +314,7 @@
 431	Glow Juice	\N	Requires a masticating juicer.	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
-466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	17	0	1	1	t	\N	0	\N	f	f
+466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	17	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
 467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	1	1	t	\N	0	\N	f	f
 468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	5	1	t	rosemary-lemon-tea.jpg	0	\N	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	20	0	10	4	t	tuna-salad-celery-boats.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -352,23 +351,23 @@
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	16	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	32	0	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-536	Turkey Breakfast Sausage	\N	\N	\N	6	10	35	4	t	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+536	Turkey Breakfast Sausage	\N	\N	\N	0	10	35	4	t	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
 537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	4	t	citrus-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 538	Lamb Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 539	Hot Oatmeal	\N	\N	\N	6	5	5	1	t	old-fashioned-oatmeal.jpg	0	\N	f	f
 540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	4	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 541	Shrimp Fried Rice	\N	\N	\N	8	15	10	4	t	chicken-fried-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 542	Sautéed Chicken & Garlic Cauliflower Mash	\N	\N	\N	8	10	5	2	t	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 546	Sesame Almond Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
 547	Burgers	\N	\N	\N	0	45	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	\N	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	\N	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 551	Bentonite Clay Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-552	Charcoal Juice	\N	\N	\N	128	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+552	Charcoal Juice	\N	Activated Charcoal can bind to foods you have eaten, blocking the absorption of nutrients and medications you may have taken, reducing their effectiveness.	\N	128	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 553	Adobo	\N	\N	\N	4	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	16	6	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 555	Green Beans with Almonds	\N	\N	\N	16	15	5	4	t	green-beans-almonds.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -451,7 +450,7 @@
 633	Pork and Pineapple Coconut Curry	\N	\N	\N	8	17	3	4	t	\N	0	\N	f	f
 634	Satay Sauce	\N	\N	\N	0	5	5	1	t	\N	6	\N	t	f
 635	Pork and Pineapple Satay	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
-636	Thai-Style Rare Beef and Mango Salad	Complement this dish with cilantro leaves, chopped spring onions (scallions), and crushed peanuts.	\N	\N	8	18	2	4	t	\N	0	\N	f	f
+636	Thai-Style Rare Beef and Mango Salad	\N	\N	\N	8	18	2	4	t	beef-mango-salad.jpg	0	\N	f	f
 637	Chocolate and Pistachio Wedges	Pressing the pistachios into the mixture prevents them from getting over-browned.	\N	\N	64	20	10	8	t	\N	0	\N	f	f
 638	Bacon and Egg Muffins Hollandaise	Eggs that are a week or more old will not keep their shape when poached, so for the best results, use very fresh eggs. To make sure that you don't break the yolk, crack the eggs into a cup before carefully adding them to the gently simmering water.	Too complicated. Too much equipment.	\N	6	10	5	4	t	\N	0	\N	f	f
 639	Sweet and Sour Pork Thai-Style	\N	Too complicated. Too many ingredients.	\N	8	14	6	4	t	\N	0	\N	f	f
@@ -460,7 +459,7 @@
 642	Salad in a Glass	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 643	Root Cause Clense Smoothie	\N	Too many ingredients.	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 644	Beef Strips with Orange and Ginger	Marinating the meat for longer will make it more tender, as the marinade will break down and tenderize the flesh. Just before serving, toss the stir-fry with 5ml/1 tsp sesame oil. If you haven't any sesame oil, use flavored chili oil, or a sut oil, such as hazelnut or walnut.	\N	\N	8	5	15	2	t	\N	0	\N	f	f
-645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	\N	0	\N	f	f
+645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	veal-cream-sauce.jpg	0	\N	f	f
 646	Pepper Steaks with Chive Butter	\N	\N	\N	8	12	4	4	t	\N	0	\N	f	f
 647	Slow Cooker Lamb Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 648	A Very Berry Pie	\N	\N	\N	64	20	30	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -470,7 +469,7 @@
 652	Slices of Quick Basic White Bread	Do not use the timer function.	\N	\N	0	120	20	6	f	\N	0	\N	t	t
 653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	\N	0	\N	t	t
 654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
-655	Coconut Yogurt and Chocolate Almonds	\N	\N	\N	32	0	5	2	t	\N	0	\N	f	f
+655	Coconut Yogurt and Chocolate Almonds	\N	\N	\N	32	0	5	2	t	yogurt.jpg	0	\N	f	f
 656	Poached Pears	\N	\N	\N	16	25	5	2	t	\N	0	\N	f	f
 657	Blue Power Boost Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 658	Green Power Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
@@ -492,22 +491,22 @@
 706	White Bean and Chorizo Soup	\N	\N	\N	8	45	10	6	t	white-bean-chorizo-soup.jpg	0	\N	f	f
 707	Tomato Vegetable Soup	\N	\N	\N	8	30	10	6	t	\N	0	\N	f	f
 708	Orange Soda Pop	You can add some lemon and lime zest to make more of a citrus soda.	\N	\N	128	15	65	4	t	\N	0	\N	f	f
-709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	\N	0	\N	f	f
+709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	hot-chocolate.jpg	0	\N	f	f
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
 711	Hungry, Hungry Hummus	Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	\N	\N	0	0	10	2	t	\N	6	\N	t	f
-712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	\N	6	\N	f	f
+712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	granola.jpg	6	\N	f	f
 713	Mushroom Ragu	\N	\N	\N	0	30	5	2	t	\N	6	\N	t	f
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	\N	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
-716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	\N	0	\N	t	f
+716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	refried-beans.jpg	0	\N	t	f
 717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f
 718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	\N	6	\N	t	f
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	\N	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
 721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
-722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	\N	6	\N	t	f
+722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
-724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	\N	0	\N	f	f
+724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	creamy-polenta.jpg	0	\N	f	f
 725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	f
 726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
 727	Dal	\N	\N	\N	12	40	5	2	t	dal.jpg	0	\N	f	f
@@ -542,7 +541,7 @@
 788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	chicken-chips.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 790	Baharat Chicken Shish	\N	\N	\N	8	45	10	4	t	baharat-chicken-shish.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-791	Tortilla Frittata	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+791	Tortilla Frittata	\N	\N	\N	8	55	5	4	t	tortilla-fritatta.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 824	Oven-Baked Chicken Fingers	\N	\N	\N	8	30	15	4	t	\N	0	\N	t	f
 825	Quick Crispy Duck	\N	\N	\N	12	20	2	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 826	Chicken Traybake	\N	\N	\N	8	55	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -560,16 +559,16 @@
 838	Sweet Chicken Surprise	\N	\N	\N	8	40	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	\N	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
 840	Roasted Zucchini	\N	\N	\N	0	20	5	4	t	zucchini.jpg	6	From the First Watch cookbook. 	t	f
-841	First Watch Granola	To add another layer of flavor, feel free to add about 1 to 2 cups of your favorite dried cranberries or dried cherries after the granola has cooled completely.	\N	\N	0	0	0	8	t	\N	6	From the First Watch cookbook. 	t	f
-842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	\N	0	From the First Watch cookbook. 	f	f
-843	Whipped Eggs	This preparation works great for omelets and frittatas. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product.	\N	\N	0	0	5	1	t	\N	0	\N	t	f
+841	First Watch Granola	\N	\N	\N	32	0	0	8	t	granola.jpg	6	From the First Watch cookbook. 	t	f
+842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	ham-cheese-omlet.jpg	0	From the First Watch cookbook. 	f	f
+843	Whipped Eggs	This preparation works great for omelets and frittatas. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product.	\N	\N	0	0	5	1	t	whipped-eggs.jpg	0	\N	t	f
 844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
 846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
 847	Avocado Mash	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
-848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	\N	6	From the First Watch cookbook. 	t	f
+848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	taco-seasoning.jpg	6	From the First Watch cookbook. 	t	f
 849	Avocado Toast	\N	\N	\N	4	0	0	1	t	\N	0	From the First Watch cookbook. 	f	f
-850	Sunrise Granola Bowl	\N	\N	\N	4	0	15	1	t	\N	0	From the First Watch cookbook. 	f	f
+850	Sunrise Granola Bowl	\N	\N	\N	4	0	15	1	t	granola.jpg	0	From the First Watch cookbook. 	f	f
 851	Million Dollar Bacon	\N	\N	\N	16	20	5	4	t	\N	0	From the First Watch cookbook. 	f	f
 852	Rainbow Toast	\N	\N	\N	4	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 853	Roast Tikka Chicken	\N	\N	\N	8	60	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
@@ -619,9 +618,9 @@
 963	Caesar Salad	Do not boil the eggs for longer than 1 minute; the whites should be milky, while the yolks remain raw. If you prefer to avoid lightly cooked eggs, substitute quartered hard-boiled eggs. For a tangier dressing, mix 2 tbsp white wine vinegar, 1 tbsp Worcestershire sauce, ½ tsp mustard powder, 1 tsp sugar, and and pepper in a screw-top jar, then add the oil and shake well.	\N	\N	20	2	10	6	t	\N	0	\N	f	f
 964	Chewy Flapjack Bars	Allow the baking parchment to hand over the edges of the tin; this makes the baked bars easier to remove.	\N	\N	32	20	8	12	t	\N	0	\N	f	f
 965	Giant Triple Chocolate Cookies	\N	\N	\N	64	15	10	12	t	\N	0	\N	f	f
-966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	10	5	1	t	\N	0	\N	t	f
+966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	10	5	2	t	\N	0	\N	t	f
 967	Cool Chocolate Float	\N	\N	\N	64	2	6	2	t	\N	0	\N	f	f
-968	Tagliatelle with Tomatoes and Olives	It is essential to buy Parmesan in a piece for this dish. Find a good source - fresh Parmesan should not be unacceptably hard - and shave or grate it yourself. The flavour will be much more intense than that of a ready-grated product.	\N	\N	8	10	5	4	t	\N	0	\N	f	f
+968	Tagliatelle with Tomatoes and Olives	It is essential to buy Parmesan in a piece for this dish. Find a good source - fresh Parmesan should not be unacceptably hard - and shave or grate it yourself. The flavour will be much more intense than that of a ready-grated product.	\N	\N	8	10	5	4	t	tagliatelle-tomatoes-olives.jpg	0	\N	f	f
 969	Pasta with Sun-Dried Tomatoes	If you find the presentation too fussy, you can toss the tomato and raddicchio mixture with the pasta in a large bowl before serving, then sprinkle the spring onions and toasted pine nuts on top.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 970	Lamb Steaks with Redcurrant Glaze	This is a good recipe for the barbecue. Wait until the fierce heat has subsided and the coals are dusted with white ash, then place the rosemary-rubbed steaks directly on the grill rack. Brush frequently with the glaze as they cook.	\N	\N	8	10	5	4	t	\N	0	\N	f	f
 971	Flamenco Eggs	The chorizo and vegetable mixture mustn't be too dry, so add a little more sherry if necessary.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
@@ -629,3 +628,5 @@
 973	Stuffed Chicken in Bacon Coats	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	f
 974	Southern Fried Chicken	To make the mashed potate, cook the potatoes in boiling salted water for about 20 minutes until tender, then drain well. Add a little milk and mash until smooth.	\N	\N	8	25	5	4	t	\N	0	\N	f	f
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	\N	0	\N	t	f
+976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	\N	0	\N	t	f
+977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	\N	6	\N	t	f

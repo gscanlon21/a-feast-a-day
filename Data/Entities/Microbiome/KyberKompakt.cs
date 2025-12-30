@@ -11,7 +11,7 @@ class KyberKompakt
 
     [Required]
     [Key, Column(Order = 1)]
-    public string LabGroup { get; set; }
+    public string LabGroup { get; set; } = null!;
 
     public int? DisplayOrder { get; set; }
 }

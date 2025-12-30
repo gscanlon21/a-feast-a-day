@@ -5,20 +5,20 @@ namespace Data.Entities.Microbiome;
 
 public class SourceSymptomEnzyme
 {
+    [Required]
     [Key, Column(Order = 0)]
-    [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int SymptomId { get; set; }
 
-    [Key, Column(Order = 2)]
     [Required]
-    public string ECKey { get; set; }
+    [Key, Column(Order = 2)]
+    public string ECKey { get; set; } = null!;
 
     public double? Chi2 { get; set; }
 
-    public string Direction { get; set; }
+    public string Direction { get; set; } = null!;
 }
 

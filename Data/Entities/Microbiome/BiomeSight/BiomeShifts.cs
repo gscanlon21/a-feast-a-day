@@ -6,8 +6,7 @@ namespace Data.Entities.Microbiome.BiomeSight;
 [Table("BiomeShifts")]
 public class BiomeShifts
 {
-    [Key]
-    [Required]
+    [Key, Required]
     public int Taxon { get; set; }
 
     [Required]

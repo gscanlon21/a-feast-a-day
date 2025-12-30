@@ -4,8 +4,7 @@ namespace Data.Entities.Microbiome.Thorne;
 
 public class Thorne
 {
-    [Key]
-    [Required]
+    [Key, Required]
     public int ThorneId { get; set; }
 
     public string Domain { get; set; } = null!;

@@ -15,7 +15,7 @@ public class Metabolic
     public int MetId { get; set; }
 
     [Required]
-    public string Activity { get; set; }
+    public string Activity { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
