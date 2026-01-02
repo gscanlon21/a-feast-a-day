@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
 using Data.Entities.Users;
 using Fractions;
 using System.ComponentModel;
@@ -30,9 +31,10 @@ public class RecipeIngredient
         Order = recipeIngredient.Order;
         Measure = recipeIngredient.Measure;
         Optional = recipeIngredient.Optional;
-        CookedOff = recipeIngredient.CookedOff;
+        CoarseCut = recipeIngredient.CoarseCut;
         Attributes = recipeIngredient.Attributes;
         IngredientId = recipeIngredient.IngredientId;
+        CookingMethod = recipeIngredient.CookingMethod;
         IngredientRecipeId = recipeIngredient.IngredientRecipeId;
         QuantityDenominator = recipeIngredient.QuantityDenominator;
         QuantityNumerator = recipeIngredient.QuantityNumerator;
@@ -70,15 +72,21 @@ public class RecipeIngredient
     public bool Optional { get; set; }
 
     [Required]
-    [Display(Name = "Cooked Off")]
-    public bool CookedOff { get; set; }
+    [Display(Name = "Coarse Cut")]
+    public bool CoarseCut { get; set; }
 
     [Required]
+    [Display(Name = "Measure")]
     public Measure Measure { get; set; }
+
+    [Required]
+    [Display(Name = "Cooking Method")]
+    public CookingMethod CookingMethod { get; set; }
 
     /// <summary>
     /// Chopped, thinly sliced...
     /// </summary>
+    [Display(Name = "Attributes")]
     public string? Attributes { get; init; }
 
     /// <summary>
@@ -91,6 +99,8 @@ public class RecipeIngredient
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
 
+    #region Navigation Properties
+
     [JsonIgnore, InverseProperty(nameof(Recipes.Recipe.RecipeIngredients))]
     public virtual Recipe Recipe { get; private init; } = null!;
 
@@ -102,6 +112,8 @@ public class RecipeIngredient
 
     [JsonInclude, InverseProperty(nameof(UserRecipeIngredient.RecipeIngredient))]
     public virtual ICollection<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
+
+    #endregion
 
 
     public override int GetHashCode() => HashCode.Combine(Id);

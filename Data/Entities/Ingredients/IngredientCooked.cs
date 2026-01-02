@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Models.Ingredients;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,13 +7,13 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.Ingredients;
 
+
 /// <summary>
 /// Maps an ingredient to it's alternatives.
 /// </summary>
-[Table("ingredient_alternative")]
+[Table("ingredient_cooked")]
 [DebuggerDisplay("{GetDebuggerDisplay(),nq}")]
-[Index(nameof(IngredientId), nameof(IsAggregateElement))]
-public class IngredientAlternative
+public class IngredientCooked
 {
     /// <summary>
     /// This is the ingredient that has an alternative.
@@ -23,41 +23,36 @@ public class IngredientAlternative
     /// <summary>
     /// This is the ingredient that has an alternative.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.Alternatives))]
+    [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.IngredientsCooked))]
     public virtual Ingredient Ingredient { get; private init; } = null!;
 
     /// <summary>
     /// This is the alternative ingredient.
     /// </summary>
-    public virtual int AlternativeIngredientId { get; init; }
+    public virtual int CookedIngredientId { get; init; }
 
     /// <summary>
     /// This is the alternative ingredient.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.AlternativeIngredients))]
-    public virtual Ingredient AlternativeIngredient { get; init; } = null!;
+    [JsonInclude, InverseProperty(nameof(Ingredient.CookedIngredients))]
+    public virtual Ingredient CookedIngredient { get; private init; } = null!;
 
     /// <summary>
-    /// How to scale the quantity of the alternative.
+    /// How to scale the quantity of the cooked ingredient.
     /// </summary>
     [DefaultValue(RecipeConsts.IngredientScaleDefault)]
     [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
     public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;
 
-    /// <summary>
-    /// Is this alternative ingredient a part of the whole base ingredient.
-    /// sa. "Mixed-Color Bell Peppers" having aggregate alt for each color.
-    /// </summary>
-    [DefaultValue(false)]
-    public bool IsAggregateElement { get; set; }
+    public CookingMethod CookingMethod { get; init; }
 
     private string GetDebuggerDisplay()
     {
-        if (Ingredient != null && AlternativeIngredient != null)
+        if (CookedIngredient != null)
         {
-            return $"{Ingredient.Name} alt is {AlternativeIngredient.Name}";
+            return $"{IngredientId}:{CookingMethod.GetSingleDisplayName()} alt is {CookedIngredientId}:{CookedIngredient.Name}";
         }
 
-        return $"{IngredientId} alt is {AlternativeIngredientId}";
+        return $"{IngredientId}:{CookingMethod.GetSingleDisplayName()} alt is {CookedIngredientId}";
     }
 }

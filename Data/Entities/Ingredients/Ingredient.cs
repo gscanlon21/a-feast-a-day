@@ -62,8 +62,11 @@ public class Ingredient
     [Display(Name = "Grams Per Measure")]
     public double GramsPerMeasure { get; set; }
 
-    [Display(Name = "Grams Per Cup")]
-    public double GramsPerCup { get; set; }
+    [Display(Name = "Grams Per Fine Cup")]
+    public double GramsPerFineCup { get; set; }
+
+    [Display(Name = "Grams Per Coarse Cup")]
+    public double GramsPerCoarseCup { get; set; }
 
     [Display(Name = "Grams Per Serving")]
     public double GramsPerServing { get; set; }
@@ -97,11 +100,17 @@ public class Ingredient
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.Ingredient))]
     public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];
 
+    [JsonIgnore, InverseProperty(nameof(IngredientCooked.Ingredient))]
+    public virtual ICollection<IngredientCooked> IngredientsCooked { get; private init; } = [];
+
     /// <summary>
     /// These are what ingredients this ingredient is an alternate of.
     /// </summary>
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
     public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
+
+    [JsonIgnore, InverseProperty(nameof(IngredientCooked.CookedIngredient))]
+    public virtual ICollection<IngredientCooked> CookedIngredients { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual ICollection<RecipeIngredient> RecipeIngredients { get; private init; } = null!;

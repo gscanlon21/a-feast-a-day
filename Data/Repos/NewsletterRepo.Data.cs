@@ -263,7 +263,7 @@ public partial class NewsletterRepo
             UserLogs.Log(user, $"AlternativeIngredient:{invalidAlternative.IngredientId}:{invalidAlternative.AlternativeIngredientId} has an invalid configuration: 0.");
         }
 
-        // OrderBy must come after the query or you get cartesian explosion.
+        // OrderBy must come after the query or you get cartesian explosion. Allow disabled ingredients.
         var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
@@ -295,11 +295,12 @@ public partial class NewsletterRepo
                 Notes = debugIngredient.Notes,
                 Category = debugIngredient.Category,
                 Allergens = debugIngredient.Allergens,
-                GramsPerCup = debugIngredient.GramsPerCup,
                 DefaultMeasure = debugIngredient.DefaultMeasure,
+                GramsPerFineCup = debugIngredient.GramsPerFineCup,
                 GramsPerMeasure = debugIngredient.GramsPerMeasure,
                 GramsPerServing = debugIngredient.GramsPerServing,
                 SkipShoppingList = debugIngredient.SkipShoppingList,
+                GramsPerCoarseCup = debugIngredient.GramsPerCoarseCup,
                 Nutrients = debugIngredient.Nutrients.Select(n => new NutrientDto()
                 {
                     Id = n.Id,

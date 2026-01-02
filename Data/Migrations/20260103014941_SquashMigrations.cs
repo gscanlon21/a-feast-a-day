@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -53,6 +54,7 @@ namespace Data.Migrations
                     SendDay = table.Column<int>(type: "integer", nullable: false),
                     Equipment = table.Column<int>(type: "integer", nullable: false),
                     SendHour = table.Column<int>(type: "integer", nullable: false),
+                    FontSizeAdjust = table.Column<int>(type: "integer", nullable: false),
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
                     CreatedDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Verbosity = table.Column<int>(type: "integer", nullable: false),
@@ -104,7 +106,8 @@ namespace Data.Migrations
                     Category = table.Column<int>(type: "integer", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
                     GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
-                    GramsPerCup = table.Column<double>(type: "double precision", nullable: false),
+                    GramsPerFineCup = table.Column<double>(type: "double precision", nullable: false),
+                    GramsPerCoarseCup = table.Column<double>(type: "double precision", nullable: false),
                     GramsPerServing = table.Column<double>(type: "double precision", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true),
                     LastUpdated = table.Column<DateOnly>(type: "date", nullable: false),
@@ -355,6 +358,32 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ingredient_cooked",
+                columns: table => new
+                {
+                    IngredientId = table.Column<int>(type: "integer", nullable: false),
+                    CookingMethod = table.Column<int>(type: "integer", nullable: false),
+                    CookedIngredientId = table.Column<int>(type: "integer", nullable: false),
+                    Scale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ingredient_cooked", x => new { x.IngredientId, x.CookingMethod });
+                    table.ForeignKey(
+                        name: "FK_ingredient_cooked_ingredient_CookedIngredientId",
+                        column: x => x.CookedIngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ingredient_cooked_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "nutrient",
                 columns: table => new
                 {
@@ -390,7 +419,9 @@ namespace Data.Migrations
                     QuantityDenominator = table.Column<int>(type: "integer", nullable: false, defaultValue: 1),
                     Order = table.Column<int>(type: "integer", nullable: false),
                     Optional = table.Column<bool>(type: "boolean", nullable: false),
+                    CoarseCut = table.Column<bool>(type: "boolean", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
+                    CookingMethod = table.Column<int>(type: "integer", nullable: false),
                     Attributes = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -575,8 +606,10 @@ namespace Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     UserFeastRecipeId = table.Column<long>(type: "bigint", nullable: false),
+                    CookingMethod = table.Column<int>(type: "integer", nullable: false),
                     Quantity = table.Column<double>(type: "double precision", nullable: false),
-                    Measure = table.Column<int>(type: "integer", nullable: false)
+                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    CoarseCut = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -615,6 +648,11 @@ namespace Data.Migrations
                 name: "IX_ingredient_alternative_IngredientId_IsAggregateElement",
                 table: "ingredient_alternative",
                 columns: new[] { "IngredientId", "IsAggregateElement" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ingredient_cooked_CookedIngredientId",
+                table: "ingredient_cooked",
+                column: "CookedIngredientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_nutrient_IngredientId",
@@ -752,6 +790,9 @@ namespace Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "ingredient_alternative");
+
+            migrationBuilder.DropTable(
+                name: "ingredient_cooked");
 
             migrationBuilder.DropTable(
                 name: "nutrient");

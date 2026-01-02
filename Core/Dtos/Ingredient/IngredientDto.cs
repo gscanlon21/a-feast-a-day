@@ -31,7 +31,9 @@ public class IngredientDto
 
     public double GramsPerMeasure { get; set; }
 
-    public double GramsPerCup { get; set; }
+    public double GramsPerFineCup { get; set; }
+
+    public double GramsPerCoarseCup { get; set; }
 
     public double GramsPerServing { get; set; }
 

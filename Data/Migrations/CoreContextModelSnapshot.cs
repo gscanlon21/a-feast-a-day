@@ -17,7 +17,7 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.10")
+                .HasAnnotation("ProductVersion", "10.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -194,7 +194,10 @@ namespace Data.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
-                    b.Property<double>("GramsPerCup")
+                    b.Property<double>("GramsPerCoarseCup")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("GramsPerFineCup")
                         .HasColumnType("double precision");
 
                     b.Property<double>("GramsPerMeasure")
@@ -254,6 +257,29 @@ namespace Data.Migrations
                     b.HasIndex("IngredientId", "IsAggregateElement");
 
                     b.ToTable("ingredient_alternative");
+                });
+
+            modelBuilder.Entity("Data.Entities.Ingredients.IngredientCooked", b =>
+                {
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CookingMethod")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CookedIngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Scale")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("double precision")
+                        .HasDefaultValue(1.0);
+
+                    b.HasKey("IngredientId", "CookingMethod");
+
+                    b.HasIndex("CookedIngredientId");
+
+                    b.ToTable("ingredient_cooked");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
@@ -369,8 +395,11 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<bool>("CookedOff")
+                    b.Property<bool>("CoarseCut")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("CookingMethod")
+                        .HasColumnType("integer");
 
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
@@ -465,8 +494,11 @@ namespace Data.Migrations
                     b.Property<string>("Attributes")
                         .HasColumnType("text");
 
-                    b.Property<bool>("CookedOff")
+                    b.Property<bool>("CoarseCut")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("CookingMethod")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("IngredientId")
                         .HasColumnType("integer");
@@ -879,6 +911,25 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
                 });
 
+            modelBuilder.Entity("Data.Entities.Ingredients.IngredientCooked", b =>
+                {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "CookedIngredient")
+                        .WithMany("CookedIngredients")
+                        .HasForeignKey("CookedIngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
+                        .WithMany("IngredientsCooked")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CookedIngredient");
+
+                    b.Navigation("Ingredient");
+                });
+
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
                     b.HasOne("Data.Entities.Users.User", "User")
@@ -1113,6 +1164,10 @@ namespace Data.Migrations
                     b.Navigation("AlternativeIngredients");
 
                     b.Navigation("Alternatives");
+
+                    b.Navigation("CookedIngredients");
+
+                    b.Navigation("IngredientsCooked");
 
                     b.Navigation("Nutrients");
 

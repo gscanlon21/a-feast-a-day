@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
 using Data.Interfaces.Recipe;
 using Data.Query;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,8 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient)
     {
         Measure = recipeIngredient.Measure;
-        CookedOff = recipeIngredient.CookedOff;
+        CoarseCut = recipeIngredient.CoarseCut;
+        CookingMethod = recipeIngredient.CookingMethod;
         Quantity = recipeIngredient.Quantity.ToDouble();
         // Don't set Ingredient, so that EF Core doesn't add/update Ingredient.
         IngredientId = recipeIngredient.Ingredient!.Id;
@@ -40,6 +42,8 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     /// </summary>
     public long UserFeastRecipeId { get; private init; }
 
+    public CookingMethod CookingMethod { get; private init; }
+
     /// <summary>
     /// This value is set after recipe scaling is applied.
     /// </summary>
@@ -47,7 +51,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
     public Measure Measure { get; private init; }
 
-    public bool CookedOff { get; private init; }
+    public bool CoarseCut { get; private init; }
 
 
     #region Navigation Properties
@@ -62,13 +66,16 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
 
     [NotMapped]
-    public double GetQuantity => Quantity;
+    public bool IsCoarseCut => CoarseCut;
 
     [NotMapped]
     public Measure GetMeasure => Measure;
 
     [NotMapped]
-    public bool IsCookedOff => CookedOff;
+    public double GetQuantity => Quantity;
+
+    [NotMapped]
+    public CookingMethod GetCookingMethod => CookingMethod;
 
     [NotMapped]
     public Ingredients.Ingredient? GetIngredient => Ingredient;

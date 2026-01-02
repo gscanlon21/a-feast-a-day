@@ -43,6 +43,11 @@ public class CoreContext : DbContext
     public DbSet<IngredientAlternative> IngredientAlternatives { get; set; } = null!;
 
     /// <summary>
+    /// AlternativeIngredient does not have a global query filter for DisabledReason.
+    /// </summary>
+    public DbSet<IngredientCooked> IngredientsCooked { get; set; } = null!;
+
+    /// <summary>
     /// Ingredient does not have a global query filter for DisabledReason.
     /// This shouldn't matter because the recipe can be updated and fixed.
     /// </summary>
@@ -61,6 +66,7 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserNutrient>().HasKey(sc => new { sc.UserId, sc.Nutrient });
         modelBuilder.Entity<UserRecipeIngredient>().HasKey(sc => new { sc.UserId, sc.RecipeIngredientId });
         modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
+        modelBuilder.Entity<IngredientCooked>().HasKey(sc => new { sc.IngredientId, sc.CookingMethod });
         modelBuilder.Entity<StudyIngredient>().HasKey(sc => new { sc.StudyId, sc.IngredientId });
 
         ////////// Query Filters //////////

@@ -1,10 +1,12 @@
 ﻿using Core.Code.Exceptions;
+using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
 using Data.Entities.Ingredients;
 using Data.Entities.Newsletter;
 using Data.Entities.Users;
+using Data.Models.Ingredients;
 using Data.Models.Newsletter;
 using Data.Query;
 using Microsoft.EntityFrameworkCore;
@@ -277,20 +279,26 @@ public class UserRepo
             if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
                 var allRecipeIngredientIds = weeklyFeasts.SelectMany(f => f.UserFeastRecipes.SelectMany(r => r.UserFeastRecipeIngredients).Select(i => i.IngredientId)).ToList();
-                var altIngredientIds = await _context.IngredientAlternatives.AsNoTracking()
+                var partialIngredientIds = await _context.IngredientAlternatives.AsNoTracking()
                     .Where(ia => allRecipeIngredientIds.Contains(ia.IngredientId))
                     .Where(ia => ia.AlternativeIngredient.DisabledReason == null)
                     .Where(ia => ia.IsAggregateElement)
                     // Select before grouping so EF Core can optimize.
                     .Select(ia => new IngredientAlternative(/* EF can't optimize */)
                     {
+                        Scale = ia.Scale,
                         IngredientId = ia.IngredientId,
-                        AlternativeIngredientId = ia.AlternativeIngredientId,
+                        AlternativeIngredient = ia.AlternativeIngredient,
                     })
                     .GroupBy(ia => ia.IngredientId)
-                    .ToDictionaryAsync(g => g.Key, g => g.Select(ia => ia.AlternativeIngredientId).ToList());
+                    .ToDictionaryAsync(g => g.Key, g => g.Select(ia => new IngredientScale(ia.AlternativeIngredient, ia.Scale)).ToList());
 
-                var allIngredientIds = allRecipeIngredientIds.Union(altIngredientIds.Values.SelectMany(ids => ids)).ToList();
+                var halfIngredientIds = allRecipeIngredientIds.Union(partialIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id))).ToList();
+                var cookedIngredients = await _context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters()
+                    .Where(ic => halfIngredientIds.Contains(ic.IngredientId)).Include(ic => ic.CookedIngredient)
+                    .ToDictionaryAsync(ic => new IngredientCookingMethod(ic.IngredientId, ic.CookingMethod), ic => new IngredientScale(ic.CookedIngredient, ic.Scale));
+
+                var allIngredientIds = halfIngredientIds.Union(cookedIngredients.Values.Select(ci => ci.Ingredient.Id)).ToList();
                 var allNutrients = await _context.Nutrients.AsNoTracking()
                     .Where(n => allIngredientIds.Contains(n.IngredientId))
                     // Select before grouping so EF Core can optimize.
@@ -307,7 +315,7 @@ public class UserRepo
                 var nutrientsWorked = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            .SelectMany(ufri => ufri.GetNutrients(allNutrients, altIngredientIds.GetValueOrDefault(ufri.IngredientId)))
+                            .SelectMany(ufri => ufri.GetNutrients(allNutrients, partialIngredientIds.GetValueOrDefault(ufri.IngredientId), cookedIngredients))
                         )
                     ).ToList();
 

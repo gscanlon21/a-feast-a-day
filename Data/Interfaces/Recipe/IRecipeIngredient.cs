@@ -1,10 +1,13 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
 using Data.Entities.Ingredients;
 
 namespace Data.Interfaces.Recipe;
 
 public interface IRecipeIngredient
 {
+    bool IsCoarseCut { get; }
+
     /// <summary>
     /// This is the scaled quantity.
     /// </summary>
@@ -17,5 +20,5 @@ public interface IRecipeIngredient
     /// <summary>
     /// This ingredient provides fewer nutrients than normal.
     /// </summary>
-    bool IsCookedOff { get; }
+    CookingMethod GetCookingMethod { get; }
 }

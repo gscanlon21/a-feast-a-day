@@ -1,54 +1,67 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
+using Data.Entities.Ingredients;
 using Data.Entities.Users;
 using Data.Interfaces.Recipe;
+using Data.Models.Ingredients;
 
 namespace Data.Code.Extensions;
 
-public static class UserFeastRecipeIngredientExtensions
+public static class RecipeIngredientExtensions
 {
-    internal static double NumberOfServings(this IRecipeIngredient recipeIngredient)
+    internal static double ServingsUsed(this IRecipeIngredient recipeIngredient, Ingredient ofIngredient)
     {
-        ArgumentNullException.ThrowIfNull(recipeIngredient?.GetIngredient);
-        return recipeIngredient.ToGrams() / recipeIngredient.GetIngredient.GramsPerServing;
+        return recipeIngredient.GramsUsed(ofIngredient) / ofIngredient.GramsPerServing;
     }
 
-    internal static double ToGrams(this IRecipeIngredient recipeIngredient)
+    internal static double GramsUsed(this IRecipeIngredient recipeIngredient, Ingredient ofIngredient)
     {
-        ArgumentNullException.ThrowIfNull(recipeIngredient?.GetIngredient);
-        return recipeIngredient.GetQuantity * recipeIngredient.GetMeasure.ToGramsWithContext(recipeIngredient.GetIngredient);
+        return recipeIngredient.GetQuantity * recipeIngredient.GetMeasure.ToGramsWithContext(ofIngredient, recipeIngredient.IsCoarseCut);
     }
 
-    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, Dictionary<int, List<Nutrient>>? nutrients = null, IList<int>? altIngredientIds = null)
+    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, Dictionary<int, List<Nutrient>>? nutrients = null, IList<IngredientScale>? partialIngredients = null, Dictionary<IngredientCookingMethod, IngredientScale>? cookedIngredients = null)
     {
         if (recipeIngredient.GetIngredient == null)
         {
             return new Dictionary<Nutrients, double>();
         }
 
-        // Reduce the scale of nutrients if an ingredient is cooked off so it's not overweighted.
-        var scale = recipeIngredient.IsCookedOff ? RecipeConsts.CookedOffNutrientScale : 1;
-
         // If there are aggregate ingredients.
-        if (altIngredientIds?.Any() == true)
+        if (partialIngredients?.Any() == true)
         {
-            var altIngredientNutrients = altIngredientIds.SelectMany(ai => nutrients?.GetValueOrDefault(ai) ?? []).NullIfEmpty();
-            return altIngredientNutrients?.Select(nutrient =>
+            return partialIngredients?.SelectMany(partialIngredient =>
             {
-                var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
-                var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient);
-                var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value;
-                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe * scale };
+                var partialIngredientNutrients = nutrients?.GetValueOrDefault(partialIngredient.Ingredient.Id);
+                return partialIngredientNutrients?.Select(nutrient =>
+                {
+                    var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(partialIngredient.Ingredient);
+                    var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(partialIngredient.Ingredient, recipeIngredient.IsCoarseCut);
+                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * partialIngredient.Scale;
+                    return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
+                }) ?? [];
             })?.GroupBy(kv => kv.Nutrient).ToDictionary(kv => kv.Key, kv => kv.Average(x => x.GramsOfNutrientPerRecipe)) ?? [];
+        }
+        // Reduce the scale of nutrients if an ingredient is cooked off so it's not overweighted. Note that cooking methods are saved when feasts are generated and changes before the recipe ingredient was updated aren't reflected.
+        else if (cookedIngredients != null && cookedIngredients.TryGetValue(new IngredientCookingMethod(recipeIngredient.GetIngredient.Id, recipeIngredient.GetCookingMethod), out IngredientScale? cookedIngredient) && cookedIngredient != null)
+        {
+            var recipeIngredientNutrients = nutrients?.GetValueOrDefault(cookedIngredient.Ingredient.Id);
+            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
+            {
+                var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(cookedIngredient.Ingredient);
+                var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(cookedIngredient.Ingredient, recipeIngredient.IsCoarseCut);
+                var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * cookedIngredient.Scale;
+                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
+            })?.ToDictionary(kv => kv.Nutrient, kv => kv.GramsOfNutrientPerRecipe) ?? [];
         }
         else
         {
             var recipeIngredientNutrients = nutrients?.GetValueOrDefault(recipeIngredient.GetIngredient!.Id);
             return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
             {
-                var servingsOfIngredientUsed = recipeIngredient.NumberOfServings();
-                var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient);
+                var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(recipeIngredient.GetIngredient);
+                var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient, recipeIngredient.IsCoarseCut);
                 var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value;
-                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe * scale };
+                return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
             })?.ToDictionary(kv => kv.Nutrient, kv => kv.GramsOfNutrientPerRecipe) ?? [];
         }
     }

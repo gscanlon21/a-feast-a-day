@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20251027151800_SquashMigrations")]
+    [Migration("20260103014941_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.10")
+                .HasAnnotation("ProductVersion", "10.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -177,7 +177,7 @@ namespace Data.Migrations
                     b.ToTable("study_ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredient.Ingredient", b =>
+            modelBuilder.Entity("Data.Entities.Ingredients.Ingredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -197,7 +197,10 @@ namespace Data.Migrations
                     b.Property<string>("DisabledReason")
                         .HasColumnType("text");
 
-                    b.Property<double>("GramsPerCup")
+                    b.Property<double>("GramsPerCoarseCup")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("GramsPerFineCup")
                         .HasColumnType("double precision");
 
                     b.Property<double>("GramsPerMeasure")
@@ -232,7 +235,7 @@ namespace Data.Migrations
                     b.ToTable("ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredient.IngredientAlternative", b =>
+            modelBuilder.Entity("Data.Entities.Ingredients.IngredientAlternative", b =>
                 {
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
@@ -257,6 +260,29 @@ namespace Data.Migrations
                     b.HasIndex("IngredientId", "IsAggregateElement");
 
                     b.ToTable("ingredient_alternative");
+                });
+
+            modelBuilder.Entity("Data.Entities.Ingredients.IngredientCooked", b =>
+                {
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CookingMethod")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CookedIngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Scale")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("double precision")
+                        .HasDefaultValue(1.0);
+
+                    b.HasKey("IngredientId", "CookingMethod");
+
+                    b.HasIndex("CookedIngredientId");
+
+                    b.ToTable("ingredient_cooked");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
@@ -372,6 +398,12 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
+                    b.Property<bool>("CoarseCut")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("CookingMethod")
+                        .HasColumnType("integer");
+
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
 
@@ -393,7 +425,7 @@ namespace Data.Migrations
                     b.ToTable("user_feast_recipe_ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.Recipe", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -454,7 +486,7 @@ namespace Data.Migrations
                     b.ToTable("recipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.RecipeIngredient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -464,6 +496,12 @@ namespace Data.Migrations
 
                     b.Property<string>("Attributes")
                         .HasColumnType("text");
+
+                    b.Property<bool>("CoarseCut")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("CookingMethod")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("IngredientId")
                         .HasColumnType("integer");
@@ -504,7 +542,7 @@ namespace Data.Migrations
                     b.ToTable("recipe_ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeInstruction", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.RecipeInstruction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -532,7 +570,7 @@ namespace Data.Migrations
                     b.ToTable("recipe_instruction");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.Nutrient", b =>
+            modelBuilder.Entity("Data.Entities.Users.Nutrient", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -562,7 +600,7 @@ namespace Data.Migrations
                     b.ToTable("nutrient");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.User", b =>
+            modelBuilder.Entity("Data.Entities.Users.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -587,6 +625,9 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("Features")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("FontSizeAdjust")
                         .HasColumnType("integer");
 
                     b.Property<int>("FootnoteCountBottom")
@@ -627,7 +668,7 @@ namespace Data.Migrations
                     b.ToTable("user");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserFamily", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserFamily", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -654,7 +695,7 @@ namespace Data.Migrations
                     b.ToTable("user_family");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserNutrient", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserNutrient", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -673,7 +714,7 @@ namespace Data.Migrations
                     b.ToTable("user_nutrient");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserRecipe", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -709,7 +750,7 @@ namespace Data.Migrations
                     b.ToTable("user_recipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserRecipeIngredient", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserRecipeIngredient", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -749,7 +790,7 @@ namespace Data.Migrations
                     b.ToTable("user_recipe_ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserSection", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserSection", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
@@ -768,7 +809,7 @@ namespace Data.Migrations
                     b.ToTable("user_section");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserToken", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserToken", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -795,7 +836,7 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserFootnotes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -828,7 +869,7 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Genetics.StudyIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("StudyIngredients")
                         .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -845,24 +886,24 @@ namespace Data.Migrations
                     b.Navigation("Study");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredient.Ingredient", b =>
+            modelBuilder.Entity("Data.Entities.Ingredients.Ingredient", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("Ingredients")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredient.IngredientAlternative", b =>
+            modelBuilder.Entity("Data.Entities.Ingredients.IngredientAlternative", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "AlternativeIngredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "AlternativeIngredient")
                         .WithMany("AlternativeIngredients")
                         .HasForeignKey("AlternativeIngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("Alternatives")
                         .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -873,9 +914,28 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
                 });
 
+            modelBuilder.Entity("Data.Entities.Ingredients.IngredientCooked", b =>
+                {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "CookedIngredient")
+                        .WithMany("CookedIngredients")
+                        .HasForeignKey("CookedIngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
+                        .WithMany("IngredientsCooked")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CookedIngredient");
+
+                    b.Navigation("Ingredient");
+                });
+
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserEmails")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -886,7 +946,7 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserFeasts")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -897,11 +957,11 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
                 {
-                    b.HasOne("Data.Entities.Recipe.Recipe", "ParentRecipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "ParentRecipe")
                         .WithMany("UserFeastParentRecipes")
                         .HasForeignKey("ParentRecipeId");
 
-                    b.HasOne("Data.Entities.Recipe.Recipe", "Recipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "Recipe")
                         .WithMany("UserFeastRecipes")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -922,7 +982,7 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("UserFeastRecipeIngredients")
                         .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -939,26 +999,26 @@ namespace Data.Migrations
                     b.Navigation("UserFeastRecipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.Recipe", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("Recipes")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.RecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("RecipeIngredients")
                         .HasForeignKey("IngredientId");
 
-                    b.HasOne("Data.Entities.Recipe.Recipe", "IngredientRecipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "IngredientRecipe")
                         .WithMany("RecipeIngredientRecipes")
                         .HasForeignKey("IngredientRecipeId");
 
-                    b.HasOne("Data.Entities.Recipe.Recipe", "Recipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "Recipe")
                         .WithMany("RecipeIngredients")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -971,9 +1031,9 @@ namespace Data.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeInstruction", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.RecipeInstruction", b =>
                 {
-                    b.HasOne("Data.Entities.Recipe.Recipe", "Recipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "Recipe")
                         .WithMany("Instructions")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -982,9 +1042,9 @@ namespace Data.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.Nutrient", b =>
+            modelBuilder.Entity("Data.Entities.Users.Nutrient", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "Ingredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("Nutrients")
                         .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -993,9 +1053,9 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserFamily", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserFamily", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserFamilies")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1004,9 +1064,9 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserNutrient", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserNutrient", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserNutrients")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1015,15 +1075,15 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserRecipe", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserRecipe", b =>
                 {
-                    b.HasOne("Data.Entities.Recipe.Recipe", "Recipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "Recipe")
                         .WithMany("UserRecipes")
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserRecipes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1034,23 +1094,23 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserRecipeIngredient", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserRecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Recipe.RecipeIngredient", "RecipeIngredient")
+                    b.HasOne("Data.Entities.Recipes.RecipeIngredient", "RecipeIngredient")
                         .WithMany("UserRecipeIngredients")
                         .HasForeignKey("RecipeIngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Entities.Ingredient.Ingredient", "SubstituteIngredient")
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "SubstituteIngredient")
                         .WithMany("UserSubstituteIngredients")
                         .HasForeignKey("SubstituteIngredientId");
 
-                    b.HasOne("Data.Entities.Recipe.Recipe", "SubstituteRecipe")
+                    b.HasOne("Data.Entities.Recipes.Recipe", "SubstituteRecipe")
                         .WithMany("UserSubstituteRecipes")
                         .HasForeignKey("SubstituteRecipeId");
 
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserRecipeIngredients")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1065,9 +1125,9 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserSection", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserSection", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserSections")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1076,9 +1136,9 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.UserToken", b =>
+            modelBuilder.Entity("Data.Entities.Users.UserToken", b =>
                 {
-                    b.HasOne("Data.Entities.User.User", "User")
+                    b.HasOne("Data.Entities.Users.User", "User")
                         .WithMany("UserTokens")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1102,11 +1162,15 @@ namespace Data.Migrations
                     b.Navigation("StudyIngredients");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredient.Ingredient", b =>
+            modelBuilder.Entity("Data.Entities.Ingredients.Ingredient", b =>
                 {
                     b.Navigation("AlternativeIngredients");
 
                     b.Navigation("Alternatives");
+
+                    b.Navigation("CookedIngredients");
+
+                    b.Navigation("IngredientsCooked");
 
                     b.Navigation("Nutrients");
 
@@ -1129,7 +1193,7 @@ namespace Data.Migrations
                     b.Navigation("UserFeastRecipeIngredients");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.Recipe", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>
                 {
                     b.Navigation("Instructions");
 
@@ -1146,12 +1210,12 @@ namespace Data.Migrations
                     b.Navigation("UserSubstituteRecipes");
                 });
 
-            modelBuilder.Entity("Data.Entities.Recipe.RecipeIngredient", b =>
+            modelBuilder.Entity("Data.Entities.Recipes.RecipeIngredient", b =>
                 {
                     b.Navigation("UserRecipeIngredients");
                 });
 
-            modelBuilder.Entity("Data.Entities.User.User", b =>
+            modelBuilder.Entity("Data.Entities.Users.User", b =>
                 {
                     b.Navigation("Ingredients");
 

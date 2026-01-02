@@ -1,4 +1,5 @@
-﻿using Core.Models.Newsletter;
+﻿using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Code.Extensions;
@@ -88,12 +89,13 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required int Id { get; init; }
     public required int Order { get; init; }
     public required bool Optional { get; init; }
-    public required bool CookedOff { get; init; }
+    public required bool CoarseCut { get; init; }
     public required Measure Measure { get; set; }
     public required string? Attributes { get; set; }
     public required int QuantityNumerator { get; set; }
     public required int QuantityDenominator { get; set; }
     public required int? RawIngredientRecipeId { get; init; }
+    public required CookingMethod CookingMethod { get; init; }
 
     /// <summary>
     /// This ingredient should either be swapped or ignored by the user.
@@ -118,10 +120,11 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     /// </summary>
     internal double Weight => (Ingredient != null ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
 
-    public bool IsCookedOff => CookedOff;
+    public bool IsCoarseCut => CoarseCut;
     public Measure GetMeasure => Measure;
     public Ingredient? GetIngredient => Ingredient;
     public double GetQuantity => Quantity.ToDouble();
+    public CookingMethod GetCookingMethod => CookingMethod;
 
     /// <summary>
     /// Is this recipe's ingredient an ingredient or a recipe?

@@ -251,7 +251,7 @@ public partial class NewsletterRepo
             .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order))
             .ThenBy(g => g.Key.Name))
         {
-            var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!));
+            var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!, g.CoarseCut));
             shoppingList.Add(new ShoppingListItemDto()
             {
                 Id = group.Key.Id,

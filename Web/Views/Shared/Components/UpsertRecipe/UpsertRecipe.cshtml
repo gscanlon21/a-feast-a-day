@@ -1,4 +1,5 @@
 ﻿@model UpsertRecipeViewModel
+@using Core.Models.Ingredients
 @using Core.Models.Recipe
 @using Core.Models.User
 @using Web.Code.Extensions
@@ -223,8 +224,20 @@
                         </div>
                     </div>
 
-                    <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
-                    <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" autocomplete="off" />
+                    <div class="row row-gap-1">
+                        <div class="col-md">
+                            <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
+                            <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" autocomplete="off" />
+                        </div>
+
+                        <div class="col-md">
+                            <label asp-for="Recipe.RecipeIngredients[id].CookingMethod" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookingMethod)</label>
+                            <select asp-for="Recipe.RecipeIngredients[id].CookingMethod" class="form-control" aria-describedby="cooking-method-help" autocomplete="off"
+                                    asp-items="@(EnumExtensions.GetDisplayValues<CookingMethod>().AsSelectListItems())">
+                            </select>
+                            <span id="cooking-method-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookingMethod)</span>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col">
@@ -238,10 +251,10 @@
 
                         <div class="col-auto">
                             <div class="form-check mt-1">
-                                <label asp-for="Recipe.RecipeIngredients[id].CookedOff" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookedOff)</label>
-                                <input class="form-check-input" asp-for="Recipe.RecipeIngredients[id].CookedOff" aria-describedby="cookedoff-help" autocomplete="off" />
-                                <span asp-validation-for="Recipe.RecipeIngredients[id].CookedOff" class="text-danger"></span>
-                                <div id="cookedoff-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookedOff)</div>
+                                <label asp-for="Recipe.RecipeIngredients[id].CoarseCut" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CoarseCut)</label>
+                                <input class="form-check-input" asp-for="Recipe.RecipeIngredients[id].CoarseCut" aria-describedby="cut-help" autocomplete="off" />
+                                <span asp-validation-for="Recipe.RecipeIngredients[id].CoarseCut" class="text-danger"></span>
+                                <div id="cut-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CoarseCut)</div>
                             </div>
                         </div>
                     </div>

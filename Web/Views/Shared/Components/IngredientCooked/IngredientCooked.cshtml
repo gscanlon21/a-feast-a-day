@@ -1,0 +1,22 @@
+﻿@model IngredientCookedViewModel
+@using Core.Dtos.Ingredient
+@using Core.Models.Recipe
+@using Core.Models.User
+
+<div class="row gy-4">
+    <div class="col-12">
+        <h5>@Html.DisplayNameFor(_ => Model.CookedIngredients)</h5>
+        @foreach (var cookedIngredient in Model.CookedIngredients)
+        {
+            <details class="ms-3 mt-4 mb-25">
+                <summary class="mb-1 h5">
+                    @cookedIngredient.CookingMethod.GetSingleDisplayName()
+                    <span class="float-end">Scale: @cookedIngredient.Scale / @RecipeConsts.IngredientScaleDefault</span>
+                </summary>
+
+                <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='new List<IngredientDto>() { cookedIngredient.CookedIngredient.AsType<IngredientDto>()! }' />
+            </details>
+        }
+    </div>
+</div>
+

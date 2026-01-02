@@ -25,23 +25,33 @@
         <span asp-validation-for="Ingredient.DefaultMeasure" class="text-danger"></span>
         <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
     </div>
-    <div class="mb-3">
-        <label asp-for="Ingredient.GramsPerMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerMeasure)</label>
-        <input asp-for="Ingredient.GramsPerMeasure" type="text" class="form-control" aria-describedby="grams-measure-help" />
-        <span asp-validation-for="Ingredient.GramsPerMeasure" class="text-danger"></span>
-        <span id="grams-measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerMeasure)</span>
+    <div class="mb-3 row row-gap-2">
+        <div class="col-md">
+            <label asp-for="Ingredient.GramsPerMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerMeasure)</label>
+            <input asp-for="Ingredient.GramsPerMeasure" type="text" class="form-control" aria-describedby="grams-measure-help" />
+            <span asp-validation-for="Ingredient.GramsPerMeasure" class="text-danger"></span>
+            <span id="grams-measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerMeasure)</span>
+        </div>
+        <div class="col">
+            <label asp-for="Ingredient.GramsPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerServing)</label>
+            <input asp-for="Ingredient.GramsPerServing" type="text" class="form-control" aria-describedby="grams-serving-help" />
+            <span asp-validation-for="Ingredient.GramsPerServing" class="text-danger"></span>
+            <span id="grams-serving-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerServing)</span>
+        </div>
     </div>
-    <div class="mb-3">
-        <label asp-for="Ingredient.GramsPerCup" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerCup)</label>
-        <input asp-for="Ingredient.GramsPerCup" type="text" class="form-control" aria-describedby="grams-cup-help" />
-        <span asp-validation-for="Ingredient.GramsPerCup" class="text-danger"></span>
-        <span id="grams-cups-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerCup)</span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Ingredient.GramsPerServing" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerServing)</label>
-        <input asp-for="Ingredient.GramsPerServing" type="text" class="form-control" aria-describedby="grams-serving-help" />
-        <span asp-validation-for="Ingredient.GramsPerServing" class="text-danger"></span>
-        <span id="grams-serving-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerServing)</span>
+    <div class="mb-3 row row-gap-2">
+        <div class="col-md">
+            <label asp-for="Ingredient.GramsPerFineCup" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerFineCup)</label>
+            <input asp-for="Ingredient.GramsPerFineCup" type="text" class="form-control" aria-describedby="grams-fine-cup-help" />
+            <span asp-validation-for="Ingredient.GramsPerFineCup" class="text-danger"></span>
+            <span id="grams-fine-cups-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerFineCup)</span>
+        </div>
+        <div class="col">
+            <label asp-for="Ingredient.GramsPerCoarseCup" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.GramsPerCoarseCup)</label>
+            <input asp-for="Ingredient.GramsPerCoarseCup" type="text" class="form-control" aria-describedby="grams-coarse-cup-help" />
+            <span asp-validation-for="Ingredient.GramsPerCoarseCup" class="text-danger"></span>
+            <span id="grams-coarse-cups-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.GramsPerCoarseCup)</span>
+        </div>
     </div>
     <div class="form-check mb-3">
         <div>

@@ -100,11 +100,12 @@ public class IngredientController : ViewController
             existingIngredient.Notes = ingredient.Notes;
             existingIngredient.Category = ingredient.Category;
             existingIngredient.Allergens = ingredient.Allergens;
-            existingIngredient.GramsPerCup = ingredient.GramsPerCup;
             existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
+            existingIngredient.GramsPerFineCup = ingredient.GramsPerFineCup;
             existingIngredient.GramsPerMeasure = ingredient.GramsPerMeasure;
             existingIngredient.GramsPerServing = ingredient.GramsPerServing;
             existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
+            existingIngredient.GramsPerCoarseCup = ingredient.GramsPerCoarseCup;
 
             foreach (var nutrient in nutrients.OrderBy(n => n.Nutrients.PopCount()))
             {
@@ -149,11 +150,12 @@ public class IngredientController : ViewController
                 Notes = ingredient.Notes,
                 Category = ingredient.Category,
                 Allergens = ingredient.Allergens,
-                GramsPerCup = ingredient.GramsPerCup,
                 DefaultMeasure = ingredient.DefaultMeasure,
+                GramsPerFineCup = ingredient.GramsPerFineCup,
                 GramsPerMeasure = ingredient.GramsPerMeasure,
                 GramsPerServing = ingredient.GramsPerServing,
                 SkipShoppingList = ingredient.SkipShoppingList,
+                GramsPerCoarseCup = ingredient.GramsPerCoarseCup,
             };
 
             _context.Ingredients.Add(existingIngredient);

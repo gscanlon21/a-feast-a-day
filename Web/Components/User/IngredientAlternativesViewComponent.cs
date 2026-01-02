@@ -29,9 +29,9 @@ public class IngredientAlternativesViewComponent : ViewComponent
     {
         var partialIngredients = await GetAlternativeIngredients(ingredient, user, partial: true);
         var alternativeIngredients = await GetAlternativeIngredients(ingredient, user, partial: false);
-        if (!partialIngredients.Any() && !alternativeIngredients.Any()) 
-        { 
-            return Content(""); 
+        if (!partialIngredients.Any() && !alternativeIngredients.Any())
+        {
+            return Content("");
         }
 
         var token = await _userRepo.AddUserToken(user, durationDays: 1);
