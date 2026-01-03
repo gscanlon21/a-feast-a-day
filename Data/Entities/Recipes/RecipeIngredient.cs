@@ -32,6 +32,7 @@ public class RecipeIngredient
         Measure = recipeIngredient.Measure;
         Optional = recipeIngredient.Optional;
         CoarseCut = recipeIngredient.CoarseCut;
+        Adjustable = recipeIngredient.Adjustable;
         Attributes = recipeIngredient.Attributes;
         IngredientId = recipeIngredient.IngredientId;
         CookingMethod = recipeIngredient.CookingMethod;
@@ -71,6 +72,10 @@ public class RecipeIngredient
     [Required]
     [Display(Name = "Optional")]
     public bool Optional { get; set; }
+
+    [Required, DefaultValue(true)]
+    [Display(Name = "Adjustable")]
+    public bool Adjustable { get; set; } = true;
 
     [Required]
     [Display(Name = "Coarse Cut")]

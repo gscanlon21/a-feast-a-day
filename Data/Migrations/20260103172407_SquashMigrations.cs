@@ -419,6 +419,7 @@ namespace Data.Migrations
                     QuantityDenominator = table.Column<int>(type: "integer", nullable: false, defaultValue: 1),
                     Order = table.Column<int>(type: "integer", nullable: false),
                     Optional = table.Column<bool>(type: "boolean", nullable: false),
+                    Adjustable = table.Column<bool>(type: "boolean", nullable: false, defaultValue: true),
                     CoarseCut = table.Column<bool>(type: "boolean", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     CookingMethod = table.Column<int>(type: "integer", nullable: false),

@@ -251,6 +251,15 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-auto">
+                            <div class="form-check mt-1">
+                                <label asp-for="Recipe.RecipeIngredients[id].Adjustable" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Adjustable)</label>
+                                <input class="form-check-input" asp-for="Recipe.RecipeIngredients[id].Adjustable" aria-describedby="adjustable-help" autocomplete="off" />
+                                <span asp-validation-for="Recipe.RecipeIngredients[id].Adjustable" class="text-danger"></span>
+                                <div id="adjustable-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Adjustable)</div>
+                            </div>
+                        </div>
+
                         <div class="col">
                             <div class="form-check mt-1">
                                 <label asp-for="Recipe.RecipeIngredients[id].Optional" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Optional)</label>

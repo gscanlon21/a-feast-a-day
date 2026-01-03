@@ -48,7 +48,7 @@ public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredient
                 Recipe.Servings /= GetScale;
 
                 // Scale the recipe ingredient quantities.
-                foreach (var ingredient in RecipeIngredients)
+                foreach (var ingredient in RecipeIngredients.Where(ri => ri.Adjustable))
                 {
                     ingredient.QuantityNumerator *= newScale;
                     ingredient.QuantityNumerator /= GetScale;
@@ -90,6 +90,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required int Order { get; init; }
     public required bool Optional { get; init; }
     public required bool CoarseCut { get; init; }
+    public required bool Adjustable { get; init; }
     public required Measure Measure { get; set; }
     public required string? Attributes { get; set; }
     public required int QuantityNumerator { get; set; }
@@ -120,6 +121,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     /// </summary>
     internal double Weight => (Ingredient != null ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
 
+    public bool IsAdjustable => Adjustable;
     public bool IsCoarseCut => CoarseCut;
     public Measure GetMeasure => Measure;
     public Ingredient? GetIngredient => Ingredient;

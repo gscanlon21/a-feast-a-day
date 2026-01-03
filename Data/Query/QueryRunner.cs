@@ -90,6 +90,7 @@ public class QueryRunner(Section section)
                     Measure = ri.Measure,
                     Optional = ri.Optional,
                     CoarseCut = ri.CoarseCut,
+                    Adjustable = ri.Adjustable,
                     Attributes = ri.Attributes,
                     Ingredient = ri.Ingredient,
                     CookingMethod = ri.CookingMethod,

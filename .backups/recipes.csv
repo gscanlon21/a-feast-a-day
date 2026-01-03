@@ -325,7 +325,7 @@
 474	Coconut Sour Cream	\N	\N	\N	0	0	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	48	0	5	2	t	\N	6	\N	t	f
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	cole-slaw-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 478	Everyday Salad	\N	\N	\N	20	0	10	4	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	quinoa-tabouli.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -495,13 +495,12 @@
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
 711	Hungry, Hungry Hummus	Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	\N	\N	0	0	10	2	t	\N	6	\N	t	f
 712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	granola.jpg	6	\N	f	f
-713	Mushroom Ragu	\N	\N	\N	0	30	5	2	t	\N	6	\N	t	f
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	\N	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
 716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	refried-beans.jpg	0	\N	t	f
 717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f
-718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	\N	6	\N	t	f
-719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	\N	9	\N	t	f
+718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	teriyaki-sauce.jpg	6	\N	t	f
+719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	teriyaki-sauce.jpg	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
 721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
 722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
@@ -576,7 +575,7 @@
 855	Lemon Chicken with Roasted Potatoes	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 856	Farmer's Biscuit Breakfast Sandwich	\N	\N	\N	6	15	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	\N	0	Erin | The Almond Eater	f	f
-858	Boiling Kettle Water	\N	\N	\N	0	5	0	1	t	\N	6	\N	t	f
+858	Boiling Kettle Water	\N	\N	\N	0	5	0	1	t	boiling-kettle.jpg	6	\N	t	f
 859	Crock Pot Red Rice and Beans	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/crock-pot-red-beans-and-rice/	f	f
 860	Beef and Broccoli	\N	\N	\N	8	55	5	2	t	beef-broccoli.jpg	0	\N	f	f
 861	Chicken and Mushroom Stir-Fry	\N	\N	\N	8	55	5	2	t	\N	0	\N	f	f
@@ -607,8 +606,8 @@
 952	Hot and Sour Soup	You can gently stir 2 beaten eggs into this soup a few minutes before serving to create egg "noodles". Fresh mushrooms will not give this soup the same concentrated flavors as the dried ones do. 	\N	\N	8	30	40	6	t	\N	0	\N	f	f
 953	Creme Brulee	\N	\N	\N	64	45	135	4	t	\N	0	\N	f	f
 954	Orange Tiramisu	You can use a different kind of sweet orange if you'd prefer, but try to get one that's about the size of a baseball.	\N	\N	64	0	135	4	t	\N	0	\N	f	f
-955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	8	10	5	2	t	\N	0	\N	f	f
-956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	\N	0	\N	f	f
+955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	8	10	5	2	t	egg-fried-rice.jpg	0	\N	f	f
+956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	chicken-fried-rice.jpg	0	\N	f	f
 957	Chicken Noodle Soup	\N	\N	\N	8	45	10	4	t	\N	0	\N	f	f
 958	Fire-Roasted Tomato Soup	If you don't have a grill, you can roast the tomatoes in the oven. Preheat the oven to 400F. Halve the tomatoes lengthwise, drizzle them with olive oil, and place them cut-side up on a parchment-lined sheet pan. Bake them, without flipping over, for 30 to 35 minutes. Transfer to a bowl, cover, and peel as directed.	\N	\N	8	45	20	4	t	\N	0	\N	f	f
 959	Zucchini Noodles	If sautéing a large batch, cook the zucchini noodles in batches to avoid overcrowding. This helps them cook evenly and prevents them from becoming too soft. After spiraling, lightly salt the zucchini noodles and let them sit for 10-15 minutes. This helps draw out excess moisture. Then, gently pat them dry with a paper towel or clean kitchen cloth. You don’t need to peel the zucchini. The skin is edible, adds color, and contains nutrients. If you prefer a smoother texture, you can peel it, but it’s optional. A spiralizer works best for long, spaghetti-like noodles. However, you can also use a julienne peeler for thinner strands or a vegetable peeler to create wider ribbon-like noodles. Store your zoodles uncooked in an airtight container in the fridge for up to 3 days.  For the best texture, cook them just before serving.	\N	\N	0	0	5	1	t	zucchini-linguine.jpg	6	https://www.mamaknowsglutenfree.com/how-to-make-zucchini-noodles/	t	f
@@ -629,4 +628,4 @@
 974	Southern Fried Chicken	To make the mashed potate, cook the potatoes in boiling salted water for about 20 minutes until tender, then drain well. Add a little milk and mash until smooth.	\N	\N	8	25	5	4	t	\N	0	\N	f	f
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	\N	0	\N	t	f
 976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	\N	0	\N	t	f
-977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	\N	6	\N	t	f
+977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	cooled-rice.jpg	6	\N	t	f
