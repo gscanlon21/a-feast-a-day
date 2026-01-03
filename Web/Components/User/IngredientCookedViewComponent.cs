@@ -69,10 +69,7 @@ public class IngredientCookedViewComponent : ViewComponent
 
     private async Task<List<IngredientCooked>> GetCookedIngredients(Ingredient ingredient, Data.Entities.Users.User user)
     {
-        return await _context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters()
-            .Include(i => i.CookedIngredient).ThenInclude(ai => ai.Nutrients)
-            .Include(i => i.CookedIngredient).ThenInclude(ai => ai.Alternatives).ThenInclude(a => a.AlternativeIngredient)
-            .Include(i => i.CookedIngredient).ThenInclude(ai => ai.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
+        return await _context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters().Include(i => i.CookedIngredient)
             // The user is an admin who is allowed to edit alternative ingredients. Or the user owns the ingredient.
             .Where(i => i.CookedIngredient.UserId == user.Id || i.CookedIngredient.UserId == null)
             .Where(ia => ia.IngredientId == ingredient.Id)
