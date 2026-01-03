@@ -21,7 +21,7 @@ public class UpsertRecipeViewModel
     public IList<SelectListItem> IngredientSelect { get; init; } = [];
 
     [ValidateNever]
-    public bool Editing => Recipe?.Id != default;
+    public bool Editing => Recipe != null && Recipe.Id != default;
 }
 
 public class UpsertRecipeModel : IValidatableObject

@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict XDn6zmu8Hy1fbMJjlY7LDr4AiJZXab9ikqu74gmfxtAVqWgnbymWeWfjcVfleCO
+\restrict dBzg3kcj1cYnEyQzsBNiE3Xf8wboacNV7cvYWV7fW2JHdDfN8zwKuyUDstNXtBq
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -12265,6 +12265,23 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17103	1607	14	\N	3	14
 17104	1607	62	\N	3	14
 17105	1607	2047	\N	3	60
+17106	2	68719476736	\N	2	2
+17107	2	34359738368	\N	2	21
+17108	2	1	\N	3	0.1
+17109	2	4294967296	\N	2	5
+17110	2	2199023255552	\N	2	0.2
+17111	2	48	\N	3	0.1
+17112	2	14	\N	3	0.1
+17113	2	62	\N	3	0.2
+17114	13	2251799813685248	\N	2	0.1
+17115	13	17179869184	\N	2	0.3
+17116	13	70368744177664	\N	2	0.5
+17117	13	32768	\N	1	0.4
+17118	13	65536	\N	1	39
+17119	13	16777216	\N	1	1
+17120	13	67108864	\N	2	0.3
+17121	13	3221225472	\N	1	3
+17122	13	229376	\N	1	3
 \.
 
 
@@ -18695,7 +18712,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17105, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17122, true);
 
 
 --
@@ -19390,5 +19407,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict XDn6zmu8Hy1fbMJjlY7LDr4AiJZXab9ikqu74gmfxtAVqWgnbymWeWfjcVfleCO
+\unrestrict dBzg3kcj1cYnEyQzsBNiE3Xf8wboacNV7cvYWV7fW2JHdDfN8zwKuyUDstNXtBq
 

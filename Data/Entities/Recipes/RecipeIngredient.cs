@@ -66,7 +66,7 @@ public class RecipeIngredient
     public int QuantityDenominator { get; set; } = RecipeConsts.QuantityDenominatorDefault;
 
     [Required]
-    [Display(Name = "#")]
+    [Display(Name = "Order")]
     public int Order { get; set; }
 
     [Required]
