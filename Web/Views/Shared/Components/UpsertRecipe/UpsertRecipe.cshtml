@@ -166,7 +166,7 @@
         </div>
     </div>
 
-    <details class="mb-3" @(Model.Recipe.Id == default ? "open" : "")>
+    <details class="mb-3" @(!Model.Editing ? "open" : "")>
         <summary class="font-weight--bold">Edit Ingredients</summary>
         <span asp-validation-for="Recipe.RecipeIngredients" class="text-danger"></span>
         <div class="mt-1 ps-3">
@@ -175,13 +175,12 @@
                 var userIngredient = Model.Recipe.RecipeIngredients[id];
                 <div id="custom-ingredient-@id" class="mb-4 custom-ingredient @(userIngredient.Hide ? "d-none" : "")" data-day="@id">
                     <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.RecipeIngredients[id].Hide" autocomplete="off" />
-                    <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" autocomplete="off" />
                     <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Id" autocomplete="off" />
 
                     <div class="row row-gap-1 my-2">
                         <div class="col-auto">
                             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator)</label>
-                            <div class="row gx-2">
+                            <div class="row gx-2 my-1">
                                 <div class="col-auto">
                                     <input id="@(Html.IdFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator))" type="number" asp-for="Recipe.RecipeIngredients[id].QuantityNumerator" style="width:5ch;height:fit-content;" autocomplete="off" />
                                 </div>
@@ -202,6 +201,18 @@
                             </select>
                             <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Measure)</span>
                         </div>
+
+                        @if (Model.Editing)
+                        {
+                            <div class="col-auto">
+                                <label asp-for="Recipe.RecipeIngredients[id].Order" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Order)</label>
+                                <input type="number" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" class="d-block my-1" autocomplete="off" style="width:5ch;" />
+                            </div>
+                        }
+                        else
+                        {
+                            <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" autocomplete="off" />
+                        }
 
                         <span asp-validation-for="Recipe.RecipeIngredients[id].Measure" class="text-danger"></span>
                         <span asp-validation-for="Recipe.RecipeIngredients[id].QuantityNumerator" class="text-danger"></span>
@@ -309,7 +320,7 @@
         </script>
     </details>
 
-    <details class="mb-3" @(Model.Recipe.Id == default ? "open" : "")>
+    <details class="mb-3" @(!Model.Editing ? "open" : "")>
         <summary class="font-weight--bold">Edit Instructions</summary>
         <span asp-validation-for="Recipe.Instructions" class="text-danger"></span>
         <div class="mt-1 ps-3">
@@ -405,7 +416,7 @@
     <div class="col">
         <input type="submit" value="Save" class="btn btn-secondary" form="recipe-form" />
     </div>
-    @if (Model.Recipe.Id != default)
+    @if (Model.Editing)
     {
         <div class="col-auto">
             <form id="delete-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RemoveRecipe)" method="post"

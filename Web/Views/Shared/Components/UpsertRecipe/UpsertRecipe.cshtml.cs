@@ -19,6 +19,9 @@ public class UpsertRecipeViewModel
 
     public IList<SelectListItem> RecipeSelect { get; init; } = [];
     public IList<SelectListItem> IngredientSelect { get; init; } = [];
+
+    [ValidateNever]
+    public bool Editing => Recipe?.Id != default;
 }
 
 public class UpsertRecipeModel : IValidatableObject
@@ -88,6 +91,11 @@ public class UpsertRecipeModel : IValidatableObject
         if (!BaseRecipe && Section == Section.None)
         {
             yield return new ValidationResult($"Section cannot be null when not a base recipe.", [nameof(Section), nameof(BaseRecipe)]);
+        }
+
+        if (RecipeIngredients.GroupBy(ri => ri.Order).Any(g => g.Count() > 1))
+        {
+            yield return new ValidationResult($"Two ingredients cannot have the same order.", [nameof(RecipeIngredients)]);
         }
 
         foreach (var recipeIngredient in RecipeIngredients.Where(ri => !ri.Hide))
