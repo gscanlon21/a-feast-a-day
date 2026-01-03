@@ -17,18 +17,21 @@ public class ShoppingListItem
     public ShoppingListItem(ShoppingListItemDto dto)
     {
         Name = dto.Name;
-        IsCustom = false;
+        Group = dto.Group;
         Measure = dto.Measure;
         Quantity = dto.Quantity;
         Order = dto.Category.GetSingleDisplayName(DisplayType.Order);
         // Don't trigger the property changed event.
         _isChecked = dto.SkipShoppingList;
+        // This was not made by the user.
+        IsCustom = false;
     }
 
     [Key, PrimaryKey, AutoIncrement, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
     public string Name { get; init; } = null!;
+    public string Group { get; init; } = null!;
     public Measure Measure { get; init; }
     public string? Order { get; init; }
     public bool IsCustom { get; init; }

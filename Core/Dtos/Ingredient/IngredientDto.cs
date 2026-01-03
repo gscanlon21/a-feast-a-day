@@ -21,6 +21,8 @@ public class IngredientDto
 
     public string Name { get; set; } = null!;
 
+    public string Group { get; set; } = null!;
+
     public bool SkipShoppingList { get; set; }
 
     public Allergens Allergens { get; set; }

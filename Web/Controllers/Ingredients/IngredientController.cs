@@ -98,6 +98,7 @@ public class IngredientController : ViewController
         {
             existingIngredient.Name = ingredient.Name;
             existingIngredient.Notes = ingredient.Notes;
+            existingIngredient.Group = ingredient.Group;
             existingIngredient.Category = ingredient.Category;
             existingIngredient.Allergens = ingredient.Allergens;
             existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
@@ -148,6 +149,7 @@ public class IngredientController : ViewController
                 UserId = user.Id,
                 Name = ingredient.Name,
                 Notes = ingredient.Notes,
+                Group = ingredient.Group,
                 Category = ingredient.Category,
                 Allergens = ingredient.Allergens,
                 DefaultMeasure = ingredient.DefaultMeasure,

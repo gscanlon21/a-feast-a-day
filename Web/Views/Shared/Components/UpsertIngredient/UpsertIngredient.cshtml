@@ -62,13 +62,19 @@
         <div id="fitness-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.SkipShoppingList)</div>
     </div>
 
-    <div class="mb-3">
-        <label asp-for="Ingredient.Category" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Category)</label>
-        <select asp-for="Ingredient.Category" class="form-control overflow-auto" aria-describedby="category-help" 
-                asp-items="@(Enum.GetValues<Category>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
-        </select>
-        <span asp-validation-for="Ingredient.Category" class="text-danger"></span>
-        <div id="category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Category)</div>
+    <div class="mb-3 row row-gap-2">
+        <div class="col-md">
+            <label asp-for="Ingredient.Category" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Category)</label>
+            <select asp-for="Ingredient.Category" class="form-control overflow-auto" aria-describedby="category-help"
+                    asp-items="@(Enum.GetValues<Category>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+            </select>
+            <span asp-validation-for="Ingredient.Category" class="text-danger"></span>
+            <div id="category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Category)</div>
+        </div>
+        <div class="col">
+            <label asp-for="Ingredient.Group" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Group)</label>
+            <input asp-for="Ingredient.Group" type="text" class="form-control" required="required" />
+        </div>
     </div>
 
     <div class="mb-3">

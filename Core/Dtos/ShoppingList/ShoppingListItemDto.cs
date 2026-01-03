@@ -14,6 +14,8 @@ public class ShoppingListItemDto
 
     public string Name { get; init; } = null!;
 
+    public string Group { get; init; } = null!;
+
     public int Quantity { get; init; } = 1;
 
     public bool Optional { get; init; }
