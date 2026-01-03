@@ -40,9 +40,9 @@ public class IngredientAlternative
     /// <summary>
     /// How to scale the quantity of the alternative.
     /// </summary>
-    [DefaultValue(RecipeConsts.IngredientScaleDefault)]
-    [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;
+    [DefaultValue(IngredientConsts.AlternativeScaleDefault)]
+    [Range(IngredientConsts.AlternativeScaleMin, IngredientConsts.AlternativeScaleMax)]
+    public double Scale { get; init; } = IngredientConsts.AlternativeScaleDefault;
 
     /// <summary>
     /// Is this alternative ingredient a part of the whole base ingredient.

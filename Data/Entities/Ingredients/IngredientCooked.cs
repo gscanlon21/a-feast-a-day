@@ -24,25 +24,26 @@ public class IngredientCooked
     /// This is the ingredient that has an alternative.
     /// </summary>
     [JsonInclude, InverseProperty(nameof(Ingredients.Ingredient.IngredientsCooked))]
-    public virtual Ingredient Ingredient { get; private init; } = null!;
+    public virtual Ingredient Ingredient { get; init; } = null!;
 
     /// <summary>
     /// This is the alternative ingredient.
     /// </summary>
-    public virtual int CookedIngredientId { get; init; }
+    [Display(Name = "Cooked Ingredient")]
+    public virtual int CookedIngredientId { get; set; }
 
     /// <summary>
     /// This is the alternative ingredient.
     /// </summary>
     [JsonInclude, InverseProperty(nameof(Ingredient.CookedIngredients))]
-    public virtual Ingredient CookedIngredient { get; private init; } = null!;
+    public virtual Ingredient CookedIngredient { get; init; } = null!;
 
     /// <summary>
     /// How to scale the quantity of the cooked ingredient.
     /// </summary>
-    [DefaultValue(RecipeConsts.IngredientScaleDefault)]
-    [Range(RecipeConsts.IngredientScaleMin, RecipeConsts.IngredientScaleMax)]
-    public double Scale { get; init; } = RecipeConsts.IngredientScaleDefault;
+    [DefaultValue(IngredientConsts.CookedScaleDefault)]
+    [Range(IngredientConsts.CookedScaleMin, IngredientConsts.CookedScaleMax)]
+    public double Scale { get; set; } = IngredientConsts.CookedScaleDefault;
 
     public CookingMethod CookingMethod { get; init; }
 

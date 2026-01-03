@@ -1,8 +1,10 @@
 ﻿using Core.Dtos.User;
+using Core.Models.Ingredients;
 using Data;
 using Data.Entities.Ingredients;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.IngredientCooked;
 
@@ -27,17 +29,42 @@ public class IngredientCookedViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient ingredient)
     {
         var cookedIngredients = await GetCookedIngredients(ingredient, user);
-        if (!cookedIngredients.Any())
+        var usedCookingMethods = cookedIngredients.Select(ci => ci.CookingMethod).ToList();
+        foreach (var cookingMethod in EnumExtensions.GetNotNoneValues<CookingMethod>().Where(cm => !usedCookingMethods.Contains(cm)))
         {
-            return Content("");
+            cookedIngredients.Add(new IngredientCooked()
+            {
+                Scale = 1,
+                Ingredient = ingredient,
+                IngredientId = ingredient.Id,
+                CookingMethod = cookingMethod,
+                CookedIngredient = ingredient,
+                CookedIngredientId = ingredient.Id,
+            });
         }
 
         var token = await _userRepo.AddUserToken(user, durationDays: 1);
         return View("IngredientCooked", new IngredientCookedViewModel()
         {
+            Token = token,
+            Email = user.Email,
+            IngredientId = ingredient.Id,
             CookedIngredients = cookedIngredients,
+            IngredientSelect = await GetIngredientSelect(user, ingredient.Id),
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
         });
+    }
+
+    private async Task<IList<SelectListItem>> GetIngredientSelect(Data.Entities.Users.User user, int ingredientId)
+    {
+        return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
+            .Where(i => i.DisabledReason != null || i.Id == ingredientId)
+            .Where(i => i.UserId == null || i.UserId == user.Id)
+            .OrderBy(i => i.Name)
+            .ToListAsync())
+            .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
+            .Prepend(new SelectListItem())
+            .ToList();
     }
 
     private async Task<List<IngredientCooked>> GetCookedIngredients(Ingredient ingredient, Data.Entities.Users.User user)

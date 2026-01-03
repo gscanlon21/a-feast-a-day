@@ -86,7 +86,7 @@ public class CoreContext : DbContext
 
         ////////// Conversions //////////
         modelBuilder.Entity<Ingredient>().Property(i => i.Group).HasConversion(v => v.TrimEnd('s'), v => v.TrimEnd('s'), new ValueComparer<string>((v1, v2) => v1 == v2, v => v.GetHashCode()));
-      
+
         // Set the default value of the db columns be attributes.
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {

@@ -467,12 +467,25 @@ public class QueryRunner(Section section)
     /// </summary>
     private static async Task<Dictionary<IngredientCookingMethod, IngredientScale>> GetCookedIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
-        var halfIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
-            .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id))).ToList();
+        var ingredients = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!))
+            .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient)))
+            .ToDictionary(i => i.Id, i => i);
 
-        return await context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters()
-            .Where(ic => halfIngredientIds.Contains(ic.IngredientId)).Include(ic => ic.CookedIngredient)
-            .ToDictionaryAsync(ic => new IngredientCookingMethod(ic.IngredientId, ic.CookingMethod), ic => new IngredientScale(ic.CookedIngredient, ic.Scale));
+        return (await context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters()
+            .Where(ic => ingredients.Keys.Contains(ic.IngredientId)).Include(ic => ic.CookedIngredient)
+            // Pull these out of the constuctor so EF Core can optimize the query.
+            .Select(ic => new
+            {
+                ic.Scale,
+                ic.IngredientId,
+                ic.CookingMethod,
+                CookedIngredient = ic.IngredientId != ic.CookedIngredientId ? ic.CookedIngredient : null,
+            })
+            .ToListAsync())
+            .ToDictionary(
+                ic => new IngredientCookingMethod(ic.IngredientId, ic.CookingMethod),
+                ic => new IngredientScale(ic.CookedIngredient ?? ingredients[ic.IngredientId], ic.Scale)
+            );
     }
 
     /// <summary>

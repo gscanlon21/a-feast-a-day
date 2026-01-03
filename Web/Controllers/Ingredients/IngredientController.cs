@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
 using Data.Entities.Users;
@@ -166,5 +167,49 @@ public class IngredientController : ViewController
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = existingIngredient.Id, recipeId = 0, wasUpdated = true });
+    }
+
+    [HttpPost, Route("[action]/show-log")]
+    public async Task<IActionResult> ShowLog(string email, string token, int ingredientId, int cookedIngredientId, double scale, CookingMethod cookingMethod)
+    {
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        // Make sure we don't set values that resolve to the same nutrients. Would just be a performance degrader.
+        if (scale == IngredientConsts.CookedScaleDefault && cookedIngredientId == ingredientId)
+        {
+            await _context.IngredientsCooked.Where(ut => ut.CookingMethod == cookingMethod).Where(ut => ut.IngredientId == ingredientId).ExecuteDeleteAsync();
+            return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, recipeId = 0, wasUpdated = true });
+        }
+
+        // Set the last completed date on the UserTask.
+        var existingCookingMethod = await _context.IngredientsCooked
+            .Where(ut => ut.CookingMethod == cookingMethod)
+            .Where(ut => ut.IngredientId == ingredientId)
+            .FirstOrDefaultAsync();
+
+        if (existingCookingMethod != null)
+        {
+            existingCookingMethod.Scale = scale;
+            existingCookingMethod.CookedIngredientId = cookedIngredientId;
+        }
+        else
+        {
+            existingCookingMethod = new IngredientCooked()
+            {
+                Scale = scale,
+                IngredientId = ingredientId,
+                CookingMethod = cookingMethod,
+                CookedIngredientId = cookedIngredientId,
+            };
+
+            _context.IngredientsCooked.Add(existingCookingMethod);
+        }
+
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, recipeId = 0, wasUpdated = true });
     }
 }
