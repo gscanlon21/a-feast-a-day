@@ -5,6 +5,7 @@ using Data.Entities.Newsletter;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.ComponentModel;
 using System.Reflection;
 
@@ -83,6 +84,9 @@ public class CoreContext : DbContext
         modelBuilder.Entity<Recipe>().Metadata.GetIndexes().Where(index => index.GetFilter() == null).ToList().ForEach(index => modelBuilder.Entity<Recipe>().Metadata.AddIndex(index.Properties, $"{index.GetDatabaseName()}_DisabledReason").SetFilter(DISABLED_REASON_IS_NULL));
         modelBuilder.Entity<Ingredient>().Metadata.GetIndexes().Where(index => index.GetFilter() == null).ToList().ForEach(index => modelBuilder.Entity<Ingredient>().Metadata.AddIndex(index.Properties, $"{index.GetDatabaseName()}_DisabledReason").SetFilter(DISABLED_REASON_IS_NULL));
 
+        ////////// Conversions //////////
+        modelBuilder.Entity<Ingredient>().Property(i => i.Group).HasConversion(v => v.TrimEnd('s'), v => v.TrimEnd('s'), new ValueComparer<string>((v1, v2) => v1 == v2, v => v.GetHashCode()));
+      
         // Set the default value of the db columns be attributes.
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {

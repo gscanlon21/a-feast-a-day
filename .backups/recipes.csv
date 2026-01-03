@@ -107,7 +107,7 @@
 125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
 127	Roast Chicken Pitta Pockets	\N	\N	\N	12	2	13	6	t	\N	0	\N	f	f
-128	Soy Sauce and Star Anise Chicken	\N	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
+128	Soy Sauce and Star Anise Chicken	If you are able to make it ahead, leave the chicken in the marinade for around 6–8 hours, as the flavor will be improved.	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
@@ -380,7 +380,7 @@
 562	Wild Salmon & Broccoli Frittata	\N	These directions don't make any sense.	\N	6	15	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 563	Greek Salmon	Serve with Katy's Greek Salad.	\N	\N	4	30	5	1	t	greek-salmon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 564	Roasted Vegetables	\N	\N	\N	16	35	10	6	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-565	Rainbow Stir-Fry Veggies	\N	\N	\N	8	25	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+565	Rainbow Stir-Fry Veggies	\N	\N	\N	8	25	10	4	t	vegetable-stir-fry.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 566	Tuna Salad	\N	\N	\N	20	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 567	Turkey & Walnut Salad	\N	\N	\N	28	40	10	4	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -439,7 +439,7 @@
 622	Hefty Veggie Wrap	\N	\N	\N	4	0	5	2	t	\N	0	\N	f	f
 623	Almond and Raspberry Roll	\N	\N	\N	64	15	15	4	f	\N	0	\N	f	f
 624	Blueberry Muffins	\N	\N	\N	64	30	10	12	f	\N	0	\N	f	f
-625	Pan Roasted Vegetables 	\N	\N	\N	0	35	10	2	t	\N	6	\N	t	f
+625	Pan Roasted Vegetables 	\N	\N	\N	0	35	10	2	t	roasted-vegetables-alt.jpg	6	\N	t	f
 626	Hot Chocolate Rum Souffles	\N	\N	\N	64	15	10	6	t	\N	0	\N	f	f
 627	Cinnamon and Apricot Souffles	\N	\N	\N	64	15	10	4	t	\N	0	\N	f	f
 628	Slow Cooker Chickpeas	\N	\N	\N	0	240	10	2	f	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
@@ -495,7 +495,7 @@
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
 711	Hungry, Hungry Hummus	Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	\N	\N	0	0	10	2	t	\N	6	\N	t	f
 712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	granola.jpg	6	\N	f	f
-714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	\N	0	\N	f	f
+714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	vegetable-stir-fry.jpg	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
 716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	refried-beans.jpg	0	\N	t	f
 717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f

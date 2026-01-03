@@ -10,22 +10,15 @@ namespace Core.Dtos.ShoppingList;
 [DebuggerDisplay("{Name,nq}")]
 public class ShoppingListItemDto
 {
-    public int Id { get; init; }
+    public required string Name { get; init; } = null!;
 
-    public string Name { get; init; } = null!;
+    public required string Group { get; init; } = null!;
 
-    public int Quantity { get; init; } = 1;
+    public required int Quantity { get; init; } = 1;
 
-    public bool Optional { get; init; }
+    public required Measure Measure { get; init; }
 
-    public Measure Measure { get; init; }
+    public required Category Category { get; init; }
 
-    public Category Category { get; init; }
-
-    /// <summary>
-    /// Chopped, thinly sliced...
-    /// </summary>
-    public string? Attributes { get; init; }
-
-    public bool SkipShoppingList { get; init; }
+    public required bool SkipShoppingList { get; init; }
 }

@@ -12,8 +12,7 @@
     <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
         <h3 style="margin-block-start:0;margin-block-end:0.5ex">Shopping List</h3>
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
-            @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients))
-                .OrderBy(l => l.Category.GetSingleDisplayName(DisplayType.Order).Length).ThenBy(l => l.Category.GetSingleDisplayName(DisplayType.Order)).ThenBy(l => l.Name))
+            @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)))
             {
                 <li>@item.Quantity @(item.Measure.GetSingleDisplayName(DisplayType.ShortName)) @item.Name</li>
             }

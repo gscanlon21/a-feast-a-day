@@ -249,13 +249,14 @@ public partial class NewsletterRepo
             .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer()).OrderBy(l => l.Key.SkipShoppingList)
             .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order).Length)
             .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order))
+            .ThenBy(g => g.Key.Ingredient!.Group)
             .ThenBy(g => g.Key.Name))
         {
             var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!, g.CoarseCut));
             shoppingList.Add(new ShoppingListItemDto()
             {
-                Id = group.Key.Id,
                 Name = group.Key.Name,
+                Group = group.Key.Ingredient!.Group,
                 Category = group.Key.Ingredient!.Category,
                 Measure = group.Key.Ingredient.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
@@ -271,6 +272,9 @@ public partial class NewsletterRepo
         };
     }
 
+    /// <summary>
+    /// Compares ingredients by their normalized Name.
+    /// </summary>
     private class ShoppingListComparer : IEqualityComparer<RecipeIngredientQueryResults>
     {
         public int GetHashCode(RecipeIngredientQueryResults e) => HashCode.Combine(e.Name.TrimEnd('s'));

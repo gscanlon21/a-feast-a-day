@@ -44,6 +44,9 @@ public class Ingredient
     [Display(Name = "Name")]
     public string Name { get; set; } = null!;
 
+    [Display(Name = "Group")]
+    public string Group { get; set; } = null!;
+
     /// <summary>
     /// Is a common household ingredient like salt and pepper.
     /// </summary>
