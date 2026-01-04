@@ -34,6 +34,9 @@ public static class EnumViewExtensions
         var orderedValues = values.OrderByDescending(v => v.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(defaultValue) : (bool?)null, EnumerableExtensions.NullOrder.NullsFirst);
         switch (order)
         {
+            case EnumOrdering.Order:
+                orderedValues = orderedValues.ThenBy(v => v?.GetOrder(), EnumerableExtensions.NullOrder.NullsFirst);
+                break;
             case EnumOrdering.Value:
                 orderedValues = orderedValues.ThenBy(v => v.HasValue ? Convert.ToInt64(v) : (long?)null, EnumerableExtensions.NullOrder.NullsFirst);
                 break;
@@ -44,12 +47,6 @@ public static class EnumViewExtensions
                 orderedValues = orderedValues
                     .ThenBy(v => v?.GetSingleDisplayName(DisplayType.GroupName), EnumerableExtensions.NullOrder.NullsFirst)
                     .ThenBy(v => v?.GetSingleDisplayName(), EnumerableExtensions.NullOrder.NullsFirst);
-                break;
-            case EnumOrdering.Order:
-                // Careful about nulls.
-                orderedValues = orderedValues
-                    .ThenBy(v => v?.GetSingleDisplayName(DisplayType.Order).Length, EnumerableExtensions.NullOrder.NullsFirst)
-                    .ThenBy(v => v?.GetSingleDisplayName(DisplayType.Order), EnumerableExtensions.NullOrder.NullsFirst);
                 break;
         }
 

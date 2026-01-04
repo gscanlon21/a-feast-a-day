@@ -244,7 +244,7 @@
                         <div class="col-md">
                             <label asp-for="Recipe.RecipeIngredients[id].CookingMethod" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookingMethod)</label>
                             <select asp-for="Recipe.RecipeIngredients[id].CookingMethod" class="form-control" aria-describedby="cooking-method-help" autocomplete="off"
-                                    asp-items="@(EnumExtensions.GetDisplayValues<CookingMethod>().AsSelectListItems())">
+                                    asp-items="@(EnumExtensions.GetDisplayValues<CookingMethod>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
                             </select>
                             <span id="cooking-method-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookingMethod)</span>
                         </div>

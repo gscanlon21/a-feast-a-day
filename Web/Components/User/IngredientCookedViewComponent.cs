@@ -49,9 +49,9 @@ public class IngredientCookedViewComponent : ViewComponent
             Token = token,
             Email = user.Email,
             IngredientId = ingredient.Id,
-            CookedIngredients = cookedIngredients,
             IngredientSelect = await GetIngredientSelect(user, ingredient.Id),
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
+            CookedIngredients = cookedIngredients.OrderByOrder(ci => ci.CookingMethod).ToList(),
         });
     }
 

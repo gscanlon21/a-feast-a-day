@@ -186,13 +186,11 @@ public static class EnumExtensions
     /// <summary>
     /// Returns the value of the [DisplayName] attribute.
     /// </summary>
-    public static bool HasDisplay(this Enum @enum, DisplayType nameType = DisplayType.Name)
+    public static bool HasDisplay(this Enum enumVal, DisplayType nameType = DisplayType.Name)
     {
-        var memberInfo = @enum.GetType().GetMember(@enum.ToString());
-        if (memberInfo != null && memberInfo.Length > 0)
+        if (enumVal.GetType().GetMember(enumVal.ToString()) is MemberInfo[] memberInfo && memberInfo?.Length > 0)
         {
-            var attribute = memberInfo[0].GetCustomAttribute<DisplayAttribute>(true);
-            if (attribute != null)
+            if (memberInfo[0].GetCustomAttribute<DisplayAttribute>(true) is DisplayAttribute attribute && attribute != null)
             {
                 return nameType switch
                 {
@@ -212,13 +210,11 @@ public static class EnumExtensions
     /// <summary>
     /// Returns the value of the [DisplayName] attribute.
     /// </summary>
-    public static string GetSingleDisplayName(this Enum @enum, DisplayType nameType = DisplayType.Name)
+    public static string GetSingleDisplayName(this Enum enumVal, DisplayType nameType = DisplayType.Name)
     {
-        var memberInfo = @enum.GetType().GetMember(@enum.ToString());
-        if (memberInfo != null && memberInfo.Length > 0)
+        if (enumVal.GetType().GetMember(enumVal.ToString()) is MemberInfo[] memberInfo && memberInfo?.Length > 0)
         {
-            var attribute = memberInfo[0].GetCustomAttribute<DisplayAttribute>(true);
-            if (attribute != null)
+            if (memberInfo[0].GetCustomAttribute<DisplayAttribute>(true) is DisplayAttribute attribute && attribute != null)
             {
                 return nameType switch
                 {
@@ -228,7 +224,7 @@ public static class EnumExtensions
                     DisplayType.Description => attribute.GetDescription() ?? string.Empty,
                     DisplayType.Order => attribute.GetOrder()?.ToString() ?? int.MaxValue.ToString(),
                     _ => null
-                } ?? @enum.GetDisplayName(nameType);
+                } ?? enumVal.GetDisplayName(nameType);
             }
             else
             {
@@ -236,19 +232,17 @@ public static class EnumExtensions
             }
         }
 
-        return @enum.GetDisplayName(nameType);
+        return enumVal.GetDisplayName(nameType);
     }
 
     /// <summary>
     /// Returns the value of the [DisplayName] attribute.
     /// </summary>
-    public static string? GetSingleDisplayNameOrNull(this Enum @enum, DisplayType nameType = DisplayType.Name)
+    public static string? GetSingleDisplayNameOrNull(this Enum enumVal, DisplayType nameType = DisplayType.Name)
     {
-        var memberInfo = @enum.GetType().GetMember(@enum.ToString());
-        if (memberInfo != null && memberInfo.Length > 0)
+        if (enumVal.GetType().GetMember(enumVal.ToString()) is MemberInfo[] memberInfo && memberInfo?.Length > 0)
         {
-            var attribute = memberInfo[0].GetCustomAttribute<DisplayAttribute>(true);
-            if (attribute != null)
+            if (memberInfo[0].GetCustomAttribute<DisplayAttribute>(true) is DisplayAttribute attribute && attribute != null)
             {
                 return nameType switch
                 {
@@ -258,6 +252,22 @@ public static class EnumExtensions
                     DisplayType.Description => attribute.GetDescription(),
                     _ => null
                 };
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Returns the value of the [DisplayName] attribute.
+    /// </summary>
+    public static int? GetOrder(this Enum enumVal)
+    {
+        if (enumVal.GetType().GetMember(enumVal.ToString()) is MemberInfo[] memberInfo && memberInfo?.Length > 0)
+        {
+            if (memberInfo[0].GetCustomAttribute<DisplayAttribute>(true) is DisplayAttribute attribute && attribute != null)
+            {
+                return attribute.GetOrder();
             }
         }
 

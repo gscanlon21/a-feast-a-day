@@ -3,6 +3,38 @@
 public static class EnumerableExtensions
 {
     /// <summary>
+    /// Orders an enum by it's [Display(Order = #)] attribute.
+    /// </summary>
+    public static IOrderedEnumerable<T> ThenByOrder<T>(this IOrderedEnumerable<T> list) where T : struct, Enum
+    {
+        return list.ThenBy(l => l.GetOrder(), NullOrder.NullsLast).ThenBy(l => Convert.ToInt64(l));
+    }
+
+    /// <summary>
+    /// Orders an enum by it's [Display(Order = #)] attribute.
+    /// </summary>
+    public static IOrderedEnumerable<T> OrderByOrder<T>(this IEnumerable<T> list) where T : struct, Enum
+    {
+        return list.OrderBy(l => l.GetOrder(), NullOrder.NullsLast).ThenBy(l => Convert.ToInt64(l));
+    }
+
+    /// <summary>
+    /// Orders an enum by it's [Display(Order = #)] attribute.
+    /// </summary>
+    public static IOrderedEnumerable<T> ThenByOrder<T, E>(this IOrderedEnumerable<T> list, Func<T, E> prop) where T : class where E : struct, Enum
+    {
+        return list.OrderBy(l => prop(l).GetOrder(), NullOrder.NullsLast).ThenBy(l => Convert.ToInt64(prop(l)));
+    }
+
+    /// <summary>
+    /// Orders an enum by it's [Display(Order = #)] attribute.
+    /// </summary>
+    public static IOrderedEnumerable<T> OrderByOrder<T, E>(this IEnumerable<T> list, Func<T, E> prop) where T : class where E : struct, Enum
+    {
+        return list.OrderBy(l => prop(l).GetOrder(), NullOrder.NullsLast).ThenBy(l => Convert.ToInt64(prop(l)));
+    }
+
+    /// <summary>
     /// Returns the only element in the sequence if it exists, otherwise returns default.
     /// Does not throw an exception if there is more than one matching element in the set.
     /// </summary>
