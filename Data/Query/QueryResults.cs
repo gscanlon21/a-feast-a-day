@@ -14,14 +14,25 @@ using System.Text.Json.Serialization;
 namespace Data.Query;
 
 [DebuggerDisplay("{Section}: {Recipe}")]
-public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe) : IRecipeCombo
+public class QueryResults : IRecipeCombo
 {
+    /// <summary>
+    /// Scale != Servings.
+    /// </summary>
     private double _scale = 1;
 
-    public Section Section { get; init; } = section;
-    public Recipe Recipe { get; init; } = recipe;
-    public UserRecipe? UserRecipe { get; init; } = userRecipe;
-    public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; } = recipeIngredients;
+    public QueryResults(Section section, Recipe recipe, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe)
+    {
+        Recipe = recipe;
+        Section = section;
+        UserRecipe = userRecipe;
+        RecipeIngredients = recipeIngredients;
+    }
+
+    public Recipe Recipe { get; init; }
+    public Section Section { get; init; }
+    public UserRecipe? UserRecipe { get; init; }
+    public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; }
     public IList<Nutrient> Nutrients => RecipeIngredients
         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
         .SelectMany(ri => ri.GetIngredient!.Nutrients)
@@ -40,6 +51,7 @@ public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredient
         get => _scale;
         set
         {
+            // Use a rounded scale for adjustments.
             var newScale = (int)Math.Ceiling(value);
             if (newScale != GetScale)
             {
@@ -55,6 +67,7 @@ public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredient
                 }
             }
 
+            // Keep this precise.
             _scale = value;
         }
     }
@@ -63,7 +76,7 @@ public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredient
     /// Distinct ingredient recipes with the group's quantities summed.
     /// </summary>
     [JsonIgnore]
-    internal IDictionary<QueryResults, List<RecipeIngredientQueryResults>> PrerequisiteRecipes => RecipeIngredients
+    internal IDictionary<QueryResults, List<RecipeIngredientQueryResults>> PrepRecipes => RecipeIngredients
         .Where(ri => ri.IngredientRecipe != null).GroupBy(ri => ri.IngredientRecipe)
         .ToDictionary(ir => ir.Key!, ir => ir.ToList());
 
@@ -75,7 +88,7 @@ public class QueryResults(Section section, Recipe recipe, IList<RecipeIngredient
     internal List<Nutrients> UniqueWorkedNutrients =>
     [
         .. Nutrients.Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
-        .. PrerequisiteRecipes.SelectMany(pr => pr.Key.Nutrients).Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
+        .. PrepRecipes.SelectMany(pr => pr.Key.Nutrients).Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
     ];
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);

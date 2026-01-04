@@ -169,8 +169,8 @@ public class IngredientController : ViewController
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = existingIngredient.Id, recipeId = 0, wasUpdated = true });
     }
 
-    [HttpPost, Route("[action]/show-log")]
-    public async Task<IActionResult> ShowLog(string email, string token, int ingredientId, int cookedIngredientId, double scale, CookingMethod cookingMethod)
+    [HttpPost, Route("[action]")]
+    public async Task<IActionResult> SetCookingIngredient(string email, string token, int ingredientId, int cookedIngredientId, double scale, CookingMethod cookingMethod)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)

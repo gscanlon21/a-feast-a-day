@@ -5,10 +5,10 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Genetics;
 
 /// <summary>
-/// Pre-requisite exercises for other exercises
+/// A study's ingredients.
 /// </summary>
 [Table("study_ingredient")]
-[DebuggerDisplay("{Exercise} needs {PrerequisiteExercise}")]
+[DebuggerDisplay("StudyId: {StudyId}, IngredientId: {IngredientId}")]
 public class StudyIngredient
 {
     public virtual int StudyId { get; private init; }

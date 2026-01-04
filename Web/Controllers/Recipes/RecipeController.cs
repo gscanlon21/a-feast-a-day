@@ -83,7 +83,7 @@ public class RecipeController : ViewController
             .Select(r => r.AsType<NewsletterRecipeDto>()!);
 
 
-        // Need a user context so the manage link is clickable and the user can un-ignore a prerequisite recipe.
+        // Need a user context so the manage link is clickable and the user can un-ignore a prep recipe.
         var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);
         // May be null if the user has allergens that conflict with an ingredient.
         var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);

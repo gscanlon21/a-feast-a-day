@@ -51,7 +51,7 @@ public class RecipesViewComponent : ViewComponent
             .WithRecipes(x =>
             {
                 x.AddRecipes(userRecipes);
-                x.IgnorePrerequisites = true;
+                x.IgnorePrepRecipes = true;
             })
             .Build()
             .Query(_serviceScopeFactory);

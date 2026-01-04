@@ -14,10 +14,13 @@ public class SelectionOptions : IOptions
 
     public bool IncludeSkippedRecipes { get; set; } = false;
 
+    /// <summary>
+    /// Recipes that already exist as prep recipes and should be scaled if chosen again.
+    /// </summary>
     public HashSet<QueryResults> PrepRecipes { get; set; } = [];
 
     /// <summary>
-    /// Exclude any of these recipes from being chosen.
+    /// Recipes that already exist as prep recipes and should be scaled if chosen again.
     /// </summary>
     internal void AddScaleRecipes(IEnumerable<QueryResults>? recipes)
     {

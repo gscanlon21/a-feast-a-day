@@ -11,7 +11,7 @@
         var cookedIngredient = Model.CookedIngredients[id];
         <div class="col-12">
             <h5>@cookedIngredient.CookingMethod.GetSingleDisplayName()</h5>
-            <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.ShowLog)" method="post" class="row"
+            <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.SetCookingIngredient)" method="post" class="row"
                   asp-route-email="@Model.Email" asp-route-token="@Model.Token" asp-route-ingredientId="@Model.IngredientId">
                 <input type="hidden" name="@nameof(cookedIngredient.IngredientId)" value="@Model.IngredientId" autocomplete="off" />
                 <input type="hidden" name="@nameof(cookedIngredient.CookingMethod)" value="@cookedIngredient.CookingMethod" autocomplete="off" />

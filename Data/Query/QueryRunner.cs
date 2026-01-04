@@ -154,16 +154,16 @@ public class QueryRunner(Section section)
         var filteredResults = new List<InProgressQueryResults>();
         if (UserOptions.NoUser)
         {
-            // Add in the prerequisite recipe ingredients.
-            var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
+            // Add in the prep recipe ingredients.
+            var prepRecipes = await GetPrepRecipes(factory, queryResults);
             foreach (var queryResult in queryResults)
             {
                 foreach (var recipeIngredientRecipe in queryResult.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe))
                 {
                     // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
-                    recipeIngredientRecipe.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredientRecipe.IngredientRecipeId)
+                    recipeIngredientRecipe.IngredientRecipe = prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredientRecipe.IngredientRecipeId)
                         // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
-                        ?? prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredientRecipe.RawIngredientRecipeId);
+                        ?? prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredientRecipe.RawIngredientRecipeId);
                 }
             }
 
@@ -171,11 +171,11 @@ public class QueryRunner(Section section)
         }
         else
         {
-            // Do this before querying prerequisites.
+            // Do this before querying for prep recipes.
             await AddMissingUserRecords(context, queryResults);
 
-            // Swap in user ingredients before querying for prerequisite recipes.
-            var prerequisiteRecipes = await GetPrerequisiteRecipes(factory, queryResults);
+            // Swap in user ingredients before querying for prep recipes.
+            var prepRecipes = await GetPrepRecipes(factory, queryResults);
             var recipeIngredientAlt = await GetAltIngredientForRecipeIngredients(context, queryResults);
             foreach (var queryResult in queryResults)
             {
@@ -198,9 +198,9 @@ public class QueryRunner(Section section)
                     if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
                     {
                         // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
-                        recipeIngredient.IngredientRecipe = prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId)
+                        recipeIngredient.IngredientRecipe = prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId)
                             // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
-                            ?? prerequisiteRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId);
+                            ?? prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId);
 
                         // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
                         if (recipeIngredient.IngredientRecipe != null)
@@ -360,7 +360,7 @@ public class QueryRunner(Section section)
             {
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                 // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
-                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrerequisiteRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);
+                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);
                 if (overworkedNutrients != null)
                 {
                     // Find the number of weeks since this recipe has been seen. If the last seen date is in the future (has refresh padding), then use zero weeks.
@@ -412,37 +412,37 @@ public class QueryRunner(Section section)
                 // Not including the prep recipes in the take count because those aren't a part of the section.
                 if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == section) < take)
                 {
-                    // Prepend the recipe's prerequisite recipes if there are any.
-                    foreach (var prerequisiteRecipe in recipe.PrerequisiteRecipes)
+                    // Prepend the recipe's prep recipes if there are any.
+                    foreach (var prepRecipe in recipe.PrepRecipes)
                     {
-                        // Scale the prerequisite recipe based on the prerequisite's serving size and the recipe-ingredient-for-the-prerequisite's quantity.
-                        var noneRecipeIngredientsGrams = prerequisiteRecipe.Value.Where(ri => ri.Measure == Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
-                        var someRecipeIngredientsGrams = prerequisiteRecipe.Value.Where(ri => ri.Measure != Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
-                        if (someRecipeIngredientsGrams > 0 && prerequisiteRecipe.Key.Recipe.Measure == Measure.None)
+                        // Scale the prep recipe based on the prep's serving size and the recipe-ingredient-for-the-prep's quantity.
+                        var noneRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure == Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
+                        var someRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure != Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
+                        if (someRecipeIngredientsGrams > 0 && prepRecipe.Key.Recipe.Measure == Measure.None)
                         {
                             // If the measures don't align, use the sum of the recipe ingredients times the recipe's servings b/c the recipe hasn't been scaled yet.
-                            var prerequisiteRecipeGrams = prerequisiteRecipe.Key.RecipeIngredients.Sum(ri => ri.GramsUsed(ri.Ingredient)) * prerequisiteRecipe.Key.Recipe.Servings;
-                            prerequisiteRecipe.Key.SetScale = ((noneRecipeIngredientsGrams * prerequisiteRecipeGrams) + someRecipeIngredientsGrams) / prerequisiteRecipeGrams;
+                            var prepRecipeGrams = prepRecipe.Key.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Sum(ri => ri.GramsUsed(ri.Ingredient!)) * prepRecipe.Key.Recipe.Servings;
+                            prepRecipe.Key.SetScale = ((noneRecipeIngredientsGrams * prepRecipeGrams) + someRecipeIngredientsGrams) / prepRecipeGrams;
                         }
                         else
                         {
                             // Normal scaling, divide the sum of the recipe ingredient's quantities by the serving size scaled prerequisite quantity.
-                            prerequisiteRecipe.Key.SetScale = (noneRecipeIngredientsGrams + someRecipeIngredientsGrams) / prerequisiteRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prerequisiteRecipe.Key.Recipe.Servings);
+                            prepRecipe.Key.SetScale = (noneRecipeIngredientsGrams + someRecipeIngredientsGrams) / prepRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prepRecipe.Key.Recipe.Servings);
                         }
 
-                        // Prerequisite recipe already exists and is scalable, scale it.
-                        if (finalResults.TryGetValue(prerequisiteRecipe.Key, out var existingIngredientRecipe) && existingIngredientRecipe.Recipe.AdjustableServings)
+                        // If the prep recipe already exists in our feast for this section and is scalable, then scale it.
+                        if (finalResults.TryGetValue(prepRecipe.Key, out var existingPrepRecipe) && existingPrepRecipe.Recipe.AdjustableServings)
                         {
-                            existingIngredientRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
+                            existingPrepRecipe.SetScale += prepRecipe.Key.SetScale;
                         }
-                        // If the prerequisite recipes already exists in our feast, then scale it.
-                        else if (SelectionOptions.PrepRecipes.TryGetValue(prerequisiteRecipe.Key, out var prepRecipe) && prepRecipe.Recipe.AdjustableServings)
+                        // If the prep recipes already exists in our feast for any prior section and is scalable, then scale it.
+                        else if (SelectionOptions.PrepRecipes.TryGetValue(prepRecipe.Key, out var scalePrepRecipe) && scalePrepRecipe.Recipe.AdjustableServings)
                         {
-                            prepRecipe.SetScale += prerequisiteRecipe.Key.SetScale;
+                            scalePrepRecipe.SetScale += prepRecipe.Key.SetScale;
                         }
-                        else if (!RecipeOptions.IgnorePrerequisites)
+                        else if (!RecipeOptions.IgnorePrepRecipes)
                         {
-                            finalResults.Add(prerequisiteRecipe.Key);
+                            finalResults.Add(prepRecipe.Key);
                         }
                     }
 
@@ -536,9 +536,9 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Returns the recipes that are using in this recipe.
     /// </summary>
-    private async Task<IList<QueryResults>> GetPrerequisiteRecipes(IServiceScopeFactory factory, IList<InProgressQueryResults> filteredResults)
+    private async Task<IList<QueryResults>> GetPrepRecipes(IServiceScopeFactory factory, IList<InProgressQueryResults> filteredResults)
     {
-        var prerequisiteRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients
+        var prepRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients
             // Query for prerequisites ingredient recipes here so we can check their ignored status before finalizing recipes.
             .Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe)).Where(ri => ri.UserRecipeIngredient?.Ignore != true)
             // Search for both the substituted recipe ingredient and the raw recipe ingredient, so we can fallback if one conflicts with allergens.
@@ -547,7 +547,7 @@ public class QueryRunner(Section section)
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // This will filter out base recipes missing equipemnt. No infinite recursion please. 
-        return prerequisiteRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Section.Prep)
+        return prepRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Section.Prep)
             .WithUser(options =>
             {
                 // Keep ignored base recipes, user should ignore the recipe ingredient if they need to ignore this.
@@ -555,7 +555,7 @@ public class QueryRunner(Section section)
                 options.IgnoreIgnored = true;
             })
             .WithEquipment(EquipmentOptions.Equipment)
-            .WithRecipes(options => options.AddRecipes(prerequisiteRecipeIds))
+            .WithRecipes(options => options.AddRecipes(prepRecipeIds))
             .Build().Query(factory) : [];
     }
 

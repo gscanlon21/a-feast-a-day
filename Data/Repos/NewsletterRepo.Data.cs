@@ -223,7 +223,7 @@ public partial class NewsletterRepo
             .WithEquipment(Equipment.All)
             .WithRecipes(options =>
             {
-                options.IgnorePrerequisites = true;
+                options.IgnorePrepRecipes = true;
             })
             .Build()
             .Query(_serviceScopeFactory);

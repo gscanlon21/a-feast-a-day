@@ -16,7 +16,7 @@ public class RecipeOptions : IOptions
         _section = section;
     }
 
-    public bool IgnorePrerequisites { get; set; }
+    public bool IgnorePrepRecipes { get; set; }
 
     /// <summary>
     /// RecipeId:Scale.
@@ -31,18 +31,20 @@ public class RecipeOptions : IOptions
 
     /// <summary>
     /// Only select these recipes.
+    /// Don't pass in a scale so prep recipes go off of user servings.
     /// </summary>
-    public void AddRecipes(IEnumerable<Recipe>? recipes)
+    public void AddRecipes(IEnumerable<UserRecipe>? recipes)
     {
-        AddRecipes(recipes?.ToDictionary(nv => nv.Id, nv => (int?)1));
+        AddRecipes(recipes?.ToDictionary(nv => nv.RecipeId, nv => (int?)null));
     }
 
     /// <summary>
     /// Only select these recipes.
+    /// Don't pass in a scale so prep recipes go off of user servings.
     /// </summary>
-    public void AddRecipes(IEnumerable<UserRecipe>? recipes)
+    public void AddRecipes(IEnumerable<Recipe>? recipes)
     {
-        AddRecipes(recipes?.ToDictionary(nv => nv.RecipeId, nv => (int?)1));
+        AddRecipes(recipes?.ToDictionary(nv => nv.Id, nv => (int?)null));
     }
 
     /// <summary>

@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict pKhamBzTtX9VEpxPOvrMQvQPv5DfNzjjwUjFIDDfF4zAe77GBdMOLFL3MSKmYf4
+\restrict l3XEYpRLNcWdfn8rTOqlaV6qebcJ2my1d957jjnrSAPb4GrFTZv5Trt3NAhXkVU
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2201,6 +2201,15 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 51	1634	1	f
 812	598	1	t
 812	599	1	t
+811	1638	1	f
+1638	1642	1	t
+1638	1641	1	t
+1638	1640	1	t
+1638	1639	1	t
+599	1642	1	f
+598	1641	1	f
+597	1639	1	f
+8	1640	1	f
 \.
 
 
@@ -13629,6 +13638,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5322	0	320	1	12	\N	868	f	\N	4	0	f	t
 4019	6	185	1	3	\N	286	f	\N	0	0	f	t
 4020	6	185	1	1	\N	6	f	\N	1	0	f	t
+8252	6	484	2	1	, for evaporation	123	f	\N	2	0	f	f
 4341	8	251	1	3	\N	410	f	\N	0	0	f	t
 4421	8	134	1	2	\N	222	f	\N	3	0	f	t
 4342	0	251	2	1	, juiced	4	f	\N	1	0	f	t
@@ -14526,11 +14536,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5930	7	480	1	2	(FRESH MIXED HERBS, such as Parsley, Dill or Chives)	712	f	\N	5	0	f	t
 5877	7	471	1	2	\N	357	f	\N	2	0	f	t
 5945	6	484	2	1	\N	188	f	\N	0	0	f	t
-5946	6	484	1	1	\N	123	f	\N	1	0	f	t
 5878	8	471	8	1	, to taste	969	t	\N	3	0	f	t
 5709	8	416	8	1	, to taste	692	f	\N	3	0	f	t
 5897	7	476	1	1	\N	176	f	\N	0	0	f	t
 5886	8	408	4	1	\N	692	f	\N	2	0	f	t
+5946	6	484	2	1	, for rice	123	f	\N	1	0	f	t
 5871	7	470	1	1	\N	990	f	\N	3	0	f	t
 5898	6	476	1	2	\N	\N	f	411	1	0	f	t
 5899	0	476	1	1	, juiced	12	f	\N	2	0	f	t
@@ -14676,6 +14686,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6008	8	522	4	1	\N	67	t	\N	7	0	f	t
 6009	6	522	3	1	\N	1340	f	\N	8	0	f	t
 7326	6	734	2	1	\N	122	f	\N	0	0	f	t
+6105	0	539	1	1	\N	1047	f	\N	0	0	f	t
+6106	6	539	4	1	\N	\N	f	858	1	0	f	t
 6101	0	538	1	1	\N	4	f	\N	0	0	f	t
 6102	0	538	1	1	\N	1043	f	\N	1	0	f	t
 6103	7	538	1	1	\N	251	f	\N	2	0	f	t
@@ -14737,8 +14749,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6183	7	550	1	1	\N	1136	f	\N	2	0	f	t
 6184	8	550	1	3	\N	71	f	\N	3	0	f	t
 6185	8	550	1	3	\N	323	f	\N	4	0	f	t
-6105	0	539	1	1	\N	1047	f	\N	0	0	f	t
-6106	6	539	4	1	\N	\N	f	858	1	0	f	t
 6156	6	546	4	1	\N	1129	f	\N	0	0	f	t
 6157	7	546	1	2	\N	991	f	\N	1	0	f	t
 6158	7	546	1	1	\N	1102	f	\N	2	0	f	t
@@ -17629,7 +17639,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	368	0	0
 2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	368	1	0
 4585	Heat the oil in a large pan and fry the diced bacon and chorizo until they yield their fat. Add the onion and garlic and cook gently until softened, stirring.	971	1	0
-3275	Cook the rice according to package instructions. Store in the refrigerator.	484	0	0
 2990	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water. 	372	0	4
 2982	Preheat the oven to 350°F. Quickly scrub the sweet potatoes clean, then slice into 1¼-inch rounds. Place in a 10x12-inch roasting pan with the whole unpeeled garlic bulb, and toss with 1 tablespoon each of olive oil and red wine vinegar, a pinch of sea salt and black pepper, and the Cajun spice. Arrange in a flat layer and roast for 1 hour, or until soft, gnarly, and carmelized.	369	0	2
 3438	Preheat the oven to 400°F.	564	0	0
@@ -17642,6 +17651,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1252	Remove from heat, cover and let stand for 2 to 3 minutes.	53	2	0
 1253	Top with milk, sweetener, cinnamon, dried fruits or nuts, if desired.	53	3	0
 4583	Transfer the lamb to warmed plates. Top any juices from the foil into the remaining glaze and heat through gently. Pour the glaze over the lamb and serve with peas and new potatoes, garnished with fresh rosemary sprigs.	970	3	0
+3275	Cook the rice according to package instructions. Store in the refrigerator.	484	0	0
 2141	Mix the flour, oatmeal and salt in a bowl, beat in the egg and add enough buttermilk or milk to make a creamy batter of the same consistency as that used for ordinary pancakes.	187	0	0
 2142	Thoroughly heat a griddle or cast-iron frying pan over a medium-hot heat. When very hot, grease the surface lightly with butter or oil.	187	1	0
 2143	Pour in the batter, about a ladleful at a time. Tilt the frying pan to spread evently and cook the pancake for about 2 minutes until set and the underside is browned. Turn over and cook for 1 minute until browned.	187	2	0
@@ -19597,5 +19607,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict pKhamBzTtX9VEpxPOvrMQvQPv5DfNzjjwUjFIDDfF4zAe77GBdMOLFL3MSKmYf4
+\unrestrict l3XEYpRLNcWdfn8rTOqlaV6qebcJ2my1d957jjnrSAPb4GrFTZv5Trt3NAhXkVU
 

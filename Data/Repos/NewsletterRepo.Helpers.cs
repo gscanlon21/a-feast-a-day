@@ -35,9 +35,9 @@ public partial class NewsletterRepo
                     .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
             });
 
-            // Using the prerequisite recipes instead of prep section recipes so that we can
+            // Using the recipe's prep recipes instead of the prep section recipes so that we can
             // ... swap recipes with their preps even if they were scaled with other preps.
-            foreach (var prepRecipe in recipe.PrerequisiteRecipes)
+            foreach (var prepRecipe in recipe.PrepRecipes)
             {
                 // Order doesn't matter because prep recipes are always requeryed from main recipes.
                 _context.UserFeastRecipes.Add(new UserFeastRecipe(newsletter, prepRecipe.Key, i)
