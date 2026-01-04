@@ -1,4 +1,11 @@
-﻿output {
-    text-align: end;
-    width: 3ch;
+﻿::deep select[data-value=""] {
+    color: rgba(var(--color-text), 0.65);
+}
+
+::deep option[value=""] {
+    color: rgba(var(--color-text), 0.65);
+}
+
+::deep option {
+    color: rgba(var(--color-text), 1);
 }

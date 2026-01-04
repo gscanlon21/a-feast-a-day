@@ -54,7 +54,7 @@
 
                 <div class="mb-3 mt-3">
                     <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Notes)@(Model.UserRecipeIngredient.Notes.IsWhiteSpace() ? "*" : "")</label>
-                    <input type="text" asp-for="UserRecipeIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserRecipeIngredient.Notes" />
+                    <input type="text" asp-for="UserRecipeIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserRecipeIngredient.Notes" placeholder="@Model.RecipeIngredient.Attributes" />
                     <span asp-validation-for="UserRecipeIngredient.Notes" class="text-danger"></span>
                 </div>
 
@@ -70,15 +70,15 @@
                         <label class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.QuantityNumerator)</label>
                         <div><span asp-validation-for="UserRecipeIngredient.QuantityNumerator" class="text-danger"></span></div>
                         <div><span asp-validation-for="UserRecipeIngredient.QuantityDenominator" class="text-danger"></span></div>
-                        <div class="row gx-2">
+                        <div class="row gx-2 my-1">
                             <div class="col-auto">
-                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator))" type="number" asp-for="UserRecipeIngredient.QuantityNumerator" style="width:5ch;height:fit-content;" />
+                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator))" type="number" asp-for="UserRecipeIngredient.QuantityNumerator" style="width:5ch;height:fit-content;" placeholder="@Model.RecipeIngredient.QuantityNumerator" />
                             </div>
                             <div class="col-auto px-0">
                                 <span>/</span>
                             </div>
                             <div class="col-auto">
-                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityDenominator))" type="number" asp-for="UserRecipeIngredient.QuantityDenominator" style="width:5ch;height:fit-content;" />
+                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityDenominator))" type="number" asp-for="UserRecipeIngredient.QuantityDenominator" style="width:5ch;height:fit-content;" placeholder="@Model.RecipeIngredient.QuantityDenominator" />
                             </div>
                         </div>
                         <div id="@Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator)-help" class="form-text"></div>
@@ -86,8 +86,8 @@
 
                     <div class="col">
                         <label asp-for="UserRecipeIngredient.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Measure)</label>
-                        <select asp-for="UserRecipeIngredient.Measure" class="form-control" aria-describedby="measure-help"
-                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).Cast<Measure?>().Prepend(null).AsSelectListItems(nullValueText: "Default"))">
+                        <select asp-for="UserRecipeIngredient.Measure" class="form-control" aria-describedby="measure-help" onchange="this.dataset.value = this.options[this.selectedIndex].getAttribute('value');"
+                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).Cast<Measure?>().Prepend(null).AsSelectListItems(nullValueText: $"{Model.RecipeIngredient.Measure.GetSingleDisplayName()} (Default)"))" data-value="">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.Measure" class="text-danger"></span>
                         <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.Measure)</span>

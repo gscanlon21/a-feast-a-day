@@ -242,7 +242,7 @@
 249	\N	Sliced Salami	https://www.eatthismuch.com/calories/pork-salami-939	\N	f	0	10	28	2025-11-28	0	227	268435456	227	Sliced Salami
 250	\N	Fresh Zucchini	https://www.eatthismuch.com/calories/zucchini-2183	\N	f	0	196	196	2025-03-07	0	196	2	196	Fresh Zucchini
 251	\N	Fresh Mint Leaves	https://www.eatthismuch.com/calories/mint-91252	\N	f	0	28	3	2025-03-07	4	48	3	48	Fresh Mint Leaves
-252	\N	Three Wishes Cinnamon Grain Free Cereal	https://www.eatthismuch.com/calories/grain-free-cereal-cinnamon,3131931	\N	f	0	245	35	2024-09-20	0	35	4	35	Three Wishes Cinnamon Grain Free Cereal
+252	\N	Three Wishes Cinnamon Grain Free Cereal	https://www.eatthismuch.com/calories/grain-free-cereal-cinnamon,3131931	\N	f	0	245	35	2026-01-04	0	35	7168	35	Cereal
 253	\N	Cereal	https://www.eatthismuch.com/calories/honey-nut-cheerios,1026	\N	f	262176	234	39	2024-12-06	0	39	7168	39	Cereal
 254	\N	Salted Margarine	https://www.eatthismuch.com/calories/margarine,348	\N	t	0	113	14	2025-12-27	0	224	29360128	224	Salted Margarine
 255	\N	Orange Sweet Potatoes	https://www.eatthismuch.com/food/nutrition/sweet-potato,2210/	\N	f	0	130	130	2025-08-18	0	133	2	133	Orange Sweet Potatoes
@@ -460,7 +460,7 @@
 507	\N	Fresh Chervil | Fresh Parsley	https://www.eatthismuch.com/calories/parsley-2057	\N	f	0	28	4	2024-11-30	4	64	2	64	Fresh Chervil | Fresh Parsley
 509	\N	Chicken Thighs	https://www.eatthismuch.com/calories/chicken-thigh-480	\N	f	0	94	94	2025-03-24	0	188	268435456	188	Chicken Thighs
 510	\N	Fennel Seeds	https://www.eatthismuch.com/calories/fennel-seed-193	\N	f	0	28	6	2025-02-26	4	96	131072	96	Fennel Seeds
-511	\N	Slices of American Cheese, fortified	https://www.eatthismuch.com/calories/american-cheese,42	\N	f	256	21	28	2024-09-21	0	224	6	224	Slices of American Cheese, fortified
+511	\N	Slices of American Cheese, Fortified	https://www.eatthismuch.com/calories/american-cheese-42	\N	f	4	28	28	2024-09-21	0	224	8388608	224	American Cheese
 512	\N	Italian Seasoning	https://www.eatthismuch.com/calories/italian-seasoning-2978637	\N	f	0	28	3	2025-11-18	4	96	131072	96	Italian Seasoning
 513	\N	Large New Potatoes	https://www.eatthismuch.com/calories/whole-new-potatoes-2504251	\N	f	512	79	158	2024-11-21	0	158	2	158	Large New Potatoes
 515	\N	Paprika | Cayenne Pepper	https://www.eatthismuch.com/calories/paprika-203 | https://www.eatthismuch.com/calories/cayenne-pepper-206	\N	t	0	12	6	2024-10-28	4	96	2048	96	Paprika | Cayenne Pepper
@@ -494,8 +494,8 @@
 568	\N	Ready-Made Puff Pastry	https://www.eatthismuch.com/calories/puff-pastry-4245	\N	f	0	47	47	2025-10-30	0	47	29360128	47	Ready-Made Puff Pastry
 569	\N	Ready-Made Custard	https://www.eatthismuch.com/calories/fresh-custard-148019	\N	f	4	28	125	2025-10-29	4	125	29360128	125	Ready-Made Custard
 570	\N	Confectioners' Sugar	https://www.eatthismuch.com/calories/powdered-sugars-4645	\N	f	0	28	100	2024-10-09	4	100	114688	100	Confectioners' Sugar
-571	\N	Slices of American Cheese, unfortified	https://www.eatthismuch.com/calories/american-cheese,123	\N	f	256	21	28	2024-09-21	0	224	6	224	Slices of American Cheese, unfortified
-572	\N	Slices of American Cheese	https://www.eatthismuch.com/calories/american-cheese,5748	\N	f	256	21	28	2024-09-21	0	224	6	224	Slices of American Cheese
+571	\N	Slices of American Cheese, Unfortified	https://www.eatthismuch.com/calories/american-cheese-123	\N	f	4	28	28	2026-01-04	0	224	8388608	224	American Cheese
+572	\N	Slices of American Cheese	https://www.eatthismuch.com/calories/american-cheese-5748	\N	f	4	21	28	2026-01-05	0	224	8388608	224	American Cheese
 573	\N	Fresh Oregano	\N	\N	f	0	240	100	2024-09-21	6	240	0	240	Fresh Oregano
 574	\N	Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	\N	f	0	28	15	2025-10-18	4	60	928	60	Coconut Flakes
 575	\N	Bacon Chops	Bacon chops, sometimes called bacon steaks, are thick cut chops, which are taken from whole bacon loins. In other words, a bacon chop is basically a super thick cut rasher of bacon. It comes from exactly the same place, and is produced the same way, as the bacon you put on your sandwich, it's just, well, thicker.	\N	f	0	8	8	2025-07-14	0	24	0	24	Bacon Chops
@@ -1288,3 +1288,11 @@
 1640	\N	Large Red Bell Peppers	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	512	119	119	2025-10-23	0	149	2	149	Red Bell Peppers
 1641	\N	Large Green Bell Peppers	https://www.eatthismuch.com/calories/green-bell-pepper-2080	\N	f	0	119	119	2025-10-21	0	119	2	119	Green Bell Peppers
 1642	\N	Large Orange Bell Peppers	https://www.eatthismuch.com/food/nutrition/red-bell-pepper,2440/	\N	f	0	119	119	2025-10-21	0	119	2	119	Orange Bell Peppers
+1643	\N	Salad Dressing	https://www.eatthismuch.com/calories/italian-dressing-271	\N	f	0	30	15	2025-08-20	9	240	32	240	Italian Salad Dressing
+1644	\N	Chicken Legs, Skin On, Bone In, Stewed	https://www.eatthismuch.com/calories/chicken-leg-468	Cooked	f	0	114	28	2025-03-13	0	114	268435456	114	Chicken Legs, Skin On, Bone In, Roasted
+1645	\N	Chicken Legs, Skin On, Bone In, Fried	https://www.eatthismuch.com/calories/chicken-leg-470	Cooked	f	0	114	28	2025-03-13	0	114	268435456	114	Chicken Legs, Skin On, Bone In, Roasted
+1646	\N	Coarse Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/	\N	t	0	6	1.5	2025-07-24	8	288	131072	288	Coarse Sea Salt
+1647	\N	Dried Marjoram	https://www.eatthismuch.com/calories/marjoram-198	\N	f	0	1	2	2026-01-05	3	27	131072	27	Marjoram
+1648	\N	Ground Sumac	https://www.eatthismuch.com/calories/sumac-540983	\N	f	0	28	4	2024-12-31	4	192	131072	192	Sumac
+1649	\N	Dried Shiitake Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594	\N	f	0	15	86	2025-11-01	0	86	3	86	Dried Procini Mushrooms
+1650	\N	Slices of American Cheese, Low-Fat	https://www.eatthismuch.com/calories/american-cheese-5748	\N	f	4	28	28	2024-09-21	0	224	8388608	224	American Cheese

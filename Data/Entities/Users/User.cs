@@ -41,7 +41,7 @@ public class User : IUser
         SendHour = UserConsts.SendHourDefault;
         Equipment = UserConsts.EquipmentDefault;
         Verbosity = UserConsts.VerbosityDefault;
-        FootnoteType = UserConsts.FootnotesDefault;
+        FootnoteType = UserConsts.FootnoteTypeDefault;
     }
 
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

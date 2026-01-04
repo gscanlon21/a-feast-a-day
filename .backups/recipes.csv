@@ -40,7 +40,6 @@
 58	Fruity Peanut Butter Pitas	\N	\N	\N	22	0	5	2	t	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	f	f
 59	Popcorn	\N	\N	\N	16	5	0	1	t	popcorn.jpg	0	\N	f	f
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	chips-salsa-alt.jpg	0	\N	f	f
-61	Toasted Pita Bowl Salad	\N	\N	\N	6	12	20	2	t	pita-bowl-salad.jpg	0	https://www.thespruceeats.com/toasted-pita-bowl-salad-3994849	f	f
 62	Edamame & Veggie Rice Bowl	\N	\N	\N	12	5	5	2	t	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	f	f
 63	Grilled Sausage-Basil Pizzas	\N	\N	\N	4	15	15	4	t	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
 64	French Bread Pizza	\N	\N	\N	4	15	5	4	t	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
@@ -111,7 +110,7 @@
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
-132	Tandori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandoori-chicken-kebabs.jpg	0	\N	f	f
+132	Tandoori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandoori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
 134	Oven Burgers	\N	\N	\N	8	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
 135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don’t have a salad dressing on hand that you’d like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	0	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
@@ -143,7 +142,7 @@
 162	Rhubarb and Ginger Trifles	\N	\N	\N	64	0	4	4	t	rhubarb-ginger-trifles.jpg	0	\N	f	f
 163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/½oz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	64	12	8	12	t	portuguese-custard-tarts.jpg	0	\N	f	f
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	mexican-tortas.jpg	0	\N	f	f
-165	Lemon and Parmesan Capellini	\N	\N	\N	2	10	5	2	t	lemon-parmesan-capellini.jpg	0	\N	f	f
+165	Lemon and Parmesan Capellini	\N	\N	\N	12	10	5	2	t	lemon-parmesan-capellini.jpg	0	\N	f	f
 166	Crispy Cabbage	\N	\N	\N	16	3	3	4	t	crispy-cabbage.jpg	0	\N	f	f
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	128	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
@@ -238,7 +237,7 @@
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
 324	Crème Fraîche	\N	\N	\N	0	0	5	1	t	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	f	f
 325	Anti-Allergy Salad	\N	\N	\N	20	10	5	2	t	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f	f
-326	Sticky Teriyaki Aubergine	From Jamie Oliver's 5 Ingredients	\N	\N	12	15	5	2	t	teriyaki-aubergine.jpg	0	\N	f	f
+326	Sticky Teriyaki Aubergine	\N	\N	\N	12	15	5	2	t	teriyaki-aubergine.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 359	Healthy Chocolate Smoothie	\N	\N	\N	128	0	5	2	t	healthy-chocolate-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/	f	f
 360	Eggplant Penne Arrabbiata	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	8	4	t	eggplant-penne-arrabbiata.jpg	0	\N	f	f
 361	Beef, Beets, & Horseradish	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	14	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
@@ -331,7 +330,7 @@
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-483	Goddess of Detox Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+483	Goddess of Detox Dressing	\N	Too complicated: requires a blender.	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 484	Rice	\N	\N	\N	0	25	5	1	t	rice.jpg	6	\N	t	t
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
 486	Strawberries & Cream	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -603,7 +602,7 @@
 947	Kick-Ass Turkey Sausage Breakfast Sandwich	Make the sandwich more substantial by adding tomato and avocado. Or, to take this in a different direction, mix together 1 teaspoon cranberry sauce and 2 tablespoons mayonaise and spread on the English muffin.	\N	\N	8	6	2	1	t	\N	0	\N	f	f
 950	Gum	\N	\N	\N	32	0	0	7	t	gum-alt.jpg	0	\N	f	f
 951	Hamburger Soup	Add a 15-ounce can of white beans to the soup to make it a little more substantial. Additionally, you can top the soup with a few tablespoons of grated Cheddar cheese.	\N	\N	8	30	5	4	t	\N	0	\N	f	f
-952	Hot and Sour Soup	You can gently stir 2 beaten eggs into this soup a few minutes before serving to create egg "noodles". Fresh mushrooms will not give this soup the same concentrated flavors as the dried ones do. 	\N	\N	8	30	40	6	t	\N	0	\N	f	f
+952	Hot and Sour Soup	You can gently stir 2 beaten eggs into this soup a few minutes before serving to create egg "noodles". Fresh mushrooms will not give this soup the same concentrated flavors as the dried ones do. 	Not very appetizing.	\N	8	30	40	6	t	\N	0	\N	f	f
 953	Creme Brulee	\N	\N	\N	64	45	135	4	t	\N	0	\N	f	f
 954	Orange Tiramisu	You can use a different kind of sweet orange if you'd prefer, but try to get one that's about the size of a baseball.	\N	\N	64	0	135	4	t	\N	0	\N	f	f
 955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	8	10	5	2	t	egg-fried-rice.jpg	0	\N	f	f
@@ -630,3 +629,4 @@
 976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	\N	0	\N	t	f
 977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	cooled-rice.jpg	6	\N	t	f
 978	Spinach and Egg Stir Fry	\N	\N	\N	16	10	5	2	t	\N	0	https://omnivorescookbook.com/spinach-and-egg-stir-fry	f	f
+979	Za'atar	Middle Eastern Spice Mixture	\N	\N	0	5	5	10	t	\N	7	https://www.thespruceeats.com/zaatar-middle-eastern-spice-mixture-2355844	t	f

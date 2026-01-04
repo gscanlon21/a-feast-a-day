@@ -46,14 +46,15 @@ public class UserConsts
 
     public const DayOfWeek SendDayDefault = DayOfWeek.Sunday;
 
-    public const Equipment EquipmentDefault = Equipment.Oven | Equipment.Stove;
-
     public const IngredientOrder IngredientOrderDefault = IngredientOrder.OrderUsed;
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
 
-    public const FootnoteType FootnotesDefault = FootnoteType.CookingTips | FootnoteType.IngredientTips
+    public const FootnoteType FootnoteTypeDefault = FootnoteType.CookingTips | FootnoteType.IngredientTips
         | FootnoteType.HealthTips | FootnoteType.HealthFacts | FootnoteType.GoodVibes | FootnoteType.Mindfulness;
+
+    public const Equipment EquipmentDefault = Equipment.Microwave | Equipment.Oven | Equipment.Stove | Equipment.Broiler
+        | Equipment.Refrigerator | Equipment.Freezer | Equipment.Toaster | Equipment.SlowCooker | Equipment.PotatoMasher;
 
     /// <summary>
     /// This shouldn't be too high (>12) or else the program will spend too much time trying 
