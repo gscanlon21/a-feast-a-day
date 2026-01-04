@@ -4,49 +4,24 @@ namespace Core.Models.Ingredients;
 
 /// <summary>
 /// How is an ingredient cooked?
-/// Grilled is not included and can be covered by Roast/Broil.
 /// </summary>
 public enum CookingMethod
 {
     [Display(Name = "")]
     None = 0,
 
-    [Display(Name = "Baked", ShortName = "Bake", Order = 1)]
-    Bake = 1,
+    /// <summary>
+    /// Not getting as granular to differentiate between oven- and pan- fried cooking.
+    /// There aren't many ingredients that need to differentiate between the two types.
+    /// And they yield similar nutrient profiles and the user may not follow the recipe.
+    /// Let's see if we can use partial or aggregate ingredients for accurate nutrients.
+    /// </summary>
+    [Display(Name = "Dry Heat", Order = 1)]
+    DryHeat = 1,
 
-    [Display(Name = "Roasted", ShortName = "Roast", Order = 2)]
-    Roast = 2,
+    [Display(Name = "Moist Heat", Order = 2)]
+    MoistHeat = 2,
 
-    [Display(Name = "Broiled", ShortName = "Broil", Order = 3)]
-    Broil = 3,
-
-    [Display(Name = "Braised", ShortName = "Braise", Order = 4)]
-    Braise = 4,
-
-    [Display(Name = "Simmered", ShortName = "Simmer", Order = 5)]
-    Simmer = 5,
-
-    [Display(Name = "Steamed", ShortName = "Steam", Order = 6)]
-    Steam = 6,
-
-    [Display(Name = "Poached", ShortName = "Poach", Order = 7)]
-    Poach = 7,
-
-    [Display(Name = "Boiled", ShortName = "Boil", Order = 8)]
-    Boil = 8,
-
-    [Display(Name = "Stewed", ShortName = "Stew", Order = 9)]
-    Stew = 9,
-
-    [Display(Name = "Seared", ShortName = "Sear", Order = 10)]
-    Sear = 10,
-
-    [Display(Name = "Sautéd", ShortName = "Sauté", Order = 11)]
-    Saute = 11,
-
-    [Display(Name = "Pan Fried", ShortName = "Pan Fry", Order = 12)]
-    PanFry = 12,
-
-    [Display(Name = "Pan Fried", ShortName = "Pan Fry", Order = 13)]
-    StirFry = 13,
+    [Display(Name = "Combination", Order = 3)]
+    Combination = 3,
 }
