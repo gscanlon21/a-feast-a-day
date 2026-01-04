@@ -20,7 +20,7 @@ public class ShoppingListItem
         Group = dto.Group;
         Measure = dto.Measure;
         Quantity = dto.Quantity;
-        Order = dto.Category.GetSingleDisplayName(DisplayType.Order);
+        Order = dto.Category.GetOrder();
         // Don't trigger the property changed event.
         _isChecked = dto.SkipShoppingList;
         // This was not made by the user.
@@ -33,9 +33,9 @@ public class ShoppingListItem
     public string Name { get; init; } = null!;
     public string Group { get; init; } = null!;
     public Measure Measure { get; init; }
-    public string? Order { get; init; }
     public bool IsCustom { get; init; }
     public int? Quantity { get; set; }
+    public int? Order { get; init; }
 
     [NotMapped]
     private bool _isChecked;

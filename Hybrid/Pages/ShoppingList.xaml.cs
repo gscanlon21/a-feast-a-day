@@ -145,6 +145,6 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     private static List<ShoppingListItem> OrderIngredients(IEnumerable<ShoppingListItem> ingredients)
     {
-        return ingredients.OrderBy(i => i.IsChecked).ThenBy(i => i.Order?.Length).ThenBy(i => i.Order).ThenBy(i => i.Group).ThenBy(i => i.Name).ToList();
+        return ingredients.OrderBy(i => i.IsChecked).ThenBy(i => i.Order).ThenBy(i => i.Group).ThenBy(i => i.Name).ToList();
     }
 }

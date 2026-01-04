@@ -246,9 +246,8 @@ public partial class NewsletterRepo
         var shoppingList = new List<ShoppingListItemDto>();
         // Order before grouping so the .Key is the same across requests.
         foreach (var group in recipes.SelectMany(r => r.RecipeIngredients).Where(ri => ri.Ingredient != null)
-            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer()).OrderBy(l => l.Key.SkipShoppingList)
-            .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order).Length)
-            .ThenBy(g => g.Key.Ingredient!.Category.GetSingleDisplayName(DisplayType.Order))
+            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
+            .OrderBy(g => g.Key.Ingredient!.Category.GetOrder())
             .ThenBy(g => g.Key.Ingredient!.Group)
             .ThenBy(g => g.Key.Name))
         {
@@ -267,8 +266,8 @@ public partial class NewsletterRepo
 
         return new ShoppingListDto()
         {
+            ShoppingList = shoppingList,
             NewsletterId = newsletter.Id,
-            ShoppingList = shoppingList
         };
     }
 
