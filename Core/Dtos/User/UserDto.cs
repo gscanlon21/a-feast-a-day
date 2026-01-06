@@ -59,6 +59,11 @@ public class UserDto : IUser
     public DateOnly? LastActive { get; set; } = null;
 
     /// <summary>
+    /// When this user was created.
+    /// </summary>
+    public DateOnly CreatedDate { get; init; }
+
+    /// <summary>
     /// What features should the user have access to?
     /// </summary>
     public Features Features { get; set; } = Features.None;

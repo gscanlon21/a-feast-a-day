@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.User;
 using Core.Models.Ingredients;
+using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
 using Data.Repos;
@@ -28,6 +29,12 @@ public class IngredientCookedViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient ingredient)
     {
+        // User must've created the ingredient to be able to edit it.
+        if (ingredient.UserId != user.Id && !user.Features.HasFlag(Features.Admin))
+        {
+            return Content("");
+        }
+
         var cookedIngredients = await GetCookedIngredients(ingredient, user);
         var usedCookingMethods = cookedIngredients.Select(ci => ci.CookingMethod).ToList();
         foreach (var cookingMethod in EnumExtensions.GetNotNoneValues<CookingMethod>().Where(cm => !usedCookingMethods.Contains(cm)))

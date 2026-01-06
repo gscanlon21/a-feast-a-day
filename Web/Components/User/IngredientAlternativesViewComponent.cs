@@ -1,5 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.User;
+using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
 using Data.Repos;
@@ -27,6 +28,12 @@ public class IngredientAlternativesViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient ingredient)
     {
+        // User must've created the ingredient to be able to edit it.
+        if (ingredient.UserId != user.Id && !user.Features.HasFlag(Features.Admin))
+        {
+            return Content("");
+        }
+
         var partialIngredients = await GetAlternativeIngredients(ingredient, user, partial: true);
         var alternativeIngredients = await GetAlternativeIngredients(ingredient, user, partial: false);
         if (!partialIngredients.Any() && !alternativeIngredients.Any())
