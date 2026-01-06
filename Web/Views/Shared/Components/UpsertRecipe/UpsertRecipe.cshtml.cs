@@ -93,7 +93,7 @@ public class UpsertRecipeModel : IValidatableObject
             yield return new ValidationResult($"Section cannot be null when not a base recipe.", [nameof(Section), nameof(BaseRecipe)]);
         }
 
-        if (RecipeIngredients.GroupBy(ri => ri.Order).Any(g => g.Count() > 1))
+        if (RecipeIngredients.Where(ri => !ri.Hide).GroupBy(ri => ri.Order).Any(g => g.Count() > 1))
         {
             yield return new ValidationResult($"Two ingredients cannot have the same order.", [nameof(RecipeIngredients)]);
         }
