@@ -17,13 +17,19 @@
         <label asp-for="Ingredient.Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Notes)</label>
         <input asp-for="Ingredient.Notes" type="text" class="form-control" />
     </div>
-    <div class="mb-3">
-        <label asp-for="Ingredient.DefaultMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.DefaultMeasure)</label>
-        <select asp-for="Ingredient.DefaultMeasure" class="form-control" aria-describedby="measure-help"
-                asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems())">
-        </select>
-        <span asp-validation-for="Ingredient.DefaultMeasure" class="text-danger"></span>
-        <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
+    <div class="mb-3 row row-gap-2">
+        <div class="col-md order-md-last">
+            <label asp-for="Ingredient.Link" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Link)</label>
+            <input asp-for="Ingredient.Link" type="text" class="form-control" />
+        </div>
+        <div class="col-md">
+            <label asp-for="Ingredient.DefaultMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.DefaultMeasure)</label>
+            <select asp-for="Ingredient.DefaultMeasure" class="form-control" aria-describedby="measure-help"
+                    asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems())">
+            </select>
+            <span asp-validation-for="Ingredient.DefaultMeasure" class="text-danger"></span>
+            <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
+        </div>
     </div>
     <div class="mb-3 row row-gap-2">
         <div class="col-md">

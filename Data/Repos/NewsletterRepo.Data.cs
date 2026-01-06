@@ -292,6 +292,7 @@ public partial class NewsletterRepo
             {
                 Id = debugIngredient.Id,
                 Name = debugIngredient.Name,
+                Link = debugIngredient.Link,
                 Notes = debugIngredient.Notes,
                 Category = debugIngredient.Category,
                 Allergens = debugIngredient.Allergens,

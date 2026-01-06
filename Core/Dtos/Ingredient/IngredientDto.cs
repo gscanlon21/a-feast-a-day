@@ -41,6 +41,8 @@ public class IngredientDto
 
     public string? Notes { get; set; } = null;
 
+    public string? Link { get; set; } = null;
+
     /// <summary>
     /// Nutrients per Serving Size (Grams).
     /// </summary>

@@ -98,6 +98,7 @@ public class IngredientController : ViewController
         if (existingIngredient != null)
         {
             existingIngredient.Name = ingredient.Name;
+            existingIngredient.Link = ingredient.Link;
             existingIngredient.Notes = ingredient.Notes;
             existingIngredient.Group = ingredient.Group;
             existingIngredient.Category = ingredient.Category;
@@ -149,6 +150,7 @@ public class IngredientController : ViewController
             {
                 UserId = user.Id,
                 Name = ingredient.Name,
+                Link = ingredient.Link,
                 Notes = ingredient.Notes,
                 Group = ingredient.Group,
                 Category = ingredient.Category,

@@ -16,7 +16,14 @@
     <div> @* For margin collapse. *@
         <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:.8ch;">
             <span style="flex:1 1 auto;">
-                <span style="text-decoration:underline;">@Model.Name</span>
+                @if (!string.IsNullOrWhiteSpace(Model.Link) && Uri.IsWellFormedUriString(Model.Link, UriKind.Absolute))
+                {
+                    <a class="allow-demo" target="_blank" href="@Model.Link">@Model.Name</a>
+                }
+                else
+                {
+                    <span style="text-decoration:underline;">@Model.Name</span>
+                }
             </span>
 
             @if (User != null)

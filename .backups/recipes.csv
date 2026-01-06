@@ -13,7 +13,7 @@
 30	Curry Scramble	\N	\N	\N	6	10	5	2	t	curry-scramble.jpg	0	\N	f	f
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	8	420	15	6	t	bbq-pulled-pork-sandwich.jpg	0	\N	f	f
 32	Crock Pot Baked Potatoes	\N	\N	\N	16	480	5	4	t	crockpot-baked-potatoes.jpg	0	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	f	f
-33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredientsósome chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
+33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients‚Äîsome chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	kielbasa.jpg	0	\N	f	f
 35	Crockpot BBQ Pinto Beans	\N	\N	\N	16	480	15	6	f	bbq-pinto-beans.jpg	0	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	f	f
 36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	6	120	10	4	t	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
@@ -26,7 +26,7 @@
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	quinoa-pizza.jpg	0	\N	t	f
 45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	basic-energy-balls.jpg	0	\N	f	f
-47	Banana ìniceî Cream	\N	\N	\N	64	120	5	1	t	banana-ice-cream.jpg	0	\N	f	f
+47	Banana ‚Äúnice‚Äù Cream	\N	\N	\N	64	120	5	1	t	banana-ice-cream.jpg	0	\N	f	f
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	avocado-cakes.jpg	0	\N	f	f
 49	Easy Mini Bagel Pizzas	\N	\N	\N	4	10	10	4	t	mini-bagel-pizzas.jpg	0	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	f	f
 50	Simple 4-Ingredient Egg Salad with Mayo	\N	\N	\N	2	5	10	1	t	egg-salad.jpg	0	https://www.lifeisbutadish.com/momos-egg-salad/	f	f
@@ -53,7 +53,7 @@
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	f	white-bread.jpg	0	\N	t	t
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	f	white-bread.jpg	0	\N	t	t
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	basil-quesadilla.jpg	0	\N	f	f
-75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121∞F.	\N	\N	0	5	5	5	t	garlic-olive-oil.jpg	7	\N	t	f
+75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121¬∞F.	\N	\N	0	5	5	5	t	garlic-olive-oil.jpg	7	\N	t	f
 76	Minty Courgette Linguine	\N	\N	\N	12	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
 77	Cereal w/ Fruit	\N	\N	\N	2	0	1	4	t	cereal.jpg	0	\N	f	f
 78	String Cheese	\N	\N	\N	32	0	0	1	t	string-cheese.jpg	0	\N	f	f
@@ -106,25 +106,25 @@
 125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops with Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
 127	Roast Chicken Pitta Pockets	\N	\N	\N	12	2	13	6	t	\N	0	\N	f	f
-128	Soy Sauce and Star Anise Chicken	If you are able to make it ahead, leave the chicken in the marinade for around 6ñ8 hours, as the flavor will be improved.	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
+128	Soy Sauce and Star Anise Chicken	If you are able to make it ahead, leave the chicken in the marinade for around 6‚Äì8 hours, as the flavor will be improved.	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
 131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
 132	Tandoori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandoori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken with Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
 134	Oven Burgers	\N	\N	\N	8	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
-135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you donít have a salad dressing on hand that youíd like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	0	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
+135	Easiest Baked Chicken Breast	If your chicken breasts are 10oz+, pound them out then cut them in half to ensure they cook evenly. Really any prepared vinaigrette/dressing will work for this chicken, though creamy dressings like Ranch or French dressing will burn in the oven. If you don‚Äôt have a salad dressing on hand that you‚Äôd like to use, feel free to simply brush the chicken breasts with extra virgin olive oil then add your seasonings and bake as directed.	\N	\N	0	20	10	1	t	baked-chicken-breast.jpg	0	https://iowagirleats.com/easiest-baked-chicken-breast/	t	f
 136	Easy Chicken Fried Rice	\N	\N	\N	4	10	0	2	t	chicken-fried-rice.jpg	0	https://iowagirleats.com/take-out-fake-out-easy-chicken-fried-rice	f	f
 137	Meatballs	\N	\N	\N	0	25	5	12	t	meatballs.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-meatballs/ - For dairy-free option: use unsweetened almond milk and dairy-free bread crumbs. Store leftovers in an air-tight container in the refrigerator. To freeze: Once the gluten-free meatballs are completely cooled, the meatballs will need to be flash frozen first. Place the meatballs on a baking sheet and freeze until solid, about 2 hours. Transfer the frozen, cooked meatballs to freezer bags or freezer-safe containers and place them in your freezer. To reheat: The meatballs easily heated up in the oven, microwave or in a pot of spaghetti sauce. You can also defrosted the meatballs overnight in the refrigerator. To make ahead: Cover the raw meatballs as instructed with plastic wrap or an air-tight container and store them in the refrigerator for up to 24 hours.	f	f
 138	Warm Chicken and Vegetable Salad	Use other lean meat, such as turkey breast, or lean cuts of beef or pork, in place of the chicken.	Too many ingredients.	\N	4	10	7	6	t	chicken-vegetable-salad.jpg	0	\N	f	f
-139	Crock Pot Salsa Chicken	I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs ó or a mixture of these and chicken breasts ó to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	8	300	5	4	t	crock-pot-salsa-chicken.jpg	0	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card	f	f
+139	Crock Pot Salsa Chicken	I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs ‚Äî or a mixture of these and chicken breasts ‚Äî to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	8	300	5	4	t	crock-pot-salsa-chicken.jpg	0	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card	f	f
 140	Spiced Chicken Risotto with Mint	Use the same quantity of pumpkin or butternut squash in place of the carrots. To make a vegetarian version, omit the chicken and add a drained 400g/14oz can of chickpeas to the rice just before the end of cooking.	\N	\N	6	15	5	4	t	gluten-free-risotto.jpg	0	\N	f	f
 141	Chicken Fried Rice	If you don't have any cold cooked rice in the refrigerator, you can still make this stir-fry if you have a couple of pouches of instant or express long grain or basmati rice in the cupboard. This type of rice cooks in under 2 minutes. For a stir-fry, the rice should be cold, so spread it out on a baking sheet after cooking and fan it to cool it quickly.	\N	\N	4	10	5	4	t	chicken-fried-rice.jpg	0	\N	f	f
 142	Frothy Hot Chocolate	You could use Mexican chocolate, which is flavoured with almonds, cinnamon and vanilla, and sweetened with sugar. All the ingredients are crushed together in a special mortar, and heated over coals. The powdered mixture is then shaped into discs, which can be bought in specialist stores.	\N	\N	32	4	3	4	t	hot-chocolate.jpg	0	\N	f	f
 143	Banana Smoothie with Chocolate Sauce	Pouring chocolate sauce like this cools it slightly on the way down, so that it thickens on contact with the cold smoothie.	\N	\N	128	10	5	2	t	chocolate-smoothie.jpg	0	\N	f	f
 144	Cantaloupe Melon Salad	When you need just a small amount of sifted icing (confectioners') sugar, use a tea strainer. Spoon the sugar into the strainer, then lightly tap the side with the spoon so that the sifted sugar drifts down evenly. Though tempting when you're in a hurry, mashing the sugar in the strainer will not quicken the time it takes to sift through!	\N	\N	80	5	3	4	t	cantaloupe-melon-salad.jpg	0	\N	f	f
 145	Panettone French Toast	A generous portion of chilled mixed berry fruits such as raspberries, blackberries, morello cherries and blueberries perfectly complements the richness of this snack.	\N	\N	35	6	2	4	t	panettone-french-toast-alt.jpg	0	\N	f	f
-146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato purÈe.	\N	\N	24	7	3	6	t	french-bread-pizza.jpg	0	\N	f	f
+146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato pur√©e.	\N	\N	24	7	3	6	t	french-bread-pizza.jpg	0	\N	f	f
 147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	0	0	5	1	t	hummus.jpg	6	\N	f	f
 148	Muhammara	\N	\N	\N	0	0	8	4	t	muhammara.jpg	0	\N	f	f
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	16	15	8	2	t	irish-champ.jpg	0	\N	f	f
@@ -140,7 +140,7 @@
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	Too many ingredients.	\N	6	8	8	4	t	mexican-tacos.jpg	0	\N	f	f
 161	Pork on Lemon Grass Sticks	The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	8	8	6	4	t	bbq-pork-kebab.jpg	0	\N	f	f
 162	Rhubarb and Ginger Trifles	\N	\N	\N	64	0	4	4	t	rhubarb-ginger-trifles.jpg	0	\N	f	f
-163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/Ωoz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	64	12	8	12	t	portuguese-custard-tarts.jpg	0	\N	f	f
+163	Portuguese Custard Tarts	Fresh custard can be quickly made in the microwave. Mix together 25gl/1oz custard powder, 15g/¬Ωoz sugar and 17oz5ml/6 fl oz milk in a small bowl and microwave for 1 minute. Stir and microwave for 1 further 20-30 seconds to thicken.	\N	\N	64	12	8	12	t	portuguese-custard-tarts.jpg	0	\N	f	f
 164	Mexican Tortas	Sliced chicken carved from the rotisserie is another popular Mexican torta filler.	\N	\N	14	0	6	4	t	mexican-tortas.jpg	0	\N	f	f
 165	Lemon and Parmesan Capellini	\N	\N	\N	12	10	5	2	t	lemon-parmesan-capellini.jpg	0	\N	f	f
 166	Crispy Cabbage	\N	\N	\N	16	3	3	4	t	crispy-cabbage.jpg	0	\N	f	f
@@ -149,7 +149,7 @@
 170	Broccoli with Soy Sauce and Sesame Seeds	\N	\N	\N	16	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	64	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
-173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11ºoz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	burgers-relish.jpg	0	\N	f	f
+173	Home-Made Burgers with Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¬ºoz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	burgers-relish.jpg	0	\N	f	f
 174	Pan-Fried Gammon with Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	fried-gammon.jpg	0	\N	f	f
 175	Chocolate and Prune Refrigerator Bars	\N	\N	\N	32	120	5	12	t	chocolate-prune-refrigerator-bars.jpg	0	\N	f	f
 176	Stewed Okra with Tomatoes	\N	\N	\N	16	25	2	4	t	okra-fries.jpg	0	\N	f	f
@@ -167,7 +167,7 @@
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 190	Fusilli with Sausage	\N	\N	\N	6	15	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
-191	Cro˚tons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
+191	Cro√ªtons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
 192	Eliche with Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	12	20	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	date-snickers.jpg	0	\N	f	f
 194	Garganelli Pasta with Asparagus and Cream	\N	\N	\N	2	15	5	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
@@ -198,14 +198,14 @@
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	hummus-vegetables.jpg	0	\N	f	f
 253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use.	\N	\N	32	120	10	5	t	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
 254	Maple-Pecan Dip	\N	\N	\N	0	0	10	1	t	hummus.jpg	6	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	f	f
-255	Cashew Mayo	There are so many options for expanding on this ñ blend in herbs for a creamy herb dressing, or blend in a ìmeatierî vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	f	f
-256	Anti-Aging Pesto	To make a thicker pesto, add Ω-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	\N	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
+255	Cashew Mayo	There are so many options for expanding on this ‚Äì blend in herbs for a creamy herb dressing, or blend in a ‚Äúmeatier‚Äù vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	f	f
+256	Anti-Aging Pesto	To make a thicker pesto, add ¬Ω-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	\N	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice.	\N	\N	20	40	5	4	t	gluten-free-risotto.jpg	0	https://www.glutenfreepalate.com/gluten-free-risotto/	f	f
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	2	2	t	korean-eggs-rice.jpg	0	\N	f	f
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	4	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
-262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so itís easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	f	f
+262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it‚Äôs easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	f	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
 264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	\N	f	f
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	\N	0	\N	f	f
@@ -235,7 +235,7 @@
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	8	10	2	2	t	peanut-chicken.jpg	0	\N	f	f
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version.	\N	\N	64	60	5	4	t	\N	0	https://www.glutenfreepalate.com/crockpot-christmas-crack/	f	f
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
-324	CrËme FraÓche	\N	\N	\N	0	0	5	1	t	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	f	f
+324	Cr√®me Fra√Æche	\N	\N	\N	0	0	5	1	t	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	f	f
 325	Anti-Allergy Salad	\N	\N	\N	20	10	5	2	t	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f	f
 326	Sticky Teriyaki Aubergine	\N	\N	\N	12	15	5	2	t	teriyaki-aubergine.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 359	Healthy Chocolate Smoothie	\N	\N	\N	128	0	5	2	t	healthy-chocolate-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/	f	f
@@ -258,7 +258,7 @@
 376	Plain Cauliflower Rice	Suitable for freezing.	\N	\N	0	5	5	2	t	cauliflower-rice.jpg	6	https://www.easypeasyfoodie.com/plain-cauliflower-rice/#recipe	f	f
 377	Chicken Fajita Sheet Pan	\N	\N	\N	8	25	10	4	t	chicken-fajita-sheet-pan.jpg	0	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	f	f
 378	Creamy Fennel Kale Chicken Salad	\N	\N	\N	8	25	5	4	t	\N	0	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	f	f
-379	Easy SauteÈd Zucchini	\N	\N	\N	16	8	2	2	t	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
+379	Easy Saute√©d Zucchini	\N	\N	\N	16	8	2	2	t	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	32	30	15	1	t	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	8	15	5	2	t	zucchini-linguine.jpg	0	https://www.healthline.com/recipes/zucchini-noodles-pesto	f	f
 382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	8	120	9	4	t	beef-stew.jpg	0	\N	f	f
@@ -267,9 +267,9 @@
 385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	5	2	t	sticky-kickin-wings.jpg	0	\N	f	f
 386	Chicken with Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	\N	0	\N	f	f
 387	Marinated Mediterranean Olives	\N	\N	\N	48	0	5	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
-388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldnít be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
+388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldn‚Äôt be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
 389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	first-watch-blte.jpg	0	\N	f	f
-390	Maple-Mustard-Glazed Pan-Seared Pork Chops	From The Food Lab by J. Kenji LÛpez-Alt	\N	\N	4	15	5	2	t	\N	0	\N	f	f
+390	Maple-Mustard-Glazed Pan-Seared Pork Chops	From The Food Lab by J. Kenji L√≥pez-Alt	\N	\N	4	15	5	2	t	\N	0	\N	f	f
 391	Low Carb Cauliflower Fried Rice	\N	\N	\N	6	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
 392	Roasted Chickpeas	Let the chickpeas cool completely on the baking sheet after roasting. They will continue to crisp up as they cool. Try sweet styles (maple syrup and cinnamon), spicy versions (chili powder or cayenne), earthy-herbaceous blends (rosemary or thyme), or cheesy twists (nutritional yeast or Parmesan).  Enjoy roasted chickpeas as a crunchy snack, a salad or soup topper, in grain bowls, or as part of a party mix with nuts, pretzels, and dried fruit. 	\N	\N	32	35	10	4	t	\N	0	https://insanelygoodrecipes.com/roasted-chickpeas/	t	f
 393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	\N	f	f
@@ -303,7 +303,7 @@
 421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-lemon-dijon-dip.jpg	9	\N	t	t
 422	Lemon Energy Bites	\N	\N	\N	16	0	5	12	t	lemon-energy-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 423	Steamed Kale	\N	\N	\N	16	5	5	4	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they donít overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
+424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don‚Äôt overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	\N	f	f
 426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	honey-mustard-dressing.jpg	6	\N	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
@@ -356,7 +356,7 @@
 539	Hot Oatmeal	\N	\N	\N	6	5	5	1	t	old-fashioned-oatmeal.jpg	0	\N	f	f
 540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	4	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 541	Shrimp Fried Rice	\N	\N	\N	8	15	10	4	t	chicken-fried-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-542	SautÈed Chicken & Garlic Cauliflower Mash	\N	\N	\N	8	10	5	2	t	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+542	Saut√©ed Chicken & Garlic Cauliflower Mash	\N	\N	\N	8	10	5	2	t	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -382,7 +382,7 @@
 565	Rainbow Stir-Fry Veggies	\N	\N	\N	8	25	10	4	t	vegetable-stir-fry.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 566	Tuna Salad	\N	\N	\N	20	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 567	Turkey & Walnut Salad	\N	\N	\N	28	40	10	4	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-568	Ginger Baked Salmon with SautÈed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+568	Ginger Baked Salmon with Saut√©ed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 569	Spinach & Strawberry Salad	\N	\N	\N	20	0	10	3	t	spinach-strawberry-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 570	Cut Watermelon	\N	\N	\N	16	0	5	4	t	watermelon.jpg	0	\N	f	f
 571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -473,7 +473,7 @@
 657	Blue Power Boost Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 658	Green Power Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 659	Black Bean and Chorizo Breakfast Skillet	\N	\N	\N	12	35	5	1	t	\N	0	\N	f	f
-660	Quick and Easy Breakfast Burrito	If you like things a little spicier, add a few fresh or pickled jalapeÒos.	\N	\N	2	15	10	1	t	\N	0	\N	f	f
+660	Quick and Easy Breakfast Burrito	If you like things a little spicier, add a few fresh or pickled jalape√±os.	\N	\N	2	15	10	1	t	\N	0	\N	f	f
 661	Bourbon Caramel Sauce	\N	\N	\N	0	15	5	1	t	\N	6	\N	t	f
 662	Creamy Avocado-Lime Dressing	\N	\N	\N	0	0	5	12	t	\N	9	\N	t	f
 663	Arugula and Prosciutto Salad	\N	\N	\N	20	0	5	2	t	\N	0	\N	f	f
@@ -502,7 +502,7 @@
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	teriyaki-sauce.jpg	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
 721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
-722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3 or 4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
+722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3-4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	creamy-polenta.jpg	0	\N	f	f
 725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	f
@@ -515,12 +515,12 @@
 732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
 733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	\N	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
-735	Zucchini Pesto Pasta	For added protein, you can add a cooked and sliced chicken breast, or cooked and diced bacon strips.	\N	\N	4	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
+735	Zucchini Pesto Pasta w/ Bacon	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
 736	Pea and Prosciutto Risotto	\N	Risotto base is not good.	\N	16	25	5	2	t	\N	0	\N	f	f
 737	Risotto Base	If you can;t find Arborio rice, use Carnaroli rice instead.	Risotto base is not good.	\N	0	25	5	1	t	\N	6	\N	t	f
 738	Fire-Roasted Red Pepper Dip	\N	Requires weird equipment.	\N	0	15	35	2	t	\N	6	\N	t	f
 739	Soba Noodle Salad	You can substitute the bok choy for cabbage.	\N	\N	20	0	10	2	t	\N	0	\N	f	f
-740	Classic-ish NiÁoise Salad	To make the salad more substantial, add 1 cup spinach, and 1 cup cooked penne noodles.	\N	\N	16	5	10	2	t	\N	0	\N	f	f
+740	Classic-ish Ni√ßoise Salad	To make the salad more substantial, add 1 cup spinach, and 1 cup cooked penne noodles.	\N	\N	16	5	10	2	t	\N	0	\N	f	f
 741	Roasted Vegetable and Goat Cheese Salad	\N	\N	\N	16	0	15	2	t	\N	0	\N	f	f
 742	Chicken Parmesan	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
 743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
@@ -558,7 +558,7 @@
 839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	\N	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
 840	Roasted Zucchini	\N	\N	\N	0	20	5	4	t	zucchini.jpg	6	From the First Watch cookbook. 	t	f
 841	First Watch Granola	\N	\N	\N	32	0	0	8	t	granola.jpg	6	From the First Watch cookbook. 	t	f
-842	Ham and GruyËre Omelet	\N	\N	\N	4	10	5	1	t	ham-cheese-omlet.jpg	0	From the First Watch cookbook. 	f	f
+842	Ham and Gruy√®re Omelet	\N	\N	\N	4	10	5	1	t	ham-cheese-omlet.jpg	0	From the First Watch cookbook. 	f	f
 843	Whipped Eggs	This preparation works great for omelets and frittatas. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product.	\N	\N	0	0	5	1	t	whipped-eggs.jpg	0	\N	t	f
 844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
@@ -609,11 +609,11 @@
 956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	chicken-fried-rice.jpg	0	\N	f	f
 957	Chicken Noodle Soup	\N	\N	\N	8	45	10	4	t	\N	0	\N	f	f
 958	Fire-Roasted Tomato Soup	If you don't have a grill, you can roast the tomatoes in the oven. Preheat the oven to 400F. Halve the tomatoes lengthwise, drizzle them with olive oil, and place them cut-side up on a parchment-lined sheet pan. Bake them, without flipping over, for 30 to 35 minutes. Transfer to a bowl, cover, and peel as directed.	\N	\N	8	45	20	4	t	\N	0	\N	f	f
-959	Zucchini Noodles	If sautÈing a large batch, cook the zucchini noodles in batches to avoid overcrowding. This helps them cook evenly and prevents them from becoming too soft. After spiraling, lightly salt the zucchini noodles and let them sit for 10-15 minutes. This helps draw out excess moisture. Then, gently pat them dry with a paper towel or clean kitchen cloth. You donít need to peel the zucchini. The skin is edible, adds color, and contains nutrients. If you prefer a smoother texture, you can peel it, but itís optional. A spiralizer works best for long, spaghetti-like noodles. However, you can also use a julienne peeler for thinner strands or a vegetable peeler to create wider ribbon-like noodles. Store your zoodles uncooked in an airtight container in the fridge for up to 3 days.  For the best texture, cook them just before serving.	\N	\N	0	0	5	1	t	zucchini-linguine.jpg	6	https://www.mamaknowsglutenfree.com/how-to-make-zucchini-noodles/	t	f
+959	Zucchini Noodles	If saut√©ing a large batch, cook the zucchini noodles in batches to avoid overcrowding. This helps them cook evenly and prevents them from becoming too soft. After spiraling, lightly salt the zucchini noodles and let them sit for 10-15 minutes. This helps draw out excess moisture. Then, gently pat them dry with a paper towel or clean kitchen cloth. You don‚Äôt need to peel the zucchini. The skin is edible, adds color, and contains nutrients. If you prefer a smoother texture, you can peel it, but it‚Äôs optional. A spiralizer works best for long, spaghetti-like noodles. However, you can also use a julienne peeler for thinner strands or a vegetable peeler to create wider ribbon-like noodles. Store your zoodles uncooked in an airtight container in the fridge for up to 3 days.  For the best texture, cook them just before serving.	\N	\N	0	0	5	1	t	zucchini-linguine.jpg	6	https://www.mamaknowsglutenfree.com/how-to-make-zucchini-noodles/	t	f
 960	Cranberry Jalapeno Cream Cheese Dip	\N	\N	\N	16	0	0	2	t	\N	0	https://sweetbeginningsblog.com/cranberry-jalapeno-cream-cheese-dip/#recipe	f	f
 961	Halloumi and Grape Salad	\N	\N	\N	16	2	2	4	t	\N	0	\N	f	f
 962	Warm Broad Bean and Feta Salad	\N	\N	\N	20	5	2	4	t	\N	0	\N	f	f
-963	Caesar Salad	Do not boil the eggs for longer than 1 minute; the whites should be milky, while the yolks remain raw. If you prefer to avoid lightly cooked eggs, substitute quartered hard-boiled eggs. For a tangier dressing, mix 2 tbsp white wine vinegar, 1 tbsp Worcestershire sauce, Ω tsp mustard powder, 1 tsp sugar, and and pepper in a screw-top jar, then add the oil and shake well.	\N	\N	20	2	10	6	t	\N	0	\N	f	f
+963	Caesar Salad	Do not boil the eggs for longer than 1 minute; the whites should be milky, while the yolks remain raw. If you prefer to avoid lightly cooked eggs, substitute quartered hard-boiled eggs. For a tangier dressing, mix 2 tbsp white wine vinegar, 1 tbsp Worcestershire sauce, ¬Ω tsp mustard powder, 1 tsp sugar, and and pepper in a screw-top jar, then add the oil and shake well.	\N	\N	20	2	10	6	t	\N	0	\N	f	f
 964	Chewy Flapjack Bars	Allow the baking parchment to hand over the edges of the tin; this makes the baked bars easier to remove.	\N	\N	32	20	8	12	t	\N	0	\N	f	f
 965	Giant Triple Chocolate Cookies	\N	\N	\N	64	15	10	12	t	\N	0	\N	f	f
 966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	10	5	2	t	\N	0	\N	t	f
@@ -630,3 +630,5 @@
 977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	cooled-rice.jpg	6	\N	t	f
 978	Spinach and Egg Stir Fry	\N	\N	\N	16	10	5	2	t	\N	0	https://omnivorescookbook.com/spinach-and-egg-stir-fry	f	f
 979	Za'atar	Middle Eastern Spice Mixture	\N	\N	0	5	5	10	t	\N	7	https://www.thespruceeats.com/zaatar-middle-eastern-spice-mixture-2355844	t	f
+980	Zucchini Pesto Pasta w/ Chicken	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
+981	Oatmeal Protein Bars	This recipe makes 8 square bars in a 9‚Ä≥ loaf pan. If you‚Äôd like to double the recipe, you can make a double recipe in a 9 x 9‚Ä≥ square pan. Do not try this recipe with any other type of date! Deglet noor and others do not work. Make sure your dates are fresh and pliable - if they‚Äôre dried out, soak in warm water for 10 minutes before using.	\N	\N	32	0	15	2	t	\N	0	https://www.acouplecooks.com/oatmeal-protein-bars	f	f

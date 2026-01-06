@@ -80,6 +80,9 @@ public class Ingredient
     [Display(Name = "Notes")]
     public string? Notes { get; set; } = null;
 
+    [Display(Name = "Source")]
+    public string? Link { get; set; } = null;
+
     /// <summary>
     /// When was this ingredient last checked, for debug user.
     /// </summary>
