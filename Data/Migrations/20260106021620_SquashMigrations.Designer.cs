@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260103172407_SquashMigrations")]
+    [Migration("20260106021620_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -188,8 +188,8 @@ namespace Data.Migrations
                     b.Property<long>("Allergens")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Category")
-                        .HasColumnType("integer");
+                    b.Property<long>("Category")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("DefaultMeasure")
                         .HasColumnType("integer");
@@ -208,6 +208,10 @@ namespace Data.Migrations
 
                     b.Property<double>("GramsPerServing")
                         .HasColumnType("double precision");
+
+                    b.Property<string>("Group")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateOnly>("LastUpdated")
                         .HasColumnType("date");

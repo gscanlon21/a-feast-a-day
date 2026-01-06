@@ -46,7 +46,7 @@
 65	Hard Boiled Eggs	\N	\N	\N	17	10	2	1	t	hardboiled-eggs.jpg	0	\N	t	f
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	frittata-base.jpg	6	\N	t	f
 67	French Toast	\N	\N	\N	6	15	5	2	t	french-toast.jpg	0	\N	f	f
-68	Cheese and Crackers	\N	\N	\N	18	0	5	1	t	cheese-meat-crackers.jpg	0	\N	f	f
+68	Cheese and Crackers	\N	\N	\N	36	0	5	1	t	cheese-meat-crackers.jpg	0	\N	f	f
 69	Chopped Eggs and Onions	\N	\N	\N	20	12	3	4	t	egg-salad-alt.jpg	0	\N	f	f
 70	Guacamole	Serve with Tortilla Chips.	Has too many ingredients.	\N	0	0	5	1	t	guacamole.jpg	6	\N	f	f
 71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	guacamole-chip.jpg	0	\N	f	f
@@ -159,10 +159,10 @@
 180	Crock Pot Sausage and Peppers	\N	\N	\N	8	300	20	8	t	grilled-sausages.jpg	0	https://iowagirleats.com/crock-pot-sausage-and-peppers	f	f
 181	5 Ingredient Sloppy Joes	\N	\N	\N	12	10	5	4	t	sloppy-joes.jpg	0	https://www.lavenderandmacarons.com/easy-5-ingredient-sloppy-joes/	f	f
 182	Beef and Noodles	\N	\N	\N	8	20	10	4	t	beef-noodles.jpg	0	https://www.saltandlavender.com/easy-beef-and-noodles/	f	f
-183	Chestnut Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	5	10	2	t	sausage-carbonara.jpg	0	\N	f	f
+183	Chestnut Carbonara	Save the egg whites for making meringues another day.	\N	\N	12	5	10	2	t	sausage-carbonara.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 184	Pasta with Fresh Pesto	\N	\N	\N	4	12	4	2	t	pasta-pesto.jpg	0	\N	f	f
 185	Pasta with Spring Vegetables	\N	\N	\N	2	15	5	4	t	pasta-vegetables.jpg	0	\N	f	f
-186	The Kickin' Chicken Sandwich	For a little extra kick, top the chicken with a few pickled jalapeños.	\N	\N	12	15	10	1	t	grilled-chicken-sandwich.jpg	0	\N	f	f
+186	The Kickin' Chicken Sandwich	\N	\N	\N	12	15	10	2	t	grilled-chicken-sandwich.jpg	0	\N	f	f
 187	Oatmeal Pancakes with Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
@@ -226,7 +226,7 @@
 312	Black Bean Sauce	\N	\N	\N	0	10	5	1	t	black-bean-sauce.jpg	6	https://www.food.com/recipe/mexican-black-bean-sauce-280411	t	f
 313	Hoisin Bok Choy Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	5	2	t	hoisin-bok-choy-rice.jpg	0	\N	f	f
 314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	12	15	5	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
-315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	20	6	4	t	baked-saffron-rice.jpg	0	\N	f	f
+315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	16	20	6	4	t	baked-saffron-rice.jpg	0	\N	f	f
 316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	3	2	t	black-tahini-noodles.jpg	0	\N	f	f
 317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	10	4	t	italian-baked-rice.jpg	0	\N	f	f
 318	Ham & Egg Curried Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	0	2	t	ham-egg-curried-noodles.jpg	0	\N	f	f
@@ -258,7 +258,7 @@
 376	Plain Cauliflower Rice	Suitable for freezing.	\N	\N	0	5	5	2	t	cauliflower-rice.jpg	6	https://www.easypeasyfoodie.com/plain-cauliflower-rice/#recipe	f	f
 377	Chicken Fajita Sheet Pan	\N	\N	\N	8	25	10	4	t	chicken-fajita-sheet-pan.jpg	0	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	f	f
 378	Creamy Fennel Kale Chicken Salad	\N	\N	\N	8	25	5	4	t	\N	0	https://drhyman.com/blogs/content/creamy-fennel-kale-chicken-salad	f	f
-379	Easy Sauteéd Zucchini	\N	\N	\N	16	8	2	1	t	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
+379	Easy Sauteéd Zucchini	\N	\N	\N	16	8	2	2	t	zucchini.jpg	0	https://simply-delicious-food.com/easy-sauteed-zucchini/	f	f
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	32	30	15	1	t	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
 381	Zucchini Noodles with Pesto Chicken	\N	\N	\N	8	15	5	2	t	zucchini-linguine.jpg	0	https://www.healthline.com/recipes/zucchini-noodles-pesto	f	f
 382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	8	120	9	4	t	beef-stew.jpg	0	\N	f	f
@@ -291,7 +291,7 @@
 409	Pumpkin Bread	\N	\N	\N	64	45	15	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 410	Cauliflower Mash	\N	\N	\N	16	15	5	2	t	cauliflower-rice.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	2	2	t	cauliflower-rice.jpg	6	\N	t	f
-412	Cauliflower Rice (Plain)	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	5	5	2	t	cauliflower-rice.jpg	0	\N	f	f
+412	Plain Cauliflower Rice	\N	\N	\N	16	5	5	2	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 413	Pumpkin Pie Spice Chia Seed Pudding	\N	\N	\N	64	0	120	4	t	pumpkin-pudding.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	\N	t	f
 415	Strawberry, Mint and Cucumber Spa Water	\N	\N	\N	128	0	5	1	t	\N	12	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -497,7 +497,7 @@
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	vegetable-stir-fry.jpg	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
 716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	refried-beans.jpg	0	\N	t	f
-717	Red Beans and Rice	A bay leaf and a few sprigs of fresh thyme cooked with the rice will add a lot of extra flavor to this dish.	\N	\N	4	35	5	2	t	\N	0	\N	f	f
+717	Red Beans and Rice	\N	\N	\N	4	35	5	2	t	\N	0	\N	f	f
 718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	teriyaki-sauce.jpg	6	\N	t	f
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	teriyaki-sauce.jpg	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f

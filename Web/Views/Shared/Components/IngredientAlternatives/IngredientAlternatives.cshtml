@@ -2,22 +2,22 @@
 @using Core.Models.Recipe
 @using Core.Models.User
 
-<div class="row gy-4">
-    @if (Model.PartialIngredients.Any())
-    {
-        <div class="col-12">
-            <h5>@Html.DisplayNameFor(_ => Model.PartialIngredients)</h5>
-            <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.PartialIngredients' />
-        </div>
-    }
+<div @* no-nested-rows *@>
+    <div class="row gy-4">
+        @if (Model.PartialIngredients.Any())
+        {
+            <div class="col-12">
+                <h5>@Html.DisplayNameFor(_ => Model.PartialIngredients)</h5>
+                <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.PartialIngredients' />
+            </div>
+        }
 
-    @if (Model.AlternativeIngredients.Any())
-    {
-        <div class="col-12">
-            <h5>@Html.DisplayNameFor(_ => Model.AlternativeIngredients)</h5>
-            <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.AlternativeIngredients' />
-        </div>
-    }
+        @if (Model.AlternativeIngredients.Any())
+        {
+            <div class="col-12">
+                <h5>@Html.DisplayNameFor(_ => Model.AlternativeIngredients)</h5>
+                <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.AlternativeIngredients' />
+            </div>
+        }
+    </div>
 </div>
-
-

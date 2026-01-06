@@ -185,8 +185,8 @@ namespace Data.Migrations
                     b.Property<long>("Allergens")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Category")
-                        .HasColumnType("integer");
+                    b.Property<long>("Category")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("DefaultMeasure")
                         .HasColumnType("integer");

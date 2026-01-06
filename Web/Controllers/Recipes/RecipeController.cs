@@ -276,6 +276,8 @@ public class RecipeController : ViewController
             var scale = serving.Weight / (double)context.User.UserSections.Sum(us => us.Weight);
 
             // This may return more than 1 recipe if there are prep recipes.
+            // TODO? Pick recipes that have similar ingredients as other recipes.
+            // I don't think so because that would mess with nutrient selections.
             var newRecipes = await new UserQueryBuilder(user, feastRecipe.Section)
                 .WithEquipment(user.Equipment)
                 .WithNutrients(NutrientTargetsContextBuilder
