@@ -206,7 +206,7 @@
                         {
                             <div class="col-auto">
                                 <label asp-for="Recipe.RecipeIngredients[id].Order" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Order)</label>
-                                <input type="number" asp-for="Recipe.RecipeIngredients[id].Order" value="@id" class="d-block my-1" autocomplete="off" style="width:5ch;" />
+                                <input type="number" asp-for="Recipe.RecipeIngredients[id].Order" value="@(id + 1)" class="d-block my-1" autocomplete="off" style="width:5ch;" />
                             </div>
                         }
                         else

@@ -171,23 +171,8 @@ public class RecipeController : ViewController
             existingRecipe.AdjustableServings = recipe.AdjustableServings;
             existingRecipe.KeepIngredientOrder = recipe.KeepIngredientOrder;
             existingRecipe.Instructions = recipe.Instructions.Where(i => !i.Hide).ToList();
-
-            List<RecipeIngredient> recipeIngredients = [];
-            // Swap recipe ingredients, so that a user's ignore/swap preferences persist.
-            foreach (var recipeIngredient in recipe.RecipeIngredients.Where(i => !i.Hide)
-                .GroupJoin(existingRecipe.RecipeIngredients, o => o.Id, i => i.Id, (o, i) => (New: o, Old: i.SingleOrDefault()))
-                .GroupJoin(recipe.RecipeIngredients.Where(i => !i.Hide), // Try to match ingredients that moved around by ids.
-                    o => o.New.IngredientId ?? o.New.IngredientRecipeId, i => i.IngredientId ?? i.IngredientRecipeId,
-                    (o, i) => (o.Old, o.New, Swap: i.SingleOrDefault(x => x.Id == o.Old?.Id) ?? i.OnlyOrDefault())))
-            {
-                recipeIngredients.Add(new RecipeIngredient(existingRecipe, recipeIngredient.New)
-                {
-                    // Give it a new id if we can't match it in the old list.
-                    Id = recipeIngredient.Swap?.Id ?? 0,
-                });
-            }
-
-            existingRecipe.RecipeIngredients = recipeIngredients;
+            // Don't swap the order of ingredients by matching ids b/c the user can adjust the order.
+            existingRecipe.RecipeIngredients = recipe.RecipeIngredients.Where(i => !i.Hide).ToList();
 
             await _context.SaveChangesAsync();
             TempData[TempData_User.SuccessMessage] = "Your recipes have been updated!";
