@@ -51,11 +51,13 @@ public class UserNewsletterDto
 
     public DateOnly? LastActive { get; init; }
 
+    public Verbosity Verbosity { get; init; }
+
     public DayOfWeek SendDay { get; init; }
 
-    public int? MaxIngredients { get; init; }
+    public int FontSizeAdjust { get; init; }
 
-    public Verbosity Verbosity { get; init; }
+    public int? MaxIngredients { get; init; }
 
     public int FootnoteCountTop { get; init; }
 
@@ -63,15 +65,11 @@ public class UserNewsletterDto
 
     public IngredientOrder IngredientOrder { get; set; }
 
-    public bool IsDemoUser => Features.HasFlag(Features.Demo);
-
     public IList<Allergens> AllergenList => EnumExtensions.GetSingleValues<Allergens>().Where(a => Allergens.HasFlag(a)).ToList();
 
     public Allergens AntiAllergens => EnumExtensions.GetSingleValues(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);
 
     public bool IsAlmostInactive => LastActive.HasValue && LastActive.Value < DateHelpers.Today.AddMonths(-1 * (UserConsts.DisableAfterXMonths - 1));
     
-    public bool IsNewlyCreated => CreatedDate > DateHelpers.Today.AddDays(-7);
-
-    public int FontSizeAdjust { get; init; }
+    public bool IsNewlyCreated => CreatedDate >= DateHelpers.Today.AddDays(-7);
 }
