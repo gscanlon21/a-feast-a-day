@@ -38,12 +38,12 @@
 56	Microwave Macaroni and Cheese in a Mug	\N	Doesn't scale well.	\N	6	5	5	1	t	mac-n-cheese-mug.jpg	0	https://www.biggerbolderbaking.com/microwave-macaroni-and-cheese/	f	f
 57	Flying Saucers	\N	\N	\N	14	5	5	4	t	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/flying-saucers/	f	f
 58	Fruity Peanut Butter Pitas	\N	\N	\N	22	0	5	2	t	fruity-peanut-butter-pitas.jpg	0	https://www.tasteofhome.com/recipes/fruity-peanut-butter-pitas/	f	f
-59	Popcorn	\N	\N	\N	16	5	0	1	t	popcorn.jpg	0	\N	f	f
+59	Popcorn	\N	\N	\N	32	5	0	1	t	popcorn.jpg	0	\N	f	f
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	chips-salsa-alt.jpg	0	\N	f	f
 62	Edamame & Veggie Rice Bowl	\N	\N	\N	12	5	5	2	t	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	f	f
 63	Grilled Sausage-Basil Pizzas	\N	\N	\N	4	15	15	4	t	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
 64	French Bread Pizza	\N	\N	\N	4	15	5	4	t	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
-65	Hard Boiled Eggs	\N	\N	\N	17	10	2	1	t	hardboiled-eggs.jpg	0	\N	t	f
+65	Hard Boiled Eggs	\N	\N	\N	16	10	2	1	t	hardboiled-eggs.jpg	0	\N	t	f
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	frittata-base.jpg	6	\N	t	f
 67	French Toast	\N	\N	\N	6	15	5	2	t	french-toast.jpg	0	\N	f	f
 68	Cheese and Crackers	\N	\N	\N	36	0	5	1	t	cheese-meat-crackers.jpg	0	\N	f	f
@@ -133,10 +133,10 @@
 153	Spicy Potato and Olive Salad	\N	\N	\N	16	10	5	4	t	potato-olive-salad.jpg	0	\N	f	f
 154	Cinnamon Toast	Serve with fresh fruit, such as peaches, plums, nectarines or mango.	\N	\N	64	3	2	2	t	cinnamon-toast.jpg	0	\N	f	f
 155	Warm Pancakes with Caramelized Pears	This tastes just as good with slices nectarines instead of pears.	\N	\N	64	5	5	4	t	pancakes-pears.jpg	0	\N	f	f
-156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	banana-ice-cream.jpg	0	\N	f	f
+156	Baked Banana with Ice Cream	If you are having a barbecue, cook the bananas on the grill instead.	\N	\N	32	22	5	4	t	banana-ice-cream.jpg	0	\N	f	t
 157	Fresh Fruit Salad	The easiest way to remove the pith and peel from an orange is to cut a thin slice from each end of the orange first, using a sharp knife. It will then be easier to cut off the remaining peel and pith.	\N	\N	16	0	6	6	t	fruit-skewers.jpg	0	\N	f	f
 158	Dried Fruit Salad	\N	\N	\N	16	12	6	4	t	fruit-skewers.jpg	0	\N	f	f
-159	Clementines with Star Anise	\N	\N	\N	8	12	6	6	t	clementines-star-anise.jpg	0	\N	f	f
+159	Clementines with Star Anise	\N	\N	\N	16	12	6	6	t	clementines-star-anise.jpg	0	\N	f	f
 160	Mexican Tacos	Stir-fried strips of turkey, chicken or pork are excellent instead of the minced beef or turkey.	Too many ingredients.	\N	6	8	8	4	t	mexican-tacos.jpg	0	\N	f	f
 161	Pork on Lemon Grass Sticks	The mixture will be enough for 12 lemon grass sticks if you use it sparingly.	\N	\N	8	8	6	4	t	bbq-pork-kebab.jpg	0	\N	f	f
 162	Rhubarb and Ginger Trifles	\N	\N	\N	64	0	4	4	t	rhubarb-ginger-trifles.jpg	0	\N	f	f
@@ -313,7 +313,7 @@
 431	Glow Juice	\N	Requires a masticating juicer.	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
-466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	17	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
+466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	32	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
 467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	1	1	t	\N	0	\N	f	f
 468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	5	1	t	rosemary-lemon-tea.jpg	0	\N	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	20	0	10	4	t	tuna-salad-celery-boats.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -394,7 +394,7 @@
 577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 579	Fermented Cabbage	\N	Takes too long.	\N	0	0	60	2	t	\N	6	\N	t	f
-580	Blueberry Chicken Salad	\N	\N	\N	6	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+580	Blueberry Chicken Salad	\N	\N	\N	12	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 581	Summer Watermelon Salad	\N	\N	\N	20	0	10	2	t	watermelon-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 582	Sweet Potato & Arugula Salad	\N	Too many ingredients.	\N	20	40	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 583	Salmon Cakes	\N	Too complicated. Too many prep recipes.	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -459,7 +459,7 @@
 643	Root Cause Clense Smoothie	\N	Too many ingredients.	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 644	Beef Strips with Orange and Ginger	Marinating the meat for longer will make it more tender, as the marinade will break down and tenderize the flesh. Just before serving, toss the stir-fry with 5ml/1 tsp sesame oil. If you haven't any sesame oil, use flavored chili oil, or a sut oil, such as hazelnut or walnut.	\N	\N	8	5	15	2	t	\N	0	\N	f	f
 645	Escalopes of Veal with Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	veal-cream-sauce.jpg	0	\N	f	f
-646	Pepper Steaks with Chive Butter	\N	\N	\N	8	12	4	4	t	\N	0	\N	f	f
+646	Pepper Steaks with Chive Butter	\N	What is Jellied Beef Stock?	\N	8	12	4	4	t	\N	0	\N	f	f
 647	Slow Cooker Lamb Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 648	A Very Berry Pie	\N	\N	\N	64	20	30	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 649	Seven Layer Russian Shuba Salad	\N	\N	\N	16	80	20	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -512,7 +512,7 @@
 729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	roasted-broccoli.jpg	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
-732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	\N	0	\N	f	f
+732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	irish-champ.jpg	0	\N	f	f
 733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	\N	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
 735	Zucchini Pesto Pasta w/ Bacon	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
@@ -616,7 +616,7 @@
 963	Caesar Salad	Do not boil the eggs for longer than 1 minute; the whites should be milky, while the yolks remain raw. If you prefer to avoid lightly cooked eggs, substitute quartered hard-boiled eggs. For a tangier dressing, mix 2 tbsp white wine vinegar, 1 tbsp Worcestershire sauce, ½ tsp mustard powder, 1 tsp sugar, and and pepper in a screw-top jar, then add the oil and shake well.	\N	\N	20	2	10	6	t	\N	0	\N	f	f
 964	Chewy Flapjack Bars	Allow the baking parchment to hand over the edges of the tin; this makes the baked bars easier to remove.	\N	\N	32	20	8	12	t	\N	0	\N	f	f
 965	Giant Triple Chocolate Cookies	\N	\N	\N	64	15	10	12	t	\N	0	\N	f	f
-966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	10	5	2	t	\N	0	\N	t	f
+966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	10	5	2	t	baked-chicken-breast.jpg	0	\N	t	f
 967	Cool Chocolate Float	\N	\N	\N	64	2	6	2	t	\N	0	\N	f	f
 968	Tagliatelle with Tomatoes and Olives	It is essential to buy Parmesan in a piece for this dish. Find a good source - fresh Parmesan should not be unacceptably hard - and shave or grate it yourself. The flavour will be much more intense than that of a ready-grated product.	\N	\N	8	10	5	4	t	tagliatelle-tomatoes-olives.jpg	0	\N	f	f
 969	Pasta with Sun-Dried Tomatoes	If you find the presentation too fussy, you can toss the tomato and raddicchio mixture with the pasta in a large bowl before serving, then sprinkle the spring onions and toasted pine nuts on top.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
@@ -624,11 +624,13 @@
 971	Flamenco Eggs	The chorizo and vegetable mixture mustn't be too dry, so add a little more sherry if necessary.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 972	Chicken Bitki	\N	\N	\N	8	15	10	12	t	\N	0	\N	f	f
 973	Stuffed Chicken in Bacon Coats	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	f
-974	Southern Fried Chicken	To make the mashed potate, cook the potatoes in boiling salted water for about 20 minutes until tender, then drain well. Add a little milk and mash until smooth.	\N	\N	8	25	5	4	t	\N	0	\N	f	f
+974	Southern Fried Chicken	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	t
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	\N	0	\N	t	f
-976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	\N	0	\N	t	f
+976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	baked-chicken-breast.jpg	0	\N	t	f
 977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	cooled-rice.jpg	6	\N	t	f
 978	Spinach and Egg Stir Fry	\N	\N	\N	16	10	5	2	t	\N	0	https://omnivorescookbook.com/spinach-and-egg-stir-fry	f	f
 979	Za'atar	Middle Eastern Spice Mixture	\N	\N	0	5	5	10	t	\N	7	https://www.thespruceeats.com/zaatar-middle-eastern-spice-mixture-2355844	t	f
 980	Zucchini Pesto Pasta w/ Chicken	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
 981	Oatmeal Protein Bars	This recipe makes 8 square bars in a 9″ loaf pan. If you’d like to double the recipe, you can make a double recipe in a 9 x 9″ square pan. Do not try this recipe with any other type of date! Deglet noor and others do not work. Make sure your dates are fresh and pliable - if they’re dried out, soak in warm water for 10 minutes before using.	\N	\N	32	0	15	2	t	\N	0	https://www.acouplecooks.com/oatmeal-protein-bars	f	f
+982	Mashed Potatoes	\N	\N	\N	0	25	5	1	t	irish-champ.jpg	6	\N	t	f
+983	Potato Wedges	Small russet potatoes work best for this recipe, so the wedges aren’t too large or unwieldy. To cut them, slice each potato in half lengthwise, then cut each half into 3 evenly sized wedges.	\N	\N	16	0	0	2	t	\N	0	https://www.onceuponachef.com/recipes/crispy-potato-wedges.html	t	f

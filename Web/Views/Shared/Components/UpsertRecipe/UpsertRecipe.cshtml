@@ -177,7 +177,7 @@
                     <input id="hide-ingredient-input-@id" type="hidden" asp-for="Recipe.RecipeIngredients[id].Hide" autocomplete="off" />
                     <input type="hidden" asp-for="Recipe.RecipeIngredients[id].Id" autocomplete="off" />
 
-                    <div class="row row-gap-1 my-2">
+                    <div class="row gx-3 gx-sm-4 my-2">
                         <div class="col-auto">
                             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].QuantityNumerator)</label>
                             <div class="row gx-2 my-1">
