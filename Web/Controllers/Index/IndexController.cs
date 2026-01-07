@@ -94,7 +94,7 @@ public class IndexController : ViewController
             try
             {
                 // This will set the Id prop on newUser when changes are saved.
-                _context.Add(newUser);
+                _context.Users.Add(newUser);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException e) when (e.InnerException != null && e.InnerException.Message.Contains("duplicate key"))
