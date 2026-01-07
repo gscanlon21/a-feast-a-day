@@ -30,7 +30,6 @@
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	avocado-cakes.jpg	0	\N	f	f
 49	Easy Mini Bagel Pizzas	\N	\N	\N	4	10	10	4	t	mini-bagel-pizzas.jpg	0	https://www.allrecipes.com/recipe/232789/easy-mini-bagel-pizzas/	f	f
 50	Simple 4-Ingredient Egg Salad with Mayo	\N	\N	\N	2	5	10	1	t	egg-salad.jpg	0	https://www.lifeisbutadish.com/momos-egg-salad/	f	f
-51	Grilled Garlic Naan	\N	\N	\N	16	5	5	2	t	grilled-garlic-naan.jpg	0	https://www.tasteofhome.com/recipes/grilled-garlic-naan/	f	f
 52	Avocado, Tomato & Chicken Sandwich	\N	\N	\N	4	5	5	1	t	avocado-tomato-chicken-brushetta.jpg	0	\N	f	f
 53	Old-Fashioned Oatmeal	Combinations to try: 1 soft-boiled egg + 1/3 cup sauteed spinach + 1 teaspoon chili crisp or togarashi seasoning (omit honey and cinnamon from base recipe) 1/4 cup shredded carrot + 1 tablespoon chopped toasted walnuts + 1 tablespoon golden raisins + 1/4 teaspoon cinnamon 1/2 medium banana, sliced + 1 tablespoon peanut butter + 1 teaspoon chia seeds + 1 teaspoon brown sugar 1/4 cup blueberries + 1 tablespoon toasted coconut flakes + 1 tablespoon chopped toasted macadamia nuts + 1 teaspoon honey 1/4 cup sliced peaches + 2 tablespoons cinnamon granola + 2 tablespoons vanilla yogurt	Too complicated.	\N	6	15	0	1	t	old-fashioned-oatmeal.jpg	0	\N	f	f
 54	Sunflower Seeds	\N	\N	\N	16	0	0	1	t	sunflower-seeds.jpg	0	\N	f	f
@@ -246,7 +245,7 @@
 364	Crispy Garlicky Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	5	2	t	peanut-chicken.jpg	0	\N	f	f
 365	Potato & Artichoke Al Forno	From Jamie Oliver's 5 Ingredients	\N	\N	4	80	9	6	t	potato-artichoke-al-forno.jpg	0	\N	f	f
 366	Company Pickle Chunks	Makes 7 pints. - Lolly Wehrli	\N	\N	0	0	0	1	t	\N	0	\N	f	f
-367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	8	2	2	t	egg-fried-rice.jpg	0	\N	f	f
+367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	8	2	2	t	egg-fried-rice.jpg	0	\N	f	f
 368	Rhubarb Compote	\N	\N	\N	0	25	5	1	t	rhubarb-compote.jpg	6	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	f	f
 369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	20	60	9	4	t	cajun-sweet-potatoes.jpg	0	\N	f	f
 370	Chili Jam	\N	\N	\N	0	30	10	1	t	chili-jam.jpg	6	https://www.jamieoliver.com/recipes/dressings-condiments/chilli-jam/	f	f

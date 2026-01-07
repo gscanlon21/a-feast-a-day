@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict EuiaOnQb47u4SojzIAnctVLO3JMXz8Gv9Z4eizdvQewzpPBfRtoXQYgk74D4QTP
+\restrict svEDYLhQmbB4yurtKoIbhjk3t4EVufWvz6GJPt9IGd8fvHfh1R2G6aD1gfNsDZR
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -12852,6 +12852,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8233	6	977	1	1	\N	123	f	\N	1	0	f	t
 1366	4	68	1	1	, sliced	319	f	\N	0	0	f	t
 317	4	41	1	8	\N	145	f	\N	1	0	f	t
+5422	0	367	1	6	\N	144	f	\N	1	3	f	t
+5423	4	367	1	8	, cooked & cooled	328	f	\N	3	3	f	t
+5424	7	367	1	2	\N	829	f	\N	4	3	f	t
+5425	0	367	1	2	\N	187	f	\N	6	3	f	t
+5426	4	367	1	5	\N	862	f	\N	7	3	f	t
 2174	6	98	4	1	, minced, pickled	565	t	\N	2	0	f	t
 2175	0	98	1	1	, whole slices for garnish	565	t	\N	3	0	f	t
 2651	5	139	1	2	\N	387	f	\N	0	0	f	t
@@ -12903,8 +12908,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2800	7	138	1	1	\N	496	f	\N	5	0	f	t
 2801	7	138	1	1	\N	59	f	\N	6	0	f	t
 3825	6	158	2	1	\N	625	f	\N	6	0	f	t
-5422	0	367	1	6	\N	144	f	\N	0	0	f	t
-5423	4	367	1	8	, cooked & cooled	328	f	\N	1	0	f	t
 1454	0	93	1	8	\N	144	f	\N	1	0	f	t
 1455	6	93	2	1	\N	116	f	\N	2	0	f	t
 2702	4	24	1	16	\N	109	f	\N	0	0	f	t
@@ -12936,9 +12939,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7152	6	707	1	12	\N	123	f	\N	6	0	f	t
 2703	7	24	1	4	\N	29	f	\N	1	0	f	t
 2704	6	24	1	1	\N	110	f	\N	2	0	f	t
-5424	7	367	1	2	\N	829	f	\N	2	0	f	t
-5425	0	367	1	2	\N	187	f	\N	3	0	f	t
-5426	4	367	1	5	\N	862	f	\N	4	0	f	t
 2705	8	24	8	1	\N	285	f	\N	3	0	f	t
 1697	4	1	1	8	\N	102	f	\N	0	0	f	t
 1698	4	1	1	24	\N	123	f	\N	1	0	f	t
@@ -13001,10 +13001,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4833	4	261	1	5	\N	792	f	\N	3	0	f	t
 7154	0	708	1	1	\N	1391	f	\N	0	0	f	t
 7155	6	708	2	1	\N	36	f	\N	1	0	f	t
-5107	0	51	1	2	, minced	5	f	\N	0	0	f	t
-5108	0	51	1	1	\N	167	f	\N	1	0	f	t
 7159	6	709	1	2	\N	665	f	\N	0	0	f	t
-5109	7	51	1	1	, melted	29	f	\N	2	0	f	t
 3827	7	158	1	1	\N	469	f	\N	8	0	f	t
 719	0	47	1	2	, ripe	11	f	\N	0	0	f	t
 1804	4	112	1	5	\N	409	f	\N	0	0	f	t
@@ -16856,6 +16853,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8189	0	971	1	4	, for the garlic crumbs	\N	t	975	13	0	f	t
 8190	8	971	1	1	, for frying, for the garlic crumbs	1598	t	\N	14	0	f	t
 8191	0	971	1	2	, bruised, for the garlic crumbs	5	t	\N	15	0	f	t
+8308	7	367	1	1	\N	77	f	\N	2	3	f	t
+8309	8	367	8	1	\N	692	t	\N	5	3	f	t
 \.
 
 
@@ -17310,9 +17309,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 895	Arrange the Gruyere cheese slices, meat, and basil leaves on top of the tortilla and season with salt and pepper.	74	1	0
 896	Place the remaining tortilla on top to make a sandwich and flip the whole thing over with a metal spatula. Cook for a few minutes, until the underneath is golden.	74	2	0
 3443	Remove the vegetables from the oven and let cool slightly before serving.	564	5	0
-2792	Stir butter and garlic together.	51	0	0
-2793	Place naan on grill rack; grill over medium-high heat until bottom is golden brown, about 2 minutes.	51	1	0
-2794	Flip and brush top with garlic butter.	51	2	0
 2350	Preheat the oven to 400°F.	239	0	0
 2351	In large bowl, toss the okra in with wet ingredients first. Next, add all dry ingredients and mix well to incorporate, feel free to use your hands.	239	1	0
 2352	Spread the okra out on a sheet pan, single layer, so they all have a chance to get a bit crispy.	239	2	0
@@ -17321,7 +17317,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1850	Heat the tomatoes and the cinnamon, cumin and cloves with half the coriander in a pan, then season to taste with salt and freshly ground black pepper and bring to the boil.	176	0	4
 2682	Cut off ends and slice beets very thin using a knife or mandolin. Place in a medium bowl and drizzle with the extra virgin olive oil and sea salt. Toss. Let sit for 30 minutes.	234	0	0
 1740	Spoon the custard into the pastry cases and dust with the icing sugar. Place the tarts under a preheated hot grill (broiler) and cook until the sugar carmelizes. Remove from the heat and leave to cool before serving.	163	3	24
-2795	Grill until golden brown on bottom.	51	3	0
 1080	Halve the chicken thighs, then season with sea salt and black pepper. Place in a large non-stick frying pan on a medium heat with ½ a tablespoon of olive oil and cook for 15 minutes, or until golden and cooked through, turning regularly.	118	0	4
 1081	Slice the baguette in half lengthways and place in the pan to quickly toast and soak up all the tasty cooking juices.	118	1	4
 1873	Add in brown sugar, mustard, and ketchup. Stir to combine.	181	1	0
@@ -17385,7 +17380,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2460	Slice each chicken breast in half horizontally, making two pieces of about the same thickness. Flatten them slightly with the heel of you hand.	131	0	0
 2461	Put the butter in a small pan and melt over a low heat. Do not let it brown.	131	1	4
 2462	Mix the remaining ingredients in a bowl. Brush the chicken on both sides with a little of the melted butter. Sprinkle evenly with the seasoning mix.	131	2	0
-2796	Remove; cut each naan in half.	51	4	0
 2563	Combine all ingredients in a bowl and enjoy!	242	0	0
 1874	Let it simmer on low for about 5 minutes to combine the flavors.	181	2	0
 2989	Pour 1½ tablespoons of extra virgin olive oil into a blender, then finely grate in the Parmesan. Use tongs to carefully transfer the cavolo leaves and garlic straight into the blender and blitz for a few minutes until super-smooth. Taste and season to perfection with sea salt and black pepper.	371	1	128
@@ -17830,7 +17824,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2965	Place all of the above ingredients in a high-speed blender and enjoy right away.	359	0	0
 2973	Place the chicken breasts between two large sheets of parchment paper, and whack with the base of a large non-stick frying pan to flatten them to about ½ inch thick. 	364	0	0
 3230	Add the granola to the yogurt. Enjoy!	466	0	0
-2978	Put a large non-stick frying pan on a medium-high heat. Trim and finely slice the scallions and fry with 1 tablespoon of olive oil for 1 minute. Add the rice, chili jam, a splash of water, and a pinch of sea salt and black pepper, then toss for 2 minutes until everything is well coated.	367	0	0
 3517	Preheat the oven to 350°F.	584	0	0
 3402	If the liquid does not cover the meat, increase the amount of coconut aminos and apple cider vinegar in a 1:1 ratio until the meat is covered.	553	1	0
 3404	Heat a large skillet over medium heat and add the avocado oil.	554	0	4
@@ -17841,6 +17834,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3274	Refrigerate until ready to serve.	483	1	0
 3403	Serve with white or brown rice, quinoa, or cauliflower rice. Alternatively, you can serve over sautéed greens.	553	2	0
 2971	Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. 	362	1	4
+2978	Put a large non-stick frying pan on a medium-high heat. Trim and finely slice the scallions and fry with 1 tablespoon of olive oil for 1 minute.	367	0	4
 2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. 	362	0	4
 2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	368	0	0
 2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	368	1	0
@@ -18213,10 +18207,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3562	Add a dollop of coconut yogurt and/or guacamole.	592	4	0
 4656	Warm a medium skillet over medium-high heat. Add the olive oil and cherry tomatoes and cook the tomatoes until they start to pop, about 3–4 minutes.	980	1	4
 4657	Add the zucchini noodles, along with the cooking water, to the pan. Add the pesto, toss, season with salt and pepper, and finish with the Parmesan.	980	2	0
+2979	Add the rice, chili jam, a splash of water, and a pinch of sea salt and black pepper, then toss for 2 minutes until everything is well coated.	367	1	4
 1601	Place the chicken breasts into the bottom of the baking pan then drizzle on the Italian dressing and sprinkle on seasonings  to taste. Use tongs or your hands to flip the chicken breasts to coat in the dressing and seasonings then arrange into an even layer.	135	1	0
 1602	Bake for 20 minutes or until the thickest part of the largest chicken breast reaches an internal temperature of 165 degrees as read by a digital instant-read thermometer. Let the chicken rest for 15-30 minutes before serving and/or slicing.	135	2	0
 3583	Place eggs in an empty pot, cover with water, and bring to a boil over high heat. Set a timer for 8 minutes once the water starts to boil.	602	1	4
-2979	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. Lightly oil the inside of a bowl, add the egg-fried rice, genly compacting it with the spatula, then proudly turn out onto a plate, retro style.	367	1	0
 3564	Blend in a high-speed blender and enjoy the mild sweetness and creamy goodness for breakfast, or for a midday boost!	593	0	128
 3574	Bake for 60 minutes, or until a toothpick comes out clean when you poke it and the center is set.	596	3	2
 3584	Create an ice bath in a large bowl and set aside. Oncer the timer goes off, immediately remove eggs and place in the ice bath.	602	2	0
@@ -19101,6 +19095,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2463	Heat a large heavy-based frying pan over a high heat for about 5–8 minutes, until a drop of water sprinkled on the surface sizzles.	131	3	4
 4639	Transfer to a bowl and add the remaining ingredients. Mix well.	979	2	0
 4386	Add the garlic to the pan and cook for 45 seconds to 1 minute, just until it starts to turn golden brown. Add the mushroom ragù sauce. Cook for 5–6 minutes, until the sauce is hot, and the vegetables are tender. You may need to stir a few tablespoons of the pasta cooking water into the sauce if it starts to get too thick.	906	2	4
+4667	Push the rice to the sides of the pan, making a big well in the middle. Crack the eggs into the well, then use a rubber spatula to start gently moving the eggs around to create big curds. 	367	2	4
+4668	Break in the tofu, then fold the rice back through the egg until it's all looking good. Taste and season to perfection. 	367	3	4
+4669	Lightly oil the inside of a bowl, add the egg-fried rice, gently compacting it with the spatula, then proudly turn out onto a plate, retro style.	367	4	0
 \.
 
 
@@ -19841,5 +19838,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict EuiaOnQb47u4SojzIAnctVLO3JMXz8Gv9Z4eizdvQewzpPBfRtoXQYgk74D4QTP
+\unrestrict svEDYLhQmbB4yurtKoIbhjk3t4EVufWvz6GJPt9IGd8fvHfh1R2G6aD1gfNsDZR
 
