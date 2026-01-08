@@ -1,0 +1,15 @@
+﻿.input-group-vertical :first-child:not(:only-child) {
+    border-radius: 0 var(--bs-btn-border-radius) 0 0;
+}
+
+.input-group-vertical :not(:first-child):not(:only-child) {
+    border-top: 0;
+}
+
+.input-group-vertical :last-child:not(:only-child) {
+    border-radius: 0 0 var(--bs-btn-border-radius) 0;
+}
+
+.input-group-vertical :only-child {
+    border-radius: 0 var(--bs-btn-border-radius) var(--bs-btn-border-radius) 0;
+}

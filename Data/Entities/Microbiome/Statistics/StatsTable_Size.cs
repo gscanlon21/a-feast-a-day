@@ -6,7 +6,7 @@ public class StatsTable_Size
 {
     [Key]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     public int? Population { get; set; }
 }

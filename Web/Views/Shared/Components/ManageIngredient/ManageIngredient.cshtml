@@ -1,0 +1,64 @@
+﻿@model ManageIngredientViewModel
+@using Lib.Pages.Shared.Recipe
+@using Microsoft.AspNetCore.Components
+@using Core.Dtos.User
+
+<div class="alert alert-light shadow mb-0">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label for="recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
+        <div class="input-group">
+            <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Ingredient.Name</textarea>
+        </div>
+
+        <span asp-validation-for="Ingredient" class="text-danger"></span>
+        <div id="recipe-help" class="form-text">
+            @Html.DisplayDescriptionFor(_ => Model.Ingredient)
+        </div>
+    </div>
+
+    <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.LogIngredient)" method="post"
+          asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-ingredientId="@Model.Parameters.IngredientId">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3 mt-3">
+            <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Notes)</label>
+            <input type="text" asp-for="Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.Notes" />
+            <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+
+        @*if (Model.Recipe.AdjustableServings)
+        {
+            if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
+                    Adjust how many servings each recipe should be scaled for.
+                </div>
+            }
+
+            <div class="mb-3 mt-3">
+                <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
+                <div style="display:flex;column-gap:1ex;">
+                    <output name="scaleOutput" for="@Html.IdFor(_ => Model.Servings)">@Model.Servings</output>
+                    <div style="display:flex;width:100%;">
+                        <input asp-for="Servings" type="range" style="width:100%;" aria-describedby="scale-help"
+                               min="@RecipeConsts.ServingsMin" max="@RecipeConsts.ServingsMax" step="@RecipeConsts.ServingsStep"
+                               oninput="scaleOutput.value = this.valueAsNumber" />
+                    </div>
+                </div>
+                <span asp-validation-for="Servings" class="text-danger"></span>
+                <div id="scale-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Servings)</div>
+            </div>
+        }
+        else
+        {
+            <input asp-for="Servings" type="hidden" value="@Model.Recipe.Servings" />
+        }*@
+
+        <div>
+            <input type="submit" value="Save" class="btn btn-primary allow-demo" />
+        </div>
+    </form>
+</div>

@@ -2,7 +2,7 @@
 
 public class DT_KeggEnzTaxUpload
 {
-    public string Module { get; set; }
-    public string OrgCode { get; set; }
+    public string Module { get; set; } = null!;
+    public string OrgCode { get; set; } = null!;
 }
 

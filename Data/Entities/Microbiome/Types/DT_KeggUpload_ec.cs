@@ -5,7 +5,7 @@ namespace Data.Entities.Microbiome.Types;
 public class DT_KeggUpload_ec
 {
     [Key]
-    public string Entry { get; set; }
+    public string Entry { get; set; } = null!;
     public string? Name { get; set; }
     public string? SysName { get; set; }
     public string? Substrate { get; set; }

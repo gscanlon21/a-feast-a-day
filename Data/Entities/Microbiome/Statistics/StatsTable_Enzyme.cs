@@ -5,17 +5,17 @@ namespace Data.Entities.Microbiome.Statistics;
 
 public class StatsTable_Enzyme
 {
+    [Required]
     [Key, Column(Order = 0)]
-    [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
-    [Key, Column(Order = 1)]
     [Required]
-    public string ECKey { get; set; }
+    [Key, Column(Order = 1)]
+    public string ECKey { get; set; } = null!;
 
     public int? Obs { get; set; }
 
-    public string Percentiles { get; set; }
+    public string Percentiles { get; set; } = null!;
 
     public double? Mean { get; set; }
 

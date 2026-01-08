@@ -7,7 +7,7 @@ public class OddsRatio
 {
     [Key, Column(Order = 0)]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     [Key, Column(Order = 1)]
     [Required]
@@ -19,7 +19,7 @@ public class OddsRatio
 
     [Key, Column(Order = 3)]
     [Required]
-    public string Direction { get; set; }
+    public string Direction { get; set; } = null!;
 
     [Required]
     public double Percentile { get; set; }

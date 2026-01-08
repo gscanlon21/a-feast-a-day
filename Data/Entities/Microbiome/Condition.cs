@@ -12,26 +12,26 @@ public class Condition
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int Taxon { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int CondId { get; set; }
 
+    [Required]
     [Key, Column(Order = 2)]
-    [Required]
-    public string ConditionCode { get; set; }
+    public string ConditionCode { get; set; } = null!;
 
-    [Key, Column(Order = 3)]
     [Required]
-    public string Direction { get; set; }
+    [Key, Column(Order = 3)]
+    public string Direction { get; set; } = null!;
 
     public string? RefUri { get; set; }
 
-    [Key, Column(Order = 4)]
     [Required]
+    [Key, Column(Order = 4)]
     public int Cid { get; set; }
 
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

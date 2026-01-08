@@ -7,7 +7,7 @@ public class SourceSymptomCompound
 {
     [Key, Column(Order = 0)]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     [Key, Column(Order = 1)]
     [Required]
@@ -19,6 +19,6 @@ public class SourceSymptomCompound
 
     public double? Chi2 { get; set; }
 
-    public string Direction { get; set; }
+    public string Direction { get; set; } = null!;
 }
 

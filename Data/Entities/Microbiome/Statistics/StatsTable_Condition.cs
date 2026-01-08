@@ -7,7 +7,7 @@ class StatsTable_Condition
 {
     [Key, Column(Order = 0)]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     [Key, Column(Order = 1)]
     [Required]
@@ -15,7 +15,7 @@ class StatsTable_Condition
 
     public int? Obs { get; set; }
 
-    public string Percentiles { get; set; }
+    public string Percentiles { get; set; } = null!;
 
     public double? Mean { get; set; }
 

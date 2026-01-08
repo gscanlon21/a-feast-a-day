@@ -1,5 +1,4 @@
-﻿using Core.Models.User;
-using Data.Entities.Recipes;
+﻿using Data.Entities.Ingredients;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -7,60 +6,32 @@ using System.Text.Json.Serialization;
 
 namespace Data.Entities.Users;
 
-/// <summary>
-/// Not using RecipeIngredientId because we want to be able to 
-/// ... re-order RecipeIngredients without changing user preferences.
-/// </summary>
-[Table("user_recipe_ingredient")]
-[DebuggerDisplay("User {UserId}; RecipeIngredient {RecipeIngredientId}")]
-public class UserRecipeIngredient
+[Table("user_ingredient")]
+[DebuggerDisplay("User {UserId}; Ingredient {IngredientId}")]
+public class UserIngredient
 {
     [Required]
     public int UserId { get; init; }
 
     [Required]
-    public int RecipeIngredientId { get; set; }
+    public int IngredientId { get; set; }
 
-
-    public Measure? Measure { get; set; }
-
-    public int? QuantityNumerator { get; set; }
-
-    public int? QuantityDenominator { get; set; }
-
-
-    public int? SubstituteRecipeId { get; set; }
-
-    public int? SubstituteIngredientId { get; set; }
-
-    /// <summary>
-    /// Whitespace is allowed, so the user can hide the default system attributes.
-    /// </summary>
     public string? Notes { get; set; }
-
-    [Required]
-    public bool Ignore { get; set; }
 
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Users.User.UserRecipeIngredients))]
+    [JsonIgnore, InverseProperty(nameof(Users.User.UserIngredients))]
     public virtual User User { get; private init; } = null!;
 
-    [JsonIgnore, InverseProperty(nameof(RecipeIngredient.UserRecipeIngredients))]
-    public virtual RecipeIngredient RecipeIngredient { get; private init; } = null!;
-
-    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.UserSubstituteIngredients))]
-    public virtual Ingredients.Ingredient? SubstituteIngredient { get; private init; }
-
-    [JsonIgnore, InverseProperty(nameof(Recipe.UserSubstituteRecipes))]
-    public virtual Recipe? SubstituteRecipe { get; private init; }
+    [JsonIgnore, InverseProperty(nameof(Ingredient.UserIngredients))]
+    public virtual Ingredient Ingredient { get; private init; } = null!;
 
     #endregion Navigation Properties
 
 
-    public override int GetHashCode() => HashCode.Combine(UserId, RecipeIngredientId);
-    public override bool Equals(object? obj) => obj is UserRecipeIngredient other
-        && other.RecipeIngredientId == RecipeIngredientId
+    public override int GetHashCode() => HashCode.Combine(UserId, IngredientId);
+    public override bool Equals(object? obj) => obj is UserIngredient other
+        && other.IngredientId == IngredientId
         && other.UserId == UserId;
 }

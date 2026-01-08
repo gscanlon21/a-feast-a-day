@@ -1,8 +1,8 @@
 ﻿namespace Data.Entities.Microbiome.Temp;
 
-class Temp_Thorne
+public class Temp_Thorne
 {
-    public string TKey { get; set; }
+    public string TKey { get; set; } = null!;
 
     public double? Abundance { get; set; }
 

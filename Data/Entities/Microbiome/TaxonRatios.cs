@@ -10,14 +10,14 @@ public class TaxonRatios
     public int RatioId { get; set; }
 
     [Required]
-    public string TopTaxon { get; set; }
+    public string TopTaxon { get; set; } = null!;
 
     [Required]
-    public string BottomTaxon { get; set; }
+    public string BottomTaxon { get; set; } = null!;
 
     [Required]
-    public string RatioName { get; set; }
+    public string RatioName { get; set; } = null!;
 
-    public string Description { get; set; }
+    public string Description { get; set; } = null!;
 }
 

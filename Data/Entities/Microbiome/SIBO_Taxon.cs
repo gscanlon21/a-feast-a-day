@@ -9,5 +9,5 @@ public class SIBO_Taxon
     public int Taxon { get; set; }
 
     [Required]
-    public string Shiftis { get; set; }
+    public string Shiftis { get; set; } = null!;
 }

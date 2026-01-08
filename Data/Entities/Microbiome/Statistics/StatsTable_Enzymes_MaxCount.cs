@@ -6,7 +6,7 @@ public class StatsTable_Enzymes_MaxCount
 {
     [Key]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     public double? MaxCount { get; set; }
 }

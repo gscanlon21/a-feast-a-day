@@ -2,5 +2,5 @@
 
 public class Temp_GmRepo
 {
-    public string Status { get; set; }
+    public string Status { get; set; } = null!;
 }

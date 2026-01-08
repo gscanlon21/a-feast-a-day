@@ -1,4 +1,5 @@
-﻿using Core.Dtos.Newsletter;
+﻿using Core.Dtos.Ingredient;
+using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data;
@@ -123,6 +124,7 @@ public class RecipeIngredientController : ViewController
             Ingredients = substituteIngredients,
             RecipeIngredient = recipeIngredient,
             Recipe = recipe.AsType<NewsletterRecipeDto>()!,
+            Ingredient = recipeIngredient.Ingredient!.AsType<IngredientDto>()!,
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
             PrepRecipes = prepRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
             UserRecipeIngredient = viewModel ?? new UserRecipeIngredientViewModel(userRecipeIngredient),

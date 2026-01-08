@@ -2,6 +2,6 @@
 
 public class DT_KeggEnzymeUpload
 {
-    public string EcKey { get; set; }
+    public string EcKey { get; set; } = null!;
 }
 

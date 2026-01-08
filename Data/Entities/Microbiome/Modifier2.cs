@@ -17,7 +17,7 @@ public class Modifier2
     public int Mid2 { get; set; }
 
     [Required]
-    public string ModifierOld { get; set; }
+    public string ModifierOld { get; set; } = null!;
 
     // AS ([LatinName]+isnull((' {'+[CommonName])+'}','')),
     [Column("Modifier2")]
@@ -29,10 +29,10 @@ public class Modifier2
     public string? CommonName { get; set; }
 
     [Required]
-    public string DrugNames { get; set; }
+    public string DrugNames { get; set; } = null!;
 
     [Required]
-    public string MType { get; set; }
+    public string MType { get; set; } = null!;
 
     [Required]
     public bool Exclude { get; set; }

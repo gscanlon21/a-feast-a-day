@@ -5,10 +5,10 @@ namespace Data.Entities.Microbiome;
 public class LabTests
 {
     [Key, Required]
-    public string LG { get; set; }
+    public string LG { get; set; } = null!;
 
     [Required]
-    public string LabName { get; set; }
+    public string LabName { get; set; } = null!;
 
     public int? Levels { get; set; }
 

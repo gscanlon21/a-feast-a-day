@@ -4,7 +4,7 @@ public class Symptom_Significant
 {
     public int? SymptomId { get; set; }
 
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     public int? TaxonCnt { get; set; }
 

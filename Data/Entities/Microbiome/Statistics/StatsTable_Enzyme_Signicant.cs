@@ -7,7 +7,7 @@ public class StatsTable_Enzyme_Signicant
 {
     [Key, Column(Order = 0)]
     [Required]
-    public string ECKey { get; set; }
+    public string ECKey { get; set; } = null!;
 
     [Key, Column(Order = 1)]
     [Required]
@@ -15,7 +15,7 @@ public class StatsTable_Enzyme_Signicant
 
     [Key, Column(Order = 2)]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     public double? Below15 { get; set; }
 

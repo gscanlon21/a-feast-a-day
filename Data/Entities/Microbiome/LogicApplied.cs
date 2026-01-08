@@ -12,10 +12,10 @@ public class LogicApplied
     public int Id { get; init; }
 
     [Key, Required]
-    public string LogicCode { get; set; }
+    public string LogicCode { get; set; } = null!;
 
     [Required]
-    public string Description { get; set; }
+    public string Description { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other

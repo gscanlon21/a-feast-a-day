@@ -13,11 +13,13 @@ namespace Api.Controllers;
 public class UserController : ControllerBase
 {
     private readonly UserRepo _userRepo;
+    private readonly NewsletterRepo _newsletterRepo;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public UserController(UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    public UserController(UserRepo userRepo, NewsletterRepo newsletterRepo, IServiceScopeFactory serviceScopeFactory)
     {
         _userRepo = userRepo;
+        _newsletterRepo = newsletterRepo;
         _serviceScopeFactory = serviceScopeFactory;
     }
 
@@ -69,7 +71,7 @@ public class UserController : ControllerBase
                 .Query(_serviceScopeFactory));
         }
 
-        var shoppingList = await NewsletterRepo.GetShoppingList(currentFeast, recipes);
+        var shoppingList = await _newsletterRepo.GetShoppingList(currentFeast, recipes);
         return StatusCode(StatusCodes.Status200OK, shoppingList);
     }
 

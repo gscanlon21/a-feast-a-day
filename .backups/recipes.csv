@@ -360,7 +360,7 @@
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 546	Sesame Almond Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
-547	Burgers	\N	\N	\N	0	45	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+547	Burgers	\N	\N	\N	0	45	15	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -512,7 +512,7 @@
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
 732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	irish-champ.jpg	0	\N	f	f
-733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	\N	0	\N	t	f
+733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	burgers-relish.jpg	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
 735	Zucchini Pesto Pasta w/ Bacon	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
 736	Pea and Prosciutto Risotto	\N	Risotto base is not good.	\N	16	25	5	2	t	\N	0	\N	f	f
@@ -527,7 +527,7 @@
 745	Beef Stroganoff	\N	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
 746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 747	Paleo Banana Muffins	\N	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-748	Chickpea Burgers	\N	\N	\N	8	40	40	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+748	Chickpea Burgers	\N	\N	\N	0	40	40	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 749	Cornish Game Hens	\N	\N	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 750	Fava Bean Salad	\N	\N	\N	20	10	5	2	t	\N	0	From Jamie Oliver's Five Ingredients	f	f
 751	Island Salad	\N	\N	\N	20	5	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -590,8 +590,8 @@
 904	Crispy Pork Tostadas	\N	\N	\N	8	20	5	2	t	\N	0	\N	f	f
 905	Classic Roast Chicken	\N	\N	\N	8	90	30	4	t	\N	0	\N	f	f
 906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
-907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	\N	0	\N	t	f
-908	The Cowboy Burger	Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	\N	\N	8	10	10	2	t	\N	0	\N	f	f
+907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	burgers-relish.jpg	0	\N	t	f
+908	The Cowboy Burger	Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	\N	\N	8	10	10	2	t	burgers-relish.jpg	0	\N	f	f
 909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	12	10	10	1	t	\N	0	\N	f	f
 910	Sweet Potato Tacos	Optionally, add some guacamole, fresh cilantro, jalepenos, and a squeeze of fresh lime juice.	\N	\N	4	25	10	1	t	\N	0	\N	f	f
 911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or 1/2 teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f

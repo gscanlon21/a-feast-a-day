@@ -2,7 +2,7 @@
 
 public class UserManageIngredientViewModel
 {
-    public record Params(string Email, string Token, int RecipeId, int IngredientId);
+    public record Params(string Email, string Token, int IngredientId);
 
     public required Params Parameters { get; init; }
 

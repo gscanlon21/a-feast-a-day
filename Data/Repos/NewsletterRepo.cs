@@ -241,12 +241,17 @@ public partial class NewsletterRepo
     /// <summary>
     /// Get the current shopping list for the user.
     /// </summary>
-    public static async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<QueryResults> recipes)
+    public async Task<ShoppingListDto> GetShoppingList(UserFeast newsletter, IList<QueryResults> recipes)
     {
         var shoppingList = new List<ShoppingListItemDto>();
-        // Order before grouping so the .Key is the same across requests.
-        foreach (var group in recipes.SelectMany(r => r.RecipeIngredients).Where(ri => ri.Ingredient != null)
-            .OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
+        var allIngredients = recipes.SelectMany(r => r.RecipeIngredients).Where(ri => ri.Ingredient != null).ToList();
+        var userIngredients = await _context.UserIngredients.AsNoTracking().TagWithCallSite()
+            .Where(ui => allIngredients.Select(i => i.Ingredient!.Id).Contains(ui.IngredientId))
+            .Where(ui => ui.UserId == newsletter.UserId)
+            .ToDictionaryAsync(ui => ui.IngredientId, ui => ui);
+
+        // Order by RecipeIngredient.Id before grouping so the .Key is the same across requests.
+        foreach (var group in allIngredients.OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
             .OrderBy(g => g.Key.Ingredient!.Category.GetOrder())
             .ThenBy(g => g.Key.Ingredient!.Group)
             .ThenBy(g => g.Key.Name))
@@ -261,6 +266,7 @@ public partial class NewsletterRepo
                 SkipShoppingList = group.Key.SkipShoppingList,
                 // Rounds up after the first fifth: round 4.19 down to 4, round 4.20 up to 5. 
                 Quantity = Math.Max(1, (int)Math.Ceiling(Math.Floor(totalQuantity * 5) / 5)),
+                Notes = userIngredients.TryGetValue(group.Key.Ingredient!.Id, out var ui) ? ui.Notes : null,
             });
         }
 

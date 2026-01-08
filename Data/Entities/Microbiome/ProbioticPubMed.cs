@@ -16,13 +16,13 @@ public class ProbioticPubMed
     public int Psid { get; set; }
 
     [Required]
-    public string ProbioticSpecies { get; set; }
+    public string ProbioticSpecies { get; set; } = null!;
 
     [Required]
-    public string SellerName { get; set; }
+    public string SellerName { get; set; } = null!;
 
     [Required]
-    public string SellerUtl { get; set; }
+    public string SellerUtl { get; set; } = null!;
 
     public int? Taxon { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using Core.Dtos.Newsletter;
+﻿using Core.Dtos.Ingredient;
+using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.User;
 using Data.Entities.Users;
@@ -27,6 +28,7 @@ public class UserManageRecipeIngredientViewModel
     public required IList<NewsletterRecipeDto> AltRecipes { get; init; }
 
     public required NewsletterRecipeDto Recipe { get; init; }
+    public required IngredientDto Ingredient { get; init; }
 
     /// <summary>
     /// The ingredient's alternative ingredients.

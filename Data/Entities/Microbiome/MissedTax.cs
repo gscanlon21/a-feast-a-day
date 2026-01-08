@@ -5,10 +5,10 @@ namespace Data.Entities.Microbiome;
 public class MissedTax
 {
     [Required]
-    public string Kingdom { get; set; }
+    public string Kingdom { get; set; } = null!;
 
     [Required]
-    public string Phylum { get; set; }
+    public string Phylum { get; set; } = null!;
 
     public string? Class { get; set; }
 

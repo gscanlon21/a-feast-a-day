@@ -8,8 +8,8 @@ class Pathogens
     public int Taxon { get; set; }
 
     [Required]
-    public string Disease { get; set; }
+    public string Disease { get; set; } = null!;
 
     [Required]
-    public string PathogenUrl { get; set; }
+    public string PathogenUrl { get; set; } = null!;
 }

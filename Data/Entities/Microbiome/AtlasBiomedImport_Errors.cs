@@ -5,7 +5,7 @@ namespace Data.Entities.Microbiome;
 public class AtlasBiomedImport_Errors
 {
     [Required]
-    public string Col1 { get; set; }
+    public string Col1 { get; set; } = null!;
 
     public string? Col2 { get; set; }
 

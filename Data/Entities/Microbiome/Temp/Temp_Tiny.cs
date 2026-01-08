@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome.Temp;
 
-class Temp_Tiny
+public class Temp_Tiny
 {
-    [Key, Column(Order = 0)]
     [Required]
-    public string Rank { get; set; }
+    [Key, Column(Order = 0)]
+    public string Rank { get; set; } = null!;
 
     [Required]
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
     [Required]
     public double Amount { get; set; }

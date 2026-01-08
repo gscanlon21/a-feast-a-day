@@ -8,7 +8,7 @@ class statistics_EndProduct
 {
     [Key, Column(Order = 0)]
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     [Key, Column(Order = 1)]
     [Required]

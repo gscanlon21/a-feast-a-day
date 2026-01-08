@@ -6,7 +6,7 @@ public class TaxRankSequence
 {
     [Key]
     [Required]
-    public string TaxRank { get; set; }
+    public string TaxRank { get; set; } = null!;
 
     [Required]
     public int TaxSeq { get; set; }

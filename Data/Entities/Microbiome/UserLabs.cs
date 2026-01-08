@@ -10,10 +10,10 @@ public class UserLabs
     public int ULId { get; set; }
 
     [Required]
-    public string LG { get; set; }
+    public string LG { get; set; } = null!;
 
     [Required]
-    public string Email { get; set; }
+    public string Email { get; set; } = null!;
 
     [Required]
     public DateTime TakenDate { get; set; }

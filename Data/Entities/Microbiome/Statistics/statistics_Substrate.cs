@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Microbiome.Statistics;
 
 [Table("statistics_substrate")]
-class statistics_Substrate
+public class statistics_Substrate
 {
+    [Required]
     [Key, Column(Order = 0)]
-    [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Substrate { get; set; }
 
     public double? Mean { get; set; }

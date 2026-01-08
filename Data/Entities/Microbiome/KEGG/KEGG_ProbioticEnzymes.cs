@@ -7,7 +7,7 @@ public class KEGG_ProbioticEnzymes
 {
     [Required]
     [Key, Column(Order = 0)]
-    public string ECKey { get; set; }
+    public string ECKey { get; set; } = null!;
 
     [Required]
     [Key, Column(Order = 1)]

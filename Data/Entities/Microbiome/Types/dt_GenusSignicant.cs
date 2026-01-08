@@ -2,7 +2,7 @@
 
 public class dt_GenusSignicant
 {
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
     public int Taxon { get; set; }
     public int? SymptomId { get; set; }
     public string? Direction { get; set; }

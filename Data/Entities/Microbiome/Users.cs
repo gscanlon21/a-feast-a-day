@@ -5,12 +5,12 @@ namespace Data.Entities.Microbiome;
 
 public class Users
 {
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Required]
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int UserId { get; set; }
 
     [Required]
-    public string Email { get; set; }
+    public string Email { get; set; } = null!;
 
     [Required]
     public int SequenceId { get; set; }
@@ -22,15 +22,15 @@ public class Users
     public DateTime UploadDate { get; set; }
 
     [Required]
-    public string Person { get; set; }
+    public string Person { get; set; } = null!;
 
     [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     public int? SourceId { get; set; }
 
     [Required]
-    public string SampleName { get; set; }
+    public string SampleName { get; set; } = null!;
 
     public string? ClinicEmail { get; set; }
 

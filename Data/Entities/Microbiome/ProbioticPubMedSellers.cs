@@ -18,10 +18,10 @@ public class ProbioticPubMedSellers
 
     [Key, Column(Order = 1)]
     [Required]
-    public string SellerName { get; set; }
+    public string SellerName { get; set; } = null!;
 
     [Required]
-    public string SellerUtl { get; set; }
+    public string SellerUtl { get; set; } = null!;
 
     public int? ProId { get; set; }
 

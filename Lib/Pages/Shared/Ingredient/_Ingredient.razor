@@ -28,7 +28,7 @@
 
             @if (User != null)
             {
-                <a class="allow-demo" style="text-decoration:none;margin:-10px -10px 0 0;padding:10px 8px 0 0;" target="_blank" href="@DH.IngredientLink(User, $"{RecipeId}/{Model.Id}")">&#127760;</a>
+                <a class="allow-demo" style="text-decoration:none;margin:-10px -10px 0 0;padding:10px 8px 0 0;" target="_blank" href="@DH.IngredientLink(User, $"{Model.Id}")">&#127760;</a>
             }
         </h3>
 
@@ -49,9 +49,6 @@
 </div>
 
 @code {
-    [Parameter]
-    public int RecipeId { get; init; }
-
     [CascadingParameter]
     public Core.Dtos.User.UserNewsletterDto? User { get; set; }
 

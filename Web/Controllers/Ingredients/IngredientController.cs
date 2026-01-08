@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
 using Web.Controllers.Users;
 using Web.Views.Ingredient;
+using Web.Views.Shared.Components.ManageIngredient;
 
 namespace Web.Controllers.Ingredients;
 
@@ -57,8 +58,8 @@ public class IngredientController : ViewController
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
-    [HttpGet, Route("{recipeId}/{ingredientId}")]
-    public async Task<IActionResult> ManageIngredient(string email, string token, int recipeId, int ingredientId, bool? wasUpdated = null)
+    [HttpGet, Route("{ingredientId}")]
+    public async Task<IActionResult> ManageIngredient(string email, string token, int ingredientId, bool? wasUpdated = null)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
@@ -86,7 +87,7 @@ public class IngredientController : ViewController
             Ingredient = ingredient,
             WasUpdated = wasUpdated,
             HasUserIngredient = true,
-            Parameters = new UserManageIngredientViewModel.Params(email, token, recipeId, ingredientId)
+            Parameters = new UserManageIngredientViewModel.Params(email, token, ingredientId)
         });
     }
 
@@ -218,5 +219,32 @@ public class IngredientController : ViewController
 
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, recipeId = 0, wasUpdated = true });
+    }
+
+    [HttpPost, Route("{ingredientId}/[action]")]
+    public async Task<IActionResult> LogIngredient(string email, string token, int ingredientId, ManageIngredientViewModel viewModel)
+    {
+        if (!ModelState.IsValid)
+        {
+            return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, WasUpdated = false });
+        }
+
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
+        if (user == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var userIngredient = await _context.UserIngredients
+            .Where(ur => ur.IngredientId == ingredientId)
+            .Where(ur => ur.UserId == user.Id)
+            .Include(ur => ur.Ingredient)
+            .FirstAsync();
+
+        //userRecipe.Servings = viewModel.Servings;
+        userIngredient.Notes = user.IsDemoUser ? null : viewModel.Notes;
+
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, WasUpdated = true });
     }
 }

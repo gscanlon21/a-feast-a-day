@@ -2,7 +2,7 @@
 
 public class dt_Kegg_EnzymeMeta
 {
-    public string ECKey { get; set; }
+    public string ECKey { get; set; } = null!;
     public string? EnzymeName { get; set; }
     public string? OtherName { get; set; }
 }

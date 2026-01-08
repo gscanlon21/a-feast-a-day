@@ -7,8 +7,8 @@ public class Temp_Microba
     public int? Taxon { get; set; }
 
     [Required]
-    public string TaxRank { get; set; }
+    public string TaxRank { get; set; } = null!;
 
     [Required]
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 }

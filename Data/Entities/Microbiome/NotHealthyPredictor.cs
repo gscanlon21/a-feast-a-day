@@ -16,7 +16,7 @@ public class NotHealthyPredictor
     public int Taxon { get; set; }
 
     [Key, Required]
-    public string TaxName { get; set; }
+    public string TaxName { get; set; } = null!;
 
     [Required]
     public double Health { get; set; }

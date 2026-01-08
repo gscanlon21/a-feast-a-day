@@ -19,7 +19,7 @@ public class Mid2TaxCitation
 
     [Required]
     [Key, Column(Order = 3)]
-    public string Logic { get; set; }
+    public string Logic { get; set; } = null!;
 
     [Required]
     public double Increases { get; set; }

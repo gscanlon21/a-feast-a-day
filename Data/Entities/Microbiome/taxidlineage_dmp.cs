@@ -10,5 +10,5 @@ class taxidlineage_dmp
     [Required]
     public int D_Taxon { get; set; }
 
-    public string D_Hierarchy { get; set; }
+    public string D_Hierarchy { get; set; } = null!;
 }

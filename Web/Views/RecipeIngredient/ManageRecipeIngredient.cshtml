@@ -1,6 +1,7 @@
 ﻿@model UserManageRecipeIngredientViewModel
 @using Core.Dtos.User
 @using Core.Models.Recipe
+@using Lib.Pages.Shared.Ingredient
 @using Lib.Pages.Shared.Recipe
 @using Microsoft.AspNetCore.Components
 @using Web.Code.Extensions
@@ -152,7 +153,7 @@
 
         @if (Model.PrepRecipes.Any())
         {
-            <details class="mt-4 mb-1">
+            <details class="mt-4 mb-4">
                 <summary class="mb-1 h5">
                     <span>Prep Recipes</span>
                     <span class="float-end">@Model.PrepRecipes.Count</span>
@@ -161,6 +162,8 @@
                 <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.PrepRecipes' param-Verbosity="Verbosity.Images" param-Title="@(new RecipeSection.Titles(string.Empty))" />
             </details>
         }
+
+        <component type="typeof(IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='new List<Core.Dtos.Ingredient.IngredientDto>() { Model.Ingredient }' param-Title="@(new IngredientSection.Titles(string.Empty))" />
     </div>
 </div>
 

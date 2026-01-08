@@ -5,10 +5,10 @@ namespace Data.Entities.Microbiome;
 public class vw_Flavonoids
 {
     [Required]
-    public string NDBNo { get; set; }
+    public string NDBNo { get; set; } = null!;
 
     [Required]
-    public string FId { get; set; }
+    public string FId { get; set; } = null!;
 
     public string? FoodGroup { get; set; }
 

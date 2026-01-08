@@ -5,17 +5,17 @@ namespace Data.Entities.Microbiome.Statistics;
 
 class StatsTable_IndexName
 {
+    [Required]
     [Key, Column(Order = 0)]
-    [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
-    [Key, Column(Order = 1)]
     [Required]
-    public string IndexName { get; set; }
+    [Key, Column(Order = 1)]
+    public string IndexName { get; set; } = null!;
 
     public int? Obs { get; set; }
 
-    public string Percentiles { get; set; }
+    public string Percentiles { get; set; } = null!;
 
     public double? Mean { get; set; }
 

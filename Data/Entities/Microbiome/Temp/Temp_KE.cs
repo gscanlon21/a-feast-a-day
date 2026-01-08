@@ -4,6 +4,6 @@ public class Temp_KE
 {
     public long? No { get; set; }
 
-    public string Description { get; set; }
+    public string Description { get; set; } = null!;
 }
 

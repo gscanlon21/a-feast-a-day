@@ -10,5 +10,5 @@ public class OTUTaxon
     public int? Taxon { get; set; }
 
     [Required]
-    public string OTUName { get; set; }
+    public string OTUName { get; set; } = null!;
 }

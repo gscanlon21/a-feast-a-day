@@ -2,9 +2,9 @@
 
 public class dt_CherryPick
 {
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
     public int SymptomId { get; set; }
     public int Taxon { get; set; }
     public double Percentile { get; set; }
-    public string Direction { get; set; }
+    public string Direction { get; set; } = null!;
 }

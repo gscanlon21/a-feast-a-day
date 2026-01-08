@@ -5,7 +5,7 @@ namespace Data.Entities.Microbiome;
 class Working_Thorne
 {
     [Required]
-    public string Domain { get; set; }
+    public string Domain { get; set; } = null!;
 
     public string? Kingdom { get; set; }
 

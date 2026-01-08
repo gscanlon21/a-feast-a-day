@@ -16,7 +16,7 @@ public class Probiotics
     public int ProId { get; set; }
 
     [Required]
-    public string ProbioticName { get; set; }
+    public string ProbioticName { get; set; } = null!;
 
     // AS ('/Library/ProbioticDetails?ProId='+CONVERT([varchar](11),[ProId])),
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

@@ -5,7 +5,7 @@ namespace Data.Entities.Microbiome;
 public class OtherStats
 {
     [Key, Required]
-    public string StatsName { get; set; }
+    public string StatsName { get; set; } = null!;
 
     [Required]
     public double Count { get; set; }

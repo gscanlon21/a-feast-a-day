@@ -13,13 +13,13 @@ public class Conditions
 
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    public string ConditionName { get; set; }
+    public string ConditionName { get; set; } = null!;
 
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int CondId { get; set; }
 
     [Required]
-    public string ConditionCode { get; set; }
+    public string ConditionCode { get; set; } = null!;
 
     public string? GMRepoName { get; set; }
 
@@ -45,15 +45,15 @@ public class Conditions
 
     // AS ('/Library/Bacteria?ConditionCode='+[ConditionCode]),
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public string BacteriaUrl { get; private set; }
+    public string BacteriaUrl { get; private set; } = null!;
 
     // AS ([ConditionUri]),
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public string Url { get; private set; }
+    public string Url { get; private set; } = null!;
 
     // AS ('/Library/Statistics?ConditionCode='+[ConditionCode]),
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public string StatisticsUrl { get; private set; }
+    public string StatisticsUrl { get; private set; } = null!;
 
     public double? KmLow { get; set; }
 
@@ -69,7 +69,7 @@ public class Conditions
 
     // AS ([OtherName]),
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public string AltName { get; private set; }
+    public string AltName { get; private set; } = null!;
 
     public string? ICDCode { get; set; }
 

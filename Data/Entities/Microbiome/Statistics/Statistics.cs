@@ -6,7 +6,7 @@ public class Statistics
 {
     [Key]
     [Required]
-    public string StatsName { get; set; }
+    public string StatsName { get; set; } = null!;
 
     [Required]
     public double Statistic { get; set; }

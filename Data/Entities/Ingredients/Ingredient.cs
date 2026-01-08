@@ -109,6 +109,9 @@ public class Ingredient
     [JsonIgnore, InverseProperty(nameof(IngredientCooked.Ingredient))]
     public virtual ICollection<IngredientCooked> IngredientsCooked { get; private init; } = [];
 
+    [JsonIgnore, InverseProperty(nameof(UserIngredient.Ingredient))]
+    public virtual ICollection<UserIngredient> UserIngredients { get; init; } = [];
+
     /// <summary>
     /// These are what ingredients this ingredient is an alternate of.
     /// </summary>

@@ -54,7 +54,7 @@ public class UserConsts
         | FootnoteType.HealthTips | FootnoteType.HealthFacts | FootnoteType.GoodVibes | FootnoteType.Mindfulness;
 
     public const Equipment EquipmentDefault = Equipment.Microwave | Equipment.Oven | Equipment.Stove | Equipment.Broiler
-        | Equipment.Refrigerator | Equipment.Freezer | Equipment.Toaster | Equipment.SlowCooker | Equipment.PotatoMasher 
+        | Equipment.Refrigerator | Equipment.Freezer | Equipment.Toaster | Equipment.SlowCooker | Equipment.PotatoMasher
         | Equipment.SpiceGrinder;
 
     /// <summary>

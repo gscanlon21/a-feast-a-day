@@ -12,11 +12,11 @@ public class _TaxonHierarchy_
     public int ParentTaxon { get; set; }
 
     [Required]
-    public string Rank { get; set; }
+    public string Rank { get; set; } = null!;
 
-    public string Hierarchy { get; set; }
+    public string Hierarchy { get; set; } = null!;
 
-    public string TaxonName { get; set; }
+    public string TaxonName { get; set; } = null!;
 
     public int? ImageNo { get; set; }
 }

@@ -21,4 +21,6 @@ public class ShoppingListItemDto
     public required Category Category { get; init; }
 
     public required bool SkipShoppingList { get; init; }
+
+    public required string? Notes { get; init; }
 }

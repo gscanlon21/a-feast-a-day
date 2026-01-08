@@ -14,7 +14,7 @@
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
             @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)))
             {
-                <li>@item.Quantity @(item.Measure.GetSingleDisplayName(DisplayType.ShortName)) @item.Name</li>
+                <li>@item.Quantity @(item.Measure.GetSingleDisplayName(DisplayType.ShortName)) @item.Name@item.Notes</li>
             }
         </ul>
     </div>

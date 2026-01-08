@@ -21,5 +21,5 @@ class TaxonEndProduct
     public double Factor { get; set; }
 
     [Required]
-    public string Logic { get; set; }
+    public string Logic { get; set; } = null!;
 }

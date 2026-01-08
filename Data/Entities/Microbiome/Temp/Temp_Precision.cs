@@ -8,6 +8,6 @@ public class Temp_Precision
 
     public double? Percentile { get; set; }
 
-    public string Quantiles { get; set; }
+    public string Quantiles { get; set; } = null!;
 }
 

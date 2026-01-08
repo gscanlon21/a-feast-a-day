@@ -70,6 +70,6 @@ public class UserNewsletterDto
     public Allergens AntiAllergens => EnumExtensions.GetSingleValues(excludingAny: Allergens).Aggregate(Allergens.None, (c, n) => c | n);
 
     public bool IsAlmostInactive => LastActive.HasValue && LastActive.Value < DateHelpers.Today.AddMonths(-1 * (UserConsts.DisableAfterXMonths - 1));
-    
+
     public bool IsNewlyCreated => CreatedDate >= DateHelpers.Today.AddDays(-7);
 }

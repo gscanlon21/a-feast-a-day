@@ -4,7 +4,7 @@ namespace Data.Entities.Microbiome;
 
 public class Taxon_Signicant
 {
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     public int? Taxon { get; set; }
 
@@ -15,7 +15,7 @@ public class Taxon_Signicant
     public double? Above85 { get; set; }
 
     [Required]
-    public string Direction { get; set; }
+    public string Direction { get; set; } = null!;
 
     public double? Chi2 { get; set; }
 

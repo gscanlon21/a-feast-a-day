@@ -3,19 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome.Statistics;
 
-class StatsTable_Compound
+public class StatsTable_Compound
 {
+    [Required]
     [Key, Column(Order = 0)]
-    [Required]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Compound { get; set; }
 
     public int? Obs { get; set; }
 
-    public string Percentiles { get; set; }
+    public string Percentiles { get; set; } = null!;
 
     public double? Mean { get; set; }
 

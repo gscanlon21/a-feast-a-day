@@ -6,10 +6,10 @@ namespace Data.Entities.Microbiome;
 public class ModifierType
 {
     [Key, Required]
-    public string MType { get; set; }
+    public string MType { get; set; } = null!;
 
     [Required, Column("ModifierType")]
-    public string ModifierTypeName { get; set; }
+    public string ModifierTypeName { get; set; } = null!;
 
     public string? De2 { get; set; }
 

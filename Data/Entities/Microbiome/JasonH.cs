@@ -7,7 +7,7 @@ public class JasonH
 {
     [Required]
     [Key, Column(Order = 0)]
-    public string Source { get; set; }
+    public string Source { get; set; } = null!;
 
     [Required]
     [Key, Column(Order = 1)]

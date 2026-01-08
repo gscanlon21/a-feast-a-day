@@ -15,7 +15,7 @@ public class Metabolism
     public int MId { get; set; }
 
     [Required]
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other
