@@ -1,0 +1,146 @@
+﻿@page "/newsletter/shoppinglistdynamic"
+@inject DisplayHelper DH
+@using System.Net
+@using System.Text.Json
+@using Core.Dtos.Newsletter
+@using Core.Models.Footnote
+@using Core.Models.Newsletter
+@using Core.Dtos.User
+@using Core.Dtos.ShoppingList
+@using Lib.Pages.Shared.Recipe
+
+@if (List?.ShoppingList.Any() == true)
+{
+    <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
+        <h3 style="margin-block-start:0;margin-block-end:0.5ex">Shopping List</h3>
+        @*<input type="text" id="ingredient-entry" />*@
+        <ul style="padding-inline-start:0;margin-block:0;display:grid;gap:1ex;list-style-type:none;" id="shopping-list">
+            @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)))
+            {
+                <li style="display:flex;align-items:center;">
+                    <input type="checkbox" style="transform-origin:left;transform:scale(1.5);margin-inline-end:2ch;" onchange="whenChecked(this)" data-name="@item.Name" />
+                    <span>@item.Quantity @(item.Measure.GetSingleDisplayName(DisplayType.ShortName)) @item.Name@item.Notes</span>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+<script type="module">
+    window.ingredients = [];
+
+    function loadItems() {
+      return JSON.parse(localStorage.getItem("ShoppingListItems")) || [];
+    }
+
+    function saveItems(items) {
+      localStorage.setItem("ShoppingListItems", JSON.stringify(items));
+    }
+
+    function containsItem(name) {
+      return loadItems().some((i) => i.name.toLowerCase() === name.toLowerCase());
+    }
+
+    window.whenChecked = (elem) => {
+      const checkedIngredient = window.ingredients.find(i => i.name == elem.dataset.name);
+      if (!checkedIngredient) return;
+
+      const storedItems = loadItems();
+      const item = storedItems.find((i) => i.name === checkedIngredient.name);
+      if (!item) return;
+
+      // Persist checked state
+      item.isChecked = elem.checked;
+      saveItems(storedItems);
+
+      // Move item to its new ordered position?
+    }
+
+    const ingredientEntry = document.getElementById('ingredient-entry');
+    if (ingredientEntry) {
+        ingredientEntry.addEventListener('keypress', () => {
+            if (e.key !== "Enter") return;
+            if (!ingredientEntry.value || !ingredientEntry.value.trim()) {
+                ingredientEntry.value = "";
+                return;
+            }
+
+            if (containsItem(ingredientEntry.value)) {
+                ingredientEntry.value = "";
+                return;
+            }
+
+            const newIngredient = {
+                name: e.currentTarget.value,
+                isChecked: false,
+                isCustom: true,
+                order: 0,
+                group: ""
+            };
+
+            const storedItems = loadItems();
+            const ordered = storedItems.concat(newIngredient);
+            const insertIndex = ordered.findIndex((i) => i.name === newIngredient.name);
+
+            ingredients.splice(insertIndex, 0, newIngredient);
+            saveItems(storedItems.concat(newIngredient));
+
+            ingredientEntry.value = "";
+        });
+    }
+
+    const shoppingListViewModel = @(new MarkupString(JsonSerializer.Serialize(List)));
+    const storedHash = Number(localStorage.getItem("ShoppingListHash")) || 0;
+    const shoppingList = shoppingListViewModel;
+
+    const items = loadItems();
+
+    // Reset if newsletter hash changed.
+    if (storedHash !== shoppingList.Hash) {
+      items = items.filter((i) => i.isCustom && !i.isChecked);
+      localStorage.setItem("ShoppingListHash", String(shoppingList.Hash));
+    }
+
+    const remoteItems = shoppingList.ShoppingList.filter((sl) => !sl.SkipShoppingList).map((sl) => {
+        return {
+            name: sl.Name,
+            isCustom: false,
+            isChecked: false,
+            order: sl.Category || 0,
+            group: sl.Group || "",
+        };
+    });
+
+    // Preserve checked state from localStorage.
+    remoteItems.forEach(function (remote) {
+      const local = items.find((i) => i.name === remote.name);
+      if (local) {
+          remote.isChecked = local.isChecked;
+          document.querySelector('input[data-name="' + local.name + '"]').checked = local.isChecked;
+      }
+    });
+
+    // Keep only custom items before merging.
+    items = items.filter((i) => i.isCustom);
+
+    // Merge local custom items + remote items.
+    const merged = items.concat(remoteItems);
+    saveItems(merged);
+
+    window.ingredients.length = 0;
+    window.ingredients.push.apply(window.ingredients, merged);
+</script>
+
+@code {
+    [Parameter, EditorRequired]
+    public UserNewsletterDto User { get; set; }
+
+    [Parameter, EditorRequired]
+    public UserFeastDto UserFeast { get; set; }
+
+    [Parameter, EditorRequired]
+    public ShoppingListDto? List { get; set; }
+
+    [Parameter, EditorRequired]
+    public Verbosity Verbosity { get; set; }
+}

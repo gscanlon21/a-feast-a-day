@@ -16,8 +16,9 @@
 
 <div class="row gy-4">
     <div class="col-lg-6">
+        @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+
         <div class="alert alert-light shadow mb-0">
-            @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
             @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
         </div>        
     </div>

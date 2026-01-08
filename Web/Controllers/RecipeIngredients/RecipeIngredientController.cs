@@ -91,6 +91,7 @@ public class RecipeIngredientController : ViewController
         }
 
         var userRecipeIngredient = await _context.UserRecipeIngredients.AsNoTracking()
+            .Include(uri => uri.SubstituteIngredient)
             .Where(ui => ui.RecipeIngredientId == recipeIngredientId)
             .Where(ui => ui.UserId == user.Id)
             .FirstOrDefaultAsync();
@@ -112,6 +113,13 @@ public class RecipeIngredientController : ViewController
         var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).Where(ai => ai.DisabledReason == null).ToList()
             // Not excluding allergens from a user's custom ingredients because I assume they know what they want.
             ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
+        
+        // Ingredients to show to the user.
+        var ingredients = new List<IngredientDto>() { recipeIngredient.Ingredient!.AsType<IngredientDto>()! };
+        if (userRecipeIngredient.SubstituteIngredient != null)
+        {
+            ingredients.Add(userRecipeIngredient.SubstituteIngredient.AsType<IngredientDto>()!);
+        }
 
         // Restore the failed UserRecipeIngredient if the upsert model validation failed.
         var viewModel = TempData.ReadModel<UserRecipeIngredientViewModel>(nameof(UserRecipeIngredientViewModel));
@@ -120,11 +128,11 @@ public class RecipeIngredientController : ViewController
             User = user,
             Token = token,
             WasUpdated = wasUpdated,
+            Ingredients = ingredients,
             Recipes = substitutionRecipes,
-            Ingredients = substituteIngredients,
             RecipeIngredient = recipeIngredient,
+            SubstituteIngredients = substituteIngredients,
             Recipe = recipe.AsType<NewsletterRecipeDto>()!,
-            Ingredient = recipeIngredient.Ingredient!.AsType<IngredientDto>()!,
             UserNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token),
             PrepRecipes = prepRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
             UserRecipeIngredient = viewModel ?? new UserRecipeIngredientViewModel(userRecipeIngredient),

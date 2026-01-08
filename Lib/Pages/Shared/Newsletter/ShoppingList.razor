@@ -1,16 +1,27 @@
 ﻿@page "/newsletter/shoppinglist"
 @inject DisplayHelper DH
 @using System.Net
+@using Core.Dtos.Newsletter
 @using Core.Models.Footnote
 @using Core.Models.Newsletter
 @using Core.Dtos.User
 @using Core.Dtos.ShoppingList
+@using Core.Models.User
 @using Lib.Pages.Shared.Recipe
 
 @if (List?.ShoppingList.Any() == true)
 {
     <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
-        <h3 style="margin-block-start:0;margin-block-end:0.5ex">Shopping List</h3>
+        <h3 style="margin-block-start:0;margin-block-end:0.5ex">
+            @if (User.Features.HasFlag(Features.Demo))
+            {
+                <span>Shopping List</span>
+            }
+            else 
+            {
+                <a target="_blank" href="@DH.ShoppingLink(User, UserFeast.Date)">Shopping List</a>
+            }
+        </h3>
         <ul style="padding-inline-start:2ch;margin-block:0;display:grid;gap:1ex;">
             @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)))
             {
@@ -21,8 +32,11 @@
 }
 
 @code {
-    [Parameter]
-    public UserNewsletterDto? User { get; set; }
+    [Parameter, EditorRequired]
+    public UserNewsletterDto User { get; set; }
+
+    [Parameter, EditorRequired]
+    public UserFeastDto UserFeast { get; set; }
 
     [Parameter, EditorRequired]
     public ShoppingListDto? List { get; set; }

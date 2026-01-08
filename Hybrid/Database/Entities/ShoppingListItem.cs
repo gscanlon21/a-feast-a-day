@@ -17,6 +17,7 @@ public class ShoppingListItem
     public ShoppingListItem(ShoppingListItemDto dto)
     {
         Name = dto.Name;
+        Notes = dto.Notes;
         Group = dto.Group;
         Measure = dto.Measure;
         Quantity = dto.Quantity;
@@ -32,6 +33,7 @@ public class ShoppingListItem
 
     public string Name { get; init; } = null!;
     public string Group { get; init; } = null!;
+    public string? Notes { get; init; }
     public Measure Measure { get; init; }
     public bool IsCustom { get; init; }
     public int? Quantity { get; set; }
@@ -45,19 +47,13 @@ public class ShoppingListItem
         set { SetProperty(ref _isChecked, value); }
     }
 
-    public string Title()
+    public string Title() => $"{QuantityMeasure()} {Name}".Trim();
+    public string Description() => Notes?.Trim(',', ' ') ?? "";
+    private string QuantityMeasure() => Quantity switch
     {
-        return $"{Name}";
-    }
-
-    public string Description()
-    {
-        return Quantity switch
-        {
-            0 => $"<1 {Measure.GetSingleDisplayName(DisplayType.ShortName)}",
-            _ => $"{Quantity} {Measure.GetSingleDisplayName(DisplayType.ShortName)}",
-        };
-    }
+        0 => $"<1 {Measure.GetSingleDisplayName(DisplayType.ShortName)}".Trim(),
+        _ => $"{Quantity} {Measure.GetSingleDisplayName(DisplayType.ShortName)}".Trim(),
+    };
 
     public event PropertyChangedEventHandler? PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
