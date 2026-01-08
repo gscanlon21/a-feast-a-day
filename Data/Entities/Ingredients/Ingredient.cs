@@ -74,10 +74,7 @@ public class Ingredient
     [Display(Name = "Grams Per Serving")]
     public double GramsPerServing { get; set; }
 
-    /// <summary>
-    /// Notes about the ingredient (externally shown).
-    /// </summary>
-    [Display(Name = "Notes")]
+    [Display(Name = "Internal Notes")]
     public string? Notes { get; set; } = null;
 
     [Display(Name = "Source")]

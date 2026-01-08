@@ -74,8 +74,7 @@ public class IngredientController : ViewController
             .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             .FirstOrDefaultAsync(r => r.Id == ingredientId);
 
-        // User must've created the ingredient to be able to edit it.
-        if (ingredient == null || (ingredient.UserId != user.Id && !user.Features.HasFlag(Features.Admin)))
+        if (ingredient == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
@@ -83,10 +82,8 @@ public class IngredientController : ViewController
         return View(nameof(ManageIngredient), new UserManageIngredientViewModel()
         {
             User = user,
-            Token = token,
             Ingredient = ingredient,
             WasUpdated = wasUpdated,
-            HasUserIngredient = true,
             Parameters = new UserManageIngredientViewModel.Params(email, token, ingredientId)
         });
     }

@@ -7,13 +7,13 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="mb-3">
-        <label for="recipe-name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
+        <label for="ingredient-name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
         <div class="input-group">
-            <textarea id="recipe-name" class="form-control" disabled="disabled" aria-describedby="recipe-help" rows="1">@Model.Ingredient.Name</textarea>
+            <textarea id="ingredient-name" class="form-control" disabled="disabled" aria-describedby="ingredient-help" rows="1">@Model.Ingredient.Name</textarea>
         </div>
 
         <span asp-validation-for="Ingredient" class="text-danger"></span>
-        <div id="recipe-help" class="form-text">
+        <div id="ingredient-help" class="form-text">
             @Html.DisplayDescriptionFor(_ => Model.Ingredient)
         </div>
     </div>
@@ -24,8 +24,8 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="mb-3 mt-3">
-            <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Notes)</label>
-            <input type="text" asp-for="Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.Notes" />
+            <label asp-for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Notes)</label>
+            <input type="text" asp-for="Notes" class="form-control" aria-describedby="notes-help" rows="1" value="@Model.Notes" />
             <span asp-validation-for="Notes" class="text-danger"></span>
         </div>
 

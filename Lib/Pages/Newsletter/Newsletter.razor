@@ -37,9 +37,13 @@ else
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
     
     <div style="margin-block:1rem;">
-        @if (Model.Client != Core.Models.Client.App) 
+        @if (Model.Client == Core.Models.Client.Email || Model.User.Features.HasFlag(Features.Demo))
         {
-            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" />
+            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" UserFeast="Model.UserFeast" />
+        }
+        else if (Model.Client != Core.Models.Client.App)
+        {
+            <Lib.Pages.Shared.Newsletter.ShoppingListDynamic User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" UserFeast="Model.UserFeast" />
         }
 
         @foreach (var section in Enum.GetValues<Section>().OrderBy(s => s.GetDisplayName(DisplayType.Order).Length).ThenBy(s => s.GetDisplayName(DisplayType.Order)))

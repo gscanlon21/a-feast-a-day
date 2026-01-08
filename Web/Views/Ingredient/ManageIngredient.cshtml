@@ -16,18 +16,31 @@
 
 <div class="row gy-4">
     <div class="col-lg-6">
-        <div class="alert alert-light shadow mb-0">
-            @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
-            @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
-        </div>        
-    </div>
-
-    <div class="col">
         <div class="row gy-4">
-            @await Component.InvokeAsync(IngredientAlternativesViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
-            @await Component.InvokeAsync(IngredientCookedViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+            <div @* no-nested-rows *@>
+                @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+            </div>
+
+            @if (Model.CanManage)
+            {
+                <div @* no-nested-rows *@>
+                    <div class="alert alert-light shadow mb-0">
+                        @await Component.InvokeAsync(UpsertIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+                    </div>
+                </div>
+            }
         </div>
     </div>
+
+    @if (Model.CanManage)
+    {
+        <div class="col">
+            <div class="row gy-4">
+                @await Component.InvokeAsync(IngredientAlternativesViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+                @await Component.InvokeAsync(IngredientCookedViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+            </div>
+        </div>
+    }
 </div>
 
 @section Scripts {

@@ -28,12 +28,12 @@ public class UserManageRecipeIngredientViewModel
     public required IList<NewsletterRecipeDto> AltRecipes { get; init; }
 
     public required NewsletterRecipeDto Recipe { get; init; }
-    public required IngredientDto Ingredient { get; init; }
+    public required IList<IngredientDto> Ingredients { get; init; }
 
     /// <summary>
     /// The ingredient's alternative ingredients.
     /// </summary>
-    public required IList<Data.Entities.Ingredients.Ingredient> Ingredients { get; init; }
+    public required IList<Data.Entities.Ingredients.Ingredient> SubstituteIngredients { get; init; }
 
     /// <summary>
     /// Need a user context so the manage link is clickable and the user can un-ignore a recipe/ingredient.

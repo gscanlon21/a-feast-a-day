@@ -1,0 +1,136 @@
+﻿@page "/newsletter/shoppinglistdynamic"
+@inject DisplayHelper DH
+@using System.Net
+@using System.Text.Json
+@using Core.Dtos.Newsletter
+@using Core.Models.Footnote
+@using Core.Models.Newsletter
+@using Core.Dtos.User
+@using Core.Dtos.ShoppingList
+@using Lib.Pages.Shared.Recipe
+
+@if (List?.ShoppingList.Any() == true)
+{
+    <div style="background-color:lavender;padding:1rem;margin-block:1rem;">
+        <h3 style="margin-block-start:0;margin-block-end:0.5ex">Shopping List</h3>
+        @*<input type="text" id="ingredient-entry" />*@
+        <ul style="padding-inline-start:0;margin-block:0;display:grid;gap:1ex;list-style-type:none;" id="shopping-list">
+            @foreach (var item in List.ShoppingList.Where(l => !l.SkipShoppingList || Verbosity.HasFlag(Verbosity.CommonIngredients)))
+            {
+                <li style="display:flex;align-items:center;">
+                    <input type="checkbox" style="transform-origin:left;transform:scale(1.5);margin-inline-start:0;margin-inline-end:2ch;" onchange="whenChecked(this)" data-name="@item.Name" />
+                    <span>@item.Quantity @(item.Measure.GetSingleDisplayName(DisplayType.ShortName)) @item.Name@item.Notes</span>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+<script type="module">
+    function loadItems() {
+      return JSON.parse(localStorage.getItem("ShoppingListItems")) || [];
+    }
+
+    function saveItems(items) {
+      localStorage.setItem("ShoppingListItems", JSON.stringify(items));
+    }
+
+    function containsItem(name) {
+      return loadItems().some((i) => i.name.toLowerCase() === name.toLowerCase());
+    }
+
+    window.whenChecked = (elem) => {
+      const localItems = loadItems();
+      const localItem = localItems.find((i) => i.name === elem.dataset.name);
+      if (!localItem) return;
+
+      // Persist checked state
+      localItem.isChecked = elem.checked;
+      saveItems(localItems);
+
+      // Move item to its new ordered position?
+    }
+
+    const ingredientEntry = document.getElementById('ingredient-entry');
+    if (ingredientEntry) {
+        ingredientEntry.addEventListener('keypress', () => {
+            if (e.key !== "Enter") return;
+            if (!ingredientEntry.value || !ingredientEntry.value.trim()) {
+                ingredientEntry.value = "";
+                return;
+            }
+
+            if (containsItem(ingredientEntry.value)) {
+                ingredientEntry.value = "";
+                return;
+            }
+
+            const newIngredient = {
+                name: e.currentTarget.value,
+                isChecked: false,
+                isCustom: true,
+                order: 0,
+                group: ""
+            };
+
+            const storedItems = loadItems();
+            const ordered = storedItems.concat(newIngredient);
+            const insertIndex = ordered.findIndex((i) => i.name === newIngredient.name);
+
+            ingredients.splice(insertIndex, 0, newIngredient);
+            saveItems(storedItems.concat(newIngredient));
+
+            ingredientEntry.value = "";
+        });
+    }
+
+    const shoppingListViewModel = @(new MarkupString(JsonSerializer.Serialize(List)));
+    const storedHash = Number(localStorage.getItem("ShoppingListHash")) || 0;
+    let localItems = loadItems();
+
+    // Reset if newsletter hash changed.
+    if (storedHash !== shoppingListViewModel.Hash) {
+      localItems = localItems.filter((i) => i.isCustom && !i.isChecked);
+      localStorage.setItem("ShoppingListHash", String(shoppingListViewModel.Hash));
+    }
+
+    const remoteItems = shoppingListViewModel.ShoppingList.filter((sl) => !sl.SkipShoppingList).map((sl) => {
+        return {
+            name: sl.Name,
+            isCustom: false,
+            isChecked: false,
+            order: sl.Category || 0,
+            group: sl.Group || "",
+        };
+    });
+
+    // Preserve checked state from localStorage.
+    remoteItems.forEach(function (remote) {
+      const localItem = localItems.find((i) => i.name === remote.name);
+      if (localItem) {
+          remote.isChecked = localItem.isChecked;
+          document.querySelector('input[data-name="' + localItem.name + '"]').checked = localItem.isChecked;
+      }
+    });
+
+    // Keep only custom items before merging.
+    localItems = localItems.filter((i) => i.isCustom);
+
+    // Merge local custom items + remote items.
+    const merged = localItems.concat(remoteItems);
+    saveItems(merged);
+</script>
+
+@code {
+    [Parameter, EditorRequired]
+    public UserNewsletterDto User { get; set; }
+
+    [Parameter, EditorRequired]
+    public UserFeastDto UserFeast { get; set; }
+
+    [Parameter, EditorRequired]
+    public ShoppingListDto? List { get; set; }
+
+    [Parameter, EditorRequired]
+    public Verbosity Verbosity { get; set; }
+}

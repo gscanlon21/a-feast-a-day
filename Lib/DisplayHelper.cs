@@ -23,6 +23,16 @@ public class DisplayHelper
         return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/n/{Uri.EscapeDataString(user.Email)}/{today:O}?token={Uri.EscapeDataString(user.Token)}";
     }
 
+    public string ShoppingLink(UserNewsletterDto? user, DateOnly today)
+    {
+        if (user == null)
+        {
+            return string.Empty;
+        }
+
+        return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/n/{Uri.EscapeDataString(user.Email)}/{today:O}/shoppinglist?token={Uri.EscapeDataString(user.Token)}";
+    }
+
     public string RecipeLink(UserNewsletterDto? user, string toPath)
     {
         if (user == null)
