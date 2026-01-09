@@ -262,12 +262,12 @@
 270	\N	Anise Seeds	\N	\N	f	0	14	7	2025-05-24	4	112	131072	112	Anise Seeds	https://www.eatthismuch.com/calories/anise-seed-177
 271	\N	Anise Liquid	\N	\N	f	0	7	7	2025-06-06	7	112	131072	112	Anise Liquid	https://www.eatthismuch.com/calories/anise-seed-177
 272	\N	Fettuccine Noodles	\N	\N	f	262176	28	56	2025-06-08	4	224	4096	224	Fettuccine Noodles	https://www.eatthismuch.com/calories/noodles-fettuccine-125972
-273	\N	Slices of Whole-Wheat Bread	\N	\N	f	32	28	28	2024-09-23	0	56	4	56	Whole-Wheat Bread	https://www.eatthismuch.com/calories/whole-wheat-bread-4025
+273	\N	Slices of Whole-Wheat Bread	\N	\N	f	32	28	28	2026-01-09	0	56	4	56	Whole-Wheat Bread	https://www.eatthismuch.com/calories/whole-wheat-bread-4025
 274	\N	Slices of Whole-Grain Bread	\N	\N	f	32	26	26	2024-10-09	0	52	4	52	Whole-Grain Bread	https://www.eatthismuch.com/calories/multi-grain-bread-3995
 276	\N	Chili Oil	\N	\N	f	0	28	14	2025-07-17	9	224	65536	224	Chili Oil	https://www.eatthismuch.com/calories/chili-oil-1712205
 277	\N	Mixed Salad Leaves	\N	\N	f	0	28	20	2025-12-12	4	56	2	56	Mixed Salad Leaves	https://www.eatthismuch.com/calories/mixed-leaves-salad,139949
 278	\N	Extra Virgin Olive Oil	\N	\N	t	0	28	14	2025-03-16	9	224	65536	224	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/
-279	\N	Balsamic Vinegar | Sherry Vinegar	\N	\N	f	0	255	255	2024-09-23	6	255	32	255	Balsamic Vinegar | Sherry Vinegar	https://www.eatthismuch.com/calories/balsamic-vinegar,235
+279	\N	Balsamic Vinegar | Sherry Vinegar	\N	\N	f	0	255	255	2026-01-09	6	255	32	255	Balsamic Vinegar | Sherry Vinegar	https://www.eatthismuch.com/calories/balsamic-vinegar,235
 280	\N	Sherry Vinegar	\N	\N	f	0	30	15	2024-11-08	9	240	32	240	Sherry Vinegar	https://www.eatthismuch.com/calories/sherry-vinegar-12742
 281	\N	Roma Tomatoes	\N	\N	f	0	62	62	2025-11-16	0	124	2	124	Tomatoes	https://www.eatthismuch.com/calories/roma-tomatoes-1221839
 282	\N	Balsamic Vinaigrette	\N	\N	f	0	30	15	2025-08-24	9	240	32	240	Balsamic Vinaigrette	https://www.eatthismuch.com/calories/italian-dressing-271
@@ -1307,3 +1307,4 @@
 1660	\N	Corn Kernals	\N	\N	f	2	164	164	2025-08-02	6	164	512	164	Canned Corn	https://www.eatthismuch.com/calories/corn,1949
 1661	\N	Small Russet Potatoes	\N	\N	f	0	213	369	2025-08-03	0	150	2	150	Russet Potatoes	https://www.eatthismuch.com/food/nutrition/russet-potatoes,2092/
 1662	\N	Brandy	\N	\N	f	0	29.4	147	2024-12-18	9	235.2	524288	235.2	Rum	https://www.eatthismuch.com/calories/red-wine-3070
+1665	\N	Coconut Oil | Vegetable Oil	\N	\N	f	0	28	14	2024-12-09	4	224	65536	224	Coconut Oil	https://www.eatthismuch.com/calories/coconut-oil-265
