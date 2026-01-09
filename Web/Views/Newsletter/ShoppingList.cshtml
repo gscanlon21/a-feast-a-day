@@ -1,7 +1,8 @@
 ﻿@model Core.Dtos.ShoppingList.ShoppingListDto
+@using Lib.Pages.Shared.Newsletter
 
 @{
     Layout = "_Newsletter";
 }
 
-<component type="typeof(Lib.Pages.Shared.Newsletter.ShoppingListDynamic)" render-mode="Static" param-List='Model' />
+<component type="typeof(ShoppingListDynamic)" render-mode="Static" param-List='Model' />

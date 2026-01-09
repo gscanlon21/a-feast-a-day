@@ -3,6 +3,7 @@
 @using Core.Models.Ingredients
 @using Core.Models.Recipe
 @using Core.Models.User
+@using Lib.Pages.Shared.Ingredient
 
 <div @* no-nested-rows *@>
     <h5 class="mb-1">@Html.DisplayNameFor(_ => Model.CookedIngredients)</h5>
@@ -41,7 +42,7 @@
                             <input type="submit" value="Save" class="btn btn-primary" />
                         </div>
                     </form>
-                    <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='new List<IngredientDto>() { cookedIngredient.CookedIngredient.AsType<IngredientDto>()! }' />
+                    <component type="typeof(IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='new List<IngredientDto>() { cookedIngredient.CookedIngredient.AsType<IngredientDto>()! }' />
                 </div>
             }
         </div>

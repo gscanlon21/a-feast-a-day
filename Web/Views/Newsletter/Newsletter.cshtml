@@ -1,7 +1,8 @@
 ﻿@model Core.Dtos.Newsletter.NewsletterDto
+@using Lib.Pages.Newsletter
 
 @{
     Layout = "_Newsletter";
 }
 
-<component type="typeof(Lib.Pages.Newsletter.Newsletter)" render-mode="Static" param-Model='Model' />
+<component type="typeof(Newsletter)" render-mode="Static" param-Model='Model' />

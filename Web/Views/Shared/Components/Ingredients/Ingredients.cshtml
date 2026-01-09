@@ -1,6 +1,7 @@
 ﻿@model IngredientsViewModel
 @using Core.Models.Recipe
 @using Core.Models.User
+@using Lib.Pages.Shared.Ingredient
 
 @if (Model.Ingredients != null && Model.Ingredients.Any())
 {
@@ -10,6 +11,6 @@
             <span class="float-end">@Model.Ingredients.Count()</span>
         </summary>
 
-        <component type="typeof(Lib.Pages.Shared.Ingredient.IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.Ingredients' />
+        <component type="typeof(IngredientSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Ingredients='Model.Ingredients' />
     </details>
 }

@@ -1,4 +1,5 @@
-﻿using Core.Dtos.Ingredient;
+﻿using Core.Code.Extensions;
+using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
@@ -115,11 +116,11 @@ public class RecipeIngredientController : ViewController
             ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
 
         // Ingredients to show to the user.
-        var ingredients = new List<IngredientDto>() { recipeIngredient.Ingredient!.AsType<IngredientDto>()! };
-        if (userRecipeIngredient.SubstituteIngredient != null)
+        var ingredients = new List<IngredientDto?>()
         {
-            ingredients.Add(userRecipeIngredient.SubstituteIngredient.AsType<IngredientDto>()!);
-        }
+            recipeIngredient.Ingredient?.AsType<IngredientDto>(),
+            userRecipeIngredient.SubstituteIngredient?.AsType<IngredientDto>(),
+        }.RemoveNullEntries();
 
         // Restore the failed UserRecipeIngredient if the upsert model validation failed.
         var viewModel = TempData.ReadModel<UserRecipeIngredientViewModel>(nameof(UserRecipeIngredientViewModel));

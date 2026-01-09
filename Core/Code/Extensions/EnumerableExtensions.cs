@@ -3,6 +3,14 @@
 public static class EnumerableExtensions
 {
     /// <summary>
+    /// Removes all elements from a list that are null.
+    /// </summary>
+    public static List<T> RemoveNullEntries<T>(this IEnumerable<T?> list)
+    {
+        return list.Where(i => i != null).Cast<T>().ToList();
+    }
+
+    /// <summary>
     /// Orders an enum by it's [Display(Order = #)] attribute.
     /// </summary>
     public static IOrderedEnumerable<T> ThenByOrder<T>(this IOrderedEnumerable<T> list) where T : struct, Enum
