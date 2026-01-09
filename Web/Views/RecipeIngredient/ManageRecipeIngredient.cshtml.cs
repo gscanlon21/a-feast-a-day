@@ -84,6 +84,7 @@ public class UserRecipeIngredientViewModel : IValidatableObject
     /// <summary>
     /// Whitespace is allowed, so the user can hide the default system attributes.
     /// </summary>
+    [Display(Name = "Notes", Description = "These show for the recipe ingredient.")]
     [DisplayFormat(ConvertEmptyStringToNull = false)]
     public string? Notes { get; set; }
 

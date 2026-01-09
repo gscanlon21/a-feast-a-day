@@ -52,7 +52,6 @@ public class ManageIngredientViewComponent : ViewComponent
         return View("ManageIngredient", new ManageIngredientViewModel()
         {
             User = user,
-            Servings = 1,
             Ingredient = ingredient,
             Parameters = parameters,
             Notes = userIngredient.Notes,

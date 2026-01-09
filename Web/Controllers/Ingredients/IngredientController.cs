@@ -238,7 +238,6 @@ public class IngredientController : ViewController
             .Include(ur => ur.Ingredient)
             .FirstAsync();
 
-        //userRecipe.Servings = viewModel.Servings;
         userIngredient.Notes = user.IsDemoUser ? null : viewModel.Notes;
 
         await _context.SaveChangesAsync();

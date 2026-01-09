@@ -19,10 +19,6 @@ public class ManageIngredientViewModel
     [ValidateNever]
     public required UserIngredient UserIngredient { get; init; }
 
-    [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
-    [Display(Name = "Minimum Servings", Description = "Minimum servings the recipe should be scaled for.")]
-    public int Servings { get; init; } = RecipeConsts.ServingsDefault;
-
-    [Display(Name = "Notes")]
+    [Display(Name = "Notes", Description = "These show for the shopping list.")]
     public string? Notes { get; init; }
 }

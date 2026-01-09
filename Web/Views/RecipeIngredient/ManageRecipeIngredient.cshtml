@@ -54,9 +54,10 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div class="mb-3 mt-3">
-                    <label for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Notes)@(Model.UserRecipeIngredient.Notes.IsWhiteSpace() ? "*" : "")</label>
-                    <input type="text" asp-for="UserRecipeIngredient.Notes" class="form-control" aria-describedby="exercise-notes-help" rows="1" value="@Model.UserRecipeIngredient.Notes" placeholder="@Model.RecipeIngredient.Attributes" />
+                    <label asp-for="UserRecipeIngredient.Notes" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Notes)@(Model.UserRecipeIngredient.Notes.IsWhiteSpace() ? "*" : "")</label>
+                    <input type="text" asp-for="UserRecipeIngredient.Notes" value="@Model.UserRecipeIngredient.Notes" placeholder="@Model.RecipeIngredient.Attributes" class="form-control" aria-describedby="notes-help" />
                     <span asp-validation-for="UserRecipeIngredient.Notes" class="text-danger"></span>
+                    <div id="notes-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.Notes)</div>
                 </div>
 
                 @if (Model.User.IsDemoUser)
@@ -88,7 +89,7 @@
                     <div class="col">
                         <label asp-for="UserRecipeIngredient.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Measure)</label>
                         <select asp-for="UserRecipeIngredient.Measure" class="form-control" aria-describedby="measure-help" onchange="this.dataset.value = this.options[this.selectedIndex].getAttribute('value');"
-                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).Cast<Measure?>().Prepend(null).AsSelectListItems(nullValueText: $"{Model.RecipeIngredient.Measure.GetSingleDisplayName()} (Default)"))" data-value="">
+                                asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).Cast<Measure?>().Prepend(null).AsSelectListItems(nullValueText: $"{Model.RecipeIngredient.Measure.GetSingleDisplayName()} (Default)".Trim()))" data-value="">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.Measure" class="text-danger"></span>
                         <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.Measure)</span>

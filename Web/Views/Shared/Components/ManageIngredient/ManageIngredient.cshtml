@@ -25,37 +25,10 @@
 
         <div class="mb-3 mt-3">
             <label asp-for="Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Notes)</label>
-            <input type="text" asp-for="Notes" class="form-control" aria-describedby="notes-help" rows="1" value="@Model.Notes" />
+            <input type="text" asp-for="Notes" value="@Model.Notes" class="form-control" aria-describedby="notes-help" />
             <span asp-validation-for="Notes" class="text-danger"></span>
+            <div id="notes-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Notes)</div>
         </div>
-
-        @*if (Model.Recipe.AdjustableServings)
-        {
-            if (Model.User.IsDemoUser)
-            {
-                <div class="alert alert-info callout">
-                    Adjust how many servings each recipe should be scaled for.
-                </div>
-            }
-
-            <div class="mb-3 mt-3">
-                <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
-                <div style="display:flex;column-gap:1ex;">
-                    <output name="scaleOutput" for="@Html.IdFor(_ => Model.Servings)">@Model.Servings</output>
-                    <div style="display:flex;width:100%;">
-                        <input asp-for="Servings" type="range" style="width:100%;" aria-describedby="scale-help"
-                               min="@RecipeConsts.ServingsMin" max="@RecipeConsts.ServingsMax" step="@RecipeConsts.ServingsStep"
-                               oninput="scaleOutput.value = this.valueAsNumber" />
-                    </div>
-                </div>
-                <span asp-validation-for="Servings" class="text-danger"></span>
-                <div id="scale-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Servings)</div>
-            </div>
-        }
-        else
-        {
-            <input asp-for="Servings" type="hidden" value="@Model.Recipe.Servings" />
-        }*@
 
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
