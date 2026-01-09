@@ -226,7 +226,7 @@ public class IngredientController : ViewController
             return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId, WasUpdated = false });
         }
 
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: false);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
