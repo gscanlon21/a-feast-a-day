@@ -69,4 +69,7 @@ public enum Allergens : long
 
     [Display(Name = "Yeast")]
     Yeast = 1 << 19, // 524288
+
+    [Display(Name = "Meat")]
+    Meat = 1 << 20, // 1048576
 }
