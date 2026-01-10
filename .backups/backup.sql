@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 9hhmCp0HZP7Uc1XOIcRHQcw1w30fj4cEUvKoMQVhxIQiTkz9DWGC5udzqR2tMIE
+\restrict utNEMilJAcwzRWCfgfkbXIVZ8vfpZIWX1aeJZD0TppN6J1muEEhuACUj15t99RM
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1434,8 +1434,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 188	266	1	f
 1	269	1	f
 77	278	1	f
-279	280	1	f
-279	81	1	f
 284	95	1	f
 284	283	1	f
 286	287	1	f
@@ -2242,6 +2240,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1665	78	1	f
 1665	722	1	f
 1665	76	1	f
+279	280	1	t
+279	81	1	t
+225	3	1	f
 \.
 
 
@@ -12686,6 +12687,23 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17464	293	48	\N	3	0.1
 17465	293	14	\N	3	1
 17466	293	62	\N	3	1
+17467	225	2251799813685248	\N	2	5
+17468	225	36028797018963968	\N	3	0.1
+17469	225	72057594037927936	\N	3	0.1
+17470	225	-9223372036854775808	\N	3	0.1
+17471	225	4611686018427387904	\N	3	0.1
+17472	225	17179869184	\N	2	9
+17473	225	4398046511104	\N	2	0.1
+17474	225	70368744177664	\N	2	26
+17475	225	8796093022208	\N	1	1
+17476	225	17592186044416	\N	2	0.2
+17477	225	65536	\N	1	1
+17478	225	1048576	\N	2	0.1
+17479	225	2097152	\N	2	0.1
+17480	225	4194304	\N	2	0.1
+17481	225	16777216	\N	1	14
+17482	225	67108864	\N	2	3
+17483	225	3221225472	\N	1	0.3
 \.
 
 
@@ -12877,15 +12895,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1391	6	89	1	1	\N	292	f	\N	6	0	f	t
 7140	6	706	1	1	, diced	1286	f	\N	3	3	f	t
 7141	0	706	1	2	, sliced	5	t	\N	4	3	f	t
-5562	0	391	1	2	, peeled and minced	5	f	\N	4	3	f	t
 5195	8	106	2	3	\N	383	f	\N	4	0	f	t
 2990	0	155	1	8	\N	\N	f	100	0	0	f	t
 2991	6	155	4	1	\N	29	f	\N	1	0	f	t
 2992	0	155	1	4	, peeled, cored and thickly sliced	157	f	\N	2	0	f	t
 2993	7	155	1	2	\N	517	f	\N	3	0	f	t
 2994	8	155	1	1	, to serve	520	t	\N	4	0	f	t
-5563	8	391	1	2	, plus more as necessary by the half-teaspoonful	656	f	\N	5	3	f	t
 7148	6	707	1	1	, diced	1286	f	\N	2	0	f	t
+5562	0	391	1	2	, peeled and minced	5	t	\N	4	3	f	t
+5563	8	391	1	2	, plus more as necessary by the half-teaspoonful	656	f	\N	5	3	f	t
 8233	6	977	1	1	\N	123	f	\N	1	0	f	t
 1366	4	68	1	1	, sliced	319	f	\N	0	0	f	t
 317	4	41	1	8	\N	145	f	\N	1	0	f	t
@@ -13265,7 +13283,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2443	0	80	1	6	\N	260	t	\N	5	3	f	t
 2172	0	98	1	12	\N	\N	f	65	0	0	f	t
 2173	6	98	2	1	\N	61	f	\N	1	0	f	t
-5564	7	391	1	3	, plus more to taste	297	f	\N	6	3	f	t
 2176	8	98	1	2	\N	83	f	\N	4	0	f	t
 2177	8	98	1	2	\N	60	f	\N	5	0	f	t
 2178	8	98	2	1	, smoked	73	t	\N	6	0	f	t
@@ -13293,7 +13310,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2018	0	115	1	1	, buttered	213	t	\N	10	0	f	t
 4313	6	30	1	2	, sliced or chopped	17	t	\N	4	0	f	t
 2535	6	36	1	2	, or 8 ounces	30	f	\N	5	0	f	t
-5565	7	391	1	2	, (or try 1 teaspoon apple cider vinegar)	312	f	\N	7	3	f	t
 8240	8	788	1	1	\N	77	f	\N	6	1	f	t
 7309	6	731	4	1	\N	62	f	\N	3	0	f	t
 7310	7	731	1	3	\N	36	f	\N	4	0	f	t
@@ -13314,9 +13330,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3161	0	160	1	2	, crushed	5	f	\N	2	0	f	t
 3162	8	160	1	1	, ground	143	f	\N	3	0	f	t
 2447	8	26	8	1	\N	285	t	\N	2	1	f	t
-5566	4	391	1	4	, frozen peas and chopped carrots	354	f	\N	8	3	f	t
-5567	0	391	1	2	, chopped	144	f	\N	9	3	f	t
-5568	0	391	1	2	, lightly beaten	187	f	\N	10	3	f	t
 2411	0	90	1	1	\N	320	f	\N	0	0	f	t
 2412	7	90	1	1	\N	29	f	\N	1	0	f	t
 2469	0	107	1	2	\N	472	f	\N	1	0	f	t
@@ -13337,6 +13350,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2333	0	48	1	4	\N	194	f	\N	1	0	f	t
 2334	0	48	1	1	, sliced	155	f	\N	2	0	f	t
 2335	8	48	8	1	\N	214	t	\N	3	0	f	t
+5564	7	391	1	3	, plus more to taste	297	f	\N	6	3	f	t
+5565	7	391	1	2	\N	312	f	\N	7	3	f	t
 7311	8	731	8	1	\N	214	t	\N	5	0	f	t
 7312	6	731	2	1	\N	\N	t	703	6	0	f	t
 3847	5	76	1	1	\N	137	f	\N	0	0	f	t
@@ -13605,6 +13620,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3433	0	173	1	1	, seeded and finely chopped	580	f	\N	5	0	f	t
 3434	7	173	1	1	\N	77	f	\N	6	0	f	t
 3435	4	173	1	14	, canned	847	f	\N	7	0	f	t
+7180	7	712	1	4	, melted	189	f	\N	1	1	f	t
+7181	6	712	4	1	, packed	517	f	\N	2	1	f	t
+7182	6	712	4	1	\N	39	f	\N	3	1	f	t
 3514	8	180	4	1	\N	285	f	\N	1	0	f	t
 3283	6	88	4	1	\N	62	f	\N	0	0	f	t
 3284	6	88	4	1	\N	312	f	\N	1	0	f	t
@@ -13617,6 +13635,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3936	0	198	1	1	, juiced	12	f	\N	2	0	f	t
 3937	7	198	1	2	, plus more for garnish	13	f	\N	3	0	f	t
 3938	8	198	4	1	\N	75	f	\N	4	0	f	t
+7183	6	712	1	1	\N	141	f	\N	4	1	f	t
+7184	6	712	1	1	\N	1666	f	\N	5	1	f	t
 3516	0	180	1	2	, sliced	598	f	\N	3	0	f	t
 3517	0	180	1	4	, chopped	5	f	\N	4	0	f	t
 4030	7	185	1	3	\N	29	f	\N	11	0	f	t
@@ -13639,11 +13659,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5226	7	192	1	6	\N	344	f	\N	4	0	f	t
 5227	6	192	4	11	\N	616	f	\N	5	0	f	t
 5228	4	192	1	2	\N	624	t	\N	6	0	f	t
-7180	7	712	1	4	, melted	189	f	\N	0	0	f	t
-7181	6	712	4	1	, packed	517	f	\N	1	0	f	t
-7182	6	712	4	1	\N	39	f	\N	2	0	f	t
-7183	6	712	1	1	\N	141	f	\N	3	0	f	t
-7184	6	712	1	1	RAW MIXED NUTS & RAW MIXED SEEDS	909	f	\N	4	0	f	t
 3325	6	171	2	5	\N	562	f	\N	0	0	f	t
 3326	6	171	1	1	\N	234	f	\N	1	0	f	t
 3327	0	171	1	2	, unwaxed, juice and grate the rind	4	f	\N	2	0	f	t
@@ -13743,6 +13758,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7196	6	714	2	1	, sliced	598	f	\N	3	0	f	t
 7197	6	714	1	1	, rinsed and patted dry	241	f	\N	4	0	f	t
 7198	6	714	4	3	\N	\N	f	719	5	0	f	t
+5566	4	391	1	4	\N	1609	f	\N	8	3	f	t
+5567	0	391	1	2	, chopped	144	t	\N	9	3	f	t
+5568	0	391	1	2	, lightly beaten	187	f	\N	10	3	f	t
 7205	6	716	2	1	, diced	222	f	\N	1	0	f	t
 7206	8	716	1	2	, chopped	5	t	\N	2	0	f	t
 7207	8	716	1	2	\N	68	f	\N	3	0	f	t
@@ -14365,8 +14383,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5557	8	390	2	1	\N	360	f	\N	4	0	f	t
 5512	4	384	1	12	\N	1196	f	\N	0	0	f	t
 5513	0	384	1	1	\N	1195	t	\N	1	0	f	t
-5559	4	391	1	24	, thawed gently (be careful not to cook it further)	734	f	\N	1	3	f	t
-5560	7	391	1	4	, or a neutral oil	1665	f	\N	2	3	f	t
 5586	8	394	8	1	, to taste	74	t	\N	4	0	f	t
 5531	0	387	1	1	\N	4	f	\N	1	0	f	t
 5532	4	387	1	3	\N	957	f	\N	2	0	f	t
@@ -14382,12 +14398,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5519	7	385	1	2	\N	100	f	\N	3	0	f	t
 5520	0	385	1	1	\N	224	f	\N	4	0	f	t
 5521	0	385	1	2	\N	144	f	\N	5	0	f	t
-5561	0	391	1	1	, peeled and diced	3	f	\N	3	3	f	t
+5559	4	391	1	24	, thawed gently	\N	f	411	1	3	f	t
 5536	7	388	1	2	, divided	78	f	\N	0	0	f	t
 5537	6	388	2	1	, diced	222	f	\N	1	0	f	t
 5538	6	388	2	1	, partially thawed	600	f	\N	2	0	f	t
 5539	6	388	2	1	, partially thawed	354	f	\N	3	0	f	t
+5560	7	391	1	4	, or a neutral oil	1665	f	\N	2	3	f	t
 5558	0	390	1	2	\N	1003	f	\N	5	0	f	t
+5561	0	391	1	1	, peeled and diced	3	f	\N	3	3	f	t
 5546	7	389	1	1	\N	61	f	\N	0	0	f	t
 5515	4	384	1	8	, cooked	1197	f	\N	3	0	f	t
 5547	0	389	1	2	\N	274	f	\N	1	0	f	t
@@ -14505,7 +14523,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5696	7	414	1	2	\N	176	f	\N	0	0	f	t
 5708	5	416	1	1	\N	988	f	\N	2	0	f	t
 5697	7	414	1	2	\N	81	f	\N	1	0	f	t
-5685	0	411	1	1	\N	733	f	\N	0	0	f	t
+5685	0	411	1	1	\N	733	f	\N	1	0	f	t
 5686	7	412	1	1	\N	676	f	\N	0	0	f	t
 5687	6	412	1	1	\N	\N	f	411	1	0	f	t
 5688	8	412	8	1	, to taste	692	f	\N	2	0	f	t
@@ -17102,8 +17120,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1806	Taste and adjust to your liking by adding extra peppers and/or a dash of salt and pepper.	116	2	0
 1807	Store in an airtight container in the refrgerator. (Dressing is best if made a day ahead of time. If dressing separates, simply shake or stir to mix, just before use.)	116	3	0
 751	Arrange rice, veggies, edamame and avocado in a 4-cup sealable container or bowl. 	62	0	0
-3126	Remove the leaves and core from the cauliflower, and cut the head into 4 pieces.	411	0	0
-3127	Using a grater, on the medium grate side, grate the cauliflower chunks until no more remain.	411	1	0
 1235	Mash the avocado and spread evenly on the rice cakes. Sprinkle with sea salt. 	48	0	0
 1808	Put the chocolate pieces in a heatproof bowl and melt in the microwave on high power for 1-2 minutes. Stir, then set aside. If you do not have a microwave, put the chocolate in a heatproof bowl and place it over a pan on gently simmering water and leave until melted, stirring frequently to ensure all the pieces get melted.	172	0	0
 2759	Pour the drink into a tall, chilled glass and serve immediately.	167	2	0
@@ -17126,6 +17142,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3362	In a food processor, add nuts and pulse until they become small, crumbly bits.	535	1	256
 3363	Remove and place into a medium-size bowl. Cut open and de-pit the dates.	535	2	0
 3364	In the same food processor, add dates and pulse about 5 times, until slighly chopped.	535	3	256
+3126	Remove the leaves and core from the cauliflower, and cut the head into 4 pieces.	411	0	0
+3127	Using a grater, on the medium grate side, grate the cauliflower chunks until no more remain.	411	1	0
 3245	Preheat the oven to 350°F. Line a baking sheet with parchment.	473	0	2
 4553	Preheat the oven to 400F. Grease a 8in square shallow baking pan and line with baking parchment.	964	0	0
 3246	Mix all ingredients together in a medium-sized bowl.	473	1	0
@@ -18024,11 +18042,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3023	Refrigerate until set, about 30 minutes. Enjoy ¼ cup per serving. Store almonds for future snacking in an airtight container in the refrigerator for up to 2 weeks.	380	4	65536
 3041	Wipe out the frying pan and return to the heat. Add another 2-3 tbsp of olive oil and fry the garlic for 1 minute until golden and fragrant. Stir in the olives, cook for a further 1 minute, then stir in the tomatoes. Shred the basil leaves and stir into the olive and tomato mixture, then spoon it over the chicken and serve at once.	386	3	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	360	1	0
-3056	Place the thawed cauliflower in small batches in a food processor fitted with the steel blade. Pulse in short bursts just until it resembles grains of rice. Place the riced cauliflower in a tea towel or fine mesh nut milk bag, and squeeze until all of the water has been removed. Expect about 1 cup liquid total. Line a medium-size bowl with paper towels, place the riced, dried cauliflower in the bowl, and set it aside.	391	0	256
-3057	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	391	1	4
 2900	Meanwhile, trim and finely slice the scallions, putting the white slices into a bowl. Seed and finely chop the chilies, add to the bowl with 1 tablespoon of red wine vinegar and a little sea salt and black pepper, and mix well to make a dressing.	313	1	0
 2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2–3 minutes.	264	1	4
-3058	Add the garlic, and continue to sauté for another 2 minutes or until the garlic is fragrant and the onion is translucent.	391	2	4
 3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. 	387	0	0
 3064	Preheat your oven to 400°F. Drain and rinse the chickpeas thoroughly, then spread them on a clean kitchen towel or paper towel. Pat them completely dry to remove moisture.	392	0	2
 3065	Spread the chickpeas in a single layer on a baking sheet (no oil or seasoning yet). Bake for 10–15 minutes, shaking the pan halfway through. This step helps dry them out for maximum crispiness.	392	1	2
@@ -18041,11 +18056,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3066	Remove the chickpeas from the oven and transfer them to a bowl while still warm. Toss with olive oil to coat evenly, then add salt, garlic powder, smoked paprika, black pepper, cayenne pepper, and cumin. Mix well to distribute the flavors.	392	2	0
 3067	Return the seasoned chickpeas to the baking sheet, spreading them out in a single layer. Roast for an additional 15–20 minutes, shaking the pan or stirring every 10 minutes to ensure even cooking. Keep an eye on them during the last few minutes to prevent burning.	392	3	2
 1884	With 4 minutes to go, finely slice the pancetta and plate in a large non-stick frying pan on a medium heat with 1 tablespoon of olive oil. 	183	1	4
-3059	Add the dried, riced cauliflower, then the sesame oil, tamari and mirin to the pan, and mix to combine. Add the frozen peas and carrots, and mix gently to combine.	391	3	4
-3060	Cook for another minute, or until the peas and carrots are defrosted. Add about ¾ of the chopped scallions, and mix to combine.	391	4	4
-3061	Create a 4-inch space in the center of the pan by pushing the cauliflower mixture to the sides of the pan. Turn up the heat to medium-high and allow the cauliflower mixture to cook undisturbed for 2 minutes.	391	5	4
-3062	Add the beaten eggs to the center of the pan and, stirring occasionally, scramble the eggs. Add more sesame oil by the half-teaspoonful as necessary to cook the eggs. Mix the scrambled eggs into the rest of the fried rice.	391	6	4
-3063	Sprinkle the fried rice with the remaining chopped scallions and serve immediately.	391	7	0
+3056	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	391	0	4
+3057	Add the garlic, and continue to sauté for another 2 minutes, or until the garlic is fragrant, and the onion is translucent.	391	1	4
+3058	Add the dried, riced cauliflower, then the sesame oil, tamari and mirin to the pan, and mix to combine. Add the frozen peas and carrots, and mix gently to combine.	391	2	4
+3059	Cook for another minute, or until the peas and carrots are defrosted. Add about ¾ of the chopped scallions, and mix to combine.	391	3	4
+3060	Create a 4-inch space in the center of the pan by pushing the cauliflower mixture to the sides of the pan. Turn up the heat to medium-high and allow the cauliflower mixture to cook undisturbed for 2 minutes.	391	4	4
+3061	Add the beaten eggs to the center of the pan and, stirring occasionally, scramble the eggs. Add more sesame oil by the half-teaspoonful as necessary to cook the eggs. Mix the scrambled eggs into the rest of the fried rice.	391	5	4
+3062	Sprinkle the fried rice with the remaining chopped scallions and serve immediately.	391	6	0
 2075	Add the remaining soy sauce and seasong with salt and ground black pepper. Return the chicken and any juices to the noodle mixture, add the chopped spring onions and give the mixture a final stir. Serve at once.	197	5	0
 3108	Mash the mint leaves in a mortar and pestle to release the flavor.	405	0	0
 2985	Scrape the chilli mixture into a high-sided pan over a medium-high heat, add the sugar and vinegar, then give everything a good stir.	370	1	0
@@ -18556,6 +18573,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3103	Place kale onto a prepared baking sheet, and spread out evenly.	403	3	0
 3104	Bake for 10 to 12 minutes, or until the leaves are slightly crispy.	403	4	0
 3812	Take the pan out of the oven and spoon the salsa around evenly. Break the eggs into the pan, top with the cheddar, and bake for another 5 to 10 minutes depending on how you like your eggs. Serve hot.	659	3	0
+3902	Preheat the oven to 300°F. Line a sheet pan with parchment paper.	712	0	2
 3781	Once cooled, peel the beets, potatoes, carrots, and eggs. Separate the egg whites from the egg yolks.  Grate beets and potatoes using the large side of a box grater. Use the fine side of the box grater to grate the carrots, egg yolks, and egg.	649	3	0
 3782	To start the layering process, using a spoon, add the grated potatoes onto a large shallow serving dish. Spread into an even layer all across the dish. Next, add the salmon and onions over the potatoes. Spread into an even layer all the way across the potato layer.	649	4	0
 3783	Spread 3 tablespoons of mayo on top of the salmon and onions. Next, add the grated carrots, and 3 tablespoons of mayo.	649	5	0
@@ -18566,14 +18584,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3897	Stir half the milk into each mug. Take the plastic off the candy canes, put one in each mug, and serve.	709	2	0
 3882	Put the potatoes in a medium pot and add water to cover them by 2 inches. Season the water with salt, bring it to a boil over high heat, and cook the potatoes for about 12 minutes, or until they are soft. Drain the potatoes and set them aside.	704	0	4
 3883	Rinse out the pot and put it back on the stove over medium heat. Add the bacon to the pot and cook for 5 minutes. Add the onion to the bacon and cook for another 5 minutes.	704	1	4
-3902	Preheat the oven to 300°F. Line a sheet pan with parchment paper.	712	0	2
 3901	In a food processor, combine the chickpeas, garlic, lemon juice, cumin, tahini, olive oil, and salt. Pulse for about 30 seconds. Run the food processor on high and slowly pour in enough water to make the hummus smooth and creamy. Taste the hummus, and, if it needs it, hit it with a bit more salt and lemon juice.	711	0	256
-3903	In a large bowl, combine the melted butter, brown sugar, and honey. Add the oats and nuts.	712	1	0
 3886	Warm a large pot over medium-high heat. Add the oil, onion, celery, garlic, and chorizo and cook for 10 minutes, or until the vegetables are tender and lightly browned.	706	0	4
 3887	Add the beans, water, and salt and pepper to taste. Bring to a boil, then reduce the heat to low and simmer the soup for 30 minutes.	706	1	4
 3888	Taste the soup, season with more salt and pepper if needed, and serve.	706	2	0
-3904	Spread the mixture onto the lined pan. Transfer to the oven and bake the granola for 30 minutes, giving it a stir every 10 minutes or so.	712	2	2
-3905	Let the mixture cool for 2 hours at room temperature, then put it in an airtight container.	712	3	0
 3885	In a medium bowl, combine the quinoa, parsley, mint, tomato, lemon juice, and olive oil. Season with salt and pepper. Taste it and add a little more lemon juice if it needs it. Refrigerate the tabbouleh for 1 hour before serving.	705	0	65536
 3791	Spread the nuts out on a baking sheet and let cool for 1 hour. Store the nuts in an airtight container.	651	4	0
 3881	In a medium bowl, combine the avocado, lime juice, red onion, tomato, cilantro, and salt and mash it all together using a potato masher until it's smooth. Taste the guacamole and add a little more lime juice and salt to suit your taste.	703	0	32768
@@ -18591,6 +18605,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3876	Grab four 16-ounce cups and put the cookie crumbs in the bottom of the cups. Top with the cheese mixture. Cover the cups with plastic wrap and refrigerate for 1 hour to set.	701	1	65536
 4337	To assemble the sandwich, lay the mushrooms and onions down on the bread first, slice the steak across the grain into ¼-inch thick slices, and put it on top. Top the sandwich with the other slice of bread. Wrap the sandwich tightly in foil and let it sit for about 5 minutes before eating. This will soften the bread and allow all the flavors to combine.	632	6	0
 3766	Add the brandy and stock to the pan, boil rapidly until reduced by half, then season with salt and pepper to taste. Slice the chive butter and put a piece on top of each steak. Spoon a little sauce on to each plate. Garnish each steak with a chive bundle and serve with a simple vegetable accompaniment, such as boiled new potatoes.	646	3	0
+3903	In a large bowl, combine the melted butter, brown sugar, and honey. Add the oats and nuts.	712	1	0
+3904	Spread the mixture onto the lined pan. Transfer to the oven and bake the granola for 30 minutes, giving it a stir every 10 minutes or so.	712	2	2
+3905	Let the mixture cool for 2 hours at room temperature, then put it in an airtight container.	712	3	0
 2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	240	2	0
 3898	In a medium pot, warm the olive oil over medium heat. Add the onion and cook for 5 minutes, or until translucent. Add the jalapeños and cook for 2 more minutes.	710	0	4
 3899	Throw in the black beans and tomatoes and bring to a boil. Reduce the heat to low and simmer the salsa for 15–20 minutes, or until thick.	710	1	4
@@ -19178,7 +19195,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17466, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17483, true);
 
 
 --
@@ -19904,5 +19921,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 9hhmCp0HZP7Uc1XOIcRHQcw1w30fj4cEUvKoMQVhxIQiTkz9DWGC5udzqR2tMIE
+\unrestrict utNEMilJAcwzRWCfgfkbXIVZ8vfpZIWX1aeJZD0TppN6J1muEEhuACUj15t99RM
 
