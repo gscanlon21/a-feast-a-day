@@ -9,3 +9,8 @@
 ::deep option {
     color: rgba(var(--color-text), 1);
 }
+
+.quantity-input {
+    height: fit-content;
+    width: 5ch;
+}

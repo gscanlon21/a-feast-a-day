@@ -74,13 +74,13 @@
                         <div><span asp-validation-for="UserRecipeIngredient.QuantityDenominator" class="text-danger"></span></div>
                         <div class="row gx-2 my-1">
                             <div class="col-auto">
-                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator))" type="number" asp-for="UserRecipeIngredient.QuantityNumerator" style="width:5ch;height:fit-content;" placeholder="@Model.RecipeIngredient.QuantityNumerator" />
+                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator))" type="number" asp-for="UserRecipeIngredient.QuantityNumerator" class="quantity-input" placeholder="@Model.RecipeIngredient.QuantityNumerator" />
                             </div>
                             <div class="col-auto px-0">
                                 <span>/</span>
                             </div>
                             <div class="col-auto">
-                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityDenominator))" type="number" asp-for="UserRecipeIngredient.QuantityDenominator" style="width:5ch;height:fit-content;" placeholder="@Model.RecipeIngredient.QuantityDenominator" />
+                                <input id="@(Html.IdFor(_ => Model.UserRecipeIngredient.QuantityDenominator))" type="number" asp-for="UserRecipeIngredient.QuantityDenominator" class="quantity-input" placeholder="@Model.RecipeIngredient.QuantityDenominator" />
                             </div>
                         </div>
                         <div id="@Html.IdFor(_ => Model.UserRecipeIngredient.QuantityNumerator)-help" class="form-text"></div>
@@ -106,7 +106,7 @@
                 <div class="row row-gap-2 mb-3">
                     <div class="col-md">
                         <label asp-for="UserRecipeIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteIngredientId)</label>
-                        <select asp-for="UserRecipeIngredient.SubstituteIngredientId" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-help"
+                        <select asp-for="UserRecipeIngredient.SubstituteIngredientId" class="form-control searchable w-100" aria-describedby="ingredient-help"
                                 asp-items="@(Model.SubstituteIngredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.SubstituteIngredientId" class="text-danger"></span>
@@ -115,7 +115,7 @@
 
                     <div class="col-md">
                         <label asp-for="UserRecipeIngredient.SubstituteRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteRecipeId)</label>
-                        <select asp-for="UserRecipeIngredient.SubstituteRecipeId" class="form-control searchable" style="width:100%;" aria-describedby="ingredient-recipe-help"
+                        <select asp-for="UserRecipeIngredient.SubstituteRecipeId" class="form-control searchable w-100" aria-describedby="ingredient-recipe-help"
                                 asp-items="@(Model.Recipes.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.SubstituteRecipeId" class="text-danger"></span>

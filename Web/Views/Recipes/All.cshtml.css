@@ -5,3 +5,12 @@
 .cursor--pointer {
     cursor: pointer;
 }
+
+.search-form {
+    max-height: 100vh;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    right: 0;
+    top: 0;
+}

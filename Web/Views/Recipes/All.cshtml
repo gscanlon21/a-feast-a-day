@@ -10,22 +10,22 @@
     ViewData[ViewData_Blank.Title] = "Recipes";
 }
 
-<details class="alert alert-secondary mb-0" style="position:fixed;top:0;right:0;z-index:1;overflow:auto;max-height:100vh;" @(Model.FormOpen ? "open" : "")>
+<details class="alert alert-secondary mb-0 search-form" @(Model.FormOpen ? "open" : "")>
     <summary class="cursor--pointer">@(Model.FormHasData ? "*" : "")Filter Recipes</summary>
 
-    <form asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)" method="get" style="margin-top:1rem"
+    <form asp-controller="@RecipesController.Name" asp-action="@nameof(RecipesController.All)" method="get" class="mt-3"
           onsubmit="submitButton.disabled=true;">
-        <div style="margin-bottom:1ex;">
+        <div class="mb-2">
             <label asp-for="Name" class="control-label">@Html.DisplayNameFor(_ => Model.Name)</label>
             <input asp-for="Name" type="text" class="form-control" />
         </div>
-        <div style="margin-bottom:1ex;">
+        <div class="mb-2">
             <label asp-for="Section" class="control-label">@Html.DisplayNameFor(_ => Model.Section)</label>
             <select asp-for="Section" class="form-control"
                     asp-items='@(SectionExtensions.RecipeSections.AsSelectListItems(EnumViewExtensions.EnumOrdering.Value).Prepend(new SelectListItem()))'>
             </select>
         </div>
-        <div style="margin-bottom:1ex;">
+        <div class="mb-2">
             <label asp-for="Equipment" class="control-label">@Html.DisplayNameFor(_ => Model.Equipment)</label>
             <select asp-for="Equipment" class="form-control"
                     asp-items='@(EnumExtensions.GetDisplayValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem()))'>
