@@ -88,7 +88,7 @@ public class Ingredient
     public string? DisabledReason { get; private init; } = null;
 
     [JsonIgnore, InverseProperty(nameof(Users.User.Ingredients))]
-    public virtual Users.User? User { get; private init; }
+    public virtual User? User { get; private init; }
 
     /// <summary>
     /// Nutrients per serving.
@@ -103,9 +103,6 @@ public class Ingredient
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.Ingredient))]
     public virtual ICollection<IngredientAlternative> Alternatives { get; private init; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(IngredientCooked.Ingredient))]
-    public virtual ICollection<IngredientCooked> IngredientsCooked { get; private init; } = [];
-
     [JsonIgnore, InverseProperty(nameof(UserIngredient.Ingredient))]
     public virtual ICollection<UserIngredient> UserIngredients { get; init; } = [];
 
@@ -115,8 +112,8 @@ public class Ingredient
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
     public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
 
-    [JsonIgnore, InverseProperty(nameof(IngredientCooked.CookedIngredient))]
-    public virtual ICollection<IngredientCooked> CookedIngredients { get; private init; } = [];
+    [JsonIgnore, InverseProperty(nameof(RecipeIngredient.CookedIngredient))]
+    public virtual ICollection<RecipeIngredient> CookedIngredients { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual ICollection<RecipeIngredient> RecipeIngredients { get; private init; } = null!;

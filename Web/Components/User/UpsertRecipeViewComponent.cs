@@ -81,6 +81,8 @@ public class UpsertRecipeViewComponent : ViewComponent
             RecipeSelect = await GetRecipeSelect(user),
             IngredientSelect = await GetIngredientSelect(user),
             Token = await _userRepo.AddUserToken(user, durationDays: 1),
+            CookedIngredientSelect = await GetCookedIngredientSelect(user, -1),
+            CookedScaleSelect = GetCookedScaleSelect(),
         });
     }
 
@@ -91,6 +93,18 @@ public class UpsertRecipeViewComponent : ViewComponent
             .Where(r => r.UserId == null || r.UserId == user.Id)
             .Where(r => r.BaseRecipe)
             .OrderBy(r => r.Name)
+            .ToListAsync())
+            .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
+            .Prepend(new SelectListItem())
+            .ToList();
+    }
+
+    private async Task<IList<SelectListItem>> GetCookedIngredientSelect(Data.Entities.Users.User user, int ingredientId)
+    {
+        return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
+            .Where(i => i.DisabledReason != null || i.Id == ingredientId)
+            .Where(i => i.UserId == null || i.UserId == user.Id)
+            .OrderBy(i => i.Name)
             .ToListAsync())
             .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
             .Prepend(new SelectListItem())
@@ -108,4 +122,13 @@ public class UpsertRecipeViewComponent : ViewComponent
             .Prepend(new SelectListItem())
             .ToList();
     }
+
+    private IList<SelectListItem> GetCookedScaleSelect() =>
+    [
+        new("1", "1"),
+        new("0.75", "0.75"),
+        new("0.5", "0.5"),
+        new("0.25", "0.25"),
+        new("0", "0"),
+    ];
 }

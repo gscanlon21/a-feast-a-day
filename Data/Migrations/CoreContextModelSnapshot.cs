@@ -266,29 +266,6 @@ namespace Data.Migrations
                     b.ToTable("ingredient_alternative");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredients.IngredientCooked", b =>
-                {
-                    b.Property<int>("IngredientId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("CookingMethod")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("CookedIngredientId")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Scale")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("double precision")
-                        .HasDefaultValue(1.0);
-
-                    b.HasKey("IngredientId", "CookingMethod");
-
-                    b.HasIndex("CookedIngredientId");
-
-                    b.ToTable("ingredient_cooked");
-                });
-
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
                     b.Property<int>("Id")
@@ -405,8 +382,10 @@ namespace Data.Migrations
                     b.Property<bool>("CoarseCut")
                         .HasColumnType("boolean");
 
-                    b.Property<int>("CookingMethod")
-                        .HasColumnType("integer");
+                    b.Property<double>("CookedScale")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("double precision")
+                        .HasDefaultValue(1.0);
 
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
@@ -416,6 +395,9 @@ namespace Data.Migrations
 
                     b.Property<double>("Quantity")
                         .HasColumnType("double precision");
+
+                    b.Property<int>("RecipeIngredientId")
+                        .HasColumnType("integer");
 
                     b.Property<long>("UserFeastRecipeId")
                         .HasColumnType("bigint");
@@ -509,8 +491,13 @@ namespace Data.Migrations
                     b.Property<bool>("CoarseCut")
                         .HasColumnType("boolean");
 
-                    b.Property<int>("CookingMethod")
+                    b.Property<int?>("CookedIngredientId")
                         .HasColumnType("integer");
+
+                    b.Property<double>("CookedScale")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("double precision")
+                        .HasDefaultValue(1.0);
 
                     b.Property<int?>("IngredientId")
                         .HasColumnType("integer");
@@ -541,6 +528,8 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CookedIngredientId");
 
                     b.HasIndex("IngredientId");
 
@@ -941,25 +930,6 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredients.IngredientCooked", b =>
-                {
-                    b.HasOne("Data.Entities.Ingredients.Ingredient", "CookedIngredient")
-                        .WithMany("CookedIngredients")
-                        .HasForeignKey("CookedIngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
-                        .WithMany("IngredientsCooked")
-                        .HasForeignKey("IngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CookedIngredient");
-
-                    b.Navigation("Ingredient");
-                });
-
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
                     b.HasOne("Data.Entities.Users.User", "User")
@@ -1037,6 +1007,10 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Recipes.RecipeIngredient", b =>
                 {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "CookedIngredient")
+                        .WithMany("CookedIngredients")
+                        .HasForeignKey("CookedIngredientId");
+
                     b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("RecipeIngredients")
                         .HasForeignKey("IngredientId");
@@ -1050,6 +1024,8 @@ namespace Data.Migrations
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("CookedIngredient");
 
                     b.Navigation("Ingredient");
 
@@ -1215,8 +1191,6 @@ namespace Data.Migrations
                     b.Navigation("Alternatives");
 
                     b.Navigation("CookedIngredients");
-
-                    b.Navigation("IngredientsCooked");
 
                     b.Navigation("Nutrients");
 

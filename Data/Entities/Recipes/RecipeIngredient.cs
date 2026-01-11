@@ -1,5 +1,5 @@
-﻿using Core.Models.Ingredients;
-using Core.Models.User;
+﻿using Core.Models.User;
+using Data.Entities.Ingredients;
 using Data.Entities.Users;
 using Fractions;
 using System.ComponentModel;
@@ -34,8 +34,9 @@ public class RecipeIngredient
         CoarseCut = recipeIngredient.CoarseCut;
         Adjustable = recipeIngredient.Adjustable;
         Attributes = recipeIngredient.Attributes;
+        CookedScale = recipeIngredient.CookedScale;
         IngredientId = recipeIngredient.IngredientId;
-        CookingMethod = recipeIngredient.CookingMethod;
+        CookedIngredientId = recipeIngredient.CookedIngredientId;
         IngredientRecipeId = recipeIngredient.IngredientRecipeId;
         QuantityDenominator = recipeIngredient.QuantityDenominator;
         QuantityNumerator = recipeIngredient.QuantityNumerator;
@@ -85,9 +86,25 @@ public class RecipeIngredient
     [Display(Name = "Measure")]
     public Measure Measure { get; set; }
 
-    [Required]
-    [Display(Name = "Cooking Method")]
-    public CookingMethod CookingMethod { get; set; }
+    /// <summary>
+    /// This is the alternative ingredient.
+    /// </summary>
+    [Display(Name = "Cooked Ingredient")]
+    public virtual int? CookedIngredientId { get; set; }
+
+    /// <summary>
+    /// This is the alternative ingredient.
+    /// </summary>
+    [JsonInclude, InverseProperty(nameof(Ingredient.CookedIngredients))]
+    public virtual Ingredient CookedIngredient { get; init; } = null!;
+
+    /// <summary>
+    /// How to scale the quantity of the cooked ingredient.
+    /// </summary>
+    [Display(Name = "Cooked Scale")]
+    [DefaultValue(IngredientConsts.CookedScaleDefault)]
+    [Range(IngredientConsts.CookedScaleMin, IngredientConsts.CookedScaleMax)]
+    public double CookedScale { get; set; } = IngredientConsts.CookedScaleDefault;
 
     /// <summary>
     /// Chopped, thinly sliced...

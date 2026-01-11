@@ -1,5 +1,4 @@
-﻿using Core.Models.Ingredients;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Data.Entities.Ingredients;
 
 namespace Data.Interfaces.Recipe;
@@ -17,8 +16,7 @@ public interface IRecipeIngredient
 
     Ingredient? GetIngredient { get; }
 
-    /// <summary>
-    /// This ingredient provides fewer nutrients than normal.
-    /// </summary>
-    CookingMethod GetCookingMethod { get; }
+    int GetRecipeIngredientId { get; }
+
+    double GetCookedScale { get; }
 }

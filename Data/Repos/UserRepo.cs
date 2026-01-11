@@ -1,5 +1,4 @@
 ﻿using Core.Code.Exceptions;
-using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
@@ -294,11 +293,13 @@ public class UserRepo
                     .ToDictionaryAsync(g => g.Key, g => g.Select(ia => new IngredientScale(ia.AlternativeIngredient, ia.Scale)).ToList());
 
                 var halfIngredientIds = allRecipeIngredientIds.Union(partialIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id))).ToList();
-                var cookedIngredients = await _context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters()
-                    .Where(ic => halfIngredientIds.Contains(ic.IngredientId)).Include(ic => ic.CookedIngredient)
-                    .ToDictionaryAsync(ic => new IngredientCookingMethod(ic.IngredientId, ic.CookingMethod), ic => new IngredientScale(ic.CookedIngredient, ic.Scale));
+                var cookedIngredients = await _context.RecipeIngredients.AsNoTracking().
+                    IgnoreQueryFilters().Include(ic => ic.CookedIngredient)
+                    .Where(ri => ri.CookedIngredientId.HasValue)
+                    .Where(ri => halfIngredientIds.Contains(ri.IngredientId!.Value))
+                    .ToDictionaryAsync(ri => ri.Id, ri => ri.CookedIngredient);
 
-                var allIngredientIds = halfIngredientIds.Union(cookedIngredients.Values.Select(ci => ci.Ingredient.Id)).ToList();
+                var allIngredientIds = halfIngredientIds.Union(cookedIngredients.Values.Select(ci => ci.Id)).ToList();
                 var allNutrients = await _context.Nutrients.AsNoTracking()
                     .Where(n => allIngredientIds.Contains(n.IngredientId))
                     // Select before grouping so EF Core can optimize.

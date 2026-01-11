@@ -1,5 +1,4 @@
-﻿using Core.Code.Extensions;
-using Core.Dtos.Ingredient;
+﻿using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Newsletter;

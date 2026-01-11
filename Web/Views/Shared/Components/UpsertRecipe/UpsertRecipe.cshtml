@@ -236,17 +236,23 @@
                     </div>
 
                     <div class="row row-gap-1">
-                        <div class="col-md">
+                        <div class="col-xl">
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
                             <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" autocomplete="off" />
                         </div>
 
-                        <div class="col-md">
-                            <label asp-for="Recipe.RecipeIngredients[id].CookingMethod" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookingMethod)</label>
-                            <select asp-for="Recipe.RecipeIngredients[id].CookingMethod" class="form-control" aria-describedby="cooking-method-help" autocomplete="off"
-                                    asp-items="@(EnumExtensions.GetDisplayValues<CookingMethod>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
-                            </select>
-                            <span id="cooking-method-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookingMethod)</span>
+                        <div class="col">
+                            <label asp-for="Recipe.RecipeIngredients[id].CookedIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookedIngredientId)</label>
+                            <select asp-for="Recipe.RecipeIngredients[id].CookedIngredientId" asp-items="@Model.CookedIngredientSelect" class="form-control searchable" style="width:100%;" aria-describedby="cooked-ingredient-help" autocomplete="off"></select>
+                            <span asp-validation-for="Recipe.RecipeIngredients[id].CookedIngredientId" class="text-danger"></span>
+                            <span id="cooked-ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookedIngredientId)</span>
+                        </div>
+
+                        <div class="col-auto">
+                            <label asp-for="Recipe.RecipeIngredients[id].CookedScale" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)</label>
+                            <select asp-for="Recipe.RecipeIngredients[id].CookedScale" asp-items="@Model.CookedScaleSelect" class="form-control searchable" style="width:100%;" aria-describedby="cooked-scale-help" autocomplete="off"></select>
+                            <span asp-validation-for="Recipe.RecipeIngredients[id].CookedScale" class="text-danger"></span>
+                            <span id="cooked-scale-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)</span>
                         </div>
                     </div>
 

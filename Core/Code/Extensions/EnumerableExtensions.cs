@@ -147,7 +147,7 @@ public static class EnumerableExtensions
         };
     }
 
-    internal class NullableComparer<T> : IComparer<T?> 
+    internal class NullableComparer<T> : IComparer<T?>
     {
         private readonly bool _isLarger;
 

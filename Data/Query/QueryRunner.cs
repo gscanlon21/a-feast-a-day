@@ -93,8 +93,9 @@ public class QueryRunner(Section section)
                     Adjustable = ri.Adjustable,
                     Attributes = ri.Attributes,
                     Ingredient = ri.Ingredient,
-                    CookingMethod = ri.CookingMethod,
+                    CookedScale = ri.CookedScale,
                     QuantityNumerator = ri.QuantityNumerator,
+                    CookedIngredientId = ri.CookedIngredientId,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
                     UserRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
@@ -465,37 +466,36 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<Dictionary<IngredientCookingMethod, IngredientScale>> GetCookedIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
+    private static async Task<Dictionary<int, Ingredient>> GetCookedIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
         var ingredients = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient)))
             .ToDictionary(i => i.Id, i => i);
 
-        return (await context.IngredientsCooked.AsNoTracking().IgnoreQueryFilters()
-            .Where(ic => ingredients.Keys.Contains(ic.IngredientId)).Include(ic => ic.CookedIngredient)
+        return (await context.RecipeIngredients.AsNoTracking().IgnoreQueryFilters()
+            .Include(ic => ic.CookedIngredient)
+            .Where(ri => ri.CookedIngredientId.HasValue)
+            .Where(ri => ingredients.Keys.Contains(ri.IngredientId!.Value))
             // Pull these out of the constuctor so EF Core can optimize the query.
-            .Select(ic => new
+            .Select(ri => new
             {
-                ic.Scale,
-                ic.IngredientId,
-                ic.CookingMethod,
-                CookedIngredient = ic.IngredientId != ic.CookedIngredientId ? ic.CookedIngredient : null,
+                ri.Id,
+                ri.IngredientId,
+                ri.CookedIngredientId,
+                CookedIngredient = ri.IngredientId != ri.CookedIngredientId ? ri.CookedIngredient : null,
             })
             .ToListAsync())
-            .ToDictionary(
-                ic => new IngredientCookingMethod(ic.IngredientId, ic.CookingMethod),
-                ic => new IngredientScale(ic.CookedIngredient ?? ingredients[ic.IngredientId], ic.Scale)
-            );
+            .ToDictionary(ri => ri.Id, ri => ri.CookedIngredient ?? ingredients[ri.IngredientId!.Value]);
     }
 
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<Dictionary<int, List<Nutrient>>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds, Dictionary<IngredientCookingMethod, IngredientScale> cookedIngredients)
+    private static async Task<Dictionary<int, List<Nutrient>>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds, Dictionary<int, Ingredient> cookedIngredients)
     {
         var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
-            .Union(cookedIngredients.Values.Select(ci => ci.Ingredient.Id))
+            .Union(cookedIngredients.Values.Select(ci => ci.Id))
             .ToList();
 
         return await context.Nutrients.AsNoTracking().TagWithCallSite()
@@ -668,7 +668,7 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<Nutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<IngredientCookingMethod, IngredientScale> cookedIngredients)
+    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<Nutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<int, Ingredient> cookedIngredients)
     {
         if (NutrientOptions.NutrientTargetsRDA == null) { return null; }
 
@@ -683,7 +683,7 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<Nutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<IngredientCookingMethod, IngredientScale> cookedIngredients)
+    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<Nutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<int, Ingredient> cookedIngredients)
     {
         if (NutrientOptions.NutrientTargetsTUL == null) { return null; }
 
@@ -699,7 +699,7 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Returns the nutrients targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
-    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list, Dictionary<int, List<Nutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<IngredientCookingMethod, IngredientScale> cookedIngredients)
+    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list, Dictionary<int, List<Nutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<int, Ingredient> cookedIngredients)
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)

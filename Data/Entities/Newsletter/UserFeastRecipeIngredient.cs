@@ -1,7 +1,7 @@
-﻿using Core.Models.Ingredients;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Data.Interfaces.Recipe;
 using Data.Query;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -26,7 +26,8 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     {
         Measure = recipeIngredient.Measure;
         CoarseCut = recipeIngredient.CoarseCut;
-        CookingMethod = recipeIngredient.CookingMethod;
+        RecipeIngredientId = recipeIngredient.Id;
+        CookedScale = recipeIngredient.CookedScale;
         Quantity = recipeIngredient.Quantity.ToDouble();
         // Don't set Ingredient, so that EF Core doesn't add/update Ingredient.
         IngredientId = recipeIngredient.Ingredient!.Id;
@@ -37,12 +38,15 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
     public int IngredientId { get; init; }
 
+    public int RecipeIngredientId { get; private init; }
+
     /// <summary>
     /// Don't need to set this as long as it's inserted at the same time UserFeastRecipe is.
     /// </summary>
     public long UserFeastRecipeId { get; private init; }
 
-    public CookingMethod CookingMethod { get; private init; }
+    [DefaultValue(IngredientConsts.CookedScaleDefault)]
+    public double CookedScale { get; private init; }
 
     /// <summary>
     /// This value is set after recipe scaling is applied.
@@ -75,7 +79,10 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public double GetQuantity => Quantity;
 
     [NotMapped]
-    public CookingMethod GetCookingMethod => CookingMethod;
+    public double GetCookedScale => CookedScale;
+
+    [NotMapped]
+    public int GetRecipeIngredientId => RecipeIngredientId;
 
     [NotMapped]
     public Ingredients.Ingredient? GetIngredient => Ingredient;
