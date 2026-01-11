@@ -10,7 +10,7 @@
     color: rgba(var(--color-text), 1);
 }
 
-.quantity-input {
+::deep .quantity-input {
     height: fit-content;
     width: 5ch;
 }
