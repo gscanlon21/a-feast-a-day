@@ -38,11 +38,12 @@ However, emails have their limitations as well. A Feast a Day is geared towards 
 
 ## Screenshots
 
-<img src="https://github.com/gscanlon21/a-feast-a-day/assets/9373942/0ba8124f-cdef-42fb-b033-48e454ca34bf" width="200" />
-<img src="https://github.com/gscanlon21/a-feast-a-day/assets/9373942/3cb45d98-5889-4674-bcc1-ce8f3fe57e55" width="200" />
-<img src="https://github.com/gscanlon21/a-feast-a-day/assets/9373942/c247efaa-e86c-4bd0-9eb9-959a701abcbe" width="200" />
-<br>
-<img src="https://github.com/gscanlon21/a-feast-a-day/assets/9373942/a9ca1410-6aa1-461e-8a12-e54af6e9efbb" width="400" />
-<img src="https://github.com/gscanlon21/a-feast-a-day/assets/9373942/d70beb97-c6ce-446d-af16-0a9d665b1433" width="425" />
-<br>
-<img src="https://github.com/gscanlon21/a-feast-a-day/assets/9373942/ce932b72-91f1-481b-af3d-8704e373ac6e" width="400" />
+<img width="200" alt="Screenshot_1" src="https://github.com/user-attachments/assets/be9525a4-5548-4b2a-91c0-42a7cbbd8b64" />
+<img width="200" alt="Screenshot_1" src="https://github.com/user-attachments/assets/1918495e-3afb-4a70-b3ab-10ae035f3c63" />
+<img width="200" alt="Screenshot_1" src="https://github.com/user-attachments/assets/6314a58e-a0bd-4d45-ba91-2d1dee3e1634" />
+
+<img width="400" alt="Screenshot_1" src="https://github.com/user-attachments/assets/b99ea4d7-b75a-4f3e-8ec8-54f1eba49d54" />
+<img width="400" alt="Screenshot_4" src="https://github.com/user-attachments/assets/565b0a2a-c5fb-4f0b-9b28-e7626931ea2b" />
+<img width="0" alt="Screenshot_3" src="https://github.com/user-attachments/assets/885a2a83-d2e9-482e-a926-92233aba66ff" />
+<img width="400" alt="Screenshot_2" src="https://github.com/user-attachments/assets/388706ca-9f09-48a9-8dea-5322b04163ca" />
+<img width="400" alt="Screenshot_5" src="https://github.com/user-attachments/assets/f25b1122-559a-42c2-af26-b088ca18fe59" />
