@@ -814,7 +814,7 @@
 982	\N	Farfalle Pasta	\N	\N	f	262176	28	56	2025-02-15	4	84	4096	84	Farfalle Pasta	https://www.eatthismuch.com/calories/farfalle-pasta-1923824
 983	\N	Shelled Pistachios	\N	\N	f	0	28	123	2024-10-12	4	123	1048576	123	Shelled Pistachios	https://www.eatthismuch.com/calories/pistachio-nuts-2682
 984	\N	Shelled Unsalted Pistachios	\N	\N	f	0	28	123	2024-10-12	4	123	1048576	123	Shelled Unsalted Pistachios	https://www.eatthismuch.com/calories/pistachio-nuts-2682
-985	\N	Bacon Slices	\N	\N	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
+985	\N	Bacon Slices	Raw bacon slices weigh more than 12 grams.	\N	f	0	14	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
 986	\N	Chickpea Flour	\N	\N	f	0	200	200	2025-12-01	6	200	2048	200	Chickpea Flour	https://www.eatthismuch.com/calories/chickpeas,3554
 987	\N	Sugar	\N	\N	t	0	28	200	2024-12-14	4	200	114688	200	Sugar	https://www.eatthismuch.com/calories/sugar-4644
 988	\N	Ground Turkey	\N	\N	f	0	28	29	2025-01-22	4	224	268435456	224	Ground Turkey	https://www.eatthismuch.com/calories/ground-turkey-581
@@ -1309,3 +1309,6 @@
 1662	\N	Brandy	\N	\N	f	0	29.4	147	2024-12-18	9	235.2	524288	235.2	Rum	https://www.eatthismuch.com/calories/red-wine-3070
 1665	\N	Coconut Oil | Vegetable Oil	\N	\N	f	0	28	14	2024-12-09	4	224	65536	224	Coconut Oil	https://www.eatthismuch.com/calories/coconut-oil-265
 1666	\N	Raw Mixed Nuts & Raw Mixed Seeds	\N	\N	f	206849	28	28	2025-12-24	4	224	1048576	224	Raw Mixed Nuts | Raw Mixed Seeds	https://www.eatthismuch.com/calories/mixed-nuts-2672
+1667	\N	Bacon Slices, Baked	\N	Cooked.	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
+1668	\N	Bacon Slices, Pan-Fried	\N	Cooked.	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
+1669	\N	Bacon Slices, Microwaved	\N	Cooked.	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722

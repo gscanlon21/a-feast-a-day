@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict utNEMilJAcwzRWCfgfkbXIVZ8vfpZIWX1aeJZD0TppN6J1muEEhuACUj15t99RM
+\restrict svFZBU8E5DvdbehhCq1PR827UfHK2geZ5pVncinWMVbJZ9kG6HDnmwtwhyvW5Bg
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2294,6 +2294,9 @@ COPY public.ingredient_cooked ("IngredientId", "CookingMethod", "CookedIngredien
 564	3	564	0.25
 254	3	254	0.25
 563	3	563	0.25
+985	1	1667	1
+985	2	1669	1
+985	3	1668	1
 \.
 
 
@@ -13897,8 +13900,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5336	0	323	1	1	\N	187	f	\N	3	0	f	t
 5337	4	323	1	1	\N	95	t	\N	4	0	f	t
 4426	6	105	1	1	\N	144	f	\N	1	0	f	t
-7214	6	717	2	1	, diced	1088	t	\N	2	0	f	t
-7215	8	717	2	3	, ground	168	t	\N	3	0	f	t
 6872	0	640	1	4	, finely sliced, for garnish	302	t	\N	9	0	f	t
 4449	8	245	4	1	\N	74	f	\N	4	0	f	t
 4450	6	245	2	1	\N	574	f	\N	5	0	f	t
@@ -13918,12 +13919,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4071	6	35	4	1	\N	223	t	\N	5	0	f	t
 4524	8	131	1	1	\N	504	f	\N	4	0	f	t
 5391	4	361	2	11	\N	1118	f	\N	0	0	f	t
+7214	6	717	2	1	, diced	1088	t	\N	3	0	f	t
 4399	6	255	2	1	\N	913	f	\N	0	0	f	t
 4400	6	255	2	1	\N	123	f	\N	1	0	f	t
 4401	8	255	4	1	\N	323	f	\N	2	0	f	t
 4402	8	255	8	1	\N	71	f	\N	3	0	f	t
 4403	8	255	8	1	\N	214	f	\N	4	0	f	t
 4404	0	255	2	1	, juiced	4	f	\N	5	0	f	t
+7215	8	717	2	3	, ground	168	t	\N	4	0	f	t
 5392	7	361	1	3	\N	1119	f	\N	1	0	f	t
 5393	8	361	1	3	\N	1120	f	\N	2	0	f	t
 5394	4	361	4	7	\N	376	f	\N	3	0	f	t
@@ -14523,7 +14526,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5696	7	414	1	2	\N	176	f	\N	0	0	f	t
 5708	5	416	1	1	\N	988	f	\N	2	0	f	t
 5697	7	414	1	2	\N	81	f	\N	1	0	f	t
+7212	6	717	4	1	, diced	985	t	\N	1	0	f	t
 5685	0	411	1	1	\N	733	f	\N	1	0	f	t
+7213	6	717	2	1	\N	721	f	\N	2	0	f	t
+7216	4	717	1	15	, drained and rinsed	1283	f	\N	5	0	f	t
+7217	6	717	1	1	\N	123	f	\N	6	0	f	t
+7218	8	717	8	1	\N	285	t	\N	7	0	f	t
 5686	7	412	1	1	\N	676	f	\N	0	0	f	t
 5687	6	412	1	1	\N	\N	f	411	1	0	f	t
 5688	8	412	8	1	, to taste	692	f	\N	2	0	f	t
@@ -14536,11 +14544,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7320	8	733	1	2	(MISO PASTE)	243	f	\N	1	0	f	t
 7321	8	733	2	1	\N	323	f	\N	2	0	f	t
 4368	5	249	1	2	, I used rainbow carrots. Chopped into similar sized spears	7	f	\N	6	0	f	t
-7212	6	717	2	1	, diced	985	f	\N	0	0	f	t
-7213	6	717	2	1	\N	721	f	\N	1	0	f	t
-7216	4	717	1	15	, drained and rinsed	1283	f	\N	4	0	f	t
-7217	6	717	4	3	\N	123	f	\N	5	0	f	t
-7218	8	717	8	1	\N	285	t	\N	6	0	f	t
 5728	7	419	1	2	\N	991	f	\N	0	0	f	t
 5729	7	419	1	2	\N	77	f	\N	1	0	f	t
 5730	0	419	1	2	, juiced	12	f	\N	2	0	f	t
@@ -15185,8 +15188,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6456	6	586	1	3	\N	\N	f	559	4	0	f	t
 6457	6	586	1	4	, chopped	1263	f	\N	5	0	f	t
 320	6	41	2	1	, zested and juiced	4	f	\N	4	0	f	t
-8277	0	717	1	1	\N	910	t	\N	7	0	f	t
-8278	4	717	2	1	\N	577	t	\N	8	0	f	t
 5303	4	317	2	3	\N	95	f	\N	6	0	f	t
 8279	8	317	4	1	\N	692	f	\N	8	0	f	t
 7348	0	738	1	2	\N	8	f	\N	0	0	f	t
@@ -15238,6 +15239,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6465	7	587	1	1	\N	73	t	\N	5	0	f	t
 6411	6	582	1	1	, cooked	57	f	\N	1	0	f	t
 321	6	41	2	1	\N	30	t	\N	5	0	f	t
+8277	0	717	1	1	\N	910	t	\N	8	0	f	t
 6379	6	578	1	2	, chopped	1078	f	\N	1	0	f	t
 6380	6	578	1	1	, chopped	255	f	\N	2	0	f	t
 6381	6	578	1	1	, chopped	736	f	\N	3	0	f	t
@@ -15245,6 +15247,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6383	0	578	1	1	, chopped	222	f	\N	5	0	f	t
 6384	0	578	1	3	(ALLSPICE BERRIES)	159	t	\N	6	0	f	t
 6385	0	578	1	2	\N	910	f	\N	7	0	f	t
+8278	4	717	2	1	\N	577	t	\N	9	0	f	t
 6369	0	577	1	1	, cored and sliced thin	1126	f	\N	2	0	f	t
 6370	0	577	1	2	, peeled and grated	7	f	\N	3	0	f	t
 6371	0	577	1	1	, diced	8	f	\N	4	0	f	t
@@ -18611,7 +18614,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	240	2	0
 3898	In a medium pot, warm the olive oil over medium heat. Add the onion and cook for 5 minutes, or until translucent. Add the jalapeños and cook for 2 more minutes.	710	0	4
 3899	Throw in the black beans and tomatoes and bring to a boil. Reduce the heat to low and simmer the salsa for 15–20 minutes, or until thick.	710	1	4
-3920	Add the beans and water and bring to a boil. Drop on the bay leaf and thyme, reduce the heat to low, cover, and simmer the rice for 17 minutes.	717	1	4
 4612	Complement this dish with cilantro leaves, chopped spring onions (scallions), and crushed peanuts.	636	3	0
 3939	Warm a medium pot over medium heat. Add the olive oil, onion, carrot, and celery and cook the vegetables for 5–6 minutes, until the onions are translucent, and the carrots are soft. Make sure to give them a shake or stir every minute or so.	725	0	4
 3940	Add the wine and cook for another 2 minutes.	725	1	4
@@ -18630,6 +18632,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4012	Use the mixture to fill a round pie pan.	746	2	0
 4013	Filling: Mix all ingredients and add into the pie crust.	746	3	0
 3926	In a medium bowl, whisk together the vinegar, soy sauce, honey, ginger, and pepper.	720	0	0
+3920	Add the beans and water and bring to a boil. Drop on the bay leaf and thyme, reduce the heat to low, cover, and simmer the rice for 17 minutes.	717	1	4
 3927	In a medium bowl, whisk together the vinegar, Dijon mustard, honey, salt and pepper.	721	0	0
 3928	While whisking, add the oil very slowly. This is crucial, because if you add the oil all at once, the vinaigrette will fall apart. You need the mechanical agitation of whisking to break up the oil droplets so they can bond with the vinegar.	721	1	0
 3929	After all the oil has been whisked in, continue to whisk it like crazy for about 30 seconds more.	721	2	0
@@ -18673,16 +18676,16 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3949	Add the tomato paste and cook for 1 to 2 minutes. Add the mustard powder and cook for another 30 seconds.	728	2	0
 3950	Add the beans, maple syrup, water, salt, and pepper. Bring to a boil, cover, and throw into the oven for 1 hour.	728	3	0
 3951	Remove from the oven, taste the beans, and season with salt and pepper if they need it.	728	4	0
-3919	In a large pot with a tight-fitting lid over medium-heat, cook the bacon for about 5 minutes, or until browned. Add the rice, tomato, and allspice and cook for another 2–3 minutes.	717	0	4
-3921	Remove from the heat and let it sit, with the lid on, for another 5 minutes.	717	2	0
-3922	Fluff the rice with a fork, season it with salt and pepper, and serve.	717	3	0
 3955	Squeeze the lemon juice over the broccoli and eat.	729	3	0
 3957	Preheat the oven to 350°F.	730	0	2
 3958	Arrange the baguette slices on a sheet pan and drizzle them with the olive oil. Season the bread with salt and pepper and bake for 10 to 12 minutes, until the bread is crisp.	730	1	2
 3959	Warm a medium skillet over medium heat and add the bacon. Cook for about 5 minutes.	730	2	4
 3960	Drain off all but 1 tablespoon of the bacon fat. Add the pears to the pan and cook for 2 minutes. Add the water and sugar and cook for 8 to 10 minutes, until the mixture is thick. Remove from the heat and let cool.	730	3	4
 3961	Spread a thin layer of blue cheese on each of the crostini. Top the cheese with the cooled bacon and pear mixture and enjoy.	730	4	0
+3919	In a large pot with a tight-fitting lid over medium-heat, cook the bacon for about 5 minutes, or until browned. Add the rice, tomato, and allspice and cook for another 2–3 minutes.	717	0	4
 3884	Carefully drain off the bacon fat, leaving the bacon in the pan. Add the cream-style corn and milk to the pot and heat the chowder over medium heat for about 10 minutes, or until it's hot. Do not boil!	704	2	4
+3921	Remove from the heat and let it sit, with the lid on, for another 5 minutes.	717	2	0
+3922	Fluff the rice with a fork, season it with salt and pepper, and serve.	717	3	0
 3976	Remove the patties from the oven and serve or let cool. If you are serving them later, reheat them in a hot pan with a bit of oil.	733	3	0
 2860	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10-12 minutes, fresh about 3 minutes. Just before draining the pasta, add a ladleful or two of the cooking water to the sausage sauce and stir it in well. Taste the sauce to check the seasoning.	192	3	0
 2861	Finely shred the radicchio leaves. Drain the cooked pasta and turn it into the pan of sausage sauce. Add the shredded radicchio and toss well to combine everything thoroughly. Serve immediately.	192	4	0
@@ -19921,5 +19924,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict utNEMilJAcwzRWCfgfkbXIVZ8vfpZIWX1aeJZD0TppN6J1muEEhuACUj15t99RM
+\unrestrict svFZBU8E5DvdbehhCq1PR827UfHK2geZ5pVncinWMVbJZ9kG6HDnmwtwhyvW5Bg
 
