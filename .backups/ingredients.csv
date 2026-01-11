@@ -165,7 +165,7 @@
 169	\N	Slices of Multigrain Bread	\N	\N	f	32	25	50	2025-12-04	0	50	64	50	Slices of Multigrain Bread	https://www.eatthismuch.com/calories/multigrain-bread,7887
 170	\N	Corn Tortillas	\N	\N	f	2	26	52	2024-12-11	0	104	1024	104	Corn Tortillas	https://www.eatthismuch.com/calories/corn-tortillas-1679435
 171	\N	Heavy Cream	\N	\N	f	324	29.75	238	2025-08-12	9	238	4194304	238	Heavy Cream	https://www.eatthismuch.com/calories/heavy-whipping-cream-52
-172	\N	Fresh Peaches	\N	\N	f	0	150	150	2024-09-25	0	150	1	150	Fresh Peaches	https://www.eatthismuch.com/calories/peaches,1484
+172	\N	Fresh Peaches	\N	\N	f	0	150	150	2026-01-11	0	154	1	154	Fresh Peach	https://www.eatthismuch.com/calories/peaches,1484
 173	\N	Plums	\N	\N	f	0	66	66	2025-03-25	0	66	1	66	Plums	https://www.eatthismuch.com/calories/plums-1526
 174	\N	Leaves of Romaine Lettuce	\N	\N	f	0	23.5	47	2024-10-15	0	47	2	47	Lettuce	https://www.eatthismuch.com/calories/lettuce-2013
 175	\N	Grape Tomatoes	\N	\N	f	0	28	149	2025-11-28	4	149	2	149	Tomatoes	https://www.eatthismuch.com/calories/grape-tomatoes,1221838
@@ -511,7 +511,7 @@
 586	\N	Chickpea Penne Pasta	\N	\N	f	0	28	56	2025-02-16	4	84	4096	84	Chickpea Penne Pasta	https://www.eatthismuch.com/calories/penne-chickpea-pasta-2698055
 587	\N	Red Lentil Penne Pasta	\N	\N	f	0	28	56	2025-02-08	4	112	4096	112	Red Lentil Penne Pasta	https://www.eatthismuch.com/calories/penne-red-lentil-1772385
 588	\N	Dried Apricots	\N	\N	f	0	28	130	2024-09-25	4	130	3	130	Dried Apricots	https://www.eatthismuch.com/calories/apricots-dried-1329
-589	\N	Dried Peaches	\N	\N	f	0	150	150	2024-09-25	0	150	1	150	Dried Peaches	https://www.eatthismuch.com/calories/peaches,1484
+589	\N	Dried Peaches	\N	\N	f	0	28	160	2026-01-11	4	160	3	160	Dried Peach	https://www.eatthismuch.com/calories/dried-peaches-1494
 590	\N	Chestnuts	\N	\N	f	0	28	28	2025-03-10	4	224	1048576	224	Chestnuts	https://www.eatthismuch.com/calories/chestnuts-2651
 591	\N	Hamburger Buns, GF	\N	\N	f	0	79	79	2024-10-21	0	79	64	79	Hamburger Buns, GF	https://www.eatthismuch.com/calories/hamburger-buns-gluten-free-1786165
 592	\N	Black Olive Tapenade	\N	\N	f	0	14	14	2025-03-19	7	240	0	240	Black Olive Tapenade	https://www.eatthismuch.com/food/nutrition/olive-oil,266/
@@ -1312,3 +1312,6 @@
 1667	\N	Bacon Slices, Baked	\N	Cooked.	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
 1668	\N	Bacon Slices, Pan-Fried	\N	Cooked.	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
 1669	\N	Bacon Slices, Microwaved	\N	Cooked.	f	0	12	28	2025-07-16	0	224	268435456	224	Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
+1670	\N	Fresh Small Peaches	\N	\N	f	0	150	150	2026-01-11	0	150	1	150	Fresh Peaches	https://www.eatthismuch.com/calories/peaches,1484
+1671	\N	Fresh Medium Peaches	\N	\N	f	0	150	150	2026-01-11	0	150	1	150	Fresh Peaches	https://www.eatthismuch.com/calories/peaches,1484
+1672	\N	Fresh Large Peaches	\N	\N	f	0	150	150	2026-01-11	0	150	1	150	Fresh Peaches	https://www.eatthismuch.com/calories/peaches,1484

@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 2RIeZlAXcTpXcsFBGpLMiffqcfGk7BuVF9rKj1K6qsHNwcm8i08Pc6tcDD00x7h
+\restrict g1SAcLFgomuP2WcR5NJfb4xZCncdnCN9Q4E9NjwxgFiPiddV3o3FjZ4AyfpQSRR
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2231,6 +2231,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 279	280	1	t
 279	81	1	t
 225	3	1	f
+172	1672	1	t
+172	1671	1	t
+172	1670	1	t
 \.
 
 
@@ -12641,6 +12644,36 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17481	225	16777216	\N	1	14
 17482	225	67108864	\N	2	3
 17483	225	3221225472	\N	1	0.3
+17484	172	256	\N	3	0.1
+17485	172	2251799813685248	\N	2	9
+17486	172	274877906944	\N	1	0.1
+17487	172	17179869184	\N	2	14
+17488	172	4398046511104	\N	2	0.1
+17489	172	70368744177664	\N	2	30
+17490	172	8796093022208	\N	1	0.2
+17491	172	17592186044416	\N	2	0.3
+17492	172	65536	\N	1	243
+17493	172	1048576	\N	2	1
+17494	172	2097152	\N	2	0.2
+17495	172	16777216	\N	1	6
+17496	172	67108864	\N	2	10
+17497	172	536870912	\N	2	1
+17498	172	1536	\N	3	0.1
+17499	172	3221225472	\N	1	4
+17500	172	1792	\N	3	0.2
+17501	172	229376	\N	1	24
+17502	589	128	\N	3	0.1
+17503	589	68719476736	\N	2	11
+17504	589	34359738368	\N	2	1594
+17505	589	2	\N	3	67
+17506	589	1	\N	3	6
+17507	589	4294967296	\N	2	45
+17508	589	2199023255552	\N	2	6
+17509	589	48	\N	3	13
+17510	589	14	\N	3	85
+17511	589	1984	\N	3	1
+17512	589	62	\N	3	98
+17513	589	2047	\N	3	382
 \.
 
 
@@ -15262,6 +15295,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6574	8	601	2	1	\N	322	f	\N	7	f	t	\N	1
 6575	8	601	2	1	\N	1075	f	\N	8	f	t	\N	1
 6576	0	601	1	1	, juiced	12	f	\N	9	f	t	\N	1
+7433	4	750	1	7	\N	784	f	\N	1	f	t	\N	1
 6578	7	601	1	2	\N	80	f	\N	11	f	t	\N	1
 6269	8	564	1	1	\N	322	t	\N	3	f	t	\N	1
 6588	4	603	1	8	(COOKED SALMON RECIPE), chopped	1089	f	\N	0	f	t	\N	1
@@ -15271,20 +15305,19 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6592	4	604	1	1	\N	983	f	\N	0	f	t	\N	1
 6270	8	564	1	1	\N	581	t	\N	4	f	t	\N	1
 6528	8	595	1	4	\N	77	f	\N	0	f	t	\N	0.25
-7433	4	750	1	7	\N	784	f	\N	0	f	t	\N	1
-7434	4	750	1	1	\N	807	f	\N	1	f	t	\N	1
 6558	6	598	4	1	\N	805	f	\N	8	f	t	\N	1
 7373	8	106	8	1	\N	285	t	\N	6	f	t	\N	1
 6561	6	599	2	1	\N	1062	f	\N	1	f	t	\N	1
 6562	0	599	1	1	, diced	155	f	\N	2	f	t	\N	1
 6535	7	595	1	4	\N	77	t	\N	7	f	t	\N	0.25
-7435	4	750	1	17	\N	377	f	\N	2	f	t	\N	1
 7284	6	728	2	1	, diced	1336	f	\N	0	f	t	\N	1
 7285	7	728	1	2	\N	737	f	\N	1	f	t	\N	1
 6577	7	601	1	2	\N	77	f	\N	10	f	t	\N	0.25
 1726	7	100	1	1	, or Shortening in place of Butter and Oil	78	f	\N	5	f	t	\N	0.25
 1074	7	73	1	2	 (24g)	78	f	\N	3	f	t	\N	0.25
 3921	7	196	1	1	, for frying	78	f	\N	15	f	t	\N	0.25
+7434	4	750	1	1	\N	807	f	\N	2	f	t	\N	1
+7435	4	750	1	17	\N	377	f	\N	3	f	t	\N	1
 7286	8	728	1	1	\N	1335	f	\N	2	f	t	\N	1
 7287	4	728	1	15	, drained and rinsed	1334	f	\N	3	f	t	\N	1
 7288	6	728	4	1	\N	215	f	\N	4	f	t	\N	1
@@ -15992,6 +16025,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6401	0	580	1	8	, washed and dried	1073	f	\N	11	f	t	\N	1
 7387	7	105	1	2	\N	77	f	\N	5	f	t	\N	0.25
 7396	8	744	1	1	\N	278	t	\N	7	f	t	\N	0.25
+8311	7	750	2	3	\N	278	f	\N	6	f	t	\N	1
+8312	7	750	1	1	\N	82	f	\N	7	f	t	\N	1
+8313	8	750	1	1	\N	278	t	\N	9	f	t	\N	1
+8314	8	750	8	1	\N	692	t	\N	8	f	t	\N	1
 7091	0	698	1	1	, juiced	12	f	\N	1	f	t	\N	1
 7092	8	698	2	1	, grated	307	f	\N	2	f	t	\N	1
 7094	6	698	1	1	, crushed	501	f	\N	4	f	t	\N	1
@@ -16045,8 +16082,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7430	7	749	1	8	, divided	677	f	\N	4	f	t	\N	1
 7431	0	749	1	1	, cloves divided, peeled and mashed	1125	f	\N	5	f	t	\N	1
 7432	6	749	3	2	\N	\N	f	559	6	f	t	\N	1
-7436	4	750	2	1	\N	2	f	\N	3	f	t	\N	1
-7437	4	750	1	1	\N	403	f	\N	4	f	t	\N	1
 6295	0	568	1	4	\N	869	f	\N	0	f	t	\N	1
 6297	7	568	1	1	\N	490	f	\N	2	f	t	\N	1
 6298	8	568	4	1	, to taste	692	t	\N	3	f	t	\N	1
@@ -16085,6 +16120,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6612	8	608	4	1	\N	503	t	\N	4	f	t	\N	1
 6613	8	608	4	1	, to taste	692	t	\N	5	f	t	\N	1
 6614	0	608	1	4	, about 1-inch thick; 6 ounces each	1107	f	\N	6	f	t	\N	1
+7436	4	750	2	1	\N	2	f	\N	4	f	t	\N	1
 6616	0	608	1	2	, minced	5	t	\N	8	f	t	\N	1
 7785	8	861	8	1	\N	285	t	\N	7	f	t	\N	1
 2097	7	103	1	4	\N	77	f	\N	6	f	t	\N	0.25
@@ -16096,6 +16132,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7479	4	785	1	28	\N	1328	f	\N	3	f	t	\N	1
 5725	8	418	8	1	, to taste	692	t	\N	4	f	t	\N	1
 5726	0	418	1	6	\N	187	f	\N	5	f	t	\N	1
+7437	4	750	1	1	\N	403	f	\N	5	f	t	\N	1
 7005	6	656	2	1	\N	546	t	\N	5	f	t	\N	1
 7397	4	745	1	8	\N	333	f	\N	0	f	t	\N	1
 7481	5	745	1	1	(GROUND BEEF)	488	f	\N	1	f	t	\N	1
@@ -18673,11 +18710,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1688	To serve, sprinkle the reserved crushed biscuits over the trifles and serve immediately.	162	3	0
 4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
 4031	Season to taste with salt and pepper.	476	3	0
-4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans. Toast the almonds in a dry grill pan on a medium heat until lightly golden, tossing regularly, then remove and finely slice.	750	0	4
-4033	Drain the peppers and open out flat, then char on the hot grill until bar-marked on one side only. Remove and slice 1/2 inch thick. Finely slice the parsley stalks, pick the leaves, then toss with the fava beans, peppers, 1&1/2 tablespoons of extra virgin olive oil, and 1 tablespoon each of red wine vinegar and brine from the pepper jar. Taste, season to perfection with sea salt and black pepper, and divide between your plates.	750	1	0
-4034	Finely shave over the cheese with a vegetable peeler, drizzle with 1 teaspoon of extra virgin olive oil, scatter over the almonds, and serve.	750	2	0
 3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	568	5	4
 3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	568	6	0
+4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans.	750	0	4
+4033	Toast the almonds in a dry grill pan on a medium heat until lightly golden, tossing regularly, then remove and finely slice.	750	1	4
 4602	Meanwhile, make the corn cakes. Stir the corn kernels into the cooled mashed potato, and season with plenty of salt and pepper to taste. Using lightly floured hands, shape the mixture into 12 even-sized round cakes, each about 2-inches in diameter.	974	2	0
 4603	Melt the butter in another large frying pan and cook the corn cakes for 3 minutes on each side, or until golden and heated through. Meanwhile, mix together the sour cream with the chives in a small bowl to make a dip.	974	3	4
 4037	Whiz one of the jarred peppers in a blender with ¾ cup of the tzatziki and a pinch of sea salt and black pepper. Pour over the chicken and leave to marinate for at least 2 hours in the fridge, preferably overnight. 	752	0	0
@@ -18703,6 +18739,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 545	Heat the grill to medium. Make four indentations in the mixture using the back of a spoon, then crack one egg in each. Nestle the ham in the mixture, then grill for 4–5 mins, or until the whites are set and the yolks runny. 	40	2	4
 4660	Cook the potatoes in boiling salted water for about 20 minutes until tender, then drain well.	982	0	4
 4661	Add a little milk and mash until smooth.	982	1	32768
+4034	Drain the peppers and open out flat, then char on the hot grill until bar-marked on one side only. Remove and slice ½-inch thick. 	750	2	8
 4182	Drain. In a large cooking pot, put the chickpeas and 1 teaspoon of baking soda. Cook over medium-high heat, tossing constantly, for about 3–4 minutes. 	629	3	4
 4020	In a food processor, process the chickpeas until they turn into a slightly textured paste. Be sure to turn off the food processor and scrape down the sides to get all the chickpeas ground up. Add in the onion, garlic, salt, and pepper, and mix to fully combine. Turn the food processor off and stir in the chopped parsley and arrowroot starch.	748	1	256
 4022	Reheat that same cast iron pan to medium heat. Drizzle the remainder of the oil and place the patties in to cook. Cook for about 2–3 minutes on each side until the bottom is nicely browned.	748	3	4
@@ -19061,6 +19098,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4514	Taste the soup and season with salt and pepper until it tastes good. Divide the noodles among 4 bowls and top with the pulled chicken. Ladle the soup over the bowls of noodles and enjoy.	957	4	0
 4663	In a large pot, bring 3 quarts (3 liters) of water to a boil. Add the potato wedges and 2 teaspoons of the salt. Boil for 6–7 minutes, then drain well in a colander. Holding the colander over the sink, gently shake it in a flipping motion so the potatoes turn and the surfaces get roughed up—this helps them crisp up in the oven. You’re not trying to break them, just scuff the edges a bit.	983	1	4
 2135	Rub the oil and salt into each potato and then wrap them up in the foil and place them flat in the bottom of the crock pot.	32	2	1024
+4670	Finely slice the parsley stalks, pick the leaves, then toss with the fava beans, peppers, 1½ tablespoons of extra virgin olive oil, and 1 tablespoon each of red wine vinegar and brine from the pepper jar. Taste, season to perfection with sea salt and black pepper, and divide between your plates.	750	3	0
+4671	Finely shave over the cheese with a vegetable peeler, drizzle with 1 teaspoon of extra virgin olive oil, scatter over the almonds, and serve.	750	4	0
 4522	Wash and trim the ends of the zucchinis.	959	0	0
 4523	Use a spiralizer to create long, thin noodles by placing the zucchini in the spiralizer and turning the handle. If using a julienne peeler or vegetable peeler, peel the zucchini lengthwise to create thin strips (julienne for thinner, vegetable peeler for wider ribbons).	959	1	0
 4524	If eating raw, the noodles are ready to serve. Toss them with your favorite sauce, pesto, or dressing.	959	2	0
@@ -19132,7 +19171,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17483, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17513, true);
 
 
 --
@@ -19842,5 +19881,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 2RIeZlAXcTpXcsFBGpLMiffqcfGk7BuVF9rKj1K6qsHNwcm8i08Pc6tcDD00x7h
+\unrestrict g1SAcLFgomuP2WcR5NJfb4xZCncdnCN9Q4E9NjwxgFiPiddV3o3FjZ4AyfpQSRR
 
