@@ -64,7 +64,11 @@ public enum Equipment
     [Display(Name = "Spice Grinder", Order = 19)]
     SpiceGrinder = 1 << 18, // 262144
 
+    [Display(Name = "Pressure Cooker", Order = 20)]
+    PressureCooker = 1 << 19, // 524288
+
 
     All = Microwave | Oven | Stove | Grill | Broiler | Toaster | ToasterOven | Blender | FoodProcessor | ImmersionBlender
-        | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator | Freezer | SpiceGrinder
+        | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator | Freezer 
+        | SpiceGrinder | PressureCooker
 }
