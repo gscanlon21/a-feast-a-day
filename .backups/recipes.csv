@@ -24,7 +24,7 @@
 41	Creamy Pasta with Asparagus & Peas	\N	\N	\N	12	10	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	2	25	5	2	t	baked-banana-porridge.jpg	0	https://www.bbcgoodfood.com/recipes/baked-banana-porridge	f	f
 44	Quinoa Pizza Crust	\N	\N	\N	0	45	5	2	t	quinoa-pizza.jpg	0	\N	t	f
-45	5-Ingredient Black Bean Soup	\N	\N	\N	6	18	2	4	t	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
+45	5-Ingredient Black Bean Soup	\N	\N	\N	20	18	2	4	t	black-bean-soup.jpg	0	https://www.gimmesomeoven.com/5-ingredient-black-bean-soup/	f	f
 46	Basic Energy Balls	2 balls per serving.	\N	\N	16	5	5	2	t	basic-energy-balls.jpg	0	\N	f	f
 47	Banana “nice” Cream	\N	\N	\N	64	120	5	1	t	banana-ice-cream.jpg	0	\N	f	f
 48	Avocado Cakes	\N	\N	\N	16	0	5	2	t	avocado-cakes.jpg	0	\N	f	f
@@ -204,10 +204,10 @@
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	4	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
-262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	f	f
+262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	t	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
 264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	\N	f	f
-265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	\N	0	\N	f	f
+265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	black-bean-fajita-skillet.jpg	0	\N	f	f
 266	Sweet Potato Cauliflower Curry	\N	\N	\N	4	55	5	4	t	cauliflower-curry.jpg	0	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	f	f
 267	Curried Mung Bean Soup	\N	\N	\N	8	45	15	4	t	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
 268	Orange Flower Water	\N	\N	\N	0	120	5	1	t	\N	6	https://thishealthytable.com/blog/orange-blossom-water/	f	f
@@ -313,7 +313,7 @@
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	32	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
-467	Green Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	1	1	t	\N	0	\N	f	f
+467	Green Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	5	1	t	rosemary-lemon-tea.jpg	0	\N	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	20	0	10	4	t	tuna-salad-celery-boats.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 470	Pumpkin Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -519,7 +519,7 @@
 737	Risotto Base	If you can;t find Arborio rice, use Carnaroli rice instead.	Risotto base is not good.	\N	0	25	5	1	t	\N	6	\N	t	f
 738	Fire-Roasted Red Pepper Dip	\N	Requires weird equipment.	\N	0	15	35	2	t	\N	6	\N	t	f
 739	Soba Noodle Salad	You can substitute the bok choy for cabbage.	\N	\N	20	0	10	2	t	\N	0	\N	f	f
-740	Classic-ish Niçoise Salad	To make the salad more substantial, add 1 cup spinach, and 1 cup cooked penne noodles.	\N	\N	16	5	10	2	t	\N	0	\N	f	f
+740	Classic-ish Niçoise Salad	\N	\N	\N	16	5	10	2	t	\N	0	\N	f	f
 741	Roasted Vegetable and Goat Cheese Salad	\N	\N	\N	16	0	15	2	t	\N	0	\N	f	f
 742	Chicken Parmesan	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
 743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
@@ -547,7 +547,7 @@
 829	Herby Steak & Crispy Potatoes	\N	\N	\N	8	25	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 830	Caveman Roasted Turkey Legs	You can substitute chicken legs for the turkey legs, but cut total cooking time down by about 15 minutes.	\N	\N	8	60	5	2	t	roasted-turkey-legs-alt.jpg	0	\N	f	f
 831	Over-Hard Eggs	\N	\N	\N	0	7	0	2	t	over-hard-eggs.jpg	0	From the First Watch cookbook.	t	f
-832	Microwaved Bacon Slices	\N	\N	\N	0	5	0	1	t	\N	0	\N	t	f
+832	Microwaved Bacon Slices	\N	\N	\N	0	5	0	1	t	bacon.jpg	0	\N	t	f
 833	Rummaniyeh	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 834	Glorius Stuffed Squash	\N	\N	\N	8	70	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 835	Herby Chicken Traybake	\N	\N	\N	8	50	8	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
@@ -566,7 +566,7 @@
 848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	taco-seasoning.jpg	6	From the First Watch cookbook. 	t	f
 849	Avocado Toast	\N	\N	\N	4	0	0	1	t	\N	0	From the First Watch cookbook. 	f	f
 850	Sunrise Granola Bowl	\N	\N	\N	4	0	15	1	t	granola.jpg	0	From the First Watch cookbook. 	f	f
-851	Million Dollar Bacon	\N	\N	\N	16	20	5	4	t	\N	0	From the First Watch cookbook. 	f	f
+851	Million Dollar Bacon	\N	\N	\N	16	20	5	4	t	bacon.jpg	0	From the First Watch cookbook. 	f	f
 852	Rainbow Toast	\N	\N	\N	4	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 853	Roast Tikka Chicken	\N	\N	\N	8	60	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 854	Watermelon Salad	\N	\N	\N	16	0	15	6	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -586,7 +586,7 @@
 868	Sweet and Sticky Pork Chops	\N	\N	\N	8	20	5	2	t	\N	0	\N	f	f
 869	Sausage and Cheese Grits	For a more substantial meal, top the grits with a poached or fried egg.	\N	\N	16	20	5	2	t	\N	0	\N	f	f
 870	Classic Eggs Benedict	You can add some sauteed spinach between the bacon and egg. You can also switch the bacon for smoked salmon. Or you can add 1 tablespoon of orange juice to the hollandaise sauce and halve the lemon juice for a touch of sweetness.	\N	\N	4	20	5	2	t	\N	0	\N	f	f
-871	Chicken, Bacon, Guacamole, and Bread	To add a bit more punch to this sandwich, top it with pepper Jack cheese or hot sauce.	\N	\N	12	30	10	1	t	\N	0	\N	f	f
+871	Chicken, Bacon, Guacamole, and Bread	\N	\N	\N	12	30	10	2	t	avocado-tomato-chicken-brushetta.jpg	0	\N	f	f
 904	Crispy Pork Tostadas	\N	\N	\N	8	20	5	2	t	\N	0	\N	f	f
 905	Classic Roast Chicken	\N	\N	\N	8	90	30	4	t	\N	0	\N	f	f
 906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
@@ -633,3 +633,5 @@
 981	Oatmeal Protein Bars	This recipe makes 8 square bars in a 9″ loaf pan. If you’d like to double the recipe, you can make a double recipe in a 9 x 9″ square pan. Do not try this recipe with any other type of date! Deglet noor and others do not work. Make sure your dates are fresh and pliable - if they’re dried out, soak in warm water for 10 minutes before using.	\N	\N	32	0	15	2	t	\N	0	https://www.acouplecooks.com/oatmeal-protein-bars	f	f
 982	Mashed Potatoes	\N	\N	\N	0	25	5	1	t	irish-champ.jpg	6	\N	t	f
 983	Potato Wedges	Small russet potatoes work best for this recipe, so the wedges aren’t too large or unwieldy. To cut them, slice each potato in half lengthwise, then cut each half into 3 evenly sized wedges.	\N	\N	16	0	0	2	t	\N	0	https://www.onceuponachef.com/recipes/crispy-potato-wedges.html	t	f
+984	Cooked Penne Pasta	\N	\N	\N	0	0	0	2	t	\N	4	\N	t	f
+985	No Bake Energy Bites	\N	\N	\N	32	0	15	5	t	\N	0	https://www.acouplecooks.com/energy-bites/	f	f
