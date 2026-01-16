@@ -538,6 +538,7 @@ public class QueryRunner(Section section)
     /// </summary>
     private async Task<IList<QueryResults>> GetPrepRecipes(IServiceScopeFactory factory, IList<InProgressQueryResults> filteredResults)
     {
+        // Don't check RecipeOptions.IgnorePrepRecipes yet so other things work.
         var prepRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients
             // Query for prerequisites ingredient recipes here so we can check their ignored status before finalizing recipes.
             .Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe)).Where(ri => ri.UserRecipeIngredient?.Ignore != true)
@@ -546,7 +547,7 @@ public class QueryRunner(Section section)
             // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
-        // This will filter out base recipes missing equipemnt. No infinite recursion please. 
+        // This will filter out prep recipes missing equipemnt. No infinite recursion please. 
         return prepRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Section.Prep)
             .WithUser(options =>
             {

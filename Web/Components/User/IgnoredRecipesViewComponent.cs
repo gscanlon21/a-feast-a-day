@@ -50,6 +50,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
             {
+                x.IgnorePrepRecipes = true;
                 x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
             })
             .Build()
