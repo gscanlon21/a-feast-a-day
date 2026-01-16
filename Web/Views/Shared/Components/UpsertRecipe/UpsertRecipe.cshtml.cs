@@ -92,7 +92,7 @@ public class UpsertRecipeModel : IValidatableObject
     {
         if (!BaseRecipe && Section == Section.None)
         {
-            yield return new ValidationResult($"Section cannot be null when not a base recipe.", [nameof(Section), nameof(BaseRecipe)]);
+            yield return new ValidationResult($"Section cannot be null when not a base recipe.", [nameof(Section)]);
         }
 
         if (RecipeIngredients.Where(ri => !ri.Hide).GroupBy(ri => ri.Order).Any(g => g.Count() > 1))
