@@ -705,7 +705,7 @@
 811	\N	Mixed-Color Bell Peppers	\N	\N	f	0	186	186	2025-10-22	0	186	2	186	Bell Pepper	https://www.eatthismuch.com/calories/yellow-peppers-2560
 812	\N	Bell Peppers	\N	\N	f	0	119	119	2025-10-20	0	92	2	92	Bell Pepper	https://www.eatthismuch.com/calories/red-bell-pepper-2440
 813	\N	Fresh Nectarines	\N	\N	f	0	142	142	2026-01-13	0	142	1	142	Fresh Nectarines	https://www.eatthismuch.com/calories/nectarines-1458
-814	\N	Fresh Peaches | Fresh Nectarines	\N	\N	f	0	150	150	2024-09-25	0	150	1	150	Fresh Peaches | Fresh Nectarines	https://www.eatthismuch.com/calories/peaches,1484
+814	\N	Fresh Peaches | Fresh Nectarines	\N	\N	f	0	150	150	2026-01-16	0	150	1	150	Peach | Nectarine	https://www.eatthismuch.com/calories/peaches,1484
 815	\N	Frozen Podded Fava Beans	\N	\N	f	0	194	194	2024-10-17	6	194	67108864	194	Frozen Podded Fava Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
 816	\N	Frozen Podded Lima Beans	\N	\N	f	0	28	202	2025-07-27	4	202	67108864	202	Frozen Podded Lima Beans	https://www.eatthismuch.com/calories/lima-beans-3571
 817	\N	Frozen Podded Snow Peas	\N	\N	f	0	28	144	2025-07-27	4	144	67108864	144	Frozen Podded Snow Peas	https://www.eatthismuch.com/calories/peas-2062
@@ -1318,7 +1318,7 @@
 1703	\N	Canned Peach Halves in Juice	\N	\N	f	0	28	244	2026-01-12	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1704	\N	Canned Sliced Peaches in Juice	\N	\N	f	0	28	244	2026-01-12	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1705	\N	Canned Diced Peaches in Juice	\N	\N	f	0	28	248	2026-01-13	4	248	512	248	Canned Diced Peaches	https://www.eatthismuch.com/calories/peaches-1486
-1706	\N	Canned Diced Peaches in Water	\N	\N	f	0	28	244	2024-09-25	4	244	512	244	Canned Diced Peaches	https://www.eatthismuch.com/calories/peaches-1485
+1706	\N	Canned Diced Peaches in Water	\N	\N	f	0	28	244	2026-01-16	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1707	\N	Canned Sliced Peaches in Water	\N	\N	f	0	28	244	2026-01-12	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1708	\N	Canned Peach Halves in Water	\N	\N	f	0	28	244	2026-01-12	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1709	\N	Dried Rosemary	\N	\N	f	0	1	2	2024-09-26	3	27	3	27	Rosemary	https://www.eatthismuch.com/calories/rosemary-230

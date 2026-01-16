@@ -313,7 +313,7 @@
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	32	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
-467	Green Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+467	Green Juice	\N	\N	\N	128	0	5	1	t	green-juice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	5	1	t	rosemary-lemon-tea.jpg	0	\N	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	20	0	10	4	t	tuna-salad-celery-boats.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 470	Pumpkin Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -635,3 +635,4 @@
 983	Potato Wedges	Small russet potatoes work best for this recipe, so the wedges aren’t too large or unwieldy. To cut them, slice each potato in half lengthwise, then cut each half into 3 evenly sized wedges.	\N	\N	16	0	0	2	t	\N	0	https://www.onceuponachef.com/recipes/crispy-potato-wedges.html	t	f
 984	Cooked Penne Pasta	\N	\N	\N	0	0	0	2	t	\N	4	\N	t	f
 985	No Bake Energy Bites	\N	\N	\N	32	0	15	5	t	\N	0	https://www.acouplecooks.com/energy-bites/	f	f
+986	Fajita Veggies	While this is a stovetop recipe, you can also roast or grill your veggies for even smokier flavors. I like adding grilled veggies to my fajita salad, especially if you’re already grilling chicken.  Fajita veggies are generally pretty tender, but you can reduce the cooking time if you want them to retain some crunch. Don’t overdo it on the olive oil and avoid overcrowding in the pan.	\N	\N	16	15	10	4	t	\N	0	https://www.acouplecooks.com/fajita-veggies/	t	f

@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict iNqE9kZZLwuLePsgfYEFw8huNSd5Ix5OASTHWCOe8IhRVWNWABwNPInDLds68sG
+\restrict r40dRolozFRpxnKhhf9bIfhHOHq11T1W0BPjBiP7ikARX8njteXa3WRAPc6ez5d
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1869,8 +1869,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 808	669	1	f
 808	809	1	f
 615	646	1	f
-814	813	1	f
-814	172	1	f
 172	813	1	f
 813	172	1	f
 502	215	1	f
@@ -1983,6 +1981,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 908	909	1	t
 812	8	1	t
 812	597	1	t
+814	813	1	t
+814	172	1	t
 951	952	1	f
 321	295	1	f
 321	116	1	f
@@ -2249,6 +2249,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1713	418	1	f
 1083	1714	1	f
 1714	1171	1	f
+814	1672	1	f
+814	1671	1	f
+814	1670	1	f
 \.
 
 
@@ -12828,6 +12831,18 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17653	1324	14	\N	3	12
 17654	1324	1984	\N	3	0.1
 17655	1324	62	\N	3	15
+17656	814	2047	\N	3	1
+17657	1706	68719476736	\N	2	7
+17658	1706	34359738368	\N	2	242
+17659	1706	2	\N	3	12
+17660	1706	1	\N	3	1
+17661	1706	4294967296	\N	2	5
+17662	1706	2199023255552	\N	2	1
+17663	1706	48	\N	3	3
+17664	1706	14	\N	3	12
+17665	1706	1984	\N	3	0.1
+17666	1706	62	\N	3	15
+17667	1706	2047	\N	3	59
 \.
 
 
@@ -15382,9 +15397,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7272	6	726	4	1	, cooked	1713	f	\N	2	f	t	\N	1
 7273	7	726	1	2	\N	\N	f	662	3	f	t	\N	1
 6084	0	534	2	1	, juiced	4	t	\N	3	f	t	\N	1
+7594	4	834	1	8	, cooked	1197	f	\N	5	f	t	\N	1
+7595	8	834	1	2	\N	1413	f	\N	6	f	t	\N	1
+7596	0	834	1	2	\N	1411	f	\N	8	f	t	\N	1
+8361	8	834	4	1	\N	692	t	\N	2	f	t	\N	1
 6509	0	593	2	1	\N	9	f	\N	0	f	t	\N	1
 6327	6	573	1	1	\N	957	f	\N	0	f	t	\N	1
 6328	0	573	1	1	\N	155	f	\N	1	f	t	\N	1
+8362	7	834	1	1	\N	77	f	\N	3	f	t	\N	0.25
 6329	0	573	1	1	\N	9	f	\N	2	f	t	\N	1
 6330	0	573	1	2	\N	1088	t	\N	3	f	t	\N	1
 6331	0	573	1	1	\N	598	f	\N	4	f	t	\N	1
@@ -16157,6 +16177,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6615	7	608	1	2	, divided	964	f	\N	7	f	t	\N	0.25
 5727	8	418	1	1	\N	964	f	\N	6	f	t	\N	0.25
 6012	8	523	1	1	\N	1010	f	\N	1	f	t	\N	0.25
+8363	8	834	8	1	\N	969	t	\N	7	f	t	\N	1
+8364	0	986	1	3	, sliced into thin strips	811	f	\N	0	f	t	\N	1
+8365	0	986	1	1	(MEDIUM RED ONIONS), sliced into thin strips	105	f	\N	1	f	t	\N	1
+8366	0	986	1	2	(PORTOBELLO MUSCHROOMS), stems removed and sliced into strips	1379	t	\N	2	f	t	\N	1
+8367	0	986	1	3	, peeled and mashed	5	t	\N	3	f	t	\N	1
+8368	7	986	1	3	\N	676	f	\N	4	f	t	\N	0.25
+8369	8	986	1	2	\N	143	f	\N	5	f	t	\N	1
+8370	8	986	1	1	\N	68	f	\N	6	f	t	\N	1
+8371	8	986	1	1	\N	71	f	\N	7	f	t	\N	1
+8372	8	986	1	1	\N	1355	f	\N	8	f	t	\N	1
+8373	8	986	2	3	\N	75	f	\N	9	f	t	\N	1
+8374	8	986	4	1	\N	67	f	\N	10	f	t	\N	1
 6396	6	580	4	1	, diced	105	f	\N	6	f	t	\N	1
 6397	6	580	4	1	, chopped	1069	f	\N	7	f	t	\N	1
 6399	0	580	1	2	, sliced (mostly green parts)	144	f	\N	9	f	t	\N	1
@@ -16358,6 +16390,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6363	0	576	1	1	, sliced	597	f	\N	4	f	t	\N	1
 8348	7	265	1	1	\N	77	f	\N	2	f	t	\N	0.25
 6169	8	547	4	1	, to taste	692	t	\N	4	f	t	\N	1
+7592	0	834	1	1	, such as kabocha, Crown Prince, red kuri, butternut	1414	f	\N	1	f	t	\N	1
+7593	4	834	1	1	\N	1412	t	\N	4	f	t	\N	1
 7563	0	827	1	4	\N	222	f	\N	0	f	t	\N	1
 7574	4	829	1	10	\N	1184	f	\N	1	f	t	\N	1
 5463	6	375	3	1	, low sodium	47	f	\N	6	f	t	\N	1
@@ -16397,12 +16431,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7599	0	835	1	6	\N	5	f	\N	2	f	t	\N	1
 7600	4	835	1	1	\N	677	t	\N	3	f	t	\N	1
 7601	0	835	1	1	\N	4	f	\N	4	f	t	\N	1
-7592	0	834	1	1	, such as kabocha, Crown Prince, red kuri, butternut	1414	f	\N	0	f	t	\N	1
-7593	4	834	1	1	\N	1412	t	\N	1	f	t	\N	1
-7594	4	834	1	8	, cooked	1197	f	\N	2	f	t	\N	1
-7595	8	834	1	2	\N	1413	f	\N	3	f	t	\N	1
 7255	7	723	1	2	\N	14	f	\N	5	f	t	\N	1
-7596	0	834	1	2	\N	1411	f	\N	4	f	t	\N	1
 7558	0	826	1	1	\N	259	f	\N	0	f	t	\N	1
 7559	0	826	1	4	\N	388	f	\N	1	f	t	\N	1
 7560	4	826	4	7	\N	406	f	\N	2	f	t	\N	1
@@ -16603,7 +16632,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7718	4	853	1	1	\N	13	f	\N	2	f	t	\N	1
 7719	0	853	1	1	\N	975	f	\N	3	f	t	\N	1
 7720	7	853	1	2	\N	1556	f	\N	4	f	t	\N	1
-7791	6	834	4	1	\N	\N	f	858	5	f	t	\N	1
 7773	8	860	8	1	\N	285	f	\N	2	f	t	\N	1
 7605	0	837	1	4	\N	811	f	\N	0	f	t	\N	1
 7606	0	837	1	2	\N	105	f	\N	1	f	t	\N	1
@@ -16631,6 +16659,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7757	6	315	2	5	\N	\N	f	858	6	f	t	\N	1
 7758	7	315	1	1	\N	\N	f	858	7	f	t	\N	1
 7759	8	315	8	1	\N	692	t	\N	8	f	t	\N	1
+7791	6	834	4	1	\N	\N	f	858	9	f	t	\N	1
 7780	0	861	1	1	, thinly sliced	387	f	\N	2	f	t	\N	1
 7781	6	861	2	1	, quartered	595	f	\N	3	f	t	\N	1
 7782	6	861	2	1	, sliced	222	f	\N	4	f	t	\N	1
@@ -18334,6 +18363,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4565	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	966	2	4
 4608	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave the darn things alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally.	976	2	4
 4609	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	976	3	0
+4280	Pick and finely chop the parsley, then toss most of it with the grains, along with 1 heaping teaspoon of harissa (and any extra butternut squash flesh, if using). Season with a pinch of salt and pepper, then divide between the squash halves. Make a well in the middle and crack an egg into each, then bake for 15 minutes for an oozy egg, or a little longer, if you prefer.	834	2	2
+4709	Prepare the vegetables as noted in the ingredients list. Place vegetables in a bowl and toss with 2 tablespoons of olive oil and spices. 	986	0	0
+4710	In a large cast-iron skillet, heat the remaining 1 tablespoon of olive oil over medium-high heat. 	986	1	0
+4711	Add the veggies and sauté about 15 minutes until tender and lightly charred, stirring occasionally. 	986	2	0
+4712	Add additional salt to taste. Remove and discard the garlic cloves before serving. 	986	3	0
 3527	Heat the coconut oil in a soup pot on medium-heat. Add the leeks and cook until softened, about 6 minutes.	586	0	4
 3528	Add the garlic, and sauté until fragrant, about 1 minute.	586	1	4
 3529	Add the celery, broccoli, and bone broth and bring to a boil, reduce the heat to simmer for 5 minutes.	586	2	4
@@ -19121,8 +19155,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4279	Season to perfection with sea salt and black pepper, and serve with a drizzle of extra virgin olive oil and an extra pinch of mixed spice, if you like.	785	2	0
 4151	Preheat the oven to 350°F. Carefully cut the squash in half, scoop out and discard the seeds, then trim the ends and rub all over with sea salt, black pepper, and olive oil. 	834	0	2
 4152	Place in a roasting pan, flesh-side up, and roast for 50 minutes, or until tender (if you're using butternut squash, scoop some soft flesh out to make a gully for the grains all along the length of the squash).	834	1	2
-4280	Pick and finely chop the parsley, then toss most of it with the grains, along with 1 heaping teaspoon of harissa (and any extra butternut squash flesh, if using). Season with a pinch of salt and pepper, then divide between the squash halves. Make a well in the middle and crack an egg into each, then bake for 15 minutes for an oozy egg, or a little longer, if you prefer.	834	2	2
-4281	Mix the remaining harissa with enough boiling kettle water to loosen, then drizzle over the squash and scatter over the remaining chopped parsley, to serve. At the table, break and mix the oozy egg through the grains, and tuck in.	834	3	0
 4282	Sit the chicken flat on top of the veg, skin-side up, and roast it all for 50 minutes, or until gnarly and cooked through. Pick over the mint leaves before dishing up.	837	2	2
 4287	Top with the remaining banana halves and scatter over the walnuts.	42	2	0
 4285	Place the peppers in a blender with 1 tablespoon of liquid from the jar. Tear off and reserve the top leafy half of the parsley, adding the stems to the blender with 1 tablespoon of extra virgin olive oil. Blitz until smooth, then season to perfection with sea salt and black pepper. Cut the baguette into 8 slices and toast until golden. Put a non-stick frying pan on a high heat. Empty in the beans (juices and all), bring to a boil, the let the juices reduce until creamy, stirring occasionally.	863	0	0
@@ -19146,6 +19178,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4300	Nestle the whole chicken breasts into the veg, then pour over the hot chicken stock. Place a lid on the pan, bring to the boil then turn straight down to a simmer. Continue to simmer for 20 minutes, until the chicken is cooked through.	864	1	4
 4297	Tip the drained pasta into the pea and potato pan, finely grate in the pecorino, then toss together, adding splashes of cooking water to loosen, if needed.	105	3	0
 4298	Season to perfection, and finish with an extra grating of pecorino and a drizzle of extra virgin olive oil, if you like. 	105	4	0
+4281	Mix the remaining harissa with enough boiling kettle water to loosen, then drizzle over the squash and scatter over the remaining chopped parsley, to serve. At the table, break and mix the oozy egg through the grains, and tuck in.	834	3	0
 4301	Remove the chicken breasts from the soup, and using two forks shred it. Add back into the soup along with the lentils and chopped spinach. Mix well and simmer for another 5 minutes. Season with salt and pepper if needed, then serve.	864	2	4
 4302	Add the cooked potatoes to the chowder and let them cook for 2 minutes to absorb some of the flavor. Season the chowder with salt and pepper and serve.	704	3	4
 4303	Fry for a couple of minutes until golden, then lightly squash the unpeeled garlic cloves with the heel of your hand and add to the pan. Pick in the grapes.	838	2	4
@@ -19341,7 +19374,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17655, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17667, true);
 
 
 --
@@ -20051,5 +20084,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict iNqE9kZZLwuLePsgfYEFw8huNSd5Ix5OASTHWCOe8IhRVWNWABwNPInDLds68sG
+\unrestrict r40dRolozFRpxnKhhf9bIfhHOHq11T1W0BPjBiP7ikARX8njteXa3WRAPc6ez5d
 
