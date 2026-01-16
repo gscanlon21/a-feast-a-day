@@ -303,7 +303,7 @@
 422	Lemon Energy Bites	\N	\N	\N	16	0	5	12	t	lemon-energy-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 423	Steamed Kale	\N	\N	\N	16	5	5	4	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
-425	Bacon Wrapped Avocado Slices	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	\N	f	f
+425	Bacon Wrapped Avocado Slices	\N	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	honey-mustard-dressing.jpg	6	\N	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -636,3 +636,5 @@
 984	Cooked Penne Pasta	\N	\N	\N	0	0	0	2	t	\N	4	\N	t	f
 985	No Bake Energy Bites	\N	\N	\N	32	0	15	5	t	\N	0	https://www.acouplecooks.com/energy-bites/	f	f
 986	Fajita Veggies	While this is a stovetop recipe, you can also roast or grill your veggies for even smokier flavors. I like adding grilled veggies to my fajita salad, especially if you’re already grilling chicken.  Fajita veggies are generally pretty tender, but you can reduce the cooking time if you want them to retain some crunch. Don’t overdo it on the olive oil and avoid overcrowding in the pan.	\N	\N	16	15	10	4	t	\N	0	https://www.acouplecooks.com/fajita-veggies/	t	f
+987	Pan-Fried Salmon	\N	\N	\N	0	10	5	2	t	\N	0	\N	t	f
+988	Baked Salmon	\N	\N	\N	0	15	5	2	t	\N	0	\N	t	f
