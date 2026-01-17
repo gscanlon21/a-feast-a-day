@@ -27,32 +27,33 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid ColumnDefinitions="*" RowDefinitions="50,*" RowSpacing="-6">
+    <Grid ColumnDefinitions="*" RowDefinitions="50,*" RowSpacing="-5">
         <Entry Placeholder="Add Ingredient"
-               Text="{Binding IngredientEntry}"
+               BackgroundColor="Transparent"
+               Text="{Binding IngredientEntry}" Margin="14,0"
                ReturnCommand="{Binding WhenCompletedCommand}"/>
 
         <RefreshView Grid.Row="1" IsRefreshing="{Binding Loading}" Command="{Binding LoadCommand}">
-
-            <CollectionView x:Name="shoppingListView" ItemsSource="{Binding Ingredients}" SelectionMode="None">
-
+            <CollectionView x:Name="shoppingListView" ItemsSource="{Binding Ingredients}" SelectionMode="None" Margin="0,0,0,-1">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="entities:ShoppingListItem">
-                        <Grid ColumnDefinitions="60,*">
+                        <Grid ColumnDefinitions="55,*" RowDefinitions="*,1">
 
                             <CheckBox x:Name="Checkbox" IsChecked="{Binding IsChecked}" Color="{StaticResource Secondary}"></CheckBox>
 
-                            <StackLayout Grid.Column="1" Margin="0,10" >
+                            <StackLayout Grid.Column="1" Margin="0,10" Padding="0,0,5,0">
                                 <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Title'}"
                                        FontSize="16" FontAttributes="Bold" TextColor="{StaticResource Primary}" LineBreakMode="WordWrap"/>
 
                                 <Label Text="{Binding Converter={StaticResource MethodToValueConverter}, ConverterParameter='Description'}" LineBreakMode="WordWrap"
                                        IsVisible="{Binding Source={RelativeSource Self}, Path=Text, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"/>
                             </StackLayout>
+
+                            <BoxView Grid.Row="1" Grid.Column="1" HeightRequest="1" Color="{StaticResource Secondary}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
