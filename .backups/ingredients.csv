@@ -582,7 +582,7 @@
 657	\N	Sesame Oil	\N	\N	f	8192	28	14	2025-02-24	9	224	65536	224	Sesame Oil	https://www.eatthismuch.com/calories/sesame-oil-268
 658	\N	Romaine Lettuce Heads	\N	\N	f	0	626	47	2024-10-15	0	47	2	47	Lettuce	https://www.eatthismuch.com/calories/lettuce-2013
 659	\N	Baby Leeks	\N	\N	f	0	89	89	2025-10-15	0	89	2	89	Baby Leeks	https://www.eatthismuch.com/calories/leeks-2008
-660	\N	Fresh Sage	\N	\N	f	0	1	2	2024-09-26	3	32	3	32	Fresh Sage	https://www.eatthismuch.com/calories/sage-213
+660	\N	Fresh Sage	\N	\N	f	0	1	2	2026-01-17	3	32	3	32	Sage	https://www.eatthismuch.com/calories/sage-213
 661	\N	Fennel Bulbs	\N	\N	f	0	234	234	2025-03-14	0	234	2	234	Fennel Bulbs	https://www.eatthismuch.com/calories/fennel-2566
 662	\N	Single Espresso	\N	\N	t	0	240	100	2024-10-19	6	240	0	240	Single Espresso	https://www.eatthismuch.com/calories/espresso-102737
 663	\N	Whole-Wheat Flour	\N	\N	t	262176	28	125	2025-06-24	4	125	32768	125	Whole-Wheat Flour	https://www.eatthismuch.com/calories/wheat-flour-4926
@@ -598,7 +598,7 @@
 674	\N	Red Radish	\N	\N	f	0	100	50	2024-10-24	0	100	1	100	Red Radish	\N
 675	\N	Fresh Okra	\N	\N	f	0	12.5	100	2025-11-02	0	100	2	100	Fresh Okra	https://www.eatthismuch.com/calories/okra-2038
 676	\N	Avocado Oil | Olive Oil	\N	\N	f	0	28	14	2024-12-17	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/olive-oil-266 - https://www.eatthismuch.com/calories/avocado-oil-328
-677	\N	Fresh Rosemary	\N	\N	f	0	1	2	2024-09-26	3	27	3	27	Rosemary	https://www.eatthismuch.com/calories/rosemary-230
+677	\N	Fresh Rosemary	\N	\N	f	0	1	2	2026-01-17	3	27	3	27	Rosemary	https://www.eatthismuch.com/calories/rosemary-230
 678	\N	Beef Gelatin	\N	\N	f	0	20	10	2025-06-19	4	160	4	160	Beef Gelatin	https://www.eatthismuch.com/calories/beef-gelatin-1857579
 679	\N	Coconut Butter | Coconut Cream	\N	\N	f	0	28	14	2025-01-06	4	224	114688	224	Coconut Butter | Coconut Cream	https://www.eatthismuch.com/calories/coconut-butter-2290168
 680	\N	Coconut Butter	aka. Coconut Manna. https://www.eatthismuch.com/calories/coconut-manna-coconut-butter-2352648	\N	f	0	28	14	2024-11-13	4	224	29360128	224	Coconut Butter	\N
@@ -1329,3 +1329,5 @@
 1714	\N	Niçoise Olives	\N	\N	f	0	28	134	2025-03-19	4	134	3	134	Olive	https://www.eatthismuch.com/calories/olives-1460
 1715	\N	Head of Celery	\N	\N	f	0	40	40	2025-03-12	0	101	2	101	Celery Stalks	https://www.eatthismuch.com/calories/celery-1927
 1716	\N	Balls of Buffalo Mozzarella	\N	\N	f	256	28	28	2025-12-17	4	112	8388608	112	Mozzarella Cheese	https://www.eatthismuch.com/calories/mozzarella-cheese-26
+1717	\N	Mini Chocolate Chips	\N	\N	f	0	28	28	2024-12-15	4	224	16384	224	Chocolate Chip	https://www.eatthismuch.com/calories/dark-chocolate-4766
+1718	\N	Honey | Agave Syrup	\N	\N	t	0	42	21	2025-06-10	9	336	928	336	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/

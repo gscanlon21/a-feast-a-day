@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict DvVcz20nVKwG5CofSSxeGs9ppNfVNgnkOTFuguSUZojdDWzLUAvAvQR3jbjPthS
+\restrict NF40N6BAqrwZZZsDecUmwI3Em8V6xLbwFYKRucUvr9yuSpZCtS53TcBTWjssnLo
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2252,6 +2252,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 814	1672	1	f
 814	1671	1	f
 814	1670	1	f
+1718	1623	1	f
+1718	470	1	f
+1718	469	1	f
 \.
 
 
@@ -12843,6 +12846,35 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17665	1706	1984	\N	3	0.1
 17666	1706	62	\N	3	15
 17667	1706	2047	\N	3	59
+17668	677	17179869184	\N	2	2
+17669	677	70368744177664	\N	2	1
+17670	677	16777216	\N	1	2
+17671	677	67108864	\N	2	0.4
+17672	677	229376	\N	1	2
+17673	660	128	\N	3	0.1
+17674	660	68719476736	\N	2	0.2
+17675	660	34359738368	\N	2	21
+17676	660	1	\N	3	0.2
+17677	660	2251799813685248	\N	2	1
+17678	660	4294967296	\N	2	33
+17679	660	2199023255552	\N	2	1
+17680	660	17179869184	\N	2	9
+17681	660	4398046511104	\N	2	0.1
+17682	660	70368744177664	\N	2	2
+17683	660	8796093022208	\N	1	0.1
+17684	660	17592186044416	\N	2	0.1
+17685	660	65536	\N	1	70
+17686	660	1048576	\N	2	0.1
+17687	660	4194304	\N	2	0.1
+17688	660	16777216	\N	1	5
+17689	660	67108864	\N	2	1
+17690	660	536870912	\N	2	0.1
+17691	660	48	\N	3	1
+17692	660	3221225472	\N	1	34
+17693	660	14	\N	3	0.4
+17694	660	229376	\N	1	6
+17695	660	1984	\N	3	0.3
+17696	660	62	\N	3	1
 \.
 
 
@@ -16404,10 +16436,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7576	0	829	1	6	\N	1357	t	\N	3	f	t	\N	1
 5551	4	389	1	2	, sliced	1088	t	\N	5	f	t	\N	1
 5552	6	389	1	1	\N	417	f	\N	6	f	t	\N	1
-7586	0	832	1	1	\N	985	f	\N	0	f	t	\N	1
 7577	4	829	4	3	\N	984	f	\N	4	f	t	\N	1
 7564	0	827	1	5	\N	1358	f	\N	1	f	t	\N	1
 7565	0	827	1	1	\N	975	f	\N	2	f	t	\N	1
+7586	0	832	1	1	\N	985	f	\N	1	f	t	1669	1
 6784	6	630	4	3	, for topping	517	f	\N	8	f	t	\N	1
 6785	7	630	1	2	, for topping	502	f	\N	9	f	t	\N	1
 7573	5	829	1	1	\N	103	f	\N	0	f	t	\N	1
@@ -16901,6 +16933,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8065	6	956	2	1	\N	1609	f	\N	4	f	t	\N	1
 8066	6	956	1	1	\N	\N	f	977	5	f	t	\N	1
 8067	7	956	1	2	\N	62	f	\N	6	f	t	\N	1
+8377	6	989	1	2	\N	1655	f	\N	1	f	t	\N	1
+8378	6	989	2	1	\N	56	f	\N	2	f	t	\N	1
 8104	7	961	1	1	, for dressing	358	t	\N	8	f	t	\N	1
 8105	8	961	2	1	, for dressing	234	t	\N	9	f	t	\N	1
 8106	8	961	8	1	, for dressing	285	t	\N	10	f	t	\N	1
@@ -16981,9 +17015,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8123	8	963	8	1	\N	285	t	\N	8	f	t	\N	1
 8138	7	965	1	7	, at room temperature, diced	190	f	\N	3	f	t	\N	0.25
 8166	7	969	1	3	\N	278	f	\N	2	f	t	\N	0.25
+8381	8	989	4	1	\N	70	f	\N	5	f	t	\N	1
+8382	6	989	4	1	\N	805	t	\N	6	f	t	\N	1
 8154	0	968	1	1	, crushed	5	f	\N	1	f	t	\N	1
 8155	0	968	1	1	, chopped	1321	f	\N	2	f	t	\N	1
 8156	7	968	1	4	\N	344	f	\N	3	f	t	\N	1
+8383	7	989	1	3	\N	1717	f	\N	7	f	t	\N	1
 8210	7	974	1	1	\N	73	f	\N	1	f	t	\N	1
 8211	7	974	1	2	\N	38	f	\N	2	f	t	\N	1
 8222	0	976	1	1	\N	387	f	\N	1	f	t	\N	1
@@ -17024,7 +17061,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8224	8	976	8	1	\N	75	f	\N	3	f	t	\N	1
 8212	0	974	1	4	\N	324	f	\N	3	f	t	\N	1
 8143	0	966	1	1	\N	387	f	\N	1	f	t	\N	1
-8145	8	966	8	1	\N	75	f	\N	3	f	t	\N	1
+8144	8	966	2	1	\N	77	f	\N	2	f	t	\N	0.25
 6627	8	609	4	1	, grated	1110	t	\N	7	f	t	\N	1
 1383	7	62	1	2	\N	144	t	\N	5	f	t	\N	1
 1384	7	62	1	2	\N	314	t	\N	6	f	t	\N	1
@@ -17034,7 +17071,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8216	4	974	1	12	, cooled, for the corn cakes	\N	f	982	7	f	t	\N	1
 7628	6	841	1	1	\N	215	f	\N	5	f	t	\N	1
 7629	6	841	2	1	\N	612	f	\N	6	f	t	\N	1
+8379	6	989	3	1	\N	1718	f	\N	3	f	t	\N	1
 7631	6	841	4	1	\N	1623	f	\N	8	f	t	\N	1
+8380	8	989	4	1	\N	75	f	\N	4	f	t	\N	1
 8221	0	975	1	1	\N	22	f	\N	0	f	t	\N	1
 8218	6	974	3	2	, to serve	32	t	\N	9	f	t	\N	1
 8219	7	974	1	1	, snipped, to serve	140	t	\N	10	f	t	\N	1
@@ -17059,13 +17098,21 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5856	8	467	8	1	, to taste	74	f	\N	7	f	t	\N	1
 7552	0	824	1	2	, sliced into strips	387	f	\N	7	f	t	\N	1
 8232	8	791	4	1	\N	692	t	\N	6	f	t	\N	1
-8144	8	966	2	1	\N	77	f	\N	2	f	t	\N	0.25
+8145	8	966	8	1	\N	75	f	\N	3	f	t	\N	1
 8223	8	976	2	1	\N	77	f	\N	2	f	t	\N	0.25
 7551	6	824	4	1	\N	77	f	\N	6	f	t	\N	0.25
 8231	8	791	1	1	\N	77	f	\N	5	f	t	\N	0.25
 8199	7	972	1	3	(OIL)	79	f	\N	7	f	t	\N	0.25
 8220	6	974	1	1	, to serve	\N	t	983	11	f	t	\N	1
 7630	6	841	2	1	\N	79	f	\N	7	f	t	\N	0.25
+8384	5	990	1	3	(CHUCK ROAST)	955	f	\N	0	f	t	\N	1
+8385	8	990	4	1	, to taste	692	f	\N	1	f	t	\N	1
+8386	8	990	4	1	, to taste	71	f	\N	2	f	t	\N	1
+8387	7	990	1	2	\N	77	f	\N	3	f	t	\N	0.25
+8388	6	990	2	1	\N	613	f	\N	4	f	t	\N	1
+8389	6	990	4	1	\N	86	f	\N	5	f	t	\N	1
+8390	0	990	1	14	, peeled (or five large carrots cut into thirds)	353	f	\N	6	f	t	\N	1
+8391	0	990	1	8	, peeled	225	f	\N	7	f	t	\N	1
 8187	8	971	4	1	\N	73	f	\N	11	f	t	\N	1
 8188	8	971	4	1	\N	504	f	\N	12	f	t	\N	1
 8189	0	971	1	4	, for the garlic crumbs	\N	t	975	13	f	t	\N	1
@@ -17081,6 +17128,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8358	6	985	2	1	(HONEY | AGAVE SYRUP)	39	f	\N	5	f	t	\N	1
 8359	8	985	4	1	\N	75	f	\N	6	f	t	\N	1
 8360	8	985	4	1	\N	70	f	\N	7	f	t	\N	1
+8392	7	990	1	1	(Herbs de Provence)	712	f	\N	8	f	t	\N	1
 \.
 
 
@@ -17860,7 +17908,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3508	Preheat the oven to 425°F.	582	0	2
 4551	Add the Parmesan cheese. Toss gently to mix.	963	4	0
 4552	Sprinkle the fried bread cubes on top and serve immediately.	963	5	0
-4564	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave the darn things alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally.	966	1	4
+4564	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave them alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally.	966	1	4
 2484	Break the chocolate into small pieces and place in a heatproof bowl. Add the butter and melt in the microwave on high for 1–2 minutes. Stir to mix and set aside. (Alternatively, place the chocolate pieces and butter in a bowl over a pan of gently simmering water and leave until melted, stirring frequently.)	175	0	1
 2485	Put the biscuits in a plastic bag and seal, the bash into small pieces with a rolling pin. Alternatively, break up the biscuits in a food processor but do not let them become too fine. Use the pulse button.	175	1	0
 691	Top with an equal amount of mozzarella and Parmesan cheese and pepperoni. Return to the oven and bake for about 5–7 minutes or until the cheese is melted and slightly browned.	64	5	0
@@ -18359,7 +18407,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3608	Bake for 90-120 minutes, checking halfway for doneness.	609	2	0
 3609	In a high-speed blender, combine the baked vegetables with the remaining ingredients and blend until smooth.	609	3	640
 752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	62	1	0
-4565	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	966	2	4
 4608	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave the darn things alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally.	976	2	4
 4609	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	976	3	0
 4280	Pick and finely chop the parsley, then toss most of it with the grains, along with 1 heaping teaspoon of harissa (and any extra butternut squash flesh, if using). Season with a pinch of salt and pepper, then divide between the squash halves. Make a well in the middle and crack an egg into each, then bake for 15 minutes for an oozy egg, or a little longer, if you prefer.	834	2	2
@@ -18367,6 +18414,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4710	In a large cast-iron skillet, heat the remaining 1 tablespoon of olive oil over medium-high heat. 	986	1	0
 4711	Add the veggies and sauté about 15 minutes until tender and lightly charred, stirring occasionally. 	986	2	0
 4712	Add additional salt to taste. Remove and discard the garlic cloves before serving. 	986	3	0
+4565	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	966	2	4
 3527	Heat the coconut oil in a soup pot on medium-heat. Add the leeks and cook until softened, about 6 minutes.	586	0	4
 3528	Add the garlic, and sauté until fragrant, about 1 minute.	586	1	4
 3529	Add the celery, broccoli, and bone broth and bring to a boil, reduce the heat to simmer for 5 minutes.	586	2	4
@@ -18534,6 +18582,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3631	Cut the prosciutto slices in half crossways. Place them in the centre of each chicken breast with a basil sprig.	615	2	0
 3632	Heat the oil and butter in a wide, heavy frying pan until foaming. Cook the chicken breasts over medium heat for 1–2 minutes on each side, until they change colour. Transfer to the baking dish. Add the wine to the pan juices, stir until sizzling, then pour over the chicken and season to taste.	615	3	4
 3633	Top each chicken breast with a half slices of Fontina. Bake for 20 minutes, or until the chicken is cooked through. Serve hot, with young salad leaves.	615	4	2
+4715	Mix all ingredients together in a bowl. Freeze the bowl for 5 minutes. 	989	0	131072
 3655	Prepare a barbecue. Split the peppers lengthways and remove the seeds and membrane. Rub 15ml/1tbsp of the oil all over the peppers. Place them hollow-side uppermost.	620	0	0
 3656	Slice the mozzarella and divide it equally among the pepper halves.	620	1	0
 3657	Sprinkle over the chopped cherry peppers, season lightly and crumble the ricotta salata over the top, followed by the oregano leaves and olives. Mix the garlic with the remaining oil and add a little salt and pepper. Spoon about half of the mixture over the filling in the peppers.	620	2	0
@@ -18810,6 +18859,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3931	In a blender, combine the basil, olive oil, pine nuts, and Parmesan. Pulse the mixture until it's smooth and creamy. Stir the salt into the pesto.	722	1	128
 4659	Line a 9″ loaf pan with parchment paper extending across both sides. Press the mixture into the pan and pack it down with your fingers (I like to use a small glass to roll over the top). Refrigerate at least 30 minutes, then cut into 8 square bars. Bars store refrigerated for up to 2 weeks.	981	1	65536
 982	When the time's up, cook the pasta in a pan of boiling salted water according to the package instructions, then drain. 	108	2	0
+4716	Roll the dough into 20 small balls, pressing the dough together with your hands. Refrigerate for up to 2 weeks. Enjoy!	989	1	65536
 3925	In a small bowl, mix the cornstarch and water. Add the cornstarch mixture to a medium pot along with the soy sauce, honey, sambal oelek, and ginger. Bring the pot to a boil, reduce the heat to low, and simmer it for 5 minutes.	719	0	4
 4011	Crust: Mix almond flour, coconut oil, honey/maple syrup, and vanilla in a mixer.	746	1	0
 4012	Use the mixture to fill a round pie pan.	746	2	0
@@ -18922,6 +18972,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1686	Set aside two tablespoons of crushed biscuits and divide the rest among four glasses.	162	1	0
 1687	Spoon the rhubarb compote on top of the crushed biscuits, then top with the cream. Place in the refrigerator and chill for about 30 minutes.	162	2	65536
 1688	To serve, sprinkle the reserved crushed biscuits over the trifles and serve immediately.	162	3	0
+4717	Generously season roast with sea salt, pepper, and garlic powder. Lightly sprinkle with Herb de Provence. (you'll put more in the crock pot later) Heat a cast iron pan on med/high heat. When pan is hot add enough olive oil to lightly coat the bottom on the pan.	990	0	4
+4718	Place roast in pan and brown the first side, turn over and brown the second side (usually about 4–5 minutes each side) then place meat in slow cooker, add broth and wine. 	990	1	4
+4719	Add shallots and carrots to crock pot, sprinkle with sea salt, freshly ground pepper and 1 tablespoon herbs de Provence. Place lid on crock pot and cook either 4 hours on high or 8 hours on low. Carve beef against the grain and serve.	990	2	1024
 4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
 4031	Season to taste with salt and pepper.	476	3	0
 3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	568	5	4
@@ -18980,7 +19033,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4411	Toss the drained pasta into the zucchini pan with a splash of reserved cooking water. 	260	3	0
 4076	Peel the onion, quarter and seed the tomatoes, core the apple and trim the cucumber, then take care to very finely dice everything.	787	0	0
 4618	Heat ½ a tablespoon of oil in a wok until smoking. Add the eggs. Lightly scramble the eggs and transfer to a plate.	978	0	4
-4144	Sandwich the bacon in a single layer between two sheets of paper towel. Rest on a microwave-safe plate and microwave on high for 70 seconds. Add 50 seconds for each additional slice of bacon.	832	0	1
 4084	Place the chicken thighs in a bowl with the yogurt, spice mix, 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Cut 6 thin slices off one of the lemons and put aside, then squeeze the juice from the rest of the lemon into the bowl. Toss everything together really well, then cover and leave to marinate in the fridge for at least 2 hours, preferable overnight.	790	0	0
 4085	Preheat the oven to 400°F. Thread the chicken and lemon slices onto one large metal skewer, alternating chicken and lemon slices, and rest it over a roasting pan that's slightly smaller than the skewer (so that the meat is suspended above the pan). Slice the garlic bulb in half and place cut side down in the pan. Halve and throw in the remaining lemon, then roast for 40 minutes, or until gnarly and cooked through.	790	1	2
 4086	Peel and very finely slice the onion and potatoes, then toss and mix together. Pour ½-inch of olive oil into a 9-inch non-stick ovenproof frying pan on a medium heat, After 1 minute, add the potato and onion mix (don't season at this state, as it will draw the moisture out of the potatoes) and fry gently for 25 minutes, or until tender but mostly without color, lightly tossing occasionally. 	791	0	4
@@ -19006,6 +19058,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3017	Sauté the zucchini for 7–10 minutes, tossing regularly to ensure even cooking.	379	2	0
 3323	Blend banana and egg in a mixer until batter consistency is achieved (30 sec to 1 minute).	523	1	0
 3324	Pour batter into the pan. Cook for 2–3 minutes and then flip, cooking for an additional 1–2 minutes.	523	2	4
+4144	Sandwich the bacon in a single layer between two sheets of paper towel. Rest on a microwave-safe plate and microwave on high for 70 seconds. Add 50 seconds for each additional slice of bacon.	832	0	1
 1138	Heat the oil in a heavy frying pan over a high heat. Fry the breast portions two at a time, turning after 3 minutes, until golden on both sides. Add more oil for the second batch if needed. Serve immediately, with the mayonaise and lemon wedges, if using.	103	2	4
 4126	To serve, slice the chicken off the skewer, squeeze the sweet roasted garlic out of its papery skins and toss with the chicken, and sprinkle over a little extra baharat spice. Drizzle over any pan juices, and serve the jammy lemon alongside, for squeezing over. Delicious served with flatbreads, salad and pickles.	790	2	0
 4087	Drain the potatoes and onions and leave to cool slightly. Beat the eggs in a bowl, add the cooked potato and onion, then gently fold together and leave for 5 minutes — the potato will start to absorb the egg, and you should see little bubbles surrounding the potato and onion. 	791	1	4
@@ -19378,7 +19431,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17667, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17696, true);
 
 
 --
@@ -20088,5 +20141,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict DvVcz20nVKwG5CofSSxeGs9ppNfVNgnkOTFuguSUZojdDWzLUAvAvQR3jbjPthS
+\unrestrict NF40N6BAqrwZZZsDecUmwI3Em8V6xLbwFYKRucUvr9yuSpZCtS53TcBTWjssnLo
 
