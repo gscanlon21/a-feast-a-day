@@ -11,7 +11,8 @@
              x:DataType="local:ShoppingListPageViewModel"
              x:Class="Hybrid.ShoppingListPage"
              x:Name="ShoppingList"
-             Title="Shopping List">
+             Title="Shopping List"
+             SafeAreaEdges="Container">
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior
