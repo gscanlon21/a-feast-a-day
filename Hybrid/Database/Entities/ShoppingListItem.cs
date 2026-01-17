@@ -17,7 +17,7 @@ public class ShoppingListItem
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public ShoppingListItem() { }
 
-    public ShoppingListItem(string entry) 
+    public ShoppingListItem(string entry)
     {
         Name = entry;
         IsCustom = true;
@@ -53,8 +53,8 @@ public class ShoppingListItem
     public bool IsChecked
     {
         get => _isChecked;
-        set 
-        { 
+        set
+        {
             if (_isChecked != value)
             {
                 _isChecked = value;

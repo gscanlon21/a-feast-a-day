@@ -1,11 +1,12 @@
-﻿using static Hybrid.Database.Entities.ShoppingListItem;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using Hybrid.Database;
 using Hybrid.Database.Entities;
 using Lib.Services;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using static Hybrid.Database.Entities.ShoppingListItem;
 
 namespace Hybrid;
 
@@ -15,18 +16,17 @@ public partial class ShoppingListPage : ContentPage
     public ShoppingListPage(ShoppingListPageViewModel viewModel)
     {
         InitializeComponent();
-        viewModel.Navigation = Navigation;
         BindingContext = viewModel;
+        viewModel.Navigation = Navigation;
+        viewModel.Ingredients.CollectionChanged += Ingredients_CollectionChanged;
     }
 
-    private void ScrollView_SizeChanged(object sender, EventArgs e)
+    /// <summary>
+    /// Prevents the auto-scroll to keep the moved item visible when an item is checked.
+    /// </summary>
+    private void Ingredients_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
     {
-        if (sender is ScrollView scrollView)
-        {
-            // Nested scroll to prevent list reordering issues.
-            // Set the height to limit nested scrolling issues.
-            shoppingListView.HeightRequest = scrollView.Height;
-        }
+        shoppingListView.ScrollTo(e.OldStartingIndex, position: ScrollToPosition.MakeVisible, animate: false);
     }
 }
 
@@ -130,7 +130,11 @@ public partial class ShoppingListPageViewModel : ObservableObject
                     // Reset the list.
                     Ingredients.Clear();
                     // Re-pull the list from the db so the Ids are up to date.
-                    Ingredients = new ObservableCollection<ShoppingListItem>(OrderIngredients(await _localDatabase.GetItemsAsync()));
+                    foreach (var ingredient in OrderIngredients(await _localDatabase.GetItemsAsync()))
+                    {
+                        // Don't re-init the collection and unbind event handlers.
+                        Ingredients.Add(ingredient);
+                    }
                 }
             }
             finally

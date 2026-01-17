@@ -72,6 +72,6 @@ public enum Equipment
 
 
     All = Microwave | Oven | Stove | Grill | Broiler | Toaster | ToasterOven | Blender | FoodProcessor | ImmersionBlender
-        | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator | Freezer 
+        | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator | Freezer
         | SpiceGrinder | PressureCooker | Juicer
 }
