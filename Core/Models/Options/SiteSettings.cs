@@ -1,4 +1,6 @@
 ﻿
+using static System.Net.WebRequestMethods;
+
 namespace Core.Models.Options;
 
 /// <summary>
@@ -11,21 +13,21 @@ public class SiteSettings
     /// 
     /// sa. A Feast a Day
     /// </summary>
-    public string Name { get; set; } = null!;
+    public string Name { get; set; } = "A Feast a Day";
 
     /// <summary>
     /// Link to the site's source code.
     /// 
     /// sa. https://github.com/gscanlon21/a-feast-a-day
     /// </summary>
-    public string? Source { get; set; }
+    public string? Source { get; set; } = "https://github.com/gscanlon21/a-feast-a-day";
 
     /// <summary>
     /// The link to the main website.
     /// 
     /// sa. https://afeastaday.com
     /// </summary>
-    public string WebLink { get; set; } = null!;
+    public string WebLink { get; set; } = "https://afeastaday.com";
     public Uri WebUri => new(WebLink);
 
     /// <summary>
@@ -47,7 +49,7 @@ public class SiteSettings
     /// 
     /// sa. https://cdn.afeastaday.com
     /// </summary>
-    public string CdnLink { get; set; } = null!;
+    public string CdnLink { get; set; } = "https://cdn.afeastaday.com";
     public Uri CdnUri => new(CdnLink);
 
     /// <summary>
@@ -55,6 +57,6 @@ public class SiteSettings
     /// 
     /// sa. https://afeastaday.com/api
     /// </summary>
-    public string ApiLink { get; set; } = null!;
+    public string ApiLink { get; set; } = "https://afeastaday.com/api";
     public Uri ApiUri => new(ApiLink);
 }
