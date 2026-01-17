@@ -1,5 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using static Hybrid.Database.Entities.ShoppingListItem;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using Hybrid.Database;
 using Hybrid.Database.Entities;
 using Lib.Services;
@@ -36,9 +38,8 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
     public INavigation Navigation { get; set; } = null!;
 
-    public IAsyncRelayCommand LoadCommand { get; set; }
-    public IAsyncRelayCommand WhenCompletedCommand { get; set; }
-    public IAsyncRelayCommand WhenCheckedCommand { get; set; }
+    public IAsyncRelayCommand LoadCommand { get; init; }
+    public IAsyncRelayCommand WhenCompletedCommand { get; init; }
 
     public ShoppingListPageViewModel(UserService userService, LocalDatabase localDatabase, UserPreferences preferences)
     {
@@ -48,52 +49,46 @@ public partial class ShoppingListPageViewModel : ObservableObject
 
         LoadCommand = new AsyncRelayCommand(LoadShoppingList);
         WhenCompletedCommand = new AsyncRelayCommand(WhenCompleted);
-        WhenCheckedCommand = new AsyncRelayCommand<ShoppingListItem>(WhenChecked);
+        WeakReferenceMessenger.Default.Register<CheckedMessage>(this, async (_, m) => await WhenChecked(m));
     }
 
     [ObservableProperty]
-    public string _ingredientEntry = "";
+    private bool _loading = true;
 
     [ObservableProperty]
-    private bool _loading = true;
+    public string _ingredientEntry = "";
 
     [ObservableProperty]
     public ObservableCollection<ShoppingListItem> _ingredients = [];
 
     private async Task WhenCompleted()
     {
-        if (!string.IsNullOrWhiteSpace(IngredientEntry)
-            && !await _localDatabase.ContainsItemAsync(IngredientEntry))
+        if (!string.IsNullOrWhiteSpace(IngredientEntry) && !await _localDatabase.ContainsItemAsync(IngredientEntry))
         {
-            var newIngredient = new ShoppingListItem()
-            {
-                Name = IngredientEntry,
-                IsCustom = true,
-            };
+            var newIngredient = new ShoppingListItem(IngredientEntry);
 
-            Ingredients.Insert(OrderIngredients([.. Ingredients, newIngredient]).IndexOf(newIngredient), newIngredient);
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                Ingredients.Insert(OrderIngredients([.. Ingredients, newIngredient]).IndexOf(newIngredient), newIngredient);
+            });
+
             await _localDatabase.SaveItemAsync(newIngredient);
         }
 
         IngredientEntry = "";
     }
 
-    private async Task WhenChecked(ShoppingListItem? checkedIngredient)
+    private async Task WhenChecked(CheckedMessage? message)
     {
-        if (checkedIngredient != null && !Loading)
+        if (message != null && !Loading)
         {
             // Move the item to the end of the list.
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                Ingredients.Move(Ingredients.IndexOf(checkedIngredient), OrderIngredients(Ingredients).IndexOf(checkedIngredient));
+                Ingredients.Move(Ingredients.IndexOf(message.Value), OrderIngredients(Ingredients).IndexOf(message.Value));
             });
 
-            // Save the checked status in the database.
-            if (await _localDatabase.GetItemAsync(checkedIngredient.Id) is ShoppingListItem dbIngredient)
-            {
-                dbIngredient.IsChecked = checkedIngredient.IsChecked;
-                await _localDatabase.SaveItemAsync(dbIngredient);
-            }
+            await _localDatabase.SaveItemAsync(message.Value);
         }
     }
 

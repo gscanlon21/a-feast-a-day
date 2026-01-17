@@ -1,4 +1,6 @@
-﻿using Core.Dtos.ShoppingList;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using Core.Dtos.ShoppingList;
 using Core.Models.User;
 using SQLite;
 using System.ComponentModel;
@@ -12,7 +14,14 @@ namespace Hybrid.Database.Entities;
 [DebuggerDisplay("{Id}_{Name,nq}: {IsChecked}")]
 public class ShoppingListItem
 {
+    [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public ShoppingListItem() { }
+
+    public ShoppingListItem(string entry) 
+    {
+        Name = entry;
+        IsCustom = true;
+    }
 
     public ShoppingListItem(ShoppingListItemDto dto)
     {
@@ -43,8 +52,16 @@ public class ShoppingListItem
     private bool _isChecked;
     public bool IsChecked
     {
-        get { return _isChecked; }
-        set { SetProperty(ref _isChecked, value); }
+        get => _isChecked;
+        set 
+        { 
+            if (_isChecked != value)
+            {
+                _isChecked = value;
+                OnPropertyChanged(nameof(IsChecked));
+                WeakReferenceMessenger.Default.Send(new CheckedMessage(this));
+            }
+        }
     }
 
     public string Title() => $"{QuantityMeasure()} {Name}".Trim();
@@ -60,20 +77,14 @@ public class ShoppingListItem
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
-    private bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null)
-    {
-        if (Equals(storage, value))
-        {
-            return false;
-        }
-
-        storage = value;
-        OnPropertyChanged(propertyName);
-        return true;
-    }
 
     // Not using Id because we want to compare local with remote.
     public override int GetHashCode() => HashCode.Combine(Name.TrimEnd('s', ' '));
     public override bool Equals(object? obj) => obj is ShoppingListItem other
         && other.Name.TrimEnd('s', ' ') == Name.TrimEnd('s', ' ');
+
+    public sealed class CheckedMessage : ValueChangedMessage<ShoppingListItem>
+    {
+        public CheckedMessage(ShoppingListItem item) : base(item) { }
+    }
 }
