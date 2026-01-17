@@ -83,7 +83,10 @@ public partial class ShoppingListPageViewModel : ObservableObject
         if (checkedIngredient != null && !Loading)
         {
             // Move the item to the end of the list.
-            Ingredients.Move(Ingredients.IndexOf(checkedIngredient), OrderIngredients(Ingredients).IndexOf(checkedIngredient));
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                Ingredients.Move(Ingredients.IndexOf(checkedIngredient), OrderIngredients(Ingredients).IndexOf(checkedIngredient));
+            });
 
             // Save the checked status in the database.
             if (await _localDatabase.GetItemAsync(checkedIngredient.Id) is ShoppingListItem dbIngredient)
