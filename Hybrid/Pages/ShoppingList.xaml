@@ -34,7 +34,7 @@
                ReturnCommand="{Binding WhenCompletedCommand}"/>
 
         <RefreshView Grid.Row="1" IsRefreshing="{Binding Loading}" Command="{Binding LoadCommand}">
-            <CollectionView x:Name="shoppingListView" ItemsSource="{Binding Ingredients}" SelectionMode="None" Margin="0,0,0,-1">
+            <CollectionView x:Name="shoppingListView" ItemsSource="{Binding Ingredients}" SelectionMode="None">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
