@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict NF40N6BAqrwZZZsDecUmwI3Em8V6xLbwFYKRucUvr9yuSpZCtS53TcBTWjssnLo
+\restrict EThe6BzKmvnNbnXKweOKEtYIfnOamUJoh2WTjaknQLxmnyPybTj1aI9NDCrSyvx
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -16218,6 +16218,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8372	8	986	1	1	\N	1355	f	\N	8	f	t	\N	1
 8373	8	986	2	3	\N	75	f	\N	9	f	t	\N	1
 8374	8	986	4	1	\N	67	f	\N	10	f	t	\N	1
+8393	0	991	1	1	, cut into thick rings	222	f	\N	0	f	t	\N	1
+8394	0	991	1	2	\N	187	f	\N	1	f	t	\N	1
+8395	0	991	1	1	, diced	8	f	\N	2	f	t	\N	1
+8396	0	991	1	2	, diced	144	f	\N	3	f	t	\N	1
+8397	6	991	4	1	\N	30	t	\N	4	f	t	\N	1
+8398	8	991	1	1	\N	78	t	\N	5	f	t	\N	0.25
+8399	8	991	4	1	, to taste	285	t	\N	6	f	t	\N	1
+8400	6	991	8	1	, diced	224	t	\N	7	f	t	\N	1
 6396	6	580	4	1	, diced	105	f	\N	6	f	t	\N	1
 6397	6	580	4	1	, chopped	1069	f	\N	7	f	t	\N	1
 6399	0	580	1	2	, sliced (mostly green parts)	144	f	\N	9	f	t	\N	1
@@ -19007,6 +19015,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4660	Cook the potatoes in boiling salted water for about 20 minutes until tender, then drain well.	982	0	4
 4661	Add a little milk and mash until smooth.	982	1	32768
 4034	Drain the peppers and open out flat, then char on the hot grill until bar-marked on one side only. Remove and slice ½-inch thick. 	750	2	8
+4720	In a mixing bowl, lightly beat the egg, then add the bell peppers, chilies, scallions, and cheese. Season to taste with salt and pepper.	991	0	0
+4721	Put rings into a well-greased hot skillet. You’ll want to put them on their rough side down. Cook the onions for 2 minutes then flip. 	991	1	4
+4722	Start by putting just a spoonful of the egg mix into each ring and let it almost set to create a seal at the bottom.	991	2	0
+4723	Spoon in the rest of your egg mix into each ring. Cook for 2 more minutes, flip and cook until done.	991	3	0
 4182	Drain. In a large cooking pot, put the chickpeas and 1 teaspoon of baking soda. Cook over medium-high heat, tossing constantly, for about 3–4 minutes. 	629	3	4
 4020	In a food processor, process the chickpeas until they turn into a slightly textured paste. Be sure to turn off the food processor and scrape down the sides to get all the chickpeas ground up. Add in the onion, garlic, salt, and pepper, and mix to fully combine. Turn the food processor off and stir in the chopped parsley and arrowroot starch.	748	1	256
 4022	Reheat that same cast iron pan to medium heat. Drizzle the remainder of the oil and place the patties in to cook. Cook for about 2–3 minutes on each side until the bottom is nicely browned.	748	3	4
@@ -20141,5 +20153,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict NF40N6BAqrwZZZsDecUmwI3Em8V6xLbwFYKRucUvr9yuSpZCtS53TcBTWjssnLo
+\unrestrict EThe6BzKmvnNbnXKweOKEtYIfnOamUJoh2WTjaknQLxmnyPybTj1aI9NDCrSyvx
 
