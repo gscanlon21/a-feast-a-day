@@ -363,7 +363,7 @@
 547	Burgers	\N	\N	\N	0	45	15	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-550	Everything Seasoning	\N	\N	\N	0	0	5	1	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+550	Everything Seasoning	aka: Everything (but the) Bagel Seasoning.	\N	\N	0	0	5	2	t	everything-seasoning.jpg	4	\N	t	f
 551	Bentonite Clay Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 552	Charcoal Juice	\N	Activated Charcoal can bind to foods you have eaten, blocking the absorption of nutrients and medications you may have taken, reducing their effectiveness.	\N	128	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 553	Adobo	\N	\N	\N	4	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f

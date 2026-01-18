@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict o6d8ofuUHJsujyROMjpMfUawNWTyDBwera2SfPRYbOi6WfewyFK6YXLc1d2hKYx
+\restrict jFRX7PSztknMTz8wvIurbRK0sIpIweXa8yq77tgI6vrON00gcBJlrkzPKspL7Tg
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2262,6 +2262,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1719	1167	1	f
 1720	79	1	f
 1720	177	1	f
+1724	189	1	f
+1724	77	1	f
+1724	278	1	f
+1724	190	1	f
 \.
 
 
@@ -15090,11 +15094,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6153	8	545	4	1	\N	71	t	\N	7	f	t	\N	1
 6139	8	543	4	1	, to taste	692	t	\N	4	f	t	\N	1
 6124	0	541	1	2	, chopped	7	f	\N	4	f	t	\N	1
-6181	8	550	1	3	\N	238	f	\N	0	f	t	\N	1
-6182	8	550	1	2	\N	695	f	\N	1	f	t	\N	1
-6183	7	550	1	1	\N	1136	f	\N	2	f	t	\N	1
-6184	8	550	1	3	\N	71	f	\N	3	f	t	\N	1
-6185	8	550	1	3	\N	323	f	\N	4	f	t	\N	1
+6181	8	550	1	2	\N	238	f	\N	1	f	t	\N	1
+6182	8	550	1	1	\N	695	f	\N	2	f	t	\N	1
+6183	8	550	2	1	\N	1136	f	\N	3	f	t	\N	1
+6184	8	550	1	1	\N	71	f	\N	4	f	t	\N	1
 6178	7	549	1	2	\N	77	f	\N	2	f	t	\N	0.25
 6156	6	546	4	1	\N	1129	f	\N	0	f	t	\N	1
 6157	7	546	1	2	\N	991	f	\N	1	f	t	\N	1
@@ -15125,6 +15128,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7363	6	740	4	1	\N	\N	f	721	5	f	t	\N	1
 6100	8	55	8	1	, to taste	692	t	\N	3	f	t	\N	1
 6154	8	545	8	1	\N	1709	t	\N	8	f	t	\N	1
+6185	8	550	1	1	\N	323	f	\N	5	f	t	\N	1
 6241	0	559	1	4	\N	916	f	\N	1	f	t	\N	1
 4321	6	82	2	1	, diced small	150	t	\N	3	f	t	\N	1
 6221	6	557	4	1	\N	805	f	\N	0	f	t	\N	1
@@ -17202,13 +17206,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8436	6	995	3	1	\N	959	f	\N	5	f	t	\N	1
 8437	7	995	1	1	(BUTTER | OLIVE OIL | GHEE)	77	f	\N	6	f	t	\N	0.25
 8438	8	995	8	1	\N	692	f	\N	7	f	t	\N	1
-8439	0	996	1	1	(YUKON GOLD POTATO)	1467	f	\N	0	f	t	\N	1
-8440	8	996	4	1	, to taste	74	f	\N	1	f	t	\N	1
-8441	7	996	1	2	, shaved	95	t	\N	2	f	t	\N	1
-8442	0	996	1	1	, fried	187	f	\N	3	f	t	\N	1
-8443	0	996	2	1	, ripe	9	f	\N	4	f	t	\N	1
-8444	7	996	1	1	(butter or olive oil)	77	f	\N	5	f	t	\N	0.25
-8445	7	996	1	1	(EVERYTHING BAGEL SEASONING)	512	f	\N	6	f	t	\N	1
 8446	7	997	1	3	\N	77	f	\N	0	f	t	\N	0.25
 8447	0	997	1	1	, finely diced	217	f	\N	1	f	t	\N	1
 8448	0	997	1	2	, finely chopped	150	f	\N	2	f	t	\N	1
@@ -17223,6 +17220,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8457	8	997	4	1	\N	67	f	\N	11	f	t	\N	1
 8458	6	997	1	3	(BABY SPINACH | KALE), chopped and de-stemmed	206	f	\N	12	f	t	\N	1
 8459	6	997	4	3	\N	1262	f	\N	13	f	t	\N	1
+8439	0	996	1	1	\N	1723	f	\N	1	f	t	\N	1
+8440	8	996	4	1	, to taste	74	f	\N	2	f	t	\N	1
+8441	7	996	1	2	, shaved	95	t	\N	3	f	t	\N	1
+8442	0	996	1	1	, fried	187	f	\N	4	f	t	\N	1
+8443	0	996	2	1	, ripe	9	f	\N	5	f	t	\N	1
+8444	7	996	1	1	\N	1724	f	\N	6	f	t	\N	0.25
+8445	7	996	1	1	\N	\N	f	550	7	f	t	\N	1
 \.
 
 
@@ -17765,9 +17769,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1774	Grill (broil) the strawberries for 4–5 minutes, or until the sugar starts to bubble and turn golden.	144	1	24
 3148	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	418	3	0
 2857	Heat the olive oil in a large, deep pan. Add the finely chopped onion and cook over a low heat, stirring frequently, for about 5 minutes or until softened.	192	0	0
-4749	Place a small pot of water on high heat. Add potato. Boil potato until a fork goes in easily, remove from water. (this usually takes 10 minutes or so)	996	0	0
 1546	Place the softened butter in a bowl. Beat with a spoon until soft and creamy, then mix in the ground cinnamon and most of the sugar.	154	0	0
 1547	Toast the bread on both sides. Spread with the butter and sprinkle with a little remaining sugar. Serve at once, with pieces of fresh fruit, if you like.	154	1	0
+4749	Place a small pot of water on high heat. Add potato. Boil potato until a fork goes in easily, remove from water. (this usually takes 10 minutes or so)	996	0	4
 2457	Over high heat, bring a large pot of water to a boil; add pasta and cook just short of al dente, about 8 – 10 minutes. Drain pasta and set aside to keep warm. 	8	0	0
 2459	Toss in a few basil leaves, stir and begin plating. Finish with grated cheese to taste. Serve.	8	2	0
 1875	Serve on buns, optionally you can serve with your favorite sides.	181	3	0
@@ -17967,7 +17971,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2370	Soak cashews in water for at least 2 hours or overnight.	255	0	0
 2371	Place cashews, with their soaking liquid, and remaining ingredients in a food processor or blender and process on high for about 5 minutes. You may need to scrape the sides down intermittently. It’s done when the mixture is completely smooth and no longer tastes grainy.	255	1	0
 2041	Whisk egg with 1 teaspoon oil in a small dish then set aside.	136	0	0
-4750	Set waffle maker on med/high heat. While you wait, shave Parmesan and slice avocado. Open waffle maker, set the potato in the center, smash with spatula or flat bottom of a glass (don't press super flat, just flat enough that the cheese stays put) sprinkle with sea salt, add Parmesan cheese and immediately close the waffle maker. Allow to cook until very crispy. While you wait, heat a small pan. When hot add butter or olive oil, add egg, sprinkle with bagel seasoning, and fry to your liking. I love a runny egg!	996	1	0
 1299	Season with salt and pepper and roast in the preheated oven for 20 minutes.	26	2	2
 3420	Slow Cooker: Place the chicken, vinegar, and vegetables in a slow cooker. Fill with water to 1-inch below the top of the slow cooker. Cover, and cook on high for 8–12 hours.	559	0	0
 3421	Electric Pressure Cooker: Place the chicken, vinegar, and vegetables into the pot of the pressure cooker. Fill two-thirds of the way up with water and secure the pressure cooker lid. Press the Manual button, set the pressure on high, and set the timer to 90 minutes.	559	1	0
@@ -18096,7 +18099,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4242	Divide between plates or arrange on a large platter and spoon over the juices. Tear over the mozzarella, season with extra pepper, and scatter over the reserved celery leaves and fennel tops (if you have any).	854	4	0
 2904	Preheat the oven to 400°F. 	315	0	2
 4752	In a large pot or Dutch oven, heat the olive oil over medium high heat. Add the celery, carrot, onion, and garlic and sauté for 5 to 6 minutes until tender.	997	0	0
-4751	When waffle is crispy, remove, top with avocado, egg. garnish with tabasco and chives if desired.	996	2	0
 3165	Place kale, garlic, onion, and coconut oil in a wok.	423	0	0
 3166	Turn heat to medium, and stir fry for a few minutes, until kale wilts.	423	1	4
 3167	Take out of wok and toss with olive oil, lemon and sea salt to taste.	423	2	0
@@ -18107,6 +18109,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2898	Season with cilantro, salt and pepper.	312	4	0
 4753	Add the sweet potatoes, water, lentils, cumin, curry powder, and kosher salt. Bring to a simmer and simmer for 25 to 30 minutes until the lentils are tender (if not tender, keep cooking a few more minutes). Add the spinach and coconut milk and stir until wilted, about 1 to 2 minutes. Taste and add additional salt to taste and fresh ground black pepper. 	997	1	0
 4754	Serve immediately or refrigerate for meal prep. The soup lasts up to 1 week refrigerated and leftovers taste even better (you can also freeze them for up to 3 months). Leftovers may soak up extra broth, so you can add a splash of coconut milk and/or water and pinch of salt if the texture becomes too thick. 	997	2	0
+4751	While you wait, heat a small pan. When hot add butter or olive oil, add egg, sprinkle with bagel seasoning, and fry to your liking. I love a runny egg!	996	2	4
 2653	Place the flour in a bowl and add plenty of seasoning. Turn the pork in the flour mixture to coat them lightly.	231	0	0
 2654	Melt the butter in a heavy frying pan and cook the pork for 1 minute on each side.	231	1	0
 2655	Add the sliced leeks to the pan and cook for 3 minutes. Stir in the mustard seeds. Pour in the wine. Cook gently for 10 minutes, turning the pork occasionally. Peel, core and slice the apples.	231	2	0
@@ -18440,6 +18443,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4587	Divide the vegetable mixture evenly among the baking dishes. Sprinkle with a little parsley. Swirl the eggs together with a fork (without over-mixing) and season well with salt and cayenne. Pour over the vegetable mixture.	971	3	0
 4589	Meanwhile, make the garlic crumbs. Cut the crusts off the bread and reduce to crumbs in a food processor, or use a hand grater.	971	5	0
 4590	Heat plently of oil in a large frying pan over a high heat, add the garlic cloves for a few moments to flavour it, then remove and discard then, Throw in the breadcrumbs and brown quickly, scooping them out on to kitchen paper with a slotted spoon. Season with a little salt and paprika, then sprinkle them around the edges of the eggs, when ready to serve.	971	6	0
+4750	Set waffle maker on med/high heat. While you wait, shave Parmesan and slice avocado. Open waffle maker, set the potato in the center, smash with spatula or flat bottom of a glass (don't press super flat, just flat enough that the cheese stays put) sprinkle with sea salt, add Parmesan cheese and immediately close the waffle maker. Allow to cook until very crispy. 	996	1	2097152
 4652	Loosen the egg mixture with a splash of the reserved cooking water, then pour over the pasta, tossing and stirring vigorously—the egg will gently cook in the residual heat. 	183	5	0
 4653	Season to perfection. Adjust the consistency with extra cooking water, if needed, and finish with a fine grating of cheese, if you like.	183	6	0
 4708	Roll the dough into 20 small balls, pressing the dough together with your hands. A 1 1/2-inch cookie scoop (#40) is helpful to make uniform balls. Store refrigerated to firm up the texture even more, but you can eat immediately. Refrigerate for up to 2 weeks. (See the Storage Info section above for more on storage and transportation.)	985	1	0
@@ -18515,6 +18519,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4711	Add the veggies and sauté about 15 minutes until tender and lightly charred, stirring occasionally. 	986	2	0
 4712	Add additional salt to taste. Remove and discard the garlic cloves before serving. 	986	3	0
 4565	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	966	2	4
+4762	When waffle is crispy, remove, top with avocado, and egg. Garnish with Tabasco and chives if desired.	996	3	0
 3527	Heat the coconut oil in a soup pot on medium-heat. Add the leeks and cook until softened, about 6 minutes.	586	0	4
 3528	Add the garlic, and sauté until fragrant, about 1 minute.	586	1	4
 3529	Add the celery, broccoli, and bone broth and bring to a boil, reduce the heat to simmer for 5 minutes.	586	2	4
@@ -20270,5 +20275,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict o6d8ofuUHJsujyROMjpMfUawNWTyDBwera2SfPRYbOi6WfewyFK6YXLc1d2hKYx
+\unrestrict jFRX7PSztknMTz8wvIurbRK0sIpIweXa8yq77tgI6vrON00gcBJlrkzPKspL7Tg
 
