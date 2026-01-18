@@ -59,4 +59,10 @@ public class SiteSettings
     /// </summary>
     public string ApiLink { get; set; } = "https://afeastaday.com/api";
     public Uri ApiUri => new(ApiLink);
+
+    /// <summary>
+    /// The link where the user can download the app.
+    /// </summary>
+    public string AppLink { get; set; } = null!;
+    public Uri AppUri => new(AppLink);
 }
