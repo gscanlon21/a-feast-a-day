@@ -963,7 +963,7 @@
 1195	\N	Pomegranate	\N	\N	f	0	282	282	2025-10-30	0	174	1	174	Pomegranate	https://www.eatthismuch.com/calories/pomegranates-1532
 1196	\N	Small Mixed-Color Heirloom Carrots	\N	\N	f	0	50	72	2025-08-24	0	72	2	72	Small Mixed-Color Heirloom Carrots	https://www.eatthismuch.com/calories/carrots,1914
 1197	\N	Mixed Grains	\N	\N	f	0	28	160	2025-09-14	4	160	1024	160	Mixed Grains	https://www.eatthismuch.com/calories/wild-rice,4845
-1198	\N	Fresh Flat-Leaf Parsley	\N	\N	f	0	28	4	2024-09-26	4	64	3	64	Fresh Flat-Leaf Parsley	https://www.eatthismuch.com/calories/parsley-2057
+1198	\N	Fresh Flat-Leaf Parsley	\N	\N	f	0	28	4	2026-01-18	4	64	3	64	Parsley	https://www.eatthismuch.com/calories/parsley-2057
 1199	\N	Small Cucumbers	\N	\N	f	0	301	301	2025-03-04	0	240	2	240	Cucumbers	https://www.eatthismuch.com/food/nutrition/cucumber,1971/
 1200	\N	Carob Powder	\N	\N	f	0	28	86	2025-06-20	4	86	16384	86	Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534
 1201	\N	Cocoa Powder | Carob Powder	\N	\N	f	0	28	86	2025-06-20	4	86	16384	86	Cocoa Powder | Carob Powder	https://www.eatthismuch.com/calories/cocoa-4534
@@ -1150,7 +1150,7 @@
 1413	\N	Harissa	\N	\N	f	0	28	12	2024-11-10	4	224	8192	224	Harissa	https://www.eatthismuch.com/calories/harissa-3101216
 1414	\N	Large Squash	\N	\N	f	0	323	196	2025-11-03	0	113	2	113	Large Squash	https://www.eatthismuch.com/calories/squash-2291
 1415	\N	Walnut Halves	\N	\N	f	0	28	100	2024-10-02	4	100	1048576	100	Walnut Halves	https://www.eatthismuch.com/calories/walnuts-2685
-1416	\N	Fresh Radicchio	\N	\N	f	0	28	40	2024-09-26	4	40	2	40	Fresh Radicchio	https://www.eatthismuch.com/calories/radicchio-2561
+1416	\N	Fresh Radicchio	\N	\N	f	0	28	40	2026-01-18	4	40	2	40	Radicchio	https://www.eatthismuch.com/calories/radicchio-2561
 1417	\N	Fresh Red Endives	\N	\N	f	0	45	45	2024-11-28	0	90	2	90	Fresh Red Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/
 1418	\N	Radicchio | Red Endives	\N	\N	f	0	4	4	2024-09-26	7	64	3	64	Radicchio | Red Endives	https://www.eatthismuch.com/calories/parsley-2057
 1419	\N	Cacao Powder	\N	\N	f	0	28	86	2025-06-20	4	86	16384	86	Cacao Powder	https://www.eatthismuch.com/calories/cocoa-4534
@@ -1331,3 +1331,4 @@
 1716	\N	Balls of Buffalo Mozzarella	\N	\N	f	256	28	28	2025-12-17	4	112	8388608	112	Mozzarella Cheese	https://www.eatthismuch.com/calories/mozzarella-cheese-26
 1717	\N	Mini Chocolate Chips	\N	\N	f	0	28	28	2024-12-15	4	224	16384	224	Chocolate Chip	https://www.eatthismuch.com/calories/dark-chocolate-4766
 1718	\N	Honey | Agave Syrup	\N	\N	t	0	42	21	2025-06-10	9	336	928	336	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/
+1719	\N	Castelvetrano Olives, Pitted	\N	\N	f	0	28	134	2025-03-15	4	134	3	134	Olive	https://www.eatthismuch.com/calories/olives-1462
