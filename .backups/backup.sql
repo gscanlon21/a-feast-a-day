@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict T7MBAEYZXsBWYujWWBpF1ZBCp66Kr2SuojJACtsqWUuYYFJGDM8cygXKdvTxnY5
+\restrict wxW6jmwdq6skKW0XZoS8CHfXRhZYXdTVmQhr8YRcEwv2BrZ9w5rKfUmdFBtOBqG
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -16290,7 +16290,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6643	7	611	1	2	, divided	964	f	\N	0	f	t	\N	0.25
 6559	7	598	1	1	, liquified	964	f	\N	9	f	t	\N	0.25
 5681	7	410	1	1	\N	964	f	\N	1	f	t	\N	0.25
-6296	7	568	1	2	\N	964	f	\N	1	f	t	\N	0.25
 6615	7	608	1	2	, divided	964	f	\N	7	f	t	\N	0.25
 5727	8	418	1	1	\N	964	f	\N	6	f	t	\N	0.25
 6012	8	523	1	1	\N	1010	f	\N	1	f	t	\N	0.25
@@ -16335,6 +16334,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8470	0	33	1	1	, chopped	222	t	\N	5	f	t	\N	1
 8471	0	33	1	1	, chopped	1308	t	\N	6	f	t	\N	1
 8472	0	33	1	1	, shredded	736	t	\N	7	f	t	\N	1
+6296	7	568	1	2	\N	964	f	\N	2	f	t	\N	0.25
 870	6	67	4	1	\N	89	t	\N	5	f	t	\N	1
 871	0	67	1	2	\N	216	t	\N	6	f	t	\N	1
 7486	6	396	1	1	, to serve	\N	t	484	8	f	t	\N	1
@@ -16344,20 +16344,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6399	0	580	1	2	, sliced (mostly green parts)	144	f	\N	9	f	t	\N	1
 6400	0	580	1	1	, sliced into 8 wedges	4	f	\N	10	f	t	\N	1
 6401	0	580	1	8	, washed and dried	1073	f	\N	11	f	t	\N	1
-8166	7	969	1	3	\N	278	f	\N	3	f	t	\N	0.25
+8170	0	969	1	4	, thinly slices into rings	302	t	\N	7	f	t	\N	1
 7396	8	744	1	1	\N	278	t	\N	7	f	t	\N	0.25
 8311	7	750	2	3	\N	278	f	\N	6	f	t	\N	1
 8312	7	750	1	1	\N	82	f	\N	7	f	t	\N	1
 8313	8	750	1	1	\N	278	t	\N	9	f	t	\N	1
 8314	8	750	8	1	\N	692	t	\N	8	f	t	\N	1
-8167	7	969	1	2	\N	830	f	\N	4	f	t	\N	1
-8168	0	969	1	2	, drained, cut into very thin slivers	1625	f	\N	5	f	t	\N	1
+8171	8	969	8	1	\N	285	t	\N	8	f	t	\N	1
+6300	7	568	1	2	\N	991	f	\N	6	f	t	\N	1
 6247	8	559	4	1	, to taste	692	t	\N	7	f	t	\N	1
 7091	0	698	1	1	, juiced	12	f	\N	1	f	t	\N	1
 7092	8	698	2	1	, grated	307	f	\N	2	f	t	\N	1
 7094	6	698	1	1	, crushed	501	f	\N	4	f	t	\N	1
 7095	6	698	1	1	\N	1317	f	\N	5	f	t	\N	1
-8169	4	969	2	3	, finely shredded	624	f	\N	6	f	t	\N	1
+6301	7	568	1	2	\N	358	f	\N	7	f	t	\N	1
 6155	8	545	8	1	, to taste	692	t	\N	9	f	t	\N	1
 4427	4	105	1	12	\N	600	f	\N	3	f	t	\N	1
 4428	4	105	1	10	, dried	382	f	\N	4	f	t	\N	1
@@ -16377,8 +16377,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8408	6	992	4	1	\N	410	f	\N	7	f	t	\N	1
 8409	6	992	1	4	\N	16	f	\N	8	f	t	\N	1
 8410	6	992	1	2	\N	1307	f	\N	9	f	t	\N	1
-8170	0	969	1	4	, thinly slices into rings	302	t	\N	7	f	t	\N	1
-8171	8	969	8	1	\N	285	t	\N	8	f	t	\N	1
+6302	7	568	1	1	, minced	5	f	\N	8	f	t	\N	1
+6303	0	568	1	1	, wedged, for garnish	4	t	\N	9	f	t	\N	1
 7389	4	744	1	5	, dried	982	f	\N	0	f	t	\N	1
 7390	4	744	2	5	\N	1131	f	\N	1	f	t	\N	1
 7391	4	744	1	4	(, ½ | 2)	1418	f	\N	2	f	t	\N	1
@@ -16390,6 +16390,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6996	8	654	8	1	, ground	67	t	\N	6	f	t	\N	1
 8164	7	969	1	3	\N	461	f	\N	1	f	t	\N	1
 8165	4	969	1	12	\N	1722	f	\N	2	f	t	\N	1
+8166	7	969	1	3	\N	278	f	\N	3	f	t	\N	0.25
+8167	7	969	1	2	\N	830	f	\N	4	f	t	\N	1
+8168	0	969	1	2	, drained, cut into very thin slivers	1625	f	\N	5	f	t	\N	1
+8169	4	969	2	3	, finely shredded	624	f	\N	6	f	t	\N	1
 7398	6	746	1	2	(ALMOND FLOUR), for crust	1129	f	\N	0	f	t	\N	1
 7400	7	746	1	4	, for crust	1102	f	\N	2	f	t	\N	1
 7401	8	746	1	1	, for crust	40	f	\N	3	f	t	\N	1
@@ -16445,14 +16449,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8460	0	998	1	1	\N	985	f	\N	1	f	t	\N	1
 1571	0	95	1	2	, chopped	302	f	\N	4	f	t	\N	1
 4755	0	272	1	2	, minced	5	f	\N	9	f	t	\N	1
-6295	0	568	1	4	\N	869	f	\N	0	f	t	\N	1
-6297	7	568	1	1	\N	490	f	\N	2	f	t	\N	1
-6298	8	568	4	1	, to taste	692	t	\N	3	f	t	\N	1
-6299	6	568	1	4	, spinach, chard, kale, arugula, etc	1181	f	\N	4	f	t	\N	1
-6300	7	568	1	2	\N	991	f	\N	5	f	t	\N	1
-6301	7	568	1	2	\N	358	f	\N	6	f	t	\N	1
-6302	7	568	1	1	, minced	5	f	\N	7	f	t	\N	1
-6303	0	568	1	1	, wedged, for garnish	4	t	\N	8	f	t	\N	1
 7211	8	716	8	1	\N	285	t	\N	7	f	t	\N	1
 7492	0	787	1	1	\N	1216	f	\N	0	f	t	\N	1
 7493	0	787	1	2	\N	1329	f	\N	1	f	t	\N	1
@@ -16523,6 +16519,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8422	0	994	1	6	\N	388	f	\N	0	f	t	\N	1
 5598	8	396	1	1	\N	699	f	\N	5	f	t	\N	1
 5599	8	396	1	1	\N	71	f	\N	6	f	t	\N	1
+6295	0	568	1	4	\N	869	f	\N	1	f	t	\N	1
+6297	7	568	1	1	\N	490	f	\N	3	f	t	\N	1
+6298	8	568	4	1	, to taste	692	t	\N	4	f	t	\N	1
+6299	6	568	1	4	, spinach, chard, kale, arugula, etc	1181	f	\N	5	f	t	\N	1
 7199	8	714	8	1	\N	285	t	\N	6	f	t	\N	1
 7444	6	752	2	3	\N	1407	f	\N	1	f	t	\N	1
 7445	5	752	1	2	\N	1500	f	\N	2	f	t	\N	1
@@ -18260,9 +18260,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4452	Lay the chicken breasts flat out on your cutting board. Slice each chicken breast through the middle horizontally to create 2 thinner cutlets (for a total of 4 cutlets).	945	0	0
 3180	Bake for 15–20 minutes until the bacon is crispy.	425	4	0
 3182	Cool on the lined plate to drain excess fat.	425	6	0
-4575	Put the pine nuts in a non-stick frying pan and toss over a low to medium heat for 1-2 minutes or until they are lightly toasted and golden. Remove from the pan and set aside.	969	0	0
-4576	Cook the pasta in two large pans of lightly salted water for 10-12 minutes, using one pan for each color to keep.	969	1	0
-4577	When the pasta is cooking, heat 1 tbsp of the oil in a medium pan, or frying pan. Add the sun-dried tomato paste and the sun-dried tomatoes, then stir in 2 ladlefuls of the water used for cooking the pasta. Simmer until the sauce is slightly reduced, stirring constantly.	969	2	0
+4575	Put the pine nuts in a non-stick frying pan and toss over a low to medium heat for 1–2 minutes or until they are lightly toasted and golden. Remove from the pan and set aside.	969	0	4
+4576	Cook the pasta in two large pans of lightly salted water for 10–12 minutes, using one pan for each color to keep.	969	1	4
+4577	When the pasta is cooking, heat 1 tbsp of the oil in a medium pan, or frying pan. Add the sun-dried tomato paste and the sun-dried tomatoes, then stir in 2 ladlefuls of the water used for cooking the pasta. Simmer until the sauce is slightly reduced, stirring constantly.	969	2	4
 1825	Make a spicy relish by cooking the remaining shallot with the garlic and green chilli in the olive oil for 2-3 minutes, until softened.	173	2	0
 1826	Add the canned ratatouille to the pan containing the vegetables. Bring to the boil, then simmer for 5 minutes.	173	3	0
 1827	Meanwhile, preheat the grill (broiler) and cook the burgers for about 5 minutes on each side, until browned and cooked through. Meanwhile, split the burger buns. Arrange lettuce leaves on the bun bases, add the burgers and top with warm relish and the bun tops. 	173	4	0
@@ -18290,8 +18290,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2971	Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. 	362	1	4
 2978	Put a large non-stick frying pan on a medium-high heat. Trim and finely slice the scallions and fry with 1 tablespoon of olive oil for 1 minute.	367	0	4
 2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. 	362	0	4
-4578	Mix in the shredded raddichio, then taste and season if necessary. Keep on a low heat. Drain the paglia e fieno, keeping the colors separate, and return the pasta to the pans. Add about 1 tbsp of oil to each pan and toss over a medium to high heat until the pasta if glistening with oil.	969	3	0
-4579	Arrange a portion of the green and white pasta in each of 4-6 warmed bowls. then spoon the sun-dried tomato and raddichio mixture in the center. Sprinkle the sping onions and pine nuts over the top and serve immediately. Before eating, each diner should toss the sauce ingredients with the pasta.	969	4	0
+4578	Mix in the shredded radicchio, then taste and season if necessary. Keep on a low heat. Drain the paglia e fieno, keeping the colors separate, and return the pasta to the pans. Add about 1 tbsp of oil to each pan and toss over a medium to high heat until the pasta if glistening with oil.	969	3	4
+4579	Arrange a portion of the green and white pasta in each of 4-6 warmed bowls, then spoon the sun-dried tomato and radicchio mixture in the center. Sprinkle the spring onions and pine nuts over the top and serve immediately. Before eating, each diner should toss the sauce ingredients with the pasta.	969	4	0
 2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	368	0	0
 2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	368	1	0
 4585	Heat the oil in a large pan and fry the diced bacon and chorizo until they yield their fat. Add the onion and garlic and cook gently until softened, stirring.	971	1	0
@@ -18477,7 +18477,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2130	Remove the vegetables with a slotted spoon and keep hot. Melt the butter in a separate pan, add the chopped shallot and cook, stirring occasionally, until softened, but not browned. Stir in the herbs and cream and cook for a few minutes, until slightly thickened.	185	2	0
 2131	Meanwhile, cook the pasta in a large pan of lightly salted boiling water for 10-12 minutes. Drain well and add to the sauce with the vegetables. Toss gently and season with black pepper.	185	3	0
 3112	Add the berries on top and enjoy.	406	1	0
-3456	Preheat the oven to 400°F.	568	0	0
 4588	Bake the eggs and vegetables for 8 minutes, or until the eggs are just set.	971	4	0
 4586	Add the peppers and tomatoes and cook to reduce, stirring occasionally. Add some paprika and stir in the sherry.	971	2	0
 3236	Add maca, coconut milk, cinnamon, pumpkin purée, hot water, and sweetener into a blender.	470	0	0
@@ -18486,25 +18485,26 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3109	Combine the remaining ingredients in a glass.	405	1	0
 3110	Alternatively, place all ingredients into a blender and blend.	405	2	0
 3413	Get out a blender or immersion blender.	556	0	640
+3456	Preheat the oven to 400°F.	568	0	0
 1948	Using a sharp knife, finely dice the red, green and yellow peppers, carrot, cucumber and tomatoes and place them in a large mixing bowl.	188	0	0
 1949	Add the garlic, spring onions, coriander, gill, parsley, mint and chilli, is using, to the chopped vegetables and toss together to combine.	188	1	0
-3457	Line a large baking sheet with parchment paper.	568	1	2
 3466	In a large bowl, combine the first 5 ingredients (mango through kale).	571	0	0
 3467	Pour the dressing over the salad. Toss and serve.	571	1	0
 3027	Add the chicken and zucchini noodles to the skillet; stir to coat in the sauce. Cook 5 minutes, until zucchini has softened and chicken is cooked through. Season with salt and pepper to taste.	381	3	4
 3194	Using a masticating juicer, slowly feed the vegetables and fruit (including the peels) into the juicer until all produce has been processed.	431	0	0
+3457	Line a large baking sheet with parchment paper.	568	1	2
 3351	Remove the cauliflower from the oven and transfer it to a food processor or blender.	532	3	384
 3082	Add the marinated chicken and butternut squash to a slow cooker and cook on low for 8 hours.	396	1	1024
 4649	Once sizzling, crumble in the chestnuts and add a generous pinch of black pepper, then stir regularly until golden and crisp.	183	2	4
 4650	Meanwhile, separate the eggs, putting the yolks into a bowl, then finely grate in the cheese and mix together. 	183	3	0
+3458	Season the salmon with sea salt, pepper and 1 tablespoon of coconut oil, melted. Top with ground ginger.	568	2	0
+3459	Place fillets on the lined baking sheet, place in the oven, and bake for 15 minutes, or until the fish is cooked through and flakes easily with a fork.	568	3	2
 3352	Add 2 tablespoons of olive oil, tahini, lemon juice, and garlic, and blend until smooth.	532	4	384
 3470	To a small saucepan, add balsamic vinegar and honey (or maple syrup), turn the heat to medium, and bring to a simmer.	572	0	4
 3195	Pour in a glass, add the pepper, stir and enjoy.	431	1	0
 3417	Combine all ingredients in a blender, and blend until smooth.	557	0	128
 3087	In a large heavy-bottom skillet, salt pork and sear until the outside starts to darken. Place the pork in a slow cooker.	398	0	4
 3088	In a small bowl, whisk together the oil, maple syrup, coconut aminos, lime juice, garlic and water. Pour mixture over pork. Cook for 6 hours on low, or 4 hours on high. When pork is finished, remove to a cutting board to rest.	398	1	1024
-3458	Season the salmon with sea salt, pepper and 1 tablespoon of coconut oil, melted. Top with ground ginger.	568	2	0
-3459	Place fillets on the lined baking sheet, place in the oven, and bake for 15 minutes, or until the fish is cooked through and flakes easily with a fork.	568	3	2
 3460	While the salmon is baking, heat a large skillet over medium-high heat, add the remaining coconut oil, and add the greens.	568	4	4
 3463	Top the greens with salmon fillets, and a wedge of lemon.	568	7	0
 4757	Add bacon to a large skillet over medium heat. Cook until crispy, then remove to a paper towel-lined plate to drain and set aside. Remove bacon grease from skillet.	998	0	4
@@ -19170,8 +19170,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4719	Add shallots and carrots to crock pot, sprinkle with sea salt, freshly ground pepper and 1 tablespoon herbs de Provence. Place lid on crock pot and cook either 4 hours on high or 8 hours on low. Carve beef against the grain and serve.	990	2	1024
 4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
 4031	Season to taste with salt and pepper.	476	3	0
-3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	568	5	4
-3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	568	6	0
 4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans.	750	0	4
 4033	Toast the almonds in a dry grill pan on a medium heat until lightly golden, tossing regularly, then remove and finely slice.	750	1	4
 4602	Meanwhile, make the corn cakes. Stir the corn kernels into the cooled mashed potato, and season with plenty of salt and pepper to taste. Using lightly floured hands, shape the mixture into 12 even-sized round cakes, each about 2-inches in diameter.	974	2	0
@@ -19204,6 +19202,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4721	Put rings into a well-greased hot skillet. You’ll want to put them on their rough side down. Cook the onions for 2 minutes then flip. 	991	1	4
 4722	Start by putting just a spoonful of the egg mix into each ring and let it almost set to create a seal at the bottom.	991	2	0
 4723	Spoon in the rest of your egg mix into each ring. Cook for 2 more minutes, flip and cook until done.	991	3	0
+3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	568	5	4
+3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	568	6	0
 4182	Drain. In a large cooking pot, put the chickpeas and 1 teaspoon of baking soda. Cook over medium-high heat, tossing constantly, for about 3–4 minutes. 	629	3	4
 4020	In a food processor, process the chickpeas until they turn into a slightly textured paste. Be sure to turn off the food processor and scrape down the sides to get all the chickpeas ground up. Add in the onion, garlic, salt, and pepper, and mix to fully combine. Turn the food processor off and stir in the chopped parsley and arrowroot starch.	748	1	256
 4022	Reheat that same cast iron pan to medium heat. Drizzle the remainder of the oil and place the patties in to cook. Cook for about 2–3 minutes on each side until the bottom is nicely browned.	748	3	4
@@ -20359,5 +20359,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict T7MBAEYZXsBWYujWWBpF1ZBCp66Kr2SuojJACtsqWUuYYFJGDM8cygXKdvTxnY5
+\unrestrict wxW6jmwdq6skKW0XZoS8CHfXRhZYXdTVmQhr8YRcEwv2BrZ9w5rKfUmdFBtOBqG
 
