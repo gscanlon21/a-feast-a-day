@@ -8,7 +8,7 @@ namespace Core.Consts;
 /// <summary>
 /// Shared user consts.
 /// </summary>
-public class UserConsts
+public static class UserConsts
 {
     public const string DemoUser = "demo@afeastaday.com";
     public const string DemoToken = "00000000-0000-0000-0000-000000000000";
@@ -21,8 +21,9 @@ public class UserConsts
     public const int FontSizeAdjustDefault = 0;
     public const int FontSizeAdjustMax = 4;
 
-    public const int IngredientsMin = 4;
+    public const int IngredientsMin = 5;
     public const int IngredientsMax = 10;
+    public const int IngredientsRange = IngredientsMax - IngredientsMin + 1;
 
     public const int SectionWeightMin = 0;
     public const int SectionWeightMax = 35;

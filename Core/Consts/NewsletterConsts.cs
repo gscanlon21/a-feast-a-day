@@ -4,7 +4,7 @@ namespace Core.Consts;
 /// <summary>
 /// Shared newsletter consts.
 /// </summary>
-public class NewsletterConsts
+public static class NewsletterConsts
 {
     public const string SubjectLogin = "Account Access";
 

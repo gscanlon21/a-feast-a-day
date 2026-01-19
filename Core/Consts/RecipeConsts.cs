@@ -4,7 +4,7 @@ namespace Core.Consts;
 /// <summary>
 /// Shared recipe consts.
 /// </summary>
-public class RecipeConsts
+public static class RecipeConsts
 {
     public const int ServingsMin = 1;
     public const int ServingsMax = 12;

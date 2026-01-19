@@ -4,7 +4,7 @@ namespace Core.Consts;
 /// <summary>
 /// Shared ingredient consts.
 /// </summary>
-public class IngredientConsts
+public static class IngredientConsts
 {
     public const double CookedScaleMin = 0;
     public const double CookedScaleStep = 0.25;
