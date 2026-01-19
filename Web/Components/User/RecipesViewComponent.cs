@@ -46,6 +46,7 @@ public class RecipesViewComponent : ViewComponent
             .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
+                options.MaxIngredients = null;
             })
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
