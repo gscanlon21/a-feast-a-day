@@ -12,13 +12,14 @@ namespace Hybrid;
 
 public partial class ShoppingListPage : ContentPage
 {
+    private readonly ShoppingListPageViewModel _viewModel;
+
     /// https://stackoverflow.com/questions/73710578/net-maui-mvvm-navigate-and-pass-object-between-views
     public ShoppingListPage(ShoppingListPageViewModel viewModel)
     {
         InitializeComponent();
         BindingContext = viewModel;
-        viewModel.Navigation = Navigation;
-        viewModel.Ingredients.CollectionChanged += Ingredients_CollectionChanged;
+        _viewModel = viewModel;
     }
 
     /// <summary>
@@ -26,17 +27,41 @@ public partial class ShoppingListPage : ContentPage
     /// </summary>
     private void Ingredients_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
     {
-        shoppingListView.ScrollTo(e.OldStartingIndex, position: ScrollToPosition.MakeVisible, animate: false);
+        if (_viewModel.Loading)
+        {
+            return;
+        }
+
+        if (e.Action == NotifyCollectionChangedAction.Add)
+        {
+            shoppingListView.ScrollTo(e.NewStartingIndex, position: ScrollToPosition.MakeVisible, animate: false);
+        }
+        else
+        {
+            shoppingListView.ScrollTo(e.OldStartingIndex, position: ScrollToPosition.MakeVisible, animate: false);
+        }
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        _viewModel.Ingredients.CollectionChanged += Ingredients_CollectionChanged;
+    }
+
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+
+        _viewModel.Ingredients.CollectionChanged -= Ingredients_CollectionChanged;
     }
 }
 
-public partial class ShoppingListPageViewModel : ObservableObject
+public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
 {
     private readonly UserService _userService;
     private readonly LocalDatabase _localDatabase;
     private readonly UserPreferences _preferences;
-
-    public INavigation Navigation { get; set; } = null!;
 
     public IAsyncRelayCommand LoadCommand { get; init; }
     public IAsyncRelayCommand WhenCompletedCommand { get; init; }
@@ -67,7 +92,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
         {
             var newIngredient = new ShoppingListItem(IngredientEntry);
 
-            MainThread.BeginInvokeOnMainThread(async () =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
                 Ingredients.Insert(OrderIngredients([.. Ingredients, newIngredient]).IndexOf(newIngredient), newIngredient);
             });
@@ -83,7 +108,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
         if (message != null && !Loading)
         {
             // Move the item to the end of the list.
-            MainThread.BeginInvokeOnMainThread(async () =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
                 Ingredients.Move(Ingredients.IndexOf(message.Value), OrderIngredients(Ingredients).IndexOf(message.Value));
             });
@@ -92,10 +117,10 @@ public partial class ShoppingListPageViewModel : ObservableObject
         }
     }
 
-    private readonly Lock _loadingLock = new();
+    private readonly SemaphoreSlim _loadingLock = new(1, 1);
     private async Task LoadShoppingList()
     {
-        if (_loadingLock.TryEnter())
+        if (await _loadingLock.WaitAsync(0))
         {
             try
             {
@@ -116,15 +141,10 @@ public partial class ShoppingListPageViewModel : ObservableObject
                     // Merge local and remote items into the db.
                     var localItems = await _localDatabase.GetItemsAsync();
                     var remoteItems = shoppingList.ShoppingList.Select(sl => new ShoppingListItem(sl)).ToList();
-                    // Clear the local database of non-custom items for a refresh of remote items.
-                    _ = await _localDatabase.DeleteItemsAsync(includeCustomChecked: false);
-
-                    foreach (var remoteItem in remoteItems)
+                    // Add all the remote items that don't exist in the database.
+                    foreach (var remoteItem in remoteItems.Except(localItems))
                     {
-                        // Keeping the checked status for the remote items.
-                        var localItem = localItems.FirstOrDefault(li => li.Equals(remoteItem));
-                        remoteItem.IsChecked = localItem?.IsChecked ?? remoteItem.IsChecked;
-                        await _localDatabase.SaveItemAsync(remoteItem);
+                        await _localDatabase.SaveItemAsync(remoteItem);                        
                     }
 
                     // Reset the list.
@@ -139,7 +159,7 @@ public partial class ShoppingListPageViewModel : ObservableObject
             }
             finally
             {
-                _loadingLock.Exit();
+                _loadingLock.Release();
                 Loading = false;
             }
         }
@@ -148,5 +168,11 @@ public partial class ShoppingListPageViewModel : ObservableObject
     private static List<ShoppingListItem> OrderIngredients(IEnumerable<ShoppingListItem> ingredients)
     {
         return ingredients.OrderBy(i => i.IsChecked).ThenBy(i => i.Order).ThenBy(i => i.Group).ThenBy(i => i.Name).ToList();
+    }
+
+    public void Dispose()
+    {
+        WeakReferenceMessenger.Default.UnregisterAll(this);
+        GC.SuppressFinalize(this);
     }
 }
