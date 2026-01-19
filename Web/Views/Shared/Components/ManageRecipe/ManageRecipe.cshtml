@@ -6,10 +6,10 @@
 <div class="alert alert-light shadow mb-0">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <form id="skip-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.SkipRecipe)" method="post"
+    <form id="skip-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.SkipRecipe)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
     </form>
-    <form id="ignore-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.IgnoreRecipe)" method="post"
+    <form id="ignore-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.IgnoreRecipe)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
     </form>
 
@@ -34,10 +34,10 @@
 
     @if (Model.Parameters.Section != Section.Prep && Model.Parameters.Section != Section.None) 
     {
-        <form id="swap-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.SwapRecipe)" method="post"
+        <form id="swap-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.SwapRecipe)" method="post"
               asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
         </form>
-        <form id="refresh-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RefreshRecipe)" method="post"
+        <form id="refresh-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.RefreshRecipe)" method="post"
               asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
         </form>
 
@@ -66,7 +66,7 @@
         </div>
     }
 
-    <form asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.LogRecipe)" method="post" class="mb-3"
+    <form asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.LogRecipe)" method="post" class="mb-3"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-recipeId="@Model.Parameters.RecipeId" asp-route-section="@Model.Parameters.Section">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>

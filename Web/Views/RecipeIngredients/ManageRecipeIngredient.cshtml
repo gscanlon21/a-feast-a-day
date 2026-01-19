@@ -4,8 +4,6 @@
 @using Lib.Pages.Shared.Ingredient
 @using Lib.Pages.Shared.Recipe
 @using Microsoft.AspNetCore.Components
-@using Web.Code.Extensions
-@using Web.Controllers.RecipeIngredients
 
 @{
     ViewData[ViewData_Blank.Title] = "Recipe Ingredient";
@@ -30,7 +28,7 @@
 <div class="row gy-4">
     <div class="col-lg-6">
         <div class="alert alert-light shadow mb-0">
-            <form asp-controller="@RecipeIngredientController.Name" asp-action="@nameof(RecipeIngredientController.IgnoreRecipeIngredient)" method="post"
+            <form asp-controller="@RecipeIngredientsController.Name" asp-action="@nameof(RecipeIngredientsController.IgnoreRecipeIngredient)" method="post"
                   asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-recipeIngredientId="@Model.RecipeIngredient.Id">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -48,7 +46,7 @@
                 </div>
             </form>
 
-            <form asp-controller="@RecipeIngredientController.Name" asp-action="@nameof(RecipeIngredientController.ManageRecipeIngredient)" method="post"
+            <form asp-controller="@RecipeIngredientsController.Name" asp-action="@nameof(RecipeIngredientsController.ManageRecipeIngredient)" method="post"
                   asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-recipeIngredientId="@Model.RecipeIngredient.Id">
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -107,7 +105,7 @@
                     <div class="col-md">
                         <label asp-for="UserRecipeIngredient.SubstituteIngredientId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteIngredientId)</label>
                         <select asp-for="UserRecipeIngredient.SubstituteIngredientId" class="form-control searchable w-100" aria-describedby="ingredient-help"
-                                asp-items="@(Model.SubstituteIngredients.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
+                                asp-items="@(Model.SubstituteIngredients.Select(i => new SelectListItem(i.Name, $"{i.Id}")).Prepend(new SelectListItem()))">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.SubstituteIngredientId" class="text-danger"></span>
                         <span id="ingredient-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.SubstituteIngredientId)</span>

@@ -8,30 +8,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
 using Web.Controllers.Users;
-using Web.Views.Ingredient;
 using Web.Views.Shared.Components.ManageIngredient;
+using Web.Views.UserIngredients;
 
 namespace Web.Controllers.Ingredients;
 
 [Route($"i/{UserRoute}", Order = 1)]
 [Route($"ingredient/{UserRoute}", Order = 2)]
-public class IngredientController : ViewController
+public class UserIngredientsController : ViewController
 {
-    private readonly NewsletterService _newsletterService;
-    private readonly CoreContext _context;
-    private readonly UserRepo _userRepo;
+    /// <summary>
+    /// The name of the controller for routing purposes.
+    /// </summary>
+    public const string Name = "UserIngredients";
 
-    public IngredientController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService)
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+    private readonly NewsletterService _newsletterService;
+
+    public UserIngredientsController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService)
     {
         _context = context;
         _userRepo = userRepo;
         _newsletterService = newsletterService;
     }
-
-    /// <summary>
-    /// The name of the controller for routing purposes.
-    /// </summary>
-    public const string Name = "Ingredient";
 
     [HttpPost, Route("[action]")]
     public async Task<IActionResult> RemoveIngredient(string email, string token, [FromForm] int ingredientId)

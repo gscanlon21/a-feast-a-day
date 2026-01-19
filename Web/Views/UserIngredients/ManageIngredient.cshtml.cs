@@ -1,6 +1,6 @@
 ﻿using Core.Models.User;
 
-namespace Web.Views.Ingredient;
+namespace Web.Views.UserIngredients;
 
 public class UserManageIngredientViewModel
 {

@@ -3,7 +3,7 @@ using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 
-namespace Web.Views.Recipe;
+namespace Web.Views.UserRecipes;
 
 /// <summary>
 /// For CRUD actions

@@ -4,7 +4,7 @@
 @using Data.Entities.Users
 @using Web.Code.Extensions
 
-<form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.UpsertIngredient)"
+<form asp-controller="@UserIngredientsController.Name" asp-action="@nameof(UserIngredientsController.UpsertIngredient)"
         asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" id="ingredient-form" method="post">
         
     <input asp-for="Ingredient.Id" type="hidden" class="form-control" />

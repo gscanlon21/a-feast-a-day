@@ -7,7 +7,7 @@
 <div class="list-group">
     @foreach (var recipeIngredient in Model.UserRecipeIngredients)
     {
-        <a asp-action="@nameof(RecipeIngredientController.ManageRecipeIngredient)" asp-controller="@RecipeIngredientController.Name"
+        <a asp-action="@nameof(RecipeIngredientsController.ManageRecipeIngredient)" asp-controller="@RecipeIngredientsController.Name"
            asp-route-recipeIngredientId="@recipeIngredient.RecipeIngredient.Id" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token"
            class="list-group-item @(recipeIngredient.RecipeIngredient.Optional ? "list-group-item-dark" : "list-group-item-primary") list-group-item-action allow-demo">
             <div class="row gx-3 gy-1 justify-content-between">

@@ -4,7 +4,7 @@
 @using Core.Models.User
 @using Web.Code.Extensions
 
-<form id="recipe-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" method="post"
+<form id="recipe-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.UpsertRecipe)" method="post"
         asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
         
     <input asp-for="Recipe.Id" type="hidden" class="form-control" />
@@ -435,7 +435,7 @@
     @if (Model.Editing)
     {
         <div class="col-auto">
-            <form id="delete-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.RemoveRecipe)" method="post"
+            <form id="delete-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.RemoveRecipe)" method="post"
                     asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
                     
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -448,7 +448,7 @@
     else
     {
         <div class="col-auto">
-            <form id="import-form" asp-controller="@RecipeController.Name" asp-action="@nameof(RecipeController.UpsertRecipe)" method="post"
+            <form id="import-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.UpsertRecipe)" method="post"
                     asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-section="@Model.Section">
                     
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>

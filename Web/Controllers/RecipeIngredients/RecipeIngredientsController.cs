@@ -14,29 +14,29 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using Web.Code.Extensions;
 using Web.Code.TempData;
-using Web.Views.RecipeIngredient;
+using Web.Views.RecipeIngredients;
 
 namespace Web.Controllers.RecipeIngredients;
 
 [Route($"ri/{UserRoute}", Order = 1)]
 [Route($"recipe/ingredient/{UserRoute}", Order = 2)]
-public class RecipeIngredientController : ViewController
+public class RecipeIngredientsController : ViewController
 {
-    private readonly IServiceScopeFactory _serviceScopeFactory;
-    private readonly CoreContext _context;
-    private readonly UserRepo _userRepo;
+    /// <summary>
+    /// The name of the controller for routing purposes.
+    /// </summary>
+    public const string Name = "RecipeIngredients";
 
-    public RecipeIngredientController(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+    
+    public RecipeIngredientsController(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
         _userRepo = userRepo;
         _serviceScopeFactory = serviceScopeFactory;
     }
-
-    /// <summary>
-    /// The name of the controller for routing purposes.
-    /// </summary>
-    public const string Name = "RecipeIngredient";
 
     [HttpPost, Route("[action]/{recipeIngredientId}")]
     public async Task<IActionResult> IgnoreRecipeIngredient(string email, string token, int recipeIngredientId)
@@ -112,7 +112,8 @@ public class RecipeIngredientController : ViewController
         var prepRecipes = baseRecipes.Where(r => recipe.RecipeIngredients.Select(ri => ri.IngredientRecipeId).Contains(r.Recipe.Id)).ToList();
         var substituteIngredients = recipeIngredient.Ingredient?.Alternatives.Select(ai => ai.AlternativeIngredient).Where(ai => ai.DisabledReason == null).ToList()
             // Not excluding allergens from a user's custom ingredients because I assume they know what they want.
-            ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id).ToListAsync();
+            ?? await _context.Ingredients.Where(i => i.UserId == null || i.UserId == user.Id)
+            .OrderBy(i => i.Group).ThenBy(i => i.Name).ToListAsync();
 
         // Ingredients to show to the user.
         var ingredients = new List<IngredientDto?>()

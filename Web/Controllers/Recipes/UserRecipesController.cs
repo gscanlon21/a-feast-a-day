@@ -14,34 +14,34 @@ using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using Web.Code.TempData;
 using Web.Controllers.Users;
-using Web.Views.Recipe;
 using Web.Views.Shared.Components.ManageRecipe;
 using Web.Views.Shared.Components.UpsertRecipe;
+using Web.Views.UserRecipes;
 
 namespace Web.Controllers.Recipes;
 
 [Route($"r/{UserRoute}", Order = 1)]
 [Route($"recipe/{UserRoute}", Order = 2)]
-public class RecipeController : ViewController
+public class UserRecipesController : ViewController
 {
-    private readonly IServiceScopeFactory _serviceScopeFactory;
-    private readonly NewsletterService _newsletterService;
-    private readonly CoreContext _context;
-    private readonly UserRepo _userRepo;
+    /// <summary>
+    /// The name of the controller for routing purposes.
+    /// </summary>
+    public const string Name = "UserRecipes";
 
-    public RecipeController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService, IServiceScopeFactory serviceScopeFactory)
+    private readonly UserRepo _userRepo;
+    private readonly CoreContext _context;
+    private readonly NewsletterService _newsletterService;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
+    
+    public UserRecipesController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
         _userRepo = userRepo;
         _newsletterService = newsletterService;
         _serviceScopeFactory = serviceScopeFactory;
     }
-
-    /// <summary>
-    /// The name of the controller for routing purposes.
-    /// </summary>
-    public const string Name = "Recipe";
-
+    
     /// <summary>
     /// Shows a form to the user where they can update their recipe.
     /// </summary>

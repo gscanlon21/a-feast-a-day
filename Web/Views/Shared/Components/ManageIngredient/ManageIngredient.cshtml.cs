@@ -1,7 +1,7 @@
 ﻿using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
-using Web.Views.Ingredient;
+using Web.Views.UserIngredients;
 
 namespace Web.Views.Shared.Components.ManageIngredient;
 

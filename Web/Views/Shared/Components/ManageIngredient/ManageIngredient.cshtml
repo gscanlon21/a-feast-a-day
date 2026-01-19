@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <form asp-controller="@IngredientController.Name" asp-action="@nameof(IngredientController.LogIngredient)" method="post"
+    <form asp-controller="@UserIngredientsController.Name" asp-action="@nameof(UserIngredientsController.LogIngredient)" method="post"
           asp-route-email="@Model.Parameters.Email" asp-route-token="@Model.Parameters.Token" asp-route-ingredientId="@Model.Parameters.IngredientId">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>

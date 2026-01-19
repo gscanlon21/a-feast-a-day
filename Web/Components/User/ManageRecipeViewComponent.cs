@@ -3,8 +3,8 @@ using Data.Entities.Recipes;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web.Views.Recipe;
 using Web.Views.Shared.Components.ManageRecipe;
+using Web.Views.UserRecipes;
 
 namespace Web.Components.User;
 
