@@ -10,10 +10,10 @@ public class UserOptions : IOptions
     public bool IgnoreIgnored { get; set; } = false;
 
     public int Id { get; }
-    public int? MaxIngredients { get; }
     public Allergens Allergens { get; }
     public DateOnly CreatedDate { get; }
     public IngredientOrder IngredientOrder { get; }
+    public int? MaxIngredients { get; set; }
 
     public UserOptions() { }
 

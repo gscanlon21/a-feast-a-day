@@ -130,7 +130,7 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Queries the db for the data.
     /// </summary>
-    public async Task<IList<QueryResults>> Query(IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue)
+    public async Task<List<QueryResults>> Query(IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue)
     {
         // Short-circut when this is set without any data. No results are returned.
         if (RecipeOptions.RecipeIds?.Any() == false)

@@ -3,6 +3,7 @@ using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.User;
 using Data.Entities.Users;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Views.RecipeIngredient;
@@ -22,10 +23,17 @@ public class UserManageRecipeIngredientViewModel
     /// <summary>
     /// Recipes that the user is able to select as an ingredient alternative.
     /// </summary>
-    public required IList<Data.Entities.Recipes.Recipe> Recipes { get; init; }
+    public required IList<SelectListItem> BaseRecipeSelect { get; init; }
 
+    /// <summary>
+    /// Recipes that are used in cooking this recipe ingredient's recipe.
+    /// </summary>
     public required IList<NewsletterRecipeDto> PrepRecipes { get; init; }
-    public required IList<NewsletterRecipeDto> AltRecipes { get; init; }
+
+    /// <summary>
+    /// Recipes that may be substituted in for this recipe ingredient.
+    /// </summary>
+    public required IList<NewsletterRecipeDto> BaseRecipes { get; init; }
 
     public required NewsletterRecipeDto Recipe { get; init; }
     public required IList<IngredientDto> Ingredients { get; init; }

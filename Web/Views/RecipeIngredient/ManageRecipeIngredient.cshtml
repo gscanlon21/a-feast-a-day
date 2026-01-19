@@ -17,7 +17,7 @@
         <h2 class="sub-heading mt-0 ps-1">@Model.Recipe.Recipe.Name</h2>
     </div>
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
-    @if (Model.UserRecipeIngredient.SubstituteRecipeId.HasValue == true && !Model.Recipes.Select(r => r.Id).Contains(Model.UserRecipeIngredient.SubstituteRecipeId.Value))
+    @if (Model.UserRecipeIngredient.SubstituteRecipeId.HasValue == true && !Model.BaseRecipes.Select(r => r.Recipe.Id).Contains(Model.UserRecipeIngredient.SubstituteRecipeId.Value))
     {
         <div class="col-lg-6">
             <div class="alert alert-warning">
@@ -116,7 +116,7 @@
                     <div class="col-md">
                         <label asp-for="UserRecipeIngredient.SubstituteRecipeId" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.SubstituteRecipeId)</label>
                         <select asp-for="UserRecipeIngredient.SubstituteRecipeId" class="form-control searchable w-100" aria-describedby="ingredient-recipe-help"
-                                asp-items="@(Model.Recipes.Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() }).Prepend(new SelectListItem()))">
+                                asp-items="@Model.BaseRecipeSelect.Prepend(new SelectListItem())">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.SubstituteRecipeId" class="text-danger"></span>
                         <span id="ingredient-recipe-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserRecipeIngredient.SubstituteRecipeId)</span>
@@ -129,15 +129,15 @@
             </form>
         </div>
 
-        @if (Model.AltRecipes.Count > Model.PrepRecipes.Count)
+        @if (Model.BaseRecipes.Count > Model.PrepRecipes.Count)
         {
             <details class="mt-4 mb-1 pt-1">
                 <summary class="mb-1 h5">
                     <span>Base Recipes</span>
-                    <span class="float-end">@Model.AltRecipes.Count</span>
+                    <span class="float-end">@Model.BaseRecipes.Count</span>
                 </summary>
 
-                <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.AltRecipes' param-Verbosity="Verbosity.Images" param-Title="@(new RecipeSection.Titles(string.Empty))" />
+                <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.BaseRecipes' param-Verbosity="Verbosity.Images" param-Title="@(new RecipeSection.Titles(string.Empty))" />
             </details>
         }
         else

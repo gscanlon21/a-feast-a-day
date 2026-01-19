@@ -19,14 +19,16 @@ public static class Filters
     /// </summary>
     public static IQueryable<T> FilterSection<T>(IQueryable<T> query, Section? value) where T : IRecipeCombo
     {
-        // Debug should be able to see all recipes. When querying for prep recipes, don't filter.
-        if (value.HasValue && value != Section.None && value != Section.Debug && value != Section.Prep)
+        // Debug should be able to see all recipes. None means no filter is applied.
+        if (!value.HasValue || value == Section.None || value == Section.Debug)
         {
-            // Has any flag.
-            query = query.Where(vm => (vm.Recipe.Section & value.Value) != 0);
+            return query;
         }
 
-        return query;
+        // Prep recipes use base.
+        return value == Section.Prep 
+            ? query.Where(vm => vm.Recipe.BaseRecipe) // Has any flag:
+            : query.Where(vm => (vm.Recipe.Section & value.Value) != 0);
     }
 
     /// <summary>
