@@ -13,7 +13,7 @@
 30	Curry Scramble	\N	\N	\N	6	10	5	2	t	curry-scramble.jpg	0	\N	f	f
 31	Slow-Cooker Barbecue Pulled Pork Sandwiches	\N	\N	\N	8	420	15	6	t	bbq-pulled-pork-sandwich.jpg	0	\N	f	f
 32	Crock Pot Baked Potatoes	\N	\N	\N	16	480	5	4	t	crockpot-baked-potatoes.jpg	0	https://www.returntothekitchen.com/crock-pot-baked-potatoes/	f	f
-33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot.  You can also add more ingredients—some chopped onion or garlic if your family likes it, or some shredded carrots would add flavor and nutrition. You could add some chicken or beef broth in place of the water for a more flavorful dish.  Top the cooked pasta and meatballs with some grated Parmesan cheese. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	4	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
+33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	8	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	kielbasa.jpg	0	\N	f	f
 35	Crockpot BBQ Pinto Beans	\N	\N	\N	16	480	15	6	f	bbq-pinto-beans.jpg	0	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	f	f
 36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	6	120	10	4	t	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
@@ -274,7 +274,7 @@
 393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	\N	f	f
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
 395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	30	5	2	t	sesame-ginger-carrots.jpg	0	\N	f	t
-396	Tandoori Chicken	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	\N	f	f
+396	Tandoori Chicken	\N	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	\N	0	\N	f	f
 398	Maple Lime Pork Roast	\N	\N	\N	8	360	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
