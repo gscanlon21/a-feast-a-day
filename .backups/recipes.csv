@@ -330,7 +330,7 @@
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 483	Goddess of Detox Dressing	\N	Too complicated: requires a blender.	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-484	Rice	\N	\N	\N	0	25	5	1	t	rice.jpg	6	\N	t	t
+484	Rice	\N	\N	\N	16	25	5	1	t	rice.jpg	6	\N	t	t
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
 486	Strawberries & Cream	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 487	Rainbow Roasted Vegetables	\N	\N	\N	16	25	15	4	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -378,7 +378,7 @@
 562	Wild Salmon & Broccoli Frittata	\N	These directions don't make any sense.	\N	6	15	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 563	Greek Salmon	Serve with Katy's Greek Salad.	\N	\N	4	30	5	1	t	greek-salmon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 564	Roasted Vegetables	\N	\N	\N	16	35	10	6	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-565	Rainbow Stir-Fry Veggies	\N	\N	\N	8	25	10	4	t	vegetable-stir-fry.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+565	Rainbow Stir-Fry Veggies	\N	\N	\N	16	25	10	4	t	vegetable-stir-fry.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 566	Tuna Salad	\N	\N	\N	20	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 567	Turkey & Walnut Salad	\N	\N	\N	28	40	10	4	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 568	Ginger Baked Salmon with Sautéed Greens	\N	\N	\N	4	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -387,7 +387,7 @@
 571	Mango-Lime Chicken Salad	\N	\N	\N	8	0	12	2	t	chicken-lettuce-cups.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 572	Microgreens Salad	\N	\N	\N	20	20	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-574	Turkish Salad	\N	\N	\N	20	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+574	Turkish Salad	\N	\N	\N	20	0	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 575	Turkey Taco Salad	\N	\N	\N	10	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	thai-chicken-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -504,7 +504,7 @@
 722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3-4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	creamy-polenta.jpg	0	\N	f	f
-725	Braised Lentils	Add herbs like thyme, rosemary, or parsley for a little more flavor.	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	f
+725	Braised Lentils	\N	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	f
 726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
 727	Dal	\N	\N	\N	12	40	5	2	t	dal.jpg	0	\N	f	f
 728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	\N	6	\N	f	f
@@ -621,7 +621,7 @@
 969	Pasta with Sun-Dried Tomatoes	If you find the presentation too fussy, you can toss the tomato and raddicchio mixture with the pasta in a large bowl before serving, then sprinkle the spring onions and toasted pine nuts on top.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 970	Lamb Steaks with Redcurrant Glaze	This is a good recipe for the barbecue. Wait until the fierce heat has subsided and the coals are dusted with white ash, then place the rosemary-rubbed steaks directly on the grill rack. Brush frequently with the glaze as they cook.	\N	\N	8	10	5	4	t	\N	0	\N	f	f
 971	Flamenco Eggs	The chorizo and vegetable mixture mustn't be too dry, so add a little more sherry if necessary.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
-972	Chicken Bitki	\N	\N	\N	8	15	10	12	t	\N	0	\N	f	f
+972	Chicken Bitki	\N	Too involved: Pickled Beets and a Green Salad.	\N	8	15	10	12	t	\N	0	\N	f	f
 973	Stuffed Chicken in Bacon Coats	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	f
 974	Southern Fried Chicken	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	t
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	\N	0	\N	t	f

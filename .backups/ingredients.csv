@@ -1,5 +1,5 @@
 1	\N	Apples	\N	\N	f	0	182	182	2025-03-29	0	182	1	182	Apples	https://www.eatthismuch.com/food/nutrition/apples,1300/
-2	\N	Fresh Parsley	\N	\N	f	0	28	4	2024-09-26	4	60	3	60	Parsley	https://www.eatthismuch.com/calories/parsley-2057
+2	\N	Fresh Parsley	\N	\N	f	0	28	4	2026-01-19	4	60	3	60	Parsley	https://www.eatthismuch.com/calories/parsley-2057
 3	\N	Yellow Onions	\N	\N	f	0	148	148	2025-03-22	0	148	2	148	Onion	https://www.eatthismuch.com/food/nutrition/yellow-onion,89980/
 4	\N	Lemons	\N	\N	f	0	108	108	2024-10-22	0	216	1	216	Lemons	https://www.eatthismuch.com/calories/lemons-1433
 5	\N	Garlic Cloves	\N	\N	f	0	3	3	2025-11-21	0	136	3	136	Garlic Cloves	https://www.eatthismuch.com/calories/garlic-1980
@@ -723,7 +723,7 @@
 829	\N	Chili Jam	\N	\N	f	0	245	245	2024-10-13	6	245	16	245	Chili Jam	https://www.eatthismuch.com/calories/chili-sauce-857
 830	\N	Sun-Dried Tomato Paste	aka. Sun-Dried Tomato Puree. https://www.eatthismuch.com/calories/sun-dried-tomato-paste-1801202	\N	f	0	28	30	2025-04-04	4	240	256	240	Sun-Dried Tomato Paste	\N
 831	\N	Saffron	\N	\N	f	0	28	0.7	2025-01-11	4	33.6	131072	33.6	Saffron	https://www.eatthismuch.com/calories/saffron-212
-832	\N	Dried Sage	\N	\N	f	0	4	4	2024-09-26	7	64	1	64	Dried Sage	\N
+832	\N	Dried Sage	\N	\N	f	0	1	2	2026-01-19	3	32	131072	32	Sage	https://www.eatthismuch.com/calories/sage-213
 833	\N	Crushed Red Pepper Flakes	aka: Dried Red Pepper Flakes - https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	\N	t	0	28	1	2025-07-19	4	16	131072	16	Crushed Red Pepper Flakes	\N
 834	\N	Frozen Edamame Beans	\N	\N	f	0	28	118	2025-07-25	4	118	67108864	118	Frozen Edamame Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/
 835	\N	Sliced Fennel Salami	\N	\N	f	0	5.6	28	2025-11-26	0	100	8	100	Sliced Fennel Salami	https://www.eatthismuch.com/calories/hard-salami,1805029
@@ -1337,3 +1337,12 @@
 1722	\N	Mixed-Color Tagliatelle Pasta	\N	\N	f	32	28	42	2024-12-23	4	112	4096	112	Tagliatelle Pasta	https://www.eatthismuch.com/calories/tagliatelle-pasta-4121232
 1723	\N	Yukon Gold Potatoes	\N	\N	f	0	170	170	2024-12-21	0	170	1	170	Baby Yukon Potatoes	https://www.eatthismuch.com/food/nutrition/red-potatoes,2094/
 1724	\N	Olive Oil | Butter	\N	\N	t	0	28	14	2025-03-23	9	224	65536	224	Olive Oil	https://www.eatthismuch.com/food/nutrition/olive-oil,266/
+1725	\N	Medium Red Onions	\N	\N	f	0	70	110	2024-12-25	0	115	2	115	Onion	https://www.eatthismuch.com/calories/onions-2042
+1726	\N	Rosemary	\N	\N	f	0	1	2	2026-01-17	3	27	3	27	Rosemary	https://www.eatthismuch.com/calories/rosemary-230
+1727	\N	Parsley	\N	\N	f	0	28	4	2024-09-26	4	60	3	60	Parsley	https://www.eatthismuch.com/calories/parsley-2057
+1728	\N	White Bread	\N	\N	f	32	25	25	2024-11-01	0	25	64	25	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1729	\N	Loaves of White Bread	aka: White Bread Loaf.	\N	f	32	25	25	2024-11-01	0	25	64	25	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1730	\N	Flat Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
+1731	\N	Olive Oil | Butter | Ghee	\N	\N	f	0	28	14	2025-10-06	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/olive-oil-266
+1732	\N	Hummus	\N	\N	f	0	28	30	2024-10-21	4	240	8	240	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679
+1733	\N	Guacamole	\N	\N	f	0	28	30	2024-10-21	4	240	8	240	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679
