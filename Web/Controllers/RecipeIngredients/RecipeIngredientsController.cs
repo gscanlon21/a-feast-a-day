@@ -197,7 +197,7 @@ public class RecipeIngredientsController : ViewController
     private async Task<QueryResults?> GetOrigRecipe(User user, RecipeIngredient recipeIngredient)
     {
         // Pass in the user so we can select their base recipes.
-        return (await new UserQueryBuilder(user, Section.All)
+        return (await new UserQueryBuilder(user, Section.None)
             .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
