@@ -92,7 +92,7 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
         {
             var newIngredient = new ShoppingListItem(IngredientEntry);
 
-            MainThread.BeginInvokeOnMainThread(() =>
+            await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Ingredients.Insert(OrderIngredients([.. Ingredients, newIngredient]).IndexOf(newIngredient), newIngredient);
             });
@@ -108,7 +108,7 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
         if (message != null && !Loading)
         {
             // Move the item to the end of the list.
-            MainThread.BeginInvokeOnMainThread(() =>
+            await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Ingredients.Move(Ingredients.IndexOf(message.Value), OrderIngredients(Ingredients).IndexOf(message.Value));
             });
