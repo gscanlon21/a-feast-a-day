@@ -50,8 +50,8 @@ public class UserSection
         [Section.Breakfast] = 5,
         [Section.Lunch] = 6,
         [Section.Dinner] = 7,
-        [Section.Sides] = 4,
-        [Section.Snacks] = 3,
+        [Section.Sides] = 2,
+        [Section.Snacks] = 1,
         [Section.Dessert] = 0,
         [Section.Drinks] = 0,
     };
