@@ -3,6 +3,7 @@ using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
+using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -55,7 +56,7 @@ public class RecipesViewComponent : ViewComponent
                 x.IgnorePrepRecipes = true;
             })
             .Build()
-            .Query(_serviceScopeFactory);
+            .Query(_serviceScopeFactory, OrderBy.Name);
 
         return View("Recipes", new RecipesViewModel()
         {

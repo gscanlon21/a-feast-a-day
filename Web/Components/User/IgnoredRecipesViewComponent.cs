@@ -2,6 +2,7 @@
 using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data;
+using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -55,7 +56,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
                 x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
             })
             .Build()
-            .Query(_serviceScopeFactory);
+            .Query(_serviceScopeFactory, OrderBy.Name);
 
         // Need a user context so the manage link is clickable and the user can un-ignore a recipe.
         var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);

@@ -1,6 +1,7 @@
 ﻿@model IgnoredRecipesViewModel
 @using Core.Models.Recipe
 @using Core.Models.User
+@using Lib.Pages.Shared.Recipe
 
 @if (Model.IgnoredRecipes.Any())
 {
@@ -10,6 +11,6 @@
             <span class="float-end">@Model.IgnoredRecipes.Count()</span>
         </summary>
 
-        <component type="typeof(Lib.Pages.Shared.Recipe.RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.IgnoredRecipes' param-Theme='Section.None.AsTheme()' param-Verbosity="Model.Verbosity" />
+        <component type="typeof(RecipeSection)" render-mode="Static" param-User="Model.UserNewsletter" param-Recipes='Model.IgnoredRecipes' param-Theme='Section.None.AsTheme()' param-Verbosity="Model.Verbosity" />
     </details>
 }

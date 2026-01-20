@@ -188,7 +188,7 @@ public class RecipeIngredientsController : ViewController
         return await new UserQueryBuilder(user, Section.Prep)
             .WithEquipment(Equipment.All)
             .Build()
-            .Query(_serviceScopeFactory);
+            .Query(_serviceScopeFactory, OrderBy.Name);
     }
 
     /// <summary>
