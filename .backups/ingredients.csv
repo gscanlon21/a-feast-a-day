@@ -517,7 +517,7 @@
 592	\N	Black Olive Tapenade	\N	\N	f	0	14	14	2025-03-19	7	240	0	240	Black Olive Tapenade	https://www.eatthismuch.com/food/nutrition/olive-oil,266/
 593	\N	Thai Red Curry Paste	\N	\N	f	0	28	15	2024-12-29	4	240	8192	240	Thai Red Curry Paste	https://www.eatthismuch.com/calories/red-curry-paste-490608
 594	\N	Butternut Squash	\N	\N	f	0	323	196	2025-11-05	0	113	2	113	Butternut Squash	https://www.eatthismuch.com/calories/squash-2291
-595	\N	Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
+595	\N	Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
 596	\N	Kaffir Lime Leaves	\N	\N	f	0	15	30	2025-02-13	0	240	3	240	Kaffir Lime Leaves	https://www.eatthismuch.com/calories/kaffir-lime-leaves-1612556
 597	\N	Yellow Bell Peppers	\N	\N	f	0	186	186	2025-10-20	0	186	2	186	Bell Pepper	https://www.eatthismuch.com/calories/yellow-peppers-2560
 598	\N	Green Bell Peppers	\N	\N	f	0	119	119	2025-10-21	0	119	2	119	Bell Pepper	https://www.eatthismuch.com/calories/green-bell-pepper-2080
@@ -956,7 +956,7 @@
 1188	\N	Self-Rising Flour	\N	\N	t	262176	28	125	2025-06-25	4	125	32768	125	Self-Rising Flour	https://www.eatthismuch.com/calories/wheat-flour-4926
 1189	\N	Mango Chutney	\N	\N	f	0	28	20	2025-03-26	4	320	16	320	Mango Chutney	https://www.eatthismuch.com/calories/sri-lankan-organic-mango-chutney-4058121
 1190	\N	Veal Escalopes	\N	\N	f	0	112	454	2025-03-20	0	227	268435456	227	Veal Escalopes	https://www.eatthismuch.com/calories/veal-average-cut-3813
-1191	\N	Oyster Mushrooms	\N	\N	f	0	15	86	2025-11-09	0	86	3	86	Oyster Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
+1191	\N	Oyster Mushrooms	\N	\N	f	0	15	86	2025-11-09	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
 1192	\N	Marsala Wine	\N	\N	f	0	29.6	148	2024-12-18	9	236.8	524288	236.8	Marsala Wine	https://www.eatthismuch.com/calories/table-wine-3069
 1193	\N	Marsala Wine | Dry Sherry	\N	\N	f	0	29.4	147	2024-12-18	9	235.2	524288	235.2	Marsala Wine | Dry Sherry	https://www.eatthismuch.com/calories/red-wine-3070
 1194	\N	Crème Fraîche | Sour Cream	\N	\N	f	324	28	30	2024-11-16	4	240	29360128	240	Crème Fraîche | Sour Cream	https://www.eatthismuch.com/calories/creme-fraiche-1706554
@@ -1113,13 +1113,13 @@
 1376	\N	Maple Syrup | Honey | Brown Rice Syrup	\N	\N	f	0	40	20	2025-06-13	9	320	928	320	Maple Syrup | Honey | Brown Rice Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654
 1377	\N	Pumpkin Spice	\N	\N	f	0	28	6	2024-12-04	4	96	131072	96	Pumpkin Spice	https://www.eatthismuch.com/calories/pumpkin-pie-spice-210
 1378	\N	Cinnamon | Pumpkin Spice | Cardamon	\N	\N	t	0	28	8	2025-01-18	4	128	131072	128	Cinnamon | Pumpkin Spice | Cardamon	https://www.eatthismuch.com/calories/cinnamon-185
-1379	\N	Cep Mushrooms	\N	\N	f	0	15	86	2025-11-06	0	86	3	86	Cep Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
-1380	\N	Procini Mushrooms	\N	\N	f	0	15	86	2025-11-08	0	86	3	86	Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
-1381	\N	Dried Cep Mushrooms	\N	\N	f	0	15	86	2025-10-28	0	86	3	86	Dried Cep Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
-1382	\N	Dried Procini Mushrooms	\N	\N	f	0	15	86	2025-11-01	0	86	3	86	Dried Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
-1383	\N	Dried Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Dried Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
-1384	\N	Dried Oyster Mushrooms	\N	\N	f	0	15	86	2025-11-08	0	86	3	86	Dried Oyster Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
-1385	\N	Dried Cep Mushrooms | Dried Procini Mushrooms	\N	\N	f	0	15	86	2025-11-06	0	86	3	86	Dried Cep Mushrooms | Dried Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
+1379	\N	Cep Mushrooms	\N	\N	f	0	15	86	2025-11-06	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1380	\N	Procini Mushrooms	\N	\N	f	0	15	86	2025-11-08	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1381	\N	Dried Cep Mushrooms	\N	\N	f	0	15	86	2025-10-28	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1382	\N	Dried Procini Mushrooms	\N	\N	f	0	15	86	2025-11-01	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1383	\N	Dried Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1384	\N	Dried Oyster Mushrooms	\N	\N	f	0	15	86	2025-11-08	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1385	\N	Dried Cep Mushrooms | Dried Procini Mushrooms	\N	\N	f	0	15	86	2025-11-06	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
 1386	\N	Pork Escalopes	\N	\N	f	0	112	178	2025-03-20	0	224	268435456	224	Pork Escalopes	https://www.eatthismuch.com/calories/pork-loin-center-loin-chops-1646
 1387	\N	Juniper Berries	\N	\N	f	0	28	148	2024-11-28	4	148	131072	148	Juniper Berries	https://www.eatthismuch.com/calories/juniper-berries-482361
 1388	\N	Noodles	\N	\N	f	262176	4.75	38	2025-08-09	4	38	4096	38	Noodles	https://www.eatthismuch.com/calories/egg-noodles,4912
@@ -1277,7 +1277,7 @@
 1627	\N	Chicken Drumsticks	\N	\N	f	1048576	73	73	2025-03-24	0	146	268435456	146	Chicken Drumsticks	https://www.eatthismuch.com/calories/chicken-drumstick-455
 1628	\N	Chicken Legs, Skin On, Bone In, Roasted	\N	Cooked	f	1048576	114	28	2025-03-13	0	114	268435456	114	Chicken Legs, Skin On, Bone In, Roasted	https://www.eatthismuch.com/calories/chicken-leg-467
 1631	\N	Pasta Sauce w/ Meat	\N	\N	f	0	28	257	2025-03-30	4	257	256	257	Pasta Sauce w/ Meat	https://www.eatthismuch.com/calories/pasta-sauce-849
-1632	\N	Pasta Sauce w/ Mushrooms	\N	\N	f	0	28	257	2025-03-30	4	257	256	257	Pasta Sauce w/ Mushrooms	https://www.eatthismuch.com/calories/pasta-sauce-849
+1632	\N	Pasta Sauce w/ Mushrooms	\N	\N	f	0	28	257	2025-03-30	4	257	256	257	Pasta Sauce	https://www.eatthismuch.com/calories/pasta-sauce-849
 1633	\N	Fresh Peppermint	\N	\N	t	0	15	15	2025-06-18	7	240	3	240	Fresh Peppermint	\N
 1634	\N	Canned Solid White Tuna	\N	\N	f	0	28.35	28.35	2025-09-02	4	226.8	512	226.8	Canned Solid White Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/
 1635	\N	Canned Chunk Light Tuna	\N	\N	f	0	28.35	28.35	2025-09-02	4	226.8	512	226.8	Canned Chunk Light Tuna	https://www.eatthismuch.com/food/nutrition/tuna,3373/
@@ -1294,7 +1294,7 @@
 1646	\N	Coarse Salt	\N	\N	t	0	6	1.5	2025-07-24	8	288	131072	288	Salt	https://www.eatthismuch.com/food/nutrition/sea-salt,1724578/
 1647	\N	Dried Marjoram	\N	\N	f	0	1	2	2026-01-05	3	27	131072	27	Marjoram	https://www.eatthismuch.com/calories/marjoram-198
 1648	\N	Ground Sumac	\N	\N	f	0	28	4	2024-12-31	4	192	131072	192	Sumac	https://www.eatthismuch.com/calories/sumac-540983
-1649	\N	Dried Shiitake Mushrooms	\N	\N	f	0	15	86	2025-11-01	0	86	3	86	Dried Procini Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
+1649	\N	Dried Shiitake Mushrooms	\N	\N	f	0	15	86	2025-11-01	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
 1650	\N	Slices of American Cheese, Low-Fat	\N	\N	f	4	21	21	2026-01-06	0	140	8388608	113	American Cheese	https://www.eatthismuch.com/calories/american-cheese-5748
 1651	\N	French Bread	\N	\N	f	32	29	57	2025-07-25	0	57	64	57	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925
 1652	\N	Italian Bread	\N	\N	f	32	29	57	2025-07-25	0	57	64	57	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925
@@ -1342,7 +1342,7 @@
 1727	\N	Parsley	\N	\N	f	0	28	4	2024-09-26	4	60	3	60	Parsley	https://www.eatthismuch.com/calories/parsley-2057
 1728	\N	White Bread	\N	\N	f	32	25	25	2024-11-01	0	25	64	25	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021
 1729	\N	Loaves of White Bread	aka: White Bread Loaf.	\N	f	32	25	25	2024-11-01	0	25	64	25	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021
-1730	\N	Flat Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushrooms	https://www.eatthismuch.com/calories/mushrooms-2594
+1730	\N	Flat Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
 1731	\N	Olive Oil | Butter | Ghee	\N	\N	f	0	28	14	2025-10-06	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/olive-oil-266
 1732	\N	Hummus	\N	\N	f	0	28	30	2024-10-21	4	240	8	240	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679
 1733	\N	Guacamole	\N	\N	f	0	28	30	2024-10-21	4	240	8	240	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679
@@ -1350,3 +1350,6 @@
 1735	\N	Small White Onions	\N	\N	f	0	70	110	2024-12-25	0	115	2	115	Onion	https://www.eatthismuch.com/calories/onions-2042
 1736	\N	Chicken Broth | Beef Broth	\N	\N	f	1048576	240	240	2025-06-27	6	240	928	240	Chicken Broth | Vegetable Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436
 1737	\N	Chicken Broth | Beef Broth | Water	\N	\N	f	1048576	240	240	2025-06-27	6	240	928	240	Chicken Broth | Vegetable Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436
+1738	\N	Portobello Mushrooms	\N	\N	f	0	15	86	2025-11-09	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
+1739	\N	White Balsamic Vinegar	\N	\N	f	0	30	255	2025-12-28	9	255	32	255	Balsamic Vinegar	https://www.eatthismuch.com/calories/balsamic-vinegar-235
+1740	\N	Granulated Garlic	Texture of sand.	\N	t	0	10	10	2024-10-18	7	160	131072	160	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195
