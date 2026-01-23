@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Web.Code.Attributes;
 using Web.Views.Recipes;
+using static System.Net.WebRequestMethods;
 
 namespace Web.Controllers.Recipes;
 
@@ -32,7 +33,7 @@ public class RecipesController : ViewController
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    [Route("")]
+    [Route(""), AcceptVerbs(Http.Get, Http.Post)]
     [ResponseCompression(Enabled = !DebugConsts.IsDebug)]
     public async Task<IActionResult> All(RecipesViewModel? viewModel = null)
     {
