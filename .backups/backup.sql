@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 40nOrZBoAs3NBxddhYx25QGhRXV0xn76szGkeftAKvLvva1bwKtsZNqNjx9EE7m
+\restrict qJtpbXphewXrEdux32Nq2hcLjtv1nMTlag6euBpOnKcl98FKiEqwrhHxUtBmhhu
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1452,7 +1452,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 264	309	1	f
 264	311	1	f
 212	315	1	f
-316	225	1	f
 316	302	1	f
 319	291	1	f
 288	265	1	f
@@ -1615,6 +1614,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 564	563	1	t
 559	30	1	t
 572	511	1	t
+316	225	1	t
 287	331	1	f
 287	587	1	f
 287	586	1	f
@@ -2288,10 +2288,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 957	1082	1	f
 957	1169	1	f
 1083	1169	1	f
-316	1216	1	f
-316	1734	1	f
-316	1735	1	f
-316	1321	1	f
 1321	1735	1	f
 1321	1734	1	f
 3	1734	1	f
@@ -2309,6 +2305,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1740	71	1	f
 1740	713	1	f
 713	1740	1	f
+316	1735	1	t
 713	71	1	f
 71	713	1	f
 1743	839	1	f
@@ -2325,6 +2322,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1753	577	1	t
 1752	1751	1	f
 1751	1752	1	f
+316	1321	1	f
+316	1734	1	t
+316	1216	1	t
 \.
 
 
@@ -13026,6 +13026,16 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17775	624	1984	\N	3	0.1
 17776	624	62	\N	3	2
 17777	624	2047	\N	3	9
+17778	1709	68719476736	\N	2	0.4
+17779	1709	34359738368	\N	2	11
+17780	1709	1	\N	3	0.1
+17781	1709	4294967296	\N	2	5
+17782	1709	2199023255552	\N	2	0.1
+17783	1709	48	\N	3	0.2
+17784	1709	14	\N	3	0.1
+17785	1709	1984	\N	3	0.1
+17786	1709	62	\N	3	0.4
+17787	1709	2047	\N	3	2
 \.
 
 
@@ -15295,8 +15305,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6199	8	553	1	1	\N	307	f	\N	4	f	t	\N	1
 6200	0	553	1	6	\N	5	f	\N	5	f	t	\N	1
 5229	8	192	8	1	\N	285	t	\N	8	f	t	\N	1
-6801	0	632	1	1	\N	396	f	\N	5	f	t	\N	1
-6802	6	632	1	2	\N	206	f	\N	6	f	t	\N	1
+6801	0	632	1	1	\N	396	f	\N	6	f	t	\N	1
+6802	6	632	1	2	\N	206	t	\N	7	f	t	\N	1
 6210	5	555	1	1	\N	1086	f	\N	0	f	t	\N	1
 6245	0	559	1	6	\N	7	f	\N	5	f	t	\N	1
 6212	0	555	1	2	, sliced thin	225	t	\N	2	f	t	\N	1
@@ -15380,7 +15390,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6308	6	569	4	1	\N	296	t	\N	4	f	t	\N	1
 6309	7	569	1	1	\N	81	t	\N	5	f	t	\N	1
 7145	8	706	8	1	\N	285	f	\N	8	f	t	\N	1
-6797	7	632	1	3	, divided	77	f	\N	1	f	t	\N	0.25
 6202	7	554	1	1	\N	77	f	\N	0	f	t	\N	0.25
 7370	7	741	1	1	\N	77	f	\N	4	f	t	\N	0.25
 6412	7	582	1	2	\N	77	f	\N	2	f	t	\N	0.25
@@ -15408,6 +15417,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6340	6	574	1	2	, chopped	251	t	\N	6	f	t	\N	1
 6341	6	574	1	2	, chopped	13	t	\N	7	f	t	\N	1
 6342	6	574	1	2	, chopped	2	t	\N	8	f	t	\N	1
+6797	7	632	1	3	, divided	77	f	\N	2	f	t	\N	0.25
 6317	6	572	2	1	\N	81	f	\N	0	f	t	\N	1
 6318	6	572	4	1	\N	1102	f	\N	1	f	t	\N	1
 6319	6	572	1	4	, chopped	1133	f	\N	2	f	t	\N	1
@@ -15812,7 +15822,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6459	8	586	4	1	, to taste	692	t	\N	7	f	t	\N	1
 5714	7	416	1	2	\N	13	t	\N	8	f	t	\N	1
 5915	6	478	4	1	\N	1643	t	\N	7	f	t	\N	1
-6796	0	632	1	1	\N	1618	f	\N	0	f	t	\N	1
+6796	0	632	1	1	\N	1618	f	\N	1	f	t	\N	1
 6734	0	623	1	3	\N	187	f	\N	0	f	t	\N	1
 6735	7	623	1	6	\N	234	f	\N	1	f	t	\N	1
 6736	6	623	2	1	\N	38	f	\N	2	f	t	\N	1
@@ -15820,8 +15830,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6738	7	623	1	1	, for dusting	234	t	\N	4	f	t	\N	1
 6739	6	623	1	1	\N	562	f	\N	5	f	t	\N	1
 6740	6	623	3	4	\N	626	f	\N	6	f	t	\N	1
-6798	8	632	4	1	\N	285	t	\N	2	f	t	\N	1
-6799	6	632	1	1	, sliced	222	f	\N	3	f	t	\N	1
+6798	8	632	4	1	\N	285	t	\N	3	f	t	\N	1
+6799	6	632	1	1	, sliced	222	t	\N	4	f	t	\N	1
 6731	7	622	1	2	\N	232	f	\N	1	f	t	\N	1
 6775	6	629	1	1	\N	57	f	\N	1	f	t	\N	1
 6778	6	630	2	1	, softened	29	f	\N	2	f	t	\N	0.25
@@ -16513,6 +16523,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8460	0	998	1	1	\N	985	f	\N	1	f	t	\N	1
 1571	0	95	1	2	, chopped	302	f	\N	4	f	t	\N	1
 4755	0	272	1	2	, minced	5	f	\N	9	f	t	\N	1
+8476	7	632	1	2	\N	357	t	\N	8	f	t	\N	1
+8477	0	632	1	2	\N	1176	t	\N	9	f	t	\N	1
 7211	8	716	8	1	\N	285	t	\N	7	f	t	\N	1
 7492	0	787	1	1	\N	1216	f	\N	0	f	t	\N	1
 7493	0	787	1	2	\N	1329	f	\N	1	f	t	\N	1
@@ -17231,11 +17243,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8209	0	973	1	1	(JACKET POTATOES AND GREEN SALAD, TO SERVE	806	f	\N	6	f	t	\N	1
 8076	6	957	2	1	, sliced	736	f	\N	7	f	t	\N	1
 8077	8	957	8	1	, ground	67	t	\N	8	f	t	\N	1
+6800	6	632	1	1	, sliced	595	t	\N	5	f	t	\N	1
 8228	6	636	2	1	, crushed	1619	t	\N	7	f	t	\N	1
 7501	0	788	1	4	, 5-oz each	387	f	\N	4	f	t	\N	1
 8175	7	970	1	2	\N	1616	f	\N	3	f	t	\N	1
 8225	6	977	1	1	\N	486	f	\N	0	f	t	\N	1
-6800	6	632	1	1	, sliced	595	f	\N	4	f	t	\N	1
 8224	8	976	8	1	\N	75	f	\N	3	f	t	\N	1
 8212	0	974	1	4	\N	324	f	\N	3	f	t	\N	1
 8143	0	966	1	1	\N	387	f	\N	1	f	t	\N	1
@@ -17711,6 +17723,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2920	Place the lid on your slow cooker and set it to high for 1 hour.	322	1	1024
 2889	Place a poached egg on each salad. Top with thin Parmesan shavings and a little ground black pepper.	84	3	0
 3133	Serve chilled.	413	2	0
+4774	Wrap the sandwich tightly in foil and let it sit for about 5 minutes before eating. This will soften the bread and allow all the flavors to combine.	632	7	0
 3369	Once the mixture has been cooled, form into patties and place on a lined plate.	536	1	0
 1152	In a large mixing bowl, combine romaine, arugula, chicken, corn, beans and feta. Toss with dressing and transfer to a salad bowl.	117	0	0
 1153	Garnish with fresh diced tomatoes, avocado slices, tortilla strips, and fresh herbs.	117	1	0
@@ -18052,16 +18065,16 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2366	In a small, lidded saucepan, bring the water to a gentle boil with the cashews, Brazil nuts and pecans. Simmer for 10 minutes, until the nuts have softened.	254	0	0
 2367	Transfer the nuts and liquid to a food processor and add the remaining ingredients. To use the vanilla pod, split it in two lengthwise then scrape each side with the back of a knife to remove the seeds (use the seeds and discard the pod).	254	1	0
 2369	Serve immediately, drizzled with a touch more maple syrup.	254	3	0
-3709	Preheat a medium skillet over medium-high heat. Add 1 tablespoon of olive oil. Season the room-temperature steak well with salt and pepper. Add to the pan and sear for 3 minutes on each side. Take the steak out of the pan, place it on a plate, and let it rest for 5 minutes.	632	2	0
 2503	The night before, put your mung beans to soak in a pan with 6–8 cups of water. When ready to use, drain and rinse the beans. Set aside.	267	0	0
 2584	In a large sauté pan, heat the oil over medium heat. Add the bay leaf, cardamom pods, cinnamon stick, cumin seeds and curry or chili powder, if using. Warm the spices gently until they become fragrant.	272	0	4
 3259	Toss all ingredients and serve.	477	0	0
 2585	Add the onion and sauté for 7–10 minutes until translucent. Add the garlic and cook another few minutes before adding the rice.	272	1	4
 2586	Stir frequently until the rice is fully heated through and completely coated in the spices.	272	2	4
+3709	Preheat a medium skillet over medium-high heat. Add 1 tablespoon of olive oil. Season the room-temperature steak well with salt and pepper. Add to the pan and sear for 3 minutes on each side. Take the steak out of the pan, place it on a plate, and let it rest for 5 minutes.	632	2	4
+3710	Meanwhile, return the skillet to the heat and add 1 tablespoon of oil, the onions, and mushrooms and cook for 4–5 minutes, or until the onions are soft, and the mushrooms are lightly browned.	632	3	4
 3091	Combine in a dutch oven and bake at 350°F for 2 hours.	399	0	0
 3105	Serve immediately.	403	5	0
 3320	When the veggies are done, remove from the oven and sprinkle with additional black pepper, the dried cranberries, and chopped walnuts. Drizzle with the Maple Syrup Balsamic dressing and enjoy!	522	3	0
-3710	Meanwhile, return the skillet to the heat and add 1 tablespoon of oil, the onions, and mushrooms and cook for 4–5 minutes, or until the onions are soft, and the mushrooms are lightly browned.	632	3	0
 2504	Heat the oil in a large saucepan. Add the spices and toast them in the oil until they become nicely fragrant. Add the onions and cook, stirring, for 5–7 minutes. Add the garlic and cook 1–2 minutes more.	267	1	4
 2022	Peel and core the pear and apple, then dice. Remove peel and pith from the orange and cut into wedges. Add all the cut fruit to the pan with the raspberries and blackberries.	158	1	4
 3448	Combine the mayo, along with the remaining ingredients, in a bowl. Serve immediately.	566	0	0
@@ -18083,7 +18096,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2057	Form the mixture into chipolata-size sausages using floured hands.	178	1	0
 2058	Heat the oil in a large, heavy frying pan and shallow-fry the sausages for 10 minutes or until they are golden brown and cooked right through.	178	2	0
 2059	If you use a large pan, you'll be able to fry some onion rings alongside the sausages. At the same time, grill (broil) mushrooms and halved tomatoes to serve on the side.	178	3	0
-3711	Slice the baguette horizontally in half lengthwise. Brush with the remaining 1 tablespoon olive oil and toast in the oven for 4–5 minutes, until lightly toasted.	632	4	0
 3400	In a blender, add the lemon and orange juice, as well as the coconut water through activated charcoal, and blend for 30 seconds until combined.	552	1	0
 3260	Combine all ingredients in a large bowl and serve.	478	0	0
 3321	Top each with 1-2 cucumber slices and a small sprig of dill, parsley, or cilantro.	48	1	0
@@ -18113,6 +18125,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2055	Spoon the entire mixture on to a warm serving platter or individual serving dishes, and garnish with the sliced chillies and basil leaves.	133	4	0
 2782	Add the cream and thyme and transfer everything to a food processor. Process until smooth and creamy, about 2–3 minutes.	259	1	0
 2783	Add salt and pepper to taste, and process to combine well. Transfer the mixture to a container (with lid) and store in the refrigerator. It will thicken as it cools.	259	2	0
+3711	Slice the baguette horizontally in half lengthwise. Brush with the remaining 1 tablespoon olive oil and toast in the oven for 4–5 minutes, until lightly toasted.	632	4	2
 2066	Add the sauces and sugar to the wok and cook for a further 2-3 minutes. Add the drained noodles, toss to combine, then remove from the heat, cover and keep warm.	196	2	0
 2067	Dip the chicken strips into the egg white. Combine the rice flour and five-spice powder in a shallow dish and season. Add the chicken strips to the flour mixture and toss to coat.	196	3	0
 2068	Heat about 3.5cm/1½ oil in a clean wok. When hot, shallow-fry the chicken for 3-4 minutes until crisp and golden.	196	4	0
@@ -18893,7 +18906,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2663	Heat the olive oil in a wok or large frying pan and add the broccoli. Stir-fry for 3–4 minutes, or until tender, adding a splash of water if the pan becomes too dry.	170	2	4
 2664	Add the soy sauce to the broccoli, then season with salt and ground black pepper to taste. Add sesame seeds, toss to combine and serve immediately.	170	3	0
 4509	Taste the rice and add a bit of salt if it needs it. Stir in the scallion greens and serve.	956	4	0
-3707	Take the steak out of the fridge and let it sit at room temperature for 30 minutes before cooking.	632	0	0
 4454	In a medium bowl, mix the flour, poultry seasoning, salt and pepper.	945	2	0
 2614	Rip off and reserve the top leafy half of the mint. Put the stalks in a pan of boiling salted water, then add the beans and peas and cook for 4 minutes. 	306	0	4
 3713	Season to taste with salt and pepper. Return the chops to the skillet and turn to coat with the glaze. Serve immediately, pouring extra glaze on top.	390	2	4
@@ -18918,6 +18930,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3702	To make the topping, put the butter, sugar, and syrup in a pan, and heat until melted. Bring to the boil. Allow to simmer for 5 minutes, then stir in the chopped nuts. 	630	4	4
 3728	Transfer the steak to a board and leave to rest for 2 minutes. Meanwhile, heat the marinade in a pan. Cook for a few seconds, then remove from the heat. Slice the steak thinly and arrange on four serving plates with the mangoes. Drizzle over the pan juices and serve with some salad leaves dressed with lemon and oil.	636	2	4
 2615	Meanwhile, halve and seed the chili and finely chop with the top leafy half of the mint. Place in a bowl, finely grate over a little lemon zest, then squeeze in all the juice. Add 2 tablespoons of extra virgin olive oil, mix, taste, and season to perfection with sea salt and black pepper.	306	1	0
+3707	Take the steak out of the fridge and let it sit at room temperature for 30 minutes before cooking.	632	0	0
 4455	Take the chicken out of the buttermilk and let any excess drip off. Put the chicken in the flour mixture and toss to coat. Let the chicken sit in the flour for 20 minutes.	945	3	0
 4320	When the pork is ready, take it out of the oven and let it rest for 20 minutes. Then pull it apart using two forks, mix in the reserved sauce, and serve.	867	4	0
 4453	Put the chicken in a container, coat in the buttermilk, cover with plastic wrap and refrigerate for 2 hours.	945	1	65536
@@ -19080,7 +19093,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3880	Take the chocolate out of the fridge. Spoon out a tablespoon-size ball of chocolate and roll it in the cocoa powder. Repeat the process until all the chocolate mix has been rolled in the cocoa.	702	3	0
 3875	In a bowl, with an electric mixer, beat the cream cheese until it is smooth. Add the heavy cream and sugar and beat until it is fully combined. Add the cocoa to the mix and beat on low until it is fully mixed in.	701	0	0
 3876	Grab four 16-ounce cups and put the cookie crumbs in the bottom of the cups. Top with the cheese mixture. Cover the cups with plastic wrap and refrigerate for 1 hour to set.	701	1	65536
-4337	To assemble the sandwich, lay the mushrooms and onions down on the bread first, slice the steak across the grain into ¼-inch thick slices, and put it on top. Top the sandwich with the other slice of bread. Wrap the sandwich tightly in foil and let it sit for about 5 minutes before eating. This will soften the bread and allow all the flavors to combine.	632	6	0
 3766	Add the brandy and stock to the pan, boil rapidly until reduced by half, then season with salt and pepper to taste. Slice the chive butter and put a piece on top of each steak. Spoon a little sauce on to each plate. Garnish each steak with a chive bundle and serve with a simple vegetable accompaniment, such as boiled new potatoes.	646	3	0
 3903	In a large bowl, combine the melted butter, brown sugar, and honey. Add the oats and nuts.	712	1	0
 3904	Spread the mixture onto the lined pan. Transfer to the oven and bake the granola for 30 minutes, giving it a stir every 10 minutes or so.	712	2	2
@@ -19529,7 +19541,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4379	Pat the chicken dry inside and out with a paper towel. Rub the chicken all over with the olive oil.	905	1	0
 4335	Pour in ¾ cup of cold water along with 3 tablespoons each of extra virgin olive oil and red wine vinegar, then season well with sea salt and black pepper. Whiz together, then add 10 oz of ice and blitz again until silky-smooth — you may need to work in batches. Taste and adjust the seasoning, if needed.	786	2	128
 4336	Serve sprinkled with the reserved garnishes (leave whole or finely chop in a delicate fashion, whatever you prefer) and a drizzle of extra virgin olive oil, if you like. An extra ice cube or two is always a nice touch, too. Serve the crispy toasts alongside for dunking.	786	3	0
-3712	Add the spinach to the skillet with the mushrooms and onions, season it with salt and pepper, and cook until the spinach is wilted. Remove from the heat and dish up on a plate with the steak.	632	5	0
+3712	Add the spinach to the skillet with the mushrooms and onions, season it with salt and pepper, and cook until the spinach is wilted. Remove from the heat and dish up on a plate with the steak.	632	5	4
 4388	Slowly whisk in the sesame oil, a few drops at a time until all of it has been incorporated.	720	1	0
 4338	Toast the bread, then top with guacamole, tomato slices, chicken, and bacon.	871	0	102
 960	Cook the pasta in a large pan of boiling salted water according to the package instructions. Meanwhile, snap the woody ends off the asparagus, then slice the spears roughly the same length as the pasta, having any thick spears lengthways.	104	0	4
@@ -19660,6 +19672,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4738	While oven heats: place chicken thighs skin side up in roasting pan. Add cut potatoes all around and in between chicken pieces. In a bowl, juice your lemon and orange. Add spicy brown mustard and whisk. Pour over chicken and potatoes.	994	1	0
 4739	Drizzle potatoes and chicken with olive oil, then sprinkle generously with oregano, sea salt and pepper. Cover tightly with foil and place in the oven for 60 minutes. Remove foil and cook for 30 more minutes to brown chicken and potatoes.	994	2	0
 4740	Ten minutes before chicken is done, steam broccoli until desired tenderness is achieved. When chicken is done, remove form oven. Add broccoli to pan and serve. Be sure to spoon the liquid at the bottom of the pan over broccoli. Enjoy!	994	3	4
+4337	To assemble the sandwich, brush the baguette with a little Dijon mustard, lay the mushrooms and onions down on the bread, then slice the steak across the grain into ¼-inch thick slices, and put it on top. Top the sandwich with a slice of Swiss cheese, then the other slice of bread.	632	6	0
 \.
 
 
@@ -19705,7 +19718,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17777, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17787, true);
 
 
 --
@@ -20415,5 +20428,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 40nOrZBoAs3NBxddhYx25QGhRXV0xn76szGkeftAKvLvva1bwKtsZNqNjx9EE7m
+\unrestrict qJtpbXphewXrEdux32Nq2hcLjtv1nMTlag6euBpOnKcl98FKiEqwrhHxUtBmhhu
 
