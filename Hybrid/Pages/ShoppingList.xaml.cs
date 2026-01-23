@@ -141,6 +141,13 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
                     // Merge local and remote items into the db.
                     var localItems = await _localDatabase.GetItemsAsync();
                     var remoteItems = shoppingList.ShoppingList.Select(sl => new ShoppingListItem(sl)).ToList();
+
+                    // Remove all local items that aren't in the remote dataset and aren't custom items.
+                    foreach (var localItem in localItems.Except(remoteItems).Where(li => !li.IsCustom))
+                    {
+                        await _localDatabase.DeleteItemAsync(localItem);
+                    }
+
                     // Add all the remote items that don't exist in the database.
                     foreach (var remoteItem in remoteItems.Except(localItems))
                     {
