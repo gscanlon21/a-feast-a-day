@@ -4,8 +4,7 @@ namespace Data.Entities.Microbiome;
 
 public class QA_Table
 {
-    [Key]
-    [Required]
+    [Key, Required]
     public int SymptomId { get; set; }
 
     public decimal? Matches { get; set; }

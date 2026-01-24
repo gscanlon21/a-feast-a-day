@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Data.Entities.Microbiome;
 
-class Citations
+public class Citations
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Cid { get; set; }
@@ -27,4 +28,12 @@ class Citations
     public string? JSON { get; set; }
 
     public int? AuditorId { get; set; }
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Mid2TaxCitation.Citation))]
+    public virtual Mid2TaxCitation Mid2TaxCitation { get; private init; } = null!;
+
+    #endregion
 }

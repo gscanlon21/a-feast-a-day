@@ -5,8 +5,8 @@ namespace Data.Entities.Microbiome;
 
 public class UserLabs
 {
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Required]
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ULId { get; set; }
 
     [Required]

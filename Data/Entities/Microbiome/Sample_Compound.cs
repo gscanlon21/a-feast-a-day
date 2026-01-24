@@ -5,12 +5,12 @@ namespace Data.Entities.Microbiome;
 
 public class Sample_Compound
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int CPID { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Sampleid { get; set; }
 
     public double? Cnt { get; set; }

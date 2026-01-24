@@ -400,7 +400,7 @@
 584	Pizza Egg Bites	\N	\N	\N	6	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-587	Bigos (Polish Hunter's Stew)	\N	\N	\N	4	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+587	Bigos (Polish Hunter's Stew)	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	\N	\N	\N	4	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cooled-rice.jpg	6	\N	t	f
 590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	Too complicated.	\N	8	60	10	4	t	stuffed-peppers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -524,7 +524,7 @@
 742	Chicken Parmesan	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
 743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
 744	Pear & Gorgonzola Farfalle	\N	\N	\N	4	15	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
-745	Beef Stroganoff	\N	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
+745	Beef Stroganoff	You can substitute canned fat-free condensed cream of mushroom soup or cream of chicken soup as an alternative for the cream-style corn.	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
 746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 747	Paleo Banana Muffins	\N	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 748	Chickpea Burgers	\N	\N	\N	0	40	40	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -645,7 +645,9 @@
 993	Pasta with Brussels Sprouts and Pancetta	\N	\N	\N	12	15	10	4	t	\N	0	https://www.theorganickitchen.org/pasta-with-brussels-sprouts-and-pancetta/	f	f
 994	Lemon Chicken with Roasted Potatoes	\N	\N	\N	8	90	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 995	Egg, Bean and Chorizo Tostada w/ Salsa Verde	\N	\N	\N	6	7	3	2	t	egg-bean-chorizo-tostada.jpg	0	https://www.theorganickitchen.org/egg-bean-and-chorizo-tostada-with-salsa-verde/	f	f
-996	Parmesan Potato Waffle	Optional: chives or green onions, tabasco, or chili crisp. for garnish and added flavor	\N	\N	6	15	5	2	t	\N	0	https://www.theorganickitchen.org/parmesan-potato-waffle/	f	f
+996	Parmesan Potato Waffle	\N	\N	\N	6	15	5	2	t	\N	0	https://www.theorganickitchen.org/parmesan-potato-waffle/	f	f
 997	Easy Sweet Potato Lentil Soup	Save the remaining coconut milk for adding liquid to leftovers.   *You can use any type of greens in this soup, and add more to your liking. 	\N	\N	8	30	15	8	t	\N	0	https://www.acouplecooks.com/sweet-potato-lentil-soup/	f	f
 998	Stovetop Bacon Slices	\N	\N	\N	0	10	5	1	t	bacon.jpg	0	\N	t	f
 1000	Fried Breadcrumbs	\N	\N	\N	0	5	5	4	t	\N	4	\N	t	f
+1001	Peanut Sauce	You can substitute with peanut butter with almond or cashew butter.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
+1002	Broccoli Salad w/ Peanut Sauce	\N	\N	\N	20	0	5	2	t	\N	0	https://www.theorganickitchen.org/broccoli-salad-with-peanut-sauce/	f	f

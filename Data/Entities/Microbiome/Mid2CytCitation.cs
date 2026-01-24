@@ -1,26 +1,36 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Data.Entities.Microbiome;
 
 public class Mid2CytCitation
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int Mid2 { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Cyid { get; set; }
 
-    [Key, Column(Order = 2)]
     [Required]
-    public int Cid { get; set; }
+    [Key, Column(Order = 2)]
+    public int CitationId { get; set; }
+    public int Cid => CitationId;
 
     [Required]
     public int Change { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Required]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int RuleId { get; set; }
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Citations.Mid2TaxCitation))]
+    public virtual Citations Citation { get; private init; } = null!;
+
+    #endregion
 }

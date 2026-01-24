@@ -2,7 +2,7 @@
 
 namespace Data.Entities.Microbiome;
 
-class Working_Thorne
+public class Working_Thorne
 {
     [Required]
     public string Domain { get; set; } = null!;

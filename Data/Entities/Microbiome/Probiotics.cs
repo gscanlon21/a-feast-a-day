@@ -11,8 +11,8 @@ public class Probiotics
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Required]
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ProId { get; set; }
 
     [Required]

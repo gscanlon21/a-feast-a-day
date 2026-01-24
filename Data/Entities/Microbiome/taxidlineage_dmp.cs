@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Microbiome;
 
 [Table("ncbi_taxidlineage_dmp")]
-class taxidlineage_dmp
+public class taxidlineage_dmp
 {
-    [Key]
-    [Required]
+    [Key, Required]
     public int D_Taxon { get; set; }
 
     public string D_Hierarchy { get; set; } = null!;

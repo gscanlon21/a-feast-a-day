@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace Data.Entities.Microbiome;
 
@@ -32,12 +33,22 @@ public class Condition
 
     [Required]
     [Key, Column(Order = 4)]
-    public int Cid { get; set; }
+    public int CitationId { get; set; }
+    public int Cid => CitationId;
 
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int FactId { get; set; }
 
     public DateTime? Added { get; set; }
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Citations.Mid2TaxCitation))]
+    public virtual Citations Citation { get; private init; } = null!;
+
+    #endregion
+
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Salicylate other

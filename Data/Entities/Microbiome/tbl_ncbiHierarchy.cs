@@ -6,15 +6,14 @@ namespace Data.Entities.Microbiome;
 [Table("TODO")]
 public class tbl_ncbiHierarchy
 {
-    [Key, Column("taxon")]
     [Required]
+    [Key, Column("taxon")]
     public int Taxon { get; set; }
 
-    [Column("parent")]
     [Required]
+    [Column("parent")]
     public int Parent { get; set; }
 
     [Column("rank")]
-    [Required]
     public string Rank { get; set; } = string.Empty;
 }

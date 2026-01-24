@@ -5,16 +5,15 @@ namespace Data.Entities.Microbiome;
 
 public class TaxonInteractions
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int Taxon { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int ImpactTaxon { get; set; }
 
     [Key, Column(Order = 2)]
-    [Required]
     public int Direction { get; set; }
 }
 

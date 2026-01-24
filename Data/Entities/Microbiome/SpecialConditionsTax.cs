@@ -11,12 +11,12 @@ public class SpecialConditionsTax
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int SymptomId { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Taxon { get; set; }
 
     public double? Q4High { get; set; }

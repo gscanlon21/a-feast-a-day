@@ -5,12 +5,12 @@ namespace Data.Entities.Microbiome;
 
 public class SymptomEquivalent
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int SId { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int Sid2 { get; set; }
 }
 

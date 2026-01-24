@@ -5,16 +5,16 @@ namespace Data.Entities.Microbiome;
 
 public class SourceSymptomCompound
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public string Source { get; set; } = null!;
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int SymptomId { get; set; }
 
-    [Key, Column(Order = 2)]
     [Required]
+    [Key, Column(Order = 2)]
     public int CPID { get; set; }
 
     public double? Chi2 { get; set; }

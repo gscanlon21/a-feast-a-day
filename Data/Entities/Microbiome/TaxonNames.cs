@@ -3,13 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.Microbiome;
 
-class TaxonNames
+public class TaxonNames
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public string TaxonName { get; set; } = null!;
 
     [Key, Column(Order = 1)]
-    [Required]
     public int Taxon { get; set; }
 }

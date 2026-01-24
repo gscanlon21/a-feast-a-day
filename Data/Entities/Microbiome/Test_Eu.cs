@@ -1,6 +1,6 @@
 ﻿namespace Data.Entities.Microbiome;
 
-class Test_Eu
+public class Test_Eu
 {
     public int? Taxon { get; set; }
 

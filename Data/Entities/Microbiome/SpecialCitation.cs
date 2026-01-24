@@ -1,17 +1,27 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Data.Entities.Microbiome;
 
 [Table("SpecialCitation")]
 public class SpecialCitation
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int SpecialId { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
-    public int Cid { get; set; }
+    [Key, Column(Order = 1)]
+    public int CitationId { get; set; }
+    public int Cid => CitationId;
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Citations.Mid2TaxCitation))]
+    public virtual Citations Citation { get; private init; } = null!;
+
+    #endregion
 }
 

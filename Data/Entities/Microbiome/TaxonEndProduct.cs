@@ -1,25 +1,34 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Data.Entities.Microbiome;
 
-class TaxonEndProduct
+public class TaxonEndProduct
 {
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int Taxon { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int EPID { get; set; }
 
     [Key, Column(Order = 2)]
-    [Required]
-    public int CID { get; set; }
+    public int CitationId { get; set; }
+    public int Cid => CitationId;
 
     [Required]
     public double Factor { get; set; }
 
     [Required]
     public string Logic { get; set; } = null!;
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Citations.Mid2TaxCitation))]
+    public virtual Citations Citation { get; private init; } = null!;
+
+    #endregion
 }

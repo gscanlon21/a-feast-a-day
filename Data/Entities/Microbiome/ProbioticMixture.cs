@@ -12,12 +12,12 @@ public class ProbioticMixture
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int ProId { get; set; }
 
-    [Key, Column(Order = 1)]
     [Required]
+    [Key, Column(Order = 1)]
     public int ProSpeciesId { get; set; }
 
     public int? UserId { get; set; }

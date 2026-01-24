@@ -4,8 +4,7 @@ namespace Data.Entities.Microbiome;
 
 public class SourceSymptomCounts
 {
-    [Key]
-    [Required]
+    [Key, Required]
     public int SymptomId { get; set; }
 
     public int? Associations { get; set; }

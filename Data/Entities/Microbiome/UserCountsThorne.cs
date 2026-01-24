@@ -16,8 +16,8 @@ public class UserCountsThorne
     [Required]
     public double CountNorm { get; set; }
 
-    [Key, Column(Order = 0)]
     [Required]
+    [Key, Column(Order = 0)]
     public int SampleId { get; set; }
 
     public double? Percentile { get; set; }

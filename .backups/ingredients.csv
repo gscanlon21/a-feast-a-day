@@ -188,14 +188,14 @@
 192	\N	Sour Cream, Reduced Fat	\N	\N	f	260	28	242	2025-02-04	4	242	29360128	242	Sour Cream, Reduced Fat	https://www.eatthismuch.com/calories/sour-cream-54
 193	\N	Slices of White Bread	\N	\N	f	32	25	25	2024-11-01	0	25	64	25	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021
 194	\N	Rice Cakes	\N	\N	f	0	9	9	2024-11-18	0	36	16	36	Rice Cakes	https://www.eatthismuch.com/calories/rice-cakes-4440
-195	\N	Bread Flour, Unenriched	\N	\N	f	32	137	137	2024-09-28	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
+195	\N	Bread Flour, Unenriched	\N	\N	f	262176	28	137	2026-01-25	4	137	32768	137	Bread Flour	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
 196	\N	Cornstarch	\N	\N	t	2	7.68	7.68	2025-07-31	7	128	114688	128	Cornstarch	https://www.eatthismuch.com/food/nutrition/cornstarch,4792/
 197	\N	Slices of White Bread, GF	\N	\N	f	0	24	24	2026-01-10	0	48	64	48	White Bread	https://www.eatthismuch.com/nutrition/gluten-free-bread,14008
 198	\N	Bologna	\N	\N	f	0	28	28	2025-05-03	4	224	268435456	224	Bologna	https://www.eatthismuch.com/calories/bologna-999
 200	\N	Loaves of Whole-Wheat Pita	\N	\N	f	262176	64	64	2025-05-17	0	64	4	64	Loaves of Whole-Wheat Pita	https://www.eatthismuch.com/calories/pita-bread-4002
 201	\N	Creamy Peanut Butter (Reduced Fat)	\N	\N	f	2048	15	15	2025-08-21	7	240	128	240	Creamy Peanut Butter (Reduced Fat)	https://www.eatthismuch.com/calories/peanut-butter-3637
 202	\N	Mini Bagels, Whole Grain	\N	\N	f	262176	40	40	2025-06-15	6	240	64	240	Mini Bagels, Whole Grain	https://www.eatthismuch.com/food/nutrition/whole-grain-mini-bagels,21207/
-203	\N	Popcorn	\N	\N	f	2	28	28	2024-09-29	4	224	3145728	224	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506
+203	\N	Popcorn	\N	\N	f	2	28	28	2026-01-25	4	224	3145728	224	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506
 204	\N	Hearts of Palm Linguine	\N	\N	f	0	28	75	2024-12-20	4	75	4096	75	Hearts of Palm Linguine	https://www.eatthismuch.com/calories/linguine-hearts-of-palm-1846301
 205	\N	Mixed Beans	\N	\N	f	0	140	35	2025-12-24	6	140	256	140	Mixed Beans	https://www.eatthismuch.com/calories/mixed-beans-1618198
 206	\N	Fresh Baby Spinach	\N	\N	f	0	28	60	2025-02-02	4	30	2	30	Fresh Baby Spinach	https://www.eatthismuch.com/calories/baby-spinach,6336
@@ -238,7 +238,7 @@
 245	\N	Rice Vinegar	\N	\N	f	4096	30	15	2024-10-30	9	240	32	240	Rice Vinegar	https://www.eatthismuch.com/calories/rice-wine-vinegar-5822
 246	\N	Vegetable Stock	\N	\N	f	0	30	237	2025-07-20	9	237	928	237	Vegetable Stock	https://www.eatthismuch.com/food/nutrition/vegetable-stock,90206/
 247	\N	Gruyère Cheese	\N	\N	f	4	28	28	2025-03-03	4	224	16	224	Gruyère Cheese	https://www.eatthismuch.com/calories/gruyere-cheese,23
-248	\N	Sliced Ham | Sliced Salami	\N	\N	f	0	28	28	2024-09-29	0	224	8	224	Sliced Ham | Sliced Salami	https://www.eatthismuch.com/calories/sliced-ham-905
+248	\N	Sliced Ham | Sliced Salami	\N	\N	f	0	28	28	2026-01-26	0	224	16	224	Ham | Salami	https://www.eatthismuch.com/calories/sliced-ham-905
 249	\N	Sliced Salami	\N	\N	f	0	10	28	2025-11-28	0	227	268435456	227	Sliced Salami	https://www.eatthismuch.com/calories/pork-salami-939
 250	\N	Fresh Zucchini	\N	\N	f	0	196	196	2025-03-07	0	196	2	196	Fresh Zucchini	https://www.eatthismuch.com/calories/zucchini-2183
 251	\N	Fresh Mint Leaves	\N	\N	f	0	28	3	2025-03-07	4	48	3	48	Fresh Mint Leaves	https://www.eatthismuch.com/calories/mint-91252
@@ -254,7 +254,7 @@
 262	\N	Pepperoni	\N	\N	f	0	28	28	2024-12-30	4	224	268435456	224	Pepperoni	https://www.eatthismuch.com/calories/pepperoni-925
 263	\N	Pork/Beef Pepperoni	\N	\N	f	0	2	28	2025-07-20	0	224	0	224	Pork/Beef Pepperoni	https://www.eatthismuch.com/food/nutrition/pepperoni,925/
 264	\N	Potatoes	\N	\N	f	0	369	369	2025-05-25	0	150	2	150	Potatoes	https://www.eatthismuch.com/calories/potato-2091
-265	\N	White Jasmine Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/white-jasmine-rice-1655821	\N	f	4096	28	45	2024-09-30	4	180	1024	180	White Jasmine Rice	\N
+265	\N	White Jasmine Rice	This is a long grain white rice.	\N	f	4096	28	185	2026-01-26	4	185	1024	185	Rice	https://www.eatthismuch.com/calories/white-rice-4917
 266	\N	White Basmati Rice	This is a long grain white rice. https://www.eatthismuch.com/calories/basmati-rice,45283	\N	f	4096	28	199	2025-07-23	4	199	1024	199	White Basmati Rice	\N
 267	\N	Water Chestnuts	\N	\N	f	0	228	114	2025-03-08	6	228	928	228	Water Chestnuts	https://www.eatthismuch.com/food/nutrition/water-chestnuts,155522/
 268	\N	Seedless Raisins	\N	\N	f	0	28	145	2025-03-01	4	145	3	145	Seedless Raisins	https://www.eatthismuch.com/calories/raisins-1544
@@ -369,7 +369,7 @@
 381	\N	Smoked Pancetta Slices | Smoked Bacon Slices	\N	\N	f	1048576	12	28	2025-07-15	0	224	268435456	224	Smoked Pancetta Slices | Smoked Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
 382	\N	Orecchiette	\N	\N	f	0	28	56	2025-07-13	4	112	4096	112	Orecchiette	https://www.eatthismuch.com/calories/orecchiette-pasta-135993
 383	\N	Sumac	\N	\N	f	0	28	4	2024-12-31	4	192	131072	192	Sumac	https://www.eatthismuch.com/calories/sumac-540983
-385	\N	Gomiti Pasta	\N	\N	f	32	240	100	2024-09-28	6	112	4	112	Gomiti Pasta	\N
+385	\N	Gomiti Pasta	Gomiti elbow pasta is a short hollow pasta tube that can be twisted or straight, synonymous with elbow macaroni.	\N	f	262176	28	28	2026-01-24	4	105	4096	105	Pasta	https://www.eatthismuch.com/calories/macaroni-4927
 386	\N	Tubular Pasta	\N	\N	f	32	28	28	2025-09-23	4	224	4096	224	Tubular Pasta	https://www.eatthismuch.com/calories/whole-wheat-pasta-4878
 387	\N	Boneless Skinless Chicken Breasts	\N	\N	f	1048576	112	112	2025-03-20	0	224	268435456	224	Boneless Skinless Chicken Breasts	https://www.eatthismuch.com/calories/chicken-breast-boneless-skinless-100467
 388	\N	Chicken Thighs, Skin On, Bone In	\N	\N	f	1048576	94	94	2025-03-13	0	94	268435456	94	Chicken Thighs, Skin On, Bone In	https://www.eatthismuch.com/calories/chicken-thigh-480
@@ -383,7 +383,7 @@
 396	\N	Small Rustic Baguette	\N	\N	f	786464	141	47	2025-06-16	0	47	4	47	Small Rustic Baguette	https://www.eatthismuch.com/calories/baguettes-2053200
 397	\N	Black Olives	\N	\N	f	0	28	134	2025-03-19	4	134	3	134	Olive	https://www.eatthismuch.com/calories/olives-1460
 398	\N	Large Black Olives, with Pits	\N	\N	f	0	28	134	2025-03-15	4	134	3	134	Olive	https://www.eatthismuch.com/calories/olives-1460
-399	\N	Brioche Buns	\N	\N	f	0	85	85	2024-09-27	0	85	4	85	Brioche Buns	https://www.eatthismuch.com/calories/brioche-buns-448797
+399	\N	Brioche Buns	\N	\N	f	0	85	85	2026-01-24	0	85	4	85	Brioche Buns	https://www.eatthismuch.com/calories/brioche-buns-448797
 400	\N	Turkey Sausage	\N	\N	f	0	28	28	2025-12-04	4	224	268435456	224	Turkey Sausage	https://www.eatthismuch.com/calories/turkey-sausage,994
 401	\N	Sausages	\N	\N	f	0	83	83	2025-08-06	0	166	268435456	166	Sausages	https://www.eatthismuch.com/food/nutrition/italian-sausage,952/
 402	\N	Chorizo	\N	\N	f	0	28	28	2025-07-05	4	224	268435456	224	Chorizo	https://www.eatthismuch.com/calories/pork-and-beef-chorizo-895
@@ -1344,8 +1344,8 @@
 1729	\N	Loaves of White Bread	aka: White Bread Loaf.	\N	f	32	25	25	2024-11-01	0	25	64	25	Slices of White Bread	https://www.eatthismuch.com/calories/white-bread-4021
 1730	\N	Flat Mushrooms	\N	\N	f	0	15	86	2025-10-31	0	86	3	86	Mushroom	https://www.eatthismuch.com/calories/mushrooms-2594
 1731	\N	Olive Oil | Butter | Ghee	\N	\N	f	0	28	14	2025-10-06	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/olive-oil-266
-1732	\N	Hummus	\N	\N	f	0	28	30	2024-10-21	4	240	8	240	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679
-1733	\N	Guacamole	\N	\N	f	0	28	30	2024-10-21	4	240	8	240	Sabra Classic Hummus	https://www.eatthismuch.com/calories/hummus-classic-1883679
+1732	\N	Hummus	\N	\N	f	0	28	15	2024-10-21	4	224	8	224	Hummu	https://www.eatthismuch.com/calories/hummus-3642
+1733	\N	Guacamole	\N	\N	f	0	28	56	2024-10-21	4	224	8	224	Guacamole	https://www.eatthismuch.com/calories/guacamole-129472
 1734	\N	Small Yellow Onions	\N	\N	f	0	70	110	2024-12-25	0	115	2	115	Onion	https://www.eatthismuch.com/calories/onions-2042
 1735	\N	Small White Onions	\N	\N	f	0	70	110	2024-12-25	0	115	2	115	Onion	https://www.eatthismuch.com/calories/onions-2042
 1736	\N	Chicken Broth | Beef Broth	\N	\N	f	1048576	240	240	2025-06-27	6	240	928	240	Chicken Broth | Vegetable Broth	https://www.eatthismuch.com/calories/fat-free-chicken-broth,2151436
@@ -1355,7 +1355,7 @@
 1740	\N	Granulated Garlic	Texture of sand.	\N	t	0	10	10	2024-10-18	7	160	131072	160	Garlic Powder	https://www.eatthismuch.com/calories/garlic-powder-195
 1741	\N	Canned Whole Peeled San Marzano Tomatoes	Yes, this is an ingredient.	\N	f	512	28	123	2025-12-10	4	149	512	149	Canned Plum Tomatoes	https://www.eatthismuch.com/calories/tomatoes-2226
 1742	\N	Macadamia Nut Halves	\N	\N	f	0	28	134	2024-12-28	4	134	1048576	134	Macadamia Nuts	https://www.eatthismuch.com/calories/macadamia-nuts-2670
-1743	\N	White Chocolate	\N	\N	f	0	28	170	2024-12-01	4	170	16384	170	Chocolate Chips	https://www.eatthismuch.com/calories/white-chocolate-4468
+1743	\N	White Chocolate	\N	\N	f	0	28	170	2024-12-01	4	170	16384	170	Chocolate	https://www.eatthismuch.com/calories/white-chocolate-4468
 1744	\N	Buttermilk	You can buy buttermilk!	\N	f	320	976	244	2025-09-16	14	244	4194304	244	Milk	https://www.eatthismuch.com/food/nutrition/whole-milk,161/
 1746	\N	Lean Beef Steak | Beef Tenderloin | Beef Sirloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	0	37.67	113	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
 1747	\N	Lean Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	0	37.67	113	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
@@ -1365,3 +1365,28 @@
 1751	\N	Seedless Purple Grapes	aka: Black Grapes.	\N	f	0	4.9	49	2025-01-02	0	98	1	98	Grape	https://www.eatthismuch.com/calories/organic-white-seedless-table-grapes-3100885
 1752	\N	Seedless Black Grapes	aka: Purple Grapes.	\N	f	0	4.9	49	2025-01-02	0	98	1	98	Grape	https://www.eatthismuch.com/calories/organic-white-seedless-table-grapes-3100885
 1753	\N	Fresh Thyme | Fresh Dill	\N	\N	f	0	28	2	2025-03-02	4	32	3	32	Fresh Thyme	https://www.eatthismuch.com/calories/thyme-223
+1754	\N	Duck Breast Fillets, Skin On	\N	\N	f	1048576	166	83	2025-03-27	0	166	268435456	166	Duck Breast Fillets	https://www.eatthismuch.com/calories/duck-breast-504
+1755	\N	Slices of Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1756	\N	Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1757	\N	Thick Slices of Whole-Grain Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1758	\N	Whole-Grain Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1759	\N	Slices of Whole-Grain Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1760	\N	Thick Slices of Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
+1761	\N	Allspice Berries	\N	\N	f	0	12	6	2024-10-26	4	96	131072	96	Allspice	https://www.eatthismuch.com/calories/allspice-176
+1762	\N	Chili Crisp	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
+1763	\N	Tabasco Sauce	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
+1764	\N	Tabasco Sauce | Chili Crisp	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
+1765	\N	Ground Pork | Ground Turkey	\N	\N	f	0	28	28	2024-12-06	4	224	268435456	224	Ground Pork | Ground Beef | Ground Turkey	https://www.eatthismuch.com/calories/ground-pork-1786
+1766	\N	Frozen Stewing Vegetables	\N	\N	f	0	28	84	2025-01-12	4	224	268435456	224	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355
+1767	\N	Sauerkraut | Cabbage	\N	\N	f	0	28	142	2025-07-02	4	142	16	142	Sauerkraut	https://www.eatthismuch.com/calories/sauerkraut-2158
+1768	\N	Ground Beef	\N	\N	f	0	28	28	2024-10-26	4	224	8	224	80% Ground Beef	https://www.eatthismuch.com/calories/ground-beef-5421
+1769	\N	Popcorn, Oil-Popped	\N	Cooked.	f	2	28	28	2026-01-25	4	224	3145728	224	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506
+1770	\N	Popcorn, Air-Popped	\N	Cooked.	f	2	28	28	2026-01-25	4	224	3145728	224	Popcorn	https://www.eatthismuch.com/calories/popcorn-5506
+1771	\N	Cake Flour, Enriched	\N	\N	f	32	137	137	2026-01-25	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
+1772	\N	Bread Flour	\N	\N	f	32	137	137	2026-01-25	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
+1773	\N	Cake Flour	\N	\N	f	32	137	137	2026-01-25	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
+1774	\N	Roasted Salted Peanuts	\N	\N	f	2048	28	146	2024-10-12	4	146	1048576	146	Roasted Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/
+1775	\N	Dried Ginger	\N	\N	f	0	28	5	2025-09-19	4	80	131072	80	Ground Ginger	https://www.eatthismuch.com/calories/ginger,196
+1776	\N	Sriracha	\N	\N	f	0	28	240	2024-12-02	4	240	256	240	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965
+1777	\N	Rice Vinegar | Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	30	239	2025-01-07	9	239	32	239	Apple Cider Vinegar	\N
+1778	\N	Unsweetened Creamy Peanut Butter	\N	\N	f	2048	32	16	2025-10-26	4	256	128	256	Creamy Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter-3735
