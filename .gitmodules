@@ -3,5 +3,5 @@
 	url = git@github.com:gscanlon21/_a-feast-a-day.git
 [submodule "Data/Entities/Microbiome"]
 	path = Data/Entities/Microbiome
-	url = https://github.com/gscanlon21/_microbiome
+	url = git@github.com:gscanlon21/_microbiome.git
 	branch = main

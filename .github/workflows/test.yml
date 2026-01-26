@@ -22,6 +22,9 @@ jobs:
     - run: git config --global pack.window 1
     - run: git config --global pack.windowsMemory 1024m
     - uses: actions/checkout@v4
+      with:
+        submodules: true
+        ssh-key: '${{ secrets.AFEASTADAY_SSH_KEY }}'
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
