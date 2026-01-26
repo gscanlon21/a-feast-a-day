@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict CmOxOj2LzdEgYSGuC9nlTcuTyzZvOMhGiuFSEh3Iw8zSMbUso4gokRy1VFCZd7D
+\restrict XtYMsRkUooTnOkLTPJwG9o48ebMHUTTrlzh5XaPezUob32XalF4ymT4r0JaeU8Q
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2356,6 +2356,12 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1778	1129	1	f
 1778	995	1	f
 248	249	1	t
+1779	573	1	t
+1779	322	1	t
+3	1780	1	f
+1781	77	1	f
+1781	79	1	f
+1781	278	1	f
 \.
 
 
@@ -13180,6 +13186,31 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 17898	1167	1984	\N	3	21
 17899	1167	62	\N	3	5
 17900	1167	2047	\N	3	195
+17901	1717	128	\N	3	30
+17902	1717	68719476736	\N	2	18
+17903	1717	34359738368	\N	2	613
+17904	1717	2	\N	3	92
+17905	1717	1	\N	3	7
+17906	1717	4294967296	\N	2	54
+17907	1717	2199023255552	\N	2	5
+17908	1717	48	\N	3	10
+17909	1717	14	\N	3	97
+17910	1717	1984	\N	3	50
+17911	1717	62	\N	3	107
+17912	1717	2047	\N	3	806
+17913	1779	2047	\N	3	1
+17914	1775	128	\N	3	0.1
+17915	1775	68719476736	\N	2	1
+17916	1775	34359738368	\N	2	71
+17917	1775	2	\N	3	0.2
+17918	1775	1	\N	3	0.5
+17919	1775	4294967296	\N	2	6
+17920	1775	2199023255552	\N	2	1
+17921	1775	48	\N	3	1
+17922	1775	14	\N	3	3
+17923	1775	1984	\N	3	0.2
+17924	1775	62	\N	3	4
+17925	1775	2047	\N	3	18
 \.
 
 
@@ -14449,8 +14480,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5302	7	317	1	1	\N	992	f	\N	5	f	t	\N	1
 5307	8	318	1	2	\N	124	f	\N	3	f	t	\N	1
 5308	0	318	1	2	\N	187	f	\N	4	f	t	\N	1
-4266	0	19	1	1	\N	8	f	\N	0	f	t	\N	1
-4267	0	19	1	2	\N	187	f	\N	1	f	t	\N	1
+4266	0	19	1	1	\N	8	f	\N	1	f	t	\N	1
+4267	0	19	1	4	\N	187	f	\N	2	f	t	\N	1
 4500	6	257	3	1	\N	344	f	\N	4	f	t	\N	1
 5190	6	59	1	1	\N	203	f	\N	1	f	t	\N	1
 5292	7	315	1	4	\N	830	f	\N	3	f	t	\N	1
@@ -14683,9 +14714,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5497	8	381	1	1	\N	29	f	\N	2	f	t	\N	0.25
 7359	5	740	1	1	, cooked	1086	f	\N	1	f	t	\N	1
 8249	7	261	1	1	\N	77	f	\N	5	f	f	\N	0.25
-5487	0	379	1	1	\N	250	f	\N	0	f	t	\N	1
 4348	7	243	1	2	\N	708	f	\N	1	f	t	\N	1
-5489	0	379	1	1	, crushed	5	t	\N	2	f	t	\N	1
 8257	7	979	1	2	\N	322	f	\N	4	f	t	\N	1
 8258	8	979	1	1	\N	1646	f	\N	5	f	t	\N	1
 4906	0	234	1	2	, thinly sliced	671	f	\N	0	f	t	\N	1
@@ -14697,8 +14726,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5459	0	375	1	2	, cut into 1½-inch cubes	387	f	\N	3	f	t	\N	1
 5450	6	373	4	1	\N	1732	f	\N	1	f	t	\N	1
 5451	4	373	4	1	\N	87	f	\N	2	f	t	\N	1
-5490	8	379	8	1	, to taste	285	t	\N	3	f	t	\N	1
-5491	0	379	4	1	, juiced, to taste	4	t	\N	4	f	t	\N	1
 5949	6	486	2	1	\N	10	f	\N	0	f	t	\N	1
 7344	6	737	4	1	, minced	222	f	\N	2	f	t	\N	1
 3440	7	50	1	2	\N	61	f	\N	1	f	t	\N	1
@@ -14749,10 +14776,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4758	8	272	8	1	\N	285	f	\N	12	f	t	\N	1
 5460	0	375	1	4	, minced	5	f	\N	4	f	t	\N	1
 7254	7	723	1	1	\N	36	t	\N	5	f	t	\N	1
+5487	0	379	1	1	\N	250	f	\N	1	f	t	\N	1
+5489	0	379	1	1	, crushed	5	t	\N	3	f	t	\N	1
 5441	0	371	1	4	\N	5	f	\N	1	f	t	\N	1
 5442	4	371	1	7	\N	1001	t	\N	2	f	t	\N	1
 5443	4	371	1	1	\N	95	f	\N	3	f	t	\N	1
 5444	4	371	1	1	\N	1002	f	\N	4	f	t	\N	1
+5490	8	379	8	1	, to taste	285	t	\N	4	f	t	\N	1
+5491	0	379	4	1	, juiced, to taste	4	t	\N	5	f	t	\N	1
 5448	4	372	2	7	, plus extra to serve	95	t	\N	3	f	t	\N	1
 5473	8	377	1	1	\N	68	t	\N	5	f	t	\N	1
 5449	4	372	2	7	\N	984	t	\N	4	f	t	\N	1
@@ -14880,13 +14911,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5637	6	401	1	1	\N	\N	f	629	3	f	t	\N	1
 5485	7	260	1	1	\N	77	f	\N	5	f	t	\N	0.25
 8256	7	979	1	2	\N	1647	f	\N	3	f	t	\N	1
-5488	7	379	1	1	\N	77	f	\N	1	f	t	\N	0.25
 5612	5	398	1	3	\N	114	f	\N	0	f	t	\N	1
 5613	8	398	4	1	\N	285	f	\N	1	f	t	\N	1
 5498	6	381	4	1	\N	111	f	\N	3	f	t	\N	1
 5499	6	381	4	1	\N	171	f	\N	4	f	t	\N	1
 5500	6	381	4	1	\N	392	f	\N	5	f	t	\N	1
 5653	4	404	1	8	, full-fat	178	f	\N	0	f	t	\N	1
+5488	7	379	1	1	\N	77	f	\N	2	f	t	\N	0.25
 4501	6	257	2	1	, grated	95	t	\N	5	f	t	\N	1
 4503	8	257	4	1	\N	285	f	\N	7	f	t	\N	1
 5668	0	407	1	1	, sliced	1	f	\N	0	f	t	\N	1
@@ -15063,6 +15094,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5869	7	470	1	1	\N	178	f	\N	1	f	t	\N	1
 5870	8	470	1	1	\N	70	f	\N	2	f	t	\N	1
 1725	7	100	1	1	\N	29	f	\N	5	f	t	\N	0.25
+5795	6	430	2	1	, cut in half	147	t	\N	1	f	t	\N	1
+5796	0	430	2	1	\N	8	f	\N	2	f	t	\N	1
 5811	8	432	1	1	\N	39	f	\N	0	f	t	\N	1
 5860	6	469	1	2	, drained, flaked	1635	f	\N	0	f	t	\N	1
 3163	8	160	1	1	\N	68	t	\N	4	f	t	\N	1
@@ -15075,11 +15108,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3170	6	160	1	1	\N	559	f	\N	11	f	t	\N	1
 3171	8	160	4	1	\N	285	f	\N	12	f	t	\N	1
 2974	7	153	1	1	\N	516	f	\N	4	f	t	\N	1
-5795	6	430	2	1	, cut in half	147	f	\N	0	f	t	\N	1
-5796	0	430	2	1	\N	8	f	\N	1	f	t	\N	1
 5861	0	469	1	1	, peeled and mashed	9	f	\N	1	f	t	\N	1
 5812	8	432	1	1	\N	60	f	\N	1	f	t	\N	1
 5813	8	432	1	1	\N	74	f	\N	2	f	t	\N	1
+5797	0	430	4	1	, finely chopped	105	f	\N	3	f	t	\N	1
 5857	6	468	2	1	\N	1633	f	\N	0	f	t	\N	1
 5858	6	468	1	1	\N	\N	f	858	1	f	t	\N	1
 5859	8	468	1	1	, to taste	681	f	\N	2	f	t	\N	1
@@ -15090,10 +15122,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5844	6	465	1	1	\N	\N	f	944	0	f	t	\N	1
 5845	0	465	1	1	, juiced	12	f	\N	1	f	t	\N	1
 5846	8	465	2	1	\N	74	f	\N	2	f	t	\N	1
-5797	0	430	4	1	, finely chopped	105	f	\N	2	f	t	\N	1
-5798	0	430	1	1	, peeled and diced	155	f	\N	3	f	t	\N	1
-5799	6	430	1	2	, chopped	1114	f	\N	4	f	t	\N	1
-5800	7	430	1	1	, finely chopped	2	f	\N	5	f	t	\N	1
+5798	0	430	1	1	, peeled and diced	155	f	\N	4	f	t	\N	1
 5815	0	432	1	1	, juiced	4	f	\N	4	f	t	\N	1
 5816	8	432	8	1	, to taste	692	t	\N	5	f	t	\N	1
 5788	8	428	1	1	, to taste	681	t	\N	2	f	t	\N	1
@@ -15124,6 +15153,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5773	0	425	1	2	, firm, just ripe (you don't want them mushy)	9	f	\N	1	f	t	\N	1
 5774	0	425	1	8	\N	985	f	\N	2	f	t	\N	1
 5775	7	425	1	1	\N	\N	t	421	3	f	t	\N	1
+5799	6	430	1	2	, chopped	1114	f	\N	5	f	t	\N	1
 5854	6	467	1	3	, finely chopped	372	f	\N	5	f	t	\N	1
 5879	0	472	1	1	, juiced	4	f	\N	0	f	t	\N	1
 5945	6	484	2	1	\N	188	f	\N	1	f	t	\N	1
@@ -15841,23 +15871,23 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6587	0	602	1	1	, peeled, pitted, and chopped	9	f	\N	8	f	t	\N	1
 6626	8	609	4	1	, to taste	67	t	\N	6	f	t	\N	1
 5913	6	478	1	1	\N	1124	f	\N	5	f	t	\N	1
+5801	6	430	4	1	, chopped	872	f	\N	7	f	t	\N	1
 6682	0	616	1	2	\N	11	f	\N	1	f	t	\N	1
 6683	6	616	1	1	\N	987	f	\N	2	f	t	\N	1
 6684	6	616	1	1	\N	\N	f	66	3	f	t	\N	1
 6685	6	616	1	4	, stale, diced	221	f	\N	4	f	t	\N	1
 6686	6	616	1	1	\N	1218	f	\N	5	f	t	\N	1
+5802	0	430	1	1	, juiced	4	f	\N	8	f	t	\N	1
 6655	0	613	1	1	\N	387	f	\N	0	f	t	\N	1
 6060	0	530	1	1	, juiced	12	f	\N	4	f	t	\N	1
 6025	8	525	2	1	\N	322	f	\N	5	f	t	\N	1
 6026	7	525	1	2	, chopped	13	f	\N	6	f	t	\N	1
 6027	0	525	1	2	, sliced	155	f	\N	7	f	t	\N	1
+5804	8	430	8	1	, to taste	692	t	\N	10	f	t	\N	1
 5907	8	477	4	1	, to taste	692	t	\N	5	f	t	\N	1
 6654	7	612	1	1	\N	675	f	\N	0	f	t	\N	1
 6672	8	263	8	1	\N	285	t	\N	5	f	t	\N	1
-5801	6	430	4	1	, chopped	872	f	\N	6	f	t	\N	1
-5802	0	430	1	1	, juiced	4	f	\N	7	f	t	\N	1
 6364	0	576	2	1	, sliced	105	t	\N	5	f	t	\N	1
-5804	8	430	8	1	, to taste	692	t	\N	9	f	t	\N	1
 8284	8	186	1	1	\N	601	t	\N	2	f	t	\N	1
 7329	6	735	1	1	\N	1582	f	\N	1	f	t	\N	1
 6687	0	617	1	1	, part-baked	213	f	\N	0	f	t	\N	1
@@ -16385,7 +16415,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6850	7	639	1	2	\N	78	f	\N	1	f	t	\N	0.25
 7381	7	743	1	1	\N	79	f	\N	0	f	t	\N	0.25
 8007	8	947	1	1	\N	79	f	\N	0	f	t	\N	0.25
-7621	7	840	1	1	(CANOLA OIL | OLIVE OIL	79	f	\N	1	f	t	\N	0.25
 7858	8	870	1	1	\N	79	f	\N	5	f	t	\N	0.25
 5478	7	378	1	3	, divided	176	f	\N	2	f	t	\N	0.25
 5696	7	414	1	2	\N	176	f	\N	0	f	t	\N	0.25
@@ -16430,7 +16459,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8275	7	309	1	6	\N	278	f	\N	7	f	t	\N	0.25
 6324	7	572	1	2	\N	278	f	\N	7	f	t	\N	0.25
 8281	7	317	1	1	\N	278	f	\N	9	f	t	\N	0.25
-5803	7	430	1	2	\N	278	f	\N	8	f	t	\N	0.25
 6714	7	620	1	6	\N	278	f	\N	1	f	t	\N	0.25
 6792	7	631	1	5	, for dressing	278	f	\N	5	f	t	\N	0.25
 7798	7	751	1	1	\N	278	f	\N	6	f	t	\N	0.25
@@ -16458,7 +16486,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7679	6	846	1	4	\N	79	f	\N	9	f	t	\N	0.25
 7998	6	945	1	1	\N	79	f	\N	7	f	t	\N	0.25
 6055	6	529	4	1	\N	278	f	\N	10	f	t	\N	0.25
+5803	7	430	1	2	\N	278	f	\N	9	f	t	\N	0.25
 7034	7	661	1	3	\N	189	f	\N	4	f	t	\N	0.25
+7621	7	840	1	1	\N	1781	f	\N	2	f	t	\N	0.25
 8192	7	972	1	1	\N	29	f	\N	1	f	t	\N	0.25
 8193	4	972	1	4	, finely chopped	1730	f	\N	2	f	t	\N	1
 8194	6	972	1	1	, cut into fresh breadcrumbs	1729	f	\N	3	f	t	\N	1
@@ -16611,6 +16641,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6052	6	529	4	1	, chopped	872	f	\N	7	f	t	\N	1
 8481	8	825	1	1	\N	82	f	\N	6	f	t	\N	1
 8482	8	825	4	1	\N	692	t	\N	2	f	t	\N	1
+8498	0	1003	1	1	\N	1780	f	\N	1	f	t	\N	1
+8499	0	1003	2	1	\N	598	f	\N	2	f	t	\N	1
+8500	0	1003	1	6	\N	5	t	\N	3	f	t	\N	1
+8501	0	1003	4	1	\N	565	t	\N	4	f	t	\N	1
+8502	7	1003	1	2	\N	189	f	\N	5	f	t	\N	0.25
+8503	7	1003	1	1	\N	77	f	\N	6	f	t	\N	0.25
+8504	4	1003	1	30	\N	419	f	\N	7	f	t	\N	1
+8505	8	1003	1	1	\N	143	f	\N	8	f	t	\N	1
+8506	8	1003	1	2	\N	1779	f	\N	9	f	t	\N	1
 7398	6	746	1	2	(ALMOND FLOUR), for crust	1129	f	\N	0	f	t	\N	1
 7400	7	746	1	4	, for crust	1102	f	\N	2	f	t	\N	1
 7401	8	746	1	1	, for crust	40	f	\N	3	f	t	\N	1
@@ -16630,6 +16669,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7415	6	747	4	1	(POPPY SEEDS)	203	t	\N	10	f	t	\N	1
 7416	7	747	1	1	\N	1268	t	\N	11	f	t	\N	1
 7417	6	747	4	1	\N	39	t	\N	12	f	t	\N	1
+8509	6	1003	1	2	, to serve	\N	f	484	12	f	t	\N	1
 3487	8	176	4	1	\N	143	t	\N	5	f	t	\N	1
 7673	6	846	4	1	\N	358	f	\N	3	f	t	\N	1
 7674	7	846	1	2	\N	1739	f	\N	4	f	t	\N	1
@@ -16676,6 +16716,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8476	7	632	1	2	\N	357	t	\N	8	f	t	\N	1
 8477	0	632	1	2	\N	1176	t	\N	9	f	t	\N	1
 8483	8	825	8	1	\N	969	t	\N	7	f	t	\N	1
+8507	8	1003	4	5	\N	75	t	\N	10	f	t	\N	1
+8508	7	1003	1	1	, for a garnish	13	t	\N	11	f	t	\N	1
 7211	8	716	8	1	\N	285	t	\N	7	f	t	\N	1
 7492	0	787	1	1	\N	1216	f	\N	0	f	t	\N	1
 7493	0	787	1	2	\N	1329	f	\N	1	f	t	\N	1
@@ -16895,8 +16937,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2320	0	127	1	6	\N	166	f	\N	10	f	t	\N	1
 2321	0	127	1	2	, cut into strips	387	f	\N	11	f	t	\N	1
 2322	8	127	8	1	\N	285	t	\N	12	f	t	\N	1
-7620	5	840	1	2	, dicced about ½ to 1 inch thick	250	f	\N	0	f	t	\N	1
-7622	7	840	2	1	(FIRST WATCH SEASONING, p26	601	f	\N	2	f	t	\N	1
 6413	7	582	1	2	\N	73	t	\N	3	f	t	\N	1
 6414	8	582	1	1	\N	323	f	\N	4	f	t	\N	1
 6415	8	582	2	1	\N	71	f	\N	5	f	t	\N	1
@@ -16910,10 +16950,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7672	6	846	4	1	\N	60	f	\N	2	f	t	\N	1
 4647	6	247	2	1	\N	1371	t	\N	5	f	t	\N	1
 7646	7	247	1	1	\N	1376	f	\N	7	f	t	\N	1
+7620	5	840	1	2	, dicced about ½ to 1 inch thick	250	f	\N	1	f	t	\N	1
 7766	7	859	1	2	( Creole SEASONING)	151	f	\N	5	f	t	\N	1
 7767	6	859	1	7	(OR WATER)	111	f	\N	6	f	t	\N	1
 7768	5	859	1	1	(Andouille SEASUAGE), approx. 5 sausages	126	f	\N	7	f	t	\N	1
 7769	0	859	1	3	, sliced, for garnish	1082	f	\N	8	f	t	\N	1
+7622	7	840	2	1	\N	\N	f	848	3	f	t	\N	1
 7670	0	845	1	2	\N	187	f	\N	0	f	t	\N	1
 7661	8	844	1	1	(WHIPPED BUTTER)	345	f	\N	0	f	t	\N	1
 7645	0	843	1	1	\N	187	f	\N	0	f	t	\N	1
@@ -17529,6 +17571,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8488	7	1001	1	2	\N	359	f	\N	5	f	t	\N	1
 8489	7	1001	1	1	\N	1777	f	\N	6	f	t	\N	1
 8490	8	1001	1	1	\N	1776	t	\N	7	f	t	\N	1
+5800	7	430	1	1	, finely chopped	2	t	\N	6	f	t	\N	1
 8497	6	1002	2	1	\N	\N	f	1001	5	f	t	\N	1
 8491	8	1001	4	1	\N	74	f	\N	8	f	t	\N	1
 8492	8	1001	8	1	\N	1775	f	\N	9	f	t	\N	1
@@ -17649,17 +17692,17 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 287	Combine the spaghetti pasta, spaghetti sauce, frozen meatballs, and water in a 4-quart slow cooker and mix to combine. Make sure that the pasta is submerged in the liquid in the crock pot.	33	0	1024
 400	Combine beans, cheese and ¼ cup of salsa in a medium bowl. Place tortillas on a work surface. Spread ½ cup of filling on half of each tortilla. Fold tortillas in half, pressing gently to flatten.	37	0	0
 401	Heat half of the oil in a large nonstick skillet over medium heat. Add 2 quesadillas and cook, turning once, until golden on both sides, 2–4 minutes total. Transfer to a cutting board and tent with foil to keep warm. Repeat with the remaining oil and quesadillas. Serve the quesadillas with avocado and the remaining salsa.	37	1	4
+3121	Place the bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2–3 minutes.	19	1	4
 288	Optionally, add in some chopped onion, garlic, or shredded carrots.	33	1	0
 289	Cover the crock pot and cook on low for 5–7 hours or until pasta is tender and meatballs are thoroughly heated to 160°F as measured with a meat thermometer, stirring once with a large spoon during the cooking time. This method will make the pasta quite soft, like Spaghetti-Os.	33	2	1024
+3122	Flip and cook until desired doneness is reached, 2–3 minutes more; season with salt and ground black pepper.	19	2	4
 475	Toast bread. Mash avocado with a fork and spread onto one piece of toast.	52	0	0
-3122	Flip and cook until desired doneness is reached, 2 to 3 minutes more; season with salt and ground black pepper.	19	2	0
 3469	Roll up each slice in a lettuce leaf and serve.	530	2	0
 3357	Lightly mash with a potato masher, and mix in the olive oil and chopped dill. Serve warm.	533	3	0
 213	Arrange bagels, cut-side up, on the prepared baking sheet. Spoon a thin layer of pizza sauce over each bagel half and sprinkle with pizza cheese. Place two pepperoni slices onto each bagel half.	49	1	0
 3384	In a food processor, combine the lemon juice, pine nuts, and basil, and process until just combined. Slowly add in the olive oil, and pulse until emulsified. Season to taste with sea salt and pepper.	543	0	256
 214	Bake in the preheated oven until cheese is melted and pepperoni is lightly browned, about 6 minutes.	49	2	2
 263	Serve on buns.	31	4	0
-3121	Place bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2 to 3 minutes.	19	1	4
 476	Top with sliced chicken, sliced tomato and the second piece of toast.	52	1	0
 606	Add the ingredients to the Baking Pan in the order listed.	72	0	8192
 607	Select Course No. 1 and press the START button. 	72	1	8192
@@ -18253,7 +18296,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3159	Bake in the oven for 30 minutes.	420	5	2
 2260	Stir in the flour and cook for another 1–2 minutes, stirring often (this cooks the raw flour taste out).	182	3	4
 2261	Gradually pour in the beef broth while stirring until the flour has dissolved and scraping any stuck-on bits from the bottom of the pan.	182	4	4
-2299	Heat a non-stick skillet over medium heat.	19	0	0
+2299	Heat a non-stick skillet over medium heat. Cut the bell peppers into four ½-inch thick rings.	19	0	4
 3160	Combine the honey through the parsley in a blender or food processor, until combined. Season to taste with salt and pepper.	421	0	384
 2821	Drain the pasta, toss into the bowl and mix well. Serve straight away while still warm, or cold.	39	1	0
 2464	Drizzle 1 tsp melted butter on to each chicken piece. Place them in the frying pan in an even layer, two or three at a time, and cook for 2–3 minutes, until the underside begins to blacken. Turn the chicken over and cook the other side for 2–3 minutes more. Remove from the pan and keep hot while cooking successive batches. Serve hot with salad leaves and pepper strips.	131	4	4
@@ -18592,7 +18635,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4596	Serve hot with a green salad and pickled beetroot.	972	5	0
 3381	In a large skillet over medium heat, heat the coconut oil.	542	0	4
 3382	To the skillet, add the chicken, lemon zest, thyme, and salt & pepper. Cook for 5–10 minutes, until the chicken is cooked through.	542	1	4
-3015	Heat the oil in a large skillet or frying pan over medium-high heat.	379	0	4
 4600	Mix the paprika and flour together on a plate. Coat each chicken breast in the seasoned flour.	974	0	0
 3003	For extra flavour, stir less and allow the cauliflower to brown slightly – this will give your cauliflower rice a slightly richer, nuttier flavour, reminiscent of roasted cauliflower.	376	3	0
 2819	Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). 	260	1	0
@@ -18635,8 +18677,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3282	Place on a baking sheet and bake for 25–30 minutes, until tender.	487	3	2
 2913	Add extra virgin olive oil to a large skillet over a heat that's just a touch above medium. Add sweet potatoes and shallots, then sauté for 4–5 minutes, or until potatoes are just starting to turn tender. 	319	0	4
 2914	Add chorizo, then turn heat up slightly and sauté until cooked through, breaking chorizo up as it cooks.	319	1	4
+3015	Heat the oil in a large skillet or frying pan over medium-high heat.	379	0	4
 1502	Transfer the lentil mixture and juices to warmed plates or bowls. Crumble the remaining feta cheese on top and sprinkle with the fresh herbs to garnish. Serve the lentils immediately.	150	2	0
 2907	Cook the noodles in boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Meanwhile, finely grate the zest of 1 lime, snip the cress, and put both aside. 	316	0	4
+3191	Mix the lemon juice and olive oil together and add to the bowl of veggies.	430	1	0
 3020	Place chocolate chips in a medium-sized microwave-safe bowl. Microwave in 30-second increments, stirring in between, until fully melted.	380	1	1
 4707	Mix all ingredients together in a bowl, starting with 2 ¼ cups rolled oats. If the dough feels fairly stiff move to the next step; otherwise add the additional ¼ cup if the dough feels fairly sticky. (The texture depends of the dough depends on the type of peanut butter and type of rolled oats. With our very creamy peanut butter it works with 2 ½ cups oats total.) Freeze the bowl for 5 minutes to allow the dough to firm up even more: it should feel stiff and rollable at this point. If not, you can mix in a handful more oats — or if it’s too crumbly, add a hint more peanut butter and honey.	985	0	0
 3024	Peel zucchini lengthwise with a vegetable peeler into long, thin strips. (Or, use a spiralizer or a sharp knife.) Pat with a paper towel and set aside.	381	0	0
@@ -18649,14 +18693,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3025	Season chicken with salt and pepper. Heat butter in a skillet over medium heat. Add chicken and cook 8 minutes, flipping occasionally, until mostly cooked through. Transfer to a plate.	381	1	4
 1654	Meanwhile, warm the taco shells according to the instructions on the packet. Do not let them get too crisp. Spoon the lettuce, onion, tomatoes and avocado slices into the taco shells. Top with sour cream followed by the minced beef or turkey mixture.	160	1	0
 3036	Toast the sesame seeds in a dry 8-inch non-stick frying pan on a medium heat until lightly golden, then remove to a plate.	385	0	4
+3192	Season to taste with salt and pepper.	430	2	0
 1178	Heat the oil in a frying pan. Add the chicken breasts and cook gently for about 15 minutes, turning several times until they are tender, lightly browned, and thoroughly cooked. 	124	0	4
 1179	Remove the chicken from the pan, cover and keep hot. Reduce the heat slightly, then add the pesto to the pan and cook gently, stirring constantly, for a few minutes, or until the pesto has warmed through.	124	1	4
 3021	Add almonds to the bowl and toss to coat in melted chocolate.	380	2	0
 3026	Add the chicken broth to the empty skillet over medium heat, scraping any browned bits off the bottom of the pan. When liquid has reduced by half, reduce heat to medium-low, then add cream, pesto and ½ cup parmesan cheese. Simmer, stirring regularly, 3 minutes, until warmed through.	381	2	4
 3190	In a large bowl, add the cherry tomatoes through the broccoli sprouts.	430	0	0
-3191	Mix the lemon juice and olive oil together and add to the bowl of veggies.	430	1	0
-3192	Season to taste with salt and pepper.	430	2	0
-3193	Enjoy fresh or chilled.	430	3	0
 3022	Transfer almonds one-by-one to prepared baking sheet. Sprinkle lightly with sea salt.	380	3	0
 1180	Put the cooked chicken on a plate, pour the warm pesto over the top, then garnish with basil leaves and serve immediately.	124	2	0
 3037	Still on the heat, sit the wings in the pan — they should fit snugly. Let them color for 1 minute on each side, then add the teriyaki and just cover the wings with water. Halve the chili lengthways and add to the pan. Simmer for 35–40 minutes, or until the chicken is tender and the sauce is nice and sticky, turning occasionally.	385	1	4
@@ -18664,6 +18706,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3349	In a medium-size bowl, toss the cauliflower and garlic with 2 tablespoons of the avocado oil, plus salt and pepper.	532	1	0
 3023	Refrigerate until set, about 30 minutes. Enjoy ¼ cup per serving. Store almonds for future snacking in an airtight container in the refrigerator for up to 2 weeks.	380	4	65536
 3033	Wash the carrots, halve any larger ones, then place in a large cold non-stick frying pan with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Put on a medium-high heat for 15 minutes, or until golden and tender, tossing regularly. 	384	0	4
+3193	Enjoy fresh or chilled.	430	3	0
 3041	Wipe out the frying pan and return to the heat. Add another 2-3 tbsp of olive oil and fry the garlic for 1 minute until golden and fragrant. Stir in the olives, cook for a further 1 minute, then stir in the tomatoes. Shred the basil leaves and stir into the olive and tomato mixture, then spoon it over the chicken and serve at once.	386	3	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	360	1	0
 3056	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	391	0	4
@@ -19082,6 +19125,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2663	Heat the olive oil in a wok or large frying pan and add the broccoli. Stir-fry for 3–4 minutes, or until tender, adding a splash of water if the pan becomes too dry.	170	2	4
 2664	Add the soy sauce to the broccoli, then season with salt and ground black pepper to taste. Add sesame seeds, toss to combine and serve immediately.	170	3	0
 4509	Taste the rice and add a bit of salt if it needs it. Stir in the scallion greens and serve.	956	4	0
+4783	Start the rice, according to the package instructions.	1003	0	0
+4784	Mince the onion and garlic. Dice the pepper into small pieces.	1003	1	0
 4454	In a medium bowl, mix the flour, poultry seasoning, salt and pepper.	945	2	0
 2614	Rip off and reserve the top leafy half of the mint. Put the stalks in a pan of boiling salted water, then add the beans and peas and cook for 4 minutes. 	306	0	4
 3713	Season to taste with salt and pepper. Return the chops to the skillet and turn to coat with the glaze. Serve immediately, pouring extra glaze on top.	390	2	4
@@ -19312,6 +19357,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3923	In a medium pot, whisk together the ketchup, water, brown sugar, vinegar, mustard, black pepper, cayenne, and salt. Bring to a boil over high heat, then reduce the heat to low and simmer, whisking, for 5 minutes.	718	0	0
 3924	Remove from the heat. Let it cool slightly, then transfer to a mason jar or another heatproof, airtight container. Store in the fridge for up to 1 month.	718	1	0
 4770	Flavor with thyme, rosemary, or parsley.	725	5	0
+4785	Remove the ribs and seeds from the jalapeño pepper and mince it.	1003	2	0
 983	Meanwhile, strip all the chicken meat from the bones and shred apart with forks, returning it to the sauce as you go and discarding any skin and bones.	108	3	0
 3962	If using a blender, place the lemon juice, eggs and salt in a high-speed blender and start blending. Slowly add the oil into the blender to emulsify the eggs and oil, for 2–3 minutes.\r\n	556	1	0
 3963	For an immersion blender, place the lemon juice, eggs, salt and oil, in that order, in a clear jar or container that the immersion blender can fit snugly into. Start blending and watch the mixture (about 30-45 seconds). Once it starts to turn off-white at the bottom of the jar, slowly start to pull the blender upward. Stop once the entire mixture is off-white (when it is emulsified).	556	2	0
@@ -19392,6 +19438,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2861	Finely shred the radicchio leaves. Drain the cooked pasta and turn it into the pan of sausage sauce. Add the shredded radicchio and toss well to combine everything thoroughly. Serve immediately.	192	4	0
 4771	Heat ¼ cup of the oil in a large frying pan. Add the bread cubes and garlic. Cook over a medium heat, stirring constantly, until the bread cubes are golden brown all over.	1000	0	4
 4574	When the pasta rises to the surface of the boiling water, it is ready. Drain it thoroughly, return it to the pan and toss with the sauce. Pile into a bowl and add the grilled tomatoes. Grind black pepper over the top and add Parmesan shavings.	968	3	0
+4786	Use a strainer to drain the black beans over a bowl, reserving the can liquid.	1003	3	0
+4787	In a large skillet, heat the butter and olive oil over medium high heat. 	1003	4	4
+4788	Once melted, add the onion, bell pepper, jalapeño pepper, and garlic. Cook for 10 minutes, stirring occasionally until the onions are translucent and lightly browned.	1003	5	4
 3944	Warm a medium pot over medium heat. Add the olive oil and onion and cook for 5 minutes, or until soft. Add the ginger and cook for 30 seconds. Add the tomato paste and cook for 1 minute.	727	0	4
 3945	Sprinkle the curry powder into the pot and cook for 30 seconds. Add the lentils and water and bring to a boil. Reduce the heat to low and simmer for 25–30 minutes, until the lentils are tender.	727	1	4
 1685	Put the ginger biscuits in a plastic bag and seal. Bash the biscuits with a rolling pin until roughly crushed.	162	0	0
@@ -19405,6 +19454,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4718	Place roast in pan and brown the first side, turn over and brown the second side (usually about 4–5 minutes each side) then place meat in slow cooker, add broth and wine. 	990	1	4
 4719	Add shallots and carrots to crock pot, sprinkle with sea salt, freshly ground pepper and 1 tablespoon herbs de Provence. Place lid on crock pot and cook either 4 hours on high or 8 hours on low. Carve beef against the grain and serve.	990	2	1024
 4772	Drain well on kitchen paper. Discard the garlic.	1000	1	0
+4789	Add the beans, cumin, oregano, and kosher salt and stir to combine. Add ½ cup of the liquid from the black beans. Simmer 15 minutes until beans are tender.	1003	6	4
 4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
 4031	Season to taste with salt and pepper.	476	3	0
 4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans.	750	0	4
@@ -19442,13 +19492,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4721	Put rings into a well-greased hot skillet. You’ll want to put them on their rough side down. Cook the onions for 2 minutes then flip. 	991	1	4
 4722	Start by putting just a spoonful of the egg mix into each ring and let it almost set to create a seal at the bottom.	991	2	0
 4723	Spoon in the rest of your egg mix into each ring. Cook for 2 more minutes, flip and cook until done.	991	3	0
+4790	Chop the cilantro. Serve the black beans warm with rice and garnish with the chopped cilantro.	1003	7	0
 4182	Drain. In a large cooking pot, put the chickpeas and 1 teaspoon of baking soda. Cook over medium-high heat, tossing constantly, for about 3–4 minutes. 	629	3	4
 4020	In a food processor, process the chickpeas until they turn into a slightly textured paste. Be sure to turn off the food processor and scrape down the sides to get all the chickpeas ground up. Add in the onion, garlic, salt, and pepper, and mix to fully combine. Turn the food processor off and stir in the chopped parsley and arrowroot starch.	748	1	256
 4022	Reheat that same cast iron pan to medium heat. Drizzle the remainder of the oil and place the patties in to cook. Cook for about 2–3 minutes on each side until the bottom is nicely browned.	748	3	4
 1817	Remove the little fillet from the back of each breast portion. If the breast still looks fatter than a finger, bat it with a rolling pin to make it thinner. Slice all the chicken meat into strips.	92	0	0
 2767	Cook the lentils in a pan of boiling salted water according to the package instructions. Meanwhile, peel and finely slice the onions, put them into a large shallow casserole pan on a medium heat with ½ a tablespoon of olive oil and the balti paste, and cook for 15 minutes, or until soft and golden, stirring regularly. Tear in the kale (discarding any tough stalks), add a splash of lentil cooking water, cover, and leave for 2 minutes.	307	0	0
 4141	Flip the turkey legs and roast them for another 30 minutes, or until a thermometer inserted into the thickest part of the meat registers 170°F.	830	3	2
-3018	Add the crushed garlic and cook for another minute then season with salt, pepper, and lemon.	379	3	0
 4136	Scrub the potatoes, chop into ¾-inch chunks, then place in a large non-stick frying pan on a medium heat with 2 tablespoons of olive oil and season with sea salt and black pepper. Fry for 20 minutes, or until golden and cooked through, stirring regularly, then remove to a bowl. Put the pan back on a high heat.	829	0	0
 1818	Heat the oil in a large frying pan. Stir-fry the chicken strips with the shallot, garlic and paprika over a high heat for about 3 minutes until cooked through.	92	1	4
 4185	In a 10-inch nonstick pan, heat butter over medium-high heat to lightly coat the pan, then add eggs.	842	0	4
@@ -19468,6 +19518,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4071	Meanwhile, fill a large pot with lightly salted water and bring to a rapid boil. Cook egg noodles at a boil until tender yet firm to the bite, 7–9 minutes. Drain and set aside.	745	1	4
 4072	Drain and discard any fat from the cooked beef. Stir condensed soup and garlic powder into the beef. Simmer for 10 minutes, stirring occasionally.	745	2	4
 4073	Remove beef from the heat. Add egg noodles and stir to combine. Stir in sour cream and season with salt and pepper. Serve hot and enjoy!	745	3	0
+3018	Add the crushed garlic and cook for another minute then season with salt, pepper, and lemon.	379	3	0
 4084	Place the chicken thighs in a bowl with the yogurt, spice mix, 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Cut 6 thin slices off one of the lemons and put aside, then squeeze the juice from the rest of the lemon into the bowl. Toss everything together really well, then cover and leave to marinate in the fridge for at least 2 hours, preferable overnight.	790	0	0
 4085	Preheat the oven to 400°F. Thread the chicken and lemon slices onto one large metal skewer, alternating chicken and lemon slices, and rest it over a roasting pan that's slightly smaller than the skewer (so that the meat is suspended above the pan). Slice the garlic bulb in half and place cut side down in the pan. Halve and throw in the remaining lemon, then roast for 40 minutes, or until gnarly and cooked through.	790	1	2
 4086	Peel and very finely slice the onion and potatoes, then toss and mix together. Pour ½-inch of olive oil into a 9-inch non-stick ovenproof frying pan on a medium heat, After 1 minute, add the potato and onion mix (don't season at this state, as it will draw the moisture out of the potatoes) and fry gently for 25 minutes, or until tender but mostly without color, lightly tossing occasionally. 	791	0	4
@@ -19476,6 +19527,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3079	Pour the tossed carrots onto the lined baking sheet, in a single layer, and bake for 25–30 minutes, or until tender.	395	4	2
 4137	Cut the fat off the steak, then roughly chop the fat and place in the pan to render. Generously season the steak, rub all over with 2 teaspoons of pesto, and cook for 3 minutes on each side for medium rare, or to your liking. Remove to a plate to rest. Return the potatoes to the pan to warm through, while you slice the tomatoes ½ inch thick and arrange on serving plates. Dress with a splash of red wine vinegar and a drizzle of extra virgin olive oil, and season to perfection. Spoon over the potatoes, then slice and divide up the steak, pouring over any resting juices. Spoon over the remaining pesto, then bash and scatter over the pistachios. Finish with a drizzle of extra virgin olive oil, if you like.	829	1	0
 4127	Score the duck skin, rub all over with sea salt and black pepper, then place the fillets skin-side down in a cold non-stick frying pan and turn the heat on to medium. Cook for 8 minutes without moving the duck, until the fat is well rendered, and the skin is golden and crisp. Turn the duck over and cook for a further 4 minutes, basting with the fat.	825	0	4
+3016	Wash and dry the zucchini, then slice into ⅓-inch thick slices.	379	1	0
 4147	Put a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, and brown the remaining sausages with the thighs, drumsticks and wings, transferring them to the casserole pan when beautifully golden. Brown the breast skin-side down for 3 minutes, then transfer to the casserole pan. 	827	2	4
 4148	Meanwhile, drain one of the cans of beans, then tip both cans into the casserole pan with the rest of the bay leaves. Gently mix together, then turn the heat down to medium-low and cook for 30 minutes with the lid on, or until beautifully tender. Drizzle over the rest of the bay marinade, to serve.	827	3	4
 4080	Scrub the potatoes, chop in erratic ¾- to 2-inch chunks and place in a large baking dish. Peel and quarter the onions, then break apart into petals and add to the dish.	789	1	0
@@ -19486,11 +19538,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4083	Carefully remove the chicken from the oven, along with the veg, and squeeze over the jammy roasted lemon halves, to serve.	789	4	0
 3596	Season with sea salt to taste.	607	3	0
 3597	Whisk together the mustard, apple cider vinegar and honey/maple syrup in a bowl, and use as a dip, or pour over the dish.	607	4	0
-3016	Wash and dry the zucchini, then slice into 1cm (⅓-inch) thick slices.	379	1	0
-3017	Sauté the zucchini for 7–10 minutes, tossing regularly to ensure even cooking.	379	2	0
 3323	Blend banana and egg in a mixer until batter consistency is achieved (30 sec to 1 minute).	523	1	0
 3324	Pour batter into the pan. Cook for 2–3 minutes and then flip, cooking for an additional 1–2 minutes.	523	2	4
 4144	Sandwich the bacon in a single layer between two sheets of paper towel. Rest on a microwave-safe plate and microwave on high for 70 seconds. Add 50 seconds for each additional slice of bacon.	832	0	1
+3017	Sauté the zucchini for 7–10 minutes, tossing regularly to ensure even cooking.	379	2	0
 1138	Heat the oil in a heavy frying pan over a high heat. Fry the breast portions two at a time, turning after 3 minutes, until golden on both sides. Add more oil for the second batch if needed. Serve immediately, with the mayonaise and lemon wedges, if using.	103	2	4
 4126	To serve, slice the chicken off the skewer, squeeze the sweet roasted garlic out of its papery skins and toss with the chicken, and sprinkle over a little extra baharat spice. Drizzle over any pan juices, and serve the jammy lemon alongside, for squeezing over. Delicious served with flatbreads, salad and pickles.	790	2	0
 4087	Drain the potatoes and onions and leave to cool slightly. Beat the eggs in a bowl, add the cooked potato and onion, then gently fold together and leave for 5 minutes — the potato will start to absorb the egg, and you should see little bubbles surrounding the potato and onion. 	791	1	4
@@ -19518,9 +19569,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4623	Discard the mint stems from the couscous, fluff up with a fork, mix in half the salsa and divide between plates. Slice the chicken and arrange on top, with the remaining salsa. Finish with extra virgin olive oil, if you like.	788	4	0
 4184	Chickpeas will cook anywhere from 40 minutes to 1½ hours, or until tender (cooking time will vary depending on the type and freshness of the chickpeas).	629	5	4
 4183	Add 7 cups of water to cover the beans by several inches. Season with a big pinch of kosher salt (about 1 teaspoon or more if you like). Add the bay leaf and garlic. Bring to a boil, then turn the heat down and simmer, skimming off any foam or skins that float to the top. 	629	4	4
+4171	Bake for 10 minutes. Stir, using a rubber spatula, and bake for 10 more minutes.	840	3	0
 3819	Once the syrup starts to turn golden brown, watch it very carefully. As soon as it turns caramel brown, add the cream into the pot and stir. Let the caramel boil for about 1 minute, then whisk in the butter little by little.	661	1	4
 3820	Remove from the heat and whisk in the bourbon, vanilla, and salt.	661	2	0
 3821	Let the sauce cool to room temperature, then transfer to a container and store in the refrigerator for up to 1 month. Heat slightly before using.	661	3	65536
+4173	Store zucchini in an airtight container and refrigerate until ready to use.	840	5	0
 1775	Meanwhile, scoop out the seeds from the half of the melon using a spoon. Using a sharp knife, remove the skin, then cut the flesh from the wedges.	144	2	0
 1776	Arrange the melon wedges attractively on a serving plate and sprinkle the lightly carmelized strawberries on top. Dust the salad with icing sugar and serve immediately.	144	3	0
 4161	Put 2 tablespoons of kosher salt at the bottom of a sterilized 1-quart wide-mouthed canning jar.	839	0	0
@@ -19531,12 +19584,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4166	Close the lid to the jar and let it sit at room temperature on the counter for a few days. Turn the jar upside down every so often. After a few days put the jar of lemons in the refrigerator for at least 3 weeks, until the rinds of the lemons soften. Turn the jar upside down occasionally while storing in the refrigerator.	839	5	0
 4167	To use preserved lemons in cooking, remove one from the jar and rinse it to remove the salt. Discard any seeds. Remove the pulp. Thinly slice or chop the preserved lemon rind to use in a recipe.	839	6	0
 1227	Preheat the grill (broiler) to hot. Lightly toast the pitta breads well until they puff up. (Alternatively, lightly toast the breads in a toaster.) Open the breads and stuff them liberally with the chicken and salad. Drizzle a generous amount of tahini sauce into each one and serve with any extra salad.)	127	2	0
-4168	Preheat the oven to 375°F.	840	0	0
-4169	In a mixing bowl, combine zucchini, oil and seasoning and toss well until zucchini is evenly coated.	840	1	0
-4170	Line a sheet pan with parchment paper and transfer the contents of the bowl onto the pan, spreading zucchini evenly across the surface.	840	2	0
-4171	Bake for 10 minutes. Stir, using a rubber spatula, and bake for 10 more minutes.	840	3	0
-4172	Remove from oven and cool.	840	4	0
-4173	Store zucchini in an airtight container and refrigerate until ready to use.	840	5	0
 4135	Using a large, sharp knife, carefully cut the chicken in half. Drizzle with 1 tablespoon each of olive oil and red wine vinegar, then rub all over with the paprika and a pinch of salt and pepper. Put the pan of veg on the bottom rack of the oven, sit the chicken halves skin-side up directly on the oven rack above, then roast for 40 minutes.	828	1	2
 4158	When the time's up, rub the thyme with a drizzle of olive oil. Pull out the pan of veg, give it a good shake, then strip and scatter over half the thyme. Lay the rest of the thyme sprigs on top of the chicken and roast for a final 5 minutes, or until everything is beautifully cooked through, then serve.	828	2	2
 4155	Make the cauliflower hummus. Top with 1 teaspoon olive oil and serve with fresh veggies.	836	0	0
@@ -19557,6 +19604,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4178	Bake at 300°F for 20 minutes. When golden brown, remove from oven and cool completely at room temperature.	841	4	2
 4179	Once granola is completely cool, break into quarter-sized pieces.	841	5	0
 4180	Transfer to an airtight container and store in a dry place for up to 1 week.	841	6	0
+4168	Preheat the oven to 375°F.	840	0	2
+4169	In a mixing bowl, combine zucchini, oil and seasoning and toss well until zucchini is evenly coated.	840	1	0
+4170	Line a sheet pan with parchment paper and transfer the contents of the bowl onto the pan, spreading zucchini evenly across the surface.	840	2	0
+4172	Remove from oven and cool.	840	4	0
 4190	Use a whisk or hand blender to mix cracked eggs in a bowl until they're frothy. 	843	0	0
 4218	Place 1/4 cup granola in a bowl.	850	0	0
 4219	Add 1/3 cup yogurt.	850	1	0
@@ -19890,7 +19941,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17900, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 17925, true);
 
 
 --
@@ -20600,5 +20651,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict CmOxOj2LzdEgYSGuC9nlTcuTyzZvOMhGiuFSEh3Iw8zSMbUso4gokRy1VFCZd7D
+\unrestrict XtYMsRkUooTnOkLTPJwG9o48ebMHUTTrlzh5XaPezUob32XalF4ymT4r0JaeU8Q
 
