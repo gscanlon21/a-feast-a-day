@@ -85,7 +85,7 @@
 87	\N	Crackers	\N	\N	f	0	3.3	3.3	2025-02-18	0	50	262144	50	Crackers	https://www.eatthismuch.com/food/nutrition/ritz-crackers,4370/
 88	\N	Unsalted Peanuts	\N	\N	f	2048	28	146	2024-10-12	4	146	1048576	146	Unsalted Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/
 89	\N	Pecans	\N	\N	f	0	28	99	2024-11-18	4	99	1048576	99	Pecans	https://www.eatthismuch.com/food/nutrition/pecans,2676/
-90	\N	Black Walnuts	\N	\N	f	0	28	125	2024-10-02	4	125	1048576	125	Black Walnuts	https://www.eatthismuch.com/calories/walnuts-2684
+90	\N	Black Walnuts	\N	\N	f	131072	28	125	2024-10-02	4	125	1048576	125	Walnut	https://www.eatthismuch.com/calories/walnuts-2684
 91	\N	Unsalted White Corn Tortilla Chips	\N	\N	f	2	28	26	2025-09-03	4	26	2097152	26	Unsalted White Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5763
 92	\N	Cashew Nuts	\N	\N	f	0	28	137	2025-03-10	4	137	1048576	137	Cashew Nuts	https://www.eatthismuch.com/calories/cashew-nuts-2642
 93	\N	Vegetarian Refried Beans	\N	\N	f	0	28	444	2024-10-23	4	242	512	242	Vegetarian Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3652
@@ -213,7 +213,7 @@
 220	\N	Slices of Sourdough Bread, GF	\N	\N	f	0	49	98	2025-09-06	0	98	64	98	Slices of Sourdough Bread, GF	https://www.eatthismuch.com/calories/cooks-gluten-free-sourdough-bread,2091856
 221	\N	Slices of Sourdough Bread	\N	\N	f	32	96	96	2024-11-12	0	192	64	192	Slices of Sourdough Bread	https://www.eatthismuch.com/calories/sourdough-bread,3991
 222	\N	Onions	\N	\N	f	0	110	110	2025-03-12	0	110	2	110	Onion	https://www.eatthismuch.com/calories/onions-2042
-223	\N	Molasses | Honey	\N	\N	f	0	20	20	2024-10-01	7	320	928	320	Molasses | Honey	https://www.eatthismuch.com/calories/molasses-4624 | https://www.eatthismuch.com/calories/honey-4620
+223	\N	Molasses | Honey	Use partial ingredients.	\N	f	0	28	20	2026-01-28	4	320	928	320	Molasses | Honey	https://www.eatthismuch.com/calories/molasses-4624 | https://www.eatthismuch.com/calories/honey-4620
 224	\N	Fresh Red Chilies	\N	\N	f	0	45	45	2024-11-29	0	90	2	90	Fresh Red Chilies	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/
 225	\N	Shallots	\N	\N	f	0	43	43	2026-01-10	0	86	2	86	Shallots	https://www.eatthismuch.com/calories/shallots,2316
 226	\N	Yellow Corn Tortilla Chips	\N	\N	f	2	28	28	2024-11-10	4	26	2097152	26	Yellow Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5522
@@ -226,7 +226,7 @@
 233	\N	Sunflower Oil	\N	\N	f	65536	28	14	2026-01-01	9	224	65536	224	Sunflower Oil	https://www.eatthismuch.com/calories/sunflower-oil,292
 234	\N	Superfine Sugar	\N	\N	f	0	28	200	2025-01-16	4	200	114688	200	Superfine Sugar	https://www.eatthismuch.com/calories/sugar-4644
 235	\N	Chinese Cooking Wine	\N	\N	f	0	30	30	2025-01-23	9	240	8192	240	Chinese Cooking Wine	https://www.eatthismuch.com/calories/rice-cooking-wine-551415
-236	\N	Sherry	\N	\N	f	0	28	28	2024-10-02	4	224	3	224	Sherry	https://www.eatthismuch.com/calories/sherry-765630
+236	\N	Sherry	\N	\N	f	0	30	28	2026-01-28	9	240	3	240	Sherry	https://www.eatthismuch.com/calories/sherry-765630
 237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2025-10-19	6	240	524288	240	Chinese Cooking Wine | Sherry	\N
 238	\N	Light Sesame Seeds	aka Hulled Sesame Seeds.  https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	9	2025-02-26	4	144	131072	144	Light Sesame Seeds	\N
 239	\N	Bean Thread Noodles	\N	\N	f	0	140	140	2024-10-04	6	112	4	112	Bean Thread Noodles	https://www.eatthismuch.com/calories/chinese-noodles-3579
@@ -865,8 +865,8 @@
 1066	\N	Red Onions | Purple Onions	\N	\N	f	0	110	110	2024-12-25	0	110	2	110	Onion	https://www.eatthismuch.com/calories/onions-2042
 1067	\N	Food Grade Liquid Bentonite Clay	\N	\N	f	294944	32	16	2024-10-27	9	256	8192	256	Food Grade Liquid Bentonite Clay	https://www.eatthismuch.com/calories/soy-sauce,3618
 1068	\N	Boneless Skinless Turkey Breasts	\N	\N	f	0	26	26	2025-03-27	0	208	268435456	208	Boneless Skinless Turkey Breasts	https://www.eatthismuch.com/calories/sliced-turkey-948
-1069	\N	Walnuts	\N	\N	f	0	125	125	2024-10-02	6	125	4	125	Walnuts	https://www.eatthismuch.com/calories/walnuts-2685
-1070	\N	English Walnuts	\N	\N	f	0	125	125	2024-10-02	6	125	4	125	English Walnuts	https://www.eatthismuch.com/calories/walnuts-2685
+1069	\N	Walnuts	Use partial ingredients.	\N	f	131072	28	100	2026-01-29	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
+1070	\N	English Walnuts	\N	\N	f	131072	28	100	2024-10-02	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
 1071	\N	Dried Tarragon	\N	\N	f	0	28	2	2024-12-02	4	32	131072	32	Dried Tarragon	https://www.eatthismuch.com/calories/tarragon-215
 1072	\N	Tarragon	\N	\N	f	0	28	2	2024-12-02	4	32	131072	32	Tarragon	https://www.eatthismuch.com/calories/tarragon-215
 1073	\N	Leaves of Romaine Lettuce | Leaves of Butter Lettuce	\N	\N	f	0	23.5	47	2024-10-15	0	47	2	47	Lettuce	https://www.eatthismuch.com/calories/lettuce-2013
@@ -1149,7 +1149,7 @@
 1412	\N	Fresh Italian Parsley	\N	\N	f	0	28	4	2026-01-21	4	60	3	60	Parsley	https://www.eatthismuch.com/calories/parsley-2057
 1413	\N	Harissa	\N	\N	f	0	28	12	2024-11-10	4	224	8192	224	Harissa	https://www.eatthismuch.com/calories/harissa-3101216
 1414	\N	Large Squash	\N	\N	f	0	323	196	2025-11-03	0	113	2	113	Large Squash	https://www.eatthismuch.com/calories/squash-2291
-1415	\N	Walnut Halves	\N	\N	f	0	28	100	2024-10-02	4	100	1048576	100	Walnut Halves	https://www.eatthismuch.com/calories/walnuts-2685
+1415	\N	Walnut Halves	Use partial ingredients.	\N	f	131072	28	100	2026-01-29	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
 1416	\N	Fresh Radicchio	\N	\N	f	0	28	40	2026-01-18	4	40	2	40	Radicchio	https://www.eatthismuch.com/calories/radicchio-2561
 1417	\N	Fresh Red Endives	\N	\N	f	0	45	45	2024-11-28	0	90	2	90	Fresh Red Endives	https://www.eatthismuch.com/food/nutrition/red-peppers,2438/
 1418	\N	Radicchio | Red Endives	\N	\N	f	0	28	45	2026-01-22	4	45	2	45	Radicchio | Red Endives	https://www.eatthismuch.com/calories/radicchio-2561
@@ -1243,7 +1243,7 @@
 1593	\N	Back Bacon Slices	\N	\N	f	1048576	12	28	2025-07-16	0	224	268435456	224	Back Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
 1594	\N	Back Bacon	\N	\N	f	1048576	12	28	2025-07-16	0	224	268435456	224	Back Bacon	https://www.eatthismuch.com/calories/bacon-1722
 1595	\N	Fresh Mangos | Fresh Peaches	\N	\N	f	0	207	207	2025-03-26	0	165	1	165	Fresh Mangos | Fresh Peaches	https://www.eatthismuch.com/calories/mangos-1448
-1596	\N	Cumin Powder	\N	\N	t	0	28	9	2024-11-30	4	144	131072	144	Cumin Powder	https://www.eatthismuch.com/calories/cumin-189
+1596	\N	Ground Cumin	aka: Cumin Powder.	\N	t	0	28	9	2024-11-30	4	144	131072	144	Cumin Powder	https://www.eatthismuch.com/calories/cumin-189
 1597	\N	Semisweet Chocolate Chips	\N	\N	f	0	28	28	2024-12-15	4	224	16384	224	Chocolate Chip	https://www.eatthismuch.com/calories/dark-chocolate-4766
 1598	\N	Oil	\N	\N	t	0	28	14	2024-12-22	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/canola-oil-329
 1599	\N	Fine Sherry	\N	\N	f	0	28	28	2024-10-02	4	224	3	224	Fine Sherry	https://www.eatthismuch.com/calories/sherry-765630
@@ -1259,7 +1259,7 @@
 1609	\N	Frozen Green Peas & Frozen Diced Carrots	aka. Podless Frozen Peas. - https://www.eatthismuch.com/calories/peas-2069	\N	f	0	28	134	2024-10-31	4	134	67108864	134	Green Peas & Carrots	\N
 1610	\N	Frozen Diced Carrots	\N	\N	f	0	28	128	2025-08-26	4	128	67108864	128	Frozen Diced Carrots	https://www.eatthismuch.com/calories/carrots-1918
 1611	\N	Pork Loin | Pork Shoulder	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Loin | Pork Shoulder	https://www.eatthismuch.com/calories/italian-sausage-912
-1612	\N	Pork Loin	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Loin	https://www.eatthismuch.com/calories/italian-sausage-912
+1612	\N	Pork Loin Steaks	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Loin	https://www.eatthismuch.com/calories/italian-sausage-912
 1613	\N	Pork Shoulder	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Shoulder	https://www.eatthismuch.com/calories/italian-sausage-912
 1614	\N	Redcurrant Jelly	\N	\N	f	0	28	20	2025-06-09	4	224	32	224	Redcurrant Jelly	https://www.eatthismuch.com/calories/jelly-500019
 1615	\N	Raspberry Wine Vinegar	\N	\N	f	0	30	239	2025-10-23	9	239	3	239	Raspberry Wine Vinegar	https://www.eatthismuch.com/calories/red-wine-vinegar-234
@@ -1394,3 +1394,18 @@
 1780	\N	Large Yellow Onions	\N	\N	f	0	148	148	2025-03-22	0	148	2	148	Onion	https://www.eatthismuch.com/food/nutrition/yellow-onion,89980/
 1781	\N	Canola Oil | Olive Oil	\N	\N	t	0	28	14	2024-12-22	9	224	65536	224	Canola Oil	https://www.eatthismuch.com/calories/canola-oil-329
 1782	\N	Unsmoked Bacon Slices	\N	\N	f	1048576	12	28	2025-07-12	0	224	268435456	224	Bacon Slice	https://www.eatthismuch.com/calories/bacon-1722
+1783	\N	Dried Mixed Herbs	\N	\N	f	0	2	1	2024-11-06	4	16	2	16	Fresh Mixed Herbs (Basil, Parsley, Chervil, Marjoram, Oregano)	https://www.eatthismuch.com/calories/fresh-cilantro-1945
+1784	\N	Palm Sugar	\N	\N	f	262176	9.5	57	2025-01-31	0	114	262144	114	Palm Shortening	https://www.eatthismuch.com/calories/shortbread-cookies-1981045
+1785	\N	Brown Sugar | Palm Sugar	\N	\N	f	262176	9.5	57	2025-01-31	0	114	262144	114	Palm Shortening	https://www.eatthismuch.com/calories/shortbread-cookies-1981045
+1786	\N	Ground Coriander Seeds	\N	\N	f	0	28	5	2025-12-17	4	80	131072	80	Coriander Seeds	https://www.eatthismuch.com/calories/coriander-seed-188
+1788	\N	Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1789	\N	Cane Sugar	\N	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1790	\N	Dark Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1791	\N	Light Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1792	\N	Soup Beans	\N	\N	f	0	28	194	2024-10-17	4	194	2048	194	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
+1793	\N	Mixed Soup Beans	\N	\N	f	0	28	194	2024-10-17	4	194	2048	194	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
+1794	\N	Canned Soup Beans	\N	\N	f	0	28	194	2024-10-17	4	194	2048	194	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
+1795	\N	Northern White Beans	\N	\N	f	0	28	184	2025-10-12	4	184	2048	184	Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525
+1796	\N	Canned Northern White Beans	\N	\N	f	0	28	256	2025-10-14	4	256	512	256	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527
+1797	\N	English Walnut Halves	\N	\N	f	131072	28	100	2026-01-29	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
+1798	\N	Black Walnut Halves	\N	\N	f	131072	28	125	2026-01-29	4	125	1048576	125	Walnut	https://www.eatthismuch.com/calories/walnuts-2684

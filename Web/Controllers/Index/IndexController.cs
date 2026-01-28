@@ -68,59 +68,59 @@ public class IndexController : ViewController
     public async Task<IActionResult> Create([FromForm(Name = "frc-captcha-solution")] string frcCaptchaSolution,
         [Bind("Email,AcceptedTerms,IExist", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel)
     {
-        if (ModelState.IsValid && _captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success != false)
+        if (!ModelState.IsValid || _captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success == false)
         {
-            var newUser = new User(viewModel.Email, viewModel.AcceptedTerms);
-
-            // These records are required. newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
-            newUser.UserFamilies.Add(new UserFamily()
+            return View(nameof(Create), new CreateViewModel()
             {
-                Person = UserFamily.Consts.PersonDefault,
-                Weight = UserFamily.Consts.WeightDefault,
-                CaloriesPerDay = UserFamily.Consts.CaloriesPerDayDefault,
+                WasSubscribed = false,
+                UserCreateViewModel = viewModel
             });
-
-            // These records are required.
-            foreach (var section in UserSection.DefaultWeight.Keys)
-            {
-                // newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
-                newUser.UserSections.Add(new UserSection(section)
-                {
-                    Weight = UserSection.DefaultWeight[section],
-                    AtLeastXNutrientsPerRecipe = UserConsts.AtLeastXNutrientsPerRecipeDefault,
-                });
-            }
-
-            try
-            {
-                // This will set the Id prop on newUser when changes are saved.
-                _context.Users.Add(newUser);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException e) when (e.InnerException != null && e.InnerException.Message.Contains("duplicate key"))
-            {
-                // User may have clicked the back button after personalizing their routine right after signing up.
-                return RedirectToAction(nameof(Index), Name);
-            }
-
-            // Send an account confirmation email.
-            await SendConfirmationEmail(newUser);
-
-            // Need a token for if the user chooses to manage their preferences after signup.
-            var token = await _userRepo.AddUserToken(newUser, durationDays: 1);
-
-            // Back-fill several weeks of workout data so muscle targets can take effect immediately.
-            await _newsletterService.Backfill(newUser.Email, token);
-
-            TempData[TempData_User.SuccessMessage] = "Thank you! Please accept the account confirmation email in your inbox.";
-            return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { newUser.Email, token });
         }
 
-        return View(nameof(Create), new CreateViewModel()
+        var newUser = new User(viewModel.Email, viewModel.AcceptedTerms);
+
+        // These records are required. newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
+        newUser.UserFamilies.Add(new UserFamily()
         {
-            WasSubscribed = false,
-            UserCreateViewModel = viewModel
+            Person = UserFamily.Consts.PersonDefault,
+            Weight = UserFamily.Consts.WeightDefault,
+            CaloriesPerDay = UserFamily.Consts.CaloriesPerDayDefault,
         });
+
+        // These records are required.
+        foreach (var section in UserSection.DefaultWeight.Keys)
+        {
+            // newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
+            newUser.UserSections.Add(new UserSection(section)
+            {
+                Weight = UserSection.DefaultWeight[section],
+                AtLeastXNutrientsPerRecipe = UserConsts.AtLeastXNutrientsPerRecipeDefault,
+            });
+        }
+
+        try
+        {
+            // This will set the Id prop on newUser when changes are saved.
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException e) when (e.InnerException != null && e.InnerException.Message.Contains("duplicate key"))
+        {
+            // User may have clicked the back button after personalizing their routine right after signing up.
+            return RedirectToAction(nameof(Index), Name);
+        }
+
+        // Send an account confirmation email.
+        await SendConfirmationEmail(newUser);
+
+        // Need a token for if the user chooses to manage their preferences after signup.
+        var token = await _userRepo.AddUserToken(newUser, durationDays: 1);
+
+        // Back-fill several weeks of workout data so muscle targets can take effect immediately.
+        await _newsletterService.Backfill(newUser.Email, token);
+
+        TempData[TempData_User.SuccessMessage] = "Thank you! Please accept the account confirmation email in your inbox.";
+        return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { newUser.Email, token });
     }
 
     [Route("login"), HttpPost]
@@ -128,37 +128,37 @@ public class IndexController : ViewController
         [Bind("Email,IExist", Prefix = "UserLoginViewModel")] UserLoginViewModel viewModel,
         [FromForm(Name = "frc-captcha-solution")] string frcCaptchaSolution)
     {
-        if (ModelState.IsValid && _captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success != false)
+        if (!ModelState.IsValid || _captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success == false)
         {
-            // Not going through the normal GetUser route, we don't have a token.
-            var unauthenticatedUser = await _context.Users
-                // TODO email type for transactional or marketing workouts.
-                // User has not been sent an email today. Disabling this, we have a captcha now and it's possible someone's email bounces and they need a second email to send.
-                //.Where(u => u.LastActive.HasValue || !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectConfirm).Any(d => d.Date == Today))
-                //.Where(u => !u.LastActive.HasValue || !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectLogin).Any(d => d.Date == Today))
-                .FirstOrDefaultAsync(u => u.Email == viewModel.Email);
-
-            if (unauthenticatedUser != null)
+            return View(nameof(Create), new CreateViewModel()
             {
-                if (unauthenticatedUser.LastActive.HasValue)
-                {
-                    await SendLoginEmail(unauthenticatedUser);
-                }
-                else
-                {
-                    await SendConfirmationEmail(unauthenticatedUser);
-                }
-            }
-
-            TempData[TempData_User.SuccessMessage] = "If an account exists for this email, you will receive an email with a link to access your account.";
-            return RedirectToAction(nameof(Create), Name);
+                WasSubscribed = false,
+                UserLoginViewModel = viewModel
+            });
         }
 
-        return View(nameof(Create), new CreateViewModel()
+        // Not going through the normal GetUser route, we don't have a token.
+        var unauthenticatedUser = await _context.Users
+            // TODO email type for transactional or marketing workouts.
+            // User has not been sent an email today. Disabling this, we have a captcha now and it's possible someone's email bounces and they need a second email to send.
+            //.Where(u => u.LastActive.HasValue || !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectConfirm).Any(d => d.Date == Today))
+            //.Where(u => !u.LastActive.HasValue || !u.UserEmails.Where(un => un.Subject == NewsletterConsts.SubjectLogin).Any(d => d.Date == Today))
+            .FirstOrDefaultAsync(u => u.Email == viewModel.Email);
+
+        if (unauthenticatedUser != null)
         {
-            WasSubscribed = false,
-            UserLoginViewModel = viewModel
-        });
+            if (unauthenticatedUser.LastActive.HasValue)
+            {
+                await SendLoginEmail(unauthenticatedUser);
+            }
+            else
+            {
+                await SendConfirmationEmail(unauthenticatedUser);
+            }
+        }
+
+        TempData[TempData_User.SuccessMessage] = "If an account exists for this email, you will receive an email with a link to access your account.";
+        return RedirectToAction(nameof(Create), Name);
     }
 
     #region Account Emails

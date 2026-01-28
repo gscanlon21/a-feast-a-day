@@ -62,7 +62,7 @@
 82	Chicken Salad	\N	\N	\N	20	0	5	2	t	chicken-salad.jpg	0	\N	f	f
 83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	64	60	60	4	t	springerle-cookies.jpg	0	Lolly Wehrli	f	f
 84	Warm Dressed Salad w/ Poached Eggs	\N	\N	\N	20	12	3	4	t	egg-bacon-salad.jpg	0	\N	f	f
-85	Pasta Fresca	\N	\N	\N	6	15	5	4	t	pasta-fresca.jpg	0	https://iowagirleats.com/pasta-fresca/	f	f
+85	Pasta Fresca	\N	\N	\N	12	15	5	4	t	pasta-fresca.jpg	0	https://iowagirleats.com/pasta-fresca/	f	f
 86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	12	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
 87	Korean Beef Lettuce Wraps	\N	\N	\N	12	15	5	4	t	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
 88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	f	f
@@ -75,7 +75,7 @@
 95	Buttered Sweet Corn w/ Bacon	\N	\N	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
 97	Quinoa Pepperoni Pizza	\N	\N	\N	12	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
-98	Loaded Deviled Eggs	\N	\N	\N	25	20	5	4	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
+98	Loaded Deviled Eggs	\N	\N	\N	20	20	5	6	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
 99	Warm Pasta Salad w/ Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 100	Buttermilk Pancakes	\N	\N	\N	6	12	2	4	t	buttermilk-pancakes.jpg	0	\N	t	f
 101	Linguine w/ Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	20	12	3	2	t	linguine-arugula.jpg	0	\N	f	f
@@ -104,7 +104,7 @@
 124	Pan-Fried Chicken w/ Pesto	\N	\N	\N	12	18	2	2	t	pesto-chicken.jpg	0	\N	f	f
 125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops w/ Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
-127	Roast Chicken Pitta Pockets	\N	\N	\N	12	2	13	6	t	\N	0	\N	f	f
+127	Roast Chicken Pitta Pockets	\N	Uses preserved lemons that take 3 weeks to marinate, that's too long!	\N	12	2	13	6	t	\N	0	\N	f	f
 128	Soy Sauce and Star Anise Chicken	If you are able to make it ahead, leave the chicken in the marinade for around 6–8 hours, as the flavor will be improved.	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
@@ -165,14 +165,14 @@
 187	Oatmeal Pancakes w/ Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
-190	Fusilli w/ Sausage	\N	\N	\N	6	15	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
+190	Fusilli w/ Sausage	\N	\N	\N	12	15	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 191	Croûtons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
 192	Eliche w/ Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	12	20	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	date-snickers.jpg	0	\N	f	f
 194	Garganelli Pasta w/ Asparagus and Cream	\N	\N	\N	2	15	5	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
-195	Pasta w/ Broccoli and Artichokes	\N	\N	\N	2	13	5	4	t	pasta-broccoli-artichokes.jpg	0	\N	f	f
+195	Pasta w/ Broccoli and Artichokes	\N	\N	\N	4	13	5	4	t	pasta-broccoli-artichokes.jpg	0	\N	f	f
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	\N	0	\N	f	f
-197	Chicken Chow Mein	\N	\N	\N	6	14	6	4	t	beef-noodles.jpg	0	\N	f	f
+197	Chicken Chow Mein	\N	\N	\N	12	14	6	4	t	beef-noodles.jpg	0	\N	f	f
 198	5-Ingredient Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	10	1	t	guacamole.jpg	6	https://asassyspoon.com/guacamole/#wprm-recipe-container-2857	f	f
 231	Pork w/ Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	pork-apples.jpg	0	\N	f	f
 232	Collagen Packed Blueberry Gummies	\N	\N	\N	16	120	15	2	t	blueberry-gummies.jpg	0	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	f	f
@@ -328,7 +328,7 @@
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	quinoa-tabouli.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-482	Pesto Asparagus	\N	\N	\N	8	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+482	Pesto Asparagus	\N	\N	\N	12	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 483	Goddess of Detox Dressing	\N	Too complicated: requires a blender.	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 484	Rice	\N	\N	\N	16	25	5	1	t	rice.jpg	6	\N	t	t
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
@@ -401,7 +401,7 @@
 585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-588	Yummy Chili	\N	\N	\N	4	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+588	Yummy Chili	For the beans, use canned kidney, black, northern white beans, or a mixture of all three. You can also substitute a pound of ground beef or turkey in for the chicken.	\N	\N	8	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cooled-rice.jpg	6	\N	t	f
 590	Steak-Stuffed Sweet Potatoes w/ Cowboy Caviar	\N	Too complicated.	\N	8	60	10	4	t	stuffed-peppers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -445,7 +445,7 @@
 630	Pecan Toffee Shortbread	\N	\N	\N	64	20	10	10	t	\N	0	\N	f	f
 631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
 632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
-633	Pork and Pineapple Coconut Curry	\N	\N	\N	8	17	3	4	t	\N	0	\N	f	f
+633	Pork and Pineapple Coconut Curry	\N	Uses tamarind juice which looks like an absolute pain to make.	\N	8	17	3	4	t	\N	0	\N	f	f
 634	Satay Sauce	\N	\N	\N	0	5	5	1	t	\N	6	\N	t	f
 635	Pork and Pineapple Satay	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 636	Thai-Style Rare Beef and Mango Salad	\N	\N	\N	8	18	2	4	t	beef-mango-salad.jpg	0	\N	f	f
@@ -554,7 +554,7 @@
 836	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	20	0	0	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 837	Harissa Chicken Traybake	\N	\N	\N	8	50	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 838	Sweet Chicken Surprise	\N	\N	\N	8	40	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
-839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	\N	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
+839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	Preserved lemons take 3 weeks to marinate, that's too long!	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
 840	Roasted Zucchini	\N	Duplicate of Roasted Zucchini.	\N	0	20	5	4	t	zucchini.jpg	6	From the First Watch cookbook. 	t	f
 841	First Watch Granola	\N	\N	\N	32	0	0	8	t	granola.jpg	6	From the First Watch cookbook. 	t	f
 842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	ham-cheese-omlet.jpg	0	From the First Watch cookbook. 	f	f
