@@ -57,8 +57,10 @@ public class UserRecipesController : ViewController
         var recipe = await _context.Recipes.AsNoTracking()
             .Include(r => r.RecipeIngredients.OrderBy(ri => ri.Order))
             .Include(r => r.Instructions.OrderBy(i => i.Order))
-            .FirstOrDefaultAsync(r => r.Id == recipeId);
+            .Where(r => r.Id == recipeId)
+            .FirstOrDefaultAsync();
 
+        // May be null if the recipe was soft/hard deleted.
         if (recipe == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -81,7 +83,6 @@ public class UserRecipesController : ViewController
             .Build()
             .Query(_serviceScopeFactory))
             .Select(r => r.AsType<NewsletterRecipeDto>()!);
-
 
         // Need a user context so the manage link is clickable and the user can un-ignore a prep recipe.
         var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);
@@ -150,9 +151,12 @@ public class UserRecipesController : ViewController
             }
 
             var existingRecipe = await _context.Recipes
-                .Include(r => r.Instructions)
                 .Include(r => r.RecipeIngredients)
-                .FirstOrDefaultAsync(r => r.Id == recipe.Id);
+                .Include(r => r.Instructions)
+                .Where(r => r.Id == recipe.Id)
+                .FirstOrDefaultAsync();
+
+            // May be null if the recipe was soft/hard deleted.
             if (existingRecipe == null)
             {
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -215,7 +219,7 @@ public class UserRecipesController : ViewController
         var userRecipe = await _context.UserRecipes
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.UserId == user.Id)
-            .FirstAsync();
+            .FirstOrDefaultAsync();
 
         // May be null if the recipe was soft/hard deleted.
         if (userRecipe == null)
@@ -236,17 +240,6 @@ public class UserRecipesController : ViewController
     {
         var user = await _userRepo.GetUser(email, token, includeServings: true, includeFamilies: true);
         if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        var userRecipe = await _context.UserRecipes
-            .Where(ur => ur.RecipeId == recipeId)
-            .Where(ur => ur.UserId == user.Id)
-            .FirstAsync();
-
-        // May be null if the recipe was soft/hard deleted.
-        if (userRecipe == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
@@ -377,7 +370,13 @@ public class UserRecipesController : ViewController
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.UserId == user.Id)
             .Include(ur => ur.Recipe)
-            .FirstAsync();
+            .FirstOrDefaultAsync();
+
+        // May be null if the recipe was soft/hard deleted.
+        if (userRecipe == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
 
         // Apply refresh padding immediately.
         if (viewModel.PadRefreshXWeeks != userRecipe.PadRefreshXWeeks && userRecipe.LastSeen > DateOnly.MinValue)
