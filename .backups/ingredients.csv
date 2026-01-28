@@ -1243,7 +1243,7 @@
 1593	\N	Back Bacon Slices	\N	\N	f	1048576	12	28	2025-07-16	0	224	268435456	224	Back Bacon Slices	https://www.eatthismuch.com/calories/bacon-1722
 1594	\N	Back Bacon	\N	\N	f	1048576	12	28	2025-07-16	0	224	268435456	224	Back Bacon	https://www.eatthismuch.com/calories/bacon-1722
 1595	\N	Fresh Mangos | Fresh Peaches	\N	\N	f	0	207	207	2025-03-26	0	165	1	165	Fresh Mangos | Fresh Peaches	https://www.eatthismuch.com/calories/mangos-1448
-1596	\N	Cumin Powder	\N	\N	t	0	28	9	2024-11-30	4	144	131072	144	Cumin Powder	https://www.eatthismuch.com/calories/cumin-189
+1596	\N	Ground Cumin	aka: Cumin Powder.	\N	t	0	28	9	2024-11-30	4	144	131072	144	Cumin Powder	https://www.eatthismuch.com/calories/cumin-189
 1597	\N	Semisweet Chocolate Chips	\N	\N	f	0	28	28	2024-12-15	4	224	16384	224	Chocolate Chip	https://www.eatthismuch.com/calories/dark-chocolate-4766
 1598	\N	Oil	\N	\N	t	0	28	14	2024-12-22	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/canola-oil-329
 1599	\N	Fine Sherry	\N	\N	f	0	28	28	2024-10-02	4	224	3	224	Fine Sherry	https://www.eatthismuch.com/calories/sherry-765630
@@ -1259,7 +1259,7 @@
 1609	\N	Frozen Green Peas & Frozen Diced Carrots	aka. Podless Frozen Peas. - https://www.eatthismuch.com/calories/peas-2069	\N	f	0	28	134	2024-10-31	4	134	67108864	134	Green Peas & Carrots	\N
 1610	\N	Frozen Diced Carrots	\N	\N	f	0	28	128	2025-08-26	4	128	67108864	128	Frozen Diced Carrots	https://www.eatthismuch.com/calories/carrots-1918
 1611	\N	Pork Loin | Pork Shoulder	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Loin | Pork Shoulder	https://www.eatthismuch.com/calories/italian-sausage-912
-1612	\N	Pork Loin	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Loin	https://www.eatthismuch.com/calories/italian-sausage-912
+1612	\N	Pork Loin Steaks	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Loin	https://www.eatthismuch.com/calories/italian-sausage-912
 1613	\N	Pork Shoulder	\N	\N	f	0	100	100	2025-08-06	0	100	268435456	100	Pork Shoulder	https://www.eatthismuch.com/calories/italian-sausage-912
 1614	\N	Redcurrant Jelly	\N	\N	f	0	28	20	2025-06-09	4	224	32	224	Redcurrant Jelly	https://www.eatthismuch.com/calories/jelly-500019
 1615	\N	Raspberry Wine Vinegar	\N	\N	f	0	30	239	2025-10-23	9	239	3	239	Raspberry Wine Vinegar	https://www.eatthismuch.com/calories/red-wine-vinegar-234
@@ -1394,3 +1394,16 @@
 1780	\N	Large Yellow Onions	\N	\N	f	0	148	148	2025-03-22	0	148	2	148	Onion	https://www.eatthismuch.com/food/nutrition/yellow-onion,89980/
 1781	\N	Canola Oil | Olive Oil	\N	\N	t	0	28	14	2024-12-22	9	224	65536	224	Canola Oil	https://www.eatthismuch.com/calories/canola-oil-329
 1782	\N	Unsmoked Bacon Slices	\N	\N	f	1048576	12	28	2025-07-12	0	224	268435456	224	Bacon Slice	https://www.eatthismuch.com/calories/bacon-1722
+1783	\N	Dried Mixed Herbs	\N	\N	f	0	2	1	2024-11-06	4	16	2	16	Fresh Mixed Herbs (Basil, Parsley, Chervil, Marjoram, Oregano)	https://www.eatthismuch.com/calories/fresh-cilantro-1945
+1784	\N	Palm Sugar	\N	\N	f	262176	9.5	57	2025-01-31	0	114	262144	114	Palm Shortening	https://www.eatthismuch.com/calories/shortbread-cookies-1981045
+1785	\N	Brown Sugar | Palm Sugar	\N	\N	f	262176	9.5	57	2025-01-31	0	114	262144	114	Palm Shortening	https://www.eatthismuch.com/calories/shortbread-cookies-1981045
+1786	\N	Ground Coriander Seeds	\N	\N	f	0	28	5	2025-12-17	4	80	131072	80	Coriander Seeds	https://www.eatthismuch.com/calories/coriander-seed-188
+1788	\N	Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1789	\N	Cane Sugar	\N	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1790	\N	Dark Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1791	\N	Light Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	200	2024-12-14	4	200	114688	200	Granulated Sugar	https://www.eatthismuch.com/calories/sugar-4644
+1792	\N	Soup Beans	\N	\N	f	0	28	194	2024-10-17	4	194	2048	194	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
+1793	\N	Mixed Soup Beans	\N	\N	f	0	28	194	2024-10-17	4	194	2048	194	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
+1794	\N	Canned Soup Beans	\N	\N	f	0	28	194	2024-10-17	4	194	2048	194	Black Beans	https://www.eatthismuch.com/recipe/nutrition/black-beans,3512
+1795	\N	Northern White Beans	\N	\N	f	0	28	184	2025-10-12	4	184	2048	184	Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3525
+1796	\N	Canned Northern White Beans	\N	\N	f	0	28	256	2025-10-14	4	256	512	256	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527
