@@ -36,7 +36,7 @@ public partial class ShoppingListPage : ContentPage
         {
             shoppingListView.ScrollTo(e.NewStartingIndex, position: ScrollToPosition.MakeVisible, animate: false);
         }
-        else
+        else if (e.Action == NotifyCollectionChangedAction.Move)
         {
             shoppingListView.ScrollTo(e.OldStartingIndex, position: ScrollToPosition.MakeVisible, animate: false);
         }
