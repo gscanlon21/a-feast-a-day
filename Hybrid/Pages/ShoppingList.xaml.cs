@@ -124,6 +124,8 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
         {
             try
             {
+                Loading = true;
+
                 var shoppingListHash = Preferences.Default.Get(nameof(PreferenceKeys.ShoppingListHash), 0);
                 var shoppingList = (await _userService.GetShoppingList(_preferences.Email.Value, _preferences.Token.Value)).GetValueOrDefault();
                 if (shoppingList != null)
@@ -166,8 +168,8 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
             }
             finally
             {
-                _loadingLock.Release();
                 Loading = false;
+                _loadingLock.Release();
             }
         }
     }
