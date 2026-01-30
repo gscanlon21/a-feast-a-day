@@ -88,7 +88,7 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
 
     private async Task WhenCompleted()
     {
-        if (!string.IsNullOrWhiteSpace(IngredientEntry) && !await _localDatabase.ContainsItemAsync(IngredientEntry))
+        if (!Loading && !string.IsNullOrWhiteSpace(IngredientEntry) && !await _localDatabase.ContainsItemAsync(IngredientEntry))
         {
             var newIngredient = new ShoppingListItem(IngredientEntry);
 
@@ -105,7 +105,7 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
 
     private async Task WhenChecked(CheckedMessage? message)
     {
-        if (message != null && !Loading)
+        if (!Loading && message != null)
         {
             // Move the item to the end of the list.
             await MainThread.InvokeOnMainThreadAsync(() =>
