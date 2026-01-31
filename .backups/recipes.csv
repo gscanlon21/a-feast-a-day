@@ -16,7 +16,7 @@
 33	Completely Crock Pot Spaghetti and Meatballs	You can vary the amount of pasta or meatballs according to your taste. Just make sure that the pasta is submerged in the liquid before you start the crock pot. For a complete meal, all you need is some toasted garlic bread and a green salad tossed with mushrooms and avocados.	\N	\N	8	360	10	6	t	spaghetti-meatballs.jpg	0	\N	f	f
 34	Crockpot Applesauce Kielbasa	You can use any fully-cooked sausage in place of the kielbasa if you'd like. This recipe can also be served as a main dish over some rice pilaf or cooked pasta; anything to soak up the delicious sauce. In that case, cut the sausages into 2-inch pieces.  If serving as an appetizer, use little toothpicks to get the sausages from the sauce.	\N	\N	4	120	5	4	t	kielbasa.jpg	0	\N	f	f
 35	Crockpot BBQ Pinto Beans	\N	\N	\N	16	480	15	6	f	bbq-pinto-beans.jpg	0	https://www.thespruceeats.com/crockpot-bbq-pinto-beans-482779	f	f
-36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	6	120	10	4	t	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
+36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	16	120	10	4	t	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	4	10	5	4	t	black-bean-quesadillas.jpg	0	https://www.eatingwell.com/recipe/250108/black-bean-quesadillas/	f	f
 38	Black Bean Fajita Skillet	You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/	f	f
 39	Linguine w/ Avocado, Tomato, & Lime	\N	\N	\N	6	10	20	2	t	linguine-avocado-tomato-lime.jpg	0	https://www.bbcgoodfood.com/recipes/linguine-avocado-tomato-lime	f	f
@@ -160,7 +160,7 @@
 182	Beef and Noodles	\N	\N	\N	8	20	10	4	t	beef-noodles.jpg	0	https://www.saltandlavender.com/easy-beef-and-noodles/	f	f
 183	Chestnut Carbonara	Save the egg whites for making meringues another day.	\N	\N	12	5	10	2	t	sausage-carbonara.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 184	Pasta w/ Fresh Pesto	\N	\N	\N	4	12	4	2	t	pasta-pesto.jpg	0	\N	f	f
-185	Pasta w/ Spring Vegetables	\N	\N	\N	2	15	5	4	t	pasta-vegetables.jpg	0	\N	f	f
+185	Pasta w/ Spring Vegetables	\N	\N	\N	4	15	5	4	t	pasta-vegetables.jpg	0	\N	f	f
 186	The Kickin' Chicken Sandwich	\N	\N	\N	12	15	10	2	t	grilled-chicken-sandwich.jpg	0	\N	f	f
 187	Oatmeal Pancakes w/ Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
@@ -229,8 +229,8 @@
 316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	3	2	t	black-tahini-noodles.jpg	0	\N	f	f
 317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	4	40	10	4	t	italian-baked-rice.jpg	0	\N	f	f
 318	Ham & Egg Curried Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	0	2	t	ham-egg-curried-noodles.jpg	0	\N	f	f
-319	Chorizo, Sweet Potato & Black Bean Rice Skillet	\N	\N	\N	4	30	10	6	t	chorizo-sweet-potato-black-beans-rice.jpg	0	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	f	f
-320	Comforting Sausage Bake	From Jamie Oliver's 5 Ingredients	\N	\N	8	45	10	4	t	sausage-bake.jpg	0	\N	f	f
+319	Chorizo, Sweet Potato & Black Bean Rice Skillet	\N	\N	\N	8	30	10	6	t	chorizo-sweet-potato-black-beans-rice.jpg	0	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	f	f
+320	Comforting Sausage Bake	\N	\N	\N	8	45	10	4	t	sausage-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	8	10	2	2	t	peanut-chicken.jpg	0	\N	f	f
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version.	\N	\N	64	60	5	4	t	\N	0	https://www.glutenfreepalate.com/crockpot-christmas-crack/	f	f
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
@@ -304,7 +304,7 @@
 423	Steamed Kale	\N	\N	\N	16	5	5	4	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	\N	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-426	Honey-Cumin Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	10	1	t	honey-mustard-dressing.jpg	6	\N	t	f
+426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	5	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
@@ -342,7 +342,7 @@
 526	Pizza w/ Beans	\N	\N	\N	8	20	5	2	t	quinoa-pizza.jpg	0	\N	f	f
 527	Tumeric Ginger Tea	\N	\N	\N	128	2	3	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 528	Mango Salsa	\N	\N	\N	0	0	10	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-529	Polyphenol Salad	\N	\N	\N	10	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+529	Polyphenol Salad	\N	\N	\N	20	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 532	Cauliflower Hummus	\N	\N	\N	0	30	10	2	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -366,7 +366,7 @@
 550	Everything Seasoning	aka: Everything (but the) Bagel Seasoning.	\N	\N	0	0	5	2	t	everything-seasoning.jpg	4	\N	t	f
 551	Bentonite Clay Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 552	Charcoal Juice	\N	Activated Charcoal can bind to foods you have eaten, blocking the absorption of nutrients and medications you may have taken, reducing their effectiveness.	\N	128	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-553	Adobo	\N	\N	\N	4	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+553	Adobo	\N	\N	\N	8	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	16	6	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 555	Green Beans w/ Almonds	\N	\N	\N	16	15	5	4	t	green-beans-almonds.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 556	Hashi-Mayo	\N	\N	\N	0	0	10	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -399,7 +399,7 @@
 583	Salmon Cakes	\N	Too complicated. Too many prep recipes.	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 584	Pizza Egg Bites	\N	\N	\N	6	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-586	Cream of Broccoli Soup	\N	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+586	Cream of Broccoli Soup	When blending hot liquids, make sure the top of the blender is vented to let the steam escape.	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	For the beans, use canned kidney, black, northern white beans, or a mixture of all three. You can also substitute a pound of ground beef or turkey in for the chicken.	\N	\N	8	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cooled-rice.jpg	6	\N	t	f
@@ -482,7 +482,7 @@
 699	Apple Galette	\N	Has weird ingredients.	\N	64	35	20	8	t	\N	0	\N	f	f
 700	Peach Galette	Swap out the ricotta cheese for 8 ounces cream cheese mixed with 2 tablespoons heavy cream.	Has weird ingredients.	\N	64	35	20	8	t	\N	0	\N	f	f
 701	No-Bake Chocolate Cheesecake Cups	You can buy chocolate cookie crumbs in the baking asile of the grocery store. Any leftover cookie crumbs can be used as a topping for ice cream or vanilla yogurt.	\N	\N	64	0	75	4	t	\N	0	\N	f	f
-702	Chocolate Truffles	255min prep time. Store the truffles in the fridge in an airtight container.	\N	\N	64	5	15	2	t	\N	0	\N	f	f
+702	Chocolate Truffles	255min prep time. Store the truffles in the fridge in an airtight container.	\N	\N	64	5	245	2	t	\N	0	\N	f	f
 703	Killer Guacamole	\N	\N	\N	0	0	10	12	t	guacamole.jpg	4	\N	t	f
 704	Bacon and Corn Chowder	\N	\N	\N	8	35	10	4	t	\N	0	\N	f	f
 705	Quinoa Tabbouloeh	\N	\N	\N	16	0	70	2	t	\N	6	\N	f	f
@@ -542,7 +542,7 @@
 824	Oven-Baked Chicken Fingers	\N	\N	\N	8	30	15	4	t	\N	0	\N	t	f
 825	Quick Crispy Duck	\N	\N	\N	12	20	2	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 826	Chicken Traybake	\N	\N	\N	8	55	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-827	Chicken & Merguez Stew	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+827	Chicken & Merguez Stew	Have a go at cutting the chicken yourself, or ask your butcher to do it for you.	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 828	Crispy Paprika Chicken	\N	\N	\N	8	55	5	4	t	crispy-paprika-chicken.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 829	Herby Steak & Crispy Potatoes	\N	\N	\N	8	25	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 830	Caveman Roasted Turkey Legs	You can substitute chicken legs for the turkey legs, but cut total cooking time down by about 15 minutes.	\N	\N	8	60	5	2	t	roasted-turkey-legs-alt.jpg	0	\N	f	f
@@ -593,12 +593,12 @@
 907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	burgers-relish.jpg	0	\N	t	f
 908	The Cowboy Burger	Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	\N	\N	8	10	10	2	t	burgers-relish.jpg	0	\N	f	f
 909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	12	10	10	1	t	\N	0	\N	f	f
-910	Sweet Potato Tacos	Optionally, add some guacamole, fresh cilantro, jalepenos, and a squeeze of fresh lime juice.	\N	\N	4	25	10	1	t	\N	0	\N	f	f
+910	Sweet Potato Tacos	\N	\N	\N	4	25	10	1	t	\N	0	\N	f	f
 911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or 1/2 teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f
 944	Fermented Coconut Water	You will need to rest and renutrify your water kefir grains between batches.	\N	\N	0	55	5	8	t	\N	9	\N	t	f
 945	Skillet Fried Chicken	For a bit of a kick, add ¼-tsp. cayenne pepper to the flour or a few teaspoons of hot sauce to the buttermilk.	\N	\N	8	15	155	2	t	baked-chicken-breast.jpg	0	\N	f	f
 946	Homeade Turkey Sausage Patties	Store the leftovers in the fridge in an airtight container for up to 3 days. For longer storage, place in a resealable bag and freeze. Let the patties cool before storing. When ready to reuse, simply reheat in the microwave.	\N	\N	0	20	10	6	t	\N	0	\N	t	f
-947	Kick-Ass Turkey Sausage Breakfast Sandwich	Make the sandwich more substantial by adding tomato and avocado. Or, to take this in a different direction, mix together 1 teaspoon cranberry sauce and 2 tablespoons mayonaise and spread on the English muffin.	\N	\N	8	6	2	1	t	\N	0	\N	f	f
+947	Turkey Sausage Breakfast Sandwich	Make the sandwich more substantial by adding tomato and avocado. Or, to take this in a different direction, mix together 1 teaspoon cranberry sauce and 2 tablespoons mayonaise and spread on the English muffin.	\N	\N	8	6	2	1	t	\N	0	\N	f	f
 950	Gum	\N	\N	\N	32	0	0	7	t	gum-alt.jpg	0	\N	f	f
 951	Hamburger Soup	Add a 15-ounce can of white beans to the soup to make it a little more substantial. Additionally, you can top the soup with a few tablespoons of grated Cheddar cheese.	\N	\N	8	30	5	4	t	\N	0	\N	f	f
 952	Hot and Sour Soup	You can gently stir 2 beaten eggs into this soup a few minutes before serving to create egg "noodles". Fresh mushrooms will not give this soup the same concentrated flavors as the dried ones do. 	Not very appetizing.	\N	8	30	40	6	t	\N	0	\N	f	f
@@ -607,13 +607,13 @@
 955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	8	10	5	2	t	egg-fried-rice.jpg	0	\N	f	f
 956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	chicken-fried-rice.jpg	0	\N	f	f
 957	Chicken Noodle Soup	\N	\N	\N	8	45	10	4	t	\N	0	\N	f	f
-958	Fire-Roasted Tomato Soup	If you don't have a grill, you can roast the tomatoes in the oven. Preheat the oven to 400F. Halve the tomatoes lengthwise, drizzle them with olive oil, and place them cut-side up on a parchment-lined sheet pan. Bake them, without flipping over, for 30 to 35 minutes. Transfer to a bowl, cover, and peel as directed.	\N	\N	8	45	20	4	t	\N	0	\N	f	f
+958	Fire-Roasted Tomato Soup	If you don't have a grill, you can roast the tomatoes in the oven. Preheat the oven to 400°F. Halve the tomatoes lengthwise, drizzle them with olive oil, and place them cut-side up on a parchment-lined sheet pan. Bake them, without flipping over, for 30–35 minutes. Transfer to a bowl, cover, and peel as directed.	\N	\N	8	45	20	4	t	\N	0	\N	f	f
 959	Zucchini Noodles	If sautéing a large batch, cook the zucchini noodles in batches to avoid overcrowding. This helps them cook evenly and prevents them from becoming too soft. After spiraling, lightly salt the zucchini noodles and let them sit for 10-15 minutes. This helps draw out excess moisture. Then, gently pat them dry with a paper towel or clean kitchen cloth. You don’t need to peel the zucchini. The skin is edible, adds color, and contains nutrients. If you prefer a smoother texture, you can peel it, but it’s optional. A spiralizer works best for long, spaghetti-like noodles. However, you can also use a julienne peeler for thinner strands or a vegetable peeler to create wider ribbon-like noodles. Store your zoodles uncooked in an airtight container in the fridge for up to 3 days.  For the best texture, cook them just before serving.	\N	\N	0	0	5	1	t	zucchini-linguine.jpg	6	https://www.mamaknowsglutenfree.com/how-to-make-zucchini-noodles/	t	f
 960	Cranberry Jalapeno Cream Cheese Dip	\N	\N	\N	16	0	0	2	t	\N	0	https://sweetbeginningsblog.com/cranberry-jalapeno-cream-cheese-dip/#recipe	f	f
 961	Halloumi and Grape Salad	\N	\N	\N	16	2	2	4	t	\N	0	\N	f	f
 962	Warm Broad Bean and Feta Salad	\N	\N	\N	20	5	2	4	t	\N	0	\N	f	f
 963	Caesar Salad	For a tangier dressing, mix 2 tbsp white wine vinegar, 1 tbsp Worcestershire sauce, ½ tsp mustard powder, 1 tsp sugar, and and pepper in a screw-top jar, then add the oil and shake well.	\N	\N	20	2	10	4	t	\N	0	\N	f	f
-964	Chewy Flapjack Bars	Allow the baking parchment to hand over the edges of the tin; this makes the baked bars easier to remove.	\N	\N	32	20	8	12	t	\N	0	\N	f	f
+964	Chewy Flapjack Bars	Allow the baking parchment to hang over the edges of the tin; this makes the baked bars easier to remove.	\N	\N	32	20	8	12	t	\N	0	\N	f	f
 965	Giant Triple Chocolate Cookies	\N	\N	\N	64	15	10	12	t	\N	0	\N	f	f
 966	Pan-Fried Chicken Breast Fillets	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings.	\N	\N	0	10	5	2	t	baked-chicken-breast.jpg	0	\N	t	f
 967	Cool Chocolate Float	\N	\N	\N	64	2	6	2	t	\N	0	\N	f	f
@@ -650,5 +650,5 @@
 998	Stovetop Bacon Slices	\N	\N	\N	0	10	5	1	t	bacon.jpg	0	\N	t	f
 1000	Fried Breadcrumbs	\N	\N	\N	0	5	5	4	t	\N	4	\N	t	f
 1001	Peanut Sauce	You can substitute with peanut butter with almond or cashew butter.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
-1002	Broccoli Salad w/ Peanut Sauce	\N	\N	\N	20	0	5	2	t	\N	0	https://www.theorganickitchen.org/broccoli-salad-with-peanut-sauce/	f	f
+1002	Broccoli Salad w/ Peanut Sauce	Be sure to get edamame beans with no shells or you will have a big job ahead of you!	\N	\N	20	0	5	2	t	\N	0	https://www.theorganickitchen.org/broccoli-salad-with-peanut-sauce/	f	f
 1003	Cuban Black Beans Recipe	Store leftover beans refrigerated for up to 4 days.	\N	\N	20	25	10	4	t	\N	0	https://www.acouplecooks.com/quick-cuban-black-beans/	f	f

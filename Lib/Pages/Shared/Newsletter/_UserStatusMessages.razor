@@ -1,7 +1,7 @@
 ﻿@inject DisplayHelper DH
-@inject IOptions<SiteSettings> SiteSettings
+@using Core.Dtos.User
 @using Core.Models.Options
-@using Microsoft.Extensions.Options
+@using Core.Models.User
 
 @if (User.IsAlmostInactive)
 {
@@ -16,8 +16,14 @@
         <span>Click on the &#127760; to manage a recipe and its ingredients. This message will disappear soon.</span>
     </div>
 }
+else if (User.Features.HasFlag(Features.Demo))
+{
+    <div style="background-color:antiquewhite;padding:1rem;margin-block:1rem;">
+        <span>Click on the &#127760; to manage a recipe and its ingredients.</span>
+    </div>
+}
 
 @code {
     [Parameter, EditorRequired]
-    public Core.Dtos.User.UserNewsletterDto User { get; set; } = null!;
+    public UserNewsletterDto User { get; set; } = null!;
 }
