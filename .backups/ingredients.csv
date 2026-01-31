@@ -85,7 +85,7 @@
 87	\N	Crackers	\N	\N	f	0	3.3	3.3	2025-02-18	0	50	262144	50	Crackers	https://www.eatthismuch.com/food/nutrition/ritz-crackers,4370/
 88	\N	Unsalted Peanuts	\N	\N	f	2048	28	146	2024-10-12	4	146	1048576	146	Unsalted Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/
 89	\N	Pecans	\N	\N	f	0	28	99	2024-11-18	4	99	1048576	99	Pecans	https://www.eatthismuch.com/food/nutrition/pecans,2676/
-90	\N	Black Walnuts	\N	\N	f	131072	28	125	2024-10-02	4	125	1048576	125	Walnut	https://www.eatthismuch.com/calories/walnuts-2684
+90	\N	Black Walnuts	\N	\N	f	131072	28	125	2026-01-30	4	125	1048576	125	Walnut	https://www.eatthismuch.com/calories/walnuts-2684
 91	\N	Unsalted White Corn Tortilla Chips	\N	\N	f	2	28	26	2025-09-03	4	26	2097152	26	Unsalted White Corn Tortilla Chips	https://www.eatthismuch.com/calories/tortilla-chips-5763
 92	\N	Cashew Nuts	\N	\N	f	0	28	137	2025-03-10	4	137	1048576	137	Cashew Nuts	https://www.eatthismuch.com/calories/cashew-nuts-2642
 93	\N	Vegetarian Refried Beans	\N	\N	f	0	28	444	2024-10-23	4	242	512	242	Vegetarian Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3652
@@ -866,7 +866,7 @@
 1067	\N	Food Grade Liquid Bentonite Clay	\N	\N	f	294944	32	16	2024-10-27	9	256	8192	256	Food Grade Liquid Bentonite Clay	https://www.eatthismuch.com/calories/soy-sauce,3618
 1068	\N	Boneless Skinless Turkey Breasts	\N	\N	f	0	26	26	2025-03-27	0	208	268435456	208	Boneless Skinless Turkey Breasts	https://www.eatthismuch.com/calories/sliced-turkey-948
 1069	\N	Walnuts	Use partial ingredients.	\N	f	131072	28	100	2026-01-29	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
-1070	\N	English Walnuts	\N	\N	f	131072	28	100	2024-10-02	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
+1070	\N	English Walnuts	\N	\N	f	131072	28	100	2026-01-30	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
 1071	\N	Dried Tarragon	\N	\N	f	0	28	2	2024-12-02	4	32	131072	32	Dried Tarragon	https://www.eatthismuch.com/calories/tarragon-215
 1072	\N	Tarragon	\N	\N	f	0	28	2	2024-12-02	4	32	131072	32	Tarragon	https://www.eatthismuch.com/calories/tarragon-215
 1073	\N	Leaves of Romaine Lettuce | Leaves of Butter Lettuce	\N	\N	f	0	23.5	47	2024-10-15	0	47	2	47	Lettuce	https://www.eatthismuch.com/calories/lettuce-2013
@@ -1409,3 +1409,4 @@
 1796	\N	Canned Northern White Beans	\N	\N	f	0	28	256	2025-10-14	4	256	512	256	Canned Kidney Beans	https://www.eatthismuch.com/calories/kidney-beans-3527
 1797	\N	English Walnut Halves	\N	\N	f	131072	28	100	2026-01-29	4	120	1048576	100	Walnut	https://www.eatthismuch.com/calories/walnuts-2685
 1798	\N	Black Walnut Halves	\N	\N	f	131072	28	125	2026-01-29	4	125	1048576	125	Walnut	https://www.eatthismuch.com/calories/walnuts-2684
+1799	\N	Bone-In Pork Loin Chops	\N	\N	f	0	178	178	2025-07-13	0	178	268435456	178	Bone-In Pork Chops	https://www.eatthismuch.com/calories/pork-loin-center-loin-chops-1646
