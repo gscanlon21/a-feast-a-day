@@ -50,7 +50,7 @@
                 <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
                     <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserSections)</b></summary>
 
-                    <div class="mt-1 ps-3">
+                    <div class="mt-2 ps-3">
                         @for (var i = 0; i < Model.UserSections.Count; i++)
                         {
                             <input type="hidden" asp-for="UserSections[i].UserId" />
@@ -61,11 +61,11 @@
                                 <div class="mb-1 ">
                                     <label asp-for="UserSections[i].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].Weight)</label>
                                     <div style="display:flex;column-gap:1ch;">
-                                        <output name="mobilityMusclesOutput@(i)" for="@Html.IdFor(_ => Model.UserSections[i])">@Model.UserSections[i].Weight</output>
+                                        <output name="userSectionsOutput@(i)" for="@Html.IdFor(_ => Model.UserSections[i])">@Model.UserSections[i].Weight</output>
                                         <div style="display:flex;width:100%;">
                                             <input asp-for="UserSections[i].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
                                                    min="@UserConsts.SectionWeightMin" max="@UserConsts.SectionWeightMax"
-                                                   oninput="mobilityMusclesOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
+                                                   oninput="userSectionsOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
                                             <datalist id="mobilityMusclesList@(i)">
                                                 <option value="@(UserSection.DefaultWeight.TryGetValue(Model.UserSections[i].Section, out int countTmp) ? countTmp : 0)"></option>
                                             </datalist>
@@ -107,6 +107,12 @@
                 </div>
             </div>
 
+            @if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
+                    Customize how many people to cook for.
+                </div>
+            }
             <div class="mb-3">
                 <details class="mb-3" @((Model.WasUpdated == false || Model.UserFamilies.Count(f => f.Person != Person.None) == 0) ? "open='open'" : "")>
                     <summary><b>Edit Family Members</b> (@Model.UserFamilies.Count(f => !f.Hide))</summary>
@@ -226,6 +232,46 @@
             @if (Model.User.IsDemoUser)
             {
                 <div class="alert alert-info callout">
+                    Exclude recipes containing certain ingredients.
+                </div>
+            }
+            <div class="mb-3">
+                <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
+                    <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserFoodPreferences)</b></summary>
+
+                    <div class="mt-2 ps-3">
+                        @for (var i = 0; i < Model.UserFoodPreferences.Count; i++)
+                        {
+                            <input type="hidden" asp-for="UserFoodPreferences[i].UserId" />
+                            <input type="hidden" asp-for="UserFoodPreferences[i].Allergen" />
+                            <div class="mb-2 d-flex flex-wrap" style="column-gap:1ch;">
+                                <div class="d-flex" style="flex:1 0 11ch;line-height:1.25">@Model.UserFoodPreferences[i].Allergen.GetDisplayName2()</div>
+                                <div class="d-flex" style="flex:99999 0 250px;gap:1ch;align-items:center;">
+                                    <div class="d-flex w-100 flex-column justify-content-center">
+                                        <input asp-for="UserFoodPreferences[i].FoodPreference" type="range" aria-describedby="food-preferences-help"
+                                               min="@((int)FoodPreference.Normal)" max="@((int)FoodPreference.Exclude)" value="@((int)Model.UserFoodPreferences[i].FoodPreference)"
+                                               list="userFoodPreferencesList@(i)" />
+                                        <datalist id="userFoodPreferencesList@(i)" class="d-flex font-size--small justify-content-between" style="margin-top:-.25ex;">
+                                            <option class="white-space--nowrap" value="@((int)FoodPreference.Normal)">@FoodPreference.Normal.GetSingleDisplayName()</option>
+                                            <option class="white-space--nowrap" value="@((int)FoodPreference.Seldom)">@FoodPreference.Seldom.GetSingleDisplayName()</option>
+                                            <option class="white-space--nowrap" value="@((int)FoodPreference.Exclude)">@FoodPreference.Exclude.GetSingleDisplayName()</option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <span asp-validation-for="UserFoodPreferences" class="text-danger"></span>
+                        <div id="food-preferences-help" class="form-text">
+                            @Html.DisplayDescriptionFor(_ => Model.UserFoodPreferences)
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            @if (Model.User.IsDemoUser)
+            {
+                <div class="alert alert-info callout">
                     Recipes are chosen from equipment you have access to.
                 </div>
             }
@@ -242,21 +288,6 @@
                         <span>Recipes that require equipment you don't have will be excluded from your meal plan.</span>
                     </div>
                 </details>
-            </div>
-
-            @if (Model.User.IsDemoUser)
-            {
-                <div class="alert alert-info callout">
-                    Exclude recipes containing certain ingredients.
-                </div>
-            }
-            <div class="mb-3">
-                <label asp-for="AllergenBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Allergens)</label>
-                <select asp-for="AllergenBinder" class="form-control overflow-auto" aria-describedby="allergy-help" size="5"
-                        asp-items="@(EnumExtensions.GetSingleValues<Allergens>().AsSelectListItems())">
-                </select>
-                <span asp-validation-for="AllergenBinder" class="text-danger"></span>
-                <div id="allergy-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Allergens)</div>
             </div>
 
             @if (Model.User.IsDemoUser)

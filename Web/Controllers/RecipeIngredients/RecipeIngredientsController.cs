@@ -2,6 +2,7 @@
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
+using Core.Models.User;
 using Data;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
@@ -30,7 +31,7 @@ public class RecipeIngredientsController : ViewController
     private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
     private readonly IServiceScopeFactory _serviceScopeFactory;
-    
+
     public RecipeIngredientsController(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
@@ -70,18 +71,22 @@ public class RecipeIngredientsController : ViewController
     [HttpGet, Route("{recipeIngredientId}")]
     public async Task<IActionResult> ManageRecipeIngredient(string email, string token, int recipeIngredientId, bool? wasUpdated = null)
     {
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeFoodPreferences: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
+
+        var allergens = user.UserFoodPreferences
+            .Where(f => f.FoodPreference == FoodPreference.Exclude)
+            .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
 
         // AlternativeIngredientss are required for the select list.
         // IngredientRecipe is required for the name of the recipe ingredient.
         var recipeIngredient = await _context.RecipeIngredients.AsNoTracking()
             .Include(ri => ri.IngredientRecipe)
             .Include(i => i.Ingredient)
-                .ThenInclude(i => i.Alternatives.Where(a => (a.AlternativeIngredient.Allergens & user.Allergens) == 0))
+                .ThenInclude(i => i.Alternatives.Where(a => (a.AlternativeIngredient.Allergens & allergens) == 0))
                     .ThenInclude(ai => ai.AlternativeIngredient)
             .Where(r => r.Id == recipeIngredientId)
             .FirstOrDefaultAsync();
@@ -202,6 +207,8 @@ public class RecipeIngredientsController : ViewController
             {
                 options.IgnoreIgnored = true;
                 options.MaxIngredients = null;
+                options.Allergens = Allergens.None;
+                options.SemiAllergens = Allergens.None;
             })
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>

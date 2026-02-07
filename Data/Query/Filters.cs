@@ -26,7 +26,7 @@ public static class Filters
         }
 
         // Prep recipes use base.
-        return value == Section.Prep 
+        return value == Section.Prep
             ? query.Where(vm => vm.Recipe.BaseRecipe) // Has any flag:
             : query.Where(vm => (vm.Recipe.Section & value.Value) != 0);
     }

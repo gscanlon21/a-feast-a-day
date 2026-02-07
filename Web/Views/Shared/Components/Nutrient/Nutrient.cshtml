@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="alert alert-primary" role="alert">
-    <div style="display:flex;flex-direction:column;row-gap:1ex;">
+    <div class="d-flex flex-column" style="row-gap:1ex;">
         @foreach (var nutrientTarget in NutrientHelpers.All
             .Where(kv => kv.HasDisplay(DisplayType.Name))
             .Select(kv => Model.GetNutrientTarget(kv))
@@ -37,11 +37,11 @@
             .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.Name))
             .Append(Model.AllNutrientTarget))
         {
-            <div style="display:flex;column-gap:1ch;flex-wrap:wrap;">
-                <div style="display:flex;flex:1 0 14ch;">@nutrientTarget.NutrientGroup.GetSingleDisplayName(DisplayType.ShortName)</div>
+            <div class="d-flex flex-wrap" style="column-gap:1ch;">
+                <div class="d-flex" style="flex:1 0 14ch;line-height:1.25;">@nutrientTarget.NutrientGroup.GetSingleDisplayName(DisplayType.ShortName)</div>
 
-                <div style="display:flex;flex:99999 0 275px;gap:1ch;align-items:center;">
-                    <div style="display:flex;justify-content:space-between;">
+                <div class="d-flex align-items-center" style="flex:99999 0 275px;gap:1ch;">
+                    <div class="d-flex justify-content-between">
                         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetNutrientRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowButtons ? "" : "disabled")>
@@ -63,7 +63,7 @@
                             </button>
                         </form>
                     </div>
-                    <div style="width:100%;position:relative;display:flex;">
+                    <div class="w-100 d-flex position-relative">
                         <div style="position:absolute;bottom:-1px;height:2px;width:100%;background-color:@nutrientTarget.Color;"></div>
 
                         @if (nutrientTarget.ShowButtons)
@@ -82,7 +82,7 @@
                             &#9660;
                         </div>
                     </div>
-                    <div style="display:flex;justify-content:space-between;">
+                    <div class="d-flex justify-content-between">
                         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseEndNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowDecreaseEnd ? "" : "disabled")>

@@ -38,13 +38,15 @@ public class UserRepo
         bool includeServings = false,
         bool includeFamilies = false,
         bool includeIngredients = false,
-        bool allowDemoUser = false)
+        bool allowDemoUser = false,
+        bool includeFoodPreferences = false)
     {
         return await GetUser(email, token,
             includeNutrients: includeNutrients,
             includeServings: includeServings,
             includeFamilies: includeFamilies,
             includeIngredients: includeIngredients,
+            includeFoodPreferences: includeFoodPreferences,
             allowDemoUser: allowDemoUser) ?? throw new UserException("User is null.");
     }
 
@@ -56,7 +58,8 @@ public class UserRepo
         bool includeServings = false,
         bool includeFamilies = false,
         bool includeIngredients = false,
-        bool allowDemoUser = false)
+        bool allowDemoUser = false,
+        bool includeFoodPreferences = false)
     {
         if (email == null || token == null)
         {
@@ -83,6 +86,11 @@ public class UserRepo
         if (includeIngredients)
         {
             query = query.Include(u => u.UserRecipeIngredients);
+        }
+
+        if (includeFoodPreferences)
+        {
+            query = query.Include(u => u.UserFoodPreferences);
         }
 
         var user = await query

@@ -25,7 +25,6 @@ public class EditComponentViewModel
         SendDay = user.SendDay;
         SendHour = user.SendHour;
         Verbosity = user.Verbosity;
-        Allergens = user.Allergens;
         FootnoteType = user.FootnoteType;
         MaxIngredients = user.MaxIngredients;
         FontSizeAdjust = user.FontSizeAdjust;
@@ -76,12 +75,11 @@ public class EditComponentViewModel
     [Display(Name = "Family Members")]
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
-    [Required]
-    [Display(Name = "Allergens", Description = "What allergens to exclude?")]
-    public Allergens Allergens { get; set; }
+    [Display(Name = "Food Preferences", Description = "")]
+    public IList<UserEditFoodPreferencesViewModel> UserFoodPreferences { get; set; } = [];
 
     [Required]
-    [Display(Name = "Cooking Equipment", Description = "What cooking equipment do you have access to?")]
+    [Display(Name = "Cooking Equipment", Description = "What cooking equipment do you have?")]
     public Equipment Equipment { get; set; }
 
     [Required, Range(UserConsts.SendHourMin, UserConsts.SendHourMax)]
@@ -112,16 +110,28 @@ public class EditComponentViewModel
         set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
-    public Allergens[]? AllergenBinder
-    {
-        get => Enum.GetValues<Allergens>().Where(e => Allergens.HasFlag(e)).ToArray();
-        set => Allergens = value?.Aggregate(Allergens.None, (a, e) => a | e) ?? Allergens.None;
-    }
-
     public FootnoteType[]? FootnoteTypeBinder
     {
         get => Enum.GetValues<FootnoteType>().Where(e => FootnoteType.HasFlag(e)).ToArray();
         set => FootnoteType = value?.Aggregate(FootnoteType.None, (a, e) => a | e) ?? FootnoteType.None;
+    }
+
+    public class UserEditFoodPreferencesViewModel
+    {
+        public UserEditFoodPreferencesViewModel() { }
+
+        public UserEditFoodPreferencesViewModel(UserFoodPreference userMuscleMobility)
+        {
+            UserId = userMuscleMobility.UserId;
+            Allergen = userMuscleMobility.Allergen;
+            FoodPreference = userMuscleMobility.FoodPreference;
+        }
+
+        public int UserId { get; init; }
+
+        public Allergens Allergen { get; init; }
+
+        public FoodPreference FoodPreference { get; set; }
     }
 
     public class UserFamilyViewModel

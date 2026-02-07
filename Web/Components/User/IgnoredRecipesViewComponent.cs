@@ -1,6 +1,7 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
+using Core.Models.User;
 using Data;
 using Data.Query;
 using Data.Query.Builders;
@@ -48,6 +49,8 @@ public class IgnoredRecipesViewComponent : ViewComponent
             {
                 options.IgnoreIgnored = true;
                 options.MaxIngredients = null;
+                options.Allergens = Allergens.None;
+                options.SemiAllergens = Allergens.None;
             })
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>

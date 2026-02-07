@@ -14,7 +14,6 @@ using Data.Query;
 using Data.Query.Builders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace Data.Repos;
 
@@ -22,12 +21,10 @@ public partial class NewsletterRepo
 {
     private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
-    private readonly ILogger<NewsletterRepo> _logger;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public NewsletterRepo(ILogger<NewsletterRepo> logger, CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    public NewsletterRepo(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
     {
-        _logger = logger;
         _context = context;
         _userRepo = userRepo;
         _serviceScopeFactory = serviceScopeFactory;
@@ -73,7 +70,7 @@ public partial class NewsletterRepo
 
     public async Task<NewsletterDto?> Newsletter(string email, string token, DateOnly? date = null)
     {
-        var user = await _userRepo.GetUserStrict(email, token, includeServings: true, includeFamilies: true, allowDemoUser: true);
+        var user = await _userRepo.GetUserStrict(email, token, includeServings: true, includeFamilies: true, includeFoodPreferences: true, allowDemoUser: true);
         if (!user.LastActive.HasValue) { return null; }
         return await Newsletter(user, token, date);
     }
@@ -87,8 +84,7 @@ public partial class NewsletterRepo
         // Newsletters are weekly so shimmy the date over to the start of the week.
         date ??= user.StartOfWeekOffset;
 
-        _logger.Log(LogLevel.Information, "User {Id}: Building feast for {date}", user.Id, date);
-        UserLogs.Log(user, $"{date}: Building feast with options Allergens={user.Allergens}");
+        UserLogs.Log(user, $"{date}: Building feast with options.");
 
         // Is the user requesting an old newsletter?
         var oldNewsletter = await _context.UserFeasts.AsNoTracking()
@@ -103,7 +99,6 @@ public partial class NewsletterRepo
         if (oldNewsletter != null && !isDemoAndDateIsToday)
         {
             // An old newsletter was found.
-            _logger.Log(LogLevel.Information, "Returning old feast for user {Id}", user.Id);
             UserLogs.Log(user, $"{date}: Returning old feast");
             return await NewsletterOld(user, token, oldNewsletter);
         }
@@ -111,7 +106,6 @@ public partial class NewsletterRepo
         else if (date.Value.AddYears(1) < user.StartOfWeekOffset || date > user.StartOfWeekOffset)
         {
             // A newsletter was not found and the date is not one we want to render a new newsletter for.
-            _logger.Log(LogLevel.Information, "Returning no feast for user {Id}", user.Id);
             UserLogs.Log(user, $"{date}: Returning no feast");
             return null;
         }
@@ -120,12 +114,10 @@ public partial class NewsletterRepo
         if (user.Features.HasFlag(Features.Debug))
         {
             // User is a debug user. They should see the DebugNewsletter instead.
-            _logger.Log(LogLevel.Information, "Returning debug feast for user {Id}", user.Id);
             UserLogs.Log(user, $"{date}: Returning debug feast");
             return await Debug(newsletterContext);
         }
 
-        _logger.Log(LogLevel.Information, "Returning on day feast for user {Id}", user.Id);
         UserLogs.Log(user, $"{date}: Returning on day feast");
         return await OnDayNewsletter(newsletterContext);
     }
