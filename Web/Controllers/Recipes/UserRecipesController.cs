@@ -33,7 +33,7 @@ public class UserRecipesController : ViewController
     private readonly CoreContext _context;
     private readonly NewsletterService _newsletterService;
     private readonly IServiceScopeFactory _serviceScopeFactory;
-    
+
     public UserRecipesController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
@@ -41,7 +41,7 @@ public class UserRecipesController : ViewController
         _newsletterService = newsletterService;
         _serviceScopeFactory = serviceScopeFactory;
     }
-    
+
     /// <summary>
     /// Shows a form to the user where they can update their recipe.
     /// </summary>

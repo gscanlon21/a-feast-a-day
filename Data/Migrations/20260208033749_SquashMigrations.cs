@@ -57,7 +57,6 @@ namespace Data.Migrations
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
                     CreatedDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Verbosity = table.Column<int>(type: "integer", nullable: false),
-                    Allergens = table.Column<long>(type: "bigint", nullable: false),
                     LastActive = table.Column<DateOnly>(type: "date", nullable: true),
                     NewsletterDisabledReason = table.Column<string>(type: "text", nullable: true),
                     Features = table.Column<int>(type: "integer", nullable: false),
@@ -219,6 +218,25 @@ namespace Data.Migrations
                     table.PrimaryKey("PK_user_feast", x => x.Id);
                     table.ForeignKey(
                         name: "FK_user_feast_user_UserId",
+                        column: x => x.UserId,
+                        principalTable: "user",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "user_food_preference",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "integer", nullable: false),
+                    Allergen = table.Column<long>(type: "bigint", nullable: false),
+                    FoodPreference = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_user_food_preference", x => new { x.UserId, x.Allergen });
+                    table.ForeignKey(
+                        name: "FK_user_food_preference_user_UserId",
                         column: x => x.UserId,
                         principalTable: "user",
                         principalColumn: "Id",
@@ -821,6 +839,9 @@ namespace Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "user_feast_recipe_ingredient");
+
+            migrationBuilder.DropTable(
+                name: "user_food_preference");
 
             migrationBuilder.DropTable(
                 name: "user_footnote");

@@ -359,6 +359,14 @@ public class QueryRunner(Section section)
         {
             foreach (var recipe in recipeResults)
             {
+                // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
+                var allAllergens = finalResults.SelectMany(r => r.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient)).Aggregate(Allergens.None, (c, n) => c | n.GetIngredient!.Allergens);
+                var recipeAllergens = recipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Aggregate(Allergens.None, (c, n) => c | n.GetIngredient!.Allergens);
+                if ((allAllergens & recipeAllergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
+                {
+                    continue;
+                }
+
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                 // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
                 var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);

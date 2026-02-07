@@ -24,7 +24,7 @@ window.tdb = function (dbName, dbVersion, storeName) {
     this.dbVersion = dbVersion;
     this.storeName = storeName;
 
-    this.openDB = function (callback = (() => { })) {
+    this.openDB = function (success = (() => { }), callback = (() => { })) {
         if (!window.indexedDB) {
             callback({ message: 'Unsupported indexedDB' });
         }
@@ -33,6 +33,7 @@ window.tdb = function (dbName, dbVersion, storeName) {
 
         request.onsuccess = e => {
             this.db = request.result;
+            success();
         };
         request.onerror = e => callback(e.target.error);
         request.onupgradeneeded = e => {
@@ -40,7 +41,9 @@ window.tdb = function (dbName, dbVersion, storeName) {
             this.db.onabort = e2 => callback(e2.target.error);
             this.db.error = e2 => callback(e2.target.error);
 
-            this.db.createObjectStore(storeName);
+            if (!this.db.objectStoreNames.contains(storeName)) {
+                this.db.createObjectStore(storeName);
+            }
         };
     }
 

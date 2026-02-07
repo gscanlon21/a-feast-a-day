@@ -1,4 +1,5 @@
-﻿using Data.Entities.Users;
+﻿using Core.Models.User;
+using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Edit;
@@ -24,7 +25,7 @@ public class EditViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User? user = null)
     {
-        user ??= await _userRepo.GetUser(UserConsts.DemoUser, UserConsts.DemoToken, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
+        user ??= await _userRepo.GetUser(UserConsts.DemoUser, UserConsts.DemoToken, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true, includeFoodPreferences: true);
         if (user == null)
         {
             return Content("");
@@ -44,6 +45,19 @@ public class EditViewComponent : ViewComponent
                 Section = section,
                 UserId = viewModel.User.Id,
                 Weight = UserSection.DefaultWeight.TryGetValue(section, out int countTmp) ? countTmp : 0
+            });
+        }
+
+        foreach (var muscleGroup in EnumExtensions.GetSingleValues<Allergens>()
+            .OrderBy(mg => mg.GetSingleDisplayName(DisplayType.GroupName))
+            .ThenBy(mg => mg.GetSingleDisplayName()))
+        {
+            var userMuscleMobility = viewModel.User.UserFoodPreferences.SingleOrDefault(umm => umm.Allergen == muscleGroup);
+            viewModel.UserFoodPreferences.Add(userMuscleMobility != null ? new EditComponentViewModel.UserEditFoodPreferencesViewModel(userMuscleMobility) : new EditComponentViewModel.UserEditFoodPreferencesViewModel()
+            {
+                FoodPreference = FoodPreference.Normal,
+                UserId = viewModel.User.Id,
+                Allergen = muscleGroup,
             });
         }
 

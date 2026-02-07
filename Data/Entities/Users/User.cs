@@ -117,12 +117,6 @@ public class User : IUser
     public Verbosity Verbosity { get; set; }
 
     /// <summary>
-    /// What allergens does the user want in their newsletter?
-    /// </summary>
-    [Required]
-    public Allergens Allergens { get; set; }
-
-    /// <summary>
     /// When was the user last active?
     /// 
     /// Is `null` when the user has not confirmed their account.
@@ -138,6 +132,13 @@ public class User : IUser
     /// What features should the user have access to?
     /// </summary>
     public Features Features { get; set; } = Features.None;
+
+    /// <summary>
+    /// What allergens does the user want in their newsletter?
+    /// </summary>
+    public Allergens Allergens => UserFoodPreferences
+        .Where(f => f.FoodPreference == FoodPreference.Exclude)
+        .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
 
     #region Advanced Preferences
 
@@ -184,6 +185,9 @@ public class User : IUser
 
     [JsonIgnore, InverseProperty(nameof(UserIngredient.User))]
     public virtual ICollection<UserIngredient> UserIngredients { get; init; } = [];
+
+    [JsonIgnore, InverseProperty(nameof(UserFoodPreference.User))]
+    public virtual ICollection<UserFoodPreference> UserFoodPreferences { get; init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(UserRecipeIngredient.User))]
     public virtual ICollection<UserRecipeIngredient> UserRecipeIngredients { get; init; } = [];

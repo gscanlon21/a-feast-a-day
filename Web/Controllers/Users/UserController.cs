@@ -47,7 +47,7 @@ public partial class UserController : ViewController
     [Route("edit", Order = 3)]
     public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
     {
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true, includeFoodPreferences: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -82,7 +82,6 @@ public partial class UserController : ViewController
             viewModel.User.SendDay = viewModel.SendDay;
             viewModel.User.SendHour = viewModel.SendHour;
             viewModel.User.Equipment = viewModel.Equipment;
-            viewModel.User.Allergens = viewModel.Allergens;
             viewModel.User.Verbosity = viewModel.Verbosity;
             viewModel.User.FootnoteType = viewModel.FootnoteType;
             viewModel.User.MaxIngredients = viewModel.MaxIngredients;
@@ -95,8 +94,17 @@ public partial class UserController : ViewController
                 CaloriesPerDay = umm.CaloriesPerDay,
                 Weight = umm.Weight
             });
+
             _context.UserFamilies.RemoveRange(oldUserFamilies);
             _context.UserFamilies.AddRange(newUserFamilies);
+
+            _context.UserFoodPreferences.RemoveRange(_context.UserFoodPreferences.Where(uf => uf.UserId == viewModel.User.Id));
+            _context.UserFoodPreferences.AddRange(viewModel.UserFoodPreferences.Select(umm => new UserFoodPreference()
+            {
+                UserId = umm.UserId,
+                Allergen = umm.Allergen,
+                FoodPreference = umm.FoodPreference,
+            }));
 
             _context.UserSections.RemoveRange(_context.UserSections.Where(uf => uf.UserId == viewModel.User.Id));
             _context.UserSections.AddRange(viewModel.UserSections.Select(umm => new UserSection(viewModel.User, umm.Section)

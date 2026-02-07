@@ -19,28 +19,25 @@
         </summary>
 
         <div class="mt-3 small">
-            Upload a microbiome file for personalized recommendations. The connection to your raw data file is local, on your computer. Your data is not stored on A Feast a Day. Please do not connect to your data on a public computer.
+            Upload a microbiome file for personalized recommendations. The connection to your raw data file is local, on your computer. Your data is not stored on A Feast a Day. Please do not connect your data on a public computer.
         </div>
     </details>
 </div>
 
 <script type="module">
-    const dbName = 'adiaryaday';
+    const dbVersion = 3;
+    const dbName = 'microbiome';
     const storeName = 'microbiome';
 
-    const db = window.tdb(dbName, 1, storeName);
-    db.openDB();
-
-    // There an event for this?
-    // Doesn't work on page load.
-    setTimeout(() => {
+    const db = window.tdb(dbName, dbVersion, storeName);
+    db.openDB(() => {
         // Set the filename if the file exists.
         db.get(storeName, 'name', (filename) => {
             if (filename) {
                 document.getElementById('m-filename').value = filename;
             }
         });
-    }, 1000);
+    });
 
     document.getElementById('m-upload').addEventListener('change', (e) => {
         const file = e.target.files[0];

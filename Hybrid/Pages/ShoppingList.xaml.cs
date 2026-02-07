@@ -153,7 +153,7 @@ public partial class ShoppingListPageViewModel : ObservableObject, IDisposable
                     // Add all the remote items that don't exist in the database.
                     foreach (var remoteItem in remoteItems.Except(localItems))
                     {
-                        await _localDatabase.SaveItemAsync(remoteItem);                        
+                        await _localDatabase.SaveItemAsync(remoteItem);
                     }
 
                     // Reset the list.

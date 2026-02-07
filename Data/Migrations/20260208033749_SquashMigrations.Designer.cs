@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260111023507_SquashMigrations")]
+    [Migration("20260208033749_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.1")
+                .HasAnnotation("ProductVersion", "10.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -612,9 +612,6 @@ namespace Data.Migrations
                     b.Property<bool>("AcceptedTerms")
                         .HasColumnType("boolean");
 
-                    b.Property<long>("Allergens")
-                        .HasColumnType("bigint");
-
                     b.Property<DateOnly>("CreatedDate")
                         .HasColumnType("date");
 
@@ -694,6 +691,22 @@ namespace Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("user_family");
+                });
+
+            modelBuilder.Entity("Data.Entities.Users.UserFoodPreference", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<long>("Allergen")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("FoodPreference")
+                        .HasColumnType("integer");
+
+                    b.HasKey("UserId", "Allergen");
+
+                    b.ToTable("user_food_preference");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserIngredient", b =>
@@ -1070,6 +1083,17 @@ namespace Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Data.Entities.Users.UserFoodPreference", b =>
+                {
+                    b.HasOne("Data.Entities.Users.User", "User")
+                        .WithMany("UserFoodPreferences")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Data.Entities.Users.UserIngredient", b =>
                 {
                     b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
@@ -1251,6 +1275,8 @@ namespace Data.Migrations
                     b.Navigation("UserFamilies");
 
                     b.Navigation("UserFeasts");
+
+                    b.Navigation("UserFoodPreferences");
 
                     b.Navigation("UserFootnotes");
 
