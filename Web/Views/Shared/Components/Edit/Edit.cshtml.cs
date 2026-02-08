@@ -75,7 +75,7 @@ public class EditComponentViewModel
     [Display(Name = "Family Members")]
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
-    [Display(Name = "Food Preferences", Description = "")]
+    [Display(Name = "Food Preferences", Description = "How often do you want certain foods to appear?")]
     public IList<UserEditFoodPreferencesViewModel> UserFoodPreferences { get; set; } = [];
 
     [Required]
