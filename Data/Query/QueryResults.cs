@@ -32,6 +32,9 @@ public class QueryResults : IRecipeCombo
     public Section Section { get; init; }
     public UserRecipe? UserRecipe { get; init; }
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; }
+    public Allergens Allergens => GenericBitwise<Allergens>.Or(RecipeIngredients
+        .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
+        .Select(ri => ri.GetIngredient!.Allergens));
     public IList<Nutrient> Nutrients => RecipeIngredients
         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
         .SelectMany(ri => ri.GetIngredient!.Nutrients)

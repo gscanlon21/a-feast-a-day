@@ -1,6 +1,4 @@
 ﻿
-using static System.Net.WebRequestMethods;
-
 namespace Core.Models.Options;
 
 /// <summary>

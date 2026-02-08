@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict p1dQmbfjD68NUCZtdDxmUztMS96LaUyqqNauOK5XxOFFxMImZs5W7Di1IV9b5ug
+\restrict ZGvcmjTZFZ8KltgzYiWlcRTx31AlkXMahPm33Kz2Md52GdXHLEEieZJmPwJ8g3X
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -1477,8 +1477,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 29	336	1	f
 190	337	1	f
 189	336	1	f
-338	337	1	f
-338	336	1	f
 334	341	1	f
 85	344	1	f
 85	343	1	f
@@ -1622,6 +1620,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 559	30	1	t
 572	511	1	t
 316	225	1	t
+338	337	1	t
+338	336	1	t
 287	331	1	f
 287	587	1	f
 287	586	1	f
@@ -2465,6 +2465,12 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1854	1855	1	f
 1853	1855	1	f
 1853	1854	1	f
+157	1861	1	f
+157	1860	1	f
+157	1859	1	f
+157	1864	1	f
+157	1863	1	f
+157	1862	1	f
 \.
 
 
@@ -13848,6 +13854,47 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 18457	1311	1536	\N	3	1
 18458	1311	3221225472	\N	1	11
 18459	1311	1792	\N	3	1.4
+18460	157	256	\N	3	0.1
+18461	157	2251799813685248	\N	2	9
+18462	157	274877906944	\N	1	0.1
+18463	157	17179869184	\N	2	12
+18464	157	4398046511104	\N	2	0.1
+18465	157	70368744177664	\N	2	21
+18466	157	8796093022208	\N	1	0.2
+18467	157	17592186044416	\N	2	0.2
+18468	157	32768	\N	1	2
+18469	157	65536	\N	1	25
+18470	157	1048576	\N	2	0.3
+18471	157	2097152	\N	2	0.1
+18472	157	4194304	\N	2	0.1
+18473	157	16777216	\N	1	12
+18474	157	67108864	\N	2	8
+18475	157	536870912	\N	2	0.2
+18476	157	1536	\N	3	0.2
+18477	157	3221225472	\N	1	8
+18478	157	1792	\N	3	0.3
+18479	157	14	\N	3	22
+18480	157	229376	\N	1	2
+18481	338	128	\N	3	7
+18482	338	2048	\N	2	30
+18483	338	229376	\N	1	120
+18484	338	1984	\N	3	11
+18485	281	2251799813685248	\N	2	4
+18486	281	16384	\N	1	1595
+18487	281	17179869184	\N	2	7
+18488	281	4398046511104	\N	2	0.1
+18489	281	70368744177664	\N	2	15
+18490	281	17592186044416	\N	2	0.1
+18491	281	32768	\N	1	63
+18492	281	65536	\N	1	278
+18493	281	1048576	\N	2	0.4
+18494	281	2097152	\N	2	0.1
+18495	281	16777216	\N	1	9
+18496	281	67108864	\N	2	8
+18497	281	536870912	\N	2	0.3
+18498	281	1536	\N	3	0.1
+18499	281	3221225472	\N	1	5
+18500	281	229376	\N	1	26
 \.
 
 
@@ -17901,8 +17948,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4814	7	264	1	2	\N	321	f	\N	4	f	t	\N	1
 8051	8	264	1	1	\N	82	f	\N	5	f	t	\N	1
 8027	4	951	1	15	\N	1710	f	\N	3	f	t	\N	1
-7990	9	944	1	8	\N	806	f	\N	0	f	t	\N	1
-7991	7	944	1	1	\N	1580	f	\N	1	f	t	\N	1
 8028	6	951	1	8	\N	1553	f	\N	4	f	t	\N	1
 8035	5	952	1	1	\N	644	f	\N	3	f	t	\N	1
 8036	6	952	1	1	, diced	222	f	\N	4	f	t	\N	1
@@ -17941,6 +17986,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8067	7	956	1	2	\N	62	f	\N	6	f	t	\N	1
 8377	6	989	1	2	\N	1655	f	\N	1	f	t	\N	1
 8378	6	989	2	1	\N	56	f	\N	2	f	t	\N	1
+7990	9	944	1	8	\N	806	f	\N	1	f	t	\N	1
+7991	7	944	1	1	\N	1580	f	\N	2	f	t	\N	1
 8096	4	961	1	5	\N	277	f	\N	1	f	t	\N	1
 8097	6	961	4	3	\N	480	f	\N	2	f	t	\N	1
 8098	6	961	4	3	\N	1752	f	\N	3	f	t	\N	1
@@ -19705,6 +19752,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3679	In a large bowl, combine the zucchini, tomatoes, bell pepper, onion, and sweet potato. Add the olive oil and season with salt and pepper. Stir or toss to mix evenly.	625	1	0
 3666	Whisk the eggs and sugar in a heatproof bowl until blended. Place the bowl over a pan of simmering water and whisk until thick and pale.	623	1	0
 3667	Whisk off the heat until cool. Sift over the flour and almonds, and fold them in to the mixture gently.	623	2	0
+4449	Cover the jar with the cheesecloth and secure it with rubber band.	944	2	0
 3550	Remove sweet potatoes from the oven, and cut in half. Add the steak, and then top with the cowboy caviar. Top with avocado mash and drizzle with yogurt-lime sauce.	590	7	0
 3660	Butter each side of the 4 slices of bread on one side with 1 tablespoon of butter.	621	0	0
 3661	Heat a large skillet over medium heat. Add the remaining 1 tablespoon of butter to the pan and throw 2 slices of bread in, butter-side up. Cook the bread for 1 minute.	621	1	4
@@ -19717,12 +19765,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3652	Melt the butter in a large frying pan. Add the pork and fry quickly until browned on the underside. Turn the meat over and cook for another minute.	619	2	4
 3653	Add the Marsala and rosemary to the pan. Drain the dried mushrooms, saving the juices, and add them to the mixture. Stir in 4 tbsps of the mushroom juices, then add the garlic cloves, juniper berries, and remaining vinegar.	619	3	4
 3654	Simmer the mixture gently for about 3 minutes until the pork is cooked. Season lightly and serve hot with noodles and vegetables.	619	4	4
+4450	Leave it on the counter at room temperature for ~24 hours or until it is fizzy.	944	3	0
 3097	Place strawberries in a large bowl and toss to coat in the maple syrup.	402	0	0
 3099	In a small bowl, stir together lime juice, honey and mint. Pour over fruit and toss to coat.	402	2	0
 3668	Transfer to the prepared tin and bake for 10–12 minutes, until risen and springy to the touch.	623	3	2
-4448	Combine the coconut water and water kefir grains in a clean glass jar.	944	1	0
-4449	Cover the jar with the cheesecloth and secure it with rubber band.	944	2	0
-4450	Leave it on the counter at room temperature for 24 hours or until it is fizzy. Time will depend on the room temperature.	944	3	0
 3776	Roll out the remaining third of the crust and place on top.	648	5	0
 4196	In a mixing bowl, combine all ingredients except oil and green onions. Whisk/blend.	846	0	0
 4197	Slowly add oil to liquid mixture to incorporate, whisking/blending the entire time.	846	1	0
@@ -19730,6 +19776,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4199	Store in an airtight container in the refrigerator.	846	3	65536
 3777	Bake for 15–20 minutes until the fruit is cooked through, and the top is lightly browned.	648	6	2
 2983	Place in a 10×12-inch roasting pan with the whole unpeeled garlic bulb, and toss with 1 tablespoon each of olive oil and red wine vinegar, a pinch of sea salt and black pepper, and the Cajun spice. Arrange in a flat layer and roast for 1 hour, or until soft, gnarly, and caramelized.	369	1	2
+4448	Combine the coconut water and water kefir grains in a clean glass jar.	944	1	0
 3665	Preheat the oven to 400°F. Grease a 13×9-inch Swiss roll tin (jelly roll pan) and line with baking parchment. Grease the paper. 	623	0	2
 3681	Preheat the oven to 375°F. Place a baking sheet in the oven.	626	0	2
 2136	Once your crock pot is full, you’re going to cook the potatoes for 4 hours on high or 7–8 hours on low. When the potatoes are done, you will be easily able to pierce them with a fork. Top the potatoes with your favorite toppings.	32	3	1024
@@ -20444,6 +20491,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4465	Once the sausage is heated and browned, put it on the English muffin. Top the sausage with the cheese, egg, lettuce, and the other half of the English muffin.	947	2	0
 4501	Cut the scallions in half to separate the dark-green tops from the whites. Cut the roots off the white parts, leaving as much of the scallion as possible, then cut the whites into 1-inch lengths and set aside. Slice the green tops as thinly as you can on a slight angle and set those aside.	955	0	0
 4502	Warm a large nonstick skillet or wok over high heat. Add the oil, scallion whites, and garlic and sauté for 1–2 minutes. Add the kimchi and cook for another 1–2 minutes.	955	1	4
+4447	Ensure your water kefir grains are active.	944	0	0
 4503	Add the rice to the pan and let it cook for 1–2 minutes without stirring, then stir and let it sit for another 1–2 minutes. Pour the soy sauce into the pan and stir until it's evenly distributed.	955	2	4
 4504	Season the fried rice with salt and pepper, garnish with the sliced scallion greens, and serve.	955	3	0
 4478	Warm a large pot over medium-high heat. Add the oil and onion and cook for 8 minutes, or until the onion starts to brown.	951	0	4
@@ -20465,13 +20513,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4496	Grab four 16-ounce cups and put a spoonful of mascarpone mixture in the bottom of each.	954	3	0
 4497	Dip a ladyfinger in the sugar water and put it on top of the mascarpone mixture in the cup. You may have to break the cookies. Spoon more of the mascarpone mixture over the cookie. Repeat until all the cookies and the mascarpone mixture are used up, making sure the last layer in each cup is mascarpone mixture.	954	4	0
 4498	Cover the cups and refrigerate for at least 2 hours before serving.	954	5	0
-4447	Ensure your water kefir grains are active.	944	0	0
-4451	Strain the water kefir grains out by using a fine mesh strainer.	944	4	0
 4499	Add the dressing and toss to coat the noodles and vegetables.	739	1	0
 4500	Garnish this dish with black and white sesame seeds and thinly sliced scallions.	739	2	0
 4484	Scoop the mushrooms out of the water and slice them nice and thin. Pour the mushroom soaking water, plus the remaining 8 cups of water, into the pot. Add the mushrooms along with the sambal, soy sauce, and salt and pepper to taste.	952	2	4
 4485	Bring the soup to a boil, then reduce the heat to low and simmer for 20 minutes to develop the flavors. Serve.	952	3	4
 4508	Add the soy sauce and stir until it's evenly distributed.	956	3	0
+4451	Strain the water kefir grains out by using a fine mesh strainer.	944	4	0
 4456	In a large skillet, heat the oil and cook for 6 minutes. Flip and cook for another 6–7 minutes, until the internal temperature of the chicken reaches 165°F.	945	4	4
 4457	Set the chicken on a wire rack and let it rest for 5 minutes before serving.	945	5	0
 4458	Preheat the oven to 375°F. Line a baking sheet with parchment paper or aluminum foil.	946	0	2
@@ -20595,7 +20642,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18459, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18500, true);
 
 
 --
@@ -21321,5 +21368,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict p1dQmbfjD68NUCZtdDxmUztMS96LaUyqqNauOK5XxOFFxMImZs5W7Di1IV9b5ug
+\unrestrict ZGvcmjTZFZ8KltgzYiWlcRTx31AlkXMahPm33Kz2Md52GdXHLEEieZJmPwJ8g3X
 

@@ -1,11 +1,18 @@
-﻿namespace Data.Query.Options;
+﻿using Core.Models.User;
+
+namespace Data.Query.Options;
 
 public class ExclusionOptions : IOptions
 {
     /// <summary>
-    /// Will not choose any recipes that fall in this list.
+    /// Recipes that have already been choosen.
     /// </summary>
     public List<int> RecipeIds = [];
+
+    /// <summary>
+    /// Allergens that have already been choosen.
+    /// </summary>
+    public Allergens Allergens = Allergens.None;
 
     /// <summary>
     /// Exclude any of these recipes from being chosen.
@@ -15,6 +22,7 @@ public class ExclusionOptions : IOptions
         if (recipes != null)
         {
             RecipeIds.AddRange(recipes.Select(e => e.Recipe.Id));
+            Allergens |= GenericBitwise<Allergens>.Or(recipes.Select(e => e.Allergens));
         }
     }
 }

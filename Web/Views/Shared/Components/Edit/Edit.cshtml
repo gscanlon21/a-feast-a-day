@@ -239,7 +239,7 @@
                 <details class="mb-3" @(Model.WasUpdated == false ? "open='open'" : "")>
                     <summary><b>Edit @Html.DisplayNameFor(_ => Model.UserFoodPreferences)</b></summary>
 
-                    <div class="mt-2 ps-3">
+                    <div class="mt-25 ps-3">
                         @for (var i = 0; i < Model.UserFoodPreferences.Count; i++)
                         {
                             <input type="hidden" asp-for="UserFoodPreferences[i].UserId" />

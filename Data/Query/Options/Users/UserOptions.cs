@@ -12,9 +12,16 @@ public class UserOptions : IOptions
     public int Id { get; }
     public DateOnly CreatedDate { get; }
     public int? MaxIngredients { get; set; }
-    public Allergens Allergens { get; set; }
-    public Allergens SemiAllergens { get; set; }
     public IngredientOrder IngredientOrder { get; }
+    public ICollection<UserFoodPreference> FoodPreferences { get; set; } = [];
+
+    public Allergens SemiAllergens => FoodPreferences
+        .Where(f => f.FoodPreference == FoodPreference.Seldom)
+        .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
+
+    public Allergens Allergens => FoodPreferences
+        .Where(f => f.FoodPreference == FoodPreference.Exclude)
+        .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
 
     public UserOptions() { }
 
@@ -25,11 +32,10 @@ public class UserOptions : IOptions
         CreatedDate = user.CreatedDate;
         MaxIngredients = user.MaxIngredients;
         IngredientOrder = user.IngredientOrder;
-        SemiAllergens = user.UserFoodPreferences
-            .Where(f => f.FoodPreference == FoodPreference.Seldom)
-            .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
-        Allergens = user.UserFoodPreferences
-            .Where(f => f.FoodPreference == FoodPreference.Exclude)
-            .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
+        FoodPreferences = user.UserFoodPreferences;
+        if (user.UserFoodPreferences.Any() == false)
+        {
+            UserLogs.Log(user, "User has no food preferences!");
+        }
     }
 }

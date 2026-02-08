@@ -231,7 +231,7 @@ public class QueryRunner(Section section)
 
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
-                        // Don't swap if the user is substituting in a different ingredient.
+                        // Try swapping ingredients if the user is substituting in an alternative ingredient.
                         if (recipeIngredient.UserRecipeIngredient?.SubstituteIngredientId.HasValue == true
                             // Or if any of the ingredient's allergens conflict with the user's allergens.
                             || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens))
@@ -360,9 +360,9 @@ public class QueryRunner(Section section)
             foreach (var recipe in recipeResults)
             {
                 // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
-                var allAllergens = finalResults.SelectMany(r => r.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient)).Aggregate(Allergens.None, (c, n) => c | n.GetIngredient!.Allergens);
-                var recipeAllergens = recipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Aggregate(Allergens.None, (c, n) => c | n.GetIngredient!.Allergens);
-                if ((allAllergens & recipeAllergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
+                var allAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
+                // If all allergens has one and recipe allergens has one and user allergens has one, then skip this recipe.
+                if ((allAllergens & recipe.Allergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
                 {
                     continue;
                 }

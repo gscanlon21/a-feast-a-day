@@ -48,8 +48,7 @@ public class RecipesViewComponent : ViewComponent
             {
                 options.IgnoreIgnored = true;
                 options.MaxIngredients = null;
-                options.Allergens = Allergens.None;
-                options.SemiAllergens = Allergens.None;
+                options.FoodPreferences.Clear();
             })
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
