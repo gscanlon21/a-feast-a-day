@@ -159,20 +159,27 @@ public class UserRepo
     /// </summary>
     public async Task<IList<PastFeast>> GetPastFeasts(User user, int? count = null)
     {
-        return await _context.UserFeasts
-            .Where(uf => uf.UserId == user.Id)
-            // Don't show backfill feasts to the user.
-            .Where(uf => uf.Date >= user.CreatedDate)
+        var query = _context.UserFeasts.IgnoreQueryFilters().AsNoTracking()
             // Using NotEqual in case the user changes from
             // ... a late send day to an early one mid-week.
             .Where(uf => uf.Date != user.StartOfWeekOffset)
-            // Select the most recent feast per send week. Disabling this b/c week offsets change.
-            //.GroupBy(uf => uf.Date.AddDays(-1 * ((7 + (uf.Date.DayOfWeek - user.SendDay)) % 7)))
-            .OrderByDescending(f => f.Date) /// Order by most recent.
-            // Can't be passed through the constructor or it's slow.
-            .Select(f => new PastFeast() { Date = f.Date })
-            .Take(count ?? 7).IgnoreQueryFilters().AsNoTracking()
-            .ToListAsync();
+            // Don't show backfill feasts to the user.
+            .Where(uf => uf.Date >= user.CreatedDate)
+            .Where(uf => uf.UserId == user.Id)
+            .OrderByDescending(uf => uf.Date)
+            .ThenByDescending(uf => uf.Id);
+
+        if (user.IsDemoUser)
+        {
+            // Select the most recent feast per send week. Order after grouping.
+            return await query.GroupBy(uf => uf.Date).OrderByDescending(uf => uf.Key)
+                .Select(g => new PastFeast() { Date = g.OrderByDescending(uf => uf.Id).First().Date })
+                .Take(count ?? 7)
+                .ToListAsync();
+        }
+
+        // Can't be passed through the constructor or it's slow.
+        return await query.Select(f => new PastFeast() { Date = f.Date }).Take(count ?? 7).ToListAsync();
     }
 
     /// <summary>
