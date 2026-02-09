@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict ZGvcmjTZFZ8KltgzYiWlcRTx31AlkXMahPm33Kz2Md52GdXHLEEieZJmPwJ8g3X
+\restrict gGagJv2nqODfEaHKTfjYNv8JW83iXgyMX2KLVyJWfLpDta4kdoys2uiy9NIhRom
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2471,6 +2471,12 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 157	1864	1	f
 157	1863	1	f
 157	1862	1	f
+1859	1867	1	f
+1859	1866	1	f
+1859	1865	1	f
+1860	1870	1	f
+1860	1869	1	f
+1860	1868	1	f
 \.
 
 
@@ -13895,6 +13901,28 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 18498	281	1536	\N	3	0.1
 18499	281	3221225472	\N	1	5
 18500	281	229376	\N	1	26
+18501	1859	68719476736	\N	2	1
+18502	1859	34359738368	\N	2	155
+18503	1859	2	\N	3	12
+18504	1859	1	\N	3	0.4
+18505	1859	4294967296	\N	2	14
+18506	1859	2199023255552	\N	2	0.2
+18507	1859	48	\N	3	4
+18508	1859	14	\N	3	15
+18509	1859	1984	\N	3	0.2
+18510	1859	62	\N	3	19
+18511	1859	2047	\N	3	78
+18512	1860	68719476736	\N	2	1
+18513	1860	34359738368	\N	2	178
+18514	1860	2	\N	3	14
+18515	1860	1	\N	3	1
+18516	1860	4294967296	\N	2	15
+18517	1860	2199023255552	\N	2	0.3
+18518	1860	48	\N	3	4
+18519	1860	14	\N	3	18
+18520	1860	1984	\N	3	0.1
+18521	1860	62	\N	3	22
+18522	1860	2047	\N	3	92
 \.
 
 
@@ -20642,7 +20670,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18500, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18522, true);
 
 
 --
@@ -21368,5 +21396,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ZGvcmjTZFZ8KltgzYiWlcRTx31AlkXMahPm33Kz2Md52GdXHLEEieZJmPwJ8g3X
+\unrestrict gGagJv2nqODfEaHKTfjYNv8JW83iXgyMX2KLVyJWfLpDta4kdoys2uiy9NIhRom
 
