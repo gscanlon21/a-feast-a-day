@@ -239,7 +239,8 @@ public class QueryRunner(Section section)
                             // Substitution and alternative ingredients don't have user ingredient records.
                             // This includes the base ingredient if it has substitutions available or if it is ignorable.
                             var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
-                            if (substitution?.Ingredient.Equals(recipeIngredient.Ingredient) == true)
+                            if (substitution?.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens) == true
+                                || substitution?.Ingredient.Equals(recipeIngredient.Ingredient) == true)
                             {
                                 // If this gets set, the user's scale won't be applied.
                                 recipeIngredient.IsUnwantedAndHasAlternatives = true;
@@ -604,13 +605,13 @@ public class QueryRunner(Section section)
             })
             .ToListAsync()).ToDictionary(ri => ri.Id, ri =>
             {
-                // If the substitute ingredient that the user is swapping in for doesn't conflict with allergens, use it.
-                if (ri.SubIngredient != null && !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens))
+                // If the substitute ingredient doesn't conflict with allergens. Disabled: Now shows warning; user can always swap.
+                if (ri.SubIngredient != null /*&& !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)*/)
                 {
                     return ri.SubIngredient;
                 }
 
-                // If there are alternatives availble or the ingredient is ignorable,
+                // If there are alternatives available or the ingredient is ignorable,
                 // ... return the base ingredient so the user can pick another one.
                 return (ri.HasAlternatives || ri.Optional) ? ri.Ingredient : null;
             });
