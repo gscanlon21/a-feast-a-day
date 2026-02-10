@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict gGagJv2nqODfEaHKTfjYNv8JW83iXgyMX2KLVyJWfLpDta4kdoys2uiy9NIhRom
+\restrict TrWbzaa923p9ZFXEoeHxyCDw8mzKTbYXxnQaNJDAhdfJv1TJEzgFc425wMN2HY4
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2477,6 +2477,16 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1860	1870	1	f
 1860	1869	1	f
 1860	1868	1	f
+1328	1610	1	f
+1328	354	1	f
+1328	389	1	f
+1328	1307	1	f
+1861	1873	1	f
+1861	1872	1	f
+1861	1871	1	f
+1326	1876	1	f
+1326	1875	1	f
+1326	1874	1	f
 \.
 
 
@@ -13923,6 +13933,27 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 18520	1860	1984	\N	3	0.1
 18521	1860	62	\N	3	22
 18522	1860	2047	\N	3	92
+18523	1861	68719476736	\N	2	1
+18524	1861	34359738368	\N	2	141
+18525	1861	2	\N	3	14
+18526	1861	1	\N	3	1
+18527	1861	4294967296	\N	2	13
+18528	1861	2199023255552	\N	2	0.3
+18529	1861	48	\N	3	4
+18530	1861	14	\N	3	17
+18531	1861	1984	\N	3	0.2
+18532	1861	62	\N	3	21
+18533	1861	2047	\N	3	88
+18534	1326	68719476736	\N	2	1
+18535	1326	34359738368	\N	2	171
+18536	1326	2	\N	3	14
+18537	1326	1	\N	3	1
+18538	1326	4294967296	\N	2	14
+18539	1326	2199023255552	\N	2	0.2
+18540	1326	48	\N	3	4
+18541	1326	14	\N	3	18
+18542	1326	1984	\N	3	0.1
+18543	1326	62	\N	3	23
 \.
 
 
@@ -17960,11 +17991,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6934	6	646	1	1	(READY_MADE JELLIED BEEF STOCK)	613	f	\N	7	f	t	\N	1
 6010	6	522	4	1	, chopped	90	f	\N	9	f	t	\N	1
 6011	6	522	2	1	\N	\N	t	414	10	f	t	\N	1
-8040	6	953	1	2	\N	171	f	\N	0	f	t	\N	1
-8041	0	953	1	4	, yolks-only	1411	f	\N	1	f	t	\N	1
-8042	6	953	2	1	\N	36	f	\N	2	f	t	\N	1
-8043	7	953	1	4	\N	36	f	\N	3	f	t	\N	1
-8044	8	953	1	1	\N	40	f	\N	4	f	t	\N	1
 8045	6	954	1	1	\N	171	f	\N	0	f	t	\N	1
 8046	6	954	1	1	, divided	36	f	\N	1	f	t	\N	1
 8047	0	954	1	1	, grated and juiced	1391	f	\N	2	f	t	\N	1
@@ -18016,10 +18042,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8378	6	989	2	1	\N	56	f	\N	2	f	t	\N	1
 7990	9	944	1	8	\N	806	f	\N	1	f	t	\N	1
 7991	7	944	1	1	\N	1580	f	\N	2	f	t	\N	1
+8040	6	953	1	2	\N	171	f	\N	1	f	t	\N	1
 8096	4	961	1	5	\N	277	f	\N	1	f	t	\N	1
 8097	6	961	4	3	\N	480	f	\N	2	f	t	\N	1
 8098	6	961	4	3	\N	1752	f	\N	3	f	t	\N	1
 8099	4	961	1	9	\N	390	f	\N	4	f	t	\N	1
+8041	0	953	1	4	, yolks-only	1411	f	\N	2	f	t	\N	1
+8042	6	953	2	1	\N	36	f	\N	3	f	t	\N	1
+8043	7	953	1	4	\N	36	f	\N	4	f	t	\N	1
+8044	8	953	1	1	\N	40	f	\N	5	f	t	\N	1
 8108	4	962	1	12	, shelled	784	f	\N	0	f	t	\N	1
 8110	4	962	1	6	, halved, or quartered if large	260	f	\N	2	f	t	\N	1
 8111	0	962	1	4	, crushed	5	f	\N	3	f	t	\N	1
@@ -19645,6 +19676,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3271	Reduce heat to low and stir in the pesto. Cook until the asparagus is tender, about 1–2 minutes.	482	2	0
 3272	Sprinkle with pine nuts and enjoy!	482	3	0
 4794	Optionally, add some guacamole, fresh cilantro, jalepenos, and a squeeze of fresh lime juice.	910	4	0
+4490	Cover the roasting pan with foil and bake for 40–45 minutes, until the custard is set but still a little wobbly in the middle.	953	4	2
 3553	In a large skillet, over medium high heat, add the coconut oil. When melted, add the onion and cook until translucent, about 5 minutes.	591	0	0
 3554	Add the zucchini, cabbage and bell pepper, and cook until softened, about 5 minutes.	591	1	0
 3555	Next, add the ground turkey and tumeric, and cook until browned, about 5 minutes.	591	2	0
@@ -19768,8 +19800,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3633	Top each chicken breast with a half slices of Fontina. Bake for 20 minutes, or until the chicken is cooked through. Serve hot, with young salad leaves.	615	4	2
 4715	Mix all ingredients together in a bowl. Freeze the bowl for 5 minutes. 	989	0	131072
 4747	Top beans with eggs, add avocado slices, tomatoes and garnish with salsa verde	995	6	0
+4491	Take the ramekins out of the water, let cool slightly, then cover with plastic and refrigerate for 2 hours.	953	5	65536
 1498	Cover the potatoes with a clean cloth and dry them at the side of the stove for a few minutes before mashing them well. Beat in the boiling milk and spring onions. Working over the heat so that the champ is kept very hot, beat until the consistency is like well-creamed potatoes. Add more milk if necessary.	149	2	0
 4782	Add thawed edamame and minced shallots, toss and set aside.	1002	1	0
+4492	Evenly sprinkle the top of each cup of custard with 1 tablespoon of sugar and use a kitchen blowtorch to brulé it just until the sugar is melted and browned.	953	6	0
 4748	Sprinkle with sea salt and pepper, serve!	995	7	0
 3655	Prepare a barbecue. Split the peppers lengthways and remove the seeds and membrane. Rub 15ml/1tbsp of the oil all over the peppers. Place them hollow-side uppermost.	620	0	0
 3656	Slice the mozzarella and divide it equally among the pepper halves.	620	1	0
@@ -20528,13 +20562,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4481	Taste the soup and season with salt and pepper.	951	3	0
 4482	Soak the shiitake mushrooms in 4 cups of water in a medium bowl for 30 minutes.	952	0	0
 4483	Warm a large pot over medium-high heat. Add the olive oil, pork, and onion. Cook for 7–8 minutes, until the pork is browned and the onions are translucent.	952	1	4
-4486	Preheat the oven to 325F.	953	0	2
-4487	In a medium pot, bring the cream to a boil. Remove from the heat and set aside.	953	1	4
-4488	In a heatproof medium bowl, whisk together the egg yolks and 1/2 cup of sugar until the yolks turn a pale yellow. Whisk the cream into the egg mixture, a few drops at a time, to start. Slowly add the rest of the cream and whisk until all the cream has been mixed into the eggs. Whisk in the vanilla.	953	2	0
-4489	Place a paper towel in the bottom of a roasting pan, then place four ramekins or ceramic mugs in the pan. Divide the egg mixture among the four 6-ounce ramekins, then fill the roasting pan with hot water until it reaches halfway up the sides of the ramekins.	953	3	0
-4490	Cover the roasting pan with foil and bake for 40 to 45 minutes, until the custard is set but still a little wobbly in the middle.	953	4	2
-4491	Take the ramekins out of the water, let cool slightly, then cover with plastic and refrigerate for 2 hours.	953	5	65536
-4492	Evenly sprinkle the top of each cup of custard with 1 tablespoon of sugar and use a kitchen blowtorch to brulé it just until the sugar is melted and browned.	953	6	0
 4493	In a medium bowl, with an electric mixer, whip the cream and 1/2 cup of sugar together until the cream holds firm peaks.	954	0	0
 4494	In a separate bowl, mix together the orange zest, orange juice, and mascarpone. Fold the whipped cream into the mascarpone mixture.	954	1	0
 4495	In a small bowl, stir together the hot water and remaining 1/2 cup of sugar.	954	2	0
@@ -20549,11 +20576,15 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4451	Strain the water kefir grains out by using a fine mesh strainer.	944	4	0
 4456	In a large skillet, heat the oil and cook for 6 minutes. Flip and cook for another 6–7 minutes, until the internal temperature of the chicken reaches 165°F.	945	4	4
 4457	Set the chicken on a wire rack and let it rest for 5 minutes before serving.	945	5	0
+4486	Preheat the oven to 325°F.	953	0	2
 4458	Preheat the oven to 375°F. Line a baking sheet with parchment paper or aluminum foil.	946	0	2
 4459	In a medium bowl, combine the turkey, garlic, poultry seasoning, salt, cayenne, black pepper, and cinnamon and mix well.	946	1	0
 4460	Divide the turkey mixture into 6 even portions and roll into balls. Press the balls into patties about ⅛-inch thick and place on the lined baking sheet.	946	2	0
 4461	Bake the sausage patties for 12 minutes.	946	3	2
 4462	Heat a medium skillet over medium-high heat. Add the oil and sear the turkey sausage patties for about 3 minutes per side, or until browned.	946	4	4
+4487	In a medium pot, bring the cream to a boil. Remove from the heat and set aside.	953	1	4
+4488	In a heatproof medium bowl, whisk together the egg yolks and ½-cup of sugar until the yolks turn a pale yellow. Whisk the cream into the egg mixture, a few drops at a time, to start. Slowly add the rest of the cream and whisk until all the cream has been mixed into the eggs. Whisk in the vanilla.	953	2	0
+4489	Place a paper towel in the bottom of a roasting pan, then place four ramekins or ceramic mugs in the pan. Divide the egg mixture among the four 6-ounce ramekins, then fill the roasting pan with hot water until it reaches halfway up the sides of the ramekins.	953	3	0
 4306	Position a rack in the center of the oven and turn the broiler to high.	865	0	16
 4307	Bring a large pot of salted water to a boil and cook the pasta according to package directions.	865	1	4
 4308	Meanwhile, warm a broiler-proof medium skillet over medium heat. Add the olive oil and the sausages. Cook the sausages for about 3 minutes per side, or until browned.	865	2	4
@@ -20670,7 +20701,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18522, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18543, true);
 
 
 --
@@ -21396,5 +21427,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict gGagJv2nqODfEaHKTfjYNv8JW83iXgyMX2KLVyJWfLpDta4kdoys2uiy9NIhRom
+\unrestrict TrWbzaa923p9ZFXEoeHxyCDw8mzKTbYXxnQaNJDAhdfJv1TJEzgFc425wMN2HY4
 

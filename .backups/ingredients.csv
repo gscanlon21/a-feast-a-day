@@ -1061,7 +1061,7 @@
 1323	\N	Canned Sliced Peaches	\N	\N	f	0	28	244	2026-01-12	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1324	\N	Canned Diced Peaches	\N	\N	f	0	28	244	2026-01-15	4	244	512	244	Peach	https://www.eatthismuch.com/calories/peaches-1485
 1325	\N	Canned Peach Halves	\N	\N	f	0	28	244	2026-01-14	4	244	512	244	Canned Peach	https://www.eatthismuch.com/calories/peaches-1485
-1326	\N	Fresh Bosc Pears	\N	\N	f	0	179	140	2024-10-08	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bosc-pear-504779
+1326	\N	Fresh Bosc Pears	\N	\N	f	0	28	140	2026-02-10	4	140	1	140	Pear	https://www.eatthismuch.com/calories/bosc-pear-504779
 1327	\N	Mixed Spice	\N	\N	f	0	28	28	2024-12-04	4	149.33	131072	149.33	Mixed Spice	https://www.eatthismuch.com/calories/pumpkin-seeds-1785111
 1328	\N	Canned Plum Tomatoes	\N	\N	f	512	28	123	2025-12-10	4	149	512	149	Tomato	https://www.eatthismuch.com/calories/tomatoes-2226
 1329	\N	Fresh Plum Tomatoes	\N	\N	f	512	62	123	2025-12-10	0	180	2	180	Tomato	https://www.eatthismuch.com/calories/tomatoes-2226
@@ -1442,7 +1442,7 @@
 1858	\N	5.5" Corn Tortillas	\N	\N	f	2	26	52	2024-12-11	0	104	1024	104	Corn Tortillas	https://www.eatthismuch.com/calories/corn-tortillas-1679435
 1859	\N	Fresh Red Anjou Pears	\N	\N	f	0	28	126	2026-02-09	4	140	1	140	Pear	https://www.eatthismuch.com/calories/red-anjou-pear-504777
 1860	\N	Fresh Green Anjou Pears	\N	\N	f	0	28	140	2026-02-09	4	140	1	140	Pear	https://www.eatthismuch.com/calories/green-anjou-pear-504778
-1861	\N	Fresh Bartlett Pears	\N	\N	f	0	179	140	2024-10-08	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bartlett-pear-504780
+1861	\N	Fresh Bartlett Pears	\N	\N	f	0	28	140	2026-02-10	4	140	1	140	Pear	https://www.eatthismuch.com/calories/bartlett-pear-504780
 1862	\N	Fresh Small Pears	\N	\N	f	0	178	178	2026-02-08	0	161	1	140	Pear	https://www.eatthismuch.com/calories/pears-1499
 1863	\N	Fresh Medium Pears	\N	\N	f	0	178	178	2026-02-08	0	161	1	140	Pear	https://www.eatthismuch.com/calories/pears-1499
 1864	\N	Fresh Large Pears	\N	\N	f	0	178	178	2026-02-08	0	161	1	140	Pear	https://www.eatthismuch.com/calories/pears-1499
@@ -1452,3 +1452,9 @@
 1868	\N	Fresh Large Green Anjou Pears	\N	\N	f	0	179	140	2026-02-09	0	140	1	140	Pear	https://www.eatthismuch.com/calories/green-anjou-pear-504778
 1869	\N	Fresh Medium Green Anjou Pears	\N	\N	f	0	179	140	2026-02-09	0	140	1	140	Pear	https://www.eatthismuch.com/calories/green-anjou-pear-504778
 1870	\N	Fresh Small Green Anjou Pears	\N	\N	f	0	179	140	2026-02-09	0	140	1	140	Pear	https://www.eatthismuch.com/calories/green-anjou-pear-504778
+1871	\N	Fresh Large Bartlett Pears	\N	\N	f	0	179	140	2026-02-10	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bartlett-pear-504780
+1872	\N	Fresh Medium Bartlett Pears	\N	\N	f	0	179	140	2026-02-10	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bartlett-pear-504780
+1873	\N	Fresh Small Bartlett Pears	\N	\N	f	0	179	140	2026-02-10	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bartlett-pear-504780
+1874	\N	Fresh Large Bosc Pears	\N	\N	f	0	179	140	2026-02-10	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bosc-pear-504779
+1875	\N	Fresh Medium Bosc Pears	\N	\N	f	0	179	140	2026-02-10	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bosc-pear-504779
+1876	\N	Fresh Small Bosc Pears	\N	\N	f	0	179	140	2026-02-10	0	140	1	140	Pear	https://www.eatthismuch.com/calories/bosc-pear-504779
