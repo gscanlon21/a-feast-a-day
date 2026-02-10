@@ -217,6 +217,7 @@ public class QueryRunner(Section section)
                                 recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
                             }
 
+                            // Skip filtering out this recipe ingredient.
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
                         }
@@ -229,6 +230,7 @@ public class QueryRunner(Section section)
                         }
                     }
 
+                    // Can't combine swapped ingredients b/c some are supposedly to be duplicates.
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Try swapping ingredients if the user is substituting in an alternative ingredient.
@@ -275,9 +277,10 @@ public class QueryRunner(Section section)
                             recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
                         }
 
-                        // Filter out optional ingredients that the user ignored or has allergens for.
+                        // If the ingredient was was successfully processed.
                         if (recipeIngredient.Ingredient != null)
                         {
+                            // Skip filtering out this recipe ingredient.
                             finalRecipeIngredients.Add(recipeIngredient);
                             continue;
                         }

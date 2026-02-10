@@ -32,7 +32,7 @@ Because of how the emails are formatted, we require support for [absolutely posi
 
 ## Why a Newsletter?
 
-Other cooking apps require users to seek out recipes and keep track of what nutrients they need to build a complete meal. I find that reminder notifications are too easy to swipe away or disable when they arrive at inconvenient times. Opening a dedicated fitness app can also be intimidating or overwhelming. A Feast a Day sends at most one workout per day and utilizes your email client's features to remind you later, or pin the workout, so that it's always visible when you check your email.
+Other cooking apps require users to seek out recipes and keep track of what nutrients they need to build a complete meal. I find that reminder notifications are too easy to swipe away or disable when they arrive at inconvenient times. Opening a dedicated recipe app can also feel intimidating or overwhelming. A Feast a Day sends at most one meal plan per week, and utilizes your email client's features to remind you later, or pin the feast, so that it's always visible when you check your email.
 
 However, emails have their limitations as well. A Feast a Day is geared towards people with busy schedules or people who aren't as inclined to optimize their meal planning to 100%.
 
