@@ -190,6 +190,12 @@ public partial class NewsletterRepo
         foreach (var section in EnumExtensions.GetSingleValues(excludingAny: Section.Prep))
         {
             recipes.AddRange((await new UserQueryBuilder(user, section)
+                .WithUser(options =>
+                {
+                    // Swapping recipes doesn't look at food preferences,
+                    // ... so there may be double that can be overlooked.
+                    options.FoodPreferences.Clear();
+                })
                 .WithEquipment(user.Equipment)
                 .WithRecipes(options =>
                 {

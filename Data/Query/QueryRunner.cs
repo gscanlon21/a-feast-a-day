@@ -230,7 +230,7 @@ public class QueryRunner(Section section)
                         }
                     }
 
-                    // Can't combine swapped ingredients b/c some are supposedly to be duplicates.
+                    // Can't combine swapped ingredients b/c some are supposed to be duplicates.
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
                         // Try swapping ingredients if the user is substituting in an alternative ingredient.

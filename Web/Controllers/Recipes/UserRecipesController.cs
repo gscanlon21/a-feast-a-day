@@ -238,7 +238,7 @@ public class UserRecipesController : ViewController
     [HttpPost, Route("{section:section}/{recipeId}/[action]")]
     public async Task<IActionResult> SwapRecipe(string email, string token, int recipeId, Section section)
     {
-        var user = await _userRepo.GetUser(email, token, includeServings: true, includeFamilies: true);
+        var user = await _userRepo.GetUser(email, token, includeServings: true, includeFamilies: true, includeFoodPreferences: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
