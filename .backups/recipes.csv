@@ -7,7 +7,7 @@
 24	Fried Cabbage and Egg Noodles	\N	\N	\N	4	15	5	4	t	cabbage-noodles.jpg	0	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	f	f
 25	Slow Cooker Chicken	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	0	360	10	1	t	slow-cooker-ckicken.jpg	5	\N	f	f
 26	Roasted Broccoli	\N	\N	\N	16	20	5	1	t	roasted-broccoli.jpg	0	\N	f	f
-27	Garlic Toast Pizzas	\N	\N	\N	6	10	5	2	t	\N	0	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	f	f
+27	Garlic Toast Pizzas	\N	\N	\N	12	10	5	2	t	\N	0	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	f	f
 28	Sauteed Green Beans	\N	\N	\N	16	7	0	2	t	sauteed-green-beans.jpg	0	\N	f	f
 29	Garlic Parmesan Asparagus	\N	\N	\N	16	5	5	2	t	parmesan-roasted-asparagus.jpg	0	\N	f	f
 30	Curry Scramble	\N	\N	\N	6	10	5	2	t	curry-scramble.jpg	0	\N	f	f
@@ -233,7 +233,7 @@
 320	Comforting Sausage Bake	\N	\N	\N	8	45	10	4	t	sausage-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	8	10	2	2	t	peanut-chicken.jpg	0	\N	f	f
 322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version.	\N	\N	64	60	5	4	t	\N	0	https://www.glutenfreepalate.com/crockpot-christmas-crack/	f	f
-323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
+323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
 324	Crème Fraîche	\N	\N	\N	0	0	5	1	t	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	f	f
 325	Anti-Allergy Salad	\N	\N	\N	20	10	5	2	t	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f	f
 326	Sticky Teriyaki Aubergine	\N	\N	\N	12	15	5	2	t	teriyaki-aubergine.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
@@ -252,7 +252,7 @@
 371	Super Green Spaghetti	From Jamie Oliver's 5 Ingredients	\N	\N	6	12	1	2	t	green-spaghetti.jpg	0	\N	f	f
 372	Lemony Arugula Farfalle	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	10	5	6	t	linguine-arugula.jpg	0	\N	f	f
 373	Hummus and Crackers	\N	\N	\N	48	0	1	1	t	hummus-vegetables.jpg	0	\N	f	f
-374	Egg & Mango Chutney Flatbreads	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	2	2	t	\N	0	\N	f	f
+374	Egg & Mango Chutney Flatbreads	\N	\N	\N	6	10	2	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 375	Creamy Garlicky Chicken With Cauliflower Rice	\N	\N	\N	4	25	5	2	t	garlic-chicken.jpg	0	https://www.drkarafitzgerald.com/recipe/creamy-garlicky-chicken-with-cauliflower-rice/	f	f
 376	Plain Cauliflower Rice	Suitable for freezing.	\N	\N	0	5	5	2	t	cauliflower-rice.jpg	6	https://www.easypeasyfoodie.com/plain-cauliflower-rice/#recipe	f	f
 377	Chicken Fajita Sheet Pan	\N	\N	\N	8	25	10	4	t	chicken-fajita-sheet-pan.jpg	0	https://drhyman.com/blogs/content/chicken-fajita-sheet-pan	f	f
@@ -281,7 +281,7 @@
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 402	Fruit Salad	\N	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-403	Spiced Kale Chips	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	10	5	2	t	roasted-kale.jpg	0	\N	f	f
+403	Spiced Kale Chips	\N	\N	\N	16	10	5	2	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	\N	f	f
