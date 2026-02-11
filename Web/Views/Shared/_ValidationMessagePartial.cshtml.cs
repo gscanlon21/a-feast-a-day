@@ -5,6 +5,9 @@ public class ValidationMessagePartialModel
 {
     public bool? WasUpdated { get; set; }
 
+    /// <summary>
+    /// Refresh the page after form submission.
+    /// </summary>
     public bool GoBackOnSave { get; init; }
 
     public const string DefaultFailureMessage = "Something went wrong.";
