@@ -127,6 +127,7 @@ main {
 /********** Layout Styles **********/
 
 .site-logo {
+    aspect-ratio: 1;
     height: 2rem;
 }
 
