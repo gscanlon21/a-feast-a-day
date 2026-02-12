@@ -16,6 +16,7 @@ using System.Text.Json;
 using Web.Code.Extensions;
 using Web.Code.TempData;
 using Web.Views.RecipeIngredients;
+using static Data.Entities.Users.User;
 
 namespace Web.Controllers.RecipeIngredients;
 
@@ -71,7 +72,7 @@ public class RecipeIngredientsController : ViewController
     [HttpGet, Route("{recipeIngredientId}")]
     public async Task<IActionResult> ManageRecipeIngredient(string email, string token, int recipeIngredientId, bool? wasUpdated = null)
     {
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeFoodPreferences: true);
+        var user = await _userRepo.GetUser(email, token, Includes.FoodPreferences, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));

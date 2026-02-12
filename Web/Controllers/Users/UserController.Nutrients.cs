@@ -4,6 +4,7 @@ using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
+using static Data.Entities.Users.User;
 
 namespace Web.Controllers.Users;
 
@@ -54,7 +55,7 @@ public partial class UserController
     [HttpPost, Route("nutrient/start/decrease")]
     public async Task<IActionResult> DecreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
     {
-        var user = await _userRepo.GetUser(email, token, includeFamilies: true);
+        var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -94,7 +95,7 @@ public partial class UserController
     [HttpPost, Route("nutrient/start/increase")]
     public async Task<IActionResult> IncreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
     {
-        var user = await _userRepo.GetUser(email, token, includeFamilies: true);
+        var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -134,7 +135,7 @@ public partial class UserController
     [HttpPost, Route("nutrient/end/decrease")]
     public async Task<IActionResult> DecreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
     {
-        var user = await _userRepo.GetUser(email, token, includeFamilies: true);
+        var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -174,7 +175,7 @@ public partial class UserController
     [HttpPost, Route("nutrient/end/increase")]
     public async Task<IActionResult> IncreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
     {
-        var user = await _userRepo.GetUser(email, token, includeFamilies: true);
+        var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));

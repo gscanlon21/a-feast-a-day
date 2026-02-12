@@ -32,36 +32,16 @@ public class UserRepo
     /// <summary>
     /// Grab a user from the db with a specific token.
     /// Throws an exception if the user cannot be found.
-    /// TODO: Convert this to enum flags for common options.
     /// </summary>
-    public async Task<User> GetUserStrict(string? email, string? token,
-        bool includeNutrients = false,
-        bool includeServings = false,
-        bool includeFamilies = false,
-        bool includeIngredients = false,
-        bool allowDemoUser = false,
-        bool includeFoodPreferences = false)
+    public async Task<User> GetUserStrict(string? email, string? token, User.Includes includes = User.Includes.None, bool allowDemoUser = false)
     {
-        return await GetUser(email, token,
-            includeNutrients: includeNutrients,
-            includeServings: includeServings,
-            includeFamilies: includeFamilies,
-            includeIngredients: includeIngredients,
-            includeFoodPreferences: includeFoodPreferences,
-            allowDemoUser: allowDemoUser) ?? throw new UserException("User is null.");
+        return await GetUser(email, token, includes, allowDemoUser: allowDemoUser) ?? throw new UserException("User is null.");
     }
 
     /// <summary>
     /// Grab a user from the db with a specific token.
-    /// TODO: Convert this to enum flags for common options.
     /// </summary>
-    public async Task<User?> GetUser(string? email, string? token,
-        bool includeNutrients = false,
-        bool includeServings = false,
-        bool includeFamilies = false,
-        bool includeIngredients = false,
-        bool allowDemoUser = false,
-        bool includeFoodPreferences = false)
+    public async Task<User?> GetUser(string? email, string? token, User.Includes includes = User.Includes.None, bool allowDemoUser = false)
     {
         if (email == null || token == null)
         {
@@ -70,27 +50,27 @@ public class UserRepo
 
         IQueryable<User> query = _context.Users.AsSplitQuery().TagWithCallSite();
 
-        if (includeNutrients)
+        if (includes.HasFlag(User.Includes.Nutrients))
         {
             query = query.Include(u => u.UserNutrients);
         }
 
-        if (includeServings)
+        if (includes.HasFlag(User.Includes.Servings))
         {
             query = query.Include(u => u.UserSections);
         }
 
-        if (includeFamilies)
+        if (includes.HasFlag(User.Includes.Families))
         {
             query = query.Include(u => u.UserFamilies);
         }
 
-        if (includeIngredients)
+        if (includes.HasFlag(User.Includes.Ingredients))
         {
             query = query.Include(u => u.UserRecipeIngredients);
         }
 
-        if (includeFoodPreferences)
+        if (includes.HasFlag(User.Includes.FoodPreferences))
         {
             query = query.Include(u => u.UserFoodPreferences);
         }

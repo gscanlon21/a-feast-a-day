@@ -8,6 +8,7 @@ using Web.Code.TempData;
 using Web.Views.Shared.Components.Advanced;
 using Web.Views.Shared.Components.Edit;
 using Web.Views.User;
+using static Data.Entities.Users.User;
 
 namespace Web.Controllers.Users;
 
@@ -47,7 +48,7 @@ public partial class UserController : ViewController
     [Route("edit", Order = 3)]
     public async Task<IActionResult> Edit(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, bool? wasUpdated = null)
     {
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true, includeServings: true, includeFamilies: true, includeIngredients: true, includeNutrients: true, includeFoodPreferences: true);
+        var user = await _userRepo.GetUser(email, token, Includes.All, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));

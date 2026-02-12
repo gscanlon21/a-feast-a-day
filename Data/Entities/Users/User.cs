@@ -218,6 +218,20 @@ public class User : IUser
 
     #endregion
 
+    public enum Includes
+    {
+        None = 0,
+
+        Servings = 1 << 0, // 1
+        Families = 1 << 1, // 2,
+        Nutrients = 1 << 2, // 4,
+        Ingredients = 1 << 3, // 8,
+        FoodPreferences = 1 << 4, // 16,
+
+        Newsletter = Servings | Families | FoodPreferences,
+        All = Servings | Families | Nutrients | Ingredients | FoodPreferences,
+    }
+
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is User other
         && other.Id == Id;
