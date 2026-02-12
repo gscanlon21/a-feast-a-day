@@ -1,7 +1,4 @@
-﻿using Core.Models.Newsletter;
-using Data.Query;
-using Data.Query.Builders;
-using Data.Repos;
+﻿using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -44,35 +41,13 @@ public class UserController : ControllerBase
     [HttpGet("ShoppingList")]
     public async Task<IActionResult> GetShoppingList(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken)
     {
-        var user = await _userRepo.GetUser(email, token);
-        if (user == null)
+        var newsletter = await _newsletterRepo.Newsletter(email, token);
+        if (newsletter == null)
         {
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        var currentFeast = await _userRepo.GetCurrentFeast(user);
-        if (currentFeast == null) { return StatusCode(StatusCodes.Status204NoContent); }
-
-        var recipes = new List<QueryResults>();
-        // PERF: This may be slow since it queries for each section.
-        // Exclude fetching prep recipes, querying for a section will also return the prep recipes used.
-        foreach (var sectionGroup in currentFeast.UserFeastRecipes
-            .Where(ufr => ufr.Section != Section.Prep)
-            .GroupBy(ufr => ufr.Section))
-        {
-            // Pass in the section so that the UserRecipe is correct.
-            recipes.AddRange(await new UserQueryBuilder(user, sectionGroup.Key)
-                .WithEquipment(user.Equipment)
-                .WithRecipes(options =>
-                {
-                    options.AddPastRecipes(currentFeast.UserFeastRecipes);
-                })
-                .Build()
-                .Query(_serviceScopeFactory));
-        }
-
-        var shoppingList = await _newsletterRepo.GetShoppingList(currentFeast, recipes);
-        return StatusCode(StatusCodes.Status200OK, shoppingList);
+        return StatusCode(StatusCodes.Status200OK, newsletter.ShoppingList);
     }
 
     /// <summary>

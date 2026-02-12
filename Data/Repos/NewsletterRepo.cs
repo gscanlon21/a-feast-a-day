@@ -84,15 +84,9 @@ public partial class NewsletterRepo
         // Newsletters are weekly so shimmy the date over to the start of the week.
         date ??= user.StartOfWeekOffset;
 
-        UserLogs.Log(user, $"{date}: Building feast with options.");
-
         // Is the user requesting an old newsletter?
-        var oldNewsletter = await _context.UserFeasts.AsNoTracking()
-            .Include(n => n.UserFeastRecipes)
-            .Where(n => n.UserId == user.Id)
-            .Where(n => n.Date == date)
-            .OrderByDescending(n => n.Id)
-            .FirstOrDefaultAsync();
+        var oldNewsletter = await _userRepo.GetFeastOn(user, date.Value);
+        UserLogs.Log(user, $"{date}: Building feast using {oldNewsletter?.Id}.");
 
         // Always send a new newsletter for today only for the demo and test users.
         var isDemoAndDateIsToday = date == user.StartOfWeekOffset && (user.Features.HasFlag(Features.Demo) || user.Features.HasFlag(Features.Test));
@@ -186,14 +180,14 @@ public partial class NewsletterRepo
     private async Task<NewsletterDto?> NewsletterOld(User user, string token, UserFeast newsletter)
     {
         List<QueryResults> recipes = [];
-        // Exclude fetching prep recipes, querying for a section will also return the prep recipes used.
+        // Exclude fetching prep recipes; section queries will return their prep recipes.
         foreach (var section in EnumExtensions.GetSingleValues(excludingAny: Section.Prep))
         {
             recipes.AddRange((await new UserQueryBuilder(user, section)
                 .WithUser(options =>
                 {
                     // Swapping recipes doesn't look at food preferences,
-                    // ... so there may be double that can be overlooked.
+                    // ...so there may be doubles that can be overlooked.
                     options.FoodPreferences.Clear();
                 })
                 .WithEquipment(user.Equipment)
@@ -223,8 +217,8 @@ public partial class NewsletterRepo
             User = userViewModel,
             Verbosity = user.Verbosity,
             ShoppingList = shoppingList,
-            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
             UserFeast = newsletter.AsType<UserFeastDto>()!,
+            Recipes = recipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
         };
 
         if (user.Features.HasFlag(Features.Debug))

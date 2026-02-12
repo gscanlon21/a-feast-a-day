@@ -155,6 +155,19 @@ public class UserRepo
     }
 
     /// <summary>
+    /// Get the user's feast on the specified date.
+    /// </summary>
+    public async Task<UserFeast?> GetFeastOn(User user, DateOnly feastDate)
+    {
+        return await _context.UserFeasts.AsNoTracking()
+            .Include(uf => uf.UserFeastRecipes)
+            .Where(uf => uf.UserId == user.Id)
+            .Where(uf => uf.Date == feastDate)
+            .OrderByDescending(uf => uf.Id)
+            .FirstOrDefaultAsync();
+    }
+
+    /// <summary>
     /// Get the last 7 days of feasts for the user. Excludes the current feast.
     /// </summary>
     public async Task<IList<PastFeast>> GetPastFeasts(User user, int? count = null)
