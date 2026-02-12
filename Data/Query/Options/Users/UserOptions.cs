@@ -13,7 +13,7 @@ public class UserOptions : IOptions
     public DateOnly CreatedDate { get; }
     public int? MaxIngredients { get; set; }
     public IngredientOrder IngredientOrder { get; }
-    public ICollection<UserFoodPreference> FoodPreferences { get; set; } = [];
+    public List<UserFoodPreference> FoodPreferences { get; set; } = [];
 
     public Allergens SemiAllergens => FoodPreferences
         .Where(f => f.FoodPreference == FoodPreference.Seldom)

@@ -191,6 +191,11 @@ public class RecipeIngredientsController : ViewController
     {
         // Pass in the user so we can select their base recipes.
         return await new UserQueryBuilder(user, Section.Prep)
+            .WithUser(options =>
+            {
+                // Allow seldom allergens to be displayed and choosen. Exclude never allergens.
+                options.FoodPreferences.RemoveAll(fp => fp.FoodPreference == FoodPreference.Seldom);
+            })
             .WithEquipment(Equipment.All)
             .Build()
             .Query(_serviceScopeFactory, OrderBy.Name);
