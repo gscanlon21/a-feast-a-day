@@ -29,7 +29,7 @@ public class CreateBackfill : IJob, IScheduled
 
             var email = context.MergedJobDataMap.GetString("email")!;
             var token = context.MergedJobDataMap.GetString("token")!;
-            var user = await _userRepo.GetUserStrict(email, token, includeServings: true, includeFamilies: true, includeFoodPreferences: true);
+            var user = await _userRepo.GetUserStrict(email, token, User.Includes.Newsletter);
 
             // Reverse the dates (oldest to newest) so the feast nutrients are calculated properly. Create a feast for every week.
             var dates = new Stack<DateOnly>(Enumerable.Range(1, UserConsts.NutrientVolumeWeeks).Select(r => DateHelpers.Today.AddDays(-7 * r)));

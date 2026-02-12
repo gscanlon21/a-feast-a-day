@@ -33,9 +33,5 @@ public class UserOptions : IOptions
         MaxIngredients = user.MaxIngredients;
         IngredientOrder = user.IngredientOrder;
         FoodPreferences = user.UserFoodPreferences;
-        if (user.UserFoodPreferences.Any() == false)
-        {
-            UserLogs.Log(user, "User has no food preferences!");
-        }
     }
 }

@@ -72,6 +72,8 @@ public class UserRecipesController : ViewController
             .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
+                options.MaxIngredients = null;
+                options.FoodPreferences.Clear();
             })
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
