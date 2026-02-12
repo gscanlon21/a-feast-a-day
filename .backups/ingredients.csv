@@ -61,7 +61,7 @@
 62	\N	Soy Sauce	\N	\N	f	294944	32	16	2024-10-27	9	256	8192	256	Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce,3618
 63	\N	A1 Steak Sauce: Original	\N	\N	f	0	16	16	2025-07-09	7	100	32	100	A1 Steak Sauce: Original	https://www.eatthismuch.com/food/nutrition/a1-steak-sauce-original,1018572/
 64	\N	Hot Sauce	\N	\N	f	0	28	240	2024-12-02	4	240	256	240	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965
-65	\N	Buffalo Sauce	\N	\N	f	0	14	14	2026-02-12	7	224	3	224	Buffalo Sauce	https://www.eatthismuch.com/calories/buffalo-wing-sauce-1721937
+65	\N	Buffalo Sauce	\N	\N	f	0	14	14	2026-02-12	7	224	32	224	Buffalo Sauce	https://www.eatthismuch.com/calories/buffalo-wing-sauce-1721937
 66	\N	Ranch Dressing	\N	\N	f	0	15	15	2025-08-19	7	240	32	240	Ranch Dressing	https://www.eatthismuch.com/calories/ranch-dressing-365
 67	\N	Black Pepper	\N	\N	t	0	28	6	2025-12-02	4	96	131072	96	Black Pepper	https://www.eatthismuch.com/calories/pepper,205
 68	\N	Chili Powder	\N	\N	t	0	7.5	7.5	2025-07-18	7	120	131072	120	Chili Powder	https://www.eatthismuch.com/food/nutrition/chili-powder,184/
@@ -493,7 +493,7 @@
 567	\N	Chedder Cheese | Monterey Jack Cheese	\N	\N	f	256	28	28	2025-01-30	0	224	8388608	224	Chedder Cheese | Monterey Jack Cheese	https://www.eatthismuch.com/calories/monterey-jack-cheese,136752
 568	\N	Ready-Made Puff Pastry	\N	\N	f	0	47	47	2025-10-30	0	47	29360128	47	Ready-Made Puff Pastry	https://www.eatthismuch.com/calories/puff-pastry-4245
 569	\N	Ready-Made Custard	\N	\N	f	4	28	125	2025-10-29	4	125	29360128	125	Ready-Made Custard	https://www.eatthismuch.com/calories/fresh-custard-148019
-570	\N	Confectioners' Sugar	\N	\N	f	0	28	100	2026-02-12	4	100	114688	100	Confectioners' Sugar	https://www.eatthismuch.com/calories/powdered-sugars-4645
+570	\N	Confectioners' Sugar	\N	\N	f	0	28	100	2026-02-12	4	100	114688	100	Sugar	https://www.eatthismuch.com/calories/powdered-sugars-4645
 571	\N	Slices of American Cheese, Unfortified	\N	\N	f	4	28	28	2026-01-04	0	224	8388608	224	American Cheese	https://www.eatthismuch.com/calories/american-cheese-123
 572	\N	Slices of American Cheese	\N	\N	f	4	21	28	2026-01-05	0	224	8388608	224	American Cheese	https://www.eatthismuch.com/calories/american-cheese-5748
 573	\N	Fresh Oregano	\N	\N	f	0	1	3	2026-01-07	3	96	3	48	Oregano	https://www.eatthismuch.com/calories/oregano-202
