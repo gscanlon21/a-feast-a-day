@@ -32,6 +32,7 @@ public class UserRepo
     /// <summary>
     /// Grab a user from the db with a specific token.
     /// Throws an exception if the user cannot be found.
+    /// TODO: Convert this to enum flags for common options.
     /// </summary>
     public async Task<User> GetUserStrict(string? email, string? token,
         bool includeNutrients = false,
@@ -52,6 +53,7 @@ public class UserRepo
 
     /// <summary>
     /// Grab a user from the db with a specific token.
+    /// TODO: Convert this to enum flags for common options.
     /// </summary>
     public async Task<User?> GetUser(string? email, string? token,
         bool includeNutrients = false,
