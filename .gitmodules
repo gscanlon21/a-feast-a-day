@@ -5,3 +5,6 @@
 	path = Data/Entities/Microbiome
 	url = git@github.com:gscanlon21/_microbiome.git
 	branch = main
+[submodule "ADay"]
+	path = ADay
+	url = https://github.com/gscanlon21/a-day
