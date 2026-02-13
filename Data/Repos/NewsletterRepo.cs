@@ -127,7 +127,7 @@ public partial class NewsletterRepo
     {
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
         var debugIngredients = await GetDebugIngredients(newsletterContext.User).ToListAsync();
-        
+
         // Is there an issue scaling the recipes?
         foreach (var debugRecipe in debugRecipes)
         {
