@@ -1,6 +1,6 @@
-﻿using Core.Code.Extensions;
+﻿using ADay.Core.Models.Footnote;
+using Core.Code.Extensions;
 using Core.Code.Helpers;
-using Core.Models.Footnote;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;

@@ -1,5 +1,5 @@
-﻿using Core.Interfaces.User;
-using Core.Models.Footnote;
+﻿using ADay.Core.Models.Footnote;
+using Core.Interfaces.User;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;

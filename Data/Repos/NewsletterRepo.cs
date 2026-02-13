@@ -1,8 +1,10 @@
-﻿using Core.Dtos.Ingredient;
+﻿using ADay.Core.Models.Footnote;
+using ADay.Data;
+using ADay.Data.Entities.Footnote;
+using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
-using Core.Models.Footnote;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data.Code.Extensions;
@@ -21,19 +23,21 @@ public partial class NewsletterRepo
 {
     private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
+    private readonly SharedContext _sharedContext;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public NewsletterRepo(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    public NewsletterRepo(CoreContext context, SharedContext sharedContext, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
         _userRepo = userRepo;
+        _sharedContext = sharedContext;
         _serviceScopeFactory = serviceScopeFactory;
     }
 
     public async Task<IList<Footnote>> GetFootnotes(string? email, string? token, int count = 1)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
-        var footnotes = await _context.Footnotes
+        var footnotes = await _sharedContext.Footnotes
             // Apply the user's footnote type preferences. Has any flag.
             .Where(f => user == null || (f.Type & user.FootnoteType) != 0)
             .OrderBy(_ => EF.Functions.Random())

@@ -1,3 +1,4 @@
+using ADay.Data.Code.Extensions;
 using Core.Models.Options;
 using Data;
 using Data.Repos;
@@ -45,6 +46,7 @@ builder.Services.AddTransient<CaptchaService>();
 
 builder.Services.AddTransient(typeof(HtmlHelpers<>));
 
+builder.Services.AddShared(builder.Configuration, migrations: true);
 builder.Services.AddDbContext<CoreContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("CoreContext") ?? throw new InvalidOperationException("Connection string 'CoreContext' not found."), options =>
     {

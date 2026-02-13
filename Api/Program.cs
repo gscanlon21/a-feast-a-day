@@ -1,3 +1,4 @@
+using ADay.Data.Code.Extensions;
 using Api.Code;
 using Api.Controllers;
 using Api.Jobs.Create;
@@ -26,6 +27,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
+builder.Services.AddShared(builder.Configuration, migrations: false);
 builder.Services.AddDbContext<CoreContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("CoreContext") ?? throw new InvalidOperationException("Connection string 'CoreContext' not found."), options =>
     {

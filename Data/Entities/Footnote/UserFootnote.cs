@@ -1,4 +1,4 @@
-﻿using Core.Models.Footnote;
+﻿using ADay.Core.Models.Footnote;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;

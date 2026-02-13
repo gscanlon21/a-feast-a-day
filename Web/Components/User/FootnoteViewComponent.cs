@@ -1,4 +1,4 @@
-﻿using Core.Models.Footnote;
+﻿using ADay.Core.Models.Footnote;
 using Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

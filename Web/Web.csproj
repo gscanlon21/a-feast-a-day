@@ -43,6 +43,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ADay\Core\ADay.Core.csproj" />
+    <ProjectReference Include="..\ADay\Data\ADay.Data.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
     <ProjectReference Include="..\Lib\Lib.csproj" />
