@@ -42,5 +42,5 @@ public class UserFeast
     public virtual Users.User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]
-    public virtual ICollection<UserFeastRecipe> UserFeastRecipes { get; private init; } = null!;
+    public virtual List<UserFeastRecipe> UserFeastRecipes { get; private init; } = [];
 }

@@ -363,12 +363,16 @@ public class QueryRunner(Section section)
         {
             foreach (var recipe in recipeResults)
             {
-                // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
-                var allAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
-                // If all allergens has one and recipe allergens has one and user allergens has one, then skip this recipe.
-                if ((allAllergens & recipe.Allergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
+                // Don't filter out allergens if we're choosing recipes.
+                if (RecipeOptions.RecipeIds?.Any() != true)
                 {
-                    continue;
+                    // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
+                    var allAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
+                    // If all allergens has one and recipe allergens has one and user allergens has one, then skip this recipe.
+                    if ((allAllergens & recipe.Allergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
+                    {
+                        continue;
+                    }
                 }
 
                 // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.

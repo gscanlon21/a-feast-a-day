@@ -3,7 +3,6 @@ using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
-using Data.Entities.Newsletter;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Query.Builders;
@@ -32,13 +31,15 @@ public class UserRecipesController : ViewController
 
     private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
+    private readonly NewsletterRepo _newsletterRepo;
     private readonly NewsletterService _newsletterService;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public UserRecipesController(CoreContext context, UserRepo userRepo, NewsletterService newsletterService, IServiceScopeFactory serviceScopeFactory)
+    public UserRecipesController(CoreContext context, UserRepo userRepo, NewsletterRepo newsletterRepo, NewsletterService newsletterService, IServiceScopeFactory serviceScopeFactory)
     {
         _context = context;
         _userRepo = userRepo;
+        _newsletterRepo = newsletterRepo;
         _newsletterService = newsletterService;
         _serviceScopeFactory = serviceScopeFactory;
     }
@@ -49,7 +50,7 @@ public class UserRecipesController : ViewController
     [HttpGet, Route("{section:section}/{recipeId}")]
     public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, Section section, bool? wasUpdated = null)
     {
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
+        var user = await _userRepo.GetUser(email, token, Includes.FoodPreferences, allowDemoUser: true);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -73,7 +74,6 @@ public class UserRecipesController : ViewController
             {
                 options.IgnoreIgnored = true;
                 options.MaxIngredients = null;
-                options.FoodPreferences.Clear();
             })
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
@@ -298,26 +298,18 @@ public class UserRecipesController : ViewController
                 return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
             }
 
-            // There may be more than 1 recipe if there are prep recipes.
+            // May be multiple recipes if there are preps.
             await _userRepo.UpdateLastSeenDate(newRecipes);
-            foreach (var newRecipe in newRecipes)
-            {
-                // Add the recipe and its ingredients to the newsletter for nutrient calculations.
-                _context.UserFeastRecipes.Add(new UserFeastRecipe(userFeast, newRecipe, feastRecipe.Order)
-                {
-                    UserFeastRecipeIngredients = newRecipe.RecipeIngredients
-                            .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
-                            .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
-                });
 
-                // Redirect the user to the new recipe.
-                if (newRecipe.Section != Section.Prep)
-                {
-                    recipeId = newRecipe.Recipe.Id;
-                }
-            }
+            // Add these to the user's feast.
+            _context.UserFeastRecipes.AddRange(
+                _newsletterRepo.ConvertToUserFeastRecipes(userFeast, newRecipes)
+            );
 
             await _context.SaveChangesAsync();
+
+            // Redirect the user to the new recipe.
+            recipeId = newRecipes.Single(r => r.Section != Section.Prep).Recipe.Id;
         }
 
         // Use SuccessMessage2 so we don't go back on save.

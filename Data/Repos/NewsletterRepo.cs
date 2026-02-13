@@ -183,13 +183,8 @@ public partial class NewsletterRepo
         // Exclude fetching prep recipes; section queries will return their prep recipes.
         foreach (var section in EnumExtensions.GetSingleValues(excludingAny: Section.Prep))
         {
+            // Need to include allergens for IsUnwantedAndHasAlternatives.
             recipes.AddRange((await new UserQueryBuilder(user, section)
-                .WithUser(options =>
-                {
-                    // Swapping recipes doesn't look at food preferences,
-                    // ...so there may be doubles that can be overlooked.
-                    options.FoodPreferences.Clear();
-                })
                 .WithEquipment(user.Equipment)
                 .WithRecipes(options =>
                 {
