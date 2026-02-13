@@ -123,6 +123,14 @@ public partial class NewsletterRepo
     {
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
         var debugIngredients = await GetDebugIngredients(newsletterContext.User).ToListAsync();
+        
+        // Is there an issue scaling the recipes?
+        foreach (var debugRecipe in debugRecipes)
+        {
+            UserLogs.Log(newsletterContext.User, $"Scale: {debugRecipe.GetScale}");
+            UserLogs.Log(newsletterContext.User, $"Recipe.Servings: {debugRecipe.Recipe.Servings}");
+            UserLogs.Log(newsletterContext.User, $"UserRecipe.Servings: {debugRecipe.UserRecipe?.Servings}");
+        }
 
         // Query for ingredients before saving the newsletter, so debug logs can be saved to it.
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, debugRecipes);

@@ -202,7 +202,7 @@
 207	\N	Frozen Podded Edamame Beans	\N	\N	f	0	28	118	2025-07-26	4	118	67108864	118	Frozen Podded Edamame Beans	https://www.eatthismuch.com/food/nutrition/edamame,1977/
 209	\N	Frozen Mixed Vegetables	\N	\N	f	0	28	225	2025-09-24	4	225	67108864	225	Frozen Mixed Vegetables	https://www.eatthismuch.com/calories/mixed-vegetables,2256
 210	\N	Loaves of Flatbread	\N	\N	f	262176	64	64	2025-05-18	0	64	4	64	Loaves of Flatbread	https://www.eatthismuch.com/calories/pita-bread-4002
-212	\N	Slices of French Bread	\N	\N	f	32	29	57	2025-07-25	0	57	64	57	Slices of French Bread	https://www.eatthismuch.com/calories/french-bread,1664925
+212	\N	Slices of French Bread	\N	\N	f	786464	29	57	2025-07-25	0	57	64	57	French Bread	https://www.eatthismuch.com/calories/french-bread,1664925
 213	\N	Ciabatta Loaf	\N	\N	f	262176	257	257	2025-09-17	0	128.5	2	128.5	Ciabatta Loaf	https://www.eatthismuch.com/calories/ciabatta-loaf,387825
 214	\N	Salt	\N	\N	t	0	18	18	2025-08-17	7	288	131072	288	Salt	https://www.eatthismuch.com/food/nutrition/salt,221/
 215	\N	Maple Syrup	\N	\N	f	0	40	20	2025-06-13	9	320	928	320	Maple Syrup	https://www.eatthismuch.com/calories/maple-syrups-4654
@@ -456,7 +456,7 @@
 503	\N	Dried Thyme	\N	\N	f	0	28	3	2025-03-05	4	48	131072	48	Dried Thyme	https://www.eatthismuch.com/calories/thyme-216
 504	\N	Cayenne Pepper	\N	\N	t	0	10	5	2025-12-22	4	80	131072	80	Cayenne Pepper	https://www.eatthismuch.com/calories/cayenne-pepper,206
 505	\N	Puy Lentils	\N	\N	f	0	192	192	2025-06-06	6	192	2048	192	Puy Lentils	https://www.eatthismuch.com/calories/lentils-3566
-506	\N	Dried Chervil	\N	\N	f	0	2	2	2024-10-10	7	32	3	32	Dried Chervil	https://www.eatthismuch.com/calories/chervil-183
+506	\N	Dried Chervil	\N	\N	f	0	1	2	2026-02-13	3	32	131072	32	Chervil	https://www.eatthismuch.com/calories/chervil-183
 507	\N	Fresh Chervil | Fresh Parsley	\N	\N	f	0	28	4	2024-11-30	4	64	2	64	Fresh Chervil | Fresh Parsley	https://www.eatthismuch.com/calories/parsley-2057
 509	\N	Chicken Thighs	\N	\N	f	1048576	94	94	2025-03-24	0	188	268435456	188	Chicken Thighs	https://www.eatthismuch.com/calories/chicken-thigh-480
 510	\N	Fennel Seeds	\N	\N	f	0	28	6	2025-02-26	4	96	131072	96	Fennel Seeds	https://www.eatthismuch.com/calories/fennel-seed-193
@@ -533,7 +533,7 @@
 608	\N	Frozen Strawberries	\N	\N	f	0	28	149	2025-01-16	4	149	33554432	149	Frozen Strawberries	https://www.eatthismuch.com/calories/strawberries-1560
 609	\N	Slices of Gluten-Free Whole-Grain Bread	\N	\N	f	0	26	26	2026-02-11	0	52	64	52	Whole-Grain Bread	https://www.eatthismuch.com/calories/multi-grain-bread-3995
 610	\N	Gammon Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/gammon-7453	\N	f	1048576	453.592	453.592	2024-10-14	0	240	268435456	240	Gammon Steaks	\N
-611	\N	Fresh Chervil	\N	\N	f	0	2	2	2024-10-10	7	32	3	32	Fresh Chervil	https://www.eatthismuch.com/calories/chervil-183
+611	\N	Fresh Chervil	\N	\N	f	0	28	2	2026-02-13	4	32	3	32	Chervil	https://www.eatthismuch.com/calories/chervil-183
 612	\N	Brown Sugar	\N	\N	f	0	28	145	2025-07-22	4	145	114688	145	Brown Sugar	https://www.eatthismuch.com/food/nutrition/brown-sugar,4643
 613	\N	Beef Broth	\N	\N	f	0	240	240	2025-06-27	6	240	928	240	Beef Broth	https://www.eatthismuch.com/calories/beef-broth-2899468
 614	\N	Dark Chocolate Chips (70%)	\N	\N	f	0	28	168	2024-12-20	4	168	16384	168	Chocolate Chip	https://www.eatthismuch.com/calories/dark-chocolate-4768
@@ -1461,3 +1461,4 @@
 1904	\N	Slices of Gluten-Free Whole-Grain Bread, Toasted	\N	Cooked ingredient.	f	0	26	26	2026-02-11	0	52	64	52	Whole-Grain Bread	https://www.eatthismuch.com/calories/multi-grain-bread-3995
 1905	\N	Slices of Whole-Grain Bread, Toasted	\N	Cooked ingredient.	f	32	26	26	2026-02-11	0	52	64	52	Whole-Grain Bread	https://www.eatthismuch.com/calories/multi-grain-bread-3995
 1906	\N	Blackberries	\N	\N	f	0	28	144	2025-01-14	4	144	1	144	Fresh Blackberries	https://www.eatthismuch.com/calories/blackberries-1339
+1907	\N	Refried Beans w/ Chorizo	\N	\N	f	1048576	28	238	2024-10-23	4	238	512	238	Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3600

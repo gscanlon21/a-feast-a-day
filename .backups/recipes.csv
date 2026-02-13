@@ -206,7 +206,7 @@
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	t	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
-264	Asian Fried Eggs	From Jamie Oliver's 5 Ingredients	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	\N	f	f
+264	Asian Fried Eggs	\N	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	black-bean-fajita-skillet.jpg	0	\N	f	f
 266	Sweet Potato Cauliflower Curry	\N	\N	\N	4	55	5	4	t	cauliflower-curry.jpg	0	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	f	f
 267	Curried Mung Bean Soup	\N	\N	\N	8	45	15	4	t	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
@@ -221,7 +221,7 @@
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	5	2	t	asparagus-eggs-dressing.jpg	0	\N	f	f
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	hot-chocolate-sauce.jpg	6	\N	f	f
-311	Sausage & Apple Bake	From Jamie Oliver's 5 Ingredients	\N	\N	8	35	10	4	t	sausage-apple-bake.jpg	0	\N	f	f
+311	Sausage & Apple Bake	\N	\N	\N	8	35	10	4	t	sausage-apple-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 312	Black Bean Sauce	\N	\N	\N	0	10	5	1	t	black-bean-sauce.jpg	6	https://www.food.com/recipe/mexican-black-bean-sauce-280411	t	f
 313	Hoisin Bok Choy Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	5	2	t	hoisin-bok-choy-rice.jpg	0	\N	f	f
 314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	12	15	5	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
@@ -268,7 +268,7 @@
 387	Marinated Mediterranean Olives	\N	\N	\N	48	0	5	2	t	marinated-mediterranean-olives.jpg	0	https://www.jamieoliver.com/recipes/vegetables/marinated-mediterranean-olives/	f	f
 388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldn’t be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
 389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	first-watch-blte.jpg	0	\N	f	f
-390	Maple-Mustard-Glazed Pan-Seared Pork Chops	From The Food Lab by J. Kenji López-Alt	\N	\N	4	15	5	2	t	\N	0	\N	f	f
+390	Maple-Mustard-Glazed Pan-Seared Pork Chops	\N	\N	\N	8	15	5	2	t	\N	0	From The Food Lab by J. Kenji López-Alt	f	f
 391	Low Carb Cauliflower Fried Rice	Try 1 teaspoon Apple Cider Vinegar in place of the Mirin Rice Wine.	\N	\N	12	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
 392	Roasted Chickpeas	Let the chickpeas cool completely on the baking sheet after roasting. They will continue to crisp up as they cool. Try sweet styles (maple syrup and cinnamon), spicy versions (chili powder or cayenne), earthy-herbaceous blends (rosemary or thyme), or cheesy twists (nutritional yeast or Parmesan).  Enjoy roasted chickpeas as a crunchy snack, a salad or soup topper, in grain bowls, or as part of a party mix with nuts, pretzels, and dried fruit. 	\N	\N	32	35	10	4	t	\N	0	https://insanelygoodrecipes.com/roasted-chickpeas/	t	f
 393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	\N	f	f
@@ -277,7 +277,7 @@
 396	Tandoori Chicken	\N	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	\N	0	\N	f	f
 398	Maple Lime Pork Roast	\N	\N	\N	8	360	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-399	Chicken Stew	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	120	8	2	t	beef-stew.jpg	0	\N	f	f
+399	Chicken Stew	\N	\N	\N	8	120	8	2	t	beef-stew.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
 401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 402	Fruit Salad	\N	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -359,7 +359,7 @@
 543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-546	Sesame Almond Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
+546	Sesame Almond Dressing	\N	\N	\N	0	0	5	6	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
 547	Burgers	\N	\N	\N	0	45	15	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
