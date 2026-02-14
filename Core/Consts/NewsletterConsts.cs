@@ -1,4 +1,6 @@
 ﻿
+using ADay.Core.Models.Footnote;
+
 namespace Core.Consts;
 
 /// <summary>
@@ -20,4 +22,10 @@ public static class NewsletterConsts
     /// How many months until the user's newsletter logs are deleted.
     /// </summary>
     public const int DeleteEmailsAfterXMonths = 1;
+
+    public static readonly FootnoteType[] FootnoteTypes = 
+    [
+        FootnoteType.Custom, FootnoteType.GoodVibes, FootnoteType.Mindfulness, FootnoteType.HealthFacts, FootnoteType.HealthTips,
+        FootnoteType.CookingTips, FootnoteType.CookingAffirmations, FootnoteType.CookingMotivation, FootnoteType.IngredientTips,
+    ];
 }

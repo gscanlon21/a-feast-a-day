@@ -112,7 +112,7 @@ public class EditComponentViewModel
 
     public FootnoteType[]? FootnoteTypeBinder
     {
-        get => Enum.GetValues<FootnoteType>().Where(e => FootnoteType.HasFlag(e)).ToArray();
+        get => NewsletterConsts.FootnoteTypes.Where(e => FootnoteType.HasFlag(e)).ToArray();
         set => FootnoteType = value?.Aggregate(FootnoteType.None, (a, e) => a | e) ?? FootnoteType.None;
     }
 

@@ -37,14 +37,13 @@ public partial class NewsletterRepo
     public async Task<IList<Footnote>> GetFootnotes(string? email, string? token, int count = 1)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
-        var footnotes = await _sharedContext.Footnotes
+        return await _sharedContext.Footnotes
             // Apply the user's footnote type preferences. Has any flag.
             .Where(f => user == null || (f.Type & user.FootnoteType) != 0)
+            .Where(f => NewsletterConsts.FootnoteTypes.Contains(f.Type))
             .OrderBy(_ => EF.Functions.Random())
             .Take(count)
             .ToListAsync();
-
-        return footnotes;
     }
 
     public async Task<IList<UserFootnote>> GetUserFootnotes(string? email, string? token, int count = 1)
