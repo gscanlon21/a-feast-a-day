@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 9QcgduJM8qu4Lt0UsOIsm71DIDQaDFbBhLydc0staeiFtBh4v6uXtLh58PJfbuq
+\restrict nh4u7hL8JXmnlSkVzOMVySbdD8RdGLdnLaR9HaCCRGPlscCSmWX9zJjRzU0g4oB
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.0
@@ -2389,6 +2389,12 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1906	809	1	f
 1906	625	1	f
 668	1907	1	f
+144	1910	1	f
+144	1909	1	f
+144	1908	1	f
+709	1910	1	f
+709	1909	1	f
+709	1908	1	f
 \.
 
 
@@ -13917,6 +13923,28 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 18614	611	1984	\N	3	0.1
 18615	611	62	\N	3	1
 18616	611	2047	\N	3	5
+18617	144	2251799813685248	\N	2	1
+18618	144	17179869184	\N	2	3
+18619	144	70368744177664	\N	2	6
+18620	144	8796093022208	\N	1	0.1
+18621	144	17592186044416	\N	2	0.1
+18622	144	65536	\N	1	90
+18623	144	1048576	\N	2	0.1
+18624	144	16777216	\N	1	10
+18625	144	67108864	\N	2	3
+18626	144	536870912	\N	2	0.1
+18627	144	3221225472	\N	1	31
+18628	144	229376	\N	1	8
+18629	1455	128	\N	3	2
+18630	1455	68719476736	\N	2	3
+18631	1455	34359738368	\N	2	669
+18632	1455	1	\N	3	26
+18633	1455	4294967296	\N	2	84
+18634	1455	2199023255552	\N	2	7
+18635	1455	48	\N	3	17
+18636	1455	14	\N	3	87
+18637	1455	1984	\N	3	11
+18638	1455	62	\N	3	103
 \.
 
 
@@ -16776,9 +16804,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6822	0	635	2	1	, rind-only, grated	4	f	\N	5	f	t	\N	1
 6813	6	634	4	3	\N	178	f	\N	1	f	t	\N	1
 6814	6	634	3	1	\N	1396	f	\N	2	f	t	\N	1
-6815	0	634	1	1	, crushed	5	f	\N	3	f	t	\N	1
-6816	8	634	1	2	\N	62	f	\N	4	f	t	\N	1
-6817	8	634	1	1	\N	1790	f	\N	5	f	t	\N	1
+6815	0	634	1	1	, crushed	5	t	\N	3	f	t	\N	1
 8285	7	980	1	2	\N	\N	f	722	4	f	t	\N	1
 8286	6	980	1	1	\N	1582	f	\N	1	f	t	\N	1
 6823	8	635	1	1	\N	1596	f	\N	6	f	t	\N	1
@@ -16787,6 +16813,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6837	6	637	4	9	\N	38	f	\N	3	f	t	\N	1
 6838	6	637	2	1	, plus extra for dusting	1268	f	\N	4	f	t	\N	1
 6839	6	637	4	1	, finely chopped	983	f	\N	5	f	t	\N	1
+6816	8	634	1	2	\N	62	f	\N	4	f	t	\N	1
+6817	8	634	1	1	\N	1790	f	\N	5	f	t	\N	1
 6943	7	382	1	1	\N	77	f	\N	2	f	t	\N	0.25
 7297	0	730	1	1	, sliced into ¼-inch thick slices	1404	f	\N	1	f	t	\N	1
 6944	8	382	8	1	\N	692	t	\N	3	f	t	\N	1
@@ -19867,8 +19895,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3723	Place the onion, garlic, soy sauce, lemon rind, spices and sugar in a blender or food processor. Add two pieces of pineapple and process until the mixture is well combined and almost smooth.	635	1	384
 3724	Add the paste to the pork, tossing well to coat evenly. Thread the pieces of pork on to bamboo skewers, with the remaining pineapple chunks. Preheat the grill (broiler), or light the barbecue.	635	2	24
 3725	Cook the pork and pineapple skewers under the grill (broiler) or on a medium-hot barbecue for 10–12 minutes, turning occasionally, until golden brown and thoroughly cooked. Garnish with parley and serve with the satay sauce.	635	3	24
-3721	Pour the coconut milk into a small pan and stir in the peanut butter. Stir in the remaining sauce ingredients and heat gently on the hob or over the barbecue, stirring until smooth and hot. Cover and keep warm.	634	0	0
 3713	Season to taste with salt and pepper. Return the chops to the skillet and turn to coat with the glaze. Serve immediately, pouring extra glaze on top.	390	2	4
+3721	Pour the coconut milk into a small pan and stir in the peanut butter. Stir in the remaining sauce ingredients and heat gently on the hob or over the barbecue, stirring until smooth and hot. Cover and keep warm.	634	0	4
 3729	Preheat the oven to 350°F and line a shallow 23cm/9in round sandwich pan with baking parchment.	637	0	2
 3730	Place the butter and sugar in a bowl and beat until light and creamy. Sift the flour and cocoa powder together, and add the flour mixture to the butter and work it in with your hands until the mixture is smooth. Knead until it is soft and pliable then press it into the prepared pan.	637	1	0
 3731	Using the back of a tablespoon, spread the mixture evenly in the pan. Sprinkle the pistachio nuts over the top and press them in gently. Prick with a fork then mark into 16 segments using a round-bladed knife.	637	2	0
@@ -20672,7 +20700,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18616, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18638, true);
 
 
 --
@@ -21390,5 +21418,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 9QcgduJM8qu4Lt0UsOIsm71DIDQaDFbBhLydc0staeiFtBh4v6uXtLh58PJfbuq
+\unrestrict nh4u7hL8JXmnlSkVzOMVySbdD8RdGLdnLaR9HaCCRGPlscCSmWX9zJjRzU0g4oB
 

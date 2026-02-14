@@ -137,7 +137,7 @@
 141	\N	Rolled Oats	\N	\N	f	0	80	80	2025-08-15	6	80	16288	80	Rolled Oats	https://www.eatthismuch.com/food/nutrition/rolled-oats,5821/
 142	\N	Porridge Oats	\N	\N	f	0	28	80	2025-07-08	4	80	1024	80	Porridge Oats	https://www.eatthismuch.com/calories/rolled-oats-5821
 143	\N	Cumin	\N	\N	t	0	28	9	2024-11-30	4	144	131072	144	Cumin	https://www.eatthismuch.com/calories/cumin-189
-144	\N	Green Onions	aka: Scallions.	\N	f	0	15	15	2024-10-11	0	150	2	150	Green Onions	https://www.eatthismuch.com/calories/scallions-2051
+144	\N	Green Onions	aka: Scallions.	\N	f	0	28	15	2026-02-14	4	100	2	100	Green Onions	https://www.eatthismuch.com/calories/scallions-2051
 145	\N	Fusilli Pasta	\N	\N	f	262176	28	85	2025-02-17	4	85	4096	85	Fusilli Pasta	https://www.eatthismuch.com/calories/pasta-fusilli-127691
 146	\N	Slices of Whole Wheat Rye Bread	\N	\N	f	32	32	32	2024-12-17	0	64	64	64	Slices of Whole Wheat Rye Bread	https://www.eatthismuch.com/calories/rye-bread-4015
 147	\N	Cherry Tomatoes	\N	\N	f	512	17	149	2025-09-09	0	149	2	149	Tomato	https://www.eatthismuch.com/calories/cherry-tomatoes-1221840
@@ -1160,7 +1160,7 @@
 1452	\N	Cornish Game Hens	\N	\N	f	0	1344	85	2025-03-18	0	224	268435456	224	Cornish Game Hens	https://www.eatthismuch.com/calories/whole-chicken-134184
 1453	\N	Gluten-Free Rolled Oats	\N	\N	f	0	28	80	2025-08-15	4	80	16288	80	Gluten-Free Rolled Oats	https://www.eatthismuch.com/calories/rolled-oats-5821
 1454	\N	Gluten-Free Porridge Oats	\N	\N	f	0	28	80	2025-07-08	4	80	1024	80	Gluten-Free Porridge Oats	https://www.eatthismuch.com/calories/rolled-oats-5821
-1455	\N	Gluten-Free Steel-Cut Oats	aka. pinhead oats. https://www.eatthismuch.com/calories/oats-4803	\N	f	0	28	156	2024-10-11	4	156	1024	156	Gluten-Free Steel-Cut Oats	\N
+1455	\N	Gluten-Free Steel-Cut Oats	aka. pinhead oats.	\N	f	1024	28	156	2026-02-14	4	156	1024	156	Oat	\N
 1456	\N	Rose Harissa	\N	\N	f	0	30	100	2024-11-10	9	240	32	240	Rose Harissa	https://www.eatthismuch.com/calories/hard-cider-78370
 1457	\N	Large Red Kuri Squash	\N	\N	f	0	323	196	2025-11-03	0	113	2	113	Squash	https://www.eatthismuch.com/calories/squash-2291
 1458	\N	Large Butternut Squash	\N	\N	f	0	323	196	2025-11-03	0	113	2	113	Squash	https://www.eatthismuch.com/calories/squash-2291
@@ -1462,3 +1462,6 @@
 1905	\N	Slices of Whole-Grain Bread, Toasted	\N	Cooked ingredient.	f	32	26	26	2026-02-11	0	52	64	52	Whole-Grain Bread	https://www.eatthismuch.com/calories/multi-grain-bread-3995
 1906	\N	Blackberries	\N	\N	f	0	28	144	2025-01-14	4	144	1	144	Fresh Blackberries	https://www.eatthismuch.com/calories/blackberries-1339
 1907	\N	Refried Beans w/ Chorizo	\N	\N	f	1048576	28	238	2024-10-23	4	238	512	238	Refried Beans	https://www.eatthismuch.com/calories/refried-beans-3600
+1908	\N	Large Green Onions	aka: Scallions.	\N	f	0	15	15	2026-02-14	0	150	2	150	Green Onions	https://www.eatthismuch.com/calories/scallions-2051
+1909	\N	Medium Green Onions	aka: Scallions.	\N	f	0	15	15	2026-02-14	0	150	2	150	Green Onions	https://www.eatthismuch.com/calories/scallions-2051
+1910	\N	Small Green Onions	aka: Scallions.	\N	f	0	15	15	2026-02-14	0	150	2	150	Green Onions	https://www.eatthismuch.com/calories/scallions-2051
