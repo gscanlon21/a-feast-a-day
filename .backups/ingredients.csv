@@ -124,7 +124,7 @@
 126	\N	Kielbasa Sausage	\N	\N	f	1048576	28	56	2025-02-22	4	224	268435456	224	Kielbasa Sausage	https://www.eatthismuch.com/calories/polska-kielbasa-sausage-142880
 127	\N	Unsweetened Applesauce	\N	\N	f	0	28	244	2024-11-16	4	244	256	244	Applesauce	https://www.eatthismuch.com/calories/applesauce-1316
 129	\N	Frozen Meatballs	\N	\N	f	0	28.25	85	2025-09-26	4	226	134217728	226	Frozen Meatballs	https://www.eatthismuch.com/calories/meatballs-frozen-italian-style,484657
-130	\N	Molasses	\N	\N	f	0	40	20	2024-10-12	9	320	3	320	Molasses	https://www.eatthismuch.com/calories/molasses-4624
+130	\N	Molasses	\N	\N	f	0	40	20	2026-02-20	9	320	114688	320	Molasses	https://www.eatthismuch.com/calories/molasses-4624
 131	\N	Dry Pinto Beans	\N	\N	f	0	28	193	2026-02-05	4	193	2048	193	Pinto Bean	https://www.eatthismuch.com/calories/pinto-beans-3540
 132	\N	Elbow Macaroni	\N	\N	f	262176	28	28	2024-11-26	4	105	4096	105	Elbow Macaroni	https://www.eatthismuch.com/calories/macaroni-4927
 133	\N	Evaporated Milk	\N	\N	f	324	32	32	2024-11-11	9	256	512	256	Evaporated Milk	https://www.eatthismuch.com/calories/evaporated-milk-3338368
@@ -646,7 +646,7 @@
 723	\N	Olive Oil | Ghee	\N	\N	f	0	28	14	2025-10-06	9	224	65536	224	Oil	https://www.eatthismuch.com/calories/olive-oil-266
 724	\N	Organic Chicken Livers	\N	\N	f	1048576	56	28	2025-02-03	0	224	268435456	224	Organic Chicken Livers	https://www.eatthismuch.com/calories/chicken-liver-416
 725	\N	Leaves of Iceberg Lettuce	\N	\N	f	0	15	57	2024-11-02	0	57	2	57	Lettuce	\N
-726	\N	Salted Peanuts	\N	\N	f	2048	28	146	2024-10-12	4	146	1048576	146	Peanut	https://www.eatthismuch.com/calories/peanuts-3584
+726	\N	Salted Peanuts	\N	\N	f	2048	28	146	2026-02-19	4	146	1048576	146	Peanut	https://www.eatthismuch.com/calories/peanuts-3584
 727	\N	White Vinegar | Lemon Juice	\N	\N	f	0	29.875	239	2025-05-10	9	239	32	239	White Vinegar | Lemon Juice	https://www.eatthismuch.com/calories/vinegar-227
 728	\N	Broccolini Heads	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	91	2024-11-04	0	91	2	91	Broccolini	\N
 729	\N	Fresh Podded Green Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2	240	Green Peas	\N
@@ -1266,7 +1266,7 @@
 1616	\N	Raspberry Wine Vinegar | Red Wine Vinegar	\N	\N	f	0	30	239	2025-10-23	9	239	3	239	Raspberry Wine Vinegar | Red Wine Vinegar	https://www.eatthismuch.com/calories/red-wine-vinegar,234
 1617	\N	Lamb-Leg Steaks	\N	\N	f	1048576	28	28	2025-01-05	4	224	268435456	224	Lamb-Leg Steaks	https://www.eatthismuch.com/calories/lamb-leg-3912
 1618	\N	New York Strip Loin Steaks	\N	\N	f	1048576	28	28	2024-10-14	4	240	268435456	240	New York Strip Loin Steaks	https://www.eatthismuch.com/calories/beef-flank-3038
-1619	\N	Peanuts	\N	\N	f	2048	28	146	2024-10-12	4	146	1048576	146	Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/
+1619	\N	Peanuts	\N	\N	f	2048	28	146	2026-02-19	4	146	1048576	146	Peanuts	https://www.eatthismuch.com/food/nutrition/peanuts,3584/
 1620	\N	Granary Loaf	\N	\N	f	262176	300	25	2025-09-17	0	200	4	200	Granary Loaf	https://www.eatthismuch.com/calories/wheat-bread-4017
 1621	\N	Onion Salt	\N	\N	t	0	28	7	2025-08-25	4	112	131072	112	Onion Salt	https://www.eatthismuch.com/calories/onion-powder,201
 1622	\N	Wheat Germ	\N	\N	t	262176	28	125	2025-06-24	4	125	32768	125	Wheat Germ	https://www.eatthismuch.com/calories/wheat-flour-4926
@@ -1385,7 +1385,7 @@
 1771	\N	Cake Flour, Enriched	\N	\N	f	32	137	137	2026-01-25	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
 1772	\N	Bread Flour	\N	\N	f	32	137	137	2026-01-25	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
 1773	\N	Cake Flour	\N	\N	f	32	137	137	2026-01-25	6	137	4	137	Bread Flour, Unenriched	https://www.eatthismuch.com/food/nutrition/wheat-flours,4882/
-1774	\N	Dry-Roasted Salted Peanuts	\N	\N	f	2048	28	28	2024-10-12	4	224	1048576	224	Peanut	https://www.eatthismuch.com/calories/peanuts-3587
+1774	\N	Dry-Roasted Salted Peanuts	\N	\N	f	2048	28	28	2026-02-20	4	224	1048576	224	Peanut	https://www.eatthismuch.com/calories/peanuts-3587
 1775	\N	Dried Ginger	\N	\N	f	0	28	5	2025-09-19	4	80	131072	80	Ginger	https://www.eatthismuch.com/calories/ginger-196
 1776	\N	Sriracha	\N	\N	f	0	28	240	2024-12-02	4	240	256	240	Hot Sauce	https://www.eatthismuch.com/calories/red-hot-sauce-3857965
 1777	\N	Rice Vinegar | Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	30	239	2025-01-07	9	239	32	239	Apple Cider Vinegar	\N
@@ -1474,3 +1474,9 @@
 1917	\N	Unsalted Dry-Roasted Almonds	\N	\N	f	1	28	143	2026-02-16	4	143	1048576	143	Almonds	https://www.eatthismuch.com/calories/almonds-2632
 1918	\N	Salted Dry-Roasted Almonds	\N	\N	f	1	28	143	2026-02-16	4	143	1048576	143	Almonds	https://www.eatthismuch.com/calories/almonds-2632
 1919	\N	Dry-Roasted Almonds	\N	\N	f	1	28	143	2026-02-16	4	143	1048576	143	Almonds	https://www.eatthismuch.com/calories/almonds-2632
+1920	\N	Stewing Beef | Stewing Lamb	\N	\N	f	0	28	84	2025-01-12	4	224	268435456	224	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355
+1921	\N	Stewing Lamb	\N	\N	f	0	28	84	2025-01-12	4	224	268435456	224	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355
+1922	\N	Stewing Beef	\N	\N	f	0	28	84	2025-01-12	4	224	268435456	224	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355
+1923	\N	Creamy Peanut Butter | Sunflower Butter | Tahini	\N	\N	f	2048	32	16	2025-10-26	4	256	128	256	Creamy Peanut Butter	https://www.eatthismuch.com/calories/peanut-butter-3735
+1924	\N	Sunflower Butter	\N	\N	f	65536	28	14	2026-01-01	9	224	65536	224	Sunflower Oil	https://www.eatthismuch.com/calories/sunflower-oil,292
+1925	\N	Unsweetened Shredded Coconut	\N	\N	f	256	28	28	2024-11-27	4	113	8388608	113	Shredded Chedder Cheese	https://www.eatthismuch.com/calories/cheddar-cheese-9
