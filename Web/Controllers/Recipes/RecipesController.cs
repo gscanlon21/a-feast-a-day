@@ -39,7 +39,10 @@ public class RecipesController : ViewController
     {
         viewModel ??= new RecipesViewModel();
 
-        QueryBuilderBase queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None);
+        QueryBuilderBase queryBuilder = new QueryBuilder(viewModel.Section ?? Section.None).WithRecipes(x =>
+        {
+            x.IgnorePrepRecipes = true;
+        });
 
         if (viewModel.Equipment.HasValue)
         {
