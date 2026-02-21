@@ -23,7 +23,7 @@ public static class NewsletterConsts
     /// </summary>
     public const int DeleteEmailsAfterXMonths = 1;
 
-    public static readonly FootnoteType[] FootnoteTypes = 
+    public static readonly FootnoteType[] FootnoteTypes =
     [
         FootnoteType.Custom, FootnoteType.GoodVibes, FootnoteType.Mindfulness, FootnoteType.HealthFacts, FootnoteType.HealthTips,
         FootnoteType.CookingTips, FootnoteType.CookingAffirmations, FootnoteType.CookingMotivation, FootnoteType.IngredientTips,

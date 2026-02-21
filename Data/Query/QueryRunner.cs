@@ -426,11 +426,11 @@ public class QueryRunner(Section section)
                     }
                 }
 
-                // Not including the prep recipes in the take count because those aren't a part of the section.
+                // Don't include the prep recipes in the take count b/c those aren't a part of the section.
                 if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == section) < take)
                 {
-                    // Prepend the recipe's prep recipes if there are any.
-                    foreach (var prepRecipe in recipe.PrepRecipes)
+                    // Append the recipe's prep recipes. Scale them if they are duplicates and are adjustable.
+                    foreach (var prepRecipe in recipe.PrepRecipes.Where(_ => !RecipeOptions.IgnorePrepRecipes))
                     {
                         // Scale the prep recipe based on the prep's serving size and the recipe-ingredient-for-the-prep's quantity.
                         var noneRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure == Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
@@ -447,17 +447,17 @@ public class QueryRunner(Section section)
                             prepRecipe.Key.SetScale = (noneRecipeIngredientsGrams + someRecipeIngredientsGrams) / prepRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prepRecipe.Key.Recipe.Servings);
                         }
 
-                        // If the prep recipe already exists in our feast for this section and is scalable, then scale it.
-                        if (finalResults.TryGetValue(prepRecipe.Key, out var existingPrepRecipe) && existingPrepRecipe.Recipe.AdjustableServings)
-                        {
-                            existingPrepRecipe.SetScale += prepRecipe.Key.SetScale;
-                        }
                         // If the prep recipes already exists in our feast for any prior section and is scalable, then scale it.
-                        else if (SelectionOptions.PrepRecipes.TryGetValue(prepRecipe.Key, out var scalePrepRecipe) && scalePrepRecipe.Recipe.AdjustableServings)
+                        if (SelectionOptions.PrepRecipes.TryGetValue(prepRecipe.Key, out var scalePrepRecipe) && scalePrepRecipe.Recipe.AdjustableServings)
                         {
                             scalePrepRecipe.SetScale += prepRecipe.Key.SetScale;
                         }
-                        else if (!RecipeOptions.IgnorePrepRecipes)
+                        // If the prep recipe already exists in our feast for this section and is scalable, then scale it.
+                        else if (finalResults.TryGetValue(prepRecipe.Key, out var existingPrepRecipe) && existingPrepRecipe.Recipe.AdjustableServings)
+                        {
+                            existingPrepRecipe.SetScale += prepRecipe.Key.SetScale;
+                        }
+                        else
                         {
                             finalResults.Add(prepRecipe.Key);
                         }
