@@ -444,7 +444,7 @@
 491	\N	Gluten-Free Breadcrumbs	\N	\N	f	0	11.25	30	2024-11-09	4	90	64	90	Gluten-Free Breadcrumbs	https://www.eatthismuch.com/calories/bread-crumbs-gluten-free-1726491
 492	\N	Enriched Long Grain Rice	\N	\N	f	4096	28	185	2026-01-03	4	185	1024	185	Rice	https://www.eatthismuch.com/calories/white-rice-4806
 493	\N	Vanilla Bean	aka. Vanilla Pod.	\N	f	0	8	4	2025-11-19	0	224	1	224	Vanilla Bean	\N
-494	\N	Chili Sauce	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
+494	\N	Chili Sauce	\N	\N	f	0	28	245	2026-02-21	4	245	256	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
 495	\N	Dry Sherry	\N	\N	f	0	30	103	2025-08-28	9	240	524288	240	Dry Sherry	https://www.eatthismuch.com/calories/dessert-wine-3220
 496	\N	Light Soy Sauce	\N	\N	f	294944	32	16	2024-12-01	9	256	8192	256	Light Soy Sauce	https://www.eatthismuch.com/calories/soy-sauce-3748
 497	\N	Fresh Podded Snow Peas	\N	\N	f	0	28	100	2024-11-24	4	100	2	100	Fresh Podded Snow Peas	https://www.eatthismuch.com/calories/snow-peas-129118
@@ -1375,7 +1375,7 @@
 1761	\N	Allspice Berries	\N	\N	f	0	12	6	2024-10-26	4	96	131072	96	Allspice	https://www.eatthismuch.com/calories/allspice-176
 1762	\N	Chili Crisp	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
 1763	\N	Tabasco Sauce	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
-1764	\N	Tabasco Sauce | Chili Crisp	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
+1764	\N	Tabasco Sauce | Chili Crisp	Use partial ingredients.	\N	f	0	28	245	2026-02-21	4	245	256	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
 1765	\N	Ground Pork | Ground Turkey	\N	\N	f	1048576	28	28	2024-12-06	4	224	268435456	224	Ground Pork | Ground Beef | Ground Turkey	https://www.eatthismuch.com/calories/ground-pork-1786
 1766	\N	Frozen Stewing Vegetables	\N	\N	f	0	28	84	2025-01-12	4	224	268435456	224	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355
 1767	\N	Sauerkraut | Cabbage	\N	\N	f	0	28	142	2025-07-02	4	142	16	142	Sauerkraut	https://www.eatthismuch.com/calories/sauerkraut-2158
