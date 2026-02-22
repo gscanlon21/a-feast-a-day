@@ -31,6 +31,27 @@
                     asp-items='@(EnumExtensions.GetDisplayValues<Equipment>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Text).Prepend(new SelectListItem()))'>
             </select>
         </div>
+        <div class="mb-2">
+            <label asp-for="Ingredient" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient)</label>
+            <input asp-for="Ingredient" type="text" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="PrepTime" class="control-label">@Html.DisplayNameFor(_ => Model.PrepTime)</label>
+            <input asp-for="PrepTime" type="number" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="CookTime" class="control-label">@Html.DisplayNameFor(_ => Model.CookTime)</label>
+            <input asp-for="CookTime" type="number" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="TotalTime" class="control-label">@Html.DisplayNameFor(_ => Model.TotalTime)</label>
+            <input asp-for="TotalTime" type="number" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="MinimumServings" class="control-label">@Html.DisplayNameFor(_ => Model.MinimumServings)</label>
+            <input asp-for="MinimumServings" type="number" class="form-control" />
+            <div class="form-text">@Html.DisplayDescriptionFor(_ => Model.MinimumServings)</div>
+        </div>
         <div class="row pt-1">
             <div class="col">
                 <input type="submit" value="Apply" class="btn btn-secondary" name="submitButton" />

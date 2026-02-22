@@ -14,10 +14,13 @@ public abstract class QueryBuilderBase
     protected readonly Section Section;
 
     protected RecipeOptions? RecipeOptions;
+    protected ServingOptions? ServingOptions;
+    protected DurationOptions? DurationOptions;
     protected NutrientOptions? NutrientOptions;
     protected ExclusionOptions? ExclusionOptions;
     protected EquipmentOptions? EquipmentOptions;
     protected SelectionOptions? SelectionOptions;
+    protected IngredientOptions? IngredientOptions;
 
     /// <summary>
     /// Looks for similar buckets of recipes.
@@ -33,6 +36,39 @@ public abstract class QueryBuilderBase
     public QueryBuilderBase(Section section)
     {
         Section = section;
+    }
+
+    /// <summary>
+    /// Show recipes that work these unique nutrient groups.
+    /// </summary>
+    public virtual QueryBuilderBase WithIngredients(Action<IngredientOptions>? optionsBuilder = null)
+    {
+        InvalidOptionsException.ThrowIfAlreadySet(IngredientOptions);
+        IngredientOptions = new IngredientOptions();
+        optionsBuilder?.Invoke(IngredientOptions);
+        return this;
+    }
+
+    /// <summary>
+    /// Show recipes that work these unique nutrient groups.
+    /// </summary>
+    public virtual QueryBuilderBase WithDuration(Action<DurationOptions>? optionsBuilder = null)
+    {
+        InvalidOptionsException.ThrowIfAlreadySet(DurationOptions);
+        DurationOptions = new DurationOptions();
+        optionsBuilder?.Invoke(DurationOptions);
+        return this;
+    }
+
+    /// <summary>
+    /// Show recipes that work these unique nutrient groups.
+    /// </summary>
+    public virtual QueryBuilderBase WithServings(Action<ServingOptions>? optionsBuilder = null)
+    {
+        InvalidOptionsException.ThrowIfAlreadySet(ServingOptions);
+        ServingOptions = new ServingOptions();
+        optionsBuilder?.Invoke(ServingOptions);
+        return this;
     }
 
     /// <summary>

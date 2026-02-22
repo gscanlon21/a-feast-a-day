@@ -42,10 +42,13 @@ public class UserQueryBuilder : QueryBuilderBase
         return new QueryRunner(Section)
         {
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),
+            ServingOptions = ServingOptions ?? new ServingOptions(),
             NutrientOptions = NutrientOptions ?? new NutrientOptions(),
+            DurationOptions = DurationOptions ?? new DurationOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+            IngredientOptions = IngredientOptions ?? new IngredientOptions(),
             UserOptions = UserOptions ?? new UserOptions(User),
         };
     }

@@ -61,10 +61,13 @@ public class QueryRunner(Section section)
 
     public required UserOptions UserOptions { get; init; }
     public required RecipeOptions RecipeOptions { get; init; }
+    public required ServingOptions ServingOptions { get; init; }
+    public required DurationOptions DurationOptions { get; init; }
     public required NutrientOptions NutrientOptions { get; init; }
     public required EquipmentOptions EquipmentOptions { get; init; }
     public required ExclusionOptions ExclusionOptions { get; init; }
     public required SelectionOptions SelectionOptions { get; init; }
+    public required IngredientOptions IngredientOptions { get; init; }
 
     private IQueryable<RecipesQueryResults> CreateFilteredRecipesQuery(CoreContext context)
     {
@@ -146,6 +149,11 @@ public class QueryRunner(Section section)
         filteredQuery = Filters.FilterSection(filteredQuery, section);
         filteredQuery = Filters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
         filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Keys);
+        filteredQuery = Filters.FilterServings(filteredQuery, ServingOptions.MinimumServings);
+        filteredQuery = Filters.FilterIngredient(filteredQuery, IngredientOptions.IngredientName);
+        filteredQuery = Filters.FilterPrepTime(filteredQuery, DurationOptions.MaxPrepTimeMinutes);
+        filteredQuery = Filters.FilterCookTime(filteredQuery, DurationOptions.MaxCookTimeMinutes);
+        filteredQuery = Filters.FilterTotalTime(filteredQuery, DurationOptions.MaxTotalTimeMinutes);
         filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n), include: true);
 
         var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();

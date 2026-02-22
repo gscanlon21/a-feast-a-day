@@ -49,6 +49,32 @@ public class RecipesController : ViewController
             queryBuilder = queryBuilder.WithEquipment(viewModel.Equipment.Value);
         }
 
+        if (viewModel.MinimumServings.HasValue)
+        {
+            queryBuilder = queryBuilder.WithServings(options =>
+            {
+                options.MinimumServings = viewModel.MinimumServings;
+            });
+        }
+
+        if (!string.IsNullOrWhiteSpace(viewModel.Ingredient))
+        {
+            queryBuilder = queryBuilder.WithIngredients(options =>
+            {
+                options.IngredientName = viewModel.Ingredient;
+            });
+        }
+
+        if (viewModel.PrepTime.HasValue || viewModel.CookTime.HasValue || viewModel.TotalTime.HasValue)
+        {
+            queryBuilder = queryBuilder.WithDuration(options =>
+            {
+                options.MaxPrepTimeMinutes = viewModel.PrepTime;
+                options.MaxCookTimeMinutes = viewModel.CookTime;
+                options.MaxTotalTimeMinutes = viewModel.TotalTime;
+            });
+        }
+
         var queryResults = await queryBuilder.Build().Query(_serviceScopeFactory, OrderBy.Name);
         viewModel.Recipes = FilterRecipes(queryResults, viewModel)
             .Select(r => r.AsType<NewsletterRecipeDto>(Options)!)

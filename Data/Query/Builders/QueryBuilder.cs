@@ -23,10 +23,13 @@ public class QueryBuilder : QueryBuilderBase
         {
             UserOptions = new UserOptions(),
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),
+            ServingOptions = ServingOptions ?? new ServingOptions(),
+            DurationOptions = DurationOptions ?? new DurationOptions(),
             NutrientOptions = NutrientOptions ?? new NutrientOptions(),
             EquipmentOptions = EquipmentOptions ?? new EquipmentOptions(),
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+            IngredientOptions = IngredientOptions ?? new IngredientOptions(),
         };
     }
 }

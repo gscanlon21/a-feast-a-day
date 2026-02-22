@@ -3,6 +3,7 @@ using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
+using Microsoft.EntityFrameworkCore;
 
 namespace Data.Query;
 
@@ -14,6 +15,71 @@ public interface IRecipeCombo
 
 public static class Filters
 {
+    /// <summary>
+    /// Filter down to recipes containing this ingredient.
+    /// </summary>
+    public static IQueryable<T> FilterIngredient<T>(IQueryable<T> query, string? ingredient) where T : IRecipeCombo
+    {
+        if (string.IsNullOrWhiteSpace(ingredient))
+        {
+            return query;
+        }
+
+        return query.Where(vm => vm.Recipe.RecipeIngredients.Any(ri => EF.Functions.ILike(ri.Ingredient.Name, $"%{ingredient}%")));
+    }
+
+    /// <summary>
+    /// Make sure the recipe's prep time is below a threshold.
+    /// </summary>
+    public static IQueryable<T> FilterPrepTime<T>(IQueryable<T> query, int? value) where T : IRecipeCombo
+    {
+        if (!value.HasValue)
+        {
+            return query;
+        }
+
+        return query.Where(vm => vm.Recipe.PrepTime <= value);
+    }
+
+    /// <summary>
+    /// Make sure the recipe's cook time is below a threshold.
+    /// </summary>
+    public static IQueryable<T> FilterCookTime<T>(IQueryable<T> query, int? value) where T : IRecipeCombo
+    {
+        if (!value.HasValue)
+        {
+            return query;
+        }
+
+        return query.Where(vm => vm.Recipe.CookTime <= value);
+    }
+
+    /// <summary>
+    /// Make sure the recipe's total time is below a threshold.
+    /// </summary>
+    public static IQueryable<T> FilterTotalTime<T>(IQueryable<T> query, int? value) where T : IRecipeCombo
+    {
+        if (!value.HasValue)
+        {
+            return query;
+        }
+
+        return query.Where(vm => (vm.Recipe.PrepTime + vm.Recipe.CookTime) <= value);
+    }
+
+    /// <summary>
+    /// Make sure the recipe's servings is above a threshold.
+    /// </summary>
+    public static IQueryable<T> FilterServings<T>(IQueryable<T> query, int? value) where T : IRecipeCombo
+    {
+        if (!value.HasValue)
+        {
+            return query;
+        }
+
+        return query.Where(vm => vm.Recipe.Servings >= value || vm.Recipe.AdjustableServings);
+    }
+
     /// <summary>
     /// Make sure the recipe is for the correct section.
     /// </summary>
