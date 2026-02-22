@@ -18,7 +18,7 @@
             <span style="flex:1 1 auto;">
                 @if (!string.IsNullOrWhiteSpace(Model.Link) && Uri.IsWellFormedUriString(Model.Link, UriKind.Absolute))
                 {
-                    <a class="allow-demo" target="_blank" href="@Model.Link">@Model.Name</a>
+                    <a class="allow-demo" href="@Model.Link" target="_blank" rel="noreferrer">@Model.Name</a>
                 }
                 else
                 {
