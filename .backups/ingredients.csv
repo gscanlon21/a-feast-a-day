@@ -720,7 +720,7 @@
 826	\N	Fresh Podded Snap Peas | Frozen Snap Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2064	\N	f	0	28	145	2025-01-17	4	145	2	145	Fresh Podded Snap Peas | Frozen Snap Peas	\N
 827	\N	Fresh Podded Snap Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2	240	Fresh Podded Snap Peas	\N
 828	\N	Fresh Podded Snap Peas | Frozen Podded Snap Peas	\N	\N	f	0	63	63	2024-12-08	6	63	2	63	Fresh Podded Snap Peas | Frozen Podded Snap Peas	https://www.eatthismuch.com/calories/peas-2060
-829	\N	Chili Jam	\N	\N	f	0	245	245	2024-10-13	6	245	16	245	Chili Jam	https://www.eatthismuch.com/calories/chili-sauce-857
+829	\N	Chili Jam	\N	\N	f	0	28	245	2026-02-22	4	245	16	245	Chili Jam	https://www.eatthismuch.com/calories/chili-sauce-857
 830	\N	Sun-Dried Tomato Paste	aka. Sun-Dried Tomato Puree. https://www.eatthismuch.com/calories/sun-dried-tomato-paste-1801202	\N	f	0	28	30	2025-04-04	4	240	256	240	Tomato Paste	\N
 831	\N	Saffron	\N	\N	f	0	28	0.7	2025-01-11	4	33.6	131072	33.6	Saffron	https://www.eatthismuch.com/calories/saffron-212
 832	\N	Dried Sage	\N	\N	f	0	1	2	2026-01-19	3	32	131072	32	Sage	https://www.eatthismuch.com/calories/sage-213
@@ -1373,8 +1373,8 @@
 1759	\N	Slices of Whole-Grain Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
 1760	\N	Thick Slices of Artisan Bread	\N	\N	f	786464	25	25	2025-05-04	0	50	64	50	Slices of Bread	https://www.eatthismuch.com/calories/white-bread-4021
 1761	\N	Allspice Berries	\N	\N	f	0	12	6	2024-10-26	4	96	131072	96	Allspice	https://www.eatthismuch.com/calories/allspice-176
-1762	\N	Chili Crisp	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
-1763	\N	Tabasco Sauce	\N	\N	f	0	245	245	2024-10-13	6	245	3	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
+1762	\N	Chili Crisp	Chili crisp is an oil-based condiment with small pieces of chili.	\N	f	0	28	245	2024-10-13	4	245	32	245	Chili Crisp	https://www.eatthismuch.com/calories/chili-sauce-857
+1763	\N	Tabasco Sauce	\N	\N	f	0	28	5	2026-02-22	4	240	256	250	Tabasco Sauce	https://www.eatthismuch.com/calories/tabasco-sauce-740
 1764	\N	Tabasco Sauce | Chili Crisp	Use partial ingredients.	\N	f	0	28	245	2026-02-21	4	245	256	245	Chili Sauce	https://www.eatthismuch.com/calories/chili-sauce-857
 1765	\N	Ground Pork | Ground Turkey	\N	\N	f	1048576	28	28	2024-12-06	4	224	268435456	224	Ground Pork | Ground Beef | Ground Turkey	https://www.eatthismuch.com/calories/ground-pork-1786
 1766	\N	Frozen Stewing Vegetables	\N	\N	f	0	28	84	2025-01-12	4	224	268435456	224	Lean Stewing Beef	https://www.eatthismuch.com/calories/beef-for-stew-152355

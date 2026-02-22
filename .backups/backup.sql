@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict EGjPqvVPSyAKSVgHDjnMG7HNsugTw4iEmXruogqZ5o9i21Drz0Hpkk7n7vqy6pM
+\restrict kyBdod7EDB2eYyvUVqrdtFl6n6ncLKQP62ckw3Wc6xK2Z1d0Vse5B0v49pelfPV
 
 -- Dumped from database version 18.2
 -- Dumped by pg_dump version 18.0
@@ -14253,6 +14253,12 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 18920	494	14	\N	3	8
 18921	494	1984	\N	3	0.2
 18922	494	62	\N	3	12
+18923	1763	68719476736	\N	2	30
+18924	1763	34359738368	\N	2	6
+18925	1763	1	\N	3	0.1
+18926	1763	4294967296	\N	2	1
+18927	1763	2199023255552	\N	2	0.1
+18928	1763	2047	\N	3	1
 \.
 
 
@@ -18663,6 +18669,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6954	6	647	1	2	\N	206	f	\N	10	f	t	\N	1
 8573	8	987	1	1	\N	77	f	\N	2	f	t	\N	0.25
 8574	8	987	8	1	\N	360	t	\N	3	f	t	\N	1
+8575	5	1039	2	3	\N	387	f	\N	0	f	t	\N	1
+8576	0	1039	1	1	, diced	8	f	\N	1	f	t	\N	1
+8577	0	1039	2	1	, diced	1780	f	\N	2	f	t	\N	1
+8578	0	1039	1	2	, chopped	5	f	\N	3	f	t	\N	1
+8579	6	1039	2	1	\N	56	f	\N	4	f	t	\N	1
+8580	6	1039	2	1	\N	111	f	\N	5	f	t	\N	1
+8581	6	1039	4	1	\N	62	f	\N	6	f	t	\N	1
+8582	7	1039	1	1	\N	39	f	\N	7	f	t	\N	1
+8583	8	1039	1	1	\N	657	f	\N	8	f	t	\N	1
+8584	8	1039	1	1	(CHILI GARLIC PASTE)?	301	f	\N	9	f	t	\N	1
+8585	7	1039	1	1	\N	359	f	\N	10	f	t	\N	1
+8586	7	1039	1	2	, chopped	13	t	\N	11	f	t	\N	1
 \.
 
 
@@ -20217,6 +20235,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3691	Quarter and core the apples, then toss into the pan. 	311	3	4
 4879	Place the salmon, skin-side down in the pan. Cook until golden brown and crisp on one side, about 4 minutes. Turn the fish over with a spatula, and cook until it feels firm to the touch, about 3 minutes more.	987	2	4
 4880	Transfer to a plate and serve as desired.	987	3	0
+4881	Add the bell pepper, onion and garlic to the bottom of your slow cooker, then place the chicken breasts on top.	1039	0	1024
 3715	Pour the coconut cream into a large pan and bring it to the boil.	633	1	0
 4454	In a medium bowl, mix the flour, poultry seasoning, salt and pepper.	945	2	0
 3716	Cook the coconut cream for about 8 minutes, until the cream separates, stirring frequently to prevent it from sticking to the base of the pan. Peel and chop the pineapple.	633	2	0
@@ -20408,6 +20427,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3903	In a large bowl, combine the melted butter, brown sugar, and honey. Add the oats and nuts.	712	1	0
 3904	Spread the mixture onto the lined pan. Transfer to the oven and bake the granola for 30 minutes, giving it a stir every 10 minutes or so.	712	2	2
 3905	Let the mixture cool for 2 hours at room temperature, then put it in an airtight container.	712	3	0
+4882	In a bowl or glass measuring cup, whisk the peanut butter, chicken broth, soy sauce, honey, sesame oil, and chili garlic paste together.	1039	1	0
+4883	Pour the sauce over the chicken, then cook on HIGH for 2–3 hours or on LOW for 4–5 hours.	1039	2	1024
 2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	240	2	0
 3898	In a medium pot, warm the olive oil over medium heat. Add the onion and cook for 5 minutes, or until translucent. Add the jalapeños and cook for 2 more minutes.	710	0	4
 3899	Throw in the black beans and tomatoes and bring to a boil. Reduce the heat to low and simmer the salsa for 15–20 minutes, or until thick.	710	1	4
@@ -20562,6 +20583,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3693	Lay the sausages on top, then drizzle with 1 tablespoon of olive oil and add a pinch of black pepper from a height.	311	5	4
 3694	Bake for 30 minutes, then drizzle over the honey and return to the oven for 5 minutes, or until golden and delicious.	311	6	2
 4708	Freeze the bowl for 5 minutes to allow the dough to firm up even more: it should feel stiff and rollable at this point. If not, you can mix in a handful more oats — or if it’s too crumbly, add a hint more peanut butter and honey.	985	1	131072
+4884	Remove the lid, then stir in the lime juice and cilantro. Enjoy!	1039	3	0
 3606	Preheat the oven to 400°F.	609	0	2
 4031	Season to taste with salt and pepper.	476	3	0
 4032	Boil the beans in a pan of boiling salted water for 3 minutes, then drain and pinch the skins off any larger beans.	750	0	4
@@ -21049,7 +21071,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18922, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 18928, true);
 
 
 --
@@ -21767,5 +21789,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict EGjPqvVPSyAKSVgHDjnMG7HNsugTw4iEmXruogqZ5o9i21Drz0Hpkk7n7vqy6pM
+\unrestrict kyBdod7EDB2eYyvUVqrdtFl6n6ncLKQP62ckw3Wc6xK2Z1d0Vse5B0v49pelfPV
 
