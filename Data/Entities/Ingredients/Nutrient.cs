@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Users;
+namespace Data.Entities.Ingredients;
 
 /// <summary>
 /// Nutrients for an ingredient.
@@ -38,12 +38,21 @@ public class Nutrient
     public double Value { get; set; }
 
     /// <summary>
-    /// Notes about the variation (externally shown).
+    /// Notes about the nutrient (externally shown).
     /// </summary>
     public string? Notes { get; set; } = null;
 
+
+    #region Navigation Properties
+
     [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.Nutrients))]
-    public virtual Ingredients.Ingredient? Ingredient { get; set; }
+    public virtual Ingredient? Ingredient { get; set; }
+
+    //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
+    //public virtual NutrientAttr? NutrientAttr { get; set; }
+
+    #endregion
+
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Nutrient other

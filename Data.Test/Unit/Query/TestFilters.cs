@@ -1,7 +1,7 @@
 ﻿using Core.Code.Extensions;
 using Core.Models.Recipe;
+using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
-using Data.Entities.Users;
 using Data.Query;
 using Data.Test.Code;
 using Microsoft.EntityFrameworkCore;

@@ -87,8 +87,14 @@ public class Ingredient
 
     public string? DisabledReason { get; private init; } = null;
 
+
+    #region Navigation Properties
+
     [JsonIgnore, InverseProperty(nameof(Users.User.Ingredients))]
     public virtual User? User { get; private init; }
+
+    [JsonIgnore, InverseProperty(nameof(Ingredients.IngredientAttr.Ingredient))]
+    public virtual IngredientAttr? IngredientAttr { get; set; }
 
     /// <summary>
     /// Nutrients per serving.
@@ -129,6 +135,9 @@ public class Ingredient
 
     [JsonIgnore, InverseProperty(nameof(StudyIngredient.Ingredient))]
     public virtual ICollection<StudyIngredient> StudyIngredients { get; private init; } = null!;
+
+    #endregion
+
 
     [NotMapped]
     public Allergens[]? AllergenBinder

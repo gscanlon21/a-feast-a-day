@@ -1,8 +1,8 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
+using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
-using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Query;

@@ -1,7 +1,6 @@
 ﻿using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
-using Data.Entities.Users;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -171,6 +170,38 @@ public class UserIngredientsController : ViewController
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your ingredient has been updated!";
         return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = existingIngredient.Id, recipeId = 0, wasUpdated = true });
+    }
+
+    [HttpPost, Route("[action]")]
+    public async Task<IActionResult> UpsertIngredientAttr(string email, string token, IngredientAttr ingredientAttr)
+    {
+        var user = await _userRepo.GetUser(email, token);
+        if (user == null || !user.Features.HasFlag(Features.Admin))
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var existingIngredientAttr = await _context.IngredientAttrs.FirstOrDefaultAsync(r => r.IngredientId == ingredientAttr.IngredientId);
+        if (existingIngredientAttr != null)
+        {
+            existingIngredientAttr.FDC_ID = ingredientAttr.FDC_ID;
+            existingIngredientAttr.NDB_Number = ingredientAttr.NDB_Number;
+        }
+        else
+        {
+            existingIngredientAttr = new IngredientAttr()
+            {
+                FDC_ID = ingredientAttr.FDC_ID,
+                NDB_Number = ingredientAttr.NDB_Number,
+                IngredientId = ingredientAttr.IngredientId,
+            };
+
+            _context.IngredientAttrs.Add(existingIngredientAttr);
+        }
+
+        await _context.SaveChangesAsync();
+        TempData[TempData_User.SuccessMessage] = "Your ingredient attr has been updated!";
+        return RedirectToAction(nameof(ManageIngredient), new { email, token, ingredientId = ingredientAttr.IngredientId, recipeId = 0, wasUpdated = true });
     }
 
     [HttpPost, Route("{ingredientId}/[action]")]

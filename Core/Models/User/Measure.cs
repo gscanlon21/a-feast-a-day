@@ -58,12 +58,38 @@ public enum Measure
     [Display(Name = "Quarts", ShortName = "qt")]
     Quarts = 14,
 
-    // This changes depending on the substance.
-    //[Display(Name = "IU")]
-    //IU = 99,
+    [Display(Name = "IU", ShortName = "IU")]
+    IU = 98,
+
+    [Display(Name = "pH", ShortName = "pH")]
+    PH = 99,
 
     [Display(Name = "Percent", ShortName = "%")]
     Percent = 100,
+
+    [Display(Name = "Calorie", ShortName = "Cal")]
+    Calorie = 101,
+
+    [Display(Name = "Kilo-Calorie", ShortName = "kCal")]
+    KCalorie = 102,
+
+    [Display(Name = "Kilo Joule", ShortName = "kJoule")]
+    KiloJoule = 103,
+
+    [Display(Name = "Specific Gravity", ShortName = "SP_GR")]
+    SpecificGravity = 104,
+
+    [Display(Name = "Micromoles of Trolox Equivalents", ShortName = "UMOL_TE")]
+    UMOL_TE = 105,
+
+    [Display(Name = "Micrograms of Retinol Equivalents", ShortName = "MCG_RE")]
+    MCG_RE = 106,
+
+    [Display(Name = "Milligrams of Gallic Acid Equivalents", ShortName = "MG_GAE")]
+    MG_GAE = 107,
+    
+    [Display(Name = "Milligrams of Alpha-Tocopherol Equivalents", ShortName = "MG_ATE")]
+    MG_ATE = 108,
 }
 
 public static class MeasureConsts

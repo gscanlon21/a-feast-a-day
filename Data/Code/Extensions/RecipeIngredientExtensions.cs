@@ -1,6 +1,5 @@
 ﻿using Core.Models.User;
 using Data.Entities.Ingredients;
-using Data.Entities.Users;
 using Data.Interfaces.Recipe;
 using Data.Models.Ingredients;
 

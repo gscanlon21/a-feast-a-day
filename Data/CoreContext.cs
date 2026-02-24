@@ -54,6 +54,8 @@ public class CoreContext : DbContext
     /// These do not have a global query filter for DisabledReason.
     /// </summary>
     public DbSet<Ingredient> Ingredients { get; set; } = null!;
+    public DbSet<IngredientAttr> IngredientAttrs { get; set; } = null!;
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -1,0 +1,27 @@
+﻿@model IngredientAttrViewModel
+@using Core.Models.Ingredients
+@using Core.Models.Recipe
+@using Data.Entities.Ingredients
+@using Web.Code.Extensions
+@using Web.Views.Shared.Components.UpsertIngredient
+
+<form asp-controller="@UserIngredientsController.Name" asp-action="@nameof(UserIngredientsController.UpsertIngredientAttr)"
+        asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" id="ingredient-attr-form" method="post">
+        
+    <input asp-for="IngredientAttr.IngredientId" type="hidden" class="form-control" />
+
+    <div class="mb-3">
+        <label asp-for="IngredientAttr.FDC_ID" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientAttr.FDC_ID)</label>
+        <input asp-for="IngredientAttr.FDC_ID" type="text" class="form-control" required="required" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="IngredientAttr.NDB_Number" class="control-label">@Html.DisplayNameFor(_ => Model.IngredientAttr.NDB_Number)</label>
+        <input asp-for="IngredientAttr.NDB_Number" type="text" class="form-control" />
+    </div>
+
+    <div class="row justify-content-end gy-2">
+        <div class="col">
+            <input type="submit" value="Save" class="btn btn-secondary" form="ingredient-attr-form" />
+        </div>
+    </div>
+</form>

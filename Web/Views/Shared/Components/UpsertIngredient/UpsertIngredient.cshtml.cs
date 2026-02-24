@@ -8,7 +8,7 @@ public class UpsertIngredientViewModel
     public Data.Entities.Users.User User { get; init; } = null!;
     public required Data.Entities.Ingredients.Ingredient Ingredient { get; set; } = null!;
 
-    public required IList<Data.Entities.Users.Nutrient> Nutrients { get; set; }
+    public required IList<Data.Entities.Ingredients.Nutrient> Nutrients { get; set; }
 
     public IList<Allergens> AllergenSelect => EnumExtensions.GetSingleValues<Allergens>();
 }

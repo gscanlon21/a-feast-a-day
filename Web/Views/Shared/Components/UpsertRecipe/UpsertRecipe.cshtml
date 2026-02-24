@@ -133,7 +133,7 @@
         <div class="col-auto">
             <label asp-for="Recipe.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Measure)</label>
             <select asp-for="Recipe.Measure" class="form-control" aria-describedby="measure-help"
-                    asp-items="@(EnumExtensions.GetDisplayValues<Measure>().AsSelectListItems())">
+                    asp-items="@(MeasureConsts.DryMeasures.Concat(MeasureConsts.LiquidMeasures).AsSelectListItems())">
             </select>
             <span asp-validation-for="Recipe.Measure" class="text-danger"></span>
             <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.Measure)</span>
@@ -198,7 +198,7 @@
                         <div class="col">
                             <label asp-for="Recipe.RecipeIngredients[id].Measure" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Measure)</label>
                             <select asp-for="Recipe.RecipeIngredients[id].Measure" class="form-control" aria-describedby="measure-help" autocomplete="off"
-                                    asp-items="@(EnumExtensions.GetValuesExcluding(Measure.Percent/*, Measure.IU*/).AsSelectListItems())">
+                                    asp-items="@(MeasureConsts.DryMeasures.Concat(MeasureConsts.LiquidMeasures).AsSelectListItems())">
                             </select>
                             <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].Measure)</span>
                         </div>

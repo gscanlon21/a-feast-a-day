@@ -1,5 +1,6 @@
 ﻿@model UserManageIngredientViewModel
 @using Core.Models.Recipe
+@using Web.Components.Ingredients
 @using Web.Code.Extensions
 
 @{
@@ -37,6 +38,7 @@
         <div class="col">
             <div class="row gy-4">
                 @await Component.InvokeAsync(IngredientAlternativesViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+                @await Component.InvokeAsync(IngredientAttrViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
             </div>
         </div>
     }
