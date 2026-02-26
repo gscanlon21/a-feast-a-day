@@ -1,12 +1,6 @@
 # A Feast a Day
 
-A Feast a Day is a weekly meal planning newsletter aimed at making it easy and simple to cook.
-
-## App
-
-[Download the app](https://github.com/gscanlon21/a-feast-a-day/releases). App tokens are generated from the preferences page on the [website](https://afeastaday.com). 
-
-The program [Obtainium](https://github.com/ImranR98/Obtainium) can be used for automatic updates. 
+A Feast a Day is a weekly meal planning app/pwa/newsletter. Recipes are chosen based off of a user's preferences and nutrient targets.
 
 ## Features
 
@@ -14,8 +8,21 @@ The program [Obtainium](https://github.com/ImranR98/Obtainium) can be used for a
 - Customize how long you want to see or hide recipes before they refresh.
 - Customize how much of each nutrient to consume. Meal plans are automatically adjusted to remove nutrient imbalances.
 - Recipes are chosen from equipment you have access to — no recipes that require a blender if you don't have one.
+- Swap ingredients for other ingredients or your own custom recipes.
 - Optional health and cooking tips.
 - Ignore unwanted recipes.
+
+
+
+## Clients
+- Signup for the newsletter.
+- Install the PWA (Progressive Web App) from your browser.
+- [Download the app](https://play.google.com/apps/internaltest/4701669335647865409).
+	- App tokens are generated from the preferences page on the [website](https://afeastaday.com). 
+
+
+
+# Newsletter
 
 ## Email Clients
 
@@ -36,7 +43,9 @@ Other cooking apps require users to seek out recipes and keep track of what nutr
 
 However, emails have their limitations as well. A Feast a Day is geared towards people with busy schedules or people who aren't as inclined to optimize their meal planning to 100%.
 
-## Screenshots
+
+
+# Screenshots
 
 <img width="200" alt="Screenshot_1" src="https://github.com/user-attachments/assets/be9525a4-5548-4b2a-91c0-42a7cbbd8b64" />
 <img width="200" alt="Screenshot_1" src="https://github.com/user-attachments/assets/1918495e-3afb-4a70-b3ab-10ae035f3c63" />
