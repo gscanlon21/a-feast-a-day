@@ -4,6 +4,7 @@ using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
 using Data.Query;
 using Data.Test.Code;
+using Data.Test.Code.Attributes;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Test.Unit.Query;
@@ -32,7 +33,7 @@ public class TestFilters : RealDatabase
             .AsQueryable();
     }
 
-    [TestMethod]
+    [TestMethodOnRemote]
     public async Task FilterEquipment_ReturnsFiltered()
     {
         foreach (var filter in EnumExtensions.GetNotNoneValues<Equipment>())

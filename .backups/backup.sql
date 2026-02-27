@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict TH4ALt2AyOanfLYfSP3yklqbZzAy64Si3rlK7aQ5k5Veu4kedwiV2v91TB8dAFR
+\restrict 524HCeSoM7NvIcaJR3euueqsOIIV00a7XvgzlBoCvORJkdLdl0B2AsxhnahbWdN
 
 -- Dumped from database version 18.2
 -- Dumped by pg_dump version 18.0
@@ -2460,6 +2460,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 --
 
 COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
+1112	2646175	100309
+1184	2727574	100379
 \.
 
 
@@ -14417,14 +14419,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5313	6	319	2	1	\N	54	f	\N	5	f	t	\N	1
 1244	6	64	1	1	\N	118	f	\N	6	f	t	\N	1
 3439	0	50	1	2	\N	\N	f	65	0	f	t	\N	1
-1385	5	89	1	1	\N	25	f	\N	1	f	t	\N	1
-1386	0	89	2	1	, chopped	316	f	\N	2	f	t	\N	1
 1245	6	64	1	1	, shredded	119	f	\N	7	f	t	\N	1
 1246	7	64	1	1	, grated	95	f	\N	8	f	t	\N	1
-1387	0	89	1	1	\N	112	f	\N	3	f	t	\N	1
-1388	6	89	2	1	\N	48	f	\N	4	f	t	\N	1
-1389	6	89	4	7	\N	111	f	\N	5	f	t	\N	1
-1390	6	89	1	1	\N	288	f	\N	6	f	t	\N	1
 1209	6	63	1	4	\N	94	f	\N	1	f	t	\N	1
 7139	6	706	1	1	, diced	222	f	\N	2	f	t	\N	1
 1117	6	66	4	1	, whole	186	f	\N	1	f	t	\N	1
@@ -14443,7 +14439,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1079	8	73	1	1	 (5g)	214	f	\N	8	f	t	\N	1
 1080	8	73	2	3	 (4.5g)	41	f	\N	9	f	t	\N	1
 5314	6	319	4	7	\N	111	f	\N	6	f	t	\N	1
+1385	5	89	1	1	\N	25	f	\N	1	f	t	\N	1
 1212	6	63	1	1	, with basil	55	f	\N	4	f	t	\N	1
+1386	1	89	2	1	, chopped	316	f	\N	2	f	t	\N	1
+1387	1	89	1	1	\N	112	f	\N	3	f	t	\N	1
+1388	6	89	2	1	\N	48	f	\N	4	f	t	\N	1
 4883	0	159	1	1	\N	12	f	\N	1	f	t	\N	1
 4884	6	159	2	3	, such as Sauternes	554	f	\N	2	f	t	\N	1
 1789	7	109	2	3	\N	383	f	\N	0	f	t	\N	1
@@ -14457,6 +14457,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3822	6	158	2	1	, halved	589	f	\N	4	f	t	\N	1
 3823	6	158	2	1	, halved	588	f	\N	5	f	t	\N	1
 4885	7	159	1	6	\N	234	f	\N	3	f	t	\N	1
+1389	6	89	4	7	\N	111	f	\N	5	f	t	\N	1
+1390	6	89	1	1	\N	288	f	\N	6	f	t	\N	1
 7140	6	706	1	1	, diced	1286	f	\N	3	f	t	\N	1
 7141	0	706	1	2	, sliced	5	t	\N	4	f	t	\N	1
 2389	6	79	4	1	\N	29	f	\N	0	f	t	\N	0.25
@@ -14472,7 +14474,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4887	0	159	1	1	\N	552	f	\N	5	f	t	\N	1
 1214	6	63	2	1	, grated	95	f	\N	6	f	t	\N	1
 1215	6	63	2	1	, thinly sliced	14	f	\N	7	f	t	\N	1
-1391	6	89	1	1	\N	292	f	\N	7	f	t	\N	1
 4888	0	159	1	1	\N	493	f	\N	6	f	t	\N	1
 8233	6	977	1	1	\N	123	f	\N	1	f	t	\N	1
 1366	4	68	1	1	, sliced	319	f	\N	0	f	t	\N	1
@@ -16465,7 +16466,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6227	0	557	1	1	\N	150	f	\N	6	f	t	\N	1
 6228	8	557	1	1	\N	70	f	\N	7	f	t	\N	1
 6229	8	557	1	1	\N	40	f	\N	8	f	t	\N	1
-6288	5	567	1	1	, cubed	1061	f	\N	1	f	t	\N	1
 6232	6	558	4	1	\N	805	f	\N	0	f	t	\N	1
 6233	6	558	1	1	\N	161	f	\N	1	f	t	\N	1
 6234	7	558	1	1	\N	9	f	\N	2	f	t	\N	1
@@ -16492,9 +16492,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6267	6	564	1	4	, such as peppers, mushrooms, broccoli, onion	1084	f	\N	1	f	t	\N	1
 6243	0	559	1	2	\N	150	f	\N	3	f	t	\N	1
 6250	7	561	1	1	\N	77	f	\N	0	f	t	\N	0.25
-6287	7	567	1	1	\N	77	f	\N	0	f	t	\N	0.25
 6244	0	559	1	1	\N	222	f	\N	4	f	t	\N	1
 6803	9	633	1	14	\N	178	f	\N	1	f	t	\N	1
+6287	7	567	1	1	\N	77	f	\N	1	f	t	\N	0.25
+6288	5	567	1	1	, cubed	1061	f	\N	2	f	t	\N	1
 6251	0	561	1	2	\N	1076	f	\N	1	f	t	\N	1
 6252	0	561	1	2	, chopped	1079	f	\N	2	f	t	\N	1
 6263	4	563	1	4	\N	869	f	\N	0	f	t	\N	1
@@ -16548,19 +16549,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6062	6	530	2	1	\N	16	f	\N	7	f	t	\N	1
 318	4	41	1	6	\N	600	f	\N	2	f	t	\N	1
 319	6	41	1	1	, woody ends removed, cut into lengths	122	f	\N	3	f	t	\N	1
-6289	8	567	4	1	, to taste	692	t	\N	2	f	t	\N	1
-6290	6	567	1	4	\N	303	f	\N	3	f	t	\N	1
-6291	6	567	2	1	, shredded	736	f	\N	4	f	t	\N	1
-6292	6	567	1	1	\N	1062	f	\N	5	f	t	\N	1
 6095	6	537	4	1	\N	80	f	\N	0	f	t	\N	1
 6097	7	537	1	2	\N	991	f	\N	2	f	t	\N	1
 6098	8	537	1	2	\N	39	f	\N	3	f	t	\N	1
 6099	0	537	1	1	, zested	346	f	\N	4	f	t	\N	1
-6293	6	567	2	1	\N	90	f	\N	6	f	t	\N	1
 6334	8	1	4	1	\N	360	t	\N	7	f	t	\N	1
-6294	6	567	4	1	\N	\N	t	537	7	f	t	\N	1
 6310	0	570	1	1	\N	159	f	\N	0	f	t	\N	1
 6311	0	571	1	2	, chopped	789	f	\N	0	f	t	\N	1
+6289	8	567	4	1	, to taste	692	t	\N	3	f	t	\N	1
+6290	6	567	1	4	\N	303	f	\N	4	f	t	\N	1
+6291	6	567	2	1	, shredded	736	f	\N	5	f	t	\N	1
+6292	6	567	1	1	\N	1062	f	\N	6	f	t	\N	1
 6133	8	542	1	1	, chopped	577	t	\N	4	f	t	\N	1
 7328	8	265	8	1	\N	692	t	\N	5	f	t	\N	1
 5956	6	487	1	1	\N	147	t	\N	0	f	t	\N	1
@@ -16620,6 +16619,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3933	8	197	8	1	\N	285	t	\N	12	f	t	\N	1
 6063	0	530	1	1	, peeled and sliced	9	f	\N	8	f	t	\N	1
 6064	0	530	1	8	\N	1073	f	\N	9	f	t	\N	1
+6293	6	567	2	1	\N	90	f	\N	7	f	t	\N	1
+6294	6	567	4	1	\N	\N	t	537	8	f	t	\N	1
 6317	6	572	2	1	\N	81	f	\N	0	f	t	\N	1
 6318	6	572	4	1	\N	1102	f	\N	1	f	t	\N	1
 6319	6	572	1	4	, chopped	1133	f	\N	2	f	t	\N	1
@@ -18708,6 +18709,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8585	7	1039	1	1	\N	359	f	\N	11	f	t	\N	1
 8586	7	1039	1	2	, chopped	13	t	\N	12	f	t	\N	1
 7577	4	829	4	3	\N	984	f	\N	5	f	t	\N	1
+1391	6	89	1	1	\N	292	f	\N	7	f	t	\N	1
 \.
 
 
@@ -18995,16 +18997,16 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1846	Drain the pasta, return it to the pan and toss with the sauce. Season to taste and sprinkle with a little shopped fresh parsley and more grated lemon rind, if you like. Serve with the hot herb bread.	165	5	4
 1137	Set out three shallow bowls. Sprinkle flour over one, seasoning it well. Beat the egg with a little salt and pour into the second. Sprinkle the third with dried breadcrumbs. Dip the fillets first into the flour on both sides, then into the egg, then into the breadcrumbs to coat them evenly.	103	1	0
 3502	Remove the chicken from the oven and set aside to cool.	580	2	0
-753	Brown ground beef with shallot in a large skillet over medium-high heat. Drain then return to the skillet. Add taco seasoning, salsa, and chicken broth then bring to a boil. Stir in rice then place a lid on top and reduce heat to low. Simmer for 15–20 minutes or until rice is tender then remove from heat and stir in cheddar cheese until melted. Place lid back on the skillet then let sit for 5 minutes before serving with toppings.	89	0	0
 1132	Put the mayonaise ingredients in a bowl and mix well to combine.	119	0	0
 3130	Season to taste with salt and pepper.	412	2	0
-754	Toppings: tortilla chips, salsa, sliced avocado, chopped green onions.	89	1	0
 2785	Preheat the oven to 350°F. Place the unpeeled bananas on a baking sheet and brush them with the lemon juice. Bake for about 20 minutes until the skins are turning black and the flesh gives a little when the bananas are gently squeezed.	156	0	2
 2786	Meanwhile, make the sauce. Melt the butter in a small pan. Add the hazelnuts and cook gently for 1 minute. Add the syrup and lemon juice and heat, stirring, for 1 minute more.	156	1	4
 1725	Cut the chillies in half, scrape out the seeds, the cut the flesh into thin strips. Put it in a bowl, pour in the lime juice and leave it to stand.	164	0	0
 1726	If using rolls, slice them in half and remove some of the crumb so that they are slightly hollowed. If using French bread, slice each piece in half lengthways.	164	1	0
+753	Brown ground beef with shallot in a large skillet over medium-high heat. Drain then return to the skillet. Add taco seasoning, salsa, and chicken broth then bring to a boil. Stir in rice then place a lid on top and reduce heat to low. Simmer for 15–20 minutes or until rice is tender then remove from heat and stir in cheddar cheese until melted. Place lid back on the skillet then let sit for 5 minutes before serving with toppings.	89	0	0
 4283	Place a large non-stick frying pan on a high heat. Drain and roughly chop the peaches (reserving the juice), then place in the pan with a good splash of the reserved juice, and season with pepper. Warm through for a few minutes while you toss the salad leaves with the dressed cucumber, and plate up. 	751	2	4
 1727	Set the top of each piece of bread or roll aside and spread the bottom halves with a nice thick layer of refried beans. Make sure the pasta is evenly spread, as it will help to hold the next layer in place.	164	2	0
+754	Toppings: tortilla chips, salsa, sliced avocado, chopped green onions.	89	1	0
 2034	Cook the pasta in a large pan of slightly salted boiling water for 10-12 minutes.	76	0	0
 2035	Meanwhile, heat 3 tbsp of the oil in a large frying pan and add the zucchini. Fry for 2-3 minutes, stirring occasionally, until they are golden.	76	1	0
 2036	Drain the pasta well and toss with the zucchini and chopped mint. Season with salt and pepper, drizzle over the remaining oil and serve immediately.	76	2	0
@@ -19725,7 +19727,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3427	Rub 1 tablespoon of olive oil over the whole beets and roast in the oven for 40 minutes to 1 hour, until just tender when pierced. Set aside to cool for 10 minutes.	561	1	2
 3465	Cut the watermelon. Eat the watermelon. Enjoy the watermelon.	570	0	0
 3278	Blend all the ingredients in a high-speed blender, on high, until smooth.	486	0	128
-3449	In a large skillet over medium heat, heat the oil. To the oil, add the turkey, salt and pepper. Cook for 10 minutes, until turkey is cooked through. Remove the turkey and let it cool.	567	0	0
 3406	Add the garlic, and cook for 1 minute, until fragrant.	554	2	4
 924	Pour the lentils into a big pot and add water. Drop in the bouilion cube. Peal the garlic clove and cut it into small pieces, then add it to the pot. Shake in salt and pepper according to taste. Cover the pot and heat it up to boiling.	1	0	0
 2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove.	263	0	4
@@ -19735,10 +19736,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2918	Score the chicken breasts in a crisscross fashion, rub with 1 tablespoon of olive oil, a pinch of sea salt and black pepper, and the finely grated zest of 1 lime. Place crisscross side down in a cold 10-inch non-stick ovenproof frying pan and put it on a medium-high heat.	321	1	4
 3187	Combine all the ingredients together in a mug and enjoy.	428	0	0
 3233	Pour hot water over peppermint leaves and let steep for at least 5 minutes. Strain or leave in, and drink hot or let cool, and drink at room temperature.	468	0	0
-3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	567	1	0
 3407	Remove the rice from heat, and add the lemon juice through parsley. Stir well to combine.	554	3	0
 3428	Toss the tomatoes with the basil, remaining 1 tablespoon of olive oil, garlic, and balsamic vinegar in a salad bowl.	561	2	0
 3345	On a large serving platter, layer the sliced meat, spinach and avocado with the salsa.	530	1	0
+3449	In a large skillet over medium heat, heat the oil. To the oil, add the turkey, salt and pepper. Cook for 10 minutes, until turkey is cooked through. Remove the turkey and let it cool.	567	0	4
 3430	Preheat the oven to 350°F.	562	0	2
 3431	Crack the eggs in a medium bowl, and whisk together the eggs. Season with salt and pepper. Pour into a lightly oiled oven-safe skillet and place on the stove.	562	1	4
 3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	541	1	4
@@ -19747,9 +19748,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	562	3	2
 3434	Remove from the oven, top with the chopped green onion, and serve.	562	4	0
 2831	Add the sugar, vinegar, water and chopped dill to the cucumber mixture. Toss together until well combined, then chill for a few hours, or until ready to serve.	123	1	0
-3451	Add the vinaigrette to the turkey mixture and toss to combine.	567	2	0
 3424	Strain, pour into Mason jars, and refrigerate.	559	4	0
 2997	Serve the creamy chicken over a bed of cooked cauliflower rice topped with the fresh chives.	375	3	0
+3450	In a large bowl, add the turkey with the next 4 ingredients (butter lettuce through walnuts)	567	1	0
+3451	Add the vinaigrette to the turkey mixture and toss to combine.	567	2	0
 4597	Preheat the oven to 400°F. Using a very sharp knife, carefully make a horizontal slit from the side into each chicken breast.	973	0	2
 4598	To make the filling, beat together the cream cheese and chives in a bowl. Divide the filling into four portions and, using a teaspoon, fill each slit with some of the cream cheese. Push the sides of the slit together to keep the filling in.	973	1	0
 4599	Wrap each breast in two rashers of bacon and place in an ovenproof dish. Drizzle the oil over the chicken and bake for 25–30 minutes, brushing occasionally with the oil. Season with pepper and serve at once.	973	2	2
@@ -21836,5 +21838,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict TH4ALt2AyOanfLYfSP3yklqbZzAy64Si3rlK7aQ5k5Veu4kedwiV2v91TB8dAFR
+\unrestrict 524HCeSoM7NvIcaJR3euueqsOIIV00a7XvgzlBoCvORJkdLdl0B2AsxhnahbWdN
 
