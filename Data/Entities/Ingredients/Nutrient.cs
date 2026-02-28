@@ -27,10 +27,9 @@ public class Nutrient
 
     public int IngredientId { get; init; }
 
-    /// <summary>
-    /// If it has atleast 10% RDA per serving.
-    /// </summary>
     public Nutrients Nutrients { get; set; }
+
+    public Nutrients2 Nutrients2 { get; set; }
 
     public Measure Measure { get; set; }
 

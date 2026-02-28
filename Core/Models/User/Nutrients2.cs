@@ -25,6 +25,8 @@ public class NutrientMetadataAttribute : Attribute
 /// </summary>
 public enum Nutrients2
 {
+    None = 0,
+
     [NutrientMetadata(Measure.KCalorie, 957, 280.0)]
     Energy__Atwater_General_Factors = 2047,
     

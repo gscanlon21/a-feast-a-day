@@ -39,7 +39,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Console\Console.csproj" />
+		<ProjectReference Include="..\Console\Terminal.csproj" />
 	</ItemGroup>
 
 </Project>
