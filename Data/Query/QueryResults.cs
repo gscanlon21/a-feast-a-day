@@ -119,11 +119,9 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     /// </summary>
     public bool IsUnwantedAndHasAlternatives { get; set; }
 
-    public QueryResults? IngredientRecipe { get; internal set; }
-    public required UserRecipe? UserRecipe { get; set; }
-
     public required Ingredient? Ingredient { get; set; }
     public required UserRecipeIngredient? UserRecipeIngredient { get; set; }
+    public QueryResults? IngredientRecipe { get; internal set; }
 
     // These are getters so when the Ingredient is substituted, or quantity is scaled, they are still accurate.
     public int? IngredientRecipeId => UserRecipeIngredient?.SubstituteRecipeId ?? RawIngredientRecipeId;

@@ -364,7 +364,6 @@ public class UserRecipesController : ViewController
         var userRecipe = await _context.UserRecipes
             .Where(ur => ur.RecipeId == recipeId)
             .Where(ur => ur.UserId == user.Id)
-            .Include(ur => ur.Recipe)
             .FirstOrDefaultAsync();
 
         // May be null if the recipe was soft/hard deleted.
@@ -392,7 +391,11 @@ public class UserRecipesController : ViewController
         userRecipe.Servings = viewModel.Servings;
         userRecipe.LagRefreshXWeeks = viewModel.LagRefreshXWeeks;
         userRecipe.PadRefreshXWeeks = viewModel.PadRefreshXWeeks;
-        userRecipe.Notes = user.IsDemoUser ? null : viewModel.Notes;
+
+        if (!user.IsDemoUser)
+        {
+            userRecipe.Notes = viewModel.Notes;
+        }
 
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(ManageRecipe), new { email, token, recipeId, section, WasUpdated = true });

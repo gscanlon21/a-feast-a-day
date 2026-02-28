@@ -101,9 +101,8 @@ public class QueryRunner(Section section)
                     CookedIngredientId = ri.CookedIngredientId,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
-                    UserRecipe = ri.IngredientRecipe.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
                     UserRecipeIngredient = ri.UserRecipeIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeIngredientId == ri.Id),
-                }).ToList()
+                }).ToList(),
             });
 
         if (!UserOptions.IgnoreIgnored)
@@ -333,23 +332,10 @@ public class QueryRunner(Section section)
                 .ToList();
         }
 
-        // Grab alt ingredients that are used to calculate more accurate nutrients.
-        var partIngredients = await GetPartialIngredients(context, filteredResults);
-        // Grab other ingredients for cooked ingredients for more accurate nutrients.
-        var cookedIngredients = await GetCookedIngredients(context, filteredResults, partIngredients);
-        // Grab all the nutrients for ingredinets on the recipe after all the ingredient swapping has taken place.
-        var allNutrients = await GetRecipeNutrients(context, filteredResults, partIngredients, cookedIngredients);
-
         // List size doesn't change. Use the same capacity as the orderedResults.
         var recipeResults = new List<QueryResults>(orderedResults.Count);
         foreach (var recipe in orderedResults)
         {
-            // Set the nutrients on the recipe ingredients after all the ingredient swapping has taken place.
-            foreach (var recipeIngredient in recipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient))
-            {
-                recipeIngredient.GetIngredient!.Nutrients = allNutrients.GetValueOrDefault(recipeIngredient.GetIngredient!.Id, []);
-            }
-
             // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
             recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
             {
@@ -367,116 +353,115 @@ public class QueryRunner(Section section)
         }
 
         var finalResults = new HashSet<QueryResults>();
-        do
+        if (RecipeOptions.RecipeIds?.Any() == true)
         {
             foreach (var recipe in recipeResults)
             {
-                // Don't filter out allergens if we're choosing recipes.
-                if (RecipeOptions.RecipeIds?.Any() != true)
-                {
-                    // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
-                    var allAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
-                    // If all allergens has one and recipe allergens has one and user allergens has one, then skip this recipe.
-                    if ((allAllergens & recipe.Allergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
-                    {
-                        continue;
-                    }
-                }
-
-                // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
-                // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
-                var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);
-                if (overworkedNutrients != null)
-                {
-                    // Find the number of weeks since this recipe has been seen. If the last seen date is in the future (has refresh padding), then use zero weeks.
-                    var weeksFromLastSeen = Math.Max(0, DateHelpers.Today.DayNumber - (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
-                    // If there are no non-refreshing recipes selected, loosen the nutrients-to-overwork restriction so we prioritize least seen recipes.
-                    var nutrientsToOverwork = finalResults.Any(r => r.UserRecipe?.RefreshAfter == null) ? 0
-                        // Buffer by one available recipe per week to reduce the frequency even more.
-                        : Math.Max(0, weeksFromLastSeen - (int)Math.Floor(recipeResults.Count / 7d));
-
-                    // This way, recipes that overwork a lot of nutrients are spaced out more than the healthier recipes.
-                    if (overworkedNutrients.Count(recipe.UniqueWorkedNutrients.Contains) > nutrientsToOverwork)
-                    {
-                        continue;
-                    }
-                }
-
-                // Choose recipes that cover at least X nutrients in the targeted nutrient set.
-                if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
-                {
-                    var unworkedNutrients = GetUnworkedNutrients(finalResults, allNutrients, partIngredients, cookedIngredients);
-                    if (unworkedNutrients != null)
-                    {
-                        // We've already worked all unique nutrients.
-                        if (unworkedNutrients.Count == 0)
-                        {
-                            break;
-                        }
-
-                        // This makes it harder to see a recipe that still has refresh padding because it has to work more nutrients.
-                        // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
-                        var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
-                        // The recipe does not work enough unique nutrients that we are trying to target.
-                        // Allow recipes that have a refresh date since we want to show those continuously until that date.
-                        // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
-                        // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
-                        var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1
-                            // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
-                            // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
-                            : Math.Max(1, NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
-
-                        // Include the prerequisite recipes in this calculation.
-                        if (recipe.UniqueWorkedNutrients.Count < nutrientsToWork)
-                        {
-                            continue;
-                        }
-                    }
-                }
-
                 // Don't include the prep recipes in the take count b/c those aren't a part of the section.
                 if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == section) < take)
                 {
-                    // Append the recipe's prep recipes. Scale them if they are duplicates and are adjustable.
-                    foreach (var prepRecipe in recipe.PrepRecipes.Where(_ => !RecipeOptions.IgnorePrepRecipes))
-                    {
-                        // Scale the prep recipe based on the prep's serving size and the recipe-ingredient-for-the-prep's quantity.
-                        var noneRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure == Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
-                        var someRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure != Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
-                        if (someRecipeIngredientsGrams > 0 && prepRecipe.Key.Recipe.Measure == Measure.None)
-                        {
-                            // If the measures don't align, use the sum of the recipe ingredients times the recipe's servings b/c the recipe hasn't been scaled yet.
-                            var prepRecipeGrams = prepRecipe.Key.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Sum(ri => ri.GramsUsed(ri.Ingredient!)) * prepRecipe.Key.Recipe.Servings;
-                            prepRecipe.Key.SetScale = ((noneRecipeIngredientsGrams * prepRecipeGrams) + someRecipeIngredientsGrams) / prepRecipeGrams;
-                        }
-                        else
-                        {
-                            // Normal scaling, divide the sum of the recipe ingredient's quantities by the serving size scaled prerequisite quantity.
-                            prepRecipe.Key.SetScale = (noneRecipeIngredientsGrams + someRecipeIngredientsGrams) / prepRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prepRecipe.Key.Recipe.Servings);
-                        }
-
-                        // If the prep recipes already exists in our feast for any prior section and is scalable, then scale it.
-                        if (SelectionOptions.PrepRecipes.TryGetValue(prepRecipe.Key, out var scalePrepRecipe) && scalePrepRecipe.Recipe.AdjustableServings)
-                        {
-                            scalePrepRecipe.SetScale += prepRecipe.Key.SetScale;
-                        }
-                        // If the prep recipe already exists in our feast for this section and is scalable, then scale it.
-                        else if (finalResults.TryGetValue(prepRecipe.Key, out var existingPrepRecipe) && existingPrepRecipe.Recipe.AdjustableServings)
-                        {
-                            existingPrepRecipe.SetScale += prepRecipe.Key.SetScale;
-                        }
-                        else
-                        {
-                            finalResults.Add(prepRecipe.Key);
-                        }
-                    }
-
+                    ScaleAndAddPrepRecipes(recipe, finalResults);
                     finalResults.Add(recipe);
                 }
             }
         }
-        // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
-        while (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1);
+        else
+        {
+            // Grab alt ingredients that are used to calculate more accurate nutrients.
+            var partIngredients = await GetPartialIngredients(context, filteredResults);
+            // Grab other ingredients for cooked ingredients for more accurate nutrients.
+            var cookedIngredients = await GetCookedIngredients(context, filteredResults, partIngredients);
+            // Grab all the nutrients for ingredinets on the recipe after all the ingredient swapping has taken place.
+            var allNutrients = await GetRecipeNutrients(context, filteredResults, partIngredients, cookedIngredients);
+
+            // Add in the nutrient data for filtering.
+            foreach (var recipe in recipeResults)
+            {
+                // Set the nutrients on the recipe ingredients after all the ingredient swapping has taken place.
+                foreach (var recipeIngredient in recipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient))
+                {
+                    recipeIngredient.GetIngredient!.Nutrients = allNutrients.GetValueOrDefault(recipeIngredient.GetIngredient!.Id, []);
+                }
+            }
+
+            do
+            {
+                foreach (var recipe in recipeResults)
+                {
+                    // Don't filter out allergens if we're choosing recipes.
+                    if (RecipeOptions.RecipeIds?.Any() != true)
+                    {
+                        // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
+                        var allAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
+                        // If all allergens has one and recipe allergens has one and user allergens has one, then skip this recipe.
+                        if ((allAllergens & recipe.Allergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
+                        {
+                            continue;
+                        }
+                    }
+
+                    // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
+                    // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
+                    var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);
+                    if (overworkedNutrients != null)
+                    {
+                        // Find the number of weeks since this recipe has been seen. If the last seen date is in the future (has refresh padding), then use zero weeks.
+                        var weeksFromLastSeen = Math.Max(0, DateHelpers.Today.DayNumber - (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
+                        // If there are no non-refreshing recipes selected, loosen the nutrients-to-overwork restriction so we prioritize least seen recipes.
+                        var nutrientsToOverwork = finalResults.Any(r => r.UserRecipe?.RefreshAfter == null) ? 0
+                            // Buffer by one available recipe per week to reduce the frequency even more.
+                            : Math.Max(0, weeksFromLastSeen - (int)Math.Floor(recipeResults.Count / 7d));
+
+                        // This way, recipes that overwork a lot of nutrients are spaced out more than the healthier recipes.
+                        if (overworkedNutrients.Count(recipe.UniqueWorkedNutrients.Contains) > nutrientsToOverwork)
+                        {
+                            continue;
+                        }
+                    }
+
+                    // Choose recipes that cover at least X nutrients in the targeted nutrient set.
+                    if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
+                    {
+                        var unworkedNutrients = GetUnworkedNutrients(finalResults, allNutrients, partIngredients, cookedIngredients);
+                        if (unworkedNutrients != null)
+                        {
+                            // We've already worked all unique nutrients.
+                            if (unworkedNutrients.Count == 0)
+                            {
+                                break;
+                            }
+
+                            // This makes it harder to see a recipe that still has refresh padding because it has to work more nutrients.
+                            // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
+                            var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
+                            // The recipe does not work enough unique nutrients that we are trying to target.
+                            // Allow recipes that have a refresh date since we want to show those continuously until that date.
+                            // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
+                            // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
+                            var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1
+                                // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
+                                // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
+                                : Math.Max(1, NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
+
+                            // Include the prerequisite recipes in this calculation.
+                            if (recipe.UniqueWorkedNutrients.Count < nutrientsToWork)
+                            {
+                                continue;
+                            }
+                        }
+                    }
+
+                    // Don't include the prep recipes in the take count b/c those aren't a part of the section.
+                    if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == section) < take)
+                    {
+                        ScaleAndAddPrepRecipes(recipe, finalResults);
+                        finalResults.Add(recipe);
+                    }
+                }
+            }
+            // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
+            while (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1);
+        }
 
         return orderBy switch
         {
@@ -485,6 +470,46 @@ public class QueryRunner(Section section)
             // We are in a feast context, keep the result order.
             _ => finalResults.ToList()
         };
+    }
+
+    /// <summary>
+    /// Adds the recipe's prep recipes to the finalResults list or scales it if it is scaleable.
+    /// </summary>
+    private void ScaleAndAddPrepRecipes(QueryResults recipe, HashSet<QueryResults> finalResults)
+    {
+        // Append the recipe's prep recipes. Scale them if they are duplicates and are adjustable.
+        foreach (var prepRecipe in recipe.PrepRecipes.Where(_ => !RecipeOptions.IgnorePrepRecipes))
+        {
+            // Scale the prep recipe based on the prep's serving size and the recipe-ingredient-for-the-prep's quantity.
+            var noneRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure == Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
+            var someRecipeIngredientsGrams = prepRecipe.Value.Where(ri => ri.Measure != Measure.None).Sum(r => r.Measure.ToGramsOrMilliliters(r.Quantity.ToDouble()));
+            if (someRecipeIngredientsGrams > 0 && prepRecipe.Key.Recipe.Measure == Measure.None)
+            {
+                // If the measures don't align, use the sum of the recipe ingredients times the recipe's servings b/c the recipe hasn't been scaled yet.
+                var prepRecipeGrams = prepRecipe.Key.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Sum(ri => ri.GramsUsed(ri.Ingredient!)) * prepRecipe.Key.Recipe.Servings;
+                prepRecipe.Key.SetScale = ((noneRecipeIngredientsGrams * prepRecipeGrams) + someRecipeIngredientsGrams) / prepRecipeGrams;
+            }
+            else
+            {
+                // Normal scaling, divide the sum of the recipe ingredient's quantities by the serving size scaled prerequisite quantity.
+                prepRecipe.Key.SetScale = (noneRecipeIngredientsGrams + someRecipeIngredientsGrams) / prepRecipe.Key.Recipe.Measure.ToGramsOrMilliliters(prepRecipe.Key.Recipe.Servings);
+            }
+
+            // If the prep recipes already exists in our feast for any prior section and is scalable, then scale it.
+            if (SelectionOptions.PrepRecipes.TryGetValue(prepRecipe.Key, out var scalePrepRecipe) && scalePrepRecipe.Recipe.AdjustableServings)
+            {
+                scalePrepRecipe.SetScale += prepRecipe.Key.SetScale;
+            }
+            // If the prep recipe already exists in our feast for this section and is scalable, then scale it.
+            else if (finalResults.TryGetValue(prepRecipe.Key, out var existingPrepRecipe) && existingPrepRecipe.Recipe.AdjustableServings)
+            {
+                existingPrepRecipe.SetScale += prepRecipe.Key.SetScale;
+            }
+            else
+            {
+                finalResults.Add(prepRecipe.Key);
+            }
+        }
     }
 
     /// <summary>
@@ -642,6 +667,7 @@ public class QueryRunner(Section section)
 
         var recipesCreated = new HashSet<UserRecipe>();
         // Add user recipes for the main recipe query results.
+        // User recipes for prep recipes get added when querying for the subsection.
         foreach (var queryResult in queryResults.Where(qr => qr.UserRecipe == null))
         {
             queryResult.UserRecipe = new UserRecipe()
@@ -671,21 +697,6 @@ public class QueryRunner(Section section)
                 if (userRecipeIngredientsCreated.Add(recipeIngredient.UserRecipeIngredient))
                 {
                     context.UserRecipeIngredients.Add(recipeIngredient.UserRecipeIngredient);
-                }
-            }
-
-            // Add user recipes for the prep recipes.
-            if (recipeIngredient.UserRecipe == null && recipeIngredient.RawIngredientRecipeId.HasValue)
-            {
-                recipeIngredient.UserRecipe = new UserRecipe()
-                {
-                    UserId = UserOptions.Id,
-                    RecipeId = recipeIngredient.IngredientRecipeId!.Value
-                };
-
-                if (recipesCreated.Add(recipeIngredient.UserRecipe))
-                {
-                    context.UserRecipes.Add(recipeIngredient.UserRecipe);
                 }
             }
         }

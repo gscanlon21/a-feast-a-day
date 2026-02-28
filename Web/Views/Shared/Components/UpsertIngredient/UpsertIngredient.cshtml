@@ -25,7 +25,7 @@
         <div class="col-md">
             <label asp-for="Ingredient.DefaultMeasure" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.DefaultMeasure)</label>
             <select asp-for="Ingredient.DefaultMeasure" class="form-control" aria-describedby="measure-help"
-                    asp-items="@(MeasureConsts.DryMeasures.Concat(MeasureConsts.LiquidMeasures).AsSelectListItems())">
+                    asp-items="@(MeasureConsts.DryMeasures.Concat(MeasureConsts.LiquidMeasures).Prepend(Measure.None).AsSelectListItems())">
             </select>
             <span asp-validation-for="Ingredient.DefaultMeasure" class="text-danger"></span>
             <span id="measure-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.DefaultMeasure)</span>
