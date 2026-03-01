@@ -87,7 +87,7 @@ public enum Measure
 
     [Display(Name = "Milligrams of Gallic Acid Equivalents", ShortName = "MG_GAE")]
     MG_GAE = 107,
-    
+
     [Display(Name = "Milligrams of Alpha-Tocopherol Equivalents", ShortName = "MG_ATE")]
     MG_ATE = 108,
 }

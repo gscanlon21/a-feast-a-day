@@ -1,12 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Core.Models.User;
 using Data;
+using Data.Entities.Ingredients;
 using Data.Repos;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.VisualBasic.FileIO;
 using System.IO.Compression;
-using Terminal.Models;
 
 
 using var host = Host.CreateDefaultBuilder()
@@ -40,7 +39,7 @@ do
     Console.WriteLine("3: Load nutrient data from a CSV file");
     Console.WriteLine("0: Exit");
     actionKeyPressed = Console.ReadKey();
-    
+
     Console.WriteLine();
     Console.WriteLine();
 
@@ -68,7 +67,7 @@ do
     Console.WriteLine();
 }
 while (actionKeyPressed.KeyChar != '0');
-    
+
 
 /// <summary>
 /// Downloads the entire dataset from FDA's FoodData Central.
@@ -125,38 +124,69 @@ static async Task<Response> LoadNutrientDataFromFoodDataCentral(NutrientRepo nut
     Console.WriteLine("What is the path to food_nutrient.csv?");
     var foodNutrientPath = Console.ReadLine() ?? throw new Exception("Missing food_nutrient.csv!");
 
-    string[]? actualHeaders = null;
-    string[] expectedHeaders = ["id", "fdc_id", "nutrient_id", "amount", "data_points", "derivation_id", "min", "max", "median", "loq", "footnote", "min_year_acquired"];
-
-    var ingredientsWithFoodData = await nutrientRepo.GetIngredientsWithFoodData();
+    var ingredientsWithFoodData = (await nutrientRepo.GetIngredientsWithFoodData())
+        .ToDictionary(i => i.IngredientAttr!.FDC_ID!.Value, i => i);
 
     using var parser = new TextFieldParser(foodNutrientPath.Replace("\"", ""));
     parser.TextFieldType = FieldType.Delimited;
     parser.SetDelimiters(",");
-    
+
+    List<Nutrient> newNutrients = [];
+    string[]? actualHeaders = null;
     while (!parser.EndOfData)
     {
         var rows = parser.ReadFields();
         if (actualHeaders == null)
         {
             actualHeaders = rows;
-            Console.WriteLine(string.Join(", ", expectedHeaders));
-            Console.WriteLine(string.Join(", ", expectedHeaders.Intersect(actualHeaders!)));
-            // TODO find the actual header positions.
-            // Some headers are included in the full set that aren't in the foundation set.
-            if (!expectedHeaders.Intersect(actualHeaders!).SequenceEqual(expectedHeaders))
-            {
-                throw new Exception("Invalid headers!");
-            }
         }
         else
         {
-            foreach (var cell in rows ?? [])
+            // This is going to be slow.
+            if (int.TryParse(rows?[actualHeaders.IndexOf(FoodNutrientHeaders.FDC_ID)], out int fdcId)
+                && ingredientsWithFoodData.TryGetValue(fdcId, out Ingredient? ingredient))
             {
-                Console.WriteLine(cell);
+                if (int.TryParse(rows?[actualHeaders.IndexOf(FoodNutrientHeaders.NUTRIENT_ID)], out int nutrientId)
+                    && double.TryParse(rows?[actualHeaders.IndexOf(FoodNutrientHeaders.AMOUNT)], out double amount))
+                {
+                    var nutrients2 = (Nutrients2)nutrientId;
+                    var measure = nutrients2.GetMeasure() ?? Measure.None;
+                    if (ingredient.Nutrients.Select(n => (int)n.Nutrients2).Contains(nutrientId))
+                    {
+                        var existingNutrient = ingredient.Nutrients.First(n => (int)n.Nutrients2 == nutrientId);
+                        if (existingNutrient.Value != amount || existingNutrient.Measure != measure)
+                        {
+                            Console.WriteLine($"Updating Nutrient: {nutrients2}");
+                            existingNutrient.Value = amount;
+                            existingNutrient.Measure = measure;
+                            await nutrientRepo.UpdateNutrient(existingNutrient);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Inserting Nutrient: {nutrients2}");
+                        newNutrients.Add(new Nutrient()
+                        {
+                            Value = amount,
+                            Measure = measure,
+                            Nutrients2 = nutrients2,
+                            IngredientId = ingredient.Id,
+                        });
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Missing: {FoodNutrientHeaders.NUTRIENT_ID}");
+                    Console.WriteLine($"Missing: {FoodNutrientHeaders.AMOUNT}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Missing: {FoodNutrientHeaders.FDC_ID}");
             }
         }
     }
 
+    await nutrientRepo.InsertNewNutrients(newNutrients);
     return Response.Success();
 }

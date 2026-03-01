@@ -1,9 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
-using System.Text.Json.Serialization;
-
-namespace Data.Entities.Ingredients;
+﻿namespace Data.Entities.Ingredients;
 
 /// <summary>
 /// Nutrients for an ingredient.

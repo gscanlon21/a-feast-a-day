@@ -19,10 +19,25 @@ public class NutrientRepo
 
     public async Task<IList<Ingredient>> GetIngredientsWithFoodData()
     {
-        return await _context.Ingredients.AsNoTracking()
-            .Include(i => i.Nutrients)
+        return await _context.Ingredients.AsNoTracking().AsSplitQuery()
+            .Include(i => i.IngredientAttr).Include(i => i.Nutrients)
             .Where(i => i.IngredientAttr!.FDC_ID.HasValue)
-            .Where(i => i.IngredientAttr!.NDB_Number.HasValue)
             .ToListAsync();
+    }
+
+    public async Task UpdateNutrient(Nutrient nutrient)
+    {
+        _context.Nutrients.Update(nutrient);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task InsertNewNutrients(List<Nutrient> newNutrients)
+    {
+        foreach (var nutrient in newNutrients)
+        {
+            _context.Nutrients.Add(nutrient);
+        }
+
+        await _context.SaveChangesAsync();
     }
 }

@@ -1,5 +1,4 @@
-﻿using Core.Models.User;
-using Data.Entities.Ingredients;
+﻿using Data.Entities.Ingredients;
 
 namespace Web.Views.Shared.Components.UpsertIngredient;
 

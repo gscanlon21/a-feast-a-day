@@ -30,7 +30,7 @@ public static class RecipeIngredientExtensions
             return partialIngredients?.SelectMany(partialIngredient =>
             {
                 var partialIngredientNutrients = nutrients?.GetValueOrDefault(partialIngredient.Ingredient.Id);
-                return partialIngredientNutrients?.Select(nutrient =>
+                return partialIngredientNutrients?.Where(n => n.Nutrients != Nutrients.None).Select(nutrient =>
                 {
                     var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(partialIngredient.Ingredient);
                     var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(partialIngredient.Ingredient, recipeIngredient.IsCoarseCut);
@@ -43,7 +43,7 @@ public static class RecipeIngredientExtensions
         else if (cookedIngredients != null && cookedIngredients.TryGetValue(recipeIngredient.GetRecipeIngredientId, out Ingredient? cookedIngredient) && cookedIngredient != null)
         {
             var recipeIngredientNutrients = nutrients?.GetValueOrDefault(cookedIngredient.Id);
-            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
+            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Where(n => n.Nutrients != Nutrients.None).Select(nutrient =>
             {
                 var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(cookedIngredient);
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(cookedIngredient, recipeIngredient.IsCoarseCut);
@@ -54,7 +54,7 @@ public static class RecipeIngredientExtensions
         else
         {
             var recipeIngredientNutrients = nutrients?.GetValueOrDefault(recipeIngredient.GetIngredient!.Id);
-            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
+            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Where(n => n.Nutrients != Nutrients.None).Select(nutrient =>
             {
                 var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(recipeIngredient.GetIngredient);
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient, recipeIngredient.IsCoarseCut);
