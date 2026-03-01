@@ -17,7 +17,7 @@ public class NutrientViewModel
 
     public required IDictionary<Nutrients, double?> WeeklyVolume { get; init; }
 
-    public NutrientTarget AllNutrientTarget => new(Nutrients.All)
+    public NutrientTarget AllNutrientTarget => new(Nutrients.None)
     {
         Start = 0,
         End = 100,

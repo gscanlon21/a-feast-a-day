@@ -113,20 +113,20 @@ public static class Filters
     /// <summary>
     /// Make sure the recipe works a specific nutrient.
     /// </summary>
-    public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, Nutrients? nutrients, bool include) where T : IRecipeCombo
+    public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, IList<Nutrients>? nutrients, bool include) where T : IRecipeCombo
     {
-        if (!nutrients.HasValue || nutrients == Nutrients.None || nutrients == Nutrients.All)
+        if (nutrients?.Any() != true)
         {
             return query;
         }
 
         if (include)
         {
-            return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Value.HasFlag(n.Nutrients))));
+            return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Contains(n.Nutrients))));
         }
         else
         {
-            return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Value.HasFlag(n.Nutrients))));
+            return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Contains(n.Nutrients))));
         }
     }
 

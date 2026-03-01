@@ -276,10 +276,7 @@ namespace Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("Nutrients")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Nutrients2")
+                    b.Property<int>("Nutrients")
                         .HasColumnType("integer");
 
                     b.Property<double>("Value")
@@ -725,8 +722,8 @@ namespace Data.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
-                    b.Property<long>("Nutrient")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Nutrient")
+                        .HasColumnType("integer");
 
                     b.Property<int>("End")
                         .HasColumnType("integer");

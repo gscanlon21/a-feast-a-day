@@ -29,12 +29,13 @@ public class Nutrient
 
     public Nutrients Nutrients { get; set; }
 
-    public Nutrients2 Nutrients2 { get; set; }
-
     public Measure Measure { get; set; }
 
     [Range(Consts.ValueMin, Consts.ValueMax)]
     public double Value { get; set; }
+
+    // TODO Nutrient data is likely to differ by region:
+    // public string Region { get; init; }
 
     /// <summary>
     /// Notes about the nutrient (externally shown).
@@ -57,10 +58,10 @@ public class Nutrient
     public override bool Equals(object? obj) => obj is Nutrient other
         && other.Id == Id;
 
-    [NotMapped]
-    public Nutrients[]? NutrientBinder
-    {
-        get => Enum.GetValues<Nutrients>().Where(e => Nutrients.HasFlag(e)).ToArray();
-        set => Nutrients = value?.Aggregate(Nutrients.None, (a, e) => a | e) ?? Nutrients.None;
-    }
+    //[NotMapped]
+    //public Nutrients[]? NutrientBinder
+    //{
+    //    get => Enum.GetValues<Nutrients>().Where(e => Nutrients.HasFlag(e)).ToArray();
+    //    set => Nutrients = value?.Aggregate(Nutrients.None, (a, e) => a | e) ?? Nutrients.None;
+    //}
 }

@@ -153,7 +153,7 @@ public class QueryRunner(Section section)
         filteredQuery = Filters.FilterPrepTime(filteredQuery, DurationOptions.MaxPrepTimeMinutes);
         filteredQuery = Filters.FilterCookTime(filteredQuery, DurationOptions.MaxCookTimeMinutes);
         filteredQuery = Filters.FilterTotalTime(filteredQuery, DurationOptions.MaxTotalTimeMinutes);
-        filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients.Aggregate(Nutrients.None, (c, n) => c | n), include: true);
+        filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients, include: true);
 
         var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();
 

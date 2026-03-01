@@ -243,14 +243,14 @@ public class UserRepo
         var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: includeToday);
 
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
-        var familyNutrientServings = EnumExtensions.GetValuesExcluding(Nutrients.All, Nutrients.None).ToDictionary(n => n, n =>
+        var familyNutrientServings = NutrientHelpers.All2.ToDictionary(n => n, n =>
         {
             var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
             return rawValues ? (weeklyGramsOfRDATUL + (weeklyGramsOfRDATUL / weeks)) : weeklyGramsOfRDATUL;
         });
 
-        return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
+        return (weeks: actualWeeks, volume: NutrientHelpers.All2.ToDictionary(n => n, n =>
         {
             // If there is no RDA or TUL.
             if (familyNutrientServings[n] <= 0) { return null; }
@@ -330,14 +330,14 @@ public class UserRepo
                         )
                     ).ToList();
 
-                return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(m => m, m =>
+                return (weeks: actualWeeks, volume: NutrientHelpers.All2.ToDictionary(n => n, n =>
                 {
-                    return (double?)nutrientsWorked.Sum(mm => m.HasFlag(mm.Key) ? mm.Value : 0) / actualWeeks;
+                    return (double?)nutrientsWorked.Sum(mm => n == mm.Key ? mm.Value : 0) / actualWeeks;
                 }));
             }
         }
 
-        return (weeks: 0, volume: NutrientHelpers.All.ToDictionary(m => m, m => (double?)null));
+        return (weeks: 0, volume: NutrientHelpers.All2.ToDictionary(m => m, m => (double?)null));
     }
 
     /// <summary>
@@ -384,9 +384,9 @@ public class UserRepo
                     )
                 ).ToList();
 
-            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding(Allergens.None).ToDictionary(m => m, m =>
+            return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding(Allergens.None).ToDictionary(a => a, a =>
             {
-                return (double?)monthlyAllergens.Sum(mm => (m.HasFlag(mm) && mm != Allergens.None) ? 1 : 0) / actualWeeks;
+                return (double?)monthlyAllergens.Sum(mm => (a.HasFlag(mm) && mm != Allergens.None) ? 1 : 0) / actualWeeks;
             }));
         }
 

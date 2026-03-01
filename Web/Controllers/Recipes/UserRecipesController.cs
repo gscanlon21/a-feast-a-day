@@ -277,7 +277,7 @@ public class UserRecipesController : ViewController
             var newRecipes = await new UserQueryBuilder(user, feastRecipe.Section)
                 .WithEquipment(user.Equipment)
                 .WithNutrients(NutrientTargetsContextBuilder
-                    .WithNutrients(context, NutrientHelpers.All)
+                    .WithNutrients(context, NutrientHelpers.All2)
                     .AdjustNutrientTargets(scale: 1), options =>
                     {
                         options.AtLeastXNutrientsPerRecipe = serving.AtLeastXNutrientsPerRecipe;

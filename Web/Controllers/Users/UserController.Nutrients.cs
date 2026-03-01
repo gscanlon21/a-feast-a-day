@@ -61,7 +61,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
@@ -101,7 +101,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
@@ -141,7 +141,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
@@ -181,7 +181,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);

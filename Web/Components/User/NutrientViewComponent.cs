@@ -33,8 +33,8 @@ public class NutrientViewComponent : ViewComponent
 
         var weeks = int.TryParse(Request.Query["weeks"], out int weeksTmp) ? weeksTmp : UserConsts.NutrientVolumeWeeks;
         var includeToday = bool.TryParse(Request.Query["includeToday"], out bool includeTodayTmp) ? includeTodayTmp : true;
-        var (weeksOfData, weeklyMuscles) = await _userRepo.GetWeeklyNutrientVolume(user, weeks, includeToday: includeToday);
-        if (weeklyMuscles == null)
+        var (weeksOfData, weeklyNutrients) = await _userRepo.GetWeeklyNutrientVolume(user, weeks, includeToday: includeToday);
+        if (weeklyNutrients == null)
         {
             return Content(string.Empty);
         }
@@ -45,9 +45,9 @@ public class NutrientViewComponent : ViewComponent
             Token = token,
             Weeks = weeks,
             WeeksOfData = weeksOfData,
-            WeeklyVolume = weeklyMuscles,
+            WeeklyVolume = weeklyNutrients,
             // Removing calories since that should be changed from a user family.
-            UsersWorkedNutrients = NutrientHelpers.All.Where(n => n != Nutrients.Calories).ToList(),
+            UsersWorkedNutrients = NutrientHelpers.All2.Where(n => n != Nutrients.Energy_KCalorie).ToList(),
         });
     }
 }

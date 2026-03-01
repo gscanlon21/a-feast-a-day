@@ -23,7 +23,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Breakfast)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = breakfastServing.AtLeastXNutrientsPerRecipe;
@@ -52,7 +52,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Lunch)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = lunchServing.AtLeastXNutrientsPerRecipe;
@@ -81,7 +81,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Dinner)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = dinnerServing.AtLeastXNutrientsPerRecipe;
@@ -110,7 +110,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Sides)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = sideServing.AtLeastXNutrientsPerRecipe;
@@ -139,7 +139,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Snacks)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = snackServing.AtLeastXNutrientsPerRecipe;
@@ -168,7 +168,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Drinks)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = drinkServing.AtLeastXNutrientsPerRecipe;
@@ -197,7 +197,7 @@ public partial class NewsletterRepo
         return await new UserQueryBuilder(newsletterContext.User, Section.Dessert)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
-                .WithNutrients(newsletterContext, NutrientHelpers.All)
+                .WithNutrients(newsletterContext, NutrientHelpers.All2)
                 .AdjustNutrientTargets(scale: scale), options =>
                 {
                     options.AtLeastXNutrientsPerRecipe = dessertServing.AtLeastXNutrientsPerRecipe;

@@ -255,7 +255,7 @@ namespace Data.Migrations
                 name: "user_nutrient",
                 columns: table => new
                 {
-                    Nutrient = table.Column<long>(type: "bigint", nullable: false),
+                    Nutrient = table.Column<int>(type: "integer", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     Start = table.Column<int>(type: "integer", nullable: false),
                     End = table.Column<int>(type: "integer", nullable: false)
@@ -362,13 +362,32 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ingredient_attr",
+                columns: table => new
+                {
+                    IngredientId = table.Column<int>(type: "integer", nullable: false),
+                    FDC_ID = table.Column<int>(type: "integer", nullable: true),
+                    NDB_Number = table.Column<int>(type: "integer", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ingredient_attr", x => x.IngredientId);
+                    table.ForeignKey(
+                        name: "FK_ingredient_attr_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "nutrient",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
-                    Nutrients = table.Column<long>(type: "bigint", nullable: false),
+                    Nutrients = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true)
@@ -803,6 +822,9 @@ namespace Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "ingredient_alternative");
+
+            migrationBuilder.DropTable(
+                name: "ingredient_attr");
 
             migrationBuilder.DropTable(
                 name: "nutrient");

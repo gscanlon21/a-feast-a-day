@@ -314,7 +314,7 @@
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	32	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
 467	Green Juice	\N	\N	\N	128	0	5	1	t	green-juice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-468	Peppermint Tea	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	2	5	1	t	rosemary-lemon-tea.jpg	0	\N	f	f
+468	Peppermint Tea	\N	\N	\N	128	5	5	1	t	rosemary-lemon-tea.jpg	1	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 469	Tuna Salad Celery Boats	Skipjack or chunk light tuna varieties are low in mercury. Consume no more than six 6-ounce servings per month.	\N	\N	20	0	10	4	t	tuna-salad-celery-boats.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 470	Pumpkin Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 471	Honey-Mustard Dressing	\N	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -535,7 +535,7 @@
 785	Tasty Chickpea Soup	\N	\N	\N	8	30	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 786	Green Gazpacho	\N	\N	\N	4	10	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 787	Naked Salad Tunisienne	\N	\N	\N	20	0	18	4	t	naked-salad-tunisienne.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	1	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	chicken-chips.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 790	Baharat Chicken Shish	\N	\N	\N	8	45	10	4	t	baharat-chicken-shish.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 791	Tortilla Frittata	\N	\N	\N	8	55	5	4	t	tortilla-fritatta.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260228164936_AddNutrients2ToNutrient")]
-    partial class AddNutrients2ToNutrient
+    [Migration("20260301224019_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -279,10 +279,7 @@ namespace Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<long>("Nutrients")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Nutrients2")
+                    b.Property<int>("Nutrients")
                         .HasColumnType("integer");
 
                     b.Property<double>("Value")
@@ -728,8 +725,8 @@ namespace Data.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
-                    b.Property<long>("Nutrient")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Nutrient")
+                        .HasColumnType("integer");
 
                     b.Property<int>("End")
                         .HasColumnType("integer");

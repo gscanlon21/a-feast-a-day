@@ -26,7 +26,7 @@ public static class MeasureExtensions
                 Measure.None => ingredient.GramsPerMeasure,
                 _ when MeasureConsts.DryMeasures.Contains(measure) => measure.ToMeasure(Measure.Grams),
                 _ when MeasureConsts.LiquidMeasures.Contains(measure) => measure.ToMeasure(Measure.Cups) * (coarseCut ? ingredient.GramsPerCoarseCup : ingredient.GramsPerFineCup),
-                _ => throw new MissingMeasureException($"Missing measure: {measure}")
+                _ => 0,
             };
         }
         catch (MissingMeasureException ex)
