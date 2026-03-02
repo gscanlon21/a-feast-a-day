@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict ivL58KqdzJqoJERDIJ0jQl0Re1f25JlxxWyim4IlFkJ9dJaUan2lYxIOTE0qwdD
+\restrict wQKbY7ixZcYskJTnEmBXmZvB4Koeqlp7CPpp63tX3Q5T8b1FtKy4HEMp5wYqTY0
 
 -- Dumped from database version 18.2
 -- Dumped by pg_dump version 18.0
@@ -2472,6 +2472,8 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 1619	2515376	16087
 387	2646170	100304
 9	2710824	100348
+1586	2346391	11253
+1403	172175	1004
 \.
 
 
@@ -2867,6 +2869,210 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 19317	9	1003	\N	3	1.8125
 19318	9	1005	\N	3	8.3235
 19319	9	2047	\N	102	223.334
+19320	1266	1222	\N	3	0.823
+19321	1266	1261	\N	3	0.314
+19322	1266	1110	\N	98	23
+19323	1266	1005	\N	3	1.55
+19324	1266	1264	\N	3	2.964
+19325	1266	1225	\N	3	0.457
+19326	1266	1265	\N	3	8.458
+19327	1266	1175	\N	2	0.083
+19328	1266	1223	\N	3	1.413
+19329	1266	1269	\N	3	0.864
+19330	1266	1215	\N	3	0.706
+19331	1266	1275	\N	3	0.89
+19332	1266	1177	\N	1	6
+19333	1266	1180	\N	2	15.4
+19334	1266	1090	\N	2	14
+19335	1266	1262	\N	3	0.651
+19336	1266	1220	\N	3	0.835
+19337	1266	1259	\N	3	0.715
+19338	1266	1260	\N	3	0.489
+19339	1266	1162	\N	2	0
+19340	1266	1211	\N	3	0.935
+19341	1266	1114	\N	1	0.6
+19342	1266	1271	\N	3	0
+19343	1266	1268	\N	3	7.1
+19344	1266	1227	\N	3	1.477
+19345	1266	1091	\N	2	346
+19346	1266	1253	\N	2	116
+19347	1266	1217	\N	3	1.497
+19348	1266	1098	\N	2	0.025
+19349	1266	1293	\N	3	1.654
+19350	1266	1051	\N	3	37.92
+19351	1266	1008	\N	102	389
+19352	1266	1178	\N	1	1.68
+19353	1266	1092	\N	2	64
+19354	1266	1007	\N	3	3.79
+19355	1266	1018	\N	3	0
+19356	1266	1103	\N	1	14.5
+19357	1266	1167	\N	2	0.15
+19358	1266	1258	\N	3	19.196
+19359	1266	1218	\N	3	1.524
+19360	1266	1292	\N	3	8.687
+19361	1266	1123	\N	1	0
+19362	1266	1277	\N	3	0
+19363	1266	1122	\N	1	0
+19364	1266	1058	\N	2	0
+19365	1266	1186	\N	1	0
+19366	1266	1108	\N	1	0
+19367	1266	1120	\N	1	0
+19368	1266	1272	\N	3	0
+19369	1266	1112	\N	1	0.6
+19370	1266	1105	\N	1	258
+19371	1266	1109	\N	2	0.27
+19372	1266	1280	\N	3	0
+19373	1266	1062	\N	103	1628
+19374	1266	1057	\N	2	0
+19375	1266	2000	\N	3	1.55
+19376	1266	1185	\N	1	2.6
+19377	1266	1276	\N	3	0
+19378	1266	1279	\N	3	0
+19379	1266	1104	\N	98	913
+19380	1266	1106	\N	1	261
+19381	1266	1107	\N	1	32
+19382	1266	1278	\N	3	0
+19383	1266	1246	\N	1	0
+19384	1266	1089	\N	2	0.23
+19385	1266	1212	\N	3	1.384
+19386	1266	1170	\N	2	0.429
+19387	1266	1187	\N	1	6
+19388	1266	1221	\N	3	0.959
+19389	1266	1190	\N	1	6
+19390	1266	1004	\N	3	31.14
+19391	1266	1224	\N	3	5.136
+19392	1266	1242	\N	2	0
+19393	1266	1214	\N	3	2.328
+19394	1266	1087	\N	2	550
+19395	1266	1263	\N	3	0.804
+19396	1266	1266	\N	3	2.655
+19397	1266	1003	\N	3	25.6
+19398	1266	1101	\N	2	0.014
+19399	1266	1079	\N	3	0
+19400	1266	1270	\N	3	0.79
+19401	1266	1210	\N	3	0.361
+19402	1266	1226	\N	3	3.323
+19403	1266	1095	\N	2	3.5
+19404	1266	1216	\N	3	0.261
+19405	1266	1165	\N	2	0.021
+19406	1266	1213	\N	3	2.664
+19407	1266	1093	\N	2	800
+19408	1266	1166	\N	2	0.204
+19409	1266	1219	\N	3	1.926
+19410	1403	1079	\N	3	0
+19411	1403	1178	\N	1	1.22
+19412	1403	1223	\N	3	1.436
+19413	1403	1114	\N	1	0.5
+19414	1403	1177	\N	1	36
+19415	1403	1258	\N	3	18.669
+19416	1403	1218	\N	3	1.295
+19417	1403	1259	\N	3	0.658
+19418	1403	1253	\N	2	75
+19419	1403	1095	\N	2	2.66
+19420	1403	1051	\N	3	42.41
+19421	1403	1167	\N	2	1.016
+19422	1403	1093	\N	2	1146
+19423	1403	1170	\N	2	1.729
+19424	1403	1110	\N	98	21
+19425	1403	1242	\N	2	0
+19426	1403	1215	\N	3	0.584
+19427	1403	1008	\N	102	353
+19428	1403	1263	\N	3	0.491
+19429	1403	1277	\N	3	0
+19430	1403	1062	\N	103	1477
+19431	1403	1175	\N	2	0.166
+19432	1403	1104	\N	98	721
+19433	1403	1278	\N	3	0
+19434	1403	1180	\N	2	15.4
+19435	1403	1227	\N	3	1.12
+19436	1403	1165	\N	2	0.029
+19437	1403	1057	\N	2	0
+19438	1403	1214	\N	3	1.852
+19439	1403	1123	\N	1	0
+19440	1403	1108	\N	1	0
+19441	1403	1219	\N	3	1.556
+19442	1403	1264	\N	3	3.301
+19443	1403	1217	\N	3	1.087
+19444	1403	1107	\N	1	74
+19445	1403	1162	\N	2	0
+19446	1403	1003	\N	3	21.4
+19447	1403	1276	\N	3	0
+19448	1403	1246	\N	1	0
+19449	1403	1098	\N	2	0.04
+19450	1403	1270	\N	3	0.264
+19451	1403	1190	\N	1	36
+19452	1403	1265	\N	3	9.153
+19453	1403	1058	\N	2	0
+19454	1403	1103	\N	1	14.5
+19455	1403	1185	\N	1	2.4
+19456	1403	1106	\N	1	198
+19457	1403	1186	\N	1	0
+19458	1403	1089	\N	2	0.31
+19459	1403	1261	\N	3	0.247
+19460	1403	1091	\N	2	387
+19461	1403	1280	\N	3	0
+19462	1403	1005	\N	3	2.34
+19463	1403	1279	\N	3	0
+19464	1403	1087	\N	2	528
+19465	1403	1090	\N	2	23
+19466	1403	1211	\N	3	0.785
+19467	1403	1018	\N	3	0
+19468	1403	1224	\N	3	5.179
+19469	1403	1226	\N	3	2.1
+19470	1403	1112	\N	1	0.5
+19471	1403	1275	\N	3	0.816
+19472	1403	1292	\N	3	7.778
+19473	1403	1120	\N	1	0
+19474	1403	1212	\N	3	1.124
+19475	1403	1216	\N	3	0.107
+19476	1403	1166	\N	2	0.382
+19477	1403	1213	\N	3	1.919
+19478	1403	1122	\N	1	0
+19479	1403	1225	\N	3	0.406
+19480	1403	1260	\N	3	0.361
+19481	1403	1266	\N	3	3.235
+19482	1403	1293	\N	3	0.8
+19483	1403	1092	\N	2	256
+19484	1403	1269	\N	3	0.536
+19485	1403	1187	\N	1	36
+19486	1403	1105	\N	1	192
+19487	1403	1222	\N	3	0.644
+19488	1403	1101	\N	2	0.009
+19489	1403	1272	\N	3	0
+19490	1403	1262	\N	3	0.601
+19491	1403	1220	\N	3	0.711
+19492	1403	1004	\N	3	28.74
+19493	1403	1210	\N	3	0.312
+19494	1403	1007	\N	3	5.11
+19495	1403	1268	\N	3	6.622
+19496	1403	1271	\N	3	0
+19497	1403	2000	\N	3	0.5
+19498	1403	1221	\N	3	0.758
+19499	1403	1109	\N	2	0.25
+19500	1586	1185	\N	1	118.5
+19501	1586	1184	\N	1	0
+19502	1586	1183	\N	1	0
+19503	1586	2048	\N	102	18.4931365
+19504	1586	2047	\N	102	22.0463
+19505	1586	1162	\N	2	15.15
+19506	1586	1165	\N	2	0.08225
+19507	1586	1101	\N	2	0.1559
+19508	1586	1095	\N	2	0.3103
+19509	1586	1051	\N	3	94.01
+19510	1586	1087	\N	2	39.84
+19511	1586	1007	\N	3	0.6738
+19512	1586	1089	\N	2	0.3195
+19513	1586	1090	\N	2	12.77
+19514	1586	1004	\N	3	0.1563
+19515	1586	1091	\N	2	26.55
+19516	1586	1002	\N	3	0.175
+19517	1586	1175	\N	2	0.07088
+19518	1586	1167	\N	2	0.375
+19519	1586	1092	\N	2	277.1
+19520	1586	1098	\N	2	0.03984
+19521	1586	1093	\N	2	28.88
+19522	1586	1003	\N	3	1.09375
+19523	1586	1005	\N	3	4.06615
 \.
 
 
@@ -4342,13 +4548,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4906	0	234	1	2	, thinly sliced	671	f	\N	0	f	t	\N	1
 4349	0	243	2	1	, diced	222	f	\N	2	f	t	\N	1
 5477	0	378	1	2	, cored and thinly sliced	661	f	\N	1	f	t	\N	1
+5452	0	374	1	4	\N	187	f	\N	1	f	t	\N	1
 4908	8	234	8	1	\N	74	f	\N	2	f	f	\N	1
 5458	0	375	1	2	, halved and thinly sliced	222	f	\N	2	f	t	\N	1
 5459	0	375	1	2	, cut into 1½-inch cubes	387	f	\N	3	f	t	\N	1
 5450	6	373	4	1	\N	1732	f	\N	1	f	t	\N	1
 5451	4	373	4	1	\N	87	f	\N	2	f	t	\N	1
-5452	0	374	1	4	\N	187	f	\N	1	f	t	\N	1
-5453	6	374	4	3	, plus extra for dusting	1188	f	\N	2	f	t	\N	1
 5949	6	486	2	1	\N	10	f	\N	0	f	t	\N	1
 7344	6	737	4	1	, minced	222	f	\N	2	f	t	\N	1
 3440	7	50	1	2	\N	61	f	\N	1	f	t	\N	1
@@ -4384,6 +4589,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4893	4	258	1	5	\N	718	f	\N	3	f	t	\N	1
 4756	6	272	1	4	, cooked	98	f	\N	10	f	t	\N	1
 4894	4	258	1	1	\N	13	t	\N	4	f	t	\N	1
+5453	6	374	4	3	, plus extra for dusting	1188	f	\N	2	f	t	\N	1
+5454	7	374	1	6	\N	500	f	\N	3	f	t	\N	1
 5468	0	377	1	2	, sliced into strips	387	f	\N	0	f	t	\N	1
 5469	0	377	1	1	, sliced	8	f	\N	1	f	t	\N	1
 5470	0	377	1	1	, sliced	597	f	\N	2	f	t	\N	1
@@ -4401,7 +4608,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5444	4	371	1	1	\N	1002	f	\N	4	f	t	\N	1
 5490	8	379	8	1	, to taste	285	t	\N	4	f	t	\N	1
 5491	0	379	4	1	, juiced, to taste	4	t	\N	5	f	t	\N	1
-5454	7	374	1	6	\N	500	f	\N	3	f	t	\N	1
 5448	4	372	2	7	, plus extra to serve	95	t	\N	3	f	t	\N	1
 5455	7	374	1	2	\N	1189	f	\N	4	f	t	\N	1
 5456	0	374	1	1	\N	224	t	\N	5	f	t	\N	1
@@ -7798,6 +8004,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3144	Bake for 30-35 minutes, until the middles are set and not jiggly.	417	4	2
 1545	Store leftovers in an air-tight container in the refrigerator. Meatballs can also be frozen and reheated and reheated in the oven, microwave or on the stove top.	137	4	0
 4749	Place a small pot of water on high heat. Add potato. Boil potato until a fork goes in easily, remove from water. (this usually takes 10 minutes or so)	996	0	4
+4892	Halve, then roll out each piece on a flour-dusted surface until just under ¼ inch thick. Cook for 3 minutes, or until golden, turning halfway.	374	2	4
 1550	Using a potato masher or food processor, coarsely mash the chickpeas. If you prefer a smoother purée, process them in a food processor or blender until smooth.	147	0	0
 1551	Mix the tahini into the chickpeas, then stir in the garlic, lemon juice, cayenne, cumin and salt and pepper to taste. If needed, add a little water. Serve at room temperature.	147	1	0
 2460	Slice each chicken breast in half horizontally, making two pieces of about the same thickness. Flatten them slightly with the heel of you hand.	131	0	0
@@ -7829,6 +8036,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4333	While the eggs are cooking, warm a medium skillet over medium-high heat. Add the oil and cook the bacon for about 2 minutes per side, or until browned on both sides.	870	5	4
 2457	Over high heat, bring a large pot of water to a boil; add pasta and cook just short of al dente, about 8 – 10 minutes. Drain pasta and set aside to keep warm. 	8	0	0
 2459	Toss in a few basil leaves, stir and begin plating. Finish with grated cheese to taste. Serve.	8	2	0
+4893	Dot the mango chutney and remaining yogurt over the breads. Halve the soft-boiled eggs and arrange on top, smashing them in with a fork, if you like.	374	3	0
 1705	Heat a wok or wide-based flameproof casserole over a fairly high heat. Heat the oil and add the cabbage. Stir-fry for 2-3 minutes, using one or two wooden spoons to seem the cabbage moving so that it cooks evenly but is still crunchy. Season with salt and pepper and serve immediately.	166	2	0
 1566	Remove the pancakes from the oven and take them out of the foil. Divide the pears among them, place them in one quarter. Fold each pancake in half over the filling, then into quarters and place two folded pancakes on each plate. Drizzle the pan juices over and serve with creme fraiche or fromage frais.	155	2	0
 3149	Bake for 30–35 minutes, until the middles are set and not jiggly.	418	4	2
@@ -8272,7 +8480,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4583	Transfer the lamb to warmed plates. Top any juices from the foil into the remaining glaze and heat through gently. Pour the glaze over the lamb and serve with peas and new potatoes, garnished with fresh rosemary sprigs.	970	3	0
 2673	Loosen the edges with a spatula, then slide it out onto a plate — I like to fold one-half back on itself to expose the underside. Scatter over the toasted sesame seeds, pick over the remaining cilantro leaves, then tuck on in.	258	2	0
 2990	Cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water. 	372	0	4
-2993	Dot the mango chutney and remaining yogurt over the breads. Halve the soft-boiled eggs and arrange on top, smashing them in with a fork, if you like. Finely slice the chili and scatter over (as much as you dare!), drizzle with a little extra virgin olive oil, and season with salt and black pepper from a height.	374	1	0
 3438	Preheat the oven to 400°F.	564	0	0
 1742	Add the teriyaki sauce and a few cups of rice into the pan and mix thoroughly until heated through. 	17	1	0
 2984	Trim, halve and deseed the red chillies (use rubber gloves to protect your hands, if you like), and peel the garlic cloves, then place in a food processor with the peppers and pulse until finely chopped.	370	0	0
@@ -8287,10 +8494,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2144	Keep the pancake warm while you cook the others and fry the bacon. Roll the pancakes around the bacon to serve.	187	3	0
 2996	Add the remaining ingredients, including salt and pepper to taste, except for the cauliflower and chives, and cook for another 5–10 minutes, until the chicken is cooked through.	375	2	4
 2994	In a medium skillet, heat the coconut oil and add the onions. Sauté for 10–12 minutes over medium-low heat, until soft and translucent.	375	0	4
-2992	Lower the eggs into a pan of vigorously simmering water and boil for 5½ minutes exactly, then refresh under cold water until cool enough to handle, and peel. Meanwhile, put a large non-stick frying pan on a medium-high heat. In a bowl, mix the flour with a little pinch of sea salt, 4 heaping tablespoons of yogurt, and 1 tablespoon of olive oil until you have a dough. Halve, then roll out each piece on a flour-dusted surface until just under ¼ inch thick. Cook for 3 minutes, or until golden, turning halfway.	374	0	0
 2930	Next toss together the remaining ingredients and place in two salad bowls.	325	1	0
 2995	Add the chicken and sauté 3–4 minutes more.	375	1	4
 3275	Rinse the rice in hot water until it blooms and the water runs clear.	484	0	0
+2992	Lower the eggs into a pan of vigorously simmering water and boil for 5½ minutes exactly, then refresh under cold water until cool enough to handle, and peel. 	374	0	4
 2988	Cook the pasta in a pan of boiling salted water according to the package instructions. Meanwhile, peel the garlic. Tear the stems out of the cavolo and discard, adding the leaves and the garlic to the pasta pan for 5 minutes.	371	0	0
 2640	Put a grill pan on high heat. Cut the two cheeks off the mango, slice each into three lengthways, then slice off the skin and discard. Dice all the flesh into ½-inch cubes. Scrunch the stone over a bowl, to extract any pulp and juice, mix with the hoisin to make a dressing, and divide between two little bowls.	270	0	12
 3185	In a large bowl, add the cabbage through onion, and set aside.	427	0	0
@@ -8298,6 +8505,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4584	Preheat the oven to 250°F. Warm four individual baking dishes.	971	0	2
 4585	Heat the oil in a large pan and fry the diced bacon and chorizo until they yield their fat. Add the onion and garlic and cook gently until softened, stirring.	971	1	4
 3019	Line a baking sheet with parchment paper.	380	0	0
+2993	Meanwhile, put a large non-stick frying pan on a medium-high heat. In a bowl, mix the flour with a little pinch of sea salt, 4 heaping tablespoons of yogurt, and 1 tablespoon of olive oil until you have a dough.	374	1	4
 3231	In a juicer, juice all ingredients. If you don't have a juicer, blend the ingredients with 1–2 cups filtered water, then push and strain through a fine mesh sieve.	467	0	1048704
 940	Heat a heavy pan and add the butter and oil, or fat. Place spoonfuls of the batter on to the hot pan and cook for 2–3 minutes until bubbles rise to the surface. Flip the pancakes over and cook for a further 2–3 minutes. Remove from the pan and serve warm with honey.	100	1	0
 3344	Mix the first 5 ingredients in a bowl to make a salsa.	530	0	0
@@ -8416,6 +8624,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3033	Wash the carrots, halve any larger ones, then place in a large cold non-stick frying pan with 1 tablespoon of olive oil and a pinch of sea salt and black pepper. Put on a medium-high heat for 15 minutes, or until golden and tender, tossing regularly. 	384	0	4
 3193	Enjoy fresh or chilled.	430	3	0
 2634	Place the eggs on your plates — I like one facing up and one facing down. From a height, drizzle over the hoisin (loosening with a splash of water first, if needed). Drain and scatter over the scallions and chilies, stab the yolks, and enjoy.	264	2	0
+4894	Finely slice the chili and scatter over, drizzle with a little extra virgin olive oil, and season with salt and black pepper from a height.	374	4	0
 4890	Mix potatoes and ham in casserole; gently press down so surface is even. Pour sauce over potato mixture. Cut remaining 1 tablespoon butter into small pieces; sprinkle over potatoes.	23	4	0
 4891	Cover and bake 30 minutes. Uncover and bake 1 hour to 1 hour 10 minutes longer or until potatoes are tender. Let stand 5–10 minutes before serving (sauce thickens as it stands).	23	5	2
 3041	Wipe out the frying pan and return to the heat. Add another 2-3 tbsp of olive oil and fry the garlic for 1 minute until golden and fragrant. Stir in the olives, cook for a further 1 minute, then stir in the tomatoes. Shred the basil leaves and stir into the olive and tomato mixture, then spoon it over the chicken and serve at once.	386	3	0
@@ -9686,7 +9895,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 19319, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 19523, true);
 
 
 --
@@ -10420,5 +10629,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ivL58KqdzJqoJERDIJ0jQl0Re1f25JlxxWyim4IlFkJ9dJaUan2lYxIOTE0qwdD
+\unrestrict wQKbY7ixZcYskJTnEmBXmZvB4Koeqlp7CPpp63tX3Q5T8b1FtKy4HEMp5wYqTY0
 
