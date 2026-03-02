@@ -43,6 +43,16 @@ public class DisplayHelper
         return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/r/{Uri.EscapeDataString(user.Email)}/{toPath.Trim('/')}?token={Uri.EscapeDataString(user.Token)}";
     }
 
+    public string NutrientLink(UserNewsletterDto? user, string key)
+    {
+        if (user == null)
+        {
+            return string.Empty;
+        }
+
+        return $"{_siteSettings.Value.WebLink.TrimEnd('/')}/nutrient/{Uri.EscapeDataString(user.Email)}/{Uri.EscapeDataString(key)}?token={Uri.EscapeDataString(user.Token)}";
+    }
+
     public string IngredientLink(UserNewsletterDto? user, string toPath)
     {
         if (user == null)

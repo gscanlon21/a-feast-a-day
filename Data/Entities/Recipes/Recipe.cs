@@ -1,5 +1,5 @@
-﻿using Core.Models.Newsletter;
-using Core.Models.User;
+﻿using Core.Models;
+using Core.Models.Newsletter;
 using Data.Entities.Newsletter;
 using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;

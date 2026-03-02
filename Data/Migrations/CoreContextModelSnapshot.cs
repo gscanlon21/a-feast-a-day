@@ -22,6 +22,72 @@ namespace Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Data.Entities.External.DietaryIntake", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CaloriesPerGram")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double?>("Max")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<double?>("Min")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("Multiplier")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Person")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Source")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateOnly>("Updated")
+                        .HasColumnType("date");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("dietary_intake");
+                });
+
+            modelBuilder.Entity("Data.Entities.External.FDA_Nutrient", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("NutrientNbr")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Rank")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("UnitName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("fda_nutrient");
+                });
+
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
                 {
                     b.Property<int>("Id")

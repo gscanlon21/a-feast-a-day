@@ -1,5 +1,4 @@
-﻿using Core.Models.User;
-using Data.Code.Extensions;
+﻿using Data.Code.Extensions;
 using Data.Entities.Users;
 
 namespace Web.Views.Shared.Components.Nutrient;
@@ -13,11 +12,11 @@ public class NutrientViewModel
 
     public required double WeeksOfData { get; init; }
 
-    public required IList<Nutrients> UsersWorkedNutrients { get; init; } = [];
+    public required IList<Core.Models.Nutrients.Nutrients> UsersWorkedNutrients { get; init; } = [];
 
-    public required IDictionary<Nutrients, double?> WeeklyVolume { get; init; }
+    public required IDictionary<Core.Models.Nutrients.Nutrients, double?> WeeklyVolume { get; init; }
 
-    public NutrientTarget AllNutrientTarget => new(Nutrients.None)
+    public NutrientTarget AllNutrientTarget => new(Core.Models.Nutrients.Nutrients.None)
     {
         Start = 0,
         End = 100,
@@ -28,7 +27,7 @@ public class NutrientViewModel
         ShowButtons = true,
     };
 
-    public NutrientTarget GetNutrientTarget(Nutrients nutrient)
+    public NutrientTarget GetNutrientTarget(Core.Models.Nutrients.Nutrients nutrient)
     {
         var defaultRange = User.UserFamilies.DefaultRange(nutrient);
         var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range ?? defaultRange;
@@ -56,12 +55,12 @@ public class NutrientViewModel
 
     public class NutrientTarget
     {
-        public NutrientTarget(Nutrients nutrientGroup)
+        public NutrientTarget(Core.Models.Nutrients.Nutrients nutrientGroup)
         {
             NutrientGroup = nutrientGroup;
         }
 
-        public Nutrients NutrientGroup { get; }
+        public Core.Models.Nutrients.Nutrients NutrientGroup { get; }
 
         public required double Start { get; init; }
         /// <summary>

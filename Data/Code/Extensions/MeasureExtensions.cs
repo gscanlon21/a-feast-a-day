@@ -1,5 +1,5 @@
 ﻿using Core.Code.Exceptions;
-using Core.Models.User;
+using Core.Models;
 using Data.Entities.Ingredients;
 
 namespace Data.Code.Extensions;

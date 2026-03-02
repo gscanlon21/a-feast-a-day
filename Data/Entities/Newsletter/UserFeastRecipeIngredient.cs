@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models;
 using Data.Interfaces.Recipe;
 using Data.Query;
 using System.ComponentModel;

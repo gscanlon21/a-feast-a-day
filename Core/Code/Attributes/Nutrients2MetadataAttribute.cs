@@ -1,6 +1,4 @@
-﻿using Core.Models.User;
-
-namespace Core.Code.Attributes;
+﻿namespace Core.Code.Attributes;
 
 [AttributeUsage(AttributeTargets.Field)]
 public class NutrientsMetadataAttribute : Attribute

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Core.Models.User;
+namespace Core.Models.Ingredients;
 
 /// <summary>
 /// Keep this in sync with ADiaryADay's Allergens enum.

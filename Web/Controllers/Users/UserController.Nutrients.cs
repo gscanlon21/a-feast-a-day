@@ -1,5 +1,4 @@
-﻿using Core.Models.User;
-using Data.Code.Extensions;
+﻿using Data.Code.Extensions;
 using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +34,7 @@ public partial class UserController
     }
 
     [HttpPost, Route("nutrient/reset")]
-    public async Task<IActionResult> ResetNutrientRanges(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
+    public async Task<IActionResult> ResetNutrientRanges(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null)
@@ -53,7 +52,7 @@ public partial class UserController
     }
 
     [HttpPost, Route("nutrient/start/decrease")]
-    public async Task<IActionResult> DecreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
+    public async Task<IActionResult> DecreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
     {
         var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
@@ -61,7 +60,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
@@ -93,7 +92,7 @@ public partial class UserController
     }
 
     [HttpPost, Route("nutrient/start/increase")]
-    public async Task<IActionResult> IncreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
+    public async Task<IActionResult> IncreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
     {
         var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
@@ -101,7 +100,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
@@ -133,7 +132,7 @@ public partial class UserController
     }
 
     [HttpPost, Route("nutrient/end/decrease")]
-    public async Task<IActionResult> DecreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
+    public async Task<IActionResult> DecreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
     {
         var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
@@ -141,7 +140,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
@@ -173,7 +172,7 @@ public partial class UserController
     }
 
     [HttpPost, Route("nutrient/end/increase")]
-    public async Task<IActionResult> IncreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Nutrients nutrients)
+    public async Task<IActionResult> IncreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
     {
         var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
@@ -181,7 +180,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All2.Where(mg => nutrients.HasFlag(mg)))
+        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
         {
             var defaultRange = user.UserFamilies.DefaultRange(nutrient);
             var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);

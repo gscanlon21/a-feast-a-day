@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models;
 using Data.Entities.Ingredients;
 using Data.Entities.Users;
 using Fractions;

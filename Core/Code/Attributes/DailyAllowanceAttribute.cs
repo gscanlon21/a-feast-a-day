@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Nutrients;
 
 namespace Core.Code.Attributes;
 

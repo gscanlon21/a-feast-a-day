@@ -1,6 +1,5 @@
 ﻿using Core.Code.Extensions;
 using Core.Models.Newsletter;
-using Core.Models.User;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 

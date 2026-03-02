@@ -1,5 +1,4 @@
-﻿using Core.Models.User;
-using Data.Repos;
+﻿using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.CodeAnalysis;
 using Web.Views.Shared.Components.Nutrient;
@@ -47,7 +46,7 @@ public class NutrientViewComponent : ViewComponent
             WeeksOfData = weeksOfData,
             WeeklyVolume = weeklyNutrients,
             // Removing calories since that should be changed from a user family.
-            UsersWorkedNutrients = NutrientHelpers.All2.Where(n => n != Nutrients.Energy_KCalorie).ToList(),
+            UsersWorkedNutrients = NutrientHelpers.All.Where(n => n != Nutrients.Energy_KCalorie).ToList(),
         });
     }
 }

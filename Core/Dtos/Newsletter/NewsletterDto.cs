@@ -14,6 +14,7 @@ public class NewsletterDto
 
     public List<NewsletterRecipeDto> Recipes { get; set; } = [];
     public List<IngredientDto> DebugIngredients { get; set; } = [];
+    public List<DietaryIntakeDto> DebugDietaryIntakes { get; set; } = [];
 
     /// <summary>
     /// How much detail to show in the newsletter.

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Core.Models.User;
+namespace Core.Models.Nutrients;
 
 public enum Multiplier
 {

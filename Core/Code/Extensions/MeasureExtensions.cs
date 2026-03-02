@@ -1,5 +1,4 @@
 ﻿using Core.Code.Exceptions;
-using Core.Models.User;
 
 namespace Core.Code.Extensions;
 

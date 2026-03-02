@@ -1,6 +1,8 @@
 ﻿using Data.Entities.Ingredients;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Repos;
 
@@ -39,5 +41,20 @@ public class NutrientRepo
         }
 
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<ILookup<string, DailyAllowance>> GetDietaryIntakeMap()
+    {
+        return (await _context.DietaryIntakes.AsNoTracking().ToListAsync())
+            .OrderBy(di => di.Person.GetOrder(), NullOrder.NullsLast)
+            .ToLookup(l => l.Key, l => new DailyAllowance(
+                l.Min ?? -1,
+                l.Max ?? -1,
+                l.Measure.ToString(),
+                l.Multiplier.ToString(),
+                l.CaloriesPerGram,
+                l.Person.ToString()
+            )
+        );
     }
 }

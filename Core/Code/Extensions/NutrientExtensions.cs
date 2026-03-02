@@ -1,5 +1,5 @@
 ﻿using Core.Code.Attributes;
-using Core.Models.User;
+using Core.Models.Nutrients;
 using System.Reflection;
 
 namespace Core.Code.Extensions;
@@ -20,6 +20,8 @@ public static class NutrientExtensions
             }
         }
 
+        return new DailyAllowanceAttribute(0, 10, Measure.Grams, Multiplier.None);
+        // FIXME
         throw new NotImplementedException();
     }
 

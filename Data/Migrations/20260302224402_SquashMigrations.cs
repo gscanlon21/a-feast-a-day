@@ -12,6 +12,42 @@ namespace Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "dietary_intake",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Key = table.Column<string>(type: "text", nullable: false),
+                    Min = table.Column<double>(type: "double precision", nullable: true),
+                    Max = table.Column<double>(type: "double precision", nullable: true),
+                    Person = table.Column<int>(type: "integer", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    Multiplier = table.Column<int>(type: "integer", nullable: false),
+                    CaloriesPerGram = table.Column<int>(type: "integer", nullable: false),
+                    Updated = table.Column<DateOnly>(type: "date", nullable: false),
+                    Source = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_dietary_intake", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "fda_nutrient",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    UnitName = table.Column<string>(type: "text", nullable: false),
+                    NutrientNbr = table.Column<double>(type: "double precision", nullable: false),
+                    Rank = table.Column<double>(type: "double precision", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_fda_nutrient", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "gene",
                 columns: table => new
                 {
@@ -820,6 +856,12 @@ namespace Data.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "dietary_intake");
+
+            migrationBuilder.DropTable(
+                name: "fda_nutrient");
+
             migrationBuilder.DropTable(
                 name: "ingredient_alternative");
 

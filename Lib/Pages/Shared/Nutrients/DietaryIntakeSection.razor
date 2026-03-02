@@ -1,0 +1,52 @@
+@inject DisplayHelper DH
+@using Core.Models.Recipe
+@using Core.Models.Newsletter;
+@using Core.Models.User;
+@using Core.Dtos.User;
+@using Core.Dtos.Ingredient;
+
+@if (DietaryIntakes?.Any() == true)
+{
+   if (Title == null)
+   {
+        <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+            @foreach (var ingredient in DietaryIntakes.OrderBy(e => e.Key))
+            {    
+                <CascadingValue Value="User">
+                    <_DietaryIntake Model="ingredient" />
+                </CascadingValue>
+            }
+        </div>
+    }
+    else
+    {
+        <h2 style="margin-bottom:0;margin-top:1em;font-size:revert;">@Title.Header</h2>
+        @if (Title.Description.HasValue)
+        {
+            <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
+        }
+        <div style="margin-top:.2rem;display:flex;flex-flow:row wrap;gap:1ch;line-height:normal;">
+            @foreach (var item in DietaryIntakes)
+            {
+                <CascadingValue Value="User">
+                    <_DietaryIntake Model="item" />
+                </CascadingValue>
+            }
+        </div>
+        @if (Title.Footer.HasValue)
+        {
+            <h6 style="margin-bottom:0;margin-top:.25em;font-weight:normal;font-size:revert;">@Title.Footer.Value</h6>
+        }
+    }
+}
+
+@code {
+    [Parameter]
+    public Titles? Title { get; init; }
+
+    [Parameter, EditorRequired]
+    public UserNewsletterDto? User { get; init; }
+
+    [Parameter, EditorRequired]
+    public IList<DietaryIntakeDto>? DietaryIntakes { get; init; }
+}

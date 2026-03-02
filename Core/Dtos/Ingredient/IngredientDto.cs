@@ -1,6 +1,5 @@
 ﻿using Core.Dtos.User;
 using Core.Models.Ingredients;
-using Core.Models.User;
 using System.Diagnostics;
 
 namespace Core.Dtos.Ingredient;

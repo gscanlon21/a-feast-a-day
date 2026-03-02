@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
 
 namespace Web.Views.Shared.Components.UpsertIngredient;
 

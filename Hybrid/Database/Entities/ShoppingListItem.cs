@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using Core.Dtos.ShoppingList;
-using Core.Models.User;
 using SQLite;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;

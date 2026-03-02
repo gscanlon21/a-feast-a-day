@@ -1,5 +1,6 @@
 ﻿using Core.Code.Attributes;
-using Core.Models.User;
+using Core.Models;
+using Core.Models.Nutrients;
 using Data.Entities.Users;
 
 namespace Data.Code.Extensions;

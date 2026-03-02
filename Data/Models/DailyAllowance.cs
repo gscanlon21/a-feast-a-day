@@ -1,6 +1,6 @@
-﻿namespace Terminal.Models;
+﻿namespace Data.Models;
 
-internal record DailyAllowance(
+public record DailyAllowance(
     double Min,
     double Max,
     string Measure,

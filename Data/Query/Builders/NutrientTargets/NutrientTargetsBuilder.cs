@@ -1,5 +1,5 @@
 ﻿using Core.Models.Newsletter;
-using Core.Models.User;
+using Core.Models.Nutrients;
 using Data.Query.Options;
 
 namespace Data.Query.Builders.NutrientTargets;

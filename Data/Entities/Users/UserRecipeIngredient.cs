@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models;
 using Data.Entities.Recipes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

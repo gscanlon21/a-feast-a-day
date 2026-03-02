@@ -1,0 +1,50 @@
+@page "/nutrients/dietaryintakes"
+@inject DisplayHelper DH
+@inject IOptions<SiteSettings> SiteSettings
+@using Core.Consts;
+@using Core.Models.Options
+@using Microsoft.Extensions.Options
+@using Core.Models.Recipe
+@using Core.Models.User
+@using Core.Models.Newsletter
+@using Core.Dtos.Ingredient
+
+@* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
+<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;
+            border-bottom:4px solid currentColor;border-image-slice:1;outline:1px solid currentColor;background-color:transparent;">
+
+    <div> @* For margin collapse. *@
+        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:.8ch;">
+            <span style="flex:1 1 auto;">
+                @if (!string.IsNullOrWhiteSpace(Model.Source) && Uri.IsWellFormedUriString(Model.Source, UriKind.Absolute))
+                {
+                    <a class="allow-demo" href="@Model.Source" target="_blank" rel="noreferrer">@Model.Key</a>
+                }
+                else
+                {
+                    <span style="text-decoration:underline;">@Model.Key</span>
+                }
+            </span>
+
+            @if (User != null)
+            {
+                <a class="allow-demo" style="text-decoration:none;margin:-10px -10px 0 0;padding:10px 8px 0 0;" target="_blank" href="@DH.NutrientLink(User, Model.Key)">&#127760;</a>
+            }
+        </h3>
+
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Min</b>: @Model.Min</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Max</b>: @Model.Max</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Person</b>: @Model.Person</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Measure</b>: @Model.Measure</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Multiplier</b>: @Model.Multiplier</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>CaloriesPerGram</b>: @Model.CaloriesPerGram</div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public Core.Dtos.User.UserNewsletterDto? User { get; set; }
+
+    [Parameter, EditorRequired]
+    public DietaryIntakeDto Model { get; set; } = null!;
+}

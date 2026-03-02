@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 

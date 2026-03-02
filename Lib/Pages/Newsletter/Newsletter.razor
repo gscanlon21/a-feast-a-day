@@ -50,7 +50,8 @@ else
             <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.Recipes.Where(r => r.Section == section).ToList()" Theme="section.AsTheme()" Title="@(new RecipeSection.Titles(section.GetSingleDisplayName()))" />
         }
 
-        <Lib.Pages.Shared.Ingredient.IngredientSection User="Model.User" Ingredients="Model.DebugIngredients" Title="@(new IngredientSection.Titles("Ingredients"))" />
+        <Lib.Pages.Shared.Ingredient.IngredientSection User="Model.User" Ingredients="Model.DebugIngredients" Title="@(new Titles("Ingredients"))" />
+        <Lib.Pages.Shared.Nutrients.DietaryIntakeSection User="Model.User" DietaryIntakes="Model.DebugDietaryIntakes" Title="@(new Titles("Dietary Intakes"))" />
     </div>
 
     <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" HideFooter="Model.HideFooter" />

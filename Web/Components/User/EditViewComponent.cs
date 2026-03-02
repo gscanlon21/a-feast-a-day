@@ -1,4 +1,5 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Ingredients;
+using Core.Models.User;
 using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;

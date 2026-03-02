@@ -1,5 +1,5 @@
 ﻿using Core.Code.Attributes;
-using Core.Models.User;
+using Core.Models.Nutrients;
 using System.Reflection;
 
 namespace Core.Code.Extensions;
