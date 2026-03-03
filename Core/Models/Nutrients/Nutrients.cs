@@ -653,8 +653,10 @@ public enum Nutrients
     /// Iron, Fe
     /// </summary>
     [DailyAllowance(0.27, 40, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Infant)]
-    [DailyAllowance(8, 45, Measure.None, Multiplier.None, CaloriesPerGram = 0, For = Person.Man)]
-    [DailyAllowance(18, 45, Measure.None, Multiplier.None, CaloriesPerGram = 0, For = Person.Woman)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungWoman)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Man)]
+    [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Woman)]
     [NutrientsMetadata(Measure.Milligrams, 303, 5400)]
     [Display(Name = "Iron, Fe")]
     Iron_Fe_Milligrams = 1089,

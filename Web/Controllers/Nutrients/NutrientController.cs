@@ -94,6 +94,7 @@ public class NutrientController : ViewController
                 existingEntity.Source = dietaryIntake.Source ?? "";
                 existingEntity.Multiplier = dietaryIntake.Multiplier;
                 existingEntity.CaloriesPerGram = dietaryIntake.CaloriesPerGram;
+                existingEntity.Updated = DateHelpers.Today;
             }
             else
             {

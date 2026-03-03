@@ -38,8 +38,11 @@ public class DietaryIntake
     [Display(Name = "Calories Per Gram", Description = "Calories Per Gram")]
     public int CaloriesPerGram { get; set; }
 
+    [Display(Name = "Checked", Description = "Checked")]
+    public DateOnly Checked { get; set; } = DateHelpers.Today;
+
     [Display(Name = "Updated", Description = "Updated")]
-    public DateOnly Updated { get; set; }
+    public DateOnly Updated { get; set; } = DateHelpers.Today;
 
     [Display(Name = "Source", Description = "Source")]
     public string Source { get; set; } = null!;

@@ -20,7 +20,5 @@ public class DietaryIntakeDto
 
     public int CaloriesPerGram { get; init; }
 
-    public DateOnly Updated { get; init; }
-
     public string Source { get; init; } = null!;
 }

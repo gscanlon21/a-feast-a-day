@@ -137,14 +137,14 @@ public partial class NewsletterRepo
 
         // Allow tracking to update last updated date.
         var debugDietaryIntakes = await scopedCoreContext.DietaryIntakes
-            .OrderByDescending(i => i.Updated == DateHelpers.Today)
-            .ThenBy(di => di.Updated).GroupBy(di => di.Key)
+            .OrderByDescending(i => i.Checked == DateHelpers.Today)
+            .ThenBy(di => di.Checked).GroupBy(di => di.Key)
             .Select(g => g.ToList())
             .FirstAsync();
 
         foreach (var debugDietaryIntake in debugDietaryIntakes)
         {
-            debugDietaryIntake.Updated = DateHelpers.Today;
+            debugDietaryIntake.Checked = DateHelpers.Today;
         }
 
         await scopedCoreContext.SaveChangesAsync();
