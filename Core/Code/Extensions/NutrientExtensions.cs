@@ -6,7 +6,10 @@ namespace Core.Code.Extensions;
 
 public static class NutrientExtensions
 {
-    public static DailyAllowanceAttribute DailyAllowance(this Nutrients nutrients, Person person)
+    /// <summary>
+    /// Returns null for nutrient if there's no reference data.
+    /// </summary>
+    public static DailyAllowanceAttribute? DailyAllowance(this Nutrients nutrients, Person person)
     {
         var memberInfo = nutrients.GetType().GetMember(nutrients.ToString());
         if (memberInfo != null && memberInfo.Length > 0)
@@ -14,15 +17,13 @@ public static class NutrientExtensions
             var attributes = memberInfo[0].GetCustomAttributes<DailyAllowanceAttribute>(true).ToArray();
             if (attributes != null && attributes.Length > 0)
             {
-                return attributes.FirstOrDefault(a => a.For == person)
-                    ?? attributes.FirstOrDefault(a => a.For.HasFlag(person))
-                    ?? attributes[0];
+                // Don't restrict this nutrient if there's no reference data.
+                return attributes.FirstOrDefault(a => a.For == person) ?? attributes.FirstOrDefault(a => a.For.HasFlag(person));
             }
         }
 
-        return new DailyAllowanceAttribute(0, 10, Measure.Grams, Multiplier.None);
-        // FIXME
-        throw new NotImplementedException();
+        // Don't restrict this nutrient if there's no reference data.
+        return null;
     }
 
     public static string DailyAllowanceDisplayName(this Nutrients nutrients)

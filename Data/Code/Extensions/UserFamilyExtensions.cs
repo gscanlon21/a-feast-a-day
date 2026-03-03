@@ -9,8 +9,8 @@ public static class UserFamilyExtensions
 {
     public static Range DefaultRange(this ICollection<UserFamily> userFamilies, Nutrients nutrient)
     {
-        var sumRDA = userFamilies.Average(f => nutrient.DailyAllowance(f.Person).RDA);
-        var sumTUL = userFamilies.Average(f => nutrient.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
+        var sumRDA = userFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.RDA);
+        var sumTUL = userFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? sumRDA * 2;
         var tulDefault = Math.Min(UserConsts.NutrientTargetTULDefault, (sumTUL.HasValue && sumRDA.HasValue)
             ? (int)Math.Ceiling(sumTUL.Value / sumRDA.Value * 100)
             : UserConsts.NutrientTargetTULDefault);

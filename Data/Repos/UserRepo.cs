@@ -247,7 +247,7 @@ public class UserRepo
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         var familyNutrientServings = NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            var gramsOfRDATUL = familyPeople.Sum(fp => n.DailyAllowance(fp.Key).GramsOfRDATUL(fp.Value, tul: tul));
+            var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: tul));
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
             return rawValues ? (weeklyGramsOfRDATUL + (weeklyGramsOfRDATUL / weeks)) : weeklyGramsOfRDATUL;
         });

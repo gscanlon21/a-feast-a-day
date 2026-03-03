@@ -12,11 +12,11 @@ public class NutrientViewModel
 
     public required double WeeksOfData { get; init; }
 
-    public required IList<Core.Models.Nutrients.Nutrients> UsersWorkedNutrients { get; init; } = [];
+    public required IList<Nutrients> UsersWorkedNutrients { get; init; } = [];
 
-    public required IDictionary<Core.Models.Nutrients.Nutrients, double?> WeeklyVolume { get; init; }
+    public required IDictionary<Nutrients, double?> WeeklyVolume { get; init; }
 
-    public NutrientTarget AllNutrientTarget => new(Core.Models.Nutrients.Nutrients.None)
+    public NutrientTarget AllNutrientTarget => new(Nutrients.None)
     {
         Start = 0,
         End = 100,
@@ -27,13 +27,13 @@ public class NutrientViewModel
         ShowButtons = true,
     };
 
-    public NutrientTarget GetNutrientTarget(Core.Models.Nutrients.Nutrients nutrient)
+    public NutrientTarget GetNutrientTarget(Nutrients nutrient)
     {
         var defaultRange = User.UserFamilies.DefaultRange(nutrient);
         var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range ?? defaultRange;
 
-        var sumRDA = User.UserFamilies.Average(f => nutrient.DailyAllowance(f.Person).RDA);
-        var sumTUL = User.UserFamilies.Average(f => nutrient.DailyAllowance(f.Person).TUL) ?? sumRDA * 2;
+        var sumRDA = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.RDA);
+        var sumTUL = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? sumRDA * 2;
         var start = sumRDA / sumTUL * userNutrientTarget.Start.Value ?? 0;
 
         // Show default nutrient targets when backfilling data.
@@ -55,14 +55,15 @@ public class NutrientViewModel
 
     public class NutrientTarget
     {
-        public NutrientTarget(Core.Models.Nutrients.Nutrients nutrientGroup)
+        public NutrientTarget(Nutrients nutrientGroup)
         {
             NutrientGroup = nutrientGroup;
         }
 
-        public Core.Models.Nutrients.Nutrients NutrientGroup { get; }
+        public Nutrients NutrientGroup { get; }
 
         public required double Start { get; init; }
+
         /// <summary>
         /// The RDA as a percent of the TUL.
         /// </summary>
