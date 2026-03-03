@@ -44,7 +44,7 @@ public class NutrientController : ViewController
             .ToListAsync();
 
         List<DietaryIntakeViewModel> dietaryIntakes = [];
-        foreach (var person in EnumExtensions.GetNotNoneValues<Person>())
+        foreach (var person in EnumExtensions.GetValuesExcluding(Person.None, Person.All))
         {
             var existing = dietaryIntakesExisting.FirstOrDefault(di => di.Person == person);
             if (existing != null)
@@ -81,7 +81,7 @@ public class NutrientController : ViewController
         }
 
         //await _context.DietaryIntakes.Where(r => r.Key == nutrient).ExecuteDeleteAsync();
-        foreach (var dietaryIntake in dietaryIntakes.Where(di => di.Min.HasValue && di.Max.HasValue))
+        foreach (var dietaryIntake in dietaryIntakes.Where(di => di.Min.HasValue || di.Max.HasValue))
         {
             var existingEntity = await _context.DietaryIntakes.FirstOrDefaultAsync(r => r.Id == dietaryIntake.Id);
             if (existingEntity != null)
