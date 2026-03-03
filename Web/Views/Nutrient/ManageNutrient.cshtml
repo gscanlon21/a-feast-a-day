@@ -38,8 +38,9 @@
                 {
                     <tr>
                         <td>
+                            @* NOTE: Disabled inputs don't send up form values. *@
                             <input asp-for="DietaryIntakes[@i].Id" type="hidden" />
-                            <input asp-for="DietaryIntakes[@i].Key" class="form-control form-control-sm" disabled="disabled" />
+                            <input asp-for="DietaryIntakes[@i].Key" class="form-control form-control-sm" />
                             <span asp-validation-for="DietaryIntakes[@i].Key" class="text-danger"></span>
                         </td>
 
@@ -73,6 +74,7 @@
                         </td>
 
                         <td>
+                            <input asp-for="DietaryIntakes[@i].Person" type="hidden" />
                             <select asp-for="DietaryIntakes[@i].Person" class="form-select form-select-sm" disabled="disabled"
                                     asp-items="@(Enum.GetValues<Person>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
                             </select>
