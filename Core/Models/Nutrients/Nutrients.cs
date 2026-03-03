@@ -38,7 +38,7 @@ public enum Nutrients
     /// <summary>
     /// Protein
     /// </summary>
-    [DailyAllowance(10, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(10, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 203, 600)]
     [Display(Name = "Protein")]
     Protein_Grams = 1003,
@@ -46,7 +46,7 @@ public enum Nutrients
     /// <summary>
     /// Total lipid (fat)
     /// </summary>
-    [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Adult)]
+    [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 204, 800)]
     [Display(Name = "Total lipid (fat)")]
     Total_lipid_fat_Grams = 1004,
@@ -75,7 +75,7 @@ public enum Nutrients
     /// <summary>
     /// Energy
     /// </summary>
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.KCalorie, 208, 300)]
     [Display(Name = "Energy")]
     Energy_KCalorie = 1008,
@@ -83,7 +83,7 @@ public enum Nutrients
     /// <summary>
     /// Starch
     /// </summary>
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 209, 2200)]
     [Display(Name = "Starch")]
     Starch_Grams = 1009,
@@ -462,7 +462,7 @@ public enum Nutrients
     /// <summary>
     /// Sugars, Total
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 269.3, 1500)]
     [Display(Name = "Sugars, Total")]
     Sugars_Total_Grams = 1063,
@@ -505,7 +505,7 @@ public enum Nutrients
     /// <summary>
     /// Oligosaccharides
     /// </summary>
-    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 281, 999999)]
     [Display(Name = "Oligosaccharides")]
     Oligosaccharides_Grams = 1069,
@@ -520,7 +520,7 @@ public enum Nutrients
     /// <summary>
     /// Resistant starch
     /// </summary>
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 283, 2225)]
     [Display(Name = "Resistant starch")]
     Resistant_starch_Grams = 1071,
@@ -577,7 +577,7 @@ public enum Nutrients
     /// <summary>
     /// Fiber, total dietary
     /// </summary>
-    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 291, 1200)]
     [Display(Name = "Fiber, total dietary")]
     Fiber_total_dietary_Grams = 1079,
@@ -599,7 +599,7 @@ public enum Nutrients
     /// <summary>
     /// Fiber, soluble
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 295, 1240)]
     [Display(Name = "Fiber, soluble")]
     Fiber_soluble_Grams = 1082,
@@ -614,7 +614,7 @@ public enum Nutrients
     /// <summary>
     /// Fiber, insoluble
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 297, 1260)]
     [Display(Name = "Fiber, insoluble")]
     Fiber_insoluble_Grams = 1084,
@@ -636,7 +636,7 @@ public enum Nutrients
     /// <summary>
     /// Calcium, Ca
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 301, 5300)]
     [Display(Name = "Calcium, Ca")]
     Calcium_Ca_Milligrams = 1087,
@@ -644,7 +644,7 @@ public enum Nutrients
     /// <summary>
     /// Chlorine, Cl
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 302, 999999)]
     [Display(Name = "Chlorine, Cl")]
     Chlorine_Cl_Milligrams = 1088,
@@ -652,7 +652,9 @@ public enum Nutrients
     /// <summary>
     /// Iron, Fe
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.27, 40, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Infant)]
+    [DailyAllowance(8, 45, Measure.None, Multiplier.None, CaloriesPerGram = 0, For = Person.Man)]
+    [DailyAllowance(18, 45, Measure.None, Multiplier.None, CaloriesPerGram = 0, For = Person.Woman)]
     [NutrientsMetadata(Measure.Milligrams, 303, 5400)]
     [Display(Name = "Iron, Fe")]
     Iron_Fe_Milligrams = 1089,
@@ -660,7 +662,8 @@ public enum Nutrients
     /// <summary>
     /// Magnesium, Mg
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(350, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(400, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungWoman)]
     [NutrientsMetadata(Measure.Milligrams, 304, 5500)]
     [Display(Name = "Magnesium, Mg")]
     Magnesium_Mg_Milligrams = 1090,
@@ -668,7 +671,7 @@ public enum Nutrients
     /// <summary>
     /// Phosphorus, P
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 305, 5600)]
     [Display(Name = "Phosphorus, P")]
     Phosphorus_P_Milligrams = 1091,
@@ -676,7 +679,7 @@ public enum Nutrients
     /// <summary>
     /// Potassium, K
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 306, 5700)]
     [Display(Name = "Potassium, K")]
     Potassium_K_Milligrams = 1092,
@@ -684,7 +687,7 @@ public enum Nutrients
     /// <summary>
     /// Sodium, Na
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 307, 5800)]
     [Display(Name = "Sodium, Na")]
     Sodium_Na_Milligrams = 1093,
@@ -692,7 +695,7 @@ public enum Nutrients
     /// <summary>
     /// Sulfur, S
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 308, 6241)]
     [Display(Name = "Sulfur, S")]
     Sulfur_S_Milligrams = 1094,
@@ -700,7 +703,7 @@ public enum Nutrients
     /// <summary>
     /// Zinc, Zn
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 309, 5900)]
     [Display(Name = "Zinc, Zn")]
     Zinc_Zn_Milligrams = 1095,
@@ -708,7 +711,7 @@ public enum Nutrients
     /// <summary>
     /// Chromium, Cr
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 310, 999999)]
     [Display(Name = "Chromium, Cr")]
     Chromium_Cr_Micrograms = 1096,
@@ -723,11 +726,7 @@ public enum Nutrients
     /// <summary>
     /// Copper, Cu
     /// </summary>
-    [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
-    [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Man)]
-    [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Woman)]
-    [DailyAllowance(1000, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.PregnantWoman)]
-    [DailyAllowance(1300, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.BreastfeedingWoman)]
+    [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 312, 6000)]
     [Display(Name = "Copper, Cu")]
     Copper_Cu_Milligrams = 1098,
@@ -735,7 +734,7 @@ public enum Nutrients
     /// <summary>
     /// Fluoride, F
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 313, 6240)]
     [Display(Name = "Fluoride, F")]
     Fluoride_F_Micrograms = 1099,
@@ -743,7 +742,7 @@ public enum Nutrients
     /// <summary>
     /// Iodine, I
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 314, 6150)]
     [Display(Name = "Iodine, I")]
     Iodine_I_Micrograms = 1100,
@@ -751,7 +750,7 @@ public enum Nutrients
     /// <summary>
     /// Manganese, Mn
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 315, 6100)]
     [Display(Name = "Manganese, Mn")]
     Manganese_Mn_Milligrams = 1101,
@@ -759,7 +758,7 @@ public enum Nutrients
     /// <summary>
     /// Molybdenum, Mo
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 316, 6243)]
     [Display(Name = "Molybdenum, Mo")]
     Molybdenum_Mo_Micrograms = 1102,
@@ -767,7 +766,7 @@ public enum Nutrients
     /// <summary>
     /// Selenium, Se
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 317, 6200)]
     [Display(Name = "Selenium, Se")]
     Selenium_Se_Micrograms = 1103,
@@ -782,8 +781,8 @@ public enum Nutrients
     /// <summary>
     /// Retinol
     /// </summary>
-    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Man)]
-    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Woman)]
+    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungWoman)]
     [NutrientsMetadata(Measure.Micrograms, 319, 7430)]
     [Display(Name = "Retinol")]
     Retinol_Micrograms = 1105,
@@ -847,7 +846,7 @@ public enum Nutrients
     /// <summary>
     /// Vitamin D (D2 + D3)
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 328, 8700)]
     [Display(Name = "Vitamin D (D2 + D3)")]
     Vitamin_D_D2__D3_Micrograms = 1114,
@@ -1009,7 +1008,7 @@ public enum Nutrients
     /// <summary>
     /// Boron, B
     /// </summary>
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 354, 6245)]
     [Display(Name = "Boron, B")]
     Boron_B_Micrograms = 1137,
@@ -1059,7 +1058,7 @@ public enum Nutrients
     /// <summary>
     /// Lithium, Li
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 368, 999999)]
     [Display(Name = "Lithium, Li")]
     Lithium_Li_Micrograms = 1144,
@@ -1137,7 +1136,7 @@ public enum Nutrients
     /// <summary>
     /// Vanadium, V
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 389, 999999)]
     [Display(Name = "Vanadium, V")]
     Vanadium_V_Micrograms = 1155,
@@ -1152,7 +1151,7 @@ public enum Nutrients
     /// <summary>
     /// Carotene
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.MCG_RE, 393, 7600)]
     [Display(Name = "Carotene")]
     Carotene_MCG_RE = 1157,
@@ -1160,7 +1159,7 @@ public enum Nutrients
     /// <summary>
     /// Vitamin E
     /// </summary>
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.MG_ATE, 394, 7800)]
     [Display(Name = "Vitamin E")]
     Vitamin_E_MG_ATE = 1158,
@@ -1189,7 +1188,8 @@ public enum Nutrients
     /// <summary>
     /// Vitamin C, total ascorbic acid
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungWoman)]
     [NutrientsMetadata(Measure.Milligrams, 401, 6300)]
     [Display(Name = "Vitamin C, total ascorbic acid")]
     Vitamin_C_total_ascorbic_acid_Milligrams = 1162,
@@ -1211,7 +1211,9 @@ public enum Nutrients
     /// <summary>
     /// Thiamin
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungWoman)]
     [NutrientsMetadata(Measure.Milligrams, 404, 6400)]
     [Display(Name = "Thiamin")]
     Thiamin_Milligrams = 1165,
@@ -1219,7 +1221,7 @@ public enum Nutrients
     /// <summary>
     /// Riboflavin
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 405, 6500)]
     [Display(Name = "Riboflavin")]
     Riboflavin_Milligrams = 1166,
@@ -1227,7 +1229,7 @@ public enum Nutrients
     /// <summary>
     /// Niacin
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 406, 6600)]
     [Display(Name = "Niacin")]
     Niacin_Milligrams = 1167,
@@ -1249,7 +1251,7 @@ public enum Nutrients
     /// <summary>
     /// Pantothenic acid
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 410, 6700)]
     [Display(Name = "Pantothenic acid")]
     Pantothenic_acid_Milligrams = 1170,
@@ -1285,7 +1287,7 @@ public enum Nutrients
     /// <summary>
     /// Vitamin B-6
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 415, 6800)]
     [Display(Name = "Vitamin B-6")]
     Vitamin_B_6_Milligrams = 1175,
@@ -1293,7 +1295,7 @@ public enum Nutrients
     /// <summary>
     /// Biotin
     /// </summary>
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Man)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 416, 6850)]
     [Display(Name = "Biotin")]
     Biotin_Micrograms = 1176,
@@ -1301,7 +1303,7 @@ public enum Nutrients
     /// <summary>
     /// Folate, total
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 417, 6900)]
     [Display(Name = "Folate, total")]
     Folate_total_Micrograms = 1177,
@@ -1309,7 +1311,7 @@ public enum Nutrients
     /// <summary>
     /// Vitamin B-12
     /// </summary>
-    [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 418, 7300)]
     [Display(Name = "Vitamin B-12")]
     Vitamin_B_12_Micrograms = 1178,
@@ -1324,7 +1326,7 @@ public enum Nutrients
     /// <summary>
     /// Choline, total
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 421, 7220)]
     [Display(Name = "Choline, total")]
     Choline_total_Milligrams = 1180,
@@ -1360,7 +1362,7 @@ public enum Nutrients
     /// <summary>
     /// Vitamin K (phylloquinone)
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Micrograms, 430, 8800)]
     [Display(Name = "Vitamin K (phylloquinone)")]
     Vitamin_K_phylloquinone_Micrograms = 1185,
@@ -1452,7 +1454,7 @@ public enum Nutrients
     /// <summary>
     /// Betaine
     /// </summary>
-    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 454, 7290)]
     [Display(Name = "Betaine")]
     Betaine_Milligrams = 1198,
@@ -1530,7 +1532,7 @@ public enum Nutrients
     /// <summary>
     /// Polyphenols, total
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 470, 999999)]
     [Display(Name = "Polyphenols, total")]
     Polyphenols_total_Milligrams = 1209,
@@ -1538,7 +1540,7 @@ public enum Nutrients
     /// <summary>
     /// Tryptophan
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 501, 16300)]
     [Display(Name = "Tryptophan")]
     Tryptophan_Grams = 1210,
@@ -1546,7 +1548,7 @@ public enum Nutrients
     /// <summary>
     /// Threonine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 502, 16400)]
     [Display(Name = "Threonine")]
     Threonine_Grams = 1211,
@@ -1554,7 +1556,7 @@ public enum Nutrients
     /// <summary>
     /// Isoleucine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 503, 16500)]
     [Display(Name = "Isoleucine")]
     Isoleucine_Grams = 1212,
@@ -1562,7 +1564,7 @@ public enum Nutrients
     /// <summary>
     /// Leucine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 504, 16600)]
     [Display(Name = "Leucine")]
     Leucine_Grams = 1213,
@@ -1570,7 +1572,7 @@ public enum Nutrients
     /// <summary>
     /// Lysine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 505, 16700)]
     [Display(Name = "Lysine")]
     Lysine_Grams = 1214,
@@ -1578,7 +1580,7 @@ public enum Nutrients
     /// <summary>
     /// Methionine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 506, 16800)]
     [Display(Name = "Methionine")]
     Methionine_Grams = 1215,
@@ -1593,7 +1595,7 @@ public enum Nutrients
     /// <summary>
     /// Phenylalanine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 508, 17000)]
     [Display(Name = "Phenylalanine")]
     Phenylalanine_Grams = 1217,
@@ -1608,7 +1610,7 @@ public enum Nutrients
     /// <summary>
     /// Valine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 510, 17200)]
     [Display(Name = "Valine")]
     Valine_Grams = 1219,
@@ -1616,7 +1618,7 @@ public enum Nutrients
     /// <summary>
     /// Arginine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 511, 17300)]
     [Display(Name = "Arginine")]
     Arginine_Grams = 1220,
@@ -1624,7 +1626,7 @@ public enum Nutrients
     /// <summary>
     /// Histidine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 512, 17400)]
     [Display(Name = "Histidine")]
     Histidine_Grams = 1221,
@@ -1653,7 +1655,7 @@ public enum Nutrients
     /// <summary>
     /// Glycine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 516, 17800)]
     [Display(Name = "Glycine")]
     Glycine_Grams = 1225,
@@ -1850,7 +1852,7 @@ public enum Nutrients
     /// <summary>
     /// Cholesterol
     /// </summary>
-    [DailyAllowance(-1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(-1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 601, 15700)]
     [Display(Name = "Cholesterol")]
     Cholesterol_Milligrams = 1253,
@@ -1879,7 +1881,7 @@ public enum Nutrients
     /// <summary>
     /// Fatty acids, total trans
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 605, 15400)]
     [Display(Name = "Fatty acids, total trans")]
     Fatty_acids_total_trans_Grams = 1257,
@@ -1887,6 +1889,18 @@ public enum Nutrients
     /// <summary>
     /// Fatty acids, total saturated
     /// </summary>
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Infant)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.InfantBoy)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.InfantGirl)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Baby)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.BabyBoy)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.BabyGirl)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Toddler_1_2)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ToddlerBoy_1_2)]
+    [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ToddlerGirl_1_2)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Toddler_2_3)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ToddlerBoy_2_3)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ToddlerGirl_2_3)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Child)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ChildBoy)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ChildGirl)]
@@ -1899,12 +1913,21 @@ public enum Nutrients
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.PregnantTeenGirl)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.BreastfeedingTeenGirl)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.PregnantOrBreastfeedingTeenGirl)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.YoungAdult)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.YoungMan)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.YoungWoman)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.PregnantYoungWoman)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.BreastfeedingYoungWoman)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.PregnantOrBreastfeedingYoungWoman)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Adult)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Man)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Woman)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.PregnantWoman)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.BreastfeedingWoman)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.PregnantOrBreastfeedingWoman)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.MiddleAge)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.MiddleAgeWoman)]
+    [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.MiddleAgeMan)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Elderly)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ElderlyWoman)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.ElderlyMan)]
@@ -2139,7 +2162,7 @@ public enum Nutrients
     /// <summary>
     /// Fatty acids, total monounsaturated
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 645, 11400)]
     [Display(Name = "Fatty acids, total monounsaturated")]
     Fatty_acids_total_monounsaturated_Grams = 1292,
@@ -2147,7 +2170,7 @@ public enum Nutrients
     /// <summary>
     /// Fatty acids, total polyunsaturated
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 646, 12900)]
     [Display(Name = "Fatty acids, total polyunsaturated")]
     Fatty_acids_total_polyunsaturated_Grams = 1293,
@@ -2526,7 +2549,7 @@ public enum Nutrients
     /// <summary>
     /// Flavonoids, total
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 729, 999999)]
     [Display(Name = "Flavonoids, total")]
     Flavonoids_total_Milligrams = 1347,
@@ -3003,7 +3026,7 @@ public enum Nutrients
     /// <summary>
     /// Total Sugars
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Grams, 269, 1510)]
     [Display(Name = "Total Sugars")]
     Total_Sugars_Grams = 2000,
@@ -3249,7 +3272,9 @@ public enum Nutrients
     /// <summary>
     /// Carbohydrates
     /// </summary>
-    [DailyAllowance(45, 65, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungMan)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungWoman)]
     [NutrientsMetadata(Measure.Grams, 956, 1100)]
     [Display(Name = "Carbohydrates")]
     Carbohydrates_Grams = 2039,
@@ -3404,7 +3429,7 @@ public enum Nutrients
     /// <summary>
     /// Oligosaccharides
     /// </summary>
-    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, -1, 2250)]
     [Display(Name = "Oligosaccharides")]
     Oligosaccharides_Milligrams = 2064,
@@ -3419,7 +3444,7 @@ public enum Nutrients
     /// <summary>
     /// Vitamin E
     /// </summary>
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
     [NutrientsMetadata(Measure.Milligrams, 959, 7810)]
     [Display(Name = "Vitamin E")]
     Vitamin_E_Milligrams = 2068,
@@ -3427,8 +3452,8 @@ public enum Nutrients
     /// <summary>
     /// Vitamin A
     /// </summary>
-    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Man)]
-    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Woman)]
+    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungWoman)]
     [NutrientsMetadata(Measure.Micrograms, 960, 7430)]
     [Display(Name = "Vitamin A")]
     Vitamin_A_Micrograms = 2067,

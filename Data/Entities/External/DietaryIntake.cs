@@ -20,10 +20,10 @@ public class DietaryIntake
     [Display(Name = "Key", Description = "Use the generated name in Nutrients. The USDA's Name's may be clones with different Measures, so there is ambiguity there")]
     public string Key { get; set; } = null!;
 
-    [Display(Name = "Min", Description = "Min")]
+    [Display(Name = "RDA", Description = "Recommended Daily Allowance")]
     public double? Min { get; set; }
 
-    [Display(Name = "Max", Description = "Max")]
+    [Display(Name = "TUL", Description = "Tolerable Upper Limit")]
     public double? Max { get; set; }
 
     [Display(Name = "Person", Description = "Person")]

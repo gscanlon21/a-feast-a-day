@@ -14,87 +14,82 @@
 </div>
 
 
-<div class="row gy-4">
-    <form asp-controller="@NutrientController.Name" asp-action="@nameof(NutrientController.UpsertDietaryIntake)"
-          asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post"
-          class="alert alert-light shadow mb-0">
+<form asp-controller="@NutrientController.Name" asp-action="@nameof(NutrientController.UpsertDietaryIntake)"
+        asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post">
 
-        <table class="table table-bordered table-sm align-middle">
-            <thead class="table-light">
+    <table class="table table-bordered align-middle">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Min</th>
+                <th>Max</th>
+                <th>Calories / Gram</th>
+                <th>Measure</th>
+                <th>Multiplier</th>
+                <th>Person</th>
+                <th>Source</th>
+                <th><button type="submit" class="btn btn-secondary">Update</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.DietaryIntakes.Count; i++)
+            {
                 <tr>
-                    <th>Key</th>
-                    <th>Min</th>
-                    <th>Max</th>
-                    <th>Calories / Gram</th>
-                    <th>Measure</th>
-                    <th>Multiplier</th>
-                    <th>Person</th>
-                    <th>Source</th>
-                    <th>Updated</th>
+                    <td class="p-0">
+                        @* NOTE: Disabled inputs don't send up form values. *@
+                        <input asp-for="DietaryIntakes[@i].Id" type="hidden" />
+                        <input asp-for="DietaryIntakes[@i].Key" class="form-control form-control-sm" />
+                        <span asp-validation-for="DietaryIntakes[@i].Key" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <input asp-for="DietaryIntakes[@i].Min" type="number" class="form-control form-control-sm" />
+                        <span asp-validation-for="DietaryIntakes[@i].Min" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <input asp-for="DietaryIntakes[@i].Max" type="number" class="form-control form-control-sm" />
+                        <span asp-validation-for="DietaryIntakes[@i].Max" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <input asp-for="DietaryIntakes[@i].CaloriesPerGram" class="form-control form-control-sm" />
+                        <span asp-validation-for="DietaryIntakes[@i].CaloriesPerGram" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <select asp-for="DietaryIntakes[@i].Measure" class="form-select form-select-sm"
+                                asp-items="@(Enum.GetValues<Measure>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                        </select>
+                        <span asp-validation-for="DietaryIntakes[@i].Measure" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <select asp-for="DietaryIntakes[@i].Multiplier" class="form-select form-select-sm"
+                                asp-items="@(Enum.GetValues<Multiplier>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                        </select>
+                        <span asp-validation-for="DietaryIntakes[@i].Multiplier" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <input asp-for="DietaryIntakes[@i].Person" type="hidden" />
+                        <select asp-for="DietaryIntakes[@i].Person" class="form-select form-select-sm" disabled="disabled"
+                                asp-items="@(Enum.GetValues<Person>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                        </select>
+                        <span asp-validation-for="DietaryIntakes[@i].Person" class="text-danger"></span>
+                    </td>
+
+                    <td class="p-0">
+                        <input asp-for="DietaryIntakes[@i].Source" class="form-control form-control-sm" />
+                        <span asp-validation-for="DietaryIntakes[@i].Source" class="text-danger"></span>
+                    </td>
+
+                    <td class="py-0">@Model.DietaryIntakes[@i].Updated</td>
                 </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < Model.DietaryIntakes.Count; i++)
-                {
-                    <tr>
-                        <td>
-                            @* NOTE: Disabled inputs don't send up form values. *@
-                            <input asp-for="DietaryIntakes[@i].Id" type="hidden" />
-                            <input asp-for="DietaryIntakes[@i].Key" class="form-control form-control-sm" />
-                            <span asp-validation-for="DietaryIntakes[@i].Key" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <input asp-for="DietaryIntakes[@i].Min" type="number" class="form-control form-control-sm" />
-                            <span asp-validation-for="DietaryIntakes[@i].Min" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <input asp-for="DietaryIntakes[@i].Max" type="number" class="form-control form-control-sm" />
-                            <span asp-validation-for="DietaryIntakes[@i].Max" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <input asp-for="DietaryIntakes[@i].CaloriesPerGram" class="form-control form-control-sm" />
-                            <span asp-validation-for="DietaryIntakes[@i].CaloriesPerGram" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <select asp-for="DietaryIntakes[@i].Measure" class="form-select form-select-sm"
-                                    asp-items="@(Enum.GetValues<Measure>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
-                            </select>
-                            <span asp-validation-for="DietaryIntakes[@i].Measure" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <select asp-for="DietaryIntakes[@i].Multiplier" class="form-select form-select-sm"
-                                    asp-items="@(Enum.GetValues<Multiplier>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
-                            </select>
-                            <span asp-validation-for="DietaryIntakes[@i].Multiplier" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <input asp-for="DietaryIntakes[@i].Person" type="hidden" />
-                            <select asp-for="DietaryIntakes[@i].Person" class="form-select form-select-sm" disabled="disabled"
-                                    asp-items="@(Enum.GetValues<Person>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
-                            </select>
-                            <span asp-validation-for="DietaryIntakes[@i].Person" class="text-danger"></span>
-                        </td>
-
-                        <td>
-                            <input asp-for="DietaryIntakes[@i].Source" class="form-control form-control-sm" />
-                            <span asp-validation-for="DietaryIntakes[@i].Source" class="text-danger"></span>
-                        </td>
-
-                        <td>@Model.DietaryIntakes[@i].Updated</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-        <button type="submit" class="btn btn-secondary">Save</button>
-    </form>
-</div>
+            }
+        </tbody>
+    </table>
+</form>
 
 
 @section Scripts {

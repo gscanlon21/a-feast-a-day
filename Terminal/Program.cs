@@ -32,7 +32,11 @@ var nutrientRepo = host.Services.GetRequiredService<NutrientRepo>();
 var configuration = host.Services.GetRequiredService<IConfiguration>();
 var downloadPath = configuration.GetValue<string>("DownloadPath")?.NullIfWhiteSpace() ?? AppContext.BaseDirectory;
 var foodDataApiKey = configuration.GetSection("FoodData")?.GetValue<string>("ApiKey");
-using HttpClient httpClient = new();
+using HttpClient httpClient = new()
+{
+    Timeout = Timeout.InfiniteTimeSpan,
+};
+
 ConsoleKeyInfo actionKeyPressed;
 do
 {
