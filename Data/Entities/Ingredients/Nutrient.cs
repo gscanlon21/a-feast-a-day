@@ -38,6 +38,9 @@ public class Nutrient
     // TODO Nutrient data is likely to differ by region:
     // public string Region { get; init; }
 
+    // TODO Nutrient data is likely to differ by source:
+    // public string Source { get; init; }
+
     /// <summary>
     /// Notes about the nutrient (externally shown).
     /// </summary>

@@ -1,4 +1,5 @@
-﻿using Data.Entities.Ingredients;
+﻿using Core.Models.Nutrients;
+using Data.Entities.Ingredients;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,6 +47,7 @@ public class NutrientRepo
     public async Task<ILookup<string, DailyAllowance>> GetDietaryIntakeMap()
     {
         return (await _context.DietaryIntakes.AsNoTracking().ToListAsync())
+            .Where(di => Enum.IsDefined(di.Person)) // Only good data.
             .OrderBy(di => di.Person.GetOrder(), NullOrder.NullsLast)
             .ToLookup(l => l.Key, l => new DailyAllowance(
                 l.Min ?? -1,

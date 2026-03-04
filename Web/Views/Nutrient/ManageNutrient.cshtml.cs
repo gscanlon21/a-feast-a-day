@@ -15,8 +15,7 @@ public class ManageNutrientViewModel
 }
 
 
-[Table("dietary_intake")]
-[DebuggerDisplay("{Key}")]
+[DebuggerDisplay("{Key}: {Min}-{Max} {Measure}/{Multiplier}")]
 public class DietaryIntakeViewModel
 {
     public DietaryIntakeViewModel() { }
@@ -26,20 +25,16 @@ public class DietaryIntakeViewModel
         Key = other.Key;
         Min = other.Min;
         Max = other.Max;
+        Source = other.Source;
         Person = other.Person;
         Measure = other.Measure;
+        Updated = other.Updated;
         Multiplier = other.Multiplier;
         CaloriesPerGram = other.CaloriesPerGram;
-        Updated = other.Updated;
-        Source = other.Source;
     }
 
     public int Id { get; init; }
 
-    /// <summary>
-    /// Use the generated name in Nutrients.
-    /// The USDA's Name's may be clones with different Measures, so there is ambiguity there.
-    /// </summary>
     [Display(Name = "Key", Description = "Use the generated name in Nutrients. The USDA's Name's may be clones with different Measures, so there is ambiguity there")]
     public string Key { get; set; } = null!;
 
@@ -58,7 +53,7 @@ public class DietaryIntakeViewModel
     [Display(Name = "Multiplier", Description = "Multiplier")]
     public Multiplier Multiplier { get; set; }
 
-    [Display(Name = "Calories Per Gram", Description = "Calories Per Gram")]
+    [Display(Name = "Calories/Gram", Description = "Calories Per Gram")]
     public int CaloriesPerGram { get; set; }
 
     [Display(Name = "Updated", Description = "Updated")]

@@ -73,11 +73,8 @@ public enum Person
     [Display(Name = "Pregnant Teen (14-18 years)", Order = 53)]
     PregnantTeenGirl = 1 << 14 | TeenGirl, // 24576
 
-    [Display(Name = "Breastfeeding Teen (14-18 years)", Order = 54)]
-    BreastfeedingTeenGirl = 1 << 15 | TeenGirl, // 40960
-
-    [Display(Name = "Pregnant or Breastfeeding Teen (14-18 years)", Order = 55)]
-    PregnantOrBreastfeedingTeenGirl = PregnantTeenGirl | BreastfeedingTeenGirl | TeenGirl, // 57344
+    [Display(Name = "Lactating Teen (14-18 years)", Order = 54)]
+    LactatingTeenGirl = 1 << 15 | TeenGirl, // 40960
 
     [Display(Name = "Young Man (19-30 years)", Order = 61)]
     YoungMan = 1 << 16, // 65536
@@ -91,11 +88,8 @@ public enum Person
     [Display(Name = "Pregnant Young Woman (19-30 years)", Order = 63)]
     PregnantYoungWoman = 1 << 18 | YoungWoman, // 393216
 
-    [Display(Name = "Breastfeeding Young Woman (19-30 years)", Order = 64)]
-    BreastfeedingYoungWoman = 1 << 19 | YoungWoman, // 655360
-
-    [Display(Name = "Pregnant or Breastfeeding Young Woman (19-30 years)", Order = 65)]
-    PregnantOrBreastfeedingYoungWoman = PregnantYoungWoman | BreastfeedingYoungWoman | YoungWoman, // 917504
+    [Display(Name = "Lactating Young Woman (19-30 years)", Order = 64)]
+    LactatingYoungWoman = 1 << 19 | YoungWoman, // 655360
 
     [Display(Name = "Man (31-50 years)", Order = 71)]
     Man = 1 << 20, // 1048576
@@ -109,26 +103,23 @@ public enum Person
     [Display(Name = "Pregnant Woman (31-50 years)", Order = 73)]
     PregnantWoman = 1 << 22 | Woman, // 6291456
 
-    [Display(Name = "Breastfeeding Woman (31-50 years)", Order = 74)]
-    BreastfeedingWoman = 1 << 23 | Woman, // 10485760
+    [Display(Name = "Lactating Woman (31-50 years)", Order = 74)]
+    LactatingWoman = 1 << 23 | Woman, // 10485760
 
-    [Display(Name = "Pregnant or Breastfeeding Woman (31-50 years)", Order = 75)]
-    PregnantOrBreastfeedingWoman = PregnantWoman | BreastfeedingWoman | Woman, // 14680064
+    [Display(Name = "Middle Age Man (51-70 years)", Order = 81)]
+    MiddleAgeMan = 1 << 24, // 16777216
 
-    [Display(Name = "Middle Age Woman (51-70 years)", Order = 81)]
-    MiddleAgeWoman = 1 << 24, // 16777216
-
-    [Display(Name = "Middle Age Man (51-70 years)", Order = 82)]
-    MiddleAgeMan = 1 << 25, // 33554432
+    [Display(Name = "Middle Age Woman (51-70 years)", Order = 82)]
+    MiddleAgeWoman = 1 << 25, // 33554432
 
     [Display(Name = "Middle Age (51-70 years)", Order = 80)]
     MiddleAge = MiddleAgeMan | MiddleAgeWoman, // 50331648
 
-    [Display(Name = "Elderly Woman (71+ years)", Order = 91)]
-    ElderlyWoman = 1 << 26, // 67108864
+    [Display(Name = "Elderly Man (71+ years)", Order = 91)]
+    ElderlyMan = 1 << 26, // 67108864
 
-    [Display(Name = "Elderly Man (71+ years)", Order = 92)]
-    ElderlyMan = 1 << 27, // 134217728
+    [Display(Name = "Elderly Woman (71+ years)", Order = 92)]
+    ElderlyWoman = 1 << 27, // 134217728
 
     [Display(Name = "Elderly (71+ years)", Order = 90)]
     Elderly = ElderlyMan | ElderlyWoman, // 201326592
@@ -136,8 +127,8 @@ public enum Person
     All = InfantBoy | InfantGirl | BabyBoy | BabyGirl 
         | ToddlerBoy_1_2 | ToddlerGirl_1_2 | ToddlerBoy_2_3 | ToddlerGirl_2_3
         | ChildBoy | ChildGirl | KidBoy | KidGirl 
-        | TeenBoy | TeenGirl | PregnantTeenGirl | BreastfeedingTeenGirl
-        | YoungMan | YoungWoman | PregnantYoungWoman | BreastfeedingYoungWoman
-        | Man | Woman | PregnantWoman | BreastfeedingWoman
+        | TeenBoy | TeenGirl | PregnantTeenGirl | LactatingTeenGirl
+        | YoungMan | YoungWoman | PregnantYoungWoman | LactatingYoungWoman
+        | Man | Woman | PregnantWoman | LactatingWoman
         | MiddleAgeMan | MiddleAgeWoman | ElderlyMan | ElderlyWoman
 }
