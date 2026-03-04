@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict duiVD4K30mH6gde2cYGZcWg46uvjBreXOPZKMqApPfZjKx6pFUclGVuppF1MEh3
+\restrict Gwufj4x1s3IJpGWcnZkGqvSLhgmEp7d01r3Bcr95mQ1Tb5OqL3WkJDLTme2n1fv
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -717,6 +717,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 20	Flavonoids_total_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity
 22	Polyphenols_total_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity
 10	Fatty_acids_total_trans_Grams	\N	1	196608	100	1	9		2023-01-01	-infinity
+8	Fiber_total_dietary_Grams	25	\N	196608	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity
 11	Fatty_acids_total_saturated_Grams	\N	-1	3	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-03	-infinity
 129	Fatty_acids_total_saturated_Grams	\N	-1	2	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity
 133	Fatty_acids_total_saturated_Grams	\N	-1	48	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity
@@ -729,7 +730,6 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 135	Fatty_acids_total_saturated_Grams	\N	-1	32	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity
 68	Energy_KCalorie	1000	1100	196608	0	3	0		-infinity	-infinity
 70	Resistant_starch_Grams	6	12	196608	100	1	4		2023-01-01	-infinity
-8	Fiber_total_dietary_Grams	25	\N	196608	3	3	4		2023-01-01	-infinity
 1	Protein	10	35	196608	100	1	4		2023-01-01	-infinity
 3	Oligosaccharides	1	\N	196608	3	1	4		2023-01-01	-infinity
 4	Starch	130	\N	196608	3	1	4		2023-01-01	-infinity
@@ -739,6 +739,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 18	Calories	1000	1100	196608	0	3	0		2023-01-01	-infinity
 19	Cholesterol	\N	\N	196608	2	1	0		2023-01-01	-infinity
 73	Iron_Fe_Milligrams	0.27	40	3	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity
+181	Fiber_insoluble_Grams	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
 37	Magnesium_Mg_Milligrams	400	\N	131072	2	1	0		2023-01-01	-infinity
 38	Magnesium_Mg_Milligrams	350	\N	65536	2	1	0		2023-01-01	-infinity
 26	Vitamin_A_Micrograms	900	3000	131072	1	1	0		2023-01-01	-infinity
@@ -747,6 +748,15 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 39	Potassium_K_Milligrams	3500	\N	196608	2	1	0		2023-01-01	-infinity
 40	Sodium_Na_Milligrams	1500	2300	196608	2	1	0		2023-01-01	-infinity
 43	Zinc_Zn_Milligrams	10	\N	196608	2	1	0		2023-01-01	-infinity
+182	Fiber_insoluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+183	Fiber_insoluble_Grams	12.5	\N	3145728	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+184	Fiber_insoluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+185	Fiber_insoluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+186	Fiber_soluble_Grams	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+187	Fiber_soluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+188	Fiber_soluble_Grams	12.5	\N	3145728	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+189	Fiber_soluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+190	Fiber_soluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
 158	Fatty_acids_total_saturated_Grams	\N	3	512	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity
 117	Fatty_acids_total_saturated_Grams	\N	3	12288	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity
 118	Fatty_acids_total_saturated_Grams	\N	3	4096	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity
@@ -810,9 +820,16 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 51	Sulfur_S_Milligrams	850	\N	196608	2	1	0		2023-01-01	-infinity
 53	Vanadium_V_Micrograms	20	1000	196608	1	1	0		2023-01-01	-infinity
 88	Carotene	1	10	196608	2	1	0		2023-01-01	-infinity
+79	Fiber_insoluble_Grams	12.5	\N	196608	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity
 94	Niacin	1	10	196608	2	1	0		2023-01-01	-infinity
 95	Pantothenic acid	1	10	196608	2	1	0		2023-01-01	-infinity
+78	Fiber_soluble_Grams	12.5	\N	196608	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity
+191	Fiber_total_dietary_Grams	38	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+192	Fiber_total_dietary_Grams	25	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
 99	Riboflavin	1	10	196608	2	1	0		2023-01-01	-infinity
+193	Fiber_total_dietary_Grams	25	\N	3145728	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+194	Fiber_total_dietary_Grams	38	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
+195	Fiber_total_dietary_Grams	25	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04
 103	Vitamin B-6	1	10	196608	2	1	0		2023-01-01	-infinity
 106	Thiamin	1	10	196608	2	1	0		2023-01-01	-infinity
 109	Vitamin D (D2 + D3)	1	10	196608	2	1	0		2023-01-01	-infinity
@@ -821,8 +838,6 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 87	Chlorine_Cl_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity
 75	Folate_total_Micrograms	1	10	196608	2	1	0		2023-01-01	-infinity
 92	Manganese_Mn_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity
-78	Fiber_soluble_Grams	1	10	196608	2	1	0		2023-01-01	-infinity
-79	Fiber_insoluble_Grams	1	10	196608	2	1	0		2023-01-01	-infinity
 105	Total_Sugars_Grams	6	12	196608	100	1	4		2023-01-01	-infinity
 108	Sugars_Total_Grams	6	12	196608	100	1	4		2023-01-01	-infinity
 83	Fatty_acids_total_monounsaturated_Grams	\N	10	196608	100	3	9		2023-01-01	-infinity
@@ -3144,6 +3159,10 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 1300	2644283	100312
 1305	2644283	100312
 188	2512381	20444
+264	170032	11362
+103	170029	11355
+8	2258590	11821
+419	2644285	100314
 \.
 
 
@@ -4235,6 +4254,201 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 20013	1305	2047	\N	102	360.285
 20014	1300	2048	\N	102	350.9328
 20015	1305	2048	\N	102	350.9328
+20016	103	1122	\N	1	0
+20017	103	1275	\N	3	0.001
+20018	103	1293	\N	3	0.059
+20019	103	1218	\N	3	0.044
+20020	103	1057	\N	2	0
+20021	103	1091	\N	2	61
+20022	103	1270	\N	3	0.014
+20023	103	1106	\N	1	0
+20024	103	1261	\N	3	0
+20025	103	1253	\N	2	0
+20026	103	1225	\N	3	0.052
+20027	103	1257	\N	3	0
+20028	103	1003	\N	3	1.89
+20029	103	1210	\N	3	0.019
+20030	103	1167	\N	2	1.149
+20031	103	1013	\N	3	0
+20032	103	1058	\N	2	0
+20033	103	1101	\N	2	0.141
+20034	103	1010	\N	3	0.29
+20035	103	1186	\N	1	0
+20036	103	1109	\N	2	0.01
+20037	103	1280	\N	3	0
+20038	103	1271	\N	3	0
+20039	103	1224	\N	3	0.323
+20040	103	1214	\N	3	0.098
+20041	103	1212	\N	3	0.061
+20042	103	1260	\N	3	0
+20043	103	1198	\N	2	0.2
+20044	103	1004	\N	3	0.14
+20045	103	1051	\N	3	80.96
+20046	103	1166	\N	2	0.031
+20047	103	1014	\N	3	0
+20048	103	1277	\N	3	0
+20049	103	1216	\N	3	0.022
+20050	103	1262	\N	3	0.001
+20051	103	1269	\N	3	0.044
+20052	103	1190	\N	1	18
+20053	103	1265	\N	3	0.022
+20054	103	1011	\N	3	0.4
+20055	103	1279	\N	3	0
+20056	103	1087	\N	2	10
+20057	103	1227	\N	3	0.069
+20058	103	1213	\N	3	0.09
+20059	103	1018	\N	3	0
+20060	103	1005	\N	3	15.9
+20061	103	1105	\N	1	0
+20062	103	1007	\N	3	1.1
+20063	103	1098	\N	2	0.134
+20064	103	1184	\N	1	0
+20065	103	1221	\N	3	0.032
+20066	103	1175	\N	2	0.17
+20067	103	1114	\N	1	0
+20068	103	1103	\N	1	0.5
+20069	103	1079	\N	3	1.7
+20070	103	1272	\N	3	0
+20071	103	1264	\N	3	0.001
+20072	103	1187	\N	1	18
+20073	103	1266	\N	3	0.005
+20074	103	1008	\N	102	70
+20075	103	1089	\N	2	0.73
+20076	103	1283	\N	2	5
+20077	103	1123	\N	1	21
+20078	103	1165	\N	2	0.081
+20079	103	1180	\N	2	16.4
+20080	103	1185	\N	1	2.9
+20081	103	1126	\N	2	0
+20082	103	1263	\N	3	0.004
+20083	103	1012	\N	3	0.31
+20084	103	1170	\N	2	0.279
+20085	103	1092	\N	2	455
+20086	103	1178	\N	1	0
+20087	103	1292	\N	3	0.003
+20088	103	1095	\N	2	0.33
+20089	103	1268	\N	3	0.001
+20090	103	1127	\N	2	0
+20091	103	1104	\N	98	7
+20092	103	1009	\N	3	13.35
+20093	103	1222	\N	3	0.058
+20094	103	1211	\N	3	0.062
+20095	103	1162	\N	2	8.6
+20096	103	1258	\N	3	0.035
+20097	103	1219	\N	3	0.095
+20098	103	1090	\N	2	22
+20099	103	1093	\N	2	18
+20100	103	1226	\N	3	0.058
+20101	103	1107	\N	1	4
+20102	103	1223	\N	3	0.442
+20103	103	1276	\N	3	0
+20104	103	1217	\N	3	0.075
+20105	103	1120	\N	1	0
+20106	103	2000	\N	3	1.29
+20107	103	1278	\N	3	0
+20108	103	1110	\N	98	0
+20109	103	1220	\N	3	0.093
+20110	103	1075	\N	3	0
+20111	103	1062	\N	103	295
+20112	103	1108	\N	1	0
+20113	103	1259	\N	3	0
+20114	103	1215	\N	3	0.029
+20115	103	1125	\N	2	0
+20116	103	1177	\N	1	18
+20117	264	1098	\N	2	0.423
+20118	264	1258	\N	3	0.026
+20119	264	1275	\N	3	0.001
+20120	264	1266	\N	3	0.004
+20121	264	1092	\N	2	413
+20122	264	1095	\N	2	0.35
+20123	264	1062	\N	103	243
+20124	264	1293	\N	3	0.043
+20125	264	1114	\N	1	0
+20126	264	1269	\N	3	0.032
+20127	264	1093	\N	2	10
+20128	264	1177	\N	1	17
+20129	264	1167	\N	2	1.033
+20130	264	1087	\N	2	30
+20131	264	1178	\N	1	0
+20132	264	1005	\N	3	12.44
+20133	264	1051	\N	3	83.29
+20134	264	1257	\N	3	0
+20135	264	1262	\N	3	0.001
+20136	264	1263	\N	3	0.003
+20137	264	1187	\N	1	17
+20138	264	1170	\N	2	0.302
+20139	264	1003	\N	3	2.57
+20140	264	1292	\N	3	0.002
+20141	264	1264	\N	3	0.001
+20142	264	1253	\N	2	0
+20143	264	1004	\N	3	0.1
+20144	264	1110	\N	98	0
+20145	264	1190	\N	1	17
+20146	264	1265	\N	3	0.016
+20147	264	1091	\N	2	38
+20148	264	1268	\N	3	0.001
+20149	264	1007	\N	3	1.61
+20150	264	1101	\N	2	0.602
+20151	264	1104	\N	98	0
+20152	264	1008	\N	102	58
+20153	264	1270	\N	3	0.01
+20154	264	1165	\N	2	0.021
+20155	264	1079	\N	3	2.5
+20156	264	1089	\N	2	3.24
+20157	264	1162	\N	2	11.4
+20158	264	1166	\N	2	0.038
+20159	264	1106	\N	1	0
+20160	264	1105	\N	1	0
+20161	264	1103	\N	1	0.3
+20162	264	1186	\N	1	0
+20163	264	1175	\N	2	0.239
+20164	264	1090	\N	2	23
+20165	8	2048	\N	102	26.98843175
+20166	8	2047	\N	102	31.3256
+20167	8	1005	\N	3	6.653175
+20168	8	1003	\N	3	0.895625
+20169	8	1175	\N	2	0.3027
+20170	8	1167	\N	2	1.024
+20171	8	1089	\N	2	0.3533
+20172	8	1051	\N	3	91.93
+20173	8	1091	\N	2	26.59
+20174	8	1087	\N	2	6.361
+20175	8	1092	\N	2	212.7
+20176	8	1165	\N	2	0.05494
+20177	8	1079	\N	3	1.158
+20178	8	1095	\N	2	0.2023
+20179	8	1176	\N	1	0.4267
+20180	8	1162	\N	2	141.7
+20181	8	1090	\N	2	10.98
+20182	8	1093	\N	2	0
+20183	8	1007	\N	3	0.3956
+20184	8	1002	\N	3	0.1433
+20185	8	1004	\N	3	0.1256
+20186	8	1166	\N	2	0.1422
+20187	8	1177	\N	1	47.32
+20188	8	1098	\N	2	0.03983
+20189	8	1101	\N	2	0.1328
+20190	8	1103	\N	1	0
+20191	419	1071	\N	3	2
+20192	419	2033	\N	3	6.688
+20193	419	1093	\N	2	217.9
+20194	419	1098	\N	2	0.3359
+20195	419	1090	\N	2	32.54
+20196	419	1092	\N	2	253.1
+20197	419	1091	\N	2	90.95
+20198	419	1007	\N	3	1.211
+20199	419	1004	\N	3	1.273
+20200	419	1087	\N	2	43.31
+20201	419	1095	\N	2	0.7399
+20202	419	1051	\N	3	70.79
+20203	419	1089	\N	2	1.688
+20204	419	1101	\N	2	0.3324
+20205	419	1002	\N	3	1.106
+20206	419	1009	\N	3	11.83
+20207	419	1003	\N	3	6.9125
+20208	419	1005	\N	3	19.8135
+20209	419	2047	\N	102	118.361
+20210	419	2048	\N	102	115.28233
 \.
 
 
@@ -11050,7 +11264,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 180, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 195, true);
 
 
 --
@@ -11064,7 +11278,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 20015, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 20210, true);
 
 
 --
@@ -11814,5 +12028,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict duiVD4K30mH6gde2cYGZcWg46uvjBreXOPZKMqApPfZjKx6pFUclGVuppF1MEh3
+\unrestrict Gwufj4x1s3IJpGWcnZkGqvSLhgmEp7d01r3Bcr95mQ1Tb5OqL3WkJDLTme2n1fv
 

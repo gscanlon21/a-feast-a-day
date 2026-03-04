@@ -52,6 +52,9 @@ namespace Data.Migrations
                     b.Property<int>("Multiplier")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
                     b.Property<int>("Person")
                         .HasColumnType("integer");
 

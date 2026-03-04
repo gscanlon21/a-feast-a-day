@@ -1,6 +1,5 @@
 using Data.Entities.External;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
 namespace Web.Views.Nutrient;
@@ -25,6 +24,7 @@ public class DietaryIntakeViewModel
         Key = other.Key;
         Min = other.Min;
         Max = other.Max;
+        Notes = other.Notes;
         Source = other.Source;
         Person = other.Person;
         Measure = other.Measure;
@@ -61,6 +61,9 @@ public class DietaryIntakeViewModel
 
     [Display(Name = "Source", Description = "Source")]
     public string? Source { get; set; }
+
+    [Display(Name = "Notes", Description = "Notes")]
+    public string? Notes { get; set; }
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is DietaryIntakeViewModel other

@@ -24,8 +24,10 @@ namespace Data.Migrations
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Multiplier = table.Column<int>(type: "integer", nullable: false),
                     CaloriesPerGram = table.Column<int>(type: "integer", nullable: false),
+                    Checked = table.Column<DateOnly>(type: "date", nullable: false),
                     Updated = table.Column<DateOnly>(type: "date", nullable: false),
-                    Source = table.Column<string>(type: "text", nullable: false)
+                    Source = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

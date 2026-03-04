@@ -108,6 +108,11 @@ public static class MeasureConsts
     /// Measures used to measure liquids.
     /// </summary>
     public static Measure[] LiquidMeasures => [Measure.Cups, Measure.Tablespoons, Measure.Teaspoons, Measure.FluidOunces, Measure.Milliliters, Measure.Liters, Measure.Gallons, Measure.Pints, Measure.Quarts];
+
+    /// <summary>
+    /// Measures used to in dietary intake reference values.
+    /// </summary>
+    public static Measure[] DietaryIntakeMeasures => [Measure.None, Measure.Micrograms, Measure.Milligrams, Measure.Grams, Measure.Percent];
 }
 
 /* Swap two measures.

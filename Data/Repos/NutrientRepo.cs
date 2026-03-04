@@ -1,5 +1,4 @@
-﻿using Core.Models.Nutrients;
-using Data.Entities.Ingredients;
+﻿using Data.Entities.Ingredients;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

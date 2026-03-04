@@ -124,9 +124,9 @@ public enum Person
     [Display(Name = "Elderly (71+ years)", Order = 90)]
     Elderly = ElderlyMan | ElderlyWoman, // 201326592
 
-    All = InfantBoy | InfantGirl | BabyBoy | BabyGirl 
+    All = InfantBoy | InfantGirl | BabyBoy | BabyGirl
         | ToddlerBoy_1_2 | ToddlerGirl_1_2 | ToddlerBoy_2_3 | ToddlerGirl_2_3
-        | ChildBoy | ChildGirl | KidBoy | KidGirl 
+        | ChildBoy | ChildGirl | KidBoy | KidGirl
         | TeenBoy | TeenGirl | PregnantTeenGirl | LactatingTeenGirl
         | YoungMan | YoungWoman | PregnantYoungWoman | LactatingYoungWoman
         | Man | Woman | PregnantWoman | LactatingWoman

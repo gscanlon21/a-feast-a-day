@@ -89,6 +89,7 @@ public class NutrientController : ViewController
                 existingEntity.Key = dietaryIntake.Key;
                 existingEntity.Min = dietaryIntake.Min;
                 existingEntity.Max = dietaryIntake.Max;
+                existingEntity.Notes = dietaryIntake.Notes;
                 existingEntity.Person = dietaryIntake.Person;
                 existingEntity.Measure = dietaryIntake.Measure;
                 existingEntity.Source = dietaryIntake.Source ?? "";
@@ -103,6 +104,7 @@ public class NutrientController : ViewController
                     Key = dietaryIntake.Key,
                     Min = dietaryIntake.Min,
                     Max = dietaryIntake.Max,
+                    Notes = dietaryIntake.Notes,
                     Person = dietaryIntake.Person,
                     Measure = dietaryIntake.Measure,
                     Source = dietaryIntake.Source ?? "",

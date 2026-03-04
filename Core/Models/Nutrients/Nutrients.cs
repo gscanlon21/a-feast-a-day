@@ -577,7 +577,12 @@ public enum Nutrients
     /// <summary>
     /// Fiber, total dietary
     /// </summary>
-    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Kilocalorie, CaloriesPerGram = 4, For = Person.YoungAdult)]
+    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
+    [DailyAllowance(38, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungMan)]
+    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungWoman)]
+    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(38, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Man)]
+    [DailyAllowance(25, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Woman)]
     [NutrientsMetadata(Measure.Grams, 291, 1200)]
     [Display(Name = "Fiber, total dietary")]
     Fiber_total_dietary_Grams = 1079,
@@ -599,7 +604,12 @@ public enum Nutrients
     /// <summary>
     /// Fiber, soluble
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
+    [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungMan)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungWoman)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Man)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Woman)]
     [NutrientsMetadata(Measure.Grams, 295, 1240)]
     [Display(Name = "Fiber, soluble")]
     Fiber_soluble_Grams = 1082,
@@ -614,7 +624,12 @@ public enum Nutrients
     /// <summary>
     /// Fiber, insoluble
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungAdult)]
+    [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungMan)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.YoungWoman)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Adult)]
+    [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Man)]
+    [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Woman)]
     [NutrientsMetadata(Measure.Grams, 297, 1260)]
     [Display(Name = "Fiber, insoluble")]
     Fiber_insoluble_Grams = 1084,
