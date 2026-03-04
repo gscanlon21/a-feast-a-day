@@ -943,7 +943,7 @@
 1175	\N	Swiss Cheese	\N	\N	f	256	28	100	2024-10-15	4	224	6	224	Swiss Cheese	\N
 1176	\N	Slices of Swiss Cheese	\N	\N	f	256	28	100	2024-10-15	4	224	8388608	224	Slices of Swiss Cheese	\N
 1177	\N	Provolone Cheese	\N	\N	f	256	28	100	2024-10-15	4	224	6	224	Provolone Cheese	\N
-1178	\N	Slices of Provolone Cheese	\N	\N	f	256	28	100	2024-10-15	4	224	8388608	224	Slices of Provolone Cheese	\N
+1178	\N	Slices of Provolone Cheese	\N	\N	f	256	28	100	2026-03-04	4	224	8388608	224	Slices of Provolone Cheese	\N
 1179	\N	Slices of Applewood Smoked Cheddar Cheese	\N	\N	f	256	28	100	2024-10-15	4	224	8388608	224	Slices of Applewood Smoked Chedder Cheese	\N
 1180	\N	Applewood Smoked Cheddar Cheese	\N	\N	f	256	28	100	2026-03-03	4	224	6	224	Applewood Smoked Chedder Cheese	\N
 1181	\N	Mixed Baby Greens	\N	\N	f	0	28	100	2025-02-01	4	39	2	39	Mixed Baby Greens	\N
@@ -1136,7 +1136,7 @@
 1399	\N	Stir-Fry Sauce	Tamari sauce generally does not contain wheat. https://www.eatthismuch.com/calories/soy-sauce-3619	\N	f	32768	36	100	2024-11-13	9	288	8192	288	Stir-Fry Sauce	\N
 1400	\N	Semisoft Goat Cheese	\N	\N	f	256	28	100	2026-02-28	4	224	8388608	224	Semisoft Goat Cheese	\N
 1401	\N	Soft Goat Cheese	\N	\N	f	256	28	100	2026-03-03	4	224	8388608	224	Soft Goat Cheese	\N
-1402	\N	Blue Cheese	\N	\N	f	256	28	100	2024-10-15	4	224	8388608	224	Blue Cheese	\N
+1402	\N	Blue Cheese	\N	\N	f	256	28	100	2026-03-04	4	224	8388608	224	Blue Cheese	\N
 1403	\N	Crumbled Blue Cheese	\N	\N	f	256	28	100	2026-03-02	4	224	8388608	224	Crumbled Blue Cheese	\N
 1404	\N	Small Baguette	\N	\N	f	786464	141	100	2025-06-15	0	141	4	141	Small Baguette	\N
 1405	\N	Navy Beans	\N	\N	f	0	28	100	2024-10-17	4	208	2048	208	Navy Beans	\N

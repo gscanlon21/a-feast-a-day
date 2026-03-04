@@ -1075,7 +1075,12 @@ public enum Nutrients
     /// <summary>
     /// Lithium, Li
     /// </summary>
-    [DailyAllowance(1, 25, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.YoungAdult)]
+    [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.YoungAdult)]
+    [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.YoungMan)]
+    [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.YoungWoman)]
+    [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Adult)]
+    [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Man)]
+    [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Woman)]
     [NutrientsMetadata(Measure.Micrograms, 368, 999999)]
     [Display(Name = "Lithium, Li")]
     Lithium_Li_Micrograms = 1144,
