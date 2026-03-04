@@ -135,7 +135,7 @@ public class EditComponentViewModel
         public FoodPreference FoodPreference { get; set; }
     }
 
-    public class UserFamilyViewModel
+    public class UserFamilyViewModel : IValidatableObject
     {
         public int UserId { get; set; }
 
@@ -147,11 +147,18 @@ public class EditComponentViewModel
         [Display(Name = "Calories Per Day")]
         public int CaloriesPerDay { get; init; } = UserFamily.Consts.CaloriesPerDayDefault;
 
-        [Required]
         [Display(Name = "Person")]
         public Person Person { get; init; }
 
         public bool Hide { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (!Hide && Person == Person.None)
+            {
+                yield return new ValidationResult($"Person is required.", [nameof(Person)]);
+            }
+        }
     }
 
     public class UserSectionViewModel

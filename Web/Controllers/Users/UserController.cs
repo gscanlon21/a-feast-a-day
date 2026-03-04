@@ -74,8 +74,10 @@ public partial class UserController : ViewController
         viewModel.User = await _userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
         if (!ModelState.IsValid)
         {
-            viewModel.WasUpdated = false;
-            return View("Edit", viewModel);
+            return View("Edit", new UserEditViewModel(viewModel.User)
+            {
+                WasUpdated = false
+            });
         }
 
         try

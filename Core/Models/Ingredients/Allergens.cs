@@ -70,6 +70,10 @@ public enum Allergens : long
     [Display(Name = "Yeast")]
     Yeast = 1 << 19, // 524288
 
+    /// <summary>
+    /// TODO/FIXME: The requirement for iron is 1.8 times higher for vegetarians 
+    /// due to the lower bioavailability of iron from a vegetarian diet.
+    /// </summary>
     [Display(Name = "Meat")]
     Meat = 1 << 20, // 1048576
 }

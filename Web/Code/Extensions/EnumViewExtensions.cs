@@ -17,10 +17,10 @@ public static class EnumViewExtensions
     /// 
     /// The default value for the enum, 0, will always come first.
     /// </summary>
-    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default)
+    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default, string? noValueText = null)
         where T : struct, Enum
     {
-        return values.Cast<T?>().AsSelectListItems(order: order, defaultValue: defaultValue, selectedValue: selectedValue);
+        return values.Cast<T?>().AsSelectListItems(order: order, defaultValue: defaultValue, selectedValue: selectedValue, noValueText: noValueText);
     }
 
     /// <summary>
@@ -55,7 +55,7 @@ public static class EnumViewExtensions
             // Need to use an empty string so it posts null and not the name.
             Value = v == null ? string.Empty : Convert.ToInt64(v).ToString(),
             // We have to fallback and use the member's name for system enums. sa. DayOfWeek.
-            Text = v == null ? nullValueText : v.GetSingleDisplayName().NullIfEmpty() ?? noValueText,
+            Text = v == null ? nullValueText : v.GetSingleDisplayNameOrNull() ?? noValueText,
             Selected = selectedValue.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(selectedValue) : !v.HasValue,
         })
         .ToList();
