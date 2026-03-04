@@ -25,21 +25,4 @@ public static class NutrientExtensions
         // Don't restrict this nutrient if there's no reference data.
         return null;
     }
-
-    public static string DailyAllowanceDisplayName(this Nutrients nutrients)
-    {
-        var attribute = nutrients.DailyAllowance(Person.Adult);
-        if (attribute != null)
-        {
-            return $@"({(attribute.RDA, attribute.TUL) switch
-            {
-                (null, not null) => $"TUL={attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayType.ShortName)}",
-                (not null, null) => $"RDA={attribute.RDA}{attribute.Measure.GetSingleDisplayName(DisplayType.ShortName)}",
-                (not null, not null) => $"{attribute.RDA}-{attribute.TUL}{attribute.Measure.GetSingleDisplayName(DisplayType.ShortName)}",
-                _ => string.Empty
-            }} / {attribute.Multiplier.GetSingleDisplayName(DisplayType.ShortName)})";
-        }
-
-        return string.Empty;
-    }
 }

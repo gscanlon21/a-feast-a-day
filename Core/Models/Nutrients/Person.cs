@@ -7,128 +7,99 @@ public enum Person
 {
     None = 0,
 
-    [Display(Name = "Infant Boy (0-6 months)", Order = 2)]
-    InfantBoy = 1 << 0, // 1
+    [Display(Name = "Male (0-6 months)", Order = 2)]
+    Male_0_6_Months = 1 << 0, // 1
 
-    [Display(Name = "Infant Girl (0-6 months)", Order = 3)]
-    InfantGirl = 1 << 1, // 2
+    [Display(Name = "Female (0-6 months)", Order = 3)]
+    Female_0_6_Months = 1 << 1, // 2
 
-    [Display(Name = "Infant (0-6 months)", Order = 1)]
-    Infant = InfantBoy | InfantGirl, // 3
+    [Display(Name = "Male (7-12 months)", Order = 11)]
+    Male_7_12_Months = 1 << 2, // 4
 
-    [Display(Name = "Baby Boy (7-12 months)", Order = 11)]
-    BabyBoy = 1 << 2, // 4
+    [Display(Name = "Female (7-12 months)", Order = 12)]
+    Female_7_12_Months = 1 << 3, // 8
 
-    [Display(Name = "Baby Girl (7-12 months)", Order = 12)]
-    BabyGirl = 1 << 3, // 8
+    [Display(Name = "Male (1-2 years)", Order = 21)]
+    Male_1_2_Years = 1 << 4, // 16
 
-    [Display(Name = "Baby (7-12 months)", Order = 10)]
-    Baby = BabyBoy | BabyGirl, // 12
+    [Display(Name = "Female (1-2 years)", Order = 22)]
+    Female_1_2_Years = 1 << 5, // 32
 
-    [Display(Name = "Toddler Boy (1-2 years)", Order = 21)]
-    ToddlerBoy_1_2 = 1 << 4, // 16
+    [Display(Name = "Male (2-3 years)", Order = 24)]
+    Male_2_3_Years = 1 << 6, // 64
 
-    [Display(Name = "Toddler Girl (1-2 years)", Order = 22)]
-    ToddlerGirl_1_2 = 1 << 5, // 32
+    [Display(Name = "Female (2-3 years)", Order = 25)]
+    Female_2_3_Years = 1 << 7, // 128
 
-    [Display(Name = "Toddler (1-2 years)", Order = 20)]
-    Toddler_1_2 = ToddlerBoy_1_2 | ToddlerGirl_1_2, // 48
+    [Display(Name = "Male (4-8 years)", Order = 31)]
+    Male_4_8_Years = 1 << 8, // 256
 
-    [Display(Name = "Toddler Boy (2-3 years)", Order = 24)]
-    ToddlerBoy_2_3 = 1 << 6, // 64
+    [Display(Name = "Female (4-8 years)", Order = 32)]
+    Female_4_8_Years = 1 << 9, // 512
 
-    [Display(Name = "Toddler Girl (2-3 years)", Order = 25)]
-    ToddlerGirl_2_3 = 1 << 7, // 128
+    [Display(Name = "Male (9-13 years)", Order = 41)]
+    Male_9_13_Years = 1 << 10, // 1024
 
-    [Display(Name = "Toddler (2-3 years)", Order = 23)]
-    Toddler_2_3 = ToddlerBoy_2_3 | ToddlerGirl_2_3, // 192
+    [Display(Name = "Female (9-13 years)", Order = 42)]
+    Female_9_13_Years = 1 << 11, // 2048
 
-    [Display(Name = "Child Boy (4-8 years)", Order = 31)]
-    ChildBoy = 1 << 8, // 256
+    [Display(Name = "Male (14-18 years)", Order = 51)]
+    Male_14_18_Years = 1 << 12, // 4096
 
-    [Display(Name = "Child Girl (4-8 years)", Order = 32)]
-    ChildGirl = 1 << 9, // 512
+    [Display(Name = "Female (14-18 years)", Order = 52)]
+    Female_14_18_Years = 1 << 13, // 8192
 
-    [Display(Name = "Child (4-8 years)", Order = 30)]
-    Child = ChildBoy | ChildGirl, // 768
+    [Display(Name = "Pregnant (14-18 years)", Order = 53)]
+    Pregnant_14_18_Years = 1 << 14 | Female_14_18_Years, // 24576
 
-    [Display(Name = "Kid Boy (9-13 years)", Order = 41)]
-    KidBoy = 1 << 10, // 1024
+    [Display(Name = "Lactating (14-18 years)", Order = 54)]
+    Lactating_14_18_Years = 1 << 15 | Female_14_18_Years, // 40960
 
-    [Display(Name = "Kid Girl (9-13 years)", Order = 42)]
-    KidGirl = 1 << 11, // 2048
+    [Display(Name = "Male (19-30 years)", Order = 61)]
+    Male_19_30_Years = 1 << 16, // 65536
 
-    [Display(Name = "Kid (9-13 years)", Order = 40)]
-    Kid = KidBoy | KidGirl, // 3072
+    [Display(Name = "Female (19-30 years)", Order = 62)]
+    Female_19_30_Years = 1 << 17, // 131072
 
-    [Display(Name = "Teen Boy (14-18 years)", Order = 51)]
-    TeenBoy = 1 << 12, // 4096
+    [Display(Name = "Pregnant (19-30 years)", Order = 63)]
+    Pregnant_19_30_Years = 1 << 18 | Female_19_30_Years, // 393216
 
-    [Display(Name = "Teen Girl (14-18 years)", Order = 52)]
-    TeenGirl = 1 << 13, // 8192
+    [Display(Name = "Lactating (19-30 years)", Order = 64)]
+    Lactating_19_30_Years = 1 << 19 | Female_19_30_Years, // 655360
 
-    [Display(Name = "Teen (14-18 years)", Order = 50)]
-    Teen = TeenBoy | TeenGirl, // 12288
+    [Display(Name = "Male (31-50 years)", Order = 71)]
+    Male_31_50_Years = 1 << 20, // 1048576
 
-    [Display(Name = "Pregnant Teen (14-18 years)", Order = 53)]
-    PregnantTeenGirl = 1 << 14 | TeenGirl, // 24576
+    [Display(Name = "Female (31-50 years)", Order = 72)]
+    Female_31_50_Years = 1 << 21, // 2097152
 
-    [Display(Name = "Lactating Teen (14-18 years)", Order = 54)]
-    LactatingTeenGirl = 1 << 15 | TeenGirl, // 40960
+    [Display(Name = "Pregnant (31-50 years)", Order = 73)]
+    Pregnant_31_50_Years = 1 << 22 | Female_31_50_Years, // 6291456
 
-    [Display(Name = "Young Man (19-30 years)", Order = 61)]
-    YoungMan = 1 << 16, // 65536
+    [Display(Name = "Lactating (31-50 years)", Order = 74)]
+    Lactating_31_50_Years = 1 << 23 | Female_31_50_Years, // 10485760
 
-    [Display(Name = "Young Woman (19-30 years)", Order = 62)]
-    YoungWoman = 1 << 17, // 131072
+    [Display(Name = "Male (51-70 years)", Order = 81)]
+    Male_51_70_Years = 1 << 24, // 16777216
 
-    [Display(Name = "Young Adult (19-30 years)", Order = 60)]
-    YoungAdult = YoungMan | YoungWoman, // 196608
+    [Display(Name = "Female (51-70 years)", Order = 82)]
+    Female_51_70_Years = 1 << 25, // 33554432
 
-    [Display(Name = "Pregnant Young Woman (19-30 years)", Order = 63)]
-    PregnantYoungWoman = 1 << 18 | YoungWoman, // 393216
+    [Display(Name = "Male (71+ years)", Order = 91)]
+    Male_71_XX_Years = 1 << 26, // 67108864
 
-    [Display(Name = "Lactating Young Woman (19-30 years)", Order = 64)]
-    LactatingYoungWoman = 1 << 19 | YoungWoman, // 655360
+    [Display(Name = "Female (71+ years)", Order = 92)]
+    Female_71_XX_Years = 1 << 27, // 134217728
 
-    [Display(Name = "Man (31-50 years)", Order = 71)]
-    Man = 1 << 20, // 1048576
-
-    [Display(Name = "Woman (31-50 years)", Order = 72)]
-    Woman = 1 << 21, // 2097152
-
-    [Display(Name = "Adult (31-50 years)", Order = 70)]
-    Adult = Man | Woman, // 3145728
-
-    [Display(Name = "Pregnant Woman (31-50 years)", Order = 73)]
-    PregnantWoman = 1 << 22 | Woman, // 6291456
-
-    [Display(Name = "Lactating Woman (31-50 years)", Order = 74)]
-    LactatingWoman = 1 << 23 | Woman, // 10485760
-
-    [Display(Name = "Middle Age Man (51-70 years)", Order = 81)]
-    MiddleAgeMan = 1 << 24, // 16777216
-
-    [Display(Name = "Middle Age Woman (51-70 years)", Order = 82)]
-    MiddleAgeWoman = 1 << 25, // 33554432
-
-    [Display(Name = "Middle Age (51-70 years)", Order = 80)]
-    MiddleAge = MiddleAgeMan | MiddleAgeWoman, // 50331648
-
-    [Display(Name = "Elderly Man (71+ years)", Order = 91)]
-    ElderlyMan = 1 << 26, // 67108864
-
-    [Display(Name = "Elderly Woman (71+ years)", Order = 92)]
-    ElderlyWoman = 1 << 27, // 134217728
-
-    [Display(Name = "Elderly (71+ years)", Order = 90)]
-    Elderly = ElderlyMan | ElderlyWoman, // 201326592
-
-    All = InfantBoy | InfantGirl | BabyBoy | BabyGirl
-        | ToddlerBoy_1_2 | ToddlerGirl_1_2 | ToddlerBoy_2_3 | ToddlerGirl_2_3
-        | ChildBoy | ChildGirl | KidBoy | KidGirl
-        | TeenBoy | TeenGirl | PregnantTeenGirl | LactatingTeenGirl
-        | YoungMan | YoungWoman | PregnantYoungWoman | LactatingYoungWoman
-        | Man | Woman | PregnantWoman | LactatingWoman
-        | MiddleAgeMan | MiddleAgeWoman | ElderlyMan | ElderlyWoman
+    All = Male_0_6_Months | Female_0_6_Months
+        | Male_7_12_Months | Female_7_12_Months
+        | Male_1_2_Years | Female_1_2_Years
+        | Male_2_3_Years | Female_2_3_Years
+        | Male_4_8_Years | Female_4_8_Years
+        | Male_9_13_Years | Female_9_13_Years
+        | Male_14_18_Years | Female_14_18_Years | Pregnant_14_18_Years | Lactating_14_18_Years
+        | Male_19_30_Years | Female_19_30_Years | Pregnant_19_30_Years | Lactating_19_30_Years
+        | Male_31_50_Years | Female_31_50_Years | Pregnant_31_50_Years | Lactating_31_50_Years
+        | Male_51_70_Years | Female_51_70_Years
+        | Male_71_XX_Years | Female_71_XX_Years
 }

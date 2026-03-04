@@ -81,6 +81,14 @@
                         <span asp-validation-for="UserCreateViewModel.Email" class="text-danger word-break--break-word"></span>
                         <div id="email-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserCreateViewModel.Email)</div>
                     </div>
+                    <div class="mb-3">
+                        <label asp-for="UserCreateViewModel.Person" class="control-label">@Html.DisplayNameFor(_ => Model.UserCreateViewModel.Person)</label>
+                        <select asp-for="UserCreateViewModel.Person" class="form-select allow-demo"
+                                asp-items="@(EnumExtensions.GetDisplayValues<Person>().Cast<Person?>().Prepend(null).AsSelectListItems(EnumViewExtensions.EnumOrdering.Order, nullValueText: "Please select..."))">
+                        </select>
+                        <span asp-validation-for="UserCreateViewModel.Person" class="text-danger"></span>
+                        <div id="person-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserCreateViewModel.Person)</div>
+                    </div>
                     <div class="form-check mb-3">
                         <div>
                             <span><label asp-for="UserCreateViewModel.AcceptedTerms" class="control-label">I agree to the</label> <a class="allow-demo" asp-area="" asp-page="/Terms">Terms of Use</a></span>

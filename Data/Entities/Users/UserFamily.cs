@@ -10,15 +10,13 @@ public class UserFamily
 {
     public static class Consts
     {
-        public static readonly Person PersonDefault = Person.Adult;
+        public const int WeightMin = 50;
+        public const int WeightDefault = 75;
+        public const int WeightMax = 150;
 
         public const int CaloriesPerDayMin = 1500;
         public const int CaloriesPerDayDefault = 2000;
         public const int CaloriesPerDayMax = 3000;
-
-        public const int WeightMin = 50;
-        public const int WeightDefault = 75;
-        public const int WeightMax = 150;
     }
 
     public UserFamily() { }
@@ -33,7 +31,7 @@ public class UserFamily
     public int Id { get; private init; }
 
     [Required]
-    public Person Person { get; init; } = Consts.PersonDefault;
+    public Person Person { get; init; }
 
     [Range(Consts.WeightMin, Consts.WeightMax)]
     public int Weight { get; init; } = Consts.WeightDefault;

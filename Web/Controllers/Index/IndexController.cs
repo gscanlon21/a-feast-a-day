@@ -66,7 +66,7 @@ public class IndexController : ViewController
 
     [Route(""), HttpPost]
     public async Task<IActionResult> Create([FromForm(Name = "frc-captcha-solution")] string frcCaptchaSolution,
-        [Bind("Email,AcceptedTerms,IExist", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel)
+        [Bind("Email,AcceptedTerms,IExist,Person", Prefix = nameof(UserCreateViewModel))] UserCreateViewModel viewModel)
     {
         if (!ModelState.IsValid || _captchaService.VerifyCaptcha(frcCaptchaSolution).Result?.Success == false)
         {
@@ -82,7 +82,7 @@ public class IndexController : ViewController
         // These records are required. newUser.Id is null here until SaveChangesAsync is called, so we add these to the navigation property.
         newUser.UserFamilies.Add(new UserFamily()
         {
-            Person = UserFamily.Consts.PersonDefault,
+            Person = viewModel.Person,
             Weight = UserFamily.Consts.WeightDefault,
             CaloriesPerDay = UserFamily.Consts.CaloriesPerDayDefault,
         });
