@@ -24,7 +24,9 @@ public static class NutrientHelpers
         Nutrients.Fatty_acids_total_monounsaturated_Grams,
         Nutrients.Fatty_acids_total_polyunsaturated_Grams,
         Nutrients.Fatty_acids_total_trans_Grams,
-        Nutrients.Cholesterol_Milligrams,
+
+        //Dietary cholesterol: As low as possible while consuming a nutritionally adequate diet.
+        //Nutrients.Cholesterol_Milligrams,
 
         // Amino Acids
         Nutrients.Histidine_Grams,

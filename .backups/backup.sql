@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict PD2tHuZRyHDN6bcFdta7Zy8Z0nYPEUTAH75kYjlfb17aNaCVoDwU2IkfzP9810y
+\restrict PwMn7L8MvhKxdhKqt91mszpUUyC0LSRHZBpOqo8ET9cVgP8hOhbtA4EsfEWoKp3
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -707,61 +707,103 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Multiplier", "CaloriesPerGram", "Source", "Updated", "Checked", "Notes") FROM stdin;
 177	Iron_Fe_Milligrams	8	45	1048576	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
 178	Iron_Fe_Milligrams	18	45	2097152	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
-24	Retinol	900	3000	131072	1	1	0		2023-01-01	-infinity	\N
-25	Retinol	700	3000	65536	1	1	0		2023-01-01	-infinity	\N
-7	Carbohydrates_Grams	210	\N	196608	3	1	4		2023-01-01	-infinity	\N
+19	Cholesterol_Milligrams	\N	\N	131072	2	1	0		2023-01-01	-infinity	\N
 179	Iron_Fe_Milligrams	8	45	65536	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
 180	Iron_Fe_Milligrams	18	45	131072	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
+215	Boron_B_Micrograms	-1	20	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+8	Fiber_total_dietary_Grams	25	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity	\N
 5	Carbohydrates_Grams	130	\N	65536	3	1	4		2023-01-01	-infinity	\N
 6	Carbohydrates_Grams	175	\N	131072	3	1	4		2023-01-01	-infinity	\N
-20	Flavonoids_total_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-22	Polyphenols_total_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-10	Fatty_acids_total_trans_Grams	\N	1	196608	100	1	9		2023-01-01	-infinity	\N
-8	Fiber_total_dietary_Grams	25	\N	196608	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity	\N
+209	Calcium_Ca_Milligrams	1000	2500	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+210	Calcium_Ca_Milligrams	1000	2500	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+211	Calcium_Ca_Milligrams	1000	2500	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+212	Potassium_K_Milligrams	3400	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 196	Lithium_Li_Micrograms	14.3	-1	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
 197	Lithium_Li_Micrograms	14.3	-1	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
-198	Lithium_Li_Micrograms	14.3	-1	3145728	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
 199	Lithium_Li_Micrograms	14.3	-1	1048576	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
 200	Lithium_Li_Micrograms	14.3	-1	2097152	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
+10	Fatty_acids_total_trans_Grams	\N	1	131072	100	1	9		2023-01-01	-infinity	\N
+14	Omega 6	\N	10	131072	100	1	9		2023-01-01	-infinity	\N
+24	Retinol_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+25	Retinol_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 11	Fatty_acids_total_saturated_Grams	\N	-1	3	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-03	-infinity	\N
+1	Protein	10	35	131072	100	1	4		2023-01-01	-infinity	\N
+3	Oligosaccharides	1	\N	131072	3	1	4		2023-01-01	-infinity	\N
+4	Starch	130	\N	131072	3	1	4		2023-01-01	-infinity	\N
 129	Fatty_acids_total_saturated_Grams	\N	-1	2	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+13	Omega 3	\N	10	131072	100	1	9		2023-01-01	-infinity	\N
+17	Fats	20	35	131072	100	1	9		2023-01-01	-infinity	\N
 133	Fatty_acids_total_saturated_Grams	\N	-1	48	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-123	Fatty_acids_total_saturated_Grams	\N	3	196608	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 124	Fatty_acids_total_saturated_Grams	\N	3	65536	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-125	Fatty_acids_total_saturated_Grams	\N	3	131072	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 126	Fatty_acids_total_saturated_Grams	\N	3	393216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 127	Fatty_acids_total_saturated_Grams	\N	3	655360	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+18	Calories	1000	1100	131072	0	3	0		2023-01-01	-infinity	\N
+216	Boron_B_Micrograms	-1	20	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+20	Flavonoids_total_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+22	Polyphenols_total_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+68	Energy_KCalorie	1000	1100	131072	0	3	0		-infinity	-infinity	\N
+70	Resistant_starch_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
+123	Fatty_acids_total_saturated_Grams	\N	3	131072	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+213	Potassium_K_Milligrams	3400	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+214	Potassium_K_Milligrams	2600	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+217	Boron_B_Micrograms	-1	20	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
+269	Arginine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+270	Glycine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+271	Total_lipid_fat_Grams	20	35	65536	100	1	9		-infinity	-infinity	\N
+272	Biotin	1.2	\N	65536	2	1	0		-infinity	-infinity	\N
 134	Fatty_acids_total_saturated_Grams	\N	-1	16	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 135	Fatty_acids_total_saturated_Grams	\N	-1	32	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-68	Energy_KCalorie	1000	1100	196608	0	3	0		-infinity	-infinity	\N
-70	Resistant_starch_Grams	6	12	196608	100	1	4		2023-01-01	-infinity	\N
-1	Protein	10	35	196608	100	1	4		2023-01-01	-infinity	\N
-3	Oligosaccharides	1	\N	196608	3	1	4		2023-01-01	-infinity	\N
-4	Starch	130	\N	196608	3	1	4		2023-01-01	-infinity	\N
-13	Omega 3	\N	10	196608	100	1	9		2023-01-01	-infinity	\N
-14	Omega 6	\N	10	196608	100	1	9		2023-01-01	-infinity	\N
-17	Fats	20	35	196608	100	1	9		2023-01-01	-infinity	\N
-18	Calories	1000	1100	196608	0	3	0		2023-01-01	-infinity	\N
-19	Cholesterol	\N	\N	196608	2	1	0		2023-01-01	-infinity	\N
 73	Iron_Fe_Milligrams	0.27	40	3	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
 181	Fiber_insoluble_Grams	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 37	Magnesium_Mg_Milligrams	400	\N	131072	2	1	0		2023-01-01	-infinity	\N
 38	Magnesium_Mg_Milligrams	350	\N	65536	2	1	0		2023-01-01	-infinity	\N
-26	Vitamin_A_Micrograms	900	3000	131072	1	1	0		2023-01-01	-infinity	\N
-27	Vitamin_A_Micrograms	700	3000	65536	1	1	0		2023-01-01	-infinity	\N
-84	Copper_Cu_Milligrams	900	10000	196608	1	1	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	-infinity	\N
-39	Potassium_K_Milligrams	3500	\N	196608	2	1	0		2023-01-01	-infinity	\N
-40	Sodium_Na_Milligrams	1500	2300	196608	2	1	0		2023-01-01	-infinity	\N
-43	Zinc_Zn_Milligrams	10	\N	196608	2	1	0		2023-01-01	-infinity	\N
+219	Cholesterol_Milligrams	\N	\N	65536	2	1	0		-infinity	-infinity	\N
+220	Fatty_acids_total_trans_Grams	\N	1	65536	100	1	9		-infinity	-infinity	\N
+221	Omega 6	\N	10	65536	100	1	9		-infinity	-infinity	\N
+222	Protein	10	35	65536	100	1	4		-infinity	-infinity	\N
+223	Oligosaccharides	1	\N	65536	3	1	4		-infinity	-infinity	\N
 182	Fiber_insoluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-183	Fiber_insoluble_Grams	12.5	\N	3145728	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 184	Fiber_insoluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 185	Fiber_insoluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 186	Fiber_soluble_Grams	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 187	Fiber_soluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-188	Fiber_soluble_Grams	12.5	\N	3145728	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 189	Fiber_soluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 190	Fiber_soluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
+26	Vitamin_A_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+27	Vitamin_A_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+203	Vitamin_A_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+204	Vitamin_A_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+207	Retinol_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+208	Retinol_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+224	Starch	130	\N	65536	3	1	4		-infinity	-infinity	\N
+40	Sodium_Na_Milligrams	1500	2300	131072	2	1	0		2023-01-01	-infinity	\N
+43	Zinc_Zn_Milligrams	10	\N	131072	2	1	0		2023-01-01	-infinity	\N
+84	Copper_Cu_Milligrams	900	10000	131072	1	1	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	-infinity	\N
+225	Omega 3	\N	10	65536	100	1	9		-infinity	-infinity	\N
+39	Potassium_K_Milligrams	2600	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	-infinity	\N
+226	Fats	20	35	65536	100	1	9		-infinity	-infinity	\N
+227	Calories	1000	1100	65536	0	3	0		-infinity	-infinity	\N
+228	Flavonoids_total_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
+229	Polyphenols_total_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
+230	Energy_KCalorie	1000	1100	65536	0	3	0		-infinity	-infinity	\N
+231	Resistant_starch_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
+232	Sodium_Na_Milligrams	1500	2300	65536	2	1	0		-infinity	-infinity	\N
+233	Zinc_Zn_Milligrams	10	\N	65536	2	1	0		-infinity	-infinity	\N
+234	Copper_Cu_Milligrams	900	10000	65536	1	1	0		-infinity	-infinity	\N
+235	Vitamin B-12	2.4	\N	65536	1	1	0		-infinity	-infinity	\N
+236	Vitamin D	20	100	65536	1	1	0		-infinity	-infinity	\N
+237	Vitamin E	15	\N	65536	2	1	0		-infinity	-infinity	\N
+238	Vitamin K	90	\N	65536	1	1	0		-infinity	-infinity	\N
+239	Selenium_Se_Micrograms	55	400	65536	1	1	0		-infinity	-infinity	\N
+240	Fatty_acids_total_polyunsaturated_Grams	\N	10	65536	100	3	9		-infinity	-infinity	\N
+241	Fatty_acids_total_monounsaturated_Grams	\N	10	65536	100	3	9		-infinity	-infinity	\N
+242	Chlorine_Cl_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
+243	Carotene	1	10	65536	2	1	0		-infinity	-infinity	\N
+244	Manganese_Mn_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
+245	Niacin	1	10	65536	2	1	0		-infinity	-infinity	\N
+246	Pantothenic acid	1	10	65536	2	1	0		-infinity	-infinity	\N
+247	Riboflavin	1	10	65536	2	1	0		-infinity	-infinity	\N
+248	Vitamin B-6	1	10	65536	2	1	0		-infinity	-infinity	\N
 158	Fatty_acids_total_saturated_Grams	\N	3	512	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 117	Fatty_acids_total_saturated_Grams	\N	3	12288	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 118	Fatty_acids_total_saturated_Grams	\N	3	4096	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
@@ -780,73 +822,215 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 161	Fatty_acids_total_saturated_Grams	\N	3	2048	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 162	Fatty_acids_total_saturated_Grams	\N	3	24576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 163	Fatty_acids_total_saturated_Grams	\N	3	40960	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-165	Fatty_acids_total_saturated_Grams	\N	3	3145728	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+30	Vitamin B-12	2.4	\N	131072	1	1	0		2023-01-01	-infinity	\N
 166	Fatty_acids_total_saturated_Grams	\N	3	1048576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 167	Fatty_acids_total_saturated_Grams	\N	3	2097152	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 168	Fatty_acids_total_saturated_Grams	\N	3	6291456	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 169	Fatty_acids_total_saturated_Grams	\N	3	10485760	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-54	Lithium_Li_Micrograms	14.3	-1	196608	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
+36	Calcium_Ca_Milligrams	1000	2500	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	-infinity	\N
 171	Fatty_acids_total_saturated_Grams	\N	3	50331648	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 172	Fatty_acids_total_saturated_Grams	\N	3	16777216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 173	Fatty_acids_total_saturated_Grams	\N	3	33554432	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 174	Fatty_acids_total_saturated_Grams	\N	3	201326592	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 175	Fatty_acids_total_saturated_Grams	\N	3	67108864	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 176	Fatty_acids_total_saturated_Grams	\N	3	134217728	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-30	Vitamin B-12	2.4	\N	196608	1	1	0		2023-01-01	-infinity	\N
-33	Vitamin D	20	100	196608	1	1	0		2023-01-01	-infinity	\N
-34	Vitamin E	15	\N	196608	2	1	0		2023-01-01	-infinity	\N
-35	Vitamin K	90	\N	196608	1	1	0		2023-01-01	-infinity	\N
-56	Betaine	500	3500	196608	2	1	0		2023-01-01	-infinity	\N
-57	Histidine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-58	Isoleucine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-59	Leucine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-60	Lysine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-61	Methionine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-62	Phenylalanine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-63	Threonine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-64	Tryptophan	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-65	Valine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-66	Arginine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-67	Glycine	0.5	10	196608	3	1	0		2023-01-01	-infinity	\N
-69	Total_lipid_fat_Grams	20	35	196608	100	1	9		2023-01-01	-infinity	\N
-71	Biotin	1.2	\N	196608	2	1	0		2023-01-01	-infinity	\N
+33	Vitamin D	20	100	131072	1	1	0		2023-01-01	-infinity	\N
+34	Vitamin E	15	\N	131072	2	1	0		2023-01-01	-infinity	\N
+35	Vitamin K	90	\N	131072	1	1	0		2023-01-01	-infinity	\N
+44	Selenium_Se_Micrograms	55	400	131072	1	1	0		2023-01-01	-infinity	\N
 31	Vitamin_C_total_ascorbic_acid_Milligrams	90	\N	131072	2	1	0		2023-01-01	-infinity	\N
 29	Thiamin_Milligrams	1.1	\N	65536	2	1	0		2023-01-01	-infinity	\N
 28	Thiamin_Milligrams	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
-36	Calcium_Ca_Milligrams	750	\N	196608	2	1	0		2023-01-01	-infinity	\N
-52	Boron_B_Micrograms	2	20	196608	2	1	0		2023-01-01	-infinity	\N
-46	Chromium_Cr_Micrograms	35	\N	196608	1	1	0		2023-01-01	-infinity	\N
-55	Choline_total_Milligrams	500	3500	196608	2	1	0		2023-01-01	-infinity	\N
-48	Fluoride_F_Micrograms	2.5	10	196608	2	1	0		2023-01-01	-infinity	\N
-45	Iodine_I_Micrograms	150	\N	196608	1	1	0		2023-01-01	-infinity	\N
-50	Phosphorus_P_Milligrams	700	\N	196608	2	1	0		2023-01-01	-infinity	\N
-49	Molybdenum_Mo_Micrograms	45	\N	196608	1	1	0		2023-01-01	-infinity	\N
-44	Selenium_Se_Micrograms	55	400	196608	1	1	0		2023-01-01	-infinity	\N
-51	Sulfur_S_Milligrams	850	\N	196608	2	1	0		2023-01-01	-infinity	\N
-53	Vanadium_V_Micrograms	20	1000	196608	1	1	0		2023-01-01	-infinity	\N
-88	Carotene	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-79	Fiber_insoluble_Grams	12.5	\N	196608	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity	\N
-94	Niacin	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-95	Pantothenic acid	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-78	Fiber_soluble_Grams	12.5	\N	196608	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	-infinity	\N
+82	Fatty_acids_total_polyunsaturated_Grams	\N	10	131072	100	3	9		2023-01-01	-infinity	\N
+83	Fatty_acids_total_monounsaturated_Grams	\N	10	131072	100	3	9		2023-01-01	-infinity	\N
+87	Chlorine_Cl_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+88	Carotene	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+92	Manganese_Mn_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+94	Niacin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+95	Pantothenic acid	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+99	Riboflavin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+52	Boron_B_Micrograms	-1	20	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	-infinity	\N
+249	Iodine_I_Micrograms	150	\N	65536	1	1	0		-infinity	-infinity	\N
 191	Fiber_total_dietary_Grams	38	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-192	Fiber_total_dietary_Grams	25	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-99	Riboflavin	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-193	Fiber_total_dietary_Grams	25	\N	3145728	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 194	Fiber_total_dietary_Grams	38	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-103	Vitamin B-6	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-106	Thiamin	1	10	196608	2	1	0		2023-01-01	-infinity	\N
+103	Vitamin B-6	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 195	Fiber_total_dietary_Grams	25	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-109	Vitamin D (D2 + D3)	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-110	Vitamin K (phylloquinone)	1	10	196608	2	1	0		2023-01-01	-infinity	\N
+45	Iodine_I_Micrograms	150	\N	131072	1	1	0		2023-01-01	-infinity	\N
 32	Vitamin_C_total_ascorbic_acid_Milligrams	75	\N	65536	2	1	0		2023-01-01	-infinity	\N
-87	Chlorine_Cl_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-75	Folate_total_Micrograms	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-92	Manganese_Mn_Milligrams	1	10	196608	2	1	0		2023-01-01	-infinity	\N
-105	Total_Sugars_Grams	6	12	196608	100	1	4		2023-01-01	-infinity	\N
-108	Sugars_Total_Grams	6	12	196608	100	1	4		2023-01-01	-infinity	\N
-83	Fatty_acids_total_monounsaturated_Grams	\N	10	196608	100	3	9		2023-01-01	-infinity	\N
-82	Fatty_acids_total_polyunsaturated_Grams	\N	10	196608	100	3	9		2023-01-01	-infinity	\N
+250	Chromium_Cr_Micrograms	35	\N	65536	1	1	0		-infinity	-infinity	\N
+251	Molybdenum_Mo_Micrograms	45	\N	65536	1	1	0		-infinity	-infinity	\N
+252	Total_Sugars_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
+46	Chromium_Cr_Micrograms	35	\N	131072	1	1	0		2023-01-01	-infinity	\N
+49	Molybdenum_Mo_Micrograms	45	\N	131072	1	1	0		2023-01-01	-infinity	\N
+105	Total_Sugars_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
+106	Thiamin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+48	Fluoride_F_Micrograms	2.5	10	131072	2	1	0		2023-01-01	-infinity	\N
+50	Phosphorus_P_Milligrams	700	\N	131072	2	1	0		2023-01-01	-infinity	\N
+51	Sulfur_S_Milligrams	850	\N	131072	2	1	0		2023-01-01	-infinity	\N
+53	Vanadium_V_Micrograms	20	1000	131072	1	1	0		2023-01-01	-infinity	\N
+55	Choline_total_Milligrams	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
+56	Betaine	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
+253	Thiamin	1	10	65536	2	1	0		-infinity	-infinity	\N
+254	Fluoride_F_Micrograms	2.5	10	65536	2	1	0		-infinity	-infinity	\N
+57	Histidine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+58	Isoleucine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+59	Leucine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+60	Lysine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+61	Methionine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+62	Phenylalanine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+255	Phosphorus_P_Milligrams	700	\N	65536	2	1	0		-infinity	-infinity	\N
+256	Sulfur_S_Milligrams	850	\N	65536	2	1	0		-infinity	-infinity	\N
+63	Threonine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+64	Tryptophan	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+65	Valine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+66	Arginine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+67	Glycine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+69	Total_lipid_fat_Grams	20	35	131072	100	1	9		2023-01-01	-infinity	\N
+71	Biotin	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
+75	Folate_total_Micrograms	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+108	Sugars_Total_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
+109	Vitamin D (D2 + D3)	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+110	Vitamin K (phylloquinone)	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+257	Vanadium_V_Micrograms	20	1000	65536	1	1	0		-infinity	-infinity	\N
+258	Choline_total_Milligrams	500	3500	65536	2	1	0		-infinity	-infinity	\N
+259	Betaine	500	3500	65536	2	1	0		-infinity	-infinity	\N
+260	Histidine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+261	Isoleucine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+262	Leucine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+263	Lysine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+264	Methionine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+265	Phenylalanine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+266	Threonine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+267	Tryptophan	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+268	Valine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+273	Folate_total_Micrograms	1	10	65536	2	1	0		-infinity	-infinity	\N
+274	Sugars_Total_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
+275	Vitamin D (D2 + D3)	1	10	65536	2	1	0		-infinity	-infinity	\N
+276	Vitamin K (phylloquinone)	1	10	65536	2	1	0		-infinity	-infinity	\N
+277	Cholesterol_Milligrams	\N	\N	1048576	2	1	0		-infinity	-infinity	\N
+278	Carbohydrates_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
+280	Fatty_acids_total_trans_Grams	\N	1	1048576	100	1	9		-infinity	-infinity	\N
+281	Omega 6	\N	10	1048576	100	1	9		-infinity	-infinity	\N
+282	Protein	10	35	1048576	100	1	4		-infinity	-infinity	\N
+283	Oligosaccharides	1	\N	1048576	3	1	4		-infinity	-infinity	\N
+284	Starch	130	\N	1048576	3	1	4		-infinity	-infinity	\N
+285	Omega 3	\N	10	1048576	100	1	9		-infinity	-infinity	\N
+286	Fats	20	35	1048576	100	1	9		-infinity	-infinity	\N
+287	Calories	1000	1100	1048576	0	3	0		-infinity	-infinity	\N
+288	Flavonoids_total_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+289	Polyphenols_total_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+290	Energy_KCalorie	1000	1100	1048576	0	3	0		-infinity	-infinity	\N
+291	Resistant_starch_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
+292	Arginine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+293	Glycine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+294	Total_lipid_fat_Grams	20	35	1048576	100	1	9		-infinity	-infinity	\N
+295	Biotin	1.2	\N	1048576	2	1	0		-infinity	-infinity	\N
+296	Magnesium_Mg_Milligrams	400	\N	1048576	2	1	0		-infinity	-infinity	\N
+304	Sodium_Na_Milligrams	1500	2300	1048576	2	1	0		-infinity	-infinity	\N
+305	Zinc_Zn_Milligrams	10	\N	1048576	2	1	0		-infinity	-infinity	\N
+306	Copper_Cu_Milligrams	900	10000	1048576	1	1	0		-infinity	-infinity	\N
+317	Vitamin B-12	2.4	\N	1048576	1	1	0		-infinity	-infinity	\N
+318	Vitamin D	20	100	1048576	1	1	0		-infinity	-infinity	\N
+319	Vitamin E	15	\N	1048576	2	1	0		-infinity	-infinity	\N
+320	Vitamin K	90	\N	1048576	1	1	0		-infinity	-infinity	\N
+321	Selenium_Se_Micrograms	55	400	1048576	1	1	0		-infinity	-infinity	\N
+322	Fatty_acids_total_polyunsaturated_Grams	\N	10	1048576	100	3	9		-infinity	-infinity	\N
+323	Fatty_acids_total_monounsaturated_Grams	\N	10	1048576	100	3	9		-infinity	-infinity	\N
+324	Chlorine_Cl_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+325	Carotene	1	10	1048576	2	1	0		-infinity	-infinity	\N
+326	Manganese_Mn_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+327	Niacin	1	10	1048576	2	1	0		-infinity	-infinity	\N
+328	Pantothenic acid	1	10	1048576	2	1	0		-infinity	-infinity	\N
+329	Riboflavin	1	10	1048576	2	1	0		-infinity	-infinity	\N
+330	Vitamin B-6	1	10	1048576	2	1	0		-infinity	-infinity	\N
+336	Vitamin_C_total_ascorbic_acid_Milligrams	90	\N	1048576	2	1	0		-infinity	-infinity	\N
+337	Thiamin_Milligrams	1.1	\N	1048576	2	1	0		-infinity	-infinity	\N
+347	Iodine_I_Micrograms	150	\N	1048576	1	1	0		-infinity	-infinity	\N
+351	Chromium_Cr_Micrograms	35	\N	1048576	1	1	0		-infinity	-infinity	\N
+352	Molybdenum_Mo_Micrograms	45	\N	1048576	1	1	0		-infinity	-infinity	\N
+353	Total_Sugars_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
+357	Thiamin	1	10	1048576	2	1	0		-infinity	-infinity	\N
+358	Fluoride_F_Micrograms	2.5	10	1048576	2	1	0		-infinity	-infinity	\N
+359	Phosphorus_P_Milligrams	700	\N	1048576	2	1	0		-infinity	-infinity	\N
+360	Sulfur_S_Milligrams	850	\N	1048576	2	1	0		-infinity	-infinity	\N
+361	Vanadium_V_Micrograms	20	1000	1048576	1	1	0		-infinity	-infinity	\N
+362	Choline_total_Milligrams	500	3500	1048576	2	1	0		-infinity	-infinity	\N
+363	Betaine	500	3500	1048576	2	1	0		-infinity	-infinity	\N
+366	Histidine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+367	Isoleucine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+368	Leucine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+369	Lysine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+370	Methionine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+371	Phenylalanine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+374	Threonine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+375	Tryptophan	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+376	Valine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+381	Folate_total_Micrograms	1	10	1048576	2	1	0		-infinity	-infinity	\N
+382	Sugars_Total_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
+383	Vitamin D (D2 + D3)	1	10	1048576	2	1	0		-infinity	-infinity	\N
+384	Vitamin K (phylloquinone)	1	10	1048576	2	1	0		-infinity	-infinity	\N
+377	Arginine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+387	Betaine	500	3500	2097152	2	1	0		-infinity	-infinity	\N
+380	Biotin	1.2	\N	2097152	2	1	0		-infinity	-infinity	\N
+309	Calories	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
+279	Carbohydrates_Grams	175	\N	2097152	3	1	4		-infinity	-infinity	\N
+342	Carotene	1	10	2097152	2	1	0		-infinity	-infinity	\N
+341	Chlorine_Cl_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+298	Cholesterol_Milligrams	\N	\N	2097152	2	1	0		-infinity	-infinity	\N
+386	Choline_total_Milligrams	500	3500	2097152	2	1	0		-infinity	-infinity	\N
+354	Chromium_Cr_Micrograms	35	\N	2097152	1	1	0		-infinity	-infinity	\N
+316	Copper_Cu_Milligrams	900	10000	2097152	1	1	0		-infinity	-infinity	\N
+312	Energy_KCalorie	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
+308	Fats	20	35	2097152	100	1	9		-infinity	-infinity	\N
+340	Fatty_acids_total_monounsaturated_Grams	\N	10	2097152	100	3	9		-infinity	-infinity	\N
+339	Fatty_acids_total_polyunsaturated_Grams	\N	10	2097152	100	3	9		-infinity	-infinity	\N
+299	Fatty_acids_total_trans_Grams	\N	1	2097152	100	1	9		-infinity	-infinity	\N
+310	Flavonoids_total_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+365	Fluoride_F_Micrograms	2.5	10	2097152	2	1	0		-infinity	-infinity	\N
+397	Folate_total_Micrograms	1	10	2097152	2	1	0		-infinity	-infinity	\N
+378	Glycine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+388	Histidine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+349	Iodine_I_Micrograms	150	\N	2097152	1	1	0		-infinity	-infinity	\N
+389	Isoleucine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+390	Leucine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+391	Lysine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+392	Methionine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+297	Magnesium_Mg_Milligrams	350	\N	2097152	2	1	0		-infinity	-infinity	\N
+343	Manganese_Mn_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+355	Molybdenum_Mo_Micrograms	45	\N	2097152	1	1	0		-infinity	-infinity	\N
+344	Niacin	1	10	2097152	2	1	0		-infinity	-infinity	\N
+302	Oligosaccharides	1	\N	2097152	3	1	4		-infinity	-infinity	\N
+307	Omega 3	\N	10	2097152	100	1	9		-infinity	-infinity	\N
+300	Omega 6	\N	10	2097152	100	1	9		-infinity	-infinity	\N
+345	Pantothenic acid	1	10	2097152	2	1	0		-infinity	-infinity	\N
+393	Phenylalanine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+372	Phosphorus_P_Milligrams	700	\N	2097152	2	1	0		-infinity	-infinity	\N
+311	Polyphenols_total_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+301	Protein	10	35	2097152	100	1	4		-infinity	-infinity	\N
+313	Resistant_starch_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
+346	Riboflavin	1	10	2097152	2	1	0		-infinity	-infinity	\N
+335	Selenium_Se_Micrograms	55	400	2097152	1	1	0		-infinity	-infinity	\N
+314	Sodium_Na_Milligrams	1500	2300	2097152	2	1	0		-infinity	-infinity	\N
+303	Starch	130	\N	2097152	3	1	4		-infinity	-infinity	\N
+398	Sugars_Total_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
+373	Sulfur_S_Milligrams	850	\N	2097152	2	1	0		-infinity	-infinity	\N
+364	Thiamin	1	10	2097152	2	1	0		-infinity	-infinity	\N
+338	Thiamin_Milligrams	1.2	\N	2097152	2	1	0		-infinity	-infinity	\N
+394	Threonine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+379	Total_lipid_fat_Grams	20	35	2097152	100	1	9		-infinity	-infinity	\N
+356	Total_Sugars_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
+395	Tryptophan	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+396	Valine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+385	Vanadium_V_Micrograms	20	1000	2097152	1	1	0		-infinity	-infinity	\N
+331	Vitamin B-12	2.4	\N	2097152	1	1	0		-infinity	-infinity	\N
+348	Vitamin B-6	1	10	2097152	2	1	0		-infinity	-infinity	\N
+350	Vitamin_C_total_ascorbic_acid_Milligrams	75	\N	2097152	2	1	0		-infinity	-infinity	\N
+332	Vitamin D	20	100	2097152	1	1	0		-infinity	-infinity	\N
+399	Vitamin D (D2 + D3)	1	10	2097152	2	1	0		-infinity	-infinity	\N
+333	Vitamin E	15	\N	2097152	2	1	0		-infinity	-infinity	\N
+334	Vitamin K	90	\N	2097152	1	1	0		-infinity	-infinity	\N
+400	Vitamin K (phylloquinone)	1	10	2097152	2	1	0		-infinity	-infinity	\N
+315	Zinc_Zn_Milligrams	10	\N	2097152	2	1	0		-infinity	-infinity	\N
 \.
 
 
@@ -3133,6 +3317,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1461	301	1	f
 1073	1074	1	t
 1073	174	1	t
+16	206	1	f
 \.
 
 
@@ -3170,6 +3355,10 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 419	2644285	100314
 1402	172175	1004
 1178	2647440	100298
+736	2258586	11124
+20	168874	20035
+16	1999633	11457
+206	1999632	100260
 \.
 
 
@@ -11392,7 +11581,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 200, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 400, true);
 
 
 --
@@ -12156,5 +12345,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict PD2tHuZRyHDN6bcFdta7Zy8Z0nYPEUTAH75kYjlfb17aNaCVoDwU2IkfzP9810y
+\unrestrict PwMn7L8MvhKxdhKqt91mszpUUyC0LSRHZBpOqo8ET9cVgP8hOhbtA4EsfEWoKp3
 
