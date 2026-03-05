@@ -7,7 +7,7 @@
 7	\N	Large Carrots	\N	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Carrots	\N
 8	\N	Red Bell Peppers	\N	\N	f	512	119	100	2025-10-23	0	149	2	149	Bell Pepper	\N
 9	\N	Avocados	\N	\N	f	0	201	100	2024-10-23	0	201	1	201	Avocados	\N
-10	\N	Fresh Strawberries	\N	\N	f	0	28	100	2024-12-19	4	144	1	144	Fresh Strawberries	\N
+10	\N	Fresh Strawberries	\N	\N	f	0	28	100	2024-12-19	4	144	1	144	Fresh Strawberries	https://fdc.nal.usda.gov/food-details/2346409/nutrients
 11	\N	Bananas	\N	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N
 12	\N	Limes	\N	\N	f	0	67	100	2025-02-07	0	201	1	201	Lime	\N
 13	\N	Fresh Cilantro	The plant is called Coriander. The leaves are cilantro. https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	f	0	1	100	2024-12-13	3	16	3	16	Cilantro	\N
@@ -23,7 +23,7 @@
 23	\N	Flour Tortillas	\N	\N	f	262176	46	100	2025-05-30	0	92	1024	92	Flour Tortillas	\N
 24	\N	Boneless Chicken Breasts	\N	\N	f	1048576	145	100	2025-03-14	0	145	268435456	145	Boneless Chicken Breasts	\N
 25	\N	90% Lean Ground Beef	\N	\N	f	1048576	28	100	2026-02-02	4	224	268435456	224	Ground Beef	\N
-26	\N	Sliced Ham	\N	\N	f	0	28	100	2024-12-10	4	224	268435456	224	Sliced Ham	\N
+26	\N	Sliced Ham	\N	\N	f	0	28	100	2024-12-10	4	224	268435456	224	Sliced Ham	https://fdc.nal.usda.gov/food-details/332397/nutrients
 27	\N	Slices of Turkey	\N	\N	f	1048576	26	100	2025-03-27	0	208	268435456	208	Slices of Turkey	\N
 28	\N	Brown Eggs	\N	\N	f	8	50	100	2025-06-14	0	200	16777216	200	Brown Eggs	\N
 29	\N	Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	100	2025-10-07	7	224	29360128	224	Butter	\N
@@ -58,7 +58,7 @@
 59	\N	Ketchup	\N	\N	t	512	28	100	2025-09-20	4	240	32	240	Ketchup	\N
 60	\N	Mustard	\N	\N	t	0	28	100	2025-09-22	4	240	32	240	Mustard	\N
 61	\N	Mayonnaise	\N	\N	f	0	28	100	2025-06-12	4	224	32	224	Mayonnaise	\N
-62	\N	Soy Sauce	\N	\N	f	294944	32	100	2024-10-27	9	256	8192	256	Soy Sauce	\N
+62	\N	Soy Sauce	Made from soy and wheat (shoyu).	\N	f	294944	32	100	2024-10-27	9	256	8192	256	Soy Sauce	https://fdc.nal.usda.gov/food-details/174277/nutrients
 63	\N	A1 Steak Sauce: Original	\N	\N	f	0	16	100	2025-07-09	7	100	32	100	A1 Steak Sauce: Original	\N
 64	\N	Hot Sauce	\N	\N	f	0	28	100	2024-12-02	4	240	256	240	Hot Sauce	\N
 65	\N	Buffalo Sauce	\N	\N	f	0	14	100	2026-02-12	7	224	32	224	Buffalo Sauce	\N
@@ -353,7 +353,7 @@
 365	\N	Green Lentil Spaghetti Pasta	\N	\N	f	0	28	100	2025-01-21	4	112	4096	112	Green Lentil Spaghetti Pasta	\N
 366	\N	Unenriched Spaghetti Pasta	\N	\N	f	262176	28	100	2025-08-30	4	112	4096	112	Unenriched Spaghetti Pasta	\N
 367	\N	Enriched Spaghetti Pasta	\N	\N	f	262176	28	100	2025-08-30	4	112	4096	112	Enriched Spaghetti Pasta	\N
-368	\N	Arugula	 aka. Rocket - https://www.eatthismuch.com/calories/arugula,2568	\N	f	0	20	100	2025-02-14	6	20	2	20	Arugula	\N
+368	\N	Arugula	 aka. Rocket	\N	f	0	20	100	2025-02-14	6	20	2	20	Arugula	https://fdc.nal.usda.gov/food-details/169387/nutrients
 369	\N	Red Lentil Linguine	\N	\N	f	0	28	100	2025-06-29	4	224	4096	224	Red Lentil Linguine	\N
 370	\N	Green Lentil Linguine	\N	\N	f	0	28	100	2025-06-29	4	224	4096	224	Green Lentil Linguine	\N
 371	\N	Chickpea Linguine	\N	\N	f	0	28	100	2025-06-30	4	224	4096	224	Chickpea Linguine	\N
@@ -547,7 +547,7 @@
 622	\N	Chickpea Eliche Pasta	\N	\N	f	0	28	100	2025-02-08	4	74.67	4096	74.67	Chickpea Eliche Pasta	\N
 623	\N	Red Lentil Eliche Pasta	\N	\N	f	0	28	100	2025-02-07	4	112	4096	112	Red Lentil Eliche Pasta	\N
 624	\N	Fresh Radicchio Leaves 	\N	\N	f	0	8	100	2026-01-22	0	40	2	40	Radicchio	\N
-625	\N	Fresh Blackberries	\N	\N	f	0	28	100	2025-01-14	4	144	1	144	Fresh Blackberries	\N
+625	\N	Fresh Blackberries	\N	\N	f	0	28	100	2025-01-14	4	144	1	144	Fresh Blackberries	https://fdc.nal.usda.gov/food-details/2727581/nutrients
 626	\N	Fresh Raspberries	\N	\N	f	0	28	100	2024-12-18	4	123	1	123	Fresh Raspberries	\N
 627	\N	Medjool Dates	\N	\N	f	0	24	100	2025-05-23	0	192	1	192	Medjool Dates	\N
 628	\N	Plain Coconut Milk	\N	\N	f	0	30	100	2025-11-12	9	240	4194304	240	Plain Coconut Milk	\N
@@ -761,7 +761,7 @@
 868	\N	Chipolata | Small Pork Sausages 	\N	\N	f	1048576	100	100	2025-08-07	0	100	268435456	100	Chipolata | Small Pork Sausages 	\N
 869	\N	Wild Salmon	\N	\N	f	16	112	100	2025-11-01	0	224	134217728	224	Wild Salmon	\N
 870	\N	Flaxseed Oil	aka. Virgin Flaxseed Oil. https://www.eatthismuch.com/calories/flaxseed-oil-5700	\N	f	0	28	100	2025-01-19	9	224	65536	224	Flaxseed Oil	\N
-871	\N	Fresh Blueberries	\N	\N	f	0	28	100	2024-11-28	4	148	1	148	Fresh Blueberries	\N
+871	\N	Fresh Blueberries	\N	\N	f	0	28	100	2024-11-28	4	148	1	148	Fresh Blueberries	https://fdc.nal.usda.gov/food-details/2346411/nutrients
 872	\N	Broccoli Sprouts	\N	\N	f	0	28	100	2025-01-21	4	224	2	224	Broccoli	\N
 902	\N	Chamomile Tea Bag	\N	\N	f	0	29.57	100	2025-08-03	0	236.56	0	236.56	Chamomile Tea Bag	\N
 903	\N	Radish Sprouts	\N	\N	f	0	28	100	2025-01-14	4	38	2	38	Radish Sprouts	\N
