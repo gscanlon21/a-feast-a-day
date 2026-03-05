@@ -150,7 +150,7 @@
 154	\N	White Rice Cakes	\N	\N	f	0	9	100	2025-08-31	0	36	64	36	White Rice Cakes	\N
 155	\N	Cucumbers	\N	\N	f	0	301	100	2025-03-04	0	240	2	240	Cucumbers	\N
 156	\N	Brussel Sprouts	\N	\N	f	0	19	100	2024-12-10	0	88	2	88	Brussel Sprouts	\N
-157	\N	Fresh Pears	\N	\N	f	0	28	100	2026-02-08	4	161	1	140	Pear	\N
+157	\N	Fresh Pears	https://fdc.nal.usda.gov/food-details/169118/nutrients	\N	f	0	28	100	2026-02-08	4	161	1	140	Pear	\N
 158	\N	Sunflower Seeds	\N	\N	f	0	28	100	2025-12-19	4	128	1048576	128	Sunflower Seeds	\N
 159	\N	Watermelon	\N	\N	f	0	4520	100	2025-11-09	0	152	1	152	Watermelon	\N
 160	\N	Cow Milk (1%)	\N	\N	f	0	240	100	2025-07-10	6	240	4194304	240	Cow Milk (1%)	\N
@@ -680,7 +680,7 @@
 786	\N	Pumpkin Seeds | Pepitas	\N	\N	f	0	18.66	100	2025-01-19	4	149.28	1048576	149.28	Pumpkin Seeds | Pepitas	\N
 787	\N	Pepitas	\N	\N	f	0	18.66	100	2025-01-17	4	149.28	1048576	149.28	Pepitas	\N
 788	\N	Raw Mixed Seeds	\N	\N	f	0	28	100	2025-12-23	4	160	1048576	160	Raw Mixed Seeds	\N
-789	\N	Mangos	\N	\N	f	0	207	100	2025-03-26	0	207	1	207	Mangos	\N
+789	\N	Mangos	https://fdc.nal.usda.gov/food-details/169910/nutrients	\N	f	0	207	100	2025-03-26	0	207	1	207	Mangos	\N
 790	\N	Watercress Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	\N	f	0	28	100	2025-01-15	4	34	2	34	Watercress Sprouts	\N
 791	\N	Black Bean Sauce	\N	\N	f	0	32	100	2024-10-17	9	256	8192	256	Black Bean Sauce	\N
 792	\N	Unenriched Medium Egg Noodles	\N	\N	f	262176	28	100	2025-08-10	4	38	4096	38	Unenriched Medium Egg Noodles	\N

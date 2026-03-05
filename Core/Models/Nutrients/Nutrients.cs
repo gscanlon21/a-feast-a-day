@@ -1283,10 +1283,10 @@ public enum Nutrients
     /// <summary>
     /// Vitamin C, total ascorbic acid
     /// </summary>
-    [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(90, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(75, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(90, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(75, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(90, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(75, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [NutrientsMetadata(Measure.Milligrams, 401, 6300)]
     [Display(Name = "Vitamin C, total ascorbic acid")]
     Vitamin_C_total_ascorbic_acid_Milligrams = 1162,
