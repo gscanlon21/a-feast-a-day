@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict jdRRgdzPra2Xz6SATfUNcy6MwEyEOTEkzZqXNex3rfq7xyX2rmXWq789mBn70d1
+\restrict SQGzCOdiGIbF3WMHTz5cGouSzuIaLtUZQtPXmPjJaXNb5JlMpYoEvAHhIFxVbc4
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -706,6 +706,7 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 
 COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Multiplier", "CaloriesPerGram", "Source", "Updated", "Checked", "Notes") FROM stdin;
 177	Iron_Fe_Milligrams	8	45	1048576	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
+1	Protein_Grams	10	35	131072	100	1	4		2023-01-01	-infinity	\N
 178	Iron_Fe_Milligrams	18	45	2097152	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
 19	Cholesterol_Milligrams	\N	\N	131072	2	1	0		2023-01-01	-infinity	\N
 179	Iron_Fe_Milligrams	8	45	65536	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
@@ -718,18 +719,17 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 210	Calcium_Ca_Milligrams	1000	2500	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 211	Calcium_Ca_Milligrams	1000	2500	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 212	Potassium_K_Milligrams	3400	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
-196	Lithium_Li_Micrograms	14.3	-1	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
-197	Lithium_Li_Micrograms	14.3	-1	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
-199	Lithium_Li_Micrograms	14.3	-1	1048576	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
-200	Lithium_Li_Micrograms	14.3	-1	2097152	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-04	\N
+4	Starch_Grams	130	\N	131072	3	1	4		2023-01-01	-infinity	\N
+3	Oligosaccharides_Grams	1	\N	131072	3	1	4		2023-01-01	-infinity	\N
+245	Niacin_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
+272	Biotin_Micrograms	1.2	\N	65536	2	1	0		-infinity	-infinity	\N
+269	Arginine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 10	Fatty_acids_total_trans_Grams	\N	1	131072	100	1	9		2023-01-01	-infinity	\N
 14	Omega 6	\N	10	131072	100	1	9		2023-01-01	-infinity	\N
 24	Retinol_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 25	Retinol_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 11	Fatty_acids_total_saturated_Grams	\N	-1	3	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-03	-infinity	\N
-1	Protein	10	35	131072	100	1	4		2023-01-01	-infinity	\N
-3	Oligosaccharides	1	\N	131072	3	1	4		2023-01-01	-infinity	\N
-4	Starch	130	\N	131072	3	1	4		2023-01-01	-infinity	\N
+270	Glycine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 129	Fatty_acids_total_saturated_Grams	\N	-1	2	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 13	Omega 3	\N	10	131072	100	1	9		2023-01-01	-infinity	\N
 17	Fats	20	35	131072	100	1	9		2023-01-01	-infinity	\N
@@ -747,10 +747,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 213	Potassium_K_Milligrams	3400	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 214	Potassium_K_Milligrams	2600	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 217	Boron_B_Micrograms	-1	20	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
-269	Arginine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-270	Glycine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 271	Total_lipid_fat_Grams	20	35	65536	100	1	9		-infinity	-infinity	\N
-272	Biotin	1.2	\N	65536	2	1	0		-infinity	-infinity	\N
 134	Fatty_acids_total_saturated_Grams	\N	-1	16	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 135	Fatty_acids_total_saturated_Grams	\N	-1	32	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 73	Iron_Fe_Milligrams	0.27	40	3	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
@@ -760,22 +757,25 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 219	Cholesterol_Milligrams	\N	\N	65536	2	1	0		-infinity	-infinity	\N
 220	Fatty_acids_total_trans_Grams	\N	1	65536	100	1	9		-infinity	-infinity	\N
 221	Omega 6	\N	10	65536	100	1	9		-infinity	-infinity	\N
-222	Protein	10	35	65536	100	1	4		-infinity	-infinity	\N
-223	Oligosaccharides	1	\N	65536	3	1	4		-infinity	-infinity	\N
 182	Fiber_insoluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
+237	Vitamin_E_Milligrams	15	\N	65536	2	1	0		-infinity	-infinity	\N
 184	Fiber_insoluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 185	Fiber_insoluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 186	Fiber_soluble_Grams	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 187	Fiber_soluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
+248	Vitamin_B_6_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
 189	Fiber_soluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 190	Fiber_soluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 26	Vitamin_A_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 27	Vitamin_A_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+235	Vitamin_B_12_Micrograms	2.4	\N	65536	1	1	0		-infinity	-infinity	\N
+222	Protein_Grams	10	35	65536	100	1	4		-infinity	-infinity	\N
 203	Vitamin_A_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
 204	Vitamin_A_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+224	Starch_Grams	130	\N	65536	3	1	4		-infinity	-infinity	\N
+223	Oligosaccharides_Grams	1	\N	65536	3	1	4		-infinity	-infinity	\N
 207	Retinol_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
 208	Retinol_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
-224	Starch	130	\N	65536	3	1	4		-infinity	-infinity	\N
 40	Sodium_Na_Milligrams	1500	2300	131072	2	1	0		2023-01-01	-infinity	\N
 43	Zinc_Zn_Milligrams	10	\N	131072	2	1	0		2023-01-01	-infinity	\N
 84	Copper_Cu_Milligrams	900	10000	131072	1	1	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	-infinity	\N
@@ -790,25 +790,23 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 232	Sodium_Na_Milligrams	1500	2300	65536	2	1	0		-infinity	-infinity	\N
 233	Zinc_Zn_Milligrams	10	\N	65536	2	1	0		-infinity	-infinity	\N
 234	Copper_Cu_Milligrams	900	10000	65536	1	1	0		-infinity	-infinity	\N
-235	Vitamin B-12	2.4	\N	65536	1	1	0		-infinity	-infinity	\N
-236	Vitamin D	20	100	65536	1	1	0		-infinity	-infinity	\N
-237	Vitamin E	15	\N	65536	2	1	0		-infinity	-infinity	\N
-238	Vitamin K	90	\N	65536	1	1	0		-infinity	-infinity	\N
+243	Carotene_MCG_RE	1	10	65536	2	1	0		-infinity	-infinity	\N
+247	Riboflavin_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
 239	Selenium_Se_Micrograms	55	400	65536	1	1	0		-infinity	-infinity	\N
 240	Fatty_acids_total_polyunsaturated_Grams	\N	10	65536	100	3	9		-infinity	-infinity	\N
 241	Fatty_acids_total_monounsaturated_Grams	\N	10	65536	100	3	9		-infinity	-infinity	\N
 242	Chlorine_Cl_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
-243	Carotene	1	10	65536	2	1	0		-infinity	-infinity	\N
 244	Manganese_Mn_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
-245	Niacin	1	10	65536	2	1	0		-infinity	-infinity	\N
-246	Pantothenic acid	1	10	65536	2	1	0		-infinity	-infinity	\N
-247	Riboflavin	1	10	65536	2	1	0		-infinity	-infinity	\N
-248	Vitamin B-6	1	10	65536	2	1	0		-infinity	-infinity	\N
+246	Pantothenic_acid_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
+401	Oligosaccharides_Milligrams	1	\N	131072	3	1	4		2023-01-01	-infinity	\N
 158	Fatty_acids_total_saturated_Grams	\N	3	512	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 117	Fatty_acids_total_saturated_Grams	\N	3	12288	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 118	Fatty_acids_total_saturated_Grams	\N	3	4096	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 116	Fatty_acids_total_saturated_Grams	\N	-1	1	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 119	Fatty_acids_total_saturated_Grams	\N	3	8192	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+34	Vitamin_E_Milligrams	15	\N	131072	2	1	0		2023-01-01	-infinity	\N
+30	Vitamin_B_12_Micrograms	2.4	\N	131072	1	1	0		2023-01-01	-infinity	\N
+402	Oligosaccharides_Milligrams	1	\N	65536	3	1	4		-infinity	-infinity	\N
 150	Fatty_acids_total_saturated_Grams	\N	-1	12	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 151	Fatty_acids_total_saturated_Grams	\N	-1	4	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 152	Fatty_acids_total_saturated_Grams	\N	-1	8	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
@@ -822,7 +820,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 161	Fatty_acids_total_saturated_Grams	\N	3	2048	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 162	Fatty_acids_total_saturated_Grams	\N	3	24576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 163	Fatty_acids_total_saturated_Grams	\N	3	40960	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-30	Vitamin B-12	2.4	\N	131072	1	1	0		2023-01-01	-infinity	\N
+403	Oligosaccharides_Milligrams	1	\N	1048576	3	1	4		-infinity	-infinity	\N
 166	Fatty_acids_total_saturated_Grams	\N	3	1048576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 167	Fatty_acids_total_saturated_Grams	\N	3	2097152	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 168	Fatty_acids_total_saturated_Grams	\N	3	6291456	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
@@ -834,86 +832,80 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 174	Fatty_acids_total_saturated_Grams	\N	3	201326592	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 175	Fatty_acids_total_saturated_Grams	\N	3	67108864	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 176	Fatty_acids_total_saturated_Grams	\N	3	134217728	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
-33	Vitamin D	20	100	131072	1	1	0		2023-01-01	-infinity	\N
-34	Vitamin E	15	\N	131072	2	1	0		2023-01-01	-infinity	\N
-35	Vitamin K	90	\N	131072	1	1	0		2023-01-01	-infinity	\N
+404	Oligosaccharides_Milligrams	1	\N	2097152	3	1	4		-infinity	-infinity	\N
 44	Selenium_Se_Micrograms	55	400	131072	1	1	0		2023-01-01	-infinity	\N
 31	Vitamin_C_total_ascorbic_acid_Milligrams	75	2000	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+35	Vitamin_K_phylloquinone_Micrograms	90	\N	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
 29	Thiamin_Milligrams	1.1	\N	65536	2	1	0		2023-01-01	-infinity	\N
 28	Thiamin_Milligrams	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
+33	Vitamin_D_D2__D3_Micrograms	20	100	131072	1	1	0		2023-01-01	-infinity	\N
 82	Fatty_acids_total_polyunsaturated_Grams	\N	10	131072	100	3	9		2023-01-01	-infinity	\N
 83	Fatty_acids_total_monounsaturated_Grams	\N	10	131072	100	3	9		2023-01-01	-infinity	\N
+103	Vitamin_B_6_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+88	Carotene_MCG_RE	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 87	Chlorine_Cl_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-88	Carotene	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+95	Pantothenic_acid_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 92	Manganese_Mn_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-94	Niacin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-95	Pantothenic acid	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-99	Riboflavin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+71	Biotin_Micrograms	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
+56	Betaine_Milligrams	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
+259	Betaine_Milligrams	500	3500	65536	2	1	0		-infinity	-infinity	\N
 52	Boron_B_Micrograms	-1	20	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	-infinity	\N
 191	Fiber_total_dietary_Grams	38	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
+99	Riboflavin_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+94	Niacin_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 194	Fiber_total_dietary_Grams	38	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-103	Vitamin B-6	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+64	Tryptophan_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 195	Fiber_total_dietary_Grams	25	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
+267	Tryptophan_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+63	Threonine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 250	Chromium_Cr_Micrograms	35	\N	65536	1	1	0		-infinity	-infinity	\N
 251	Molybdenum_Mo_Micrograms	45	\N	65536	1	1	0		-infinity	-infinity	\N
 252	Total_Sugars_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
 46	Chromium_Cr_Micrograms	35	\N	131072	1	1	0		2023-01-01	-infinity	\N
 49	Molybdenum_Mo_Micrograms	45	\N	131072	1	1	0		2023-01-01	-infinity	\N
 105	Total_Sugars_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
-106	Thiamin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+266	Threonine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 48	Fluoride_F_Micrograms	2.5	10	131072	2	1	0		2023-01-01	-infinity	\N
 50	Phosphorus_P_Milligrams	700	\N	131072	2	1	0		2023-01-01	-infinity	\N
 51	Sulfur_S_Milligrams	850	\N	131072	2	1	0		2023-01-01	-infinity	\N
 53	Vanadium_V_Micrograms	20	1000	131072	1	1	0		2023-01-01	-infinity	\N
+58	Isoleucine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 55	Choline_total_Milligrams	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
-56	Betaine	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
-253	Thiamin	1	10	65536	2	1	0		-infinity	-infinity	\N
 254	Fluoride_F_Micrograms	2.5	10	65536	2	1	0		-infinity	-infinity	\N
-57	Histidine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-58	Isoleucine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-59	Leucine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-60	Lysine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-61	Methionine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-62	Phenylalanine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 255	Phosphorus_P_Milligrams	700	\N	65536	2	1	0		-infinity	-infinity	\N
 256	Sulfur_S_Milligrams	850	\N	65536	2	1	0		-infinity	-infinity	\N
-63	Threonine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-64	Tryptophan	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-65	Valine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-66	Arginine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
-67	Glycine	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 69	Total_lipid_fat_Grams	20	35	131072	100	1	9		2023-01-01	-infinity	\N
-71	Biotin	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
 75	Folate_total_Micrograms	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 32	Vitamin_C_total_ascorbic_acid_Milligrams	90	2000	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 45	Iodine_I_Micrograms	150	1100	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 108	Sugars_Total_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
-109	Vitamin D (D2 + D3)	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-110	Vitamin K (phylloquinone)	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+261	Isoleucine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+59	Leucine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 257	Vanadium_V_Micrograms	20	1000	65536	1	1	0		-infinity	-infinity	\N
 258	Choline_total_Milligrams	500	3500	65536	2	1	0		-infinity	-infinity	\N
-259	Betaine	500	3500	65536	2	1	0		-infinity	-infinity	\N
-260	Histidine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-261	Isoleucine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-262	Leucine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-263	Lysine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-264	Methionine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-265	Phenylalanine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-266	Threonine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-267	Tryptophan	0.5	10	65536	3	1	0		-infinity	-infinity	\N
-268	Valine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 249	Iodine_I_Micrograms	150	1100	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
+262	Leucine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+60	Lysine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+263	Lysine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+61	Methionine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+264	Methionine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+62	Phenylalanine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+265	Phenylalanine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+65	Valine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+268	Valine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+66	Arginine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+57	Histidine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
+260	Histidine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+67	Glycine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 273	Folate_total_Micrograms	1	10	65536	2	1	0		-infinity	-infinity	\N
 274	Sugars_Total_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
-275	Vitamin D (D2 + D3)	1	10	65536	2	1	0		-infinity	-infinity	\N
-276	Vitamin K (phylloquinone)	1	10	65536	2	1	0		-infinity	-infinity	\N
+319	Vitamin_E_Milligrams	15	\N	1048576	2	1	0		-infinity	-infinity	\N
+330	Vitamin_B_6_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
 277	Cholesterol_Milligrams	\N	\N	1048576	2	1	0		-infinity	-infinity	\N
 278	Carbohydrates_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
+317	Vitamin_B_12_Micrograms	2.4	\N	1048576	1	1	0		-infinity	-infinity	\N
 280	Fatty_acids_total_trans_Grams	\N	1	1048576	100	1	9		-infinity	-infinity	\N
 281	Omega 6	\N	10	1048576	100	1	9		-infinity	-infinity	\N
-282	Protein	10	35	1048576	100	1	4		-infinity	-infinity	\N
-283	Oligosaccharides	1	\N	1048576	3	1	4		-infinity	-infinity	\N
-284	Starch	130	\N	1048576	3	1	4		-infinity	-infinity	\N
 285	Omega 3	\N	10	1048576	100	1	9		-infinity	-infinity	\N
 286	Fats	20	35	1048576	100	1	9		-infinity	-infinity	\N
 287	Calories	1000	1100	1048576	0	3	0		-infinity	-infinity	\N
@@ -921,60 +913,60 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 289	Polyphenols_total_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
 290	Energy_KCalorie	1000	1100	1048576	0	3	0		-infinity	-infinity	\N
 291	Resistant_starch_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
-292	Arginine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-293	Glycine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 294	Total_lipid_fat_Grams	20	35	1048576	100	1	9		-infinity	-infinity	\N
-295	Biotin	1.2	\N	1048576	2	1	0		-infinity	-infinity	\N
 296	Magnesium_Mg_Milligrams	400	\N	1048576	2	1	0		-infinity	-infinity	\N
+282	Protein_Grams	10	35	1048576	100	1	4		-infinity	-infinity	\N
+284	Starch_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
+283	Oligosaccharides_Grams	1	\N	1048576	3	1	4		-infinity	-infinity	\N
+325	Carotene_MCG_RE	1	10	1048576	2	1	0		-infinity	-infinity	\N
+329	Riboflavin_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+327	Niacin_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+328	Pantothenic_acid_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
 304	Sodium_Na_Milligrams	1500	2300	1048576	2	1	0		-infinity	-infinity	\N
 305	Zinc_Zn_Milligrams	10	\N	1048576	2	1	0		-infinity	-infinity	\N
 306	Copper_Cu_Milligrams	900	10000	1048576	1	1	0		-infinity	-infinity	\N
-317	Vitamin B-12	2.4	\N	1048576	1	1	0		-infinity	-infinity	\N
-318	Vitamin D	20	100	1048576	1	1	0		-infinity	-infinity	\N
-319	Vitamin E	15	\N	1048576	2	1	0		-infinity	-infinity	\N
-320	Vitamin K	90	\N	1048576	1	1	0		-infinity	-infinity	\N
+295	Biotin_Micrograms	1.2	\N	1048576	2	1	0		-infinity	-infinity	\N
+292	Arginine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+293	Glycine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 321	Selenium_Se_Micrograms	55	400	1048576	1	1	0		-infinity	-infinity	\N
 322	Fatty_acids_total_polyunsaturated_Grams	\N	10	1048576	100	3	9		-infinity	-infinity	\N
 323	Fatty_acids_total_monounsaturated_Grams	\N	10	1048576	100	3	9		-infinity	-infinity	\N
 324	Chlorine_Cl_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
-325	Carotene	1	10	1048576	2	1	0		-infinity	-infinity	\N
 326	Manganese_Mn_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
-327	Niacin	1	10	1048576	2	1	0		-infinity	-infinity	\N
-328	Pantothenic acid	1	10	1048576	2	1	0		-infinity	-infinity	\N
-329	Riboflavin	1	10	1048576	2	1	0		-infinity	-infinity	\N
-330	Vitamin B-6	1	10	1048576	2	1	0		-infinity	-infinity	\N
 337	Thiamin_Milligrams	1.1	\N	1048576	2	1	0		-infinity	-infinity	\N
 336	Vitamin_C_total_ascorbic_acid_Milligrams	90	2000	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 347	Iodine_I_Micrograms	150	1100	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
+320	Vitamin_K_phylloquinone_Micrograms	120	\N	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
+318	Vitamin_D_D2__D3_Micrograms	20	100	1048576	1	1	0		-infinity	-infinity	\N
+342	Carotene_MCG_RE	1	10	2097152	2	1	0		-infinity	-infinity	\N
 351	Chromium_Cr_Micrograms	35	\N	1048576	1	1	0		-infinity	-infinity	\N
 352	Molybdenum_Mo_Micrograms	45	\N	1048576	1	1	0		-infinity	-infinity	\N
 353	Total_Sugars_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
-357	Thiamin	1	10	1048576	2	1	0		-infinity	-infinity	\N
+380	Biotin_Micrograms	1.2	\N	2097152	2	1	0		-infinity	-infinity	\N
+363	Betaine_Milligrams	500	3500	1048576	2	1	0		-infinity	-infinity	\N
 358	Fluoride_F_Micrograms	2.5	10	1048576	2	1	0		-infinity	-infinity	\N
 359	Phosphorus_P_Milligrams	700	\N	1048576	2	1	0		-infinity	-infinity	\N
 360	Sulfur_S_Milligrams	850	\N	1048576	2	1	0		-infinity	-infinity	\N
 361	Vanadium_V_Micrograms	20	1000	1048576	1	1	0		-infinity	-infinity	\N
 362	Choline_total_Milligrams	500	3500	1048576	2	1	0		-infinity	-infinity	\N
-363	Betaine	500	3500	1048576	2	1	0		-infinity	-infinity	\N
-366	Histidine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-367	Isoleucine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-368	Leucine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-369	Lysine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-370	Methionine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-371	Phenylalanine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-374	Threonine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-375	Tryptophan	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-376	Valine	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+387	Betaine_Milligrams	500	3500	2097152	2	1	0		-infinity	-infinity	\N
+375	Tryptophan_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+374	Threonine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+367	Isoleucine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 381	Folate_total_Micrograms	1	10	1048576	2	1	0		-infinity	-infinity	\N
 382	Sugars_Total_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
-383	Vitamin D (D2 + D3)	1	10	1048576	2	1	0		-infinity	-infinity	\N
-384	Vitamin K (phylloquinone)	1	10	1048576	2	1	0		-infinity	-infinity	\N
-377	Arginine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-387	Betaine	500	3500	2097152	2	1	0		-infinity	-infinity	\N
-380	Biotin	1.2	\N	2097152	2	1	0		-infinity	-infinity	\N
+389	Isoleucine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+368	Leucine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+390	Leucine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+369	Lysine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+391	Lysine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+370	Methionine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+392	Methionine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+371	Phenylalanine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+376	Valine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+377	Arginine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 309	Calories	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
 279	Carbohydrates_Grams	175	\N	2097152	3	1	4		-infinity	-infinity	\N
-342	Carotene	1	10	2097152	2	1	0		-infinity	-infinity	\N
 341	Chlorine_Cl_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 298	Cholesterol_Milligrams	\N	\N	2097152	2	1	0		-infinity	-infinity	\N
 386	Choline_total_Milligrams	500	3500	2097152	2	1	0		-infinity	-infinity	\N
@@ -988,49 +980,49 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 310	Flavonoids_total_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 365	Fluoride_F_Micrograms	2.5	10	2097152	2	1	0		-infinity	-infinity	\N
 397	Folate_total_Micrograms	1	10	2097152	2	1	0		-infinity	-infinity	\N
-378	Glycine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-388	Histidine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-389	Isoleucine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-390	Leucine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-391	Lysine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-392	Methionine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 349	Iodine_I_Micrograms	150	1100	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
+366	Histidine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
+388	Histidine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+378	Glycine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 297	Magnesium_Mg_Milligrams	350	\N	2097152	2	1	0		-infinity	-infinity	\N
 343	Manganese_Mn_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 355	Molybdenum_Mo_Micrograms	45	\N	2097152	1	1	0		-infinity	-infinity	\N
-344	Niacin	1	10	2097152	2	1	0		-infinity	-infinity	\N
-302	Oligosaccharides	1	\N	2097152	3	1	4		-infinity	-infinity	\N
 307	Omega 3	\N	10	2097152	100	1	9		-infinity	-infinity	\N
 300	Omega 6	\N	10	2097152	100	1	9		-infinity	-infinity	\N
-345	Pantothenic acid	1	10	2097152	2	1	0		-infinity	-infinity	\N
-393	Phenylalanine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 372	Phosphorus_P_Milligrams	700	\N	2097152	2	1	0		-infinity	-infinity	\N
 311	Polyphenols_total_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
-301	Protein	10	35	2097152	100	1	4		-infinity	-infinity	\N
 313	Resistant_starch_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
-346	Riboflavin	1	10	2097152	2	1	0		-infinity	-infinity	\N
 335	Selenium_Se_Micrograms	55	400	2097152	1	1	0		-infinity	-infinity	\N
 314	Sodium_Na_Milligrams	1500	2300	2097152	2	1	0		-infinity	-infinity	\N
-303	Starch	130	\N	2097152	3	1	4		-infinity	-infinity	\N
 398	Sugars_Total_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
 373	Sulfur_S_Milligrams	850	\N	2097152	2	1	0		-infinity	-infinity	\N
-364	Thiamin	1	10	2097152	2	1	0		-infinity	-infinity	\N
 338	Thiamin_Milligrams	1.2	\N	2097152	2	1	0		-infinity	-infinity	\N
-394	Threonine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 379	Total_lipid_fat_Grams	20	35	2097152	100	1	9		-infinity	-infinity	\N
 356	Total_Sugars_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
-395	Tryptophan	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-396	Valine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 385	Vanadium_V_Micrograms	20	1000	2097152	1	1	0		-infinity	-infinity	\N
-331	Vitamin B-12	2.4	\N	2097152	1	1	0		-infinity	-infinity	\N
-348	Vitamin B-6	1	10	2097152	2	1	0		-infinity	-infinity	\N
-332	Vitamin D	20	100	2097152	1	1	0		-infinity	-infinity	\N
-399	Vitamin D (D2 + D3)	1	10	2097152	2	1	0		-infinity	-infinity	\N
-333	Vitamin E	15	\N	2097152	2	1	0		-infinity	-infinity	\N
-334	Vitamin K	90	\N	2097152	1	1	0		-infinity	-infinity	\N
-400	Vitamin K (phylloquinone)	1	10	2097152	2	1	0		-infinity	-infinity	\N
+333	Vitamin_E_Milligrams	15	\N	2097152	2	1	0		-infinity	-infinity	\N
+348	Vitamin_B_6_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 315	Zinc_Zn_Milligrams	10	\N	2097152	2	1	0		-infinity	-infinity	\N
 350	Vitamin_C_total_ascorbic_acid_Milligrams	75	2000	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+196	Lithium_Li_Micrograms	14.3	-1	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-05	\N
+197	Lithium_Li_Micrograms	14.3	-1	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-05	\N
+199	Lithium_Li_Micrograms	14.3	-1	1048576	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-05	\N
+200	Lithium_Li_Micrograms	14.3	-1	2097152	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-05	\N
+331	Vitamin_B_12_Micrograms	2.4	\N	2097152	1	1	0		-infinity	-infinity	\N
+238	Vitamin_K_phylloquinone_Micrograms	120	\N	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
+334	Vitamin_K_phylloquinone_Micrograms	90	\N	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
+332	Vitamin_D_D2__D3_Micrograms	20	100	2097152	1	1	0		-infinity	-infinity	\N
+236	Vitamin_D_D2__D3_Micrograms	20	100	65536	1	1	0		-infinity	-infinity	\N
+301	Protein_Grams	10	35	2097152	100	1	4		-infinity	-infinity	\N
+303	Starch_Grams	130	\N	2097152	3	1	4		-infinity	-infinity	\N
+302	Oligosaccharides_Grams	1	\N	2097152	3	1	4		-infinity	-infinity	\N
+346	Riboflavin_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+344	Niacin_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+345	Pantothenic_acid_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+395	Tryptophan_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+394	Threonine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+393	Phenylalanine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+396	Valine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 \.
 
 
@@ -3331,6 +3323,11 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1339	296	1	f
 1969	1970	1	t
 1969	421	1	t
+736	1971	1	f
+1972	697	1	f
+1972	661	1	f
+661	697	1	f
+697	661	1	f
 \.
 
 
@@ -3387,6 +3384,14 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 215	169661	19353
 150	169988	11143
 1286	169988	11143
+174	2346389	100281
+1133	2346389	100281
+1323	169929	9237
+402	173859	7019
+735	174256	16080
+985	168277	10123
+286	168927	20420
+39	169640	19296
 \.
 
 
@@ -5915,6 +5920,658 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 21450	599	1091	\N	2	26.59
 21451	599	1051	\N	3	91.88
 21452	599	1167	\N	2	1.078
+21453	174	1185	\N	1	83.4
+21454	1133	1185	\N	1	83.4
+21455	174	1184	\N	1	0
+21456	1133	1184	\N	1	0
+21457	174	1183	\N	1	0
+21458	1133	1183	\N	1	0
+21459	174	2048	\N	102	17.45834025
+21460	1133	2048	\N	102	17.45834025
+21461	174	1007	\N	3	0.6063
+21462	1133	1007	\N	3	0.6063
+21463	174	1090	\N	2	12.05
+21464	1133	1090	\N	2	12.05
+21465	174	1002	\N	3	0.1563
+21466	1133	1002	\N	3	0.1563
+21467	174	1175	\N	2	0.06325
+21468	1133	1175	\N	2	0.06325
+21469	174	1165	\N	2	0.06288
+21470	1133	1165	\N	2	0.06288
+21471	174	1091	\N	2	23.41
+21472	1133	1091	\N	2	23.41
+21473	174	1004	\N	3	0.07125
+21474	1133	1004	\N	3	0.07125
+21475	174	1051	\N	3	94.29
+21476	1133	1051	\N	3	94.29
+21477	174	1092	\N	2	260.4
+21478	1133	1092	\N	2	260.4
+21479	174	1089	\N	2	0.267
+21480	1133	1089	\N	2	0.267
+21481	174	1095	\N	2	0.2516
+21482	1133	1095	\N	2	0.2516
+21483	174	1093	\N	2	23
+21484	1133	1093	\N	2	23
+21485	174	1087	\N	2	27.56
+21486	1133	1087	\N	2	27.56
+21487	174	1101	\N	2	0.2271
+21488	1133	1101	\N	2	0.2271
+21489	174	1167	\N	2	0.3713
+21490	1133	1167	\N	2	0.3713
+21491	174	1098	\N	2	0.04865
+21492	1133	1098	\N	2	0.04865
+21493	174	1003	\N	3	0.976875
+21494	1133	1003	\N	3	0.976875
+21495	174	1005	\N	3	4.055575
+21496	1133	1005	\N	3	4.055575
+21497	174	2047	\N	102	20.77105
+21498	1133	2047	\N	102	20.77105
+21499	985	1131	\N	2	0
+21500	985	1268	\N	3	14.706
+21501	985	1333	\N	3	0
+21502	985	1007	\N	3	2.59
+21503	985	1011	\N	3	0.35
+21504	985	1275	\N	3	0.824
+21505	985	1162	\N	2	0
+21506	985	1406	\N	3	0.036
+21507	985	1167	\N	2	4.022
+21508	985	1166	\N	2	0.081
+21509	985	1129	\N	2	0.02
+21510	985	1122	\N	1	0
+21511	985	1263	\N	3	0.028
+21512	985	1178	\N	1	0.5
+21513	985	1101	\N	2	0.012
+21514	985	1409	\N	3	0.001
+21515	985	1279	\N	3	0.01
+21516	985	1187	\N	1	0
+21517	985	1128	\N	2	0.03
+21518	985	1190	\N	1	0
+21519	985	1274	\N	3	0.008
+21520	985	1170	\N	2	0.555
+21521	985	1110	\N	98	16
+21522	985	1127	\N	2	0.01
+21523	985	1253	\N	2	66
+21524	985	1126	\N	2	0.65
+21525	985	1198	\N	2	3.7
+21526	985	1057	\N	2	0
+21527	985	1058	\N	2	0
+21528	985	1109	\N	2	0.43
+21529	985	1267	\N	3	0.07
+21530	985	1273	\N	3	0.009
+21531	985	1321	\N	3	0.004
+21532	985	1123	\N	1	0
+21533	985	1329	\N	3	0.113
+21534	985	1272	\N	3	0.005
+21535	985	1103	\N	1	20.1
+21536	985	1258	\N	3	12.615
+21537	985	1311	\N	3	0.046
+21538	985	1092	\N	2	201
+21539	985	1269	\N	3	5.078
+21540	985	1186	\N	1	0
+21541	985	1108	\N	1	0
+21542	985	1120	\N	1	0
+21543	985	1265	\N	3	7.936
+21544	985	1106	\N	1	11
+21545	985	1411	\N	3	0.039
+21546	985	1306	\N	3	0.034
+21547	985	1125	\N	2	1.01
+21548	985	1259	\N	3	0.005
+21549	985	1105	\N	1	11
+21550	985	2000	\N	3	0.35
+21551	985	1180	\N	2	47.8
+21552	985	1246	\N	1	0
+21553	985	1270	\N	3	0.221
+21554	985	1266	\N	3	3.95
+21555	985	1323	\N	3	0.086
+21556	985	1260	\N	3	0.001
+21557	985	1271	\N	3	0.111
+21558	985	1177	\N	1	0
+21559	985	1185	\N	1	0
+21560	985	1098	\N	2	0.046
+21561	985	1312	\N	3	0.001
+21562	985	1303	\N	3	0.007
+21563	985	1018	\N	3	0
+21564	985	1304	\N	3	0.105
+21565	985	1114	\N	1	0.4
+21566	985	1305	\N	3	0
+21567	985	1276	\N	3	0.001
+21568	985	1130	\N	2	0.05
+21569	985	1331	\N	3	0.034
+21570	985	1264	\N	3	0.466
+21571	985	1242	\N	2	0
+21572	985	1008	\N	102	393
+21573	985	1405	\N	3	0.029
+21574	985	1292	\N	3	15.922
+21575	985	1051	\N	3	46.74
+21576	985	1165	\N	2	0.276
+21577	985	1005	\N	3	0
+21578	985	1014	\N	3	0
+21579	985	1300	\N	3	0.094
+21580	985	1062	\N	103	1645
+21581	985	1093	\N	2	751
+21582	985	1107	\N	1	0
+21583	985	1301	\N	3	0.002
+21584	985	1278	\N	3	0.004
+21585	985	1090	\N	2	13
+21586	985	1075	\N	3	0
+21587	985	1003	\N	3	13.66
+21588	985	1079	\N	3	0
+21589	985	1091	\N	2	166
+21590	985	1280	\N	3	0.02
+21591	985	1325	\N	3	0.065
+21592	985	1013	\N	3	0
+21593	985	1313	\N	3	0.209
+21594	985	1315	\N	3	14.6
+21595	985	1175	\N	2	0.266
+21596	985	1089	\N	2	0.38
+21597	985	1293	\N	3	5.757
+21598	985	1316	\N	3	4.999
+21599	985	1004	\N	3	37.13
+21600	985	1317	\N	3	0.01
+21601	985	1010	\N	3	0
+21602	985	1261	\N	3	0.004
+21603	985	1299	\N	3	0.016
+21604	985	1404	\N	3	0.217
+21605	985	1012	\N	3	0
+21606	985	1112	\N	1	0.4
+21607	985	1277	\N	3	0.288
+21608	985	1262	\N	3	0.033
+21609	985	1314	\N	3	0.816
+21610	985	1087	\N	2	6
+21611	985	1104	\N	98	37
+21612	985	1095	\N	2	1.14
+21613	985	1257	\N	3	0.147
+21614	286	1178	\N	1	0
+21615	286	1277	\N	3	0
+21616	286	1265	\N	3	0.251
+21617	286	1089	\N	2	1.3
+21618	286	1260	\N	3	0
+21619	286	1095	\N	2	1.41
+21620	286	1325	\N	3	0
+21621	286	1165	\N	2	0.09
+21622	286	1105	\N	1	0
+21623	286	1008	\N	102	371
+21624	286	1014	\N	3	1.96
+21625	286	1010	\N	3	0.48
+21626	286	1259	\N	3	0
+21627	286	1276	\N	3	0
+21628	286	1332	\N	3	0
+21629	286	1253	\N	2	0
+21630	286	1170	\N	2	0.431
+21631	286	1269	\N	3	0.54
+21632	286	1092	\N	2	223
+21633	286	1166	\N	2	0.06
+21634	286	1162	\N	2	0
+21635	286	1321	\N	3	0
+21636	286	1190	\N	1	18
+21637	286	1293	\N	3	0.564
+21638	286	1266	\N	3	0.025
+21639	286	1267	\N	3	0
+21640	286	1087	\N	2	21
+21641	286	1313	\N	3	0
+21642	286	1333	\N	3	0
+21643	286	1279	\N	3	0
+21644	286	1114	\N	1	0
+21645	286	1167	\N	2	1.7
+21646	286	1262	\N	3	0
+21647	286	1299	\N	3	0
+21648	286	1018	\N	3	0
+21649	286	1268	\N	3	0.171
+21650	286	2000	\N	3	2.67
+21651	286	1005	\N	3	74.67
+21652	286	1011	\N	3	0.12
+21653	286	1304	\N	3	0
+21654	286	1292	\N	3	0.171
+21655	286	1404	\N	3	0.024
+21656	286	1271	\N	3	0
+21657	286	1270	\N	3	0.024
+21658	286	1177	\N	1	18
+21659	286	1003	\N	3	13.04
+21660	286	1075	\N	3	0
+21661	286	1012	\N	3	0.11
+21662	286	1315	\N	3	0.171
+21663	286	1127	\N	2	0
+21664	286	1312	\N	3	0
+21665	286	1128	\N	2	0.13
+21666	286	1214	\N	3	0.298
+21667	286	1224	\N	3	4.596
+21668	286	1215	\N	3	0.147
+21669	286	1264	\N	3	0
+21670	286	1009	\N	3	62.45
+21671	286	1013	\N	3	0
+21672	286	1210	\N	3	0.185
+21673	286	1062	\N	103	1553
+21674	286	1101	\N	2	0.917
+21675	286	1226	\N	3	1.569
+21676	286	1007	\N	3	0.88
+21677	286	1211	\N	3	0.462
+21678	286	1329	\N	3	0
+21679	286	1051	\N	3	9.9
+21680	286	1223	\N	3	0.624
+21681	286	1131	\N	2	0
+21682	286	1323	\N	3	0
+21683	286	1090	\N	2	53
+21684	286	1175	\N	2	0.142
+21685	286	1106	\N	1	0
+21686	286	1217	\N	3	0.668
+21687	286	1257	\N	3	0
+21688	286	1280	\N	3	0
+21689	286	1275	\N	3	0
+21690	286	1185	\N	1	0.1
+21691	286	1225	\N	3	0.441
+21692	286	1221	\N	3	0.298
+21693	286	1273	\N	3	0
+21694	286	1109	\N	2	0.11
+21695	286	1220	\N	3	0.474
+21696	286	1218	\N	3	0.243
+21697	286	1098	\N	2	0.289
+21698	286	1129	\N	2	0.01
+21699	286	1300	\N	3	0
+21700	286	1219	\N	3	0.588
+21701	286	1110	\N	98	0
+21702	286	1263	\N	3	0
+21703	286	1125	\N	2	0.05
+21704	286	1079	\N	3	3.2
+21705	286	1301	\N	3	0
+21706	286	1216	\N	3	0.255
+21707	286	1212	\N	3	0.511
+21708	286	1222	\N	3	0.438
+21709	286	1261	\N	3	0
+21710	286	1093	\N	2	6
+21711	286	1274	\N	3	0
+21712	286	1091	\N	2	189
+21713	286	1186	\N	1	0
+21714	286	1227	\N	3	0.617
+21715	286	1104	\N	98	0
+21716	286	1272	\N	3	0
+21717	286	1258	\N	3	0.277
+21718	286	1184	\N	1	0
+21719	286	1187	\N	1	18
+21720	286	1213	\N	3	0.988
+21721	286	1130	\N	2	0
+21722	286	1228	\N	3	0
+21723	286	1103	\N	1	63.2
+21724	286	1278	\N	3	0
+21725	286	1126	\N	2	0.88
+21726	286	1004	\N	3	1.51
+21727	39	1099	\N	1	7
+21728	39	1166	\N	2	0.038
+21729	39	1092	\N	2	52
+21730	39	1293	\N	3	0
+21731	39	1270	\N	3	0
+21732	39	1095	\N	2	0.22
+21733	39	1260	\N	3	0
+21734	39	1212	\N	3	0.008
+21735	39	1218	\N	3	0.008
+21736	39	1103	\N	1	0.8
+21737	39	1087	\N	2	6
+21738	39	1170	\N	2	0.068
+21739	39	1279	\N	3	0
+21740	39	1214	\N	3	0.008
+21741	39	1246	\N	1	0
+21742	39	1271	\N	3	0
+21743	39	1268	\N	3	0
+21744	39	1012	\N	3	40.94
+21745	39	1264	\N	3	0
+21746	39	1075	\N	3	3.1
+21747	39	1222	\N	3	0.006
+21748	39	1175	\N	2	0.024
+21749	39	1223	\N	3	0.027
+21750	39	1178	\N	1	0
+21751	39	1106	\N	1	0
+21752	39	1007	\N	3	0.2
+21753	39	1259	\N	3	0
+21754	39	1225	\N	3	0.007
+21755	39	1211	\N	3	0.004
+21756	39	1277	\N	3	0
+21757	39	1008	\N	102	304
+21758	39	1098	\N	2	0.036
+21759	39	1198	\N	2	1.7
+21760	39	1004	\N	3	0
+21761	39	1104	\N	98	0
+21762	39	1123	\N	1	0
+21763	39	1101	\N	2	0.08
+21764	39	1190	\N	1	2
+21765	39	1057	\N	2	0
+21766	39	1266	\N	3	0
+21767	39	1217	\N	3	0.011
+21768	39	1219	\N	3	0.009
+21769	39	1292	\N	3	0
+21770	39	1262	\N	3	0
+21771	39	1058	\N	2	0
+21772	39	1242	\N	2	0
+21773	39	1272	\N	3	0
+21774	39	1107	\N	1	0
+21775	39	1051	\N	3	17.1
+21776	39	1210	\N	3	0.004
+21777	39	1261	\N	3	0
+21778	39	1079	\N	3	0.2
+21779	39	1226	\N	3	0.09
+21780	39	1110	\N	98	0
+21781	39	1224	\N	3	0.018
+21782	39	1114	\N	1	0
+21783	39	1227	\N	3	0.006
+21784	39	1120	\N	1	0
+21785	39	1005	\N	3	82.4
+21786	39	1108	\N	1	0
+21787	39	1109	\N	2	0
+21788	39	1167	\N	2	0.121
+21789	39	1276	\N	3	0
+21790	39	1089	\N	2	0.42
+21791	39	1105	\N	1	0
+21792	39	2000	\N	3	82.12
+21793	39	1162	\N	2	0.5
+21794	39	1014	\N	3	1.44
+21795	39	1216	\N	3	0.003
+21796	39	1220	\N	3	0.005
+21797	39	1177	\N	1	2
+21798	39	1278	\N	3	0
+21799	39	1062	\N	103	1272
+21800	39	1187	\N	1	2
+21801	39	1122	\N	1	0
+21802	39	1185	\N	1	0
+21803	39	1253	\N	2	0
+21804	39	1090	\N	2	2
+21805	39	1258	\N	3	0
+21806	39	1215	\N	3	0.001
+21807	39	1213	\N	3	0.01
+21808	39	1003	\N	3	0.3
+21809	39	1221	\N	3	0.001
+21810	39	1275	\N	3	0
+21811	39	1165	\N	2	0
+21812	39	1265	\N	3	0
+21813	39	1280	\N	3	0
+21814	39	1010	\N	3	0.89
+21815	39	1269	\N	3	0
+21816	39	1180	\N	2	2.2
+21817	39	1186	\N	1	0
+21818	39	1263	\N	3	0
+21819	39	1091	\N	2	4
+21820	39	1018	\N	3	0
+21821	39	1011	\N	3	35.75
+21822	39	1093	\N	2	4
+21823	1323	1268	\N	3	0.021
+21824	1323	1224	\N	3	0.066
+21825	1323	1215	\N	3	0.011
+21826	1323	1177	\N	1	3
+21827	1323	1101	\N	2	0.048
+21828	1323	1190	\N	1	3
+21829	1323	1221	\N	3	0.008
+21830	1323	1279	\N	3	0
+21831	1323	1242	\N	2	0
+21832	1323	1057	\N	2	0
+21833	1323	1178	\N	1	0
+21834	1323	1260	\N	3	0
+21835	1323	1018	\N	3	0
+21836	1323	1292	\N	3	0.021
+21837	1323	1107	\N	1	264
+21838	1323	1093	\N	2	3
+21839	1323	1275	\N	3	0
+21840	1323	1051	\N	3	93.13
+21841	1323	1264	\N	3	0
+21842	1323	1265	\N	3	0.005
+21843	1323	1257	\N	3	0
+21844	1323	1120	\N	1	109
+21845	1323	1110	\N	98	0
+21846	1323	1216	\N	3	0.004
+21847	1323	1108	\N	1	1
+21848	1323	1004	\N	3	0.06
+21849	1323	1003	\N	3	0.44
+21850	1323	1220	\N	3	0.011
+21851	1323	1092	\N	2	99
+21852	1323	1185	\N	1	1.7
+21853	1323	1175	\N	2	0.019
+21854	1323	1227	\N	3	0.02
+21855	1323	1293	\N	3	0.028
+21856	1323	1123	\N	1	61
+21857	1323	1090	\N	2	5
+21858	1323	1008	\N	102	24
+21859	1323	1005	\N	3	6.11
+21860	1323	1167	\N	2	0.521
+21861	1323	1104	\N	98	532
+21862	1323	1225	\N	3	0.015
+21863	1323	1122	\N	1	0
+21864	1323	1062	\N	103	100
+21865	1323	1213	\N	3	0.025
+21866	1323	1103	\N	1	0.3
+21867	1323	1269	\N	3	0.027
+21868	1323	1226	\N	3	0.018
+21869	1323	1217	\N	3	0.014
+21870	1323	1186	\N	1	0
+21871	1323	1170	\N	2	0.05
+21872	1323	1258	\N	3	0.006
+21873	1323	1246	\N	1	0
+21874	1323	1259	\N	3	0
+21875	1323	1262	\N	3	0
+21876	1323	1098	\N	2	0.054
+21877	1323	1105	\N	1	0
+21878	1323	1165	\N	2	0.009
+21879	1323	1187	\N	1	3
+21880	1323	1261	\N	3	0
+21881	1323	1218	\N	3	0.011
+21882	1323	1058	\N	2	0
+21883	1323	1109	\N	2	0.49
+21884	1323	1114	\N	1	0
+21885	1323	1180	\N	2	4.1
+21886	1323	1278	\N	3	0
+21887	1323	1095	\N	2	0.09
+21888	1323	1270	\N	3	0.001
+21889	1323	1214	\N	3	0.014
+21890	1323	1253	\N	2	0
+21891	1323	1272	\N	3	0
+21892	1323	1219	\N	3	0.024
+21893	1323	1089	\N	2	0.32
+21894	1323	1263	\N	3	0
+21895	1323	1280	\N	3	0
+21896	1323	1277	\N	3	0
+21897	1323	1091	\N	2	10
+21898	1323	1087	\N	2	2
+21899	1323	1162	\N	2	2.9
+21900	1323	1166	\N	2	0.019
+21901	1323	1266	\N	3	0.001
+21902	1323	1276	\N	3	0
+21903	1323	1079	\N	3	1.3
+21904	1323	1106	\N	1	27
+21905	1323	1271	\N	3	0
+21906	1323	2000	\N	3	4.81
+21907	1323	1210	\N	3	0.001
+21908	1323	1007	\N	3	0.27
+21909	1323	1211	\N	3	0.017
+21910	1323	1222	\N	3	0.026
+21911	1323	1223	\N	3	0.073
+21912	1323	1212	\N	3	0.013
+21913	402	1259	\N	3	0.006
+21914	402	1018	\N	3	0
+21915	402	1190	\N	1	0
+21916	402	1277	\N	3	0.242
+21917	402	1274	\N	3	0.007
+21918	402	1325	\N	3	0.052
+21919	402	1004	\N	3	25.1
+21920	402	1321	\N	3	0.005
+21921	402	1404	\N	3	0.156
+21922	402	1270	\N	3	0.161
+21923	402	1095	\N	2	1.68
+21924	402	1062	\N	103	1237
+21925	402	1228	\N	3	0.007
+21926	402	2000	\N	3	0
+21927	402	1091	\N	2	149
+21928	402	1007	\N	3	2.72
+21929	402	1405	\N	3	0.022
+21930	402	1253	\N	2	63
+21931	402	1304	\N	3	0.094
+21932	402	1293	\N	3	4.296
+21933	402	1275	\N	3	0.508
+21934	402	1185	\N	1	0
+21935	402	1272	\N	3	0.003
+21936	402	1406	\N	3	0.03
+21937	402	1257	\N	3	0.123
+21938	402	1268	\N	3	9.786
+21939	402	1166	\N	2	0.31
+21940	402	1276	\N	3	0
+21941	402	1311	\N	3	0.031
+21942	402	1008	\N	102	296
+21943	402	1305	\N	3	0
+21944	402	1317	\N	3	0.007
+21945	402	1198	\N	2	4.1
+21946	402	1114	\N	1	1.5
+21947	402	1264	\N	3	0.319
+21948	402	1314	\N	3	0.502
+21949	402	1108	\N	1	0
+21950	402	1315	\N	3	9.692
+21951	402	1107	\N	1	0
+21952	402	1313	\N	3	0.171
+21953	402	1242	\N	2	0
+21954	402	1058	\N	2	0
+21955	402	1258	\N	3	8.595
+21956	402	1175	\N	2	0.313
+21957	402	1187	\N	1	0
+21958	402	1177	\N	1	0
+21959	402	1267	\N	3	0.057
+21960	402	1178	\N	1	2
+21961	402	1300	\N	3	0.067
+21962	402	1409	\N	3	0
+21963	402	1092	\N	2	308
+21964	402	1106	\N	1	0
+21965	402	1165	\N	2	0.207
+21966	402	1167	\N	2	5.47
+21967	402	1005	\N	3	3.78
+21968	402	1411	\N	3	0.034
+21969	402	1246	\N	1	0
+21970	402	1292	\N	3	10.603
+21971	402	1093	\N	2	788
+21972	402	1101	\N	2	0.093
+21973	402	1180	\N	2	96.7
+21974	402	1329	\N	3	0.099
+21975	402	1278	\N	3	0.002
+21976	402	1261	\N	3	0.002
+21977	402	1303	\N	3	0.005
+21978	402	1269	\N	3	3.758
+21979	402	1316	\N	3	3.704
+21980	402	1306	\N	3	0.023
+21981	402	1120	\N	1	0
+21982	402	1162	\N	2	0
+21983	402	1271	\N	3	0.095
+21984	402	1051	\N	3	54.77
+21985	402	1089	\N	2	1.41
+21986	402	1098	\N	2	0.084
+21987	402	1265	\N	3	5.367
+21988	402	1312	\N	3	0.003
+21989	402	1279	\N	3	0.007
+21990	402	1105	\N	1	0
+21991	402	1087	\N	2	19
+21992	402	1122	\N	1	0
+21993	402	1090	\N	2	20
+21994	402	1109	\N	2	0.22
+21995	402	1323	\N	3	0.05
+21996	402	1260	\N	3	0.001
+21997	402	1003	\N	3	13.63
+21998	402	1331	\N	3	0.023
+21999	402	1301	\N	3	0.005
+22000	402	1273	\N	3	0.012
+22001	402	1104	\N	98	0
+22002	402	1266	\N	3	2.709
+22003	402	1262	\N	3	0.017
+22004	402	1186	\N	1	0
+22005	402	1263	\N	3	0.021
+22006	402	1103	\N	1	18.6
+22007	402	1333	\N	3	0
+22008	402	1280	\N	3	0.017
+22009	402	1110	\N	98	61
+22010	402	1299	\N	3	0.013
+22011	402	1079	\N	3	0
+22012	402	1123	\N	1	0
+22013	402	1057	\N	2	0
+22014	735	1278	\N	3	0
+22015	735	1266	\N	3	0.071
+22016	735	1225	\N	3	0.954
+22017	735	1275	\N	3	0
+22018	735	1090	\N	2	189
+22019	735	1101	\N	2	1.035
+22020	735	1217	\N	3	1.443
+22021	735	1098	\N	2	0.941
+22022	735	1261	\N	3	0
+22023	735	1008	\N	102	347
+22024	735	1213	\N	3	1.847
+22025	735	1283	\N	2	23
+22026	735	1005	\N	3	62.62
+22027	735	1223	\N	3	2.756
+22028	735	1258	\N	3	0.348
+22029	735	1177	\N	1	625
+22030	735	1062	\N	103	1452
+22031	735	1262	\N	3	0
+22032	735	1214	\N	3	1.664
+22033	735	1108	\N	1	0
+22034	735	1109	\N	2	0.51
+22035	735	1103	\N	1	8.2
+22036	735	1220	\N	3	1.672
+22037	735	1222	\N	3	1.05
+22038	735	1058	\N	2	0
+22039	735	1253	\N	2	0
+22040	735	1170	\N	2	1.91
+22041	735	1178	\N	1	0
+22042	735	1226	\N	3	1.095
+22043	735	1104	\N	98	114
+22044	735	1277	\N	3	0
+22045	735	1057	\N	2	0
+22046	735	1215	\N	3	0.286
+22047	735	1211	\N	3	0.782
+22048	735	1210	\N	3	0.26
+22049	735	1089	\N	2	6.74
+22050	735	1095	\N	2	2.68
+22051	735	1263	\N	3	0
+22052	735	1221	\N	3	0.695
+22053	735	1265	\N	3	0.25
+22054	735	1224	\N	3	4.264
+22055	735	1268	\N	3	0.161
+22056	735	2000	\N	3	6.6
+22057	735	1175	\N	2	0.382
+22058	735	1007	\N	3	3.32
+22059	735	1280	\N	3	0
+22060	735	1246	\N	1	0
+22061	735	1212	\N	3	1.008
+22062	735	1087	\N	2	132
+22063	735	1079	\N	3	16.3
+22064	735	1269	\N	3	0.357
+22065	735	1105	\N	1	0
+22066	735	1123	\N	1	0
+22067	735	1257	\N	3	0
+22068	735	1092	\N	2	1246
+22069	735	1110	\N	98	0
+22070	735	1242	\N	2	0
+22071	735	1106	\N	1	6
+22072	735	1003	\N	3	23.86
+22073	735	1293	\N	3	0.384
+22074	735	1180	\N	2	97.9
+22075	735	1114	\N	1	0
+22076	735	1260	\N	3	0
+22077	735	1004	\N	3	1.15
+22078	735	1270	\N	3	0.027
+22079	735	1051	\N	3	9.05
+22080	735	1271	\N	3	0
+22081	735	1227	\N	3	1.176
+22082	735	1091	\N	2	367
+22083	735	1107	\N	1	68
+22084	735	1272	\N	3	0
+22085	735	1093	\N	2	15
+22086	735	1187	\N	1	625
+22087	735	1018	\N	3	0
+22088	735	1162	\N	2	4.8
+22089	735	1122	\N	1	0
+22090	735	1264	\N	3	0
+22091	735	1166	\N	2	0.233
+22092	735	1167	\N	2	2.251
+22093	735	1279	\N	3	0
+22094	735	1186	\N	1	0
+22095	735	1185	\N	1	9
+22096	735	1190	\N	1	625
+22097	735	1216	\N	3	0.21
+22098	735	1259	\N	3	0
+22099	735	1292	\N	3	0.161
+22100	735	1218	\N	3	0.714
+22101	735	1165	\N	2	0.621
+22102	735	1276	\N	3	0
+22103	735	1120	\N	1	0
+22104	735	1219	\N	3	1.237
 \.
 
 
@@ -8282,25 +8939,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6428	8	583	4	1	\N	71	f	\N	5	f	t	\N	1
 6429	8	583	4	1	, to taste	692	t	\N	6	f	t	\N	1
 6431	6	583	4	1	\N	\N	f	544	8	f	t	\N	1
-6432	5	584	3	1	(ITALIAN SAUSAGE)	603	f	\N	0	f	t	\N	1
-6433	0	584	3	1	, minced	3	f	\N	1	f	t	\N	1
-6434	0	584	1	2	, minced	5	f	\N	2	f	t	\N	1
-6435	6	584	4	3	\N	118	f	\N	3	f	t	\N	1
-6436	7	584	1	1	, chopped	14	f	\N	4	f	t	\N	1
-6437	8	584	4	1	, to taste	692	t	\N	5	f	t	\N	1
-6438	0	584	1	6	\N	187	f	\N	6	f	t	\N	1
-6439	0	584	1	12	(PEPPERONI SLICES)	262	t	\N	7	f	t	\N	1
-6441	7	585	1	2	\N	1053	f	\N	0	f	t	\N	1
-6442	5	585	1	2	, cut into chunks	918	f	\N	1	f	t	\N	1
-6443	8	585	4	1	, to taste	692	t	\N	2	f	t	\N	1
-6444	0	585	1	1	, diced	222	f	\N	3	f	t	\N	1
-6445	0	585	1	4	(MEDIUM CARROTS), peeled and diced	7	f	\N	4	f	t	\N	1
-6446	0	585	1	2	, diced	150	f	\N	5	f	t	\N	1
-6447	0	585	1	6	\N	5	f	\N	6	f	t	\N	1
-6448	7	585	1	2	(FENNEL), chopped	661	f	\N	7	f	t	\N	1
-6449	7	585	1	3	\N	81	f	\N	8	f	t	\N	1
-6450	6	585	1	6	\N	\N	f	559	9	f	t	\N	1
-6451	6	585	1	2	, chopped and destemmed	372	f	\N	10	f	t	\N	1
 8025	7	951	1	1	\N	77	f	\N	1	f	t	\N	0.25
 7364	4	740	1	5	, drained	1204	f	\N	6	f	t	\N	1
 6410	0	582	1	2	, diced	255	f	\N	0	f	t	\N	1
@@ -8324,8 +8962,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6402	0	39	2	1	, deseeded and finely chopped	224	t	\N	6	f	t	\N	1
 7603	8	836	1	1	\N	77	t	\N	1	f	t	\N	0.25
 7937	7	908	1	1	\N	77	f	\N	2	f	t	\N	0.25
+6432	5	584	3	1	\N	1557	f	\N	1	f	t	\N	1
 7365	8	740	8	1	\N	285	f	\N	7	f	t	\N	1
 6377	0	577	1	1	, sliced into quarters	12	t	\N	10	f	t	\N	1
+6433	0	584	3	1	, minced	3	f	\N	2	f	t	\N	1
+6434	0	584	1	2	, minced	5	t	\N	3	f	t	\N	1
+6435	6	584	4	3	\N	118	f	\N	4	f	t	\N	1
 8034	7	952	1	1	\N	77	f	\N	2	f	t	\N	0.25
 8073	7	957	1	1	\N	77	f	\N	4	f	t	\N	0.25
 8062	7	956	1	1	\N	77	f	\N	1	f	t	\N	0.25
@@ -8340,6 +8982,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6464	7	587	1	1	\N	1075	t	\N	5	f	t	\N	1
 6395	6	580	3	1	, diced	1286	t	\N	5	f	t	\N	1
 6398	6	580	2	1	\N	\N	f	556	8	f	t	\N	1
+6436	7	584	1	1	, chopped	14	f	\N	5	f	t	\N	1
+6441	7	585	1	2	\N	1053	f	\N	1	f	t	\N	1
+6442	5	585	1	2	, cut into chunks	918	f	\N	2	f	t	\N	1
+6443	8	585	4	1	, to taste	692	t	\N	3	f	t	\N	1
+6444	0	585	1	1	, diced	222	f	\N	4	f	t	\N	1
+6445	0	585	1	4	, peeled and diced	1971	f	\N	5	f	t	\N	1
+6446	0	585	1	2	, diced	150	f	\N	6	f	t	\N	1
+6447	0	585	1	6	\N	5	t	\N	7	f	t	\N	1
+6437	8	584	4	1	, to taste	692	t	\N	6	f	t	\N	1
 6403	6	581	1	1	, cubed	159	f	\N	0	f	t	\N	1
 6404	6	581	1	1	, peeled, diced	155	f	\N	1	f	t	\N	1
 6405	0	581	1	1	, diced	9	f	\N	2	f	t	\N	1
@@ -9139,11 +9790,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8196	0	972	1	2	, separated	187	f	\N	5	f	t	\N	1
 8479	7	996	1	1	\N	709	t	\N	8	f	t	\N	1
 8480	8	996	1	1	\N	1764	t	\N	9	f	t	\N	1
+6440	8	584	1	1	\N	964	f	\N	9	f	t	\N	0.25
 8197	8	972	4	1	, grated	72	f	\N	6	f	t	\N	1
 6015	6	523	4	1	, for garnishing	1008	t	\N	4	f	t	\N	1
 6129	7	542	1	1	\N	964	f	\N	0	f	t	\N	0.25
 6346	7	575	1	1	\N	964	f	\N	0	f	t	\N	0.25
-6440	8	584	1	1	\N	964	f	\N	8	f	t	\N	0.25
 6488	7	591	1	1	\N	964	f	\N	0	f	t	\N	0.25
 6628	7	610	1	2	\N	964	f	\N	0	f	t	\N	0.25
 6643	7	611	1	2	, divided	964	f	\N	0	f	t	\N	0.25
@@ -10337,6 +10988,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8538	8	1005	1	1	\N	70	t	\N	10	f	t	\N	1
 8539	8	1005	1	1	\N	40	t	\N	11	f	t	\N	1
 8459	6	997	4	3	\N	1262	f	\N	14	f	t	\N	1
+6448	7	585	1	2	, chopped	1972	f	\N	8	f	t	\N	1
+6449	7	585	1	3	\N	81	f	\N	9	f	t	\N	1
+6450	6	585	1	6	\N	\N	f	559	10	f	t	\N	1
+6451	6	585	1	2	, chopped and destemmed	372	f	\N	11	f	t	\N	1
+6438	0	584	1	6	\N	187	f	\N	7	f	t	\N	1
+6439	0	584	1	12	\N	1577	t	\N	8	f	t	\N	1
 \.
 
 
@@ -11300,7 +11957,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2973	Place the chicken breasts between two large sheets of parchment paper, and whack with the base of a large non-stick frying pan to flatten them to about ½ inch thick. 	364	0	0
 3230	Add the granola to the yogurt. Enjoy!	466	0	0
 2781	Heat the oil/ghee in a large pot. Add the chicken livers, onion, garlic and sauté gently until cooked through, about 15–20 minutes.	259	0	0
-3517	Preheat the oven to 350°F.	584	0	0
 3404	Heat a large skillet over medium heat and add the avocado oil.	554	0	4
 3401	Add all ingredients to a slow cooker, and cook on low for 6–8 hours. Alternatively, add all ingredients to a pot, ensuring the liquid just covers the meat, and cook on the stove top over medium heat for 1½ - 2 hours, stirring occasionally. 	553	0	1028
 3405	Add the cauliflower rice and onion and cook for 5 minutes, or until desired texture is achieved.	554	1	4
@@ -11308,6 +11964,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2969	Dress the beets with ½ a tablespoon each of extra virgin olive oil and red wine vinegar, the horseradish, and crème fraîche, then season to perfection with sea salt and black pepper. Delicately toss with the watercress and any reserved beet leaves.	361	1	0
 3273	Place all ingredients in a high-powered blender and mix until a creamy consistency is achieved.	483	0	128
 3274	Refrigerate until ready to serve.	483	1	0
+3517	Preheat the oven to 350°F.	584	0	2
 2971	Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. 	362	1	4
 2978	Put a large non-stick frying pan on a medium-high heat. Trim and finely slice the scallions and fry with 1 tablespoon of olive oil for 1 minute.	367	0	4
 2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. 	362	0	4
@@ -11612,18 +12269,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3480	Toss in the dressing and mix well, or serve it on the side.	574	2	0
 3493	Place the bone broth, beets, sweet potatoes, carrots, parsnips, onions, allspice, bay leaves, and garlic powder in a large stockpot and bring to a boil.	578	0	4
 4840	Place the baking sheet in the preheated oven and bake for 15-20 minutes, stirring halfway through, until the nuts and seeds are golden brown and fragrant.	1005	3	0
-3518	Line a dozen muffin tins with silicone or paper muffin liners (eggs can be sticky).	584	1	0
-3519	Melt coconut oil in a pan over medium heat. Add the Italian sausage, and break into small pieces.	584	2	0
-3520	Add the onions and garlic, and cook until the onions are translucent and the sausage pieces are browned and cooked through.	584	3	0
-3521	Transfer the sausage, onion and garlic mixture into a large bowl. Add the pizza sauce through eggs. Mix to combine.	584	4	0
-3522	Pour mixture into lined muffin tins, leaving a little room in the muffin cups since the eggs will puff up while they cook.	584	5	0
-3523	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	584	6	0
-3524	Top with a pepperonli slice (optional), and bake for 30-35 minutes, until the middles are set and not jiggly.	584	7	0
-3525	In a large cooking pot over medium heat, heat oil and add meat, stir to coat in coil, and sprinkle in liberally with salt and pepper. Cook meat until browned on all sides, about 7-10 minutes. Remove meat from the pot and set aside.	585	0	0
-3526	In the same heated pot, add the next 4 ingredients (onions through garlic) and cook until soft and fragrant, about 5 minutes. Add fennel and cook for another 1 to 2 minutes. Return meat to the pot along with the broth and vinegar. Bring to a boil, lower temperature to low, then over and cook for 2 hours and 15 min. Add kale and cook for 5 more minutes, or until they are wiltened and softened.	585	1	0
 3527	Heat the coconut oil in a soup pot on medium-heat. Add the leeks and cook until softened, about 6 minutes.	586	0	4
 3528	Add the garlic, and sauté until fragrant, about 1 minute.	586	1	4
 752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	62	1	0
+3518	Line a dozen muffin tins with silicone or paper muffin liners (eggs can be sticky).	584	1	0
 4608	Get your pan nice and hot over medium-high heat (I recommend stainless steel or cast iron), until a droplet of water skitters over the surface. Add a little oil, just enough to coat, and lay down the chicken. If it does not instantly sizzle, your pan wasn't hot enough. Leave the darn things alone for at least four minutes to develop a nice golden crust and to let the chicken release from the pan naturally.	976	2	4
 4609	At this point gently try and lift the chicken, if the pan still holds onto it, then it's not ready yet so give it another minute. Flip it over, and you should have a deep golden crust - that's where the flavor is. Cook for another 3–4 minutes until the second side also releases easily and has a nice crust.	976	3	0
 4280	Pick and finely chop the parsley, then toss most of it with the grains, along with 1 heaping teaspoon of harissa (and any extra butternut squash flesh, if using). Season with a pinch of salt and pepper, then divide between the squash halves. Make a well in the middle and crack an egg into each, then bake for 15 minutes for an oozy egg, or a little longer, if you prefer.	834	2	2
@@ -11638,7 +12287,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4762	When waffle is crispy, remove, top with avocado, and egg. Garnish with Tabasco and chives if desired.	996	3	0
 3537	Optional: Add chicken or turkey and sauté for another 5 minutes.	588	1	4
 3529	Add the celery, broccoli, and bone broth and bring to a boil, reduce the heat to simmer for 5 minutes.	586	2	4
+3519	Melt coconut oil in a pan over medium heat. Add the Italian sausage, and break into small pieces.	584	2	4
 3535	Place all ingredients into a slow cooker, mix, and cook on high for 6–8 hours.	587	0	1024
+3520	Add the onions and garlic, and cook until the onions are translucent and the sausage pieces are browned and cooked through.	584	3	4
+3521	Transfer the sausage, onion and garlic mixture into a large bowl. Add the pizza sauce through eggs. Mix to combine.	584	4	0
+3522	Pour mixture into lined muffin tins, leaving a little room in the muffin cups since the eggs will puff up while they cook.	584	5	0
 3538	Add cumin and chili powder, and cook for 5 more minutes.	588	2	4
 3539	Add beans, tomatoes, and their liquid, and balsamic vinegar. Cover and cook for another 15 minutes. 	588	3	4
 3540	Uncover and mix while cooking for another 10 minutes, making sure the mixture doesn't burn.	588	4	4
@@ -11646,6 +12299,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4330	Place the bowl over the simmering water and whisk for 3–4 minutes until the yolks start to thicken. Don't stop stirring.	870	2	4
 4331	Adding only a few drops at a time, whisk the melted butter into the egg yolks until all the butter has been incorporated. Don't add the butter too quickly. Remove the bowl from the heat, whisk for another minute, then cover the bowl with plastic wrap.	870	3	4
 4332	Break the whole eggs into a small bowl, then gently pour them into the simmering water. Cook the eggs for 6–7 minutes, then use a slotted spoon to scoop them out of the water and onto a paper towel.	870	4	4
+3523	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	584	6	0
+3525	In a large cooking pot over medium heat, heat oil and add meat, stir to coat in coil, and sprinkle in liberally with salt and pepper. Cook meat until browned on all sides, about 7-10 minutes. Remove meat from the pot and set aside.	585	0	0
+3526	In the same heated pot, add the next 4 ingredients (onions through garlic) and cook until soft and fragrant, about 5 minutes. Add fennel and cook for another 1 to 2 minutes. Return meat to the pot along with the broth and vinegar. Bring to a boil, lower temperature to low, then over and cook for 2 hours and 15 min. Add kale and cook for 5 more minutes, or until they are wiltened and softened.	585	1	0
 1298	Toss the florets and stem pieces with oil, then transfer to a baking sheet. 	26	1	0
 3370	In a large skillet, heat oil on medium heat. Once oil is hot, add the patties. Cook for about five minutes per side, or until no longer pink in the middle.	536	2	0
 2859	Continue to fry the mixture, increasing the heat if necessary, until the sausage meat is brown all over and looks crumbly. Stir in the tomato sauce, then sprinkle in the wine, with salt and pepper to taste. Simmer over a low heat, stirring occasionally, for 10–12 minutes.	192	2	4
@@ -12009,6 +12665,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	654	4	0
 4766	Add black beans, chicken broth, and salsa verde to the skillet, then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15–18 minutes, adding a splash more chicken broth near the end if needed. 	319	2	4
 4767	Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	319	3	0
+3524	Top with a pepperonli slice (optional), and bake for 30–35 minutes, until the middles are set and not jiggly.	584	7	2
 3810	In a 9-inch ovenproof skillet, combine the sweet potato and olive oil and season with salt and pepper. Toss to combine.	659	1	0
 3811	Transfer to the oven and roast for 15 minutes. Add the chorizo to the pan and bake for another 10 minutes, or until the sweet potatoes soften.	659	2	2
 3869	Preheat the oven to 400F. Line a baking sheet with parchment paper.	700	0	0
@@ -12732,7 +13389,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 400, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 404, true);
 
 
 --
@@ -12746,7 +13403,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 21452, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 22104, true);
 
 
 --
@@ -13496,5 +14153,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict jdRRgdzPra2Xz6SATfUNcy6MwEyEOTEkzZqXNex3rfq7xyX2rmXWq789mBn70d1
+\unrestrict SQGzCOdiGIbF3WMHTz5cGouSzuIaLtUZQtPXmPjJaXNb5JlMpYoEvAHhIFxVbc4
 

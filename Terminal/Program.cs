@@ -306,12 +306,14 @@ async Task<Response> RegenerateNutrients()
             row[headers[i]] = fields[i];
         }
 
-        var originalName = row.TryGetValue("name", out string? value2) ? value2 : "";
-        var unitName = row.TryGetValue("unit_name", out string? value3) ? value3?.Trim() ?? "" : "";
-        var id = row.ContainsKey("id") ? row["id"] : "0";
+        var id = (row.TryGetValue("id", out string? idTemp) ? idTemp?.Trim() : null) ?? throw new Exception("Missing id!");
+        var origName = (row.TryGetValue("name", out string? nameTemp) ? nameTemp?.Trim() : null) ?? throw new Exception("Missing name!");
+        var unitName = (row.TryGetValue("unit_name", out string? unitNameTemp) ? unitNameTemp?.Trim() : null) ?? throw new Exception("Missing unit_name!");
+        var nutrientNumber = (row.TryGetValue("nutrient_nbr", out string? nutrientNumberTemp) ? nutrientNumberTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+        var rank = (row.TryGetValue("rank", out string? rankTemp) ? rankTemp?.Trim().NullIfEmpty() : null) ?? "-1";
 
         // Pretty-up the nutrient name for C#.
-        var name = new string(originalName.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
+        var name = new string(origName.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
         name = name.Replace("__", "_");
         while (name.Contains("___"))
         {
@@ -334,37 +336,18 @@ async Task<Response> RegenerateNutrients()
 
         name = name + "_" + measure;
 
-        double rank = -1;
-        if (row.TryGetValue("rank", out string? value1)
-            && !string.IsNullOrWhiteSpace(value1)
-            && double.TryParse(value1, out var parsedRank))
-        {
-            rank = parsedRank;
-        }
-
-        double nutrientNumber = -1;
-        if (row.TryGetValue("nutrient_nbr", out string? value)
-            && !string.IsNullOrWhiteSpace(value)
-            && double.TryParse(value, out var parsedNbr))
-        {
-            nutrientNumber = parsedNbr;
-        }
-
         builder.AppendLine();
         builder.AppendLine($"    /// <summary>");
-        builder.AppendLine($"    /// {originalName}");
+        builder.AppendLine($"    /// {origName}");
         builder.AppendLine($"    /// </summary>");
 
-        foreach (var dailyAllowance in dailyAllowanceMap
-            .Where(kvp => originalName.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase)
-                || name.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase))
-            .SelectMany(kv => kv))
+        foreach (var dailyAllowance in dailyAllowanceMap.Where(kvp => name.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase)).SelectMany(kv => kv))
         {
             builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
         }
 
-        builder.AppendLine($"    [NutrientsMetadata(Measure.{measure}, {nutrientNumber.ToString(CultureInfo.InvariantCulture)}, {rank.ToString(CultureInfo.InvariantCulture)})]");
-        builder.AppendLine($"    [Display(Name = \"{originalName}\")]");
+        builder.AppendLine($"    [NutrientsMetadata(Measure.{measure}, {nutrientNumber}, {rank})]");
+        builder.AppendLine($"    [Display(Name = \"{origName}\")]");
         builder.AppendLine($"    {name} = {id},");
     }
 

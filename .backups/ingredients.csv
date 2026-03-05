@@ -167,7 +167,7 @@
 171	\N	Heavy Cream	\N	\N	f	324	29.75	100	2025-08-12	9	238	4194304	238	Heavy Cream	\N
 172	\N	Fresh Peaches	\N	\N	f	0	150	100	2026-01-11	0	154	1	154	Fresh Peach	\N
 173	\N	Plums	\N	\N	f	0	66	100	2025-03-25	0	66	1	66	Plums	\N
-174	\N	Leaves of Romaine Lettuce	\N	\N	f	0	23.5	100	2024-10-15	0	47	2	47	Lettuce	\N
+174	\N	Leaves of Romaine Lettuce	\N	\N	f	0	23.5	100	2026-03-05	0	47	2	47	Lettuce	\N
 175	\N	Grape Tomatoes	\N	\N	f	512	28	100	2025-11-28	4	149	2	149	Tomato	\N
 176	\N	Avocado Oil	\N	\N	f	0	28	100	2025-01-03	9	224	32768	224	Avocado Oil	\N
 177	\N	Corn Oil	\N	\N	f	2	13.6	100	2025-06-21	7	240	0	240	Corn Oil	\N
@@ -928,7 +928,7 @@
 1130	\N	Ribeye Steaks	\N	\N	f	1048576	376	100	2026-02-27	0	376	268435456	376	Ribeye Steaks	\N
 1131	\N	Gorgonzola Cheese	\N	\N	f	256	28	100	2025-07-07	4	224	29360128	224	Gorgonzola Cheese	\N
 1132	\N	Microgreens	\N	\N	f	0	28	100	2025-09-04	4	112	2	112	Microgreens	\N
-1133	\N	Romaine Lettuce	\N	\N	f	0	28	100	2024-10-15	4	47	2	47	Lettuce	\N
+1133	\N	Romaine Lettuce	\N	\N	f	0	28	100	2026-03-05	4	47	2	47	Lettuce	\N
 1134	\N	Flaky Sea Salt	\N	\N	t	0	6	100	2025-07-24	8	288	131072	288	Salt	\N
 1135	\N	Coarse Sea Salt	\N	\N	t	0	6	100	2025-07-24	8	288	131072	288	Salt	\N
 1136	\N	Flaky Sea Salt | Coarse Sea Salt	\N	\N	t	0	6	100	2025-07-24	8	288	131072	288	Salt	\N
@@ -1495,3 +1495,5 @@
 1968	\N	Raw Brown Lentils	\N	\N	f	0	192	100	2025-05-25	6	192	2048	192	Brown Lentils	\N
 1969	\N	Cornmeal | Grits	\N	\N	t	2	7.68	100	2025-07-30	7	128	0	128	Cornmeal	\N
 1970	\N	Grits	\N	\N	t	2	7.68	100	2025-07-30	7	128	0	128	Cornmeal	\N
+1971	\N	Medium Carrots	\N	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Carrots	\N
+1972	\N	Fennel	\N	\N	f	0	28	100	2025-09-05	4	87	2	87	Fennel Sprouts	\N
