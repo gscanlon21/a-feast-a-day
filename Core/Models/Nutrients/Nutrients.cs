@@ -10,6 +10,10 @@ public enum Nutrients
     /// <summary>
     /// Energy (Atwater General Factors)
     /// </summary>
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [NutrientsMetadata(Measure.KCalorie, 957, 280.0)]
     [Display(Name = "Energy (Atwater General Factors)")]
     Energy_Atwater_General_Factors_KCalorie = 2047,
@@ -17,6 +21,10 @@ public enum Nutrients
     /// <summary>
     /// Energy (Atwater Specific Factors)
     /// </summary>
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [NutrientsMetadata(Measure.KCalorie, 958, 290.0)]
     [Display(Name = "Energy (Atwater Specific Factors)")]
     Energy_Atwater_Specific_Factors_KCalorie = 2048,

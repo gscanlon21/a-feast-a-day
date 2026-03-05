@@ -7,7 +7,10 @@ public static class NutrientHelpers
     public static readonly List<Nutrients> All =
     [
         // Macronutrients
-        Nutrients.Energy_KCalorie,
+        //Nutrients.Energy_KCalorie,
+        Nutrients.Energy_Atwater_General_Factors_KCalorie,
+        Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
+
         Nutrients.Protein_Grams,
         Nutrients.Carbohydrates_Grams,
         Nutrients.Total_lipid_fat_Grams,
