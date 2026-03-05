@@ -60,7 +60,9 @@ public partial class NewsletterRepo
             UserLogs.Log(user, $"AlternativeIngredient:{invalidAlternative.IngredientId}:{invalidAlternative.AlternativeIngredientId} has an invalid configuration: 0.");
         }
 
-        // OrderBy must come after the query or you get cartesian explosion. Allow disabled ingredients.
+        // Allow disabled ingredients.
+        // Allow tracking to update the last updated date.
+        // OrderBy must come after the query or you get cartesian explosion.
         var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
@@ -78,7 +80,7 @@ public partial class NewsletterRepo
         Random.Shared.Shuffle(debugIngredients);
         foreach (var debugIngredient in debugIngredients
             .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
-            .ThenBy(i => i.LastUpdated)
+            .ThenBy(i => i.LastUpdated).ThenBy(_ => Guid.NewGuid())
             .Take(2))
         {
             debugIngredient.LastUpdated = DateHelpers.Today;
@@ -135,19 +137,19 @@ public partial class NewsletterRepo
         using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        // Allow tracking to update last updated date.
-        var debugDietaryIntakes = await scopedCoreContext.DietaryIntakes
+        // Allow tracking to update the last checked date.
+        var dietaryIntakes = await scopedCoreContext.DietaryIntakes
             .OrderByDescending(i => i.Checked == DateHelpers.Today)
-            .ThenBy(di => di.Checked).GroupBy(di => di.Key)
-            .Select(g => g.ToList())
+            .ThenBy(di => di.Checked).ThenBy(_ => EF.Functions.Random())
+            .GroupBy(di => di.Key).Select(g => g.ToList())
             .FirstAsync();
 
-        foreach (var debugDietaryIntake in debugDietaryIntakes)
+        foreach (var dietaryIntake in dietaryIntakes)
         {
-            debugDietaryIntake.Checked = DateHelpers.Today;
+            dietaryIntake.Checked = DateHelpers.Today;
         }
 
         await scopedCoreContext.SaveChangesAsync();
-        return debugDietaryIntakes;
+        return dietaryIntakes;
     }
 }
