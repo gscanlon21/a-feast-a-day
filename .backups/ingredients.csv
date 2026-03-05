@@ -1481,3 +1481,17 @@
 1924	\N	Sunflower Butter	\N	\N	f	65536	28	100	2026-01-01	9	224	65536	224	Sunflower Oil	\N
 1925	\N	Unsweetened Shredded Coconut	\N	\N	f	256	28	100	2024-11-27	4	113	8388608	113	Shredded Chedder Cheese	\N
 1956	\N	Chili Garlic Paste	\N	\N	t	0	7.5	100	2025-07-18	7	120	256	120	Chili Garlic Sauce	\N
+1957	\N	Fresh Baby Spinach | Fresh Kale	\N	\N	f	0	28	100	2024-12-28	4	30	2	30	Fresh Spinach | Fresh Kale	\N
+1958	\N	Large Sweet Potatoes	\N	\N	f	0	130	100	2025-08-18	0	133	2	133	Potato	\N
+1959	\N	Medium Sweet Potatoes	\N	\N	f	0	130	100	2025-08-18	0	133	2	133	Potato	\N
+1960	\N	Raw Pecans	\N	\N	f	0	28	100	2024-11-18	4	99	1048576	99	Pecans	\N
+1961	\N	Raw Sunflower Seeds	\N	\N	f	0	28	100	2025-12-19	4	128	1048576	128	Sunflower Seeds	\N
+1962	\N	Raw Pumpkin Seeds	\N	\N	f	0	28	100	2024-12-04	4	149.33	1048576	149.33	Pumpkin Seeds	\N
+1963	\N	Raw Walnuts	Use partial ingredients.	\N	f	131072	28	100	2026-01-29	4	120	1048576	100	Walnut	\N
+1964	\N	Raw Almonds	\N	\N	f	1	28	100	2026-02-16	4	143	1048576	143	Almonds	\N
+1965	\N	Himalayan Salt	\N	\N	t	0	4	100	2025-09-10	8	192	131072	192	Salt	\N
+1966	\N	Green Lentils | Brown Lentils	\N	\N	f	0	28	100	2025-06-07	4	192	2048	192	Green Lentils	\N
+1967	\N	Raw Green Lentils | Raw Brown Lentils	\N	\N	f	0	28	100	2025-06-07	4	192	2048	192	Green Lentils	\N
+1968	\N	Raw Brown Lentils	\N	\N	f	0	192	100	2025-05-25	6	192	2048	192	Brown Lentils	\N
+1969	\N	Cornmeal | Grits	\N	\N	t	2	7.68	100	2025-07-30	7	128	0	128	Cornmeal	\N
+1970	\N	Grits	\N	\N	t	2	7.68	100	2025-07-30	7	128	0	128	Cornmeal	\N

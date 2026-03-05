@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict RSipPU16FyQe04cE9W2VZ0ANHxkWtDrC3CPhKP1ZycPUIvmXfqT86fe8Chyc6W5
+\restrict jdRRgdzPra2Xz6SATfUNcy6MwEyEOTEkzZqXNex3rfq7xyX2rmXWq789mBn70d1
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -850,12 +850,10 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 95	Pantothenic acid	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 99	Riboflavin	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 52	Boron_B_Micrograms	-1	20	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	-infinity	\N
-249	Iodine_I_Micrograms	150	\N	65536	1	1	0		-infinity	-infinity	\N
 191	Fiber_total_dietary_Grams	38	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 194	Fiber_total_dietary_Grams	38	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 103	Vitamin B-6	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 195	Fiber_total_dietary_Grams	25	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-45	Iodine_I_Micrograms	150	\N	131072	1	1	0		2023-01-01	-infinity	\N
 250	Chromium_Cr_Micrograms	35	\N	65536	1	1	0		-infinity	-infinity	\N
 251	Molybdenum_Mo_Micrograms	45	\N	65536	1	1	0		-infinity	-infinity	\N
 252	Total_Sugars_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
@@ -888,6 +886,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 71	Biotin	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
 75	Folate_total_Micrograms	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 32	Vitamin_C_total_ascorbic_acid_Milligrams	90	2000	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+45	Iodine_I_Micrograms	150	1100	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 108	Sugars_Total_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
 109	Vitamin D (D2 + D3)	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 110	Vitamin K (phylloquinone)	1	10	131072	2	1	0		2023-01-01	-infinity	\N
@@ -903,6 +902,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 266	Threonine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 267	Tryptophan	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 268	Valine	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+249	Iodine_I_Micrograms	150	1100	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 273	Folate_total_Micrograms	1	10	65536	2	1	0		-infinity	-infinity	\N
 274	Sugars_Total_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
 275	Vitamin D (D2 + D3)	1	10	65536	2	1	0		-infinity	-infinity	\N
@@ -944,8 +944,8 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 329	Riboflavin	1	10	1048576	2	1	0		-infinity	-infinity	\N
 330	Vitamin B-6	1	10	1048576	2	1	0		-infinity	-infinity	\N
 337	Thiamin_Milligrams	1.1	\N	1048576	2	1	0		-infinity	-infinity	\N
-347	Iodine_I_Micrograms	150	\N	1048576	1	1	0		-infinity	-infinity	\N
 336	Vitamin_C_total_ascorbic_acid_Milligrams	90	2000	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+347	Iodine_I_Micrograms	150	1100	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 351	Chromium_Cr_Micrograms	35	\N	1048576	1	1	0		-infinity	-infinity	\N
 352	Molybdenum_Mo_Micrograms	45	\N	1048576	1	1	0		-infinity	-infinity	\N
 353	Total_Sugars_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
@@ -990,11 +990,11 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 397	Folate_total_Micrograms	1	10	2097152	2	1	0		-infinity	-infinity	\N
 378	Glycine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 388	Histidine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
-349	Iodine_I_Micrograms	150	\N	2097152	1	1	0		-infinity	-infinity	\N
 389	Isoleucine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 390	Leucine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 391	Lysine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 392	Methionine	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+349	Iodine_I_Micrograms	150	1100	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 297	Magnesium_Mg_Milligrams	350	\N	2097152	2	1	0		-infinity	-infinity	\N
 343	Manganese_Mn_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 355	Molybdenum_Mo_Micrograms	45	\N	2097152	1	1	0		-infinity	-infinity	\N
@@ -3318,6 +3318,19 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1073	1074	1	t
 1073	174	1	t
 16	206	1	f
+1957	372	1	t
+1957	206	1	t
+1250	1959	1	f
+1250	1958	1	f
+1965	348	1	f
+1966	843	1	f
+1966	844	1	f
+1967	1968	1	t
+1967	1305	1	t
+843	1968	1	f
+1339	296	1	f
+1969	1970	1	t
+1969	421	1	t
 \.
 
 
@@ -3368,6 +3381,12 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 807	2346393	12061
 984	2515379	12151
 1062	2346411	9050
+599	2258591	100278
+600	170016	11312
+1043	1750342	9502
+215	169661	19353
+150	169988	11143
+1286	169988	11143
 \.
 
 
@@ -3776,6 +3795,14 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 20999	984	1005	\N	3	27.6943
 21000	984	2047	\N	102	597.98
 21001	984	2048	\N	102	560.68798
+21101	150	1107	\N	1	270
+21102	1286	1107	\N	1	270
+21103	150	1220	\N	3	0.02
+21104	1286	1220	\N	3	0.02
+21105	150	1227	\N	3	0.02
+21106	1286	1227	\N	3	0.02
+21107	150	1166	\N	2	0.057
+21108	1286	1166	\N	2	0.057
 19240	88	1004	\N	3	43.28
 19241	1619	1004	\N	3	43.28
 19242	88	1079	\N	3	8.014
@@ -5445,6 +5472,449 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 20906	259	1101	\N	2	0.1065
 20907	259	1093	\N	2	0.4425
 20908	259	1011	\N	3	1.19
+21002	215	1292	\N	3	0.011
+21003	215	1098	\N	2	0.018
+21004	215	1089	\N	2	0.11
+21005	215	1260	\N	3	0
+21006	215	1264	\N	3	0
+21007	215	1105	\N	1	0
+21008	215	1268	\N	3	0.011
+21009	215	1123	\N	1	0
+21010	215	1018	\N	3	0
+21011	215	1004	\N	3	0.06
+21012	215	1051	\N	3	32.39
+21013	215	1263	\N	3	0
+21014	215	1108	\N	1	0
+21015	215	1187	\N	1	0
+21016	215	1266	\N	3	0.001
+21017	215	1259	\N	3	0
+21018	215	1095	\N	2	1.47
+21019	215	1010	\N	3	58.32
+21020	215	1276	\N	3	0
+21021	215	1005	\N	3	67.04
+21022	215	1270	\N	3	0
+21023	215	1090	\N	2	21
+21024	215	1170	\N	2	0.036
+21025	215	1271	\N	3	0
+21026	215	1103	\N	1	0.6
+21027	215	1122	\N	1	0
+21028	215	1058	\N	2	0
+21029	215	1003	\N	3	0.04
+21030	215	1277	\N	3	0
+21031	215	1178	\N	1	0
+21032	215	1278	\N	3	0
+21033	215	1106	\N	1	0
+21034	215	1280	\N	3	0
+21035	215	1246	\N	1	0
+21036	215	1162	\N	2	0
+21037	215	1092	\N	2	212
+21038	215	1265	\N	3	0.006
+21039	215	1104	\N	98	0
+21040	215	1258	\N	3	0.007
+21041	215	1269	\N	3	0.017
+21042	215	1091	\N	2	2
+21043	215	1190	\N	1	0
+21044	215	1110	\N	98	0
+21045	215	1109	\N	2	0
+21046	215	1272	\N	3	0
+21047	215	1293	\N	3	0.017
+21048	215	1177	\N	1	0
+21049	215	1167	\N	2	0.081
+21050	215	1114	\N	1	0
+21051	215	1075	\N	3	0
+21052	215	1011	\N	3	1.6
+21053	215	1101	\N	2	2.908
+21054	215	1180	\N	2	1.6
+21055	215	1057	\N	2	0
+21056	215	1242	\N	2	0
+21057	215	1087	\N	2	102
+21058	215	1166	\N	2	1.27
+21059	215	1107	\N	1	0
+21060	215	1186	\N	1	0
+21061	215	1175	\N	2	0.002
+21062	215	1120	\N	1	0
+21063	215	2000	\N	3	60.46
+21064	215	1012	\N	3	0.52
+21065	215	1275	\N	3	0
+21066	215	1261	\N	3	0
+21067	215	1014	\N	3	0
+21068	215	1007	\N	3	0.47
+21069	215	1079	\N	3	0
+21070	215	1165	\N	2	0.066
+21071	215	1253	\N	2	0
+21072	215	1008	\N	102	260
+21073	215	1062	\N	103	1088
+21074	215	1279	\N	3	0
+21075	215	1262	\N	3	0
+21076	215	1013	\N	3	0
+21077	215	1093	\N	2	12
+21078	215	1185	\N	1	0
+21079	150	1242	\N	2	0
+21080	1286	1242	\N	2	0
+21081	150	1114	\N	1	0
+21082	1286	1114	\N	1	0
+21083	150	1246	\N	1	0
+21084	1286	1246	\N	1	0
+21085	150	1175	\N	2	0.074
+21086	1286	1175	\N	2	0.074
+21087	150	1093	\N	2	80
+21088	1286	1093	\N	2	80
+21089	150	1103	\N	1	0.4
+21090	1286	1103	\N	1	0.4
+21091	150	1269	\N	3	0.079
+21092	1286	1269	\N	3	0.079
+21093	150	1277	\N	3	0
+21094	1286	1277	\N	3	0
+21095	150	1218	\N	3	0.009
+21096	1286	1218	\N	3	0.009
+21097	150	1216	\N	3	0.004
+21098	1286	1216	\N	3	0.004
+21099	150	1259	\N	3	0
+21100	1286	1259	\N	3	0
+21109	150	1098	\N	2	0.035
+21110	1286	1098	\N	2	0.035
+21111	150	1213	\N	3	0.032
+21112	1286	1213	\N	3	0.032
+21113	150	1018	\N	3	0
+21114	1286	1018	\N	3	0
+21115	150	1293	\N	3	0.079
+21116	1286	1293	\N	3	0.079
+21117	150	1090	\N	2	11
+21118	1286	1090	\N	2	11
+21119	150	1125	\N	2	0
+21120	1286	1125	\N	2	0
+21121	150	1013	\N	3	0
+21122	1286	1013	\N	3	0
+21123	150	1167	\N	2	0.32
+21124	1286	1167	\N	2	0.32
+21125	150	1087	\N	2	40
+21126	1286	1087	\N	2	40
+21127	150	1051	\N	3	95.43
+21128	1286	1051	\N	3	95.43
+21129	150	1186	\N	1	0
+21130	1286	1186	\N	1	0
+21131	150	1258	\N	3	0.042
+21132	1286	1258	\N	3	0.042
+21133	150	1276	\N	3	0
+21134	1286	1276	\N	3	0
+21135	150	1224	\N	3	0.09
+21136	1286	1224	\N	3	0.09
+21137	150	1178	\N	1	0
+21138	1286	1178	\N	1	0
+21139	150	1211	\N	3	0.02
+21140	1286	1211	\N	3	0.02
+21141	150	1184	\N	1	0
+21142	1286	1184	\N	1	0
+21143	150	1180	\N	2	6.1
+21144	1286	1180	\N	2	6.1
+21145	150	1126	\N	2	0
+21146	1286	1126	\N	2	0
+21147	150	1127	\N	2	0
+21148	1286	1127	\N	2	0
+21149	150	1187	\N	1	36
+21150	1286	1187	\N	1	36
+21151	150	1007	\N	3	0.75
+21152	1286	1007	\N	3	0.75
+21153	150	1268	\N	3	0.031
+21154	1286	1268	\N	3	0.031
+21155	150	1262	\N	3	0
+21156	1286	1262	\N	3	0
+21157	150	1222	\N	3	0.023
+21158	1286	1222	\N	3	0.023
+21159	150	1106	\N	1	22
+21160	1286	1106	\N	1	22
+21161	150	1129	\N	2	0
+21162	1286	1129	\N	2	0
+21163	150	1004	\N	3	0.17
+21164	1286	1004	\N	3	0.17
+21165	150	1264	\N	3	0.001
+21166	1286	1264	\N	3	0.001
+21167	150	1062	\N	103	57
+21168	1286	1062	\N	103	57
+21169	150	1278	\N	3	0
+21170	1286	1278	\N	3	0
+21171	150	1014	\N	3	0
+21172	1286	1014	\N	3	0
+21173	150	1058	\N	2	0
+21174	1286	1058	\N	2	0
+21175	150	1162	\N	2	3.1
+21176	1286	1162	\N	2	3.1
+21177	150	1219	\N	3	0.027
+21178	1286	1219	\N	3	0.027
+21179	150	1190	\N	1	36
+21180	1286	1190	\N	1	36
+21181	150	1131	\N	2	0
+21182	1286	1131	\N	2	0
+21183	150	1266	\N	3	0.004
+21184	1286	1266	\N	3	0.004
+21185	150	1210	\N	3	0.009
+21186	1286	1210	\N	3	0.009
+21187	150	1292	\N	3	0.032
+21188	1286	1292	\N	3	0.032
+21189	150	1012	\N	3	0.37
+21190	1286	1012	\N	3	0.37
+21191	150	1217	\N	3	0.02
+21192	1286	1217	\N	3	0.02
+21193	150	1177	\N	1	36
+21194	1286	1177	\N	1	36
+21195	150	1099	\N	1	4
+21196	1286	1099	\N	1	4
+21197	150	1263	\N	3	0
+21198	1286	1263	\N	3	0
+21199	150	1005	\N	3	2.97
+21200	1286	1005	\N	3	2.97
+21201	150	1075	\N	3	0.48
+21202	1286	1075	\N	3	0.48
+21203	150	1214	\N	3	0.027
+21204	1286	1214	\N	3	0.027
+21205	150	2000	\N	3	1.34
+21206	1286	2000	\N	3	1.34
+21207	150	1123	\N	1	283
+21208	1286	1123	\N	1	283
+21209	150	1104	\N	98	449
+21210	1286	1104	\N	98	449
+21211	150	1165	\N	2	0.021
+21212	1286	1165	\N	2	0.021
+21213	150	1170	\N	2	0.246
+21214	1286	1170	\N	2	0.246
+21215	150	1253	\N	2	0
+21216	1286	1253	\N	2	0
+21217	150	1261	\N	3	0
+21218	1286	1261	\N	3	0
+21219	150	1275	\N	3	0.001
+21220	1286	1275	\N	3	0.001
+21221	150	1091	\N	2	24
+21222	1286	1091	\N	2	24
+21223	150	1057	\N	2	0
+21224	1286	1057	\N	2	0
+21225	150	1283	\N	2	6
+21226	1286	1283	\N	2	6
+21227	150	1223	\N	3	0.117
+21228	1286	1223	\N	3	0.117
+21229	150	1265	\N	3	0.037
+21230	1286	1265	\N	3	0.037
+21231	150	1109	\N	2	0.27
+21232	1286	1109	\N	2	0.27
+21233	150	1120	\N	1	0
+21234	1286	1120	\N	1	0
+21235	150	1130	\N	2	0
+21236	1286	1130	\N	2	0
+21237	150	1105	\N	1	0
+21238	1286	1105	\N	1	0
+21239	150	1185	\N	1	29.3
+21240	1286	1185	\N	1	29.3
+21241	150	1280	\N	3	0
+21242	1286	1280	\N	3	0
+21243	150	1092	\N	2	260
+21244	1286	1092	\N	2	260
+21245	150	1226	\N	3	0.018
+21246	1286	1226	\N	3	0.018
+21247	150	1221	\N	3	0.012
+21248	1286	1221	\N	3	0.012
+21249	150	1089	\N	2	0.2
+21250	1286	1089	\N	2	0.2
+21251	150	1095	\N	2	0.13
+21252	1286	1095	\N	2	0.13
+21253	150	1270	\N	3	0
+21254	1286	1270	\N	3	0
+21255	150	1011	\N	3	0.4
+21256	1286	1011	\N	3	0.4
+21257	150	1009	\N	3	0
+21258	1286	1009	\N	3	0
+21259	150	1008	\N	102	14
+21260	1286	1008	\N	102	14
+21261	150	1212	\N	3	0.021
+21262	1286	1212	\N	3	0.021
+21263	150	1079	\N	3	1.6
+21264	1286	1079	\N	3	1.6
+21265	150	1110	\N	98	0
+21266	1286	1110	\N	98	0
+21267	150	1128	\N	2	0.01
+21268	1286	1128	\N	2	0.01
+21269	150	1108	\N	1	0
+21270	1286	1108	\N	1	0
+21271	150	1010	\N	3	0.08
+21272	1286	1010	\N	3	0.08
+21273	150	1257	\N	3	0
+21274	1286	1257	\N	3	0
+21275	150	1271	\N	3	0
+21276	1286	1271	\N	3	0
+21277	150	1198	\N	2	0.1
+21278	1286	1198	\N	2	0.1
+21279	150	1101	\N	2	0.103
+21280	1286	1101	\N	2	0.103
+21281	150	1279	\N	3	0
+21282	1286	1279	\N	3	0
+21283	150	1003	\N	3	0.69
+21284	1286	1003	\N	3	0.69
+21285	150	1122	\N	1	0
+21286	1286	1122	\N	1	0
+21287	150	1260	\N	3	0
+21288	1286	1260	\N	3	0
+21289	150	1225	\N	3	0.021
+21290	1286	1225	\N	3	0.021
+21291	150	1272	\N	3	0
+21292	1286	1272	\N	3	0
+21293	150	1215	\N	3	0.005
+21294	1286	1215	\N	3	0.005
+21295	600	1215	\N	3	0.079
+21296	600	1253	\N	2	0
+21297	600	1101	\N	2	0.336
+21298	600	1170	\N	2	0.547
+21299	600	1012	\N	3	0.25
+21300	600	1008	\N	102	77
+21301	600	1107	\N	1	1225
+21302	600	1090	\N	2	26
+21303	600	1165	\N	2	0.259
+21304	600	1092	\N	2	153
+21305	600	1246	\N	1	0
+21306	600	1125	\N	2	0
+21307	600	1062	\N	103	322
+21308	600	1009	\N	3	4.17
+21309	600	1219	\N	3	0.226
+21310	600	1262	\N	3	0
+21311	600	1014	\N	3	0.08
+21312	600	1079	\N	3	4.5
+21313	600	1214	\N	3	0.305
+21314	600	1106	\N	1	103
+21315	600	1177	\N	1	53
+21316	600	1087	\N	2	22
+21317	600	1175	\N	2	0.083
+21318	600	1266	\N	3	0.007
+21319	600	1005	\N	3	13.62
+21320	600	1180	\N	2	27
+21321	600	1162	\N	2	18
+21322	600	1221	\N	3	0.102
+21323	600	1166	\N	2	0.1
+21324	600	1187	\N	1	53
+21325	600	1213	\N	3	0.311
+21326	600	1058	\N	2	0
+21327	600	1257	\N	3	0
+21328	600	1293	\N	3	0.175
+21329	600	1010	\N	3	4.6
+21330	600	1272	\N	3	0
+21331	600	1122	\N	1	0
+21332	600	1184	\N	1	0
+21333	600	1057	\N	2	0
+21334	600	1265	\N	3	0.06
+21335	600	1260	\N	3	0
+21336	600	1264	\N	3	0
+21337	600	1178	\N	1	0
+21338	600	1004	\N	3	0.4
+21339	600	1093	\N	2	108
+21340	600	1114	\N	1	0
+21341	600	1269	\N	3	0.142
+21342	600	1123	\N	1	2352
+21343	600	1263	\N	3	0
+21344	600	1227	\N	3	0.174
+21345	600	1007	\N	3	0.78
+21346	600	1167	\N	2	1.723
+21347	600	1091	\N	2	82
+21348	600	1223	\N	3	0.476
+21349	600	1126	\N	2	0.75
+21350	600	1259	\N	3	0
+21351	600	1075	\N	3	0
+21352	600	1277	\N	3	0
+21353	600	1108	\N	1	20
+21354	600	1110	\N	98	0
+21355	600	1292	\N	3	0.033
+21356	600	1224	\N	3	0.712
+21357	600	1190	\N	1	53
+21358	600	1089	\N	2	1.53
+21359	600	1109	\N	2	0.02
+21360	600	1268	\N	3	0.033
+21361	600	1212	\N	3	0.187
+21362	600	1210	\N	3	0.036
+21363	600	1098	\N	2	0.124
+21364	600	1185	\N	1	27.9
+21365	600	1226	\N	3	0.167
+21366	600	1216	\N	3	0.031
+21367	600	1225	\N	3	0.177
+21368	600	1220	\N	3	0.412
+21369	600	1105	\N	1	0
+21370	600	1279	\N	3	0
+21371	600	1051	\N	3	79.98
+21372	600	1218	\N	3	0.109
+21373	600	1271	\N	3	0
+21374	600	1278	\N	3	0
+21375	600	1222	\N	3	0.231
+21376	600	1217	\N	3	0.192
+21377	600	1186	\N	1	0
+21378	600	1018	\N	3	0
+21379	600	1095	\N	2	0.82
+21380	600	1275	\N	3	0
+21381	600	1270	\N	3	0.033
+21382	600	1261	\N	3	0
+21383	600	1013	\N	3	0
+21384	600	1280	\N	3	0
+21385	600	1183	\N	1	0
+21386	600	1211	\N	3	0.195
+21387	600	1127	\N	2	0.01
+21388	600	1011	\N	3	0.08
+21389	600	1258	\N	3	0.066
+21390	600	1276	\N	3	0
+21391	600	1104	\N	98	2058
+21392	600	1120	\N	1	0
+21393	600	1242	\N	2	0
+21394	600	1003	\N	3	5.22
+21395	600	1103	\N	1	1.9
+21396	600	2000	\N	3	5
+21397	1043	1063	\N	3	10.651
+21398	1043	1050	\N	3	13.164
+21399	1043	2048	\N	102	52.958085
+21400	1043	2047	\N	102	58.8719
+21401	1043	1005	\N	3	14.142975
+21402	1043	1003	\N	3	0.265625
+21403	1043	1011	\N	3	2.678
+21404	1043	1177	\N	1	0
+21405	1043	1092	\N	2	115.9
+21406	1043	1093	\N	2	0
+21407	1043	1002	\N	3	0.0425
+21408	1043	1087	\N	2	5.483
+21409	1043	1007	\N	3	0.3139
+21410	1043	2000	\N	3	10.65
+21411	1043	1167	\N	2	0.11
+21412	1043	1165	\N	2	0.01688
+21413	1043	1014	\N	3	0
+21414	1043	1004	\N	3	0.1375
+21415	1043	1098	\N	2	0.03544
+21416	1043	1051	\N	3	85.14
+21417	1043	1095	\N	2	0.02276
+21418	1043	1166	\N	2	0.075
+21419	1043	1089	\N	2	0.06963
+21420	1043	1101	\N	2	0.03934
+21421	1043	1079	\N	3	2.514
+21422	1043	1010	\N	3	1.611
+21423	1043	1090	\N	2	5.055
+21424	1043	1175	\N	2	0.02788
+21425	1043	1012	\N	3	6.362
+21426	1043	1091	\N	2	9.859
+21427	1043	1013	\N	3	0
+21428	599	2048	\N	102	27.38430325
+21429	599	2047	\N	102	31.7404
+21430	599	1005	\N	3	6.703125
+21431	599	1003	\N	3	0.881875
+21432	599	1090	\N	2	10.43
+21433	599	1007	\N	3	0.3794
+21434	599	1162	\N	2	158.3
+21435	599	1002	\N	3	0.1411
+21436	599	1087	\N	2	4.899
+21437	599	1093	\N	2	0
+21438	599	1176	\N	1	0.58
+21439	599	1101	\N	2	0.1491
+21440	599	1079	\N	3	0.9674
+21441	599	1175	\N	2	0.3324
+21442	599	1092	\N	2	200.8
+21443	599	1095	\N	2	0.2422
+21444	599	1098	\N	2	0.0351
+21445	599	1166	\N	2	0.1017
+21446	599	1165	\N	2	0.05456
+21447	599	1089	\N	2	0.3652
+21448	599	1004	\N	3	0.1556
+21449	599	1103	\N	1	0.3
+21450	599	1091	\N	2	26.59
+21451	599	1051	\N	3	91.88
+21452	599	1167	\N	2	1.078
 \.
 
 
@@ -5942,6 +6412,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3389	8	116	4	1	, to taste	285	t	\N	6	f	t	\N	1
 8239	6	788	1	4	\N	\N	f	858	6	f	t	\N	1
 2357	0	70	1	1	, seeded	224	t	\N	7	f	t	\N	1
+8234	4	978	1	4	\N	16	f	\N	1	f	t	\N	1
+8235	0	978	1	2	, beaten with a pinch of salt	187	f	\N	2	f	t	\N	1
 3390	4	172	1	4	\N	409	f	\N	0	f	t	\N	1
 3391	6	172	4	5	\N	569	f	\N	1	f	t	\N	1
 3392	0	172	1	2	\N	11	f	\N	2	f	t	\N	1
@@ -5949,6 +6421,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4021	4	185	1	8	, trimmed	122	f	\N	3	f	t	\N	1
 4022	0	185	1	1	\N	661	t	\N	4	f	t	\N	1
 4023	6	185	1	2	\N	149	f	\N	5	f	t	\N	1
+8237	0	978	1	1	, minced	5	t	\N	4	f	t	\N	1
 4024	4	185	1	4	\N	659	t	\N	6	f	t	\N	1
 4025	0	185	1	1	, chopped	225	t	\N	7	f	t	\N	1
 2003	0	118	1	4	\N	391	f	\N	0	f	t	\N	1
@@ -5957,8 +6430,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2093	8	103	1	1	\N	73	f	\N	3	f	t	\N	1
 2005	4	118	1	1	(1 large)	377	f	\N	4	f	t	\N	1
 2007	7	118	1	2	\N	394	t	\N	6	f	t	\N	1
-8234	4	978	1	4	\N	16	f	\N	0	f	t	\N	1
-8235	0	978	1	2	, beaten with a pinch of salt	187	f	\N	1	f	t	\N	1
 2094	7	103	1	1	, for dusting	38	f	\N	4	f	t	\N	1
 2358	6	53	1	1	\N	123	f	\N	0	f	t	\N	1
 3836	0	75	1	1	, peeled and smashed	5	f	\N	1	f	t	\N	1
@@ -5972,7 +6443,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3485	5	176	4	7	, thawed	905	f	\N	3	f	t	\N	1
 3486	8	176	4	1	\N	70	t	\N	4	f	t	\N	1
 2433	7	81	1	1	\N	77	f	\N	3	f	t	\N	0.25
-8237	0	978	1	1	, minced	5	t	\N	3	f	t	\N	1
 3522	5	181	1	1	\N	488	f	\N	1	f	t	\N	1
 3523	6	181	2	1	\N	59	f	\N	2	f	t	\N	1
 3524	6	181	4	1	\N	60	t	\N	3	f	t	\N	1
@@ -7144,9 +7614,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5925	6	480	2	1	\N	77	f	\N	0	f	t	\N	0.25
 5638	6	401	1	1	, cut in half	147	t	\N	4	f	t	\N	1
 5615	6	398	3	1	\N	215	f	\N	3	f	t	\N	1
-5601	6	397	1	1	, cut into small pieces, (use fresh, not frozen)	1290	f	\N	0	f	t	\N	1
-5602	0	397	1	1	, diced with skin on	1341	f	\N	1	f	t	\N	1
-5603	0	397	1	1	, boiled and diced, optional	671	t	\N	2	f	t	\N	1
+5601	6	397	1	1	, cut into small pieces, (use fresh, not frozen)	1290	f	\N	1	f	t	\N	1
+5602	0	397	1	1	, diced with skin on	1341	f	\N	2	f	t	\N	1
+5603	0	397	1	1	, boiled and diced	671	t	\N	3	f	t	\N	1
 3666	7	188	1	2	\N	2	f	\N	11	f	t	\N	1
 3667	0	188	1	1	, chopped	224	t	\N	12	f	t	\N	1
 5580	7	393	1	1	\N	968	f	\N	3	f	t	\N	1
@@ -7160,13 +7630,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5656	7	404	1	1	\N	1094	f	\N	3	f	t	\N	1
 5657	0	404	1	4	, omit if making smoothie hot	501	t	\N	4	f	t	\N	1
 5501	6	381	2	1	, shredded	95	t	\N	6	f	t	\N	1
-5604	6	397	2	1	, chopped	90	f	\N	3	f	t	\N	1
-5605	6	397	4	1	, chopped	2	t	\N	4	f	t	\N	1
 5616	7	398	1	2	\N	991	f	\N	4	f	t	\N	1
 5649	6	403	1	1	, chopped into small pieces	372	f	\N	1	f	t	\N	1
 5650	8	403	8	1	, to taste	692	f	\N	2	f	t	\N	1
 5617	0	398	1	1	, juiced	12	f	\N	5	f	t	\N	1
-5606	6	397	4	1	, optional	1339	t	\N	5	f	t	\N	1
 5618	0	398	1	3	\N	5	f	\N	6	f	t	\N	1
 5670	0	408	1	1	\N	250	f	\N	0	f	t	\N	1
 5600	6	396	2	1	, cubed	594	t	\N	7	f	t	\N	1
@@ -7649,6 +8116,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6267	6	564	1	4	, such as peppers, mushrooms, broccoli, onion	1084	f	\N	1	f	t	\N	1
 6243	0	559	1	2	\N	150	f	\N	3	f	t	\N	1
 6250	7	561	1	1	\N	77	f	\N	0	f	t	\N	0.25
+8238	8	978	4	1	\N	214	t	\N	5	f	t	\N	1
 6244	0	559	1	1	\N	222	f	\N	4	f	t	\N	1
 6803	9	633	1	14	\N	178	f	\N	1	f	t	\N	1
 6287	7	567	1	1	\N	77	f	\N	1	f	t	\N	0.25
@@ -7673,7 +8141,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6215	8	555	4	1	, to taste	692	t	\N	5	f	t	\N	1
 5293	6	315	3	4	\N	266	f	\N	4	f	t	\N	1
 6246	6	559	1	1	\N	123	f	\N	6	f	t	\N	1
-8238	8	978	4	1	\N	214	t	\N	4	f	t	\N	1
 6253	0	561	1	1	, minced superfine	5	f	\N	5	f	t	\N	1
 6254	7	561	1	3	\N	81	f	\N	6	f	t	\N	1
 6255	8	561	4	1	, to taste	692	t	\N	7	f	t	\N	1
@@ -8443,7 +8910,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6908	6	643	4	1	\N	805	f	\N	8	f	t	\N	1
 6909	8	643	8	1	, to taste	74	t	\N	9	f	t	\N	1
 7016	6	659	1	1	, peeled, diced	255	f	\N	1	f	t	\N	1
-8236	7	978	2	3	\N	78	f	\N	2	f	t	\N	0.25
 7027	7	660	1	2	, grated	319	f	\N	5	f	t	\N	1
 7028	0	660	1	1	, 12-inch	136	f	\N	6	f	t	\N	1
 6702	6	618	1	1	, to serve	277	t	\N	10	f	t	\N	1
@@ -8482,6 +8948,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7014	6	658	2	1	, packed, midribs discarded	372	f	\N	3	f	t	\N	1
 7015	6	658	2	1	\N	1364	f	\N	4	f	t	\N	1
 8292	0	980	1	1	, sliced	\N	t	966	7	t	t	\N	1
+8236	7	978	2	3	\N	78	f	\N	3	f	t	\N	0.25
 7018	8	659	8	1	\N	969	f	\N	3	f	t	\N	1
 7021	0	659	1	2	\N	187	f	\N	6	f	t	\N	1
 7006	6	657	1	1	\N	1361	f	\N	0	f	t	\N	1
@@ -8604,7 +9071,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7317	7	732	1	2	\N	189	f	\N	4	f	t	\N	0.25
 6725	7	621	1	5	, at room temperature, divided	189	f	\N	0	f	t	\N	0.25
 7341	7	736	1	1	\N	189	f	\N	5	f	t	\N	0.25
-7846	7	869	1	2	, divided	189	f	\N	0	f	t	\N	0.25
 6983	7	652	1	1	, 14g	190	f	\N	5	f	t	\N	0.25
 3388	6	116	2	1	\N	278	f	\N	5	f	t	\N	0.25
 3454	6	94	4	3	\N	278	f	\N	3	f	t	\N	0.25
@@ -8655,6 +9121,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7621	7	840	1	1	\N	1781	f	\N	2	f	t	\N	0.25
 6468	7	588	1	2	\N	176	f	\N	1	f	t	\N	0.25
 7857	7	870	1	8	, melted	189	f	\N	5	f	t	\N	0.25
+7846	7	869	1	2	, divided	189	f	\N	1	f	t	\N	0.25
 5934	7	482	1	1	\N	176	f	\N	1	f	t	\N	0.25
 7858	8	870	1	1	\N	79	f	\N	6	f	t	\N	0.25
 6393	7	580	1	1	\N	176	f	\N	3	f	t	\N	0.25
@@ -8944,17 +9411,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5597	8	396	1	1	\N	73	f	\N	4	f	t	\N	1
 5639	6	401	2	1	\N	334	f	\N	5	f	t	\N	1
 5640	6	401	1	1	\N	\N	t	472	6	f	t	\N	1
-5608	6	397	4	1	, optional	1340	t	\N	7	f	t	\N	1
-5609	6	397	2	1	\N	\N	t	556	8	f	t	\N	1
+5607	6	397	4	1	\N	871	f	\N	7	f	t	\N	1
+5608	6	397	4	1	\N	1340	t	\N	8	f	t	\N	1
 6355	6	575	3	1	, chopped	812	f	\N	9	f	t	\N	1
 6356	6	575	4	1	, sliced	397	f	\N	10	f	t	\N	1
-5610	8	397	1	1	\N	215	f	\N	9	f	t	\N	1
-5611	8	397	4	1	, to taste	74	t	\N	10	f	t	\N	1
+5609	6	397	2	1	\N	\N	t	556	9	f	t	\N	1
+5610	8	397	1	1	\N	215	f	\N	10	f	t	\N	1
 8346	7	382	1	2	\N	82	f	\N	8	f	t	\N	1
 8347	6	382	1	2	\N	123	f	\N	9	f	t	\N	1
 7005	6	656	2	1	\N	546	t	\N	6	f	t	\N	1
 8376	0	988	1	1	\N	1089	f	\N	0	f	t	\N	1
-5607	6	397	4	1	\N	871	f	\N	6	f	t	\N	1
+5611	8	397	4	1	, to taste	74	t	\N	11	f	t	\N	1
 7512	0	791	1	1	\N	222	f	\N	0	f	t	\N	1
 7513	5	791	1	2	\N	264	f	\N	1	f	t	\N	1
 7514	0	791	1	5	\N	187	f	\N	2	f	t	\N	1
@@ -9314,12 +9781,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7816	8	864	1	1	(DRIED ROSEMARY	677	f	\N	9	f	t	\N	1
 7817	3	864	1	400	(tin green lentils), drained	844	f	\N	10	f	t	\N	1
 7818	3	864	1	80	, chopped	16	f	\N	11	f	t	\N	1
-7847	6	869	2	1	, diced	222	f	\N	1	f	t	\N	1
-7848	0	869	1	2	(HOMEADE TURKEY SAUSAGE PATTIES, p21)	159	f	\N	2	f	t	\N	1
-7849	6	869	2	1	(GRITS | CORNMEAL	421	f	\N	3	f	t	\N	1
-7850	6	869	1	2	\N	123	f	\N	4	f	t	\N	1
-7851	6	869	2	1	, grated	319	f	\N	5	f	t	\N	1
-7852	8	869	8	1	\N	285	t	\N	6	f	t	\N	1
+7847	6	869	2	1	, diced	222	f	\N	2	f	t	\N	1
 7856	8	870	8	1	\N	285	f	\N	4	f	t	\N	1
 7819	4	865	1	4	\N	286	f	\N	1	f	t	\N	1
 7820	8	865	1	1	\N	77	f	\N	2	f	t	\N	0.25
@@ -9346,6 +9808,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7844	8	868	4	1	\N	285	f	\N	5	f	t	\N	1
 7845	0	868	1	4	\N	1799	f	\N	6	f	t	\N	1
 7824	6	865	4	1	\N	123	f	\N	6	f	t	\N	1
+7848	0	869	1	2	\N	\N	f	946	3	f	t	\N	1
+7849	6	869	2	1	\N	1969	f	\N	4	f	t	\N	1
+7850	6	869	1	2	\N	123	f	\N	5	f	t	\N	1
+7851	6	869	2	1	, grated	319	f	\N	6	f	t	\N	1
+7852	8	869	8	1	\N	285	t	\N	7	f	t	\N	1
 7861	6	786	4	3	\N	1515	f	\N	5	f	t	\N	1
 7865	0	871	1	2	\N	\N	f	966	1	f	t	\N	1
 7863	7	786	1	3	\N	82	f	\N	7	f	t	\N	1
@@ -9687,20 +10154,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8309	8	367	8	1	\N	692	t	\N	5	f	t	\N	1
 8308	7	367	1	1	\N	77	f	\N	2	f	t	\N	0.25
 8392	7	990	1	1	(Herbs de Provence)	712	f	\N	8	f	t	\N	1
-8446	7	997	1	3	\N	77	f	\N	0	f	t	\N	0.25
-8447	0	997	1	1	, finely diced	217	f	\N	1	f	t	\N	1
-8448	0	997	1	2	, finely chopped	150	f	\N	2	f	t	\N	1
-8449	0	997	1	2	, peeled and finely chopped	7	f	\N	3	f	t	\N	1
-8450	0	997	1	3	, minced	5	t	\N	4	f	t	\N	1
-8451	0	997	1	2	(LARGE SWEET POTATOES), peeled and small diced	1250	f	\N	5	f	t	\N	1
-8452	6	997	1	10	\N	123	f	\N	6	f	t	\N	1
-8453	5	997	1	1	(dried green or brown lentils)	844	f	\N	7	f	t	\N	1
-8454	7	997	1	1	\N	1596	f	\N	8	f	t	\N	1
-8455	7	997	2	1	\N	124	f	\N	9	f	t	\N	1
-8456	7	997	2	3	\N	75	f	\N	10	f	t	\N	1
-8457	8	997	4	1	\N	67	f	\N	11	f	t	\N	1
-8458	6	997	1	3	(BABY SPINACH | KALE), chopped and de-stemmed	206	f	\N	12	f	t	\N	1
-8459	6	997	4	3	\N	1262	f	\N	13	f	t	\N	1
 8493	6	1002	1	5	, chopped into small pieces	1080	f	\N	1	f	t	\N	1
 8494	6	1002	1	2	, cooked and cooled	1187	f	\N	2	f	t	\N	1
 7557	4	825	1	15	\N	1287	f	\N	8	f	t	\N	1
@@ -9743,6 +10196,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8443	0	996	2	1	, ripe	9	f	\N	5	f	t	\N	1
 8444	7	996	1	1	\N	1724	f	\N	6	f	t	\N	0.25
 3723	8	190	1	1	\N	73	f	\N	5	f	t	\N	1
+8446	7	997	1	3	\N	77	f	\N	1	f	t	\N	0.25
+8447	0	997	1	1	, finely diced	217	f	\N	2	f	t	\N	1
+8448	0	997	1	2	, finely chopped	150	f	\N	3	f	t	\N	1
+8449	0	997	1	2	, peeled and finely chopped	7	f	\N	4	f	t	\N	1
+8450	0	997	1	3	, minced	5	t	\N	5	f	t	\N	1
+8451	0	997	1	2	, peeled and small diced	1958	f	\N	6	f	t	\N	1
 8491	8	1001	4	1	\N	74	f	\N	8	f	t	\N	1
 8492	8	1001	8	1	\N	1775	t	\N	9	f	t	\N	1
 8353	6	985	2	5	\N	1655	f	\N	1	f	t	\N	1
@@ -9752,8 +10211,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8357	6	985	2	1	\N	1923	f	\N	5	f	t	\N	1
 8358	6	985	2	1	\N	1718	f	\N	6	f	t	\N	1
 8445	7	996	1	1	\N	\N	t	550	7	f	t	\N	1
+8452	6	997	1	10	\N	123	f	\N	7	f	t	\N	1
 8359	8	985	4	1	\N	75	f	\N	7	f	t	\N	1
 8360	8	985	4	1	\N	70	f	\N	8	f	t	\N	1
+8453	5	997	1	1	\N	1967	f	\N	8	f	t	\N	1
+8454	7	997	1	1	\N	1596	f	\N	9	f	t	\N	1
+8455	7	997	2	1	\N	124	f	\N	10	f	t	\N	1
 4255	7	195	1	2	, chopped	2	t	\N	10	f	t	\N	1
 4256	8	195	8	1	\N	285	t	\N	11	f	t	\N	1
 8520	7	910	1	2	, to taste	13	t	\N	8	f	t	\N	1
@@ -9834,16 +10297,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8551	7	1006	1	2	\N	245	f	\N	11	f	t	\N	1
 8552	0	1006	1	1	, juiced	12	f	\N	12	f	t	\N	1
 8553	6	1006	1	2	\N	\N	f	484	13	f	t	\N	1
-8529	6	1005	1	1	(RAW ALMONDS), roughly chopped	807	t	\N	1	f	t	\N	1
-8530	6	1005	1	1	(RAW WALNUTS), roughly chopped	1069	t	\N	2	f	t	\N	1
-8531	6	1005	2	1	(RAW PECANS), roughly chopped	89	t	\N	3	f	t	\N	1
-8532	6	1005	2	1	(RAW PUMPKIN SEEDS	296	t	\N	4	f	t	\N	1
-8533	6	1005	2	1	(RAW SUNFLOWER SEEDS)	158	t	\N	5	f	t	\N	1
-8535	6	1005	4	1	(shredded unsweetened coconut)	1847	t	\N	7	f	t	\N	1
-8536	7	1005	1	2	, melted	964	f	\N	8	f	t	\N	0.25
-8537	8	1005	1	1	( Himalayan salt)	348	f	\N	9	f	t	\N	1
-8538	8	1005	1	1	\N	70	t	\N	10	f	t	\N	1
-8539	8	1005	1	1	\N	40	t	\N	11	f	t	\N	1
 6953	0	647	1	1	, chopped	150	f	\N	9	f	t	\N	1
 6954	6	647	1	2	\N	206	f	\N	10	f	t	\N	1
 8573	8	987	1	1	\N	77	f	\N	2	f	t	\N	0.25
@@ -9853,6 +10306,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8419	4	993	1	3	\N	1592	f	\N	9	f	t	\N	1
 8420	6	993	2	1	, toasted	461	f	\N	10	f	t	\N	1
 8421	8	993	4	1	, if desired	833	t	\N	11	f	t	\N	1
+5604	6	397	2	1	, chopped	90	f	\N	4	f	t	\N	1
+5605	6	397	4	1	, chopped	2	t	\N	5	f	t	\N	1
+5606	6	397	4	1	\N	1339	t	\N	6	f	t	\N	1
 8575	5	1039	2	3	\N	387	f	\N	1	f	t	\N	1
 8576	0	1039	1	1	, diced	8	f	\N	2	f	t	\N	1
 8577	0	1039	2	1	, diced	1780	f	\N	3	f	t	\N	1
@@ -9867,6 +10323,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8586	7	1039	1	2	, chopped	13	t	\N	12	f	t	\N	1
 7577	4	829	4	3	\N	984	f	\N	5	f	t	\N	1
 1391	6	89	1	1	\N	292	f	\N	7	f	t	\N	1
+8456	7	997	2	3	\N	75	f	\N	11	f	t	\N	1
+8457	8	997	4	1	\N	67	f	\N	12	f	t	\N	1
+8458	6	997	1	3	, chopped and de-stemmed	1957	f	\N	13	f	t	\N	1
+8529	6	1005	1	1	, roughly chopped	1964	t	\N	1	f	t	\N	1
+8530	6	1005	1	1	, roughly chopped	1963	t	\N	2	f	t	\N	1
+8531	6	1005	2	1	, roughly chopped	1960	t	\N	3	f	t	\N	1
+8532	6	1005	2	1	\N	1962	t	\N	4	f	t	\N	1
+8533	6	1005	2	1	\N	1961	t	\N	5	f	t	\N	1
+8535	6	1005	4	1	\N	1925	t	\N	7	f	t	\N	1
+8536	7	1005	1	2	, melted	964	f	\N	8	f	t	\N	0.25
+8537	8	1005	1	1	\N	1965	f	\N	9	f	t	\N	1
+8538	8	1005	1	1	\N	70	t	\N	10	f	t	\N	1
+8539	8	1005	1	1	\N	40	t	\N	11	f	t	\N	1
+8459	6	997	4	3	\N	1262	f	\N	14	f	t	\N	1
 \.
 
 
@@ -10708,7 +11178,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2320	Cover and cook on low for 6 to 8 hours or until the sausage is thoroughly heated and the sauce is bubbly.	34	1	1024
 2321	If you have a new hot cooking crockpot, cook on low for 4 to 6 hours until hot	34	2	1024
 2322	Because this recipe is high in sugar, it can burn easily. Serve.	34	3	0
-4619	Add the remaining 1 tablespoon oil and garlic. Stir and cook for a few seconds to release fragrance.	978	1	4
 2643	Place a large non-stick frying pan on a medium heat and toast the peanuts as it heats up, tossing regularly, then remove and set aside, leaving the pan on the heat. 	261	0	4
 2181	Place sugar in your food processor or blender. Any small chopper or even a coffee bean grinder works. (Process in batches if needed.) You can skip the food processor/blender and just mix the sugar and vanilla bean seeds in a bowl with a whisk, but you’ll get better flavor if you pulse the two together.	237	0	0
 2182	Cut the vanilla bean pod in half lengthwise. Use a knife to scrape out the seeds. Place the seeds on top of the sugar. (Save the empty beans/pods.) Use a spoon or another knife to scrape the seeds off the knife—they’re sticky and clumpy.	237	1	0
@@ -10721,7 +11190,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2189	Add teh dark chocolate and continue to heat, stirring constantly until all the chocolate has melted and the mixture is smooth and glossy.	169	2	0
 2190	Pour the chocolate milk into the jug of coffee and whisk thoroughly. Serve in mugs or glasses.	169	3	0
 4570	Top with lightly whipped cream and sprinkle over a little grated chocolate or some chocolate curls to decorate. Serve immediately.	967	4	0
-4620	Add the spinach, stir to coat well with oil, until slightly wilted. Sprinkle the salt over the spinach. Stir and cook to mix well, 20–30 seconds, until the spinach is fully wilted. Add back the eggs. Keep cooking and stirring until the spinach is tender. Immediately transfer to a large plate and serve hot as a side dish.	978	2	4
 2832	Pop the popcorn in the microwave.	59	0	0
 2642	Divide up the mango and the hoisin bowls. Slice chicken and arrange on the plates, then tuck in, using the lettuce cups as a receptable to hold everything.	270	2	0
 2388	Peel the potatoes and chop into ½-inch cubes, trim and slice the scallions, then place in a large non-stick frying pan on a high heat with 2 tablespoons of olive oil and 1 cup of boiling kettle water.	105	0	4
@@ -10729,17 +11197,18 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2389	Reduce to a simmer, then cover and cook for 15 minutes, or until the potatoes are just tender, adding the peas for the last 5 minutes, stirring occasionally.	105	1	4
 4242	Divide between plates or arrange on a large platter and spoon over the juices. Tear over the mozzarella, season with extra pepper, and scatter over the reserved celery leaves and fennel tops (if you have any).	854	4	0
 2904	Preheat the oven to 400°F. 	315	0	2
-4752	In a large pot or Dutch oven, heat the olive oil over medium high heat. Add the celery, carrot, onion, and garlic and sauté for 5 to 6 minutes until tender.	997	0	0
 3165	Place kale, garlic, onion, and coconut oil in a wok.	423	0	0
 3166	Turn heat to medium, and stir fry for a few minutes, until kale wilts.	423	1	4
 3167	Take out of wok and toss with olive oil, lemon and sea salt to taste.	423	2	0
 2317	In a large bowl, whisk eggs, milk, curry powder, salt, pepper and, if desired, cardamom until blended.	30	0	0
 2318	Place a lightly greased large nonstick skillet over medium heat. Pour in egg mixture; cook and stir until eggs are thickened and no liquid egg remains. Serve with tomatoes.	30	1	4
-4753	Add the sweet potatoes, water, lentils, cumin, curry powder, and kosher salt. Bring to a simmer and simmer for 25 to 30 minutes until the lentils are tender (if not tender, keep cooking a few more minutes). Add the spinach and coconut milk and stir until wilted, about 1 to 2 minutes. Taste and add additional salt to taste and fresh ground black pepper. 	997	1	0
-4754	Serve immediately or refrigerate for meal prep. The soup lasts up to 1 week refrigerated and leftovers taste even better (you can also freeze them for up to 3 months). Leftovers may soak up extra broth, so you can add a splash of coconut milk and/or water and pinch of salt if the texture becomes too thick. 	997	2	0
+4752	In a large pot or Dutch oven, heat the olive oil over medium high heat. Add the celery, carrot, onion, and garlic and sauté for 5–6 minutes until tender.	997	0	4
+4753	Add the sweet potatoes, water, lentils, cumin, curry powder, and kosher salt. Simmer for 25–30 minutes until the lentils are tender (if not tender, keep cooking a few more minutes).	997	1	4
 2894	Coat a 2 quart saucepan with vegetable spray and heat; add garlic and shallots; saute 2 minutes.	312	0	4
 2895	Add white wine, sherry, black beans and one and a half cups of broth; simmer 6–8 minutes.	312	1	4
 2896	Blend with a blender or food processor until smooth.	312	2	896
+4619	Add the remaining 1 tablespoon oil and garlic. Stir and cook for a few seconds to release fragrance.	978	1	4
+4620	Add the spinach, stir to coat well with oil, until slightly wilted. Sprinkle the salt over the spinach. Stir and cook to mix well, 20–30 seconds, until the spinach is fully wilted.	978	2	4
 2653	Place the flour in a bowl and add plenty of seasoning. Turn the pork in the flour mixture to coat them lightly.	231	0	0
 2654	Melt the butter in a heavy frying pan and cook the pork for 1 minute on each side.	231	1	0
 2655	Add the sliced leeks to the pan and cook for 3 minutes. Stir in the mustard seeds. Pour in the wine. Cook gently for 10 minutes, turning the pork occasionally. Peel, core and slice the apples.	231	2	0
@@ -10999,6 +11468,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4894	Finely slice the chili and scatter over, drizzle with a little extra virgin olive oil, and season with salt and black pepper from a height.	374	4	0
 4890	Mix potatoes and ham in casserole; gently press down so surface is even. Pour sauce over potato mixture. Cut remaining 1 tablespoon butter into small pieces; sprinkle over potatoes.	23	4	0
 4891	Cover and bake 30 minutes. Uncover and bake 1 hour to 1 hour 10 minutes longer or until potatoes are tender. Let stand 5–10 minutes before serving (sauce thickens as it stands).	23	5	2
+4754	Add the spinach and coconut milk and stir until wilted, about 1–2 minutes. Taste and add additional salt to taste and fresh ground black pepper. 	997	2	4
 3041	Wipe out the frying pan and return to the heat. Add another 2-3 tbsp of olive oil and fry the garlic for 1 minute until golden and fragrant. Stir in the olives, cook for a further 1 minute, then stir in the tomatoes. Shred the basil leaves and stir into the olive and tomato mixture, then spoon it over the chicken and serve at once.	386	3	0
 2967	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. Pour in the tomatoes, breaking them up with a wooden spoon, and half a can's worth of water. Add as many chilies as you dare to the sauce and simmer until the pasta is ready, then taste and season to perfection. Drain the pasta, reserving a cupful of cooking water, then toss the pasta through the sauce, loosening with a little reserved cooking water, if needed. Dish up.	360	1	0
 3056	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	391	0	4
@@ -11089,12 +11559,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3818	In a medium pot, combine the sugar and water and bring to a boil over high heat. Reduce the heat to medium-low and simmer the syrup for 7–10 minutes, until it starts to turn golden brown.	661	0	4
 4777	Reserving one-quarter of the seeds, pound the rest in a pestle and mortar until fairly fine, then muddle in the teriyaki and the juice of 1 lime. Taste, season to perfection with sea salt and black pepper, and you've got a black tahini!	316	2	2048
 4778	Toss the noodles and black tahini together, loosening with a splash of reserved noodle water. Serve sprinkled with the lime zest, cress, and reserved seeds, with lime wedges on the side for squeezing over.	316	3	0
+4841	Remove from the oven and let the granola cool.	1005	4	0
 4724	Peel and thinly slice onion. In a small bowl, whisk together apple cider vinegar, sugar (optional), and a pinch of salt. Add onion and set aside to pickle.	992	0	0
 3880	Take the chocolate out of the fridge. Spoon out a tablespoon-size ball of chocolate and roll it in the cocoa powder. Repeat the process until all the chocolate mix has been rolled in the cocoa.	702	3	0
 4842	Preheat oven to 400 degrees, place oven rack in center position.	1006	0	0
 4843	Prep, bok choy, red belle pepper, garlic and chicken, set aside. In a baking dish whisk together coconut milk, curry paste, garlic, ginger, soy sauce, oyster sauce, peanut butter, sesame oil, rice vinegar, and lime juice until smooth. Add sweet bell pepper and bok choy. Stir. Add diced chicken, stir.	1006	1	0
 4844	Bake, covered in foil for 25 minutes (start your rice now). Remove from oven, garnish with green onions, lime wedges and peanuts if desired. Serve over rice.	1006	2	0
-4841	Remove from the oven and let the granola cool.	1005	4	0
 4750	Set waffle maker on med/high heat. While you wait, shave Parmesan and slice avocado. Open waffle maker, set the potato in the center, smash with spatula or flat bottom of a glass (don't press super flat, just flat enough that the cheese stays put) sprinkle with sea salt, add Parmesan cheese and immediately close the waffle maker. Allow to cook until very crispy. 	996	1	2097152
 3472	In a large bowl, add the next 4 ingredients (romaine lettuce through basil).	572	2	0
 3488	Drizzle with Thai dressing and garnish with chopped green onions and sesame seeds.	576	2	0
@@ -11108,7 +11578,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3477	Cut the onion into quarters and then slice so that the pieces are about an inch long. Stir the onions into the pot and let cook until the onion is cooked enough.	1	3	0
 3516	Serve salmon cakes drizzled with avocado cream on top.	583	2	0
 3474	Dice the cucumber, avocado, tomatoes, green pepper and red onion. Mix together.	573	0	0
-4837	Preheat your oven to 325°F (160°C) and line a baking sheet with parchment paper.	1005	0	0
 3031	Preheat the oven to 350°F. Put a non-stick overproof frying pan on a high heat. 	383	0	2
 3032	Pull off the chicken skin, put both skin and legs into the pan, season with sea salt and black pepper, and let the fat render out and the chicken get golden for 5 minutes, turning halfway, while you trim the scallions and halve across the middle, putting the green halves aside.	383	1	4
 3475	Serve with the Everyday Dressing.	573	1	0
@@ -11119,9 +11588,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3498	Toss the white scallions into the pan, then transfer to the oven for 15 minutes. Meanwhile, seed the chilies, then finely slice lengthways with the green scallions and pop both into a bowl of ice cold water to curl and crisp up. Peel the oranges, finely slice into rounds, and arrange on your plates.	383	2	2
 3484	In a large bowl, add the cooled turkey mixture and the next 5 ingredients (lettuce through olives).	575	3	0
 3485	Pour the Honey Cumin dressing over the salad. Toss and serve.	575	4	0
-4838	In a large mixing bowl, combine the chopped nuts, seeds and shredded coconut, melted coconut oil, sea salt and optional spices (cinnamon and vanilla extract). Stir until everything is coated evenly.	1005	1	0
 3471	Once bubbling, reduce heat to medium-low and simmer until the mixture is reduced by half, about 10 minutes. Remove from heat and set aside to cool.	572	1	4
-4839	Spread the mixture in an even layer on the prepared baking sheet.	1005	2	0
 3489	In a large bowl, add the chickpeas through cilantro, and set aside.	577	0	0
 3490	Drizzle the Sesame Almond dressing over the salad and toss well to combine.	577	1	0
 3491	Squeeze the lime over the salad, and then garnish with chopped cashews.	577	2	0
@@ -11129,7 +11596,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3481	In a large skillet over medium heat, heat the coconut oil. To the oil, add the turkey, salt and pepper. Cook for 5 minutes, until brown.	575	0	4
 3482	To the turkey mixture, add the onion, garlic and sweet potato, and cook for 10 minutes, until vegetables are tender and turkey is cooked through.	575	1	4
 3483	Allow the turkey mixture to cool.	575	2	0
-4840	Place the baking sheet in the preheated oven and bake for 15-20 minutes, stirring halfway through, until the nuts and seeds are golden brown and fragrant.	1005	3	0
+4837	Preheat your oven to 325°F (160°C) and line a baking sheet with parchment paper.	1005	0	0
 4654	For a little extra kick, top the chicken with a few pickled jalapeños.	186	3	0
 3496	Mash the veggies with a potato masher or put them in a high-powered blender to create a puréed soup. (When blending hot liquids, make sure the top of the blender is vented to let steam escape).	578	3	33408
 3486	Allow the chicken to cool slightly, slice into bite-sized pieces, and set aside.	576	0	0
@@ -11138,10 +11605,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4607	Pound the chicken breasts to an even thickness. Pat dry with a paper towel - moisture is the enemy of browning. Sprinkle both sides with kosher salt.	976	1	0
 4610	Transfer the pan with the chicken breasts to the oven and bake for 10–15 minutes, until cooked through.	976	4	2
 3497	Season with salt, pepper, and lemon juice or apple cider vinegar to taste.	578	4	0
+4838	In a large mixing bowl, combine the chopped nuts, seeds and shredded coconut, melted coconut oil, sea salt and optional spices (cinnamon and vanilla extract). Stir until everything is coated evenly.	1005	1	0
+4839	Spread the mixture in an even layer on the prepared baking sheet.	1005	2	0
 3478	In a small bowl, mix the olive oil and lemon juice. Set aside.	574	0	0
 3479	Toss the remaining ingredients in a large salad bowl.	574	1	0
 3480	Toss in the dressing and mix well, or serve it on the side.	574	2	0
 3493	Place the bone broth, beets, sweet potatoes, carrots, parsnips, onions, allspice, bay leaves, and garlic powder in a large stockpot and bring to a boil.	578	0	4
+4840	Place the baking sheet in the preheated oven and bake for 15-20 minutes, stirring halfway through, until the nuts and seeds are golden brown and fragrant.	1005	3	0
 3518	Line a dozen muffin tins with silicone or paper muffin liners (eggs can be sticky).	584	1	0
 3519	Melt coconut oil in a pan over medium heat. Add the Italian sausage, and break into small pieces.	584	2	0
 3520	Add the onions and garlic, and cook until the onions are translucent and the sausage pieces are browned and cooked through.	584	3	0
@@ -11823,6 +12293,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1817	Remove the little fillet from the back of each breast portion. If the breast still looks fatter than a finger, bat it with a rolling pin to make it thinner. Slice all the chicken meat into strips.	92	0	0
 2767	Cook the lentils in a pan of boiling salted water according to the package instructions. Meanwhile, peel and finely slice the onions, put them into a large shallow casserole pan on a medium heat with ½ a tablespoon of olive oil and the balti paste, and cook for 15 minutes, or until soft and golden, stirring regularly. Tear in the kale (discarding any tough stalks), add a splash of lentil cooking water, cover, and leave for 2 minutes.	307	0	0
 4141	Flip the turkey legs and roast them for another 30 minutes, or until a thermometer inserted into the thickest part of the meat registers 170°F.	830	3	2
+4618	Heat ½ a tablespoon of oil in a wok until smoking. Add the eggs. Lightly scramble the eggs and transfer to a plate.	978	0	4
 1818	Heat the oil in a large frying pan. Stir-fry the chicken strips with the shallot, garlic and paprika over a high heat for about 3 minutes until cooked through.	92	1	4
 4185	In a 10-inch nonstick pan, heat butter over medium-high heat to lightly coat the pan, then add eggs.	842	0	4
 4079	Remove the top rack from the oven, then preheat to 400°F. Use a vegetable peeler to strip the peel from the lemons, then slice the lemons in half.	789	0	2
@@ -11837,7 +12308,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4410	Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the zucchini. Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan.	260	2	4
 4411	Toss the drained pasta into the zucchini pan with a splash of reserved cooking water. 	260	3	0
 4076	Peel the onion, quarter and seed the tomatoes, core the apple and trim the cucumber, then take care to very finely dice everything.	787	0	0
-4618	Heat ½ a tablespoon of oil in a wok until smoking. Add the eggs. Lightly scramble the eggs and transfer to a plate.	978	0	4
 4071	Meanwhile, fill a large pot with lightly salted water and bring to a rapid boil. Cook egg noodles at a boil until tender yet firm to the bite, 7–9 minutes. Drain and set aside.	745	1	4
 4072	Drain and discard any fat from the cooked beef. Stir condensed soup and garlic powder into the beef. Simmer for 10 minutes, stirring occasionally.	745	2	4
 4073	Remove beef from the heat. Add egg noodles and stir to combine. Stir in sour cream and season with salt and pepper. Serve hot and enjoy!	745	3	0
@@ -12055,9 +12525,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4881	Add the bell pepper, onion and garlic to the bottom of your slow cooker, then place the chicken breasts on top.	1039	0	1024
 4403	Put the sweet potato in a medium pot, and add the cold water to cover by at least 1 inch. Add the salt, bring to a boil, and cook the sweet potato for about 20 minutes, or until a knife slides easily through the center of it.	910	0	4
 4664	Pour 3 tablespoons of the oil onto a large sheet pan. Add the potatoes directly to the pan, along with ¾ teaspoon salt, the pepper, and rosemary (if using). Avoid using foil, as the potatoes may stick. Toss everything together right on the pan, then arrange the wedges in a single layer, with one of the cut sides down.	983	2	0
-4325	Warm a medium pot over medium-high heat. Add 1 tablespoon of butter and wait until it starts to foam. Add the onions and cook for 3 minutes, or until softened and translucent. Break the sausage patties into small pieces, add to the onions and cook for another 2 minutes to heat the sausage through and develop the flavors.	869	0	0
-4326	Add the grits and water to the pot. Bring the mixture to a boil, then reduce the heat and cook for 10 to 12 minutes, stirring every minute or so, until the grits are soft.	869	1	0
-4327	Stir in the Cheddar and season with salt and pepper. Serve the grits topped with the remaining 1 tablespoon of butter.	869	2	0
 4312	Warm a medium skillet over medium-high heat. Season the steaks with salt and pepper. Add the oil and steaks to the pan and cook for 4 minutes per side. Take the steaks out of the pan and set aside to rest for 5 minutes.	866	0	0
 4313	Drain the fat out of the pan and pour in the whiskey. Cook the whiskey for about 30 seconds to cook off the alcohol. Add the beef stock, increase the heat to high, and bring to a boil. Boil the stock for about 3 minutes, or until reduced by half. Add the cream and cook for another 2 minutes.	866	1	0
 4314	Remove from the heat and stir in the mustard. Taste the sauce and season with salt and pepper as needed.	866	2	0
@@ -12229,6 +12696,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4405	Warm a nonstick skillet over medium heat. Put the tortillas in the pan and heat for 45 seconds. Flip the tortillas and top with the cheese. Once the cheese starts to melt, flip the tortillas and cook for another minute, or until the cheese is browned.	910	2	4
 4406	Remove the cheesy tortillas from the pan and top the cheesy side with sweet potato, black bean salsa, and sour cream.	910	3	0
 4744	Turn heat down to medium. Place a generous amount of butter, olive oil or ghee into hot pan, allow to melt and swirl so bottom of pan is generously covered	995	3	4
+4895	Serve immediately or refrigerate for meal prep. The soup lasts up to 1 week refrigerated and leftovers taste even better (you can also freeze them for up to 3 months). Leftovers may soak up extra broth, so you can add a splash of coconut milk and/or water and pinch of salt if the texture becomes too thick. 	997	3	0
+4325	Warm a medium pot over medium-high heat. Add 1 tablespoon of butter and wait until it starts to foam. Add the onions and cook for 3 minutes, or until softened and translucent. Break the sausage patties into small pieces, add to the onions and cook for another 2 minutes to heat the sausage through and develop the flavors.	869	0	0
+4326	Add the grits and water to the pot. Bring the mixture to a boil, then reduce the heat and cook for 10 to 12 minutes, stirring every minute or so, until the grits are soft.	869	1	0
+4327	Stir in the Cheddar and season with salt and pepper. Serve the grits topped with the remaining 1 tablespoon of butter.	869	2	0
+4896	Add back the eggs. Keep cooking and stirring until the spinach is tender. Immediately transfer to a large plate and serve hot as a side dish.	978	3	4
 \.
 
 
@@ -12274,7 +12746,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 21001, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 21452, true);
 
 
 --
@@ -13024,5 +13496,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict RSipPU16FyQe04cE9W2VZ0ANHxkWtDrC3CPhKP1ZycPUIvmXfqT86fe8Chyc6W5
+\unrestrict jdRRgdzPra2Xz6SATfUNcy6MwEyEOTEkzZqXNex3rfq7xyX2rmXWq789mBn70d1
 
