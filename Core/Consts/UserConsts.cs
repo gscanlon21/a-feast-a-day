@@ -60,28 +60,22 @@ public static class UserConsts
 
     /// <summary>
     /// This shouldn't be too high (>12) or else the program will spend too much time trying 
-    /// to get the user in range and end up not working or overworking specific muscles in the interim.
+    /// to get the user in range and end up not working or overworking specific nutrients in the interim.
     /// 
-    /// This shouldn't be too low (<12) or else the muscle target value will drop too much
+    /// This shouldn't be too low (<12) or else the nutrient target value will drop too much
     /// during rest days and overwork the user the next time they see a workout.
     /// </summary>
     public const int NutrientVolumeWeeks = 12;
 
     /// <summary>
-    /// 8 because we want to leave the user with at least one week of data 
-    /// and muscle targets only take effect after 1 week (MuscleTargetsTakeEffectAfterXWeeks).
-    /// </summary>
-    public const int TrainingVolumeClearDays = 8;
-
-    /// <summary>
-    /// After how many weeks until muscle targets start taking effect.
+    /// After how many weeks until nutrient targets start taking effect.
     /// </summary>
     public const int NutrientTargetsTakeEffectAfterXWeeks = 1;
 
     /// <summary>
     /// Add some padding to the upper-bounds of the nutrient targets.
     /// </summary>
-    public const double NutrientTargetsScale = 1.05;
+    public const double NutrientTargetsScale = 1.15;
 
     /// <summary>
     /// How many custom user_frequency records do we allow per user?

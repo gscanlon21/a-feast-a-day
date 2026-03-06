@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 747A0E6GQeM2sfdN4KjYVAJAUGQhoeGv066TW2dfDYivlkMuq9gg3MbfwLcfT7I
+\restrict 05SBYlZn4yZ3dyK5OA7OzsDcVeCYOE1mOranBEmBn4moI4nxVSROkpogFEOktYC
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -707,7 +707,6 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 
 COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Multiplier", "CaloriesPerGram", "Source", "LastUpdated", "LastChecked", "Notes") FROM stdin;
 177	Iron_Fe_Milligrams	8	45	1048576	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
-1	Protein_Grams	10	35	131072	100	1	4		2023-01-01	-infinity	\N
 178	Iron_Fe_Milligrams	18	45	2097152	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
 19	Cholesterol_Milligrams	\N	\N	131072	2	1	0		2023-01-01	-infinity	\N
 179	Iron_Fe_Milligrams	8	45	65536	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	-infinity	\N
@@ -722,7 +721,6 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 212	Potassium_K_Milligrams	3400	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 4	Starch_Grams	130	\N	131072	3	1	4		2023-01-01	-infinity	\N
 3	Oligosaccharides_Grams	1	\N	131072	3	1	4		2023-01-01	-infinity	\N
-245	Niacin_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
 272	Biotin_Micrograms	1.2	\N	65536	2	1	0		-infinity	-infinity	\N
 269	Arginine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 10	Fatty_acids_total_trans_Grams	\N	1	131072	100	1	9		2023-01-01	-infinity	\N
@@ -731,13 +729,17 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 25	Retinol_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 11	Fatty_acids_total_saturated_Grams	\N	-1	3	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-03	-infinity	\N
 270	Glycine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
+427	Vitamin_A_RAE_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+428	Vitamin_A_RAE_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
 129	Fatty_acids_total_saturated_Grams	\N	-1	2	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 13	Omega 3	\N	10	131072	100	1	9		2023-01-01	-infinity	\N
 17	Fats	20	35	131072	100	1	9		2023-01-01	-infinity	\N
 133	Fatty_acids_total_saturated_Grams	\N	-1	48	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 124	Fatty_acids_total_saturated_Grams	\N	3	65536	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+442	Carbohydrate_by_difference_Grams	175	\N	131072	3	1	4		2023-01-01	-infinity	\N
 126	Fatty_acids_total_saturated_Grams	\N	3	393216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 127	Fatty_acids_total_saturated_Grams	\N	3	655360	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+443	Carbohydrate_by_difference_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
 18	Calories	1000	1100	131072	0	3	0		2023-01-01	-infinity	\N
 216	Boron_B_Micrograms	-1	20	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	2026-03-04	\N
 20	Flavonoids_total_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
@@ -764,12 +766,12 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 185	Fiber_insoluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 186	Fiber_soluble_Grams	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 187	Fiber_soluble_Grams	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-248	Vitamin_B_6_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
 189	Fiber_soluble_Grams	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 190	Fiber_soluble_Grams	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 26	Vitamin_A_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 27	Vitamin_A_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
-222	Protein_Grams	10	35	65536	100	1	4		-infinity	-infinity	\N
+247	Riboflavin_Milligrams	1.3	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+244	Manganese_Mn_Milligrams	2.3	11	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	-infinity	\N
 203	Vitamin_A_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
 204	Vitamin_A_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
 224	Starch_Grams	130	\N	65536	3	1	4		-infinity	-infinity	\N
@@ -791,13 +793,9 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 233	Zinc_Zn_Milligrams	10	\N	65536	2	1	0		-infinity	-infinity	\N
 234	Copper_Cu_Milligrams	900	10000	65536	1	1	0		-infinity	-infinity	\N
 243	Carotene_MCG_RE	1	10	65536	2	1	0		-infinity	-infinity	\N
-247	Riboflavin_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
 239	Selenium_Se_Micrograms	55	400	65536	1	1	0		-infinity	-infinity	\N
-240	Fatty_acids_total_polyunsaturated_Grams	\N	10	65536	100	3	9		-infinity	-infinity	\N
 241	Fatty_acids_total_monounsaturated_Grams	\N	10	65536	100	3	9		-infinity	-infinity	\N
 242	Chlorine_Cl_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
-244	Manganese_Mn_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
-246	Pantothenic_acid_Milligrams	1	10	65536	2	1	0		-infinity	-infinity	\N
 401	Oligosaccharides_Milligrams	1	\N	131072	3	1	4		2023-01-01	-infinity	\N
 158	Fatty_acids_total_saturated_Grams	\N	3	512	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 117	Fatty_acids_total_saturated_Grams	\N	3	12288	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
@@ -805,6 +803,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 116	Fatty_acids_total_saturated_Grams	\N	-1	1	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 119	Fatty_acids_total_saturated_Grams	\N	3	8192	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 34	Vitamin_E_Milligrams	15	\N	131072	2	1	0		2023-01-01	-infinity	\N
+444	Carbohydrate_by_difference_Grams	175	\N	2097152	3	1	4		-infinity	-infinity	\N
 402	Oligosaccharides_Milligrams	1	\N	65536	3	1	4		-infinity	-infinity	\N
 150	Fatty_acids_total_saturated_Grams	\N	-1	12	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 151	Fatty_acids_total_saturated_Grams	\N	-1	4	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
@@ -819,6 +818,7 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 161	Fatty_acids_total_saturated_Grams	\N	3	2048	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 162	Fatty_acids_total_saturated_Grams	\N	3	24576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 163	Fatty_acids_total_saturated_Grams	\N	3	40960	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
+445	Carbohydrate_by_summation_Grams	175	\N	2097152	3	1	4		-infinity	-infinity	\N
 403	Oligosaccharides_Milligrams	1	\N	1048576	3	1	4		-infinity	-infinity	\N
 166	Fatty_acids_total_saturated_Grams	\N	3	1048576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 167	Fatty_acids_total_saturated_Grams	\N	3	2097152	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
@@ -832,27 +832,32 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 175	Fatty_acids_total_saturated_Grams	\N	3	67108864	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 176	Fatty_acids_total_saturated_Grams	\N	3	134217728	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	-infinity	\N
 404	Oligosaccharides_Milligrams	1	\N	2097152	3	1	4		-infinity	-infinity	\N
+446	Carbohydrate_by_summation_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
 30	Vitamin_B_12_Micrograms	2.4	\N	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
+447	Carbohydrate_by_summation_Grams	175	\N	131072	3	1	4		2023-01-01	-infinity	\N
+429	Carotene_alpha_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+430	Carotene_alpha_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 44	Selenium_Se_Micrograms	55	400	131072	1	1	0		2023-01-01	-infinity	\N
+431	Carotene_alpha_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+432	Carotene_alpha_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+433	Carotene_beta_Micrograms	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+434	Carotene_beta_Micrograms	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	2026-03-04	\N
+448	Carbohydrate_by_summation_Grams	130	\N	65536	3	1	4		2023-01-01	-infinity	\N
 31	Vitamin_C_total_ascorbic_acid_Milligrams	75	2000	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 35	Vitamin_K_phylloquinone_Micrograms	90	\N	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
 29	Thiamin_Milligrams	1.1	\N	65536	2	1	0		2023-01-01	-infinity	\N
 28	Thiamin_Milligrams	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
 33	Vitamin_D_D2__D3_Micrograms	20	100	131072	1	1	0		2023-01-01	-infinity	\N
-82	Fatty_acids_total_polyunsaturated_Grams	\N	10	131072	100	3	9		2023-01-01	-infinity	\N
 83	Fatty_acids_total_monounsaturated_Grams	\N	10	131072	100	3	9		2023-01-01	-infinity	\N
-103	Vitamin_B_6_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 88	Carotene_MCG_RE	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 87	Chlorine_Cl_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-95	Pantothenic_acid_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-92	Manganese_Mn_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+75	Folate_total_Micrograms	400	1000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	-infinity	\N
+103	Vitamin_B_6_Milligrams	1.3	100	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
 71	Biotin_Micrograms	1.2	\N	131072	2	1	0		2023-01-01	-infinity	\N
 56	Betaine_Milligrams	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
 259	Betaine_Milligrams	500	3500	65536	2	1	0		-infinity	-infinity	\N
 52	Boron_B_Micrograms	-1	20	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	-infinity	\N
 191	Fiber_total_dietary_Grams	38	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
-99	Riboflavin_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
-94	Niacin_Milligrams	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 194	Fiber_total_dietary_Grams	38	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
 64	Tryptophan_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 195	Fiber_total_dietary_Grams	25	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	2026-03-04	\N
@@ -867,15 +872,12 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 266	Threonine_Grams	0.5	10	65536	3	1	0		-infinity	-infinity	\N
 48	Fluoride_F_Micrograms	2.5	10	131072	2	1	0		2023-01-01	-infinity	\N
 50	Phosphorus_P_Milligrams	700	\N	131072	2	1	0		2023-01-01	-infinity	\N
-51	Sulfur_S_Milligrams	850	\N	131072	2	1	0		2023-01-01	-infinity	\N
 53	Vanadium_V_Micrograms	20	1000	131072	1	1	0		2023-01-01	-infinity	\N
 58	Isoleucine_Grams	0.5	10	131072	3	1	0		2023-01-01	-infinity	\N
 55	Choline_total_Milligrams	500	3500	131072	2	1	0		2023-01-01	-infinity	\N
 254	Fluoride_F_Micrograms	2.5	10	65536	2	1	0		-infinity	-infinity	\N
 255	Phosphorus_P_Milligrams	700	\N	65536	2	1	0		-infinity	-infinity	\N
-256	Sulfur_S_Milligrams	850	\N	65536	2	1	0		-infinity	-infinity	\N
 69	Total_lipid_fat_Grams	20	35	131072	100	1	9		2023-01-01	-infinity	\N
-75	Folate_total_Micrograms	1	10	131072	2	1	0		2023-01-01	-infinity	\N
 32	Vitamin_C_total_ascorbic_acid_Milligrams	90	2000	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 45	Iodine_I_Micrograms	150	1100	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 108	Sugars_Total_Grams	6	12	131072	100	1	4		2023-01-01	-infinity	\N
@@ -902,12 +904,12 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 407	Energy_Atwater_Specific_Factors_KCalorie	1000	1100	1048576	0	3	0		-infinity	-infinity	\N
 408	Energy_Atwater_Specific_Factors_KCalorie	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
 409	Energy_Atwater_General_Factors_KCalorie	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
-273	Folate_total_Micrograms	1	10	65536	2	1	0		-infinity	-infinity	\N
+449	Vitamin_E_MG_ATE	15	\N	131072	2	1	0		2023-01-01	-infinity	\N
 274	Sugars_Total_Grams	6	12	65536	100	1	4		-infinity	-infinity	\N
 319	Vitamin_E_Milligrams	15	\N	1048576	2	1	0		-infinity	-infinity	\N
-330	Vitamin_B_6_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
 277	Cholesterol_Milligrams	\N	\N	1048576	2	1	0		-infinity	-infinity	\N
 278	Carbohydrates_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
+450	Vitamin_E_MG_ATE	15	\N	65536	2	1	0		-infinity	-infinity	\N
 280	Fatty_acids_total_trans_Grams	\N	1	1048576	100	1	9		-infinity	-infinity	\N
 281	Omega 6	\N	10	1048576	100	1	9		-infinity	-infinity	\N
 285	Omega 3	\N	10	1048576	100	1	9		-infinity	-infinity	\N
@@ -919,13 +921,12 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 291	Resistant_starch_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
 294	Total_lipid_fat_Grams	20	35	1048576	100	1	9		-infinity	-infinity	\N
 296	Magnesium_Mg_Milligrams	400	\N	1048576	2	1	0		-infinity	-infinity	\N
-282	Protein_Grams	10	35	1048576	100	1	4		-infinity	-infinity	\N
+457	Protein_Grams	0.85	\N	4096	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
 284	Starch_Grams	130	\N	1048576	3	1	4		-infinity	-infinity	\N
 283	Oligosaccharides_Grams	1	\N	1048576	3	1	4		-infinity	-infinity	\N
 325	Carotene_MCG_RE	1	10	1048576	2	1	0		-infinity	-infinity	\N
-329	Riboflavin_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
-327	Niacin_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
-328	Pantothenic_acid_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+327	Niacin_Milligrams	16	35	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+326	Manganese_Mn_Milligrams	2.3	11	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	-infinity	\N
 304	Sodium_Na_Milligrams	1500	2300	1048576	2	1	0		-infinity	-infinity	\N
 305	Zinc_Zn_Milligrams	10	\N	1048576	2	1	0		-infinity	-infinity	\N
 306	Copper_Cu_Milligrams	900	10000	1048576	1	1	0		-infinity	-infinity	\N
@@ -935,13 +936,23 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 410	Energy_Atwater_General_Factors_KCalorie	1000	1100	1048576	0	3	0		-infinity	-infinity	\N
 411	Energy_Atwater_General_Factors_KCalorie	1000	1100	65536	0	3	0		-infinity	-infinity	\N
 412	Energy_Atwater_General_Factors_KCalorie	1000	1100	131072	0	3	0		-infinity	-infinity	\N
+451	Vitamin_E_MG_ATE	15	\N	1048576	2	1	0		-infinity	-infinity	\N
 317	Vitamin_B_12_Micrograms	2.4	\N	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
+435	Carotene_beta_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+436	Carotene_beta_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 321	Selenium_Se_Micrograms	55	400	1048576	1	1	0		-infinity	-infinity	\N
-322	Fatty_acids_total_polyunsaturated_Grams	\N	10	1048576	100	3	9		-infinity	-infinity	\N
 323	Fatty_acids_total_monounsaturated_Grams	\N	10	1048576	100	3	9		-infinity	-infinity	\N
 324	Chlorine_Cl_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
-326	Manganese_Mn_Milligrams	1	10	1048576	2	1	0		-infinity	-infinity	\N
+452	Vitamin_E_MG_ATE	15	\N	2097152	2	1	0		-infinity	-infinity	\N
+453	Vitamin_E_alpha_tocopherol_Milligrams	15	\N	2097152	2	1	0		-infinity	-infinity	\N
+454	Vitamin_E_alpha_tocopherol_Milligrams	15	\N	1048576	2	1	0		-infinity	-infinity	\N
+455	Vitamin_E_alpha_tocopherol_Milligrams	15	\N	65536	2	1	0		-infinity	-infinity	\N
+456	Vitamin_E_alpha_tocopherol_Milligrams	15	\N	131072	2	1	0		2023-01-01	-infinity	\N
 337	Thiamin_Milligrams	1.1	\N	1048576	2	1	0		-infinity	-infinity	\N
+458	Protein_Grams	0.85	\N	8192	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+222	Protein_Grams	0.8	\N	65536	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+282	Protein_Grams	0.8	\N	1048576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+301	Protein_Grams	0.8	\N	2097152	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
 336	Vitamin_C_total_ascorbic_acid_Milligrams	90	2000	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 347	Iodine_I_Micrograms	150	1100	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 320	Vitamin_K_phylloquinone_Micrograms	120	\N	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
@@ -954,14 +965,12 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 363	Betaine_Milligrams	500	3500	1048576	2	1	0		-infinity	-infinity	\N
 358	Fluoride_F_Micrograms	2.5	10	1048576	2	1	0		-infinity	-infinity	\N
 359	Phosphorus_P_Milligrams	700	\N	1048576	2	1	0		-infinity	-infinity	\N
-360	Sulfur_S_Milligrams	850	\N	1048576	2	1	0		-infinity	-infinity	\N
 361	Vanadium_V_Micrograms	20	1000	1048576	1	1	0		-infinity	-infinity	\N
 362	Choline_total_Milligrams	500	3500	1048576	2	1	0		-infinity	-infinity	\N
 387	Betaine_Milligrams	500	3500	2097152	2	1	0		-infinity	-infinity	\N
 375	Tryptophan_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 374	Threonine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 367	Isoleucine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
-381	Folate_total_Micrograms	1	10	1048576	2	1	0		-infinity	-infinity	\N
 382	Sugars_Total_Grams	6	12	1048576	100	1	4		-infinity	-infinity	\N
 389	Isoleucine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 368	Leucine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
@@ -974,6 +983,8 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 376	Valine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 377	Arginine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 235	Vitamin_B_12_Micrograms	2.4	\N	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
+421	Lutein__zeaxanthin_Micrograms	1	10	131072	2	1	0		2023-01-01	-infinity	\N
+422	Lutein__zeaxanthin_Micrograms	1	10	65536	2	1	0		-infinity	-infinity	\N
 309	Calories	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
 279	Carbohydrates_Grams	175	\N	2097152	3	1	4		-infinity	-infinity	\N
 341	Chlorine_Cl_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
@@ -984,17 +995,21 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 312	Energy_KCalorie	1000	1100	2097152	0	3	0		-infinity	-infinity	\N
 308	Fats	20	35	2097152	100	1	9		-infinity	-infinity	\N
 340	Fatty_acids_total_monounsaturated_Grams	\N	10	2097152	100	3	9		-infinity	-infinity	\N
-339	Fatty_acids_total_polyunsaturated_Grams	\N	10	2097152	100	3	9		-infinity	-infinity	\N
 299	Fatty_acids_total_trans_Grams	\N	1	2097152	100	1	9		-infinity	-infinity	\N
 310	Flavonoids_total_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 365	Fluoride_F_Micrograms	2.5	10	2097152	2	1	0		-infinity	-infinity	\N
-397	Folate_total_Micrograms	1	10	2097152	2	1	0		-infinity	-infinity	\N
+423	Lutein__zeaxanthin_Micrograms	1	10	1048576	2	1	0		-infinity	-infinity	\N
+424	Lutein__zeaxanthin_Micrograms	1	10	2097152	2	1	0		-infinity	-infinity	\N
 349	Iodine_I_Micrograms	150	1100	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	-infinity	\N
 366	Histidine_Grams	0.5	10	1048576	3	1	0		-infinity	-infinity	\N
 388	Histidine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 378	Glycine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
+1	Protein_Grams	0.8	\N	131072	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+459	Protein_Grams	1.1	\N	24576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+460	Protein_Grams	1.3	\N	40960	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+461	Protein_Grams	1.1	\N	393216	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+339	Fatty_acids_total_polyunsaturated_Grams	2.8	5.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
 297	Magnesium_Mg_Milligrams	350	\N	2097152	2	1	0		-infinity	-infinity	\N
-343	Manganese_Mn_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 355	Molybdenum_Mo_Micrograms	45	\N	2097152	1	1	0		-infinity	-infinity	\N
 307	Omega 3	\N	10	2097152	100	1	9		-infinity	-infinity	\N
 300	Omega 6	\N	10	2097152	100	1	9		-infinity	-infinity	\N
@@ -1004,13 +1019,11 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 335	Selenium_Se_Micrograms	55	400	2097152	1	1	0		-infinity	-infinity	\N
 314	Sodium_Na_Milligrams	1500	2300	2097152	2	1	0		-infinity	-infinity	\N
 398	Sugars_Total_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
-373	Sulfur_S_Milligrams	850	\N	2097152	2	1	0		-infinity	-infinity	\N
 338	Thiamin_Milligrams	1.2	\N	2097152	2	1	0		-infinity	-infinity	\N
 379	Total_lipid_fat_Grams	20	35	2097152	100	1	9		-infinity	-infinity	\N
 356	Total_Sugars_Grams	6	12	2097152	100	1	4		-infinity	-infinity	\N
 385	Vanadium_V_Micrograms	20	1000	2097152	1	1	0		-infinity	-infinity	\N
 333	Vitamin_E_Milligrams	15	\N	2097152	2	1	0		-infinity	-infinity	\N
-348	Vitamin_B_6_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
 315	Zinc_Zn_Milligrams	10	\N	2097152	2	1	0		-infinity	-infinity	\N
 350	Vitamin_C_total_ascorbic_acid_Milligrams	75	2000	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
 419	Vitamin_B_12_Micrograms	2.4	\N	4096	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
@@ -1018,12 +1031,10 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 334	Vitamin_K_phylloquinone_Micrograms	90	\N	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	-infinity	\N
 332	Vitamin_D_D2__D3_Micrograms	20	100	2097152	1	1	0		-infinity	-infinity	\N
 236	Vitamin_D_D2__D3_Micrograms	20	100	65536	1	1	0		-infinity	-infinity	\N
-301	Protein_Grams	10	35	2097152	100	1	4		-infinity	-infinity	\N
+344	Niacin_Milligrams	14	35	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
 303	Starch_Grams	130	\N	2097152	3	1	4		-infinity	-infinity	\N
 302	Oligosaccharides_Grams	1	\N	2097152	3	1	4		-infinity	-infinity	\N
-346	Riboflavin_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
-344	Niacin_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
-345	Pantothenic_acid_Milligrams	1	10	2097152	2	1	0		-infinity	-infinity	\N
+343	Manganese_Mn_Milligrams	1.8	11	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	-infinity	\N
 395	Tryptophan_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 394	Threonine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
 393	Phenylalanine_Grams	0.5	10	2097152	3	1	0		-infinity	-infinity	\N
@@ -1036,10 +1047,51 @@ COPY public.dietary_intake ("Id", "Key", "Min", "Max", "Person", "Measure", "Mul
 414	Vitamin_B_12_Micrograms	2.8	\N	40960	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
 415	Vitamin_B_12_Micrograms	2.6	\N	393216	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
 416	Vitamin_B_12_Micrograms	2.8	\N	655360	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
+425	Vitamin_A_RAE_Micrograms	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+426	Vitamin_A_RAE_Micrograms	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	-infinity	\N
+441	Carbohydrate_by_difference_Grams	130	\N	65536	3	1	4		2023-01-01	-infinity	\N
 196	Lithium_Li_Micrograms	14.3	-1	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-05	\N
 197	Lithium_Li_Micrograms	14.3	-1	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	2026-03-05	\N
 417	Vitamin_B_12_Micrograms	2.6	\N	6291456	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
 418	Vitamin_B_12_Micrograms	2.8	\N	10485760	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	2026-03-06	\N
+462	Protein_Grams	1.3	\N	655360	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+463	Protein_Grams	1.1	\N	6291456	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+464	Protein_Grams	1.3	\N	10485760	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	2026-03-07	\N
+99	Riboflavin_Milligrams	1.1	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+329	Riboflavin_Milligrams	1.3	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+346	Riboflavin_Milligrams	1.1	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+94	Niacin_Milligrams	14	35	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+245	Niacin_Milligrams	16	35	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+95	Pantothenic_acid_Milligrams	5	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+246	Pantothenic_acid_Milligrams	5	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+328	Pantothenic_acid_Milligrams	5	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+345	Pantothenic_acid_Milligrams	5	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+273	Folate_total_Micrograms	400	1000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	-infinity	\N
+381	Folate_total_Micrograms	400	1000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	-infinity	\N
+397	Folate_total_Micrograms	400	1000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	-infinity	\N
+92	Manganese_Mn_Milligrams	1.8	11	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	-infinity	\N
+248	Vitamin_B_6_Milligrams	1.3	100	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+330	Vitamin_B_6_Milligrams	1.3	100	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+348	Vitamin_B_6_Milligrams	1.3	100	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	-infinity	\N
+82	Fatty_acids_total_polyunsaturated_Grams	2.8	5.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+240	Fatty_acids_total_polyunsaturated_Grams	2.8	5.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+322	Fatty_acids_total_polyunsaturated_Grams	2.8	5.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+521	PUFA_18_3_n_3_c_c_c_ALA_Grams	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+520	PUFA_18_3_n_3_c_c_c_ALA_Grams	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+519	PUFA_18_3_n_3_c_c_c_ALA_Grams	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+518	PUFA_18_3_n_3_c_c_c_ALA_Grams	0.3	0.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+517	PUFA_20_5_n_3_EPA_Grams	0.3	0.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+516	PUFA_20_5_n_3_EPA_Grams	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+515	PUFA_20_5_n_3_EPA_Grams	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+514	PUFA_20_5_n_3_EPA_Grams	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+513	PUFA_22_6_n_3_DHA_Grams	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+512	PUFA_22_6_n_3_DHA_Grams	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+511	PUFA_22_6_n_3_DHA_Grams	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+510	PUFA_22_6_n_3_DHA_Grams	0.3	0.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+522	PUFA_18_2_n_6_c_c_Grams	2.5	5	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+523	PUFA_18_2_n_6_c_c_Grams	2.5	5	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+524	PUFA_18_2_n_6_c_c_Grams	2.5	5	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
+525	PUFA_18_2_n_6_c_c_Grams	2.5	5	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.
 \.
 
 
@@ -1818,8 +1870,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 78	77	1	f
 1398	188	1	f
 1398	1388	1	f
-1338	1401	1	f
-1338	1400	1	f
 1404	396	1	f
 395	1404	1	f
 142	1455	1	f
@@ -1875,6 +1925,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1270	309	1	t
 1194	32	1	t
 1194	518	1	t
+1338	1401	1	t
+1338	1400	1	t
 479	481	1	f
 599	811	1	f
 598	811	1	f
@@ -3347,6 +3399,16 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 697	661	1	f
 735	1305	1	f
 1329	811	1	f
+54	1973	1	f
+54	419	1	f
+419	1973	1	f
+1973	419	1	f
+1338	1974	1	t
+590	1977	1	t
+590	1976	1	t
+590	1975	1	t
+836	1978	1	t
+836	960	1	t
 \.
 
 
@@ -3360,6 +3422,7 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 658	2346389	100281
 1130	2646172	100306
 319	328637	1009
+1337	2710822	100346
 1266	170843	1020
 269	1750340	9504
 11	1105314	9040
@@ -3420,6 +3483,7 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 625	2727581	9042
 1176	746767	1040
 1265	2705879	\N
+1371	170150	12023
 296	2515380	12014
 638	170273	19904
 614	170273	19904
@@ -3449,6 +3513,82 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number") FROM stdin;
 1010	330458	4047
 79	748278	4582
 77	748608	4063
+176	173573	4581
+156	2685575	11098
+225	2727586	100392
+283	2259796	1019
+372	323505	11233
+467	2346398	9266
+307	169231	11216
+844	2644283	100312
+1086	2346400	11052
+60	326698	2046
+55	171192	6931
+89	2346395	12142
+1341	1750340	9504
+1078	2685576	11080
+105	790577	100252
+657	171016	4058
+1199	2346406	11205
+104	172940	7078
+78	172370	4669
+597	2258589	11951
+4	167746	9150
+32	2346387	1056
+54	747444	16514
+1973	747444	16514
+56	2262072	16098
+59	747693	11966
+126	174607	7934
+1561	174607	7934
+178	170172	12117
+250	2685568	100331
+255	2346404	100286
+90	170186	12154
+93	174296	16171
+94	746780	7089
+97	2512381	20444
+98	2512380	20036
+131	747445	16515
+152	168191	9421
+388	172385	5091
+391	173627	5096
+418	169214	11172
+627	168191	9421
+640	168162	9291
+110	2346407	11109
+161	2257045	100276
+305	2346391	11253
+589	169934	9246
+639	170271	19902
+708	171314	1323
+738	2710819	12006
+733	2685573	11135
+734	2685573	11135
+1069	2346394	12155
+1308	1104647	11215
+36	746784	19335
+1177	2647440	100298
+1400	173433	1157
+1974	172197	1156
+469	169640	19296
+517	168833	19334
+1975	170164	12093
+1976	169413	12202
+626	2346410	9302
+824	2685572	11116
+960	2512381	20444
+1978	2512380	20036
+995	170163	12088
+1080	747447	11090
+1114	2685573	11135
+1129	2262074	12195
+752	170150	12023
+1250	2346404	100286
+488	2514744	23572
+25	2514743	23562
+1175	746767	1040
+1179	328637	1009
 \.
 
 
@@ -9189,6 +9329,4349 @@ COPY public.nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure", "Va
 24662	77	1404	\N	3	0.651
 24663	77	1287	\N	2	0
 24664	77	1316	\N	3	8.4
+24665	4	1278	\N	3	0
+24666	4	1258	\N	3	0.039
+24667	4	1103	\N	1	0.4
+24668	4	1004	\N	3	0.3
+24669	4	1007	\N	3	0.3
+24670	4	1058	\N	2	0
+24671	4	2000	\N	3	2.5
+24672	4	1280	\N	3	0
+24673	4	1165	\N	2	0.04
+24674	4	1257	\N	3	0
+24675	4	1018	\N	3	0
+24676	4	1093	\N	2	2
+24677	4	1279	\N	3	0
+24678	4	1270	\N	3	0.026
+24679	4	1122	\N	1	0
+24680	4	1266	\N	3	0.002
+24681	4	1293	\N	3	0.089
+24682	4	1062	\N	103	121
+24683	4	1264	\N	3	0.001
+24684	4	1170	\N	2	0.19
+24685	4	1057	\N	2	0
+24686	4	1091	\N	2	16
+24687	4	1271	\N	3	0
+24688	4	1276	\N	3	0
+24689	4	1005	\N	3	9.32
+24690	4	1114	\N	1	0
+24691	4	1008	\N	102	29
+24692	4	1109	\N	2	0.15
+24693	4	1272	\N	3	0
+24694	4	1263	\N	3	0
+24695	4	1260	\N	3	0
+24696	4	1089	\N	2	0.6
+24697	4	1090	\N	2	8
+24698	4	1079	\N	3	2.8
+24699	4	1095	\N	2	0.06
+24700	4	1120	\N	1	20
+24701	4	1262	\N	3	0
+24702	4	1180	\N	2	5.1
+24703	4	1110	\N	98	0
+24704	4	1166	\N	2	0.02
+24705	4	1265	\N	3	0.035
+24706	4	1106	\N	1	1
+24707	4	1098	\N	2	0.037
+24708	4	1167	\N	2	0.1
+24709	4	1104	\N	98	22
+24710	4	1269	\N	3	0.063
+24711	4	1261	\N	3	0
+24712	4	1246	\N	1	0
+24713	4	1242	\N	2	0
+24714	4	1105	\N	1	0
+24715	4	1185	\N	1	0
+24716	4	1087	\N	2	26
+24717	4	1268	\N	3	0.01
+24718	4	1277	\N	3	0
+24719	4	1253	\N	2	0
+24720	4	1101	\N	2	0.03
+24721	4	1051	\N	3	88.98
+24722	4	1292	\N	3	0.011
+24723	4	1259	\N	3	0
+24724	4	1107	\N	1	3
+24725	4	1162	\N	2	53
+24726	4	1003	\N	3	1.1
+24727	4	1092	\N	2	138
+24728	4	1177	\N	1	11
+24729	4	1187	\N	1	11
+24730	4	1123	\N	1	11
+24731	4	1175	\N	2	0.08
+24732	4	1178	\N	1	0
+24733	4	1108	\N	1	1
+24734	4	1275	\N	3	0.001
+24735	4	1190	\N	1	11
+24736	4	1186	\N	1	0
+24737	307	1278	\N	3	0
+24738	307	1225	\N	3	0.043
+24739	307	1003	\N	3	1.82
+24740	307	1101	\N	2	0.229
+24741	307	1221	\N	3	0.03
+24742	307	1162	\N	2	5
+24743	307	1120	\N	1	0
+24744	307	1263	\N	3	0.039
+24745	307	1211	\N	3	0.036
+24746	307	1018	\N	3	0
+24747	307	1217	\N	3	0.045
+24748	307	1266	\N	3	0.017
+24749	307	1279	\N	3	0
+24750	307	1095	\N	2	0.34
+24751	307	1226	\N	3	0.041
+24752	307	1106	\N	1	0
+24753	307	1257	\N	3	0
+24754	307	1264	\N	3	0.018
+24755	307	1170	\N	2	0.203
+24756	307	1213	\N	3	0.074
+24757	307	1058	\N	2	0
+24758	307	1104	\N	98	0
+24759	307	1007	\N	3	0.77
+24760	307	1123	\N	1	0
+24761	307	1259	\N	3	0
+24762	307	1214	\N	3	0.057
+24763	307	1122	\N	1	0
+24764	307	1091	\N	2	34
+24765	307	1185	\N	1	0.1
+24766	307	1005	\N	3	17.77
+24767	307	1177	\N	1	11
+24768	307	1246	\N	1	0
+24769	307	1212	\N	3	0.051
+24770	307	1265	\N	3	0.12
+24771	307	1223	\N	3	0.208
+24772	307	1227	\N	3	0.045
+24773	307	1079	\N	3	2
+24774	307	2000	\N	3	1.7
+24775	307	1087	\N	2	16
+24776	307	1224	\N	3	0.162
+24777	307	1269	\N	3	0.12
+24778	307	1293	\N	3	0.154
+24779	307	1062	\N	103	333
+24780	307	1092	\N	2	415
+24781	307	1218	\N	3	0.02
+24782	307	1292	\N	3	0.154
+24783	307	1283	\N	2	15
+24784	307	1051	\N	3	78.89
+24785	307	1253	\N	2	0
+24786	307	1215	\N	3	0.013
+24787	307	1280	\N	3	0
+24788	307	1098	\N	2	0.226
+24789	307	1057	\N	2	0
+24790	307	1108	\N	1	0
+24791	307	1186	\N	1	0
+24792	307	1107	\N	1	0
+24793	307	1210	\N	3	0.012
+24794	307	1180	\N	2	28.8
+24795	307	1216	\N	3	0.008
+24796	307	1275	\N	3	0.021
+24797	307	1110	\N	98	0
+24798	307	1262	\N	3	0
+24799	307	1277	\N	3	0.007
+24800	307	1276	\N	3	0
+24801	307	1004	\N	3	0.75
+24802	307	1167	\N	2	0.75
+24803	307	1103	\N	1	0.7
+24804	307	1114	\N	1	0
+24805	307	1187	\N	1	11
+24806	307	1272	\N	3	0
+24807	307	1260	\N	3	0
+24808	307	1093	\N	2	13
+24809	307	1268	\N	3	0.119
+24810	307	1089	\N	2	0.6
+24811	307	1178	\N	1	0
+24812	307	1190	\N	1	11
+24813	307	1270	\N	3	0.034
+24814	307	1261	\N	3	0.007
+24815	307	1258	\N	3	0.203
+24816	307	1105	\N	1	0
+24817	307	1222	\N	3	0.031
+24818	307	1219	\N	3	0.073
+24819	307	1109	\N	2	0.26
+24820	307	1220	\N	3	0.043
+24821	307	1165	\N	2	0.025
+24822	307	1166	\N	2	0.034
+24823	307	1008	\N	102	80
+24824	307	1271	\N	3	0
+24825	307	1090	\N	2	43
+24826	307	1175	\N	2	0.16
+24827	307	1242	\N	2	0
+24828	178	1062	\N	103	962
+24829	178	1258	\N	3	21.14
+24830	178	1217	\N	3	0.116
+24831	178	1218	\N	3	0.071
+24832	178	1110	\N	98	0
+24833	178	1162	\N	2	2.8
+24834	178	1275	\N	3	0
+24835	178	1090	\N	2	37
+24836	178	1166	\N	2	0
+24837	178	1186	\N	1	0
+24838	178	1266	\N	3	1.234
+24839	178	1227	\N	3	0.118
+24840	178	1211	\N	3	0.083
+24841	178	1008	\N	102	230
+24842	178	1101	\N	2	0.916
+24843	178	1089	\N	2	1.64
+24844	178	1246	\N	1	0
+24845	178	1095	\N	2	0.67
+24846	178	1277	\N	3	0
+24847	178	1120	\N	1	0
+24848	178	1223	\N	3	0.224
+24849	178	1261	\N	3	1.67
+24850	178	1092	\N	2	263
+24851	178	1215	\N	3	0.043
+24852	178	1272	\N	3	0
+24853	178	1219	\N	3	0.139
+24854	178	1264	\N	3	4.176
+24855	178	1271	\N	3	0
+24856	178	1222	\N	3	0.117
+24857	178	1224	\N	3	0.524
+24858	178	1190	\N	1	16
+24859	178	1103	\N	1	6.2
+24860	178	1292	\N	3	1.014
+24861	178	1093	\N	2	15
+24862	178	1165	\N	2	0.026
+24863	178	1280	\N	3	0
+24864	178	1216	\N	3	0.045
+24865	178	1106	\N	1	0
+24866	178	1057	\N	2	0
+24867	178	1098	\N	2	0.266
+24868	178	1003	\N	3	2.29
+24869	178	1260	\N	3	0.136
+24870	178	1278	\N	3	0
+24871	178	1178	\N	1	0
+24872	178	1221	\N	3	0.053
+24873	178	1051	\N	3	67.62
+24874	178	1210	\N	3	0.027
+24875	178	1004	\N	3	23.84
+24876	178	1263	\N	3	10.576
+24877	178	1213	\N	3	0.17
+24878	178	1226	\N	3	0.095
+24879	178	1253	\N	2	0
+24880	178	1175	\N	2	0.033
+24881	178	1293	\N	3	0.261
+24882	178	1180	\N	2	8.5
+24883	178	1104	\N	98	0
+24884	178	1276	\N	3	0
+24885	178	1283	\N	2	1
+24886	178	1018	\N	3	0
+24887	178	1279	\N	3	0
+24888	178	1108	\N	1	0
+24889	178	1005	\N	3	5.54
+24890	178	1270	\N	3	0
+24891	178	1269	\N	3	0.261
+24892	178	1225	\N	3	0.108
+24893	178	1107	\N	1	0
+24894	178	1212	\N	3	0.09
+24895	178	2000	\N	3	3.34
+24896	178	1123	\N	1	0
+24897	178	1091	\N	2	100
+24898	178	1122	\N	1	0
+24899	178	1187	\N	1	16
+24900	178	1177	\N	1	16
+24901	178	1105	\N	1	0
+24902	178	1087	\N	2	16
+24903	178	1167	\N	2	0.76
+24904	178	1242	\N	2	0
+24905	178	1268	\N	3	1.014
+24906	178	1259	\N	3	0
+24907	178	1079	\N	3	2.2
+24908	178	1262	\N	3	1.327
+24909	178	1058	\N	2	0
+24910	178	1114	\N	1	0
+24911	178	1170	\N	2	0.183
+24912	178	1109	\N	2	0.15
+24913	178	1214	\N	3	0.101
+24914	178	1220	\N	3	0.376
+24915	178	1185	\N	1	0.1
+24916	178	1265	\N	3	2.021
+24917	178	1007	\N	3	0.72
+24918	657	1212	\N	3	0
+24919	657	1107	\N	1	0
+24920	657	1269	\N	3	41.3
+24921	657	1089	\N	2	0
+24922	657	1218	\N	3	0
+24923	657	1178	\N	1	0
+24924	657	1258	\N	3	14.2
+24925	657	1005	\N	3	0
+24926	657	1008	\N	102	884
+24927	657	1215	\N	3	0
+24928	657	1175	\N	2	0
+24929	657	1210	\N	3	0
+24930	657	1093	\N	2	0
+24931	657	1262	\N	3	0
+24932	657	1098	\N	2	0
+24933	657	1103	\N	1	0
+24934	657	1216	\N	3	0
+24935	657	1186	\N	1	0
+24936	657	1242	\N	2	0
+24937	657	1123	\N	1	0
+24938	657	1122	\N	1	0
+24939	657	1220	\N	3	0
+24940	657	1278	\N	3	0
+24941	657	1214	\N	3	0
+24942	657	1185	\N	1	13.6
+24943	657	1091	\N	2	0
+24944	657	1058	\N	2	0
+24945	657	1217	\N	3	0
+24946	657	1106	\N	1	0
+24947	657	1280	\N	3	0
+24948	657	1051	\N	3	0
+24949	657	1109	\N	2	1.4
+24950	657	1222	\N	3	0
+24951	657	1095	\N	2	0
+24952	657	1170	\N	2	0
+24953	657	1279	\N	3	0
+24954	657	1221	\N	3	0
+24955	657	1187	\N	1	0
+24956	657	1270	\N	3	0.3
+24957	657	1110	\N	98	0
+24958	657	1276	\N	3	0
+24959	657	1271	\N	3	0
+24960	657	1167	\N	2	0
+24961	657	1265	\N	3	8.9
+24962	657	2000	\N	3	0
+24963	657	1092	\N	2	0
+24964	657	1213	\N	3	0
+24965	657	1277	\N	3	0.2
+24966	657	1062	\N	103	3699
+24967	657	1108	\N	1	0
+24968	657	1057	\N	2	0
+24969	657	1120	\N	1	0
+24970	657	1226	\N	3	0
+24971	657	1224	\N	3	0
+24972	657	1293	\N	3	41.7
+24973	657	1007	\N	3	0
+24974	657	1227	\N	3	0
+24975	657	1261	\N	3	0
+24976	657	1223	\N	3	0
+24977	657	1018	\N	3	0
+24978	657	1219	\N	3	0
+24979	657	1292	\N	3	39.7
+24980	657	1211	\N	3	0
+24981	657	1090	\N	2	0
+24982	657	1162	\N	2	0
+24983	657	1259	\N	3	0
+24984	657	1266	\N	3	4.8
+24985	657	1079	\N	3	0
+24986	657	1166	\N	2	0
+24987	657	1272	\N	3	0
+24988	657	1165	\N	2	0
+24989	657	1253	\N	2	0
+24990	657	1004	\N	3	100
+24991	657	1263	\N	3	0
+24992	657	1190	\N	1	0
+24993	657	1104	\N	98	0
+24994	657	1264	\N	3	0
+24995	657	1225	\N	3	0
+24996	657	1180	\N	2	0.2
+24997	657	1105	\N	1	0
+24998	657	1283	\N	2	865
+24999	657	1246	\N	1	0
+25000	657	1177	\N	1	0
+25001	657	1260	\N	3	0
+25002	657	1087	\N	2	0
+25003	657	1275	\N	3	0.2
+25004	657	1268	\N	3	39.3
+25005	657	1003	\N	3	0
+25006	657	1114	\N	1	0
+25007	55	1269	\N	3	0.591
+25008	55	1177	\N	1	13
+25009	55	1103	\N	1	1.4
+25010	55	1299	\N	3	0.001
+25011	55	1107	\N	1	370
+25012	55	1123	\N	1	176
+25013	55	1057	\N	2	0
+25014	55	1079	\N	3	1.8
+25015	55	1007	\N	3	1.7
+25016	55	1062	\N	103	208
+25017	55	1311	\N	3	0.001
+25018	55	1187	\N	1	13
+25019	55	1313	\N	3	0.001
+25020	55	1271	\N	3	0.001
+25021	55	1120	\N	1	0
+25022	55	1170	\N	2	0.076
+25023	55	1075	\N	3	0
+25024	55	1013	\N	3	0
+25025	55	1186	\N	1	0
+25026	55	1315	\N	3	0.287
+25027	55	1304	\N	3	0.001
+25028	55	1262	\N	3	0.003
+25029	55	1005	\N	3	7.43
+25030	55	1109	\N	2	2.4
+25031	55	1278	\N	3	0
+25032	55	1010	\N	3	0.41
+25033	55	1316	\N	3	0.584
+25034	55	1101	\N	2	0.127
+25035	55	1293	\N	3	0.673
+25036	55	1257	\N	3	0.007
+25037	55	1317	\N	3	0
+25038	55	1292	\N	3	0.298
+25039	55	1411	\N	3	0
+25040	55	1270	\N	3	0.082
+25041	55	1012	\N	3	2.26
+25042	55	1105	\N	1	0
+25043	55	1108	\N	1	0
+25044	55	1093	\N	2	437
+25045	55	1404	\N	3	0.082
+25046	55	1259	\N	3	0.003
+25047	55	1260	\N	3	0
+25048	55	1178	\N	1	0
+25049	55	1104	\N	98	617
+25050	55	1266	\N	3	0.053
+25051	55	1261	\N	3	0.002
+25052	55	1265	\N	3	0.141
+25053	55	1122	\N	1	12717
+25054	55	1058	\N	2	0
+25055	55	1018	\N	3	0
+25056	55	1087	\N	2	26
+25057	55	1095	\N	2	0.2
+25058	55	1274	\N	3	0
+25059	55	1329	\N	3	0.001
+25060	55	1098	\N	2	0.082
+25061	55	1180	\N	2	13.7
+25062	55	1272	\N	3	0
+25063	55	1303	\N	3	0
+25064	55	1276	\N	3	0
+25065	55	1091	\N	2	34
+25066	55	1263	\N	3	0.002
+25067	55	1246	\N	1	0
+25068	55	1312	\N	3	0
+25069	55	1267	\N	3	0.004
+25070	55	1406	\N	3	0
+25071	55	1277	\N	3	0.006
+25072	55	1090	\N	2	18
+25073	55	1165	\N	2	0.024
+25074	55	1279	\N	3	0
+25075	55	1301	\N	3	0.002
+25076	55	1253	\N	2	2
+25077	55	1325	\N	3	0
+25078	55	1190	\N	1	13
+25079	55	1273	\N	3	0.004
+25080	55	1185	\N	1	13.9
+25081	55	1258	\N	3	0.218
+25082	55	1280	\N	3	0
+25083	55	1014	\N	3	0
+25084	55	1264	\N	3	0.003
+25085	55	1323	\N	3	0.001
+25086	55	1300	\N	3	0.002
+25087	55	1333	\N	3	0
+25088	55	1092	\N	2	320
+25089	55	1110	\N	98	0
+25090	55	1321	\N	3	0
+25091	55	1004	\N	3	1.61
+25092	55	1314	\N	3	0.003
+25093	55	1011	\N	3	2.23
+25094	55	1051	\N	3	87.87
+25095	55	1175	\N	2	0.173
+25096	55	1275	\N	3	0.003
+25097	55	1268	\N	3	0.288
+25098	55	1106	\N	1	31
+25099	55	1162	\N	2	2
+25100	55	1306	\N	3	0.006
+25101	55	1167	\N	2	3.917
+25102	55	1166	\N	2	0.061
+25103	55	1003	\N	3	1.39
+25104	55	2000	\N	3	4.91
+25105	55	1008	\N	102	50
+25106	55	1009	\N	3	0
+25107	55	1242	\N	2	0
+25108	55	1089	\N	2	0.73
+25109	55	1405	\N	3	0
+25110	55	1114	\N	1	0
+25111	55	1305	\N	3	0
+25112	55	1331	\N	3	0.006
+25113	78	1304	\N	3	0
+25114	78	1091	\N	2	0
+25115	78	1261	\N	3	0
+25116	78	1109	\N	2	8.18
+25117	78	1263	\N	3	0
+25118	78	1219	\N	3	0
+25119	78	1185	\N	1	183.9
+25120	78	1105	\N	1	0
+25121	78	1258	\N	3	15.251
+25122	78	1103	\N	1	0
+25123	78	1273	\N	3	0.262
+25124	78	1212	\N	3	0
+25125	78	1404	\N	3	6.537
+25126	78	1079	\N	3	0
+25127	78	1120	\N	1	0
+25128	78	1215	\N	3	0
+25129	78	1315	\N	3	22.571
+25130	78	1092	\N	2	0
+25131	78	1098	\N	2	0
+25132	78	1217	\N	3	0
+25133	78	1409	\N	3	0.497
+25134	78	1329	\N	3	0
+25135	78	2000	\N	3	0
+25136	78	1093	\N	2	0
+25137	78	1107	\N	1	0
+25138	78	1222	\N	3	0
+25139	78	1227	\N	3	0
+25140	78	1268	\N	3	22.571
+25141	78	1272	\N	3	0
+25142	78	1004	\N	3	100
+25143	78	1087	\N	2	0
+25144	78	1122	\N	1	0
+25145	78	1270	\N	3	7.034
+25146	78	1095	\N	2	0
+25147	78	1225	\N	3	0
+25148	78	1265	\N	3	10.657
+25149	78	1331	\N	3	0.678
+25150	78	1257	\N	3	0.678
+25151	78	1218	\N	3	0
+25152	78	1008	\N	102	884
+25153	78	1264	\N	3	0.041
+25154	78	1210	\N	3	0
+25155	78	1003	\N	3	0
+25156	78	1283	\N	2	250
+25157	78	1224	\N	3	0
+25158	78	1262	\N	3	0
+25159	78	1279	\N	3	0
+25160	78	1276	\N	3	0
+25161	78	1211	\N	3	0
+25162	78	1187	\N	1	0
+25163	78	1051	\N	3	0
+25164	78	1180	\N	2	0.2
+25165	78	1177	\N	1	0
+25166	78	1267	\N	3	0.242
+25167	78	1292	\N	3	22.727
+25168	78	1186	\N	1	0
+25169	78	1316	\N	3	50.118
+25170	78	1269	\N	3	50.299
+25171	78	1226	\N	3	0
+25172	78	1271	\N	3	0
+25173	78	1278	\N	3	0
+25174	78	1213	\N	3	0
+25175	78	1175	\N	2	0
+25176	78	1314	\N	3	0.025
+25177	78	1280	\N	3	0
+25178	78	1108	\N	1	0
+25179	78	1123	\N	1	0
+25180	78	1057	\N	2	0
+25181	78	1165	\N	2	0
+25182	78	1221	\N	3	0
+25183	78	1005	\N	3	0
+25184	78	1266	\N	3	4.003
+25185	78	1260	\N	3	0
+25186	78	1253	\N	2	0
+25187	78	1277	\N	3	0.131
+25188	78	1275	\N	3	0.025
+25189	78	1223	\N	3	0
+25190	78	1062	\N	103	3699
+25191	78	1198	\N	2	0
+25192	78	1089	\N	2	0.02
+25193	78	1300	\N	3	0.047
+25194	78	1293	\N	3	57.333
+25195	78	1007	\N	3	0
+25196	78	1259	\N	3	0
+25197	78	1090	\N	2	0
+25198	78	1018	\N	3	0
+25199	78	1162	\N	2	0
+25200	78	1214	\N	3	0
+25201	78	1216	\N	3	0
+25202	78	1167	\N	2	0
+25203	78	1106	\N	1	0
+25204	78	1178	\N	1	0
+25205	78	1307	\N	3	0.181
+25206	78	1104	\N	98	0
+25207	78	1190	\N	1	0
+25208	78	1058	\N	2	0
+25209	78	1170	\N	2	0
+25210	78	1220	\N	3	0
+25211	78	1166	\N	2	0
+25212	104	1120	\N	1	0
+25213	104	1175	\N	2	0.26
+25214	104	1106	\N	1	0
+25215	104	1167	\N	2	4.31
+25216	104	1003	\N	3	17.45
+25217	104	1198	\N	2	3.4
+25218	104	1280	\N	3	0
+25219	104	1057	\N	2	0
+25220	104	1253	\N	2	74
+25221	104	1108	\N	1	0
+25222	104	1259	\N	3	0
+25223	104	1186	\N	1	0
+25224	104	1270	\N	3	0.21
+25225	104	1166	\N	2	0.33
+25226	104	1062	\N	103	1514
+25227	104	1005	\N	3	3.33
+25228	104	1185	\N	1	1.3
+25229	104	1272	\N	3	0
+25230	104	1261	\N	3	0
+25231	104	1263	\N	3	0.08
+25232	104	1098	\N	2	0.15
+25233	104	1105	\N	1	0
+25234	104	1258	\N	3	11.51
+25235	104	1278	\N	3	0
+25236	104	2000	\N	3	0.85
+25237	104	1104	\N	98	0
+25238	104	1242	\N	2	0
+25239	104	1177	\N	1	2
+25240	104	1162	\N	2	16.6
+25241	104	1123	\N	1	0
+25242	104	1109	\N	2	0.22
+25243	104	1279	\N	3	0
+25244	104	1265	\N	3	6.35
+25245	104	1008	\N	102	362
+25246	104	1269	\N	3	0.99
+25247	104	1093	\N	2	1300
+25248	104	1264	\N	3	0.8
+25249	104	1292	\N	3	12.97
+25250	104	1180	\N	2	78.9
+25251	104	1091	\N	2	111
+25252	104	1090	\N	2	14
+25253	104	1275	\N	3	1.76
+25254	104	1089	\N	2	2.04
+25255	104	1187	\N	1	2
+25256	104	1268	\N	3	11.21
+25257	104	1092	\N	2	260
+25258	104	1004	\N	3	30.43
+25259	104	1190	\N	1	2
+25260	104	1107	\N	1	0
+25261	104	1051	\N	3	45.18
+25262	104	1276	\N	3	0
+25263	104	1018	\N	3	0
+25264	104	1293	\N	3	1.2
+25265	104	1122	\N	1	0
+25266	104	1178	\N	1	5.5
+25267	104	1007	\N	3	3.63
+25268	104	1058	\N	2	0
+25269	104	1114	\N	1	1.1
+25270	104	1165	\N	2	0.15
+25271	104	1260	\N	3	0
+25272	104	1262	\N	3	0.11
+25273	104	1246	\N	1	0
+25274	104	1277	\N	3	0
+25275	104	1266	\N	3	4.17
+25276	104	1079	\N	3	0
+25277	104	1095	\N	2	2.56
+25278	104	1087	\N	2	9
+25279	104	1271	\N	3	0
+25280	104	1103	\N	1	20.3
+25281	104	1110	\N	98	44
+25282	176	1090	\N	2	0
+25283	176	1269	\N	3	12.53
+25284	176	1105	\N	1	0
+25285	176	1087	\N	2	0
+25286	176	1275	\N	3	2.665
+25287	176	1178	\N	1	0
+25288	176	1095	\N	2	0
+25289	176	1186	\N	1	0
+25290	176	1170	\N	2	0
+25291	176	1005	\N	3	0
+25292	176	1004	\N	3	100
+25293	176	1007	\N	3	0
+25294	176	1051	\N	3	0
+25295	176	1103	\N	1	0
+25296	176	1093	\N	2	0
+25297	176	1008	\N	102	884
+25298	176	1293	\N	3	13.486
+25299	176	1092	\N	2	0
+25300	176	1106	\N	1	0
+25301	176	1266	\N	3	0.66
+25302	176	1101	\N	2	0
+25303	176	1098	\N	2	0
+25304	176	1190	\N	1	0
+25305	176	1167	\N	2	0
+25306	176	1091	\N	2	0
+25307	176	1175	\N	2	0
+25308	176	1187	\N	1	0
+25309	176	1162	\N	2	0
+25310	176	1258	\N	3	11.56
+25311	176	1062	\N	103	3699
+25312	176	1003	\N	3	0
+25313	176	1292	\N	3	70.554
+25314	176	1166	\N	2	0
+25315	176	1079	\N	3	0
+25316	176	1104	\N	98	0
+25317	176	1265	\N	3	10.9
+25318	176	1177	\N	1	0
+25319	176	1165	\N	2	0
+25320	176	1270	\N	3	0.957
+25321	176	1089	\N	2	0
+25322	176	1268	\N	3	67.889
+25323	126	1089	\N	2	1.24
+25324	1561	1089	\N	2	1.24
+25325	126	1018	\N	3	0
+25326	1561	1018	\N	3	0
+25327	126	1079	\N	3	0
+25328	1561	1079	\N	3	0
+25329	126	1093	\N	2	1200
+25330	1561	1093	\N	2	1200
+25331	126	1007	\N	3	3.4
+25332	1561	1007	\N	3	3.4
+25333	126	1003	\N	3	13.1
+25334	1561	1003	\N	3	13.1
+25335	126	1258	\N	3	6.23
+25336	1561	1258	\N	3	6.23
+25337	126	1253	\N	2	70
+25338	1561	1253	\N	2	70
+25339	126	1123	\N	1	0
+25340	1561	1123	\N	1	0
+25341	126	1292	\N	3	8.27
+25342	1561	1292	\N	3	8.27
+25343	126	1051	\N	3	62
+25344	1561	1051	\N	3	62
+25345	126	1293	\N	3	2.33
+25346	1561	1293	\N	3	2.33
+25347	126	1108	\N	1	0
+25348	1561	1108	\N	1	0
+25349	126	1107	\N	1	0
+25350	1561	1107	\N	1	0
+25351	126	1162	\N	2	14.8
+25352	1561	1162	\N	2	14.8
+25353	126	1008	\N	102	226
+25354	1561	1008	\N	102	226
+25355	126	1058	\N	2	0
+25356	1561	1058	\N	2	0
+25357	126	1122	\N	1	0
+25358	1561	1122	\N	1	0
+25359	126	1004	\N	3	17.6
+25360	1561	1004	\N	3	17.6
+25361	126	1005	\N	3	3.9
+25362	1561	1005	\N	3	3.9
+25363	126	2000	\N	3	0
+25364	1561	2000	\N	3	0
+25365	126	1057	\N	2	0
+25366	1561	1057	\N	2	0
+25367	126	1104	\N	98	0
+25368	1561	1104	\N	98	0
+25369	126	1120	\N	1	0
+25370	1561	1120	\N	1	0
+25371	126	1062	\N	103	947
+25372	1561	1062	\N	103	947
+25373	126	1106	\N	1	0
+25374	1561	1106	\N	1	0
+25375	372	1177	\N	1	62
+25376	372	1128	\N	2	0
+25377	372	1123	\N	1	6260
+25378	372	1185	\N	1	390
+25379	372	1167	\N	2	1.18
+25380	372	1012	\N	3	0.4
+25381	372	1184	\N	1	0
+25382	372	1120	\N	1	27
+25383	372	1101	\N	2	0.92
+25384	372	1095	\N	2	0.39
+25385	372	1002	\N	3	0.47
+25386	372	1125	\N	2	0
+25387	372	1090	\N	2	32.7
+25388	372	1108	\N	1	0
+25389	372	1003	\N	3	2.92
+25390	372	1175	\N	2	0.147
+25391	372	1079	\N	3	4.1
+25392	372	1106	\N	1	241
+25393	372	1129	\N	2	0
+25394	372	1107	\N	1	2870
+25395	372	1010	\N	3	0
+25396	372	1109	\N	2	0.66
+25397	372	1126	\N	2	0.14
+25398	372	1005	\N	3	4.42
+25399	372	1098	\N	2	0.053
+25400	372	1122	\N	1	0
+25401	372	1008	\N	102	35
+25402	372	1087	\N	2	254
+25403	372	1131	\N	2	0
+25404	372	1091	\N	2	55
+25405	372	1183	\N	1	0
+25406	372	1011	\N	3	0.4
+25407	372	1093	\N	2	53
+25408	372	1051	\N	3	89.6
+25409	372	1162	\N	2	93.4
+25410	372	1014	\N	3	0
+25411	372	1165	\N	2	0.113
+25412	372	1127	\N	2	0
+25413	372	1062	\N	103	148
+25414	372	1063	\N	3	0.8
+25415	372	1007	\N	3	1.54
+25416	372	1170	\N	2	0.37
+25417	372	1004	\N	3	1.49
+25418	372	1166	\N	2	0.347
+25419	372	1075	\N	3	0
+25420	372	1130	\N	2	0
+25421	372	1013	\N	3	0
+25422	372	1089	\N	2	1.6
+25423	372	1092	\N	2	348
+25424	372	2047	\N	102	43
+25425	372	2048	\N	102	35
+25426	60	1221	\N	3	0.13
+25427	60	1175	\N	2	0.069
+25428	60	1414	\N	3	0
+25429	60	2025	\N	3	0
+25430	60	1183	\N	1	0
+25431	60	1123	\N	1	115
+25432	60	1266	\N	3	0.045
+25433	60	1167	\N	2	0.561
+25434	60	1214	\N	3	0.29
+25435	60	1050	\N	3	6.39
+25436	60	1330	\N	3	0.006
+25437	60	1126	\N	2	2.14
+25438	60	1306	\N	3	0.006
+25439	60	2012	\N	3	0.345
+25440	60	1228	\N	3	0
+25441	60	1085	\N	3	3.76
+25442	60	1225	\N	3	0.25
+25443	60	1226	\N	3	0.393
+25444	60	1224	\N	3	0.793
+25445	60	1334	\N	3	0.011
+25446	60	1212	\N	3	0.16
+25447	60	2020	\N	3	0.022
+25448	60	2018	\N	3	0.444
+25449	60	1262	\N	3	0.005
+25450	60	1211	\N	3	0.183
+25451	60	1335	\N	3	0
+25452	60	1125	\N	2	0.01
+25453	60	1218	\N	3	0.147
+25454	60	2023	\N	3	0
+25455	60	1213	\N	3	0.32
+25456	60	1267	\N	3	0.024
+25457	60	1265	\N	3	0.138
+25458	60	1293	\N	3	0.903
+25459	60	2024	\N	3	0
+25460	60	1063	\N	3	1.42
+25461	60	1215	\N	3	0.083
+25462	60	1314	\N	3	0.009
+25463	60	1217	\N	3	0.177
+25464	60	1220	\N	3	0.277
+25465	60	1210	\N	3	0.01
+25466	60	2026	\N	3	0.012
+25467	60	1170	\N	2	0.263
+25468	60	1002	\N	3	0.68
+25469	60	1222	\N	3	0.18
+25470	60	1219	\N	3	0.207
+25471	60	2022	\N	3	0
+25472	60	1277	\N	3	0.345
+25473	60	1227	\N	3	0.223
+25474	60	1128	\N	2	0.03
+25475	60	2016	\N	3	0.424
+25476	60	1223	\N	3	0.427
+25477	60	1304	\N	3	0.004
+25478	60	1313	\N	3	0.012
+25479	60	1216	\N	3	0.08
+25480	60	2010	\N	3	0
+25481	60	1292	\N	3	2.59
+25482	60	2009	\N	3	0
+25483	60	1103	\N	1	34
+25484	60	1258	\N	3	0.252
+25485	60	1005	\N	3	5.3
+25486	60	1092	\N	2	150
+25487	60	1280	\N	3	0
+25488	60	1273	\N	3	0.019
+25489	60	1011	\N	3	0.48
+25490	60	1007	\N	3	3.37
+25491	60	1329	\N	3	0.004
+25492	60	1101	\N	2	0.42
+25493	60	1087	\N	2	63
+25494	60	1177	\N	1	7
+25495	60	1261	\N	3	0
+25496	60	1107	\N	1	31
+25497	60	1260	\N	3	0
+25498	60	1098	\N	2	0.074
+25499	60	1317	\N	3	1.26
+25500	60	1185	\N	1	1.5
+25501	60	1301	\N	3	0.01
+25502	60	1014	\N	3	0
+25503	60	1095	\N	2	0.64
+25504	60	1411	\N	3	0
+25505	60	1409	\N	3	0
+25506	60	1311	\N	3	0
+25507	60	1003	\N	3	4.25
+25508	60	1303	\N	3	0
+25509	60	1089	\N	2	1.59
+25510	60	1300	\N	3	0.002
+25511	60	1259	\N	3	0
+25512	60	1013	\N	3	0
+25513	60	1062	\N	103	254
+25514	60	1305	\N	3	0
+25515	60	1127	\N	2	0.08
+25516	60	1271	\N	3	0
+25517	60	1404	\N	3	0.444
+25518	60	1012	\N	3	0.23
+25519	60	1166	\N	2	0.066
+25520	60	1120	\N	1	27
+25521	60	1257	\N	3	0.01
+25522	60	1278	\N	3	0
+25523	60	1090	\N	2	47.7
+25524	60	1276	\N	3	0
+25525	60	1316	\N	3	0.424
+25526	60	1272	\N	3	0
+25527	60	1315	\N	3	0.916
+25528	60	1263	\N	3	0.003
+25529	60	1129	\N	2	0
+25530	60	1312	\N	3	0.062
+25531	60	1130	\N	2	0
+25532	60	1051	\N	3	83.7
+25533	60	1333	\N	3	0
+25534	60	1165	\N	2	0.189
+25535	60	1162	\N	2	0.4
+25536	60	1009	\N	3	0.65
+25537	60	1184	\N	1	0
+25538	60	1004	\N	3	3.38
+25539	60	1321	\N	3	0
+25540	60	1109	\N	2	0.35
+25541	60	1075	\N	3	0.52
+25542	60	1008	\N	102	61
+25543	60	1093	\N	2	1100
+25544	60	1323	\N	3	0
+25545	60	1131	\N	2	0
+25546	60	1010	\N	3	0.2
+25547	60	1079	\N	3	4.3
+25548	60	1405	\N	3	0.022
+25549	60	1108	\N	1	1
+25550	60	1091	\N	2	108
+25551	60	1122	\N	1	0
+25552	60	1406	\N	3	0
+25553	60	1106	\N	1	4
+25554	60	1299	\N	3	0.002
+25555	60	1264	\N	3	0.004
+25556	60	2047	\N	102	69
+25557	60	2048	\N	102	61
+25558	54	1003	\N	3	24.4
+25559	1973	1003	\N	3	24.4
+25560	54	1090	\N	2	180
+25561	1973	1090	\N	2	180
+25562	54	1092	\N	2	1540
+25563	1973	1092	\N	2	1540
+25564	54	1101	\N	2	2.08
+25565	1973	1101	\N	2	2.08
+25566	54	1098	\N	2	1.12
+25567	1973	1098	\N	2	1.12
+25568	54	1137	\N	1	1250
+25569	1973	1137	\N	1	1250
+25570	54	1009	\N	3	36.6
+25571	1973	1009	\N	3	36.6
+25572	54	1102	\N	1	920
+25573	1973	1102	\N	1	920
+25574	54	1087	\N	2	191
+25575	1973	1087	\N	2	191
+25576	54	1051	\N	3	0
+25577	1973	1051	\N	3	0
+25578	54	1094	\N	2	244
+25579	1973	1094	\N	2	244
+25580	54	1079	\N	3	4.2
+25581	1973	1079	\N	3	4.2
+25582	54	1091	\N	2	522
+25583	1973	1091	\N	2	522
+25584	54	1146	\N	1	193
+25585	1973	1146	\N	1	193
+25586	54	1097	\N	1	43.8
+25587	1973	1097	\N	1	43.8
+25588	54	1089	\N	2	5.34
+25589	1973	1089	\N	2	5.34
+25590	54	1095	\N	2	3.37
+25591	1973	1095	\N	2	3.37
+25592	54	1004	\N	3	1.45
+25593	1973	1004	\N	3	1.45
+25594	59	1010	\N	3	0
+25595	59	1005	\N	3	26.8
+25596	59	1007	\N	3	3.02
+25597	59	1003	\N	3	1.11
+25598	59	1014	\N	3	1.48
+25599	59	1011	\N	3	11.4
+25600	59	1008	\N	102	117
+25601	59	1098	\N	2	0.066
+25602	59	1075	\N	3	0
+25603	59	1002	\N	3	0.18
+25604	59	1062	\N	103	488
+25605	59	1004	\N	3	0.55
+25606	59	1013	\N	3	0
+25607	59	1091	\N	2	25
+25608	59	1012	\N	3	8.94
+25609	59	1063	\N	3	21.8
+25610	59	1051	\N	3	68.5
+25611	59	1093	\N	2	949
+25612	59	1095	\N	2	0.16
+25613	59	1092	\N	2	249
+25614	59	1101	\N	2	0.086
+25615	59	1090	\N	2	13.5
+25616	59	1087	\N	2	14
+25617	59	1089	\N	2	0.43
+25618	59	2047	\N	102	117
+25619	59	2048	\N	102	103
+25620	105	1011	\N	3	2.29
+25621	105	1012	\N	3	1.79
+25622	105	1095	\N	2	0.17
+25623	105	1008	\N	102	44
+25624	105	1079	\N	3	2.2
+25625	105	1013	\N	3	0
+25626	105	1005	\N	3	9.93
+25627	105	1062	\N	103	186
+25628	105	1098	\N	2	0.058
+25629	105	1162	\N	2	8.1
+25630	105	1091	\N	2	41
+25631	105	1004	\N	3	0.1
+25632	105	1051	\N	3	88.6
+25633	105	1103	\N	1	0.5
+25634	105	1087	\N	2	17
+25635	105	1093	\N	2	1
+25636	105	1007	\N	3	0.43
+25637	105	1092	\N	2	197
+25638	105	1090	\N	2	11.4
+25639	105	1014	\N	3	0
+25640	105	1101	\N	2	0.119
+25641	105	1100	\N	1	0
+25642	105	1063	\N	3	5.76
+25643	105	1089	\N	2	0.24
+25644	105	1176	\N	1	0
+25645	105	1003	\N	3	0.94
+25646	105	2033	\N	3	3.97
+25647	105	1010	\N	3	1.68
+25648	105	2047	\N	102	44
+25649	105	2048	\N	102	42
+25650	1341	1063	\N	3	13.332
+25651	1341	1050	\N	3	15.405
+25652	1341	2048	\N	102	58.20306
+25653	1341	2047	\N	102	64.6609
+25654	1341	1005	\N	3	15.6511625
+25655	1341	1003	\N	3	0.1484375
+25656	1341	1101	\N	2	0.03263
+25657	1341	1079	\N	3	2.075
+25658	1341	1090	\N	2	4.67
+25659	1341	1091	\N	2	9.78
+25660	1341	1093	\N	2	1.013
+25661	1341	1098	\N	2	0.03279
+25662	1341	1051	\N	3	83.61
+25663	1341	1004	\N	3	0.1625
+25664	1341	1087	\N	2	5.975
+25665	1341	1010	\N	3	1.704
+25666	1341	1092	\N	2	103.8
+25667	1341	1013	\N	3	0
+25668	1341	1002	\N	3	0.02375
+25669	1341	1014	\N	3	0
+25670	1341	1095	\N	2	0.01676
+25671	1341	1167	\N	2	0.09063
+25672	1341	1007	\N	3	0.4279
+25673	1341	1165	\N	2	0.00625
+25674	1341	1175	\N	2	0.03544
+25675	1341	1166	\N	2	0.0675
+25676	1341	1012	\N	3	8.59
+25677	1341	1089	\N	2	0.015
+25678	1341	2000	\N	3	13.33
+25679	1341	1011	\N	3	3.038
+25680	1341	1177	\N	1	0
+25681	597	2048	\N	102	26.58104025
+25682	597	2047	\N	102	30.7743
+25683	597	1005	\N	3	6.601725
+25684	597	1003	\N	3	0.819375
+25685	597	1095	\N	2	0.193
+25686	597	1092	\N	2	197.3
+25687	597	1087	\N	2	6.686
+25688	597	1098	\N	2	0.04529
+25689	597	1079	\N	3	1.071
+25690	597	1090	\N	2	10.34
+25691	597	1004	\N	3	0.1211
+25692	597	1175	\N	2	0.2918
+25693	597	1089	\N	2	0.3596
+25694	597	1162	\N	2	138.8
+25695	597	1177	\N	1	41.63
+25696	597	1101	\N	2	0.1417
+25697	597	1103	\N	1	0
+25698	597	1093	\N	2	0
+25699	597	1167	\N	2	0.91
+25700	597	1166	\N	2	0.09778
+25701	597	1091	\N	2	24.76
+25702	597	1165	\N	2	0.04867
+25703	597	1051	\N	3	92.08
+25704	597	1176	\N	1	0.46
+25705	597	1007	\N	3	0.3778
+25706	597	1002	\N	3	0.1311
+25707	283	1185	\N	1	1.2
+25708	283	1184	\N	1	0
+25709	283	1183	\N	1	4.8
+25710	283	1063	\N	3	1.6257
+25711	283	1110	\N	98	0
+25712	283	2048	\N	102	273.472498
+25713	283	2047	\N	102	272.884
+25714	283	1114	\N	1	0
+25715	283	1005	\N	3	5.58318
+25716	283	1003	\N	3	19.70782
+25717	283	1176	\N	1	0.4638
+25718	283	1098	\N	2	0.03155
+25719	283	1292	\N	3	4.184
+25720	283	1002	\N	3	3.089
+25721	283	1012	\N	3	0
+25722	283	1167	\N	2	0.2644
+25723	283	1087	\N	2	371.1
+25724	283	1263	\N	3	0.5449
+25725	283	1259	\N	3	0.4039
+25726	283	1316	\N	3	0.4244
+25727	283	1090	\N	2	17.69
+25728	283	1010	\N	3	0
+25729	283	1266	\N	3	1.741
+25730	283	1265	\N	3	5.313
+25731	283	1007	\N	3	3.739
+25732	283	1253	\N	2	57.52
+25733	283	1315	\N	3	3.663
+25734	283	1264	\N	3	1.797
+25735	283	1091	\N	2	327.6
+25736	283	1093	\N	2	1034
+25737	283	1011	\N	3	0.5863
+25738	283	1166	\N	2	0.4444
+25739	283	1013	\N	3	0.61
+25740	283	1112	\N	1	0
+25741	283	1165	\N	2	0.05638
+25742	283	1105	\N	1	146.9
+25743	283	1101	\N	2	0.02003
+25744	283	1258	\N	3	11.17
+25745	283	1175	\N	2	0.03831
+25746	283	1075	\N	3	0.4294
+25747	283	1051	\N	3	51.89
+25748	283	1100	\N	1	48.44
+25749	283	1095	\N	2	2.353
+25750	283	1089	\N	2	0.0675
+25751	283	1092	\N	2	105.3
+25752	283	1004	\N	3	19.08
+25753	283	1260	\N	3	0.3336
+25754	283	1014	\N	3	0
+25755	283	1262	\N	3	0.481
+25756	283	1314	\N	3	0.2849
+25757	283	1111	\N	1	0
+25758	56	1185	\N	1	0
+25759	56	2048	\N	102	589.383006
+25760	56	2047	\N	102	631.65
+25761	56	1005	\N	3	22.70376
+25762	56	1003	\N	3	23.99124
+25763	56	1210	\N	3	0.2288
+25764	56	1167	\N	2	17.2
+25765	56	1224	\N	3	5.819
+25766	56	2051	\N	2	0.4125
+25767	56	1211	\N	3	0.8063
+25768	56	1175	\N	2	0.3805
+25769	56	1103	\N	1	20.16
+25770	56	1227	\N	3	1.423
+25771	56	1225	\N	3	1.69
+25772	56	1217	\N	3	1.501
+25773	56	1093	\N	2	220.7
+25774	56	2050	\N	2	1.932
+25775	56	1226	\N	3	1.244
+25776	56	1265	\N	3	4.106
+25777	56	1221	\N	3	0.6763
+25778	56	1177	\N	1	97.29
+25779	56	1176	\N	1	87.81
+25780	56	1267	\N	3	0.6826
+25781	56	1218	\N	3	1.064
+25782	56	1341	\N	2	0
+25783	56	1092	\N	2	654
+25784	56	1089	\N	2	1.853
+25785	56	1095	\N	2	3.062
+25786	56	2014	\N	3	0.132
+25787	56	1098	\N	2	0.5405
+25788	56	1051	\N	3	1.104
+25789	56	1079	\N	3	6.323
+25790	56	1315	\N	3	29.76
+25791	56	1301	\N	3	0.8243
+25792	56	1258	\N	3	8.415
+25793	56	1215	\N	3	0.29
+25794	56	2012	\N	3	0.8006
+25795	56	1004	\N	3	49.43
+25796	56	1091	\N	2	393.2
+25797	56	1273	\N	3	1.424
+25798	56	2049	\N	2	0.6493
+25799	56	1292	\N	3	30.71
+25800	56	1214	\N	3	0.9513
+25801	56	1293	\N	3	9.781
+25802	56	1165	\N	2	0.1206
+25803	56	1220	\N	3	3.323
+25804	56	1316	\N	3	9.733
+25805	56	1222	\N	3	1.16
+25806	56	1101	\N	2	1.681
+25807	56	1213	\N	3	1.881
+25808	56	1228	\N	3	0.1625
+25809	56	1219	\N	3	1.116
+25810	56	1212	\N	3	0.92
+25811	56	1007	\N	3	2.771
+25812	56	1109	\N	2	5.413
+25813	56	1232	\N	3	0.5138
+25814	56	1002	\N	3	4.394
+25815	56	1087	\N	2	49.85
+25816	56	1340	\N	2	11.46
+25817	56	1223	\N	3	3.415
+25818	56	1266	\N	3	1.293
+25819	56	1090	\N	2	192.6
+25820	32	1185	\N	1	1.2
+25821	32	1184	\N	1	0
+25822	32	1183	\N	1	5.2
+25823	32	2048	\N	102	192.7437716
+25824	32	2047	\N	102	196.4148
+25825	32	1005	\N	3	5.555506
+25826	32	1003	\N	3	3.070694
+25827	32	1178	\N	1	0.06175
+25828	32	1264	\N	3	1.746
+25829	32	1316	\N	3	0.3849
+25830	32	1101	\N	2	0
+25831	32	1175	\N	2	0.0385
+25832	32	1292	\N	3	3.805
+25833	32	1098	\N	2	0
+25834	32	1105	\N	1	151.5
+25835	32	1167	\N	2	0.1
+25836	32	1051	\N	3	72.58
+25837	32	1176	\N	1	1.913
+25838	32	1165	\N	2	0.04275
+25839	32	1092	\N	2	153.8
+25840	32	1093	\N	2	50.04
+25841	32	1253	\N	2	52.69
+25842	32	1002	\N	3	0.4813
+25843	32	1266	\N	3	1.605
+25844	32	1263	\N	3	0.5474
+25845	32	1091	\N	2	102
+25846	32	1007	\N	3	0.8038
+25847	32	1089	\N	2	0
+25848	32	1265	\N	3	5.044
+25849	32	1087	\N	2	107.2
+25850	32	1090	\N	2	10.11
+25851	32	1100	\N	1	32.75
+25852	32	1095	\N	2	0.3919
+25853	32	1258	\N	3	10.7
+25854	32	1004	\N	3	17.99
+25855	89	1185	\N	1	4.1
+25856	89	1184	\N	1	0
+25857	89	1183	\N	1	0
+25858	89	1258	\N	3	6.465
+25859	89	1292	\N	3	39.282
+25860	89	1293	\N	3	22.924
+25861	89	2048	\N	102	699.59644
+25862	89	2047	\N	102	750.152
+25863	89	1005	\N	3	12.6993
+25864	89	1003	\N	3	9.9587
+25865	89	1223	\N	3	0.87
+25866	89	1222	\N	3	0.4375
+25867	89	1089	\N	2	2.371
+25868	89	1220	\N	3	1.363
+25869	89	1175	\N	2	0.1711
+25870	89	1098	\N	2	0.9065
+25871	89	1002	\N	3	1.879
+25872	89	1228	\N	3	0
+25873	89	1007	\N	3	1.439
+25874	89	1226	\N	3	0.61
+25875	89	1210	\N	3	0.115
+25876	89	1167	\N	2	0.9463
+25877	89	1095	\N	2	3.93
+25878	89	1079	\N	3	5.793
+25879	89	1087	\N	2	54.83
+25880	89	1004	\N	3	73.28
+25881	89	1211	\N	3	0.3025
+25882	89	1101	\N	2	2.28
+25883	89	1165	\N	2	0.5476
+25884	89	1212	\N	3	0.365
+25885	89	1176	\N	1	22.66
+25886	89	1214	\N	3	0.32
+25887	89	1232	\N	3	0.305
+25888	89	1090	\N	2	102.9
+25889	89	1218	\N	3	0.3125
+25890	89	1219	\N	3	0.435
+25891	89	1051	\N	3	2.623
+25892	89	1091	\N	2	252.7
+25893	89	1213	\N	3	0.67
+25894	89	1227	\N	3	0.54
+25895	89	1221	\N	3	0.2625
+25896	89	1224	\N	3	2.498
+25897	89	1093	\N	2	0
+25898	89	1217	\N	3	0.4625
+25899	89	1225	\N	3	0.4925
+25900	89	1102	\N	1	15.57
+25901	89	1092	\N	2	360.3
+25902	89	1215	\N	3	0.1675
+25903	467	1063	\N	3	11.42
+25904	467	2048	\N	102	54.046596
+25905	467	2047	\N	102	60.1113
+25906	467	1005	\N	3	14.0914625
+25907	467	1003	\N	3	0.4609375
+25908	467	1013	\N	3	0
+25909	467	1079	\N	3	0.9346
+25910	467	1095	\N	2	0.1067
+25911	467	1041	\N	2	0
+25912	467	1093	\N	2	0
+25913	467	1002	\N	3	0.07375
+25914	467	1087	\N	2	12.5
+25915	467	1014	\N	3	0
+25916	467	1010	\N	3	3.46
+25917	467	1032	\N	2	685.4
+25918	467	1101	\N	2	0.866
+25919	467	1091	\N	2	5.42
+25920	467	1175	\N	2	0.1101
+25921	467	1051	\N	3	84.99
+25922	467	1007	\N	3	0.2463
+25923	467	1011	\N	3	3.907
+25924	467	1012	\N	3	4.053
+25925	467	1004	\N	3	0.2113
+25926	467	1165	\N	2	0.06375
+25927	467	1089	\N	2	0.054
+25928	467	1162	\N	2	58.61
+25929	467	1090	\N	2	13.38
+25930	467	1043	\N	2	0
+25931	467	1039	\N	2	264.5
+25932	467	1167	\N	2	0.2275
+25933	467	1102	\N	1	0
+25934	467	1092	\N	2	137.1
+25935	467	1044	\N	2	0
+25936	467	1098	\N	2	0.09545
+25937	1086	1185	\N	1	43.9
+25938	1086	1184	\N	1	0
+25939	1086	1183	\N	1	0
+25940	1086	1063	\N	3	2.3338
+25941	1086	2048	\N	102	33.5679465
+25942	1086	2047	\N	102	39.9998
+25943	1086	1005	\N	3	7.41245
+25944	1086	1003	\N	3	1.96875
+25945	1086	1091	\N	2	41.15
+25946	1086	1101	\N	2	0.3324
+25947	1086	1089	\N	2	0.6516
+25948	1086	1079	\N	3	3.011
+25949	1086	1004	\N	3	0.275
+25950	1086	1002	\N	3	0.315
+25951	1086	1010	\N	3	0.0775
+25952	1086	1012	\N	3	0.9263
+25953	1086	1013	\N	3	0
+25954	1086	1011	\N	3	1.33
+25955	1086	1014	\N	3	0
+25956	1086	1092	\N	2	290.4
+25957	1086	1090	\N	2	28.21
+25958	1086	1102	\N	1	41.63
+25959	1086	1007	\N	3	0.6838
+25960	1086	1167	\N	2	0.7313
+25961	1086	1175	\N	2	0.121
+25962	1086	1093	\N	2	0
+25963	1086	1095	\N	2	0.3498
+25964	1086	1165	\N	2	0.06
+25965	1086	1098	\N	2	0.09829
+25966	1086	1087	\N	2	40.05
+25967	1086	1051	\N	3	89.66
+25968	255	1185	\N	1	0.2
+25969	255	1184	\N	1	0
+25970	255	1183	\N	1	0
+25971	255	1063	\N	3	6.0588
+25972	255	2048	\N	102	77.35727375
+25973	255	2047	\N	102	78.999
+25974	255	1005	\N	3	17.327875
+25975	255	1003	\N	3	1.578125
+25976	255	1012	\N	3	0.9275
+25977	255	1002	\N	3	0.2525
+25978	255	1089	\N	2	0.398
+25979	255	1162	\N	2	14.84
+25980	255	1092	\N	2	486.4
+25981	255	1098	\N	2	0.1866
+25982	255	1087	\N	2	22.33
+25983	255	1175	\N	2	0.1241
+25984	255	2038	\N	3	4.251
+25985	255	1102	\N	1	0
+25986	255	1010	\N	3	3.056
+25987	255	1093	\N	2	0
+25988	255	1014	\N	3	1.099
+25989	255	2033	\N	3	4.441
+25990	255	1051	\N	3	79.54
+25991	255	1091	\N	2	36.73
+25992	255	1165	\N	2	0.045
+25993	255	1013	\N	3	0
+25994	255	1090	\N	2	19.14
+25995	255	1167	\N	2	0.4325
+25996	255	1007	\N	3	1.179
+25997	255	1095	\N	2	0.3374
+25998	255	1011	\N	3	0.9763
+25999	255	1004	\N	3	0.375
+26000	255	2065	\N	3	0.1571
+26001	255	1103	\N	1	0
+26002	255	1101	\N	2	0.4174
+26003	1199	1185	\N	1	24
+26004	1199	1184	\N	1	0
+26005	1199	1183	\N	1	0
+26006	1199	1091	\N	2	23.23
+26007	1199	1051	\N	3	95.87
+26008	1199	1176	\N	1	0.9625
+26009	1199	1101	\N	2	0.08488
+26010	1199	1004	\N	3	0.1775
+26011	1199	1007	\N	3	0.375
+26012	1199	1098	\N	2	0.06299
+26013	1199	1002	\N	3	0.1
+26014	1199	1089	\N	2	0
+26015	1199	1087	\N	2	16.34
+26016	1199	1095	\N	2	0.204
+26017	1199	1093	\N	2	1.515
+26018	1199	1090	\N	2	10.11
+26019	1199	1092	\N	2	169.6
+26020	1199	1102	\N	1	3.723
+26021	1199	1003	\N	3	0.625
+26022	1199	1005	\N	3	2.9525
+26023	1199	2047	\N	102	15.9075
+26024	1199	2048	\N	102	13.934925
+26025	844	1071	\N	3	16
+26026	844	1004	\N	3	1.925
+26027	844	1087	\N	2	61.85
+26028	844	1093	\N	2	0
+26029	844	1092	\N	2	948.9
+26030	844	1098	\N	2	0.8376
+26031	844	1051	\N	3	9.451
+26032	844	1009	\N	3	37.13
+26033	844	1007	\N	3	2.884
+26034	844	1095	\N	2	3.863
+26035	844	1090	\N	2	106.7
+26036	844	1101	\N	2	1.569
+26037	844	1089	\N	2	7.158
+26038	844	1091	\N	2	373.6
+26039	844	1002	\N	3	3.771
+26040	844	1003	\N	3	23.56875
+26041	844	1005	\N	3	62.17125
+26042	844	2047	\N	102	360.285
+26043	844	2048	\N	102	350.9328
+26044	250	1051	\N	3	95.01
+26045	250	1162	\N	2	15
+26046	250	1177	\N	1	71
+26047	250	1188	\N	1	20
+26048	250	1005	\N	3	3.27
+26049	250	2048	\N	102	16
+26050	250	2047	\N	102	19
+26051	250	1002	\N	3	0.1575
+26052	250	1079	\N	3	0.7525
+26053	250	1090	\N	2	15.29
+26054	250	1091	\N	2	32.9
+26055	250	1007	\N	3	0.54
+26056	250	1098	\N	2	0.06384
+26057	250	1093	\N	2	0
+26058	250	1092	\N	2	225.8
+26059	250	1101	\N	2	0.1489
+26060	250	1095	\N	2	0.2605
+26061	250	1004	\N	3	0.205
+26062	250	1087	\N	2	20.85
+26063	250	1089	\N	2	0.1945
+26064	250	1003	\N	3	0.984375
+26065	156	1162	\N	2	142.9
+26066	156	1177	\N	1	86
+26067	156	1188	\N	1	63
+26068	156	1087	\N	2	38.64
+26069	156	1091	\N	2	78.54
+26070	156	1002	\N	3	0.6375
+26071	156	1090	\N	2	25
+26072	156	1007	\N	3	1.215
+26073	156	1101	\N	2	0.24
+26074	156	1089	\N	2	0.7305
+26075	156	1051	\N	3	84.62
+26076	156	1079	\N	3	4.785
+26077	156	1095	\N	2	0.3663
+26078	156	1093	\N	2	25.74
+26079	156	1092	\N	2	476.8
+26080	156	1098	\N	2	0.03843
+26081	156	1004	\N	3	0.565
+26082	156	1003	\N	3	3.984375
+26083	156	1005	\N	3	9.615625
+26084	156	2047	\N	102	59.485
+26085	156	2048	\N	102	48.77870625
+26086	1078	1162	\N	2	4.6
+26087	1078	1177	\N	1	103
+26088	1078	1188	\N	1	64
+26089	1078	1063	\N	3	5.1015
+26090	1078	2048	\N	102	40.965255
+26091	1078	2047	\N	102	44.6205
+26092	1078	1005	\N	3	8.787
+26093	1078	1003	\N	3	1.6875
+26094	1078	1010	\N	3	4.289
+26095	1078	1079	\N	3	3.119
+26096	1078	1089	\N	2	0.4281
+26097	1078	1092	\N	2	341.5
+26098	1078	1090	\N	2	21.01
+26099	1078	1051	\N	3	88.16
+26100	1078	1101	\N	2	0.2571
+26101	1078	1004	\N	3	0.3025
+26102	1078	1091	\N	2	33.65
+26103	1078	1013	\N	3	0
+26104	1078	1011	\N	3	0.305
+26105	1078	1093	\N	2	111.6
+26106	1078	1087	\N	2	13.82
+26107	1078	1012	\N	3	0.5075
+26108	1078	1002	\N	3	0.27
+26109	1078	1007	\N	3	1.063
+26110	1078	1095	\N	2	0.3104
+26111	1078	1014	\N	3	0
+26112	1078	1098	\N	2	0.1606
+26113	225	1079	\N	3	2.2
+26114	225	1063	\N	3	4.351
+26115	225	1003	\N	3	1.3775
+26116	225	1090	\N	2	15.1
+26117	225	1091	\N	2	54.63
+26118	225	1092	\N	2	251.5
+26119	225	1101	\N	2	0.1458
+26120	225	1095	\N	2	0.2816
+26121	225	1007	\N	3	0.6319
+26122	225	1176	\N	1	1.363
+26123	225	1002	\N	3	0.2204
+26124	225	1087	\N	2	26.06
+26125	225	1014	\N	3	0.03125
+26126	225	1175	\N	2	0.1769
+26127	225	1013	\N	3	0.03125
+26128	225	1012	\N	3	1.875
+26129	225	1010	\N	3	1.911
+26130	225	1051	\N	3	83.47
+26131	225	1089	\N	2	0.3323
+26132	225	1011	\N	3	0.5025
+26133	225	1093	\N	2	3.636
+26134	225	1098	\N	2	0.08025
+26135	152	1184	\N	1	0
+26136	152	1089	\N	2	0.9
+26137	152	1062	\N	103	1160
+26138	152	1185	\N	1	2.7
+26139	152	1162	\N	2	0
+26140	152	1210	\N	3	0.007
+26141	152	1090	\N	2	54
+26142	152	1215	\N	3	0.017
+26143	152	1122	\N	1	0
+26144	152	1221	\N	3	0.029
+26145	152	1218	\N	3	0.016
+26146	152	1004	\N	3	0.15
+26147	152	1217	\N	3	0.048
+26148	152	1106	\N	1	7
+26149	152	1051	\N	3	21.32
+26150	152	1114	\N	1	0
+26151	152	1216	\N	3	0.046
+26152	152	1107	\N	1	89
+26153	152	1104	\N	98	149
+26154	152	1222	\N	3	0.078
+26155	152	1120	\N	1	0
+26156	152	1227	\N	3	0.062
+26157	152	1212	\N	3	0.045
+26158	152	1167	\N	2	1.61
+26159	152	1003	\N	3	1.81
+26160	152	1014	\N	3	0.3
+26161	152	1219	\N	3	0.066
+26162	152	1170	\N	2	0.805
+26163	152	1108	\N	1	0
+26164	152	1166	\N	2	0.06
+26165	152	1011	\N	3	33.68
+26166	152	1095	\N	2	0.44
+26167	152	1257	\N	3	0
+26168	152	1010	\N	3	0.53
+26169	152	1087	\N	2	64
+26170	152	1220	\N	3	0.06
+26171	152	1012	\N	3	31.95
+26172	152	1175	\N	2	0.249
+26173	152	2000	\N	3	66.47
+26174	152	1098	\N	2	0.362
+26175	152	1091	\N	2	62
+26176	152	1165	\N	2	0.05
+26177	152	1013	\N	3	0
+26178	152	1008	\N	102	277
+26179	152	1187	\N	1	15
+26180	152	1110	\N	98	0
+26181	152	1092	\N	2	696
+26182	152	1079	\N	3	6.7
+26183	152	1005	\N	3	74.97
+26184	152	1223	\N	3	0.22
+26185	152	1225	\N	3	0.09
+26186	152	1075	\N	3	0
+26187	152	1186	\N	1	0
+26188	152	1211	\N	3	0.042
+26189	152	1190	\N	1	15
+26190	152	1093	\N	2	1
+26191	152	1177	\N	1	15
+26192	152	1007	\N	3	1.74
+26193	152	1224	\N	3	0.265
+26194	152	1123	\N	1	23
+26195	152	1180	\N	2	9.9
+26196	152	1226	\N	3	0.111
+26197	152	1214	\N	3	0.054
+26198	152	1213	\N	3	0.082
+26199	152	1101	\N	2	0.296
+26200	152	1198	\N	2	0.4
+26201	418	1011	\N	3	0.28
+26202	418	1211	\N	3	0.069
+26203	418	1178	\N	1	0
+26204	418	1114	\N	1	0
+26205	418	1277	\N	3	0.004
+26206	418	1180	\N	2	17.8
+26207	418	1005	\N	3	14.34
+26208	418	1293	\N	3	0.519
+26209	418	1092	\N	2	132
+26210	418	1120	\N	1	20
+26211	418	1263	\N	3	0
+26212	418	1215	\N	3	0.053
+26213	418	1184	\N	1	0
+26214	418	1107	\N	1	14
+26215	418	1018	\N	3	0
+26216	418	1299	\N	3	0.002
+26217	418	1333	\N	3	0
+26218	418	1214	\N	3	0.215
+26219	418	1091	\N	2	46
+26220	418	1246	\N	1	0
+26221	418	1227	\N	3	0.127
+26222	418	1219	\N	3	0.108
+26223	418	1105	\N	1	0
+26224	418	1257	\N	3	0
+26225	418	1010	\N	3	3.9
+26226	418	1125	\N	2	0
+26227	418	1129	\N	2	0
+26228	418	1270	\N	3	0.018
+26229	418	1101	\N	2	0.067
+26230	418	1051	\N	3	81.41
+26231	418	1106	\N	1	2
+26232	418	1123	\N	1	695
+26233	418	1212	\N	3	0.072
+26234	418	1300	\N	3	0.001
+26235	418	1104	\N	98	46
+26236	418	1165	\N	2	0.039
+26237	418	1170	\N	2	0.209
+26238	418	1186	\N	1	0
+26239	418	1003	\N	3	2.29
+26240	418	1127	\N	2	0
+26241	418	1292	\N	3	0.374
+26242	418	1103	\N	1	0.6
+26243	418	1226	\N	3	0.287
+26244	418	1253	\N	2	0
+26245	418	1128	\N	2	0.26
+26246	418	1325	\N	3	0
+26247	418	1166	\N	2	0.089
+26248	418	1131	\N	2	0
+26249	418	1258	\N	3	0.245
+26250	418	1095	\N	2	0.32
+26251	418	2000	\N	3	4.44
+26252	418	1167	\N	2	1.005
+26253	418	1216	\N	3	0.035
+26254	418	1264	\N	3	0.002
+26255	418	1224	\N	3	0.453
+26256	418	1012	\N	3	0.18
+26257	418	1321	\N	3	0
+26258	418	1260	\N	3	0
+26259	418	1221	\N	3	0.062
+26260	418	1075	\N	3	0
+26261	418	1087	\N	2	3
+26262	418	1279	\N	3	0
+26263	418	1269	\N	3	0.483
+26264	418	1280	\N	3	0
+26265	418	1014	\N	3	0.08
+26266	418	1090	\N	2	13
+26267	418	1185	\N	1	0
+26268	418	1008	\N	102	67
+26269	418	1220	\N	3	0.095
+26270	418	1267	\N	3	0.007
+26271	418	1265	\N	3	0.19
+26272	418	1273	\N	3	0.003
+26273	418	1109	\N	2	0.09
+26274	418	1126	\N	2	0.31
+26275	418	1057	\N	2	0
+26276	418	1175	\N	2	0.037
+26277	418	1009	\N	3	8.06
+26278	418	1242	\N	2	0
+26279	418	1058	\N	2	0
+26280	418	1225	\N	3	0.083
+26281	418	1062	\N	103	280
+26282	418	1276	\N	3	0
+26283	418	1272	\N	3	0
+26284	418	1110	\N	98	0
+26285	418	1183	\N	1	0
+26286	418	1162	\N	2	1.8
+26287	418	1313	\N	3	0
+26288	418	1268	\N	3	0.367
+26289	418	1098	\N	2	0.033
+26290	418	1223	\N	3	0.161
+26291	418	1108	\N	1	6
+26292	418	1274	\N	3	0
+26293	418	1262	\N	3	0.003
+26294	418	1190	\N	1	39
+26295	418	1275	\N	3	0.002
+26296	418	1004	\N	3	1.22
+26297	418	1259	\N	3	0
+26298	418	1213	\N	3	0.285
+26299	418	1323	\N	3	0.001
+26300	418	1177	\N	1	39
+26301	418	1089	\N	2	0.27
+26302	418	1093	\N	2	205
+26303	418	1278	\N	3	0
+26304	418	1404	\N	3	0.018
+26305	418	1266	\N	3	0.039
+26306	418	1187	\N	1	39
+26307	418	1218	\N	3	0.088
+26308	418	1217	\N	3	0.106
+26309	418	1007	\N	3	0.75
+26310	418	1261	\N	3	0
+26311	418	1210	\N	3	0.021
+26312	418	1222	\N	3	0.185
+26313	418	1013	\N	3	0
+26314	418	1271	\N	3	0
+26315	418	1122	\N	1	0
+26316	418	1130	\N	2	0.9
+26317	418	1079	\N	3	2
+26318	90	1226	\N	3	0.926
+26319	90	1114	\N	1	0
+26320	90	1264	\N	3	0
+26321	90	1018	\N	3	0
+26322	90	1108	\N	1	0
+26323	90	1167	\N	2	0.47
+26324	90	1266	\N	3	1.549
+26325	90	1177	\N	1	31
+26326	90	1280	\N	3	0
+26327	90	1186	\N	1	0
+26328	90	1007	\N	3	2.47
+26329	90	1276	\N	3	0
+26330	90	1404	\N	3	2.677
+26331	90	1253	\N	2	0
+26332	90	1217	\N	3	1.094
+26333	90	1162	\N	2	1.7
+26334	90	1190	\N	1	31
+26335	90	1003	\N	3	24.06
+26336	90	1288	\N	2	115
+26337	90	1313	\N	3	0
+26338	90	1216	\N	3	0.462
+26339	90	2000	\N	3	1.1
+26340	90	1210	\N	3	0.318
+26341	90	1227	\N	3	1.225
+26342	90	1275	\N	3	0.042
+26343	90	1127	\N	2	1.51
+26344	90	1110	\N	98	0
+26345	90	1187	\N	1	31
+26346	90	1093	\N	2	2
+26347	90	1014	\N	3	0
+26348	90	1258	\N	3	3.483
+26349	90	1004	\N	3	59.33
+26350	90	1246	\N	1	0
+26351	90	1211	\N	3	0.721
+26352	90	1101	\N	2	3.896
+26353	90	1299	\N	3	0
+26354	90	1051	\N	3	4.56
+26355	90	1008	\N	102	619
+26356	90	1285	\N	2	1
+26357	90	1316	\N	3	33.76
+26358	90	1010	\N	3	1
+26359	90	1092	\N	2	523
+26360	90	1107	\N	1	24
+26361	90	1005	\N	3	9.58
+26362	90	1198	\N	2	0.5
+26363	90	1321	\N	3	0
+26364	90	1109	\N	2	2.08
+26365	90	1265	\N	3	1.934
+26366	90	1223	\N	3	2.433
+26367	90	1098	\N	2	1.36
+26368	90	1120	\N	1	0
+26369	90	1273	\N	3	0
+26370	90	1095	\N	2	3.37
+26371	90	1128	\N	2	0
+26372	90	1333	\N	3	0
+26373	90	1091	\N	2	513
+26374	90	1104	\N	98	40
+26375	90	1103	\N	1	17
+26376	90	1178	\N	1	0
+26377	90	1011	\N	3	0.05
+26378	90	1012	\N	3	0.05
+26379	90	1130	\N	2	0.7
+26380	90	1213	\N	3	1.684
+26381	90	1286	\N	2	5
+26382	90	1242	\N	2	0
+26383	90	1261	\N	3	0
+26384	90	1166	\N	2	0.13
+26385	90	1105	\N	1	0
+26386	90	1062	\N	103	2590
+26387	90	1218	\N	3	0.74
+26388	90	1300	\N	3	0
+26389	90	1215	\N	3	0.467
+26390	90	1089	\N	2	3.12
+26391	90	1131	\N	2	0
+26392	90	1090	\N	2	201
+26393	90	1125	\N	2	0.01
+26394	90	1123	\N	1	9
+26395	90	1175	\N	2	0.583
+26396	90	1180	\N	2	32.1
+26397	90	1293	\N	3	36.437
+26398	90	1057	\N	2	0
+26399	90	1292	\N	3	15.442
+26400	90	1278	\N	3	0
+26401	90	1274	\N	3	0
+26402	90	1009	\N	3	0.24
+26403	90	1122	\N	1	0
+26404	90	1260	\N	3	0
+26405	90	1129	\N	2	0
+26406	90	1214	\N	3	0.713
+26407	90	1259	\N	3	0
+26408	90	1106	\N	1	2
+26409	90	1269	\N	3	33.76
+26410	90	1325	\N	3	0
+26411	90	1221	\N	3	0.672
+26412	90	1323	\N	3	0
+26413	90	1262	\N	3	0
+26414	90	1013	\N	3	0
+26415	90	1279	\N	3	0
+26416	90	1079	\N	3	6.8
+26417	90	1222	\N	3	1.048
+26418	90	1225	\N	3	1.189
+26419	90	1126	\N	2	28.78
+26420	90	1263	\N	3	0
+26421	90	1224	\N	3	5.152
+26422	90	1272	\N	3	0
+26423	90	1185	\N	1	2.7
+26424	90	1219	\N	3	1.271
+26425	90	1087	\N	2	61
+26426	90	1271	\N	3	0
+26427	90	1270	\N	3	2.677
+26428	90	1268	\N	3	15.128
+26429	90	1220	\N	3	3.618
+26430	90	1058	\N	2	0
+26431	90	1170	\N	2	1.66
+26432	90	1277	\N	3	0.272
+26433	90	1267	\N	3	0
+26434	90	1165	\N	2	0.057
+26435	90	1212	\N	3	0.966
+26436	388	1008	\N	102	221
+26437	388	1170	\N	2	0.19
+26438	388	1216	\N	3	0.183
+26439	388	1258	\N	3	4.524
+26440	388	1211	\N	3	0.735
+26441	388	1062	\N	103	926
+26442	388	1299	\N	3	0.011
+26443	388	1109	\N	2	0.21
+26444	388	1198	\N	2	9.8
+26445	388	1305	\N	3	0
+26446	388	1321	\N	3	0.018
+26447	388	1057	\N	2	0
+26448	388	1093	\N	2	81
+26449	388	1317	\N	3	0.002
+26450	388	1275	\N	3	0.98
+26451	388	1128	\N	2	0.02
+26452	388	1114	\N	1	0.1
+26453	388	1126	\N	2	0.09
+26454	388	1274	\N	3	0.033
+26455	388	1325	\N	3	0.035
+26456	388	1277	\N	3	0.078
+26457	388	1092	\N	2	204
+26458	388	1105	\N	1	23
+26459	388	1089	\N	2	0.68
+26460	388	1186	\N	1	0
+26461	388	1225	\N	3	1.005
+26462	388	1242	\N	2	0
+26463	388	1219	\N	3	0.764
+26464	388	1051	\N	3	66.47
+26465	388	1095	\N	2	1.29
+26466	388	1005	\N	3	0.25
+26467	388	1411	\N	3	0.024
+26468	388	1175	\N	2	0.347
+26469	388	1167	\N	2	4.625
+26470	388	1091	\N	2	157
+26471	388	1404	\N	3	0.144
+26472	388	1215	\N	3	0.438
+26473	388	1312	\N	3	0.001
+26474	388	1058	\N	2	0
+26475	388	1165	\N	2	0.073
+26476	388	1314	\N	3	0.973
+26477	388	1271	\N	3	0.104
+26478	388	1272	\N	3	0.007
+26479	388	1293	\N	3	3.467
+26480	388	1162	\N	2	0
+26481	388	1107	\N	1	0
+26482	388	1266	\N	3	0.85
+26483	388	1263	\N	3	0.008
+26484	388	1090	\N	2	18
+26485	388	1217	\N	3	0.632
+26486	388	1218	\N	3	0.579
+26487	388	2000	\N	3	0
+26488	388	1130	\N	2	0.03
+26489	388	1106	\N	1	23
+26490	388	1303	\N	3	0.007
+26491	388	1311	\N	3	0.021
+26492	388	1265	\N	3	3.511
+26493	388	1112	\N	1	0.1
+26494	388	1190	\N	1	3
+26495	388	1108	\N	1	0
+26496	388	1123	\N	1	108
+26497	388	1261	\N	3	0.001
+26498	388	1131	\N	2	0
+26499	388	1253	\N	2	98
+26500	388	1279	\N	3	0.002
+26501	388	1120	\N	1	0
+26502	388	1166	\N	2	0.145
+26503	388	1004	\N	3	16.61
+26504	388	1262	\N	3	0.003
+26505	388	1257	\N	3	0.085
+26506	388	1276	\N	3	0.003
+26507	388	1003	\N	3	16.52
+26508	388	1267	\N	3	0.011
+26509	388	1129	\N	2	0.02
+26510	388	1329	\N	3	0.06
+26511	388	1185	\N	1	2.1
+26512	388	1323	\N	3	0.014
+26513	388	1213	\N	3	1.318
+26514	388	1079	\N	3	0
+26515	388	1273	\N	3	0.014
+26516	388	1224	\N	3	2.571
+26517	388	1316	\N	3	3.05
+26518	388	1177	\N	1	3
+26519	388	1259	\N	3	0.001
+26520	388	1087	\N	2	7
+26521	388	1405	\N	3	0.001
+26522	388	1104	\N	98	78
+26523	388	1260	\N	3	0
+26524	388	1313	\N	3	0.021
+26525	388	1210	\N	3	0.167
+26526	388	1214	\N	3	1.448
+26527	388	1103	\N	1	18.9
+26528	388	1278	\N	3	0.004
+26529	388	1187	\N	1	3
+26530	388	1101	\N	2	0.013
+26531	388	1221	\N	3	0.465
+26532	388	1306	\N	3	0.025
+26533	388	1127	\N	2	0
+26534	388	1301	\N	3	0.002
+26535	388	1178	\N	1	0.62
+26536	388	1180	\N	2	45.7
+26537	388	1110	\N	98	3
+26538	388	1212	\N	3	0.731
+26539	388	1226	\N	3	0.773
+26540	388	1300	\N	3	0.019
+26541	388	1222	\N	3	1.015
+26542	388	1292	\N	3	6.94
+26543	388	1220	\N	3	1.157
+26544	388	1280	\N	3	0.01
+26545	388	1406	\N	3	0.034
+26546	388	1331	\N	3	0.025
+26547	388	1333	\N	3	0
+26548	388	1223	\N	3	1.554
+26549	388	1098	\N	2	0.054
+26550	388	1018	\N	3	0
+26551	388	1270	\N	3	0.162
+26552	388	1304	\N	3	0.053
+26553	388	1246	\N	1	0
+26554	388	1264	\N	3	0.092
+26555	388	1007	\N	3	0.81
+26556	388	1125	\N	2	0
+26557	388	1269	\N	3	3.096
+26558	388	1227	\N	3	0.675
+26559	388	1315	\N	3	5.779
+26560	388	1268	\N	3	5.832
+26561	388	1122	\N	1	0
+26562	391	1122	\N	1	0
+26563	391	1275	\N	3	0.212
+26564	391	1316	\N	3	0.736
+26565	391	1007	\N	3	0.95
+26566	391	1103	\N	1	22.9
+26567	391	1224	\N	3	3.221
+26568	391	1131	\N	2	0
+26569	391	1106	\N	1	7
+26570	391	1130	\N	2	0.03
+26571	391	1110	\N	98	1
+26572	391	1186	\N	1	0
+26573	391	1292	\N	3	1.497
+26574	391	1301	\N	3	0.002
+26575	391	1274	\N	3	0.007
+26576	391	1257	\N	3	0.02
+26577	391	2000	\N	3	0
+26578	391	1242	\N	2	0
+26579	391	1258	\N	3	1.097
+26580	391	1411	\N	3	0.021
+26581	391	1167	\N	2	5.557
+26582	391	1105	\N	1	7
+26583	391	1273	\N	3	0.008
+26584	391	1246	\N	1	0
+26585	391	1216	\N	3	0.23
+26586	391	1317	\N	3	0.001
+26587	391	1220	\N	3	1.372
+26588	391	1300	\N	3	0.004
+26589	391	1087	\N	2	7
+26590	391	1222	\N	3	1.177
+26591	391	1304	\N	3	0.012
+26592	391	1212	\N	3	0.939
+26593	391	1018	\N	3	0
+26594	391	1329	\N	3	0.014
+26595	391	1098	\N	2	0.062
+26596	391	1225	\N	3	0.902
+26597	391	1227	\N	3	0.823
+26598	391	1406	\N	3	0.018
+26599	391	1089	\N	2	0.81
+26600	391	1272	\N	3	0.007
+26601	391	1093	\N	2	95
+26602	391	1057	\N	2	0
+26603	391	1114	\N	1	0
+26604	391	1261	\N	3	0.001
+26605	391	1215	\N	3	0.562
+26606	391	1260	\N	3	0
+26607	391	1218	\N	3	0.739
+26608	391	1262	\N	3	0.002
+26609	391	1321	\N	3	0.006
+26610	391	1214	\N	3	1.855
+26611	391	1293	\N	3	0.94
+26612	391	1219	\N	3	0.956
+26613	391	1104	\N	98	24
+26614	391	1323	\N	3	0.003
+26615	391	1221	\N	3	0.587
+26616	391	1266	\N	3	0.252
+26617	391	1223	\N	3	1.933
+26618	391	1305	\N	3	0
+26619	391	1107	\N	1	0
+26620	391	1312	\N	3	0.001
+26621	391	1333	\N	3	0
+26622	391	1404	\N	3	0.03
+26623	391	1165	\N	2	0.088
+26624	391	1101	\N	2	0.013
+26625	391	1264	\N	3	0.02
+26626	391	1092	\N	2	242
+26627	391	1210	\N	3	0.222
+26628	391	1217	\N	3	0.785
+26629	391	1313	\N	3	0.008
+26630	391	1280	\N	3	0.008
+26631	391	1177	\N	1	4
+26632	391	1226	\N	3	0.793
+26633	391	1315	\N	3	1.245
+26634	391	1109	\N	2	0.18
+26635	391	1311	\N	3	0.006
+26636	391	1008	\N	102	121
+26637	391	1270	\N	3	0.036
+26638	391	1004	\N	3	4.12
+26639	391	1062	\N	103	507
+26640	391	1306	\N	3	0.006
+26641	391	1259	\N	3	0.001
+26642	391	1213	\N	3	1.675
+26643	391	1003	\N	3	19.66
+26644	391	1198	\N	2	10.5
+26645	391	1051	\N	3	76.22
+26646	391	1325	\N	3	0.018
+26647	391	1268	\N	3	1.257
+26648	391	1166	\N	2	0.196
+26649	391	1005	\N	3	0
+26650	391	1128	\N	2	0.01
+26651	391	1271	\N	3	0.09
+26652	391	1125	\N	2	0
+26653	391	1187	\N	1	4
+26654	391	1279	\N	3	0.001
+26655	391	1253	\N	2	94
+26656	391	1263	\N	3	0.003
+26657	391	1127	\N	2	0
+26658	391	1277	\N	3	0.017
+26659	391	1299	\N	3	0.003
+26660	391	1314	\N	3	0.21
+26661	391	1278	\N	3	0.002
+26662	391	1265	\N	3	0.798
+26663	391	1269	\N	3	0.748
+26664	391	1058	\N	2	0
+26665	391	1126	\N	2	0.07
+26666	391	1180	\N	2	53.6
+26667	391	1405	\N	3	0
+26668	391	1112	\N	1	0
+26669	391	1120	\N	1	0
+26670	391	1267	\N	3	0.003
+26671	391	1190	\N	1	4
+26672	391	1185	\N	1	2.9
+26673	391	1090	\N	2	23
+26674	391	1095	\N	2	1.58
+26675	391	1129	\N	2	0.03
+26676	391	1162	\N	2	0
+26677	391	1175	\N	2	0.451
+26678	391	1331	\N	3	0.006
+26679	391	1123	\N	1	110
+26680	391	1079	\N	3	0
+26681	391	1276	\N	3	0.001
+26682	391	1091	\N	2	185
+26683	391	1303	\N	3	0.002
+26684	391	1211	\N	3	0.93
+26685	391	1108	\N	1	0
+26686	391	1178	\N	1	0.61
+26687	93	1278	\N	3	0
+26688	93	1013	\N	3	0
+26689	93	1292	\N	3	0.206
+26690	93	1311	\N	3	0
+26691	93	1265	\N	3	0.104
+26692	93	1405	\N	3	0
+26693	93	1317	\N	3	0
+26694	93	1125	\N	2	0.01
+26695	93	1300	\N	3	0.002
+26696	93	1087	\N	2	35
+26697	93	1003	\N	3	5.28
+26698	93	1062	\N	103	347
+26699	93	1305	\N	3	0
+26700	93	1126	\N	2	1.31
+26701	93	1165	\N	2	0.04
+26702	93	1109	\N	2	0.09
+26703	93	1269	\N	3	0.295
+26704	93	1299	\N	3	0
+26705	93	1323	\N	3	0
+26706	93	1175	\N	2	0.107
+26707	93	1090	\N	2	38
+26708	93	1091	\N	2	114
+26709	93	1312	\N	3	0.002
+26710	93	1274	\N	3	0
+26711	93	1301	\N	3	0.003
+26712	93	1131	\N	2	0
+26713	93	1276	\N	3	0
+26714	93	1089	\N	2	1.7
+26715	93	1261	\N	3	0
+26716	93	1411	\N	3	0
+26717	93	1306	\N	3	0.003
+26718	93	1005	\N	3	13.5
+26719	93	1257	\N	3	0.003
+26720	93	1263	\N	3	0
+26721	93	1329	\N	3	0
+26722	93	1093	\N	2	430
+26723	93	1012	\N	3	0
+26724	93	1267	\N	3	0.003
+26725	93	1264	\N	3	0.002
+26726	93	1303	\N	3	0
+26727	93	2000	\N	3	0.59
+26728	93	1321	\N	3	0.001
+26729	93	1014	\N	3	0
+26730	93	1279	\N	3	0
+26731	93	1333	\N	3	0
+26732	93	1011	\N	3	0
+26733	93	1167	\N	2	0.37
+26734	93	1007	\N	3	1.95
+26735	93	1275	\N	3	0.002
+26736	93	1010	\N	3	0.59
+26737	93	1009	\N	3	8.65
+26738	93	1270	\N	3	0.176
+26739	93	1406	\N	3	0
+26740	93	1130	\N	2	0.01
+26741	93	1404	\N	3	0.176
+26742	93	1271	\N	3	0
+26743	93	1101	\N	2	0.332
+26744	93	1166	\N	2	0.015
+26745	93	1316	\N	3	0.291
+26746	93	1260	\N	3	0
+26747	93	1098	\N	2	0.171
+26748	93	1095	\N	2	0.74
+26749	93	1258	\N	3	0.142
+26750	93	1314	\N	3	0.002
+26751	93	1262	\N	3	0
+26752	93	1304	\N	3	0
+26753	93	1127	\N	2	0.18
+26754	93	1315	\N	3	0.195
+26755	93	1293	\N	3	0.471
+26756	93	1092	\N	2	344
+26757	93	1259	\N	3	0
+26758	93	1079	\N	3	4.7
+26759	93	1075	\N	3	0
+26760	93	1273	\N	3	0.003
+26761	93	1280	\N	3	0
+26762	93	1008	\N	102	83
+26763	93	1004	\N	3	0.87
+26764	93	1128	\N	2	0.01
+26765	93	1129	\N	2	0
+26766	93	1313	\N	3	0
+26767	93	1325	\N	3	0
+26768	93	1103	\N	1	5.6
+26769	93	1170	\N	2	0.175
+26770	93	1331	\N	3	0.003
+26771	93	1268	\N	3	0.195
+26772	93	1277	\N	3	0.008
+26773	93	1051	\N	3	78.39
+26774	93	1266	\N	3	0.025
+26775	93	1272	\N	3	0
+26776	94	1090	\N	2	18.6
+26777	94	1087	\N	2	12
+26778	94	2014	\N	3	0.009
+26779	94	1317	\N	3	0.009
+26780	94	2009	\N	3	0.005
+26781	94	1178	\N	1	1.06
+26782	94	2018	\N	3	0.18
+26783	94	1273	\N	3	0.01
+26784	94	1005	\N	3	2.15
+26785	94	1260	\N	3	0
+26786	94	1175	\N	2	0.343
+26787	94	2024	\N	3	0.024
+26788	94	1177	\N	1	0
+26789	94	1304	\N	3	0.073
+26790	94	1089	\N	2	1.29
+26791	94	1106	\N	1	22
+26792	94	1199	\N	2	7.6
+26793	94	1280	\N	3	0.024
+26794	94	1311	\N	3	0.029
+26795	94	1109	\N	2	0.8
+26796	94	1257	\N	3	0.1
+26797	94	1007	\N	3	2.63
+26798	94	1127	\N	2	0
+26799	94	1185	\N	1	0
+26800	94	1315	\N	3	10.7
+26801	94	1130	\N	2	0
+26802	94	1014	\N	3	0
+26803	94	1293	\N	3	4.96
+26804	94	1258	\N	3	9.15
+26805	94	1266	\N	3	2.9
+26806	94	1321	\N	3	0.005
+26807	94	1183	\N	1	18.8
+26808	94	1180	\N	2	70.4
+26809	94	2010	\N	3	0.056
+26810	94	1101	\N	2	0.033
+26811	94	1010	\N	3	0
+26812	94	1075	\N	3	0
+26813	94	1002	\N	3	2.91
+26814	94	1303	\N	3	0.007
+26815	94	1272	\N	3	0.003
+26816	94	1008	\N	102	322
+26817	94	1098	\N	2	0.074
+26818	94	1334	\N	3	0.003
+26819	94	1406	\N	3	0.036
+26820	94	1103	\N	1	20.2
+26821	94	1330	\N	3	0.02
+26822	94	1316	\N	3	4.31
+26823	94	1095	\N	2	2.41
+26824	94	2020	\N	3	0.063
+26825	94	2026	\N	3	0.217
+26826	94	1126	\N	2	0.15
+26827	94	1300	\N	3	0.069
+26828	94	1131	\N	2	0
+26829	94	1012	\N	3	0
+26830	94	1051	\N	3	50.9
+26831	94	1261	\N	3	0.002
+26832	94	1003	\N	3	18.2
+26833	94	1292	\N	3	11.6
+26834	94	1063	\N	3	1.46
+26835	94	1091	\N	2	145
+26836	94	1194	\N	2	5.9
+26837	94	1313	\N	3	0.217
+26838	94	1323	\N	3	0.056
+26839	94	1092	\N	2	310
+26840	94	1129	\N	2	0
+26841	94	1105	\N	1	22
+26842	94	1195	\N	2	46.1
+26843	94	1299	\N	3	0.012
+26844	94	1265	\N	3	5.71
+26845	94	1333	\N	3	0
+26846	94	1411	\N	3	0.046
+26847	94	1085	\N	3	25.8
+26848	94	2025	\N	3	0.003
+26849	94	1125	\N	2	0
+26850	94	1197	\N	2	10.5
+26851	94	1253	\N	2	80
+26852	94	2023	\N	3	0.005
+26853	94	1271	\N	3	0.125
+26854	94	2012	\N	3	0.297
+26855	94	1414	\N	3	0
+26856	94	2022	\N	3	0.125
+26857	94	1196	\N	2	0.3
+26858	94	1306	\N	3	0.02
+26859	94	1184	\N	1	0
+26860	94	1004	\N	3	26.2
+26861	94	1263	\N	3	0.017
+26862	94	1262	\N	3	0.016
+26863	94	1259	\N	3	0.006
+26864	94	1267	\N	3	0.065
+26865	94	1331	\N	3	0
+26866	94	1093	\N	2	766
+26867	94	1329	\N	3	0.079
+26868	94	1404	\N	3	0.175
+26869	94	1276	\N	3	0
+26870	94	1166	\N	2	0.242
+26871	94	1170	\N	2	0.783
+26872	94	1312	\N	3	0
+26873	94	2019	\N	3	0
+26874	94	2016	\N	3	4.34
+26875	94	1011	\N	3	1.46
+26876	94	1062	\N	103	1350
+26877	94	1305	\N	3	0
+26878	94	1165	\N	2	0.31
+26879	94	1314	\N	3	0.576
+26880	94	1301	\N	3	0
+26881	94	1013	\N	3	0
+26882	94	1128	\N	2	0
+26883	94	1335	\N	3	0
+26884	94	1405	\N	3	0.027
+26885	94	1198	\N	2	3.9
+26886	94	1264	\N	3	0.335
+26887	94	1167	\N	2	5.73
+26888	94	1278	\N	3	0.005
+26889	94	2047	\N	102	317
+26890	94	2048	\N	102	322
+26891	131	1089	\N	2	5.4
+26892	131	1102	\N	1	515
+26893	131	1051	\N	3	0
+26894	131	1004	\N	3	1.24
+26895	131	1137	\N	1	1230
+26896	131	1146	\N	1	186
+26897	131	1079	\N	3	4.1
+26898	131	1092	\N	2	1510
+26899	131	1101	\N	2	1.78
+26900	131	1094	\N	2	219
+26901	131	1087	\N	2	161
+26902	131	1090	\N	2	170
+26903	131	1097	\N	1	49.9
+26904	131	1003	\N	3	23.7
+26905	131	1098	\N	2	0.978
+26906	131	1095	\N	2	3.43
+26907	131	1009	\N	3	38.5
+26908	131	1091	\N	2	507
+26909	98	1103	\N	1	14.8
+26910	98	2048	\N	102	368.3584745
+26911	98	2047	\N	102	365.518
+26912	98	1005	\N	3	76.68795
+26913	98	1003	\N	3	7.25305
+26914	98	1090	\N	2	115
+26915	98	1098	\N	2	0.2659
+26916	98	1175	\N	2	0.1606
+26917	98	1102	\N	1	63.94
+26918	98	1093	\N	2	0
+26919	98	1091	\N	2	302.8
+26920	98	1095	\N	2	1.854
+26921	98	1167	\N	2	6.271
+26922	98	1166	\N	2	0.1025
+26923	98	1092	\N	2	250.1
+26924	98	1089	\N	2	1.242
+26925	98	1176	\N	1	4.988
+26926	98	1101	\N	2	2.696
+26927	98	1087	\N	2	8.058
+26928	98	1079	\N	3	3.021
+26929	98	2038	\N	3	3.384
+26930	98	1009	\N	3	71.6
+26931	98	2065	\N	3	0.5013
+26932	98	1051	\N	3	11.47
+26933	98	1007	\N	3	1.283
+26934	98	1002	\N	3	1.219
+26935	98	1165	\N	2	0.3263
+26936	98	1004	\N	3	3.306
+26937	98	2033	\N	3	4.296
+26938	97	1103	\N	1	6.6
+26939	97	2048	\N	102	369.637321
+26940	97	2047	\N	102	358.705
+26941	97	1005	\N	3	80.31315
+26942	97	1003	\N	3	7.03885
+26943	97	1165	\N	2	0.065
+26944	97	1090	\N	2	26.53
+26945	97	1167	\N	2	1.434
+26946	97	1087	\N	2	4.46
+26947	97	1093	\N	2	0.4625
+26948	97	1091	\N	2	108.2
+26949	97	1098	\N	2	0.2138
+26950	97	2038	\N	3	1.934
+26951	97	1004	\N	3	1.033
+26952	97	2065	\N	3	0.2963
+26953	97	1051	\N	3	11.19
+26954	97	1101	\N	2	0.9811
+26955	97	1089	\N	2	0.1405
+26956	97	1175	\N	2	0.05788
+26957	97	1095	\N	2	1.354
+26958	97	1176	\N	1	0
+26959	97	1079	\N	3	0.1488
+26960	97	1009	\N	3	74.36
+26961	97	2033	\N	3	2.771
+26962	97	1166	\N	2	0.08
+26963	97	1102	\N	1	64.18
+26964	97	1092	\N	2	82.26
+26965	97	1002	\N	3	1.183
+26966	97	1007	\N	3	0.425
+26967	627	1184	\N	1	0
+26968	627	1089	\N	2	0.9
+26969	627	1062	\N	103	1160
+26970	627	1185	\N	1	2.7
+26971	627	1162	\N	2	0
+26972	627	1210	\N	3	0.007
+26973	627	1090	\N	2	54
+26974	627	1215	\N	3	0.017
+26975	627	1122	\N	1	0
+26976	627	1221	\N	3	0.029
+26977	627	1218	\N	3	0.016
+26978	627	1004	\N	3	0.15
+26979	627	1217	\N	3	0.048
+26980	627	1106	\N	1	7
+26981	627	1051	\N	3	21.32
+26982	627	1114	\N	1	0
+26983	627	1216	\N	3	0.046
+26984	627	1107	\N	1	89
+26985	627	1104	\N	98	149
+26986	627	1222	\N	3	0.078
+26987	627	1120	\N	1	0
+26988	627	1227	\N	3	0.062
+26989	627	1212	\N	3	0.045
+26990	627	1167	\N	2	1.61
+26991	627	1003	\N	3	1.81
+26992	627	1014	\N	3	0.3
+26993	627	1219	\N	3	0.066
+26994	627	1170	\N	2	0.805
+26995	627	1108	\N	1	0
+26996	627	1166	\N	2	0.06
+26997	627	1011	\N	3	33.68
+26998	627	1095	\N	2	0.44
+26999	627	1257	\N	3	0
+27000	627	1010	\N	3	0.53
+27001	627	1087	\N	2	64
+27002	627	1220	\N	3	0.06
+27003	627	1012	\N	3	31.95
+27004	627	1175	\N	2	0.249
+27005	627	2000	\N	3	66.47
+27006	627	1098	\N	2	0.362
+27007	627	1091	\N	2	62
+27008	627	1165	\N	2	0.05
+27009	627	1013	\N	3	0
+27010	627	1008	\N	102	277
+27011	627	1187	\N	1	15
+27012	627	1110	\N	98	0
+27013	627	1092	\N	2	696
+27014	627	1079	\N	3	6.7
+27015	627	1005	\N	3	74.97
+27016	627	1223	\N	3	0.22
+27017	627	1225	\N	3	0.09
+27018	627	1075	\N	3	0
+27019	627	1186	\N	1	0
+27020	627	1211	\N	3	0.042
+27021	627	1190	\N	1	15
+27022	627	1093	\N	2	1
+27023	627	1177	\N	1	15
+27024	627	1007	\N	3	1.74
+27025	627	1224	\N	3	0.265
+27026	627	1123	\N	1	23
+27027	627	1180	\N	2	9.9
+27028	627	1226	\N	3	0.111
+27029	627	1214	\N	3	0.054
+27030	627	1213	\N	3	0.082
+27031	627	1101	\N	2	0.296
+27032	627	1198	\N	2	0.4
+27033	640	1092	\N	2	732
+27034	640	1125	\N	2	0
+27035	640	1269	\N	3	0.044
+27036	640	1099	\N	1	4
+27037	640	1219	\N	3	0.056
+27038	640	1177	\N	1	4
+27039	640	1122	\N	1	0
+27040	640	1275	\N	3	0.039
+27041	640	1293	\N	3	0.062
+27042	640	1226	\N	3	0.13
+27043	640	1190	\N	1	4
+27044	640	1057	\N	2	0
+27045	640	1131	\N	2	0
+27046	640	1075	\N	3	0
+27047	640	1058	\N	2	0
+27048	640	1011	\N	3	25.46
+27049	640	1129	\N	2	0
+27050	640	1110	\N	98	0
+27051	640	1216	\N	3	0.011
+27052	640	1018	\N	3	0
+27053	640	1109	\N	2	0.43
+27054	640	1186	\N	1	0
+27055	640	1128	\N	2	0.01
+27056	640	1008	\N	102	240
+27057	640	1095	\N	2	0.44
+27058	640	1167	\N	2	1.882
+27059	640	1123	\N	1	148
+27060	640	1051	\N	3	30.92
+27061	640	1274	\N	3	0
+27062	640	1300	\N	3	0
+27063	640	1271	\N	3	0
+27064	640	1089	\N	2	0.93
+27065	640	1210	\N	3	0.025
+27066	640	1270	\N	3	0.017
+27067	640	1325	\N	3	0
+27068	640	1277	\N	3	0
+27069	640	1321	\N	3	0
+27070	640	1292	\N	3	0.053
+27071	640	1242	\N	2	0
+27072	640	1004	\N	3	0.38
+27073	640	1005	\N	3	63.88
+27074	640	1012	\N	3	12.45
+27075	640	1261	\N	3	0.007
+27076	640	1165	\N	2	0.051
+27077	640	1265	\N	3	0.03
+27078	640	1211	\N	3	0.049
+27079	640	1009	\N	3	5.11
+27080	640	1062	\N	103	1006
+27081	640	1299	\N	3	0
+27082	640	1220	\N	3	0.037
+27083	640	1106	\N	1	39
+27084	640	1259	\N	3	0
+27085	640	1268	\N	3	0.014
+27086	640	1246	\N	1	0
+27087	640	1101	\N	2	0.299
+27088	640	1266	\N	3	0.044
+27089	640	1126	\N	2	0.02
+27090	640	1087	\N	2	43
+27091	640	1222	\N	3	0.066
+27092	640	1264	\N	3	0
+27093	640	1253	\N	2	0
+27094	640	1276	\N	3	0
+27095	640	1170	\N	2	0.422
+27096	640	1212	\N	3	0.041
+27097	640	1262	\N	3	0.005
+27098	640	1260	\N	3	0
+27099	640	1280	\N	3	0
+27100	640	1224	\N	3	0.114
+27101	640	1098	\N	2	0.281
+27102	640	1010	\N	3	0.15
+27103	640	1014	\N	3	0.06
+27104	640	1263	\N	3	0.001
+27105	640	1114	\N	1	0
+27106	640	1223	\N	3	0.801
+27107	640	1272	\N	3	0
+27108	640	1175	\N	2	0.205
+27109	640	1013	\N	3	0
+27110	640	1003	\N	3	2.18
+27111	640	1213	\N	3	0.066
+27112	640	1105	\N	1	0
+27113	640	1093	\N	2	2
+27114	640	1279	\N	3	0
+27115	640	2000	\N	3	38.13
+27116	640	1103	\N	1	0.3
+27117	640	1184	\N	1	0
+27118	640	1007	\N	3	2.64
+27119	640	1214	\N	3	0.05
+27120	640	1313	\N	3	0
+27121	640	1323	\N	3	0
+27122	640	1104	\N	98	781
+27123	640	1178	\N	1	0
+27124	640	1225	\N	3	0.047
+27125	640	1185	\N	1	59.5
+27126	640	1107	\N	1	394
+27127	640	1130	\N	2	0
+27128	640	1278	\N	3	0
+27129	640	1198	\N	2	0.4
+27130	640	1127	\N	2	0
+27131	640	1267	\N	3	0.001
+27132	640	1091	\N	2	69
+27133	640	1217	\N	3	0.052
+27134	640	1166	\N	2	0.186
+27135	640	1273	\N	3	0.001
+27136	640	1187	\N	1	4
+27137	640	1227	\N	3	0.059
+27138	640	1090	\N	2	41
+27139	640	1221	\N	3	0.027
+27140	640	1215	\N	3	0.016
+27141	640	1162	\N	2	0.6
+27142	640	1258	\N	3	0.088
+27143	640	1120	\N	1	93
+27144	640	1218	\N	3	0.021
+27145	640	1079	\N	3	7.1
+27146	640	1333	\N	3	0
+27147	640	1108	\N	1	57
+27148	640	1180	\N	2	10.1
+27149	589	1005	\N	3	61.33
+27150	589	1212	\N	3	0.104
+27151	589	1177	\N	1	0
+27152	589	1216	\N	3	0.029
+27153	589	1293	\N	3	0.367
+27154	589	1272	\N	3	0
+27155	589	1104	\N	98	2163
+27156	589	1242	\N	2	0
+27157	589	1211	\N	3	0.141
+27158	589	1292	\N	3	0.278
+27159	589	1178	\N	1	0
+27160	589	1109	\N	2	0.19
+27161	589	1264	\N	3	0
+27162	589	1270	\N	3	0.009
+27163	589	1220	\N	3	0.092
+27164	589	1217	\N	3	0.114
+27165	589	1261	\N	3	0
+27166	589	1213	\N	3	0.204
+27167	589	1103	\N	1	0.5
+27168	589	2000	\N	3	41.74
+27169	589	1266	\N	3	0.01
+27170	589	1131	\N	2	0
+27171	589	1004	\N	3	0.76
+27172	589	1187	\N	1	0
+27173	589	1110	\N	98	0
+27174	589	1165	\N	2	0.002
+27175	589	1105	\N	1	0
+27176	589	1091	\N	2	119
+27177	589	1227	\N	3	0.167
+27178	589	1259	\N	3	0
+27179	589	1018	\N	3	0
+27180	589	1087	\N	2	28
+27181	589	1162	\N	2	4.8
+27182	589	1057	\N	2	0
+27183	589	1170	\N	2	0.564
+27184	589	1175	\N	2	0.067
+27185	589	1246	\N	1	0
+27186	589	1123	\N	1	559
+27187	589	1278	\N	3	0
+27188	589	1180	\N	2	12.7
+27189	589	1008	\N	102	239
+27190	589	1062	\N	103	1000
+27191	589	1215	\N	3	0.087
+27192	589	1221	\N	3	0.067
+27193	589	1098	\N	2	0.364
+27194	589	1253	\N	2	0
+27195	589	1210	\N	3	0.01
+27196	589	1224	\N	3	0.548
+27197	589	1093	\N	2	7
+27198	589	1277	\N	3	0
+27199	589	1262	\N	3	0
+27200	589	1223	\N	3	0.602
+27201	589	1279	\N	3	0
+27202	589	1260	\N	3	0
+27203	589	1225	\N	3	0.126
+27204	589	1126	\N	2	0
+27205	589	1219	\N	3	0.197
+27206	589	1107	\N	1	1074
+27207	589	1106	\N	1	108
+27208	589	1258	\N	3	0.082
+27209	589	1122	\N	1	0
+27210	589	1128	\N	2	0
+27211	589	1166	\N	2	0.212
+27212	589	1129	\N	2	0
+27213	589	1101	\N	2	0.305
+27214	589	1186	\N	1	0
+27215	589	1127	\N	2	0
+27216	589	1007	\N	3	2.5
+27217	589	1010	\N	3	15.42
+27218	589	1268	\N	3	0.272
+27219	589	1003	\N	3	3.61
+27220	589	1271	\N	3	0.002
+27221	589	1280	\N	3	0
+27222	589	1218	\N	3	0.094
+27223	589	1051	\N	3	31.8
+27224	589	1214	\N	3	0.116
+27225	589	1276	\N	3	0
+27226	589	1265	\N	3	0.071
+27227	589	1114	\N	1	0
+27228	589	1226	\N	3	0.152
+27229	589	1079	\N	3	8.2
+27230	589	1185	\N	1	15.7
+27231	589	1092	\N	2	996
+27232	589	1263	\N	3	0
+27233	589	1095	\N	2	0.57
+27234	589	1090	\N	2	42
+27235	589	1125	\N	2	0
+27236	589	1108	\N	1	3
+27237	589	1089	\N	2	4.06
+27238	589	1269	\N	3	0.358
+27239	589	1011	\N	3	12.83
+27240	589	1058	\N	2	0
+27241	589	1012	\N	3	13.49
+27242	589	1167	\N	2	4.375
+27243	589	1130	\N	2	0
+27244	589	1222	\N	3	0.215
+27245	589	1275	\N	3	0.006
+27246	589	1190	\N	1	0
+27247	589	1120	\N	1	444
+27248	639	1012	\N	3	0
+27249	639	1272	\N	3	0
+27250	639	1185	\N	1	8.1
+27251	639	1123	\N	1	31
+27252	639	1260	\N	3	0.044
+27253	639	1013	\N	3	1.65
+27254	639	1108	\N	1	7
+27255	639	1098	\N	2	1.028
+27256	639	1257	\N	3	0.112
+27257	639	1127	\N	2	0.34
+27258	639	1263	\N	3	0.078
+27259	639	1109	\N	2	0.54
+27260	639	1005	\N	3	61.17
+27261	639	1093	\N	2	24
+27262	639	1286	\N	2	11
+27263	639	1268	\N	3	9.391
+27264	639	1404	\N	3	0.085
+27265	639	1058	\N	2	493
+27266	639	1279	\N	3	0
+27267	639	1062	\N	103	2283
+27268	639	1306	\N	3	0.024
+27269	639	1323	\N	3	0
+27270	639	1107	\N	1	26
+27271	639	1269	\N	3	0.998
+27272	639	1285	\N	2	25
+27273	639	1079	\N	3	7
+27274	639	1104	\N	98	50
+27275	639	1167	\N	2	0.725
+27276	639	1275	\N	3	0.113
+27277	639	1090	\N	2	146
+27278	639	1258	\N	3	18.519
+27279	639	1331	\N	3	0.024
+27280	639	1314	\N	3	0.103
+27281	639	1274	\N	3	0.019
+27282	639	1131	\N	2	0
+27283	639	1010	\N	3	46.25
+27284	639	1317	\N	3	0
+27285	639	1299	\N	3	0.033
+27286	639	1265	\N	3	7.624
+27287	639	1011	\N	3	0
+27288	639	1170	\N	2	0.297
+27289	639	1087	\N	2	56
+27290	639	1313	\N	3	0.001
+27291	639	1004	\N	3	31.28
+27292	639	1095	\N	2	2.01
+27293	639	1103	\N	1	3
+27294	639	1122	\N	1	0
+27295	639	1261	\N	3	0.029
+27296	639	1051	\N	3	0.97
+27297	639	1262	\N	3	0.085
+27298	639	1292	\N	3	9.54
+27299	639	1273	\N	3	0.054
+27300	639	1129	\N	2	0
+27301	639	1120	\N	1	1
+27302	639	1277	\N	3	0.018
+27303	639	1264	\N	3	0.259
+27304	639	1311	\N	3	0.027
+27305	639	1301	\N	3	0.03
+27306	639	1125	\N	2	0
+27307	639	1008	\N	102	546
+27308	639	1259	\N	3	0.057
+27309	639	1316	\N	3	0.947
+27310	639	1057	\N	2	43
+27311	639	1305	\N	3	0
+27312	639	1405	\N	3	0
+27313	639	1075	\N	3	0
+27314	639	1130	\N	2	0.08
+27315	639	1106	\N	1	2
+27316	639	1271	\N	3	0.002
+27317	639	1092	\N	2	559
+27318	639	1411	\N	3	0.003
+27319	639	1270	\N	3	0.085
+27320	639	1175	\N	2	0.042
+27321	639	1166	\N	2	0.05
+27322	639	1165	\N	2	0.025
+27323	639	1321	\N	3	0
+27324	639	1178	\N	1	0.23
+27325	639	1312	\N	3	0
+27326	639	1315	\N	3	9.312
+27327	639	1007	\N	3	1.7
+27328	639	1288	\N	2	66
+27329	639	2000	\N	3	47.9
+27330	639	1267	\N	3	0.308
+27331	639	1091	\N	2	206
+27332	639	1300	\N	3	0.074
+27333	639	1183	\N	1	0.1
+27334	639	1101	\N	2	1.419
+27335	639	1128	\N	2	0
+27336	639	1253	\N	2	8
+27337	639	1003	\N	3	4.88
+27338	639	1278	\N	3	0.001
+27339	639	1325	\N	3	0
+27340	639	1406	\N	3	0
+27341	639	1333	\N	3	0
+27342	639	1089	\N	2	8.02
+27343	639	1126	\N	2	6.37
+27344	639	1276	\N	3	0
+27345	639	1329	\N	3	0.088
+27346	639	1293	\N	3	1.092
+27347	639	1304	\N	3	0.078
+27348	639	1014	\N	3	0
+27349	639	1280	\N	3	0
+27350	639	1266	\N	3	9.842
+27351	639	1303	\N	3	0.01
+27352	639	1184	\N	1	0
+27353	708	1257	\N	3	0
+27354	708	1093	\N	2	0
+27355	708	1008	\N	102	900
+27356	708	1003	\N	3	0
+27357	708	1293	\N	3	4
+27358	708	1062	\N	103	3766
+27359	708	1104	\N	98	4000
+27360	708	1087	\N	2	0
+27361	708	1004	\N	3	100
+27362	708	1005	\N	3	0
+27363	708	1258	\N	3	60
+27364	708	1079	\N	3	0
+27365	708	1051	\N	3	0.5
+27366	708	1089	\N	2	0
+27367	708	1253	\N	2	300
+27368	708	2000	\N	3	0
+27369	708	1162	\N	2	0
+27370	708	1007	\N	3	0
+27371	1308	1103	\N	1	9.8
+27372	1308	1007	\N	3	1.71
+27373	1308	1003	\N	3	6.62
+27374	1308	1051	\N	3	63.1
+27375	1308	1004	\N	3	0.38
+27376	1308	1062	\N	103	597
+27377	1308	1162	\N	2	10
+27378	1308	1008	\N	102	143
+27379	1308	1079	\N	3	2.7
+27380	1308	1002	\N	3	1.06
+27381	1308	1005	\N	3	28.2
+27382	1308	2048	\N	102	130
+27383	1308	2047	\N	102	143
+27384	161	1185	\N	1	0
+27385	161	1184	\N	1	0
+27386	161	1183	\N	1	0
+27387	161	1110	\N	98	63.6
+27388	161	2047	\N	102	19.33
+27389	161	1114	\N	1	1.59
+27390	161	1005	\N	3	0.67075
+27391	161	1003	\N	3	0.65625
+27392	161	1217	\N	3	0.0425
+27393	161	1178	\N	1	0.4492
+27394	161	1012	\N	3	0
+27395	161	1092	\N	2	49.27
+27396	161	1218	\N	3	0.01875
+27397	161	1177	\N	1	0
+27398	161	1220	\N	3	0.0925
+27399	161	1051	\N	3	96.52
+27400	161	1223	\N	3	0.0775
+27401	161	1013	\N	3	0
+27402	161	1091	\N	2	19.08
+27403	161	1214	\N	3	0.03125
+27404	161	1211	\N	3	0.01
+27405	161	1232	\N	3	0.00125
+27406	161	1224	\N	3	0.1375
+27407	161	1111	\N	1	1.578
+27408	161	1221	\N	3	0.01375
+27409	161	1215	\N	3	0.00125
+27410	161	1166	\N	2	0.08333
+27411	161	1014	\N	3	0
+27412	161	1212	\N	3	0.02625
+27413	161	1105	\N	1	60.92
+27414	161	1219	\N	3	0.0175
+27415	161	1225	\N	3	0.045
+27416	161	1089	\N	2	0.1247
+27417	161	1098	\N	2	0.02688
+27418	161	1226	\N	3	0.03125
+27419	161	1175	\N	2	0
+27420	161	1227	\N	3	0.02
+27421	161	1007	\N	3	0.595
+27422	161	1093	\N	2	59.22
+27423	161	1011	\N	3	0
+27424	161	1167	\N	2	0.08875
+27425	161	1075	\N	3	0
+27426	161	1095	\N	2	0.07661
+27427	161	1090	\N	2	8.249
+27428	161	1213	\N	3	0.04625
+27429	161	1165	\N	2	0.005
+27430	161	1004	\N	3	1.558
+27431	161	1176	\N	1	1.425
+27432	161	1079	\N	3	0
+27433	161	1101	\N	2	0.05642
+27434	161	1210	\N	3	0.00125
+27435	161	1010	\N	3	0.03857
+27436	161	1002	\N	3	0.105
+27437	161	1112	\N	1	0.01015
+27438	161	1228	\N	3	0
+27439	161	1222	\N	3	0.02875
+27440	161	1087	\N	2	157.5
+27441	305	1185	\N	1	118.5
+27442	305	1184	\N	1	0
+27443	305	1183	\N	1	0
+27444	305	2048	\N	102	18.4931365
+27445	305	2047	\N	102	22.0463
+27446	305	1162	\N	2	15.15
+27447	305	1165	\N	2	0.08225
+27448	305	1101	\N	2	0.1559
+27449	305	1095	\N	2	0.3103
+27450	305	1051	\N	3	94.01
+27451	305	1087	\N	2	39.84
+27452	305	1007	\N	3	0.6738
+27453	305	1089	\N	2	0.3195
+27454	305	1090	\N	2	12.77
+27455	305	1004	\N	3	0.1563
+27456	305	1091	\N	2	26.55
+27457	305	1002	\N	3	0.175
+27458	305	1175	\N	2	0.07088
+27459	305	1167	\N	2	0.375
+27460	305	1092	\N	2	277.1
+27461	305	1098	\N	2	0.03984
+27462	305	1093	\N	2	28.88
+27463	305	1003	\N	3	1.09375
+27464	305	1005	\N	3	4.06615
+27465	1069	1185	\N	1	1.7
+27466	1069	1184	\N	1	0
+27467	1069	1183	\N	1	0
+27468	1069	1258	\N	3	6.054
+27469	1069	1292	\N	3	9.625
+27470	1069	1293	\N	3	49.331
+27471	1069	2048	\N	102	678.66434
+27472	1069	2047	\N	102	729.556
+27473	1069	1005	\N	3	10.9096
+27474	1069	1003	\N	3	14.5644
+27475	1069	1227	\N	3	0.78
+27476	1069	1165	\N	2	0.23
+27477	1069	1167	\N	2	1.218
+27478	1069	1224	\N	3	2.987
+27479	1069	1213	\N	3	0.9967
+27480	1069	1210	\N	3	0.1267
+27481	1069	1214	\N	3	0.38
+27482	1069	1004	\N	3	69.74
+27483	1069	1232	\N	3	0.3767
+27484	1069	1217	\N	3	0.6067
+27485	1069	1101	\N	2	2.995
+27486	1069	1218	\N	3	0.43
+27487	1069	1175	\N	2	0.6603
+27488	1069	1223	\N	3	1.293
+27489	1069	1093	\N	2	0
+27490	1069	1228	\N	3	0
+27491	1069	1220	\N	3	2.02
+27492	1069	1211	\N	3	0.4433
+27493	1069	1091	\N	2	365.1
+27494	1069	1002	\N	3	2.748
+27495	1069	1087	\N	2	88.26
+27496	1069	1079	\N	3	5.21
+27497	1069	1222	\N	3	0.59
+27498	1069	1219	\N	3	0.5967
+27499	1069	1221	\N	3	0.3433
+27500	1069	1176	\N	1	17.28
+27501	1069	1090	\N	2	142.4
+27502	1069	1102	\N	1	21
+27503	1069	1225	\N	3	0.69
+27504	1069	1007	\N	3	1.641
+27505	1069	1215	\N	3	0.19
+27506	1069	1089	\N	2	2.235
+27507	1069	1095	\N	2	2.76
+27508	1069	1092	\N	2	423.5
+27509	1069	1098	\N	2	1.206
+27510	1069	1226	\N	3	0.78
+27511	1069	1212	\N	3	0.52
+27512	1069	1051	\N	3	3.145
+27513	110	1185	\N	1	59.4
+27514	110	1184	\N	1	0
+27515	110	1183	\N	1	0
+27516	110	2048	\N	102	27.8695
+27517	110	1092	\N	2	207.1
+27518	110	1098	\N	2	0
+27519	110	1087	\N	2	41.84
+27520	110	1091	\N	2	26.93
+27521	110	1095	\N	2	0.2112
+27522	110	1007	\N	3	0.5575
+27523	110	1162	\N	2	40.34
+27524	110	1002	\N	3	0.1538
+27525	110	1175	\N	2	0.1384
+27526	110	1051	\N	3	91.87
+27527	110	1089	\N	2	0.06625
+27528	110	1101	\N	2	0.2479
+27529	110	1102	\N	1	6.943
+27530	110	1004	\N	3	0.2275
+27531	110	1090	\N	2	13.86
+27532	110	1093	\N	2	16.1
+27533	110	1003	\N	3	0.96125
+27534	110	1005	\N	3	6.38375
+27535	110	2047	\N	102	31.4275
+27536	733	1162	\N	2	67.1
+27537	734	1162	\N	2	67.1
+27538	733	1177	\N	1	97
+27539	734	1177	\N	1	97
+27540	733	1188	\N	1	73
+27541	734	1188	\N	1	73
+27542	733	1051	\N	3	92.72
+27543	734	1051	\N	3	92.72
+27544	733	1089	\N	2	0.3338
+27545	734	1089	\N	2	0.3338
+27546	733	1095	\N	2	0.2344
+27547	734	1095	\N	2	0.2344
+27548	733	1092	\N	2	274.4
+27549	734	1092	\N	2	274.4
+27550	733	1007	\N	3	0.6788
+27551	734	1007	\N	3	0.6788
+27552	733	1004	\N	3	0.2375
+27553	734	1004	\N	3	0.2375
+27554	733	1098	\N	2	0.02423
+27555	734	1098	\N	2	0.02423
+27556	733	1002	\N	3	0.2625
+27557	734	1002	\N	3	0.2625
+27558	733	1087	\N	2	20.35
+27559	734	1087	\N	2	20.35
+27560	733	1079	\N	3	1.948
+27561	734	1079	\N	3	1.948
+27562	733	1090	\N	2	14.2
+27563	734	1090	\N	2	14.2
+27564	733	1091	\N	2	39.69
+27565	734	1091	\N	2	39.69
+27566	733	1101	\N	2	0.141
+27567	734	1101	\N	2	0.141
+27568	733	1093	\N	2	20
+27569	734	1093	\N	2	20
+27570	733	1003	\N	3	1.640625
+27571	734	1003	\N	3	1.640625
+27572	733	1005	\N	3	4.723075
+27573	734	1005	\N	3	4.723075
+27574	733	2047	\N	102	27.5923
+27575	734	2047	\N	102	27.5923
+27576	733	2048	\N	102	22.85237775
+27577	734	2048	\N	102	22.85237775
+27578	738	2048	\N	102	490.09552
+27579	738	2047	\N	102	517.154
+27580	738	1005	\N	3	38.273
+27581	738	1101	\N	2	7.558
+27582	738	1009	\N	3	0
+27583	738	1175	\N	2	0.2024
+27584	738	1091	\N	2	691.3
+27585	738	1098	\N	2	1.566
+27586	738	1087	\N	2	595.4
+27587	738	1051	\N	3	7.451
+27588	738	1093	\N	2	0
+27589	738	1092	\N	2	642.1
+27590	738	1095	\N	2	5.556
+27591	738	1089	\N	2	6.043
+27592	738	1004	\N	3	32.89
+27593	738	1165	\N	2	0.5
+27594	738	1167	\N	2	8.678
+27595	738	1176	\N	1	14.51
+27596	738	1007	\N	3	4.373
+27597	738	1090	\N	2	326.3
+27598	738	1002	\N	3	3.21
+27599	738	1003	\N	3	17.013
+27600	36	1013	\N	3	0
+27601	36	1008	\N	102	385
+27602	36	1007	\N	3	0.07
+27603	36	1093	\N	2	1
+27604	36	1002	\N	3	0
+27605	36	1003	\N	3	0
+27606	36	1010	\N	3	99.8
+27607	36	1063	\N	3	99.8
+27608	36	1098	\N	2	0.007
+27609	36	1004	\N	3	0.32
+27610	36	1012	\N	3	0
+27611	36	1091	\N	2	0
+27612	36	1075	\N	3	0.03
+27613	36	1087	\N	2	1
+27614	36	1101	\N	2	0.004
+27615	36	1014	\N	3	0
+27616	36	1011	\N	3	0
+27617	36	1092	\N	2	2
+27618	36	1095	\N	2	0.01
+27619	36	1051	\N	3	0.02
+27620	36	1062	\N	103	1610
+27621	36	1090	\N	2	0.3
+27622	36	1089	\N	2	0.05
+27623	36	1005	\N	3	99.6
+27624	36	2047	\N	102	401
+27625	36	2048	\N	102	385
+27626	517	1106	\N	1	0
+27627	517	1246	\N	1	0
+27628	517	1268	\N	3	0
+27629	517	1122	\N	1	0
+27630	517	1114	\N	1	0
+27631	517	1103	\N	1	1.2
+27632	517	1005	\N	3	98.09
+27633	517	1014	\N	3	0
+27634	517	1098	\N	2	0.047
+27635	517	1292	\N	3	0
+27636	517	1278	\N	3	0
+27637	517	1079	\N	3	0
+27638	517	1007	\N	3	0.45
+27639	517	1051	\N	3	1.34
+27640	517	1057	\N	2	0
+27641	517	1095	\N	2	0.03
+27642	517	1166	\N	2	0
+27643	517	1110	\N	98	0
+27644	517	1092	\N	2	133
+27645	517	1277	\N	3	0
+27646	517	1091	\N	2	4
+27647	517	1262	\N	3	0
+27648	517	1075	\N	3	0
+27649	517	1010	\N	3	94.56
+27650	517	1062	\N	103	1590
+27651	517	1012	\N	3	1.11
+27652	517	1190	\N	1	1
+27653	517	1107	\N	1	0
+27654	517	1276	\N	3	0
+27655	517	1185	\N	1	0
+27656	517	1104	\N	98	0
+27657	517	1258	\N	3	0
+27658	517	1279	\N	3	0
+27659	517	1093	\N	2	28
+27660	517	1090	\N	2	9
+27661	517	1004	\N	3	0
+27662	517	1259	\N	3	0
+27663	517	1165	\N	2	0
+27664	517	1108	\N	1	0
+27665	517	1175	\N	2	0.041
+27666	517	1170	\N	2	0.132
+27667	517	1089	\N	2	0.71
+27668	517	1120	\N	1	0
+27669	517	1123	\N	1	0
+27670	517	1162	\N	2	0
+27671	517	1261	\N	3	0
+27672	517	2000	\N	3	97.02
+27673	517	1058	\N	2	0
+27674	517	1272	\N	3	0
+27675	517	1109	\N	2	0
+27676	517	1270	\N	3	0
+27677	517	1293	\N	3	0
+27678	517	1167	\N	2	0.11
+27679	517	1271	\N	3	0
+27680	517	1003	\N	3	0.12
+27681	517	1186	\N	1	0
+27682	517	1260	\N	3	0
+27683	517	1198	\N	2	0.1
+27684	517	1087	\N	2	83
+27685	517	1018	\N	3	0
+27686	517	1013	\N	3	0
+27687	517	1008	\N	102	380
+27688	517	1180	\N	2	2.3
+27689	517	1269	\N	3	0
+27690	517	1101	\N	2	0.064
+27691	517	1011	\N	3	1.35
+27692	517	1242	\N	2	0
+27693	517	1280	\N	3	0
+27694	517	1253	\N	2	0
+27695	517	1178	\N	1	0
+27696	517	1265	\N	3	0
+27697	517	1263	\N	3	0
+27698	517	1266	\N	3	0
+27699	517	1105	\N	1	0
+27700	517	1264	\N	3	0
+27701	517	1177	\N	1	1
+27702	517	1187	\N	1	1
+27703	517	1275	\N	3	0
+27704	1976	1105	\N	1	0
+27705	1976	1213	\N	3	0.139
+27706	1976	1187	\N	1	47
+27707	1976	1162	\N	2	26.3
+27708	1976	1212	\N	3	0.111
+27709	1976	1186	\N	1	0
+27710	1976	1210	\N	3	0.032
+27711	1976	1293	\N	3	0.138
+27712	1976	1170	\N	2	0.206
+27713	1976	1091	\N	2	72
+27714	1976	1095	\N	2	1.1
+27715	1976	1004	\N	3	0.53
+27716	1976	1223	\N	3	0.474
+27717	1976	1265	\N	3	0.072
+27718	1976	1104	\N	98	37
+27719	1976	1098	\N	2	0.562
+27720	1976	1101	\N	2	1.591
+27721	1976	1222	\N	3	0.203
+27722	1976	1166	\N	2	0.163
+27723	1976	1178	\N	1	0
+27724	1976	1177	\N	1	47
+27725	1976	1175	\N	2	0.283
+27726	1976	1292	\N	3	0.278
+27727	1976	1092	\N	2	329
+27728	1976	1224	\N	3	0.429
+27729	1976	1190	\N	1	47
+27730	1976	1005	\N	3	34.91
+27731	1976	1226	\N	3	0.141
+27732	1976	1110	\N	98	0
+27733	1976	1211	\N	3	0.09
+27734	1976	1165	\N	2	0.344
+27735	1976	1087	\N	2	31
+27736	1976	1266	\N	3	0.005
+27737	1976	1090	\N	2	49
+27738	1976	1051	\N	3	61.41
+27739	1976	1216	\N	3	0.065
+27740	1976	1214	\N	3	0.147
+27741	1976	1275	\N	3	0.004
+27742	1976	1089	\N	2	1.45
+27743	1976	1220	\N	3	0.148
+27744	1976	1114	\N	1	0
+27745	1976	1221	\N	3	0.056
+27746	1976	1167	\N	2	1.5
+27747	1976	1269	\N	3	0.123
+27748	1976	1106	\N	1	2
+27749	1976	1225	\N	3	0.114
+27750	1976	1008	\N	102	154
+27751	1976	1003	\N	3	2.25
+27752	1976	1219	\N	3	0.134
+27753	1976	1062	\N	103	644
+27754	1976	1215	\N	3	0.054
+27755	1976	1093	\N	2	14
+27756	1976	1270	\N	3	0.013
+27757	1976	1253	\N	2	0
+27758	1976	1007	\N	3	0.91
+27759	1976	1227	\N	3	0.11
+27760	1976	1277	\N	3	0.005
+27761	1976	1218	\N	3	0.064
+27762	1976	1268	\N	3	0.268
+27763	1976	1258	\N	3	0.078
+27764	1976	1217	\N	3	0.088
+27765	469	1099	\N	1	7
+27766	469	1166	\N	2	0.038
+27767	469	1092	\N	2	52
+27768	469	1293	\N	3	0
+27769	469	1270	\N	3	0
+27770	469	1095	\N	2	0.22
+27771	469	1260	\N	3	0
+27772	469	1212	\N	3	0.008
+27773	469	1218	\N	3	0.008
+27774	469	1103	\N	1	0.8
+27775	469	1087	\N	2	6
+27776	469	1170	\N	2	0.068
+27777	469	1279	\N	3	0
+27778	469	1214	\N	3	0.008
+27779	469	1246	\N	1	0
+27780	469	1271	\N	3	0
+27781	469	1268	\N	3	0
+27782	469	1012	\N	3	40.94
+27783	469	1264	\N	3	0
+27784	469	1075	\N	3	3.1
+27785	469	1222	\N	3	0.006
+27786	469	1175	\N	2	0.024
+27787	469	1223	\N	3	0.027
+27788	469	1178	\N	1	0
+27789	469	1106	\N	1	0
+27790	469	1007	\N	3	0.2
+27791	469	1259	\N	3	0
+27792	469	1225	\N	3	0.007
+27793	469	1211	\N	3	0.004
+27794	469	1277	\N	3	0
+27795	469	1008	\N	102	304
+27796	469	1098	\N	2	0.036
+27797	469	1198	\N	2	1.7
+27798	469	1004	\N	3	0
+27799	469	1104	\N	98	0
+27800	469	1123	\N	1	0
+27801	469	1101	\N	2	0.08
+27802	469	1190	\N	1	2
+27803	469	1057	\N	2	0
+27804	469	1266	\N	3	0
+27805	469	1217	\N	3	0.011
+27806	469	1219	\N	3	0.009
+27807	469	1292	\N	3	0
+27808	469	1262	\N	3	0
+27809	469	1058	\N	2	0
+27810	469	1242	\N	2	0
+27811	469	1272	\N	3	0
+27812	469	1107	\N	1	0
+27813	469	1051	\N	3	17.1
+27814	469	1210	\N	3	0.004
+27815	469	1261	\N	3	0
+27816	469	1079	\N	3	0.2
+27817	469	1226	\N	3	0.09
+27818	469	1110	\N	98	0
+27819	469	1224	\N	3	0.018
+27820	469	1114	\N	1	0
+27821	469	1227	\N	3	0.006
+27822	469	1120	\N	1	0
+27823	469	1005	\N	3	82.4
+27824	469	1108	\N	1	0
+27825	469	1109	\N	2	0
+27826	469	1167	\N	2	0.121
+27827	469	1276	\N	3	0
+27828	469	1089	\N	2	0.42
+27829	469	1105	\N	1	0
+27830	469	2000	\N	3	82.12
+27831	469	1162	\N	2	0.5
+27832	469	1014	\N	3	1.44
+27833	469	1216	\N	3	0.003
+27834	469	1220	\N	3	0.005
+27835	469	1177	\N	1	2
+27836	469	1278	\N	3	0
+27837	469	1062	\N	103	1272
+27838	469	1187	\N	1	2
+27839	469	1122	\N	1	0
+27840	469	1185	\N	1	0
+27841	469	1253	\N	2	0
+27842	469	1090	\N	2	2
+27843	469	1258	\N	3	0
+27844	469	1215	\N	3	0.001
+27845	469	1213	\N	3	0.01
+27846	469	1003	\N	3	0.3
+27847	469	1221	\N	3	0.001
+27848	469	1275	\N	3	0
+27849	469	1165	\N	2	0
+27850	469	1265	\N	3	0
+27851	469	1280	\N	3	0
+27852	469	1010	\N	3	0.89
+27853	469	1269	\N	3	0
+27854	469	1180	\N	2	2.2
+27855	469	1186	\N	1	0
+27856	469	1263	\N	3	0
+27857	469	1091	\N	2	4
+27858	469	1018	\N	3	0
+27859	469	1011	\N	3	35.75
+27860	469	1093	\N	2	4
+27861	752	1226	\N	3	0.81
+27862	1371	1226	\N	3	0.81
+27863	752	1246	\N	1	0
+27864	1371	1246	\N	1	0
+27865	752	1095	\N	2	7.75
+27866	1371	1095	\N	2	7.75
+27867	752	1170	\N	2	0.05
+27868	1371	1170	\N	2	0.05
+27869	752	1005	\N	3	23.45
+27870	1371	1005	\N	3	23.45
+27871	752	1223	\N	3	1.646
+27872	1371	1223	\N	3	1.646
+27873	752	1098	\N	2	4.082
+27874	1371	1098	\N	2	4.082
+27875	752	1177	\N	1	97
+27876	1371	1177	\N	1	97
+27877	752	1263	\N	3	0
+27878	1371	1263	\N	3	0
+27879	752	1242	\N	2	0
+27880	1371	1242	\N	2	0
+27881	752	1093	\N	2	11
+27882	1371	1093	\N	2	11
+27883	752	1122	\N	1	0
+27884	1371	1122	\N	1	0
+27885	752	1101	\N	2	2.46
+27886	1371	1101	\N	2	2.46
+27887	752	1090	\N	2	351
+27888	1371	1090	\N	2	351
+27889	752	1277	\N	3	0.07
+27890	1371	1277	\N	3	0.07
+27891	752	1215	\N	3	0.586
+27892	1371	1215	\N	3	0.586
+27893	752	1253	\N	2	0
+27894	1371	1253	\N	2	0
+27895	752	1276	\N	3	0
+27896	1371	1276	\N	3	0
+27897	752	1213	\N	3	1.358
+27898	1371	1213	\N	3	1.358
+27899	752	1007	\N	3	4.45
+27900	1371	1007	\N	3	4.45
+27901	752	1271	\N	3	0
+27902	1371	1271	\N	3	0
+27903	752	1218	\N	3	0.743
+27904	1371	1218	\N	3	0.743
+27905	752	1123	\N	1	0
+27906	1371	1123	\N	1	0
+27907	752	1258	\N	3	6.957
+27908	1371	1258	\N	3	6.957
+27909	752	1265	\N	3	4.441
+27910	1371	1265	\N	3	4.441
+27911	752	1103	\N	1	34.4
+27912	1371	1103	\N	1	34.4
+27913	752	1003	\N	3	17.73
+27914	1371	1003	\N	3	17.73
+27915	752	1018	\N	3	0
+27916	1371	1018	\N	3	0
+27917	752	1211	\N	3	0.736
+27918	1371	1211	\N	3	0.736
+27919	752	1293	\N	3	21.773
+27920	1371	1293	\N	3	21.773
+27921	752	1187	\N	1	97
+27922	1371	1187	\N	1	97
+27923	752	1062	\N	103	2397
+27924	1371	1062	\N	103	2397
+27925	752	1110	\N	98	0
+27926	1371	1110	\N	98	0
+27927	752	1259	\N	3	0
+27928	1371	1259	\N	3	0
+27929	752	1225	\N	3	1.215
+27930	1371	1225	\N	3	1.215
+27931	752	1120	\N	1	0
+27932	1371	1120	\N	1	0
+27933	752	1107	\N	1	5
+27934	1371	1107	\N	1	5
+27935	752	1185	\N	1	0
+27936	1371	1185	\N	1	0
+27937	752	1219	\N	3	0.99
+27938	1371	1219	\N	3	0.99
+27939	752	1106	\N	1	0
+27940	1371	1106	\N	1	0
+27941	752	1105	\N	1	0
+27942	1371	1105	\N	1	0
+27943	752	1221	\N	3	0.522
+27944	1371	1221	\N	3	0.522
+27945	752	1057	\N	2	0
+27946	1371	1057	\N	2	0
+27947	752	1280	\N	3	0
+27948	1371	1280	\N	3	0
+27949	752	1109	\N	2	0.25
+27950	1371	1109	\N	2	0.25
+27951	752	1051	\N	3	4.69
+27952	1371	1051	\N	3	4.69
+27953	752	1004	\N	3	49.67
+27954	1371	1004	\N	3	49.67
+27955	752	1178	\N	1	0
+27956	1371	1178	\N	1	0
+27957	752	2000	\N	3	0.3
+27958	1371	2000	\N	3	0.3
+27959	752	1264	\N	3	0.124
+27960	1371	1264	\N	3	0.124
+27961	752	1275	\N	3	0.149
+27962	1371	1275	\N	3	0.149
+27963	752	1079	\N	3	11.8
+27964	1371	1079	\N	3	11.8
+27965	752	1190	\N	1	97
+27966	1371	1190	\N	1	97
+27967	752	1272	\N	3	0
+27968	1371	1272	\N	3	0
+27969	752	1261	\N	3	0
+27970	1371	1261	\N	3	0
+27971	752	1266	\N	3	2.09
+27972	1371	1266	\N	3	2.09
+27973	752	1262	\N	3	0
+27974	1371	1262	\N	3	0
+27975	752	1222	\N	3	0.927
+27976	1371	1222	\N	3	0.927
+27977	752	1167	\N	2	4.515
+27978	1371	1167	\N	2	4.515
+27979	752	1108	\N	1	0
+27980	1371	1108	\N	1	0
+27981	752	1114	\N	1	0
+27982	1371	1114	\N	1	0
+27983	752	1268	\N	3	18.521
+27984	1371	1268	\N	3	18.521
+27985	752	1087	\N	2	975
+27986	1371	1087	\N	2	975
+27987	752	1165	\N	2	0.791
+27988	1371	1165	\N	2	0.791
+27989	752	1260	\N	3	0
+27990	1371	1260	\N	3	0
+27991	752	1224	\N	3	3.955
+27992	1371	1224	\N	3	3.955
+27993	752	1283	\N	2	714
+27994	1371	1283	\N	2	714
+27995	752	1058	\N	2	0
+27996	1371	1058	\N	2	0
+27997	752	1091	\N	2	629
+27998	1371	1091	\N	2	629
+27999	752	1278	\N	3	0
+28000	1371	1278	\N	3	0
+28001	752	1269	\N	3	21.375
+28002	1371	1269	\N	3	21.375
+28003	752	1216	\N	3	0.358
+28004	1371	1216	\N	3	0.358
+28005	752	1089	\N	2	14.55
+28006	1371	1089	\N	2	14.55
+28007	752	1092	\N	2	468
+28008	1371	1092	\N	2	468
+28009	752	1270	\N	3	0.376
+28010	1371	1270	\N	3	0.376
+28011	752	1162	\N	2	0
+28012	1371	1162	\N	2	0
+28013	752	1175	\N	2	0.79
+28014	1371	1175	\N	2	0.79
+28015	752	1227	\N	3	0.967
+28016	1371	1227	\N	3	0.967
+28017	752	1166	\N	2	0.247
+28018	1371	1166	\N	2	0.247
+28019	752	1279	\N	3	0
+28020	1371	1279	\N	3	0
+28021	752	1210	\N	3	0.388
+28022	1371	1210	\N	3	0.388
+28023	752	1186	\N	1	0
+28024	1371	1186	\N	1	0
+28025	752	1212	\N	3	0.763
+28026	1371	1212	\N	3	0.763
+28027	752	1217	\N	3	0.94
+28028	1371	1217	\N	3	0.94
+28029	752	1220	\N	3	2.63
+28030	1371	1220	\N	3	2.63
+28031	752	1214	\N	3	0.569
+28032	1371	1214	\N	3	0.569
+28033	752	1008	\N	102	573
+28034	1371	1008	\N	102	573
+28035	752	1292	\N	3	18.759
+28036	1371	1292	\N	3	18.759
+28037	752	1180	\N	2	25.6
+28038	1371	1180	\N	2	25.6
+28039	752	1104	\N	98	9
+28040	1371	1104	\N	98	9
+28041	995	1104	\N	98	0
+28042	995	1265	\N	3	4.639
+28043	995	1213	\N	3	1.475
+28044	995	1210	\N	3	0.272
+28045	995	1224	\N	3	4.159
+28046	995	1261	\N	3	0.14
+28047	995	1218	\N	3	0.563
+28048	995	1219	\N	3	1.193
+28049	995	1004	\N	3	49.41
+28050	995	1106	\N	1	0
+28051	995	1167	\N	2	1.599
+28052	995	1253	\N	2	0
+28053	995	1105	\N	1	0
+28054	995	1268	\N	3	28.579
+28055	995	1092	\N	2	546
+28056	995	1005	\N	3	27.57
+28057	995	1226	\N	3	0.792
+28058	995	1090	\N	2	258
+28059	995	1269	\N	3	8.166
+28060	995	1258	\N	3	9.763
+28061	995	1216	\N	3	0.325
+28062	995	1079	\N	3	2
+28063	995	1222	\N	3	0.805
+28064	995	1221	\N	3	0.457
+28065	995	1215	\N	3	0.315
+28066	995	1007	\N	3	2.5
+28067	995	1051	\N	3	2.96
+28068	995	1162	\N	2	0
+28069	995	1177	\N	1	68
+28070	995	1170	\N	2	1.201
+28071	995	1292	\N	3	29.122
+28072	995	1214	\N	3	0.938
+28073	995	1095	\N	2	5.16
+28074	995	1187	\N	1	68
+28075	995	1098	\N	2	2.19
+28076	995	1270	\N	3	0.171
+28077	995	1008	\N	102	587
+28078	995	1062	\N	103	2456
+28079	995	1175	\N	2	0.252
+28080	995	1190	\N	1	68
+28081	995	1223	\N	3	1.727
+28082	995	1227	\N	3	0.974
+28083	995	1089	\N	2	5.03
+28084	995	1165	\N	2	0.312
+28085	995	1114	\N	1	0
+28086	995	1212	\N	3	0.838
+28087	995	1110	\N	98	0
+28088	995	1277	\N	3	0.148
+28089	995	1087	\N	2	43
+28090	995	1262	\N	3	0.14
+28091	995	1293	\N	3	8.354
+28092	995	1266	\N	3	3.168
+28093	995	1091	\N	2	457
+28094	995	1018	\N	3	0
+28095	995	1103	\N	1	11.5
+28096	995	1275	\N	3	0.339
+28097	995	1178	\N	1	0
+28098	995	1220	\N	3	1.998
+28099	995	1264	\N	3	0.37
+28100	995	1263	\N	3	0.836
+28101	995	1186	\N	1	0
+28102	995	1166	\N	2	0.187
+28103	995	1225	\N	3	0.921
+28104	995	1101	\N	2	0.815
+28105	995	1003	\N	3	17.56
+28106	995	1217	\N	3	0.908
+28107	995	1211	\N	3	0.679
+28108	995	1093	\N	2	15
+28109	1975	1190	\N	1	68
+28110	1975	1211	\N	3	0.167
+28111	1975	1218	\N	3	0.125
+28112	1975	1004	\N	3	1.11
+28113	1975	1090	\N	2	84
+28114	1975	1269	\N	3	0.258
+28115	1975	1219	\N	3	0.22
+28116	1975	1215	\N	3	0.101
+28117	1975	1220	\N	3	0.43
+28118	1975	1293	\N	3	0.288
+28119	1975	1162	\N	2	36
+28120	1975	1226	\N	3	0.162
+28121	1975	1268	\N	3	0.559
+28122	1975	1221	\N	3	0.121
+28123	1975	1223	\N	3	0.852
+28124	1975	1101	\N	2	1.601
+28125	1975	1178	\N	1	0
+28126	1975	1270	\N	3	0.028
+28127	1975	1177	\N	1	68
+28128	1975	1212	\N	3	0.157
+28129	1975	1008	\N	102	224
+28130	1975	1106	\N	1	10
+28131	1975	1114	\N	1	0
+28132	1975	1170	\N	2	0.555
+28133	1975	1095	\N	2	0.87
+28134	1975	1258	\N	3	0.164
+28135	1975	1187	\N	1	68
+28136	1975	1222	\N	3	0.2
+28137	1975	1091	\N	2	96
+28138	1975	1092	\N	2	447
+28139	1975	1165	\N	2	0.16
+28140	1975	1005	\N	3	49.07
+28141	1975	1277	\N	3	0.01
+28142	1975	1275	\N	3	0.008
+28143	1975	1265	\N	3	0.151
+28144	1975	1089	\N	2	1.41
+28145	1975	1104	\N	98	202
+28146	1975	1214	\N	3	0.228
+28147	1975	1087	\N	2	18
+28148	1975	1224	\N	3	0.537
+28149	1975	1210	\N	3	0.049
+28150	1975	1167	\N	2	0.8
+28151	1975	1266	\N	3	0.011
+28152	1975	1217	\N	3	0.19
+28153	1975	1110	\N	98	0
+28154	1975	1062	\N	103	937
+28155	1975	1175	\N	2	0.41
+28156	1975	1227	\N	3	0.184
+28157	1975	1051	\N	3	43.95
+28158	1975	1216	\N	3	0.11
+28159	1975	1003	\N	3	4.2
+28160	1975	1225	\N	3	0.184
+28161	1975	1213	\N	3	0.259
+28162	1975	1105	\N	1	0
+28163	1975	1098	\N	2	0.363
+28164	1975	1186	\N	1	0
+28165	1975	1253	\N	2	0
+28166	1975	1292	\N	3	0.581
+28167	1975	1007	\N	3	1.67
+28168	1975	1093	\N	2	3
+28169	1975	1166	\N	2	0.18
+28170	1974	1213	\N	3	2.631
+28171	1974	2000	\N	3	2.17
+28172	1974	1266	\N	3	3.158
+28173	1974	1260	\N	3	0.782
+28174	1974	1123	\N	1	0
+28175	1974	1007	\N	3	3.72
+28176	1974	1003	\N	3	30.52
+28177	1974	1057	\N	2	0
+28178	1974	1110	\N	98	26
+28179	1974	1079	\N	3	0
+28180	1974	1258	\N	3	24.609
+28181	1974	1103	\N	1	5.5
+28182	1974	1224	\N	3	5.688
+28183	1974	1114	\N	1	0.7
+28184	1974	1112	\N	1	0.7
+28185	1974	1262	\N	3	3.432
+28186	1974	1187	\N	1	4
+28187	1974	1005	\N	3	2.17
+28188	1974	1220	\N	3	0.904
+28189	1974	1275	\N	3	0.846
+28190	1974	1177	\N	1	4
+28191	1974	1090	\N	2	54
+28192	1974	1101	\N	2	0.252
+28193	1974	1215	\N	3	0.813
+28194	1974	1018	\N	3	0
+28195	1974	1276	\N	3	0
+28196	1974	1264	\N	3	3.609
+28197	1974	1212	\N	3	1.263
+28198	1974	1217	\N	3	1.215
+28199	1974	1211	\N	3	1.139
+28200	1974	1219	\N	3	2.1
+28201	1974	1186	\N	1	0
+28202	1974	1227	\N	3	1.172
+28203	1974	1008	\N	102	452
+28204	1974	1091	\N	2	729
+28205	1974	1265	\N	3	9.312
+28206	1974	1214	\N	3	2.191
+28207	1974	1223	\N	3	1.517
+28208	1974	1272	\N	3	0
+28209	1974	1058	\N	2	0
+28210	1974	1170	\N	2	0.41
+28211	1974	1221	\N	3	0.832
+28212	1974	1185	\N	1	3
+28213	1974	1269	\N	3	0.845
+28214	1974	1263	\N	3	1.572
+28215	1974	1092	\N	2	48
+28216	1974	1278	\N	3	0
+28217	1974	1271	\N	3	0
+28218	1974	1175	\N	2	0.08
+28219	1974	1225	\N	3	0.344
+28220	1974	1277	\N	3	0
+28221	1974	1162	\N	2	0
+28222	1974	1087	\N	2	895
+28223	1974	1004	\N	3	35.59
+28224	1974	1218	\N	3	1.191
+28225	1974	1062	\N	103	1891
+28226	1974	1226	\N	3	3.693
+28227	1974	1120	\N	1	0
+28228	1974	1089	\N	2	1.88
+28229	1974	1210	\N	3	0.321
+28230	1974	1270	\N	3	0
+28231	1974	1180	\N	2	15.4
+28232	1974	1216	\N	3	0.139
+28233	1974	1259	\N	3	1.784
+28234	1974	1178	\N	1	0.12
+28235	1974	1122	\N	1	0
+28236	1974	1104	\N	98	1745
+28237	1974	1165	\N	2	0.14
+28238	1974	1093	\N	2	423
+28239	1974	1106	\N	1	486
+28240	1974	1107	\N	1	91
+28241	1974	1261	\N	3	0.961
+28242	1974	1268	\N	3	7.272
+28243	1974	1280	\N	3	0
+28244	1974	1242	\N	2	0
+28245	1974	1292	\N	3	8.117
+28246	1974	1279	\N	3	0
+28247	1974	1095	\N	2	1.59
+28248	1974	1190	\N	1	4
+28249	1974	1293	\N	3	0.845
+28250	1974	1222	\N	3	0.526
+28251	1974	1167	\N	2	2.4
+28252	1974	1105	\N	1	478
+28253	1974	1253	\N	2	105
+28254	1974	1051	\N	3	29.01
+28255	1974	1246	\N	1	0
+28256	1974	1166	\N	2	1.19
+28257	1974	1108	\N	1	0
+28258	1974	1098	\N	2	0.627
+28259	1974	1109	\N	2	0.31
+28260	1400	1223	\N	3	1.072
+28261	1400	1277	\N	3	0
+28262	1400	1092	\N	2	158
+28263	1400	1051	\N	3	45.52
+28264	1400	1276	\N	3	0
+28265	1400	1170	\N	2	0.19
+28266	1400	1222	\N	3	0.372
+28267	1400	1261	\N	3	0.806
+28268	1400	1177	\N	1	2
+28269	1400	1226	\N	3	2.612
+28270	1400	1103	\N	1	3.8
+28271	1400	1221	\N	3	0.589
+28272	1400	1165	\N	2	0.072
+28273	1400	1259	\N	3	1.496
+28274	1400	1217	\N	3	0.859
+28275	1400	1106	\N	1	407
+28276	1400	1262	\N	3	2.879
+28277	1400	1271	\N	3	0
+28278	1400	1167	\N	2	1.148
+28279	1400	1101	\N	2	0.093
+28280	1400	1265	\N	3	7.809
+28281	1400	1246	\N	1	0
+28282	1400	1275	\N	3	0.709
+28283	1400	1190	\N	1	2
+28284	1400	1091	\N	2	375
+28285	1400	1266	\N	3	2.648
+28286	1400	1225	\N	3	0.244
+28287	1400	1280	\N	3	0
+28288	1400	1215	\N	3	0.575
+28289	1400	1263	\N	3	1.318
+28290	1400	1253	\N	2	79
+28291	1400	1090	\N	2	29
+28292	1400	1220	\N	3	0.639
+28293	1400	1004	\N	3	29.84
+28294	1400	1278	\N	3	0
+28295	1400	1180	\N	2	15.4
+28296	1400	1264	\N	3	3.026
+28297	1400	1166	\N	2	0.676
+28298	1400	1079	\N	3	0
+28299	1400	1008	\N	102	364
+28300	1400	1095	\N	2	0.66
+28301	1400	1120	\N	1	0
+28302	1400	1108	\N	1	0
+28303	1400	1186	\N	1	0
+28304	1400	1122	\N	1	0
+28305	1400	1104	\N	98	1464
+28306	1400	1112	\N	1	0.5
+28307	1400	1187	\N	1	2
+28308	1400	1185	\N	1	2.5
+28309	1400	1123	\N	1	0
+28310	1400	1114	\N	1	0.5
+28311	1400	1058	\N	2	0
+28312	1400	1057	\N	2	0
+28313	1400	1109	\N	2	0.26
+28314	1400	1107	\N	1	77
+28315	1400	1279	\N	3	0
+28316	1400	1098	\N	2	0.564
+28317	1400	1089	\N	2	1.62
+28318	1400	1227	\N	3	0.829
+28319	1400	1105	\N	1	401
+28320	1400	1292	\N	3	6.808
+28321	1400	1218	\N	3	0.842
+28322	1400	1210	\N	3	0.227
+28323	1400	1272	\N	3	0
+28324	1400	1093	\N	2	415
+28325	1400	1212	\N	3	0.893
+28326	1400	1007	\N	3	2.94
+28327	1400	1269	\N	3	0.709
+28328	1400	1242	\N	2	0
+28329	1400	1005	\N	3	0.12
+28330	1400	1211	\N	3	0.805
+28331	1400	2000	\N	3	0.12
+28332	1400	1178	\N	1	0.22
+28333	1400	1018	\N	3	0
+28334	1400	1224	\N	3	4.022
+28335	1400	1087	\N	2	298
+28336	1400	1175	\N	2	0.06
+28337	1400	1216	\N	3	0.098
+28338	1400	1260	\N	3	0.656
+28339	1400	1219	\N	3	1.485
+28340	1400	1258	\N	3	20.639
+28341	1400	1213	\N	3	1.861
+28342	1400	1270	\N	3	0
+28343	1400	1293	\N	3	0.709
+28344	1400	1214	\N	3	1.549
+28345	1400	1162	\N	2	0
+28346	1400	1268	\N	3	6.099
+28347	1400	1003	\N	3	21.58
+28348	1400	1062	\N	103	1523
+28349	1400	1110	\N	98	22
+28350	1080	1093	\N	2	36
+28351	1080	1089	\N	2	0.69
+28352	1080	1087	\N	2	46
+28353	1080	1214	\N	3	0.135
+28354	1080	1221	\N	3	0.059
+28355	1080	1129	\N	2	0
+28356	1080	1085	\N	3	0.07
+28357	1080	1120	\N	1	0
+28358	1080	1117	\N	1	0
+28359	1080	1002	\N	3	0.41
+28360	1080	1103	\N	1	1.6
+28361	1080	1313	\N	3	0
+28362	1080	1292	\N	3	0.011
+28363	1080	1217	\N	3	0.117
+28364	1080	1095	\N	2	0.42
+28365	1080	1265	\N	3	0.029
+28366	1080	1325	\N	3	0
+28367	1080	1271	\N	3	0
+28368	1080	1300	\N	3	0
+28369	1080	1218	\N	3	0.05
+28370	1080	1213	\N	3	0.129
+28371	1080	1185	\N	1	102
+28372	1080	1212	\N	3	0.079
+28373	1080	1084	\N	3	2.4
+28374	1080	1268	\N	3	0.01
+28375	1080	1051	\N	3	90
+28376	1080	2016	\N	3	0.017
+28377	1080	1165	\N	2	0.077
+28378	1080	1009	\N	3	0
+28379	1080	1162	\N	2	91.3
+28380	1080	1128	\N	2	0.01
+28381	1080	1011	\N	3	0.58
+28382	1080	1270	\N	3	0.021
+28383	1080	1299	\N	3	0
+28384	1080	1079	\N	3	2.4
+28385	1080	1220	\N	3	0.191
+28386	1080	1263	\N	3	0
+28387	1080	1005	\N	3	6.27
+28388	1080	1004	\N	3	0.34
+28389	1080	1091	\N	2	67
+28390	1080	1277	\N	3	0
+28391	1080	1130	\N	2	0
+28392	1080	1063	\N	3	1.4
+28393	1080	2022	\N	3	0
+28394	1080	1050	\N	3	3.8
+28395	1080	1106	\N	1	8
+28396	1080	1321	\N	3	0
+28397	1080	1258	\N	3	0.039
+28398	1080	1219	\N	3	0.125
+28399	1080	1215	\N	3	0.038
+28400	1080	1225	\N	3	0.089
+28401	1080	1014	\N	3	0
+28402	1080	1333	\N	3	0
+28403	1080	1075	\N	3	0
+28404	1080	1082	\N	3	0
+28405	1080	1175	\N	2	0.191
+28406	1080	1184	\N	1	0
+28407	1080	1262	\N	3	0
+28408	1080	1090	\N	2	21
+28409	1080	1216	\N	3	0.028
+28410	1080	1166	\N	2	0.114
+28411	1080	1273	\N	3	0.002
+28412	1080	2018	\N	3	0
+28413	1080	1315	\N	3	0.01
+28414	1080	1269	\N	3	0.017
+28415	1080	1013	\N	3	0
+28416	1080	1098	\N	2	0.059
+28417	1080	1092	\N	2	303
+28418	1080	1062	\N	103	132
+28419	1080	1008	\N	102	31
+28420	1080	2010	\N	3	0.001
+28421	1080	1109	\N	2	0.15
+28422	1080	1177	\N	1	65
+28423	1080	1131	\N	2	0
+28424	1080	1010	\N	3	0.01
+28425	1080	1126	\N	2	0.04
+28426	1080	1127	\N	2	0
+28427	1080	1267	\N	3	0.002
+28428	1080	1003	\N	3	2.57
+28429	1080	1007	\N	3	0.83
+28430	1080	1227	\N	3	0.121
+28431	1080	1223	\N	3	0.325
+28432	1080	1226	\N	3	0.11
+28433	1080	1167	\N	2	0.639
+28434	1080	1170	\N	2	0.61
+28435	1080	1314	\N	3	0
+28436	1080	1210	\N	3	0.033
+28437	1080	1125	\N	2	0
+28438	1080	1108	\N	1	0
+28439	1080	1293	\N	3	0.017
+28440	1080	2020	\N	3	0
+28441	1080	1101	\N	2	0.197
+28442	1080	2026	\N	3	0
+28443	1080	1122	\N	1	0
+28444	1080	1116	\N	1	0
+28445	1080	1266	\N	3	0.006
+28446	1080	1012	\N	3	0.82
+28447	1080	1222	\N	3	0.104
+28448	1080	1211	\N	3	0.088
+28449	1080	1107	\N	1	93
+28450	1080	1261	\N	3	0
+28451	1080	1323	\N	3	0.001
+28452	1080	1264	\N	3	0.001
+28453	1080	1224	\N	3	0.542
+28454	1080	2009	\N	3	0
+28455	1080	1123	\N	1	745
+28456	1080	2012	\N	3	0
+28457	1080	2047	\N	102	39
+28458	1080	2048	\N	102	32
+28459	1129	1185	\N	1	0
+28460	1129	2048	\N	102	602.510076
+28461	1129	2047	\N	102	645.456
+28462	1129	1005	\N	3	21.23666
+28463	1129	1003	\N	3	20.78734
+28464	1129	1227	\N	3	1.063
+28465	1129	1217	\N	3	1.384
+28466	1129	1175	\N	2	0.08375
+28467	1129	1266	\N	3	0.8191
+28468	1129	1225	\N	3	1.646
+28469	1129	1314	\N	3	0.2471
+28470	1129	1232	\N	3	0.4488
+28471	1129	1093	\N	2	0.9963
+28472	1129	1222	\N	3	1.181
+28473	1129	1211	\N	3	0.7788
+28474	1129	2051	\N	2	0.1725
+28475	1129	1007	\N	3	3.185
+28476	1129	1221	\N	3	0.6388
+28477	1129	1215	\N	3	0.1888
+28478	1129	1092	\N	2	745.4
+28479	1129	1212	\N	3	0.93
+28480	1129	1214	\N	3	0.6463
+28481	1129	1292	\N	3	34.69
+28482	1129	1341	\N	2	0.07875
+28483	1129	1223	\N	3	3.006
+28484	1129	1090	\N	2	267.8
+28485	1129	1224	\N	3	7.419
+28486	1129	1002	\N	3	4.013
+28487	1129	1165	\N	2	0.09456
+28488	1129	1340	\N	2	0
+28489	1129	1219	\N	3	1.094
+28490	1129	1177	\N	1	42.46
+28491	1129	1087	\N	2	263.8
+28492	1129	1265	\N	3	3.298
+28493	1129	1316	\N	3	12.58
+28494	1129	1258	\N	3	4.253
+28495	1129	1079	\N	3	9.718
+28496	1129	1101	\N	2	2.135
+28497	1129	1103	\N	1	0.7938
+28498	1129	1218	\N	3	0.76
+28499	1129	1213	\N	3	1.753
+28500	1129	1089	\N	2	4.108
+28501	1129	1228	\N	3	0.04375
+28502	1129	1095	\N	2	3.178
+28503	1129	1210	\N	3	0.1963
+28504	1129	1176	\N	1	57.31
+28505	1129	1293	\N	3	12.61
+28506	1129	1220	\N	3	2.771
+28507	1129	2050	\N	2	0
+28508	1129	1051	\N	3	1.751
+28509	1129	1167	\N	2	3.909
+28510	1129	1226	\N	3	1.123
+28511	1129	1004	\N	3	53.04
+28512	1129	2049	\N	2	0.02813
+28513	1129	1109	\N	2	16.67
+28514	1129	1315	\N	3	34.34
+28515	1129	1098	\N	2	0.9746
+28516	1129	1091	\N	2	506.9
+28517	1250	1185	\N	1	0.2
+28518	1250	1184	\N	1	0
+28519	1250	1183	\N	1	0
+28520	1250	1063	\N	3	6.0588
+28521	1250	2048	\N	102	77.35727375
+28522	1250	2047	\N	102	78.999
+28523	1250	1005	\N	3	17.327875
+28524	1250	1003	\N	3	1.578125
+28525	1250	1012	\N	3	0.9275
+28526	1250	1002	\N	3	0.2525
+28527	1250	1089	\N	2	0.398
+28528	1250	1162	\N	2	14.84
+28529	1250	1092	\N	2	486.4
+28530	1250	1098	\N	2	0.1866
+28531	1250	1087	\N	2	22.33
+28532	1250	1175	\N	2	0.1241
+28533	1250	2038	\N	3	4.251
+28534	1250	1102	\N	1	0
+28535	1250	1010	\N	3	3.056
+28536	1250	1093	\N	2	0
+28537	1250	1014	\N	3	1.099
+28538	1250	2033	\N	3	4.441
+28539	1250	1051	\N	3	79.54
+28540	1250	1091	\N	2	36.73
+28541	1250	1165	\N	2	0.045
+28542	1250	1013	\N	3	0
+28543	1250	1090	\N	2	19.14
+28544	1250	1167	\N	2	0.4325
+28545	1250	1007	\N	3	1.179
+28546	1250	1095	\N	2	0.3374
+28547	1250	1011	\N	3	0.9763
+28548	1250	1004	\N	3	0.375
+28549	1250	2065	\N	3	0.1571
+28550	1250	1103	\N	1	0
+28551	1250	1101	\N	2	0.4174
+28552	626	1176	\N	1	3.433
+28553	626	1063	\N	3	2.6759
+28554	626	2048	\N	102	51.412425
+28555	626	2047	\N	102	57.3375
+28556	626	1005	\N	3	12.904375
+28557	626	1003	\N	3	1.008125
+28558	626	1087	\N	2	16.41
+28559	626	1002	\N	3	0.1613
+28560	626	1162	\N	2	23.04
+28561	626	1007	\N	3	0.35
+28562	626	1004	\N	3	0.1875
+28563	626	1098	\N	2	0.05289
+28564	626	1095	\N	2	0.2213
+28565	626	1051	\N	3	85.55
+28566	626	1101	\N	2	0.4935
+28567	626	1092	\N	2	155.8
+28568	626	1011	\N	3	0.9919
+28569	626	1089	\N	2	0.4501
+28570	626	1032	\N	2	1740
+28571	626	1041	\N	2	0
+28572	626	1093	\N	2	0
+28573	626	1012	\N	3	1.684
+28574	626	1013	\N	3	0
+28575	626	1044	\N	2	0
+28576	626	1039	\N	2	54.08
+28577	626	1091	\N	2	27.47
+28578	626	1090	\N	2	19.15
+28579	626	1010	\N	3	0
+28580	626	1075	\N	3	0
+28581	626	1043	\N	2	0
+28582	626	1014	\N	3	0
+28583	1978	1103	\N	1	14.8
+28584	1978	2048	\N	102	368.3584745
+28585	1978	2047	\N	102	365.518
+28586	1978	1005	\N	3	76.68795
+28587	1978	1003	\N	3	7.25305
+28588	1978	1090	\N	2	115
+28589	1978	1098	\N	2	0.2659
+28590	1978	1175	\N	2	0.1606
+28591	1978	1102	\N	1	63.94
+28592	1978	1093	\N	2	0
+28593	1978	1091	\N	2	302.8
+28594	1978	1095	\N	2	1.854
+28595	1978	1167	\N	2	6.271
+28596	1978	1166	\N	2	0.1025
+28597	1978	1092	\N	2	250.1
+28598	1978	1089	\N	2	1.242
+28599	1978	1176	\N	1	4.988
+28600	1978	1101	\N	2	2.696
+28601	1978	1087	\N	2	8.058
+28602	1978	1079	\N	3	3.021
+28603	1978	2038	\N	3	3.384
+28604	1978	1009	\N	3	71.6
+28605	1978	2065	\N	3	0.5013
+28606	1978	1051	\N	3	11.47
+28607	1978	1007	\N	3	1.283
+28608	1978	1002	\N	3	1.219
+28609	1978	1165	\N	2	0.3263
+28610	1978	1004	\N	3	3.306
+28611	1978	2033	\N	3	4.296
+28612	960	1103	\N	1	6.6
+28613	960	2048	\N	102	369.637321
+28614	960	2047	\N	102	358.705
+28615	960	1005	\N	3	80.31315
+28616	960	1003	\N	3	7.03885
+28617	960	1165	\N	2	0.065
+28618	960	1090	\N	2	26.53
+28619	960	1167	\N	2	1.434
+28620	960	1087	\N	2	4.46
+28621	960	1093	\N	2	0.4625
+28622	960	1091	\N	2	108.2
+28623	960	1098	\N	2	0.2138
+28624	960	2038	\N	3	1.934
+28625	960	1004	\N	3	1.033
+28626	960	2065	\N	3	0.2963
+28627	960	1051	\N	3	11.19
+28628	960	1101	\N	2	0.9811
+28629	960	1089	\N	2	0.1405
+28630	960	1175	\N	2	0.05788
+28631	960	1095	\N	2	1.354
+28632	960	1176	\N	1	0
+28633	960	1079	\N	3	0.1488
+28634	960	1009	\N	3	74.36
+28635	960	2033	\N	3	2.771
+28636	960	1166	\N	2	0.08
+28637	960	1102	\N	1	64.18
+28638	960	1092	\N	2	82.26
+28639	960	1002	\N	3	1.183
+28640	960	1007	\N	3	0.425
+28641	1177	1110	\N	98	0
+28642	1177	2048	\N	102	356.900072
+28643	1177	2047	\N	102	356.794
+28644	1177	1114	\N	1	0
+28645	1177	1005	\N	3	2.45312
+28646	1177	1003	\N	3	23.45288
+28647	1177	1004	\N	3	28.13
+28648	1177	1112	\N	1	0
+28649	1177	1092	\N	2	94.84
+28650	1177	1266	\N	3	2.288
+28651	1177	1101	\N	2	0.02996
+28652	1177	1087	\N	2	748.8
+28653	1177	1263	\N	3	0.8364
+28654	1177	1258	\N	3	16.24
+28655	1177	1007	\N	3	3.624
+28656	1177	1111	\N	1	0
+28657	1177	1265	\N	3	8.017
+28658	1177	1091	\N	2	494.1
+28659	1177	1002	\N	3	3.676
+28660	1177	1269	\N	3	0.571
+28661	1177	1051	\N	3	42.34
+28662	1177	1093	\N	2	600.9
+28663	1177	1089	\N	2	0
+28664	1177	1253	\N	2	85.43
+28665	1177	1264	\N	3	2.635
+28666	1177	1100	\N	1	64.27
+28667	1177	1292	\N	3	5.738
+28668	1177	1090	\N	2	29.5
+28669	1177	1095	\N	2	3.89
+28670	1177	1105	\N	1	200
+28671	1177	1098	\N	2	0
+28672	824	1162	\N	2	30.3
+28673	824	1177	\N	1	68
+28674	824	1188	\N	1	50
+28675	824	1098	\N	2	0.02758
+28676	824	1002	\N	3	0.1638
+28677	824	1051	\N	3	94.54
+28678	824	1092	\N	2	227.8
+28679	824	1101	\N	2	0.1962
+28680	824	1007	\N	3	0.6875
+28681	824	1087	\N	2	61.93
+28682	824	1079	\N	3	1.259
+28683	824	1095	\N	2	0.2738
+28684	824	1093	\N	2	14.27
+28685	824	1090	\N	2	13.64
+28686	824	1004	\N	3	0.2338
+28687	824	1089	\N	2	0.4388
+28688	824	1091	\N	2	30.51
+28689	824	1003	\N	3	1.02375
+28690	824	1005	\N	3	3.51495
+28691	824	2047	\N	102	20.259
+28692	824	2048	\N	102	17.0032275
+28693	1114	1162	\N	2	67.1
+28694	1114	1177	\N	1	97
+28695	1114	1188	\N	1	73
+28696	1114	1051	\N	3	92.72
+28697	1114	1089	\N	2	0.3338
+28698	1114	1095	\N	2	0.2344
+28699	1114	1092	\N	2	274.4
+28700	1114	1007	\N	3	0.6788
+28701	1114	1004	\N	3	0.2375
+28702	1114	1098	\N	2	0.02423
+28703	1114	1002	\N	3	0.2625
+28704	1114	1087	\N	2	20.35
+28705	1114	1079	\N	3	1.948
+28706	1114	1090	\N	2	14.2
+28707	1114	1091	\N	2	39.69
+28708	1114	1101	\N	2	0.141
+28709	1114	1093	\N	2	20
+28710	1114	1003	\N	3	1.640625
+28711	1114	1005	\N	3	4.723075
+28712	1114	2047	\N	102	27.5923
+28713	1114	2048	\N	102	22.85237775
+28714	1337	2048	\N	102	25.9078525
+28715	1337	1079	\N	3	2.28
+28716	1337	1093	\N	2	86.93
+28717	1337	1101	\N	2	0.514
+28718	1337	1092	\N	2	406.8
+28719	1337	1004	\N	3	0.325
+28720	1337	1177	\N	1	149.2
+28721	1337	1087	\N	2	203.7
+28722	1337	1090	\N	2	42.65
+28723	1337	1089	\N	2	1.393
+28724	1337	1051	\N	3	90.94
+28725	1337	1002	\N	3	0.2638
+28726	1337	1095	\N	2	0.3483
+28727	1337	1091	\N	2	51.19
+28728	1337	1162	\N	2	101.4
+28729	1337	1098	\N	2	0.08273
+28730	1337	1007	\N	3	1.718
+28731	1337	1003	\N	3	1.64875
+28732	1337	1005	\N	3	5.36825
+28733	1337	2047	\N	102	30.993
+28748	25	1258	\N	3	5.051
+28749	25	1257	\N	3	0.484
+28750	25	1292	\N	3	4.477
+28751	25	1293	\N	3	0.361
+28752	25	1095	\N	2	4.194
+28753	25	1051	\N	3	69
+28754	25	1002	\N	3	2.905
+28755	25	1087	\N	2	7.135
+28756	25	1093	\N	2	61.64
+28757	25	1098	\N	2	0.05616
+28758	25	1101	\N	2	0
+28759	25	1253	\N	2	65.9
+28760	25	1089	\N	2	2.128
+28761	25	1090	\N	2	16.49
+28762	25	1091	\N	2	148
+28763	25	1007	\N	3	0.8463
+28764	25	1004	\N	3	12.85
+28765	25	1092	\N	2	281.4
+28766	25	1003	\N	3	18.15625
+28767	25	1005	\N	3	0
+28768	25	2047	\N	102	184.8648
+28769	25	2048	\N	102	190.134819
+28770	488	1258	\N	3	6.845
+28771	488	1257	\N	3	0.7
+28772	488	1292	\N	3	7.247
+28773	488	1051	\N	3	62.82
+28774	488	1101	\N	2	0
+28775	488	1095	\N	2	3.848
+28776	488	1007	\N	3	0.8275
+28777	488	1253	\N	2	67.74
+28778	488	1087	\N	2	6.889
+28779	488	1093	\N	2	54.94
+28780	488	1092	\N	2	273.3
+28781	488	1004	\N	3	19.44
+28782	488	1090	\N	2	16.41
+28783	488	1091	\N	2	144.4
+28784	488	1089	\N	2	1.965
+28785	488	1002	\N	3	2.805
+28786	488	1098	\N	2	0.0551
+28787	488	1003	\N	3	17.53125
+28788	488	1005	\N	3	0
+28789	488	2047	\N	102	242.61
+28790	488	2048	\N	102	247.812675
+28791	488	1293	\N	3	0.485
+28792	1179	1312	\N	3	0
+28793	1179	1089	\N	2	0.16
+28794	1179	1092	\N	2	77
+28795	1179	1091	\N	2	458
+28796	1179	1008	\N	102	408
+28797	1179	2016	\N	3	0.939
+28798	1179	1126	\N	2	0.04
+28799	1179	1265	\N	3	8.79
+28800	1179	1311	\N	3	0.167
+28801	1179	1101	\N	2	0.026
+28802	1179	1167	\N	2	0.052
+28803	1179	1305	\N	3	0
+28804	1179	1263	\N	3	0.963
+28805	1179	1405	\N	3	0.001
+28806	1179	1177	\N	1	21
+28807	1179	1013	\N	3	0.16
+28808	1179	1012	\N	3	0
+28809	1179	1253	\N	2	100
+28810	1179	1280	\N	3	0.018
+28811	1179	1276	\N	3	0.001
+28812	1179	1075	\N	3	0.07
+28813	1179	2009	\N	3	0.31
+28814	1179	1406	\N	3	0.036
+28815	1179	1007	\N	3	3.67
+28816	1179	1330	\N	3	0.225
+28817	1179	2010	\N	3	0.061
+28818	1179	1106	\N	1	316
+28819	1179	1184	\N	1	0
+28820	1179	1183	\N	1	9.3
+28821	1179	1258	\N	3	19.2
+28822	1179	1010	\N	3	0
+28823	1179	1166	\N	2	0.441
+28824	1179	1170	\N	2	0.413
+28825	1179	2012	\N	3	0.064
+28826	1179	1414	\N	3	0
+28827	1179	1333	\N	3	0
+28828	1179	1257	\N	3	1.14
+28829	1179	1334	\N	3	0.002
+28830	1179	2022	\N	3	0.051
+28831	1179	1185	\N	1	2.4
+28832	1179	1262	\N	3	0.843
+28833	1179	1128	\N	2	0
+28834	1179	2024	\N	3	0.018
+28835	1179	1085	\N	3	29
+28836	1179	1131	\N	2	0
+28837	1179	2025	\N	3	0.001
+28838	1179	1264	\N	3	3.1
+28839	1179	1011	\N	3	0.1
+28840	1179	1259	\N	3	0.653
+28841	1179	2026	\N	3	0.007
+28842	1179	1090	\N	2	26.8
+28843	1179	1002	\N	3	3.65
+28844	1179	1098	\N	2	0.033
+28845	1179	1273	\N	3	0.015
+28846	1179	1306	\N	3	0.225
+28847	1179	1095	\N	2	3.67
+28848	1179	1314	\N	3	0.412
+28849	1179	2020	\N	3	0.037
+28850	1179	1317	\N	3	0.001
+28851	1179	1063	\N	3	0.33
+28852	1179	1105	\N	1	316
+28853	1179	1303	\N	3	0.104
+28854	1179	1005	\N	3	2.44
+28855	1179	1321	\N	3	0.002
+28856	1179	1129	\N	2	0
+28857	1179	1329	\N	3	0.92
+28858	1179	1093	\N	2	654
+28859	1179	1062	\N	103	1710
+28860	1179	1165	\N	2	0.029
+28861	1179	1316	\N	3	0.772
+28862	1179	1109	\N	2	0.75
+28863	1179	2018	\N	3	0.118
+28864	1179	1127	\N	2	0
+28865	1179	1301	\N	3	0.009
+28866	1179	1260	\N	3	0.543
+28867	1179	1304	\N	3	0.816
+28868	1179	1272	\N	3	0.001
+28869	1179	1335	\N	3	0
+28870	1179	1404	\N	3	0.116
+28871	1179	1293	\N	3	1.18
+28872	1179	1271	\N	3	0.051
+28873	1179	1299	\N	3	0.327
+28874	1179	1292	\N	3	7.44
+28875	1179	1266	\N	3	3.39
+28876	1179	1313	\N	3	0.007
+28877	1179	1315	\N	3	6.59
+28878	1179	1003	\N	3	23.3
+28879	1179	1051	\N	3	36.6
+28880	1179	1004	\N	3	34
+28881	1179	1130	\N	2	0
+28882	1179	1411	\N	3	0.008
+28883	1179	1277	\N	3	0.064
+28884	1179	1409	\N	3	0.003
+28885	1179	1261	\N	3	0.349
+28886	1179	1267	\N	3	0.049
+28887	1179	1125	\N	2	0
+28888	1179	1323	\N	3	0.061
+28889	1179	1087	\N	2	707
+28890	1179	1300	\N	3	0.196
+28891	1179	2023	\N	3	0.01
+28892	1179	1278	\N	3	0.01
+28893	1179	1178	\N	1	1.06
+28894	1179	1014	\N	3	0
+28895	1179	1175	\N	2	0.069
+28896	1179	1103	\N	1	28.3
+28897	1179	2047	\N	102	409
+28898	1179	2048	\N	102	408
+28899	1175	1258	\N	3	18.2
+28900	1175	1266	\N	3	3.18
+28901	1175	1011	\N	3	0
+28902	1175	2026	\N	3	0.007
+28903	1175	1131	\N	2	0
+28904	1175	1095	\N	2	4.37
+28905	1175	1178	\N	1	3.02
+28906	1175	1075	\N	3	0
+28907	1175	1262	\N	3	0.766
+28908	1175	1409	\N	3	0.002
+28909	1175	1264	\N	3	2.92
+28910	1175	1105	\N	1	287
+28911	1175	1085	\N	3	27.6
+28912	1175	1195	\N	2	0.1
+28913	1175	1278	\N	3	0.009
+28914	1175	1273	\N	3	0.014
+28915	1175	1414	\N	3	0
+28916	1175	1334	\N	3	0.002
+28917	1175	2025	\N	3	0
+28918	1175	2020	\N	3	0.035
+28919	1175	1123	\N	1	8
+28920	1175	1014	\N	3	0
+28921	1175	1185	\N	1	1.4
+28922	1175	1090	\N	2	33.4
+28923	1175	1098	\N	2	0.047
+28924	1175	1292	\N	3	7.26
+28925	1175	1313	\N	3	0.007
+28926	1175	1120	\N	1	2
+28927	1175	1106	\N	1	292
+28928	1175	1333	\N	3	0
+28929	1175	1180	\N	2	13.8
+28930	1175	1300	\N	3	0.189
+28931	1175	1007	\N	3	2.97
+28932	1175	1271	\N	3	0.046
+28933	1175	1107	\N	1	60
+28934	1175	1183	\N	1	6.3
+28935	1175	1109	\N	2	0.6
+28936	1175	1317	\N	3	0.002
+28937	1175	1003	\N	3	27
+28938	1175	1303	\N	3	0.102
+28939	1175	1329	\N	3	0.802
+28940	1175	1315	\N	3	6.37
+28941	1175	1175	\N	2	0.07
+28942	1175	1010	\N	3	0
+28943	1175	1002	\N	3	4.23
+28944	1175	1177	\N	1	9
+28945	1175	1260	\N	3	0.541
+28946	1175	1089	\N	2	0.13
+28947	1175	1277	\N	3	0.06
+28948	1175	1321	\N	3	0.002
+28949	1175	1199	\N	2	4.4
+28950	1175	2018	\N	3	0.127
+28951	1175	1165	\N	2	0.011
+28952	1175	1111	\N	1	0
+28953	1175	1114	\N	1	0
+28954	1175	1184	\N	1	0
+28955	1175	2024	\N	3	0.018
+28956	1175	1198	\N	2	0.1
+28957	1175	1166	\N	2	0.303
+28958	1175	1265	\N	3	8.34
+28959	1175	1406	\N	3	0.032
+28960	1175	1311	\N	3	0.163
+28961	1175	1112	\N	1	0
+28962	1175	2016	\N	3	0.894
+28963	1175	1127	\N	2	0
+28964	1175	2009	\N	3	0.299
+28965	1175	1125	\N	2	0.02
+28966	1175	1012	\N	3	0
+28967	1175	1004	\N	3	31
+28968	1175	1276	\N	3	0.001
+28969	1175	1257	\N	3	0.993
+28970	1175	1261	\N	3	0.326
+28971	1175	1013	\N	3	0
+28972	1175	1404	\N	3	0.125
+28973	1175	1304	\N	3	0.7
+28974	1175	1316	\N	3	0.731
+28975	1175	1323	\N	3	0.063
+28976	1175	1051	\N	3	37.6
+28977	1175	1122	\N	1	1
+28978	1175	1087	\N	2	890
+28979	1175	1330	\N	3	0.191
+28980	1175	1411	\N	3	0.007
+28981	1175	1092	\N	2	71
+28982	1175	2023	\N	3	0.009
+28983	1175	1306	\N	3	0.191
+28984	1175	1301	\N	3	0.009
+28985	1175	1130	\N	2	0
+28986	1175	1101	\N	2	0.027
+28987	1175	1197	\N	2	0
+28988	1175	1293	\N	3	1.14
+28989	1175	1091	\N	2	574
+28990	1175	1253	\N	2	93
+28991	1175	1063	\N	3	0
+28992	1175	1405	\N	3	0.002
+28993	1175	1167	\N	2	0.06
+28994	1175	2012	\N	3	0.06
+28995	1175	1129	\N	2	0
+28996	1175	1267	\N	3	0.044
+28997	1175	2022	\N	3	0.046
+28998	1175	1305	\N	3	0
+28999	1175	1128	\N	2	0.13
+29000	1175	1194	\N	2	3.3
+29001	1175	1103	\N	1	30.1
+29002	1175	1108	\N	1	1
+29003	1175	1312	\N	3	0
+29004	1175	2010	\N	3	0.063
+29005	1175	1314	\N	3	0.464
+29006	1175	1093	\N	2	185
+29007	1175	1259	\N	3	0.679
+29008	1175	1008	\N	102	393
+29009	1175	1335	\N	3	0
+29010	1175	1272	\N	3	0
+29011	1175	1263	\N	3	0.874
+29012	1175	1196	\N	2	6
+29013	1175	1170	\N	2	0.352
+29014	1175	1299	\N	3	0.305
+29015	1175	1062	\N	103	1640
+29016	1175	1280	\N	3	0.018
+29017	1175	1126	\N	2	0.08
+29018	1175	1005	\N	3	1.44
+29019	1175	1110	\N	98	0
+29020	1175	2047	\N	102	393
+29021	1175	2048	\N	102	393
 \.
 
 
@@ -9203,6 +13686,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5480	6	378	1	5	, chopped	372	f	\N	4	f	t	\N	1
 2634	0	122	1	1	\N	187	f	\N	0	f	t	\N	1
 5396	4	362	4	7	, finely sliced	962	f	\N	0	f	t	\N	1
+2666	4	140	1	9	, chopped	17	f	\N	8	f	t	\N	1
 5397	0	362	1	4	\N	187	f	\N	1	f	t	\N	1
 5398	0	362	1	2	\N	963	f	\N	2	f	t	\N	1
 5399	0	362	1	1	\N	4	t	\N	3	f	t	\N	1
@@ -9233,7 +13717,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3213	6	162	1	2	\N	562	f	\N	3	f	t	\N	1
 2384	7	102	1	2	\N	29	f	\N	2	f	t	\N	0.25
 2386	8	102	1	1	, to serve	29	t	\N	4	f	t	\N	0.25
-4380	7	194	1	2	\N	29	f	\N	2	f	t	\N	0.25
+4378	4	194	1	10	\N	122	f	\N	1	f	t	\N	1
 3819	0	158	1	1	\N	157	f	\N	1	f	t	\N	1
 1267	0	29	1	1	, minced	5	f	\N	2	f	t	\N	1
 1268	7	29	1	2	, melted	29	f	\N	3	f	t	\N	0.25
@@ -9244,14 +13728,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5421	6	366	1	4	(CIDER VIENGAR?)	80	f	\N	4	f	t	\N	1
 1269	7	29	1	1	, grated	95	f	\N	4	f	t	\N	1
 5106	7	161	1	4	, to serve	244	t	\N	8	f	t	\N	1
-2723	6	146	1	3	\N	915	f	\N	0	f	t	\N	1
-2724	6	146	1	1	\N	830	f	\N	1	f	t	\N	1
 2374	0	69	1	8	\N	\N	f	65	0	f	t	\N	1
 2375	0	69	1	6	\N	144	f	\N	1	f	t	\N	1
+2723	6	146	1	3	\N	915	f	\N	1	f	t	\N	1
+2724	6	146	1	1	\N	830	f	\N	2	f	t	\N	1
 2376	0	69	1	1	, finely chopped	3	t	\N	2	f	t	\N	1
 2377	7	69	1	4	\N	61	f	\N	3	f	t	\N	1
 3230	0	157	1	2	\N	1	f	\N	0	f	t	\N	1
 5412	0	365	4	7	\N	977	f	\N	0	f	t	\N	1
+4379	6	194	1	3	\N	711	f	\N	2	f	t	\N	1
 5413	0	365	1	2	\N	661	f	\N	1	f	t	\N	1
 5414	4	365	1	10	\N	694	f	\N	2	f	t	\N	1
 5415	4	365	4	7	\N	95	f	\N	3	f	t	\N	1
@@ -9262,11 +13747,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5437	3	370	1	500	\N	970	f	\N	3	f	t	\N	1
 5438	10	370	1	500	\N	475	f	\N	4	f	t	\N	1
 5439	0	370	1	2	\N	971	f	\N	5	f	t	\N	1
-4378	4	194	1	10	\N	122	f	\N	0	f	t	\N	1
-4379	6	194	1	3	\N	711	f	\N	1	f	t	\N	1
-4381	6	194	1	1	\N	562	f	\N	3	f	t	\N	1
-4382	7	194	1	2	\N	344	f	\N	4	f	t	\N	1
-4383	6	194	1	1	, grated	95	t	\N	5	f	t	\N	1
+4380	7	194	1	2	\N	29	f	\N	3	f	t	\N	0.25
+4381	6	194	1	1	\N	562	f	\N	4	f	t	\N	1
+4382	7	194	1	2	\N	344	f	\N	5	f	t	\N	1
 1158	6	58	4	1	\N	56	f	\N	0	f	t	\N	1
 1159	0	58	1	2	, pocket halved	166	f	\N	1	f	t	\N	1
 1160	0	58	2	1	, thinly sliced	1	f	\N	2	f	t	\N	1
@@ -9322,6 +13805,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3439	0	50	1	2	\N	\N	f	65	0	f	t	\N	1
 1245	6	64	1	1	, shredded	119	f	\N	7	f	t	\N	1
 1246	7	64	1	1	, grated	95	f	\N	8	f	t	\N	1
+2389	6	79	4	1	\N	29	f	\N	0	f	t	\N	0.25
+2991	6	155	4	1	\N	29	f	\N	1	f	t	\N	0.25
 1209	6	63	1	4	\N	94	f	\N	1	f	t	\N	1
 7139	6	706	1	1	, diced	222	f	\N	2	f	t	\N	1
 1117	6	66	4	1	, whole	186	f	\N	1	f	t	\N	1
@@ -9362,14 +13847,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1390	6	89	1	1	\N	288	f	\N	6	f	t	\N	1
 7140	6	706	1	1	, diced	1286	f	\N	3	f	t	\N	1
 7141	0	706	1	2	, sliced	5	t	\N	4	f	t	\N	1
-2389	6	79	4	1	\N	29	f	\N	0	f	t	\N	0.25
 5195	8	106	2	3	\N	383	f	\N	4	f	t	\N	1
 2990	0	155	1	8	\N	\N	f	100	0	f	t	\N	1
 1213	6	63	1	2	, shredded	119	f	\N	5	f	t	\N	1
 2992	0	155	1	4	, peeled, cored and thickly sliced	157	f	\N	2	f	t	\N	1
 2993	7	155	1	2	\N	517	f	\N	3	f	t	\N	1
 2994	8	155	1	1	, to serve	520	t	\N	4	f	t	\N	1
-2991	6	155	4	1	\N	29	f	\N	1	f	t	\N	0.25
 7148	6	707	1	1	, diced	1286	f	\N	2	f	t	\N	1
 4886	0	159	1	6	\N	471	f	\N	4	f	t	\N	1
 4887	0	159	1	1	\N	552	f	\N	5	f	t	\N	1
@@ -9402,7 +13885,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5481	5	378	1	1	, skinless	1213	f	\N	5	f	t	\N	1
 4901	4	101	1	5	, dried	137	f	\N	1	f	t	\N	1
 4627	8	267	1	1	\N	699	f	\N	4	f	t	\N	1
-4902	6	101	4	1	\N	278	f	\N	2	f	t	\N	0.25
 4903	4	101	1	2	, stalks removed, shredded	368	f	\N	3	f	t	\N	1
 2783	0	141	1	1	, finely chopped	222	f	\N	1	f	t	\N	1
 2784	0	141	1	2	, chopped	5	f	\N	2	f	t	\N	1
@@ -9412,7 +13894,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2788	0	141	1	1	, seeded and sliced	8	f	\N	6	f	t	\N	1
 2789	6	141	1	1	, drained	418	f	\N	7	f	t	\N	1
 2790	8	141	1	1	\N	276	f	\N	8	f	t	\N	1
-2703	7	24	1	4	\N	29	f	\N	2	f	t	\N	0.25
 2791	8	141	1	1	\N	124	f	\N	9	f	t	\N	1
 2792	0	141	1	2	, beaten	187	f	\N	10	f	t	\N	1
 4628	8	267	1	1	\N	504	t	\N	5	f	t	\N	1
@@ -9502,6 +13983,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3915	8	196	1	1	\N	234	f	\N	9	f	t	\N	1
 985	4	40	1	4	, thinly sliced smoked ham, torn	26	f	\N	3	f	t	\N	1
 3913	7	196	1	3	\N	321	f	\N	7	f	t	\N	1
+3367	7	126	2	1	\N	29	f	\N	3	f	t	\N	0.25
 719	0	47	1	2	, ripe	11	f	\N	1	f	t	\N	1
 4905	8	101	8	1	\N	285	t	\N	5	f	t	\N	1
 5864	8	469	1	1	\N	82	f	\N	4	f	t	\N	1
@@ -9518,8 +14000,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4833	4	261	1	5	\N	792	f	\N	3	f	t	\N	1
 7154	0	708	1	1	\N	1391	f	\N	0	f	t	\N	1
 7155	6	708	2	1	\N	36	f	\N	1	f	t	\N	1
-3367	7	126	2	1	\N	29	f	\N	3	f	t	\N	0.25
 3364	7	126	1	1	\N	77	f	\N	0	f	t	\N	0.25
+869	7	67	1	1	\N	79	f	\N	4	f	t	\N	0.25
 7159	6	709	1	2	\N	665	f	\N	0	f	t	\N	1
 3827	7	158	1	1	\N	469	f	\N	9	f	t	\N	1
 2654	6	86	2	5	\N	111	f	\N	1	f	t	\N	1
@@ -9550,7 +14032,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7161	7	709	1	2	\N	36	f	\N	2	f	t	\N	1
 7162	6	709	4	1	\N	1608	f	\N	3	f	t	\N	1
 5102	8	161	2	1	\N	36	f	\N	4	f	t	\N	1
-869	7	67	1	1	\N	79	f	\N	4	f	t	\N	0.25
 1805	4	112	2	9	\N	190	f	\N	1	f	t	\N	0.25
 440	0	49	1	8	, split	165	f	\N	0	f	t	\N	1
 441	6	49	4	1	\N	118	f	\N	1	f	t	\N	1
@@ -9562,32 +14043,32 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5343	0	325	1	1	, cored and cut into cubes	1	f	\N	5	f	t	\N	1
 1172	6	45	1	2	\N	54	f	\N	1	f	t	\N	1
 1637	0	74	1	2	\N	191	f	\N	1	f	t	\N	1
+2659	4	140	1	9	, diced	324	f	\N	1	f	t	\N	1
+2660	0	140	1	3	, chopped	5	t	\N	2	f	t	\N	1
 1638	4	74	1	4	, thinly sliced	247	f	\N	2	f	t	\N	1
 1639	4	74	1	1	\N	14	f	\N	3	f	t	\N	1
+2661	8	140	1	1	\N	1259	f	\N	3	f	t	\N	1
 1640	4	74	1	1	\N	248	f	\N	4	f	t	\N	1
+2662	7	140	1	2	\N	77	f	\N	4	f	t	\N	0.25
+2663	0	140	1	2	, diced	7	f	\N	5	f	t	\N	1
 4909	0	186	1	2	\N	\N	f	966	1	f	t	\N	1
 4911	0	186	1	2	\N	134	t	\N	3	f	t	\N	1
 5202	0	179	1	4	\N	24	f	\N	0	f	t	\N	1
 5203	0	179	1	1	\N	594	f	\N	1	f	t	\N	1
-2659	4	140	1	9	, diced	324	f	\N	0	f	t	\N	1
-2660	0	140	1	3	, chopped	5	f	\N	1	f	t	\N	1
-2661	8	140	1	1	(GROUND TUMERIC)	143	f	\N	2	f	t	\N	1
-2663	0	140	1	2	, diced	7	f	\N	4	f	t	\N	1
-2664	8	140	1	1	(6-8 SEEDS FROM CARDAMOM PODS)	125	f	\N	5	f	t	\N	1
-2665	6	140	2	5	\N	288	f	\N	6	f	t	\N	1
+2664	0	140	1	8	\N	2011	f	\N	6	f	t	\N	1
 1045	4	27	2	7	\N	120	f	\N	1	f	t	\N	1
 5204	6	179	2	1	\N	13	f	\N	2	f	t	\N	1
 1046	6	27	2	1	\N	118	f	\N	2	f	t	\N	1
 5214	12	77	4	1	\N	186	f	\N	0	f	t	\N	1
 5215	0	77	1	1	\N	253	f	\N	1	f	t	\N	1
 5216	0	77	1	4	\N	814	t	\N	2	f	t	\N	1
-2666	4	140	1	9	, chopped	17	f	\N	7	f	t	\N	1
+2665	6	140	2	5	\N	288	f	\N	7	f	t	\N	1
 1089	6	72	4	3	 (180g, approx 180mL)	123	f	\N	0	f	t	\N	1
 1090	6	72	1	2	 (260g)	195	f	\N	1	f	t	\N	1
 1091	7	72	2	3	 (18g)	36	f	\N	2	f	t	\N	1
 1092	7	72	2	3	 (6g)	230	f	\N	3	f	t	\N	1
-4384	7	194	1	2	, such as basil, parsley, chervil, marjoram and oregano.	712	t	\N	6	f	t	\N	1
-4385	8	194	8	1	\N	285	f	\N	7	f	t	\N	1
+4384	7	194	1	2	, such as basil, parsley, chervil, marjoram and oregano.	712	t	\N	7	f	t	\N	1
+4385	8	194	8	1	\N	285	f	\N	8	f	t	\N	1
 3373	8	126	1	2	, chopped	577	f	\N	9	f	t	\N	1
 5205	3	179	1	100	, about ½ cups	593	f	\N	3	f	t	\N	1
 3374	8	126	4	1	\N	285	t	\N	10	f	t	\N	1
@@ -9635,7 +14116,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4913	7	186	1	2	\N	61	f	\N	5	f	t	\N	1
 7164	8	710	1	2	\N	77	f	\N	1	f	t	\N	0.25
 1636	8	74	1	1	\N	77	f	\N	0	f	t	\N	0.25
-2662	7	140	1	2	\N	77	f	\N	3	f	t	\N	0.25
 1094	7	72	1	1	 (14g)	190	f	\N	5	f	t	\N	0.25
 3470	6	165	4	1	\N	29	t	\N	1	f	t	\N	0.25
 1176	0	45	1	1	, minced	5	f	\N	5	f	t	\N	1
@@ -9651,14 +14131,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3918	6	196	1	1	(RICE FLOUR)	228	f	\N	12	f	t	\N	1
 3919	7	196	1	1	(FIVE-SPICE POWDER)	68	t	\N	13	f	t	\N	1
 3920	8	196	8	1	\N	285	f	\N	14	f	t	\N	1
+2667	6	140	1	3	\N	47	f	\N	9	f	t	\N	1
+2668	0	140	1	3	, diced (FOR LEMON AND MINT RELISH)	17	f	\N	10	f	t	\N	1
 5867	0	469	1	4	\N	150	f	\N	7	f	t	\N	1
-2667	6	140	1	3	\N	47	f	\N	8	f	t	\N	1
-2668	0	140	1	3	, diced (FOR LEMON AND MINT RELISH)	17	f	\N	9	f	t	\N	1
-2669	7	140	1	1	, chopped (FOR LEMON AND MINT RELISH)	251	f	\N	10	f	t	\N	1
+2669	7	140	1	1	, chopped (FOR LEMON AND MINT RELISH)	251	f	\N	11	f	t	\N	1
+2670	0	140	1	6	, thinly sliced (FOR LEMON AND MINT RELISH)	144	f	\N	12	f	t	\N	1
 2091	0	103	1	4	\N	324	f	\N	1	f	t	\N	1
 3383	6	116	2	1	\N	420	f	\N	0	f	t	\N	1
 3384	6	116	2	1	\N	359	f	\N	1	f	t	\N	1
-2670	0	140	1	6	, thinly sliced (FOR LEMON AND MINT RELISH)	144	f	\N	11	f	t	\N	1
 2032	6	113	1	2	\N	38	f	\N	0	f	t	\N	1
 2033	6	113	2	1	\N	36	f	\N	1	f	t	\N	1
 2034	8	113	1	1	\N	35	f	\N	2	f	t	\N	1
@@ -9734,8 +14214,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2441	4	80	1	4	\N	261	f	\N	3	f	t	\N	1
 2442	7	80	1	2	, chopped	251	f	\N	4	f	t	\N	1
 2443	0	80	1	6	\N	260	t	\N	5	f	t	\N	1
-2671	0	140	1	2	, juiced (FOR LEMON AND MINT RELISH)	4	f	\N	12	f	t	\N	1
-2672	8	140	8	1	 (FOR LEMON AND MINT RELISH)	214	f	\N	13	f	t	\N	1
+2671	0	140	1	2	, juiced (FOR LEMON AND MINT RELISH)	4	f	\N	13	f	t	\N	1
+2672	8	140	8	1	 (FOR LEMON AND MINT RELISH)	214	f	\N	14	f	t	\N	1
 2008	7	115	1	4	\N	\N	f	114	0	f	t	\N	1
 2009	4	115	1	3	, sliced	415	f	\N	1	f	t	\N	1
 2010	7	115	1	2	, 1/2-inch diced	216	t	\N	2	f	t	\N	1
@@ -9858,8 +14338,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3866	0	136	1	1	\N	187	f	\N	5	f	t	\N	1
 3867	8	136	1	3	, divided	101	f	\N	6	f	t	\N	1
 3925	7	197	1	1	\N	1060	f	\N	4	f	t	\N	1
-3926	7	197	1	1	\N	656	f	\N	5	f	t	\N	1
 5147	7	23	1	4	\N	29	f	\N	1	f	t	\N	0.25
+3926	7	197	1	1	\N	656	f	\N	5	f	t	\N	1
+3416	8	92	1	1	\N	77	f	\N	3	f	t	\N	0.25
 5148	0	23	1	1	, finely chopped	3	f	\N	2	f	t	\N	1
 8244	8	306	8	1	, to taste	692	t	\N	6	f	f	\N	1
 3928	0	197	1	2	, finely chopped	5	t	\N	7	f	t	\N	1
@@ -9909,7 +14390,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5152	6	23	1	3	\N	665	f	\N	6	f	t	\N	1
 3929	4	197	1	2	, trimmed	497	f	\N	8	f	t	\N	1
 3239	8	166	8	1	\N	285	f	\N	2	f	t	\N	1
-3416	8	92	1	1	\N	77	f	\N	3	f	t	\N	0.25
 2803	0	138	1	8	, finely chopped	225	f	\N	8	f	t	\N	1
 2804	0	138	1	1	, crushed	5	f	\N	9	f	t	\N	1
 2805	4	138	1	12	, cut into thin strips	324	f	\N	10	f	t	\N	1
@@ -9975,6 +14455,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2914	4	152	1	8	\N	19	f	\N	0	f	t	\N	1
 2862	8	149	1	1	, to serve	29	t	\N	5	f	t	\N	0.25
 2863	6	150	2	3	\N	505	f	\N	0	f	t	\N	1
+2802	7	138	1	2	\N	77	f	\N	7	f	t	\N	0.25
 3537	4	183	1	5	\N	286	f	\N	1	f	t	\N	1
 3538	0	183	1	3	\N	381	f	\N	2	f	t	\N	1
 3539	4	183	1	6	\N	590	f	\N	4	f	t	\N	1
@@ -9994,7 +14475,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2917	0	152	1	1	, cut into very thin slivers	5	t	\N	3	f	t	\N	1
 2918	8	152	8	1	\N	285	t	\N	4	f	t	\N	1
 5346	4	325	1	6	, cooked and flaked	869	t	\N	8	f	t	\N	1
-2802	7	138	1	2	\N	77	f	\N	7	f	t	\N	0.25
 2865	4	150	1	7	\N	283	f	\N	2	f	t	\N	1
 2866	7	150	1	5	\N	830	f	\N	3	f	t	\N	1
 2867	6	150	4	1	, plus extra to garnish	507	t	\N	4	f	t	\N	1
@@ -10177,13 +14657,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7196	6	714	2	1	, sliced	598	f	\N	3	f	t	\N	1
 7197	6	714	1	1	, rinsed and patted dry	241	f	\N	4	f	t	\N	1
 7198	6	714	4	3	\N	\N	f	719	5	f	t	\N	1
-1662	7	99	1	5	(for dressing)	77	f	\N	7	f	t	\N	0.25
 4186	6	182	1	2	\N	333	f	\N	3	f	t	\N	1
 4187	0	182	1	2	\N	5	f	\N	4	f	t	\N	1
 4188	0	182	1	1	\N	222	f	\N	5	f	t	\N	1
-7138	7	706	1	1	\N	77	f	\N	1	f	t	\N	0.25
 4189	7	182	1	1	\N	317	f	\N	6	f	t	\N	1
 4190	6	182	4	1	\N	38	t	\N	7	f	t	\N	1
+1662	7	99	1	5	(for dressing)	77	f	\N	7	f	t	\N	0.25
+7138	7	706	1	1	\N	77	f	\N	1	f	t	\N	0.25
 7205	6	716	2	1	, diced	222	f	\N	1	f	t	\N	1
 7206	8	716	1	2	, chopped	5	t	\N	2	f	t	\N	1
 7207	8	716	1	2	\N	68	f	\N	3	f	t	\N	1
@@ -10252,7 +14732,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4019	6	185	1	3	\N	286	f	\N	1	f	t	\N	1
 4020	6	185	1	1	\N	6	f	\N	2	f	t	\N	1
 1576	0	96	1	2	, peeled and segmented	346	f	\N	2	f	t	\N	1
-7146	7	707	1	1	\N	77	f	\N	0	f	t	\N	0.25
 4341	8	251	1	3	\N	410	f	\N	0	f	t	\N	1
 4421	8	134	1	2	\N	222	f	\N	3	f	t	\N	1
 4342	0	251	2	1	, juiced	4	f	\N	1	f	t	\N	1
@@ -10265,8 +14744,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5159	0	260	1	1	\N	4	f	\N	4	f	t	\N	1
 5411	4	364	4	7	\N	368	f	\N	4	f	t	\N	1
 4422	8	134	4	1	\N	285	f	\N	4	f	t	\N	1
-2213	7	124	1	1	\N	77	f	\N	0	f	t	\N	0.25
-2440	7	80	1	2	\N	77	f	\N	2	f	t	\N	0.25
 5319	0	320	1	4	\N	5	t	\N	2	f	t	\N	1
 5320	4	320	1	7	\N	864	f	\N	3	f	t	\N	1
 3719	4	190	1	14	\N	603	f	\N	1	f	t	\N	1
@@ -10274,6 +14751,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3722	0	190	1	2	, crushed	5	t	\N	4	f	t	\N	1
 5321	4	320	1	23	\N	865	f	\N	4	f	t	\N	1
 5322	0	320	1	12	\N	868	f	\N	7	f	t	\N	1
+7146	7	707	1	1	\N	77	f	\N	0	f	t	\N	0.25
+2213	7	124	1	1	\N	77	f	\N	0	f	t	\N	0.25
+2440	7	80	1	2	\N	77	f	\N	2	f	t	\N	0.25
 4482	4	240	2	5	\N	638	f	\N	0	t	t	\N	1
 4483	6	240	3	1	\N	680	f	\N	1	f	t	\N	1
 4484	8	240	1	1	\N	682	f	\N	2	f	t	\N	1
@@ -10335,8 +14815,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4404	0	255	2	1	, juiced	4	f	\N	5	f	t	\N	1
 7215	8	717	2	3	, ground	168	t	\N	4	f	t	\N	1
 4448	7	245	1	1	, melt for one minute in oven while it is preheating, in oven proof container	76	f	\N	3	f	t	\N	0.25
-3238	7	166	1	2	\N	77	f	\N	1	f	t	\N	0.25
-2460	7	128	1	3	\N	77	f	\N	2	f	t	\N	0.25
 5392	7	361	1	3	\N	1119	f	\N	1	f	t	\N	1
 5393	8	361	1	3	\N	1120	f	\N	2	f	t	\N	1
 5394	4	361	4	7	\N	376	f	\N	3	f	t	\N	1
@@ -10346,7 +14824,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4358	6	248	1	6	\N	47	f	\N	4	f	t	\N	1
 4359	6	248	1	1	\N	178	f	\N	5	f	t	\N	1
 4072	8	35	4	1	\N	67	t	\N	6	f	t	\N	1
-3259	6	114	2	1	\N	77	f	\N	0	f	t	\N	0.25
 4366	8	249	4	1	\N	699	f	\N	5	f	t	\N	1
 4515	4	8	1	2	\N	19	f	\N	0	f	t	\N	1
 4367	7	249	1	1	\N	695	f	\N	6	f	t	\N	1
@@ -10356,6 +14833,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4044	7	187	1	2	\N	185	f	\N	1	f	t	\N	1
 4045	0	187	1	1	\N	187	f	\N	2	f	t	\N	1
 4046	6	187	3	2	\N	186	f	\N	3	f	t	\N	1
+3238	7	166	1	2	\N	77	f	\N	1	f	t	\N	0.25
 4048	0	187	1	4	\N	216	t	\N	5	f	t	\N	1
 4049	8	187	8	1	\N	214	f	\N	6	f	t	\N	1
 5284	0	314	1	2	\N	388	f	\N	0	f	t	\N	1
@@ -10422,8 +14900,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5292	7	315	1	4	\N	830	f	\N	3	f	t	\N	1
 4579	8	193	2	1	\N	76	f	\N	4	f	t	\N	0.25
 3426	8	44	1	1	\N	77	f	\N	3	f	t	\N	0.25
-5401	6	363	4	1	\N	77	f	\N	0	f	t	\N	0.25
-4988	7	125	1	6	\N	77	f	\N	0	f	t	\N	0.25
 5429	0	369	1	4	\N	255	f	\N	1	f	t	\N	1
 5430	0	369	1	1	\N	1125	t	\N	2	f	t	\N	1
 5431	8	369	1	1	\N	601	f	\N	3	f	t	\N	1
@@ -10455,6 +14931,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4497	0	257	1	1	, chopped	222	f	\N	1	f	t	\N	1
 5301	6	317	2	3	\N	721	f	\N	4	f	t	\N	1
 5302	7	317	1	1	\N	992	f	\N	5	f	t	\N	1
+5401	6	363	4	1	\N	77	f	\N	0	f	t	\N	0.25
+4988	7	125	1	6	\N	77	f	\N	0	f	t	\N	0.25
 4498	6	257	1	2	\N	111	f	\N	2	f	t	\N	1
 4499	6	257	1	1	\N	123	f	\N	3	f	t	\N	1
 4583	4	175	1	4	\N	641	f	\N	3	f	t	\N	1
@@ -10476,9 +14954,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4718	6	271	1	1	\N	961	f	\N	6	f	t	\N	1
 5032	7	83	1	1	, melted	29	f	\N	4	f	t	\N	0.25
 4659	7	266	1	1	\N	76	f	\N	0	f	t	\N	0.25
-3894	7	178	1	1	, for frying	77	f	\N	8	f	t	\N	0.25
-8248	7	313	1	1	, to taste	77	f	\N	7	f	f	\N	0.25
-7193	7	714	1	2	\N	77	f	\N	0	f	t	\N	0.25
 5035	0	309	2	1	\N	105	f	\N	0	f	t	\N	1
 5036	0	309	1	4	\N	187	f	\N	1	f	t	\N	1
 5037	4	309	1	12	\N	122	f	\N	2	f	t	\N	1
@@ -10521,7 +14996,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4654	6	42	1	2	, halved lengthways	11	f	\N	0	f	t	\N	1
 5038	4	309	2	1	\N	800	f	\N	3	f	t	\N	1
 5039	7	309	1	2	\N	357	t	\N	4	f	t	\N	1
-4034	7	32	1	2	\N	77	f	\N	2	f	t	\N	0.25
 5034	8	83	4	1	\N	270	f	\N	6	f	t	\N	1
 5040	4	307	2	5	\N	803	f	\N	0	f	t	\N	1
 5041	0	307	1	2	\N	222	f	\N	1	f	t	\N	1
@@ -10529,6 +15003,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5023	6	167	4	1	\N	33	f	\N	2	f	t	\N	1
 5024	0	167	1	1	\N	187	f	\N	3	f	t	\N	1
 5025	7	167	1	2	\N	215	f	\N	4	f	t	\N	1
+3894	7	178	1	1	, for frying	77	f	\N	8	f	t	\N	0.25
 4735	0	250	1	2	, diced in ¼ inch cubes	309	f	\N	0	f	t	\N	1
 4736	0	250	1	1	, chopped	733	f	\N	1	f	t	\N	1
 4655	6	42	1	1	\N	142	f	\N	1	f	t	\N	1
@@ -10584,6 +15059,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4811	0	264	1	1	\N	730	f	\N	2	f	t	\N	1
 4812	7	264	1	2	, raw, light and dark	752	f	\N	3	f	t	\N	1
 4813	0	264	1	4	\N	187	f	\N	4	f	t	\N	1
+4857	7	231	1	2	\N	29	f	\N	2	f	t	\N	0.25
+5054	7	241	1	3	\N	77	f	\N	1	f	t	\N	0.25
 4874	8	170	8	1	\N	285	f	\N	4	f	t	\N	1
 2239	0	121	2	1	\N	352	f	\N	0	f	t	\N	1
 7245	6	722	1	1	\N	1342	f	\N	1	f	t	\N	1
@@ -10608,7 +15085,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5094	6	156	1	1	\N	546	f	\N	3	f	t	\N	1
 5088	0	259	1	2	, chopped	5	f	\N	4	f	t	\N	1
 7237	8	720	4	1	, ground	67	t	\N	5	f	t	\N	1
-4857	7	231	1	2	\N	29	f	\N	2	f	t	\N	0.25
+7246	6	722	2	1	\N	77	f	\N	2	f	t	\N	0.25
 5053	7	241	1	2	\N	61	f	\N	0	f	t	\N	1
 4752	7	272	1	1	\N	754	f	\N	6	f	t	\N	1
 5055	6	241	1	3	, shredded	110	f	\N	2	f	t	\N	1
@@ -10618,21 +15095,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5059	0	241	2	1	, minced	222	t	\N	6	f	t	\N	1
 5060	7	241	1	1	\N	695	t	\N	7	f	t	\N	1
 5061	8	241	8	1	\N	692	f	\N	8	f	t	\N	1
-5054	7	241	1	3	\N	77	f	\N	1	f	t	\N	0.25
-7246	6	722	2	1	\N	77	f	\N	2	f	t	\N	0.25
+7243	6	721	2	1	\N	77	f	\N	4	f	t	\N	0.25
+4872	7	170	1	1	\N	77	f	\N	2	f	t	\N	0.25
 7241	7	721	1	1	\N	39	f	\N	2	f	t	\N	1
 7242	8	721	4	1	, ground	285	f	\N	3	f	t	\N	1
 4753	8	272	2	1	, to taste	911	t	\N	7	f	t	\N	1
 5044	4	307	1	8	, cooked	328	f	\N	4	f	t	\N	1
 4825	0	270	1	1	\N	789	f	\N	0	f	t	\N	1
 4826	7	270	1	2	\N	321	f	\N	1	f	t	\N	1
-7243	6	721	2	1	\N	77	f	\N	4	f	t	\N	0.25
+4739	7	250	1	2	\N	176	f	\N	4	f	t	\N	0.25
 4827	0	270	1	2	\N	387	f	\N	2	f	t	\N	1
 4828	0	270	1	1	, 10 oz	658	f	\N	3	f	t	\N	1
 4829	6	270	1	1	\N	790	t	\N	4	f	t	\N	1
-4872	7	170	1	1	\N	77	f	\N	2	f	t	\N	0.25
-4739	7	250	1	2	\N	176	f	\N	4	f	t	\N	0.25
-5095	7	156	1	2	, for the sauce	190	t	\N	4	f	t	\N	0.25
 5070	6	305	2	1	\N	808	f	\N	1	f	t	\N	1
 5071	6	305	2	1	, seeded and peeled	352	f	\N	2	f	t	\N	1
 5072	6	305	4	1	, unflavored or vanilla	805	f	\N	3	f	t	\N	1
@@ -10656,9 +15130,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5497	8	381	1	1	\N	29	f	\N	2	f	t	\N	0.25
 7359	5	740	1	1	, cooked	1086	f	\N	1	f	t	\N	1
 8249	7	261	1	1	\N	77	f	\N	5	f	f	\N	0.25
-4246	7	195	1	6	\N	77	f	\N	1	f	t	\N	0.25
 4348	7	243	1	2	\N	708	f	\N	1	f	t	\N	1
-3720	7	190	1	2	\N	77	f	\N	2	f	t	\N	0.25
+4246	7	195	1	6	\N	77	f	\N	1	f	t	\N	0.25
 8257	7	979	1	2	\N	322	f	\N	4	f	t	\N	1
 8258	8	979	1	1	\N	1646	f	\N	5	f	t	\N	1
 4906	0	234	1	2	, thinly sliced	671	f	\N	0	f	t	\N	1
@@ -10674,12 +15147,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7344	6	737	4	1	, minced	222	f	\N	2	f	t	\N	1
 3440	7	50	1	2	\N	61	f	\N	1	f	t	\N	1
 3441	8	50	8	1	\N	285	t	\N	2	f	t	\N	1
-4343	6	251	4	1	, use more if needed	77	f	\N	2	f	t	\N	0.25
-4205	6	244	3	1	\N	77	f	\N	5	f	t	\N	0.25
 7345	6	737	2	1	\N	721	f	\N	3	f	t	\N	1
 4350	8	243	1	2	, minced	5	f	\N	3	f	t	\N	1
 4351	6	243	1	2	\N	691	f	\N	4	f	t	\N	1
-7176	7	711	1	1	\N	77	f	\N	5	f	t	\N	0.25
 5467	0	376	1	1	\N	733	f	\N	0	f	t	\N	1
 5445	5	372	1	1	\N	982	f	\N	0	f	t	\N	1
 5446	4	372	1	4	\N	368	f	\N	1	f	t	\N	1
@@ -10693,7 +15163,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2360	6	53	2	1	\N	141	f	\N	2	f	t	\N	1
 5495	0	381	1	2	\N	250	f	\N	0	f	t	\N	1
 5496	4	381	1	6	, sliced into strips	387	f	\N	1	f	t	\N	1
-7201	7	715	1	1	\N	77	f	\N	2	f	t	\N	0.25
+3720	7	190	1	2	\N	77	f	\N	2	f	t	\N	0.25
 2361	7	53	1	2	\N	186	f	\N	3	f	t	\N	1
 2362	8	53	1	1	\N	39	f	\N	4	f	t	\N	1
 2363	8	53	1	1	\N	70	t	\N	5	f	t	\N	1
@@ -10727,12 +15197,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5448	4	372	2	7	, plus extra to serve	95	t	\N	3	f	t	\N	1
 5455	7	374	1	2	\N	1189	f	\N	4	f	t	\N	1
 5456	0	374	1	1	\N	224	t	\N	5	f	t	\N	1
+4343	6	251	4	1	, use more if needed	77	f	\N	2	f	t	\N	0.25
 5473	8	377	1	1	\N	68	t	\N	5	f	t	\N	1
 5449	4	372	2	7	\N	984	t	\N	4	f	t	\N	1
 5493	6	380	4	1	\N	807	f	\N	1	f	t	\N	1
-2725	4	146	1	5	, chopped	119	f	\N	2	f	t	\N	1
-2726	8	146	1	2	\N	322	t	\N	3	f	t	\N	1
-2728	8	146	8	1	\N	67	t	\N	5	f	t	\N	1
 5494	8	380	8	1	\N	74	f	\N	2	f	t	\N	1
 3088	7	132	1	2	\N	13	t	\N	7	f	t	\N	1
 3089	8	132	1	1	, to garnish	13	t	\N	8	f	t	\N	1
@@ -10768,9 +15236,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5516	4	384	2	3	\N	283	t	\N	5	f	t	\N	1
 4633	6	267	1	5	\N	246	f	\N	10	f	t	\N	1
 4634	8	267	4	1	\N	285	f	\N	11	f	t	\N	1
+2725	4	146	1	5	, chopped	119	f	\N	3	f	t	\N	1
 5559	4	391	1	24	, thawed gently	\N	f	411	1	f	t	\N	1
 5560	7	391	1	4	, or a neutral oil	1665	f	\N	2	f	t	\N	0.25
-2727	7	146	1	2	\N	77	f	\N	4	f	t	\N	0.25
+2726	8	146	1	2	\N	322	t	\N	4	f	t	\N	1
 5570	7	392	1	2	\N	77	f	\N	1	f	t	\N	0.25
 5586	8	394	8	1	, to taste	74	t	\N	4	f	t	\N	1
 5531	0	387	1	1	\N	4	f	\N	1	f	t	\N	1
@@ -10793,7 +15262,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5554	6	390	4	1	\N	130	f	\N	2	f	t	\N	1
 5555	7	390	1	1	\N	340	f	\N	3	f	t	\N	1
 4437	0	238	1	1	\N	715	f	\N	1	f	t	\N	1
-5536	7	388	1	2	, divided	78	f	\N	1	f	t	\N	0.25
+2727	7	146	1	2	\N	77	f	\N	5	f	t	\N	0.25
 5556	7	390	1	2	\N	468	f	\N	4	f	t	\N	1
 5546	7	389	1	1	\N	61	f	\N	0	f	t	\N	1
 5537	6	388	2	1	, diced	222	f	\N	2	f	t	\N	1
@@ -10811,14 +15280,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5574	8	392	4	1	, to taste	67	f	\N	5	f	t	\N	1
 5575	8	392	4	1	, for heat	504	t	\N	6	f	t	\N	1
 5576	8	392	2	1	, for earthiness	143	t	\N	7	f	t	\N	1
-5524	7	386	1	6	\N	278	f	\N	2	f	t	\N	0.25
-5534	8	387	1	1	\N	278	f	\N	4	f	t	\N	0.25
 7262	8	724	8	1	\N	285	f	\N	6	f	t	\N	1
 5538	6	388	2	1	, partially thawed	600	f	\N	3	f	t	\N	1
 5539	6	388	2	1	, partially thawed	354	f	\N	4	f	t	\N	1
 5557	8	390	2	1	\N	360	f	\N	5	f	t	\N	1
 5558	0	390	1	2	\N	1003	f	\N	6	f	t	\N	1
-5472	7	377	1	2	\N	77	f	\N	4	f	t	\N	0.25
+2728	8	146	8	1	\N	67	t	\N	6	f	t	\N	1
 5590	0	395	1	1	, juiced	12	f	\N	3	f	t	\N	1
 5591	8	395	4	1	\N	692	t	\N	4	f	t	\N	1
 5641	6	402	1	4	, sliced	10	f	\N	0	f	t	\N	1
@@ -10843,7 +15310,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5595	6	396	1	1	\N	178	f	\N	2	f	t	\N	1
 7268	4	725	1	8	, rinsed	1303	f	\N	6	f	t	\N	1
 7269	6	725	1	3	\N	123	f	\N	7	f	t	\N	1
-7251	6	723	4	1	\N	77	f	\N	2	f	t	\N	0.25
+5472	7	377	1	2	\N	77	f	\N	4	f	t	\N	0.25
 5577	0	393	1	2	, peeled and thinly sliced (about 1½ cups)	155	f	\N	0	f	t	\N	1
 5578	7	393	1	1	, finely chopped	473	t	\N	1	f	t	\N	1
 5579	6	393	3	1	\N	966	f	\N	2	f	t	\N	1
@@ -10851,7 +15318,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5635	0	401	1	2	\N	123	f	\N	1	f	t	\N	1
 5636	6	401	1	1	, cut into thin slices	155	f	\N	2	f	t	\N	1
 5637	6	401	1	1	\N	\N	f	629	3	f	t	\N	1
-5485	7	260	1	1	\N	77	f	\N	5	f	t	\N	0.25
 8256	7	979	1	2	\N	1647	f	\N	3	f	t	\N	1
 5612	5	398	1	3	\N	114	f	\N	0	f	t	\N	1
 5613	8	398	4	1	\N	285	f	\N	1	f	t	\N	1
@@ -10859,7 +15325,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5499	6	381	4	1	\N	171	f	\N	4	f	t	\N	1
 5500	6	381	4	1	\N	392	f	\N	5	f	t	\N	1
 5653	4	404	1	8	, full-fat	178	f	\N	0	f	t	\N	1
-5488	7	379	1	1	\N	77	f	\N	2	f	t	\N	0.25
+7251	6	723	4	1	\N	77	f	\N	2	f	t	\N	0.25
 4501	6	257	2	1	, grated	95	t	\N	5	f	t	\N	1
 4503	8	257	4	1	\N	285	f	\N	7	f	t	\N	1
 5668	0	407	1	1	, sliced	1	f	\N	0	f	t	\N	1
@@ -10882,10 +15348,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5631	7	400	1	1	\N	965	f	\N	3	f	t	\N	1
 5632	6	400	4	3	\N	747	f	\N	4	f	t	\N	1
 5633	8	400	4	1	\N	74	t	\N	5	f	t	\N	1
-7343	7	737	1	1	\N	77	f	\N	1	f	t	\N	0.25
-5614	7	398	1	1	\N	77	f	\N	2	f	t	\N	0.25
-4502	7	257	1	1	\N	77	f	\N	6	f	t	\N	0.25
-5925	6	480	2	1	\N	77	f	\N	0	f	t	\N	0.25
+5485	7	260	1	1	\N	77	f	\N	5	f	t	\N	0.25
+5488	7	379	1	1	\N	77	f	\N	2	f	t	\N	0.25
 5638	6	401	1	1	, cut in half	147	t	\N	4	f	t	\N	1
 5615	6	398	3	1	\N	215	f	\N	3	f	t	\N	1
 5601	6	397	1	1	, cut into small pieces, (use fresh, not frozen)	1290	f	\N	1	f	t	\N	1
@@ -10907,9 +15371,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5616	7	398	1	2	\N	991	f	\N	4	f	t	\N	1
 5649	6	403	1	1	, chopped into small pieces	372	f	\N	1	f	t	\N	1
 5650	8	403	8	1	, to taste	692	f	\N	2	f	t	\N	1
+7343	7	737	1	1	\N	77	f	\N	1	f	t	\N	0.25
+5614	7	398	1	1	\N	77	f	\N	2	f	t	\N	0.25
+4502	7	257	1	1	\N	77	f	\N	6	f	t	\N	0.25
 5617	0	398	1	1	, juiced	12	f	\N	5	f	t	\N	1
 5618	0	398	1	3	\N	5	f	\N	6	f	t	\N	1
 5670	0	408	1	1	\N	250	f	\N	0	f	t	\N	1
+5721	0	418	1	6	, cooked and chopped	985	f	\N	1	f	t	\N	1
+5722	0	418	3	1	, minced	3	f	\N	2	f	t	\N	1
+5723	0	418	1	2	, minced	5	t	\N	3	f	t	\N	1
 5600	6	396	2	1	, cubed	594	t	\N	7	f	t	\N	1
 5707	0	416	2	1	, diced	222	f	\N	1	f	t	\N	1
 5745	6	421	4	1	\N	39	f	\N	0	f	t	\N	1
@@ -10917,6 +15387,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4368	5	249	1	2	, I used rainbow carrots. Chopped into similar sized spears	7	f	\N	7	f	t	\N	1
 5708	5	416	1	1	\N	988	f	\N	2	f	t	\N	1
 5697	7	414	1	2	\N	81	f	\N	1	f	t	\N	1
+5724	6	418	2	1	, sliced	16	f	\N	4	f	t	\N	1
 7212	6	717	4	1	, diced	985	t	\N	1	f	t	\N	1
 5685	0	411	1	1	\N	733	f	\N	1	f	t	\N	1
 7213	6	717	2	1	\N	721	f	\N	2	f	t	\N	1
@@ -10950,8 +15421,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5716	0	417	3	1	, minced	3	f	\N	1	f	t	\N	1
 5717	0	417	1	2	, minced	5	t	\N	2	f	t	\N	1
 5718	6	417	2	1	, chopped small	372	f	\N	3	f	t	\N	1
-5721	0	418	1	6	, cooked and chopped	985	f	\N	0	f	t	\N	1
-5722	0	418	3	1	, minced	3	f	\N	1	f	t	\N	1
 5752	6	422	1	1	, pitted	152	f	\N	0	f	t	\N	1
 5753	6	422	2	1	\N	995	f	\N	1	f	t	\N	1
 5754	6	422	2	1	, shredded	907	f	\N	2	f	t	\N	1
@@ -10960,8 +15429,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5757	7	422	1	2	\N	215	f	\N	5	f	t	\N	1
 5758	0	422	1	1	, zested and juiced	12	f	\N	6	f	t	\N	1
 5698	7	414	1	2	\N	215	f	\N	2	f	t	\N	1
-5723	0	418	1	2	, minced	5	t	\N	2	f	t	\N	1
-5724	6	418	2	1	, sliced	16	f	\N	3	f	t	\N	1
 5719	8	417	8	1	. to taste	692	t	\N	4	f	t	\N	1
 5699	7	414	1	1	\N	357	f	\N	3	f	t	\N	1
 5700	8	414	2	1	\N	503	f	\N	4	f	t	\N	1
@@ -11182,10 +15649,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7129	8	704	4	1	, ground	67	t	\N	6	f	t	\N	1
 6028	0	526	1	1	\N	1045	f	\N	0	f	t	\N	1
 6029	6	526	2	1	\N	58	f	\N	1	f	t	\N	1
-5940	6	483	4	1	\N	77	f	\N	2	f	t	\N	0.25
 7142	6	706	1	1	, diced	402	f	\N	5	f	t	\N	1
+5940	6	483	4	1	\N	77	f	\N	2	f	t	\N	0.25
 6007	6	522	4	1	\N	77	f	\N	6	f	t	\N	0.25
-6771	7	311	1	2	, divided	77	f	\N	6	f	t	\N	0.25
 6030	8	527	1	1	\N	699	f	\N	0	f	t	\N	1
 6031	8	527	1	1	\N	307	f	\N	1	f	t	\N	1
 4423	8	134	2	1	, crushed finely	510	f	\N	5	f	t	\N	1
@@ -11226,6 +15692,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6086	0	535	1	20	, unsweetened	627	f	\N	1	f	t	\N	1
 6087	6	535	3	1	\N	1200	f	\N	2	f	t	\N	1
 6065	6	531	1	1	\N	1101	f	\N	0	f	t	\N	1
+6771	7	311	1	2	, divided	77	f	\N	6	f	t	\N	0.25
 6066	7	531	1	2	\N	1420	f	\N	1	f	t	\N	1
 6020	0	525	1	1	, peeled and chopped small	9	f	\N	0	f	t	\N	1
 6021	6	525	1	1	, chopped small	147	f	\N	1	f	t	\N	1
@@ -11415,6 +15882,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6215	8	555	4	1	, to taste	692	t	\N	5	f	t	\N	1
 5293	6	315	3	4	\N	266	f	\N	4	f	t	\N	1
 6246	6	559	1	1	\N	123	f	\N	6	f	t	\N	1
+6211	7	555	1	2	\N	176	f	\N	1	f	t	\N	0.25
 6253	0	561	1	1	, minced superfine	5	f	\N	5	f	t	\N	1
 6254	7	561	1	3	\N	81	f	\N	6	f	t	\N	1
 6255	8	561	4	1	, to taste	692	t	\N	7	f	t	\N	1
@@ -11426,7 +15894,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6284	7	566	1	1	, chopped	144	f	\N	2	f	t	\N	1
 6285	0	566	1	1	, finely chopped	150	f	\N	3	f	t	\N	1
 6286	6	566	4	1	, chopped	2	f	\N	4	f	t	\N	1
-6211	7	555	1	2	\N	176	f	\N	1	f	t	\N	0.25
 6258	8	562	4	1	, to taste	692	t	\N	1	f	t	\N	1
 4805	0	265	1	1	\N	730	t	\N	1	f	t	\N	1
 6260	4	562	1	3	(COOKED WILD SALMON OR COOKED SMOKED SALMON), chopped	869	f	\N	3	f	t	\N	1
@@ -11486,12 +15953,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6309	7	569	1	1	\N	81	t	\N	5	f	t	\N	1
 7145	8	706	8	1	\N	285	f	\N	8	f	t	\N	1
 6202	7	554	1	1	\N	77	f	\N	0	f	t	\N	0.25
-7370	7	741	1	1	\N	77	f	\N	4	f	t	\N	0.25
-6412	7	582	1	2	\N	77	f	\N	2	f	t	\N	0.25
-6335	6	574	2	1	\N	77	f	\N	1	f	t	\N	0.25
 6336	0	574	2	1	, juiced	4	f	\N	2	f	t	\N	1
 6337	0	574	1	1	\N	155	f	\N	3	f	t	\N	1
-7771	7	860	1	3	, divided	77	f	\N	0	f	t	\N	0.25
 6338	6	574	1	1	, halved	147	f	\N	4	f	t	\N	1
 6312	6	571	2	1	, chopped	13	f	\N	1	f	t	\N	1
 6313	0	571	1	2	, cubed	\N	f	613	2	f	t	\N	1
@@ -11512,7 +15975,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6340	6	574	1	2	, chopped	251	t	\N	6	f	t	\N	1
 6341	6	574	1	2	, chopped	13	t	\N	7	f	t	\N	1
 6342	6	574	1	2	, chopped	2	t	\N	8	f	t	\N	1
-6797	7	632	1	3	, divided	77	f	\N	2	f	t	\N	0.25
+7370	7	741	1	1	\N	77	f	\N	4	f	t	\N	0.25
 3932	0	197	1	4	, finely chopped	144	t	\N	11	f	t	\N	1
 3933	8	197	8	1	\N	285	t	\N	12	f	t	\N	1
 6063	0	530	1	1	, peeled and sliced	9	f	\N	8	f	t	\N	1
@@ -11527,6 +15990,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6322	7	572	1	2	, sliced thin	14	f	\N	5	f	t	\N	1
 6323	0	572	1	2	, juiced	4	f	\N	6	f	t	\N	1
 6325	7	572	1	3	\N	\N	t	550	8	f	t	\N	1
+6412	7	582	1	2	\N	77	f	\N	2	f	t	\N	0.25
+6335	6	574	2	1	\N	77	f	\N	1	f	t	\N	0.25
+7771	7	860	1	3	, divided	77	f	\N	0	f	t	\N	0.25
+6797	7	632	1	3	, divided	77	f	\N	2	f	t	\N	0.25
 6452	7	586	1	1	\N	1053	f	\N	1	f	t	\N	0.25
 5873	6	470	1	1	\N	\N	f	858	5	f	t	\N	1
 5874	8	470	4	1	\N	1117	t	\N	6	f	t	\N	1
@@ -11577,25 +16044,21 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6375	6	577	4	1	\N	\N	t	546	8	f	t	\N	1
 6376	6	577	2	1	, unroasted, halved, chopped small	92	t	\N	9	f	t	\N	1
 6402	0	39	2	1	, deseeded and finely chopped	224	t	\N	6	f	t	\N	1
-7603	8	836	1	1	\N	77	t	\N	1	f	t	\N	0.25
-7937	7	908	1	1	\N	77	f	\N	2	f	t	\N	0.25
 6432	5	584	3	1	\N	1557	f	\N	1	f	t	\N	1
 7365	8	740	8	1	\N	285	f	\N	7	f	t	\N	1
 6377	0	577	1	1	, sliced into quarters	12	t	\N	10	f	t	\N	1
 6433	0	584	3	1	, minced	3	f	\N	2	f	t	\N	1
 6434	0	584	1	2	, minced	5	t	\N	3	f	t	\N	1
 6435	6	584	4	3	\N	118	f	\N	4	f	t	\N	1
-8034	7	952	1	1	\N	77	f	\N	2	f	t	\N	0.25
-8073	7	957	1	1	\N	77	f	\N	4	f	t	\N	0.25
-8062	7	956	1	1	\N	77	f	\N	1	f	t	\N	0.25
+7603	8	836	1	1	\N	77	t	\N	1	f	t	\N	0.25
 6378	6	578	1	6	\N	\N	f	559	1	f	t	\N	1
 6379	6	578	1	2	, chopped	1078	f	\N	2	f	t	\N	1
 6380	6	578	1	1	, chopped	255	f	\N	3	f	t	\N	1
 6381	6	578	1	1	, chopped	736	f	\N	4	f	t	\N	1
-7964	7	911	1	2	\N	77	f	\N	8	f	t	\N	0.25
+8034	7	952	1	1	\N	77	f	\N	2	f	t	\N	0.25
 5303	4	317	2	3	\N	95	f	\N	6	f	t	\N	1
 8279	8	317	4	1	\N	692	f	\N	8	f	t	\N	1
-8280	7	317	1	1	\N	77	f	\N	2	f	t	\N	0.25
+8073	7	957	1	1	\N	77	f	\N	4	f	t	\N	0.25
 6464	7	587	1	1	\N	1075	t	\N	5	f	t	\N	1
 6395	6	580	3	1	, diced	1286	t	\N	5	f	t	\N	1
 6398	6	580	2	1	\N	\N	f	556	8	f	t	\N	1
@@ -11607,7 +16070,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6445	0	585	1	4	, peeled and diced	1971	f	\N	5	f	t	\N	1
 6446	0	585	1	2	, diced	150	f	\N	6	f	t	\N	1
 6447	0	585	1	6	\N	5	t	\N	7	f	t	\N	1
+8062	7	956	1	1	\N	77	f	\N	1	f	t	\N	0.25
 6437	8	584	4	1	, to taste	692	t	\N	6	f	t	\N	1
+7964	7	911	1	2	\N	77	f	\N	8	f	t	\N	0.25
+8280	7	317	1	1	\N	77	f	\N	2	f	t	\N	0.25
 6403	6	581	1	1	, cubed	159	f	\N	0	f	t	\N	1
 6404	6	581	1	1	, peeled, diced	155	f	\N	1	f	t	\N	1
 6405	0	581	1	1	, diced	9	f	\N	2	f	t	\N	1
@@ -11616,17 +16082,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6408	7	581	1	1	\N	81	f	\N	5	f	t	\N	1
 6409	8	581	4	1	, to taste	74	t	\N	6	f	t	\N	1
 6194	0	552	1	1	(CAPSULE ACTIVATED CHARCOAL	159	f	\N	4	f	t	\N	1
-6489	0	591	1	1	, peeled and diced	105	f	\N	1	f	t	\N	1
-6490	0	591	1	2	, diced	1063	f	\N	2	f	t	\N	1
-6491	0	591	2	1	, chopped	110	f	\N	3	f	t	\N	1
-6492	0	591	1	1	\N	597	f	\N	4	f	t	\N	1
-6493	5	591	1	1	\N	988	f	\N	5	f	t	\N	1
-6494	7	591	1	1	\N	699	f	\N	6	f	t	\N	1
-6495	4	591	1	15	(TOMATOES), diced	17	f	\N	7	f	t	\N	1
-6496	4	591	1	15	\N	151	f	\N	8	f	t	\N	1
-6497	0	591	2	5	cooked, or cauliflower rice	188	t	\N	9	f	t	\N	1
 8282	4	186	1	1	\N	1277	t	\N	7	f	t	\N	1
 8283	0	186	1	2	\N	305	t	\N	6	f	t	\N	1
+6489	0	591	1	1	, peeled and diced	105	f	\N	2	f	t	\N	1
+6490	0	591	1	2	, diced	1063	f	\N	3	f	t	\N	1
 6544	6	597	2	1	\N	420	f	\N	0	f	t	\N	1
 6545	6	597	2	1	\N	789	f	\N	1	f	t	\N	1
 6546	6	597	4	1	\N	1094	f	\N	2	f	t	\N	1
@@ -11652,10 +16111,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6553	7	598	1	1	\N	738	f	\N	3	f	t	\N	1
 7179	7	183	1	1	\N	77	f	\N	3	f	t	\N	0.25
 8086	8	959	1	1	\N	77	t	\N	1	f	t	\N	0.25
-5961	6	487	4	1	\N	278	f	\N	5	f	t	\N	0.25
 7271	6	726	1	2	, chopped small	1711	f	\N	1	f	t	\N	1
 7272	6	726	4	1	, cooked	1713	f	\N	2	f	t	\N	1
 7273	7	726	1	2	\N	\N	f	662	3	f	t	\N	1
+6491	0	591	2	1	, chopped	110	f	\N	4	f	t	\N	1
 7594	4	834	1	8	, cooked	1197	f	\N	5	f	t	\N	1
 7595	8	834	1	2	\N	1413	f	\N	6	f	t	\N	1
 7596	0	834	1	2	\N	1411	f	\N	8	f	t	\N	1
@@ -11663,7 +16122,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6509	0	593	2	1	\N	9	f	\N	0	f	t	\N	1
 6327	6	573	1	1	\N	957	f	\N	0	f	t	\N	1
 6328	0	573	1	1	\N	155	f	\N	1	f	t	\N	1
-8362	7	834	1	1	\N	77	f	\N	3	f	t	\N	0.25
 6476	4	588	1	28	, with juice	1276	f	\N	9	f	t	\N	1
 6329	0	573	1	1	\N	9	f	\N	2	f	t	\N	1
 6330	0	573	1	2	\N	1088	t	\N	3	f	t	\N	1
@@ -11704,6 +16162,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6525	6	594	1	1	\N	1099	f	\N	7	f	t	\N	1
 6526	4	594	1	1	\N	805	f	\N	8	f	t	\N	1
 6527	0	594	1	1	, soaked in hot water for 5 minutes	152	t	\N	9	f	t	\N	1
+5961	6	487	4	1	\N	278	f	\N	5	f	t	\N	0.25
+8362	7	834	1	1	\N	77	f	\N	3	f	t	\N	0.25
 7282	6	727	1	3	\N	123	f	\N	6	f	t	\N	1
 7270	8	725	8	1	\N	285	t	\N	8	f	t	\N	1
 7283	8	727	8	1	\N	285	t	\N	7	f	t	\N	1
@@ -11734,8 +16194,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6535	7	595	1	4	\N	77	t	\N	7	f	t	\N	0.25
 1726	7	100	1	1	, or Shortening in place of Butter and Oil	78	f	\N	6	f	t	\N	0.25
 6577	7	601	1	2	\N	77	f	\N	10	f	t	\N	0.25
-1074	7	73	1	2	 (24g)	78	f	\N	3	f	t	\N	0.25
-3921	7	196	1	1	, for frying	78	f	\N	15	f	t	\N	0.25
 7434	4	750	1	1	\N	807	f	\N	2	f	t	\N	1
 7435	4	750	1	17	\N	377	f	\N	3	f	t	\N	1
 6588	4	603	1	8	\N	\N	f	987	1	f	t	\N	1
@@ -11758,6 +16216,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6584	6	602	1	1	\N	417	f	\N	5	f	t	\N	1
 7355	6	739	2	1	, grated	736	f	\N	1	f	t	\N	1
 6563	6	599	1	1	\N	1092	f	\N	3	f	t	\N	1
+1074	7	73	1	2	 (24g)	78	f	\N	3	f	t	\N	0.25
+3921	7	196	1	1	, for frying	78	f	\N	15	f	t	\N	0.25
 6629	0	610	1	4	\N	5	f	\N	1	f	t	\N	1
 6597	0	606	1	2	\N	22	f	\N	0	f	t	\N	1
 6598	4	606	1	1	\N	56	f	\N	1	f	t	\N	1
@@ -11827,6 +16287,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7295	8	729	4	1	\N	214	f	\N	5	f	t	\N	1
 7296	8	729	1	2	, juiced	4	t	\N	6	f	t	\N	1
 6657	7	485	1	2	\N	62	f	\N	3	f	t	\N	1
+6658	8	485	1	1	\N	77	f	\N	4	f	f	\N	0.25
 6659	8	485	8	1	\N	833	t	\N	5	f	t	\N	1
 6660	6	485	1	1	, to serve	\N	t	484	6	f	t	\N	1
 5906	7	477	1	2	\N	77	f	\N	4	f	t	\N	0.25
@@ -11837,7 +16298,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6594	4	605	1	2	\N	119	f	\N	1	f	t	\N	1
 6595	4	605	1	1	\N	415	f	\N	2	f	t	\N	1
 6596	4	605	2	1	\N	48	t	\N	3	f	t	\N	1
-6658	8	485	2	3	\N	77	f	\N	4	f	t	\N	0.25
 6676	7	615	1	2	\N	77	f	\N	3	f	t	\N	0.25
 7331	7	735	1	1	\N	77	t	\N	2	f	t	\N	0.25
 6689	7	617	1	1	\N	77	f	\N	2	f	t	\N	0.25
@@ -11901,6 +16361,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6735	7	623	1	6	\N	234	f	\N	2	f	t	\N	1
 6772	7	311	1	1	\N	82	t	\N	7	f	t	\N	1
 6773	8	311	4	1	\N	692	t	\N	8	f	t	\N	1
+6778	6	630	2	1	, softened	29	f	\N	2	f	t	\N	0.25
 6459	8	586	4	1	, to taste	692	t	\N	8	f	t	\N	1
 5714	7	416	1	2	\N	13	t	\N	8	f	t	\N	1
 5915	6	478	4	1	\N	1643	t	\N	7	f	t	\N	1
@@ -11911,11 +16372,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6731	7	622	1	2	\N	232	f	\N	1	f	t	\N	1
 6737	7	623	1	2	, ground	807	f	\N	4	f	t	\N	1
 6775	6	629	1	1	\N	57	f	\N	1	f	t	\N	1
-6778	6	630	2	1	, softened	29	f	\N	2	f	t	\N	0.25
 6765	8	627	1	1	, melted, for greasing	29	f	\N	0	f	t	\N	0.25
 6746	7	624	1	4	, melted	29	f	\N	5	f	t	\N	0.25
-5542	0	388	1	2	\N	187	f	\N	7	f	t	\N	1
 6756	7	625	1	2	\N	77	f	\N	5	f	t	\N	0.25
+5542	0	388	1	2	\N	187	f	\N	7	f	t	\N	1
+6758	7	369	1	4	\N	77	f	\N	6	f	t	\N	0.25
 6787	6	631	2	3	\N	836	f	\N	0	f	t	\N	1
 6774	6	628	1	2	\N	57	f	\N	0	f	t	\N	1
 6788	0	631	1	6	, finely sliced	144	f	\N	1	f	t	\N	1
@@ -11955,7 +16416,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6768	6	627	2	1	\N	1409	f	\N	3	f	t	\N	1
 6769	0	627	2	1	, grated	4	f	\N	4	f	t	\N	1
 6770	8	627	1	1	\N	1408	f	\N	5	f	t	\N	1
-6758	7	369	1	4	\N	77	f	\N	6	f	t	\N	0.25
 6732	6	622	1	1	\N	\N	f	625	2	f	t	\N	1
 6733	6	622	1	1	\N	206	t	\N	3	f	t	\N	1
 6759	7	369	1	4	\N	82	f	\N	7	f	t	\N	1
@@ -12216,7 +16676,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7014	6	658	2	1	, packed, midribs discarded	372	f	\N	3	f	t	\N	1
 7015	6	658	2	1	\N	1364	f	\N	4	f	t	\N	1
 8292	0	980	1	1	, sliced	\N	t	966	7	t	t	\N	1
-8236	7	978	2	3	\N	78	f	\N	3	f	t	\N	0.25
 7018	8	659	8	1	\N	969	f	\N	3	f	t	\N	1
 7021	0	659	1	2	\N	187	f	\N	6	f	t	\N	1
 7006	6	657	1	1	\N	1361	f	\N	0	f	t	\N	1
@@ -12269,7 +16728,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6937	6	646	1	1	, to serve	1260	t	\N	10	f	t	\N	1
 7052	7	664	1	1	\N	77	f	\N	0	f	t	\N	0.25
 7135	7	705	1	2	\N	77	f	\N	5	f	t	\N	0.25
-3881	7	133	1	3	\N	78	f	\N	3	f	t	\N	0.25
 6281	8	565	4	1	, to taste	692	t	\N	8	f	t	\N	1
 7038	6	662	2	1	\N	1733	f	\N	1	f	t	\N	1
 7019	6	659	4	1	, diced	402	f	\N	4	f	t	\N	1
@@ -12310,8 +16768,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7115	7	702	1	1	\N	1587	f	\N	4	f	t	\N	1
 7043	8	662	4	1	\N	214	t	\N	6	f	t	\N	1
 7029	7	384	1	1	\N	82	f	\N	6	f	t	\N	1
-7030	8	384	1	2	\N	77	f	\N	7	f	t	\N	0.25
+3881	7	133	1	3	\N	78	f	\N	3	f	t	\N	0.25
 7116	6	702	4	1	\N	1268	f	\N	5	f	t	\N	1
+7030	8	384	1	2	\N	77	f	\N	7	f	t	\N	0.25
 6973	6	651	4	3	, divided	36	f	\N	0	f	t	\N	1
 6974	8	651	1	1	\N	1256	f	\N	1	f	t	\N	1
 6975	8	651	4	1	\N	214	f	\N	2	f	t	\N	1
@@ -12328,78 +16787,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8007	8	947	1	1	\N	79	f	\N	0	f	t	\N	0.25
 5478	7	378	1	3	, divided	176	f	\N	2	f	t	\N	0.25
 5696	7	414	1	2	\N	176	f	\N	0	f	t	\N	0.25
-5897	7	476	1	1	\N	176	f	\N	0	f	t	\N	0.25
-6072	7	532	1	2	\N	176	f	\N	2	f	t	\N	0.25
-6143	7	544	1	1	, to thin	176	f	\N	3	f	t	\N	0.25
-6259	7	562	1	1	, plus more to oil the skillet	176	f	\N	2	f	t	\N	0.25
-6268	7	564	1	2	\N	176	f	\N	2	f	t	\N	0.25
-6096	8	537	1	2	\N	176	f	\N	1	f	t	\N	0.25
-6430	7	583	1	1	\N	176	f	\N	7	f	t	\N	0.25
-7180	7	712	1	4	, melted	189	f	\N	1	f	t	\N	0.25
-7317	7	732	1	2	\N	189	f	\N	4	f	t	\N	0.25
-6725	7	621	1	5	, at room temperature, divided	189	f	\N	0	f	t	\N	0.25
-7341	7	736	1	1	\N	189	f	\N	5	f	t	\N	0.25
-6983	7	652	1	1	, 14g	190	f	\N	5	f	t	\N	0.25
-3388	6	116	2	1	\N	278	f	\N	5	f	t	\N	0.25
-3454	6	94	4	3	\N	278	f	\N	3	f	t	\N	0.25
-8243	7	306	1	3	, divided	278	f	\N	5	f	f	\N	0.25
-2848	7	148	1	7	\N	278	f	\N	9	f	t	\N	0.25
-2915	7	152	1	2	\N	278	f	\N	1	f	t	\N	0.25
-8251	8	261	1	1	, to taste	278	t	\N	7	f	f	\N	0.25
-3781	7	189	1	5	\N	278	f	\N	9	f	t	\N	0.25
-4977	6	308	2	1	\N	278	f	\N	3	f	t	\N	0.25
-5014	6	256	2	1	, plus more as needed	278	f	\N	5	f	t	\N	0.25
-4743	7	250	1	1	, for drizzling	278	f	\N	8	f	t	\N	0.25
-4907	7	234	1	1	\N	278	f	\N	1	f	f	\N	0.25
-5486	8	260	1	1	\N	278	t	\N	6	f	t	\N	0.25
-3668	7	188	1	3	\N	278	f	\N	13	f	t	\N	0.25
-5880	6	472	2	1	\N	278	f	\N	1	f	t	\N	0.25
-2977	7	153	1	3	\N	278	f	\N	7	f	t	\N	0.25
-5931	7	481	1	1	\N	278	f	\N	0	f	t	\N	0.25
-5924	6	479	3	1	\N	278	f	\N	8	f	t	\N	0.25
-8260	7	361	1	1	, divided	278	f	\N	5	f	t	\N	0.25
-8264	7	787	1	3	\N	278	f	\N	5	f	t	\N	0.25
-8275	7	309	1	6	\N	278	f	\N	7	f	t	\N	0.25
-6324	7	572	1	2	\N	278	f	\N	7	f	t	\N	0.25
-6714	7	620	1	6	\N	278	f	\N	1	f	t	\N	0.25
-6792	7	631	1	5	, for dressing	278	f	\N	5	f	t	\N	0.25
-7862	7	786	1	3	\N	278	f	\N	6	f	t	\N	0.25
-7955	7	362	1	1	, divided	278	t	\N	5	f	t	\N	0.25
-2782	7	141	1	2	\N	499	f	\N	0	f	t	\N	0.25
-6119	7	540	1	1	\N	657	f	\N	12	f	t	\N	0.25
-7238	6	720	4	1	\N	657	f	\N	6	f	t	\N	0.25
-4712	7	271	1	2	\N	722	f	\N	0	f	t	\N	0.25
-5678	6	409	4	1	, melted	964	f	\N	7	f	t	\N	0.25
-5763	7	423	1	1	\N	964	f	\N	3	f	t	\N	0.25
-6120	7	541	1	2	\N	964	f	\N	0	f	t	\N	0.25
-7024	8	660	1	1	\N	79	f	\N	2	f	t	\N	0.25
-8304	7	983	1	5	, divided	278	f	\N	3	f	t	\N	0.25
-7203	7	715	1	1	\N	189	f	\N	4	f	t	\N	0.25
-4582	6	175	4	1	\N	190	f	\N	2	f	t	\N	0.25
-4747	7	272	1	2	\N	722	f	\N	1	f	t	\N	0.25
-5457	7	375	1	1	\N	722	f	\N	1	f	t	\N	0.25
-4365	6	249	3	1	\N	278	f	\N	4	f	t	\N	0.25
-7381	7	743	1	1	\N	79	f	\N	1	f	t	\N	0.25
-7679	6	846	1	4	\N	79	f	\N	9	f	t	\N	0.25
-7998	6	945	1	1	\N	79	f	\N	7	f	t	\N	0.25
-7798	7	751	1	1	\N	278	f	\N	7	f	t	\N	0.25
-5803	7	430	1	2	\N	278	f	\N	9	f	t	\N	0.25
-7034	7	661	1	3	\N	189	f	\N	4	f	t	\N	0.25
-7621	7	840	1	1	\N	1781	f	\N	2	f	t	\N	0.25
-6468	7	588	1	2	\N	176	f	\N	1	f	t	\N	0.25
-7857	7	870	1	8	, melted	189	f	\N	5	f	t	\N	0.25
-7846	7	869	1	2	, divided	189	f	\N	1	f	t	\N	0.25
-5934	7	482	1	1	\N	176	f	\N	1	f	t	\N	0.25
-7858	8	870	1	1	\N	79	f	\N	6	f	t	\N	0.25
-6393	7	580	1	1	\N	176	f	\N	3	f	t	\N	0.25
-5309	7	319	2	1	\N	278	f	\N	1	f	t	\N	0.25
-7114	7	702	1	1	\N	189	f	\N	3	f	t	\N	0.25
-6055	6	529	4	1	\N	278	f	\N	10	f	t	\N	0.25
-5651	7	403	1	2	\N	964	f	\N	3	f	t	\N	0.25
-6160	7	546	1	1	\N	657	f	\N	5	f	t	\N	0.25
-5626	7	399	1	1	\N	964	t	\N	5	f	t	\N	0.25
-6835	6	637	1	1	, at toom temperature, diced	190	f	\N	1	f	t	\N	0.25
-4625	7	267	1	4	\N	722	f	\N	2	f	t	\N	0.25
 8192	7	972	1	1	\N	29	f	\N	1	f	t	\N	0.25
 8193	4	972	1	4	, finely chopped	1730	f	\N	2	f	t	\N	1
 8194	6	972	1	1	, cut into fresh breadcrumbs	1729	f	\N	3	f	t	\N	1
@@ -12408,21 +16795,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8479	7	996	1	1	\N	709	t	\N	8	f	t	\N	1
 8480	8	996	1	1	\N	1764	t	\N	9	f	t	\N	1
 6440	8	584	1	1	\N	964	f	\N	9	f	t	\N	0.25
+6488	7	591	1	1	\N	964	f	\N	1	f	t	\N	0.25
 8197	8	972	4	1	, grated	72	f	\N	6	f	t	\N	1
 6015	6	523	4	1	, for garnishing	1008	t	\N	4	f	t	\N	1
-6129	7	542	1	1	\N	964	f	\N	0	f	t	\N	0.25
-6346	7	575	1	1	\N	964	f	\N	0	f	t	\N	0.25
-6488	7	591	1	1	\N	964	f	\N	0	f	t	\N	0.25
-6628	7	610	1	2	\N	964	f	\N	0	f	t	\N	0.25
-6643	7	611	1	2	, divided	964	f	\N	0	f	t	\N	0.25
-6559	7	598	1	1	, liquified	964	f	\N	9	f	t	\N	0.25
-5681	7	410	1	1	\N	964	f	\N	1	f	t	\N	0.25
-6615	7	608	1	2	, divided	964	f	\N	7	f	t	\N	0.25
-5727	8	418	1	1	\N	964	f	\N	6	f	t	\N	0.25
-6012	8	523	1	1	\N	1010	f	\N	1	f	t	\N	0.25
 8363	8	834	8	1	\N	969	t	\N	7	f	t	\N	1
 8198	7	972	1	2	\N	38	f	\N	7	f	t	\N	1
-8199	7	972	1	3	\N	1598	f	\N	8	f	t	\N	0.25
+6129	7	542	1	1	\N	964	f	\N	0	f	t	\N	0.25
 8200	8	972	8	1	\N	285	f	\N	9	f	t	\N	1
 8201	6	972	1	1	(GREEN SALAD, to serve	1063	f	\N	10	f	t	\N	1
 7050	8	663	8	1	\N	285	t	\N	5	f	t	\N	1
@@ -12430,10 +16808,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8003	8	946	4	1	\N	504	f	\N	5	f	t	\N	1
 8004	8	946	4	1	, ground	67	f	\N	6	f	t	\N	1
 8005	8	946	8	1	, ground	70	f	\N	7	f	t	\N	1
-8006	8	946	1	1	\N	1720	f	\N	8	f	t	\N	0.25
+6346	7	575	1	1	\N	964	f	\N	0	f	t	\N	0.25
 7303	7	730	1	1	\N	36	f	\N	7	f	t	\N	1
 7304	6	730	2	1	, at room temperature	1403	f	\N	8	f	t	\N	1
-6274	7	565	1	1	\N	964	f	\N	1	f	t	\N	0.25
 8202	6	972	4	1	(GRATED PICKLED BEETS), to serve	671	f	\N	11	f	t	\N	1
 6343	0	574	2	1	, chopped	105	f	\N	9	f	t	\N	1
 6344	6	574	2	1	, sliced	1083	f	\N	10	f	t	\N	1
@@ -12442,13 +16819,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8470	0	33	1	1	, chopped	222	t	\N	5	f	t	\N	1
 8471	0	33	1	1	, chopped	1308	t	\N	6	f	t	\N	1
 8472	0	33	1	1	, shredded	736	t	\N	7	f	t	\N	1
-6296	7	568	1	2	\N	964	f	\N	2	f	t	\N	0.25
 8396	0	991	1	2	, diced	144	f	\N	4	f	t	\N	1
 8397	6	991	4	1	\N	30	t	\N	5	f	t	\N	1
 870	6	67	4	1	\N	89	t	\N	5	f	t	\N	1
 871	0	67	1	2	\N	216	t	\N	6	f	t	\N	1
 7486	6	396	1	1	, to serve	\N	t	484	8	f	t	\N	1
-8398	8	991	1	1	\N	78	f	\N	6	f	t	\N	0.25
 8399	8	991	4	1	, to taste	285	t	\N	7	f	t	\N	1
 8400	6	991	8	1	, diced	224	t	\N	8	f	t	\N	1
 580	6	33	1	2	\N	1737	f	\N	4	f	t	\N	1
@@ -12460,7 +16835,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8365	0	986	1	1	, sliced into thin strips	1725	f	\N	2	f	t	\N	1
 8366	0	986	1	2	, stems removed and sliced into strips	1738	t	\N	3	f	t	\N	1
 8367	0	986	1	3	, peeled and mashed	5	t	\N	4	f	t	\N	1
-8368	7	986	1	3	\N	676	f	\N	5	f	t	\N	0.25
 8369	8	986	1	2	\N	143	f	\N	6	f	t	\N	1
 8370	8	986	1	1	\N	68	f	\N	7	f	t	\N	1
 8371	8	986	1	1	\N	71	f	\N	8	f	t	\N	1
@@ -12548,12 +16922,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6054	0	529	1	1	, juiced	4	t	\N	9	f	t	\N	1
 6400	0	580	1	1	, sliced into 8 wedges	4	f	\N	10	f	t	\N	1
 6401	0	580	1	8	, washed and dried	1073	f	\N	11	f	t	\N	1
+8403	7	992	1	2	\N	964	f	\N	3	f	t	\N	0.25
 8504	4	1003	1	30	\N	419	f	\N	7	f	t	\N	1
 8505	8	1003	1	1	\N	143	f	\N	8	f	t	\N	1
 8506	8	1003	1	2	\N	1779	f	\N	9	f	t	\N	1
 8401	0	992	2	1	\N	105	f	\N	1	f	t	\N	1
 8402	6	992	2	1	\N	80	f	\N	2	f	t	\N	1
-8403	7	992	1	2	\N	964	f	\N	3	f	t	\N	0.25
 8404	6	992	1	1	\N	98	f	\N	4	f	t	\N	1
 8405	8	992	4	7	\N	1279	f	\N	5	f	t	\N	1
 8406	8	992	1	1	\N	1596	f	\N	6	f	t	\N	1
@@ -12592,8 +16966,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7423	7	748	1	2	\N	1106	f	\N	6	f	t	\N	1
 7424	8	748	8	1	, to taste	692	t	\N	7	f	t	\N	1
 7425	7	748	1	4	, divided	986	f	\N	8	f	t	\N	1
-7418	7	748	1	3	, divided	176	f	\N	1	f	t	\N	0.25
-7427	7	749	1	3	, divided	176	f	\N	1	f	t	\N	0.25
 7398	6	746	1	2	, for crust	1320	f	\N	1	f	t	\N	1
 8344	0	871	1	2	\N	134	t	\N	6	f	t	\N	1
 8345	8	871	4	1	\N	64	t	\N	7	f	t	\N	1
@@ -12631,13 +17003,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4253	4	195	1	5	, cooked, chopped	6	f	\N	8	f	t	\N	1
 4254	0	195	1	20	, pitted and chopped	397	f	\N	9	f	t	\N	1
 8415	0	993	1	1	, peeled and minced or grated with a microplane	1590	t	\N	5	f	t	\N	1
-7399	6	746	2	1	, melted, for crust	964	f	\N	2	f	t	\N	0.25
 7400	7	746	1	4	, for crust	1102	f	\N	3	f	t	\N	1
 7401	8	746	1	1	, for crust	40	f	\N	4	f	t	\N	1
 7402	4	746	1	26	, for filling	\N	f	1004	5	f	t	\N	1
 8416	6	993	2	1	\N	171	f	\N	6	f	t	\N	1
 7403	6	746	1	1	, for filling	1062	f	\N	6	f	t	\N	1
 8417	8	993	4	1	, to taste	692	t	\N	7	f	t	\N	1
+7418	7	748	1	3	, divided	176	f	\N	1	f	t	\N	0.25
+7427	7	749	1	3	, divided	176	f	\N	1	f	t	\N	0.25
+7399	6	746	2	1	, melted, for crust	964	f	\N	2	f	t	\N	0.25
+5725	8	418	8	1	, to taste	692	t	\N	5	f	t	\N	1
+5726	0	418	1	6	\N	187	f	\N	6	f	t	\N	1
 7211	8	716	8	1	\N	285	t	\N	7	f	t	\N	1
 7492	0	787	1	1	\N	1216	f	\N	0	f	t	\N	1
 7493	0	787	1	2	\N	1329	f	\N	1	f	t	\N	1
@@ -12646,6 +17022,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6017	0	524	1	1	, quartered	4	f	\N	1	f	t	\N	1
 6018	0	524	1	1	, quartered	12	f	\N	2	f	t	\N	1
 6019	6	524	1	1	, diced	1043	f	\N	3	f	t	\N	1
+2097	7	103	1	4	\N	77	f	\N	7	f	t	\N	0.25
 7443	4	752	1	16	\N	377	f	\N	0	f	t	\N	1
 3100	7	130	1	1	, grated	307	f	\N	1	f	t	\N	1
 3101	0	130	1	1	, outer layers discarded and centre part chopped finely	550	f	\N	2	f	t	\N	1
@@ -12670,8 +17047,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4361	8	248	8	1	\N	285	f	\N	7	f	t	\N	1
 7478	4	785	1	30	\N	1307	f	\N	2	f	t	\N	1
 7479	4	785	1	28	\N	1328	f	\N	3	f	t	\N	1
-5725	8	418	8	1	, to taste	692	t	\N	4	f	t	\N	1
-5726	0	418	1	6	\N	187	f	\N	5	f	t	\N	1
 7437	4	750	1	1	\N	403	f	\N	5	f	t	\N	1
 6357	6	575	4	1	\N	\N	t	426	11	f	t	\N	1
 6271	8	564	1	1	\N	323	t	\N	5	f	t	\N	1
@@ -12704,7 +17079,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7444	6	752	2	3	\N	1407	f	\N	1	f	t	\N	1
 7445	5	752	1	2	\N	1500	f	\N	2	f	t	\N	1
 8422	0	994	1	6	\N	388	f	\N	1	f	t	\N	1
-2097	7	103	1	4	\N	77	f	\N	7	f	t	\N	0.25
 7497	4	788	1	1	\N	251	t	\N	1	f	t	\N	1
 7502	5	789	1	2	\N	103	f	\N	0	f	t	\N	1
 7480	4	785	1	7	, dried	1330	f	\N	4	f	t	\N	1
@@ -12758,9 +17132,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7585	0	831	1	2	\N	187	f	\N	0	f	t	\N	1
 5463	6	375	3	1	, low sodium	47	f	\N	7	f	t	\N	1
 7584	8	830	1	2	\N	77	f	\N	6	f	t	\N	0.25
-4430	7	38	1	1	\N	77	f	\N	0	f	t	\N	0.25
 6363	0	576	1	1	, sliced	597	f	\N	4	f	t	\N	1
-8348	7	265	1	1	\N	77	f	\N	2	f	t	\N	0.25
 6169	8	547	4	1	, to taste	692	t	\N	4	f	t	\N	1
 7592	0	834	1	1	, such as kabocha, Crown Prince, red kuri, butternut	1414	f	\N	1	f	t	\N	1
 7593	4	834	1	1	\N	1412	t	\N	4	f	t	\N	1
@@ -13086,13 +17458,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7863	7	786	1	3	\N	82	f	\N	7	f	t	\N	1
 7864	4	786	1	10	\N	501	f	\N	8	f	t	\N	1
 7644	7	842	1	1	, chopped, for garnish	1261	t	\N	5	f	t	\N	1
-7935	7	908	1	1	(PREPARED HORSERADISH)	1119	f	\N	0	f	t	\N	1
-7936	6	908	4	1	\N	61	f	\N	1	f	t	\N	1
+7935	7	908	1	1	\N	1119	f	\N	1	f	t	\N	1
+7936	6	908	4	1	\N	61	f	\N	2	f	t	\N	1
 7866	0	871	1	2	\N	\N	f	832	2	f	t	\N	1
-7938	0	908	1	1	, thinly sliced	222	f	\N	3	f	t	\N	1
-7939	8	908	4	1	\N	214	f	\N	4	f	t	\N	1
-7940	0	908	1	2	\N	113	f	\N	5	f	t	\N	1
-7941	0	908	1	4	\N	\N	f	907	6	f	t	\N	1
+7938	0	908	1	1	, thinly sliced	222	f	\N	4	f	t	\N	1
+7939	8	908	4	1	\N	214	f	\N	5	f	t	\N	1
+7940	0	908	1	2	\N	113	f	\N	6	f	t	\N	1
 8095	4	960	1	16	, softened	1636	t	\N	8	f	t	\N	1
 7868	0	871	1	4	\N	221	f	\N	3	f	t	\N	1
 7869	7	871	1	2	\N	\N	f	703	4	f	t	\N	1
@@ -13120,12 +17491,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7919	8	905	1	1	\N	214	t	\N	4	f	t	\N	1
 7920	8	905	2	1	\N	67	t	\N	5	f	t	\N	1
 7928	4	707	1	15	, for protein	1307	t	\N	8	f	t	\N	1
-7929	5	907	1	1	\N	488	f	\N	0	f	t	\N	1
-7930	8	907	2	1	\N	71	f	\N	1	f	t	\N	1
-7931	8	907	2	1	\N	323	f	\N	2	f	t	\N	1
-7932	8	907	2	1	\N	214	f	\N	3	f	t	\N	1
-7933	8	907	4	1	\N	67	f	\N	4	f	t	\N	1
-7934	0	907	1	4	\N	113	f	\N	5	f	t	\N	1
 7943	0	909	1	1	, 5-ounce	1130	f	\N	1	f	t	\N	1
 7833	7	866	1	2	\N	171	f	\N	5	f	t	\N	1
 7834	8	866	1	1	\N	357	f	\N	6	f	t	\N	1
@@ -13157,7 +17522,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7872	7	104	1	1	\N	77	f	\N	7	f	t	\N	0.25
 7873	8	104	8	1	\N	67	t	\N	8	f	t	\N	1
 6389	7	578	1	1	, to taste	968	t	\N	12	f	t	\N	1
-7993	6	945	4	1	\N	1744	f	\N	2	f	t	\N	0.25
 7994	6	945	2	1	\N	38	f	\N	3	f	t	\N	1
 7995	7	945	1	1	\N	1547	f	\N	4	f	t	\N	1
 7996	8	945	2	1	\N	214	f	\N	5	f	t	\N	1
@@ -13168,11 +17532,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7959	8	911	2	1	\N	833	f	\N	3	f	t	\N	1
 7960	4	911	1	1	, leaves-only	577	f	\N	4	f	t	\N	1
 7961	0	911	1	4	, sliced	5	t	\N	5	f	t	\N	1
+7941	0	908	1	4	\N	\N	f	907	7	f	t	\N	1
+7929	5	907	1	1	\N	488	f	\N	1	f	t	\N	1
+7930	8	907	2	1	\N	71	f	\N	2	f	t	\N	1
+7931	8	907	2	1	\N	323	f	\N	3	f	t	\N	1
+7932	8	907	2	1	\N	214	f	\N	4	f	t	\N	1
+7933	8	907	4	1	\N	67	f	\N	5	f	t	\N	1
+7993	6	945	4	1	\N	1744	f	\N	2	f	t	\N	0.25
 8009	0	947	1	1	\N	1411	f	\N	2	f	t	\N	1
 8010	0	947	1	1	\N	1214	f	\N	3	f	t	\N	1
 8011	0	947	1	1	\N	1176	f	\N	4	f	t	\N	1
 8012	0	947	1	2	\N	725	f	\N	5	f	t	\N	1
-5947	0	485	1	2	\N	387	f	\N	1	f	t	\N	1
 8055	0	955	1	1	\N	1082	f	\N	0	f	t	\N	1
 8026	6	951	2	1	, diced	222	f	\N	2	f	t	\N	1
 8057	0	955	1	2	, very thinly sliced	5	f	\N	2	f	t	\N	1
@@ -13189,6 +17559,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8013	4	41	1	1	, for seasoning	140	t	\N	6	f	t	\N	1
 6515	8	593	1	1	\N	1573	f	\N	6	f	t	\N	1
 6517	6	593	2	3	, full-fat	178	f	\N	8	f	t	\N	1
+5947	0	485	1	2	\N	387	f	\N	1	f	t	\N	1
 5948	6	485	4	1	\N	39	f	\N	2	f	t	\N	1
 8061	8	955	8	1	\N	285	t	\N	6	f	t	\N	1
 6933	7	646	1	2	\N	1662	f	\N	6	f	t	\N	1
@@ -13398,7 +17769,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8384	5	990	1	3	(CHUCK ROAST)	955	f	\N	0	f	t	\N	1
 8385	8	990	4	1	, to taste	692	f	\N	1	f	t	\N	1
 8386	8	990	4	1	, to taste	71	f	\N	2	f	t	\N	1
-8387	7	990	1	2	\N	77	f	\N	3	f	t	\N	0.25
 8388	6	990	2	1	\N	613	f	\N	4	f	t	\N	1
 8389	6	990	4	1	\N	86	f	\N	5	f	t	\N	1
 8390	0	990	1	14	, peeled (or five large carrots cut into thirds)	353	f	\N	6	f	t	\N	1
@@ -13411,21 +17781,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8184	7	971	1	3	, chopped	2	f	\N	9	f	t	\N	1
 8185	0	971	1	8	\N	1411	f	\N	10	f	t	\N	1
 8186	8	971	8	1	\N	214	f	\N	11	f	t	\N	1
-8207	7	973	1	1	\N	77	f	\N	5	f	t	\N	0.25
+8387	7	990	1	2	\N	77	f	\N	3	f	t	\N	0.25
 8208	8	973	8	1	\N	67	f	\N	6	f	t	\N	1
 8209	0	973	1	1	(JACKET POTATOES RECIPE), to serve	806	t	\N	7	f	t	\N	1
+8207	7	973	1	1	\N	77	f	\N	5	f	t	\N	0.25
 8439	0	996	1	1	\N	1723	f	\N	1	f	t	\N	1
 8440	8	996	4	1	, to taste	74	f	\N	2	f	t	\N	1
 8428	8	994	4	1	\N	692	t	\N	7	f	t	\N	1
 8429	7	994	1	1	\N	322	t	\N	8	f	t	\N	1
 8430	6	994	1	1	, steamed	1290	f	\N	9	f	t	\N	1
 8309	8	367	8	1	\N	692	t	\N	5	f	t	\N	1
-8308	7	367	1	1	\N	77	f	\N	2	f	t	\N	0.25
 8392	7	990	1	1	(Herbs de Provence)	712	f	\N	8	f	t	\N	1
 8493	6	1002	1	5	, chopped into small pieces	1080	f	\N	1	f	t	\N	1
 8494	6	1002	1	2	, cooked and cooled	1187	f	\N	2	f	t	\N	1
 7557	4	825	1	15	\N	1287	f	\N	8	f	t	\N	1
-8473	6	1000	4	1	\N	77	f	\N	1	f	t	\N	0.25
 8474	4	1000	1	4	, cut into 1-inch cubes	1653	f	\N	2	f	t	\N	1
 8475	0	1000	1	1	, crushed	1590	t	\N	3	f	t	\N	1
 8187	8	971	4	1	\N	73	f	\N	12	f	t	\N	1
@@ -13456,15 +17825,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8434	0	995	1	1	, ripe but firm, peeled and sliced	9	f	\N	4	f	t	\N	1
 8435	0	995	1	6	\N	147	t	\N	5	f	t	\N	1
 8436	6	995	3	1	\N	959	t	\N	6	f	t	\N	1
-8437	7	995	1	1	\N	1731	f	\N	7	f	t	\N	0.25
 8438	8	995	8	1	\N	692	t	\N	8	f	t	\N	1
 8442	0	996	1	1	, fried	187	f	\N	4	f	t	\N	1
 5800	7	430	1	1	, finely chopped	2	t	\N	6	f	t	\N	1
 2317	7	127	1	3	\N	410	f	\N	8	f	t	\N	1
 8443	0	996	2	1	, ripe	9	f	\N	5	f	t	\N	1
-8444	7	996	1	1	\N	1724	f	\N	6	f	t	\N	0.25
 3723	8	190	1	1	\N	73	f	\N	5	f	t	\N	1
-8446	7	997	1	3	\N	77	f	\N	1	f	t	\N	0.25
 8447	0	997	1	1	, finely diced	217	f	\N	2	f	t	\N	1
 8448	0	997	1	2	, finely chopped	150	f	\N	3	f	t	\N	1
 8449	0	997	1	2	, peeled and finely chopped	7	f	\N	4	f	t	\N	1
@@ -13484,7 +17850,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8360	8	985	4	1	\N	70	f	\N	8	f	t	\N	1
 8453	5	997	1	1	\N	1967	f	\N	8	f	t	\N	1
 8454	7	997	1	1	\N	1596	f	\N	9	f	t	\N	1
+8308	7	367	1	1	\N	77	f	\N	2	f	t	\N	0.25
+8473	6	1000	4	1	\N	77	f	\N	1	f	t	\N	0.25
+8437	7	995	1	1	\N	1731	f	\N	7	f	t	\N	0.25
+8444	7	996	1	1	\N	1724	f	\N	6	f	t	\N	0.25
 8455	7	997	2	1	\N	124	f	\N	10	f	t	\N	1
+8446	7	997	1	3	\N	77	f	\N	1	f	t	\N	0.25
 4255	7	195	1	2	, chopped	2	t	\N	10	f	t	\N	1
 4256	8	195	8	1	\N	285	t	\N	11	f	t	\N	1
 8520	7	910	1	2	, to taste	13	t	\N	8	f	t	\N	1
@@ -13561,20 +17932,25 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8534	6	1005	4	1	\N	738	t	\N	6	f	t	\N	1
 8548	7	1006	1	1	(OYSTER SAUCE	63	t	\N	8	f	t	\N	1
 8549	7	1006	1	1	\N	1397	f	\N	9	f	t	\N	1
-8550	7	1006	1	1	\N	657	f	\N	10	f	t	\N	0.25
 8551	7	1006	1	2	\N	245	f	\N	11	f	t	\N	1
 8552	0	1006	1	1	, juiced	12	f	\N	12	f	t	\N	1
 8553	6	1006	1	2	\N	\N	f	484	13	f	t	\N	1
 6953	0	647	1	1	, chopped	150	f	\N	9	f	t	\N	1
 6954	6	647	1	2	\N	206	f	\N	10	f	t	\N	1
-8573	8	987	1	1	\N	77	f	\N	2	f	t	\N	0.25
 8574	8	987	8	1	\N	360	t	\N	3	f	t	\N	1
 6465	7	587	1	1	\N	73	t	\N	6	f	t	\N	1
 8420	6	993	2	1	, toasted	461	f	\N	10	f	t	\N	1
 8421	8	993	4	1	, if desired	833	t	\N	11	f	t	\N	1
+6492	0	591	1	1	\N	597	f	\N	5	f	t	\N	1
 5604	6	397	2	1	, chopped	90	f	\N	4	f	t	\N	1
 5605	6	397	4	1	, chopped	2	t	\N	5	f	t	\N	1
 5606	6	397	4	1	\N	1339	t	\N	6	f	t	\N	1
+6493	5	591	1	1	\N	988	f	\N	6	f	t	\N	1
+6494	7	591	1	1	\N	699	f	\N	7	f	t	\N	1
+6495	4	591	1	15	, diced	1088	f	\N	8	f	t	\N	1
+6496	4	591	1	15	\N	151	f	\N	9	f	t	\N	1
+6497	0	591	2	5	cooked, or cauliflower rice	188	t	\N	10	f	t	\N	1
+7934	0	907	1	4	\N	113	f	\N	6	f	t	\N	1
 8575	5	1039	2	3	\N	387	f	\N	1	f	t	\N	1
 8576	0	1039	1	1	, diced	8	f	\N	2	f	t	\N	1
 8577	0	1039	2	1	, diced	1780	f	\N	3	f	t	\N	1
@@ -13589,6 +17965,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8586	7	1039	1	2	, chopped	13	t	\N	12	f	t	\N	1
 7577	4	829	4	3	\N	984	f	\N	5	f	t	\N	1
 1391	6	89	1	1	\N	292	f	\N	7	f	t	\N	1
+4383	6	194	1	1	, grated	95	t	\N	6	f	t	\N	1
 8456	7	997	2	3	\N	75	f	\N	11	f	t	\N	1
 8457	8	997	4	1	\N	67	f	\N	12	f	t	\N	1
 8458	6	997	1	3	, chopped and de-stemmed	1957	f	\N	13	f	t	\N	1
@@ -13598,7 +17975,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8532	6	1005	2	1	\N	1962	t	\N	4	f	t	\N	1
 8533	6	1005	2	1	\N	1961	t	\N	5	f	t	\N	1
 8535	6	1005	4	1	\N	1925	t	\N	7	f	t	\N	1
-8536	7	1005	1	2	, melted	964	f	\N	8	f	t	\N	0.25
+4902	6	101	4	1	\N	278	f	\N	2	f	t	\N	0.25
 8537	8	1005	1	1	\N	1965	f	\N	9	f	t	\N	1
 8538	8	1005	1	1	\N	70	t	\N	10	f	t	\N	1
 8539	8	1005	1	1	\N	40	t	\N	11	f	t	\N	1
@@ -13609,8 +17986,114 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6451	6	585	1	2	, chopped and destemmed	372	f	\N	11	f	t	\N	1
 6438	0	584	1	6	\N	187	f	\N	7	f	t	\N	1
 6439	0	584	1	12	\N	1577	t	\N	8	f	t	\N	1
+2703	7	24	1	4	\N	29	f	\N	2	f	t	\N	0.25
 8418	8	993	1	1	, only if needed	77	t	\N	8	f	t	\N	1
 8419	4	993	1	3	\N	1592	f	\N	9	f	t	\N	1
+2460	7	128	1	3	\N	77	f	\N	2	f	t	\N	0.25
+3259	6	114	2	1	\N	77	f	\N	0	f	t	\N	0.25
+8248	7	313	1	1	, to taste	77	f	\N	7	f	f	\N	0.25
+7317	7	732	1	2	\N	189	f	\N	4	f	t	\N	0.25
+6725	7	621	1	5	, at room temperature, divided	189	f	\N	0	f	t	\N	0.25
+7341	7	736	1	1	\N	189	f	\N	5	f	t	\N	0.25
+6983	7	652	1	1	, 14g	190	f	\N	5	f	t	\N	0.25
+3388	6	116	2	1	\N	278	f	\N	5	f	t	\N	0.25
+3454	6	94	4	3	\N	278	f	\N	3	f	t	\N	0.25
+8243	7	306	1	3	, divided	278	f	\N	5	f	f	\N	0.25
+2848	7	148	1	7	\N	278	f	\N	9	f	t	\N	0.25
+2915	7	152	1	2	\N	278	f	\N	1	f	t	\N	0.25
+7193	7	714	1	2	\N	77	f	\N	0	f	t	\N	0.25
+4034	7	32	1	2	\N	77	f	\N	2	f	t	\N	0.25
+5095	7	156	1	2	, for the sauce	190	t	\N	4	f	t	\N	0.25
+4205	6	244	3	1	\N	77	f	\N	5	f	t	\N	0.25
+7176	7	711	1	1	\N	77	f	\N	5	f	t	\N	0.25
+8550	7	1006	1	1	\N	657	f	\N	10	f	t	\N	0.25
+8573	8	987	1	1	\N	77	f	\N	2	f	t	\N	0.25
+8536	7	1005	1	2	, melted	964	f	\N	8	f	t	\N	0.25
+7201	7	715	1	1	\N	77	f	\N	2	f	t	\N	0.25
+5536	7	388	1	2	, divided	78	f	\N	1	f	t	\N	0.25
+5524	7	386	1	6	\N	278	f	\N	2	f	t	\N	0.25
+5534	8	387	1	1	\N	278	f	\N	4	f	t	\N	0.25
+5925	6	480	2	1	\N	77	f	\N	0	f	t	\N	0.25
+7937	7	908	1	1	\N	77	f	\N	3	f	t	\N	0.25
+8236	7	978	2	3	\N	78	f	\N	3	f	t	\N	0.25
+5897	7	476	1	1	\N	176	f	\N	0	f	t	\N	0.25
+6072	7	532	1	2	\N	176	f	\N	2	f	t	\N	0.25
+6143	7	544	1	1	, to thin	176	f	\N	3	f	t	\N	0.25
+6259	7	562	1	1	, plus more to oil the skillet	176	f	\N	2	f	t	\N	0.25
+6268	7	564	1	2	\N	176	f	\N	2	f	t	\N	0.25
+6096	8	537	1	2	\N	176	f	\N	1	f	t	\N	0.25
+6430	7	583	1	1	\N	176	f	\N	7	f	t	\N	0.25
+7180	7	712	1	4	, melted	189	f	\N	1	f	t	\N	0.25
+8251	8	261	1	1	, to taste	278	t	\N	7	f	f	\N	0.25
+3781	7	189	1	5	\N	278	f	\N	9	f	t	\N	0.25
+4977	6	308	2	1	\N	278	f	\N	3	f	t	\N	0.25
+5014	6	256	2	1	, plus more as needed	278	f	\N	5	f	t	\N	0.25
+4743	7	250	1	1	, for drizzling	278	f	\N	8	f	t	\N	0.25
+4907	7	234	1	1	\N	278	f	\N	1	f	f	\N	0.25
+5486	8	260	1	1	\N	278	t	\N	6	f	t	\N	0.25
+3668	7	188	1	3	\N	278	f	\N	13	f	t	\N	0.25
+5880	6	472	2	1	\N	278	f	\N	1	f	t	\N	0.25
+2977	7	153	1	3	\N	278	f	\N	7	f	t	\N	0.25
+5931	7	481	1	1	\N	278	f	\N	0	f	t	\N	0.25
+5924	6	479	3	1	\N	278	f	\N	8	f	t	\N	0.25
+8260	7	361	1	1	, divided	278	f	\N	5	f	t	\N	0.25
+8264	7	787	1	3	\N	278	f	\N	5	f	t	\N	0.25
+8275	7	309	1	6	\N	278	f	\N	7	f	t	\N	0.25
+6324	7	572	1	2	\N	278	f	\N	7	f	t	\N	0.25
+6714	7	620	1	6	\N	278	f	\N	1	f	t	\N	0.25
+6792	7	631	1	5	, for dressing	278	f	\N	5	f	t	\N	0.25
+7862	7	786	1	3	\N	278	f	\N	6	f	t	\N	0.25
+7955	7	362	1	1	, divided	278	t	\N	5	f	t	\N	0.25
+2782	7	141	1	2	\N	499	f	\N	0	f	t	\N	0.25
+6119	7	540	1	1	\N	657	f	\N	12	f	t	\N	0.25
+7238	6	720	4	1	\N	657	f	\N	6	f	t	\N	0.25
+4712	7	271	1	2	\N	722	f	\N	0	f	t	\N	0.25
+5678	6	409	4	1	, melted	964	f	\N	7	f	t	\N	0.25
+5763	7	423	1	1	\N	964	f	\N	3	f	t	\N	0.25
+6120	7	541	1	2	\N	964	f	\N	0	f	t	\N	0.25
+7024	8	660	1	1	\N	79	f	\N	2	f	t	\N	0.25
+8304	7	983	1	5	, divided	278	f	\N	3	f	t	\N	0.25
+7203	7	715	1	1	\N	189	f	\N	4	f	t	\N	0.25
+4582	6	175	4	1	\N	190	f	\N	2	f	t	\N	0.25
+4747	7	272	1	2	\N	722	f	\N	1	f	t	\N	0.25
+5457	7	375	1	1	\N	722	f	\N	1	f	t	\N	0.25
+4365	6	249	3	1	\N	278	f	\N	4	f	t	\N	0.25
+7381	7	743	1	1	\N	79	f	\N	1	f	t	\N	0.25
+7679	6	846	1	4	\N	79	f	\N	9	f	t	\N	0.25
+7998	6	945	1	1	\N	79	f	\N	7	f	t	\N	0.25
+7798	7	751	1	1	\N	278	f	\N	7	f	t	\N	0.25
+5803	7	430	1	2	\N	278	f	\N	9	f	t	\N	0.25
+7034	7	661	1	3	\N	189	f	\N	4	f	t	\N	0.25
+7621	7	840	1	1	\N	1781	f	\N	2	f	t	\N	0.25
+6468	7	588	1	2	\N	176	f	\N	1	f	t	\N	0.25
+7857	7	870	1	8	, melted	189	f	\N	5	f	t	\N	0.25
+7846	7	869	1	2	, divided	189	f	\N	1	f	t	\N	0.25
+5934	7	482	1	1	\N	176	f	\N	1	f	t	\N	0.25
+7858	8	870	1	1	\N	79	f	\N	6	f	t	\N	0.25
+6393	7	580	1	1	\N	176	f	\N	3	f	t	\N	0.25
+5309	7	319	2	1	\N	278	f	\N	1	f	t	\N	0.25
+7114	7	702	1	1	\N	189	f	\N	3	f	t	\N	0.25
+6055	6	529	4	1	\N	278	f	\N	10	f	t	\N	0.25
+5651	7	403	1	2	\N	964	f	\N	3	f	t	\N	0.25
+6160	7	546	1	1	\N	657	f	\N	5	f	t	\N	0.25
+5626	7	399	1	1	\N	964	t	\N	5	f	t	\N	0.25
+6835	6	637	1	1	, at toom temperature, diced	190	f	\N	1	f	t	\N	0.25
+4625	7	267	1	4	\N	722	f	\N	2	f	t	\N	0.25
+6628	7	610	1	2	\N	964	f	\N	0	f	t	\N	0.25
+6643	7	611	1	2	, divided	964	f	\N	0	f	t	\N	0.25
+6559	7	598	1	1	, liquified	964	f	\N	9	f	t	\N	0.25
+5681	7	410	1	1	\N	964	f	\N	1	f	t	\N	0.25
+6615	7	608	1	2	, divided	964	f	\N	7	f	t	\N	0.25
+6012	8	523	1	1	\N	1010	f	\N	1	f	t	\N	0.25
+8199	7	972	1	3	\N	1598	f	\N	8	f	t	\N	0.25
+8006	8	946	1	1	\N	1720	f	\N	8	f	t	\N	0.25
+6274	7	565	1	1	\N	964	f	\N	1	f	t	\N	0.25
+6296	7	568	1	2	\N	964	f	\N	2	f	t	\N	0.25
+8398	8	991	1	1	\N	78	f	\N	6	f	t	\N	0.25
+8368	7	986	1	3	\N	676	f	\N	5	f	t	\N	0.25
+4430	7	38	1	1	\N	77	f	\N	0	f	t	\N	0.25
+8348	7	265	1	1	\N	77	f	\N	2	f	t	\N	0.25
+5727	8	418	1	1	\N	964	f	\N	7	f	f	\N	0.25
 \.
 
 
@@ -13701,8 +18184,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1225	Place the cucumber in a strainer over a bowl, sprinkle a little salt and leave for 5 minutes to drain. Rinse well and drain again, then place in a bowl with the tomatoes and spring onions. Stir in the olive oil, parsley, mint and preserved lemon. Season well.	127	0	0
 2922	Drop the Christmas candy mixture by a tablespoonful onto a parchment or wax-lined baking sheet.	322	3	0
 2923	Allow the candy to set up completely at room temperature, or in the refrigerator for 2 hours. If you need it sooner you can place the sheet pan in the freezer for 30 minutes.	322	4	0
-1446	Preheat the oven to 220°C/425°F. Also preheat the grill (broiler). Cut each sfilatino on the diagonal into 12-15 slices, discarding the ends. Grill (broil) until lightly toasted on both sides. Spread sun-dried tomato purée on one side of each slice of toast. Arrange the mozzarella over the tomato purée.	146	0	0
-1447	Put the toasts on baking sheets, sprinkle with herbs and pepper to taste and drizzle with oil. Bake for 5 minutes or until the mozzarella has melted and is bubbling. Leave the toasts to settle for a few minutes before serving.	146	1	0
+1446	Preheat the oven to 425°F. Also preheat the grill (broiler). Cut each sfilatino on the diagonal into 12–15 slices, discarding the ends. Grill (broil) until lightly toasted on both sides. Spread sun-dried tomato purée on one side of each slice of toast. Arrange the mozzarella over the tomato purée.	146	0	24
+1447	Put the toasts on baking sheets, sprinkle with herbs and pepper to taste and drizzle with oil. Bake for 5 minutes or until the mozzarella has melted and is bubbling. Leave the toasts to settle for a few minutes before serving.	146	1	2
+2357	Bring the water in the pan back to the boil, add the pasta and cook for 10–12 minutes.	194	2	4
 604	Combine the mayonnaise and mustard; spread about 1 tablespoon into each pita half. 	57	0	0
 605	Stuff each with one lettuce leaf, two slices of bologna, one slice of ham and two slices of tomato.	57	1	0
 2924	Store in the refrigerator or freezer.	322	5	0
@@ -13887,8 +18371,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4555	Add the oats, flour, coconut, and eggs to the fruit mixture and gently stir together until evenly combined.	964	2	0
 4556	Turn the mixture into the pan and spread to the edges in an even layer. Bake for about 20 minutes, or until golden and just firm to the touch.	964	3	2
 4557	Leave to cool in the pan, then lift out on to a board and cut into bars.	964	4	0
-1413	Mix the diced chicken with half the garlic and the tumeric. Heat a little of the oil in a pan, add the chicken and fry until the chicken has cooked thoroughly. Remove from the pan and set aside.	140	0	0
-1414	Add the remaining oil, garlic and cardamom seeds with the carrots and rice. Stir-fry for 1-2 minutes.	140	1	0
 859	Eat chips with salsa.	60	0	0
 2672	Finely chop the kimchi with half the cilantro leaves, beat in the eggs, then pour over the rice, spreading it out evenly with a spatula. Cover and leave for another 5–10 minutes, or until the eggs are just set.	258	1	0
 2076	In a mortar, add the avocado and mash using the pestle. Add the red onion, lime juice, cilantro and salt.	198	0	0
@@ -13899,6 +18381,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1846	Drain the pasta, return it to the pan and toss with the sauce. Season to taste and sprinkle with a little shopped fresh parsley and more grated lemon rind, if you like. Serve with the hot herb bread.	165	5	4
 1137	Set out three shallow bowls. Sprinkle flour over one, seasoning it well. Beat the egg with a little salt and pour into the second. Sprinkle the third with dried breadcrumbs. Dip the fillets first into the flour on both sides, then into the egg, then into the breadcrumbs to coat them evenly.	103	1	0
 3502	Remove the chicken from the oven and set aside to cool.	580	2	0
+1414	Add the remaining oil, garlic and cardamom seeds with the carrots and rice. Stir-fry for 1–2 minutes.	140	1	4
 1132	Put the mayonaise ingredients in a bowl and mix well to combine.	119	0	0
 3130	Season to taste with salt and pepper.	412	2	0
 2785	Preheat the oven to 350°F. Place the unpeeled bananas on a baking sheet and brush them with the lemon juice. Bake for about 20 minutes until the skins are turning black and the flesh gives a little when the bananas are gently squeezed.	156	0	2
@@ -13915,6 +18398,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3500	Preheat the oven to 400°F.	580	0	2
 857	Make the quinoa pizza crust.	97	0	0
 858	Add toppings and bake until cheese is melted.	97	1	0
+1413	Mix the diced chicken with half the garlic and the tumeric. Heat a little of the oil in a pan, add the chicken and fry until the chicken has cooked thoroughly. Remove from the pan and set aside.	140	0	4
 1293	Preheat the grill (broiler) to high. Toss the eggplant chunks (and tomatoes) with the olive oil. 	80	0	24
 1294	Season with salt and pepper to taste and spread them on a non-stick baking sheet. Grill (broil) for 5–6 minutes, turning occasionally, until golden brown.	80	1	24
 1295	Meanwhile, prepare the flavoured couscous according to the instructions on the packet.,	80	2	0
@@ -13922,9 +18406,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1136	Skin the chicken fillets. Lay them outside down and, with a sharp knife, cut horizontally almost through, from the rounded side. Open them up like a book. Press gently, to make a roundish shape the size of a side plate. Sprinkle with lemon juice and paprika.	103	0	0
 3501	Place the chicken on a lined baking sheet, and season with salt, pepper and avocado oil. Roast in the oven for 30 minutes, or until an internal temperature of 165°F is reached.	580	1	2
 3503	Once cooled, chop the chicken and add to a bowl, along with the remaining ingredients. Start with ⅓ cup of mayo and add more to your liking. Season with salt and pepper, to taste.	580	3	0
-1415	Add the tomatoes and chicken stock to the pan and bring to a boil. Cover and simmer for about 10 minutes.	140	2	0
-1416	Meanwhile, make the relish by mixing all the ingredients in a bowl.	140	3	0
-1417	When the rice if almost cooked, fork in the chicken and heat through. Serve with the relish.	140	4	0
 1246	Halve the avocados, remove their stones (pits) and, using a spood, scoop out their flesh into a bowl.	70	0	0
 1247	Mash the flesh well with a large fork or potato masher.	70	1	0
 1248	Finely chop the chilies, garlic and shallot, then stir into the mashed avocado with the olive oil and lemon juice. Add salt to taste.	70	2	0
@@ -13939,6 +18420,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2787	To serve, slit each banana open with a knife and open out the skins to reveal the tender flesh. Transfer to serving plates and serve with scoops of ice cream. Pour the sauce over.	156	2	0
 1728	Cut the pork into thin shreds and put these on top of the refried beans. Top with the tomato slices. Drain the jalapeno strips and put them on top of the tomato slices. Add the cheese and sprinkle with coriander leaves.	164	3	0
 1729	Turn the top halves of the bread or rolls over so that the cut sides are uppermost, and spread these with creme fraiche. Sandwich back together again and serve. 	164	4	0
+1415	Add the tomatoes and chicken stock to the pan and bring to a boil. Cover and simmer for about 10 minutes.	140	2	4
+1416	Meanwhile, make the relish by mixing all the ingredients in a bowl.	140	3	0
 1872	Add ground beef to a medium pot and cook it stirring from time to time, over medium heat until browned and until all the liquid evaporates. Add the onion and cook for 2–3 minutes.	181	0	4
 3131	In a large bowl, mix all of the ingredients until smooth.	413	0	0
 3132	Cover bowl and refrigerate for at least 2 hours. The longer it sits, the thicker it gets.	413	1	65536
@@ -13966,6 +18449,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4774	Wrap the sandwich tightly in foil and let it sit for about 5 minutes before eating. This will soften the bread and allow all the flavors to combine.	632	7	0
 3250	Quickly pinch and twist each chipolata in the middle to make two mini ones, then randomly dot them around your bake, lightly pressing them into the beans and tomatoes.	320	2	0
 3251	Roast for 45 minutes, or until everything is golden, bubbling, and delicious.	320	3	4
+1417	When the rice if almost cooked, fork in the chicken and heat through. Serve with the relish.	140	4	0
 3369	Once the mixture has been cooled, form into patties and place on a lined plate.	536	1	0
 1152	In a large mixing bowl, combine romaine, arugula, chicken, corn, beans and feta. Toss with dressing and transfer to a salad bowl.	117	0	0
 1153	Garnish with fresh diced tomatoes, avocado slices, tortilla strips, and fresh herbs.	117	1	0
@@ -14004,8 +18488,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1738	Line each pastry round with a circle of baking parchment and some baking beans or uncooked rice.	163	1	0
 1739	Bake the tarts for 10–15 minutes, or until the pastry is cooked through and golden. Remove the paper and baking beans or rice and set aside to cool.	163	2	2
 1306	Put the chicken breast fillets in a shallow, non-metallic dish and add the star anise.	128	0	0
-3276	Whisk honey, soy sauce, and red pepper flakes in a bowl; set aside.	485	0	0
-3277	Heat olive oil in a skillet over medium heat; cook and stir chicken in hot oil until lightly brown, about 5 minutes.	485	1	4
 1307	In a small bowl, whisk together the oil and soy sauce and season with black pepper to make a marinade.	128	1	0
 3179	Start at the bottom of one wedge, and wrap the bacon around the wedge, stretching slightly to cover from end to end. Place on the parchment-lined baking sheet.	425	3	0
 3181	While the avocados are cooking, line a plate with paper towels.	425	5	0
@@ -14033,7 +18515,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1258	Remove the shells and roughly chop the hard boiled eggs.	69	0	0
 1259	Place the chopped eggs in a large bowl. Add the onions, season with salt and pepper and mix well. Add enough mayonaise to bind the mixture together. Stir in the mustard, if using, and the chopped parsley, or sprinkle the parsely on top to garnish.	69	1	0
 1260	If you have time, chill the mixture before serving with the toasts of crackers.	69	2	0
+3276	Whisk honey, soy sauce, and red pepper flakes in a bowl; set aside.	485	0	0
 1377	Heat sesame oil in a 12" skillet over medium-high heat. Add ground beef and white and light green parts of green onions, then season with white pepper and cook through.	87	3	4
+3277	Heat olive oil in a skillet over medium heat; cook and stir chicken in hot oil until lightly brown, about 5 minutes.	485	1	4
 3135	Place the fruits and vegetables in the large pitcher of filtered water.	415	0	0
 3136	Sip throughout the day.	415	1	0
 4194	Crack 2 eggs into a cup. That allows you to make sure you don't break the yolks and to pick out any shell.	845	0	0
@@ -14135,16 +18619,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1564	Preheat the oven to 150°C/300°F. Tightly wrap the pancakes in foil and place in the oven to warm through.	155	0	0
 1565	Meanwhile, heat the butter in a large frying pan and add the pears. Fry for 2-3 minutes, until the undersides are golden. Turn the pears over and sprinkle with sugar. Cook for a further 2-3 minutes, or until the sugar dissolves and the pan juices become sticky.	155	1	0
 1773	Preheat the grill (broiler) to high. Hull the strawberries and cut them in half. Arrange the fruit in a single layer, cut side up, on a baking sheet or in an ovenproof dish and dust with the icing sugar.	144	0	24
-2357	Bring the water in the pan back to the boil, add the pasta and cook for 10-12 minutes.	194	2	0
 3145	Preheat the oven to 350°F. Line 12 muffin tins with muffin liners.	418	0	2
-3146	Melt coconut oil in a pan over medium heat, and add the onion and garlic, until translucent, about 5 minutes.	418	1	4
-3147	Add onion mixture to a bowl, along with the chopped and cooked bacon, and the eggs. Mix to combine.	418	2	0
 4642	Divide up the bresaola between your plates, followed by the beet salad, then drizzle with 1 teaspoon of extra virgin olive oil, and serve.	361	2	0
 4563	Start with thin pieces of chicken - you can either buy it thin sliced at the store, or butterfly and pound to even thickness. Pat dry with a paper towel - moisture is the enemy of browning. Sprinkle both sides with kosher salt.\r\n	966	0	0
 1869	Turn heat up to medium-high then add onions to skillet, season with salt and pepper, then sauté until just beginning to become tender, 3–4 minutes. Transfer to the crock pot.	180	1	4
 3030	Add 2 tablespoons of red wine vinegar and 2 cups of water to the pan. Cover, then cook in the oven for 2 hours, or until dark and sticky. Loosen with a splash of water, if needed, mix up, taste, season to perfection, and serve.	382	1	2
 1774	Grill (broil) the strawberries for 4–5 minutes, or until the sugar starts to bubble and turn golden.	144	1	24
-3148	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	418	3	0
 2857	Heat the olive oil in a large, deep pan. Add the finely chopped onion and cook over a low heat, stirring frequently, for about 5 minutes or until softened.	192	0	4
 1546	Place the softened butter in a bowl. Beat with a spoon until soft and creamy, then mix in the ground cinnamon and most of the sugar.	154	0	0
 1547	Toast the bread on both sides. Spread with the butter and sprinkle with a little remaining sugar. Serve at once, with pieces of fresh fruit, if you like.	154	1	0
@@ -14153,9 +18633,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2457	Over high heat, bring a large pot of water to a boil; add pasta and cook just short of al dente, about 8 – 10 minutes. Drain pasta and set aside to keep warm. 	8	0	0
 2459	Toss in a few basil leaves, stir and begin plating. Finish with grated cheese to taste. Serve.	8	2	0
 4893	Dot the mango chutney and remaining yogurt over the breads. Halve the soft-boiled eggs and arrange on top, smashing them in with a fork, if you like.	374	3	0
+3147	Add onion mixture to a bowl, along with the chopped and cooked bacon, and the eggs. Mix to combine.	418	2	0
 1705	Heat a wok or wide-based flameproof casserole over a fairly high heat. Heat the oil and add the cabbage. Stir-fry for 2-3 minutes, using one or two wooden spoons to seem the cabbage moving so that it cooks evenly but is still crunchy. Season with salt and pepper and serve immediately.	166	2	0
 1566	Remove the pancakes from the oven and take them out of the foil. Divide the pears among them, place them in one quarter. Fold each pancake in half over the filling, then into quarters and place two folded pancakes on each plate. Drizzle the pan juices over and serve with creme fraiche or fromage frais.	155	2	0
-3149	Bake for 30–35 minutes, until the middles are set and not jiggly.	418	4	2
 1611	Scrape or rub off the skins from the new potatoes and cook in salted water with the mint for about 10 minutes, or until just tender. Drain and allow to cool a little, then turn into a salad bowl.	120	0	0
 1612	Heat the oil in a frying pan, then add the onion and cook until just softening. Add the diced bacon to the pan and cook for 3-5 minutes, until beginning to crisp up.	120	1	0
 1613	Add the garlic and cook for another minute or so, and then add the chopped herbs, the vinegar, mustard and seasoning to taste, remembering that the bacon may be salty.	120	2	0
@@ -14218,9 +18698,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2002	Arrange the cucumber, potato and pepper slices and the pitted olives on a serving plate or in a dish.	189	0	0
 2003	Sprinkle the chopped fresh chilli over the salad and season with salt, if you like. (Olives tend to be very salty.)	189	1	0
 2004	Sprinkle the garlic, spring onions, olive oil, white wine vinegar and lemon juice over the salad. Chill before serving, sprinkled with the chopped mint leaves and coriander leaves.	189	2	0
-2355	Snap off and throw away the woody ends of the asparagus - after trimming, you should have about 200g/7oz asparagus spears. Cut the spears diagonally into pieces about the same length and shape as the garganelli.	194	0	0
-2356	Blanch the thicker asparagus pieces in a large pan of lightly salted boiling water for 2 minutes, the tips for 1 minute. Using a slotted spoon, transfer the blanched asparagus to a colander, rinse under cold water and set aside.	194	1	0
-2358	Meanwhile, melt the butter in a heavy pan. Add the cream, with salt and pepper to taste, and bring to the boil. Simmer for a few minutes until the cream reduces and thickens.	194	3	0
 217	Preheat the oven to 425°F. 	55	0	2
 218	Place the trimmed asparagus in an even layer on a baking sheet and drizzle it with olive oil. Roll the stalks in the oil to ensure it coats every inch. Top with salt and pepper.	55	1	0
 2569	In a food processor, add the chicken livers, bacon, almond meal, non-dairy milk, thyme, sage, salt and pepper and pulse to chop the livers and combine thoroughly. Add the sautéed veggies and pulse to mix through.	271	2	256
@@ -14232,15 +18709,17 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1883	Cook the pasta in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of starchy cooking water. 	183	0	4
 3541	Rinse the rice until the water runs clear.	589	0	0
 2070	Cook the noodles in a large pan of boiling lightly salted water until tender.	197	0	4
+2355	Snap off and throw away the woody ends of the asparagus - after trimming, you should have about 7oz asparagus spears. Cut the spears diagonally into pieces about the same length and shape as the garganelli.	194	0	0
 3083	Serve with steamed rice or cauliflower rice.	396	2	0
 2757	Put the peeled and halved banana, thick Greek yogurt, egg and maple syrup in a food processor or blender. Add 2-tbsp chilled water or an ice cube.	167	0	384
 3257	Remove the pan from the heat and stir in the lime juice and cilantro.	476	2	0
 3028	Divide into bowls and top with remaining ½ cup parmesan. Enjoy!	381	4	0
+2356	Blanch the thicker asparagus pieces in a large pan of lightly salted boiling water for 2 minutes, the tips for 1 minute. Using a slotted spoon, transfer the blanched asparagus to a colander, rinse under cold water and set aside.	194	1	4
 2763	Take dough off of boards and cut the cookies apart. Sprinkle a cookie sheet with anise seeds, place cookies on it and let fry overnight. If in the morning the edges appear drier than the middle wet finger tip with water and trace along the edges of each cookie. This is so they will rise evenly. Bake in a slow oven (300-325 degrees) about twenty minutes.	83	1	0
 2754	In a food processor, combine all ingredients and blend until a sticky dough is formed. It doesn’t have to be completely smooth, but it does have to stick together!	236	0	256
 2755	Remove the processing blade and form into 1-inch balls.	236	1	0
+2358	Meanwhile, melt the butter in a heavy pan. Add the cream, with salt and pepper to taste, and bring to the boil. Simmer for a few minutes until the cream reduces and thickens.	194	3	4
 1556	When cool enough to handle, slice the potato chunks and put them in a bowl.	153	1	0
-2359	Stir the asparagus, wine and about half the Parmesan into the sauce. Drain the pasta and return it to the clean pan. Add the sauce and herbs and toss. Serve immediately with the remaining Parmesan.	194	4	0
 1890	Halve the brioche buns and quickly toast in a large dry non-stick frying pan on a medium-high heat, then put aside.	110	0	0
 1891	Sqeeze the sausages out of their skins into a bowl, divide into 4 and with wet hands flatten out into 1/2-inch thick patties.	110	1	0
 1892	Drizzle 1 tablespoon of olive oil into the pan, add the patties and cook for 2 minutes on each side, or until golden and cooked through, then remove to a plate.	110	2	0
@@ -14285,6 +18764,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1967	Meanwhile, heat the oil in a large pan, add the onion and garlic and cook for 3 minutes. Add the paprika, herbs and chilli sauce to taste, then the yellow pepper. Cook for 3 minutes more, stirring occasionally.	190	1	4
 1969	While the tomato sauce and pasta are cooking, drain the cooked sausages on kitchen paper, and, when cool enough to touch, cut each one diagonally into ½-inch pieces.	190	3	0
 4793	Place the pasta cooking pot back over low heat then add Balsamic Vinaigrette, drained pasta, and spinach mixture then stir until the dish is heated through and spinach is tender. Scoop into bowls, then top with Parmesan or feta cheese.	85	5	4
+2359	Stir the asparagus, wine and about half the Parmesan into the sauce. Drain the pasta and return it to the clean pan. Add the sauce and herbs and toss. Serve immediately with the remaining Parmesan.	194	4	0
 2578	Preheat oven to 400°F.	250	0	0
 2579	Dice potatoes and zucchini separately and set aside. Chop cauliflower and arugula separately and set aside.	250	1	0
 2580	Mix diced potatoes and chopped cauliflower with 1 tablespoon of avocado oil and 1-2 teaspoons of salt. Roast in the oven until tender and browning.	250	2	0
@@ -14966,17 +19446,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3272	Sprinkle with pine nuts and enjoy!	482	3	0
 4794	Optionally, add some guacamole, fresh cilantro, jalepenos, and a squeeze of fresh lime juice.	910	4	0
 4490	Cover the roasting pan with foil and bake for 40–45 minutes, until the custard is set but still a little wobbly in the middle.	953	4	2
-3553	In a large skillet, over medium high heat, add the coconut oil. When melted, add the onion and cook until translucent, about 5 minutes.	591	0	0
-3554	Add the zucchini, cabbage and bell pepper, and cook until softened, about 5 minutes.	591	1	0
-3555	Next, add the ground turkey and tumeric, and cook until browned, about 5 minutes.	591	2	0
-3556	Add in the canned tomatoes and coconut cream and let simmer for 20 minutes.	591	3	0
-3557	When done, serve over cauliflower rice, or regular rice.	591	4	0
 3568	In a large skillet over medium-high heat, heat oil, garlic and capers. Cook until the garlic becomes fragrant, about 3 minutes.	595	0	4
 3580	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	600	0	128
 2641	Flatten the chicken breasts by pounding them with your fists until the fat end is the same thickness as the skinny end. Rub with 1 tablespoon of olive oil and a pinch of sea salt and black pepper, then grill for 2–3 minutes on each side, or until bar-marked and cooked through. Meanwhile, trim the lettuce, click the leaves apart, and divide between two plates, snipping the cress alongside.	270	1	0
 3593	In a large skillet, over medium-high heat, add the coconut oil or beef tallow. When melted, add the onion and cook until translucent, about 5 minutes.	607	0	0
 3579	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	599	0	128
 3590	Unshell the pistachios. Eat the pistachios. Enjoy the pistachios.	604	0	0
+3553	In a large skillet, over medium high heat, add the coconut oil. When melted, add the onion and cook until translucent, about 5 minutes.	591	0	4
 3576	Add all ingredients into a high speed blender and blend for 1 minute, or until smooth.	597	0	128
 3582	Preheat the oven to 375°F. Sprinkle chicken breast with salt and pepper, place on a baking tray, and cook in the oven for 35-50 minutes, or until internal temperature reaches 165F. Set aside when cooked.	602	0	2
 3571	Preheat the oven to 350°F.	596	0	2
@@ -14993,6 +19469,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3560	Bake fish for 30 minutes, or until flaky when poked with a fork.	592	2	2
 3561	When fish is done baking, separate in small parts and place on wrap or lettuce leaf, and top with tomatoes, avocado, mango and pepper.	592	3	0
 3562	Add a dollop of coconut yogurt and/or guacamole.	592	4	0
+3554	Add the zucchini, cabbage and bell pepper, and cook until softened, about 5 minutes.	591	1	4
+3555	Next, add the ground turkey and tumeric, and cook until browned, about 5 minutes.	591	2	4
 2979	Add the rice, chili jam, a splash of water, and a pinch of sea salt and black pepper, then toss for 2 minutes until everything is well coated.	367	1	4
 1601	Place the chicken breasts into the bottom of the baking pan then drizzle on the Italian dressing and sprinkle on seasonings  to taste. Use tongs or your hands to flip the chicken breasts to coat in the dressing and seasonings then arrange into an even layer.	135	1	0
 1602	Bake for 20 minutes or until the thickest part of the largest chicken breast reaches an internal temperature of 165 degrees as read by a digital instant-read thermometer. Let the chicken rest for 15-30 minutes before serving and/or slicing.	135	2	0
@@ -15009,6 +19487,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3565	Remove date from hot water.	594	0	0
 3566	Add all ingredients into a high speed blender.	594	1	0
 3567	Blend on high for 30 seconds to 1 minute	594	2	0
+3556	Add in the canned tomatoes and coconut cream and let simmer for 20 minutes.	591	3	4
 3563	Garnish with cilantro and squeeze a quarter of lime over top.	592	5	0
 3586	Next, prepare your veggies. Chop the green onion into small pieces, and chop the tomatoes into small chunks.	602	4	0
 3591	Cook the quesadilla and serve warm.	605	0	4
@@ -15280,9 +19759,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3804	Increase the heat under the pot to medium-high and cook until the liquid is as thick as pancake syrup, about 8–10 minutes. Discard the cinnamon stick and stir the caramel sauce into the reduced liquid.	656	2	4
 3805	Scoop the ice cream and place it in a bowl beside the pear. Pour the caramel sauce over the pears and ice cream and serve.	656	3	0
 3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	654	4	0
+3146	Melt coconut oil in a pan over medium heat, and add the onion and garlic, until translucent, about 5 minutes.	418	1	4
 4766	Add black beans, chicken broth, and salsa verde to the skillet, then turn heat up to bring to a boil. Add rice then stir to combine, place a lid on top, turn heat to low and simmer until rice is tender, 15–18 minutes, adding a splash more chicken broth near the end if needed. 	319	2	4
 4767	Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	319	3	0
 3524	Top with a pepperonli slice (optional), and bake for 30–35 minutes, until the middles are set and not jiggly.	584	7	2
+3148	Pour mixture into lined muffin tins, ¾ full, to allow room for the egg bite to puff.	418	3	0
+3149	Bake for 30–35 minutes, until the middles are set and not jiggly.	418	4	2
 3810	In a 9-inch ovenproof skillet, combine the sweet potato and olive oil and season with salt and pepper. Toss to combine.	659	1	0
 3811	Transfer to the oven and roast for 15 minutes. Add the chorizo to the pan and bake for another 10 minutes, or until the sweet potatoes soften.	659	2	2
 3869	Preheat the oven to 400F. Line a baking sheet with parchment paper.	700	0	0
@@ -15315,6 +19797,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3874	Let the galette cool for 10 minutes before cutting and serving.	700	5	0
 3863	In a blender, combine the coconut water, lime juice, ginger, salt, and ice and blend until smooth. Divide the blended mix between two tall glasses and top with tonic water.	698	0	128
 4009	Sauté ground beef in a large skillet over medium heat until browned and crumbly; 5–10 minutes.	745	0	4
+3557	When done, serve over cauliflower rice, or regular rice.	591	4	0
 3103	Place kale onto a prepared baking sheet, and spread out evenly.	403	3	0
 3104	Bake for 10–12 minutes, or until the leaves are slightly crispy.	403	4	2
 3812	Take the pan out of the oven and spoon the salsa around evenly. Break the eggs into the pan, top with the cheddar, and bake for another 5–10 minutes depending on how you like your eggs. Serve hot.	659	3	2
@@ -15845,12 +20328,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4383	Remove the chicken from the oven and let it rest for at least 20 minutes before slicing into it.	905	5	0
 4389	Taste the soup and season it with salt and pepper as you see fit.	707	2	0
 4394	In a small bowl, stir together the horseradish and mayonnaise. Set aside.	908	0	0
-4395	Heat a medium skillet over medium-high heat. Add the olive oil, onion, and salt to the pan and cook for 10 minutes, or until the onions are softened and browned.	908	1	0
-4396	Toast the buns in the pan and spread the top and bottom halves of each bun with the horseradish mayo. Put a cooked patty on each of the bottom buns, and top each with a quarter of the onions. Set a second patty on top of the onions and top with the remaining onions. Add the top bun.	908	2	0
-4390	In a medium bowl, combine the ground beef, garlic powder, onion powder, salt, and pepper. Wet your hands with cold water and mix to combine.	907	0	0
-4391	Wet your hands with cold water again, divide the meat into 4 portions, and roll into balls. Form the balls into patties about 1/4-inch thick.	907	1	0
-4392	Heat the grill to 400F for 15 minutes. Grill the patties for 3 to 4 minutes per side.	907	2	0
-4393	Toast the buns, put a burger on each, top with your favorite condiments and enjoy,	907	3	0
+4395	Heat a medium skillet over medium-high heat. Add the olive oil, onion, and salt to the pan and cook for 10 minutes, or until the onions are softened and browned.	908	1	4
+4396	Toast the buns in the pan and spread the top and bottom halves of each bun with the horseradish mayo. Put a cooked patty on each of the bottom buns, and top each with a quarter of the onions. Set a second patty on top of the onions and top with the remaining onions. Add the top bun.	908	2	4
 4398	Heat the tortillas in the steak pan for 30 seconds per side.	909	1	0
 4414	Put the chicken in a large bowl and sprinkle with the lemon zest, lemon juice, pepper flakes, thyme, garlic, salt, pepper, and olive oil. Massage the herbs and spices into the chicken, cover the bowl, and refrigerate for 1 hour.	911	0	65536
 4150	Peel and finely slice the garlic, plate it in a large non-stick frying pan on a medium heat with 1 tablespoon of olive oil and fry until lightly golden, then remove half to a plate for garnish. 	833	1	4
@@ -15859,6 +20338,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4384	Cook the pasta according to the package directions.	906	0	4
 4385	While the pasta is cooking, warm a medium skillet over medium-high heat. Add the olive oil, bell peppers, and broccoli and cook for 5 minutes, stirring every minute or so, until the vegetables begin to soften.	906	1	4
 4387	Toss the pasta into the sauce, season with salt and pepper, and serve.	906	3	0
+4390	In a medium bowl, combine the ground beef, garlic powder, onion powder, salt, and pepper. Wet your hands with cold water and mix to combine.	907	0	0
+4391	Wet your hands with cold water again, divide the meat into 4 portions, and roll into balls. Form the balls into patties about ¼-inch thick.	907	1	0
+4392	Heat the grill to 400°F for 15 minutes. Grill the patties for 3–4 minutes per side.	907	2	12
+4393	Toast the buns, put a burger on each, top with your favorite condiments and enjoy,	907	3	0
 4463	Warm a medium skillet over medium heat. Add the oil along with the sausage patty. Crack the egg into the pan alongside the sausage and cook the sausage for about 3 minutes per side, or until browned on both sides and hot in the middle. Cook the egg to your preferred doneness. 	947	0	0
 4464	While the sausage and egg are cooking, toast the English muffin.	947	1	0
 4465	Once the sausage is heated and browned, put it on the English muffin. Top the sausage with the cheese, egg, lettuce, and the other half of the English muffin.	947	2	0
@@ -16006,7 +20489,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 420, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 525, true);
 
 
 --
@@ -16020,7 +20503,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 24664, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 29021, true);
 
 
 --
@@ -16770,5 +21253,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 747A0E6GQeM2sfdN4KjYVAJAUGQhoeGv066TW2dfDYivlkMuq9gg3MbfwLcfT7I
+\unrestrict 05SBYlZn4yZ3dyK5OA7OzsDcVeCYOE1mOranBEmBn4moI4nxVSROkpogFEOktYC
 
