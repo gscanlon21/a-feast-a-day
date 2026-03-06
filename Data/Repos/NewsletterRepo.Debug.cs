@@ -138,15 +138,16 @@ public partial class NewsletterRepo
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
         // Allow tracking to update the last checked date.
-        var dietaryIntakes = await scopedCoreContext.DietaryIntakes
-            .OrderByDescending(i => i.Checked == DateHelpers.Today)
-            .ThenBy(di => di.Checked).ThenBy(_ => EF.Functions.Random())
-            .GroupBy(di => di.Key).Select(g => g.ToList())
+        var dietaryIntakes = await scopedCoreContext.DietaryIntakes.GroupBy(di => di.Key)
+            .OrderByDescending(i => i.First().LastChecked == DateHelpers.Today)
+            .ThenBy(di => di.First().LastChecked)
+            .ThenBy(_ => EF.Functions.Random())
+            .Select(g => g.ToList())
             .FirstAsync();
 
         foreach (var dietaryIntake in dietaryIntakes)
         {
-            dietaryIntake.Checked = DateHelpers.Today;
+            dietaryIntake.LastChecked = DateHelpers.Today;
         }
 
         await scopedCoreContext.SaveChangesAsync();

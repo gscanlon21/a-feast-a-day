@@ -31,9 +31,9 @@ public class DietaryIntake
 
     public int CaloriesPerGram { get; set; }
 
-    public DateOnly Checked { get; set; } = DateHelpers.Today;
+    public DateOnly LastChecked { get; set; } = DateHelpers.Today;
 
-    public DateOnly Updated { get; set; } = DateHelpers.Today;
+    public DateOnly LastUpdated { get; set; } = DateHelpers.Today;
 
     public string Source { get; set; } = null!;
 

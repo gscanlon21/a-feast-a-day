@@ -28,9 +28,9 @@ public class DietaryIntakeViewModel
         Source = other.Source;
         Person = other.Person;
         Measure = other.Measure;
-        Updated = other.Updated;
         Multiplier = other.Multiplier;
         CaloriesPerGram = other.CaloriesPerGram;
+        LastUpdated = other.LastUpdated;
     }
 
     public int Id { get; init; }
@@ -57,7 +57,7 @@ public class DietaryIntakeViewModel
     public int CaloriesPerGram { get; set; }
 
     [Display(Name = "Updated", Description = "Updated")]
-    public DateOnly Updated { get; set; }
+    public DateOnly LastUpdated { get; set; }
 
     [Display(Name = "Source", Description = "Source")]
     public string? Source { get; set; }
