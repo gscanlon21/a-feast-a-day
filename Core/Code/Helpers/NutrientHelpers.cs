@@ -4,13 +4,13 @@ namespace Core.Code.Helpers;
 
 public static class NutrientHelpers
 {
-    public static readonly List<Nutrients> All =
+    public static readonly Nutrients[] All =
     [
-        // Macronutrients
-        //Nutrients.Energy_KCalorie,
-        Nutrients.Energy_Atwater_General_Factors_KCalorie,
-        Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
+        ..Macronutrients(), ..AminoAcids(), ..Vitamins(), ..Minerals(), ..Extra()
+    ];
 
+    private static Nutrients[] Macronutrients() =>
+    [
         Nutrients.Protein_Grams,
         Nutrients.Carbohydrates_Grams,
         Nutrients.Total_lipid_fat_Grams,
@@ -27,11 +27,10 @@ public static class NutrientHelpers
         Nutrients.Fatty_acids_total_monounsaturated_Grams,
         Nutrients.Fatty_acids_total_polyunsaturated_Grams,
         Nutrients.Fatty_acids_total_trans_Grams,
+    ];
 
-        //Dietary cholesterol: As low as possible while consuming a nutritionally adequate diet.
-        //Nutrients.Cholesterol_Milligrams,
-
-        // Amino Acids
+    private static Nutrients[] AminoAcids() =>
+    [
         Nutrients.Histidine_Grams,
         Nutrients.Isoleucine_Grams,
         Nutrients.Leucine_Grams,
@@ -43,8 +42,10 @@ public static class NutrientHelpers
         Nutrients.Valine_Grams,
         Nutrients.Arginine_Grams,
         Nutrients.Glycine_Grams,
+    ];
 
-        // Vitamins
+    private static Nutrients[] Vitamins() =>
+    [
         Nutrients.Vitamin_A_Micrograms,
         Nutrients.Thiamin_Milligrams, // B1
         Nutrients.Riboflavin_Milligrams, // B2
@@ -60,8 +61,10 @@ public static class NutrientHelpers
         Nutrients.Vitamin_K_phylloquinone_Micrograms,
         Nutrients.Retinol_Micrograms,
         Nutrients.Carotene_MCG_RE,
+    ];
 
-        // Minerals
+    private static Nutrients[] Minerals() =>
+    [
         Nutrients.Sodium_Na_Milligrams,
         Nutrients.Calcium_Ca_Milligrams,
         Nutrients.Potassium_K_Milligrams,
@@ -81,11 +84,18 @@ public static class NutrientHelpers
         Nutrients.Boron_B_Micrograms,
         Nutrients.Vanadium_V_Micrograms,
         Nutrients.Lithium_Li_Micrograms,
+    ];
 
-        // Other
-        Nutrients.Choline_total_Milligrams,
+    private static Nutrients[] Extra() => 
+    [
+        // TODO/FIXME: Macronutrient to calorie conversion values are not static.
+        // See food_calorie_conversion_factor.csv for true values.
+        //Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
+        Nutrients.Energy_Atwater_General_Factors_KCalorie,
+        
         Nutrients.Betaine_Milligrams,
-        Nutrients.Polyphenols_total_Milligrams,
+        Nutrients.Choline_total_Milligrams,
         Nutrients.Flavonoids_total_Milligrams,
+        Nutrients.Polyphenols_total_Milligrams,
     ];
 }

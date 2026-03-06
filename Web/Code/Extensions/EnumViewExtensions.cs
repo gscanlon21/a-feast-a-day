@@ -54,8 +54,8 @@ public static class EnumViewExtensions
         {
             // Need to use an empty string so it posts null and not the name.
             Value = v == null ? string.Empty : Convert.ToInt64(v).ToString(),
-            // We have to fallback and use the member's name for system enums. sa. DayOfWeek.
-            Text = v == null ? nullValueText : v.GetSingleDisplayNameOrNull() ?? noValueText,
+            // We have to fallback and use the member's name for the DayOfWeek enum.
+            Text = v == null ? nullValueText : v.GetSingleDisplayName() ?? noValueText,
             Selected = selectedValue.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(selectedValue) : !v.HasValue,
         })
         .ToList();
