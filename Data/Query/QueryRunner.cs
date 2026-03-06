@@ -411,7 +411,7 @@ public class QueryRunner(Section section)
                         // If there are no non-refreshing recipes selected, loosen the nutrients-to-overwork restriction so we prioritize least seen recipes.
                         var nutrientsToOverwork = finalResults.Any(r => r.UserRecipe?.RefreshAfter == null) ? 0
                             // Buffer by one available recipe per week to reduce the frequency even more.
-                            : Math.Max(0, weeksFromLastSeen - (int)Math.Floor(recipeResults.Count / 7d));
+                            : Math.Max(0, weeksFromLastSeen - (int)Math.Floor(finalResults.Count / 7d));
 
                         // This way, recipes that overwork a lot of nutrients are spaced out more than the healthier recipes.
                         if (overworkedNutrients.Count(recipe.UniqueWorkedNutrients.Contains) > nutrientsToOverwork)
