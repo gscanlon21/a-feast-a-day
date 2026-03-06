@@ -141,7 +141,7 @@
                                         <div style="display:flex;column-gap:1ex;">
                                             <output name="OutputFamilyWeight@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].Weight)">@Model.UserFamilies[id].Weight</output>
                                             <div style="display:flex;width:100%;">
-                                                <input asp-for="UserFamilies[id].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                <input asp-for="UserFamilies[id].Weight" type="range" style="width:100%;" aria-describedby="weight-help"
                                                        step="1" min="@UserFamily.Consts.WeightMin" max="@UserFamily.Consts.WeightMax"
                                                        oninput="OutputFamilyWeight@(id).value = this.valueAsNumber" list="ListFamilyWeight@(id)" />
                                                 <datalist id="ListFamilyWeight@(id)">
@@ -150,7 +150,7 @@
                                             </div>
                                         </div>
                                         <span asp-validation-for="UserFamilies[id].Weight" class="text-danger"></span>
-                                        <div id="refresh-functional-help" class="form-text">
+                                        <div id="weight-help" class="form-text">
                                             @Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].Weight)
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@
                                         <div style="display:flex;column-gap:1ex;">
                                             <output name="OutputFamilyCalories@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].CaloriesPerDay)">@Model.UserFamilies[id].CaloriesPerDay</output>
                                             <div style="display:flex;width:100%;">
-                                                <input asp-for="UserFamilies[id].CaloriesPerDay" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                                <input asp-for="UserFamilies[id].CaloriesPerDay" type="range" style="width:100%;" aria-describedby="calories-per-day-help"
                                                        step="50" min="@UserFamily.Consts.CaloriesPerDayMin" max="@UserFamily.Consts.CaloriesPerDayMax"
                                                        oninput="OutputFamilyCalories@(id).value = this.valueAsNumber" list="ListFamilyCalories@(id)" />
                                                 <datalist id="ListFamilyCalories@(id)">
@@ -169,7 +169,7 @@
                                             </div>
                                         </div>
                                         <span asp-validation-for="UserFamilies[id].CaloriesPerDay" class="text-danger"></span>
-                                        <div id="refresh-functional-help" class="form-text">
+                                        <div id="calories-per-day-help" class="form-text">
                                             @Html.DisplayDescriptionFor(_ => Model.UserFamilies[id].CaloriesPerDay)
                                         </div>
                                     </div>
