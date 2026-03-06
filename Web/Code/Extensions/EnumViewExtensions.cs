@@ -17,10 +17,10 @@ public static class EnumViewExtensions
     /// 
     /// The default value for the enum, 0, will always come first.
     /// </summary>
-    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default, string? noValueText = null)
+    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default)
         where T : struct, Enum
     {
-        return values.Cast<T?>().AsSelectListItems(order: order, defaultValue: defaultValue, selectedValue: selectedValue, noValueText: noValueText);
+        return values.Cast<T?>().AsSelectListItems(order: order, defaultValue: defaultValue, selectedValue: selectedValue);
     }
 
     /// <summary>
@@ -28,7 +28,7 @@ public static class EnumViewExtensions
     /// 
     /// The default value for the enum, 0, will always come first.
     /// </summary>
-    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T?> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default, T? selectedValue = default, string? nullValueText = null, string? noValueText = null)
+    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T?> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default, T? selectedValue = default)
         where T : struct, Enum
     {
         var orderedValues = values.OrderByDescending(v => v.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(defaultValue) : (bool?)null, EnumerableExtensions.NullOrder.NullsFirst);
@@ -52,10 +52,10 @@ public static class EnumViewExtensions
 
         return orderedValues.Select(v => new SelectListItem()
         {
+            // No OrNull for DayOfWeek enum.
+            Text = v?.GetSingleDisplayName(),
             // Need to use an empty string so it posts null and not the name.
             Value = v == null ? string.Empty : Convert.ToInt64(v).ToString(),
-            // We have to fallback and use the member's name for the DayOfWeek enum.
-            Text = v == null ? nullValueText : v.GetSingleDisplayName() ?? noValueText,
             Selected = selectedValue.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(selectedValue) : !v.HasValue,
         })
         .ToList();

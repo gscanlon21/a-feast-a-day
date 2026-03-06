@@ -84,7 +84,7 @@
                     <div class="mb-3">
                         <label asp-for="UserCreateViewModel.Person" class="control-label">@Html.DisplayNameFor(_ => Model.UserCreateViewModel.Person)</label>
                         <select asp-for="UserCreateViewModel.Person" class="form-select allow-demo"
-                                asp-items='@(PersonHelpers.SignupPeople.Cast<Person?>().Prepend(null).AsSelectListItems(EnumViewExtensions.EnumOrdering.Order, nullValueText: "Please select..."))'>
+                                asp-items='@(PersonHelpers.SignupPeople.AsSelectListItems(EnumViewExtensions.EnumOrdering.Order).Prepend(new("Please select...", "")))'>
                         </select>
                         <span asp-validation-for="UserCreateViewModel.Person" class="text-danger"></span>
                         <div id="person-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.UserCreateViewModel.Person)</div>
