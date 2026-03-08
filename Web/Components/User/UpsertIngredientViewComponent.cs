@@ -46,6 +46,7 @@ public class UpsertIngredientViewComponent : ViewComponent
             .ThenBy(n => n.GetSingleDisplayName(DisplayType.GroupName))
             .ThenBy(n => n.GetSingleDisplayName(DisplayType.Name)))
         {
+            /*
             var userNutrient = ingredient?.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient);
             if (userNutrient != null)
             {
@@ -58,7 +59,7 @@ public class UpsertIngredientViewComponent : ViewComponent
                     Nutrients = nutrient,
                     Ingredient = ingredient,
                 });
-            }
+            }*/
         }
 
         return View("UpsertIngredient", new UpsertIngredientViewModel()

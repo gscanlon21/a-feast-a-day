@@ -1,8 +1,8 @@
 ﻿using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
-using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
+using Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Query;
@@ -10,7 +10,7 @@ namespace Data.Query;
 public interface IRecipeCombo
 {
     Recipe Recipe { get; }
-    IList<Nutrient> Nutrients { get; }
+    IList<QueryNutrient> Nutrients { get; }
 }
 
 public static class Filters
@@ -113,21 +113,37 @@ public static class Filters
     /// <summary>
     /// Make sure the recipe works a specific nutrient.
     /// </summary>
-    public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, IList<Nutrients>? nutrients, bool include) where T : IRecipeCombo
+    public static IQueryable<T> FilterNutrients<T>(IQueryable<T> query, IList<Nutrients>? nutrients, bool include, DataSource dataSource) where T : IRecipeCombo
     {
         if (nutrients?.Any() != true)
         {
             return query;
         }
 
-        if (include)
+        if (dataSource == DataSource.USDA)
         {
-            return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Contains(n.Nutrients))));
+            if (include)
+            {
+                return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => nutrients.Select(n => NutrientMaps.NutrientsToUSDA[n]).Contains(n.Nutrients))));
+            }
+            else
+            {
+                return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Select(n => NutrientMaps.NutrientsToUSDA[n]).Contains(n.Nutrients))));
+            }
         }
-        else
+        else if (dataSource == DataSource.Canada)
         {
-            return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !nutrients.Contains(n.Nutrients))));
+            if (include)
+            {
+                return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.NutrientsCanada.Any(n => nutrients.Select(n => NutrientMaps.NutrientsToCanada[n]).Contains(n.Nutrients))));
+            }
+            else
+            {
+                return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.NutrientsCanada.All(n => !nutrients.Select(n => NutrientMaps.NutrientsToCanada[n]).Contains(n.Nutrients))));
+            }
         }
+
+        throw new NotSupportedException();
     }
 
     /// <summary>

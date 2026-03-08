@@ -1,20 +1,12 @@
 ﻿using Core.Models;
 using Core.Models.Nutrients;
-using Microsoft.EntityFrameworkCore;
+using Data.Entities.Ingredients;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
-using System.Text.Json.Serialization;
 
-namespace Data.Entities.Ingredients;
+namespace Data.Models;
 
-/// <summary>
-/// Nutrients for an ingredient.
-/// </summary>
-[Table("nutrient")]
-[Index(nameof(IngredientId))]
-[DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
-public class Nutrient
+public class QueryNutrient
 {
     public class Consts
     {
@@ -28,7 +20,7 @@ public class Nutrient
 
     public int IngredientId { get; init; }
 
-    public USDANutrients Nutrients { get; set; }
+    public Nutrients Nutrients { get; set; }
 
     public Measure Measure { get; set; }
 
@@ -45,7 +37,6 @@ public class Nutrient
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.Nutrients))]
     public virtual Ingredient? Ingredient { get; set; }
 
     //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
@@ -57,11 +48,4 @@ public class Nutrient
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is Nutrient other
         && other.Id == Id;
-
-    //[NotMapped]
-    //public Nutrients[]? NutrientBinder
-    //{
-    //    get => Enum.GetValues<Nutrients>().Where(e => Nutrients.HasFlag(e)).ToArray();
-    //    set => Nutrients = value?.Aggregate(Nutrients.None, (a, e) => a | e) ?? Nutrients.None;
-    //}
 }

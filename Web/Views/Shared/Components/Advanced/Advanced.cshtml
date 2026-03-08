@@ -23,6 +23,15 @@
             </div>
 
             <div class="mb-3">
+                <label asp-for="DataSource" class="control-label">@Html.DisplayNameFor(_ => Model.DataSource)</label>
+                <select asp-for="DataSource" class="form-control" aria-describedby="ingredients-help"
+                        asp-items="@EnumExtensions.GetDisplayValues<DataSource>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Value)">
+                </select>
+                <span asp-validation-for="DataSource" class="text-danger"></span>
+                <div id="ingredients-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.DataSource)</div>
+            </div>
+
+            <div class="mb-3">
                 <label asp-for="FootnoteCountTop" class="control-label">@Html.DisplayNameFor(_ => Model.FootnoteCountTop)</label>
                 <div class="d-flex column-gap-2">
                     <output name="OutputFootnoteCountTop" for="@Html.IdFor(_ => Model.FootnoteCountTop)">@Model.FootnoteCountTop</output>

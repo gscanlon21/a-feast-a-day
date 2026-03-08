@@ -9,9 +9,10 @@ public class NutrientOptions : IOptions
 
     public NutrientOptions() { }
 
-    public NutrientOptions(IList<Nutrients> nutrients, Dictionary<Nutrients, double> nutrientTargetsRDA, Dictionary<Nutrients, double> nutrientTargetsTUL)
+    public NutrientOptions(IList<Nutrients> nutrients, Dictionary<Nutrients, double> nutrientTargetsRDA, Dictionary<Nutrients, double> nutrientTargetsTUL, DataSource dataSource)
     {
         Nutrients = nutrients;
+        DataSource = dataSource;
         NutrientTargetsRDA = nutrientTargetsRDA;
         NutrientTargetsTUL = nutrientTargetsTUL;
     }
@@ -20,6 +21,8 @@ public class NutrientOptions : IOptions
     /// Filters variations to only those that target these muscle groups.
     /// </summary>
     public IList<Nutrients> Nutrients { get; } = [];
+
+    public DataSource DataSource { get; } = DataSource.USDA;
 
     /// <summary>
     /// Filters variations to only those that target these muscle groups.

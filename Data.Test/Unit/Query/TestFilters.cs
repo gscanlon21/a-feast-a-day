@@ -1,7 +1,7 @@
 ﻿using Core.Code.Extensions;
 using Core.Models.Recipe;
-using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
+using Data.Models;
 using Data.Query;
 using Data.Test.Code;
 using Data.Test.Code.Attributes;
@@ -15,7 +15,7 @@ public class TestFilters : RealDatabase
     private class TestRecipeCombo : IRecipeCombo
     {
         public Recipe Recipe { get; init; } = null!;
-        public IList<Nutrient> Nutrients { get; init; } = null!;
+        public IList<QueryNutrient> Nutrients { get; init; } = null!;
     }
 
     private IQueryable<IRecipeCombo>? Query { get; set; } = null!;
@@ -27,7 +27,7 @@ public class TestFilters : RealDatabase
             .Select(v => new TestRecipeCombo()
             {
                 Recipe = v,
-                Nutrients = v.RecipeIngredients.SelectMany(ri => ri.Ingredient.Nutrients).ToList()
+                //Nutrients = v.RecipeIngredients.SelectMany(ri => ri.Ingredient.Nutrients).ToList()
             })
             .ToListAsync())
             .AsQueryable();

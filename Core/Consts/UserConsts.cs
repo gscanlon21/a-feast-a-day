@@ -1,6 +1,7 @@
 ﻿using ADay.Core.Models.Footnote;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
+using Core.Models.Nutrients;
 using Core.Models.Recipe;
 
 namespace Core.Consts;
@@ -46,6 +47,8 @@ public static class UserConsts
     public const int AtLeastXNutrientsPerRecipeMax = 9;
 
     public const DayOfWeek SendDayDefault = DayOfWeek.Sunday;
+
+    public const DataSource DataSourceDefault = DataSource.USDA;
 
     public const IngredientOrder IngredientOrderDefault = IngredientOrder.OrderUsed;
 

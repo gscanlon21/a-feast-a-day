@@ -184,6 +184,7 @@ public class UserIngredientsController : ViewController
         var existingIngredientAttr = await _context.IngredientAttrs.FirstOrDefaultAsync(r => r.IngredientId == ingredientAttr.IngredientId);
         if (existingIngredientAttr != null)
         {
+            existingIngredientAttr.HC_Id = ingredientAttr.HC_Id;
             existingIngredientAttr.FDC_ID = ingredientAttr.FDC_ID;
             existingIngredientAttr.NDB_Number = ingredientAttr.NDB_Number;
         }
@@ -191,6 +192,7 @@ public class UserIngredientsController : ViewController
         {
             existingIngredientAttr = new IngredientAttr()
             {
+                HC_Id = ingredientAttr.HC_Id,
                 FDC_ID = ingredientAttr.FDC_ID,
                 NDB_Number = ingredientAttr.NDB_Number,
                 IngredientId = ingredientAttr.IngredientId,

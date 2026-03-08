@@ -158,6 +158,7 @@ public partial class UserController : ViewController
         {
             try
             {
+                user.DataSource = viewModel.DataSource;
                 user.IngredientOrder = viewModel.IngredientOrder;
                 user.FootnoteCountTop = viewModel.FootnoteCountTop;
                 user.FootnoteCountBottom = viewModel.FootnoteCountBottom;

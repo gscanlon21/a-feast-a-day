@@ -7,6 +7,7 @@ using Data.Code.Extensions;
 using Data.Entities.Ingredients;
 using Data.Entities.Newsletter;
 using Data.Entities.Users;
+using Data.Models;
 using Data.Models.Ingredients;
 using Data.Models.Newsletter;
 using Data.Query;
@@ -312,18 +313,52 @@ public class UserRepo
                     .ToDictionaryAsync(ri => ri.Id, ri => ri.CookedIngredient);
 
                 var allIngredientIds = halfIngredientIds.Union(cookedIngredients.Values.Select(ci => ci.Id)).ToList();
-                var allNutrients = await _context.Nutrients.AsNoTracking()
-                    .Where(n => allIngredientIds.Contains(n.IngredientId))
-                    // Select before grouping so EF Core can optimize.
-                    .Select(n => new Nutrient(/* EF can't optimize */)
-                    {
-                        IngredientId = n.IngredientId,
-                        Nutrients = n.Nutrients,
-                        Measure = n.Measure,
-                        Value = n.Value,
-                    })
-                    .GroupBy(n => n.IngredientId)
-                    .ToDictionaryAsync(g => g.Key, g => g.Select(n => n).ToList());
+                var allNutrients = user.DataSource switch
+                {
+                    DataSource.USDA => await _context.Nutrients.AsNoTracking()
+                        .Where(n => allIngredientIds.Contains(n.IngredientId))
+                        .Where(n => NutrientHelpersUs.All.Contains(n.Nutrients))
+                        // Select before grouping so EF Core can optimize.
+                        .Select(n => new Nutrient(/* EF can't optimize */)
+                        {
+                            DataSource = n.DataSource,
+                            IngredientId = n.IngredientId,
+                            Nutrients = n.Nutrients,
+                            Measure = n.Measure,
+                            Value = n.Value,
+                        })
+                        .GroupBy(n => n.IngredientId)
+                        .ToDictionaryAsync(g => g.Key, g => g.Select(n => new QueryNutrient()
+                        {
+                            DataSource = n.DataSource,
+                            IngredientId = n.IngredientId,
+                            Nutrients = NutrientMaps.USDAToNutrients[n.Nutrients],
+                            Measure = n.Measure,
+                            Value = n.Value,
+                        }).ToList()),
+                    DataSource.Canada => await _context.NutrientsCanada.AsNoTracking()
+                        .Where(n => allIngredientIds.Contains(n.IngredientId))
+                        .Where(n => NutrientHelpersCa.All.Contains(n.Nutrients))
+                        // Select before grouping so EF Core can optimize.
+                        .Select(n => new NutrientCanada(/* EF can't optimize */)
+                        {
+                            DataSource = n.DataSource,
+                            IngredientId = n.IngredientId,
+                            Nutrients = n.Nutrients,
+                            Measure = n.Measure,
+                            Value = n.Value,
+                        })
+                        .GroupBy(n => n.IngredientId)
+                        .ToDictionaryAsync(g => g.Key, g => g.Select(n => new QueryNutrient()
+                        {
+                            DataSource = n.DataSource,
+                            IngredientId = n.IngredientId,
+                            Nutrients = NutrientMaps.CanadaToNutrients[n.Nutrients],
+                            Measure = n.Measure,
+                            Value = n.Value,
+                        }).ToList()),
+                    _ => throw new NotSupportedException()
+                };
 
                 var nutrientsWorked = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes

@@ -2,6 +2,7 @@
 using Core.Interfaces.User;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
+using Core.Models.Nutrients;
 using Core.Models.Recipe;
 using Core.Models.User;
 using Data.Entities.Newsletter;
@@ -141,6 +142,11 @@ public class User : IUser
         .Aggregate(Allergens.None, (c, n) => c | n.Allergen);
 
     #region Advanced Preferences
+
+    /// <summary>
+    /// Where to pull nutrient data from?
+    /// </summary>
+    public DataSource DataSource { get; set; } = UserConsts.DataSourceDefault;
 
     /// <summary>
     /// Order of how ingredients are listed in a recipe.

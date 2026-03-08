@@ -18,19 +18,20 @@ public class NutrientTargetsBuilder : INutrientTargetsBuilder
     /// Filters variations to only those that target these Nutrient groups.
     /// </summary>
     public IList<Nutrients> Nutrients = [];
+    public DataSource DataSource { get; }
 
-    private NutrientTargetsBuilder(IList<Nutrients> nutrients)
+    private NutrientTargetsBuilder(IList<Nutrients> nutrients, DataSource dataSource)
     {
         Nutrients = nutrients;
     }
 
-    public static INutrientTargetsBuilder WithNutrients(IList<Nutrients> Nutrients)
+    public static INutrientTargetsBuilder WithNutrients(IList<Nutrients> Nutrients, DataSource dataSource)
     {
-        return new NutrientTargetsBuilder(Nutrients);
+        return new NutrientTargetsBuilder(Nutrients, dataSource);
     }
 
     public NutrientOptions Build(Section section)
     {
-        return new NutrientOptions(Nutrients, [], []);
+        return new NutrientOptions(Nutrients, [], [], DataSource);
     }
 }

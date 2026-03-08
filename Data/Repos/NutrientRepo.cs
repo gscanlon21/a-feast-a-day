@@ -19,6 +19,14 @@ public class NutrientRepo
         _serviceScopeFactory = serviceScopeFactory;
     }
 
+    public async Task<IList<Ingredient>> GetIngredientsWithHealthCanadaData()
+    {
+        return await _context.Ingredients.AsNoTracking().AsSplitQuery()
+            .Include(i => i.IngredientAttr).Include(i => i.NutrientsCanada)
+            .Where(i => i.IngredientAttr!.HC_Id.HasValue)
+            .ToListAsync();
+    }
+
     public async Task<IList<Ingredient>> GetIngredientsWithFoodData()
     {
         return await _context.Ingredients.AsNoTracking().AsSplitQuery()
@@ -38,6 +46,16 @@ public class NutrientRepo
         foreach (var nutrient in newNutrients)
         {
             _context.Nutrients.Add(nutrient);
+        }
+
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task InsertCanadaNutrients(List<NutrientCanada> newNutrients)
+    {
+        foreach (var nutrient in newNutrients)
+        {
+            _context.NutrientsCanada.Add(nutrient);
         }
 
         await _context.SaveChangesAsync();

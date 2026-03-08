@@ -1,5 +1,4 @@
 ﻿using Core.Dtos.Ingredient;
-using Core.Dtos.User;
 using Core.Models;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
@@ -62,8 +61,8 @@ public partial class NewsletterRepo
 
         // Allow disabled ingredients.
         // Allow tracking to update the last updated date.
-        // OrderBy must come after the query or you get cartesian explosion.
-        var debugIngredients = await scopedCoreContext.Ingredients.Include(i => i.Nutrients)
+        // OrderBy after the query or you get cartesian explosion.
+        var debugIngredients = await scopedCoreContext.Ingredients
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
             .ToArrayAsync();
@@ -89,6 +88,7 @@ public partial class NewsletterRepo
             // even with ReferenceHandler.Preserve.
             yield return new IngredientDto()
             {
+                Nutrients = [],
                 Id = debugIngredient.Id,
                 Name = debugIngredient.Name,
                 Link = debugIngredient.Link,
@@ -101,15 +101,6 @@ public partial class NewsletterRepo
                 GramsPerServing = debugIngredient.GramsPerServing,
                 SkipShoppingList = debugIngredient.SkipShoppingList,
                 GramsPerCoarseCup = debugIngredient.GramsPerCoarseCup,
-                Nutrients = debugIngredient.Nutrients.Select(n => new NutrientDto()
-                {
-                    Id = n.Id,
-                    Value = n.Value,
-                    Notes = n.Notes,
-                    Measure = n.Measure,
-                    Nutrients = n.Nutrients,
-                    IngredientId = n.IngredientId,
-                }).ToList(),
                 Alternatives = debugIngredient.Alternatives.Select(a => new IngredientAlternativeDto()
                 {
                     Scale = a.Scale,

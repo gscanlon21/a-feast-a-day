@@ -27,12 +27,23 @@ public class IngredientAttr
     [Key]
     public int IngredientId { get; init; }
 
+    /// <summary>
+    /// FoodData Central ID from USDA.
+    /// </summary>
+    [Display(Name = "USDA FoodData Central ID")]
     public int? FDC_ID { get; set; }
 
     /// <summary>
-    /// Nutrient Database Number.
+    /// Nutrient Database Number from USDA.
     /// </summary>
+    [Display(Name = "USDA Nutrient Database Number")]
     public int? NDB_Number { get; set; }
+
+    /// <summary>
+    /// Food Id from Health Canada.
+    /// </summary>
+    [Display(Name = "HealthCanada Food Id")]
+    public int? HC_Id { get; set; }
 
 
     [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.IngredientAttr))]

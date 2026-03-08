@@ -1,6 +1,7 @@
 ﻿using Core.Models.Nutrients;
 using Data.Entities.Ingredients;
 using Data.Interfaces.Recipe;
+using Data.Models;
 using Data.Models.Ingredients;
 
 namespace Data.Code.Extensions;
@@ -17,7 +18,7 @@ public static class RecipeIngredientExtensions
         return recipeIngredient.GetQuantity * recipeIngredient.GetMeasure.ToGramsWithContext(ofIngredient, recipeIngredient.IsCoarseCut);
     }
 
-    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, Dictionary<int, List<Nutrient>>? nutrients = null, IList<IngredientScale>? partialIngredients = null, Dictionary<int, Ingredient>? cookedIngredients = null)
+    internal static IDictionary<Nutrients, double> GetNutrients(this IRecipeIngredient recipeIngredient, Dictionary<int, List<QueryNutrient>>? nutrients = null, IList<IngredientScale>? partialIngredients = null, Dictionary<int, Ingredient>? cookedIngredients = null)
     {
         if (recipeIngredient.GetIngredient == null)
         {
@@ -43,7 +44,7 @@ public static class RecipeIngredientExtensions
         else if (cookedIngredients != null && cookedIngredients.TryGetValue(recipeIngredient.GetRecipeIngredientId, out Ingredient? cookedIngredient) && cookedIngredient != null)
         {
             var recipeIngredientNutrients = nutrients?.GetValueOrDefault(cookedIngredient.Id);
-            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
+            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.QueryNutrients).Select(nutrient =>
             {
                 var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(cookedIngredient);
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(cookedIngredient, recipeIngredient.IsCoarseCut);
@@ -54,7 +55,7 @@ public static class RecipeIngredientExtensions
         else
         {
             var recipeIngredientNutrients = nutrients?.GetValueOrDefault(recipeIngredient.GetIngredient!.Id);
-            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.Nutrients).Select(nutrient =>
+            return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient!.QueryNutrients).Select(nutrient =>
             {
                 var servingsOfIngredientUsed = recipeIngredient.ServingsUsed(recipeIngredient.GetIngredient);
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient, recipeIngredient.IsCoarseCut);

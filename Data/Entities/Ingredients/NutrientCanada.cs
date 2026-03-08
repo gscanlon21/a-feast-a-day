@@ -11,10 +11,10 @@ namespace Data.Entities.Ingredients;
 /// <summary>
 /// Nutrients for an ingredient.
 /// </summary>
-[Table("nutrient")]
+[Table("nutrient_canada")]
 [Index(nameof(IngredientId))]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
-public class Nutrient
+public class NutrientCanada
 {
     public class Consts
     {
@@ -28,7 +28,7 @@ public class Nutrient
 
     public int IngredientId { get; init; }
 
-    public USDANutrients Nutrients { get; set; }
+    public CanadaNutrients Nutrients { get; set; }
 
     public Measure Measure { get; set; }
 
@@ -45,7 +45,7 @@ public class Nutrient
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.Nutrients))]
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.NutrientsCanada))]
     public virtual Ingredient? Ingredient { get; set; }
 
     //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]

@@ -17,6 +17,7 @@ public interface INutrientTargetsContextBuilderStep1 : INutrientTargetsBuilder
 public class NutrientTargetsContextBuilder : IOptions, INutrientTargetsBuilder, INutrientTargetsContextBuilderStep1
 {
     private readonly FeastContext Context;
+    private readonly DataSource DataSource;
 
     /// <summary>
     /// Filters variations to only those that target these Nutrient groups.
@@ -33,15 +34,16 @@ public class NutrientTargetsContextBuilder : IOptions, INutrientTargetsBuilder, 
     /// </summary>
     public Dictionary<Nutrients, double> NutrientTargetsTUL = [];
 
-    private NutrientTargetsContextBuilder(FeastContext context, IList<Nutrients> nutrients)
+    private NutrientTargetsContextBuilder(FeastContext context, IList<Nutrients> nutrients, DataSource dataSource)
     {
         Nutrients = nutrients;
         Context = context;
+        DataSource = dataSource;
     }
 
-    public static INutrientTargetsContextBuilderStep1 WithNutrients(FeastContext context, IList<Nutrients> nutrients)
+    public static INutrientTargetsContextBuilderStep1 WithNutrients(FeastContext context, IList<Nutrients> nutrients, DataSource dataSource)
     {
-        return new NutrientTargetsContextBuilder(context, nutrients);
+        return new NutrientTargetsContextBuilder(context, nutrients, dataSource);
     }
 
     /// <summary>
@@ -95,6 +97,6 @@ public class NutrientTargetsContextBuilder : IOptions, INutrientTargetsBuilder, 
             UserLogs.Log(Context.User, $"Nutrient targets TUL for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsTUL)}");
         }
 
-        return new NutrientOptions(Nutrients, NutrientTargetsRDA, NutrientTargetsTUL);
+        return new NutrientOptions(Nutrients, NutrientTargetsRDA, NutrientTargetsTUL, DataSource);
     }
 }

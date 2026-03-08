@@ -13,17 +13,22 @@ public class AdvancedViewModel
         Token = token;
         Email = user.Email;
 
+        DataSource = user.DataSource;
         IngredientOrder = user.IngredientOrder;
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
     }
 
-    public bool IsNotDefault => IngredientOrder != UserConsts.IngredientOrderDefault
+    public bool IsNotDefault => DataSource != UserConsts.DataSourceDefault
+        || IngredientOrder != UserConsts.IngredientOrderDefault
         || FootnoteCountTop != UserConsts.FootnoteCountTopDefault
         || FootnoteCountBottom != UserConsts.FootnoteCountBottomDefault;
 
     public string Token { get; init; } = null!;
     public string Email { get; init; } = null!;
+
+    [Display(Name = "Data Source", Description = "Where to pull nutrient data from?")]
+    public DataSource DataSource { get; set; }
 
     [Display(Name = "Ingredient Order", Description = "How should recipe ingredients be ordered?")]
     public IngredientOrder IngredientOrder { get; set; }

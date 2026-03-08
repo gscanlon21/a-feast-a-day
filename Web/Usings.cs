@@ -6,5 +6,5 @@ global using Core.Models;
 global using Core.Models.Nutrients;
 global using Core.Models.Recipe;
 global using Lib.Models;
-global using Web.Views.Shared;
 global using Web.Code.Helpers;
+global using Web.Views.Shared;

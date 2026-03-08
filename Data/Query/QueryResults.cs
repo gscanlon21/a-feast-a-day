@@ -8,6 +8,7 @@ using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Interfaces.Recipe;
+using Data.Models;
 using Fractions;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
@@ -37,9 +38,9 @@ public class QueryResults : IRecipeCombo
     public Allergens Allergens => GenericBitwise<Allergens>.Or(RecipeIngredients
         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
         .Select(ri => ri.GetIngredient!.Allergens));
-    public IList<Nutrient> Nutrients => RecipeIngredients
+    public IList<QueryNutrient> Nutrients => RecipeIngredients
         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
-        .SelectMany(ri => ri.GetIngredient!.Nutrients)
+        .SelectMany(ri => ri.GetIngredient!.QueryNutrients)
         .ToList();
 
     /// <summary>

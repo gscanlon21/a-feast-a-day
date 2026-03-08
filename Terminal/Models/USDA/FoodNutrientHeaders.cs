@@ -1,5 +1,4 @@
-﻿
-namespace Terminal.Models;
+﻿namespace Terminal.Models.USDA;
 
 internal static class FoodNutrientHeaders
 {
