@@ -3,7 +3,7 @@ using Terminal.Programs.USDA;
 
 namespace Terminal.Programs;
 
-internal class ProgramRunner
+internal class Runner
 {
     private readonly DownloadUSDADatasets _downloadUSDADatasets;
     private readonly LoadUSDANutrientData _loadUSDANutrientData;
@@ -11,13 +11,15 @@ internal class ProgramRunner
     private readonly DownloadHealthCanadaDatasets _downloadHealthCanadaDatasets;
     private readonly LoadHealthCanadaNutrientData _loadHealthCanadaNutrientData;
     private readonly RegenerateHealthCanadaNutrients _regenerateHealthCanadaNutrients;
+    private readonly RegenerateNutrients _regenerateNutrients;
 
-    public ProgramRunner(DownloadUSDADatasets downloadUSDADatasets,
+    public Runner(DownloadUSDADatasets downloadUSDADatasets,
         LoadUSDANutrientData loadUSDANutrientData,
         RegenerateUSDANutrients regenerateUSDANutrients,
         DownloadHealthCanadaDatasets downloadHealthCanadaDatasets,
         LoadHealthCanadaNutrientData loadHealthCanadaNutrientData,
-        RegenerateHealthCanadaNutrients regenerateHealthCanadaNutrients)
+        RegenerateHealthCanadaNutrients regenerateHealthCanadaNutrients,
+        RegenerateNutrients regenerateNutrients)
     {
         _downloadUSDADatasets = downloadUSDADatasets;
         _loadUSDANutrientData = loadUSDANutrientData;
@@ -25,6 +27,7 @@ internal class ProgramRunner
         _downloadHealthCanadaDatasets = downloadHealthCanadaDatasets;
         _loadHealthCanadaNutrientData = loadHealthCanadaNutrientData;
         _regenerateHealthCanadaNutrients = regenerateHealthCanadaNutrients;
+        _regenerateNutrients = regenerateNutrients;
     }
 
     public async Task Run()
@@ -39,6 +42,7 @@ internal class ProgramRunner
             Console.WriteLine("4: Load Health Canada nutrient data from a CSV file");
             Console.WriteLine("5: Regenerate USDA Nutrients");
             Console.WriteLine("6: Regenerate Health Canada Nutrients");
+            Console.WriteLine("7: Regenerate Nutrients");
             Console.WriteLine("0: Exit");
             actionKeyPressed = Console.ReadKey();
 
@@ -55,6 +59,7 @@ internal class ProgramRunner
                     '4' => await _loadHealthCanadaNutrientData.Execute(),
                     '5' => await _regenerateUSDANutrients.Execute(),
                     '6' => await _regenerateHealthCanadaNutrients.Execute(),
+                    '7' => await _regenerateNutrients.Execute(),
                     _ => Response.Success(),
                 };
 

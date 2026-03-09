@@ -1,8 +1,10 @@
-﻿using Core.Models;
+﻿using Core.Code.Attributes;
+using Core.Models;
 using Core.Models.Nutrients;
-using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using Data.Repos;
 using Microsoft.VisualBasic.FileIO;
+using Terminal.Models.HealthCanada;
 
 namespace Terminal.Programs.HealthCanada;
 
@@ -30,7 +32,7 @@ internal class LoadHealthCanadaNutrientData
         parser.TextFieldType = FieldType.Delimited;
         parser.SetDelimiters(",");
 
-        List<NutrientCanada> newNutrients = [];
+        List<HealthCanadaNutrient> newNutrients = [];
         string[]? actualHeaders = null;
         while (!parser.EndOfData)
         {
@@ -69,13 +71,12 @@ internal class LoadHealthCanadaNutrientData
                         else
                         {
                             Console.WriteLine($"Inserting Nutrient: {nutrients2}");
-                            newNutrients.Add(new NutrientCanada()
+                            newNutrients.Add(new HealthCanadaNutrient()
                             {
                                 Value = amount,
                                 Measure = measure,
                                 Nutrients = nutrients2,
                                 IngredientId = ingredient.Id,
-                                DataSource = DataSource.Canada,
                             });
                         }
                     }

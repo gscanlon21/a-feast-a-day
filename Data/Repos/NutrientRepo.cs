@@ -1,4 +1,5 @@
 ﻿using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,13 +36,13 @@ public class NutrientRepo
             .ToListAsync();
     }
 
-    public async Task UpdateNutrient(Nutrient nutrient)
+    public async Task UpdateNutrient(USDANutrient nutrient)
     {
         _context.Nutrients.Update(nutrient);
         await _context.SaveChangesAsync();
     }
 
-    public async Task InsertNewNutrients(List<Nutrient> newNutrients)
+    public async Task InsertNewNutrients(List<USDANutrient> newNutrients)
     {
         foreach (var nutrient in newNutrients)
         {
@@ -51,7 +52,7 @@ public class NutrientRepo
         await _context.SaveChangesAsync();
     }
 
-    public async Task InsertCanadaNutrients(List<NutrientCanada> newNutrients)
+    public async Task InsertCanadaNutrients(List<HealthCanadaNutrient> newNutrients)
     {
         foreach (var nutrient in newNutrients)
         {

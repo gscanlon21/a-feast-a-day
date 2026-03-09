@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -24,8 +25,8 @@ namespace Data.Migrations
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Multiplier = table.Column<int>(type: "integer", nullable: false),
                     CaloriesPerGram = table.Column<int>(type: "integer", nullable: false),
-                    Checked = table.Column<DateOnly>(type: "date", nullable: false),
-                    Updated = table.Column<DateOnly>(type: "date", nullable: false),
+                    LastChecked = table.Column<DateOnly>(type: "date", nullable: false),
+                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false),
                     Source = table.Column<string>(type: "text", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true)
                 },
@@ -83,6 +84,7 @@ namespace Data.Migrations
                     LastActive = table.Column<DateOnly>(type: "date", nullable: true),
                     NewsletterDisabledReason = table.Column<string>(type: "text", nullable: true),
                     Features = table.Column<int>(type: "integer", nullable: false),
+                    DataSource = table.Column<int>(type: "integer", nullable: false),
                     IngredientOrder = table.Column<int>(type: "integer", nullable: false),
                     FootnoteCountTop = table.Column<int>(type: "integer", nullable: false),
                     FootnoteCountBottom = table.Column<int>(type: "integer", nullable: false)
@@ -374,6 +376,29 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "hc_nutrient",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    IngredientId = table.Column<int>(type: "integer", nullable: false),
+                    Nutrients = table.Column<int>(type: "integer", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    Value = table.Column<double>(type: "double precision", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_hc_nutrient", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_hc_nutrient_ingredient_IngredientId",
+                        column: x => x.IngredientId,
+                        principalTable: "ingredient",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ingredient_alternative",
                 columns: table => new
                 {
@@ -405,7 +430,8 @@ namespace Data.Migrations
                 {
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     FDC_ID = table.Column<int>(type: "integer", nullable: true),
-                    NDB_Number = table.Column<int>(type: "integer", nullable: true)
+                    NDB_Number = table.Column<int>(type: "integer", nullable: true),
+                    HC_Id = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -419,7 +445,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "nutrient",
+                name: "usda_nutrient",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -432,9 +458,9 @@ namespace Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_nutrient", x => x.Id);
+                    table.PrimaryKey("PK_usda_nutrient", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_nutrient_ingredient_IngredientId",
+                        name: "FK_usda_nutrient_ingredient_IngredientId",
                         column: x => x.IngredientId,
                         principalTable: "ingredient",
                         principalColumn: "Id",
@@ -697,6 +723,11 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_hc_nutrient_IngredientId",
+                table: "hc_nutrient",
+                column: "IngredientId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ingredient_UserId",
                 table: "ingredient",
                 column: "UserId");
@@ -716,11 +747,6 @@ namespace Data.Migrations
                 name: "IX_ingredient_alternative_IngredientId_IsAggregateElement",
                 table: "ingredient_alternative",
                 columns: new[] { "IngredientId", "IsAggregateElement" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_nutrient_IngredientId",
-                table: "nutrient",
-                column: "IngredientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_recipe_UserId",
@@ -771,6 +797,11 @@ namespace Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_study_ingredient_IngredientId",
                 table: "study_ingredient",
+                column: "IngredientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_usda_nutrient_IngredientId",
+                table: "usda_nutrient",
                 column: "IngredientId");
 
             migrationBuilder.CreateIndex(
@@ -865,19 +896,22 @@ namespace Data.Migrations
                 name: "fda_nutrient");
 
             migrationBuilder.DropTable(
+                name: "hc_nutrient");
+
+            migrationBuilder.DropTable(
                 name: "ingredient_alternative");
 
             migrationBuilder.DropTable(
                 name: "ingredient_attr");
 
             migrationBuilder.DropTable(
-                name: "nutrient");
-
-            migrationBuilder.DropTable(
                 name: "recipe_instruction");
 
             migrationBuilder.DropTable(
                 name: "study_ingredient");
+
+            migrationBuilder.DropTable(
+                name: "usda_nutrient");
 
             migrationBuilder.DropTable(
                 name: "user_email");

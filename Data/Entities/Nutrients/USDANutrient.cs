@@ -1,20 +1,21 @@
 ﻿using Core.Models;
 using Core.Models.Nutrients;
+using Data.Entities.Ingredients;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Ingredients;
+namespace Data.Entities.Nutrients;
 
 /// <summary>
 /// Nutrients for an ingredient.
 /// </summary>
-[Table("nutrient_canada")]
+[Table("usda_nutrient")]
 [Index(nameof(IngredientId))]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
-public class NutrientCanada
+public class USDANutrient
 {
     public class Consts
     {
@@ -28,14 +29,12 @@ public class NutrientCanada
 
     public int IngredientId { get; init; }
 
-    public CanadaNutrients Nutrients { get; set; }
+    public USDANutrients Nutrients { get; set; }
 
     public Measure Measure { get; set; }
 
     [Range(Consts.ValueMin, Consts.ValueMax)]
     public double Value { get; set; }
-
-    public DataSource DataSource { get; init; }
 
     /// <summary>
     /// Notes about the nutrient (externally shown).
@@ -45,7 +44,7 @@ public class NutrientCanada
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.NutrientsCanada))]
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.Nutrients))]
     public virtual Ingredient? Ingredient { get; set; }
 
     //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
@@ -55,7 +54,7 @@ public class NutrientCanada
 
 
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is Nutrient other
+    public override bool Equals(object? obj) => obj is USDANutrient other
         && other.Id == Id;
 
     //[NotMapped]

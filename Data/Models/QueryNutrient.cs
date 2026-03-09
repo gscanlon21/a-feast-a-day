@@ -1,6 +1,7 @@
 ﻿using Core.Models;
 using Core.Models.Nutrients;
 using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -46,6 +47,6 @@ public class QueryNutrient
 
 
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is Nutrient other
+    public override bool Equals(object? obj) => obj is USDANutrient other
         && other.Id == Id;
 }

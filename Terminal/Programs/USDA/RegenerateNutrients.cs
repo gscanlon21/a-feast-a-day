@@ -1,5 +1,7 @@
-﻿using Data.Repos;
+﻿using Core.Code.Attributes;
+using Data.Repos;
 using Microsoft.VisualBasic.FileIO;
+using Terminal.Models.USDA;
 
 namespace Terminal.Programs.USDA;
 
@@ -72,11 +74,11 @@ internal class RegenerateUSDANutrients
                 row[headers[i]] = fields[i];
             }
 
-            var id = (row.TryGetValue("id", out string? idTemp) ? idTemp?.Trim() : null) ?? throw new Exception("Missing id!");
-            var origName = (row.TryGetValue("name", out string? nameTemp) ? nameTemp?.Trim() : null) ?? throw new Exception("Missing name!");
-            var unitName = (row.TryGetValue("unit_name", out string? unitNameTemp) ? unitNameTemp?.Trim() : null) ?? throw new Exception("Missing unit_name!");
-            var nutrientNumber = (row.TryGetValue("nutrient_nbr", out string? nutrientNumberTemp) ? nutrientNumberTemp?.Trim().NullIfEmpty() : null) ?? "-1";
-            var rank = (row.TryGetValue("rank", out string? rankTemp) ? rankTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+            var id = (row.TryGetValue(NutrientHeaders.ID, out string? idTemp) ? idTemp?.Trim() : null) ?? throw new Exception("Missing id!");
+            var origName = (row.TryGetValue(NutrientHeaders.NAME, out string? nameTemp) ? nameTemp?.Trim() : null) ?? throw new Exception("Missing name!");
+            var unitName = (row.TryGetValue(NutrientHeaders.UNIT_NAME, out string? unitNameTemp) ? unitNameTemp?.Trim() : null) ?? throw new Exception("Missing unit_name!");
+            var nutrientNumber = (row.TryGetValue(NutrientHeaders.NUTRIENT_NBR, out string? nutrientNumberTemp) ? nutrientNumberTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+            var rank = (row.TryGetValue(NutrientHeaders.RANK, out string? rankTemp) ? rankTemp?.Trim().NullIfEmpty() : null) ?? "-1";
 
             // Pretty-up the nutrient name for C#.
             var name = new string(origName.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
@@ -109,10 +111,10 @@ internal class RegenerateUSDANutrients
 
             foreach (var dailyAllowance in dailyAllowanceMap.Where(kvp => name.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase)).SelectMany(kv => kv))
             {
-                builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
+                //builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
             }
 
-            builder.AppendLine($"    [NutrientsMetadata(Measure.{measure}, {nutrientNumber}, {rank})]");
+            builder.AppendLine($"    [{USDANutrientsMetadataAttribute.Name}(Measure.{measure}, {nutrientNumber}, {rank})]");
             builder.AppendLine($"    [Display(Name = \"{origName}\")]");
             builder.AppendLine($"    {name} = {id},");
         }

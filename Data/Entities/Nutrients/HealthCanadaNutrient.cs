@@ -1,20 +1,21 @@
 ﻿using Core.Models;
 using Core.Models.Nutrients;
+using Data.Entities.Ingredients;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-namespace Data.Entities.Ingredients;
+namespace Data.Entities.Nutrients;
 
 /// <summary>
 /// Nutrients for an ingredient.
 /// </summary>
-[Table("nutrient")]
+[Table("hc_nutrient")]
 [Index(nameof(IngredientId))]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
-public class Nutrient
+public class HealthCanadaNutrient
 {
     public class Consts
     {
@@ -28,14 +29,12 @@ public class Nutrient
 
     public int IngredientId { get; init; }
 
-    public USDANutrients Nutrients { get; set; }
+    public CanadaNutrients Nutrients { get; set; }
 
     public Measure Measure { get; set; }
 
     [Range(Consts.ValueMin, Consts.ValueMax)]
     public double Value { get; set; }
-
-    public DataSource DataSource { get; init; }
 
     /// <summary>
     /// Notes about the nutrient (externally shown).
@@ -45,7 +44,7 @@ public class Nutrient
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.Nutrients))]
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.NutrientsCanada))]
     public virtual Ingredient? Ingredient { get; set; }
 
     //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
@@ -55,13 +54,6 @@ public class Nutrient
 
 
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is Nutrient other
+    public override bool Equals(object? obj) => obj is HealthCanadaNutrient other
         && other.Id == Id;
-
-    //[NotMapped]
-    //public Nutrients[]? NutrientBinder
-    //{
-    //    get => Enum.GetValues<Nutrients>().Where(e => Nutrients.HasFlag(e)).ToArray();
-    //    set => Nutrients = value?.Aggregate(Nutrients.None, (a, e) => a | e) ?? Nutrients.None;
-    //}
 }

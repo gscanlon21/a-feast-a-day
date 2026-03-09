@@ -9,7 +9,7 @@ public class UserNutrient
 {
     public const int NutrientTargetMin = 0;
 
-    public Nutrients Nutrient { get; init; }
+    public Core.Models.Nutrients.Nutrients Nutrient { get; init; }
 
     [ForeignKey(nameof(Users.User.Id))]
     public int UserId { get; init; }

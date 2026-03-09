@@ -2,6 +2,7 @@
 using Core.Models.Ingredients;
 using Data.Entities.Genetics;
 using Data.Entities.Newsletter;
+using Data.Entities.Nutrients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Models;
@@ -106,14 +107,14 @@ public class Ingredient
     /// <summary>
     /// Nutrients per serving.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(Nutrient.Ingredient))]
-    public virtual IList<Nutrient> Nutrients { get; set; } = [];
+    [JsonInclude, InverseProperty(nameof(USDANutrient.Ingredient))]
+    public virtual IList<USDANutrient> Nutrients { get; set; } = [];
 
     /// <summary>
     /// Nutrients per serving.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(NutrientCanada.Ingredient))]
-    public virtual IList<NutrientCanada> NutrientsCanada { get; set; } = [];
+    [JsonInclude, InverseProperty(nameof(HealthCanadaNutrient.Ingredient))]
+    public virtual IList<HealthCanadaNutrient> NutrientsCanada { get; set; } = [];
 
     /// <summary>
     /// These are the alternative ingredients.

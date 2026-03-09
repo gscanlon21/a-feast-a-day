@@ -3,6 +3,7 @@ using Data.Entities.Footnote;
 using Data.Entities.Genetics;
 using Data.Entities.Ingredients;
 using Data.Entities.Newsletter;
+using Data.Entities.Nutrients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,7 @@ public class CoreContext : DbContext
 
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<Recipe> Recipes { get; set; } = null!;
-    public DbSet<Nutrient> Nutrients { get; set; } = null!;
+    public DbSet<USDANutrient> Nutrients { get; set; } = null!;
     public DbSet<UserToken> UserTokens { get; set; } = null!;
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
@@ -39,7 +40,7 @@ public class CoreContext : DbContext
     public DbSet<UserFoodPreference> UserFoodPreferences { get; set; } = null!;
     public DbSet<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
     public DbSet<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; set; } = null!;
-    public DbSet<NutrientCanada> NutrientsCanada { get; set; } = null!;
+    public DbSet<HealthCanadaNutrient> NutrientsCanada { get; set; } = null!;
     public DbSet<DietaryIntake> DietaryIntakes { get; set; } = null!;
     public DbSet<FDA_Nutrient> FDA_Nutrients { get; set; } = null!;
 

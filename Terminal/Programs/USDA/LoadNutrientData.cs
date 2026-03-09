@@ -1,6 +1,7 @@
-﻿using Core.Models;
+﻿using Core.Code.Attributes;
+using Core.Models;
 using Core.Models.Nutrients;
-using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using Data.Repos;
 using Microsoft.VisualBasic.FileIO;
 using Terminal.Models.USDA;
@@ -31,7 +32,7 @@ internal class LoadUSDANutrientData
         parser.TextFieldType = FieldType.Delimited;
         parser.SetDelimiters(",");
 
-        List<Nutrient> newNutrients = [];
+        List<USDANutrient> newNutrients = [];
         string[]? actualHeaders = null;
         while (!parser.EndOfData)
         {
@@ -70,13 +71,12 @@ internal class LoadUSDANutrientData
                         else
                         {
                             Console.WriteLine($"Inserting Nutrient: {nutrients2}");
-                            newNutrients.Add(new Nutrient()
+                            newNutrients.Add(new USDANutrient()
                             {
                                 Value = amount,
                                 Measure = measure,
                                 Nutrients = nutrients2,
                                 IngredientId = ingredient.Id,
-                                DataSource = DataSource.USDA,
                             });
                         }
                     }

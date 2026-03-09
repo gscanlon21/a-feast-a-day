@@ -21,9 +21,10 @@ using var host = Host.CreateDefaultBuilder()
         }));
 
         services.AddHttpClient();
+        services.AddTransient<Runner>();
         services.AddTransient<UserRepo>();
         services.AddTransient<NutrientRepo>();
-        services.AddTransient<ProgramRunner>();
+        services.AddTransient<RegenerateNutrients>();
         services.AddTransient<LoadUSDANutrientData>();
         services.AddTransient<DownloadUSDADatasets>();
         services.AddTransient<RegenerateUSDANutrients>();
@@ -32,4 +33,4 @@ using var host = Host.CreateDefaultBuilder()
         services.AddTransient<RegenerateHealthCanadaNutrients>();
     }).Build();
 
-await host.Services.GetRequiredService<ProgramRunner>().Run();
+await host.Services.GetRequiredService<Runner>().Run();

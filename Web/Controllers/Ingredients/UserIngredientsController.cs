@@ -1,6 +1,7 @@
 ﻿using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -87,7 +88,7 @@ public class UserIngredientsController : ViewController
     }
 
     [HttpPost, Route("[action]")]
-    public async Task<IActionResult> UpsertIngredient(string email, string token, Ingredient ingredient, List<Nutrient> nutrients)
+    public async Task<IActionResult> UpsertIngredient(string email, string token, Ingredient ingredient, List<USDANutrient> nutrients)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
@@ -136,7 +137,7 @@ public class UserIngredientsController : ViewController
                 }
                 else if (nutrient.Value > 0)
                 {
-                    existingIngredient.Nutrients.Add(new Nutrient()
+                    existingIngredient.Nutrients.Add(new USDANutrient()
                     {
                         Nutrients = nutrient.Nutrients,
                         Measure = nutrient.Measure,

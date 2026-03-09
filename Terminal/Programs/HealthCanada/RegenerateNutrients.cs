@@ -1,5 +1,7 @@
-﻿using Data.Repos;
+﻿using Core.Code.Attributes;
+using Data.Repos;
 using Microsoft.VisualBasic.FileIO;
+using Terminal.Models.HealthCanada;
 
 namespace Terminal.Programs.HealthCanada;
 
@@ -16,7 +18,7 @@ internal class RegenerateHealthCanadaNutrients
     {
         // Shouldn't have these hardcoded.
         Console.WriteLine("What is the path to 'NUTRIENT NAME.csv'?");
-        ShortTermMemory.Nutrient_csv ??= Console.ReadLine() ?? throw new Exception("Missing 'NUTRIENT NAME.csv'!");
+        ShortTermMemory.Nutrient_name_csv ??= Console.ReadLine() ?? throw new Exception("Missing 'NUTRIENT NAME.csv'!");
         var outputPath = "C:/code/afeastaday/Core/Models/Nutrients/CanadaNutrients.cs";
 
         var dailyAllowanceMap = await _nutrientRepo.GetDietaryIntakeMap();
@@ -48,7 +50,7 @@ internal class RegenerateHealthCanadaNutrients
         builder.AppendLine("{");
         builder.AppendLine("    None = 0,");
 
-        using var parser = new TextFieldParser(ShortTermMemory.Nutrient_csv.Replace("\"", ""));
+        using var parser = new TextFieldParser(ShortTermMemory.Nutrient_name_csv.Replace("\"", ""));
         parser.HasFieldsEnclosedInQuotes = true;
         parser.SetDelimiters(",");
 
@@ -72,11 +74,11 @@ internal class RegenerateHealthCanadaNutrients
                 row[headers[i]] = fields[i];
             }
 
-            var id = (row.TryGetValue("NutrientId", out string? idTemp) ? idTemp?.Trim() : null) ?? throw new Exception("Missing id!");
-            var origName = (row.TryGetValue("NutrientName", out string? nameTemp) ? nameTemp?.Trim() : null) ?? throw new Exception("Missing name!");
-            var unitName = (row.TryGetValue("NutrientUnit", out string? unitNameTemp) ? unitNameTemp?.Trim() : null) ?? throw new Exception("Missing unit_name!");
-            //var nutrientNumber = (row.TryGetValue("NutrientCode", out string? nutrientNumberTemp) ? nutrientNumberTemp?.Trim().NullIfEmpty() : null) ?? "-1";
-            //var rank = (row.TryGetValue("rank", out string? rankTemp) ? rankTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+            var id = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_ID, out string? idTemp) ? idTemp?.Trim() : null) ?? throw new Exception("Missing id!");
+            var origName = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_NAME, out string? nameTemp) ? nameTemp?.Trim() : null) ?? throw new Exception("Missing name!");
+            var unitName = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_UNIT, out string? unitNameTemp) ? unitNameTemp?.Trim() : null) ?? throw new Exception("Missing unit_name!");
+            var nutrientCode = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_CODE, out string? nutrientNumberTemp) ? nutrientNumberTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+            var nutrientSymbol = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_SYMBOL, out string? rankTemp) ? rankTemp?.Trim().NullIfEmpty() : null) ?? "-1";
 
             // Pretty-up the nutrient name for C#.
             var name = new string(origName.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
@@ -109,10 +111,10 @@ internal class RegenerateHealthCanadaNutrients
 
             foreach (var dailyAllowance in dailyAllowanceMap.Where(kvp => name.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase)).SelectMany(kv => kv))
             {
-                builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
+                //builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
             }
 
-            //builder.AppendLine($"    [NutrientsMetadata(Measure.{measure}, {nutrientNumber}, {rank})]");
+            builder.AppendLine($"    [{HCNutrientsMetadataAttribute.Name}(Measure.{measure}, {int.Parse(nutrientCode)}, \"{nutrientSymbol}\")]");
             builder.AppendLine($"    [Display(Name = \"{origName}\")]");
             builder.AppendLine($"    {name} = {id},");
         }

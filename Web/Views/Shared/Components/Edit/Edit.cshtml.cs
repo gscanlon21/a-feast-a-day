@@ -96,7 +96,7 @@ public class EditComponentViewModel
     public int? MaxIngredients { get; init; }
 
     [Required]
-    [Display(Name = "Send Day", Description = "What days do you want to receive new recipes?")]
+    [Display(Name = "Send Day", Description = "What day do you want to see new recipes?")]
     public DayOfWeek SendDay { get; set; }
 
     public Verbosity[]? VerbosityBinder

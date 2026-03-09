@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260309201050_AddHCFoodId")]
-    partial class AddHCFoodId
+    [Migration("20260309231703_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -337,39 +337,6 @@ namespace Data.Migrations
                     b.ToTable("ingredient_attr");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredients.Nutrient", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DataSource")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IngredientId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Measure")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Nutrients")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Value")
-                        .HasColumnType("double precision");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IngredientId");
-
-                    b.ToTable("nutrient");
-                });
-
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
                     b.Property<int>("Id")
@@ -513,6 +480,66 @@ namespace Data.Migrations
                     b.HasIndex("UserFeastRecipeId");
 
                     b.ToTable("user_feast_recipe_ingredient");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.HealthCanadaNutrient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Nutrients")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.ToTable("hc_nutrient");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.USDANutrient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Nutrients")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.ToTable("usda_nutrient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>
@@ -1031,17 +1058,6 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredients.Nutrient", b =>
-                {
-                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
-                        .WithMany("Nutrients")
-                        .HasForeignKey("IngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ingredient");
-                });
-
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
                     b.HasOne("Data.Entities.Users.User", "User")
@@ -1106,6 +1122,28 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
 
                     b.Navigation("UserFeastRecipe");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.HealthCanadaNutrient", b =>
+                {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
+                        .WithMany("NutrientsCanada")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.USDANutrient", b =>
+                {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
+                        .WithMany("Nutrients")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>
@@ -1307,6 +1345,8 @@ namespace Data.Migrations
                     b.Navigation("IngredientAttr");
 
                     b.Navigation("Nutrients");
+
+                    b.Navigation("NutrientsCanada");
 
                     b.Navigation("RecipeIngredients");
 

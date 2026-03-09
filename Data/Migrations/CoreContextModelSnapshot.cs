@@ -67,7 +67,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("dietary_intake", (string)null);
+                    b.ToTable("dietary_intake");
                 });
 
             modelBuilder.Entity("Data.Entities.External.FDA_Nutrient", b =>
@@ -91,7 +91,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fda_nutrient", (string)null);
+                    b.ToTable("fda_nutrient");
                 });
 
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
@@ -122,7 +122,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_footnote", (string)null);
+                    b.ToTable("user_footnote");
                 });
 
             modelBuilder.Entity("Data.Entities.Genetics.Gene", b =>
@@ -145,7 +145,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("gene", (string)null);
+                    b.ToTable("gene");
                 });
 
             modelBuilder.Entity("Data.Entities.Genetics.SNP", b =>
@@ -173,7 +173,7 @@ namespace Data.Migrations
 
                     b.HasIndex("GeneId");
 
-                    b.ToTable("snp", (string)null);
+                    b.ToTable("snp");
                 });
 
             modelBuilder.Entity("Data.Entities.Genetics.Study", b =>
@@ -205,7 +205,7 @@ namespace Data.Migrations
 
                     b.HasIndex("SNPId");
 
-                    b.ToTable("study", (string)null);
+                    b.ToTable("study");
                 });
 
             modelBuilder.Entity("Data.Entities.Genetics.StudyIngredient", b =>
@@ -220,7 +220,7 @@ namespace Data.Migrations
 
                     b.HasIndex("IngredientId");
 
-                    b.ToTable("study_ingredient", (string)null);
+                    b.ToTable("study_ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Ingredients.Ingredient", b =>
@@ -285,7 +285,7 @@ namespace Data.Migrations
                     b.HasIndex(new[] { "UserId" }, "IX_ingredient_UserId_DisabledReason")
                         .HasFilter("\"DisabledReason\" IS NULL");
 
-                    b.ToTable("ingredient", (string)null);
+                    b.ToTable("ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Ingredients.IngredientAlternative", b =>
@@ -312,7 +312,7 @@ namespace Data.Migrations
 
                     b.HasIndex("IngredientId", "IsAggregateElement");
 
-                    b.ToTable("ingredient_alternative", (string)null);
+                    b.ToTable("ingredient_alternative");
                 });
 
             modelBuilder.Entity("Data.Entities.Ingredients.IngredientAttr", b =>
@@ -331,73 +331,7 @@ namespace Data.Migrations
 
                     b.HasKey("IngredientId");
 
-                    b.ToTable("ingredient_attr", (string)null);
-                });
-
-            modelBuilder.Entity("Data.Entities.Ingredients.Nutrient", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DataSource")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IngredientId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Measure")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Nutrients")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Value")
-                        .HasColumnType("double precision");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IngredientId");
-
-                    b.ToTable("nutrient", (string)null);
-                });
-
-            modelBuilder.Entity("Data.Entities.Ingredients.NutrientCanada", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DataSource")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IngredientId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Measure")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Nutrients")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Value")
-                        .HasColumnType("double precision");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IngredientId");
-
-                    b.ToTable("nutrient_canada", (string)null);
+                    b.ToTable("ingredient_attr");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
@@ -441,7 +375,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_email", (string)null);
+                    b.ToTable("user_email");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeast", b =>
@@ -465,7 +399,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_feast", (string)null);
+                    b.ToTable("user_feast");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipe", b =>
@@ -502,7 +436,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserFeastId");
 
-                    b.ToTable("user_feast_recipe", (string)null);
+                    b.ToTable("user_feast_recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.Newsletter.UserFeastRecipeIngredient", b =>
@@ -542,7 +476,67 @@ namespace Data.Migrations
 
                     b.HasIndex("UserFeastRecipeId");
 
-                    b.ToTable("user_feast_recipe_ingredient", (string)null);
+                    b.ToTable("user_feast_recipe_ingredient");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.HealthCanadaNutrient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Nutrients")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.ToTable("hc_nutrient");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.USDANutrient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredientId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Measure")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Nutrients")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Value")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId");
+
+                    b.ToTable("usda_nutrient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>
@@ -603,7 +597,7 @@ namespace Data.Migrations
                     b.HasIndex(new[] { "UserId" }, "IX_recipe_UserId_DisabledReason")
                         .HasFilter("\"DisabledReason\" IS NULL");
 
-                    b.ToTable("recipe", (string)null);
+                    b.ToTable("recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipes.RecipeIngredient", b =>
@@ -671,7 +665,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("recipe_ingredient", (string)null);
+                    b.ToTable("recipe_ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipes.RecipeInstruction", b =>
@@ -699,7 +693,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("recipe_instruction", (string)null);
+                    b.ToTable("recipe_instruction");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.User", b =>
@@ -767,7 +761,7 @@ namespace Data.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("user", (string)null);
+                    b.ToTable("user");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserFamily", b =>
@@ -794,7 +788,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("user_family", (string)null);
+                    b.ToTable("user_family");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserFoodPreference", b =>
@@ -810,7 +804,7 @@ namespace Data.Migrations
 
                     b.HasKey("UserId", "Allergen");
 
-                    b.ToTable("user_food_preference", (string)null);
+                    b.ToTable("user_food_preference");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserIngredient", b =>
@@ -828,7 +822,7 @@ namespace Data.Migrations
 
                     b.HasIndex("IngredientId");
 
-                    b.ToTable("user_ingredient", (string)null);
+                    b.ToTable("user_ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserNutrient", b =>
@@ -847,7 +841,7 @@ namespace Data.Migrations
 
                     b.HasKey("UserId", "Nutrient");
 
-                    b.ToTable("user_nutrient", (string)null);
+                    b.ToTable("user_nutrient");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserRecipe", b =>
@@ -883,7 +877,7 @@ namespace Data.Migrations
 
                     b.HasIndex("RecipeId");
 
-                    b.ToTable("user_recipe", (string)null);
+                    b.ToTable("user_recipe");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserRecipeIngredient", b =>
@@ -923,7 +917,7 @@ namespace Data.Migrations
 
                     b.HasIndex("SubstituteRecipeId");
 
-                    b.ToTable("user_recipe_ingredient", (string)null);
+                    b.ToTable("user_recipe_ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserSection", b =>
@@ -942,7 +936,7 @@ namespace Data.Migrations
 
                     b.HasKey("UserId", "Section");
 
-                    b.ToTable("user_section", (string)null);
+                    b.ToTable("user_section");
                 });
 
             modelBuilder.Entity("Data.Entities.Users.UserToken", b =>
@@ -967,7 +961,7 @@ namespace Data.Migrations
 
                     b.HasIndex("UserId", "Token");
 
-                    b.ToTable("user_token", (string)null);
+                    b.ToTable("user_token");
                 });
 
             modelBuilder.Entity("Data.Entities.Footnote.UserFootnote", b =>
@@ -1061,28 +1055,6 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
                 });
 
-            modelBuilder.Entity("Data.Entities.Ingredients.Nutrient", b =>
-                {
-                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
-                        .WithMany("Nutrients")
-                        .HasForeignKey("IngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ingredient");
-                });
-
-            modelBuilder.Entity("Data.Entities.Ingredients.NutrientCanada", b =>
-                {
-                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
-                        .WithMany("NutrientsCanada")
-                        .HasForeignKey("IngredientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ingredient");
-                });
-
             modelBuilder.Entity("Data.Entities.Newsletter.UserEmail", b =>
                 {
                     b.HasOne("Data.Entities.Users.User", "User")
@@ -1147,6 +1119,28 @@ namespace Data.Migrations
                     b.Navigation("Ingredient");
 
                     b.Navigation("UserFeastRecipe");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.HealthCanadaNutrient", b =>
+                {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
+                        .WithMany("NutrientsCanada")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
+                });
+
+            modelBuilder.Entity("Data.Entities.Nutrients.USDANutrient", b =>
+                {
+                    b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
+                        .WithMany("Nutrients")
+                        .HasForeignKey("IngredientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ingredient");
                 });
 
             modelBuilder.Entity("Data.Entities.Recipes.Recipe", b =>

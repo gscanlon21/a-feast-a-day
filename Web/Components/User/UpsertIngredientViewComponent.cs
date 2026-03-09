@@ -1,6 +1,7 @@
 ﻿using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -39,7 +40,7 @@ public class UpsertIngredientViewComponent : ViewComponent
             .OrderBy(f => f.Name)
             .ToListAsync();
 
-        var nutrients = new List<Nutrient>();
+        var nutrients = new List<USDANutrient>();
         foreach (var nutrient in EnumExtensions.GetValuesExcluding(Nutrients.None)
             .OrderBy(n => n.GetSingleDisplayName(DisplayType.Order).Length)
             .ThenBy(n => n.GetSingleDisplayName(DisplayType.Order))

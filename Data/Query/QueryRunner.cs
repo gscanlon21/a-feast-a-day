@@ -5,6 +5,7 @@ using Core.Models.Nutrients;
 using Core.Models.Recipe;
 using Data.Code.Extensions;
 using Data.Entities.Ingredients;
+using Data.Entities.Nutrients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Models;
@@ -558,9 +559,8 @@ public class QueryRunner(Section section)
             .Where(n => allIngredientIds.Contains(n.IngredientId))
             .Where(n => NutrientHelpersUs.All.Contains(n.Nutrients))
             // Select before grouping so EF Core can optimize.
-            .Select(n => new Nutrient(/* EF can't optimize */)
+            .Select(n => new USDANutrient(/* EF can't optimize */)
             {
-                DataSource = n.DataSource,
                 IngredientId = n.IngredientId,
                 Nutrients = n.Nutrients,
                 Measure = n.Measure,
@@ -569,7 +569,7 @@ public class QueryRunner(Section section)
             .GroupBy(n => n.IngredientId)
             .ToDictionaryAsync(g => g.Key, g => g.Select(n => new QueryNutrient
             {
-                DataSource = n.DataSource,
+                DataSource = DataSource.USDA,
                 IngredientId = n.IngredientId,
                 Nutrients = NutrientMaps.USDAToNutrients[n.Nutrients],
                 Measure = n.Measure,
@@ -588,9 +588,8 @@ public class QueryRunner(Section section)
             .Where(n => allIngredientIds.Contains(n.IngredientId))
             .Where(n => NutrientHelpersCa.All.Contains(n.Nutrients))
             // Select before grouping so EF Core can optimize.
-            .Select(n => new NutrientCanada(/* EF can't optimize */)
+            .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
             {
-                DataSource = n.DataSource,
                 IngredientId = n.IngredientId,
                 Nutrients = n.Nutrients,
                 Measure = n.Measure,
@@ -599,7 +598,7 @@ public class QueryRunner(Section section)
             .GroupBy(n => n.IngredientId)
             .ToDictionaryAsync(g => g.Key, g => g.Select(n => new QueryNutrient
             {
-                DataSource = n.DataSource,
+                DataSource = DataSource.Canada,
                 IngredientId = n.IngredientId,
                 Nutrients = NutrientMaps.CanadaToNutrients[n.Nutrients],
                 Measure = n.Measure,
