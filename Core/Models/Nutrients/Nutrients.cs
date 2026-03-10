@@ -196,13 +196,13 @@ public enum Nutrients
     Phosphorus_P = 18,
 
     /// <summary>
-    /// Copper Cu
+    /// Copper (Cu)
     /// </summary>
     [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Copper Cu", Order = 5550)]
+    [Display(Name = "Copper (Cu)", Order = 5550)]
     Copper_Cu = 19,
 
     /// <summary>
@@ -276,13 +276,13 @@ public enum Nutrients
     Selenium_Se = 26,
 
     /// <summary>
-    /// Boron B
+    /// Boron (B)
     /// </summary>
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Boron B", Order = 6245)]
+    [Display(Name = "Boron (B)", Order = 6245)]
     Boron_B = 27,
 
     /// <summary>
@@ -326,17 +326,17 @@ public enum Nutrients
     Niacin_B3 = 31,
 
     /// <summary>
-    /// Vitamin B 6
+    /// Vitamin B6
     /// </summary>
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin B 6", Order = 6700)]
+    [Display(Name = "Vitamin B6", Order = 6700)]
     Vitamin_B_6 = 32,
 
     /// <summary>
-    /// Vitamin B-12
+    /// Vitamin B12
     /// </summary>
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_14_18_Years)]
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_14_18_Years)]
@@ -350,7 +350,7 @@ public enum Nutrients
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [DailyAllowance(2.6, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Pregnant_31_50_Years)]
     [DailyAllowance(2.8, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
-    [Display(Name = "Vitamin B-12", Order = 6800)]
+    [Display(Name = "Vitamin B12", Order = 6800)]
     Vitamin_B_12 = 33,
 
     /// <summary>
@@ -384,6 +384,16 @@ public enum Nutrients
     Pantothenic_Acid_B5 = 36,
 
     /// <summary>
+    /// Choline
+    /// </summary>
+    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [Display(Name = "Choline", Order = 7220)]
+    Choline = 37,
+
+    /// <summary>
     /// Retinol
     /// </summary>
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
@@ -391,7 +401,7 @@ public enum Nutrients
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Retinol", Order = 7410)]
-    Retinol = 37,
+    Retinol = 38,
 
     /// <summary>
     /// Vitamin A
@@ -401,7 +411,7 @@ public enum Nutrients
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin A", Order = 7420)]
-    Vitamin_A = 38,
+    Vitamin_A = 39,
 
     /// <summary>
     /// Alpha Carotene
@@ -411,7 +421,7 @@ public enum Nutrients
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Alpha Carotene", Order = 7440)]
-    Carotene_Alpha = 39,
+    Carotene_Alpha = 40,
 
     /// <summary>
     /// Beta Carotene
@@ -421,7 +431,7 @@ public enum Nutrients
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Beta Carotene", Order = 7450)]
-    Carotene_Beta = 40,
+    Carotene_Beta = 41,
 
     /// <summary>
     /// Lutein/Zeaxanthin
@@ -431,7 +441,7 @@ public enum Nutrients
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Lutein/Zeaxanthin", Order = 7560)]
-    Lutein_Zeaxanthin = 41,
+    Lutein_Zeaxanthin = 42,
 
     /// <summary>
     /// Carotenes
@@ -441,7 +451,7 @@ public enum Nutrients
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Carotenes", Order = 7600)]
-    Carotene_RAE = 42,
+    Carotene_RAE = 43,
 
     /// <summary>
     /// Vitamin E
@@ -451,7 +461,7 @@ public enum Nutrients
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin E", Order = 7810)]
-    Vitamin_E = 43,
+    Vitamin_E = 44,
 
     /// <summary>
     /// Vitamin D
@@ -461,7 +471,7 @@ public enum Nutrients
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin D", Order = 8700)]
-    Vitamin_D_D2__D3 = 44,
+    Vitamin_D_D2__D3 = 45,
 
     /// <summary>
     /// Vitamin K
@@ -471,7 +481,7 @@ public enum Nutrients
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin K", Order = 8800)]
-    Vitamin_K = 45,
+    Vitamin_K = 46,
 
     /// <summary>
     /// Saturated Fats
@@ -505,7 +515,7 @@ public enum Nutrients
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
     [Display(Name = "Saturated Fats", Order = 9700)]
-    Fatty_acids_total_saturated = 46,
+    Fatty_acids_total_saturated = 47,
 
     /// <summary>
     /// Monounsaturated Fats
@@ -515,17 +525,7 @@ public enum Nutrients
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Monounsaturated Fats", Order = 11400)]
-    Fatty_acids_total_monounsaturated = 47,
-
-    /// <summary>
-    /// Choline
-    /// </summary>
-    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Choline", Order = 11800)]
-    Choline = 48,
+    Fatty_acids_total_monounsaturated = 48,
 
     /// <summary>
     /// Polyunsaturated Fats

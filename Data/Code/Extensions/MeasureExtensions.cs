@@ -25,6 +25,8 @@ public static class MeasureExtensions
             {
                 Measure.KCalorie => 1,
                 Measure.None => ingredient.GramsPerMeasure,
+                // Niacin equivalencies calculated separately.
+                Measure.MG_NE => measure.ToMeasure(Measure.Grams),
                 _ when MeasureConsts.DryMeasures.Contains(measure) => measure.ToMeasure(Measure.Grams),
                 _ when MeasureConsts.LiquidMeasures.Contains(measure) => measure.ToMeasure(Measure.Cups) * (coarseCut ? ingredient.GramsPerCoarseCup : ingredient.GramsPerFineCup),
                 _ => throw new MissingMeasureException($"Missing measure {measure}!"),

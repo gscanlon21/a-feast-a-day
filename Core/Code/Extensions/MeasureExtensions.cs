@@ -79,6 +79,9 @@ public static class MeasureExtensions
             (Measure.Grams, Measure.Milligrams) => 1000,
             (Measure.Milligrams, Measure.Grams) => 1d / 1000,
 
+            (Measure.Grams, Measure.MG_NE) => 1000,
+            (Measure.MG_NE, Measure.Grams) => 1d / 1000,
+
             #endregion
             #region Fluid Conversions
 
