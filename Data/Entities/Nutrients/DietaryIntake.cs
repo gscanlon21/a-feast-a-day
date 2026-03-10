@@ -3,8 +3,9 @@ using Core.Models.Nutrients;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
-namespace Data.Entities.External;
+namespace Data.Entities.Nutrients;
 
 [Table("dietary_intake")]
 [DebuggerDisplay("{Key}: {Min}-{Max} {Measure}/{Multiplier}")]
@@ -13,11 +14,7 @@ public class DietaryIntake
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
 
-    /// <summary>
-    /// Use the generated name in Nutrients.
-    /// The USDA's Name's may be clones with different Measures, so there is ambiguity there.
-    /// </summary>
-    public string Key { get; set; } = null!;
+    public int NutrientId { get; init; }
 
     public double? Min { get; set; }
 
@@ -31,13 +28,20 @@ public class DietaryIntake
 
     public int CaloriesPerGram { get; set; }
 
-    public DateOnly LastChecked { get; set; } = DateHelpers.Today;
-
     public DateOnly LastUpdated { get; set; } = DateHelpers.Today;
 
     public string Source { get; set; } = null!;
 
     public string? Notes { get; set; }
+
+
+    #region Navigation Properties
+
+    [JsonIgnore, InverseProperty(nameof(Nutrients.Nutrient.DietaryIntakes))]
+    public virtual Nutrient? Nutrient { get; set; }
+
+    #endregion
+
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is DietaryIntake other

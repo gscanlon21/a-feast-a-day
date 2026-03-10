@@ -29,21 +29,21 @@ internal class RegenerateNutrients
         builder.AppendLine("    None = 0,");
 
         int i = 0;
-        foreach (var dailyAllowanceGroup in dailyAllowanceMap)
+        foreach (var dailyAllowanceGroup in dailyAllowanceMap.OrderBy(g => g.Key.Order).ThenBy(g => g.Key.Key))
         {
             builder.AppendLine();
             builder.AppendLine($"    /// <summary>");
-            builder.AppendLine($"    /// {dailyAllowanceGroup.Key}");
+            builder.AppendLine($"    /// {dailyAllowanceGroup.Key.Key}");
             builder.AppendLine($"    /// </summary>");
 
-            foreach (var dailyAllowance in dailyAllowanceGroup)
+            foreach (var dailyAllowance in dailyAllowanceGroup.Value)
             {
-                builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
+                builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min ?? -1}, {dailyAllowance.Max ?? -1}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
             }
 
-            //builder.AppendLine($"    [{NutrientsMetadataAttribute.Name}(Measure.{dailyAllowance}, {nutrientNumber}, {rank})]");
-            builder.AppendLine($"    [Display(Name = \"{dailyAllowanceGroup.Key}\")]");
-            builder.AppendLine($"    {dailyAllowanceGroup.Key} = {++i},");
+            var enumName = new string(dailyAllowanceGroup.Key.Key.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
+            builder.AppendLine($"    [Display(Name = \"{dailyAllowanceGroup.Key.Key}\", Order = {dailyAllowanceGroup.Key.Order})]");
+            builder.AppendLine($"    {enumName} = {++i},");
         }
 
         builder.AppendLine("}");

@@ -8,11 +8,47 @@
 <div class="row gy-2 mb-2 mt-1 justify-content-between align-items-end">
     <div class="col-auto mb-3">
         <h1 class="primary-heading">Nutrient</h1>
-        <h2 class="sub-heading mt-0 ps-1">@Model.DietaryIntakes.FirstOrDefault()?.Key</h2>
+        <h2 class="sub-heading mt-0 ps-1">@Model.Nutrient.Key</h2>
     </div>
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
 </div>
 
+<div class="alert alert-secondary">
+    <form asp-controller="@NutrientController.Name" asp-action="@nameof(NutrientController.UpsertNutrient)"
+          asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post"
+          class="row row-gap-3">
+        
+        <input type="hidden" asp-for="Nutrient.Id" />
+
+        <div class="form-group col">
+            <label asp-for="Nutrient.Key"></label>
+            <input asp-for="Nutrient.Key" class="form-control" />
+            <span asp-validation-for="Nutrient.Key" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col">
+            <label asp-for="Nutrient.Name"></label>
+            <input asp-for="Nutrient.Name" class="form-control" />
+            <span asp-validation-for="Nutrient.Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-auto">
+            <label asp-for="Nutrient.Order"></label>
+            <input asp-for="Nutrient.Order" class="form-control" />
+            <span asp-validation-for="Nutrient.Order" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Nutrient.Notes"></label>
+            <textarea asp-for="Nutrient.Notes" class="form-control"></textarea>
+            <span asp-validation-for="Nutrient.Notes" class="text-danger"></span>
+        </div>
+
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
 
 <form asp-controller="@NutrientController.Name" asp-action="@nameof(NutrientController.UpsertDietaryIntake)"
         asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post">
@@ -20,7 +56,6 @@
     <table class="table table-bordered align-middle">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].Key)</th>
                 <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].Min)</th>
                 <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].Max)</th>
                 <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].CaloriesPerGram)</th>
@@ -33,17 +68,13 @@
             </tr>
         </thead>
         <tbody>
+            @* NOTE: Disabled inputs don't send up form values *@
             @for (int i = 0; i < Model.DietaryIntakes.Count; i++)
             {
                 <tr>
                     <td class="p-0">
-                        @* NOTE: Disabled inputs don't send up form values. *@
+                        <input asp-for="Nutrient.Id" type="hidden" />
                         <input asp-for="DietaryIntakes[@i].Id" type="hidden" />
-                        <input asp-for="DietaryIntakes[@i].Key" class="form-control form-control-sm" />
-                        <span asp-validation-for="DietaryIntakes[@i].Key" class="text-danger"></span>
-                    </td>
-
-                    <td class="p-0">
                         <input asp-for="DietaryIntakes[@i].Min" type="number" class="form-control form-control-sm" />
                         <span asp-validation-for="DietaryIntakes[@i].Min" class="text-danger"></span>
                     </td>

@@ -36,7 +36,7 @@
         @foreach (var nutrientTarget in NutrientHelpers.All
             .Where(kv => kv.HasDisplay(DisplayType.Name))
             .Select(kv => Model.GetNutrientTarget(kv))
-            .OrderBy(nt => nt.NutrientGroup.GetRank())
+            .OrderBy(nt => nt.NutrientGroup.GetOrder())
             .ThenByDescending(nt => nt.ShowButtons ? nt.Start : nt.DefaultStart)
             .ThenByDescending(nt => nt.ShowButtons ? nt.End : nt.DefaultEnd)
             .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.GroupName))

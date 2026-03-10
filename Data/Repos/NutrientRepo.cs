@@ -1,6 +1,5 @@
 ﻿using Data.Entities.Ingredients;
 using Data.Entities.Nutrients;
-using Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using static Core.Code.Extensions.EnumerableExtensions;
@@ -38,7 +37,7 @@ public class NutrientRepo
 
     public async Task UpdateNutrient(USDANutrient nutrient)
     {
-        _context.Nutrients.Update(nutrient);
+        _context.USDANutrients.Update(nutrient);
         await _context.SaveChangesAsync();
     }
 
@@ -46,7 +45,7 @@ public class NutrientRepo
     {
         foreach (var nutrient in newNutrients)
         {
-            _context.Nutrients.Add(nutrient);
+            _context.USDANutrients.Add(nutrient);
         }
 
         await _context.SaveChangesAsync();
@@ -62,19 +61,10 @@ public class NutrientRepo
         await _context.SaveChangesAsync();
     }
 
-    public async Task<ILookup<string, DailyAllowance>> GetDietaryIntakeMap()
+    public async Task<Dictionary<Nutrient, List<DietaryIntake>>> GetDietaryIntakeMap()
     {
-        return (await _context.DietaryIntakes.AsNoTracking().ToListAsync())
-            .Where(di => Enum.IsDefined(di.Person)) // Only good data.
-            .OrderBy(di => di.Person.GetOrder(), NullOrder.NullsLast)
-            .ToLookup(l => l.Key, l => new DailyAllowance(
-                l.Min ?? -1,
-                l.Max ?? -1,
-                l.Measure.ToString(),
-                l.Multiplier.ToString(),
-                l.CaloriesPerGram,
-                l.Person.ToString()
-            )
-        );
+        return await _context.Nutrients.AsNoTracking()
+            .Include(n => n.DietaryIntakes!.OrderBy(di => di.Person))
+            .ToDictionaryAsync(n => n, n => n.DietaryIntakes!.Where(di => Enum.IsDefined(di.Person)).ToList());
     }
 }

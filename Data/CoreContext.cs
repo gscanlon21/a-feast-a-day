@@ -26,7 +26,6 @@ public class CoreContext : DbContext
 
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<Recipe> Recipes { get; set; } = null!;
-    public DbSet<USDANutrient> Nutrients { get; set; } = null!;
     public DbSet<UserToken> UserTokens { get; set; } = null!;
     public DbSet<UserEmail> UserEmails { get; set; } = null!;
     public DbSet<UserFeast> UserFeasts { get; set; } = null!;
@@ -42,7 +41,9 @@ public class CoreContext : DbContext
     public DbSet<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; set; } = null!;
     public DbSet<HealthCanadaNutrient> NutrientsCanada { get; set; } = null!;
     public DbSet<DietaryIntake> DietaryIntakes { get; set; } = null!;
+    public DbSet<USDANutrient> USDANutrients { get; set; } = null!;
     public DbSet<FDA_Nutrient> FDA_Nutrients { get; set; } = null!;
+    public DbSet<Nutrient> Nutrients { get; set; } = null!;
 
     /// <summary>
     /// AlternativeIngredient does not have a global query filter for DisabledReason.

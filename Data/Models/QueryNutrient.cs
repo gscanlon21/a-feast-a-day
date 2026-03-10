@@ -40,9 +40,6 @@ public class QueryNutrient
 
     public virtual Ingredient? Ingredient { get; set; }
 
-    //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
-    //public virtual NutrientAttr? NutrientAttr { get; set; }
-
     #endregion
 
 

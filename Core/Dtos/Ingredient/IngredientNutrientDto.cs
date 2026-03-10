@@ -1,13 +1,12 @@
-﻿using Core.Models.Nutrients;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Ingredient;
 
 /// <summary>
 /// Recipes listed on the website
 /// </summary>
 [DebuggerDisplay("{Nutrients}: {Measure} - {Value}")]
-public class NutrientDto
+public class IngredientNutrientDto
 {
     public int Id { get; init; }
 
@@ -16,7 +15,7 @@ public class NutrientDto
     /// <summary>
     /// If it has atleast 10% RDA per serving.
     /// </summary>
-    public Nutrients Nutrients { get; set; }
+    public Models.Nutrients.Nutrients Nutrients { get; set; }
 
     public Measure Measure { get; set; }
 
@@ -28,6 +27,6 @@ public class NutrientDto
     public string? Notes { get; set; } = null;
 
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is NutrientDto other
+    public override bool Equals(object? obj) => obj is IngredientNutrientDto other
         && other.Id == Id;
 }

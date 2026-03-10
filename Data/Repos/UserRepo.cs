@@ -316,9 +316,9 @@ public class UserRepo
                 var allIngredientIds = halfIngredientIds.Union(cookedIngredients.Values.Select(ci => ci.Id)).ToList();
                 var allNutrients = user.DataSource switch
                 {
-                    DataSource.USDA => await _context.Nutrients.AsNoTracking()
+                    DataSource.USDA => await _context.USDANutrients.AsNoTracking()
+                        .Where(n => NutrientMaps.USDAToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
-                        .Where(n => NutrientHelpersUs.All.Contains(n.Nutrients))
                         // Select before grouping so EF Core can optimize.
                         .Select(n => new USDANutrient(/* EF can't optimize */)
                         {
@@ -337,8 +337,8 @@ public class UserRepo
                             Value = n.Value,
                         }).ToList()),
                     DataSource.Canada => await _context.NutrientsCanada.AsNoTracking()
+                        .Where(n => NutrientMaps.CanadaToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
-                        .Where(n => NutrientHelpersCa.All.Contains(n.Nutrients))
                         // Select before grouping so EF Core can optimize.
                         .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
                         {

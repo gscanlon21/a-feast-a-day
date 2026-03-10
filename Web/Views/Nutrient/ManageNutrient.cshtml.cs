@@ -1,4 +1,4 @@
-using Data.Entities.External;
+using Data.Entities.Nutrients;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
@@ -7,9 +7,9 @@ namespace Web.Views.Nutrient;
 public class ManageNutrientViewModel
 {
     public required string Token { get; init; }
-    public required string Nutrient { get; init; }
     public required Data.Entities.Users.User User { get; init; }
     public required List<DietaryIntakeViewModel> DietaryIntakes { get; init; }
+    public required Data.Entities.Nutrients.Nutrient Nutrient { get; init; }
     public bool? WasUpdated { get; init; }
 }
 
@@ -21,7 +21,6 @@ public class DietaryIntakeViewModel
     public DietaryIntakeViewModel(DietaryIntake other)
     {
         Id = other.Id;
-        Key = other.Key;
         Min = other.Min;
         Max = other.Max;
         Notes = other.Notes;
@@ -34,9 +33,6 @@ public class DietaryIntakeViewModel
     }
 
     public int Id { get; init; }
-
-    [Display(Name = "Key", Description = "Use the generated name in Nutrients. The USDA's Name's may be clones with different Measures, so there is ambiguity there")]
-    public string Key { get; set; } = null!;
 
     [Display(Name = "RDA", Description = "Recommended Daily Allowance")]
     public double? Min { get; set; }

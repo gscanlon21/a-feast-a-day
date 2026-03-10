@@ -47,9 +47,6 @@ public class HealthCanadaNutrient
     [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.NutrientsCanada))]
     public virtual Ingredient? Ingredient { get; set; }
 
-    //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
-    //public virtual NutrientAttr? NutrientAttr { get; set; }
-
     #endregion
 
 

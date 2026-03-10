@@ -42,7 +42,7 @@
 43	\N	Cocoa Powder	\N	\N	f	0	28	100	2025-06-20	4	86	16384	86	Cocoa Powder	\N
 44	\N	Powdered Sugar	Missing minor nutrients.	\N	f	0	28	100	2026-02-04	4	100	114688	100	Powdered Sugar	\N
 45	\N	9" Pie Crust	\N	\N	f	256	194	100	2025-07-11	0	194	114688	194	9" Pie Crust	\N
-46	\N	Pizza Crust	\N	\N	f	0	212	100	2024-10-16	0	53	2	53	Pizza Crust	\N
+46	\N	Pizza Crust	\N	\N	f	0	212	100	2026-03-10	0	53	64	53	Pizza Crust	\N
 47	\N	Chicken Stock	\N	\N	f	1048576	240	100	2024-12-27	6	240	928	240	Chicken Stock	\N
 48	\N	Salsa	\N	\N	f	512	28	100	2025-10-05	4	259	256	259	Salsa	\N
 49	\N	Grape Jelly	\N	\N	f	0	28	100	2025-06-09	4	224	32	224	Grape Jelly	\N
@@ -841,7 +841,7 @@
 1010	\N	Extra Virgin Coconut Oil	\N	\N	f	0	28	100	2024-12-09	4	224	65536	224	Coconut Oil	https://fdc.nal.usda.gov/food-details/330458/nutrients
 1043	\N	Green Apples	\N	\N	f	0	182	100	2025-03-29	0	182	1	182	Apple	\N
 1044	\N	Maca Powder	\N	\N	f	0	240	100	2025-06-19	6	240	16384	240	Maca Powder	\N
-1045	\N	Frozen Pizza	\N	\N	f	0	741.333333	100	2024-10-16	0	139	234881024	139	Frozen Pizza	\N
+1045	\N	Frozen Pizza	\N	\N	f	0	741.333333	100	2026-03-10	0	139	234881024	139	Frozen Pizza	\N
 1046	\N	Organic Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter-3735	\N	f	2048	32	100	2025-10-27	4	256	128	256	Organic Creamy Peanut Butter	\N
 1047	\N	Package Oatmeal	\N	\N	f	0	40	100	2025-08-16	0	120	16288	120	Package Oatmeal	\N
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	\N	\N	f	0	40	100	2025-08-15	0	120	16288	120	Purely Elizabeth Banana Nut Oatmeal	\N

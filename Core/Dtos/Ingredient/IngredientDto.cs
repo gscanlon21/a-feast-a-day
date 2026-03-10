@@ -1,5 +1,4 @@
-﻿using Core.Dtos.User;
-using Core.Models.Ingredients;
+﻿using Core.Models.Ingredients;
 using System.Diagnostics;
 
 namespace Core.Dtos.Ingredient;
@@ -45,7 +44,7 @@ public class IngredientDto
     /// <summary>
     /// Nutrients per Serving Size (Grams).
     /// </summary>
-    public ICollection<NutrientDto> Nutrients { get; set; } = [];
+    public ICollection<IngredientNutrientDto> Nutrients { get; set; } = [];
 
     /// <summary>
     /// These are the alternate ingredients.

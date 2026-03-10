@@ -1,5 +1,4 @@
-﻿using Core.Models.Nutrients;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Data.Entities.Users;

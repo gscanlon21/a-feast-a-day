@@ -3,6 +3,7 @@ using ADay.Data;
 using ADay.Data.Entities.Footnote;
 using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
+using Core.Dtos.Nutrients;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.User;
 using Core.Models.Newsletter;
@@ -126,7 +127,7 @@ public partial class NewsletterRepo
     {
         var debugRecipes = await GetDebugRecipes(newsletterContext.User);
         var debugIngredients = await GetDebugIngredients(newsletterContext.User).ToListAsync();
-        var debugDietaryIntakes = await GetDebugDietaryIntakes(newsletterContext.User);
+        var debugNutrients = await GetDebugNutrients(newsletterContext.User);
 
         // Query for ingredients before saving the newsletter, so debug logs can be saved to it.
         var newsletter = await CreateAndAddNewsletterToContext(newsletterContext, debugRecipes);
@@ -141,7 +142,7 @@ public partial class NewsletterRepo
             UserFeast = newsletter.AsType<UserFeastDto>()!,
             ShoppingList = await GetShoppingList(newsletter, debugRecipes),
             Recipes = debugRecipes.Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
-            DebugDietaryIntakes = debugDietaryIntakes.Select(r => r.AsType<DietaryIntakeDto>()!).ToList(),
+            DebugNutrients = debugNutrients.Select(r => r.AsType<NutrientDto>()!).ToList(),
         };
     }
 
@@ -226,8 +227,8 @@ public partial class NewsletterRepo
             var ingredients = await _context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == newsletter.Date).ToListAsync();
             newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto>()!).ToList();
 
-            var dietaryIntakes = await _context.DietaryIntakes.Where(i => i.LastChecked == newsletter.Date).ToListAsync();
-            newsletterViewModel.DebugDietaryIntakes = dietaryIntakes.Select(r => r.AsType<DietaryIntakeDto>()!).ToList();
+            var nutrients = await _context.Nutrients.Include(i => i.DietaryIntakes).Where(i => i.LastUpdated == newsletter.Date).ToListAsync();
+            newsletterViewModel.DebugNutrients = nutrients.Select(r => r.AsType<NutrientDto>()!).ToList();
         }
 
         return newsletterViewModel;

@@ -47,20 +47,10 @@ public class USDANutrient
     [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.Nutrients))]
     public virtual Ingredient? Ingredient { get; set; }
 
-    //[JsonIgnore, InverseProperty(nameof(Ingredients.NutrientAttr.Nutrient))]
-    //public virtual NutrientAttr? NutrientAttr { get; set; }
-
     #endregion
 
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is USDANutrient other
         && other.Id == Id;
-
-    //[NotMapped]
-    //public Nutrients[]? NutrientBinder
-    //{
-    //    get => Enum.GetValues<Nutrients>().Where(e => Nutrients.HasFlag(e)).ToArray();
-    //    set => Nutrients = value?.Aggregate(Nutrients.None, (a, e) => a | e) ?? Nutrients.None;
-    //}
 }

@@ -2,7 +2,7 @@
 using Core.Models;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Data.Entities.External;
+using Data.Entities.Nutrients;
 using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
@@ -123,25 +123,24 @@ public partial class NewsletterRepo
         await scopedCoreContext.SaveChangesAsync();
     }
 
-    private async Task<IList<DietaryIntake>> GetDebugDietaryIntakes(User user)
+    private async Task<IList<Nutrient>> GetDebugNutrients(User user)
     {
         using var scope = _serviceScopeFactory.CreateScope();
         using var scopedCoreContext = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        // Allow tracking to update the last checked date.
-        var dietaryIntakes = await scopedCoreContext.DietaryIntakes.GroupBy(di => di.Key)
-            .OrderByDescending(i => i.First().LastChecked == DateHelpers.Today)
-            .ThenBy(di => di.First().LastChecked)
-            .ThenBy(_ => EF.Functions.Random())
-            .Select(g => g.ToList())
-            .FirstAsync();
+        // Allow tracking to update the last updated date.
+        var nutrients = await scopedCoreContext.Nutrients
+            .OrderByDescending(i => i.LastUpdated == DateHelpers.Today)
+            .ThenBy(di => di.LastUpdated).ThenBy(_ => EF.Functions.Random())
+            .Include(i => i.DietaryIntakes)
+            .Take(1).ToListAsync();
 
-        foreach (var dietaryIntake in dietaryIntakes)
+        foreach (var nutrient in nutrients)
         {
-            dietaryIntake.LastChecked = DateHelpers.Today;
+            nutrient.LastUpdated = DateHelpers.Today;
         }
 
         await scopedCoreContext.SaveChangesAsync();
-        return dietaryIntakes;
+        return nutrients;
     }
 }

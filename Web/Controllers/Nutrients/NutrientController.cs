@@ -1,6 +1,6 @@
 ﻿using Core.Models.User;
 using Data;
-using Data.Entities.External;
+using Data.Entities.Nutrients;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,8 +30,8 @@ public class NutrientController : ViewController
     /// <summary>
     /// Shows a form to the user where they can update their Pounds lifted.
     /// </summary>
-    [HttpGet, Route("{nutrient}")]
-    public async Task<IActionResult> ManageNutrient(string email, string token, string nutrient, bool? wasUpdated = null)
+    [HttpGet, Route("{key}")]
+    public async Task<IActionResult> ManageNutrient(string email, string token, string key, bool? wasUpdated = null)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
@@ -39,14 +39,20 @@ public class NutrientController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var dietaryIntakesExisting = await _context.DietaryIntakes.AsNoTracking()
-            .Where(di => EF.Functions.ILike(di.Key, nutrient))
-            .ToListAsync();
+        var existingNutrient = await _context.Nutrients.AsNoTracking()
+            .Where(n => EF.Functions.ILike(n.Key, key))
+            .Include(n => n.DietaryIntakes)
+            .FirstOrDefaultAsync();
+
+        if (existingNutrient == null)
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
 
         List<DietaryIntakeViewModel> dietaryIntakes = [];
         foreach (var person in EnumExtensions.GetValuesExcluding(Person.None, Person.All))
         {
-            var existing = dietaryIntakesExisting.FirstOrDefault(di => di.Person == person);
+            var existing = existingNutrient.DietaryIntakes.FirstOrDefault(di => di.Person == person);
             if (existing != null)
             {
                 dietaryIntakes.Add(new DietaryIntakeViewModel(existing));
@@ -55,7 +61,6 @@ public class NutrientController : ViewController
             {
                 dietaryIntakes.Add(new DietaryIntakeViewModel()
                 {
-                    Key = nutrient,
                     Person = person,
                 });
             }
@@ -65,14 +70,50 @@ public class NutrientController : ViewController
         {
             User = user,
             Token = token,
-            Nutrient = nutrient,
             WasUpdated = wasUpdated,
+            Nutrient = existingNutrient,
             DietaryIntakes = dietaryIntakes.OrderBy(di => di.Person.GetOrder(), NullOrder.NullsLast).ToList(),
         });
     }
 
     [HttpPost, Route("[action]")]
-    public async Task<IActionResult> UpsertDietaryIntake(string email, string token, string nutrient, List<DietaryIntakeViewModel> dietaryIntakes)
+    public async Task<IActionResult> UpsertNutrient(string email, string token, Nutrient nutrient)
+    {
+        var user = await _userRepo.GetUser(email, token);
+        if (user == null || !user.Features.HasFlag(Features.Admin))
+        {
+            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
+        }
+
+        var existingEntity = await _context.Nutrients.FirstOrDefaultAsync(r => r.Id == nutrient.Id);
+        if (existingEntity != null)
+        {
+            existingEntity.Key = nutrient.Key;
+            existingEntity.Name = nutrient.Name;
+            existingEntity.Order = nutrient.Order;
+            existingEntity.Notes = nutrient.Notes;
+            existingEntity.LastUpdated = DateHelpers.Today;
+        }
+        else
+        {
+            existingEntity = new Nutrient()
+            {
+                Key = nutrient.Key,
+                Name = nutrient.Name,
+                Notes = nutrient.Notes,
+                Order = nutrient.Order,
+            };
+
+            _context.Nutrients.Add(existingEntity);
+        }
+       
+        await _context.SaveChangesAsync();
+        TempData[TempData_User.SuccessMessage] = "Your nutrient has been updated!";
+        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Key, wasUpdated = true });
+    }
+
+    [HttpPost, Route("[action]")]
+    public async Task<IActionResult> UpsertDietaryIntake(string email, string token, Nutrient nutrient, List<DietaryIntakeViewModel> dietaryIntakes)
     {
         var user = await _userRepo.GetUser(email, token);
         if (user == null || !user.Features.HasFlag(Features.Admin))
@@ -86,7 +127,6 @@ public class NutrientController : ViewController
             var existingEntity = await _context.DietaryIntakes.FirstOrDefaultAsync(r => r.Id == dietaryIntake.Id);
             if (existingEntity != null)
             {
-                existingEntity.Key = dietaryIntake.Key;
                 existingEntity.Min = dietaryIntake.Min;
                 existingEntity.Max = dietaryIntake.Max;
                 existingEntity.Notes = dietaryIntake.Notes;
@@ -101,7 +141,7 @@ public class NutrientController : ViewController
             {
                 existingEntity = new DietaryIntake()
                 {
-                    Key = dietaryIntake.Key,
+                    NutrientId = nutrient.Id,
                     Min = dietaryIntake.Min,
                     Max = dietaryIntake.Max,
                     Notes = dietaryIntake.Notes,
@@ -118,6 +158,6 @@ public class NutrientController : ViewController
 
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your nutrient has been updated!";
-        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient, wasUpdated = true });
+        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Key, wasUpdated = true });
     }
 }

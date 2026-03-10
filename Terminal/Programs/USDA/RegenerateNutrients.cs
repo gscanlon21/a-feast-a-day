@@ -1,6 +1,7 @@
 ﻿using Core.Code.Attributes;
 using Data.Repos;
 using Microsoft.VisualBasic.FileIO;
+using Terminal.Code.Helpers;
 using Terminal.Models.USDA;
 
 namespace Terminal.Programs.USDA;
@@ -20,24 +21,6 @@ internal class RegenerateUSDANutrients
         Console.WriteLine("What is the path to nutrient.csv?");
         ShortTermMemory.Nutrient_csv ??= Console.ReadLine() ?? throw new Exception("Missing nutrient.csv!");
         var outputPath = "C:/code/afeastaday/Core/Models/Nutrients/USDANutrients.cs";
-
-        var dailyAllowanceMap = await _nutrientRepo.GetDietaryIntakeMap();
-        var measureMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-        {
-            [""] = "None",
-            ["IU"] = "IU",
-            ["PH"] = "PH",
-            ["G"] = "Grams",
-            ["kJ"] = "KiloJoule",
-            ["KCAL"] = "KCalorie",
-            ["UG"] = "Micrograms",
-            ["MG"] = "Milligrams",
-            ["MCG_RE"] = "MCG_RE",
-            ["MG_GAE"] = "MG_GAE",
-            ["MG_ATE"] = "MG_ATE",
-            ["UMOL_TE"] = "UMOL_TE",
-            ["SP_GR"] = "SpecificGravity"
-        };
 
         var builder = new StringBuilder();
 
@@ -96,7 +79,7 @@ internal class RegenerateUSDANutrients
             }
 
             // Map unit_name to Measure.
-            if (!measureMap.TryGetValue(unitName, out var measure))
+            if (!MeasureMap.Map.TryGetValue(unitName, out var measure))
             {
                 Console.WriteLine($"Warning: Unknown unit_name '{unitName}' for nutrient '{name}'. Using Measure.None.");
                 measure = "None";
@@ -108,12 +91,6 @@ internal class RegenerateUSDANutrients
             builder.AppendLine($"    /// <summary>");
             builder.AppendLine($"    /// {origName}");
             builder.AppendLine($"    /// </summary>");
-
-            foreach (var dailyAllowance in dailyAllowanceMap.Where(kvp => name.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase)).SelectMany(kv => kv))
-            {
-                //builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min}, {dailyAllowance.Max}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
-            }
-
             builder.AppendLine($"    [{USDANutrientsMetadataAttribute.Name}(Measure.{measure}, {nutrientNumber}, {rank})]");
             builder.AppendLine($"    [Display(Name = \"{origName}\")]");
             builder.AppendLine($"    {name} = {id},");

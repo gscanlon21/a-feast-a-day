@@ -111,40 +111,6 @@ public class UserIngredientsController : ViewController
             existingIngredient.GramsPerServing = ingredient.GramsPerServing;
             existingIngredient.SkipShoppingList = ingredient.SkipShoppingList;
             existingIngredient.GramsPerCoarseCup = ingredient.GramsPerCoarseCup;
-
-            foreach (var nutrient in nutrients.OrderBy(n => n.Nutrients.PopCount()))
-            {
-                // Sum all the parts of a nutrient if it was left empty.
-                // FIXME: Not all of the precursors get converted into a nutrient. Need a conversion percentage.
-                //if (nutrient.Value == 0 && BitOperations.PopCount((ulong)nutrient.Nutrients) > 1)
-                //{
-                //    nutrient.Measure = Measure.Grams;
-                //    nutrient.Value = nutrients
-                //        .Where(n => BitOperations.PopCount((ulong)n.Nutrients) == 1)
-                //        .Where(n => nutrient.Nutrients.HasFlag(n.Nutrients))
-                //        .Sum(n => n.Measure.ToGrams(n.Value));
-                //}
-
-                var existingNutrient = existingIngredient.Nutrients.FirstOrDefault(n => n.Nutrients == nutrient.Nutrients);
-                if (existingNutrient != null)
-                {
-                    existingNutrient.Measure = nutrient.Measure;
-                    existingNutrient.Value = nutrient.Value;
-                    if (nutrient.Value == 0)
-                    {
-                        _context.Nutrients.Remove(existingNutrient);
-                    }
-                }
-                else if (nutrient.Value > 0)
-                {
-                    existingIngredient.Nutrients.Add(new USDANutrient()
-                    {
-                        Nutrients = nutrient.Nutrients,
-                        Measure = nutrient.Measure,
-                        Value = nutrient.Value,
-                    });
-                }
-            }
         }
         else
         {

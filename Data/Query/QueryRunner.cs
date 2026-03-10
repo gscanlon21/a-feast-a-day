@@ -555,9 +555,9 @@ public class QueryRunner(Section section)
             .Union(cookedIngredients.Values.Select(ci => ci.Id))
             .ToList();
 
-        return await context.Nutrients.AsNoTracking().TagWithCallSite()
+        return await context.USDANutrients.AsNoTracking().TagWithCallSite()
+            .Where(n => NutrientMaps.USDAToNutrients.Keys.Contains(n.Nutrients))
             .Where(n => allIngredientIds.Contains(n.IngredientId))
-            .Where(n => NutrientHelpersUs.All.Contains(n.Nutrients))
             // Select before grouping so EF Core can optimize.
             .Select(n => new USDANutrient(/* EF can't optimize */)
             {
@@ -585,8 +585,8 @@ public class QueryRunner(Section section)
             .ToList();
 
         return await context.NutrientsCanada.AsNoTracking().TagWithCallSite()
+            .Where(n => NutrientMaps.CanadaToNutrients.Keys.Contains(n.Nutrients))
             .Where(n => allIngredientIds.Contains(n.IngredientId))
-            .Where(n => NutrientHelpersCa.All.Contains(n.Nutrients))
             // Select before grouping so EF Core can optimize.
             .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
             {

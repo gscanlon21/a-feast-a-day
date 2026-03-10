@@ -2,6 +2,7 @@
 @inject DisplayHelper DH
 @inject IOptions<SiteSettings> SiteSettings
 @using Core.Consts;
+@using Core.Dtos.Nutrients
 @using Core.Models.Options
 @using Microsoft.Extensions.Options
 @using Core.Models.Recipe
@@ -16,14 +17,7 @@
     <div> @* For margin collapse. *@
         <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:1.2em;line-height:1.2;display:flex;gap:.8ch;">
             <span style="flex:1 1 auto;">
-                @if (!string.IsNullOrWhiteSpace(Model.Source) && Uri.IsWellFormedUriString(Model.Source, UriKind.Absolute))
-                {
-                    <a class="allow-demo" href="@Model.Source" target="_blank" rel="noreferrer">@Model.Key</a>
-                }
-                else
-                {
-                    <span style="text-decoration:underline;">@Model.Key</span>
-                }
+                <span style="text-decoration:underline;">@Model.Key</span>
             </span>
 
             @if (User != null)
@@ -32,12 +26,10 @@
             }
         </h3>
 
-        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Min</b>: @Model.Min</div>
-        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Max</b>: @Model.Max</div>
-        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Person</b>: @Model.Person</div>
-        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Measure</b>: @Model.Measure</div>
-        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Multiplier</b>: @Model.Multiplier</div>
-        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>CaloriesPerGram</b>: @Model.CaloriesPerGram</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Key</b>: @Model.Key</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Name</b>: @Model.Name</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Order</b>: @Model.Order</div>
+        <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Notes</b>: @Model.Notes</div>
     </div>
 </div>
 
@@ -46,5 +38,5 @@
     public Core.Dtos.User.UserNewsletterDto? User { get; set; }
 
     [Parameter, EditorRequired]
-    public DietaryIntakeDto Model { get; set; } = null!;
+    public NutrientDto Model { get; set; } = null!;
 }

@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20260310142027_RemoveKeyCol")]
+    partial class RemoveKeyCol
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -442,6 +445,9 @@ namespace Data.Migrations
                     b.Property<int>("CaloriesPerGram")
                         .HasColumnType("integer");
 
+                    b.Property<DateOnly>("LastChecked")
+                        .HasColumnType("date");
+
                     b.Property<DateOnly>("LastUpdated")
                         .HasColumnType("date");
 
@@ -518,9 +524,6 @@ namespace Data.Migrations
                     b.Property<string>("Key")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<DateOnly>("LastUpdated")
-                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()
