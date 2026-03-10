@@ -8,26 +8,6 @@ public enum Nutrients
     None = 0,
 
     /// <summary>
-    /// Energy Atwater General Factors KCalorie
-    /// </summary>
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Energy Atwater General Factors KCalorie", Order = 280)]
-    Energy_Atwater_General_Factors_KCalorie = 1,
-
-    /// <summary>
-    /// Energy Atwater Specific Factors KCalorie
-    /// </summary>
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Energy Atwater Specific Factors KCalorie", Order = 290)]
-    Energy_Atwater_Specific_Factors_KCalorie = 2,
-
-    /// <summary>
     /// Calories
     /// </summary>
     [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
@@ -35,17 +15,7 @@ public enum Nutrients
     [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Calories", Order = 300)]
-    Calories = 3,
-
-    /// <summary>
-    /// Energy KCalorie
-    /// </summary>
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Energy KCalorie", Order = 300)]
-    Energy_KCalorie = 4,
+    Energy_KCalorie = 1,
 
     /// <summary>
     /// Protein
@@ -63,7 +33,7 @@ public enum Nutrients
     [DailyAllowance(1.1, -1, Measure.Grams, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 4, For = Person.Pregnant_31_50_Years)]
     [DailyAllowance(1.3, -1, Measure.Grams, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 4, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Protein", Order = 600)]
-    Protein = 5,
+    Protein = 2,
 
     /// <summary>
     /// Fats
@@ -73,27 +43,17 @@ public enum Nutrients
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Fats", Order = 800)]
-    Fats = 6,
+    Fats = 3,
 
     /// <summary>
-    /// Total lipid fat
+    /// Fats
     /// </summary>
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(20, 35, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
-    [Display(Name = "Total lipid fat", Order = 800)]
-    Total_lipid_fat = 7,
-
-    /// <summary>
-    /// Carbohydrate by difference
-    /// </summary>
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Carbohydrate by difference", Order = 1110)]
-    Carbohydrate_by_difference = 8,
+    [Display(Name = "Fats", Order = 800)]
+    Total_lipid_fat = 4,
 
     /// <summary>
     /// Carbohydrates
@@ -103,47 +63,37 @@ public enum Nutrients
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
     [Display(Name = "Carbohydrates", Order = 1110)]
-    Carbohydrates = 9,
+    Carbohydrates = 5,
 
     /// <summary>
-    /// Carbohydrate by summation
-    /// </summary>
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
-    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Carbohydrate by summation", Order = 1120)]
-    Carbohydrate_by_summation = 10,
-
-    /// <summary>
-    /// Fiber total dietary
+    /// Dietary Fiber
     /// </summary>
     [DailyAllowance(38, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
     [DailyAllowance(25, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
     [DailyAllowance(38, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(25, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fiber total dietary", Order = 1200)]
-    Fiber_total_dietary = 11,
+    [Display(Name = "Dietary Fiber", Order = 1200)]
+    Fiber_total_dietary = 6,
 
     /// <summary>
-    /// Fiber soluble
+    /// Soluble Fiber
     /// </summary>
     [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
     [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
     [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fiber soluble", Order = 1240)]
-    Fiber_soluble = 12,
+    [Display(Name = "Soluble Fiber", Order = 1240)]
+    Fiber_soluble = 7,
 
     /// <summary>
-    /// Fiber insoluble
+    /// Insoluble Fiber
     /// </summary>
     [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
     [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
     [DailyAllowance(19, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fiber insoluble", Order = 1260)]
-    Fiber_insoluble = 13,
+    [Display(Name = "Insoluble Fiber", Order = 1260)]
+    Fiber_insoluble = 8,
 
     /// <summary>
     /// Sugars Total
@@ -153,7 +103,7 @@ public enum Nutrients
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
     [Display(Name = "Sugars Total", Order = 1500)]
-    Sugars_Total = 14,
+    Sugars_Total = 9,
 
     /// <summary>
     /// Total Sugars
@@ -163,7 +113,7 @@ public enum Nutrients
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
     [Display(Name = "Total Sugars", Order = 1510)]
-    Total_Sugars = 15,
+    Total_Sugars = 10,
 
     /// <summary>
     /// Starch
@@ -173,17 +123,17 @@ public enum Nutrients
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
     [Display(Name = "Starch", Order = 2200)]
-    Starch = 16,
+    Starch = 11,
 
     /// <summary>
-    /// Resistant starch
+    /// Resistant Starch
     /// </summary>
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Resistant starch", Order = 2225)]
-    Resistant_starch = 17,
+    [Display(Name = "Resistant Starch", Order = 2225)]
+    Resistant_starch = 12,
 
     /// <summary>
     /// Oligosaccharides
@@ -193,57 +143,57 @@ public enum Nutrients
     [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
     [Display(Name = "Oligosaccharides", Order = 2250)]
-    Oligosaccharides = 18,
+    Oligosaccharides = 13,
 
     /// <summary>
-    /// Sodium Na
+    /// Sodium (Na)
     /// </summary>
     [DailyAllowance(1500, 2300, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1500, 2300, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1500, 2300, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1500, 2300, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Sodium Na", Order = 5100)]
-    Sodium_Na = 19,
+    [Display(Name = "Sodium (Na)", Order = 5100)]
+    Sodium_Na = 14,
 
     /// <summary>
-    /// Magnesium Mg
+    /// Magnesium (Mg)
     /// </summary>
     [DailyAllowance(350, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(400, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(400, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(350, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Magnesium Mg", Order = 5300)]
-    Magnesium_Mg = 20,
+    [Display(Name = "Magnesium (Mg)", Order = 5300)]
+    Magnesium_Mg = 15,
 
     /// <summary>
-    /// Iodine I
+    /// Iodine (I)
     /// </summary>
     [DailyAllowance(150, 1100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(150, 1100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(150, 1100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(150, 1100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Iodine I", Order = 5350)]
-    Iodine_I = 21,
+    [Display(Name = "Iodine (I)", Order = 5350)]
+    Iodine_I = 16,
 
     /// <summary>
-    /// Calcium Ca
+    /// Calcium (Ca)
     /// </summary>
     [DailyAllowance(1000, 2500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1000, 2500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1000, 2500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1000, 2500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Calcium Ca", Order = 5400)]
-    Calcium_Ca = 22,
+    [Display(Name = "Calcium (Ca)", Order = 5400)]
+    Calcium_Ca = 17,
 
     /// <summary>
-    /// Phosphorus P
+    /// Phosphorus (P)
     /// </summary>
     [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Phosphorus P", Order = 5500)]
-    Phosphorus_P = 23,
+    [Display(Name = "Phosphorus (P)", Order = 5500)]
+    Phosphorus_P = 18,
 
     /// <summary>
     /// Copper Cu
@@ -253,77 +203,77 @@ public enum Nutrients
     [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(900, 10000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Copper Cu", Order = 5550)]
-    Copper_Cu = 24,
+    Copper_Cu = 19,
 
     /// <summary>
-    /// Manganese Mn
+    /// Manganese (Mn)
     /// </summary>
     [DailyAllowance(2.3, 11, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1.8, 11, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(2.3, 11, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.8, 11, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Manganese Mn", Order = 5600)]
-    Manganese_Mn = 25,
+    [Display(Name = "Manganese (Mn)", Order = 5600)]
+    Manganese_Mn = 20,
 
     /// <summary>
-    /// Molybdenum Mo
+    /// Molybdenum (Mo)
     /// </summary>
     [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Molybdenum Mo", Order = 5650)]
-    Molybdenum_Mo = 26,
+    [Display(Name = "Molybdenum (Mo)", Order = 5650)]
+    Molybdenum_Mo = 21,
 
     /// <summary>
-    /// Fluoride F
+    /// Fluoride (F)
     /// </summary>
     [DailyAllowance(2.5, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(2.5, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(2.5, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(2.5, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fluoride F", Order = 5680)]
-    Fluoride_F = 27,
+    [Display(Name = "Fluoride (F)", Order = 5680)]
+    Fluoride_F = 22,
 
     /// <summary>
-    /// Potassium K
+    /// Potassium (K)
     /// </summary>
     [DailyAllowance(3400, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(2600, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(3400, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(2600, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Potassium K", Order = 5700)]
-    Potassium_K = 28,
+    [Display(Name = "Potassium (K)", Order = 5700)]
+    Potassium_K = 23,
 
     /// <summary>
-    /// Iron Fe
+    /// Iron (Fe)
     /// </summary>
     [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Iron Fe", Order = 5800)]
-    Iron_Fe = 29,
+    [Display(Name = "Iron (Fe)", Order = 5800)]
+    Iron_Fe = 24,
 
     /// <summary>
-    /// Zinc Zn
+    /// Zinc (Zn)
     /// </summary>
     [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(10, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Zinc Zn", Order = 5900)]
-    Zinc_Zn = 30,
+    [Display(Name = "Zinc (Zn)", Order = 5900)]
+    Zinc_Zn = 25,
 
     /// <summary>
-    /// Selenium Se
+    /// Selenium (Se)
     /// </summary>
     [DailyAllowance(55, 400, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(55, 400, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(55, 400, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(55, 400, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Selenium Se", Order = 6200)]
-    Selenium_Se = 31,
+    [Display(Name = "Selenium (Se)", Order = 6200)]
+    Selenium_Se = 26,
 
     /// <summary>
     /// Boron B
@@ -333,47 +283,47 @@ public enum Nutrients
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Boron B", Order = 6245)]
-    Boron_B = 32,
+    Boron_B = 27,
 
     /// <summary>
-    /// Thiamin
+    /// Thiamin (B1)
     /// </summary>
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Thiamin", Order = 6300)]
-    Thiamin = 33,
+    [Display(Name = "Thiamin (B1)", Order = 6300)]
+    Thiamin_B1 = 28,
 
     /// <summary>
-    /// Vitamin C total ascorbic acid
+    /// Vitamin C
     /// </summary>
     [DailyAllowance(90, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(75, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(90, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(75, 2000, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin C total ascorbic acid", Order = 6300)]
-    Vitamin_C_total_ascorbic_acid = 34,
+    [Display(Name = "Vitamin C", Order = 6300)]
+    Vitamin_C = 29,
 
     /// <summary>
-    /// Riboflavin
+    /// Riboflavin (B2)
     /// </summary>
     [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Riboflavin", Order = 6500)]
-    Riboflavin = 35,
+    [Display(Name = "Riboflavin (B2)", Order = 6500)]
+    Riboflavin_B2 = 30,
 
     /// <summary>
-    /// Niacin
+    /// Niacin (B3)
     /// </summary>
     [DailyAllowance(16, 35, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(14, 35, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(16, 35, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(14, 35, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Niacin", Order = 6600)]
-    Niacin = 36,
+    [Display(Name = "Niacin (B3)", Order = 6600)]
+    Niacin_B3 = 31,
 
     /// <summary>
     /// Vitamin B 6
@@ -383,10 +333,10 @@ public enum Nutrients
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin B 6", Order = 6700)]
-    Vitamin_B_6 = 37,
+    Vitamin_B_6 = 32,
 
     /// <summary>
-    /// Vitamin B 12
+    /// Vitamin B-12
     /// </summary>
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_14_18_Years)]
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_14_18_Years)]
@@ -400,38 +350,38 @@ public enum Nutrients
     [DailyAllowance(2.4, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [DailyAllowance(2.6, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Pregnant_31_50_Years)]
     [DailyAllowance(2.8, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
-    [Display(Name = "Vitamin B 12", Order = 6800)]
-    Vitamin_B_12 = 38,
+    [Display(Name = "Vitamin B-12", Order = 6800)]
+    Vitamin_B_12 = 33,
 
     /// <summary>
-    /// Biotin
+    /// Biotin (B7)
     /// </summary>
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Biotin", Order = 6850)]
-    Biotin = 39,
+    [Display(Name = "Biotin (B7)", Order = 6850)]
+    Biotin = 34,
 
     /// <summary>
-    /// Folate total
+    /// Folate (B9)
     /// </summary>
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Folate total", Order = 6900)]
-    Folate_total = 40,
+    [Display(Name = "Folate (B9)", Order = 6900)]
+    Folate_B9 = 35,
 
     /// <summary>
-    /// Pantothenic acid
+    /// Pantothenic Acid (B5)
     /// </summary>
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Pantothenic acid", Order = 6900)]
-    Pantothenic_acid = 41,
+    [Display(Name = "Pantothenic Acid (B5)", Order = 6900)]
+    Pantothenic_Acid_B5 = 36,
 
     /// <summary>
     /// Retinol
@@ -441,7 +391,7 @@ public enum Nutrients
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Retinol", Order = 7410)]
-    Retinol = 42,
+    Retinol = 37,
 
     /// <summary>
     /// Vitamin A
@@ -451,37 +401,27 @@ public enum Nutrients
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin A", Order = 7420)]
-    Vitamin_A = 43,
+    Vitamin_A = 38,
 
     /// <summary>
-    /// Vitamin A RAE
+    /// Alpha Carotene
     /// </summary>
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin A RAE", Order = 7420)]
-    Vitamin_A_RAE = 44,
+    [Display(Name = "Alpha Carotene", Order = 7440)]
+    Carotene_Alpha = 39,
 
     /// <summary>
-    /// Carotene alpha
+    /// Beta Carotene
     /// </summary>
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Carotene alpha", Order = 7440)]
-    Carotene_alpha = 45,
-
-    /// <summary>
-    /// Carotene beta
-    /// </summary>
-    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(900, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Carotene beta", Order = 7450)]
-    Carotene_beta = 46,
+    [Display(Name = "Beta Carotene", Order = 7450)]
+    Carotene_Beta = 40,
 
     /// <summary>
     /// Lutein/Zeaxanthin
@@ -491,17 +431,17 @@ public enum Nutrients
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Lutein/Zeaxanthin", Order = 7560)]
-    Lutein_Zeaxanthin = 47,
+    Lutein_Zeaxanthin = 41,
 
     /// <summary>
-    /// Carotene MCG RE
+    /// Carotenes
     /// </summary>
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Carotene MCG RE", Order = 7600)]
-    Carotene_MCG_RE = 48,
+    [Display(Name = "Carotenes", Order = 7600)]
+    Carotene_RAE = 42,
 
     /// <summary>
     /// Vitamin E
@@ -511,50 +451,30 @@ public enum Nutrients
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Vitamin E", Order = 7810)]
-    Vitamin_E = 49,
+    Vitamin_E = 43,
 
     /// <summary>
-    /// Vitamin E alpha tocopherol
-    /// </summary>
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin E alpha tocopherol", Order = 7905)]
-    Vitamin_E_alpha_tocopherol = 50,
-
-    /// <summary>
-    /// Vitamin E MG ATE
-    /// </summary>
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(15, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin E MG ATE", Order = 7905)]
-    Vitamin_E_MG_ATE = 51,
-
-    /// <summary>
-    /// Vitamin D D2  D3
+    /// Vitamin D
     /// </summary>
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(20, 100, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin D D2  D3", Order = 8700)]
-    Vitamin_D_D2__D3 = 52,
+    [Display(Name = "Vitamin D", Order = 8700)]
+    Vitamin_D_D2__D3 = 44,
 
     /// <summary>
-    /// Vitamin K phylloquinone
+    /// Vitamin K
     /// </summary>
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(120, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(90, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vitamin K phylloquinone", Order = 8800)]
-    Vitamin_K_phylloquinone = 53,
+    [Display(Name = "Vitamin K", Order = 8800)]
+    Vitamin_K = 45,
 
     /// <summary>
-    /// Fatty acids total saturated
+    /// Saturated Fats
     /// </summary>
     [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_0_6_Months)]
     [DailyAllowance(-1, -1, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_0_6_Months)]
@@ -584,44 +504,44 @@ public enum Nutrients
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(-1, 3, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Fatty acids total saturated", Order = 9700)]
-    Fatty_acids_total_saturated = 54,
+    [Display(Name = "Saturated Fats", Order = 9700)]
+    Fatty_acids_total_saturated = 46,
 
     /// <summary>
-    /// Fatty acids total monounsaturated
+    /// Monounsaturated Fats
     /// </summary>
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 10, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fatty acids total monounsaturated", Order = 11400)]
-    Fatty_acids_total_monounsaturated = 55,
+    [Display(Name = "Monounsaturated Fats", Order = 11400)]
+    Fatty_acids_total_monounsaturated = 47,
 
     /// <summary>
-    /// Choline total
+    /// Choline
     /// </summary>
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Choline total", Order = 11800)]
-    Choline_total = 56,
+    [Display(Name = "Choline", Order = 11800)]
+    Choline = 48,
 
     /// <summary>
-    /// Fatty acids total polyunsaturated
+    /// Polyunsaturated Fats
     /// </summary>
     [DailyAllowance(2.8, 5.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(2.8, 5.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(2.8, 5.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(2.8, 5.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fatty acids total polyunsaturated", Order = 12900)]
-    Fatty_acids_total_polyunsaturated = 57,
+    [Display(Name = "Polyunsaturated Fats", Order = 12900)]
+    Fatty_acids_total_polyunsaturated = 49,
 
     /// <summary>
     /// Omega 3 Fatty Acids
     /// </summary>
     [Display(Name = "Omega 3 Fatty Acids", Order = 14000)]
-    Omega_3 = 58,
+    Omega_3 = 50,
 
     /// <summary>
     /// Omega 3 (ALA) Fatty Acids
@@ -631,7 +551,7 @@ public enum Nutrients
     [DailyAllowance(0.3, 0.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.3, 0.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Omega 3 (ALA) Fatty Acids", Order = 14000)]
-    Omega_3_ALA = 59,
+    Omega_3_ALA = 51,
 
     /// <summary>
     /// Omega 3 (EPA) Fatty Acids
@@ -641,7 +561,7 @@ public enum Nutrients
     [DailyAllowance(0.3, 0.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.3, 0.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Omega 3 (EPA) Fatty Acids", Order = 15000)]
-    Omega_3_EPA = 60,
+    Omega_3_EPA = 52,
 
     /// <summary>
     /// Omega 3 (EPA/DHA) Fatty Acids
@@ -651,7 +571,7 @@ public enum Nutrients
     [DailyAllowance(-1, 5, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 5, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Omega 3 (EPA/DHA) Fatty Acids", Order = 15000)]
-    Omega_3_EPA_DHA = 61,
+    Omega_3_EPA_DHA = 53,
 
     /// <summary>
     /// Omega 6 Fatty Acids
@@ -661,13 +581,13 @@ public enum Nutrients
     [DailyAllowance(2.5, 5, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(2.5, 5, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Omega 6 Fatty Acids", Order = 15005)]
-    Omega_6 = 62,
+    Omega_6 = 54,
 
     /// <summary>
     /// Omega 6 (LA) Fatty Acids
     /// </summary>
     [Display(Name = "Omega 6 (LA) Fatty Acids", Order = 15010)]
-    Omega_6_LA = 63,
+    Omega_6_LA = 55,
 
     /// <summary>
     /// Omega 3 (DHA) Fatty Acids
@@ -677,17 +597,17 @@ public enum Nutrients
     [DailyAllowance(0.3, 0.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.3, 0.6, Measure.Percent, Multiplier.Kilocalorie, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Omega 3 (DHA) Fatty Acids", Order = 15300)]
-    Omega_3_DHA = 64,
+    Omega_3_DHA = 56,
 
     /// <summary>
-    /// Fatty acids total trans
+    /// Trans Fats
     /// </summary>
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 1, Measure.Percent, Multiplier.Person, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
-    [Display(Name = "Fatty acids total trans", Order = 15400)]
-    Fatty_acids_total_trans = 65,
+    [Display(Name = "Trans Fats", Order = 15400)]
+    Fatty_acids_total_trans = 57,
 
     /// <summary>
     /// Cholesterol
@@ -697,7 +617,7 @@ public enum Nutrients
     [DailyAllowance(-1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, -1, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Cholesterol", Order = 15700)]
-    Cholesterol = 66,
+    Cholesterol = 58,
 
     /// <summary>
     /// Tryptophan
@@ -707,7 +627,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Tryptophan", Order = 16300)]
-    Tryptophan = 67,
+    Tryptophan = 59,
 
     /// <summary>
     /// Arginine
@@ -717,7 +637,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Arginine", Order = 16700)]
-    Arginine = 68,
+    Arginine = 60,
 
     /// <summary>
     /// Lysine
@@ -727,7 +647,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Lysine", Order = 16800)]
-    Lysine = 69,
+    Lysine = 61,
 
     /// <summary>
     /// Methionine
@@ -737,7 +657,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Methionine", Order = 16900)]
-    Methionine = 70,
+    Methionine = 62,
 
     /// <summary>
     /// Leucine
@@ -747,7 +667,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Leucine", Order = 17000)]
-    Leucine = 71,
+    Leucine = 63,
 
     /// <summary>
     /// Isoleucine
@@ -757,7 +677,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Isoleucine", Order = 17100)]
-    Isoleucine = 72,
+    Isoleucine = 64,
 
     /// <summary>
     /// Valine
@@ -767,7 +687,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Valine", Order = 17200)]
-    Valine = 73,
+    Valine = 65,
 
     /// <summary>
     /// Phenylalanine
@@ -777,7 +697,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Phenylalanine", Order = 17300)]
-    Phenylalanine = 74,
+    Phenylalanine = 66,
 
     /// <summary>
     /// Histidine
@@ -787,7 +707,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Histidine", Order = 17400)]
-    Histidine = 75,
+    Histidine = 67,
 
     /// <summary>
     /// Threonine
@@ -797,7 +717,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Threonine", Order = 17500)]
-    Threonine = 76,
+    Threonine = 68,
 
     /// <summary>
     /// Glycine
@@ -807,7 +727,7 @@ public enum Nutrients
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Glycine", Order = 17600)]
-    Glycine = 77,
+    Glycine = 69,
 
     /// <summary>
     /// Betaine
@@ -817,65 +737,65 @@ public enum Nutrients
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(500, 3500, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Betaine", Order = 999999)]
-    Betaine = 78,
+    Betaine = 70,
 
     /// <summary>
-    /// Chlorine Cl
+    /// Chlorine (Cl)
     /// </summary>
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Chlorine Cl", Order = 999999)]
-    Chlorine_Cl = 79,
+    [Display(Name = "Chlorine (Cl)", Order = 999999)]
+    Chlorine_Cl = 71,
 
     /// <summary>
-    /// Chromium Cr
+    /// Chromium (Cr)
     /// </summary>
     [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(35, -1, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Chromium Cr", Order = 999999)]
-    Chromium_Cr = 80,
+    [Display(Name = "Chromium (Cr)", Order = 999999)]
+    Chromium_Cr = 72,
 
     /// <summary>
-    /// Flavonoids total
+    /// Flavonoids
     /// </summary>
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Flavonoids total", Order = 999999)]
-    Flavonoids_total = 81,
+    [Display(Name = "Flavonoids", Order = 999999)]
+    Flavonoids_total = 73,
 
     /// <summary>
-    /// Lithium Li
+    /// Lithium (Li)
     /// </summary>
     [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(14.3, -1, Measure.Micrograms, Multiplier.KilogramOfBodyweight, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Lithium Li", Order = 999999)]
-    Lithium_Li = 82,
+    [Display(Name = "Lithium (Li)", Order = 999999)]
+    Lithium_Li = 74,
 
     /// <summary>
-    /// Polyphenols total
+    /// Polyphenols
     /// </summary>
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Polyphenols total", Order = 999999)]
-    Polyphenols_total = 83,
+    [Display(Name = "Polyphenols", Order = 999999)]
+    Polyphenols_total = 75,
 
     /// <summary>
-    /// Vanadium V
+    /// Vanadium (V)
     /// </summary>
     [DailyAllowance(20, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(20, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(20, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(20, 1000, Measure.Micrograms, Multiplier.Person, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [Display(Name = "Vanadium V", Order = 999999)]
-    Vanadium_V = 84,
+    [Display(Name = "Vanadium (V)", Order = 999999)]
+    Vanadium_V = 76,
 }

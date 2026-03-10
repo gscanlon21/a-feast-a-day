@@ -360,9 +360,9 @@ public enum CanadaNutrients
     /// <summary>
     /// TOTAL NIACIN EQUIVALENT
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 409, "N-NE")]
+    [HCNutrientsMetadata(Measure.MG_NE, 409, "N-NE")]
     [Display(Name = "TOTAL NIACIN EQUIVALENT")]
-    TOTAL_NIACIN_EQUIVALENT_None = 409,
+    TOTAL_NIACIN_EQUIVALENT_MG_NE = 409,
 
     /// <summary>
     /// PANTOTHENIC ACID

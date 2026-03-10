@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260310140700_AddNutrientTable")]
-    partial class AddNutrientTable
+    [Migration("20260310204907_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -445,13 +445,6 @@ namespace Data.Migrations
                     b.Property<int>("CaloriesPerGram")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateOnly>("LastChecked")
-                        .HasColumnType("date");
-
                     b.Property<DateOnly>("LastUpdated")
                         .HasColumnType("date");
 
@@ -470,7 +463,7 @@ namespace Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<int?>("NutrientId")
+                    b.Property<int>("NutrientId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Person")
@@ -512,7 +505,8 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IngredientId");
+                    b.HasIndex("IngredientId", "Nutrients")
+                        .IsUnique();
 
                     b.ToTable("hc_nutrient");
                 });
@@ -528,6 +522,9 @@ namespace Data.Migrations
                     b.Property<string>("Key")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateOnly>("LastUpdated")
+                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -569,7 +566,8 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IngredientId");
+                    b.HasIndex("IngredientId", "Nutrients")
+                        .IsUnique();
 
                     b.ToTable("usda_nutrient");
                 });
@@ -1160,7 +1158,9 @@ namespace Data.Migrations
                 {
                     b.HasOne("Data.Entities.Nutrients.Nutrient", "Nutrient")
                         .WithMany("DietaryIntakes")
-                        .HasForeignKey("NutrientId");
+                        .HasForeignKey("NutrientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Nutrient");
                 });

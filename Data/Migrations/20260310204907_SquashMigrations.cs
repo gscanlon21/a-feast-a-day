@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -11,29 +12,6 @@ namespace Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "dietary_intake",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Key = table.Column<string>(type: "text", nullable: false),
-                    Min = table.Column<double>(type: "double precision", nullable: true),
-                    Max = table.Column<double>(type: "double precision", nullable: true),
-                    Person = table.Column<int>(type: "integer", nullable: false),
-                    Measure = table.Column<int>(type: "integer", nullable: false),
-                    Multiplier = table.Column<int>(type: "integer", nullable: false),
-                    CaloriesPerGram = table.Column<int>(type: "integer", nullable: false),
-                    LastChecked = table.Column<DateOnly>(type: "date", nullable: false),
-                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false),
-                    Source = table.Column<string>(type: "text", nullable: false),
-                    Notes = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_dietary_intake", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "fda_nutrient",
                 columns: table => new
@@ -62,6 +40,23 @@ namespace Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_gene", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "nutrient",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Order = table.Column<int>(type: "integer", nullable: false),
+                    Key = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true),
+                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_nutrient", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,6 +106,34 @@ namespace Data.Migrations
                         name: "FK_snp_gene_GeneId",
                         column: x => x.GeneId,
                         principalTable: "gene",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "dietary_intake",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    NutrientId = table.Column<int>(type: "integer", nullable: false),
+                    Min = table.Column<double>(type: "double precision", nullable: true),
+                    Max = table.Column<double>(type: "double precision", nullable: true),
+                    Person = table.Column<int>(type: "integer", nullable: false),
+                    Measure = table.Column<int>(type: "integer", nullable: false),
+                    Multiplier = table.Column<int>(type: "integer", nullable: false),
+                    CaloriesPerGram = table.Column<int>(type: "integer", nullable: false),
+                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false),
+                    Source = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_dietary_intake", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_dietary_intake_nutrient_NutrientId",
+                        column: x => x.NutrientId,
+                        principalTable: "nutrient",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -722,9 +745,15 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_hc_nutrient_IngredientId",
+                name: "IX_dietary_intake_NutrientId",
+                table: "dietary_intake",
+                column: "NutrientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hc_nutrient_IngredientId_Nutrients",
                 table: "hc_nutrient",
-                column: "IngredientId");
+                columns: new[] { "IngredientId", "Nutrients" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ingredient_UserId",
@@ -799,9 +828,10 @@ namespace Data.Migrations
                 column: "IngredientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_usda_nutrient_IngredientId",
+                name: "IX_usda_nutrient_IngredientId_Nutrients",
                 table: "usda_nutrient",
-                column: "IngredientId");
+                columns: new[] { "IngredientId", "Nutrients" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_Email",
@@ -944,6 +974,9 @@ namespace Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "user_token");
+
+            migrationBuilder.DropTable(
+                name: "nutrient");
 
             migrationBuilder.DropTable(
                 name: "study");

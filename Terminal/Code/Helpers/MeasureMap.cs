@@ -18,6 +18,7 @@ internal static class MeasureMap
         ["MG_GAE"] = "MG_GAE",
         ["MG_ATE"] = "MG_ATE",
         ["UMOL_TE"] = "UMOL_TE",
-        ["SP_GR"] = "SpecificGravity"
+        ["SP_GR"] = "SpecificGravity",
+        ["NE"] = "MG_NE",
     };
 }

@@ -76,19 +76,19 @@ public static class NutrientHelpers
 
     private static Nutrients[] Vitamins() =>
     [
-        Nutrients.Vitamin_A_RAE,
-        Nutrients.Carotene_alpha,
-        Nutrients.Carotene_beta,
-        Nutrients.Thiamin, // B1
-        Nutrients.Riboflavin, // B2
-        Nutrients.Niacin, // B3
-        Nutrients.Pantothenic_acid, // B5
+        Nutrients.Vitamin_A,
+        Nutrients.Carotene_Alpha,
+        Nutrients.Carotene_Beta,
+        Nutrients.Thiamin_B1,
+        Nutrients.Riboflavin_B2,
+        Nutrients.Niacin_B3,
+        Nutrients.Pantothenic_Acid_B5,
         Nutrients.Vitamin_B_6,
-        Nutrients.Folate_total, // B9
+        Nutrients.Folate_B9,
         Nutrients.Vitamin_B_12,
-        Nutrients.Vitamin_C_total_ascorbic_acid,
-        Nutrients.Vitamin_E_alpha_tocopherol,
-        Nutrients.Vitamin_K_phylloquinone,
+        Nutrients.Vitamin_C,
+        Nutrients.Vitamin_E,
+        Nutrients.Vitamin_K,
     ];
 
     private static Nutrients[] Minerals() =>
@@ -113,9 +113,9 @@ public static class NutrientHelpers
         // TODO/FIXME: Macronutrient to calorie conversion values are not static.
         // See food_calorie_conversion_factor.csv for true values.
         //Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
-        Nutrients.Energy_Atwater_General_Factors_KCalorie,
+        Nutrients.Energy_KCalorie,
         Nutrients.Lutein_Zeaxanthin,
-        Nutrients.Choline_total,
+        Nutrients.Choline,
         Nutrients.Betaine,
     ];
 
@@ -157,19 +157,19 @@ public static class NutrientHelpers
         { Nutrients.Glycine, [USDANutrients.Glycine_Grams] },
 
         // Vitamins
-        { Nutrients.Vitamin_A_RAE, [USDANutrients.Vitamin_A_RAE_Micrograms] },
-        { Nutrients.Carotene_alpha, [USDANutrients.Carotene_alpha_Micrograms] },
-        { Nutrients.Carotene_beta, [USDANutrients.Carotene_beta_Micrograms] },
-        { Nutrients.Thiamin, [USDANutrients.Thiamin_Milligrams] },
-        { Nutrients.Riboflavin, [USDANutrients.Riboflavin_Milligrams] },
-        { Nutrients.Niacin, [USDANutrients.Niacin_Milligrams] },
-        { Nutrients.Pantothenic_acid, [USDANutrients.Pantothenic_acid_Milligrams] },
+        { Nutrients.Vitamin_A, [USDANutrients.Vitamin_A_RAE_Micrograms] },
+        { Nutrients.Carotene_Alpha, [USDANutrients.Carotene_alpha_Micrograms] },
+        { Nutrients.Carotene_Beta, [USDANutrients.Carotene_beta_Micrograms] },
+        { Nutrients.Thiamin_B1, [USDANutrients.Thiamin_Milligrams] },
+        { Nutrients.Riboflavin_B2, [USDANutrients.Riboflavin_Milligrams] },
+        { Nutrients.Niacin_B3, [USDANutrients.Niacin_Milligrams] },
+        { Nutrients.Pantothenic_Acid_B5, [USDANutrients.Pantothenic_acid_Milligrams] },
         { Nutrients.Vitamin_B_6, [USDANutrients.Vitamin_B_6_Milligrams] },
-        { Nutrients.Folate_total, [USDANutrients.Folate_total_Micrograms] },
+        { Nutrients.Folate_B9, [USDANutrients.Folate_total_Micrograms] },
         { Nutrients.Vitamin_B_12, [USDANutrients.Vitamin_B_12_Micrograms] },
-        { Nutrients.Vitamin_C_total_ascorbic_acid, [USDANutrients.Vitamin_C_total_ascorbic_acid_Milligrams] },
-        { Nutrients.Vitamin_E_alpha_tocopherol, [USDANutrients.Vitamin_E_alpha_tocopherol_Milligrams] },
-        { Nutrients.Vitamin_K_phylloquinone, [USDANutrients.Vitamin_K_phylloquinone_Micrograms] },
+        { Nutrients.Vitamin_C, [USDANutrients.Vitamin_C_total_ascorbic_acid_Milligrams] },
+        { Nutrients.Vitamin_E, [USDANutrients.Vitamin_E_alpha_tocopherol_Milligrams] },
+        { Nutrients.Vitamin_K, [USDANutrients.Vitamin_K_phylloquinone_Micrograms] },
         { Nutrients.Biotin, [USDANutrients.Biotin_Micrograms] },
 
         // Minerals
@@ -188,9 +188,9 @@ public static class NutrientHelpers
         { Nutrients.Boron_B, [USDANutrients.Boron_B_Micrograms] },
 
         // Extra
-        { Nutrients.Energy_Atwater_General_Factors_KCalorie, [USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
+        { Nutrients.Energy_KCalorie, [USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
         { Nutrients.Betaine, [USDANutrients.Betaine_Milligrams] },
-        { Nutrients.Choline_total, [USDANutrients.Choline_total_Milligrams] },
+        { Nutrients.Choline, [USDANutrients.Choline_total_Milligrams] },
         { Nutrients.Lutein_Zeaxanthin, [USDANutrients.Lutein__zeaxanthin_Micrograms] },
     };
 
@@ -224,18 +224,18 @@ public static class NutrientHelpers
         { Nutrients.Glycine, [CanadaNutrients.GLYCINE_Grams] },
 
         // Vitamins
-        { Nutrients.Vitamin_A_RAE, [CanadaNutrients.RETINOL_ACTIVITY_EQUIVALENTS_Micrograms] },
-        { Nutrients.Carotene_alpha, [CanadaNutrients.ALPHA_CAROTENE_Micrograms] },
-        { Nutrients.Carotene_beta, [CanadaNutrients.BETA_CAROTENE_Micrograms] },
-        { Nutrients.Thiamin, [CanadaNutrients.THIAMIN_Milligrams] },
-        { Nutrients.Riboflavin, [CanadaNutrients.RIBOFLAVIN_Milligrams] },
-        { Nutrients.Niacin, [CanadaNutrients.TOTAL_NIACIN_EQUIVALENT_None] },
-        { Nutrients.Pantothenic_acid, [CanadaNutrients.PANTOTHENIC_ACID_Milligrams] },
+        { Nutrients.Vitamin_A, [CanadaNutrients.RETINOL_ACTIVITY_EQUIVALENTS_Micrograms] },
+        { Nutrients.Carotene_Alpha, [CanadaNutrients.ALPHA_CAROTENE_Micrograms] },
+        { Nutrients.Carotene_Beta, [CanadaNutrients.BETA_CAROTENE_Micrograms] },
+        { Nutrients.Thiamin_B1, [CanadaNutrients.THIAMIN_Milligrams] },
+        { Nutrients.Riboflavin_B2, [CanadaNutrients.RIBOFLAVIN_Milligrams] },
+        { Nutrients.Niacin_B3, [CanadaNutrients.TOTAL_NIACIN_EQUIVALENT_MG_NE] },
+        { Nutrients.Pantothenic_Acid_B5, [CanadaNutrients.PANTOTHENIC_ACID_Milligrams] },
         { Nutrients.Vitamin_B_6, [CanadaNutrients.VITAMIN_B_6_Milligrams] },
-        { Nutrients.Folate_total, [CanadaNutrients.DIETARY_FOLATE_EQUIVALENTS_Micrograms] },
+        { Nutrients.Folate_B9, [CanadaNutrients.DIETARY_FOLATE_EQUIVALENTS_Micrograms] },
         { Nutrients.Vitamin_B_12, [CanadaNutrients.VITAMIN_B_12_Micrograms] },
-        { Nutrients.Vitamin_C_total_ascorbic_acid, [CanadaNutrients.VITAMIN_C_Milligrams] },
-        { Nutrients.Vitamin_K_phylloquinone, [CanadaNutrients.VITAMIN_K_Micrograms] },
+        { Nutrients.Vitamin_C, [CanadaNutrients.VITAMIN_C_Milligrams] },
+        { Nutrients.Vitamin_K, [CanadaNutrients.VITAMIN_K_Micrograms] },
         { Nutrients.Biotin, [CanadaNutrients.BIOTIN_Micrograms] },
 
         // Minerals
@@ -251,9 +251,9 @@ public static class NutrientHelpers
         { Nutrients.Selenium_Se, [CanadaNutrients.SELENIUM_Micrograms] },
 
         // Extra
-        { Nutrients.Energy_Atwater_General_Factors_KCalorie, [CanadaNutrients.ENERGY_KILOCALORIES_KCalorie] },
+        { Nutrients.Energy_KCalorie, [CanadaNutrients.ENERGY_KILOCALORIES_KCalorie] },
         { Nutrients.Betaine, [CanadaNutrients.BETAINE_Milligrams] },
-        { Nutrients.Choline_total, [CanadaNutrients.CHOLINE_TOTAL_Milligrams] },
+        { Nutrients.Choline, [CanadaNutrients.CHOLINE_TOTAL_Milligrams] },
         { Nutrients.Lutein_Zeaxanthin, [CanadaNutrients.LUTEIN_AND_ZEAXANTHIN_Micrograms] },
     };
 }

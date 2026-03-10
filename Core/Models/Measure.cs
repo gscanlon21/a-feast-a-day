@@ -90,6 +90,9 @@ public enum Measure
 
     [Display(Name = "Milligrams of Alpha-Tocopherol Equivalents", ShortName = "MG_ATE")]
     MG_ATE = 108,
+
+    [Display(Name = "Milligrams of Niacin Equivalents", ShortName = "MG_NE")]
+    MG_NE = 109,
 }
 
 public static class MeasureConsts

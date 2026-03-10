@@ -502,7 +502,8 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IngredientId");
+                    b.HasIndex("IngredientId", "Nutrients")
+                        .IsUnique();
 
                     b.ToTable("hc_nutrient");
                 });
@@ -562,7 +563,8 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IngredientId");
+                    b.HasIndex("IngredientId", "Nutrients")
+                        .IsUnique();
 
                     b.ToTable("usda_nutrient");
                 });

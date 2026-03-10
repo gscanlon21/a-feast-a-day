@@ -13,7 +13,7 @@ namespace Data.Entities.Nutrients;
 /// Nutrients for an ingredient.
 /// </summary>
 [Table("usda_nutrient")]
-[Index(nameof(IngredientId))]
+[Index(nameof(IngredientId), nameof(Nutrients), IsUnique = true)]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class USDANutrient
 {

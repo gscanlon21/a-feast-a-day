@@ -23,10 +23,11 @@ public static class MeasureExtensions
         {
             return measure switch
             {
+                Measure.KCalorie => 1,
                 Measure.None => ingredient.GramsPerMeasure,
                 _ when MeasureConsts.DryMeasures.Contains(measure) => measure.ToMeasure(Measure.Grams),
                 _ when MeasureConsts.LiquidMeasures.Contains(measure) => measure.ToMeasure(Measure.Cups) * (coarseCut ? ingredient.GramsPerCoarseCup : ingredient.GramsPerFineCup),
-                _ => 1,
+                _ => throw new MissingMeasureException($"Missing measure {measure}!"),
             };
         }
         catch (MissingMeasureException ex)
