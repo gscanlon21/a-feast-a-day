@@ -26,7 +26,7 @@ public class DietaryIntake
 
     public Multiplier Multiplier { get; set; }
 
-    public int CaloriesPerGram { get; set; }
+    public double CaloriesPerGram { get; set; }
 
     public DateOnly LastUpdated { get; set; } = DateHelpers.Today;
 

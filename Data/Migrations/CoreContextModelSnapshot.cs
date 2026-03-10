@@ -439,8 +439,8 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CaloriesPerGram")
-                        .HasColumnType("integer");
+                    b.Property<double>("CaloriesPerGram")
+                        .HasColumnType("double precision");
 
                     b.Property<DateOnly>("LastUpdated")
                         .HasColumnType("date");

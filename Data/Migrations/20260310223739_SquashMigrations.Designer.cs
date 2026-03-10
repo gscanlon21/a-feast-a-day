@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260310204907_SquashMigrations")]
+    [Migration("20260310223739_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -442,8 +442,8 @@ namespace Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CaloriesPerGram")
-                        .HasColumnType("integer");
+                    b.Property<double>("CaloriesPerGram")
+                        .HasColumnType("double precision");
 
                     b.Property<DateOnly>("LastUpdated")
                         .HasColumnType("date");

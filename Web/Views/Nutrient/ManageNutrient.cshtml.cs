@@ -50,7 +50,7 @@ public class DietaryIntakeViewModel
     public Multiplier Multiplier { get; set; }
 
     [Display(Name = "Calories/Gram", Description = "Calories Per Gram")]
-    public int CaloriesPerGram { get; set; }
+    public double CaloriesPerGram { get; set; }
 
     [Display(Name = "Updated", Description = "Updated")]
     public DateOnly LastUpdated { get; set; }

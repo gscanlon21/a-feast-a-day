@@ -107,7 +107,7 @@ public class NutrientController : ViewController
 
             _context.Nutrients.Add(existingEntity);
         }
-       
+
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your nutrient has been updated!";
         return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Id, wasUpdated = true });

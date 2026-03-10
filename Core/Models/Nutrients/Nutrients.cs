@@ -128,12 +128,12 @@ public enum Nutrients
     /// <summary>
     /// Resistant Starch
     /// </summary>
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.Person, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
+    [DailyAllowance(6, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 2.5, For = Person.Male_19_30_Years)]
+    [DailyAllowance(6, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 2.5, For = Person.Female_19_30_Years)]
+    [DailyAllowance(6, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 2.5, For = Person.Male_31_50_Years)]
+    [DailyAllowance(6, -1, Measure.Grams, Multiplier.Person, CaloriesPerGram = 2.5, For = Person.Female_31_50_Years)]
     [Display(Name = "Resistant Starch", Order = 2225)]
-    Resistant_starch = 12,
+    Resistant_Starch = 12,
 
     /// <summary>
     /// Oligosaccharides

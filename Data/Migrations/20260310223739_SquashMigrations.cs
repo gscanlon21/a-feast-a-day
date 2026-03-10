@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -122,7 +121,7 @@ namespace Data.Migrations
                     Person = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Multiplier = table.Column<int>(type: "integer", nullable: false),
-                    CaloriesPerGram = table.Column<int>(type: "integer", nullable: false),
+                    CaloriesPerGram = table.Column<double>(type: "double precision", nullable: false),
                     LastUpdated = table.Column<DateOnly>(type: "date", nullable: false),
                     Source = table.Column<string>(type: "text", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: true)

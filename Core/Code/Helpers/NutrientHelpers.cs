@@ -45,7 +45,7 @@ public static class NutrientHelpers
     [
         Nutrients.Protein,
         Nutrients.Starch,
-        Nutrients.Resistant_starch,
+        Nutrients.Resistant_Starch,
         Nutrients.Fiber_total_dietary,
         Nutrients.Total_Sugars,
         Nutrients.Sugars_Total,
@@ -130,7 +130,7 @@ public static class NutrientHelpers
         // Macronutrients
         { Nutrients.Protein, [USDANutrients.Protein_Grams] },
         { Nutrients.Starch, [USDANutrients.Starch_Grams] },
-        { Nutrients.Resistant_starch, [USDANutrients.Resistant_starch_Grams] },
+        { Nutrients.Resistant_Starch, [USDANutrients.Resistant_starch_Grams] },
         { Nutrients.Fiber_total_dietary, [USDANutrients.Fiber_total_dietary_Grams] },
         { Nutrients.Total_Sugars, [USDANutrients.Total_Sugars_Grams] },
         { Nutrients.Sugars_Total, [USDANutrients.Sugars_Total_Grams] },
