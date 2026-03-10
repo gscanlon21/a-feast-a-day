@@ -1,12 +1,12 @@
 ﻿using Core.Models;
 using Core.Models.Nutrients;
-using Data.Entities.Ingredients;
-using Data.Entities.Nutrients;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace Data.Models;
 
+[DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class QueryNutrient
 {
     public class Consts
@@ -36,14 +36,7 @@ public class QueryNutrient
     public string? Notes { get; set; } = null;
 
 
-    #region Navigation Properties
-
-    public virtual Ingredient? Ingredient { get; set; }
-
-    #endregion
-
-
     public override int GetHashCode() => HashCode.Combine(Id);
-    public override bool Equals(object? obj) => obj is USDANutrient other
+    public override bool Equals(object? obj) => obj is QueryNutrient other
         && other.Id == Id;
 }

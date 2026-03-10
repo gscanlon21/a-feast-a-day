@@ -56,7 +56,7 @@ internal class LoadUSDANutrientData
                         && double.TryParse(rows?[actualHeaders.IndexOf(FoodNutrientHeaders.AMOUNT)], out double amount))
                     {
                         var nutrients2 = (USDANutrients)nutrientId;
-                        var measure = nutrients2.GetMeasure() ?? Measure.None;
+                        var measure = nutrients2.GetMeasure() ?? throw new InvalidOperationException("Missing measure!");
                         if (ingredient.Nutrients.Select(n => (int)n.Nutrients).Contains(nutrientId))
                         {
                             var existingNutrient = ingredient.Nutrients.First(n => (int)n.Nutrients == nutrientId);

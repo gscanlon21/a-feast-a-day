@@ -12,6 +12,7 @@ internal static class MeasureMap
         ["kJ"] = "KiloJoule",
         ["KCAL"] = "KCalorie",
         ["UG"] = "Micrograms",
+        ["�G"] = "Micrograms",
         ["MG"] = "Milligrams",
         ["MCG_RE"] = "MCG_RE",
         ["MG_GAE"] = "MG_GAE",

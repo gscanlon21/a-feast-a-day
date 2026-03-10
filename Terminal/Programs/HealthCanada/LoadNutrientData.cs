@@ -56,16 +56,16 @@ internal class LoadHealthCanadaNutrientData
                         && double.TryParse(rows?[actualHeaders.IndexOf(NutrientAmountHeaders.NUTRIENT_VALUE)], out double amount))
                     {
                         var nutrients2 = (CanadaNutrients)nutrientId;
-                        var measure = nutrients2.GetMeasure() ?? Measure.None;
-                        if (ingredient.Nutrients.Select(n => (int)n.Nutrients).Contains(nutrientId))
+                        var measure = nutrients2.GetMeasure() ?? throw new InvalidOperationException("Missing measure!");
+                        if (ingredient.NutrientsCanada.Select(n => (int)n.Nutrients).Contains(nutrientId))
                         {
-                            var existingNutrient = ingredient.Nutrients.First(n => (int)n.Nutrients == nutrientId);
+                            var existingNutrient = ingredient.NutrientsCanada.First(n => (int)n.Nutrients == nutrientId);
                             if (existingNutrient.Value != amount || existingNutrient.Measure != measure)
                             {
                                 Console.WriteLine($"Updating Nutrient: {nutrients2}");
                                 existingNutrient.Value = amount;
                                 existingNutrient.Measure = measure;
-                                await _nutrientRepo.UpdateNutrient(existingNutrient);
+                                await _nutrientRepo.UpdateNutrientCa(existingNutrient);
                             }
                         }
                         else

@@ -16,7 +16,7 @@
 <div class="alert alert-secondary">
     <form asp-controller="@NutrientController.Name" asp-action="@nameof(NutrientController.UpsertNutrient)"
           asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post"
-          class="row row-gap-3">
+          id="nutrient-form" class="row row-gap-3">
         
         <input type="hidden" asp-for="Nutrient.Id" />
 
@@ -45,13 +45,14 @@
         </div>
 
         <div class="col">
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary" form="nutrient-form">Save</button>
         </div>
     </form>
 </div>
 
 <form asp-controller="@NutrientController.Name" asp-action="@nameof(NutrientController.UpsertDietaryIntake)"
-        asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post">
+      asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@Model.Nutrient" method="post"
+      id="dietary-intake-form">
 
     <table class="table table-bordered align-middle">
         <thead>
@@ -64,7 +65,7 @@
                 <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].Person)</th>
                 <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].Source)</th>
                 <th>@Html.DisplayNameFor(m => m.DietaryIntakes[0].Notes)</th>
-                <th><button type="submit" class="btn btn-secondary">Update</button></th>
+                <th><button type="submit" class="btn btn-secondary" form="dietary-intake-form">Update</button></th>
             </tr>
         </thead>
         <tbody>
@@ -74,6 +75,7 @@
                 <tr>
                     <td class="p-0">
                         <input asp-for="Nutrient.Id" type="hidden" />
+                        <input asp-for="Nutrient.Key" type="hidden" />
                         <input asp-for="DietaryIntakes[@i].Id" type="hidden" />
                         <input asp-for="DietaryIntakes[@i].Min" type="number" class="form-control form-control-sm" />
                         <span asp-validation-for="DietaryIntakes[@i].Min" class="text-danger"></span>

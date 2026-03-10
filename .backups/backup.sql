@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict wflZsSr32AisERkmSv47NJtdkFkDtOtxLHjL8E5kQPgtzQHdFafDf7iN3uUPhn3
+\restrict DKOmajYGZOyrGwuEYriiEi2ZvvNz0ukzWL7YEEDeM57BaxEcSbrygavB9jnRV9D
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -766,7 +766,6 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 
 COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier", "CaloriesPerGram", "Source", "LastUpdated", "Notes", "NutrientId") FROM stdin;
 177	8	45	1048576	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
-13	\N	10	131072	100	1	9		2023-01-01	\N	31
 178	18	45	2097152	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
 19	\N	\N	131072	2	1	0		2023-01-01	\N	58
 179	8	45	65536	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
@@ -780,18 +779,15 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 211	1000	2500	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
 212	3400	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
 4	130	\N	131072	3	1	4		2023-01-01	\N	25
-3	1	\N	131072	3	1	4		2023-01-01	\N	3
 269	0.5	10	65536	3	1	0		-infinity	\N	83
 10	\N	1	131072	100	1	9		2023-01-01	\N	43
 24	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
 25	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
-11	\N	-1	3	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-03	\N	6
 270	0.5	10	65536	3	1	0		-infinity	\N	32
 427	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
 428	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
 129	\N	-1	2	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 17	20	35	131072	100	1	9		2023-01-01	\N	21
-133	\N	-1	48	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 124	\N	3	65536	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 442	175	\N	131072	3	1	4		2023-01-01	\N	36
 126	\N	3	393216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
@@ -810,7 +806,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 271	20	35	65536	100	1	9		-infinity	\N	66
 134	\N	-1	16	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 135	\N	-1	32	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-73	0.27	40	3	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
+526	\N	5	65536	100	3	9		2026-03-10	\N	87
+527	\N	5	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-10	\N	87
 37	400	\N	131072	2	1	0		2023-01-01	\N	10
 181	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
 38	350	\N	65536	2	1	0		2023-01-01	\N	10
@@ -832,7 +829,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 203	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	41
 204	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	41
 224	130	\N	65536	3	1	4		-infinity	\N	25
-223	1	\N	65536	3	1	4		-infinity	\N	3
 207	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
 208	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
 40	1500	2300	131072	2	1	0		2023-01-01	\N	53
@@ -842,36 +838,31 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 226	20	35	65536	100	1	9		-infinity	\N	21
 227	1000	1100	65536	0	3	0		-infinity	\N	77
 228	1	10	65536	2	1	0		-infinity	\N	54
+528	\N	5	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-10	\N	87
 229	1	10	65536	2	1	0		-infinity	\N	72
 230	1000	1100	65536	0	3	0		-infinity	\N	70
 231	6	12	65536	100	1	4		-infinity	\N	82
 232	1500	2300	65536	2	1	0		-infinity	\N	53
 233	10	\N	65536	2	1	0		-infinity	\N	69
 234	900	10000	65536	1	1	0		-infinity	\N	68
-225	\N	10	65536	100	1	9		-infinity	\N	31
-221	\N	10	65536	100	1	9		-infinity	\N	67
 239	55	400	65536	1	1	0		-infinity	\N	40
 241	\N	10	65536	100	3	9		-infinity	\N	16
 242	1	10	65536	2	1	0		-infinity	\N	64
 401	1	\N	131072	3	1	4		2023-01-01	\N	80
 158	\N	3	512	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-117	\N	3	12288	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 118	\N	3	4096	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 116	\N	-1	1	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+529	\N	5	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-10	\N	87
 34	15	\N	131072	2	1	0		2023-01-01	\N	73
 444	175	\N	2097152	3	1	4		-infinity	\N	36
 402	1	\N	65536	3	1	4		-infinity	\N	80
-150	\N	-1	12	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 151	\N	-1	4	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 152	\N	-1	8	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-153	\N	3	192	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 154	\N	3	64	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 403	1	\N	1048576	3	1	4		-infinity	\N	80
 119	\N	3	8192	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 155	\N	3	128	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-156	\N	3	768	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 157	\N	3	256	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-159	\N	3	3072	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 160	\N	3	1024	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 161	\N	3	2048	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 162	\N	3	24576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
@@ -882,10 +873,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 168	\N	3	6291456	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 169	\N	3	10485760	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 36	1000	2500	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
-171	\N	3	50331648	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 172	\N	3	16777216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 173	\N	3	33554432	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-174	\N	3	201326592	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 175	\N	3	67108864	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 176	\N	3	134217728	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 404	1	\N	2097152	3	1	4		-infinity	\N	80
@@ -972,7 +961,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 296	400	\N	1048576	2	1	0		-infinity	\N	10
 457	0.85	\N	4096	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 284	130	\N	1048576	3	1	4		-infinity	\N	25
-283	1	\N	1048576	3	1	4		-infinity	\N	3
 336	90	2000	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
 327	16	35	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
 326	2.3	11	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
@@ -996,8 +984,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 282	0.8	\N	1048576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 301	0.8	\N	2097152	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 325	1	10	1048576	2	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
-285	\N	10	1048576	100	1	9		-infinity	\N	31
-281	\N	10	1048576	100	1	9		-infinity	\N	67
 347	150	1100	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 320	120	\N	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	\N	71
 318	20	100	1048576	1	1	0		-infinity	\N	47
@@ -1073,7 +1059,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 385	20	1000	2097152	1	1	0		-infinity	\N	11
 333	15	\N	2097152	2	1	0		-infinity	\N	73
 315	10	\N	2097152	2	1	0		-infinity	\N	69
-307	\N	10	2097152	100	1	9		-infinity	\N	31
 419	2.4	\N	4096	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
 238	120	\N	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	\N	71
 334	90	\N	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-05	\N	71
@@ -1081,7 +1066,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 236	20	100	65536	1	1	0		-infinity	\N	47
 344	14	35	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
 303	130	\N	2097152	3	1	4		-infinity	\N	25
-302	1	\N	2097152	3	1	4		-infinity	\N	3
 343	1.8	11	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
 395	0.5	10	2097152	3	1	0		-infinity	\N	44
 394	0.5	10	2097152	3	1	0		-infinity	\N	74
@@ -1107,7 +1091,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 464	1.3	\N	10485760	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 99	1.1	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	5
 418	2.8	\N	10485760	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-300	\N	10	2097152	100	1	9		-infinity	\N	67
 329	1.3	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	5
 346	1.1	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	5
 94	14	35	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
@@ -1128,7 +1111,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 322	2.8	5.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
 514	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	56
 513	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	15
-14	\N	10	131072	100	1	9		2023-01-01	\N	67
 521	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
 520	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
 519	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
@@ -1652,292 +1634,292 @@ COPY public.gene ("Id", "Name", "Notes", "DisabledReason") FROM stdin;
 --
 
 COPY public.hc_nutrient ("Id", "IngredientId", "Nutrients", "Measure", "Value", "Notes") FROM stdin;
-1	77	203	0	0	\N
-2	278	203	0	0	\N
-3	77	204	0	100	\N
-4	278	204	0	100	\N
-5	77	205	0	0	\N
-6	278	205	0	0	\N
-7	77	207	0	0	\N
-8	278	207	0	0	\N
-9	77	208	0	885	\N
-10	278	208	0	885	\N
-11	77	210	0	0	\N
-12	278	210	0	0	\N
-13	77	211	0	0	\N
-14	278	211	0	0	\N
-15	77	212	0	0	\N
-16	278	212	0	0	\N
-17	77	213	0	0	\N
-18	278	213	0	0	\N
-19	77	214	0	0	\N
-20	278	214	0	0	\N
-21	77	221	0	0	\N
-22	278	221	0	0	\N
-23	77	255	0	0	\N
-24	278	255	0	0	\N
-25	77	260	0	0	\N
-26	278	260	0	0	\N
-27	77	261	0	0	\N
-28	278	261	0	0	\N
-29	77	262	0	0	\N
-30	278	262	0	0	\N
-31	77	263	0	0	\N
-32	278	263	0	0	\N
-33	77	268	0	3699	\N
-34	278	268	0	3699	\N
-35	77	269	0	0	\N
-36	278	269	0	0	\N
-37	77	287	0	0	\N
-38	278	287	0	0	\N
-39	77	291	0	0	\N
-40	278	291	0	0	\N
-41	77	301	0	1	\N
-42	278	301	0	1	\N
-43	77	303	0	0.56	\N
-44	278	303	0	0.56	\N
-45	77	304	0	0	\N
-46	278	304	0	0	\N
-47	77	305	0	0	\N
-48	278	305	0	0	\N
-49	77	306	0	1	\N
-50	278	306	0	1	\N
-51	77	307	0	2	\N
-52	278	307	0	2	\N
-53	77	309	0	0	\N
-54	278	309	0	0	\N
-55	77	312	0	0	\N
-56	278	312	0	0	\N
-57	77	315	0	0	\N
-58	278	315	0	0	\N
-59	77	317	0	0	\N
-60	278	317	0	0	\N
-61	77	319	0	0	\N
-62	278	319	0	0	\N
-63	77	321	0	0	\N
-64	278	321	0	0	\N
-65	77	323	0	14.35	\N
-66	278	323	0	14.35	\N
-67	77	324	0	0	\N
-68	278	324	0	0	\N
-69	77	339	0	0	\N
-70	278	339	0	0	\N
-71	77	401	0	0	\N
-72	278	401	0	0	\N
-73	77	404	0	0	\N
-74	278	404	0	0	\N
-75	77	405	0	0	\N
-76	278	405	0	0	\N
-77	77	406	0	0	\N
-78	278	406	0	0	\N
-79	77	409	0	0	\N
-80	278	409	0	0	\N
-81	77	410	0	0	\N
-82	278	410	0	0	\N
-83	77	415	0	0	\N
-84	278	415	0	0	\N
-85	77	417	0	0	\N
-86	278	417	0	0	\N
-87	77	418	0	0	\N
-88	278	418	0	0	\N
-89	77	430	0	60.2	\N
-90	278	430	0	60.2	\N
-91	77	431	0	0	\N
-92	278	431	0	0	\N
-93	77	501	0	0	\N
-94	278	501	0	0	\N
-95	77	502	0	0	\N
-96	278	502	0	0	\N
-97	77	503	0	0	\N
-98	278	503	0	0	\N
-99	77	504	0	0	\N
-100	278	504	0	0	\N
-101	77	505	0	0	\N
-102	278	505	0	0	\N
-103	77	506	0	0	\N
-104	278	506	0	0	\N
-105	77	507	0	0	\N
-106	278	507	0	0	\N
-107	77	508	0	0	\N
-108	278	508	0	0	\N
-109	77	509	0	0	\N
-110	278	509	0	0	\N
-111	77	510	0	0	\N
-112	278	510	0	0	\N
-113	77	511	0	0	\N
-114	278	511	0	0	\N
-115	77	512	0	0	\N
-116	278	512	0	0	\N
-117	77	513	0	0	\N
-118	278	513	0	0	\N
-119	77	514	0	0	\N
-120	278	514	0	0	\N
-121	77	515	0	0	\N
-122	278	515	0	0	\N
-123	77	516	0	0	\N
-124	278	516	0	0	\N
-125	77	517	0	0	\N
-126	278	517	0	0	\N
-127	77	518	0	0	\N
-128	278	518	0	0	\N
-129	77	601	0	0	\N
-130	278	601	0	0	\N
-131	77	605	0	0.048	\N
-132	278	605	0	0.048	\N
-133	77	606	0	13.808	\N
-134	278	606	0	13.808	\N
-135	77	607	0	0	\N
-136	278	607	0	0	\N
-137	77	608	0	0	\N
-138	278	608	0	0	\N
-139	77	609	0	0	\N
-140	278	609	0	0	\N
-141	77	610	0	0	\N
-142	278	610	0	0	\N
-143	77	611	0	0	\N
-144	278	611	0	0	\N
-145	77	612	0	0	\N
-146	278	612	0	0	\N
-147	77	613	0	11.29	\N
-148	278	613	0	11.29	\N
-149	77	614	0	1.953	\N
-150	278	614	0	1.953	\N
-151	77	615	0	0.414	\N
-152	278	615	0	0.414	\N
-153	77	617	0	71.269	\N
-154	278	617	0	71.269	\N
-155	77	618	0	9.762	\N
-156	278	618	0	9.762	\N
-157	77	619	0	0.761	\N
-158	278	619	0	0.761	\N
-159	77	620	0	0	\N
-160	278	620	0	0	\N
-161	77	621	0	0	\N
-162	278	621	0	0	\N
-163	77	624	0	0.129	\N
-164	278	624	0	0.129	\N
-165	77	625	0	0	\N
-166	278	625	0	0	\N
-167	77	626	0	1.255	\N
-168	278	626	0	1.255	\N
-169	77	627	0	0	\N
-170	278	627	0	0	\N
-171	77	628	0	0.311	\N
-172	278	628	0	0.311	\N
-173	77	629	0	0	\N
-174	278	629	0	0	\N
-175	77	630	0	0	\N
-176	278	630	0	0	\N
-177	77	631	0	0	\N
-178	278	631	0	0	\N
-179	77	636	0	221	\N
-180	278	636	0	221	\N
-181	77	645	0	72.961	\N
-182	278	645	0	72.961	\N
-183	77	646	0	10.523	\N
-184	278	646	0	10.523	\N
-185	77	652	0	0	\N
-186	278	652	0	0	\N
-187	77	653	0	0.022	\N
-188	278	653	0	0.022	\N
-189	77	654	0	0	\N
-190	278	654	0	0	\N
-191	77	802	0	0	\N
-192	278	802	0	0	\N
-193	77	803	0	0	\N
-194	278	803	0	0	\N
-195	77	806	0	0	\N
-196	278	806	0	0	\N
-197	77	810	0	0	\N
-198	278	810	0	0	\N
-199	77	811	0	0.11	\N
-200	278	811	0	0.11	\N
-201	77	812	0	0.83	\N
-202	278	812	0	0.83	\N
-203	77	813	0	0	\N
-204	278	813	0	0	\N
-205	77	814	0	0	\N
-206	278	814	0	0	\N
-207	77	815	0	0	\N
-208	278	815	0	0	\N
-209	77	817	0	0	\N
-210	278	817	0	0	\N
-211	77	818	0	0	\N
-212	278	818	0	0	\N
-213	77	819	0	0	\N
-214	278	819	0	0	\N
-215	77	820	0	0	\N
-216	278	820	0	0	\N
-217	77	821	0	0	\N
-218	278	821	0	0	\N
-219	77	823	0	0	\N
-220	278	823	0	0	\N
-221	77	824	0	0	\N
-222	278	824	0	0	\N
-223	77	825	0	9.76	\N
-224	278	825	0	9.76	\N
-225	77	826	0	0.125	\N
-226	278	826	0	0.125	\N
-227	77	827	0	0	\N
-228	278	827	0	0	\N
-229	77	828	0	0	\N
-230	278	828	0	0	\N
-231	77	829	0	0	\N
-232	278	829	0	0	\N
-233	77	830	0	0	\N
-234	278	830	0	0	\N
-235	77	831	0	0.76	\N
-236	278	831	0	0.76	\N
-237	77	832	0	0	\N
-238	278	832	0	0	\N
-239	77	833	0	0	\N
-240	278	833	0	0	\N
-241	77	834	0	0	\N
-242	278	834	0	0	\N
-243	77	835	0	0	\N
-244	278	835	0	0	\N
-245	77	836	0	0	\N
-246	278	836	0	0	\N
-247	77	837	0	0	\N
-248	278	837	0	0	\N
-249	77	838	0	0	\N
-250	278	838	0	0	\N
-251	77	840	0	0	\N
-252	278	840	0	0	\N
-253	77	841	0	0	\N
-254	278	841	0	0	\N
-255	77	843	0	0	\N
-256	278	843	0	0	\N
-257	77	845	0	0	\N
-258	278	845	0	0	\N
-259	77	846	0	0	\N
-260	278	846	0	0	\N
-261	77	847	0	0	\N
-262	278	847	0	0	\N
-263	77	848	0	0	\N
-264	278	848	0	0	\N
-265	77	849	0	0	\N
-266	278	849	0	0	\N
-267	77	852	0	0	\N
-268	278	852	0	0	\N
-269	77	853	0	0	\N
-270	278	853	0	0	\N
-271	77	854	0	0	\N
-272	278	854	0	0	\N
-273	77	855	0	0	\N
-274	278	855	0	0	\N
-275	77	859	0	0	\N
-276	278	859	0	0	\N
-277	77	861	0	0	\N
-278	278	861	0	0	\N
-279	77	862	0	0.3	\N
-280	278	862	0	0.3	\N
-281	77	863	0	0.1	\N
-282	278	863	0	0.1	\N
-283	77	868	0	0.76	\N
-284	278	868	0	0.76	\N
-285	77	869	0	9.76	\N
-286	278	869	0	9.76	\N
+859	77	203	3	0	\N
+860	278	203	3	0	\N
+861	77	204	3	100	\N
+862	278	204	3	100	\N
+863	77	205	3	0	\N
+864	278	205	3	0	\N
+865	77	207	3	0	\N
+866	278	207	3	0	\N
+867	77	208	102	885	\N
+868	278	208	102	885	\N
+869	77	210	3	0	\N
+870	278	210	3	0	\N
+871	77	211	3	0	\N
+872	278	211	3	0	\N
+873	77	212	3	0	\N
+874	278	212	3	0	\N
+875	77	213	3	0	\N
+876	278	213	3	0	\N
+877	77	214	3	0	\N
+878	278	214	3	0	\N
+879	77	221	3	0	\N
+880	278	221	3	0	\N
+881	77	255	3	0	\N
+882	278	255	3	0	\N
+883	77	260	3	0	\N
+884	278	260	3	0	\N
+885	77	261	3	0	\N
+886	278	261	3	0	\N
+887	77	262	2	0	\N
+888	278	262	2	0	\N
+889	77	263	2	0	\N
+890	278	263	2	0	\N
+891	77	268	103	3699	\N
+892	278	268	103	3699	\N
+893	77	269	3	0	\N
+894	278	269	3	0	\N
+895	77	287	3	0	\N
+896	278	287	3	0	\N
+897	77	291	3	0	\N
+898	278	291	3	0	\N
+899	77	301	2	1	\N
+900	278	301	2	1	\N
+901	77	303	2	0.56	\N
+902	278	303	2	0.56	\N
+903	77	304	2	0	\N
+904	278	304	2	0	\N
+905	77	305	2	0	\N
+906	278	305	2	0	\N
+907	77	306	2	1	\N
+908	278	306	2	1	\N
+909	77	307	2	2	\N
+910	278	307	2	2	\N
+911	77	309	2	0	\N
+912	278	309	2	0	\N
+913	77	312	2	0	\N
+914	278	312	2	0	\N
+915	77	315	2	0	\N
+916	278	315	2	0	\N
+917	77	317	1	0	\N
+918	278	317	1	0	\N
+919	77	319	1	0	\N
+920	278	319	1	0	\N
+921	77	321	1	0	\N
+922	278	321	1	0	\N
+923	77	323	2	14.35	\N
+924	278	323	2	14.35	\N
+925	77	324	98	0	\N
+926	278	324	98	0	\N
+927	77	339	1	0	\N
+928	278	339	1	0	\N
+929	77	401	2	0	\N
+930	278	401	2	0	\N
+931	77	404	2	0	\N
+932	278	404	2	0	\N
+933	77	405	2	0	\N
+934	278	405	2	0	\N
+935	77	406	2	0	\N
+936	278	406	2	0	\N
+937	77	409	0	0	\N
+938	278	409	0	0	\N
+939	77	410	2	0	\N
+940	278	410	2	0	\N
+941	77	415	2	0	\N
+942	278	415	2	0	\N
+943	77	417	1	0	\N
+944	278	417	1	0	\N
+945	77	418	1	0	\N
+946	278	418	1	0	\N
+947	77	430	1	60.2	\N
+948	278	430	1	60.2	\N
+949	77	431	1	0	\N
+950	278	431	1	0	\N
+951	77	501	3	0	\N
+952	278	501	3	0	\N
+953	77	502	3	0	\N
+954	278	502	3	0	\N
+955	77	503	3	0	\N
+956	278	503	3	0	\N
+957	77	504	3	0	\N
+958	278	504	3	0	\N
+959	77	505	3	0	\N
+960	278	505	3	0	\N
+961	77	506	3	0	\N
+962	278	506	3	0	\N
+963	77	507	3	0	\N
+964	278	507	3	0	\N
+965	77	508	3	0	\N
+966	278	508	3	0	\N
+967	77	509	3	0	\N
+968	278	509	3	0	\N
+969	77	510	3	0	\N
+970	278	510	3	0	\N
+971	77	511	3	0	\N
+972	278	511	3	0	\N
+973	77	512	3	0	\N
+974	278	512	3	0	\N
+975	77	513	3	0	\N
+976	278	513	3	0	\N
+977	77	514	3	0	\N
+978	278	514	3	0	\N
+979	77	515	3	0	\N
+980	278	515	3	0	\N
+981	77	516	3	0	\N
+982	278	516	3	0	\N
+983	77	517	3	0	\N
+984	278	517	3	0	\N
+985	77	518	3	0	\N
+986	278	518	3	0	\N
+987	77	601	2	0	\N
+988	278	601	2	0	\N
+989	77	605	3	0.048	\N
+990	278	605	3	0.048	\N
+991	77	606	3	13.808	\N
+992	278	606	3	13.808	\N
+993	77	607	3	0	\N
+994	278	607	3	0	\N
+995	77	608	3	0	\N
+996	278	608	3	0	\N
+997	77	609	3	0	\N
+998	278	609	3	0	\N
+999	77	610	3	0	\N
+1000	278	610	3	0	\N
+1001	77	611	3	0	\N
+1002	278	611	3	0	\N
+1003	77	612	3	0	\N
+1004	278	612	3	0	\N
+1005	77	613	3	11.29	\N
+1006	278	613	3	11.29	\N
+1007	77	614	3	1.953	\N
+1008	278	614	3	1.953	\N
+1009	77	615	3	0.414	\N
+1010	278	615	3	0.414	\N
+1011	77	617	3	71.269	\N
+1012	278	617	3	71.269	\N
+1013	77	618	3	9.762	\N
+1014	278	618	3	9.762	\N
+1015	77	619	3	0.761	\N
+1016	278	619	3	0.761	\N
+1017	77	620	3	0	\N
+1018	278	620	3	0	\N
+1019	77	621	3	0	\N
+1020	278	621	3	0	\N
+1021	77	624	3	0.129	\N
+1022	278	624	3	0.129	\N
+1023	77	625	3	0	\N
+1024	278	625	3	0	\N
+1025	77	626	3	1.255	\N
+1026	278	626	3	1.255	\N
+1027	77	627	3	0	\N
+1028	278	627	3	0	\N
+1029	77	628	3	0.311	\N
+1030	278	628	3	0.311	\N
+1031	77	629	3	0	\N
+1032	278	629	3	0	\N
+1033	77	630	3	0	\N
+1034	278	630	3	0	\N
+1035	77	631	3	0	\N
+1036	278	631	3	0	\N
+1037	77	636	2	221	\N
+1038	278	636	2	221	\N
+1039	77	645	3	72.961	\N
+1040	278	645	3	72.961	\N
+1041	77	646	3	10.523	\N
+1042	278	646	3	10.523	\N
+1043	77	652	3	0	\N
+1044	278	652	3	0	\N
+1045	77	653	3	0.022	\N
+1046	278	653	3	0.022	\N
+1047	77	654	3	0	\N
+1048	278	654	3	0	\N
+1049	77	802	3	0	\N
+1050	278	802	3	0	\N
+1051	77	803	3	0	\N
+1052	278	803	3	0	\N
+1053	77	806	1	0	\N
+1054	278	806	1	0	\N
+1055	77	810	3	0	\N
+1056	278	810	3	0	\N
+1057	77	811	2	0.11	\N
+1058	278	811	2	0.11	\N
+1059	77	812	2	0.83	\N
+1060	278	812	2	0.83	\N
+1061	77	813	2	0	\N
+1062	278	813	2	0	\N
+1063	77	814	1	0	\N
+1064	278	814	1	0	\N
+1065	77	815	1	0	\N
+1066	278	815	1	0	\N
+1067	77	817	3	0	\N
+1068	278	817	3	0	\N
+1069	77	818	3	0	\N
+1070	278	818	3	0	\N
+1071	77	819	3	0	\N
+1072	278	819	3	0	\N
+1073	77	820	3	0	\N
+1074	278	820	3	0	\N
+1075	77	821	3	0	\N
+1076	278	821	3	0	\N
+1077	77	823	3	0	\N
+1078	278	823	3	0	\N
+1079	77	824	3	0	\N
+1080	278	824	3	0	\N
+1081	77	825	3	9.76	\N
+1082	278	825	3	9.76	\N
+1083	77	826	3	0.125	\N
+1084	278	826	3	0.125	\N
+1085	77	827	3	0	\N
+1086	278	827	3	0	\N
+1087	77	828	3	0	\N
+1088	278	828	3	0	\N
+1089	77	829	3	0	\N
+1090	278	829	3	0	\N
+1091	77	830	3	0	\N
+1092	278	830	3	0	\N
+1093	77	831	3	0.76	\N
+1094	278	831	3	0.76	\N
+1095	77	832	3	0	\N
+1096	278	832	3	0	\N
+1097	77	833	3	0	\N
+1098	278	833	3	0	\N
+1099	77	834	1	0	\N
+1100	278	834	1	0	\N
+1101	77	835	1	0	\N
+1102	278	835	1	0	\N
+1103	77	836	1	0	\N
+1104	278	836	1	0	\N
+1105	77	837	1	0	\N
+1106	278	837	1	0	\N
+1107	77	838	3	0	\N
+1108	278	838	3	0	\N
+1109	77	840	3	0	\N
+1110	278	840	3	0	\N
+1111	77	841	3	0	\N
+1112	278	841	3	0	\N
+1113	77	843	3	0	\N
+1114	278	843	3	0	\N
+1115	77	845	3	0	\N
+1116	278	845	3	0	\N
+1117	77	846	3	0	\N
+1118	278	846	3	0	\N
+1119	77	847	3	0	\N
+1120	278	847	3	0	\N
+1121	77	848	3	0	\N
+1122	278	848	3	0	\N
+1123	77	849	3	0	\N
+1124	278	849	3	0	\N
+1125	77	852	3	0	\N
+1126	278	852	3	0	\N
+1127	77	853	3	0	\N
+1128	278	853	3	0	\N
+1129	77	854	3	0	\N
+1130	278	854	3	0	\N
+1131	77	855	3	0	\N
+1132	278	855	3	0	\N
+1133	77	859	3	0	\N
+1134	278	859	3	0	\N
+1135	77	861	3	0	\N
+1136	278	861	3	0	\N
+1137	77	862	2	0.3	\N
+1138	278	862	2	0.3	\N
+1139	77	863	2	0.1	\N
+1140	278	863	2	0.1	\N
+1141	77	868	3	0.76	\N
+1142	278	868	3	0.76	\N
+1143	77	869	3	9.76	\N
+1144	278	869	3	9.76	\N
 \.
 
 
@@ -3942,8 +3924,8 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id") FR
 25	2514743	23562	\N
 1175	746767	1040	\N
 1179	328637	1009	\N
-77	748608	4063	422
 278	748608	4063	422
+77	748608	4063	422
 \.
 
 
@@ -3952,90 +3934,90 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id") FR
 --
 
 COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM stdin;
-1	Valine Grams	Valine Grams	0	\N	-infinity
-2	Lutein  zeaxanthin Micrograms	Lutein  zeaxanthin Micrograms	0	\N	-infinity
-3	Oligosaccharides Grams	Oligosaccharides Grams	0	\N	-infinity
-4	Energy Atwater General Factors KCalorie	Energy Atwater General Factors KCalorie	0	\N	-infinity
-6	Fatty acids total saturated Grams	Fatty acids total saturated Grams	0	\N	-infinity
-7	Histidine Grams	Histidine Grams	0	\N	-infinity
-8	Chromium Cr Micrograms	Chromium Cr Micrograms	0	\N	-infinity
-9	Vitamin E MG ATE	Vitamin E MG ATE	0	\N	-infinity
-10	Magnesium Mg Milligrams	Magnesium Mg Milligrams	0	\N	-infinity
-11	Vanadium V Micrograms	Vanadium V Micrograms	0	\N	-infinity
-12	Niacin Milligrams	Niacin Milligrams	0	\N	-infinity
-13	Isoleucine Grams	Isoleucine Grams	0	\N	-infinity
-14	Iodine I Micrograms	Iodine I Micrograms	0	\N	-infinity
-15	PUFA 22 6 n 3 DHA Grams	PUFA 22 6 n 3 DHA Grams	0	\N	-infinity
-16	Fatty acids total monounsaturated Grams	Fatty acids total monounsaturated Grams	0	\N	-infinity
-17	PUFA 18 3 n 3 c c c ALA Grams	PUFA 18 3 n 3 c c c ALA Grams	0	\N	-infinity
-18	Fiber total dietary Grams	Fiber total dietary Grams	0	\N	-infinity
-19	Phosphorus P Milligrams	Phosphorus P Milligrams	0	\N	-infinity
-20	Methionine Grams	Methionine Grams	0	\N	-infinity
-21	Fats	Fats	0	\N	-infinity
-22	Calcium Ca Milligrams	Calcium Ca Milligrams	0	\N	-infinity
-23	Carbohydrates Grams	Carbohydrates Grams	0	\N	-infinity
-24	Energy Atwater Specific Factors KCalorie	Energy Atwater Specific Factors KCalorie	0	\N	-infinity
-25	Starch Grams	Starch Grams	0	\N	-infinity
-26	Sugars Total Grams	Sugars Total Grams	0	\N	-infinity
-27	Betaine Milligrams	Betaine Milligrams	0	\N	-infinity
-28	Vitamin A RAE Micrograms	Vitamin A RAE Micrograms	0	\N	-infinity
-29	Vitamin B 12 Micrograms	Vitamin B 12 Micrograms	0	\N	-infinity
-30	Thiamin Milligrams	Thiamin Milligrams	0	\N	-infinity
-31	Omega 3	Omega 3	0	\N	-infinity
-32	Glycine Grams	Glycine Grams	0	\N	-infinity
-33	Fiber insoluble Grams	Fiber insoluble Grams	0	\N	-infinity
-34	Carotene alpha Micrograms	Carotene alpha Micrograms	0	\N	-infinity
-35	Lysine Grams	Lysine Grams	0	\N	-infinity
-36	Carbohydrate by difference Grams	Carbohydrate by difference Grams	0	\N	-infinity
-37	Iron Fe Milligrams	Iron Fe Milligrams	0	\N	-infinity
-38	Vitamin C total ascorbic acid Milligrams	Vitamin C total ascorbic acid Milligrams	0	\N	-infinity
-39	Carbohydrate by summation Grams	Carbohydrate by summation Grams	0	\N	-infinity
-40	Selenium Se Micrograms	Selenium Se Micrograms	0	\N	-infinity
-41	Vitamin A Micrograms	Vitamin A Micrograms	0	\N	-infinity
-42	Carotene MCG RE	Carotene MCG RE	0	\N	-infinity
-43	Fatty acids total trans Grams	Fatty acids total trans Grams	0	\N	-infinity
-44	Tryptophan Grams	Tryptophan Grams	0	\N	-infinity
-45	Folate total Micrograms	Folate total Micrograms	0	\N	-infinity
-46	Retinol Micrograms	Retinol Micrograms	0	\N	-infinity
-47	Vitamin D D2  D3 Micrograms	Vitamin D D2  D3 Micrograms	0	\N	-infinity
-48	Boron B Micrograms	Boron B Micrograms	0	\N	-infinity
-49	PUFA 18 2 n 6 c c Grams	PUFA 18 2 n 6 c c Grams	0	\N	-infinity
-50	Pantothenic acid Milligrams	Pantothenic acid Milligrams	0	\N	-infinity
-51	Lithium Li Micrograms	Lithium Li Micrograms	0	\N	-infinity
-52	Vitamin B 6 Milligrams	Vitamin B 6 Milligrams	0	\N	-infinity
-53	Sodium Na Milligrams	Sodium Na Milligrams	0	\N	-infinity
-54	Flavonoids total Milligrams	Flavonoids total Milligrams	0	\N	-infinity
-55	Fatty acids total polyunsaturated Grams	Fatty acids total polyunsaturated Grams	0	\N	-infinity
-56	PUFA 20 5 n 3 EPA Grams	PUFA 20 5 n 3 EPA Grams	0	\N	-infinity
-58	Cholesterol Milligrams	Cholesterol Milligrams	0	\N	-infinity
-59	Protein Grams	Protein Grams	0	\N	-infinity
-60	Potassium K Milligrams	Potassium K Milligrams	0	\N	-infinity
-61	Manganese Mn Milligrams	Manganese Mn Milligrams	0	\N	-infinity
-62	Total Sugars Grams	Total Sugars Grams	0	\N	-infinity
-63	Molybdenum Mo Micrograms	Molybdenum Mo Micrograms	0	\N	-infinity
-64	Chlorine Cl Milligrams	Chlorine Cl Milligrams	0	\N	-infinity
-65	Vitamin E alpha tocopherol Milligrams	Vitamin E alpha tocopherol Milligrams	0	\N	-infinity
-66	Total lipid fat Grams	Total lipid fat Grams	0	\N	-infinity
-67	Omega 6	Omega 6	0	\N	-infinity
-68	Copper Cu Milligrams	Copper Cu Milligrams	0	\N	-infinity
-69	Zinc Zn Milligrams	Zinc Zn Milligrams	0	\N	-infinity
-70	Energy KCalorie	Energy KCalorie	0	\N	-infinity
-71	Vitamin K phylloquinone Micrograms	Vitamin K phylloquinone Micrograms	0	\N	-infinity
-72	Polyphenols total Milligrams	Polyphenols total Milligrams	0	\N	-infinity
-73	Vitamin E Milligrams	Vitamin E Milligrams	0	\N	-infinity
-74	Threonine Grams	Threonine Grams	0	\N	-infinity
-75	Choline total Milligrams	Choline total Milligrams	0	\N	-infinity
-76	Phenylalanine Grams	Phenylalanine Grams	0	\N	-infinity
-77	Calories	Calories	0	\N	-infinity
-78	Fiber soluble Grams	Fiber soluble Grams	0	\N	-infinity
-79	Carotene beta Micrograms	Carotene beta Micrograms	0	\N	-infinity
-80	Oligosaccharides Milligrams	Oligosaccharides Milligrams	0	\N	-infinity
-81	Fluoride F Micrograms	Fluoride F Micrograms	0	\N	-infinity
-82	Resistant starch Grams	Resistant starch Grams	0	\N	-infinity
-83	Arginine Grams	Arginine Grams	0	\N	-infinity
-84	Leucine Grams	Leucine Grams	0	\N	-infinity
-5	Riboflavin Milligrams	Riboflavin Milligrams	0	\N	2026-03-10
-57	Biotin Micrograms	Biotin Micrograms	1	\N	2026-03-10
+4	Energy_Atwater_General_Factors_KCalorie	Energy Atwater General Factors KCalorie	280	\N	-infinity
+6	Fatty_acids_total_saturated	Fatty acids total saturated	9700	\N	-infinity
+9	Vitamin_E_MG_ATE	Vitamin E MG ATE	7905	\N	-infinity
+10	Magnesium_Mg	Magnesium Mg	5300	\N	-infinity
+12	Niacin	Niacin	6600	\N	-infinity
+13	Isoleucine	Isoleucine	17100	\N	-infinity
+47	Vitamin_D_D2__D3	Vitamin D D2  D3	8700	\N	-infinity
+50	Pantothenic_acid	Pantothenic acid	6900	\N	-infinity
+52	Vitamin_B_6	Vitamin B 6	6700	\N	-infinity
+53	Sodium_Na	Sodium Na	5100	\N	-infinity
+55	Fatty_acids_total_polyunsaturated	Fatty acids total polyunsaturated	12900	\N	-infinity
+5	Riboflavin	Riboflavin	6500	\N	2026-03-10
+57	Biotin	Biotin	6850	\N	2026-03-10
+20	Methionine	Methionine	16900	\N	-infinity
+21	Fats	Fats	800	\N	-infinity
+22	Calcium_Ca	Calcium Ca	5400	\N	-infinity
+23	Carbohydrates	Carbohydrates	1110	\N	-infinity
+14	Iodine_I	Iodine I	5350	\N	-infinity
+16	Fatty_acids_total_monounsaturated	Fatty acids total monounsaturated	11400	\N	-infinity
+18	Fiber_total_dietary	Fiber total dietary	1200	\N	-infinity
+19	Phosphorus_P	Phosphorus P	5500	\N	-infinity
+24	Energy_Atwater_Specific_Factors_KCalorie	Energy Atwater Specific Factors KCalorie	290	\N	-infinity
+25	Starch	Starch	2200	\N	-infinity
+60	Potassium_K	Potassium K	5700	\N	-infinity
+61	Manganese_Mn	Manganese Mn	5600	\N	-infinity
+63	Molybdenum_Mo	Molybdenum Mo	5650	\N	-infinity
+68	Copper_Cu	Copper Cu	5550	\N	-infinity
+69	Zinc_Zn	Zinc Zn	5900	\N	-infinity
+70	Energy_KCalorie	Energy KCalorie	300	\N	-infinity
+71	Vitamin_K_phylloquinone	Vitamin K phylloquinone	8800	\N	-infinity
+74	Threonine	Threonine	17500	\N	-infinity
+75	Choline_total	Choline total	11800	\N	-infinity
+76	Phenylalanine	Phenylalanine	17300	\N	-infinity
+77	Calories	Calories	300	\N	-infinity
+79	Carotene_beta	Carotene beta	7450	\N	-infinity
+81	Fluoride_F	Fluoride F	5680	\N	-infinity
+83	Arginine	Arginine	16700	\N	-infinity
+84	Leucine	Leucine	17000	\N	-infinity
+11	Vanadium_V	Vanadium V	999999	\N	-infinity
+87	Omega_3_EPA_DHA	Omega 3 (EPA/DHA) Fatty Acids	15000	\N	-infinity
+85	Omega_3	Omega 3 Fatty Acids	14000	\N	-infinity
+86	Omega_6_LA	Omega 6 (LA) Fatty Acids	15010	\N	-infinity
+26	Sugars_Total	Sugars Total	1500	\N	-infinity
+27	Betaine	Betaine	999999	\N	-infinity
+28	Vitamin_A_RAE	Vitamin A RAE	7420	\N	-infinity
+29	Vitamin_B_12	Vitamin B 12	6800	\N	-infinity
+30	Thiamin	Thiamin	6300	\N	-infinity
+32	Glycine	Glycine	17600	\N	-infinity
+34	Carotene_alpha	Carotene alpha	7440	\N	-infinity
+35	Lysine	Lysine	16800	\N	-infinity
+37	Iron_Fe	Iron Fe	5800	\N	-infinity
+38	Vitamin_C_total_ascorbic_acid	Vitamin C total ascorbic acid	6300	\N	-infinity
+40	Selenium_Se	Selenium Se	6200	\N	-infinity
+46	Retinol	Retinol	7410	\N	-infinity
+73	Vitamin_E	Vitamin E	7810	\N	-infinity
+64	Chlorine_Cl	Chlorine Cl	999999	\N	-infinity
+51	Lithium_Li	Lithium Li	999999	\N	-infinity
+48	Boron_B	Boron B	6245	\N	-infinity
+45	Folate_total	Folate total	6900	\N	-infinity
+44	Tryptophan	Tryptophan	16300	\N	-infinity
+43	Fatty_acids_total_trans	Fatty acids total trans	15400	\N	-infinity
+15	Omega_3_DHA	Omega 3 (DHA) Fatty Acids	15300	\N	-infinity
+56	Omega_3_EPA	Omega 3 (EPA) Fatty Acids	15000	\N	-infinity
+17	Omega_3_ALA	Omega 3 (ALA) Fatty Acids	14000	\N	-infinity
+33	Fiber_insoluble	Fiber insoluble	1260	\N	-infinity
+62	Total_Sugars	Total Sugars	1510	\N	-infinity
+36	Carbohydrate_by_difference	Carbohydrate by difference	1110	\N	-infinity
+39	Carbohydrate_by_summation	Carbohydrate by summation	1120	\N	-infinity
+41	Vitamin_A	Vitamin A	7420	\N	-infinity
+2	Lutein_Zeaxanthin	Lutein/Zeaxanthin	7560	\N	-infinity
+1	Valine	Valine	17200	\N	-infinity
+7	Histidine	Histidine	17400	\N	-infinity
+8	Chromium_Cr	Chromium Cr	999999	\N	-infinity
+72	Polyphenols_total	Polyphenols total	999999	\N	-infinity
+78	Fiber_soluble	Fiber soluble	1240	\N	-infinity
+80	Oligosaccharides	Oligosaccharides	2250	\N	-infinity
+82	Resistant_starch	Resistant starch	2225	\N	-infinity
+66	Total_lipid_fat	Total lipid fat	800	\N	-infinity
+49	Omega_6	Omega 6 Fatty Acids	15005	\N	-infinity
+42	Carotene_MCG_RE	Carotene MCG RE	7600	\N	-infinity
+54	Flavonoids_total	Flavonoids total	999999	\N	-infinity
+65	Vitamin_E_alpha_tocopherol	Vitamin E alpha tocopherol	7905	\N	-infinity
+58	Cholesterol	Cholesterol	15700	\N	-infinity
+59	Protein	Protein	600	\N	-infinity
 \.
 
 
@@ -20927,7 +20909,7 @@ COPY public.usda_nutrient ("Id", "IngredientId", "Nutrients", "Notes", "Measure"
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 525, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 529, true);
 
 
 --
@@ -20948,14 +20930,14 @@ SELECT pg_catalog.setval('public."nutrient_Id_seq"', 29021, true);
 -- Name: nutrient_Id_seq1; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq1"', 84, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq1"', 87, true);
 
 
 --
 -- Name: nutrient_canada_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_canada_Id_seq"', 286, true);
+SELECT pg_catalog.setval('public."nutrient_canada_Id_seq"', 1144, true);
 
 
 --
@@ -21751,5 +21733,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict wflZsSr32AisERkmSv47NJtdkFkDtOtxLHjL8E5kQPgtzQHdFafDf7iN3uUPhn3
+\unrestrict DKOmajYGZOyrGwuEYriiEi2ZvvNz0ukzWL7YEEDeM57BaxEcSbrygavB9jnRV9D
 

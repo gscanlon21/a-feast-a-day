@@ -227,37 +227,37 @@ public enum CanadaNutrients
     /// <summary>
     /// SELENIUM
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 317, "SE")]
+    [HCNutrientsMetadata(Measure.Micrograms, 317, "SE")]
     [Display(Name = "SELENIUM")]
-    SELENIUM_None = 317,
+    SELENIUM_Micrograms = 317,
 
     /// <summary>
     /// RETINOL
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 319, "RT-�G")]
+    [HCNutrientsMetadata(Measure.Micrograms, 319, "RT-�G")]
     [Display(Name = "RETINOL")]
-    RETINOL_None = 319,
+    RETINOL_Micrograms = 319,
 
     /// <summary>
     /// RETINOL ACTIVITY EQUIVALENTS
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 320, "RAE")]
+    [HCNutrientsMetadata(Measure.Micrograms, 320, "RAE")]
     [Display(Name = "RETINOL ACTIVITY EQUIVALENTS")]
-    RETINOL_ACTIVITY_EQUIVALENTS_None = 814,
+    RETINOL_ACTIVITY_EQUIVALENTS_Micrograms = 814,
 
     /// <summary>
     /// BETA CAROTENE
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 321, "BC-�G")]
+    [HCNutrientsMetadata(Measure.Micrograms, 321, "BC-�G")]
     [Display(Name = "BETA CAROTENE")]
-    BETA_CAROTENE_None = 321,
+    BETA_CAROTENE_Micrograms = 321,
 
     /// <summary>
     /// ALPHA CAROTENE
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 322, "AC-�G")]
+    [HCNutrientsMetadata(Measure.Micrograms, 322, "AC-�G")]
     [Display(Name = "ALPHA CAROTENE")]
-    ALPHA_CAROTENE_None = 834,
+    ALPHA_CAROTENE_Micrograms = 834,
 
     /// <summary>
     /// ALPHA-TOCOPHEROL
@@ -276,37 +276,37 @@ public enum CanadaNutrients
     /// <summary>
     /// VITAMIN D2, ERGOCALCIFEROL
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 325, "D2-�G")]
+    [HCNutrientsMetadata(Measure.Micrograms, 325, "D2-�G")]
     [Display(Name = "VITAMIN D2, ERGOCALCIFEROL")]
-    VITAMIN_D2_ERGOCALCIFEROL_None = 876,
+    VITAMIN_D2_ERGOCALCIFEROL_Micrograms = 876,
 
     /// <summary>
     /// VITAMIN D (D2 + D3)
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 328, "D3+D2-�G")]
+    [HCNutrientsMetadata(Measure.Micrograms, 328, "D3+D2-�G")]
     [Display(Name = "VITAMIN D (D2 + D3)")]
-    VITAMIN_D_D2__D3_None = 339,
+    VITAMIN_D_D2__D3_Micrograms = 339,
 
     /// <summary>
     /// BETA CRYPTOXANTHIN
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 334, "CRYPX")]
+    [HCNutrientsMetadata(Measure.Micrograms, 334, "CRYPX")]
     [Display(Name = "BETA CRYPTOXANTHIN")]
-    BETA_CRYPTOXANTHIN_None = 835,
+    BETA_CRYPTOXANTHIN_Micrograms = 835,
 
     /// <summary>
     /// LYCOPENE
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 337, "LYCPN")]
+    [HCNutrientsMetadata(Measure.Micrograms, 337, "LYCPN")]
     [Display(Name = "LYCOPENE")]
-    LYCOPENE_None = 836,
+    LYCOPENE_Micrograms = 836,
 
     /// <summary>
     /// LUTEIN AND ZEAXANTHIN
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 338, "LUT+ZEA")]
+    [HCNutrientsMetadata(Measure.Micrograms, 338, "LUT+ZEA")]
     [Display(Name = "LUTEIN AND ZEAXANTHIN")]
-    LUTEIN_AND_ZEAXANTHIN_None = 837,
+    LUTEIN_AND_ZEAXANTHIN_Micrograms = 837,
 
     /// <summary>
     /// BETA-TOCOPHEROL
@@ -381,23 +381,23 @@ public enum CanadaNutrients
     /// <summary>
     /// BIOTIN
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 416, "BIOT")]
+    [HCNutrientsMetadata(Measure.Micrograms, 416, "BIOT")]
     [Display(Name = "BIOTIN")]
-    BIOTIN_None = 416,
+    BIOTIN_Micrograms = 416,
 
     /// <summary>
     /// TOTAL FOLACIN
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 417, "FOLA")]
+    [HCNutrientsMetadata(Measure.Micrograms, 417, "FOLA")]
     [Display(Name = "TOTAL FOLACIN")]
-    TOTAL_FOLACIN_None = 417,
+    TOTAL_FOLACIN_Micrograms = 417,
 
     /// <summary>
     /// VITAMIN B-12
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 418, "B12")]
+    [HCNutrientsMetadata(Measure.Micrograms, 418, "B12")]
     [Display(Name = "VITAMIN B-12")]
-    VITAMIN_B_12_None = 418,
+    VITAMIN_B_12_Micrograms = 418,
 
     /// <summary>
     /// CHOLINE, TOTAL
@@ -409,30 +409,30 @@ public enum CanadaNutrients
     /// <summary>
     /// VITAMIN K
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 430, "VITK")]
+    [HCNutrientsMetadata(Measure.Micrograms, 430, "VITK")]
     [Display(Name = "VITAMIN K")]
-    VITAMIN_K_None = 430,
+    VITAMIN_K_Micrograms = 430,
 
     /// <summary>
     /// FOLIC ACID
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 431, "FOAC")]
+    [HCNutrientsMetadata(Measure.Micrograms, 431, "FOAC")]
     [Display(Name = "FOLIC ACID")]
-    FOLIC_ACID_None = 431,
+    FOLIC_ACID_Micrograms = 431,
 
     /// <summary>
     /// NATURALLY OCCURRING FOLATE
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 432, "FOLN")]
+    [HCNutrientsMetadata(Measure.Micrograms, 432, "FOLN")]
     [Display(Name = "NATURALLY OCCURRING FOLATE")]
-    NATURALLY_OCCURRING_FOLATE_None = 806,
+    NATURALLY_OCCURRING_FOLATE_Micrograms = 806,
 
     /// <summary>
     /// DIETARY FOLATE EQUIVALENTS
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 435, "DFE")]
+    [HCNutrientsMetadata(Measure.Micrograms, 435, "DFE")]
     [Display(Name = "DIETARY FOLATE EQUIVALENTS")]
-    DIETARY_FOLATE_EQUIVALENTS_None = 815,
+    DIETARY_FOLATE_EQUIVALENTS_Micrograms = 815,
 
     /// <summary>
     /// BETAINE
@@ -591,9 +591,9 @@ public enum CanadaNutrients
     /// <summary>
     /// VITAMIN B12, ADDED
     /// </summary>
-    [HCNutrientsMetadata(Measure.None, 578, "B12-A")]
+    [HCNutrientsMetadata(Measure.Micrograms, 578, "B12-A")]
     [Display(Name = "VITAMIN B12, ADDED")]
-    VITAMIN_B12_ADDED_None = 874,
+    VITAMIN_B12_ADDED_Micrograms = 874,
 
     /// <summary>
     /// CHOLESTEROL

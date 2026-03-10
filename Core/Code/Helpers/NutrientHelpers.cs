@@ -2,6 +2,38 @@
 
 namespace Core.Code.Helpers;
 
+/// <summary>
+/// These are not tracked:
+/// 
+/// Nutrients.Fiber_soluble,
+/// Nutrients.Fiber_insoluble,
+/// Nutrients.Oligosaccharides,
+/// Nutrients.Oligosaccharides,
+/// Nutrients.Carbohydrate_by_summation,
+/// Nutrients.Carbohydrate_by_difference,
+/// Nutrients.Carbohydrates,
+/// Nutrients.PUFA_20_3_n_6,
+/// Nutrients.PUFA_20_4_n_6,
+/// Nutrients.PUFA_20_3_n_3,
+/// Nutrients.PUFA_20_4_n_3,
+/// Nutrients.Sulfur_S_Milligrams,
+/// Nutrients.Fluoride_F,
+/// Nutrients.Lithium_Li,
+/// Nutrients.Vanadium_V,
+/// Nutrients.Chromium_Cr,
+/// Nutrients.Chlorine_Cl_Milligrams,
+/// Nutrients.Flavonoids_total_Milligrams,
+/// Nutrients.Polyphenols_total_Milligrams,
+/// Nutrients.Carotene_MCG_RE,
+/// Nutrients.Vitamin_A,
+/// Nutrients.Biotin, // B7
+/// Nutrients.Vitamin_D_D2__D3,
+/// Nutrients.Vitamin_E,
+/// Nutrients.Vitamin_E_MG_ATE,
+/// 
+/// These do not have dietary intake references:
+/// Nutrients.Lycopene,
+/// </summary>
 public static class NutrientHelpers
 {
     public static readonly Nutrients[] All =
@@ -25,19 +57,6 @@ public static class NutrientHelpers
         Nutrients.Omega_3_EPA_DHA,
         Nutrients.Omega_3_ALA,
         Nutrients.Omega_6,
-
-        // These are not tracked:
-        //Nutrients.Fiber_soluble,
-        //Nutrients.Fiber_insoluble,
-        //Nutrients.Oligosaccharides,
-        //Nutrients.Oligosaccharides,
-        //Nutrients.Carbohydrate_by_summation,
-        //Nutrients.Carbohydrate_by_difference,
-        //Nutrients.Carbohydrates,
-        //Nutrients.PUFA_20_3_n_6,
-        //Nutrients.PUFA_20_4_n_6,
-        //Nutrients.PUFA_20_3_n_3,
-        //Nutrients.PUFA_20_4_n_3,
     ];
 
     private static Nutrients[] AminoAcids() =>
@@ -70,17 +89,6 @@ public static class NutrientHelpers
         Nutrients.Vitamin_C_total_ascorbic_acid,
         Nutrients.Vitamin_E_alpha_tocopherol,
         Nutrients.Vitamin_K_phylloquinone,
-
-        // These do not have dietary intake references:
-        //Nutrients.Lycopene,
-
-        // These are not tracked:
-        //Nutrients.Carotene_MCG_RE,
-        //Nutrients.Vitamin_A,
-        //Nutrients.Biotin, // B7
-        //Nutrients.Vitamin_D_D2__D3,
-        //Nutrients.Vitamin_E,
-        //Nutrients.Vitamin_E_MG_ATE,
     ];
 
     private static Nutrients[] Minerals() =>
@@ -98,14 +106,6 @@ public static class NutrientHelpers
         Nutrients.Iodine_I,
         Nutrients.Molybdenum_Mo,
         Nutrients.Boron_B,
-
-        // These are not tracked:
-        //Nutrients.Sulfur_S_Milligrams,
-        //Nutrients.Fluoride_F,
-        //Nutrients.Lithium_Li,
-        //Nutrients.Vanadium_V,
-        //Nutrients.Chromium_Cr,
-        //Nutrients.Chlorine_Cl_Milligrams,
     ];
 
     private static Nutrients[] Extra() =>
@@ -114,14 +114,9 @@ public static class NutrientHelpers
         // See food_calorie_conversion_factor.csv for true values.
         //Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
         Nutrients.Energy_Atwater_General_Factors_KCalorie,
-
-        Nutrients.Betaine,
-        Nutrients.Choline_total,
         Nutrients.Lutein_Zeaxanthin,
-
-        // These are not tracked:
-        //Nutrients.Flavonoids_total_Milligrams,
-        //Nutrients.Polyphenols_total_Milligrams,
+        Nutrients.Choline_total,
+        Nutrients.Betaine,
     ];
 
     public static readonly IReadOnlyDictionary<USDANutrients, Nutrients> USDAToNutrients =
@@ -229,19 +224,19 @@ public static class NutrientHelpers
         { Nutrients.Glycine, [CanadaNutrients.GLYCINE_Grams] },
 
         // Vitamins
-        { Nutrients.Vitamin_A_RAE, [CanadaNutrients.RETINOL_ACTIVITY_EQUIVALENTS_None] },
-        { Nutrients.Carotene_alpha, [CanadaNutrients.ALPHA_CAROTENE_None] },
-        { Nutrients.Carotene_beta, [CanadaNutrients.BETA_CAROTENE_None] },
+        { Nutrients.Vitamin_A_RAE, [CanadaNutrients.RETINOL_ACTIVITY_EQUIVALENTS_Micrograms] },
+        { Nutrients.Carotene_alpha, [CanadaNutrients.ALPHA_CAROTENE_Micrograms] },
+        { Nutrients.Carotene_beta, [CanadaNutrients.BETA_CAROTENE_Micrograms] },
         { Nutrients.Thiamin, [CanadaNutrients.THIAMIN_Milligrams] },
         { Nutrients.Riboflavin, [CanadaNutrients.RIBOFLAVIN_Milligrams] },
         { Nutrients.Niacin, [CanadaNutrients.TOTAL_NIACIN_EQUIVALENT_None] },
         { Nutrients.Pantothenic_acid, [CanadaNutrients.PANTOTHENIC_ACID_Milligrams] },
         { Nutrients.Vitamin_B_6, [CanadaNutrients.VITAMIN_B_6_Milligrams] },
-        { Nutrients.Folate_total, [CanadaNutrients.DIETARY_FOLATE_EQUIVALENTS_None] },
-        { Nutrients.Vitamin_B_12, [CanadaNutrients.VITAMIN_B_12_None] },
+        { Nutrients.Folate_total, [CanadaNutrients.DIETARY_FOLATE_EQUIVALENTS_Micrograms] },
+        { Nutrients.Vitamin_B_12, [CanadaNutrients.VITAMIN_B_12_Micrograms] },
         { Nutrients.Vitamin_C_total_ascorbic_acid, [CanadaNutrients.VITAMIN_C_Milligrams] },
-        { Nutrients.Vitamin_K_phylloquinone, [CanadaNutrients.VITAMIN_K_None] },
-        { Nutrients.Biotin, [CanadaNutrients.BIOTIN_None] },
+        { Nutrients.Vitamin_K_phylloquinone, [CanadaNutrients.VITAMIN_K_Micrograms] },
+        { Nutrients.Biotin, [CanadaNutrients.BIOTIN_Micrograms] },
 
         // Minerals
         { Nutrients.Sodium_Na, [CanadaNutrients.SODIUM_Milligrams] },
@@ -253,12 +248,12 @@ public static class NutrientHelpers
         { Nutrients.Zinc_Zn, [CanadaNutrients.ZINC_Milligrams] },
         { Nutrients.Copper_Cu, [CanadaNutrients.COPPER_Milligrams] },
         { Nutrients.Manganese_Mn, [CanadaNutrients.MANGANESE_Milligrams] },
-        { Nutrients.Selenium_Se, [CanadaNutrients.SELENIUM_None] },
+        { Nutrients.Selenium_Se, [CanadaNutrients.SELENIUM_Micrograms] },
 
         // Extra
         { Nutrients.Energy_Atwater_General_Factors_KCalorie, [CanadaNutrients.ENERGY_KILOCALORIES_KCalorie] },
         { Nutrients.Betaine, [CanadaNutrients.BETAINE_Milligrams] },
         { Nutrients.Choline_total, [CanadaNutrients.CHOLINE_TOTAL_Milligrams] },
-        { Nutrients.Lutein_Zeaxanthin, [CanadaNutrients.LUTEIN_AND_ZEAXANTHIN_None] },
+        { Nutrients.Lutein_Zeaxanthin, [CanadaNutrients.LUTEIN_AND_ZEAXANTHIN_Micrograms] },
     };
 }

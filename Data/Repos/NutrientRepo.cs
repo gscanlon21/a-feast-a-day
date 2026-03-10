@@ -41,6 +41,12 @@ public class NutrientRepo
         await _context.SaveChangesAsync();
     }
 
+    public async Task UpdateNutrientCa(HealthCanadaNutrient nutrient)
+    {
+        _context.NutrientsCanada.Update(nutrient);
+        await _context.SaveChangesAsync();
+    }
+
     public async Task InsertNewNutrients(List<USDANutrient> newNutrients)
     {
         foreach (var nutrient in newNutrients)

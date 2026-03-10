@@ -28,20 +28,21 @@ public class NutrientController : ViewController
     }
 
     /// <summary>
-    /// Shows a form to the user where they can update their Pounds lifted.
+    /// Allows admins to manage a nutrient and it's dietary intake reference values.
+    /// Using nutrient.Id b/c nutrient.Key can be updated which breaks GoBackOnSave.
     /// </summary>
-    [HttpGet, Route("{key}")]
-    public async Task<IActionResult> ManageNutrient(string email, string token, string key, bool? wasUpdated = null)
+    [HttpGet, Route("{id}")]
+    public async Task<IActionResult> ManageNutrient(string email, string token, int id, bool? wasUpdated = null)
     {
-        var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
-        if (user == null)
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: false);
+        if (user == null || !user.Features.HasFlag(Features.Admin))
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
         var existingNutrient = await _context.Nutrients.AsNoTracking()
-            .Where(n => EF.Functions.ILike(n.Key, key))
             .Include(n => n.DietaryIntakes)
+            .Where(n => n.Id == id)
             .FirstOrDefaultAsync();
 
         if (existingNutrient == null)
@@ -79,7 +80,7 @@ public class NutrientController : ViewController
     [HttpPost, Route("[action]")]
     public async Task<IActionResult> UpsertNutrient(string email, string token, Nutrient nutrient)
     {
-        var user = await _userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: false);
         if (user == null || !user.Features.HasFlag(Features.Admin))
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
@@ -109,19 +110,19 @@ public class NutrientController : ViewController
        
         await _context.SaveChangesAsync();
         TempData[TempData_User.SuccessMessage] = "Your nutrient has been updated!";
-        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Key, wasUpdated = true });
+        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Id, wasUpdated = true });
     }
 
     [HttpPost, Route("[action]")]
     public async Task<IActionResult> UpsertDietaryIntake(string email, string token, Nutrient nutrient, List<DietaryIntakeViewModel> dietaryIntakes)
     {
-        var user = await _userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: false);
         if (user == null || !user.Features.HasFlag(Features.Admin))
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        //await _context.DietaryIntakes.Where(r => r.Key == nutrient).ExecuteDeleteAsync();
+        //await _context.DietaryIntakes.Where(r => r.Nutrient!.Id == nutrient.Id).ExecuteDeleteAsync();
         foreach (var dietaryIntake in dietaryIntakes.Where(di => di.Min.HasValue || di.Max.HasValue))
         {
             var existingEntity = await _context.DietaryIntakes.FirstOrDefaultAsync(r => r.Id == dietaryIntake.Id);
@@ -157,7 +158,7 @@ public class NutrientController : ViewController
         }
 
         await _context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your nutrient has been updated!";
-        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Key, wasUpdated = true });
+        TempData[TempData_User.SuccessMessage] = "Your dietary intakes have been updated!";
+        return RedirectToAction(nameof(ManageNutrient), new { email, token, nutrient.Id, wasUpdated = true });
     }
 }
