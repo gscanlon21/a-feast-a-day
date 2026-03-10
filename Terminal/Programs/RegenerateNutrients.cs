@@ -33,7 +33,7 @@ internal class RegenerateNutrients
         {
             builder.AppendLine();
             builder.AppendLine($"    /// <summary>");
-            builder.AppendLine($"    /// {dailyAllowanceGroup.Key.Key}");
+            builder.AppendLine($"    /// {dailyAllowanceGroup.Key.Name}");
             builder.AppendLine($"    /// </summary>");
 
             foreach (var dailyAllowance in dailyAllowanceGroup.Value)
@@ -42,7 +42,7 @@ internal class RegenerateNutrients
             }
 
             var enumName = new string(dailyAllowanceGroup.Key.Key.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
-            builder.AppendLine($"    [Display(Name = \"{dailyAllowanceGroup.Key.Key}\", Order = {dailyAllowanceGroup.Key.Order})]");
+            builder.AppendLine($"    [Display(Name = \"{dailyAllowanceGroup.Key.Name}\", Order = {dailyAllowanceGroup.Key.Order})]");
             builder.AppendLine($"    {enumName} = {++i},");
         }
 

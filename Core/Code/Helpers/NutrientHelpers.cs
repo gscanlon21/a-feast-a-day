@@ -11,105 +11,100 @@ public static class NutrientHelpers
 
     private static Nutrients[] Macronutrients() =>
     [
-        Nutrients.Protein_Grams,
-        Nutrients.Starch_Grams,
-        Nutrients.Resistant_starch_Grams,
-        Nutrients.Fiber_total_dietary_Grams,
-        Nutrients.Total_Sugars_Grams,
-        Nutrients.Sugars_Total_Grams,
-        Nutrients.Total_lipid_fat_Grams,
-        Nutrients.Fatty_acids_total_trans_Grams,
-        Nutrients.Fatty_acids_total_saturated_Grams,
-        Nutrients.Fatty_acids_total_monounsaturated_Grams,
-        Nutrients.Fatty_acids_total_polyunsaturated_Grams,
-        // Omega-3
-        Nutrients.PUFA_18_3_n_3_c_c_c_ALA_Grams,
-        // Omega-3
-        Nutrients.PUFA_20_5_n_3_EPA_Grams,
-        // Omega-3
-        Nutrients.PUFA_22_6_n_3_DHA_Grams,
-        // Omega-6
-        Nutrients.PUFA_18_2_n_6_c_c_Grams,
-    
+        Nutrients.Protein,
+        Nutrients.Starch,
+        Nutrients.Resistant_starch,
+        Nutrients.Fiber_total_dietary,
+        Nutrients.Total_Sugars,
+        Nutrients.Sugars_Total,
+        Nutrients.Total_lipid_fat,
+        Nutrients.Fatty_acids_total_trans,
+        Nutrients.Fatty_acids_total_saturated,
+        Nutrients.Fatty_acids_total_monounsaturated,
+        Nutrients.Fatty_acids_total_polyunsaturated,
+        Nutrients.Omega_3_EPA_DHA,
+        Nutrients.Omega_3_ALA,
+        Nutrients.Omega_6,
+
         // These are not tracked:
-        //Nutrients.Fiber_soluble_Grams,
-        //Nutrients.Fiber_insoluble_Grams,
-        //Nutrients.Oligosaccharides_Grams,
-        //Nutrients.Oligosaccharides_Milligrams,
-        //Nutrients.Carbohydrate_by_summation_Grams,
-        //Nutrients.Carbohydrate_by_difference_Grams,
-        //Nutrients.Carbohydrates_Grams,
-        //Nutrients.PUFA_20_3_n_6_Grams,
-        //Nutrients.PUFA_20_4_n_6_Grams,
-        //Nutrients.PUFA_20_3_n_3_Grams,
-        //Nutrients.PUFA_20_4_n_3_Grams,
+        //Nutrients.Fiber_soluble,
+        //Nutrients.Fiber_insoluble,
+        //Nutrients.Oligosaccharides,
+        //Nutrients.Oligosaccharides,
+        //Nutrients.Carbohydrate_by_summation,
+        //Nutrients.Carbohydrate_by_difference,
+        //Nutrients.Carbohydrates,
+        //Nutrients.PUFA_20_3_n_6,
+        //Nutrients.PUFA_20_4_n_6,
+        //Nutrients.PUFA_20_3_n_3,
+        //Nutrients.PUFA_20_4_n_3,
     ];
 
     private static Nutrients[] AminoAcids() =>
     [
-        Nutrients.Histidine_Grams,
-        Nutrients.Isoleucine_Grams,
-        Nutrients.Leucine_Grams,
-        Nutrients.Lysine_Grams,
-        Nutrients.Phenylalanine_Grams,
-        Nutrients.Methionine_Grams,
-        Nutrients.Threonine_Grams,
-        Nutrients.Tryptophan_Grams,
-        Nutrients.Valine_Grams,
-        Nutrients.Arginine_Grams,
-        Nutrients.Glycine_Grams,
+        Nutrients.Histidine,
+        Nutrients.Isoleucine,
+        Nutrients.Leucine,
+        Nutrients.Lysine,
+        Nutrients.Phenylalanine,
+        Nutrients.Methionine,
+        Nutrients.Threonine,
+        Nutrients.Tryptophan,
+        Nutrients.Valine,
+        Nutrients.Arginine,
+        Nutrients.Glycine,
     ];
 
     private static Nutrients[] Vitamins() =>
     [
-        Nutrients.Vitamin_A_RAE_Micrograms,
-        Nutrients.Carotene_alpha_Micrograms,
-        Nutrients.Carotene_beta_Micrograms,
-        Nutrients.Thiamin_Milligrams, // B1
-        Nutrients.Riboflavin_Milligrams, // B2
-        Nutrients.Niacin_Milligrams, // B3
-        Nutrients.Pantothenic_acid_Milligrams, // B5
-        Nutrients.Vitamin_B_6_Milligrams,
-        Nutrients.Folate_total_Micrograms, // B9
-        Nutrients.Vitamin_B_12_Micrograms,
-        Nutrients.Vitamin_C_total_ascorbic_acid_Milligrams,
-        Nutrients.Vitamin_E_alpha_tocopherol_Milligrams,
-        Nutrients.Vitamin_K_phylloquinone_Micrograms,
+        Nutrients.Vitamin_A_RAE,
+        Nutrients.Carotene_alpha,
+        Nutrients.Carotene_beta,
+        Nutrients.Thiamin, // B1
+        Nutrients.Riboflavin, // B2
+        Nutrients.Niacin, // B3
+        Nutrients.Pantothenic_acid, // B5
+        Nutrients.Vitamin_B_6,
+        Nutrients.Folate_total, // B9
+        Nutrients.Vitamin_B_12,
+        Nutrients.Vitamin_C_total_ascorbic_acid,
+        Nutrients.Vitamin_E_alpha_tocopherol,
+        Nutrients.Vitamin_K_phylloquinone,
 
         // These do not have dietary intake references:
-        //Nutrients.Lycopene_Micrograms,
+        //Nutrients.Lycopene,
 
         // These are not tracked:
         //Nutrients.Carotene_MCG_RE,
-        //Nutrients.Vitamin_A_Micrograms,
-        //Nutrients.Biotin_Micrograms, // B7
-        //Nutrients.Vitamin_D_D2__D3_Micrograms,
-        //Nutrients.Vitamin_E_Milligrams,
+        //Nutrients.Vitamin_A,
+        //Nutrients.Biotin, // B7
+        //Nutrients.Vitamin_D_D2__D3,
+        //Nutrients.Vitamin_E,
         //Nutrients.Vitamin_E_MG_ATE,
     ];
 
     private static Nutrients[] Minerals() =>
     [
-        Nutrients.Sodium_Na_Milligrams,
-        Nutrients.Calcium_Ca_Milligrams,
-        Nutrients.Potassium_K_Milligrams,
-        Nutrients.Magnesium_Mg_Milligrams,
-        Nutrients.Phosphorus_P_Milligrams,
-        Nutrients.Iron_Fe_Milligrams,
-        Nutrients.Zinc_Zn_Milligrams,
-        Nutrients.Copper_Cu_Milligrams,
-        Nutrients.Manganese_Mn_Milligrams,
-        Nutrients.Selenium_Se_Micrograms,
-        Nutrients.Iodine_I_Micrograms,
-        Nutrients.Molybdenum_Mo_Micrograms,
-        Nutrients.Boron_B_Micrograms,
+        Nutrients.Sodium_Na,
+        Nutrients.Calcium_Ca,
+        Nutrients.Potassium_K,
+        Nutrients.Magnesium_Mg,
+        Nutrients.Phosphorus_P,
+        Nutrients.Iron_Fe,
+        Nutrients.Zinc_Zn,
+        Nutrients.Copper_Cu,
+        Nutrients.Manganese_Mn,
+        Nutrients.Selenium_Se,
+        Nutrients.Iodine_I,
+        Nutrients.Molybdenum_Mo,
+        Nutrients.Boron_B,
 
         // These are not tracked:
         //Nutrients.Sulfur_S_Milligrams,
-        //Nutrients.Fluoride_F_Micrograms,
-        //Nutrients.Lithium_Li_Micrograms,
-        //Nutrients.Vanadium_V_Micrograms,
-        //Nutrients.Chromium_Cr_Micrograms,
+        //Nutrients.Fluoride_F,
+        //Nutrients.Lithium_Li,
+        //Nutrients.Vanadium_V,
+        //Nutrients.Chromium_Cr,
         //Nutrients.Chlorine_Cl_Milligrams,
     ];
 
@@ -120,159 +115,150 @@ public static class NutrientHelpers
         //Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
         Nutrients.Energy_Atwater_General_Factors_KCalorie,
 
-        Nutrients.Betaine_Milligrams,
-        Nutrients.Choline_total_Milligrams,
-        Nutrients.Lutein__zeaxanthin_Micrograms,
+        Nutrients.Betaine,
+        Nutrients.Choline_total,
+        Nutrients.Lutein_Zeaxanthin,
 
         // These are not tracked:
         //Nutrients.Flavonoids_total_Milligrams,
         //Nutrients.Polyphenols_total_Milligrams,
     ];
-}
 
+    public static readonly IReadOnlyDictionary<USDANutrients, Nutrients> USDAToNutrients =
+        NutrientsToUSDA.SelectMany(x => x.Value.Select(v => (x.Key, Value: v))).ToDictionary(x => x.Value, x => x.Key);
 
-public static class NutrientMaps
-{
-    public static readonly IReadOnlyDictionary<Nutrients, USDANutrients> NutrientsToUSDA =
-        USDAToNutrients.ToDictionary(x => x.Value, x => x.Key);
+    public static readonly IReadOnlyDictionary<CanadaNutrients, Nutrients> CanadaToNutrients =
+        NutrientsToCanada.SelectMany(x => x.Value.Select(v => (x.Key, Value: v))).ToDictionary(x => x.Value, x => x.Key);
 
-    public static readonly IReadOnlyDictionary<Nutrients, CanadaNutrients> NutrientsToCanada =
-        CanadaToNutrients.ToDictionary(x => x.Value, x => x.Key);
-
-    public static IReadOnlyDictionary<USDANutrients, Nutrients> USDAToNutrients =>
-        new Dictionary<USDANutrients, Nutrients>
+    public static IReadOnlyDictionary<Nutrients, List<USDANutrients>> NutrientsToUSDA => new Dictionary<Nutrients, List<USDANutrients>>
     {
         // Macronutrients
-        { USDANutrients.Protein_Grams, Nutrients.Protein_Grams },
-        { USDANutrients.Starch_Grams, Nutrients.Starch_Grams },
-        { USDANutrients.Resistant_starch_Grams, Nutrients.Resistant_starch_Grams },
-        { USDANutrients.Fiber_total_dietary_Grams, Nutrients.Fiber_total_dietary_Grams },
-        { USDANutrients.Total_Sugars_Grams, Nutrients.Total_Sugars_Grams },
-        { USDANutrients.Sugars_Total_Grams, Nutrients.Sugars_Total_Grams },
-        { USDANutrients.Total_lipid_fat_Grams, Nutrients.Total_lipid_fat_Grams },
-        { USDANutrients.Fatty_acids_total_trans_Grams, Nutrients.Fatty_acids_total_trans_Grams },
-        { USDANutrients.Fatty_acids_total_saturated_Grams, Nutrients.Fatty_acids_total_saturated_Grams },
-        { USDANutrients.Fatty_acids_total_monounsaturated_Grams, Nutrients.Fatty_acids_total_monounsaturated_Grams },
-        { USDANutrients.Fatty_acids_total_polyunsaturated_Grams, Nutrients.Fatty_acids_total_polyunsaturated_Grams },
-        { USDANutrients.PUFA_18_3_n_3_c_c_c_ALA_Grams, Nutrients.PUFA_18_3_n_3_c_c_c_ALA_Grams },
-        { USDANutrients.PUFA_20_5_n_3_EPA_Grams, Nutrients.PUFA_20_5_n_3_EPA_Grams },
-        { USDANutrients.PUFA_22_6_n_3_DHA_Grams, Nutrients.PUFA_22_6_n_3_DHA_Grams },
-        { USDANutrients.PUFA_18_2_n_6_c_c_Grams, Nutrients.PUFA_18_2_n_6_c_c_Grams },
+        { Nutrients.Protein, [USDANutrients.Protein_Grams] },
+        { Nutrients.Starch, [USDANutrients.Starch_Grams] },
+        { Nutrients.Resistant_starch, [USDANutrients.Resistant_starch_Grams] },
+        { Nutrients.Fiber_total_dietary, [USDANutrients.Fiber_total_dietary_Grams] },
+        { Nutrients.Total_Sugars, [USDANutrients.Total_Sugars_Grams] },
+        { Nutrients.Sugars_Total, [USDANutrients.Sugars_Total_Grams] },
+        { Nutrients.Total_lipid_fat, [USDANutrients.Total_lipid_fat_Grams] },
+        { Nutrients.Fatty_acids_total_trans, [USDANutrients.Fatty_acids_total_trans_Grams] },
+        { Nutrients.Fatty_acids_total_saturated, [USDANutrients.Fatty_acids_total_saturated_Grams] },
+        { Nutrients.Fatty_acids_total_monounsaturated, [USDANutrients.Fatty_acids_total_monounsaturated_Grams] },
+        { Nutrients.Fatty_acids_total_polyunsaturated, [USDANutrients.Fatty_acids_total_polyunsaturated_Grams] },
+        { Nutrients.Omega_6, [USDANutrients.PUFA_20_3_n_6_Grams, USDANutrients.PUFA_20_4_n_6_Grams, USDANutrients.PUFA_20_2_n_6_c_c_Grams, USDANutrients.PUFA_18_3_n_6_c_c_c_Grams, USDANutrients.PUFA_18_2_n_6_c_c_Grams] },
+        { Nutrients.Omega_3_EPA_DHA, [USDANutrients.PUFA_22_6_n_3_DHA_Grams, USDANutrients.PUFA_20_5_n_3_EPA_Grams] },
+        { Nutrients.Omega_3_ALA, [USDANutrients.PUFA_18_3_n_3_c_c_c_ALA_Grams] },
 
         // Amino acids
-        { USDANutrients.Histidine_Grams, Nutrients.Histidine_Grams },
-        { USDANutrients.Isoleucine_Grams, Nutrients.Isoleucine_Grams },
-        { USDANutrients.Leucine_Grams, Nutrients.Leucine_Grams },
-        { USDANutrients.Lysine_Grams, Nutrients.Lysine_Grams },
-        { USDANutrients.Phenylalanine_Grams, Nutrients.Phenylalanine_Grams },
-        { USDANutrients.Methionine_Grams, Nutrients.Methionine_Grams },
-        { USDANutrients.Threonine_Grams, Nutrients.Threonine_Grams },
-        { USDANutrients.Tryptophan_Grams, Nutrients.Tryptophan_Grams },
-        { USDANutrients.Valine_Grams, Nutrients.Valine_Grams },
-        { USDANutrients.Arginine_Grams, Nutrients.Arginine_Grams },
-        { USDANutrients.Glycine_Grams, Nutrients.Glycine_Grams },
+        { Nutrients.Histidine, [USDANutrients.Histidine_Grams] },
+        { Nutrients.Isoleucine, [USDANutrients.Isoleucine_Grams] },
+        { Nutrients.Leucine, [USDANutrients.Leucine_Grams] },
+        { Nutrients.Lysine, [USDANutrients.Lysine_Grams] },
+        { Nutrients.Phenylalanine, [USDANutrients.Phenylalanine_Grams] },
+        { Nutrients.Methionine, [USDANutrients.Methionine_Grams] },
+        { Nutrients.Threonine, [USDANutrients.Threonine_Grams] },
+        { Nutrients.Tryptophan, [USDANutrients.Tryptophan_Grams] },
+        { Nutrients.Valine, [USDANutrients.Valine_Grams] },
+        { Nutrients.Arginine, [USDANutrients.Arginine_Grams] },
+        { Nutrients.Glycine, [USDANutrients.Glycine_Grams] },
 
         // Vitamins
-        { USDANutrients.Vitamin_A_RAE_Micrograms, Nutrients.Vitamin_A_RAE_Micrograms },
-        { USDANutrients.Carotene_alpha_Micrograms, Nutrients.Carotene_alpha_Micrograms },
-        { USDANutrients.Carotene_beta_Micrograms, Nutrients.Carotene_beta_Micrograms },
-        { USDANutrients.Thiamin_Milligrams, Nutrients.Thiamin_Milligrams },
-        { USDANutrients.Riboflavin_Milligrams, Nutrients.Riboflavin_Milligrams },
-        { USDANutrients.Niacin_Milligrams, Nutrients.Niacin_Milligrams },
-        { USDANutrients.Pantothenic_acid_Milligrams, Nutrients.Pantothenic_acid_Milligrams },
-        { USDANutrients.Vitamin_B_6_Milligrams, Nutrients.Vitamin_B_6_Milligrams },
-        { USDANutrients.Folate_total_Micrograms, Nutrients.Folate_total_Micrograms },
-        { USDANutrients.Vitamin_B_12_Micrograms, Nutrients.Vitamin_B_12_Micrograms },
-        { USDANutrients.Vitamin_C_total_ascorbic_acid_Milligrams, Nutrients.Vitamin_C_total_ascorbic_acid_Milligrams },
-        { USDANutrients.Vitamin_E_alpha_tocopherol_Milligrams, Nutrients.Vitamin_E_alpha_tocopherol_Milligrams },
-        { USDANutrients.Vitamin_K_phylloquinone_Micrograms, Nutrients.Vitamin_K_phylloquinone_Micrograms },
-        { USDANutrients.Biotin_Micrograms, Nutrients.Biotin_Micrograms },
+        { Nutrients.Vitamin_A_RAE, [USDANutrients.Vitamin_A_RAE_Micrograms] },
+        { Nutrients.Carotene_alpha, [USDANutrients.Carotene_alpha_Micrograms] },
+        { Nutrients.Carotene_beta, [USDANutrients.Carotene_beta_Micrograms] },
+        { Nutrients.Thiamin, [USDANutrients.Thiamin_Milligrams] },
+        { Nutrients.Riboflavin, [USDANutrients.Riboflavin_Milligrams] },
+        { Nutrients.Niacin, [USDANutrients.Niacin_Milligrams] },
+        { Nutrients.Pantothenic_acid, [USDANutrients.Pantothenic_acid_Milligrams] },
+        { Nutrients.Vitamin_B_6, [USDANutrients.Vitamin_B_6_Milligrams] },
+        { Nutrients.Folate_total, [USDANutrients.Folate_total_Micrograms] },
+        { Nutrients.Vitamin_B_12, [USDANutrients.Vitamin_B_12_Micrograms] },
+        { Nutrients.Vitamin_C_total_ascorbic_acid, [USDANutrients.Vitamin_C_total_ascorbic_acid_Milligrams] },
+        { Nutrients.Vitamin_E_alpha_tocopherol, [USDANutrients.Vitamin_E_alpha_tocopherol_Milligrams] },
+        { Nutrients.Vitamin_K_phylloquinone, [USDANutrients.Vitamin_K_phylloquinone_Micrograms] },
+        { Nutrients.Biotin, [USDANutrients.Biotin_Micrograms] },
 
         // Minerals
-        { USDANutrients.Sodium_Na_Milligrams, Nutrients.Sodium_Na_Milligrams },
-        { USDANutrients.Calcium_Ca_Milligrams, Nutrients.Calcium_Ca_Milligrams },
-        { USDANutrients.Potassium_K_Milligrams, Nutrients.Potassium_K_Milligrams },
-        { USDANutrients.Magnesium_Mg_Milligrams, Nutrients.Magnesium_Mg_Milligrams },
-        { USDANutrients.Phosphorus_P_Milligrams, Nutrients.Phosphorus_P_Milligrams },
-        { USDANutrients.Iron_Fe_Milligrams, Nutrients.Iron_Fe_Milligrams },
-        { USDANutrients.Zinc_Zn_Milligrams, Nutrients.Zinc_Zn_Milligrams },
-        { USDANutrients.Copper_Cu_Milligrams, Nutrients.Copper_Cu_Milligrams },
-        { USDANutrients.Manganese_Mn_Milligrams, Nutrients.Manganese_Mn_Milligrams },
-        { USDANutrients.Selenium_Se_Micrograms, Nutrients.Selenium_Se_Micrograms },
-        { USDANutrients.Iodine_I_Micrograms, Nutrients.Iodine_I_Micrograms },
-        { USDANutrients.Molybdenum_Mo_Micrograms, Nutrients.Molybdenum_Mo_Micrograms },
-        { USDANutrients.Boron_B_Micrograms, Nutrients.Boron_B_Micrograms },
+        { Nutrients.Sodium_Na, [USDANutrients.Sodium_Na_Milligrams] },
+        { Nutrients.Calcium_Ca, [USDANutrients.Calcium_Ca_Milligrams] },
+        { Nutrients.Potassium_K, [USDANutrients.Potassium_K_Milligrams] },
+        { Nutrients.Magnesium_Mg, [USDANutrients.Magnesium_Mg_Milligrams] },
+        { Nutrients.Phosphorus_P, [USDANutrients.Phosphorus_P_Milligrams] },
+        { Nutrients.Iron_Fe, [USDANutrients.Iron_Fe_Milligrams] },
+        { Nutrients.Zinc_Zn, [USDANutrients.Zinc_Zn_Milligrams] },
+        { Nutrients.Copper_Cu, [USDANutrients.Copper_Cu_Milligrams] },
+        { Nutrients.Manganese_Mn, [USDANutrients.Manganese_Mn_Milligrams] },
+        { Nutrients.Selenium_Se, [USDANutrients.Selenium_Se_Micrograms] },
+        { Nutrients.Iodine_I, [USDANutrients.Iodine_I_Micrograms] },
+        { Nutrients.Molybdenum_Mo, [USDANutrients.Molybdenum_Mo_Micrograms] },
+        { Nutrients.Boron_B, [USDANutrients.Boron_B_Micrograms] },
 
         // Extra
-        { USDANutrients.Energy_Atwater_General_Factors_KCalorie, Nutrients.Energy_Atwater_General_Factors_KCalorie },
-        { USDANutrients.Betaine_Milligrams, Nutrients.Betaine_Milligrams },
-        { USDANutrients.Choline_total_Milligrams, Nutrients.Choline_total_Milligrams },
-        { USDANutrients.Lutein__zeaxanthin_Micrograms, Nutrients.Lutein__zeaxanthin_Micrograms },
+        { Nutrients.Energy_Atwater_General_Factors_KCalorie, [USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
+        { Nutrients.Betaine, [USDANutrients.Betaine_Milligrams] },
+        { Nutrients.Choline_total, [USDANutrients.Choline_total_Milligrams] },
+        { Nutrients.Lutein_Zeaxanthin, [USDANutrients.Lutein__zeaxanthin_Micrograms] },
     };
 
-
-    public static IReadOnlyDictionary<CanadaNutrients, Nutrients> CanadaToNutrients =>
-        new Dictionary<CanadaNutrients, Nutrients>
+    public static IReadOnlyDictionary<Nutrients, List<CanadaNutrients>> NutrientsToCanada => new Dictionary<Nutrients, List<CanadaNutrients>>
     {
         // Macronutrients
-        { CanadaNutrients.PROTEIN_Grams, Nutrients.Protein_Grams },
-        { CanadaNutrients.STARCH_Grams, Nutrients.Starch_Grams },
-        { CanadaNutrients.FIBRE_TOTAL_DIETARY_Grams, Nutrients.Fiber_total_dietary_Grams },
-        { CanadaNutrients.SUGARS_TOTAL_Grams, Nutrients.Sugars_Total_Grams },
-        { CanadaNutrients.FAT_TOTAL_LIPIDS_Grams, Nutrients.Total_lipid_fat_Grams },
-        { CanadaNutrients.FATTY_ACIDS_TRANS_TOTAL_Grams, Nutrients.Fatty_acids_total_trans_Grams },
-        { CanadaNutrients.FATTY_ACIDS_SATURATED_TOTAL_Grams, Nutrients.Fatty_acids_total_saturated_Grams },
-        { CanadaNutrients.FATTY_ACIDS_MONOUNSATURATED_TOTAL_Grams, Nutrients.Fatty_acids_total_monounsaturated_Grams },
-        { CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_TOTAL_Grams, Nutrients.Fatty_acids_total_polyunsaturated_Grams },
-        { CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_TOTAL_OMEGA_N_3_Grams, Nutrients.PUFA_18_3_n_3_c_c_c_ALA_Grams },
-        { CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_20_5_n_3_EICOSAPENTAENOIC_EPA_Grams, Nutrients.PUFA_20_5_n_3_EPA_Grams },
-        { CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_22_6_n_3_DOCOSAHEXAENOIC_DHA_Grams, Nutrients.PUFA_22_6_n_3_DHA_Grams },
-        { CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_TOTAL_OMEGA__N_6_Grams, Nutrients.PUFA_18_2_n_6_c_c_Grams },
+        { Nutrients.Protein, [CanadaNutrients.PROTEIN_Grams] },
+        { Nutrients.Starch, [CanadaNutrients.STARCH_Grams] },
+        { Nutrients.Fiber_total_dietary, [CanadaNutrients.FIBRE_TOTAL_DIETARY_Grams] },
+        { Nutrients.Sugars_Total, [CanadaNutrients.SUGARS_TOTAL_Grams] },
+        { Nutrients.Total_lipid_fat, [CanadaNutrients.FAT_TOTAL_LIPIDS_Grams] },
+        { Nutrients.Fatty_acids_total_trans, [CanadaNutrients.FATTY_ACIDS_TRANS_TOTAL_Grams] },
+        { Nutrients.Fatty_acids_total_saturated, [CanadaNutrients.FATTY_ACIDS_SATURATED_TOTAL_Grams] },
+        { Nutrients.Fatty_acids_total_monounsaturated, [CanadaNutrients.FATTY_ACIDS_MONOUNSATURATED_TOTAL_Grams] },
+        { Nutrients.Fatty_acids_total_polyunsaturated, [CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_TOTAL_Grams] },
+        { Nutrients.Omega_3_EPA_DHA, [CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_20_5_n_3_EICOSAPENTAENOIC_EPA_Grams, CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_22_6_n_3_DOCOSAHEXAENOIC_DHA_Grams] },
+        { Nutrients.Omega_3_ALA, [CanadaNutrients.FATTY_ACIDS_MONOUNSATURATED_12_1_LAUROLEIC_Grams] },
+        { Nutrients.Omega_6, [CanadaNutrients.FATTY_ACIDS_POLYUNSATURATED_TOTAL_OMEGA__N_6_Grams] },
 
         // Amino acids
-        { CanadaNutrients.HISTIDINE_Grams, Nutrients.Histidine_Grams },
-        { CanadaNutrients.ISOLEUCINE_Grams, Nutrients.Isoleucine_Grams },
-        { CanadaNutrients.LEUCINE_Grams, Nutrients.Leucine_Grams },
-        { CanadaNutrients.LYSINE_Grams, Nutrients.Lysine_Grams },
-        { CanadaNutrients.PHENYLALANINE_Grams, Nutrients.Phenylalanine_Grams },
-        { CanadaNutrients.METHIONINE_Grams, Nutrients.Methionine_Grams },
-        { CanadaNutrients.THREONINE_Grams, Nutrients.Threonine_Grams },
-        { CanadaNutrients.TRYPTOPHAN_Grams, Nutrients.Tryptophan_Grams },
-        { CanadaNutrients.VALINE_Grams, Nutrients.Valine_Grams },
-        { CanadaNutrients.ARGININE_Grams, Nutrients.Arginine_Grams },
-        { CanadaNutrients.GLYCINE_Grams, Nutrients.Glycine_Grams },
+        { Nutrients.Histidine, [CanadaNutrients.HISTIDINE_Grams] },
+        { Nutrients.Isoleucine, [CanadaNutrients.ISOLEUCINE_Grams] },
+        { Nutrients.Leucine, [CanadaNutrients.LEUCINE_Grams] },
+        { Nutrients.Lysine, [CanadaNutrients.LYSINE_Grams] },
+        { Nutrients.Phenylalanine, [CanadaNutrients.PHENYLALANINE_Grams] },
+        { Nutrients.Methionine, [CanadaNutrients.METHIONINE_Grams] },
+        { Nutrients.Threonine, [CanadaNutrients.THREONINE_Grams] },
+        { Nutrients.Tryptophan, [CanadaNutrients.TRYPTOPHAN_Grams] },
+        { Nutrients.Valine, [CanadaNutrients.VALINE_Grams] },
+        { Nutrients.Arginine, [CanadaNutrients.ARGININE_Grams] },
+        { Nutrients.Glycine, [CanadaNutrients.GLYCINE_Grams] },
 
         // Vitamins
-        { CanadaNutrients.RETINOL_ACTIVITY_EQUIVALENTS_None, Nutrients.Vitamin_A_RAE_Micrograms },
-        { CanadaNutrients.ALPHA_CAROTENE_None, Nutrients.Carotene_alpha_Micrograms },
-        { CanadaNutrients.BETA_CAROTENE_None, Nutrients.Carotene_beta_Micrograms },
-        { CanadaNutrients.THIAMIN_Milligrams, Nutrients.Thiamin_Milligrams },
-        { CanadaNutrients.RIBOFLAVIN_Milligrams, Nutrients.Riboflavin_Milligrams },
-        { CanadaNutrients.TOTAL_NIACIN_EQUIVALENT_None, Nutrients.Niacin_Milligrams },
-        { CanadaNutrients.PANTOTHENIC_ACID_Milligrams, Nutrients.Pantothenic_acid_Milligrams },
-        { CanadaNutrients.VITAMIN_B_6_Milligrams, Nutrients.Vitamin_B_6_Milligrams },
-        { CanadaNutrients.DIETARY_FOLATE_EQUIVALENTS_None, Nutrients.Folate_total_Micrograms },
-        { CanadaNutrients.VITAMIN_B_12_None, Nutrients.Vitamin_B_12_Micrograms },
-        { CanadaNutrients.VITAMIN_C_Milligrams, Nutrients.Vitamin_C_total_ascorbic_acid_Milligrams },
-        { CanadaNutrients.VITAMIN_K_None, Nutrients.Vitamin_K_phylloquinone_Micrograms },
-        { CanadaNutrients.BIOTIN_None, Nutrients.Biotin_Micrograms },
+        { Nutrients.Vitamin_A_RAE, [CanadaNutrients.RETINOL_ACTIVITY_EQUIVALENTS_None] },
+        { Nutrients.Carotene_alpha, [CanadaNutrients.ALPHA_CAROTENE_None] },
+        { Nutrients.Carotene_beta, [CanadaNutrients.BETA_CAROTENE_None] },
+        { Nutrients.Thiamin, [CanadaNutrients.THIAMIN_Milligrams] },
+        { Nutrients.Riboflavin, [CanadaNutrients.RIBOFLAVIN_Milligrams] },
+        { Nutrients.Niacin, [CanadaNutrients.TOTAL_NIACIN_EQUIVALENT_None] },
+        { Nutrients.Pantothenic_acid, [CanadaNutrients.PANTOTHENIC_ACID_Milligrams] },
+        { Nutrients.Vitamin_B_6, [CanadaNutrients.VITAMIN_B_6_Milligrams] },
+        { Nutrients.Folate_total, [CanadaNutrients.DIETARY_FOLATE_EQUIVALENTS_None] },
+        { Nutrients.Vitamin_B_12, [CanadaNutrients.VITAMIN_B_12_None] },
+        { Nutrients.Vitamin_C_total_ascorbic_acid, [CanadaNutrients.VITAMIN_C_Milligrams] },
+        { Nutrients.Vitamin_K_phylloquinone, [CanadaNutrients.VITAMIN_K_None] },
+        { Nutrients.Biotin, [CanadaNutrients.BIOTIN_None] },
 
         // Minerals
-        { CanadaNutrients.SODIUM_Milligrams, Nutrients.Sodium_Na_Milligrams },
-        { CanadaNutrients.CALCIUM_Milligrams, Nutrients.Calcium_Ca_Milligrams },
-        { CanadaNutrients.POTASSIUM_Milligrams, Nutrients.Potassium_K_Milligrams },
-        { CanadaNutrients.MAGNESIUM_Milligrams, Nutrients.Magnesium_Mg_Milligrams },
-        { CanadaNutrients.PHOSPHORUS_Milligrams, Nutrients.Phosphorus_P_Milligrams },
-        { CanadaNutrients.IRON_Milligrams, Nutrients.Iron_Fe_Milligrams },
-        { CanadaNutrients.ZINC_Milligrams, Nutrients.Zinc_Zn_Milligrams },
-        { CanadaNutrients.COPPER_Milligrams, Nutrients.Copper_Cu_Milligrams },
-        { CanadaNutrients.MANGANESE_Milligrams, Nutrients.Manganese_Mn_Milligrams },
-        { CanadaNutrients.SELENIUM_None, Nutrients.Selenium_Se_Micrograms },
+        { Nutrients.Sodium_Na, [CanadaNutrients.SODIUM_Milligrams] },
+        { Nutrients.Calcium_Ca, [CanadaNutrients.CALCIUM_Milligrams] },
+        { Nutrients.Potassium_K, [CanadaNutrients.POTASSIUM_Milligrams] },
+        { Nutrients.Magnesium_Mg, [CanadaNutrients.MAGNESIUM_Milligrams] },
+        { Nutrients.Phosphorus_P, [CanadaNutrients.PHOSPHORUS_Milligrams] },
+        { Nutrients.Iron_Fe, [CanadaNutrients.IRON_Milligrams] },
+        { Nutrients.Zinc_Zn, [CanadaNutrients.ZINC_Milligrams] },
+        { Nutrients.Copper_Cu, [CanadaNutrients.COPPER_Milligrams] },
+        { Nutrients.Manganese_Mn, [CanadaNutrients.MANGANESE_Milligrams] },
+        { Nutrients.Selenium_Se, [CanadaNutrients.SELENIUM_None] },
 
         // Extra
-        { CanadaNutrients.ENERGY_KILOCALORIES_KCalorie, Nutrients.Energy_Atwater_General_Factors_KCalorie },
-        { CanadaNutrients.BETAINE_Milligrams, Nutrients.Betaine_Milligrams },
-        { CanadaNutrients.CHOLINE_TOTAL_Milligrams, Nutrients.Choline_total_Milligrams },
-        { CanadaNutrients.LUTEIN_AND_ZEAXANTHIN_None, Nutrients.Lutein__zeaxanthin_Micrograms },
+        { Nutrients.Energy_Atwater_General_Factors_KCalorie, [CanadaNutrients.ENERGY_KILOCALORIES_KCalorie] },
+        { Nutrients.Betaine, [CanadaNutrients.BETAINE_Milligrams] },
+        { Nutrients.Choline_total, [CanadaNutrients.CHOLINE_TOTAL_Milligrams] },
+        { Nutrients.Lutein_Zeaxanthin, [CanadaNutrients.LUTEIN_AND_ZEAXANTHIN_None] },
     };
 }

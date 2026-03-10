@@ -37,8 +37,8 @@ public static class RecipeIngredientExtensions
                     var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(partialIngredient.Ingredient, recipeIngredient.IsCoarseCut);
                     var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale * partialIngredient.Scale;
                     return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
-                }) ?? [];
-            })?.GroupBy(kv => kv.Nutrient).ToDictionary(kv => kv.Key, kv => kv.Average(x => x.GramsOfNutrientPerRecipe)) ?? [];
+                }).GroupBy(kv => kv.Nutrient).ToDictionary(g => g.Key, g => g.Sum(kv => kv.GramsOfNutrientPerRecipe)) ?? [];
+            })?.GroupBy(kv => kv.Key).ToDictionary(g => g.Key, g => g.Average(x => x.Value)) ?? [];
         }
         // Reduce the scale of nutrients if an ingredient is cooked off so it's not overweighted. Note that cooking methods are saved when feasts are generated and changes before the recipe ingredient was updated aren't reflected.
         else if (cookedIngredients != null && cookedIngredients.TryGetValue(recipeIngredient.GetRecipeIngredientId, out Ingredient? cookedIngredient) && cookedIngredient != null)
@@ -50,7 +50,7 @@ public static class RecipeIngredientExtensions
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(cookedIngredient, recipeIngredient.IsCoarseCut);
                 var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale;
                 return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
-            })?.ToDictionary(kv => kv.Nutrient, kv => kv.GramsOfNutrientPerRecipe) ?? [];
+            })?.GroupBy(kv => kv.Nutrient).ToDictionary(g => g.Key, g => g.Sum(kv => kv.GramsOfNutrientPerRecipe)) ?? [];
         }
         else
         {
@@ -61,7 +61,7 @@ public static class RecipeIngredientExtensions
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient, recipeIngredient.IsCoarseCut);
                 var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale;
                 return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
-            })?.ToDictionary(kv => kv.Nutrient, kv => kv.GramsOfNutrientPerRecipe) ?? [];
+            })?.GroupBy(kv => kv.Nutrient).ToDictionary(g => g.Key, g => g.Sum(kv => kv.GramsOfNutrientPerRecipe)) ?? [];
         }
     }
 }

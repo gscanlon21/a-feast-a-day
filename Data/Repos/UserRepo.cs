@@ -317,7 +317,7 @@ public class UserRepo
                 var allNutrients = user.DataSource switch
                 {
                     DataSource.USDA => await _context.USDANutrients.AsNoTracking()
-                        .Where(n => NutrientMaps.USDAToNutrients.Keys.Contains(n.Nutrients))
+                        .Where(n => NutrientHelpers.USDAToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
                         // Select before grouping so EF Core can optimize.
                         .Select(n => new USDANutrient(/* EF can't optimize */)
@@ -332,12 +332,12 @@ public class UserRepo
                         {
                             DataSource = DataSource.USDA,
                             IngredientId = n.IngredientId,
-                            Nutrients = NutrientMaps.USDAToNutrients[n.Nutrients],
+                            Nutrients = NutrientHelpers.USDAToNutrients[n.Nutrients],
                             Measure = n.Measure,
                             Value = n.Value,
                         }).ToList()),
                     DataSource.Canada => await _context.NutrientsCanada.AsNoTracking()
-                        .Where(n => NutrientMaps.CanadaToNutrients.Keys.Contains(n.Nutrients))
+                        .Where(n => NutrientHelpers.CanadaToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
                         // Select before grouping so EF Core can optimize.
                         .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
@@ -352,7 +352,7 @@ public class UserRepo
                         {
                             DataSource = DataSource.Canada,
                             IngredientId = n.IngredientId,
-                            Nutrients = NutrientMaps.CanadaToNutrients[n.Nutrients],
+                            Nutrients = NutrientHelpers.CanadaToNutrients[n.Nutrients],
                             Measure = n.Measure,
                             Value = n.Value,
                         }).ToList()),

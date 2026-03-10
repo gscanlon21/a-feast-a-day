@@ -556,7 +556,7 @@ public class QueryRunner(Section section)
             .ToList();
 
         return await context.USDANutrients.AsNoTracking().TagWithCallSite()
-            .Where(n => NutrientMaps.USDAToNutrients.Keys.Contains(n.Nutrients))
+            .Where(n => NutrientHelpers.USDAToNutrients.Select(l => l.Key).Contains(n.Nutrients))
             .Where(n => allIngredientIds.Contains(n.IngredientId))
             // Select before grouping so EF Core can optimize.
             .Select(n => new USDANutrient(/* EF can't optimize */)
@@ -571,12 +571,15 @@ public class QueryRunner(Section section)
             {
                 DataSource = DataSource.USDA,
                 IngredientId = n.IngredientId,
-                Nutrients = NutrientMaps.USDAToNutrients[n.Nutrients],
+                Nutrients = NutrientHelpers.USDAToNutrients[n.Nutrients],
                 Measure = n.Measure,
                 Value = n.Value,
             }).ToList());
     }
 
+    /// <summary>
+    /// Get the nutrients that the recipes work.
+    /// </summary>
     private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrientsCa(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds, Dictionary<int, Ingredient> cookedIngredients)
     {
         var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
@@ -585,7 +588,7 @@ public class QueryRunner(Section section)
             .ToList();
 
         return await context.NutrientsCanada.AsNoTracking().TagWithCallSite()
-            .Where(n => NutrientMaps.CanadaToNutrients.Keys.Contains(n.Nutrients))
+            .Where(n => NutrientHelpers.CanadaToNutrients.Select(l => l.Key).Contains(n.Nutrients))
             .Where(n => allIngredientIds.Contains(n.IngredientId))
             // Select before grouping so EF Core can optimize.
             .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
@@ -600,14 +603,14 @@ public class QueryRunner(Section section)
             {
                 DataSource = DataSource.Canada,
                 IngredientId = n.IngredientId,
-                Nutrients = NutrientMaps.CanadaToNutrients[n.Nutrients],
+                Nutrients = NutrientHelpers.CanadaToNutrients[n.Nutrients],
                 Measure = n.Measure,
                 Value = n.Value,
             }).ToList());
     }
 
     /// <summary>
-    /// Get the nutrients that the recipes work.
+    /// Get all sub-ingredients worked by other ingredients.
     /// </summary>
     private static async Task<Dictionary<int, List<IngredientScale>>> GetPartialIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults)
     {
