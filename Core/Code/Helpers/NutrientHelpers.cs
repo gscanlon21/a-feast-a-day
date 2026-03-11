@@ -188,7 +188,9 @@ public static class NutrientHelpers
         { Nutrients.Boron_B, [USDANutrients.Boron_B_Micrograms] },
 
         // Extra
-        { Nutrients.Energy_KCalorie, [USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
+        // SELECT "IngredientId", "Nutrients" FROM usda_nutrient WHERE "Nutrients" IN (1008, 2047) GROUP BY "IngredientId", "Nutrients" HAVING COUNT(*) > 1
+        // Energy_KCalorie seems to be for legacy ingredients, while Atwater_..._Factors seems to be for the foundation foods.
+        { Nutrients.Energy_KCalorie, [USDANutrients.Energy_KCalorie, USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
         { Nutrients.Betaine, [USDANutrients.Betaine_Milligrams] },
         { Nutrients.Choline, [USDANutrients.Choline_total_Milligrams] },
         { Nutrients.Lutein_Zeaxanthin, [USDANutrients.Lutein__zeaxanthin_Micrograms] },

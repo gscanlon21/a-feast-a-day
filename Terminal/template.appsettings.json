@@ -1,5 +1,13 @@
 {
   "DownloadPath": "",
+  "USDA": {
+    "Nutrient": "",
+    "FoodNutrient": ""
+  },
+  "HealthCanada": {
+    "NutrientName": "",
+    "NutrientAmount": ""
+  },
   "FoodData": {
     "ApiKey": "https://fdc.nal.usda.gov/api-key-signup"
   },

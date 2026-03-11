@@ -2,8 +2,10 @@
 using Core.Models.Nutrients;
 using Data.Entities.Nutrients;
 using Data.Repos;
+using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic.FileIO;
 using Terminal.Models.USDA;
+using Terminal.Options;
 
 namespace Terminal.Programs.USDA;
 
@@ -13,16 +15,18 @@ namespace Terminal.Programs.USDA;
 internal class LoadUSDANutrientData
 {
     private readonly NutrientRepo _nutrientRepo;
+    private readonly IOptions<USDASettings> _usdaSettings;
 
-    public LoadUSDANutrientData(NutrientRepo nutrientRepo)
+    public LoadUSDANutrientData(NutrientRepo nutrientRepo, IOptions<USDASettings> usdaSettings)
     {
         _nutrientRepo = nutrientRepo;
+        _usdaSettings = usdaSettings;
     }
 
     public async Task<Response> Execute()
     {
         Console.WriteLine("What is the path to food_nutrient.csv?");
-        var foodNutrientPath = Console.ReadLine() ?? throw new Exception("Missing food_nutrient.csv!");
+        var foodNutrientPath = _usdaSettings.Value.FoodNutrient.NullIfEmpty() ?? Console.ReadLine() ?? throw new Exception("Missing food_nutrient.csv!");
 
         var ingredientsWithFoodData = (await _nutrientRepo.GetIngredientsWithFoodData())
             .ToLookup(i => i.IngredientAttr!.FDC_ID!.Value, i => i);

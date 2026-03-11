@@ -10,7 +10,7 @@
 10	\N	Fresh Strawberries	\N	\N	f	0	28	100	2024-12-19	4	144	1	144	Fresh Strawberries	https://fdc.nal.usda.gov/food-details/2346409/nutrients
 11	\N	Bananas	\N	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N
 12	\N	Limes	\N	\N	f	0	67	100	2025-02-07	0	201	1	201	Lime	\N
-13	\N	Fresh Cilantro	The plant is called Coriander. The leaves are cilantro. https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	f	0	1	100	2024-12-13	3	16	3	16	Cilantro	\N
+13	\N	Fresh Cilantro	The plant is called Coriander. The leaves are cilantro.	\N	f	0	1	100	2024-12-13	3	16	3	16	Cilantro	https://www.eatthismuch.com/calories/fresh-cilantro-1945
 14	\N	Fresh Basil Leaves	\N	\N	f	0	0.5	100	2025-01-10	0	32	3	32	Fresh Basil Leaves	\N
 15	\N	Yellow Potatoes	\N	\N	f	0	369	100	2025-05-31	0	369	2	369	Potato	\N
 16	\N	Fresh Spinach	\N	\N	f	0	30	100	2025-02-11	6	30	2	30	Fresh Spinach	\N
@@ -66,7 +66,7 @@
 67	\N	Black Pepper	\N	\N	t	0	28	100	2025-12-02	4	96	131072	96	Black Pepper	\N
 68	\N	Chili Powder	\N	\N	t	0	7.5	100	2025-07-18	7	120	131072	120	Chili Powder	\N
 70	\N	Cinnamon	\N	\N	t	0	28	100	2025-01-18	4	128	131072	128	Cinnamon	\N
-71	\N	Garlic Powder	\N	\N	t	0	10	100	2024-10-18	7	160	131072	160	Garlic Powder	\N
+71	\N	Garlic Powder	\N	\N	t	0	28	100	2024-10-18	4	160	131072	160	Garlic Powder	\N
 72	\N	Nutmeg	\N	\N	f	0	28	100	2025-11-07	4	112	131072	112	Nutmeg	\N
 73	\N	Paprika	\N	\N	t	0	28	100	2025-11-24	4	112	131072	112	Paprika	\N
 74	\N	Sea Salt	\N	\N	t	0	6	100	2025-07-24	8	288	131072	288	Salt	\N
@@ -290,7 +290,7 @@
 299	\N	White Pepper	\N	\N	t	0	28	100	2025-01-13	4	112	131072	112	White Pepper	\N
 300	\N	Coconut Sugar | Granulated Sugar | Honey	\N	\N	f	0	200	100	2024-10-28	6	200	1792	200	Coconut Sugar | Granulated Sugar | Honey	\N
 301	\N	Chili Garlic Sauce	\N	\N	t	0	7.5	100	2025-07-18	7	120	256	120	Chili Garlic Sauce	\N
-302	\N	Spring Onions	These have a slightly larger bulb at the base than Green Onions. https://www.eatthismuch.com/calories/scallions-2051	\N	f	0	15	100	2025-03-20	0	100	2	100	Spring Onions	\N
+302	\N	Spring Onions	These have a slightly larger bulb at the base than Green Onions.	\N	f	0	15	100	2025-03-20	0	100	2	100	Spring Onions	\N
 303	\N	Butter Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	100	2025-12-29	0	55	2	55	Lettuce	\N
 305	\N	Leaves of Lettuce	\N	\N	f	0	12	100	2025-08-11	0	36	2	36	Lettuce	https://fdc.nal.usda.gov/food-details/2346391/nutrients
 306	\N	Butter Lettuce Heads | Boston Bibb Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	\N	f	0	163	100	2025-01-03	0	55	2	55	Lettuce	\N
@@ -422,7 +422,7 @@
 467	\N	Fresh Pineapple	\N	\N	f	0	905	100	2024-11-20	0	165	1	165	Pineapple	https://fdc.nal.usda.gov/food-details/2346398/nutrients
 468	\N	Wholegrain Mustard	\N	\N	t	0	28	100	2025-09-21	4	240	32	240	Wholegrain Mustard	\N
 469	\N	Clear Honey	\N	\N	t	0	42	100	2025-06-10	9	336	928	336	Honey	https://fdc.nal.usda.gov/food-details/169640/nutrients
-470	\N	Cloudy Honey	aka. Raw Honey. https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	t	0	42	100	2025-06-11	9	336	928	336	Cloudy Honey	\N
+470	\N	Cloudy Honey	aka. Raw Honey. 	\N	t	0	42	100	2025-06-11	9	336	928	336	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/
 471	\N	Whole Star Anise	\N	\N	f	0	7	100	2025-12-15	0	112	131072	112	Whole Star Anise	\N
 472	\N	Slices of Brioche Bread	\N	\N	f	32	40	100	2024-10-29	0	80	2	80	Slices of Brioche Bread	\N
 473	\N	Fresh Dill	\N	\N	f	0	1	100	2026-01-27	3	9	3	9	Fresh Dill	\N
@@ -455,7 +455,7 @@
 502	\N	Light Corn Syrup	aka: Golden Syrup. https://www.eatthismuch.com/food/nutrition/corn-oil,300/	\N	f	2	13.6	100	2025-06-20	7	240	114688	240	Light Corn Syrup	\N
 503	\N	Dried Thyme	\N	\N	f	0	28	100	2025-03-05	4	48	131072	48	Dried Thyme	\N
 504	\N	Cayenne Pepper	\N	\N	t	0	10	100	2025-12-22	4	80	131072	80	Cayenne Pepper	\N
-505	\N	Puy Lentils	\N	\N	f	0	192	100	2025-06-06	6	192	2048	192	Puy Lentils	\N
+505	\N	Puy Lentils	\N	\N	f	0	28	100	2025-06-06	4	192	2048	192	Lentil	\N
 506	\N	Dried Chervil	\N	\N	f	0	1	100	2026-02-13	3	32	131072	32	Chervil	\N
 507	\N	Fresh Chervil | Fresh Parsley	\N	\N	f	0	28	100	2024-11-30	4	64	2	64	Fresh Chervil | Fresh Parsley	\N
 509	\N	Chicken Thighs	\N	\N	f	1048576	94	100	2025-03-24	0	188	268435456	188	Chicken Thighs	\N
@@ -637,7 +637,7 @@
 713	\N	Dried Minced Garlic	aka: Garlic Flakes - https://www.eatthismuch.com/calories/garlic-powder-195	\N	f	0	10	100	2024-10-18	7	160	4	160	Dried Minced Garlic	\N
 714	\N	Frozen Podded Green Peas	aka. Frozen Pea Pods. In pods. https://www.eatthismuch.com/calories/peas-2062	\N	f	0	144	100	2024-11-04	6	144	67108864	144	Green Peas	\N
 715	\N	Nettle Tea Bag	\N	\N	f	0	29.57	100	2025-08-04	0	236.56	0	236.56	Nettle Tea Bag	\N
-717	\N	Fresh Podded Fava Beans	\N	\N	f	0	194	100	2024-10-17	6	194	2	194	Fresh Podded Fava Beans	\N
+717	\N	Fresh Podded Fava Beans	\N	\N	f	0	28	100	2026-03-11	4	194	2	194	Fava Bean	\N
 718	\N	Kimchi	\N	\N	f	0	28	100	2025-03-31	0	224	8192	224	Kimchi	\N
 719	\N	Brown Arborio Rice	\N	\N	f	4096	28	100	2025-10-01	4	200	1024	200	Brown Arborio Rice	\N
 720	\N	White Arborio Rice	\N	\N	f	4096	28	100	2025-10-01	4	200	1024	200	White Arborio Rice	\N
@@ -674,7 +674,7 @@
 752	\N	Mixed-Color Sesame Seeds	aka Hulled and Unhulled Sesame Seeds.	\N	f	8192	28	100	2025-02-23	4	144	131072	144	Sesame Seed	https://fdc.nal.usda.gov/food-details/170150/nutrients
 753	\N	Cardamom Pods	\N	\N	f	0	0.2	100	2024-12-24	0	20	131072	20	Cardamom Pods	\N
 754	\N	Cumin Seeds	\N	\N	t	0	28	100	2024-11-21	4	144	131072	144	Cumin Seeds	\N
-783	\N	Frozen Fava Beans	\N	\N	f	0	194	100	2024-10-17	6	194	67108864	194	Frozen Fava Beans	\N
+783	\N	Frozen Fava Beans	\N	\N	f	0	28	100	2026-03-11	4	194	67108864	194	Fava Bean	\N
 784	\N	Fresh Podded Fava Beans | Frozen Fava Beans	\N	\N	f	0	28	100	2024-10-17	4	126	2048	126	Fresh Podded Fava Beans | Frozen Fava Beans	\N
 785	\N	Lemons | Limes	\N	\N	f	0	108	100	2024-10-22	0	216	1	216	Lemons | Limes	\N
 786	\N	Pumpkin Seeds | Pepitas	\N	\N	f	0	18.66	100	2025-01-19	4	149.28	1048576	149.28	Pumpkin Seeds | Pepitas	\N
@@ -1140,12 +1140,12 @@
 1403	\N	Crumbled Blue Cheese	\N	\N	f	256	28	100	2026-03-02	4	224	8388608	224	Crumbled Blue Cheese	\N
 1404	\N	Small Baguette	\N	\N	f	786464	141	100	2025-06-15	0	141	4	141	Small Baguette	\N
 1405	\N	Navy Beans	\N	\N	f	0	28	100	2024-10-17	4	208	2048	208	Navy Beans	\N
-1406	\N	Dry Navy Beans	\N	\N	f	0	28	100	2024-10-17	4	208	2048	208	Raw Navy Beans	\N
+1406	\N	Dry Navy Beans	\N	\N	f	0	28	100	2026-03-10	4	208	2048	208	Navy Bean	\N
 1407	\N	Tzatziki	\N	\N	f	8192	28	100	2025-02-22	4	256	8192	256	Tzatziki	\N
 1408	\N	Ground Cinnamon	\N	\N	t	0	28	100	2025-01-18	4	128	131072	128	Ground Cinnamon	\N
 1409	\N	Apricot Jam	\N	\N	f	0	20	100	2025-08-22	7	320	128	320	Apricot Jam	\N
 1410	\N	Okra	\N	\N	f	0	12.5	100	2025-11-02	0	100	2	100	Okra	\N
-1411	\N	Large Eggs	\N	\N	f	8	50	100	2024-11-03	0	243	16777216	243	Large Eggs	\N
+1411	\N	Large Eggs	\N	\N	f	8	50	100	2024-11-03	0	243	16777216	243	Egg	\N
 1412	\N	Fresh Italian Parsley	\N	\N	f	0	28	100	2026-01-21	4	60	3	60	Parsley	\N
 1413	\N	Harissa	\N	\N	f	0	28	100	2024-11-10	4	224	8192	224	Harissa	\N
 1414	\N	Large Squash	\N	\N	f	0	323	100	2025-11-03	0	113	2	113	Squash	\N
@@ -1357,7 +1357,7 @@
 1742	\N	Macadamia Nut Halves	\N	\N	f	0	28	100	2024-12-28	4	134	1048576	134	Macadamia Nuts	\N
 1743	\N	White Chocolate	\N	\N	f	0	28	100	2024-12-01	4	170	16384	170	Chocolate	\N
 1744	\N	Buttermilk	You can buy buttermilk!	\N	f	320	976	100	2025-09-16	14	244	4194304	244	Milk	\N
-1746	\N	Lean Beef Steak | Beef Tenderloin | Beef Sirloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
+1746	\N	Lean Beef Steak | Beef Tenderloin | Beef Sirloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2026-03-10	4	113	268435456	113	Beef	\N
 1747	\N	Lean Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
 1748	\N	Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
 1749	\N	Beef Tenderloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillets	\N
@@ -1507,3 +1507,4 @@
 2012	\N	Lima Beans	\N	\N	f	0	28	100	2025-07-28	4	202	67108864	202	Frozen Lima Beans	\N
 2013	\N	Canned Lima Beans	\N	\N	f	0	28	100	2025-07-28	4	202	67108864	202	Frozen Lima Beans	\N
 2014	\N	Dry Lima Beans	\N	\N	f	0	28	100	2025-07-28	4	202	67108864	202	Frozen Lima Beans	\N
+2015	\N	Gala Apples	\N	\N	f	0	182	100	2025-03-25	0	182	1	182	Apple	\N

@@ -78,7 +78,7 @@ public static class UserConsts
     /// <summary>
     /// Add some padding to the upper-bounds of the nutrient targets.
     /// </summary>
-    public const double NutrientTargetsScale = 1.15;
+    public const double NutrientTargetsScale = 1.25;
 
     /// <summary>
     /// How many custom user_frequency records do we allow per user?

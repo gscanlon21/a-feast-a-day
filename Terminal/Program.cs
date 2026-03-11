@@ -2,6 +2,7 @@
 using Data;
 using Data.Repos;
 using Microsoft.EntityFrameworkCore;
+using Terminal.Options;
 using Terminal.Programs;
 using Terminal.Programs.HealthCanada;
 using Terminal.Programs.USDA;
@@ -31,6 +32,9 @@ using var host = Host.CreateDefaultBuilder()
         services.AddTransient<LoadHealthCanadaNutrientData>();
         services.AddTransient<DownloadHealthCanadaDatasets>();
         services.AddTransient<RegenerateHealthCanadaNutrients>();
+
+        services.Configure<USDASettings>(context.Configuration.GetSection("USDA"));
+        services.Configure<HealthCanadaSettings>(context.Configuration.GetSection("HealthCanada"));
     }).Build();
 
 await host.Services.GetRequiredService<Runner>().Run();

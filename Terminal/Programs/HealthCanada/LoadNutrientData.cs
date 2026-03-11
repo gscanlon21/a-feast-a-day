@@ -2,8 +2,10 @@
 using Core.Models.Nutrients;
 using Data.Entities.Nutrients;
 using Data.Repos;
+using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic.FileIO;
 using Terminal.Models.HealthCanada;
+using Terminal.Options;
 
 namespace Terminal.Programs.HealthCanada;
 
@@ -13,16 +15,18 @@ namespace Terminal.Programs.HealthCanada;
 internal class LoadHealthCanadaNutrientData
 {
     private readonly NutrientRepo _nutrientRepo;
+    private readonly IOptions<HealthCanadaSettings> _healthCanadaSettings;
 
-    public LoadHealthCanadaNutrientData(NutrientRepo nutrientRepo)
+    public LoadHealthCanadaNutrientData(NutrientRepo nutrientRepo, IOptions<HealthCanadaSettings> healthCanadaSettings)
     {
         _nutrientRepo = nutrientRepo;
+        _healthCanadaSettings = healthCanadaSettings;
     }
 
     public async Task<Response> Execute()
     {
         Console.WriteLine("What is the path to 'NUTRIENT AMOUNT.csv'?");
-        var foodNutrientPath = Console.ReadLine() ?? throw new Exception("Missing 'NUTRIENT AMOUNT.csv'!");
+        var foodNutrientPath = _healthCanadaSettings.Value.NutrientAmount.NullIfEmpty() ?? Console.ReadLine() ?? throw new Exception("Missing 'NUTRIENT AMOUNT.csv'!");
 
         var ingredientsWithFoodData = (await _nutrientRepo.GetIngredientsWithHealthCanadaData())
             .ToLookup(i => i.IngredientAttr!.HC_Id!.Value, i => i);
