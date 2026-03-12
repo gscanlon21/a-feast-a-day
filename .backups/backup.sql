@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict tMRWaNe0xsOiv8OdChY5reNVx4Tal7TLTpXxBiCu7iva2sxGUVfyZrO0tyNShjh
+\restrict 1dhyIChsNaYyDGW3A1icQIVLcdD7NWavnvtROOD5qt4MqOy92kg3UoLyOibMH6K
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -762,342 +762,350 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 --
 
 COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier", "CaloriesPerGram", "Source", "LastUpdated", "Notes", "NutrientId") FROM stdin;
-177	8	45	1048576	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
-178	18	45	2097152	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
-19	\N	\N	131072	2	1	0		2023-01-01	\N	58
-179	8	45	65536	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
-180	18	45	131072	2	1	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
-8	25	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
-5	130	\N	65536	3	1	4		2023-01-01	\N	23
-6	175	\N	131072	3	1	4		2023-01-01	\N	23
-209	1000	2500	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
-210	1000	2500	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
-211	1000	2500	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
-212	3400	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
-4	130	\N	131072	3	1	4		2023-01-01	\N	25
-269	0.5	10	65536	3	1	0		-infinity	\N	83
 10	\N	1	131072	100	1	9		2023-01-01	\N	43
-24	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
-25	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
-270	0.5	10	65536	3	1	0		-infinity	\N	32
-427	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
-428	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
-129	\N	-1	2	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 17	20	35	131072	100	1	9		2023-01-01	\N	21
-124	\N	3	65536	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-126	\N	3	393216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-127	\N	3	655360	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-20	1	10	131072	2	1	0		2023-01-01	\N	54
-22	1	10	131072	2	1	0		2023-01-01	\N	72
+177	8	45	1048576	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
+178	18	45	2097152	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
 68	1000	1100	131072	0	3	0		-infinity	\N	70
-123	\N	3	131072	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-213	3400	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
-214	2600	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
+19	\N	\N	131072	2	0	0		2023-01-01	\N	58
 271	20	35	65536	100	1	9		-infinity	\N	66
-134	\N	-1	16	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-135	\N	-1	32	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-526	\N	5	65536	100	3	9		2026-03-10	\N	87
-215	-1	20	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
-216	-1	20	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
-217	-1	20	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
-527	\N	5	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-10	\N	87
-37	400	\N	131072	2	1	0		2023-01-01	\N	10
-181	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
-38	350	\N	65536	2	1	0		2023-01-01	\N	10
-219	\N	\N	65536	2	1	0		-infinity	\N	58
+179	8	45	65536	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
+180	18	45	131072	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
+8	25	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
+5	130	\N	65536	3	0	4		2023-01-01	\N	23
+6	175	\N	131072	3	0	4		2023-01-01	\N	23
 220	\N	1	65536	100	1	9		-infinity	\N	43
-182	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
-184	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
-185	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
-186	19	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
-187	12.5	\N	131072	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
-243	1	10	65536	2	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
-189	19	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
-190	12.5	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
-244	2.3	11	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
-224	130	\N	65536	3	1	4		-infinity	\N	25
-207	900	3000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
-208	700	3000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
-40	1500	2300	131072	2	1	0		2023-01-01	\N	53
-84	900	10000	131072	1	1	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	\N	68
-39	2600	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
+209	1000	2500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
+219	\N	\N	65536	2	0	0		-infinity	\N	58
+124	\N	6	65536	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+129	\N	-1	2	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 226	20	35	65536	100	1	9		-infinity	\N	21
-228	1	10	65536	2	1	0		-infinity	\N	54
-528	\N	5	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-10	\N	87
-229	1	10	65536	2	1	0		-infinity	\N	72
 230	1000	1100	65536	0	3	0		-infinity	\N	70
-232	1500	2300	65536	2	1	0		-infinity	\N	53
-234	900	10000	65536	1	1	0		-infinity	\N	68
-239	55	400	65536	1	1	0		-infinity	\N	40
-241	\N	10	65536	100	3	9		-infinity	\N	16
-158	\N	3	512	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-118	\N	3	4096	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-116	\N	-1	1	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-529	\N	5	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-10	\N	87
-247	1.3	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
-151	\N	-1	4	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-152	\N	-1	8	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-154	\N	3	64	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-119	\N	3	8192	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-155	\N	3	128	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-157	\N	3	256	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-160	\N	3	1024	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-161	\N	3	2048	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-162	\N	3	24576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-163	\N	3	40960	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-166	\N	3	1048576	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-167	\N	3	2097152	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-168	\N	3	6291456	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-169	\N	3	10485760	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-36	1000	2500	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
-172	\N	3	16777216	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-173	\N	3	33554432	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-175	\N	3	67108864	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-176	\N	3	134217728	100	3	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
-30	2.4	\N	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-44	55	400	131072	1	1	0		2023-01-01	\N	40
-242	2300	3600	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
-43	8	40	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
-401	4	15	131072	3	1	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
-34	15	1000	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
-31	75	2000	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
-29	1.1	\N	65536	2	1	0		2023-01-01	\N	30
-28	1.2	\N	131072	2	1	0		2023-01-01	\N	30
-88	1	10	131072	2	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2023-01-01	\N	42
-83	\N	10	131072	100	3	9		2023-01-01	\N	16
-33	20	100	131072	1	1	0		2023-01-01	\N	47
-32	90	2000	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
-52	-1	20	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
-75	400	1000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
-103	1.3	100	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
-71	30	\N	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
-56	500	3500	131072	2	1	0		2023-01-01	\N	27
-259	500	3500	65536	2	1	0		-infinity	\N	27
-191	38	\N	65536	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
-194	38	\N	1048576	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
-195	25	\N	2097152	3	1	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
-63	0.5	10	131072	3	1	0		2023-01-01	\N	74
-250	35	\N	65536	1	1	0		-infinity	\N	8
-251	45	\N	65536	1	1	0		-infinity	\N	63
+210	1000	2500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
+211	1000	2500	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
+212	3400	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
+4	130	\N	131072	3	0	4		2023-01-01	\N	25
+269	0.5	10	65536	3	0	0		-infinity	\N	83
+24	700	3000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
+25	900	3000	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
+270	0.5	10	65536	3	0	0		-infinity	\N	32
+427	900	3000	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
+428	700	3000	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
+20	1	10	131072	2	0	0		2023-01-01	\N	54
+22	1	10	131072	2	0	0		2023-01-01	\N	72
+213	3400	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
+214	2600	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
+215	-1	20	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
+216	-1	20	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
+217	-1	20	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
+37	400	\N	131072	2	0	0		2023-01-01	\N	10
+528	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+181	19	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
+38	350	\N	65536	2	0	0		2023-01-01	\N	10
 252	6	12	65536	100	1	4		-infinity	\N	62
-46	35	\N	131072	1	1	0		2023-01-01	\N	8
-49	45	\N	131072	1	1	0		2023-01-01	\N	63
 105	6	12	131072	100	1	4		2023-01-01	\N	62
-266	0.5	10	65536	3	1	0		-infinity	\N	74
-48	2.5	10	131072	2	1	0		2023-01-01	\N	81
-50	700	\N	131072	2	1	0		2023-01-01	\N	19
-53	20	1000	131072	1	1	0		2023-01-01	\N	11
-58	0.5	10	131072	3	1	0		2023-01-01	\N	13
-55	500	3500	131072	2	1	0		2023-01-01	\N	75
-254	2.5	10	65536	2	1	0		-infinity	\N	81
-255	700	\N	65536	2	1	0		-infinity	\N	19
 69	20	35	131072	100	1	9		2023-01-01	\N	66
-45	150	1100	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
-261	0.5	10	65536	3	1	0		-infinity	\N	13
-59	0.5	10	131072	3	1	0		2023-01-01	\N	84
-257	20	1000	65536	1	1	0		-infinity	\N	11
-258	500	3500	65536	2	1	0		-infinity	\N	75
-249	150	1100	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
-262	0.5	10	65536	3	1	0		-infinity	\N	84
-60	0.5	10	131072	3	1	0		2023-01-01	\N	35
-263	0.5	10	65536	3	1	0		-infinity	\N	35
-61	0.5	10	131072	3	1	0		2023-01-01	\N	20
-264	0.5	10	65536	3	1	0		-infinity	\N	20
-62	0.5	10	131072	3	1	0		2023-01-01	\N	76
-265	0.5	10	65536	3	1	0		-infinity	\N	76
-65	0.5	10	131072	3	1	0		2023-01-01	\N	1
-268	0.5	10	65536	3	1	0		-infinity	\N	1
-66	0.5	10	131072	3	1	0		2023-01-01	\N	83
-57	0.5	10	131072	3	1	0		2023-01-01	\N	7
-260	0.5	10	65536	3	1	0		-infinity	\N	7
-67	0.5	10	131072	3	1	0		2023-01-01	\N	32
-277	\N	\N	1048576	2	1	0		-infinity	\N	58
 274	6	12	65536	100	1	4		-infinity	\N	26
-435	900	3000	65536	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
-278	130	\N	1048576	3	1	4		-infinity	\N	23
 280	\N	1	1048576	100	1	9		-infinity	\N	43
 286	20	35	1048576	100	1	9		-infinity	\N	21
-288	1	10	1048576	2	1	0		-infinity	\N	54
-289	1	10	1048576	2	1	0		-infinity	\N	72
 290	1000	1100	1048576	0	3	0		-infinity	\N	70
 294	20	35	1048576	100	1	9		-infinity	\N	66
-64	0.4	4.5	131072	3	1	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
-319	15	1000	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
-296	400	\N	1048576	2	1	0		-infinity	\N	10
+83	\N	20	131072	100	1	9		2023-01-01	\N	16
 457	0.85	\N	4096	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
-284	130	\N	1048576	3	1	4		-infinity	\N	25
-336	90	2000	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
-327	16	35	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
-326	2.3	11	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
-436	700	3000	131072	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
-304	1500	2300	1048576	2	1	0		-infinity	\N	53
-306	900	10000	1048576	1	1	0		-infinity	\N	68
-295	30	\N	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
-292	0.5	10	1048576	3	1	0		-infinity	\N	83
-293	0.5	10	1048576	3	1	0		-infinity	\N	32
-317	2.4	\N	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-321	55	400	1048576	1	1	0		-infinity	\N	40
-323	\N	10	1048576	100	3	9		-infinity	\N	16
+182	12.5	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
 282	0.8	\N	1048576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 301	0.8	\N	2097152	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
-325	1	10	1048576	2	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
-347	150	1100	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
-318	20	100	1048576	1	1	0		-infinity	\N	47
-351	35	\N	1048576	1	1	0		-infinity	\N	8
-352	45	\N	1048576	1	1	0		-infinity	\N	63
+184	19	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
+296	400	\N	1048576	2	0	0		-infinity	\N	10
 353	6	12	1048576	100	1	4		-infinity	\N	62
-363	500	3500	1048576	2	1	0		-infinity	\N	27
-358	2.5	10	1048576	2	1	0		-infinity	\N	81
-359	700	\N	1048576	2	1	0		-infinity	\N	19
-361	20	1000	1048576	1	1	0		-infinity	\N	11
-362	500	3500	1048576	2	1	0		-infinity	\N	75
-387	500	3500	2097152	2	1	0		-infinity	\N	27
-337	1.1	\N	1048576	2	1	0		-infinity	\N	30
 458	0.85	\N	8192	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 222	0.8	\N	65536	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
-298	\N	\N	2097152	2	1	0		-infinity	\N	58
-374	0.5	10	1048576	3	1	0		-infinity	\N	74
-367	0.5	10	1048576	3	1	0		-infinity	\N	13
 382	6	12	1048576	100	1	4		-infinity	\N	26
-389	0.5	10	2097152	3	1	0		-infinity	\N	13
-368	0.5	10	1048576	3	1	0		-infinity	\N	84
-390	0.5	10	2097152	3	1	0		-infinity	\N	84
-369	0.5	10	1048576	3	1	0		-infinity	\N	35
-391	0.5	10	2097152	3	1	0		-infinity	\N	35
-370	0.5	10	1048576	3	1	0		-infinity	\N	20
-392	0.5	10	2097152	3	1	0		-infinity	\N	20
-371	0.5	10	1048576	3	1	0		-infinity	\N	76
-376	0.5	10	1048576	3	1	0		-infinity	\N	1
-377	0.5	10	2097152	3	1	0		-infinity	\N	83
-235	2.4	\N	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-421	1	10	131072	2	1	0		2023-01-01	\N	2
-422	1	10	65536	2	1	0		-infinity	\N	2
-279	175	\N	2097152	3	1	4		-infinity	\N	23
-386	500	3500	2097152	2	1	0		-infinity	\N	75
-354	35	\N	2097152	1	1	0		-infinity	\N	8
-316	900	10000	2097152	1	1	0		-infinity	\N	68
 312	1000	1100	2097152	0	3	0		-infinity	\N	70
 308	20	35	2097152	100	1	9		-infinity	\N	21
-340	\N	10	2097152	100	3	9		-infinity	\N	16
-324	2300	3600	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
-375	0.4	4.5	1048576	3	1	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
+323	\N	20	1048576	100	1	9		-infinity	\N	16
+340	\N	20	2097152	100	1	9		-infinity	\N	16
 299	\N	1	2097152	100	1	9		-infinity	\N	43
-310	1	10	2097152	2	1	0		-infinity	\N	54
-365	2.5	10	2097152	2	1	0		-infinity	\N	81
-423	1	10	1048576	2	1	0		-infinity	\N	2
-424	1	10	2097152	2	1	0		-infinity	\N	2
-349	150	1100	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
-366	0.5	10	1048576	3	1	0		-infinity	\N	7
-388	0.5	10	2097152	3	1	0		-infinity	\N	7
-378	0.5	10	2097152	3	1	0		-infinity	\N	32
 1	0.8	\N	131072	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 459	1.1	\N	24576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 460	1.3	\N	40960	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 461	1.1	\N	393216	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
-339	2.8	5.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
-342	1	10	2097152	2	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
-297	350	\N	2097152	2	1	0		-infinity	\N	10
-355	45	\N	2097152	1	1	0		-infinity	\N	63
-372	700	\N	2097152	2	1	0		-infinity	\N	19
-380	30	\N	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
-311	1	10	2097152	2	1	0		-infinity	\N	72
-335	55	400	2097152	1	1	0		-infinity	\N	40
-314	1500	2300	2097152	2	1	0		-infinity	\N	53
+185	12.5	\N	2097152	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
 398	6	12	2097152	100	1	4		-infinity	\N	26
-338	1.2	\N	2097152	2	1	0		-infinity	\N	30
 379	20	35	2097152	100	1	9		-infinity	\N	66
 356	6	12	2097152	100	1	4		-infinity	\N	62
-385	20	1000	2097152	1	1	0		-infinity	\N	11
-419	2.4	\N	4096	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-332	20	100	2097152	1	1	0		-infinity	\N	47
-236	20	100	65536	1	1	0		-infinity	\N	47
-344	14	35	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
-303	130	\N	2097152	3	1	4		-infinity	\N	25
-343	1.8	11	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
-394	0.5	10	2097152	3	1	0		-infinity	\N	74
-393	0.5	10	2097152	3	1	0		-infinity	\N	76
-396	0.5	10	2097152	3	1	0		-infinity	\N	1
+186	19	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
+187	12.5	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
 199	14.3	-1	1048576	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	\N	51
 200	14.3	-1	2097152	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	\N	51
-420	2.4	\N	8192	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-331	2.4	\N	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-413	2.6	\N	24576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-414	2.8	\N	40960	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-415	2.6	\N	393216	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-416	2.8	\N	655360	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-425	700	3000	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
-315	8	40	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
-333	15	1000	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
-426	900	3000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
-350	75	2000	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
+339	5.6	11.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
 196	14.3	-1	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	\N	51
 197	14.3	-1	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	\N	51
-417	2.6	\N	6291456	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-99	1.1	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
-329	1.3	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
-346	1.1	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
 462	1.3	\N	655360	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 463	1.1	\N	6291456	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 464	1.3	\N	10485760	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
-418	2.8	\N	10485760	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
-94	14	35	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
-245	16	35	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
-95	5	\N	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
-246	5	\N	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
-328	5	\N	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
-345	5	\N	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
-273	400	1000	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
-381	400	1000	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
-397	400	1000	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
-92	1.8	11	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
-248	1.3	100	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
-330	1.3	100	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
-348	1.3	100	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
-82	2.8	5.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
-240	2.8	5.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
-322	2.8	5.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
-514	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	56
-513	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	15
-521	0.3	0.6	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
-520	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
-519	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
-518	0.3	0.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	17
-517	0.3	0.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	56
-516	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	56
-515	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	56
-512	0.3	0.6	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	15
-511	0.3	0.6	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	15
-510	0.3	0.6	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	15
-522	2.5	5	2097152	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	49
-523	2.5	5	1048576	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	49
-524	2.5	5	65536	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	49
-525	2.5	5	131072	100	3	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	49
-429	700	3000	131072	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
-430	900	3000	65536	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
-431	900	3000	1048576	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
-432	700	3000	2097152	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
-433	700	3000	2097152	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
-434	900	3000	1048576	1	1	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
-272	30	\N	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
+243	1	10	65536	2	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
+189	19	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
+190	12.5	\N	2097152	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
+244	2.3	11	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
+224	130	\N	65536	3	0	4		-infinity	\N	25
+207	900	3000	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
+208	700	3000	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
+82	5.6	11.2	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
+40	1500	2300	131072	2	0	0		2023-01-01	\N	53
+84	900	10000	131072	1	0	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	\N	68
+39	2600	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
+228	1	10	65536	2	0	0		-infinity	\N	54
+229	1	10	65536	2	0	0		-infinity	\N	72
+232	1500	2300	65536	2	0	0		-infinity	\N	53
+234	900	10000	65536	1	0	0		-infinity	\N	68
+239	55	400	65536	1	0	0		-infinity	\N	40
 108	6	12	131072	100	1	4		2023-01-01	\N	26
-70	6	\N	131072	3	1	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
-231	6	\N	65536	3	1	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
-291	6	\N	1048576	3	1	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
-313	6	\N	2097152	3	1	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
-87	2300	3600	131072	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
-341	2300	3600	2097152	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
-233	11	40	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
-305	11	40	1048576	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
-402	4	15	65536	3	1	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
-403	4	15	1048576	3	1	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
-404	4	15	2097152	3	1	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
-267	0.4	4.5	65536	3	1	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
-395	0.4	4.5	2097152	3	1	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
-35	90	900	131072	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
-238	120	1200	65536	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
-320	120	1200	1048576	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
-334	90	900	2097152	1	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
-237	15	1000	65536	2	1	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
+247	1.3	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
+36	1000	2500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
+30	2.4	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+44	55	400	131072	1	0	0		2023-01-01	\N	40
+242	2300	3600	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
+43	8	40	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
+401	4	15	131072	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
+34	15	1000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
+31	75	2000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
+29	1.1	\N	65536	2	0	0		2023-01-01	\N	30
+28	1.2	\N	131072	2	0	0		2023-01-01	\N	30
+88	1	10	131072	2	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2023-01-01	\N	42
+33	20	100	131072	1	0	0		2023-01-01	\N	47
+32	90	2000	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
+52	-1	20	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
+75	400	1000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
+515	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	56
+516	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	56
+517	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	56
+518	0.6	1.2	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	17
+519	0.6	1.2	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	17
+522	5	10	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	49
+523	5	10	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	49
+524	5	10	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	49
+103	1.3	100	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
+71	30	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
+56	500	3500	131072	2	0	0		2023-01-01	\N	27
+259	500	3500	65536	2	0	0		-infinity	\N	27
+191	38	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
+194	38	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
+195	25	\N	2097152	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
+63	0.5	10	131072	3	0	0		2023-01-01	\N	74
+250	35	\N	65536	1	0	0		-infinity	\N	8
+251	45	\N	65536	1	0	0		-infinity	\N	63
+46	35	\N	131072	1	0	0		2023-01-01	\N	8
+49	45	\N	131072	1	0	0		2023-01-01	\N	63
+266	0.5	10	65536	3	0	0		-infinity	\N	74
+48	2.5	10	131072	2	0	0		2023-01-01	\N	81
+50	700	\N	131072	2	0	0		2023-01-01	\N	19
+53	20	1000	131072	1	0	0		2023-01-01	\N	11
+58	0.5	10	131072	3	0	0		2023-01-01	\N	13
+55	500	3500	131072	2	0	0		2023-01-01	\N	75
+254	2.5	10	65536	2	0	0		-infinity	\N	81
+255	700	\N	65536	2	0	0		-infinity	\N	19
+45	150	1100	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
+261	0.5	10	65536	3	0	0		-infinity	\N	13
+59	0.5	10	131072	3	0	0		2023-01-01	\N	84
+257	20	1000	65536	1	0	0		-infinity	\N	11
+258	500	3500	65536	2	0	0		-infinity	\N	75
+249	150	1100	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
+262	0.5	10	65536	3	0	0		-infinity	\N	84
+60	0.5	10	131072	3	0	0		2023-01-01	\N	35
+126	\N	6	393216	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+127	\N	6	655360	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+263	0.5	10	65536	3	0	0		-infinity	\N	35
+123	\N	6	131072	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+241	\N	20	65536	100	1	9		-infinity	\N	16
+158	\N	6	512	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+118	\N	6	4096	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+154	\N	6	64	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+61	0.5	10	131072	3	0	0		2023-01-01	\N	20
+264	0.5	10	65536	3	0	0		-infinity	\N	20
+62	0.5	10	131072	3	0	0		2023-01-01	\N	76
+265	0.5	10	65536	3	0	0		-infinity	\N	76
+65	0.5	10	131072	3	0	0		2023-01-01	\N	1
+268	0.5	10	65536	3	0	0		-infinity	\N	1
+66	0.5	10	131072	3	0	0		2023-01-01	\N	83
+57	0.5	10	131072	3	0	0		2023-01-01	\N	7
+260	0.5	10	65536	3	0	0		-infinity	\N	7
+67	0.5	10	131072	3	0	0		2023-01-01	\N	32
+277	\N	\N	1048576	2	0	0		-infinity	\N	58
+435	900	3000	65536	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
+278	130	\N	1048576	3	0	4		-infinity	\N	23
+288	1	10	1048576	2	0	0		-infinity	\N	54
+289	1	10	1048576	2	0	0		-infinity	\N	72
+64	0.4	4.5	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
+319	15	1000	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
+284	130	\N	1048576	3	0	4		-infinity	\N	25
+336	90	2000	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
+327	16	35	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
+326	2.3	11	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
+436	700	3000	131072	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
+304	1500	2300	1048576	2	0	0		-infinity	\N	53
+306	900	10000	1048576	1	0	0		-infinity	\N	68
+295	30	\N	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
+292	0.5	10	1048576	3	0	0		-infinity	\N	83
+293	0.5	10	1048576	3	0	0		-infinity	\N	32
+317	2.4	\N	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+321	55	400	1048576	1	0	0		-infinity	\N	40
+325	1	10	1048576	2	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
+347	150	1100	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
+318	20	100	1048576	1	0	0		-infinity	\N	47
+351	35	\N	1048576	1	0	0		-infinity	\N	8
+352	45	\N	1048576	1	0	0		-infinity	\N	63
+363	500	3500	1048576	2	0	0		-infinity	\N	27
+358	2.5	10	1048576	2	0	0		-infinity	\N	81
+119	\N	6	8192	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+155	\N	6	128	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+157	\N	6	256	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+160	\N	6	1024	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+161	\N	6	2048	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+162	\N	6	24576	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+172	\N	6	16777216	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+173	\N	6	33554432	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+175	\N	6	67108864	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+359	700	\N	1048576	2	0	0		-infinity	\N	19
+361	20	1000	1048576	1	0	0		-infinity	\N	11
+362	500	3500	1048576	2	0	0		-infinity	\N	75
+387	500	3500	2097152	2	0	0		-infinity	\N	27
+337	1.1	\N	1048576	2	0	0		-infinity	\N	30
+298	\N	\N	2097152	2	0	0		-infinity	\N	58
+374	0.5	10	1048576	3	0	0		-infinity	\N	74
+367	0.5	10	1048576	3	0	0		-infinity	\N	13
+389	0.5	10	2097152	3	0	0		-infinity	\N	13
+368	0.5	10	1048576	3	0	0		-infinity	\N	84
+390	0.5	10	2097152	3	0	0		-infinity	\N	84
+369	0.5	10	1048576	3	0	0		-infinity	\N	35
+391	0.5	10	2097152	3	0	0		-infinity	\N	35
+370	0.5	10	1048576	3	0	0		-infinity	\N	20
+392	0.5	10	2097152	3	0	0		-infinity	\N	20
+371	0.5	10	1048576	3	0	0		-infinity	\N	76
+376	0.5	10	1048576	3	0	0		-infinity	\N	1
+377	0.5	10	2097152	3	0	0		-infinity	\N	83
+235	2.4	\N	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+421	1	10	131072	2	0	0		2023-01-01	\N	2
+422	1	10	65536	2	0	0		-infinity	\N	2
+279	175	\N	2097152	3	0	4		-infinity	\N	23
+386	500	3500	2097152	2	0	0		-infinity	\N	75
+354	35	\N	2097152	1	0	0		-infinity	\N	8
+316	900	10000	2097152	1	0	0		-infinity	\N	68
+163	\N	6	40960	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+166	\N	6	1048576	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+167	\N	6	2097152	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+168	\N	6	6291456	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+169	\N	6	10485760	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+134	\N	-1	16	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+135	\N	-1	32	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+526	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+176	\N	6	134217728	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+240	5.6	11.2	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
+322	5.6	11.2	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
+510	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+511	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+512	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+513	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+116	\N	-1	1	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+151	\N	-1	4	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+152	\N	-1	8	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+514	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	56
+527	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+529	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+520	0.6	1.2	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	17
+521	0.6	1.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	17
+530	0.6	1.2	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	85
+532	0.6	1.2	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	85
+533	0.6	1.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	85
+534	5	10	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	86
+535	5	10	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	86
+536	5	10	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	86
+537	5	10	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	86
+525	5	10	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	49
+531	0.6	1.2	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	\N	85
+324	2300	3600	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
+375	0.4	4.5	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
+310	1	10	2097152	2	0	0		-infinity	\N	54
+365	2.5	10	2097152	2	0	0		-infinity	\N	81
+423	1	10	1048576	2	0	0		-infinity	\N	2
+424	1	10	2097152	2	0	0		-infinity	\N	2
+349	150	1100	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
+366	0.5	10	1048576	3	0	0		-infinity	\N	7
+388	0.5	10	2097152	3	0	0		-infinity	\N	7
+378	0.5	10	2097152	3	0	0		-infinity	\N	32
+342	1	10	2097152	2	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	-infinity	\N	42
+297	350	\N	2097152	2	0	0		-infinity	\N	10
+355	45	\N	2097152	1	0	0		-infinity	\N	63
+372	700	\N	2097152	2	0	0		-infinity	\N	19
+380	30	\N	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
+311	1	10	2097152	2	0	0		-infinity	\N	72
+335	55	400	2097152	1	0	0		-infinity	\N	40
+314	1500	2300	2097152	2	0	0		-infinity	\N	53
+338	1.2	\N	2097152	2	0	0		-infinity	\N	30
+385	20	1000	2097152	1	0	0		-infinity	\N	11
+419	2.4	\N	4096	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+332	20	100	2097152	1	0	0		-infinity	\N	47
+236	20	100	65536	1	0	0		-infinity	\N	47
+344	14	35	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
+303	130	\N	2097152	3	0	4		-infinity	\N	25
+343	1.8	11	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
+394	0.5	10	2097152	3	0	0		-infinity	\N	74
+393	0.5	10	2097152	3	0	0		-infinity	\N	76
+396	0.5	10	2097152	3	0	0		-infinity	\N	1
+420	2.4	\N	8192	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+331	2.4	\N	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+413	2.6	\N	24576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+414	2.8	\N	40960	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+415	2.6	\N	393216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+416	2.8	\N	655360	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+425	700	3000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
+315	8	40	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
+333	15	1000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
+426	900	3000	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
+350	75	2000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
+417	2.6	\N	6291456	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+99	1.1	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
+329	1.3	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
+346	1.1	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
+418	2.8	\N	10485760	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
+94	14	35	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
+245	16	35	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	12
+95	5	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
+246	5	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
+328	5	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
+345	5	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	50
+273	400	1000	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
+381	400	1000	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
+397	400	1000	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-07	\N	45
+92	1.8	11	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-03-07	\N	61
+248	1.3	100	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
+330	1.3	100	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
+348	1.3	100	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-07	\N	52
+429	700	3000	131072	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
+430	900	3000	65536	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
+431	900	3000	1048576	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
+432	700	3000	2097152	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	34
+433	700	3000	2097152	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
+434	900	3000	1048576	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
+272	30	\N	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
+70	6	\N	131072	3	0	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
+231	6	\N	65536	3	0	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
+291	6	\N	1048576	3	0	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
+313	6	\N	2097152	3	0	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
+87	2300	3600	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
+341	2300	3600	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
+233	11	40	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
+305	11	40	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
+402	4	15	65536	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
+403	4	15	1048576	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
+404	4	15	2097152	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
+267	0.4	4.5	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
+395	0.4	4.5	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-11	\N	44
+35	90	900	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
+238	120	1200	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
+320	120	1200	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
+334	90	900	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
+237	15	1000	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
 \.
 
 
@@ -3418,6 +3426,15 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 2012	2014	1	f
 2012	2013	1	f
 1	2015	1	t
+5	1345	1	f
+5	105	1	f
+5	1734	1	f
+5	1735	1	f
+5	217	1	f
+5	1725	1	f
+5	1216	1	f
+5	3	1	f
+5	225	1	f
 \.
 
 
@@ -3671,6 +3688,8 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id") FR
 1088	170457	11529	2460
 260	170457	11529	2460
 503	170938	2042	210
+842	2644282	100311	3389
+1334	173747	16039	3266
 \.
 
 
@@ -3724,7 +3743,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 35	Lysine	Lysine	16800	\N	-infinity
 46	Retinol	Retinol	7410	\N	-infinity
 73	Vitamin_E	Vitamin E	7810	\N	-infinity
-15	Omega_3_DHA	Omega 3 (DHA) Fatty Acids	15300	\N	-infinity
 56	Omega_3_EPA	Omega 3 (EPA) Fatty Acids	15000	\N	-infinity
 17	Omega_3_ALA	Omega 3 (ALA) Fatty Acids	14000	\N	-infinity
 62	Total_Sugars	Total Sugars	1510	\N	-infinity
@@ -3755,6 +3773,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 64	Chlorine_Cl	Chlorine (Cl)	999999	Chlorine is the element (Cl), while chloride is the negatively charged ion formed when a chlorine atom gains an electron.	2026-03-10
 80	Oligosaccharides	Oligosaccharides	2250	\N	2026-03-10
 44	Tryptophan	Tryptophan	16300	\N	2026-03-11
+15	Omega_3_DHA	Omega 3 (DHA) Fatty Acids	15300	\N	2026-03-12
 \.
 
 
@@ -3950,6 +3969,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4888	0	159	1	1	\N	493	f	\N	6	f	t	\N	1
 8233	6	977	1	1	\N	123	f	\N	1	f	t	\N	1
 1366	4	68	1	1	, sliced	319	f	\N	0	f	t	\N	1
+5734	8	419	8	1	, to taste	969	t	\N	7	f	t	\N	1
 317	4	41	1	8	\N	145	f	\N	1	f	t	\N	1
 5422	0	367	1	6	\N	144	f	\N	1	f	t	\N	1
 5423	4	367	1	8	, cooked & cooled	328	f	\N	3	f	t	\N	1
@@ -5482,28 +5502,25 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5686	7	412	1	1	\N	676	f	\N	0	f	t	\N	1
 5687	6	412	1	1	\N	\N	f	411	1	f	t	\N	1
 5688	8	412	8	1	, to taste	692	f	\N	2	f	t	\N	1
+5728	7	419	1	2	\N	991	f	\N	1	f	t	\N	1
+5729	7	419	1	2	\N	77	f	\N	2	f	t	\N	0.25
+5730	0	419	1	2	, juiced	12	f	\N	3	f	t	\N	1
 5955	6	486	4	1	, or add 1 teaspoon of vanilla to plain protein powder	1297	t	\N	6	f	t	\N	1
 5702	12	415	1	1	\N	123	f	\N	0	f	t	\N	1
 5703	6	415	4	1	, halved	251	f	\N	1	f	t	\N	1
 5704	6	415	2	1	, diced	10	f	\N	2	f	t	\N	1
 5705	6	415	2	1	, diced	155	f	\N	3	f	t	\N	1
 7319	4	733	1	15	, drained and rinsed	419	f	\N	0	f	t	\N	1
+5731	8	419	4	1	\N	143	f	\N	4	f	t	\N	1
 7320	8	733	1	2	(MISO PASTE)	243	f	\N	1	f	t	\N	1
 7321	8	733	2	1	\N	323	f	\N	2	f	t	\N	1
 6201	0	553	1	2	\N	910	f	\N	7	f	t	\N	1
 5760	6	423	1	4	\N	372	f	\N	1	f	t	\N	1
 5706	7	416	1	1	\N	77	f	\N	0	f	t	\N	0.25
-5729	7	419	1	2	\N	77	f	\N	1	f	t	\N	0.25
 5736	6	420	4	1	\N	77	f	\N	1	f	t	\N	0.25
 5747	7	421	1	2	\N	77	f	\N	2	f	t	\N	0.25
 5761	0	423	1	2	\N	5	t	\N	2	f	t	\N	1
-5728	7	419	1	2	\N	991	f	\N	0	f	t	\N	1
 5762	0	423	2	1	, chopped	222	f	\N	3	f	t	\N	1
-5730	0	419	1	2	, juiced	12	f	\N	2	f	t	\N	1
-5731	8	419	4	1	\N	143	f	\N	3	f	t	\N	1
-5732	8	419	4	1	\N	307	f	\N	4	f	t	\N	1
-5733	0	419	1	1	, minced	5	f	\N	5	f	t	\N	1
-5734	8	419	8	1	, to taste	969	t	\N	6	f	t	\N	1
 5715	0	417	1	1	, chopped small	812	f	\N	0	f	t	\N	1
 5716	0	417	3	1	, minced	3	f	\N	1	f	t	\N	1
 5717	0	417	1	2	, minced	5	t	\N	2	f	t	\N	1
@@ -5518,6 +5535,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5757	7	422	1	2	\N	215	f	\N	5	f	t	\N	1
 5758	0	422	1	1	, zested and juiced	12	f	\N	6	f	t	\N	1
 5698	7	414	1	2	\N	215	f	\N	2	f	t	\N	1
+5732	8	419	4	1	\N	307	f	\N	5	f	t	\N	1
+5733	0	419	1	1	, minced	5	t	\N	6	f	t	\N	1
 5719	8	417	8	1	. to taste	692	t	\N	4	f	t	\N	1
 5699	7	414	1	1	\N	357	f	\N	3	f	t	\N	1
 5700	8	414	2	1	\N	503	f	\N	4	f	t	\N	1
@@ -8717,6 +8736,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1614	Pour the dressing over the potatoes. Toss gently to mix, and serve warm.	120	3	0
 692	Remove from the oven and top with remaining chopped parsley.	64	6	0
 693	Serve immediately with extra Parmesan cheese.	64	7	0
+3151	In a small bowl, whisk the coconut aminos, olive oil, and lime juice until well combined.	419	0	0
 3316	Add maca, coconut milk, cinnamon, hot water, and sweetener into a blender.	521	0	0
 3054	Whisk together the syrup, molasses, bourbon, and mustard in a small bowl and set aside.	390	0	0
 1834	In a small mixing bowl, whisk together the honey, balsamic, mustard, salt, pepper and garlic. Add the oil and whisk thoroughly to combine. Continue whisking until the dressing is fully emulsified.	94	0	0
@@ -8724,11 +8744,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3055	Cook the chops as directed. While the chops are resting, pour off the fat from the skillet. Add the maple syrup mixture, return to medium-high heat, and cook, scraping up the browned bits from the bottom of the pan, until the mixture is reduced by half and syrupy.	390	1	4
 3444	In a wok (or large skillet), turn the heat to medium-high and add the coconut oil.	565	0	4
 1621	Chop the chicken breasts into 1-inch cubes, place in a bowl and add the lemon juice, tandoori paste, yogurt, garlic, coriander and seasoning. Mix well. Cover and set aside for 15 minutes.	132	0	0
+3152	Next, add the cumin, ginger, and garlic.	419	1	0
 1622	Preheat the grill (broiler). Thread alternate pieces of chicken and onion on to four skewers (pre-soaked in water if wooden).	132	1	24
 1623	Brush the onion with a little oil, lay the kebabs on a grill (broiling) rack and cook under a high heat for 10–12 minutes, turning once. Garnish the kebabs with fresh coriander and serve at once with pilaf rice and naan bread.	132	2	0
-3151	In a small bowl, whisk the coconut aminos, olive oil, and lime juice until well combined.	419	0	0
-3152	Next, add the cumin, ginger, and garlic.	419	1	0
-3153	Add the salt and pepper, to taste. Stir well and set aside.	419	2	0
 1653	Heat the oil in a frying pan. Add the meat, with the garlic and spices, and brown over a medium heat, stirring frequently to break up any lumps. Season, cook for 5 minutes, then set aside to cool slightly.	160	0	0
 1655	Sprinkle the crumbled or grated cheese into the tacos and serve immediately. Tacos are eaten with the fingers, so have plenty of paper napkins to hand.	160	2	0
 3445	When melted, add the tomatoes through cabbage, and cook until softened, about 5 minutes.	565	1	4
@@ -8740,6 +8758,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1781	Pour the cream into a heavy pan. Add the sugar and heat gently until the sugar has dissolved, then bring to the boil, stirring constantly. Add the lemon juice and rind, reserving a little of the rind for decoration, and stir constantly over a medium heat until it thickens.	171	0	0
 1782	Pour the mixture into four heatproof serving glasses. Cool, then chill in the refrigerator until just set.	171	1	0
 1783	Serve the posset decorated with a few strands of lemon rind, and with a selection of dessert biscuits (cookies), if you like. Rich, buttery shortbread is ideal.	171	2	0
+3153	Add the salt and pepper, to taste. Stir well and set aside.	419	2	0
 2890	Place eggs in cold water, enough to cover the eggs by about an inch.	65	0	0
 2892	Cover and let simmer for 10 minutes.	65	2	0
 2893	Rinse eggs under cold water until they are chilled. Serve.	65	3	0
@@ -10564,7 +10583,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 529, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 537, true);
 
 
 --
@@ -11388,5 +11407,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict tMRWaNe0xsOiv8OdChY5reNVx4Tal7TLTpXxBiCu7iva2sxGUVfyZrO0tyNShjh
+\unrestrict 1dhyIChsNaYyDGW3A1icQIVLcdD7NWavnvtROOD5qt4MqOy92kg3UoLyOibMH6K
 

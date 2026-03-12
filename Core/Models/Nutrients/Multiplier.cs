@@ -4,11 +4,11 @@ namespace Core.Models.Nutrients;
 
 public enum Multiplier
 {
-    [Display(Name = "")]
-    None = 0,
+    [Display(Name = "Day")]
+    Day = 0,
 
-    [Display(Name = "Person")]
-    Person = 1,
+    [Display(Name = "Total Energy")]
+    TotalEnergy = 1,
 
     [Display(Name = "Kilogram", ShortName = "kg")]
     KilogramOfBodyweight = 2,

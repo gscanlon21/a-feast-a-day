@@ -98,9 +98,9 @@ public enum Measure
 public static class MeasureConsts
 {
     /// <summary>
-    /// Nutrient measures.
+    /// Measure.None + DryMeasures + LiquidMeasures.
     /// </summary>
-    public static Measure[] StandardMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Percent/*, Measure.IU*/];
+    public static Measure[] StandardMeasures => [Measure.None, ..DryMeasures, ..LiquidMeasures];
 
     /// <summary>
     /// Measures used to measure dry ingredients.

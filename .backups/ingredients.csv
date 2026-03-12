@@ -733,7 +733,7 @@
 839	\N	White Chocolate Chips	\N	\N	f	0	28	100	2024-12-01	4	170	16384	170	Chocolate Chips	\N
 840	\N	Sugar-Free White Chocolate Chips	\N	\N	f	0	28	100	2025-01-20	4	170	16384	170	Chocolate Chips	\N
 841	\N	Large Mixed-Color Carrots	\N	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Mixed-Color Carrots	\N
-842	\N	Garbanzo Beans	aka: Chickpeas -. https://www.eatthismuch.com/calories/mung-beans-3577	\N	f	0	28	100	2024-10-17	4	207	2048	207	Garbanzo Beans	\N
+842	\N	Garbanzo Beans	aka: Chickpeas.	\N	f	0	28	100	2026-03-12	4	207	2048	207	Garbanzo Beans	https://www.eatthismuch.com/calories/mung-beans-3577
 843	\N	Brown Lentils	\N	\N	f	0	192	100	2025-05-25	6	192	2048	192	Brown Lentils	\N
 844	\N	Green Lentils	\N	\N	f	0	28	100	2025-06-07	4	192	2048	192	Green Lentils	\N
 845	\N	Agave	\N	\N	f	0	16	100	2025-09-06	0	112	3	112	Agave	\N
@@ -1069,7 +1069,7 @@
 1331	\N	Bonesless Pork Ribs	\N	\N	f	1048576	178	100	2025-07-13	0	178	268435456	178	Bonesless Pork Ribs	\N
 1332	\N	Dark Meat Chicken	\N	\N	f	1048576	178	100	2025-07-13	0	178	268435456	178	Dark Meat Chicken	\N
 1333	\N	Dark Meat Chicken | Bonesless Pork Ribs	\N	\N	f	1048576	178	100	2025-07-13	0	178	268435456	178	Dark Meat Chicken | Bonesless Pork Ribs	\N
-1334	\N	Canned Navy Beans	\N	\N	f	0	28	100	2024-10-17	4	262	512	262	Canned Navy Beans	\N
+1334	\N	Canned Navy Beans	\N	\N	f	0	28	100	2026-03-12	4	262	512	262	Navy Bean	\N
 1335	\N	Mustard Powder	\N	\N	f	0	28	100	2025-02-27	4	96	131072	96	Mustard Powder	\N
 1336	\N	Bacon	\N	\N	f	1048576	12	100	2025-07-16	0	224	268435456	224	Bacon	\N
 1337	\N	Baby Arugula	 aka. Rocket.	\N	f	0	28	100	2025-02-14	4	20	2	20	Arugula	https://fdc.nal.usda.gov/food-details/2710822/nutrients
