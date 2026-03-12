@@ -11,7 +11,7 @@
 11	\N	Bananas	\N	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N
 12	\N	Limes	\N	\N	f	0	67	100	2025-02-07	0	201	1	201	Lime	\N
 13	\N	Fresh Cilantro	The plant is called Coriander. The leaves are cilantro.	\N	f	0	1	100	2024-12-13	3	16	3	16	Cilantro	https://www.eatthismuch.com/calories/fresh-cilantro-1945
-14	\N	Fresh Basil Leaves	\N	\N	f	0	0.5	100	2025-01-10	0	32	3	32	Fresh Basil Leaves	\N
+14	\N	Fresh Basil Leaves	\N	\N	f	0	0.5	100	2025-01-10	0	32	3	32	Basil	\N
 15	\N	Yellow Potatoes	\N	\N	f	0	369	100	2025-05-31	0	369	2	369	Potato	\N
 16	\N	Fresh Spinach	\N	\N	f	0	30	100	2025-02-11	6	30	2	30	Fresh Spinach	\N
 17	\N	Red Tomatoes	\N	\N	f	512	111	100	2024-11-05	0	111	2	111	Tomato	\N
@@ -75,7 +75,7 @@
 77	\N	Olive Oil	\N	\N	t	0	28	100	2025-03-23	9	224	65536	224	Olive Oil	https://fdc.nal.usda.gov/food-details/748608/nutrients
 78	\N	Vegetable Oil	\N	\N	t	0	28	100	2025-10-06	9	224	65536	224	Vegetable Oil	https://fdc.nal.usda.gov/food-details/172370/nutrients
 79	\N	Canola Oil	\N	\N	t	0	28	100	2024-12-22	9	224	65536	224	Canola Oil	https://fdc.nal.usda.gov/food-details/748278/nutrients
-80	\N	Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	\N	f	0	30	100	2025-01-07	9	239	32	239	Apple Cider Vinegar	\N
+80	\N	Apple Cider Vinegar	aka. Cider Vinegar.	\N	f	0	30	100	2025-01-07	9	239	32	239	Apple Cider Vinegar	https://www.eatthismuch.com/calories/vinegar-222
 81	\N	Balsamic Vinegar	\N	\N	f	0	30	100	2025-12-28	9	255	32	255	Vinegar	\N
 82	\N	Red Wine Vinegar	\N	\N	f	0	30	100	2025-10-23	9	239	32	239	Vinegar	\N
 83	\N	White Vinegar	\N	\N	f	0	30	100	2025-03-21	9	240	32	240	White Vinegar	\N
@@ -228,7 +228,7 @@
 235	\N	Chinese Cooking Wine	\N	\N	f	0	30	100	2025-01-23	9	240	8192	240	Chinese Cooking Wine	\N
 236	\N	Sherry	\N	\N	f	0	30	100	2026-01-28	9	240	3	240	Sherry	\N
 237	\N	Chinese Cooking Wine | Sherry	\N	\N	f	0	240	100	2025-10-19	6	240	524288	240	Chinese Cooking Wine | Sherry	\N
-238	\N	Light Sesame Seeds	aka Hulled Sesame Seeds.  https://www.eatthismuch.com/calories/sesame-seeds-2617	\N	f	8192	28	100	2025-02-26	4	144	131072	144	Sesame Seed	\N
+238	\N	Light Sesame Seeds	aka Hulled Sesame Seeds.	\N	f	8192	28	100	2025-02-26	4	144	131072	144	Sesame Seed	https://www.eatthismuch.com/calories/sesame-seeds-2617
 239	\N	Bean Thread Noodles	Also known as cellophane noodles or glass noodles, are made from mung beans and are gluten-free.	\N	f	0	28	100	2026-02-02	4	140	4096	140	Noodle	\N
 240	\N	Fine Rice Noodles	\N	\N	f	4096	28	100	2025-07-28	4	112	4096	112	Fine Rice Noodles	\N
 241	\N	Bean Sprouts	\N	\N	f	0	28	100	2025-09-09	4	113.33	2048	113.33	Bean Sprouts	\N
