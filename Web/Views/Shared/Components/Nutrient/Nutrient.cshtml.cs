@@ -33,7 +33,7 @@ public class NutrientViewModel
         var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range ?? defaultRange;
 
         var sumRDA = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.RDA);
-        var sumTUL = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? sumRDA * 2;
+        var sumTUL = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? (sumRDA * NutrientConsts.RDAScaleWhenNoTUL);
         var start = sumRDA / sumTUL * userNutrientTarget.Start.Value ?? 0;
 
         // Show default nutrient targets when backfilling data.

@@ -188,10 +188,10 @@ public enum Nutrients
     /// <summary>
     /// Phosphorus (P)
     /// </summary>
-    [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(700, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(700, 4000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(700, 4000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(700, 4000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(700, 4000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Phosphorus (P)", Order = 5500)]
     Phosphorus_P = 18,
 
@@ -218,10 +218,10 @@ public enum Nutrients
     /// <summary>
     /// Molybdenum (Mo)
     /// </summary>
-    [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(45, 2000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(45, 2000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(45, 2000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(45, 2000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Molybdenum (Mo)", Order = 5650)]
     Molybdenum_Mo = 21,
 
@@ -238,10 +238,10 @@ public enum Nutrients
     /// <summary>
     /// Potassium (K)
     /// </summary>
-    [DailyAllowance(3400, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(2600, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(3400, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(2600, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(3400, 34000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(2600, 26000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(3400, 34000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(2600, 26000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Potassium (K)", Order = 5700)]
     Potassium_K = 23,
 

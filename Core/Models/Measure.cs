@@ -100,7 +100,7 @@ public static class MeasureConsts
     /// <summary>
     /// Measure.None + DryMeasures + LiquidMeasures.
     /// </summary>
-    public static Measure[] StandardMeasures => [Measure.None, ..DryMeasures, ..LiquidMeasures];
+    public static Measure[] StandardMeasures => [Measure.None, .. DryMeasures, .. LiquidMeasures];
 
     /// <summary>
     /// Measures used to measure dry ingredients.

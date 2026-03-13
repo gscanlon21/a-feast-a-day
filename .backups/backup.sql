@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 1dhyIChsNaYyDGW3A1icQIVLcdD7NWavnvtROOD5qt4MqOy92kg3UoLyOibMH6K
+\restrict aXBcVsWIb8up4tghaKc6mdDZtXWaSifUx3qSHn24mzMLeVsrT78siuZjfqnrY7W
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -762,6 +762,7 @@ COPY public."__EFMigrationsHistory" ("MigrationId", "ProductVersion") FROM stdin
 --
 
 COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier", "CaloriesPerGram", "Source", "LastUpdated", "Notes", "NutrientId") FROM stdin;
+315	8	40	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-12	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
 10	\N	1	131072	100	1	9		2023-01-01	\N	43
 17	20	35	131072	100	1	9		2023-01-01	\N	21
 177	8	45	1048576	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
@@ -779,11 +780,13 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 219	\N	\N	65536	2	0	0		-infinity	\N	58
 124	\N	6	65536	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
 129	\N	-1	2	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	-infinity	\N	6
+213	3400	34000	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	UL not determined owing to lack of a toxicological indicator specific to excessive potassium intake; using 10x.	60
+214	2600	26000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	UL not determined owing to lack of a toxicological indicator specific to excessive potassium intake; using 10x.	60
+212	3400	34000	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	UL not determined owing to lack of a toxicological indicator specific to excessive potassium intake; using 10x.	60
 226	20	35	65536	100	1	9		-infinity	\N	21
 230	1000	1100	65536	0	3	0		-infinity	\N	70
 210	1000	2500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
 211	1000	2500	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
-212	3400	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
 4	130	\N	131072	3	0	4		2023-01-01	\N	25
 269	0.5	10	65536	3	0	0		-infinity	\N	83
 24	700	3000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	46
@@ -793,8 +796,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 428	700	3000	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
 20	1	10	131072	2	0	0		2023-01-01	\N	54
 22	1	10	131072	2	0	0		2023-01-01	\N	72
-213	3400	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
-214	2600	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
 215	-1	20	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
 216	-1	20	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
 217	-1	20	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-10	\N	48
@@ -841,6 +842,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 339	5.6	11.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
 196	14.3	-1	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	\N	51
 197	14.3	-1	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-04	\N	51
+39	2600	26000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	UL not determined owing to lack of a toxicological indicator specific to excessive potassium intake; using 10x.	60
 462	1.3	\N	655360	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 463	1.1	\N	6291456	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 464	1.3	\N	10485760	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
@@ -854,19 +856,18 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 82	5.6	11.2	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
 40	1500	2300	131072	2	0	0		2023-01-01	\N	53
 84	900	10000	131072	1	0	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	\N	68
-39	2600	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	60
 228	1	10	65536	2	0	0		-infinity	\N	54
 229	1	10	65536	2	0	0		-infinity	\N	72
 232	1500	2300	65536	2	0	0		-infinity	\N	53
 234	900	10000	65536	1	0	0		-infinity	\N	68
 239	55	400	65536	1	0	0		-infinity	\N	40
+43	8	40	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-12	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
 108	6	12	131072	100	1	4		2023-01-01	\N	26
 247	1.3	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
 36	1000	2500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-04	\N	22
 30	2.4	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
 44	55	400	131072	1	0	0		2023-01-01	\N	40
 242	2300	3600	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
-43	8	40	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
 401	4	15	131072	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
 34	15	1000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
 31	75	2000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
@@ -1059,7 +1060,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 415	2.6	\N	393216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
 416	2.8	\N	655360	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
 425	700	3000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
-315	8	40	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
 333	15	1000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
 426	900	3000	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	28
 350	75	2000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-04	\N	38
@@ -1094,8 +1094,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 313	6	\N	2097152	3	0	2.5	https://pubmed.ncbi.nlm.nih.gov/18155991/	2026-03-10	https://health.osu.edu/wellness/exercise-and-nutrition/cooling-pasta-changes-starch	82
 87	2300	3600	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
 341	2300	3600	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	64
-233	11	40	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
-305	11	40	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-11	\N	69
 402	4	15	65536	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
 403	4	15	1048576	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
 404	4	15	2097152	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-03-11	\N	80
@@ -1106,6 +1104,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 320	120	1200	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
 334	90	900	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-11	No TUL; using 10x the RDA.	71
 237	15	1000	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-03-11	\N	73
+233	11	40	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-12	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
+305	11	40	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-12	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
 \.
 
 
@@ -4074,6 +4074,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2154	8	117	1	1	, chopped, for garnish	2	t	\N	10	f	t	\N	1
 2155	8	117	1	1	, chopped, for garnish	140	t	\N	11	f	t	\N	1
 982	6	40	1	1	, drained	205	f	\N	0	f	t	\N	1
+7122	8	703	8	1	\N	214	t	\N	6	f	t	\N	1
 983	6	40	1	1	\N	16	f	\N	1	f	t	\N	1
 3906	4	196	1	7	(THIN EGG NOODLES)	333	f	\N	0	f	t	\N	1
 3907	7	196	1	2	\N	233	f	\N	1	f	t	\N	1
@@ -6792,6 +6793,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6281	8	565	4	1	, to taste	692	t	\N	8	f	t	\N	1
 7108	6	701	2	1	\N	171	f	\N	1	f	t	\N	1
 7109	6	701	4	1	\N	36	f	\N	2	f	t	\N	1
+7117	0	703	1	1	, diced	9	f	\N	1	f	t	\N	1
+7118	0	703	2	1	, juiced	12	f	\N	2	f	t	\N	1
+7119	7	703	1	1	, minced	105	t	\N	3	f	t	\N	1
+7120	7	703	1	1	, diced	1088	t	\N	4	f	t	\N	1
+7121	7	703	2	1	, chopped	13	t	\N	5	f	t	\N	1
 7053	5	664	1	1	\N	488	f	\N	1	f	t	\N	1
 7054	6	664	1	1	, diced	222	f	\N	2	f	t	\N	1
 7055	6	664	1	2	, peas, carrots, green beans	209	f	\N	3	f	t	\N	1
@@ -6853,12 +6859,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7134	7	705	1	1	, plus more to taste	358	f	\N	4	f	t	\N	1
 7047	0	663	1	1	, thinly sliced	1043	f	\N	2	f	t	\N	1
 7136	8	705	4	1	\N	285	f	\N	6	f	t	\N	1
-7117	0	703	1	2	, diced	9	f	\N	0	f	t	\N	1
-7118	0	703	1	1	, juiced	12	f	\N	1	f	t	\N	1
-7119	7	703	1	2	, minced	105	t	\N	2	f	t	\N	1
-7120	7	703	1	2	, diced	1088	t	\N	3	f	t	\N	1
-7121	7	703	1	1	, chopped	13	t	\N	4	f	t	\N	1
-7122	8	703	4	1	\N	214	f	\N	5	f	t	\N	1
 7048	7	663	1	3	, or store-bought Italian dressing	282	f	\N	3	f	t	\N	1
 7049	0	663	1	2	\N	1265	f	\N	4	f	t	\N	1
 7040	0	662	1	1	, juiced	12	f	\N	3	f	t	\N	1
@@ -9459,6 +9459,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3480	Toss in the dressing and mix well, or serve it on the side.	574	2	0
 3493	Place the bone broth, beets, sweet potatoes, carrots, parsnips, onions, allspice, bay leaves, and garlic powder in a large stockpot and bring to a boil.	578	0	4
 4840	Place the baking sheet in the preheated oven and bake for 15-20 minutes, stirring halfway through, until the nuts and seeds are golden brown and fragrant.	1005	3	0
+4900	Taste the guacamole and add a little more lime juice and salt to suit your taste.	703	1	0
 3527	Heat the coconut oil in a soup pot on medium-heat. Add the leeks and cook until softened, about 6 minutes.	586	0	4
 3528	Add the garlic, and sauté until fragrant, about 1 minute.	586	1	4
 752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	62	1	0
@@ -9920,7 +9921,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3888	Taste the soup, season with more salt and pepper if needed, and serve.	706	2	0
 3885	In a medium bowl, combine the quinoa, parsley, mint, tomato, lemon juice, and olive oil. Season with salt and pepper. Taste it and add a little more lemon juice if it needs it. Refrigerate the tabbouleh for 1 hour before serving.	705	0	65536
 3791	Spread the nuts out on a baking sheet and let cool for 1 hour. Store the nuts in an airtight container.	651	4	0
-3881	In a medium bowl, combine the avocado, lime juice, red onion, tomato, cilantro, and salt and mash it all together using a potato masher until it's smooth. Taste the guacamole and add a little more lime juice and salt to suit your taste.	703	0	32768
 3889	Warm a large pot over medium-high heat. Add the oil, onion, celery and cook for 5 minutes. 	707	0	4
 3890	Throw in the tomatoes, potatoes, frozen vegetables, and water. Bring to a boil, then reduce the heat to low and simmer for 20 minutes, or until the potatoes are tender.	707	1	4
 3891	Using a vegetable peeler, pull off strips of zest from the orange. Squeeze the orange juice and set aside.	708	0	0
@@ -9938,6 +9938,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3903	In a large bowl, combine the melted butter, brown sugar, and honey. Add the oats and nuts.	712	1	0
 3904	Spread the mixture onto the lined pan. Transfer to the oven and bake the granola for 30 minutes, giving it a stir every 10 minutes or so.	712	2	2
 3905	Let the mixture cool for 2 hours at room temperature, then put it in an airtight container.	712	3	0
+3881	In a medium bowl, combine the avocado, lime juice, red onion, tomato, cilantro, and salt and mash it all together using a potato masher until it's smooth.	703	0	32768
 2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	240	2	0
 3898	In a medium pot, warm the olive oil over medium heat. Add the onion and cook for 5 minutes, or until translucent. Add the jalapeños and cook for 2 more minutes.	710	0	4
 3899	Throw in the black beans and tomatoes and bring to a boil. Reduce the heat to low and simmer the salsa for 15–20 minutes, or until thick.	710	1	4
@@ -10597,7 +10598,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 34542, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 34652, true);
 
 
 --
@@ -10611,7 +10612,7 @@ SELECT pg_catalog.setval('public."nutrient_Id_seq1"', 87, true);
 -- Name: nutrient_canada_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_canada_Id_seq"', 8873, true);
+SELECT pg_catalog.setval('public."nutrient_canada_Id_seq"', 9056, true);
 
 
 --
@@ -11407,5 +11408,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 1dhyIChsNaYyDGW3A1icQIVLcdD7NWavnvtROOD5qt4MqOy92kg3UoLyOibMH6K
+\unrestrict aXBcVsWIb8up4tghaKc6mdDZtXWaSifUx3qSHn24mzMLeVsrT78siuZjfqnrY7W
 

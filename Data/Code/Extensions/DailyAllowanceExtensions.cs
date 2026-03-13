@@ -16,8 +16,10 @@ public static class DailyAllowanceExtensions
         var totalCaloriesPerDay = userFamilies.Sum(uf => uf.CaloriesPerDay);
         var totalKCaloriesPerDay = totalCaloriesPerDay / 1000d;
 
-        // TODO/FIXME: Test and redo all the conversion code. So very messy.
-        var maxValue = tul ? (dailyAllowance.TUL ?? dailyAllowance.RDA ?? 0) : (dailyAllowance.RDA ?? dailyAllowance.TUL ?? 0);
+        var maxValue = tul // TODO/FIXME: Test and redo all the conversion code. So very messy.
+            ? (dailyAllowance.TUL ?? (dailyAllowance.RDA * NutrientConsts.RDAScaleWhenNoTUL) ?? 0)
+            : (dailyAllowance.RDA ?? (dailyAllowance.TUL / NutrientConsts.RDAScaleWhenNoTUL) ?? 0);
+
         return (dailyAllowance.For, dailyAllowance.Measure, dailyAllowance.Multiplier) switch
         {
             // Percent of Kilocalorie/Energy both calculate the percent of total energy based on a macronutrient's calories / gram.
