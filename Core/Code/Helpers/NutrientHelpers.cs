@@ -35,6 +35,7 @@ namespace Core.Code.Helpers;
 /// These do not have dietary intake references:
 /// Nutrients.Total_Sugars,
 /// Nutrients.Lycopene,
+/// Nutrients.Betaine,
 /// </summary>
 public static class NutrientHelpers
 {
@@ -115,7 +116,6 @@ public static class NutrientHelpers
         Nutrients.Energy_KCalorie,
         Nutrients.Lutein_Zeaxanthin,
         Nutrients.Choline,
-        Nutrients.Betaine,
     ];
 
     public static readonly IReadOnlyDictionary<USDANutrients, Nutrients> USDAToNutrients =
@@ -187,9 +187,8 @@ public static class NutrientHelpers
         // SELECT "IngredientId", "Nutrients" FROM usda_nutrient WHERE "Nutrients" IN (1008, 2047) GROUP BY "IngredientId", "Nutrients" HAVING COUNT(*) > 1
         // Energy_KCalorie seems to be for legacy ingredients, while Atwater_..._Factors seems to be for the foundation foods.
         { Nutrients.Energy_KCalorie, [USDANutrients.Energy_KCalorie, USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
-        { Nutrients.Betaine, [USDANutrients.Betaine_Milligrams] },
-        { Nutrients.Choline, [USDANutrients.Choline_total_Milligrams] },
         { Nutrients.Lutein_Zeaxanthin, [USDANutrients.Lutein__zeaxanthin_Micrograms] },
+        { Nutrients.Choline, [USDANutrients.Choline_total_Milligrams] },
     };
 
     public static IReadOnlyDictionary<Nutrients, List<CanadaNutrients>> NutrientsToCanada => new Dictionary<Nutrients, List<CanadaNutrients>>
@@ -249,8 +248,7 @@ public static class NutrientHelpers
 
         // Extra
         { Nutrients.Energy_KCalorie, [CanadaNutrients.ENERGY_KILOCALORIES_KCalorie] },
-        { Nutrients.Betaine, [CanadaNutrients.BETAINE_Milligrams] },
-        { Nutrients.Choline, [CanadaNutrients.CHOLINE_TOTAL_Milligrams] },
         { Nutrients.Lutein_Zeaxanthin, [CanadaNutrients.LUTEIN_AND_ZEAXANTHIN_Micrograms] },
+        { Nutrients.Choline, [CanadaNutrients.CHOLINE_TOTAL_Milligrams] },
     };
 }
