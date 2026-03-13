@@ -96,7 +96,7 @@
 98	\N	Brown Rice	\N	\N	f	4096	28	100	2024-11-22	4	190	1024	190	Brown Rice	https://fdc.nal.usda.gov/food-details/2512380/nutrients
 99	\N	Frozen Stir-Fry Vegetables	\N	\N	f	0	28	100	2025-12-03	4	91	67108864	91	Frozen Stir-Fry Vegetables	\N
 100	\N	Teriyaki Sauce	\N	\N	f	262176	36	100	2025-12-07	9	288	8192	288	Teriyaki Sauce	\N
-101	\N	Light Sesame Oil	aka. Unroasted Sesame Oil; Untoasted Sesame Oil - https://www.eatthismuch.com/calories/sesame-oil-268	\N	f	8192	28	100	2025-02-24	9	224	65536	224	Sesame Oil	\N
+101	\N	Light Sesame Oil	aka. Unroasted Sesame Oil; Untoasted Sesame Oil.	\N	f	8192	28	100	2025-02-24	9	224	65536	224	Sesame Oil	https://www.eatthismuch.com/calories/sesame-oil-268
 102	\N	Lentils	\N	\N	f	0	192	100	2025-05-30	6	192	2048	192	Lentils	\N
 103	\N	Red Potatoes	\N	\N	f	0	213	100	2024-12-21	0	150	2	150	Potato	\N
 104	\N	Summer Sausage	\N	\N	f	1048576	56	100	2024-10-18	4	224	8	224	Summer Sausage	https://fdc.nal.usda.gov/food-details/172940/nutrients
@@ -189,7 +189,7 @@
 193	\N	Slices of White Bread	\N	\N	f	32	25	100	2024-11-01	0	25	64	25	Slices of White Bread	\N
 194	\N	Rice Cakes	\N	\N	f	0	9	100	2024-11-18	0	36	16	36	Rice Cakes	\N
 195	\N	Bread Flour, Unenriched	\N	\N	f	262176	28	100	2026-01-25	4	137	32768	137	Bread Flour	\N
-196	\N	Cornstarch	\N	\N	t	2	7.68	100	2025-07-31	7	128	114688	128	Cornstarch	\N
+196	\N	Cornstarch	\N	\N	t	2	28	100	2025-07-31	4	128	114688	128	Cornstarch	\N
 197	\N	Slices of White Bread, GF	\N	\N	f	0	24	100	2026-01-10	0	48	64	48	White Bread	\N
 198	\N	Bologna	\N	\N	f	0	28	100	2025-05-03	4	224	268435456	224	Bologna	\N
 200	\N	Loaves of Whole-Wheat Pita	\N	\N	f	262176	64	100	2025-05-17	0	64	4	64	Loaves of Whole-Wheat Pita	\N
@@ -440,7 +440,7 @@
 487	\N	Tortillas, GF	\N	\N	f	0	24	100	2025-06-07	0	96	16288	96	Tortillas, GF	\N
 488	\N	80% Ground Beef	\N	\N	f	1048576	28	100	2024-10-26	4	224	268435456	224	Ground Beef	https://fdc.nal.usda.gov/food-details/2514744/nutrients
 489	\N	Salt & White Pepper	Use partial/aggregate ingredients for nutrients.	\N	t	0	28	100	2024-12-24	4	224	131072	224	Salt & White Pepper	\N
-490	\N	Ground Ginger	\N	\N	f	0	28	100	2025-09-19	4	80	131072	80	Ground Ginger	\N
+490	\N	Ground Ginger	\N	\N	f	0	28	100	2025-09-19	4	80	131072	80	Ginger	\N
 491	\N	Gluten-Free Breadcrumbs	\N	\N	f	0	11.25	100	2024-11-09	4	90	64	90	Gluten-Free Breadcrumbs	\N
 492	\N	Enriched Long Grain Rice	\N	\N	f	4096	28	100	2026-01-03	4	185	1024	185	Rice	\N
 493	\N	Vanilla Bean	aka. Vanilla Pod.	\N	f	0	8	100	2025-11-19	0	224	1	224	Vanilla Bean	\N
@@ -648,7 +648,7 @@
 725	\N	Leaves of Iceberg Lettuce	\N	\N	f	0	15	100	2024-11-02	0	57	2	57	Lettuce	\N
 726	\N	Salted Peanuts	\N	\N	f	2048	28	100	2026-02-19	4	146	1048576	146	Peanut	\N
 727	\N	White Vinegar | Lemon Juice	\N	\N	f	0	29.875	100	2025-05-10	9	239	32	239	White Vinegar | Lemon Juice	\N
-728	\N	Broccolini Heads	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	\N
+728	\N	Broccolini Heads	Includes the stalk.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	https://www.eatthismuch.com/calories/broccoli-1885
 729	\N	Fresh Podded Green Peas	aka. Fresh Pea Pods. In pods.	\N	f	0	240	100	2024-11-04	6	240	2	240	Green Peas	\N
 730	\N	Fresh Mixed-Color Chilies	\N	\N	f	0	45	100	2024-11-28	0	90	2	90	Fresh Mixed-Color Chilies	\N
 731	\N	Fresh Yellow Chilies	\N	\N	f	0	45	100	2025-01-05	0	90	1	90	Fresh Yellow Chilies	\N
@@ -660,7 +660,7 @@
 737	\N	Tomato Paste	\N	\N	f	512	28	100	2025-04-27	4	262	256	262	Tomato Paste	\N
 738	\N	Chia Seeds	\N	\N	f	0	28	100	2025-02-21	4	192	131072	192	Chia Seeds	https://fdc.nal.usda.gov/food-details/2710819/nutrients
 739	\N	Granola	\N	\N	f	0	28	100	2025-12-18	4	122	1048576	122	Granola	\N
-740	\N	Dried Figs	\N	\N	f	0	28	100	2026-01-15	4	149	3	149	Dried Figs	\N
+740	\N	Dried Figs	\N	\N	f	0	28	100	2026-01-15	4	149	3	149	Fig	\N
 741	\N	Muesli	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	100	2025-12-16	6	132	1048576	132	Muesli	\N
 742	\N	Granola | Muesli	How much choline? https://www.eatthismuch.com/calories/raw-sunflower-seeds-2344674	\N	f	0	132	100	2025-12-16	6	132	1048576	132	Granola | Muesli	\N
 743	\N	Orange Flower Blossoms	\N	\N	f	0	131	100	2025-03-28	0	131	1	131	Orange Flower Blossoms	\N
@@ -711,7 +711,7 @@
 817	\N	Frozen Podded Snow Peas	\N	\N	f	0	28	100	2025-07-27	4	144	67108864	144	Frozen Podded Snow Peas	\N
 818	\N	Frozen Podded Snap Peas	\N	\N	f	0	28	100	2025-07-26	4	144	67108864	144	Frozen Podded Snap Peas	\N
 819	\N	Fresh Podded Green Peas | Frozen Podded Green Peas	aka. Fresh Peas. In pods. - https://www.eatthismuch.com/calories/peas-2060	\N	f	0	28	100	2025-01-15	4	63	2	63	Green Peas	\N
-820	\N	Fresh Podded Fava Beans | Frozen Podded Fava Beans	\N	\N	f	0	126	100	2024-10-17	6	126	2048	126	Fresh Podded Fava Beans | Frozen Podded Fava Beans	\N
+820	\N	Fresh Podded Fava Beans | Frozen Podded Fava Beans	\N	\N	f	0	28	100	2026-03-13	4	126	3	126	Fava Bean	\N
 821	\N	Parsnips	\N	\N	f	0	100	100	2025-04-19	0	100	2	100	Parsnips	\N
 822	\N	Light Vanilla Ice Cream	\N	\N	f	4	152	100	2025-02-23	6	152	234881024	152	Ice Cream	\N
 823	\N	Rich Vanilla Ice Cream	\N	\N	f	4	214	100	2025-02-20	6	214	234881024	214	Ice Cream	\N
@@ -784,7 +784,7 @@
 952	\N	Seed Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	100	2025-10-05	7	224	29360128	224	Seed Butter	\N
 953	\N	Nut Butter	Missing minor nutrients. https://www.eatthismuch.com/food/nutrition/butter,1	\N	t	0	14	100	2025-10-09	7	224	29360128	224	Nut Butter	\N
 954	\N	Whole-Wheat Penne Pasta	\N	\N	f	32	85	100	2025-02-05	6	85	4096	85	Whole-Wheat Penne Pasta	\N
-955	\N	Roast Ham	Not sliced. https://www.eatthismuch.com/calories/sliced-ham-905	\N	f	0	28	100	2024-12-10	4	224	268435456	224	Roast Ham	\N
+955	\N	Roast Ham	Not sliced.	\N	f	0	28	100	2024-12-10	4	224	268435456	224	Roast Ham	https://www.eatthismuch.com/calories/sliced-ham-905
 956	\N	Green Queen Olives	\N	\N	f	0	28	100	2025-03-15	4	134	3	134	Olive	\N
 957	\N	Kalamata Olives	\N	\N	f	0	28	100	2025-03-17	4	112	3	112	Olive	\N
 958	\N	Coriander Seeds	\N	\N	f	0	28	100	2025-12-17	4	80	131072	80	Coriander Seeds	\N
@@ -877,7 +877,7 @@
 1078	\N	Red Beets	\N	\N	f	0	82	100	2025-04-27	0	82	2	82	Red Beets	https://fdc.nal.usda.gov/food-details/2685576/nutrients
 1079	\N	Heirloom Tomatoes	\N	\N	f	512	111	100	2024-11-05	0	111	2	111	Tomato	\N
 1080	\N	Broccoli Crowns	Does not include the stalk	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccoli	https://fdc.nal.usda.gov/food-details/747447/nutrients
-1081	\N	Broccolini Crowns	Does not include the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	\N
+1081	\N	Broccolini Crowns	Does not include the stalk.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	https://www.eatthismuch.com/calories/broccoli-1885
 1082	\N	Green Olives	\N	\N	f	0	28	100	2025-03-19	4	134	3	134	Olive	\N
 1083	\N	Olives	\N	\N	f	0	28	100	2025-03-19	4	134	3	134	Olive	\N
 1084	\N	Mixed Roasting Vegetables	\N	\N	f	0	28	100	2025-09-23	4	225	2	225	Mixed Roasting Vegetables	\N
@@ -1019,15 +1019,15 @@
 1280	\N	Kidney Beans	\N	\N	f	0	28	100	2025-10-12	4	184	2048	184	Kidney Beans	\N
 1281	\N	Red Kidney Beans	\N	\N	f	0	28	100	2025-10-10	4	184	2048	184	Red Kidney Beans	\N
 1282	\N	Canned Kidney Beans	\N	\N	f	0	28	100	2025-10-14	4	256	512	256	Canned Kidney Beans	\N
-1283	\N	Canned Red Kidney Beans	\N	\N	f	0	28	100	2025-10-13	4	256	512	256	Canned Red Kidney Beans	\N
+1283	\N	Canned Red Kidney Beans	\N	\N	f	0	28	100	2025-10-13	4	256	512	256	Red Kidney Bean	\N
 1284	\N	Canned Cream-Style Corn	\N	\N	f	2	28	100	2025-08-02	4	164	512	164	Canned Cream-Style Corn	\N
 1285	\N	Canned Sweet Corn	\N	\N	f	2	164	100	2025-08-02	6	164	512	164	Canned Sweet Corn	\N
 1286	\N	Celery	\N	\N	f	0	28	100	2025-03-12	4	101	2	101	Celery	\N
 1287	\N	Canned Cannellini Beans	\N	\N	f	0	28	100	2025-10-10	4	262	512	262	Canned Cannellini Beans	\N
 1288	\N	Cannellini Beans	\N	\N	f	0	28	100	2025-10-14	4	202	2048	202	Cannellini Beans	\N
-1289	\N	Broccolini Florets	Just the tips - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	\N
+1289	\N	Broccolini Florets	Just the tips.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	https://www.eatthismuch.com/calories/broccoli-1885
 1290	\N	Broccoli Florets	Just the tips.	\N	f	0	11	100	2024-11-04	0	71	2	71	Broccoli	\N
-1291	\N	Broccolini	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	\N
+1291	\N	Broccolini	Includes the stalk.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	https://www.eatthismuch.com/calories/broccoli-1885
 1292	\N	Frozen Broccolini	\N	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	\N
 1293	\N	Broccolini Sprouts	\N	\N	f	0	28	100	2025-01-21	4	224	2	224	Broccolini	\N
 1294	\N	Dark Soy Sauce	\N	\N	f	294944	32	100	2024-12-01	9	256	8192	256	Dark Soy Sauce	\N
@@ -1087,7 +1087,7 @@
 1350	\N	Jarred Sun-Dried Tomatoes	\N	\N	f	512	111	100	2024-11-05	0	111	2	111	Jarred Sun-Dried Tomatoes	\N
 1351	\N	Slices of Monterey Jack Cheese	\N	\N	f	256	28	100	2025-01-29	0	113	8388608	113	Slices of Monterey Jack Cheese	\N
 1352	\N	Large Oranges	\N	\N	f	0	184	100	2025-04-01	0	180	1	180	Orange	https://fdc.nal.usda.gov/food-details/169097/nutrients
-1353	\N	Purple Broccolini	Includes the stalk - https://www.eatthismuch.com/calories/broccoli-1885	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	\N
+1353	\N	Purple Broccolini	Includes the stalk.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccolini	https://www.eatthismuch.com/calories/broccoli-1885
 1354	\N	Turkey Drumsticks	\N	\N	f	1048576	356	100	2025-03-27	0	227	268435456	227	Turkey Drumsticks	\N
 1355	\N	Smoked Paprika	\N	\N	t	0	28	100	2025-11-24	4	112	131072	112	Smoked Paprika	\N
 1356	\N	Mixed-Color Tomatoes	\N	\N	f	512	123	100	2025-09-07	0	180	2	180	Tomato	\N
@@ -1360,7 +1360,7 @@
 1746	\N	Lean Beef Steak | Beef Tenderloin | Beef Sirloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2026-03-10	4	113	268435456	113	Beef	\N
 1747	\N	Lean Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
 1748	\N	Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N
-1749	\N	Beef Tenderloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillets	\N
+1749	\N	Beef Tenderloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat.	\N	f	1048576	28	100	2026-03-13	4	113	268435456	113	Beef Tenderloin Fillets	https://www.eatthismuch.com/calories/filet-mignon-90197
 1750	\N	Beef Sirloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	\N	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillets	\N
 1751	\N	Seedless Purple Grapes	aka: Black Grapes.	\N	f	0	28	100	2025-01-02	4	151	1	151	Grape	\N
 1752	\N	Seedless Black Grapes	aka: Purple Grapes.	\N	f	0	28	100	2025-01-02	4	151	1	151	Grape	\N
@@ -1508,3 +1508,7 @@
 2013	\N	Canned Lima Beans	\N	\N	f	0	28	100	2025-07-28	4	202	67108864	202	Frozen Lima Beans	\N
 2014	\N	Dry Lima Beans	\N	\N	f	0	28	100	2025-07-28	4	202	67108864	202	Frozen Lima Beans	\N
 2015	\N	Gala Apples	\N	\N	f	0	182	100	2025-03-25	0	182	1	182	Apple	\N
+2016	\N	Fresh Broccoli Heads	Includes the stalk.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccoli	https://fdc.nal.usda.gov/food-details/747447/nutrients
+2017	\N	Fresh Broccoli	Includes the stalk.	\N	f	0	608	100	2024-11-04	0	91	2	91	Broccoli	https://fdc.nal.usda.gov/food-details/747447/nutrients
+2018	\N	Fresh Broccoli Florets	Just the tips.	You can't buy these in stores.	f	0	11	100	2024-11-04	0	71	2	71	Broccoli	\N
+2019	\N	Chuck Roast		\N	f	0	28	100	2024-12-10	4	224	268435456	224	Roast Ham	\N

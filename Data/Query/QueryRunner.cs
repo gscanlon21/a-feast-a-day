@@ -441,7 +441,7 @@ public class QueryRunner(Section section)
 
                             // This makes it harder to see a recipe that still has refresh padding because it has to work more nutrients.
                             // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
-                            var weeksTillLastSeen = Math.Max(0, (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber) - DateHelpers.Today.DayNumber) / 7;
+                            var weeksTillLastSeen = Math.Max(0, DateHelpers.Today.DayNumber - (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
                             // The recipe does not work enough unique nutrients that we are trying to target.
                             // Allow recipes that have a refresh date since we want to show those continuously until that date.
                             // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes

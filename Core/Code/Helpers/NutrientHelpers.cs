@@ -30,8 +30,10 @@ namespace Core.Code.Helpers;
 /// Nutrients.Vitamin_D_D2__D3,
 /// Nutrients.Vitamin_E,
 /// Nutrients.Vitamin_E_MG_ATE,
+/// Nutrients.Sugars_Added,
 /// 
 /// These do not have dietary intake references:
+/// Nutrients.Total_Sugars,
 /// Nutrients.Lycopene,
 /// </summary>
 public static class NutrientHelpers
@@ -47,8 +49,6 @@ public static class NutrientHelpers
         Nutrients.Starch,
         Nutrients.Resistant_Starch,
         Nutrients.Fiber_total_dietary,
-        Nutrients.Total_Sugars,
-        Nutrients.Sugars_Total,
         Nutrients.Total_lipid_fat,
         Nutrients.Fatty_acids_total_trans,
         Nutrients.Fatty_acids_total_saturated,
@@ -87,7 +87,6 @@ public static class NutrientHelpers
         Nutrients.Folate_B9,
         Nutrients.Vitamin_B_12,
         Nutrients.Vitamin_C,
-        Nutrients.Vitamin_E,
         Nutrients.Vitamin_K,
     ];
 
@@ -132,8 +131,6 @@ public static class NutrientHelpers
         { Nutrients.Starch, [USDANutrients.Starch_Grams] },
         { Nutrients.Resistant_Starch, [USDANutrients.Resistant_starch_Grams] },
         { Nutrients.Fiber_total_dietary, [USDANutrients.Fiber_total_dietary_Grams] },
-        { Nutrients.Total_Sugars, [USDANutrients.Total_Sugars_Grams] },
-        { Nutrients.Sugars_Total, [USDANutrients.Sugars_Total_Grams] },
         { Nutrients.Total_lipid_fat, [USDANutrients.Total_lipid_fat_Grams] },
         { Nutrients.Fatty_acids_total_trans, [USDANutrients.Fatty_acids_total_trans_Grams] },
         { Nutrients.Fatty_acids_total_saturated, [USDANutrients.Fatty_acids_total_saturated_Grams] },
@@ -168,7 +165,6 @@ public static class NutrientHelpers
         { Nutrients.Folate_B9, [USDANutrients.Folate_total_Micrograms] },
         { Nutrients.Vitamin_B_12, [USDANutrients.Vitamin_B_12_Micrograms] },
         { Nutrients.Vitamin_C, [USDANutrients.Vitamin_C_total_ascorbic_acid_Milligrams] },
-        { Nutrients.Vitamin_E, [USDANutrients.Vitamin_E_alpha_tocopherol_Milligrams] },
         { Nutrients.Vitamin_K, [USDANutrients.Vitamin_K_phylloquinone_Micrograms] },
         { Nutrients.Biotin, [USDANutrients.Biotin_Micrograms] },
 
@@ -202,7 +198,6 @@ public static class NutrientHelpers
         { Nutrients.Protein, [CanadaNutrients.PROTEIN_Grams] },
         { Nutrients.Starch, [CanadaNutrients.STARCH_Grams] },
         { Nutrients.Fiber_total_dietary, [CanadaNutrients.FIBRE_TOTAL_DIETARY_Grams] },
-        { Nutrients.Sugars_Total, [CanadaNutrients.SUGARS_TOTAL_Grams] },
         { Nutrients.Total_lipid_fat, [CanadaNutrients.FAT_TOTAL_LIPIDS_Grams] },
         { Nutrients.Fatty_acids_total_trans, [CanadaNutrients.FATTY_ACIDS_TRANS_TOTAL_Grams] },
         { Nutrients.Fatty_acids_total_saturated, [CanadaNutrients.FATTY_ACIDS_SATURATED_TOTAL_Grams] },

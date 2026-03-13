@@ -17,7 +17,7 @@ public class FeastContext
     public required double WeeklyNutrientsWeeks { get; init; }
 
     /// <summary>
-    /// Is this workout being generated for a date in the past.
+    /// Is this feast being generated for a date in the past.
     /// </summary>
     public bool IsBackfill => Date != User.TodayOffset;
 }

@@ -66,7 +66,7 @@ public static class UserConsts
     /// to get the user in range and end up not working or overworking specific nutrients in the interim.
     /// 
     /// This shouldn't be too low (<12) or else the nutrient target value will drop too much
-    /// during rest days and overwork the user the next time they see a workout.
+    /// during over the course of the week and overwork the user the next time they see a feast.
     /// </summary>
     public const int NutrientVolumeWeeks = 12;
 

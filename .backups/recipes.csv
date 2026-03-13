@@ -52,12 +52,12 @@
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	f	white-bread.jpg	0	\N	t	t
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	f	white-bread.jpg	0	\N	t	t
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	basil-quesadilla.jpg	0	\N	f	f
-75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121°F.	\N	\N	0	5	5	5	t	garlic-olive-oil.jpg	7	\N	t	f
+75	Garlic Infused Olive Oil	Risk of botulism when the garlic is not heated to at least 121°F.	\N	\N	0	5	5	4	t	garlic-olive-oil.jpg	7	\N	t	f
 76	Minty Courgette Linguine	\N	\N	\N	12	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
 77	Cereal w/ Fruit	\N	\N	\N	2	0	1	4	t	cereal.jpg	0	\N	f	f
 78	String Cheese	\N	\N	\N	32	0	0	1	t	string-cheese.jpg	0	\N	f	f
 79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	fettucine-alfredo.jpg	0	\N	f	f
-80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	10	6	3	2	t	eggplant-mint-couscous-salad.jpg	0	\N	f	f
+80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	20	6	3	2	t	eggplant-mint-couscous-salad.jpg	0	\N	f	f
 81	Griddle Potatoes	\N	\N	\N	16	8	10	4	t	griddle-potatoes.jpg	0	\N	f	f
 82	Chicken Salad	\N	\N	\N	20	0	5	2	t	chicken-salad.jpg	0	\N	f	f
 83	Springerle Cookies	Yields about four dozen cookies. Cookies may last up to two months. To keep from hardening place in a jar or container with a damp cloth or piece of bread.	\N	\N	64	60	60	4	t	springerle-cookies.jpg	0	Lolly Wehrli	f	f
@@ -76,7 +76,7 @@
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
 97	Quinoa Pepperoni Pizza	\N	\N	\N	12	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
 98	Loaded Deviled Eggs	\N	\N	\N	20	20	5	6	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
-99	Warm Pasta Salad w/ Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	6	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
+99	Warm Pasta Salad w/ Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	12	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 100	Buttermilk Pancakes	\N	\N	\N	6	12	2	4	t	buttermilk-pancakes.jpg	0	\N	t	f
 101	Linguine w/ Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	20	12	3	2	t	linguine-arugula.jpg	0	\N	f	f
 102	Colcannon	\N	\N	\N	16	10	5	3	t	colcannon.jpg	0	\N	f	f
@@ -86,7 +86,7 @@
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	garlic-chicken.jpg	0	\N	f	f
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	2	10	5	1	t	ham-gruyere-melt.jpg	0	\N	f	f
 108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	120	10	8	t	\N	0	\N	f	f
-109	Grilled Fattoush Salad	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	20	15	10	4	t	grilled-fattoush-salad.jpg	0	\N	f	f
+109	Grilled Fattoush Salad	\N	\N	\N	20	15	10	4	t	grilled-fattoush-salad.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 110	Sausage Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	15	3	4	t	sausage-sandwich.jpg	0	\N	f	f
 111	Tahini Rocky Road	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	20	12	t	tahini-rocky-road.jpg	0	\N	f	f
 112	Jools' Chocolate Dreams	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	40	6	t	jools-chocolate-dreams.jpg	0	\N	f	f
@@ -119,10 +119,10 @@
 139	Crock Pot Salsa Chicken	I like Clint's Mild Salsa, which is gluten free. You may use 2 Tablespoons of my Large Batch Homemade Taco Seasoning Mix in place of the blend listed above. Feel free to use boneless, skinless chicken thighs — or a mixture of these and chicken breasts — to equal 2lbs. To store: cool the shredded chicken then scoop into a storage container with an airtight lid and refrigerate for 3-4 days. To freeze: cool the shredded chicken then scoop into a gallon-size freezer bag, remove the air, seal, and freeze flat for up to 6 months. Thaw in the refrigerator. To make freezer meal packs: add the uncooked ingredients into a gallon-size freezer bag then remove the air, seal, and freeze flat for up to 6 months. Thaw completely in the refrigerator before following recipe directions. How to use the shredded salsa chicken: Nachos: dollop tortilla chips with shredded chicken and cheese then melt in the oven and load up with your favorite toppings. Tacos: fill crunchy taco shells with shredded chicken then add your toppings. Enchiladas: use the flavorful salsa chicken as the filling in Chicken Enchiladas. Burritos: roll salsa chicken with cooked rice, beans, salsa, and cheese in your favorite large tortilla. Tostadas: toast corn tortillas then spread with Creamy Pinto Beans, the shredded salsa chicken, and shredded cheese. Melt then dollop with guacamole. Soups: add the tex-mex chicken to Restaurant-Style Chicken Tortilla Soup to save yourself a step. Salads: chill the shredded chicken then add to lettuce with shredded cheese, black beans, tomatoes, green onions, and tortilla strips. Serve with a mixture of equal parts salsa and ranch dressing. Burrito Bowls: pair the shredded chicken with cilantro lime rice, black beans, and all the fresh fixins. Quesadillas: pair with shredded cheese and tortillas then crisp to a golden crunch. Dip in a mixture of equal parts salsa and guacamole.	\N	\N	8	300	5	4	t	crock-pot-salsa-chicken.jpg	0	https://iowagirleats.com/crock-pot-salsa-chicken/#recipe-card	f	f
 140	Spiced Chicken Risotto w/ Mint	Use the same quantity of pumpkin or butternut squash in place of the carrots. To make a vegetarian version, omit the chicken and add a drained 14oz can of chickpeas to the rice just before the end of cooking.	\N	\N	12	15	5	4	t	gluten-free-risotto.jpg	0	\N	f	f
 141	Chicken Fried Rice	If you don't have any cold cooked rice in the refrigerator, you can still make this stir-fry if you have a couple of pouches of instant or express long grain or basmati rice in the cupboard. This type of rice cooks in under 2 minutes. For a stir-fry, the rice should be cold, so spread it out on a baking sheet after cooking and fan it to cool it quickly.	\N	\N	4	10	5	4	t	chicken-fried-rice.jpg	0	\N	f	f
-142	Frothy Hot Chocolate	You could use Mexican chocolate, which is flavoured with almonds, cinnamon and vanilla, and sweetened with sugar. All the ingredients are crushed together in a special mortar, and heated over coals. The powdered mixture is then shaped into discs, which can be bought in specialist stores.	\N	\N	32	4	3	4	t	hot-chocolate.jpg	0	\N	f	f
+142	Frothy Hot Chocolate	You could use Mexican chocolate, which is flavoured with almonds, cinnamon and vanilla, and sweetened with sugar. All the ingredients are crushed together in a special mortar, and heated over coals. The powdered mixture is then shaped into discs, which can be bought in specialist stores.	\N	\N	128	4	3	4	t	hot-chocolate.jpg	0	\N	f	f
 143	Banana Smoothie w/ Chocolate Sauce	Pouring chocolate sauce like this cools it slightly on the way down, so that it thickens on contact with the cold smoothie.	\N	\N	128	10	5	2	t	chocolate-smoothie.jpg	0	\N	f	f
 144	Cantaloupe Melon Salad	When you need just a small amount of sifted icing (confectioners') sugar, use a tea strainer. Spoon the sugar into the strainer, then lightly tap the side with the spoon so that the sifted sugar drifts down evenly. Though tempting when you're in a hurry, mashing the sugar in the strainer will not quicken the time it takes to sift through!	\N	\N	80	5	3	4	t	cantaloupe-melon-salad.jpg	0	\N	f	f
-145	Panettone French Toast	A generous portion of chilled mixed berry fruits such as raspberries, blackberries, morello cherries and blueberries perfectly complements the richness of this snack.	\N	\N	35	6	2	4	t	panettone-french-toast-alt.jpg	0	\N	f	f
+145	Panettone French Toast	A generous portion of chilled mixed berry fruits such as raspberries, blackberries, morello cherries and blueberries perfectly complements the richness of this snack.	\N	\N	66	6	2	4	t	panettone-french-toast-alt.jpg	0	\N	f	f
 146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato purée.	\N	\N	24	7	3	6	t	french-bread-pizza.jpg	0	\N	f	f
 147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	0	0	5	1	t	hummus.jpg	6	\N	f	f
 148	Muhammara	\N	\N	\N	0	0	8	4	t	muhammara.jpg	0	\N	f	f
@@ -176,14 +176,14 @@
 198	5-Ingredient Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	10	1	t	guacamole.jpg	6	https://asassyspoon.com/guacamole/#wprm-recipe-container-2857	f	f
 231	Pork w/ Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	pork-apples.jpg	0	\N	f	f
 232	Collagen Packed Blueberry Gummies	\N	\N	\N	16	120	15	2	t	blueberry-gummies.jpg	0	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	f	f
-233	Keto Mint Chocolate Chip Dessert	\N	\N	\N	32	120	5	2	t	chocolate-mint-muffins.jpg	0	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	f	f
+233	Keto Mint Chocolate Chip Dessert	\N	\N	\N	64	120	5	2	t	chocolate-mint-muffins.jpg	0	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	f	f
 234	Oven Baked Beet Chips	\N	\N	\N	48	55	35	2	t	oven-baked-beet-chips.jpg	0	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	f	f
 235	Rosemary-Lemon Tea	\N	\N	\N	128	5	5	1	t	rosemary-lemon-tea.jpg	0	https://www.drkarafitzgerald.com/recipe/eating-genes-rosemary-lemon-tea/	f	f
 236	Nutty-Lemon Snack Balls	Store in an air-tight container in the refrigerator for 1-2 weeks. Can also be frozen!	\N	\N	16	55	5	3	t	nutty-lemon-snack-balls.jpg	0	https://www.drkarafitzgerald.com/recipe/nutty-lemon-snack-balls/	f	f
 237	Vanilla Sugar	\N	\N	\N	0	0	10	2	t	\N	6	https://sallysbakingaddiction.com/homemade-vanilla-sugar/#tasty-recipes-90841	f	f
 238	Anti-Allergy Tea	\N	\N	\N	128	5	5	1	t	rosemary-lemon-tea.jpg	0	https://www.drkarafitzgerald.com/recipe/anti-allergy-tea/	f	f
 239	Okra Fries	\N	\N	\N	16	25	5	4	t	okra-fries.jpg	0	https://www.drkarafitzgerald.com/recipe/okra-fries/	f	f
-240	Choconut-Mint Squares	*Chocolate is prone to separating if you heat it too much, so using a double boiler method is a good way to avoid that happening. First find a heat-proof bowl that will suspend when placed into a saucepan without touching the bottom. Fill the saucepan with about 2-3 inches of water and heat to a simmer. Then place the bowl on top so that the steam from the water heats the bowl and its contents	\N	\N	32	5	5	4	t	chocolate-mint-squares.jpg	0	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	f	f
+240	Choconut-Mint Squares	*Chocolate is prone to separating if you heat it too much, so using a double boiler method is a good way to avoid that happening. First find a heat-proof bowl that will suspend when placed into a saucepan without touching the bottom. Fill the saucepan with about 2-3 inches of water and heat to a simmer. Then place the bowl on top so that the steam from the water heats the bowl and its contents	\N	\N	64	5	5	4	t	chocolate-mint-squares.jpg	0	https://www.drkarafitzgerald.com/recipe/choconut-mint-squares/	f	f
 241	Party Coleslaw	\N	\N	\N	20	0	15	4	t	party-coleslaw.jpg	0	https://www.drkarafitzgerald.com/recipe/party-coleslaw/	f	f
 242	BPA-Banishing Fruit Salad	\N	\N	\N	20	0	10	4	t	cantaloupe-melon-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/bpa-banishing-fruit-salad/	f	f
 243	Versatile One-Pan Veggies	\N	\N	\N	20	18	2	4	t	one-pan-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/versatile-one-pan-veggies/	f	f
@@ -204,7 +204,7 @@
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	\N	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	4	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
 261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
-262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	1	t	buttermilk.jpg	6	\N	t	f
+262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	3	t	buttermilk.jpg	9	\N	t	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
 264	Asian Fried Eggs	\N	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	black-bean-fajita-skillet.jpg	0	\N	f	f
@@ -217,7 +217,7 @@
 272	Fragrant Spiced Rice	\N	\N	\N	8	10	5	4	t	baked-saffron-rice.jpg	0	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	f	f
 305	Exercise Recovery Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	f	f
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	10	4	t	peas-beans-chili-mint.jpg	0	\N	f	f
-307	Spiced Lentils & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	20	5	3	t	spiced-lentils-rice.jpg	0	\N	f	f
+307	Spiced Lentils & Rice	\N	\N	\N	12	20	5	3	t	spiced-lentils-rice.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	5	2	t	asparagus-eggs-dressing.jpg	0	\N	f	f
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	hot-chocolate-sauce.jpg	6	\N	f	f
@@ -238,7 +238,7 @@
 325	Anti-Allergy Salad	\N	\N	\N	20	10	5	2	t	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f	f
 326	Sticky Teriyaki Aubergine	\N	\N	\N	12	15	5	2	t	teriyaki-aubergine.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 359	Healthy Chocolate Smoothie	\N	\N	\N	128	0	5	2	t	healthy-chocolate-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/healthy-chocolate-smoothie/	f	f
-360	Eggplant Penne Arrabbiata	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	8	4	t	eggplant-penne-arrabbiata.jpg	0	\N	f	f
+360	Eggplant Penne Arrabbiata	\N	\N	\N	12	20	8	4	t	eggplant-penne-arrabbiata.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 361	Beef, Beets, & Horseradish	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	14	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
 362	Egg Ribbon Salad	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	\N	0	\N	f	f
 363	Citrus-Lime Vinaigrette	\N	\N	\N	0	0	5	4	t	citrus-dressing.jpg	9	https://downshiftology.com/recipes/citrus-lime-vinaigrette/#wprm-recipe-container-32469	f	f
@@ -275,7 +275,7 @@
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
 395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	30	5	2	t	sesame-ginger-carrots.jpg	0	\N	f	t
 396	Tandoori Chicken	\N	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-397	Broccoli & Everything Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	10	0	20	2	t	\N	0	\N	f	f
+397	Broccoli & Everything Salad	Use fresh broccoli, not frozen.	\N	\N	10	0	20	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 398	Maple Lime Pork Roast	\N	\N	\N	8	360	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 399	Chicken Stew	\N	\N	\N	8	120	10	2	t	beef-stew.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
@@ -292,19 +292,19 @@
 411	Cauliflower Rice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	2	t	cauliflower-rice.jpg	6	\N	t	f
 412	Plain Cauliflower Rice	\N	\N	\N	16	5	5	2	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 413	Pumpkin Pie Spice Chia Seed Pudding	\N	\N	\N	64	0	120	4	t	pumpkin-pudding.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-414	Maple Syrup & Balsamic Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	\N	t	f
+414	Maple Syrup & Balsamic Dressing	\N	\N	\N	0	0	5	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 415	Strawberry, Mint and Cucumber Spa Water	\N	\N	\N	128	0	5	1	t	\N	12	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	12	10	5	4	t	cucumber-turkey-pizza.jpg	0	\N	f	t
 417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
 418	Egg Bites	\N	\N	\N	6	30	10	6	t	egg-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-419	Thai Dressing	\N	\N	\N	0	0	5	4	t	thai-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+419	Thai Dressing	\N	\N	\N	0	0	5	2	t	thai-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	kielbasa.jpg	0	\N	f	f
 421	Honey-Lemon Dijon Dip	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-lemon-dijon-dip.jpg	9	\N	t	t
 422	Lemon Energy Bites	\N	\N	\N	16	0	5	12	t	lemon-energy-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 423	Steamed Kale	\N	\N	\N	16	5	5	4	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	\N	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	5	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
@@ -328,7 +328,7 @@
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	quinoa-tabouli.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 481	Everyday Dressing	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-482	Pesto Asparagus	\N	\N	\N	12	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+482	Pesto Asparagus	\N	\N	\N	20	7	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 483	Goddess of Detox Dressing	\N	Too complicated: requires a blender.	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 484	Rice	\N	\N	\N	16	25	5	1	t	rice.jpg	6	\N	t	t
 485	Honey Glazed Chicken	\N	\N	\N	8	25	5	2	t	honey-mustard-chicken.jpg	0	https://www.allrecipes.com/recipe/231939/honey-glazed-chicken/	f	f
@@ -345,7 +345,7 @@
 529	Polyphenol Salad	\N	\N	\N	20	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-532	Cauliflower Hummus	\N	\N	\N	0	30	10	2	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+532	Cauliflower Hummus	\N	\N	\N	0	30	10	1	t	cauliflower-hummus.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	16	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	32	0	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -359,7 +359,7 @@
 543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-546	Sesame Almond Dressing	\N	\N	\N	0	0	5	6	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
+546	Sesame Almond Dressing	\N	\N	\N	0	0	5	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
 547	Burgers	\N	\N	\N	0	45	15	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -369,10 +369,10 @@
 553	Adobo	\N	\N	\N	8	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	16	6	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 555	Green Beans w/ Almonds	\N	\N	\N	16	15	5	4	t	green-beans-almonds.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-556	Hashi-Mayo	\N	\N	\N	0	0	10	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+556	Hashi-Mayo	\N	\N	\N	0	0	10	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 557	Cinnamon Vanilla Smoothie	\N	\N	\N	128	0	10	1	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 558	Feel So Good Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-559	Bone Broth	\N	\N	\N	0	90	15	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+559	Bone Broth	\N	Too expensive! Too complicated! Skews nutrients!	\N	0	90	15	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 560	Fermented Cabbage Salad	\N	Fermenting Cabbage takes too long.	\N	20	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 561	Heirloom Tomato and Beet Salad	\N	\N	\N	20	45	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 562	Wild Salmon & Broccoli Frittata	\N	These directions don't make any sense.	\N	6	15	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -408,7 +408,7 @@
 592	Fish Tacos	\N	I don't like fish tacos.	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 593	Green Mean Fighting Machine	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 594	Golden Green Smoothie	\N	Too many ingredients for a drink.	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-595	Pan Fried Haddock	\N	\N	\N	12	13	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+595	Pan-Fried Haddock	\N	\N	\N	12	13	5	4	t	pan-fried-haddock.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 596	Quiche	\N	\N	\N	8	60	15	4	t	quiche.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 597	Smooth Skin Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 598	Tropical Green Smoothie	\N	Too many ingredients/	\N	128	0	6	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -441,7 +441,7 @@
 626	Hot Chocolate Rum Souffles	\N	\N	\N	64	15	10	6	t	\N	0	\N	f	f
 627	Cinnamon and Apricot Souffles	\N	\N	\N	64	15	10	4	t	\N	0	\N	f	f
 628	Slow Cooker Chickpeas	\N	\N	\N	0	240	10	2	f	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
-629	Stovetop Chickpeas	\N	\N	\N	0	120	60	2	t	\N	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
+629	Stovetop Chickpeas	\N	\N	\N	0	120	60	2	t	stovetop-chickpeas.jpg	6	https://www.themediterraneandish.com/how-to-cook-chickpeas/	t	f
 630	Pecan Toffee Shortbread	\N	\N	\N	64	20	10	10	t	\N	0	\N	f	f
 631	Simple Rice Salad	\N	\N	\N	20	12	8	6	t	\N	0	\N	f	f
 632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
@@ -462,7 +462,7 @@
 647	Slow Cooker Lamb Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 648	A Very Berry Pie	\N	\N	\N	64	20	30	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 649	Seven Layer Russian Shuba Salad	\N	\N	\N	16	80	20	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-650	Cooked Quinoa	\N	\N	\N	0	25	5	2	t	\N	6	\N	t	f
+650	Cooked Quinoa	\N	\N	\N	0	25	5	2	t	quinoa.jpg	6	\N	t	f
 651	Spiced Nuts	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients.	\N	\N	32	10	5	2	t	\N	6	\N	f	f
 652	Slices of Quick Basic White Bread	Do not use the timer function.	\N	\N	0	120	20	6	f	\N	0	\N	t	t
 653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	\N	0	\N	t	t
@@ -487,7 +487,7 @@
 704	Bacon and Corn Chowder	\N	\N	\N	8	35	10	4	t	\N	0	\N	f	f
 705	Quinoa Tabbouloeh	\N	\N	\N	16	0	70	2	t	\N	6	\N	f	f
 706	White Bean and Chorizo Soup	\N	\N	\N	8	45	10	6	t	white-bean-chorizo-soup.jpg	0	\N	f	f
-707	Tomato Vegetable Soup	\N	\N	\N	8	30	10	6	t	\N	0	\N	f	f
+707	Tomato Vegetable Soup	\N	\N	\N	8	30	10	6	t	tomato-vegetable-soup.jpg	0	\N	f	f
 708	Orange Soda Pop	You can add some lemon and lime zest to make more of a citrus soda.	\N	\N	128	15	65	4	t	\N	0	\N	f	f
 709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	hot-chocolate.jpg	0	\N	f	f
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
@@ -496,10 +496,10 @@
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	vegetable-stir-fry.jpg	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
 716	Refried Beans	Add a little spice to the beans by throwing in a bit of jalepeno. You can also bulk up the flavor by adding 1 teaspoon of dried oregano and 1/2 teaspoon ground cumin.	\N	\N	16	15	5	2	t	refried-beans.jpg	0	\N	t	f
-717	Red Beans and Rice	\N	\N	\N	4	35	5	2	t	\N	0	\N	f	f
+717	Red Beans and Rice	\N	\N	\N	4	35	5	2	t	red-beans-rice.jpg	0	\N	f	f
 718	All-Purpose BBQ Sauce	Some ingredients you may consider adding are whiskey or beer, espresso, onion and garlic.	\N	\N	0	10	5	2	t	teriyaki-sauce.jpg	6	\N	t	f
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	teriyaki-sauce.jpg	9	\N	t	f
-720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	4	t	teriyaki-sauce.jpg	9	\N	t	f
+720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	2	t	teriyaki-sauce.jpg	9	\N	t	f
 721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
 722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3-4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
@@ -528,12 +528,12 @@
 746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 747	Paleo Banana Muffins	\N	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 748	Chickpea Burgers	\N	\N	\N	0	40	40	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-749	Cornish Game Hens	\N	\N	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+749	Cornish Game Hens	\N	Baby chickens & not very nutritious.	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 750	Fava Bean Salad	\N	\N	\N	20	10	5	2	t	\N	0	From Jamie Oliver's Five Ingredients	f	f
 751	Island Salad	\N	\N	\N	20	5	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 752	Couscous & Chicken Bake	\N	\N	\N	8	60	15	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 785	Tasty Chickpea Soup	\N	\N	\N	8	30	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-786	Green Gazpacho	\N	\N	\N	4	10	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+786	Green Gazpacho	\N	\N	\N	4	10	5	4	t	green-gazpacho.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 787	Naked Salad Tunisienne	\N	\N	\N	20	0	18	4	t	naked-salad-tunisienne.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 788	Juicy Charred Chicken	\N	\N	\N	8	15	5	4	t	\N	1	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	chicken-chips.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -550,7 +550,7 @@
 833	Rummaniyeh	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 834	Glorius Stuffed Squash	\N	\N	\N	8	70	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 835	Herby Chicken Traybake	\N	\N	\N	8	50	8	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
-836	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	20	0	0	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+836	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	20	0	0	2	t	hummus-vegetables.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 837	Harissa Chicken Traybake	\N	\N	\N	8	50	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 838	Sweet Chicken Surprise	\N	\N	\N	8	40	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	Preserved lemons take 3 weeks to marinate, that's too long!	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
@@ -633,9 +633,9 @@
 982	Mashed Potatoes	\N	\N	\N	0	25	5	1	t	irish-champ.jpg	6	\N	t	f
 983	Potato Wedges	Small russet potatoes work best for this recipe, so the wedges aren’t too large or unwieldy. To cut them, slice each potato in half lengthwise, then cut each half into 3 evenly sized wedges.	\N	\N	16	0	0	2	t	\N	0	https://www.onceuponachef.com/recipes/crispy-potato-wedges.html	t	f
 984	Cooked Penne Pasta	\N	\N	\N	0	0	0	2	t	\N	4	\N	t	f
-985	No Bake Energy Bites	\N	\N	\N	32	0	15	5	t	\N	0	https://www.acouplecooks.com/energy-bites/	f	f
+985	No Bake Energy Bites	A 1½-inch cookie scoop (#40) is helpful to make uniform balls.	\N	\N	32	0	15	5	t	basic-energy-balls.jpg	0	https://www.acouplecooks.com/energy-bites/	f	f
 986	Fajita Veggies	While this is a stovetop recipe, you can also roast or grill your veggies for even smokier flavors. I like adding grilled veggies to my fajita salad, especially if you’re already grilling chicken.  Fajita veggies are generally pretty tender, but you can reduce the cooking time if you want them to retain some crunch. Don’t overdo it on the olive oil and avoid overcrowding in the pan.	\N	\N	16	15	10	4	t	\N	0	https://www.acouplecooks.com/fajita-veggies/	t	f
-987	Pan-Fried Salmon	The skin can be served or removed easily with a knife or spoon. 	\N	\N	0	10	5	2	t	\N	0	https://www.foodnetwork.com/recipes/food-network-kitchen/pan-fried-salmon-recipe2-1914129	t	f
+987	Pan-Fried Salmon	The skin can be served or removed easily with a knife or spoon. 	\N	\N	0	10	5	2	t	pan-fried-haddock.jpg	0	https://www.foodnetwork.com/recipes/food-network-kitchen/pan-fried-salmon-recipe2-1914129	t	f
 988	Baked Salmon	\N	\N	\N	0	15	5	2	t	\N	0	\N	t	f
 989	Peanut Butter Oatmeal Balls	If the texture of your nut butter makes the dough very dry, add a little more honey or a few tablespoons milk of choice until you can press it together into a ball shape. If you prefer, you can omit the protein powder from this recipe and still have a delicious snack. You can also add natural foods like chia seeds or ground flax seeds (2 tablespoons of each has 4 grams protein).	\N	\N	32	0	15	10	t	\N	0	https://www.acouplecooks.com/energy-balls/	f	f
 990	Slow Cooker Pot Roast w/ Shallots and Baby Carrots	\N	\N	\N	8	240	20	6	t	\N	0	https://www.theorganickitchen.org/slow-cooker-pot-roast-with-shallots-and-carrots/	f	f
@@ -655,3 +655,4 @@
 1005	Simple Nut & Seed Granola	Choose any 3 or more nuts and seeds from this list.	\N	\N	32	20	10	6	t	\N	0	https://drhyman.com/blogs/content/simple-nut-seed-granola	f	f
 1006	Asian Chicken and Rice Bowls	Optional toppings: chopped peanuts, green onions, cilantro, lime wedges. I also like to sub the bok choy for snow peas. They add a nice little crunch. Of course frozen peas can be added a few minutes before removing from the oven.	\N	\N	8	25	5	4	t	\N	0	https://www.theorganickitchen.org/asian-chicken-and-rice-bowls/	f	f
 1039	Slow Cooker Peanut Chicken	\N	\N	\N	8	180	5	4	t	peanut-chicken.jpg	0	https://thealmondeater.com/peanut-crockpot-stir-fry/	f	f
+1040	Chili Oil	\N	\N	\N	0	0	0	4	t	chili-oil.jpg	9	\N	t	f

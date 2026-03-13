@@ -96,24 +96,24 @@ public enum Nutrients
     Fiber_insoluble = 8,
 
     /// <summary>
-    /// Sugars Total
-    /// </summary>
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Sugars Total", Order = 1500)]
-    Sugars_Total = 9,
-
-    /// <summary>
     /// Total Sugars
     /// </summary>
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
-    [DailyAllowance(6, 12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
-    [Display(Name = "Total Sugars", Order = 1510)]
-    Total_Sugars = 10,
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
+    [Display(Name = "Total Sugars", Order = 1500)]
+    Total_Sugars = 9,
+
+    /// <summary>
+    /// Added Sugars
+    /// </summary>
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
+    [DailyAllowance(-1, 25, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
+    [Display(Name = "Added Sugars", Order = 1510)]
+    Sugars_Added = 10,
 
     /// <summary>
     /// Starch
@@ -492,38 +492,38 @@ public enum Nutrients
     [DailyAllowance(-1, -1, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_7_12_Months)]
     [DailyAllowance(-1, -1, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_1_2_Years)]
     [DailyAllowance(-1, -1, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_1_2_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_2_3_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_2_3_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_4_8_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_4_8_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_9_13_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_9_13_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_14_18_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_14_18_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_14_18_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_14_18_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_19_30_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_19_30_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_31_50_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_31_50_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_51_70_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
-    [DailyAllowance(-1, 6, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_2_3_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_2_3_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_4_8_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_4_8_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_9_13_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_9_13_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_14_18_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_14_18_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_31_50_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_51_70_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(-1, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
     [Display(Name = "Saturated Fats", Order = 9700)]
     Fatty_acids_total_saturated = 47,
 
     /// <summary>
     /// Monounsaturated Fats
     /// </summary>
-    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
-    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
-    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
-    [DailyAllowance(-1, 20, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [Display(Name = "Monounsaturated Fats", Order = 11400)]
     Fatty_acids_total_monounsaturated = 48,
 
