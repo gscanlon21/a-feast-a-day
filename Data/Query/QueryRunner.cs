@@ -413,12 +413,10 @@ public class QueryRunner(Section section)
                     var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);
                     if (overworkedNutrients != null)
                     {
-                        // Find the number of weeks since this recipe has been seen. If the last seen date is in the future (has refresh padding), then use zero weeks.
-                        var weeksFromLastSeen = Math.Max(0, DateHelpers.Today.DayNumber - (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
                         // If there are no non-refreshing recipes selected, loosen the nutrients-to-overwork restriction so we prioritize least seen recipes.
                         var nutrientsToOverwork = finalResults.Any(r => r.UserRecipe?.RefreshAfter == null) ? 0
-                            // Buffer by one available recipe per week to reduce the frequency even more.
-                            : Math.Max(0, weeksFromLastSeen - (int)Math.Floor(finalResults.Count / 7d));
+                            // Buffer weeks by one available recipe per week to reduce the frequency even more.
+                            : Math.Max(0, recipe.WeeksFromLastSeen - (int)Math.Floor(finalResults.Count / 7d));
 
                         // This way, recipes that overwork a lot of nutrients are spaced out more than the healthier recipes.
                         if (overworkedNutrients.Count(recipe.UniqueWorkedNutrients.Contains) > nutrientsToOverwork)
@@ -439,17 +437,15 @@ public class QueryRunner(Section section)
                                 break;
                             }
 
-                            // This makes it harder to see a recipe that still has refresh padding because it has to work more nutrients.
-                            // Find the number of weeks of padding that this recipe still has left. If the padded refresh date is earlier than today, then use the number 0.
-                            var weeksTillLastSeen = Math.Max(0, DateHelpers.Today.DayNumber - (recipe.UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
                             // The recipe does not work enough unique nutrients that we are trying to target.
                             // Allow recipes that have a refresh date since we want to show those continuously until that date.
                             // Allow the first recipe with any nutrient so the user does not get stuck from seeing certain recipes
                             // ... if, for example, a prerequisite only works one nutrient and that nutrient is otherwise worked by other recipes.
                             var nutrientsToWork = (recipe.UserRecipe?.RefreshAfter != null || !finalResults.Any(r => r.UserRecipe?.RefreshAfter == null)) ? 1
                                 // Choose two recipes with no refresh padding and few nutrients worked over a recipe with lots of refresh padding and many nutrients worked.
-                                // Doing weeks out so we still prefer recipes with many nutrients worked to an extent.
-                                : Math.Max(1, NutrientOptions.AtLeastXNutrientsPerRecipe.Value + weeksTillLastSeen);
+                                // This makes it harder to see a recipe that still has refresh padding because it has to work more nutrients.
+                                // Doing number of weeks out so we still prefer recipes with many nutrients worked to an extent.
+                                : Math.Max(1, NutrientOptions.AtLeastXNutrientsPerRecipe.Value + recipe.WeeksTillLastSeen);
 
                             // Include the prerequisite recipes in this calculation.
                             if (recipe.UniqueWorkedNutrients.Count < nutrientsToWork)

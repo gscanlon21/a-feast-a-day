@@ -44,6 +44,19 @@ public class QueryResults : IRecipeCombo
         .ToList();
 
     /// <summary>
+    /// How many weeks since this recipe was last seen?
+    /// If the last seen date is in the future (has refresh padding), then use zero weeks.
+    /// </summary>
+    public int WeeksFromLastSeen => Math.Max(0, DateHelpers.Today.DayNumber - (UserRecipe?.LastSeen?.DayNumber ?? DateHelpers.Today.DayNumber)) / 7;
+
+    /// <summary>
+    /// How many expected weeks until this recipe will be seen again?
+    /// Find the number of weeks of padding that this recipe still has left.
+    /// If the padded refresh date is earlier than today, then use the number 0.
+    /// </summary>
+    public int WeeksTillLastSeen => Math.Max(0, (UserRecipe?.PadRefreshXWeeks ?? UserConsts.NutrientVolumeWeeks) - WeeksFromLastSeen);
+
+    /// <summary>
     /// Rounded scale.
     /// </summary>
     public int GetScale => (int)Math.Ceiling(_scale);

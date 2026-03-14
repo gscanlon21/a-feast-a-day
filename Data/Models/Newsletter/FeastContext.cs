@@ -19,5 +19,5 @@ public class FeastContext
     /// <summary>
     /// Is this feast being generated for a date in the past.
     /// </summary>
-    public bool IsBackfill => Date != User.TodayOffset;
+    public bool IsBackfill => Date < User.StartOfWeekOffset;
 }
