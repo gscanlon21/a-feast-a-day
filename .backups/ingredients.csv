@@ -305,7 +305,7 @@
 316	\N	Shallots | Small Onions	\N	\N	f	0	43	100	2026-01-23	0	86	2	86	Shallot | Small Onion	\N
 317	\N	Worcestershire Sauce	\N	\N	f	0	257	100	2025-04-04	6	240	32	240	Worcestershire Sauce	\N
 318	\N	Panko-Style Breadcrumbs	\N	\N	f	32	112	100	2024-10-27	6	112	16	112	Panko-Style Breadcrumbs	\N
-319	\N	Cheddar Cheese	\N	\N	f	256	28	100	2026-03-01	4	224	6	224	Cheddar Cheese	\N
+319	\N	Cheddar Cheese	\N	\N	f	256	28	100	2026-03-01	4	224	8388608	224	Cheddar Cheese	\N
 320	\N	Sweet Onions	\N	\N	f	0	148	100	2025-03-21	0	160	2	160	Sweet Onions	\N
 321	\N	Hoisin Sauce	\N	\N	f	32768	32	100	2025-04-13	9	256	8192	256	Hoisin Sauce	\N
 322	\N	Dried Oregano	\N	\N	f	0	28	100	2026-01-06	4	96	131072	48	Oregano	\N
@@ -490,7 +490,7 @@
 564	\N	Margarine	\N	\N	t	0	112	100	2025-12-26	0	224	29360128	224	Margarine	\N
 565	\N	Fresh Jalapeño Chilies	\N	\N	f	0	38	100	2024-10-20	0	114	1	114	Fresh Jalepeño Chilies	\N
 566	\N	Slices of Roast Pork	\N	\N	f	1048576	9	100	2025-12-02	0	227	268435456	227	Slices of Roast Pork	\N
-567	\N	Cheddar Cheese | Monterey Jack Cheese	\N	\N	f	256	28	100	2025-01-30	0	224	8388608	224	Chedder Cheese | Monterey Jack Cheese	\N
+567	\N	Cheddar Cheese | Monterey Jack Cheese	\N	\N	f	256	28	100	2025-01-30	4	224	8388608	224	Chedder Cheese | Monterey Jack Cheese	\N
 568	\N	Ready-Made Puff Pastry	\N	\N	f	0	47	100	2025-10-30	0	47	29360128	47	Ready-Made Puff Pastry	\N
 569	\N	Ready-Made Custard	\N	\N	f	4	28	100	2025-10-29	4	125	29360128	125	Ready-Made Custard	\N
 570	\N	Confectioners' Sugar	\N	\N	f	0	28	100	2026-02-12	4	100	114688	100	Sugar	\N
@@ -755,7 +755,7 @@
 862	\N	Silken Tofu	\N	\N	f	32768	28	100	2024-11-03	4	252	8192	252	Silken Tofu	\N
 863	\N	Tofu	\N	\N	f	32768	28	100	2025-11-26	4	252	8192	252	Tofu	\N
 864	\N	Rosemary Focaccia	\N	\N	f	262176	57	100	2025-05-17	0	57	4	57	Rosemary Focaccia	\N
-865	\N	Canned White Beans	\N	\N	f	0	194	100	2024-10-17	6	194	4	194	Canned White Beans	\N
+865	\N	Canned White Beans	\N	\N	f	0	28	100	2026-03-14	4	194	512	194	White Bean	\N
 866	\N	Small Pork Sausages 	\N	\N	f	1048576	100	100	2025-08-06	0	100	268435456	100	Small Pork Sausages 	\N
 867	\N	Chipolata	\N	\N	f	0	100	100	2025-08-05	0	100	268435456	100	Chipolata	\N
 868	\N	Chipolata | Small Pork Sausages 	\N	\N	f	1048576	100	100	2025-08-07	0	100	268435456	100	Chipolata | Small Pork Sausages 	\N
@@ -1101,7 +1101,7 @@
 1364	\N	Yogurt	\N	\N	f	0	28	100	2025-12-06	4	245	29360128	245	Yogurt	\N
 1365	\N	Dry Cannellini Beans	\N	\N	f	0	28	100	2025-10-12	4	202	2048	202	Raw Cannellini Beans	\N
 1366	\N	Dry Red Kidney Beans	\N	\N	f	0	28	100	2025-10-10	4	184	2048	184	Raw Red Kidney Beans	\N
-1367	\N	Dry Kidney Beans	\N	\N	f	0	28	100	2025-10-13	4	184	2048	184	Raw Kidney Beans	\N
+1367	\N	Dry Kidney Beans	\N	\N	f	0	28	100	2025-10-13	4	184	2048	184	Kidney Bean	\N
 1368	\N	Canned Baked Beans	\N	\N	f	0	28	100	2025-10-11	4	254	512	254	Canned Baked Beans	\N
 1369	\N	Fresh Mixed Vegetables	\N	\N	f	0	28	100	2025-09-24	4	225	67108864	225	Fresh Mixed Vegetables	\N
 1370	\N	Large Red Potatoes	\N	\N	f	0	369	100	2024-12-21	0	150	2	150	Potato	\N
@@ -1402,7 +1402,7 @@
 1789	\N	Cane Sugar	\N	\N	t	0	28	100	2024-12-14	4	200	114688	200	Granulated Sugar	\N
 1790	\N	Dark Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	100	2024-12-14	4	200	114688	200	Granulated Sugar	\N
 1791	\N	Light Muscovado Sugar	Unrefined cane sugar, contains molasses.	\N	t	0	28	100	2024-12-14	4	200	114688	200	Granulated Sugar	\N
-1792	\N	Soup Beans	\N	\N	f	0	28	100	2024-10-17	4	194	2048	194	Black Beans	\N
+1792	\N	Soup Beans	\N	\N	f	0	28	100	2026-03-14	4	194	2048	194	Bean	\N
 1793	\N	Mixed Soup Beans	\N	\N	f	0	28	100	2024-10-17	4	194	2048	194	Black Beans	\N
 1794	\N	Canned Soup Beans	\N	\N	f	0	28	100	2024-10-17	4	194	2048	194	Black Beans	\N
 1795	\N	Northern White Beans	\N	\N	f	0	28	100	2025-10-12	4	184	2048	184	Kidney Beans	\N

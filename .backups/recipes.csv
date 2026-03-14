@@ -345,7 +345,7 @@
 529	Polyphenol Salad	\N	\N	\N	20	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-532	Cauliflower Hummus	\N	\N	\N	0	30	10	1	t	cauliflower-hummus.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+532	Cauliflower Hummus	\N	Too complicated. Regular hummus is fine.	\N	0	30	10	1	t	cauliflower-hummus.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 533	Boiled Baby Potatoes w/ Dill	\N	\N	\N	16	10	5	4	t	colcannon.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	32	0	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -369,7 +369,7 @@
 553	Adobo	\N	\N	\N	8	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	16	6	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 555	Green Beans w/ Almonds	\N	\N	\N	16	15	5	4	t	green-beans-almonds.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-556	Hashi-Mayo	\N	\N	\N	0	0	10	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+556	Hashi-Mayo	\N	Contains raw eggs.	\N	0	0	10	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 557	Cinnamon Vanilla Smoothie	\N	\N	\N	128	0	10	1	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 558	Feel So Good Smoothie	\N	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 559	Bone Broth	\N	Too expensive! Too complicated! Skews nutrients!	\N	0	90	15	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -501,7 +501,7 @@
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	teriyaki-sauce.jpg	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	2	t	teriyaki-sauce.jpg	9	\N	t	f
 721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
-722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3-4 days. 	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	t	f
+722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3–4 days. 	\N	\N	0	0	5	4	t	pesto.jpg	4	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	creamy-polenta.jpg	0	\N	f	f
 725	Braised Lentils	\N	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	t
@@ -550,7 +550,7 @@
 833	Rummaniyeh	\N	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 834	Glorius Stuffed Squash	\N	\N	\N	8	70	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 835	Herby Chicken Traybake	\N	\N	\N	8	50	8	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
-836	Cauliflower Hummus w/ Fresh Veggies	\N	\N	\N	20	0	0	2	t	hummus-vegetables.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+836	Cauliflower Hummus w/ Fresh Veggies	\N	Too complicated. Regular hummus is fine.	\N	20	0	0	2	t	hummus-vegetables.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 837	Harissa Chicken Traybake	\N	\N	\N	8	50	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 838	Sweet Chicken Surprise	\N	\N	\N	8	40	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 839	Preserved Lemons	The blunt end of a muddling stick is a good tool to use to press down the lemons. Preserved lemons can be stored in the refrigerator for up to 6 months.	Preserved lemons take 3 weeks to marinate, that's too long!	\N	0	0	20	1	t	\N	14	https://www.simplyrecipes.com/recipes/how_to_make_preserved_lemons/	t	f
@@ -655,4 +655,4 @@
 1005	Simple Nut & Seed Granola	Choose any 3 or more nuts and seeds from this list.	\N	\N	32	20	10	6	t	\N	0	https://drhyman.com/blogs/content/simple-nut-seed-granola	f	f
 1006	Asian Chicken and Rice Bowls	Optional toppings: chopped peanuts, green onions, cilantro, lime wedges. I also like to sub the bok choy for snow peas. They add a nice little crunch. Of course frozen peas can be added a few minutes before removing from the oven.	\N	\N	8	25	5	4	t	\N	0	https://www.theorganickitchen.org/asian-chicken-and-rice-bowls/	f	f
 1039	Slow Cooker Peanut Chicken	\N	\N	\N	8	180	5	4	t	peanut-chicken.jpg	0	https://thealmondeater.com/peanut-crockpot-stir-fry/	f	f
-1040	Chili Oil	\N	\N	\N	0	0	0	4	t	chili-oil.jpg	9	\N	t	f
+1040	Chili Oil	\N	\N	\N	0	0	0	2	t	chili-oil.jpg	9	\N	t	f
