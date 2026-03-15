@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260315122853_RefactorToMinFontSize")]
-    partial class RefactorToMinFontSize
+    [Migration("20260315203407_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -192,10 +192,17 @@ namespace Data.Migrations
                     b.Property<long>("Category")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("Cuisine")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("DefaultMeasure")
                         .HasColumnType("integer");
 
                     b.Property<string>("DisabledReason")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FoodName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<double>("GramsPerCoarseCup")
@@ -229,6 +236,9 @@ namespace Data.Migrations
 
                     b.Property<bool>("SkipShoppingList")
                         .HasColumnType("boolean");
+
+                    b.Property<long>("SubCategory")
+                        .HasColumnType("bigint");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("integer");
@@ -652,9 +662,6 @@ namespace Data.Migrations
                     b.Property<bool>("CoarseCut")
                         .HasColumnType("boolean");
 
-                    b.Property<int?>("CookedIngredientId")
-                        .HasColumnType("integer");
-
                     b.Property<double>("CookedScale")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("double precision")
@@ -689,8 +696,6 @@ namespace Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CookedIngredientId");
 
                     b.HasIndex("IngredientId");
 
@@ -1198,10 +1203,6 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Recipes.RecipeIngredient", b =>
                 {
-                    b.HasOne("Data.Entities.Ingredients.Ingredient", "CookedIngredient")
-                        .WithMany("CookedIngredients")
-                        .HasForeignKey("CookedIngredientId");
-
                     b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
                         .WithMany("RecipeIngredients")
                         .HasForeignKey("IngredientId");
@@ -1215,8 +1216,6 @@ namespace Data.Migrations
                         .HasForeignKey("RecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("CookedIngredient");
 
                     b.Navigation("Ingredient");
 
@@ -1380,8 +1379,6 @@ namespace Data.Migrations
                     b.Navigation("AlternativeIngredients");
 
                     b.Navigation("Alternatives");
-
-                    b.Navigation("CookedIngredients");
 
                     b.Navigation("IngredientAttr");
 

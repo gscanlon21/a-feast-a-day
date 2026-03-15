@@ -68,8 +68,14 @@ public class Ingredient
     [Display(Name = "Allergens")]
     public Allergens Allergens { get; set; }
 
+    [Display(Name = "Cuisine")]
+    public Cuisine Cuisine { get; set; }
+
     [Display(Name = "Category")]
     public Category Category { get; set; }
+
+    [Display(Name = "Sub Category")]
+    public SubCategory SubCategory { get; set; }
 
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }

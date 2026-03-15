@@ -88,7 +88,7 @@ public class QueryRunner(Section section)
             {
                 Recipe = r,
                 UserRecipe = r.UserRecipes.First(ur => ur.UserId == UserOptions.Id),
-                // Pull these out of the constructor so that Entity Framework Core can optimize the query.
+                // Pull these out of the constructor so that EF Core can optimize the query.
                 RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults()
                 {
                     Id = ri.Id,
@@ -98,12 +98,28 @@ public class QueryRunner(Section section)
                     CoarseCut = ri.CoarseCut,
                     Adjustable = ri.Adjustable,
                     Attributes = ri.Attributes,
-                    Ingredient = ri.Ingredient,
                     CookedScale = ri.CookedScale,
                     QuantityNumerator = ri.QuantityNumerator,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
                     UserRecipeIngredient = ri.UserRecipeIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeIngredientId == ri.Id),
+                    Ingredient = ri.Ingredient == null ? null : new Ingredient(/* No constructor so EF Core can optimize the query */)
+                    {
+                        Id = ri.Ingredient.Id,
+                        Name = ri.Ingredient.Name,
+                        Group = ri.Ingredient.Group,
+                        Cuisine = ri.Ingredient.Cuisine,
+                        Category = ri.Ingredient.Category,
+                        FoodName = ri.Ingredient.FoodName,
+                        Allergens = ri.Ingredient.Allergens,
+                        SubCategory = ri.Ingredient.SubCategory,
+                        DefaultMeasure = ri.Ingredient.DefaultMeasure,
+                        GramsPerMeasure = ri.Ingredient.GramsPerMeasure,
+                        GramsPerServing = ri.Ingredient.GramsPerServing,
+                        GramsPerFineCup = ri.Ingredient.GramsPerFineCup,
+                        GramsPerCoarseCup = ri.Ingredient.GramsPerCoarseCup,
+                        SkipShoppingList = ri.Ingredient.SkipShoppingList,
+                    },
                 }).ToList(),
             });
 
