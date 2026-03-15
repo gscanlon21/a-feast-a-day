@@ -37,7 +37,7 @@
             border-bottom:4px solid @borderColor;border-image-slice:1;outline:1px solid @borderColor;background-color:@backgroundColor;">
 
     <div> @* For margin collapse. *@
-        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:@FontHelpers.AdjustEm(1.2, User?.FontSizeAdjust);line-height:1.2;display:flex;gap:.8ch;">
+        <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:@FontHelpers.AdjustEm(1.2, User?.MinFontSize);line-height:1.2;display:flex;gap:.8ch;">
             <span style="flex:1 1 auto;">
                 @if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
                 {
@@ -59,49 +59,49 @@
         {
             if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && !Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
             {
-                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);word-break:break-word;">@Model.Recipe.Link</div>
+                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);word-break:break-word;">@Model.Recipe.Link</div>
             }
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);word-break:break-word;">@Model.Recipe.Notes</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);word-break:break-word;">@Model.Recipe.Notes</div>
         }
 
         @if (Verbosity.HasFlag(Verbosity.Debug))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Section</b>: @Model.Recipe.Section.GetDisplayName()</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Section</b>: @Model.Recipe.Section.GetDisplayName()</div>
         }
 
         @if (Verbosity.HasFlag(Verbosity.PrepTime))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Prep time</b>: @Model.Recipe.PrepTime min</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Prep time</b>: @Model.Recipe.PrepTime min</div>
         }
 
         @if (Verbosity.HasFlag(Verbosity.CookTime))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Cook time</b>: @Model.Recipe.CookTime min</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Cook time</b>: @Model.Recipe.CookTime min</div>
         }
 
         @if (Verbosity.HasFlag(Verbosity.TotalTime))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Total time</b>: @Model.Recipe.TotalTime min</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Total time</b>: @Model.Recipe.TotalTime min</div>
         }
 
         @if (Verbosity.HasFlag(Verbosity.Servings))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Servings</b>: @Model.Recipe.Servings @Model.Recipe.Measure.GetSingleDisplayName(DisplayType.ShortName)</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Servings</b>: @Model.Recipe.Servings @Model.Recipe.Measure.GetSingleDisplayName(DisplayType.ShortName)</div>
 
             @if (Verbosity.HasFlag(Verbosity.Debug))
             {
-                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Base Recipe</b>: @Model.Recipe.BaseRecipe</div>
-                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
-                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Keep Ingredient Order</b>: @Model.Recipe.KeepIngredientOrder</div>
+                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Base Recipe</b>: @Model.Recipe.BaseRecipe</div>
+                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Adjustable Servings</b>: @Model.Recipe.AdjustableServings</div>
+                <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Keep Ingredient Order</b>: @Model.Recipe.KeepIngredientOrder</div>
             }
         }
 
         @if (Verbosity.HasFlag(Verbosity.Equipment) && (!string.IsNullOrWhiteSpace(Model.Recipe.Equipment) || Verbosity.HasFlag(Verbosity.Debug)))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.FontSizeAdjust);"><b>Equipment</b>: @Model.Recipe.Equipment</div>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Equipment</b>: @Model.Recipe.Equipment</div>
         }
 
-        <ul style="margin-block:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.FontSizeAdjust);">
+        <ul style="margin-block:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
             @foreach (var ingredient in Model.RecipeIngredients)
             {
                 <li class="@ingredient.Partial.ToClass() @ingredient.IsUnwantedAndHasAlternatives.ToClass()"
@@ -111,7 +111,7 @@
             }
         </ul>
 
-        <ul style="margin-block:0;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.FontSizeAdjust);">
+        <ul style="margin-block:0;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
             @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))
             {
                 <li style="margin-block:.35em;list-style-type:decimal;">
@@ -122,8 +122,8 @@
 
         @if (!string.IsNullOrWhiteSpace(Model.UserRecipe?.Notes))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm(1, User?.FontSizeAdjust);">
-                <small>@Model.UserRecipe.Notes</small>
+            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm(.8, User?.MinFontSize);">
+                @Model.UserRecipe.Notes
             </div>
         }
     </div>

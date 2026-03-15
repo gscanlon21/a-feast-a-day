@@ -26,9 +26,9 @@ public class UserNewsletterDto
         Allergens = user.Allergens;
         LastActive = user.LastActive;
         CreatedDate = user.CreatedDate;
+        MinFontSize = user.MinFontSize;
         FootnoteType = user.FootnoteType;
         MaxIngredients = user.MaxIngredients;
-        FontSizeAdjust = user.FontSizeAdjust;
         IngredientOrder = user.IngredientOrder;
         FootnoteCountTop = user.FootnoteCountTop;
         FootnoteCountBottom = user.FootnoteCountBottom;
@@ -55,7 +55,7 @@ public class UserNewsletterDto
 
     public DayOfWeek SendDay { get; init; }
 
-    public int FontSizeAdjust { get; init; }
+    public double MinFontSize { get; init; }
 
     public int? MaxIngredients { get; init; }
 

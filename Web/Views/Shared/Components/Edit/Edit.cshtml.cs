@@ -28,7 +28,7 @@ public class EditComponentViewModel
         Verbosity = user.Verbosity;
         FootnoteType = user.FootnoteType;
         MaxIngredients = user.MaxIngredients;
-        FontSizeAdjust = user.FontSizeAdjust;
+        MinFontSize = user.MinFontSize;
         NewsletterEnabled = user.NewsletterEnabled;
         NewsletterDisabledReason = user.NewsletterDisabledReason;
         // In case a single equipment becomes a double, keep it checked.
@@ -87,9 +87,9 @@ public class EditComponentViewModel
     [Display(Name = "Send Time (UTC)", Description = "What hour of the day (UTC) do you want to receive new recipes?")]
     public int SendHour { get; init; }
 
-    [Required, Range(UserConsts.FontSizeAdjustMin, UserConsts.FontSizeAdjustMax)]
-    [Display(Name = "Font Size Adjust", Description = "How much to inflate the font size.")]
-    public int FontSizeAdjust { get; init; }
+    [Required, Range(UserConsts.MinFontSizeMin, UserConsts.MinFontSizeMax)]
+    [Display(Name = "Minimum Font Size", Description = "Sets the minimum font size used in the newsletter.")]
+    public double MinFontSize { get; init; }
 
     [Range(UserConsts.IngredientsMin, UserConsts.IngredientsMax)]
     [Display(Name = "Maximum Ingredients", Description = "What's the maximum number of ingredients you'd like in your recipes?")]

@@ -32,7 +32,7 @@ public class UserDto : IUser
 
     public DateOnly CreatedDate { get; init; }
 
-    public int FontSizeAdjust { get; init; }
+    public double MinFontSize { get; init; }
 
     public int FootnoteCountTop { get; set; }
 
