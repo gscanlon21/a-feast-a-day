@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -70,7 +71,7 @@ namespace Data.Migrations
                     SendDay = table.Column<int>(type: "integer", nullable: false),
                     Equipment = table.Column<int>(type: "integer", nullable: false),
                     SendHour = table.Column<int>(type: "integer", nullable: false),
-                    FontSizeAdjust = table.Column<int>(type: "integer", nullable: false),
+                    MinFontSize = table.Column<double>(type: "double precision", nullable: false),
                     MaxIngredients = table.Column<int>(type: "integer", nullable: true),
                     CreatedDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Verbosity = table.Column<int>(type: "integer", nullable: false),
@@ -145,10 +146,13 @@ namespace Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: true),
                     Name = table.Column<string>(type: "text", nullable: false),
+                    FoodName = table.Column<string>(type: "text", nullable: false),
                     Group = table.Column<string>(type: "text", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
                     Allergens = table.Column<long>(type: "bigint", nullable: false),
-                    Category = table.Column<long>(type: "bigint", nullable: false),
+                    Cuisine = table.Column<int>(type: "integer", nullable: false),
+                    Category = table.Column<int>(type: "integer", nullable: false),
+                    SubCategory = table.Column<int>(type: "integer", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
                     GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
                     GramsPerFineCup = table.Column<double>(type: "double precision", nullable: false),
@@ -529,18 +533,12 @@ namespace Data.Migrations
                     Adjustable = table.Column<bool>(type: "boolean", nullable: false, defaultValue: true),
                     CoarseCut = table.Column<bool>(type: "boolean", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
-                    CookedIngredientId = table.Column<int>(type: "integer", nullable: true),
                     CookedScale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
                     Attributes = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_recipe_ingredient", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_recipe_ingredient_ingredient_CookedIngredientId",
-                        column: x => x.CookedIngredientId,
-                        principalTable: "ingredient",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_recipe_ingredient_ingredient_IngredientId",
                         column: x => x.IngredientId,
@@ -785,11 +783,6 @@ namespace Data.Migrations
                 table: "recipe",
                 column: "UserId",
                 filter: "\"DisabledReason\" IS NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_recipe_ingredient_CookedIngredientId",
-                table: "recipe_ingredient",
-                column: "CookedIngredientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_recipe_ingredient_IngredientId",

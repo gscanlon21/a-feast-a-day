@@ -85,9 +85,10 @@
                     </div>
 
                     <div class="col">
+                        @* Cast Measure to Measure? so that the selected value does not get set to Measure.None *@
                         <label asp-for="UserRecipeIngredient.Measure" class="control-label">@Html.DisplayNameFor(_ => Model.UserRecipeIngredient.Measure)</label>
                         <select asp-for="UserRecipeIngredient.Measure" class="form-control" data-value="@((int?)Model.UserRecipeIngredient.Measure)" aria-describedby="measure-help"
-                                asp-items="@(MeasureConsts.StandardMeasures.AsSelectListItems().Prepend(new($"{Model.RecipeIngredient.Measure.GetSingleDisplayName()} (Default)".Trim(), "")))"
+                                asp-items="@(MeasureConsts.StandardMeasures.Cast<Measure?>().AsSelectListItems().Prepend(new($"{Model.RecipeIngredient.Measure.GetSingleDisplayName()} (Default)".Trim(), "")))"
                                 onchange="this.dataset.value = this.options[this.selectedIndex].getAttribute('value');">
                         </select>
                         <span asp-validation-for="UserRecipeIngredient.Measure" class="text-danger"></span>

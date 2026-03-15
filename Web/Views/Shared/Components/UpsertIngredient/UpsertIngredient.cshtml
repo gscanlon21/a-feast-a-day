@@ -88,6 +88,24 @@
             <div id="category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Category)</div>
         </div>
         <div class="col">
+            <label asp-for="Ingredient.SubCategory" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.SubCategory)</label>
+            <select asp-for="Ingredient.SubCategory" class="form-control overflow-auto" aria-describedby="sub-category-help"
+                    asp-items="@(Enum.GetValues<SubCategory>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+            </select>
+            <span asp-validation-for="Ingredient.SubCategory" class="text-danger"></span>
+            <div id="sub-category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.SubCategory)</div>
+        </div>
+    </div>
+    <div class="mb-3 row row-gap-2">
+        <div class="col-md">
+            <label asp-for="Ingredient.Cuisine" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Cuisine)</label>
+            <select asp-for="Ingredient.Cuisine" class="form-control overflow-auto" aria-describedby="cuisine-help"
+                    asp-items="@(Enum.GetValues<Cuisine>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+            </select>
+            <span asp-validation-for="Ingredient.Cuisine" class="text-danger"></span>
+            <div id="cuisine-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Cuisine)</div>
+        </div>
+        <div class="col">
             <label asp-for="Ingredient.Group" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Group)</label>
             <input asp-for="Ingredient.Group" type="text" class="form-control" required="required" />
         </div>

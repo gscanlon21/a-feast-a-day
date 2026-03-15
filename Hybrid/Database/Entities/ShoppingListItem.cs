@@ -27,9 +27,9 @@ public class ShoppingListItem
         Name = dto.Name;
         Notes = dto.Notes;
         Group = dto.Group;
+        Order = dto.Order;
         Measure = dto.Measure;
         Quantity = dto.Quantity;
-        Order = dto.Category.GetOrder();
         // Don't trigger the property changed event.
         _isChecked = dto.SkipShoppingList;
         // This was not made by the user.

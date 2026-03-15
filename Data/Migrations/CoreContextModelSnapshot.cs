@@ -186,8 +186,11 @@ namespace Data.Migrations
                     b.Property<long>("Allergens")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("Category")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Category")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Cuisine")
+                        .HasColumnType("integer");
 
                     b.Property<int>("DefaultMeasure")
                         .HasColumnType("integer");
@@ -230,6 +233,9 @@ namespace Data.Migrations
 
                     b.Property<bool>("SkipShoppingList")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("SubCategory")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("integer");
