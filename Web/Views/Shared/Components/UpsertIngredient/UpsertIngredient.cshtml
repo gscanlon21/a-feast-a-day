@@ -12,10 +12,20 @@
     <div class="mb-3">
         <label asp-for="Ingredient.Name" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Name)</label>
         <input asp-for="Ingredient.Name" type="text" class="form-control" required="required" />
+        <span asp-validation-for="Ingredient.Name" class="text-danger"></span>
+        <div class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Name)</div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Ingredient.FoodName" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.FoodName)</label>
+        <input asp-for="Ingredient.FoodName" type="text" class="form-control" required="required" />
+        <span asp-validation-for="Ingredient.FoodName" class="text-danger"></span>
+        <div class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.FoodName)</div>
     </div>
     <div class="mb-3">
         <label asp-for="Ingredient.Notes" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Notes)</label>
         <input asp-for="Ingredient.Notes" type="text" class="form-control" />
+        <span asp-validation-for="Ingredient.Notes" class="text-danger"></span>
+        <div class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Notes)</div>
     </div>
     <div class="mb-3 row row-gap-2">
         <div class="col-md order-md-last">

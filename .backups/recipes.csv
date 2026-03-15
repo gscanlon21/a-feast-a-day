@@ -56,7 +56,7 @@
 76	Minty Courgette Linguine	\N	\N	\N	12	15	5	3	t	zucchini-linguine.jpg	0	\N	f	f
 77	Cereal w/ Fruit	\N	\N	\N	2	0	1	4	t	cereal.jpg	0	\N	f	f
 78	String Cheese	\N	\N	\N	32	0	0	1	t	string-cheese.jpg	0	\N	f	f
-79	Fettucine All'Alfredo	\N	\N	\N	6	12	2	4	t	fettucine-alfredo.jpg	0	\N	f	f
+79	Fettucine All'Alfredo	\N	Too many fats.	\N	6	12	2	4	t	fettucine-alfredo.jpg	0	\N	f	f
 80	Eggplant, Mint, and Couscous Salad	\N	\N	\N	20	6	3	2	t	eggplant-mint-couscous-salad.jpg	0	\N	f	f
 81	Griddle Potatoes	\N	\N	\N	16	8	10	4	t	griddle-potatoes.jpg	0	\N	f	f
 82	Chicken Salad	\N	\N	\N	20	0	5	2	t	chicken-salad.jpg	0	\N	f	f
@@ -261,7 +261,7 @@
 380	Dark Chocolate-Covered Almonds	\N	\N	\N	32	30	15	1	t	chocolate-covered-almonds.jpg	0	https://www.healthline.com/recipes/chocolate-covered-almonds	f	f
 381	Zucchini Noodles w/ Pesto Chicken	\N	\N	\N	8	15	5	2	t	zucchini-linguine.jpg	0	https://www.healthline.com/recipes/zucchini-noodles-pesto	f	f
 382	Bangin' Beef Stew	From Jamie Oliver's 5 Ingredients	\N	\N	8	120	9	4	t	beef-stew.jpg	0	\N	f	f
-383	Sticky Hoisin Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	25	5	2	t	sticky-hoissin-chicken.jpg	0	\N	f	f
+383	Sticky Hoisin Chicken	\N	\N	\N	8	25	5	2	t	sticky-hoissin-chicken.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 384	Carrot & Grain Salad	\N	\N	\N	20	15	3	2	t	sesame-ginger-carrots.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 385	Sticky Kickin' Wings	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	5	2	t	sticky-kickin-wings.jpg	0	\N	f	f
 386	Chicken w/ Tomatoes and Olives	If the tomato skins are at all tough, remove them by cutting a cross in the base of each tomato with a knife, then plunging them into a bowl of boiling water for about 30 seconds then into a bowl of cold water. The skins should simply peel off.	Too many microplastics.	\N	4	5	5	4	t	\N	0	\N	f	f
@@ -269,7 +269,7 @@
 388	Gluten-Free Fried Rice	Use day-old rice for the best results, but freshly cooked can be used in a pinch. Cook the rice and then lay it out on a baking sheet in the fridge for 30 mins before using. To Store: Keep in an airtight container in the fridge for up to 3 days. To reheat: heat over medium heat on the stovetop or in the microwave. Add a little water if it looks dry. Rice shouldn’t be reheated more than once.	\N	\N	12	10	20	4	t	egg-fried-rice.jpg	0	https://www.mamaknowsglutenfree.com/gluten-free-fried-rice/#wprm-recipe-container-24106	f	f
 389	First Watch BLTE	From the First Watch cookbook. 	\N	\N	6	10	10	2	t	first-watch-blte.jpg	0	\N	f	f
 390	Maple-Mustard-Glazed Pan-Seared Pork Chops	\N	\N	\N	8	15	5	2	t	\N	0	From The Food Lab by J. Kenji López-Alt	f	f
-391	Low Carb Cauliflower Fried Rice	Try 1 teaspoon Apple Cider Vinegar in place of the Mirin Rice Wine.	\N	\N	12	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
+391	Low Carb Cauliflower Fried Rice	Try 1 teaspoon Apple Cider Vinegar in place of the Mirin Rice Wine.	\N	\N	20	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
 392	Roasted Chickpeas	Let the chickpeas cool completely on the baking sheet after roasting. They will continue to crisp up as they cool. Try sweet styles (maple syrup and cinnamon), spicy versions (chili powder or cayenne), earthy-herbaceous blends (rosemary or thyme), or cheesy twists (nutritional yeast or Parmesan).  Enjoy roasted chickpeas as a crunchy snack, a salad or soup topper, in grain bowls, or as part of a party mix with nuts, pretzels, and dried fruit. 	\N	\N	32	35	10	4	t	\N	0	https://insanelygoodrecipes.com/roasted-chickpeas/	t	f
 393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	\N	f	f
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
@@ -307,7 +307,7 @@
 426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
+429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	Uses chlorophyll; too obscure.	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	\N	\N	\N	20	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 431	Glow Juice	\N	Requires a masticating juicer.	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
@@ -353,7 +353,7 @@
 537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	4	t	citrus-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 538	Lamb Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 539	Hot Oatmeal	\N	\N	\N	6	5	5	1	t	old-fashioned-oatmeal.jpg	0	\N	f	f
-540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	4	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	8	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 541	Shrimp Fried Rice	\N	\N	\N	8	15	10	4	t	chicken-fried-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 542	Sautéed Chicken & Garlic Cauliflower Mash	\N	\N	\N	8	10	5	2	t	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -571,7 +571,7 @@
 854	Watermelon Salad	\N	\N	\N	20	0	15	6	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 855	Lemon Chicken w/ Roasted Potatoes	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 856	Farmer's Biscuit Breakfast Sandwich	\N	\N	\N	6	15	5	1	t	\N	0	From the First Watch cookbook. 	f	f
-857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	\N	0	Erin | The Almond Eater	f	f
+857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	basic-energy-balls.jpg	0	Erin | The Almond Eater	f	f
 858	Boiling Kettle Water	\N	\N	\N	0	5	0	1	t	boiling-kettle.jpg	6	\N	t	f
 859	Crock Pot Red Rice and Beans	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/crock-pot-red-beans-and-rice/	f	f
 860	Beef and Broccoli	\N	\N	\N	8	55	5	2	t	beef-broccoli.jpg	0	\N	f	f
@@ -603,7 +603,7 @@
 952	Hot and Sour Soup	You can gently stir 2 beaten eggs into this soup a few minutes before serving to create egg "noodles". Fresh mushrooms will not give this soup the same concentrated flavors as the dried ones do. 	Not very appetizing.	\N	8	30	40	6	t	\N	0	\N	f	f
 953	Creme Brulee	\N	\N	\N	64	45	135	4	t	\N	0	\N	f	f
 954	Orange Tiramisu	You can use a different kind of sweet orange if you'd prefer, but try to get one that's about the size of a baseball.	\N	\N	64	0	135	4	t	\N	0	\N	f	f
-955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	8	10	5	2	t	egg-fried-rice.jpg	0	\N	f	f
+955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	20	10	5	2	t	egg-fried-rice.jpg	0	\N	f	f
 956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	chicken-fried-rice.jpg	0	\N	f	f
 957	Chicken Noodle Soup	\N	\N	\N	8	45	10	4	t	\N	0	\N	f	f
 958	Fire-Roasted Tomato Soup	If you don't have a grill, you can roast the tomatoes in the oven. Preheat the oven to 400°F. Halve the tomatoes lengthwise, drizzle them with olive oil, and place them cut-side up on a parchment-lined sheet pan. Bake them, without flipping over, for 30–35 minutes. Transfer to a bowl, cover, and peel as directed.	\N	\N	8	45	20	4	t	\N	0	\N	f	f
@@ -637,7 +637,7 @@
 986	Fajita Veggies	While this is a stovetop recipe, you can also roast or grill your veggies for even smokier flavors. I like adding grilled veggies to my fajita salad, especially if you’re already grilling chicken.  Fajita veggies are generally pretty tender, but you can reduce the cooking time if you want them to retain some crunch. Don’t overdo it on the olive oil and avoid overcrowding in the pan.	\N	\N	16	15	10	4	t	\N	0	https://www.acouplecooks.com/fajita-veggies/	t	f
 987	Pan-Fried Salmon	The skin can be served or removed easily with a knife or spoon. 	\N	\N	0	10	5	2	t	pan-fried-haddock.jpg	0	https://www.foodnetwork.com/recipes/food-network-kitchen/pan-fried-salmon-recipe2-1914129	t	f
 988	Baked Salmon	\N	\N	\N	0	15	5	2	t	\N	0	\N	t	f
-989	Peanut Butter Oatmeal Balls	If the texture of your nut butter makes the dough very dry, add a little more honey or a few tablespoons milk of choice until you can press it together into a ball shape. If you prefer, you can omit the protein powder from this recipe and still have a delicious snack. You can also add natural foods like chia seeds or ground flax seeds (2 tablespoons of each has 4 grams protein).	\N	\N	32	0	15	10	t	\N	0	https://www.acouplecooks.com/energy-balls/	f	f
+989	Peanut Butter Oatmeal Balls	If the texture of your nut butter makes the dough very dry, add a little more honey or a few tablespoons milk of choice until you can press it together into a ball shape. If you prefer, you can omit the protein powder from this recipe and still have a delicious snack. You can also add natural foods like chia seeds or ground flax seeds (2 tablespoons of each has 4 grams protein).	\N	\N	32	0	15	10	t	basic-energy-balls.jpg	0	https://www.acouplecooks.com/energy-balls/	f	f
 990	Slow Cooker Pot Roast w/ Shallots and Baby Carrots	\N	\N	\N	8	240	20	6	t	\N	0	https://www.theorganickitchen.org/slow-cooker-pot-roast-with-shallots-and-carrots/	f	f
 991	Onions Rings w/ Eggs	\N	\N	\N	6	10	5	2	t	onion-rings-eggs.jpg	0	\N	f	f
 992	Chickpea and Turmeric Rice Bowls	\N	\N	\N	8	25	45	4	t	\N	0	https://www.healthline.com/recipes/chickpea-turmeric-rice-bowls	f	f

@@ -1,5 +1,4 @@
 ﻿using Core.Models;
-using Data.Entities.Ingredients;
 using Data.Entities.Users;
 using Fractions;
 using System.ComponentModel;
@@ -36,7 +35,6 @@ public class RecipeIngredient
         Attributes = recipeIngredient.Attributes;
         CookedScale = recipeIngredient.CookedScale;
         IngredientId = recipeIngredient.IngredientId;
-        CookedIngredientId = recipeIngredient.CookedIngredientId;
         IngredientRecipeId = recipeIngredient.IngredientRecipeId;
         QuantityDenominator = recipeIngredient.QuantityDenominator;
         QuantityNumerator = recipeIngredient.QuantityNumerator;
@@ -85,18 +83,6 @@ public class RecipeIngredient
     [Required]
     [Display(Name = "Measure")]
     public Measure Measure { get; set; }
-
-    /// <summary>
-    /// This is the alternative ingredient.
-    /// </summary>
-    [Display(Name = "Cooked Ingredient")]
-    public virtual int? CookedIngredientId { get; set; }
-
-    /// <summary>
-    /// This is the alternative ingredient.
-    /// </summary>
-    [JsonInclude, InverseProperty(nameof(Ingredient.CookedIngredients))]
-    public virtual Ingredient CookedIngredient { get; init; } = null!;
 
     /// <summary>
     /// How to scale the quantity of the cooked ingredient.

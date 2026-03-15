@@ -306,14 +306,7 @@ public class UserRepo
                     .GroupBy(ia => ia.IngredientId)
                     .ToDictionaryAsync(g => g.Key, g => g.Select(ia => new IngredientScale(ia.AlternativeIngredient, ia.Scale)).ToList());
 
-                var halfIngredientIds = allRecipeIngredientIds.Union(partialIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id))).ToList();
-                var cookedIngredients = await _context.RecipeIngredients.AsNoTracking().
-                    IgnoreQueryFilters().Include(ic => ic.CookedIngredient)
-                    .Where(ri => ri.CookedIngredientId.HasValue)
-                    .Where(ri => halfIngredientIds.Contains(ri.IngredientId!.Value))
-                    .ToDictionaryAsync(ri => ri.Id, ri => ri.CookedIngredient);
-
-                var allIngredientIds = halfIngredientIds.Union(cookedIngredients.Values.Select(ci => ci.Id)).ToList();
+                var allIngredientIds = allRecipeIngredientIds.Union(partialIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id))).ToList();
                 var allNutrients = user.DataSource switch
                 {
                     DataSource.USDA => await _context.USDANutrients.AsNoTracking()
@@ -364,7 +357,7 @@ public class UserRepo
                 var nutrientsWorked = weeklyFeasts
                     .SelectMany(feast => feast.UserFeastRecipes
                         .SelectMany(ufr => ufr.UserFeastRecipeIngredients
-                            .SelectMany(ufri => ufri.GetNutrients(allNutrients, partialIngredientIds.GetValueOrDefault(ufri.IngredientId), cookedIngredients))
+                            .SelectMany(ufri => ufri.GetNutrients(allNutrients, partialIngredientIds.GetValueOrDefault(ufri.IngredientId)))
                         )
                     ).ToList();
 

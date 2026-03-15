@@ -62,18 +62,25 @@ public partial class NewsletterRepo
         // Allow disabled ingredients.
         // Allow tracking to update the last updated date.
         // OrderBy after the query or you get cartesian explosion.
-        var debugIngredients = await scopedCoreContext.Ingredients
+        var debugIngredients = await scopedCoreContext.Ingredients.TagWithCallSite()
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
+            .Include(i => i.IngredientAttr)
             .ToArrayAsync();
 
         foreach (var debugIngredient in debugIngredients)
         {
-            // If an ingredient has no nutrients and the ingredient isn't a composite ingredient.
-            if (!debugIngredient.Nutrients.Any(n => n.Value > 0) && !debugIngredient.Name.Contains('|'))
+            // If this is not an aggregate ingredient.
+            if (!debugIngredient.Name.Contains('|'))
             {
-                UserLogs.Log(user, $"Ingredient:{debugIngredient.Id} \"{debugIngredient.Name}\" has an invalid configuration: 1.");
-            }
+                // If an ingredient is missing a nutrient profile.
+                if (debugIngredient.IngredientAttr?.HC_Id.HasValue == false
+                    || debugIngredient.IngredientAttr?.FDC_ID.HasValue == false
+                    || debugIngredient.IngredientAttr?.NDB_Number.HasValue == false)
+                {
+                    UserLogs.Log(user, $"Ingredient:{debugIngredient.Id} \"{debugIngredient.Name}\" has an invalid configuration: 1.");
+                }
+            }  
         }
 
         Random.Shared.Shuffle(debugIngredients);
@@ -84,8 +91,8 @@ public partial class NewsletterRepo
         {
             debugIngredient.LastUpdated = DateHelpers.Today;
 
-            // .AsType Mapper returns a cycle error
-            // even with ReferenceHandler.Preserve.
+            // The .AsType Mapper returns a cycle error
+            // ... even with ReferenceHandler.Preserve.
             yield return new IngredientDto()
             {
                 Nutrients = [],

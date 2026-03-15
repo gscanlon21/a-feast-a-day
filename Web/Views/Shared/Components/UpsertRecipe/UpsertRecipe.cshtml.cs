@@ -18,7 +18,6 @@ public class UpsertRecipeViewModel
 
     public IList<SelectListItem> RecipeSelect { get; init; } = [];
     public IList<SelectListItem> IngredientSelect { get; init; } = [];
-    public IList<SelectListItem> CookedIngredientSelect { get; init; } = [];
     public IList<SelectListItem> CookedScaleSelect { get; init; } = [];
 
     [ValidateNever]

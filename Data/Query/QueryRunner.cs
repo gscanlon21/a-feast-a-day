@@ -101,7 +101,6 @@ public class QueryRunner(Section section)
                     Ingredient = ri.Ingredient,
                     CookedScale = ri.CookedScale,
                     QuantityNumerator = ri.QuantityNumerator,
-                    CookedIngredientId = ri.CookedIngredientId,
                     QuantityDenominator = ri.QuantityDenominator,
                     RawIngredientRecipeId = ri.IngredientRecipeId,
                     UserRecipeIngredient = ri.UserRecipeIngredients.First(ui => ui.UserId == UserOptions.Id && ui.RecipeIngredientId == ri.Id),
@@ -372,13 +371,11 @@ public class QueryRunner(Section section)
         {
             // Grab alt ingredients that are used to calculate more accurate nutrients.
             var partIngredients = await GetPartialIngredients(context, filteredResults);
-            // Grab other ingredients for cooked ingredients for more accurate nutrients.
-            var cookedIngredients = await GetCookedIngredients(context, filteredResults, partIngredients);
-            // Grab all the nutrients for ingredinets on the recipe after all the ingredient swapping has taken place.
+            // Grab all the nutrients for ingredients on the recipe after all the ingredient swapping has taken place.
             var allNutrients = NutrientOptions.DataSource switch
             {
-                DataSource.USDA => await GetRecipeNutrients(context, filteredResults, partIngredients, cookedIngredients),
-                DataSource.Canada => await GetRecipeNutrientsCa(context, filteredResults, partIngredients, cookedIngredients),
+                DataSource.USDA => await GetRecipeNutrients(context, filteredResults, partIngredients),
+                DataSource.Canada => await GetRecipeNutrientsCa(context, filteredResults, partIngredients),
                 _ => throw new NotSupportedException()
             };
 
@@ -410,7 +407,7 @@ public class QueryRunner(Section section)
 
                     // Don't overwork nutrients. Include the recipe and the recipe's prerequisites in this calculation.
                     // Don't select all nutrients for prior results since those will include the prerequisite recipes already.
-                    var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients, cookedIngredients);
+                    var overworkedNutrients = GetOverworkedNutrients([recipe, .. finalResults, .. recipe.PrepRecipes.Select(pr => pr.Key)], allNutrients, partIngredients);
                     if (overworkedNutrients != null)
                     {
                         // If there are no non-refreshing recipes selected, loosen the nutrients-to-overwork restriction so we prioritize least seen recipes.
@@ -428,7 +425,7 @@ public class QueryRunner(Section section)
                     // Choose recipes that cover at least X nutrients in the targeted nutrient set.
                     if (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue)
                     {
-                        var unworkedNutrients = GetUnworkedNutrients(finalResults, allNutrients, partIngredients, cookedIngredients);
+                        var unworkedNutrients = GetUnworkedNutrients(finalResults, allNutrients, partIngredients);
                         if (unworkedNutrients != null)
                         {
                             // We've already worked all unique nutrients.
@@ -519,36 +516,10 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<Dictionary<int, Ingredient>> GetCookedIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
-    {
-        var ingredients = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!))
-            .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient)))
-            .ToDictionary(i => i.Id, i => i);
-
-        return (await context.RecipeIngredients.AsNoTracking().IgnoreQueryFilters()
-            .Include(ic => ic.CookedIngredient)
-            .Where(ri => ri.CookedIngredientId.HasValue)
-            .Where(ri => ingredients.Keys.Contains(ri.IngredientId!.Value))
-            // Pull these out of the constuctor so EF Core can optimize the query.
-            .Select(ri => new
-            {
-                ri.Id,
-                ri.IngredientId,
-                ri.CookedIngredientId,
-                CookedIngredient = ri.IngredientId != ri.CookedIngredientId ? ri.CookedIngredient : null,
-            })
-            .ToListAsync())
-            .ToDictionary(ri => ri.Id, ri => ri.CookedIngredient ?? ingredients[ri.IngredientId!.Value]);
-    }
-
-    /// <summary>
-    /// Get the nutrients that the recipes work.
-    /// </summary>
-    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds, Dictionary<int, Ingredient> cookedIngredients)
+    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
         var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
-            .Union(cookedIngredients.Values.Select(ci => ci.Id))
             .ToList();
 
         return await context.USDANutrients.AsNoTracking().TagWithCallSite()
@@ -577,11 +548,10 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrientsCa(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds, Dictionary<int, Ingredient> cookedIngredients)
+    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrientsCa(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
         var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
-            .Union(cookedIngredients.Values.Select(ci => ci.Id))
             .ToList();
 
         return await context.NutrientsCanada.AsNoTracking().TagWithCallSite()
@@ -750,11 +720,11 @@ public class QueryRunner(Section section)
         await context.SaveChangesAsync();
     }
 
-    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<QueryNutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<int, Ingredient> cookedIngredients)
+    private List<Nutrients>? GetUnworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<QueryNutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients)
     {
         if (NutrientOptions.NutrientTargetsRDA == null) { return null; }
 
-        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, nutrients, partialIngredients, cookedIngredients);
+        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, nutrients, partialIngredients);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsRDA.Where(kv =>
         {
@@ -765,11 +735,11 @@ public class QueryRunner(Section section)
         }).Select(kv => kv.Key).ToList();
     }
 
-    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<QueryNutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<int, Ingredient> cookedIngredients)
+    private List<Nutrients>? GetOverworkedNutrients(ICollection<QueryResults> finalResults, Dictionary<int, List<QueryNutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients)
     {
         if (NutrientOptions.NutrientTargetsTUL == null) { return null; }
 
-        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, nutrients, partialIngredients, cookedIngredients);
+        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, nutrients, partialIngredients);
         // Not using Nutrients because NutrientTargets can contain unions.
         return NutrientOptions.NutrientTargetsTUL.Where(kv =>
         {
@@ -781,11 +751,11 @@ public class QueryRunner(Section section)
     /// <summary>
     /// Returns the nutrients targeted by any of the items in the list as a dictionary with their count of how often they occur.
     /// </summary>
-    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list, Dictionary<int, List<QueryNutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients, Dictionary<int, Ingredient> cookedIngredients)
+    private static Dictionary<Nutrients, double> WorkedAmountOfNutrient(ICollection<QueryResults> list, Dictionary<int, List<QueryNutrient>> nutrients, Dictionary<int, List<IngredientScale>> partialIngredients)
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)
-            .SelectMany(ufri => ufri.GetNutrients(nutrients, partialIngredients.GetValueOrDefault(ufri.GetIngredient!.Id), cookedIngredients))
+            .SelectMany(ufri => ufri.GetNutrients(nutrients, partialIngredients.GetValueOrDefault(ufri.GetIngredient!.Id)))
         ).GroupBy(a => a.Key).ToDictionary(a => a.Key, a => a.Sum(b => b.Value));
     }
 }

@@ -104,6 +104,7 @@ public class UserIngredientsController : ViewController
             existingIngredient.Notes = ingredient.Notes;
             existingIngredient.Group = ingredient.Group;
             existingIngredient.Category = ingredient.Category;
+            existingIngredient.FoodName = ingredient.FoodName;
             existingIngredient.Allergens = ingredient.Allergens;
             existingIngredient.DefaultMeasure = ingredient.DefaultMeasure;
             existingIngredient.GramsPerFineCup = ingredient.GramsPerFineCup;
@@ -122,6 +123,7 @@ public class UserIngredientsController : ViewController
                 Notes = ingredient.Notes,
                 Group = ingredient.Group,
                 Category = ingredient.Category,
+                FoodName = ingredient.FoodName,
                 Allergens = ingredient.Allergens,
                 DefaultMeasure = ingredient.DefaultMeasure,
                 GramsPerFineCup = ingredient.GramsPerFineCup,

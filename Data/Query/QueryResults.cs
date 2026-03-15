@@ -127,7 +127,6 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required int QuantityNumerator { get; set; }
     public required int QuantityDenominator { get; set; }
     public required int? RawIngredientRecipeId { get; init; }
-    public required int? CookedIngredientId { get; init; }
     public required double CookedScale { get; init; }
 
     /// <summary>

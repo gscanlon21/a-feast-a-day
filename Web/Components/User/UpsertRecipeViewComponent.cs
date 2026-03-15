@@ -78,11 +78,10 @@ public class UpsertRecipeViewComponent : ViewComponent
             User = user,
             Section = section,
             Recipe = upsertRecipe,
+            CookedScaleSelect = CookedScaleSelect,
             RecipeSelect = await GetRecipeSelect(user),
             IngredientSelect = await GetIngredientSelect(user),
             Token = await _userRepo.AddUserToken(user, durationDays: 1),
-            CookedIngredientSelect = await GetCookedIngredientSelect(user, -1),
-            CookedScaleSelect = GetCookedScaleSelect(),
         });
     }
 
@@ -99,31 +98,19 @@ public class UpsertRecipeViewComponent : ViewComponent
             .ToList();
     }
 
-    private async Task<IList<SelectListItem>> GetCookedIngredientSelect(Data.Entities.Users.User user, int ingredientId)
-    {
-        return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
-            .Where(i => i.DisabledReason != null || i.Id == ingredientId)
-            .Where(i => i.UserId == null || i.UserId == user.Id)
-            .OrderBy(i => i.Name)
-            .ToListAsync())
-            .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
-            .Prepend(new SelectListItem())
-            .ToList();
-    }
-
     private async Task<IList<SelectListItem>> GetIngredientSelect(Data.Entities.Users.User user)
     {
         return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
             .Where(i => i.UserId == null || i.UserId == user.Id)
             .Where(i => i.DisabledReason == null)
-            .OrderBy(i => i.Name)
+            .OrderBy(i => i.FoodName)
             .ToListAsync())
-            .Select(i => new SelectListItem() { Text = i.Name, Value = i.Id.ToString() })
+            .Select(i => new SelectListItem() { Text = i.FoodName, Value = i.Id.ToString() })
             .Prepend(new SelectListItem())
             .ToList();
     }
 
-    private IList<SelectListItem> GetCookedScaleSelect() =>
+    private static readonly IList<SelectListItem> CookedScaleSelect =
     [
         new("1", "1"),
         new("0.75", "0.75"),

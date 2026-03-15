@@ -40,12 +40,22 @@ public class Ingredient
     public int? UserId { get; init; }
 
     /// <summary>
-    /// Friendly name.
+    /// Common name.
     /// </summary>
     [Required]
-    [Display(Name = "Name")]
+    [Display(Name = "Common Name", Description = "A friendly name used in the shopping list.")]
     public string Name { get; set; } = null!;
 
+    /// <summary>
+    /// Scientific Name.
+    /// </summary>
+    [Required]
+    [Display(Name = "Scientific Name", Description = "The fully expanded name. Include the cooking method used.")]
+    public string FoodName { get; set; } = null!;
+
+    /// <summary>
+    /// Used to group together like-ingredients.
+    /// </summary>
     [Display(Name = "Group")]
     public string Group { get; set; } = null!;
 
@@ -131,9 +141,6 @@ public class Ingredient
     /// </summary>
     [JsonInclude, InverseProperty(nameof(IngredientAlternative.AlternativeIngredient))]
     public virtual ICollection<IngredientAlternative> AlternativeIngredients { get; private init; } = [];
-
-    [JsonIgnore, InverseProperty(nameof(RecipeIngredient.CookedIngredient))]
-    public virtual ICollection<RecipeIngredient> CookedIngredients { get; private init; } = [];
 
     [JsonIgnore, InverseProperty(nameof(RecipeIngredient.Ingredient))]
     public virtual ICollection<RecipeIngredient> RecipeIngredients { get; private init; } = null!;
