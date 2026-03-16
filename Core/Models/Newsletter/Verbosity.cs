@@ -15,38 +15,37 @@ public enum Verbosity
     None = 0,
 
     /// <summary>
-    /// Show instructions to the user.
+    /// Show recipe images to the user.
     /// </summary>
     [Display(Name = "Images")]
     Images = 1 << 0, // 1
 
     /// <summary>
-    /// Show prep time to the user.
+    /// Show recipe prep time to the user.
     /// </summary>
     [Display(Name = "Prep Time")]
     PrepTime = 1 << 1, // 2
 
     /// <summary>
-    /// Show the bottom progression bar to the user, 
-    /// allowing them to progress and regress their exercise progression.
+    /// Show recipe cook time to the user.
     /// </summary>
     [Display(Name = "Cook Time")]
     CookTime = 1 << 2, // 4
 
     /// <summary>
-    /// Show which muscles are stretched by the exercise to the user.
+    /// Show recipe total time to the user.
     /// </summary>
     [Display(Name = "Total Time")]
     TotalTime = 1 << 3, // 8
 
     /// <summary>
-    /// Show which muscles are stretched by the exercise to the user.
+    /// Show recipe servings to the user.
     /// </summary>
     [Display(Name = "Servings")]
     Servings = 1 << 4, // 16
 
     /// <summary>
-    /// Show which muscles are stretched by the exercise to the user.
+    /// Show recipe notes to the user.
     /// </summary>
     [Display(Name = "Notes")]
     Notes = 1 << 5, // 32
@@ -58,7 +57,7 @@ public enum Verbosity
     CommonIngredients = 1 << 6, // 64
 
     /// <summary>
-    /// Show common ingredients (salt, pepper...) in the shopping list.
+    /// Show recipe allergens to the user.
     /// </summary>
     [Display(Name = "Allergens")]
     Allergens = 1 << 7, // 128

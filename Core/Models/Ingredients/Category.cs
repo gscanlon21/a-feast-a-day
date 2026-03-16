@@ -47,3 +47,24 @@ public enum Category
     [Display(Name = "Household", Order = 13)]
     Household = 13,
 }
+
+/* Swap two measures.
+do $$
+declare 
+	BeginMeasure integer = 99;
+ 	EndMeasure integer = 99;
+ 	TempMeasure integer = 999;
+begin
+	update ingredient set "DefaultMeasure" = TempMeasure where "DefaultMeasure" = EndMeasure;
+	update nutrient set "Measure" = TempMeasure where "Measure" = EndMeasure;
+	update recipe_ingredient set "Measure" = TempMeasure where "Measure" = EndMeasure;
+
+	update ingredient set "DefaultMeasure" = EndMeasure where "DefaultMeasure" = BeginMeasure;
+	update nutrient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
+	update recipe_ingredient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
+
+	update ingredient set "DefaultMeasure" = BeginMeasure where "DefaultMeasure" = TempMeasure;
+	update nutrient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
+	update recipe_ingredient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
+end; $$;
+*/

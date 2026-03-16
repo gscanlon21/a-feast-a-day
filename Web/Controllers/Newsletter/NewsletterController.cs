@@ -71,7 +71,7 @@ public class NewsletterController : ViewController
         {
             newsletter.Client = client;
             newsletter.HideFooter = hideFooter;
-            return View(nameof(ShoppingList), newsletter.ShoppingList);
+            return View(nameof(ShoppingList), newsletter);
         }
 
         return NoContent();

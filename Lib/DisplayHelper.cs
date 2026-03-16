@@ -1,8 +1,4 @@
-﻿using Core.Dtos.User;
-using Core.Models.Options;
-using Microsoft.Extensions.Options;
-
-namespace Lib;
+﻿namespace Lib;
 
 public class DisplayHelper
 {

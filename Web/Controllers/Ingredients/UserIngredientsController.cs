@@ -1,5 +1,4 @@
-﻿using Core.Models.Ingredients;
-using Core.Models.User;
+﻿using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
 using Data.Entities.Nutrients;

@@ -4,12 +4,6 @@
 @inject IOptions<SiteSettings> SiteSettings
 @inject NewsletterService NewsletterService
 @inject NavigationManager Navigation
-@using Core.Models.Recipe
-@using Core.Models.Newsletter
-@using Core.Models.User
-@using Core.Dtos.Newsletter
-@using Shared.Recipe
-@using Shared.Ingredient
 
 @if (Error != null)
 {
@@ -27,34 +21,41 @@ else
     <Lib.Pages.Shared.Newsletter._Preview Model='@($"{recipeNames}")' />
 
     <div style="margin-bottom:1rem;">
-        <h6 style="margin-block:0;"><a target="_blank" href="@DH.NewsletterLink(Model.User, Model.UserFeast.Date)">@Model.UserFeast.Date.ToLongDateString()</a></h6>
+        @if (!Model.User.Features.HasFlag(Features.Demo))
+        {
+            <h6 style="margin-block:0;">
+                <a target="_blank" href="@DH.NewsletterLink(Model.User, Model.UserFeast.Date)">@Model.UserFeast.Date.ToLongDateString()</a>
+            </h6>
+        }
         <h1 style="margin-block:0;">Weekly Meal Plan</h1>
+        @if (Model.Client == Client.Email)
+        {
+            <h4 style="margin-block:0;display:inline-block;">
+                <a target="_blank" href="@DH.ShoppingLink(Model.User, Model.UserFeast.Date)">Shopping List</a>
+            </h4>
+        }
     </div>
 
     <Lib.Pages.Shared.Newsletter._UserStatusMessages User="Model.User" />
 
-    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
+    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Footnote.FootnoteComponentType.User" Count="Model.User.FootnoteCountTop" />
     
     <div style="margin-block:1rem;">
-        @if (Model.Client == Core.Models.Client.Email || Model.User.Features.HasFlag(Features.Demo))
+        @if (Model.Client != Client.App && Model.Client != Client.Email)
         {
-            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" UserFeast="Model.UserFeast" />
-        }
-        else if (Model.Client != Core.Models.Client.App)
-        {
-            <Lib.Pages.Shared.Newsletter.ShoppingListDynamic User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" UserFeast="Model.UserFeast" />
+            <Lib.Pages.Shared.Newsletter.ShoppingList User="Model.User" Verbosity="Model.Verbosity" List="Model.ShoppingList" Client="Model.Client" />
         }
 
-        @foreach (var section in Enum.GetValues<Section>().OrderBy(s => s.GetDisplayName(DisplayType.Order).Length).ThenBy(s => s.GetDisplayName(DisplayType.Order)))
+        @foreach (var sectionRecipes in Model.Recipes.GroupBy(r => r.Section).OrderBy(s => s.Key.GetOrder()))
         {
-            <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="Model.Recipes.Where(r => r.Section == section).ToList()" Theme="section.AsTheme()" Title="@(new RecipeSection.Titles(section.GetSingleDisplayName()))" />
+            <Lib.Pages.Shared.Recipe.RecipeSection User="Model.User" Verbosity="Model.Verbosity" Recipes="sectionRecipes.ToList()" Theme="sectionRecipes.Key.AsTheme()" Title="@(new RecipeSection.Titles(sectionRecipes.Key.GetSingleDisplayName()))" />
         }
 
         <Lib.Pages.Shared.Ingredient.IngredientSection User="Model.User" Ingredients="Model.DebugIngredients" Title="@(new Titles("Ingredients"))" />
         <Lib.Pages.Shared.Nutrients.NutrientSection User="Model.User" Nutrients="Model.DebugNutrients" Title="@(new Titles("Nutrients"))" />
     </div>
 
-    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Shared.Newsletter.Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" HideFooter="Model.HideFooter" />
+    <Lib.Pages.Shared.Newsletter.Footnote User="Model.User" Verbosity="Model.Verbosity" Type="Footnote.FootnoteComponentType.System" Count="Model.User.FootnoteCountBottom" HideFooter="Model.HideFooter" />
 
     @if (!Model.HideFooter)
     {

@@ -295,7 +295,7 @@
 414	Maple Syrup & Balsamic Dressing	\N	\N	\N	0	0	5	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 415	Strawberry, Mint and Cucumber Spa Water	\N	\N	\N	128	0	5	1	t	\N	12	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 416	Cucumber and Turkey "Pizzas"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	12	10	5	4	t	cucumber-turkey-pizza.jpg	0	\N	f	t
-417	Egg Bites	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	6	30	10	6	t	egg-bites.jpg	0	\N	f	f
+417	Egg Bites	\N	\N	\N	20	30	10	6	t	egg-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 418	Egg Bites	\N	\N	\N	6	30	10	6	t	egg-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 419	Thai Dressing	\N	\N	\N	0	0	5	2	t	thai-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 420	Sheet Pan Kielbasa & Veggies	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	4	30	10	4	t	kielbasa.jpg	0	\N	f	f
@@ -323,7 +323,7 @@
 474	Coconut Sour Cream	\N	\N	\N	0	0	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	48	0	5	2	t	\N	6	\N	t	f
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-477	Digestive Slaw	\N	\N	\N	20	0	15	4	t	cole-slaw-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+477	Digestive Slaw	\N	\N	\N	20	0	15	2	t	cole-slaw-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 478	Everyday Salad	\N	\N	\N	20	0	10	4	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 479	Quinoa Tabouli	\N	\N	\N	6	80	20	4	t	quinoa-tabouli.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 480	Herbed Dressing	\N	\N	\N	0	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -656,3 +656,4 @@
 1006	Asian Chicken and Rice Bowls	Optional toppings: chopped peanuts, green onions, cilantro, lime wedges. I also like to sub the bok choy for snow peas. They add a nice little crunch. Of course frozen peas can be added a few minutes before removing from the oven.	\N	\N	8	25	5	4	t	\N	0	https://www.theorganickitchen.org/asian-chicken-and-rice-bowls/	f	f
 1039	Slow Cooker Peanut Chicken	\N	\N	\N	8	180	5	4	t	peanut-chicken.jpg	0	https://thealmondeater.com/peanut-crockpot-stir-fry/	f	f
 1040	Chili Oil	\N	\N	\N	0	0	0	2	t	chili-oil.jpg	9	\N	t	f
+1041	4-Generation Potato Salad	This potato salad is really best made the day before it’s served.	\N	\N	20	20	15	8	t	potato-salad.jpg	0	https://www.simplyrecipes.com/four-generation-potato-salad-recipe-11774364	f	f

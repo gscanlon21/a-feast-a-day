@@ -80,7 +80,7 @@ public partial class NewsletterRepo
                 {
                     UserLogs.Log(user, $"Ingredient:{debugIngredient.Id} \"{debugIngredient.Name}\" has an invalid configuration: 1.");
                 }
-            }  
+            }
         }
 
         Random.Shared.Shuffle(debugIngredients);
