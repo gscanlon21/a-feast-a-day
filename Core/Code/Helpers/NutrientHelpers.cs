@@ -31,6 +31,7 @@ namespace Core.Code.Helpers;
 /// Nutrients.Vitamin_E,
 /// Nutrients.Vitamin_E_MG_ATE,
 /// Nutrients.Sugars_Added,
+/// Nutrients.Boron_B,
 /// 
 /// These do not have dietary intake references:
 /// Nutrients.Total_Sugars,
@@ -105,7 +106,6 @@ public static class NutrientHelpers
         Nutrients.Selenium_Se,
         Nutrients.Iodine_I,
         Nutrients.Molybdenum_Mo,
-        Nutrients.Boron_B,
     ];
 
     private static Nutrients[] Extra() =>
@@ -181,7 +181,6 @@ public static class NutrientHelpers
         { Nutrients.Selenium_Se, [USDANutrients.Selenium_Se_Micrograms] },
         { Nutrients.Iodine_I, [USDANutrients.Iodine_I_Micrograms] },
         { Nutrients.Molybdenum_Mo, [USDANutrients.Molybdenum_Mo_Micrograms] },
-        { Nutrients.Boron_B, [USDANutrients.Boron_B_Micrograms] },
 
         // Extra
         // SELECT "IngredientId", "Nutrients" FROM usda_nutrient WHERE "Nutrients" IN (1008, 2047) GROUP BY "IngredientId", "Nutrients" HAVING COUNT(*) > 1
