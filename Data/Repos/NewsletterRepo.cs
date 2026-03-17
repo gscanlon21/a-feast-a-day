@@ -224,7 +224,7 @@ public partial class NewsletterRepo
 
         if (user.Features.HasFlag(Features.Debug))
         {
-            var ingredients = await _context.Ingredients.Include(i => i.Nutrients).Where(i => i.LastUpdated == newsletter.Date).ToListAsync();
+            var ingredients = await _context.Ingredients.Include(i => i.USDANutrients).Where(i => i.LastUpdated == newsletter.Date).ToListAsync();
             newsletterViewModel.DebugIngredients = ingredients.Select(r => r.AsType<IngredientDto>()!).ToList();
 
             var nutrients = await _context.Nutrients.Include(i => i.DietaryIntakes).Where(i => i.LastUpdated == newsletter.Date).ToListAsync();

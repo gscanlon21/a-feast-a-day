@@ -53,7 +53,7 @@ public class IngredientAlternativesViewComponent : ViewComponent
     private async Task<List<Ingredient>> GetAlternativeIngredients(Ingredient ingredient, Data.Entities.Users.User user, bool partial)
     {
         return await _context.IngredientAlternatives.AsNoTracking()
-            .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.Nutrients)
+            .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.USDANutrients)
             .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             // The user is an admin who is allowed to edit alternative ingredients. Or the user owns the ingredient.

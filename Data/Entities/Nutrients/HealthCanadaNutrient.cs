@@ -36,15 +36,12 @@ public class HealthCanadaNutrient
     [Range(Consts.ValueMin, Consts.ValueMax)]
     public double Value { get; set; }
 
-    /// <summary>
-    /// Notes about the nutrient (externally shown).
-    /// </summary>
-    public string? Notes { get; set; } = null;
+    public DateOnly LastUpdated { get; set; } = DateHelpers.Today;
 
 
     #region Navigation Properties
 
-    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.NutrientsCanada))]
+    [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.CanadaNutrients))]
     public virtual Ingredient? Ingredient { get; set; }
 
     #endregion

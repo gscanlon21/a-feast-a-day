@@ -31,7 +31,7 @@ public class IngredientsViewComponent : ViewComponent
             && allTmp && user.Features.HasFlag(Features.Admin);
 
         // FIXME: Slow when the user has lots of ingredients.
-        var userIngredients = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+        var userIngredients = await _context.Ingredients.AsNoTracking().Include(i => i.USDANutrients)
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
             // The user is an admin who is allowed to edit base ingredients.

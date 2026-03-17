@@ -1,4 +1,5 @@
 ﻿using Core.Code.Attributes;
+using Core.Code.Helpers;
 using Core.Models.Nutrients;
 using Data.Entities.Nutrients;
 using Data.Repos;
@@ -46,40 +47,42 @@ internal class LoadHealthCanadaNutrientData
             }
             else
             {
-                if (!int.TryParse(rows?[actualHeaders.IndexOf(NutrientAmountHeaders.FOOD_ID)], out int fdcId))
+                if (!int.TryParse(rows?[actualHeaders.IndexOf(NutrientAmountHeaders.FOOD_ID)], out int foodId))
                 {
                     Console.WriteLine($"Missing: {NutrientAmountHeaders.FOOD_ID}");
                     continue;
                 }
 
                 // This is going to be slow.
-                foreach (var ingredient in ingredientsWithFoodData[fdcId] ?? [])
+                foreach (var ingredient in ingredientsWithFoodData[foodId] ?? [])
                 {
                     if (int.TryParse(rows?[actualHeaders.IndexOf(NutrientAmountHeaders.NUTRIENT_ID)], out int nutrientId)
                         && double.TryParse(rows?[actualHeaders.IndexOf(NutrientAmountHeaders.NUTRIENT_VALUE)], out double amount))
                     {
-                        var nutrients2 = (CanadaNutrients)nutrientId;
-                        var measure = nutrients2.GetMeasure() ?? throw new InvalidOperationException("Missing measure!");
-                        if (ingredient.NutrientsCanada.Select(n => (int)n.Nutrients).Contains(nutrientId))
+                        var canadaNutrient = (CanadaNutrients)nutrientId;
+                        var measure = canadaNutrient.GetMeasure() ?? throw new InvalidOperationException("Missing measure!");
+                        if (ingredient.CanadaNutrients.Select(n => n.Nutrients).Contains(canadaNutrient))
                         {
-                            var existingNutrient = ingredient.NutrientsCanada.First(n => (int)n.Nutrients == nutrientId);
+                            var existingNutrient = ingredient.CanadaNutrients.First(n => n.Nutrients == canadaNutrient);
                             if (existingNutrient.Value != amount || existingNutrient.Measure != measure)
                             {
-                                Console.WriteLine($"Updating Nutrient: {nutrients2}");
+                                Console.WriteLine($"Updating {canadaNutrient} for {ingredient.FoodName}.");
                                 existingNutrient.Value = amount;
                                 existingNutrient.Measure = measure;
+                                existingNutrient.LastUpdated = DateHelpers.Today;
                                 await _nutrientRepo.UpdateNutrientCa(existingNutrient);
                             }
                         }
                         else
                         {
-                            Console.WriteLine($"Inserting Nutrient: {nutrients2}");
+                            Console.WriteLine($"Inserting {canadaNutrient} for {ingredient.FoodName}.");
                             newNutrients.Add(new HealthCanadaNutrient()
                             {
                                 Value = amount,
                                 Measure = measure,
-                                Nutrients = nutrients2,
+                                Nutrients = canadaNutrient,
                                 IngredientId = ingredient.Id,
+                                LastUpdated = DateHelpers.Today,
                             });
                         }
                     }

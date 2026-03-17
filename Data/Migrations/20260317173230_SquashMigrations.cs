@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -409,7 +410,7 @@ namespace Data.Migrations
                     Nutrients = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
-                    Notes = table.Column<string>(type: "text", nullable: true)
+                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -455,7 +456,8 @@ namespace Data.Migrations
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     FDC_ID = table.Column<int>(type: "integer", nullable: true),
                     NDB_Number = table.Column<int>(type: "integer", nullable: true),
-                    HC_Id = table.Column<int>(type: "integer", nullable: true)
+                    HC_Id = table.Column<int>(type: "integer", nullable: true),
+                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -478,7 +480,7 @@ namespace Data.Migrations
                     Nutrients = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
-                    Notes = table.Column<string>(type: "text", nullable: true)
+                    LastUpdated = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,4 +1,5 @@
 ﻿using Core.Code.Attributes;
+using Core.Code.Helpers;
 using Core.Models.Nutrients;
 using Data.Entities.Nutrients;
 using Data.Repos;
@@ -58,28 +59,30 @@ internal class LoadUSDANutrientData
                     if (int.TryParse(rows?[actualHeaders.IndexOf(FoodNutrientHeaders.NUTRIENT_ID)], out int nutrientId)
                         && double.TryParse(rows?[actualHeaders.IndexOf(FoodNutrientHeaders.AMOUNT)], out double amount))
                     {
-                        var nutrients2 = (USDANutrients)nutrientId;
-                        var measure = nutrients2.GetMeasure() ?? throw new InvalidOperationException("Missing measure!");
-                        if (ingredient.Nutrients.Select(n => (int)n.Nutrients).Contains(nutrientId))
+                        var usdaNutrient = (USDANutrients)nutrientId;
+                        var measure = usdaNutrient.GetMeasure() ?? throw new InvalidOperationException("Missing measure!");
+                        if (ingredient.USDANutrients.Select(n => n.Nutrients).Contains(usdaNutrient))
                         {
-                            var existingNutrient = ingredient.Nutrients.First(n => (int)n.Nutrients == nutrientId);
+                            var existingNutrient = ingredient.USDANutrients.First(n => n.Nutrients == usdaNutrient);
                             if (existingNutrient.Value != amount || existingNutrient.Measure != measure)
                             {
-                                Console.WriteLine($"Updating Nutrient: {nutrients2}");
+                                Console.WriteLine($"Updating {usdaNutrient} for {ingredient.FoodName}.");
                                 existingNutrient.Value = amount;
                                 existingNutrient.Measure = measure;
+                                existingNutrient.LastUpdated = DateHelpers.Today;
                                 await _nutrientRepo.UpdateNutrient(existingNutrient);
                             }
                         }
                         else
                         {
-                            Console.WriteLine($"Inserting Nutrient: {nutrients2}");
+                            Console.WriteLine($"Inserting {usdaNutrient} for {ingredient.FoodName}.");
                             newNutrients.Add(new USDANutrient()
                             {
                                 Value = amount,
                                 Measure = measure,
-                                Nutrients = nutrients2,
+                                Nutrients = usdaNutrient,
                                 IngredientId = ingredient.Id,
+                                LastUpdated = DateHelpers.Today,
                             });
                         }
                     }

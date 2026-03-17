@@ -570,7 +570,7 @@ public class QueryRunner(Section section)
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
             .ToList();
 
-        return await context.NutrientsCanada.AsNoTracking().TagWithCallSite()
+        return await context.CanadaNutrients.AsNoTracking().TagWithCallSite()
             .Where(n => NutrientHelpers.CanadaToNutrients.Select(l => l.Key).Contains(n.Nutrients))
             .Where(n => allIngredientIds.Contains(n.IngredientId))
             .Where(n => n.Value > 0)

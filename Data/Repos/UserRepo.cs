@@ -330,7 +330,7 @@ public class UserRepo
                             Measure = n.Measure,
                             Value = n.Value,
                         }).ToList()),
-                    DataSource.Canada => await _context.NutrientsCanada.AsNoTracking()
+                    DataSource.Canada => await _context.CanadaNutrients.AsNoTracking()
                         .Where(n => NutrientHelpers.CanadaToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
                         .Where(n => n.Value > 0)

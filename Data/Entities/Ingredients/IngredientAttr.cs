@@ -45,6 +45,8 @@ public class IngredientAttr
     [Display(Name = "HealthCanada Food Id")]
     public int? HC_Id { get; set; }
 
+    public DateOnly LastUpdated { get; set; } = DateHelpers.Today;
+
 
     [JsonIgnore, InverseProperty(nameof(Ingredients.Ingredient.IngredientAttr))]
     public virtual Ingredient? Ingredient { get; set; }

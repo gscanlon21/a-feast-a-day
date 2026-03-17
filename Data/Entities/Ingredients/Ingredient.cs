@@ -101,7 +101,7 @@ public class Ingredient
     /// <summary>
     /// When was this ingredient last checked, for debug user.
     /// </summary>
-    public DateOnly LastUpdated { get; set; }
+    public DateOnly LastUpdated { get; set; } = DateHelpers.Today;
 
     public string? DisabledReason { get; private init; } = null;
 
@@ -123,14 +123,14 @@ public class Ingredient
     /// <summary>
     /// Nutrients per serving.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(USDANutrient.Ingredient))]
-    public virtual IList<USDANutrient> Nutrients { get; set; } = [];
+    [JsonIgnore, InverseProperty(nameof(USDANutrient.Ingredient))]
+    public virtual IList<USDANutrient> USDANutrients { get; set; } = [];
 
     /// <summary>
     /// Nutrients per serving.
     /// </summary>
-    [JsonInclude, InverseProperty(nameof(HealthCanadaNutrient.Ingredient))]
-    public virtual IList<HealthCanadaNutrient> NutrientsCanada { get; set; } = [];
+    [JsonIgnore, InverseProperty(nameof(HealthCanadaNutrient.Ingredient))]
+    public virtual IList<HealthCanadaNutrient> CanadaNutrients { get; set; } = [];
 
     /// <summary>
     /// These are the alternative ingredients.

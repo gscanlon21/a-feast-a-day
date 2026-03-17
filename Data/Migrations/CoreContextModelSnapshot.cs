@@ -288,6 +288,9 @@ namespace Data.Migrations
                     b.Property<int?>("HC_Id")
                         .HasColumnType("integer");
 
+                    b.Property<DateOnly>("LastUpdated")
+                        .HasColumnType("date");
+
                     b.Property<int?>("NDB_Number")
                         .HasColumnType("integer");
 
@@ -498,11 +501,11 @@ namespace Data.Migrations
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
 
+                    b.Property<DateOnly>("LastUpdated")
+                        .HasColumnType("date");
+
                     b.Property<int>("Measure")
                         .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
 
                     b.Property<int>("Nutrients")
                         .HasColumnType("integer");
@@ -559,11 +562,11 @@ namespace Data.Migrations
                     b.Property<int>("IngredientId")
                         .HasColumnType("integer");
 
+                    b.Property<DateOnly>("LastUpdated")
+                        .HasColumnType("date");
+
                     b.Property<int>("Measure")
                         .HasColumnType("integer");
-
-                    b.Property<string>("Notes")
-                        .HasColumnType("text");
 
                     b.Property<int>("Nutrients")
                         .HasColumnType("integer");
@@ -1170,7 +1173,7 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Entities.Nutrients.HealthCanadaNutrient", b =>
                 {
                     b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
-                        .WithMany("NutrientsCanada")
+                        .WithMany("CanadaNutrients")
                         .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1181,7 +1184,7 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Entities.Nutrients.USDANutrient", b =>
                 {
                     b.HasOne("Data.Entities.Ingredients.Ingredient", "Ingredient")
-                        .WithMany("Nutrients")
+                        .WithMany("USDANutrients")
                         .HasForeignKey("IngredientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1377,15 +1380,15 @@ namespace Data.Migrations
 
                     b.Navigation("Alternatives");
 
+                    b.Navigation("CanadaNutrients");
+
                     b.Navigation("IngredientAttr");
-
-                    b.Navigation("Nutrients");
-
-                    b.Navigation("NutrientsCanada");
 
                     b.Navigation("RecipeIngredients");
 
                     b.Navigation("StudyIngredients");
+
+                    b.Navigation("USDANutrients");
 
                     b.Navigation("UserFeastRecipeIngredients");
 

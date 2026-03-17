@@ -39,7 +39,7 @@ public class CoreContext : DbContext
     public DbSet<UserFoodPreference> UserFoodPreferences { get; set; } = null!;
     public DbSet<UserRecipeIngredient> UserRecipeIngredients { get; set; } = null!;
     public DbSet<UserFeastRecipeIngredient> UserFeastRecipeIngredients { get; set; } = null!;
-    public DbSet<HealthCanadaNutrient> NutrientsCanada { get; set; } = null!;
+    public DbSet<HealthCanadaNutrient> CanadaNutrients { get; set; } = null!;
     public DbSet<DietaryIntake> DietaryIntakes { get; set; } = null!;
     public DbSet<USDANutrient> USDANutrients { get; set; } = null!;
     public DbSet<FDA_Nutrient> FDA_Nutrients { get; set; } = null!;

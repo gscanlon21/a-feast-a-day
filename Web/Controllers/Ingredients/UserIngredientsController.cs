@@ -66,9 +66,9 @@ public class UserIngredientsController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var ingredient = await _context.Ingredients.AsNoTracking().Include(i => i.Nutrients)
+        var ingredient = await _context.Ingredients.AsNoTracking().Include(i => i.USDANutrients)
             // The ingredient alternatives, include their nutrients so we can show those on the page.
-            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient).ThenInclude(ai => ai.Nutrients)
+            .Include(i => i.Alternatives).ThenInclude(ai => ai.AlternativeIngredient).ThenInclude(ai => ai.USDANutrients)
             // For which ingredients is this ingredient is an alternative of. No nutrients.
             .Include(i => i.AlternativeIngredients).ThenInclude(ai => ai.Ingredient)
             .FirstOrDefaultAsync(r => r.Id == ingredientId);
@@ -96,7 +96,7 @@ public class UserIngredientsController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var existingIngredient = await _context.Ingredients.Include(i => i.Nutrients).FirstOrDefaultAsync(r => r.Id == ingredient.Id);
+        var existingIngredient = await _context.Ingredients.FirstOrDefaultAsync(r => r.Id == ingredient.Id);
         if (existingIngredient != null)
         {
             existingIngredient.Name = ingredient.Name;
@@ -160,6 +160,7 @@ public class UserIngredientsController : ViewController
             existingIngredientAttr.HC_Id = ingredientAttr.HC_Id;
             existingIngredientAttr.FDC_ID = ingredientAttr.FDC_ID;
             existingIngredientAttr.NDB_Number = ingredientAttr.NDB_Number;
+            existingIngredientAttr.LastUpdated = DateHelpers.Today;
         }
         else
         {
@@ -169,6 +170,7 @@ public class UserIngredientsController : ViewController
                 FDC_ID = ingredientAttr.FDC_ID,
                 NDB_Number = ingredientAttr.NDB_Number,
                 IngredientId = ingredientAttr.IngredientId,
+                LastUpdated = DateHelpers.Today,
             };
 
             _context.IngredientAttrs.Add(existingIngredientAttr);

@@ -1,36 +1,33 @@
 ﻿using Data.Entities.Ingredients;
 using Data.Entities.Nutrients;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Repos;
 
 public class NutrientRepo
 {
-    private readonly UserRepo _userRepo;
     private readonly CoreContext _context;
-    private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public NutrientRepo(CoreContext context, UserRepo userRepo, IServiceScopeFactory serviceScopeFactory)
+    public NutrientRepo(CoreContext context)
     {
         _context = context;
-        _userRepo = userRepo;
-        _serviceScopeFactory = serviceScopeFactory;
     }
 
     public async Task<IList<Ingredient>> GetIngredientsWithHealthCanadaData()
     {
+        await _context.CanadaNutrients.Where(n => n.Ingredient!.IngredientAttr!.LastUpdated >= n.LastUpdated).ExecuteDeleteAsync();
         return await _context.Ingredients.AsNoTracking().AsSplitQuery()
-            .Include(i => i.IngredientAttr).Include(i => i.NutrientsCanada)
+            .Include(i => i.IngredientAttr).Include(i => i.CanadaNutrients)
             .Where(i => i.IngredientAttr!.HC_Id.HasValue)
             .ToListAsync();
     }
 
     public async Task<IList<Ingredient>> GetIngredientsWithFoodData()
     {
+        await _context.USDANutrients.Where(n => n.Ingredient!.IngredientAttr!.LastUpdated >= n.LastUpdated).ExecuteDeleteAsync();
         return await _context.Ingredients.AsNoTracking().AsSplitQuery()
-            .Include(i => i.IngredientAttr).Include(i => i.Nutrients)
+            .Include(i => i.IngredientAttr).Include(i => i.USDANutrients)
             .Where(i => i.IngredientAttr!.FDC_ID.HasValue)
             .ToListAsync();
     }
@@ -43,7 +40,7 @@ public class NutrientRepo
 
     public async Task UpdateNutrientCa(HealthCanadaNutrient nutrient)
     {
-        _context.NutrientsCanada.Update(nutrient);
+        _context.CanadaNutrients.Update(nutrient);
         await _context.SaveChangesAsync();
     }
 
@@ -61,7 +58,7 @@ public class NutrientRepo
     {
         foreach (var nutrient in newNutrients)
         {
-            _context.NutrientsCanada.Add(nutrient);
+            _context.CanadaNutrients.Add(nutrient);
         }
 
         await _context.SaveChangesAsync();

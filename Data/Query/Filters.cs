@@ -125,11 +125,11 @@ public static class Filters
             var usdaNutrients = nutrients.SelectMany(n => NutrientHelpers.NutrientsToUSDA.GetValueOrDefault(n, [])).ToList();
             if (include)
             {
-                return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.Nutrients.Any(n => usdaNutrients.Contains(n.Nutrients))));
+                return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.USDANutrients.Any(n => usdaNutrients.Contains(n.Nutrients))));
             }
             else
             {
-                return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.Nutrients.All(n => !usdaNutrients.Contains(n.Nutrients))));
+                return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.USDANutrients.All(n => !usdaNutrients.Contains(n.Nutrients))));
             }
         }
         else if (dataSource == DataSource.Canada)
@@ -137,11 +137,11 @@ public static class Filters
             var canadianNutrients = nutrients.SelectMany(n => NutrientHelpers.NutrientsToCanada.GetValueOrDefault(n, [])).ToList();
             if (include)
             {
-                return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.NutrientsCanada.Any(n => canadianNutrients.Contains(n.Nutrients))));
+                return query.Where(r => r.Recipe.RecipeIngredients.Any(i => i.Ingredient.CanadaNutrients.Any(n => canadianNutrients.Contains(n.Nutrients))));
             }
             else
             {
-                return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.NutrientsCanada.All(n => !canadianNutrients.Contains(n.Nutrients))));
+                return query.Where(r => r.Recipe.RecipeIngredients.All(i => i.Ingredient.CanadaNutrients.All(n => !canadianNutrients.Contains(n.Nutrients))));
             }
         }
 
