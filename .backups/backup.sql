@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 1ds08ZyzLyc4WTeAsPTo1F62jWAKBYVru25DqX2i4YZUauSA14QCvBBmjDHTP80
+\restrict rpZvrFXVj9dJWznW1siXzYTm1eEVpHkAt5BzQbatgqCngzEkh7Y1ga34Vb1cK9I
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.0
@@ -777,10 +777,10 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 68	1000	1100	131072	0	3	0		-infinity	\N	70
 19	\N	\N	131072	2	0	0		2023-01-01	\N	58
 209	1000	2500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
+8	25	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 271	20	35	65536	100	1	9		-infinity	\N	66
 179	8	45	65536	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
 180	18	45	131072	2	0	0	https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/	2026-03-04	\N	37
-8	25	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
 5	130	\N	65536	3	0	4		2023-01-01	\N	23
 6	175	\N	131072	3	0	4		2023-01-01	\N	23
 220	\N	1	65536	100	1	9		-infinity	\N	43
@@ -853,10 +853,16 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 563	1000	2500	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
 564	1000	2500	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
 565	1000	2500	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
+566	28	\N	24576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 282	0.8	\N	1048576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 301	0.8	\N	2097152	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
+567	29	\N	40960	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 184	19	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	33
+568	28	\N	393216	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 296	400	\N	1048576	2	0	0		-infinity	\N	10
+569	29	\N	655360	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
+570	28	\N	6291456	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
+571	29	\N	10485760	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 458	0.85	\N	8192	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 222	0.8	\N	65536	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-07	\N	59
 312	1000	1100	2097152	0	3	0		-infinity	\N	70
@@ -915,6 +921,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 239	55	400	65536	1	0	0		-infinity	\N	40
 43	8	40	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-03-12	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
 36	1000	2500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
+191	38	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
+194	38	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 247	1.3	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-03-10	\N	5
 30	2.4	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-06	\N	29
 44	55	400	131072	1	0	0		2023-01-01	\N	40
@@ -941,8 +949,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 71	30	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-10	\N	57
 56	500	3500	131072	2	0	0		2023-01-01	\N	27
 259	500	3500	65536	2	0	0		-infinity	\N	27
-191	38	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
-194	38	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
 50	700	4000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	\N	19
 255	700	4000	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	\N	19
 49	45	2000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-13	\N	63
@@ -960,7 +966,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 254	4	10	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-14	\N	81
 60	2.7	6	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-16	\N	35
 263	2.7	6	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-16	\N	35
-195	25	\N	2097152	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	18
+195	25	\N	2097152	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 63	0.5	10	131072	3	0	0		2023-01-01	\N	74
 250	35	\N	65536	1	0	0		-infinity	\N	8
 46	35	\N	131072	1	0	0		2023-01-01	\N	8
@@ -2685,15 +2691,12 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 727	83	1	f
 137	330	1	f
 6	728	1	f
-730	224	1	f
-730	580	1	f
 224	580	1	f
 580	224	1	f
 580	731	1	f
 224	731	1	f
 731	224	1	f
 731	580	1	f
-730	731	1	f
 736	7	1	f
 736	353	1	f
 7	353	1	f
@@ -2847,6 +2850,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 820	717	1	t
 784	717	1	t
 784	783	1	t
+730	731	1	t
+730	580	1	t
 951	952	1	f
 321	295	1	f
 321	116	1	f
@@ -3462,6 +3467,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1792	1405	1	f
 1792	1311	1	f
 1792	1367	1	t
+277	174	1	t
+730	224	1	t
 \.
 
 
@@ -3530,7 +3537,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1371	170150	12023	\N	-infinity
 296	2515380	12014	\N	-infinity
 638	170273	19904	\N	-infinity
-614	170273	19904	\N	-infinity
 92	2515374	12087	\N	-infinity
 352	746770	9181	\N	-infinity
 1263	747447	11090	\N	-infinity
@@ -3577,7 +3583,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 126	174607	7934	\N	-infinity
 178	170172	12117	\N	-infinity
 250	2685568	100331	\N	-infinity
-255	2346404	100286	\N	-infinity
 90	170186	12154	\N	-infinity
 94	746780	7089	\N	-infinity
 97	2512381	20444	\N	-infinity
@@ -3652,6 +3657,7 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 461	2346392	12147	2586	2026-03-17
 264	170026	11352	2505	2026-03-16
 824	2685572	11116	2038	2026-03-17
+614	170273	19904	4148	2026-03-18
 119	170845	1026	35	-infinity
 1342	172232	2044	212	-infinity
 2	170416	11297	2405	-infinity
@@ -3856,6 +3862,42 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1722	168927	20420	4522	2026-03-17
 656	171016	4058	424	2026-03-17
 982	168927	20420	4524	2026-03-17
+585	168927	20420	4522	2026-03-17
+584	170858	1052	137	2026-03-17
+1248	2346404	100286	2240	2026-03-18
+255	2346404	100286	2240	2026-03-18
+815	168574	11973	4854	2026-03-18
+784	168574	11973	4854	2026-03-18
+1252	2346408	11112	2034	2026-03-18
+1590	1104647	11215	2394	2026-03-18
+1361	172217	1211	113	2026-03-18
+665	172217	1211	113	2026-03-18
+1329	170457	11529	2460	2026-03-18
+1083	169094	9193	1613	2026-03-18
+1082	169094	9193	1613	2026-03-18
+480	2346413	100280	1718	2026-03-18
+334	169998	11167	2388	2026-03-18
+49	169642	19300	4296	2026-03-18
+1752	2346412	100279	1718	2026-03-18
+191	173242	18450	4049	2026-03-18
+23	173242	18450	4049	2026-03-18
+136	173242	18450	4049	2026-03-18
+1496	173242	18450	4049	2026-03-18
+1093	172238	2054	4890	2026-03-18
+862	172476	16427	3418	2026-03-18
+730	170106	11819	2322	2026-03-18
+1582	2685568	100331	2225	2026-03-18
+1287	2644287	100316	0	2026-03-18
+718	170392	11118	0	2026-03-18
+803	174284	16144	4869	2026-03-18
+1374	332397	7028	1148	2026-03-18
+1717	170273	19904	4148	2026-03-18
+1507	168906	20114	4460	2026-03-18
+624	2747664	11952	2345	2026-03-18
+566	167872	10136	1861	2026-03-18
+377	2258590	11821	2484	2026-03-18
+166	172816	18413	3708	2026-03-18
+22	325871	18069	4066	2026-03-18
 \.
 
 
@@ -3877,9 +3919,9 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 16	Fatty_acids_total_monounsaturated	Monounsaturated Fats	11400	No RDA/TUL; using the TUL for Fats as the max; no min because there are other Fats.	2026-03-13
 21	Fats	Fats	800	\N	2026-03-16
 22	Calcium_Ca	Calcium (Ca)	5400	\N	2026-03-17
+18	Fiber_Total_Dietary	Dietary Fiber	1200	\N	2026-03-18
 14	Iodine_I	Iodine (I)	5350	\N	-infinity
 19	Phosphorus_P	Phosphorus (P)	5500	\N	-infinity
-18	Fiber_total_dietary	Dietary Fiber	1200	\N	-infinity
 5	Riboflavin_B2	Riboflavin (B2)	6500	\N	2026-03-10
 57	Biotin	Biotin (B7)	6850	\N	2026-03-10
 20	Methionine	Methionine	16900	\N	-infinity
@@ -4312,13 +4354,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2659	4	140	1	9	, diced	324	f	\N	1	f	t	1
 2660	0	140	1	3	, chopped	5	t	\N	2	f	t	1
 3472	7	165	1	2	, chopped	2	t	\N	3	f	t	1
+7164	8	710	1	2	\N	77	f	\N	1	f	t	0.25
 2661	8	140	1	1	\N	1259	f	\N	3	f	t	1
+7165	0	710	1	1	, diced	222	f	\N	2	f	t	1
 5203	0	179	1	1	\N	594	f	\N	1	f	t	0.25
 2663	0	140	1	2	, diced	7	f	\N	5	f	t	1
 4909	0	186	1	2	\N	\N	f	966	1	f	t	1
 4911	0	186	1	2	\N	134	t	\N	3	f	t	1
 5202	0	179	1	4	\N	24	f	\N	0	f	t	1
-7164	8	710	1	2	\N	77	f	\N	1	f	t	0.25
 2664	0	140	1	8	\N	2011	f	\N	6	f	t	1
 1045	4	27	2	7	\N	120	f	\N	1	f	t	1
 5204	6	179	2	1	\N	13	f	\N	2	f	t	1
@@ -4370,7 +4413,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1202	7	56	1	4	\N	30	f	\N	4	f	t	1
 2662	7	140	1	2	\N	77	f	\N	4	f	t	0.25
 1174	6	45	2	1	, chopped	13	t	\N	3	f	t	1
-7165	0	710	1	1	, diced	222	f	\N	2	f	t	1
 887	6	52	4	1	, sliced	17	f	\N	3	f	t	1
 5272	6	312	4	1	\N	85	f	\N	3	f	t	1
 5273	6	312	8	1	\N	236	f	\N	4	f	t	1
@@ -4380,11 +4422,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5325	0	321	1	4	\N	5	f	\N	2	f	t	1
 2454	0	129	1	4	\N	388	f	\N	1	f	t	1
 2455	7	129	1	2	\N	468	f	\N	2	f	t	1
-7166	4	710	1	12	, drained	1277	f	\N	3	f	t	1
 4912	0	186	1	2	\N	113	f	\N	4	f	t	1
 4913	7	186	1	2	\N	61	f	\N	5	f	t	1
 1637	0	74	1	2	\N	191	f	\N	2	f	t	1
 2512	7	85	1	2	\N	278	f	\N	2	f	t	0.25
+7166	4	710	1	12	, drained	1277	t	\N	3	f	t	1
 1638	4	74	1	4	, thinly sliced	247	f	\N	3	f	t	1
 1176	0	45	1	1	, minced	5	f	\N	5	f	t	1
 3520	4	180	1	28	, crushed	17	t	\N	8	f	t	1
@@ -5118,10 +5160,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4517	4	8	1	4	\N	55	f	\N	2	f	t	1
 4518	8	8	1	1	, to serve	14	t	\N	3	f	t	1
 4519	8	8	1	1	, to taste	95	t	\N	4	f	t	1
-7167	4	710	1	15	, drained and rinsed	419	f	\N	4	f	t	1
-7168	4	710	1	14	, drained	1276	f	\N	5	f	t	1
-7169	7	710	1	2	, chopped	13	f	\N	6	f	t	1
-7170	8	710	4	1	\N	285	f	\N	7	f	t	1
 4719	6	271	4	1	\N	860	f	\N	7	f	t	1
 4720	8	271	1	1	\N	503	f	\N	8	f	t	1
 4721	8	271	1	1	\N	832	f	\N	9	f	t	1
@@ -5187,6 +5225,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4247	0	195	1	1	, seeded and thinly sliced	8	f	\N	2	f	t	1
 4248	0	195	1	1	, halved and thinly sliced	222	f	\N	3	f	t	1
 4249	8	195	1	1	\N	503	t	\N	4	f	t	1
+7167	4	710	1	15	, drained and rinsed	419	f	\N	4	f	t	1
+7168	4	710	1	14	, drained	1276	f	\N	5	f	t	1
 4555	7	91	1	2	\N	68	f	\N	1	f	t	1
 4556	7	91	1	3	\N	143	f	\N	2	f	t	1
 4557	7	91	1	1	\N	214	f	\N	3	f	t	1
@@ -5199,6 +5239,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4578	6	193	4	3	\N	409	f	\N	3	f	t	1
 4580	8	193	4	1	\N	74	t	\N	5	f	t	1
 4562	8	91	1	2	, dried	322	f	\N	8	f	t	1
+7169	7	710	1	2	, chopped	13	t	\N	6	f	t	1
 5299	0	317	1	2	\N	222	f	\N	1	f	t	1
 5300	4	317	1	2	\N	835	f	\N	3	f	t	1
 5304	4	318	1	5	\N	333	f	\N	0	f	t	1
@@ -6341,7 +6382,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6395	6	580	3	1	, diced	1286	t	\N	5	f	t	1
 6436	7	584	1	1	, chopped	14	f	\N	5	f	t	1
 6437	8	584	4	1	, to taste	692	t	\N	6	f	t	1
+7271	6	726	1	2	, chopped small	1711	f	\N	1	f	t	1
 6549	0	597	1	4	\N	1074	f	\N	5	f	t	0.25
+7272	6	726	4	1	, cooked	1713	f	\N	2	f	t	1
+7273	7	726	1	2	\N	\N	f	662	3	f	t	1
 6403	6	581	1	1	, cubed	159	f	\N	0	f	t	1
 6404	6	581	1	1	, peeled, diced	155	f	\N	1	f	t	1
 6405	0	581	1	1	, diced	9	f	\N	2	f	t	1
@@ -6380,9 +6424,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6551	6	598	1	1	\N	1099	f	\N	1	f	t	1
 6552	0	598	2	1	\N	1043	f	\N	2	f	t	1
 6553	7	598	1	1	\N	738	f	\N	3	f	t	1
-7271	6	726	1	2	, chopped small	1711	f	\N	1	f	t	1
-7272	6	726	4	1	, cooked	1713	f	\N	2	f	t	1
-7273	7	726	1	2	\N	\N	f	662	3	f	t	1
 6491	0	591	2	1	, chopped	110	f	\N	4	f	t	1
 7594	4	834	1	8	, cooked	1197	f	\N	5	f	t	1
 7595	8	834	1	2	\N	1413	f	\N	6	f	t	1
@@ -7487,9 +7528,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7772	5	860	2	1	, thinly sliced across the grain	1497	f	\N	1	f	t	1
 6073	8	532	8	1	, to taste	692	t	\N	4	f	t	1
 7634	6	576	4	1	\N	\N	t	419	8	f	t	1
+7274	6	726	4	1	\N	\N	f	710	4	f	t	1
+7275	7	726	1	2	, grated	319	f	\N	5	f	t	1
 7640	0	842	1	4	, ¾ cup	\N	f	843	2	f	t	1
 7641	4	842	4	9	, shaved	1374	f	\N	3	f	t	1
-7274	6	726	4	1	\N	\N	f	710	4	f	t	1
 7642	0	842	1	2	\N	1373	f	\N	4	f	t	1
 5096	6	156	2	1	, toasted and roughly chopped, for the sauce	602	t	\N	5	f	t	1
 5097	7	156	1	3	, for the sauce	502	t	\N	6	f	t	1
@@ -7501,7 +7543,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7643	7	842	1	1	, chopped, for garnish	2	t	\N	5	f	t	1
 5620	0	398	1	1	, wedged, for garnish	12	t	\N	8	f	t	1
 5621	7	398	1	1	, for garnish	13	t	\N	9	f	t	1
-7275	7	726	1	2	, grated	319	f	\N	5	f	t	1
 7633	7	34	1	2	\N	357	t	\N	5	f	t	1
 6074	6	532	4	1	\N	410	f	\N	5	f	t	1
 6076	0	532	1	1	, juiced	4	f	\N	7	f	t	1
@@ -8104,6 +8145,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8475	0	1000	1	1	, crushed	1590	t	\N	3	f	t	1
 8187	8	971	4	1	\N	73	f	\N	12	f	t	1
 8188	8	971	4	1	\N	504	f	\N	13	f	t	1
+7170	8	710	4	1	\N	285	t	\N	7	f	t	1
 8357	6	985	2	1	\N	1923	f	\N	5	f	t	0.25
 8189	0	971	1	4	, for the garlic crumbs	\N	t	975	14	f	t	1
 8486	7	1001	1	3	\N	676	f	\N	3	f	t	0.25
@@ -9607,6 +9649,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3436	Season the salmon with sea salt, pepper, basil and lemon.	563	1	0
 3437	Place in the oven and bake for 30 minutes.	563	2	0
 925	When the pot boils, turn down the heat a little so it doesn't boil over and let cook. While waiting for the pot to cook, wash the potatoes and cut them up into small cubes, then add them to the pot. Cook until the lentils and potatoes are done.	1	1	0
+4914	Put the salad in a serving bowl and top with the black bean salsa and cheddar.	726	1	0
 3484	In a large bowl, add the cooled turkey mixture and the next 5 ingredients (lettuce through olives).	575	3	0
 3485	Pour the Honey Cumin dressing over the salad. Toss and serve.	575	4	0
 3471	Once bubbling, reduce heat to medium-low and simmer until the mixture is reduced by half, about 10 minutes. Remove from heat and set aside to cool.	572	1	4
@@ -10110,14 +10153,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3905	Let the mixture cool for 2 hours at room temperature, then put it in an airtight container.	712	3	0
 3881	In a medium bowl, combine the avocado, lime juice, red onion, tomato, cilantro, and salt and mash it all together using a potato masher until it's smooth.	703	0	32768
 3926	In a medium bowl, whisk together the vinegar, soy sauce, honey, ginger, and pepper.	720	0	0
-3898	In a medium pot, warm the olive oil over medium heat. Add the onion and cook for 5 minutes, or until translucent. Add the jalapeños and cook for 2 more minutes.	710	0	4
-3899	Throw in the black beans and tomatoes and bring to a boil. Reduce the heat to low and simmer the salsa for 15–20 minutes, or until thick.	710	1	4
 3912	Grate the cauliflower on the large holes of a box grater into a large bowl.	715	0	0
 4612	Complement this dish with cilantro leaves, chopped spring onions (scallions), and crushed peanuts.	636	3	0
 3939	Warm a medium pot over medium heat.	725	0	4
 3940	Add the olive oil, onion, carrot, and celery and cook for 5–6 minutes, until the onions are translucent, and the carrots are soft. Stir them every minute.	725	1	4
 3941	Add the wine to the vegetables and cook for another 2 minutes.	725	2	4
-3900	Remove from the heat and stir in the cilantro. Taste and season with salt and pepper. Put the salsa in a container and cool in the fridge overnight.	710	2	65536
 3930	Pick off the stems at the ends of the basil leaves and discard. Wash the basil well and pat dry with a paper towel.	722	0	0
 3909	Warm a large skillet over medium-high heat. Add the oil, onion, and carrot and cook for 4 minutes, stirring every 30 seconds.	714	0	4
 3931	In a blender, combine the basil, olive oil, pine nuts, and Parmesan. Pulse the mixture until it's smooth and creamy. Stir the salt into the pesto.	722	1	128
@@ -10125,6 +10165,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4716	Roll the dough into 20 small balls, pressing the dough together with your hands. Refrigerate for up to 2 weeks. Enjoy!	989	1	65536
 3932	Pour the tomatoes into a bowl and crush them into small pieces. Make sure to keep the tomatoes below the surface of the liquid when you squeeze them—this will prevent them from bursting.	723	0	0
 3925	In a small bowl, mix the cornstarch and water. Add the cornstarch mixture to a medium pot along with the soy sauce, honey, sambal oelek, and ginger. Bring the pot to a boil, reduce the heat to low, and simmer it for 5 minutes.	719	0	4
+3898	In a medium pot, warm the olive oil over medium heat. Add the onion and cook for 5 minutes, or until translucent. Add the jalapeños and cook for 2 more minutes.	710	0	4
 3920	Add the beans and water and bring to a boil. Drop on the bay leaf and thyme, reduce the heat to low, cover, and simmer the rice for 17 minutes.	717	1	4
 3913	Warm a large skillet with a lid over medium-high heat. Add the olive oil and cauliflower and cook for 3–4 minutes, until the cauliflower looks wet.	715	1	4
 3927	In a medium bowl, whisk together the vinegar, Dijon mustard, honey, salt and pepper.	721	0	0
@@ -10146,6 +10187,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2438	Pour the mixture into a dish lined with wax paper. I used an 8” x 5” glass baking dish for this. Place in the refrigerator for 2–4 hours to get completely firm. Remove and slice into 1" squares (or other similarly-sized pieces). Keep in the refrigerator and enjoy in moderation!	240	2	0
 4785	Remove the ribs and seeds from the jalapeño pepper and mince it.	1003	2	0
 4659	Line a 9″ loaf pan with parchment paper extending across both sides. Press the mixture into the pan and pack it down with your fingers (I like to use a small glass to roll over the top). Refrigerate at least 30 minutes, then cut into 8 square bars. Bars store refrigerated for up to 2 weeks.	981	1	65536
+3899	Throw in the black beans and tomatoes and bring to a boil. Reduce the heat to low and simmer the salsa for 15–20 minutes, or until thick.	710	1	4
+3900	Remove from the heat and stir in the cilantro. Taste and season with salt and pepper. Put the salsa in a container and cool in the fridge overnight.	710	2	65536
 4011	Crust: Mix almond flour, coconut oil, honey/maple syrup, and vanilla in a mixer.	746	1	0
 4012	Use the mixture to fill a round pie pan.	746	2	0
 4013	Filling: Mix all ingredients and add into the pie crust.	746	3	0
@@ -10176,9 +10219,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3959	Warm a medium skillet over medium heat and add the bacon. Cook for about 5 minutes.	730	2	4
 3960	Drain off all but 1 tablespoon of the bacon fat. Add the pears to the pan and cook for 2 minutes. Add the water and sugar and cook for 8–10 minutes, until the mixture is thick. Remove from the heat and let cool.	730	3	4
 3947	Preheat the oven to 325°F.	728	0	2
-3943	In a medium bowl, combine the lettuce, corn, and dressing. Stir using a set of tongs to coat the lettuce. Put the salad in a serving bowl and top with the black bean salsa and cheddar.	726	0	0
 3948	While the oven preheats, warm a medium Dutch oven or other oven-proof pot over medium-heat. Add the bacon and cook for 4–5 minutes, until it's browned and crispy.	728	1	4
 3955	Squeeze the lemon juice over the broccoli and eat.	729	3	0
+3943	In a medium bowl, combine the lettuce, corn, and dressing. Stir using a set of tongs to coat the lettuce.	726	0	0
 3919	In a large pot with a tight-fitting lid over medium-heat, cook the bacon for about 5 minutes, or until browned. Add the rice, tomato, and allspice and cook for another 2–3 minutes.	717	0	4
 3884	Carefully drain off the bacon fat, leaving the bacon in the pan. Add the cream-style corn and milk to the pot and heat the chowder over medium heat for about 10 minutes, or until it's hot. Do not boil!	704	2	4
 3921	Remove from the heat and let it sit, with the lid on, for another 5 minutes.	717	2	0
@@ -10775,7 +10818,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 565, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 571, true);
 
 
 --
@@ -10789,7 +10832,7 @@ SELECT pg_catalog.setval('public."gene_Id_seq"', 1, false);
 -- Name: nutrient_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_Id_seq"', 49559, true);
+SELECT pg_catalog.setval('public."nutrient_Id_seq"', 55140, true);
 
 
 --
@@ -10803,7 +10846,7 @@ SELECT pg_catalog.setval('public."nutrient_Id_seq1"', 88, true);
 -- Name: nutrient_canada_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."nutrient_canada_Id_seq"', 27071, true);
+SELECT pg_catalog.setval('public."nutrient_canada_Id_seq"', 37450, true);
 
 
 --
@@ -11584,5 +11627,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 1ds08ZyzLyc4WTeAsPTo1F62jWAKBYVru25DqX2i4YZUauSA14QCvBBmjDHTP80
+\unrestrict rpZvrFXVj9dJWznW1siXzYTm1eEVpHkAt5BzQbatgqCngzEkh7Y1ga34Vb1cK9I
 

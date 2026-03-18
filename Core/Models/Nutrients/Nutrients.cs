@@ -88,12 +88,18 @@ public enum Nutrients
     /// <summary>
     /// Dietary Fiber
     /// </summary>
+    [DailyAllowance(28, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(29, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Lactating_14_18_Years)]
     [DailyAllowance(38, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
     [DailyAllowance(25, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
+    [DailyAllowance(28, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(29, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Lactating_19_30_Years)]
     [DailyAllowance(38, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
     [DailyAllowance(25, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
+    [DailyAllowance(28, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(29, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Dietary Fiber", Order = 1200)]
-    Fiber_total_dietary = 6,
+    Fiber_Total_Dietary = 6,
 
     /// <summary>
     /// Soluble Fiber
