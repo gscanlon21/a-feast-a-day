@@ -237,7 +237,7 @@
                     </div>
 
                     <div class="row row-gap-1">
-                        <div class="col-xl">
+                        <div class="col">
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
                             <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" autocomplete="off" />
                         </div>
@@ -438,7 +438,7 @@
             </form>
         </div>
     }
-    else
+    else if (false)
     {
         <div class="col-auto">
             <form id="import-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.UpsertRecipe)" method="post"
