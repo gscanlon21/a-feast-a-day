@@ -197,7 +197,7 @@
 202	\N	Mini Bagels, Whole Grain	Mini Bagels, Whole Grain		f	262176	40	100	2025-06-15	0	240	2	240	Mini Bagels, Whole Grain	\N	\N	0	4
 203	\N	Popcorn	Popcorn		f	2	28	100	2026-01-25	4	224	10	224	Popcorn	\N	\N	0	0
 204	\N	Hearts of Palm Linguine	Hearts of Palm Linguine		f	0	28	100	2024-12-20	4	75	4	75	Hearts of Palm Linguine	\N	\N	0	5
-205	\N	Mixed Beans	Mixed Beans		f	0	140	100	2025-12-24	6	140	4	140	Mixed Beans	\N	\N	0	14
+205	\N	Mixed Beans	Mixed Beans	Prefer canned or dry variations b/c partial ingredients get messy.	f	0	140	100	2025-12-24	6	140	4	140	Mixed Bean	\N	Prefer canned or dry variations b/c partial ingredients get messy.	0	14
 206	\N	Fresh Baby Spinach	Fresh Baby Spinach		f	0	28	100	2025-02-02	4	30	2	30	Fresh Baby Spinach	\N	\N	0	0
 207	\N	Frozen Podded Edamame Beans	Frozen Podded Edamame Beans	\N	f	0	28	100	2025-07-26	4	118	11	118	Edamame Bean	\N	\N	0	2
 209	\N	Frozen Mixed Vegetables	Frozen Mixed Vegetables		f	0	28	100	2025-09-24	4	225	10	225	Frozen Mixed Vegetables	\N	\N	0	0
@@ -340,7 +340,7 @@
 355	\N	Chickpea Spaghetti Pasta	Chickpea Spaghetti Pasta		f	0	28	100	2025-09-15	4	112	4	112	Chickpea Spaghetti Pasta	\N	\N	0	5
 356	\N	Tagliatelle Pasta	Tagliatelle Pasta		f	262176	28	100	2024-12-23	4	112	4	112	Tagliatelle Pasta	\N	\N	0	5
 357	\N	Dijon Mustard	Dijon Mustard		t	0	28	100	2025-12-01	4	249	4	249	Dijon Mustard	\N	\N	0	13
-358	\N	Lemon Juice	Lemon Juice		f	0	30	100	2024-11-26	9	240	3	240	Lemon Juice	\N	\N	0	0
+358	\N	Lemon Juice	Lemon Juice	\N	f	0	30	100	2024-11-26	9	240	1	240	Lemon Juice	\N	\N	0	13
 359	\N	Lime Juice	Lime Juice		f	0	30	100	2025-02-16	9	242	3	242	Lime Juice	\N	\N	0	0
 360	\N	Kosher Salt & Black Pepper	Kosher Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2025-12-28	4	224	4	224	Salt & Black Pepper	\N	\N	0	12
 361	\N	Elbow Macaroni, GF	Elbow Macaroni, GF		f	0	28	100	2024-11-23	4	224	4	224	Elbow Macaroni, GF	\N	\N	0	5
@@ -371,7 +371,7 @@
 387	\N	Boneless Skinless Chicken Breasts	Boneless Skinless Chicken Breasts		f	1048576	112	100	2025-03-20	0	224	10	224	Boneless Skinless Chicken Breasts	\N	\N	0	0
 388	\N	Chicken Thighs, Skin On, Bone In	Chicken Thighs, Skin On, Bone In		f	1048576	193	100	2025-03-13	0	94	10	94	Chicken Thighs, Skin On, Bone In	https://fdc.nal.usda.gov/food-details/172385/nutrients	\N	0	0
 389	\N	Frozen Mixed Chopped Onion, Carrot, and Celery	Frozen Mixed Chopped Onion, Carrot, and Celery		f	0	225	100	2024-12-15	6	225	10	225	Frozen Mixed Chopped Onion, Carrot, and Celery	\N	\N	0	0
-390	\N	Halloumi Cheese	Halloumi Cheese		f	256	28	100	2025-03-04	4	224	10	224	Halloumi Cheese	\N	\N	0	0
+390	\N	Halloumi Cheese	Halloumi Cheese	It is traditionally made from a mixture of goat milk and sheep's milk. Fresh halloumi has a semi-hard, elastic texture and a milder, less salty flavor compared to the aged version. As mature halloumi is stored in brine, it has a harder, drier texture, as well as a saltier flavor.	f	256	28	100	2025-03-04	4	224	8	224	Halloumi Cheese	\N	\N	0	9
 391	\N	Boneless Skinless Chicken Thighs	Boneless Skinless Chicken Thighs		f	1048576	149	100	2025-03-23	0	224	10	224	Boneless Skinless Chicken Thighs	https://fdc.nal.usda.gov/food-details/173627/nutrients	\N	0	0
 392	\N	Pesto	Pesto		f	0	28	100	2025-07-06	4	244	128	244	Pesto	\N	\N	0	0
 393	\N	Pistou	Pistou		f	0	28.35	100	2025-07-04	4	100	6	100	Pistou	\N	\N	0	0
@@ -618,8 +618,8 @@
 697	\N	Fennel Sprouts	Fennel Sprouts		f	0	28	100	2025-09-05	4	87	2	87	Fennel Sprouts	\N	\N	0	0
 698	\N	Cabbage Sprouts	Cabbage Sprouts		f	0	28	100	2025-09-06	4	70	2	70	Cabbage	\N	\N	0	0
 699	\N	Turmeric	Turmeric		t	0	28	100	2025-11-22	4	112	4	112	Tumeric	\N	\N	0	12
-700	\N	Canned Mixed Beans	Canned Mixed Beans		f	0	28	100	2025-12-25	4	140	4	140	Canned Mixed Beans	\N	\N	0	6
-701	\N	Dry Mixed Beans	Dry Mixed Beans		f	0	28	100	2025-12-22	4	140	4	140	Dry Mixed Beans	\N	\N	0	14
+700	\N	Canned Mixed Beans	Canned Mixed Beans		f	0	28	100	2025-12-25	4	140	4	140	Mixed Bean	\N	\N	0	6
+701	\N	Dry Mixed Beans	Dry Mixed Beans		f	0	28	100	2025-12-22	4	140	4	140	Mixed Bean	\N	\N	0	14
 702	\N	Low Sodium Pasta Sauce	Low Sodium Pasta Sauce		f	512	257	100	2025-04-20	6	257	4	257	Low Sodium Pasta Sauce	\N	\N	0	14
 703	\N	Cabbage Leaves	Cabbage Leaves		f	0	33	100	2025-01-20	0	99	2	99	Cabbage	\N	\N	0	0
 704	\N	Savoy Cabbage Heads	Savoy Cabbage Heads		f	0	908	100	2024-12-19	0	70	2	70	Cabbage	\N	\N	0	0
@@ -911,7 +911,7 @@
 1116	\N	Cabbage	Cabbage		f	0	33	100	2025-01-20	0	99	2	99	Cabbage	\N	\N	0	0
 1117	\N	Pumpkin Pie Spice	Pumpkin Pie Spice		f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Pie Spice	\N	\N	0	0
 1118	\N	Mixed-Color Baby Beets	Mixed-Color Baby Beets		f	0	82	100	2025-04-27	0	82	2	82	Mixed-Color Baby Beets	\N	\N	0	0
-1119	\N	Creamy Horseradish	Creamy Horseradish	aka: Prepared Horseradish. Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	f	0	28	100	2024-10-24	4	100	4	100	Creamy Horseradish	\N	\N	0	13
+1119	\N	Creamy Horseradish	Creamy Horseradish	aka: Prepared Horseradish. Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	f	0	28	100	2024-10-24	4	100	4	100	Horseradish	\N	\N	0	13
 1120	\N	Reduced-Fat Crème Fraîche	Reduced-Fat Crème Fraîche		f	324	28	100	2024-11-16	4	240	10	240	Reduced-Fat Crème Fraîche	\N	\N	0	0
 1121	\N	Bresaola	Bresaola		f	0	28	100	2024-12-10	4	224	10	224	Bresaola	\N	\N	0	0
 1122	\N	Green Cabbage | Purple Cabbage	Green Cabbage | Purple Cabbage		f	0	33	100	2025-01-20	0	99	2	99	Cabbage	\N	\N	0	0
@@ -977,7 +977,7 @@
 1212	\N	Boneless Skinless Chicken Breast Cutlets	Boneless Skinless Chicken Breast Cutlets		f	1048576	145	100	2025-03-14	0	145	10	145	Boneless Skinless Chicken Breast Cutlets	\N	\N	0	0
 1213	\N	Organic Boneless Skinless Chicken Breast Cutlets	Organic Boneless Skinless Chicken Breast Cutlets		f	1048576	145	100	2025-03-14	0	145	10	145	Organic Boneless Skinless Chicken Breast Cutlets	\N	\N	0	0
 1214	\N	English Muffins	English Muffins		f	262176	57	100	2026-01-31	0	57	2	57	English Muffin	\N	\N	0	4
-1215	\N	Beef Tenderloin Fillet Mignons	Beef Tenderloin Fillet Mignons	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	f	1048576	37.67	100	2024-10-17	4	113	8	113	Beef Tenderloin Fillet Mignons	\N	\N	0	0
+1215	\N	Beef Tenderloin Fillet Mignons	Beef Tenderloin Fillet Mignons	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	f	1048576	37.67	100	2026-03-19	4	113	8	113	Beef Tenderloin Fillet Mignons	\N	\N	0	0
 1216	\N	Small Red Onions	Small Red Onions		f	0	70	100	2024-12-25	0	115	2	115	Onion	\N	\N	0	0
 1217	\N	Fresh Parsley | Fresh Cilantro	Fresh Parsley | Fresh Cilantro		f	0	28	100	2024-11-30	4	64	2	64	Fresh Parsley | Fresh Cilantro	\N	\N	0	0
 1218	\N	Chocolate Chips	Chocolate Chips		f	0	28	100	2024-12-15	4	224	4	224	Chocolate Chip	\N	\N	0	17
@@ -1399,9 +1399,8 @@
 1789	\N	Cane Sugar	Cane Sugar		t	0	28	100	2024-12-14	4	200	4	200	Granulated Sugar	\N	\N	0	14
 1790	\N	Dark Muscovado Sugar	Dark Muscovado Sugar	Unrefined cane sugar, contains molasses.	t	0	28	100	2024-12-14	4	200	4	200	Granulated Sugar	\N	\N	0	14
 1791	\N	Light Muscovado Sugar	Light Muscovado Sugar	Unrefined cane sugar, contains molasses.	t	0	28	100	2024-12-14	4	200	4	200	Granulated Sugar	\N	\N	0	14
-1792	\N	Soup Beans	Soup Beans		f	0	28	100	2026-03-14	4	194	4	194	Bean	\N	\N	0	14
-1793	\N	Mixed Soup Beans	Mixed Soup Beans		f	0	28	100	2024-10-17	4	194	4	194	Black Beans	\N	\N	0	14
-1794	\N	Canned Soup Beans	Canned Soup Beans		f	0	28	100	2024-10-17	4	194	4	194	Black Beans	\N	\N	0	14
+1793	\N	Dry Soup Beans	Dry Soup Beans	Use partial ingredients.	f	0	28	100	2026-03-19	4	194	4	194	Soup Bean	\N	\N	0	6
+1794	\N	Canned Soup Beans	Canned Soup Beans		f	0	28	100	2024-10-17	4	194	4	194	Soup Bean	\N	\N	0	14
 1795	\N	Northern White Beans	Northern White Beans		f	0	28	100	2025-10-12	4	184	4	184	Kidney Beans	\N	\N	0	14
 1796	\N	Canned Northern White Beans	Canned Northern White Beans		f	0	28	100	2025-10-14	4	256	4	256	Canned Kidney Beans	\N	\N	0	6
 1797	\N	English Walnut Halves	English Walnut Halves		f	131072	28	100	2026-01-29	4	120	10	100	Walnut	\N	\N	0	0
@@ -1510,3 +1509,4 @@
 2018	\N	Fresh Broccoli Florets	Fresh Broccoli Florets	Just the tips.	f	0	11	100	2024-11-04	0	71	2	71	Broccoli	\N	You can't buy these in stores.	0	0
 2019	\N	Chuck Roast	Chuck Roast		f	1048576	28	100	2024-12-10	4	224	10	224	Roast Ham	\N	\N	0	0
 2020	\N	Fresh Parsley Leaves	Fresh Parsley Leaves		f	0	28	100	2026-01-19	4	60	3	60	Parsley	\N	\N	0	0
+2021	\N	Soup Beans	Soup Beans	Prefer canned or dry variations b/c partial ingredients get messy.	f	0	28	100	2026-03-19	4	194	4	194	Soup Bean	\N	Prefer canned or dry variations b/c partial ingredients get messy.	0	6

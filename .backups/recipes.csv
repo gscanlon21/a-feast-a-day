@@ -275,7 +275,7 @@
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
 395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	30	5	2	t	sesame-ginger-carrots.jpg	0	\N	f	t
 396	Tandoori Chicken	\N	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-397	Broccoli & Everything Salad	Use fresh broccoli, not frozen.	\N	\N	10	0	20	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+397	Broccoli & Everything Salad	Use fresh broccoli, not frozen.	\N	\N	20	0	20	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 398	Maple Lime Pork Roast	\N	\N	\N	8	360	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 399	Chicken Stew	\N	\N	\N	8	120	10	2	t	beef-stew.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
@@ -350,7 +350,7 @@
 534	Digestive Apple Carrot Salad	\N	\N	\N	20	0	15	2	t	tahini-carrot-slaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 535	Carob Snacks	\N	\N	\N	32	0	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 536	Turkey Breakfast Sausage	\N	\N	\N	0	10	35	4	t	grilled-sausages.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
-537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	4	t	citrus-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+537	Apple Cider & Honey Vinaigrette	\N	\N	\N	0	0	5	2	t	citrus-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 538	Lamb Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 539	Hot Oatmeal	\N	\N	\N	6	5	5	1	t	old-fashioned-oatmeal.jpg	0	\N	f	f
 540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	8	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -388,9 +388,9 @@
 572	Microgreens Salad	\N	\N	\N	20	20	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 573	Katy's Greek Salad	\N	\N	\N	20	0	12	2	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 574	Turkish Salad	\N	\N	\N	20	0	15	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-575	Turkey Taco Salad	\N	\N	\N	10	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-576	Thai Chicken Salad	\N	\N	\N	20	16	10	2	t	thai-chicken-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-577	Thai Broccoli Salad	\N	\N	\N	10	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+575	Turkey Taco Salad	\N	\N	\N	20	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+576	Thai Chicken Salad	\N	\N	\N	12	16	10	2	t	thai-chicken-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+577	Thai Broccoli Salad	\N	\N	\N	20	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 578	Barszcz (Polish Beet Soup)	\N	\N	\N	4	40	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 579	Fermented Cabbage	\N	Takes too long.	\N	0	0	60	2	t	\N	6	\N	t	f
 580	Blueberry Chicken Salad	\N	\N	\N	12	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -476,7 +476,7 @@
 661	Bourbon Caramel Sauce	\N	\N	\N	0	15	5	1	t	\N	6	\N	t	f
 662	Creamy Avocado-Lime Dressing	\N	\N	\N	0	0	5	12	t	\N	9	\N	t	f
 663	Arugula and Prosciutto Salad	\N	\N	\N	20	0	5	2	t	\N	0	\N	f	f
-664	Mom's Shepherd's Pie	\N	\N	\N	64	60	30	6	t	\N	0	\N	f	f
+664	Shepherd's Pie	\N	\N	\N	8	60	30	6	t	\N	0	\N	f	f
 697	Taco Juice	An ounce of tequila in this is also very good. 	Has weird ingredients.	\N	128	0	5	2	t	\N	0	\N	f	f
 698	Coconut-Ginger Tonic	An ounce of gin or vodka makes this special drink even more special.	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 699	Apple Galette	\N	Has weird ingredients.	\N	64	35	20	8	t	\N	0	\N	f	f
@@ -511,7 +511,7 @@
 729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	roasted-broccoli.jpg	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
-732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	irish-champ.jpg	0	\N	f	f
+732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	irish-champ.jpg	0	\N	t	f
 733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	burgers-relish.jpg	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
 735	Zucchini Pesto Pasta w/ Bacon	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
