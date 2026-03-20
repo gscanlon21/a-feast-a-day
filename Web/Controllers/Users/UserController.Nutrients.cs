@@ -15,7 +15,7 @@ public partial class UserController
     [HttpPost, Route("nutrient/clear")]
     public async Task<IActionResult> ClearNutrientTargetData(string email, string token)
     {
-        var user = await _userRepo.GetUser(email, token);
+        var user = await _userRepo.GetUser(email, token, allowDemoUser: false);
         if (user == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));

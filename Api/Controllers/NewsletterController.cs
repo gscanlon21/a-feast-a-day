@@ -81,7 +81,7 @@ public class NewsletterController : ControllerBase
     {
         try
         {
-            var user = await _userRepo.GetUserStrict(email, token);
+            var user = await _userRepo.GetUserStrict(email, token, allowDemoUser: false);
             await CreateBackfill.Trigger(await _schedulerFactory.GetScheduler(), user, token);
 
             return StatusCode(StatusCodes.Status204NoContent);
