@@ -66,7 +66,7 @@
 67	\N	Black Pepper	Black Pepper	\N	t	0	28	100	2025-12-02	4	96	4	96	Black Pepper	\N	\N	0	12
 68	\N	Chili Powder	Chili Powder	\N	t	0	7.5	100	2025-07-18	7	120	4	120	Chili Powder	\N	\N	0	12
 70	\N	Cinnamon	Cinnamon	\N	t	0	28	100	2025-01-18	4	128	4	128	Cinnamon	\N	\N	0	12
-71	\N	Garlic Powder	Garlic Powder	\N	t	0	28	100	2024-10-18	4	160	4	160	Garlic Powder	\N	\N	0	12
+71	\N	Garlic Powder	Garlic Powder	\N	t	0	28	100	2026-03-23	4	160	4	160	Garlic Powder	\N	\N	0	12
 72	\N	Nutmeg	Nutmeg	\N	f	0	28	100	2025-11-07	4	112	4	112	Nutmeg	\N	\N	0	12
 73	\N	Paprika	Paprika	\N	t	0	28	100	2025-11-24	4	112	4	112	Paprika	\N	\N	0	12
 74	\N	Sea Salt	Sea Salt	\N	t	0	6	100	2025-07-24	8	288	4	288	Salt	\N	\N	0	12
@@ -154,7 +154,7 @@
 158	\N	Sunflower Seeds	Sunflower Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	https://fdc.nal.usda.gov/food-details/2515381/nutrients	\N	0	0
 159	\N	Watermelon	Watermelon	\N	f	0	4520	100	2025-11-09	0	152	1	152	Watermelon	\N	\N	0	0
 160	\N	Cow Milk (1%)	Cow Milk (1%)	\N	f	0	240	100	2025-07-10	6	240	10	240	Cow Milk (1%)	\N	\N	0	0
-161	\N	Almond Milk	Almond Milk	\N	f	0	30	100	2024-10-19	9	240	10	240	Almond Milk	https://fdc.nal.usda.gov/food-details/2257045/nutrients	\N	0	0
+161	\N	Almond Milk	Almond Milk	\N	f	1	30	100	2026-03-27	9	240	8	240	Almond Milk	\N	\N	0	9
 162	\N	Soy Milk	Soy Milk	\N	f	32768	240	100	2025-01-04	6	240	10	240	Soy Milk	\N	\N	0	0
 163	\N	Cow Milk (Skim)	Cow Milk (Skim)	\N	f	320	240	100	2025-11-23	6	240	10	240	Cow Milk (Skim)	\N	\N	0	0
 164	\N	White Eggs	White Eggs	\N	f	8	50	100	2025-11-25	0	200	10	200	White Eggs	\N	\N	0	0
@@ -393,7 +393,7 @@
 409	\N	Dark Chocolate Bar (70%)	Dark Chocolate Bar (70%)	\N	f	0	28	100	2025-01-01	4	168	4	168	Chocolate Bar	\N	\N	0	17
 410	\N	Tahini (Sesame Seed Paste)	Tahini (Sesame Seed Paste)	\N	f	0	28	100	2025-02-04	4	224	4	224	Tahini (Sesame Seed Paste)	\N	\N	0	14
 411	\N	Shortbread Cookies	Shortbread Cookies	\N	f	262176	9.5	100	2025-01-31	0	114	5	114	Shortbread Cookies	\N	\N	0	16
-412	\N	Double Espresso	Double Espresso	\N	t	0	240	100	2024-10-19	6	240	0	240	Double Espresso	\N	\N	0	0
+412	\N	Double Espresso	Double Espresso	\N	t	0	30	100	2026-03-27	9	240	4	240	Espresso	\N	\N	0	12
 413	\N	All-Purpose Flour, GF	All-Purpose Flour, GF	\N	t	0	28	100	2025-06-24	4	125	4	125	All-Purpose Flour, GF	\N	\N	0	14
 414	\N	Bread Flour, Unenriched, GF	Bread Flour, Unenriched, GF	\N	f	0	137	100	2024-11-14	6	137	4	137	Bread Flour, Unenriched, GF	\N	\N	0	14
 415	\N	Frozen Grilled Chicken Breast Strips	Frozen Grilled Chicken Breast Strips	\N	f	1048576	28	100	2025-03-18	4	224	10	224	Grilled Chicken Breast	\N	\N	0	0
@@ -581,7 +581,7 @@
 659	\N	Baby Leeks	Baby Leeks	\N	f	0	89	100	2025-10-15	0	89	2	89	Baby Leeks	\N	\N	0	0
 660	\N	Fresh Sage	Fresh Sage	\N	f	0	1	100	2026-01-17	3	32	3	32	Sage	\N	\N	0	0
 661	\N	Fennel Bulbs	Fennel Bulbs	\N	f	0	234	100	2025-03-14	0	234	2	234	Fennel Bulbs	\N	\N	0	0
-662	\N	Single Espresso	Single Espresso	\N	t	0	240	100	2024-10-19	6	240	0	240	Single Espresso	\N	\N	0	0
+662	\N	Single Espresso	Single Espresso	\N	t	0	30	100	2026-03-25	9	240	7	240	Single Espresso	\N	\N	0	20
 663	\N	Whole-Wheat Flour	Whole-Wheat Flour	\N	t	262176	28	100	2025-06-24	4	125	4	125	Whole-Wheat Flour	\N	\N	0	14
 664	\N	Whole Milk (Cow), enriched	Whole Milk (Cow), enriched	\N	f	320	244	100	2024-10-20	6	244	10	244	Whole Milk (Cow), enriched	\N	\N	0	0
 665	\N	Whole Milk (Cow)	Whole Milk (Cow)	\N	f	320	244	100	2024-10-20	6	244	8	244	Whole Milk (Cow)	\N	\N	0	20
@@ -746,7 +746,7 @@
 856	\N	Fresh Spinach | Fresh Kale	Fresh Spinach | Fresh Kale	\N	f	0	28	100	2024-12-28	4	30	2	30	Fresh Spinach | Fresh Kale	\N	\N	0	0
 857	\N	Frozen Raspberries	Frozen Raspberries	\N	f	0	123	100	2024-12-21	6	123	10	123	Frozen Raspberries	\N	\N	0	0
 858	\N	Frozen Strawberries | Frozen Raspberries	Frozen Strawberries | Frozen Raspberries	\N	f	0	28	100	2024-12-31	4	149	10	149	Frozen Strawberries | Frozen Raspberries	\N	\N	0	0
-859	\N	Dairy-Free Milk	Dairy-Free Milk	\N	f	0	240	100	2024-10-19	6	240	6	240	Dairy-Free Milk	\N	\N	0	0
+859	\N	Dairy-Free Milk	Dairy-Free Milk	\N	f	0	30	100	2026-03-24	9	240	8	240	Milk	\N	\N	0	9
 860	\N	Water | Dairy-Free Milk	Water | Dairy-Free Milk	\N	f	0	29.625	100	2024-12-26	9	237	10	237	Water | Dairy-Free Milk	\N	\N	0	0
 861	\N	Fresh Mixed-Color Zucchini	Fresh Mixed-Color Zucchini	\N	f	0	196	100	2025-03-06	0	196	2	196	Zucchini	\N	\N	0	0
 862	\N	Silken Tofu	Silken Tofu	\N	f	32768	28	100	2024-11-03	4	252	4	252	Silken Tofu	\N	\N	0	14
@@ -787,7 +787,7 @@
 958	\N	Coriander Seeds	Coriander Seeds	\N	f	0	28	100	2025-12-17	4	80	4	80	Coriander Seeds	\N	\N	0	12
 959	\N	Salsa Verde	Salsa Verde	\N	f	512	28	100	2025-10-04	4	259	4	259	Salsa Verde	\N	\N	0	14
 960	\N	Long Grain White Rice	Long Grain White Rice	\N	f	4096	28	100	2025-10-03	4	200	4	200	Rice	https://fdc.nal.usda.gov/food-details/2512381/nutrients	\N	0	4
-961	\N	Almond Meal	Almond Meal	\N	f	0	240	100	2024-10-19	6	240	10	240	Almond Meal	\N	\N	0	0
+961	\N	Almond Meal	Almond Meal	\N	f	0	28	100	2026-03-24	4	240	5	240	Almond Meal	\N	\N	0	18
 962	\N	Sliced Bresaola	Sliced Bresaola	\N	f	0	28	100	2024-12-10	0	224	10	224	Sliced Bresaola	\N	\N	0	0
 963	\N	Fresh Mixed-Color Endives	Fresh Mixed-Color Endives	\N	f	0	45	100	2024-11-28	0	90	2	90	Fresh Mixed-Color Endives	\N	\N	0	0
 964	\N	Coconut Oil	Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	https://fdc.nal.usda.gov/food-details/330458/nutrients	\N	0	11
@@ -921,7 +921,7 @@
 1126	\N	Purple Cabbage Heads	Purple Cabbage Heads	aka: Red Cabbage Heads. https://www.eatthismuch.com/calories/cabbage-1902	f	0	908	100	2024-11-06	0	89	2	89	Cabbage	\N	\N	0	0
 1127	\N	Roasted Cashew Nuts	Roasted Cashew Nuts	\N	f	0	137	100	2025-03-10	6	137	10	137	Roasted Cashew Nuts	\N	\N	0	0
 1128	\N	Dry-Roasted Peanuts	Dry-Roasted Peanuts	\N	f	2048	28	100	2026-02-17	4	146	10	146	Peanut	\N	\N	0	0
-1129	\N	Almond Butter	Almond Butter	\N	f	1	28	100	2024-10-19	4	250	4	250	Almond Butter	https://fdc.nal.usda.gov/food-details/2262074/nutrients	\N	0	13
+1129	\N	Almond Butter	Almond Butter	Probably found near the peanut butters.	f	1	28	100	2026-03-26	4	250	4	250	Almond Butter	\N	\N	0	13
 1130	\N	Ribeye Steaks	Ribeye Steaks	\N	f	1048576	376	100	2026-02-27	0	376	9	376	Ribeye Steaks	\N	\N	0	7
 1131	\N	Gorgonzola Cheese	Gorgonzola Cheese	\N	f	256	28	100	2025-07-07	4	224	10	224	Gorgonzola Cheese	\N	\N	0	0
 1132	\N	Microgreens	Microgreens	\N	f	0	28	100	2025-09-04	4	112	2	112	Microgreens	\N	\N	0	0
@@ -1010,7 +1010,7 @@
 1274	\N	Unsalted Peanut Butter	Unsalted Peanut Butter	\N	f	2048	28	100	2025-10-25	4	256	128	256	Unsalted Peanut Butter	\N	\N	0	0
 1275	\N	Salami	Salami	\N	f	0	28	100	2025-11-27	0	224	3	224	Salami	\N	\N	0	7
 1276	\N	Canned Tomatoes	Canned Tomatoes	\N	f	512	111	100	2024-11-05	0	111	2	111	Tomato	\N	\N	0	0
-1277	\N	Jarred Pickled Jalapeños	Jarred Pickled Jalapeños	\N	f	0	28	100	2024-10-20	4	136	4	104	Pickled Jalepeño	\N	\N	0	13
+1277	\N	Jarred Pickled Jalapeños	Jarred Pickled Jalapeños	\N	f	0	28	100	2026-03-28	4	136	4	104	Pickled Jalepeño	\N	\N	0	13
 1278	\N	Turmeric Root	Turmeric Root	\N	t	0	28	100	2025-11-20	4	112	4	112	Tumeric Root	\N	\N	0	12
 1279	\N	Turmeric Powder	Turmeric Powder	\N	t	0	28	100	2025-11-22	4	112	4	112	Tumeric Powder	\N	\N	0	12
 1280	\N	Kidney Beans	Kidney Beans	\N	f	0	28	100	2025-10-12	4	184	4	184	Kidney Beans	\N	\N	0	14
@@ -1052,7 +1052,7 @@
 1317	\N	Tonic Water	Tonic Water	\N	t	0	240	100	2025-06-11	6	240	5	240	Tonic Water	\N	\N	0	16
 1318	\N	Applesauce	Applesauce	\N	f	0	28	100	2024-11-16	4	244	4	244	Applesauce	\N	\N	0	14
 1319	\N	Sweetened Applesauce	Sweetened Applesauce	\N	f	0	28	100	2024-11-16	4	244	4	244	Applesauce	\N	\N	0	14
-1320	\N	Almond Flour	Almond Flour	\N	f	0	240	100	2024-10-19	6	240	10	240	Almond Flour	\N	\N	0	0
+1320	\N	Almond Flour	Almond Flour	\N	f	1	28	100	2026-03-26	4	240	5	240	Almond Flour	\N	\N	0	15
 1321	\N	Small Onions	Small Onions	\N	f	0	70	100	2024-12-25	0	115	2	115	Onion	\N	\N	0	0
 1322	\N	Canned Peaches	Canned Peaches	\N	f	0	28	100	2026-01-12	4	244	4	244	Peach	\N	\N	0	6
 1323	\N	Canned Sliced Peaches	Canned Sliced Peaches	\N	f	0	28	100	2026-01-12	4	244	4	244	Peach	\N	\N	0	6
@@ -1092,7 +1092,7 @@
 1358	\N	Merguez Sausage	Merguez Sausage	\N	f	1048576	28	100	2025-02-22	4	224	10	224	Merguez Sausage	\N	\N	0	0
 1359	\N	Fajita Vegetables	Fajita Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Fajita Vegetables	\N	\N	0	0
 1360	\N	Frozen Fajita Vegetables	Frozen Fajita Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Frozen Fajita Vegetables	\N	\N	0	0
-1361	\N	Whole Milk	Whole Milk	\N	f	320	244	100	2024-10-20	6	244	8	244	Whole Milk	\N	\N	0	20
+1361	\N	Whole Milk	Whole Milk	\N	f	320	946	100	2026-03-28	14	244	8	244	Whole Milk	\N	\N	0	20
 1362	\N	Fresh Mangos	Fresh Mangos	\N	f	0	207	100	2025-03-26	0	165	1	165	Fresh Mangos	\N	\N	0	0
 1363	\N	Frozen Mango Chunks	Frozen Mango Chunks	\N	f	0	28	100	2025-03-26	4	165	10	165	Frozen Mango Chunks	\N	\N	0	0
 1364	\N	Yogurt	Yogurt	Spelled yogourt in cananda.	f	256	28	100	2025-12-06	4	245	8	245	Yogurt	\N	\N	0	9
@@ -1235,7 +1235,7 @@
 1588	\N	Dark Rum	Dark Rum	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Dark Rum	\N	\N	0	16
 1589	\N	Light Rum	Light Rum	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Light Rum	\N	\N	0	16
 1590	\N	Large Garlic Cloves	Large Garlic Cloves	\N	f	0	3	100	2025-11-21	0	136	1	136	Garlic Clove	\N	\N	0	3
-1591	\N	Unsweetened Almond Milk	Unsweetened Almond Milk	\N	f	1	960	100	2024-10-19	14	240	10	240	Unsweetened Almond Milk	\N	\N	0	0
+1591	\N	Unsweetened Almond Milk	Unsweetened Almond Milk	\N	f	1	960	100	2026-03-25	14	240	8	240	Almond Milk	\N	\N	0	9
 1592	\N	Shredded Parmesan Cheese	Shredded Parmesan Cheese	\N	f	256	28.35	100	2025-07-02	4	100	10	100	Parmesan Cheese	https://fdc.nal.usda.gov/food-details/325036/nutrients	\N	0	0
 1593	\N	Back Bacon Slices	Back Bacon Slices	\N	f	1048576	12	100	2025-07-16	0	224	10	224	Back Bacon Slices	\N	\N	0	0
 1594	\N	Back Bacon	Back Bacon	\N	f	1048576	12	100	2025-07-16	0	224	10	224	Back Bacon	\N	\N	0	0
@@ -1349,7 +1349,7 @@
 1737	\N	Chicken Broth | Beef Broth | Water	Chicken Broth | Beef Broth | Water	\N	f	1048576	240	100	2025-06-27	6	240	4	240	Chicken Broth | Vegetable Broth	\N	\N	0	13
 1738	\N	Portobello Mushrooms	Portobello Mushrooms	\N	f	0	15	100	2025-11-09	0	86	3	86	Mushroom	\N	\N	0	0
 1739	\N	White Balsamic Vinegar	White Balsamic Vinegar	\N	f	0	30	100	2025-12-28	9	255	4	255	Balsamic Vinegar	\N	\N	0	13
-1740	\N	Granulated Garlic	Granulated Garlic	Texture of sand.	t	0	10	100	2024-10-18	7	160	4	160	Garlic Powder	\N	\N	0	12
+1740	\N	Granulated Garlic	Granulated Garlic	Texture of sand.	t	0	10	100	2026-03-23	7	160	4	160	Garlic Powder	\N	\N	0	12
 1741	\N	Canned Whole Peeled San Marzano Tomatoes	Canned Whole Peeled San Marzano Tomatoes	Yes, this is an ingredient.	f	512	28	100	2025-12-10	4	149	4	149	Tomato	\N	\N	0	6
 1742	\N	Macadamia Nut Halves	Macadamia Nut Halves	\N	f	0	28	100	2024-12-28	4	134	10	134	Macadamia Nuts	\N	\N	0	0
 1743	\N	White Chocolate	White Chocolate	\N	f	0	28	100	2024-12-01	4	170	4	170	Chocolate	\N	\N	0	17
@@ -1512,3 +1512,7 @@
 2021	\N	Soup Beans	Soup Beans	Prefer canned or dry variations b/c partial ingredients get messy.	f	0	28	100	2026-03-19	4	194	4	194	Soup Bean	\N	Prefer canned or dry variations b/c partial ingredients get messy.	0	6
 2022	\N	Flaxseed Meal	Flaxseed Meal	\N	f	0	28	100	2025-02-27	4	168	10	168	Ground Flaxseed	\N	\N	0	0
 2023	\N	Chocolate Chips | Raisins	Chocolate Chips | Raisins	\N	f	0	28	100	2025-03-01	4	145	3	145	Seedless Raisins	\N	\N	0	0
+2024	\N	Andouille Sausage	Andouille Sausage	\N	f	1048576	28	100	2025-02-22	4	224	10	224	Kielbasa Sausage	https://fdc.nal.usda.gov/food-details/174607/nutrients	\N	0	0
+2025	\N	Chicken Broth | Water	Chicken Broth | Water	\N	f	1048576	30	100	2025-06-26	9	240	4	240	Chicken Broth	\N	\N	0	13
+2026	\N	Creole Seasoning	Creole Seasoning	\N	f	0	28	100	2025-11-18	4	128	4	128	Cajun Seasoning	\N	\N	0	12
+2027	\N	Dry Red Beans	Dry Red Beans	\N	f	0	28	100	2025-10-10	4	184	4	184	Raw Red Kidney Beans	\N	\N	0	14
