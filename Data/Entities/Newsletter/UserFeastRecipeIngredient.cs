@@ -82,9 +82,6 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public double GetCookedScale => CookedScale;
 
     [NotMapped]
-    public int GetRecipeIngredientId => RecipeIngredientId;
-
-    [NotMapped]
     public Ingredients.Ingredient? GetIngredient => Ingredient;
 
     private string GetDebuggerDisplay()

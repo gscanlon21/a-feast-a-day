@@ -16,7 +16,5 @@ public interface IRecipeIngredient
 
     Ingredient? GetIngredient { get; }
 
-    int GetRecipeIngredientId { get; }
-
     double GetCookedScale { get; }
 }

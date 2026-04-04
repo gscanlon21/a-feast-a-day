@@ -143,20 +143,17 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public string Name => IngredientRecipe?.Recipe.Name ?? Ingredient?.Name ?? "";
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
     public bool SkipShoppingList => Ingredient?.SkipShoppingList ?? false;
-    public bool Partial => Ingredient?.Name.Contains('|') ?? false;
 
     /// <summary>
     /// The number of grams this ingredient weights.
     /// </summary>
     internal double Weight => (Ingredient != null ? Measure.ToGramsWithContext(Ingredient) : 1) * Quantity.ToDouble();
 
-    public bool IsAdjustable => Adjustable;
     public bool IsCoarseCut => CoarseCut;
     public Measure GetMeasure => Measure;
     public Ingredient? GetIngredient => Ingredient;
     public double GetQuantity => Quantity.ToDouble();
     public double GetCookedScale => CookedScale;
-    public int GetRecipeIngredientId => Id;
 
     /// <summary>
     /// Is this recipe's ingredient an ingredient or a recipe?
@@ -170,6 +167,17 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
         (_, _, _, not null) => RecipeIngredientType.IngredientRecipe,
         _ => RecipeIngredientType.None,
     };
+
+    /// <summary>
+    /// Do we need to try swapping in an alternative recipe ingredient?
+    /// </summary>
+    public bool ShouldSubstituteIngredient(Allergens userAllergens)
+    {
+        // Swap if ingredient allergens conflict with user allergens.
+        return Ingredient?.Allergens.HasAnyFlag(userAllergens) == true
+            // Or if the user is substituting in an alternative ingredient.
+            || UserRecipeIngredient?.SubstituteIngredientId.HasValue == true;
+    }
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other && other.Id == Id;

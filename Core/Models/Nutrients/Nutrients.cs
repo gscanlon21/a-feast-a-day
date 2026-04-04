@@ -883,12 +883,12 @@ public enum Nutrients
     /// <summary>
     /// Polyphenols
     /// </summary>
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(20.4, -1, Measure.Milligrams, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(20.4, -1, Measure.Milligrams, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(20.4, -1, Measure.Milligrams, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(20.4, -1, Measure.Milligrams, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [Display(Name = "Polyphenols", Order = 999999)]
-    Polyphenols_total = 75,
+    Polyphenols_Total = 75,
 
     /// <summary>
     /// Vanadium (V)

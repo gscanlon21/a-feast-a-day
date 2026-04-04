@@ -16,6 +16,7 @@ using Data.Query.Options.Users;
 using Fractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using static Core.Code.Extensions.EnumerableExtensions;
@@ -258,10 +259,7 @@ public class QueryRunner(Section section)
                     // Can't combine swapped ingredients b/c some are supposed to be duplicates.
                     if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
                     {
-                        // Try swapping ingredients if the user is substituting in an alternative ingredient.
-                        if (recipeIngredient.UserRecipeIngredient?.SubstituteIngredientId.HasValue == true
-                            // Or if any of the ingredient's allergens conflict with the user's allergens.
-                            || recipeIngredient.Ingredient!.Allergens.HasAnyFlag(UserOptions.Allergens))
+                        if (recipeIngredient.ShouldSubstituteIngredient(UserOptions.Allergens))
                         {
                             // Substitution and alternative ingredients don't have user ingredient records.
                             // This includes the base ingredient if it has substitutions available or if it is ignorable.
@@ -534,13 +532,13 @@ public class QueryRunner(Section section)
     /// </summary>
     private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
-        var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
+        var ingredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
             .ToList();
 
         return await context.USDANutrients.AsNoTracking().TagWithCallSite()
             .Where(n => NutrientHelpers.USDAToNutrients.Select(l => l.Key).Contains(n.Nutrients))
-            .Where(n => allIngredientIds.Contains(n.IngredientId))
+            .Where(n => ingredientIds.Contains(n.IngredientId))
             .Where(n => n.Value > 0)
             // Select before grouping so EF Core can optimize.
             .Select(n => new USDANutrient(/* EF can't optimize */)
@@ -566,13 +564,13 @@ public class QueryRunner(Section section)
     /// </summary>
     private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrientsCa(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
-        var allIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
+        var ingredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
             .ToList();
 
         return await context.CanadaNutrients.AsNoTracking().TagWithCallSite()
             .Where(n => NutrientHelpers.CanadaToNutrients.Select(l => l.Key).Contains(n.Nutrients))
-            .Where(n => allIngredientIds.Contains(n.IngredientId))
+            .Where(n => ingredientIds.Contains(n.IngredientId))
             .Where(n => n.Value > 0)
             // Select before grouping so EF Core can optimize.
             .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
@@ -598,10 +596,10 @@ public class QueryRunner(Section section)
     /// </summary>
     private static async Task<Dictionary<int, List<IngredientScale>>> GetPartialIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults)
     {
-        var allFilteredResultIngredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
+        var ingredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         return await context.IngredientAlternatives.AsNoTracking().TagWithCallSite()
-            .Where(ia => allFilteredResultIngredientIds.Contains(ia.IngredientId))
             .Where(ia => ia.AlternativeIngredient.DisabledReason == null)
+            .Where(ia => ingredientIds.Contains(ia.IngredientId))
             .Where(ia => ia.IsAggregateElement)
             // Select before grouping so EF Core can optimize.
             .Select(ia => new IngredientAlternative(/* EF can't optimize */)
@@ -647,45 +645,42 @@ public class QueryRunner(Section section)
     /// </summary>
     private async Task<IDictionary<int, IngredientUserIngredient?>> GetAltIngredientForRecipeIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
-        var recipeIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Id)).ToList();
-        return (await context.RecipeIngredients.TagWithCallSite().AsNoTracking()
+        // Only need to look for substitutions where an ingredient's allergens conflict with the user's allergens or where the user is substituting in an alternative ingredient.
+        var recipeIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.ShouldSubstituteIngredient(UserOptions.Allergens)).Select(ri => ri.Id)).ToList();
+        if (recipeIngredientIds.Count == 0)
+        {
+            return ReadOnlyDictionary<int, IngredientUserIngredient?>.Empty;
+        }
+
+        // Don't check for disabled recipe/recipeingredients b/c no queryresults are disabled.
+        return await context.RecipeIngredients.TagWithCallSite().AsNoTracking().IgnoreQueryFilters()
+            .Include(ri => ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id && ui.UserId == UserOptions.Id))
+                .ThenInclude(uri => uri.SubstituteIngredient)
             .Where(ri => recipeIngredientIds.Contains(ri.Id))
             .Select(ri => new
             {
                 ri.Id,
-                ri.RecipeId,
+                ri.Optional,
                 ri.Ingredient,
-                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).Measure,
-                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).QuantityNumerator,
-                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).QuantityDenominator,
-                ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id).SubstituteIngredient,
-                ri.Optional,
-            })
-            .Select(ri => new
-            {
-                ri.Id,
-                ri.Optional,
-                Ingredient = new IngredientUserIngredient() { Scale = 1, Ingredient = ri.Ingredient },
                 HasAlternatives = ri.Ingredient.Alternatives.Any(i => (i.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
-                SubIngredient = ri.SubstituteIngredient == null ? null : new IngredientUserIngredient()
-                {
-                    Measure = ri.Measure,
-                    Ingredient = ri.SubstituteIngredient,
-                    QuantityNumerator = ri.QuantityNumerator,
-                    QuantityDenominator = ri.QuantityDenominator,
-                },
+                UserRecipeIngredient = ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id),
             })
-            .ToListAsync()).ToDictionary(ri => ri.Id, ri =>
+            .ToDictionaryAsync(ri => ri.Id, ri =>
             {
                 // If the substitute ingredient doesn't conflict with allergens. Disabled: Now shows warning; user can always swap.
-                if (ri.SubIngredient != null /*&& !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)*/)
+                if (ri.UserRecipeIngredient.SubstituteIngredient != null /*&& !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)*/)
                 {
-                    return ri.SubIngredient;
+                    return new IngredientUserIngredient()
+                    {
+                        Measure = ri.UserRecipeIngredient.Measure,
+                        Ingredient = ri.UserRecipeIngredient.SubstituteIngredient,
+                        QuantityNumerator = ri.UserRecipeIngredient.QuantityNumerator,
+                        QuantityDenominator = ri.UserRecipeIngredient.QuantityDenominator,
+                    };
                 }
 
-                // If there are alternatives available or the ingredient is ignorable,
-                // ... return the base ingredient so the user can pick another one.
-                return (ri.HasAlternatives || ri.Optional) ? ri.Ingredient : null;
+                // If there are alternatives available or the ingredient is ignorable, return the ingredient so the user can swap.
+                return (ri.HasAlternatives || ri.Optional) ? new IngredientUserIngredient() { Ingredient = ri.Ingredient } : null;
             });
     }
 
