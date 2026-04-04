@@ -1,7 +1,6 @@
 ﻿using Core.Models;
 using Core.Models.Nutrients;
 using Data.Entities.Ingredients;
-using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -13,7 +12,6 @@ namespace Data.Entities.Nutrients;
 /// Nutrients for an ingredient.
 /// </summary>
 [Table("usda_nutrient")]
-[Index(nameof(IngredientId), nameof(Nutrients), IsUnique = true)]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class USDANutrient
 {
@@ -23,9 +21,6 @@ public class USDANutrient
         public const double ValueStep = .1;
         public const double ValueMax = 100000;
     }
-
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; init; }
 
     public int IngredientId { get; init; }
 
@@ -47,7 +42,8 @@ public class USDANutrient
     #endregion
 
 
-    public override int GetHashCode() => HashCode.Combine(Id);
+    public override int GetHashCode() => HashCode.Combine(IngredientId, Nutrients);
     public override bool Equals(object? obj) => obj is USDANutrient other
-        && other.Id == Id;
+        && other.IngredientId == IngredientId
+        && other.Nutrients == Nutrients;
 }

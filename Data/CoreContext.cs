@@ -72,7 +72,9 @@ public class CoreContext : DbContext
         modelBuilder.Entity<UserIngredient>().HasKey(sc => new { sc.UserId, sc.IngredientId });
         modelBuilder.Entity<UserRecipeIngredient>().HasKey(sc => new { sc.UserId, sc.RecipeIngredientId });
         modelBuilder.Entity<IngredientAlternative>().HasKey(sc => new { sc.IngredientId, sc.AlternativeIngredientId });
+        modelBuilder.Entity<HealthCanadaNutrient>().HasKey(sc => new { sc.IngredientId, sc.Nutrients });
         modelBuilder.Entity<StudyIngredient>().HasKey(sc => new { sc.StudyId, sc.IngredientId });
+        modelBuilder.Entity<USDANutrient>().HasKey(sc => new { sc.IngredientId, sc.Nutrients });
         modelBuilder.Entity<UserFoodPreference>().HasKey(sc => new { sc.UserId, sc.Allergen });
 
         ////////// Query Filters //////////

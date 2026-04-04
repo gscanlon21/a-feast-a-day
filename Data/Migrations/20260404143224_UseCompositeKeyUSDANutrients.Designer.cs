@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20260404143224_UseCompositeKeyUSDANutrients")]
+    partial class UseCompositeKeyUSDANutrients
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -492,10 +495,13 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Entities.Nutrients.HealthCanadaNutrient", b =>
                 {
-                    b.Property<int>("IngredientId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    b.Property<int>("Nutrients")
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("IngredientId")
                         .HasColumnType("integer");
 
                     b.Property<DateOnly>("LastUpdated")
@@ -504,10 +510,16 @@ namespace Data.Migrations
                     b.Property<int>("Measure")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Nutrients")
+                        .HasColumnType("integer");
+
                     b.Property<double>("Value")
                         .HasColumnType("double precision");
 
-                    b.HasKey("IngredientId", "Nutrients");
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientId", "Nutrients")
+                        .IsUnique();
 
                     b.ToTable("hc_nutrient");
                 });
