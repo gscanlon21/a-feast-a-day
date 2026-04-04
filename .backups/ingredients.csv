@@ -1,12 +1,12 @@
 1	\N	Apples	Apples	\N	f	0	182	100	2025-03-29	0	182	1	182	Apple	\N	\N	0	0
 2	\N	Fresh Parsley	Fresh Parsley	\N	f	0	28	100	2026-01-19	4	60	3	60	Parsley	\N	\N	0	0
 3	\N	Yellow Onions	Yellow Onions	\N	f	0	148	100	2025-03-22	0	148	2	148	Onion	\N	\N	0	0
-4	\N	Lemons	Lemons	\N	f	0	108	100	2024-10-22	0	216	1	216	Lemon	https://fdc.nal.usda.gov/food-details/167746/nutrients	\N	0	0
+4	\N	Lemons	Lemons	\N	f	0	108	100	2026-04-05	0	216	1	216	Lemon	\N	\N	0	0
 5	\N	Garlic Cloves	Garlic Cloves	\N	f	0	3	100	2025-11-21	0	136	3	136	Garlic Cloves	\N	\N	0	0
 6	\N	Broccoli	Broccoli	\N	f	0	28	100	2024-11-04	4	91	2	91	Broccoli	\N	\N	0	0
 7	\N	Large Carrots	Large Carrots	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Carrots	https://fdc.nal.usda.gov/food-details/2258586/nutrients	\N	0	0
 8	\N	Red Bell Peppers	Red Bell Peppers	\N	f	512	119	100	2025-10-23	0	149	2	149	Bell Pepper	\N	\N	0	0
-9	\N	Avocados	Avocados	\N	f	0	201	100	2024-10-23	0	201	1	201	Avocados	\N	\N	0	0
+9	\N	Avocados	Avocados	\N	f	0	201	100	2026-04-05	0	201	1	201	Avocados	\N	\N	0	0
 10	\N	Fresh Strawberries	Fresh Strawberries	\N	f	0	28	100	2024-12-19	4	144	1	144	Fresh Strawberries	https://fdc.nal.usda.gov/food-details/2346409/nutrients	\N	0	0
 11	\N	Bananas	Bananas	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N	\N	0	0
 12	\N	Limes	Limes	\N	f	0	67	100	2025-02-07	0	201	1	201	Lime	\N	\N	0	0
@@ -246,7 +246,7 @@
 253	\N	Cereal	Cereal	\N	f	262176	234	100	2024-12-06	0	39	4	39	Cereal	\N	\N	0	14
 254	\N	Salted Margarine	Salted Margarine	\N	t	0	113	100	2025-12-27	0	224	10	224	Margarine	\N	\N	0	0
 255	\N	Orange Sweet Potatoes	Orange Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	1	133	Sweet Potato	\N	\N	0	2
-257	\N	Frigo String Cheese Sticks	Frigo String Cheese Sticks	\N	f	260	28	100	2024-10-22	0	112	10	112	String Cheese Stick	\N	\N	0	0
+257	\N	Frigo String Cheese Sticks	Frigo String Cheese Sticks	\N	f	260	28	100	2026-04-04	0	112	10	112	String Cheese Stick	\N	\N	0	0
 258	\N	Naan | Pita	Naan | Pita	\N	f	0	64	100	2024-10-25	0	64	2	64	Naan | Pita	\N	\N	0	0
 259	\N	Eggplants	Eggplants	\N	f	512	548	100	2025-09-19	0	82	2	82	Eggplant	\N	\N	0	0
 260	\N	Plum Tomatoes	Plum Tomatoes	\N	f	512	62	100	2025-12-11	0	149	2	149	Tomato	\N	\N	0	0
@@ -576,7 +576,7 @@
 654	\N	Thin Egg Noodles	Thin Egg Noodles	\N	f	262176	28	100	2025-08-09	4	38	4	38	Thin Egg Noodles	\N	\N	0	5
 655	\N	Thick Egg Noodles	Thick Egg Noodles	\N	f	262176	28	100	2025-08-11	4	38	4	38	Thick Egg Noodles	\N	\N	0	5
 656	\N	Dark Sesame Oil	Dark Sesame Oil	aka. Roasted Sesame Oil; Toasted Sesame Oil.	f	0	28	100	2025-02-21	9	224	5	224	Sesame Oil	https://www.eatthismuch.com/calories/sesame-oil-268	\N	0	11
-657	\N	Sesame Oil	Sesame Oil	\N	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	https://fdc.nal.usda.gov/food-details/171016/nutrients	\N	0	11
+657	\N	Sesame Oil	Sesame Oil	\N	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	\N	\N	0	11
 658	\N	Romaine Lettuce Heads	Romaine Lettuce Heads	\N	f	0	626	100	2026-02-27	0	47	2	47	Lettuce	\N	\N	0	0
 659	\N	Baby Leeks	Baby Leeks	\N	f	0	89	100	2025-10-15	0	89	2	89	Baby Leeks	\N	\N	0	0
 660	\N	Fresh Sage	Fresh Sage	\N	f	0	1	100	2026-01-17	3	32	3	32	Sage	\N	\N	0	0
@@ -585,7 +585,7 @@
 663	\N	Whole-Wheat Flour	Whole-Wheat Flour	\N	t	262176	28	100	2025-06-24	4	125	4	125	Whole-Wheat Flour	\N	\N	0	14
 664	\N	Whole Milk (Cow), enriched	Whole Milk (Cow), enriched	\N	f	320	946	100	2026-03-29	14	244	8	244	Milk	\N	\N	0	9
 665	\N	Whole Milk (Cow)	Whole Milk (Cow)	\N	f	320	946	100	2026-03-29	14	244	8	244	Milk	\N	\N	0	20
-666	\N	Lemons, without Peel	Lemons, without Peel	\N	f	0	108	100	2024-10-22	0	216	1	216	Lemon	\N	\N	0	0
+666	\N	Lemons, without Peel	Lemons, without Peel	\N	f	0	108	100	2026-04-03	0	216	1	216	Lemon	\N	\N	0	0
 667	\N	Fat-Free Refried Beans	Fat-Free Refried Beans	\N	f	0	444	100	2024-10-23	6	444	0	444	Fat-Free Refried Beans	\N	\N	0	0
 668	\N	Refried Beans	Refried Beans	\N	f	0	28	100	2024-10-23	4	238	4	238	Refried Beans	\N	\N	0	6
 669	\N	Frozen Blueberries	Frozen Blueberries	\N	f	0	28	100	2024-11-28	4	155	10	155	Frozen Blueberries	\N	\N	0	0
@@ -653,7 +653,7 @@
 733	\N	Cauliflower Heads	Cauliflower Heads	\N	f	0	588	100	2025-09-13	0	107	2	107	Cauliflower Heads	https://fdc.nal.usda.gov/food-details/2685573/nutrients	\N	0	0
 734	\N	Frozen Cauliflower Florets	Frozen Cauliflower Florets	\N	f	0	28	100	2025-09-14	4	132	10	132	Frozen Cauliflower Florets	https://fdc.nal.usda.gov/food-details/2685573/nutrients	\N	0	0
 735	\N	Mung Beans	Mung Beans	aka: Mungo Beans.	f	0	28	100	2026-03-21	4	207	4	207	Mung Beans	\N	\N	0	6
-736	\N	Carrots	Carrots	\N	f	0	28	100	2025-08-25	4	128	2	128	Carrots	\N	\N	0	0
+736	\N	Carrots	Carrots	\N	f	0	28	100	2025-08-25	4	128	1	128	Carrots	\N	\N	0	2
 737	\N	Tomato Paste	Tomato Paste	\N	f	512	28	100	2025-04-27	4	262	4	262	Tomato Paste	\N	\N	0	14
 738	\N	Chia Seeds	Chia Seeds	\N	f	0	28	100	2025-02-21	4	192	4	192	Chia Seeds	https://fdc.nal.usda.gov/food-details/2710819/nutrients	\N	0	12
 739	\N	Granola	Granola	\N	f	0	28	100	2025-12-18	4	122	4	122	Granola	\N	\N	0	0
@@ -677,7 +677,7 @@
 786	\N	Pumpkin Seeds | Pepitas	Pumpkin Seeds | Pepitas	\N	f	0	18.66	100	2025-01-19	4	149.28	10	149.28	Pumpkin Seeds | Pepitas	\N	\N	0	0
 787	\N	Pepitas	Pepitas	\N	f	0	18.66	100	2025-01-17	4	149.28	10	149.28	Pepitas	\N	\N	0	0
 788	\N	Raw Mixed Seeds	Raw Mixed Seeds	\N	f	0	28	100	2025-12-23	4	160	10	160	Raw Mixed Seeds	\N	\N	0	0
-789	\N	Mangos	Mangos	https://fdc.nal.usda.gov/food-details/169910/nutrients	f	0	207	100	2025-03-26	0	207	1	207	Mangos	\N	\N	0	0
+789	\N	Mangos	Mangos	\N	f	0	207	100	2025-03-26	0	207	1	207	Mangos	\N	\N	0	1
 790	\N	Watercress Sprouts	Watercress Sprouts	aka. Sprouting Cress. https://www.eatthismuch.com/calories/watercress-2261	f	0	28	100	2025-01-15	4	34	2	34	Watercress Sprouts	\N	\N	0	0
 791	\N	Black Bean Sauce	Black Bean Sauce	\N	f	0	32	100	2026-03-17	9	256	4	256	Black Bean Sauce	\N	\N	0	14
 792	\N	Unenriched Medium Egg Noodles	Unenriched Medium Egg Noodles	\N	f	262176	28	100	2025-08-10	4	38	4	38	Unenriched Medium Egg Noodles	\N	\N	0	5
@@ -790,7 +790,7 @@
 961	\N	Almond Meal	Almond Meal	\N	f	0	28	100	2026-03-24	4	240	5	240	Almond Meal	\N	\N	0	18
 962	\N	Sliced Bresaola	Sliced Bresaola	\N	f	0	28	100	2024-12-10	0	224	10	224	Sliced Bresaola	\N	\N	0	0
 963	\N	Fresh Mixed-Color Endives	Fresh Mixed-Color Endives	\N	f	0	45	100	2024-11-28	0	90	2	90	Fresh Mixed-Color Endives	\N	\N	0	0
-964	\N	Coconut Oil	Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	https://fdc.nal.usda.gov/food-details/330458/nutrients	\N	0	11
+964	\N	Coconut Oil	Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	\N	\N	0	11
 965	\N	Plain Coconut Yogurt	Plain Coconut Yogurt	\N	f	0	28	100	2025-11-16	4	240	8	240	Yogurt	\N	\N	0	9
 966	\N	Plain Coconut Milk | Plain Coconut Yogurt	Plain Coconut Milk | Plain Coconut Yogurt	\N	f	0	240	100	2025-11-10	6	240	8	240	Milk | Yogurt	\N	\N	0	9
 967	\N	Gluten-Free Egg Noodles	Gluten-Free Egg Noodles	\N	f	0	28	100	2025-08-08	4	38	4	38	Gluten-Free Egg Noodles	\N	\N	0	5
@@ -1093,7 +1093,7 @@
 1359	\N	Fajita Vegetables	Fajita Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Fajita Vegetables	\N	\N	0	0
 1360	\N	Frozen Fajita Vegetables	Frozen Fajita Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Frozen Fajita Vegetables	\N	\N	0	0
 1361	\N	Whole Milk	Whole Milk	\N	f	320	946	100	2026-03-28	14	244	8	244	Whole Milk	\N	\N	0	20
-1362	\N	Fresh Mangos	Fresh Mangos	\N	f	0	207	100	2025-03-26	0	165	1	165	Fresh Mangos	\N	\N	0	0
+1362	\N	Fresh Mangos	Fresh Mangos	\N	f	0	207	100	2025-03-26	0	165	1	165	Mango	\N	\N	0	1
 1363	\N	Frozen Mango Chunks	Frozen Mango Chunks	\N	f	0	28	100	2025-03-26	4	165	10	165	Frozen Mango Chunks	\N	\N	0	0
 1364	\N	Yogurt	Yogurt	Spelled yogourt in cananda.	f	256	28	100	2025-12-06	4	245	8	245	Yogurt	\N	\N	0	9
 1365	\N	Dry Cannellini Beans	Dry Cannellini Beans	\N	f	0	28	100	2025-10-12	4	202	4	202	Raw Cannellini Beans	\N	\N	0	14
@@ -1165,9 +1165,9 @@
 1460	\N	Large Crown Prince Squash	Large Crown Prince Squash	\N	f	0	323	100	2025-11-03	0	113	2	113	Squash	\N	\N	0	0
 1461	\N	Mild Harissa	Mild Harissa	\N	f	0	28	100	2024-11-10	4	240	4	240	Mild Harissa	\N	\N	0	14
 1462	\N	Spicy Harissa	Spicy Harissa	\N	f	0	28	100	2024-11-10	4	224	4	224	Spicy Harissa	\N	\N	0	14
-1463	\N	Large Lemons	Large Lemons	\N	f	0	108	100	2024-10-22	0	216	1	216	Lemon	\N	\N	0	0
+1463	\N	Large Lemons	Large Lemons	\N	f	0	108	100	2026-04-04	0	216	1	216	Lemon	\N	\N	0	0
 1464	\N	Spicy Brown Mustard	Spicy Brown Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Spicy Brown Mustard	\N	\N	0	13
-1465	\N	Small Lemons	Small Lemons	\N	f	0	108	100	2024-10-22	0	216	1	216	Lemon	\N	\N	0	0
+1465	\N	Small Lemons	Small Lemons	\N	f	0	108	100	2026-04-03	0	216	1	216	Lemon	\N	\N	0	0
 1466	\N	Baby White Potatoes	Baby White Potatoes	\N	f	0	170	100	2024-12-21	0	150	2	150	Potato	\N	\N	0	0
 1467	\N	Baby Yukon Potatoes	Baby Yukon Potatoes	\N	f	0	170	100	2024-12-21	0	170	2	170	Potato	\N	\N	0	0
 1468	\N	Baby Yukon Potatoes | Baby White Potatoes	Baby Yukon Potatoes | Baby White Potatoes	Use partial ingredients.	f	0	170	100	2024-12-21	0	170	2	170	Potato	\N	\N	0	0
@@ -1498,7 +1498,7 @@
 1975	\N	Chinese Chestnuts	Chinese Chestnuts	\N	f	0	28	100	2025-03-10	4	224	10	224	Chestnuts	https://fdc.nal.usda.gov/food-details/170164/nutrients	\N	0	0
 1976	\N	Japanese Chestnuts	Japanese Chestnuts	\N	f	0	28	100	2025-03-10	4	224	10	224	Chestnuts	https://fdc.nal.usda.gov/food-details/169413/nutrients	\N	0	0
 1977	\N	European Chestnuts	European Chestnuts	\N	f	0	28	100	2025-03-10	4	224	10	224	Chestnuts	\N	\N	0	0
-1978	\N	Long Grain Brown Rice	Long Grain Brown Rice	\N	f	4096	28	100	2025-10-03	4	200	4	200	Rice	https://fdc.nal.usda.gov/food-details/2512380/nutrients	\N	0	4
+1978	\N	Long Grain Brown Rice	Long Grain Brown Rice	\N	f	4096	28	100	2025-10-03	4	200	4	200	Rice	\N	\N	0	4
 2011	\N	Cardamom Seeds	Cardamom Seeds	\N	f	0	0.2	100	2024-12-24	0	20	4	20	Cardamom Pods	\N	\N	0	12
 2012	\N	Lima Beans	Lima Beans	Immature lima beans are green and tender, while mature lima beans are white or cream-colored and firmer.	f	0	28	100	2025-07-28	4	202	4	202	Lima Bean	\N	\N	0	6
 2013	\N	Canned Lima Beans	Canned Lima Beans	Immature lima beans are green and tender, while mature lima beans are white or cream-colored and firmer.	f	0	28	100	2025-07-28	4	202	4	202	Lima Bean	\N	\N	0	6

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -403,8 +404,6 @@ namespace Data.Migrations
                 name: "hc_nutrient",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     Nutrients = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
@@ -413,7 +412,7 @@ namespace Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_hc_nutrient", x => x.Id);
+                    table.PrimaryKey("PK_hc_nutrient", x => new { x.IngredientId, x.Nutrients });
                     table.ForeignKey(
                         name: "FK_hc_nutrient_ingredient_IngredientId",
                         column: x => x.IngredientId,
@@ -473,8 +472,6 @@ namespace Data.Migrations
                 name: "usda_nutrient",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IngredientId = table.Column<int>(type: "integer", nullable: false),
                     Nutrients = table.Column<int>(type: "integer", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
@@ -483,7 +480,7 @@ namespace Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_usda_nutrient", x => x.Id);
+                    table.PrimaryKey("PK_usda_nutrient", x => new { x.IngredientId, x.Nutrients });
                     table.ForeignKey(
                         name: "FK_usda_nutrient_ingredient_IngredientId",
                         column: x => x.IngredientId,
@@ -747,12 +744,6 @@ namespace Data.Migrations
                 column: "NutrientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_hc_nutrient_IngredientId_Nutrients",
-                table: "hc_nutrient",
-                columns: new[] { "IngredientId", "Nutrients" },
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ingredient_UserId",
                 table: "ingredient",
                 column: "UserId");
@@ -818,12 +809,6 @@ namespace Data.Migrations
                 name: "IX_study_ingredient_IngredientId",
                 table: "study_ingredient",
                 column: "IngredientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_usda_nutrient_IngredientId_Nutrients",
-                table: "usda_nutrient",
-                columns: new[] { "IngredientId", "Nutrients" },
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_Email",

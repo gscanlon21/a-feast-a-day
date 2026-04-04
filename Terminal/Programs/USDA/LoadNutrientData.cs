@@ -73,7 +73,7 @@ internal class LoadUSDANutrientData
                                 await _nutrientRepo.UpdateNutrient(existingNutrient);
                             }
                         }
-                        else
+                        else if (amount != 0)
                         {
                             Console.WriteLine($"Inserting {usdaNutrient} for {ingredient.FoodName}.");
                             newNutrients.Add(new USDANutrient()

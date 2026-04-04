@@ -73,7 +73,7 @@ internal class LoadHealthCanadaNutrientData
                                 await _nutrientRepo.UpdateNutrientCa(existingNutrient);
                             }
                         }
-                        else
+                        else if (amount != 0)
                         {
                             Console.WriteLine($"Inserting {canadaNutrient} for {ingredient.FoodName}.");
                             newNutrients.Add(new HealthCanadaNutrient()
