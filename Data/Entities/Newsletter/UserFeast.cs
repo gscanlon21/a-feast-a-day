@@ -1,4 +1,5 @@
 ﻿using Data.Models.Newsletter;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -9,7 +10,8 @@ namespace Data.Entities.Newsletter;
 /// A user's weekly feast.
 /// </summary>
 [Table("user_feast")]
-//[Index(nameof(UserId), nameof(Date))]
+// Index needed for perforance:
+[Index(nameof(UserId), nameof(Date))]
 public class UserFeast
 {
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
