@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260404171200_SquashMigrations")]
+    [Migration("20260405154101_SquashMigrations")]
     partial class SquashMigrations
     {
         /// <inheritdoc />
@@ -365,7 +365,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId", "Date");
 
                     b.ToTable("user_feast");
                 });
@@ -686,7 +686,7 @@ namespace Data.Migrations
 
                     b.HasIndex("IngredientRecipeId");
 
-                    b.HasIndex("RecipeId");
+                    b.HasIndex("RecipeId", "IngredientId");
 
                     b.ToTable("recipe_ingredient");
                 });

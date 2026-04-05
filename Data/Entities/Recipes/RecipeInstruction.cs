@@ -10,12 +10,15 @@ namespace Data.Entities.Recipes;
 /// A recipe's instructions.
 /// </summary>
 [Table("recipe_instruction")]
-[DebuggerDisplay("{Name,nq}")]
+[DebuggerDisplay("{Order}: {Name,nq}")]
 public class RecipeInstruction
 {
     // Not private so json can bind to it.
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; init; }
+
+    [Required]
+    public int RecipeId { get; init; }
 
     [Required]
     public int Order { get; init; }

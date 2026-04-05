@@ -1,6 +1,7 @@
 ﻿using Core.Models;
 using Data.Entities.Users;
 using Fractions;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,6 +14,7 @@ namespace Data.Entities.Recipes;
 /// A recipe's ingredients.
 /// </summary>
 [Table("recipe_ingredient")]
+[Index(nameof(RecipeId), nameof(IngredientId))]
 [DebuggerDisplay("Id = {Id}, {Recipe}: {Ingredient}")]
 public class RecipeIngredient
 {

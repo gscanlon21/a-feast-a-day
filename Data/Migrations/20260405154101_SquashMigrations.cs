@@ -560,10 +560,10 @@ namespace Data.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RecipeId = table.Column<int>(type: "integer", nullable: false),
                     Order = table.Column<int>(type: "integer", nullable: false),
                     Equipment = table.Column<int>(type: "integer", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    RecipeId = table.Column<int>(type: "integer", nullable: false)
+                    Name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -786,9 +786,9 @@ namespace Data.Migrations
                 column: "IngredientRecipeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_recipe_ingredient_RecipeId",
+                name: "IX_recipe_ingredient_RecipeId_IngredientId",
                 table: "recipe_ingredient",
-                column: "RecipeId");
+                columns: new[] { "RecipeId", "IngredientId" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_recipe_instruction_RecipeId",
@@ -827,9 +827,9 @@ namespace Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_user_feast_UserId",
+                name: "IX_user_feast_UserId_Date",
                 table: "user_feast",
-                column: "UserId");
+                columns: new[] { "UserId", "Date" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_feast_recipe_ParentRecipeId",

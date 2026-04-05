@@ -312,7 +312,7 @@ public class UserRepo
                     DataSource.USDA => await _context.USDANutrients.AsNoTracking()
                         .Where(n => NutrientHelpers.USDAToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
-                        .Where(n => n.Value > 0)
+                        //.Where(n => n.Value > 0) // Checked on insert.
                         // Select before grouping so EF Core can optimize.
                         .Select(n => new USDANutrient(/* EF can't optimize */)
                         {
@@ -333,7 +333,7 @@ public class UserRepo
                     DataSource.Canada => await _context.CanadaNutrients.AsNoTracking()
                         .Where(n => NutrientHelpers.CanadaToNutrients.Keys.Contains(n.Nutrients))
                         .Where(n => allIngredientIds.Contains(n.IngredientId))
-                        .Where(n => n.Value > 0)
+                        //.Where(n => n.Value > 0) // Checked on insert.
                         // Select before grouping so EF Core can optimize.
                         .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
                         {

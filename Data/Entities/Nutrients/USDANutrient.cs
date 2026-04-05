@@ -10,6 +10,7 @@ namespace Data.Entities.Nutrients;
 
 /// <summary>
 /// Nutrients for an ingredient.
+/// Composite key: { IngredientId, Nutrients }.
 /// </summary>
 [Table("usda_nutrient")]
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]

@@ -10,6 +10,7 @@ namespace Data.Entities.Users;
 /// <summary>
 /// Not using RecipeIngredientId because we want to be able to 
 /// ... re-order RecipeIngredients without changing user preferences.
+/// Composite key: { UserId, RecipeIngredientId }.
 /// </summary>
 [Table("user_recipe_ingredient")]
 [DebuggerDisplay("User {UserId}; RecipeIngredient {RecipeIngredientId}")]

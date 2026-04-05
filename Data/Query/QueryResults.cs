@@ -105,8 +105,9 @@ public class QueryResults : IRecipeCombo
     [JsonIgnore]
     internal List<Nutrients> UniqueWorkedNutrients =>
     [
-        .. Nutrients.Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
-        .. PrepRecipes.SelectMany(pr => pr.Key.Nutrients).Where(n => n.Value > 0).Select(n => n.Nutrients).Distinct(),
+        //.Where(n => n.Value > 0) // Checked on insert.
+        .. Nutrients.Select(n => n.Nutrients).Distinct(),
+        .. PrepRecipes.SelectMany(pr => pr.Key.Nutrients).Select(n => n.Nutrients).Distinct(),
     ];
 
     public override int GetHashCode() => HashCode.Combine(Recipe.Id);

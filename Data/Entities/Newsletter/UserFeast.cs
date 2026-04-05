@@ -40,9 +40,14 @@ public class UserFeast
 
     public string? Logs { get; private init; }
 
+
+    #region Navigation Properties
+
     [JsonIgnore, InverseProperty(nameof(Users.User.UserFeasts))]
     public virtual Users.User User { get; private init; } = null!;
 
     [JsonIgnore, InverseProperty(nameof(UserFeastRecipe.UserFeast))]
     public virtual List<UserFeastRecipe> UserFeastRecipes { get; private init; } = [];
+
+    #endregion
 }

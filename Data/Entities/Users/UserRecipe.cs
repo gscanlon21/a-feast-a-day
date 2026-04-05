@@ -7,6 +7,7 @@ namespace Data.Entities.Users;
 
 /// <summary>
 /// User's preferences for a recipe.
+/// Composite key: { UserId, RecipeId }.
 /// </summary>
 [Table("user_recipe")]
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]

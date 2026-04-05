@@ -683,7 +683,7 @@ namespace Data.Migrations
 
                     b.HasIndex("IngredientRecipeId");
 
-                    b.HasIndex("RecipeId");
+                    b.HasIndex("RecipeId", "IngredientId");
 
                     b.ToTable("recipe_ingredient");
                 });

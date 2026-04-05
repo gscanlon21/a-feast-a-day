@@ -539,7 +539,7 @@ public class QueryRunner(Section section)
         return await context.USDANutrients.AsNoTracking().TagWithCallSite()
             .Where(n => NutrientHelpers.USDAToNutrients.Select(l => l.Key).Contains(n.Nutrients))
             .Where(n => ingredientIds.Contains(n.IngredientId))
-            .Where(n => n.Value > 0)
+            //.Where(n => n.Value > 0) // Checked on insert.
             // Select before grouping so EF Core can optimize.
             .Select(n => new USDANutrient(/* EF can't optimize */)
             {
@@ -571,7 +571,7 @@ public class QueryRunner(Section section)
         return await context.CanadaNutrients.AsNoTracking().TagWithCallSite()
             .Where(n => NutrientHelpers.CanadaToNutrients.Select(l => l.Key).Contains(n.Nutrients))
             .Where(n => ingredientIds.Contains(n.IngredientId))
-            .Where(n => n.Value > 0)
+            //.Where(n => n.Value > 0) // Checked on insert.
             // Select before grouping so EF Core can optimize.
             .Select(n => new HealthCanadaNutrient(/* EF can't optimize */)
             {
