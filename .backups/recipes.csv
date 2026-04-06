@@ -74,7 +74,7 @@
 94	Balsamic Vinaigrette	\N	\N	\N	0	0	5	1	t	balsamic-vinaigrette.jpg	6	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	f	f
 95	Buttered Sweet Corn w/ Bacon	\N	\N	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
-97	Quinoa Pepperoni Pizza	\N	\N	\N	12	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
+97	Quinoa Pepperoni Pizza	\N	\N	\N	8	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
 98	Loaded Deviled Eggs	\N	\N	\N	20	20	5	6	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
 99	Warm Pasta Salad w/ Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	12	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 100	Buttermilk Pancakes	\N	\N	\N	6	12	2	4	t	buttermilk-pancakes.jpg	0	\N	t	f
@@ -97,7 +97,7 @@
 117	Chicken Avocado Chop	\N	\N	\N	6	0	5	1	t	chicken-avocado-chop.jpg	0	\N	f	f
 118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	15	1	2	t	\N	0	\N	f	f
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	green-mayo.jpg	7	\N	t	f
-120	Warm Potato Salad w/ Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	8	15	10	4	t	potato-salad.jpg	0	\N	f	f
+120	Warm Potato Salad w/ Bacon Dressing	Finely chopped spring onions (scallions) can replace the chopped chives and/or chopped parsley, if you like.	\N	\N	16	15	10	4	t	potato-salad.jpg	0	\N	f	f
 121	Melon, Pineapple and Grape Cocktail	To save even more time, use a 225g/8oz can of pineapple chunks in a natural juice. Drain the chunks, reserving the juice in a measuring jug. Make it up to the required quantity for pouring over the fruit with white grape juice.	\N	\N	16	0	5	4	t	melon-pineapple-grape-cocktail.jpg	0	\N	f	f
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	soft-boiled-egg.jpg	0	\N	t	f
 123	Sweet and Sour Cucumber	This salad can be kept in the refrigerator for up to a week.	\N	\N	16	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
@@ -148,7 +148,7 @@
 170	Broccoli w/ Soy Sauce and Sesame Seeds	\N	\N	\N	16	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	64	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
-173	Home-Made Burgers w/ Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	4	14	6	4	t	burgers-relish.jpg	0	\N	f	f
+173	Home-Made Burgers w/ Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	8	14	6	4	t	burgers-relish.jpg	0	\N	f	f
 174	Pan-Fried Gammon w/ Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	\N	\N	4	9	1	4	t	fried-gammon.jpg	0	\N	f	f
 175	Chocolate and Prune Refrigerator Bars	\N	\N	\N	32	120	5	12	t	chocolate-prune-refrigerator-bars.jpg	0	\N	f	f
 176	Stewed Okra w/ Tomatoes	\N	\N	\N	16	25	2	4	t	okra-fries.jpg	0	\N	f	f
@@ -163,7 +163,7 @@
 185	Pasta w/ Spring Vegetables	\N	\N	\N	4	15	5	4	t	pasta-vegetables.jpg	0	\N	f	f
 186	The Kickin' Chicken Sandwich	\N	\N	\N	12	15	10	2	t	grilled-chicken-sandwich.jpg	0	\N	f	f
 187	Oatmeal Pancakes w/ Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
-188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, vary the herbs or use lime or lemon in place of the vinegar.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
+188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, or vary the herbs.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 190	Fusilli w/ Sausage	\N	\N	\N	12	15	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 191	Croûtons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
@@ -321,7 +321,7 @@
 472	Lemon & Herb Dressing	\N	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 473	Divine Avocado Chocolate Chip Cookies	\N	\N	\N	64	10	5	12	f	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 474	Coconut Sour Cream	\N	\N	\N	0	0	5	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	48	0	5	2	t	\N	6	\N	t	f
+475	Fresh Cut Pineapple	The day before cutting, twist off the stem of the pineapple and flip upside down in the fridge to let the juices soak through the entire pineapple.	\N	\N	48	0	5	2	t	pineapple.jpg	6	\N	t	f
 476	Cauliflower Rice (Cilantro-Lime)	\N	\N	\N	0	5	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 477	Digestive Slaw	\N	\N	\N	20	0	15	2	t	cole-slaw-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 478	Everyday Salad	\N	\N	\N	20	0	10	4	t	vegetable-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -364,7 +364,7 @@
 548	Fajita Seasoning	\N	\N	\N	0	0	5	4	t	taco-seasoning.jpg	4	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 549	Ginger-Lime Dressing	\N	\N	\N	0	0	5	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 550	Everything Seasoning	aka: Everything (but the) Bagel Seasoning.	\N	\N	0	0	5	2	t	everything-seasoning.jpg	4	\N	t	f
-551	Bentonite Clay Juice	\N	\N	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+551	Bentonite Clay Juice	\N	Uses atypical ingredients. Let's keep things simple.	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 552	Charcoal Juice	\N	Activated Charcoal can bind to foods you have eaten, blocking the absorption of nutrients and medications you may have taken, reducing their effectiveness.	\N	128	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 553	Adobo	\N	\N	\N	8	120	5	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 554	Cauliflower Rice (Mediterranean-Inspired)	\N	\N	\N	16	6	5	4	t	cauliflower-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -403,7 +403,7 @@
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	For the beans, use canned kidney, black, northern white beans, or a mixture of all three. You can also substitute a pound of ground beef or turkey in for the chicken.	\N	\N	8	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 589	Cooled Rice	\N	\N	\N	0	25	5	1	t	cooled-rice.jpg	6	\N	t	f
-591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+591	Deconstructed Golombki (Cabbage Rolls)	\N	\N	\N	8	35	5	6	t	cabbage-rolls.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 592	Fish Tacos	\N	I don't like fish tacos.	\N	8	30	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 593	Green Mean Fighting Machine	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 594	Golden Green Smoothie	\N	Too many ingredients for a drink.	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -466,7 +466,7 @@
 653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	\N	0	\N	t	t
 654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
 655	Coconut Yogurt and Chocolate Almonds	\N	\N	\N	32	0	5	2	t	yogurt.jpg	0	\N	f	f
-656	Poached Pears	\N	\N	\N	16	25	5	2	t	\N	0	\N	f	f
+656	Poached Pears	\N	\N	\N	64	25	5	2	t	poached-pears.jpg	0	\N	f	f
 657	Blue Power Boost Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 658	Green Power Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 659	Black Bean and Chorizo Breakfast Skillet	\N	\N	\N	12	35	5	1	t	\N	0	\N	f	f
@@ -479,7 +479,7 @@
 698	Coconut-Ginger Tonic	An ounce of gin or vodka makes this special drink even more special.	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 699	Apple Galette	\N	Has weird ingredients.	\N	64	35	20	8	t	\N	0	\N	f	f
 700	Peach Galette	Swap out the ricotta cheese for 8 ounces cream cheese mixed with 2 tablespoons heavy cream.	Has weird ingredients.	\N	64	35	20	8	t	\N	0	\N	f	f
-701	No-Bake Chocolate Cheesecake Cups	You can buy chocolate cookie crumbs in the baking asile of the grocery store. Any leftover cookie crumbs can be used as a topping for ice cream or vanilla yogurt.	\N	\N	64	0	75	4	t	\N	0	\N	f	f
+701	No-Bake Chocolate Cheesecake Cups	You can buy chocolate cookie crumbs in the baking asile of the grocery store. Any leftover cookie crumbs can be used as a topping for ice cream or vanilla yogurt.	Not very nutritious.	\N	64	0	75	4	t	\N	0	\N	f	f
 702	Chocolate Truffles	255min prep time. Store the truffles in the fridge in an airtight container.	\N	\N	64	5	245	2	t	\N	0	\N	f	f
 703	Killer Guacamole	\N	\N	\N	0	0	10	4	t	guacamole.jpg	4	\N	t	f
 704	Bacon and Corn Chowder	\N	\N	\N	8	35	10	4	t	\N	0	\N	f	f
@@ -505,7 +505,7 @@
 725	Braised Lentils	\N	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	t
 726	Southwest Salad	You could make this salad with a store-bought ranch dressing. Roast pork, chicken, or beek as well as bell peppers, poblano peppers, cherry tomatoes, or rice can be added to this salad to make it more of a meal.	\N	\N	16	0	5	1	t	\N	0	\N	f	f
 727	Dal	\N	\N	\N	12	40	5	2	t	dal.jpg	0	\N	f	f
-728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	\N	6	\N	f	f
+728	Bacon and Maple Baked Beans	\N	\N	\N	16	70	5	2	t	baked-beans.jpg	6	\N	f	f
 729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	roasted-broccoli.jpg	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
@@ -575,7 +575,7 @@
 860	Beef and Broccoli	\N	\N	\N	8	55	5	2	t	beef-broccoli.jpg	0	\N	f	f
 861	Chicken and Mushroom Stir-Fry	\N	\N	\N	8	55	5	2	t	\N	0	\N	f	f
 862	Pico de Gallo	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
-863	Lima Beans on Toast	\N	\N	\N	12	15	3	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+863	Lima Beans on Toast	\N	\N	\N	12	15	3	4	t	lima-beans-toast.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 864	Chicken and Lentil Soup	Storage: This soup will keep in the fridge for up to 3 days or can be portioned up and frozen for easy meal prep. Reheating: Reheat this soup thoroughly in the microwave or on the hob before eating. Do not reheat more than once.	\N	\N	8	25	5	4	t	\N	0	https://www.theglutenfreeblogger.com/chicken-and-lentil-soup/	f	f
 865	Sausage and Pepper Pasta Skillet	Other ingredients like onion, garlic, green bell pepper, and spinach can be added to the pasta to bulk it up a bit.	\N	\N	8	20	10	2	t	\N	0	\N	f	f
 866	Pan-Seared Steak w/ Whiskey Sauce	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
@@ -587,7 +587,7 @@
 904	Crispy Pork Tostadas	\N	\N	\N	8	20	5	2	t	egg-bean-chorizo-tostada.jpg	0	\N	f	f
 905	Classic Roast Chicken	\N	\N	\N	8	90	30	4	t	\N	0	\N	f	f
 906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
-907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4 to 5 minutes per side.	\N	\N	8	10	10	4	t	burgers-relish.jpg	0	\N	t	f
+907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4–5 minutes per side.	\N	\N	8	10	10	4	t	burgers-relish.jpg	0	\N	t	f
 908	The Cowboy Burger	\N	\N	\N	8	10	10	2	t	burgers-relish.jpg	0	\N	f	f
 909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	12	10	10	1	t	\N	0	\N	f	f
 910	Sweet Potato Tacos	\N	\N	\N	4	25	10	1	t	\N	0	\N	f	f
@@ -616,7 +616,7 @@
 967	Cool Chocolate Float	\N	\N	\N	64	2	6	2	t	\N	0	\N	f	f
 968	Tagliatelle w/ Tomatoes and Olives	It is essential to buy Parmesan in a piece for this dish. Find a good source - fresh Parmesan should not be unacceptably hard - and shave or grate it yourself. The flavour will be much more intense than that of a ready-grated product.	\N	\N	8	10	5	4	t	tagliatelle-tomatoes-olives.jpg	0	\N	f	f
 969	Pasta w/ Sun-Dried Tomatoes	If you find the presentation too fussy, you can toss the tomato and raddicchio mixture with the pasta in a large bowl before serving, then sprinkle the spring onions and toasted pine nuts on top.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
-970	Lamb Steaks w/ Redcurrant Glaze	This is a good recipe for the barbecue. Wait until the fierce heat has subsided and the coals are dusted with white ash, then place the rosemary-rubbed steaks directly on the grill rack. Brush frequently with the glaze as they cook.	\N	\N	8	10	5	4	t	\N	0	\N	f	f
+970	Lamb Steaks w/ Redcurrant Glaze	This is a good recipe for the barbecue. Wait until the fierce heat has subsided and the coals are dusted with white ash, then place the rosemary-rubbed steaks directly on the grill rack. Brush frequently with the glaze as they cook.	Not very nutritious.	\N	8	10	5	4	t	\N	0	\N	f	f
 971	Flamenco Eggs	The chorizo and vegetable mixture mustn't be too dry, so add a little more sherry if necessary.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 972	Chicken Bitki	\N	Too involved: Pickled Beets and a Green Salad.	\N	8	15	10	12	t	\N	0	\N	f	f
 973	Stuffed Chicken in Bacon Coats	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	f
@@ -658,3 +658,4 @@
 1042	Radish Salad	\N	\N	\N	20	0	10	2	t	\N	0	\N	f	f
 1043	Potato and Green Bean Salad	\N	\N	\N	20	15	5	2	t	\N	0	\N	f	f
 1044	Whipped Butter	\N	\N	\N	0	0	5	4	t	\N	4	\N	t	f
+1045	Baked Beans	Baked beans are high in fiber.	\N	\N	16	5	0	1	t	baked-beans.jpg	0	\N	f	f

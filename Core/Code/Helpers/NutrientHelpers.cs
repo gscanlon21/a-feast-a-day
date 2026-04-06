@@ -224,6 +224,8 @@ public static class NutrientHelpers
         { Nutrients.Carotene_Beta, [CanadaNutrients.BETA_CAROTENE_Micrograms] },
         { Nutrients.Thiamin_B1, [CanadaNutrients.THIAMIN_Milligrams] },
         { Nutrients.Riboflavin_B2, [CanadaNutrients.RIBOFLAVIN_Milligrams] },
+        // NOTE: Equivalency conversions are only necessary if the value list
+        // contains Tryptophan and Niacin, not the already calculated equvalency.
         { Nutrients.Niacin_B3, [CanadaNutrients.TOTAL_NIACIN_EQUIVALENT_MG_NE] },
         { Nutrients.Pantothenic_Acid_B5, [CanadaNutrients.PANTOTHENIC_ACID_Milligrams] },
         { Nutrients.Vitamin_B_6, [CanadaNutrients.VITAMIN_B_6_Milligrams] },

@@ -14,6 +14,10 @@ public enum Nutrients
     [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1000, 1100, Measure.None, Multiplier.Kilocalorie, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Calories", Order = 300)]
     Energy_KCalorie = 1,
 
@@ -78,10 +82,34 @@ public enum Nutrients
     /// <summary>
     /// Carbohydrates
     /// </summary>
+    [DailyAllowance(60, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_0_6_Months)]
+    [DailyAllowance(60, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_0_6_Months)]
+    [DailyAllowance(95, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_7_12_Months)]
+    [DailyAllowance(95, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_7_12_Months)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_1_2_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_1_2_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_2_3_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_2_3_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_4_8_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_4_8_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_9_13_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_9_13_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_14_18_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_14_18_Years)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Lactating_14_18_Years)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_19_30_Years)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Lactating_19_30_Years)]
     [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_31_50_Years)]
-    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
+    [DailyAllowance(175, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(210, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Lactating_31_50_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_51_70_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_51_70_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(130, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_71_XX_Years)]
     [Display(Name = "Carbohydrates", Order = 1110)]
     Carbohydrates = 5,
 
@@ -246,6 +274,10 @@ public enum Nutrients
     [DailyAllowance(1.8, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(2.3, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.8, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(2.3, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(1.8, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(2.3, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1.8, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Manganese (Mn)", Order = 5600)]
     Manganese_Mn = 20,
 
@@ -285,10 +317,18 @@ public enum Nutrients
     /// <summary>
     /// Iron (Fe)
     /// </summary>
+    [DailyAllowance(8, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_9_13_Years)]
+    [DailyAllowance(8, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_9_13_Years)]
+    [DailyAllowance(11, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_14_18_Years)]
+    [DailyAllowance(15, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_14_18_Years)]
     [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
     [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(18, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(8, 45, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Iron (Fe)", Order = 5800)]
     Iron_Fe = 24,
 
@@ -329,10 +369,14 @@ public enum Nutrients
     /// <summary>
     /// Thiamin (B1)
     /// </summary>
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Thiamin (B1)", Order = 6300)]
     Thiamin_B1 = 28,
 
@@ -425,6 +469,10 @@ public enum Nutrients
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Folate (B9)", Order = 6900)]
     Folate_B9 = 35,
 
@@ -547,6 +595,10 @@ public enum Nutrients
     [DailyAllowance(90, 900, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(120, 1200, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(90, 900, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(120, 1200, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(90, 900, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(120, 1200, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(90, 900, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Vitamin K", Order = 8800)]
     Vitamin_K = 46,
 
@@ -671,6 +723,10 @@ public enum Nutrients
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Omega 6 Fatty Acids", Order = 15005)]
     Omega_6 = 54,
 

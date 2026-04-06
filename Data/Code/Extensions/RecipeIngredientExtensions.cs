@@ -43,9 +43,10 @@ public static class RecipeIngredientExtensions
                 var partialIngredientNutrients = nutrients?.GetValueOrDefault(partialIngredient.Ingredient.Id);
                 return partialIngredientNutrients?.Select(nutrient =>
                 {
-                    var nutrientEquivalency = nutrient.Nutrients.GetEquivalentConversion(nutrient.Measure);
+                    // This isn't necessary because our nutrient sources already do the conversions for us.
+                    //var nutrientEquivalency = nutrient.Nutrients.GetEquivalentConversion(nutrient.Measure);
                     var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(partialIngredient.Ingredient, recipeIngredient.IsCoarseCut);
-                    var gramsOfNutrientPerRecipe = nutrientEquivalency * servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale * partialIngredient.Scale;
+                    var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale * partialIngredient.Scale;
                     return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
                 }).GroupBy(kv => kv.Nutrient).ToDictionary(g => g.Key, g => g.Sum(kv => kv.GramsOfNutrientPerRecipe)) ?? [];
             })?.GroupBy(kv => kv.Key).ToDictionary(g => g.Key, g => g.Average(x => x.Value)) ?? [];
@@ -56,9 +57,10 @@ public static class RecipeIngredientExtensions
             var recipeIngredientNutrients = nutrients?.GetValueOrDefault(recipeIngredient.GetIngredient.Id);
             return (recipeIngredientNutrients ?? recipeIngredient.GetIngredient.QueryNutrients).Select(nutrient =>
             {
-                var nutrientEquivalency = nutrient.Nutrients.GetEquivalentConversion(nutrient.Measure);
+                // This isn't necessary because our nutrient sources already do the conversions for us.
+                //var nutrientEquivalency = nutrient.Nutrients.GetEquivalentConversion(nutrient.Measure);
                 var gramsOfNutrientPerServing = nutrient.Measure.ToGramsWithContext(recipeIngredient.GetIngredient, recipeIngredient.IsCoarseCut);
-                var gramsOfNutrientPerRecipe = nutrientEquivalency * servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale;
+                var gramsOfNutrientPerRecipe = servingsOfIngredientUsed * gramsOfNutrientPerServing * nutrient.Value * recipeIngredient.GetCookedScale;
                 return new { Nutrient = nutrient.Nutrients, GramsOfNutrientPerRecipe = gramsOfNutrientPerRecipe };
             })?.GroupBy(kv => kv.Nutrient).ToDictionary(g => g.Key, g => g.Sum(kv => kv.GramsOfNutrientPerRecipe)) ?? [];
         }
