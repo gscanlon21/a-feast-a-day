@@ -76,8 +76,11 @@ public enum Equipment
     [Display(Name = "Rice Cooker", Order = 23)]
     RiceCooker = 1 << 22, // 4194304
 
+    [Display(Name = "Electric Mixer", Order = 24)]
+    ElectricMixer = 1 << 23, // 8388608
+
 
     All = Microwave | Oven | Stove | Grill | Broiler | Toaster | ToasterOven | Blender | FoodProcessor | ImmersionBlender
         | SlowCooker | MortarPestle | AirFryer | BreadMaker | Dehydrator | PotatoMasher | Refrigerator | Freezer
-        | SpiceGrinder | PressureCooker | Juicer | WaffleMaker | RiceCooker
+        | SpiceGrinder | PressureCooker | Juicer | WaffleMaker | RiceCooker | ElectricMixer
 }
