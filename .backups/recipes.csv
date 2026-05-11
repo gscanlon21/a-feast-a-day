@@ -207,7 +207,7 @@
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	3	t	buttermilk.jpg	9	\N	t	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
 264	Asian Fried Eggs	\N	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
-265	All-Day Mexican Breakfast	From Jamie Oliver's 5 Ingredients	\N	\N	6	10	5	2	t	black-bean-fajita-skillet.jpg	0	\N	f	f
+265	All-Day Mexican Breakfast	\N	\N	\N	6	10	5	2	t	black-bean-fajita-skillet.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 266	Sweet Potato Cauliflower Curry	\N	\N	\N	4	55	5	4	t	cauliflower-curry.jpg	0	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	f	f
 267	Curried Mung Bean Soup	\N	\N	\N	8	45	15	4	t	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
 268	Orange Flower Water	\N	\N	\N	0	120	5	1	t	\N	6	https://thishealthytable.com/blog/orange-blossom-water/	f	f
@@ -284,7 +284,7 @@
 403	Spiced Kale Chips	\N	\N	\N	16	10	5	2	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 404	Vanilla Latte Smoothie	Hot or cold. From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	10	1	t	exercise-recovery-smoothie.jpg	0	\N	f	f
 405	Virgin Mojito	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
-406	Berry Parfait Dessert	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	\N	f	f
+406	Berry Parfait Dessert	\N	\N	\N	64	0	5	1	t	berry-parfait-dessert.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 407	Apples and Peanut Butter	\N	\N	\N	48	0	1	1	t	peanut-butter-apples.jpg	0	\N	f	f
 408	Roasted Zucchini	\N	\N	\N	16	10	5	2	t	zucchini.jpg	0	\N	f	f
 409	Pumpkin Bread	\N	\N	\N	64	45	15	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -305,7 +305,7 @@
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	\N	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-427	Coleslaw	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	20	0	10	4	t	\N	0	\N	f	f
+427	Coleslaw	\N	\N	\N	20	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	Uses chlorophyll; too obscure.	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	\N	\N	\N	20	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -397,7 +397,7 @@
 581	Summer Watermelon Salad	\N	\N	\N	20	0	10	2	t	watermelon-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 582	Sweet Potato & Arugula Salad	\N	Too many ingredients.	\N	20	40	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 583	Salmon Cakes	\N	Too complicated. Too many prep recipes.	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
-584	Pizza Egg Bites	\N	\N	\N	6	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+584	Pizza Egg Bites	\N	\N	\N	12	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 586	Cream of Broccoli Soup	When blending hot liquids, make sure the top of the blender is vented to let the steam escape.	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -433,7 +433,7 @@
 620	Sweet Peppers Stuffed w/ Two Cheeses	The peppers can be cooked on a griddle if you prefer. It is a good idea to blanch them in boiling water before filling, to give them a head start.	Too complicated.	\N	4	15	5	4	t	stuffed-peppers.jpg	0	\N	f	f
 621	The Ultimate Grilled Cheese	\N	\N	\N	4	10	5	2	t	\N	0	\N	f	f
 622	Hefty Veggie Wrap	\N	\N	\N	4	0	5	2	t	\N	0	\N	f	f
-623	Almond and Raspberry Roll	\N	\N	\N	64	15	15	4	f	\N	0	\N	f	f
+623	Almond and Raspberry Roll	\N	Not very nutritious.	\N	64	15	15	4	f	\N	0	\N	f	f
 624	Blueberry Muffins	\N	\N	\N	64	30	10	12	f	\N	0	\N	f	f
 625	Pan Roasted Vegetables 	\N	\N	\N	0	35	10	2	t	roasted-vegetables-alt.jpg	6	\N	t	f
 626	Hot Chocolate Rum Souffles	\N	\N	\N	64	15	10	6	t	\N	0	\N	f	f
@@ -445,7 +445,7 @@
 632	Steak Sandwiches	\N	\N	\N	8	20	40	2	t	\N	0	\N	f	f
 633	Pork and Pineapple Coconut Curry	\N	Uses tamarind juice which looks like an absolute pain to make.	\N	8	17	3	4	t	\N	0	\N	f	f
 634	Satay Sauce	\N	\N	\N	0	5	5	1	t	satay-sauce.jpg	6	\N	t	f
-635	Pork and Pineapple Satay	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
+635	Pork and Pineapple Satay	\N	Not very nutritious. Too many ingredients.	\N	8	15	5	4	t	\N	0	\N	f	f
 636	Thai-Style Rare Beef and Mango Salad	\N	\N	\N	8	18	2	4	t	beef-mango-salad.jpg	0	\N	f	f
 637	Chocolate and Pistachio Wedges	Pressing the pistachios into the mixture prevents them from getting over-browned.	\N	\N	64	20	10	8	t	\N	0	\N	f	f
 638	Bacon and Egg Muffins Hollandaise	Eggs that are a week or more old will not keep their shape when poached, so for the best results, use very fresh eggs. To make sure that you don't break the yolk, crack the eggs into a cup before carefully adding them to the gently simmering water.	Too complicated. Too much equipment.	\N	6	10	5	4	t	\N	0	\N	f	f
@@ -524,7 +524,7 @@
 744	Pear & Gorgonzola Farfalle	\N	\N	\N	4	15	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 745	Beef Stroganoff	You can substitute canned fat-free condensed cream of mushroom soup or cream of chicken soup as an alternative for the cream-style corn.	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
 746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-747	Paleo Banana Muffins	\N	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+747	Paleo Banana Muffins	Do not substitute in regular flour.	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 748	Chickpea Burgers	\N	\N	\N	0	40	40	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 749	Cornish Game Hens	\N	Baby chickens & not very nutritious.	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 750	Fava Bean Salad	\N	\N	\N	20	10	5	2	t	\N	0	From Jamie Oliver's Five Ingredients	f	f
@@ -537,7 +537,7 @@
 789	Chicken & Chips	\N	\N	\N	8	70	8	4	t	chicken-chips.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 790	Baharat Chicken Shish	\N	\N	\N	8	45	10	4	t	baharat-chicken-shish.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 791	Tortilla Frittata	\N	\N	\N	8	55	5	4	t	tortilla-fritatta.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
-824	Oven-Baked Chicken Fingers	\N	\N	\N	8	30	15	4	t	\N	0	\N	t	f
+824	Oven-Baked Chicken Fingers	\N	Not very nutritious.	\N	8	30	15	4	t	\N	0	\N	t	f
 825	Quick Crispy Duck	\N	\N	\N	12	20	2	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 826	Chicken Traybake	\N	\N	\N	8	55	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 827	Chicken & Merguez Stew	Have a go at cutting the chicken yourself, or ask your butcher to do it for you.	\N	\N	8	55	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -619,7 +619,7 @@
 970	Lamb Steaks w/ Redcurrant Glaze	This is a good recipe for the barbecue. Wait until the fierce heat has subsided and the coals are dusted with white ash, then place the rosemary-rubbed steaks directly on the grill rack. Brush frequently with the glaze as they cook.	Not very nutritious.	\N	8	10	5	4	t	\N	0	\N	f	f
 971	Flamenco Eggs	The chorizo and vegetable mixture mustn't be too dry, so add a little more sherry if necessary.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 972	Chicken Bitki	\N	Too involved: Pickled Beets and a Green Salad.	\N	8	15	10	12	t	\N	0	\N	f	f
-973	Stuffed Chicken in Bacon Coats	\N	\N	\N	8	25	5	4	t	\N	0	\N	f	f
+973	Stuffed Chicken in Bacon Coats	\N	Not very nutritious.	\N	8	25	5	4	t	\N	0	\N	f	f
 974	Southern Fried Chicken	\N	\N	\N	8	25	5	4	t	baked-chicken-breast.jpg	0	\N	f	t
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	white-bread.jpg	0	\N	t	f
 976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	baked-chicken-breast.jpg	0	\N	t	f

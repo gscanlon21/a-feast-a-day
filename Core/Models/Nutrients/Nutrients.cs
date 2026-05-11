@@ -375,6 +375,10 @@ public enum Nutrients
     [DailyAllowance(8, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(11, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(8, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(11, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(8, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(11, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(8, 40, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Zinc (Zn)", Order = 5900)]
     Zinc_Zn = 25,
 
@@ -399,6 +403,10 @@ public enum Nutrients
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(-1, 20, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Boron (B)", Order = 6245)]
     Boron_B = 27,
 
@@ -437,6 +445,10 @@ public enum Nutrients
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(1.3, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Riboflavin (B2)", Order = 6500)]
     Riboflavin_B2 = 30,
 
@@ -447,6 +459,10 @@ public enum Nutrients
     [DailyAllowance(14, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(16, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(14, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(16, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(14, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(16, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(14, 35, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Niacin (B3)", Order = 6600)]
     Niacin_B3 = 31,
 
@@ -495,6 +511,10 @@ public enum Nutrients
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Biotin (B7)", Order = 6850)]
     Biotin = 34,
 
@@ -961,10 +981,14 @@ public enum Nutrients
     /// <summary>
     /// Threonine
     /// </summary>
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(0.5, 10, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(2.1, 7.1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Threonine", Order = 17500)]
     Threonine = 68,
 
@@ -995,6 +1019,10 @@ public enum Nutrients
     [DailyAllowance(2300, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
     [DailyAllowance(2300, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
     [DailyAllowance(2300, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(2000, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(2000, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(1800, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1800, 3600, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Chlorine (Cl)", Order = 999999)]
     Chlorine_Cl = 71,
 
