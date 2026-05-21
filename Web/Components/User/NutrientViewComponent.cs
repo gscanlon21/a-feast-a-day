@@ -31,8 +31,7 @@ public class NutrientViewComponent : ViewComponent
         }
 
         var weeks = int.TryParse(Request.Query["weeks"], out int weeksTmp) ? weeksTmp : UserConsts.NutrientVolumeWeeks;
-        var includeToday = bool.TryParse(Request.Query["includeToday"], out bool includeTodayTmp) ? includeTodayTmp : true;
-        var (weeksOfData, weeklyNutrients) = await _userRepo.GetWeeklyNutrientVolume(user, weeks, includeToday: includeToday);
+        var (weeksOfData, weeklyNutrients) = await _userRepo.GetWeeklyNutrientPercent(user, weeks);
         if (weeklyNutrients == null)
         {
             return Content(string.Empty);

@@ -6,6 +6,14 @@ namespace Core.Code.Extensions;
 
 public static class StringExtensions
 {
+    /// <summary>
+    /// Replace double spaces with single spaces.
+    /// </summary>
+    public static string TrimSpaces(this string str)
+    {
+        return str.Replace("  ", " ");
+    }
+
     public static string? NullIfWhiteSpace(this string? str)
     {
         return string.IsNullOrWhiteSpace(str) ? null : str;

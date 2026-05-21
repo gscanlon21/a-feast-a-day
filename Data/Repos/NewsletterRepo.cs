@@ -87,24 +87,25 @@ public partial class NewsletterRepo
     {
         // Newsletters are weekly so shimmy the date over to the start of the week.
         date ??= user.StartOfWeekOffset;
+        UserLogs.Log(user, $"{date}: Building feast.");
 
         // Is the user requesting an old newsletter?
         var oldNewsletter = await _userRepo.GetFeastOn(user, date.Value);
-        UserLogs.Log(user, $"{date}: Building feast using {oldNewsletter?.Id}.");
+        UserLogs.Log(user, $"{date}: Old feast was {(oldNewsletter == null ? "not" : "")} found.".TrimSpaces());
 
         // Always send a new newsletter for today only for the demo and test users.
         var isDemoAndDateIsToday = date == user.StartOfWeekOffset && (user.Features.HasFlag(Features.Demo) || user.Features.HasFlag(Features.Test));
         if (oldNewsletter != null && !isDemoAndDateIsToday)
         {
             // An old newsletter was found.
-            UserLogs.Log(user, $"{date}: Returning old feast");
+            UserLogs.Log(user, $"{date}: Returning old feast.");
             return await NewsletterOld(user, token, oldNewsletter);
         }
         // Don't allow backfilling feasts over 1 year ago or in the future.
         else if (date.Value.AddYears(1) < user.StartOfWeekOffset || date > user.StartOfWeekOffset)
         {
             // A newsletter was not found and the date is not one we want to render a new newsletter for.
-            UserLogs.Log(user, $"{date}: Returning no feast");
+            UserLogs.Log(user, $"{date}: Returning no feast.");
             return null;
         }
 
@@ -112,11 +113,11 @@ public partial class NewsletterRepo
         if (user.Features.HasFlag(Features.Debug))
         {
             // User is a debug user. They should see the DebugNewsletter instead.
-            UserLogs.Log(user, $"{date}: Returning debug feast");
+            UserLogs.Log(user, $"{date}: Returning debug feast.");
             return await Debug(newsletterContext);
         }
 
-        UserLogs.Log(user, $"{date}: Returning on day feast");
+        UserLogs.Log(user, $"{date}: Returning on day feast.");
         return await OnDayNewsletter(newsletterContext);
     }
 

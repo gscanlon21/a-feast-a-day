@@ -186,8 +186,19 @@ public class UserRepo
     /// </summary>
     public async Task<FeastContext> BuildFeastContext(User user, string token, DateOnly date)
     {
-        var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true);
-        var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, rawValues: true, tul: true);
+        var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks);
+        var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, tul: true);
+        
+        if (volumeRDA != null)
+        {
+            UserLogs.Log(user, $"Total nutrient targets RDA:{Environment.NewLine}{string.Join(Environment.NewLine, volumeRDA)}");
+        }
+
+        if (volumeTUL != null)
+        {
+            UserLogs.Log(user, $"Total nutrient targets TUL:{Environment.NewLine}{string.Join(Environment.NewLine, volumeTUL)}");
+        }
+
         return new FeastContext()
         {
             Date = date,
@@ -236,36 +247,62 @@ public class UserRepo
     /// <summary>
     /// Get the user's average percent daily value for each nutrient.
     /// </summary>
-    /// <param name="rawValues">
-    /// If true, returns how much left of a nutrient to work per week.
-    /// If false, returns returns the percentage a nutrient has been worked.
-    /// </param>
-    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool rawValues = false, bool tul = false, bool includeToday = false)
+    /// <returns>The percentage a nutrient has been worked.</returns>
+    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientPercent(User user, int weeks)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
-        var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: includeToday);
+        // Returns the average nutrient volume consumed in a week.
+        var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: true);
 
+        // Note that we may be cooking for multiple people and have to adjust accordingly.
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
-        var familyNutrientServings = NutrientHelpers.All.ToDictionary(n => n, n =>
-        {
-            var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: tul));
-            var weeklyGramsOfRDATUL = gramsOfRDATUL * 7; // Get the weekly, not daily value. 7 days in a week.
-            return rawValues ? (weeklyGramsOfRDATUL + (weeklyGramsOfRDATUL / weeks)) : weeklyGramsOfRDATUL;
-        });
-
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
+            // Calculate the desired nutrient consumption in a week.
+            var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: false));
+            // Get the weekly, not daily value. 7 days in a week.
+            var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
+
             // If there is no RDA or TUL.
-            if (familyNutrientServings[n] <= 0) { return null; }
+            if (weeklyGramsOfRDATUL <= 0) { return null; }
 
             // Return the percentage that each nutrient has been worked this week.
-            return !rawValues ? (weeklyNutrientVolume[n] / familyNutrientServings[n] * 100)
-                // Return how much left of each nutrient to work each week. Defaults to max per week.
-                : ((familyNutrientServings[n] - weeklyNutrientVolume[n]) ?? familyNutrientServings[n]);
+            return weeklyNutrientVolume[n] / weeklyGramsOfRDATUL * 100;
         }));
     }
 
+    /// <summary>
+    /// Get the user's average percent daily value for each nutrient.
+    /// </summary>
+    /// <returns>How much left of a nutrient to work per week.</returns>
+    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool tul = false)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
+
+        // Returns the average nutrient volume consumed in a week.
+        var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: false);
+
+        // Note that we may be cooking for multiple people and have to adjust accordingly.
+        var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
+        return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
+        {
+            // Calculate the desired nutrient consumption in a week.
+            var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: tul));
+            // Get the weekly, not daily value. 7 days in a week.
+            var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
+
+            // If there is no RDA or TUL.
+            if (weeklyGramsOfRDATUL <= 0) { return (double?)null; }
+
+            // Return how much left of each nutrient to work each week. Defaults to max per week.
+            return (weeklyNutrientVolume[n] + weeklyGramsOfRDATUL) / 2 ?? weeklyGramsOfRDATUL;
+        }));
+    }
+
+    /// <summary>
+    /// Gets the nutrients consumed in the last X weeks.
+    /// </summary>
     private async Task<(double weeks, IDictionary<Nutrients, double?> volume)> GetWeeklyNutrientVolumeFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await _context.UserFeasts
@@ -386,6 +423,9 @@ public class UserRepo
         return (weeks: actualWeeks, volume: EnumExtensions.GetValuesExcluding(Allergens.None).ToDictionary(n => n, n => weeklyAllergenVolume[n]));
     }
 
+    /// <summary>
+    /// Gets the allergens consumed in the last X weeks.
+    /// </summary>
     private async Task<(double weeks, IDictionary<Allergens, double?> volume)> GetWeeklyAllergensFromRecipeIngredients(User user, int weeks, bool includeToday = false)
     {
         var weeklyFeasts = await _context.UserFeasts
