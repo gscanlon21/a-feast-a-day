@@ -103,7 +103,6 @@ public class UserIngredientsController : ViewController
             existingIngredient.Link = ingredient.Link;
             existingIngredient.Notes = ingredient.Notes;
             existingIngredient.Group = ingredient.Group;
-            existingIngredient.Cuisine = ingredient.Cuisine;
             existingIngredient.Category = ingredient.Category;
             existingIngredient.FoodName = ingredient.FoodName;
             existingIngredient.Allergens = ingredient.Allergens;
@@ -124,7 +123,6 @@ public class UserIngredientsController : ViewController
                 Link = ingredient.Link,
                 Notes = ingredient.Notes,
                 Group = ingredient.Group,
-                Cuisine = ingredient.Cuisine,
                 Category = ingredient.Category,
                 FoodName = ingredient.FoodName,
                 Allergens = ingredient.Allergens,

@@ -56,7 +56,7 @@ public class Ingredient
     /// <summary>
     /// Used to group together like-ingredients.
     /// </summary>
-    [Display(Name = "Group")]
+    [Display(Name = "Group", Description = "To group together like-ingredients.")]
     public string Group { get; set; } = null!;
 
     /// <summary>
@@ -67,9 +67,6 @@ public class Ingredient
 
     [Display(Name = "Allergens")]
     public Allergens Allergens { get; set; }
-
-    [Display(Name = "Cuisine")]
-    public Cuisine Cuisine { get; set; }
 
     [Display(Name = "Category")]
     public Category Category { get; set; }

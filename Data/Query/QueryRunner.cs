@@ -109,7 +109,6 @@ public class QueryRunner(Section section)
                         Id = ri.Ingredient.Id,
                         Name = ri.Ingredient.Name,
                         Group = ri.Ingredient.Group,
-                        Cuisine = ri.Ingredient.Cuisine,
                         Category = ri.Ingredient.Category,
                         FoodName = ri.Ingredient.FoodName,
                         Allergens = ri.Ingredient.Allergens,
