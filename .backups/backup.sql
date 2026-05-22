@@ -2,9 +2,9 @@
 -- PostgreSQL database dump
 --
 
-\restrict nksCJgAOV7WD0IxemvJlE3fNwPsKGWOSzJMbJS5cZixD8IObWOFAfoyR35JygPK
+\restrict eqSh5G9elNptBcGhosLup5Tf0cmHABycu6ODpysiJ9J4SdSWgHE51UX38ZID3BY
 
--- Dumped from database version 18.3
+-- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.0
 
 SET statement_timeout = 0;
@@ -1041,10 +1041,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 374	2.1	7.1	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl2	2026-05-12	\N	74
 295	30	\N	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-05-15	\N	57
 64	0.4	4.5	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-20	\N	44
-510	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
-511	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
-512	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
-513	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-12	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
 310	1	10	2097152	2	0	0		-infinity	\N	54
 526	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 527	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
@@ -1065,6 +1061,9 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 533	0.6	1.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-11	\N	85
 324	2300	3600	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-14	\N	64
 375	0.4	4.5	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-20	\N	44
+510	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+511	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+512	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
 349	150	1100	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 396	0.5	10	2097152	3	0	0		-infinity	\N	1
 297	320	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-19	\N	10
@@ -1368,6 +1367,11 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 903	\N	20	67108864	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-18	\N	48
 904	\N	20	33554432	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-18	\N	48
 905	\N	20	134217728	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-18	\N	48
+513	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+914	0.06	0.12	16777216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+915	0.06	0.12	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+916	0.06	0.12	33554432	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+917	0.06	0.12	134217728	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
 \.
 
 
@@ -3720,6 +3724,10 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 253	2028	1	f
 2029	2030	1	t
 2029	1613	1	t
+2033	278	1	t
+2033	79	1	t
+2033	77	1	t
+2033	499	1	t
 \.
 
 
@@ -3741,8 +3749,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1401	173435	1159	\N	-infinity
 1180	328637	1009	\N	-infinity
 155	2346406	11205	\N	-infinity
-1300	2644283	100312	\N	-infinity
-1305	2644283	100312	\N	-infinity
 188	2512381	20444	\N	-infinity
 103	170029	11355	\N	-infinity
 8	2258590	11821	\N	-infinity
@@ -3753,13 +3759,11 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 16	1999633	11457	\N	-infinity
 206	1999632	100260	\N	-infinity
 259	2685577	11209	\N	-infinity
-671	2685576	11080	\N	-infinity
 281	1999634	100261	\N	-infinity
 157	169118	9252	\N	-infinity
 807	2346393	12061	\N	-infinity
 984	2515379	12151	\N	-infinity
 1062	2346411	9050	\N	-infinity
-599	2258591	100278	\N	-infinity
 215	169661	19353	\N	-infinity
 150	169988	11143	\N	-infinity
 1286	169988	11143	\N	-infinity
@@ -3773,7 +3777,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 159	167765	9326	\N	-infinity
 10	2346409	9316	\N	-infinity
 871	2346411	9050	\N	-infinity
-625	2727581	9042	\N	-infinity
 1176	746767	1040	\N	-infinity
 1265	2705879	\N	\N	-infinity
 1371	170150	12023	\N	-infinity
@@ -3791,7 +3794,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 95	170848	1033	\N	-infinity
 1592	325036	1032	\N	-infinity
 170	173241	18449	\N	-infinity
-29	789828	1145	\N	-infinity
 190	789828	1145	\N	-infinity
 189	790508	1001	\N	-infinity
 79	748278	4582	\N	-infinity
@@ -3805,7 +3807,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 60	326698	2046	\N	-infinity
 55	171192	6931	\N	-infinity
 89	2346395	12142	\N	-infinity
-1078	2685576	11080	\N	-infinity
 105	790577	100252	\N	-infinity
 78	172370	4669	\N	-infinity
 597	2258589	11951	\N	-infinity
@@ -3823,8 +3824,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 388	172385	5091	\N	-infinity
 391	173627	5096	\N	-infinity
 418	169214	11172	\N	-infinity
-627	168191	9421	\N	-infinity
-640	168162	9291	\N	-infinity
 161	2257045	100276	\N	-infinity
 305	2346391	11253	\N	-infinity
 589	169934	9246	\N	-infinity
@@ -3842,7 +3841,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 517	168833	19334	\N	-infinity
 1975	170164	12093	\N	-infinity
 1976	169413	12202	\N	-infinity
-626	2346410	9302	\N	-infinity
 960	2512381	20444	\N	-infinity
 1114	2685573	11135	\N	-infinity
 1129	2262074	12195	\N	-infinity
@@ -3903,6 +3901,14 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1080	747447	11090	6278	2026-04-30
 499	1750348	4042	418	2026-05-05
 110	2346407	11109	2361	2026-05-09
+29	789828	1145	92	2026-05-21
+625	2727581	9042	1515	2026-05-22
+626	2346410	9302	1747	2026-05-22
+627	168191	9421	5401	2026-05-22
+640	168162	9291	1742	2026-05-22
+1078	2685576	11080	2500	2026-05-22
+1305	2644283	100312	3392	2026-05-22
+1300	2644283	100312	4869	2026-05-22
 119	170845	1026	35	-infinity
 1342	172232	2044	212	-infinity
 2	170416	11297	2405	-infinity
@@ -4247,6 +4253,9 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 516	172237	2053	14	2026-05-13
 133	171302	1291	153	2026-05-18
 580	170497	11670	2322	2026-05-18
+184	171942	14639	0	2026-05-22
+599	2258591	100278	0	2026-05-22
+671	2685576	11080	2500	2026-05-22
 \.
 
 
@@ -4255,7 +4264,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 --
 
 COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM stdin;
-6	Fatty_acids_total_saturated	Saturated Fats	9700	The 2015 to 2020 Dietary Guidelines for Americans recommend consuming <10% of calories from saturated fat for the general population and replacing saturated fat with unsaturated fat. The current AHA/American College of Cardiology guideline is to decrease intake of saturated fat to 5% to 6% of total daily energy (calorie) intake for individuals with elevated LDL cholesterol concentration.	2026-03-13
 52	Vitamin_B_6	Vitamin B6	6700	\N	2026-03-30
 10	Magnesium_Mg	Magnesium (Mg)	5300	\N	2026-04-19
 13	Isoleucine	Isoleucine	17100	Not in table: https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-04-20
@@ -4265,7 +4273,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 53	Sodium_Na	Sodium (Na)	5100	\N	2026-05-07
 55	Fatty_Acids_Total_Polyunsaturated	Polyunsaturated Fats	12900	\N	2026-05-08
 12	Niacin_B3	Niacin (B3)	6600	\N	2026-05-13
-16	Fatty_acids_total_monounsaturated	Monounsaturated Fats	11400	No RDA/TUL; using the TUL for Fats as the max; no min because there are other Fats.	2026-03-13
+6	Fatty_Acids_Total_Saturated	Saturated Fats	9700	The 2015 to 2020 Dietary Guidelines for Americans recommend consuming <10% of calories from saturated fat for the general population and replacing saturated fat with unsaturated fat. The current AHA/American College of Cardiology guideline is to decrease intake of saturated fat to 5% to 6% of total daily energy (calorie) intake for individuals with elevated LDL cholesterol concentration.	2026-05-22
 21	Fats	Fats	800	\N	2026-03-16
 22	Calcium_Ca	Calcium (Ca)	5400	\N	2026-03-17
 18	Fiber_Total_Dietary	Dietary Fiber	1200	\N	2026-03-18
@@ -4276,6 +4284,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 25	Starch	Starch	2200	\N	2026-05-10
 57	Biotin	Biotin (B7)	6850	\N	2026-05-15
 5	Riboflavin_B2	Riboflavin (B2)	6500	\N	2026-05-17
+16	Fatty_Acids_Total_Monounsaturated	Monounsaturated Fats	11400	No RDA/TUL; using the TUL for Fats as the max; no min because there are other Fats.	2026-05-22
 81	Fluoride_F	Fluoride (F)	5680	\N	2026-03-14
 27	Betaine	Betaine	999999	\N	2026-03-15
 75	Choline	Choline	7220	\N	2026-03-19
@@ -4353,18 +4362,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1763	4	104	1	12	\N	122	f	\N	2	f	t	1
 5416	7	365	1	6	\N	171	f	\N	4	f	t	0.75
 1764	0	104	1	4	\N	187	f	\N	3	f	t	1
-1378	6	62	2	1	\N	\N	f	484	0	f	t	1
-1379	6	62	1	1	\N	\N	f	625	1	f	t	1
-1380	6	62	4	1	\N	834	f	\N	2	f	t	1
-1381	7	62	1	2	, chopped	13	t	\N	3	f	t	1
-1382	6	62	4	1	, diced	9	f	\N	4	f	t	1
 3082	0	132	1	4	\N	324	f	\N	1	f	t	1
 2385	0	102	1	1	, finly chopped	222	f	\N	4	f	t	1
 5105	0	161	1	8	\N	550	f	\N	7	f	t	1
 3083	0	132	2	1	, juiced	4	f	\N	2	f	t	1
 3084	7	132	1	3	\N	549	f	\N	3	f	t	1
-7137	8	37	1	1	\N	77	f	\N	6	f	t	0.25
-8444	8	996	1	1	\N	1724	f	\N	4	f	f	0.25
+1378	6	62	2	1	\N	\N	f	484	1	f	t	1
+1379	6	62	1	1	\N	\N	f	625	2	f	t	1
 8445	7	996	1	1	\N	\N	t	550	6	f	t	1
 1266	6	29	1	1	, trimmed	122	f	\N	1	f	t	1
 3085	7	132	1	3	\N	500	f	\N	4	f	t	1
@@ -4413,14 +4417,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5439	0	370	1	2	\N	971	f	\N	5	f	t	1
 1158	6	58	4	1	\N	56	f	\N	0	f	t	0.25
 4382	7	194	1	2	\N	344	f	\N	5	f	t	1
-8589	8	369	1	1	\N	278	f	\N	9	f	f	0.25
+1380	6	62	4	1	\N	834	f	\N	3	f	t	1
 8616	7	1044	1	2	\N	186	f	\N	2	f	t	1
+7137	8	37	1	1	\N	2033	f	\N	6	f	t	0.25
 1159	0	58	1	2	, pocket halved	166	f	\N	1	f	t	1
 1160	0	58	2	1	, thinly sliced	1	f	\N	2	f	t	1
 1161	0	58	2	1	, sliced	11	f	\N	3	f	t	1
 1162	8	58	8	1	\N	168	t	\N	4	f	t	1
 1163	8	58	8	1	\N	72	t	\N	5	f	t	1
 1164	8	58	8	1	\N	70	t	\N	6	f	t	1
+8589	8	369	1	1	\N	2033	f	\N	9	f	f	0.25
 2378	7	69	1	1	, chopped	2	t	\N	4	f	t	1
 2379	7	69	1	1	, to taste	60	t	\N	5	f	t	1
 2380	8	69	8	1	\N	285	t	\N	6	f	t	1
@@ -4458,7 +4464,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1665	6	99	2	1	, for dressing	246	f	\N	11	f	t	1
 2530	4	36	1	8	\N	132	f	\N	1	f	t	1
 2533	6	36	2	3	\N	186	f	\N	4	f	t	1
-5563	8	391	1	2	, plus more as necessary by the half-teaspoonful	656	f	\N	5	f	t	0.25
+3433	0	173	1	1	, seeded and finely chopped	580	f	\N	6	f	t	1
 5311	0	319	1	1	, chopped	316	f	\N	3	f	t	1
 1728	0	100	1	1	\N	187	f	\N	8	f	t	1
 2390	6	79	1	1	\N	171	f	\N	1	f	t	0.75
@@ -4471,12 +4477,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3439	0	50	1	2	\N	\N	f	65	0	f	t	1
 1242	7	64	1	1	\N	29	f	\N	4	f	t	0.25
 8527	7	1004	1	1	, melted	190	f	\N	1	f	t	0.25
-3433	0	173	1	1	, seeded and finely chopped	580	f	\N	6	f	t	1
-3434	7	173	1	1	\N	77	f	\N	7	f	t	0.25
 1245	6	64	1	1	, shredded	119	f	\N	7	f	t	1
 1246	7	64	1	1	, grated	95	f	\N	8	f	t	1
 3435	4	173	1	14	, canned	847	f	\N	8	f	t	1
-3436	0	173	1	4	\N	113	f	\N	9	f	t	1
 1209	6	63	1	4	\N	94	f	\N	1	f	t	1
 7139	6	706	1	1	, diced	222	f	\N	2	f	t	1
 1117	6	66	4	1	, whole	186	f	\N	1	f	t	1
@@ -4529,9 +4532,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5424	7	367	1	2	\N	829	f	\N	4	f	t	1
 5425	0	367	1	2	\N	187	f	\N	6	f	t	1
 5426	4	367	1	5	\N	862	f	\N	7	f	t	1
-5734	8	419	8	1	, to taste	969	t	\N	7	f	t	1
+5401	6	363	4	1	\N	2033	f	\N	0	f	t	0.25
 2651	5	139	1	2	\N	387	f	\N	1	f	t	1
 2652	4	139	1	16	\N	48	f	\N	2	f	t	1
+7343	7	737	1	1	\N	2033	f	\N	1	f	t	0.25
 2653	0	139	1	1	\N	\N	f	91	3	f	t	1
 4901	4	101	1	5	, dried	137	f	\N	1	f	t	1
 8233	6	977	1	1	\N	123	f	\N	2	f	t	1
@@ -4541,19 +4545,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5315	6	319	2	1	\N	959	f	\N	7	f	t	1
 1591	4	60	1	1	\N	226	f	\N	0	f	t	1
 1592	6	60	4	1	\N	48	f	\N	1	f	t	1
+451	7	55	2	1	\N	2033	f	\N	2	f	t	0.25
 577	4	33	1	8	, broken into pieces	19	f	\N	1	f	t	1
 578	4	33	1	26	\N	55	f	\N	2	f	t	1
 579	4	33	1	20	\N	129	f	\N	3	f	t	1
 450	6	55	2	1	\N	122	f	\N	1	f	t	1
 4903	4	101	1	2	, stalks removed, shredded	368	f	\N	3	f	t	1
-451	7	55	2	1	\N	77	f	\N	2	f	t	0.25
-2352	7	70	1	2	\N	77	f	\N	2	f	t	0.25
-5401	6	363	4	1	\N	77	f	\N	0	f	t	0.25
+5734	8	419	8	1	, to taste	969	t	\N	7	f	t	1
 2702	4	24	1	16	\N	109	f	\N	1	f	t	1
 5481	5	378	1	1	, skinless	1213	f	\N	5	f	t	1
 1569	7	95	1	3	\N	190	f	\N	2	f	t	0.25
 4627	8	267	1	1	\N	699	f	\N	4	f	t	1
-7343	7	737	1	1	\N	77	f	\N	1	f	t	0.25
 5316	6	319	2	1	\N	960	f	\N	8	f	t	1
 5317	8	319	1	1	, chopped	13	t	\N	9	f	t	1
 2783	0	141	1	1	, finely chopped	222	f	\N	1	f	t	1
@@ -4619,7 +4621,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4905	8	101	8	1	\N	285	t	\N	5	f	t	1
 2144	6	117	1	2	, chopped	174	f	\N	1	f	t	1
 7122	8	703	8	1	\N	214	t	\N	6	f	t	1
-3364	7	126	1	1	\N	77	f	\N	0	f	t	0.25
+5729	7	419	1	1	\N	278	f	\N	2	f	t	0.25
 2145	6	117	1	2	\N	368	f	\N	2	f	t	1
 3906	4	196	1	7	(THIN EGG NOODLES)	333	f	\N	0	f	t	1
 3908	0	196	1	2	, very thinly sliced	5	f	\N	2	f	t	1
@@ -4627,21 +4629,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3909	0	196	1	1	, seeded and sliced	224	f	\N	3	f	t	1
 3910	0	196	2	1	, very thinly sliced	8	f	\N	4	f	t	1
 7306	0	731	1	1	\N	1250	f	\N	1	f	t	1
+3364	7	126	1	1	\N	2033	f	\N	0	f	t	0.25
 982	6	40	1	1	, drained	700	f	\N	1	f	t	1
 7308	8	731	8	1	, ground	67	t	\N	3	f	t	1
 3911	0	196	1	2	, peeled and cut into thin strips	7	f	\N	5	f	t	1
 983	6	40	1	1	\N	16	f	\N	2	f	t	1
 3367	7	126	2	1	\N	29	f	\N	3	f	t	0.25
-7307	7	731	1	1	\N	77	f	\N	2	f	t	0.25
-4872	7	170	1	1	\N	77	f	\N	2	f	t	0.25
 740	4	37	1	15	, rinsed	419	f	\N	1	f	t	1
 741	6	37	2	1	\N	30	f	\N	2	f	t	1
 3912	4	196	1	11	(CHINESE BROCCOLI), roughly sliced	6	f	\N	6	f	t	1
-5570	7	392	1	2	\N	77	f	\N	1	f	t	0.25
 3914	7	196	1	3	\N	62	f	\N	8	f	t	1
 3915	8	196	1	1	\N	234	f	\N	9	f	t	1
 2147	7	117	1	2	\N	418	t	\N	4	f	t	1
-5729	7	419	1	1	\N	77	f	\N	2	f	t	0.25
 3913	7	196	1	3	\N	321	f	\N	7	f	t	1
 984	0	40	1	4	\N	187	f	\N	3	f	t	1
 985	4	40	1	4	, thinly sliced smoked ham, torn	26	f	\N	4	f	t	1
@@ -4652,6 +4651,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7162	6	709	4	1	\N	1608	f	\N	4	f	t	0.75
 7163	0	709	1	2	\N	1607	t	\N	5	f	t	1
 719	0	47	1	2	, ripe	11	f	\N	1	f	t	1
+4872	7	170	1	1	\N	2033	f	\N	2	f	t	0.25
 5864	8	469	1	1	\N	82	f	\N	4	f	t	1
 4830	4	261	1	1	\N	88	f	\N	0	f	t	1
 742	6	37	2	1	\N	48	t	\N	3	f	t	1
@@ -4666,6 +4666,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4833	4	261	1	5	\N	792	f	\N	3	f	t	1
 7154	0	708	1	1	\N	1391	f	\N	0	f	t	1
 7155	6	708	2	1	\N	36	f	\N	1	f	t	1
+5570	7	392	1	2	\N	2033	f	\N	1	f	t	0.25
+7307	7	731	1	1	\N	2033	f	\N	2	f	t	0.25
 3827	7	158	1	1	\N	469	f	\N	9	f	t	1
 2654	6	86	2	5	\N	111	f	\N	1	f	t	1
 5100	0	161	1	4	, crushed	5	f	\N	2	f	t	1
@@ -4703,7 +4705,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2659	4	140	1	9	, diced	324	f	\N	1	f	t	1
 2660	0	140	1	3	, chopped	5	t	\N	2	f	t	1
 3472	7	165	1	2	, chopped	2	t	\N	3	f	t	1
-7164	8	710	1	2	\N	77	f	\N	1	f	t	0.25
 2661	8	140	1	1	\N	1259	f	\N	3	f	t	1
 7165	0	710	1	1	, diced	222	f	\N	2	f	t	1
 5203	0	179	1	1	\N	594	f	\N	1	f	t	0.25
@@ -4741,7 +4742,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5865	7	469	1	2	, chopped	807	t	\N	5	f	t	1
 884	0	52	1	2	\N	22	f	\N	0	f	t	1
 2511	4	85	1	12	\N	286	f	\N	1	f	t	1
-1636	8	74	1	1	\N	77	f	\N	1	f	f	0.25
 2513	0	85	2	1	, thinly sliced	105	f	\N	3	f	t	1
 2514	0	85	1	6	, pressed or minced	5	t	\N	4	f	t	1
 885	6	52	4	1	, mashed	9	f	\N	1	f	t	1
@@ -4757,12 +4757,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1200	7	56	1	4	\N	186	f	\N	2	f	t	1
 518	6	31	1	1	\N	115	t	\N	1	f	t	1
 520	6	31	1	6	\N	113	f	\N	3	f	t	1
+7164	8	710	1	2	\N	2033	f	\N	1	f	t	0.25
+1636	8	74	1	1	\N	2033	f	\N	1	f	f	0.25
 1201	8	56	2	1	\N	196	f	\N	3	f	t	1
 1202	7	56	1	4	\N	30	f	\N	4	f	t	1
-2662	7	140	1	2	\N	77	f	\N	4	f	t	0.25
 5272	6	312	4	1	\N	85	f	\N	3	f	t	1
 1173	6	45	1	2	\N	48	f	\N	2	f	t	1
 887	6	52	4	1	, sliced	17	f	\N	3	f	t	1
+2662	7	140	1	2	\N	2033	f	\N	4	f	t	0.25
+2512	7	85	1	2	\N	2033	f	\N	2	f	t	0.25
 1093	8	72	1	1	 (5g)	214	f	\N	4	f	t	1
 5273	6	312	8	1	\N	236	f	\N	4	f	t	1
 1095	8	72	1	1	 (3g)	41	f	\N	6	f	t	1
@@ -4773,7 +4776,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4912	0	186	1	2	\N	113	f	\N	4	f	t	1
 4913	7	186	1	2	\N	61	f	\N	5	f	t	1
 1637	0	74	1	2	\N	191	f	\N	2	f	t	1
-2512	7	85	1	2	\N	278	f	\N	2	f	t	0.25
 7166	4	710	1	12	, drained	1277	t	\N	3	f	t	1
 1638	4	74	1	4	, thinly sliced	247	f	\N	3	f	t	1
 1175	8	45	1	2	, ground	143	f	\N	4	f	t	1
@@ -4795,8 +4797,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5867	0	469	1	4	\N	150	f	\N	7	f	t	1
 2669	7	140	1	1	, chopped (FOR LEMON AND MINT RELISH)	251	f	\N	11	f	t	1
 2670	0	140	1	6	, thinly sliced (FOR LEMON AND MINT RELISH)	144	f	\N	12	f	t	1
-3383	6	116	2	1	\N	420	f	\N	0	f	t	1
-3384	6	116	2	1	\N	359	f	\N	1	f	t	1
+3835	7	75	1	4	\N	2033	f	\N	1	f	t	0.25
 1793	0	109	1	4	\N	166	f	\N	5	f	t	1
 2439	0	80	1	1	, cut into chunks	259	f	\N	1	f	t	1
 2441	4	80	1	4	\N	261	f	\N	3	f	t	1
@@ -4817,22 +4818,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2041	6	113	2	1	\N	423	f	\N	9	f	t	1
 2042	6	113	2	1	\N	133	f	\N	10	f	t	1
 2043	6	113	4	1	\N	123	f	\N	11	f	t	1
-3385	8	116	1	3	\N	39	f	\N	2	f	t	1
-3386	0	116	1	1	\N	5	f	\N	3	f	t	1
 2468	7	107	1	1	, whipped	29	f	\N	0	f	t	0.25
 2079	6	119	2	1	\N	61	f	\N	0	f	t	1
 2080	7	119	1	2	, drained and chopped	456	f	\N	1	f	t	1
 2081	7	119	1	2	\N	2	t	\N	2	f	t	1
 2044	6	113	2	1	, melted and cooled to room temperature	29	f	\N	12	f	t	0.25
-3835	7	75	1	4	\N	77	f	\N	1	f	t	0.25
-5814	7	432	1	6	\N	77	f	\N	3	f	t	0.25
-3387	0	116	1	4	, divided	579	f	\N	4	f	t	1
-6689	7	617	1	1	\N	77	f	\N	2	f	t	0.25
-3389	8	116	4	1	, to taste	285	t	\N	6	f	t	1
 8239	6	788	1	4	\N	\N	f	858	6	f	t	1
 2357	0	70	1	1	, seeded	224	t	\N	7	f	t	1
-2790	8	141	1	1	\N	276	f	\N	8	f	t	0.25
-5560	7	391	1	2	, or a neutral oil	1665	f	\N	2	f	f	0.25
+5814	7	432	1	6	\N	278	f	\N	4	f	t	0.25
 8234	4	978	1	4	\N	16	f	\N	1	f	t	1
 8235	0	978	1	2	, beaten with a pinch of salt	187	f	\N	2	f	t	1
 3390	4	172	1	4	\N	409	f	\N	0	f	t	1
@@ -4849,16 +4842,25 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2003	0	118	1	4	\N	391	f	\N	0	f	t	1
 2004	0	118	1	1	(7 oz)	396	f	\N	3	f	t	1
 4026	7	185	1	1	\N	2	t	\N	8	f	t	1
+6689	7	617	1	1	\N	2033	f	\N	2	f	t	0.25
 2005	4	118	1	1	(1 large)	377	f	\N	4	f	t	1
 2007	7	118	1	2	\N	394	t	\N	6	f	t	1
+2790	8	141	1	1	\N	2033	f	\N	8	f	t	0.25
+5560	7	391	1	2	, or a neutral oil	2033	f	\N	2	f	f	0.25
+3383	6	116	4	1	\N	420	f	\N	1	f	t	1
 2358	6	53	1	1	\N	123	f	\N	0	f	t	1
+3384	6	116	4	1	\N	359	f	\N	2	f	t	1
 2430	0	81	1	2	, thinly sliced	222	f	\N	0	f	t	1
 2431	5	81	2	3	, whole cooked, boiled in their skins	264	f	\N	1	f	t	1
+3385	8	116	2	3	\N	39	f	\N	3	f	t	1
+3386	0	116	2	1	\N	5	f	\N	4	f	t	1
 2434	8	81	8	1	\N	285	t	\N	4	f	t	1
 3483	4	176	1	14	, chopped, with onions and garlic	17	f	\N	1	f	t	1
 3484	7	176	1	6	, chopped	13	t	\N	2	f	t	1
 3485	5	176	4	7	, thawed	905	f	\N	3	f	t	1
 3486	8	176	4	1	\N	70	t	\N	4	f	t	1
+3387	0	116	1	2	, divided	579	f	\N	5	f	t	1
+3389	8	116	8	1	, to taste	285	t	\N	7	f	t	1
 3522	5	181	1	1	\N	488	f	\N	1	f	t	1
 3523	6	181	2	1	\N	59	f	\N	2	f	t	1
 3524	6	181	4	1	\N	60	t	\N	3	f	t	1
@@ -4896,8 +4898,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4314	5	34	1	2	, fully cooked	126	f	\N	1	f	t	1
 4315	6	34	4	3	\N	37	f	\N	2	f	t	1
 4310	6	30	4	1	\N	477	f	\N	2	f	t	1
-3159	7	160	1	1	\N	77	f	\N	0	f	t	0.25
-2313	7	127	1	2	\N	77	f	\N	4	f	t	0.25
 3780	0	189	1	3	, sliced	144	t	\N	9	f	t	1
 7172	8	711	1	2	, minsed	1308	f	\N	1	f	t	1
 7310	7	731	1	3	\N	36	f	\N	5	f	t	1
@@ -4921,7 +4921,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2473	0	107	1	2	, sliced	247	f	\N	5	f	t	1
 2474	0	107	1	2	, sliced	17	t	\N	6	f	t	1
 2386	8	102	1	1	, to serve	29	t	\N	5	f	t	0.25
-2446	7	26	1	1	\N	77	f	\N	1	f	t	0.25
 5565	7	391	1	2	\N	312	f	\N	7	f	t	1
 3783	0	189	1	1	, juiced, to taste	4	f	\N	12	f	t	1
 3784	7	189	1	1	, chopped	251	t	\N	13	f	t	1
@@ -4934,6 +4933,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4630	6	267	1	1	, diced	222	f	\N	7	f	t	1
 3785	7	189	1	1	, chopped	13	t	\N	14	f	t	1
 3786	8	189	8	1	\N	214	t	\N	15	f	t	1
+3159	7	160	1	1	\N	2033	f	\N	0	f	t	0.25
+2313	7	127	1	2	\N	2033	f	\N	4	f	t	0.25
+2446	7	26	1	1	\N	2033	f	\N	1	f	t	0.25
 3099	6	130	1	2	, 1lb	25	f	\N	0	f	t	1
 2520	8	85	4	1	\N	285	t	\N	10	f	t	1
 2172	0	98	1	6	\N	\N	f	65	1	f	t	1
@@ -4968,42 +4970,42 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2388	8	102	8	1	\N	285	t	\N	7	f	t	1
 8587	0	1040	1	6	\N	730	f	\N	1	f	t	1
 3922	4	197	1	12	\N	333	f	\N	1	f	t	1
-3867	8	136	1	3	, divided	101	f	\N	6	f	t	0.25
 3414	0	92	1	2	, finely chopped	5	f	\N	1	f	t	1
 3415	0	92	1	1	, finely chopped	225	t	\N	2	f	t	1
+8588	6	1040	4	1	\N	2033	f	\N	2	f	t	0.25
 3417	0	92	1	1	, juiced	4	f	\N	4	f	t	1
 3418	8	92	1	1	\N	73	t	\N	5	f	t	1
 3451	6	94	4	1	\N	81	f	\N	0	f	t	1
 3452	7	94	1	2	\N	39	f	\N	1	f	t	1
 3453	0	94	1	1	, minced	5	f	\N	2	f	t	1
-2595	8	87	1	2	\N	101	f	\N	7	f	t	0.25
 3455	7	94	1	1	\N	60	t	\N	4	f	t	1
 3456	8	94	2	1	\N	74	t	\N	5	f	t	1
 3457	8	94	2	1	\N	67	t	\N	6	f	t	1
 2563	6	28	2	1	\N	123	f	\N	2	f	t	1
 2564	7	28	1	1	\N	29	f	\N	3	f	f	0.25
 3287	4	163	1	8	, thawed	568	f	\N	0	f	t	1
+3416	8	92	1	1	\N	2033	f	\N	3	f	t	0.25
 3317	6	144	1	1	\N	10	f	\N	1	f	t	1
 3318	7	144	1	1	, plus extra for dusting	570	t	\N	2	f	t	1
 3868	7	136	1	1	\N	29	f	\N	7	f	t	0.25
-8588	6	1040	4	1	\N	77	f	\N	2	f	t	0.25
 5217	0	311	1	2	\N	105	f	\N	1	f	t	1
 3923	4	197	1	8	\N	324	f	\N	2	f	t	1
 5147	7	23	1	4	\N	29	f	\N	1	f	t	0.25
-3416	8	92	1	1	\N	77	f	\N	3	f	t	0.25
-5340	6	325	8	1	\N	870	f	\N	1	f	t	0.25
 3244	6	25	1	1	\N	111	f	\N	0	f	t	1
 3245	7	25	1	3	\N	112	f	\N	1	f	t	1
 3246	5	25	1	1	\N	387	f	\N	2	f	t	1
 8245	8	364	8	1	, to taste	692	t	\N	5	f	f	1
+3867	8	136	1	3	, divided	2033	f	\N	6	f	t	0.25
+2595	8	87	1	2	\N	2033	f	\N	7	f	t	0.25
 6866	7	640	1	1	, chopped	5	f	\N	3	f	t	1
 3866	0	136	1	1	\N	187	f	\N	5	f	t	1
 3924	7	197	1	3	\N	62	f	\N	3	f	t	1
-3907	7	196	1	2	\N	233	f	\N	1	f	t	0.25
+3907	7	196	1	2	\N	2033	f	\N	1	f	t	0.25
 3925	7	197	1	1	\N	1060	f	\N	4	f	t	1
-3926	7	197	1	1	\N	656	f	\N	5	f	t	0.25
 5148	0	23	1	1	, finely chopped	3	f	\N	2	f	t	1
 8244	8	306	8	1	, to taste	692	t	\N	6	f	f	1
+3926	7	197	1	1	\N	2033	f	\N	5	f	t	0.25
+5340	6	325	8	1	\N	2033	f	\N	1	f	t	0.25
 3260	6	114	4	1	\N	81	f	\N	1	f	t	1
 3261	7	114	1	1	\N	39	f	\N	2	f	t	1
 3262	7	114	1	1	\N	357	t	\N	3	f	t	1
@@ -5091,16 +5093,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5402	0	363	1	1	, juiced	346	f	\N	1	f	t	1
 2914	4	152	1	8	\N	19	f	\N	1	f	t	1
 2916	0	152	1	1	, juiced	4	t	\N	3	f	t	1
-4739	7	250	1	2	\N	176	f	\N	4	f	t	0.25
 2918	8	152	8	1	\N	285	t	\N	5	f	t	1
-5953	8	486	1	1	\N	1296	t	\N	4	f	t	0.25
 2858	5	149	2	3	\N	264	f	\N	1	f	t	1
 4322	6	82	3	1	\N	61	f	\N	4	f	t	1
 2859	0	149	1	6	, chopped	144	f	\N	2	f	t	1
 2860	6	149	4	5	\N	186	f	\N	3	f	t	1
 2948	8	154	1	2	\N	70	f	\N	1	f	t	1
 2949	7	154	1	2	, plus extra to serve	234	f	\N	2	f	t	1
-5265	7	84	1	3	\N	278	f	\N	3	f	t	0.25
 5122	7	310	1	1	\N	29	f	\N	3	f	t	0.25
 2862	8	149	1	1	, to serve	29	t	\N	5	f	t	0.25
 2950	0	154	1	4	\N	22	f	\N	3	f	t	1
@@ -5115,8 +5114,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5314	6	319	4	7	\N	111	f	\N	6	f	t	1
 3879	0	133	1	4	, thinly sliced	5	f	\N	1	f	t	1
 5327	0	321	1	1	, to taste	224	f	\N	4	f	t	1
-6211	8	555	1	1	\N	176	f	\N	2	f	f	0.25
 2861	8	149	8	1	\N	285	t	\N	4	f	t	1
+4739	7	250	1	2	\N	2033	f	\N	4	f	t	0.25
+6211	8	555	1	1	\N	2033	f	\N	2	f	f	0.25
 2863	6	150	2	3	\N	505	f	\N	0	f	t	1
 3537	4	183	1	5	\N	286	f	\N	1	f	t	1
 3538	0	183	1	3	\N	381	f	\N	2	f	t	1
@@ -5133,15 +5133,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2864	6	150	2	5	\N	123	f	\N	1	f	t	1
 3540	0	183	1	4	, yolks only	187	f	\N	5	f	t	1
 5345	6	325	4	1	\N	871	f	\N	7	f	t	1
+5160	4	39	1	4	\N	137	f	\N	1	f	t	1
+5161	0	39	1	1	, zested and juiced	12	f	\N	2	f	t	1
 5346	4	325	1	6	, cooked and flaked	869	t	\N	8	f	t	1
+5162	0	39	1	1	, stoned, peeled, and chopped	9	f	\N	3	f	t	1
 2865	4	150	1	7	\N	283	f	\N	2	f	t	1
 2866	7	150	1	5	\N	830	f	\N	3	f	t	1
 2867	6	150	4	1	, plus extra to garnish	507	t	\N	4	f	t	1
-5160	4	39	1	4	\N	137	f	\N	0	f	t	1
-5161	0	39	1	1	, zested and juiced	12	f	\N	1	f	t	1
-5162	0	39	1	1	, stoned, peeled, and chopped	9	f	\N	2	f	t	1
-5163	0	39	1	1	, chopped	17	f	\N	3	f	t	1
-5164	6	39	4	1	, chopped	13	t	\N	4	f	t	1
 5347	0	326	1	1	, 14 oz	259	f	\N	0	f	t	1
 5348	0	326	1	4	\N	144	f	\N	1	f	t	1
 5349	0	326	1	1	\N	848	f	\N	2	f	t	1
@@ -5161,11 +5159,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5280	0	313	1	2	\N	144	f	\N	1	f	t	1
 5281	0	313	1	2	\N	730	f	\N	2	f	t	1
 5282	0	313	1	1	, 8 oz	824	f	\N	3	f	t	1
-3291	7	17	1	2	\N	101	f	\N	1	f	t	0.25
+3428	0	173	1	2	, chopped	225	f	\N	1	f	t	1
 3324	8	46	4	1	\N	70	f	\N	2	f	t	1
-5222	7	192	1	1	\N	77	f	\N	1	f	f	0.25
+3429	5	173	1	1	\N	25	f	\N	2	f	t	1
 3053	5	120	1	2	\N	548	f	\N	1	f	t	1
-3054	7	120	2	3	\N	77	f	\N	2	f	t	0.25
+3430	7	173	1	2	, chopped	2	f	\N	3	f	t	1
 3290	6	17	1	2	\N	\N	f	589	0	f	t	1
 5223	0	192	1	1	, finely chopped	222	t	\N	2	f	t	1
 5224	4	192	1	7	\N	603	f	\N	3	f	t	1
@@ -5200,17 +5198,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3938	8	198	4	1	\N	75	f	\N	4	f	t	1
 7183	6	712	1	1	\N	141	f	\N	4	f	t	1
 7184	6	712	1	1	\N	1666	f	\N	5	f	t	1
+3054	7	120	2	3	\N	2033	f	\N	2	f	t	0.25
 3061	7	120	1	1	\N	60	t	\N	9	f	t	1
-3428	0	173	1	2	, chopped	225	f	\N	1	f	t	1
 5177	4	252	1	1	\N	150	t	\N	4	f	t	1
 2656	4	86	1	6	, chopped into small florets	6	f	\N	3	f	t	1
 3515	0	180	1	2	, cut in half then slices	3	f	\N	3	f	t	1
 4031	8	185	8	1	\N	285	t	\N	13	f	t	1
-3429	5	173	1	1	\N	25	f	\N	2	f	t	1
 4032	7	185	1	1	, to serve	95	t	\N	14	f	t	1
 3516	0	180	1	2	, sliced	598	f	\N	4	f	t	1
 2657	4	86	1	8	, chopped into bite-sized pieces	290	f	\N	4	f	t	1
-3430	7	173	1	2	, chopped	2	f	\N	3	f	t	1
+5222	7	192	1	1	\N	2033	f	\N	1	f	f	0.25
+3291	7	17	1	2	\N	2033	f	\N	1	f	t	0.25
 3431	7	173	1	2	\N	59	f	\N	4	f	t	1
 3432	0	173	1	1	, crushed	5	f	\N	5	f	t	1
 4950	4	184	1	8	\N	145	f	\N	0	f	t	1
@@ -5244,11 +5242,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8247	8	313	8	1	, to taste	692	t	\N	6	f	f	1
 3655	0	188	1	3	, seeded	811	f	\N	1	f	t	1
 3656	0	188	1	1	, juiced	785	f	\N	2	f	t	1
-1241	7	64	1	2	\N	77	f	\N	3	f	t	0.25
+3437	0	173	1	4	\N	305	f	\N	10	f	t	1
 3657	8	188	8	1	\N	285	f	\N	3	f	t	1
 3658	0	188	1	1	\N	7	f	\N	4	f	t	1
 5403	0	363	1	3	, juiced	12	f	\N	2	f	t	1
 5404	8	363	1	1	, finely diced	565	t	\N	3	f	t	1
+1241	7	64	1	2	\N	2033	f	\N	3	f	t	0.25
+3683	7	145	1	1	\N	2033	f	\N	3	f	f	0.25
 5405	6	363	4	1	, finely chopped	13	t	\N	4	f	t	1
 5406	8	363	8	1	\N	285	f	\N	5	f	t	1
 3607	0	177	1	4	, halved lengthways and seeded	597	f	\N	0	f	t	1
@@ -5286,14 +5286,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3681	0	145	1	4	, halved	604	f	\N	1	f	t	1
 3682	0	145	1	2	\N	187	f	\N	2	f	t	1
 4834	4	261	1	7	\N	728	f	\N	4	f	t	1
-3683	7	145	1	1	\N	605	f	\N	3	f	f	0.25
+3438	8	173	8	1	\N	285	f	\N	11	f	t	1
 5567	0	391	1	2	, chopped	144	t	\N	9	f	t	1
 5090	8	259	1	1	, or 1/2 tsp dried	577	t	\N	6	f	t	1
 5568	0	391	1	2	, lightly beaten	187	f	\N	10	f	t	1
 3684	7	145	1	1	, to serve	234	t	\N	4	f	t	1
 3685	6	145	2	1	, to serve	607	t	\N	5	f	t	1
-3437	0	173	1	4	\N	305	f	\N	10	f	t	1
-3438	8	173	8	1	\N	285	f	\N	11	f	t	1
 4035	8	32	4	1	, ground	349	t	\N	3	f	t	1
 5091	8	259	8	1	, to taste	285	f	\N	7	f	t	1
 3614	0	177	1	3	, finely chopped	596	t	\N	7	f	t	1
@@ -5320,6 +5318,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4420	0	134	1	1	\N	511	t	\N	3	f	t	1
 4421	8	134	1	2	\N	222	f	\N	4	f	t	1
 4422	8	134	4	1	\N	285	f	\N	5	f	t	1
+7146	7	707	1	1	\N	2033	f	\N	0	f	t	0.25
 5387	0	360	1	2	, 1 lb total	259	f	\N	2	f	t	1
 5388	4	360	1	10	\N	954	f	\N	3	f	t	1
 7208	4	716	1	15	, drained and rinsed	1310	f	\N	4	f	t	1
@@ -5341,14 +5340,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4392	6	254	1	1	\N	92	f	\N	0	f	t	1
 4393	6	254	4	1	, approx. 5	851	f	\N	1	f	t	1
 4394	6	254	4	1	\N	89	f	\N	2	f	t	1
-7146	7	707	1	1	\N	77	f	\N	0	f	t	0.25
 5332	4	322	1	16	\N	726	f	\N	4	f	t	1
 5407	0	364	1	2	\N	387	f	\N	0	f	t	1
 5331	6	322	1	1	\N	1274	f	\N	3	f	t	0.25
 5408	0	364	1	2	, with seeds	273	f	\N	1	f	t	1
 5409	0	364	1	1	\N	5	f	\N	2	f	t	1
 5410	0	364	1	1	\N	4	f	\N	3	f	t	1
-2532	8	36	1	2	\N	77	f	\N	3	f	t	0.25
 5183	0	123	1	1	, thinly sliced	155	f	\N	0	f	t	1
 5184	0	123	2	1	, thinly sliced	222	f	\N	1	f	t	1
 5185	7	123	1	3	\N	36	f	\N	2	f	t	1
@@ -5369,7 +5366,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1576	0	96	1	2	, peeled and segmented	346	f	\N	2	f	t	1
 3851	8	76	4	1	\N	285	t	\N	5	f	t	1
 4341	8	251	1	3	\N	410	f	\N	0	f	t	1
-3716	8	174	1	1	\N	233	f	\N	1	f	f	0.25
 4342	0	251	2	1	, juiced	4	f	\N	1	f	t	1
 3772	0	189	1	2	, boiled, sliced	264	f	\N	1	f	t	1
 4344	8	251	2	1	\N	214	f	\N	3	f	t	1
@@ -5384,25 +5380,23 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5319	0	320	1	4	\N	5	t	\N	2	f	t	1
 5320	4	320	1	7	\N	864	f	\N	3	f	t	1
 3718	7	174	1	1	, to garnish	2	t	\N	6	f	t	1
+2532	8	36	1	2	\N	2033	f	\N	3	f	t	0.25
+2213	7	124	1	1	\N	2033	f	\N	0	f	t	0.25
 5321	4	320	1	23	\N	865	f	\N	4	f	t	1
 5322	0	320	1	12	\N	868	f	\N	7	f	t	1
-2213	7	124	1	1	\N	77	f	\N	0	f	t	0.25
-2440	7	80	1	1	\N	77	f	\N	2	f	f	0.25
 3773	0	189	1	1	, thinly sliced	155	f	\N	2	f	t	1
 3774	0	189	1	1	, seeded and thinly sliced	8	f	\N	3	f	t	1
-8242	8	788	1	1	, to finish	278	t	\N	9	f	t	0.25
-8513	7	827	1	1	\N	278	f	\N	6	f	t	0.25
-4377	7	239	1	2	\N	676	f	\N	5	f	t	0.25
-5686	7	412	1	1	\N	676	f	\N	0	f	t	0.25
-6220	6	556	2	1	\N	676	f	\N	4	f	t	0.25
+2440	7	80	1	1	\N	2033	f	\N	2	f	f	0.25
 3775	0	189	1	1	, seeded and thinly sliced	597	f	\N	4	f	t	1
+3716	8	174	1	1	\N	2033	f	\N	1	f	f	0.25
+8242	8	788	1	1	, to finish	2033	t	\N	9	f	t	0.25
+8513	7	827	1	1	\N	2033	f	\N	6	f	t	0.25
 3427	8	44	8	1	\N	74	t	\N	5	f	t	1
 5392	7	361	1	3	\N	1119	f	\N	1	f	t	0.75
 4482	4	240	2	5	\N	638	f	\N	1	t	t	1
+3238	7	166	1	2	\N	2033	f	\N	2	f	t	0.25
 4484	8	240	1	1	\N	682	f	\N	3	f	t	1
 4485	8	240	2	1	\N	681	t	\N	4	f	t	1
-3238	7	166	1	2	\N	77	f	\N	2	f	t	0.25
-869	7	67	1	1	\N	79	f	\N	4	f	t	0.25
 8617	7	988	1	1	\N	77	f	\N	2	f	t	1
 4047	7	187	1	1	, for greasing	29	f	\N	4	f	t	0.25
 4521	7	131	1	2	\N	29	f	\N	1	f	t	0.25
@@ -5458,6 +5452,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4403	8	255	8	1	\N	214	f	\N	4	f	t	1
 4404	0	255	2	1	, juiced	4	f	\N	5	f	t	1
 7215	8	717	2	3	, ground	168	t	\N	4	f	t	1
+869	7	67	1	1	\N	2033	f	\N	4	f	t	0.25
 5393	8	361	1	3	\N	1120	f	\N	2	f	t	1
 5394	4	361	4	7	\N	376	f	\N	3	f	t	1
 5395	4	361	2	3	\N	1121	f	\N	4	f	t	1
@@ -5501,7 +5496,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5429	0	369	1	4	\N	255	f	\N	1	f	t	1
 1661	4	99	1	2	, cooked, for dressing	264	f	\N	7	f	t	1
 4574	6	262	3	1	\N	186	f	\N	2	f	t	1
-4579	8	193	2	1	\N	76	f	\N	4	f	t	0.25
 5226	7	192	1	6	\N	344	f	\N	5	f	t	1
 5227	6	192	4	11	\N	616	f	\N	6	f	t	1
 8060	7	955	1	1	\N	62	f	\N	6	f	t	1
@@ -5521,9 +5515,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5291	7	315	1	4	\N	500	t	\N	2	f	t	1
 5294	4	316	1	5	\N	240	f	\N	1	f	t	1
 4554	6	91	2	1	\N	68	f	\N	0	f	t	1
-4988	7	125	1	6	\N	77	f	\N	0	f	t	0.25
 7174	8	711	4	1	, ground	143	f	\N	3	f	t	1
+4579	8	193	2	1	\N	2033	f	\N	4	f	t	0.25
 7177	8	711	4	1	, plus more to taste	214	f	\N	6	f	t	1
+4988	7	125	1	6	\N	2033	f	\N	0	f	t	0.25
+1662	7	99	1	2	, for dressing	2033	f	\N	8	f	t	0.25
 4576	8	193	1	8	\N	56	f	\N	1	f	t	0.25
 4475	6	232	2	1	\N	679	f	\N	2	f	t	0.25
 7178	7	711	1	2	\N	123	f	\N	7	f	t	1
@@ -5535,9 +5531,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4992	6	125	4	1	\N	2	f	\N	4	f	t	1
 4993	0	125	1	2	, crushed 	5	f	\N	5	f	t	1
 4994	8	125	8	1	\N	285	t	\N	6	f	t	1
-1662	7	99	1	2	, for dressing	77	f	\N	8	f	t	0.25
-6535	7	595	1	2	\N	77	t	\N	8	f	t	0.25
-3426	8	44	1	1	\N	77	f	\N	4	f	t	0.25
 5307	8	318	1	2	\N	124	f	\N	3	f	t	1
 5308	0	318	1	2	\N	187	f	\N	4	f	t	1
 4266	0	19	1	1	\N	8	f	\N	1	f	t	1
@@ -5577,10 +5570,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4497	0	257	1	1	, chopped	222	f	\N	1	f	t	1
 5301	6	317	2	3	\N	721	f	\N	4	f	t	1
 5302	7	317	1	1	\N	992	f	\N	5	f	t	1
+6535	7	595	1	2	\N	2033	t	\N	8	f	t	0.25
+3426	8	44	1	1	\N	2033	f	\N	4	f	t	0.25
 4498	6	257	1	2	\N	111	f	\N	2	f	t	1
 4499	6	257	1	1	\N	123	f	\N	3	f	t	1
 6927	8	645	4	1	\N	285	t	\N	9	f	t	1
 4583	4	175	1	4	\N	641	f	\N	3	f	t	1
+5027	7	191	1	1	\N	2033	f	\N	1	f	t	0.25
 4713	6	271	1	1	, diced	222	f	\N	1	f	t	1
 5009	6	256	1	1	, 1 large or 2 small bunches	13	f	\N	0	f	t	1
 5010	6	256	4	1	\N	786	t	\N	1	f	t	1
@@ -5623,7 +5619,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4705	0	242	1	1	, cored and diced	1	f	\N	3	f	t	1
 4706	0	242	1	1	, diced	11	f	\N	4	f	t	1
 4690	7	253	1	1	\N	738	f	\N	0	f	t	1
-5027	7	191	1	1	\N	276	f	\N	1	f	t	0.25
 4692	6	253	2	1	\N	740	f	\N	2	f	t	1
 4693	6	253	2	3	\N	588	f	\N	3	f	t	1
 4694	7	253	1	3	, dried	574	f	\N	4	f	t	1
@@ -5684,10 +5679,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7237	8	720	8	1	, ground	67	t	\N	5	f	t	1
 5042	7	307	1	2	\N	802	f	\N	3	f	t	1
 5043	4	307	1	7	\N	801	f	\N	4	f	t	1
+2802	7	138	1	2	\N	2033	f	\N	7	f	t	0.25
 4815	7	263	1	1	\N	788	f	\N	0	f	t	1
 4816	0	263	2	1	\N	5	t	\N	1	f	t	1
 4817	0	263	2	1	\N	4	f	\N	2	f	t	1
 4818	4	263	1	4	\N	841	f	\N	3	f	t	1
+1210	6	63	4	1	\N	2033	f	\N	2	f	t	0.25
+7138	7	706	1	1	\N	2033	f	\N	1	f	t	0.25
+5085	7	259	1	6	, from grass-fed cows	2033	f	\N	1	f	t	0.25
 4870	4	170	1	8	\N	794	f	\N	0	f	t	1
 5044	4	307	1	8	, cooked	328	f	\N	5	f	t	1
 4781	4	306	2	1	\N	251	t	\N	0	f	t	1
@@ -5722,14 +5721,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7239	7	721	1	2	\N	82	f	\N	0	f	t	1
 7240	7	721	1	1	\N	357	f	\N	1	f	t	1
 5032	7	83	1	1	, melted	29	f	\N	4	f	t	0.25
-2802	7	138	1	2	\N	77	f	\N	7	f	t	0.25
 4749	0	272	1	6	\N	753	f	\N	3	f	t	1
 4750	0	272	1	1	\N	552	f	\N	4	f	t	1
 5087	0	259	1	1	, chopped	222	f	\N	3	f	t	1
-1210	6	63	4	1	\N	77	f	\N	2	f	t	0.25
-7138	7	706	1	1	\N	77	f	\N	1	f	t	0.25
 4751	8	272	1	1	\N	699	f	\N	5	f	t	1
-5085	7	259	1	6	, from grass-fed cows	723	f	\N	1	f	t	0.25
 5092	0	156	1	4	, unpeeled	11	f	\N	1	f	t	1
 5093	0	156	2	1	, juiced	4	t	\N	2	f	t	1
 4752	7	272	1	1	\N	754	f	\N	6	f	t	1
@@ -5771,39 +5766,39 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7248	7	722	1	1	, grated	95	f	\N	4	f	t	1
 4857	7	231	1	2	\N	29	f	\N	2	f	t	0.25
 7359	5	740	1	1	, cooked	1086	f	\N	1	f	t	1
-3894	7	178	1	1	, for frying	77	f	\N	8	f	t	0.25
-4348	7	243	1	2	\N	708	f	\N	1	f	t	1
-5054	7	241	1	3	\N	77	f	\N	1	f	t	0.25
+4348	8	243	1	2	\N	708	f	\N	1	f	f	1
+4349	0	243	2	1	, diced	222	f	\N	2	f	t	1
 4757	6	272	3	1	\N	13	f	\N	11	f	t	1
-7246	6	722	4	1	\N	77	f	\N	2	f	t	0.25
+4350	8	243	1	2	, minced	5	f	\N	3	f	t	1
 7249	8	722	8	1	\N	214	t	\N	5	f	t	1
-7243	6	721	2	1	\N	77	f	\N	4	f	t	0.25
+4351	6	243	1	2	\N	691	f	\N	4	f	t	1
 4758	8	272	8	1	\N	285	f	\N	12	f	t	1
 8257	7	979	1	2	\N	322	f	\N	4	f	t	1
 8258	8	979	1	1	\N	1646	f	\N	5	f	t	1
 4906	0	234	1	2	, thinly sliced	671	f	\N	0	f	t	1
-4349	0	243	2	1	, diced	222	f	\N	2	f	t	1
 5477	0	378	1	2	, cored and thinly sliced	661	f	\N	1	f	t	1
+3894	7	178	1	1	, for frying	2033	f	\N	8	f	t	0.25
 5452	0	374	1	4	\N	187	f	\N	1	f	t	1
+5054	7	241	1	3	\N	2033	f	\N	1	f	t	0.25
+7246	6	722	4	1	\N	2033	f	\N	2	f	t	0.25
 4908	8	234	8	1	\N	74	f	\N	2	f	f	1
 5458	0	375	1	2	, halved and thinly sliced	222	f	\N	2	f	t	1
 5459	0	375	1	2	, cut into 1½-inch cubes	387	f	\N	3	f	t	1
 5450	6	373	4	1	\N	1732	f	\N	1	f	t	1
 5451	4	373	4	1	\N	87	f	\N	2	f	t	1
+7243	6	721	2	1	\N	2033	f	\N	4	f	t	0.25
+4352	6	243	1	2	, finely chopped or chiffonade	16	f	\N	5	f	t	1
+4353	7	243	1	1	\N	699	f	\N	6	f	t	1
 5949	6	486	2	1	\N	10	f	\N	0	f	t	1
+4354	8	243	8	1	\N	692	f	\N	7	f	t	1
 7344	6	737	4	1	, minced	222	f	\N	2	f	t	1
 3440	7	50	1	2	\N	61	f	\N	1	f	t	1
 3441	8	50	8	1	\N	285	t	\N	2	f	t	1
 7345	6	737	2	1	\N	721	f	\N	3	f	t	1
-4350	8	243	1	2	, minced	5	f	\N	3	f	t	1
-4351	6	243	1	2	\N	691	f	\N	4	f	t	1
 5467	0	376	1	1	\N	733	f	\N	0	f	t	1
 5445	5	372	1	1	\N	982	f	\N	0	f	t	1
 5446	4	372	1	4	\N	368	f	\N	1	f	t	1
 5447	0	372	1	2	\N	4	f	\N	2	f	t	1
-4352	6	243	1	2	, finely chopped or chiffonade	16	f	\N	5	f	t	1
-4353	7	243	1	1	\N	699	f	\N	6	f	t	1
-4354	8	243	8	1	\N	692	f	\N	7	f	t	1
 7346	6	737	4	1	\N	85	f	\N	4	f	t	1
 7347	8	737	8	1	\N	285	f	\N	5	f	t	1
 2359	8	53	8	1	\N	74	t	\N	1	f	t	1
@@ -5871,29 +5866,29 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7259	6	724	4	1	\N	421	f	\N	3	f	t	1
 7260	7	724	1	2	\N	189	f	\N	4	f	t	0.25
 7261	6	724	4	1	\N	95	f	\N	5	f	t	1
-5530	7	387	2	3	\N	958	f	\N	0	f	t	1
 5514	4	384	1	2	\N	251	t	\N	3	f	t	1
-3720	7	190	1	2	\N	77	f	\N	2	f	t	0.25
-4246	7	195	1	3	, divided	77	f	\N	1	f	t	0.25
+5530	7	387	2	3	\N	958	f	\N	1	f	t	1
+5531	0	387	1	1	\N	4	f	\N	2	f	t	1
 5559	4	391	1	24	, thawed gently	\N	f	411	1	f	t	1
-8249	7	261	1	1	\N	77	f	\N	5	f	f	0.25
-4343	6	251	4	1	, use more if needed	77	f	\N	2	f	t	0.25
+5532	4	387	1	3	\N	957	f	\N	3	f	t	1
+8249	7	261	1	1	\N	2033	f	\N	5	f	f	0.25
+4246	7	195	1	3	, divided	2033	f	\N	1	f	t	0.25
+5533	4	387	1	3	\N	956	f	\N	4	f	t	1
 5561	0	391	1	1	, peeled and diced	3	f	\N	3	f	t	1
 5503	7	382	1	1	, ground	168	f	\N	4	f	t	1
 5515	4	384	1	8	, cooked	1197	f	\N	4	f	t	1
 5516	4	384	2	3	\N	283	t	\N	5	f	t	1
+4343	6	251	4	1	, use more if needed	2033	f	\N	2	f	t	0.25
+5535	8	387	8	1	\N	692	f	\N	6	f	t	1
 4633	6	267	1	5	\N	246	f	\N	10	f	t	1
 4634	8	267	4	1	\N	285	f	\N	11	f	t	1
 5510	0	383	1	2	\N	917	f	\N	4	f	t	1
 5511	7	383	1	2	\N	321	f	\N	5	f	t	1
 2725	4	146	1	5	, chopped	119	f	\N	3	f	t	1
+3720	8	190	1	2	\N	2033	f	\N	2	f	f	0.25
 2726	8	146	1	2	\N	322	t	\N	4	f	t	1
 5586	8	394	8	1	, to taste	74	t	\N	4	f	t	1
-5531	0	387	1	1	\N	4	f	\N	1	f	t	1
-5532	4	387	1	3	\N	957	f	\N	2	f	t	1
-5533	4	387	1	3	\N	956	f	\N	3	f	t	1
 5504	5	382	4	5	\N	918	f	\N	5	f	t	1
-5535	8	387	8	1	\N	692	f	\N	5	f	t	1
 5517	7	385	1	1	\N	238	f	\N	1	f	t	1
 8253	7	979	1	1	\N	1371	f	\N	0	f	t	1
 5518	0	385	1	4	\N	750	f	\N	2	f	t	1
@@ -5976,6 +5971,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5649	6	403	1	1	, chopped into small pieces	372	f	\N	1	f	t	1
 4503	8	257	4	1	\N	285	f	\N	7	f	t	1
 5668	0	407	1	1	, sliced	1	f	\N	0	f	t	1
+7251	6	723	4	1	\N	2033	f	\N	2	f	t	0.25
+5472	7	377	1	2	\N	2033	f	\N	4	f	t	0.25
+5588	7	395	1	2	\N	2033	f	\N	1	f	t	0.25
+2727	7	146	1	2	\N	2033	f	\N	5	f	t	0.25
 5622	0	399	1	1	, cut into pieces	975	f	\N	1	f	t	1
 5623	6	399	1	2	, chopped	736	f	\N	2	f	t	1
 5624	6	399	1	2	\N	156	f	\N	3	f	t	1
@@ -5986,26 +5985,22 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5660	8	405	2	1	\N	490	f	\N	2	f	t	1
 5661	6	405	1	1	\N	976	f	\N	3	f	t	1
 5662	8	405	2	1	, to taste	681	t	\N	4	f	t	1
-7251	6	723	4	1	\N	77	f	\N	2	f	t	0.25
 5630	0	400	1	2	, peeled	\N	f	65	2	f	t	1
 5631	7	400	1	1	\N	965	f	\N	3	f	t	1
 5632	6	400	4	3	\N	747	f	\N	4	f	t	1
 5633	8	400	4	1	\N	74	t	\N	5	f	t	1
-5472	7	377	1	2	\N	77	f	\N	4	f	t	0.25
-5588	7	395	1	2	\N	77	f	\N	1	f	t	0.25
 5650	8	403	8	1	, to taste	692	f	\N	2	f	t	1
 5663	0	406	1	1	\N	9	f	\N	1	f	t	1
 5615	6	398	3	1	\N	215	f	\N	3	f	t	1
-2727	7	146	1	2	\N	77	f	\N	5	f	t	0.25
-5485	7	260	1	1	\N	77	f	\N	5	f	t	0.25
-5488	7	379	1	1	\N	77	f	\N	2	f	t	0.25
 5664	9	406	1	8	\N	178	f	\N	2	f	t	1
 5665	8	406	2	1	, to taste	681	t	\N	3	f	t	1
 5666	6	406	4	1	\N	805	f	\N	4	f	t	1
 5667	6	406	4	1	\N	1008	f	\N	5	f	t	1
+5485	7	260	1	1	\N	2033	f	\N	5	f	t	0.25
 5580	7	393	1	1	\N	968	f	\N	3	f	t	1
 5581	8	393	4	1	\N	692	t	\N	4	f	t	1
 5645	6	402	1	1	, diced	981	t	\N	4	f	t	1
+5488	7	379	1	1	\N	2033	f	\N	2	f	t	0.25
 5646	0	402	1	1	, juiced	12	t	\N	5	f	t	1
 5647	7	402	2	3	\N	39	t	\N	6	f	t	1
 5654	7	404	1	1	\N	1174	f	\N	1	f	t	1
@@ -6020,13 +6015,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5721	0	418	1	6	, cooked and chopped	985	f	\N	1	f	t	1
 5722	0	418	3	1	, minced	3	f	\N	2	f	t	1
 5723	0	418	1	2	, minced	5	t	\N	3	f	t	1
-5706	7	416	1	1	\N	77	f	\N	0	f	t	0.25
+5697	7	414	1	1	\N	81	f	\N	2	f	t	1
 5707	0	416	2	1	, diced	222	f	\N	1	f	t	1
 5745	6	421	4	1	\N	39	f	\N	0	f	t	1
 5746	6	421	4	1	\N	358	f	\N	1	f	t	1
 4368	5	249	1	2	, I used rainbow carrots. Chopped into similar sized spears	7	f	\N	7	f	t	1
 5708	5	416	1	1	\N	988	f	\N	2	f	t	1
-5697	7	414	1	1	\N	81	f	\N	2	f	t	1
+5728	7	419	1	1	\N	991	f	\N	1	f	t	1
 5724	6	418	2	1	, sliced	16	f	\N	4	f	t	1
 7212	6	717	4	1	, diced	985	t	\N	1	f	t	1
 4317	0	34	1	2	\N	5	t	\N	4	f	t	1
@@ -6038,7 +6033,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5735	5	420	1	1	\N	126	f	\N	1	f	t	1
 5687	6	412	1	1	\N	\N	f	411	1	f	t	1
 5688	8	412	8	1	, to taste	692	f	\N	2	f	t	1
-5736	7	420	1	4	\N	77	f	\N	2	f	t	0.25
+5698	7	414	1	1	\N	215	f	\N	3	f	t	1
 5955	6	486	4	1	, or add 1 teaspoon of vanilla to plain protein powder	1297	t	\N	6	f	t	1
 5702	12	415	1	1	\N	123	f	\N	0	f	t	1
 5703	6	415	4	1	, halved	251	f	\N	1	f	t	1
@@ -6051,39 +6046,39 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6201	0	553	1	2	\N	910	f	\N	7	f	t	1
 5760	6	423	1	4	\N	372	f	\N	1	f	t	1
 5753	6	422	2	1	\N	995	f	\N	1	f	t	0.25
-5728	7	419	1	1	\N	991	f	\N	1	f	t	1
 5600	6	396	2	1	, cubed	594	t	\N	7	f	t	0.25
-5614	7	398	1	1	\N	77	f	\N	2	f	t	0.25
+5699	7	414	2	1	\N	357	f	\N	4	f	t	1
 5761	0	423	1	2	\N	5	t	\N	2	f	t	1
 5762	0	423	2	1	, chopped	222	f	\N	3	f	t	1
-4502	7	257	1	1	\N	77	f	\N	6	f	t	0.25
-5730	0	419	1	1	, juiced	12	f	\N	3	f	t	1
-5731	8	419	8	1	\N	143	f	\N	4	f	t	1
-5732	8	419	4	1	\N	307	f	\N	5	f	t	1
-5733	0	419	2	1	, minced	5	t	\N	6	f	t	1
+5700	8	414	4	1	\N	503	t	\N	5	f	t	1
 5715	0	417	1	1	, chopped small	812	f	\N	1	f	t	1
 5716	0	417	3	1	, minced	3	f	\N	2	f	t	1
 5717	0	417	1	2	, minced	5	t	\N	3	f	t	1
 5718	6	417	2	1	, chopped small	372	f	\N	4	f	t	1
+5706	7	416	1	1	\N	2033	f	\N	0	f	t	0.25
 5765	0	423	1	1	, juiced	4	f	\N	6	f	t	1
 5752	6	422	1	1	, pitted	152	f	\N	0	f	t	1
-5747	7	421	1	2	\N	77	f	\N	2	f	t	0.25
+5701	8	414	8	1	, to taste	969	t	\N	6	f	t	1
 5754	6	422	2	1	, shredded	907	f	\N	2	f	t	1
 5755	7	422	1	2	\N	738	f	\N	3	f	t	1
 5756	8	422	2	1	, alcohol free	40	f	\N	4	f	t	1
 5757	7	422	1	2	\N	215	f	\N	5	f	t	1
 5758	0	422	1	1	, zested and juiced	12	f	\N	6	f	t	1
-5698	7	414	1	1	\N	215	f	\N	3	f	t	1
+5730	0	419	1	1	, juiced	12	f	\N	3	f	t	1
 5738	0	420	1	1	, juiced	4	f	\N	4	f	t	1
-5699	7	414	2	1	\N	357	f	\N	4	f	t	1
+5731	8	419	8	1	\N	143	f	\N	4	f	t	1
 5719	8	417	8	1	. to taste	692	t	\N	5	f	t	1
-5700	8	414	4	1	\N	503	t	\N	5	f	t	1
-5701	8	414	8	1	, to taste	969	t	\N	6	f	t	1
+5732	8	419	4	1	\N	307	f	\N	5	f	t	1
+5733	0	419	2	1	, minced	5	t	\N	6	f	t	1
 5739	6	420	1	2	, quartered	1186	f	\N	5	f	t	1
 5740	0	420	1	2	, cut into large pieces	811	f	\N	6	f	t	1
 5269	8	84	1	1	\N	67	f	\N	7	f	t	1
+5614	7	398	1	1	\N	2033	f	\N	2	f	t	0.25
 5671	6	409	4	5	\N	1320	f	\N	0	f	t	1
+4502	7	257	1	1	\N	2033	f	\N	6	f	t	0.25
 5648	7	402	1	1	, minced	251	t	\N	7	f	t	1
+5736	7	420	1	4	\N	2033	f	\N	2	f	t	0.25
+5747	7	421	1	2	\N	2033	f	\N	2	f	t	0.25
 5748	7	421	1	1	\N	357	f	\N	3	f	t	1
 5749	0	421	1	1	, minced	5	f	\N	4	f	t	1
 5750	7	421	1	1	, minced	2	f	\N	5	f	t	1
@@ -6132,14 +6127,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3169	7	160	1	4	\N	32	t	\N	10	f	t	0.75
 5795	6	430	2	1	, cut in half	147	t	\N	1	f	t	1
 5796	0	430	2	1	\N	8	f	\N	2	f	t	1
-5811	8	432	1	1	\N	39	f	\N	0	f	t	1
+5811	8	432	1	1	\N	39	f	\N	1	f	t	1
 5778	8	426	1	2	\N	39	f	\N	3	f	t	1
 4029	6	185	4	5	\N	562	f	\N	11	f	t	0.75
 3473	0	165	2	1	\N	396	t	\N	4	f	t	1
-5779	7	426	1	1	\N	77	f	\N	4	f	t	0.25
 5780	5	427	1	1	, diced	1122	f	\N	1	f	t	1
 1725	7	100	1	1	\N	29	f	\N	5	f	t	0.25
-5764	8	423	1	4	\N	77	f	\N	5	f	f	0.25
 5781	0	427	1	2	, diced	150	f	\N	2	f	t	1
 5782	0	427	1	2	, peeled and diced	7	f	\N	3	f	t	1
 5860	6	469	1	2	, drained, flaked	1635	f	\N	0	f	t	1
@@ -6155,9 +6148,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5783	0	427	1	1	, diced	597	f	\N	4	f	t	1
 5857	6	468	2	1	\N	1633	f	\N	1	f	t	1
 5861	0	469	1	1	, peeled and mashed	9	f	\N	1	f	t	1
-5812	8	432	1	1	\N	60	f	\N	1	f	t	1
-5813	8	432	1	1	\N	74	f	\N	2	f	t	1
+5779	7	426	1	1	\N	2033	f	\N	4	f	t	0.25
+5812	8	432	1	1	\N	60	f	\N	2	f	t	1
+5813	8	432	1	1	\N	74	f	\N	3	f	t	1
 5797	0	430	4	1	, finely chopped	105	f	\N	3	f	t	1
+5764	8	423	1	4	\N	2033	f	\N	5	f	f	0.25
+5815	0	432	1	1	, juiced	4	f	\N	5	f	t	1
 5862	8	469	8	1	, to taste	692	t	\N	2	f	t	1
 5863	7	469	1	2	, chopped	144	f	\N	3	f	t	1
 5786	0	428	1	1	, juiced	4	f	\N	0	f	t	1
@@ -6167,8 +6163,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5846	8	465	2	1	\N	74	f	\N	2	f	t	1
 4028	7	185	1	1	\N	660	t	\N	10	f	t	1
 5798	0	430	1	1	, peeled and diced	155	f	\N	4	f	t	1
-5815	0	432	1	1	, juiced	4	f	\N	4	f	t	1
-5816	8	432	8	1	, to taste	692	t	\N	5	f	t	1
 5788	8	428	1	1	, to taste	681	t	\N	2	f	t	1
 5789	6	429	1	1	, loosely-packed	13	f	\N	0	f	t	1
 5790	6	429	1	1	\N	806	f	\N	1	f	t	1
@@ -6199,7 +6193,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5894	0	474	1	1	, juiced and zested	12	f	\N	1	f	t	1
 5895	8	474	8	1	\N	214	f	\N	2	f	t	1
 5274	6	312	2	3	, drained and rinsed	419	f	\N	5	f	t	1
-5875	6	471	4	1	\N	77	f	\N	0	f	t	0.25
 5275	6	312	2	5	\N	1000	f	\N	6	f	t	1
 5935	6	482	1	1	, tough ends trimmed	122	f	\N	2	f	t	1
 5936	6	482	1	1	\N	\N	f	543	3	f	t	1
@@ -6228,7 +6221,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7127	4	704	1	14	\N	1284	f	\N	4	f	t	0.75
 5918	6	479	2	1	, minced	251	t	\N	3	f	t	1
 5276	8	312	1	1	\N	68	f	\N	7	f	t	1
-5885	7	408	1	1	\N	77	f	\N	1	f	t	0.25
 5886	8	408	4	1	\N	692	f	\N	2	f	t	1
 5908	0	478	1	2	, peeled and sliced	\N	f	65	0	f	t	1
 5909	0	478	1	1	, chopped	155	f	\N	1	f	t	1
@@ -6249,6 +6241,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5278	8	312	8	1	\N	285	f	\N	9	f	t	1
 5932	0	481	1	2	, juiced	4	f	\N	1	f	t	1
 5933	7	481	1	1	\N	1075	f	\N	2	f	t	1
+5875	6	471	4	1	\N	2033	f	\N	0	f	t	0.25
+5885	7	408	1	1	\N	2033	f	\N	1	f	t	0.25
 5711	6	416	4	1	, mashed	9	f	\N	5	f	t	1
 5712	0	416	1	1	, diced	17	t	\N	6	f	t	1
 5713	0	416	1	1	, juiced	12	f	\N	7	f	t	1
@@ -6314,6 +6308,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6003	0	522	1	1	, thinly sliced	222	f	\N	3	f	t	1
 6004	8	522	2	1	\N	71	t	\N	4	f	t	1
 6005	8	522	2	1	\N	323	t	\N	5	f	t	1
+5940	6	483	4	1	\N	2033	f	\N	2	f	t	0.25
+6007	7	522	1	2	\N	2033	f	\N	7	f	t	0.25
+6771	7	311	1	2	, divided	2033	f	\N	6	f	t	0.25
 6041	6	528	4	1	, diced	155	f	\N	3	f	t	1
 6042	7	528	1	2	, diced	105	f	\N	4	f	t	1
 6043	7	528	1	1	, chopped	13	t	\N	5	f	t	1
@@ -6324,7 +6321,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6469	0	588	1	1	, chopped	217	f	\N	2	f	t	1
 6085	6	535	2	3	\N	807	f	\N	0	f	t	1
 8262	8	361	8	1	\N	692	t	\N	7	f	t	1
-5940	6	483	4	1	\N	77	f	\N	2	f	t	0.25
 8265	7	787	1	2	\N	82	f	\N	6	f	t	1
 8266	8	787	8	1	\N	692	t	\N	7	f	t	1
 6008	8	522	4	1	\N	67	t	\N	8	f	t	1
@@ -6332,7 +6328,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6086	0	535	1	20	, unsweetened	627	f	\N	1	f	t	1
 6087	6	535	3	1	\N	1200	f	\N	2	f	t	1
 6065	6	531	1	1	\N	1101	f	\N	0	f	t	1
-6007	7	522	1	2	\N	77	f	\N	7	f	t	0.25
 6066	7	531	1	2	\N	1420	f	\N	1	f	t	1
 6020	0	525	1	1	, peeled and chopped small	9	f	\N	0	f	t	1
 6021	6	525	1	1	, chopped small	147	f	\N	1	f	t	1
@@ -6340,7 +6335,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6023	8	525	2	1	\N	323	f	\N	3	f	t	1
 6024	8	525	4	1	, to taste	692	t	\N	4	f	t	1
 1578	6	96	3	1	, medium dry or sweet	85	f	\N	4	f	t	1
-6771	7	311	1	2	, divided	77	f	\N	6	f	t	0.25
 6056	6	530	3	1	, chopped	17	f	\N	1	f	t	1
 6190	0	552	1	1	\N	4	f	\N	0	f	t	1
 6191	0	552	1	1	\N	346	f	\N	1	f	t	1
@@ -6385,7 +6379,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6104	0	538	1	1	\N	671	f	\N	4	f	t	1
 6150	8	545	4	1	\N	581	t	\N	4	f	t	1
 6156	6	546	8	1	\N	1129	f	\N	1	f	t	0.25
-8268	7	326	1	1	\N	77	f	\N	6	f	t	0.25
 6157	7	546	1	1	\N	991	f	\N	2	f	t	1
 6158	7	546	2	1	\N	1102	f	\N	3	f	t	1
 6159	7	546	4	3	\N	245	f	\N	4	f	t	1
@@ -6395,11 +6388,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6162	0	546	2	1	, grated	5	t	\N	7	f	t	1
 6107	0	540	1	2	, cubed	387	f	\N	1	f	t	1
 6140	0	544	1	1	\N	9	f	\N	0	f	t	1
-8269	7	561	1	1	\N	77	f	\N	4	f	t	0.25
-8271	7	118	2	1	\N	77	f	\N	2	f	t	0.25
-6081	7	533	1	1	\N	77	f	\N	2	f	t	0.25
 6142	7	544	1	3	\N	13	f	\N	2	f	t	1
-6138	6	543	2	1	\N	77	f	\N	3	f	t	0.25
 6091	8	536	1	2	, ground	510	f	\N	1	f	t	1
 6092	8	536	2	1	\N	71	f	\N	2	f	t	1
 6151	8	545	4	1	\N	1075	t	\N	5	f	t	1
@@ -6412,7 +6401,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6122	0	541	1	4	, minced	5	f	\N	2	f	t	1
 6123	4	541	1	16	, peeled and deveined	1111	f	\N	3	f	t	1
 6089	8	535	4	1	, to taste	74	f	\N	4	f	t	1
-6178	7	549	1	2	\N	77	f	\N	3	f	t	0.25
 6179	8	549	1	2	\N	39	f	\N	4	f	t	1
 6180	8	549	4	1	, to taste	692	t	\N	5	f	t	1
 6135	0	543	1	2	, juiced	4	f	\N	0	f	t	1
@@ -6435,11 +6423,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6090	5	536	1	1	\N	988	f	\N	0	f	t	1
 6093	8	536	4	1	, to taste	692	t	\N	3	f	t	1
 7360	6	740	4	1	\N	123	f	\N	2	f	t	1
-6094	8	536	1	1	\N	1053	f	\N	4	f	t	0.25
 7361	6	740	1	1	, halved	147	f	\N	3	f	t	1
 6131	8	542	4	1	, to taste	692	t	\N	3	f	t	1
 7362	6	740	2	1	\N	1714	f	\N	4	f	t	1
+8268	7	326	1	1	\N	2033	f	\N	6	f	t	0.25
+8269	7	561	1	1	\N	2033	f	\N	4	f	t	0.25
+8271	7	118	2	1	\N	2033	f	\N	2	f	t	0.25
 6132	0	542	1	1	, zested	4	f	\N	4	f	t	1
+6081	7	533	1	1	\N	2033	f	\N	2	f	t	0.25
 6134	6	542	1	1	\N	\N	f	410	6	f	t	1
 6170	8	548	1	2	\N	323	f	\N	0	f	t	1
 6171	8	548	1	1	\N	1596	f	\N	1	f	t	1
@@ -6448,6 +6439,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6174	8	548	1	1	\N	322	f	\N	4	f	t	1
 6175	8	548	1	1	\N	214	f	\N	5	f	t	1
 7363	6	740	4	1	\N	\N	f	721	5	f	t	1
+6138	6	543	2	1	\N	2033	f	\N	3	f	t	0.25
 6154	8	545	8	1	\N	1709	t	\N	8	f	t	1
 6185	8	550	1	1	\N	323	f	\N	5	f	t	1
 6241	0	559	1	4	\N	916	f	\N	1	f	t	1
@@ -6477,15 +6469,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6242	7	559	1	1	\N	80	f	\N	2	f	t	1
 6466	8	587	1	1	\N	74	t	\N	7	f	t	0.25
 6282	6	566	4	1	\N	61	f	\N	0	f	t	1
-6250	7	561	1	1	\N	77	f	\N	0	f	t	0.25
-6287	7	567	1	1	\N	77	f	\N	1	f	t	0.25
 6210	5	555	1	1	\N	1086	f	\N	1	f	t	1
-8272	7	963	1	2	\N	77	f	\N	3	f	t	0.25
 6554	0	598	1	1	\N	150	f	\N	4	f	t	1
 6555	0	598	2	1	, small	155	f	\N	5	f	t	1
 6212	0	555	1	2	, sliced thin	225	t	\N	3	f	t	1
 6243	0	559	1	2	\N	150	f	\N	3	f	t	1
-6283	4	566	1	5	\N	1205	f	\N	1	f	t	0.25
 8238	8	978	4	1	\N	214	t	\N	5	f	t	1
 6244	0	559	1	1	\N	222	f	\N	4	f	t	1
 6803	9	633	1	14	\N	178	f	\N	1	f	t	1
@@ -6511,15 +6499,19 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4807	4	265	1	15	\N	419	f	\N	4	f	t	1
 4808	0	265	1	1	\N	9	f	\N	6	f	t	1
 4809	0	265	1	1	, juiced	12	t	\N	7	f	t	1
+6250	7	561	1	1	\N	2033	f	\N	0	f	t	0.25
 5293	6	315	3	4	\N	266	f	\N	4	f	t	1
 6246	6	559	1	1	\N	123	f	\N	6	f	t	1
 6237	6	558	1	1	, packed	16	f	\N	6	f	t	1
 6253	0	561	1	1	, minced superfine	5	f	\N	5	f	t	1
 6254	7	561	1	3	\N	81	f	\N	6	f	t	1
 6255	8	561	4	1	, to taste	692	t	\N	7	f	t	1
+6287	7	567	1	1	\N	2033	f	\N	1	f	t	0.25
+8272	7	963	1	2	\N	2033	f	\N	3	f	t	0.25
 8273	7	309	1	4	\N	82	f	\N	5	f	t	1
 6804	8	633	1	2	\N	593	f	\N	2	f	t	1
 6257	0	562	1	12	\N	187	f	\N	0	f	t	1
+6283	4	566	1	5	\N	2033	f	\N	1	f	t	0.25
 6284	7	566	1	1	, chopped	144	f	\N	2	f	t	1
 6285	0	566	1	1	, finely chopped	150	f	\N	3	f	t	1
 6286	6	566	4	1	, chopped	2	f	\N	4	f	t	1
@@ -6548,31 +6540,25 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6353	0	575	1	1	, diced	1088	t	\N	8	f	t	1
 6064	0	530	1	8	\N	1073	f	\N	9	f	t	0.25
 6290	6	567	1	4	\N	303	f	\N	4	f	t	0.25
-7263	7	725	1	2	\N	77	f	\N	1	f	t	0.25
-6335	6	574	2	1	\N	77	f	\N	1	f	t	0.25
 6334	8	1	4	1	\N	360	t	\N	7	f	t	1
-6797	7	632	1	3	, divided	77	f	\N	2	f	t	0.25
 6310	0	570	1	1	\N	159	f	\N	0	f	t	1
 6311	0	571	1	2	, chopped	789	f	\N	0	f	t	1
 6289	8	567	4	1	, to taste	692	t	\N	3	f	t	1
-6202	7	554	1	1	\N	77	f	\N	0	f	t	0.25
 6291	6	567	2	1	, shredded	736	f	\N	5	f	t	1
 6292	6	567	1	1	\N	1062	f	\N	6	f	t	1
-7370	7	741	1	1	\N	77	f	\N	4	f	t	0.25
 7328	8	265	8	1	\N	692	t	\N	5	f	t	1
-5956	6	487	1	1	\N	147	t	\N	0	f	t	1
-5957	0	487	1	1	, cut into long strips	599	f	\N	1	f	t	1
-5958	0	487	1	1	, cut into ¼ inch sticks	861	f	\N	2	f	t	1
-5959	4	487	1	8	, cut in halves	156	t	\N	3	f	t	1
-6412	7	582	1	2	\N	77	f	\N	2	f	t	0.25
+5956	6	487	1	1	\N	147	t	\N	1	f	t	1
+7263	7	725	1	2	\N	2033	f	\N	1	f	t	0.25
+6335	6	574	2	1	\N	2033	f	\N	1	f	t	0.25
+6797	7	632	1	3	, divided	2033	f	\N	2	f	t	0.25
+6202	7	554	1	1	\N	2033	f	\N	0	f	t	0.25
 7264	6	725	2	1	, diced	222	t	\N	2	f	t	1
 7265	6	725	4	1	, diced	736	t	\N	3	f	t	1
 7266	6	725	4	1	, diced	1286	t	\N	4	f	t	1
 6367	6	577	1	1	\N	\N	f	629	1	f	t	1
 8274	8	309	4	1	\N	74	f	\N	6	f	t	1
-5960	0	487	1	1	, cut into long slices	1066	f	\N	4	f	t	1
+7370	7	741	1	1	\N	2033	f	\N	4	f	t	0.25
 6368	0	577	1	1	, chopped into bite-sized pieces	6	f	\N	2	f	t	1
-7771	7	860	1	3	, divided	77	f	\N	0	f	t	0.25
 6354	0	575	1	1	, peeled and sliced	9	f	\N	9	f	t	1
 6359	0	576	1	2	\N	\N	f	966	1	f	t	1
 6361	0	576	1	8	\N	174	f	\N	2	f	t	1
@@ -6613,11 +6599,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6341	6	574	1	2	, chopped	13	t	\N	7	f	t	1
 6342	6	574	1	2	, chopped	2	t	\N	8	f	t	1
 6133	8	542	1	1	, chopped	577	t	\N	5	f	t	1
+5957	0	487	1	1	, cut into long strips	599	f	\N	2	f	t	1
+5958	0	487	1	1	, cut into ¼ inch sticks	861	f	\N	3	f	t	1
 6063	0	530	1	1	, peeled and sliced	9	f	\N	8	f	t	1
+5959	4	487	1	8	, cut in halves	156	t	\N	4	f	t	1
 6293	6	567	2	1	\N	90	f	\N	7	f	t	1
 6294	6	567	4	1	\N	\N	t	537	8	f	t	1
+5960	0	487	1	1	, cut into long slices	1066	f	\N	5	f	t	1
+6412	7	582	1	2	\N	2033	f	\N	2	f	t	0.25
 5873	6	470	1	1	\N	\N	f	858	5	f	t	1
-6441	7	585	1	1	\N	1053	f	\N	1	f	f	0.25
 6369	0	577	1	1	, cored and sliced thin	1126	f	\N	3	f	t	1
 6370	0	577	1	2	, peeled and grated	7	f	\N	4	f	t	1
 6371	0	577	1	1	, diced	8	f	\N	5	f	t	1
@@ -6656,18 +6646,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6446	0	585	1	2	, diced	150	f	\N	6	f	t	1
 6447	0	585	1	6	\N	5	t	\N	7	f	t	1
 6376	6	577	2	1	, unroasted, halved, chopped small	92	t	\N	9	f	t	1
-6452	8	586	1	1	\N	1053	f	\N	1	f	f	0.25
+6402	0	39	2	1	, deseeded and finely chopped	224	t	\N	7	f	t	1
 6453	0	586	1	1	, chopped	1264	f	\N	2	f	t	1
 6454	0	586	1	1	, minced	5	t	\N	3	f	t	1
 6426	7	583	1	2	\N	61	f	\N	3	f	t	1
 6398	6	580	2	1	\N	61	f	\N	8	f	t	1
-8280	7	317	1	1	\N	77	f	\N	2	f	t	0.25
 7364	4	740	1	5	, drained	1204	f	\N	6	f	t	1
 6410	0	582	1	2	, diced	255	f	\N	0	f	t	1
-7352	7	738	1	1	\N	77	f	\N	4	f	t	0.25
-7603	8	836	1	1	\N	77	t	\N	1	f	t	0.25
-7964	7	911	1	2	\N	77	f	\N	8	f	t	0.25
-8062	7	956	1	1	\N	77	f	\N	1	f	t	0.25
 6411	6	582	1	1	, cooked	57	f	\N	1	f	t	1
 321	6	41	2	1	\N	30	t	\N	5	f	t	1
 8277	0	717	1	1	\N	910	t	\N	8	f	t	1
@@ -6675,25 +6660,31 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6461	6	587	1	1	, such as celery, broccoli, carrot, shredded	1766	f	\N	2	f	t	1
 6462	0	587	1	2	, cubed	387	f	\N	3	f	t	1
 6463	4	587	1	4	\N	1765	f	\N	4	f	t	1
-8025	7	951	1	1	\N	77	f	\N	1	f	t	0.25
 8278	4	717	2	1	\N	577	t	\N	9	f	t	1
 6455	0	586	1	1	, chopped	150	f	\N	4	f	t	1
 6456	6	586	1	3	\N	111	f	\N	5	f	t	1
 6457	6	586	1	4	, chopped	1263	f	\N	6	f	t	1
 6436	7	584	1	1	, chopped	14	f	\N	5	f	t	1
 6437	8	584	4	1	, to taste	692	t	\N	6	f	t	1
-6402	0	39	2	1	, deseeded and finely chopped	224	t	\N	6	f	t	1
-8034	7	952	1	1	\N	77	f	\N	2	f	t	0.25
+8280	7	317	1	1	\N	2033	f	\N	2	f	t	0.25
+7352	7	738	1	1	\N	2033	f	\N	4	f	t	0.25
+7603	8	836	1	1	\N	2033	t	\N	1	f	t	0.25
+7964	7	911	1	2	\N	2033	f	\N	8	f	t	0.25
 7365	8	740	8	1	\N	285	f	\N	7	f	t	1
-8052	7	264	1	1	\N	77	f	\N	7	f	t	0.25
-8073	7	957	1	1	\N	77	f	\N	4	f	t	0.25
+8062	7	956	1	1	\N	2033	f	\N	1	f	t	0.25
+8025	7	951	1	1	\N	2033	f	\N	1	f	t	0.25
+8034	7	952	1	1	\N	2033	f	\N	2	f	t	0.25
+8052	7	264	1	1	\N	2033	f	\N	7	f	t	0.25
 6379	6	578	1	2	, chopped	1078	f	\N	2	f	t	1
 6380	6	578	1	1	, chopped	255	f	\N	3	f	t	1
 6381	6	578	1	1	, chopped	736	f	\N	4	f	t	1
+8073	7	957	1	1	\N	2033	f	\N	4	f	t	0.25
 5303	4	317	2	3	\N	95	f	\N	6	f	t	1
 8279	8	317	4	1	\N	692	f	\N	8	f	t	1
+6452	8	586	1	1	\N	2033	f	\N	1	f	f	0.25
 6464	7	587	1	1	\N	1075	t	\N	5	f	t	1
 6395	6	580	3	1	, diced	1286	t	\N	5	f	t	1
+6441	7	585	1	1	\N	2033	f	\N	1	f	f	0.25
 7271	6	726	1	2	, chopped small	1711	f	\N	1	f	t	1
 6549	0	597	1	4	\N	1074	f	\N	5	f	t	0.25
 7272	6	726	4	1	, cooked	1713	f	\N	2	f	t	1
@@ -6706,6 +6697,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6408	7	581	1	1	\N	81	f	\N	5	f	t	1
 6409	8	581	4	1	, to taste	74	t	\N	6	f	t	1
 6194	0	552	1	1	(CAPSULE ACTIVATED CHARCOAL	159	f	\N	4	f	t	1
+5961	7	487	1	2	\N	2033	f	\N	6	f	t	0.25
 6216	6	555	4	1	, sliced	1087	f	\N	7	f	t	1
 6273	8	564	4	1	, to taste	692	t	\N	7	f	t	1
 7277	6	727	2	1	, diced	222	f	\N	2	f	t	1
@@ -6721,22 +6713,21 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6545	6	597	2	1	\N	789	f	\N	1	f	t	1
 6546	6	597	4	1	\N	1094	f	\N	2	f	t	1
 6547	6	597	2	1	\N	178	f	\N	3	f	t	1
-5962	8	487	4	1	, to taste	74	t	\N	6	f	t	1
 6478	6	589	2	1	\N	188	f	\N	0	f	t	1
 6479	6	589	2	1	\N	123	f	\N	1	f	t	1
 5474	8	377	1	1	\N	143	t	\N	6	f	t	1
 5475	8	377	4	1	\N	285	t	\N	7	f	t	1
-6500	7	592	1	2	\N	77	f	\N	2	f	t	0.25
 6548	0	597	4	1	\N	9	f	\N	4	f	t	1
-7276	7	727	1	1	\N	77	f	\N	1	f	f	0.25
-7179	7	183	1	1	\N	77	f	\N	3	f	t	0.25
 6550	6	598	1	1	\N	806	f	\N	0	f	t	1
-8362	7	834	1	1	\N	77	f	\N	3	f	t	0.25
-5961	6	487	4	1	\N	278	f	\N	5	f	t	0.25
-8086	8	959	1	1	\N	77	t	\N	2	f	f	0.25
+5962	8	487	8	1	, to taste	74	t	\N	7	f	t	1
+6500	7	592	1	2	\N	2033	f	\N	2	f	t	0.25
 6551	6	598	1	1	\N	1099	f	\N	1	f	t	1
 6552	0	598	2	1	\N	1043	f	\N	2	f	t	1
 6553	7	598	1	1	\N	738	f	\N	3	f	t	1
+7276	7	727	1	1	\N	2033	f	\N	1	f	f	0.25
+7179	7	183	1	1	\N	2033	f	\N	3	f	t	0.25
+8086	8	959	1	1	\N	2033	t	\N	2	f	f	0.25
+8362	7	834	1	1	\N	2033	f	\N	3	f	t	0.25
 6491	0	591	2	1	, chopped	110	f	\N	4	f	t	1
 7594	4	834	1	8	, cooked	1197	f	\N	5	f	t	1
 7595	8	834	1	2	\N	1413	f	\N	6	f	t	1
@@ -6779,11 +6770,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7270	8	725	8	1	\N	285	t	\N	8	f	t	1
 6591	6	603	4	1	\N	61	f	\N	4	f	t	1
 6560	6	599	1	1	\N	1586	f	\N	0	f	t	1
-6600	7	607	1	1	, for cooking	1104	f	\N	1	f	t	0.25
+1726	7	100	1	1	, or Shortening in place of Butter and Oil	2033	f	\N	6	f	t	0.25
+1074	7	73	1	2	 (24g)	2033	f	\N	3	f	t	0.25
+3921	7	196	1	1	, for frying	2033	f	\N	15	f	t	0.25
+6600	7	607	1	1	, for cooking	2033	f	\N	1	f	t	0.25
 6601	0	607	1	1	, diced	217	f	\N	2	f	t	1
 6602	5	607	4	3	, cut in half	156	f	\N	3	f	t	1
 6269	8	564	1	1	\N	322	t	\N	3	f	t	1
 6270	8	564	1	1	\N	581	t	\N	4	f	t	1
+6528	7	595	1	1	\N	2033	f	\N	1	f	f	0.25
 7433	4	750	1	7	\N	784	f	\N	1	f	t	1
 6592	4	604	1	1	\N	983	f	\N	0	f	t	1
 6623	6	609	1	4	, heated	111	f	\N	4	f	t	1
@@ -6797,7 +6792,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7434	4	750	1	1	\N	807	f	\N	2	f	t	1
 7435	4	750	1	17	\N	377	f	\N	3	f	t	1
 6588	4	603	1	8	\N	\N	f	987	1	f	t	1
-6528	7	595	1	1	\N	77	f	\N	1	f	f	0.25
 6529	0	595	1	4	, finely chopped	5	t	\N	2	f	t	1
 7284	6	728	2	1	, diced	1336	f	\N	1	f	t	1
 7285	7	728	1	2	\N	737	f	\N	2	f	t	1
@@ -6822,10 +6816,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6534	6	595	1	4	\N	1181	t	\N	7	f	t	1
 7355	6	739	2	1	, grated	736	f	\N	1	f	t	1
 6563	6	599	1	1	\N	1092	f	\N	3	f	t	1
-1726	7	100	1	1	, or Shortening in place of Butter and Oil	78	f	\N	6	f	t	0.25
 6629	0	610	1	4	\N	5	f	\N	1	f	t	1
 6597	0	606	1	2	\N	22	f	\N	0	f	t	1
-1074	7	73	1	2	 (24g)	78	f	\N	3	f	t	0.25
 6599	4	606	1	1	\N	49	f	\N	2	f	t	1
 6564	6	600	1	1	\N	1101	f	\N	0	f	t	1
 6565	6	600	1	1	\N	806	f	\N	1	f	t	1
@@ -6833,7 +6825,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6631	7	610	1	1	, grated	699	f	\N	3	f	t	1
 6632	0	610	1	1	, peeled and diced small	222	f	\N	4	f	t	1
 6633	0	610	1	2	, diced	150	f	\N	5	f	t	1
-3921	7	196	1	1	, for frying	78	f	\N	15	f	t	0.25
 6634	0	610	1	2	(SMALL CARROTS), peeled and diced	736	f	\N	6	f	t	1
 6635	0	610	1	1	, peeled and diced	255	f	\N	7	f	t	1
 6636	6	610	1	1	, whole	147	f	\N	8	f	t	1
@@ -6872,28 +6863,24 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6644	6	611	1	1	, diced	594	f	\N	2	f	t	0.25
 7332	0	735	1	12	\N	147	t	\N	3	f	t	1
 8284	8	186	1	1	\N	601	t	\N	2	f	t	1
-5906	7	477	1	1	\N	77	f	\N	5	f	t	0.25
 6687	0	617	1	1	, part-baked	213	f	\N	0	f	t	1
 6645	0	611	2	1	, diced	222	f	\N	3	f	t	1
 6688	0	617	1	2	\N	1130	f	\N	1	f	t	1
-7292	7	729	1	1	\N	77	f	\N	2	f	t	0.25
 7291	6	729	1	2	\N	1290	f	\N	1	f	t	1
 6646	0	611	1	2	, peeled and chopped	671	f	\N	4	f	t	1
 7293	6	729	4	1	, grated	95	t	\N	3	f	t	1
 6671	8	385	2	1	\N	82	t	\N	6	f	t	1
 6707	7	619	1	1	\N	29	f	\N	5	f	t	0.25
 7333	7	735	1	2	\N	\N	f	722	4	f	t	1
+7292	7	729	1	1	\N	2033	f	\N	2	f	t	0.25
 6365	7	576	1	2	, chopped, for garnish	144	t	\N	6	f	t	1
-6658	8	485	1	1	\N	77	f	\N	4	f	f	0.25
 5907	8	477	8	1	, to taste	692	t	\N	6	f	t	1
 7294	8	729	4	1	\N	833	t	\N	4	f	t	1
 7295	8	729	4	1	\N	214	f	\N	5	f	t	1
 7296	8	729	1	2	, juiced	4	t	\N	6	f	t	1
 6657	7	485	1	2	\N	62	f	\N	3	f	t	1
-6676	7	615	1	2	\N	77	f	\N	3	f	t	0.25
 6659	8	485	8	1	\N	833	t	\N	5	f	t	1
 6660	6	485	1	1	, to serve	\N	t	484	6	f	t	1
-7331	7	735	1	1	\N	77	t	\N	2	f	f	0.25
 7334	8	735	8	1	\N	285	t	\N	5	f	t	1
 6366	7	576	1	1	, for garnish	1371	t	\N	7	f	t	1
 6661	7	485	1	2	, sliced, to serve	144	t	\N	7	f	t	1
@@ -6905,6 +6892,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6648	6	611	1	1	, diced	6	f	\N	6	f	t	1
 6649	7	611	1	1	, grated	307	t	\N	7	f	t	1
 6650	0	611	1	2	, minced	5	t	\N	8	f	t	1
+5906	7	477	1	1	\N	2033	f	\N	5	f	t	0.25
+6658	8	485	1	1	\N	2033	f	\N	4	f	f	0.25
+6676	7	615	1	2	\N	2033	f	\N	3	f	t	0.25
+7331	7	735	1	1	\N	2033	t	\N	2	f	f	0.25
 6128	8	541	4	1	, to taste	692	t	\N	8	f	t	1
 6703	6	619	2	1	\N	1385	f	\N	1	f	t	1
 6704	0	619	1	4	, (US scallops)	1386	f	\N	2	f	t	1
@@ -6942,6 +6933,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6722	6	620	1	1	, to serve	277	t	\N	9	f	t	1
 6723	0	620	1	1	, to serve	22	t	\N	10	f	t	1
 6724	7	620	1	1	, to serve	547	t	\N	11	f	t	1
+6758	8	369	1	1	\N	2033	f	\N	3	f	f	0.25
 6730	0	622	1	2	\N	1496	f	\N	0	f	t	1
 5914	6	478	2	1	, cooked	6	f	\N	6	f	t	1
 6458	6	586	1	2	\N	1262	f	\N	7	f	t	1
@@ -6953,15 +6945,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5540	0	388	1	1	, finely minced	5	f	\N	5	f	t	1
 5541	6	388	1	2	, cooked & cooled	97	f	\N	6	f	t	1
 6754	6	625	2	1	, diced	105	f	\N	4	f	t	1
-6758	8	369	1	1	\N	77	f	\N	3	f	f	0.25
 6759	8	369	1	1	\N	82	f	\N	4	f	f	1
 6735	7	623	1	6	\N	234	f	\N	2	f	t	1
 6772	7	311	1	1	\N	82	t	\N	7	f	t	1
 6773	8	311	4	1	\N	692	t	\N	8	f	t	1
-5543	7	388	1	1	\N	656	f	\N	8	f	t	0.25
 6114	8	540	4	1	, to taste	692	t	\N	8	f	t	1
 6115	7	540	1	1	, grated	307	f	\N	9	f	t	1
 6116	0	540	1	1	, zested	346	f	\N	10	f	t	1
+5543	7	388	1	1	\N	2033	f	\N	8	f	t	0.25
 5714	7	416	1	2	\N	13	t	\N	8	f	t	1
 5915	6	478	4	1	\N	1643	t	\N	7	f	t	1
 6796	0	632	1	1	\N	1618	f	\N	1	f	t	1
@@ -7107,7 +7098,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6952	6	647	2	3	\N	111	f	\N	8	f	t	1
 6919	7	645	1	1	\N	38	f	\N	1	f	t	1
 6928	0	646	1	4	(BEEF TENDERLOIN (FILLETS) OR SIRLOIN BEAF STEAKS)	114	f	\N	1	f	t	1
-8288	8	980	1	1	\N	77	t	\N	2	f	f	0.25
 6875	0	641	1	3	\N	9	f	\N	0	f	t	1
 6876	0	641	1	2	, juiced	4	f	\N	1	f	t	1
 6877	8	641	2	1	\N	214	f	\N	2	f	t	1
@@ -7169,13 +7159,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6940	8	628	4	1	\N	75	f	\N	3	f	t	1
 6941	0	628	1	2	, to taste	910	t	\N	4	f	t	1
 6942	0	628	1	2	, lightly smashed	5	t	\N	5	f	t	1
-7298	7	730	1	2	\N	77	f	\N	2	f	t	0.25
 6910	5	644	1	1	, cut into thin strips	1746	f	\N	1	f	t	1
-6929	7	646	3	1	\N	77	f	\N	2	f	t	0.25
 7302	7	730	1	2	\N	123	f	\N	6	f	t	1
-6943	7	382	1	1	\N	77	f	\N	2	f	t	0.25
 6926	7	645	1	2	, chopped	800	t	\N	8	f	t	1
-7204	7	716	1	1	\N	77	f	\N	0	f	t	0.25
 8289	0	980	1	12	\N	147	t	\N	3	f	t	1
 8290	8	980	8	1	\N	969	t	\N	5	f	f	1
 5684	7	410	1	1	, chopped	979	t	\N	5	f	t	1
@@ -7183,14 +7169,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6862	7	639	1	1	, shreded, to garnish	302	f	\N	13	f	t	1
 7231	8	719	1	2	, aka. Chili Paste	1306	f	\N	4	f	t	1
 7232	7	719	1	1	, grated	1301	f	\N	5	f	t	1
-6864	7	640	1	3	\N	78	f	\N	1	f	t	0.25
 6911	0	644	1	1	, grated and juiced	346	f	\N	2	f	t	1
-6921	7	645	1	1	\N	233	f	\N	3	f	f	0.25
+8288	8	980	1	1	\N	2033	t	\N	2	f	f	0.25
+7298	7	730	1	2	\N	2033	f	\N	2	f	t	0.25
+6929	7	646	3	1	\N	2033	f	\N	2	f	t	0.25
+6943	7	382	1	1	\N	2033	f	\N	2	f	t	0.25
 4626	7	267	1	1	\N	143	f	\N	3	f	t	1
+7204	7	716	1	1	\N	2033	f	\N	0	f	t	0.25
 5619	7	398	1	1	\N	123	f	\N	7	f	t	1
+6864	7	640	1	3	\N	2033	f	\N	1	f	t	0.25
+6921	7	645	1	1	\N	2033	f	\N	3	f	f	0.25
 6256	7	561	1	1	\N	14	t	\N	3	f	t	1
 6955	6	647	1	1	, chopped, to garnish	13	t	\N	11	f	t	1
-7338	7	736	1	1	\N	77	f	\N	2	f	t	0.25
 7336	0	736	1	1	(RISOTTO BASE, p77)	159	f	\N	0	f	t	1
 5484	7	378	1	1	\N	468	t	\N	8	f	t	1
 6696	0	618	1	2	, beaten	187	f	\N	4	f	t	1
@@ -7205,6 +7195,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7337	6	736	4	1	(FROZEN PEAS)	600	f	\N	1	f	t	1
 7305	6	317	1	5	\N	\N	f	858	7	f	t	1
 6653	7	611	1	2	\N	81	f	\N	11	f	t	1
+7338	7	736	1	1	\N	2033	f	\N	2	f	t	0.25
 6985	6	653	4	3	, plus 1 Tbsp water. 194g (approx. 194mL)	123	f	\N	0	f	t	1
 6986	6	653	4	9	, 293g	195	f	\N	1	f	t	1
 6987	7	653	2	1	, 6g	36	f	\N	2	f	t	1
@@ -7218,14 +7209,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6982	8	652	1	1	, 5g	214	f	\N	4	f	t	1
 7026	0	660	1	2	, beaten	187	f	\N	4	f	t	1
 6984	8	652	1	1	(RAPID RISE YEAST), 3g	41	f	\N	6	f	t	1
-3927	7	197	1	2	, divided	78	f	\N	6	f	f	0.25
 7000	0	656	1	2	, cored and peeled	1326	f	\N	1	f	t	1
 6997	6	655	1	1	\N	1006	f	\N	0	f	t	1
 6998	7	655	1	1	\N	1087	f	\N	1	f	t	1
 6999	7	655	1	1	\N	614	f	\N	2	f	t	1
 6699	7	618	1	6	\N	29	f	\N	7	f	t	0.25
-6700	7	618	1	4	\N	77	f	\N	8	f	t	0.25
-7017	7	659	1	1	\N	77	f	\N	2	f	t	0.25
 6901	0	643	1	1	\N	1206	f	\N	1	f	t	1
 6902	0	643	3	1	\N	9	f	\N	2	f	t	1
 6903	0	643	2	1	\N	150	f	\N	3	f	t	1
@@ -7249,7 +7237,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6959	7	648	1	1	, for the crust	40	f	\N	4	f	t	1
 5923	0	479	1	1	, juiced	4	f	\N	8	f	t	1
 7340	7	736	1	2	, grated	95	f	\N	4	f	t	1
+6700	7	618	1	4	\N	2033	f	\N	8	f	t	0.25
 6971	8	479	4	1	, to taste	692	t	\N	10	f	t	1
+7017	7	659	1	1	\N	2033	f	\N	2	f	t	0.25
+3927	7	197	1	2	, divided	2033	f	\N	6	f	f	0.25
 6991	8	654	8	1	\N	214	t	\N	1	f	t	1
 6992	4	654	1	2	\N	19	f	\N	2	f	t	1
 7007	6	657	2	1	\N	669	f	\N	2	f	t	1
@@ -7278,18 +7269,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7018	8	659	8	1	\N	969	f	\N	3	f	t	1
 7021	0	659	1	2	\N	187	f	\N	6	f	t	1
 7123	6	704	1	1	, peeled and diced	264	f	\N	0	f	t	1
-7372	7	106	1	1	\N	77	f	\N	5	f	t	0.25
 5482	6	378	2	1	\N	1210	f	\N	6	f	t	1
 5483	6	378	4	1	, unsweetened	1211	f	\N	7	f	t	1
 6281	8	565	4	1	, to taste	692	t	\N	8	f	t	1
-7030	8	384	1	2	\N	77	f	\N	7	f	t	0.25
+5165	0	39	4	1	, finely chopped	105	t	\N	6	f	t	1
 7109	6	701	4	1	\N	36	f	\N	2	f	t	1
 7117	0	703	1	1	, diced	9	f	\N	1	f	t	1
 7118	0	703	2	1	, juiced	12	f	\N	2	f	t	1
 7119	7	703	1	1	, minced	105	t	\N	3	f	t	1
 7120	7	703	1	1	, diced	1088	t	\N	4	f	t	1
 7121	7	703	2	1	, chopped	13	t	\N	5	f	t	1
-7052	7	664	1	1	\N	77	f	\N	1	f	f	0.25
 7053	5	664	1	1	\N	488	f	\N	2	f	t	1
 7054	6	664	1	1	, diced	222	f	\N	3	f	t	1
 6793	7	631	1	1	, for dressing	280	f	\N	6	f	t	1
@@ -7313,7 +7302,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7104	0	700	1	1	(1 SHEET FROZEN PUFF PASTRY), thawed	568	f	\N	2	f	t	1
 7105	0	700	1	6	, sliced	172	f	\N	3	f	t	1
 7106	7	700	1	2	\N	196	f	\N	4	f	t	1
-5165	0	39	4	1	, finely chopped	105	t	\N	5	f	t	1
 7112	6	702	2	1	\N	171	f	\N	1	f	t	0.75
 7055	6	664	1	2	, peas, carrots, green beans	209	f	\N	4	f	t	1
 7057	8	664	8	1	\N	285	f	\N	6	f	t	1
@@ -7324,9 +7312,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7108	6	701	2	1	\N	171	f	\N	1	f	t	0.75
 7107	4	701	1	8	, at room temperature	1636	f	\N	0	f	t	0.75
 6326	8	572	4	1	, to taste	692	t	\N	10	f	t	1
-7135	7	705	1	2	\N	77	f	\N	5	f	t	0.25
 7111	6	701	1	1	\N	1637	f	\N	4	f	t	1
-3881	7	133	1	3	\N	78	f	\N	3	f	t	0.25
 6935	8	646	4	1	\N	285	f	\N	8	f	t	1
 6936	7	646	1	2	, to garnish	1261	t	\N	9	f	t	1
 6937	6	646	1	1	, to serve	1260	t	\N	10	f	t	1
@@ -7339,8 +7325,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7022	7	659	1	2	, grated	319	t	\N	7	f	t	1
 7090	6	698	1	1	\N	806	f	\N	0	f	t	1
 7093	8	698	4	1	\N	214	f	\N	3	f	t	1
+7372	7	106	1	1	\N	2033	f	\N	5	f	t	0.25
+7030	8	384	1	2	\N	2033	f	\N	7	f	t	0.25
 7031	6	661	2	1	\N	36	f	\N	1	f	t	1
 7032	6	661	4	1	\N	123	f	\N	2	f	t	1
+7052	7	664	1	1	\N	2033	f	\N	1	f	f	0.25
 7039	6	662	2	1	\N	61	f	\N	2	f	t	1
 7035	7	661	1	2	\N	340	f	\N	5	f	t	1
 7036	8	661	2	1	\N	40	f	\N	6	f	t	1
@@ -7352,6 +7341,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7134	7	705	1	1	, plus more to taste	358	f	\N	4	f	t	1
 7047	0	663	1	1	, thinly sliced	1043	f	\N	2	f	t	1
 7136	8	705	4	1	\N	285	f	\N	6	f	t	1
+7135	7	705	1	2	\N	2033	f	\N	5	f	t	0.25
+3881	7	133	1	3	\N	2033	f	\N	3	f	t	0.25
 7048	7	663	1	3	, or store-bought Italian dressing	282	f	\N	3	f	t	1
 7049	0	663	1	2	\N	1265	f	\N	4	f	t	1
 7040	0	662	1	1	, juiced	12	f	\N	3	f	t	1
@@ -7362,7 +7353,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7043	8	662	4	1	\N	214	t	\N	6	f	t	1
 7029	7	384	1	1	\N	82	f	\N	6	f	t	1
 7116	6	702	4	1	\N	1268	f	\N	5	f	t	1
-4747	7	272	1	2	\N	722	f	\N	1	f	t	0.25
 6973	6	651	4	3	, divided	36	f	\N	0	f	t	1
 6974	8	651	1	1	\N	1256	f	\N	1	f	t	1
 6975	8	651	4	1	\N	214	f	\N	2	f	t	1
@@ -7370,25 +7360,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6977	6	651	2	1	\N	123	f	\N	4	f	t	1
 4754	0	272	1	1	, minced	222	f	\N	8	f	t	1
 3062	8	120	4	1	\N	285	t	\N	10	f	t	1
+4448	7	245	1	1	, melt for one minute in oven while it is preheating, in oven proof container	2033	f	\N	4	f	t	0.25
+6756	7	625	1	1	\N	2033	f	\N	6	f	f	0.25
 8294	6	981	1	1	\N	1655	f	\N	1	f	t	1
 8296	6	981	1	1	\N	1128	f	\N	3	f	t	1
 8297	0	981	1	12	\N	627	f	\N	4	f	t	1
 3063	8	120	1	1	\N	251	t	\N	11	f	t	1
 2148	7	117	1	2	, drained and rinsed	419	t	\N	5	f	t	1
-4365	6	249	3	1	\N	278	f	\N	4	f	t	0.25
 2150	6	117	4	1	\N	\N	t	116	7	f	t	1
 2151	7	117	1	2	, diced	17	t	\N	8	f	t	1
-7798	7	751	1	1	\N	278	f	\N	7	f	t	0.25
-5803	7	430	1	2	\N	278	f	\N	9	f	t	0.25
-8281	7	317	1	1	\N	278	f	\N	9	f	t	0.25
 4446	6	245	2	1	, hulled	158	f	\N	2	f	t	1
-5457	7	375	1	1	\N	722	f	\N	1	f	t	0.25
-4625	7	267	1	4	\N	722	f	\N	2	f	t	0.25
-7621	7	840	1	1	\N	1781	f	\N	2	f	t	0.25
 2152	0	117	1	1	, quarter sliced	9	t	\N	9	f	t	1
-7679	6	846	1	4	\N	79	f	\N	9	f	t	0.25
-7998	6	945	1	1	\N	79	f	\N	7	f	t	0.25
-7858	8	870	1	1	\N	79	f	\N	6	f	t	0.25
 3776	0	189	1	1	, seeded and thinly sliced	598	f	\N	5	f	t	1
 3777	6	189	3	8	\N	397	f	\N	6	f	t	1
 3778	0	189	1	1	, chopped	224	t	\N	7	f	t	1
@@ -7409,39 +7391,25 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8597	6	1041	3	1	\N	78	f	\N	8	f	t	1
 8598	6	1041	1	1	\N	61	f	\N	9	f	t	1
 6755	6	625	2	1	, diced	255	f	\N	5	f	t	1
-6756	7	625	1	1	\N	77	f	\N	6	f	f	0.25
 7846	7	869	1	2	, divided	189	f	\N	1	f	t	0.25
 8621	8	988	4	1	\N	214	f	\N	6	f	t	1
-8007	8	947	1	1	\N	79	f	\N	1	f	f	0.25
 7034	7	661	1	3	\N	189	f	\N	4	f	t	0.25
 7857	7	870	1	8	, melted	189	f	\N	5	f	t	0.25
 7114	7	702	1	1	\N	189	f	\N	3	f	t	0.25
 4582	6	175	4	1	\N	190	f	\N	2	f	t	0.25
 6835	6	637	1	1	, at toom temperature, diced	190	f	\N	1	f	t	0.25
-6643	8	611	1	2	, divided	964	f	\N	1	f	t	0.25
-5626	7	399	1	1	\N	964	t	\N	5	f	t	0.25
-6628	7	610	1	2	\N	964	f	\N	0	f	t	0.25
 8651	7	1046	1	1	\N	77	f	\N	0	f	t	1
-6559	7	598	1	1	, liquified	964	f	\N	9	f	t	0.25
-6850	7	639	1	2	\N	78	f	\N	1	f	t	0.25
-5478	7	378	1	3	, divided	176	f	\N	2	f	t	0.25
-5696	7	414	1	1	\N	176	f	\N	1	f	t	0.25
-6468	7	588	1	2	\N	176	f	\N	1	f	t	0.25
-6393	7	580	1	1	\N	176	f	\N	3	f	t	0.25
 7742	6	856	4	1	\N	368	f	\N	8	f	t	1
 7743	7	856	1	1	\N	\N	f	846	9	f	t	1
 4447	6	245	2	1	, coarsely chopped	92	f	\N	3	f	t	1
 6238	6	558	1	1	, chopped and peeled	155	f	\N	7	f	t	1
 6239	6	558	1	1	\N	669	f	\N	8	f	t	1
-4448	7	245	1	1	, melt for one minute in oven while it is preheating, in oven proof container	76	f	\N	4	f	t	0.25
 4449	8	245	4	1	\N	74	f	\N	5	f	t	1
 4450	6	245	2	1	\N	574	f	\N	6	f	t	1
 4451	8	245	1	1	, ground	70	f	\N	7	f	t	1
-6240	7	558	1	1	\N	870	f	\N	9	f	t	0.25
 6323	0	572	1	1	, juiced	4	f	\N	7	f	t	1
 6325	7	572	1	3	\N	\N	t	550	9	f	t	1
 4452	6	245	4	1	\N	687	f	\N	8	f	t	1
-5651	7	403	1	1	\N	964	f	\N	3	f	t	0.25
 6651	5	611	1	1	, cubed into 1" cubes.	1112	f	\N	9	f	t	1
 6652	6	611	1	2	, de-stemmed and sliced thin	372	f	\N	10	f	t	1
 8652	0	1046	1	1	, diced	1642	f	\N	1	f	t	1
@@ -7455,7 +7423,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6015	6	523	4	1	, halved or quartered, to garnish	1008	t	\N	4	f	t	1
 8364	0	986	1	3	, sliced into thin strips	811	f	\N	1	f	t	1
 8197	8	972	4	1	, grated	72	f	\N	6	f	t	1
-6488	7	591	1	1	\N	964	f	\N	1	f	t	0.25
 8365	0	986	1	1	, sliced into thin strips	1725	f	\N	2	f	t	1
 8366	0	986	1	2	, stems removed and sliced into strips	1738	t	\N	3	f	t	1
 8367	0	986	1	3	, peeled and mashed	5	t	\N	4	f	t	1
@@ -7471,7 +7438,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8400	6	991	8	1	, diced	224	t	\N	8	f	t	1
 7382	6	743	4	1	, diced	222	f	\N	2	f	t	1
 8198	7	972	1	2	\N	38	f	\N	7	f	t	1
-6346	7	575	1	1	\N	964	f	\N	1	f	t	0.25
 8200	8	972	8	1	\N	285	f	\N	9	f	t	1
 8201	6	972	1	1	(GREEN SALAD, to serve	1063	f	\N	10	f	t	1
 7050	8	663	8	1	\N	285	t	\N	5	f	t	1
@@ -7491,20 +7457,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6345	6	574	1	2	\N	368	f	\N	11	f	t	1
 7386	6	743	1	1	\N	862	f	\N	6	f	t	1
 8479	7	996	1	1	, chopped	709	t	\N	9	f	t	1
-8469	7	33	1	2	\N	1592	t	\N	8	f	t	1
-8470	0	33	1	1	, chopped	222	t	\N	5	f	t	1
 8471	0	33	1	1	, chopped	1308	t	\N	6	f	t	1
 8472	0	33	1	1	, shredded	736	t	\N	7	f	t	1
 8396	0	991	1	2	, diced	144	f	\N	4	f	t	1
 5433	0	369	1	4	\N	144	t	\N	8	f	t	1
-6129	8	542	1	1	\N	499	f	\N	1	f	f	0.25
 870	6	67	4	1	\N	89	t	\N	5	f	t	1
 871	0	67	1	2	\N	216	t	\N	6	f	t	1
 7486	6	396	1	1	, to serve	\N	t	484	8	f	t	1
-6440	8	584	1	1	\N	964	f	\N	9	f	t	0.25
 580	6	33	1	2	\N	1737	f	\N	4	f	t	1
+6129	8	542	1	1	\N	2033	f	\N	1	f	f	0.25
 8478	6	238	1	1	\N	\N	f	858	6	f	t	1
 7997	8	945	4	1	, ground	67	f	\N	6	f	t	1
+6346	7	575	1	1	\N	2033	f	\N	1	f	t	0.25
+6440	8	584	1	1	\N	2033	f	\N	9	f	t	0.25
+6488	7	591	1	1	\N	2033	f	\N	1	f	t	0.25
 7696	7	849	1	1	, for garnish	1261	t	\N	8	f	t	1
 6382	6	578	1	1	, chopped	821	f	\N	5	f	t	1
 6383	0	578	1	1	, chopped	222	f	\N	6	f	t	1
@@ -7514,6 +7480,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6740	6	623	3	4	\N	626	f	\N	7	f	t	1
 5298	7	316	1	2	\N	100	f	\N	5	f	t	1
 5432	6	369	4	3	\N	33	t	\N	7	f	t	1
+8469	7	33	1	2	\N	1592	t	\N	8	f	t	1
+8470	0	33	1	1	, chopped	222	t	\N	5	f	t	1
 8192	7	972	1	1	\N	29	f	\N	1	f	t	0.25
 8480	8	996	1	1	\N	1764	t	\N	8	f	f	1
 8401	0	992	2	1	\N	105	f	\N	1	f	t	1
@@ -7563,11 +7531,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6052	6	529	4	1	, chopped	872	f	\N	7	f	t	1
 6053	6	529	4	1	, chopped	473	t	\N	8	f	t	1
 8102	7	961	1	1	, to garnish	1342	t	\N	7	f	t	1
-3668	7	188	1	2	\N	278	f	\N	14	f	t	0.25
 6054	0	529	1	1	, juiced	4	t	\N	9	f	t	1
+4743	7	250	1	1	, for drizzling	2033	f	\N	8	f	t	0.25
+4907	7	234	1	1	\N	2033	f	\N	1	f	f	0.25
 8409	6	992	1	4	\N	16	f	\N	9	f	t	1
 6399	0	580	1	2	, sliced (mostly green parts)	144	f	\N	9	f	t	1
 8410	6	992	1	2	\N	1307	f	\N	10	f	t	1
+8311	7	750	2	3	\N	2033	f	\N	6	f	t	0.25
+8313	8	750	1	1	\N	2033	t	\N	9	f	t	0.25
 8481	8	825	1	1	\N	82	f	\N	6	f	t	1
 8482	8	825	4	1	\N	692	t	\N	2	f	t	1
 8498	0	1003	1	1	\N	1780	f	\N	1	f	t	1
@@ -7579,6 +7550,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8167	7	969	1	2	\N	830	f	\N	4	f	t	1
 6400	0	580	1	1	, sliced into 8 wedges	4	f	\N	10	f	t	1
 8168	0	969	1	2	, drained, cut into very thin slivers	1625	f	\N	5	f	t	1
+5486	8	260	1	1	\N	2033	t	\N	6	f	t	0.25
 8169	4	969	2	3	, finely shredded	624	f	\N	6	f	t	1
 8170	0	969	1	4	, thinly slices into rings	302	t	\N	7	f	t	1
 8171	8	969	8	1	\N	285	t	\N	8	f	t	1
@@ -7586,13 +7558,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8505	8	1003	1	1	\N	143	f	\N	8	f	t	1
 8506	8	1003	1	2	\N	1779	f	\N	9	f	t	1
 6401	0	580	1	8	, washed and dried	1073	f	\N	11	f	t	0.25
-4743	7	250	1	1	, for drizzling	278	f	\N	8	f	t	0.25
-4907	7	234	1	1	\N	278	f	\N	1	f	f	0.25
-8311	7	750	2	3	\N	278	f	\N	6	f	t	0.25
-8313	8	750	1	1	\N	278	t	\N	9	f	t	0.25
-5486	8	260	1	1	\N	278	t	\N	6	f	t	0.25
-5880	6	472	2	1	\N	278	f	\N	1	f	t	0.25
-2977	7	153	1	3	\N	278	f	\N	7	f	t	0.25
+3668	7	188	1	2	\N	2033	f	\N	14	f	t	0.25
+5880	6	472	2	1	\N	2033	f	\N	1	f	t	0.25
+2977	7	153	1	3	\N	2033	f	\N	7	f	t	0.25
 7432	6	749	3	2	\N	111	f	\N	6	f	t	1
 4755	0	272	1	2	, minced	5	t	\N	9	f	t	1
 8509	6	1003	1	2	, to serve	\N	f	484	12	f	t	1
@@ -7657,9 +7625,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7403	6	746	1	1	, for filling	1062	f	\N	6	f	t	1
 8417	8	993	4	1	, to taste	692	t	\N	7	f	t	1
 8414	6	993	4	1	, divided	29	f	\N	4	f	t	0.25
-6714	7	620	1	6	\N	278	f	\N	1	f	t	0.25
-6792	7	631	1	5	, for dressing	278	f	\N	5	f	t	0.25
-7862	7	786	1	3	\N	278	f	\N	6	f	t	0.25
+6714	7	620	1	6	\N	2033	f	\N	1	f	t	0.25
 3728	6	190	1	1	\N	246	f	\N	10	f	t	1
 3729	6	190	4	11	\N	145	f	\N	11	f	t	1
 3730	8	190	8	1	\N	285	t	\N	12	f	t	1
@@ -7668,6 +7634,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7413	6	747	2	1	\N	1062	t	\N	9	f	t	1
 7414	6	747	2	1	\N	1069	t	\N	10	f	t	1
 7415	6	747	4	1	\N	2031	t	\N	11	f	t	1
+6792	7	631	1	5	, for dressing	2033	f	\N	5	f	t	0.25
+7862	7	786	1	3	\N	2033	f	\N	6	f	t	0.25
 5725	8	418	8	1	, to taste	692	t	\N	5	f	t	1
 5726	0	418	1	6	\N	187	f	\N	6	f	t	1
 8654	0	1046	1	5	, thinly sliced	144	f	\N	3	f	t	1
@@ -7717,10 +7685,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5608	6	397	4	1	\N	1340	t	\N	8	f	t	1
 5609	6	397	2	1	\N	61	t	\N	9	f	t	1
 7482	4	745	1	10	\N	1284	f	\N	3	f	t	0.75
-6615	7	608	1	2	, divided	964	f	\N	7	f	t	0.25
 8346	7	382	1	2	\N	82	f	\N	8	f	t	1
 8347	6	382	1	2	\N	123	f	\N	9	f	t	1
-3102	7	130	1	2	\N	233	f	\N	3	f	t	0.25
 6356	6	575	4	1	, sliced	397	f	\N	11	f	t	1
 7512	0	791	1	1	\N	222	f	\N	0	f	t	1
 7513	5	791	1	2	\N	264	f	\N	1	f	t	1
@@ -7782,7 +7748,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7585	0	831	1	2	\N	187	f	\N	0	f	t	1
 5463	6	375	3	1	, low sodium	47	f	\N	7	f	t	1
 1587	0	97	1	1	\N	\N	f	44	1	f	t	1
-5727	8	418	1	1	\N	964	f	\N	7	f	f	0.25
+5727	8	418	1	1	\N	2033	f	\N	7	f	f	0.25
 6169	8	547	4	1	, to taste	692	t	\N	4	f	t	1
 7592	0	834	1	1	, such as kabocha, Crown Prince, red kuri, butternut	1414	f	\N	1	f	t	1
 6363	0	576	1	1	, sliced	597	f	\N	4	f	t	1
@@ -7793,7 +7759,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7563	0	827	1	4	\N	222	f	\N	1	f	t	1
 7564	0	827	1	5	\N	1358	f	\N	3	f	t	1
 7565	0	827	1	1	\N	975	f	\N	4	f	t	1
-8348	7	265	1	1	\N	77	f	\N	2	f	t	0.25
+8348	7	265	1	1	\N	2033	f	\N	2	f	t	0.25
 5551	4	389	1	2	, sliced	1088	t	\N	5	f	t	1
 5552	6	389	1	1	\N	417	f	\N	6	f	t	1
 7573	5	829	1	1	\N	103	f	\N	1	f	t	1
@@ -7870,9 +7836,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7633	7	34	1	2	\N	357	t	\N	5	f	t	1
 6074	6	532	4	1	\N	410	f	\N	5	f	t	1
 6076	0	532	1	1	, juiced	4	f	\N	7	f	t	1
-6055	7	529	1	1	\N	278	f	\N	10	f	t	0.25
-8403	8	992	1	2	\N	964	f	\N	3	f	f	0.25
-7396	8	744	1	1	\N	278	t	\N	7	f	t	0.25
+6055	7	529	1	1	\N	2033	f	\N	10	f	t	0.25
 6413	7	582	1	2	\N	73	t	\N	3	f	t	1
 6414	8	582	1	1	\N	323	f	\N	4	f	t	1
 6415	8	582	2	1	\N	71	f	\N	5	f	t	1
@@ -7898,9 +7862,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2320	0	127	1	6	\N	166	f	\N	11	f	t	1
 2321	0	127	1	2	, cut into strips	387	f	\N	12	f	t	1
 2322	8	127	8	1	\N	285	t	\N	13	f	t	1
-7238	7	720	1	2	\N	657	f	\N	6	f	t	0.25
 7770	6	859	1	4	, cooked	97	f	\N	10	f	t	1
 7661	8	844	1	1	\N	\N	f	1044	1	f	t	0.75
+7396	8	744	1	1	\N	2033	t	\N	7	f	t	0.25
+7238	7	720	1	2	\N	2033	f	\N	6	f	t	0.25
+8403	8	992	1	2	\N	2033	f	\N	3	f	f	0.25
 7670	0	845	1	2	\N	187	f	\N	0	f	t	1
 7645	0	843	1	1	\N	187	f	\N	0	f	t	1
 7684	6	848	1	2	\N	75	f	\N	0	f	t	1
@@ -7929,7 +7895,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7572	4	828	4	3	\N	577	t	\N	4	f	t	1
 7611	7	828	1	1	\N	82	t	\N	6	f	t	1
 7612	8	828	8	1	\N	692	t	\N	7	f	t	1
-8503	7	1003	1	1	\N	77	f	\N	6	f	t	0.25
 7726	0	855	1	6	\N	388	f	\N	0	f	t	1
 986	0	40	1	1	, to serve	139	t	\N	5	f	t	1
 7727	5	855	2	3	, cut in half (or quarter if larger)	1468	f	\N	1	f	t	1
@@ -7939,6 +7904,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 987	0	40	1	10	\N	147	f	\N	6	f	t	1
 7761	0	859	1	1	, diced	598	f	\N	1	f	t	1
 7735	0	856	1	1	(BUTTERMILK BISCUIT)	303	f	\N	1	f	t	0.25
+8503	7	1003	1	1	\N	2033	f	\N	6	f	t	0.25
+7418	7	748	1	3	, divided	2033	f	\N	1	f	t	0.25
+7427	7	749	1	3	, divided	2033	f	\N	1	f	t	0.25
 7736	8	856	1	1	\N	\N	f	1044	2	f	t	0.75
 7737	0	856	1	1	(ALL-NATURAL PORK SAUSAGE PATTY)	1358	f	\N	3	f	t	1
 6712	6	619	1	1	, to serve	1388	t	\N	10	f	t	1
@@ -7972,13 +7940,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6913	8	644	1	1	\N	196	f	\N	4	f	t	1
 6914	7	644	1	1	, finely chopped	307	f	\N	5	f	t	1
 7699	6	850	3	2	\N	1809	f	\N	2	f	t	1
-7418	7	748	1	3	, divided	176	f	\N	1	f	t	0.25
 7286	8	728	1	1	\N	1335	f	\N	3	f	t	1
 7287	4	728	1	15	, drained and rinsed	1334	f	\N	4	f	t	1
 7288	6	728	4	1	\N	215	f	\N	5	f	t	1
 7289	6	728	1	1	\N	123	f	\N	6	f	t	1
 7290	8	728	4	1	\N	285	t	\N	7	f	t	1
-7427	7	749	1	3	, divided	176	f	\N	1	f	t	0.25
 7693	8	849	8	1	\N	1390	f	\N	5	f	t	1
 7755	8	835	4	1	\N	692	t	\N	7	f	t	1
 7694	0	849	1	1	, wedged, for garnish	4	t	\N	6	f	t	1
@@ -8012,14 +7978,14 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7669	7	844	1	1	\N	\N	t	846	9	f	t	1
 7740	7	856	2	1	\N	61	f	\N	6	f	t	1
 7720	7	853	1	2	\N	1556	f	\N	5	f	t	1
-7610	7	828	1	2	, divided	77	f	\N	5	f	t	0.25
+7797	7	751	1	1	\N	82	f	\N	3	f	t	1
 7773	8	860	8	1	\N	285	f	\N	2	f	t	1
 7605	0	837	1	4	\N	811	f	\N	0	f	t	1
 7606	0	837	1	2	\N	105	f	\N	1	f	t	1
 7607	0	837	1	1	\N	975	f	\N	2	f	t	1
 7608	8	837	1	4	\N	1456	f	\N	3	f	t	1
 7609	4	837	1	2	\N	251	t	\N	4	f	t	1
-7647	7	247	2	3	\N	77	f	\N	8	f	t	0.25
+7799	8	751	8	1	\N	692	t	\N	2	f	t	1
 7774	6	860	1	1	\N	1290	f	\N	3	f	t	1
 7775	7	860	1	2	\N	123	f	\N	4	f	t	1
 7776	6	860	2	1	, sliced	222	f	\N	5	f	t	1
@@ -8069,14 +8035,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7796	4	863	1	6	\N	402	f	\N	5	f	t	1
 7828	0	866	1	2	\N	1184	f	\N	1	f	t	1
 7829	8	866	8	1	\N	285	f	\N	2	f	t	1
+7610	7	828	1	2	, divided	2033	f	\N	5	f	t	0.25
 7856	8	870	8	1	\N	285	f	\N	4	f	t	1
 7819	4	865	1	4	\N	286	f	\N	1	f	t	1
 6783	7	630	1	12	, for topping	29	f	\N	7	f	t	0.25
 7847	6	869	2	1	, diced	222	f	\N	2	f	t	1
 7835	8	867	1	1	\N	323	f	\N	0	f	t	1
 7848	0	869	1	2	\N	\N	f	946	3	f	t	1
-7797	7	751	1	1	\N	82	f	\N	6	f	t	1
-7799	8	751	8	1	\N	692	t	\N	8	f	t	1
 7821	0	865	1	2	\N	1557	f	\N	3	f	t	1
 7822	0	865	1	1	, sliced	8	f	\N	4	f	t	1
 7823	6	865	1	1	\N	\N	f	723	5	f	t	1
@@ -8093,9 +8058,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7844	8	868	4	1	\N	285	f	\N	5	f	t	1
 7845	0	868	1	4	\N	1799	f	\N	6	f	t	1
 7824	6	865	4	1	\N	123	f	\N	6	f	t	1
+7647	7	247	2	3	\N	2033	f	\N	8	f	t	0.25
+6075	7	532	1	1	\N	2033	f	\N	6	f	t	0.25
+7753	7	835	2	1	\N	2033	f	\N	5	f	t	0.25
 7832	6	866	2	1	\N	1553	f	\N	5	f	t	1
-6075	7	532	1	1	\N	77	f	\N	6	f	t	0.25
-7753	7	835	2	1	\N	77	f	\N	5	f	t	0.25
 7849	6	869	2	1	\N	1969	f	\N	4	f	t	1
 7850	6	869	1	2	\N	123	f	\N	5	f	t	1
 7851	6	869	2	1	, grated	319	f	\N	6	f	t	1
@@ -8108,8 +8074,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7722	0	854	1	1	, with leafy tops	661	f	\N	2	f	t	1
 7723	5	854	1	9	\N	404	f	\N	3	f	t	1
 7644	7	842	1	1	, chopped, for garnish	1261	t	\N	6	f	t	1
-7830	7	866	1	1	\N	77	f	\N	3	f	f	0.25
-7779	7	861	1	1	\N	77	f	\N	1	f	t	0.25
 7936	6	908	4	1	\N	61	f	\N	2	f	t	1
 7866	0	871	1	2	\N	\N	f	832	2	f	t	1
 7938	0	908	1	1	, thinly sliced	222	f	\N	4	f	t	1
@@ -8153,13 +8117,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7226	8	718	4	1	\N	214	f	\N	8	f	t	1
 8095	4	960	1	16	, softened	1636	t	\N	8	f	t	0.75
 7992	0	945	1	2	\N	387	f	\N	1	f	t	1
-7756	7	315	1	2	, divided	77	f	\N	5	f	t	0.25
 7933	8	907	4	1	\N	67	f	\N	5	f	t	1
-6915	7	644	1	1	\N	233	f	\N	6	f	t	0.25
 7949	0	910	1	1	\N	1585	f	\N	1	f	t	1
 7950	8	910	1	1	\N	214	t	\N	2	f	t	1
-7692	8	849	2	1	\N	278	f	\N	4	f	t	0.25
-7731	7	855	1	2	\N	278	f	\N	5	f	t	0.25
 7907	6	904	1	1	\N	123	f	\N	1	f	t	1
 7951	0	910	1	3	\N	1853	f	\N	3	f	t	1
 7952	6	910	4	1	, grated	135	f	\N	4	f	t	1
@@ -8168,8 +8128,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7909	8	904	4	1	\N	214	f	\N	3	f	t	1
 7910	6	904	2	1	\N	\N	f	716	4	f	t	1
 7911	0	904	1	4	(TOSTADAS)	159	f	\N	5	f	t	1
+7779	7	861	1	1	\N	2033	f	\N	1	f	t	0.25
+7756	7	315	1	2	, divided	2033	f	\N	5	f	t	0.25
 8302	5	983	1	2	, cut into wedges	1661	f	\N	1	f	t	1
 7871	8	104	8	1	\N	214	t	\N	6	f	t	1
+7830	7	866	1	1	\N	2033	f	\N	3	f	f	0.25
 7873	8	104	8	1	\N	67	t	\N	8	f	t	1
 6389	7	578	1	1	, to taste	968	t	\N	12	f	t	1
 7994	6	945	2	1	\N	38	f	\N	3	f	t	1
@@ -8182,6 +8145,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7959	8	911	2	1	\N	833	f	\N	3	f	t	1
 7960	4	911	1	1	, leaves-only	577	f	\N	4	f	t	1
 7961	0	911	1	4	, sliced	5	t	\N	5	f	t	1
+6915	7	644	1	1	\N	2033	f	\N	6	f	t	0.25
+7692	8	849	2	1	\N	2033	f	\N	4	f	t	0.25
+7731	7	855	1	2	\N	2033	f	\N	5	f	t	0.25
 7941	0	908	1	4	\N	\N	f	907	7	f	t	1
 8096	4	961	1	5	\N	277	f	\N	1	f	t	1
 8026	6	951	2	1	, diced	222	f	\N	2	f	t	1
@@ -8226,7 +8192,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8037	7	952	1	2	\N	1306	f	\N	5	f	t	1
 8038	7	952	1	2	\N	62	f	\N	6	f	t	1
 8039	8	952	8	1	\N	285	t	\N	7	f	t	1
-7802	7	826	1	1	\N	77	f	\N	6	f	t	0.25
 8069	4	957	1	4	\N	1583	f	\N	0	f	t	1
 8070	0	957	1	2	, drumstick and thigh	916	f	\N	1	f	t	1
 8071	6	957	1	8	\N	123	f	\N	2	f	t	1
@@ -8236,7 +8201,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8075	6	957	2	1	, sliced	1286	f	\N	6	f	t	1
 8030	0	951	1	2	\N	\N	f	907	6	f	t	1
 8378	6	989	2	1	\N	56	f	\N	2	f	t	0.25
-7807	7	864	1	1	\N	77	f	\N	0	f	t	0.25
 8058	6	955	2	1	\N	718	f	\N	4	f	t	1
 8059	6	955	1	1	\N	\N	f	977	5	f	t	1
 8010	0	947	1	1	\N	1214	f	\N	4	f	t	1
@@ -8252,6 +8216,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8092	6	960	4	3	\N	36	f	\N	5	f	t	1
 8093	7	960	1	1	\N	358	f	\N	6	f	t	1
 8094	8	960	8	1	\N	214	f	\N	7	f	t	1
+7802	7	826	1	1	\N	2033	f	\N	6	f	t	0.25
 8305	8	983	2	1	\N	67	f	\N	4	f	t	1
 8306	7	983	1	1	, chopped	677	t	\N	5	f	t	1
 8063	6	956	2	1	, cut into small cubes	1611	f	\N	2	f	t	1
@@ -8259,6 +8224,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8065	6	956	2	1	\N	1609	f	\N	4	f	t	1
 8066	6	956	1	1	\N	\N	f	977	5	f	t	1
 8067	7	956	1	2	\N	62	f	\N	6	f	t	1
+7807	7	864	1	1	\N	2033	f	\N	0	f	t	0.25
 8377	6	989	1	2	\N	1655	f	\N	1	f	t	1
 7990	9	944	1	8	\N	806	f	\N	1	f	t	1
 7991	7	944	1	1	\N	1580	f	\N	2	f	t	1
@@ -8268,12 +8234,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8044	8	953	1	1	\N	40	f	\N	5	f	t	1
 4814	7	264	1	2	\N	321	f	\N	5	f	t	1
 8051	8	264	1	1	\N	82	f	\N	6	f	t	1
-8056	7	955	1	1	\N	77	f	\N	2	f	t	0.25
+7438	0	751	1	1	\N	405	f	\N	1	f	t	1
 8108	4	962	1	12	, shelled	784	f	\N	1	f	t	1
 8110	4	962	1	6	, halved, or quartered if large	260	f	\N	3	f	t	1
 8111	0	962	1	4	, crushed	5	t	\N	4	f	t	1
 8172	0	970	1	4	\N	677	f	\N	0	f	t	1
 8173	0	970	1	4	\N	1617	f	\N	1	f	t	1
+8103	7	961	1	3	, for dressing	2033	f	\N	8	f	t	0.25
 8112	4	962	1	4	, cut into chunks	283	f	\N	5	f	t	1
 8174	7	970	1	5	\N	1614	f	\N	2	f	t	1
 8303	8	983	4	11	, divided, plus more to taste	214	f	\N	2	f	t	0.25
@@ -8288,28 +8255,22 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8136	4	965	2	7	\N	1743	f	\N	2	f	t	1
 8146	4	967	1	4	(SEMISWEET CHOCOLATE), broken into pieces	1597	f	\N	0	f	t	1
 8147	6	967	1	1	\N	186	f	\N	1	f	t	1
-7438	0	751	1	1	\N	405	f	\N	1	f	t	1
-7439	0	751	1	2	\N	166	t	\N	2	f	t	1
-7440	4	751	1	15	, in juice	1323	f	\N	3	f	t	1
-7441	4	751	1	4	\N	277	f	\N	4	f	t	1
-7442	4	751	1	2	\N	390	t	\N	5	f	t	1
 8151	6	967	4	1	(LIGHTLY WHIPPED CREAM)	345	t	\N	5	f	t	0.75
 8113	7	962	1	3	, chopped, plus extra to garnish	473	t	\N	6	f	t	1
 8137	4	965	1	11	\N	638	f	\N	3	f	t	1
 7993	6	945	4	1	\N	1744	f	\N	2	f	t	0.25
 8139	8	965	1	1	\N	40	f	\N	5	f	t	1
-7916	7	905	1	2	\N	77	f	\N	1	f	t	0.25
-7942	8	909	1	1	\N	77	f	\N	0	f	t	0.25
+7439	0	751	1	2	\N	166	t	\N	6	f	t	1
+7440	4	751	1	15	, in juice	1323	f	\N	5	f	t	1
 8148	7	967	1	1	\N	234	f	\N	2	f	t	1
 8152	8	967	1	1	(CHOCOLATE), grated, to decorate	1218	t	\N	6	f	t	1
 8140	6	965	4	3	\N	517	f	\N	6	f	t	1
-7922	8	906	1	1	\N	77	f	\N	1	f	t	0.25
+7441	4	751	1	4	\N	277	f	\N	7	f	t	1
 8307	8	325	4	1	\N	285	t	\N	3	f	t	1
-7872	7	104	1	1	\N	77	f	\N	7	f	t	0.25
+7442	4	751	1	2	\N	390	t	\N	8	f	t	1
 8114	0	962	1	12	\N	397	f	\N	7	f	t	1
 8154	0	968	1	1	, crushed	5	t	\N	2	f	t	1
 8115	8	962	8	1	\N	285	t	\N	8	f	t	1
-8103	7	961	1	3	, for dressing	77	f	\N	8	f	t	0.25
 8104	7	961	1	1	, for dressing	358	t	\N	9	f	t	1
 8105	8	961	2	1	, for dressing	234	t	\N	10	f	t	1
 8423	5	994	2	3	, cut in half (or quarter if larger)	1260	f	\N	2	f	t	1
@@ -8332,6 +8293,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8427	7	994	1	1	\N	1464	f	\N	6	f	t	1
 7859	0	870	1	4	\N	1593	f	\N	7	f	t	1
 7860	0	870	1	2	, split in half	1214	f	\N	8	f	t	1
+7916	7	905	1	2	\N	2033	f	\N	1	f	t	0.25
+7942	8	909	1	1	\N	2033	f	\N	0	f	t	0.25
+7922	8	906	1	1	\N	2033	f	\N	1	f	t	0.25
+7872	7	104	1	1	\N	2033	f	\N	7	f	t	0.25
+8056	7	955	1	1	\N	2033	f	\N	2	f	t	0.25
 8123	8	963	8	1	\N	285	t	\N	7	f	t	1
 8078	0	958	1	6	\N	281	f	\N	1	f	t	1
 8080	6	958	1	1	, diced	222	f	\N	3	f	t	1
@@ -8352,12 +8318,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8222	0	976	1	1	\N	387	f	\N	1	f	t	1
 8226	6	636	4	1	, leaves-only	13	t	\N	5	f	t	1
 8227	7	636	1	2	, chopped	302	t	\N	6	f	t	1
-8153	7	968	1	3	\N	77	f	\N	1	f	t	0.25
+1383	7	62	1	2	, diced	144	t	\N	6	f	t	1
 8225	6	977	1	1	\N	486	f	\N	1	f	t	1
 8157	0	968	1	6	, chopped	1625	f	\N	5	f	t	1
 8158	7	968	1	2	, chopped	2	f	\N	6	f	t	1
 8159	6	968	2	1	, halved	1171	f	\N	7	f	t	1
 8160	5	968	1	1	\N	356	f	\N	8	f	t	1
+8153	7	968	1	3	\N	2033	f	\N	1	f	t	0.25
 8384	5	990	1	3	\N	2019	f	\N	1	f	t	1
 8385	8	990	4	1	, to taste	692	f	\N	2	f	t	1
 8386	8	990	4	1	, to taste	71	f	\N	3	f	t	1
@@ -8381,8 +8348,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8212	0	974	1	4	\N	324	f	\N	3	f	t	1
 8143	0	966	1	1	\N	387	f	\N	1	f	t	1
 8218	6	974	3	2	, to serve	32	t	\N	9	f	t	0.75
-1383	7	62	1	2	\N	144	t	\N	5	f	t	1
-1384	7	62	1	2	\N	314	t	\N	6	f	t	1
 8163	7	968	1	1	, to serve	95	t	\N	11	f	t	1
 8214	8	974	8	1	\N	285	f	\N	5	f	t	1
 8215	4	974	1	7	, for the corn cakes	1660	f	\N	6	f	t	1
@@ -8393,7 +8358,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7631	6	841	4	1	\N	1623	f	\N	8	f	t	1
 8380	8	989	4	1	\N	75	f	\N	4	f	t	1
 8221	0	975	1	1	\N	22	f	\N	0	f	t	1
-8144	8	966	2	1	\N	77	f	\N	2	f	t	0.25
+1384	7	62	1	2	\N	314	t	\N	7	f	t	1
 8219	7	974	1	1	, snipped, to serve	140	t	\N	10	f	t	1
 7632	7	841	1	2	\N	40	f	\N	9	f	t	1
 8229	6	841	1	1	\N	1340	t	\N	10	f	t	1
@@ -8402,6 +8367,13 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8177	4	971	1	4	, diced	381	f	\N	2	f	t	1
 8204	6	973	2	1	\N	1636	f	\N	2	f	t	0.75
 8206	0	973	1	8	\N	1782	f	\N	4	f	t	1
+8144	8	966	2	1	\N	2033	f	\N	2	f	t	0.25
+8176	7	971	1	2	\N	2033	f	\N	1	f	t	0.25
+8079	7	958	1	3	, divided	2033	f	\N	2	f	t	0.25
+8223	8	976	2	1	\N	2033	f	\N	2	f	t	0.25
+8387	7	990	1	1	\N	2033	f	\N	4	f	f	0.25
+8213	7	974	1	2	\N	2033	f	\N	4	f	t	0.25
+8426	7	994	1	2	\N	2033	f	\N	5	f	t	0.25
 3421	0	92	1	1	, wedged, to serve	4	t	\N	8	f	t	1
 7516	4	791	1	3	\N	376	t	\N	4	f	t	1
 5855	0	467	1	1	\N	12	f	\N	6	f	t	1
@@ -8410,13 +8382,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7552	0	824	1	2	, sliced into strips	387	f	\N	7	f	t	1
 8232	8	791	4	1	\N	692	t	\N	6	f	t	1
 8145	8	966	8	1	\N	75	f	\N	3	f	t	1
-8176	7	971	1	2	\N	77	f	\N	1	f	t	0.25
-8079	7	958	1	3	, divided	77	f	\N	2	f	t	0.25
-8223	8	976	2	1	\N	77	f	\N	2	f	t	0.25
 8178	0	971	1	2	, cubed	402	f	\N	3	f	t	1
-8387	7	990	1	1	\N	77	f	\N	4	f	f	0.25
 8220	6	974	1	1	, to serve	\N	t	983	11	f	t	1
-8213	7	974	1	2	\N	233	f	\N	4	f	t	0.25
 8179	0	971	1	1	, chopped	222	f	\N	4	f	t	1
 8180	0	971	1	2	, finely chopped	5	f	\N	5	f	t	1
 8181	0	971	1	2	, seeded and chopped	811	f	\N	6	f	t	1
@@ -8425,7 +8392,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8184	7	971	1	3	, chopped	2	f	\N	9	f	t	1
 8185	0	971	1	8	\N	1411	f	\N	10	f	t	1
 8186	8	971	8	1	\N	214	f	\N	11	f	t	1
-8426	7	994	1	2	\N	278	f	\N	5	f	t	0.25
 8208	8	973	8	1	\N	67	f	\N	6	f	t	1
 8209	0	973	1	1	(JACKET POTATOES RECIPE), to serve	806	t	\N	7	f	t	1
 8439	0	996	1	1	\N	1723	f	\N	1	f	t	1
@@ -8446,11 +8412,10 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5228	4	192	1	2	\N	624	f	\N	7	f	t	1
 5720	0	417	1	6	\N	187	f	\N	6	f	t	1
 8441	7	996	1	1	, shaved	95	t	\N	3	f	t	1
-8437	7	995	1	1	\N	1731	f	\N	7	f	t	0.25
 8493	6	1002	1	5	, chopped into small pieces	1080	f	\N	1	f	t	1
 8494	6	1002	1	2	, cooked and cooled	1187	f	\N	2	f	t	1
 7557	4	825	1	15	\N	1287	f	\N	8	f	t	1
-8190	8	971	1	1	, for frying, for the garlic crumbs	1598	t	\N	15	f	t	0.25
+3723	8	190	1	1	\N	73	f	\N	5	f	t	1
 8474	4	1000	1	4	, cut into 1-inch cubes	1653	f	\N	2	f	t	1
 8475	0	1000	1	1	, crushed	1590	t	\N	3	f	t	1
 8187	8	971	4	1	\N	73	f	\N	12	f	t	1
@@ -8458,17 +8423,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7170	8	710	4	1	\N	285	t	\N	7	f	t	1
 8357	6	985	2	1	\N	1923	f	\N	5	f	t	0.25
 8189	0	971	1	4	, for the garlic crumbs	\N	t	975	14	f	t	1
-8486	7	1001	1	3	\N	676	f	\N	3	f	t	0.25
 7318	8	732	8	1	, ground	67	f	\N	6	f	t	1
-8308	7	367	1	1	\N	77	f	\N	2	f	t	0.25
 5313	6	319	2	1	, drained and rinsed	419	f	\N	5	f	t	1
 8191	0	971	1	2	, bruised, for the garlic crumbs	5	t	\N	16	f	t	1
-3723	8	190	1	1	\N	73	f	\N	5	f	t	1
 8484	0	1001	1	1	, grated or processed in food processor	5	t	\N	1	f	t	1
-8207	7	973	1	1	\N	77	f	\N	5	f	t	0.25
 8466	8	725	1	1	\N	578	t	\N	9	f	t	1
 8467	8	725	1	1	\N	1726	t	\N	10	f	t	1
-8473	6	1000	4	1	\N	77	f	\N	1	f	t	0.25
 8468	8	725	1	1	\N	1727	t	\N	11	f	t	1
 7044	8	662	8	1	\N	67	t	\N	7	f	t	1
 7045	6	662	4	1	\N	123	f	\N	8	f	t	1
@@ -8486,7 +8446,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8434	0	995	1	1	, ripe but firm, peeled and sliced	9	f	\N	4	f	t	1
 8435	0	995	1	6	\N	147	t	\N	5	f	t	1
 8436	6	995	3	1	\N	959	t	\N	6	f	t	1
-7630	6	841	2	1	\N	79	f	\N	7	f	t	0.25
 8438	8	995	8	1	\N	692	t	\N	8	f	t	1
 8443	0	996	2	1	, ripe, sliced	9	f	\N	7	f	t	1
 5800	7	430	1	1	, finely chopped	2	t	\N	6	f	t	1
@@ -8499,30 +8458,37 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3929	4	197	1	2	, trimmed	497	f	\N	8	f	t	1
 5920	0	479	1	2	, green parts only, chopped small	302	t	\N	5	f	t	1
 5741	6	420	1	2	\N	147	t	\N	7	f	t	1
-8446	7	997	1	1	\N	77	f	\N	1	f	f	0.25
 8491	8	1001	4	1	\N	74	f	\N	8	f	t	1
 8492	8	1001	8	1	\N	1775	t	\N	9	f	t	1
 5921	6	479	1	1	, sliced in halves or quarters	147	t	\N	6	f	t	1
+8308	7	367	1	1	\N	2033	f	\N	2	f	t	0.25
+8446	7	997	1	1	\N	2033	f	\N	1	f	f	0.25
 3660	0	188	1	6	\N	17	f	\N	6	f	t	1
 3661	0	188	1	3	, finely chopped	5	t	\N	7	f	t	1
 3662	0	188	1	3	, thinly sliced	144	f	\N	8	f	t	1
 3663	7	188	1	2	, chopped	13	t	\N	9	f	t	1
+8207	7	973	1	1	\N	2033	f	\N	5	f	t	0.25
+8473	6	1000	4	1	\N	2033	f	\N	1	f	t	0.25
+7630	6	841	2	1	\N	2033	f	\N	7	f	t	0.25
+8486	7	1001	1	3	\N	2033	f	\N	3	f	t	0.25
+8437	7	995	1	1	\N	2033	f	\N	7	f	t	0.25
 8534	6	1005	4	1	\N	738	t	\N	6	f	t	1
 5652	8	403	1	2	\N	71	f	\N	4	f	t	1
 8520	7	910	1	2	, to taste	13	t	\N	8	f	t	1
 7567	4	827	1	30	\N	700	f	\N	10	f	t	1
+4659	7	266	1	1	\N	2033	f	\N	0	f	t	0.25
 2515	5	85	1	1	, seeded then chopped	281	t	\N	5	f	t	1
 2516	4	85	1	5	, roughly chopped if leaves are large	206	f	\N	6	f	t	1
 2517	6	85	4	1	, NOT balsamic vinegar	282	f	\N	7	f	t	1
 2518	7	85	1	2	, NOT balsamic vinegar	282	f	\N	8	f	t	1
 8515	7	827	1	1	\N	82	f	\N	7	f	t	1
 8516	8	827	8	1	\N	74	t	\N	8	f	t	1
+2433	7	81	1	1	\N	2033	f	\N	3	f	t	0.25
 8518	7	320	1	1	\N	82	f	\N	6	f	t	1
 4027	7	185	1	1	\N	577	t	\N	9	f	t	1
 6625	8	609	4	1	, or pink Himalayan salt, to taste	74	f	\N	6	f	t	1
 2596	5	87	1	1	\N	25	f	\N	8	f	t	1
 2597	0	87	1	2	, chopped - white and light green parts, and dark parts divided	302	t	\N	9	f	t	1
-4659	7	266	1	1	\N	76	f	\N	0	f	t	0.25
 2599	0	87	1	2	, pressed or minced	5	t	\N	11	f	t	1
 2600	8	87	2	1	\N	299	t	\N	12	f	t	1
 6806	7	633	1	1	\N	557	f	\N	4	f	t	1
@@ -8573,13 +8539,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8545	7	1006	1	2	\N	593	f	\N	5	f	t	1
 8298	8	981	4	1	\N	75	f	\N	5	f	t	1
 8299	8	981	4	1	\N	40	f	\N	6	f	t	1
-2433	7	81	1	1	\N	77	f	\N	3	f	t	0.25
-8240	8	788	1	1	\N	77	f	\N	7	f	t	0.25
-8517	7	320	1	1	\N	77	f	\N	5	f	t	0.25
 8546	8	1006	4	1	\N	1775	f	\N	6	f	t	1
 8547	7	1006	1	3	\N	62	f	\N	7	f	t	1
 4255	7	195	1	2	, chopped	2	t	\N	10	f	t	1
 4256	8	195	8	1	\N	285	t	\N	11	f	t	1
+8240	8	788	1	1	\N	2033	f	\N	7	f	t	0.25
+8517	7	320	1	1	\N	2033	f	\N	5	f	t	0.25
 8548	7	1006	1	1	(OYSTER SAUCE	63	t	\N	8	f	t	1
 7934	0	907	1	4	\N	113	f	\N	6	f	t	1
 8551	7	1006	1	2	\N	245	f	\N	11	f	t	1
@@ -8590,11 +8555,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5605	6	397	4	1	, chopped	2	t	\N	5	f	t	1
 5606	6	397	4	1	\N	1339	t	\N	6	f	t	1
 8577	0	1039	2	1	, diced	1780	f	\N	3	f	t	1
-6119	7	540	1	1	\N	657	f	\N	13	f	t	0.25
 8456	8	997	1	1	\N	75	f	\N	11	f	t	1
 6953	0	647	1	1	, chopped	150	f	\N	9	f	t	1
 6954	6	647	1	2	\N	206	f	\N	10	f	t	1
-4902	7	101	1	3	\N	278	f	\N	2	f	t	0.25
 8574	8	987	8	1	\N	360	t	\N	3	f	t	1
 6448	7	585	1	2	, chopped	1972	f	\N	8	f	t	1
 6465	7	587	1	1	\N	73	t	\N	6	f	t	1
@@ -8603,14 +8566,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8421	8	993	4	1	, if desired	833	t	\N	11	f	t	1
 6492	0	591	1	1	\N	597	f	\N	5	f	t	1
 6496	4	591	1	15	\N	151	f	\N	9	f	t	0.75
-5931	7	481	1	1	\N	278	f	\N	0	f	t	0.25
 2703	7	24	1	4	\N	29	f	\N	2	f	t	0.25
 6493	5	591	1	1	\N	988	f	\N	6	f	t	1
 6494	7	591	1	1	\N	699	f	\N	7	f	t	1
 6495	4	591	1	15	, diced	1088	f	\N	8	f	t	1
 6497	0	591	2	5	cooked, or cauliflower rice	188	t	\N	10	f	t	1
-5924	6	479	4	1	\N	278	f	\N	9	f	t	0.25
-6324	7	572	1	1	\N	278	f	\N	8	f	t	0.25
 8529	6	1005	1	1	, roughly chopped	1964	t	\N	1	f	t	1
 8530	6	1005	1	1	, roughly chopped	1963	t	\N	2	f	t	1
 8549	7	1006	1	1	\N	1397	f	\N	9	f	t	0.25
@@ -8629,81 +8589,86 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8580	6	1039	2	1	\N	111	f	\N	6	f	t	1
 6438	0	584	1	6	\N	187	f	\N	7	f	t	1
 6439	0	584	1	12	\N	1577	t	\N	8	f	t	1
+8418	8	993	1	1	, only if needed	2033	t	\N	8	f	t	0.25
+2460	7	128	1	3	\N	2033	f	\N	2	f	t	0.25
+3259	6	114	2	1	\N	2033	f	\N	0	f	t	0.25
 8539	8	1005	1	1	\N	40	t	\N	11	f	t	1
+8248	7	313	1	1	, to taste	2033	f	\N	7	f	f	0.25
+4902	7	101	1	3	\N	2033	f	\N	2	f	t	0.25
+5931	7	481	1	1	\N	2033	f	\N	0	f	t	0.25
 8581	6	1039	4	1	\N	62	f	\N	7	f	t	1
-8418	8	993	1	1	, only if needed	77	t	\N	8	f	t	0.25
-2460	7	128	1	3	\N	77	f	\N	2	f	t	0.25
-3259	6	114	2	1	\N	77	f	\N	0	f	t	0.25
-8248	7	313	1	1	, to taste	77	f	\N	7	f	f	0.25
-5678	6	409	4	1	, melted	964	f	\N	7	f	t	0.25
-2782	7	141	1	2	\N	499	f	\N	0	f	t	0.25
+2782	7	141	1	2	\N	2033	f	\N	0	f	t	0.25
+8583	8	1039	1	1	\N	2033	f	\N	9	f	t	0.25
 6451	6	585	1	2	, chopped and destemmed	372	f	\N	11	f	t	1
 8419	4	993	1	3	\N	1592	f	\N	9	f	t	1
 8457	8	997	4	1	\N	67	f	\N	12	f	t	1
-8260	7	361	1	1	, divided	278	f	\N	5	f	t	0.25
-8264	7	787	1	3	\N	278	f	\N	5	f	t	0.25
-8275	7	309	1	6	\N	278	f	\N	7	f	t	0.25
-7955	7	362	1	1	, divided	278	t	\N	5	f	t	0.25
-4712	7	271	1	2	\N	722	f	\N	0	f	t	0.25
+5924	6	479	4	1	\N	2033	f	\N	9	f	t	0.25
+8260	7	361	1	1	, divided	2033	f	\N	5	f	t	0.25
 8458	6	997	1	3	, chopped and de-stemmed	1957	t	\N	13	f	t	1
+8264	7	787	1	3	\N	2033	f	\N	5	f	t	0.25
 5604	6	397	2	1	, chopped	90	f	\N	4	f	t	1
 8459	6	997	4	3	\N	1262	t	\N	14	f	t	1
 8582	7	1039	1	1	\N	39	f	\N	8	f	t	1
-8583	8	1039	1	1	\N	657	f	\N	9	f	t	0.25
 8584	8	1039	1	1	\N	1956	t	\N	10	f	t	1
 8585	7	1039	1	1	\N	359	f	\N	11	f	t	1
 8586	7	1039	1	2	, chopped	13	t	\N	12	f	t	1
-8006	8	946	1	1	\N	1720	f	\N	8	f	t	0.25
-5536	7	388	1	2	, divided	78	f	\N	1	f	t	0.25
-8236	7	978	2	3	\N	78	f	\N	3	f	t	0.25
-3781	7	189	1	4	\N	278	f	\N	10	f	t	0.25
+8275	7	309	1	6	\N	2033	f	\N	7	f	t	0.25
+6324	7	572	1	1	\N	2033	f	\N	8	f	t	0.25
+7955	7	362	1	1	, divided	2033	t	\N	5	f	t	0.25
+6119	7	540	1	1	\N	2033	f	\N	13	f	t	0.25
+4712	7	271	1	2	\N	2033	f	\N	0	f	t	0.25
+5678	6	409	4	1	, melted	2033	f	\N	7	f	t	0.25
+6160	7	546	2	1	\N	2033	f	\N	5	f	t	0.25
+8550	7	1006	1	1	\N	2033	f	\N	10	f	t	0.25
+8368	7	986	1	3	\N	2033	f	\N	5	f	t	0.25
+6120	7	541	1	2	\N	2033	f	\N	0	f	t	0.25
+6296	7	568	1	2	\N	2033	f	\N	2	f	t	0.25
 7317	7	732	1	2	\N	189	f	\N	5	f	t	0.25
-5309	8	319	1	1	\N	278	f	\N	1	f	f	0.25
-6012	8	523	1	1	\N	278	f	\N	1	f	f	0.25
-8398	8	991	1	1	\N	78	f	\N	6	f	t	0.25
-5681	7	410	1	1	\N	77	f	\N	2	f	t	0.25
-8536	7	1005	1	2	, melted	964	f	\N	8	f	t	0.25
+6274	8	565	1	1	\N	2033	f	\N	1	f	f	0.25
+5763	8	423	1	1	\N	2033	f	\N	4	f	f	0.25
+5681	7	410	1	1	\N	2033	f	\N	2	f	t	0.25
+4430	7	38	1	1	\N	2033	f	\N	0	f	t	0.25
+7193	7	714	1	2	\N	2033	f	\N	0	f	t	0.25
+4034	7	32	1	2	\N	2033	f	\N	2	f	t	0.25
+4205	6	244	3	1	\N	2033	f	\N	5	f	t	0.25
+7176	7	711	1	1	\N	2033	f	\N	5	f	t	0.25
+8573	8	987	1	1	\N	2033	f	\N	2	f	t	0.25
 7203	7	715	1	1	\N	189	f	\N	4	f	t	0.25
-5934	8	482	1	1	\N	176	f	\N	1	f	f	0.25
-6072	7	532	1	1	\N	176	f	\N	3	f	t	0.25
-8199	7	972	1	3	\N	1598	f	\N	8	f	t	0.25
-8304	7	983	1	5	, divided	278	f	\N	3	f	t	0.25
-3388	6	116	2	1	\N	278	f	\N	5	f	t	0.25
-3454	6	94	4	3	\N	278	f	\N	3	f	t	0.25
-8243	7	306	1	3	, divided	278	f	\N	5	f	f	0.25
-2848	7	148	1	7	\N	278	f	\N	9	f	t	0.25
-2915	7	152	1	1	\N	278	f	\N	2	f	t	0.25
-5524	7	386	1	6	\N	278	f	\N	2	f	t	0.25
-5534	8	387	1	1	\N	278	f	\N	4	f	t	0.25
-6160	7	546	2	1	\N	657	f	\N	5	f	t	0.25
-8550	7	1006	1	1	\N	657	f	\N	10	f	t	0.25
-8368	7	986	1	3	\N	676	f	\N	5	f	t	0.25
-7024	8	660	1	1	\N	79	f	\N	2	f	t	0.25
-7381	7	743	1	1	\N	79	f	\N	1	f	f	0.25
+8536	7	1005	1	2	, melted	2033	f	\N	8	f	t	0.25
+8199	7	972	1	3	\N	2033	f	\N	8	f	t	0.25
+8006	8	946	1	1	\N	2033	f	\N	8	f	t	0.25
+7201	7	715	1	1	\N	2033	f	\N	2	f	t	0.25
+5534	8	387	1	1	\N	2033	f	\N	5	f	t	0.25
+5925	6	480	2	1	\N	2033	f	\N	0	f	t	0.25
+7937	7	908	1	1	\N	2033	f	\N	3	f	t	0.25
+8398	8	991	1	1	\N	2033	f	\N	6	f	t	0.25
 6725	7	621	1	5	, at room temperature, divided	189	f	\N	0	f	t	0.25
 7341	7	736	1	1	\N	189	f	\N	5	f	t	0.25
 6983	7	652	1	1	, 14g	190	f	\N	5	f	t	0.25
 5095	7	156	1	2	, for the sauce	190	t	\N	4	f	t	0.25
-4430	7	38	1	1	\N	77	f	\N	0	f	t	0.25
-7193	7	714	1	2	\N	77	f	\N	0	f	t	0.25
-4034	7	32	1	2	\N	77	f	\N	2	f	t	0.25
-4205	6	244	3	1	\N	77	f	\N	5	f	t	0.25
-7176	7	711	1	1	\N	77	f	\N	5	f	t	0.25
-8573	8	987	1	1	\N	77	f	\N	2	f	t	0.25
-7201	7	715	1	1	\N	77	f	\N	2	f	t	0.25
-5925	6	480	2	1	\N	77	f	\N	0	f	t	0.25
-7937	7	908	1	1	\N	77	f	\N	3	f	t	0.25
-6120	7	541	1	2	\N	964	f	\N	0	f	t	0.25
-6296	7	568	1	2	\N	964	f	\N	2	f	t	0.25
-6274	8	565	1	1	\N	964	f	\N	1	f	f	0.25
-5763	8	423	1	1	\N	964	f	\N	4	f	f	0.25
+3388	6	116	4	1	\N	2033	f	\N	6	f	t	0.25
+5536	7	388	1	2	, divided	2033	f	\N	1	f	t	0.25
+8236	7	978	2	3	\N	2033	f	\N	3	f	t	0.25
+7024	8	660	1	1	\N	2033	f	\N	2	f	t	0.25
+7381	7	743	1	1	\N	2033	f	\N	1	f	f	0.25
+5934	8	482	1	1	\N	2033	f	\N	1	f	f	0.25
+6072	7	532	1	1	\N	2033	f	\N	3	f	t	0.25
+6012	8	523	1	1	\N	2033	f	\N	1	f	f	0.25
+8304	7	983	1	5	, divided	2033	f	\N	3	f	t	0.25
+3781	7	189	1	4	\N	2033	f	\N	10	f	t	0.25
+5309	8	319	1	1	\N	2033	f	\N	1	f	f	0.25
+3454	6	94	4	3	\N	2033	f	\N	3	f	t	0.25
+8243	7	306	1	3	, divided	2033	f	\N	5	f	f	0.25
+2848	7	148	1	7	\N	2033	f	\N	9	f	t	0.25
+2915	7	152	1	1	\N	2033	f	\N	2	f	t	0.25
+5524	7	386	1	6	\N	2033	f	\N	2	f	t	0.25
 8656	6	1046	2	1	(Cotija cheese), crumbled	1402	t	\N	5	f	t	1
 8610	6	1043	1	1	, trimmed and cut into 2” pieces	121	f	\N	2	f	t	1
 8611	7	1043	1	1	\N	278	f	\N	3	f	t	1
 8612	8	1043	8	1	, to taste	74	f	\N	4	f	t	1
 8613	8	1043	8	1	, to taste	67	f	\N	5	f	t	1
 8614	7	1043	1	3	, toasted	461	f	\N	6	f	t	1
-2097	7	103	1	1	\N	77	f	\N	7	f	t	0.25
+3434	7	173	1	1	\N	2033	f	\N	7	f	t	0.25
 6215	8	555	4	1	, to taste	692	t	\N	6	f	t	1
 8447	0	997	1	1	, finely diced	217	f	\N	2	f	t	1
 8599	4	1042	1	12	, sliced	674	f	\N	1	f	t	1
@@ -8719,29 +8684,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6669	8	614	2	1	, for bread	29	t	\N	7	f	t	0.25
 7180	7	712	1	4	, melted	189	f	\N	1	f	t	0.25
 8138	7	965	1	7	, at room temperature, diced	190	f	\N	4	f	t	0.25
-7387	7	105	1	2	\N	77	f	\N	6	f	t	0.25
 8657	6	1046	2	1	, rinsed and drained	419	f	\N	6	f	t	1
-7754	8	835	1	1	\N	77	f	\N	6	f	t	0.25
-7820	8	865	1	1	\N	77	f	\N	2	f	t	0.25
-7904	7	838	2	1	\N	77	f	\N	5	f	t	0.25
-7551	6	824	4	1	\N	77	f	\N	6	f	t	0.25
-8231	8	791	1	1	\N	77	f	\N	5	f	t	0.25
-8512	7	827	1	1	\N	77	f	\N	9	f	t	0.25
-8514	7	827	1	1	\N	77	f	\N	2	f	t	0.25
-8523	7	323	2	1	\N	77	f	\N	4	f	t	0.25
-7399	6	746	2	1	, melted, for crust	964	f	\N	2	f	t	0.25
-5897	7	476	1	1	\N	176	f	\N	0	f	t	0.25
-6143	7	544	1	1	, to thin	176	f	\N	3	f	t	0.25
-6259	7	562	1	1	, plus more to oil the skillet	176	f	\N	2	f	t	0.25
 8448	0	997	1	2	, finely chopped	150	f	\N	3	f	t	1
-6430	7	583	1	1	\N	176	f	\N	7	f	t	0.25
-8251	8	261	1	1	, to taste	278	t	\N	7	f	f	0.25
-4977	6	308	2	1	\N	278	f	\N	3	f	t	0.25
-5014	6	256	2	1	, plus more as needed	278	f	\N	5	f	t	0.25
-8166	7	969	1	3	\N	278	f	\N	3	f	t	0.25
-8109	7	962	1	4	\N	77	f	\N	2	f	t	0.25
-8100	7	961	1	1	, for cooking	77	f	\N	5	f	t	0.25
-6096	8	537	1	1	\N	176	f	\N	3	f	t	0.25
 8609	5	1043	2	3	, cut round potatoes into quarters, fingerlings in half	1260	f	\N	1	f	t	1
 8449	0	997	1	2	, peeled and finely chopped	7	f	\N	4	f	t	1
 8450	0	997	1	3	, minced	5	t	\N	5	f	t	1
@@ -8753,7 +8697,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8658	0	1046	1	2	, diced	281	f	\N	7	f	t	1
 8659	6	1046	3	1	(ROASTED PUMPKIN SEEDS)	296	f	\N	8	f	t	1
 7225	8	718	4	1	\N	504	f	\N	7	f	t	1
-6268	7	564	1	1	\N	176	f	\N	2	f	f	0.25
 8650	4	1045	2	11	\N	1368	f	\N	1	f	t	1
 7416	7	747	1	1	\N	1268	t	\N	12	f	t	1
 7417	6	747	4	1	\N	39	t	\N	13	f	t	1
@@ -8770,6 +8713,72 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2095	0	103	1	2	, or one	187	f	\N	5	f	t	1
 2096	7	103	1	1	, dried, for coating	18	t	\N	6	f	t	1
 7380	8	742	8	1	\N	285	t	\N	6	f	t	1
+2352	7	70	1	2	\N	2033	f	\N	2	f	t	0.25
+6178	7	549	1	2	\N	2033	f	\N	3	f	t	0.25
+7771	7	860	1	3	, divided	2033	f	\N	0	f	t	0.25
+7387	7	105	1	2	\N	2033	f	\N	6	f	t	0.25
+8100	7	961	1	1	, for cooking	2033	f	\N	5	f	t	0.25
+2097	7	103	1	1	\N	2033	f	\N	7	f	t	0.25
+7754	8	835	1	1	\N	2033	f	\N	6	f	t	0.25
+7820	8	865	1	1	\N	2033	f	\N	2	f	t	0.25
+7904	7	838	2	1	\N	2033	f	\N	5	f	t	0.25
+8109	7	962	1	4	\N	2033	f	\N	2	f	t	0.25
+7551	6	824	4	1	\N	2033	f	\N	6	f	t	0.25
+8231	8	791	1	1	\N	2033	f	\N	5	f	t	0.25
+8512	7	827	1	1	\N	2033	f	\N	9	f	t	0.25
+8514	7	827	1	1	\N	2033	f	\N	2	f	t	0.25
+8523	7	323	2	1	\N	2033	f	\N	4	f	t	0.25
+6850	7	639	1	2	\N	2033	f	\N	1	f	t	0.25
+8007	8	947	1	1	\N	2033	f	\N	1	f	f	0.25
+7679	6	846	1	4	\N	2033	f	\N	9	f	t	0.25
+7998	6	945	1	1	\N	2033	f	\N	7	f	t	0.25
+7858	8	870	1	1	\N	2033	f	\N	6	f	t	0.25
+5478	7	378	1	3	, divided	2033	f	\N	2	f	t	0.25
+6468	7	588	1	2	\N	2033	f	\N	1	f	t	0.25
+6393	7	580	1	1	\N	2033	f	\N	3	f	t	0.25
+5897	7	476	1	1	\N	2033	f	\N	0	f	t	0.25
+6143	7	544	1	1	, to thin	2033	f	\N	3	f	t	0.25
+6259	7	562	1	1	, plus more to oil the skillet	2033	f	\N	2	f	t	0.25
+6268	7	564	1	1	\N	2033	f	\N	2	f	f	0.25
+6096	8	537	1	1	\N	2033	f	\N	3	f	t	0.25
+6430	7	583	1	1	\N	2033	f	\N	7	f	t	0.25
+3102	7	130	1	2	\N	2033	f	\N	3	f	t	0.25
+5265	7	84	1	3	\N	2033	f	\N	3	f	t	0.25
+4365	6	249	3	1	\N	2033	f	\N	4	f	t	0.25
+5803	7	430	1	2	\N	2033	f	\N	9	f	t	0.25
+8281	7	317	1	1	\N	2033	f	\N	9	f	t	0.25
+8251	8	261	1	1	, to taste	2033	t	\N	7	f	f	0.25
+4977	6	308	2	1	\N	2033	f	\N	3	f	t	0.25
+5014	6	256	2	1	, plus more as needed	2033	f	\N	5	f	t	0.25
+8166	7	969	1	3	\N	2033	f	\N	3	f	t	0.25
+5563	8	391	1	2	, plus more as necessary by the half-teaspoonful	2033	f	\N	5	f	t	0.25
+4377	7	239	1	2	\N	2033	f	\N	5	f	t	0.25
+5686	7	412	1	1	\N	2033	f	\N	0	f	t	0.25
+6220	6	556	2	1	\N	2033	f	\N	4	f	t	0.25
+4747	7	272	1	2	\N	2033	f	\N	1	f	t	0.25
+5457	7	375	1	1	\N	2033	f	\N	1	f	t	0.25
+4625	7	267	1	4	\N	2033	f	\N	2	f	t	0.25
+6240	7	558	1	1	\N	2033	f	\N	9	f	t	0.25
+5651	7	403	1	1	\N	2033	f	\N	3	f	t	0.25
+5626	7	399	1	1	\N	2033	t	\N	5	f	t	0.25
+6628	7	610	1	2	\N	2033	f	\N	0	f	t	0.25
+6643	8	611	1	2	, divided	2033	f	\N	1	f	t	0.25
+6559	7	598	1	1	, liquified	2033	f	\N	9	f	t	0.25
+6615	7	608	1	2	, divided	2033	f	\N	7	f	t	0.25
+7399	6	746	2	1	, melted, for crust	2033	f	\N	2	f	t	0.25
+6094	8	536	1	1	\N	2033	f	\N	4	f	t	0.25
+5953	8	486	1	1	\N	2033	t	\N	4	f	t	0.25
+8190	8	971	1	1	, for frying, for the garlic crumbs	2033	t	\N	15	f	t	0.25
+8444	8	996	1	1	\N	2033	f	\N	4	f	f	0.25
+7621	7	840	1	1	\N	2033	f	\N	2	f	t	0.25
+7798	7	751	1	1	\N	278	f	\N	4	f	t	0.25
+5816	8	432	8	1	, to taste	692	t	\N	6	f	t	1
+5696	7	414	1	1	\N	176	f	\N	1	f	t	0.25
+5163	0	39	1	1	, chopped	17	f	\N	4	f	t	1
+5164	6	39	4	1	, chopped	13	t	\N	5	f	t	1
+1381	7	62	1	2	, chopped	13	t	\N	4	f	t	1
+1382	0	62	2	1	, diced	9	f	\N	5	f	t	1
+3436	0	173	1	4	\N	113	f	\N	9	f	t	1
 \.
 
 
@@ -8812,7 +8821,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2512	Preheat the oven to 325°F.	247	0	2
 3356	Drain the water and transfer potatoes to a dish.	533	2	0
 216	Eat the sunflower seeds.	54	0	0
-3196	In a small bowl, combine the honey through lemon juice. Season to taste with salt and pepper.	432	0	0
 3114	Preheat the oven to 425°F. 	408	0	2
 2773	In a large mixing bowl, whisk the mayonnaise together with the olive oil. Add all the prepared vegetables and toss to combine well. Season with salt and pepper to taste.	241	0	0
 389	Coarsely slice the ripe bananas into small chunks, set on a plate or baking sheet, and freeze 1–2 hours.	47	0	131072
@@ -8879,6 +8887,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4258	Evenly spread mayonnaise on the bottom half of the toasted biscuit. Spread apple butter on the top half of the biscuit.	856	4	0
 4259	Place the sausage patty on the bottom of the biscuit, then place egg, with cheese, on top of the sausage patty.	856	5	0
 3897	Stir half the milk into each mug. Take the plastic off the candy canes, put one in each mug, and serve.	709	2	0
+3196	In a small bowl, combine the honey through lemon juice. Season to taste with salt and pepper.	432	0	0
 3386	Add water to thin. Season to taste with salt and pepper.	544	1	0
 568	Lay tortillas flat on a clean work surface. Spread refried beans down the middle third from top to bottom, leaving a 1-inch space halfway down to allow for a fold. Sprinkle cheese on top, lightly pressing into the beans.	20	0	0
 4542	Meanwhile, place most of the arugula in a blender, finely grate in the lemon zest and squeeze in all the juice. Drizzle in 6 tablespoons of extra virgin olive oil, then add the Parmesan, 2 tablespoons of starchy cooking water and most of the pistachios, and whiz until smooth. 	372	1	128
@@ -8897,7 +8906,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2236	In a medium bowl, stir together the coconut cream, monk fruit powder, mint extract and vanilla extract. Mix in the sugar-free chocolate.	233	0	0
 3121	Place the bell pepper ring in the hot skillet. Crack egg into bell pepper ring; cook until bottom holds together and corners are browned, 2–3 minutes.	19	1	4
 288	Optionally, add in some chopped onion, garlic, or shredded carrots.	33	1	0
-289	Cover the crock pot and cook on low for 5–7 hours or until pasta is tender and meatballs are thoroughly heated to 160°F as measured with a meat thermometer, stirring once with a large spoon during the cooking time. This method will make the pasta quite soft, like Spaghetti-Os.	33	2	1024
+289	Cover the crock pot and cook on low for 5–7 hours or until pasta is tender and meatballs are thoroughly heated to 160°F as measured with a meat thermometer, stirring once with a large spoon during the cooking time.	33	2	1024
 3122	Flip and cook until desired doneness is reached, 2–3 minutes more; season with salt and ground black pepper.	19	2	4
 475	Toast bread. Mash avocado with a fork and spread onto one piece of toast.	52	0	0
 2237	Divide the mixture into 10 muffin cups, and freeze for at least two hours.	233	1	131072
@@ -8972,12 +8981,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1719	Slowly add oil while mixing.	114	1	0
 1720	Store in an airtight container and refrigerate.	114	2	0
 784	Cut the pork into 1-inch cubes. Cut the spring onions into 1-inch-long sticks.	93	0	0
-2671	Toast the sesame seeds in a dry 10-inch non-stick frying pan on a medium heat. Once lightly golden, remove to a plate, reducing the heat to a medium-low. Place the rice in the pan with a small pinch of sea salt, the pour in 1⅔ cups of water. Cover and cook for 10 minutes, or until the rice has absorbed all the liquid.	258	0	0
-1804	In a food processor, combine oranges and lime juices, honey, garlic and 2 of the 4 chipotle peppers.	116	0	0
-1805	Process and slowly (and we mean slowly, like a slow drizzle) add oil to incorporate.	116	1	0
-1806	Taste and adjust to your liking by adding extra peppers and/or a dash of salt and pepper.	116	2	0
-1807	Store in an airtight container in the refrgerator. (Dressing is best if made a day ahead of time. If dressing separates, simply shake or stir to mix, just before use.)	116	3	0
 751	Arrange rice, veggies, edamame and avocado in a 4-cup sealable container or bowl. 	62	0	0
+1804	In a food processor, combine oranges and lime juices, honey, garlic and 2 of the 4 chipotle peppers.	116	0	0
+2671	Toast the sesame seeds in a dry 10-inch non-stick frying pan on a medium heat. Once lightly golden, remove to a plate, reducing the heat to a medium-low. Place the rice in the pan with a small pinch of sea salt, the pour in 1⅔ cups of water. Cover and cook for 10 minutes, or until the rice has absorbed all the liquid.	258	0	0
+1806	Taste and adjust to your liking by adding extra peppers and/or a dash of salt and pepper.	116	2	0
 706	In a large skillet, bring ½-inch water to a boil over medium heat.	29	0	4
 707	Add asparagus and garlic; cook, covered, until asparagus is crisp-tender, 3–5 minutes; drain.	29	1	0
 1235	Mash the avocado and spread evenly on the rice cakes. Sprinkle with sea salt. 	48	0	0
@@ -8988,6 +8995,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4549	Break the eggs on top. Sprinkle with the lemon juice. Toss thoroughly again to combine.	963	2	0
 543	Tip the tomatoes and bean salad into an ovenproof frying pan or shallow flameproof casserole dish. 	40	0	4
 546	Serve with rye bread, if you like.	40	3	0
+1805	Process and slowly (and we mean slowly, like a slow drizzle) add oil to incorporate.	116	1	0
 1809	Pout the custard into a bowl and gently fold in the melted chocolate to make a rippled effect.	172	1	0
 980	Brown the chicken thighs all over in a large non-stick casserole pan on a high heat with 2 tablespoons of olive oil, then remove to a plate.	108	0	0
 853	Put the hulled and halved strawberries and peeled and segmented oranges into a serving bowl. Halve the passion fruit and use a teaspoon to scoop the flesh into a bowl.	96	0	0
@@ -8996,6 +9004,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2759	Pour the drink into a tall, chilled glass and serve immediately.	167	2	0
 1431	Bring a large pot of lightly salted water to a boil. Add egg noodles and cook until the pasta is tender yet firm to the bite, about 5 minutes; drain.	24	0	4
 1433	Add cooked noodles; cook and stir until the noodles begin to brown, about 5 minutes.	24	2	4
+1807	Store in an airtight container in the refrgerator. (Dressing is best if made a day ahead of time. If dressing separates, simply shake or stir to mix, just before use.)	116	3	0
 3361	Line an 8x8" baking dish with parchment paper and set aside. 	535	0	0
 3362	In a food processor, add nuts and pulse until they become small, crumbly bits.	535	1	256
 3363	Remove and place into a medium-size bowl. Cut open and de-pit the dates.	535	2	0
@@ -9013,7 +9022,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3247	Make small balls (about 1 tablespoon of batter) and put them on a parchment-lined baking sheet.	473	2	0
 1297	Preheat oven to 400°F. Cut the broccoli into pieces.	26	0	2
 2346	Set the oven to 400°F. Line 2 large baking sheets with parchment paper.	249	0	2
-2335	Heat a large skillet or wok over low-medium heat. Add the ghee and allow it to melt.	243	0	4
 984	Taste the sauce and season to perfection. To serve, stir the pasta into the sauce and grate in most of the halloumi. Finish drizzled with 1 tablespoon of extra virgin olive oil and with the remaining halloumi grated over the top.	108	4	0
 3128	In a pan, heat the oil over a medium heat.	412	0	4
 3129	Add the cauliflower rice, and stir constantly for about 5 minutes, or until desired texture is achieved.	412	1	4
@@ -9022,8 +9030,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3389	Preheat the oven to 350°F.	547	0	2
 3390	In a large bowl, combine ground meat, onion, mushrooms, sea salt, pepper, and egg, and mix and mash together.	547	1	0
 3391	Form 8–12 patties and lay them on a baking dish.	547	2	0
-2336	Add the garlic and onion. Stir intermittently until translucent.	243	1	4
+2335	Heat a large skillet or wok over low-medium heat. Add the ghee and allow it to melt.	243	0	4
 986	Peel the onions and slice into ½-inch rounds, then grill until softened and nicely charred on both sides, using tongs to transfer them straight to the dressing as you go.	109	1	12
+2336	Add the garlic and onion. Stir intermittently until translucent.	243	1	4
 2338	Add the spinach and stir until just wilted. Remove from heat.	243	3	4
 939	In a food processor or a large mixing bowl, mix together the plain flour, the baking soda and enough sugar to taste. Add the egg, blend or stir to mix, then gradually pour in just enough of the buttermilk to make a thick, smooth batter.	100	0	0
 1161	Peel eggs, then slice in half and pop yolks into a medium-sized bowl. Add mayonnaise, minced jalapeños, vinegar, mustard, smoked paprika, and steak seasoning then mix and mash with a fork until smooth.	98	0	0
@@ -9073,7 +9082,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1725	Cut the chillies in half, scrape out the seeds, the cut the flesh into thin strips. Put it in a bowl, pour in the lime juice and leave it to stand.	164	0	0
 1726	If using rolls, slice them in half and remove some of the crumb so that they are slightly hollowed. If using French bread, slice each piece in half lengthways.	164	1	0
 753	Brown ground beef with shallot in a large skillet over medium-high heat. Drain then return to the skillet. Add taco seasoning, salsa, and chicken broth then bring to a boil. Stir in rice then place a lid on top and reduce heat to low. Simmer for 15–20 minutes or until rice is tender then remove from heat and stir in cheddar cheese until melted. Place lid back on the skillet then let sit for 5 minutes before serving with toppings.	89	0	0
-4283	Place a large non-stick frying pan on a high heat. Drain and roughly chop the peaches (reserving the juice), then place in the pan with a good splash of the reserved juice, and season with pepper. Warm through for a few minutes while you toss the salad leaves with the dressed cucumber, and plate up. 	751	2	4
 1727	Set the top of each piece of bread or roll aside and spread the bottom halves with a nice thick layer of refried beans. Make sure the pasta is evenly spread, as it will help to hold the next layer in place.	164	2	0
 754	Toppings: tortilla chips, salsa, sliced avocado, chopped green onions.	89	1	0
 2035	Meanwhile, heat 1 tbsp of the oil in a large frying pan and add the zucchini. Fry for 2–3 minutes, stirring occasionally, until they are golden.	76	1	4
@@ -9081,6 +9089,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1294	Season with salt and pepper to taste and spread them on a non-stick baking sheet. Grill (broil) for 5–6 minutes, turning occasionally, until golden brown.	80	1	24
 1295	Meanwhile, prepare the flavoured couscous according to the instructions on the packet.,	80	2	0
 3500	Preheat the oven to 400°F.	580	0	2
+4283	Place a large non-stick frying pan on a high heat. Drain and roughly chop the peaches (reserving the juice), then place in the pan with a good splash of the reserved juice, and season with pepper. Warm through for a few minutes while you toss the salad leaves with the dressed cucumber, and plate up. 	751	2	4
 1413	Mix the diced chicken with half the garlic and the tumeric. Heat a little of the oil in a pan, add the chicken and fry until the chicken has cooked thoroughly. Remove from the pan and set aside.	140	0	4
 1846	Drain the pasta, return it to the pan and toss with the sauce. Season to taste and sprinkle with a little shopped fresh parsley and more grated lemon rind, if you like. Serve with the hot herb bread.	165	5	4
 1136	Skin the chicken fillets. Lay them outside down and, with a sharp knife, cut horizontally almost through, from the rounded side. Open them up like a book. Press gently, to make a roundish shape the size of a side plate. Sprinkle with lemon juice and paprika.	103	0	0
@@ -9133,7 +9142,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1821	Bake the pizza crust for about 15 minutes, then flip it over and bake another 10–15 minutes.	44	1	2
 1822	Final step: top your pizza with your desired toppings, pop it back in the oven and let everything cook/melt. Slice it up and you're ready to eat!	44	2	0
 3369	Once the mixture has been cooled, form into patties and place on a lined plate.	536	1	0
-3134	In a medium bowl, whisk together the avocado oil through the thyme. Add salt and pepper, to taste.	414	0	0
 3395	In a small bowl, mix all of the ingredients together.	550	0	0
 3393	Combine all ingredients in a jar, and shake well until mixed.	548	0	0
 3252	Combine all ingredients in a small bowl and stir to mix well.	474	0	0
@@ -9166,6 +9174,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1843	Reassemble the baguette. The garlic herb butter will help to hold the slices together. Wrap in foil, support on a baking sheet and bake for 10 minutes.	165	2	2
 1844	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Dried pasta will take 10–12 minutes, fresh about 3 minutes.	165	3	4
 1845	Pour the cream into another pan and bring to a boil. Stir in the Parmesan and lemon rind. The sauce should thicken in 30 seconds or so.	165	4	4
+3134	In a medium bowl, whisk together the avocado oil through the thyme. Add salt and pepper, to taste.	414	0	0
 1737	Preheat the oven to 400°F. Roll out the pastry and cut out twelve 5-inch rounds. Line a 12-hole muffin pan with the pastry rounds.	163	0	2
 1738	Line each pastry round with a circle of baking parchment and some baking beans or uncooked rice.	163	1	0
 1739	Bake the tarts for 10–15 minutes, or until the pastry is cooked through and golden. Remove the paper and baking beans or rice and set aside to cool.	163	2	2
@@ -9175,6 +9184,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1307	In a small bowl, whisk together the oil and soy sauce and season with black pepper to make a marinade.	128	1	0
 3179	Start at the bottom of one wedge, and wrap the bacon around the wedge, stretching slightly to cover from end to end. Place on the parchment-lined baking sheet.	425	3	0
 3181	While the avocados are cooking, line a plate with paper towels.	425	5	0
+1823	Put the shallots in a bowl with boiling water to cover. Leave for 1–2 minutes, then slip off the skins and chop the shallots finely.	173	0	0
 3396	Store in an airtight container.	550	1	0
 3183	Serve with Honey Lemon Dijon Dip.	425	7	0
 3592	Combine all three.	606	0	0
@@ -9187,7 +9197,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1335	Bring a large pot of water to a boil then season generously with salt and add penne. Cook until al dente then drain pasta and set aside. Keep the cooking pot out as you’ll use it again at the end.	85	0	4
 1359	Place beans and water in a large skillet. Bring to a boil; cook covered until beans are crisp tender, 4–6 minutes. Drain and set aside the beans.	28	0	4
 1360	In the now-empty skillet, melt butter over medium-high heat. Add beans; cook and stir until beans are tender, 1–2 minutes. Sprinkle with salt and pepper.	28	1	4
-1823	Put the shallots in a bowl with boiling water to cover. Leave for 1-2 minutes, then slip off the skins and chop the shallots finely.	173	0	0
 1336	When the pasta is halfway done cooking, heat extra virgin olive oil in a large, 12"+ skillet over a heat that’s a touch above medium. Add red onion, season with salt and pepper, then sauté until crisp-tender, 3–4 minutes. 	85	1	4
 1337	Add garlic then sauté until very fragrant and light golden brown, 1–2 minutes, being very careful to not let it burn. 	85	2	4
 1262	Melt a little butter in a frying pan over a medium heat and add the onion. Cook for 3–4 minutes until softened. Remove and mix well with the potato and kale or cabbage.	102	1	4
@@ -9215,7 +9224,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2271	Store the vinaigrette in a mason jar with a tight-fitting lid and store it in refrigerator for 3-5 days. Shake well before using.	244	1	0
 3399	Using a handheld juicer, slowly press the lemon and orange until all produce has been juiced.	552	0	0
 895	Arrange the Gruyere cheese slices, meat, and basil leaves on top of the tortilla and season with salt and pepper.	74	1	4
-1824	Mix half the shallots with the beef in a bowl. Add the chopped parsley and tomato ketchup, with salt and pepper to taste. Mix well with clean hands. Divide the mixture into four. Knead each portion into a ball, then flatten it into a burger.	173	1	0
 2404	In mixing bowl, combine pumpkin seeds, sunflower seeds, cashews and coconut oil. Season with sea salt and mix well. Spread on rimmed baking sheet in a single layer. Toast until golden, about 6–8 minutes, stirring halfway through.	245	1	2
 1868	Drizzle a small amount of vegetable oil in a large skillet over medium/medium-high heat (6/10 on the heat scale.) Add half or a third of the sausages (depending on how big your skillet is,) then brown for a minute or two on all four sides, or until golden brown, then transfer to a 6-quart crock pot (sausage does not need to be cooked all the way through.) Repeat with remaining sausage then add to crock pot.	180	0	4
 2405	Remove mixture from oven, place on plate and set on counter. When cool, combine seed and nut mixture with coconut flakes, cinnamon, chocolate chips. Mix to combine. Enjoy!	245	2	0
@@ -9234,6 +9242,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1080	Halve the chicken thighs, then season with sea salt and black pepper. Place in a large non-stick frying pan on a medium heat with ½ a tablespoon of olive oil and cook for 15 minutes, or until golden and cooked through, turning regularly.	118	0	4
 3443	Remove the vegetables from the oven and let cool slightly before serving.	564	5	0
 1081	Slice the baguette in half lengthways and place in the pan to quickly toast and soak up all the tasty cooking juices.	118	1	4
+1824	Mix half the shallots with the beef in a bowl. Add the chopped parsley and tomato ketchup, with salt and pepper to taste. Mix well with clean hands. Divide the mixture into four. Knead each portion into a ball, then flatten it into a burger.	173	1	0
 2544	Add the ingredients to a food processor and combine well until a ball of thick paste is formed	253	0	0
 2545	Scoop the ingredients out onto a large piece of baking paper	253	1	0
 2546	Cover the mixture with the excess paper and flatten slightly	253	2	0
@@ -9328,9 +9337,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3371	In a small bowl, whisk together all ingredients, and season to taste with salt and pepper.	537	0	0
 1622	Preheat the grill (broiler). Thread alternate pieces of chicken and onion on to four skewers (pre-soaked in water if wooden).	132	1	24
 1623	Brush the onion with a little oil, lay the kebabs on a grill (broiling) rack and cook under a high heat for 10–12 minutes, turning once. Garnish the kebabs with fresh coriander and serve at once with pilaf rice and naan bread.	132	2	0
-3151	In a small bowl, whisk the coconut aminos, olive oil, and lime juice until well combined.	419	0	0
-3152	Next, add the cumin, ginger, and garlic.	419	1	0
-3153	Add the salt and pepper, to taste. Stir well and set aside.	419	2	0
 1653	Heat the oil in a frying pan. Add the meat, with the garlic and spices, and brown over a medium heat, stirring frequently to break up any lumps. Season, cook for 5 minutes, then set aside to cool slightly.	160	0	0
 1655	Sprinkle the crumbled or grated cheese into the tacos and serve immediately. Tacos are eaten with the fingers, so have plenty of paper napkins to hand.	160	2	0
 3445	When melted, add the tomatoes through cabbage, and cook until softened, about 5 minutes.	565	1	4
@@ -9353,6 +9359,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3316	Add maca, coconut milk, cinnamon, hot water, and sweetener into a blender.	521	0	128
 3124	Add all ingredients to a blender and mix on high.	410	1	128
 3125	Top with chopped dill/chives.	410	2	0
+3151	In a small bowl, whisk the coconut aminos, olive oil, and lime juice until well combined.	419	0	0
+3152	Next, add the cumin, ginger, and garlic.	419	1	0
+3153	Add the salt and pepper, to taste. Stir well and set aside.	419	2	0
 1627	Put the pork in a bowl and stir in the ginger and chopped lemon grass. Season with salt and pepper. Shape the mixture into four burgers and chill for about 20 minutes.	130	0	0
 1628	Heat the oil in a large, non-stick frying pan and add the burgers. Fry for 3-4 minutes on each side over a gentle heat, until cooked through. 	130	1	0
 1629	Remove from the pan with a metal spatula and drain on kitchen paper, then serve with sliced tomato, lettuce and chili sauce.	130	2	0
@@ -9433,6 +9442,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3086	Toss, mix and enjoy.	397	1	0
 2631	Once they start to sizzle, evenly crack in the eggs, then spoon the black beans and just half the juice from the can in and around the eggs. Season with sea salt and black pepper, cover, and cook the eggs to your liking.	265	1	4
 4021	Take a large plate and sprinkle a few tablespoons of chickpea flour onto it. Using a spoon, scoop some of the mixture into your hands and shape into a ball, the size of a golf ball, and then press gently to make a patty. Drop into the chickpea flour to coat evenly. If too much flour sticks to the patty, then gently dust it off with your fingers or a pastry brush. You should have a very light coating all over the patties/burgers.	748	2	0
+1966	Grill (broil) the sausages for 10–12 minutes until they are browned on all sides.	190	0	28
 2816	Stir in flour, salt and pepper. Cook, stirring constantly, until smooth and bubbly; reduce heat to low. 	23	2	4
 4791	Add tomatoes then sauté until they begin to soften, 1 minute, using the juices to help scrape up any brown bits from the bottom of the skillet. 	85	3	4
 4792	Add baby spinach, then sauté until it begins to wilt, 1 minute — I like to switch over to tongs to help mix all the vegetables up. If pasta is still cooking at this time, remove the skillet from heat, so spinach doesn’t overcook.	85	4	4
@@ -9440,9 +9450,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3101	Line a large baking sheet with parchment paper and set aside.	403	1	0
 3102	In a large bowl, add all ingredients and mix well to coat leaves evenly.	403	2	0
 4793	Place the pasta cooking pot back over low heat then add Balsamic Vinaigrette, drained pasta, and spinach mixture then stir until the dish is heated through and spinach is tender. Scoop into bowls, then top with Parmesan or feta cheese.	85	5	4
-1966	Grill (broil) the sausages for 10–12 minutes until they are browned on all sides.	190	0	28
-2359	Stir the asparagus, wine and about half the Parmesan into the sauce. Drain the pasta and return it to the clean pan. Add the sauce and herbs and toss. Serve immediately with the remaining Parmesan.	194	4	0
 1967	Meanwhile, heat the oil in a large pan, add the onion and garlic and cook for 3 minutes. Add the paprika, herbs and chilli sauce to taste, then the yellow pepper. Cook for 3 minutes more, stirring occasionally.	190	1	4
+2359	Stir the asparagus, wine and about half the Parmesan into the sauce. Drain the pasta and return it to the clean pan. Add the sauce and herbs and toss. Serve immediately with the remaining Parmesan.	194	4	0
 2578	Preheat oven to 400°F.	250	0	0
 2579	Dice potatoes and zucchini separately and set aside. Chop cauliflower and arugula separately and set aside.	250	1	0
 2580	Mix diced potatoes and chopped cauliflower with 1 tablespoon of avocado oil and 1-2 teaspoons of salt. Roast in the oven until tender and browning.	250	2	0
@@ -9490,7 +9499,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3159	Bake in the oven for 30 minutes.	420	5	2
 2299	Heat a non-stick skillet over medium heat. Cut the bell peppers into four ½-inch thick rings.	19	0	4
 3160	Combine the honey through the parsley in a blender or food processor, until combined. Season to taste with salt and pepper.	421	0	384
-2821	Drain the pasta, toss into the bowl and mix well. Serve straight away while still warm, or cold.	39	1	0
+2820	Cook the pasta according to pack instructions – about 10 mins. Meanwhile, put the lime juice and zest in a medium bowl with the avocado, tomatoes, coriander, onion and chilli, if using, and mix well.	39	0	4
 2464	Drizzle 1 tsp melted butter on to each chicken piece. Place them in the frying pan in an even layer, two or three at a time, and cook for 2–3 minutes, until the underside begins to blacken. Turn the chicken over and cook the other side for 2–3 minutes more. Remove from the pan and keep hot while cooking successive batches. Serve hot with salad leaves and pepper strips.	131	4	4
 2056	Combine all the sausage ingredients, except the flour and oil, in a bowl. Take a small piece of the mixture and fry it in a little oil in a heavy frying pan, then taste to check the seasoning for the batch. Adjust if necessary.	178	0	0
 2057	Form the mixture into chipolata-size sausages using floured hands.	178	1	0
@@ -9518,7 +9527,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2044	Add butter then, once melted, add cooked chicken and rice and then toss to combine. Drizzle in tamari, toss to combine, then serve.	136	3	0
 2051	Heat the oil in a wok or large frying pan. Add the garlic and chilies and stir-fry over a medium heat for 1–2 minutes.	133	0	4
 2715	Drain the pasta well, then add it to a bowl of pesto and toss to coat.	184	1	0
-2820	Cook the pasta according to pack instructions – about 10 mins. Meanwhile, put the lime juice and zest in a medium bowl with the avocado, tomatoes, coriander, onion and chilli, if using, and mix well.	39	0	0
+2821	Drain the pasta, toss into the bowl and mix well. Serve straight away while still warm, or cold.	39	1	0
 2052	Add the chicken to the wok or pan and stir-fry until it changes colour.	133	1	4
 2053	Stir in the Thai fish sauce, soy sauce and sugar. Continue to stir-fry the mixture for 3–4 minutes, or until the chicken is fully cooked with the sauce.	133	2	4
 2054	Stir in the Thai basil leaves.	133	3	0
@@ -9585,15 +9594,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3267	In a medium bowl, whick together the olive oil through fresh mixed herbs. Add salt and pepper, to taste.	480	0	0
 2905	Peel and finely chop the red onions. Place a 10×12-inch roasting pan on a high heat on the stove, pour in 1 tablespoon of olive oil, add the onions, and fry for 4 minutes, or until soft and sweet, stirring regularly. 	315	1	4
 4706	Add the penne pasta and cook according to package directions.	984	1	4
-2337	Add the cauliflower rice. Stir intermittently for 5–10 minutes, until cauliflower is tender.	243	2	4
-2339	Add in the turmeric and stir to combine.	243	4	0
-2340	Season with salt and pepper and serve.	243	5	0
 3374	In a large bowl, toss the first 13 ingredients (chicken through honey) together.	540	0	0
 3375	In a large skillet over medium heat, heat the sesame oil.	540	1	4
 2473	Mix all ingredients together then store in an airtight container or jar with a tight fitting lid.	91	0	0
 2474	To use: brown 1lb ground meat then add 2 - 2½ Tablespoons taco seasoning mix plus 1/3 cup broth or water and simmer until liquid has thickened, 1-2 minutes.	91	1	0
 2901	Pull the skin off the chicken. Place the skin in a large non-stick frying pan on a medium heat to render and get golden, turning occasionally. Cut the bones out of the thighs and chuck into the pan for bonus flavor, then chop the meat into ¾-inch pieces. Move the skin and bones to one side of the pan, then add the meat alongside and cook for 5 minutes, or until golden, stirring occasionally. Once crispy, remove, chop, and reserve the skin, discarding the bones.	314	0	0
 2788	Place the minced pork, crushed garlic, chopped coriander root, sugar and soy sauce in a large bowl. Season with salt and pepper to taste and mix well.	161	0	0
+2337	Add the cauliflower rice. Stir intermittently for 5–10 minutes, until cauliflower is tender.	243	2	4
 2789	Divide into eight portions and mould each one into a ball. It may help to dampen your hands before shaping the mixture, to prevent it from sticking.	161	1	0
 2790	Stick a length of lemon grass halfway into each ball, then press the meat mixture around the lemon grass to make a shape like a chicken leg.	161	2	0
 2902	Meanwhile, cook the noodles in boiling salted water accoding to the package instructions. Halve the sugar snaps lengthways. Once soft, drain the noodles, reserving a cupful of cooking water, then refresh under cold water. User scissors to snip the noodles into roughly 3-inch lengths.	314	1	0
@@ -9602,8 +9609,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4241	Toss everything together with a good pinch of sea salt and black pepper, and 2 tablespoons each of extra virgin olive oil and red wine vinegar. 	854	3	0
 3376	To the oil, add the contents of the bowl and stir. Cook for 10–15 minutes, until chicken is cooked through and vegetables are tender.	540	2	4
 2386	Place patties onto prepared baking sheet then bake for 20-25 minutes or until burgers reach an internal temperature of 160 degrees.	134	2	0
+2339	Add in the turmeric and stir to combine.	243	4	0
 2830	In a bowl, mix together the sliced cucumber and onion, season with salt and toss together until thouroughly combined. Leave to stand in a cool place for 5-10 minutes.	123	0	0
 1555	Chop the new potatoes into chunks. Put them in a pan, pour in water to cover and add the salt and sugar. Bring to the boil, then reduce the heat and boil gently for about 10 minutes, or until the potatoes are just tender. Drain well and leave in a colander to cool.	153	0	0
+2340	Season with salt and pepper and serve.	243	5	0
 2894	Coat a 2 quart saucepan with vegetable spray and heat; add garlic and shallots; saute 2 minutes.	312	0	4
 2895	Add white wine, sherry, black beans and one and a half cups of broth; simmer 6–8 minutes.	312	1	4
 2896	Blend with a blender or food processor until smooth.	312	2	896
@@ -9716,19 +9725,19 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3270	In a small skillet, over medium heat, add the pine nuts, and sauté until lightly browned. Immediately remove from heat and set aside.	482	1	4
 2480	Gently stir and let the mixture sit for about 5 minutes. This will allow the milk to slightly curdle, giving it a buttermilk-like texture and taste.	262	1	0
 4575	Put the pine nuts in a non-stick frying pan and toss over a low to medium heat for 1–2 minutes or until they are lightly toasted and golden. Remove from the pan and set aside.	969	0	4
+1826	Add the canned ratatouille to the pan containing the vegetables. Bring to the boil, then simmer for 5 minutes.	173	3	0
+1827	Meanwhile, preheat the grill (broiler) and cook the burgers for about 5 minutes on each side, until browned and cooked through. Meanwhile, split the burger buns. Arrange lettuce leaves on the bun bases, add the burgers and top with warm relish and the bun tops. 	173	4	0
 2975	Preheat the oven to 400°F. Halve any large potatoes. Trim the fennel, pick and reserve any leafy tops, finely slice the stalky part, then halve the bulb and cut into ½-inch slices. Put it all into a 12x14-inch roasting pan, halve the artichokes and add with 2 tablespoons of oil from the jar, as well as a really good pinch of black pepper, then toss it all together. Pour in 1¼ cups of water, cover the pan tightly with aluminum foil, and back for 1 hour.	365	0	0
 2368	Process until completely smooth and creamy. This may take 5 minutes or so, depending on your food processor. You will need to scrape down the sides intermittently to ensure everything gets incorporated.	254	2	0
 4578	Mix in the shredded radicchio, then taste and season if necessary. Keep on a low heat. Drain the paglia e fieno, keeping the colors separate, and return the pasta to the pans. Add about 1 tbsp of oil to each pan and toss over a medium to high heat until the pasta if glistening with oil.	969	3	4
 2977	Cover cucumbers with boiling water. Let stand until next morning; drain. Repeat procedure the next 3 mornings. On the fifth day, drain and slice in 1/2-inch pieces. Combine remaining ingredients; bring to boiling and pour over cucumbers. Let stand 2 days. On third day, bring to boiling and seal in hot sterilized jars.  Makes 7 pints.	366	0	0
 2976	In a bowl, finely grate half the Parmesan into the cream and loosen with a splash of water. When the time's up, remove the pan from the oven, discard the foil, spoon over the cream mixture, and finely grate over the remaining Parmesan. Bake for a final 20 minutes, or until golden and cooked through, then sprinkle over any reserved fennel tops before serving.	365	1	0
 4579	Arrange a portion of the green and white pasta in each of 4–6 warmed bowls, then spoon the sun-dried tomato and radicchio mixture in the center. Sprinkle the spring onions and pine nuts over the top and serve immediately. Before eating, each diner should toss the sauce ingredients with the pasta.	969	4	0
-1825	Make a spicy relish by cooking the remaining shallot with the garlic and green chilli in the olive oil for 2-3 minutes, until softened.	173	2	0
 3354	Fill a medium-sized pot with water and bring it to a boil.	533	0	4
 2965	Place all of the above ingredients in a high-speed blender and enjoy right away.	359	0	0
 2973	Place the chicken breasts between two large sheets of parchment paper, and whack with the base of a large non-stick frying pan to flatten them to about ½ inch thick. 	364	0	0
 3230	Add the granola to the yogurt. Enjoy!	466	0	0
 2781	Heat the oil/ghee in a large pot. Add the chicken livers, onion, garlic and sauté gently until cooked through, about 15–20 minutes.	259	0	0
-1826	Add the canned ratatouille to the pan containing the vegetables. Bring to the boil, then simmer for 5 minutes.	173	3	0
 3404	Heat a large skillet over medium heat and add the avocado oil.	554	0	4
 3401	Add all ingredients to a slow cooker, and cook on low for 6–8 hours. Alternatively, add all ingredients to a pot, ensuring the liquid just covers the meat, and cook on the stove top over medium heat for 1½ - 2 hours, stirring occasionally. 	553	0	1028
 3405	Add the cauliflower rice and onion and cook for 5 minutes, or until desired texture is achieved.	554	1	4
@@ -9739,12 +9748,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2971	Pour in just enough egg to thinly cover the base of the pan, swirling it up around the sides and pouring any excess back into your bowl, almost like an egg pancake. 	362	1	4
 2978	Put a large non-stick frying pan on a medium-high heat. Trim and finely slice the scallions and fry with 1 tablespoon of olive oil for 1 minute.	367	0	4
 2970	Arrange the bresaola slices on your plates. Beat the eggs well. Get a 10-inch non-stick frying pan nice and hot on a medium heat, then add a drizzle of olive oil and wipe it around and out with a ball of paper towel. 	362	0	4
-1827	Meanwhile, preheat the grill (broiler) and cook the burgers for about 5 minutes on each side, until browned and cooked through. Meanwhile, split the burger buns. Arrange lettuce leaves on the bun bases, add the burgers and top with warm relish and the bun tops. 	173	4	0
 3517	Preheat the oven to 350°F.	584	0	2
 3402	If the liquid does not cover the meat, increase the amount of coconut aminos and apple cider vinegar in a 1:1 ratio until the meat is covered.	553	1	0
 3403	Serve with white or brown rice, quinoa, or cauliflower rice. Alternatively, you can serve over sautéed greens.	553	2	0
 2966	Put a pan of boiling salted water on for the pasta. Halve the eggplants lengthways and blanch in the water, covered, for 5 minutes, then lift out, leaving the water to boil.	360	0	4
 3184	Combine all ingredients in a small bowl, and season to taste with salt and pepper.	426	0	0
+1825	Make a spicy relish by cooking the remaining shallot with the garlic and green chilli in the olive oil for 2–3 minutes, until softened.	173	2	0
 2980	Place rhubarb pieces in a medium pot; sprinkle with sugar. Stir well to ensure rhubarb is completely coated with sugar; cover and let rest for 15 minutes, stirring once so natural juices are released.	368	0	0
 2981	Bring rhubarb mixture to a boil over medium heat, stirring often. Reduce heat; simmer until soft, about 10 minutes. Serve compote warm.	368	1	0
 4583	Transfer the lamb to warmed plates. Top any juices from the foil into the remaining glaze and heat through gently. Pour the glaze over the lamb and serve with peas and new potatoes, garnished with fresh rosemary sprigs.	970	3	0
@@ -9820,11 +9829,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4594	Scrape the mixture out on to the work surface and shape into 12 even meatballs, about 3in long and 1in wide. Roll in the flour to coat.	972	3	0
 4595	Heat the oil in a frying pan and fry the bitki for 10 minutes, turning until evenly golden brown and cooked through.	972	4	0
 4596	Serve hot with a green salad and pickled beetroot.	972	5	0
+3282	Place on a baking sheet and bake for 25–30 minutes, until tender.	487	3	2
 3408	In a large pot, add a steamer basket and 1–2 cups of water. Add the beans and steam until tender, about 5 minutes. Remove beans from the basket and set aside.	555	0	4
 4600	Mix the paprika and flour together on a plate. Coat each chicken breast in the seasoned flour.	974	0	0
 3003	For extra flavour, stir less and allow the cauliflower to brown slightly – this will give your cauliflower rice a slightly richer, nuttier flavour, reminiscent of roasted cauliflower.	376	3	0
 2819	Meanwhile, slice the zucchini lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!). 	260	1	0
-3279	Preheat the oven to 400°F.	487	0	2
 3346	Combine all ingredients in a high-speed blender.	531	0	128
 3347	Blend for 30 seconds to 1 minute, until desired consistency is achieved.	531	1	128
 3188	Blend all ingredients, except for the hot water, in a high-speed blender.	429	0	128
@@ -9839,6 +9848,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3381	In a large skillet over medium heat, heat the oil.	542	0	4
 3382	To the skillet, add the chicken, lemon zest, thyme, and salt & pepper. Cook for 5–10 minutes, until the chicken is cooked through.	542	1	4
 3383	Serve with cauliflower mash.	542	2	0
+3279	Preheat the oven to 400°F.	487	0	2
 3235	Spoon mixture into the celery and serve.	469	1	0
 469	Put the bacon in a skillet and cook it until crispy, about 4–5 minutes. Add the pecans and maple syrup to the pan, boil for 1 minute, then remove from the heat.	67	4	0
 470	Take the french toast out of the oven, put it on two places, and pour the maple-bacon syrup over the top. 	67	5	0
@@ -9849,13 +9859,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3005	Place the chicken strips, bell peppers, and onion on a sheet pan.	377	1	0
 3006	Drizzle with olive oil, sprinkle with chili powder, cumin, salt, and pepper.	377	2	0
 3007	Roast for 20–25 minutes, until the chicken is cooked through, and the vegetables are tender.	377	3	2
+3280	Line 2 baking sheets with parchment paper.	487	1	0
 3013	Heat 1 tablespoon avocado oil in a large pan, over medium heat. Add chicken and sauté until lightly cooked, about 3–4 minutes per side.	378	5	0
 3409	In a large skillet, over medium-high heat, add the oil. Add the shallot and cook until translucent, about 3 minutes.	555	1	4
 3410	Add the garlic and cook until fragrant, stirring constantly to ensure it doesn't burn, about 30 seconds.	555	2	4
 3425	Mix together and enjoy!	560	0	0
-3280	Line 2 baking sheets with parchment paper.	487	1	0
-3281	Add all of the veggies into a bowl, and toss with olive oil and sea salt to taste.	487	2	0
-3282	Place on a baking sheet and bake for 25–30 minutes, until tender.	487	3	2
 2073	Wipe the wok clean and heat the remaining oil. Stir in the garlic, snow peas, bean sprouts and shredded ham. Stir-fry for 2–3 minutes over high heat.	197	3	4
 3455	Refrigerate up to 1 month.	75	4	65536
 3015	Heat the oil in a large skillet or frying pan over medium-high heat.	379	0	4
@@ -9865,6 +9873,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3411	Add the beans back to the skillet, and stir until warm, about 2 minutes.	555	3	4
 3412	Add the lemon juice, salt and pepper, and then top with the sliced almonds. Add the green beans and sauté until warmed through, about 1–2 minutes.	555	4	4
 3452	Cook over very low heat for 5 minutes or until a thermometer inserted into the oil registers 180ºF.	75	1	4
+3281	Add all of the veggies into a bowl, and toss with olive oil and sea salt to taste.	487	2	0
 1502	Transfer the lentil mixture and juices to warmed plates or bowls. Crumble the remaining feta cheese on top and sprinkle with the fresh herbs to garnish. Serve the lentils immediately.	150	2	0
 2907	Cook the noodles in boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. Meanwhile, finely grate the zest of 1 lime, snip the cress, and put both aside. 	316	0	4
 3191	Mix the lemon juice and olive oil together and add to the bowl of veggies.	430	1	0
@@ -9904,7 +9913,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2900	Meanwhile, trim and finely slice the scallions, putting the white slices into a bowl. Seed and finely chop the chilies, add to the bowl with 1 tablespoon of red wine vinegar and a little sea salt and black pepper, and mix well to make a dressing.	313	1	0
 3043	Heat 1 tablespoon of vegetable oil in a large skillet or wok over medium-high heat. Add the diced onion and sauté until it becomes translucent, about 2–3 minutes.	388	0	4
 3061	Add the beaten eggs to the center of the pan and, stirring occasionally, scramble the eggs. Add more sesame oil by the half-teaspoonful as necessary to cook the eggs. Mix the scrambled eggs into the rest of the fried rice.	391	5	4
-3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. 	387	0	0
 3064	Preheat your oven to 400°F. Drain and rinse the chickpeas thoroughly, then spread them on a clean kitchen towel or paper towel. Pat them completely dry to remove moisture.	392	0	2
 3065	Spread the chickpeas in a single layer on a baking sheet (no oil or seasoning yet). Bake for 10–15 minutes, shaking the pan halfway through. This step helps dry them out for maximum crispiness.	392	1	2
 2967	Chop the eggplant into 1¼-inch chunks, add to a pan with the chili oil and a pinch of sea salt and black pepper, then turn the heat up to high, stirring regularly.	360	1	4
@@ -9921,6 +9929,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3048	Remove from heat and garnish with sliced green onions, if desired. Serve hot and enjoy.	388	5	0
 3057	Add the garlic, and continue to sauté for another 2 minutes, or until the garlic is fragrant, and the onion is translucent.	391	1	4
 3058	Add the dried, riced cauliflower, then the sesame oil, tamari and mirin to the pan, and mix to combine. Add the frozen peas and carrots, and mix gently to combine.	391	2	4
+3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. 	387	0	2048
 3413	Get out a blender or immersion blender.	556	0	640
 3108	Mash the mint leaves in a mortar and pestle to release the flavor.	405	0	0
 2985	Scrape the chilli mixture into a high-sided pan over a medium-high heat, add the sugar and vinegar, then give everything a good stir.	370	1	0
@@ -10460,13 +10469,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3863	In a blender, combine the coconut water, lime juice, ginger, salt, and ice and blend until smooth. Divide the blended mix between two tall glasses and top with tonic water.	698	0	128
 4009	Sauté ground beef in a large skillet over medium heat until browned and crumbly; 5–10 minutes.	745	0	4
 3557	When done, serve over cauliflower rice, or regular rice.	591	4	0
+4768	Serve with grated cheese, if desired. Enjoy!	33	3	0
 3812	Take the pan out of the oven and spoon the salsa around evenly. Break the eggs into the pan, top with the cheddar, and bake for another 5–10 minutes depending on how you like your eggs. Serve hot.	659	3	2
 3824	In a medium bowl, toss the arugula and apple with the dressing.	663	0	0
 3825	Divide the salad between two plates. Gently scrunch up the prosciutto slices and place one on each plate beside the salad.	663	1	0
 3826	Season the salad with salt and pepper and finish it with the Parmesan shavings.	663	2	0
 3034	Meanwhile, halve the pomegranate, squeeze the juice from one half through a sieve into a large bowl, add 1 tablespoon of red wine vinegar and 2 teaspoons of extra virgin olive oil. Finely chop the top leafy half of the mint (reserving a few nice leaves), stir into the bowl, then taste and season to perfection.	384	1	0
 4769	Holding the remaining pomegranate half cut-side down in your fingers, bash the back of it with a spoon so all the seeds tumble over the salads. Crumble or grate over the feta, sprinkle over the reserved mint leaves, and tuck in.	384	3	0
-4768	Serve with grated cheese, if desired. Enjoy!	33	3	0
 4010	Preheat the oven to 350°F.	746	0	2
 3828	Preheat the oven to 375°F.	664	0	0
 3829	Warm a large ovenproof skillet over medium-high heat. Add the olive oil and ground beef. Cook the beef for 9–10 minutes, until it is browned.	664	1	4
@@ -10626,7 +10635,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4018	Refrigerate for at least 2 hours, then serve and enjoy!	747	3	65536
 3999	Preheat the oven to 375°F.	742	0	2
 4000	Put the cooked chicken fingers in a small baking dish. Spoon 1 cup of marinara sauce over the chicken and cover with 2 tablespoons of Parmesan and all the mozzarella. Cover the pan with aluminum foil and bake in the oven for 20 minute.	742	1	2
-4284	Remove the peaches to a bowl, give the pan a quick wipe with a ball of paper towel, then use the fine side of a box grater to grate half the halloumi over the surface of the pan. Leave on the heat for 1–2 minutes, or until golden on one side, then tip directly over one of the plates, using a spatula to ease it away from the pan, if needed. Repeat with the remaining halloumi for the second plate. Spoon over the peaches, and tuck straight in.	751	3	4
 2927	Roll and coat them in black pepper, then cook in a non-stick frying pan on a medium-heat with ½ a tablespoon of olive oil until golden and cooked through, tossing regularly, then turn the heat off.	323	2	4
 4795	Finely chop the parsley, stalks and all, beat it with the egg and a splash of pasta cooking water, then finely graze and mix in most of the Parmesan.	323	3	0
 4786	Use a strainer to drain the black beans over a bowl, reserving the can liquid.	1003	3	0
@@ -10656,6 +10664,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3694	Bake for 30 minutes, then drizzle over the honey and return to the oven for 5 minutes, or until golden and delicious.	311	6	2
 3944	Warm a medium pot over medium heat. Add the olive oil and onion and cook for 5 minutes, or until soft. Add the ginger and cook for 30 seconds. Add the tomato paste and cook for 1 minute.	727	0	4
 3733	Remove the pan from the oven and dust the surface with cocoa powder. Cut through the marked sections with a round-bladed knife and leave to cool completely before removing them from the pan.	637	4	0
+4284	Remove the peaches to a bowl, give the pan a quick wipe with a ball of paper towel, then use the fine side of a box grater to grate half the halloumi over the surface of the pan. Leave on the heat for 1–2 minutes, or until golden on one side, then tip directly over one of the plates, using a spatula to ease it away from the pan, if needed. Repeat with the remaining halloumi for the second plate. Spoon over the peaches, and tuck straight in.	751	3	4
 4708	Freeze the bowl for 5 minutes to allow the dough to firm up even more: it should feel stiff and rollable at this point. If not, you can mix in a handful more oats — or if it’s too crumbly, add a hint more peanut butter and honey.	985	1	131072
 4717	Generously season roast with sea salt, pepper, and garlic powder. Lightly sprinkle with Herb de Provence. (you'll put more in the crock pot later) Heat a cast iron pan on med/high heat. When pan is hot add enough olive oil to lightly coat the bottom on the pan.	990	0	4
 3945	Sprinkle the curry powder into the pot and cook for 30 seconds. Add the lentils and water and bring to a boil. Reduce the heat to low and simmer for 25–30 minutes, until the lentils are tender.	727	1	4
@@ -10692,12 +10701,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3461	Add the coconut aminos, lemon juice and minced garlic. Season to taste with salt and pepper. Cook for about 7–10 minutes, stirring regularly.	568	5	4
 3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	568	6	0
 4773	Store in a sealed container in the fridge for up to 2 weeks.	723	4	65536
+4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
 4790	Chop the cilantro. Serve the black beans warm with rice and garnish with the chopped cilantro.	1003	7	0
 2791	Cook the pork sticks under a hot grill (broiler) for 3–4 minutes on each side, until golden and cooked through. Serve with the chili sauce for dipping.	161	3	0
 3607	Individually wrap the beets, pears, and onion with tinfoil.	609	1	0
 3608	Bake for 90–120 minutes, checking halfway for doneness.	609	2	2
 3609	In a high-speed blender, combine the baked vegetables with the remaining ingredients and blend until smooth.	609	3	640
-4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
 544	Simmer for 10 mins, or until reduced. Stir in the spinach and cook for 5 mins more until wilted.	40	1	4
 4720	In a mixing bowl, lightly beat the egg, then add the bell peppers, chilies, scallions, and cheese. Season to taste with salt and pepper.	991	0	0
 4721	Put rings into a well-greased hot skillet. You’ll want to put them on their rough side down. Cook the onions for 2 minutes then flip. 	991	1	4
@@ -10820,6 +10829,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4214	Spread mayonnaise on the bottom bun and build the sandwich by adding the bacon in an X and top with the cheesy egg.	844	3	0
 4236	Preheat the oven to 350°F. Wash the potatoes and chop into 1¼-inch chunks. Trim the cauliflower stalk, remove any tough outer leaves, then chop the cauliflower and nice leaves the same size as the spuds. Finely slice the cilantro stalks (reserving the leaves in a bowl of cold water).	853	0	2
 4243	Preheat oven to 400°F, place oven rack in center position.	855	0	2
+4631	Pour the dressing over the olives and leave to marinate. The longer you leave them, the better they’ll taste.	387	2	0
+4630	Peel off long thick strips of lemon zest and place in a bowl with the olives. Squeeze in the lemon, then top with 3 times as much extra virgin olive oil. Add salt, pepper and the crushed coriander seeds. 	387	1	0
 4244	While oven heats: place chicken thighs skin side up in roasting pan. Add cut potatoes all around and in between chicken pieces. In a bowl, juice your lemon and orange. Add spicy brown mustard and whisk. Pour over chicken and potatoes.	855	1	0
 4624	Drain the beans and peas, reserving a cupful of cooking water and discarding the mint stalks. Pinch the skins off any larger beans, then pour the beans and peas onto a platter, toss with a few splashes of reserved cooking water, then spoon over the dressing. Drizzle with 1 more tablespoon of extra virgin olive oil and toss together at the table before tucking in.	306	2	0
 4238	Strip off the outer stalks of celery (and save for another day) and pull off and reserve the pale yellow inner leaves. Trim and very finely slice the rest of the celery and place in a bowl. 	854	0	0
@@ -10835,9 +10846,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4229	When bacon is cooked to desired crispiness, set aside until ready to serve.	851	4	0
 1308	Pour the marinade over the chicken and stir to coat each breast fillet all over. Cover the dish with clear film (plastic wrap) and set aside for as much time as you have. Place the covered dish in the refrigerator.	128	2	65536
 4628	Halve the bok choy lengthways and place in a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil. Once charred, toss in the green scallion slices, then stir in the hoisin. Let it glaze for 1 minute, then mix in the rice for 1 final minute.	313	2	4
-4630	Peel off long thick strips of lemon zest and place in a bowl with the olives. Squeeze in the lemon, then top with 3 times as much extra virgin olive oil. Add salt, pepper and the crushed coriander seeds. 	387	1	0
 4629	Spoon over the chili dressing, and serve up.	313	3	0
-4631	Pour the dressing over the olives and leave to marinate. The longer you leave them, the better they’ll taste.	387	2	0
 4217	Add a splash of red wine vinegar to the pan and jiggle around to pick up the gnarly bits. Trim and finely slice the scallions, scatter them over the chicken with the toasted sesame seeds, and get stuck in.	385	2	0
 4206	Toast 1 slice of bread.	849	0	100
 4207	Cook eggs, any style.	849	1	0
@@ -11033,7 +11042,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4733	Strain the pasta in a colander (do not rinse); add to the pan with the Brussels sprouts.	993	4	0
 4734	Add pancetta, cream, pine nuts and the last tablespoon of butter, sea salt and pepper to taste (keep in mind pancetta and Parm are salty, so be conservative).	993	5	0
 4751	While you wait, heat a small pan. When hot add butter or olive oil, add egg, sprinkle with bagel seasoning, and fry to your liking.	996	2	4
-1968	Pour in the canned tomatoes, breaking them up with a wooden spoon, then add salt and pepper to taste and stir well. Cook over a medium heat for 10–12 minutes, adding the vegetable stock gradually. At the same time, cook the pasta in a large pan of lightly salted boiling water for 10–12 minutes.	190	2	4
 4306	Position a rack in the center of the oven and turn the broiler to high.	865	0	16
 4164	Put the prepared lemons to the jar, one at a time. After each one, press it down so its juices come out and rise to the top. Pack the jar with lemons, making sure that they are covered with juice.\r\n\r\nThe number of lemons that fit in the jar will depend on the size of your lemons.\r\n\r\nIf any of the lemons break apart, don't worry. It won't ruin anything.	839	3	0
 4165	Add more juice if needed to submerge the lemons (you may need up to an additional ½-cup) and add a couple more tablespoons of kosher salt to the top.	839	4	0
@@ -11047,6 +11055,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4166	Close the lid to the jar and let it sit at room temperature on the counter for a few days. Turn the jar upside down every so often. After a few days put the jar of lemons in the refrigerator for at least 3 weeks, until the rinds of the lemons soften. Turn the jar upside down occasionally while storing in the refrigerator.	839	5	65536
 4167	To use preserved lemons in cooking, remove one from the jar and rinse it to remove the salt. Discard any seeds. Remove the pulp. Thinly slice or chop the preserved lemon rind to use in a recipe.	839	6	0
 1226	In a small bowl, mix the tahini with the lemon juice, then thin the mint mixture down with a little water to the consistency of a thick double (heavy) cream. Beat in the garlic and season.	127	1	0
+1968	Pour in the canned tomatoes, breaking them up with a wooden spoon, then add salt and pepper to taste and stir well. Cook over a medium heat for 10–12 minutes, adding the vegetable stock gradually. At the same time, cook the pasta in a large pan of lightly salted boiling water for 10–12 minutes.	190	2	4
 2290	Stir in the thyme and vinegar. Cook for 30 seconds, stirring, then set aside.	195	1	4
 2291	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Drain, then transfer to a large serving bowl. Add 1-tbsp of the oil and toss well to coat.	195	2	4
 2292	Add the artichokes, broccoli, olives, parsley, onion mixture and remaining oil to the pasta. Toss to blend. Leave to stand for at least 5 minutes before serving.	195	3	0
@@ -11147,7 +11156,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4921	Note: if you happen to err on the side of under cooked potatoes, no worries! Instead of rinsing potatoes under cold water, simply cover colander with a clean dish towel and allow potatoes to steam in their own heat for 2–3 minutes, then rinse	1043	3	0
 4922	Pour asparagus to potatoes into a bowl, lightly drizzle with olive oil, sprinkle with sea salt and pepper. Toss with pine nuts and serve.	1043	4	0
 4260	In a small bowl, combine arugula and vinaigrette. Carefully place lemon-dressed arugula on top of cheese and finish with the top biscuit.	856	6	0
-1969	While the tomato sauce and pasta are cooking, drain the cooked sausages on kitchen paper, and, when cool enough to touch, cut each one diagonally into ½-inch pieces.	190	3	0
 4960	Sit the chicken in the pan and rub all over with the tikka paste, getting into all the nooks and crannies. Place the chicken directly on the bars of the oven, scrunch everything in the pan and place exactly underneath the chicken to catch the tasty juices. Roast for 1 hour, or until everything is golden and cooked through, turning the veg halfway.	853	2	2
 4961	Sit the chicken on top of the veg to rest for 5 minutes, then sprinkle over the drained cilantro leaves and serve, tossing the veg in all the tasty juices before dishing up.	853	3	0
 4840	Place the baking sheet in the preheated oven and bake for 15–20 minutes, stirring halfway through, until the nuts and seeds are golden brown and fragrant.	1005	3	0
@@ -11159,6 +11167,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4924	Scrape the sides of the bowl and beat on high for 2–3 additional minutes, until the butter is light and creamy.	1044	1	0
 4925	Transfer to an airtight container and store in the refrigerator for up to a week. Return to room temperature before serving.	1044	2	65536
 4967	Meanwhile, halve, peel, and pit the avocado, slice into thin wedges, dress with the lime juice, and season to perfection. Arrange the avocado around the pan, scatter over the rest of the chilies, stab the egg yolks, and dish up.	265	2	0
+1969	While the tomato sauce and pasta are cooking, drain the cooked sausages on kitchen paper, and, when cool enough to touch, cut each one diagonally into ½-inch pieces.	190	3	0
 \.
 
 
@@ -11190,7 +11199,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 913, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 917, true);
 
 
 --
@@ -11971,5 +11980,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict nksCJgAOV7WD0IxemvJlE3fNwPsKGWOSzJMbJS5cZixD8IObWOFAfoyR35JygPK
+\unrestrict eqSh5G9elNptBcGhosLup5Tf0cmHABycu6ODpysiJ9J4SdSWgHE51UX38ZID3BY
 

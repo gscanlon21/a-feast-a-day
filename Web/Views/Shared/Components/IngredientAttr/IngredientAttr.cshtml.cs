@@ -15,6 +15,6 @@ public class IngredientAttrViewModel
         : "https://fdc.nal.usda.gov/food-search/";
 
     public string GetHealthCanadaUrl() => IngredientAttr.HC_Id.HasValue
-        ? $"https://food-nutrition.canada.ca/cnf-fce/serving-portion?id={IngredientAttr.HC_Id}"
-        : "https://food-nutrition.canada.ca/cnf-fce/";
+        ? $"https://open.canada.ca/data/en/dataset/1b6139bd-ed7e-4043-bc28-ff00e10f3109/resource/e1ffee62-58cb-4e3e-b359-115c658388ad?id={IngredientAttr.HC_Id}"
+        : "https://open.canada.ca/data/en/dataset/1b6139bd-ed7e-4043-bc28-ff00e10f3109/resource/e1ffee62-58cb-4e3e-b359-115c658388ad/";
 }

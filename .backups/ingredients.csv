@@ -26,7 +26,7 @@
 26	\N	Sliced Ham	Sliced Ham	\N	f	1048576	28	100	2024-12-10	4	224	10	224	Sliced Ham	https://fdc.nal.usda.gov/food-details/332397/nutrients	\N	0
 27	\N	Slices of Turkey	Slices of Turkey	\N	f	1048576	26	100	2025-03-27	0	208	10	208	Slices of Turkey	\N	\N	0
 28	\N	Brown Eggs	Brown Eggs	\N	f	8	50	100	2025-06-14	0	200	10	200	Brown Eggs	\N	\N	0
-29	\N	Butter	Butter	\N	t	0	14	100	2025-10-07	7	224	10	224	Butter	https://fdc.nal.usda.gov/food-details/789828/nutrients	\N	0
+29	\N	Butter	Butter	\N	t	0	14	100	2025-10-07	7	224	8	224	Butter	https://fdc.nal.usda.gov/food-details/789828/nutrients	\N	9
 30	\N	Shredded Cheddar Cheese	Shredded Cheddar Cheese	\N	f	256	28	100	2024-11-27	4	113	8	113	Cheddar Cheese	\N	\N	9
 31	\N	Whole Milk (Cow), unenriched	Whole Milk (Cow), unenriched	\N	f	320	946	100	2026-03-30	14	244	8	244	Milk	\N	\N	20
 32	\N	Sour Cream	Sour Cream	\N	f	256	28	100	2025-01-26	4	240	10	240	Sour Cream	https://fdc.nal.usda.gov/food-details/2346387/nutrients	\N	0
@@ -177,7 +177,7 @@
 181	\N	Hemp Milk	Hemp Milk	\N	f	0	240	100	2025-01-08	6	240	10	240	Hemp Milk	\N	\N	0
 182	\N	Macadamia Milk	Macadamia Milk	\N	f	0	244.8	100	2025-06-21	6	240	0	240	Macadamia Milk	\N	\N	0
 183	\N	Cashew Milk	Cashew Milk	\N	f	0	30	100	2026-04-22	9	240	8	240	Cashew Milk	\N	\N	20
-184	\N	Rice Milk	Rice Milk	\N	f	4096	240	100	2024-11-14	6	240	10	240	Rice Milk	\N	\N	0
+184	\N	Rice Milk	Rice Milk	\N	f	4096	240	100	2026-05-22	6	240	8	240	Rice Milk	\N	\N	9
 185	\N	Steel-Cut Oats	Steel-Cut Oats	aka. pinhead oats.	f	1024	28	100	2026-02-15	4	156	4	156	Oat	\N	\N	4
 186	\N	Milk	Milk	\N	f	320	976	100	2025-09-16	14	244	10	244	Milk	\N	\N	0
 187	\N	Eggs	Eggs	\N	f	8	50	100	2026-04-25	0	200	8	200	Eggs	\N	\N	10
@@ -395,7 +395,7 @@
 411	\N	Shortbread Cookies	Shortbread Cookies	\N	f	262176	9.5	100	2025-01-31	0	114	5	114	Shortbread Cookies	\N	\N	16
 412	\N	Double Espresso	Double Espresso	\N	t	0	30	100	2026-03-27	9	240	4	240	Espresso	\N	\N	12
 413	\N	All-Purpose Flour, GF	All-Purpose Flour, GF	\N	t	0	28	100	2025-06-24	4	125	4	125	All-Purpose Flour, GF	\N	\N	14
-414	\N	Bread Flour, Unenriched, GF	Bread Flour, Unenriched, GF	\N	f	0	137	100	2024-11-14	6	137	4	137	Bread Flour, Unenriched, GF	\N	\N	14
+414	\N	Bread Flour, Unenriched, GF	Bread Flour, Unenriched, GF	\N	f	0	137	100	2026-05-22	6	137	4	137	Bread Flour, Unenriched, GF	\N	\N	14
 415	\N	Frozen Grilled Chicken Breast Strips	Frozen Grilled Chicken Breast Strips	\N	f	1048576	28	100	2025-03-18	4	224	10	224	Grilled Chicken Breast	\N	\N	0
 416	\N	Cheddar Jack Cheese	Cheddar Jack Cheese	\N	f	256	28	100	2025-01-01	4	112	10	112	Chedder Jack Cheese	\N	\N	0
 417	\N	Spring Mix	Spring Mix	\N	f	0	28	100	2025-11-17	4	42.5	1	42.5	Spring Mix	\N	\N	2
@@ -544,7 +544,7 @@
 622	\N	Chickpea Eliche Pasta	Chickpea Eliche Pasta	\N	f	0	28	100	2025-02-08	4	74.67	4	74.67	Chickpea Eliche Pasta	\N	\N	5
 623	\N	Red Lentil Eliche Pasta	Red Lentil Eliche Pasta	\N	f	0	28	100	2025-02-07	4	112	4	112	Red Lentil Eliche Pasta	\N	\N	5
 624	\N	Fresh Radicchio Leaves 	Fresh Radicchio Leaves 	\N	f	0	8	100	2026-01-22	0	40	2	40	Radicchio	\N	\N	0
-625	\N	Fresh Blackberries	Fresh Blackberries	\N	f	0	28	100	2025-01-14	4	144	1	144	Fresh Blackberries	https://fdc.nal.usda.gov/food-details/2727581/nutrients	\N	0
+625	\N	Fresh Blackberries	Fresh Blackberries	\N	f	0	28	100	2025-01-14	4	144	1	144	Fresh Blackberry	https://fdc.nal.usda.gov/food-details/2727581/nutrients	\N	1
 626	\N	Fresh Raspberries	Fresh Raspberries	\N	f	0	28	100	2024-12-18	4	123	1	123	Raspberry	https://fdc.nal.usda.gov/food-details/2346410/nutrients	\N	0
 627	\N	Medjool Dates	Medjool Dates	\N	f	0	24	100	2025-05-23	0	192	1	192	Medjool Dates	https://fdc.nal.usda.gov/food-details/168191/nutrients	\N	0
 628	\N	Plain Coconut Milk	Plain Coconut Milk	\N	f	0	30	100	2025-11-12	9	240	10	240	Plain Coconut Milk	\N	\N	0
@@ -590,7 +590,7 @@
 668	\N	Refried Beans	Refried Beans	\N	f	0	28	100	2026-04-06	4	238	4	238	Refried Beans	\N	\N	6
 669	\N	Frozen Blueberries	Frozen Blueberries	\N	f	0	28	100	2024-11-28	4	155	10	155	Frozen Blueberries	\N	\N	0
 670	\N	Frozen Wild Blueberries	Frozen Wild Blueberries	\N	f	0	28	100	2025-01-12	4	140	10	140	Frozen Wild Blueberries	\N	\N	0
-671	\N	Beets	Beets	\N	f	0	82	100	2025-04-27	0	82	2	82	Beets	\N	\N	0
+671	\N	Beets	Beets	\N	f	0	82	100	2025-04-27	0	82	1	82	Beets	\N	\N	2
 673	\N	Vanilla Sugar	Vanilla Sugar	\N	f	0	28	100	2024-12-08	4	336	4	336	Vanilla Sugar	\N	\N	14
 674	\N	Red Radish	Red Radish	\N	f	0	100	100	2026-04-09	0	100	1	100	Red Radish	\N	\N	0
 675	\N	Fresh Okra	Fresh Okra	\N	f	0	12.5	100	2025-11-02	0	100	2	100	Fresh Okra	\N	\N	0
@@ -1033,12 +1033,12 @@
 1297	\N	Vanilla Protein Powder	Vanilla Protein Powder	\N	t	0	28	100	2025-06-17	4	112	10	112	Protein Powder	\N	\N	0
 1298	\N	Chocolate Protein Powder	Chocolate Protein Powder	\N	t	0	28	100	2025-06-17	4	112	10	112	Protein Powder	\N	\N	0
 1299	\N	Plain Protein Powder	Plain Protein Powder	\N	t	0	28	100	2025-06-17	4	112	10	112	Protein Powder	\N	\N	0
-1300	\N	Raw Red Lentils	Raw Red Lentils	\N	f	0	28	100	2025-05-24	4	192	4	192	Lentil	https://fdc.nal.usda.gov/food-details/174284/nutrients	\N	14
+1300	\N	Raw Red Lentils	Raw Red Lentils	\N	f	0	28	100	2025-05-24	4	192	4	192	Lentil	https://fdc.nal.usda.gov/food-details/174284/nutrients	\N	6
 1301	\N	Fresh Ginger	Fresh Ginger	\N	f	0	5	100	2025-09-18	7	80	3	80	Fresh Ginger	\N	\N	0
 1302	\N	Crushed Chili Pepper Flakes	Crushed Chili Pepper Flakes	aka: Dried Chili Pepper Flakes - https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	t	0	28	100	2025-07-19	4	16	4	16	Crushed Chili Pepper Flakes	\N	\N	12
 1303	\N	Red Lentils | Green Lentils	Red Lentils | Green Lentils	\N	f	0	28	100	2025-05-24	4	192	4	192	Red Lentils | Green Lentils	\N	\N	14
 1304	\N	White Wine | Vegetable Broth	White Wine | Vegetable Broth	\N	f	0	29.4	100	2025-10-16	9	235.2	5	235.2	White Wine | Vegetable Broth	\N	\N	16
-1305	\N	Raw Green Lentils	Raw Green Lentils	\N	f	0	28	100	2025-05-24	4	192	4	192	Lentil	\N	\N	14
+1305	\N	Raw Green Lentils	Raw Green Lentils	\N	f	0	28	100	2025-05-24	4	192	4	192	Lentil	\N	\N	6
 1306	\N	Sambal Oelek	Sambal Oelek	aka: Chili Paste - https://www.eatthismuch.com/food/nutrition/chili-powder,184/	t	0	7.5	100	2025-07-18	7	120	3	120	Sambal Oelek	\N	\N	7
 1307	\N	Canned Chickpeas	Canned Chickpeas	aka: Canned Garbanzo Beans.	f	0	28	100	2025-11-30	4	240	4	240	Chickpea	https://www.eatthismuch.com/calories/chickpeas-3556	\N	6
 1308	\N	Garlic	Garlic	\N	f	0	33	100	2025-11-17	0	99	3	99	Garlic	https://fdc.nal.usda.gov/food-details/1104647/nutrients	\N	0
@@ -1521,3 +1521,4 @@
 2030	\N	Pork Belly	Pork Belly	\N	f	1048576	100	100	2025-08-06	0	100	10	100	Pork Shoulder	\N	\N	0
 2031	\N	Poppy Seeds	Poppy Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	https://fdc.nal.usda.gov/food-details/2515381/nutrients	\N	0
 2032	\N	Coconut	Coconut	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	f	0	28	100	2025-10-18	4	60	4	60	Coconut Flakes	\N	\N	13
+2033	\N	Cooking Oil	Cooking Oil	\N	f	0	30	100	2025-01-23	9	240	4	240	Chinese Cooking Wine	\N	\N	14

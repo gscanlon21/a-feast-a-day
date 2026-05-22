@@ -19,7 +19,7 @@
 36	Slow Cooker Macaroni and Cheese Recipe	\N	\N	\N	16	120	10	4	t	mac-n-cheese-mug.jpg	0	https://cutefetti.com/5-ingredient-slow-cooker-macaroni-cheese/	f	f
 37	Black Bean Quesadillas	We like them with black beans, but pinto beans work well too. If you like a little heat, be sure to use pepper Jack cheese in the filling. Serve with: A little sour cream and a mixed green salad.	\N	\N	4	10	5	4	t	black-bean-quesadillas.jpg	0	https://www.eatingwell.com/recipe/250108/black-bean-quesadillas/	f	f
 38	Black Bean Fajita Skillet	You can easily take your bowl up a notch by adding some cheese, sour cream or another tasty topping.	\N	\N	4	10	5	2	t	black-bean-fajita-skillet.jpg	0	https://www.eatingwell.com/recipe/7886570/black-bean-fajita-skillet/	f	f
-39	Linguine w/ Avocado, Tomato, & Lime	\N	\N	\N	6	10	20	2	t	linguine-avocado-tomato-lime.jpg	0	https://www.bbcgoodfood.com/recipes/linguine-avocado-tomato-lime	f	f
+39	Linguine w/ Avocado, Tomato, & Lime	\N	\N	\N	12	10	20	2	t	linguine-avocado-tomato-lime.jpg	0	https://www.bbcgoodfood.com/recipes/linguine-avocado-tomato-lime	f	f
 40	Saucy Bean Baked Eggs	\N	\N	\N	6	15	5	2	t	bean-baked-eggs.jpg	0	\N	f	f
 41	Creamy Pasta w/ Asparagus & Peas	\N	\N	\N	12	10	5	2	t	pasta-asparagus-cream.jpg	0	\N	f	f
 42	Baked Banana Porridge	Bananas are a good source of the amino acid tryptophan, which the body needs to make the feel- good hormone serotonin. When eaten with a carb source such as oats, the brain can absorb the tryptophan easily.	\N	\N	2	25	5	2	t	baked-banana-porridge.jpg	0	https://www.bbcgoodfood.com/recipes/baked-banana-porridge	f	f
@@ -93,7 +93,7 @@
 113	Multigrain Pancake Batter	\N	Too many ingredients.	\N	2	10	5	6	t	buttermilk-pancakes.jpg	0	\N	f	f
 114	Honey Dijon Mustard Dressing	\N	\N	\N	0	0	5	1	t	honey-mustard-dressing.jpg	6	\N	f	f
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	honey-chicken-pecan-salad.jpg	0	\N	f	f
-116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	1	t	citrus-dressing.jpg	6	\N	t	f
+116	Citrus Chipotle Dressing	\N	\N	\N	0	5	5	4	t	citrus-dressing.jpg	9	\N	t	f
 117	Chicken Avocado Chop	\N	\N	\N	12	0	5	1	t	chicken-avocado-chop.jpg	0	\N	f	f
 118	My Hot Med Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	15	1	2	t	\N	0	\N	f	f
 119	Green Mayonaise	\N	\N	\N	0	0	5	8	t	green-mayo.jpg	7	\N	t	f
@@ -310,7 +310,7 @@
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	Uses chlorophyll; too obscure.	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	\N	\N	\N	20	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 431	Glow Juice	\N	Requires a masticating juicer.	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-432	Honey-Lemon Mustard Dressing	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	4	\N	t	t
+432	Honey-Lemon Mustard Dressing	\N	\N	\N	0	0	5	4	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
 465	Fermented "Margarita"	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	128	0	3	1	t	\N	0	\N	f	f
 466	Yogurt and Granola	aka Yogurt & Granola;	\N	\N	32	0	1	1	t	yogurt-granola.jpg	0	\N	f	f
 467	Green Juice	\N	\N	\N	128	0	5	1	t	green-juice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
