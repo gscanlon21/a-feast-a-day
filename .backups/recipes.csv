@@ -169,7 +169,7 @@
 191	Croûtons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
 192	Eliche w/ Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	12	20	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 193	Date Snickers	If you love chocolate with flaky sea salt, you could add it to top the peanut butter layer for an even stronger pop of savory sweet flavor. 	\N	\N	32	0	10	2	t	date-snickers.jpg	0	\N	f	f
-194	Garganelli Pasta w/ Asparagus and Cream	\N	\N	\N	2	15	5	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
+194	Garganelli Pasta w/ Asparagus and Cream	\N	Too unhealthy.	\N	8	15	5	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 195	Pasta w/ Broccoli and Artichokes	\N	\N	\N	4	13	5	4	t	pasta-broccoli-artichokes.jpg	0	\N	f	f
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	\N	0	\N	f	f
 197	Chicken Chow Mein	\N	\N	\N	12	14	6	4	t	beef-noodles.jpg	0	\N	f	f
@@ -305,7 +305,7 @@
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
 425	Bacon Wrapped Avocado Slices	\N	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-427	Coleslaw	\N	\N	\N	20	0	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+427	Coleslaw	\N	\N	\N	20	0	10	4	t	party-coleslaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 429	Detox Juice	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	Uses chlorophyll; too obscure.	\N	128	0	3	1	t	\N	0	\N	f	f
 430	Red, White & Green Salad	\N	\N	\N	20	0	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -398,7 +398,7 @@
 582	Sweet Potato & Arugula Salad	\N	Too many ingredients.	\N	20	40	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 583	Salmon Cakes	\N	Too complicated. Too many prep recipes.	\N	6	10	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 584	Pizza Egg Bites	\N	\N	\N	12	35	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-585	Kale & Fennel Beef Stew	\N	\N	\N	4	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+585	Kale & Fennel Beef Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 586	Cream of Broccoli Soup	When blending hot liquids, make sure the top of the blender is vented to let the steam escape.	\N	\N	12	15	5	4	t	fennel-soup.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 587	Bigos (Polish Hunter's Stew)	\N	\N	\N	8	120	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 588	Yummy Chili	For the beans, use canned kidney, black, northern white beans, or a mixture of all three. You can also substitute a pound of ground beef or turkey in for the chicken.	\N	\N	8	45	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -557,7 +557,7 @@
 842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	ham-cheese-omlet.jpg	0	From the First Watch cookbook. 	f	f
 843	Whipped Eggs	This preparation works great for omelets and frittatas. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product.	\N	\N	0	0	5	1	t	whipped-eggs.jpg	0	\N	t	f
 844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
-845	Over-Easy Eggs	\N	\N	\N	0	5	5	2	t	\N	0	From the First Watch cookbook. 	t	f
+845	Over-Easy Eggs	Over-easy eggs should have a very runny yolk, and some of the white around the yolk should still be soft.	\N	\N	0	5	5	1	t	\N	0	From the First Watch cookbook. 	t	f
 846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
 847	Avocado Mash	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
 848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	taco-seasoning.jpg	6	From the First Watch cookbook. 	t	f
@@ -630,7 +630,7 @@
 981	Oatmeal Protein Bars	This recipe makes 8 square bars in a 9″ loaf pan. If you’d like to double the recipe, you can make a double recipe in a 9 × 9″ square pan. Do not try this recipe with any other type of date! Deglet noor and others do not work. Make sure your dates are fresh and pliable - if they’re dried out, soak in warm water for 10 minutes before using.	\N	\N	32	0	15	2	t	\N	0	https://www.acouplecooks.com/oatmeal-protein-bars	f	f
 982	Mashed Potatoes	\N	\N	\N	0	25	5	1	t	irish-champ.jpg	6	\N	t	f
 983	Potato Wedges	Small russet potatoes work best for this recipe, so the wedges aren’t too large or unwieldy. To cut them, slice each potato in half lengthwise, then cut each half into 3 evenly sized wedges.	\N	\N	16	0	0	2	t	\N	0	https://www.onceuponachef.com/recipes/crispy-potato-wedges.html	t	f
-984	Cooked Penne Pasta	\N	\N	\N	0	0	0	2	t	\N	4	\N	t	f
+984	Cooked Penne Pasta	\N	\N	\N	0	8	7	2	t	\N	4	\N	t	f
 985	No Bake Energy Bites	A 1½-inch cookie scoop (#40) is helpful to make uniform balls.	\N	\N	32	0	15	5	t	basic-energy-balls.jpg	0	https://www.acouplecooks.com/energy-bites/	f	f
 986	Fajita Veggies	While this is a stovetop recipe, you can also roast or grill your veggies for even smokier flavors. I like adding grilled veggies to my fajita salad, especially if you’re already grilling chicken.  Fajita veggies are generally pretty tender, but you can reduce the cooking time if you want them to retain some crunch. Don’t overdo it on the olive oil and avoid overcrowding in the pan.	\N	\N	16	15	10	4	t	\N	0	https://www.acouplecooks.com/fajita-veggies/	t	f
 987	Pan-Fried Salmon	The skin can be served or removed easily with a knife or spoon. 	\N	\N	0	10	5	2	t	pan-fried-haddock.jpg	0	https://www.foodnetwork.com/recipes/food-network-kitchen/pan-fried-salmon-recipe2-1914129	t	f
@@ -641,7 +641,7 @@
 992	Chickpea and Turmeric Rice Bowls	\N	\N	\N	8	25	45	4	t	\N	0	https://www.healthline.com/recipes/chickpea-turmeric-rice-bowls	f	f
 993	Pasta w/ Brussels Sprouts and Pancetta	\N	\N	\N	12	15	10	4	t	\N	0	https://www.theorganickitchen.org/pasta-with-brussels-sprouts-and-pancetta/	f	f
 994	Lemon Chicken w/ Roasted Potatoes	\N	\N	\N	8	90	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
-995	Egg, Bean and Chorizo Tostada w/ Salsa Verde	\N	\N	\N	6	7	3	2	t	egg-bean-chorizo-tostada.jpg	0	https://www.theorganickitchen.org/egg-bean-and-chorizo-tostada-with-salsa-verde/	f	f
+995	Egg, Bean, and Chorizo Tostada w/ Salsa Verde	\N	\N	\N	6	7	3	2	t	egg-bean-chorizo-tostada.jpg	0	https://www.theorganickitchen.org/egg-bean-and-chorizo-tostada-with-salsa-verde/	f	f
 996	Parmesan Potato Waffle	\N	\N	\N	6	15	5	1	t	\N	0	https://www.theorganickitchen.org/parmesan-potato-waffle/	f	f
 997	Easy Sweet Potato Lentil Soup	Save the remaining coconut milk for adding liquid to leftovers.   *You can use any type of greens in this soup, and add more to your liking. 	\N	\N	8	30	15	8	t	\N	0	https://www.acouplecooks.com/sweet-potato-lentil-soup/	f	f
 998	Stovetop Bacon Slices	\N	\N	\N	0	10	5	1	t	bacon.jpg	0	\N	t	f
@@ -650,7 +650,7 @@
 1002	Broccoli Salad w/ Peanut Sauce	Be sure to get edamame beans with no shells or you will have a big job ahead of you!	\N	\N	20	0	5	2	t	anti-allergy-salad.jpg	0	https://www.theorganickitchen.org/broccoli-salad-with-peanut-sauce/	f	f
 1003	Cuban Black Beans Recipe	Store leftover beans refrigerated for up to 4 days.	\N	\N	20	25	10	4	t	\N	0	https://www.acouplecooks.com/quick-cuban-black-beans/	f	f
 1004	Baked Apple Slices	There's no need to peel the apple. The skin softens nicely in the oven. However, if you wish, you can peel it. You can skip the butter if you wish. The butter does enhance the apple's flavor, but the apple slices are delicious even without it. If you use butter, make sure it's unsalted. Sweetness is a personal preference. Use this recipe as a guide and adjust to taste. You can keep the leftovers in a sealed container in the fridge for 3-4 days. Serve them cold or reheat them in the microwave, covered, at 50% power. You can freeze these apples, but the texture will change once thawed. Apples contain a lot of water, and freezing creates ice crystals that soften the flesh. Since they're already tender from baking, expect them to become softer and perhaps a bit mushy. That said, they still freeze well and taste great. Just let them cool completely, freeze them in a single layer on wax paper, and then - once frozen - transfer to a freezer-safe container. They're best used in cooked dishes or as a topping for yogurt rather than eaten as-is.	\N	\N	0	20	10	2	t	\N	0	https://healthyrecipesblogs.com/baked-apple-slices-recipe	t	f
-1005	Simple Nut & Seed Granola	Choose any 3 or more nuts and seeds from this list.	\N	\N	32	20	10	6	t	\N	0	https://drhyman.com/blogs/content/simple-nut-seed-granola	f	f
+1005	Simple Nut & Seed Granola	Choose any 3 or more nuts and seeds from this list.	\N	\N	32	20	10	6	t	granola.jpg	0	https://drhyman.com/blogs/content/simple-nut-seed-granola	f	f
 1006	Asian Chicken and Rice Bowls	Optional toppings: chopped peanuts, green onions, cilantro, lime wedges. I also like to sub the bok choy for snow peas. They add a nice little crunch. Of course frozen peas can be added a few minutes before removing from the oven.	\N	\N	8	25	5	4	t	\N	0	https://www.theorganickitchen.org/asian-chicken-and-rice-bowls/	f	f
 1039	Slow Cooker Peanut Chicken	\N	\N	\N	8	180	5	4	t	peanut-chicken.jpg	0	https://thealmondeater.com/peanut-crockpot-stir-fry/	f	f
 1040	Chili Oil	\N	\N	\N	0	0	0	2	t	chili-oil.jpg	9	\N	t	f
@@ -659,3 +659,5 @@
 1043	Potato and Green Bean Salad	\N	\N	\N	20	15	5	2	t	\N	0	\N	f	f
 1044	Whipped Butter	\N	\N	\N	0	0	5	4	t	\N	4	\N	t	f
 1045	Baked Beans	Baked beans are high in fiber.	\N	\N	16	5	0	1	t	baked-beans.jpg	0	\N	f	f
+1046	Chopped Mexican Salad w/ Creamy Avocado Ranch	Creamy Avocado Dressing: 1/2 cup of your favorite ranch dressing (see my suggestions in blog post above) 1 ripe avocado juice from one lime 1/4 cup cilantro leaves removed from stems..... Dressing prep: Place all dressing ingredients into a blender and blend till smooth. Pour over romaine and toss. You may not need all the dressing.  Pour cooled corn mixture, beans, tomatoes, pepitas and Citija cheese on top of salad. Enjoy!	\N	\N	20	10	10	8	t	\N	0	https://www.theorganickitchen.org/chopped-mexican-salad-with-creamy-avocado-ranch/	f	f
+1047	La Scala Salad Recipe	\N	\N	\N	12	0	5	4	t	\N	0	https://www.theglutenfreeblogger.com/la-scala-chopped-salad/	f	f
