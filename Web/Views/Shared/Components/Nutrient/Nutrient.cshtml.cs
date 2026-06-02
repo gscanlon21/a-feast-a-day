@@ -16,39 +16,27 @@ public class NutrientViewModel
 
     public required IDictionary<Nutrients, double?> WeeklyVolume { get; init; }
 
-    public NutrientTarget AllNutrientTarget => new(Nutrients.None)
-    {
-        Start = 0,
-        End = 100,
-        Middle = 50,
-        DefaultStart = 0,
-        DefaultEnd = 100,
-        ValueInRange = 50,
-        ShowButtons = true,
-    };
-
     public NutrientTarget GetNutrientTarget(Nutrients nutrient)
     {
         var defaultRange = User.UserFamilies.DefaultRange(nutrient);
-        var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range ?? defaultRange;
+        var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range.ToDouble() ?? defaultRange;
 
         var sumRDA = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.RDA);
         var sumTUL = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? (sumRDA * NutrientConsts.RDAScaleWhenNoTUL);
-        var start = sumRDA / sumTUL * userNutrientTarget.Start.Value ?? 0;
+        var defaultStart = Math.Max(sumRDA / sumTUL * defaultRange.Start.Value ?? 0, 0);
 
         // Show default nutrient targets when backfilling data.
-        var userValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * start) : Math.Min(101, WeeklyVolume[nutrient] ?? 0);
+        var userValueInRange = sumRDA.HasValue ? Math.Min(101, (WeeklyVolume[nutrient] ?? 0) / 100d * defaultStart) : Math.Min(101, WeeklyVolume[nutrient] ?? 0);
         var valueInRange = User.CreatedDate == DateHelpers.Today ? 0 : userValueInRange;
 
         return new NutrientTarget(nutrient)
         {
-            Start = start,
             ValueInRange = valueInRange,
             Middle = sumRDA / sumTUL * 100 ?? 0,
-            End = sumRDA / sumTUL * userNutrientTarget.End.Value ?? 100,
-            DefaultStart = sumRDA / sumTUL * defaultRange.Start.Value ?? 0,
-            DefaultEnd = sumRDA / sumTUL * defaultRange.End.Value ?? 100,
-            Increment = sumRDA / sumTUL * UserConsts.IncrementNutrientTargetBy ?? UserConsts.IncrementNutrientTargetBy,
+            Start = Math.Max(sumRDA / sumTUL * userNutrientTarget.Start.Value ?? 0, 0),
+            End = Math.Min(sumRDA / sumTUL * userNutrientTarget.End.Value ?? 100, 100),
+            DefaultStart = Math.Max(sumRDA / sumTUL * defaultRange.Start.Value ?? 0, 0),
+            DefaultEnd = Math.Min(sumRDA / sumTUL * defaultRange.End.Value ?? 100, 100),
             ShowButtons = UsersWorkedNutrients.Contains(nutrient),
         };
     }
@@ -77,12 +65,7 @@ public class NutrientViewModel
         public bool IsMinVolumeInRange => ValueInRange >= Start;
         public bool IsMaxVolumeInRange => ValueInRange <= End;
 
-        public double Increment { get; init; }
         public required bool ShowButtons { get; init; }
-        public bool ShowDecreaseStart => ShowButtons && Start > 0;
-        public bool ShowIncreaseStart => ShowButtons && Start + Increment < End - Increment;
-        public bool ShowDecreaseEnd => ShowButtons && End - Increment > Start + Increment;
-        public bool ShowIncreaseEnd => ShowButtons && End < 100;
 
         public string Color => (IsMinVolumeInRange, IsMaxVolumeInRange, ShowButtons) switch
         {

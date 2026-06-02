@@ -9,4 +9,12 @@ public static class RangeExtensions
     {
         return (range.Start.Value + range.End.Value) / 2d;
     }
+
+    /// <summary>
+    /// Converts an int Range into a DoubleRange.
+    /// </summary>
+    public static DoubleRange ToDouble(this Range range)
+    {
+        return new DoubleRange(range.Start.Value, range.End.Value);
+    }
 }

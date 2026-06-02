@@ -36,68 +36,72 @@
             .ThenByDescending(nt => nt.ShowButtons ? nt.Start : nt.DefaultStart)
             .ThenByDescending(nt => nt.ShowButtons ? nt.End : nt.DefaultEnd)
             .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.GroupName))
-            .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.Name))
-            .Append(Model.AllNutrientTarget))
+            .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.Name)))
         {
-            <div class="d-flex flex-wrap" style="column-gap:1ch;">
-                <div class="d-flex" style="flex:1 0 14ch;line-height:1.25;">@nutrientTarget.NutrientGroup.GetSingleDisplayName(DisplayType.ShortName)</div>
+            <div class="d-flex flex-wrap nutrient-range-container" style="column-gap:1ch;">
+                <div class="d-flex flex-column" style="flex:1 0 15ch;line-height:1.25;">
+                    <div>@nutrientTarget.NutrientGroup.GetSingleDisplayName(DisplayType.ShortName)</div>
+                    <div class="small text-muted d-none">
+                        <span class="start-value" data-orig="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" data-default="@Math.Round(nutrientTarget.DefaultStart, 1, MidpointRounding.ToZero)">@nutrientTarget.Start</span>%
+                        –
+                        <span class="end-value" data-orig="@Math.Round(nutrientTarget.End, 1, MidpointRounding.ToZero)" data-default="@Math.Round(nutrientTarget.DefaultEnd, 1, MidpointRounding.ToZero)">@nutrientTarget.End</span>%
+                    </div>
+                </div>
 
                 <div class="d-flex align-items-center" style="flex:99999 0 275px;gap:1ch;">
                     <div class="d-flex justify-content-between">
                         <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetNutrientRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowButtons ? "" : "disabled")>
+                            <button class="btn btn-icon reset-btn" type="submit" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                                 <img src="/images/user/restore-filled.svg">
                             </button>
                         </form>
 
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseStartNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowDecreaseStart ? "" : "disabled")>
-                                <img src="/images/user/minus.svg">
-                            </button>
-                        </form>
+                        <button class="btn btn-icon minus-lower d-none" type="button">
+                            <img src="/images/user/minus.svg">
+                        </button>
 
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseStartNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowIncreaseStart ? "" : "disabled")>
-                                <img src="/images/user/add.svg">
-                            </button>
-                        </form>
+                        <button class="btn btn-icon add-lower d-none" type="button">
+                            <img src="/images/user/add.svg">
+                        </button>
                     </div>
-                    <div class="w-100 d-flex position-relative">
-                        <div style="position:absolute;bottom:-1px;height:2px;width:100%;background-color:@nutrientTarget.Color;"></div>
 
-                        @if (nutrientTarget.ShowButtons)
-                        {
-                            @* User's muscle target *@
-                            <div style="position:absolute;bottom:calc(-.5ex - 0px);height:1ex;width:100%;background:linear-gradient(90deg, transparent @nutrientTarget.Start%, lightgreen @nutrientTarget.Start% @nutrientTarget.End%, transparent @nutrientTarget.End%);"></div>
+                    <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.SaveNutrientTargets)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post"
+                          id="save-@nutrientTarget.NutrientGroup" class="w-100 h-auto d-flex position-relative">
+                        
+                        <input type="hidden" name="DefaultStart" value="@nutrientTarget.DefaultStart" />
+                        <input type="hidden" name="DefaultEnd" value="@nutrientTarget.DefaultEnd" />
 
-                            <div class="filter-invert" style="position:absolute;bottom:calc(-.5ex - 0px);left:calc(@nutrientTarget.Middle% - 1px);height:1ex;width:2px;background:rgba(255,255,255,.25);"></div>
-                        }
+                        <input type="range" class="range-slider range-start" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
+                               name="Start" min="0" max="100" step=".1" value="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" />
 
-                        @* Default muscle target *@
-                        <div class="filter-invert" style="position:absolute;bottom:calc(-.5ex - 0px);height:1ex;width:100%;background:linear-gradient(90deg, transparent @nutrientTarget.DefaultStart%, rgba(255,255,255,.25) @nutrientTarget.DefaultStart% @nutrientTarget.DefaultEnd%, transparent @nutrientTarget.DefaultEnd%);"></div>
+                        <input type="range" class="range-slider range-end" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
+                               name="End" min="0" max="100" step=".1" value="@Math.Round(nutrientTarget.End, 1, MidpointRounding.ToZero)" />
+                        
+                        <div class="range-track">
+                            <div class="range-unselected" style="background-color:@nutrientTarget.Color;"></div>
+                            <div class="range-selected"></div>
 
-                        @* Actual muscle volume *@
-                        <div style="position:absolute;bottom:calc(.5ex + 1px);left:calc(@nutrientTarget.ValueInRange% - 1ch);width:2ch;text-align:center;font-size:xx-small;line-height:1;color:@nutrientTarget.Color;">
-                            &#9660;
+                            <div class="position-absolute h-100 inner-range">
+                                <div class="tick rda form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultStart%, 100%)"></div>
+                                <div class="tick tul form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultEnd%, 100%)"></div>
+                                <div class="actual-value" style="left:calc(@nutrientTarget.ValueInRange% - .5ch);color:@nutrientTarget.Color;">&#9660;</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.DecreaseEndNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowDecreaseEnd ? "" : "disabled")>
-                                <img src="/images/user/minus.svg">
-                            </button>
-                        </form>
+                    </form>
 
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.IncreaseEndNutrientRange)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <button class="btn btn-icon" type="submit" @(nutrientTarget.ShowIncreaseEnd ? "" : "disabled")>
-                                <img src="/images/user/add.svg">
-                            </button>
-                        </form>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-icon minus-upper d-none" type="button">
+                            <img src="/images/user/minus.svg">
+                        </button>
+
+                        <button class="btn btn-icon add-upper d-none" type="button">
+                            <img src="/images/user/add.svg">
+                        </button>
+
+                        <button class="btn btn-icon save-btn" type="submit" form="save-@nutrientTarget.NutrientGroup" @(nutrientTarget.ShowButtons ? "" : "disabled")>
+                            <img src="/images/user/save.svg">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -106,3 +110,56 @@
     <hr>
     <div>Recipes are being automatically adjusted to match your nutrient targets.</div>
 </div>
+
+<script>
+    document.querySelectorAll(".nutrient-range-container").forEach(container => {
+        const selected = container.querySelector(".range-selected");
+        const start = container.querySelector(".range-start");
+        const end = container.querySelector(".range-end");
+        const save = container.querySelector(".save-btn");
+        const reset = container.querySelector(".reset-btn");
+        const minusLower = container.querySelector(".minus-lower");
+        const addLower = container.querySelector(".add-lower");
+        const minusUpper = container.querySelector(".minus-upper");
+        const addUpper = container.querySelector(".add-upper");
+        minusLower.addEventListener('click', () => { start.value = Number(start.value) - 0.1; update(); });
+        addLower.addEventListener('click', () => { start.value = Number(start.value) + 0.1; update(); });
+        minusUpper.addEventListener('click', () => { end.value = Number(end.value) - 0.1; update(); });
+        addUpper.addEventListener('click', () => { end.value = Number(end.value) + 0.1; update(); });
+
+        function update() {
+            let startVal = Number(start.value);
+            let endVal = Number(end.value);
+
+            if (startVal > endVal) {
+                [startVal, endVal] = [endVal, startVal];
+            }
+
+            selected.style.left = startVal + "%";
+            selected.style.width = (endVal - startVal) + "%";
+
+            const startValue = container.querySelector(".start-value");
+            startValue.textContent = startVal.toFixed(2);
+
+            const endValue = container.querySelector(".end-value");
+            endValue.textContent = endVal.toFixed(2);
+
+            if (Number(startVal) === Number(startValue.dataset.orig) && Number(endVal) === Number(endValue.dataset.orig)) {
+                save.setAttribute('disabled', 'disabled');
+            } else {
+                save.removeAttribute('disabled');
+            }
+
+            if (Number(startVal) === Number(startValue.dataset.default) && Number(endVal) === Number(endValue.dataset.default)) {
+                reset.setAttribute('disabled', 'disabled');
+            } else {
+                reset.removeAttribute('disabled');
+            }
+        }
+
+        start.addEventListener("input", update);
+        end.addEventListener("input", update);
+
+        update();
+    });
+</script>

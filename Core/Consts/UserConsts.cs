@@ -87,11 +87,6 @@ public static class UserConsts
     public const int MaxUserFrequencies = 7;
 
     /// <summary>
-    /// How much to increment the user_nutrient target ranges with each increment?
-    /// </summary>
-    public const int IncrementNutrientTargetBy = 10;
-
-    /// <summary>
     /// The percent relative to the nutrient's RDA that is used in the nutrient targets.
     /// </summary>
     public const int NutrientTargetDefaultPercent = 100;

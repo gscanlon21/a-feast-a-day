@@ -26,3 +26,90 @@ img {
         filter: invert(.85);
     }
 }
+
+.nutrient-range-container {
+    --input-thumb-width: 16px;
+}
+
+.range-slider {
+    pointer-events: none;
+    position: absolute;
+    appearance: none;
+    background: none;
+    width: 100%;
+    z-index: 1;
+    inset: 0;
+}
+
+.range-slider::-webkit-slider-thumb {
+    width: var(--input-thumb-width);
+    background-color: seagreen;
+    /*appearance: none;*/
+    pointer-events: all;
+    border-radius: 9in;
+    /*display: none;*/
+    cursor: default;
+    height: 2ex;
+}
+
+.range-track {
+    height: 8px;
+    width: 100%;
+}
+
+.inner-range {
+    left: calc(var(--input-thumb-width) / 2);
+    right: calc(var(--input-thumb-width) / 2);
+}
+
+.range-unselected {
+    border-radius: 999px;
+    position: absolute;
+    margin: auto;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+}
+
+.range-selected {
+    background: lightgreen;
+    border-radius: 999px;
+    position: absolute;
+    height: 100%;
+}
+
+.actual-value {
+    position: absolute;
+    font-size: 10px;
+    line-height: 1;
+    bottom: 100%;
+}
+
+.tick {
+    background-color: currentColor;
+    transform: translateX(-50%);
+    position: absolute;
+    height: 2.2ex;
+    width: 1px;
+    top: 0;
+}
+
+/* Not using:
+.tick::after {
+    transform: translateX(-50%);
+    position: absolute;
+    margin: auto;
+    width: 3ch;
+    top: 100%;
+    right: 0;
+    left: 0;
+}
+
+.tick.rda::after {
+    content: "RDA";
+}
+
+.tick.tul::after {
+    content: "TUL";
+}*/

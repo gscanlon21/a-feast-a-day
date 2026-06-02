@@ -51,8 +51,9 @@ public partial class UserController
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 
-    [HttpPost, Route("nutrient/start/decrease")]
-    public async Task<IActionResult> DecreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
+
+    [HttpPost, Route("nutrient/save")]
+    public async Task<IActionResult> SaveNutrientTargets(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients, double start, double end, double defaultStart, double defaultEnd)
     {
         var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
@@ -60,154 +61,30 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
-        {
-            var defaultRange = user.UserFamilies.DefaultRange(nutrient);
-            var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
-            if (userNutrient == null)
-            {
-                _context.UserNutrients.Add(new UserNutrient()
-                {
-                    UserId = user.Id,
-                    Nutrient = nutrient,
-                    Start = Math.Max(UserNutrient.NutrientTargetMin, defaultRange.Start.Value - UserConsts.IncrementNutrientTargetBy),
-                    End = defaultRange.End.Value
-                });
-            }
-            else
-            {
-                userNutrient.Start = Math.Max(UserNutrient.NutrientTargetMin, userNutrient.Start - UserConsts.IncrementNutrientTargetBy);
+        var defaultRange = user.UserFamilies.DefaultRange(nutrients);
+        var userNutrient = await _context.UserNutrients
+            .Where(un => un.Nutrient == nutrients)
+            .Where(un => un.UserId == user.Id)
+            .FirstOrDefaultAsync();
 
-                // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userNutrient.Range.Equals(defaultRange))
-                {
-                    _context.UserNutrients.Remove(userNutrient);
-                }
-            }
+        if (userNutrient == null)
+        {
+            _context.UserNutrients.Add(new UserNutrient
+            {
+                UserId = user.Id,
+                Nutrient = nutrients,
+                Start = (int)(start / defaultStart * defaultRange.Start.Value),
+                End = (int)(end / defaultEnd * defaultRange.End.Value),
+            });
+        }
+        else
+        {
+            userNutrient.Start = (int)(start / defaultStart * defaultRange.Start.Value);
+            userNutrient.End = (int)(end / defaultEnd * defaultRange.End.Value);
         }
 
         await _context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your nutrient target has been updated!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
-    }
-
-    [HttpPost, Route("nutrient/start/increase")]
-    public async Task<IActionResult> IncreaseStartNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
-    {
-        var user = await _userRepo.GetUser(email, token, Includes.Families);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
-        {
-            var defaultRange = user.UserFamilies.DefaultRange(nutrient);
-            var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
-            if (userNutrient == null)
-            {
-                _context.UserNutrients.Add(new UserNutrient()
-                {
-                    UserId = user.Id,
-                    Nutrient = nutrient,
-                    Start = defaultRange.Start.Value + UserConsts.IncrementNutrientTargetBy,
-                    End = defaultRange.End.Value
-                });
-            }
-            else
-            {
-                userNutrient.Start = Math.Min(userNutrient.End - UserConsts.IncrementNutrientTargetBy, userNutrient.Start + UserConsts.IncrementNutrientTargetBy);
-
-                // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userNutrient.Range.Equals(defaultRange))
-                {
-                    _context.UserNutrients.Remove(userNutrient);
-                }
-            }
-        }
-
-        await _context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your nutrient target has been updated!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
-    }
-
-    [HttpPost, Route("nutrient/end/decrease")]
-    public async Task<IActionResult> DecreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
-    {
-        var user = await _userRepo.GetUser(email, token, Includes.Families);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
-        {
-            var defaultRange = user.UserFamilies.DefaultRange(nutrient);
-            var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
-            if (userNutrient == null)
-            {
-                _context.UserNutrients.Add(new UserNutrient()
-                {
-                    UserId = user.Id,
-                    Nutrient = nutrient,
-                    Start = defaultRange.Start.Value,
-                    End = defaultRange.End.Value - UserConsts.IncrementNutrientTargetBy
-                });
-            }
-            else
-            {
-                userNutrient.End = Math.Max(userNutrient.Start + UserConsts.IncrementNutrientTargetBy, userNutrient.End - UserConsts.IncrementNutrientTargetBy);
-
-                // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userNutrient.Range.Equals(defaultRange))
-                {
-                    _context.UserNutrients.Remove(userNutrient);
-                }
-            }
-        }
-
-        await _context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your nutrient target has been updated!";
-        return RedirectToAction(nameof(UserController.Edit), new { email, token });
-    }
-
-    [HttpPost, Route("nutrient/end/increase")]
-    public async Task<IActionResult> IncreaseEndNutrientRange(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients)
-    {
-        var user = await _userRepo.GetUser(email, token, Includes.Families);
-        if (user == null)
-        {
-            return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
-        }
-
-        foreach (var nutrient in NutrientHelpers.All.Where(mg => nutrients.HasFlag(mg)))
-        {
-            var defaultRange = user.UserFamilies.DefaultRange(nutrient);
-            var userNutrient = await _context.UserNutrients.FirstOrDefaultAsync(um => um.User.Id == user.Id && um.Nutrient == nutrient);
-            if (userNutrient == null)
-            {
-                _context.UserNutrients.Add(new UserNutrient()
-                {
-                    UserId = user.Id,
-                    Nutrient = nutrient,
-                    Start = defaultRange.Start.Value,
-                    End = Math.Min(defaultRange.End.Value, defaultRange.End.Value + UserConsts.IncrementNutrientTargetBy)
-                });
-            }
-            else
-            {
-                userNutrient.End = Math.Min(defaultRange.End.Value, userNutrient.End + UserConsts.IncrementNutrientTargetBy);
-
-                // If the user target matches the default, delete this range so that any default updates take effect.
-                if (userNutrient.Range.Equals(defaultRange))
-                {
-                    _context.UserNutrients.Remove(userNutrient);
-                }
-            }
-        }
-
-        await _context.SaveChangesAsync();
-        TempData[TempData_User.SuccessMessage] = "Your nutrient target has been updated!";
+        TempData[TempData_User.SuccessMessage] = "Your nutrient targets have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 }
