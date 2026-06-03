@@ -218,7 +218,7 @@
 225	\N	Shallots	Shallots	\N	f	0	43	100	2026-01-10	0	86	2	86	Shallots	https://fdc.nal.usda.gov/food-details/2727586/nutrients	\N	0
 226	\N	Yellow Corn Tortilla Chips	Yellow Corn Tortilla Chips	\N	f	2	28	100	2026-05-17	4	26	6	26	Tortilla Chip	\N	\N	0
 227	\N	Potato Starch	Potato Starch	\N	f	0	13	100	2025-07-10	7	130	4	130	Potato Starch	\N	\N	14
-228	\N	Brown Rice Flour	Brown Rice Flour	\N	f	4096	28	100	2024-11-19	4	158	4	158	Brown Rice Flour	\N	\N	14
+228	\N	Brown Rice Flour	Brown Rice Flour	\N	f	4096	28	100	2026-05-31	4	158	4	158	Rice Flour	\N	\N	15
 229	\N	Xanthan Gum	Xanthan Gum	\N	f	0	9	100	2025-08-21	7	144	10	144	Xanthan Gum	\N	\N	0
 230	\N	Dry Milk	Dry Milk	\N	f	0	28	100	2025-08-29	4	120	4	120	Dry Milk	\N	\N	14
 231	\N	Garden Veggie Good Thins, GF	Garden Veggie Good Thins, GF	Box	f	4096	2	100	2025-09-20	0	224	5	224	Garden Veggie Good Thins, GF	\N	\N	16
@@ -359,7 +359,7 @@
 374	\N	Naan, GF	Naan, GF	\N	f	0	100	100	2025-09-06	0	100	4	100	Naan, GF	\N	\N	0
 375	\N	Loaves of Pita, GF	Loaves of Pita, GF	\N	f	0	122	100	2025-05-11	0	61	4	61	Loaves of Pita, GF	\N	\N	0
 376	\N	Watercress	Watercress	\N	f	0	28	100	2026-05-24	4	34	1	34	Watercress	\N	\N	3
-377	\N	Jarred Roasted Red Peppers	Jarred Roasted Red Peppers	\N	f	0	28	100	2024-11-19	4	140	4	140	Jarred Roasted Red Peppers	\N	\N	6
+377	\N	Jarred Roasted Red Peppers	Jarred Roasted Red Peppers	\N	f	0	28	100	2026-05-31	4	140	4	140	Jarred Roasted Red Peppers	\N	\N	2
 378	\N	Pecorino Cheese	Pecorino Cheese	\N	f	256	28	100	2025-07-07	4	224	10	224	Pecorino Cheese	\N	\N	0
 379	\N	Pecorino Cheese | Parmesan Cheese	Pecorino Cheese | Parmesan Cheese	\N	f	256	28	100	2025-07-03	4	224	10	224	Pecorino Cheese | Parmesan Cheese	\N	\N	0
 380	\N	Smoked Pancetta Slices	Smoked Pancetta Slices	\N	f	0	12	100	2025-07-15	0	224	10	224	Smoked Pancetta Slices	\N	\N	0
@@ -416,7 +416,7 @@
 464	\N	Seedless White Grapes	Seedless White Grapes	\N	f	0	4.9	100	2025-01-02	0	98	1	98	Grape	\N	\N	0
 465	\N	Grape Juice	Grape Juice	\N	f	0	31.625	100	2025-08-23	9	253	4	253	Grape Juice	\N	\N	13
 466	\N	White Grape Juice	White Grape Juice	\N	f	0	32	100	2025-08-22	9	253	4	253	White Grape Juice	\N	\N	13
-467	\N	Fresh Pineapple	Fresh Pineapple	\N	f	0	905	100	2024-11-20	0	165	1	165	Pineapple	https://fdc.nal.usda.gov/food-details/2346398/nutrients	\N	0
+467	\N	Fresh Pineapple	Fresh Pineapple	\N	f	0	905	100	2026-06-01	0	165	1	165	Pineapple	https://fdc.nal.usda.gov/food-details/2346398/nutrients	\N	1
 468	\N	Wholegrain Mustard	Wholegrain Mustard	\N	t	0	28	100	2025-09-21	4	240	4	240	Wholegrain Mustard	\N	\N	13
 469	\N	Clear Honey	Clear Honey	\N	t	0	42	100	2025-06-10	9	336	4	336	Honey	https://fdc.nal.usda.gov/food-details/169640/nutrients	\N	13
 470	\N	Cloudy Honey	Cloudy Honey	aka. Raw Honey. 	t	0	42	100	2025-06-11	9	336	4	336	Honey	https://www.eatthismuch.com/food/nutrition/honey,4620/	\N	13
@@ -822,9 +822,9 @@
 993	\N	Hot Water	Hot Water	\N	t	0	30	100	2025-06-13	9	240	10	240	Hot Water	\N	\N	0
 994	\N	Chlorophyll	Chlorophyll	\N	t	0	28	100	2025-06-14	4	224	10	224	Chlorophyll	\N	Too obscure; can get via food.	0
 995	\N	Cashew Butter	Cashew Butter	\N	f	0	28	100	2026-04-23	4	240	4	240	Cashew Butter	https://fdc.nal.usda.gov/food-details/170163/nutrients	\N	11
-996	\N	Crushed Pineapple	Crushed Pineapple	\N	f	0	905	100	2024-11-20	0	165	1	165	Crushed Pineapple	\N	\N	0
+996	\N	Crushed Pineapple	Crushed Pineapple	\N	f	0	28	100	2026-06-02	4	165	4	165	Pineapple	\N	\N	1
 997	\N	Sliced Pineapple	Sliced Pineapple	\N	f	0	905	100	2024-11-20	0	165	1	165	Sliced Pineapple	\N	\N	0
-998	\N	Diced Pineapple	Diced Pineapple	\N	f	0	905	100	2024-11-20	0	165	1	165	Diced Pineapple	\N	\N	0
+998	\N	Diced Pineapple	Diced Pineapple	\N	f	0	28	100	2026-06-03	4	165	4	165	Pineapple	\N	\N	1
 999	\N	Vegetable Broth	Vegetable Broth	\N	f	0	240	100	2025-06-28	6	240	4	240	Vegetable Broth	\N	\N	13
 1000	\N	Chicken Broth | Vegetable Broth	Chicken Broth | Vegetable Broth	\N	f	1048576	240	100	2025-06-27	6	240	4	240	Chicken Broth | Vegetable Broth	\N	\N	13
 1001	\N	Fresh Cavolo Nero	Fresh Cavolo Nero	aka Tuscan Kale; Black Cabbage  https://www.eatthismuch.com/calories/kale,1995	f	0	28	100	2025-12-13	4	67	2	67	Fresh Cavolo Nero	\N	\N	0
@@ -986,8 +986,8 @@
 1250	\N	Sweet Potatoes	Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	2	133	Sweet Potato	https://fdc.nal.usda.gov/food-details/2346404/nutrients	\N	0
 1251	\N	Cherry Tomatoes | Red Bell Peppers	Cherry Tomatoes | Red Bell Peppers	\N	f	512	17	100	2025-09-08	0	170	1	170	Cherry Tomatoes | Red Bell Peppers	\N	\N	2
 1252	\N	Purple Cabbage	Purple Cabbage	aka: Red Cabbage Heads.	f	0	28	100	2026-05-08	4	89	1	89	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	2
-1253	\N	Pineapple	Pineapple	\N	f	0	905	100	2024-11-20	0	165	1	165	Pineapple	\N	\N	0
-1254	\N	Pineapple | Yellow Bell Peppers	Pineapple | Yellow Bell Peppers	\N	f	0	905	100	2024-11-20	0	165	1	165	Pineapple | Bell Peppers	\N	\N	0
+1253	\N	Pineapple	Pineapple	\N	f	0	905	100	2026-06-01	0	165	1	165	Pineapple	https://fdc.nal.usda.gov/food-details/2346398/nutrients	\N	1
+1254	\N	Pineapple | Yellow Bell Peppers	Pineapple | Yellow Bell Peppers	\N	f	0	28	100	2026-06-02	4	165	1	165	Pineapple | Bell Peppers	\N	\N	0
 1255	\N	Green Cabbage	Green Cabbage	aka: Red Cabbage Heads.	f	0	908	100	2026-05-09	0	89	1	89	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	2
 1256	\N	Garam Masala	Garam Masala	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients. - https://www.eatthismuch.com/calories/cayenne-pepper,206	f	0	10	100	2025-12-21	4	80	4	80	Garam Masala	\N	\N	12
 1257	\N	Raw Unsalted Mixed Nuts	Raw Unsalted Mixed Nuts	\N	f	133121	28	100	2025-12-23	4	137	10	137	Raw Unsalted Mixed Nuts	\N	\N	0
@@ -1192,7 +1192,7 @@
 1514	\N	Ciabatta	Ciabatta	\N	f	262176	257	100	2025-09-17	0	128.5	2	128.5	Ciabatta	\N	\N	0
 1515	\N	Cold Water	Cold Water	\N	t	0	30	100	2025-06-11	9	240	10	240	Cold Water	\N	\N	0
 1547	\N	Poultry Seasoning	Poultry Seasoning	\N	f	0	28	100	2025-11-18	4	128	4	128	Poultry Seasoning	\N	\N	12
-1548	\N	Crushed Tomatoes	Crushed Tomatoes	\N	f	512	905	100	2024-11-20	0	165	4	165	Tomato	\N	\N	6
+1548	\N	Crushed Tomatoes	Crushed Tomatoes	\N	f	512	28	100	2026-06-03	4	165	4	165	Tomato	\N	\N	2
 1549	\N	Frozen Mixed Diced Carrots, Peas, and Corn	Frozen Mixed Diced Carrots, Peas, and Corn	\N	f	0	225	100	2024-12-15	6	225	10	225	Frozen Mixed Diced Carrots, Peas, and Corn	\N	\N	0
 1550	\N	Brown Mustard	Brown Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Brown Mustard	\N	\N	13
 1551	\N	Yellow Mustard	Yellow Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Yellow Mustard	\N	\N	13
@@ -1319,7 +1319,7 @@
 1707	\N	Canned Sliced Peaches in Water	Canned Sliced Peaches in Water	\N	f	0	28	100	2026-01-12	4	244	4	244	Peach	\N	\N	6
 1708	\N	Canned Peach Halves in Water	Canned Peach Halves in Water	\N	f	0	28	100	2026-01-12	4	244	4	244	Peach	\N	\N	6
 1709	\N	Dried Rosemary	Dried Rosemary	\N	f	0	1	100	2026-01-23	3	27	3	27	Rosemary	\N	\N	0
-1710	\N	Canned Crushed Tomatoes	Canned Crushed Tomatoes	\N	f	512	905	100	2024-11-20	0	165	4	165	Tomato	\N	\N	6
+1710	\N	Canned Crushed Tomatoes	Canned Crushed Tomatoes	\N	f	512	28	100	2024-11-20	4	165	4	165	Tomato	\N	\N	2
 1711	\N	Iceberg Lettuce	Iceberg Lettuce	\N	f	0	539	100	2026-04-21	0	57	1	57	Lettuce	\N	\N	2
 1712	\N	Frozen Corn	Frozen Corn	\N	f	2	164	100	2025-08-02	6	164	4	164	Canned Corn	\N	\N	6
 1713	\N	Canned Corn | Frozen Corn	Canned Corn | Frozen Corn	\N	f	2	164	100	2025-08-02	6	164	4	164	Canned Corn	\N	\N	6

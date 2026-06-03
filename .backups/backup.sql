@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict iKiLYefZioLPc2H0XAuhydJ2txKCqahpqcSCkAPSVaHF2sXwGnv7U4vJVqTCJbL
+\restrict PbDskYfM7aXsej6blU2hFyE0n0o9i6fWdxhagg6AQm1nVx6JCvreQLHj2NaGpRX
 
 -- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.0
@@ -744,9 +744,9 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 17	20	35	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 68	1000	1100	131072	0	3	0		2026-04-15	\N	70
 5	130	\N	65536	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-04-16	\N	23
+209	1000	2500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+8	25	\N	131072	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
 19	\N	\N	131072	2	0	0		2023-01-01	\N	58
-209	1000	2500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-8	25	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
 6	130	\N	131072	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-04-16	\N	23
 271	20	35	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-04-24	\N	66
 315	8	40	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-16	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
@@ -768,12 +768,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 419	2.4	\N	4096	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
 359	700	4000	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-02	\N	19
 270	1.5	15	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-03-21	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
-210	1000	2500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-211	1000	2500	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-212	3400	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
+210	1000	2500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
 528	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-213	3400	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
-214	2600	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
 269	\N	30	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-24	\N	83
 265	2.3	12	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-31	\N	76
 20	1	10	131072	2	0	0		2023-01-01	\N	54
@@ -795,6 +791,10 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 226	20	35	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 542	30	40	16	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 543	30	40	32	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
+211	1000	2500	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+212	3400	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+213	3400	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+214	2600	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 286	20	35	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 550	25	35	4096	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 83	\N	35	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-13	\N	16
@@ -818,24 +818,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 222	0.8	\N	65536	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
 323	\N	35	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-13	\N	16
 340	\N	35	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-13	\N	16
-562	1000	2500	393216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-563	1000	2500	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-564	1000	2500	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-565	1000	2500	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-566	28	\N	24576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
-567	29	\N	40960	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
-568	28	\N	393216	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
+564	1000	2500	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
 282	0.8	\N	1048576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
-569	29	\N	655360	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
-570	28	\N	6291456	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
-571	29	\N	10485760	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
-572	450	3500	393216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
-573	550	3500	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
-574	450	3500	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
-575	550	3500	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
-576	2500	\N	40960	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
-577	2800	\N	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
-578	2800	\N	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
 579	\N	1	16777216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
 580	\N	1	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
 301	0.8	\N	2097152	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
@@ -844,6 +828,20 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 353	\N	25	1048576	100	1	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-07	Added sugars: Limit to no more than 25% of total energy	62
 457	0.85	\N	4096	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
 308	20	35	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
+562	1000	2500	393216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+563	1000	2500	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+565	1000	2500	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+566	28	\N	24576	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+567	29	\N	40960	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+568	28	\N	393216	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+569	29	\N	655360	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+572	450	3500	393216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+573	550	3500	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+574	450	3500	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+575	550	3500	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+576	2500	\N	40960	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+577	2800	\N	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+578	2800	\N	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 339	5.6	11.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
 116	\N	-1	1	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 134	\N	-1	16	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
@@ -885,7 +883,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 197	14.3	\N	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 207	900	3000	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-04-03	\N	46
 208	700	3000	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-04-03	\N	46
-39	2600	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-20	\N	60
 583	0.06	0.12	16	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 584	0.06	0.12	32	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 585	0.06	0.12	64	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
@@ -907,11 +904,10 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 84	900	10000	131072	1	0	0	https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/	2026-03-02	\N	68
 228	1	10	65536	2	0	0		-infinity	\N	54
 464	1.3	\N	10485760	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
+39	2600	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 234	900	10000	65536	1	0	0		-infinity	\N	68
 247	1.3	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-05-18	\N	5
-36	1000	2500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-17	\N	22
-191	38	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
-194	38	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
+191	38	\N	65536	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
 592	0.06	0.12	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 593	0.06	0.12	2048	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 594	0.06	0.12	8192	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
@@ -936,6 +932,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 43	8	40	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-16	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
 52	\N	20	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-18	\N	48
 401	4	15	131072	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-05-19	\N	80
+36	1000	2500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+194	38	\N	1048576	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
 49	45	2000	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-18	\N	63
 251	45	2000	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-18	\N	63
 61	1.3	3.2	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-04-28	\N	20
@@ -951,13 +949,12 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 257	\N	1.8	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-25	\N	11
 60	2.7	6	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
 263	2.7	6	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
-195	25	\N	2097152	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-18	\N	18
+195	25	\N	2097152	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+55	425	3500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
 58	0.5	10	131072	3	0	0		2023-01-01	\N	13
 45	150	1100	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 261	0.5	10	65536	3	0	0		-infinity	\N	13
 249	150	1100	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
-55	425	3500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
-258	550	3500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
 595	0.06	0.12	33554432	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 596	0.06	0.12	134217728	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 597	0.06	0.12	24576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
@@ -994,8 +991,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 119	\N	10	8192	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 421	2	20	131072	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-27	\N	2
 422	2	20	65536	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-27	\N	2
-362	550	3500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
-386	425	3500	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-03-19	\N	75
+362	550	3500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
 67	1.5	15	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-03-21	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
 293	1.5	15	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-03-21	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
 377	\N	30	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-24	\N	83
@@ -1369,6 +1365,13 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 461	1.1	\N	393216	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
 926	0.95	\N	1024	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
 931	0.8	\N	134217728	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
+940	1000	2000	16777216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+941	1200	2000	67108864	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+942	1200	2000	33554432	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+943	1200	2000	134217728	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+944	1300	3000	24576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+945	1300	3000	40960	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
+570	28	\N	6291456	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
 932	1	10	65536	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-28	\N	89
 933	1	10	1048576	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-28	\N	89
 934	1	10	131072	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-28	\N	89
@@ -1394,6 +1397,22 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 559	20	35	33554432	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 560	20	35	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 561	20	35	134217728	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
+571	29	\N	10485760	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+946	30	\N	16777216	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+947	30	\N	67108864	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+948	21	\N	33554432	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+949	21	\N	134217728	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
+258	550	3500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+386	425	3500	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+950	450	3000	24576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+951	550	3000	40960	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+952	3400	\N	16777216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+953	3400	\N	67108864	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+954	2600	\N	33554432	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+955	2600	\N	134217728	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+956	2600	\N	24576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+957	2900	\N	393216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+958	2900	\N	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 \.
 
 
@@ -3192,8 +3211,6 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1116	706	1	f
 1116	705	1	f
 1116	704	1	f
-1254	597	1	f
-1254	1253	1	f
 1260	513	1	f
 1260	548	1	f
 590	89	1	f
@@ -3282,6 +3299,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1468	1466	1	t
 972	807	1	t
 972	92	1	t
+1254	597	1	t
+1254	1253	1	t
 559	1600	1	t
 319	1600	1	f
 135	1601	1	f
@@ -3751,6 +3770,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 2033	499	1	t
 972	89	1	t
 89	1960	1	f
+1254	599	1	f
 \.
 
 
@@ -3794,7 +3814,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 402	173859	7019	\N	-infinity
 985	168277	10123	\N	-infinity
 286	168927	20420	\N	-infinity
-39	169640	19296	\N	-infinity
 368	169387	11959	\N	-infinity
 26	332397	7028	\N	-infinity
 159	167765	9326	\N	-infinity
@@ -3824,7 +3843,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 156	2685575	11098	\N	-infinity
 225	2727586	100392	\N	-infinity
 283	2259796	1019	\N	-infinity
-467	2346398	9266	\N	-infinity
 307	169231	11216	\N	-infinity
 1086	2346400	11052	\N	-infinity
 60	326698	2046	\N	-infinity
@@ -3858,7 +3876,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1177	2647440	100298	\N	-infinity
 1400	173433	1157	\N	-infinity
 1974	172197	1156	\N	-infinity
-469	169640	19296	\N	-infinity
 517	168833	19334	\N	-infinity
 1975	170164	12093	\N	-infinity
 1976	169413	12202	\N	-infinity
@@ -3931,6 +3948,8 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1305	2644283	100312	3392	2026-05-22
 1300	2644283	100312	4869	2026-05-22
 131	747445	16515	3269	2026-05-30
+39	169640	19296	4294	2026-05-31
+469	169640	19296	4294	2026-05-31
 119	170845	1026	35	-infinity
 1342	172232	2044	212	-infinity
 2	170416	11297	2405	-infinity
@@ -4288,6 +4307,12 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1960	2346395	12142	2582	2026-05-29
 194	170250	19816	0	2026-05-29
 89	2346395	12142	2582	2026-05-30
+228	1104812	20090	0	2026-05-31
+467	2346398	9266	1734	2026-06-01
+1253	2346398	9266	1734	2026-06-01
+996	169125	9267	1735	2026-06-03
+998	169125	9267	1735	2026-06-03
+1710	2685581	11693	4736	2026-06-03
 \.
 
 
@@ -4308,8 +4333,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 6	Fatty_Acids_Total_Saturated	Saturated Fats	9700	The 2015 to 2020 Dietary Guidelines for Americans recommend consuming <10% of calories from saturated fat for the general population and replacing saturated fat with unsaturated fat. The current AHA/American College of Cardiology guideline is to decrease intake of saturated fat to 5% to 6% of total daily energy (calorie) intake for individuals with elevated LDL cholesterol concentration.	2026-05-22
 89	Zeaxanthin	Zeaxanthin	7559	10mg of lutein and 2mg of zeaxanthin is optimal for eye health, though we want a baseline for healthy populations.	2026-05-28
 90	Lutein	Lutein	7558	10mg of lutein and 2mg of zeaxanthin is optimal for eye health, though we want a baseline for healthy populations.	2026-05-29
-22	Calcium_Ca	Calcium (Ca)	5400	\N	2026-03-17
-18	Fiber_Total_Dietary	Dietary Fiber	1200	\N	2026-03-18
 19	Phosphorus_P	Phosphorus (P)	5500	\N	2026-04-02
 23	Carbohydrates	Carbohydrates	1110	\N	2026-04-16
 14	Iodine_I	Iodine (I)	5350	\N	2026-04-17
@@ -4319,8 +4342,8 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 5	Riboflavin_B2	Riboflavin (B2)	6500	\N	2026-05-17
 16	Fatty_Acids_Total_Monounsaturated	Monounsaturated Fats	11400	No RDA/TUL; using the TUL for Fats as the max; no min because there are other Fats.	2026-05-22
 21	Fats	Fats	800	\N	2026-05-30
-75	Choline	Choline	7220	\N	2026-03-19
-60	Potassium_K	Potassium (K)	5700	\N	2026-03-20
+22	Calcium_Ca	Calcium (Ca)	5400	\N	2026-05-31
+18	Fiber_Total_Dietary	Dietary Fiber	1200	Fibre_Total_Dietary	2026-06-01
 87	Omega_3_EPA_DHA	Omega 3 (EPA/DHA) Fatty Acids	15000	10% of 0.6–1.2% is 0.06–0.12%	2026-03-23
 83	Arginine	Arginine	16700	\N	2026-03-24
 11	Vanadium_V	Vanadium (V)	999999	\N	2026-03-25
@@ -4339,6 +4362,8 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 69	Zinc_Zn	Zinc (Zn)	5900	\N	2026-05-16
 81	Fluoride_F	Fluoride (F)	5680	\N	2026-05-23
 27	Betaine	Betaine	999999	\N	2026-05-24
+75	Choline	Choline	7220	\N	2026-06-02
+60	Potassium_K	Potassium (K)	5700	\N	2026-06-03
 66	Total_Lipid_Fat	Fats	800	\N	2026-04-24
 7	Histidine	Histidine	17400	\N	2026-04-29
 42	Carotene_RAE	Carotenes	7600	Note that these are the dietary intakes for vitamin A in RAE.	2026-05-01
@@ -5341,9 +5366,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4188	0	182	1	1	\N	222	f	\N	5	f	t	1
 4189	7	182	1	1	\N	317	f	\N	6	f	t	1
 4190	6	182	4	1	\N	38	t	\N	7	f	t	1
-7205	6	716	2	1	, diced	222	f	\N	1	f	t	1
-7206	8	716	1	2	, chopped	5	t	\N	2	f	t	1
-7207	8	716	1	2	\N	68	f	\N	3	f	t	1
 3719	4	190	1	14	\N	603	f	\N	1	f	t	1
 3721	0	190	1	1	, finely chopped	222	f	\N	3	f	t	1
 3722	0	190	1	2	, crushed	5	t	\N	4	f	t	1
@@ -5355,7 +5377,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7146	7	707	1	1	\N	2033	f	\N	0	f	t	0.25
 5387	0	360	1	2	, 1 lb total	259	f	\N	2	f	t	1
 5388	4	360	1	10	\N	954	f	\N	3	f	t	1
-7208	4	716	1	15	, drained and rinsed	1310	f	\N	4	f	t	1
 4395	6	254	1	1	\N	123	f	\N	3	f	t	1
 4396	0	254	1	1	, or alternatively use 1/2 tsp alcohol-free vanilla flavor	493	f	\N	4	f	t	1
 4397	8	254	8	1	\N	214	f	\N	5	f	t	1
@@ -5368,8 +5389,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5328	4	322	1	9	\N	614	f	\N	0	f	t	1
 5329	4	322	1	9	\N	637	f	\N	1	f	t	1
 5389	0	360	1	4	\N	5	t	\N	4	f	t	1
-7209	6	716	2	1	\N	123	f	\N	5	f	t	1
-7210	7	716	1	1	, juiced	12	t	\N	6	f	t	1
 5330	4	322	1	18	\N	839	f	\N	2	f	t	1
 4392	6	254	1	1	\N	92	f	\N	0	f	t	1
 4393	6	254	4	1	, approx. 5	851	f	\N	1	f	t	1
@@ -5381,6 +5400,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5408	0	364	1	2	, with seeds	273	f	\N	1	f	t	1
 5409	0	364	1	1	\N	5	f	\N	2	f	t	1
 5410	0	364	1	1	\N	4	f	\N	3	f	t	1
+7205	6	716	2	1	, diced	222	f	\N	2	f	t	1
 5183	0	123	1	1	, thinly sliced	155	f	\N	0	f	t	1
 5184	0	123	2	1	, thinly sliced	222	f	\N	1	f	t	1
 5185	7	123	1	3	\N	36	f	\N	2	f	t	1
@@ -5401,6 +5421,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1576	0	96	1	2	, peeled and segmented	346	f	\N	2	f	t	1
 3851	8	76	4	1	\N	285	t	\N	5	f	t	1
 4341	8	251	1	3	\N	410	f	\N	0	f	t	1
+7206	8	716	1	2	, chopped	5	t	\N	3	f	t	1
 4342	0	251	2	1	, juiced	4	f	\N	1	f	t	1
 3772	0	189	1	2	, boiled, sliced	264	f	\N	1	f	t	1
 4344	8	251	2	1	\N	214	f	\N	3	f	t	1
@@ -5419,12 +5440,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2213	7	124	1	1	\N	2033	f	\N	0	f	t	0.25
 5321	4	320	1	23	\N	865	f	\N	4	f	t	1
 5322	0	320	1	12	\N	868	f	\N	7	f	t	1
+7207	8	716	1	2	\N	68	f	\N	4	f	t	1
+7208	4	716	1	15	, drained and rinsed	1310	f	\N	5	f	t	1
 3773	0	189	1	1	, thinly sliced	155	f	\N	2	f	t	1
 3774	0	189	1	1	, seeded and thinly sliced	8	f	\N	3	f	t	1
 2440	7	80	1	1	\N	2033	f	\N	2	f	f	0.25
 3775	0	189	1	1	, seeded and thinly sliced	597	f	\N	4	f	t	1
 3716	8	174	1	1	\N	2033	f	\N	1	f	f	0.25
 8513	7	827	1	1	\N	2033	f	\N	6	f	t	0.25
+7209	6	716	2	1	\N	123	f	\N	6	f	t	1
+7210	7	716	1	1	, juiced	12	t	\N	7	f	t	1
 3427	8	44	8	1	\N	74	t	\N	5	f	t	1
 5392	7	361	1	3	\N	1119	f	\N	1	f	t	0.75
 4482	4	240	2	5	\N	638	f	\N	1	t	t	1
@@ -7132,6 +7157,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6952	6	647	2	3	\N	111	f	\N	8	f	t	1
 6919	7	645	1	1	\N	38	f	\N	1	f	t	1
 6928	0	646	1	4	(BEEF TENDERLOIN (FILLETS) OR SIRLOIN BEAF STEAKS)	114	f	\N	1	f	t	1
+7204	8	716	1	1	\N	2033	f	\N	1	f	f	0.25
 6875	0	641	1	3	\N	9	f	\N	0	f	t	1
 6876	0	641	1	2	, juiced	4	f	\N	1	f	t	1
 6877	8	641	2	1	\N	214	f	\N	2	f	t	1
@@ -7209,7 +7235,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6929	7	646	3	1	\N	2033	f	\N	2	f	t	0.25
 6943	7	382	1	1	\N	2033	f	\N	2	f	t	0.25
 4626	7	267	1	1	\N	143	f	\N	3	f	t	1
-7204	7	716	1	1	\N	2033	f	\N	0	f	t	0.25
 5619	7	398	1	1	\N	123	f	\N	7	f	t	1
 6864	7	640	1	3	\N	2033	f	\N	1	f	t	0.25
 6921	7	645	1	1	\N	2033	f	\N	3	f	f	0.25
@@ -7518,10 +7543,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8470	0	33	1	1	, chopped	222	t	\N	5	f	t	1
 8192	7	972	1	1	\N	29	f	\N	1	f	t	0.25
 8480	8	996	1	1	\N	1764	t	\N	8	f	f	1
-8401	0	992	2	1	\N	105	f	\N	1	f	t	1
-8402	6	992	2	1	\N	80	f	\N	2	f	t	1
-8404	6	992	1	1	\N	98	f	\N	4	f	t	1
-8405	8	992	4	7	\N	1279	f	\N	5	f	t	1
 4904	6	101	4	1	\N	95	t	\N	4	f	t	1
 8312	7	750	1	1	\N	82	f	\N	7	f	t	1
 8314	8	750	8	1	\N	692	t	\N	8	f	t	1
@@ -7541,9 +7562,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3517	0	180	1	4	, chopped	5	f	\N	5	f	t	1
 3518	8	180	4	1	, flakes	833	f	\N	6	f	t	1
 3519	4	180	1	28	\N	615	f	\N	7	f	t	1
-8406	8	992	1	1	\N	1596	f	\N	6	f	t	1
-8407	0	992	1	2	\N	910	t	\N	7	f	t	1
-8408	6	992	4	1	\N	410	f	\N	8	f	t	1
 6302	7	568	1	1	, minced	5	f	\N	8	f	t	1
 6303	0	568	1	1	, wedged, for garnish	4	t	\N	9	f	t	1
 7389	4	744	1	5	, dried	982	f	\N	0	f	t	1
@@ -7565,12 +7583,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6052	6	529	4	1	, chopped	872	f	\N	7	f	t	1
 6053	6	529	4	1	, chopped	473	t	\N	8	f	t	1
 8102	7	961	1	1	, to garnish	1342	t	\N	7	f	t	1
+8401	0	992	2	1	\N	105	f	\N	1	f	t	1
 6054	0	529	1	1	, juiced	4	t	\N	9	f	t	1
 4743	7	250	1	1	, for drizzling	2033	f	\N	8	f	t	0.25
 4907	7	234	1	1	\N	2033	f	\N	1	f	f	0.25
-8409	6	992	1	4	\N	16	f	\N	9	f	t	1
 6399	0	580	1	2	, sliced (mostly green parts)	144	f	\N	9	f	t	1
-8410	6	992	1	2	\N	1307	f	\N	10	f	t	1
 8311	7	750	2	3	\N	2033	f	\N	6	f	t	0.25
 8313	8	750	1	1	\N	2033	t	\N	9	f	t	0.25
 8481	8	825	1	1	\N	82	f	\N	6	f	t	1
@@ -7592,9 +7609,17 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8505	8	1003	1	1	\N	143	f	\N	8	f	t	1
 8506	8	1003	1	2	\N	1779	f	\N	9	f	t	1
 6401	0	580	1	8	, washed and dried	1073	f	\N	11	f	t	0.25
+8402	6	992	2	1	\N	80	f	\N	2	f	t	1
+8404	6	992	1	1	\N	98	f	\N	4	f	t	1
+8405	8	992	4	7	\N	1279	f	\N	5	f	t	1
+8406	8	992	1	1	\N	1596	f	\N	6	f	t	1
+8407	0	992	1	2	\N	910	t	\N	7	f	t	1
 3668	7	188	1	2	\N	2033	f	\N	14	f	t	0.25
+8408	6	992	4	1	\N	410	f	\N	8	f	t	1
+8409	6	992	1	4	\N	16	f	\N	9	f	t	1
 5880	6	472	2	1	\N	2033	f	\N	1	f	t	0.25
 2977	7	153	1	3	\N	2033	f	\N	7	f	t	0.25
+8410	6	992	1	2	\N	1307	f	\N	10	f	t	1
 7432	6	749	3	2	\N	111	f	\N	6	f	t	1
 4755	0	272	1	2	, minced	5	t	\N	9	f	t	1
 8509	6	1003	1	2	, to serve	\N	f	484	12	f	t	1
@@ -7675,7 +7700,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8654	0	1046	1	5	, thinly sliced	144	f	\N	3	f	t	1
 8655	0	1046	1	1	, chopped	658	f	\N	4	f	t	1
 6271	8	564	1	1	\N	323	t	\N	5	f	t	1
-7211	8	716	8	1	\N	285	t	\N	7	f	t	1
 7492	0	787	1	1	\N	1216	f	\N	0	f	t	1
 7493	0	787	1	2	\N	1329	f	\N	1	f	t	1
 7494	0	787	1	1	\N	1043	f	\N	2	f	t	1
@@ -7739,6 +7763,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7445	5	752	1	2	\N	1500	f	\N	2	f	t	1
 8422	0	994	1	6	\N	388	f	\N	1	f	t	1
 6357	6	575	4	1	\N	\N	t	426	12	f	t	1
+7211	8	716	8	1	\N	285	t	\N	8	f	t	1
 7502	5	789	1	2	\N	103	f	\N	0	f	t	1
 7480	4	785	1	7	, dried	1330	f	\N	4	f	t	1
 5610	8	397	1	1	\N	215	f	\N	10	f	t	1
@@ -7871,6 +7896,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8351	4	984	1	1	\N	286	f	\N	1	f	t	1
 8352	8	984	4	1	\N	214	t	\N	2	f	f	0.5
 6055	7	529	1	1	\N	2033	f	\N	10	f	t	0.25
+8403	8	992	1	2	\N	2033	f	\N	3	f	f	0.25
 6413	7	582	1	2	\N	73	t	\N	3	f	t	1
 6414	8	582	1	1	\N	323	f	\N	4	f	t	1
 6415	8	582	2	1	\N	71	f	\N	5	f	t	1
@@ -7899,7 +7925,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7661	8	844	1	1	\N	\N	f	1044	1	f	t	0.75
 7396	8	744	1	1	\N	2033	t	\N	7	f	t	0.25
 7238	7	720	1	2	\N	2033	f	\N	6	f	t	0.25
-8403	8	992	1	2	\N	2033	f	\N	3	f	f	0.25
 7645	0	843	1	1	\N	187	f	\N	0	f	t	1
 7684	6	848	1	2	\N	75	f	\N	0	f	t	1
 7685	6	848	2	1	\N	67	f	\N	1	f	t	1
@@ -8954,6 +8979,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3122	Flip and cook until desired doneness is reached, 2–3 minutes more; season with salt and ground black pepper.	19	2	4
 475	Toast bread. Mash avocado with a fork and spread onto one piece of toast.	52	0	0
 2237	Divide the mixture into 10 muffin cups, and freeze for at least two hours.	233	1	131072
+3918	Mix the lime juice into the beans, give them a taste, and season them with salt and pepper as needed.	716	3	0
 3357	Lightly mash with a potato masher, and mix in the olive oil and chopped dill. Serve warm.	533	3	0
 213	Arrange bagels, cut-side up, on the prepared baking sheet. Spoon a thin layer of pizza sauce over each bagel half and sprinkle with pizza cheese. Place two pepperoni slices onto each bagel half.	49	1	0
 3384	In a food processor, combine the lemon juice, pine nuts, and basil, and process until just combined. Slowly add in the olive oil, and pulse until emulsified. Season to taste with sea salt and pepper.	543	0	256
@@ -10044,9 +10070,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4842	Preheat oven to 400 degrees, place oven rack in center position.	1006	0	0
 4843	Prep, bok choy, red belle pepper, garlic and chicken, set aside. In a baking dish whisk together coconut milk, curry paste, garlic, ginger, soy sauce, oyster sauce, peanut butter, sesame oil, rice vinegar, and lime juice until smooth. Add sweet bell pepper and bok choy. Stir. Add diced chicken, stir.	1006	1	0
 4844	Bake, covered in foil for 25 minutes (start your rice now). Remove from oven, garnish with green onions, lime wedges and peanuts if desired. Serve over rice.	1006	2	0
-4724	Peel and thinly slice onion. In a small bowl, whisk together apple cider vinegar, sugar (optional), and a pinch of salt. Add onion and set aside to pickle.	992	0	0
 4750	Set waffle maker on med/high heat, set the potato in the center, smash with spatula or flat bottom of a glass (don't press super flat, just flat enough that the cheese stays put) sprinkle with sea salt, add Parmesan cheese and immediately close the waffle maker. Allow to cook until very crispy. 	996	1	2097152
-4725	Heat coconut oil in a pot over medium-low heat. Add rice and roast 2 minutes. Add turmeric, cumin, bay leaf, and a pinch of salt. Toast 30 seconds more, then add 2⅔ cups water. Cover and simmer until rice is tender, 20–30 minutes.	992	1	0
+4724	Peel and thinly slice onion. In a small bowl, whisk together apple cider vinegar, sugar (optional), and a pinch of salt. Add onion and set aside to pickle.	992	0	0
+4725	Heat coconut oil in a pot over medium-low heat. Add rice and roast 2 minutes. Add turmeric, cumin, bay leaf, and a pinch of salt. Toast 30 seconds more, then add 2⅔ cups water. Cover and simmer until rice is tender, 20–30 minutes.	992	1	4
 4775	Once done, squeeze all the soft, sweet, creamy, mild roasted garlic out of the skins into the yogurt, mash together, then season to perfection. 	369	2	0
 4776	Trim and finely slice the scallions. Spoon the yogurt across a plate or platter, stack the sweet potato on top, drizzle with a teaspoon of extra virgin olive oil, sprinkle over the scallions, dish up and enjoy.	369	3	0
 3489	In a large bowl, add the chickpeas through cilantro, and set aside.	577	0	0
@@ -10721,12 +10747,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4037	Whiz one of the jarred peppers in a blender with ¾ cup of the tzatziki and a pinch of sea salt and black pepper. Pour over the chicken and leave to marinate for at least 2 hours in the fridge, preferably overnight. 	752	0	0
 4038	Preheat the oven to 350°F.	752	1	2
 4617	Cook the rice according to package instructions.	977	1	4719620
-3915	In a medium pot, heat the olive oil over medium heat. Add the onion and cook for about 5 minutes, or until soft and translucent. Add the garlic and cook for another minute. Sprinkle on the chili powder and cook for another minute.	716	0	0
 4070	Tip the mixed veg into a large, deep pan on a medium heat with 1 tablespoon of olive oil and the mixed spice. Cook for 10 minutes, or until golden, stirring regularly. 	785	0	4
 4614	Drain and finely slice the peppers, then fold into the egg mixture and season to perfection with sea salt and black pepper. Preheat the oven to 325°F.	791	2	2
-3916	Add the beans and water to the pot and bring it all to a boil. Reduce the heat to low and cook the mixture for 4–5 minutes, until about half the water has evaporated or been absorbed.	716	1	0
-3917	Remove the pot from the heat and mash the beans using a potato masher.	716	2	0
-3918	Mix the lime juice into the beans, give them a taste, and season them with salt and pepper as needed.	716	3	0
+3915	In a medium pot, heat the olive oil over medium heat. Add the onion and cook for about 5 minutes, or until soft and translucent. Add the garlic and cook for another minute. Sprinkle on the chili powder and cook for another minute.	716	0	4
 4615	Quickly wipe out the pan, drizzle in a little olive oil, then place on a low heat. Pour the egg mixture straight into the pan and spread out. Leave for 5 minutes, then bake for 10 minutes. When the time's up, remove from the oven, then leave to rest in the pan for 5 minutes.	791	3	2
 4616	Run a knife around the edge to loosen. Quickly and confidently turn it out, using a plate or flat lid that's bigger than the pan, and serve sprinkled with a little salt and a pinch of watercress. Delicious hot or cold.	791	4	0
 4023	Preheat the oven to 450°F.	749	0	2
@@ -10744,6 +10767,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3462	Remove the salmon from the oven, and set aside. Season the greens with salt and pepper, and divide among four plates.	568	6	0
 4773	Store in a sealed container in the fridge for up to 2 weeks.	723	4	65536
 4035	Using a vegetable peeler, peel the cucumber lengthways into long delicate ribbons, discarding the seedy core, and place in a bowl with a pinch of sea salt and black pepper, and 1 tablespoon each of red wine vinegar and extra virgin olive oil. 	751	0	0
+3916	Add the beans and water to the pot and bring it all to a boil. Reduce the heat to low and cook the mixture for 4–5 minutes, until about half the water has evaporated or been absorbed.	716	1	4
+3917	Remove the pot from the heat and mash the beans using a potato masher.	716	2	0
 4790	Chop the cilantro. Serve the black beans warm with rice and garnish with the chopped cilantro.	1003	7	0
 2791	Cook the pork sticks under a hot grill (broiler) for 3–4 minutes on each side, until golden and cooked through. Serve with the chili sauce for dipping.	161	3	0
 3607	Individually wrap the beets, pears, and onion with tinfoil.	609	1	0
@@ -10970,8 +10995,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3533	Return to the pot, bring back to a simmer, and add salt and pepper to taste.	586	6	4
 4726	Meanwhile, in a small bowl, whisk together tahini and an equal amount of water. Season with salt and pepper to taste.	992	2	0
 4727	When rice is done, remove bay leaves and add spinach. Cover and let steam until spinach is wilted. Divide into bowls.	992	3	0
-4728	Top bowls with drained chickpeas and pickled onions. Drizzle with tahini.	992	4	0
 3762	Return the escalopes to the pan and heat through for 1 minute before serving with the sauce, noodles and broccoli.	645	3	4
+4728	Top bowls with drained chickpeas and pickled onions. Drizzle with tahini.	992	4	0
 4301	Remove the chicken breasts from the soup, and using two forks shred it. Add back into the soup along with the lentils and chopped spinach. Mix well and simmer for another 5 minutes. Season with salt and pepper if needed, then serve.	864	2	4
 4302	Add the cooked potatoes to the chowder and let them cook for 2 minutes to absorb some of the flavor. Season the chowder with salt and pepper and serve.	704	3	4
 4303	Fry for a couple of minutes until golden, then lightly squash the unpeeled garlic cloves with the heel of your hand and add to the pan. Pick in the grapes.	838	2	4
@@ -11246,7 +11271,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 939, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 958, true);
 
 
 --
@@ -12027,5 +12052,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict iKiLYefZioLPc2H0XAuhydJ2txKCqahpqcSCkAPSVaHF2sXwGnv7U4vJVqTCJbL
+\unrestrict PbDskYfM7aXsej6blU2hFyE0n0o9i6fWdxhagg6AQm1nVx6JCvreQLHj2NaGpRX
 
