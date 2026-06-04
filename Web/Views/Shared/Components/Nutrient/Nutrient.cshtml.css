@@ -27,10 +27,6 @@ img {
     }
 }
 
-.nutrient-range-container {
-    --input-thumb-width: 16px;
-}
-
 .range-slider {
     pointer-events: none;
     position: absolute;
@@ -42,24 +38,22 @@ img {
 }
 
 .range-slider::-webkit-slider-thumb {
-    width: var(--input-thumb-width);
-    background-color: seagreen;
-    /*appearance: none;*/
-    pointer-events: all;
-    border-radius: 9in;
-    /*display: none;*/
-    cursor: default;
-    height: 2ex;
+    appearance: none;
+    background: none;
+    display: none;
+    border: none;
+}
+
+.range-slider::-moz-range-thumb {
+    appearance: none;
+    background: none;
+    display: none;
+    border: none;
 }
 
 .range-track {
     height: 8px;
     width: 100%;
-}
-
-.inner-range {
-    left: calc(var(--input-thumb-width) / 2);
-    right: calc(var(--input-thumb-width) / 2);
 }
 
 .range-unselected {
@@ -90,26 +84,7 @@ img {
     background-color: currentColor;
     transform: translateX(-50%);
     position: absolute;
-    height: 2.2ex;
+    height: 100%;
     width: 1px;
     top: 0;
 }
-
-/* Not using:
-.tick::after {
-    transform: translateX(-50%);
-    position: absolute;
-    margin: auto;
-    width: 3ch;
-    top: 100%;
-    right: 0;
-    left: 0;
-}
-
-.tick.rda::after {
-    content: "RDA";
-}
-
-.tick.tul::after {
-    content: "TUL";
-}*/

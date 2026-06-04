@@ -9,16 +9,9 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Controllers\Exercise\**" />
-    <Compile Remove="Views\Exercise\**" />
-    <Content Remove="Controllers\Exercise\**" />
-    <Content Remove="Views\Exercise\**" />
-    <EmbeddedResource Remove="Controllers\Exercise\**" />
-    <EmbeddedResource Remove="Views\Exercise\**" />
-    <None Remove="Controllers\Exercise\**" />
-    <None Remove="Views\Exercise\**" />
-  </ItemGroup>
+  <PropertyGroup>
+	<NoWarn>$(NoWarn);CS0162</NoWarn>
+  </PropertyGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="Web.Test" />

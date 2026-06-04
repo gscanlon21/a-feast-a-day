@@ -1,10 +1,4 @@
 ﻿@model NutrientViewModel
-@using Web.Views.Shared.Components.Nutrient
-@using Core.Consts
-@using Core.Models.Recipe
-@using Data.Entities.Users
-@using Lib.Services
-@using Core.Code.Attributes
 
 @if (Model.User.IsDemoUser)
 {
@@ -38,9 +32,22 @@
             .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.GroupName))
             .ThenBy(nt => nt.NutrientGroup.GetSingleDisplayName(DisplayType.Name)))
         {
-            <div class="d-flex flex-wrap nutrient-range-container" style="column-gap:1ch;">
+            <div class="d-sm-flex d-lg-block d-xl-flex flex-wrap nutrient-range-container" style="column-gap:1ch;">
                 <div class="d-flex flex-column" style="flex:1 0 15ch;line-height:1.25;">
-                    <div>@nutrientTarget.NutrientGroup.GetSingleDisplayName(DisplayType.ShortName)</div>
+                    <div class="d-flex justify-content-between gap-2">
+                        <span>@nutrientTarget.NutrientGroup.GetSingleDisplayName(DisplayType.ShortName)</span>
+                        <div class="d-flex d-sm-none d-lg-flex d-xl-none">
+                            <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetNutrientRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
+                                <button class="btn btn-icon reset-btn" type="submit" @(nutrientTarget.ShowButtons ? "" : "disabled")>
+                                    <img src="/images/user/restore-filled.svg">
+                                </button>
+                            </form>
+
+                            <button class="btn btn-icon save-btn" type="submit" form="save-@nutrientTarget.NutrientGroup" @(nutrientTarget.ShowButtons ? "" : "disabled")>
+                                <img src="/images/user/save.svg">
+                            </button>
+                        </div>
+                    </div>
                     <div class="small text-muted d-none">
                         <span class="start-value" data-orig="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" data-default="@Math.Round(nutrientTarget.DefaultStart, 1, MidpointRounding.ToZero)">@nutrientTarget.Start</span>%
                         –
@@ -50,18 +57,18 @@
 
                 <div class="d-flex align-items-center" style="flex:99999 0 275px;gap:1ch;">
                     <div class="d-flex justify-content-between">
-                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetNutrientRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.ResetNutrientRanges)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post"
+                              class="d-none d-sm-flex d-lg-none d-xl-flex">
                             <button class="btn btn-icon reset-btn" type="submit" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                                 <img src="/images/user/restore-filled.svg">
                             </button>
                         </form>
 
-                        <button class="btn btn-icon minus-lower d-none" type="button">
+                        <button class="btn btn-icon minus-lower" type="button" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                             <img src="/images/user/minus.svg">
                         </button>
 
-                        <button class="btn btn-icon add-lower d-none" type="button">
+                        <button class="btn btn-icon add-lower" type="button" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                             <img src="/images/user/add.svg">
                         </button>
                     </div>
@@ -82,24 +89,22 @@
                             <div class="range-unselected" style="background-color:@nutrientTarget.Color;"></div>
                             <div class="range-selected"></div>
 
-                            <div class="position-absolute h-100 inner-range">
-                                <div class="tick rda form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultStart%, 100%)"></div>
-                                <div class="tick tul form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultEnd%, 100%)"></div>
-                                <div class="actual-value" style="left:calc(@nutrientTarget.ValueInRange% - .5ch);color:@nutrientTarget.Color;">&#9660;</div>
-                            </div>
+                            <div class="tick rda form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultStart%, 100%)"></div>
+                            <div class="tick tul form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultEnd%, 100%)"></div>
+                            <div class="actual-value" style="left:calc(@nutrientTarget.ValueInRange% - .5ch);color:@nutrientTarget.Color;">&#9660;</div>
                         </div>
                     </form>
 
                     <div class="d-flex justify-content-between">
-                        <button class="btn btn-icon minus-upper d-none" type="button">
+                        <button class="btn btn-icon minus-upper" type="button" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                             <img src="/images/user/minus.svg">
                         </button>
 
-                        <button class="btn btn-icon add-upper d-none" type="button">
+                        <button class="btn btn-icon add-upper" type="button" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                             <img src="/images/user/add.svg">
                         </button>
 
-                        <button class="btn btn-icon save-btn" type="submit" form="save-@nutrientTarget.NutrientGroup" @(nutrientTarget.ShowButtons ? "" : "disabled")>
+                        <button class="btn btn-icon save-btn d-none d-sm-flex d-lg-none d-xl-flex" type="submit" form="save-@nutrientTarget.NutrientGroup" @(nutrientTarget.ShowButtons ? "" : "disabled")>
                             <img src="/images/user/save.svg">
                         </button>
                     </div>
@@ -108,31 +113,62 @@
         }
     </div>
     <hr>
-    <div>Recipes are being automatically adjusted to match your nutrient targets.</div>
+    <details>
+        <summary>Recipes are being automatically adjusted to match your nutrient targets.</summary>
+
+        <div class="mt-3 small">
+            <div class="mb-3">The lower bound represents the Recommended Daily Allowance (RDA), the upper bound represents the Tolerable Upper Limit (TUL).</div>
+            <div>Dietary reference intakes are averaged across all family members. If no TUL is available, the upper limit is set to double that of the RDA.</div>
+        </div>
+    </details>
+    <div></div>
 </div>
 
-<script>
+<script type="module">
     document.querySelectorAll(".nutrient-range-container").forEach(container => {
         const selected = container.querySelector(".range-selected");
         const start = container.querySelector(".range-start");
         const end = container.querySelector(".range-end");
-        const save = container.querySelector(".save-btn");
-        const reset = container.querySelector(".reset-btn");
+        const saveButtons = container.querySelectorAll(".save-btn");
+        const resetButtons = container.querySelectorAll(".reset-btn");
         const minusLower = container.querySelector(".minus-lower");
         const addLower = container.querySelector(".add-lower");
         const minusUpper = container.querySelector(".minus-upper");
         const addUpper = container.querySelector(".add-upper");
-        minusLower.addEventListener('click', () => { start.value = Number(start.value) - 0.1; update(); });
-        addLower.addEventListener('click', () => { start.value = Number(start.value) + 0.1; update(); });
-        minusUpper.addEventListener('click', () => { end.value = Number(end.value) - 0.1; update(); });
-        addUpper.addEventListener('click', () => { end.value = Number(end.value) + 0.1; update(); });
 
-        function update() {
+        function updateOnHold(button, callback, delay = 50) {
+            let timeout, interval;
+
+            const start = () => {
+                callback();
+
+                timeout = setTimeout(() => {
+                    interval = setInterval(callback, delay);
+                }, 250);
+            };
+
+            const stop = () => {
+                clearTimeout(timeout);
+                clearInterval(interval);
+            };
+
+            button.addEventListener('click', callback);
+
+            button.addEventListener('mousedown', start);
+            button.addEventListener('mouseleave', stop);
+            button.addEventListener('mouseup', stop);
+
+            button.addEventListener('touchstart', start);
+            button.addEventListener('touchcancel', stop);
+            button.addEventListener('touchend', stop);
+        }
+
+        function update(event, clamps, callback) {
             let startVal = Number(start.value);
             let endVal = Number(end.value);
 
-            if (startVal > endVal) {
-                [startVal, endVal] = [endVal, startVal];
+            if (clamps && Math.abs(startVal - endVal) < 10) {
+                return;
             }
 
             selected.style.left = startVal + "%";
@@ -145,17 +181,26 @@
             endValue.textContent = endVal.toFixed(2);
 
             if (Number(startVal) === Number(startValue.dataset.orig) && Number(endVal) === Number(endValue.dataset.orig)) {
-                save.setAttribute('disabled', 'disabled');
+                saveButtons.forEach(btn => btn.setAttribute('disabled', 'disabled'));
             } else {
-                save.removeAttribute('disabled');
+                saveButtons.forEach(btn => btn.removeAttribute('disabled'));
             }
 
             if (Number(startVal) === Number(startValue.dataset.default) && Number(endVal) === Number(endValue.dataset.default)) {
-                reset.setAttribute('disabled', 'disabled');
+                resetButtons.forEach(btn => btn.setAttribute('disabled', 'disabled'));
             } else {
-                reset.removeAttribute('disabled');
+                resetButtons.forEach(btn => btn.removeAttribute('disabled'));
+            }
+
+            if (callback) {
+                callback();
             }
         }
+
+        updateOnHold(minusLower, (e) => update(e, false, () => start.value = Number(start.value) - 0.1));
+        updateOnHold(addLower, (e) => update(e, true, () => start.value = Number(start.value) + 0.1));
+        updateOnHold(minusUpper, (e) => update(e, true, () => end.value = Number(end.value) - 0.1));
+        updateOnHold(addUpper, (e) => update(e, false, () => end.value = Number(end.value) + 0.1));
 
         start.addEventListener("input", update);
         end.addEventListener("input", update);
