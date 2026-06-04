@@ -40,13 +40,25 @@ namespace Core.Code.Helpers;
 /// </summary>
 public static class NutrientHelpers
 {
+    /// <summary>
+    /// Get the user's source-specified tracked nutrients.
+    /// </summary>
+    public static Nutrients[] Selected(DataSource dataSource)
+    {
+        return dataSource switch
+        {
+            DataSource.USDA => NutrientsToUSDA.Keys.ToArray(),
+            DataSource.Canada => NutrientsToCanada.Keys.ToArray(),
+            _ => All,
+        };
+    }
+
+    /// <summary>
+    /// Nutrients that we want to track.
+    /// </summary>
     public static readonly Nutrients[] All =
     [
-        ..Macronutrients(), ..AminoAcids(), ..Vitamins(), ..Minerals(), ..Extra()
-    ];
-
-    private static Nutrients[] Macronutrients() =>
-    [
+        // Macronutrients
         Nutrients.Protein,
         Nutrients.Starch,
         Nutrients.Resistant_Starch,
@@ -59,10 +71,8 @@ public static class NutrientHelpers
         Nutrients.Omega_3_EPA_DHA,
         Nutrients.Omega_3_ALA,
         Nutrients.Omega_6,
-    ];
 
-    private static Nutrients[] AminoAcids() =>
-    [
+        // Amino Acids
         Nutrients.Histidine,
         Nutrients.Isoleucine,
         Nutrients.Leucine,
@@ -74,10 +84,8 @@ public static class NutrientHelpers
         Nutrients.Valine,
         Nutrients.Arginine,
         Nutrients.Glycine,
-    ];
 
-    private static Nutrients[] Vitamins() =>
-    [
+        // Vitamins
         Nutrients.Vitamin_A,
         Nutrients.Carotene_Alpha,
         Nutrients.Carotene_Beta,
@@ -90,10 +98,8 @@ public static class NutrientHelpers
         Nutrients.Vitamin_B_12,
         Nutrients.Vitamin_C,
         Nutrients.Vitamin_K,
-    ];
 
-    private static Nutrients[] Minerals() =>
-    [
+        // Minerals
         Nutrients.Sodium_Na,
         Nutrients.Calcium_Ca,
         Nutrients.Potassium_K,
@@ -106,24 +112,20 @@ public static class NutrientHelpers
         Nutrients.Selenium_Se,
         Nutrients.Iodine_I,
         Nutrients.Molybdenum_Mo,
-    ];
 
-    private static Nutrients[] Extra() =>
-    [
+        // Extra
+        Nutrients.Choline,
+        Nutrients.Energy_KCalorie,
+        Nutrients.Lutein_Zeaxanthin,
         // TODO/FIXME: Macronutrient to calorie conversion values are not static.
         // See food_calorie_conversion_factor.csv for true values.
         //Nutrients.Energy_Atwater_Specific_Factors_KCalorie,
-        Nutrients.Energy_KCalorie,
-        Nutrients.Lutein_Zeaxanthin,
-        Nutrients.Choline,
     ];
 
-    public static readonly IReadOnlyDictionary<USDANutrients, Nutrients> USDAToNutrients =
-        NutrientsToUSDA.SelectMany(x => x.Value.Select(v => (x.Key, Value: v))).ToDictionary(x => x.Value, x => x.Key);
-
-    public static readonly IReadOnlyDictionary<CanadaNutrients, Nutrients> CanadaToNutrients =
-        NutrientsToCanada.SelectMany(x => x.Value.Select(v => (x.Key, Value: v))).ToDictionary(x => x.Value, x => x.Key);
-
+    /// <summary>
+    /// Maps a Nutrients to one or many USDANutrients.
+    /// Anything in All that is missing from this list will show as disabled to the user.
+    /// </summary>
     public static IReadOnlyDictionary<Nutrients, List<USDANutrients>> NutrientsToUSDA => new Dictionary<Nutrients, List<USDANutrients>>
     {
         // Macronutrients
@@ -140,7 +142,7 @@ public static class NutrientHelpers
         { Nutrients.Omega_3_EPA_DHA, [USDANutrients.PUFA_22_6_n_3_DHA_Grams, USDANutrients.PUFA_20_5_n_3_EPA_Grams] },
         { Nutrients.Omega_3_ALA, [USDANutrients.PUFA_18_3_n_3_c_c_c_ALA_Grams] },
 
-        // Amino acids
+        // Amino Acids
         { Nutrients.Histidine, [USDANutrients.Histidine_Grams] },
         { Nutrients.Isoleucine, [USDANutrients.Isoleucine_Grams] },
         { Nutrients.Leucine, [USDANutrients.Leucine_Grams] },
@@ -183,18 +185,21 @@ public static class NutrientHelpers
         { Nutrients.Molybdenum_Mo, [USDANutrients.Molybdenum_Mo_Micrograms] },
 
         // Extra
+        { Nutrients.Choline, [USDANutrients.Choline_total_Milligrams] },
+        { Nutrients.Lutein_Zeaxanthin, [USDANutrients.Lutein__zeaxanthin_Micrograms] },
+        { Nutrients.Energy_KCalorie, [USDANutrients.Energy_KCalorie, USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
         // SELECT "IngredientId", "Nutrients" FROM usda_nutrient WHERE "Nutrients" IN (1008, 2047) GROUP BY "IngredientId", "Nutrients" HAVING COUNT(*) > 1
         // Energy_KCalorie seems to be for legacy ingredients, while Atwater_..._Factors seems to be for the foundation foods.
-        { Nutrients.Energy_KCalorie, [USDANutrients.Energy_KCalorie, USDANutrients.Energy_Atwater_General_Factors_KCalorie] },
-        { Nutrients.Lutein_Zeaxanthin, [USDANutrients.Lutein__zeaxanthin_Micrograms] },
-        { Nutrients.Choline, [USDANutrients.Choline_total_Milligrams] },
     };
 
+    /// <summary>
+    /// Maps a Nutrients to one or many CanadaNutrients.
+    /// Anything in All that is missing from this list will show as disabled to the user.
+    /// </summary>
     public static IReadOnlyDictionary<Nutrients, List<CanadaNutrients>> NutrientsToCanada => new Dictionary<Nutrients, List<CanadaNutrients>>
     {
         // Macronutrients
         { Nutrients.Protein, [CanadaNutrients.Protein_Grams] },
-        { Nutrients.Starch, [] },
         { Nutrients.Fiber_Total_Dietary, [CanadaNutrients.Fibre_total_dietary_Grams] },
         { Nutrients.Total_Lipid_Fat, [CanadaNutrients.Fat_total_lipids_Grams] },
         { Nutrients.Fatty_Acids_Total_Trans, [CanadaNutrients.Fatty_acids_trans_total_Grams] },
@@ -205,7 +210,7 @@ public static class NutrientHelpers
         { Nutrients.Omega_3_ALA, [CanadaNutrients.Fatty_acids_monounsaturated_12_1_lauroleic_Grams] },
         { Nutrients.Omega_6, [CanadaNutrients.Fatty_acids_polyunsaturated_22_5n_6_Grams] },
 
-        // Amino acids
+        // Amino Acids
         { Nutrients.Histidine, [CanadaNutrients.Histidine_Grams] },
         { Nutrients.Isoleucine, [CanadaNutrients.Isoleucine_Grams] },
         { Nutrients.Leucine, [CanadaNutrients.Leucine_Grams] },
@@ -252,4 +257,16 @@ public static class NutrientHelpers
         { Nutrients.Lutein_Zeaxanthin, [CanadaNutrients.Lutein_and_zeaxanthin_Micrograms] },
         { Nutrients.Choline, [CanadaNutrients.Choline_total_Milligrams] },
     };
+
+    /// <summary>
+    /// Maps a USDANutrients back to Nutrients.
+    /// </summary>
+    public static readonly IReadOnlyDictionary<USDANutrients, Nutrients> USDAToNutrients =
+        NutrientsToUSDA.SelectMany(x => x.Value.Select(v => (x.Key, Value: v))).ToDictionary(x => x.Value, x => x.Key);
+
+    /// <summary>
+    /// Maps a CanadaNutrients back to Nutrients.
+    /// </summary>
+    public static readonly IReadOnlyDictionary<CanadaNutrients, Nutrients> CanadaToNutrients =
+        NutrientsToCanada.SelectMany(x => x.Value.Select(v => (x.Key, Value: v))).ToDictionary(x => x.Value, x => x.Key);
 }

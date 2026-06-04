@@ -28,7 +28,7 @@ public static class UserConsts
     public const int IngredientsRange = IngredientsMax - IngredientsMin + 1;
 
     public const int SectionWeightMin = 0;
-    public const int SectionWeightMax = 35;
+    public const int SectionWeightMax = 10;
 
     public const int LagRefreshXWeeksMin = 0;
     public const int LagRefreshXWeeksDefault = 0;
@@ -44,8 +44,8 @@ public static class UserConsts
     public const int FootnoteCountMax = 4;
 
     public const int AtLeastXNutrientsPerRecipeMin = 1;
-    public const int AtLeastXNutrientsPerRecipeDefault = 6;
-    public const int AtLeastXNutrientsPerRecipeMax = 9;
+    public const int AtLeastXNutrientsPerRecipeDefault = 5;
+    public const int AtLeastXNutrientsPerRecipeMax = 10;
 
     public const DayOfWeek SendDayDefault = DayOfWeek.Sunday;
 
@@ -79,7 +79,7 @@ public static class UserConsts
     /// <summary>
     /// Add some padding to the upper-bounds of the nutrient targets.
     /// </summary>
-    public const double NutrientTargetsScale = 1.25;
+    public const double NutrientTargetsScale = 1.05;
 
     /// <summary>
     /// How many custom user_frequency records do we allow per user?
