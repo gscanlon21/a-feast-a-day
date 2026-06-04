@@ -1,6 +1,6 @@
 ﻿using Data.Repos;
 
-namespace Terminal.Programs.USDA;
+namespace Terminal.Programs;
 
 internal class RegenerateNutrients
 {

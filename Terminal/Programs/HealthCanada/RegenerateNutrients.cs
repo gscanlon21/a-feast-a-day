@@ -1,17 +1,23 @@
 ﻿using Core.Code.Attributes;
 using Data.Repos;
+using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic.FileIO;
 using Terminal.Code.Helpers;
-using Terminal.Models.HealthCanada;
+using Terminal.Options;
+using Terminal.Programs.HealthCanada.Models;
 
 namespace Terminal.Programs.HealthCanada;
 
 internal class RegenerateHealthCanadaNutrients
 {
     private readonly NutrientRepo _nutrientRepo;
+    private readonly SystemSettings _systemSettings;
+    private readonly HealthCanadaSettings _healthCanadaSettings;
 
-    public RegenerateHealthCanadaNutrients(NutrientRepo nutrientRepo)
+    public RegenerateHealthCanadaNutrients(NutrientRepo nutrientRepo, IOptions<SystemSettings> systemSettings, IOptions<HealthCanadaSettings> healthCanadaSettings)
     {
+        _healthCanadaSettings = healthCanadaSettings.Value;
+        _systemSettings = systemSettings.Value;
         _nutrientRepo = nutrientRepo;
     }
 
@@ -19,8 +25,8 @@ internal class RegenerateHealthCanadaNutrients
     {
         // Shouldn't have these hardcoded.
         Console.WriteLine("What is the path to 'NUTRIENT NAME.csv'?");
-        ShortTermMemory.Nutrient_name_csv ??= Console.ReadLine() ?? throw new Exception("Missing 'NUTRIENT NAME.csv'!");
-        var outputPath = "C:/code/afeastaday/Core/Models/Nutrients/CanadaNutrients.cs";
+        var csv = _healthCanadaSettings.NutrientName.NullIfEmpty() ?? Console.ReadLine() ?? throw new Exception("Missing 'NUTRIENT NAME.csv'!");
+        var outputPath = Path.Combine(_systemSettings.ProjectRoot, "Core/Models/Nutrients/CanadaNutrients.cs");
 
         var builder = new StringBuilder();
 
@@ -33,7 +39,7 @@ internal class RegenerateHealthCanadaNutrients
         builder.AppendLine("{");
         builder.AppendLine("    None = 0,");
 
-        using var parser = new TextFieldParser(ShortTermMemory.Nutrient_name_csv.Replace("\"", ""));
+        using var parser = new TextFieldParser(csv.Replace("\"", ""));
         parser.HasFieldsEnclosedInQuotes = true;
         parser.SetDelimiters(",");
 

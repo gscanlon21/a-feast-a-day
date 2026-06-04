@@ -1,5 +1,4 @@
-﻿
-namespace Terminal.Models.HealthCanada;
+﻿namespace Terminal.Programs.HealthCanada.Models;
 
 internal static class NutrientAmountHeaders
 {

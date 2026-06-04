@@ -1,5 +1,8 @@
 {
-  "DownloadPath": "",
+  "System": {
+    "ProjectRoot": "",
+    "DownloadPath": ""
+  },
   "USDA": {
     "Nutrient": "",
     "FoodNutrient": ""

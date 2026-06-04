@@ -34,6 +34,7 @@ using var host = Host.CreateDefaultBuilder()
         services.AddTransient<RegenerateHealthCanadaNutrients>();
 
         services.Configure<USDASettings>(context.Configuration.GetSection("USDA"));
+        services.Configure<SystemSettings>(context.Configuration.GetSection("System"));
         services.Configure<HealthCanadaSettings>(context.Configuration.GetSection("HealthCanada"));
     }).Build();
 

@@ -1,17 +1,23 @@
 ﻿using Core.Code.Attributes;
 using Data.Repos;
+using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic.FileIO;
 using Terminal.Code.Helpers;
-using Terminal.Models.USDA;
+using Terminal.Options;
+using Terminal.Programs.USDA.Models;
 
 namespace Terminal.Programs.USDA;
 
 internal class RegenerateUSDANutrients
 {
     private readonly NutrientRepo _nutrientRepo;
+    private readonly USDASettings _usdaSettings;
+    private readonly SystemSettings _systemSettings;
 
-    public RegenerateUSDANutrients(NutrientRepo nutrientRepo)
+    public RegenerateUSDANutrients(NutrientRepo nutrientRepo, IOptions<SystemSettings> systemSettings, IOptions<USDASettings> usdaSettings)
     {
+        _usdaSettings = usdaSettings.Value;
+        _systemSettings = systemSettings.Value;
         _nutrientRepo = nutrientRepo;
     }
 
@@ -19,8 +25,8 @@ internal class RegenerateUSDANutrients
     {
         // Shouldn't have these hardcoded.
         Console.WriteLine("What is the path to nutrient.csv?");
-        ShortTermMemory.Nutrient_csv ??= Console.ReadLine() ?? throw new Exception("Missing nutrient.csv!");
-        var outputPath = "C:/code/afeastaday/Core/Models/Nutrients/USDANutrients.cs";
+        var csv = _usdaSettings.Nutrient.NullIfEmpty() ?? Console.ReadLine() ?? throw new Exception("Missing nutrient.csv!");
+        var outputPath = Path.Combine(_systemSettings.ProjectRoot, "Core/Models/Nutrients/USDANutrients.cs");
 
         var builder = new StringBuilder();
 
@@ -33,7 +39,7 @@ internal class RegenerateUSDANutrients
         builder.AppendLine("{");
         builder.AppendLine("    None = 0,");
 
-        using var parser = new TextFieldParser(ShortTermMemory.Nutrient_csv.Replace("\"", ""));
+        using var parser = new TextFieldParser(csv.Replace("\"", ""));
         parser.HasFieldsEnclosedInQuotes = true;
         parser.SetDelimiters(",");
 

@@ -188,7 +188,7 @@ public class UserRepo
     {
         var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks);
         var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, tul: true);
-        
+
         if (volumeRDA != null)
         {
             UserLogs.Log(user, $"Total nutrient targets RDA:{Environment.NewLine}{string.Join(Environment.NewLine, volumeRDA)}");

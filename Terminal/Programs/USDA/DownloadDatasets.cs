@@ -1,4 +1,6 @@
-﻿using System.IO.Compression;
+﻿using Microsoft.Extensions.Options;
+using System.IO.Compression;
+using Terminal.Options;
 
 namespace Terminal.Programs.USDA;
 
@@ -8,18 +10,18 @@ namespace Terminal.Programs.USDA;
 internal class DownloadUSDADatasets
 {
     private readonly HttpClient _httpClient;
-    private readonly IConfiguration _configuration;
+    private readonly SystemSettings _systemSettings;
 
-    public DownloadUSDADatasets(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+    public DownloadUSDADatasets(IHttpClientFactory httpClientFactory, IOptions<SystemSettings> systemSettings)
     {
-        _configuration = configuration;
+        _systemSettings = systemSettings.Value;
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.Timeout = Timeout.InfiniteTimeSpan;
     }
 
     public async Task<Response> Execute()
     {
-        var downloadPath = _configuration.GetValue<string>("DownloadPath")?.NullIfWhiteSpace() ?? AppContext.BaseDirectory;
+        var downloadPath = _systemSettings.DownloadPath?.NullIfWhiteSpace() ?? AppContext.BaseDirectory;
 
         Console.WriteLine("Go here: https://fdc.nal.usda.gov/download-datasets");
         Console.WriteLine("What is the download file link?");

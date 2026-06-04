@@ -5,8 +5,8 @@ using Data.Entities.Nutrients;
 using Data.Repos;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic.FileIO;
-using Terminal.Models.HealthCanada;
 using Terminal.Options;
+using Terminal.Programs.HealthCanada.Models;
 
 namespace Terminal.Programs.HealthCanada;
 
