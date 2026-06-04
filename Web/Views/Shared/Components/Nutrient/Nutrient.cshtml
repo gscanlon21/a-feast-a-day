@@ -89,8 +89,8 @@
                             <div class="range-unselected" style="background-color:@nutrientTarget.Color;"></div>
                             <div class="range-selected"></div>
 
-                            <div class="tick rda form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultStart%, 100%)"></div>
-                            <div class="tick tul form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultEnd%, 100%)"></div>
+                            <div class="tick rda form-text bg-black mt-0" style="left:clamp(0%, @nutrientTarget.DefaultStart%, 100%)"></div>
+                            <div class="tick tul form-text bg-black mt-0" style="left:clamp(0%, @nutrientTarget.DefaultEnd%, 100%)"></div>
                             <div class="actual-value" style="left:clamp(0%, calc(@nutrientTarget.ValueInRange% - .5ch), 100%);color:@nutrientTarget.Color;">&#9660;</div>
                         </div>
                     </form>
@@ -117,7 +117,7 @@
         <summary>Recipes are being automatically adjusted to match your nutrient targets.</summary>
 
         <div class="mt-3 small">
-            <div class="mb-3">The lower bound represents the Recommended Daily Allowance (RDA), the upper bound represents the Tolerable Upper Limit (TUL).</div>
+            <div class="mb-3">The lower tick mark represents the Recommended Daily Allowance (RDA), the upper tick mark represents the Tolerable Upper Limit (TUL).</div>
             <div>Dietary reference intakes are averaged across all family members. If no TUL is available, the upper limit is set to double that of the RDA.</div>
         </div>
     </details>

@@ -79,7 +79,6 @@ img {
 }
 
 .tick {
-    background-color: currentColor;
     transform: translateX(-50%);
     position: absolute;
     height: 100%;

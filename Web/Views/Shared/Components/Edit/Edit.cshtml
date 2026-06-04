@@ -398,6 +398,7 @@
         @await Component.InvokeAsync(NextFeastViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(PastFeastsViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(NutrientViewComponent.Name, new { Model.User, Model.Token })
+        @await Component.InvokeAsync(VegetarianViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(GeneticsViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(MicrobiomeViewComponent.Name, new { Model.User, Model.Token })
         @await Component.InvokeAsync(TokenViewComponent.Name, new { Model.User, Model.Token })
