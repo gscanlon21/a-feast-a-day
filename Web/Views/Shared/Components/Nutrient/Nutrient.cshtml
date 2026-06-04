@@ -91,7 +91,7 @@
 
                             <div class="tick rda form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultStart%, 100%)"></div>
                             <div class="tick tul form-text mt-0" style="left:clamp(0%, @nutrientTarget.DefaultEnd%, 100%)"></div>
-                            <div class="actual-value" style="left:calc(@nutrientTarget.ValueInRange% - .5ch);color:@nutrientTarget.Color;">&#9660;</div>
+                            <div class="actual-value" style="left:clamp(0%, calc(@nutrientTarget.ValueInRange% - .5ch), 100%);color:@nutrientTarget.Color;">&#9660;</div>
                         </div>
                     </form>
 

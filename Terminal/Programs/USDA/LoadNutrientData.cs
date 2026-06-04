@@ -66,7 +66,7 @@ internal class LoadUSDANutrientData
                             var existingNutrient = ingredient.USDANutrients.First(n => n.Nutrients == usdaNutrient);
                             if (existingNutrient.Value != amount || existingNutrient.Measure != measure)
                             {
-                                Console.WriteLine($"Updating {usdaNutrient} for {ingredient.FoodName}.");
+                                Console.WriteLine($"Updating {usdaNutrient} for {ingredient.FoodName} from {existingNutrient.Value}{existingNutrient.Measure} to {amount}{measure}.");
                                 existingNutrient.Value = amount;
                                 existingNutrient.Measure = measure;
                                 existingNutrient.LastUpdated = DateHelpers.Today;

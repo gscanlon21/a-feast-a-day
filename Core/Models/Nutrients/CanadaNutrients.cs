@@ -8,1066 +8,1213 @@ public enum CanadaNutrients
     None = 0,
 
     /// <summary>
-    /// PROTEIN
+    /// Protein
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 203, "PROT")]
-    [Display(Name = "PROTEIN")]
-    PROTEIN_Grams = 203,
+    [HCNutrientsMetadata(Measure.Grams, "PROT")]
+    [Display(Name = "Protein")]
+    Protein_Grams = 203,
 
     /// <summary>
-    /// FAT (TOTAL LIPIDS)
+    /// Fat (total lipids)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 204, "FAT")]
-    [Display(Name = "FAT (TOTAL LIPIDS)")]
-    FAT_TOTAL_LIPIDS_Grams = 204,
+    [HCNutrientsMetadata(Measure.Grams, "FAT")]
+    [Display(Name = "Fat (total lipids)")]
+    Fat_total_lipids_Grams = 204,
 
     /// <summary>
-    /// CARBOHYDRATE, TOTAL (BY DIFFERENCE)
+    /// Carbohydrate, total (by difference)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 205, "CARB")]
-    [Display(Name = "CARBOHYDRATE, TOTAL (BY DIFFERENCE)")]
-    CARBOHYDRATE_TOTAL_BY_DIFFERENCE_Grams = 205,
+    [HCNutrientsMetadata(Measure.Grams, "CARB")]
+    [Display(Name = "Carbohydrate, total (by difference)")]
+    Carbohydrate_total_by_difference_Grams = 205,
 
     /// <summary>
-    /// ASH, TOTAL
+    /// Ash, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 207, "ASH")]
-    [Display(Name = "ASH, TOTAL")]
-    ASH_TOTAL_Grams = 207,
+    [HCNutrientsMetadata(Measure.Grams, "ASH")]
+    [Display(Name = "Ash, total")]
+    Ash_total_Grams = 207,
 
     /// <summary>
-    /// ENERGY (KILOCALORIES)
+    /// Energy (kilocalories)
     /// </summary>
-    [HCNutrientsMetadata(Measure.KCalorie, 208, "KCAL")]
-    [Display(Name = "ENERGY (KILOCALORIES)")]
-    ENERGY_KILOCALORIES_KCalorie = 208,
+    [HCNutrientsMetadata(Measure.KCalorie, "KCAL")]
+    [Display(Name = "Energy (kilocalories)")]
+    Energy_kilocalories_KCalorie = 208,
 
     /// <summary>
-    /// STARCH
+    /// Sucrose
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 209, "STAR")]
-    [Display(Name = "STARCH")]
-    STARCH_Grams = 810,
+    [HCNutrientsMetadata(Measure.Grams, "SUCR")]
+    [Display(Name = "Sucrose")]
+    Sucrose_Grams = 210,
 
     /// <summary>
-    /// SUCROSE
+    /// Glucose
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 210, "SUCR")]
-    [Display(Name = "SUCROSE")]
-    SUCROSE_Grams = 210,
+    [HCNutrientsMetadata(Measure.Grams, "GLUC")]
+    [Display(Name = "Glucose")]
+    Glucose_Grams = 211,
 
     /// <summary>
-    /// GLUCOSE
+    /// Fructose
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 211, "GLUC")]
-    [Display(Name = "GLUCOSE")]
-    GLUCOSE_Grams = 211,
+    [HCNutrientsMetadata(Measure.Grams, "FRUC")]
+    [Display(Name = "Fructose")]
+    Fructose_Grams = 212,
 
     /// <summary>
-    /// FRUCTOSE
+    /// Lactose
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 212, "FRUC")]
-    [Display(Name = "FRUCTOSE")]
-    FRUCTOSE_Grams = 212,
+    [HCNutrientsMetadata(Measure.Grams, "LACT")]
+    [Display(Name = "Lactose")]
+    Lactose_Grams = 213,
 
     /// <summary>
-    /// LACTOSE
+    /// Maltose
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 213, "LACT")]
-    [Display(Name = "LACTOSE")]
-    LACTOSE_Grams = 213,
+    [HCNutrientsMetadata(Measure.Grams, "MALT")]
+    [Display(Name = "Maltose")]
+    Maltose_Grams = 214,
 
     /// <summary>
-    /// MALTOSE
+    /// Alcohol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 214, "MALT")]
-    [Display(Name = "MALTOSE")]
-    MALTOSE_Grams = 214,
+    [HCNutrientsMetadata(Measure.Grams, "ALCO")]
+    [Display(Name = "Alcohol")]
+    Alcohol_Grams = 221,
 
     /// <summary>
-    /// ALCOHOL
+    /// Moisture
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 221, "ALCO")]
-    [Display(Name = "ALCOHOL")]
-    ALCOHOL_Grams = 221,
+    [HCNutrientsMetadata(Measure.Grams, "H2O")]
+    [Display(Name = "Moisture")]
+    Moisture_Grams = 255,
 
     /// <summary>
-    /// OXALIC ACID
+    /// Mannitol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 245, "OXAL")]
-    [Display(Name = "OXALIC ACID")]
-    OXALIC_ACID_Milligrams = 245,
+    [HCNutrientsMetadata(Measure.Grams, "MANN")]
+    [Display(Name = "Mannitol")]
+    Mannitol_Grams = 260,
 
     /// <summary>
-    /// MOISTURE
+    /// Sorbitol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 255, "H2O")]
-    [Display(Name = "MOISTURE")]
-    MOISTURE_Grams = 255,
+    [HCNutrientsMetadata(Measure.Grams, "SORB")]
+    [Display(Name = "Sorbitol")]
+    Sorbitol_Grams = 261,
 
     /// <summary>
-    /// MANNITOL
+    /// Caffeine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 260, "MANN")]
-    [Display(Name = "MANNITOL")]
-    MANNITOL_Grams = 260,
+    [HCNutrientsMetadata(Measure.Milligrams, "CAFF")]
+    [Display(Name = "Caffeine")]
+    Caffeine_Milligrams = 262,
 
     /// <summary>
-    /// SORBITOL
+    /// Theobromine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 261, "SORB")]
-    [Display(Name = "SORBITOL")]
-    SORBITOL_Grams = 261,
+    [HCNutrientsMetadata(Measure.Milligrams, "THBR")]
+    [Display(Name = "Theobromine")]
+    Theobromine_Milligrams = 263,
 
     /// <summary>
-    /// CAFFEINE
+    /// Energy (kilojoules)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 262, "CAFF")]
-    [Display(Name = "CAFFEINE")]
-    CAFFEINE_Milligrams = 262,
+    [HCNutrientsMetadata(Measure.KiloJoule, "KJ")]
+    [Display(Name = "Energy (kilojoules)")]
+    Energy_kilojoules_KiloJoule = 268,
 
     /// <summary>
-    /// THEOBROMINE
+    /// Sugars, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 263, "THBR")]
-    [Display(Name = "THEOBROMINE")]
-    THEOBROMINE_Milligrams = 263,
+    [HCNutrientsMetadata(Measure.Grams, "TSUG")]
+    [Display(Name = "Sugars, total")]
+    Sugars_total_Grams = 269,
 
     /// <summary>
-    /// ENERGY (KILOJOULES)
+    /// Galactose
     /// </summary>
-    [HCNutrientsMetadata(Measure.KiloJoule, 268, "KJ")]
-    [Display(Name = "ENERGY (KILOJOULES)")]
-    ENERGY_KILOJOULES_KiloJoule = 268,
+    [HCNutrientsMetadata(Measure.Grams, "GAL")]
+    [Display(Name = "Galactose")]
+    Galactose_Grams = 287,
 
     /// <summary>
-    /// SUGARS, TOTAL
+    /// Fibre, total dietary
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 269, "TSUG")]
-    [Display(Name = "SUGARS, TOTAL")]
-    SUGARS_TOTAL_Grams = 269,
+    [HCNutrientsMetadata(Measure.Grams, "TDF")]
+    [Display(Name = "Fibre, total dietary")]
+    Fibre_total_dietary_Grams = 291,
 
     /// <summary>
-    /// GALACTOSE
+    /// Calcium
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 287, "GAL")]
-    [Display(Name = "GALACTOSE")]
-    GALACTOSE_Grams = 287,
+    [HCNutrientsMetadata(Measure.Milligrams, "CA")]
+    [Display(Name = "Calcium")]
+    Calcium_Milligrams = 301,
 
     /// <summary>
-    /// FIBRE, TOTAL DIETARY
+    /// Iron
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 291, "TDF")]
-    [Display(Name = "FIBRE, TOTAL DIETARY")]
-    FIBRE_TOTAL_DIETARY_Grams = 291,
+    [HCNutrientsMetadata(Measure.Milligrams, "FE")]
+    [Display(Name = "Iron")]
+    Iron_Milligrams = 303,
 
     /// <summary>
-    /// CALCIUM
+    /// Magnesium
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 301, "CA")]
-    [Display(Name = "CALCIUM")]
-    CALCIUM_Milligrams = 301,
+    [HCNutrientsMetadata(Measure.Milligrams, "MG")]
+    [Display(Name = "Magnesium")]
+    Magnesium_Milligrams = 304,
 
     /// <summary>
-    /// IRON
+    /// Phosphorus
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 303, "FE")]
-    [Display(Name = "IRON")]
-    IRON_Milligrams = 303,
+    [HCNutrientsMetadata(Measure.Milligrams, "P")]
+    [Display(Name = "Phosphorus")]
+    Phosphorus_Milligrams = 305,
 
     /// <summary>
-    /// MAGNESIUM
+    /// Potassium
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 304, "MG")]
-    [Display(Name = "MAGNESIUM")]
-    MAGNESIUM_Milligrams = 304,
+    [HCNutrientsMetadata(Measure.Milligrams, "K")]
+    [Display(Name = "Potassium")]
+    Potassium_Milligrams = 306,
 
     /// <summary>
-    /// PHOSPHORUS
+    /// Sodium
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 305, "P")]
-    [Display(Name = "PHOSPHORUS")]
-    PHOSPHORUS_Milligrams = 305,
+    [HCNutrientsMetadata(Measure.Milligrams, "NA")]
+    [Display(Name = "Sodium")]
+    Sodium_Milligrams = 307,
 
     /// <summary>
-    /// POTASSIUM
+    /// Zinc
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 306, "K")]
-    [Display(Name = "POTASSIUM")]
-    POTASSIUM_Milligrams = 306,
+    [HCNutrientsMetadata(Measure.Milligrams, "ZN")]
+    [Display(Name = "Zinc")]
+    Zinc_Milligrams = 309,
 
     /// <summary>
-    /// SODIUM
+    /// Copper
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 307, "NA")]
-    [Display(Name = "SODIUM")]
-    SODIUM_Milligrams = 307,
+    [HCNutrientsMetadata(Measure.Milligrams, "CU")]
+    [Display(Name = "Copper")]
+    Copper_Milligrams = 312,
 
     /// <summary>
-    /// ZINC
+    /// Manganese
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 309, "ZN")]
-    [Display(Name = "ZINC")]
-    ZINC_Milligrams = 309,
+    [HCNutrientsMetadata(Measure.Milligrams, "MN")]
+    [Display(Name = "Manganese")]
+    Manganese_Milligrams = 315,
 
     /// <summary>
-    /// COPPER
+    /// Selenium
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 312, "CU")]
-    [Display(Name = "COPPER")]
-    COPPER_Milligrams = 312,
+    [HCNutrientsMetadata(Measure.Micrograms, "SE")]
+    [Display(Name = "Selenium")]
+    Selenium_Micrograms = 317,
 
     /// <summary>
-    /// MANGANESE
+    /// Retinol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 315, "MN")]
-    [Display(Name = "MANGANESE")]
-    MANGANESE_Milligrams = 315,
+    [HCNutrientsMetadata(Measure.Micrograms, "RT-µg")]
+    [Display(Name = "Retinol")]
+    Retinol_Micrograms = 319,
 
     /// <summary>
-    /// SELENIUM
+    /// Retinol activity equivalents
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 317, "SE")]
-    [Display(Name = "SELENIUM")]
-    SELENIUM_Micrograms = 317,
+    [HCNutrientsMetadata(Measure.Micrograms, "RAE")]
+    [Display(Name = "Retinol activity equivalents")]
+    Retinol_activity_equivalents_Micrograms = 320,
 
     /// <summary>
-    /// RETINOL
+    /// Beta carotene
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 319, "RT-�G")]
-    [Display(Name = "RETINOL")]
-    RETINOL_Micrograms = 319,
+    [HCNutrientsMetadata(Measure.Micrograms, "BC-µg")]
+    [Display(Name = "Beta carotene")]
+    Beta_carotene_Micrograms = 321,
 
     /// <summary>
-    /// RETINOL ACTIVITY EQUIVALENTS
+    /// Alpha carotene
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 320, "RAE")]
-    [Display(Name = "RETINOL ACTIVITY EQUIVALENTS")]
-    RETINOL_ACTIVITY_EQUIVALENTS_Micrograms = 814,
+    [HCNutrientsMetadata(Measure.Micrograms, "AC-µg")]
+    [Display(Name = "Alpha carotene")]
+    Alpha_carotene_Micrograms = 322,
 
     /// <summary>
-    /// BETA CAROTENE
+    /// Alpha-tocopherol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 321, "BC-�G")]
-    [Display(Name = "BETA CAROTENE")]
-    BETA_CAROTENE_Micrograms = 321,
+    [HCNutrientsMetadata(Measure.Milligrams, "ATMG")]
+    [Display(Name = "Alpha-tocopherol")]
+    Alpha_tocopherol_Milligrams = 323,
 
     /// <summary>
-    /// ALPHA CAROTENE
+    /// Vitamin D (International Units)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 322, "AC-�G")]
-    [Display(Name = "ALPHA CAROTENE")]
-    ALPHA_CAROTENE_Micrograms = 834,
+    [HCNutrientsMetadata(Measure.IU, "D3+D2-IU")]
+    [Display(Name = "Vitamin D (International Units)")]
+    Vitamin_D_International_Units_IU = 324,
 
     /// <summary>
-    /// ALPHA-TOCOPHEROL
+    /// Vitamin D2, ergocalciferol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 323, "ATMG")]
-    [Display(Name = "ALPHA-TOCOPHEROL")]
-    ALPHA_TOCOPHEROL_Milligrams = 323,
+    [HCNutrientsMetadata(Measure.Micrograms, "D2-µg")]
+    [Display(Name = "Vitamin D2, ergocalciferol")]
+    Vitamin_D2_ergocalciferol_Micrograms = 325,
 
     /// <summary>
-    /// VITAMIN D (INTERNATIONAL UNITS)
+    /// Vitamin D3, cholecalciferol
     /// </summary>
-    [HCNutrientsMetadata(Measure.IU, 324, "D-IU")]
-    [Display(Name = "VITAMIN D (INTERNATIONAL UNITS)")]
-    VITAMIN_D_INTERNATIONAL_UNITS_IU = 324,
+    [HCNutrientsMetadata(Measure.Micrograms, "D3-µg")]
+    [Display(Name = "Vitamin D3, cholecalciferol")]
+    Vitamin_D3_cholecalciferol_Micrograms = 326,
 
     /// <summary>
-    /// VITAMIN D2, ERGOCALCIFEROL
+    /// Vitamin D (D2 + D3)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 325, "D2-�G")]
-    [Display(Name = "VITAMIN D2, ERGOCALCIFEROL")]
-    VITAMIN_D2_ERGOCALCIFEROL_Micrograms = 876,
+    [HCNutrientsMetadata(Measure.Micrograms, "D3+D2-µg")]
+    [Display(Name = "Vitamin D (D2 + D3)")]
+    Vitamin_D_D2__D3_Micrograms = 328,
 
     /// <summary>
-    /// VITAMIN D (D2 + D3)
+    /// 25-hydroxycholecalciferol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 328, "D3+D2-�G")]
-    [Display(Name = "VITAMIN D (D2 + D3)")]
-    VITAMIN_D_D2__D3_Micrograms = 339,
+    [HCNutrientsMetadata(Measure.Micrograms, "25(OH)D3")]
+    [Display(Name = "25-hydroxycholecalciferol")]
+    _25_hydroxycholecalciferol_Micrograms = 329,
 
     /// <summary>
-    /// BETA CRYPTOXANTHIN
+    /// 25-hydroxyergocalciferol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 334, "CRYPX")]
-    [Display(Name = "BETA CRYPTOXANTHIN")]
-    BETA_CRYPTOXANTHIN_Micrograms = 835,
+    [HCNutrientsMetadata(Measure.Micrograms, "25(OH)D2")]
+    [Display(Name = "25-hydroxyergocalciferol")]
+    _25_hydroxyergocalciferol_Micrograms = 330,
 
     /// <summary>
-    /// LYCOPENE
+    /// Beta cryptoxanthin
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 337, "LYCPN")]
-    [Display(Name = "LYCOPENE")]
-    LYCOPENE_Micrograms = 836,
+    [HCNutrientsMetadata(Measure.Micrograms, "CRYPX")]
+    [Display(Name = "Beta cryptoxanthin")]
+    Beta_cryptoxanthin_Micrograms = 334,
 
     /// <summary>
-    /// LUTEIN AND ZEAXANTHIN
+    /// Lycopene
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 338, "LUT+ZEA")]
-    [Display(Name = "LUTEIN AND ZEAXANTHIN")]
-    LUTEIN_AND_ZEAXANTHIN_Micrograms = 837,
+    [HCNutrientsMetadata(Measure.Micrograms, "LYCPN")]
+    [Display(Name = "Lycopene")]
+    Lycopene_Micrograms = 337,
 
     /// <summary>
-    /// BETA-TOCOPHEROL
+    /// Lutein and zeaxanthin
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 341, "BTMG")]
-    [Display(Name = "BETA-TOCOPHEROL")]
-    BETA_TOCOPHEROL_Milligrams = 811,
+    [HCNutrientsMetadata(Measure.Micrograms, "LUT+ZEA")]
+    [Display(Name = "Lutein and zeaxanthin")]
+    Lutein_and_zeaxanthin_Micrograms = 338,
 
     /// <summary>
-    /// GAMMA-TOCOPHEROL
+    /// Beta-tocopherol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 342, "GTMG")]
-    [Display(Name = "GAMMA-TOCOPHEROL")]
-    GAMMA_TOCOPHEROL_Milligrams = 812,
+    [HCNutrientsMetadata(Measure.Milligrams, "BTMG")]
+    [Display(Name = "Beta-tocopherol")]
+    Beta_tocopherol_Milligrams = 341,
 
     /// <summary>
-    /// DELTA-TOCOPHEROL
+    /// Gamma-tocopherol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 343, "DTMG")]
-    [Display(Name = "DELTA-TOCOPHEROL")]
-    DELTA_TOCOPHEROL_Milligrams = 813,
+    [HCNutrientsMetadata(Measure.Milligrams, "GTMG")]
+    [Display(Name = "Gamma-tocopherol")]
+    Gamma_tocopherol_Milligrams = 342,
 
     /// <summary>
-    /// VITAMIN C
+    /// Delta-tocopherol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 401, "VITC")]
-    [Display(Name = "VITAMIN C")]
-    VITAMIN_C_Milligrams = 401,
+    [HCNutrientsMetadata(Measure.Milligrams, "DTMG")]
+    [Display(Name = "Delta-tocopherol")]
+    Delta_tocopherol_Milligrams = 343,
 
     /// <summary>
-    /// THIAMIN
+    /// Vitamin C
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 404, "THIA")]
-    [Display(Name = "THIAMIN")]
-    THIAMIN_Milligrams = 404,
+    [HCNutrientsMetadata(Measure.Milligrams, "VITC")]
+    [Display(Name = "Vitamin C")]
+    Vitamin_C_Milligrams = 401,
 
     /// <summary>
-    /// RIBOFLAVIN
+    /// Thiamine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 405, "RIBO")]
-    [Display(Name = "RIBOFLAVIN")]
-    RIBOFLAVIN_Milligrams = 405,
+    [HCNutrientsMetadata(Measure.Milligrams, "THIA")]
+    [Display(Name = "Thiamine")]
+    Thiamine_Milligrams = 404,
 
     /// <summary>
-    /// NIACIN (NICOTINIC ACID) PREFORMED
+    /// Riboflavin
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 406, "N-MG")]
-    [Display(Name = "NIACIN (NICOTINIC ACID) PREFORMED")]
-    NIACIN_NICOTINIC_ACID_PREFORMED_Milligrams = 406,
+    [HCNutrientsMetadata(Measure.Milligrams, "RIBO")]
+    [Display(Name = "Riboflavin")]
+    Riboflavin_Milligrams = 405,
 
     /// <summary>
-    /// TOTAL NIACIN EQUIVALENT
+    /// Niacin (nicotinic acid) preformed
     /// </summary>
-    [HCNutrientsMetadata(Measure.MG_NE, 409, "N-NE")]
-    [Display(Name = "TOTAL NIACIN EQUIVALENT")]
-    TOTAL_NIACIN_EQUIVALENT_MG_NE = 409,
+    [HCNutrientsMetadata(Measure.Milligrams, "N-MG")]
+    [Display(Name = "Niacin (nicotinic acid) preformed")]
+    Niacin_nicotinic_acid_preformed_Milligrams = 406,
 
     /// <summary>
-    /// PANTOTHENIC ACID
+    /// Total niacin equivalent
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 410, "PANT")]
-    [Display(Name = "PANTOTHENIC ACID")]
-    PANTOTHENIC_ACID_Milligrams = 410,
+    [HCNutrientsMetadata(Measure.MG_NE, "N-NE")]
+    [Display(Name = "Total niacin equivalent")]
+    Total_niacin_equivalent_MG_NE = 409,
 
     /// <summary>
-    /// VITAMIN B-6
+    /// Pantothenic acid
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 415, "B6")]
-    [Display(Name = "VITAMIN B-6")]
-    VITAMIN_B_6_Milligrams = 415,
+    [HCNutrientsMetadata(Measure.Milligrams, "PANT")]
+    [Display(Name = "Pantothenic acid")]
+    Pantothenic_acid_Milligrams = 410,
 
     /// <summary>
-    /// BIOTIN
+    /// Vitamin B-6
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 416, "BIOT")]
-    [Display(Name = "BIOTIN")]
-    BIOTIN_Micrograms = 416,
+    [HCNutrientsMetadata(Measure.Milligrams, "B6")]
+    [Display(Name = "Vitamin B-6")]
+    Vitamin_B_6_Milligrams = 415,
 
     /// <summary>
-    /// TOTAL FOLACIN
+    /// Biotin
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 417, "FOLA")]
-    [Display(Name = "TOTAL FOLACIN")]
-    TOTAL_FOLACIN_Micrograms = 417,
+    [HCNutrientsMetadata(Measure.Micrograms, "BIOT")]
+    [Display(Name = "Biotin")]
+    Biotin_Micrograms = 416,
 
     /// <summary>
-    /// VITAMIN B-12
+    /// Total folacin
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 418, "B12")]
-    [Display(Name = "VITAMIN B-12")]
-    VITAMIN_B_12_Micrograms = 418,
+    [HCNutrientsMetadata(Measure.Micrograms, "FOLA")]
+    [Display(Name = "Total folacin")]
+    Total_folacin_Micrograms = 417,
 
     /// <summary>
-    /// CHOLINE, TOTAL
+    /// Vitamin B-12
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 421, "CHOLN")]
-    [Display(Name = "CHOLINE, TOTAL")]
-    CHOLINE_TOTAL_Milligrams = 862,
+    [HCNutrientsMetadata(Measure.Micrograms, "B12")]
+    [Display(Name = "Vitamin B-12")]
+    Vitamin_B_12_Micrograms = 418,
 
     /// <summary>
-    /// VITAMIN K
+    /// Choline, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 430, "VITK")]
-    [Display(Name = "VITAMIN K")]
-    VITAMIN_K_Micrograms = 430,
+    [HCNutrientsMetadata(Measure.Milligrams, "CHOLN")]
+    [Display(Name = "Choline, total")]
+    Choline_total_Milligrams = 421,
 
     /// <summary>
-    /// FOLIC ACID
+    /// Vitamin K (menaquinone-4)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 431, "FOAC")]
-    [Display(Name = "FOLIC ACID")]
-    FOLIC_ACID_Micrograms = 431,
+    [HCNutrientsMetadata(Measure.Micrograms, "MK4")]
+    [Display(Name = "Vitamin K (menaquinone-4)")]
+    Vitamin_K_menaquinone_4_Micrograms = 428,
 
     /// <summary>
-    /// NATURALLY OCCURRING FOLATE
+    /// Vitamin K (dihydrophylloquinone)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 432, "FOLN")]
-    [Display(Name = "NATURALLY OCCURRING FOLATE")]
-    NATURALLY_OCCURRING_FOLATE_Micrograms = 806,
+    [HCNutrientsMetadata(Measure.Micrograms, "VITK1D")]
+    [Display(Name = "Vitamin K (dihydrophylloquinone)")]
+    Vitamin_K_dihydrophylloquinone_Micrograms = 429,
 
     /// <summary>
-    /// DIETARY FOLATE EQUIVALENTS
+    /// Vitamin K (phylloquinone)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 435, "DFE")]
-    [Display(Name = "DIETARY FOLATE EQUIVALENTS")]
-    DIETARY_FOLATE_EQUIVALENTS_Micrograms = 815,
+    [HCNutrientsMetadata(Measure.Micrograms, "VITK")]
+    [Display(Name = "Vitamin K (phylloquinone)")]
+    Vitamin_K_phylloquinone_Micrograms = 430,
 
     /// <summary>
-    /// BETAINE
+    /// Folic acid
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 454, "BETN")]
-    [Display(Name = "BETAINE")]
-    BETAINE_Milligrams = 863,
+    [HCNutrientsMetadata(Measure.Micrograms, "FOAC")]
+    [Display(Name = "Folic acid")]
+    Folic_acid_Micrograms = 431,
 
     /// <summary>
-    /// TRYPTOPHAN
+    /// Naturally occurring folate
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 501, "TRP")]
-    [Display(Name = "TRYPTOPHAN")]
-    TRYPTOPHAN_Grams = 501,
+    [HCNutrientsMetadata(Measure.Micrograms, "FOLN")]
+    [Display(Name = "Naturally occurring folate")]
+    Naturally_occurring_folate_Micrograms = 432,
 
     /// <summary>
-    /// THREONINE
+    /// Dietary folate equivalents
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 502, "THR")]
-    [Display(Name = "THREONINE")]
-    THREONINE_Grams = 502,
+    [HCNutrientsMetadata(Measure.Micrograms, "DFE")]
+    [Display(Name = "Dietary folate equivalents")]
+    Dietary_folate_equivalents_Micrograms = 435,
 
     /// <summary>
-    /// ISOLEUCINE
+    /// Betaine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 503, "ISO")]
-    [Display(Name = "ISOLEUCINE")]
-    ISOLEUCINE_Grams = 503,
+    [HCNutrientsMetadata(Measure.Milligrams, "BETN")]
+    [Display(Name = "Betaine")]
+    Betaine_Milligrams = 454,
 
     /// <summary>
-    /// LEUCINE
+    /// Tryptophan
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 504, "LEU")]
-    [Display(Name = "LEUCINE")]
-    LEUCINE_Grams = 504,
+    [HCNutrientsMetadata(Measure.Grams, "TRP")]
+    [Display(Name = "Tryptophan")]
+    Tryptophan_Grams = 501,
 
     /// <summary>
-    /// LYSINE
+    /// Threonine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 505, "LYS")]
-    [Display(Name = "LYSINE")]
-    LYSINE_Grams = 505,
+    [HCNutrientsMetadata(Measure.Grams, "THR")]
+    [Display(Name = "Threonine")]
+    Threonine_Grams = 502,
 
     /// <summary>
-    /// METHIONINE
+    /// Isoleucine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 506, "MET")]
-    [Display(Name = "METHIONINE")]
-    METHIONINE_Grams = 506,
+    [HCNutrientsMetadata(Measure.Grams, "ISO")]
+    [Display(Name = "Isoleucine")]
+    Isoleucine_Grams = 503,
 
     /// <summary>
-    /// CYSTINE
+    /// Leucine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 507, "CYS")]
-    [Display(Name = "CYSTINE")]
-    CYSTINE_Grams = 507,
+    [HCNutrientsMetadata(Measure.Grams, "LEU")]
+    [Display(Name = "Leucine")]
+    Leucine_Grams = 504,
 
     /// <summary>
-    /// PHENYLALANINE
+    /// Lysine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 508, "PHE")]
-    [Display(Name = "PHENYLALANINE")]
-    PHENYLALANINE_Grams = 508,
+    [HCNutrientsMetadata(Measure.Grams, "LYS")]
+    [Display(Name = "Lysine")]
+    Lysine_Grams = 505,
 
     /// <summary>
-    /// TYROSINE
+    /// Methionine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 509, "TYR")]
-    [Display(Name = "TYROSINE")]
-    TYROSINE_Grams = 509,
+    [HCNutrientsMetadata(Measure.Grams, "MET")]
+    [Display(Name = "Methionine")]
+    Methionine_Grams = 506,
 
     /// <summary>
-    /// VALINE
+    /// Cystine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 510, "VAL")]
-    [Display(Name = "VALINE")]
-    VALINE_Grams = 510,
+    [HCNutrientsMetadata(Measure.Grams, "CYS")]
+    [Display(Name = "Cystine")]
+    Cystine_Grams = 507,
 
     /// <summary>
-    /// ARGININE
+    /// Phenylalanine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 511, "ARG")]
-    [Display(Name = "ARGININE")]
-    ARGININE_Grams = 511,
+    [HCNutrientsMetadata(Measure.Grams, "PHE")]
+    [Display(Name = "Phenylalanine")]
+    Phenylalanine_Grams = 508,
 
     /// <summary>
-    /// HISTIDINE
+    /// Tyrosine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 512, "HIS")]
-    [Display(Name = "HISTIDINE")]
-    HISTIDINE_Grams = 512,
+    [HCNutrientsMetadata(Measure.Grams, "TYR")]
+    [Display(Name = "Tyrosine")]
+    Tyrosine_Grams = 509,
 
     /// <summary>
-    /// ALANINE
+    /// Valine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 513, "ALA")]
-    [Display(Name = "ALANINE")]
-    ALANINE_Grams = 513,
+    [HCNutrientsMetadata(Measure.Grams, "VAL")]
+    [Display(Name = "Valine")]
+    Valine_Grams = 510,
 
     /// <summary>
-    /// ASPARTIC ACID
+    /// Arginine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 514, "ASP")]
-    [Display(Name = "ASPARTIC ACID")]
-    ASPARTIC_ACID_Grams = 514,
+    [HCNutrientsMetadata(Measure.Grams, "ARG")]
+    [Display(Name = "Arginine")]
+    Arginine_Grams = 511,
 
     /// <summary>
-    /// GLUTAMIC ACID
+    /// Histidine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 515, "GLU")]
-    [Display(Name = "GLUTAMIC ACID")]
-    GLUTAMIC_ACID_Grams = 515,
+    [HCNutrientsMetadata(Measure.Grams, "HIS")]
+    [Display(Name = "Histidine")]
+    Histidine_Grams = 512,
 
     /// <summary>
-    /// GLYCINE
+    /// Alanine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 516, "GLY")]
-    [Display(Name = "GLYCINE")]
-    GLYCINE_Grams = 516,
+    [HCNutrientsMetadata(Measure.Grams, "ALA")]
+    [Display(Name = "Alanine")]
+    Alanine_Grams = 513,
 
     /// <summary>
-    /// PROLINE
+    /// Aspartic acid
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 517, "PRO")]
-    [Display(Name = "PROLINE")]
-    PROLINE_Grams = 517,
+    [HCNutrientsMetadata(Measure.Grams, "ASP")]
+    [Display(Name = "Aspartic acid")]
+    Aspartic_acid_Grams = 514,
 
     /// <summary>
-    /// SERINE
+    /// Glutamic acid
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 518, "SER")]
-    [Display(Name = "SERINE")]
-    SERINE_Grams = 518,
+    [HCNutrientsMetadata(Measure.Grams, "GLU")]
+    [Display(Name = "Glutamic acid")]
+    Glutamic_acid_Grams = 515,
 
     /// <summary>
-    /// HYDROXYPROLINE
+    /// Glycine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 521, "HYP")]
-    [Display(Name = "HYDROXYPROLINE")]
-    HYDROXYPROLINE_Grams = 828,
+    [HCNutrientsMetadata(Measure.Grams, "GLY")]
+    [Display(Name = "Glycine")]
+    Glycine_Grams = 516,
 
     /// <summary>
-    /// ASPARTAME
+    /// Proline
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 550, "ASPA")]
-    [Display(Name = "ASPARTAME")]
-    ASPARTAME_Milligrams = 550,
+    [HCNutrientsMetadata(Measure.Grams, "PRO")]
+    [Display(Name = "Proline")]
+    Proline_Grams = 517,
 
     /// <summary>
-    /// ALPHA-TOCOPHEROL, ADDED
+    /// Serine
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 573, "ATMG-A")]
-    [Display(Name = "ALPHA-TOCOPHEROL, ADDED")]
-    ALPHA_TOCOPHEROL_ADDED_Milligrams = 875,
+    [HCNutrientsMetadata(Measure.Grams, "SER")]
+    [Display(Name = "Serine")]
+    Serine_Grams = 518,
 
     /// <summary>
-    /// VITAMIN B12, ADDED
+    /// Hydroxyproline
     /// </summary>
-    [HCNutrientsMetadata(Measure.Micrograms, 578, "B12-A")]
-    [Display(Name = "VITAMIN B12, ADDED")]
-    VITAMIN_B12_ADDED_Micrograms = 874,
+    [HCNutrientsMetadata(Measure.Grams, "HYP")]
+    [Display(Name = "Hydroxyproline")]
+    Hydroxyproline_Grams = 521,
 
     /// <summary>
-    /// CHOLESTEROL
+    /// Aspartame
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 601, "CHOL")]
-    [Display(Name = "CHOLESTEROL")]
-    CHOLESTEROL_Milligrams = 601,
+    [HCNutrientsMetadata(Measure.Milligrams, "ASPA")]
+    [Display(Name = "Aspartame")]
+    Aspartame_Milligrams = 550,
 
     /// <summary>
-    /// FATTY ACIDS, TRANS, TOTAL
+    /// Alpha-tocopherol, added
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 605, "TRFA")]
-    [Display(Name = "FATTY ACIDS, TRANS, TOTAL")]
-    FATTY_ACIDS_TRANS_TOTAL_Grams = 605,
+    [HCNutrientsMetadata(Measure.Milligrams, "ATMG-A")]
+    [Display(Name = "Alpha-tocopherol, added")]
+    Alpha_tocopherol_added_Milligrams = 573,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, TOTAL
+    /// Vitamin B-12, added
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 606, "TSAT")]
-    [Display(Name = "FATTY ACIDS, SATURATED, TOTAL")]
-    FATTY_ACIDS_SATURATED_TOTAL_Grams = 606,
+    [HCNutrientsMetadata(Measure.Micrograms, "B12-A")]
+    [Display(Name = "Vitamin B-12, added")]
+    Vitamin_B_12_added_Micrograms = 578,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 4:0, BUTANOIC
+    /// Cholesterol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 607, "4:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 4:0, BUTANOIC")]
-    FATTY_ACIDS_SATURATED_4_0_BUTANOIC_Grams = 607,
+    [HCNutrientsMetadata(Measure.Milligrams, "CHOL")]
+    [Display(Name = "Cholesterol")]
+    Cholesterol_Milligrams = 601,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 6:0, HEXANOIC
+    /// Fatty acids, trans, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 608, "6:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 6:0, HEXANOIC")]
-    FATTY_ACIDS_SATURATED_6_0_HEXANOIC_Grams = 608,
+    [HCNutrientsMetadata(Measure.Grams, "TRFA")]
+    [Display(Name = "Fatty acids, trans, total")]
+    Fatty_acids_trans_total_Grams = 605,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 8:0, OCTANOIC
+    /// Fatty acids, saturated, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 609, "8:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 8:0, OCTANOIC")]
-    FATTY_ACIDS_SATURATED_8_0_OCTANOIC_Grams = 609,
+    [HCNutrientsMetadata(Measure.Grams, "TSAT")]
+    [Display(Name = "Fatty acids, saturated, total")]
+    Fatty_acids_saturated_total_Grams = 606,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 10:0, DECANOIC
+    /// Fatty acids, saturated, 4:0, butanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 610, "10:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 10:0, DECANOIC")]
-    FATTY_ACIDS_SATURATED_10_0_DECANOIC_Grams = 610,
+    [HCNutrientsMetadata(Measure.Grams, "4:00")]
+    [Display(Name = "Fatty acids, saturated, 4:0, butanoic")]
+    Fatty_acids_saturated_4_0_butanoic_Grams = 607,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 12:0, DODECANOIC
+    /// Fatty acids, saturated, 6:0, hexanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 611, "12:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 12:0, DODECANOIC")]
-    FATTY_ACIDS_SATURATED_12_0_DODECANOIC_Grams = 611,
+    [HCNutrientsMetadata(Measure.Grams, "6:00")]
+    [Display(Name = "Fatty acids, saturated, 6:0, hexanoic")]
+    Fatty_acids_saturated_6_0_hexanoic_Grams = 608,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 14:0, TETRADECANOIC
+    /// Fatty acids, saturated, 8:0, octanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 612, "14:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 14:0, TETRADECANOIC")]
-    FATTY_ACIDS_SATURATED_14_0_TETRADECANOIC_Grams = 612,
+    [HCNutrientsMetadata(Measure.Grams, "8:00")]
+    [Display(Name = "Fatty acids, saturated, 8:0, octanoic")]
+    Fatty_acids_saturated_8_0_octanoic_Grams = 609,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 16:0, HEXADECANOIC
+    /// Fatty acids, saturated, 10:0, decanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 613, "16:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 16:0, HEXADECANOIC")]
-    FATTY_ACIDS_SATURATED_16_0_HEXADECANOIC_Grams = 613,
+    [HCNutrientsMetadata(Measure.Grams, "10:00")]
+    [Display(Name = "Fatty acids, saturated, 10:0, decanoic")]
+    Fatty_acids_saturated_10_0_decanoic_Grams = 610,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 18:0, OCTADECANOIC
+    /// Fatty acids, saturated, 12:0, dodecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 614, "18:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 18:0, OCTADECANOIC")]
-    FATTY_ACIDS_SATURATED_18_0_OCTADECANOIC_Grams = 614,
+    [HCNutrientsMetadata(Measure.Grams, "12:00")]
+    [Display(Name = "Fatty acids, saturated, 12:0, dodecanoic")]
+    Fatty_acids_saturated_12_0_dodecanoic_Grams = 611,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 20:0, EICOSANOIC
+    /// Fatty acids, saturated, 14:0, tetradecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 615, "20:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 20:0, EICOSANOIC")]
-    FATTY_ACIDS_SATURATED_20_0_EICOSANOIC_Grams = 615,
+    [HCNutrientsMetadata(Measure.Grams, "14:00")]
+    [Display(Name = "Fatty acids, saturated, 14:0, tetradecanoic")]
+    Fatty_acids_saturated_14_0_tetradecanoic_Grams = 612,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 18:1undifferentiated, OCTADECENOIC
+    /// Fatty acids, saturated, 16:0, hexadecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 617, "18:1undiff")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 18:1undifferentiated, OCTADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_18_1undifferentiated_OCTADECENOIC_Grams = 617,
+    [HCNutrientsMetadata(Measure.Grams, "16:00")]
+    [Display(Name = "Fatty acids, saturated, 16:0, hexadecanoic")]
+    Fatty_acids_saturated_16_0_hexadecanoic_Grams = 613,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:2undifferentiated, LINOLEIC, OCTADECADIENOIC
+    /// Fatty acids, saturated, 18:0, octadecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 618, "18:2undiff")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:2undifferentiated, LINOLEIC, OCTADECADIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_2undifferentiated_LINOLEIC_OCTADECADIENOIC_Grams = 618,
+    [HCNutrientsMetadata(Measure.Grams, "18:00")]
+    [Display(Name = "Fatty acids, saturated, 18:0, octadecanoic")]
+    Fatty_acids_saturated_18_0_octadecanoic_Grams = 614,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:3undifferentiated, LINOLENIC, OCTADECATRIENOIC
+    /// Fatty acids, saturated, 20:0, eicosanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 619, "18:3undiff")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:3undifferentiated, LINOLENIC, OCTADECATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_3undifferentiated_LINOLENIC_OCTADECATRIENOIC_Grams = 619,
+    [HCNutrientsMetadata(Measure.Grams, "20:00")]
+    [Display(Name = "Fatty acids, saturated, 20:0, eicosanoic")]
+    Fatty_acids_saturated_20_0_eicosanoic_Grams = 615,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:4, EICOSATETRAENOIC
+    /// Fatty acids, monounsaturated, 18:1undifferentiated, octadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 620, "20:4undiff")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:4, EICOSATETRAENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_20_4_EICOSATETRAENOIC_Grams = 620,
+    [HCNutrientsMetadata(Measure.Grams, "18:1undiff")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1undifferentiated, octadecenoic")]
+    Fatty_acids_monounsaturated_18_1undifferentiated_octadecenoic_Grams = 617,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 22:6 n-3, DOCOSAHEXAENOIC (DHA)
+    /// Fatty acids, polyunsaturated, 18:2undifferentiated, linoleic, octadecadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 621, "22:6n-3DHA")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 22:6 n-3, DOCOSAHEXAENOIC (DHA)")]
-    FATTY_ACIDS_POLYUNSATURATED_22_6_n_3_DOCOSAHEXAENOIC_DHA_Grams = 621,
+    [HCNutrientsMetadata(Measure.Grams, "18:2undiff")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2undifferentiated, linoleic, octadecadienoic")]
+    Fatty_acids_polyunsaturated_18_2undifferentiated_linoleic_octadecadienoic_Grams = 618,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 22:0, DOCOSANOIC
+    /// Fatty acids, polyunsaturated, 18:3undifferentiated, linolenic, octadecatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 624, "22:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 22:0, DOCOSANOIC")]
-    FATTY_ACIDS_SATURATED_22_0_DOCOSANOIC_Grams = 624,
+    [HCNutrientsMetadata(Measure.Grams, "18:3undiff")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:3undifferentiated, linolenic, octadecatrienoic")]
+    Fatty_acids_polyunsaturated_18_3undifferentiated_linolenic_octadecatrienoic_Grams = 619,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 14:1, TETRADECENOIC
+    /// Fatty acids, polyunsaturated, 20:4, eicosatetraenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 625, "14:1")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 14:1, TETRADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_14_1_TETRADECENOIC_Grams = 625,
+    [HCNutrientsMetadata(Measure.Grams, "20:4undiff")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:4, eicosatetraenoic")]
+    Fatty_acids_polyunsaturated_20_4_eicosatetraenoic_Grams = 620,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 16:1undifferentiated, HEXADECENOIC
+    /// Fatty acids, polyunsaturated, 22:6 n-3, docosahexaenoic (DHA)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 626, "16:1undiff")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 16:1undifferentiated, HEXADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_16_1undifferentiated_HEXADECENOIC_Grams = 626,
+    [HCNutrientsMetadata(Measure.Grams, "22:6n-3DHA")]
+    [Display(Name = "Fatty acids, polyunsaturated, 22:6 n-3, docosahexaenoic (DHA)")]
+    Fatty_acids_polyunsaturated_22_6_n_3_docosahexaenoic_DHA_Grams = 621,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:4, OCTADECATETRAENOIC
+    /// Fatty acids, saturated, 22:0, docosanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 627, "18:4")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:4, OCTADECATETRAENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_4_OCTADECATETRAENOIC_Grams = 627,
+    [HCNutrientsMetadata(Measure.Grams, "22:00")]
+    [Display(Name = "Fatty acids, saturated, 22:0, docosanoic")]
+    Fatty_acids_saturated_22_0_docosanoic_Grams = 624,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 20:1, EICOSENOIC
+    /// Fatty acids, monounsaturated, 14:1, tetradecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 628, "20:1")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 20:1, EICOSENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_20_1_EICOSENOIC_Grams = 628,
+    [HCNutrientsMetadata(Measure.Grams, "14:01")]
+    [Display(Name = "Fatty acids, monounsaturated, 14:1, tetradecenoic")]
+    Fatty_acids_monounsaturated_14_1_tetradecenoic_Grams = 625,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:5 n-3, EICOSAPENTAENOIC (EPA)
+    /// Fatty acids, monounsaturated, 16:1undifferentiated, hexadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 629, "20:5n-3EPA")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:5 n-3, EICOSAPENTAENOIC (EPA)")]
-    FATTY_ACIDS_POLYUNSATURATED_20_5_n_3_EICOSAPENTAENOIC_EPA_Grams = 629,
+    [HCNutrientsMetadata(Measure.Grams, "16:1undiff")]
+    [Display(Name = "Fatty acids, monounsaturated, 16:1undifferentiated, hexadecenoic")]
+    Fatty_acids_monounsaturated_16_1undifferentiated_hexadecenoic_Grams = 626,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 22:1undifferentiated, DOCOSENOIC
+    /// Fatty acids, polyunsaturated, 18:4, octadecatetraenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 630, "22:1undiff")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 22:1undifferentiated, DOCOSENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_22_1undifferentiated_DOCOSENOIC_Grams = 630,
+    [HCNutrientsMetadata(Measure.Grams, "18:04")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:4, octadecatetraenoic")]
+    Fatty_acids_polyunsaturated_18_4_octadecatetraenoic_Grams = 627,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 22:5 n-3, DOCOSAPENTAENOIC (DPA)
+    /// Fatty acids, monounsaturated, 20:1, eicosenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 631, "22:5n-3DPA")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 22:5 n-3, DOCOSAPENTAENOIC (DPA)")]
-    FATTY_ACIDS_POLYUNSATURATED_22_5_n_3_DOCOSAPENTAENOIC_DPA_Grams = 631,
+    [HCNutrientsMetadata(Measure.Grams, "20:01")]
+    [Display(Name = "Fatty acids, monounsaturated, 20:1, eicosenoic")]
+    Fatty_acids_monounsaturated_20_1_eicosenoic_Grams = 628,
 
     /// <summary>
-    /// TOTAL PLANT STEROL
+    /// Fatty acids, polyunsaturated, 20:5 n-3, eicosapentaenoic (EPA)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 636, "TPST")]
-    [Display(Name = "TOTAL PLANT STEROL")]
-    TOTAL_PLANT_STEROL_Milligrams = 636,
+    [HCNutrientsMetadata(Measure.Grams, "20:5n-3EPA")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:5 n-3, eicosapentaenoic (EPA)")]
+    Fatty_acids_polyunsaturated_20_5_n_3_eicosapentaenoic_EPA_Grams = 629,
 
     /// <summary>
-    /// STIGMASTEROL
+    /// Fatty acids, monounsaturated, 22:1undifferentiated, docosenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 638, "STIG")]
-    [Display(Name = "STIGMASTEROL")]
-    STIGMASTEROL_Milligrams = 638,
+    [HCNutrientsMetadata(Measure.Grams, "22:1undiff")]
+    [Display(Name = "Fatty acids, monounsaturated, 22:1undifferentiated, docosenoic")]
+    Fatty_acids_monounsaturated_22_1undifferentiated_docosenoic_Grams = 630,
 
     /// <summary>
-    /// CAMPESTEROL
+    /// Fatty acids, polyunsaturated, 22:5 n-3, docosapentaenoic (DPA)
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 639, "CAMSTR")]
-    [Display(Name = "CAMPESTEROL")]
-    CAMPESTEROL_Milligrams = 866,
+    [HCNutrientsMetadata(Measure.Grams, "22:5n-3DPA")]
+    [Display(Name = "Fatty acids, polyunsaturated, 22:5 n-3, docosapentaenoic (DPA)")]
+    Fatty_acids_polyunsaturated_22_5_n_3_docosapentaenoic_DPA_Grams = 631,
 
     /// <summary>
-    /// BETA-SITOSTEROL
+    /// Total plant sterol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Milligrams, 641, "SITSTR")]
-    [Display(Name = "BETA-SITOSTEROL")]
-    BETA_SITOSTEROL_Milligrams = 816,
+    [HCNutrientsMetadata(Measure.Milligrams, "TPST")]
+    [Display(Name = "Total plant sterol")]
+    Total_plant_sterol_Milligrams = 636,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, TOTAL
+    /// Stigmasterol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 645, "MUFA")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, TOTAL")]
-    FATTY_ACIDS_MONOUNSATURATED_TOTAL_Grams = 645,
+    [HCNutrientsMetadata(Measure.Milligrams, "STIG")]
+    [Display(Name = "Stigmasterol")]
+    Stigmasterol_Milligrams = 638,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, TOTAL
+    /// Campesterol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 646, "PUFA")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, TOTAL")]
-    FATTY_ACIDS_POLYUNSATURATED_TOTAL_Grams = 646,
+    [HCNutrientsMetadata(Measure.Milligrams, "CAMSTR")]
+    [Display(Name = "Campesterol")]
+    Campesterol_Milligrams = 639,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 15:0, PENTADECANOIC
+    /// Beta-sitosterol
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 652, "15:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 15:0, PENTADECANOIC")]
-    FATTY_ACIDS_SATURATED_15_0_PENTADECANOIC_Grams = 652,
+    [HCNutrientsMetadata(Measure.Milligrams, "SITSTR")]
+    [Display(Name = "Beta-sitosterol")]
+    Beta_sitosterol_Milligrams = 641,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 17:0, HEPTADECANOIC
+    /// Fatty acids, monounsaturated, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 653, "17:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 17:0, HEPTADECANOIC")]
-    FATTY_ACIDS_SATURATED_17_0_HEPTADECANOIC_Grams = 653,
+    [HCNutrientsMetadata(Measure.Grams, "MUFA")]
+    [Display(Name = "Fatty acids, monounsaturated, total")]
+    Fatty_acids_monounsaturated_total_Grams = 645,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 24:0, TETRACOSANOIC
+    /// Fatty acids, polyunsaturated, total
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 654, "24:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 24:0, TETRACOSANOIC")]
-    FATTY_ACIDS_SATURATED_24_0_TETRACOSANOIC_Grams = 654,
+    [HCNutrientsMetadata(Measure.Grams, "PUFA")]
+    [Display(Name = "Fatty acids, polyunsaturated, total")]
+    Fatty_acids_polyunsaturated_total_Grams = 646,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 16:1t, HEXADECENOIC
+    /// Fatty acids, saturated, 15:0, pentadecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 662, "16:1t")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 16:1t, HEXADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_16_1t_HEXADECENOIC_Grams = 817,
+    [HCNutrientsMetadata(Measure.Grams, "15:00")]
+    [Display(Name = "Fatty acids, saturated, 15:0, pentadecanoic")]
+    Fatty_acids_saturated_15_0_pentadecanoic_Grams = 652,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 18:1t, OCTADECENOIC
+    /// Fatty acids, saturated, 17:0, heptadecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 663, "18:1t")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 18:1t, OCTADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_18_1t_OCTADECENOIC_Grams = 818,
+    [HCNutrientsMetadata(Measure.Grams, "17:00")]
+    [Display(Name = "Fatty acids, saturated, 17:0, heptadecanoic")]
+    Fatty_acids_saturated_17_0_heptadecanoic_Grams = 653,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 22:1t, DOCOSENOIC
+    /// Fatty acids, saturated, 24:0, tetracosanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 664, "22:1t")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 22:1t, DOCOSENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_22_1t_DOCOSENOIC_Grams = 852,
+    [HCNutrientsMetadata(Measure.Grams, "24:00:00")]
+    [Display(Name = "Fatty acids, saturated, 24:0, tetracosanoic")]
+    Fatty_acids_saturated_24_0_tetracosanoic_Grams = 654,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:2i, LINOLEIC, OCTADECADIENOIC
+    /// Fatty acids, monounsaturated, 16:1t, hexadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 666, "18:2i")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:2i, LINOLEIC, OCTADECADIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_2i_LINOLEIC_OCTADECADIENOIC_Grams = 819,
+    [HCNutrientsMetadata(Measure.Grams, "16:1t")]
+    [Display(Name = "Fatty acids, monounsaturated, 16:1t, hexadecenoic")]
+    Fatty_acids_monounsaturated_16_1t_hexadecenoic_Grams = 662,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:2t,t , OCTADECADIENENOIC
+    /// Fatty acids, monounsaturated, 18:1t, octadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 669, "18:2t,t")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:2t,t , OCTADECADIENENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_2t_t__OCTADECADIENENOIC_Grams = 853,
+    [HCNutrientsMetadata(Measure.Grams, "18:1t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1t, octadecenoic")]
+    Fatty_acids_monounsaturated_18_1t_octadecenoic_Grams = 663,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, CONJUGATED, 18:2 cla, LINOLEIC, OCTADECADIENOIC
+    /// Fatty acids, monounsaturated, 22:1t, docosenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 670, "18:2cla")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, CONJUGATED, 18:2 cla, LINOLEIC, OCTADECADIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_CONJUGATED_18_2_cla_LINOLEIC_OCTADECADIENOIC_Grams = 838,
+    [HCNutrientsMetadata(Measure.Grams, "22:1t")]
+    [Display(Name = "Fatty acids, monounsaturated, 22:1t, docosenoic")]
+    Fatty_acids_monounsaturated_22_1t_docosenoic_Grams = 664,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 24:1c, TETRACOSENOIC
+    /// Fatty acids, polyunsaturated, 18:2t not further defined, linoleic, octadecadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 671, "24:1c")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 24:1c, TETRACOSENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_24_1c_TETRACOSENOIC_Grams = 820,
+    [HCNutrientsMetadata(Measure.Grams, "18:2t")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2t not further defined, linoleic, octadecadienoic")]
+    Fatty_acids_polyunsaturated_18_2t_not_further_defined_linoleic_octadecadienoic_Grams = 665,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:2 c,c  EICOSADIENOIC
+    /// Fatty acids, polyunsaturated, 18:2i, linoleic, octadecadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 672, "20:2cc")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:2 c,c  EICOSADIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_20_2_c_c_EICOSADIENOIC_Grams = 823,
+    [HCNutrientsMetadata(Measure.Grams, "18:2i")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2i, linoleic, octadecadienoic")]
+    Fatty_acids_polyunsaturated_18_2i_linoleic_octadecadienoic_Grams = 666,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 16:1c, HEXADECENOIC
+    /// Fatty acids, polyunsaturated, 18:2t,t , octadecadienenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 673, "16:1c")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 16:1c, HEXADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_16_1c_HEXADECENOIC_Grams = 821,
+    [HCNutrientsMetadata(Measure.Grams, "18:2t,t")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2t,t , octadecadienenoic")]
+    Fatty_acids_polyunsaturated_18_2t_t__octadecadienenoic_Grams = 669,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 18:1c, OCTADECENOIC
+    /// Fatty acids, polyunsaturated, conjugated, 18:2 cla, linoleic, octadecadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 674, "18:1c")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 18:1c, OCTADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_18_1c_OCTADECENOIC_Grams = 824,
+    [HCNutrientsMetadata(Measure.Grams, "18:2cla")]
+    [Display(Name = "Fatty acids, polyunsaturated, conjugated, 18:2 cla, linoleic, octadecadienoic")]
+    Fatty_acids_polyunsaturated_conjugated_18_2_cla_linoleic_octadecadienoic_Grams = 670,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:2 c,c n-6,  LINOLEIC, OCTADECADIENOIC
+    /// Fatty acids, monounsaturated, 24:1c, tetracosenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 675, "18:2ccn-6")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:2 c,c n-6,  LINOLEIC, OCTADECADIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_2_c_c_n_6__LINOLEIC_OCTADECADIENOIC_Grams = 825,
+    [HCNutrientsMetadata(Measure.Grams, "24:1c")]
+    [Display(Name = "Fatty acids, monounsaturated, 24:1c, tetracosenoic")]
+    Fatty_acids_monounsaturated_24_1c_tetracosenoic_Grams = 671,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 22:1c, DOCOSENOIC
+    /// Fatty acids, polyunsaturated, 20:2 c,c  eicosadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 676, "22:1c")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 22:1c, DOCOSENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_22_1c_DOCOSENOIC_Grams = 840,
+    [HCNutrientsMetadata(Measure.Grams, "20:2cc")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:2 c,c  eicosadienoic")]
+    Fatty_acids_polyunsaturated_20_2_c_c_eicosadienoic_Grams = 672,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:3 c,c,c n-6, g-LINOLENIC, OCTADECATRIENOIC
+    /// Fatty acids, monounsaturated, 16:1c, hexadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 685, "18:3cccn-6")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:3 c,c,c n-6, g-LINOLENIC, OCTADECATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_3_c_c_c_n_6_g_LINOLENIC_OCTADECATRIENOIC_Grams = 832,
+    [HCNutrientsMetadata(Measure.Grams, "16:1c")]
+    [Display(Name = "Fatty acids, monounsaturated, 16:1c, hexadecenoic")]
+    Fatty_acids_monounsaturated_16_1c_hexadecenoic_Grams = 673,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 17:1, HEPTADECENOIC
+    /// Fatty acids, monounsaturated, 18:1c, octadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 687, "17:1")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 17:1, HEPTADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_17_1_HEPTADECENOIC_Grams = 826,
+    [HCNutrientsMetadata(Measure.Grams, "18:1c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1c, octadecenoic")]
+    Fatty_acids_monounsaturated_18_1c_octadecenoic_Grams = 674,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:3, EICOSATRIENOIC
+    /// Fatty acids, polyunsaturated, 18:2 c,c n-6,  linoleic, octadecadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 689, "20:3undiff")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:3, EICOSATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_20_3_EICOSATRIENOIC_Grams = 827,
+    [HCNutrientsMetadata(Measure.Grams, "18:2ccn-6")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2 c,c n-6,  linoleic, octadecadienoic")]
+    Fatty_acids_polyunsaturated_18_2_c_c_n_6__linoleic_octadecadienoic_Grams = 675,
 
     /// <summary>
-    /// FATTY ACIDS, TOTAL TRANS-MONOENOIC
+    /// Fatty acids, monounsaturated, 22:1c, docosenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 693, "TRMO")]
-    [Display(Name = "FATTY ACIDS, TOTAL TRANS-MONOENOIC")]
-    FATTY_ACIDS_TOTAL_TRANS_MONOENOIC_Grams = 829,
+    [HCNutrientsMetadata(Measure.Grams, "22:1c")]
+    [Display(Name = "Fatty acids, monounsaturated, 22:1c, docosenoic")]
+    Fatty_acids_monounsaturated_22_1c_docosenoic_Grams = 676,
 
     /// <summary>
-    /// FATTY ACIDS, TOTAL TRANS-POLYENOIC
+    /// Fatty acids, polyunsaturated, 18:3 c,c,c n-6, g-linolenic, octadecatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 695, "TRPO")]
-    [Display(Name = "FATTY ACIDS, TOTAL TRANS-POLYENOIC")]
-    FATTY_ACIDS_TOTAL_TRANS_POLYENOIC_Grams = 859,
+    [HCNutrientsMetadata(Measure.Grams, "18:3cccn-6")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:3 c,c,c n-6, g-linolenic, octadecatrienoic")]
+    Fatty_acids_polyunsaturated_18_3_c_c_c_n_6_g_linolenic_octadecatrienoic_Grams = 685,
 
     /// <summary>
-    /// FATTY ACIDS, SATURATED, 13:0 TRIDECANOIC
+    /// Fatty acids, monounsaturated, 17:1, heptadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 696, "13:0")]
-    [Display(Name = "FATTY ACIDS, SATURATED, 13:0 TRIDECANOIC")]
-    FATTY_ACIDS_SATURATED_13_0_TRIDECANOIC_Grams = 830,
+    [HCNutrientsMetadata(Measure.Grams, "17:01")]
+    [Display(Name = "Fatty acids, monounsaturated, 17:1, heptadecenoic")]
+    Fatty_acids_monounsaturated_17_1_heptadecenoic_Grams = 687,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 15:1, PENTADECENOIC
+    /// Fatty acids, polyunsaturated, 20:3, eicosatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 697, "15:1")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 15:1, PENTADECENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED_15_1_PENTADECENOIC_Grams = 833,
+    [HCNutrientsMetadata(Measure.Grams, "20:3undiff")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:3, eicosatrienoic")]
+    Fatty_acids_polyunsaturated_20_3_eicosatrienoic_Grams = 689,
 
     /// <summary>
-    /// TOTAL MONOSACCARIDES
+    /// Fatty acids, total trans-monoenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 802, "TMOS")]
-    [Display(Name = "TOTAL MONOSACCARIDES")]
-    TOTAL_MONOSACCARIDES_Grams = 802,
+    [HCNutrientsMetadata(Measure.Grams, "TRMO")]
+    [Display(Name = "Fatty acids, total trans-monoenoic")]
+    Fatty_acids_total_trans_monoenoic_Grams = 693,
 
     /// <summary>
-    /// TOTAL DISACCHARIDES
+    /// Fatty acids, total trans-polyenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 803, "TDIS")]
-    [Display(Name = "TOTAL DISACCHARIDES")]
-    TOTAL_DISACCHARIDES_Grams = 803,
+    [HCNutrientsMetadata(Measure.Grams, "TRPO")]
+    [Display(Name = "Fatty acids, total trans-polyenoic")]
+    Fatty_acids_total_trans_polyenoic_Grams = 695,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:3 c,c,c n-3  LINOLENIC, OCTADECATRIENOIC
+    /// Fatty acids, saturated, 13:0 tridecanoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 851, "18:3cccn-3")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:3 c,c,c n-3  LINOLENIC, OCTADECATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_3_c_c_c_n_3_LINOLENIC_OCTADECATRIENOIC_Grams = 831,
+    [HCNutrientsMetadata(Measure.Grams, "13:00")]
+    [Display(Name = "Fatty acids, saturated, 13:0 tridecanoic")]
+    Fatty_acids_saturated_13_0_tridecanoic_Grams = 696,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:3 n-3 EICOSATRIENOIC
+    /// Fatty acids, monounsaturated, 15:1, pentadecenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 852, "20:3n-3")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:3 n-3 EICOSATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_20_3_n_3_EICOSATRIENOIC_Grams = 861,
+    [HCNutrientsMetadata(Measure.Grams, "15:01")]
+    [Display(Name = "Fatty acids, monounsaturated, 15:1, pentadecenoic")]
+    Fatty_acids_monounsaturated_15_1_pentadecenoic_Grams = 697,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:3 n-6, EICOSATRIENOIC
+    /// Fatty acids, polyunsaturated, 18:3 c,c,c n-3  linolenic, octadecatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 853, "20:3n-6")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:3 n-6, EICOSATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_20_3_n_6_EICOSATRIENOIC_Grams = 854,
+    [HCNutrientsMetadata(Measure.Grams, "18:3cccn-3")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:3 c,c,c n-3  linolenic, octadecatrienoic")]
+    Fatty_acids_polyunsaturated_18_3_c_c_c_n_3_linolenic_octadecatrienoic_Grams = 851,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 20:4 n-6, ARACHIDONIC
+    /// Fatty acids, polyunsaturated, 20:3 n-3 eicosatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 855, "20:4n-6")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 20:4 n-6, ARACHIDONIC")]
-    FATTY_ACIDS_POLYUNSATURATED_20_4_n_6_ARACHIDONIC_Grams = 855,
+    [HCNutrientsMetadata(Measure.Grams, "20:3n-3")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:3 n-3 eicosatrienoic")]
+    Fatty_acids_polyunsaturated_20_3_n_3_eicosatrienoic_Grams = 852,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 18:3i, LINOLENIC, OCTADECATRIENOIC
+    /// Fatty acids, polyunsaturated, 20:3 n-6, eicosatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 856, "18:3i")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 18:3i, LINOLENIC, OCTADECATRIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_18_3i_LINOLENIC_OCTADECATRIENOIC_Grams = 841,
+    [HCNutrientsMetadata(Measure.Grams, "20:3n-6")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:3 n-6, eicosatrienoic")]
+    Fatty_acids_polyunsaturated_20_3_n_6_eicosatrienoic_Grams = 853,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 21:5
+    /// Fatty acids, polyunsaturated, 20:4 n-6, arachidonic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 857, "21:5")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 21:5")]
-    FATTY_ACIDS_POLYUNSATURATED_21_5_Grams = 843,
+    [HCNutrientsMetadata(Measure.Grams, "20:4n-6")]
+    [Display(Name = "Fatty acids, polyunsaturated, 20:4 n-6, arachidonic")]
+    Fatty_acids_polyunsaturated_20_4_n_6_arachidonic_Grams = 855,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 22:4 n-6, DOCOSATETRAENOIC
+    /// Fatty acids, polyunsaturated, 18:3i, linolenic, octadecatrienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 858, "22:4n-6")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 22:4 n-6, DOCOSATETRAENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_22_4_n_6_DOCOSATETRAENOIC_Grams = 845,
+    [HCNutrientsMetadata(Measure.Grams, "18:3i")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:3i, linolenic, octadecatrienoic")]
+    Fatty_acids_polyunsaturated_18_3i_linolenic_octadecatrienoic_Grams = 856,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED,  24:1undifferentiated, TETRACOSENOIC
+    /// Fatty acids, polyunsaturated, 21:5
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 859, "24:1undiff")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED,  24:1undifferentiated, TETRACOSENOIC")]
-    FATTY_ACIDS_MONOUNSATURATED__24_1undifferentiated_TETRACOSENOIC_Grams = 846,
+    [HCNutrientsMetadata(Measure.Grams, "21:05")]
+    [Display(Name = "Fatty acids, polyunsaturated, 21:5")]
+    Fatty_acids_polyunsaturated_21_5_Grams = 857,
 
     /// <summary>
-    /// FATTY ACIDS, MONOUNSATURATED, 12:1, LAUROLEIC
+    /// Fatty acids, polyunsaturated, 22:4 n-6, docosatetraenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 860, "12:1")]
-    [Display(Name = "FATTY ACIDS, MONOUNSATURATED, 12:1, LAUROLEIC")]
-    FATTY_ACIDS_MONOUNSATURATED_12_1_LAUROLEIC_Grams = 847,
+    [HCNutrientsMetadata(Measure.Grams, "22:4n-6")]
+    [Display(Name = "Fatty acids, polyunsaturated, 22:4 n-6, docosatetraenoic")]
+    Fatty_acids_polyunsaturated_22_4_n_6_docosatetraenoic_Grams = 858,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 22:3,
+    /// Fatty acids, monounsaturated,  24:1undifferentiated, tetracosenoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 861, "22:3")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 22:3,")]
-    FATTY_ACIDS_POLYUNSATURATED_22_3_Grams = 848,
+    [HCNutrientsMetadata(Measure.Grams, "24:1undiff")]
+    [Display(Name = "Fatty acids, monounsaturated,  24:1undifferentiated, tetracosenoic")]
+    Fatty_acids_monounsaturated__24_1undifferentiated_tetracosenoic_Grams = 859,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, 22:2, DOCOSADIENOIC
+    /// Fatty acids, monounsaturated, 12:1, lauroleic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 862, "22:2")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, 22:2, DOCOSADIENOIC")]
-    FATTY_ACIDS_POLYUNSATURATED_22_2_DOCOSADIENOIC_Grams = 849,
+    [HCNutrientsMetadata(Measure.Grams, "12:01")]
+    [Display(Name = "Fatty acids, monounsaturated, 12:1, lauroleic")]
+    Fatty_acids_monounsaturated_12_1_lauroleic_Grams = 860,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, TOTAL OMEGA  N-3
+    /// Fatty acids, polyunsaturated, 22:3,
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 902, "TOmega n-3")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, TOTAL OMEGA  N-3")]
-    FATTY_ACIDS_POLYUNSATURATED_TOTAL_OMEGA_N_3_Grams = 868,
+    [HCNutrientsMetadata(Measure.Grams, "22:03")]
+    [Display(Name = "Fatty acids, polyunsaturated, 22:3,")]
+    Fatty_acids_polyunsaturated_22_3_Grams = 861,
 
     /// <summary>
-    /// FATTY ACIDS, POLYUNSATURATED, TOTAL OMEGA   N-6
+    /// Fatty acids, polyunsaturated, 22:2, docosadienoic
     /// </summary>
-    [HCNutrientsMetadata(Measure.Grams, 903, "TOmega n-6")]
-    [Display(Name = "FATTY ACIDS, POLYUNSATURATED, TOTAL OMEGA   N-6")]
-    FATTY_ACIDS_POLYUNSATURATED_TOTAL_OMEGA__N_6_Grams = 869,
+    [HCNutrientsMetadata(Measure.Grams, "22:02")]
+    [Display(Name = "Fatty acids, polyunsaturated, 22:2, docosadienoic")]
+    Fatty_acids_polyunsaturated_22_2_docosadienoic_Grams = 862,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 10c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 10c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 10c")]
+    Fatty_acids_monounsaturated_18_1_10c_Grams = 884,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 11c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 11c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 11c")]
+    Fatty_acids_monounsaturated_18_1_11c_Grams = 885,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 12c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 12c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 12c")]
+    Fatty_acids_monounsaturated_18_1_12c_Grams = 886,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 13c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 13c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 13c")]
+    Fatty_acids_monounsaturated_18_1_13c_Grams = 888,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 14c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 14c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 14c")]
+    Fatty_acids_monounsaturated_18_1_14c_Grams = 891,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 15c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 15c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 15c")]
+    Fatty_acids_monounsaturated_18_1_15c_Grams = 895,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 16c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 16c")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 16c")]
+    Fatty_acids_monounsaturated_18_1_16c_Grams = 896,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 11t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 11t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 11t")]
+    Fatty_acids_monounsaturated_18_1_11t_Grams = 897,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 4t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 4t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 4t")]
+    Fatty_acids_monounsaturated_18_1_4t_Grams = 898,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 5t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 5t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 5t")]
+    Fatty_acids_monounsaturated_18_1_5t_Grams = 899,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 6t-8t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 6t-8t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 6t-8t")]
+    Fatty_acids_monounsaturated_18_1_6t_8t_Grams = 904,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 10t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 10t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 10t")]
+    Fatty_acids_monounsaturated_18_1_10t_Grams = 905,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 12t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 12t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 12t")]
+    Fatty_acids_monounsaturated_18_1_12t_Grams = 906,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 13t + 14t + 6c-8c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 13t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 13t + 14t + 6c-8c")]
+    Fatty_acids_monounsaturated_18_1_13t__14t__6c_8c_Grams = 907,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 18:1 16t
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:1 16t")]
+    [Display(Name = "Fatty acids, monounsaturated, 18:1 16t")]
+    Fatty_acids_monounsaturated_18_1_16t_Grams = 908,
+
+    /// <summary>
+    /// Fatty acids, monounsaturated, 20:1 5c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "20:1 5c")]
+    [Display(Name = "Fatty acids, monounsaturated, 20:1 5c")]
+    Fatty_acids_monounsaturated_20_1_5c_Grams = 909,
+
+    /// <summary>
+    /// Fatty acids, polyunsaturated, 18:2 9c,13c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:2 9c13c")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2 9c,13c")]
+    Fatty_acids_polyunsaturated_18_2_9c_13c_Grams = 910,
+
+    /// <summary>
+    /// Fatty acids, polyunsaturated, 18:2 9c,14c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:2 9c14c")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2 9c,14c")]
+    Fatty_acids_polyunsaturated_18_2_9c_14c_Grams = 911,
+
+    /// <summary>
+    /// Fatty acids, polyunsaturated, 18:2 9c,15c
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "18:2 9c15c")]
+    [Display(Name = "Fatty acids, polyunsaturated, 18:2 9c,15c")]
+    Fatty_acids_polyunsaturated_18_2_9c_15c_Grams = 912,
+
+    /// <summary>
+    /// Fatty acids, polyunsaturated, 22:5n-6
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "22:5n-6")]
+    [Display(Name = "Fatty acids, polyunsaturated, 22:5n-6")]
+    Fatty_acids_polyunsaturated_22_5n_6_Grams = 913,
+
+    /// <summary>
+    /// Fructans (inulin)
+    /// </summary>
+    [HCNutrientsMetadata(Measure.Grams, "INUL")]
+    [Display(Name = "Fructans (inulin)")]
+    Fructans_inulin_Grams = 1001,
 }

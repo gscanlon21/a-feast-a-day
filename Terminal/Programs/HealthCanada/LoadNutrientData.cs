@@ -66,7 +66,7 @@ internal class LoadHealthCanadaNutrientData
                             var existingNutrient = ingredient.CanadaNutrients.First(n => n.Nutrients == canadaNutrient);
                             if (existingNutrient.Value != amount || existingNutrient.Measure != measure)
                             {
-                                Console.WriteLine($"Updating {canadaNutrient} for {ingredient.FoodName}.");
+                                Console.WriteLine($"Updating {canadaNutrient} for {ingredient.FoodName} from {existingNutrient.Value}{existingNutrient.Measure} to {amount}{measure}.");
                                 existingNutrient.Value = amount;
                                 existingNutrient.Measure = measure;
                                 existingNutrient.LastUpdated = DateHelpers.Today;

@@ -57,11 +57,10 @@ internal class RegenerateHealthCanadaNutrients
                 row[headers[i]] = fields[i];
             }
 
-            var id = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_ID, out string? idTemp) ? idTemp?.Trim() : null) ?? throw new Exception("Missing id!");
             var origName = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_NAME, out string? nameTemp) ? nameTemp?.Trim() : null) ?? throw new Exception("Missing name!");
             var unitName = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_UNIT, out string? unitNameTemp) ? unitNameTemp?.Trim() : null) ?? throw new Exception("Missing unit_name!");
-            var nutrientCode = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_CODE, out string? nutrientNumberTemp) ? nutrientNumberTemp?.Trim().NullIfEmpty() : null) ?? "-1";
-            var nutrientSymbol = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_SYMBOL, out string? rankTemp) ? rankTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+            var nutrientCode = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_CODE, out string? nutrientCodeTemp) ? nutrientCodeTemp?.Trim().NullIfEmpty() : null) ?? "-1";
+            var nutrientSymbol = (row.TryGetValue(NutrientNameHeaders.NUTRIENT_SYMBOL, out string? nutrientSymbolTemp) ? nutrientSymbolTemp?.Trim().NullIfEmpty() : null) ?? "-1";
 
             // Pretty-up the nutrient name for C#.
             var name = new string(origName.Select(c => char.IsLetterOrDigit(c) ? c : '_').ToArray());
@@ -91,9 +90,9 @@ internal class RegenerateHealthCanadaNutrients
             builder.AppendLine($"    /// <summary>");
             builder.AppendLine($"    /// {origName}");
             builder.AppendLine($"    /// </summary>");
-            builder.AppendLine($"    [{HCNutrientsMetadataAttribute.Name}(Measure.{measure}, {int.Parse(nutrientCode)}, \"{nutrientSymbol}\")]");
+            builder.AppendLine($"    [{HCNutrientsMetadataAttribute.Name}(Measure.{measure}, \"{nutrientSymbol}\")]");
             builder.AppendLine($"    [Display(Name = \"{origName}\")]");
-            builder.AppendLine($"    {name} = {id},");
+            builder.AppendLine($"    {name} = {nutrientCode},");
         }
 
         builder.AppendLine("}");

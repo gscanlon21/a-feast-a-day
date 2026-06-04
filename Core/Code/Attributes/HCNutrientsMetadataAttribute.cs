@@ -9,13 +9,11 @@ public class HCNutrientsMetadataAttribute : Attribute
     public const string Name = "HCNutrientsMetadata";
 
     public Measure Measure { get; }
-    public int NutrientCode { get; }
     public string? NutrientSymbol { get; }
 
-    public HCNutrientsMetadataAttribute(Measure measure, int nutrientCode, string nutrientSymbol)
+    public HCNutrientsMetadataAttribute(Measure measure, string nutrientSymbol)
     {
         Measure = measure;
-        NutrientCode = nutrientCode;
         NutrientSymbol = nutrientSymbol;
     }
 }
