@@ -72,6 +72,7 @@ img {
 }
 
 .actual-value {
+    transform: translateX(-50%);
     position: absolute;
     font-size: 10px;
     line-height: 1;
@@ -79,9 +80,10 @@ img {
 }
 
 .tick {
+    background-color: limegreen;
     transform: translateX(-50%);
     position: absolute;
-    height: 100%;
-    width: 1px;
-    top: 0;
+    height: 200%;
+    width: 2px;
+    top: -50%;
 }
