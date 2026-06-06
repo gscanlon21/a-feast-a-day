@@ -7,8 +7,8 @@
 7	\N	Large Carrots	Large Carrots	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Carrots	https://fdc.nal.usda.gov/food-details/2258586/nutrients	\N	0
 8	\N	Red Bell Peppers	Red Bell Peppers	\N	f	512	119	100	2025-10-23	0	149	2	149	Bell Pepper	\N	\N	0
 9	\N	Avocados	Avocados	\N	f	0	201	100	2026-04-05	0	201	1	201	Avocado	\N	\N	0
-10	\N	Fresh Strawberries	Fresh Strawberries	\N	f	0	28	100	2024-12-19	4	144	1	144	Fresh Strawberries	https://fdc.nal.usda.gov/food-details/2346409/nutrients	\N	0
-11	\N	Bananas	Bananas	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N	\N	0
+10	\N	Fresh Strawberries	Fresh Strawberries	\N	f	0	28	100	2024-12-19	4	144	1	144	Strawberry	https://fdc.nal.usda.gov/food-details/2346409/nutrients	\N	1
+11	\N	Bananas	Bananas	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N	\N	1
 12	\N	Limes	Limes	\N	f	0	67	100	2025-02-07	0	201	1	201	Lime	\N	\N	0
 13	\N	Fresh Cilantro	Fresh Cilantro	The plant is called Coriander. The leaves are cilantro.	f	0	1	100	2024-12-13	3	16	3	16	Cilantro	https://www.eatthismuch.com/calories/fresh-cilantro-1945	\N	0
 14	\N	Fresh Basil Leaves	Fresh Basil Leaves	\N	f	0	0.5	100	2025-01-10	0	32	3	32	Basil	\N	\N	0
@@ -284,7 +284,7 @@
 293	\N	Low Sodium Soy Sauce	Low Sodium Soy Sauce	\N	f	294944	32	100	2026-01-08	9	256	4	256	Soy Sauce	\N	\N	13
 294	\N	Low Sodium Tamari Sauce	Low Sodium Tamari Sauce	Tamari sauce generally does not contain wheat.	f	32768	36	100	2026-04-16	9	288	4	288	Tamari Sauce	https://www.eatthismuch.com/calories/soy-sauce-3619	\N	14
 295	\N	Tamari Sauce	Tamari Sauce	Tamari sauce generally does not contain wheat.	f	32768	36	100	2026-05-20	9	288	4	288	Tamari Sauce	https://fdc.nal.usda.gov/food-details/174278/nutrients	\N	14
-296	\N	Pumpkin Seeds	Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Seeds	\N	\N	0
+296	\N	Pumpkin Seeds	Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	6	149.33	Pumpkin Seeds	\N	\N	19
 297	\N	Tamari | Soy Sauce	Tamari | Soy Sauce	\N	f	32768	36	100	2026-04-17	9	288	3	288	Tamari | Soy Sauce	\N	\N	7
 298	\N	Coconut Sugar	Coconut Sugar	aka. Coconut Palm Sugar.	f	0	28	100	2025-10-18	4	144	5	144	Coconut Sugar	https://www.eatthismuch.com/calories/coconut-sugar-organic-1785641	\N	16
 299	\N	White Pepper	White Pepper	\N	t	0	28	100	2025-01-13	4	112	4	112	White Pepper	\N	\N	12
@@ -328,7 +328,7 @@
 342	\N	Passion Fruit	Passion Fruit	\N	f	0	18	100	2025-01-01	0	236	1	236	Passion Fruit	\N	\N	0
 343	\N	Sweet White Wine	Sweet White Wine	\N	f	0	29.4	100	2025-12-26	9	235.2	5	235.2	Sweet White Wine	\N	\N	0
 344	\N	Dry White Wine	Dry White Wine	\N	f	0	29.4	100	2026-02-25	9	235.2	5	235.2	Dry White Wine	\N	\N	16
-345	\N	Heavy Whipping Cream	Heavy Whipping Cream	\N	f	4	28	100	2024-11-20	4	238	10	238	Heavy Whipping Cream	\N	\N	0
+345	\N	Heavy Whipping Cream	Heavy Whipping Cream	\N	f	4	28	100	2026-06-05	4	238	8	238	Heavy Whipping Cream	\N	\N	9
 346	\N	Oranges	Oranges	\N	f	0	131	100	2025-04-01	0	131	1	131	Orange	\N	\N	0
 347	\N	Blood Oranges	Blood Oranges	\N	f	0	131	100	2025-04-12	0	131	1	131	Orange	\N	\N	0
 348	\N	Pink Himalayan Salt	Pink Himalayan Salt	\N	t	0	4	100	2025-09-10	8	192	4	192	Salt	\N	\N	12
@@ -459,7 +459,7 @@
 510	\N	Fennel Seeds	Fennel Seeds	\N	f	0	28	100	2025-02-26	4	96	4	96	Fennel Seed	\N	\N	12
 511	\N	Slices of American Cheese, Fortified	Slices of American Cheese, Fortified	\N	f	4	28	100	2026-01-07	0	224	10	224	American Cheese	\N	\N	0
 512	\N	Italian Seasoning	Italian Seasoning	\N	f	0	28	100	2025-11-18	4	96	4	96	Italian Seasoning	\N	\N	12
-513	\N	Large New Potatoes	Large New Potatoes	\N	f	512	79	100	2024-11-21	0	158	2	158	Potato	\N	\N	0
+513	\N	Large New Potatoes	Large New Potatoes	\N	f	512	79	100	2026-06-06	0	158	1	158	Potato	\N	\N	2
 515	\N	Paprika | Cayenne Pepper	Paprika | Cayenne Pepper	\N	t	0	12	100	2026-04-15	4	96	4	96	Paprika | Cayenne Pepper	\N	\N	12
 516	\N	Vinegar	Vinegar	\N	f	0	29.875	100	2026-05-13	9	239	4	239	Vinegar	\N	\N	13
 517	\N	Light Brown Sugar	Light Brown Sugar	\N	f	0	28	100	2025-07-21	4	145	4	145	Brown Sugar	https://fdc.nal.usda.gov/food-details/168833/nutrients	\N	14
@@ -670,7 +670,7 @@
 750	\N	Chicken Wings	Chicken Wings	\N	f	1048576	49	100	2025-03-17	0	196	10	196	Chicken Wings	\N	\N	0
 752	\N	Mixed-Color Sesame Seeds	Mixed-Color Sesame Seeds	aka Hulled and Unhulled Sesame Seeds.	f	8192	28	100	2025-02-23	4	144	4	144	Sesame Seed	https://fdc.nal.usda.gov/food-details/170150/nutrients	\N	12
 753	\N	Cardamom Pods	Cardamom Pods	\N	f	0	0.2	100	2024-12-24	0	20	4	20	Cardamom Pods	\N	\N	12
-754	\N	Cumin Seeds	Cumin Seeds	\N	t	0	28	100	2024-11-21	4	144	4	144	Cumin Seeds	\N	\N	12
+754	\N	Cumin Seeds	Cumin Seeds	\N	f	0	28	100	2026-06-06	4	144	4	144	Cumin Seeds	\N	\N	12
 783	\N	Frozen Fava Beans	Frozen Fava Beans	\N	f	0	28	100	2026-03-11	4	194	10	194	Fava Bean	\N	\N	0
 784	\N	Fresh Podded Fava Beans | Frozen Fava Beans	Fresh Podded Fava Beans | Frozen Fava Beans	\N	f	0	28	100	2026-03-18	4	126	1	126	Fava Bean	\N	\N	2
 785	\N	Lemons | Limes	Lemons | Limes	Use partial ingredients.	f	0	108	100	2026-04-02	0	216	1	216	Lemons | Limes	\N	\N	0
@@ -834,7 +834,7 @@
 1006	\N	Coconut Yogurt	Coconut Yogurt	\N	f	0	28	100	2025-11-13	4	240	8	240	Yogurt	\N	\N	9
 1007	\N	Coconut Cream | Coconut Yogurt	Coconut Cream | Coconut Yogurt	aka Coconut Spread. https://www.eatthismuch.com/calories/coconut-cream,2658	f	0	30	100	2025-12-11	4	240	8	240	Cream | Yogurt	\N	\N	9
 1008	\N	Fresh Mixed-Berries	Fresh Mixed-Berries	\N	f	0	28	100	2024-12-22	4	140	1	140	Fresh Mixed-Berries	\N	\N	0
-1009	\N	Green Bananas	Green Bananas	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N	\N	0
+1009	\N	Green Bananas	Green Bananas	\N	f	0	118	100	2025-03-11	0	118	1	118	Banana	\N	\N	1
 1010	\N	Extra Virgin Coconut Oil	Extra Virgin Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	https://fdc.nal.usda.gov/food-details/330458/nutrients	\N	11
 1043	\N	Green Apples	Green Apples	\N	f	0	182	100	2025-03-29	0	182	1	182	Apple	\N	\N	0
 1044	\N	Maca Powder	Maca Powder	\N	f	0	240	100	2025-06-19	6	240	4	240	Maca Powder	\N	\N	17
@@ -993,7 +993,7 @@
 1257	\N	Raw Unsalted Mixed Nuts	Raw Unsalted Mixed Nuts	\N	f	133121	28	100	2025-12-23	4	137	10	137	Raw Unsalted Mixed Nuts	\N	\N	0
 1258	\N	Raw Salted Mixed Nuts	Raw Salted Mixed Nuts	\N	f	0	140	100	2025-12-20	6	140	10	140	Nuts	\N	\N	0
 1259	\N	Ground Turmeric	Ground Turmeric	\N	t	0	28	100	2025-11-20	4	112	4	112	Ground Tumeric	\N	\N	12
-1260	\N	New Potatoes	New Potatoes	\N	f	512	79	100	2024-11-21	0	158	2	158	Potato	\N	\N	0
+1260	\N	New Potatoes	New Potatoes	\N	f	512	79	100	2026-06-05	0	158	1	158	Potato	\N	\N	2
 1261	\N	Fresh Chives	Fresh Chives	\N	f	0	28	100	2025-06-22	4	48	3	48	Fresh Chive	\N	\N	0
 1262	\N	Full-Fat Coconut Milk	Full-Fat Coconut Milk	\N	f	0	30	100	2025-11-14	9	240	10	240	Full-Fat Coconut Milk	\N	\N	0
 1263	\N	Broccoli Heads	Broccoli Heads	Includes the stalk.	f	0	608	100	2026-04-30	0	91	1	91	Broccoli	https://fdc.nal.usda.gov/food-details/747447/nutrients	\N	2
@@ -1526,6 +1526,5 @@
 2035	\N	Sliced Italian Salami	Sliced Italian Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
 2036	\N	Sliced Italian Salami	Sliced Italian Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
 2037	\N	Garlic Paste	Garlic Paste	\N	t	0	7.5	100	2025-07-18	7	120	4	120	Chili Garlic Sauce	\N	\N	14
-2038	\N	Roasted Pumpkin Seeds	Roasted Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Seeds	\N	\N	0
-2039	\N	Roasted Pumpkin Seeds	Roasted Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Seeds	\N	\N	0
-2040	\N	Roasted Pumpkin Seeds	Roasted Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Seeds	\N	\N	0
+2038	\N	Roasted Pumpkin Seeds	Roasted Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	6	149.33	Pumpkin Seeds	\N	\N	19
+2041	\N	Rapid Rise Yeast	Rapid Rise Yeast	\N	f	0	4	100	2025-10-25	8	192	4	192	Active Dry Yeast	\N	\N	14

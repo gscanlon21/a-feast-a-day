@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict QPdkiIXpbaK4pBNJWwRf9XfbdFwnSGbYhdeFrhrqhJ6oxXoZjkxSBiDDFXjqtGy
+\restrict xcKlobTJzKVl9DHb4rgivdXp4A4xrqEZUhZfSl6cIaUqV0DQDNU4XG8tMdqDSLf
 
 -- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.0
@@ -747,16 +747,14 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 209	1000	2500	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
 8	25	\N	131072	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
 19	\N	\N	131072	2	0	0		2023-01-01	\N	58
+10	\N	1	131072	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+220	\N	1	65536	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
 6	130	\N	131072	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-04-16	\N	23
 271	20	35	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-04-24	\N	66
 315	8	40	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-16	The requirement for zinc may be as much as 50 percent greater for vegetarians, particularly for strict vegetarians whose major food staples are grains and legumes, due to the lower bioavailability of zinc from a vegetarian diet.	69
-10	\N	1	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
-220	\N	1	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
-600	0.06	0.12	40960	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+586	0.06	0.12	128	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 423	2	20	1048576	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-27	\N	2
 424	2	20	2097152	2	0	0	https://www.healthline.com/nutrition/lutein-and-zeaxanthin	2026-05-27	\N	2
-601	0.06	0.12	655360	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-602	0.06	0.12	10485760	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 613	14.3	\N	16777216	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 614	14.3	\N	67108864	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 615	14.3	\N	33554432	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
@@ -768,7 +766,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 419	2.4	\N	4096	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
 359	700	4000	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-02	\N	19
 210	1000	2500	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
-528	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 269	\N	30	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-24	\N	83
 265	2.3	12	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-31	\N	76
 20	1	10	131072	2	0	0		2023-01-01	\N	54
@@ -795,10 +792,11 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 213	3400	\N	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 214	2600	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 270	1.5	15	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-06-04	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
+528	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 286	20	35	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 550	25	35	4096	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-30	\N	21
 83	\N	35	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-13	\N	16
-280	\N	1	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
+280	\N	1	1048576	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
 385	\N	1.8	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-25	\N	11
 603	\N	1.8	16777216	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-25	\N	11
 604	\N	1.8	67108864	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-25	\N	11
@@ -820,8 +818,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 340	\N	35	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-13	\N	16
 564	1000	2500	6291456	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-31	\N	22
 282	0.8	\N	1048576	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
-579	\N	1	16777216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
-580	\N	1	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
 301	0.8	\N	2097152	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
 182	12.5	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-05-03	Diving by 2 because there are 2 types of fiber; this is insoluble.	33
 184	19	\N	1048576	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-05-03	Diving by 2 because there are 2 types of fiber; this is insoluble.	33
@@ -842,6 +838,11 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 576	2500	\N	40960	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 577	2800	\N	655360	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
 578	2800	\N	10485760	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+579	\N	1	16777216	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+580	\N	1	67108864	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+587	0.06	0.12	256	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+588	0.06	0.12	512	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+589	0.06	0.12	1024	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 339	5.6	11.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-08	Combining AMDRs for n-3 and n-6 PUFAs.	55
 116	\N	-1	1	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 134	\N	-1	16	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
@@ -862,11 +863,9 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 173	\N	10	33554432	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 175	\N	10	67108864	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 176	\N	10	134217728	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
-299	\N	1	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
+590	0.06	0.12	4096	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 186	19	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
 187	12.5	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
-581	\N	1	33554432	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
-582	\N	1	134217728	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-22	\N	43
 44	55	400	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
 239	55	400	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
 607	55	400	16777216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
@@ -879,19 +878,16 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 415	2.6	\N	393216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
 356	\N	25	2097152	100	1	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-05-07	Added sugars: Limit to no more than 25% of total energy	62
 1	0.8	\N	131072	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
+299	\N	1	2097152	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+581	\N	1	33554432	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+582	\N	1	134217728	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+591	0.06	0.12	16777216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+594	0.06	0.12	8192	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 196	14.3	\N	65536	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 197	14.3	\N	131072	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 207	900	3000	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-04-03	\N	46
 208	700	3000	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-04-03	\N	46
-583	0.06	0.12	16	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-584	0.06	0.12	32	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-585	0.06	0.12	64	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-586	0.06	0.12	128	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-587	0.06	0.12	256	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-588	0.06	0.12	512	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-589	0.06	0.12	1024	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-590	0.06	0.12	4096	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-591	0.06	0.12	16777216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+584	0.06	0.12	32	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 244	2.3	11	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-12	\N	61
 243	900	3000	65536	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-05-01	RDAs for vitamin A are given as retinol activity equivalents (RAE) to account for the different bioactivities of retinol and provitamin A carotenoids.	42
 40	1500	2300	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-07	\N	53
@@ -905,12 +901,13 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 228	1	10	65536	2	0	0		-infinity	\N	54
 464	1.3	\N	10485760	3	2	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-05-26	\N	59
 39	2600	\N	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-03	\N	60
+583	0.06	0.12	16	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+585	0.06	0.12	64	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 234	900	10000	65536	1	0	0		-infinity	\N	68
 247	1.3	\N	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-05-18	\N	5
 191	38	\N	65536	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
-592	0.06	0.12	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-593	0.06	0.12	2048	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-594	0.06	0.12	8192	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+592	0.06	0.12	67108864	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+593	0.06	0.12	2048	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 232	1500	2300	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-07	\N	53
 242	2300	3600	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-05-14	\N	64
 71	30	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-05-15	\N	57
@@ -951,14 +948,11 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 263	2.7	6	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
 195	25	\N	2097152	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
 55	425	3500	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-06-02	\N	75
+595	0.06	0.12	33554432	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 58	0.5	10	131072	3	0	0		2023-01-01	\N	13
 45	150	1100	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 261	0.5	10	65536	3	0	0		-infinity	\N	13
 249	150	1100	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
-595	0.06	0.12	33554432	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-596	0.06	0.12	134217728	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-597	0.06	0.12	24576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-598	0.06	0.12	393216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 262	2.9	35	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
 65	0.5	10	131072	3	0	0		2023-01-01	\N	1
 268	0.5	10	65536	3	0	0		-infinity	\N	1
@@ -1016,9 +1010,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 358	4	10	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-23	\N	81
 391	2.7	6	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
 310	1	10	2097152	2	0	0		-infinity	\N	54
-526	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-527	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
-529	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 525	5	10	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-04-06	\N	49
 520	0.6	1.2	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-04-21	\N	17
 521	0.6	1.2	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-04-21	\N	17
@@ -1038,6 +1029,9 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 510	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
 511	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
 512	0.06	0.12	1048576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-05-21	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	15
+526	0.06	0.12	65536	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+527	0.06	0.12	131072	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+529	0.06	0.12	2097152	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 349	150	1100	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 396	0.5	10	2097152	3	0	0		-infinity	\N	1
 297	320	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-19	\N	10
@@ -1078,7 +1072,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 434	900	3000	1048576	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
 402	4	15	65536	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-05-19	\N	80
 403	4	15	1048576	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-05-19	\N	80
-599	0.06	0.12	6291456	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html	2026-03-23	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 237	15	1000	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl1	2026-04-05	\N	73
 35	90	900	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-04-08	No TUL; using 10x the RDA.	71
 238	120	1200	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html	2026-04-08	No TUL; using 10x the RDA.	71
@@ -1100,6 +1093,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 404	4	15	2097152	3	0	2	https://pubmed.ncbi.nlm.nih.gov/20119826/	2026-05-19	\N	80
 267	0.4	4.5	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-20	\N	44
 395	0.4	4.5	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-20	\N	44
+599	0.06	0.12	6291456	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 420	2.4	\N	8192	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
 617	1.8	\N	1024	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
 618	2.4	\N	16777216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
@@ -1417,6 +1411,26 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 960	1.5	15	67108864	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-06-04	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
 961	1.5	15	33554432	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-06-04	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
 962	1.5	15	134217728	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-06-04	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
+963	\N	1	64	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+964	\N	1	128	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+965	\N	1	256	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+966	\N	1	512	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+967	\N	1	1024	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+968	\N	1	4096	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+969	\N	1	2048	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+970	\N	1	8192	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+971	\N	1	24576	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+972	\N	1	393216	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+973	\N	1	6291456	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+974	\N	1	40960	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+975	\N	1	655360	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+976	\N	1	10485760	100	1	9	https://www.who.int/news/item/17-07-2023-who-updates-guidelines-on-fats-and-carbohydrates	2026-06-05	https://tscanlon.com/a-feast-a-day/dietary-reference-intakes/	43
+596	0.06	0.12	134217728	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+597	0.06	0.12	24576	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+598	0.06	0.12	393216	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+600	0.06	0.12	40960	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+601	0.06	0.12	655360	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
+602	0.06	0.12	10485760	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 \.
 
 
@@ -3776,6 +3790,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 89	1960	1	f
 1254	599	1	f
 2026	601	1	f
+296	2038	1	f
 \.
 
 
@@ -3790,7 +3805,6 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 319	328637	1009	\N	-infinity
 1266	170843	1020	\N	-infinity
 269	1750340	9504	\N	-infinity
-11	1105314	9040	\N	-infinity
 88	2515376	16087	\N	-infinity
 1403	172175	1004	\N	-infinity
 1401	173435	1159	\N	-infinity
@@ -3821,12 +3835,11 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 368	169387	11959	\N	-infinity
 26	332397	7028	\N	-infinity
 159	167765	9326	\N	-infinity
-10	2346409	9316	\N	-infinity
 871	2346411	9050	\N	-infinity
 1176	746767	1040	\N	-infinity
 1265	2705879	\N	\N	-infinity
 1371	170150	12023	\N	-infinity
-296	2515380	12014	\N	-infinity
+10	2346409	9316	1749	2026-06-06
 638	170273	19904	\N	-infinity
 92	2515374	12087	\N	-infinity
 352	746770	9181	\N	-infinity
@@ -3951,6 +3964,7 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 234	746784	19335	4318	-infinity
 1978	2512380	20036	4496	2026-04-04
 1619	2515376	16087	3396	2026-06-04
+11	1105314	9040	1704	2026-06-05
 1342	172232	2044	212	-infinity
 2	170416	11297	2405	-infinity
 5	1104647	11215	2394	-infinity
@@ -4320,6 +4334,12 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 1748	2727573	100378	6131	-infinity
 1080	747447	11090	6278	2026-04-30
 997	169125	9267	1735	2026-06-04
+1260	170026	11352	2505	2026-06-05
+1009	1105314	9040	1704	2026-06-05
+296	2515380	12014	2516	2026-06-06
+2038	170188	12163	2517	2026-06-06
+754	170923	2014	182	2026-06-06
+513	170026	11352	2505	2026-06-06
 \.
 
 
@@ -4351,7 +4371,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 21	Fats	Fats	800	\N	2026-05-30
 22	Calcium_Ca	Calcium (Ca)	5400	\N	2026-05-31
 18	Fiber_Total_Dietary	Dietary Fiber	1200	Fibre_Total_Dietary	2026-06-01
-87	Omega_3_EPA_DHA	Omega 3 (EPA/DHA) Fatty Acids	15000	10% of 0.6–1.2% is 0.06–0.12%	2026-03-23
 83	Arginine	Arginine	16700	\N	2026-03-24
 11	Vanadium_V	Vanadium (V)	999999	\N	2026-03-25
 84	Leucine	Leucine	17000	No AI/RDA for women, though we can put an upper limit that matches.	2026-03-27
@@ -4360,7 +4379,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 61	Manganese_Mn	Manganese (Mn)	5600	\N	2026-04-12
 70	Energy_KCalorie	Calories	300	Energy_Atwater_General_Factors_KCalorie	2026-04-15
 63	Molybdenum_Mo	Molybdenum (Mo)	5650	\N	2026-04-18
-86	Omega_6_LA	Omega 6 (LA) Fatty Acids	15010	\N	2026-04-22
 28	Vitamin_A	Vitamin A	7420	RAE	2026-04-23
 79	Carotene_Beta	Beta Carotene	7450	\N	2026-04-25
 68	Copper_Cu	Copper (Cu)	5550	\N	2026-04-26
@@ -4371,10 +4389,11 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 27	Betaine	Betaine	999999	\N	2026-05-24
 75	Choline	Choline	7220	\N	2026-06-02
 60	Potassium_K	Potassium (K)	5700	\N	2026-06-03
+86	Omega_6_LA	Omega 6 Fatty Acids (LA)	15010	\N	2026-04-22
+87	Omega_3_EPA_DHA	Omega 3 Fatty Acids (EPA/DHA)	15000	10% of 0.6–1.2% is 0.06–0.12%	2026-06-06
 66	Total_Lipid_Fat	Fats	800	\N	2026-04-24
 7	Histidine	Histidine	17400	\N	2026-04-29
 42	Carotene_RAE	Carotenes	7600	Note that these are the dietary intakes for vitamin A in RAE.	2026-05-01
-56	Omega_3_EPA	Omega 3 (EPA) Fatty Acids	15000	\N	2026-05-02
 33	Fiber_Insoluble	Insoluble Fiber	1260	\N	2026-05-03
 54	Flavonoids_Total	Flavonoids	999999	\N	2026-05-05
 62	Total_Sugars	Total Sugars	1500	\N	2026-05-06
@@ -4384,12 +4403,14 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 48	Boron_B	Boron (B)	6245	\N	2026-05-18
 80	Oligosaccharides	Oligosaccharides	2250	\N	2026-05-19
 44	Tryptophan	Tryptophan	16300	\N	2026-05-20
-15	Omega_3_DHA	Omega 3 (DHA) Fatty Acids	15300	\N	2026-05-21
 35	Lysine	Lysine	16800	\N	2026-05-25
 59	Protein	Protein	600	\N	2026-05-26
 2	Lutein_Zeaxanthin	Lutein/Zeaxanthin	7560	10mg of lutein and 2mg of zeaxanthin is optimal for eye health, though we want a baseline for healthy populations.	2026-05-27
 32	Glycine	Glycine	17600	\N	2026-06-04
-43	Fatty_Acids_Total_Trans	Trans Fats	15400	\N	2026-03-22
+43	Fatty_Acids_Total_Trans	Trans Fats	15400	Trans fatty acids: As low as possible while consuming a nutritionally adequate diet.	2026-06-05
+56	Omega_3_EPA	Omega 3 Fatty Acids (EPA)	15000	\N	2026-05-02
+17	Omega_3_ALA	Omega 3 Fatty Acids (ALA)	14000	\N	2026-04-21
+15	Omega_3_DHA	Omega 3 Fatty Acids (DHA)	15300	\N	2026-05-21
 40	Selenium_Se	Selenium (Se)	6200	\N	2026-03-26
 51	Lithium_Li	Lithium (Li)	999999	Based on Li intake data in different countries, a provisional RDA of 1 mg Li/day for a 70 kg adult can be proposed, corresponding to 14.3 μg/kg BW.	2026-03-28
 29	Vitamin_B_12	Vitamin B12	6800	\N	2026-03-29
@@ -4405,7 +4426,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 58	Cholesterol	Cholesterol	15700	Dietary cholesterol: As low as possible while consuming a nutritionally adequate diet.	2026-04-13
 78	Fiber_soluble	Soluble Fiber	1240	\N	2026-04-14
 1	Valine	Valine	17200	Not in table: https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-04-20
-17	Omega_3_ALA	Omega 3 (ALA) Fatty Acids	14000	\N	2026-04-21
 \.
 
 
@@ -6687,9 +6707,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6378	6	578	1	6	\N	111	f	\N	1	f	t	1
 6432	5	584	3	1	\N	1557	f	\N	1	f	t	1
 6231	6	557	2	1	\N	501	f	\N	10	f	t	1
+8052	7	264	1	1	\N	2033	f	\N	7	f	t	0.25
 6433	0	584	3	1	, minced	3	f	\N	2	f	t	1
 6434	0	584	1	2	, minced	5	t	\N	3	f	t	1
-8052	7	264	1	1	\N	2033	f	\N	7	f	t	0.25
 6435	6	584	4	3	\N	118	f	\N	4	f	t	1
 320	6	41	2	1	, zested and juiced	4	f	\N	4	f	t	1
 6391	0	580	1	2	\N	387	f	\N	1	f	t	1
@@ -7247,6 +7267,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6921	7	645	1	1	\N	2033	f	\N	3	f	f	0.25
 6256	7	561	1	1	\N	14	t	\N	3	f	t	1
 6955	6	647	1	1	, chopped, to garnish	13	t	\N	11	f	t	1
+6978	6	652	8	7	, 210g (approx. 210mL)	123	f	\N	1	f	t	1
 7336	0	736	1	1	(RISOTTO BASE, p77)	159	f	\N	0	f	t	1
 5484	7	378	1	1	\N	468	t	\N	8	f	t	1
 6696	0	618	1	2	, beaten	187	f	\N	4	f	t	1
@@ -7268,18 +7289,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6988	7	653	2	3	, 6g	230	f	\N	3	f	t	1
 6989	8	653	1	1	, 5g	214	f	\N	4	f	t	1
 6990	8	653	1	1	, 3g	41	f	\N	5	f	t	1
-6978	6	652	8	7	, 210g (approx. 210mL)	123	f	\N	0	f	t	1
-6979	6	652	4	9	, 293g	195	f	\N	1	f	t	1
-6980	7	652	2	3	, 18g	36	f	\N	2	f	t	1
-6981	7	652	2	3	, 6g	230	f	\N	3	f	t	1
-6982	8	652	1	1	, 5g	214	f	\N	4	f	t	1
 7026	0	660	1	2	, beaten	187	f	\N	4	f	t	1
-6984	8	652	1	1	(RAPID RISE YEAST), 3g	41	f	\N	6	f	t	1
+6979	6	652	4	9	, 293g	195	f	\N	2	f	t	1
 7000	0	656	1	2	, cored and peeled	1326	f	\N	1	f	t	1
 6997	6	655	1	1	\N	1006	f	\N	0	f	t	1
 6998	7	655	1	1	\N	1087	f	\N	1	f	t	1
 6999	7	655	1	1	\N	614	f	\N	2	f	t	1
 6699	7	618	1	6	\N	29	f	\N	7	f	t	0.25
+6980	7	652	2	3	, 18g	36	f	\N	3	f	t	1
+6981	7	652	2	3	, 6g	230	f	\N	4	f	t	1
 6901	0	643	1	1	\N	1206	f	\N	1	f	t	1
 6902	0	643	3	1	\N	9	f	\N	2	f	t	1
 6903	0	643	2	1	\N	150	f	\N	3	f	t	1
@@ -7435,6 +7453,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2148	7	117	1	2	, drained and rinsed	419	t	\N	5	f	t	1
 2150	6	117	4	1	\N	\N	t	116	7	f	t	1
 2151	7	117	1	2	, diced	17	t	\N	8	f	t	1
+8651	7	1046	1	1	\N	77	f	\N	1	f	t	1
+8652	0	1046	1	1	, diced	1642	f	\N	2	f	t	1
+8653	0	1046	1	2	, kernals only	334	f	\N	3	f	t	1
 4446	6	245	2	1	, hulled	158	f	\N	2	f	t	1
 2152	0	117	1	1	, quarter sliced	9	t	\N	9	f	t	1
 3776	0	189	1	1	, seeded and thinly sliced	598	f	\N	5	f	t	1
@@ -7464,7 +7485,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7114	7	702	1	1	\N	189	f	\N	3	f	t	0.25
 4582	6	175	4	1	\N	190	f	\N	2	f	t	0.25
 6835	6	637	1	1	, at toom temperature, diced	190	f	\N	1	f	t	0.25
-8651	7	1046	1	1	\N	77	f	\N	0	f	t	1
 7742	6	856	4	1	\N	368	f	\N	8	f	t	1
 7743	7	856	1	1	\N	\N	f	846	9	f	t	1
 4447	6	245	2	1	, coarsely chopped	92	f	\N	3	f	t	1
@@ -7478,8 +7498,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4452	6	245	4	1	\N	687	f	\N	8	f	t	1
 6651	5	611	1	1	, cubed into 1" cubes.	1112	f	\N	9	f	t	1
 6652	6	611	1	2	, de-stemmed and sliced thin	372	f	\N	10	f	t	1
-8652	0	1046	1	1	, diced	1642	f	\N	1	f	t	1
-8653	0	1046	1	2	, kernals only	334	f	\N	2	f	t	1
 8193	4	972	1	4	, finely chopped	1730	f	\N	2	f	t	1
 8194	6	972	1	1	, cut into fresh breadcrumbs	1729	f	\N	3	f	t	1
 8195	6	972	1	12	, minced or finely chopped	324	f	\N	4	f	t	1
@@ -7704,8 +7722,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7862	7	786	1	3	\N	2033	f	\N	6	f	t	0.25
 5725	8	418	8	1	, to taste	692	t	\N	5	f	t	1
 5726	0	418	1	6	\N	187	f	\N	6	f	t	1
-8654	0	1046	1	5	, thinly sliced	144	f	\N	3	f	t	1
-8655	0	1046	1	1	, chopped	658	f	\N	4	f	t	1
 6271	8	564	1	1	\N	323	t	\N	5	f	t	1
 7492	0	787	1	1	\N	1216	f	\N	0	f	t	1
 7493	0	787	1	2	\N	1329	f	\N	1	f	t	1
@@ -7786,6 +7802,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6272	8	564	1	1	\N	71	t	\N	6	f	t	1
 7503	0	789	1	2	\N	222	f	\N	1	f	t	1
 7504	4	789	4	3	\N	573	t	\N	2	f	t	1
+8654	0	1046	1	5	, thinly sliced	144	f	\N	4	f	t	1
+8655	0	1046	1	1	, chopped	658	f	\N	5	f	t	1
 7505	0	789	1	2	, peeled and cut in half	4	f	\N	3	f	t	1
 7397	4	745	1	8	\N	333	f	\N	1	f	t	1
 7481	5	745	1	1	\N	1768	f	\N	2	f	t	1
@@ -8685,6 +8703,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6160	7	546	2	1	\N	2033	f	\N	5	f	t	0.25
 8536	7	1005	1	2	, melted	964	f	\N	8	f	t	0.25
 8550	7	1006	1	1	\N	2033	f	\N	10	f	t	0.25
+6983	7	652	1	1	, 14g	190	f	\N	6	f	t	0.25
 8368	7	986	1	3	\N	2033	f	\N	5	f	t	0.25
 6120	7	541	1	2	\N	2033	f	\N	0	f	t	0.25
 6296	7	568	1	2	\N	2033	f	\N	2	f	t	0.25
@@ -8708,7 +8727,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8398	8	991	1	1	\N	2033	f	\N	6	f	t	0.25
 6725	7	621	1	5	, at room temperature, divided	189	f	\N	0	f	t	0.25
 7341	7	736	1	1	\N	189	f	\N	5	f	t	0.25
-6983	7	652	1	1	, 14g	190	f	\N	5	f	t	0.25
 5095	7	156	1	2	, for the sauce	190	t	\N	4	f	t	0.25
 3388	6	116	4	1	\N	2033	f	\N	6	f	t	0.25
 5536	7	388	1	2	, divided	2033	f	\N	1	f	t	0.25
@@ -8726,7 +8744,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2848	7	148	1	7	\N	2033	f	\N	9	f	t	0.25
 2915	7	152	1	1	\N	2033	f	\N	2	f	t	0.25
 5524	7	386	1	6	\N	2033	f	\N	2	f	t	0.25
-8656	6	1046	2	1	(Cotija cheese), crumbled	1402	t	\N	5	f	t	1
 8610	6	1043	1	1	, trimmed and cut into 2” pieces	121	f	\N	2	f	t	1
 8611	7	1043	1	1	\N	278	f	\N	3	f	t	1
 8612	8	1043	8	1	, to taste	74	f	\N	4	f	t	1
@@ -8748,8 +8765,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6669	8	614	2	1	, for bread	29	t	\N	7	f	t	0.25
 7180	7	712	1	4	, melted	189	f	\N	1	f	t	0.25
 8138	7	965	1	7	, at room temperature, diced	190	f	\N	4	f	t	0.25
-8657	6	1046	2	1	, rinsed and drained	419	f	\N	6	f	t	1
 8650	4	1045	1	14	\N	1368	f	\N	1	f	t	1
+8656	6	1046	2	1	(Cotija cheese), crumbled	1402	t	\N	6	f	t	1
+8657	6	1046	2	1	, rinsed and drained	419	f	\N	7	f	t	1
+8658	0	1046	1	2	, diced	281	f	\N	8	f	t	1
+8659	6	1046	3	1	\N	2038	f	\N	9	f	t	1
 8448	0	997	1	2	, finely chopped	150	f	\N	3	f	t	1
 8609	5	1043	2	3	, cut round potatoes into quarters, fingerlings in half	1260	f	\N	1	f	t	1
 8449	0	997	1	2	, peeled and finely chopped	7	f	\N	4	f	t	1
@@ -8759,8 +8779,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8453	5	997	1	1	\N	1967	f	\N	8	f	t	1
 8454	7	997	1	1	\N	1596	f	\N	9	f	t	1
 8455	7	997	2	1	\N	124	f	\N	10	f	t	1
-8658	0	1046	1	2	, diced	281	f	\N	7	f	t	1
-8659	6	1046	3	1	(ROASTED PUMPKIN SEEDS)	296	f	\N	8	f	t	1
 7225	8	718	4	1	\N	504	f	\N	7	f	t	1
 7416	7	747	1	1	\N	1268	t	\N	12	f	t	1
 7417	6	747	4	1	\N	39	t	\N	13	f	t	1
@@ -8855,6 +8873,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8669	8	1047	8	1	, for dressing	285	f	\N	10	f	t	1
 8660	0	1047	1	1	, shredded	556	f	\N	1	f	t	1
 8661	4	1047	1	3	, cut into thin strips	2034	f	\N	2	f	t	1
+6982	8	652	1	1	, 5g	214	f	\N	5	f	t	1
+6984	8	652	1	1	, 3g	2041	f	\N	7	f	t	1
 \.
 
 
@@ -8911,8 +8931,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 907	Drain the asparagus. Reserve the tips. Purée the remainder with the dressing ingredients until smooth.	99	2	384
 3805	Scoop the ice cream and place it in a bowl beside the pear. Pour the caramel sauce over the pears and ice cream and serve.	656	3	0
 1317	Place ham in a nonstick 8-inch pan or griddle over medium heat and cook for 1 minute; flip and cook for another minute to heat through.	107	2	4
-4962	Prep bell pepper. Place olive oil in sauce pan on medium/high heat.	1046	0	0
 4959	Heat the baked beans on a stove. Serve warm.	1045	0	4
+4962	Prep bell pepper. Place olive oil in sauce pan on medium/high heat.	1046	0	4
 1403	Cover and let simmer for 8 minutes.	122	2	0
 1404	Rinse eggs under cold water until they are chilled. Serve.	122	3	0
 2525	Add cauliflower rice and chickpeas to the curry and cook for 5 minutes. Stir in the lime juice and season with more salt, if needed. Serve garnished with chopped cilantro.	266	4	0
@@ -9109,8 +9129,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3391	Form 8–12 patties and lay them on a baking dish.	547	2	0
 2335	Heat a large skillet or wok over low-medium heat. Add the ghee and allow it to melt.	243	0	4
 986	Peel the onions and slice into ½-inch rounds, then grill until softened and nicely charred on both sides, using tongs to transfer them straight to the dressing as you go.	109	1	12
+4965	While veggies cook, place chopped romaine on a platter or in a bowl. Prep beans, tomatoes and cheese, set aside.	1046	3	0
 2336	Add the garlic and onion. Stir intermittently until translucent.	243	1	4
 2338	Add the spinach and stir until just wilted. Remove from heat.	243	3	4
+4966	When bell pepper and corn are soft and slightly browned remove from heat and allow to cool. Make dressing.	1046	4	0
 939	In a food processor or a large mixing bowl, mix together the plain flour, the baking soda and enough sugar to taste. Add the egg, blend or stir to mix, then gradually pour in just enough of the buttermilk to make a thick, smooth batter.	100	0	0
 1161	Peel eggs, then slice in half and pop yolks into a medium-sized bowl. Add mayonnaise, minced jalapeños, vinegar, mustard, smoked paprika, and steak seasoning then mix and mash with a fork until smooth.	98	0	0
 3392	Bake for 45 minutes at 350°F, until meat is cooked through.	547	3	2
@@ -9620,7 +9642,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2437	After 5–10 minutes, when the chocolate is completely soft, swirl briefly with a fork to create a pattern.	240	1	0
 3263	Add the remaining ingredients and gently toss together.	479	2	0
 3373	Pour the hot water over the Oatmeal. Enjoy!	539	0	0
-2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	264	0	0
 2824	Dip the vegetables in the hummus. Enjoy!	252	0	0
 4551	Sprinkle the fried bread cubes on top and serve immediately.	963	4	0
 3113	Dip the apples in the peanut butter. Enjoy!	407	0	0
@@ -9631,6 +9652,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2485	Put the biscuits in a plastic bag and seal, the bash into small pieces with a rolling pin. Alternatively, break up the biscuits in a food processor but do not let them become too fine. Use the pulse button.	175	1	0
 691	Top with an equal amount of mozzarella and Parmesan cheese and pepperoni. Return to the oven and bake for about 5–7 minutes or until the cheese is melted and slightly browned.	64	5	0
 3264	Serve at room temperature, or refrigerate overnight and serve cold.	479	3	0
+2632	Trim the scallions, very finely slice at an angle with the chilies, pop both into a bowl of ice-cold water, add a swig of red wine vinegar, and put aside.	264	0	0
 2630	Finely slice the chilies. Sprinkle half of them into a 12-inch non-stick frying pan on a medium heat with 1 tablespoon of olive oil.	265	0	4
 3038	Carefully remove the fillets (the long finger shaped muscle on the back of each breast) and reserve for another use.	386	0	0
 3039	Place each chicken breast between two sheets of clear film (plastic wrap) and pound with the flat side of a meat hammer or roll out with a rolling pin to flatten to about 1cm/½in thick. Season with the cayenne pepper.	386	1	0
@@ -9992,6 +10014,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3061	Add the beaten eggs to the center of the pan and, stirring occasionally, scramble the eggs. Add more sesame oil by the half-teaspoonful as necessary to cook the eggs. Mix the scrambled eggs into the rest of the fried rice.	391	5	4
 3064	Preheat your oven to 400°F. Drain and rinse the chickpeas thoroughly, then spread them on a clean kitchen towel or paper towel. Pat them completely dry to remove moisture.	392	0	2
 3065	Spread the chickpeas in a single layer on a baking sheet (no oil or seasoning yet). Bake for 10–15 minutes, shaking the pan halfway through. This step helps dry them out for maximum crispiness.	392	1	2
+2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2–3 minutes.	264	1	4
 2967	Chop the eggplant into 1¼-inch chunks, add to a pan with the chili oil and a pinch of sea salt and black pepper, then turn the heat up to high, stirring regularly.	360	1	4
 3056	In a large, nonstick skillet or wok, heat the coconut oil over medium heat until rippling. Sauté the diced onion, stirring occasionally, until nearly translucent (about 4 minutes).	391	0	4
 3066	Remove the chickpeas from the oven and transfer them to a bowl while still warm. Toss with olive oil to coat evenly, then add salt, garlic powder, smoked paprika, black pepper, cayenne pepper, and cumin. Mix well to distribute the flavors.	392	2	0
@@ -10006,7 +10029,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3057	Add the garlic, and continue to sauté for another 2 minutes, or until the garlic is fragrant, and the onion is translucent.	391	1	4
 3058	Add the dried, riced cauliflower, then the sesame oil, tamari and mirin to the pan, and mix to combine. Add the frozen peas and carrots, and mix gently to combine.	391	2	4
 3042	Use a pestle and mortar to crush the coriander seeds, but don’t let them get too fine. 	387	0	2048
-2633	Place a large non-stick frying pan on a medium-high heat and lightly toast the sesame seeds for 1 minute. Drizzle in 1 tablespoon of olive oil, then crack in the eggs. Put a lid on the pan, and fry to your liking, about 2–3 minutes.	264	1	4
 3413	Get out a blender or immersion blender.	556	0	640
 3108	Mash the mint leaves in a mortar and pestle to release the flavor.	405	0	0
 2985	Scrape the chilli mixture into a high-sided pan over a medium-high heat, add the sugar and vinegar, then give everything a good stir.	370	1	0
@@ -10102,11 +10124,11 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4914	Put the salad in a serving bowl and top with the black bean salsa and cheddar.	726	1	0
 3486	Allow the chicken to cool slightly, slice into bite-sized pieces, and set aside.	576	0	0
 3487	To assemble your salad, take one large leaf of romaine lettuce and top with cooked chicken, sliced red pepper, sliced yellow pepper, and red onions.	576	1	0
+4963	Add diced bell pepper to pan. Sauté for five minutes. While peppers cook, shave the kernels off corn cobs with a sharp knife. (The easiest way to do this is in a bowl) Slice green onions.	1046	1	4
 4264	Store the balls in a sealed container in the fridge and enjoy!	857	3	65536
 3488	Drizzle with Thai dressing and garnish with chopped green onions and sesame seeds.	576	2	0
 3490	Drizzle the Sesame Almond dressing over the salad and toss well to combine.	577	1	0
 3491	Squeeze the lime over the salad, and then garnish with chopped cashews.	577	2	0
-4963	Add diced bell pepper to pan. Sauté for five minutes. While peppers cook, shave the kernels off corn cobs with a sharp knife. (The easiest way to do this is in a bowl) Slice green onions.	1046	1	0
 4654	For a little extra kick, top the chicken with a few pickled jalapeños.	186	3	0
 3496	Mash the veggies with a potato masher or put them in a high-powered blender to create a puréed soup. (When blending hot liquids, make sure the top of the blender is vented to let steam escape).	578	3	33408
 3492	Serve immediately.	577	3	0
@@ -10115,13 +10137,10 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4607	Pound the chicken breasts to an even thickness. Pat dry with a paper towel - moisture is the enemy of browning. Sprinkle both sides with kosher salt.	976	1	0
 4610	Transfer the pan with the chicken breasts to the oven and bake for 10–15 minutes, until cooked through.	976	4	2
 3497	Season with salt, pepper, and lemon juice or apple cider vinegar to taste.	578	4	0
-4964	Add corn kernels and onions to pan and sauté, stirring frequently for 4 more minutes. If corn starts popping turn down heat to medium.	1046	2	0
-4965	While veggies cook, place chopped romaine on a platter or in a bowl. Prep beans, tomatoes and cheese, set aside.	1046	3	0
 3478	In a small bowl, mix the olive oil and lemon juice. Set aside.	574	0	0
 3479	Toss the remaining ingredients in a large salad bowl.	574	1	0
 3480	Toss in the dressing and mix well, or serve it on the side.	574	2	0
 3493	Place the bone broth, beets, sweet potatoes, carrots, parsnips, onions, allspice, bay leaves, and garlic powder in a large stockpot and bring to a boil.	578	0	4
-4966	When bell pepper and corn are soft and slightly browned remove from heat and allow to cool. Make dressing.	1046	4	0
 4900	Taste the guacamole and add a little more lime juice and salt to suit your taste.	703	1	0
 3481	In a large skillet over medium heat, heat the coconut oil. To the oil, add the turkey, salt and pepper. Cook for 5 minutes, until brown.	575	0	4
 3482	To the turkey mixture, add the onion, garlic and sweet potato, and cook for 10 minutes, until vegetables are tender and turkey is cooked through.	575	1	4
@@ -10132,6 +10151,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3472	In a large bowl, add the next 4 ingredients (romaine lettuce through basil).	572	2	0
 3473	In a separate bowl, combine the lemon juice and extra virgin olive oil. Toss into the salad and add Everything Seasoning, salt and pepper. Mix well.	572	3	0
 4837	Preheat your oven to 325°F and line a baking sheet with parchment paper.	1005	0	2
+4964	Add corn kernels and onions to pan and sauté, stirring frequently for 4 more minutes. If corn starts popping turn down heat to medium.	1046	2	4
 3518	Line a dozen muffin tins with silicone or paper muffin liners (eggs can be sticky).	584	1	0
 3519	Melt coconut oil in a pan over medium heat. Add the Italian sausage, and break into small pieces.	584	2	4
 752	Top with scallions and cilantro. Drizzle with vinaigrette just before serving.	62	1	0
@@ -10476,8 +10496,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3786	Cook 1 cup of quinoa per package instructions.	650	0	0
 3794	Add the ingredients to the Baking Pan in the order listed.	653	0	8192
 3795	Select Course No. 2 and press start.	653	1	8192
-3792	Add the ingredients to the Baking Pan in the order listed.	652	0	8192
-3793	Press the COURSE button to select Course No. 3 and press the START button.	652	1	8192
 3801	Combine all three. Serve and enjoy.	655	0	0
 3754	Blend together and enjoy.	643	0	128
 3796	Bring a medium pot of salted water to a boil. Add the pasta and cook according to package directions.	654	0	4
@@ -10508,6 +10526,8 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3815	Pour the eggs into the pan and stir for 1 minute. Add the cheddar and cook until the eggs are cooked, about 2 minutes.	660	2	0
 3816	Put the egg and sausage mixture in the center of the tortilla, and fold the bottom third of the tortilla up and over the mixture. Fold the two sides of the tortilla into the center and foll forward to seal.	660	3	0
 3524	Top with a pepperonli slice (optional), and bake for 30–35 minutes, until the middles are set and not jiggly.	584	7	2
+3792	Add the ingredients to the Baking Pan in the order listed.	652	0	8192
+3793	Press the COURSE button to select Course No. 3 and press the START button.	652	1	8192
 3800	Taste the pasta and season with salt, if needed. Put the pasta in a serving bowl and top with the remaining 1 tablespoon of Parmesan. 	654	4	0
 3146	Melt coconut oil in a pan over medium heat, and add the onion and garlic, until translucent, about 5 minutes.	418	1	4
 4767	Sprinkle with chopped cilantro then serve as is, or with tortilla chips or tortillas, and guacamole.	319	3	0
@@ -11278,7 +11298,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 962, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 995, true);
 
 
 --
@@ -12059,5 +12079,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict QPdkiIXpbaK4pBNJWwRf9XfbdFwnSGbYhdeFrhrqhJ6oxXoZjkxSBiDDFXjqtGy
+\unrestrict xcKlobTJzKVl9DHb4rgivdXp4A4xrqEZUhZfSl6cIaUqV0DQDNU4XG8tMdqDSLf
 

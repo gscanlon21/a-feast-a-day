@@ -2,6 +2,9 @@
 
 namespace Core.Models.Ingredients;
 
+/// <summary>
+/// Order of ingredients in a recipe.
+/// </summary>
 public enum IngredientOrder
 {
     [Display(Name = "Order Used")]

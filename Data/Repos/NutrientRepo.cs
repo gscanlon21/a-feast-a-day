@@ -20,6 +20,7 @@ public class NutrientRepo
         return await _context.Ingredients.AsNoTracking().AsSplitQuery()
             .Include(i => i.IngredientAttr).Include(i => i.CanadaNutrients)
             .Where(i => i.IngredientAttr!.HC_Id.HasValue)
+            .Where(i => i.IngredientAttr!.HC_Id > 0)
             .ToListAsync();
     }
 
@@ -29,6 +30,7 @@ public class NutrientRepo
         return await _context.Ingredients.AsNoTracking().AsSplitQuery()
             .Include(i => i.IngredientAttr).Include(i => i.USDANutrients)
             .Where(i => i.IngredientAttr!.FDC_ID.HasValue)
+            .Where(i => i.IngredientAttr!.FDC_ID > 0)
             .ToListAsync();
     }
 

@@ -36,7 +36,7 @@ internal class RegenerateNutrients
             builder.AppendLine($"    /// {dailyAllowanceGroup.Key.Name}");
             builder.AppendLine($"    /// </summary>");
 
-            foreach (var dailyAllowance in dailyAllowanceGroup.Value)
+            foreach (var dailyAllowance in dailyAllowanceGroup.Value.OrderBy(di => di.Person.GetOrder()))
             {
                 builder.AppendLine($"    [DailyAllowance({dailyAllowance.Min ?? -1}, {dailyAllowance.Max ?? -1}, Measure.{dailyAllowance.Measure}, Multiplier.{dailyAllowance.Multiplier}, CaloriesPerGram = {dailyAllowance.CaloriesPerGram}, For = Person.{dailyAllowance.Person})]");
             }

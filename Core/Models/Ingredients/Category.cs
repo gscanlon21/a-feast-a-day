@@ -2,7 +2,9 @@
 
 namespace Core.Models.Ingredients;
 
-[Flags]
+/// <summary>
+/// Grocery store aisles.
+/// </summary>
 public enum Category
 {
     [Display(Name = "None", Order = 0)]
@@ -48,23 +50,15 @@ public enum Category
     Household = 13,
 }
 
-/* Swap two measures.
+/* Swap two categories.
 do $$
 declare 
-	BeginMeasure integer = 99;
- 	EndMeasure integer = 99;
- 	TempMeasure integer = 999;
+	BeginCategory integer = 99;
+ 	EndCategory integer = 99;
+ 	TempCategory integer = 999;
 begin
-	update ingredient set "DefaultMeasure" = TempMeasure where "DefaultMeasure" = EndMeasure;
-	update nutrient set "Measure" = TempMeasure where "Measure" = EndMeasure;
-	update recipe_ingredient set "Measure" = TempMeasure where "Measure" = EndMeasure;
-
-	update ingredient set "DefaultMeasure" = EndMeasure where "DefaultMeasure" = BeginMeasure;
-	update nutrient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
-	update recipe_ingredient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
-
-	update ingredient set "DefaultMeasure" = BeginMeasure where "DefaultMeasure" = TempMeasure;
-	update nutrient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
-	update recipe_ingredient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
+	update ingredient set "Category" = TempCategory where "Category" = EndCategory;
+	update ingredient set "Category" = EndCategory where "Category" = BeginCategory;
+	update ingredient set "Category" = BeginCategory where "Category" = TempCategory;
 end; $$;
 */

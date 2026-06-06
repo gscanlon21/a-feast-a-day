@@ -2,7 +2,9 @@
 
 namespace Core.Models.Ingredients;
 
-[Flags]
+/// <summary>
+/// Grocery store sections.
+/// </summary>
 public enum SubCategory
 {
     [Display(Name = "None", Order = 0)]
@@ -69,23 +71,15 @@ public enum SubCategory
     Beverage = 20,
 }
 
-/* Swap two measures.
+/* Swap two sub categories.
 do $$
 declare 
-	BeginMeasure integer = 99;
- 	EndMeasure integer = 99;
- 	TempMeasure integer = 999;
+	BeginSubCategory integer = 99;
+ 	EndSubCategory integer = 99;
+ 	TempSubCategory integer = 999;
 begin
-	update ingredient set "DefaultMeasure" = TempMeasure where "DefaultMeasure" = EndMeasure;
-	update nutrient set "Measure" = TempMeasure where "Measure" = EndMeasure;
-	update recipe_ingredient set "Measure" = TempMeasure where "Measure" = EndMeasure;
-
-	update ingredient set "DefaultMeasure" = EndMeasure where "DefaultMeasure" = BeginMeasure;
-	update nutrient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
-	update recipe_ingredient set "Measure" = EndMeasure where "Measure" = BeginMeasure;
-
-	update ingredient set "DefaultMeasure" = BeginMeasure where "DefaultMeasure" = TempMeasure;
-	update nutrient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
-	update recipe_ingredient set "Measure" = BeginMeasure where "Measure" = TempMeasure;
+	update ingredient set "SubCategory" = TempSubCategory where "SubCategory" = EndSubCategory;
+	update ingredient set "SubCategory" = EndSubCategory where "SubCategory" = BeginSubCategory;
+	update ingredient set "SubCategory" = BeginSubCategory where "SubCategory" = TempSubCategory;
 end; $$;
 */
