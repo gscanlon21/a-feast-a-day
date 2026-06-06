@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Data.Entities.Users;
+using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Advanced;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Renders an alert box summary of when the user's next deload week will occur.
@@ -13,7 +14,7 @@ public class AdvancedViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Advanced";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         return View("Advanced", new AdvancedViewModel(user, token));
     }

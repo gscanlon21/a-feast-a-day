@@ -1,8 +1,9 @@
-﻿using Data.Repos;
+﻿using Data.Entities.Users;
+using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Confirmation;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Renders an alert box summary whether the user is confirmed or not.
@@ -21,7 +22,7 @@ public class ConfirmationViewComponent : ViewComponent
         _userRepo = userRepo;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         if (user.LastActive.HasValue)
         {

@@ -1,5 +1,6 @@
 ﻿using Data;
 using Data.Entities.Ingredients;
+using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +8,9 @@ using Web.Views.Shared.Components.UpsertIngredient;
 
 namespace Web.Components.Ingredients;
 
-
+/// <summary>
+/// Render a control to edit the IngredientAttr.
+/// </summary>
 public class IngredientAttrViewComponent : ViewComponent
 {
     private readonly UserRepo _userRepo;
@@ -24,7 +27,7 @@ public class IngredientAttrViewComponent : ViewComponent
     /// </summary>
     public const string Name = "IngredientAttr";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient? ingredient = null)
+    public async Task<IViewComponentResult> InvokeAsync(User user, Ingredient? ingredient = null)
     {
         if (ingredient == null)
         {

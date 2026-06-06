@@ -3,12 +3,13 @@ using Core.Dtos.User;
 using Core.Models.User;
 using Data;
 using Data.Entities.Ingredients;
+using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.IngredientAlternatives;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 public class IngredientAlternativesViewComponent : ViewComponent
 {
@@ -26,7 +27,7 @@ public class IngredientAlternativesViewComponent : ViewComponent
         _userRepo = userRepo;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient ingredient)
+    public async Task<IViewComponentResult> InvokeAsync(User user, Ingredient ingredient)
     {
         // User must've created the ingredient to be able to edit it.
         if (ingredient.UserId != user.Id && !user.Features.HasFlag(Features.Admin))

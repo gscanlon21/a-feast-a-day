@@ -3,13 +3,14 @@ using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
+using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.Recipes;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Renders a list of the user's custom recipes.
@@ -30,7 +31,7 @@ public class RecipesViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Recipes";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         var all = bool.TryParse(Request.Query["all"], out bool allTmp)
             && allTmp && user.Features.HasFlag(Features.Admin);

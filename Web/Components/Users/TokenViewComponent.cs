@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Data.Entities.Users;
+using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Token;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Lets the user generate an app access token.
@@ -13,7 +14,7 @@ public class TokenViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Token";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         return View("Token", new TokenViewModel()
         {

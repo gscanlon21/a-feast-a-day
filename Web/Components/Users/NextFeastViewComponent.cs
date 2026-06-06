@@ -1,10 +1,11 @@
 ﻿using Core.Models.User;
 using Data;
+using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.NextFeast;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Renders an alert box summary of when the user's next feast will become available.
@@ -23,7 +24,7 @@ public class NextFeastViewComponent : ViewComponent
     /// </summary>
     public const string Name = "NextFeast";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         var nextSendDate = DateTime.UtcNow.Hour <= user.SendHour ? DateHelpers.Today : DateHelpers.Today.AddDays(1);
         // Next send date is a rest day and user is not the debug user, next send date is the day after.

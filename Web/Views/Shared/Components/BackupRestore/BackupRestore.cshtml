@@ -8,13 +8,12 @@
                 <input type="submit" value="Backup" class="btn btn-outline-secondary" />
             </div>
         </form>
-        <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.Backup)" asp-route-email="@Model.Email" asp-route-token="@Model.Token" method="post"
-              class="col-auto">
-            <div>
-                <input type="submit" value="Restore" class="btn btn-outline-secondary" />
+        <div class="col-auto pe-0">
+            <input id="r-upload" type="file" class="btn btn-outline-secondary d-none" />
+            <div class="input-group">
+                <label for="r-upload" class="btn btn-outline-secondary">Restore</label>
+                <input id="r-filename" type="text" class="form-control border-secondary text-secondary" value="No file choosen" disabled="disabled">
             </div>
-        </form>
+        </div>
     </div>
 </div>
-
-

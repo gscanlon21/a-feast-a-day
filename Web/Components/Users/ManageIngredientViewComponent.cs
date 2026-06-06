@@ -1,12 +1,13 @@
 ﻿using Data;
 using Data.Entities.Ingredients;
+using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.ManageIngredient;
 using Web.Views.UserIngredients;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 public class ManageIngredientViewComponent : ViewComponent
 {
@@ -24,7 +25,7 @@ public class ManageIngredientViewComponent : ViewComponent
     /// </summary>
     public const string Name = "ManageIngredient";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Ingredient ingredient, UserManageIngredientViewModel.Params parameters)
+    public async Task<IViewComponentResult> InvokeAsync(User user, Ingredient ingredient, UserManageIngredientViewModel.Params parameters)
     {
         var userIngredient = await _context.UserIngredients.AsNoTracking()
             .Where(r => r.IngredientId == parameters.IngredientId)

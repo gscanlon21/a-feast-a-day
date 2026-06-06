@@ -67,7 +67,7 @@ public class NutrientRepo
     public async Task<Dictionary<Nutrient, List<DietaryIntake>>> GetDietaryIntakeMap()
     {
         return await _context.Nutrients.AsNoTracking()
-            .Include(n => n.DietaryIntakes!.OrderBy(di => di.Person))
-            .ToDictionaryAsync(n => n, n => n.DietaryIntakes!.Where(di => Enum.IsDefined(di.Person)).ToList());
+            .Include(n => n.DietaryIntakes.OrderBy(di => di.Person))
+            .ToDictionaryAsync(n => n, n => n.DietaryIntakes.Where(di => Enum.IsDefined(di.Person)).ToList());
     }
 }

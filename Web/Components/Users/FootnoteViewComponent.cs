@@ -1,10 +1,11 @@
 ﻿using ADay.Core.Models.Footnote;
 using Data;
+using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.Footnote;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 public class FootnoteViewComponent : ViewComponent
 {
@@ -20,7 +21,7 @@ public class FootnoteViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Footnote";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         // Custom footnotes must be enabled in the user edit form to show in the newsletter.
         if (!user.FootnoteType.HasFlag(FootnoteType.Custom))

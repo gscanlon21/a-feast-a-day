@@ -2,13 +2,14 @@
 using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Data;
+using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.IgnoredRecipes;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Renders the user's ignored recipes.
@@ -29,7 +30,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         // See if the user recipes exist on the user obj.
         var userRecipes = user.UserRecipes.NullIfEmpty()?

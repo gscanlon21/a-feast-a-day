@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Edit;
 using static Data.Entities.Users.User;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// The edit form for the user's preferences.

@@ -1,8 +1,9 @@
-﻿using Data.Repos;
+﻿using Data.Entities.Users;
+using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Nutrient;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 /// <summary>
 /// Renders an alert box summary of how often each nutrient the user has worked over the course of a month.
@@ -21,7 +22,7 @@ public class NutrientViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Nutrient";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         if (user == null)
         {

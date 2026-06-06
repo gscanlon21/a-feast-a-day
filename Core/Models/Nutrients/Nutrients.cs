@@ -800,7 +800,7 @@ public enum Nutrients
     Omega_3 = 52,
 
     /// <summary>
-    /// Omega 3 (ALA) Fatty Acids
+    /// Omega 3 Fatty Acids (ALA)
     /// </summary>
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_1_2_Years)]
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_1_2_Years)]
@@ -820,11 +820,11 @@ public enum Nutrients
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Omega 3 (ALA) Fatty Acids", Order = 14000)]
+    [Display(Name = "Omega 3 Fatty Acids (ALA)", Order = 14000)]
     Omega_3_ALA = 53,
 
     /// <summary>
-    /// Omega 3 (EPA) Fatty Acids
+    /// Omega 3 Fatty Acids (EPA)
     /// </summary>
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
@@ -834,11 +834,11 @@ public enum Nutrients
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(0.6, 1.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Omega 3 (EPA) Fatty Acids", Order = 15000)]
+    [Display(Name = "Omega 3 Fatty Acids (EPA)", Order = 15000)]
     Omega_3_EPA = 54,
 
     /// <summary>
-    /// Omega 3 (EPA/DHA) Fatty Acids
+    /// Omega 3 Fatty Acids (EPA/DHA)
     /// </summary>
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_1_2_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_1_2_Years)]
@@ -864,7 +864,7 @@ public enum Nutrients
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Omega 3 (EPA/DHA) Fatty Acids", Order = 15000)]
+    [Display(Name = "Omega 3 Fatty Acids (EPA/DHA)", Order = 15000)]
     Omega_3_EPA_DHA = 55,
 
     /// <summary>
@@ -882,7 +882,7 @@ public enum Nutrients
     Omega_6 = 56,
 
     /// <summary>
-    /// Omega 6 (LA) Fatty Acids
+    /// Omega 6 Fatty Acids (LA)
     /// </summary>
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_1_2_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_1_2_Years)]
@@ -902,11 +902,11 @@ public enum Nutrients
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Omega 6 (LA) Fatty Acids", Order = 15010)]
+    [Display(Name = "Omega 6 Fatty Acids (LA)", Order = 15010)]
     Omega_6_LA = 57,
 
     /// <summary>
-    /// Omega 3 (DHA) Fatty Acids
+    /// Omega 3 Fatty Acids (DHA)
     /// </summary>
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
@@ -916,7 +916,7 @@ public enum Nutrients
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Omega 3 (DHA) Fatty Acids", Order = 15300)]
+    [Display(Name = "Omega 3 Fatty Acids (DHA)", Order = 15300)]
     Omega_3_DHA = 58,
 
     /// <summary>

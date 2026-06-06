@@ -2,6 +2,7 @@
 using Core.Models.User;
 using Data;
 using Data.Entities.Recipes;
+using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,7 +12,7 @@ using Web.Code.Extensions;
 using Web.Code.TempData;
 using Web.Views.Shared.Components.UpsertRecipe;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 public class UpsertRecipeViewComponent : ViewComponent
 {
@@ -30,7 +31,7 @@ public class UpsertRecipeViewComponent : ViewComponent
     public const string Name = "UpsertRecipe";
 
     /// <param name="recipe">The existing recipe to edit.</param>
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, Recipe? recipe = null, Section section = Section.None)
+    public async Task<IViewComponentResult> InvokeAsync(User user, Recipe? recipe = null, Section section = Section.None)
     {
         // User must have created the recipe to be able to edit it.
         if (recipe != null && user.Id != recipe.UserId && !user.Features.HasFlag(Features.Admin))

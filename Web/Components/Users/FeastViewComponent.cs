@@ -1,8 +1,9 @@
-﻿using Data.Repos;
+﻿using Data.Entities.Users;
+using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.CurrentFeast;
 
-namespace Web.Components.User;
+namespace Web.Components.Users;
 
 public class CurrentFeastViewComponent : ViewComponent
 {
@@ -18,7 +19,7 @@ public class CurrentFeastViewComponent : ViewComponent
     /// </summary>
     public const string Name = "CurrentFeast";
 
-    public async Task<IViewComponentResult> InvokeAsync(Data.Entities.Users.User user, string token)
+    public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         // User has not confirmed their account, let the backfill finish first.
         // Feasts cannot send until the user has confirmed their account.
