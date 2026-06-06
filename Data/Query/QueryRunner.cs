@@ -325,17 +325,17 @@ public class QueryRunner(Section section)
             }
         }
 
-        // Order after the query or you get cartesian explosion. List size doesn't change.
-        var orderedResults = new List<InProgressQueryResults>(filteredResults.Count);
+        // Order after the query or you get cartesian explosion.
         if (SelectionOptions.Randomized)
         {
-            // Randomize the order. Useful for the backfill because those feasts don't update the last seen date.
-            orderedResults = filteredResults.OrderBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue)).ToList();
+            // Randomize the order. Useful for the backfill because
+            // ... those feasts don't update the last seen date.
+            filteredResults.ShuffleInPlace();
         }
         else
         {
             // Order by recipes that are still pending refresh.
-            orderedResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
+            filteredResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
                 // Show recipes that the user has rarely seen.
                 // NOTE: When the two recipe's LastSeen dates are the same:
                 // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
@@ -348,8 +348,8 @@ public class QueryRunner(Section section)
         }
 
         // List size doesn't change. Use the same capacity as the orderedResults.
-        var recipeResults = new List<QueryResults>(orderedResults.Count);
-        foreach (var recipe in orderedResults)
+        var recipeResults = new List<QueryResults>(filteredResults.Count);
+        foreach (var recipe in filteredResults)
         {
             // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
             recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
