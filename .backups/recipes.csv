@@ -40,7 +40,7 @@
 59	Popcorn	\N	\N	\N	32	5	0	1	t	popcorn.jpg	0	\N	f	f
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	chips-salsa-alt.jpg	0	\N	f	f
 62	Edamame & Veggie Rice Bowl	\N	\N	\N	12	5	5	2	t	edamame-veggie-rice-bowl.jpg	0	https://www.eatingwell.com/recipe/262096/edamame-veggie-rice-bowl/	f	f
-63	Grilled Sausage-Basil Pizzas	\N	\N	\N	4	15	15	4	t	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
+63	Grilled Sausage-Basil Pizzas	\N	Too heavy.	\N	8	15	15	4	t	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
 64	French Bread Pizza	\N	\N	\N	4	15	5	4	t	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
 65	Hard Boiled Eggs	\N	\N	\N	16	10	2	1	t	hardboiled-eggs.jpg	0	\N	t	f
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	frittata-base.jpg	6	\N	t	f
@@ -227,7 +227,7 @@
 314	Sweet & Sour Chicken Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	12	15	5	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
 315	Baked Saffron Rice	From Jamie Oliver's 5 Ingredients	\N	\N	16	20	6	4	t	baked-saffron-rice.jpg	0	\N	f	f
 316	Black Tahini Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	3	2	t	black-tahini-noodles.jpg	0	\N	f	f
-317	Italian Baked Rice	From Jamie Oliver's 5 Ingredients	\N	\N	8	40	10	4	t	italian-baked-rice.jpg	0	\N	f	f
+317	Italian Baked Rice	\N	\N	\N	8	40	10	4	t	italian-baked-rice.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 318	Ham & Egg Curried Noodles	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	0	2	t	ham-egg-curried-noodles.jpg	0	\N	f	f
 319	Chorizo, Sweet Potato & Black Bean Rice Skillet	\N	\N	\N	8	30	10	6	t	chorizo-sweet-potato-black-beans-rice.jpg	0	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	f	f
 320	Comforting Sausage Bake	\N	\N	\N	8	45	10	4	t	sausage-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f

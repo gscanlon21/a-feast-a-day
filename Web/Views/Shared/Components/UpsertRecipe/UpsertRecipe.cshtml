@@ -239,13 +239,13 @@
                     <div class="row row-gap-1 mb-2">
                         <div class="col">
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
-                            <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" autocomplete="off" />
+                            <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder="" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Recipe.RecipeIngredients[id].Attributes" class="text-danger"></span>
                         </div>
 
                         <div class="col-auto">
                             <label asp-for="Recipe.RecipeIngredients[id].Group" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Group)</label>
-                            <input asp-for="Recipe.RecipeIngredients[id].Group" type="text" placeholder="Dressing" class="form-control" autocomplete="off" />
+                            <input asp-for="Recipe.RecipeIngredients[id].Group" type="text" placeholder="" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Recipe.RecipeIngredients[id].Group" class="text-danger"></span>
                         </div>
                     </div>
