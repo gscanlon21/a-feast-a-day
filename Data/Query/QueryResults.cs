@@ -1,6 +1,5 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
-using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
 using Data.Code.Extensions;
@@ -32,8 +31,8 @@ public class QueryResults : IRecipeCombo
     }
 
     public Recipe Recipe { get; init; }
-    public Core.Models.Newsletter.Section Section { get; init; }
     public UserRecipe? UserRecipe { get; init; }
+    public Core.Models.Newsletter.Section Section { get; init; }
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; }
     public Allergens Allergens => GenericBitwise<Allergens>.Or(RecipeIngredients
         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
