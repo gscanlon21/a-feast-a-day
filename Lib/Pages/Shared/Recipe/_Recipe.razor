@@ -98,15 +98,21 @@
             <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Equipment</b>: @Model.Recipe.Equipment</div>
         }
 
-        <ul style="margin-block:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
-            @foreach (var ingredient in Model.RecipeIngredients)
+        <div style="margin-block:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
+            @foreach (var ingredientGroup in Model.RecipeIngredients.GroupBy(ri => ri.Group))
             {
-                <li class="@ingredient.Partial.ToClass() @ingredient.IsUnwantedAndHasAlternatives.ToClass()"
-                    style="margin-block:.35em;list-style-type:@ingredient.GetListStyleType();font-weight:@ingredient.GetFontWeight();@(ingredient.IsUnwantedAndHasAlternatives.ToStyle("color:red") + ingredient.Partial.ToStyle("color:purple"))">
-                    @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName(DisplayType.ShortName)) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
-                </li>
+                <div style="line-height:1;font-weight:bold;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">@ingredientGroup.Key</div>
+                <ul style="margin-block-end:2ex;padding-inline-start:0;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
+                    @foreach (var ingredient in ingredientGroup)
+                    {
+                        <li class="@ingredient.Partial.ToClass() @ingredient.IsUnwantedAndHasAlternatives.ToClass()"
+                            style="margin-block:.35em;list-style-type:@ingredient.GetListStyleType();font-weight:@ingredient.GetFontWeight();@(ingredient.IsUnwantedAndHasAlternatives.ToStyle("color:red") + ingredient.Partial.ToStyle("color:purple"))">
+                            @(ingredient.Quantity == Fractions.Fraction.Zero ? "" : $"{ingredient.Quantity} ")@(ingredient.Measure.GetSingleDisplayName(DisplayType.ShortName)) @(ingredient.Name)@(string.IsNullOrWhiteSpace(ingredient.Attributes) ? "" : (ingredient.Attributes.StartsWith(',') ? ingredient.Attributes : $" {ingredient.Attributes}"))
+                        </li>
+                    }
+                </ul>
             }
-        </ul>
+        </div>
 
         <ul style="margin-block:0;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
             @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))

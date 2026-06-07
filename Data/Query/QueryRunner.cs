@@ -94,6 +94,7 @@ public class QueryRunner(Core.Models.Newsletter.Section section)
                 {
                     Id = ri.Id,
                     Order = ri.Order,
+                    Group = ri.Group,
                     Measure = ri.Measure,
                     Optional = ri.Optional,
                     CoarseCut = ri.CoarseCut,
@@ -429,7 +430,7 @@ public class QueryRunner(Core.Models.Newsletter.Section section)
                             : Math.Max(0, recipe.WeeksFromLastSeen - (int)Math.Floor(finalResults.Count / 7d));
 
                         // This way, recipes that overwork a lot of nutrients are spaced out more than the healthier recipes.
-                        if (overworkedNutrients.Count(recipe.UniqueWorkedNutrients.Contains) > nutrientsToOverwork)
+                        if (recipe.UniqueWorkedNutrients.Count(overworkedNutrients.Contains) > nutrientsToOverwork)
                         {
                             continue;
                         }
@@ -458,7 +459,7 @@ public class QueryRunner(Core.Models.Newsletter.Section section)
                                 : Math.Max(1, NutrientOptions.AtLeastXNutrientsPerRecipe.Value + recipe.WeeksTillLastSeen);
 
                             // Include the prerequisite recipes in this calculation.
-                            if (recipe.UniqueWorkedNutrients.Count < nutrientsToWork)
+                            if (recipe.UniqueWorkedNutrients.Count(unworkedNutrients.Contains) < nutrientsToWork)
                             {
                                 continue;
                             }
@@ -475,6 +476,11 @@ public class QueryRunner(Core.Models.Newsletter.Section section)
             }
             // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
             while (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1);
+
+            /* Show actual nutrients selected:
+            var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, allNutrients, partIngredients);
+            UserLogs.Log(UserOptions, $"Nutrient results for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, allNutrientsWorked.Debug())}");
+            //*/
         }
 
         return orderBy switch

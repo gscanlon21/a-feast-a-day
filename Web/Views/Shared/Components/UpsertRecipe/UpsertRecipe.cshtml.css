@@ -9,3 +9,8 @@
 ::deep .field-validation-valid {
     display: none;
 }
+
+output {
+    text-align: end;
+    width: 4ch;
+}

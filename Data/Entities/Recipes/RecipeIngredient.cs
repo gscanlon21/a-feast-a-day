@@ -86,6 +86,9 @@ public class RecipeIngredient
     [Display(Name = "Measure")]
     public Measure Measure { get; set; }
 
+    [Display(Name = "Group")]
+    public string? Group { get; init; }
+
     /// <summary>
     /// How to scale the quantity of the cooked ingredient.
     /// </summary>

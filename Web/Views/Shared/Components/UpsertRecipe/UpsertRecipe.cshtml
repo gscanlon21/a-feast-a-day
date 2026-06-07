@@ -236,17 +236,33 @@
                         </div>
                     </div>
 
-                    <div class="row row-gap-1">
+                    <div class="row row-gap-1 mb-2">
                         <div class="col">
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
                             <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder=", diced, minced, thinly chopped..." class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Recipe.RecipeIngredients[id].Attributes" class="text-danger"></span>
                         </div>
 
                         <div class="col-auto">
-                            <label asp-for="Recipe.RecipeIngredients[id].CookedScale" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)</label>
-                            <select asp-for="Recipe.RecipeIngredients[id].CookedScale" asp-items="@Model.CookedScaleSelect" class="form-control searchable" style="width:100%;" aria-describedby="cooked-scale-help" autocomplete="off"></select>
-                            <span asp-validation-for="Recipe.RecipeIngredients[id].CookedScale" class="text-danger"></span>
-                            <span id="cooked-scale-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)</span>
+                            <label asp-for="Recipe.RecipeIngredients[id].Group" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Group)</label>
+                            <input asp-for="Recipe.RecipeIngredients[id].Group" type="text" placeholder="Dressing" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Recipe.RecipeIngredients[id].Group" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)</label>
+                            <div><span asp-validation-for="Recipe.RecipeIngredients[id].CookedScale" class="text-danger"></span></div>
+                            <div style="display:flex;column-gap:1ex;">
+                                <output name="cookedScaleOutput@(id)" for="@Html.IdFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)">@Model.Recipe.RecipeIngredients[id].CookedScale</output>
+                                <div style="display:flex;flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
+                                    <input type="range" asp-for="Recipe.RecipeIngredients[id].CookedScale" value="@Model.Recipe.RecipeIngredients[id].CookedScale" class="w-100"
+                                           min="@IngredientConsts.CookedScaleMin" max="@IngredientConsts.CookedScaleMax" step="@IngredientConsts.CookedScaleStep" 
+                                           oninput="cookedScaleOutput@(id).value = this.valueAsNumber" />
+                                </div>
+                            </div>
+                            <div id="@Html.IdFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)-help" class="form-text"></div>
                         </div>
                     </div>
 

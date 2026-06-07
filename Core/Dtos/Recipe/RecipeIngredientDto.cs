@@ -11,6 +11,7 @@ namespace Core.Dtos.Recipe;
 public class RecipeIngredientDto
 {
     public string Name { get; init; } = null!;
+    public string? Group { get; init; }
 
     /// <summary>
     /// Chopped, thinly sliced...

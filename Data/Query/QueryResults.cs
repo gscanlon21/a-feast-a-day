@@ -123,6 +123,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public required bool CoarseCut { get; init; }
     public required bool Adjustable { get; init; }
     public required Measure Measure { get; set; }
+    public required string? Group { get; init; }
     public required string? Attributes { get; set; }
     public required int QuantityNumerator { get; set; }
     public required int QuantityDenominator { get; set; }

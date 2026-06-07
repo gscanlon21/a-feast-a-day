@@ -13,3 +13,8 @@
 .input-group-vertical :only-child {
     border-radius: 0 var(--bs-btn-border-radius) var(--bs-btn-border-radius) 0;
 }
+
+output {
+    text-align: end;
+    width: 3ch;
+}
