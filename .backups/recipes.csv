@@ -72,7 +72,7 @@
 92	Chicken w/ Lemon and Garlic	For a variation on this dish, try using strips of turkey breast or pork fillet. They need slightly longer cooking. The whites of spring onions (scallions) can replace shallots, and the chopped green tops can be used instead of parsley.	\N	\N	12	5	5	2	t	chicken-lemon-garlic.jpg	0	\N	f	f
 93	Pork Kebab w/ BBQ Sauce	\N	\N	\N	12	10	5	4	t	bbq-pork-kebab.jpg	0	\N	f	f
 94	Balsamic Vinaigrette	\N	\N	\N	0	0	5	1	t	balsamic-vinaigrette.jpg	6	https://barefeetinthekitchen.com/best-balsamic-vinaigrette/	f	f
-95	Buttered Sweet Corn w/ Bacon	\N	\N	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
+95	Buttered Sweet Corn w/ Bacon	\N	Too heavy.	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
 97	Quinoa Pepperoni Pizza	\N	\N	\N	8	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
 98	Loaded Deviled Eggs	\N	\N	\N	20	20	5	6	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
@@ -174,7 +174,7 @@
 196	Crispy Five-Spice Chicken	Instead of the vegetables listed above for the stir-fry, try a mixture of snow peas, baby corn, orange bell peppers, spring onions (scallions) and celery.	\N	\N	4	10	5	4	t	\N	0	\N	f	f
 197	Chicken Chow Mein	\N	\N	\N	12	14	6	4	t	beef-noodles.jpg	0	\N	f	f
 198	5-Ingredient Guacamole	Serve with Tortilla Chips.	\N	\N	0	0	10	1	t	guacamole.jpg	6	https://asassyspoon.com/guacamole/#wprm-recipe-container-2857	f	f
-231	Pork w/ Cream and Apple Sauce	Serve with red cabbage or fried polenta.	\N	\N	4	18	2	4	t	pork-apples.jpg	0	\N	f	f
+231	Pork w/ Cream and Apple Sauce	Serve with red cabbage or fried polenta.	Too heavy.	\N	4	18	2	4	t	pork-apples.jpg	0	\N	f	f
 232	Collagen Packed Blueberry Gummies	\N	\N	\N	16	120	15	2	t	blueberry-gummies.jpg	0	https://www.drkarafitzgerald.com/recipe/got-crush-collagen-try-blueberry-gummies/	f	f
 233	Keto Mint Chocolate Chip Dessert	\N	\N	\N	64	120	5	2	t	chocolate-mint-muffins.jpg	0	https://www.drkarafitzgerald.com/recipe/mint-chocolate-chip-keto-dessert/	f	f
 234	Oven Baked Beet Chips	\N	\N	\N	48	55	35	2	t	oven-baked-beet-chips.jpg	0	https://www.drkarafitzgerald.com/recipe/oven-baked-beet-chips/	f	f
@@ -278,7 +278,7 @@
 397	Broccoli & Everything Salad	Use fresh broccoli, not frozen.	\N	\N	20	0	20	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 398	Maple Lime Pork Roast	\N	\N	\N	8	360	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 399	Chicken Stew	\N	\N	\N	8	120	10	2	t	beef-stew.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-400	Probiotic Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	\N	f	f
+400	Probiotic Salad	\N	\N	\N	22	0	10	2	t	grilled-fattoush-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 401	Quinoa Chickpea Summer Salad	\N	\N	\N	20	20	10	4	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 402	Fruit Salad	\N	\N	\N	20	0	10	8	t	fruit-skewers.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 403	Spiced Kale Chips	\N	\N	\N	16	10	5	2	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -303,7 +303,7 @@
 422	Lemon Energy Bites	\N	\N	\N	16	0	5	12	t	lemon-energy-bites.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 423	Steamed Kale	\N	\N	\N	16	5	5	4	t	roasted-kale.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 424	Chickpea Flour Pancakes	Pancake filling ideas You can add 1/3 cup vegan dark chocolate chips or fresh blueberries to the batter before cooking. Freezing You can freeze the cooked pancakes in a zip bag or airtight container. Make sure they don’t overlap. It makes it easier to defrost one-by-one. Defrost 3-4 hours or overnight at room temperature. Rewarm in a pancake griddle or toast for a few minutes in a toaster. Make ahead: You can make the batter ahead and cook your pancakes the day in the morning.	Too complicated.	\N	2	5	5	2	t	buttermilk-pancakes.jpg	0	https://www.theconsciousplantkitchen.com/chickpea-flour-pancakes/	f	f
-425	Bacon Wrapped Avocado Slices	\N	\N	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+425	Bacon Wrapped Avocado Slices	\N	Too heavy.	\N	16	20	5	4	t	bacon-wrapped-avocado.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 426	Honey-Cumin Dressing	\N	\N	\N	0	0	10	2	t	honey-mustard-dressing.jpg	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 427	Coleslaw	\N	\N	\N	20	0	10	4	t	party-coleslaw.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 428	Hot Lemon Water	\N	\N	\N	128	2	1	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -428,10 +428,10 @@
 615	Chicken w/ Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
 616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f
 617	Steak and Blue Cheese on Ciabatta	Part-baked bread cooks in about 8 minutes in a hot oven, but if even that is too long, just warm a regular baked ciabatta or French stick.	\N	\N	8	15	5	2	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
-618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	\N	\N	8	12	8	4	t	\N	0	\N	f	f
+618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	Too heavy.	\N	8	12	8	4	t	\N	0	\N	f	f
 619	Pork w/ Marsala and Juniper	\N	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 620	Sweet Peppers Stuffed w/ Two Cheeses	The peppers can be cooked on a griddle if you prefer. It is a good idea to blanch them in boiling water before filling, to give them a head start.	Too complicated.	\N	4	15	5	4	t	stuffed-peppers.jpg	0	\N	f	f
-621	The Ultimate Grilled Cheese	\N	\N	\N	4	10	5	2	t	\N	0	\N	f	f
+621	The Ultimate Grilled Cheese	\N	Too heavy.	\N	4	10	5	2	t	\N	0	\N	f	f
 622	Hefty Veggie Wrap	\N	\N	\N	4	0	5	2	t	\N	0	\N	f	f
 623	Almond and Raspberry Roll	\N	Not very nutritious.	\N	64	15	15	4	f	\N	0	\N	f	f
 624	Blueberry Muffins	\N	\N	\N	64	30	10	12	f	\N	0	\N	f	f
@@ -471,7 +471,7 @@
 658	Green Power Smoothie	\N	\N	\N	128	0	5	2	t	\N	0	\N	f	f
 659	Black Bean and Chorizo Breakfast Skillet	\N	\N	\N	12	35	5	1	t	\N	0	\N	f	f
 660	Quick and Easy Breakfast Burrito	If you like things a little spicier, add a few fresh or pickled jalapeños.	\N	\N	2	15	10	1	t	\N	0	\N	f	f
-661	Bourbon Caramel Sauce	\N	\N	\N	0	15	5	1	t	\N	6	\N	t	f
+661	Bourbon Caramel Sauce	\N	\N	\N	0	15	5	4	t	\N	9	\N	t	f
 662	Creamy Avocado-Lime Dressing	\N	\N	\N	0	0	5	12	t	\N	9	\N	t	f
 663	Arugula and Prosciutto Salad	\N	\N	\N	20	0	5	2	t	\N	0	\N	f	f
 664	Shepherd's Pie	\N	\N	\N	8	60	30	6	t	\N	0	\N	f	f
@@ -509,7 +509,7 @@
 729	Broccoli Snackers	Cut the broccoli into florets through the stem ends rather than through the floret tops.	\N	\N	16	20	5	2	t	roasted-broccoli.jpg	0	\N	f	f
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
-732	Creamy Garlic Mashed Potatoes	\N	\N	\N	16	20	10	4	t	irish-champ.jpg	0	\N	t	f
+732	Creamy Garlic Mashed Potatoes	\N	Too heavy.	\N	16	20	10	4	t	irish-champ.jpg	0	\N	t	f
 733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	burgers-relish.jpg	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
 735	Zucchini Pesto Pasta w/ Bacon	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
@@ -556,19 +556,19 @@
 841	First Watch Granola	\N	\N	\N	32	0	0	8	t	granola.jpg	6	From the First Watch cookbook. 	t	f
 842	Ham and Gruyère Omelet	\N	\N	\N	4	10	5	1	t	ham-cheese-omlet.jpg	0	From the First Watch cookbook. 	f	f
 843	Whipped Eggs	This preparation works great for omelets and frittatas. You can mix ahead of time and store in an airtight container and refrigerate, but the best way is to whip just before adding them to the pan. This will guarantee that the air you just whipped in will result in a nice, fluffy finished product.	\N	\N	0	0	5	1	t	whipped-eggs.jpg	0	\N	t	f
-844	Elevated Egg Sandwich	\N	\N	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
+844	Elevated Egg Sandwich	\N	Too complicated.	\N	6	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 845	Over-Easy Eggs	Over-easy eggs should have a very runny yolk, and some of the white around the yolk should still be soft.	\N	\N	0	5	5	1	t	\N	0	From the First Watch cookbook. 	t	f
-846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	4	t	\N	6	From the First Watch cookbook. 	t	f
-847	Avocado Mash	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
+846	Lemon White Balsamic Vinaigrette	A hand or immersion blender is the perfect tool for this dressing, but you can also use a wire whisk. Just make sure you have even and steady whisking so that the oil is incorporated and forms an emulsion with the other ingredients.	\N	\N	0	0	5	2	t	\N	6	From the First Watch cookbook. 	t	f
+847	Avocado Mash	\N	\N	\N	0	0	5	2	t	\N	4	From the First Watch cookbook. 	t	f
 848	First Watch Seasoning	\N	\N	\N	0	0	0	3	t	taco-seasoning.jpg	6	From the First Watch cookbook. 	t	f
 849	Avocado Toast	\N	\N	\N	4	0	0	1	t	\N	0	From the First Watch cookbook. 	f	f
 850	Sunrise Granola Bowl	\N	\N	\N	4	0	15	1	t	granola.jpg	0	From the First Watch cookbook. 	f	f
-851	Million Dollar Bacon	\N	\N	\N	16	20	5	4	t	bacon.jpg	0	From the First Watch cookbook. 	f	f
+851	Million Dollar Bacon	\N	Too heavy.	\N	16	20	5	4	t	bacon.jpg	0	From the First Watch cookbook. 	f	f
 852	Rainbow Toast	\N	\N	\N	4	5	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 853	Roast Tikka Chicken	\N	\N	\N	8	60	10	4	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 854	Watermelon Salad	\N	\N	\N	20	0	15	6	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 855	Lemon Chicken w/ Roasted Potatoes	\N	\N	\N	8	55	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
-856	Farmer's Biscuit Breakfast Sandwich	\N	\N	\N	6	15	5	1	t	\N	0	From the First Watch cookbook. 	f	f
+856	Farmer's Biscuit Breakfast Sandwich	\N	Too complicated.	\N	6	15	5	1	t	\N	0	From the First Watch cookbook. 	f	f
 857	Oatmeal Chocolate Chip Energy Balls	\N	\N	\N	32	0	20	7	t	basic-energy-balls.jpg	0	Erin | The Almond Eater	f	f
 858	Boiling Kettle Water	\N	\N	\N	0	5	0	1	t	boiling-kettle.jpg	6	\N	t	f
 859	Crock Pot Red Rice and Beans	\N	\N	\N	8	55	5	4	t	red-beans-rice.jpg	0	https://www.theorganickitchen.org/crock-pot-red-beans-and-rice/	f	f
@@ -599,7 +599,7 @@
 950	Gum	\N	\N	\N	32	0	0	7	t	gum-alt.jpg	0	\N	f	f
 951	Hamburger Soup	Add a 15-ounce can of white beans to the soup to make it a little more substantial. Additionally, you can top the soup with a few tablespoons of grated Cheddar cheese.	\N	\N	8	30	5	4	t	\N	0	\N	f	f
 952	Hot and Sour Soup	You can gently stir 2 beaten eggs into this soup a few minutes before serving to create egg "noodles". Fresh mushrooms will not give this soup the same concentrated flavors as the dried ones do. 	Not very appetizing.	\N	8	30	40	6	t	\N	0	\N	f	f
-953	Creme Brulee	\N	\N	\N	64	45	135	4	t	\N	0	\N	f	f
+953	Crème Brûlée	\N	Too heavy.	\N	64	45	135	4	t	\N	0	\N	f	f
 954	Orange Tiramisu	You can use a different kind of sweet orange if you'd prefer, but try to get one that's about the size of a baseball.	Very unhealthy.	\N	64	0	135	4	t	\N	0	\N	f	f
 955	Kimchi Fried Rice	Ginger makes a great addition to this dish; saute it along with the garlic. To fancy the dish up a bit, serve it with a sunny-side up egg over the top.	\N	\N	20	10	5	2	t	egg-fried-rice.jpg	0	\N	f	f
 956	Pork Fried Rice	Stir-fry a beaten egg into the rice to get a more authentic takeout flavor.	\N	\N	8	10	5	2	t	chicken-fried-rice.jpg	0	\N	f	f
@@ -620,7 +620,7 @@
 971	Flamenco Eggs	The chorizo and vegetable mixture mustn't be too dry, so add a little more sherry if necessary.	\N	\N	8	15	5	4	t	\N	0	\N	f	f
 972	Chicken Bitki	\N	Too involved: Pickled Beets and a Green Salad.	\N	8	15	10	12	t	\N	0	\N	f	f
 973	Stuffed Chicken in Bacon Coats	\N	Not very nutritious.	\N	8	25	5	4	t	\N	0	\N	f	f
-974	Southern Fried Chicken	\N	\N	\N	8	25	5	4	t	baked-chicken-breast.jpg	0	\N	f	t
+974	Southern Fried Chicken	\N	Too heavy.	\N	8	25	5	4	t	baked-chicken-breast.jpg	0	\N	f	t
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	white-bread.jpg	0	\N	t	f
 976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	baked-chicken-breast.jpg	0	\N	t	f
 977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	cooled-rice.jpg	6	\N	t	f
@@ -639,7 +639,7 @@
 990	Slow Cooker Pot Roast w/ Shallots and Baby Carrots	\N	\N	\N	8	240	20	6	t	\N	0	https://www.theorganickitchen.org/slow-cooker-pot-roast-with-shallots-and-carrots/	f	f
 991	Onions Rings w/ Eggs	\N	\N	\N	6	10	5	2	t	onion-rings-eggs.jpg	0	\N	f	f
 992	Chickpea and Turmeric Rice Bowls	\N	\N	\N	8	25	45	4	t	\N	0	https://www.healthline.com/recipes/chickpea-turmeric-rice-bowls	f	f
-993	Pasta w/ Brussels Sprouts and Pancetta	\N	\N	\N	12	15	10	4	t	\N	0	https://www.theorganickitchen.org/pasta-with-brussels-sprouts-and-pancetta/	f	f
+993	Pasta w/ Brussels Sprouts and Pancetta	\N	Too heavy.	\N	12	15	10	4	t	\N	0	https://www.theorganickitchen.org/pasta-with-brussels-sprouts-and-pancetta/	f	f
 994	Lemon Chicken w/ Roasted Potatoes	\N	\N	\N	8	90	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 995	Egg, Bean, and Chorizo Tostada w/ Salsa Verde	\N	\N	\N	6	7	3	2	t	egg-bean-chorizo-tostada.jpg	0	https://www.theorganickitchen.org/egg-bean-and-chorizo-tostada-with-salsa-verde/	f	f
 996	Parmesan Potato Waffle	\N	\N	\N	6	15	5	1	t	\N	0	https://www.theorganickitchen.org/parmesan-potato-waffle/	f	f
@@ -654,7 +654,7 @@
 1006	Asian Chicken and Rice Bowls	Optional toppings: chopped peanuts, green onions, cilantro, lime wedges. I also like to sub the bok choy for snow peas. They add a nice little crunch. Of course frozen peas can be added a few minutes before removing from the oven.	\N	\N	8	25	5	4	t	\N	0	https://www.theorganickitchen.org/asian-chicken-and-rice-bowls/	f	f
 1039	Slow Cooker Peanut Chicken	\N	\N	\N	8	180	5	4	t	peanut-chicken.jpg	0	https://thealmondeater.com/peanut-crockpot-stir-fry/	f	f
 1040	Chili Oil	\N	\N	\N	0	0	0	2	t	chili-oil.jpg	9	\N	t	f
-1041	4-Generation Potato Salad	This potato salad is really best made the day before it’s served.	\N	\N	20	20	15	8	t	potato-salad.jpg	0	https://www.simplyrecipes.com/four-generation-potato-salad-recipe-11774364	f	f
+1041	4-Generation Potato Salad	This potato salad is really best made the day before it’s served.	Too heavy.	\N	20	20	15	8	t	potato-salad.jpg	0	https://www.simplyrecipes.com/four-generation-potato-salad-recipe-11774364	f	f
 1042	Radish Salad	\N	\N	\N	20	0	10	2	t	radish-salad.jpg	0	\N	f	f
 1043	Potato and Green Bean Salad	\N	\N	\N	20	15	5	2	t	\N	0	\N	f	f
 1044	Whipped Butter	\N	\N	\N	0	0	5	4	t	\N	4	\N	t	f
