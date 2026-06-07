@@ -40,7 +40,7 @@
 40	\N	Vanilla Extract	Vanilla Extract	\N	t	0	26	100	2026-01-02	9	208	4	208	Vanilla Extract	\N	\N	12
 41	\N	Active Dry Yeast	Active Dry Yeast	\N	f	0	4	100	2025-10-25	8	192	4	192	Active Dry Yeast	\N	\N	14
 43	\N	Cocoa Powder	Cocoa Powder	\N	f	0	28	100	2025-06-20	4	86	4	86	Cocoa Powder	\N	\N	17
-44	\N	Powdered Sugar	Powdered Sugar	Missing minor nutrients.	f	0	28	100	2026-02-04	4	100	4	100	Powdered Sugar	\N	\N	14
+44	\N	Powdered Sugar	Powdered Sugar	Missing minor nutrients.	f	0	28	100	2026-02-04	4	100	4	100	Powdered Sugar	\N	\N	16
 45	\N	9" Pie Crust	9" Pie Crust	\N	f	256	194	100	2025-07-11	0	194	4	194	9" Pie Crust	\N	\N	14
 46	\N	Pizza Crust	Pizza Crust	\N	f	0	212	100	2026-03-10	0	53	2	53	Pizza Crust	\N	\N	4
 47	\N	Chicken Stock	Chicken Stock	\N	f	1048576	240	100	2024-12-27	6	240	4	240	Chicken Stock	\N	\N	13
@@ -78,7 +78,7 @@
 80	\N	Apple Cider Vinegar	Apple Cider Vinegar	aka. Cider Vinegar.	f	0	30	100	2025-01-07	9	239	4	239	Apple Cider Vinegar	https://www.eatthismuch.com/calories/vinegar-222	\N	13
 81	\N	Balsamic Vinegar	Balsamic Vinegar	\N	f	0	30	100	2025-12-28	9	255	4	255	Vinegar	\N	\N	13
 82	\N	Red Wine Vinegar	Red Wine Vinegar	\N	f	0	30	100	2025-10-23	9	239	4	239	Vinegar	\N	\N	13
-83	\N	White Vinegar	White Vinegar	\N	f	0	30	100	2025-03-21	9	240	4	240	White Vinegar	\N	\N	13
+83	\N	White Vinegar	White Vinegar	\N	f	0	30	100	2025-03-21	9	240	4	240	Vinegar	\N	\N	13
 84	\N	White Wine Vinegar	White Wine Vinegar	\N	f	0	14	100	2025-05-10	7	240	3	240	White Wine Vinegar	\N	\N	0
 85	\N	White Wine	White Wine	\N	f	0	29.4	100	2025-10-17	9	235.2	5	235.2	White Wine	\N	\N	16
 86	\N	Red Wine	Red Wine	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Red Wine	\N	\N	16
@@ -239,7 +239,7 @@
 246	\N	Vegetable Stock	Vegetable Stock	\N	f	0	30	100	2025-07-20	9	237	4	237	Vegetable Stock	\N	\N	13
 247	\N	Gruyère Cheese	Gruyère Cheese	\N	f	4	28	100	2025-03-03	4	224	3	224	Gruyère Cheese	\N	\N	7
 248	\N	Sliced Ham | Sliced Salami	Sliced Ham | Sliced Salami	\N	f	1048576	28	100	2026-01-26	0	224	3	224	Ham | Salami	\N	\N	7
-249	\N	Sliced Salami	Sliced Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
+249	\N	Sliced Salami	Sliced Salami	\N	f	0	10	100	2025-11-28	0	227	3	227	Sliced Salami	\N	\N	7
 250	\N	Fresh Zucchini	Fresh Zucchini	\N	f	0	196	100	2025-03-07	0	196	2	196	Zucchini	https://fdc.nal.usda.gov/food-details/2685568/nutrients	\N	0
 251	\N	Fresh Mint Leaves	Fresh Mint Leaves	\N	f	0	28	100	2025-03-07	4	48	3	48	Fresh Mint Leave	\N	\N	0
 252	\N	Three Wishes Cinnamon Grain Free Cereal	Three Wishes Cinnamon Grain Free Cereal	\N	f	0	245	100	2026-01-04	0	35	4	35	Cereal	\N	\N	14
@@ -251,7 +251,7 @@
 259	\N	Eggplants	Eggplants	\N	f	512	548	100	2025-09-19	0	82	2	82	Eggplant	\N	\N	0
 260	\N	Plum Tomatoes	Plum Tomatoes	\N	f	512	62	100	2025-12-11	0	149	1	149	Tomato	\N	\N	2
 261	\N	Couscous	Couscous	\N	f	262176	28	100	2025-09-15	4	173	4	173	Couscou	\N	\N	5
-262	\N	Pepperoni	Pepperoni	\N	f	0	28	100	2024-12-30	4	224	10	224	Pepperoni	\N	\N	0
+262	\N	Pepperoni	Pepperoni	\N	f	0	28	100	2024-12-30	4	224	3	224	Pepperoni	\N	\N	7
 263	\N	Pork/Beef Pepperoni	Pork/Beef Pepperoni	\N	f	1048576	2	100	2025-07-20	0	224	0	224	Pork/Beef Pepperoni	\N	\N	0
 264	\N	Potatoes	Potatoes	\N	f	0	369	100	2025-05-25	0	150	2	150	Potato	\N	\N	0
 265	\N	White Jasmine Rice	White Jasmine Rice	This is a long grain white rice.	f	4096	28	100	2026-01-26	4	185	4	185	Rice	\N	\N	4
@@ -276,7 +276,7 @@
 285	\N	Salt & Black Pepper	Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2026-05-20	4	96	4	96	Salt & Black Pepper	\N	\N	12
 286	\N	Penne Pasta	Penne Pasta	\N	f	262176	28	100	2025-02-12	4	85	4	85	Penne Pasta	\N	\N	5
 287	\N	Gluten-Free Penne Pasta	Gluten-Free Penne Pasta	\N	f	0	28	100	2025-02-10	4	84	4	84	Gluten-Free Penne Pasta	\N	\N	5
-288	\N	Unenriched Long Grain Rice	Unenriched Long Grain Rice	\N	f	4096	28	100	2024-12-27	4	185	4	185	Unenriched Long Grain Rice	\N	\N	4
+288	\N	Unenriched Long Grain Rice	Unenriched Long Grain Rice	\N	f	4096	28	100	2024-12-27	4	185	4	185	Rice	\N	\N	4
 289	\N	Short Grain White Rice	Short Grain White Rice	\N	f	4096	28	100	2025-10-03	4	200	4	200	Short Grain White Rice	\N	\N	4
 290	\N	Ham Steaks	Ham Steaks	Gammon is meat that has been cured (by being salted, brined or smoked) and sold raw, whereas Ham is meat that has been dry-cured or cooked, and is sold ready to eat. In a nutshell; when you've cooked your Gammon, it becomes Ham. - https://www.eatthismuch.com/calories/ham-steak-2254561	f	1048576	168	100	2025-01-05	0	224	9	224	Ham Steaks	\N	\N	7
 291	\N	Sharp Cheddar Cheese	Sharp Cheddar Cheese	\N	f	256	28	100	2024-12-07	4	112	10	112	Cheddar Cheese	\N	\N	0
@@ -341,7 +341,7 @@
 356	\N	Tagliatelle Pasta	Tagliatelle Pasta	\N	f	262176	28	100	2024-12-23	4	112	4	112	Tagliatelle Pasta	\N	\N	5
 357	\N	Dijon Mustard	Dijon Mustard	\N	t	0	28	100	2025-12-01	4	249	4	249	Dijon Mustard	\N	\N	13
 358	\N	Lemon Juice	Lemon Juice	\N	f	0	30	100	2024-11-26	9	240	1	240	Lemon Juice	\N	\N	13
-359	\N	Lime Juice	Lime Juice	\N	f	0	30	100	2025-02-16	9	242	3	242	Lime Juice	\N	\N	0
+359	\N	Lime Juice	Lime Juice	\N	f	0	30	100	2025-02-16	9	242	1	242	Lime Juice	\N	\N	12
 360	\N	Kosher Salt & Black Pepper	Kosher Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2025-12-28	4	224	4	224	Salt & Black Pepper	\N	\N	12
 361	\N	Elbow Macaroni, GF	Elbow Macaroni, GF	\N	f	0	28	100	2024-11-23	4	224	4	224	Elbow Macaroni, GF	\N	\N	5
 362	\N	Red Lentil Elbow Macaroni	Red Lentil Elbow Macaroni	\N	f	0	28	100	2026-04-19	4	224	4	224	Red Lentil Elbow Macaroni	\N	\N	5
@@ -522,7 +522,7 @@
 600	\N	Frozen Green Peas	Frozen Green Peas	aka. Podless Frozen Peas.	f	0	28	100	2026-04-18	4	134	11	134	Green Peas	https://www.eatthismuch.com/calories/peas-2069	\N	2
 601	\N	Cajun Seasoning	Cajun Seasoning	\N	f	0	28	100	2025-11-18	4	128	4	128	Cajun Seasoning	\N	\N	12
 602	\N	Hazelnuts	Hazelnuts	\N	f	0	28	100	2025-03-01	4	128	10	128	Hazelnuts	\N	\N	0
-603	\N	Pork Italian Sausage, Raw	Pork Italian Sausage, Raw	\N	f	1048576	100	100	2025-08-07	0	100	10	100	Pork Italian Sausage, Raw	\N	\N	0
+603	\N	Pork Italian Sausage, Raw	Pork Italian Sausage, Raw	\N	f	1048576	100	100	2025-08-07	0	100	9	100	Sausage	\N	\N	7
 604	\N	Slices of Panettone Bread	Slices of Panettone Bread	\N	f	786464	80	100	2025-05-23	0	80	4	80	Slices of Panettone Bread	\N	\N	0
 605	\N	Butter | Sunflower Oil	Butter | Sunflower Oil	Use partial ingredients.	t	0	14	100	2025-10-08	7	224	5	224	Butter | Sunflower Oil	\N	\N	11
 606	\N	Butter | Oil	Butter | Oil	\N	t	0	28	100	2025-10-09	4	224	4	224	Butter | Oil	\N	\N	14
@@ -723,8 +723,8 @@
 832	\N	Dried Sage	Dried Sage	\N	f	0	1	100	2026-01-19	3	32	4	32	Sage	\N	\N	12
 833	\N	Crushed Red Pepper Flakes	Crushed Red Pepper Flakes	aka: Dried Red Pepper Flakes - https://www.eatthismuch.com/calories/crushed-red-pepper-flakes-5832	t	0	28	100	2025-07-19	4	16	4	16	Crushed Red Pepper Flakes	\N	\N	12
 834	\N	Frozen Edamame Beans	Frozen Edamame Beans	\N	f	0	28	100	2025-07-25	4	118	10	118	Frozen Edamame Bean	\N	\N	0
-835	\N	Sliced Fennel Salami	Sliced Fennel Salami	\N	f	0	5.6	100	2025-11-26	0	100	8	100	Sliced Fennel Salami	\N	\N	0
-836	\N	Long Grain Rice	Long Grain Rice	\N	f	4096	28	100	2026-01-02	4	185	4	185	Long Grain Rice	\N	\N	4
+835	\N	Sliced Fennel Salami	Sliced Fennel Salami	\N	f	0	5.6	100	2025-11-26	0	100	3	100	Salami	\N	\N	7
+836	\N	Long Grain Rice	Long Grain Rice	\N	f	4096	28	100	2026-01-02	4	185	4	185	Rice	\N	\N	4
 837	\N	Mung Bean Sprouts	Mung Bean Sprouts	\N	f	0	28	100	2026-03-17	4	194	1	194	Mung Bean Sprout	\N	\N	0
 838	\N	Sugar-Free Milk Chocolate Chips (40%)	Sugar-Free Milk Chocolate Chips (40%)	\N	f	0	28	100	2024-12-10	4	168	4	168	Chocolate Chip	\N	\N	17
 839	\N	White Chocolate Chips	White Chocolate Chips	\N	f	0	28	100	2024-12-01	4	170	4	170	Chocolate Chips	\N	\N	17
@@ -788,7 +788,7 @@
 959	\N	Salsa Verde	Salsa Verde	\N	f	512	28	100	2025-10-04	4	259	4	259	Salsa Verde	\N	\N	14
 960	\N	Long Grain White Rice	Long Grain White Rice	\N	f	4096	28	100	2025-10-03	4	200	4	200	Rice	https://fdc.nal.usda.gov/food-details/2512381/nutrients	\N	4
 961	\N	Almond Meal	Almond Meal	\N	f	0	28	100	2026-03-24	4	240	5	240	Almond Meal	\N	\N	18
-962	\N	Sliced Bresaola	Sliced Bresaola	\N	f	0	28	100	2024-12-10	0	224	10	224	Sliced Bresaola	\N	\N	0
+962	\N	Sliced Bresaola	Sliced Bresaola	\N	f	0	28	100	2024-12-10	0	224	3	224	Sliced Bresaola	\N	\N	7
 963	\N	Fresh Mixed-Color Endives	Fresh Mixed-Color Endives	\N	f	0	45	100	2024-11-28	0	90	2	90	Fresh Mixed-Color Endives	\N	\N	0
 964	\N	Coconut Oil	Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	\N	\N	11
 965	\N	Plain Coconut Yogurt	Plain Coconut Yogurt	\N	f	0	28	100	2025-11-16	4	240	8	240	Yogurt	\N	\N	9
@@ -913,7 +913,7 @@
 1118	\N	Mixed-Color Baby Beets	Mixed-Color Baby Beets	\N	f	0	82	100	2025-04-27	0	82	2	82	Beet	\N	\N	0
 1119	\N	Creamy Horseradish	Creamy Horseradish	aka: Prepared Horseradish. Prepared horseradish is the stuff you buy in the little bottle at the grocery store. The horseradish is cooked with vinegar and a few other ingredients to add a touch of acidity and to mellow out some of the spiciness.	f	0	28	100	2026-04-08	4	100	4	100	Horseradish	\N	\N	13
 1120	\N	Reduced-Fat Crème Fraîche	Reduced-Fat Crème Fraîche	\N	f	324	28	100	2026-05-26	4	240	8	240	Crème Fraîche	\N	\N	0
-1121	\N	Bresaola	Bresaola	\N	f	0	28	100	2024-12-10	4	224	10	224	Bresaola	\N	\N	0
+1121	\N	Bresaola	Bresaola	\N	f	0	28	100	2024-12-10	4	224	3	224	Bresaola	\N	\N	7
 1122	\N	Green Cabbage | Purple Cabbage	Green Cabbage | Purple Cabbage	\N	f	0	33	100	2025-01-20	0	99	2	99	Cabbage	\N	\N	0
 1123	\N	Chicken Eggs | Duck Eggs	Chicken Eggs | Duck Eggs	\N	f	0	50	100	2026-04-24	0	200	8	200	Chicken Eggs | Duck Eggs	\N	\N	10
 1124	\N	Fresh Baby Lettuce	Fresh Baby Lettuce	\N	f	0	28	100	2025-02-02	4	30	2	30	Lettuce	\N	\N	0
@@ -1070,7 +1070,7 @@
 1335	\N	Mustard Powder	Mustard Powder	\N	f	0	28	100	2025-02-27	4	96	4	96	Mustard Powder	\N	\N	12
 1336	\N	Bacon	Bacon	\N	f	1048576	12	100	2025-07-16	0	224	10	224	Bacon	\N	\N	0
 1337	\N	Baby Arugula	Baby Arugula	 aka. Rocket.	f	0	28	100	2025-02-14	4	20	2	20	Arugula	https://fdc.nal.usda.gov/food-details/2710822/nutrients	\N	0
-1338	\N	Goat Cheese	Goat Cheese	\N	f	256	28	100	2026-03-07	4	224	10	224	Goat Cheese	\N	\N	0
+1338	\N	Goat Cheese	Goat Cheese	\N	f	256	28	100	2026-03-07	4	224	8	224	Goat Cheese	\N	\N	9
 1339	\N	Sprouted Pumpkin Seeds	Sprouted Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Sprouted Pumpkin Seeds	\N	\N	0
 1340	\N	Dried Cranberries	Dried Cranberries	\N	f	0	28	100	2024-11-28	4	148	1	148	Dried Cranberrie	\N	\N	0
 1341	\N	Pink Apples	Pink Apples	\N	f	0	182	100	2025-03-29	0	125	1	125	Apple	\N	\N	0
@@ -1222,7 +1222,7 @@
 1575	\N	Shredded Whole Mozzarella Cheese	Shredded Whole Mozzarella Cheese	\N	f	256	28	100	2025-12-19	4	112	10	112	Shredded Whole Mozzarella Cheese	\N	\N	0
 1576	\N	Shredded Part-Skim Mozzarella Cheese	Shredded Part-Skim Mozzarella Cheese	\N	f	256	28	100	2025-12-18	4	112	10	112	Shredded Part-Skim Mozzarella Cheese	\N	\N	0
 1577	\N	Slices of Pepperoni	Slices of Pepperoni	\N	f	0	28	100	2024-12-30	4	224	10	224	Slices of Pepperoni	\N	\N	0
-1578	\N	Fresh Cranberries	Fresh Cranberries	\N	f	0	28	100	2024-11-28	4	224	1	224	Fresh Cranberries	\N	\N	0
+1578	\N	Fresh Cranberries	Fresh Cranberries	\N	f	0	28	100	2024-11-28	4	224	1	224	Cranberry	\N	\N	0
 1579	\N	Cranberries	Cranberries	\N	f	0	28	100	2024-11-28	4	224	1	224	Cranberries	\N	\N	0
 1580	\N	Water Kefir Grains	Water Kefir Grains	\N	t	512	28	100	2025-09-20	4	240	4	240	Water Kefir Grains	\N	\N	13
 1581	\N	Zucchini Spirals	Zucchini Spirals	aka: Zucchini Noodles. https://www.eatthismuch.com/calories/zucchini-2183	f	0	196	100	2025-03-07	0	196	2	196	Zucchini Spirals	\N	\N	0
@@ -1278,7 +1278,7 @@
 1633	\N	Fresh Peppermint	Fresh Peppermint	\N	t	0	15	100	2025-06-18	7	240	3	240	Fresh Peppermint	\N	\N	0
 1634	\N	Canned Solid White Tuna	Canned Solid White Tuna	\N	f	0	28.35	100	2025-09-02	4	226.8	4	226.8	Canned Solid White Tuna	\N	\N	6
 1635	\N	Canned Chunk Light Tuna	Canned Chunk Light Tuna	\N	f	0	28.35	100	2025-09-02	4	226.8	4	226.8	Canned Chunk Light Tuna	\N	\N	6
-1636	\N	Cream Cheese	Cream Cheese	\N	f	0	15	100	2025-08-12	7	240	10	240	Cream Cheese	\N	\N	0
+1636	\N	Cream Cheese	Cream Cheese	\N	f	0	15	100	2025-08-12	7	240	8	240	Cream Cheese	\N	\N	9
 1637	\N	Chocolate Cookie Crumbs	Chocolate Cookie Crumbs	\N	f	262176	9.5	100	2025-01-31	0	114	5	114	Chocolate Cookie Crumbs	\N	\N	16
 1638	\N	Large Mixed-Color Bell Peppers	Large Mixed-Color Bell Peppers	\N	f	0	186	100	2025-10-22	0	186	2	186	Bell Pepper	\N	\N	0
 1639	\N	Large Yellow Bell Peppers	Large Yellow Bell Peppers	\N	f	0	186	100	2025-10-20	0	186	2	186	Bell Pepper	\N	\N	0
@@ -1324,7 +1324,7 @@
 1712	\N	Frozen Corn	Frozen Corn	\N	f	2	164	100	2025-08-02	6	164	4	164	Canned Corn	\N	\N	6
 1713	\N	Canned Corn | Frozen Corn	Canned Corn | Frozen Corn	\N	f	2	164	100	2025-08-02	6	164	4	164	Canned Corn	\N	\N	6
 1714	\N	Niçoise Olives	Niçoise Olives	\N	f	0	28	100	2025-03-19	4	134	3	134	Olive	\N	\N	0
-1715	\N	Head of Celery	Head of Celery	\N	f	0	40	100	2025-03-12	0	101	2	101	Celery Stalks	\N	\N	0
+1715	\N	Head of Celery	Head of Celery	\N	f	0	40	100	2025-03-12	0	101	1	101	Celery	\N	\N	2
 1716	\N	Balls of Buffalo Mozzarella	Balls of Buffalo Mozzarella	\N	f	256	28	100	2025-12-17	4	112	10	112	Mozzarella Cheese	\N	\N	0
 1717	\N	Mini Chocolate Chips	Mini Chocolate Chips	\N	f	0	28	100	2024-12-15	4	173	4	173	Chocolate Chip	\N	\N	17
 1718	\N	Honey | Agave Syrup	Honey | Agave Syrup	\N	t	0	42	100	2025-06-10	9	336	4	336	Honey	\N	\N	13
@@ -1388,7 +1388,7 @@
 1777	\N	Rice Vinegar | Apple Cider Vinegar	Rice Vinegar | Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	f	0	30	100	2025-01-07	9	239	4	239	Apple Cider Vinegar	\N	\N	13
 1778	\N	Unsweetened Creamy Peanut Butter	Unsweetened Creamy Peanut Butter	\N	f	2048	32	100	2025-10-26	4	256	4	256	Peanut Butter	\N	\N	18
 1779	\N	Oregano	Oregano	Use partial ingredients.	f	0	28	100	2026-01-06	4	96	4	48	Oregano	\N	\N	12
-1780	\N	Large Yellow Onions	Large Yellow Onions	\N	f	0	148	100	2025-03-22	0	148	2	148	Onion	\N	\N	0
+1780	\N	Large Yellow Onions	Large Yellow Onions	\N	f	0	148	100	2025-03-22	0	148	1	148	Onion	\N	\N	2
 1781	\N	Canola Oil | Olive Oil	Canola Oil | Olive Oil	\N	t	0	28	100	2024-12-22	9	224	5	224	Canola Oil	\N	\N	11
 1782	\N	Unsmoked Bacon Slices	Unsmoked Bacon Slices	\N	f	1048576	12	100	2025-07-12	0	224	10	224	Bacon	\N	\N	0
 1783	\N	Dried Mixed Herbs	Dried Mixed Herbs	\N	f	0	2	100	2026-05-10	4	16	4	16	Mixed Herb	\N	\N	12
@@ -1521,7 +1521,7 @@
 2030	\N	Pork Belly	Pork Belly	\N	f	1048576	100	100	2025-08-06	0	100	10	100	Pork Shoulder	\N	\N	0
 2031	\N	Poppy Seeds	Poppy Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	https://fdc.nal.usda.gov/food-details/2515381/nutrients	\N	0
 2032	\N	Coconut	Coconut	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	f	0	28	100	2025-10-18	4	60	4	60	Coconut Flakes	\N	\N	13
-2033	\N	Cooking Oil	Cooking Oil	\N	f	0	30	100	2025-01-23	9	240	4	240	Chinese Cooking Wine	\N	\N	14
+2033	\N	Cooking Oil	Cooking Oil	\N	f	0	30	100	2025-01-23	9	240	4	240	Chinese Cooking Wine	\N	\N	11
 2034	\N	Italian Salami	Italian Salami	\N	f	0	28	100	2025-11-27	0	224	3	224	Salami	\N	\N	7
 2035	\N	Sliced Italian Salami	Sliced Italian Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
 2036	\N	Sliced Italian Salami	Sliced Italian Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
