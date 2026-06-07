@@ -22,13 +22,13 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     [Obsolete("Public parameterless constructor required for model binding.", error: true)]
     public UserFeastRecipeIngredient() { }
 
-    public UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient)
+    public UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient, double actualScale = 1)
     {
         Measure = recipeIngredient.Measure;
         CoarseCut = recipeIngredient.CoarseCut;
         RecipeIngredientId = recipeIngredient.Id;
-        CookedScale = recipeIngredient.CookedScale;
         Quantity = recipeIngredient.Quantity.ToDouble();
+        CookedScale = recipeIngredient.CookedScale * actualScale;
         // Don't set Ingredient, so that EF Core doesn't add/update Ingredient.
         IngredientId = recipeIngredient.Ingredient!.Id;
     }
@@ -45,6 +45,9 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     /// </summary>
     public long UserFeastRecipeId { get; private init; }
 
+    /// <summary>
+    /// Scale for an ingredient's nutrients worked.
+    /// </summary>
     [DefaultValue(IngredientConsts.CookedScaleDefault)]
     public double CookedScale { get; private init; }
 

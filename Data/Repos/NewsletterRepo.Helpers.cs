@@ -45,13 +45,16 @@ public partial class NewsletterRepo
             // ... swap recipes with their preps even if they were scaled with other preps.
             foreach (var prepRecipe in recipe.PrepRecipes)
             {
+                // Reduce the scale of ingredient nutrients to what was actually used and not bought.
+                var usedScale = prepRecipe.Key.SetScale / prepRecipe.Key.GetScale;
+
                 // Order doesn't matter because prep recipes are always requeryed from main recipes.
                 yield return new UserFeastRecipe(newsletter, prepRecipe.Key, i)
                 {
                     ParentRecipeId = recipe.Recipe.Id,
                     UserFeastRecipeIngredients = prepRecipe.Key.RecipeIngredients
                         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)
-                        .Select(ri => new UserFeastRecipeIngredient(ri)).ToList(),
+                        .Select(ri => new UserFeastRecipeIngredient(ri, usedScale)).ToList(),
                 };
             }
         }
