@@ -101,8 +101,8 @@
         <div style="margin-block:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
             @foreach (var ingredientGroup in Model.RecipeIngredients.GroupBy(ri => ri.Group))
             {
-                <div style="line-height:1;font-weight:bold;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">@ingredientGroup.Key</div>
-                <ul style="margin-block-end:2ex;padding-inline-start:0;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
+                <div style="line-height:1;font-weight:bold;">@ingredientGroup.Key</div>
+                <ul style="margin-block-end:2ex;padding-inline-start:0;">
                     @foreach (var ingredient in ingredientGroup)
                     {
                         <li class="@ingredient.Partial.ToClass() @ingredient.IsUnwantedAndHasAlternatives.ToClass()"

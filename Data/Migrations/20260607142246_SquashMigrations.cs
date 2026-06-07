@@ -529,6 +529,7 @@ namespace Data.Migrations
                     Adjustable = table.Column<bool>(type: "boolean", nullable: false, defaultValue: true),
                     CoarseCut = table.Column<bool>(type: "boolean", nullable: false),
                     Measure = table.Column<int>(type: "integer", nullable: false),
+                    Group = table.Column<string>(type: "text", nullable: true),
                     CookedScale = table.Column<double>(type: "double precision", nullable: false, defaultValue: 1.0),
                     Attributes = table.Column<string>(type: "text", nullable: true)
                 },
