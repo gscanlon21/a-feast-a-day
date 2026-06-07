@@ -264,7 +264,7 @@ public partial class NewsletterRepo
                 Measure = group.Key.Ingredient.DefaultMeasure,
                 SkipShoppingList = group.Key.SkipShoppingList,
                 // Rounds up after the first fifth: round 4.19 down to 4, round 4.20 up to 5. 
-                Quantity = Math.Max(1, (int)Math.Ceiling(Math.Floor(totalQuantity * 5) / 5)),
+                Quantity = Math.Max(1, MathHelpers.RoundDownUnder(totalQuantity, IngredientConsts.QuantityCutoff)),
                 Notes = userIngredients.TryGetValue(group.Key.Ingredient!.Id, out var ui) ? ui.Notes : null,
             });
         }

@@ -234,14 +234,14 @@
                         </div>
                     </div>
 
-                    <div class="row row-gap-1 mb-2">
+                    <div class="row row-gap-1 gx-3 gx-sm-4 mb-2">
                         <div class="col">
                             <label asp-for="Recipe.RecipeIngredients[id].Attributes" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Attributes)</label>
                             <input asp-for="Recipe.RecipeIngredients[id].Attributes" type="text" placeholder="" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Recipe.RecipeIngredients[id].Attributes" class="text-danger"></span>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="col">
                             <label asp-for="Recipe.RecipeIngredients[id].Group" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].Group)</label>
                             <input asp-for="Recipe.RecipeIngredients[id].Group" type="text" placeholder="" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Recipe.RecipeIngredients[id].Group" class="text-danger"></span>

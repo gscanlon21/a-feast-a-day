@@ -15,4 +15,6 @@ public static class IngredientConsts
     public const double AlternativeScaleStep = 0.25;
     public const double AlternativeScaleDefault = 1.0;
     public const double AlternativeScaleMax = 2.0;
+
+    public const double QuantityCutoff = 0.2;
 }
