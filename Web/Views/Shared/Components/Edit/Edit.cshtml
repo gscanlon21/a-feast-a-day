@@ -62,16 +62,16 @@
                                     <div style="display:flex;column-gap:1ch;">
                                         <output name="userSectionsOutput@(i)" for="@Html.IdFor(_ => Model.UserSections[i])">@Model.UserSections[i].Weight</output>
                                         <div style="display:flex;width:100%;">
-                                            <input asp-for="UserSections[i].Weight" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
+                                            <input asp-for="UserSections[i].Weight" type="range" style="width:100%;" aria-describedby="section-weight-help@(i)"
                                                    min="@UserConsts.SectionWeightMin" max="@UserConsts.SectionWeightMax"
-                                                   oninput="userSectionsOutput@(i).value = this.valueAsNumber" list="mobilityMusclesList@(i)" />
-                                            <datalist id="mobilityMusclesList@(i)">
+                                                   oninput="userSectionsOutput@(i).value = this.valueAsNumber" list="sectionWeightList@(i)" />
+                                            <datalist id="sectionWeightList@(i)">
                                                 <option value="@(UserSection.DefaultWeight.TryGetValue(Model.UserSections[i].Section, out int countTmp) ? countTmp : 0)"></option>
                                             </datalist>
                                         </div>
                                     </div>
                                     <span asp-validation-for="UserSections[i].Weight" class="text-danger"></span>
-                                    <div id="refresh-functional-help" class="form-text">
+                                    <div id="section-weight-help@(i)" class="form-text">
                                         <p>@Html.DisplayDescriptionFor(_ => Model.UserSections[i].Weight)</p>
                                     </div>
                                 </div>

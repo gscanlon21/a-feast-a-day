@@ -71,8 +71,8 @@ public class Ingredient
     [Display(Name = "Category")]
     public Category Category { get; set; }
 
-    [Display(Name = "Sub Category")]
-    public SubCategory SubCategory { get; set; }
+    [Display(Name = "Section")]
+    public Section Section { get; set; }
 
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }

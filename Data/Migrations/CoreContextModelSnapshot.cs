@@ -228,11 +228,11 @@ namespace Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<int>("Section")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("SkipShoppingList")
                         .HasColumnType("boolean");
-
-                    b.Property<int>("SubCategory")
-                        .HasColumnType("integer");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("integer");

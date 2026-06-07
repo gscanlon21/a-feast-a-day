@@ -5,7 +5,7 @@ namespace Core.Models.Ingredients;
 /// <summary>
 /// Grocery store sections.
 /// </summary>
-public enum SubCategory
+public enum Section
 {
     [Display(Name = "None", Order = 0)]
     None = 0,
@@ -71,15 +71,15 @@ public enum SubCategory
     Beverage = 20,
 }
 
-/* Swap two sub categories.
+/* Swap two sections.
 do $$
 declare 
-	BeginSubCategory integer = 99;
- 	EndSubCategory integer = 99;
- 	TempSubCategory integer = 999;
+	BeginSection integer = 99;
+ 	EndSection integer = 99;
+ 	TempSection integer = 999;
 begin
-	update ingredient set "SubCategory" = TempSubCategory where "SubCategory" = EndSubCategory;
-	update ingredient set "SubCategory" = EndSubCategory where "SubCategory" = BeginSubCategory;
-	update ingredient set "SubCategory" = BeginSubCategory where "SubCategory" = TempSubCategory;
+	update ingredient set "Section" = TempSection where "Section" = EndSection;
+	update ingredient set "Section" = EndSection where "Section" = BeginSection;
+	update ingredient set "Section" = BeginSection where "Section" = TempSection;
 end; $$;
 */

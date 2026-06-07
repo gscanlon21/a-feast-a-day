@@ -192,7 +192,7 @@ public class RecipeIngredientsController : ViewController
     private async Task<List<QueryResults>> GetBaseRecipes(User user)
     {
         // Pass in the user so we can select their base recipes.
-        return await new UserQueryBuilder(user, Section.Prep)
+        return await new UserQueryBuilder(user, Core.Models.Newsletter.Section.Prep)
             .WithUser(options =>
             {
                 // Allow seldom allergens to be displayed and choosen. Exclude never allergens.
@@ -209,7 +209,7 @@ public class RecipeIngredientsController : ViewController
     private async Task<QueryResults?> GetOrigRecipe(User user, RecipeIngredient recipeIngredient)
     {
         // Pass in the user so we can select their base recipes.
-        return (await new UserQueryBuilder(user, Section.None)
+        return (await new UserQueryBuilder(user, Core.Models.Newsletter.Section.None)
             .WithUser(options =>
             {
                 options.IgnoreIgnored = true;

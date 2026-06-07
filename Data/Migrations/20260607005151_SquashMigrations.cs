@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -149,9 +150,8 @@ namespace Data.Migrations
                     Group = table.Column<string>(type: "text", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
                     Allergens = table.Column<long>(type: "bigint", nullable: false),
-                    Cuisine = table.Column<int>(type: "integer", nullable: false),
                     Category = table.Column<int>(type: "integer", nullable: false),
-                    SubCategory = table.Column<int>(type: "integer", nullable: false),
+                    Section = table.Column<int>(type: "integer", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
                     GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
                     GramsPerFineCup = table.Column<double>(type: "double precision", nullable: false),

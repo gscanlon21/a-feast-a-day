@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260521134217_RemoveCuisine")]
-    partial class RemoveCuisine
+    [Migration("20260607005151_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,11 +231,11 @@ namespace Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<int>("Section")
+                        .HasColumnType("integer");
+
                     b.Property<bool>("SkipShoppingList")
                         .HasColumnType("boolean");
-
-                    b.Property<int>("SubCategory")
-                        .HasColumnType("integer");
 
                     b.Property<int?>("UserId")
                         .HasColumnType("integer");

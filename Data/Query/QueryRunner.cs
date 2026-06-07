@@ -26,7 +26,7 @@ namespace Data.Query;
 /// <summary>
 /// Builds and runs an EF Core query for selecting recipes.
 /// </summary>
-public class QueryRunner(Section section)
+public class QueryRunner(Core.Models.Newsletter.Section section)
 {
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
     public class RecipesQueryResults : IRecipeCombo
@@ -109,10 +109,10 @@ public class QueryRunner(Section section)
                         Id = ri.Ingredient.Id,
                         Name = ri.Ingredient.Name,
                         Group = ri.Ingredient.Group,
+                        Section = ri.Ingredient.Section,
                         Category = ri.Ingredient.Category,
                         FoodName = ri.Ingredient.FoodName,
                         Allergens = ri.Ingredient.Allergens,
-                        SubCategory = ri.Ingredient.SubCategory,
                         DefaultMeasure = ri.Ingredient.DefaultMeasure,
                         GramsPerMeasure = ri.Ingredient.GramsPerMeasure,
                         GramsPerServing = ri.Ingredient.GramsPerServing,
@@ -626,7 +626,7 @@ public class QueryRunner(Section section)
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // This will filter out prep recipes missing equipemnt. No infinite recursion please. 
-        return prepRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Section.Prep)
+        return prepRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Core.Models.Newsletter.Section.Prep)
             .WithUser(options =>
             {
                 // Keep ignored base recipes, user should ignore the recipe ingredient if they need to ignore this.

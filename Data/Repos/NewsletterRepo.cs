@@ -250,11 +250,11 @@ public partial class NewsletterRepo
         // Order by RecipeIngredient.Id before grouping so the .Key is the same across requests.
         foreach (var group in allIngredients.OrderBy(ri => ri.Id).GroupBy(l => l, new ShoppingListComparer())
             .OrderBy(g => g.Key.Ingredient!.Category.GetOrder())
-            .ThenBy(g => g.Key.Ingredient!.SubCategory.GetOrder())
+            .ThenBy(g => g.Key.Ingredient!.Section.GetOrder())
             .ThenBy(g => g.Key.Ingredient!.Group)
             .ThenBy(g => g.Key.Name))
         {
-            var order = group.Key.Ingredient!.Category.GetOrder() * 100 + group.Key.Ingredient!.SubCategory.GetOrder();
+            var order = group.Key.Ingredient!.Category.GetOrder() * 100 + group.Key.Ingredient!.Section.GetOrder();
             var totalQuantity = group.Sum(g => g.Quantity.ToDouble() * g.Measure.ToDefaultMeasure(g.Ingredient!, g.CoarseCut));
             shoppingList.Add(new ShoppingListItemDto()
             {

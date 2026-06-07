@@ -175,7 +175,7 @@ public class EditComponentViewModel
 
         public int UserId { get; init; }
 
-        public Section Section { get; init; }
+        public Core.Models.Newsletter.Section Section { get; init; }
 
         [Display(Name = "Weight", Description = "A relative weight of servings.")]
         [Range(UserConsts.SectionWeightMin, UserConsts.SectionWeightMax)]
