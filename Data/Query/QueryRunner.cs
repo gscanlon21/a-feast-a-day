@@ -1,6 +1,5 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
-using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
 using Data.Code.Extensions;

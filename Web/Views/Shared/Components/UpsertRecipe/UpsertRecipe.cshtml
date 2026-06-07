@@ -1,7 +1,5 @@
 ﻿@model UpsertRecipeViewModel
-@using Core.Models.Ingredients
 @using Core.Models.Recipe
-@using Core.Models.User
 @using Web.Code.Extensions
 
 <form id="recipe-form" asp-controller="@UserRecipesController.Name" asp-action="@nameof(UserRecipesController.UpsertRecipe)" method="post"

@@ -20,7 +20,7 @@ public class VegetarianViewComponent : ViewComponent
     {
         if (user.UserFoodPreferences.FirstOrDefault(fp => fp.Allergen == Allergens.Meat)?.FoodPreference == FoodPreference.Exclude)
         {
-            return View("Vegetarian", new VegetarianViewModel()); 
+            return View("Vegetarian", new VegetarianViewModel());
         }
 
         return Content("");
