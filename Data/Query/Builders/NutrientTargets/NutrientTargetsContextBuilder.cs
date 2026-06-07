@@ -59,19 +59,19 @@ public class NutrientTargetsContextBuilder : IOptions, INutrientTargetsBuilder, 
 
         if (Context.WeeklyNutrientsRDA != null)
         {
-            foreach (var weeklyNutrientRDA in Context.WeeklyNutrientsRDA.Where(kv => kv.Value.HasValue))
+            foreach (var weeklyNutrientRDA in Context.WeeklyNutrientsRDA.Where(kv => kv.Value > 0))
             {
-                // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
-                NutrientTargetsRDA.Add(weeklyNutrientRDA.Key, weeklyNutrientRDA.Value.GetValueOrDefault() * Math.Min(1, scale));
+                // Adjust nutrient targets based on the user's weekly averages over the last several weeks.
+                NutrientTargetsRDA.Add(weeklyNutrientRDA.Key, weeklyNutrientRDA.Value * Math.Min(1, scale));
             }
         }
 
         if (Context.WeeklyNutrientsTUL != null)
         {
-            foreach (var weeklyNutrientTUL in Context.WeeklyNutrientsTUL.Where(kv => kv.Value.HasValue))
+            foreach (var weeklyNutrientTUL in Context.WeeklyNutrientsTUL.Where(kv => kv.Value > 0))
             {
-                // Adjust Nutrient targets based on the user's weekly Nutrient volume averages over the last several weeks.
-                NutrientTargetsTUL.Add(weeklyNutrientTUL.Key, weeklyNutrientTUL.Value.GetValueOrDefault() * Math.Min(1, scale));
+                // Adjust nutrient targets based on the user's weekly averages over the last several weeks.
+                NutrientTargetsTUL.Add(weeklyNutrientTUL.Key, weeklyNutrientTUL.Value * Math.Min(1, scale));
             }
         }
 
@@ -80,19 +80,16 @@ public class NutrientTargetsContextBuilder : IOptions, INutrientTargetsBuilder, 
 
     public NutrientOptions Build(Section section)
     {
-        if (Nutrients.Any())
-        {
-            UserLogs.Log(Context.User, $"Nutrients for {section}:{Environment.NewLine}{string.Join(", ", Nutrients)}");
-        }
+        UserLogs.Log(Context.User, $"------------ {section} ------------");
 
         if (NutrientTargetsRDA.Any())
         {
-            UserLogs.Log(Context.User, $"Nutrient targets RDA for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsRDA)}");
+            UserLogs.Log(Context.User, $"Nutrient targets RDA for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsRDA.Debug())}");
         }
 
         if (NutrientTargetsTUL.Any())
         {
-            UserLogs.Log(Context.User, $"Nutrient targets TUL for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsTUL)}");
+            UserLogs.Log(Context.User, $"Nutrient targets TUL for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, NutrientTargetsTUL.Debug())}");
         }
 
         return new NutrientOptions(Nutrients, NutrientTargetsRDA, NutrientTargetsTUL, Context.User.DataSource);

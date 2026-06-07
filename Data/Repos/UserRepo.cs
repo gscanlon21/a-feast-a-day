@@ -191,12 +191,12 @@ public class UserRepo
 
         if (volumeRDA != null)
         {
-            UserLogs.Log(user, $"Total nutrient targets RDA:{Environment.NewLine}{string.Join(Environment.NewLine, volumeRDA)}");
+            UserLogs.Log(user, $"Total nutrient targets RDA:{Environment.NewLine}{string.Join(Environment.NewLine, volumeRDA.Debug())}");
         }
 
         if (volumeTUL != null)
         {
-            UserLogs.Log(user, $"Total nutrient targets TUL:{Environment.NewLine}{string.Join(Environment.NewLine, volumeTUL)}");
+            UserLogs.Log(user, $"Total nutrient targets TUL:{Environment.NewLine}{string.Join(Environment.NewLine, volumeTUL.Debug())}");
         }
 
         return new FeastContext()
@@ -276,7 +276,7 @@ public class UserRepo
     /// Get the user's average percent daily value for each nutrient.
     /// </summary>
     /// <returns>How much left of a nutrient to work per week.</returns>
-    public async Task<(double weeks, IDictionary<Nutrients, double?>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool tul = false)
+    public async Task<(double weeks, IDictionary<Nutrients, double>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool tul = false)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
@@ -291,9 +291,6 @@ public class UserRepo
             var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: tul));
             // Get the weekly, not daily value. 7 days in a week.
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
-
-            // If there is no RDA or TUL.
-            if (weeklyGramsOfRDATUL <= 0) { return (double?)null; }
 
             // Return how much left of each nutrient to work each week. Defaults to max per week.
             return (weeklyNutrientVolume[n] + weeklyGramsOfRDATUL) / 2 ?? weeklyGramsOfRDATUL;

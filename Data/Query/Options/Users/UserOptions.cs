@@ -1,15 +1,16 @@
-﻿using Core.Models.Ingredients;
+﻿using Core.Interfaces.User;
+using Core.Models.Ingredients;
 using Core.Models.User;
 using Data.Entities.Users;
 
 namespace Data.Query.Options.Users;
 
-public class UserOptions : IOptions
+public class UserOptions : IOptions, IUser
 {
     public bool NoUser { get; } = true;
     public bool IgnoreIgnored { get; set; } = false;
 
-    public int Id { get; }
+    public int Id { get; init; }
     public DateOnly CreatedDate { get; }
     public int? MaxIngredients { get; set; }
     public IngredientOrder IngredientOrder { get; }

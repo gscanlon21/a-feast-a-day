@@ -48,7 +48,12 @@ public class RecipesViewModel
 
     [ValidateNever]
     public bool FormHasData =>
-        !string.IsNullOrWhiteSpace(Name)
-        || Section.HasValue
-        || Equipment.HasValue;
+        !string.IsNullOrWhiteSpace(Ingredient)
+        || !string.IsNullOrWhiteSpace(Name)
+        || MinimumServings.HasValue
+        || Equipment.HasValue
+        || TotalTime.HasValue
+        || CookTime.HasValue
+        || PrepTime.HasValue
+        || Section.HasValue;
 }

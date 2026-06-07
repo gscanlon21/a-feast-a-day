@@ -6,6 +6,13 @@ namespace Core.Code.Extensions;
 
 public static class NutrientExtensions
 {
+    private static readonly Nutrients[] DebugNutrients = [Nutrients.Energy_KCalorie, Nutrients.Sodium_Na, Nutrients.Fatty_Acids_Total_Saturated];
+
+    public static Dictionary<Nutrients, double> Debug(this IDictionary<Nutrients, double> dictionary)
+    {
+        return dictionary.Where(l => DebugNutrients.Contains(l.Key)).ToDictionary(g => g.Key, g => g.Value);
+    }
+
     /// <summary>
     /// Returns null for nutrient if there's no reference data.
     /// </summary>
