@@ -25,7 +25,7 @@
 25	\N	90% Lean Ground Beef	90% Lean Ground Beef	Extra lean ground beef.	f	1048576	28	100	2026-02-02	4	224	10	224	Ground Beef	\N	\N	0
 26	\N	Sliced Ham	Sliced Ham	\N	f	1048576	28	100	2024-12-10	4	224	10	224	Sliced Ham	https://fdc.nal.usda.gov/food-details/332397/nutrients	\N	0
 27	\N	Slices of Turkey	Slices of Turkey	\N	f	1048576	26	100	2025-03-27	0	208	10	208	Slices of Turkey	\N	\N	0
-28	\N	Brown Eggs	Brown Eggs	\N	f	8	50	100	2025-06-14	0	200	10	200	Brown Eggs	\N	\N	0
+28	\N	Brown Eggs	Brown Eggs	\N	f	8	50	100	2025-06-14	0	200	8	200	Egg	\N	\N	10
 29	\N	Butter	Butter	\N	t	0	14	100	2025-10-07	7	224	8	224	Butter	https://fdc.nal.usda.gov/food-details/789828/nutrients	\N	9
 30	\N	Shredded Cheddar Cheese	Shredded Cheddar Cheese	\N	f	256	28	100	2024-11-27	4	113	8	113	Cheddar Cheese	\N	\N	9
 31	\N	Whole Milk (Cow), unenriched	Whole Milk (Cow), unenriched	\N	f	320	946	100	2026-03-30	14	244	8	244	Milk	\N	\N	20
@@ -93,7 +93,7 @@
 95	\N	Parmesan Cheese	Parmesan Cheese	\N	f	256	28.35	100	2025-07-02	4	100	10	100	Parmesan Cheese	https://fdc.nal.usda.gov/food-details/170848/nutrients	\N	0
 96	\N	Reduced-Fat Mexican Cheese Blend	Reduced-Fat Mexican Cheese Blend	\N	f	256	28	100	2025-12-09	4	224	8	224	Mexican Cheese	\N	\N	9
 97	\N	White Rice	White Rice	\N	f	4096	28	100	2024-12-25	4	185	4	185	White Rice	https://fdc.nal.usda.gov/food-details/2512381/nutrients	\N	4
-98	\N	Brown Rice	Brown Rice	\N	f	4096	28	100	2024-11-22	4	190	4	190	Brown Rice	https://fdc.nal.usda.gov/food-details/2512380/nutrients	\N	4
+98	\N	Brown Rice	Brown Rice	\N	f	4096	28	100	2026-06-08	4	190	4	190	Rice	https://fdc.nal.usda.gov/food-details/2512380/nutrients	\N	4
 99	\N	Frozen Stir-Fry Vegetables	Frozen Stir-Fry Vegetables	\N	f	0	28	100	2025-12-03	4	91	10	91	Frozen Stir-Fry Vegetables	\N	\N	0
 100	\N	Teriyaki Sauce	Teriyaki Sauce	\N	f	262176	36	100	2025-12-07	9	288	4	288	Teriyaki Sauce	\N	\N	14
 101	\N	Light Sesame Oil	Light Sesame Oil	aka. Unroasted Sesame Oil; Untoasted Sesame Oil.	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	https://www.eatthismuch.com/calories/sesame-oil-268	\N	11
@@ -157,7 +157,7 @@
 161	\N	Almond Milk	Almond Milk	\N	f	1	30	100	2026-03-27	9	240	8	240	Almond Milk	\N	\N	9
 162	\N	Soy Milk	Soy Milk	\N	f	32768	240	100	2025-01-04	6	240	10	240	Soy Milk	\N	\N	0
 163	\N	Cow Milk (Skim)	Cow Milk (Skim)	\N	f	320	240	100	2025-11-23	6	240	10	240	Cow Milk (Skim)	\N	\N	0
-164	\N	White Eggs	White Eggs	\N	f	8	50	100	2025-11-25	0	200	10	200	White Eggs	\N	\N	0
+164	\N	White Eggs	White Eggs	\N	f	8	50	100	2025-11-25	0	200	8	200	Egg	\N	\N	10
 165	\N	Mini Bagels	Mini Bagels	\N	f	786464	40	100	2025-06-16	0	240	2	240	Mini Bagels	\N	\N	4
 166	\N	Loaves of Pita	Loaves of Pita	\N	f	262176	64	100	2025-05-18	0	64	4	64	Loaves of Pita	\N	\N	0
 167	\N	Naan	Naan	\N	f	262176	140	100	2025-09-07	0	100	4	100	Naan	\N	\N	0
@@ -343,7 +343,7 @@
 358	\N	Lemon Juice	Lemon Juice	\N	f	0	30	100	2024-11-26	9	240	1	240	Lemon Juice	\N	\N	13
 359	\N	Lime Juice	Lime Juice	\N	f	0	30	100	2025-02-16	9	242	1	242	Lime Juice	\N	\N	12
 360	\N	Kosher Salt & Black Pepper	Kosher Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2025-12-28	4	224	4	224	Salt & Black Pepper	\N	\N	12
-361	\N	Elbow Macaroni, GF	Elbow Macaroni, GF	\N	f	0	28	100	2024-11-23	4	224	4	224	Elbow Macaroni, GF	\N	\N	5
+361	\N	Gluten-Free Elbow Macaroni	Gluten-Free Elbow Macaroni	\N	f	0	28	100	2026-06-08	4	224	4	224	Elbow Macaroni	\N	\N	5
 362	\N	Red Lentil Elbow Macaroni	Red Lentil Elbow Macaroni	\N	f	0	28	100	2026-04-19	4	224	4	224	Red Lentil Elbow Macaroni	\N	\N	5
 363	\N	Green Lentil Elbow Macaroni	Green Lentil Elbow Macaroni	\N	f	0	28.33	100	2025-12-05	4	226.65	4	226.65	Green Lentil Elbow Macaroni	\N	\N	5
 364	\N	Chickpea Elbow Macaroni	Chickpea Elbow Macaroni	\N	f	0	23	100	2025-10-04	4	224	4	224	Chickpea Elbow Macaroni	\N	\N	5
@@ -915,7 +915,7 @@
 1120	\N	Reduced-Fat Crème Fraîche	Reduced-Fat Crème Fraîche	\N	f	324	28	100	2026-05-26	4	240	8	240	Crème Fraîche	\N	\N	0
 1121	\N	Bresaola	Bresaola	\N	f	0	28	100	2024-12-10	4	224	3	224	Bresaola	\N	\N	7
 1122	\N	Green Cabbage | Purple Cabbage	Green Cabbage | Purple Cabbage	\N	f	0	33	100	2025-01-20	0	99	2	99	Cabbage	\N	\N	0
-1123	\N	Chicken Eggs | Duck Eggs	Chicken Eggs | Duck Eggs	\N	f	0	50	100	2026-04-24	0	200	8	200	Chicken Eggs | Duck Eggs	\N	\N	10
+1123	\N	Chicken Eggs | Duck Eggs	Chicken Eggs | Duck Eggs	\N	f	0	50	100	2026-04-24	0	200	8	200	Egg	\N	\N	10
 1124	\N	Fresh Baby Lettuce	Fresh Baby Lettuce	\N	f	0	28	100	2025-02-02	4	30	2	30	Lettuce	\N	\N	0
 1125	\N	Garlic Bulbs	Garlic Bulbs	\N	f	0	36	100	2025-11-21	0	136	3	136	Garlic Bulbs	\N	\N	0
 1126	\N	Purple Cabbage Heads	Purple Cabbage Heads	aka: Red Cabbage Heads.	f	0	908	100	2026-05-10	0	89	1	89	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	2
@@ -1142,7 +1142,7 @@
 1408	\N	Ground Cinnamon	Ground Cinnamon	\N	t	0	28	100	2025-01-18	4	128	4	128	Ground Cinnamon	\N	\N	12
 1409	\N	Apricot Jam	Apricot Jam	\N	f	0	20	100	2025-08-22	7	320	128	320	Apricot Jam	\N	\N	0
 1410	\N	Okra	Okra	\N	f	0	12.5	100	2025-11-02	0	100	2	100	Okra	\N	\N	0
-1411	\N	Large Eggs	Large Eggs	\N	f	8	50	100	2026-04-26	0	243	10	243	Egg	\N	\N	0
+1411	\N	Large Eggs	Large Eggs	\N	f	8	50	100	2026-04-26	0	243	8	243	Egg	\N	\N	10
 1412	\N	Fresh Italian Parsley	Fresh Italian Parsley	\N	f	0	28	100	2026-01-21	4	60	3	60	Parsley	\N	\N	0
 1413	\N	Harissa	Harissa	\N	f	0	28	100	2026-05-16	4	224	4	224	Harissa	\N	\N	14
 1414	\N	Large Squash	Large Squash	\N	f	0	323	100	2025-11-03	0	113	2	113	Squash	\N	\N	0

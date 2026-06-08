@@ -164,7 +164,7 @@
 186	The Kickin' Chicken Sandwich	\N	\N	\N	12	15	10	2	t	grilled-chicken-sandwich.jpg	0	\N	f	f
 187	Oatmeal Pancakes w/ Bacon	The oatmeal in the pancakes gives it texture, so these pancakes are firmer than conventional crepes. You can easily double or treble the mixture and even make it ahead of time. it will thicken on standing, though, so thin it with buttermilk of milk before use.	Too complicated.	\N	6	5	3	4	t	oatmeal-pancakes.jpg	0	\N	f	f
 188	Israeli Chopped Vegetable Salad	This salad lends itself to endless variety: add olives, diced potatoes or beetroot (beet), omit the chili, or vary the herbs.	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
-189	Moroccan-Style Vegetable Salad	\N	\N	\N	8	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
+189	Moroccan-Style Vegetable Salad	\N	\N	\N	20	0	12	4	t	vegetable-salad.jpg	0	\N	f	f
 190	Fusilli w/ Sausage	\N	\N	\N	12	15	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
 191	Croûtons	\N	\N	\N	0	10	2	1	t	croutons.jpg	6	\N	t	f
 192	Eliche w/ Sausage and Radicchio	The best sausage to use is the one you can buy from Italian delicatessens called calsiccia puro suino. It is made from 100 per cent pure pork plus flavourings and seasonings. If you can get it, the use the long tapering radicchio di Treviso for this dish; otherwise the tightly furled, round radicchio can be used.	\N	\N	12	20	5	4	t	eliche-with-sausage.jpg	0	\N	f	f
@@ -338,7 +338,7 @@
 522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	20	30	15	4	t	roasted-brussel-sprouts-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 523	Banana Pancakes	\N	\N	\N	66	5	5	1	t	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-525	Tomato & Avocado Salsa w/ Cucumber Bite	\N	\N	\N	20	0	10	2	t	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+525	Tomato & Avocado Salsa w/ Cucumber	\N	\N	\N	20	0	10	2	t	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 526	Pizza w/ Beans	\N	\N	\N	8	20	5	2	t	quinoa-pizza.jpg	0	\N	f	f
 527	Tumeric Ginger Tea	\N	\N	\N	128	2	3	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 528	Mango Salsa	\N	\N	\N	0	0	10	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
@@ -593,7 +593,7 @@
 910	Sweet Potato Tacos	\N	\N	\N	4	25	10	1	t	\N	0	\N	f	f
 911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or ½ teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f
 944	Fermented Coconut Water	Total time will depend on the room temperature. You will need to rest and renutrify your water kefir grains between batches.	\N	\N	0	55	5	8	t	\N	9	\N	t	f
-945	Skillet Fried Chicken	For a bit of a kick, add ¼-tsp. cayenne pepper to the flour or a few teaspoons of hot sauce to the buttermilk.	\N	\N	8	15	155	2	t	baked-chicken-breast.jpg	0	\N	f	f
+945	Skillet Fried Chicken	For a bit of a kick, add ¼-tsp. cayenne pepper to the flour or a few teaspoons of hot sauce to the buttermilk.	Not very nutritious. Too much oil. Air frying is safer.	\N	8	15	155	2	t	baked-chicken-breast.jpg	0	\N	f	f
 946	Homeade Turkey Sausage Patties	Store the leftovers in the fridge in an airtight container for up to 3 days. For longer storage, place in a resealable bag and freeze. Let the patties cool before storing. When ready to reuse, simply reheat in the microwave.	\N	\N	0	20	10	6	t	\N	0	\N	t	f
 947	Turkey Sausage Breakfast Sandwich	Make the sandwich more substantial by adding tomato and avocado. Or, to take this in a different direction, mix together 1 teaspoon cranberry sauce and 2 tablespoons mayonaise and spread on the English muffin.	\N	\N	6	6	2	1	t	\N	0	\N	f	f
 950	Gum	\N	\N	\N	32	0	0	7	t	gum-alt.jpg	0	\N	f	f
