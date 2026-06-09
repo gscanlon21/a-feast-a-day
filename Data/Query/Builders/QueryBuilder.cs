@@ -1,6 +1,5 @@
 ﻿using Core.Models.Newsletter;
 using Data.Query.Options;
-using Data.Query.Options.Users;
 using Data.Query.Runners;
 
 namespace Data.Query.Builders;
@@ -22,7 +21,6 @@ public class QueryBuilder : QueryBuilderBase
     {
         return new QueryRunner(Section)
         {
-            UserOptions = new UserOptions(),
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),
             ServingOptions = ServingOptions ?? new ServingOptions(),
             DurationOptions = DurationOptions ?? new DurationOptions(),

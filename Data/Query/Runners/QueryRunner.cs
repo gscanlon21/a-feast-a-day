@@ -1,9 +1,10 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
 using Core.Models.Recipe;
+using Data.Entities.Ingredients;
+using Data.Entities.Recipes;
+using Data.Query.Builders;
 using Data.Query.Options;
-using Data.Query.Options.Users;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using static Core.Code.Extensions.EnumerableExtensions;
 
@@ -15,6 +16,52 @@ namespace Data.Query.Runners;
 public class QueryRunner : QueryRunnerBase
 {
     public QueryRunner(Core.Models.Newsletter.Section section) : base(section) { }
+
+    protected override IQueryable<Recipe> CreateRecipesQuery(CoreContext context)
+    {
+        return base.CreateRecipesQuery(context).Where(r => r.UserId == null);
+    }
+
+    protected override IQueryable<RecipesQueryResults> Map(IQueryable<Recipe> recipes)
+    {
+        return recipes.Select(r => new RecipesQueryResults()
+        {
+            Recipe = r,
+            // Pull these out of the constructor so that EF Core can optimize the query.
+            RecipeIngredients = r.RecipeIngredients.Select(ri => new RecipeIngredientQueryResults()
+            {
+                Id = ri.Id,
+                Order = ri.Order,
+                Group = ri.Group,
+                Measure = ri.Measure,
+                Optional = ri.Optional,
+                CoarseCut = ri.CoarseCut,
+                Adjustable = ri.Adjustable,
+                Attributes = ri.Attributes,
+                UserRecipeIngredient = null,
+                CookedScale = ri.CookedScale,
+                QuantityNumerator = ri.QuantityNumerator,
+                QuantityDenominator = ri.QuantityDenominator,
+                RawIngredientRecipeId = ri.IngredientRecipeId,
+                Ingredient = ri.Ingredient == null ? null : new Ingredient(/* No constructor so EF Core can optimize the query */)
+                {
+                    Id = ri.Ingredient.Id,
+                    Name = ri.Ingredient.Name,
+                    Group = ri.Ingredient.Group,
+                    Section = ri.Ingredient.Section,
+                    Category = ri.Ingredient.Category,
+                    FoodName = ri.Ingredient.FoodName,
+                    Allergens = ri.Ingredient.Allergens,
+                    DefaultMeasure = ri.Ingredient.DefaultMeasure,
+                    GramsPerMeasure = ri.Ingredient.GramsPerMeasure,
+                    GramsPerServing = ri.Ingredient.GramsPerServing,
+                    GramsPerFineCup = ri.Ingredient.GramsPerFineCup,
+                    GramsPerCoarseCup = ri.Ingredient.GramsPerCoarseCup,
+                    SkipShoppingList = ri.Ingredient.SkipShoppingList,
+                },
+            }).ToList(),
+        });
+    }
 
     /// <summary>
     /// Queries the db for the data.
@@ -30,21 +77,7 @@ public class QueryRunner : QueryRunnerBase
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
 
-        var filteredQuery = CreateFilteredRecipesQuery(context);
-
-        filteredQuery = Filters.FilterSection(filteredQuery, section);
-        filteredQuery = Filters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
-        filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Keys);
-        filteredQuery = Filters.FilterServings(filteredQuery, ServingOptions.MinimumServings);
-        filteredQuery = Filters.FilterIngredient(filteredQuery, IngredientOptions.IngredientName);
-        filteredQuery = Filters.FilterPrepTime(filteredQuery, DurationOptions.MaxPrepTimeMinutes);
-        filteredQuery = Filters.FilterCookTime(filteredQuery, DurationOptions.MaxCookTimeMinutes);
-        filteredQuery = Filters.FilterTotalTime(filteredQuery, DurationOptions.MaxTotalTimeMinutes);
-        filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients, include: true, dataSource: NutrientOptions.DataSource);
-
-        // When you perform comparisons with nullable types, if the value of one of the nullable types
-        // ... is null and the other is not, all comparisons evaluate to false except for != (not equal).
-        var queryResults = (await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync()).ToList();
+        var queryResults = await QueryPartial(context);
 
         // Add in the prep recipe ingredients.
         var prepRecipes = await GetPrepRecipes(factory, queryResults);
@@ -64,7 +97,7 @@ public class QueryRunner : QueryRunnerBase
         foreach (var recipe in queryResults)
         {
             // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
-            recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
+            recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, IngredientOrder.OrderUsed) switch
             {
                 (false, IngredientOrder.OptionalLast) => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
                 (false, IngredientOrder.LargeToSmall) => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
@@ -80,5 +113,26 @@ public class QueryRunner : QueryRunnerBase
         }
 
         return recipeResults.OrderBy(vm => vm.Recipe.Name).ToList();
+    }
+
+    /// <summary>
+    /// Returns the recipes that are using in this recipe.
+    /// </summary>
+    private async Task<IList<QueryResults>> GetPrepRecipes(IServiceScopeFactory factory, IList<InProgressQueryResults> filteredResults)
+    {
+        // Don't check RecipeOptions.IgnorePrepRecipes yet so other things work.
+        var prepRecipeIds = filteredResults.SelectMany(ar => ar.RecipeIngredients
+            // Query for prerequisites ingredient recipes here so we can check their ignored status before finalizing recipes.
+            .Where(ri => ri.Type == RecipeIngredientType.IngredientRecipe)).Where(ri => ri.UserRecipeIngredient?.Ignore != true)
+            // Search for both the substituted recipe ingredient and the raw recipe ingredient, so we can fallback if one conflicts with allergens.
+            .SelectMany(ri => new List<int?>(2) { ri.IngredientRecipeId, ri.RawIngredientRecipeId }).Where(rid => rid.HasValue).Distinct()
+            // Don't scale prerequisite recipes yet since the prerequisite recipe scale is based on the quantity of the ingredient recipe.    
+            .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
+
+        // This will filter out prep recipes missing equipemnt. No infinite recursion please. 
+        return prepRecipeIds.Any() ? await new QueryBuilder(Core.Models.Newsletter.Section.Prep)
+            .WithRecipes(options => options.AddRecipes(prepRecipeIds))
+            .WithEquipment(EquipmentOptions.Equipment)
+            .Build().Query(factory) : [];
     }
 }
