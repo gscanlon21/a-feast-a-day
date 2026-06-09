@@ -55,7 +55,7 @@ public static class UserConsts
 
     public const Verbosity VerbosityDefault = Verbosity.TotalTime | Verbosity.Servings | Verbosity.Images;
 
-    public const FootnoteType FootnoteTypeDefault = FootnoteType.CookingTips | FootnoteType.IngredientTips
+    public const FootnoteType FootnoteTypeDefault = FootnoteType.CookingTips | FootnoteType.CookingFacts | FootnoteType.DigestionTips | FootnoteType.DigestionFacts
         | FootnoteType.HealthTips | FootnoteType.HealthFacts | FootnoteType.GoodVibes | FootnoteType.Mindfulness;
 
     public const Equipment EquipmentDefault = Equipment.Microwave | Equipment.Oven | Equipment.Stove | Equipment.Broiler
