@@ -5,6 +5,7 @@ using Data.Repos;
 using Lib;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
@@ -53,6 +54,14 @@ builder.Services.AddDbContext<CoreContext>(options =>
         options.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery);
         options.MigrationsAssembly(typeof(CoreContext).Assembly.GetName().Name);
     }));
+
+/* TODO: Organize component paths.
+builder.Services.Configure<RazorViewEngineOptions>(options =>
+{
+    // {2} is area, {1} is controller,{0} is the action
+    // the component's path "Components/{ViewComponentName}/{ViewComponentViewName}" is in the action {0}
+    options.ViewLocationFormats.Add("/{0}" + RazorViewEngine.ViewExtension);
+});*/
 
 builder.Services.AddResponseCompression(options =>
 {

@@ -17,12 +17,12 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        _context.Add(new UserFootnote()
+        _context.UserFootnotes.Add(new UserFootnote()
         {
-            User = user,
             Note = note,
             Source = source,
-            Type = FootnoteType.Custom
+            UserId = user.Id,
+            Type = FootnoteType.Custom,
         });
 
         await _context.SaveChangesAsync();
@@ -45,8 +45,6 @@ public partial class UserController
             .Where(f => f.UserId == user.Id)
             .Where(f => f.Id == footnoteId)
             .ExecuteDeleteAsync();
-
-        await _context.SaveChangesAsync();
 
         TempData[TempData_User.SuccessMessage] = "Your footnotes have been updated!";
         return RedirectToAction(nameof(UserController.Edit), new { email, token });

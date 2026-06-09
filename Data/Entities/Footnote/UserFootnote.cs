@@ -38,5 +38,5 @@ public class UserFootnote : IFootnote
     public FootnoteType Type { get; init; }
 
     [JsonIgnore, InverseProperty(nameof(Users.User.UserFootnotes))]
-    public Users.User User { get; init; } = null!;
+    public Users.User User { get; private init; } = null!;
 }
