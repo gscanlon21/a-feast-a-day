@@ -332,9 +332,9 @@ public class QueryRunner(Core.Models.Newsletter.Section section)
             // ... those feasts don't update the last seen date.
             filteredResults.ShuffleInPlace();
         }
-        else
+        else if (!UserOptions.NoUser)
         {
-            // Order by recipes that are still pending refresh.
+            // Don't need to order if there is no user context. Order by recipes that are still pending refresh.
             filteredResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
                 // Show recipes that the user has rarely seen.
                 // NOTE: When the two recipe's LastSeen dates are the same:
