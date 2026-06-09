@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Data.Query.Options;
 using Data.Query.Options.Users;
+using Data.Query.Runners;
 
 namespace Data.Query.Builders;
 
@@ -28,9 +29,9 @@ public class UserOptionsQueryBuilder : QueryBuilderBase
     /// <summary>
     /// Builds and returns the QueryRunner class with the options selected.
     /// </summary>
-    public override QueryRunner Build()
+    public override QueryRunnerBase Build()
     {
-        return new QueryRunner(Section)
+        return new UserQueryRunner(Section)
         {
             UserOptions = UserOptions,
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),

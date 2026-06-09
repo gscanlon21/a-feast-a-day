@@ -99,7 +99,7 @@
         @foreach (var ingredientGroup in Model.RecipeIngredients.GroupBy(ri => ri.Group))
         {
             <div style="line-height:1;font-weight:600;">@ingredientGroup.Key</div>
-            <ul style="margin-block-start:0;margin-block-end:2ex;padding-inline-start:0;">
+            <ul style="margin-block-start:0;margin-block-end:1em;padding-inline-start:0;">
                 @foreach (var ingredient in ingredientGroup)
                 {
                     <li class="@ingredient.Partial.ToClass() @ingredient.IsUnwantedAndHasAlternatives.ToClass()"

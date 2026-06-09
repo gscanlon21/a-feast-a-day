@@ -259,7 +259,7 @@ public class UserRepo
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            // Calculate the desired nutrient consumption in a week.
+            // Calculate the desired nutrient consumption for a week. FIXME: This will underweight nutrient targets when the family contains a person without a DRI.
             var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: false));
             // Get the weekly, not daily value. 7 days in a week.
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
@@ -287,7 +287,7 @@ public class UserRepo
         var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            // Calculate the desired nutrient consumption in a week.
+            // Calculate the desired nutrient consumption for a week. FIXME: This will underweight nutrient targets when a family contains a person without a DRI.
             var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: tul));
             // Get the weekly, not daily value. 7 days in a week.
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
