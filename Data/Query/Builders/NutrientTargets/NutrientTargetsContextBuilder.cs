@@ -50,13 +50,6 @@ public class NutrientTargetsContextBuilder : IOptions, INutrientTargetsBuilder, 
     /// </summary>
     public INutrientTargetsBuilder AdjustNutrientTargets(bool adjustUp = true, bool adjustDown = true, bool adjustDownBuffer = true, double scale = 1)
     {
-        // Add some padding to the upper-bounds of the RDA and TUL since targets are split into groups,
-        // ... makes it harder to choose recipes that are heavy in one or two nutrients.
-        if (Context.WeeklyNutrientsWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
-        {
-            scale *= UserConsts.NutrientTargetsScale;
-        }
-
         if (Context.WeeklyNutrientsRDA != null)
         {
             foreach (var weeklyNutrientRDA in Context.WeeklyNutrientsRDA.Where(kv => kv.Value > 0))
