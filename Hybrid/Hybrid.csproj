@@ -17,8 +17,8 @@
         <Nullable>enable</Nullable>
 
         <!-- Versions -->
-        <ApplicationDisplayVersion>0.1.59</ApplicationDisplayVersion>
-        <ApplicationVersion>11</ApplicationVersion>
+        <ApplicationDisplayVersion>0.1.60</ApplicationDisplayVersion>
+        <ApplicationVersion>12</ApplicationVersion>
 
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -67,15 +67,15 @@
 
     <ItemGroup>
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-      <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.70" />
-      <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="10.0.70" />
+      <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.71" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="10.0.71" />
       <PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.8" />
-      <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.8" />
-      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.8" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.9" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.9" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="10.0.9" />
       <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
       <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
-      <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.70" />
+      <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.71" />
     </ItemGroup>
 
     <ItemGroup>

@@ -44,7 +44,7 @@ public abstract class QueryRunnerBase
         public override bool Equals(object? obj) => obj is InProgressQueryResults other
             && other.Recipe.Id == Recipe.Id;
     }
-    
+
     public required ServingOptions ServingOptions { private get; init; }
     public required DurationOptions DurationOptions { private get; init; }
     public required IngredientOptions IngredientOptions { private get; init; }

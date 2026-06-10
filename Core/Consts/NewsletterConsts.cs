@@ -26,7 +26,7 @@ public static class NewsletterConsts
     public static readonly FootnoteType[] FootnoteTypes =
     [
         FootnoteType.Custom, FootnoteType.GoodVibes, FootnoteType.Mindfulness, FootnoteType.HealthFacts, FootnoteType.HealthTips,
-        FootnoteType.CookingTips, FootnoteType.CookingFacts, FootnoteType.DigestionTips, FootnoteType.DigestionFacts, 
+        FootnoteType.CookingTips, FootnoteType.CookingFacts, FootnoteType.DigestionTips, FootnoteType.DigestionFacts,
         FootnoteType.CookingAffirmations, FootnoteType.CookingMotivation,
     ];
 }
