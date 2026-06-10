@@ -37,6 +37,8 @@ namespace Core.Code.Helpers;
 /// Nutrients.Total_Sugars,
 /// Nutrients.Lycopene,
 /// Nutrients.Betaine,
+/// Nutrients.Carotene_Alpha,
+/// Nutrients.Carotene_Beta,
 /// </summary>
 public static class NutrientHelpers
 {
@@ -87,8 +89,6 @@ public static class NutrientHelpers
 
         // Vitamins
         Nutrients.Vitamin_A,
-        Nutrients.Carotene_Alpha,
-        Nutrients.Carotene_Beta,
         Nutrients.Thiamin_B1,
         Nutrients.Riboflavin_B2,
         Nutrients.Niacin_B3,

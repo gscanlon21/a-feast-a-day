@@ -190,6 +190,7 @@ public class UserRepo
     {
         var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks);
         var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, tul: true);
+        UserLogs.Log(user, $"Note that all nutrient targets units are in g/week.");
 
         if (volumeRDA != null)
         {
@@ -294,8 +295,9 @@ public class UserRepo
             // Get the weekly, not daily value. 7 days in a week.
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
 
-            // Return how much left of each nutrient to work each week. Defaults to max per week.
-            return (weeklyNutrientVolume[n] + weeklyGramsOfRDATUL) / 2 ?? weeklyGramsOfRDATUL;
+            // For a gentler upswing back into range if a nutrient target is currently being underworked:
+            // TUL gives max per week. RDA gives the difference between the current nutrient target and the actual RDA, while capping at the actual RDA.
+            return tul ? weeklyGramsOfRDATUL : Math.Min(weeklyGramsOfRDATUL, (weeklyNutrientVolume[n] + weeklyGramsOfRDATUL) / 2 ?? weeklyGramsOfRDATUL);
         }));
     }
 

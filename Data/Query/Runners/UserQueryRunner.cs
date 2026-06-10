@@ -270,9 +270,9 @@ public class UserQueryRunner : QueryRunnerBase
             // ... those feasts don't update the last seen date.
             filteredResults.ShuffleInPlace();
         }
-        else
+        else if (section != Core.Models.Newsletter.Section.Prep)
         {
-            // Don't need to order if there is no user context. Order by recipes that are still pending refresh.
+            // Don't need to order if we are in a prep section. Order by recipes that are still pending refresh.
             filteredResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
                 // Show recipes that the user has rarely seen.
                 // NOTE: When the two recipe's LastSeen dates are the same:
@@ -400,10 +400,20 @@ public class UserQueryRunner : QueryRunnerBase
         // Slowly allow out-of-preference recipes until we meet our servings/nutritional targets.
         while (NutrientOptions.AtLeastXNutrientsPerRecipe.HasValue && --NutrientOptions.AtLeastXNutrientsPerRecipe >= 1);
 
-        /* Show actual nutrients selected:
-        var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, allNutrients, partIngredients);
-        UserLogs.Log(UserOptions, $"Nutrient results for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, allNutrientsWorked.Debug())}");
-        //*/
+        /*// Show actual nutrients selected:
+        if (section != Core.Models.Newsletter.Section.Prep && NutrientOptions.NutrientTargetsTUL != null)
+        {
+            var allNutrientsWorked = WorkedAmountOfNutrient(finalResults, allNutrients, partIngredients);
+            UserLogs.Log(UserOptions, $"Nutrient results for {section}:{Environment.NewLine}{string.Join(Environment.NewLine, allNutrientsWorked.Debug())}");
+
+            foreach (var item in NutrientOptions.NutrientTargetsTUL.Where(nt => allNutrientsWorked.ContainsKey(nt.Key)))
+            {         
+                if (1 - (item.Value / NutrientOptions.NutrientTargetsTUL[item.Key]) < .05)
+                {
+                    UserLogs.Log(UserOptions, $"Nutrient capped for {section}:{Environment.NewLine}{item.Key}:{item.Value} has max of {NutrientOptions.NutrientTargetsTUL[item.Key]}");
+                }
+            }
+        }//*/
 
         return orderBy switch
         {

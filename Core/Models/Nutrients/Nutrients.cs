@@ -450,14 +450,14 @@ public enum Nutrients
     /// <summary>
     /// Thiamin (B1)
     /// </summary>
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
-    [DailyAllowance(1.2, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
-    [DailyAllowance(1.1, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Thiamin (B1)", Order = 6300)]
     Thiamin_B1 = 28,
 
