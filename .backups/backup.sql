@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict gu21i6eOjIDK9iWdFitaUPnYb0X7MnrvVajffXakHTKKqEgEBi1Bn3v8YwxO3Rk
+\restrict NQY4CyxmmUWgYcIm6gHROGfmC3cGuhQqukXXTtkWTCGBNDh0dAPh6cb2WuQZgES
 
 -- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.0
@@ -866,12 +866,6 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 590	0.06	0.12	4096	100	1	9	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl2	2026-06-06	Up to 10% of the AMDR can be consumed as eicosapentaenoic acid (EPA) and/or docosahexaenoic acid (DHA).	87
 186	19	\N	65536	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
 187	12.5	\N	131072	3	0	4	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	2026-03-04	\N	78
-44	55	400	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
-239	55	400	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
-607	55	400	16777216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
-608	55	400	67108864	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
-609	55	400	33554432	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
-610	55	400	134217728	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
 199	14.3	\N	1048576	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 200	14.3	\N	2097152	1	2	0	https://instituteofmineralresearch.org/wp-content/uploads/2017/06/LithiumDietaryNutritionalEssentiality.pdf	2026-03-28	\N	51
 414	2.8	\N	40960	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl3	2026-03-29	\N	29
@@ -942,6 +936,8 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 127	\N	10	655360	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 154	\N	10	64	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
 158	\N	10	512	100	1	9	https://www.ahajournals.org/doi/10.1161/cir.0000000000000510	2026-03-13	\N	6
+611	2.9	30	16777216	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
+612	2.9	30	33554432	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
 60	2.7	6	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
 263	2.7	6	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
 195	25	\N	2097152	3	0	4	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-macronutrients.html#tbl1	2026-06-01	https://www.ncbi.nlm.nih.gov/books/NBK56068/table/summarytables.t4/?report=objectonly	18
@@ -953,19 +949,17 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 249	150	1100	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 53	\N	1.8	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-08	\N	11
 257	\N	1.8	65536	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-08	\N	11
-262	2.9	35	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
 65	0.5	10	131072	3	0	0		2023-01-01	\N	1
 268	0.5	10	65536	3	0	0		-infinity	\N	1
-368	2.9	35	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
-611	2.9	30	16777216	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
-59	\N	35	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
-612	\N	30	33554432	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
 62	2.3	12	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-31	\N	76
 50	700	4000	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-02	\N	19
 260	1.2	8	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-04-29	\N	7
 46	25	\N	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-09	\N	8
 63	2.1	7.1	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl2	2026-05-12	\N	74
 48	3	10	131072	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl1	2026-05-23	\N	81
+59	2.9	35	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
+262	2.9	35	65536	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
+368	2.9	35	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
 277	\N	\N	1048576	2	0	0		-infinity	\N	58
 435	900	3000	65536	1	0	0	https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/	2026-03-04	\N	79
 288	1	10	1048576	2	0	0		-infinity	\N	54
@@ -974,6 +968,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 347	150	1100	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-05	\N	14
 363	500	3500	1048576	2	0	0		-infinity	\N	27
 361	\N	1.8	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-08	\N	11
+321	55	400	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
 369	2.7	6	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-05-25	\N	35
 387	500	3500	2097152	2	0	0		-infinity	\N	27
 298	\N	\N	2097152	2	0	0		-infinity	\N	58
@@ -990,8 +985,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 66	\N	30	131072	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-07	\N	83
 292	\N	30	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-07	\N	83
 377	\N	30	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-07	\N	83
-321	55	400	1048576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
-390	\N	35	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-27	\N	84
+390	2.9	35	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
 371	2.3	12	1048576	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-31	\N	76
 336	90	2000	1048576	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-04-01	\N	38
 289	20.4	\N	1048576	2	3	0	https://www.jandonline.org/article/S2212-2672(20)30557-8/abstract	2026-04-04	\N	72
@@ -1036,7 +1030,7 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 396	0.5	10	2097152	3	0	0		-infinity	\N	1
 297	320	\N	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-19	\N	10
 378	1.5	15	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/	2026-06-04	TUL up to 90g/d: https://pubmed.ncbi.nlm.nih.gov/16105183/	32
-335	55	400	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html	2026-03-26	\N	40
+335	55	400	2097152	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
 393	2.3	12	2097152	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-03-31	\N	76
 350	75	2000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-vitamins.html#tbl2	2026-04-01	\N	38
 372	700	4000	2097152	2	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl2	2026-04-02	\N	19
@@ -1435,6 +1429,20 @@ COPY public.dietary_intake ("Id", "Min", "Max", "Person", "Measure", "Multiplier
 997	\N	30	67108864	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-07	\N	83
 998	\N	30	33554432	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-07	\N	83
 999	\N	30	134217728	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-07	\N	83
+44	55	400	131072	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+239	55	400	65536	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+607	55	400	16777216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+608	55	400	67108864	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+609	55	400	33554432	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+610	55	400	134217728	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1000	60	400	24576	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1001	60	400	393216	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1002	60	400	6291456	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1003	70	400	40960	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1004	70	400	655360	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1005	70	400	10485760	1	0	0	https://www.canada.ca/en/health-canada/services/food-nutrition/healthy-eating/dietary-reference-intakes/tables/reference-values-elements.html#tbl3	2026-06-09	\N	40
+1006	2.9	30	67108864	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
+1007	2.9	30	134217728	3	0	0	https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-06-10	\N	84
 \.
 
 
@@ -4376,6 +4384,8 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 328	2512380	20036	4496	2026-06-07
 808	0	0	0	2026-06-07
 361	0	0	0	2026-06-08
+497	170010	11300	\N	2026-06-10
+853	170016	11312	\N	2026-06-10
 \.
 
 
@@ -4407,7 +4417,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 21	Fats	Fats	800	\N	2026-05-30
 22	Calcium_Ca	Calcium (Ca)	5400	\N	2026-05-31
 18	Fiber_Total_Dietary	Dietary Fiber	1200	Fibre_Total_Dietary	2026-06-01
-84	Leucine	Leucine	17000	No AI/RDA for women, though we can put an upper limit that matches.	2026-03-27
 76	Phenylalanine	Phenylalanine	17300	\N	2026-03-31
 71	Vitamin_K	Vitamin K	8800	\N	2026-04-08
 61	Manganese_Mn	Manganese (Mn)	5600	\N	2026-04-12
@@ -4427,6 +4436,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 87	Omega_3_EPA_DHA	Omega 3 Fatty Acids (EPA/DHA)	15000	10% of 0.6–1.2% is 0.06–0.12%	2026-06-06
 83	Arginine	Arginine	16700	\N	2026-06-07
 11	Vanadium_V	Vanadium (V)	999999	\N	2026-06-08
+84	Leucine	Leucine	17000	No AI/RDA for women, though we can put an upper limit that matches.	2026-06-10
 66	Total_Lipid_Fat	Fats	800	\N	2026-04-24
 7	Histidine	Histidine	17400	\N	2026-04-29
 42	Carotene_RAE	Carotenes	7600	Note that these are the dietary intakes for vitamin A in RAE.	2026-05-01
@@ -4447,7 +4457,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 56	Omega_3_EPA	Omega 3 Fatty Acids (EPA)	15000	\N	2026-05-02
 17	Omega_3_ALA	Omega 3 Fatty Acids (ALA)	14000	\N	2026-04-21
 15	Omega_3_DHA	Omega 3 Fatty Acids (DHA)	15300	\N	2026-05-21
-40	Selenium_Se	Selenium (Se)	6200	\N	2026-03-26
+40	Selenium_Se	Selenium (Se)	6200	\N	2026-06-09
 51	Lithium_Li	Lithium (Li)	999999	Based on Li intake data in different countries, a provisional RDA of 1 mg Li/day for a 70 kg adult can be proposed, corresponding to 14.3 μg/kg BW.	2026-03-28
 29	Vitamin_B_12	Vitamin B12	6800	\N	2026-03-29
 38	Vitamin_C	Vitamin C	6300	\N	2026-04-01
@@ -4906,6 +4916,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2661	8	140	1	1	\N	1259	f	\N	3	f	t	1	\N
 2662	7	140	1	2	\N	2033	f	\N	4	f	t	0.25	\N
 2663	0	140	1	2	, diced	7	f	\N	5	f	t	1	\N
+5581	8	393	8	1	\N	692	t	\N	5	f	t	1	\N
 3916	0	196	1	4	, cut into strips	324	f	\N	10	f	t	1	\N
 3917	0	196	1	2	, whites only, slightly beaten	187	f	\N	11	f	t	1	\N
 3918	6	196	1	1	(RICE FLOUR)	228	f	\N	12	f	t	1	\N
@@ -5206,12 +5217,12 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5120	7	310	1	4	, for the sauce	123	f	\N	1	f	t	1	\N
 5121	7	310	1	1	\N	502	f	\N	2	f	t	1	\N
 3423	6	44	2	1	\N	20	f	\N	1	f	t	1	\N
+2914	4	152	1	8	\N	19	f	\N	1	f	t	1	\N
 3424	6	44	2	1	\N	123	f	\N	2	f	t	1	\N
 3425	8	44	1	1	\N	34	f	\N	3	f	t	1	\N
 5402	0	363	1	1	, juiced	346	f	\N	1	f	t	1	\N
-2914	4	152	1	8	\N	19	f	\N	1	f	t	1	\N
 2916	0	152	1	1	, juiced	4	t	\N	3	f	t	1	\N
-2918	8	152	8	1	\N	285	t	\N	5	f	t	1	\N
+2918	8	152	8	1	\N	285	t	\N	5	f	f	1	\N
 2858	5	149	2	3	\N	264	f	\N	1	f	t	1	\N
 4322	6	82	3	1	\N	61	f	\N	4	f	t	1	\N
 2859	0	149	1	6	, chopped	144	f	\N	2	f	t	1	\N
@@ -5260,6 +5271,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5347	0	326	1	1	, 14 oz	259	f	\N	0	f	t	1	\N
 5348	0	326	1	4	\N	144	f	\N	1	f	t	1	\N
 5349	0	326	1	1	\N	848	f	\N	2	f	t	1	\N
+2917	0	152	1	1	, cut into very thin slivers	5	t	\N	4	f	t	1	\N
 3322	6	46	1	5	, pitted, coarsely chopped	152	f	\N	0	f	t	1	\N
 3323	6	46	2	1	, shredded	574	f	\N	1	f	t	1	\N
 2962	8	147	4	1	, to taste	504	f	\N	4	f	t	1	\N
@@ -5268,7 +5280,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6867	4	640	1	4	, cut into small cubes	1295	f	\N	5	f	t	1	\N
 6868	0	640	1	2	, beaten	187	f	\N	6	f	t	1	\N
 6869	7	640	1	2	\N	557	f	\N	7	f	t	1	\N
-2917	0	152	1	1	, cut into very thin slivers	5	t	\N	4	f	t	1	\N
 2970	0	153	1	8	\N	513	f	\N	0	f	t	1	\N
 2971	8	153	4	1	\N	214	f	\N	1	f	t	1	\N
 2972	8	153	4	1	\N	36	f	\N	2	f	t	1	\N
@@ -5533,7 +5544,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8618	7	988	1	1	\N	81	f	\N	3	f	t	1	\N
 4440	8	238	2	1	\N	307	f	\N	4	f	t	1	\N
 7214	6	717	2	1	, diced	1088	t	\N	3	f	t	1	\N
-4425	5	105	4	5	\N	264	f	\N	1	f	t	1	\N
 7215	8	717	2	3	, ground	168	t	\N	4	f	t	1	\N
 4362	7	249	1	1	\N	410	f	\N	1	f	t	1	\N
 5333	4	323	1	5	\N	356	f	\N	1	f	t	1	\N
@@ -5541,8 +5551,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5335	4	323	2	1	\N	2	t	\N	5	f	t	1	\N
 5336	0	323	1	1	\N	187	f	\N	6	f	t	1	\N
 6872	0	640	1	4	, finely sliced	302	t	\N	10	f	t	1	For Garnish
-4520	0	131	1	3	\N	324	f	\N	0	f	t	1	\N
+4425	5	105	4	5	\N	264	f	\N	1	f	t	1	\N
 4426	6	105	1	1	\N	144	t	\N	2	f	t	1	\N
+4520	0	131	1	3	\N	324	f	\N	0	f	t	1	\N
 8619	0	988	1	1	, juiced	4	f	\N	4	f	t	1	\N
 4363	8	249	1	1	, minced	307	f	\N	2	f	t	1	\N
 8620	8	988	2	1	\N	833	f	\N	5	f	t	1	\N
@@ -6043,7 +6054,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5642	7	402	1	1	\N	215	f	\N	1	f	t	1	\N
 5643	6	402	1	2	\N	871	f	\N	2	f	t	1	\N
 5644	6	402	1	2	, diced	159	f	\N	3	f	t	1	\N
-5577	0	393	1	2	, peeled and thinly sliced (about 1½ cups)	155	f	\N	1	f	t	1	\N
 5485	7	260	1	1	\N	77	f	\N	3	f	t	0.25	\N
 5592	7	395	1	1	, chopped	2	t	\N	5	f	t	1	\N
 5593	7	395	1	1	, chopped	473	t	\N	6	f	t	1	\N
@@ -6076,7 +6086,11 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 4501	6	257	2	1	, grated	95	t	\N	8	f	t	1	\N
 5603	0	397	1	1	, boiled and diced	671	t	\N	3	f	t	1	\N
 5488	8	379	1	1	\N	77	f	\N	1	f	f	0.25	\N
+5577	0	393	1	2	, peeled and thinly sliced (about 1½ cups)	155	f	\N	1	f	t	1	\N
+5578	7	393	1	1	, finely chopped	473	t	\N	2	f	t	1	\N
+5579	6	393	4	1	\N	966	f	\N	3	f	t	1	\N
 8256	7	979	1	2	\N	1647	f	\N	3	f	t	1	\N
+5580	7	393	1	1	\N	968	f	\N	4	f	t	1	\N
 5498	6	381	4	1	\N	111	f	\N	3	f	t	1	\N
 5669	7	407	1	4	\N	56	f	\N	1	f	t	0.25	\N
 5500	6	381	4	1	\N	392	f	\N	5	f	t	1	\N
@@ -6099,8 +6113,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5661	6	405	1	1	\N	976	f	\N	3	f	t	1	\N
 5662	8	405	2	1	, to taste	681	t	\N	4	f	t	1	\N
 5499	6	381	4	1	\N	171	f	\N	4	f	t	0.25	\N
-5578	7	393	1	1	, finely chopped	473	t	\N	2	f	t	1	\N
-5579	6	393	3	1	\N	966	f	\N	3	f	t	1	\N
 5629	0	400	1	1	, peeled and pitted	9	f	\N	2	f	t	1	\N
 5630	0	400	1	2	, peeled	\N	f	65	3	f	t	1	\N
 5650	8	403	8	1	, to taste	692	f	\N	2	f	t	1	\N
@@ -6120,8 +6132,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5656	7	404	1	1	\N	1094	f	\N	3	f	t	1	\N
 5657	0	404	1	4	, omit if making smoothie hot	501	t	\N	4	f	t	1	\N
 5501	6	381	2	1	, shredded	95	t	\N	6	f	t	1	\N
-5580	7	393	1	1	\N	968	f	\N	4	f	t	1	\N
-5581	8	393	8	1	\N	692	t	\N	5	f	t	1	\N
 5721	0	418	1	6	, cooked and chopped	985	f	\N	1	f	t	1	\N
 5722	0	418	3	1	, minced	3	f	\N	2	f	t	1	\N
 5723	0	418	1	2	, minced	5	t	\N	3	f	t	1	\N
@@ -6447,20 +6457,20 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 1578	6	96	3	1	, medium dry or sweet	85	f	\N	4	f	t	1	\N
 8266	8	787	8	1	\N	692	t	\N	8	f	f	1	\N
 6056	6	530	3	1	, chopped	17	f	\N	1	f	t	1	\N
+6049	6	529	2	1	\N	90	f	\N	4	f	t	1	\N
 6190	0	552	1	1	\N	4	f	\N	0	f	t	1	\N
 6191	0	552	1	1	\N	346	f	\N	1	f	t	1	\N
 6192	6	552	1	1	\N	806	f	\N	2	f	t	1	\N
 6193	8	552	2	1	\N	39	f	\N	3	f	t	1	\N
 6079	5	533	1	1	, with skins	1054	f	\N	0	f	t	1	\N
 6067	6	531	2	1	\N	178	f	\N	2	f	t	1	\N
+6050	6	529	2	1	\N	871	f	\N	5	f	t	1	\N
 6470	0	588	1	3	, chopped	5	t	\N	3	f	t	1	\N
 6471	0	588	1	2	, red/yellow, chopped	811	f	\N	4	f	t	1	\N
 6472	0	588	1	2	, diced into small pieces	387	t	\N	5	f	t	1	\N
-6049	6	529	2	1	\N	90	t	\N	4	f	t	1	\N
-6050	6	529	2	1	\N	871	f	\N	5	f	t	1	\N
+6051	6	529	4	1	\N	1340	t	\N	6	f	t	1	\N
 6068	8	531	2	1	\N	40	f	\N	3	f	t	1	\N
 6069	6	531	4	1	\N	805	t	\N	4	f	t	1	\N
-6051	6	529	4	1	\N	1340	t	\N	6	f	t	1	\N
 6057	6	530	4	1	, chopped	105	f	\N	2	f	t	1	\N
 6000	6	521	1	1	\N	\N	f	858	5	f	t	1	\N
 6058	7	530	1	1	\N	80	f	\N	3	f	t	1	\N
@@ -7590,14 +7600,18 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8469	7	33	1	2	\N	1592	t	\N	8	f	t	1	\N
 8470	0	33	1	1	, chopped	222	t	\N	5	f	t	1	\N
 8480	8	996	1	1	\N	1764	t	\N	8	f	f	1	\N
-8102	7	961	1	1	\N	1342	t	\N	7	f	t	1	Garnish
+8101	7	961	1	1	\N	577	t	\N	6	f	t	1	Garnish
+4428	4	105	1	10	, dried	382	f	\N	4	f	t	1	\N
 8164	7	969	1	3	\N	461	f	\N	1	f	t	1	\N
+8102	7	961	1	1	\N	1342	t	\N	7	f	t	1	Garnish
 8165	4	969	1	12	\N	1722	f	\N	2	f	t	1	\N
 8167	7	969	1	2	\N	830	f	\N	4	f	t	1	\N
 4904	6	101	4	1	\N	95	t	\N	4	f	t	1	\N
+4427	4	105	1	12	\N	600	f	\N	3	f	t	1	\N
+4429	4	105	1	3	, plus extra to serve	378	t	\N	5	f	t	1	\N
 8312	7	750	1	1	\N	82	f	\N	7	f	t	1	\N
+7388	6	105	1	1	\N	\N	f	858	7	f	t	1	\N
 8314	8	750	8	1	\N	692	t	\N	8	f	t	1	\N
-8101	7	961	1	1	\N	577	t	\N	6	f	t	1	Garnish
 6300	7	568	1	2	\N	991	f	\N	6	f	t	1	\N
 6247	8	559	4	1	, to taste	692	t	\N	7	f	t	1	\N
 7091	0	698	1	1	, juiced	12	f	\N	1	f	t	1	\N
@@ -7606,10 +7620,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7095	6	698	1	1	\N	1317	f	\N	5	f	t	1	\N
 6301	7	568	1	2	\N	358	f	\N	7	f	t	1	\N
 6155	8	545	8	1	, to taste	692	t	\N	9	f	t	1	\N
-4427	4	105	1	12	\N	600	f	\N	3	f	t	1	\N
-4428	4	105	1	10	, dried	382	f	\N	4	f	t	1	\N
-4429	4	105	1	3	, plus extra to serve	378	t	\N	5	f	t	1	\N
-7388	6	105	1	1	\N	\N	f	858	7	f	t	1	\N
+6052	6	529	4	1	, chopped	872	t	\N	7	f	t	1	\N
+6053	6	529	4	1	, chopped	473	t	\N	8	f	t	1	\N
+6054	0	529	1	1	, juiced	4	t	\N	10	f	t	1	\N
 3517	0	180	1	4	, chopped	5	f	\N	5	f	t	1	\N
 3518	8	180	4	1	, flakes	833	f	\N	6	f	t	1	\N
 3519	4	180	1	28	\N	615	f	\N	7	f	t	1	\N
@@ -7634,11 +7647,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5462	6	375	2	1	, full-fat	178	f	\N	6	f	t	1	\N
 6995	6	654	4	1	, plus extra to garnish	95	t	\N	5	f	t	1	\N
 6996	8	654	8	1	, ground	67	t	\N	6	f	t	1	\N
-6052	6	529	4	1	, chopped	872	f	\N	7	f	t	1	\N
-6053	6	529	4	1	, chopped	473	t	\N	8	f	t	1	\N
 8171	8	969	8	1	\N	285	t	\N	8	f	t	1	\N
 8401	0	992	2	1	\N	105	f	\N	1	f	t	1	\N
-6054	0	529	1	1	, juiced	4	t	\N	9	f	t	1	\N
 4743	7	250	1	1	, for drizzling	2033	f	\N	8	f	t	0.25	\N
 4907	7	234	1	1	\N	2033	f	\N	1	f	f	0.25	\N
 6399	0	580	1	2	, sliced (mostly green parts)	144	f	\N	9	f	t	1	\N
@@ -7929,6 +7939,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5096	6	156	2	1	, toasted and roughly chopped, for the sauce	602	t	\N	5	f	t	1	\N
 5097	7	156	1	3	, for the sauce	502	t	\N	6	f	t	1	\N
 5098	0	156	1	1	, juiced, for the sauce	4	t	\N	7	f	t	1	\N
+6055	7	529	1	1	\N	278	f	\N	9	f	t	0.25	\N
 7643	7	842	1	1	, chopped	2	t	\N	5	f	t	1	For Garnish
 7636	8	629	2	1	\N	75	f	\N	3	f	t	0.25	\N
 7637	0	629	1	2	\N	910	t	\N	4	f	t	1	\N
@@ -7939,7 +7950,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 6076	0	532	1	1	, juiced	4	f	\N	7	f	t	1	\N
 8351	4	984	1	1	\N	286	f	\N	1	f	t	1	\N
 8352	8	984	4	1	\N	214	t	\N	2	f	f	0.5	\N
-6055	7	529	1	1	\N	2033	f	\N	10	f	t	0.25	\N
 8403	8	992	1	2	\N	2033	f	\N	3	f	f	0.25	\N
 6413	7	582	1	2	\N	73	t	\N	3	f	t	1	\N
 6414	8	582	1	1	\N	323	f	\N	4	f	t	1	\N
@@ -8264,11 +8274,15 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8305	8	983	2	1	\N	67	f	\N	4	f	t	1	\N
 8024	0	950	1	7	\N	1569	f	\N	0	f	t	1	\N
 8306	7	983	1	1	, chopped	677	t	\N	5	f	t	1	\N
+8096	4	961	1	5	\N	277	f	\N	1	f	t	1	\N
 7724	0	854	4	1	\N	159	f	\N	4	f	t	1	\N
+8097	6	961	4	3	\N	480	f	\N	2	f	t	1	\N
+8098	6	961	4	3	\N	1752	f	\N	3	f	t	1	\N
 7725	4	854	1	9	\N	1716	f	\N	5	f	t	1	\N
 8013	4	41	1	1	, for seasoning	140	t	\N	6	f	t	1	\N
 6515	8	593	1	1	\N	1573	f	\N	6	f	t	1	\N
 6517	6	593	2	3	, full-fat	178	f	\N	8	f	t	1	\N
+8099	4	961	1	9	\N	390	f	\N	4	f	t	1	\N
 8055	0	955	1	1	\N	1082	f	\N	1	f	t	1	\N
 8057	0	955	1	2	, very thinly sliced	5	t	\N	3	f	t	1	\N
 2565	8	28	8	1	\N	285	t	\N	4	f	f	1	\N
@@ -8317,8 +8331,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8093	7	960	1	1	\N	358	f	\N	6	f	t	1	\N
 8094	8	960	8	1	\N	214	f	\N	7	f	t	1	\N
 7802	7	826	1	1	\N	2033	f	\N	6	f	t	0.25	\N
-8096	4	961	1	5	\N	277	f	\N	1	f	t	1	\N
-8097	6	961	4	3	\N	480	f	\N	2	f	t	1	\N
 8063	6	956	2	1	, cut into small cubes	1611	f	\N	2	f	t	1	\N
 8064	0	956	1	4	, sliced, whites and greens kept separate	1082	f	\N	3	f	t	1	\N
 8065	6	956	2	1	\N	1609	f	\N	4	f	t	1	\N
@@ -8330,8 +8342,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7990	9	944	1	8	\N	806	f	\N	1	f	t	1	\N
 7991	7	944	1	1	\N	1580	f	\N	2	f	t	1	\N
 8051	8	264	1	1	\N	82	f	\N	6	f	t	1	\N
-8098	6	961	4	3	\N	1752	f	\N	3	f	t	1	\N
-8099	4	961	1	9	\N	390	f	\N	4	f	t	1	\N
 8041	0	953	1	4	, yolks-only	1411	f	\N	2	f	t	1	\N
 8042	6	953	2	1	\N	36	f	\N	3	f	t	1	\N
 8043	7	953	1	4	\N	36	f	\N	4	f	t	1	\N
@@ -8346,12 +8356,16 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8303	8	983	1	2	, divided, plus more to taste	214	f	\N	2	f	t	0.25	\N
 8172	0	970	1	4	\N	677	f	\N	0	f	t	1	\N
 8173	0	970	1	4	\N	1617	f	\N	1	f	t	1	\N
-8174	7	970	1	5	\N	1614	f	\N	2	f	t	1	\N
 8103	8	961	1	3	\N	278	f	\N	8	f	t	0.25	Dressing
+8104	8	961	1	1	\N	358	t	\N	9	f	t	1	Dressing
+8174	7	970	1	5	\N	1614	f	\N	2	f	t	1	\N
 6761	6	626	2	1	\N	1268	f	\N	0	f	t	1	\N
 6762	7	626	1	5	\N	234	f	\N	1	f	t	1	\N
 6763	7	626	1	2	\N	1588	f	\N	2	f	t	1	\N
 6764	0	626	1	6	, whites only	187	f	\N	3	f	t	1	\N
+8105	8	961	4	1	\N	234	t	\N	10	f	t	1	Dressing
+8106	8	961	8	1	\N	285	t	\N	11	f	t	1	Dressing
+8107	7	961	1	1	, chopped	1753	t	\N	12	f	t	1	Dressing
 744	0	37	1	1	, diced	9	t	\N	5	f	t	1	\N
 8149	6	967	1	1	\N	546	f	\N	3	f	t	0.75	\N
 8135	4	965	2	7	\N	639	f	\N	1	f	t	1	\N
@@ -8360,10 +8374,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8146	4	967	1	4	(SEMISWEET CHOCOLATE), broken into pieces	1597	f	\N	0	f	t	1	\N
 8147	6	967	1	1	\N	186	f	\N	1	f	t	1	\N
 8151	6	967	4	1	(LIGHTLY WHIPPED CREAM)	345	t	\N	5	f	t	0.25	\N
-8104	8	961	1	1	\N	358	t	\N	9	f	t	1	Dressing
-8105	8	961	4	1	\N	234	t	\N	10	f	t	1	Dressing
-8106	8	961	8	1	\N	285	t	\N	11	f	t	1	Dressing
-8107	7	961	1	1	, chopped	1753	t	\N	12	f	t	1	Dressing
 8137	4	965	1	11	\N	638	f	\N	3	f	t	1	\N
 7993	6	945	4	1	\N	1744	f	\N	2	f	t	0.25	\N
 8139	8	965	1	1	\N	40	f	\N	5	f	t	1	\N
@@ -8654,6 +8664,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8553	6	1006	1	2	\N	\N	f	484	13	f	t	1	\N
 8575	5	1039	2	3	\N	387	f	\N	1	f	t	1	\N
 8576	0	1039	1	1	, diced	8	f	\N	2	f	t	1	\N
+4902	7	101	1	3	\N	278	f	\N	2	f	t	0.25	\N
 8577	0	1039	2	1	, diced	1780	f	\N	3	f	t	1	\N
 8529	6	1005	1	1	, roughly chopped	1964	t	\N	1	f	t	1	\N
 8456	8	997	1	1	\N	75	f	\N	11	f	t	1	\N
@@ -8699,7 +8710,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 3259	6	114	2	1	\N	2033	f	\N	0	f	t	0.25	\N
 2782	7	141	1	2	\N	2033	f	\N	1	f	t	0.25	\N
 8248	7	313	1	1	, to taste	2033	f	\N	7	f	f	0.25	\N
-4902	7	101	1	3	\N	2033	f	\N	2	f	t	0.25	\N
 5931	7	481	1	1	\N	2033	f	\N	0	f	t	0.25	\N
 8581	6	1039	4	1	\N	62	f	\N	7	f	t	1	\N
 8535	6	1005	4	1	\N	1925	t	\N	7	f	t	1	\N
@@ -8731,6 +8741,7 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 7317	7	732	1	2	\N	189	f	\N	5	f	t	0.25	\N
 6274	8	565	1	1	\N	2033	f	\N	1	f	f	0.25	\N
 5763	8	423	1	1	\N	2033	f	\N	4	f	f	0.25	\N
+2915	7	152	1	1	\N	278	f	\N	2	f	t	0.25	\N
 5681	7	410	1	1	\N	2033	f	\N	2	f	t	0.25	\N
 4430	7	38	1	1	\N	2033	f	\N	0	f	t	0.25	\N
 7193	7	714	1	2	\N	2033	f	\N	0	f	t	0.25	\N
@@ -8762,8 +8773,9 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 5309	8	319	1	1	\N	2033	f	\N	1	f	f	0.25	\N
 3454	6	94	4	3	\N	2033	f	\N	3	f	t	0.25	\N
 2848	7	148	1	7	\N	2033	f	\N	9	f	t	0.25	\N
-2915	7	152	1	1	\N	2033	f	\N	2	f	t	0.25	\N
 5524	7	386	1	6	\N	2033	f	\N	2	f	t	0.25	\N
+8100	8	961	1	1	\N	77	f	\N	5	f	t	0.25	\N
+7387	7	105	1	2	\N	77	f	\N	6	f	t	0.25	\N
 8610	6	1043	1	1	, trimmed and cut into 2” pieces	121	f	\N	2	f	t	1	\N
 8611	7	1043	1	1	\N	278	f	\N	3	f	t	1	\N
 8612	8	1043	8	1	, to taste	74	f	\N	4	f	t	1	\N
@@ -8784,7 +8796,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8608	0	1042	1	1	, juiced	4	t	\N	10	f	t	1	\N
 7180	7	712	1	4	, melted	189	f	\N	1	f	t	0.25	\N
 8138	7	965	1	7	, at room temperature, diced	190	f	\N	4	f	t	0.25	\N
-8100	7	961	1	1	\N	2033	f	\N	5	f	t	0.25	\N
 8650	4	1045	1	14	\N	1368	f	\N	1	f	t	1	\N
 3664	7	188	1	2	\N	473	t	\N	10	f	t	1	Seasoning
 8656	6	1046	2	1	(Cotija cheese), crumbled	1402	t	\N	6	f	t	1	\N
@@ -8819,7 +8830,6 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 2352	7	70	1	2	\N	2033	f	\N	2	f	t	0.25	\N
 6178	7	549	1	2	\N	2033	f	\N	3	f	t	0.25	\N
 7771	7	860	1	3	, divided	2033	f	\N	0	f	t	0.25	\N
-7387	7	105	1	2	\N	2033	f	\N	6	f	t	0.25	\N
 2097	7	103	1	1	\N	2033	f	\N	7	f	t	0.25	\N
 7754	8	835	1	1	\N	2033	f	\N	6	f	t	0.25	\N
 7820	8	865	1	1	\N	2033	f	\N	2	f	t	0.25	\N
@@ -8942,6 +8952,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 1710	Place chicken in a slow cooker. Pour chicken broth mixture over chicken	25	1	0
 1711	Cook on Low for 6 to 8 hours. Shred chicken.	25	2	0
 2768	Meanwhile, peel and finely slice the onions, put them into a large shallow casserole pan on a medium heat with ½ a tablespoon of olive oil and the balti paste, and cook for 15 minutes, or until soft and golden, stirring regularly. 	307	1	4
+4535	To make the dressing, whisk together the olive oil, lemon juice, and sugar. Season with salt and pepper. Stir in the thyme or dill and set aside.	961	0	0
 1841	Preheat the oven to 400°F. Put the butter in a bowl and beat with the garlic and herbs.	165	0	2
 905	Snap the asparagus spears and discard the tough woody ends. Cut the spears in half and cook the thicker halves in boiling salted water for 12 minutes, adding the tips after 6 minutes. 	99	0	4
 2519	Heat oven to 375°F. 	42	0	2
@@ -8949,7 +8960,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2512	Preheat the oven to 325°F.	247	0	2
 3356	Drain the water and transfer potatoes to a dish.	533	2	0
 216	Eat the sunflower seeds.	54	0	0
-4535	To make the dressing, whisk together the olive oil, lemon juice, and sugar. Season with salt and pepper. Stir in the thyme or dill and set aside.	961	0	0
 2773	In a large mixing bowl, whisk the mayonnaise together with the olive oil. Add all the prepared vegetables and toss to combine well. Season with salt and pepper to taste.	241	0	0
 389	Coarsely slice the ripe bananas into small chunks, set on a plate or baking sheet, and freeze 1–2 hours.	47	0	131072
 2776	Place all the ingredients into a high-speed blender and blend until completely smooth. Serve immediately.	305	0	128
@@ -9507,6 +9517,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2567	Set the oven to 375°F.	271	0	2
 2758	Process the ingredients constantly for about 2 minutes, or until the mixture turns a really pale, creamy colour and has a nice frothy texture.	167	1	0
 2003	Sprinkle the chopped fresh chilli over the salad and season with salt, if you like. (Olives tend to be very salty.)	189	1	0
+3069	Mix all ingredients together in a large bowl.	393	0	0
+3070	Refrigerate until ready to use.	393	1	0
+3071	Serve with hot meals.	393	2	0
 2568	Heat the oil in a large sauté pan over medium heat. Add the onions, celery and garlic and cook, stirring, until softened (about 20–30 minutes, depending on the size of your vegetable pieces). Take off the heat.	271	1	4
 3255	Heat a large skillet over a medium heat and add the avocado oil.	476	0	4
 3256	Add the cauliflower rice and cook for 5 minutes, or until desired texture is achieved.	476	1	4
@@ -9526,16 +9539,13 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3541	Rinse the rice until the water runs clear.	589	0	0
 1965	Cook the steaks for 3–4 minutes on each side, then pour in the cider. Allow to boil for a couple of minutes, then stir in the cream and cook for 1–2 minutes, or until thickened. Season with salt and pepper. and serve immediately.	174	1	0
 2355	Snap off and throw away the woody ends of the asparagus - after trimming, you should have about 7oz asparagus spears. Cut the spears diagonally into pieces about the same length and shape as the garganelli.	194	0	0
-3069	Mix all ingredients together in a large bowl.	393	0	0
 3083	Serve with steamed rice or cauliflower rice.	396	2	0
 2757	Put the peeled and halved banana, thick Greek yogurt, egg and maple syrup in a food processor or blender. Add 2-tbsp chilled water or an ice cube.	167	0	384
 3257	Remove the pan from the heat and stir in the lime juice and cilantro.	476	2	0
 3028	Divide into bowls and top with remaining ½ cup parmesan. Enjoy!	381	4	0
-3070	Refrigerate until ready to use.	393	1	0
 2763	Take dough off of boards and cut the cookies apart. Sprinkle a cookie sheet with anise seeds, place cookies on it and let fry overnight. If in the morning the edges appear drier than the middle wet finger tip with water and trace along the edges of each cookie. This is so they will rise evenly. Bake in a slow oven (300-325 degrees) about twenty minutes.	83	1	0
 2754	In a food processor, combine all ingredients and blend until a sticky dough is formed. It doesn’t have to be completely smooth, but it does have to stick together!	236	0	256
 2755	Remove the processing blade and form into 1-inch balls.	236	1	0
-3071	Serve with hot meals.	393	2	0
 3094	Add the quinoa into a bowl, fluff with a fork, and allow it to cool.	401	0	0
 3095	Add the cucumbers, chickpeas, cherry tomatoes and corn to the bowl of quinoa and mix. Toss dressing over the salad.	401	1	0
 2004	Sprinkle the garlic, spring onions, olive oil, white wine vinegar and lemon juice over the salad. Chill before serving, sprinkled with the chopped mint leaves and coriander leaves.	189	2	0
@@ -9763,15 +9773,15 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4570	Top with lightly whipped cream and sprinkle over a little grated chocolate or some chocolate curls to decorate. Serve immediately.	967	4	0
 2832	Pop the popcorn in the microwave.	59	0	0
 2642	Divide up the mango and the hoisin bowls. Slice chicken and arrange on the plates, then tuck in, using the lettuce cups as a receptable to hold everything.	270	2	0
-2388	Peel the potatoes and chop into ½-inch cubes, trim and slice the scallions, then place in a large non-stick frying pan on a high heat with 2 tablespoons of olive oil and 1 cup of boiling kettle water.	105	0	4
 2644	Meanwhile, score the chicken lengthways at ½-inch intervals, going about halfway through. In a bowl, toss the chicken with 1 tablespoon each of olive oil, red wine vinegar, and black bean sauce to coat. Cook in the hot pan for 3 minutes on each side, or until dark, gnarly, and cooked through.	261	1	0
-2389	Reduce to a simmer, then cover and cook for 15 minutes, or until the potatoes are just tender, adding the peas for the last 5 minutes, stirring occasionally.	105	1	4
 2904	Preheat the oven to 400°F. 	315	0	2
 3167	Take out of wok and toss with olive oil, lemon and sea salt to taste.	423	2	0
 2319	Cut the kielbasa into 1-inch pieces and combine them with the brown sugar, applesauce, mustard, and garlic in a 3-quart slow cooker.	34	0	1024
 2320	Cover and cook on low for 6–8 hours or until the sausage is thoroughly heated and the sauce is bubbly.	34	1	1024
 2317	In a large bowl, whisk eggs, milk, curry powder, salt, pepper and, if desired, cardamom until blended.	30	0	0
 2318	Place a lightly greased large nonstick skillet over medium heat. Pour in egg mixture; cook and stir until eggs are thickened and no liquid egg remains. Serve with tomatoes.	30	1	4
+2389	Reduce to a simmer, then cover and cook for 15 minutes, or until the potatoes are just tender, adding the peas for the last 5 minutes, stirring occasionally.	105	1	4
+2388	Peel the potatoes and chop into ½-inch cubes, trim and slice the scallions, then place in a large non-stick frying pan on a high heat with 2 tablespoons of olive oil and 1 cup of boiling kettle water.	105	0	4
 2321	If you have a new hot cooking crockpot, cook on low for 4–6 hours until hot	34	2	1024
 4752	In a large pot or Dutch oven, heat the olive oil over medium high heat. Add the celery, carrot, onion, and garlic and sauté for 5–6 minutes until tender.	997	0	4
 2322	Because this recipe is high in sugar, it can burn easily. Serve.	34	3	0
@@ -9846,9 +9856,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3180	Bake for 15–20 minutes until the bacon is crispy.	425	4	0
 3182	Cool on the lined plate to drain excess fat.	425	6	0
 4452	Lay the chicken breasts flat out on your cutting board. Slice each chicken breast through the middle horizontally to create 2 thinner cutlets (for a total of 4 cutlets).	945	0	0
-3343	Mix together and enjoy!	529	0	0
 4576	Cook the pasta in two large pans of lightly salted water for 10–12 minutes, using one pan for each color to keep.	969	1	4
 4577	When the pasta is cooking, heat 1 tsp of the oil in a medium pan, or frying pan. Add the sun-dried tomato paste and the sun-dried tomatoes, then stir in 2 ladlefuls of the water used for cooking the pasta. Simmer until the sauce is slightly reduced, stirring constantly.	969	2	4
+3343	Mix together and enjoy!	529	0	0
 4575	Put the pine nuts in a non-stick frying pan and toss over a low to medium heat for 1–2 minutes or until they are lightly toasted and golden. Remove from the pan and set aside.	969	0	4
 2925	Cook the pasta in a pan of boiling salted water according to the package instructions, then drain, reserving a cupful of cooking water. 	323	0	4
 2926	Meanwhile, squeeze the sausage meat out of the skins, then, with wet hands, quickly shape into 18 even-sized balls. 	323	1	4
@@ -10301,7 +10311,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3570	Serve alongside mixed greens, olive oil, and balsamic vinegar.	595	2	0
 3591	Cook the quesadilla and serve warm.	605	0	4
 1928	Bring the water in the steamer to the boil, then lower the heat to a simmer. Steam until the flesh feels tender when tested with a knife tip. Serve hot.	177	3	0
-2390	Meanwhile, cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water.	105	2	4
 2681	Toss the mixture quickly to mix all the flavours together and ensure the pasta is well coated with the oil. Serve immediately, sprinkled with the remaining Parmesan.	101	3	0
 3587	Chop the chicken into 1-inch pieces. Assemble the salad - layer the mixed greens first, then the onion and tomatoes.	602	5	0
 3610	In a large soup pot, heat the oil on medium-high heat.	610	0	0
@@ -10321,6 +10330,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3620	Place boneless, skinless chicken breasts in a skillet or saucepan. Add lightly salted water to cover and bring to a boil.	613	0	4
 2571	Serve immediately, along with the rest of your feast!	271	4	0
 3621	Cover, reduce heat to a simmer and cook until no longer pink in the middle, 10–15 minutes, depending on size.	613	1	4
+2390	Meanwhile, cook the pasta in a pan of boiling salted water according to package instructions, then drain, reserving a cupful of starchy cooking water.	105	2	4
 4745	Crack eggs into pan and cook until the whites are firm but the eggs are runny, or to your liking.	995	4	4
 4746	While eggs cook, spread beans onto warm tortillas, slice avocado and tomatoes	995	5	4
 1950	Sprinkle the garlic, spring onions, olive oil, and lemon juice over the salad. Chill before serving, sprinkled with the chopped dill, coriander, parsley, and mint leaves.	188	2	0
@@ -11045,14 +11055,14 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4296	Meanwhile, in a bowl, just over the couscous with boiling kettle water, season with salt and pepper, and cover. Leave to hydrate for 3 minutes, then fluff up with a fork. When the time's up, remove the pan from the oven, tip over the couscous and carefully pat down to compress. Roast for 10 minutes, then confidently and carefully turn out onto a large plate or platter and top with dollops of the remaining tzatziki. Serve straight from the oven and let everyone dig in.	752	3	0
 4299	Add the olive oil to a large saucepan and place on a medium heat. Add the onion, carrots, celery and garlic and fry for 5–6 minutes, until softening. Add the dried herbs and fry for another 30 seconds.	864	0	4
 4300	Nestle the whole chicken breasts into the veg, then pour over the hot chicken stock. Place a lid on the pan, bring to the boil then turn straight down to a simmer. Continue to simmer for 20 minutes, until the chicken is cooked through.	864	1	4
-4297	Tip the drained pasta into the pea and potato pan, finely grate in the pecorino, then toss together, adding splashes of cooking water to loosen, if needed.	105	3	0
-4298	Season to perfection, and finish with an extra grating of pecorino and a drizzle of extra virgin olive oil, if you like. 	105	4	0
 4281	Mix the remaining harissa with enough boiling kettle water to loosen, then drizzle over the squash and scatter over the remaining chopped parsley, to serve. At the table, break and mix the oozy egg through the grains, and tuck in.	834	3	0
 4560	Break up the remaining dark chocolate and place in a heatproof bowl set over a pan of barely simmering water. Stir until melted and smooth. Remove from the heat and stir in the butter, then the vanilla extract and brown sugar.	965	2	4
 3532	Purée the soup in batches in a vented high-speed blender until combined.	586	5	33408
 3533	Return to the pot, bring back to a simmer, and add salt and pepper to taste.	586	6	4
 4726	Meanwhile, in a small bowl, whisk together tahini and an equal amount of water. Season with salt and pepper to taste.	992	2	0
 4727	When rice is done, remove bay leaves and add spinach. Cover and let steam until spinach is wilted. Divide into bowls.	992	3	0
+4297	Tip the drained pasta into the pea and potato pan, finely grate in the pecorino, then toss together, adding splashes of cooking water to loosen, if needed.	105	3	0
+4298	Season to perfection, and finish with an extra grating of pecorino and a drizzle of extra virgin olive oil, if you like. 	105	4	0
 3762	Return the escalopes to the pan and heat through for 1 minute before serving with the sauce, noodles and broccoli.	645	3	4
 4728	Top bowls with drained chickpeas and pickled onions. Drizzle with tahini.	992	4	0
 4301	Remove the chicken breasts from the soup, and using two forks shred it. Add back into the soup along with the lentils and chopped spinach. Mix well and simmer for another 5 minutes. Season with salt and pepper if needed, then serve.	864	2	4
@@ -11161,12 +11171,12 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4501	Cut the scallions in half to separate the dark-green tops from the whites. Cut the roots off the white parts, leaving as much of the scallion as possible, then cut the whites into 1-inch lengths and set aside. Slice the green tops as thinly as you can on a slight angle and set those aside.	955	0	0
 4502	Warm a large nonstick skillet or wok over high heat. Add the oil, scallion whites, and garlic and sauté for 1–2 minutes. Add the kimchi and cook for another 1–2 minutes.	955	1	4
 4500	Garnish this dish with black and white sesame seeds and thinly sliced scallions.	739	2	0
-4537	Thinly slice the cheese. Heat the oil in a large frying pan. Add the cheese and fry briefly until it turns golden on the underside. Turn the cheese with a metal spatula and cook the other side.	961	2	4
+4536	Toss together the salad leaves and the green and black grapes, then transfer to a large serving plate.	961	1	0
 4732	When butter is melted add Brussels sprouts and cook, stirring occasionally until sprouts are bright green and tender, add garlic and cook one more minute, stirring frequently.	993	3	4
 4733	Strain the pasta in a colander (do not rinse); add to the pan with the Brussels sprouts.	993	4	0
 4734	Add pancetta, cream, pine nuts and the last tablespoon of butter, sea salt and pepper to taste (keep in mind pancetta and Parm are salty, so be conservative).	993	5	0
 4751	While you wait, heat a small pan. When hot add butter or olive oil, add egg, sprinkle with bagel seasoning, and fry to your liking.	996	2	4
-4538	Arrange the cheese over the salad. Pour over the dressing and garnish with thyme and basil.	961	3	0
+4537	Thinly slice the cheese. Heat the oil in a large frying pan. Add the cheese and fry briefly until it turns golden on the underside. Turn the cheese with a metal spatula and cook the other side.	961	2	4
 4306	Position a rack in the center of the oven and turn the broiler to high.	865	0	16
 4164	Put the prepared lemons to the jar, one at a time. After each one, press it down so its juices come out and rise to the top. Pack the jar with lemons, making sure that they are covered with juice.\r\n\r\nThe number of lemons that fit in the jar will depend on the size of your lemons.\r\n\r\nIf any of the lemons break apart, don't worry. It won't ruin anything.	839	3	0
 4165	Add more juice if needed to submerge the lemons (you may need up to an additional ½-cup) and add a couple more tablespoons of kosher salt to the top.	839	4	0
@@ -11181,6 +11191,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4167	To use preserved lemons in cooking, remove one from the jar and rinse it to remove the salt. Discard any seeds. Remove the pulp. Thinly slice or chop the preserved lemon rind to use in a recipe.	839	6	0
 1226	In a small bowl, mix the tahini with the lemon juice, then thin the mint mixture down with a little water to the consistency of a thick double (heavy) cream. Beat in the garlic and season.	127	1	0
 1968	Pour in the canned tomatoes, breaking them up with a wooden spoon, then add salt and pepper to taste and stir well. Cook over a medium heat for 10–12 minutes, adding the vegetable stock gradually. At the same time, cook the pasta in a large pan of lightly salted boiling water for 10–12 minutes.	190	2	4
+4538	Arrange the cheese over the salad. Pour over the dressing and garnish with thyme and basil.	961	3	0
 2290	Stir in the thyme and vinegar. Cook for 30 seconds, stirring, then set aside.	195	1	4
 2291	Meanwhile, cook the pasta in a large pan of lightly salted boiling water. Drain, then transfer to a large serving bowl. Add 1-tbsp of the oil and toss well to coat.	195	2	4
 2292	Add the artichokes, broccoli, olives, parsley, onion mixture and remaining oil to the pasta. Toss to blend. Leave to stand for at least 5 minutes before serving.	195	3	0
@@ -11190,7 +11201,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4309	Take the sausages out of the pan and set aside. Add the bell pepper into the pan and sauté for 3 minutes.	865	3	4
 1970	Add the sausage pieces to the sauce and mix well. Drain the pasta and add it to the pan of sauce. Toss well, then divide among four warmed bowls, sprinkled with the grated Pecorino.	190	4	0
 4663	In a large pot, bring 3 quarts (3 liters) of water to a boil. Add the potato wedges and a teaspoon of the salt. Boil for 6–7 minutes, then drain well in a colander. Holding the colander over the sink, gently shake it in a flipping motion so the potatoes turn and the surfaces get roughed up—this helps them crisp up in the oven. You’re not trying to break them, just scuff the edges a bit.	983	1	4
-4536	Toss together the salad leaves and the green and black grapes, then transfer to a large serving plate.	961	1	0
 4670	Finely slice the parsley stalks, pick the leaves, then toss with the fava beans, peppers, 1½ tablespoons of extra virgin olive oil, and 1 tablespoon each of red wine vinegar and brine from the pepper jar. Taste, season to perfection with sea salt and black pepper, and divide between your plates.	750	3	0
 4671	Finely shave over the cheese with a vegetable peeler, drizzle with 1 teaspoon of extra virgin olive oil, scatter over the almonds, and serve.	750	4	0
 4703	Optionally, top it with pepper Jack cheese or hot sauce.	871	1	0
@@ -11243,7 +11253,6 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 987	Meanwhile, roughly peel the cucumbers, slice in half lengthways and use a teaspoon to scrape out and discard the seeds, then slice in half across the middle (to fit the pan).	109	2	0
 989	Quarter and add the tomatoes to the bowl. Slice the pitas in ¾-inch strips, then toast on the grill pan. Toss everything together, season to perfection and serve straight away.	109	4	12
 3350	On a large baking sheet lined with parchement paper, pour the contents of the bowl and cook for 30 minutes, until cauliflower is tender.	532	2	2
-2680	Transfer the pasta and rocket to a large, warmed bowl. Add half the freshly grated Parmesan and the remaining olive oil. Add a little salt and black pepper to taste. 	101	2	0
 4907	Drain the lentils, toss into the casserole pan with the rice, cover again, and leave for a final 3 minutes. 	307	3	4
 4908	Toss it all together, taste, season to perfection with sea salt and black pepper, and dish up.	307	4	0
 4903	Cook the pasta according to the package instructions while you peel and finely slice the garlic, then fry with the eggplant for 2 minutes. 	360	2	4
@@ -11267,6 +11276,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 4910	Place the potatoes in a large pot and add cold water to cover by about an inch. Bring to a boil over high heat, then reduce the heat to medium and simmer until tender, about 20 minutes. Strain the potatoes and set aside to cool for 15 minutes.	1041	0	4
 4911	Meanwhile, in a small bowl, stir together the red onion with the vinegar, salt, and black pepper. Set aside.	1041	1	0
 4912	Slice the cooled potatoes ¼-inch thick and spread about a third of them in the bottom of a large bowl. Scatter a third of the eggs and parsley over the potatoes. Whisk the oil into the onion mixture, then spoon about a third of it over the potatoes. Repeat, adding two more layers.	1041	2	0
+2680	Transfer the pasta and rocket to a large, warmed bowl. Add half the freshly grated Parmesan and the remaining olive oil. Add a little salt and black pepper to taste. 	101	2	0
 4524	If eating raw, the noodles are ready to serve. Toss them with your favorite sauce, pesto, or dressing.	959	2	0
 4526	Add the zucchini noodles to the skillet and sauté for 2–3 minutes, tossing frequently. Do not overcook to avoid sogginess.	959	4	0
 4527	Season with salt and pepper to taste, then serve with your preferred toppings or sauce.\r\nNotes	959	5	0
@@ -11337,7 +11347,7 @@ COPY public.study_ingredient ("StudyId", "IngredientId") FROM stdin;
 -- Name: dietary_intake_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 999, true);
+SELECT pg_catalog.setval('public."dietary_intake_Id_seq"', 1007, true);
 
 
 --
@@ -12118,5 +12128,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict gu21i6eOjIDK9iWdFitaUPnYb0X7MnrvVajffXakHTKKqEgEBi1Bn3v8YwxO3Rk
+\unrestrict NQY4CyxmmUWgYcIm6gHROGfmC3cGuhQqukXXTtkWTCGBNDh0dAPh6cb2WuQZgES
 

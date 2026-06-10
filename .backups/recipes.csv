@@ -82,7 +82,7 @@
 102	Colcannon	\N	\N	\N	16	10	5	3	t	colcannon.jpg	0	\N	f	f
 103	Crumbed Chicken w/ Green Mayonaise	\N	\N	\N	12	12	4	4	t	\N	0	\N	f	f
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	12	3	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
-105	Sweet Pea Orecchiette	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	25	5	4	t	sweet-pea-orecchiette-alt.jpg	0	\N	f	f
+105	Sweet Pea Orecchiette	\N	\N	\N	12	25	5	4	t	sweet-pea-orecchiette-alt.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	garlic-chicken.jpg	0	\N	f	f
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	4	10	5	1	t	ham-gruyere-melt.jpg	0	\N	f	f
 108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	120	10	8	t	\N	0	\N	f	f
@@ -271,7 +271,7 @@
 390	Maple-Mustard-Glazed Pan-Seared Pork Chops	\N	\N	\N	8	15	5	2	t	sweet-sticky-pork-chops.jpg	0	From The Food Lab by J. Kenji López-Alt	f	f
 391	Low Carb Cauliflower Fried Rice	Try 1 teaspoon Apple Cider Vinegar in place of the Mirin Rice Wine.	\N	\N	20	15	5	2	t	egg-fried-rice.jpg	0	https://glutenfreeonashoestring.com/cauliflower-fried-rice/	f	f
 392	Roasted Chickpeas	Let the chickpeas cool completely on the baking sheet after roasting. They will continue to crisp up as they cool. Try sweet styles (maple syrup and cinnamon), spicy versions (chili powder or cayenne), earthy-herbaceous blends (rosemary or thyme), or cheesy twists (nutritional yeast or Parmesan).  Enjoy roasted chickpeas as a crunchy snack, a salad or soup topper, in grain bowls, or as part of a party mix with nuts, pretzels, and dried fruit. 	\N	\N	32	35	10	4	t	\N	0	https://insanelygoodrecipes.com/roasted-chickpeas/	t	f
-393	Cucumber Salad	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	\N	f	f
+393	Cucumber Salad	\N	\N	\N	16	0	15	2	t	cucumber-dill.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 394	Beets	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	15	5	2	t	oven-baked-beet-chips.jpg	0	\N	f	f
 395	Honey-Lime Roasted Carrots	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	\N	\N	16	30	5	2	t	sesame-ginger-carrots.jpg	0	\N	f	t
 396	Tandoori Chicken	\N	\N	\N	4	120	60	2	t	tandoori-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -342,7 +342,7 @@
 526	Pizza w/ Beans	\N	\N	\N	8	20	5	2	t	quinoa-pizza.jpg	0	\N	f	f
 527	Tumeric Ginger Tea	\N	\N	\N	128	2	3	1	t	rosemary-lemon-tea.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 528	Mango Salsa	\N	\N	\N	0	0	10	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
-529	Polyphenol Salad	\N	\N	\N	20	0	10	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+529	Polyphenol Salad	\N	\N	\N	20	0	10	2	t	anti-allergy-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 530	Chicken Salsa Roll-Ups	\N	\N	\N	12	0	10	2	t	chicken-lettuce-wraps.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 531	Chocolate Cherry Smoothie	\N	\N	\N	128	1	4	2	t	healthy-chocolate-smoothie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 532	Cauliflower Hummus	\N	Too complicated. Regular hummus is fine.	\N	0	30	10	1	t	cauliflower-hummus.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
