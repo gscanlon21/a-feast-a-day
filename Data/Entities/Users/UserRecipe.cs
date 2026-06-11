@@ -13,6 +13,11 @@ namespace Data.Entities.Users;
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipe
 {
+    private class Consts
+    {
+        public const int ServingsDefault = 4;
+    }
+
     [Required]
     public required int UserId { get; init; }
 
@@ -57,7 +62,7 @@ public class UserRecipe
     public int PadRefreshXWeeks { get; set; } = UserConsts.PadRefreshXWeeksDefault;
 
     [Required, Range(RecipeConsts.ServingsMin, RecipeConsts.ServingsMax)]
-    public int Servings { get; set; } = RecipeConsts.ServingsDefault;
+    public int Servings { get; set; } = Consts.ServingsDefault;
 
 
     #region Navigation Properties

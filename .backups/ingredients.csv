@@ -24,7 +24,7 @@
 24	\N	Boneless Chicken Breasts	Boneless Chicken Breasts	\N	f	1048576	145	100	2025-03-14	0	145	10	145	Boneless Chicken Breast	\N	\N	0
 25	\N	90% Lean Ground Beef	90% Lean Ground Beef	Extra lean ground beef.	f	1048576	28	100	2026-02-02	4	224	10	224	Ground Beef	\N	\N	0
 26	\N	Sliced Ham	Sliced Ham	\N	f	1048576	28	100	2024-12-10	4	224	10	224	Sliced Ham	https://fdc.nal.usda.gov/food-details/332397/nutrients	\N	0
-27	\N	Slices of Turkey	Slices of Turkey	\N	f	1048576	26	100	2025-03-27	0	208	10	208	Slices of Turkey	\N	\N	0
+27	\N	Slices of Turkey	Slices of Turkey	\N	f	1048576	26	100	2025-03-27	0	208	3	208	Turkey	\N	\N	7
 28	\N	Brown Eggs	Brown Eggs	\N	f	8	50	100	2025-06-14	0	200	8	200	Egg	\N	\N	10
 29	\N	Butter	Butter	\N	t	0	14	100	2025-10-07	7	224	8	224	Butter	https://fdc.nal.usda.gov/food-details/789828/nutrients	\N	9
 30	\N	Shredded Cheddar Cheese	Shredded Cheddar Cheese	\N	f	256	28	100	2024-11-27	4	113	8	113	Cheddar Cheese	\N	\N	9
@@ -82,7 +82,7 @@
 84	\N	White Wine Vinegar	White Wine Vinegar	\N	f	0	14	100	2025-05-10	7	240	3	240	White Wine Vinegar	\N	\N	0
 85	\N	White Wine	White Wine	\N	f	0	29.4	100	2025-10-17	9	235.2	5	235.2	White Wine	\N	\N	16
 86	\N	Red Wine	Red Wine	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Red Wine	\N	\N	16
-87	\N	Crackers	Crackers	\N	f	0	3.3	100	2025-02-18	0	50	5	50	Crackers	\N	\N	16
+87	\N	Crackers	Crackers	\N	f	0	3.3	100	2025-02-18	0	50	6	50	Crackers	\N	\N	0
 88	\N	Unsalted Peanuts	Unsalted Peanuts	\N	f	2048	28	100	2026-02-15	4	146	10	146	Peanut	\N	\N	0
 89	\N	Pecans	Pecans	\N	f	0	28	100	2026-05-30	4	99	4	99	Pecans	https://fdc.nal.usda.gov/food-details/2346395/nutrients	\N	18
 90	\N	Black Walnuts	Black Walnuts	\N	f	131072	28	100	2026-01-30	4	125	10	125	Walnut	https://fdc.nal.usda.gov/food-details/170186/nutrients	\N	0
@@ -97,7 +97,7 @@
 99	\N	Frozen Stir-Fry Vegetables	Frozen Stir-Fry Vegetables	\N	f	0	28	100	2025-12-03	4	91	10	91	Frozen Stir-Fry Vegetables	\N	\N	0
 100	\N	Teriyaki Sauce	Teriyaki Sauce	\N	f	262176	36	100	2025-12-07	9	288	4	288	Teriyaki Sauce	\N	\N	14
 101	\N	Light Sesame Oil	Light Sesame Oil	aka. Unroasted Sesame Oil; Untoasted Sesame Oil.	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	https://www.eatthismuch.com/calories/sesame-oil-268	\N	11
-102	\N	Lentils	Lentils	\N	f	0	192	100	2025-05-30	6	192	4	192	Lentil	\N	\N	14
+102	\N	Lentils	Lentils	\N	f	0	192	100	2025-05-30	6	192	4	192	Lentil	\N	\N	6
 103	\N	Red Potatoes	Red Potatoes	\N	f	0	213	100	2024-12-21	0	150	2	150	Potato	\N	\N	0
 104	\N	Summer Sausage	Summer Sausage	\N	f	1048576	56	100	2026-03-22	4	224	9	224	Summer Sausage	\N	\N	7
 105	\N	Red Onions	Red Onions	\N	f	0	110	100	2024-12-25	0	110	2	110	Onion	https://fdc.nal.usda.gov/food-details/790577/nutrients	\N	0
@@ -110,7 +110,7 @@
 112	\N	Taco Seasoning	Taco Seasoning	\N	f	0	3	100	2025-11-23	8	144	4	144	Taco Seasoning	\N	\N	12
 113	\N	Hamburger Buns	Hamburger Buns	Known as Rolls.	f	262176	43	100	2024-12-05	0	43	2	43	Hamburger Bun	\N	\N	4
 114	\N	Pork Tenderloin Fillets	Pork Tenderloin Fillets	Fillet is a type of cut. A smaller cut of meat. 	f	1048576	28	100	2026-05-23	4	224	9	224	Pork Tenderloin Fillet	https://www.eatthismuch.com/calories/pork-tenderloin-1785	\N	0
-115	\N	Dr. Pepper	Dr. Pepper	\N	f	0	30	100	2025-09-28	9	240	5	240	Dr. Pepper	\N	\N	16
+115	\N	Dr. Pepper	Dr. Pepper	\N	f	0	30	100	2025-09-28	9	240	7	240	Dr. Pepper	\N	\N	16
 116	\N	Barbecue Sauce	Barbecue Sauce	\N	f	32	36	100	2026-05-27	9	288	4	288	Barbecue Sauce	\N	\N	13
 117	\N	Garlic Texas Toast	Garlic Texas Toast	\N	f	786464	40	100	2025-07-08	0	80	4	80	Garlic Texas Toast	\N	\N	0
 118	\N	Pizza Sauce	Pizza Sauce	\N	f	512	28	100	2026-01-03	4	252	4	252	Pizza Sauce	\N	\N	14
@@ -295,7 +295,7 @@
 305	\N	Leaves of Lettuce	Leaves of Lettuce	\N	f	0	12	100	2025-08-11	0	36	2	36	Lettuce	https://fdc.nal.usda.gov/food-details/2346391/nutrients	\N	0
 306	\N	Butter Lettuce Heads | Boston Bibb Lettuce Heads	Butter Lettuce Heads | Boston Bibb Lettuce Heads	aka. Head of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	f	0	163	100	2025-01-03	0	55	2	55	Lettuce	\N	\N	0
 307	\N	Ginger	Ginger	\N	f	0	5	100	2025-09-17	7	80	3	80	Ginger	https://fdc.nal.usda.gov/food-details/169231/nutrients	\N	0
-309	\N	Gold Potatoes	Gold Potatoes	\N	f	0	28	100	2026-02-04	4	150	2	150	Potato	\N	\N	0
+309	\N	Gold Potatoes	Gold Potatoes	\N	f	0	28	100	2026-02-04	4	150	1	150	Potato	\N	\N	2
 310	\N	Russet Potatoes	Russet Potatoes	\N	f	0	213	100	2025-08-03	0	150	2	150	Potato	\N	\N	0
 311	\N	Purple Potatoes	Purple Potatoes	\N	f	0	28	100	2026-02-01	4	150	2	150	Potato	\N	\N	0
 312	\N	Mirin Rice Wine	Mirin Rice Wine	\N	f	0	28	100	2024-12-13	9	224	4	224	Mirin Rice Wine	\N	\N	14
@@ -312,7 +312,7 @@
 323	\N	Onion Powder	Onion Powder	\N	t	0	28	100	2025-08-25	4	112	4	112	Onion Powder	\N	\N	12
 324	\N	Boneless Skinless Chicken Breast Fillets	Boneless Skinless Chicken Breast Fillets	Fillet is a type of cut. A smaller cut of meat.	f	1048576	112	100	2025-03-16	0	224	10	224	Boneless Skinless Chicken Breast Fillet	https://www.eatthismuch.com/calories/chicken-breast-fillets-boneless-skinless-4111814	\N	0
 325	\N	Silk Heavy Cream	Silk Heavy Cream	\N	f	0	32	100	2026-04-10	9	256	8	256	Heavy Cream	\N	\N	20
-326	\N	Lean Pork Tenderloin Fillets	Lean Pork Tenderloin Fillets	Fillet is a type of cut. A smaller cut of meat. https://www.eatthismuch.com/calories/pork-tenderloin,1785	f	1048576	28	100	2025-12-05	4	224	10	224	Lean Pork Tenderloin Fillets	\N	\N	0
+326	\N	Lean Pork Tenderloin Fillets	Lean Pork Tenderloin Fillets	Fillet is a type of cut. A smaller cut of meat.	f	1048576	28	100	2025-12-05	4	224	9	224	Lean Pork Tenderloin Fillets	https://www.eatthismuch.com/calories/pork-tenderloin,1785	\N	7
 327	\N	Linguine, GF	Linguine, GF	\N	f	0	28	100	2025-06-30	4	224	4	224	Linguine, GF	\N	\N	5
 328	\N	Brown Basmati Rice	Brown Basmati Rice	This is a long grain brown rice.	f	4096	28	100	2025-07-22	4	199	4	199	Basmati Rice	https://www.eatthismuch.com/calories/basmati-rice,45283	\N	4
 329	\N	Brown Jasmine Rice	Brown Jasmine Rice	This is a long grain brown rice.	f	4096	28	100	2026-05-12	4	196	4	196	Rice	https://www.eatthismuch.com/calories/brown-jasmine-rice-1699348	\N	4
@@ -396,7 +396,7 @@
 412	\N	Double Espresso	Double Espresso	\N	t	0	30	100	2026-03-27	9	240	4	240	Espresso	\N	\N	12
 413	\N	All-Purpose Flour, GF	All-Purpose Flour, GF	\N	t	0	28	100	2025-06-24	4	125	4	125	All-Purpose Flour, GF	\N	\N	14
 414	\N	Bread Flour, Unenriched, GF	Bread Flour, Unenriched, GF	\N	f	0	137	100	2026-05-22	6	137	4	137	Bread Flour, Unenriched, GF	\N	\N	14
-415	\N	Frozen Grilled Chicken Breast Strips	Frozen Grilled Chicken Breast Strips	\N	f	1048576	28	100	2025-03-18	4	224	10	224	Grilled Chicken Breast	\N	\N	0
+415	\N	Frozen Grilled Chicken Breast Strips	Frozen Grilled Chicken Breast Strips	\N	f	1048576	28	100	2025-03-18	4	224	11	224	Grilled Chicken Breast	\N	\N	7
 416	\N	Cheddar Jack Cheese	Cheddar Jack Cheese	\N	f	256	28	100	2025-01-01	4	112	10	112	Chedder Jack Cheese	\N	\N	0
 417	\N	Spring Mix	Spring Mix	\N	f	0	28	100	2025-11-17	4	42.5	1	42.5	Spring Mix	\N	\N	2
 418	\N	Canned Corn	Canned Corn	\N	f	2	28	100	2025-08-02	4	164	4	164	Corn	https://fdc.nal.usda.gov/food-details/169214/nutrients	\N	6
@@ -413,7 +413,7 @@
 461	\N	Pine Nuts	Pine Nuts	\N	f	0	28	100	2025-03-02	4	135	6	135	Pine Nut	\N	\N	19
 462	\N	Honeydew Melon	Honeydew Melon	\N	f	0	1000	100	2026-05-11	0	170	1	170	Honeydew Melon	\N	\N	1
 463	\N	Grapes	Grapes	\N	f	0	28	100	2025-09-26	4	151	1	151	Grape	\N	\N	0
-464	\N	Seedless White Grapes	Seedless White Grapes	\N	f	0	4.9	100	2025-01-02	0	98	1	98	Grape	\N	\N	0
+464	\N	Seedless White Grapes	Seedless White Grapes	\N	f	0	4.9	100	2025-01-02	0	98	1	98	Grape	\N	\N	1
 465	\N	Grape Juice	Grape Juice	\N	f	0	31.625	100	2025-08-23	9	253	4	253	Grape Juice	\N	\N	13
 466	\N	White Grape Juice	White Grape Juice	\N	f	0	32	100	2025-08-22	9	253	4	253	White Grape Juice	\N	\N	13
 467	\N	Fresh Pineapple	Fresh Pineapple	\N	f	0	905	100	2026-06-01	0	165	1	165	Pineapple	https://fdc.nal.usda.gov/food-details/2346398/nutrients	\N	1
@@ -494,7 +494,7 @@
 571	\N	Slices of American Cheese, Unfortified	Slices of American Cheese, Unfortified	\N	f	4	28	100	2026-01-04	0	224	10	224	American Cheese	\N	\N	0
 572	\N	Slices of American Cheese	Slices of American Cheese	\N	f	4	21	100	2026-01-05	0	224	10	224	American Cheese	\N	\N	0
 573	\N	Fresh Oregano	Fresh Oregano	\N	f	0	1	100	2026-01-07	3	96	3	48	Oregano	\N	\N	0
-574	\N	Coconut Flakes	Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	f	0	28	100	2025-10-18	4	60	4	60	Coconut Flakes	\N	\N	13
+574	\N	Coconut Flakes	Coconut Flakes	aka Shredded Coconut.	f	0	28	100	2025-10-18	4	60	4	60	Coconut Flakes	https://www.eatthismuch.com/calories/shredded-coconut,1987718	\N	18
 575	\N	Bacon Chops	Bacon Chops	Bacon chops, sometimes called bacon steaks, are thick cut chops, which are taken from whole bacon loins. In other words, a bacon chop is basically a super thick cut rasher of bacon. It comes from exactly the same place, and is produced the same way, as the bacon you put on your sandwich, it's just, well, thicker.	f	1048576	8	100	2025-07-14	0	24	0	24	Bacon Chops	\N	\N	0
 576	\N	Hard Cider	Hard Cider	\N	f	0	30	100	2026-05-17	9	240	4	240	Hard Cider	\N	\N	13
 577	\N	Fresh Thyme	Fresh Thyme	\N	f	0	28	100	2025-03-02	4	32	3	32	Fresh Thyme	\N	\N	0
@@ -521,7 +521,7 @@
 599	\N	Orange Bell Peppers	Orange Bell Peppers	\N	f	0	119	100	2025-10-21	0	119	2	119	Bell Pepper	\N	\N	0
 600	\N	Frozen Green Peas	Frozen Green Peas	aka. Podless Frozen Peas.	f	0	28	100	2026-04-18	4	134	11	134	Green Peas	https://www.eatthismuch.com/calories/peas-2069	\N	2
 601	\N	Cajun Seasoning	Cajun Seasoning	\N	f	0	28	100	2025-11-18	4	128	4	128	Cajun Seasoning	\N	\N	12
-602	\N	Hazelnuts	Hazelnuts	\N	f	0	28	100	2025-03-01	4	128	10	128	Hazelnuts	\N	\N	0
+602	\N	Hazelnuts	Hazelnuts	\N	f	0	28	100	2025-03-01	4	128	6	128	Hazelnuts	\N	\N	18
 603	\N	Pork Italian Sausage, Raw	Pork Italian Sausage, Raw	\N	f	1048576	100	100	2025-08-07	0	100	9	100	Sausage	\N	\N	7
 604	\N	Slices of Panettone Bread	Slices of Panettone Bread	\N	f	786464	80	100	2025-05-23	0	80	4	80	Slices of Panettone Bread	\N	\N	0
 605	\N	Butter | Sunflower Oil	Butter | Sunflower Oil	Use partial ingredients.	t	0	14	100	2025-10-08	7	224	5	224	Butter | Sunflower Oil	\N	\N	11
@@ -534,8 +534,8 @@
 612	\N	Brown Sugar	Brown Sugar	\N	f	0	28	100	2025-07-22	4	145	5	145	Brown Sugar	\N	\N	16
 613	\N	Beef Broth	Beef Broth	\N	f	0	240	100	2025-06-27	6	240	4	240	Beef Broth	\N	\N	13
 614	\N	Dark Chocolate Chips (70%)	Dark Chocolate Chips (70%)	\N	f	0	28	100	2024-12-20	4	168	4	168	Chocolate Chip	https://fdc.nal.usda.gov/food-details/170273/nutrients	\N	17
-615	\N	Tomato Sauce	Tomato Sauce	\N	f	512	245	100	2025-03-31	6	245	4	245	Tomato Sauce	\N	\N	14
-616	\N	Eliche Pasta	Eliche Pasta	\N	f	262176	28	100	2025-02-13	4	106.67	4	106.67	Eliche Pasta	\N	\N	5
+615	\N	Tomato Sauce	Tomato Sauce	\N	f	512	28	100	2025-03-31	4	245	4	245	Tomato Sauce	\N	\N	14
+616	\N	Eliche Pasta	Eliche Pasta	Using enriched pasta because that's what most people buy.	f	262176	28	100	2025-02-13	4	106.67	4	106.67	Eliche Pasta	\N	\N	5
 617	\N	Rotini Pasta	Rotini Pasta	\N	f	262176	28	100	2025-02-09	4	68	4	68	Rotini Pasta	\N	\N	5
 618	\N	Red Lentil Rotini Pasta	Red Lentil Rotini Pasta	\N	f	0	28	100	2025-02-10	4	75	4	75	Red Lentil Rotini Pasta	\N	\N	5
 619	\N	Red Lentil Fusilli Pasta	Red Lentil Fusilli Pasta	\N	f	0	28	100	2025-02-19	4	75	4	75	Red Lentil Fusilli Pasta	\N	\N	5
@@ -578,8 +578,8 @@
 656	\N	Dark Sesame Oil	Dark Sesame Oil	aka. Roasted Sesame Oil; Toasted Sesame Oil.	f	0	28	100	2025-02-21	9	224	5	224	Sesame Oil	https://www.eatthismuch.com/calories/sesame-oil-268	\N	11
 657	\N	Sesame Oil	Sesame Oil	\N	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	\N	\N	11
 658	\N	Romaine Lettuce Heads	Romaine Lettuce Heads	\N	f	0	626	100	2026-02-27	0	47	2	47	Lettuce	\N	\N	0
-659	\N	Baby Leeks	Baby Leeks	\N	f	0	89	100	2025-10-15	0	89	2	89	Baby Leeks	\N	\N	0
-660	\N	Fresh Sage	Fresh Sage	\N	f	0	1	100	2026-01-17	3	32	3	32	Sage	\N	\N	0
+659	\N	Baby Leeks	Baby Leeks	\N	f	0	89	100	2025-10-15	0	89	1	89	Baby Leeks	\N	\N	2
+660	\N	Fresh Sage	Fresh Sage	\N	f	0	1	100	2026-01-17	3	32	1	32	Sage	\N	\N	3
 661	\N	Fennel Bulbs	Fennel Bulbs	\N	f	0	234	100	2025-03-14	0	234	2	234	Fennel Bulb	\N	\N	0
 662	\N	Single Espresso	Single Espresso	\N	t	0	30	100	2026-03-25	9	240	7	240	Single Espresso	\N	\N	20
 663	\N	Whole-Wheat Flour	Whole-Wheat Flour	\N	t	262176	28	100	2025-06-24	4	125	4	125	Whole-Wheat Flour	\N	\N	14
@@ -593,7 +593,7 @@
 671	\N	Beets	Beets	\N	f	0	82	100	2025-04-27	0	82	1	82	Beet	\N	\N	2
 673	\N	Vanilla Sugar	Vanilla Sugar	\N	f	0	28	100	2024-12-08	4	336	4	336	Vanilla Sugar	\N	\N	14
 674	\N	Red Radish	Red Radish	\N	f	0	100	100	2026-04-09	0	100	1	100	Red Radish	\N	\N	0
-675	\N	Fresh Okra	Fresh Okra	\N	f	0	12.5	100	2025-11-02	0	100	2	100	Fresh Okra	\N	\N	0
+675	\N	Fresh Okra	Fresh Okra	\N	f	0	12.5	100	2025-11-02	0	100	1	100	Fresh Okra	\N	\N	2
 676	\N	Avocado Oil | Olive Oil	Avocado Oil | Olive Oil	\N	f	0	28	100	2024-12-17	9	224	5	224	Oil	\N	\N	11
 677	\N	Fresh Rosemary	Fresh Rosemary	\N	f	0	1	100	2026-01-17	3	27	3	27	Rosemary	\N	\N	0
 678	\N	Beef Gelatin	Beef Gelatin	\N	f	0	20	100	2025-06-19	4	160	4	160	Beef Gelatin	\N	\N	0
@@ -700,7 +700,7 @@
 809	\N	Frozen Blackberries	Frozen Blackberries	\N	f	0	28	100	2025-01-20	4	151	10	151	Frozen Blackberries	\N	\N	0
 810	\N	Chocolate Sauce	Chocolate Sauce	\N	f	0	40	100	2024-12-01	9	320	4	320	Chocolate Sauce	\N	\N	13
 811	\N	Mixed-Color Bell Peppers	Mixed-Color Bell Peppers	\N	f	0	186	100	2025-10-22	0	186	2	186	Bell Pepper	\N	\N	0
-812	\N	Bell Peppers	Bell Peppers	\N	f	0	119	100	2025-10-20	0	92	2	92	Bell Pepper	\N	\N	0
+812	\N	Bell Peppers	Bell Peppers	\N	f	0	119	100	2025-10-20	0	92	1	92	Bell Pepper	\N	\N	2
 813	\N	Fresh Nectarines	Fresh Nectarines	\N	f	0	142	100	2026-01-13	0	142	1	142	Nectarine	\N	\N	1
 814	\N	Fresh Peaches | Fresh Nectarines	Fresh Peaches | Fresh Nectarines	\N	f	0	150	100	2026-01-16	0	150	1	150	Peach | Nectarine	\N	\N	0
 815	\N	Frozen Podded Fava Beans	Frozen Podded Fava Beans	\N	f	0	28	100	2026-03-18	4	194	11	194	Fava Bean	\N	\N	2
@@ -809,7 +809,7 @@
 980	\N	Broth | Water	Broth | Water	\N	f	0	30	100	2025-06-26	9	240	4	240	Broth | Water	\N	\N	13
 981	\N	Yambean (Jicama)	Yambean (Jicama)	\N	f	0	659	100	2025-11-02	0	125	1	125	Yambean (Jicama)	\N	\N	0
 982	\N	Farfalle Pasta	Farfalle Pasta	\N	f	262176	28	100	2025-02-15	4	84	4	84	Farfalle Pasta	\N	\N	5
-983	\N	Shelled Pistachios	Shelled Pistachios	Shelled means without shells.	f	131072	28	100	2026-02-16	4	123	10	123	Pistachio	\N	\N	0
+983	\N	Shelled Pistachios	Shelled Pistachios	Shelled means without shells.	f	131072	28	100	2026-02-16	4	123	6	123	Pistachio	\N	\N	18
 984	\N	Shelled Unsalted Pistachios	Shelled Unsalted Pistachios	Shelled means without shells.	f	131072	28	100	2026-02-17	4	123	10	123	Pistachio	\N	\N	0
 985	\N	Bacon Slices	Bacon Slices	Raw bacon slices weigh more than 12 grams.	f	1048576	14	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
 986	\N	Chickpea Flour	Chickpea Flour	\N	f	0	28	100	2025-12-01	4	200	5	200	Chickpea Flour	\N	\N	15
@@ -819,7 +819,7 @@
 990	\N	Pumpkin Purée	Pumpkin Purée	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Purée	\N	\N	0
 991	\N	Coconut Aminos	Coconut Aminos	\N	f	0	30	100	2025-11-10	9	240	4	240	Coconut Aminos	\N	\N	14
 992	\N	Mascarpone Cheese	Mascarpone Cheese	\N	f	256	28	100	2025-07-06	4	224	10	224	Mascarpone Cheese	\N	\N	0
-993	\N	Hot Water	Hot Water	\N	t	0	30	100	2025-06-13	9	240	10	240	Hot Water	\N	\N	0
+993	\N	Hot Water	Hot Water	\N	t	0	30	100	2025-06-13	9	240	0	240	Hot Water	\N	\N	0
 994	\N	Chlorophyll	Chlorophyll	\N	t	0	28	100	2025-06-14	4	224	10	224	Chlorophyll	\N	Too obscure; can get via food.	0
 995	\N	Cashew Butter	Cashew Butter	\N	f	0	28	100	2026-04-23	4	240	4	240	Cashew Butter	https://fdc.nal.usda.gov/food-details/170163/nutrients	\N	11
 996	\N	Crushed Pineapple	Crushed Pineapple	\N	f	0	28	100	2026-06-02	4	165	4	165	Pineapple	\N	\N	1
@@ -829,7 +829,7 @@
 1000	\N	Chicken Broth | Vegetable Broth	Chicken Broth | Vegetable Broth	\N	f	1048576	240	100	2025-06-27	6	240	4	240	Chicken Broth | Vegetable Broth	\N	\N	13
 1001	\N	Fresh Cavolo Nero	Fresh Cavolo Nero	aka Tuscan Kale; Black Cabbage.	f	0	28	100	2025-12-13	4	67	1	67	Kale	https://www.eatthismuch.com/calories/kale,1995	\N	2
 1002	\N	Ricotta Cheese	Ricotta Cheese	\N	f	256	28	100	2025-07-04	4	224	10	224	Ricotta Cheese	\N	\N	0
-1003	\N	Bone-In Pork Chops	Bone-In Pork Chops	\N	f	1048576	178	100	2025-07-13	0	178	10	178	Bone-In Pork Chops	\N	\N	0
+1003	\N	Bone-In Pork Chops	Bone-In Pork Chops	\N	f	1048576	178	100	2025-07-13	0	178	9	178	Bone-In Pork Chops	\N	\N	7
 1004	\N	Coconut Milk | Coconut Yogurt	Coconut Milk | Coconut Yogurt	\N	f	0	240	100	2025-11-13	6	240	8	240	Milk | Yogurt	\N	\N	9
 1006	\N	Coconut Yogurt	Coconut Yogurt	\N	f	0	28	100	2025-11-13	4	240	8	240	Yogurt	\N	\N	9
 1007	\N	Coconut Cream | Coconut Yogurt	Coconut Cream | Coconut Yogurt	aka Coconut Spread. https://www.eatthismuch.com/calories/coconut-cream,2658	f	0	30	100	2025-12-11	4	240	8	240	Cream | Yogurt	\N	\N	9
@@ -840,7 +840,7 @@
 1044	\N	Maca Powder	Maca Powder	\N	f	0	240	100	2025-06-19	6	240	4	240	Maca Powder	\N	\N	17
 1045	\N	Frozen Pizza	Frozen Pizza	\N	f	0	741.333333	100	2026-03-10	0	139	11	139	Frozen Pizza	\N	\N	0
 1046	\N	Organic Creamy Peanut Butter	Organic Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter-3735	f	2048	32	100	2025-10-27	4	256	128	256	Organic Creamy Peanut Butter	\N	\N	0
-1047	\N	Package Oatmeal	Package Oatmeal	\N	f	0	40	100	2025-08-16	0	120	4	120	Package Oatmeal	\N	\N	14
+1047	\N	Package Oatmeal	Package Oatmeal	\N	f	0	40	100	2025-08-16	0	120	4	120	Oatmeal	\N	\N	14
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	Purely Elizabeth Banana Nut Oatmeal	\N	f	0	40	100	2025-08-15	0	120	4	120	Purely Elizabeth Banana Nut Oatmeal	\N	\N	14
 1049	\N	Purely Elizabeth Dark Chocolate Chunk Oatmeal	Purely Elizabeth Dark Chocolate Chunk Oatmeal	\N	f	1024	40	100	2025-08-13	0	120	4	120	Purely Elizabeth Dark Chocolate Chunk Oatmeal	\N	\N	14
 1050	\N	Purely Elizabeth Blueberry Flax Oatmeal	Purely Elizabeth Blueberry Flax Oatmeal	\N	f	0	40	100	2025-08-17	0	120	4	120	Purely Elizabeth Blueberry Flax Oatmeal	\N	\N	14
@@ -854,7 +854,7 @@
 1058	\N	Loaves of White Pita (Enriched)	Loaves of White Pita (Enriched)	\N	f	262176	64	100	2025-05-17	0	64	4	64	Loaves of White Pita (Enriched)	\N	\N	0
 1059	\N	Loaves of Flatbread, GF	Loaves of Flatbread, GF	\N	f	0	64	100	2025-05-18	0	64	4	64	Loaves of Flatbread, GF	\N	\N	0
 1060	\N	Rice Wine | Dry Sherry	Rice Wine | Dry Sherry	\N	f	0	28	100	2024-12-13	9	224	4	224	Rice Wine | Dry Sherry	\N	\N	14
-1061	\N	Turkey Breasts	Turkey Breasts	\N	f	1048576	780	100	2025-03-27	0	260	10	260	Turkey Breasts	\N	\N	0
+1061	\N	Turkey Breasts	Turkey Breasts	\N	f	1048576	780	100	2025-03-27	0	260	9	260	Turkey Breasts	\N	\N	7
 1062	\N	Blueberries	Blueberries	\N	f	0	28	100	2024-11-28	4	148	1	148	Blueberries	\N	\N	0
 1063	\N	Fresh Green Zucchini	Fresh Green Zucchini	\N	f	0	196	100	2025-03-07	0	196	2	196	Zucchini	\N	\N	0
 1064	\N	Fresh Yellow Zucchini	Fresh Yellow Zucchini	\N	f	0	196	100	2025-03-07	0	196	2	196	Zucchini	\N	\N	0
@@ -970,7 +970,7 @@
 1205	\N	Canned Tuna in Olive Oil	Canned Tuna in Olive Oil	\N	f	0	28.35	100	2025-09-01	4	226.8	4	226.8	Tuna	\N	\N	6
 1206	\N	Small Carrots	Small Carrots	\N	f	0	50	100	2025-08-26	0	128	2	128	Small Carrots	\N	\N	0
 1207	\N	Sliced Smoked Ham	Sliced Smoked Ham	\N	f	0	28	100	2024-12-10	0	224	10	224	Sliced Smoked Ham	\N	\N	0
-1208	\N	Medium Leeks	Medium Leeks	\N	f	0	89	100	2025-10-17	0	89	2	89	Medium Leeks	\N	\N	0
+1208	\N	Medium Leeks	Medium Leeks	\N	f	0	89	100	2025-10-17	0	89	1	89	Medium Leeks	\N	\N	2
 1209	\N	Organic Chicken Broth	Organic Chicken Broth	\N	f	1048576	240	100	2025-06-26	6	240	4	240	Organic Chicken Broth	\N	\N	13
 1210	\N	Organic Low-Sodium Chicken Broth	Organic Low-Sodium Chicken Broth	\N	f	1048576	240	100	2025-06-26	6	240	4	240	Organic Low-Sodium Chicken Broth	\N	\N	13
 1211	\N	Almond Yogurt	Almond Yogurt	\N	f	0	240	100	2025-11-11	6	240	8	240	Yogurt	\N	\N	9
@@ -997,7 +997,7 @@
 1261	\N	Fresh Chives	Fresh Chives	\N	f	0	28	100	2025-06-22	4	48	3	48	Fresh Chive	\N	\N	0
 1262	\N	Full-Fat Coconut Milk	Full-Fat Coconut Milk	\N	f	0	30	100	2025-11-14	9	240	10	240	Full-Fat Coconut Milk	\N	\N	0
 1263	\N	Broccoli Heads	Broccoli Heads	Includes the stalk.	f	0	608	100	2026-04-30	0	91	1	91	Broccoli	https://fdc.nal.usda.gov/food-details/747447/nutrients	\N	2
-1264	\N	Leeks	Leeks	\N	f	0	89	100	2025-10-16	0	89	2	89	Leeks	\N	\N	0
+1264	\N	Leeks	Leeks	\N	f	0	89	100	2025-10-16	0	89	1	89	Leeks	\N	\N	2
 1265	\N	Slices of Prosciutto	Slices of Prosciutto	An Italian dried ham.	f	256	28	100	2026-03-06	4	224	10	224	Slices of Prosciutto Cheese	\N	\N	0
 1266	\N	Slices of Fontina Cheese	Slices of Fontina Cheese	\N	f	256	28	100	2026-03-01	4	224	10	224	Slices of Fontina Cheese	\N	\N	0
 1267	\N	Ground Pork | Ground Beef | Ground Turkey	Ground Pork | Ground Beef | Ground Turkey	\N	f	1048576	28	100	2024-12-06	4	224	10	224	Ground Pork | Ground Beef | Ground Turkey	\N	\N	0
@@ -1117,7 +1117,7 @@
 1383	\N	Dried Mushrooms	Dried Mushrooms	\N	f	0	15	100	2025-10-31	0	86	3	86	Mushroom	\N	\N	0
 1384	\N	Dried Oyster Mushrooms	Dried Oyster Mushrooms	\N	f	0	15	100	2025-11-08	0	86	3	86	Mushroom	\N	\N	0
 1385	\N	Dried Cep Mushrooms | Dried Procini Mushrooms	Dried Cep Mushrooms | Dried Procini Mushrooms	\N	f	0	15	100	2025-11-06	0	86	3	86	Mushroom	\N	\N	0
-1386	\N	Pork Escalopes	Pork Escalopes	\N	f	1048576	112	100	2025-03-20	0	224	10	224	Pork Escalopes	\N	\N	0
+1386	\N	Pork Escalopes	Pork Escalopes	Generally trimmed free of fat.	f	1048576	112	100	2025-03-20	0	224	9	224	Pork Escalopes	\N	\N	7
 1387	\N	Juniper Berries	Juniper Berries	\N	f	0	28	100	2024-11-28	4	148	4	148	Juniper Berries	\N	\N	12
 1388	\N	Noodles	Noodles	\N	f	262176	4.75	100	2025-08-09	4	38	4	38	Noodles	\N	\N	5
 1389	\N	Green Vegetables	Green Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Green Vegetables	\N	\N	0
@@ -1194,8 +1194,8 @@
 1547	\N	Poultry Seasoning	Poultry Seasoning	\N	f	0	28	100	2025-11-18	4	128	4	128	Poultry Seasoning	\N	\N	12
 1548	\N	Crushed Tomatoes	Crushed Tomatoes	\N	f	512	28	100	2026-06-03	4	165	4	165	Tomato	\N	\N	2
 1549	\N	Frozen Mixed Diced Carrots, Peas, and Corn	Frozen Mixed Diced Carrots, Peas, and Corn	\N	f	0	225	100	2024-12-15	6	225	10	225	Frozen Mixed Diced Carrots, Peas, and Corn	\N	\N	0
-1550	\N	Brown Mustard	Brown Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Brown Mustard	\N	\N	13
-1551	\N	Yellow Mustard	Yellow Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Yellow Mustard	\N	\N	13
+1550	\N	Brown Mustard	Brown Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Mustard	\N	\N	13
+1551	\N	Yellow Mustard	Yellow Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Mustard	\N	\N	13
 1552	\N	Boneless Pork Shoulder	Boneless Pork Shoulder	\N	f	1048576	454	100	2025-08-06	5	227	10	227	Boneless Pork Shoulder	\N	\N	0
 1553	\N	Beef Stock	Beef Stock	\N	f	0	30	100	2024-12-27	9	240	4	240	Beef Stock	\N	\N	13
 1554	\N	Whiskey	Whiskey	\N	f	0	28	100	2024-12-18	9	224	5	224	Whiskey	\N	\N	16
@@ -1302,13 +1302,13 @@
 1658	\N	Cookie Dough Ice Cream	Cookie Dough Ice Cream	\N	f	4	28	100	2025-02-25	4	132	10	132	Ice Cream	\N	\N	0
 1659	\N	Chocolate Ice Cream	Chocolate Ice Cream	\N	f	4	28	100	2025-02-25	4	132	10	132	Ice Cream	\N	\N	0
 1660	\N	Corn Kernals	Corn Kernals	\N	f	2	164	100	2025-08-02	6	164	4	164	Canned Corn	\N	\N	6
-1661	\N	Small Russet Potatoes	Small Russet Potatoes	\N	f	0	213	100	2025-08-03	0	150	2	150	Potato	\N	\N	0
+1661	\N	Small Russet Potatoes	Small Russet Potatoes	\N	f	0	213	100	2025-08-03	0	150	1	150	Potato	\N	\N	2
 1662	\N	Brandy	Brandy	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Rum	\N	\N	16
 1665	\N	Coconut Oil | Vegetable Oil	Coconut Oil | Vegetable Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	\N	\N	11
 1666	\N	Raw Mixed Nuts & Raw Mixed Seeds	Raw Mixed Nuts & Raw Mixed Seeds	\N	f	206849	28	100	2025-12-24	4	224	10	224	Raw Mixed Nuts | Raw Mixed Seeds	\N	\N	0
 1667	\N	Bacon Slices	Bacon Slices, Baked	\N	f	1048576	12	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
 1668	\N	Bacon Slices	Bacon Slices, Pan-Fried	\N	f	1048576	12	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
-1669	\N	Bacon Slices	Bacon Slices, Microwaved	\N	f	1048576	12	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
+1669	\N	Bacon Slices	Bacon Slices, Microwaved	\N	f	1048576	12	100	2025-07-16	0	224	9	224	Bacon Slice	\N	\N	7
 1670	\N	Fresh Small Peaches	Fresh Small Peaches	\N	f	0	150	100	2026-01-11	0	150	1	150	Fresh Peaches	\N	\N	0
 1671	\N	Fresh Medium Peaches	Fresh Medium Peaches	\N	f	0	150	100	2026-01-11	0	150	1	150	Fresh Peaches	\N	\N	0
 1672	\N	Fresh Large Peaches	Fresh Large Peaches	\N	f	0	150	100	2026-01-11	0	150	1	150	Fresh Peaches	\N	\N	0
@@ -1362,7 +1362,7 @@
 1751	\N	Seedless Purple Grapes	Seedless Purple Grapes	aka: Black Grapes.	f	0	28	100	2025-01-02	4	151	1	151	Grape	\N	\N	0
 1752	\N	Seedless Black Grapes	Seedless Black Grapes	aka: Purple Grapes.	f	0	28	100	2025-01-02	4	151	1	151	Grape	\N	\N	0
 1753	\N	Fresh Thyme | Fresh Dill	Fresh Thyme | Fresh Dill	\N	f	0	28	100	2025-03-02	4	32	3	32	Fresh Thyme	\N	\N	0
-1754	\N	Duck Breast Fillets, Skin On	Duck Breast Fillets, Skin On	\N	f	1048576	166	100	2025-03-27	0	166	10	166	Duck Breast Fillets	\N	\N	0
+1754	\N	Duck Breast Fillets, Skin On	Duck Breast Fillets, Skin On	\N	f	1048576	166	100	2025-03-27	0	166	9	166	Duck Breast Fillets	\N	\N	7
 1755	\N	Slices of Artisan Bread	Slices of Artisan Bread	\N	f	786464	25	100	2025-05-04	0	50	2	50	Slices of Bread	\N	\N	4
 1756	\N	Artisan Bread	Artisan Bread	\N	f	786464	25	100	2025-05-04	0	50	2	50	Slices of Bread	\N	\N	4
 1757	\N	Thick Slices of Whole-Grain Artisan Bread	Thick Slices of Whole-Grain Artisan Bread	\N	f	786464	25	100	2025-05-04	0	50	2	50	Slices of Bread	\N	\N	4
@@ -1405,7 +1405,7 @@
 1796	\N	Canned Northern White Beans	Canned Northern White Beans	\N	f	0	28	100	2025-10-14	4	256	4	256	Canned Kidney Beans	\N	\N	6
 1797	\N	English Walnut Halves	English Walnut Halves	\N	f	131072	28	100	2026-01-29	4	120	10	100	Walnut	\N	\N	0
 1798	\N	Black Walnut Halves	Black Walnut Halves	\N	f	131072	28	100	2026-01-29	4	125	10	125	Walnut	\N	\N	0
-1799	\N	Bone-In Pork Loin Chops	Bone-In Pork Loin Chops	\N	f	1048576	178	100	2025-07-13	0	178	10	178	Bone-In Pork Chops	\N	\N	0
+1799	\N	Bone-In Pork Loin Chops	Bone-In Pork Loin Chops	\N	f	1048576	178	100	2025-07-13	0	178	9	178	Bone-In Pork Chops	\N	\N	7
 1800	\N	Whole-Wheat English Muffins	Whole-Wheat English Muffins	\N	f	262176	57	100	2026-01-31	0	57	2	57	English Muffin	\N	\N	4
 1801	\N	Wheat English Muffins	Wheat English Muffins	\N	f	262176	57	100	2026-01-31	0	57	2	57	English Muffin	\N	\N	4
 1802	\N	Plain English Muffins	Plain English Muffins	\N	f	262176	57	100	2026-01-31	0	57	2	57	English Muffin	\N	\N	4
@@ -1475,10 +1475,10 @@
 1922	\N	Stewing Beef	Stewing Beef	\N	f	1048576	28	100	2025-01-12	4	224	10	224	Lean Stewing Beef	\N	\N	0
 1923	\N	Creamy Peanut Butter | Sunflower Butter | Tahini	Creamy Peanut Butter | Sunflower Butter | Tahini	\N	f	2048	32	100	2025-10-26	4	256	128	256	Creamy Peanut Butter	\N	\N	0
 1924	\N	Sunflower Butter	Sunflower Butter	\N	f	65536	28	100	2026-01-01	9	224	5	224	Sunflower Oil	\N	\N	11
-1925	\N	Unsweetened Shredded Coconut	Unsweetened Shredded Coconut	\N	f	256	28	100	2024-11-27	4	113	10	113	Shredded Chedder Cheese	\N	\N	0
+1925	\N	Unsweetened Shredded Coconut	Unsweetened Shredded Coconut	\N	f	0	28	100	2024-11-27	4	113	4	113	Coconut	\N	\N	18
 1956	\N	Chili Garlic Paste	Chili Garlic Paste	\N	t	0	7.5	100	2025-07-18	7	120	4	120	Chili Garlic Sauce	\N	\N	14
 1957	\N	Fresh Baby Spinach | Fresh Kale	Fresh Baby Spinach | Fresh Kale	\N	f	0	28	100	2024-12-28	4	30	2	30	Fresh Spinach | Fresh Kale	\N	\N	0
-1958	\N	Large Sweet Potatoes	Large Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	2	133	Sweet Potato	\N	\N	0
+1958	\N	Large Sweet Potatoes	Large Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	1	133	Sweet Potato	\N	\N	2
 1959	\N	Medium Sweet Potatoes	Medium Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	2	133	Sweet Potato	\N	\N	0
 1960	\N	Raw Pecans	Raw Pecans	\N	f	0	28	100	2026-05-29	4	99	10	99	Pecans	\N	\N	0
 1961	\N	Raw Sunflower Seeds	Raw Sunflower Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	\N	\N	0

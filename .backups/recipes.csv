@@ -75,11 +75,11 @@
 95	Buttered Sweet Corn w/ Bacon	\N	Too heavy.	\N	16	10	5	4	t	sweet-corn-bacon.jpg	0	https://iowagirleats.com/sweet-corn-bourbon-maple-brown-butter-bacon/	f	f
 96	Tropical Scented Fruit Salad	For fabulous flavour and colour, try using three small blood oranges and three ordinary oranges.	\N	\N	16	0	20	3	t	fruit-skewers.jpg	0	\N	f	f
 97	Quinoa Pepperoni Pizza	\N	\N	\N	8	15	5	1	t	quinoa-pizza.jpg	0	\N	f	f
-98	Loaded Deviled Eggs	\N	\N	\N	20	20	5	6	t	loaded-deviled-eggs.jpg	0	https://iowagirleats.com/loaded-deviled-eggs/	f	f
+98	Deviled Eggs	\N	\N	\N	20	20	5	6	t	loaded-deviled-eggs.jpg	0	\N	f	f
 99	Warm Pasta Salad w/ Asparagus	Use sliced chicken instead of the ham, or thin slices of softer Italian cheese, such as Fontina or Asiago.	\N	\N	12	12	6	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 100	Buttermilk Pancakes	\N	\N	\N	6	12	2	4	t	buttermilk-pancakes.jpg	0	\N	t	f
 101	Linguine w/ Rocket	May substitute the linguine with fettucine or pappardelle.	\N	\N	20	12	3	2	t	linguine-arugula.jpg	0	\N	f	f
-102	Colcannon	\N	\N	\N	16	10	5	3	t	colcannon.jpg	0	\N	f	f
+102	Colcannon	Stir in a little milk if the mash if too stiff.	\N	\N	16	10	5	2	t	colcannon.jpg	0	\N	f	f
 103	Crumbed Chicken w/ Green Mayonaise	\N	\N	\N	12	12	4	4	t	\N	0	\N	f	f
 104	Asparagus Carbonara	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	12	3	4	t	pasta-asparagus-cream.jpg	0	\N	f	f
 105	Sweet Pea Orecchiette	\N	\N	\N	12	25	5	4	t	sweet-pea-orecchiette-alt.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -102,7 +102,7 @@
 122	Soft Boiled Eggs	\N	\N	\N	17	8	10	1	t	soft-boiled-egg.jpg	0	\N	t	f
 123	Sweet and Sour Cucumber	This salad can be kept in the refrigerator for up to a week.	\N	\N	16	0	10	2	t	cucumber-dill.jpg	0	\N	f	f
 124	Pan-Fried Chicken w/ Pesto	\N	\N	\N	12	18	2	2	t	pesto-chicken.jpg	0	\N	f	f
-125	Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
+125	Pesto	\N	Duplicate of Pesto.	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 126	Bacon Chops w/ Apple and Cider Sauce	Serve with mashed potatoes and steamed buttered cabbage.	\N	\N	0	20	5	4	t	bacon-shops-apple-cider-sauce.jpg	0	\N	f	f
 127	Roast Chicken Pitta Pockets	\N	Uses preserved lemons that take 3 weeks to marinate, that's too long!	\N	12	2	13	6	t	\N	0	\N	f	f
 128	Soy Sauce and Star Anise Chicken	If you are able to make it ahead, leave the chicken in the marinade for around 6–8 hours, as the flavor will be improved.	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
@@ -124,7 +124,7 @@
 144	Cantaloupe Melon Salad	When you need just a small amount of sifted icing (confectioners') sugar, use a tea strainer. Spoon the sugar into the strainer, then lightly tap the side with the spoon so that the sifted sugar drifts down evenly. Though tempting when you're in a hurry, mashing the sugar in the strainer will not quicken the time it takes to sift through!	\N	\N	80	5	3	4	t	cantaloupe-melon-salad.jpg	0	\N	f	f
 145	Panettone French Toast	A generous portion of chilled mixed berry fruits such as raspberries, blackberries, morello cherries and blueberries perfectly complements the richness of this snack.	\N	\N	66	6	2	4	t	panettone-french-toast-alt.jpg	0	\N	f	f
 146	Tomato and Mozzarella Toasts	Mozzarella can also be bought as tiny balls. If you prefer to use these, just halve them and place on top of the tomato purée.	\N	\N	24	7	3	6	t	french-bread-pizza.jpg	0	\N	f	f
-147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil.	\N	\N	0	0	5	1	t	hummus.jpg	6	\N	f	f
+147	Hummus	Process 2 roasted red (bell) peppers with the chickpeas, then continue as above. Serve sprinkled with lightly toasted pine nuts and paprika mixed with olive oil. Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	\N	\N	0	0	5	1	t	hummus.jpg	6	\N	t	f
 148	Muhammara	\N	\N	\N	0	0	8	4	t	muhammara.jpg	0	\N	f	f
 149	Irish Champ	Flavourings for champ include a wide range of greens - freshly shopped chives or parsley, onions or spring onions (scallions) and even green peas	\N	\N	16	15	8	2	t	irish-champ.jpg	0	\N	f	f
 150	Spiced Lentils	True Puy lentils come from the region of France, Le Puy, which has a unique climate and colcanic soil in which the lentils thrive. Always pick over lentils very carefully before cooking them to remove any little stones that may be among them. The dark colour of Puy lentils means that the stones can be harder to find.	\N	\N	6	20	2	4	t	spiced-lentils-rice.jpg	0	\N	f	f
@@ -195,10 +195,10 @@
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO.	\N	\N	4	30	20	4	t	turkey-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	f	f
 251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	honey-mustard-dressing.jpg	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	hummus-vegetables.jpg	0	\N	f	f
-253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use.	\N	\N	32	120	10	5	t	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
+253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. If you are storing them in the fridge rather than dehydrating them they will be a little sticky. Dehydrating them removes the moisture and makes them easier to store and eat.	\N	\N	32	120	10	5	t	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
 254	Maple-Pecan Dip	\N	\N	\N	0	0	10	1	t	hummus.jpg	6	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	f	f
 255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	f	f
-256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	\N	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
+256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	Duplicate of Pesto.	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice.	\N	\N	20	40	5	4	t	gluten-free-risotto.jpg	0	https://www.glutenfreepalate.com/gluten-free-risotto/	f	f
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	2	2	t	korean-eggs-rice.jpg	0	\N	f	f
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	Too many saturated fats.	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
@@ -218,7 +218,7 @@
 305	Exercise Recovery Smoothie	\N	\N	\N	128	0	5	1	t	exercise-recovery-smoothie.jpg	0	https://www.drkarafitzgerald.com/recipe/exercise-recovery-smoothie/	f	f
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	10	4	t	peas-beans-chili-mint.jpg	0	\N	f	f
 307	Spiced Lentils & Rice	\N	\N	\N	12	20	5	3	t	spiced-lentils-rice.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
-308	Fresh Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
+308	Fresh Pesto	\N	Duplicate of Pesto.	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
 309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	5	2	t	asparagus-eggs-dressing.jpg	0	\N	f	f
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	hot-chocolate-sauce.jpg	6	\N	f	f
 311	Sausage & Apple Bake	\N	\N	\N	8	35	10	4	t	sausage-apple-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
@@ -489,7 +489,7 @@
 708	Orange Soda Pop	You can add some lemon and lime zest to make more of a citrus soda.	\N	\N	128	15	65	4	t	\N	0	\N	f	f
 709	Hot Chocolate	\N	\N	\N	128	10	5	2	t	hot-chocolate.jpg	0	\N	f	f
 710	Black Bean Salsa	\N	\N	\N	0	30	10	4	t	\N	6	\N	t	f
-711	Hungry, Hungry Hummus	Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	\N	\N	0	0	10	2	t	\N	6	\N	t	f
+711	Hungry, Hungry Hummus	Tahini is like peanut butter, but made with sesame seeds. If you cannot find tahini, don't worry. You can sub in another kind of nut butter, such as peanut, almond, or cashew.	Duplicate of Hummus.	\N	0	0	10	2	t	\N	6	\N	t	f
 712	5-Ingredient Granola	The greater variety of seeds and nuts that you use in the granola, the better it will be. You can also mix dried fruit like cranberries or raisins into the granola once it comes out of the oven.	\N	\N	32	30	5	4	t	granola.jpg	6	\N	f	f
 714	Vegetable Stir-Fry	You can add any fresh vegetable you'd like into this stir-fry. Additionally, you can add tofu for a kick of protein.	\N	\N	16	15	10	2	t	vegetable-stir-fry.jpg	0	\N	f	f
 715	Cauliflower Rice	To make the cauliflower rice more quickly, you can pulse the cauliflower in a food processor a few times instead of grating it. The pieces won't be as evenly sized, but it will save time.	\N	\N	16	15	10	4	t	cauliflower-rice.jpg	0	\N	f	f
@@ -499,7 +499,7 @@
 719	All-Purpose Stir-Fry Sauce	Cool the sauce to room temperature, then store it in the refrigerator for up to 2 weeks in an airtight container.	\N	\N	0	10	5	6	t	teriyaki-sauce.jpg	9	\N	t	f
 720	Sesame-Ginger Dressing	Store the dressing in the fridge in an airtight container for up to a month. Shake before serving.	\N	\N	0	0	5	2	t	teriyaki-sauce.jpg	9	\N	t	f
 721	Basic Vinaigrette	Store the vinaigrette in the fridge in an airtight container for up to 1 month. Shake before serving.	\N	\N	0	0	5	4	t	\N	9	\N	t	f
-722	Creamy Pesto	You can store the pesto in the fridge in an airtight container for 3–4 days. 	\N	\N	0	0	5	4	t	pesto.jpg	4	\N	t	f
+722	Pesto	You can store the pesto in the fridge in an airtight container for 3–4 days. 	\N	\N	0	0	5	4	t	pesto.jpg	4	\N	t	f
 723	Simple Marinara Sauce	\N	\N	\N	0	25	5	1	t	\N	6	\N	t	f
 724	Creamy Polenta	\N	\N	\N	20	25	5	2	t	creamy-polenta.jpg	0	\N	f	f
 725	Braised Lentils	\N	\N	\N	16	40	5	2	t	braised-lentils.jpg	0	\N	f	t

@@ -117,7 +117,7 @@
     <ul style="margin-block-start:1em;margin-block-end:.5em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
         @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))
         {
-            <li style="margin-block:.35em;list-style-type:decimal;">
+            <li style="margin-block:.4em;list-style-type:decimal;">
                 @instruction.Name
             </li>
         }

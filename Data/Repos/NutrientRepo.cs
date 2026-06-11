@@ -46,7 +46,7 @@ public class NutrientRepo
         await _context.SaveChangesAsync();
     }
 
-    public async Task InsertNewNutrients(List<USDANutrient> newNutrients)
+    public async Task InsertNewNutrients(IEnumerable<USDANutrient> newNutrients)
     {
         foreach (var nutrient in newNutrients)
         {
@@ -56,7 +56,7 @@ public class NutrientRepo
         await _context.SaveChangesAsync();
     }
 
-    public async Task InsertCanadaNutrients(List<HealthCanadaNutrient> newNutrients)
+    public async Task InsertCanadaNutrients(IEnumerable<HealthCanadaNutrient> newNutrients)
     {
         foreach (var nutrient in newNutrients)
         {
