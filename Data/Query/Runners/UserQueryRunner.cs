@@ -637,7 +637,7 @@ public class UserQueryRunner : QueryRunnerBase
             queryResult.UserRecipe = new UserRecipe()
             {
                 UserId = UserOptions.Id,
-                RecipeId = queryResult.Recipe.Id
+                RecipeId = queryResult.Recipe.Id,
             };
 
             if (recipesCreated.Add(queryResult.UserRecipe))

@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using Core.Models.User;
+using Data;
 using Data.Entities.Ingredients;
 using Data.Entities.Users;
 using Data.Repos;
@@ -27,6 +28,11 @@ public class ManageIngredientViewComponent : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(User user, Ingredient ingredient, UserManageIngredientViewModel.Params parameters)
     {
+        if (user.Features.HasFlag(Features.Debug))
+        {
+            return Content("");
+        }
+
         var userIngredient = await _context.UserIngredients.AsNoTracking()
             .Where(r => r.IngredientId == parameters.IngredientId)
             .Where(r => r.UserId == user.Id)
@@ -34,7 +40,7 @@ public class ManageIngredientViewComponent : ViewComponent
 
         if (userIngredient == null)
         {
-            userIngredient = new Data.Entities.Users.UserIngredient()
+            userIngredient = new UserIngredient()
             {
                 IngredientId = ingredient.Id,
                 UserId = user.Id,

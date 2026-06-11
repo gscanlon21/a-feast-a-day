@@ -1,7 +1,26 @@
-﻿namespace Core.Code.Extensions;
+﻿using System.Numerics;
+
+namespace Core.Code.Extensions;
 
 public static class EnumerableExtensions
 {
+    public static T AverageOrDefault<T>(this IEnumerable<T> source, T defaultValue = default) 
+        where T : struct, INumber<T>
+    {
+        ArgumentNullException.ThrowIfNull(source);
+
+        T sum = T.Zero;
+        long count = 0;
+
+        foreach (var item in source)
+        {
+            sum += item;
+            count++;
+        }
+
+        return count == 0 ? defaultValue : sum / T.CreateChecked(count);
+    }
+
     /// <summary>
     /// Removes all elements from a list that are null.
     /// </summary>

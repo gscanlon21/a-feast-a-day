@@ -259,11 +259,10 @@ public class UserRepo
         var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: true);
 
         // Note that we may be cooking for multiple people and have to adjust accordingly.
-        var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            // Calculate the desired nutrient consumption for a week. FIXME: This will underweight nutrient targets when the family contains a person without a DRI.
-            var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: false));
+            // Calculate the desired nutrient consumption for the family in a week.
+            var gramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(n, tul: false);
             // Get the weekly, not daily value. 7 days in a week.
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
 
@@ -287,11 +286,10 @@ public class UserRepo
         var (actualWeeks, weeklyNutrientVolume) = await GetWeeklyNutrientVolumeFromRecipeIngredients(user, weeks, includeToday: false);
 
         // Note that we may be cooking for multiple people and have to adjust accordingly.
-        var familyPeople = user.UserFamilies.GroupBy(uf => uf.Person).ToDictionary(g => g.Key, g => g);
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            // Calculate the desired nutrient consumption for a week. FIXME: This will underweight nutrient targets when a family contains a person without a DRI.
-            var gramsOfRDATUL = familyPeople.Where(fp => n.DailyAllowance(fp.Key) != null).Sum(fp => n.DailyAllowance(fp.Key)!.GramsOfRDATUL(fp.Value, tul: tul));
+            // Calculate the desired nutrient consumption for the family in a week.
+            var gramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(n, tul: tul);
             // Get the weekly, not daily value. 7 days in a week.
             var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
 

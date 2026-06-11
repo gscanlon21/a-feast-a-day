@@ -16,9 +16,12 @@
 <div class="row gy-4">
     <div class="col-lg-6">
         <div class="row gy-4">
-            <div @* no-nested-rows *@>
-                @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
-            </div>
+            @if (!Model.User.Features.HasFlag(Features.Debug))
+            {
+                <div @* no-nested-rows *@>
+                    @await Component.InvokeAsync(ManageIngredientViewComponent.Name, new { Model.User, Model.Ingredient, Model.Parameters })
+                </div>
+            }
 
             @if (Model.CanManage)
             {

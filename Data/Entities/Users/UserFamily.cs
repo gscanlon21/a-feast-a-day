@@ -1,11 +1,13 @@
 ﻿using Core.Models.Nutrients;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 namespace Data.Entities.Users;
 
 [Table("user_family")]
+[DebuggerDisplay("{Weight}kg {Person}: {CaloriesPerDay}/day")]
 public class UserFamily
 {
     public static class Consts
