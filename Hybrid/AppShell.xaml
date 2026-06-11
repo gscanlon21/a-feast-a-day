@@ -23,7 +23,7 @@
                   Icon="{StaticResource Feast}"
                   ContentTemplate="{DataTemplate local:NewsletterPage}" />
 
-    <ShellContent Title="Feasts"
+    <ShellContent Title="Past Feasts"
                   Route="NewslettersPage"
                   Icon="{StaticResource Feasts}"
                   ContentTemplate="{DataTemplate local:NewslettersPage}" />

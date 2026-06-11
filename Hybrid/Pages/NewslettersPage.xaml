@@ -10,7 +10,7 @@
              x:DataType="local:NewslettersPageViewModel"
              x:Class="Hybrid.NewslettersPage"
              x:Name="Feasts"
-             Title="Feasts"
+             Title="Past Feasts"
              SafeAreaEdges="Container">
 
     <ContentPage.Behaviors>
