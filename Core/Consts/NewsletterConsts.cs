@@ -12,7 +12,7 @@ public static class NewsletterConsts
 
     public const string SubjectConfirm = "Account Confirmation";
 
-    public const string SubjectFeast = "Daily Feast";
+    public const string SubjectFeast = "Weekly Feast";
 
     public const string SubjectException = "Unhandled Exception";
 

@@ -17,7 +17,7 @@
                   Icon="{StaticResource ShoppingList}"
                   ContentTemplate="{DataTemplate local:ShoppingListPage}" />
 
-    <ShellContent Title="Daily Feast"
+    <ShellContent Title="Weekly Feast"
                   x:Name="DefaultPage"
                   Route="NewsletterPage"
                   Icon="{StaticResource Feast}"
