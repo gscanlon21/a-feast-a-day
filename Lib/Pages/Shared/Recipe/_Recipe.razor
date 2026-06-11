@@ -53,11 +53,11 @@
     {
         if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && !Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);word-break:break-word;">@Model.Recipe.Link</div>
+            <div style="margin-block:.6em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);word-break:break-word;">@Model.Recipe.Link</div>
         }
         if (!string.IsNullOrEmpty(Model.Recipe.Notes))
         {
-            <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);word-break:break-word;">@Model.Recipe.Notes</div>
+            <div style="margin-block:.6em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);word-break:break-word;">@Model.Recipe.Notes</div>
         }
     }
 

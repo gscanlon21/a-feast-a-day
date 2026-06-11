@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict ggYSch3bChVX4wqzllNvvqJs8L5bFgLYZaQb8RVepdxmRPMwXmJgk4dMCb4naeH
+\restrict zpXigJGABMtfWJEW3wO9dGXKSoCqosUNSrOvSZj0X08sdbqElgdZuzb4cHjnXem
 
 -- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.0
@@ -3566,9 +3566,7 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1003	1799	1	f
 377	1289	1	f
 376	144	1	f
-1214	1800	1	f
 1214	1802	1	f
-1214	1801	1	f
 1802	1804	1	f
 1802	1803	1	f
 1214	1803	1	f
@@ -3623,6 +3621,8 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 1794	419	1	t
 1794	1796	1	t
 1794	1282	1	t
+1214	1800	1	t
+1214	1801	1	t
 1857	1856	1	f
 1855	1854	1	f
 1854	1855	1	f
@@ -3810,6 +3810,9 @@ COPY public.ingredient_alternative ("IngredientId", "AlternativeIngredientId", "
 2043	101	1	t
 2043	656	1	t
 1088	48	1	f
+90	1911	1	f
+90	1774	1	f
+1045	2045	1	t
 \.
 
 
@@ -4390,6 +4393,25 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 361	0	0	0	2026-06-08
 497	170010	11300	\N	2026-06-10
 853	170016	11312	\N	2026-06-10
+707	170388	11114	0	2026-06-11
+1045	0	0	0	2026-06-11
+2045	170317	21224	0	2026-06-11
+232	321358	16158	0	2026-06-11
+747	169279	11439	0	2026-06-11
+959	171824	27047	0	2026-06-11
+1214	0	0	0	2026-06-11
+1558	329370	1029	0	2026-06-11
+1576	329370	1029	0	2026-06-11
+1632	332282	6931	0	2026-06-11
+1330	0	0	0	2026-06-11
+382	168927	20420	0	2026-06-11
+670	173949	9053	0	2026-06-11
+669	173950	9054	0	2026-06-11
+906	170398	11137	0	2026-06-11
+691	2685573	11135	0	2026-06-11
+1001	323505	11233	0	2026-06-11
+965	2259793	1116	0	2026-06-11
+992	169081	43276	0	2026-06-11
 \.
 
 
@@ -4463,7 +4485,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 15	Omega_3_DHA	Omega 3 Fatty Acids (DHA)	15300	\N	2026-05-21
 40	Selenium_Se	Selenium (Se)	6200	\N	2026-06-09
 30	Thiamin_B1	Thiamin (B1)	6300	No TUL established. Using 10x the RDA as supplements can go quite high.	2026-06-10
-51	Lithium_Li	Lithium (Li)	999999	Based on Li intake data in different countries, a provisional RDA of 1 mg Li/day for a 70 kg adult can be proposed, corresponding to 14.3 μg/kg BW.	2026-03-28
+51	Lithium_Li	Lithium (Li)	999999	Based on Li intake data in different countries, a provisional RDA of 1 mg Li/day for a 70 kg adult can be proposed, corresponding to 14.3 μg/kg BW.	2026-06-11
 29	Vitamin_B_12	Vitamin B12	6800	\N	2026-03-29
 38	Vitamin_C	Vitamin C	6300	\N	2026-04-01
 46	Retinol	Retinol	7410	\N	2026-04-03
@@ -6546,8 +6568,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8689	0	1048	1	1	\N	170	f	\N	1	f	t	1	\N
 6179	8	549	1	2	\N	39	f	\N	4	f	t	1	\N
 6180	8	549	4	1	, to taste	692	t	\N	5	f	t	1	\N
-8690	8	1048	8	1	, to taste	2044	t	\N	3	f	f	1	\N
 6153	8	545	4	1	\N	71	t	\N	7	f	t	1	\N
+8690	8	1048	8	1	, to taste	2044	t	\N	3	f	f	1	\N
 6124	0	541	1	2	, chopped	7	f	\N	4	f	t	1	\N
 6181	8	550	1	2	\N	238	f	\N	1	f	t	1	\N
 6182	8	550	1	1	\N	695	f	\N	2	f	t	1	\N
@@ -9332,7 +9354,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3134	In a medium bowl, whisk together the avocado oil through the thyme. Add salt and pepper, to taste.	414	0	0
 1153	Garnish with fresh diced tomatoes, avocado slices, tortilla strips, and fresh herbs.	117	1	0
 4979	Lightly brush or spray both sides of the tortillas with olive oil or cooking spray and place in a single layer on the prepared baking sheets. Lightly season with salt.	1048	1	0
-4980	Bake for 5 minutes, flip them over, and bake for another 4-5 minutes until the tortillas are crispy like a tortilla chip.	1048	2	0
+4980	Bake for 5 minutes, flip them over, and bake for another 4–5 minutes until the tortillas are crispy like a tortilla chip.	1048	2	0
 1737	Preheat the oven to 400°F. Roll out the pastry and cut out twelve 5-inch rounds. Line a 12-hole muffin pan with the pastry rounds.	163	0	2
 1738	Line each pastry round with a circle of baking parchment and some baking beans or uncooked rice.	163	1	0
 1739	Bake the tarts for 10–15 minutes, or until the pastry is cooked through and golden. Remove the paper and baking beans or rice and set aside to cool.	163	2	2
@@ -9394,9 +9416,9 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 2353	Roast for 12 minutes then remove from oven, stir and return to oven for another 12–13 minutes, or until crispy, but not burnt.	239	3	0
 2354	Remove from oven and serve.	239	4	0
 1850	Heat the tomatoes and the cinnamon, cumin and cloves with half the coriander in a pan, then season to taste with salt and freshly ground black pepper and bring to the boil.	176	0	4
-4981	Remove from the oven and serve with toppings such as refried beans, shredded cheese, chicken tinga, carnitas, or ground beef.	1048	3	0
 1740	Spoon the custard into the pastry cases and dust with the icing sugar. Place the tarts under a preheated hot grill (broiler) and cook until the sugar carmelizes. Remove from the heat and leave to cool before serving.	163	3	24
 1080	Halve the chicken thighs, then season with sea salt and black pepper. Place in a large non-stick frying pan on a medium heat with ½ a tablespoon of olive oil and cook for 15 minutes, or until golden and cooked through, turning regularly.	118	0	4
+4981	Remove from the oven and serve with toppings such as refried beans, shredded cheese, chicken tinga, carnitas, or ground beef.	1048	3	0
 1081	Slice the baguette in half lengthways and place in the pan to quickly toast and soak up all the tasty cooking juices.	118	1	4
 1824	Mix half the shallots with the beef in a bowl. Add the chopped parsley and tomato ketchup, with salt and pepper to taste. Mix well with clean hands. Divide the mixture into four. Knead each portion into a ball, then flatten it into a burger.	173	1	0
 896	Place the remaining tortilla on top to make a sandwich and flip the whole thing over with a metal spatula. Cook for a few minutes, until the underneath is golden.	74	2	4
@@ -12144,5 +12166,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ggYSch3bChVX4wqzllNvvqJs8L5bFgLYZaQb8RVepdxmRPMwXmJgk4dMCb4naeH
+\unrestrict zpXigJGABMtfWJEW3wO9dGXKSoCqosUNSrOvSZj0X08sdbqElgdZuzb4cHjnXem
 

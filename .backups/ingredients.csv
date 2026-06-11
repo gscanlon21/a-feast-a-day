@@ -222,7 +222,7 @@
 229	\N	Xanthan Gum	Xanthan Gum	\N	f	0	9	100	2025-08-21	7	144	10	144	Xanthan Gum	\N	\N	0
 230	\N	Dry Milk	Dry Milk	\N	f	0	28	100	2025-08-29	4	120	4	120	Dry Milk	\N	\N	14
 231	\N	Garden Veggie Good Thins, GF	Garden Veggie Good Thins, GF	Box	f	4096	2	100	2025-09-20	0	224	5	224	Garden Veggie Good Thins, GF	\N	\N	16
-232	\N	Sabra Classic Hummus	Sabra Classic Hummus	\N	f	0	28	100	2026-03-31	4	240	3	240	Sabra Classic Hummus	\N	\N	6
+232	\N	Sabra Classic Hummus	Sabra Classic Hummus	\N	f	0	28	100	2026-03-31	4	240	3	240	Hummu	\N	\N	6
 233	\N	Sunflower Oil	Sunflower Oil	\N	f	65536	28	100	2026-01-01	9	224	5	224	Sunflower Oil	\N	\N	11
 234	\N	Superfine Sugar	Superfine Sugar	\N	f	0	28	100	2025-01-16	4	200	4	200	Superfine Sugar	\N	\N	14
 235	\N	Chinese Cooking Wine	Chinese Cooking Wine	\N	f	0	30	100	2025-01-23	9	240	4	240	Chinese Cooking Wine	\N	\N	14
@@ -588,8 +588,8 @@
 666	\N	Lemons, without Peel	Lemons, without Peel	\N	f	0	108	100	2026-04-03	0	216	1	216	Lemon	\N	\N	0
 667	\N	Fat-Free Refried Beans	Fat-Free Refried Beans	\N	f	0	28	100	2026-04-07	4	444	4	444	Refried Bean	\N	\N	6
 668	\N	Refried Beans	Refried Beans	\N	f	0	28	100	2026-04-06	4	238	4	238	Refried Bean	\N	\N	6
-669	\N	Frozen Blueberries	Frozen Blueberries	\N	f	0	28	100	2024-11-28	4	155	10	155	Frozen Blueberries	\N	\N	0
-670	\N	Frozen Wild Blueberries	Frozen Wild Blueberries	\N	f	0	28	100	2025-01-12	4	140	10	140	Frozen Wild Blueberries	\N	\N	0
+669	\N	Frozen Blueberries	Frozen Blueberries	\N	f	0	28	100	2024-11-28	4	155	11	155	Blueberry	\N	\N	1
+670	\N	Frozen Wild Blueberries	Frozen Wild Blueberries	\N	f	0	28	100	2025-01-12	4	140	11	140	Blueberry	\N	\N	1
 671	\N	Beets	Beets	\N	f	0	82	100	2025-04-27	0	82	1	82	Beet	\N	\N	2
 673	\N	Vanilla Sugar	Vanilla Sugar	\N	f	0	28	100	2024-12-08	4	336	4	336	Vanilla Sugar	\N	\N	14
 674	\N	Red Radish	Red Radish	\N	f	0	100	100	2026-04-09	0	100	1	100	Red Radish	\N	\N	0
@@ -609,7 +609,7 @@
 688	\N	Sugar-Free Dark Chocolate Bar (70%)	Sugar-Free Dark Chocolate Bar (70%)	\N	f	0	84	100	2025-01-10	0	168	4	168	Chocolate Bar	\N	\N	17
 689	\N	Frozen Okra	Frozen Okra	\N	f	0	14	100	2025-11-03	0	224	10	224	Frozen Okra	\N	\N	0
 690	\N	Honey | Coconut Sugar | Stevia	Honey | Coconut Sugar | Stevia	\N	f	0	28	100	2025-01-24	4	336	4	336	Honey | Coconut Sugar | Stevia	\N	\N	13
-691	\N	Dry Cauliflower Rice	Dry Cauliflower Rice	aka. Riced Cauliflower. https://www.eatthismuch.com/calories/riced-cauliflower-1894086	f	0	113.33	100	2025-09-11	6	113.33	4	113.33	Dry Cauliflower Rice	\N	\N	4
+691	\N	Dry Cauliflower Rice	Dry Cauliflower Rice	aka. Riced Cauliflower.	f	0	28	100	2025-09-11	4	113.33	4	113.33	Cauliflower	https://www.eatthismuch.com/calories/riced-cauliflower-1894086	\N	4
 692	\N	Sea Salt & Black Pepper	Sea Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2025-07-23	4	192	4	192	Salt & Black Pepper	\N	\N	12
 693	\N	Iodized Salt & Black Pepper	Iodized Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	8	100	2025-12-09	8	256	4	256	Salt & Black Pepper	\N	\N	12
 694	\N	Marinated Artichoke Hearts	Marinated Artichoke Hearts	\N	f	0	16	100	2025-09-04	0	112	1	112	Marinated Artichoke Hearts	\N	\N	0
@@ -625,7 +625,7 @@
 704	\N	Savoy Cabbage Heads	Savoy Cabbage Heads	\N	f	0	908	100	2024-12-19	0	70	2	70	Cabbage	\N	\N	0
 705	\N	Napa Cabbage Heads	Napa Cabbage Heads	\N	f	0	872	100	2025-01-13	0	109	2	109	Cabbage	\N	\N	0
 706	\N	Napa Cabbage Leaves	Napa Cabbage Leaves	\N	f	0	28	100	2024-12-04	0	109	2	109	Cabbage	\N	\N	0
-707	\N	Savoy Cabbage Leaves	Savoy Cabbage Leaves	\N	f	0	28	100	2024-11-25	0	70	2	70	Cabbage	\N	\N	0
+707	\N	Savoy Cabbage Leaves	Savoy Cabbage Leaves	\N	f	0	28	100	2026-06-11	0	70	1	70	Cabbage	\N	\N	2
 708	\N	Ghee	Ghee	Type of clarified butter.	f	4	28	100	2025-10-07	4	224	10	224	Ghee	https://fdc.nal.usda.gov/food-details/171314/nutrients	\N	0
 709	\N	Chives | Green Onions	Chives | Green Onions	\N	f	0	28	100	2025-06-23	4	48	3	48	Chives | Green Onions	\N	\N	0
 710	\N	Baby Beets	Baby Beets	\N	f	0	82	100	2025-06-22	0	164	2	164	Beet	\N	\N	0
@@ -764,7 +764,7 @@
 903	\N	Radish Sprouts	Radish Sprouts	\N	f	0	28	100	2025-01-14	4	38	2	38	Radish Sprouts	\N	\N	0
 904	\N	Lean Sliced Ham	Lean Sliced Ham	\N	f	1048576	28	100	2024-12-10	0	224	10	224	Lean Sliced Ham	\N	\N	0
 905	\N	Fresh Okra | Frozen Okra	Fresh Okra | Frozen Okra	\N	f	0	14	100	2025-11-07	0	100	2	100	Fresh Okra | Frozen Okra	\N	\N	0
-906	\N	Frozen Cauliflower Rice	Frozen Cauliflower Rice	aka. Riced Cauliflower - https://www.eatthismuch.com/calories/cauliflower-1923	f	0	28	100	2025-09-12	4	132	10	132	Frozen Cauliflower Rice	\N	\N	0
+906	\N	Frozen Cauliflower Rice	Frozen Cauliflower Rice	aka. Riced Cauliflower.	f	0	28	100	2025-09-12	4	132	10	132	Cauliflower	https://www.eatthismuch.com/calories/cauliflower-1923	\N	0
 907	\N	Unsweetened Coconut Flakes	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/coconut-meat-2653	f	0	28	100	2025-10-19	4	80	4	80	Unsweetened Coconut Flakes	\N	\N	13
 908	\N	Raw Mixed Nuts | Raw Mixed Seeds	Raw Mixed Nuts | Raw Mixed Seeds	\N	f	206849	28	100	2025-12-24	4	224	10	224	Raw Mixed Nuts | Raw Mixed Seeds	\N	\N	0
 909	\N	Raw Mixed Nuts	Raw Mixed Nuts	\N	f	131072	28	100	2025-12-21	4	137	10	137	Raw Mixed Nuts	\N	\N	0
@@ -785,7 +785,7 @@
 956	\N	Green Queen Olives	Green Queen Olives	\N	f	0	28	100	2025-03-15	4	134	3	134	Olive	\N	\N	0
 957	\N	Kalamata Olives	Kalamata Olives	\N	f	0	28	100	2025-03-17	4	112	3	112	Olive	\N	\N	0
 958	\N	Coriander Seeds	Coriander Seeds	\N	f	0	28	100	2025-12-17	4	80	4	80	Coriander Seeds	\N	\N	12
-959	\N	Salsa Verde	Salsa Verde	\N	f	512	28	100	2025-10-04	4	259	4	259	Salsa Verde	\N	\N	14
+959	\N	Salsa Verde	Salsa Verde	\N	f	512	28	100	2025-10-04	4	259	4	259	Salsa	\N	\N	14
 960	\N	Long Grain White Rice	Long Grain White Rice	\N	f	4096	28	100	2025-10-03	4	200	4	200	Rice	https://fdc.nal.usda.gov/food-details/2512381/nutrients	\N	4
 961	\N	Almond Meal	Almond Meal	\N	f	0	28	100	2026-03-24	4	240	5	240	Almond Meal	\N	\N	18
 962	\N	Sliced Bresaola	Sliced Bresaola	\N	f	0	28	100	2024-12-10	0	224	3	224	Sliced Bresaola	\N	\N	7
@@ -827,7 +827,7 @@
 998	\N	Diced Pineapple	Diced Pineapple	\N	f	0	28	100	2026-06-03	4	165	4	165	Pineapple	\N	\N	1
 999	\N	Vegetable Broth	Vegetable Broth	\N	f	0	240	100	2025-06-28	6	240	4	240	Vegetable Broth	\N	\N	13
 1000	\N	Chicken Broth | Vegetable Broth	Chicken Broth | Vegetable Broth	\N	f	1048576	240	100	2025-06-27	6	240	4	240	Chicken Broth | Vegetable Broth	\N	\N	13
-1001	\N	Fresh Cavolo Nero	Fresh Cavolo Nero	aka Tuscan Kale; Black Cabbage  https://www.eatthismuch.com/calories/kale,1995	f	0	28	100	2025-12-13	4	67	2	67	Fresh Cavolo Nero	\N	\N	0
+1001	\N	Fresh Cavolo Nero	Fresh Cavolo Nero	aka Tuscan Kale; Black Cabbage.	f	0	28	100	2025-12-13	4	67	1	67	Kale	https://www.eatthismuch.com/calories/kale,1995	\N	2
 1002	\N	Ricotta Cheese	Ricotta Cheese	\N	f	256	28	100	2025-07-04	4	224	10	224	Ricotta Cheese	\N	\N	0
 1003	\N	Bone-In Pork Chops	Bone-In Pork Chops	\N	f	1048576	178	100	2025-07-13	0	178	10	178	Bone-In Pork Chops	\N	\N	0
 1004	\N	Coconut Milk | Coconut Yogurt	Coconut Milk | Coconut Yogurt	\N	f	0	240	100	2025-11-13	6	240	8	240	Milk | Yogurt	\N	\N	9
@@ -838,7 +838,7 @@
 1010	\N	Extra Virgin Coconut Oil	Extra Virgin Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	https://fdc.nal.usda.gov/food-details/330458/nutrients	\N	11
 1043	\N	Green Apples	Green Apples	\N	f	0	182	100	2025-03-29	0	182	1	182	Apple	\N	\N	0
 1044	\N	Maca Powder	Maca Powder	\N	f	0	240	100	2025-06-19	6	240	4	240	Maca Powder	\N	\N	17
-1045	\N	Frozen Pizza	Frozen Pizza	\N	f	0	741.333333	100	2026-03-10	0	139	10	139	Frozen Pizza	\N	\N	0
+1045	\N	Frozen Pizza	Frozen Pizza	\N	f	0	741.333333	100	2026-03-10	0	139	11	139	Frozen Pizza	\N	\N	0
 1046	\N	Organic Creamy Peanut Butter	Organic Creamy Peanut Butter	Missing minor nutrients. https://www.eatthismuch.com/calories/peanut-butter-3735	f	2048	32	100	2025-10-27	4	256	128	256	Organic Creamy Peanut Butter	\N	\N	0
 1047	\N	Package Oatmeal	Package Oatmeal	\N	f	0	40	100	2025-08-16	0	120	4	120	Package Oatmeal	\N	\N	14
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	Purely Elizabeth Banana Nut Oatmeal	\N	f	0	40	100	2025-08-15	0	120	4	120	Purely Elizabeth Banana Nut Oatmeal	\N	\N	14
@@ -1062,7 +1062,7 @@
 1327	\N	Mixed Spice	Mixed Spice	\N	f	0	28	100	2024-12-04	4	149.33	4	149.33	Mixed Spice	\N	\N	12
 1328	\N	Canned Plum Tomatoes	Canned Plum Tomatoes	\N	f	512	28	100	2025-12-10	4	149	4	149	Tomato	\N	\N	6
 1329	\N	Fresh Plum Tomatoes	Fresh Plum Tomatoes	\N	f	512	62	100	2025-12-10	0	180	1	180	Tomato	\N	\N	2
-1330	\N	Assorted Pastas	Assorted Pastas	\N	f	0	28	100	2025-02-12	4	85	4	85	Assorted Pastas	\N	\N	5
+1330	\N	Assorted Pastas	Assorted Pastas	\N	f	0	28	100	2025-02-12	4	85	4	85	Pasta	\N	\N	5
 1331	\N	Bonesless Pork Ribs	Bonesless Pork Ribs	\N	f	1048576	178	100	2025-07-13	0	178	10	178	Bonesless Pork Ribs	\N	\N	0
 1332	\N	Dark Meat Chicken	Dark Meat Chicken	\N	f	1048576	178	100	2025-07-13	0	178	10	178	Dark Meat Chicken	\N	\N	0
 1333	\N	Dark Meat Chicken | Bonesless Pork Ribs	Dark Meat Chicken | Bonesless Pork Ribs	\N	f	1048576	178	100	2025-07-13	0	178	10	178	Dark Meat Chicken | Bonesless Pork Ribs	\N	\N	0
@@ -1202,7 +1202,7 @@
 1555	\N	Small Cauliflower Heads	Small Cauliflower Heads	\N	f	0	588	100	2025-09-13	0	107	2	107	Small Cauliflower Heads	\N	\N	0
 1556	\N	Tikka Curry Paste	Tikka Curry Paste	\N	f	0	28	100	2026-06-09	4	180	4	180	Curry Paste	\N	\N	14
 1557	\N	Italian Sausages	Italian Sausages	\N	f	1048576	83	100	2025-08-06	0	166	10	166	Italian Sausages	\N	\N	0
-1558	\N	Shredded Mozzarella Cheese	Shredded Mozzarella Cheese	\N	f	256	28	100	2025-12-20	4	112	10	112	Shredded Mozzarella Cheese	\N	\N	0
+1558	\N	Shredded Mozzarella Cheese	Shredded Mozzarella Cheese	\N	f	256	28	100	2025-12-20	4	112	8	112	Mozzarella Cheese	\N	\N	9
 1559	\N	Large Pomegranate	Large Pomegranate	\N	f	0	282	100	2025-10-30	0	174	1	174	Large Pomegranate	\N	\N	0
 1560	\N	Medium Lemons	Medium Lemons	\N	f	0	108	100	2026-04-02	0	216	1	216	Lemon	\N	\N	0
 1561	\N	Hot Smoked Kielbasa Sausage	Hot Smoked Kielbasa Sausage	\N	f	1048576	28	100	2025-02-22	4	224	10	224	Hot Smoked Kielbasa Sausage	https://fdc.nal.usda.gov/food-details/174607/nutrients	\N	0
@@ -1219,8 +1219,8 @@
 1572	\N	Ground Flaxseed	Ground Flaxseed	\N	f	0	28	100	2025-02-27	4	168	10	168	Ground Flaxseed	\N	\N	0
 1573	\N	Powdered Greens	Powdered Greens	\N	f	0	28	100	2026-02-03	4	128	10	128	Powdered Greens	\N	\N	0
 1574	\N	Fresh Scottish Kale	Fresh Scottish Kale	\N	f	0	28	100	2025-12-14	4	67	2	67	Fresh Scottish Kale	\N	\N	0
-1575	\N	Shredded Whole Mozzarella Cheese	Shredded Whole Mozzarella Cheese	\N	f	256	28	100	2025-12-19	4	112	10	112	Shredded Whole Mozzarella Cheese	\N	\N	0
-1576	\N	Shredded Part-Skim Mozzarella Cheese	Shredded Part-Skim Mozzarella Cheese	\N	f	256	28	100	2025-12-18	4	112	10	112	Shredded Part-Skim Mozzarella Cheese	\N	\N	0
+1575	\N	Shredded Whole Mozzarella Cheese	Shredded Whole Mozzarella Cheese	\N	f	256	28	100	2025-12-19	4	112	8	112	Mozzarella Cheese	\N	\N	9
+1576	\N	Shredded Part-Skim Mozzarella Cheese	Shredded Part-Skim Mozzarella Cheese	\N	f	256	28	100	2025-12-18	4	112	8	112	Mozzarella Cheese	\N	\N	9
 1577	\N	Slices of Pepperoni	Slices of Pepperoni	\N	f	0	28	100	2024-12-30	4	224	10	224	Slices of Pepperoni	\N	\N	0
 1578	\N	Fresh Cranberries	Fresh Cranberries	\N	f	0	28	100	2024-11-28	4	224	1	224	Cranberry	\N	\N	0
 1579	\N	Cranberries	Cranberries	\N	f	0	28	100	2024-11-28	4	224	1	224	Cranberries	\N	\N	0
@@ -1493,7 +1493,7 @@
 1970	\N	Grits	Grits	\N	t	2	7.68	100	2025-07-30	7	128	0	128	Cornmeal	\N	\N	0
 1971	\N	Medium Carrots	Medium Carrots	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Carrots	\N	\N	0
 1972	\N	Fennel	Fennel	\N	f	0	28	100	2025-09-05	4	87	2	87	Fennel Sprouts	\N	\N	0
-1973	\N	Dry Black Beans	Dry Black Beans	\N	f	0	28	100	2024-11-25	4	194	4	194	Black Bean	https://fdc.nal.usda.gov/food-details/747444/nutrients	\N	6
+1973	\N	Dry Black Beans	Dry Black Beans	\N	f	0	28	100	2026-06-11	4	194	4	194	Black Bean	https://fdc.nal.usda.gov/food-details/747444/nutrients	\N	6
 1974	\N	Hard Goat Cheese	Hard Goat Cheese	\N	f	256	28	100	2026-03-03	4	224	10	224	Goat Cheese	https://fdc.nal.usda.gov/food-details/172197/nutrients	\N	0
 1975	\N	Chinese Chestnuts	Chinese Chestnuts	\N	f	0	28	100	2025-03-10	4	224	10	224	Chestnuts	https://fdc.nal.usda.gov/food-details/170164/nutrients	\N	0
 1976	\N	Japanese Chestnuts	Japanese Chestnuts	\N	f	0	28	100	2025-03-10	4	224	10	224	Chestnuts	https://fdc.nal.usda.gov/food-details/169413/nutrients	\N	0
@@ -1531,3 +1531,4 @@
 2042	\N	Coleslaw Mix	Coleslaw Mix	Shredded Cabbage & Carrots	f	0	908	100	2026-05-09	0	89	1	89	Cabbage	https://fdc.nal.usda.gov/food-details/2346407/nutrients	\N	2
 2043	\N	Sesame Oil | Avocado Oil	Sesame Oil | Avocado Oil	\N	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	\N	\N	11
 2044	\N	Fine Salt	Fine Salt	\N	t	0	6	100	2025-07-24	8	288	4	288	Salt	\N	\N	12
+2045	\N	Frozen Regular Cheese Pizza	Pizza, Cheese Topping, Regular Crust, Frozen, Cooked	\N	f	0	741.333333	100	2026-03-10	0	139	11	139	Frozen Pizza	\N	\N	0
