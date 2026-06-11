@@ -98,7 +98,7 @@
         <div style="margin-block:.5em;font-size:@FontHelpers.AdjustEm("x-small", User?.MinFontSize);"><b>Equipment</b>: @Model.Recipe.Equipment</div>
     }
 
-    <div style="margin-block-start:1.2em;margin-block-end:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
+    <div style="margin-block-start:1.1em;margin-block-end:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
         @foreach (var ingredientGroup in Model.RecipeIngredients.GroupBy(ri => ri.Group))
         {
             <div style="line-height:1;font-weight:600;">@ingredientGroup.Key</div>
