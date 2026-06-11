@@ -20,7 +20,7 @@ public class CaptchaService
     }
 
     /// <summary>
-    /// Root route for building out the workout routine newsletter.
+    /// Check the captcha solution.
     /// </summary>
     public async Task<CaptchaResponse?> VerifyCaptcha(string solution)
     {
