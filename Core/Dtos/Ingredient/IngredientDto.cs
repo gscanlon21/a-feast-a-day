@@ -21,21 +21,23 @@ public class IngredientDto
 
     public string Group { get; set; } = null!;
 
-    public bool SkipShoppingList { get; set; }
-
-    public Allergens Allergens { get; set; }
+    public Section Section { get; set; }
 
     public Category Category { get; set; }
 
+    public Allergens Allergens { get; set; }
+
     public Measure DefaultMeasure { get; set; }
 
+    public bool SkipShoppingList { get; set; }
+
     public double GramsPerMeasure { get; set; }
+
+    public double GramsPerServing { get; set; }
 
     public double GramsPerFineCup { get; set; }
 
     public double GramsPerCoarseCup { get; set; }
-
-    public double GramsPerServing { get; set; }
 
     public string? Notes { get; set; } = null;
 

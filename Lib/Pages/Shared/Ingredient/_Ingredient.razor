@@ -1,12 +1,8 @@
 @page "/ingredient/ingredient"
 @inject DisplayHelper DH
 @inject IOptions<SiteSettings> SiteSettings
-@using Core.Consts;
 @using Core.Models.Options
 @using Microsoft.Extensions.Options
-@using Core.Models.Recipe
-@using Core.Models.User
-@using Core.Models.Newsletter
 @using Core.Dtos.Ingredient
 
 @* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
@@ -34,14 +30,15 @@
 
         <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Notes</b>: @Model.Notes</div>
         <div style="margin-block:.5em;font-size:x-small;word-break:break-word;"><b>Group</b>: @Model.Group</div>
-        <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Section</b>: @Model.Section.GetSingleDisplayName()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Category</b>: @Model.Category.GetSingleDisplayName()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName()</div>
         <div style="margin-block:.5em;font-size:x-small;"><b>Default Measure</b>: @Model.DefaultMeasure.GetSingleDisplayName()</div>
         <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Measure</b>: @Model.GramsPerMeasure</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
         <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Fine Cup</b>: @Model.GramsPerFineCup</div>
         <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Coarse Cup</b>: @Model.GramsPerCoarseCup</div>
-        <div style="margin-block:.5em;font-size:x-small;"><b>Grams Per Serving</b>: @Model.GramsPerServing</div>
-        <div style="margin-block:.5em;font-size:x-small;"><b>Allergens</b>: @Model.Allergens.GetDisplayName()</div>
-        <div style="margin-block:.5em;font-size:x-small;"><b>Category</b>: @Model.Category.GetSingleDisplayName()</div>
+        <div style="margin-block:.5em;font-size:x-small;"><b>Skip Shopping List</b>: @Model.SkipShoppingList</div>
         <div style="margin-block:.5em;font-size:x-small;"><b>Alternatives</b>: @string.Join(", ", Model.Alternatives.Select(ai => ai.AlternativeIngredient.Name))</div>
         <div style="margin-block:.5em;font-size:x-small;"><b>Is Alternative Of</b>: @string.Join(", ", Model.AlternativeIngredients.Select(ai => ai.Ingredient.Name))</div>
     </div>

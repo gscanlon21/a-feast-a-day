@@ -51,7 +51,7 @@ public class IngredientAlternativesViewComponent : ViewComponent
         });
     }
 
-    private async Task<List<Ingredient>> GetAlternativeIngredients(Ingredient ingredient, Data.Entities.Users.User user, bool partial)
+    private async Task<List<Ingredient>> GetAlternativeIngredients(Ingredient ingredient, User user, bool partial)
     {
         return await _context.IngredientAlternatives.AsNoTracking()
             .Include(i => i.AlternativeIngredient).ThenInclude(ai => ai.USDANutrients)

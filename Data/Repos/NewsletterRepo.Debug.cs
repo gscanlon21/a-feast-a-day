@@ -100,6 +100,8 @@ public partial class NewsletterRepo
                 Name = debugIngredient.Name,
                 Link = debugIngredient.Link,
                 Notes = debugIngredient.Notes,
+                Group = debugIngredient.Group,
+                Section = debugIngredient.Section,
                 Category = debugIngredient.Category,
                 Allergens = debugIngredient.Allergens,
                 DefaultMeasure = debugIngredient.DefaultMeasure,
