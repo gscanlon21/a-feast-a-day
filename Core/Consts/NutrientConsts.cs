@@ -8,6 +8,11 @@ public static class NutrientConsts
     public const double NutrientTargetStep = 0.25;
 
     /// <summary>
+    /// How to round nutrient targets.
+    /// </summary>
+    public const MidpointRounding RoundBy = MidpointRounding.ToZero;
+
+    /// <summary>
     /// This shouldn't be too high (>12) or else the program will spend too much time trying 
     /// to get the user in range and end up not working or overworking specific nutrients in the interim.
     /// 
@@ -24,7 +29,7 @@ public static class NutrientConsts
     /// <summary>
     /// The percent relative to the nutrient's RDA that is used in the nutrient targets.
     /// </summary>
-    public const int NutrientTargetDefaultPercent = 100;
+    public const int MaxTargetPercent = 100;
 
     /// <summary>
     /// The scale relative to the RDA to use as the TUL when there is none.

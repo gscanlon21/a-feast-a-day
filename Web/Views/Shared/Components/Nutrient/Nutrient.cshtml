@@ -50,14 +50,14 @@
                     </div>
                     <div class="small text-muted d-none">
                         <span class="start-value" 
-                              data-orig="@MathHelpers.RoundToNearest(nutrientTarget.Start, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" 
-                              data-default="@MathHelpers.RoundToNearest(nutrientTarget.DefaultStart, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)">
+                              data-orig="@MathHelpers.RoundToNearest(nutrientTarget.Start, NutrientConsts.NutrientTargetStep, NutrientConsts.RoundBy)"
+                              data-default="@MathHelpers.RoundToNearest(nutrientTarget.DefaultStart, NutrientConsts.NutrientTargetStep, NutrientConsts.RoundBy)">
                               @nutrientTarget.Start
                         </span>%
                         –
                         <span class="end-value" 
-                              data-orig="@MathHelpers.RoundToNearest(nutrientTarget.End, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" 
-                              data-default="@MathHelpers.RoundToNearest(nutrientTarget.DefaultEnd, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)">
+                              data-orig="@MathHelpers.RoundToNearest(nutrientTarget.End, NutrientConsts.NutrientTargetStep, NutrientConsts.RoundBy)"
+                              data-default="@MathHelpers.RoundToNearest(nutrientTarget.DefaultEnd, NutrientConsts.NutrientTargetStep, NutrientConsts.RoundBy)">
                               @nutrientTarget.End
                         </span>%
                     </div>
@@ -84,16 +84,13 @@
                     <form asp-controller="@UserController.Name" asp-action="@nameof(UserController.SaveNutrientTargets)" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token" asp-route-nutrient="@nutrientTarget.NutrientGroup" method="post"
                           id="save-@nutrientTarget.NutrientGroup" class="w-100 h-auto d-flex position-relative">
                         
-                        <input type="hidden" name="DefaultStart" value="@nutrientTarget.DefaultStart" />
-                        <input type="hidden" name="DefaultEnd" value="@nutrientTarget.DefaultEnd" />
-
                         <input type="range" name="Start" class="range-slider range-start" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
                                min="@NutrientConsts.NutrientTargetMin" max="@NutrientConsts.NutrientTargetMax" step="@NutrientConsts.NutrientTargetStep"
-                               value="@MathHelpers.RoundToNearest(nutrientTarget.Start, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" />
+                               value="@MathHelpers.RoundToNearest(nutrientTarget.Start, NutrientConsts.NutrientTargetStep, NutrientConsts.RoundBy)" />
 
                         <input type="range" name="End" class="range-slider range-end" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
                                min="@NutrientConsts.NutrientTargetMin" max="@NutrientConsts.NutrientTargetMax" step="@NutrientConsts.NutrientTargetStep"
-                               value="@MathHelpers.RoundToNearest(nutrientTarget.End, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" />
+                               value="@MathHelpers.RoundToNearest(nutrientTarget.End, NutrientConsts.NutrientTargetStep, NutrientConsts.RoundBy)" />
                         
                         <div class="range-track">
                             <div class="range-unselected" style="background-color:@nutrientTarget.Color;"></div>

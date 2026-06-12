@@ -1,5 +1,4 @@
-﻿using Data.Code.Extensions;
-using Data.Entities.Users;
+﻿using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Code.TempData;
@@ -51,9 +50,8 @@ public partial class UserController
         return RedirectToAction(nameof(UserController.Edit), new { email, token });
     }
 
-
     [HttpPost, Route("nutrient/save")]
-    public async Task<IActionResult> SaveNutrientTargets(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients, double start, double end, double defaultStart, double defaultEnd)
+    public async Task<IActionResult> SaveNutrientTargets(string email, string token, [Bind(Prefix = "nutrient")] Core.Models.Nutrients.Nutrients nutrients, double start, double end)
     {
         var user = await _userRepo.GetUser(email, token, Includes.Families);
         if (user == null)
@@ -73,14 +71,14 @@ public partial class UserController
             {
                 UserId = user.Id,
                 Nutrient = nutrients,
-                RDAScale = (int)Math.Round(start / defaultStart),
-                TULScale = (int)Math.Round(end / defaultEnd),
+                RDAScale = MathHelpers.RoundToNearest(start / 100, NutrientConsts.NutrientTargetStep / 100, NutrientConsts.RoundBy),
+                TULScale = MathHelpers.RoundToNearest(end / 100, NutrientConsts.NutrientTargetStep / 100, NutrientConsts.RoundBy),
             });
         }
         else
         {
-            userNutrient.RDAScale = (int)Math.Round(start / defaultStart);
-            userNutrient.TULScale = (int)Math.Round(end / defaultEnd);
+            userNutrient.RDAScale = MathHelpers.RoundToNearest(start / 100, NutrientConsts.NutrientTargetStep / 100, NutrientConsts.RoundBy);
+            userNutrient.TULScale = MathHelpers.RoundToNearest(end / 100, NutrientConsts.NutrientTargetStep / 100, NutrientConsts.RoundBy);
         }
 
         await _context.SaveChangesAsync();

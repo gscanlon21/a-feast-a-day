@@ -15,7 +15,7 @@ public static class UserFamilyExtensions
     public static DoubleRange DefaultRange(this ICollection<UserFamily> userFamilies, Nutrients nutrient)
     {
         var sumRDA = userFamilies.GramsOfRDATUL(null, nutrient, DRI.RDA).NullIfDefault() ?? 0;
-        var sumTUL = userFamilies.GramsOfRDATUL(null, nutrient, DRI.TUL).NullIfDefault() ?? sumRDA * NutrientConsts.ScaleWhenNoTUL;
+        var sumTUL = userFamilies.GramsOfRDATUL(null, nutrient, DRI.TUL).NullIfDefault() ?? 0;
 
         return new DoubleRange(sumRDA * 7, sumTUL * 7);
     }
@@ -54,10 +54,12 @@ public static class UserFamilyExtensions
         var totalCaloriesPerDay = userFamily.CaloriesPerDay;
         var totalKCaloriesPerDay = totalCaloriesPerDay / 1000d;
 
-        var maxValue = dri switch
+        var maxValue = (dri, userNutrient) switch
         {
-            DRI.RDA => dailyAllowance.RDA!.Value * (userNutrient?.RDAScale ?? 1),
-            DRI.TUL => dailyAllowance.TUL!.Value * (userNutrient?.TULScale ?? 1),
+            (DRI.RDA, not null) when dailyAllowance.TUL != null => dailyAllowance.TUL.Value * userNutrient.RDAScale,
+            (DRI.TUL, not null) when dailyAllowance.TUL != null => dailyAllowance.TUL.Value * userNutrient.TULScale,
+            (DRI.RDA, null) when dailyAllowance.RDA != null => dailyAllowance.RDA.Value,
+            (DRI.TUL, null) when dailyAllowance.TUL != null => dailyAllowance.TUL.Value,
             _ => throw new NotImplementedException(),
         };
 

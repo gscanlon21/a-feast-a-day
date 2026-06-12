@@ -33,5 +33,5 @@ public class DailyAllowanceAttribute(double rda, double tul, Measure measure, Mu
     public double InternalRDA { private get; set; } = rda;
     public double InternalTUL { private get; set; } = tul;
     public double? RDA => InternalRDA >= 0 ? InternalRDA : null;
-    public double? TUL => InternalTUL >= 0 ? InternalTUL : null;
+    public double? TUL => InternalTUL >= 0 ? InternalTUL : RDA * NutrientConsts.ScaleWhenNoTUL;
 }

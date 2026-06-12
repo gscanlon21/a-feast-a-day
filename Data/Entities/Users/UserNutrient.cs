@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace Data.Entities.Users;
 
 [Table("user_nutrient")]
-[DebuggerDisplay("{Nutrient}: {Start}-{End}")]
+[DebuggerDisplay("{Nutrient}: {RDAScale}-{TULScale}")]
 public class UserNutrient
 {
     [ForeignKey(nameof(Users.User.Id))]
@@ -13,8 +13,14 @@ public class UserNutrient
 
     public Core.Models.Nutrients.Nutrients Nutrient { get; init; }
 
+    /// <summary>
+    /// Relative to the TUL/max value.
+    /// </summary>
     public double RDAScale { get; set; }
 
+    /// <summary>
+    /// Relative to the TUL/max value.
+    /// </summary>
     public double TULScale { get; set; }
 
 
