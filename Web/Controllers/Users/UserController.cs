@@ -123,7 +123,9 @@ public partial class UserController : ViewController
 
             await _context.SaveChangesAsync();
 
-            if (!oldUserFamilies.SequenceEqual(newUserFamilies, new UserFamily.PersonComparer()))
+            // Only reset the nutrient target data when the number of family members has changed.
+            // !oldUserFamilies.SequenceEqual(newUserFamilies, new UserFamily.PersonComparer())
+            if (oldUserFamilies.Count != newUserFamilies.Count())
             {
                 // Back-fill new nutrient target data when switching family members, so we're not weighting with old data.
                 return await ClearNutrientTargetData(viewModel.User.Email, viewModel.Token);
