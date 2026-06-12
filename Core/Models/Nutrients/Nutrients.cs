@@ -448,20 +448,6 @@ public enum Nutrients
     Boron_B = 27,
 
     /// <summary>
-    /// Thiamin (B1)
-    /// </summary>
-    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
-    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
-    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
-    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Thiamin (B1)", Order = 6300)]
-    Thiamin_B1 = 28,
-
-    /// <summary>
     /// Vitamin C
     /// </summary>
     [DailyAllowance(90, 2000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
@@ -473,7 +459,21 @@ public enum Nutrients
     [DailyAllowance(75, 2000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(75, 2000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Vitamin C", Order = 6300)]
-    Vitamin_C = 29,
+    Vitamin_C = 28,
+
+    /// <summary>
+    /// Thiamin (B1)
+    /// </summary>
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(1.2, 12, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(1.1, 11, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [Display(Name = "Thiamin (B1)", Order = 6400)]
+    Thiamin_B1 = 29,
 
     /// <summary>
     /// Riboflavin (B2)
@@ -504,6 +504,20 @@ public enum Nutrients
     Niacin_B3 = 31,
 
     /// <summary>
+    /// Pantothenic Acid (B5)
+    /// </summary>
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [Display(Name = "Pantothenic Acid (B5)", Order = 6650)]
+    Pantothenic_Acid_B5 = 32,
+
+    /// <summary>
     /// Vitamin B6
     /// </summary>
     [DailyAllowance(1.3, 100, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
@@ -515,7 +529,21 @@ public enum Nutrients
     [DailyAllowance(1.5, 100, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(1.5, 100, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Vitamin B6", Order = 6700)]
-    Vitamin_B_6 = 32,
+    Vitamin_B_6 = 33,
+
+    /// <summary>
+    /// Folate (B9)
+    /// </summary>
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
+    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [Display(Name = "Folate (B9)", Order = 6750)]
+    Folate_B9 = 34,
 
     /// <summary>
     /// Vitamin B12
@@ -539,7 +567,7 @@ public enum Nutrients
     [DailyAllowance(2.8, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_19_30_Years)]
     [DailyAllowance(2.8, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Vitamin B12", Order = 6800)]
-    Vitamin_B_12 = 33,
+    Vitamin_B_12 = 35,
 
     /// <summary>
     /// Biotin (B7)
@@ -553,35 +581,7 @@ public enum Nutrients
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
     [Display(Name = "Biotin (B7)", Order = 6850)]
-    Biotin = 34,
-
-    /// <summary>
-    /// Folate (B9)
-    /// </summary>
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
-    [DailyAllowance(400, 1000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Folate (B9)", Order = 6900)]
-    Folate_B9 = 35,
-
-    /// <summary>
-    /// Pantothenic Acid (B5)
-    /// </summary>
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_19_30_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_31_50_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_19_30_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
-    [DailyAllowance(5, -1, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
-    [Display(Name = "Pantothenic Acid (B5)", Order = 6900)]
-    Pantothenic_Acid_B5 = 36,
+    Biotin = 36,
 
     /// <summary>
     /// Choline

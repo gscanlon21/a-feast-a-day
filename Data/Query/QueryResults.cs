@@ -53,7 +53,7 @@ public class QueryResults : IRecipeCombo
     /// Find the number of weeks of padding that this recipe still has left.
     /// If the padded refresh date is earlier than today, then use the number 0.
     /// </summary>
-    public int WeeksTillLastSeen => Math.Max(0, (UserRecipe?.PadRefreshXWeeks ?? UserConsts.NutrientVolumeWeeks) - WeeksFromLastSeen);
+    public int WeeksTillLastSeen => Math.Max(0, (UserRecipe?.PadRefreshXWeeks ?? NutrientConsts.NutrientVolumeWeeks) - WeeksFromLastSeen);
 
     /// <summary>
     /// Rounded scale.

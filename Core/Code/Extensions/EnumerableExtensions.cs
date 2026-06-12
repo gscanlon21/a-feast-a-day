@@ -4,7 +4,7 @@ namespace Core.Code.Extensions;
 
 public static class EnumerableExtensions
 {
-    public static T AverageOrDefault<T>(this IEnumerable<T> source, T defaultValue = default) 
+    public static T AverageOrDefault<T>(this IEnumerable<T> source, T defaultValue = default)
         where T : struct, INumber<T>
     {
         ArgumentNullException.ThrowIfNull(source);

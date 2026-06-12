@@ -14,33 +14,32 @@ public static class UserFamilyExtensions
     /// </summary>
     public static DoubleRange DefaultRange(this ICollection<UserFamily> userFamilies, Nutrients nutrient)
     {
-        var sumRDA = userFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.RDA);
-        var sumTUL = userFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? sumRDA * 2;
-        var tulDefault = (sumTUL.HasValue && sumRDA.HasValue) ? (sumTUL.Value / sumRDA.Value * 100) : UserConsts.NutrientTargetTULDefault;
+        var sumRDA = userFamilies.GramsOfRDATUL(nutrient, DRI.RDA).NullIfDefault();
+        var sumTUL = userFamilies.GramsOfRDATUL(nutrient, DRI.TUL).NullIfDefault() ?? sumRDA * NutrientConsts.ScaleWhenNoTUL;
+        var tulDefault = (sumTUL.HasValue && sumRDA.HasValue) ? (sumTUL.Value / sumRDA.Value * 100) : NutrientConsts.ScaleWhenNoTUL * 100;
 
-        return new DoubleRange(UserConsts.NutrientTargetDefaultPercent, tulDefault);
+        return new DoubleRange(NutrientConsts.NutrientTargetDefaultPercent, tulDefault);
     }
 
     /// <summary>
     /// Gets the total grams of RDA/TUL for a nutrient.
+    /// FIXME: Need to pass in UserNutrient to actually adjust the nutrient targets.
     /// </summary>
-    public static double GramsOfRDATUL(this IEnumerable<UserFamily> userFamilies, Nutrients nutrient, bool tul)
+    public static double GramsOfRDATUL(this IEnumerable<UserFamily> userFamilies, Nutrients nutrient, DRI dri)
     {
         List<double> runningTotal = new(userFamilies.Count());
         var userFamiliesWithDRI = userFamilies.Select(f => new UserFamilyDRI(f, nutrient));
         foreach (var userDRI in userFamiliesWithDRI.OrderBy(x => x.DailyAllowance == null))
         {
-            // Make sure null is ordered last.
-            if (userDRI.DailyAllowance == null)
+            runningTotal.Add((userDRI.DailyAllowance, dri) switch
             {
                 // Adjust nutrient targets when there's no DRI.
-                runningTotal.Add(runningTotal.AverageOrDefault());
-            }
-            else
-            {
+                (null, _) or => runningTotal.AverageOrDefault(),
+                (_, DRI.RDA) when userDRI.DailyAllowance.RDA == null => runningTotal.AverageOrDefault(),
+                (_, DRI.TUL) when userDRI.DailyAllowance.TUL == null => runningTotal.AverageOrDefault(),
                 // Calculate the nutrient targets for a single family member and add it to the total.
-                runningTotal.Add(userDRI.UserFamily.GramsOfRDATUL(userDRI.DailyAllowance, tul: tul));
-            }
+                _ => userDRI.UserFamily.GramsOfRDATUL(userDRI.DailyAllowance, dri),
+            });
         }
 
         return runningTotal.Sum();
@@ -49,16 +48,19 @@ public static class UserFamilyExtensions
     /// <summary>
     /// Gets the total grams of RDA/TUL for a nutrient.
     /// </summary>
-    public static double GramsOfRDATUL(this UserFamily userFamily, DailyAllowanceAttribute dailyAllowance, bool tul)
+    public static double GramsOfRDATUL(this UserFamily userFamily, DailyAllowanceAttribute dailyAllowance, DRI dri)
     {
         // Totals are used. Don't double up...
         var totalWeightKg = userFamily.Weight;
         var totalCaloriesPerDay = userFamily.CaloriesPerDay;
         var totalKCaloriesPerDay = totalCaloriesPerDay / 1000d;
 
-        var maxValue = tul // TODO/FIXME: Test and redo all the conversion code. So very messy.
-                ? (dailyAllowance.TUL ?? (dailyAllowance.RDA * NutrientConsts.RDAScaleWhenNoTUL) ?? 0)
-                : (dailyAllowance.RDA ?? (dailyAllowance.TUL / NutrientConsts.RDAScaleWhenNoTUL) ?? 0);
+        var maxValue = dri switch
+        {
+            DRI.RDA => dailyAllowance.RDA!.Value,
+            DRI.TUL => dailyAllowance.TUL!.Value,
+            _ => throw new NotImplementedException(),
+        };
 
         return (dailyAllowance.For, dailyAllowance.Measure, dailyAllowance.Multiplier) switch
         {

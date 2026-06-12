@@ -32,7 +32,7 @@ public class CreateBackfill : IJob, IScheduled
             var user = await _userRepo.GetUserStrict(email, token, User.Includes.Newsletter);
 
             // Reverse the dates (oldest to newest) so the feast nutrients are calculated properly. Create a feast for every week.
-            var dates = new Stack<DateOnly>(Enumerable.Range(1, UserConsts.NutrientVolumeWeeks).Select(r => DateHelpers.Today.AddDays(-7 * r)));
+            var dates = new Stack<DateOnly>(Enumerable.Range(1, NutrientConsts.NutrientVolumeWeeks).Select(r => DateHelpers.Today.AddDays(-7 * r)));
 
             // Run max one at a time so the nutrient targets are re-calculated with up-to-date data each week.
             var options = new ParallelOptions() { MaxDegreeOfParallelism = 1, CancellationToken = context.CancellationToken };

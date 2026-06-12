@@ -63,35 +63,6 @@ public static class UserConsts
         | Equipment.SpiceGrinder;
 
     /// <summary>
-    /// This shouldn't be too high (>12) or else the program will spend too much time trying 
-    /// to get the user in range and end up not working or overworking specific nutrients in the interim.
-    /// 
-    /// This shouldn't be too low (<12) or else the nutrient target value will drop too much
-    /// during over the course of the week and overwork the user the next time they see a feast.
-    /// </summary>
-    public const int NutrientVolumeWeeks = 12;
-
-    /// <summary>
-    /// After how many weeks until nutrient targets start taking effect.
-    /// </summary>
-    public const int NutrientTargetsTakeEffectAfterXWeeks = 1;
-
-    /// <summary>
-    /// How many custom user_frequency records do we allow per user?
-    /// </summary>
-    public const int MaxUserFrequencies = 7;
-
-    /// <summary>
-    /// The percent relative to the nutrient's RDA that is used in the nutrient targets.
-    /// </summary>
-    public const int NutrientTargetDefaultPercent = 100;
-
-    /// <summary>
-    /// The max percent relative to the RDA to use as the nutrients default target TUL when there is none.
-    /// </summary>
-    public const int NutrientTargetTULDefault = 1000;
-
-    /// <summary>
     /// How many months until the user's account is disabled for inactivity.
     /// </summary>
     public const int DisableAfterXMonths = 3;

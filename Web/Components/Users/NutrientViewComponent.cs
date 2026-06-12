@@ -29,7 +29,7 @@ public class NutrientViewComponent : ViewComponent
             return Content(string.Empty);
         }
 
-        var weeks = int.TryParse(Request.Query["weeks"], out int weeksTmp) ? weeksTmp : UserConsts.NutrientVolumeWeeks;
+        var weeks = int.TryParse(Request.Query["weeks"], out int weeksTmp) ? weeksTmp : NutrientConsts.NutrientVolumeWeeks;
         var (weeksOfData, weeklyNutrients) = await _userRepo.GetWeeklyNutrientPercent(user, weeks);
         if (weeklyNutrients == null)
         {

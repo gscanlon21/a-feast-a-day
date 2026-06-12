@@ -85,7 +85,7 @@ public class UserController : ControllerBase
     /// EXTERNAL. Get the user's current nutrients.
     /// </summary>
     [HttpGet("Nutrients")]
-    public async Task<IActionResult> GetNutrients(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int weeks = 1, bool tul = false)
+    public async Task<IActionResult> GetNutrients(string email = UserConsts.DemoUser, string token = UserConsts.DemoToken, int weeks = 1, DRI dri = DRI.RDA)
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         if (user == null)
@@ -93,7 +93,7 @@ public class UserController : ControllerBase
             return StatusCode(StatusCodes.Status204NoContent);
         }
 
-        var weeklyNutrients = await _userRepo.GetWeeklyNutrientVolume(user, weeks: weeks, tul: tul);
+        var weeklyNutrients = await _userRepo.GetWeeklyNutrientVolume(user, weeks: weeks, dri: dri);
         if (weeklyNutrients.weeks <= 0) { return StatusCode(StatusCodes.Status204NoContent); }
 
         return StatusCode(StatusCodes.Status200OK, weeklyNutrients.volume);

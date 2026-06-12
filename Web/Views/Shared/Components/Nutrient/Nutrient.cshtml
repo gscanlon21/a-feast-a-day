@@ -79,11 +79,13 @@
                         <input type="hidden" name="DefaultStart" value="@nutrientTarget.DefaultStart" />
                         <input type="hidden" name="DefaultEnd" value="@nutrientTarget.DefaultEnd" />
 
-                        <input type="range" class="range-slider range-start" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
-                               name="Start" min="0" max="100" step=".1" value="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" />
+                        <input type="range" name="Start" class="range-slider range-start" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
+                               min="@NutrientConsts.NutrientTargetMin" max="@NutrientConsts.NutrientTargetMax" step="@NutrientConsts.NutrientTargetStep"
+                               value="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" />
 
-                        <input type="range" class="range-slider range-end" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
-                               name="End" min="0" max="100" step=".1" value="@Math.Round(nutrientTarget.End, 1, MidpointRounding.ToZero)" />
+                        <input type="range" name="End" class="range-slider range-end" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
+                               min="@NutrientConsts.NutrientTargetMin" max="@NutrientConsts.NutrientTargetMax" step="@NutrientConsts.NutrientTargetStep"
+                               value="@Math.Round(nutrientTarget.End, 1, MidpointRounding.ToZero)" />
                         
                         <div class="range-track">
                             <div class="range-unselected" style="background-color:@nutrientTarget.Color;"></div>
@@ -198,10 +200,10 @@
             }
         }
 
-        updateOnHold(minusLower, (e) => update(e, false, () => start.value = Number(start.value) - 0.1));
-        updateOnHold(addLower, (e) => update(e, true, () => start.value = Number(start.value) + 0.1));
-        updateOnHold(minusUpper, (e) => update(e, true, () => end.value = Number(end.value) - 0.1));
-        updateOnHold(addUpper, (e) => update(e, false, () => end.value = Number(end.value) + 0.1));
+        updateOnHold(minusLower, (e) => update(e, false, () => start.value = Number(start.value) - @NutrientConsts.NutrientTargetStep));
+        updateOnHold(addLower, (e) => update(e, true, () => start.value = Number(start.value) + @NutrientConsts.NutrientTargetStep));
+        updateOnHold(minusUpper, (e) => update(e, true, () => end.value = Number(end.value) - @NutrientConsts.NutrientTargetStep));
+        updateOnHold(addUpper, (e) => update(e, false, () => end.value = Number(end.value) + @NutrientConsts.NutrientTargetStep));
 
         start.addEventListener("input", update);
         end.addEventListener("input", update);

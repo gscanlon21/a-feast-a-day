@@ -28,13 +28,10 @@ public class DailyAllowanceAttribute(double rda, double tul, Measure measure, Mu
 {
     public double CaloriesPerGram { get; set; } = 1;
     public Person For { get; set; } = Person.All;
-    public Multiplier Multiplier { get; set; } = multiplier;
     public Measure Measure { get; set; } = measure;
+    public Multiplier Multiplier { get; set; } = multiplier;
     public double InternalRDA { private get; set; } = rda;
     public double InternalTUL { private get; set; } = tul;
     public double? RDA => InternalRDA >= 0 ? InternalRDA : null;
     public double? TUL => InternalTUL >= 0 ? InternalTUL : null;
-    public int TULPercent => (TUL.HasValue && RDA.HasValue)
-        ? (int)Math.Ceiling(TUL.Value / RDA.Value * 100)
-        : UserConsts.NutrientTargetTULDefault;
 }

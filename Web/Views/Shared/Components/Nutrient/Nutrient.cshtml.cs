@@ -18,11 +18,12 @@ public class NutrientViewModel
 
     public NutrientTarget GetNutrientTarget(Nutrients nutrient)
     {
+        // FIXME: End range doesn't apply for nutrients w/o an RDA.
         var defaultRange = User.UserFamilies.DefaultRange(nutrient);
         var userNutrientTarget = User.UserNutrients.Cast<UserNutrient?>().FirstOrDefault(um => um?.Nutrient == nutrient)?.Range.ToDouble() ?? defaultRange;
 
-        var sumRDA = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.RDA);
-        var sumTUL = User.UserFamilies.Where(f => nutrient.DailyAllowance(f.Person) != null).Average(f => nutrient.DailyAllowance(f.Person)!.TUL) ?? (sumRDA * NutrientConsts.RDAScaleWhenNoTUL);
+        var sumRDA = User.UserFamilies.GramsOfRDATUL(nutrient, DRI.RDA).NullIfDefault();
+        var sumTUL = User.UserFamilies.GramsOfRDATUL(nutrient, DRI.TUL).NullIfDefault() ?? sumRDA * NutrientConsts.ScaleWhenNoTUL;
         var defaultStart = Math.Max(sumRDA / sumTUL * defaultRange.Start.Value ?? 0, 0);
 
         // Show default nutrient targets when backfilling data.

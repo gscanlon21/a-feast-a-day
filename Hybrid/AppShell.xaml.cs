@@ -52,7 +52,7 @@ public class AppShellViewModel
 
     public ICommand LogoutCommand { private set; get; }
     public ICommand PreferencesCommand { private set; get; }
-    
+
     public ICommand BrowserCommand { private set; get; } = new Command<string>(async (arg) =>
     {
         await Browser.Default.OpenAsync(arg, BrowserLaunchMode.SystemPreferred);

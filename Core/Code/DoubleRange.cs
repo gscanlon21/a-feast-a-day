@@ -1,12 +1,15 @@
 ﻿
+using System.Diagnostics;
 using static Core.Code.DoubleRange;
 
 namespace Core.Code;
 
+[DebuggerDisplay("{Start}-{End}")]
 public readonly record struct DoubleRange(DoubleIndex Start, DoubleIndex End)
 {
     public bool Contains(double value) => value >= Start.Value && value <= End.Value;
 
+    [DebuggerDisplay("{Value}")]
     public readonly struct DoubleIndex
     {
         public double Value { get; }

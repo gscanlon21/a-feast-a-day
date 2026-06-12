@@ -1,5 +1,6 @@
 ﻿using ADay.Core.Models.Footnote;
 using Core.Code.Exceptions;
+using Core.Models;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Nutrients;
@@ -188,8 +189,8 @@ public class UserRepo
     /// </summary>
     public async Task<FeastContext> BuildFeastContext(User user, string token, DateOnly date)
     {
-        var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks);
-        var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, UserConsts.NutrientVolumeWeeks, tul: true);
+        var (weeks, volumeRDA) = await GetWeeklyNutrientVolume(user, NutrientConsts.NutrientVolumeWeeks, DRI.RDA);
+        var (_, volumeTUL) = await GetWeeklyNutrientVolume(user, NutrientConsts.NutrientVolumeWeeks, DRI.TUL);
         UserLogs.Log(user, $"Note that all nutrient targets units are in g/week.");
 
         if (volumeRDA != null)
@@ -261,16 +262,13 @@ public class UserRepo
         // Note that we may be cooking for multiple people and have to adjust accordingly.
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            // Calculate the desired nutrient consumption for the family in a week.
-            var gramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(n, tul: false);
             // Get the weekly, not daily value. 7 days in a week.
-            var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
-
-            // If there is no RDA or TUL.
-            if (weeklyGramsOfRDATUL <= 0) { return null; }
+            // Get the actual nutrient consumption for the family in a week.
+            var weeklyGramsOfRDA = user.UserFamilies.GramsOfRDATUL(n, DRI.RDA) * 7;
+            var weeklyGramsOfTUL = user.UserFamilies.GramsOfRDATUL(n, DRI.TUL) * 7;
 
             // Return the percentage that each nutrient has been worked this week.
-            return weeklyNutrientVolume[n] / weeklyGramsOfRDATUL * 100;
+            return weeklyNutrientVolume[n] / (weeklyGramsOfRDA.NullIfDefault() ?? weeklyGramsOfTUL) * 100;
         }));
     }
 
@@ -278,7 +276,7 @@ public class UserRepo
     /// Get the user's average percent daily value for each nutrient.
     /// </summary>
     /// <returns>How much left of a nutrient to work per week.</returns>
-    public async Task<(double weeks, IDictionary<Nutrients, double>? volume)> GetWeeklyNutrientVolume(User user, int weeks, bool tul = false)
+    public async Task<(double weeks, IDictionary<Nutrients, double>? volume)> GetWeeklyNutrientVolume(User user, int weeks, DRI dri)
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(weeks, 1);
 
@@ -288,14 +286,13 @@ public class UserRepo
         // Note that we may be cooking for multiple people and have to adjust accordingly.
         return (weeks: actualWeeks, volume: NutrientHelpers.All.ToDictionary(n => n, n =>
         {
-            // Calculate the desired nutrient consumption for the family in a week.
-            var gramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(n, tul: tul);
             // Get the weekly, not daily value. 7 days in a week.
-            var weeklyGramsOfRDATUL = gramsOfRDATUL * 7;
+            // Get the actual nutrient consumption for the family in a week.
+            var weeklyGramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(n, dri) * 7;
 
             // For a gentler upswing back into range if a nutrient target is currently being underworked:
             // TUL gives max per week. RDA gives the difference between the current nutrient target and the actual RDA, while capping at the actual RDA.
-            return tul ? weeklyGramsOfRDATUL : Math.Min(weeklyGramsOfRDATUL, (weeklyNutrientVolume[n] + weeklyGramsOfRDATUL) / 2 ?? weeklyGramsOfRDATUL);
+            return dri == DRI.TUL ? weeklyGramsOfRDATUL : Math.Min(weeklyGramsOfRDATUL, (weeklyNutrientVolume[n] + weeklyGramsOfRDATUL) / 2 ?? weeklyGramsOfRDATUL);
         }));
     }
 
@@ -325,7 +322,7 @@ public class UserRepo
             var endDate = includeToday ? weeklyFeasts.Max(n => n.Key) : weeklyFeasts.Max(n => n.Key).EndOfWeek();
             var actualWeeks = (endDate.DayNumber - weeklyFeasts.Min(n => n.Key).StartOfWeek().DayNumber) / 7d;
             // User must have more than one week of data before we return anything.
-            if (actualWeeks > UserConsts.NutrientTargetsTakeEffectAfterXWeeks)
+            if (actualWeeks > NutrientConsts.NutrientTargetsTakeEffectAfterXWeeks)
             {
                 var allRecipeIngredientIds = weeklyFeasts.SelectMany(f => f.UserFeastRecipes.SelectMany(r => r.UserFeastRecipeIngredients).Select(i => i.IngredientId)).ToList();
                 var partialIngredientIds = await _context.IngredientAlternatives.AsNoTracking()
