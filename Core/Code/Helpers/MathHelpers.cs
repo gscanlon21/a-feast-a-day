@@ -41,4 +41,16 @@ public class MathHelpers
 
         return (int)Math.Ceiling(number - cutoff);
     }
+
+    /// <summary>
+    /// Rounds a number to the nearest decimal increment.
+    /// </summary>
+    /// <param name="increment">A number between 0 and 1.</param>
+    public static double RoundToNearest(double number, double increment, MidpointRounding rounding = MidpointRounding.ToEven)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(increment, 0);
+        ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(increment, 1);
+
+        return Math.Round(number / increment, rounding) * increment;
+    }
 }

@@ -14,18 +14,17 @@ public static class UserFamilyExtensions
     /// </summary>
     public static DoubleRange DefaultRange(this ICollection<UserFamily> userFamilies, Nutrients nutrient)
     {
-        var sumRDA = userFamilies.GramsOfRDATUL(nutrient, DRI.RDA).NullIfDefault();
-        var sumTUL = userFamilies.GramsOfRDATUL(nutrient, DRI.TUL).NullIfDefault() ?? sumRDA * NutrientConsts.ScaleWhenNoTUL;
-        var tulDefault = (sumTUL.HasValue && sumRDA.HasValue) ? (sumTUL.Value / sumRDA.Value * 100) : NutrientConsts.ScaleWhenNoTUL * 100;
+        var sumRDA = userFamilies.GramsOfRDATUL(null, nutrient, DRI.RDA).NullIfDefault() ?? 0;
+        var sumTUL = userFamilies.GramsOfRDATUL(null, nutrient, DRI.TUL).NullIfDefault() ?? sumRDA * NutrientConsts.ScaleWhenNoTUL;
 
-        return new DoubleRange(NutrientConsts.NutrientTargetDefaultPercent, tulDefault);
+        return new DoubleRange(sumRDA * 7, sumTUL * 7);
     }
 
     /// <summary>
     /// Gets the total grams of RDA/TUL for a nutrient.
     /// FIXME: Need to pass in UserNutrient to actually adjust the nutrient targets.
     /// </summary>
-    public static double GramsOfRDATUL(this IEnumerable<UserFamily> userFamilies, Nutrients nutrient, DRI dri)
+    public static double GramsOfRDATUL(this IEnumerable<UserFamily> userFamilies, UserNutrient? userNutrient, Nutrients nutrient, DRI dri)
     {
         List<double> runningTotal = new(userFamilies.Count());
         var userFamiliesWithDRI = userFamilies.Select(f => new UserFamilyDRI(f, nutrient));
@@ -38,7 +37,7 @@ public static class UserFamilyExtensions
                 (_, DRI.RDA) when userDRI.DailyAllowance.RDA == null => runningTotal.AverageOrDefault(),
                 (_, DRI.TUL) when userDRI.DailyAllowance.TUL == null => runningTotal.AverageOrDefault(),
                 // Calculate the nutrient targets for a single family member and add it to the total.
-                _ => userDRI.UserFamily.GramsOfRDATUL(userDRI.DailyAllowance, dri),
+                _ => userDRI.UserFamily.GramsOfRDATUL(userNutrient, userDRI.DailyAllowance, dri),
             });
         }
 
@@ -48,7 +47,7 @@ public static class UserFamilyExtensions
     /// <summary>
     /// Gets the total grams of RDA/TUL for a nutrient.
     /// </summary>
-    public static double GramsOfRDATUL(this UserFamily userFamily, DailyAllowanceAttribute dailyAllowance, DRI dri)
+    public static double GramsOfRDATUL(this UserFamily userFamily, UserNutrient? userNutrient, DailyAllowanceAttribute dailyAllowance, DRI dri)
     {
         // Totals are used. Don't double up...
         var totalWeightKg = userFamily.Weight;
@@ -57,8 +56,8 @@ public static class UserFamilyExtensions
 
         var maxValue = dri switch
         {
-            DRI.RDA => dailyAllowance.RDA!.Value,
-            DRI.TUL => dailyAllowance.TUL!.Value,
+            DRI.RDA => dailyAllowance.RDA!.Value * (userNutrient?.RDAScale ?? 1),
+            DRI.TUL => dailyAllowance.TUL!.Value * (userNutrient?.TULScale ?? 1),
             _ => throw new NotImplementedException(),
         };
 

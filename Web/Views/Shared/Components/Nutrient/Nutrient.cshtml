@@ -49,9 +49,17 @@
                         </div>
                     </div>
                     <div class="small text-muted d-none">
-                        <span class="start-value" data-orig="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" data-default="@Math.Round(nutrientTarget.DefaultStart, 1, MidpointRounding.ToZero)">@nutrientTarget.Start</span>%
+                        <span class="start-value" 
+                              data-orig="@MathHelpers.RoundToNearest(nutrientTarget.Start, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" 
+                              data-default="@MathHelpers.RoundToNearest(nutrientTarget.DefaultStart, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)">
+                              @nutrientTarget.Start
+                        </span>%
                         –
-                        <span class="end-value" data-orig="@Math.Round(nutrientTarget.End, 1, MidpointRounding.ToZero)" data-default="@Math.Round(nutrientTarget.DefaultEnd, 1, MidpointRounding.ToZero)">@nutrientTarget.End</span>%
+                        <span class="end-value" 
+                              data-orig="@MathHelpers.RoundToNearest(nutrientTarget.End, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" 
+                              data-default="@MathHelpers.RoundToNearest(nutrientTarget.DefaultEnd, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)">
+                              @nutrientTarget.End
+                        </span>%
                     </div>
                 </div>
 
@@ -81,11 +89,11 @@
 
                         <input type="range" name="Start" class="range-slider range-start" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
                                min="@NutrientConsts.NutrientTargetMin" max="@NutrientConsts.NutrientTargetMax" step="@NutrientConsts.NutrientTargetStep"
-                               value="@Math.Round(nutrientTarget.Start, 1, MidpointRounding.ToZero)" />
+                               value="@MathHelpers.RoundToNearest(nutrientTarget.Start, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" />
 
                         <input type="range" name="End" class="range-slider range-end" @(nutrientTarget.ShowButtons ? "" : "disabled='disabled'")
                                min="@NutrientConsts.NutrientTargetMin" max="@NutrientConsts.NutrientTargetMax" step="@NutrientConsts.NutrientTargetStep"
-                               value="@Math.Round(nutrientTarget.End, 1, MidpointRounding.ToZero)" />
+                               value="@MathHelpers.RoundToNearest(nutrientTarget.End, NutrientConsts.NutrientTargetStep, MidpointRounding.ToZero)" />
                         
                         <div class="range-track">
                             <div class="range-unselected" style="background-color:@nutrientTarget.Color;"></div>

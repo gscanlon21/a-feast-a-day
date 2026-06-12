@@ -61,7 +61,7 @@ public partial class UserController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var defaultRange = user.UserFamilies.DefaultRange(nutrients);
+        //var defaultRange = user.UserFamilies.DefaultRange(nutrients);
         var userNutrient = await _context.UserNutrients
             .Where(un => un.Nutrient == nutrients)
             .Where(un => un.UserId == user.Id)
@@ -73,14 +73,14 @@ public partial class UserController
             {
                 UserId = user.Id,
                 Nutrient = nutrients,
-                Start = (int)(start / defaultStart * defaultRange.Start.Value),
-                End = (int)(end / defaultEnd * defaultRange.End.Value),
+                RDAScale = (int)Math.Round(start / defaultStart),
+                TULScale = (int)Math.Round(end / defaultEnd),
             });
         }
         else
         {
-            userNutrient.Start = (int)(start / defaultStart * defaultRange.Start.Value);
-            userNutrient.End = (int)(end / defaultEnd * defaultRange.End.Value);
+            userNutrient.RDAScale = (int)Math.Round(start / defaultStart);
+            userNutrient.TULScale = (int)Math.Round(end / defaultEnd);
         }
 
         await _context.SaveChangesAsync();

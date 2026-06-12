@@ -264,11 +264,12 @@ public class UserRepo
         {
             // Get the weekly, not daily value. 7 days in a week.
             // Get the actual nutrient consumption for the family in a week.
-            var weeklyGramsOfRDA = user.UserFamilies.GramsOfRDATUL(n, DRI.RDA) * 7;
-            var weeklyGramsOfTUL = user.UserFamilies.GramsOfRDATUL(n, DRI.TUL) * 7;
+            var userNutrient = user.UserNutrients.FirstOrDefault(un => un.Nutrient == n);
+            var weeklyGramsOfRDA = user.UserFamilies.GramsOfRDATUL(userNutrient, n, DRI.RDA) * 7;
+            var weeklyGramsOfTUL = user.UserFamilies.GramsOfRDATUL(userNutrient, n, DRI.TUL) * 7;
 
-            // Return the percentage that each nutrient has been worked this week.
-            return weeklyNutrientVolume[n] / (weeklyGramsOfRDA.NullIfDefault() ?? weeklyGramsOfTUL) * 100;
+            // Return the amount that each nutrient has been worked this week.
+            return weeklyNutrientVolume[n];
         }));
     }
 
@@ -288,7 +289,8 @@ public class UserRepo
         {
             // Get the weekly, not daily value. 7 days in a week.
             // Get the actual nutrient consumption for the family in a week.
-            var weeklyGramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(n, dri) * 7;
+            var userNutrient = user.UserNutrients.FirstOrDefault(un => un.Nutrient == n);
+            var weeklyGramsOfRDATUL = user.UserFamilies.GramsOfRDATUL(userNutrient, n, dri) * 7;
 
             // For a gentler upswing back into range if a nutrient target is currently being underworked:
             // TUL gives max per week. RDA gives the difference between the current nutrient target and the actual RDA, while capping at the actual RDA.

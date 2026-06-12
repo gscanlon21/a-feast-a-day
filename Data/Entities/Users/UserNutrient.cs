@@ -8,17 +8,14 @@ namespace Data.Entities.Users;
 [DebuggerDisplay("{Nutrient}: {Start}-{End}")]
 public class UserNutrient
 {
-    public Core.Models.Nutrients.Nutrients Nutrient { get; init; }
-
     [ForeignKey(nameof(Users.User.Id))]
     public int UserId { get; init; }
 
-    public int Start { get; set; }
+    public Core.Models.Nutrients.Nutrients Nutrient { get; init; }
 
-    public int End { get; set; }
+    public double RDAScale { get; set; }
 
-    [NotMapped]
-    public Range Range => new(Start, End);
+    public double TULScale { get; set; }
 
 
     #region Navigation Properties

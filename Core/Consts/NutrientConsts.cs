@@ -5,7 +5,7 @@ public static class NutrientConsts
 {
     public const int NutrientTargetMin = 0;
     public const int NutrientTargetMax = 100;
-    public const double NutrientTargetStep = 0.1;
+    public const double NutrientTargetStep = 0.25;
 
     /// <summary>
     /// This shouldn't be too high (>12) or else the program will spend too much time trying 
