@@ -16,11 +16,18 @@ public class VegetarianViewComponent : ViewComponent
     /// </summary>
     public const string Name = "Vegetarian";
 
+    private static readonly Person[] OldPeople = [Person.Male_51_70_Years, Person.Male_71_XX_Years, Person.Female_51_70_Years, Person.Female_71_XX_Years];
+
     public async Task<IViewComponentResult> InvokeAsync(User user, string token)
     {
         if (user.UserFoodPreferences.FirstOrDefault(fp => fp.Allergen == Allergens.Meat)?.FoodPreference == FoodPreference.Exclude)
         {
-            return View("Vegetarian", new VegetarianViewModel());
+            return View(VegetarianViewModel.ViewName, new VegetarianViewModel());
+        }
+
+        if (user.UserFamilies.Any(f => OldPeople.Contains(f.Person)))
+        {
+            return View(VitaminB12ViewModel.ViewName, new VitaminB12ViewModel());
         }
 
         return Content("");
