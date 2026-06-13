@@ -458,12 +458,12 @@
 645	Escalopes of Veal w/ Cream Sauce	If they are too thick, flatten the escalopes with a rolling pin. It'll help to cut down the cooking time.	\N	\N	8	17	3	4	t	veal-cream-sauce.jpg	0	\N	f	f
 646	Pepper Steaks w/ Chive Butter	\N	What is Jellied Beef Stock?	\N	8	12	4	4	t	\N	0	\N	f	f
 647	Slow Cooker Lamb Stew	\N	\N	\N	8	120	10	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-648	A Very Berry Pie	\N	\N	\N	64	20	30	10	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+648	A Very Berry Pie	\N	\N	\N	64	20	30	10	t	berry-pie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 649	Seven Layer Russian Shuba Salad	\N	\N	\N	16	80	20	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 650	Cooked Quinoa	\N	\N	\N	0	25	5	2	t	quinoa.jpg	6	\N	t	f
 651	Spiced Nuts	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients.	\N	\N	32	10	5	2	t	\N	6	\N	f	f
 652	Slices of Quick Basic White Bread	Do not use the timer function.	\N	\N	0	120	20	6	f	white-bread.jpg	0	\N	t	t
-653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	\N	0	\N	t	t
+653	Slices of French Bread	\N	\N	\N	0	120	20	6	f	french-bread.jpg	0	\N	t	t
 654	Classic Carbonara	\N	\N	\N	12	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
 655	Coconut Yogurt and Chocolate Almonds	\N	\N	\N	32	0	5	2	t	yogurt.jpg	0	\N	f	f
 656	Poached Pears	\N	\N	\N	64	25	5	2	t	poached-pears.jpg	0	\N	f	f
@@ -523,12 +523,12 @@
 743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
 744	Pear & Gorgonzola Farfalle	\N	\N	\N	4	15	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 745	Beef Stroganoff	You can substitute canned fat-free condensed cream of mushroom soup or cream of chicken soup as an alternative for the cream-style corn.	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
-746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
+746	Paleo Apple Berry Pie	\N	\N	\N	64	45	30	8	t	apple-pie.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 747	Paleo Banana Muffins	Do not substitute in regular flour.	\N	\N	64	0	5	12	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 748	Chickpea Burgers	\N	\N	\N	0	40	40	4	t	burgers-relish.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 749	Cornish Game Hens	\N	Baby chickens & not very nutritious.	\N	8	80	20	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 750	Fava Bean Salad	\N	\N	\N	20	10	5	2	t	\N	0	From Jamie Oliver's Five Ingredients	f	f
-751	Island Salad	\N	\N	\N	20	5	10	2	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
+751	Island Salad	\N	\N	\N	20	5	10	2	t	island-salad.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 752	Couscous & Chicken Bake	\N	\N	\N	8	60	15	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 785	Tasty Chickpea Soup	\N	\N	\N	8	30	5	4	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 786	Green Gazpacho	\N	\N	\N	4	10	5	4	t	green-gazpacho.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
@@ -577,7 +577,7 @@
 862	Pico de Gallo	\N	\N	\N	0	0	5	1	t	\N	6	From the First Watch cookbook. 	t	f
 863	Lima Beans on Toast	\N	\N	\N	12	15	3	4	t	lima-beans-toast.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 864	Chicken and Lentil Soup	Storage: This soup will keep in the fridge for up to 3 days or can be portioned up and frozen for easy meal prep. Reheating: Reheat this soup thoroughly in the microwave or on the hob before eating. Do not reheat more than once.	\N	\N	8	25	5	4	t	\N	0	https://www.theglutenfreeblogger.com/chicken-and-lentil-soup/	f	f
-865	Sausage and Pepper Pasta Skillet	Other ingredients like onion, garlic, green bell pepper, and spinach can be added to the pasta to bulk it up a bit.	\N	\N	8	20	10	2	t	\N	0	\N	f	f
+865	Sausage and Pepper Pasta Skillet	Other ingredients like onion, garlic, green bell pepper, and spinach can be added to the pasta to bulk it up a bit.	\N	\N	8	20	10	2	t	sausage-pepper-pasta.jpg	0	\N	f	f
 866	Pan-Seared Steak w/ Whiskey Sauce	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
 867	Pulled Pork	\N	\N	\N	8	180	30	8	t	\N	0	\N	f	f
 868	Sweet and Sticky Pork Chops	\N	\N	\N	8	20	5	2	t	sweet-sticky-pork-chops.jpg	0	\N	f	f
@@ -591,7 +591,7 @@
 908	The Cowboy Burger	\N	\N	\N	8	10	10	2	t	burgers-relish.jpg	0	\N	f	f
 909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	12	10	10	1	t	\N	0	\N	f	f
 910	Sweet Potato Tacos	\N	\N	\N	4	25	10	1	t	\N	0	\N	f	f
-911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or ½ teaspoon ground thyme for the fresh thyme.	\N	\N	8	40	70	4	t	\N	0	\N	f	f
+911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or ½ teaspoon ground thyme for the fresh thyme.	Not very nutritious.	\N	8	40	70	4	t	\N	0	\N	f	f
 944	Fermented Coconut Water	Total time will depend on the room temperature. You will need to rest and renutrify your water kefir grains between batches.	\N	\N	0	55	5	8	t	\N	9	\N	t	f
 945	Skillet Fried Chicken	For a bit of a kick, add ¼-tsp. cayenne pepper to the flour or a few teaspoons of hot sauce to the buttermilk.	Not very nutritious. Too much oil. Air frying is safer.	\N	8	15	155	2	t	baked-chicken-breast.jpg	0	\N	f	f
 946	Homeade Turkey Sausage Patties	Store the leftovers in the fridge in an airtight container for up to 3 days. For longer storage, place in a resealable bag and freeze. Let the patties cool before storing. When ready to reuse, simply reheat in the microwave.	\N	\N	0	20	10	6	t	\N	0	\N	t	f
@@ -624,13 +624,13 @@
 975	Slices of Stale Bread	\N	\N	\N	0	0	0	1	t	white-bread.jpg	0	\N	t	f
 976	Pan-Fried Chicken Breasts	If you salted and browned it right, your chicken will start with great flavor that you can further enhance with other seasonings - as opposed to treating chicken like edible styrofoam that can only be tolerated if it's drowning in spices or sauce.	\N	\N	0	0	0	1	t	baked-chicken-breast.jpg	0	\N	t	f
 977	Cooled Sticky Rice	\N	\N	\N	0	25	5	2	t	cooled-rice.jpg	6	\N	t	f
-978	Spinach and Egg Stir Fry	\N	\N	\N	16	10	5	2	t	\N	0	https://omnivorescookbook.com/spinach-and-egg-stir-fry	f	f
+978	Spinach and Egg Stir Fry	\N	\N	\N	16	10	5	2	t	spinach-egg-stir-fry.jpg	0	https://omnivorescookbook.com/spinach-and-egg-stir-fry	f	f
 979	Za'atar	Middle Eastern Spice Mixture	\N	\N	0	5	5	10	t	\N	7	https://www.thespruceeats.com/zaatar-middle-eastern-spice-mixture-2355844	t	f
 980	Zucchini Pesto Pasta w/ Chicken	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
 981	Oatmeal Protein Bars	This recipe makes 8 square bars in a 9″ loaf pan. If you’d like to double the recipe, you can make a double recipe in a 9 × 9″ square pan. Do not try this recipe with any other type of date! Deglet noor and others do not work. Make sure your dates are fresh and pliable - if they’re dried out, soak in warm water for 10 minutes before using.	\N	\N	32	0	15	2	t	\N	0	https://www.acouplecooks.com/oatmeal-protein-bars	f	f
 982	Mashed Potatoes	\N	\N	\N	0	25	5	1	t	irish-champ.jpg	6	\N	t	f
 983	Potato Wedges	Small russet potatoes work best for this recipe, so the wedges aren’t too large or unwieldy. To cut them, slice each potato in half lengthwise, then cut each half into 3 evenly sized wedges.	\N	\N	16	0	0	2	t	\N	0	https://www.onceuponachef.com/recipes/crispy-potato-wedges.html	t	f
-984	Cooked Penne Pasta	\N	\N	\N	0	8	7	2	t	\N	4	\N	t	f
+984	Cooked Penne Pasta	\N	\N	\N	0	8	7	2	t	cooked-penne-pasta.jpg	4	\N	t	f
 985	No Bake Energy Bites	A 1½-inch cookie scoop (#40) is helpful to make uniform balls.	\N	\N	32	0	15	5	t	basic-energy-balls.jpg	0	https://www.acouplecooks.com/energy-bites/	f	f
 986	Fajita Veggies	While this is a stovetop recipe, you can also roast or grill your veggies for even smokier flavors. I like adding grilled veggies to my fajita salad, especially if you’re already grilling chicken.  Fajita veggies are generally pretty tender, but you can reduce the cooking time if you want them to retain some crunch. Don’t overdo it on the olive oil and avoid overcrowding in the pan.	\N	\N	16	15	10	4	t	\N	0	https://www.acouplecooks.com/fajita-veggies/	t	f
 987	Pan-Fried Salmon	The skin can be served or removed easily with a knife or spoon. 	\N	\N	0	10	5	2	t	pan-fried-haddock.jpg	0	https://www.foodnetwork.com/recipes/food-network-kitchen/pan-fried-salmon-recipe2-1914129	t	f
@@ -638,7 +638,7 @@
 989	Peanut Butter Oatmeal Balls	If the texture of your nut butter makes the dough very dry, add a little more honey or a few tablespoons milk of choice until you can press it together into a ball shape. If you prefer, you can omit the protein powder from this recipe and still have a delicious snack. You can also add natural foods like chia seeds or ground flax seeds (2 tablespoons of each has 4 grams protein).	\N	\N	32	0	15	10	t	basic-energy-balls.jpg	0	https://www.acouplecooks.com/energy-balls/	f	f
 990	Slow Cooker Pot Roast w/ Shallots and Baby Carrots	\N	\N	\N	8	240	20	6	t	\N	0	https://www.theorganickitchen.org/slow-cooker-pot-roast-with-shallots-and-carrots/	f	f
 991	Onions Rings w/ Eggs	\N	\N	\N	6	10	5	2	t	onion-rings-eggs.jpg	0	\N	f	f
-992	Chickpea and Turmeric Rice Bowls	\N	\N	\N	8	25	45	4	t	\N	0	https://www.healthline.com/recipes/chickpea-turmeric-rice-bowls	f	f
+992	Chickpea and Turmeric Rice Bowls	\N	\N	\N	8	25	45	4	t	chickpea-curry.jpg	0	https://www.healthline.com/recipes/chickpea-turmeric-rice-bowls	f	f
 993	Pasta w/ Brussels Sprouts and Pancetta	\N	Too heavy.	\N	12	15	10	4	t	\N	0	https://www.theorganickitchen.org/pasta-with-brussels-sprouts-and-pancetta/	f	f
 994	Lemon Chicken w/ Roasted Potatoes	\N	\N	\N	8	90	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 995	Egg, Bean, and Chorizo Tostada w/ Salsa Verde	\N	\N	\N	6	7	3	2	t	egg-bean-chorizo-tostada.jpg	0	https://www.theorganickitchen.org/egg-bean-and-chorizo-tostada-with-salsa-verde/	f	f
@@ -660,5 +660,5 @@
 1044	Whipped Butter	\N	\N	\N	0	0	5	4	t	\N	4	\N	t	f
 1045	Baked Beans	Baked beans are high in fiber.	\N	\N	16	5	0	1	t	baked-beans.jpg	0	\N	f	f
 1046	Chopped Mexican Salad w/ Creamy Avocado Ranch	Creamy Avocado Dressing: 1/2 cup of your favorite ranch dressing (see my suggestions in blog post above) 1 ripe avocado juice from one lime 1/4 cup cilantro leaves removed from stems..... Dressing prep: Place all dressing ingredients into a blender and blend till smooth. Pour over romaine and toss. You may not need all the dressing.  Pour cooled corn mixture, beans, tomatoes, pepitas and Citija cheese on top of salad. Enjoy!	\N	\N	20	10	10	8	t	\N	0	https://www.theorganickitchen.org/chopped-mexican-salad-with-creamy-avocado-ranch/	f	f
-1047	La Scala Salad Recipe	\N	\N	\N	12	0	5	4	t	\N	0	https://www.theglutenfreeblogger.com/la-scala-chopped-salad/	f	f
-1048	Tostada Shells	\N	\N	\N	0	10	5	1	t	\N	0	\N	t	f
+1047	La Scala Salad Recipe	\N	\N	\N	12	0	5	4	t	la-scala-salad.jpg	0	https://www.theglutenfreeblogger.com/la-scala-chopped-salad/	f	f
+1048	Tostada Shells	\N	\N	\N	0	10	5	1	t	tostada-shells.jpg	0	\N	t	f

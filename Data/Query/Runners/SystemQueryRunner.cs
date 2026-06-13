@@ -13,9 +13,9 @@ namespace Data.Query.Runners;
 /// <summary>
 /// Builds and runs an EF Core query for selecting recipes.
 /// </summary>
-public class QueryRunner : QueryRunnerBase
+public class SystemQueryRunner : BaseQueryRunner
 {
-    public QueryRunner(Core.Models.Newsletter.Section section) : base(section) { }
+    public SystemQueryRunner(Core.Models.Newsletter.Section section) : base(section) { }
 
     protected override IQueryable<Recipe> CreateRecipesQuery(CoreContext context)
     {
@@ -130,7 +130,7 @@ public class QueryRunner : QueryRunnerBase
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // This will filter out prep recipes missing equipemnt. No infinite recursion please. 
-        return prepRecipeIds.Any() ? await new QueryBuilder(Core.Models.Newsletter.Section.Prep)
+        return prepRecipeIds.Any() ? await new SystemQueryBuilder(Core.Models.Newsletter.Section.Prep)
             .WithRecipes(options => options.AddRecipes(prepRecipeIds))
             .WithEquipment(EquipmentOptions.Equipment)
             .Build().Query(factory) : [];

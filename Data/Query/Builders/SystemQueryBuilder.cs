@@ -1,5 +1,7 @@
 ﻿using Core.Models.Newsletter;
+using Data.Query.Filters;
 using Data.Query.Options;
+using Data.Query.Options.Users;
 using Data.Query.Runners;
 
 namespace Data.Query.Builders;
@@ -7,19 +9,19 @@ namespace Data.Query.Builders;
 /// <summary>
 /// Builds out the QueryRunner class with option customization.
 /// </summary>
-public class QueryBuilder : QueryBuilderBase
+public class SystemQueryBuilder : BaseQueryBuilder<SystemQueryBuilder>
 {
     /// <summary>
     /// Looks for similar buckets of recipes.
     /// </summary>
-    public QueryBuilder(Section section) : base(section) { }
+    public SystemQueryBuilder(Section section) : base(section) { }
 
     /// <summary>
     /// Builds and returns the QueryRunner class with the options selected.
     /// </summary>
-    public override QueryRunnerBase Build()
+    public override BaseQueryRunner Build()
     {
-        return new QueryRunner(Section)
+        return new SystemQueryRunner(Section)
         {
             RecipeOptions = RecipeOptions ?? new RecipeOptions(),
             ServingOptions = ServingOptions ?? new ServingOptions(),
@@ -29,6 +31,21 @@ public class QueryBuilder : QueryBuilderBase
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             IngredientOptions = IngredientOptions ?? new IngredientOptions(),
+            QueryFilter = RecipeOptions switch
+            {
+                null => new UserQueryFilter(Section)
+                {
+                    UserOptions = new UserOptions(),
+                    NutrientOptions = NutrientOptions ?? new NutrientOptions(),
+                    ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
+                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+                },
+                not null => new RecipeQueryFilter(Section)
+                {
+                    RecipeOptions = RecipeOptions ?? new RecipeOptions(),
+                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+                },
+            }
         };
     }
 }
