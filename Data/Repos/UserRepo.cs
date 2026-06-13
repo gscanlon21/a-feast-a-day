@@ -130,16 +130,21 @@ public class UserRepo
     /// <summary>
     /// Get the user's current feast.
     /// </summary>
-    public async Task<UserFeast?> GetCurrentFeast(User user)
+    public async Task<UserFeast?> GetCurrentFeast(User user, UserFeast.Include include = UserFeast.Include.None)
     {
-        return await _context.UserFeasts.AsNoTracking().TagWithCallSite()
-            .Include(uw => uw.UserFeastRecipes)
-            .Where(n => n.UserId == user.Id)
-            .Where(n => n.Date <= user.StartOfWeekOffset)
-            // For the demo/test accounts. Multiple newsletters may be sent in one day,
-            // ... so order by the most recently created and select the first.
-            .OrderByDescending(n => n.Date)
-            .ThenByDescending(n => n.Id)
+        var query = _context.UserFeasts.AsNoTracking().TagWithCallSite();
+
+        if (include.HasFlag(UserFeast.Include.Recipes))
+        {
+            query = query.Include(uf => uf.UserFeastRecipes);
+        }
+
+        // For the demo/test accounts. Multiple newsletters may be sent in one day,
+        // ... so order by the most recently created and select the first.
+        return await query.Where(uf => uf.UserId == user.Id)
+            .Where(uf => uf.Date <= user.StartOfWeekOffset)
+            .OrderByDescending(uf => uf.Date)
+            .ThenByDescending(uf => uf.Id)
             .FirstOrDefaultAsync();
     }
 

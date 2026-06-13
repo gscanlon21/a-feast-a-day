@@ -3,6 +3,7 @@ using Core.Dtos.User;
 using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
+using Data.Entities.Newsletter;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Query.Builders;
@@ -78,10 +79,7 @@ public class UserRecipesController : ViewController
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
             {
-                x.AddRecipes(new Dictionary<int, int?>
-                {
-                    [recipe.Id] = null,
-                });
+                x.AddRecipes([recipe]);
             })
             .Build()
             .Query(_serviceScopeFactory))
@@ -99,7 +97,7 @@ public class UserRecipesController : ViewController
             NewsletterRecipe = recipeDto,
             UserNewsletter = userNewsletter,
             PrepRecipes = recipeDtos.ExceptBy([recipeDto?.Recipe.Id], r => r.Recipe.Id).ToList(),
-            Parameters = new UserManageRecipeViewModel.Params(email, token, recipeId, section)
+            Parameters = new UserManageRecipeViewModel.Params(email, token, recipeId, section),
         });
     }
 
@@ -247,7 +245,7 @@ public class UserRecipesController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var userFeast = await _userRepo.GetCurrentFeast(user);
+        var userFeast = await _userRepo.GetCurrentFeast(user, UserFeast.Include.Recipes);
         if (userFeast == null)
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));

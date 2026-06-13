@@ -86,7 +86,7 @@ public class UpsertRecipeViewComponent : ViewComponent
         });
     }
 
-    private async Task<IList<SelectListItem>> GetRecipeSelect(Data.Entities.Users.User user)
+    private async Task<IList<SelectListItem>> GetRecipeSelect(User user)
     {
         return (await _context.Recipes.AsNoTracking().TagWithCallSite() // Has any flag:
             .Where(r => r.UserId == null || r.Instructions.All(i => (i.Equipment & user.Equipment) != 0 || i.Equipment == Equipment.None))
@@ -99,7 +99,7 @@ public class UpsertRecipeViewComponent : ViewComponent
             .ToList();
     }
 
-    private async Task<IList<SelectListItem>> GetIngredientSelect(Data.Entities.Users.User user)
+    private async Task<IList<SelectListItem>> GetIngredientSelect(User user)
     {
         return (await _context.Ingredients.AsNoTracking().TagWithCallSite()
             .Where(i => i.UserId == null || i.UserId == user.Id)

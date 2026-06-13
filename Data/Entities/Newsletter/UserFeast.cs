@@ -50,4 +50,23 @@ public class UserFeast
     public virtual List<UserFeastRecipe> UserFeastRecipes { get; private init; } = [];
 
     #endregion
+
+
+    [Flags]
+    public enum Include
+    {
+        None = 0,
+
+        /// <summary>
+        /// User
+        /// </summary>
+        User = 1 << 0, // 1
+
+        /// <summary>
+        /// UserFeastRecipes
+        /// </summary>
+        Recipes = 1 << 1, // 2,
+
+        All = User | Recipes,
+    }
 }

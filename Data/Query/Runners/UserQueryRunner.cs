@@ -131,136 +131,160 @@ public class UserQueryRunner : QueryRunnerBase
 
         var queryResults = await QueryPartial(context);
 
+        // Do this before querying for prep recipes.
+        await AddMissingUserRecords(context, queryResults);
+
+        // Swap in user ingredients before querying for prep recipes.
+        var prepRecipes = await GetPrepRecipes(factory, queryResults);
+        var recipeIngredientAlt = await GetAltIngredientForRecipeIngredients(context, queryResults);
+
         // When you perform comparisons with nullable types, if the value of one of the nullable types
         // ... is null and the other is not, all comparisons evaluate to false except for != (not equal).
-        var filteredResults = new List<InProgressQueryResults>();
+        var filteredResults = new List<QueryResults>();
+        foreach (var queryResult in queryResults)
         {
-            // Do this before querying for prep recipes.
-            await AddMissingUserRecords(context, queryResults);
+            var ignoreRecipe = false;
+            var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
 
-            // Swap in user ingredients before querying for prep recipes.
-            var prepRecipes = await GetPrepRecipes(factory, queryResults);
-            var recipeIngredientAlt = await GetAltIngredientForRecipeIngredients(context, queryResults);
-            foreach (var queryResult in queryResults)
+            // Swap or filter out optional ingredients that have allergens or are ignored
+            // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
+            // Allow recipes with ingredients that have been ignored and are no longer optional so the user can still manage it.
+            foreach (var recipeIngredient in queryResult.RecipeIngredients.Where(ri => ri.UserRecipeIngredient?.Ignore != true))
             {
-                var ignoreRecipe = false;
-                var finalRecipeIngredients = new List<RecipeIngredientQueryResults>();
-
-                // Swap or filter out optional ingredients that have allergens or are ignored
-                // ... and filter out recipes containing non-optional ingredients that have allergens or are ignored.
-                // Allow recipes with ingredients that have been ignored and are no longer optional so the user can still manage it.
-                foreach (var recipeIngredient in queryResult.RecipeIngredients.Where(ri => ri.UserRecipeIngredient?.Ignore != true))
+                // Swap in the user's recipe ingredient notes, if available & not empty.
+                if (!string.IsNullOrEmpty(recipeIngredient.UserRecipeIngredient?.Notes))
                 {
-                    // Swap in the user's recipe ingredient notes, if available & not empty.
-                    if (!string.IsNullOrEmpty(recipeIngredient.UserRecipeIngredient?.Notes))
+                    // Allow whitespace, so the user can remove the default system attributes.
+                    recipeIngredient.Attributes = recipeIngredient.UserRecipeIngredient.Notes;
+                }
+
+                // Check this first so we can fallback to an ingredient if the recipe fails.
+                if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
+                {
+                    // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
+                    recipeIngredient.IngredientRecipe = prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId)
+                        // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
+                        ?? prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId);
+
+                    // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
+                    if (recipeIngredient.IngredientRecipe != null)
                     {
-                        // Allow whitespace, so the user can remove the default system attributes.
-                        recipeIngredient.Attributes = recipeIngredient.UserRecipeIngredient.Notes;
-                    }
+                        // Set to null in case this ingredient recipe is a substitute for an ingredient.
+                        recipeIngredient.Ingredient = null;
 
-                    // Check this first so we can fallback to an ingredient if the recipe fails.
-                    if (recipeIngredient.Type == RecipeIngredientType.IngredientRecipe)
-                    {
-                        // Set the prerequisite recipe. PrerequisiteRecipes has ignored recipe/ingredients and allergic ingredients filtered out already.
-                        recipeIngredient.IngredientRecipe = prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.IngredientRecipeId)
-                            // Fallback to the base recipe's ingredient recipe if it exists. In case the substitution conflicts with allergens.
-                            ?? prepRecipes.FirstOrDefault(pr => pr.Recipe.Id == recipeIngredient.RawIngredientRecipeId);
-
-                        // Ignore the recipe if the recipe ingredient recipe is missing or ignored and the recipe ingredient is non-optional.
-                        if (recipeIngredient.IngredientRecipe != null)
-                        {
-                            // Set to null in case this ingredient recipe is a substitute for an ingredient.
-                            recipeIngredient.Ingredient = null;
-
-                            // Only scale the ingredient recipe if it is not going to fallback to an ingredient.
-                            if (recipeIngredient.UserRecipeIngredient?.Measure.HasValue == true)
-                            {
-                                recipeIngredient.Measure = recipeIngredient.UserRecipeIngredient.Measure.Value;
-                                recipeIngredient.QuantityNumerator = recipeIngredient.UserRecipeIngredient.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
-                                recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
-                            }
-
-                            // Skip filtering out this recipe ingredient.
-                            finalRecipeIngredients.Add(recipeIngredient);
-                            continue;
-                        }
-                        // If the recipe ingredient was a substitute for a regular ingredient, fallback to that ingredient.
-                        else if (recipeIngredient.UserRecipeIngredient?.SubstituteRecipeId.HasValue == true
-                            // Make sure we fallback to an ingredient and not another recipe.
-                            && !recipeIngredient.RawIngredientRecipeId.HasValue)
-                        {
-                            recipeIngredient.UserRecipeIngredient.SubstituteRecipeId = null;
-                        }
-                    }
-
-                    // Can't combine swapped ingredients b/c some are supposed to be duplicates.
-                    if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
-                    {
-                        if (recipeIngredient.ShouldSubstituteIngredient(UserOptions.Allergens))
-                        {
-                            // Substitution and alternative ingredients don't have user ingredient records.
-                            // This includes the base ingredient if it has substitutions available or if it is ignorable.
-                            var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
-                            if (substitution?.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens) == true
-                                || substitution?.Ingredient.Equals(recipeIngredient.Ingredient) == true)
-                            {
-                                // If this gets set, the user's scale won't be applied.
-                                recipeIngredient.IsUnwantedAndHasAlternatives = true;
-                            }
-
-                            // Always swap in the ingredient so we know to ignore if necessary.
-                            recipeIngredient.Ingredient = substitution?.Ingredient;
-                            // If user is swapping an ingredient for the recipe.
-                            recipeIngredient.UserRecipeIngredient = null;
-
-                            // If we substituted in a system alternative ingredient.
-                            if (substitution != null && substitution.Scale != RecipeConsts.IngredientScaleDefault)
-                            {
-                                // Scale the substitution using the user's preferences or the alternative ingredient's scale.
-                                var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(substitution.Scale));
-                                recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
-                                recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
-                            }
-                            // Else if we substituted in a user substitution.
-                            else if (substitution != null && substitution.Measure.HasValue)
-                            {
-                                recipeIngredient.Measure = substitution.Measure.Value;
-                                recipeIngredient.QuantityNumerator = substitution.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
-                                recipeIngredient.QuantityDenominator = substitution.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
-                            }
-                        }
-                        // If this ingredient isn't being swapped (which may use its own scale), then scale the ingredient according to the user's preferences.
-                        else if (recipeIngredient.UserRecipeIngredient?.Measure.HasValue == true)
+                        // Only scale the ingredient recipe if it is not going to fallback to an ingredient.
+                        if (recipeIngredient.UserRecipeIngredient?.Measure.HasValue == true)
                         {
                             recipeIngredient.Measure = recipeIngredient.UserRecipeIngredient.Measure.Value;
                             recipeIngredient.QuantityNumerator = recipeIngredient.UserRecipeIngredient.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
                             recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
                         }
 
-                        // If the ingredient was was successfully processed.
-                        if (recipeIngredient.Ingredient != null)
+                        // Skip filtering out this recipe ingredient.
+                        finalRecipeIngredients.Add(recipeIngredient);
+                        continue;
+                    }
+                    // If the recipe ingredient was a substitute for a regular ingredient, fallback to that ingredient.
+                    else if (recipeIngredient.UserRecipeIngredient?.SubstituteRecipeId.HasValue == true
+                        // Make sure we fallback to an ingredient and not another recipe.
+                        && !recipeIngredient.RawIngredientRecipeId.HasValue)
+                    {
+                        recipeIngredient.UserRecipeIngredient.SubstituteRecipeId = null;
+                    }
+                }
+
+                // Can't combine swapped ingredients b/c some are supposed to be duplicates.
+                if (recipeIngredient.Type == RecipeIngredientType.Ingredient)
+                {
+                    if (recipeIngredient.ShouldSubstituteIngredient(UserOptions.Allergens))
+                    {
+                        // Substitution and alternative ingredients don't have user ingredient records.
+                        // This includes the base ingredient if it has substitutions available or if it is ignorable.
+                        var substitution = recipeIngredientAlt.TryGetValue(recipeIngredient.Id, out var alt) ? alt : null;
+                        if (substitution?.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens) == true
+                            || substitution?.Ingredient.Equals(recipeIngredient.Ingredient) == true)
                         {
-                            // Skip filtering out this recipe ingredient.
-                            finalRecipeIngredients.Add(recipeIngredient);
-                            continue;
+                            // If this gets set, the user's scale won't be applied.
+                            recipeIngredient.IsUnwantedAndHasAlternatives = true;
+                        }
+
+                        // Always swap in the ingredient so we know to ignore if necessary.
+                        recipeIngredient.Ingredient = substitution?.Ingredient;
+                        // If user is swapping an ingredient for the recipe.
+                        recipeIngredient.UserRecipeIngredient = null;
+
+                        // If we substituted in a system alternative ingredient.
+                        if (substitution != null && substitution.Scale != RecipeConsts.IngredientScaleDefault)
+                        {
+                            // Scale the substitution using the user's preferences or the alternative ingredient's scale.
+                            var scaledQuantity = recipeIngredient.Quantity.Multiply(Fraction.FromDoubleRounded(substitution.Scale));
+                            recipeIngredient.QuantityDenominator = (int)scaledQuantity.Denominator;
+                            recipeIngredient.QuantityNumerator = (int)scaledQuantity.Numerator;
+                        }
+                        // Else if we substituted in a user substitution.
+                        else if (substitution != null && substitution.Measure.HasValue)
+                        {
+                            recipeIngredient.Measure = substitution.Measure.Value;
+                            recipeIngredient.QuantityNumerator = substitution.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
+                            recipeIngredient.QuantityDenominator = substitution.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
                         }
                     }
-
-                    // If the ingredient was ignored or conflicts with allergens
-                    // ... and is not optional, skip the whole recipe.
-                    if (!recipeIngredient.Optional)
+                    // If this ingredient isn't being swapped (which may use its own scale), then scale the ingredient according to the user's preferences.
+                    else if (recipeIngredient.UserRecipeIngredient?.Measure.HasValue == true)
                     {
-                        ignoreRecipe = true;
-                        break;
+                        recipeIngredient.Measure = recipeIngredient.UserRecipeIngredient.Measure.Value;
+                        recipeIngredient.QuantityNumerator = recipeIngredient.UserRecipeIngredient.QuantityNumerator ?? recipeIngredient.QuantityNumerator;
+                        recipeIngredient.QuantityDenominator = recipeIngredient.UserRecipeIngredient.QuantityDenominator ?? recipeIngredient.QuantityDenominator;
+                    }
+
+                    // If the ingredient was was successfully processed.
+                    if (recipeIngredient.Ingredient != null)
+                    {
+                        // Skip filtering out this recipe ingredient.
+                        finalRecipeIngredients.Add(recipeIngredient);
+                        continue;
                     }
                 }
 
-                if (!ignoreRecipe)
+                // If the ingredient was ignored or conflicts with allergens
+                // ... and is not optional, skip the whole recipe.
+                if (!recipeIngredient.Optional)
                 {
-                    queryResult.RecipeIngredients = finalRecipeIngredients;
-                    filteredResults.Add(queryResult);
+                    ignoreRecipe = true;
+                    break;
                 }
             }
+
+            if (!ignoreRecipe)
+            {
+                // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
+                queryResult.RecipeIngredients = ((queryResult.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
+                {
+                    (false, IngredientOrder.OptionalLast) => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
+                    (false, IngredientOrder.LargeToSmall) => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
+                    _ => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Order),
+                }).ToList(); 
+
+                filteredResults.Add(new QueryResults(section, queryResult.Recipe, queryResult.RecipeIngredients, queryResult.UserRecipe)
+                {
+                    // Scaling the recipe will also scale the recipe ingredient quantities which then affects ingredient recipe scales.
+                    SetScale = (RecipeOptions.RecipeIds?.TryGetValue(queryResult.Recipe.Id, out int? scale) == true && scale.HasValue) ? scale.Value
+                        : (queryResult.UserRecipe != null && queryResult.Recipe.AdjustableServings) ? queryResult.UserRecipe.Servings / (double)queryResult.Recipe.Servings : 1,
+                });
+            }
+        }
+
+        // Short-circuit if there are recipe ids.
+        if (RecipeOptions.RecipeIds?.Any() == true)
+        {
+            var localResults = new HashSet<QueryResults>();
+            foreach (var recipe in filteredResults)
+            {
+                ScaleAndAddPrepRecipes(recipe, localResults);
+                localResults.Add(recipe);
+            }
+
+            return localResults.ToList();
         }
 
         // Order after the query or you get cartesian explosion.
@@ -270,9 +294,9 @@ public class UserQueryRunner : QueryRunnerBase
             // ... those feasts don't update the last seen date.
             filteredResults.ShuffleInPlace();
         }
-        else if (section != Core.Models.Newsletter.Section.Prep)
+        else if (section != Core.Models.Newsletter.Section.Prep && section != Core.Models.Newsletter.Section.None)
         {
-            // Don't need to order if we are in a prep section. Order by recipes that are still pending refresh.
+            // Don't need to order if we are in a prep or none section. Order by recipes that are still pending refresh.
             filteredResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
                 // Show recipes that the user has rarely seen.
                 // NOTE: When the two recipe's LastSeen dates are the same:
@@ -283,26 +307,6 @@ public class UserQueryRunner : QueryRunnerBase
                 .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
                 // Don't re-order the list on each read.
                 .ToList();
-        }
-
-        // List size doesn't change. Use the same capacity as the orderedResults.
-        var recipeResults = new List<QueryResults>(filteredResults.Count);
-        foreach (var recipe in filteredResults)
-        {
-            // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
-            recipe.RecipeIngredients = ((recipe.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
-            {
-                (false, IngredientOrder.OptionalLast) => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
-                (false, IngredientOrder.LargeToSmall) => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
-                _ => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Order),
-            }).ToList();
-
-            recipeResults.Add(new QueryResults(section, recipe.Recipe, recipe.RecipeIngredients, recipe.UserRecipe)
-            {
-                // Scaling the recipe will also scale the recipe ingredient quantities which then affects ingredient recipe scales.
-                SetScale = (RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int? scale) == true && scale.HasValue) ? scale.Value
-                    : (recipe.UserRecipe != null && recipe.Recipe.AdjustableServings) ? recipe.UserRecipe.Servings / (double)recipe.Recipe.Servings : 1,
-            });
         }
 
         // Grab alt ingredients that are used to calculate more accurate nutrients.
@@ -316,7 +320,7 @@ public class UserQueryRunner : QueryRunnerBase
         };
 
         // Add in the nutrient data for filtering.
-        foreach (var recipe in recipeResults)
+        foreach (var recipe in filteredResults)
         {
             // Set the nutrients on the recipe ingredients after all the ingredient swapping has taken place.
             foreach (var recipeIngredient in recipe.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient))
@@ -328,7 +332,7 @@ public class UserQueryRunner : QueryRunnerBase
         var finalResults = new HashSet<QueryResults>();
         do
         {
-            foreach (var recipe in recipeResults)
+            foreach (var recipe in filteredResults)
             {
                 // Don't filter out allergens if we're choosing recipes.
                 if (RecipeOptions.RecipeIds?.Any() != true)
@@ -494,7 +498,7 @@ public class UserQueryRunner : QueryRunnerBase
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrients(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
+    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrients(CoreContext context, IList<QueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
         var ingredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
@@ -526,7 +530,7 @@ public class UserQueryRunner : QueryRunnerBase
     /// <summary>
     /// Get the nutrients that the recipes work.
     /// </summary>
-    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrientsCa(CoreContext context, IList<InProgressQueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
+    private static async Task<Dictionary<int, List<QueryNutrient>>> GetRecipeNutrientsCa(CoreContext context, IList<QueryResults> filteredResults, Dictionary<int, List<IngredientScale>> alternativeIngredientIds)
     {
         var ingredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.Type == RecipeIngredientType.Ingredient).Select(ri => ri.GetIngredient!.Id))
             .Union(alternativeIngredientIds.Values.SelectMany(ids => ids.Select(iss => iss.Ingredient.Id)))
@@ -558,7 +562,7 @@ public class UserQueryRunner : QueryRunnerBase
     /// <summary>
     /// Get all sub-ingredients worked by other ingredients.
     /// </summary>
-    private static async Task<Dictionary<int, List<IngredientScale>>> GetPartialIngredients(CoreContext context, IList<InProgressQueryResults> filteredResults)
+    private static async Task<Dictionary<int, List<IngredientScale>>> GetPartialIngredients(CoreContext context, IList<QueryResults> filteredResults)
     {
         var ingredientIds = filteredResults.SelectMany(qr => qr.RecipeIngredients.Select(ri => ri.Ingredient?.Id)).ToList();
         return await context.IngredientAlternatives.AsNoTracking().TagWithCallSite()

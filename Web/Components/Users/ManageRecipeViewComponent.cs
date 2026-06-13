@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Entities.Newsletter;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Repos;
@@ -37,13 +38,13 @@ public class ManageRecipeViewComponent : ViewComponent
             return Content("");
         }
 
-        var userFeast = await _userRepo.GetCurrentFeast(user);
+        var userFeast = await _userRepo.GetCurrentFeast(user, UserFeast.Include.Recipes);
         if (userFeast == null)
         {
             return Content("");
         }
 
-        var swappable = await _context.UserFeastRecipes.Where(ufr => ufr.UserFeastId == userFeast.Id).AnyAsync(ufr => ufr.RecipeId == parameters.RecipeId);
+        var swappable = userFeast.UserFeastRecipes.Any(ufr => ufr.RecipeId == parameters.RecipeId);
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,

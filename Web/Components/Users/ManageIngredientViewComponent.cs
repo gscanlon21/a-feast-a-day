@@ -50,11 +50,12 @@ public class ManageIngredientViewComponent : ViewComponent
             await _context.SaveChangesAsync();
         }
 
+        /* Does this do something? Leave a comment if it does.
         var userFeast = await _userRepo.GetCurrentFeast(user);
         if (userFeast == null)
         {
             return Content("");
-        }
+        }*/
 
         return View("ManageIngredient", new ManageIngredientViewModel()
         {
