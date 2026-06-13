@@ -13,7 +13,7 @@ public interface IRecipeCombo
     IList<QueryNutrient> Nutrients { get; }
 }
 
-public static class Filters
+public static class QueryFilters
 {
     /// <summary>
     /// Filter down to recipes containing this ingredient.

@@ -9,7 +9,7 @@ namespace Data.Models;
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class QueryNutrient
 {
-    public class Consts
+    public static class Consts
     {
         public const double ValueMin = 0;
         public const double ValueStep = .1;

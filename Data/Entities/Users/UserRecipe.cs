@@ -13,7 +13,7 @@ namespace Data.Entities.Users;
 [DebuggerDisplay("UserId: {UserId}, RecipeId: {RecipeId}")]
 public class UserRecipe
 {
-    private class Consts
+    private static class Consts
     {
         public const int ServingsDefault = 4;
     }

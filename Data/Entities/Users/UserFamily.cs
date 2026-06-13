@@ -32,29 +32,35 @@ public class UserFamily
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; private init; }
 
+    [Required, ForeignKey(nameof(Users.User.Id))]
+    public int UserId { get; private init; }
+
+    [Required, Range(Consts.WeightMin, Consts.WeightMax)]
+    public int Weight { get; init; } = Consts.WeightDefault;
+
+    [Required, Range(Consts.CaloriesPerDayMin, Consts.CaloriesPerDayMax)]
+    public int CaloriesPerDay { get; init; } = Consts.CaloriesPerDayDefault;
+
     [Required]
     public Person Person { get; init; }
 
-    [Range(Consts.WeightMin, Consts.WeightMax)]
-    public int Weight { get; init; } = Consts.WeightDefault;
 
-    [Range(Consts.CaloriesPerDayMin, Consts.CaloriesPerDayMax)]
-    public int CaloriesPerDay { get; init; } = Consts.CaloriesPerDayDefault;
-
-    [ForeignKey(nameof(Users.User.Id))]
-    public int UserId { get; private init; }
+    #region Navigation Properties
 
     [JsonIgnore, InverseProperty(nameof(Users.User.UserFamilies))]
     public virtual User User { get; private init; } = null!;
+
+    #endregion
+
 
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is UserFamily other
         && other.Id == Id;
 
+
     public class PersonComparer : IEqualityComparer<UserFamily>
     {
         public int GetHashCode(UserFamily e) => HashCode.Combine(e.Person);
-        public bool Equals(UserFamily? a, UserFamily? b)
-            => a?.Person == b?.Person;
+        public bool Equals(UserFamily? a, UserFamily? b) => a?.Person == b?.Person;
     }
 }

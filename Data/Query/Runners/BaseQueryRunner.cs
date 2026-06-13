@@ -1,6 +1,7 @@
 ﻿using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Models;
+using Data.Query.Filters;
 using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,11 +12,11 @@ namespace Data.Query.Runners;
 /// <summary>
 /// Builds and runs an EF Core query for selecting recipes.
 /// </summary>
-public abstract class QueryRunnerBase
+public abstract class BaseQueryRunner
 {
     protected readonly Core.Models.Newsletter.Section section;
 
-    public QueryRunnerBase(Core.Models.Newsletter.Section sec)
+    public BaseQueryRunner(Core.Models.Newsletter.Section sec)
     {
         section = sec;
     }
@@ -49,6 +50,7 @@ public abstract class QueryRunnerBase
     public required DurationOptions DurationOptions { private get; init; }
     public required IngredientOptions IngredientOptions { private get; init; }
 
+    public required BaseQueryFilter QueryFilter { protected get; init; }
     public required RecipeOptions RecipeOptions { protected get; init; }
     public required NutrientOptions NutrientOptions { protected get; init; }
     public required EquipmentOptions EquipmentOptions { protected get; init; }
@@ -74,15 +76,15 @@ public abstract class QueryRunnerBase
     {
         var filteredQuery = Map(CreateRecipesQuery(context));
 
-        filteredQuery = Filters.FilterSection(filteredQuery, section);
-        filteredQuery = Filters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
-        filteredQuery = Filters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Keys);
-        filteredQuery = Filters.FilterServings(filteredQuery, ServingOptions.MinimumServings);
-        filteredQuery = Filters.FilterIngredient(filteredQuery, IngredientOptions.IngredientName);
-        filteredQuery = Filters.FilterPrepTime(filteredQuery, DurationOptions.MaxPrepTimeMinutes);
-        filteredQuery = Filters.FilterCookTime(filteredQuery, DurationOptions.MaxCookTimeMinutes);
-        filteredQuery = Filters.FilterTotalTime(filteredQuery, DurationOptions.MaxTotalTimeMinutes);
-        filteredQuery = Filters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients, include: true, dataSource: NutrientOptions.DataSource);
+        filteredQuery = QueryFilters.FilterSection(filteredQuery, section);
+        filteredQuery = QueryFilters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
+        filteredQuery = QueryFilters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Keys);
+        filteredQuery = QueryFilters.FilterServings(filteredQuery, ServingOptions.MinimumServings);
+        filteredQuery = QueryFilters.FilterIngredient(filteredQuery, IngredientOptions.IngredientName);
+        filteredQuery = QueryFilters.FilterPrepTime(filteredQuery, DurationOptions.MaxPrepTimeMinutes);
+        filteredQuery = QueryFilters.FilterCookTime(filteredQuery, DurationOptions.MaxCookTimeMinutes);
+        filteredQuery = QueryFilters.FilterTotalTime(filteredQuery, DurationOptions.MaxTotalTimeMinutes);
+        filteredQuery = QueryFilters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients, include: true, dataSource: NutrientOptions.DataSource);
 
         return await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
     }

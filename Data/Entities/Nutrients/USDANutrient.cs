@@ -16,7 +16,7 @@ namespace Data.Entities.Nutrients;
 [DebuggerDisplay("{Nutrients}: {Value} {Measure}")]
 public class USDANutrient
 {
-    public class Consts
+    public static class Consts
     {
         public const double ValueMin = 0;
         public const double ValueStep = .1;

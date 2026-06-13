@@ -126,7 +126,7 @@
 129	\N	Frozen Meatballs	Frozen Meatballs	\N	f	0	28.25	100	2025-09-26	4	226	10	226	Frozen Meatballs	\N	\N	0
 130	\N	Molasses	Molasses	\N	f	0	40	100	2026-02-20	9	320	4	320	Molasses	\N	\N	14
 131	\N	Dry Pinto Beans	Dry Pinto Beans	\N	f	0	28	100	2026-02-05	4	193	4	193	Pinto Bean	https://fdc.nal.usda.gov/food-details/747445/nutrients	\N	6
-132	\N	Elbow Macaroni	Elbow Macaroni	\N	f	262176	28	100	2024-11-26	4	105	4	105	Elbow Macaroni	\N	\N	5
+132	\N	Elbow Macaroni	Elbow Macaroni	\N	f	262176	28	100	2026-06-13	4	105	4	105	Elbow Macaroni	\N	\N	5
 133	\N	Evaporated Milk	Evaporated Milk	\N	f	324	32	100	2026-05-18	9	256	4	256	Evaporated Milk	\N	\N	9
 134	\N	Slices of Pepper Jack Cheese	Slices of Pepper Jack Cheese	\N	f	256	21	100	2024-12-14	0	168	10	168	Slices of Pepper Jack Cheese	\N	\N	0
 135	\N	Monterey Jack Cheese	Monterey Jack Cheese	\N	f	256	28	100	2025-01-29	0	224	10	224	Monterey Jack Cheese	\N	\N	0
@@ -340,7 +340,7 @@
 355	\N	Chickpea Spaghetti Pasta	Chickpea Spaghetti Pasta	\N	f	0	28	100	2025-09-15	4	112	4	112	Chickpea Spaghetti Pasta	\N	\N	5
 356	\N	Tagliatelle Pasta	Tagliatelle Pasta	\N	f	262176	28	100	2024-12-23	4	112	4	112	Tagliatelle Pasta	\N	\N	5
 357	\N	Dijon Mustard	Dijon Mustard	\N	t	0	28	100	2025-12-01	4	249	4	249	Dijon Mustard	\N	\N	13
-358	\N	Lemon Juice	Lemon Juice	\N	f	0	30	100	2024-11-26	9	240	1	240	Lemon Juice	\N	\N	13
+358	\N	Lemon Juice	Lemon Juice	\N	f	0	30	100	2026-06-12	9	240	1	240	Lemon Juice	\N	\N	13
 359	\N	Lime Juice	Lime Juice	\N	f	0	30	100	2025-02-16	9	242	1	242	Lime Juice	\N	\N	12
 360	\N	Kosher Salt & Black Pepper	Kosher Salt & Black Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2025-12-28	4	224	4	224	Salt & Black Pepper	\N	\N	12
 361	\N	Gluten-Free Elbow Macaroni	Gluten-Free Elbow Macaroni	\N	f	0	28	100	2026-06-08	4	224	4	224	Elbow Macaroni	\N	\N	5
@@ -400,7 +400,7 @@
 416	\N	Cheddar Jack Cheese	Cheddar Jack Cheese	\N	f	256	28	100	2025-01-01	4	112	10	112	Chedder Jack Cheese	\N	\N	0
 417	\N	Spring Mix	Spring Mix	\N	f	0	28	100	2025-11-17	4	42.5	1	42.5	Spring Mix	\N	\N	2
 418	\N	Canned Corn	Canned Corn	\N	f	2	28	100	2025-08-02	4	164	4	164	Corn	https://fdc.nal.usda.gov/food-details/169214/nutrients	\N	6
-419	\N	Canned Black Beans	Canned Black Beans	\N	f	0	28	100	2024-11-25	4	194	4	194	Black Bean	\N	\N	6
+419	\N	Canned Black Beans	Canned Black Beans	\N	f	0	28	100	2026-06-12	4	194	4	194	Black Bean	\N	\N	6
 420	\N	Orange Juice	Orange Juice	\N	f	0	249	100	2025-04-05	0	249	5	249	Orange Juice	\N	\N	16
 421	\N	Cornmeal	Cornmeal	\N	t	2	7.68	100	2025-07-30	7	128	0	128	Cornmeal	\N	\N	0
 422	\N	Flaxseed	Flaxseed	\N	f	0	28	100	2025-02-27	4	168	10	168	Flaxseed	\N	\N	0
@@ -814,7 +814,7 @@
 985	\N	Bacon Slices	Bacon Slices	Raw bacon slices weigh more than 12 grams.	f	1048576	14	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
 986	\N	Chickpea Flour	Chickpea Flour	\N	f	0	28	100	2025-12-01	4	200	5	200	Chickpea Flour	\N	\N	15
 987	\N	Sugar	Sugar	\N	t	0	28	100	2024-12-14	4	200	4	200	Sugar	\N	\N	14
-988	\N	Ground Turkey	Ground Turkey	\N	f	1048576	28	100	2025-01-22	4	224	10	224	Ground Turkey	\N	\N	0
+988	\N	Ground Turkey	Ground Turkey	\N	f	1048576	28	100	2025-01-22	4	224	9	224	Ground Turkey	\N	\N	7
 989	\N	Steak Sauce	Steak Sauce	\N	f	0	16	100	2025-07-09	7	100	4	100	Steak Sauce	\N	\N	13
 990	\N	Pumpkin Purée	Pumpkin Purée	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Purée	\N	\N	0
 991	\N	Coconut Aminos	Coconut Aminos	\N	f	0	30	100	2025-11-10	9	240	4	240	Coconut Aminos	\N	\N	14
@@ -1244,7 +1244,7 @@
 1597	\N	Semisweet Chocolate Chips	Semisweet Chocolate Chips	\N	f	0	28	100	2024-12-15	4	224	4	224	Chocolate Chip	\N	\N	17
 1598	\N	Oil	Oil	\N	t	0	28	100	2024-12-22	9	224	5	224	Oil	\N	\N	11
 1599	\N	Fine Sherry	Fine Sherry	\N	f	0	28	100	2026-01-31	4	224	3	224	Fine Sherry	\N	\N	0
-1600	\N	Grated Cheddar Cheese	Grated Cheddar Cheese	\N	f	256	112	100	2024-11-27	6	112	10	112	Cheddar Cheese	\N	You can't buy this in a store.	0
+1600	\N	Grated Cheddar Cheese	Grated Cheddar Cheese	\N	f	256	112	100	2026-06-13	6	112	10	112	Cheddar Cheese	\N	You can't buy this in a store.	0
 1601	\N	Shredded Monterey Jack Cheese	Shredded Monterey Jack Cheese	\N	f	256	28	100	2025-01-29	0	224	10	224	Shredded Monterey Jack Cheese	\N	\N	0
 1602	\N	Fine-Style Breadcrumbs	Fine-Style Breadcrumbs	\N	f	32	28	100	2026-04-13	4	112	3	112	Breadcrumb	\N	\N	7
 1603	\N	Gluten-Free Fine-Style Breadcrumbs	Gluten-Free Fine-Style Breadcrumbs	\N	f	0	11.25	100	2026-05-14	4	90	2	90	Gluten-Free Fine-Style Breadcrumbs	\N	\N	4

@@ -156,31 +156,31 @@ public partial class UserController : ViewController
     public async Task<IActionResult> EditAdvanced(string email, string token, AdvancedViewModel viewModel)
     {
         var user = await _userRepo.GetUser(email, token) ?? throw new ArgumentException(string.Empty, nameof(email));
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            try
-            {
-                user.DataSource = viewModel.DataSource;
-                user.IngredientOrder = viewModel.IngredientOrder;
-                user.FootnoteCountTop = viewModel.FootnoteCountTop;
-                user.FootnoteCountBottom = viewModel.FootnoteCountBottom;
-
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!(_context.Users?.Any(e => e.Email == email)).GetValueOrDefault())
-                {
-                    // User does not exist.
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
             return RedirectToAction(nameof(Edit), new { email, token, WasUpdated = true });
+        }
+
+        try
+        {
+            user.DataSource = viewModel.DataSource;
+            user.IngredientOrder = viewModel.IngredientOrder;
+            user.FootnoteCountTop = viewModel.FootnoteCountTop;
+            user.FootnoteCountBottom = viewModel.FootnoteCountBottom;
+
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!(_context.Users?.Any(e => e.Email == email)).GetValueOrDefault())
+            {
+                // User does not exist.
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
         }
 
         return RedirectToAction(nameof(Edit), new { email, token, WasUpdated = true });

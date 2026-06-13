@@ -1,6 +1,7 @@
 ﻿using Core.Models.Newsletter;
 using Data.Code.Exceptions;
 using Data.Entities.Users;
+using Data.Query.Filters;
 using Data.Query.Options;
 using Data.Query.Options.Users;
 using Data.Query.Runners;
@@ -10,7 +11,7 @@ namespace Data.Query.Builders;
 /// <summary>
 /// Builds out the QueryRunner class with option customization.
 /// </summary>
-public class UserQueryBuilder : QueryBuilderBase
+public class UserQueryBuilder : BaseQueryBuilder<UserQueryBuilder>
 {
     private readonly User User;
 
@@ -38,7 +39,7 @@ public class UserQueryBuilder : QueryBuilderBase
     /// <summary>
     /// Builds and returns the QueryRunner class with the options selected.
     /// </summary>
-    public override QueryRunnerBase Build()
+    public override BaseQueryRunner Build()
     {
         return new UserQueryRunner(Section)
         {
@@ -51,6 +52,21 @@ public class UserQueryBuilder : QueryBuilderBase
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             IngredientOptions = IngredientOptions ?? new IngredientOptions(),
             UserOptions = UserOptions ?? new UserOptions(User),
+            QueryFilter = RecipeOptions switch
+            {
+                null => new UserQueryFilter(Section)
+                {
+                    UserOptions = UserOptions ?? new UserOptions(User),
+                    NutrientOptions = NutrientOptions ?? new NutrientOptions(),
+                    ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
+                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+                },
+                not null => new RecipeQueryFilter(Section)
+                {
+                    RecipeOptions = RecipeOptions ?? new RecipeOptions(),
+                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+                },
+            }
         };
     }
 }

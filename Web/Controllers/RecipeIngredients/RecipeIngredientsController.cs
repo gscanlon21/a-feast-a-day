@@ -192,6 +192,7 @@ public class RecipeIngredientsController : ViewController
     {
         // Pass in the user so we can select their base recipes.
         return await new UserQueryBuilder(user, Core.Models.Newsletter.Section.Prep)
+            // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {
                 // Allow seldom allergens to be displayed and choosen. Exclude never allergens.
@@ -209,6 +210,7 @@ public class RecipeIngredientsController : ViewController
     {
         // Pass in the user so we can select their base recipes.
         return (await new UserQueryBuilder(user, Core.Models.Newsletter.Section.None)
+            // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {
                 options.IgnoreIgnored = true;
