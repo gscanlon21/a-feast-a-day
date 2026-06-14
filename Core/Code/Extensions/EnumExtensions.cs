@@ -126,6 +126,17 @@ public static class EnumExtensions
     }
 
     /// <summary>
+    /// Returns enum values where the value has only 1 bit set.
+    /// </summary>
+    public static T[] GetSubOrNoneValues<T>(T value) where T : struct, Enum
+    {
+        return Enum.GetValues<T>()
+            .Where(e => e.PopCount() <= 1)
+            .Where(e => value.HasFlag(e))
+            .ToArray();
+    }
+
+    /// <summary>
     /// Returns enum values where the value has 1 or more bits set.
     /// </summary>
     public static T[] GetNotNoneValues<T>() where T : struct, Enum

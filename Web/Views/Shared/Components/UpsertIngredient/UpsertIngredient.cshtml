@@ -94,7 +94,7 @@
         <div class="col-md">
             <label asp-for="Ingredient.Category" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Category)</label>
             <select asp-for="Ingredient.Category" class="form-control overflow-auto" aria-describedby="category-help"
-                    asp-items="@(Enum.GetValues<Category>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                    asp-items="@(EnumExtensions.GetMultiValues<Category>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
             </select>
             <span asp-validation-for="Ingredient.Category" class="text-danger"></span>
             <div id="category-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Category)</div>
@@ -102,7 +102,7 @@
         <div class="col">
             <label asp-for="Ingredient.Section" class="control-label">@Html.DisplayNameFor(_ => Model.Ingredient.Section)</label>
             <select asp-for="Ingredient.Section" class="form-control overflow-auto" aria-describedby="section-help"
-                    asp-items="@(Enum.GetValues<Core.Models.Ingredients.Section>().AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
+                    asp-items="@(EnumExtensions.GetSubOrNoneValues(Model.Ingredient.Category).AsSelectListItems(EnumViewExtensions.EnumOrdering.Order))">
             </select>
             <span asp-validation-for="Ingredient.Section" class="text-danger"></span>
             <div id="section-help" class="form-text">@Html.DisplayDescriptionFor(_ => Model.Ingredient.Section)</div>

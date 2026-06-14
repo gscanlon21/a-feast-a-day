@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -149,8 +150,8 @@ namespace Data.Migrations
                     Group = table.Column<string>(type: "text", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
                     Allergens = table.Column<long>(type: "bigint", nullable: false),
-                    Category = table.Column<int>(type: "integer", nullable: false),
-                    Section = table.Column<int>(type: "integer", nullable: false),
+                    Category = table.Column<long>(type: "bigint", nullable: false),
+                    Section = table.Column<long>(type: "bigint", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
                     GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
                     GramsPerFineCup = table.Column<double>(type: "double precision", nullable: false),
@@ -235,10 +236,10 @@ namespace Data.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Person = table.Column<int>(type: "integer", nullable: false),
+                    UserId = table.Column<int>(type: "integer", nullable: false),
                     Weight = table.Column<int>(type: "integer", nullable: false),
                     CaloriesPerDay = table.Column<int>(type: "integer", nullable: false),
-                    UserId = table.Column<int>(type: "integer", nullable: false)
+                    Person = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -318,10 +319,10 @@ namespace Data.Migrations
                 name: "user_nutrient",
                 columns: table => new
                 {
-                    Nutrient = table.Column<int>(type: "integer", nullable: false),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    Start = table.Column<int>(type: "integer", nullable: false),
-                    End = table.Column<int>(type: "integer", nullable: false)
+                    Nutrient = table.Column<int>(type: "integer", nullable: false),
+                    RDAScale = table.Column<double>(type: "double precision", nullable: false),
+                    TULScale = table.Column<double>(type: "double precision", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -72,7 +72,7 @@ public class Ingredient
     public Category Category { get; set; }
 
     [Display(Name = "Section")]
-    public Section Section { get; set; }
+    public Category Section { get; set; }
 
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }

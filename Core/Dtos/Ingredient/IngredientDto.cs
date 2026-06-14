@@ -21,7 +21,7 @@ public class IngredientDto
 
     public string Group { get; set; } = null!;
 
-    public Section Section { get; set; }
+    public Category Section { get; set; }
 
     public Category Category { get; set; }
 

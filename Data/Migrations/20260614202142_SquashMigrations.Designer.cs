@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    [Migration("20260612145214_RefactorToUseScales")]
-    partial class RefactorToUseScales
+    [Migration("20260614202142_SquashMigrations")]
+    partial class SquashMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -189,8 +189,8 @@ namespace Data.Migrations
                     b.Property<long>("Allergens")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Category")
-                        .HasColumnType("integer");
+                    b.Property<long>("Category")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("DefaultMeasure")
                         .HasColumnType("integer");
@@ -231,8 +231,8 @@ namespace Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<int>("Section")
-                        .HasColumnType("integer");
+                    b.Property<long>("Section")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("SkipShoppingList")
                         .HasColumnType("boolean");
