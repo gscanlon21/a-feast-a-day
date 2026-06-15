@@ -39,7 +39,7 @@ public class RecipesController : ViewController
     {
         viewModel ??= new RecipesViewModel();
 
-        BaseQueryBuilder<SystemQueryBuilder> queryBuilder = new SystemQueryBuilder(viewModel.Section ?? Section.None).WithRecipes(x =>
+        BaseQueryBuilder<SystemQueryBuilder> queryBuilder = new SystemQueryBuilder(viewModel.Section ?? Section.None).WithSelectionOptions(x =>
         {
             x.IgnorePrepRecipes = true;
         });

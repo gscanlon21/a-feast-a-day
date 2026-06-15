@@ -54,8 +54,11 @@ public class IgnoredRecipesViewComponent : ViewComponent
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
             {
-                x.IgnorePrepRecipes = true;
                 x.AddRecipes(userRecipes.DistinctBy(ur => ur.RecipeId));
+            })
+            .WithSelectionOptions(x =>
+            {
+                x.IgnorePrepRecipes = true;
             })
             .Build()
             .Query(_serviceScopeFactory, OrderBy.Name);

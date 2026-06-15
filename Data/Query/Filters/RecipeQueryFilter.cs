@@ -23,7 +23,7 @@ public class RecipeQueryFilter : BaseQueryFilter
         var localResults = new HashSet<QueryResults>();
         foreach (var recipe in queryResults)
         {
-            if (!RecipeOptions.IgnorePrepRecipes)
+            if (!SelectionOptions.IgnorePrepRecipes)
             {
                 ScaleAndAddPrepRecipes(recipe, localResults, SelectionOptions.PrepRecipes);
             }

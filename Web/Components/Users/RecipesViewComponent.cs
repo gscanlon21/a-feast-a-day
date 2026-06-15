@@ -55,6 +55,9 @@ public class RecipesViewComponent : ViewComponent
             .WithRecipes(x =>
             {
                 x.AddRecipes(userRecipes);
+            })
+            .WithSelectionOptions(x =>
+            {
                 x.IgnorePrepRecipes = true;
             })
             .Build()

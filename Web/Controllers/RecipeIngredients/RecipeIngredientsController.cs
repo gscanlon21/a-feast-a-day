@@ -220,11 +220,14 @@ public class RecipeIngredientsController : ViewController
             .WithEquipment(Equipment.All)
             .WithRecipes(x =>
             {
-                x.IgnorePrepRecipes = true;
                 x.AddRecipes(new Dictionary<int, int?>
                 {
                     [recipeIngredient.RecipeId] = null,
                 });
+            })
+            .WithSelectionOptions(x =>
+            {
+                x.IgnorePrepRecipes = true;
             })
             .Build()
             .Query(_serviceScopeFactory))

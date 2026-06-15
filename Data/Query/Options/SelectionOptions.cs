@@ -12,6 +12,8 @@ public class SelectionOptions : IOptions
     /// </summary>
     public bool Randomized { get; set; } = false;
 
+    public bool IgnorePrepRecipes { get; set; } = false;
+
     public bool IncludeSkippedRecipes { get; set; } = false;
 
     /// <summary>

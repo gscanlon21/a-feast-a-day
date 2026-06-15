@@ -17,7 +17,7 @@ public partial class NewsletterRepo
     {
         var debugRecipes = await new UserQueryBuilder(user, Section.Debug)
             .WithEquipment(Equipment.All)
-            .WithRecipes(options =>
+            .WithSelectionOptions(options =>
             {
                 options.IgnorePrepRecipes = true;
             })

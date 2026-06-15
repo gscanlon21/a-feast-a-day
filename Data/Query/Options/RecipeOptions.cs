@@ -16,8 +16,6 @@ public class RecipeOptions : IOptions
         _section = section;
     }
 
-    public bool IgnorePrepRecipes { get; set; }
-
     /// <summary>
     /// RecipeId:Scale.
     /// </summary>
