@@ -15,6 +15,7 @@ using Data.Entities.Users;
 using Data.Models.Newsletter;
 using Data.Query;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -191,7 +192,7 @@ public partial class NewsletterRepo
         foreach (var section in EnumExtensions.GetSingleValues(excludingAny: Section.Prep))
         {
             // Need to include allergens for IsUnwantedAndHasAlternatives.
-            recipes.AddRange((await new UserQueryBuilder(user, section)
+            recipes.AddRange((await new UserQueryBuilder<RecipeQueryFilter>(user, section)
                 .WithEquipment(user.Equipment)
                 .WithRecipes(options =>
                 {

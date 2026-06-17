@@ -3,6 +3,7 @@ using Data.Entities.Users;
 using Data.Models.Newsletter;
 using Data.Query;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repos;
@@ -15,7 +16,7 @@ public partial class NewsletterRepo
         if (breakfastServing.Weight == 0) return [];
 
         var scale = breakfastServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Breakfast)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Breakfast)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)
@@ -44,7 +45,7 @@ public partial class NewsletterRepo
         if (lunchServing.Weight == 0) return [];
 
         var scale = lunchServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Lunch)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Lunch)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)
@@ -73,7 +74,7 @@ public partial class NewsletterRepo
         if (dinnerServing.Weight == 0) return [];
 
         var scale = dinnerServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Dinner)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Dinner)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)
@@ -102,7 +103,7 @@ public partial class NewsletterRepo
         if (sideServing.Weight == 0) return [];
 
         var scale = sideServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Sides)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Sides)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)
@@ -131,7 +132,7 @@ public partial class NewsletterRepo
         if (snackServing.Weight == 0) return [];
 
         var scale = snackServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Snacks)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Snacks)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)
@@ -160,7 +161,7 @@ public partial class NewsletterRepo
         if (drinkServing.Weight == 0) return [];
 
         var scale = drinkServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Drinks)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Drinks)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)
@@ -189,7 +190,7 @@ public partial class NewsletterRepo
         if (dessertServing.Weight == 0) return [];
 
         var scale = dessertServing.Weight / (double)newsletterContext.User.UserSections.Sum(us => us.Weight);
-        return await new UserQueryBuilder(newsletterContext.User, Section.Dessert)
+        return await new UserQueryBuilder<UserQueryFilter>(newsletterContext.User, Section.Dessert)
             .WithEquipment(newsletterContext.User.Equipment)
             .WithNutrients(NutrientTargetsContextBuilder
                 .WithNutrients(newsletterContext)

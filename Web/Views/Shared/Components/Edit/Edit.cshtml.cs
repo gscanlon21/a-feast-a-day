@@ -66,7 +66,7 @@ public class EditComponentViewModel
     public bool NewsletterEnabled { get; init; }
 
     [Required]
-    [Display(Name = "Email Verbosity", Description = "What level of detail do you want to receive with each recipe?")]
+    [Display(Name = "Email Verbosity", Description = "What level of detail do you want to see?")]
     public Verbosity Verbosity { get; set; }
 
     [Display(Name = "Recipe Sections")]

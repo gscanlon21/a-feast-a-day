@@ -7,6 +7,7 @@ using Data.Entities.Newsletter;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Data.Repos;
 using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -69,7 +70,7 @@ public class UserRecipesController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipeDtos = (await new UserQueryBuilder(user, Section.None)
+        var recipeDtos = (await new UserQueryBuilder<RecipeQueryFilter>(user, Section.None)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {
@@ -273,7 +274,7 @@ public class UserRecipesController : ViewController
             // This may return more than 1 recipe if there are prep recipes.
             // TODO? Pick recipes that have similar ingredients as other recipes.
             // I don't think so because that would mess with nutrient selections.
-            var newRecipes = await new UserQueryBuilder(user, feastRecipe.Section)
+            var newRecipes = await new UserQueryBuilder<UserQueryFilter>(user, feastRecipe.Section)
                 .WithEquipment(user.Equipment)
                 .WithNutrients(NutrientTargetsContextBuilder
                     .WithNutrients(context)

@@ -7,7 +7,7 @@ namespace Core.Consts;
 public static class RecipeConsts
 {
     public const int ServingsMin = 1;
-    public const int ServingsMax = 12;
+    public const int ServingsMax = 14;
     public const int ServingsStep = 1;
     public const int ServingsDefault = 2;
 

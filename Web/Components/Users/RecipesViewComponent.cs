@@ -6,6 +6,7 @@ using Data;
 using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.Recipes;
@@ -43,7 +44,7 @@ public class RecipesViewComponent : ViewComponent
             .ToListAsync();
 
         // This should include disabled recipes.
-        var recipes = await new UserQueryBuilder(user, Section.None)
+        var recipes = await new UserQueryBuilder<RecipeQueryFilter>(user, Section.None)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {

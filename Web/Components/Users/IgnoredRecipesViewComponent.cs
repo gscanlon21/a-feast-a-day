@@ -5,6 +5,7 @@ using Data;
 using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Web.Views.Shared.Components.IgnoredRecipes;
@@ -43,7 +44,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
             .Where(ur => ur.UserId == user.Id)
             .ToListAsync();
 
-        var ignoredRecipes = await new UserQueryBuilder(user, Section.None)
+        var ignoredRecipes = await new UserQueryBuilder<RecipeQueryFilter>(user, Section.None)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {

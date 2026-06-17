@@ -8,6 +8,7 @@ using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -191,7 +192,7 @@ public class RecipeIngredientsController : ViewController
     private async Task<List<QueryResults>> GetBaseRecipes(User user)
     {
         // Pass in the user so we can select their base recipes.
-        return await new UserQueryBuilder(user, Core.Models.Newsletter.Section.Prep)
+        return await new UserQueryBuilder<RecipeQueryFilter>(user, Core.Models.Newsletter.Section.Prep)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {
@@ -209,7 +210,7 @@ public class RecipeIngredientsController : ViewController
     private async Task<QueryResults?> GetOrigRecipe(User user, RecipeIngredient recipeIngredient)
     {
         // Pass in the user so we can select their base recipes.
-        return (await new UserQueryBuilder(user, Core.Models.Newsletter.Section.None)
+        return (await new UserQueryBuilder<RecipeQueryFilter>(user, Core.Models.Newsletter.Section.None)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {

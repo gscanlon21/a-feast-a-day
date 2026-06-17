@@ -6,6 +6,7 @@ using Data.Entities.Nutrients;
 using Data.Entities.Users;
 using Data.Query;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +16,7 @@ public partial class NewsletterRepo
 {
     private async Task<IList<QueryResults>> GetDebugRecipes(User user)
     {
-        var debugRecipes = await new UserQueryBuilder(user, Section.Debug)
+        var debugRecipes = await new UserQueryBuilder<RecipeQueryFilter>(user, Section.Debug)
             .WithEquipment(Equipment.All)
             .WithSelectionOptions(options =>
             {

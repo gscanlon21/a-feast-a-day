@@ -56,7 +56,7 @@ public enum Category : long
     #region Pantry
 
     [Display(Order = 4, Name = "Pantry")]
-    Pantry = Pantry_Condiments | Pantry_Legumes | Pantry_Pasta | Pantry_Sauces | Pantry_Oils | Pantry_Spices 
+    Pantry = Pantry_Condiments | Pantry_Legumes | Pantry_Pasta | Pantry_Sauces | Pantry_Oils | Pantry_Spices
         | Pantry_Sweeteners | Pantry_Chocolate | Pantry_Candy | Pantry_Nuts | Pantry_Seeds | Pantry_Snacks | Pantry_Beverages,
 
     [Display(Order = 1, Name = "Condiments")]
