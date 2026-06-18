@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
@@ -15,7 +16,7 @@ namespace Data.Query.Runners;
 /// </summary>
 public class SystemQueryRunner : BaseQueryRunner
 {
-    public SystemQueryRunner(Core.Models.Newsletter.Section section) : base(section) { }
+    public SystemQueryRunner(Section section) : base(section) { }
 
     protected override IQueryable<Recipe> CreateRecipesQuery(CoreContext context)
     {
@@ -104,7 +105,7 @@ public class SystemQueryRunner : BaseQueryRunner
                 _ => recipe.RecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Order),
             }).ToList();
 
-            recipeResults.Add(new QueryResults(section, recipe.Recipe, recipe.RecipeIngredients, recipe.UserRecipe)
+            recipeResults.Add(new QueryResults(_section, recipe.Recipe, recipe.RecipeIngredients, recipe.UserRecipe)
             {
                 // Scaling the recipe will also scale the recipe ingredient quantities which then affects ingredient recipe scales.
                 SetScale = (RecipeOptions.RecipeIds?.TryGetValue(recipe.Recipe.Id, out int? scale) == true && scale.HasValue) ? scale.Value
@@ -130,7 +131,7 @@ public class SystemQueryRunner : BaseQueryRunner
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // This will filter out prep recipes missing equipemnt. No infinite recursion please. 
-        return prepRecipeIds.Any() ? await new SystemQueryBuilder(Core.Models.Newsletter.Section.Prep)
+        return prepRecipeIds.Any() ? await new SystemQueryBuilder(Section.Prep)
             .WithRecipes(options => options.AddRecipes(prepRecipeIds))
             .WithEquipment(EquipmentOptions.Equipment)
             .Build().Query(factory) : [];

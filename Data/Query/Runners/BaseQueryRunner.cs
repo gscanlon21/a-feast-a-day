@@ -1,7 +1,7 @@
-﻿using Data.Entities.Recipes;
+﻿using Core.Models.Newsletter;
+using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Models;
-using Data.Query.Filters;
 using Data.Query.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,11 +14,11 @@ namespace Data.Query.Runners;
 /// </summary>
 public abstract class BaseQueryRunner
 {
-    protected readonly Core.Models.Newsletter.Section section;
+    protected readonly Section _section;
 
-    public BaseQueryRunner(Core.Models.Newsletter.Section sec)
+    public BaseQueryRunner(Section section)
     {
-        section = sec;
+        _section = section;
     }
 
     [DebuggerDisplay("{Recipe}: {UserRecipe}")]
@@ -50,7 +50,6 @@ public abstract class BaseQueryRunner
     public required DurationOptions DurationOptions { private get; init; }
     public required IngredientOptions IngredientOptions { private get; init; }
 
-    public required BaseQueryFilter QueryFilter { protected get; init; }
     public required RecipeOptions RecipeOptions { protected get; init; }
     public required NutrientOptions NutrientOptions { protected get; init; }
     public required EquipmentOptions EquipmentOptions { protected get; init; }
@@ -76,7 +75,7 @@ public abstract class BaseQueryRunner
     {
         var filteredQuery = Map(CreateRecipesQuery(context));
 
-        filteredQuery = QueryFilters.FilterSection(filteredQuery, section);
+        filteredQuery = QueryFilters.FilterSection(filteredQuery, _section);
         filteredQuery = QueryFilters.FilterEquipment(filteredQuery, EquipmentOptions.Equipment);
         filteredQuery = QueryFilters.FilterRecipes(filteredQuery, RecipeOptions.RecipeIds?.Keys);
         filteredQuery = QueryFilters.FilterServings(filteredQuery, ServingOptions.MinimumServings);

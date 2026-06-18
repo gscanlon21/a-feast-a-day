@@ -25,7 +25,7 @@
     <div class="mb-3">
         <label asp-for="Recipe.SectionBinder" class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Section)</label>
         <select asp-for="Recipe.SectionBinder" class="form-control overflow-auto" aria-describedby="section-help" size="7"
-                asp-items="@(EnumExtensions.GetSingleValues(excludingAny: Core.Models.Newsletter.Section.Prep | Core.Models.Newsletter.Section.Debug).AsSelectListItems(EnumViewExtensions.EnumOrdering.Value))">
+                asp-items="@(EnumExtensions.GetSingleValues(excludingAny: Section.Prep | Section.Debug).AsSelectListItems(EnumViewExtensions.EnumOrdering.Value))">
         </select>
         <span asp-validation-for="Recipe.Section" class="text-danger"></span>
         <span asp-validation-for="Recipe.SectionBinder" class="text-danger"></span>

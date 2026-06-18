@@ -16,6 +16,8 @@ public class UserOptions : IOptions, IUser
     public IngredientOrder IngredientOrder { get; }
     public List<UserFoodPreference> FoodPreferences { get; set; } = [];
 
+    public Allergens AllAllergens => Allergens | SemiAllergens;
+
     public Allergens SemiAllergens => FoodPreferences
         .Where(f => f.FoodPreference == FoodPreference.Seldom)
         .Aggregate(Allergens.None, (c, n) => c | n.Allergen);

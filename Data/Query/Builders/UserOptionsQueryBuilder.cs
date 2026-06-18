@@ -9,7 +9,8 @@ namespace Data.Query.Builders;
 /// <summary>
 /// Builds out the QueryRunner class with option customization.
 /// </summary>
-public class UserOptionsQueryBuilder : BaseQueryBuilder<UserOptionsQueryBuilder>
+public class UserOptionsQueryBuilder<TFilter> : BaseQueryBuilder<UserOptionsQueryBuilder<TFilter>>
+    where TFilter : BaseQueryFilter
 {
     private readonly UserOptions UserOptions;
 
@@ -21,7 +22,7 @@ public class UserOptionsQueryBuilder : BaseQueryBuilder<UserOptionsQueryBuilder>
         UserOptions = userOptions;
     }
 
-    public UserOptionsQueryBuilder WithUser(Action<UserOptions>? builder = null)
+    public UserOptionsQueryBuilder<TFilter> WithUser(Action<UserOptions>? builder = null)
     {
         builder?.Invoke(UserOptions);
         return this;
@@ -43,21 +44,31 @@ public class UserOptionsQueryBuilder : BaseQueryBuilder<UserOptionsQueryBuilder>
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             IngredientOptions = IngredientOptions ?? new IngredientOptions(),
-            QueryFilter = RecipeOptions switch
-            {
-                null => new UserQueryFilter(Section)
-                {
-                    UserOptions = UserOptions,
-                    NutrientOptions = NutrientOptions ?? new NutrientOptions(),
-                    ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
-                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
-                },
-                not null => new RecipeQueryFilter(Section)
-                {
-                    RecipeOptions = RecipeOptions ?? new RecipeOptions(),
-                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
-                },
-            }
+            QueryFilter = CreateFilter(),
         };
+    }
+
+    private BaseQueryFilter CreateFilter()
+    {
+        if (typeof(TFilter) == typeof(UserQueryFilter))
+        {
+            return new UserQueryFilter(Section)
+            {
+                UserOptions = UserOptions,
+                NutrientOptions = NutrientOptions ?? new NutrientOptions(),
+                ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
+                SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+            };
+        }
+
+        if (typeof(TFilter) == typeof(RecipeQueryFilter))
+        {
+            return new RecipeQueryFilter()
+            {
+                SelectionOptions = SelectionOptions ?? new SelectionOptions(),
+            };
+        }
+
+        throw new NotImplementedException();
     }
 }

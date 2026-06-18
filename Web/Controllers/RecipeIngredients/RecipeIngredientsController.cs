@@ -2,6 +2,7 @@
 using Core.Dtos.Newsletter;
 using Core.Dtos.User;
 using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.User;
 using Data;
 using Data.Entities.Recipes;
@@ -192,7 +193,7 @@ public class RecipeIngredientsController : ViewController
     private async Task<List<QueryResults>> GetBaseRecipes(User user)
     {
         // Pass in the user so we can select their base recipes.
-        return await new UserQueryBuilder<RecipeQueryFilter>(user, Core.Models.Newsletter.Section.Prep)
+        return await new UserQueryBuilder<RecipeQueryFilter>(user, Section.Prep)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {

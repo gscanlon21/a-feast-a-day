@@ -1,4 +1,5 @@
 ﻿using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
 using Data.Code.Extensions;
@@ -17,11 +18,11 @@ namespace Data.Query.Filters;
 
 public class UserQueryFilter : BaseQueryFilter
 {
-    protected readonly Core.Models.Newsletter.Section section;
+    private readonly Section _section;
 
-    public UserQueryFilter(Core.Models.Newsletter.Section sec)
+    public UserQueryFilter(Section section)
     {
-        section = sec;
+        _section = section;
     }
 
     public required UserOptions UserOptions { private get; init; }
@@ -41,7 +42,7 @@ public class UserQueryFilter : BaseQueryFilter
             // ... those feasts don't update the last seen date.
             queryResults.ShuffleInPlace();
         }
-        else if (section != Core.Models.Newsletter.Section.Prep && section != Core.Models.Newsletter.Section.None)
+        else if (_section != Section.Prep && _section != Section.None)
         {
             // Don't need to order if we are in a prep or none section. Order by recipes that are still pending refresh.
             queryResults = queryResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
@@ -82,9 +83,11 @@ public class UserQueryFilter : BaseQueryFilter
             foreach (var recipe in queryResults)
             {
                 // Skip recipes that are working an allergen that has already been choosen. Reduce the frequency of recipes choosen containing a user's allergens.
-                var allAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
-                // If all allergens has one and recipe allergens has one and user allergens has one, then skip this recipe.
-                if ((allAllergens & recipe.Allergens & (UserOptions.Allergens | UserOptions.SemiAllergens)) != 0)
+                var workedAllergens = ExclusionOptions.Allergens | GenericBitwise<Allergens>.Or(finalResults.Select(r => r.Allergens));
+                // A recipe's allergens don't include prep recipe ingredients currently, so adding those allergens in here.
+                var prepRecipeAllergens = GenericBitwise<Allergens>.Or(recipe.PrepRecipes.Select(pr => pr.Key.Allergens));
+                // If user allergens has one and worked allergens has one and recipe allergens has one, skip this recipe.
+                if ((UserOptions.AllAllergens & workedAllergens & (recipe.Allergens | prepRecipeAllergens)) != 0)
                 {
                     continue;
                 }
@@ -137,7 +140,7 @@ public class UserQueryFilter : BaseQueryFilter
                 }
 
                 // Don't include the prep recipes in the take count b/c those aren't a part of the section.
-                if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == section) < take)
+                if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == _section) < take)
                 {
                     ScaleAndAddPrepRecipes(recipe, finalResults, SelectionOptions.PrepRecipes);
                     finalResults.Add(recipe);

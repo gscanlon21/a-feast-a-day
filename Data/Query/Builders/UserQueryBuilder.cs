@@ -72,9 +72,8 @@ public class UserQueryBuilder<TFilter> : BaseQueryBuilder<UserQueryBuilder<TFilt
 
         if (typeof(TFilter) == typeof(RecipeQueryFilter))
         {
-            return new RecipeQueryFilter(Section)
+            return new RecipeQueryFilter()
             {
-                RecipeOptions = RecipeOptions ?? new RecipeOptions(),
                 SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             };
         }

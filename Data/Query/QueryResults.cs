@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
 using Data.Code.Extensions;
@@ -22,7 +23,7 @@ public class QueryResults : IRecipeCombo
     /// </summary>
     private double _scale = 1;
 
-    public QueryResults(Core.Models.Newsletter.Section section, Recipe recipe, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe)
+    public QueryResults(Section section, Recipe recipe, IList<RecipeIngredientQueryResults> recipeIngredients, UserRecipe? userRecipe)
     {
         Recipe = recipe;
         Section = section;
@@ -31,8 +32,8 @@ public class QueryResults : IRecipeCombo
     }
 
     public Recipe Recipe { get; init; }
+    public Section Section { get; init; }
     public UserRecipe? UserRecipe { get; init; }
-    public Core.Models.Newsletter.Section Section { get; init; }
     public IList<RecipeIngredientQueryResults> RecipeIngredients { get; init; }
     public Allergens Allergens => GenericBitwise<Allergens>.Or(RecipeIngredients
         .Where(ri => ri.Type == RecipeIngredientType.Ingredient)

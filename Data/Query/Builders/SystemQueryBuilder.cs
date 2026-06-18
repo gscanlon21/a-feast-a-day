@@ -1,7 +1,5 @@
 ﻿using Core.Models.Newsletter;
-using Data.Query.Filters;
 using Data.Query.Options;
-using Data.Query.Options.Users;
 using Data.Query.Runners;
 
 namespace Data.Query.Builders;
@@ -31,21 +29,6 @@ public class SystemQueryBuilder : BaseQueryBuilder<SystemQueryBuilder>
             ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
             SelectionOptions = SelectionOptions ?? new SelectionOptions(),
             IngredientOptions = IngredientOptions ?? new IngredientOptions(),
-            QueryFilter = RecipeOptions switch
-            {
-                null => new UserQueryFilter(Section)
-                {
-                    UserOptions = new UserOptions(),
-                    NutrientOptions = NutrientOptions ?? new NutrientOptions(),
-                    ExclusionOptions = ExclusionOptions ?? new ExclusionOptions(),
-                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
-                },
-                not null => new RecipeQueryFilter(Section)
-                {
-                    RecipeOptions = RecipeOptions ?? new RecipeOptions(),
-                    SelectionOptions = SelectionOptions ?? new SelectionOptions(),
-                },
-            }
         };
     }
 }

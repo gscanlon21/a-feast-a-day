@@ -1,10 +1,12 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
+using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Query.Builders;
+using Data.Query.Filters;
 using Data.Query.Options;
 using Data.Query.Options.Users;
 using Fractions;
@@ -21,7 +23,7 @@ namespace Data.Query.Runners;
 /// </summary>
 public class UserQueryRunner : BaseQueryRunner
 {
-    public UserQueryRunner(Core.Models.Newsletter.Section section) : base(section) { }
+    public UserQueryRunner(Section section) : base(section) { }
 
     [DebuggerDisplay("{Ingredient}: {Scale}")]
     private class IngredientUserIngredient
@@ -34,6 +36,8 @@ public class UserQueryRunner : BaseQueryRunner
     }
 
     public required UserOptions UserOptions { private get; init; }
+
+    public required BaseQueryFilter QueryFilter { protected get; init; }
 
     protected override IQueryable<Recipe> CreateRecipesQuery(CoreContext context)
     {
@@ -259,7 +263,7 @@ public class UserQueryRunner : BaseQueryRunner
                     _ => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Order),
                 }).ToList();
 
-                filteredResults.Add(new QueryResults(section, queryResult.Recipe, queryResult.RecipeIngredients, queryResult.UserRecipe)
+                filteredResults.Add(new QueryResults(_section, queryResult.Recipe, queryResult.RecipeIngredients, queryResult.UserRecipe)
                 {
                     // Scaling the recipe will also scale the recipe ingredient quantities which then affects ingredient recipe scales.
                     SetScale = (RecipeOptions.RecipeIds?.TryGetValue(queryResult.Recipe.Id, out int? scale) == true && scale.HasValue) ? scale.Value
@@ -286,7 +290,7 @@ public class UserQueryRunner : BaseQueryRunner
             .GroupBy(ri => ri!.Value).ToDictionary(g => g.Key, ri => (int?)1/*(int)Math.Ceiling(ri.Quantity.ToDouble())*/);
 
         // This will filter out prep recipes missing equipemnt. No infinite recursion please. 
-        return prepRecipeIds.Any() ? await new UserOptionsQueryBuilder(UserOptions, Core.Models.Newsletter.Section.Prep)
+        return prepRecipeIds.Any() ? await new UserOptionsQueryBuilder<RecipeQueryFilter>(UserOptions, Section.Prep)
             .WithUser(options =>
             {
                 // Keep ignored base recipes, user should ignore the recipe ingredient if they need to ignore this.

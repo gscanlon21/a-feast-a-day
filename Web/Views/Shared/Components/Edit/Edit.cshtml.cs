@@ -166,15 +166,15 @@ public class EditComponentViewModel
 
         public UserSectionViewModel(UserSection userSection)
         {
-            Weight = userSection.Weight;
             UserId = userSection.UserId;
+            Weight = userSection.Weight;
             Section = userSection.Section;
             AtLeastXNutrientsPerRecipe = userSection.AtLeastXNutrientsPerRecipe;
         }
 
         public int UserId { get; init; }
 
-        public Core.Models.Newsletter.Section Section { get; init; }
+        public Section Section { get; init; }
 
         [Display(Name = "Weight", Description = "A relative weight of servings.")]
         [Range(UserConsts.SectionWeightMin, UserConsts.SectionWeightMax)]
