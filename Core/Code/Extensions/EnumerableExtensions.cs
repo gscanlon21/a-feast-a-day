@@ -4,6 +4,24 @@ namespace Core.Code.Extensions;
 
 public static class EnumerableExtensions
 {
+    /// <summary>
+    /// Implementation of the Durstenfeld shuffle.
+    /// </summary>
+    public static List<TSource> ShuffleInline<TSource>(this List<TSource> source)
+    {
+        var result = source.ToList();
+        for (var i = result.Count - 1; i > 0; i--)
+        {
+            var j = Random.Shared.Next(i + 1); // [0, i]
+            (result[i], result[j]) = (result[j], result[i]);
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Calculates the average value of a sequence, or null if the sequence has no items.
+    /// </summary>
     public static T AverageOrDefault<T>(this IEnumerable<T> source, T defaultValue = default)
         where T : struct, INumber<T>
     {

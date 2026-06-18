@@ -628,6 +628,12 @@ public enum Nutrients
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(700, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(750, 2800, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(770, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(770, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(1200, 2800, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(1300, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(1300, 3000, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Retinol", Order = 7410)]
     Retinol = 38,
 

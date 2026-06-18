@@ -48,7 +48,7 @@
 68	Cheese and Crackers	\N	\N	\N	36	0	5	1	t	cheese-meat-crackers.jpg	0	\N	f	f
 69	Chopped Eggs and Onions	\N	\N	\N	20	12	3	4	t	egg-salad-alt.jpg	0	\N	f	f
 70	Guacamole	Serve with Tortilla Chips.	Has too many ingredients.	\N	0	0	5	1	t	guacamole.jpg	6	\N	f	f
-71	Guacamole and Chips	\N	\N	\N	16	0	5	4	t	guacamole-chip.jpg	0	\N	f	f
+71	Guacamole and Chips	\N	\N	\N	16	0	5	1	t	guacamole-chip.jpg	0	\N	f	f
 72	Slices of Basic White Bread	\N	\N	\N	0	220	5	6	f	white-bread.jpg	0	\N	t	t
 73	Slices of Brown Rice Bread, GF	Do not use the timer function. If the Apple Cider Vinegar has settled, shake the bottle before using.	\N	\N	0	155	5	6	f	white-bread.jpg	0	\N	t	t
 74	Golden Gruyere and Basil Tortillas	\N	\N	\N	6	4	1	1	t	basil-quesadilla.jpg	0	\N	f	f
@@ -510,7 +510,7 @@
 730	Bacon and Blue Crostini	\N	\N	\N	16	30	10	12	t	\N	0	\N	f	f
 731	Roasted Sweet Potato Fingers	\N	\N	\N	16	35	5	2	t	\N	0	\N	f	f
 732	Creamy Garlic Mashed Potatoes	\N	Too heavy.	\N	16	20	10	4	t	irish-champ.jpg	0	\N	t	f
-733	Miso Black Bean Burger Patties	If you don;t have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	burgers-relish.jpg	0	\N	t	f
+733	Miso Black Bean Burger Patties	If you don't have a food processor, you can mash all the ingredients together using a potato masher.	\N	\N	0	25	10	4	t	burgers-relish.jpg	0	\N	t	f
 734	Steamed Asparagus	\N	\N	\N	16	7	3	4	t	steamed-asparagus.jpg	4	\N	t	f
 735	Zucchini Pesto Pasta w/ Bacon	\N	\N	\N	12	10	5	1	t	zucchini-linguine.jpg	0	\N	f	f
 736	Pea and Prosciutto Risotto	\N	Risotto base is not good.	\N	16	25	5	2	t	\N	0	\N	f	f
@@ -662,3 +662,7 @@
 1046	Chopped Mexican Salad w/ Creamy Avocado Ranch	Creamy Avocado Dressing: 1/2 cup of your favorite ranch dressing (see my suggestions in blog post above) 1 ripe avocado juice from one lime 1/4 cup cilantro leaves removed from stems..... Dressing prep: Place all dressing ingredients into a blender and blend till smooth. Pour over romaine and toss. You may not need all the dressing.  Pour cooled corn mixture, beans, tomatoes, pepitas and Citija cheese on top of salad. Enjoy!	\N	\N	20	10	10	8	t	\N	0	https://www.theorganickitchen.org/chopped-mexican-salad-with-creamy-avocado-ranch/	f	f
 1047	La Scala Salad Recipe	\N	\N	\N	12	0	5	4	t	la-scala-salad.jpg	0	https://www.theglutenfreeblogger.com/la-scala-chopped-salad/	f	f
 1048	Tostada Shells	\N	\N	\N	0	10	5	1	t	tostada-shells.jpg	0	\N	t	f
+1049	Rhubarb Compote	\N	\N	\N	0	0	0	10	t	\N	4	\N	t	f
+1082	Whipped Cream	If you accidentally over-whip the cream, and it looks curdled and heavy, pour in a little bit more cold heavy cream, and fold it in gently by hand with a spatula until it smooths out.	\N	\N	0	0	0	2	t	\N	6	\N	t	f
+1083	Soaked Mung Beans	\N	\N	\N	0	0	0	2	t	\N	6	\N	t	f
+1084	Cooked Edamame	\N	\N	\N	0	0	0	1	t	peas-beans-chili-mint.jpg	4	\N	t	f

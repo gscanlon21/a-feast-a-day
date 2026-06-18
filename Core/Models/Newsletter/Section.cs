@@ -40,8 +40,8 @@ public enum Section
 
 public static class SectionExtensions
 {
-    public static readonly List<Section> RecipeSections = [Section.Prep, Section.Breakfast, Section.Lunch, Section.Dinner, Section.Snacks, Section.Dessert, Section.Drinks];
-    public static readonly List<Section> MainSections = [Section.Breakfast, Section.Lunch, Section.Dinner, Section.Snacks, Section.Dessert, Section.Drinks];
+    public static readonly List<Section> RecipeSections = [Section.Prep, Section.Breakfast, Section.Lunch, Section.Dinner, Section.Sides, Section.Snacks, Section.Dessert, Section.Drinks];
+    public static readonly List<Section> MainSections = [Section.Breakfast, Section.Lunch, Section.Dinner, Section.Sides, Section.Snacks, Section.Dessert, Section.Drinks];
 
     public static RecipeTheme AsTheme(this Section section) => section switch
     {

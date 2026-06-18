@@ -115,6 +115,16 @@ public static class EnumExtensions
     }
 
     /// <summary>
+    /// Returns enum values where the value has more than 1 bit set.
+    /// </summary>
+    public static T[] GetMultiOrNoneValues<T>(T excludingAny = default) where T : struct, Enum
+    {
+        var excludeValues = Convert.ToInt64(excludingAny);
+        return Enum.GetValues<T>().Where(e => e.PopCount() > 1 || e.PopCount() == 0)
+            .Where(e => excludeValues == 0 || (excludeValues & Convert.ToInt64(e)) == 0).ToArray();
+    }
+
+    /// <summary>
     /// Returns enum values where the value has only 1 bit set.
     /// </summary>
     public static T[] GetSubValues<T>(T value) where T : struct, Enum

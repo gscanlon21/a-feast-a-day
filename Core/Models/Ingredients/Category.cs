@@ -156,10 +156,10 @@ public enum Category : long
     Other = Other_Supplements | Other_Household,
 
     [Display(Order = 1, Name = "Supplements")]
-    Other_Supplements = 1L << 60,
+    Other_Supplements = 1L << 55,
 
     [Display(Order = 2, Name = "Household")]
-    Other_Household = 1L << 61,
+    Other_Household = 1L << 56,
 
     #endregion
 }
