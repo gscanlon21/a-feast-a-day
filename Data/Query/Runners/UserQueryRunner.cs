@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Query.Runners;
@@ -270,6 +271,28 @@ public class UserQueryRunner : BaseQueryRunner
                         : (queryResult.UserRecipe != null && queryResult.Recipe.AdjustableServings) ? queryResult.UserRecipe.Servings / (double)queryResult.Recipe.Servings : 1,
                 });
             }
+        }
+
+        // Order after the query or you get cartesian explosion.
+        if (SelectionOptions.Randomized)
+        {
+            // Randomize the order. Useful for the backfill because
+            // ... those feasts don't update the last seen date.
+            filteredResults.ShuffleInPlace();
+        }
+        else if (_section != Section.Prep && _section != Section.None)
+        {
+            // Don't need to order if we are in a prep or none section. Order by recipes that are still pending refresh.
+            filteredResults = filteredResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
+                // Show recipes that the user has rarely seen.
+                // NOTE: When the two recipe's LastSeen dates are the same:
+                // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
+                // ... and we may see two randomly alternating recipes for the LagRefreshXWeeks duration.
+                .ThenBy(a => a.UserRecipe?.LastSeen?.DayNumber, NullOrder.NullsFirst)
+                // Mostly for the demo, show mostly random recipes.
+                .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
+                // Don't re-order the list on each read.
+                .ToList();
         }
 
         return await QueryFilter.Filter(filteredResults, factory, orderBy, take);

@@ -11,7 +11,6 @@ using Data.Query.Options;
 using Data.Query.Options.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System.Security.Cryptography;
 using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Query.Filters;
@@ -34,28 +33,6 @@ public class UserQueryFilter : BaseQueryFilter
     {
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
-
-        // Order after the query or you get cartesian explosion.
-        if (SelectionOptions.Randomized)
-        {
-            // Randomize the order. Useful for the backfill because
-            // ... those feasts don't update the last seen date.
-            queryResults.ShuffleInPlace();
-        }
-        else if (_section != Section.Prep && _section != Section.None)
-        {
-            // Don't need to order if we are in a prep or none section. Order by recipes that are still pending refresh.
-            queryResults = queryResults.OrderByDescending(a => a.UserRecipe?.RefreshAfter.HasValue, NullOrder.NullsLast)
-                // Show recipes that the user has rarely seen.
-                // NOTE: When the two recipe's LastSeen dates are the same:
-                // ... The LagRefreshXWeeks will prevent the LastSeen date from updating
-                // ... and we may see two randomly alternating recipes for the LagRefreshXWeeks duration.
-                .ThenBy(a => a.UserRecipe?.LastSeen?.DayNumber, NullOrder.NullsFirst)
-                // Mostly for the demo, show mostly random recipes.
-                .ThenBy(_ => RandomNumberGenerator.GetInt32(Int32.MaxValue))
-                // Don't re-order the list on each read.
-                .ToList();
-        }
 
         // Grab alt ingredients that are used to calculate more accurate nutrients.
         var partIngredients = await GetPartialIngredients(context, queryResults);
@@ -142,7 +119,11 @@ public class UserQueryFilter : BaseQueryFilter
                 // Don't include the prep recipes in the take count b/c those aren't a part of the section.
                 if (!finalResults.Contains(recipe) && finalResults.Count(fr => fr.Section == _section) < take)
                 {
-                    ScaleAndAddPrepRecipes(recipe, finalResults, SelectionOptions.PrepRecipes);
+                    if (!SelectionOptions.IgnorePrepRecipes)
+                    {
+                        ScaleAndAddPrepRecipes(recipe, finalResults, SelectionOptions.PrepRecipes);
+                    }
+
                     finalResults.Add(recipe);
                 }
             }
