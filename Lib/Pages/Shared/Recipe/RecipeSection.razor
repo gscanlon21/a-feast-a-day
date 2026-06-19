@@ -1,24 +1,14 @@
-﻿@using Core.Models.Recipe
+﻿@using ADay.Core.Models.Theme
 @using Core.Models.Newsletter
 @using Core.Dtos.Newsletter
 
 @if (Recipes?.Any() == true)
 {
-    var titleColor = Theme switch
-    {
-        RecipeTheme.Warmup => "palevioletred",
-        RecipeTheme.Main => "mediumpurple",
-        RecipeTheme.Cooldown => "lightskyblue",
-        RecipeTheme.Extra => "lightgreen",
-        RecipeTheme.Other => "lightsalmon",
-        _ => "currentColor"
-    };
-
     if (Title == null)
     {
         foreach (var recipeGroup in Recipes.GroupBy(e => e, new RecipeSectionComparer()).OrderBy(e => e.Key.Recipe.Name))
         {
-            <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@recipeGroup.Key.Recipe.Name</h2>
+            <h2 style="margin-bottom:0;margin-top:1em;color:@Theme.Color();font-size:revert;">@recipeGroup.Key.Recipe.Name</h2>
 
             @if (Verbosity.HasFlag(Verbosity.Debug))
             {
@@ -40,7 +30,7 @@
     }
     else
     {
-        <h2 style="margin-bottom:0;margin-top:1em;color:@titleColor;font-size:revert;">@Title.Header</h2>
+        <h2 style="margin-bottom:0;margin-top:1em;color:@Theme.Color();font-size:revert;">@Title.Header</h2>
         @if (Title.Description.HasValue)
         {
             <h6 style="margin-block:0;font-size:revert;">@Title.Description.Value</h6>
@@ -65,10 +55,10 @@
     public Titles? Title { get; init; }
 
     [Parameter, EditorRequired]
-    public Core.Dtos.User.UserNewsletterDto? User { get; init; }
+    public UserNewsletterDto? User { get; init; }
 
     [Parameter, EditorRequired]
-    public RecipeTheme Theme { get; init; }
+    public Theme Theme { get; init; }
 
     [Parameter, EditorRequired]
     public Verbosity Verbosity { get; init; }

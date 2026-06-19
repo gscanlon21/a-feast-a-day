@@ -6,7 +6,7 @@ using Core.Models.Newsletter;
 using Core.Models.Recipe;
 using Core.Models.User;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Users;
 
 /// <summary>
 /// For the newsletter.

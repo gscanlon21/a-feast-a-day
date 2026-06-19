@@ -1,6 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.ShoppingList;
-using Core.Dtos.User;
+using Core.Dtos.Users;
 using Core.Models.Newsletter;
 
 namespace Core.Dtos.Newsletter;

@@ -1,4 +1,4 @@
-﻿using Core.Models.Recipe;
+﻿using ADay.Core.Models.Theme;
 using System.ComponentModel.DataAnnotations;
 
 namespace Core.Models.Newsletter;
@@ -43,13 +43,15 @@ public static class SectionExtensions
     public static readonly List<Section> RecipeSections = [Section.Prep, Section.Breakfast, Section.Lunch, Section.Dinner, Section.Sides, Section.Snacks, Section.Dessert, Section.Drinks];
     public static readonly List<Section> MainSections = [Section.Breakfast, Section.Lunch, Section.Dinner, Section.Sides, Section.Snacks, Section.Dessert, Section.Drinks];
 
-    public static RecipeTheme AsTheme(this Section section) => section switch
+    public static Theme AsTheme(this Section section) => section switch
     {
-        Section.Breakfast => RecipeTheme.Warmup,
-        Section.Lunch or Section.Dinner => RecipeTheme.Main,
-        Section.Sides => RecipeTheme.Cooldown,
-        Section.Snacks => RecipeTheme.Extra,
-        Section.Dessert or Section.Drinks => RecipeTheme.Other,
-        _ => RecipeTheme.None,
+        Section.Breakfast => Theme.Red,
+        Section.Lunch => Theme.Violet,
+        Section.Dinner => Theme.Teal,
+        Section.Sides => Theme.Blue,
+        Section.Snacks => Theme.Orange,
+        Section.Dessert => Theme.Slate,
+        Section.Drinks => Theme.Green,
+        _ => Theme.None,
     };
 }

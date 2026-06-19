@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Users;
 
 /// <summary>
 /// User's preferences for a recipe.

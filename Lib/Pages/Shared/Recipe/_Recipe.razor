@@ -3,34 +3,12 @@
 @inject IOptions<SiteSettings> SiteSettings
 @using Core.Models.Options
 @using Microsoft.Extensions.Options
-@using Core.Models.Recipe
+@using ADay.Core.Models.Theme
 @using Core.Models.Newsletter
 @using Core.Dtos.Newsletter
 
-@{ 
-    var borderColor = Theme switch
-    {
-        RecipeTheme.Warmup => "palevioletred",
-        RecipeTheme.Main => "mediumpurple",
-        RecipeTheme.Cooldown => "lightskyblue",
-        RecipeTheme.Extra => "lightgreen",
-        RecipeTheme.Other => "lightsalmon",
-        _ => "currentColor"
-    };
-
-    var backgroundColor = Theme switch
-    {
-        RecipeTheme.Warmup => "rgba(250,200,200,.1)",
-        RecipeTheme.Main => "rgba(250,200,250,.1)",
-        RecipeTheme.Cooldown => "rgba(200,200,250,.1)",
-        RecipeTheme.Extra => "rgba(200,250,200,.1)",
-        RecipeTheme.Other => "rgba(250,200,150,.1)",
-        _ => "transparent"
-    };
-}
-
 @* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
-<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;background-color:@backgroundColor;border-bottom:4px solid @borderColor;border-image-slice:1;outline:1px solid @borderColor;">
+<div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;background-color:@Theme.BackgroundColor();border-bottom:4px solid @Theme.Color();border-image-slice:1;outline:1px solid @Theme.Color();">
     <h3 style="margin-block-start:0;margin-block-end:.4em;font-size:@FontHelpers.AdjustEm(1.2, User?.MinFontSize);line-height:1.2;display:flex;gap:.8ch;">
         <span style="flex:1 1 auto;">
             @if (!string.IsNullOrWhiteSpace(Model.Recipe.Link) && Uri.IsWellFormedUriString(Model.Recipe.Link, UriKind.Absolute))
@@ -141,7 +119,7 @@
 
 @code {
     [CascadingParameter]
-    public Core.Dtos.User.UserNewsletterDto? User { get; set; }
+    public Core.Dtos.Users.UserNewsletterDto? User { get; set; }
 
     [Parameter, EditorRequired]
     public NewsletterRecipeDto Model { get; set; } = null!;
@@ -150,5 +128,5 @@
     public Verbosity Verbosity { get; set; }
 
     [Parameter, EditorRequired]
-    public RecipeTheme Theme { get; init; }
+    public Theme Theme { get; init; }
 }

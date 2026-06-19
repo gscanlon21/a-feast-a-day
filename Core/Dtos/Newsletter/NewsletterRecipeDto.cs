@@ -1,5 +1,5 @@
 ﻿using Core.Dtos.Recipe;
-using Core.Dtos.User;
+using Core.Dtos.Users;
 using Core.Models.Newsletter;
 using System.Diagnostics;
 using System.Text.Json.Serialization;

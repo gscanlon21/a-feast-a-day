@@ -1,6 +1,6 @@
 ﻿using Core.Models.Nutrients;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Users;
 
 public class UserFamilyDto
 {

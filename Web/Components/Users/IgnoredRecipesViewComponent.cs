@@ -1,5 +1,5 @@
 ﻿using Core.Dtos.Newsletter;
-using Core.Dtos.User;
+using Core.Dtos.Users;
 using Core.Models.Newsletter;
 using Data;
 using Data.Entities.Users;

@@ -1,6 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
-using Core.Dtos.User;
+using Core.Dtos.Users;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.User;

@@ -1,6 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
-using Core.Dtos.User;
+using Core.Dtos.Users;
 using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;

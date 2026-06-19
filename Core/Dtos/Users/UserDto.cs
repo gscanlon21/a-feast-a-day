@@ -6,7 +6,7 @@ using Core.Models.Recipe;
 using Core.Models.User;
 using System.Diagnostics;
 
-namespace Core.Dtos.User;
+namespace Core.Dtos.Users;
 
 /// <summary>
 /// User who signed up for the newsletter.

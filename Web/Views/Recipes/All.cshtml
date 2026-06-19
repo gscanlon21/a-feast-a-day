@@ -1,6 +1,7 @@
 ﻿@model RecipesViewModel
 @using Core.Models.Recipe
 @using Web.Code.Extensions
+@using ADay.Core.Models.Theme
 @using Web.Controllers.Recipes
 
 @{
@@ -60,6 +61,6 @@
     </form>
 </details>
 
-<component type="typeof(Lib.Pages.Shared.Recipe.RecipeSection)" render-mode="Static" param-Recipes='Model.Recipes' param-Theme='RecipeTheme.None' param-Verbosity="@(Model.FormHasData ? Verbosity.Debug : Verbosity.All)" />
+<component type="typeof(Lib.Pages.Shared.Recipe.RecipeSection)" render-mode="Static" param-Recipes='Model.Recipes' param-Theme='Theme.None' param-Verbosity="@(Model.FormHasData ? Verbosity.Debug : Verbosity.All)" />
 
 <component type="typeof(Lib.Pages.Shared.Newsletter.Footnote)" render-mode="Static" param-Count='int.MaxValue' param-Verbosity='Verbosity.Debug' />
