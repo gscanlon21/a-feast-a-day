@@ -48,10 +48,10 @@ public static class SectionExtensions
         Section.Breakfast => Theme.Red,
         Section.Lunch => Theme.Violet,
         Section.Dinner => Theme.Teal,
-        Section.Sides => Theme.Blue,
+        Section.Sides => Theme.Green,
         Section.Snacks => Theme.Orange,
-        Section.Dessert => Theme.Slate,
-        Section.Drinks => Theme.Green,
+        Section.Dessert => Theme.Fuchsia,
+        Section.Drinks => Theme.Blue,
         _ => Theme.None,
     };
 }
