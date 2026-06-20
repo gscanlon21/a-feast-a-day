@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Users;
 using Data;
 using Data.Entities.Nutrients;
 using Data.Repos;

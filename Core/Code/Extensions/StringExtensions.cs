@@ -1,6 +1,4 @@
-﻿
-using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 
 namespace Core.Code.Extensions;
 
@@ -27,19 +25,6 @@ public static class StringExtensions
     public static bool IsWhiteSpace(this string? str)
     {
         return !string.IsNullOrEmpty(str) && string.IsNullOrWhiteSpace(str);
-    }
-
-    /// <summary>
-    /// Model.BooLean.ToCssClass() -> "boo-lean";
-    /// </summary>
-    public static string? ToClass(this bool boolean, string? trueString = null, string? falseString = null, [CallerArgumentExpression(nameof(boolean))] string valueExp = "")
-    {
-        return boolean ? (trueString ?? valueExp.Split('.')[^1].ToHtmlSlug()) : falseString;
-    }
-
-    public static string? ToStyle(this bool boolean, string trueString, string? falseString = null)
-    {
-        return boolean ? trueString?.EndWith(';') : falseString?.EndWith(';');
     }
 
     public static string? EndWith(this string? str, char append)

@@ -1,5 +1,5 @@
 ﻿using Core.Models.Options;
-using Core.Models.User;
+using Core.Models.Users;
 using Data;
 using Data.Entities.Users;
 using Data.Repos;

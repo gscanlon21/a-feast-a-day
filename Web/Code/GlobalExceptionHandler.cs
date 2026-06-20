@@ -1,5 +1,5 @@
 ﻿using Core.Code.Exceptions;
-using Core.Models.User;
+using Core.Models.Users;
 using Data;
 using Data.Entities.Newsletter;
 using Microsoft.AspNetCore.Diagnostics;

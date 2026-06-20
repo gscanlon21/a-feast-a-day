@@ -1,4 +1,4 @@
-﻿namespace Core.Models.User;
+﻿namespace Core.Models.Users;
 
 public enum FoodPreference
 {

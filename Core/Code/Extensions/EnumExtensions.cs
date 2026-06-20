@@ -268,8 +268,8 @@ public static class EnumExtensions
                 return nameType switch
                 {
                     DisplayType.Name => attribute.GetName(),
-                    DisplayType.ShortName => attribute.GetShortName() ?? attribute.GetName(),
-                    DisplayType.GroupName => attribute.GetGroupName() ?? attribute.GetShortName() ?? attribute.GetName(),
+                    DisplayType.ShortName => attribute.GetShortName(),
+                    DisplayType.GroupName => attribute.GetGroupName(),
                     DisplayType.Description => attribute.GetDescription(),
                     _ => null
                 };

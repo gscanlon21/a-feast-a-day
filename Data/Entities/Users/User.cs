@@ -4,7 +4,7 @@ using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
-using Core.Models.User;
+using Core.Models.Users;
 using Data.Entities.Newsletter;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;

@@ -3,7 +3,7 @@ using Core.Interfaces.User;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Core.Models.User;
+using Core.Models.Users;
 using System.Diagnostics;
 
 namespace Core.Dtos.Users;

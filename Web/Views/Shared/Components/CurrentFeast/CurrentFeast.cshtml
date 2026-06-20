@@ -1,6 +1,4 @@
 ﻿@model CurrentFeastViewModel
-@using Core.Models.Recipe
-@using Core.Models.User
 
 <div class="list-group mb-3">
     <a href="@Url.ActionLink(nameof(NewsletterController.Newsletter), NewsletterController.Name, new { Model.User.Email, Model.Token, Client = Client.Web }, Uri.UriSchemeHttps)"

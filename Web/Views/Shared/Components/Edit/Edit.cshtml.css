@@ -14,3 +14,17 @@ output {
     text-align: end;
     width: 4ch;
 }
+
+.allergen-name {
+    line-height: 1.25;
+    flex: 1 0 13ch;
+}
+
+.allergen-name.parent {
+    font-weight: 500;
+    flex: 100%;
+}
+
+.allergen-name.child {
+    font-style: italic;
+}

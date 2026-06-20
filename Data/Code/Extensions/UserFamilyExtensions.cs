@@ -1,8 +1,8 @@
 ﻿using Core.Code.Attributes;
 using Core.Models;
 using Core.Models.Nutrients;
-using Core.Models.User;
 using Data.Entities.Users;
+using Data.Models.Users;
 
 namespace Data.Code.Extensions;
 

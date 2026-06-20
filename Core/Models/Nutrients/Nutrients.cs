@@ -726,6 +726,12 @@ public enum Nutrients
     [DailyAllowance(15, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [DailyAllowance(15, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(15, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(15, 800, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(15, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(15, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(19, 800, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(19, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(19, 1000, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Vitamin E", Order = 7810)]
     Vitamin_E = 46,
 
@@ -900,14 +906,30 @@ public enum Nutrients
     /// <summary>
     /// Omega 6 Fatty Acids
     /// </summary>
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_1_1_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_2_3_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_4_8_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_9_13_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_14_18_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
-    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Male_51_70_Years)]
-    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_51_70_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_1_1_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_2_3_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_4_8_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_9_13_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_14_18_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
-    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
-    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(5, 10, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Omega 6 Fatty Acids", Order = 15005)]
     Omega_6 = 56,
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Core.Models.User;
+namespace Core.Models.Users;
 
 /// <summary>
 /// Controls access to user features.

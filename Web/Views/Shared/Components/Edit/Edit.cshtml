@@ -1,7 +1,6 @@
 ﻿@model EditComponentViewModel
 @using Core.Models.Newsletter
 @using Core.Models.Recipe
-@using Core.Models.User
 @using Data.Entities.Users
 
 <div id="edit" class="row gy-2">
@@ -12,7 +11,7 @@
             <input type="hidden" asp-for="Token" />
             <input type="hidden" asp-for="Email" />
 
-            @if (!Model.User.IsDemoUser) 
+            @if (!Model.User.IsDemoUser)
             {
                 <div class="mb-3">
                     <label for="disabled-email" class="control-label">@Html.DisplayNameFor(_ => Model.Email)</label>
@@ -244,7 +243,9 @@
                             <input type="hidden" asp-for="UserFoodPreferences[i].UserId" />
                             <input type="hidden" asp-for="UserFoodPreferences[i].Allergen" />
                             <div class="mb-2 d-flex flex-wrap" style="column-gap:1ch;">
-                                <div class="d-flex" style="flex:1 0 11ch;line-height:1.25">@Model.UserFoodPreferences[i].Allergen.GetDisplayName2()</div>
+                                <div class="d-flex allergen-name @Model.UserFoodPreferences[i].IsParentChild.ToClass("parent", "child")">
+                                    @Model.UserFoodPreferences[i].Allergen.GetDisplayName2()
+                                </div>
                                 <div class="d-flex" style="flex:99999 0 250px;gap:1ch;align-items:center;">
                                     <div class="d-flex w-100 flex-column justify-content-center">
                                         <input asp-for="UserFoodPreferences[i].FoodPreference" type="range" aria-describedby="food-preferences-help"
@@ -369,7 +370,7 @@
                 </div>
             </div>
         </form>
-      
+
         @await Component.InvokeAsync(AdvancedViewComponent.Name, new { Model.User, Model.Token })
 
         <details class="mb-25">

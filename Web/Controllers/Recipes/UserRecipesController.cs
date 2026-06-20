@@ -1,7 +1,7 @@
 ﻿using Core.Dtos.Newsletter;
 using Core.Dtos.Users;
 using Core.Models.Newsletter;
-using Core.Models.User;
+using Core.Models.Users;
 using Data;
 using Data.Entities.Newsletter;
 using Data.Entities.Recipes;

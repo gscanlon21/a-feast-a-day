@@ -1,8 +1,8 @@
 ﻿using Core.Models;
-using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Nutrients;
 using Core.Models.Recipe;
+using Core.Models.Users;
 using Data.Code.Extensions;
 using Data.Entities.Ingredients;
 using Data.Entities.Recipes;

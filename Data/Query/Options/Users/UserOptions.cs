@@ -1,6 +1,6 @@
 ﻿using Core.Interfaces.User;
 using Core.Models.Ingredients;
-using Core.Models.User;
+using Core.Models.Users;
 using Data.Entities.Users;
 
 namespace Data.Query.Options.Users;

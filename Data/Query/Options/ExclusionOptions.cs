@@ -1,4 +1,4 @@
-﻿using Core.Models.Ingredients;
+﻿using Core.Models.Users;
 
 namespace Data.Query.Options;
 

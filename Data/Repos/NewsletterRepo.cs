@@ -7,7 +7,7 @@ using Core.Dtos.Nutrients;
 using Core.Dtos.ShoppingList;
 using Core.Dtos.Users;
 using Core.Models.Newsletter;
-using Core.Models.User;
+using Core.Models.Users;
 using Data.Code.Extensions;
 using Data.Entities.Footnote;
 using Data.Entities.Newsletter;

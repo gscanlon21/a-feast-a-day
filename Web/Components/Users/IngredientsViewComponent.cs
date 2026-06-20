@@ -1,6 +1,6 @@
 ﻿using Core.Dtos.Ingredient;
 using Core.Dtos.Users;
-using Core.Models.User;
+using Core.Models.Users;
 using Data;
 using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;

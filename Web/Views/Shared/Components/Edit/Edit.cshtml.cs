@@ -1,10 +1,10 @@
 ﻿using ADay.Core.Models.Footnote;
-using Core.Models.Ingredients;
 using Core.Models.Newsletter;
-using Core.Models.User;
+using Core.Models.Users;
 using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using Web.Controllers;
 
 namespace Web.Views.Shared.Components.Edit;
@@ -76,7 +76,7 @@ public class EditComponentViewModel
     public IList<UserFamilyViewModel> UserFamilies { get; set; } = [];
 
     [Display(Name = "Food Preferences", Description = "How often do you want certain foods to appear?")]
-    public IList<UserEditFoodPreferencesViewModel> UserFoodPreferences { get; set; } = [];
+    public List<UserEditFoodPreferencesViewModel> UserFoodPreferences { get; set; } = [];
 
     [Required]
     [Display(Name = "Cooking Equipment", Description = "What cooking equipment do you have?")]
@@ -116,22 +116,33 @@ public class EditComponentViewModel
         set => FootnoteType = value?.Aggregate(FootnoteType.None, (a, e) => a | e) ?? FootnoteType.None;
     }
 
+    [DebuggerDisplay("{Group}:{Allergen}")]
     public class UserEditFoodPreferencesViewModel
     {
         public UserEditFoodPreferencesViewModel() { }
 
-        public UserEditFoodPreferencesViewModel(UserFoodPreference userMuscleMobility)
+        public UserEditFoodPreferencesViewModel(UserFoodPreference userFoodPreference)
         {
-            UserId = userMuscleMobility.UserId;
-            Allergen = userMuscleMobility.Allergen;
-            FoodPreference = userMuscleMobility.FoodPreference;
+            UserId = userFoodPreference.UserId;
+            Allergen = userFoodPreference.Allergen;
+            FoodPreference = userFoodPreference.FoodPreference;
         }
 
         public int UserId { get; init; }
 
+        public Allergens Group { get; init; }
+
         public Allergens Allergen { get; init; }
 
-        public FoodPreference FoodPreference { get; set; }
+        public FoodPreference FoodPreference { get; init; }
+
+        public bool? IsParentChild => Group switch
+        {
+            Allergens.None => null,
+            _ when Group == Allergen => true,
+            _ when Group != Allergen => false,
+            _ => throw new NotSupportedException(),
+        };
     }
 
     public class UserFamilyViewModel : IValidatableObject

@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Users;
 
 namespace Web.Views.UserIngredients;
 

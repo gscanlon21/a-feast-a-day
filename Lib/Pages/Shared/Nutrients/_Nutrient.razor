@@ -1,14 +1,10 @@
 @page "/nutrients/dietaryintakes"
 @inject DisplayHelper DH
 @inject IOptions<SiteSettings> SiteSettings
-@using Core.Consts;
 @using Core.Dtos.Nutrients
 @using Core.Models.Options
 @using Microsoft.Extensions.Options
-@using Core.Models.Recipe
-@using Core.Models.User
-@using Core.Models.Newsletter
-@using Core.Dtos.Ingredient
+@using Core.Dtos.Users
 
 @* Use `em` for spacing and font sizes--it's more consistent across fonts/mediums. *@
 <div style="flex:1 0 min(calc(100% - 20px), 300px);padding:10px;position:relative;display:flex;flex-direction:column;
@@ -35,7 +31,7 @@
 
 @code {
     [CascadingParameter]
-    public Core.Dtos.Users.UserNewsletterDto? User { get; set; }
+    public UserNewsletterDto? User { get; set; }
 
     [Parameter, EditorRequired]
     public NutrientDto Model { get; set; } = null!;

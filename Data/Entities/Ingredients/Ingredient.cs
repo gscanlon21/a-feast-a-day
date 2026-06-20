@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using Core.Models.Ingredients;
+using Core.Models.Users;
 using Data.Entities.Genetics;
 using Data.Entities.Newsletter;
 using Data.Entities.Nutrients;

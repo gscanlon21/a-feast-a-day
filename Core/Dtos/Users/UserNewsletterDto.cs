@@ -4,7 +4,7 @@ using Core.Code.Helpers;
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
-using Core.Models.User;
+using Core.Models.Users;
 
 namespace Core.Dtos.Users;
 

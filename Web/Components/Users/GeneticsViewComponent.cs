@@ -1,4 +1,4 @@
-﻿using Core.Models.User;
+﻿using Core.Models.Users;
 using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Web.Views.Shared.Components.Genetics;

@@ -6,7 +6,7 @@ global using Core.Dtos.Users;
 global using Core.Models;
 global using Core.Models.Newsletter;
 global using Core.Models.Options;
-global using Core.Models.User;
+global using Core.Models.Users;
 global using Lib.Models;
 global using Lib.Pages.Shared.Newsletter;
 global using Lib.Pages.Shared.Recipe;
