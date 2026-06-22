@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Web.Code.Extensions;
 
@@ -31,22 +32,23 @@ public static class EnumViewExtensions
     public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T?> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default, T? selectedValue = default)
         where T : struct, Enum
     {
-        var orderedValues = values.OrderByDescending(v => v.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(defaultValue) : (bool?)null, EnumerableExtensions.NullOrder.NullsFirst);
+        var orderedValues = values.OrderByDescending(v => v.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(defaultValue) : (bool?)null, NullOrder.NullsFirst);
         switch (order)
         {
             case EnumOrdering.Order:
-                orderedValues = orderedValues.ThenBy(v => v?.GetOrder(), EnumerableExtensions.NullOrder.NullsFirst);
+                orderedValues = orderedValues.ThenBy(v => v?.GetOrder(), NullOrder.NullsFirst);
                 break;
             case EnumOrdering.Value:
-                orderedValues = orderedValues.ThenBy(v => v.HasValue ? Convert.ToInt64(v) : (long?)null, EnumerableExtensions.NullOrder.NullsFirst);
+                orderedValues = orderedValues.ThenBy(v => v.HasValue ? Convert.ToInt64(v) : (long?)null, NullOrder.NullsFirst);
                 break;
             case EnumOrdering.Text:
-                orderedValues = orderedValues.ThenBy(v => v?.GetSingleDisplayName(), EnumerableExtensions.NullOrder.NullsFirst);
+                orderedValues = orderedValues.ThenBy(v => v?.GetSingleDisplayName(), NullOrder.NullsFirst);
                 break;
             case EnumOrdering.GroupText:
                 orderedValues = orderedValues
-                    .ThenBy(v => v?.GetSingleDisplayName(DisplayType.GroupName), EnumerableExtensions.NullOrder.NullsFirst)
-                    .ThenBy(v => v?.GetSingleDisplayName(), EnumerableExtensions.NullOrder.NullsFirst);
+                    .ThenBy(v => v?.GetSingleDisplayNameOrNull(DisplayType.GroupName), NullOrder.NullsFirst)
+                    .ThenBy(v => v?.GetOrder(), NullOrder.NullsFirst)
+                    .ThenBy(v => v?.GetSingleDisplayName(), NullOrder.NullsFirst);
                 break;
         }
 
