@@ -1,7 +1,7 @@
 ﻿using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
-using Web.Views.UserRecipes;
+using Web.Code.Context;
 
 namespace Web.Views.Shared.Components.ManageRecipe;
 
@@ -10,7 +10,7 @@ public class ManageRecipeViewModel
     public bool Swappable { get; init; } = false;
 
     [ValidateNever]
-    public required UserManageRecipeViewModel.Params Parameters { get; init; }
+    public required ManageRecipeParams Parameters { get; init; }
 
     [ValidateNever]
     public required Data.Entities.Users.User User { get; init; }

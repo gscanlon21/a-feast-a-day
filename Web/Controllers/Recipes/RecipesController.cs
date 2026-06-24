@@ -75,7 +75,7 @@ public class RecipesController : ViewController
             });
         }
 
-        var queryResults = await queryBuilder.Build().Query(_serviceScopeFactory, OrderBy.Name);
+        var queryResults = await queryBuilder.Build().Query(_serviceScopeFactory);
         viewModel.Recipes = FilterRecipes(queryResults, viewModel)
             .Select(r => r.AsType<NewsletterRecipeDto>(Options)!)
             .ToList();

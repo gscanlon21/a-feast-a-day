@@ -13,6 +13,8 @@ using Lib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+using Web.Code.Attributes;
+using Web.Code.Context;
 using Web.Code.TempData;
 using Web.Controllers.Users;
 using Web.Views.Shared.Components.ManageRecipe;
@@ -49,7 +51,7 @@ public class UserRecipesController : ViewController
     /// <summary>
     /// Shows a form to the user where they can update their recipe.
     /// </summary>
-    [HttpGet, Route("{section:section}/{recipeId}")]
+    [HttpGet, Route("{section:section}/{recipeId}"), SaveParams<ManageRecipeParams>]
     public async Task<IActionResult> ManageRecipe(string email, string token, int recipeId, Section section, bool? wasUpdated = null)
     {
         var user = await _userRepo.GetUser(email, token, Includes.FoodPreferences, allowDemoUser: true);
@@ -58,7 +60,8 @@ public class UserRecipesController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipe = await _context.Recipes.AsNoTracking()
+        // The recipe w/o user adjustments. For managing recipe ingredients.
+        var recipe = await _context.Recipes.AsNoTracking().TagWithCallSite()
             .Include(r => r.RecipeIngredients.OrderBy(ri => ri.Order))
             .Include(r => r.Instructions.OrderBy(i => i.Order))
             .Where(r => r.Id == recipeId)
@@ -70,7 +73,7 @@ public class UserRecipesController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
-        var recipeDtos = (await new UserQueryBuilder<RecipeQueryFilter>(user, Section.None)
+        var recipes = await new UserQueryBuilder<RecipeQueryFilter>(user, Section.None)
             // Pass in the user so we can select their recipes.
             .WithUser(options =>
             {
@@ -84,22 +87,22 @@ public class UserRecipesController : ViewController
                 x.AddRecipes([recipe]);
             })
             .Build()
-            .Query(_serviceScopeFactory))
-            .Select(r => r.AsType<NewsletterRecipeDto>()!);
+            .Query(_serviceScopeFactory);
 
         // Need a user context so the manage link is clickable and the user can un-ignore a prep recipe.
         var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);
         // May be null if the user has allergens that conflict with an ingredient.
-        var recipeDto = recipeDtos.FirstOrDefault(r => r.Recipe.Id == recipe.Id);
+        var queryRecipe = recipes.FirstOrDefault(r => r.Recipe.Id == recipeId);
         return View(nameof(ManageRecipe), new UserManageRecipeViewModel()
         {
             User = user,
             Recipe = recipe,
+            Section = section,
             WasUpdated = wasUpdated,
-            NewsletterRecipe = recipeDto,
             UserNewsletter = userNewsletter,
-            PrepRecipes = recipeDtos.ExceptBy([recipeDto?.Recipe.Id], r => r.Recipe.Id).ToList(),
-            Parameters = new UserManageRecipeViewModel.Params(email, token, recipeId, section),
+            UserRecipe = queryRecipe?.UserRecipe,
+            NewsletterRecipe = queryRecipe?.AsType<NewsletterRecipeDto>(),
+            PrepRecipes = recipes.ExceptBy([recipeId], r => r.Recipe.Id).Select(r => r.AsType<NewsletterRecipeDto>()!).ToList(),
         });
     }
 

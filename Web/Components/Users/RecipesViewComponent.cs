@@ -62,7 +62,7 @@ public class RecipesViewComponent : ViewComponent
                 x.IgnorePrepRecipes = true;
             })
             .Build()
-            .Query(_serviceScopeFactory, OrderBy.Name);
+            .Query(_serviceScopeFactory);
 
         return View("Recipes", new RecipesViewModel()
         {

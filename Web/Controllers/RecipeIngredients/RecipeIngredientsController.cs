@@ -201,7 +201,7 @@ public class RecipeIngredientsController : ViewController
             })
             .WithEquipment(Equipment.All)
             .Build()
-            .Query(_serviceScopeFactory, OrderBy.Name);
+            .Query(_serviceScopeFactory);
     }
 
     /// <summary>

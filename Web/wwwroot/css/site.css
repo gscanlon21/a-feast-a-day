@@ -142,8 +142,20 @@ main {
     margin: 0;
 }
 
+.font-weight--thin {
+    font-weight: 200;
+}
+
+.font-weight--light {
+    font-weight: 300;
+}
+
 .font-weight--normal {
-    font-weight: normal;
+    font-weight: 400;
+}
+
+.font-weight--medium {
+    font-weight: 500;
 }
 
 .font-weight--semibold {
@@ -151,7 +163,11 @@ main {
 }
 
 .font-weight--bold {
-    font-weight: bold;
+    font-weight: 700;
+}
+
+.font-weight--heavy {
+    font-weight: 800;
 }
 
 .font-size--small {
@@ -182,7 +198,7 @@ main {
 
 .primary-heading {
     font-size: 2.5rem;
-    font-weight: lighter;
+    font-weight: 200;
 }
 
 .secondary-heading {

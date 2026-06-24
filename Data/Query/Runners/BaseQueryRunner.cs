@@ -88,5 +88,5 @@ public abstract class BaseQueryRunner
         return await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
     }
 
-    public abstract Task<List<QueryResults>> Query(IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue);
+    public abstract Task<List<QueryResults>> Query(IServiceScopeFactory factory, int take = int.MaxValue);
 }

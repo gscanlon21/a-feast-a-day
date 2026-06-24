@@ -3,8 +3,9 @@ using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Web.Code.Attributes;
+using Web.Code.Context;
 using Web.Views.Shared.Components.RecipeIngredients;
-using Web.Views.UserRecipes;
 
 namespace Web.Components.Users;
 
@@ -13,10 +14,12 @@ namespace Web.Components.Users;
 /// </summary>
 public class RecipeIngredientsViewComponent : ViewComponent
 {
+    private readonly RequestContext<ManageRecipeParams> _parameters;
     private readonly CoreContext _context;
 
-    public RecipeIngredientsViewComponent(CoreContext context)
+    public RecipeIngredientsViewComponent(CoreContext context, RequestContext<ManageRecipeParams> parameters)
     {
+        _parameters = parameters;
         _context = context;
     }
 
@@ -25,9 +28,9 @@ public class RecipeIngredientsViewComponent : ViewComponent
     /// </summary>
     public const string Name = "RecipeIngredients";
 
-    public async Task<IViewComponentResult> InvokeAsync(User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
+    public async Task<IViewComponentResult> InvokeAsync(User user, Recipe recipe)
     {
-        var recipeIngredients = await _context.UserRecipeIngredients
+        var recipeIngredients = await _context.UserRecipeIngredients.AsNoTracking()
             .Include(ri => ri.SubstituteIngredient).Include(ri => ri.SubstituteRecipe)
             .Include(ri => ri.RecipeIngredient).ThenInclude(ri => ri.IngredientRecipe)
             .Include(ri => ri.RecipeIngredient).ThenInclude(ri => ri.Ingredient)
@@ -41,7 +44,7 @@ public class RecipeIngredientsViewComponent : ViewComponent
         return View("RecipeIngredients", new RecipeIngredientsViewModel()
         {
             User = user,
-            Token = parameters.Token,
+            Token = _parameters.RequireContext.Token,
             UserRecipeIngredients = recipeIngredients,
         });
     }

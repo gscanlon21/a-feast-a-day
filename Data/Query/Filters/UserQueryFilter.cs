@@ -11,7 +11,6 @@ using Data.Query.Options;
 using Data.Query.Options.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Query.Filters;
 
@@ -29,7 +28,7 @@ public class UserQueryFilter : BaseQueryFilter
     public required ExclusionOptions ExclusionOptions { protected get; init; }
     public required SelectionOptions SelectionOptions { protected get; init; }
 
-    public override async Task<List<QueryResults>> Filter(List<QueryResults> queryResults, IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue)
+    public override async Task<List<QueryResults>> Filter(List<QueryResults> queryResults, IServiceScopeFactory factory, int take = int.MaxValue)
     {
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
@@ -146,13 +145,7 @@ public class UserQueryFilter : BaseQueryFilter
             }
         }//*/
 
-        return orderBy switch
-        {
-            // Not in a feast context, order by name.
-            OrderBy.Name => [.. finalResults.OrderBy(vm => vm.Recipe.Name)],
-            // We are in a feast context, keep the result order.
-            _ => finalResults.ToList()
-        };
+        return finalResults.ToList();
     }
 
     /// <summary>

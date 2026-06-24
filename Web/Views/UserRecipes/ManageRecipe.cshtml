@@ -10,21 +10,21 @@
 <div class="row gy-2 mb-2 mt-1 justify-content-between align-items-end">
     <div class="col-auto mb-3">
         <h1 class="primary-heading">Recipe</h1>
-        <h2 class="sub-heading mt-0 ps-1"> @Model.Parameters.Section.GetSingleDisplayName(DisplayType.ShortName)</h2>
+        <h2 class="sub-heading mt-0 ps-1"> @Model.Section.GetSingleDisplayName(DisplayType.ShortName)</h2>
     </div>
     <partial name="_ValidationMessagePartial" model='new ValidationMessagePartialModel() { WasUpdated = Model.WasUpdated, GoBackOnSave = true }' />
 </div>
 
 <div class="row gy-4">
     <div class="col-lg-6">
-        @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters })
+        @await Component.InvokeAsync(ManageRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.UserRecipe })
     </div>
 
     <div class="col-lg-6">
         @if (Model.NewsletterRecipe != null)
         {
             <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
-                <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Parameters.Section.AsTheme()" />
+                <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Section.AsTheme()" />
             </component>
         }
 
@@ -32,7 +32,7 @@
         {
             <h5 class="mt-4 mb-1">Edit Recipe</h5>
             <div class="alert alert-secondary shadow mb-0">
-                @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Parameters.Section })
+                @await Component.InvokeAsync(UpsertRecipeViewComponent.Name, new { Model.User, Model.Recipe, Model.Section })
             </div>
         }
 

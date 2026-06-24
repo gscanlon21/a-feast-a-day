@@ -1,23 +1,22 @@
-﻿using Data;
-using Data.Entities.Newsletter;
+﻿using Data.Entities.Newsletter;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
 using Data.Repos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Web.Code.Attributes;
+using Web.Code.Context;
 using Web.Views.Shared.Components.ManageRecipe;
-using Web.Views.UserRecipes;
 
 namespace Web.Components.Users;
 
 public class ManageRecipeViewComponent : ViewComponent
 {
+    private readonly RequestContext<ManageRecipeParams> _parameters;
     private readonly UserRepo _userRepo;
-    private readonly CoreContext _context;
 
-    public ManageRecipeViewComponent(CoreContext context, UserRepo userRepo)
+    public ManageRecipeViewComponent(UserRepo userRepo, RequestContext<ManageRecipeParams> parameters)
     {
-        _context = context;
+        _parameters = parameters;
         _userRepo = userRepo;
     }
 
@@ -26,13 +25,8 @@ public class ManageRecipeViewComponent : ViewComponent
     /// </summary>
     public const string Name = "ManageRecipe";
 
-    public async Task<IViewComponentResult> InvokeAsync(User user, Recipe recipe, UserManageRecipeViewModel.Params parameters)
+    public async Task<IViewComponentResult> InvokeAsync(User user, Recipe recipe, UserRecipe? userRecipe)
     {
-        var userRecipe = await _context.UserRecipes.AsNoTracking()
-            .Where(r => r.RecipeId == parameters.RecipeId)
-            .Where(r => r.UserId == user.Id)
-            .FirstOrDefaultAsync();
-
         if (userRecipe == null)
         {
             return Content("");
@@ -44,14 +38,14 @@ public class ManageRecipeViewComponent : ViewComponent
             return Content("");
         }
 
-        var swappable = userFeast.UserFeastRecipes.Any(ufr => ufr.RecipeId == parameters.RecipeId);
+        var swappable = userFeast.UserFeastRecipes.Any(ufr => ufr.RecipeId == _parameters.RequireContext.RecipeId);
         return View("ManageRecipe", new ManageRecipeViewModel()
         {
             User = user,
             Recipe = recipe,
             Swappable = swappable,
             UserRecipe = userRecipe,
-            Parameters = parameters,
+            Parameters = _parameters.RequireContext,
             Notes = userRecipe.Notes,
             Servings = userRecipe.Servings,
             LagRefreshXWeeks = userRecipe.LagRefreshXWeeks,

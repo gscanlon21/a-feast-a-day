@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
 using System.IO.Compression;
 using Web.Code;
+using Web.Code.Attributes;
 using Web.Code.RouteConstraints;
 using Web.Services;
 
@@ -45,6 +46,8 @@ builder.Services.AddTransient<UserRepo>();
 builder.Services.AddTransient<CaptchaService>();
 
 builder.Services.AddTransient(typeof(HtmlHelpers<>));
+
+builder.Services.AddScoped(typeof(RequestContext<>));
 
 builder.Services.AddShared(builder.Configuration, migrations: true);
 builder.Services.AddDbContext<CoreContext>(options =>

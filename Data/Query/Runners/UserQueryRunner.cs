@@ -117,7 +117,7 @@ public class UserQueryRunner : BaseQueryRunner
     /// <summary>
     /// Queries the db for the data.
     /// </summary>
-    public override async Task<List<QueryResults>> Query(IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue)
+    public override async Task<List<QueryResults>> Query(IServiceScopeFactory factory, int take = int.MaxValue)
     {
         // Short-circut when this is set without any data. No results are returned.
         if (RecipeOptions.RecipeIds?.Any() == false)
@@ -256,12 +256,13 @@ public class UserQueryRunner : BaseQueryRunner
 
             if (!ignoreRecipe)
             {
-                // Order the recipe ingredients based on user preferences. Always order recipes before ingredients.
+                // Order the recipe ingredients based on user preferences. Always order recipes before ingredients w/ groups last.
+                var orderedIngredients = finalRecipeIngredients.OrderBy(ri => ri.Group != null).ThenByDescending(ri => ri.Type);
                 queryResult.RecipeIngredients = ((queryResult.Recipe.KeepIngredientOrder, UserOptions.IngredientOrder) switch
                 {
-                    (false, IngredientOrder.OptionalLast) => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
-                    (false, IngredientOrder.LargeToSmall) => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
-                    _ => finalRecipeIngredients.OrderByDescending(ri => ri.Type).ThenBy(ri => ri.Order),
+                    (false, IngredientOrder.OptionalLast) => orderedIngredients.ThenBy(ri => ri.Optional).ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
+                    (false, IngredientOrder.LargeToSmall) => orderedIngredients.ThenBy(ri => ri.Measure != Measure.None).ThenByDescending(ri => ri.Measure.ToGramsOrMilliliters()).ThenByDescending(ri => ri.Quantity).ThenByDescending(ri => ri.Weight),
+                    _ => orderedIngredients.ThenBy(ri => ri.Order),
                 }).ToList();
 
                 filteredResults.Add(new QueryResults(_section, queryResult.Recipe, queryResult.RecipeIngredients, queryResult.UserRecipe)
@@ -295,7 +296,7 @@ public class UserQueryRunner : BaseQueryRunner
                 .ToList();
         }
 
-        return await QueryFilter.Filter(filteredResults, factory, orderBy, take);
+        return await QueryFilter.Filter(filteredResults, factory, take);
     }
 
     /// <summary>

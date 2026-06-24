@@ -62,7 +62,7 @@ public class IgnoredRecipesViewComponent : ViewComponent
                 x.IgnorePrepRecipes = true;
             })
             .Build()
-            .Query(_serviceScopeFactory, OrderBy.Name);
+            .Query(_serviceScopeFactory);
 
         // Need a user context so the manage link is clickable and the user can un-ignore a recipe.
         var userNewsletter = new UserNewsletterDto(user.AsType<UserDto>()!, token);

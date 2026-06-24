@@ -2,6 +2,7 @@
 using Core.Dtos.Users;
 using Core.Models.Newsletter;
 using Core.Models.Users;
+using Data.Entities.Users;
 
 namespace Web.Views.UserRecipes;
 
@@ -10,11 +11,11 @@ namespace Web.Views.UserRecipes;
 /// </summary>
 public class UserManageRecipeViewModel
 {
-    public record Params(string Email, string Token, int RecipeId, Section Section);
-
     public bool? WasUpdated { get; init; }
 
-    public required Params Parameters { get; init; }
+    public required Section Section { get; init; }
+
+    public required UserRecipe? UserRecipe { get; init; }
 
     public Data.Entities.Users.User User { get; init; } = null!;
 

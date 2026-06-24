@@ -7,7 +7,7 @@ public class RecipeQueryFilter : BaseQueryFilter
 {
     public required SelectionOptions SelectionOptions { protected get; init; }
 
-    public override async Task<List<QueryResults>> Filter(List<QueryResults> queryResults, IServiceScopeFactory factory, OrderBy orderBy = OrderBy.None, int take = int.MaxValue)
+    public override async Task<List<QueryResults>> Filter(List<QueryResults> queryResults, IServiceScopeFactory factory, int take = int.MaxValue)
     {
         using var scope = factory.CreateScope();
         using var context = scope.ServiceProvider.GetRequiredService<CoreContext>();
@@ -23,6 +23,6 @@ public class RecipeQueryFilter : BaseQueryFilter
             localResults.Add(recipe);
         }
 
-        return localResults.ToList();
+        return localResults.OrderBy(vm => vm.Recipe.Name).ToList();
     }
 }
