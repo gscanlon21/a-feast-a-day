@@ -190,7 +190,7 @@
 244	Strawberry Mint Vinaigrette	\N	\N	\N	0	0	10	1	t	strawberry-mint-vinaigrette.jpg	6	https://www.drkarafitzgerald.com/recipe/strawberry-mint-vinaigrette/	f	f
 245	Methylation Trail Mix	\N	\N	\N	16	20	5	10	t	trail-mix.jpg	0	https://www.drkarafitzgerald.com/recipe/methylation-trail-mix/	f	f
 247	Gluten-Free Nut Crunch Snack	\N	\N	\N	16	20	5	4	t	nut-crunch-snack.jpg	0	https://www.drkarafitzgerald.com/recipe/gluten-free-nut-crunch-snack/	f	f
-248	Fennel Soup	\N	\N	\N	12	45	5	4	t	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/	f	f
+248	Fennel Soup	\N	\N	\N	8	45	5	4	t	fennel-soup.jpg	0	https://www.drkarafitzgerald.com/recipe/fennel-soup/	f	f
 249	Sesame-Ginger Carrots	\N	\N	\N	16	45	5	5	t	sesame-ginger-carrots.jpg	0	https://www.drkarafitzgerald.com/recipe/sesame-ginger-carrots/	f	f
 250	Turkey and Veggies	Any of the ingredients can be swapped out or replaced to fit different dietary or taste preferences. The cooked veggies and turkey can be stored in the fridge for 2-3 days, making this recipe excellent for meal prep and batch cooking - all you have to do is add fresh arugula and drizzle with lemon juice and EVOO.	\N	\N	4	30	20	4	t	turkey-veggies.jpg	0	https://www.drkarafitzgerald.com/recipe/turkey-and-veggies/	f	f
 251	Tahini-Lemon Dressing	\N	\N	\N	0	0	5	1	t	honey-mustard-dressing.jpg	6	https://www.drkarafitzgerald.com/recipe/tahini-lemon-dressing/	f	f
@@ -659,10 +659,12 @@
 1043	Potato and Green Bean Salad	Do not overcook the potatoes! To avoid overcooking check potatoes every few minutes. Time will depend on size of potatoes but usually it's between 8–12 minutes. If you happen to err on the side of under cooked potatoes, no worries! Instead of rinsing potatoes under cold water, simply cover colander with a clean dish towel and allow potatoes to steam in their own heat for 2–3 minutes, then rinse.	\N	\N	20	15	5	2	t	\N	0	\N	f	f
 1044	Whipped Butter	\N	\N	\N	0	0	5	4	t	\N	4	\N	t	f
 1045	Baked Beans	Baked beans are high in fiber.	\N	\N	16	5	0	1	t	baked-beans.jpg	0	\N	f	f
-1046	Chopped Mexican Salad w/ Creamy Avocado Ranch	Creamy Avocado Dressing: 1/2 cup of your favorite ranch dressing (see my suggestions in blog post above) 1 ripe avocado juice from one lime 1/4 cup cilantro leaves removed from stems..... Dressing prep: Place all dressing ingredients into a blender and blend till smooth. Pour over romaine and toss. You may not need all the dressing.  Pour cooled corn mixture, beans, tomatoes, pepitas and Citija cheese on top of salad. Enjoy!	\N	\N	20	10	10	8	t	\N	0	https://www.theorganickitchen.org/chopped-mexican-salad-with-creamy-avocado-ranch/	f	f
+1046	Chopped Mexican Salad w/ Creamy Avocado Ranch	\N	\N	\N	20	10	10	8	t	\N	0	https://www.theorganickitchen.org/chopped-mexican-salad-with-creamy-avocado-ranch/	f	f
 1047	La Scala Salad Recipe	\N	\N	\N	12	0	5	4	t	la-scala-salad.jpg	0	https://www.theglutenfreeblogger.com/la-scala-chopped-salad/	f	f
 1048	Tostada Shells	\N	\N	\N	0	10	5	1	t	tostada-shells.jpg	0	\N	t	f
 1049	Rhubarb Compote	\N	\N	\N	0	0	0	10	t	\N	4	\N	t	f
 1082	Whipped Cream	If you accidentally over-whip the cream, and it looks curdled and heavy, pour in a little bit more cold heavy cream, and fold it in gently by hand with a spatula until it smooths out.	\N	\N	0	0	0	2	t	\N	6	\N	t	f
 1083	Soaked Mung Beans	\N	\N	\N	0	0	0	2	t	curried-mung-bean-soup-alt.jpg	6	\N	t	f
 1084	Cooked Edamame	\N	\N	\N	0	0	0	1	t	peas-beans-chili-mint.jpg	4	\N	t	f
+1085	Raw Kimchi	\N	\N	\N	16	0	0	1	t	\N	0	\N	f	f
+1086	Raw Sauerkraut	\N	\N	\N	16	0	0	1	t	\N	0	\N	f	f
