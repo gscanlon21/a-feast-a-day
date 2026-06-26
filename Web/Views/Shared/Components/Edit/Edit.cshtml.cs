@@ -98,19 +98,19 @@ public class EditComponentViewModel
     [Display(Name = "Send Day", Description = "What day do you want to see new recipes?")]
     public DayOfWeek SendDay { get; set; }
 
-    public Verbosity[]? VerbosityBinder
+    public Verbosity[] VerbosityBinder
     {
         get => Enum.GetValues<Verbosity>().Where(e => Verbosity.HasFlag(e)).ToArray();
         set => Verbosity = value?.Aggregate(Verbosity.None, (a, e) => a | e) ?? Verbosity.None;
     }
 
-    public Equipment[]? EquipmentBinder
+    public Equipment[] EquipmentBinder
     {
         get => Enum.GetValues<Equipment>().Where(e => Equipment.HasFlag(e)).ToArray();
         set => Equipment = value?.Aggregate(Equipment.None, (a, e) => a | e) ?? Equipment.None;
     }
 
-    public FootnoteType[]? FootnoteTypeBinder
+    public FootnoteType[] FootnoteTypeBinder
     {
         get => NewsletterConsts.FootnoteTypes.Where(e => FootnoteType.HasFlag(e)).ToArray();
         set => FootnoteType = value?.Aggregate(FootnoteType.None, (a, e) => a | e) ?? FootnoteType.None;

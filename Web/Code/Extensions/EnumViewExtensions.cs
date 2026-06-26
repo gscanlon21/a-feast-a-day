@@ -18,7 +18,7 @@ public static class EnumViewExtensions
     /// 
     /// The default value for the enum, 0, will always come first.
     /// </summary>
-    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default)
+    public static IEnumerable<SelectListItem> AsSelectListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default, T selectedValue = default)
         where T : struct, Enum
     {
         return values.Cast<T?>().AsSelectListItems(order: order, defaultValue: defaultValue, selectedValue: selectedValue);
@@ -29,7 +29,36 @@ public static class EnumViewExtensions
     /// 
     /// The default value for the enum, 0, will always come first.
     /// </summary>
-    public static IList<SelectListItem> AsSelectListItems<T>(this IEnumerable<T?> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default, T? selectedValue = default)
+    public static IEnumerable<SelectListItem> AsSelectListItems<T>(this IEnumerable<T?> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default, T? selectedValue = default)
+        where T : struct, Enum
+    {
+        return values.AsListItems(order, defaultValue).Select(v => new SelectListItem()
+        {
+            // No OrNull for DayOfWeek enum.
+            Text = v?.GetSingleDisplayName(),
+            // Need to use an empty string so it posts null and not the name.
+            Value = v == null ? string.Empty : Convert.ToInt64(v).ToString(),
+            Selected = selectedValue.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(selectedValue) : !v.HasValue,
+        });
+    }
+
+    /// <summary>
+    /// Converts enum values to a select list for views.
+    /// 
+    /// The default value for the enum, 0, will always come first.
+    /// </summary>
+    public static IEnumerable<T> AsListItems<T>(this IEnumerable<T> values, EnumOrdering order = EnumOrdering.Value, T defaultValue = default)
+        where T : struct, Enum
+    {
+        return values.Cast<T?>().AsListItems(order: order, defaultValue: defaultValue).Cast<T>();
+    }
+
+    /// <summary>
+    /// Converts enum values to a select list for views.
+    /// 
+    /// The default value for the enum, 0, will always come first.
+    /// </summary>
+    public static IEnumerable<T?> AsListItems<T>(this IEnumerable<T?> values, EnumOrdering order = EnumOrdering.Value, T? defaultValue = default)
         where T : struct, Enum
     {
         var orderedValues = values.OrderByDescending(v => v.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(defaultValue) : (bool?)null, NullOrder.NullsFirst);
@@ -52,14 +81,6 @@ public static class EnumViewExtensions
                 break;
         }
 
-        return orderedValues.Select(v => new SelectListItem()
-        {
-            // No OrNull for DayOfWeek enum.
-            Text = v?.GetSingleDisplayName(),
-            // Need to use an empty string so it posts null and not the name.
-            Value = v == null ? string.Empty : Convert.ToInt64(v).ToString(),
-            Selected = selectedValue.HasValue ? Convert.ToInt64(v) == Convert.ToInt64(selectedValue) : !v.HasValue,
-        })
-        .ToList();
+        return orderedValues;
     }
 }

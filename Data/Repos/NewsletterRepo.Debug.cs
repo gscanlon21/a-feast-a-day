@@ -9,6 +9,7 @@ using Data.Query.Builders;
 using Data.Query.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using static Core.Code.Extensions.EnumerableExtensions;
 
 namespace Data.Repos;
 
@@ -42,7 +43,7 @@ public partial class NewsletterRepo
             }
         }
 
-        return debugRecipes.Take(1).ToList();
+        return debugRecipes.OrderBy(x => x.UserRecipe?.LastSeen?.DayNumber, NullOrder.NullsFirst).Take(1).ToList();
     }
 
     /// <summary>
