@@ -31,12 +31,6 @@ public class UserFootnote : IFootnote
     /// </summary>
     public string? Source { get; init; }
 
-    /// <summary>
-    /// Affirmations vs Fitness Tips.
-    /// </summary>
-    [Required]
-    public FootnoteType Type { get; init; }
-
     [JsonIgnore, InverseProperty(nameof(Users.User.UserFootnotes))]
     public Users.User User { get; private init; } = null!;
 }

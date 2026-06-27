@@ -1,5 +1,4 @@
-﻿using ADay.Core.Models.Footnote;
-using ADay.Data;
+﻿using ADay.Data;
 using ADay.Data.Entities.Footnote;
 using Core.Dtos.Ingredient;
 using Core.Dtos.Newsletter;
@@ -52,14 +51,13 @@ public partial class NewsletterRepo
     {
         var user = await _userRepo.GetUser(email, token, allowDemoUser: true);
         ArgumentNullException.ThrowIfNull(user);
-        if (!user.FootnoteType.HasFlag(FootnoteType.Custom))
+        if (user.FootnoteCountTop == 0)
         {
             return [];
         }
 
         // GetValueOrDefault can't be translated by EF Core.
         var footnotes = await _context.UserFootnotes
-            .Where(f => f.Type == FootnoteType.Custom)
             .Where(f => f.UserId == user.Id)
             // Keep the same footnotes over the course of a day.
             .OrderByDescending(f => f.LastSeen == DateHelpers.Today)
