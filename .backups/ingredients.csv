@@ -60,7 +60,7 @@
 61	\N	Mayonnaise	Mayonnaise	\N	f	0	28	100	2025-06-12	4	224	4	224	Mayonnaise	\N	\N	13
 62	\N	Soy Sauce	Soy Sauce	Made from soy and wheat (shoyu).	f	294944	32	100	2026-04-14	9	256	4	256	Soy Sauce	https://fdc.nal.usda.gov/food-details/174277/nutrients	\N	14
 63	\N	A1 Steak Sauce: Original	A1 Steak Sauce: Original	\N	f	0	16	100	2025-07-09	7	100	4	100	A1 Steak Sauce: Original	\N	\N	13
-64	\N	Hot Sauce	Hot Sauce	\N	f	0	28	100	2024-12-02	4	240	4	240	Hot Sauce	\N	\N	14
+64	\N	Hot Sauce	Hot Sauce	\N	f	0	28	100	2026-06-27	4	240	536772608	240	Hot Sauce	\N	\N	524288
 65	\N	Buffalo Sauce	Buffalo Sauce	\N	f	0	14	100	2026-02-12	7	224	4	224	Buffalo Sauce	\N	\N	13
 66	\N	Ranch Dressing	Ranch Dressing	\N	f	0	15	100	2025-08-19	7	240	4	240	Ranch Dressing	\N	\N	13
 67	\N	Black Pepper	Black Pepper	\N	t	0	28	100	2025-12-02	4	96	4	96	Black Pepper	\N	\N	12
@@ -688,7 +688,7 @@
 797	\N	Clementines | Tangerines	Clementines | Tangerines	\N	f	0	88	100	2025-05-03	0	176	1	176	Clementines | Tangerines	\N	\N	0
 798	\N	Clementines | Tangerines | Seedless Oranges	Clementines | Tangerines | Seedless Oranges	\N	f	0	88	100	2025-03-24	0	88	1	88	Clementines | Tangerines | Seedless Oranges	\N	\N	0
 799	\N	Seedless Oranges	Seedless Oranges	\N	f	0	131	100	2025-04-20	0	131	1	131	Orange	\N	\N	0
-800	\N	Fresh Tarragon	Fresh Tarragon	\N	f	0	28	100	2024-12-02	4	32	3	32	Tarragon	\N	\N	0
+800	\N	Fresh Tarragon	Fresh Tarragon	\N	f	0	28	100	2026-06-27	4	32	7	32	Tarragon	\N	\N	4
 801	\N	Fresh Mixed-Color Kale	Fresh Mixed-Color Kale	\N	f	0	28	100	2025-12-13	4	67	1	67	Kale	\N	\N	2
 802	\N	Balti Curry Paste	Balti Curry Paste	\N	f	0	28	100	2026-06-09	4	180	4	180	Curry Paste	\N	\N	14
 803	\N	Red Split Lentils	Red Split Lentils	\N	f	0	28	100	2025-06-09	4	192	4	192	Lentil	\N	\N	6
@@ -698,7 +698,7 @@
 807	\N	Almonds	Almonds	\N	f	1	28	100	2026-02-16	4	143	10	143	Almonds	\N	\N	0
 808	\N	Frozen Blueberries | Frozen Blackberries	Frozen Blueberries | Frozen Blackberries	\N	f	0	28	100	2026-06-07	4	155	11	155	Frozen Fruit	\N	\N	1
 809	\N	Frozen Blackberries	Frozen Blackberries	\N	f	0	28	100	2025-01-20	4	151	10	151	Frozen Blackberries	\N	\N	0
-810	\N	Chocolate Sauce	Chocolate Sauce	\N	f	0	40	100	2024-12-01	9	320	536772608	320	Chocolate Sauce	\N	\N	8388608
+810	\N	Chocolate Sauce	Chocolate Sauce	aka: Chocolate Syrup.	f	0	40	100	2026-06-26	9	320	536772608	320	Chocolate Sauce	\N	\N	8388608
 811	\N	Mixed-Color Bell Peppers	Mixed-Color Bell Peppers	\N	f	0	186	100	2025-10-22	0	186	2	186	Bell Pepper	\N	\N	0
 812	\N	Bell Peppers	Bell Peppers	\N	f	0	119	100	2025-10-20	0	92	1	92	Bell Pepper	\N	\N	2
 813	\N	Fresh Nectarines	Fresh Nectarines	\N	f	0	142	100	2026-01-13	0	142	1	142	Nectarine	\N	\N	1
@@ -727,7 +727,7 @@
 836	\N	Long Grain Rice	Long Grain Rice	\N	f	4096	28	100	2026-01-02	4	185	4	185	Rice	\N	\N	4
 837	\N	Mung Bean Sprouts	Mung Bean Sprouts	\N	f	0	28	100	2026-03-17	4	194	1	194	Mung Bean Sprout	\N	\N	0
 838	\N	Sugar-Free Milk Chocolate Chips (40%)	Sugar-Free Milk Chocolate Chips (40%)	\N	f	0	28	100	2024-12-10	4	168	536772608	168	Chocolate Chip	\N	\N	8388608
-839	\N	White Chocolate Chips	White Chocolate Chips	\N	f	0	28	100	2024-12-01	4	170	536772608	170	Chocolate Chips	\N	\N	8388608
+839	\N	White Chocolate Chips	White Chocolate Chips	\N	f	0	28	100	2026-06-26	4	170	536772608	170	Chocolate Chips	\N	\N	8388608
 840	\N	Sugar-Free White Chocolate Chips	Sugar-Free White Chocolate Chips	\N	f	0	28	100	2025-01-20	4	170	536772608	170	Chocolate Chips	\N	\N	8388608
 841	\N	Large Mixed-Color Carrots	Large Mixed-Color Carrots	\N	f	0	72	100	2025-08-27	0	128	2	128	Large Mixed-Color Carrot	\N	\N	0
 842	\N	Garbanzo Beans	Garbanzo Beans	aka: Chickpeas.	f	0	28	100	2026-03-12	4	207	4	207	Garbanzo Bean	https://www.eatthismuch.com/calories/mung-beans-3577	\N	14
@@ -1384,7 +1384,7 @@
 1773	\N	Cake Flour	Cake Flour	\N	f	256	137	100	2026-01-25	6	137	4	137	Bread Flour, Unenriched	\N	\N	0
 1774	\N	Dry-Roasted Salted Peanuts	Dry-Roasted Salted Peanuts	\N	f	2048	28	100	2026-02-20	4	224	10	224	Peanut	\N	\N	0
 1775	\N	Dried Ginger	Dried Ginger	\N	f	0	28	100	2025-09-19	4	80	4	80	Ginger	\N	\N	12
-1776	\N	Sriracha	Sriracha	\N	f	0	28	100	2024-12-02	4	240	4	240	Hot Sauce	\N	\N	14
+1776	\N	Sriracha	Sriracha	\N	f	0	28	100	2024-12-02	4	240	536772608	240	Hot Sauce	\N	\N	524288
 1777	\N	Rice Vinegar | Apple Cider Vinegar	Rice Vinegar | Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	f	0	30	100	2025-01-07	9	239	4	239	Apple Cider Vinegar	\N	\N	13
 1778	\N	Unsweetened Creamy Peanut Butter	Unsweetened Creamy Peanut Butter	\N	f	2048	32	100	2025-10-26	4	256	4	256	Peanut Butter	\N	\N	18
 1779	\N	Oregano	Oregano	Use partial ingredients.	f	0	28	100	2026-01-06	4	96	4	48	Oregano	\N	\N	12

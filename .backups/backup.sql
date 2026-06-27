@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict l5rPhbC7ouSu7vHtegCou4HAAChGw82mzfwc31T9cBTWkefKij7ugLLUu7DG2oZ
+\restrict 7OMIGNnVWusdZVZIcmhwuoHYPmTgVpDF60yUaSucYaADfICIrPpH5YeQwgSnjra
 
 -- Dumped from database version 18.4
 -- Dumped by pg_dump version 18.0
@@ -4574,6 +4574,9 @@ COPY public.ingredient_attr ("IngredientId", "FDC_ID", "NDB_Number", "HC_Id", "L
 839	167571	19087	0	2026-06-24
 840	167571	19087	0	2026-06-24
 1294	174277	16123	3403	2026-06-25
+810	174117	14181	0	2026-06-26
+64	174527	6168	0	2026-06-27
+1776	171186	6631	0	2026-06-27
 \.
 
 
@@ -4633,6 +4636,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 45	Folate_B9	Folate (B9)	6750	\N	2026-06-23
 33	Fiber_Insoluble	Insoluble Fiber	1260	\N	2026-05-03
 34	Carotene_Alpha	Alpha Carotene	7440	Not tracking this...	2026-06-24
+58	Cholesterol	Cholesterol	15700	Dietary cholesterol: As low as possible while consuming a nutritionally adequate diet.	2026-06-26
 54	Flavonoids_Total	Flavonoids	999999	\N	2026-05-05
 62	Total_Sugars	Total Sugars	1500	\N	2026-05-06
 8	Chromium_Cr	Chromium (Cr)	999999	\N	2026-05-09
@@ -4641,6 +4645,7 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 48	Boron_B	Boron (B)	6245	\N	2026-05-18
 80	Oligosaccharides	Oligosaccharides	2250	\N	2026-05-19
 44	Tryptophan	Tryptophan	16300	\N	2026-05-20
+78	Fiber_Soluble	Soluble Fiber	1240	\N	2026-06-27
 35	Lysine	Lysine	16800	\N	2026-05-25
 59	Protein	Protein	600	\N	2026-05-26
 2	Lutein_Zeaxanthin	Lutein/Zeaxanthin	7560	10mg of lutein and 2mg of zeaxanthin is optimal for eye health, though we want a baseline for healthy populations.	2026-05-27
@@ -4657,8 +4662,6 @@ COPY public.nutrient ("Id", "Key", "Name", "Order", "Notes", "LastUpdated") FROM
 46	Retinol	Retinol	7410	\N	2026-06-17
 72	Polyphenols_Total	Polyphenols	999999	\N	2026-06-18
 73	Vitamin_E	Vitamin E	7810	\N	2026-06-19
-58	Cholesterol	Cholesterol	15700	Dietary cholesterol: As low as possible while consuming a nutritionally adequate diet.	2026-04-13
-78	Fiber_soluble	Soluble Fiber	1240	\N	2026-04-14
 1	Valine	Valine	17200	Not in table: https://pmc.ncbi.nlm.nih.gov/articles/PMC10334138/#tbl4	2026-04-20
 \.
 
@@ -7769,6 +7772,8 @@ COPY public.recipe_ingredient ("Id", "Measure", "RecipeId", "QuantityDenominator
 8370	8	986	1	1	\N	68	f	\N	7	f	t	1	\N
 8371	8	986	1	1	\N	71	f	\N	8	f	t	1	\N
 7051	7	663	1	2	, shaved	95	t	\N	6	f	t	1	To Serve
+8736	4	1085	1	1	\N	718	f	\N	0	f	t	1	\N
+8737	4	1086	1	1	\N	747	f	\N	0	f	t	1	\N
 6015	6	523	4	1	, quartered	10	t	\N	4	f	t	1	Garnish
 8363	8	834	8	1	\N	969	t	\N	7	f	t	1	\N
 8393	0	991	1	1	, cut into thick rings	222	f	\N	1	f	t	1	\N
@@ -10161,6 +10166,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3278	Blend all the ingredients in a high-speed blender, on high, until smooth.	486	0	128
 3449	In a large skillet over medium heat, heat the oil. To the oil, add the turkey, salt and pepper. Cook for 10 minutes, until turkey is cooked through. Remove the turkey and let it cool.	567	0	4
 3406	Add the garlic, and cook for 1 minute, until fragrant.	554	2	4
+5024	Enjoy!	1085	0	0
 2635	Toast the seeds in a dry non-stick frying pan on a medium heat until lightly golden, tossing regularly, then remove.	263	0	4
 3422	Stove Top: Place the chicken, vinegar, and vegetables in a stockpot. Fill with water to 1-inch below the top of the stockpot. Bring to a boil, reduce the heat to medium-low, and simmer for 8–12 hours.	559	2	0
 3423	Season with salt and pepper to taste.	559	3	0
@@ -10175,6 +10181,7 @@ COPY public.recipe_instruction ("Id", "Name", "RecipeId", "Order", "Equipment") 
 3430	Preheat the oven to 350°F.	562	0	2
 3431	Crack the eggs in a medium bowl, and whisk together the eggs. Season with salt and pepper. Pour into a lightly oiled oven-safe skillet and place on the stove.	562	1	4
 3379	To the shrimp mixture, add the carrots and green onions to the skillet. Cook for 3 minutes, and then stir in the cauliflower rice.	541	1	4
+5025	Enjoy!	1086	0	0
 3432	Heat the tablespoon of avocado oil over medium heat for 1 minute, then add the salmon and broccoli. Cook for about 4 more minutes, or until the edges have whitened and are solid.	562	2	4
 3433	Place in the oven and bake for about 10 minutes, until the eggs are fully cooked.	562	3	2
 3434	Remove from the oven, top with the chopped green onion, and serve.	562	4	0
@@ -12347,5 +12354,5 @@ ALTER TABLE ONLY public.user_token
 -- PostgreSQL database dump complete
 --
 
-\unrestrict l5rPhbC7ouSu7vHtegCou4HAAChGw82mzfwc31T9cBTWkefKij7ugLLUu7DG2oZ
+\unrestrict 7OMIGNnVWusdZVZIcmhwuoHYPmTgVpDF60yUaSucYaADfICIrPpH5YeQwgSnjra
 

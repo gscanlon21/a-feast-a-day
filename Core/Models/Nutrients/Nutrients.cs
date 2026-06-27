@@ -151,7 +151,7 @@ public enum Nutrients
     [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_19_30_Years)]
     [DailyAllowance(12.5, -1, Measure.Grams, Multiplier.Day, CaloriesPerGram = 4, For = Person.Female_31_50_Years)]
     [Display(Name = "Soluble Fiber", Order = 1240)]
-    Fiber_soluble = 7,
+    Fiber_Soluble = 7,
 
     /// <summary>
     /// Insoluble Fiber
