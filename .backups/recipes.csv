@@ -244,7 +244,7 @@
 363	Citrus-Lime Vinaigrette	\N	\N	\N	0	0	5	4	t	citrus-dressing.jpg	9	https://downshiftology.com/recipes/citrus-lime-vinaigrette/#wprm-recipe-container-32469	f	f
 364	Crispy Garlicky Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	5	2	t	peanut-chicken.jpg	0	\N	f	f
 365	Potato & Artichoke Al Forno	From Jamie Oliver's 5 Ingredients	\N	\N	4	80	9	6	t	potato-artichoke-al-forno.jpg	0	\N	f	f
-366	Company Pickle Chunks	Makes 7 pints. - Lolly Wehrli	\N	\N	0	0	0	1	t	\N	0	\N	f	f
+366	Company Pickle Chunks	\N	\N	\N	0	0	0	7	t	\N	13	Lolly Wehrli	t	f
 367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	8	2	2	t	egg-fried-rice.jpg	0	\N	f	f
 368	Rhubarb Compote	\N	\N	\N	0	25	5	1	t	rhubarb-compote.jpg	6	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	f	f
 369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	20	60	9	4	t	cajun-sweet-potatoes.jpg	0	\N	f	f
@@ -335,7 +335,7 @@
 486	Strawberries & Cream	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 487	Rainbow Roasted Vegetables	\N	\N	\N	16	25	15	4	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 521	Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	20	30	15	4	t	roasted-brussel-sprouts-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+522	Roasted Brussels Sprouts Salad	\N	\N	\N	20	30	15	4	t	roasted-brussel-sprouts-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 523	Banana Pancakes	\N	\N	\N	66	5	5	1	t	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 525	Tomato & Avocado Salsa w/ Cucumber	\N	\N	\N	20	0	10	2	t	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -356,7 +356,7 @@
 540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	8	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 541	Shrimp Fried Rice	\N	\N	\N	8	15	10	4	t	chicken-fried-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 542	Sautéed Chicken & Garlic Cauliflower Mash	\N	\N	\N	8	10	5	2	t	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+543	Dairy-Free Pesto	\N	Duplicate of Pesto.	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 546	Sesame Almond Dressing	\N	\N	\N	0	0	5	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
@@ -668,3 +668,6 @@
 1084	Cooked Edamame	\N	\N	\N	0	0	0	1	t	peas-beans-chili-mint.jpg	4	\N	t	f
 1085	Raw Kimchi	\N	\N	\N	16	0	0	1	t	\N	0	\N	f	f
 1086	Raw Sauerkraut	\N	\N	\N	16	0	0	1	t	\N	0	\N	f	f
+1087	Washed Strawberries	\N	\N	\N	0	0	15	1	t	\N	4	\N	t	f
+1120	Sauerkraut	Always clean all equipment (especially the mason jar). Simply pour boiling water over it, then let it dry naturally. Make sure the cabbage is covered with its liquid (brine) to avoid that mold starts growing. If your sauerkraut doesn't release enough liquid to stay submerged, it's perfectly fine to add a 2% brine to top it off. Do not skip the salt as it's very important and also acts as a preservative. I always use sea salt or Himalayan salt. How much salt to use: The amount of salt needed depends on the fermentation temperature. The general guideline is 2% salt by weight of cabbage. For more precise figures (per 1kg cabbage):   At 15–18 °C (59–64 °F) use 1.5% (15g/kg) (takes 3-5 weeks) 18–22 °C (64–72 °F) use 1.8-2.0% (18-20g/kg) (takes 2-3 weeks) 22–25 °C (72–77 °F) use 2.0% (20g/kg) (takes 7-10 days) 25–28 °C (77–82°F) use 2.2–2.5% (22–25g/kg) (takes 3-6 days) > 28 °C (> 82 °F) use 2.5 % (25 g/kg) (takes 2-4 days)   Make two jars at the same time. Ferment the second one longer than the first one and see which one you like more. Once you finish eating the first batch, start the third one and eat the second batch. This way, you always have fresh homemade sauerkraut on hand. Season the fermented sauerkraut with a little smoked paprika which adds a wonderful flavor.	\N	\N	0	0	15	12	t	\N	0	https://elavegan.com/how-to-make-sauerkraut/#recipe	t	f
+1121	Cereal Bar Recipe	\N	\N	\N	32	20	15	12	t	\N	0	https://glutenfreeonashoestring.com/homemade-cereal-bars/	f	f

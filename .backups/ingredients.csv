@@ -28,7 +28,7 @@
 28	\N	Brown Eggs	Brown Eggs	\N	f	34359738368	50	100	2025-06-14	0	200	8	200	Egg	\N	\N	10
 29	\N	Butter	Butter	\N	t	0	14	100	2025-10-07	7	224	8	224	Butter	https://fdc.nal.usda.gov/food-details/789828/nutrients	\N	9
 30	\N	Shredded Cheddar Cheese	Shredded Cheddar Cheese	\N	f	32	28	100	2026-06-14	4	113	7881299347898368	113	Cheddar Cheese	\N	\N	2251799813685248
-31	\N	Whole Milk (Cow), unenriched	Whole Milk (Cow), unenriched	\N	f	320	946	100	2026-03-30	14	244	8	244	Milk	\N	\N	20
+31	\N	Whole Milk (Cow), unenriched	Whole Milk (Cow), unenriched	\N	f	1	946	100	2026-03-30	14	244	7881299347898368	244	Milk	\N	\N	1125899906842624
 32	\N	Sour Cream	Sour Cream	\N	f	4	28	100	2025-01-26	4	240	7881299347898368	240	Sour Cream	https://fdc.nal.usda.gov/food-details/2346387/nutrients	\N	0
 33	\N	Greek Yogurt	Greek Yogurt	Spelled yogourt in cananda.	f	32	28	100	2025-12-07	4	240	8	240	Yogurt	\N	\N	9
 34	\N	Baking Powder	Baking Powder	\N	t	0	28	100	2025-06-18	4	224	4	224	Baking Powder	\N	\N	14
@@ -52,7 +52,7 @@
 53	\N	Earl Gray Tea	Earl Gray Tea	\N	f	0	29.57	100	2025-08-04	0	236.56	0	236.56	Earl Gray Tea	\N	\N	0
 54	\N	Black Beans	Black Beans	\N	f	0	28	100	2026-03-20	4	194	4	194	Black Bean	\N	Prefer canned or dry variations b/c partial ingredients get messy.	6
 55	\N	Pasta Sauce	Pasta Sauce	Redo the fdc_id and nbd_number.	f	512	28	100	2025-03-30	4	257	4	257	Pasta Sauce	\N	\N	14
-56	\N	Creamy Peanut Butter	Creamy Peanut Butter	\N	f	2048	32	100	2025-10-26	4	256	4	256	Creamy Peanut Butter	https://fdc.nal.usda.gov/food-details/2262072/nutrients	\N	14
+56	\N	Creamy Peanut Butter	Creamy Peanut Butter	\N	f	1024	32	100	2025-10-26	4	256	4	256	Creamy Peanut Butter	https://fdc.nal.usda.gov/food-details/2262072/nutrients	\N	14
 57	\N	Chickpeas	Chickpeas	aka: Garbanzo Beans - https://www.eatthismuch.com/calories/chickpeas,3554	f	0	28	100	2025-11-30	4	200	4	200	Chickpea	\N	\N	14
 58	\N	Baked Beans	Baked Beans	\N	f	0	28	100	2025-10-11	4	254	4	254	Baked Bean	\N	\N	6
 59	\N	Ketchup	Ketchup	\N	t	512	28	100	2025-09-20	4	240	4	240	Ketchup	https://fdc.nal.usda.gov/food-details/747693/nutrients	\N	13
@@ -83,7 +83,7 @@
 85	\N	White Wine	White Wine	\N	f	0	29.4	100	2025-10-17	9	235.2	5	235.2	White Wine	\N	\N	16
 86	\N	Red Wine	Red Wine	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Red Wine	\N	\N	16
 87	\N	Crackers	Crackers	\N	f	0	3.3	100	2025-02-18	0	50	6	50	Crackers	\N	\N	0
-88	\N	Unsalted Peanuts	Unsalted Peanuts	\N	f	2048	28	100	2026-02-15	4	146	536772608	146	Peanut	\N	\N	33554432
+88	\N	Unsalted Peanuts	Unsalted Peanuts	\N	f	1024	28	100	2026-02-15	4	146	536772608	146	Peanut	\N	\N	33554432
 89	\N	Pecans	Pecans	\N	f	0	28	100	2026-05-30	4	99	4	99	Pecans	https://fdc.nal.usda.gov/food-details/2346395/nutrients	\N	18
 90	\N	Black Walnuts	Black Walnuts	\N	f	131072	28	100	2026-01-30	4	125	10	125	Walnut	https://fdc.nal.usda.gov/food-details/170186/nutrients	\N	0
 91	\N	Unsalted White Corn Tortilla Chips	Unsalted White Corn Tortilla Chips	\N	f	2	28	100	2025-09-03	4	26	10	26	Unsalted White Corn Tortilla Chips	\N	\N	0
@@ -127,7 +127,7 @@
 130	\N	Molasses	Molasses	\N	f	0	40	100	2026-02-20	9	320	4	320	Molasses	\N	\N	14
 131	\N	Dry Pinto Beans	Dry Pinto Beans	\N	f	0	28	100	2026-02-05	4	193	4	193	Pinto Bean	https://fdc.nal.usda.gov/food-details/747445/nutrients	\N	6
 132	\N	Elbow Macaroni	Elbow Macaroni	\N	f	262176	28	100	2026-06-13	4	105	4	105	Elbow Macaroni	\N	\N	5
-133	\N	Evaporated Milk	Evaporated Milk	\N	f	324	32	100	2026-05-18	9	256	4	256	Evaporated Milk	\N	\N	9
+133	\N	Evaporated Milk	Evaporated Milk	\N	f	0	32	100	2026-05-18	9	256	7881299347898368	256	Evaporated Milk	\N	\N	1125899906842624
 134	\N	Slices of Pepper Jack Cheese	Slices of Pepper Jack Cheese	\N	f	32	21	100	2024-12-14	0	168	10	168	Slices of Pepper Jack Cheese	\N	\N	0
 135	\N	Monterey Jack Cheese	Monterey Jack Cheese	\N	f	32	28	100	2025-01-29	0	224	10	224	Monterey Jack Cheese	\N	\N	0
 136	\N	Whole-Wheat Tortillas	Whole-Wheat Tortillas	\N	f	0	41	100	2025-09-22	0	82	2	82	Tortilla	\N	\N	4
@@ -153,10 +153,10 @@
 157	\N	Fresh Pears	Fresh Pears	https://fdc.nal.usda.gov/food-details/169118/nutrients	f	0	28	100	2026-02-08	4	161	1	140	Pear	\N	\N	0
 158	\N	Sunflower Seeds	Sunflower Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	https://fdc.nal.usda.gov/food-details/2515381/nutrients	\N	0
 159	\N	Watermelon	Watermelon	\N	f	0	4520	100	2025-11-09	0	152	1	152	Watermelon	\N	\N	0
-160	\N	Cow Milk (1%)	Cow Milk (1%)	\N	f	0	240	100	2025-07-10	6	240	10	240	Cow Milk (1%)	\N	\N	0
-161	\N	Almond Milk	Almond Milk	\N	f	1	30	100	2026-03-27	9	240	8	240	Almond Milk	\N	\N	9
-162	\N	Soy Milk	Soy Milk	\N	f	32768	240	100	2025-01-04	6	240	10	240	Soy Milk	\N	\N	0
-163	\N	Cow Milk (Skim)	Cow Milk (Skim)	\N	f	320	240	100	2025-11-23	6	240	10	240	Cow Milk (Skim)	\N	\N	0
+160	\N	Cow Milk (1%)	Cow Milk (1%)	\N	f	1	240	100	2025-07-10	6	240	7881299347898368	240	Cow Milk (1%)	\N	\N	1125899906842624
+161	\N	Almond Milk	Almond Milk	\N	f	0	30	100	2026-03-27	9	240	7881299347898368	240	Almond Milk	\N	\N	1125899906842624
+162	\N	Soy Milk	Soy Milk	\N	f	0	240	100	2025-01-04	6	240	7881299347898368	240	Soy Milk	\N	\N	1125899906842624
+163	\N	Cow Milk (Skim)	Cow Milk (Skim)	\N	f	1	240	100	2025-11-23	6	240	7881299347898368	240	Cow Milk (Skim)	\N	\N	1125899906842624
 164	\N	White Eggs	White Eggs	\N	f	34359738368	50	100	2025-11-25	0	200	8	200	Egg	\N	\N	10
 165	\N	Mini Bagels	Mini Bagels	\N	f	786464	40	100	2025-06-16	0	240	2	240	Mini Bagels	\N	\N	4
 166	\N	Loaves of Pita	Loaves of Pita	\N	f	262176	64	100	2025-05-18	0	64	4	64	Loaves of Pita	\N	\N	0
@@ -171,15 +171,15 @@
 175	\N	Grape Tomatoes	Grape Tomatoes	\N	f	512	28	100	2025-11-28	4	149	1	149	Tomato	\N	\N	2
 176	\N	Avocado Oil	Avocado Oil	\N	f	0	28	100	2025-01-03	9	224	5	224	Avocado Oil	https://fdc.nal.usda.gov/food-details/173573/nutrients	\N	11
 177	\N	Corn Oil	Corn Oil	\N	f	2	13.6	100	2025-06-21	7	240	0	240	Corn Oil	\N	\N	0
-178	\N	Coconut Milk	Coconut Milk	\N	f	0	30	100	2025-11-12	9	240	10	240	Coconut Milk	https://fdc.nal.usda.gov/food-details/170172/nutrients	\N	0
-179	\N	Oat Milk	Oat Milk	\N	f	1024	240	100	2024-12-29	6	240	10	240	Oat Milk	\N	\N	0
-180	\N	Quinoa Milk, Vanilla	Quinoa Milk, Vanilla	\N	f	0	240	100	2025-02-19	6	240	10	240	Quinoa Milk, Vanilla	\N	\N	0
-181	\N	Hemp Milk	Hemp Milk	\N	f	0	240	100	2025-01-08	6	240	10	240	Hemp Milk	\N	\N	0
-182	\N	Macadamia Milk	Macadamia Milk	\N	f	0	244.8	100	2025-06-21	6	240	0	240	Macadamia Milk	\N	\N	0
-183	\N	Cashew Milk	Cashew Milk	\N	f	0	30	100	2026-04-22	9	240	8	240	Cashew Milk	\N	\N	20
-184	\N	Rice Milk	Rice Milk	\N	f	4096	240	100	2026-05-22	6	240	8	240	Rice Milk	\N	\N	9
+178	\N	Coconut Milk	Coconut Milk	\N	f	0	30	100	2025-11-12	9	240	7881299347898368	240	Coconut Milk	https://fdc.nal.usda.gov/food-details/170172/nutrients	\N	1125899906842624
+179	\N	Oat Milk	Oat Milk	\N	f	0	240	100	2024-12-29	6	240	7881299347898368	240	Oat Milk	\N	\N	1125899906842624
+180	\N	Quinoa Milk, Vanilla	Quinoa Milk, Vanilla	\N	f	0	240	100	2025-02-19	6	240	7881299347898368	240	Quinoa Milk, Vanilla	\N	\N	1125899906842624
+181	\N	Hemp Milk	Hemp Milk	\N	f	0	240	100	2025-01-08	6	240	7881299347898368	240	Hemp Milk	\N	\N	1125899906842624
+182	\N	Macadamia Milk	Macadamia Milk	\N	f	0	244.8	100	2025-06-21	6	240	7881299347898368	240	Macadamia Milk	\N	\N	1125899906842624
+183	\N	Cashew Milk	Cashew Milk	\N	f	0	30	100	2026-04-22	9	240	7881299347898368	240	Cashew Milk	\N	\N	1125899906842624
+184	\N	Rice Milk	Rice Milk	\N	f	0	240	100	2026-05-22	6	240	7881299347898368	240	Rice Milk	\N	\N	1125899906842624
 185	\N	Steel-Cut Oats	Steel-Cut Oats	aka. pinhead oats.	f	1024	28	100	2026-02-15	4	156	4	156	Oat	\N	\N	4
-186	\N	Milk	Milk	\N	f	320	976	100	2025-09-16	14	244	10	244	Milk	\N	\N	0
+186	\N	Milk	Milk	\N	f	0	976	100	2025-09-16	14	244	7881299347898368	244	Milk	\N	\N	1125899906842624
 187	\N	Eggs	Eggs	\N	f	34359738368	50	100	2026-04-25	0	200	8	200	Egg	\N	\N	10
 188	\N	Rice	Rice	\N	f	4096	28	100	2025-12-27	4	185	4	185	Rice	\N	\N	4
 189	\N	Salted Butter	Salted Butter	\N	t	0	14	100	2025-09-02	7	224	10	224	Butter	https://fdc.nal.usda.gov/food-details/790508/nutrients	\N	0
@@ -193,7 +193,7 @@
 197	\N	Slices of White Bread, GF	Slices of White Bread, GF	\N	f	0	24	100	2026-01-10	0	48	2	48	White Bread	\N	\N	4
 198	\N	Bologna	Bologna	\N	f	0	28	100	2025-05-03	4	224	10	224	Bologna	\N	\N	0
 200	\N	Loaves of Whole-Wheat Pita	Loaves of Whole-Wheat Pita	\N	f	262176	64	100	2025-05-17	0	64	4	64	Loaves of Whole-Wheat Pita	\N	\N	0
-201	\N	Creamy Peanut Butter (Reduced Fat)	Creamy Peanut Butter (Reduced Fat)	\N	f	2048	15	100	2025-08-21	7	240	128	240	Creamy Peanut Butter (Reduced Fat)	\N	\N	0
+201	\N	Creamy Peanut Butter (Reduced Fat)	Creamy Peanut Butter (Reduced Fat)	\N	f	1024	15	100	2025-08-21	7	240	128	240	Creamy Peanut Butter (Reduced Fat)	\N	\N	0
 202	\N	Mini Bagels, Whole Grain	Mini Bagels, Whole Grain	\N	f	262176	40	100	2025-06-15	0	240	2	240	Mini Bagels, Whole Grain	\N	\N	4
 203	\N	Popcorn	Popcorn	\N	f	2	28	100	2026-01-25	4	224	10	224	Popcorn	\N	\N	0
 204	\N	Hearts of Palm Linguine	Hearts of Palm Linguine	\N	f	0	28	100	2024-12-20	4	75	4	75	Hearts of Palm Linguine	\N	\N	5
@@ -220,7 +220,7 @@
 227	\N	Potato Starch	Potato Starch	\N	f	0	13	100	2025-07-10	7	130	4	130	Potato Starch	\N	\N	14
 228	\N	Brown Rice Flour	Brown Rice Flour	\N	f	4096	28	100	2026-05-31	4	158	4	158	Rice Flour	\N	\N	15
 229	\N	Xanthan Gum	Xanthan Gum	\N	f	0	9	100	2025-08-21	7	144	10	144	Xanthan Gum	\N	\N	0
-230	\N	Dry Milk	Dry Milk	\N	f	0	28	100	2025-08-29	4	120	4	120	Dry Milk	\N	\N	14
+230	\N	Dry Milk	Dry Milk	\N	f	0	28	100	2025-08-29	4	120	7881299347898368	120	Dry Milk	\N	\N	1125899906842624
 231	\N	Garden Veggie Good Thins, GF	Garden Veggie Good Thins, GF	Box	f	4096	2	100	2025-09-20	0	224	5	224	Garden Veggie Good Thins, GF	\N	\N	16
 232	\N	Sabra Classic Hummus	Sabra Classic Hummus	\N	f	0	28	100	2026-03-31	4	240	3	240	Hummu	\N	\N	6
 233	\N	Sunflower Oil	Sunflower Oil	\N	f	65536	28	100	2026-01-01	9	224	5	224	Sunflower Oil	\N	\N	11
@@ -284,7 +284,7 @@
 293	\N	Low Sodium Soy Sauce	Low Sodium Soy Sauce	\N	f	294944	32	100	2026-01-08	9	256	4	256	Soy Sauce	\N	\N	13
 294	\N	Low Sodium Tamari Sauce	Low Sodium Tamari Sauce	Tamari sauce generally does not contain wheat.	f	32768	36	100	2026-04-16	9	288	4	288	Tamari Sauce	https://www.eatthismuch.com/calories/soy-sauce-3619	\N	14
 295	\N	Tamari Sauce	Tamari Sauce	Tamari sauce generally does not contain wheat.	f	32768	36	100	2026-05-20	9	288	4	288	Tamari Sauce	https://fdc.nal.usda.gov/food-details/174278/nutrients	\N	14
-296	\N	Pumpkin Seeds	Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	6	149.33	Pumpkin Seeds	\N	\N	19
+296	\N	Pumpkin Seeds	Pumpkin Seeds	\N	f	0	28	100	2026-06-30	4	149.33	536772608	149.33	Pumpkin Seeds	\N	\N	67108864
 297	\N	Tamari | Soy Sauce	Tamari | Soy Sauce	\N	f	32768	36	100	2026-04-17	9	288	3	288	Tamari | Soy Sauce	\N	\N	7
 298	\N	Coconut Sugar	Coconut Sugar	aka. Coconut Palm Sugar.	f	0	28	100	2025-10-18	4	144	5	144	Coconut Sugar	https://www.eatthismuch.com/calories/coconut-sugar-organic-1785641	\N	16
 299	\N	White Pepper	White Pepper	\N	t	0	28	100	2025-01-13	4	112	4	112	White Pepper	\N	\N	12
@@ -424,7 +424,7 @@
 472	\N	Slices of Brioche Bread	Slices of Brioche Bread	\N	f	256	40	100	2026-04-16	0	80	2	80	Slices of Brioche Bread	\N	\N	0
 473	\N	Fresh Dill	Fresh Dill	\N	f	0	1	100	2026-01-27	3	9	3	9	Fresh Dill	\N	\N	0
 475	\N	White Wine Vinegar | Apple Cider Vinegar	White Wine Vinegar | Apple Cider Vinegar	\N	f	0	240	100	2025-09-30	6	240	4	240	White Wine Vinegar | Apple Cider Vinegar	\N	\N	13
-477	\N	Skim Milk	Skim Milk	\N	f	320	240	100	2024-12-03	6	240	10	240	Skim Milk	\N	\N	0
+477	\N	Skim Milk	Skim Milk	\N	f	0	240	100	2026-06-30	6	240	7881299347898368	240	Skim Milk	\N	\N	1125899906842624
 478	\N	Green Grapes	Green Grapes	\N	f	0	28	100	2025-09-29	4	151	1	151	Grape	\N	\N	0
 479	\N	Red Grapes	Red Grapes	\N	f	0	28	100	2025-09-28	4	151	1	151	Grape	\N	\N	0
 480	\N	Seedless Green Grapes	Seedless Green Grapes	\N	f	0	28	100	2025-09-27	4	151	1	151	Grape	\N	\N	0
@@ -446,7 +446,7 @@
 496	\N	Light Soy Sauce	Light Soy Sauce	\N	f	2304	32	100	2026-06-25	9	256	536772608	256	Soy Sauce	\N	\N	524288
 497	\N	Fresh Podded Snow Peas	Fresh Podded Snow Peas	\N	f	0	28	100	2026-06-10	4	100	1	100	Snow Pea	\N	\N	2
 498	\N	Canned Baby Corn	Canned Baby Corn	\N	t	2	28	100	2025-08-01	4	145	4	145	Canned Baby Corn	\N	\N	6
-499	\N	Peanut Oil	Peanut Oil	\N	f	2048	28	100	2026-05-05	9	224	5	224	Peanut Oil	https://fdc.nal.usda.gov/food-details/1750348/nutrients	\N	11
+499	\N	Peanut Oil	Peanut Oil	\N	f	1024	28	100	2026-05-05	9	224	5	224	Peanut Oil	https://fdc.nal.usda.gov/food-details/1750348/nutrients	\N	11
 500	\N	Regular Yogurt	Regular Yogurt	aka Natural Yogurt; Plain Yogurt. Spelled yogourt in cananda.	f	32	28	100	2026-03-09	4	245	8	245	Yogurt	https://www.eatthismuch.com/calories/plain-yogurt-96	\N	9
 501	\N	Ice Cubes	Ice Cubes	\N	t	0	8	100	2025-11-19	0	224	10	224	Ice Cubes	\N	\N	0
 502	\N	Light Corn Syrup	Light Corn Syrup	aka: Golden Syrup. https://www.eatthismuch.com/food/nutrition/corn-oil,300/	f	2	13.6	100	2025-06-20	7	240	4	240	Light Corn Syrup	\N	\N	14
@@ -547,10 +547,10 @@
 625	\N	Fresh Blackberries	Fresh Blackberries	\N	f	0	28	100	2025-01-14	4	144	1	144	Fresh Blackberry	https://fdc.nal.usda.gov/food-details/2727581/nutrients	\N	1
 626	\N	Fresh Raspberries	Fresh Raspberries	\N	f	0	28	100	2024-12-18	4	123	1	123	Raspberry	https://fdc.nal.usda.gov/food-details/2346410/nutrients	\N	0
 627	\N	Medjool Dates	Medjool Dates	\N	f	0	24	100	2025-05-23	0	192	1	192	Medjool Date	https://fdc.nal.usda.gov/food-details/168191/nutrients	\N	0
-628	\N	Plain Coconut Milk	Plain Coconut Milk	\N	f	0	30	100	2025-11-12	9	240	10	240	Plain Coconut Milk	\N	\N	0
-629	\N	Vanilla Coconut Milk	Vanilla Coconut Milk	\N	f	0	30	100	2025-11-11	9	240	10	240	Vanilla Coconut Milk	\N	\N	0
-630	\N	Vanilla Almond Milk	Vanilla Almond Milk	\N	f	0	240	100	2024-12-30	6	240	10	240	Vanilla Almond Milk	\N	\N	0
-631	\N	Plain Almond Milk	Plain Almond Milk	\N	f	0	30	100	2026-04-21	9	240	8	240	Plain Almond Milk	\N	\N	20
+628	\N	Plain Coconut Milk	Plain Coconut Milk	\N	f	0	30	100	2025-11-12	9	240	7881299347898368	240	Plain Coconut Milk	\N	\N	1125899906842624
+629	\N	Vanilla Coconut Milk	Vanilla Coconut Milk	\N	f	0	30	100	2025-11-11	9	240	7881299347898368	240	Vanilla Coconut Milk	\N	\N	1125899906842624
+630	\N	Vanilla Almond Milk	Vanilla Almond Milk	\N	f	0	240	100	2024-12-30	6	240	7881299347898368	240	Vanilla Almond Milk	\N	\N	1125899906842624
+631	\N	Plain Almond Milk	Plain Almond Milk	\N	f	0	30	100	2026-04-21	9	240	7881299347898368	240	Plain Almond Milk	\N	\N	1125899906842624
 632	\N	Pink Lady Apples	Pink Lady Apples	\N	f	0	182	100	2025-04-26	0	182	1	182	Apple	\N	\N	0
 633	\N	Cosmic Crisp Apples	Cosmic Crisp Apples	\N	f	0	182	100	2025-03-26	0	182	1	182	Apple	\N	\N	0
 634	\N	Honeycrisp Apples	Honeycrisp Apples	\N	f	0	182	100	2025-04-06	0	182	1	182	Apple	\N	\N	0
@@ -562,7 +562,7 @@
 640	\N	Prunes	Prunes	Dried Plums. 	f	0	28	100	2025-05-11	4	132	1	132	Prune	https://fdc.nal.usda.gov/food-details/168162/nutrients	\N	0
 641	\N	Graham Crackers	Graham Crackers	\N	f	0	7	100	2025-02-17	0	50	5	50	Graham Crackers	\N	\N	16
 642	\N	Gluten-Free Graham Crackers	Gluten-Free Graham Crackers	\N	f	0	7	100	2025-02-14	0	84	5	84	Gluten-Free Graham Crackers	\N	\N	16
-643	\N	Ground Venison	Ground Venison	\N	f	0	28	100	2024-12-03	4	224	10	224	Ground Venison	\N	\N	0
+643	\N	Ground Venison	Ground Venison	\N	f	0	28	100	2026-06-29	4	224	103079215104	224	Venison	\N	\N	34359738368
 644	\N	Ground Pork	Ground Pork	\N	f	491520	28	100	2024-12-06	4	224	10	224	Ground Pork	\N	\N	0
 645	\N	Chili Pepper Sauce	Chili Pepper Sauce	\N	f	0	28	100	2026-02-23	4	245	4	245	Chili Pepper Sauce	\N	\N	14
 646	\N	Marinara Sauce	Marinara Sauce	\N	f	512	257	100	2025-04-13	6	257	4	257	Marinara Sauce	\N	\N	14
@@ -583,8 +583,8 @@
 661	\N	Fennel Bulbs	Fennel Bulbs	\N	f	0	234	100	2025-03-14	0	234	2	234	Fennel Bulb	\N	\N	0
 662	\N	Single Espresso	Single Espresso	\N	t	0	30	100	2026-03-25	9	240	7	240	Single Espresso	\N	\N	20
 663	\N	Whole-Wheat Flour	Whole-Wheat Flour	\N	t	262176	28	100	2025-06-24	4	125	4	125	Whole-Wheat Flour	\N	\N	14
-664	\N	Whole Milk (Cow), enriched	Whole Milk (Cow), enriched	\N	f	320	946	100	2026-03-29	14	244	8	244	Milk	\N	\N	9
-665	\N	Whole Milk (Cow)	Whole Milk (Cow)	\N	f	320	946	100	2026-03-29	14	244	8	244	Milk	\N	\N	20
+664	\N	Whole Milk (Cow), enriched	Whole Milk (Cow), enriched	\N	f	1	946	100	2026-03-29	14	244	7881299347898368	244	Milk	\N	\N	1125899906842624
+665	\N	Whole Milk (Cow)	Whole Milk (Cow)	\N	f	1	946	100	2026-03-29	14	244	7881299347898368	244	Milk	\N	\N	1125899906842624
 666	\N	Lemons, without Peel	Lemons, without Peel	\N	f	0	108	100	2026-04-03	0	216	1	216	Lemon	\N	\N	0
 667	\N	Fat-Free Refried Beans	Fat-Free Refried Beans	\N	f	0	28	100	2026-04-07	4	444	4	444	Refried Bean	\N	\N	6
 668	\N	Refried Beans	Refried Beans	\N	f	0	28	100	2026-04-06	4	238	4	238	Refried Bean	\N	\N	6
@@ -624,7 +624,7 @@
 703	\N	Cabbage Leaves	Cabbage Leaves	\N	f	0	33	100	2025-01-20	0	99	2	99	Cabbage	\N	\N	0
 704	\N	Savoy Cabbage Heads	Savoy Cabbage Heads	\N	f	0	908	100	2024-12-19	0	70	2	70	Cabbage	\N	\N	0
 705	\N	Napa Cabbage Heads	Napa Cabbage Heads	\N	f	0	872	100	2025-01-13	0	109	2	109	Cabbage	\N	\N	0
-706	\N	Napa Cabbage Leaves	Napa Cabbage Leaves	\N	f	0	28	100	2024-12-04	0	109	2	109	Cabbage	\N	\N	0
+706	\N	Napa Cabbage Leaves	Napa Cabbage Leaves	\N	f	0	28	100	2026-07-02	0	109	7	109	Cabbage	\N	\N	2
 707	\N	Savoy Cabbage Leaves	Savoy Cabbage Leaves	\N	f	0	28	100	2026-06-11	0	70	1	70	Cabbage	\N	\N	2
 708	\N	Ghee	Ghee	Type of clarified butter.	f	4	28	100	2025-10-07	4	224	10	224	Ghee	https://fdc.nal.usda.gov/food-details/171314/nutrients	\N	0
 709	\N	Chives | Green Onions	Chives | Green Onions	\N	f	0	28	100	2025-06-23	4	48	3	48	Chives | Green Onions	\N	\N	0
@@ -643,7 +643,7 @@
 723	\N	Olive Oil | Ghee	Olive Oil | Ghee	\N	f	0	28	100	2025-10-06	9	224	5	224	Oil	\N	\N	11
 724	\N	Organic Chicken Livers	Organic Chicken Livers	\N	f	491520	56	100	2025-02-03	0	224	10	224	Organic Chicken Livers	\N	\N	0
 725	\N	Leaves of Iceberg Lettuce	Leaves of Iceberg Lettuce	\N	f	0	15	100	2026-04-23	0	57	1	57	Lettuce	\N	\N	2
-726	\N	Salted Peanuts	Salted Peanuts	\N	f	2048	28	100	2026-02-19	4	146	10	146	Peanut	\N	\N	0
+726	\N	Salted Peanuts	Salted Peanuts	\N	f	1024	28	100	2026-02-19	4	146	10	146	Peanut	\N	\N	0
 727	\N	White Vinegar | Lemon Juice	White Vinegar | Lemon Juice	\N	f	0	29.875	100	2025-05-10	9	239	4	239	White Vinegar | Lemon Juice	\N	\N	13
 728	\N	Broccolini Heads	Broccolini Heads	Includes the stalk.	f	0	608	100	2026-05-02	0	91	1	91	Broccolini	https://www.eatthismuch.com/calories/broccoli-1885	\N	2
 729	\N	Fresh Podded Green Peas	Fresh Podded Green Peas	aka. Fresh Pea Pods. In pods.	f	0	28	100	2026-04-29	4	240	1	240	Green Pea	\N	\N	2
@@ -746,8 +746,8 @@
 856	\N	Fresh Spinach | Fresh Kale	Fresh Spinach | Fresh Kale	\N	f	0	28	100	2024-12-28	4	30	2	30	Fresh Spinach | Fresh Kale	\N	\N	0
 857	\N	Frozen Raspberries	Frozen Raspberries	\N	f	0	123	100	2024-12-21	6	123	10	123	Frozen Raspberries	\N	\N	0
 858	\N	Frozen Strawberries | Frozen Raspberries	Frozen Strawberries | Frozen Raspberries	\N	f	0	28	100	2024-12-31	4	149	10	149	Frozen Strawberries | Frozen Raspberries	\N	\N	0
-859	\N	Dairy-Free Milk	Dairy-Free Milk	\N	f	0	30	100	2026-03-24	9	240	8	240	Milk	\N	\N	9
-860	\N	Water | Dairy-Free Milk	Water | Dairy-Free Milk	\N	f	0	29.625	100	2024-12-26	9	237	10	237	Water | Dairy-Free Milk	\N	\N	0
+859	\N	Dairy-Free Milk	Dairy-Free Milk	\N	f	0	30	100	2026-03-24	9	240	7881299347898368	240	Milk	\N	\N	1125899906842624
+860	\N	Water | Dairy-Free Milk	Water | Dairy-Free Milk	\N	f	0	29.625	100	2024-12-26	9	237	7881299347898368	237	Water | Dairy-Free Milk	\N	\N	1125899906842624
 861	\N	Fresh Mixed-Color Zucchini	Fresh Mixed-Color Zucchini	\N	f	0	196	100	2025-03-06	0	196	2	196	Zucchini	\N	\N	0
 862	\N	Silken Tofu	Silken Tofu	\N	f	32768	28	100	2026-04-25	4	252	4	252	Silken Tofu	\N	\N	14
 863	\N	Tofu	Tofu	\N	f	32768	28	100	2025-11-26	4	252	4	252	Tofu	\N	\N	14
@@ -766,8 +766,8 @@
 905	\N	Fresh Okra | Frozen Okra	Fresh Okra | Frozen Okra	\N	f	0	14	100	2025-11-07	0	100	2	100	Fresh Okra | Frozen Okra	\N	\N	0
 906	\N	Frozen Cauliflower Rice	Frozen Cauliflower Rice	aka. Riced Cauliflower.	f	0	28	100	2025-09-12	4	132	10	132	Cauliflower	https://www.eatthismuch.com/calories/cauliflower-1923	\N	0
 907	\N	Unsweetened Coconut Flakes	Unsweetened Coconut Flakes	aka Shredded Coconut. https://www.eatthismuch.com/calories/coconut-meat-2653	f	0	28	100	2025-10-19	4	80	4	80	Unsweetened Coconut Flakes	\N	\N	13
-908	\N	Raw Mixed Nuts | Raw Mixed Seeds	Raw Mixed Nuts | Raw Mixed Seeds	\N	f	206849	28	100	2025-12-24	4	224	10	224	Raw Mixed Nuts | Raw Mixed Seeds	\N	\N	0
-909	\N	Raw Mixed Nuts	Raw Mixed Nuts	\N	f	131072	28	100	2025-12-21	4	137	10	137	Raw Mixed Nuts	\N	\N	0
+908	\N	Raw Mixed Nuts | Raw Mixed Seeds	Raw Mixed Nuts | Raw Mixed Seeds	\N	f	3146752	28	100	2025-12-24	4	224	10	224	Raw Mixed Nuts | Raw Mixed Seeds	\N	\N	0
+909	\N	Raw Mixed Nuts	Raw Mixed Nuts	\N	f	3146752	28	100	2025-12-21	4	137	10	137	Raw Mixed Nuts	\N	\N	0
 910	\N	Bay Leaves	Bay Leaves	\N	f	0	28	100	2025-03-09	4	32	3	32	Bay Leave	\N	\N	0
 911	\N	Curry Powder | Chili Powder	Curry Powder | Chili Powder	\N	f	0	28	100	2024-12-26	4	96	4	96	Curry Powder | Chili Powder	\N	\N	12
 912	\N	Macadamia Nuts	Macadamia Nuts	\N	f	0	28	100	2024-12-28	4	134	10	134	Macadamia Nuts	\N	\N	0
@@ -792,7 +792,7 @@
 963	\N	Fresh Mixed-Color Endives	Fresh Mixed-Color Endives	\N	f	0	45	100	2026-06-20	0	90	7	90	Endive	\N	\N	2
 964	\N	Coconut Oil	Coconut Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	\N	\N	11
 965	\N	Plain Coconut Yogurt	Plain Coconut Yogurt	\N	f	0	28	100	2025-11-16	4	240	8	240	Yogurt	\N	\N	9
-966	\N	Plain Coconut Milk | Plain Coconut Yogurt	Plain Coconut Milk | Plain Coconut Yogurt	\N	f	0	240	100	2025-11-10	6	240	8	240	Milk | Yogurt	\N	\N	9
+966	\N	Plain Coconut Milk | Plain Coconut Yogurt	Plain Coconut Milk | Plain Coconut Yogurt	\N	f	0	240	100	2025-11-10	6	240	7881299347898368	240	Milk | Yogurt	\N	\N	1125899906842624
 967	\N	Gluten-Free Egg Noodles	Gluten-Free Egg Noodles	\N	f	0	28	100	2025-08-08	4	38	4	38	Gluten-Free Egg Noodles	\N	\N	5
 968	\N	Apple Cider Vinegar | Lemon Juice	Apple Cider Vinegar | Lemon Juice	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	f	0	30	100	2025-01-07	9	239	4	239	Apple Cider Vinegar | Lemon Juice	\N	\N	13
 969	\N	Salt & Pepper	Salt & Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2026-05-19	4	96	4	96	Salt & Pepper	\N	\N	12
@@ -816,7 +816,7 @@
 987	\N	Sugar	Sugar	\N	t	0	28	100	2024-12-14	4	200	4	200	Sugar	\N	\N	14
 988	\N	Ground Turkey	Ground Turkey	\N	f	491520	28	100	2025-01-22	4	224	9	224	Ground Turkey	\N	\N	7
 989	\N	Steak Sauce	Steak Sauce	\N	f	0	16	100	2025-07-09	7	100	4	100	Steak Sauce	\N	\N	13
-990	\N	Pumpkin Purée	Pumpkin Purée	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Purée	\N	\N	0
+990	\N	Pumpkin Purée	Pumpkin Purée	\N	f	0	28	100	2026-07-01	4	149.33	536772608	149.33	Pumpkin Purée	\N	\N	0
 991	\N	Coconut Aminos	Coconut Aminos	\N	f	0	30	100	2025-11-10	9	240	4	240	Coconut Aminos	\N	\N	14
 992	\N	Mascarpone Cheese	Mascarpone Cheese	\N	f	32	28	100	2025-07-06	4	224	10	224	Mascarpone Cheese	\N	\N	0
 993	\N	Hot Water	Hot Water	\N	t	0	30	100	2025-06-13	9	240	0	240	Hot Water	\N	\N	0
@@ -830,7 +830,7 @@
 1001	\N	Fresh Cavolo Nero	Fresh Cavolo Nero	aka Tuscan Kale; Black Cabbage.	f	0	28	100	2025-12-13	4	67	1	67	Kale	https://www.eatthismuch.com/calories/kale,1995	\N	2
 1002	\N	Ricotta Cheese	Ricotta Cheese	\N	f	32	28	100	2025-07-04	4	224	10	224	Ricotta Cheese	\N	\N	0
 1003	\N	Bone-In Pork Chops	Bone-In Pork Chops	\N	f	491520	178	100	2025-07-13	0	178	9	178	Bone-In Pork Chops	\N	\N	7
-1004	\N	Coconut Milk | Coconut Yogurt	Coconut Milk | Coconut Yogurt	\N	f	0	240	100	2025-11-13	6	240	8	240	Milk | Yogurt	\N	\N	9
+1004	\N	Coconut Milk | Coconut Yogurt	Coconut Milk | Coconut Yogurt	\N	f	0	240	100	2025-11-13	6	240	7881299347898368	240	Milk | Yogurt	\N	\N	1125899906842624
 1006	\N	Coconut Yogurt	Coconut Yogurt	\N	f	0	28	100	2025-11-13	4	240	8	240	Yogurt	\N	\N	9
 1007	\N	Coconut Cream | Coconut Yogurt	Coconut Cream | Coconut Yogurt	aka Coconut Spread. https://www.eatthismuch.com/calories/coconut-cream,2658	f	0	30	100	2025-12-11	4	240	8	240	Cream | Yogurt	\N	\N	9
 1008	\N	Fresh Mixed-Berries	Fresh Mixed-Berries	\N	f	0	28	100	2024-12-22	4	140	1	140	Fresh Mixed-Berries	\N	\N	0
@@ -839,7 +839,7 @@
 1043	\N	Green Apples	Green Apples	\N	f	0	182	100	2025-03-29	0	182	1	182	Apple	\N	\N	0
 1044	\N	Maca Powder	Maca Powder	\N	f	0	240	100	2025-06-19	6	240	4	240	Maca Powder	\N	\N	17
 1045	\N	Frozen Pizza	Frozen Pizza	\N	f	0	741.333333	100	2026-03-10	0	139	11	139	Frozen Pizza	\N	\N	0
-1046	\N	Organic Creamy Peanut Butter	Organic Creamy Peanut Butter	\N	f	2048	32	100	2025-10-27	4	256	128	256	Organic Creamy Peanut Butter	\N	\N	0
+1046	\N	Organic Creamy Peanut Butter	Organic Creamy Peanut Butter	\N	f	1024	32	100	2025-10-27	4	256	128	256	Organic Creamy Peanut Butter	\N	\N	0
 1047	\N	Package Oatmeal	Package Oatmeal	\N	f	0	40	100	2025-08-16	0	120	4	120	Oatmeal	\N	\N	14
 1048	\N	Purely Elizabeth Banana Nut Oatmeal	Purely Elizabeth Banana Nut Oatmeal	\N	f	0	40	100	2025-08-15	0	120	4	120	Purely Elizabeth Banana Nut Oatmeal	\N	\N	14
 1049	\N	Purely Elizabeth Dark Chocolate Chunk Oatmeal	Purely Elizabeth Dark Chocolate Chunk Oatmeal	\N	f	1024	40	100	2025-08-13	0	120	536772608	120	Purely Elizabeth Dark Chocolate Chunk Oatmeal	\N	\N	8388608
@@ -848,8 +848,8 @@
 1052	\N	Purely Elizabeth Original Oatmeal	Purely Elizabeth Original Oatmeal	\N	f	0	40	100	2025-08-16	0	120	4	120	Purely Elizabeth Original Oatmeal	\N	\N	14
 1053	\N	Avocado Oil | Coconut Oil	Avocado Oil | Coconut Oil	\N	f	0	28	100	2024-12-17	9	224	5	224	Avocado Oil | Coconut Oil	\N	\N	11
 1054	\N	Baby Potatoes	Baby Potatoes	\N	f	0	170	100	2025-06-01	0	170	2	170	Potato	\N	\N	0
-1055	\N	Jif Natural Creamy Peanut Butter	Jif Natural Creamy Peanut Butter	\N	f	2048	32	100	2025-10-24	4	256	128	256	Jif Natural Creamy Peanut Butter	\N	\N	0
-1056	\N	Schnucks Creamy Peanut Butter	Schnucks Creamy Peanut Butter	\N	f	2048	32	100	2025-10-24	4	256	128	256	Schnucks Creamy Peanut Butter	\N	\N	0
+1055	\N	Jif Natural Creamy Peanut Butter	Jif Natural Creamy Peanut Butter	\N	f	1024	32	100	2025-10-24	4	256	128	256	Jif Natural Creamy Peanut Butter	\N	\N	0
+1056	\N	Schnucks Creamy Peanut Butter	Schnucks Creamy Peanut Butter	\N	f	1024	32	100	2025-10-24	4	256	128	256	Schnucks Creamy Peanut Butter	\N	\N	0
 1057	\N	Loaves of White Pita (Unenriched)	Loaves of White Pita (Unenriched)	\N	f	262176	64	100	2025-05-17	0	64	4	64	Loaves of White Pita (Unenriched)	\N	\N	0
 1058	\N	Loaves of White Pita (Enriched)	Loaves of White Pita (Enriched)	\N	f	262176	64	100	2025-05-17	0	64	4	64	Loaves of White Pita (Enriched)	\N	\N	0
 1059	\N	Loaves of Flatbread, GF	Loaves of Flatbread, GF	\N	f	0	64	100	2025-05-18	0	64	4	64	Loaves of Flatbread, GF	\N	\N	0
@@ -864,8 +864,8 @@
 1068	\N	Boneless Skinless Turkey Breasts	Boneless Skinless Turkey Breasts	\N	f	491520	26	100	2025-03-27	0	208	10	208	Boneless Skinless Turkey Breasts	\N	\N	0
 1069	\N	Walnuts	Walnuts	Use partial ingredients.	f	131072	28	100	2026-01-29	4	120	10	100	Walnut	https://fdc.nal.usda.gov/food-details/2346394/nutrients	\N	0
 1070	\N	English Walnuts	English Walnuts	\N	f	131072	28	100	2026-01-30	4	120	10	100	Walnut	\N	\N	0
-1071	\N	Dried Tarragon	Dried Tarragon	\N	f	0	28	100	2024-12-02	4	32	4	32	Dried Tarragon	\N	\N	12
-1072	\N	Tarragon	Tarragon	\N	f	0	28	100	2024-12-02	4	32	4	32	Tarragon	\N	\N	12
+1071	\N	Dried Tarragon	Dried Tarragon	\N	f	0	28	100	2026-06-29	4	32	536772608	32	Tarragon	\N	\N	2097152
+1072	\N	Tarragon	Tarragon	\N	f	0	28	100	2026-06-28	4	32	7	32	Tarragon	\N	\N	4
 1073	\N	Leaves of Romaine Lettuce | Leaves of Butter Lettuce	Leaves of Romaine Lettuce | Leaves of Butter Lettuce	Use partial ingredients.	f	0	23.5	100	2026-02-28	0	47	2	47	Lettuce	\N	\N	0
 1074	\N	Leaves of Butter Lettuce	Leaves of Butter Lettuce	aka. Leaves of Butterhead Lettuce. https://www.eatthismuch.com/calories/lettuce-2012	f	0	10	100	2025-12-29	0	55	2	55	Lettuce	\N	\N	0
 1075	\N	Dried Basil	Dried Basil	\N	f	0	28	100	2025-01-10	4	32	4	32	Basil	\N	\N	12
@@ -920,7 +920,7 @@
 1125	\N	Garlic Bulbs	Garlic Bulbs	\N	f	0	36	100	2025-11-21	0	136	3	136	Garlic Bulbs	\N	\N	0
 1126	\N	Purple Cabbage Heads	Purple Cabbage Heads	aka: Red Cabbage Heads.	f	0	908	100	2026-05-10	0	89	1	89	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	2
 1127	\N	Roasted Cashew Nuts	Roasted Cashew Nuts	\N	f	0	137	100	2025-03-10	6	137	10	137	Roasted Cashew Nuts	\N	\N	0
-1128	\N	Dry-Roasted Peanuts	Dry-Roasted Peanuts	\N	f	2048	28	100	2026-02-17	4	146	10	146	Peanut	\N	\N	0
+1128	\N	Dry-Roasted Peanuts	Dry-Roasted Peanuts	\N	f	1024	28	100	2026-02-17	4	146	10	146	Peanut	\N	\N	0
 1129	\N	Almond Butter	Almond Butter	Probably found near the peanut butters.	f	1	28	100	2026-03-26	4	250	4	250	Almond Butter	\N	\N	13
 1130	\N	Ribeye Steaks	Ribeye Steaks	\N	f	491520	376	100	2026-02-27	0	376	9	376	Ribeye Steak	\N	\N	7
 1131	\N	Gorgonzola Cheese	Gorgonzola Cheese	\N	f	32	28	100	2025-07-07	4	224	10	224	Gorgonzola Cheese	\N	\N	0
@@ -990,12 +990,12 @@
 1254	\N	Pineapple | Yellow Bell Peppers	Pineapple | Yellow Bell Peppers	\N	f	0	28	100	2026-06-02	4	165	1	165	Pineapple | Bell Peppers	\N	\N	0
 1255	\N	Green Cabbage	Green Cabbage	aka: Red Cabbage Heads.	f	0	908	100	2026-05-09	0	89	1	89	Cabbage	https://www.eatthismuch.com/calories/cabbage-1902	\N	2
 1256	\N	Garam Masala	Garam Masala	Garam masala is a common Indian spice blend made of cinnamon, clove, star anise, cardamon, and a few other ingredients. - https://www.eatthismuch.com/calories/cayenne-pepper,206	f	0	10	100	2025-12-21	4	80	4	80	Garam Masala	\N	\N	12
-1257	\N	Raw Unsalted Mixed Nuts	Raw Unsalted Mixed Nuts	\N	f	133121	28	100	2025-12-23	4	137	10	137	Raw Unsalted Mixed Nuts	\N	\N	0
+1257	\N	Raw Unsalted Mixed Nuts	Raw Unsalted Mixed Nuts	\N	f	3146752	28	100	2025-12-23	4	137	536772608	137	Mixed Nut	\N	\N	33554432
 1258	\N	Raw Salted Mixed Nuts	Raw Salted Mixed Nuts	\N	f	0	140	100	2025-12-20	6	140	10	140	Nuts	\N	\N	0
 1259	\N	Ground Turmeric	Ground Turmeric	\N	t	0	28	100	2025-11-20	4	112	4	112	Ground Tumeric	\N	\N	12
 1260	\N	New Potatoes	New Potatoes	\N	f	512	79	100	2026-06-05	0	158	1	158	Potato	\N	\N	2
 1261	\N	Fresh Chives	Fresh Chives	\N	f	0	28	100	2025-06-22	4	48	3	48	Fresh Chive	\N	\N	0
-1262	\N	Full-Fat Coconut Milk	Full-Fat Coconut Milk	\N	f	0	30	100	2025-11-14	9	240	10	240	Full-Fat Coconut Milk	\N	\N	0
+1262	\N	Full-Fat Coconut Milk	Full-Fat Coconut Milk	\N	f	0	30	100	2025-11-14	9	240	7881299347898368	240	Full-Fat Coconut Milk	\N	\N	1125899906842624
 1263	\N	Broccoli Heads	Broccoli Heads	Includes the stalk.	f	0	608	100	2026-04-30	0	91	1	91	Broccoli	https://fdc.nal.usda.gov/food-details/747447/nutrients	\N	2
 1264	\N	Leeks	Leeks	\N	f	0	89	100	2025-10-16	0	89	1	89	Leeks	\N	\N	2
 1265	\N	Slices of Prosciutto	Slices of Prosciutto	An Italian dried ham.	f	32	28	100	2026-03-06	4	224	10	224	Slices of Prosciutto Cheese	\N	\N	0
@@ -1007,7 +1007,7 @@
 1271	\N	Thick Smoked Bacon Slices	Thick Smoked Bacon Slices	\N	f	491520	12	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
 1272	\N	Slices of Sharp Cheddar Cheese	Slices of Sharp Cheddar Cheese	\N	f	32	28	100	2024-12-07	4	112	10	112	Cheddar Cheese	\N	\N	0
 1273	\N	Slices of Cheddar Cheese	Slices of Cheddar Cheese	\N	f	32	28	100	2024-12-07	4	112	10	112	Cheddar Cheese	\N	\N	0
-1274	\N	Unsalted Peanut Butter	Unsalted Peanut Butter	\N	f	2048	28	100	2025-10-25	4	256	128	256	Unsalted Peanut Butter	\N	\N	0
+1274	\N	Unsalted Peanut Butter	Unsalted Peanut Butter	\N	f	1024	28	100	2025-10-25	4	256	128	256	Unsalted Peanut Butter	\N	\N	0
 1275	\N	Salami	Salami	\N	f	0	28	100	2025-11-27	0	224	3	224	Salami	\N	\N	7
 1276	\N	Canned Tomatoes	Canned Tomatoes	\N	f	512	111	100	2026-05-06	0	111	4	111	Tomato	\N	\N	2
 1277	\N	Jarred Pickled Jalapeños	Jarred Pickled Jalapeños	\N	f	0	28	100	2026-03-28	4	136	4	104	Pickled Jalepeño	\N	\N	13
@@ -1092,7 +1092,7 @@
 1358	\N	Merguez Sausage	Merguez Sausage	\N	f	491520	28	100	2025-02-22	4	224	10	224	Merguez Sausage	\N	\N	0
 1359	\N	Fajita Vegetables	Fajita Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Fajita Vegetables	\N	\N	0
 1360	\N	Frozen Fajita Vegetables	Frozen Fajita Vegetables	\N	f	0	28	100	2025-09-24	4	225	10	225	Frozen Fajita Vegetables	\N	\N	0
-1361	\N	Whole Milk	Whole Milk	\N	f	320	946	100	2026-03-28	14	244	8	244	Whole Milk	\N	\N	20
+1361	\N	Whole Milk	Whole Milk	\N	f	0	946	100	2026-03-28	14	244	7881299347898368	244	Whole Milk	\N	\N	1125899906842624
 1362	\N	Fresh Mangos	Fresh Mangos	\N	f	0	207	100	2025-03-26	0	165	1	165	Mango	\N	\N	1
 1363	\N	Frozen Mango Chunks	Frozen Mango Chunks	\N	f	0	28	100	2025-03-26	4	165	10	165	Frozen Mango Chunks	\N	\N	0
 1364	\N	Yogurt	Yogurt	Spelled yogourt in cananda.	f	32	28	100	2025-12-06	4	245	8	245	Yogurt	\N	\N	9
@@ -1108,7 +1108,7 @@
 1374	\N	Cooked Ham	Cooked Ham	\N	f	0	28	100	2024-12-10	4	224	9	224	Ham	\N	\N	7
 1375	\N	Brown Rice Syrup	Brown Rice Syrup	\N	f	0	40	100	2025-06-13	9	320	4	320	Brown Rice Syrup	\N	\N	13
 1376	\N	Maple Syrup | Honey | Brown Rice Syrup	Maple Syrup | Honey | Brown Rice Syrup	\N	f	0	40	100	2025-06-13	9	320	4	320	Maple Syrup | Honey | Brown Rice Syrup	\N	\N	13
-1377	\N	Pumpkin Spice	Pumpkin Spice	\N	f	0	28	100	2024-12-04	4	96	4	96	Pumpkin Spice	\N	\N	12
+1377	\N	Pumpkin Spice	Pumpkin Spice	\N	f	0	28	100	2026-07-02	4	96	536772608	96	Pumpkin Spice	\N	\N	2097152
 1378	\N	Cinnamon | Pumpkin Spice | Cardamon	Cinnamon | Pumpkin Spice | Cardamon	\N	t	0	28	100	2025-01-18	4	128	4	128	Cinnamon | Pumpkin Spice | Cardamon	\N	\N	12
 1379	\N	Cep Mushrooms	Cep Mushrooms	\N	f	0	15	100	2025-11-06	0	86	3	86	Mushroom	\N	\N	0
 1380	\N	Procini Mushrooms	Procini Mushrooms	\N	f	0	15	100	2025-11-08	0	86	3	86	Mushroom	\N	\N	0
@@ -1126,9 +1126,9 @@
 1392	\N	Mixed-Berries	Mixed-Berries	\N	f	0	28	100	2024-12-22	4	140	1	140	Mixed-Berries	\N	\N	0
 1393	\N	Palm Shortening	Palm Shortening	\N	f	262176	9.5	100	2025-01-31	0	114	5	114	Palm Shortening	\N	\N	16
 1394	\N	Cassava Flour	Cassava Flour	\N	f	0	28	100	2025-11-29	4	150	4	150	Cassava Flour	\N	\N	14
-1395	\N	Salted Peanut Butter	Salted Peanut Butter	\N	f	2048	28	100	2025-10-25	4	256	128	256	Peanut Butter	\N	\N	0
-1396	\N	Crunchy Peanut Butter	Crunchy Peanut Butter	\N	f	2048	32	100	2025-10-26	4	256	128	256	Crunchy Peanut Butter	\N	\N	0
-1397	\N	Peanut Butter	Peanut Butter	\N	f	2048	32	100	2025-10-27	4	256	128	256	Peanut Butter	\N	\N	0
+1395	\N	Salted Peanut Butter	Salted Peanut Butter	\N	f	1024	28	100	2025-10-25	4	256	128	256	Peanut Butter	\N	\N	0
+1396	\N	Crunchy Peanut Butter	Crunchy Peanut Butter	\N	f	1024	32	100	2025-10-26	4	256	128	256	Crunchy Peanut Butter	\N	\N	0
+1397	\N	Peanut Butter	Peanut Butter	\N	f	1024	32	100	2025-10-27	4	256	128	256	Peanut Butter	\N	\N	0
 1398	\N	Noodles | Rice	Noodles | Rice	\N	f	262176	4.75	100	2025-08-09	4	38	4	38	Noodles | Rice	\N	\N	5
 1399	\N	Stir-Fry Sauce	Stir-Fry Sauce	Tamari sauce generally does not contain wheat.	f	32768	36	100	2026-05-21	9	288	4	288	Stir-Fry Sauce	https://www.eatthismuch.com/calories/soy-sauce-3619	\N	14
 1400	\N	Semisoft Goat Cheese	Semisoft Goat Cheese	\N	f	32	28	100	2026-02-28	4	224	10	224	Goat Cheese	https://fdc.nal.usda.gov/food-details/173433/nutrients	\N	0
@@ -1235,7 +1235,7 @@
 1588	\N	Dark Rum	Dark Rum	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Dark Rum	\N	\N	16
 1589	\N	Light Rum	Light Rum	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Light Rum	\N	\N	16
 1590	\N	Large Garlic Cloves	Large Garlic Cloves	\N	f	0	3	100	2025-11-21	0	136	1	136	Garlic Clove	\N	\N	3
-1591	\N	Unsweetened Almond Milk	Unsweetened Almond Milk	\N	f	1	960	100	2026-03-25	14	240	8	240	Almond Milk	\N	\N	9
+1591	\N	Unsweetened Almond Milk	Unsweetened Almond Milk	\N	f	0	960	100	2026-03-25	14	240	7881299347898368	240	Almond Milk	\N	\N	1125899906842624
 1592	\N	Shredded Parmesan Cheese	Shredded Parmesan Cheese	\N	f	32	28.35	100	2025-07-02	4	100	10	100	Parmesan Cheese	https://fdc.nal.usda.gov/food-details/325036/nutrients	\N	0
 1593	\N	Back Bacon Slices	Back Bacon Slices	\N	f	491520	12	100	2025-07-16	0	224	10	224	Back Bacon Slices	\N	\N	0
 1594	\N	Back Bacon	Back Bacon	\N	f	491520	12	100	2025-07-16	0	224	10	224	Back Bacon	\N	\N	0
@@ -1263,7 +1263,7 @@
 1616	\N	Raspberry Wine Vinegar | Red Wine Vinegar	Raspberry Wine Vinegar | Red Wine Vinegar	\N	f	0	30	100	2025-10-23	9	239	3	239	Raspberry Wine Vinegar | Red Wine Vinegar	\N	\N	0
 1617	\N	Lamb-Leg Steaks	Lamb-Leg Steaks	\N	f	491520	28	100	2025-01-05	4	224	9	224	Lamb-Leg Steaks	\N	\N	7
 1618	\N	New York Strip Loin Steaks	New York Strip Loin Steaks	\N	f	491520	28	100	2026-02-24	4	240	9	240	New York Strip Loin Steaks	\N	\N	7
-1619	\N	Peanuts	Peanuts	\N	f	2048	28	100	2026-02-19	4	146	6	146	Peanuts	\N	\N	18
+1619	\N	Peanuts	Peanuts	\N	f	1024	28	100	2026-02-19	4	146	6	146	Peanuts	\N	\N	18
 1620	\N	Granary Loaf	Granary Loaf	\N	f	262176	300	100	2025-09-17	0	200	4	200	Granary Loaf	\N	\N	0
 1621	\N	Onion Salt	Onion Salt	\N	t	0	28	100	2025-08-25	4	112	4	112	Onion Salt	\N	\N	12
 1622	\N	Wheat Germ	Wheat Germ	\N	t	262176	28	100	2025-06-24	4	125	4	125	Wheat Germ	\N	\N	14
@@ -1305,7 +1305,7 @@
 1661	\N	Small Russet Potatoes	Small Russet Potatoes	\N	f	0	213	100	2025-08-03	0	150	1	150	Potato	\N	\N	2
 1662	\N	Brandy	Brandy	\N	f	0	29.4	100	2024-12-18	9	235.2	5	235.2	Rum	\N	\N	16
 1665	\N	Coconut Oil | Vegetable Oil	Coconut Oil | Vegetable Oil	\N	f	0	28	100	2024-12-09	4	224	5	224	Coconut Oil	\N	\N	11
-1666	\N	Raw Mixed Nuts & Raw Mixed Seeds	Raw Mixed Nuts & Raw Mixed Seeds	\N	f	206849	28	100	2025-12-24	4	224	10	224	Raw Mixed Nuts | Raw Mixed Seeds	\N	\N	0
+1666	\N	Raw Mixed Nuts & Raw Mixed Seeds	Raw Mixed Nuts & Raw Mixed Seeds	\N	f	3146752	28	100	2025-12-24	4	224	10	224	Raw Mixed Nuts | Raw Mixed Seeds	\N	\N	0
 1667	\N	Bacon Slices	Bacon Slices, Baked	\N	f	491520	12	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
 1668	\N	Bacon Slices	Bacon Slices, Pan-Fried	\N	f	491520	12	100	2025-07-16	0	224	10	224	Bacon Slice	\N	\N	0
 1669	\N	Bacon Slices	Bacon Slices, Microwaved	\N	f	491520	12	100	2025-07-16	0	224	9	224	Bacon Slice	\N	\N	7
@@ -1353,7 +1353,7 @@
 1741	\N	Canned Whole Peeled San Marzano Tomatoes	Canned Whole Peeled San Marzano Tomatoes	Yes, this is an ingredient.	f	512	28	100	2025-12-10	4	149	4	149	Tomato	\N	\N	6
 1742	\N	Macadamia Nut Halves	Macadamia Nut Halves	\N	f	0	28	100	2024-12-28	4	134	10	134	Macadamia Nuts	\N	\N	0
 1743	\N	White Chocolate	White Chocolate	\N	f	0	28	100	2026-06-24	4	170	536772608	170	Chocolate	\N	\N	8388608
-1744	\N	Buttermilk	Buttermilk	You can buy buttermilk!	f	320	976	100	2025-09-16	14	244	10	244	Milk	\N	\N	0
+1744	\N	Buttermilk	Buttermilk	You can buy buttermilk!	f	0	976	100	2025-09-16	14	244	7881299347898368	244	Milk	\N	\N	1125899906842624
 1746	\N	Lean Beef Steak | Beef Tenderloin | Beef Sirloin	Lean Beef Steak | Beef Tenderloin | Beef Sirloin	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	f	491520	37.67	100	2026-03-10	4	113	9	113	Beef	\N	\N	7
 1747	\N	Lean Beef Steak	Lean Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. 	f	491520	37.67	100	2026-03-20	4	113	9	113	Beef Tenderloin Fillet Mignon	https://www.eatthismuch.com/calories/filet-mignon-90197	\N	7
 1748	\N	Beef Steak	Beef Steak	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat.	f	491520	37.67	100	2026-03-16	4	113	9	113	Beef Steak	https://www.eatthismuch.com/calories/filet-mignon-90197	\N	7
@@ -1382,11 +1382,11 @@
 1771	\N	Cake Flour, Enriched	Cake Flour, Enriched	\N	f	256	137	100	2026-01-25	6	137	4	137	Bread Flour, Unenriched	\N	\N	0
 1772	\N	Bread Flour	Bread Flour	\N	f	256	137	100	2026-01-25	6	137	4	137	Bread Flour, Unenriched	\N	\N	0
 1773	\N	Cake Flour	Cake Flour	\N	f	256	137	100	2026-01-25	6	137	4	137	Bread Flour, Unenriched	\N	\N	0
-1774	\N	Dry-Roasted Salted Peanuts	Dry-Roasted Salted Peanuts	\N	f	2048	28	100	2026-02-20	4	224	10	224	Peanut	\N	\N	0
+1774	\N	Dry-Roasted Salted Peanuts	Dry-Roasted Salted Peanuts	\N	f	1024	28	100	2026-02-20	4	224	10	224	Peanut	\N	\N	0
 1775	\N	Dried Ginger	Dried Ginger	\N	f	0	28	100	2025-09-19	4	80	4	80	Ginger	\N	\N	12
-1776	\N	Sriracha	Sriracha	\N	f	0	28	100	2024-12-02	4	240	536772608	240	Hot Sauce	\N	\N	524288
+1776	\N	Sriracha	Sriracha	\N	f	0	28	100	2026-06-28	4	240	536772608	240	Hot Sauce	\N	\N	524288
 1777	\N	Rice Vinegar | Apple Cider Vinegar	Rice Vinegar | Apple Cider Vinegar	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	f	0	30	100	2025-01-07	9	239	4	239	Apple Cider Vinegar	\N	\N	13
-1778	\N	Unsweetened Creamy Peanut Butter	Unsweetened Creamy Peanut Butter	\N	f	2048	32	100	2025-10-26	4	256	4	256	Peanut Butter	\N	\N	18
+1778	\N	Unsweetened Creamy Peanut Butter	Unsweetened Creamy Peanut Butter	\N	f	1024	32	100	2025-10-26	4	256	4	256	Peanut Butter	\N	\N	18
 1779	\N	Oregano	Oregano	Use partial ingredients.	f	0	28	100	2026-01-06	4	96	4	48	Oregano	\N	\N	12
 1780	\N	Large Yellow Onions	Large Yellow Onions	\N	f	0	148	100	2025-03-22	0	148	1	148	Onion	\N	\N	2
 1781	\N	Canola Oil | Olive Oil	Canola Oil | Olive Oil	\N	t	0	28	100	2024-12-22	9	224	5	224	Canola Oil	\N	\N	11
@@ -1461,7 +1461,7 @@
 1908	\N	Large Green Onions	Large Green Onions	aka: Scallions.	f	0	15	100	2026-02-14	0	150	2	150	Green Onions	\N	\N	0
 1909	\N	Medium Green Onions	Medium Green Onions	aka: Scallions.	f	0	15	100	2026-02-14	0	150	2	150	Green Onions	\N	\N	0
 1910	\N	Small Green Onions	Small Green Onions	aka: Scallions.	f	0	15	100	2026-02-14	0	150	2	150	Green Onions	\N	\N	0
-1911	\N	Dry-Roasted Unsalted Peanuts	Dry-Roasted Unsalted Peanuts	\N	f	2048	28	100	2026-02-17	4	146	10	146	Peanut	\N	\N	0
+1911	\N	Dry-Roasted Unsalted Peanuts	Dry-Roasted Unsalted Peanuts	\N	f	1024	28	100	2026-02-17	4	146	10	146	Peanut	\N	\N	0
 1912	\N	Shelled Salted Pistachios	Shelled Salted Pistachios	Shelled means without shells.	f	131072	28	100	2026-02-17	4	123	10	123	Pistachio	\N	\N	0
 1913	\N	Dry-Roasted Unsalted Pistachios	Dry-Roasted Unsalted Pistachios	\N	f	131072	28	100	2026-02-17	4	123	10	123	Pistachio	\N	\N	0
 1914	\N	Dry-Roasted Salted Pistachios	Dry-Roasted Salted Pistachios	\N	f	131072	28	100	2026-02-17	4	123	10	123	Pistachio	\N	\N	0
@@ -1473,7 +1473,7 @@
 1920	\N	Stewing Beef | Stewing Lamb	Stewing Beef | Stewing Lamb	\N	f	491520	28	100	2025-01-12	4	224	10	224	Lean Stewing Beef	\N	\N	0
 1921	\N	Stewing Lamb	Stewing Lamb	\N	f	0	28	100	2025-01-12	4	224	10	224	Lean Stewing Beef	\N	\N	0
 1922	\N	Stewing Beef	Stewing Beef	\N	f	491520	28	100	2025-01-12	4	224	10	224	Lean Stewing Beef	\N	\N	0
-1923	\N	Creamy Peanut Butter | Sunflower Butter | Tahini	Creamy Peanut Butter | Sunflower Butter | Tahini	\N	f	2048	32	100	2025-10-26	4	256	128	256	Creamy Peanut Butter	\N	\N	0
+1923	\N	Creamy Peanut Butter | Sunflower Butter | Tahini	Creamy Peanut Butter | Sunflower Butter | Tahini	\N	f	1024	32	100	2025-10-26	4	256	128	256	Creamy Peanut Butter	\N	\N	0
 1924	\N	Sunflower Butter	Sunflower Butter	\N	f	65536	28	100	2026-01-01	9	224	5	224	Sunflower Oil	\N	\N	11
 1925	\N	Unsweetened Shredded Coconut	Unsweetened Shredded Coconut	\N	f	0	28	100	2026-06-15	4	113	536772608	113	Coconut	\N	\N	4194304
 1956	\N	Chili Garlic Paste	Chili Garlic Paste	\N	t	0	7.5	100	2025-07-18	7	120	4	120	Chili Garlic Sauce	\N	\N	14
@@ -1482,7 +1482,7 @@
 1959	\N	Medium Sweet Potatoes	Medium Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	2	133	Sweet Potato	\N	\N	0
 1960	\N	Raw Pecans	Raw Pecans	\N	f	0	28	100	2026-05-29	4	99	10	99	Pecans	\N	\N	0
 1961	\N	Raw Sunflower Seeds	Raw Sunflower Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	\N	\N	0
-1962	\N	Raw Pumpkin Seeds	Raw Pumpkin Seeds	\N	f	0	28	100	2024-12-04	4	149.33	10	149.33	Pumpkin Seeds	\N	\N	0
+1962	\N	Raw Pumpkin Seeds	Raw Pumpkin Seeds	\N	f	0	28	100	2026-07-01	4	149.33	536772608	149.33	Pumpkin Seeds	\N	\N	67108864
 1963	\N	Raw Walnuts	Raw Walnuts	Use partial ingredients.	f	131072	28	100	2026-01-29	4	120	10	100	Walnut	\N	\N	0
 1964	\N	Raw Almonds	Raw Almonds	\N	f	1	28	100	2026-02-16	4	143	10	143	Almonds	\N	\N	0
 1965	\N	Himalayan Salt	Himalayan Salt	\N	t	0	4	100	2025-09-10	8	192	4	192	Salt	\N	\N	12
@@ -1522,7 +1522,7 @@
 2031	\N	Poppy Seeds	Poppy Seeds	\N	f	65536	28	100	2025-12-19	4	128	10	128	Sunflower Seeds	https://fdc.nal.usda.gov/food-details/2515381/nutrients	\N	0
 2032	\N	Coconut	Coconut	aka Shredded Coconut. https://www.eatthismuch.com/calories/shredded-coconut,1987718	f	0	28	100	2025-10-18	4	60	4	60	Coconut Flakes	\N	\N	13
 2033	\N	Cooking Oil	Cooking Oil	\N	f	0	30	100	2025-01-23	9	240	4	240	Chinese Cooking Wine	\N	\N	11
-2034	\N	Italian Salami	Italian Salami	\N	f	0	28	100	2025-11-27	0	224	3	224	Salami	\N	\N	7
+2034	\N	Italian Salami	Italian Salami	\N	f	0	28	100	2025-11-27	4	224	7168	224	Salami	\N	\N	1024
 2035	\N	Sliced Italian Salami	Sliced Italian Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
 2036	\N	Sliced Italian Salami	Sliced Italian Salami	\N	f	0	10	100	2025-11-28	0	227	10	227	Sliced Salami	\N	\N	0
 2037	\N	Garlic Paste	Garlic Paste	\N	t	0	7.5	100	2025-07-18	7	120	4	120	Chili Garlic Sauce	\N	\N	14
@@ -1537,3 +1537,5 @@
 2048	\N	Miso Paste	Miso Paste	\N	f	8192	28	100	2025-02-22	4	256	4	256	Sesame Paste	\N	\N	14
 2049	\N	Soybean Paste	Soybean Paste	\N	f	8192	28	100	2025-02-22	4	256	4	256	Sesame Paste	\N	\N	14
 2050	\N	Cotija Cheese	Cotija Cheese	\N	f	32	28	100	2026-03-04	4	224	10	224	Blue Cheese	\N	\N	0
+2051	\N	Crispy Rice Cereal	Crispy Rice Cereal	\N	f	128	28	100	2026-05-29	4	100	536772608	100	Rice Cereal	\N	\N	0
+2052	\N	Unsweetened Chocolate	Unsweetened Chocolate	\N	f	0	28	100	2025-06-20	4	86	4	86	Cocoa Powder	\N	\N	17
