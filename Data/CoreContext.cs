@@ -91,7 +91,10 @@ public class CoreContext : DbContext
         modelBuilder.Entity<Recipe>().Metadata.GetIndexes().Where(index => index.GetFilter() == null).ToList().ForEach(index => modelBuilder.Entity<Recipe>().Metadata.AddIndex(index.Properties, $"{index.GetDatabaseName()}_DisabledReason").SetFilter(DISABLED_REASON_IS_NULL));
         modelBuilder.Entity<Ingredient>().Metadata.GetIndexes().Where(index => index.GetFilter() == null).ToList().ForEach(index => modelBuilder.Entity<Ingredient>().Metadata.AddIndex(index.Properties, $"{index.GetDatabaseName()}_DisabledReason").SetFilter(DISABLED_REASON_IS_NULL));
 
-        ////////// Conversions //////////
+        ////////// Conversions ////////// Convert enums that may change often to strings...
+        modelBuilder.Entity<Ingredient>().Property(i => i.Section).HasConversion<string>();
+        modelBuilder.Entity<Ingredient>().Property(i => i.Category).HasConversion<string>();
+        // Can't convert Allergens in Ingredient and UserFoodPreference to strings b/c it's used in queries (bit operations).
         modelBuilder.Entity<Ingredient>().Property(i => i.Group).HasConversion(v => v.TrimEnd('s'), v => v.TrimEnd('s'), new ValueComparer<string>((v1, v2) => v1 == v2, v => v.GetHashCode()));
 
         // Set the default value of the db columns be attributes.

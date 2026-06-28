@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -149,8 +150,8 @@ namespace Data.Migrations
                     Group = table.Column<string>(type: "text", nullable: false),
                     SkipShoppingList = table.Column<bool>(type: "boolean", nullable: false),
                     Allergens = table.Column<long>(type: "bigint", nullable: false),
-                    Category = table.Column<long>(type: "bigint", nullable: false),
-                    Section = table.Column<long>(type: "bigint", nullable: false),
+                    Category = table.Column<string>(type: "text", nullable: false),
+                    Section = table.Column<string>(type: "text", nullable: false),
                     DefaultMeasure = table.Column<int>(type: "integer", nullable: false),
                     GramsPerMeasure = table.Column<double>(type: "double precision", nullable: false),
                     GramsPerFineCup = table.Column<double>(type: "double precision", nullable: false),
@@ -300,8 +301,7 @@ namespace Data.Migrations
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     LastSeen = table.Column<DateOnly>(type: "date", nullable: true),
                     Note = table.Column<string>(type: "text", nullable: false),
-                    Source = table.Column<string>(type: "text", nullable: true),
-                    Type = table.Column<int>(type: "integer", nullable: false)
+                    Source = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

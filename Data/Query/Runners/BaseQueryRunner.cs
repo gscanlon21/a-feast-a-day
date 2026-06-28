@@ -85,7 +85,11 @@ public abstract class BaseQueryRunner
         filteredQuery = QueryFilters.FilterTotalTime(filteredQuery, DurationOptions.MaxTotalTimeMinutes);
         filteredQuery = QueryFilters.FilterNutrients(filteredQuery, NutrientOptions.Nutrients, include: true, dataSource: NutrientOptions.DataSource);
 
-        return await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync();
+        return _section switch
+        {
+            Section.Debug => await filteredQuery.Select(a => new InProgressQueryResults(a)).IgnoreQueryFilters().AsNoTracking().TagWithCallSite().ToListAsync(),
+            _ => await filteredQuery.Select(a => new InProgressQueryResults(a)).AsNoTracking().TagWithCallSite().ToListAsync(),
+        };
     }
 
     public abstract Task<List<QueryResults>> Query(IServiceScopeFactory factory, int take = int.MaxValue);

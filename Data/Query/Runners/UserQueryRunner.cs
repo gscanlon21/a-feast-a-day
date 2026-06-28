@@ -341,7 +341,7 @@ public class UserQueryRunner : BaseQueryRunner
 
         // Don't check for disabled recipe/recipeingredients b/c no queryresults are disabled.
         return await context.RecipeIngredients.TagWithCallSite().AsNoTracking().IgnoreQueryFilters()
-            .Include(ri => ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id && ui.UserId == UserOptions.Id))
+            .Include(ri => ri.UserRecipeIngredients.Where(uri => uri.RecipeIngredientId == ri.Id && uri.UserId == UserOptions.Id))
                 .ThenInclude(uri => uri.SubstituteIngredient)
             .Where(ri => recipeIngredientIds.Contains(ri.Id))
             .Select(ri => new
@@ -349,8 +349,8 @@ public class UserQueryRunner : BaseQueryRunner
                 ri.Id,
                 ri.Optional,
                 ri.Ingredient,
-                HasAlternatives = ri.Ingredient.Alternatives.Any(i => (i.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
-                UserRecipeIngredient = ri.UserRecipeIngredients.Where(ui => ui.RecipeIngredientId == ri.Id).First(ui => ui.UserId == UserOptions.Id),
+                UserRecipeIngredient = ri.UserRecipeIngredients.Where(uri => uri.RecipeIngredientId == ri.Id).First(uri => uri.UserId == UserOptions.Id),
+                HasAlternatives = UserOptions.Allergens == 0 || (ri.Ingredient.Allergens & UserOptions.Allergens) == 0 || ri.Ingredient.Alternatives.Any(a => (a.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
             })
             .ToDictionaryAsync(ri => ri.Id, ri =>
             {

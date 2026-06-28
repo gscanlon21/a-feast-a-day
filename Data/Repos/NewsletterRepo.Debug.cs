@@ -68,6 +68,7 @@ public partial class NewsletterRepo
             .Include(i => i.Alternatives).ThenInclude(a => a.AlternativeIngredient)
             .Include(i => i.AlternativeIngredients).ThenInclude(a => a.Ingredient)
             .Include(i => i.IngredientAttr)
+            .IgnoreQueryFilters()
             .ToArrayAsync();
 
         foreach (var debugIngredient in debugIngredients)

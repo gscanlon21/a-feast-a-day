@@ -41,7 +41,7 @@
 60	Chips and Salsa	\N	\N	\N	16	0	0	1	t	chips-salsa-alt.jpg	0	\N	f	f
 62	Edamame & Veggie Rice Bowl	\N	\N	\N	12	25	10	2	t	edamame-veggie-rice-bowl.jpg	0	https://iheartvegetables.com/crispy-rice-bowls-with-edamame/	f	f
 63	Grilled Sausage-Basil Pizzas	\N	Too heavy.	\N	8	15	15	4	t	grilled-sausage-basil-pizza.jpg	0	https://www.tasteofhome.com/recipes/grilled-sausage-basil-pizzas/	f	f
-64	French Bread Pizza	\N	\N	\N	4	15	5	4	t	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
+64	French Bread Pizza	\N	Not very nutritious.	\N	4	15	5	4	t	french-bread-pizza.jpg	0	https://www.thespruceeats.com/french-bread-pizza-4845402	f	f
 65	Hard Boiled Eggs	\N	\N	\N	16	10	2	1	t	hardboiled-eggs.jpg	0	\N	t	f
 66	Frittata Base	\N	\N	\N	0	0	5	1	t	frittata-base.jpg	6	\N	t	f
 67	French Toast	\N	\N	\N	6	15	5	2	t	french-toast.jpg	0	\N	f	f
@@ -108,7 +108,7 @@
 128	Soy Sauce and Star Anise Chicken	If you are able to make it ahead, leave the chicken in the marinade for around 6–8 hours, as the flavor will be improved.	\N	\N	8	16	4	4	t	chicken-soy-sauce.jpg	0	\N	f	f
 129	Honey Mustard Chicken	Chicken thighs have a rice flavour, but if you want to cut down on fat, use 4 chicken breast portions instead and cook for 20-25 minutes.	\N	\N	4	28	2	2	t	honey-mustard-chicken.jpg	0	\N	f	f
 130	Lemon Grass and Ginger Pork Burgers	Chilling the burgers helps them to maintain their shape. Serve with tomatoes, lettuce and chili sauce.	\N	\N	8	7	5	4	t	lemon-grass-pork-burger.jpg	0	\N	f	f
-131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	\N	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
+131	Cajun-Spiced Chicken	Serve with salad leaves and pepper strips.	Not very nutritious.	\N	4	15	5	3	t	cajun-spiced-chicken.jpg	0	\N	f	f
 132	Tandoori Chicken Kebabs	Serve with pilau rice and naan bread	\N	\N	8	12	18	4	t	tandoori-chicken-kebabs.jpg	0	\N	f	f
 133	Stir-Fried Chicken w/ Basil and Chilli	Before frying Thai basil leaves, first make sure that the leaves are completely dry or they will splutter when added to the oil.	\N	\N	8	15	5	4	t	stir-fried-chicken-basil-chilli.jpg	0	\N	f	f
 134	Oven Burgers	\N	\N	\N	8	25	10	4	t	oven-burgers.jpg	0	https://iowagirleats.com/how-to-cook-burgers-in-the-oven/	f	f
@@ -146,7 +146,7 @@
 167	Banana and Maple Flip	The very young, the elderly and pregnant women are advised against consuming raw eggs or drinks containing raw eggs.	\N	\N	128	0	4	1	t	chocolate-banana-smoothie.jpg	0	\N	f	f
 169	Vanilla Caffe Latte	\N	\N	\N	128	8	3	2	t	vanilla-cafe-latte.jpg	0	\N	f	f
 170	Broccoli w/ Soy Sauce and Sesame Seeds	\N	\N	\N	16	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
-171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	\N	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
+171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	Not very nutritious.	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	64	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
 173	Home-Made Burgers w/ Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	8	14	6	4	t	burgers-relish.jpg	0	\N	f	f
 174	Pan-Fried Gammon w/ Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	Not very nutritious.	\N	4	9	1	4	t	fried-gammon.jpg	0	\N	f	f
@@ -244,7 +244,7 @@
 363	Citrus-Lime Vinaigrette	\N	\N	\N	0	0	5	4	t	citrus-dressing.jpg	9	https://downshiftology.com/recipes/citrus-lime-vinaigrette/#wprm-recipe-container-32469	f	f
 364	Crispy Garlicky Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	5	2	t	peanut-chicken.jpg	0	\N	f	f
 365	Potato & Artichoke Al Forno	From Jamie Oliver's 5 Ingredients	\N	\N	4	80	9	6	t	potato-artichoke-al-forno.jpg	0	\N	f	f
-366	Company Pickle Chunks	Makes 7 pints. - Lolly Wehrli	\N	\N	0	0	0	1	t	\N	0	\N	f	f
+366	Company Pickle Chunks	\N	\N	\N	0	0	0	7	t	\N	13	Lolly Wehrli	t	f
 367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	8	2	2	t	egg-fried-rice.jpg	0	\N	f	f
 368	Rhubarb Compote	\N	\N	\N	0	25	5	1	t	rhubarb-compote.jpg	6	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	f	f
 369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	20	60	9	4	t	cajun-sweet-potatoes.jpg	0	\N	f	f
@@ -335,7 +335,7 @@
 486	Strawberries & Cream	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 487	Rainbow Roasted Vegetables	\N	\N	\N	16	25	15	4	t	roasted-vegetables-alt.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 521	Maca Latte	\N	\N	\N	128	2	4	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-522	Roasted Brussels Sprouts Salad w/ Maple Syrup Balsamic Dressing	\N	\N	\N	20	30	15	4	t	roasted-brussel-sprouts-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
+522	Roasted Brussels Sprouts Salad	\N	\N	\N	20	30	15	4	t	roasted-brussel-sprouts-salad.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 523	Banana Pancakes	\N	\N	\N	66	5	5	1	t	buttermilk-pancakes.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 524	Lemon, Lime and Green Apple Spa Water	\N	\N	\N	128	0	5	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 525	Tomato & Avocado Salsa w/ Cucumber	\N	\N	\N	20	0	10	2	t	avocado-tomato-cucumber.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
@@ -356,7 +356,7 @@
 540	Ginger-Orange Chicken Stir Fry	\N	\N	\N	8	15	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	t
 541	Shrimp Fried Rice	\N	\N	\N	8	15	10	4	t	chicken-fried-rice.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 542	Sautéed Chicken & Garlic Cauliflower Mash	\N	\N	\N	8	10	5	2	t	garlic-chicken.jpg	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
-543	Dairy-Free Pesto	\N	\N	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
+543	Dairy-Free Pesto	\N	Duplicate of Pesto.	\N	0	0	5	1	t	pesto.jpg	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 544	Avocado Crema	\N	\N	\N	0	0	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 545	Pizza Sauce	\N	\N	\N	0	10	5	1	t	\N	6	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	f
 546	Sesame Almond Dressing	\N	\N	\N	0	0	5	4	t	\N	9	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	t	t
@@ -425,7 +425,7 @@
 611	Beef Stir-Fry	\N	\N	\N	8	25	15	2	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 613	Poached Chicken Breasts	Eight ounces raw boneless, skinless chicken breast yields about 1 cup sliced, diced or shredded cooked chicken.	\N	\N	0	15	5	1	t	boiled-chicken-breasts.jpg	0	\N	t	f
 614	Egg Sandwich	\N	\N	\N	6	15	5	2	t	egg-sandwich.jpg	0	https://www.recipetineats.com/egg-sandwich/	f	f
-615	Chicken w/ Prosciutto and Cheese	\N	\N	\N	8	25	3	4	t	\N	0	\N	f	f
+615	Chicken w/ Prosciutto and Cheese	\N	Not very nutritious.	\N	8	25	3	4	t	\N	0	\N	f	f
 616	Banana Chocolate Chip Bread Pudding Cups	\N	\N	\N	64	25	15	6	t	\N	0	\N	f	f
 617	Steak and Blue Cheese on Ciabatta	Part-baked bread cooks in about 8 minutes in a hot oven... or warm a regular baked ciabatta or French stick.	\N	\N	8	15	5	2	t	steak-pickled-walnut-sauce-alt.jpg	0	\N	f	f
 618	Chicken Stuffed w/ Ham and Cheese	If you are able to prepare these portions in advance, cover the crumbed breasts and chill them for about 1 hour in the refrigerator to set the coating.	Too heavy.	\N	8	12	8	4	t	\N	0	\N	f	f
@@ -519,7 +519,7 @@
 739	Soba Noodle Salad	You can substitute the bok choy for cabbage.	\N	\N	20	0	10	2	t	\N	0	\N	f	f
 740	Classic-ish Niçoise Salad	\N	\N	\N	16	5	10	2	t	\N	0	\N	f	f
 741	Roasted Vegetable and Goat Cheese Salad	\N	\N	\N	16	0	15	2	t	\N	0	\N	f	f
-742	Chicken Parmesan	\N	\N	\N	8	20	10	2	t	\N	0	\N	f	f
+742	Chicken Parmesan	\N	Not very nutritious.	\N	8	20	10	2	t	\N	0	\N	f	f
 743	Peppered Tofu Scramble	\N	\N	\N	16	10	5	2	t	\N	0	\N	f	f
 744	Pear & Gorgonzola Farfalle	\N	\N	\N	4	15	5	2	t	\N	0	From Jamie Oliver's 5 Ingredients	f	f
 745	Beef Stroganoff	You can substitute canned fat-free condensed cream of mushroom soup or cream of chicken soup as an alternative for the cream-style corn.	\N	\N	8	35	10	2	t	\N	0	https://www.allrecipes.com/recipe/16311/simple-beef-stroganoff/	f	f
@@ -668,3 +668,6 @@
 1084	Cooked Edamame	\N	\N	\N	0	0	0	1	t	peas-beans-chili-mint.jpg	4	\N	t	f
 1085	Raw Kimchi	\N	\N	\N	16	0	0	1	t	\N	0	\N	f	f
 1086	Raw Sauerkraut	\N	\N	\N	16	0	0	1	t	\N	0	\N	f	f
+1087	Washed Strawberries	\N	\N	\N	0	0	15	1	t	\N	4	\N	t	f
+1120	Sauerkraut	Always clean all equipment (especially the mason jar). Simply pour boiling water over it, then let it dry naturally. Make sure the cabbage is covered with its liquid (brine) to avoid that mold starts growing. If your sauerkraut doesn't release enough liquid to stay submerged, it's perfectly fine to add a 2% brine to top it off. Do not skip the salt as it's very important and also acts as a preservative. I always use sea salt or Himalayan salt. How much salt to use: The amount of salt needed depends on the fermentation temperature. The general guideline is 2% salt by weight of cabbage. For more precise figures (per 1kg cabbage):   At 15–18 °C (59–64 °F) use 1.5% (15g/kg) (takes 3-5 weeks) 18–22 °C (64–72 °F) use 1.8-2.0% (18-20g/kg) (takes 2-3 weeks) 22–25 °C (72–77 °F) use 2.0% (20g/kg) (takes 7-10 days) 25–28 °C (77–82°F) use 2.2–2.5% (22–25g/kg) (takes 3-6 days) > 28 °C (> 82 °F) use 2.5 % (25 g/kg) (takes 2-4 days)   Make two jars at the same time. Ferment the second one longer than the first one and see which one you like more. Once you finish eating the first batch, start the third one and eat the second batch. This way, you always have fresh homemade sauerkraut on hand. Season the fermented sauerkraut with a little smoked paprika which adds a wonderful flavor.	\N	\N	0	0	15	12	t	\N	0	https://elavegan.com/how-to-make-sauerkraut/#recipe	t	f
+1121	Cereal Bar Recipe	\N	\N	\N	32	20	15	14	t	\N	0	https://glutenfreeonashoestring.com/homemade-cereal-bars/	f	f

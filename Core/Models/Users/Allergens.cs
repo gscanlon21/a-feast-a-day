@@ -12,7 +12,7 @@ public enum Allergens : long
     None = 0,
 
 
-    [Display(Name = "Animal Milk", GroupName = "Dairy", Order = 1)]
+    [Display(Name = "Lactose", GroupName = "Dairy", Order = 1)]
     Milk = 1L << 0, // 1
 
     [Display(Name = "Cheese", GroupName = "Dairy", Order = 2)]

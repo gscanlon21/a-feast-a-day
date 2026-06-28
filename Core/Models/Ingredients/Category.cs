@@ -14,7 +14,7 @@ public enum Category : long
     #region Produce
 
     [Display(Order = 1, Name = "Produce")]
-    Produce = Produce_Fruits | Produce_Vegetables | Produce_Herbs,
+    Produce = Produce_Fruits | Produce_Vegetables | Produce_Herbs | Produce_Dehydrated,
 
     [Display(Order = 1, Name = "Fruits")]
     Produce_Fruits = 1L << 0,
@@ -24,6 +24,9 @@ public enum Category : long
 
     [Display(Order = 3, Name = "Herbs")]
     Produce_Herbs = 1L << 2,
+
+    [Display(Order = 4, Name = "Dehydrated")]
+    Produce_Dehydrated = 1L << 3,
 
     #endregion
     #region Bakery
@@ -41,7 +44,7 @@ public enum Category : long
     #region Deli
 
     [Display(Order = 3, Name = "Deli")]
-    Deli = Deli_Meat | Deli_Cheese | Deli_Prepared,
+    Deli = Deli_Meat | Deli_Cheese | Deli_Prepared | Deli_Fermented,
 
     [Display(Order = 1, Name = "Meats")]
     Deli_Meat = 1L << 10,
@@ -49,57 +52,66 @@ public enum Category : long
     [Display(Order = 2, Name = "Cheese")]
     Deli_Cheese = 1L << 11,
 
-    [Display(Order = 3, Name = "Prepared Meals")]
+    [Display(Order = 3, Name = "Prepared")]
     Deli_Prepared = 1L << 12,
+
+    [Display(Order = 4, Name = "Fermented")]
+    Deli_Fermented = 1L << 13,
 
     #endregion
     #region Pantry
 
     [Display(Order = 4, Name = "Pantry")]
-    Pantry = Pantry_Condiments | Pantry_Legumes | Pantry_Pasta | Pantry_Sauces | Pantry_Oils | Pantry_Spices
-        | Pantry_Sweeteners | Pantry_Chocolate | Pantry_Candy | Pantry_Nuts | Pantry_Seeds | Pantry_Snacks | Pantry_Beverages,
+    Pantry = Pantry_Condiments | Pantry_Legumes | Pantry_Pasta | Pantry_Sauces | Pantry_Canned | Pantry_Oils | Pantry_Spices
+        | Pantry_Sweeteners | Pantry_Chocolate | Pantry_Cereal | Pantry_Candy | Pantry_Nuts | Pantry_Seeds | Pantry_Snacks | Pantry_Beverages,
 
     [Display(Order = 1, Name = "Condiments")]
     Pantry_Condiments = 1L << 15,
 
-    [Display(Order = 2, Name = "Grains")]
-    Pantry_Grains = 1L << 16,
+    [Display(Order = 2, Name = "Legumes")]
+    Pantry_Legumes = 1L << 16,
 
-    [Display(Order = 3, Name = "Legumes")]
-    Pantry_Legumes = 1L << 17,
+    [Display(Order = 3, Name = "Grains")]
+    Pantry_Grains = 1L << 17,
 
-    [Display(Order = 4, Name = "Pasta")]
-    Pantry_Pasta = 1L << 18,
+    [Display(Order = 4, Name = "Canned")]
+    Pantry_Canned = 1L << 18,
 
     [Display(Order = 5, Name = "Sauces")]
     Pantry_Sauces = 1L << 19,
 
-    [Display(Order = 6, Name = "Oils")]
-    Pantry_Oils = 1L << 20,
+    [Display(Order = 6, Name = "Pasta")]
+    Pantry_Pasta = 1L << 20,
 
-    [Display(Order = 7, Name = "Spices")]
-    Pantry_Spices = 1L << 21,
+    [Display(Order = 7, Name = "Oils")]
+    Pantry_Oils = 1L << 21,
 
-    [Display(Order = 8, Name = "Sweeteners")]
-    Pantry_Sweeteners = 1L << 22,
+    [Display(Order = 8, Name = "Spices")]
+    Pantry_Spices = 1L << 22,
 
-    [Display(Order = 9, Name = "Chocolate")]
-    Pantry_Chocolate = 1L << 23,
+    [Display(Order = 9, Name = "Sweeteners")]
+    Pantry_Sweeteners = 1L << 23,
 
-    [Display(Order = 10, Name = "Candy")]
-    Pantry_Candy = 1L << 24,
+    [Display(Order = 10, Name = "Chocolate")]
+    Pantry_Chocolate = 1L << 24,
 
-    [Display(Order = 11, Name = "Nuts")]
-    Pantry_Nuts = 1L << 25,
+    [Display(Order = 11, Name = "Cereal")]
+    Pantry_Cereal = 1L << 25,
 
-    [Display(Order = 12, Name = "Seeds")]
-    Pantry_Seeds = 1L << 26,
+    [Display(Order = 12, Name = "Candy")]
+    Pantry_Candy = 1L << 26,
 
-    [Display(Order = 13, Name = "Snacks")]
-    Pantry_Snacks = 1L << 27,
+    [Display(Order = 13, Name = "Nuts")]
+    Pantry_Nuts = 1L << 27,
 
-    [Display(Order = 14, Name = "Beverages")]
-    Pantry_Beverages = 1L << 28,
+    [Display(Order = 14, Name = "Seeds")]
+    Pantry_Seeds = 1L << 28,
+
+    [Display(Order = 15, Name = "Snacks")]
+    Pantry_Snacks = 1L << 29,
+
+    [Display(Order = 16, Name = "Beverages")]
+    Pantry_Beverages = 1L << 30,
 
     #endregion
     #region Protein
