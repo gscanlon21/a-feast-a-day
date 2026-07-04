@@ -2,6 +2,7 @@
 using Core.Models.Ingredients;
 using Core.Models.Newsletter;
 using Core.Models.Recipe;
+using Core.Models.Users;
 using Data.Entities.Ingredients;
 using Data.Entities.Recipes;
 using Data.Entities.Users;
@@ -333,42 +334,84 @@ public class UserQueryRunner : BaseQueryRunner
     private async Task<IDictionary<int, IngredientUserIngredient?>> GetAltIngredientForRecipeIngredients(CoreContext context, IList<InProgressQueryResults> queryResults)
     {
         // Only need to look for substitutions where an ingredient's allergens conflict with the user's allergens or where the user is substituting in an alternative ingredient.
-        var recipeIngredientIds = queryResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.ShouldSubstituteIngredient(UserOptions.Allergens)).Select(ri => ri.Id)).ToList();
-        if (recipeIngredientIds.Count == 0)
+        var recipeIngredients = queryResults.SelectMany(qr => qr.RecipeIngredients.Where(ri => ri.ShouldSubstituteIngredient(UserOptions.Allergens))).ToList();
+        if (recipeIngredients == null || recipeIngredients.Count == 0)
         {
             return ReadOnlyDictionary<int, IngredientUserIngredient?>.Empty;
         }
 
-        // Don't check for disabled recipe/recipeingredients b/c no queryresults are disabled.
-        return await context.RecipeIngredients.TagWithCallSite().AsNoTracking().IgnoreQueryFilters()
-            .Include(ri => ri.UserRecipeIngredients.Where(uri => uri.RecipeIngredientId == ri.Id && uri.UserId == UserOptions.Id))
-                .ThenInclude(uri => uri.SubstituteIngredient)
-            .Where(ri => recipeIngredientIds.Contains(ri.Id))
-            .Select(ri => new
+        var substituteIngredients = await GetSubstituteIngredientForRecipeIngredients(context, recipeIngredients);
+        var doesIngredientHaveAlternatives = await DoesIngredientHaveAlternatives(context, recipeIngredients);
+        return recipeIngredients.ToDictionary(ri => ri.Id, ri =>
+        {
+            // Don't check for allergens when substituting: only show a warning when the user swaps in a substitute ingredient that conflicts with their allergens; user should always see their swapped ingredient.
+            if (ri.UserRecipeIngredient?.SubstituteIngredientId.HasValue == true && substituteIngredients.TryGetValue(ri.UserRecipeIngredient.SubstituteIngredientId.Value, out var subIngredient) && subIngredient != null)
             {
-                ri.Id,
-                ri.Optional,
-                ri.Ingredient,
-                UserRecipeIngredient = ri.UserRecipeIngredients.Where(uri => uri.RecipeIngredientId == ri.Id).First(uri => uri.UserId == UserOptions.Id),
-                HasAlternatives = UserOptions.Allergens == 0 || (ri.Ingredient.Allergens & UserOptions.Allergens) == 0 || ri.Ingredient.Alternatives.Any(a => (a.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
-            })
-            .ToDictionaryAsync(ri => ri.Id, ri =>
-            {
-                // If the substitute ingredient doesn't conflict with allergens. Disabled: Now shows warning; user can always swap.
-                if (ri.UserRecipeIngredient.SubstituteIngredient != null /*&& !ri.SubIngredient.Ingredient.Allergens.HasAnyFlag(UserOptions.Allergens)*/)
+                return new IngredientUserIngredient()
                 {
-                    return new IngredientUserIngredient()
-                    {
-                        Measure = ri.UserRecipeIngredient.Measure,
-                        Ingredient = ri.UserRecipeIngredient.SubstituteIngredient,
-                        QuantityNumerator = ri.UserRecipeIngredient.QuantityNumerator,
-                        QuantityDenominator = ri.UserRecipeIngredient.QuantityDenominator,
-                    };
-                }
+                    Measure = ri.Measure,
+                    Ingredient = subIngredient,
+                    QuantityNumerator = ri.QuantityNumerator,
+                    QuantityDenominator = ri.QuantityDenominator,
+                };
+            }
 
-                // If there are alternatives available or the ingredient is ignorable, return the ingredient so the user can swap.
-                return (ri.HasAlternatives || ri.Optional) ? new IngredientUserIngredient() { Ingredient = ri.Ingredient } : null;
-            });
+            doesIngredientHaveAlternatives.TryGetValue(ri.GetIngredient!.Id, out var hasAlternative);
+            // If there are alternatives available or the ingredient is ignorable, return the ingredient so the user can swap.
+            return (hasAlternative || ri.Optional) ? new IngredientUserIngredient() { Ingredient = ri.GetIngredient! } : null;
+        });
+    }
+
+    /// <summary>
+    /// Get the alternative ingredients for all of the ingredients, ignoring ignored alternative ingredients.
+    /// Includes the base recipe ingredient's ingredient if it has substitutions available or if it is ignorable.
+    /// </summary>
+    private static async Task<IDictionary<int, Ingredient>> GetSubstituteIngredientForRecipeIngredients(CoreContext context, IList<RecipeIngredientQueryResults> queryResults)
+    {
+        // Only need to look for substitutions where an ingredient's allergens conflict with the user's allergens or where the user is substituting in an alternative ingredient.
+        var substituteIngredientIds = queryResults.Select(ri => ri.UserRecipeIngredient?.SubstituteIngredientId).RemoveNullEntries().ToList();
+        if (substituteIngredientIds.Count == 0)
+        {
+            return ReadOnlyDictionary<int, Ingredient>.Empty;
+        }
+
+        // Don't check for disabled recipe/recipeingredients b/c no queryresults are disabled.
+        return await context.Ingredients.TagWithCallSite().AsNoTracking().IgnoreQueryFilters()
+            .Where(i => substituteIngredientIds.Contains(i.Id))
+            .Select(i => new
+            {
+                i.Id,
+                Ingredient = i,
+            }).ToDictionaryAsync(i => i.Id, i => i.Ingredient);
+    }
+
+    /// <summary>
+    /// Get the alternative ingredients for all of the ingredients, ignoring ignored alternative ingredients.
+    /// Includes the base recipe ingredient's ingredient if it has substitutions available or if it is ignorable.
+    /// </summary>
+    private async Task<IDictionary<int, bool>> DoesIngredientHaveAlternatives(CoreContext context, IList<RecipeIngredientQueryResults> queryResults)
+    {
+        if (UserOptions.Allergens == Allergens.None)
+        {
+            return ReadOnlyDictionary<int, bool>.Empty;
+        }
+
+        // Only need to look for substitutions where an ingredient's allergens conflict with the user's allergens or where the user is substituting in an alternative ingredient.
+        var allergenIngredientIds = queryResults.Where(ri => !ri.HasSubstituteIngredient).Where(ri => ri.ConflictsWithAllergens(UserOptions.Allergens)).Select(ri => ri.Ingredient?.Id).RemoveNullEntries().ToList();
+        if (allergenIngredientIds.Count == 0)
+        {
+            return ReadOnlyDictionary<int, bool>.Empty;
+        }
+
+        // Don't check for disabled recipe/recipeingredients b/c no queryresults are disabled.
+        return await context.Ingredients.TagWithCallSite().AsNoTracking().IgnoreQueryFilters()
+            .Where(i => allergenIngredientIds.Contains(i.Id))
+            .Select(i => new
+            {
+                i.Id,
+                // Keep this in the Select projection for data accessibility.
+                HasAlternatives = (i.Allergens & UserOptions.Allergens) == 0 || i.Alternatives.Any(a => (a.AlternativeIngredient.Allergens & UserOptions.Allergens) == 0),
+            }).ToDictionaryAsync(i => i.Id, i => i.HasAlternatives);
     }
 
     /// <summary>

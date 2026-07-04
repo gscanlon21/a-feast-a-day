@@ -171,16 +171,13 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     };
 
     /// <summary>
-    /// Do we need to try swapping in an alternative recipe ingredient?
+    /// Swap if ingredient allergens conflict with user allergens.
+    /// Or if the user is substituting in an alternative ingredient.
     /// </summary>
-    public bool ShouldSubstituteIngredient(Allergens userAllergens)
-    {
-        // Swap if ingredient allergens conflict with user allergens.
-        return Ingredient?.Allergens.HasAnyFlag(userAllergens) == true
-            // Or if the user is substituting in an alternative ingredient.
-            || UserRecipeIngredient?.SubstituteIngredientId.HasValue == true;
-    }
-
+    public bool ShouldSubstituteIngredient(Allergens userAllergens) => ConflictsWithAllergens(userAllergens) || HasSubstituteIngredient;
+    public bool ConflictsWithAllergens(Allergens allergens) => Ingredient?.Allergens.HasAnyFlag(allergens) == true;
+    public bool HasSubstituteIngredient => UserRecipeIngredient?.SubstituteIngredientId.HasValue == true;
+    
     public override int GetHashCode() => HashCode.Combine(Id);
     public override bool Equals(object? obj) => obj is RecipeIngredientQueryResults other && other.Id == Id;
 }
