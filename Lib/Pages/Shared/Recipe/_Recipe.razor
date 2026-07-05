@@ -77,7 +77,7 @@
     }
 
     <div style="margin-block-start:1.1em;margin-block-end:1em;padding-inline-start:2ch;font-size:@FontHelpers.AdjustEm(0.85, User?.MinFontSize);">
-        @foreach (var ingredientGroup in Model.RecipeIngredients.GroupBy(ri => ri.Group))
+        @foreach (var ingredientGroup in Model.RecipeIngredients.Where(ri => ri.Name != RecipeConsts.PlaceholderName).GroupBy(ri => ri.Group))
         {
             <div style="line-height:1;font-weight:600;">@ingredientGroup.Key</div>
             <ul style="margin-block-start:0;margin-block-end:1em;padding-inline-start:0;">

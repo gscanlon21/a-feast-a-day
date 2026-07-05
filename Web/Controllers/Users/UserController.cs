@@ -71,7 +71,7 @@ public partial class UserController : ViewController
             return NotFound();
         }
 
-        viewModel.User = await _userRepo.GetUser(viewModel.Email, viewModel.Token) ?? throw new ArgumentException(string.Empty, nameof(email));
+        viewModel.User = await _userRepo.GetUserStrict(viewModel.Email, viewModel.Token, allowDemoUser: DebugConsts.IsDebug);
         if (!ModelState.IsValid)
         {
             return View("Edit", new UserEditViewModel(viewModel.User)

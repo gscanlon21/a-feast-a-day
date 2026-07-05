@@ -112,6 +112,9 @@ public class RecipeIngredient
     [NotMapped]
     public Fraction Quantity => new(QuantityNumerator, QuantityDenominator);
 
+    [NotMapped]
+    public string Name => Ingredient?.Name ?? IngredientRecipe?.Name ?? RecipeConsts.PlaceholderName;
+
 
     #region Navigation Properties
 

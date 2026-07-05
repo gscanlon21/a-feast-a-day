@@ -3,6 +3,7 @@ global using Core.Code.Helpers;
 global using Core.Dtos.Newsletter;
 global using Core.Dtos.ShoppingList;
 global using Core.Dtos.Users;
+global using Core.Consts;
 global using Core.Models;
 global using Core.Models.Newsletter;
 global using Core.Models.Options;

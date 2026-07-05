@@ -54,20 +54,17 @@ public enum Allergens : long
     Legumes = Peanuts | Soy | OtherLegumes, // 7168
 
 
-    [Display(Name = "Beef", GroupName = "Meat", Order = 1)]
-    Beef = 1L << 15, // 32768
+    [Display(Name = "Red Meat", GroupName = "Meat", Order = 1)]
+    RedMeat = 1L << 15, // 32768
 
-    [Display(Name = "Pork", GroupName = "Meat", Order = 2)]
-    Pork = 1L << 16, // 65536
+    [Display(Name = "Dark Meat", GroupName = "Meat", Order = 2)]
+    DarkMeat = 1L << 16, // 65536
 
-    [Display(Name = "Poultry", GroupName = "Meat", Order = 3)]
-    Poultry = 1L << 17, // 131072
-
-    [Display(Name = "Other Meat", GroupName = "Meat", Order = 4)]
-    OtherMeat = 1L << 18, // 262144
+    [Display(Name = "White Meat", GroupName = "Meat", Order = 3)]
+    WhiteMeat = 1L << 17, // 131072
 
     [Display(Name = "Meat", GroupName = "Meat")]
-    Meat = Beef | Pork | Poultry | OtherMeat, // 491520
+    Meat = RedMeat | DarkMeat | WhiteMeat, // 229376
 
 
     [Display(Name = "Almonds", GroupName = "Nuts", Order = 1)]

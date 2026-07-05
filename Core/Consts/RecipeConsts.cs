@@ -26,4 +26,9 @@ public static class RecipeConsts
     public const int QuantityDenominatorMin = 1;
     public const int QuantityDenominatorDefault = 1;
     public const int QuantityDenominatorMax = 16;
+
+    /// <summary>
+    /// Placeholder name for additional ingredients.
+    /// </summary>
+    public const string PlaceholderName = "";
 }

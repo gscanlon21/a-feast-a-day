@@ -70,7 +70,7 @@ public class UpsertRecipeModel : IValidatableObject
     public IList<RecipeInstruction> Instructions { get; set; } = [];
 
     [JsonInclude, ValidateNever]
-    public IList<Data.Entities.Recipes.RecipeIngredient> RecipeIngredients { get; set; } = [];
+    public IList<RecipeIngredient> RecipeIngredients { get; set; } = [];
 
     [NotMapped]
     public Section[]? SectionBinder
@@ -105,9 +105,9 @@ public class UpsertRecipeModel : IValidatableObject
                 yield return new ValidationResult($"Both the Ingredient and the Recipe cannot have values.", [nameof(RecipeIngredients)]);
             }
 
-            if (!recipeIngredient.IngredientId.HasValue && !recipeIngredient.IngredientRecipeId.HasValue)
+            if (!recipeIngredient.IngredientId.HasValue && !recipeIngredient.IngredientRecipeId.HasValue && !recipeIngredient.Optional)
             {
-                yield return new ValidationResult($"Either the Ingredient or the Recipe must have a value.", [nameof(RecipeIngredients)]);
+                yield return new ValidationResult($"Either the Ingredient or the Recipe must have a value when required.", [nameof(RecipeIngredients)]);
             }
         }
     }

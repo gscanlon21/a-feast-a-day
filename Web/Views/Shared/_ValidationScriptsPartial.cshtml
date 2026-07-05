@@ -23,7 +23,7 @@
 <script nomodule async defer src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.12/widget.min.js"></script>
 
 <script async defer src="~/js/validation/mustbetrue.js"></script>
-@if (Model.IsDemoUser)
+@if (Model.IsDemoUser && !DebugConsts.IsDebug)
 {
     <script async defer src="~/js/validation/denydemouser.js"></script>
 }

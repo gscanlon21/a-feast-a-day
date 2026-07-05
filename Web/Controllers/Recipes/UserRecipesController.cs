@@ -115,15 +115,20 @@ public class UserRecipesController : ViewController
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
 
+        if (!ModelState.IsValid)
+        {
+            // Post-Redirect-Get for GoBackOnSave.
+            TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe);
+            return recipe.Id switch
+            {
+                default(int) => RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token, WasUpdated = false }),
+                _ => RedirectToAction(nameof(ManageRecipe), new { email, token, section, RecipeId = recipe.Id, WasUpdated = false }),
+            };
+        }
+
         if (recipe.Id == default)
         {
             // Adding recipe.
-            if (!ModelState.IsValid)
-            {
-                TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe); // Post-Redirect-Get for GoBackOnSave.
-                return RedirectToAction(nameof(UserController.Edit), UserController.Name, new { email, token, WasUpdated = false });
-            }
-
             _context.Add(new Recipe()
             {
                 User = user,
@@ -150,12 +155,6 @@ public class UserRecipesController : ViewController
         else
         {
             // Editing recipe.
-            if (!ModelState.IsValid)
-            {
-                TempData[TempData_Recipe.UpsertRecipe] = JsonSerializer.Serialize(recipe); // Post-Redirect-Get for GoBackOnSave.
-                return RedirectToAction(nameof(ManageRecipe), new { email, token, section, RecipeId = recipe.Id, WasUpdated = false });
-            }
-
             var existingRecipe = await _context.Recipes
                 .Include(r => r.RecipeIngredients)
                 .Include(r => r.Instructions)

@@ -1,31 +1,28 @@
 ﻿@model RecipeIngredientsViewModel
-@using System.Numerics
-@using Core.Models.Recipe
-@using Core.Consts
 @using Web.Controllers.RecipeIngredients
 
 <div class="list-group">
-    @foreach (var recipeIngredient in Model.UserRecipeIngredients)
+    @foreach (var userRecipeIngredient in Model.UserRecipeIngredients)
     {
         <a asp-action="@nameof(RecipeIngredientsController.ManageRecipeIngredient)" asp-controller="@RecipeIngredientsController.Name"
-           asp-route-recipeIngredientId="@recipeIngredient.RecipeIngredient.Id" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token"
-           class="list-group-item @(recipeIngredient.RecipeIngredient.Optional ? "list-group-item-dark" : "list-group-item-primary") list-group-item-action allow-demo">
+           asp-route-recipeIngredientId="@userRecipeIngredient.RecipeIngredient.Id" asp-route-email="@Model.User.Email" asp-route-token="@Model.Token"
+           class="list-group-item @(userRecipeIngredient.RecipeIngredient.Optional ? "list-group-item-dark" : "list-group-item-primary") list-group-item-action allow-demo">
             <div class="row gx-3 gy-1 justify-content-between">
-                <div class="col-auto font-weight--bold">@Model.GetName(recipeIngredient)</div>
-                @if (recipeIngredient.Ignore)
+                <div class="col-auto font-weight--bold">@userRecipeIngredient.RecipeIngredient.Name</div>
+                @if (userRecipeIngredient.Ignore)
                 {
                     <div class="col-auto d-flex align-items-center"><small class="badge bg-secondary rounded-pill">Ignored</small></div>
                 } 
-                else if (recipeIngredient.SubstituteIngredientId.HasValue || recipeIngredient.SubstituteRecipeId.HasValue)
+                else if (userRecipeIngredient.SubstituteIngredientId.HasValue || userRecipeIngredient.SubstituteRecipeId.HasValue)
                 {
                     <div class="col-auto d-flex align-items-center">
-                        <small class="badge bg-primary rounded-pill">@(recipeIngredient.SubstituteIngredient?.Name ?? recipeIngredient.SubstituteRecipe?.Name)</small>
+                        <small class="badge bg-primary rounded-pill">@(userRecipeIngredient.SubstituteIngredient?.Name ?? userRecipeIngredient.SubstituteRecipe?.Name)</small>
                     </div>
                 }
             </div>
-            @if (!string.IsNullOrWhiteSpace(recipeIngredient.Notes ?? recipeIngredient.RecipeIngredient.Attributes))
+            @if (!string.IsNullOrWhiteSpace(userRecipeIngredient.Notes ?? userRecipeIngredient.RecipeIngredient.Attributes))
             {
-                <div><small>@(recipeIngredient.Notes ?? recipeIngredient.RecipeIngredient.Attributes)</small></div>
+                <div><small>@(userRecipeIngredient.Notes ?? userRecipeIngredient.RecipeIngredient.Attributes)</small></div>
             }
         </a>
     }
