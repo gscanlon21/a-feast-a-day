@@ -96,7 +96,7 @@
         @foreach (var instruction in Model.Recipe.Instructions.OrderBy(i => i.Order))
         {
             <li style="margin-block:.4em;list-style-type:decimal;">
-                @instruction.Name
+                @Formatter.For(instruction, i => i.Name)
             </li>
         }
     </ul>
