@@ -7,7 +7,7 @@
 24	Fried Cabbage and Egg Noodles	\N	\N	\N	4	15	5	4	t	cabbage-noodles.jpg	0	https://www.allrecipes.com/recipe/206120/fried-cabbage-and-egg-noodles/	f	f
 25	Slow Cooker Chicken	These easy slow cooker chicken tacos are easy to make with just 3 ingredients in your crockpot. Spoon the filling into warm tortillas for a very tasty meal any day of the week. Serve with Mexican Rice Quick and Easy Refried Beans.	\N	\N	0	360	10	1	t	slow-cooker-ckicken.jpg	5	\N	f	f
 26	Roasted Broccoli	\N	\N	\N	16	20	5	1	t	roasted-broccoli.jpg	0	\N	f	f
-27	Garlic Toast Pizzas	\N	\N	\N	12	10	5	2	t	\N	0	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	f	f
+27	Garlic Toast Pizzas	\N	Not very nutritious.	\N	12	10	5	2	t	\N	0	https://www.tasteofhome.com/recipes/garlic-toast-pizzas/	f	f
 28	Sauteed Green Beans	\N	\N	\N	16	7	0	2	t	sauteed-green-beans.jpg	0	\N	f	f
 29	Garlic Parmesan Asparagus	\N	\N	\N	16	5	5	2	t	parmesan-roasted-asparagus.jpg	0	\N	f	f
 30	Curry Scramble	\N	\N	\N	6	10	5	2	t	curry-scramble.jpg	0	\N	f	f
@@ -148,7 +148,7 @@
 170	Broccoli w/ Soy Sauce and Sesame Seeds	\N	\N	\N	16	3	2	2	t	broccoli-soy-sauce.jpg	0	\N	f	f
 171	Lemon Posset	To intensify the lemon flavour of this lovely old dessert even more, swirl a spoonful of lemon curd or lemon cheese on the surface just before serving. Physalis make a suitable and very stylish accompaniment.	Not very nutritious.	\N	64	8	2	4	t	lemon-posset.jpg	0	\N	f	f
 172	Chocolate and Banana Fool	Good-quality bought custard is ideal for this dessert. Don't be tempted to use anything but the best chocolate, though, or the flavour will be compromised. Look for a bar that contains at least 70 per cent cocoa solids. A flavoured chocolate such as pistachio or orange takes the dessert into another dimension.	\N	\N	64	2	3	4	t	chocolate-banana-fool.jpg	0	\N	f	f
-173	Home-Made Burgers w/ Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	\N	\N	8	14	6	4	t	burgers-relish.jpg	0	\N	f	f
+173	Home-Made Burgers w/ Relish	Set these burgers on individual plates with spicy corn relish on the side. To make the relish, heat 30ml/2 tbsp oil in a pan and fry 1 onion, 2 crushed garlic cloves and 1 seeded red chilli until soft. Add 10ml/2 tsp garam masala and cook for 2 minutes, then mix in a 320g/11¼oz can whole kernel corn and the grated rind and juice of 1 lime.	Has odd ingredients.	\N	8	14	6	4	t	burgers-relish.jpg	0	\N	f	f
 174	Pan-Fried Gammon w/ Cider	Cooking gammon (smoked or cured ham) in a liquid is a good way of ensuring it stays moist and soft-textured. Serve with mashed potatoes.	Not very nutritious.	\N	4	9	1	4	t	fried-gammon.jpg	0	\N	f	f
 175	Chocolate and Prune Refrigerator Bars	\N	\N	\N	32	120	5	12	t	chocolate-prune-refrigerator-bars.jpg	0	\N	f	f
 176	Stewed Okra w/ Tomatoes	\N	\N	\N	16	25	2	4	t	okra-fries.jpg	0	\N	f	f
@@ -246,7 +246,7 @@
 365	Potato & Artichoke Al Forno	From Jamie Oliver's 5 Ingredients	\N	\N	4	80	9	6	t	potato-artichoke-al-forno.jpg	0	\N	f	f
 366	Company Pickle Chunks	\N	\N	\N	0	0	0	7	t	\N	13	Lolly Wehrli	t	f
 367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	8	2	2	t	egg-fried-rice.jpg	0	\N	f	f
-368	Rhubarb Compote	\N	\N	\N	0	25	5	1	t	rhubarb-compote.jpg	6	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	f	f
+368	Rhubarb Compote	\N	Duplicate of Rhubarb Compote	\N	0	25	5	1	t	rhubarb-compote.jpg	6	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	f	f
 369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	20	60	9	4	t	cajun-sweet-potatoes.jpg	0	\N	f	f
 370	Chili Jam	\N	\N	\N	0	30	10	1	t	chili-jam.jpg	6	https://www.jamieoliver.com/recipes/dressings-condiments/chilli-jam/	f	f
 371	Super Green Spaghetti	From Jamie Oliver's 5 Ingredients	\N	\N	6	12	1	2	t	green-spaghetti.jpg	0	\N	f	f
@@ -450,7 +450,7 @@
 637	Chocolate and Pistachio Wedges	Pressing the pistachios into the mixture prevents them from getting over-browned.	\N	\N	64	20	10	8	t	\N	0	\N	f	f
 638	Bacon and Egg Muffins Hollandaise	Eggs that are a week or more old will not keep their shape when poached, so for the best results, use very fresh eggs. To make sure that you don't break the yolk, crack the eggs into a cup before carefully adding them to the gently simmering water.	Too complicated. Too much equipment.	\N	6	10	5	4	t	\N	0	\N	f	f
 639	Sweet and Sour Pork Thai-Style	\N	Too complicated. Too many ingredients.	\N	8	14	6	4	t	\N	0	\N	f	f
-640	Fried Pork w/ Scrambled Egg	\N	\N	\N	8	12	5	4	t	\N	0	\N	f	f
+640	Fried Pork w/ Scrambled Egg	\N	Not a fan. The ingredient of 'Pork' is too broad.	\N	8	12	5	4	t	\N	0	\N	f	f
 641	Tex Mex 7 Layer Dip	\N	Too many ingredients.	\N	16	0	10	6	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 642	Salad in a Glass	\N	\N	\N	128	0	10	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
 643	Root Cause Clense Smoothie	\N	Too many ingredients.	\N	128	0	5	1	t	\N	0	From the Root Cause Reset Cookbook by Dr. Isabella Wentz	f	f
@@ -588,7 +588,7 @@
 905	Classic Roast Chicken	\N	\N	\N	8	90	30	4	t	\N	0	\N	f	f
 906	Pasta Primavera	Any kind of fresh vegetable can be added to this pasta.	\N	\N	4	15	5	2	t	\N	0	\N	f	f
 907	The Burger	You can also cook the burgers in a skillet over medium-high heat for 4–5 minutes per side.	\N	\N	8	10	10	4	t	burgers-relish.jpg	0	\N	t	f
-908	The Cowboy Burger	\N	\N	\N	8	10	10	2	t	burgers-relish.jpg	0	\N	f	f
+908	The Cowboy Burger	\N	No very nutritious.	\N	8	10	10	2	t	burgers-relish.jpg	0	\N	f	f
 909	Rib Eye Tacos	Serve the tacos with you favorite Mexican hot sauce and sour cream.	\N	\N	12	10	10	1	t	\N	0	\N	f	f
 910	Sweet Potato Tacos	\N	\N	\N	4	25	10	1	t	\N	0	\N	f	f
 911	Lemon and Chile Chicken Legs	You can substitute 1 teaspoon dried thyme leaves or ½ teaspoon ground thyme for the fresh thyme.	Not very nutritious.	\N	8	40	70	4	t	\N	0	\N	f	f
@@ -643,7 +643,7 @@
 994	Lemon Chicken w/ Roasted Potatoes	\N	\N	\N	8	90	5	4	t	\N	0	https://www.theorganickitchen.org/lemon-chicken-with-roasted-potatoes/	f	f
 995	Egg, Bean, and Chorizo Tostada w/ Salsa Verde	\N	\N	\N	6	7	3	2	t	egg-bean-chorizo-tostada.jpg	0	https://www.theorganickitchen.org/egg-bean-and-chorizo-tostada-with-salsa-verde/	f	f
 996	Parmesan Potato Waffle	\N	\N	\N	6	15	5	1	t	\N	0	https://www.theorganickitchen.org/parmesan-potato-waffle/	f	f
-997	Easy Sweet Potato Lentil Soup	Save the remaining coconut milk for adding liquid to leftovers.   *You can use any type of greens in this soup, and add more to your liking. 	\N	\N	8	30	15	8	t	\N	0	https://www.acouplecooks.com/sweet-potato-lentil-soup/	f	f
+997	Sweet Potato Lentil Soup	You can use any type of greens in this soup, and add more to your liking. 	\N	\N	8	30	15	8	t	\N	0	https://www.acouplecooks.com/sweet-potato-lentil-soup/	f	f
 998	Stovetop Bacon Slices	\N	\N	\N	0	10	5	1	t	bacon.jpg	0	\N	t	f
 1000	Fried Breadcrumbs	\N	\N	\N	0	5	5	4	t	\N	4	\N	t	f
 1001	Peanut Sauce	You can substitute with peanut butter with almond or cashew butter.	\N	\N	0	0	5	4	t	peanut-sauce.jpg	9	\N	t	f
@@ -662,7 +662,7 @@
 1046	Chopped Mexican Salad w/ Creamy Avocado Ranch	\N	\N	\N	20	10	10	8	t	\N	0	https://www.theorganickitchen.org/chopped-mexican-salad-with-creamy-avocado-ranch/	f	f
 1047	La Scala Salad Recipe	\N	\N	\N	12	0	5	4	t	la-scala-salad.jpg	0	https://www.theglutenfreeblogger.com/la-scala-chopped-salad/	f	f
 1048	Tostada Shells	\N	\N	\N	0	10	5	1	t	tostada-shells.jpg	0	\N	t	f
-1049	Rhubarb Compote	\N	\N	\N	0	0	0	10	t	\N	4	\N	t	f
+1049	Rhubarb Compote	\N	\N	\N	0	10	15	10	t	rhubarb-compote.jpg	4	\N	t	f
 1082	Whipped Cream	If you accidentally over-whip the cream, and it looks curdled and heavy, pour in a little bit more cold heavy cream, and fold it in gently by hand with a spatula until it smooths out.	\N	\N	0	0	0	2	t	\N	6	\N	t	f
 1083	Soaked Mung Beans	\N	\N	\N	0	0	0	2	t	curried-mung-bean-soup-alt.jpg	6	\N	t	f
 1084	Cooked Edamame	\N	\N	\N	0	0	0	1	t	peas-beans-chili-mint.jpg	4	\N	t	f
@@ -671,3 +671,7 @@
 1087	Washed Strawberries	\N	\N	\N	0	0	15	1	t	\N	4	\N	t	f
 1120	Sauerkraut	Always clean all equipment (especially the mason jar). Simply pour boiling water over it, then let it dry naturally. Make sure the cabbage is covered with its liquid (brine) to avoid that mold starts growing. If your sauerkraut doesn't release enough liquid to stay submerged, it's perfectly fine to add a 2% brine to top it off. Do not skip the salt as it's very important and also acts as a preservative. I always use sea salt or Himalayan salt. How much salt to use: The amount of salt needed depends on the fermentation temperature. The general guideline is 2% salt by weight of cabbage. For more precise figures (per 1kg cabbage):   At 15–18 °C (59–64 °F) use 1.5% (15g/kg) (takes 3-5 weeks) 18–22 °C (64–72 °F) use 1.8-2.0% (18-20g/kg) (takes 2-3 weeks) 22–25 °C (72–77 °F) use 2.0% (20g/kg) (takes 7-10 days) 25–28 °C (77–82°F) use 2.2–2.5% (22–25g/kg) (takes 3-6 days) > 28 °C (> 82 °F) use 2.5 % (25 g/kg) (takes 2-4 days)   Make two jars at the same time. Ferment the second one longer than the first one and see which one you like more. Once you finish eating the first batch, start the third one and eat the second batch. This way, you always have fresh homemade sauerkraut on hand. Season the fermented sauerkraut with a little smoked paprika which adds a wonderful flavor.	\N	\N	0	0	15	12	t	\N	0	https://elavegan.com/how-to-make-sauerkraut/#recipe	t	f
 1121	Cereal Bar Recipe	\N	\N	\N	32	20	15	14	t	\N	0	https://glutenfreeonashoestring.com/homemade-cereal-bars/	f	f
+1122	Hot Dogs	\N	\N	\N	12	5	5	1	t	grilled-sausages.jpg	0	\N	f	f
+1123	Bratwurst	\N	\N	\N	12	5	5	1	t	grilled-sausages.jpg	0	\N	f	f
+1124	Mango Chutney	\N	\N	\N	0	0	15	2	t	\N	0	https://www.jamieoliver.com/recipes/fruit/mango-chutney/	t	f
+1125	Garlic Texas Toast	Dairy-Free Garlic Toast: If you are dairy-free, use olive oil in place of butter for Dairy-Free Garlic Bread. Softer Garlic Toast: If you like your garlic toast softer, bake at 375 degrees for 4-6 minutes per side, instead of at 400 degrees F. Lower Fat Modification: You can opt to only spread one side of the bread with the garlic butter, using half the amount this recipe calls for. How to Freeze: Spread sliced bread with the garlic butter and then place it on a parchment-lined baking sheet. Pop the baking sheet into the freezer and freeze for 20-30 minutes, or until the garlic bread's surface if frozen solid. Remove slices of garlic bread from parchment paper and place in a freezer-safe bag and store in the freezer for up to 3 months. To Bake Garlic Toast From Frozen: Preheat the oven to 400 degrees F. Remove as many slices of garlic toast as desired from the freezer and place it on a baking sheet, lined with parchment paper. Bake for 7 minutes on one side, flip and bake for an additional 5-7 minutes or until golden.	\N	\N	0	0	0	2	t	\N	0	https://amindfullmom.com/homemade-garlic-bread/	t	f

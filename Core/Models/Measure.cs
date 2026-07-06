@@ -58,6 +58,9 @@ public enum Measure
     [Display(Name = "Quarts", ShortName = "qt")]
     Quarts = 14,
 
+    [Display(Name = "Kilograms", ShortName = "kg")]
+    KiloGrams = 15,
+
     [Display(Name = "IU", ShortName = "IU")]
     IU = 98,
 
@@ -105,7 +108,7 @@ public static class MeasureConsts
     /// <summary>
     /// Measures used to measure dry ingredients.
     /// </summary>
-    public static Measure[] DryMeasures => [Measure.Grams, Measure.Milligrams, Measure.Micrograms, Measure.Ounces, Measure.Pounds];
+    public static Measure[] DryMeasures => [Measure.Micrograms, Measure.Milligrams, Measure.Grams, Measure.KiloGrams, Measure.Ounces, Measure.Pounds];
 
     /// <summary>
     /// Measures used to measure liquids.

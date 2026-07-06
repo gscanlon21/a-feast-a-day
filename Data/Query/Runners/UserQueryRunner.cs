@@ -349,10 +349,10 @@ public class UserQueryRunner : BaseQueryRunner
             {
                 return new IngredientUserIngredient()
                 {
-                    Measure = ri.Measure,
                     Ingredient = subIngredient,
-                    QuantityNumerator = ri.QuantityNumerator,
-                    QuantityDenominator = ri.QuantityDenominator,
+                    Measure = ri.UserRecipeIngredient.Measure,
+                    QuantityNumerator = ri.UserRecipeIngredient.QuantityNumerator,
+                    QuantityDenominator = ri.UserRecipeIngredient.QuantityDenominator,
                 };
             }
 

@@ -77,6 +77,10 @@ public class UserIngredientsController : ViewController
         {
             return View("StatusMessage", new StatusMessageViewModel(LinkExpiredMessage));
         }
+        else if (ingredient.DisabledReason != null)
+        {
+            TempData[TempData_User.FailureMessage] = $"This ingredient is disabled: {ingredient.DisabledReason}";
+        }
 
         return View(nameof(ManageIngredient), new UserManageIngredientViewModel()
         {
