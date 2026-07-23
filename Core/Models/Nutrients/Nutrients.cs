@@ -972,14 +972,30 @@ public enum Nutrients
     /// <summary>
     /// Polyunsaturated Fats
     /// </summary>
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_1_1_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_2_3_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_4_8_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_9_13_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_14_18_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_51_70_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_1_1_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_2_3_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_4_8_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_9_13_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_14_18_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(5.6, 11.2, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Polyunsaturated Fats", Order = 12900)]
     Fatty_Acids_Total_Polyunsaturated = 51,
 
@@ -1376,6 +1392,12 @@ public enum Nutrients
     [DailyAllowance(25, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [DailyAllowance(20, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(20, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(29, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(30, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(44, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(45, -1, Measure.Micrograms, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Chromium (Cr)", Order = 999999)]
     Chromium_Cr = 74,
 
