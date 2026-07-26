@@ -78,7 +78,7 @@ public class Ingredient
     [Display(Name = "Default Measure")]
     public Measure DefaultMeasure { get; set; }
 
-    [Display(Name = "Grams Per Measure")]
+    [Display(Name = "Grams Per Measure", Description = "Use dry measure values.")]
     public double GramsPerMeasure { get; set; }
 
     [Display(Name = "Grams Per Fine Cup")]
@@ -87,7 +87,7 @@ public class Ingredient
     [Display(Name = "Grams Per Coarse Cup")]
     public double GramsPerCoarseCup { get; set; }
 
-    [Display(Name = "Grams Per Serving")]
+    [Display(Name = "Grams Per Serving", Description = "g-dry / g-cooked * g-portion-size")]
     public double GramsPerServing { get; set; }
 
     [Display(Name = "Internal Notes")]

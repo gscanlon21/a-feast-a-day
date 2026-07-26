@@ -1,5 +1,4 @@
-﻿using Core.Models;
-using Data.Entities.Ingredients;
+﻿using Data.Entities.Ingredients;
 
 namespace Data.Interfaces.Recipe;
 
@@ -10,9 +9,7 @@ public interface IRecipeIngredient
     /// <summary>
     /// This is the scaled quantity.
     /// </summary>
-    double GetQuantity { get; }
-
-    Measure GetMeasure { get; }
+    double GetGramsUsed { get; }
 
     Ingredient? GetIngredient { get; }
 

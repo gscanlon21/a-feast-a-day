@@ -1,4 +1,4 @@
-﻿using Core.Models;
+﻿using Data.Code.Extensions;
 using Data.Interfaces.Recipe;
 using Data.Query;
 using System.ComponentModel;
@@ -24,10 +24,9 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
 
     public UserFeastRecipeIngredient(RecipeIngredientQueryResults recipeIngredient, double actualScale = 1)
     {
-        Measure = recipeIngredient.Measure;
-        CoarseCut = recipeIngredient.CoarseCut;
         RecipeIngredientId = recipeIngredient.Id;
-        Quantity = recipeIngredient.Quantity.ToDouble();
+        CoarseCut = recipeIngredient.IsCoarseCut;
+        GramsUsed = recipeIngredient.GetGramsUsed;
         CookedScale = recipeIngredient.CookedScale * actualScale;
         // Don't set Ingredient, so that EF Core doesn't add/update Ingredient.
         IngredientId = recipeIngredient.Ingredient!.Id;
@@ -51,12 +50,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     [DefaultValue(IngredientConsts.CookedScaleDefault)]
     public double CookedScale { get; private init; }
 
-    /// <summary>
-    /// This value is set after recipe scaling is applied.
-    /// </summary>
-    public double Quantity { get; private init; } = 1;
-
-    public Measure Measure { get; private init; }
+    public double GramsUsed { get; private init; }
 
     public bool CoarseCut { get; private init; }
 
@@ -76,10 +70,7 @@ public class UserFeastRecipeIngredient : IRecipeIngredient
     public bool IsCoarseCut => CoarseCut;
 
     [NotMapped]
-    public Measure GetMeasure => Measure;
-
-    [NotMapped]
-    public double GetQuantity => Quantity;
+    public double GetGramsUsed => GramsUsed;
 
     [NotMapped]
     public double GetCookedScale => CookedScale;

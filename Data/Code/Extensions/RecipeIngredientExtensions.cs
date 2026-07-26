@@ -13,15 +13,7 @@ public static class RecipeIngredientExtensions
     /// </summary>
     internal static double ServingsUsed(this IRecipeIngredient recipeIngredient, Ingredient ofIngredient)
     {
-        return recipeIngredient.GramsUsed(ofIngredient) / ofIngredient.GramsPerServing;
-    }
-
-    /// <summary>
-    /// How many grams does a recipe ingredient use of an ingredient?
-    /// </summary>
-    internal static double GramsUsed(this IRecipeIngredient recipeIngredient, Ingredient ofIngredient)
-    {
-        return recipeIngredient.GetQuantity * recipeIngredient.GetMeasure.ToGramsWithContext(ofIngredient, recipeIngredient.IsCoarseCut);
+        return recipeIngredient.GetGramsUsed / ofIngredient.GramsPerServing;
     }
 
     /// <summary>

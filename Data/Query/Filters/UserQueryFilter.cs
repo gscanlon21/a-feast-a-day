@@ -268,7 +268,7 @@ public class UserQueryFilter : BaseQueryFilter
     {
         return list.SelectMany(ufr => ufr.RecipeIngredients
             .Where(ufri => ufri.Type == RecipeIngredientType.Ingredient)
-            .SelectMany(ufri => ufri.GetNutrients(nutrients, partialIngredients.GetValueOrDefault(ufri.GetIngredient!.Id), ufr.Section == Core.Models.Newsletter.Section.Prep ? ufr.SetScale / ufr.GetScale : 1))
+            .SelectMany(ufri => ufri.GetNutrients(nutrients, partialIngredients.GetValueOrDefault(ufri.GetIngredient!.Id), ufr.Section == Section.Prep ? ufr.SetScale / ufr.GetScale : 1))
         ).GroupBy(a => a.Key).ToDictionary(a => a.Key, a => a.Sum(b => b.Value));
     }
 }

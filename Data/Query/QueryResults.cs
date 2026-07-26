@@ -155,6 +155,7 @@ public class RecipeIngredientQueryResults : IRecipeIngredient
     public Measure GetMeasure => Measure;
     public Ingredient? GetIngredient => Ingredient;
     public double GetQuantity => Quantity.ToDouble();
+    public double GetGramsUsed => Ingredient == null ? GetQuantity : GetQuantity * GetMeasure.ToGramsWithContext(Ingredient, IsCoarseCut);
     public double GetCookedScale => CookedScale;
 
     /// <summary>
