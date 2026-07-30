@@ -197,13 +197,13 @@
 252	Hummus and Vegetables	\N	\N	\N	16	0	5	1	t	hummus-vegetables.jpg	0	\N	f	f
 253	Apricot Butter Bars	Store in an airtight container. The cook time may vary depending on the model of dehydrator you use. If you are storing them in the fridge rather than dehydrating them they will be a little sticky. Dehydrating them removes the moisture and makes them easier to store and eat.	\N	\N	32	120	10	5	t	apricot-butter-bars.jpg	0	https://www.drkarafitzgerald.com/recipe/apricot-butter-bars/	f	f
 254	Maple-Pecan Dip	\N	\N	\N	0	0	10	1	t	hummus.jpg	6	https://www.drkarafitzgerald.com/recipe/maple-pecan-dip-dairy-free/	f	f
-255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	f	f
+255	Cashew Mayo	There are so many options for expanding on this – blend in herbs for a creamy herb dressing, or blend in a “meatier” vegetable such as cooked artichoke, broccoli or zucchini for a tasty dip. You can also stir 1-2 tbsp into soups or casseroles to give a creamy texture.	\N	\N	0	0	10	1	t	cashew-mayo.jpg	6	https://www.drkarafitzgerald.com/recipe/cashew-mayo/	t	f
 256	Anti-Aging Pesto	To make a thicker pesto, add ½-1 whole avocado and reduce the olive oil to desired consistency. This makes a delicious dip for vegetables and cassava or other grain-free tortilla chips. Store in airtight container in refrigerator for about three days.	Duplicate of Pesto.	\N	0	0	5	1	t	anti-aging-pesto.jpg	6	https://www.drkarafitzgerald.com/recipe/anti-aging-pesto/	f	f
 257	Gluten-Free Risotto	Don't overcook the rice - risotto should be creamy, tender, and mushy, so be careful not to overcook the rice.	\N	\N	20	40	5	4	t	gluten-free-risotto.jpg	0	https://www.glutenfreepalate.com/gluten-free-risotto/	f	f
 258	Korean Eggs & Rice	From Jamie Oliver's 5 Ingredients	\N	\N	6	20	2	2	t	korean-eggs-rice.jpg	0	\N	f	f
 259	Chicken Liver Pate	Variations! Dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use cashews and make sure to blend long enough for the cashews to completely 'melt' into creaminess.  Low FODMAPs, dairy-free, Paleo: Instead of butter, use coconut oil. Instead of heavy cream, use coconut cream (the solid contents of a refrigerated can of full-fat coconut milk, reserve the liquid for another use). Omit the onion and garlic.	Too many saturated fats.	\N	8	25	5	1	t	chicken-liver-pate.jpg	0	https://www.drkarafitzgerald.com/recipe/chicken-liver-pate/	f	f
 260	Lemony Zucchini Linguine	From Jamie Oliver's 5 Ingredients	\N	\N	4	13	2	2	t	zucchini-linguine.jpg	0	\N	f	f
-261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	4	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
+261	Chicken Noodle Stir-Fry	From Jamie Oliver's 5 Ingredients	\N	\N	8	15	1	2	t	chicken-noodle-stir-fry.jpg	0	\N	f	f
 262	Buttermilk	Buttermilk freezes great for up to 3 months. You could even pour in an ice cube tray so it’s easy to use small amounts as needed.	\N	\N	0	0	5	3	t	buttermilk.jpg	9	\N	t	f
 263	Tahini Carrot Slaw	From Jamie Oliver's 5 Ingredients	\N	\N	20	10	10	2	t	tahini-carrot-slaw.jpg	0	\N	f	f
 264	Asian Fried Eggs	\N	\N	\N	6	7	3	2	t	asian-fried-eggs-alt.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
@@ -248,7 +248,7 @@
 367	Egg-Fried Rice	From Jamie Oliver's 5 Ingredients	\N	\N	12	8	2	2	t	egg-fried-rice.jpg	0	\N	f	f
 368	Rhubarb Compote	\N	Duplicate of Rhubarb Compote	\N	0	25	5	1	t	rhubarb-compote.jpg	6	https://www.allrecipes.com/recipe/274044/rhubarb-compote/	f	f
 369	Cajun Sweet Potatoes	From Jamie Oliver's 5 Ingredients	\N	\N	20	60	9	4	t	cajun-sweet-potatoes.jpg	0	\N	f	f
-370	Chili Jam	\N	\N	\N	0	30	10	1	t	chili-jam.jpg	6	https://www.jamieoliver.com/recipes/dressings-condiments/chilli-jam/	f	f
+370	Chili Jam	\N	\N	\N	0	30	10	1	t	chili-jam.jpg	6	https://www.jamieoliver.com/recipes/dressings-condiments/chilli-jam/	t	f
 371	Super Green Spaghetti	From Jamie Oliver's 5 Ingredients	\N	\N	6	12	1	2	t	green-spaghetti.jpg	0	\N	f	f
 372	Lemony Arugula Farfalle	\N	\N	\N	4	10	5	6	t	linguine-arugula.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 373	Hummus and Crackers	\N	\N	\N	48	0	1	1	t	hummus-vegetables.jpg	0	\N	f	f
