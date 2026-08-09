@@ -85,9 +85,9 @@
 
             <div class="mb-3 mt-3">
                 <label asp-for="LagRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.LagRefreshXWeeks)</label>
-                <div style="display:flex;column-gap:1ex;">
+                <div class="d-flex" style="column-gap:1ex;">
                     <output name="refreshFunctionalOutput" for="@Html.IdFor(_ => Model.LagRefreshXWeeks)">@Model.LagRefreshXWeeks</output>
-                    <div style="display:flex;width:100%;">
+                    <div class="d-flex" style="width:100%;">
                         <input asp-for="LagRefreshXWeeks" type="range" style="width:100%;" aria-describedby="refresh-functional-help"
                                min="@UserConsts.LagRefreshXWeeksMin" max="@UserConsts.LagRefreshXWeeksMax"
                                oninput="refreshFunctionalOutput.value = this.valueAsNumber" />
@@ -105,9 +105,9 @@
 
             <div class="mb-3 mt-3">
                 <label asp-for="PadRefreshXWeeks" class="control-label">@Html.DisplayNameFor(_ => Model.PadRefreshXWeeks)</label>
-                <div style="display:flex;column-gap:1ex;">
+                <div class="d-flex" style="column-gap:1ex;">
                     <output name="delayFunctionalOutput" for="@Html.IdFor(_ => Model.PadRefreshXWeeks)">@Model.PadRefreshXWeeks</output>
-                    <div style="display:flex;width:100%;">
+                    <div class="d-flex" style="width:100%;">
                         <input asp-for="PadRefreshXWeeks" type="range" style="width:100%;" aria-describedby="delay-functional-help"
                                min="@UserConsts.PadRefreshXWeeksMin" max="@UserConsts.PadRefreshXWeeksMax"
                                oninput="delayFunctionalOutput.value = this.valueAsNumber" />
@@ -140,9 +140,9 @@
 
             <div class="mb-3 mt-3">
                 <label asp-for="Servings" class="control-label">@Html.DisplayNameFor(_ => Model.Servings)</label>
-                <div style="display:flex;column-gap:1ex;">
+                <div class="d-flex" style="column-gap:1ex;">
                     <output name="scaleOutput" for="@Html.IdFor(_ => Model.Servings)">@Model.Servings</output>
-                    <div style="display:flex;width:100%;">
+                    <div class="d-flex" style="width:100%;">
                         <input asp-for="Servings" type="range" style="width:100%;" aria-describedby="scale-help"
                                min="@RecipeConsts.ServingsMin" max="@RecipeConsts.ServingsMax" step="@RecipeConsts.ServingsStep"
                                oninput="scaleOutput.value = this.valueAsNumber" />

@@ -35,17 +35,17 @@
     <div class="mb-5 mt-3">
         <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.PrepTime)</label>
         <div><span asp-validation-for="Recipe.PrepTime" class="text-danger"></span></div>
-        <div style="display:flex;column-gap:1ex;">
+        <div class="d-flex" style="column-gap:1ex;">
             <input id="@(Html.IdFor(_ => Model.Recipe.PrepTime))" type="number" asp-for="Recipe.PrepTime" style="width:6ch;height:fit-content;"
                     oninput="@Html.IdFor(_ => Model.Recipe.PrepTime)Input.value = this.valueAsNumber" />
-            <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+            <div class="d-flex" style="width:100%;flex-direction:column;justify-content:center;">
                 <input type="range" class="w-100" list="preptime-hashmarks" 
                         id="@Html.IdFor(_ => Model.Recipe.PrepTime)-input"
                         name="@Html.IdFor(_ => Model.Recipe.PrepTime)Input" 
                         min="0" max="60" step="5" value="@Model.Recipe.PrepTime"
                         oninput="@(Html.IdFor(_ => Model.Recipe.PrepTime)).value = this.valueAsNumber" />
 
-                <datalist id="preptime-hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                <datalist id="preptime-hashmarks" class="d-flex" style="flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
                     <option value="0"></option>
                     <option value="15"></option>
                     <option value="30"></option>
@@ -67,17 +67,17 @@
     <div class="mb-5 mt-3">
         <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.CookTime)</label>
         <div><span asp-validation-for="Recipe.CookTime" class="text-danger"></span></div>
-        <div style="display:flex;column-gap:1ex;">
+        <div class="d-flex" style="column-gap:1ex;">
             <input id="@(Html.IdFor(_ => Model.Recipe.CookTime))" type="number" asp-for="Recipe.CookTime" style="width:6ch;height:fit-content;"
                     oninput="@Html.IdFor(_ => Model.Recipe.CookTime)Input.value = this.valueAsNumber" />
-            <div style="width:100%;display:flex;flex-direction:column;justify-content:center;">
+            <div class="d-flex" style="width:100%;flex-direction:column;justify-content:center;">
                 <input type="range" class="w-100" list="cooktime-hashmarks"
                         id="@Html.IdFor(_ => Model.Recipe.CookTime)-input"
                         name="@Html.IdFor(_ => Model.Recipe.CookTime)Input"
                         min="0" max="120" step="5" value="@Model.Recipe.CookTime"
                         oninput="@(Html.IdFor(_ => Model.Recipe.CookTime)).value = this.valueAsNumber" />
 
-                <datalist id="cooktime-hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                <datalist id="cooktime-hashmarks" class="d-flex" style="flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
                     <option value="0"></option>
                     <option value="30"></option>
                     <option value="60"></option>
@@ -100,17 +100,17 @@
         <div class="col">
             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.Servings)</label>
             <div><span asp-validation-for="Recipe.Servings" class="text-danger"></span></div>
-            <div style="display:flex;column-gap:1ex;">
+            <div class="d-flex" style="column-gap:1ex;">
                 <input id="@(Html.IdFor(_ => Model.Recipe.Servings))" type="number" asp-for="Recipe.Servings" style="width:6ch;height:fit-content;"
                         oninput="@Html.IdFor(_ => Model.Recipe.Servings)Input.value = this.valueAsNumber" />
-                <div style="display:flex;flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
+                <div class="d-flex" style="flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
                     <input type="range" class="w-100" list="servings-hashmarks"
                             id="@Html.IdFor(_ => Model.Recipe.Servings)-input"
                             name="@Html.IdFor(_ => Model.Recipe.Servings)Input"
                             min="1" max="10" step="1" value="@Model.Recipe.Servings"
                             oninput="@(Html.IdFor(_ => Model.Recipe.Servings)).value = this.valueAsNumber" />
 
-                    <datalist id="servings-hashmarks" style="display:flex;flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
+                    <datalist id="servings-hashmarks" class="d-flex" style="flex-direction:column;writing-mode:vertical-lr;width:calc(100% - 2ch);position:relative;">
                         <option value="2"></option>
                         <option value="4"></option>
                         <option value="6"></option>
@@ -252,14 +252,7 @@
                         <div class="col">
                             <label class="control-label">@Html.DisplayNameFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)</label>
                             <div><span asp-validation-for="Recipe.RecipeIngredients[id].CookedScale" class="text-danger"></span></div>
-                            <div style="display:flex;column-gap:1ex;">
-                                <output name="cookedScaleOutput@(id)" for="@Html.IdFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)">@Model.Recipe.RecipeIngredients[id].CookedScale</output>
-                                <div style="display:flex;flex-direction:column;justify-content:center;width:100%;min-width:10ch;">
-                                    <input type="range" asp-for="Recipe.RecipeIngredients[id].CookedScale" value="@Model.Recipe.RecipeIngredients[id].CookedScale" class="w-100"
-                                           min="@IngredientConsts.CookedScaleMin" max="@IngredientConsts.CookedScaleMax" step="@IngredientConsts.CookedScaleStep" 
-                                           oninput="cookedScaleOutput@(id).value = this.valueAsNumber" />
-                                </div>
-                            </div>
+                            <output-range asp-for="Recipe.RecipeIngredients[id].CookedScale" min="IngredientConsts.CookedScaleMin" max="IngredientConsts.CookedScaleMax" step="IngredientConsts.CookedScaleStep"></output-range>
                             <div id="@Html.IdFor(_ => Model.Recipe.RecipeIngredients[id].CookedScale)-help" class="form-text"></div>
                         </div>
                     </div>

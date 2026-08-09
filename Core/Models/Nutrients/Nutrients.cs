@@ -476,6 +476,12 @@ public enum Nutrients
     [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_31_50_Years)]
     [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_51_70_Years)]
     [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(3, 10, Measure.Milligrams, Multiplier.Day, CaloriesPerGram = 0, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Fluoride (F)", Order = 5680)]
     Fluoride_F = 22,
 
@@ -994,8 +1000,18 @@ public enum Nutrients
     /// </summary>
     [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_19_30_Years)]
     [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_31_50_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_51_70_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Male_71_XX_Years)]
     [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_19_30_Years)]
     [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(-1, 35, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Monounsaturated Fats", Order = 11400)]
     Fatty_Acids_Total_Monounsaturated = 50,
 
@@ -1220,6 +1236,12 @@ public enum Nutrients
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_31_50_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_51_70_Years)]
     [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Female_71_XX_Years)]
+    [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_14_18_Years)]
+    [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_19_30_Years)]
+    [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Pregnant_31_50_Years)]
+    [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_14_18_Years)]
+    [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_19_30_Years)]
+    [DailyAllowance(0.06, 0.12, Measure.Percent, Multiplier.TotalEnergy, CaloriesPerGram = 9, For = Person.Lactating_31_50_Years)]
     [Display(Name = "Omega 3 Fatty Acids (DHA)", Order = 15300)]
     Omega_3_DHA = 58,
 

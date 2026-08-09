@@ -60,9 +60,9 @@
 
                                 <div class="mb-1 ">
                                     <label asp-for="UserSections[i].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].Weight)</label>
-                                    <div style="display:flex;column-gap:1ch;">
+                                    <div class="d-flex" style="column-gap:1ch;">
                                         <output name="userSectionsOutput@(i)" for="@Html.IdFor(_ => Model.UserSections[i])">@Model.UserSections[i].Weight</output>
-                                        <div style="display:flex;width:100%;">
+                                        <div class="d-flex" style="width:100%;">
                                             <input asp-for="UserSections[i].Weight" type="range" style="width:100%;" aria-describedby="section-weight-help@(i)"
                                                    min="@UserConsts.SectionWeightMin" max="@UserConsts.SectionWeightMax"
                                                    oninput="userSectionsOutput@(i).value = this.valueAsNumber" list="sectionWeightList@(i)" />
@@ -80,9 +80,9 @@
                                 <div class="mb-1">
                                     <div class="mb-3">
                                         <label asp-for="UserSections[i].AtLeastXNutrientsPerRecipe" class="control-label">@Html.DisplayNameFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)</label>
-                                        <div style="display:flex;column-gap:1ex;">
+                                        <div class="d-flex" style="column-gap:1ex;">
                                             <output name="OutputAtLeastXNutrientsPerRecipe@(i)" for="@Html.IdFor(_ => Model.UserSections[i].AtLeastXNutrientsPerRecipe)">@Model.UserSections[i].AtLeastXNutrientsPerRecipe</output>
-                                            <div style="display:flex;width:100%;">
+                                            <div class="d-flex" style="width:100%;">
                                                 <input asp-for="UserSections[i].AtLeastXNutrientsPerRecipe" type="range" style="width:100%;" aria-describedby="user-nutrients-help@(i)"
                                                        step="1" min="@UserConsts.AtLeastXNutrientsPerRecipeMin" max="@UserConsts.AtLeastXNutrientsPerRecipeMax"
                                                        oninput="OutputAtLeastXNutrientsPerRecipe@(i).value = this.valueAsNumber" list="ListAtLeastXNutrientsPerRecipe@(i)" />
@@ -139,9 +139,9 @@
 
                                     <div class="mb-2">
                                         <label asp-for="UserFamilies[id].Weight" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].Weight)</label>
-                                        <div style="display:flex;column-gap:1ex;">
+                                        <div class="d-flex" style="column-gap:1ex;">
                                             <output name="OutputFamilyWeight@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].Weight)">@Model.UserFamilies[id].Weight</output>
-                                            <div style="display:flex;width:100%;">
+                                            <div class="d-flex" style="width:100%;">
                                                 <input asp-for="UserFamilies[id].Weight" type="range" style="width:100%;" aria-describedby="weight-help"
                                                        step="1" min="@UserFamily.Consts.WeightMin" max="@UserFamily.Consts.WeightMax"
                                                        oninput="OutputFamilyWeight@(id).value = this.valueAsNumber" list="ListFamilyWeight@(id)" />
@@ -158,9 +158,9 @@
 
                                     <div class="mb-3">
                                         <label asp-for="UserFamilies[id].CaloriesPerDay" class="control-label">@Html.DisplayNameFor(_ => Model.UserFamilies[id].CaloriesPerDay)</label>
-                                        <div style="display:flex;column-gap:1ex;">
+                                        <div class="d-flex" style="column-gap:1ex;">
                                             <output name="OutputFamilyCalories@(id)" for="@Html.IdFor(_ => Model.UserFamilies[id].CaloriesPerDay)">@Model.UserFamilies[id].CaloriesPerDay</output>
-                                            <div style="display:flex;width:100%;">
+                                            <div class="d-flex" style="width:100%;">
                                                 <input asp-for="UserFamilies[id].CaloriesPerDay" type="range" style="width:100%;" aria-describedby="calories-per-day-help"
                                                        step="50" min="@UserFamily.Consts.CaloriesPerDayMin" max="@UserFamily.Consts.CaloriesPerDayMax"
                                                        oninput="OutputFamilyCalories@(id).value = this.valueAsNumber" list="ListFamilyCalories@(id)" />
@@ -373,9 +373,9 @@
 
             <div class="mb-3">
                 <label asp-for="MinFontSize" class="control-label">@Html.DisplayNameFor(_ => Model.MinFontSize)</label>
-                <div style="display:flex;column-gap:1ex;">
+                <div class="d-flex" style="column-gap:1ex;">
                     <output name="fontsizeOutput" for="@Html.IdFor(_ => Model.MinFontSize)">@Model.MinFontSize</output>
-                    <div style="display:flex;width:100%;">
+                    <div class="d-flex" style="width:100%;">
                         <input asp-for="MinFontSize" type="range" style="width:100%;" aria-describedby="font-size-help"
                                min="@UserConsts.MinFontSizeMin" max="@UserConsts.MinFontSizeMax" step="@UserConsts.MinFontSizeStep"
                                oninput="fontsizeOutput.value = this.valueAsNumber" />

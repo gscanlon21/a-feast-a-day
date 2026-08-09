@@ -120,7 +120,7 @@
 122	\N	Asparagus Spears	Asparagus Spears	\N	f	0	16	100	2025-09-03	0	134	2	134	Asparagus Spears	https://fdc.nal.usda.gov/food-details/2710823/nutrients	\N	0
 123	\N	Water	Water	\N	t	0	240	100	2025-06-11	6	240	10	240	Water	\N	\N	0
 124	\N	Curry Powder	Curry Powder	\N	f	0	28	100	2025-01-02	4	96	4	96	Curry Powder	\N	\N	12
-125	\N	Cardamom	Cardamom	A spice made from the seeds of several plants in the genera Elettaria and Amomum in the family Zingiberaceae.	f	0	28	100	2024-12-16	4	96	536772608	96	Cardamom	\N	\N	2097152
+125	\N	Cardamom	Cardamom	A spice made from the seeds of several plants in the genera Elettaria and Amomum in the family Zingiberaceae.	f	0	28	100	2026-08-09	4	96	Pantry	96	Cardamom	\N	\N	Pantry_Spices
 126	\N	Kielbasa Sausage	Kielbasa Sausage	\N	f	491520	28	100	2025-02-22	4	224	10	224	Kielbasa Sausage	https://fdc.nal.usda.gov/food-details/174607/nutrients	\N	0
 127	\N	Unsweetened Applesauce	Unsweetened Applesauce	\N	f	0	28	100	2026-05-26	4	244	4	244	Applesauce	\N	\N	14
 129	\N	Frozen Meatballs	Frozen Meatballs	\N	f	0	28.25	100	2025-09-26	4	226	Frozen	226	Frozen Meatballs	\N	\N	Frozen_Meals
@@ -370,7 +370,7 @@
 386	\N	Tubular Pasta	Tubular Pasta	\N	f	256	28	100	2025-09-23	4	224	4	224	Tubular Pasta	\N	\N	5
 387	\N	Boneless Skinless Chicken Breasts	Boneless Skinless Chicken Breasts	\N	f	491520	112	100	2025-03-20	0	224	10	224	Boneless Skinless Chicken Breast	\N	\N	0
 388	\N	Chicken Thighs, Skin On, Bone In	Chicken Thighs, Skin On, Bone In	\N	f	491520	193	100	2025-03-13	0	94	10	94	Chicken Thighs, Skin On, Bone In	https://fdc.nal.usda.gov/food-details/172385/nutrients	\N	0
-389	\N	Frozen Mixed Chopped Onion, Carrot, and Celery	Frozen Mixed Chopped Onion, Carrot, and Celery	\N	f	0	225	100	2024-12-15	6	225	10	225	Frozen Mixed Chopped Onion, Carrot, and Celery	\N	\N	0
+389	\N	Frozen Mixed Chopped Onion, Carrot, and Celery	Frozen Mixed Chopped Onion, Carrot, and Celery	\N	f	0	28	100	2026-08-06	4	225	Frozen	225	Frozen Mixed Chopped Onion, Carrot, and Celery	\N	\N	Frozen_Vegetables
 390	\N	Halloumi Cheese	Halloumi Cheese	It is traditionally made from a mixture of goat milk and sheep's milk. Fresh halloumi has a semi-hard, elastic texture and a milder, less salty flavor compared to the aged version. As mature halloumi is stored in brine, it has a harder, drier texture, as well as a saltier flavor.	f	2	28	100	2025-03-04	4	224	8	224	Halloumi Cheese	\N	\N	9
 391	\N	Boneless Skinless Chicken Thighs	Boneless Skinless Chicken Thighs	\N	f	491520	149	100	2025-03-23	0	224	10	224	Boneless Skinless Chicken Thighs	https://fdc.nal.usda.gov/food-details/173627/nutrients	\N	0
 392	\N	Pesto	Pesto	\N	f	0	28	100	2025-07-06	4	244	128	244	Pesto	\N	\N	0
@@ -430,7 +430,7 @@
 480	\N	Seedless Green Grapes	Seedless Green Grapes	\N	f	0	28	100	2025-09-27	4	151	1	151	Grape	\N	\N	0
 481	\N	Seedless Red Grapes	Seedless Red Grapes	\N	f	0	28	100	2025-09-29	4	151	1	151	Grape	\N	\N	0
 482	\N	White Grapes	White Grapes	\N	f	0	28	100	2025-11-15	4	151	1	151	Grape	\N	\N	0
-483	\N	Seeded White Grapes	Seeded White Grapes	\N	f	0	4.9	100	2024-12-15	0	98	1	98	Grape	\N	\N	0
+483	\N	Seeded White Grapes	Seeded White Grapes	\N	f	0	4.9	100	2026-08-08	0	98	Produce	98	Grape	\N	\N	Produce_Fruits
 484	\N	Seeded Red Grapes	Seeded Red Grapes	\N	f	0	28	100	2025-09-27	4	151	1	151	Grape	\N	\N	0
 485	\N	Seeded Green Grapes	Seeded Green Grapes	\N	f	0	28	100	2025-09-30	4	151	1	151	Grape	\N	\N	0
 486	\N	Short Grain Rice	Short Grain Rice	Rice, white, short-grain, enriched, cooked	f	128	28	100	2025-10-02	4	200	Pantry	200	Rice	\N	\N	Pantry_Grains
@@ -556,7 +556,7 @@
 634	\N	Honeycrisp Apples	Honeycrisp Apples	\N	f	0	182	100	2025-04-06	0	182	1	182	Apple	\N	\N	0
 635	\N	Granny Smith Apples	Granny Smith Apples	\N	f	0	182	100	2025-03-29	0	182	Produce	182	Apple	\N	\N	Produce_Fruits
 636	\N	Milk Chocolate Bar (40%)	Milk Chocolate Bar (40%)	\N	f	0	28	100	2025-02-01	4	224	536772608	224	Chocolate Bar	\N	\N	8388608
-637	\N	Milk Chocolate Chips (40%)	Milk Chocolate Chips (40%)	\N	f	0	28	100	2024-12-15	4	224	536772608	224	Chocolate Chip	\N	\N	8388608
+637	\N	Milk Chocolate Chips (40%)	Milk Chocolate Chips (40%)	\N	f	0	28	100	2026-08-07	4	224	Pantry	224	Chocolate Chip	\N	\N	Pantry_Chocolate
 638	\N	Dark Chocolate (70%)	Dark Chocolate (70%)	\N	f	0	28	100	2024-12-25	4	168	536772608	168	Chocolate	https://fdc.nal.usda.gov/food-details/170273/nutrients	\N	8388608
 639	\N	Milk Chocolate (40%)	Milk Chocolate (40%)	\N	f	0	28	100	2025-02-02	4	168	536772608	168	Chocolate	https://fdc.nal.usda.gov/food-details/170271/nutrients	\N	8388608
 640	\N	Prunes	Prunes	Dried Plums. 	f	0	28	100	2025-05-11	4	132	1	132	Prune	https://fdc.nal.usda.gov/food-details/168162/nutrients	\N	0
@@ -796,7 +796,7 @@
 967	\N	Gluten-Free Egg Noodles	Gluten-Free Egg Noodles	\N	f	0	28	100	2025-08-08	4	38	4	38	Gluten-Free Egg Noodles	\N	\N	5
 968	\N	Apple Cider Vinegar | Lemon Juice	Apple Cider Vinegar | Lemon Juice	aka. Cider Vinegar - https://www.eatthismuch.com/calories/vinegar-222	f	0	30	100	2025-01-07	9	239	4	239	Apple Cider Vinegar | Lemon Juice	\N	\N	13
 969	\N	Salt & Pepper	Salt & Pepper	Use partial/aggregate ingredients for nutrients.	t	0	28	100	2026-05-19	4	96	4	96	Salt & Pepper	\N	\N	12
-970	\N	Jam Sugar	Jam Sugar	\N	t	0	28	100	2024-12-14	4	200	4	200	Jam Sugar	\N	\N	14
+970	\N	Jam Sugar	Jam Sugar	\N	t	0	28	100	2026-08-04	4	200	Pantry	200	Jam Sugar	\N	\N	Pantry_Sweeteners
 971	\N	Fresh Scotch Bonnet Chilies	Fresh Scotch Bonnet Chilies	\N	f	0	45	100	2026-06-17	0	90	7	90	Chili	\N	\N	2
 972	\N	Pecans &| Cashews &| Almonds	Pecans &| Cashews &| Almonds	\N	f	0	28	100	2026-05-30	4	99	10	99	Pecans &| Cashews &| Almonds	\N	\N	0
 973	\N	Gluten-Free Teriyaki Sauce	Gluten-Free Teriyaki Sauce	\N	f	0	36	100	2025-12-06	9	288	4	288	Gluten-Free Teriyaki Sauce	\N	\N	14
@@ -980,7 +980,7 @@
 1215	\N	Beef Tenderloin Fillet Mignons	Beef Tenderloin Fillet Mignons	Fillet is a type of cut. A smaller cut of meat. Fillet Mignon is a portion from the meat. https://www.eatthismuch.com/calories/filet-mignon-90197	f	491520	37.67	100	2026-03-19	4	113	8	113	Beef Tenderloin Fillet Mignon	\N	\N	0
 1216	\N	Small Red Onions	Small Red Onions	\N	f	0	70	100	2024-12-25	0	115	2	115	Onion	\N	\N	0
 1217	\N	Fresh Parsley | Fresh Cilantro	Fresh Parsley | Fresh Cilantro	\N	f	0	28	100	2026-06-23	4	64	7	64	Herb	\N	\N	4
-1218	\N	Chocolate Chips	Chocolate Chips	\N	f	0	28	100	2024-12-15	4	224	Pantry	224	Chocolate Chip	\N	\N	Pantry_Chocolate
+1218	\N	Chocolate Chips	Chocolate Chips	\N	f	0	28	100	2026-08-07	4	224	Pantry	224	Chocolate Chip	\N	\N	Pantry_Chocolate
 1248	\N	Purple Sweet Potatoes	Purple Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	1	133	Sweet Potato	\N	\N	2
 1249	\N	Orange Bell Peppers | Orange Sweet Potatoes	Orange Bell Peppers | Orange Sweet Potatoes	\N	f	0	186	100	2025-10-22	0	186	2	186	Bell Peppers | Sweet Potatoes	\N	\N	0
 1250	\N	Sweet Potatoes	Sweet Potatoes	\N	f	0	130	100	2025-08-18	0	133	2	133	Sweet Potato	https://fdc.nal.usda.gov/food-details/2346404/nutrients	\N	0
@@ -1193,7 +1193,7 @@
 1515	\N	Cold Water	Cold Water	\N	t	0	30	100	2025-06-11	9	240	10	240	Cold Water	\N	\N	0
 1547	\N	Poultry Seasoning	Poultry Seasoning	\N	f	0	28	100	2025-11-18	4	128	4	128	Poultry Seasoning	\N	\N	12
 1548	\N	Crushed Tomatoes	Crushed Tomatoes	\N	f	512	28	100	2026-06-03	4	165	4	165	Tomato	\N	\N	2
-1549	\N	Frozen Mixed Diced Carrots, Peas, and Corn	Frozen Mixed Diced Carrots, Peas, and Corn	\N	f	0	225	100	2024-12-15	6	225	10	225	Frozen Mixed Diced Carrots, Peas, and Corn	\N	\N	0
+1549	\N	Frozen Mixed Diced Carrots, Peas, and Corn	Frozen Mixed Diced Carrots, Peas, and Corn	\N	f	0	225	100	2026-08-09	6	225	Frozen	225	Frozen Mixed Diced Carrots, Peas, and Corn	\N	\N	Frozen_Vegetables
 1550	\N	Brown Mustard	Brown Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Mustard	\N	\N	13
 1551	\N	Yellow Mustard	Yellow Mustard	\N	t	0	28	100	2025-09-22	4	240	4	240	Mustard	\N	\N	13
 1552	\N	Boneless Pork Shoulder	Boneless Pork Shoulder	\N	f	32768	454	100	2025-08-06	5	227	Protein	227	Boneless Pork Shoulder	\N	\N	Protein_Meat
@@ -1241,7 +1241,7 @@
 1594	\N	Back Bacon	Back Bacon	\N	f	491520	12	100	2025-07-16	0	224	10	224	Back Bacon	\N	\N	0
 1595	\N	Fresh Mangos | Fresh Peaches	Fresh Mangos | Fresh Peaches	\N	f	0	207	100	2025-03-26	0	165	1	165	Fresh Mangos | Fresh Peaches	\N	\N	0
 1596	\N	Ground Cumin	Ground Cumin	aka: Cumin Powder.	t	0	28	100	2026-06-24	4	144	536772608	144	Cumin	\N	\N	2097152
-1597	\N	Semisweet Chocolate Chips	Semisweet Chocolate Chips	\N	f	0	28	100	2024-12-15	4	224	536772608	224	Chocolate Chip	\N	\N	8388608
+1597	\N	Semisweet Chocolate Chips	Semisweet Chocolate Chips	\N	f	0	28	100	2026-08-06	4	224	Pantry	224	Chocolate Chip	\N	\N	Pantry_Chocolate
 1598	\N	Oil	Oil	\N	t	0	28	100	2024-12-22	9	224	5	224	Oil	\N	\N	11
 1599	\N	Fine Sherry	Fine Sherry	\N	f	0	28	100	2026-01-31	4	224	3	224	Fine Sherry	\N	\N	0
 1600	\N	Grated Cheddar Cheese	Grated Cheddar Cheese	\N	f	2	112	100	2026-06-13	6	112	10	112	Cheddar Cheese	\N	You can't buy this in a store.	0
@@ -1326,7 +1326,7 @@
 1714	\N	Niçoise Olives	Niçoise Olives	\N	f	0	28	100	2025-03-19	4	134	15360	134	Olive	\N	\N	0
 1715	\N	Head of Celery	Head of Celery	\N	f	0	40	100	2025-03-12	0	101	1	101	Celery	\N	\N	2
 1716	\N	Balls of Buffalo Mozzarella	Balls of Buffalo Mozzarella	\N	f	32	28	100	2025-12-17	4	112	10	112	Mozzarella Cheese	\N	\N	0
-1717	\N	Mini Chocolate Chips	Mini Chocolate Chips	\N	f	0	28	100	2024-12-15	4	173	536772608	173	Chocolate Chip	\N	\N	8388608
+1717	\N	Mini Chocolate Chips	Mini Chocolate Chips	\N	f	0	28	100	2026-08-08	4	173	Pantry	173	Chocolate Chip	\N	\N	Pantry_Chocolate
 1718	\N	Honey | Agave Syrup	Honey | Agave Syrup	\N	t	0	42	100	2025-06-10	9	336	4	336	Honey	\N	\N	13
 1719	\N	Castelvetrano Olives, Pitted	Castelvetrano Olives, Pitted	\N	f	0	28	100	2025-03-15	4	134	3	134	Olive	\N	\N	0
 1720	\N	Canola Oil | Corn Oil	Canola Oil | Corn Oil	Use partial ingredients.	f	2	13.6	100	2025-06-21	7	240	5	240	Oil	\N	\N	11
@@ -1396,7 +1396,7 @@
 1785	\N	Brown Sugar | Palm Sugar	Brown Sugar | Palm Sugar	\N	f	262176	9.5	100	2025-01-31	0	114	5	114	Palm Shortening	\N	\N	16
 1786	\N	Ground Coriander Seeds	Ground Coriander Seeds	\N	f	0	28	100	2025-12-17	4	80	4	80	Coriander Seeds	\N	\N	12
 1788	\N	Muscovado Sugar	Muscovado Sugar	Unrefined cane sugar, contains molasses.	t	0	28	100	2026-08-02	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
-1789	\N	Cane Sugar	Cane Sugar	\N	t	0	28	100	2024-12-14	4	200	4	200	Granulated Sugar	\N	\N	14
+1789	\N	Cane Sugar	Cane Sugar	\N	t	0	28	100	2026-08-04	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
 1790	\N	Dark Muscovado Sugar	Dark Muscovado Sugar	Unrefined cane sugar, contains molasses.	t	0	28	100	2026-07-31	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
 1791	\N	Light Muscovado Sugar	Light Muscovado Sugar	Unrefined cane sugar, contains molasses.	t	0	28	100	2026-08-02	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
 1793	\N	Dry Soup Beans	Dry Soup Beans	Use partial ingredients.	f	0	28	100	2026-03-19	4	194	4	194	Soup Bean	\N	\N	6
@@ -1420,9 +1420,9 @@
 1811	\N	Powdered Cinnamon Sugar	Powdered Cinnamon Sugar	\N	t	0	28	100	2025-01-18	4	128	4	128	Cinnamon	\N	\N	12
 1812	\N	Cinnamon Sugar	Cinnamon Sugar	\N	t	0	28	100	2025-01-18	4	128	4	128	Cinnamon	\N	\N	12
 1842	\N	Raisins	Raisins	\N	f	0	28	100	2025-03-01	4	145	3	145	Seedless Raisins	\N	\N	0
-1843	\N	Demerara Sugar	Demerara Sugar	This is a type of raw sugar.	t	0	28	100	2024-12-14	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
+1843	\N	Demerara Sugar	Demerara Sugar	This is a type of raw, light brown, sugar.	t	0	28	100	2026-08-03	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
 1844	\N	Raw Sugar	Raw Sugar	aka. Coconut Palm Sugar - https://www.eatthismuch.com/calories/coconut-sugar-organic-1785641	f	0	28	100	2025-10-18	4	144	4	144	Coconut Sugar	\N	\N	14
-1845	\N	Turbinado Sugar	Turbinado Sugar	This is a type of raw sugar.	t	0	28	100	2024-12-14	4	200	4	200	Granulated Sugar	\N	\N	14
+1845	\N	Turbinado Sugar	Turbinado Sugar	This is a type of raw sugar.	t	0	28	100	2026-08-03	4	200	Pantry	200	Sugar	\N	\N	Pantry_Sweeteners
 1846	\N	Self-Rising Whole-Wheat Flour	Self-Rising Whole-Wheat Flour	\N	t	256	28	100	2025-06-24	4	125	Pantry	125	Whole-Wheat Flour	\N	\N	None
 1847	\N	Dried Unsweetened Shredded Coconut	Dried Unsweetened Shredded Coconut	\N	f	0	28	100	2026-06-15	4	113	536772608	113	Coconut	\N	\N	4194304
 1848	\N	6" Corn Tortillas	6" Corn Tortillas	\N	f	32	26	100	2026-07-27	0	104	Pantry	104	Corn Tortillas	https://fdc.nal.usda.gov/food-details/173241/measures	\N	Pantry_Grains
@@ -1531,8 +1531,8 @@
 2043	\N	Sesame Oil | Avocado Oil	Sesame Oil | Avocado Oil	\N	f	8192	28	100	2025-02-24	9	224	5	224	Sesame Oil	\N	\N	11
 2044	\N	Fine Salt	Fine Salt	\N	t	0	28	100	2025-07-24	4	288	536772608	288	Salt	\N	\N	2097152
 2045	\N	Frozen Regular Cheese Pizza	Pizza, Cheese Topping, Regular Crust, Frozen, Cooked	\N	f	2	741.333333	100	2026-03-10	0	139	11	139	Frozen Pizza	\N	\N	0
-2046	\N	Semisweet Chocolate	Semisweet Chocolate	\N	f	0	28	100	2024-12-15	4	224	536772608	224	Chocolate Chip	\N	\N	8388608
-2047	\N	Chocolate	Chocolate	\N	f	0	28	100	2024-12-15	4	224	536772608	224	Chocolate Chip	\N	\N	8388608
+2046	\N	Semisweet Chocolate	Semisweet Chocolate	\N	f	0	28	100	2026-08-05	4	224	Pantry	224	Chocolate Chip	\N	\N	Pantry_Chocolate
+2047	\N	Chocolate	Chocolate	\N	f	0	28	100	2026-08-05	4	224	Pantry	224	Chocolate	\N	\N	8388608
 2048	\N	Miso Paste	Miso Paste	\N	f	8192	28	100	2025-02-22	4	256	4	256	Sesame Paste	\N	\N	14
 2049	\N	Soybean Paste	Soybean Paste	\N	f	8192	28	100	2025-02-22	4	256	4	256	Sesame Paste	\N	\N	14
 2050	\N	Cotija Cheese	Cotija Cheese	\N	f	2	28	100	2026-03-04	4	224	Dairy	224	Blue Cheese	\N	\N	Dairy_Cheese
@@ -1553,3 +1553,6 @@
 2066	\N	Enriched Short Grain Rice	Enriched Short Grain Rice	Rice, white, short-grain, enriched, cooked	f	128	28	100	2025-10-02	4	200	Pantry	200	Rice	\N	\N	Pantry_Grains
 2067	\N	Unenriched Medium Grain Rice	Unenriched Medium Grain Rice	\N	f	4096	28	100	2025-10-02	4	200	4	200	Rice	\N	\N	4
 2068	\N	Enriched Medium Grain Rice	Enriched Medium Grain Rice	Rice, white, medium-grain, enriched, cooked	f	128	28	100	2025-10-02	4	200	Pantry	200	Rice	\N	\N	Pantry_Grains
+2069	\N	Mixed Pickling Spices	Mixed Pickling Spices	\N	f	0	28	100	2026-07-03	4	100	536772608	100	Mixed Spice	\N	\N	2097152
+2070	\N	Chinese Broccoli	Chinese Broccoli	\N	f	0	28	100	2026-05-02	4	91	1	91	Broccoli	\N	\N	2
+2071	\N	Five-Spice Powder	Five-Spice Powder	\N	f	0	28	100	2026-07-03	4	100	536772608	100	Mixed Spice	\N	\N	2097152

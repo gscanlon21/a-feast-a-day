@@ -3,6 +3,7 @@ namespace Web.Views.Shared;
 
 public class ValidationMessagePartialModel
 {
+    [Obsolete("Set TempData instead.", error: false)]
     public bool? WasUpdated { get; set; }
 
     /// <summary>
