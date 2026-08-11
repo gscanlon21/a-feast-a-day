@@ -23,9 +23,7 @@
     <div class="col-lg-6">
         @if (Model.NewsletterRecipe != null)
         {
-            <component type="typeof(CascadingValue<UserNewsletterDto?>)" render-mode="Static" param-Value="null">
-                <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Section.AsTheme()" />
-            </component>
+            <component type="typeof(_Recipe)" render-mode="Static" param-Model='Model.NewsletterRecipe' param-Verbosity="Model.Verbosity" param-Theme="Model.Section.AsTheme()" />
         }
 
         @if (Model.CanManage)
