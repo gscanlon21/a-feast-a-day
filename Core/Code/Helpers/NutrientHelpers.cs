@@ -39,6 +39,9 @@ namespace Core.Code.Helpers;
 /// Nutrients.Betaine,
 /// Nutrients.Carotene_Alpha,
 /// Nutrients.Carotene_Beta,
+/// 
+/// What recipe differentiates iodized vs. regular salt? Up to the user to track:
+/// Nutrients.Iodine_I,
 /// </summary>
 public static class NutrientHelpers
 {
@@ -110,7 +113,6 @@ public static class NutrientHelpers
         Nutrients.Copper_Cu,
         Nutrients.Manganese_Mn,
         Nutrients.Selenium_Se,
-        Nutrients.Iodine_I,
         Nutrients.Molybdenum_Mo,
 
         // Extra
@@ -181,7 +183,6 @@ public static class NutrientHelpers
         { Nutrients.Copper_Cu, [USDANutrients.Copper_Cu_Milligrams] },
         { Nutrients.Manganese_Mn, [USDANutrients.Manganese_Mn_Milligrams] },
         { Nutrients.Selenium_Se, [USDANutrients.Selenium_Se_Micrograms] },
-        { Nutrients.Iodine_I, [USDANutrients.Iodine_I_Micrograms] },
         { Nutrients.Molybdenum_Mo, [USDANutrients.Molybdenum_Mo_Micrograms] },
 
         // Extra
