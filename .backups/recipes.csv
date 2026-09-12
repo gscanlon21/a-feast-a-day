@@ -85,11 +85,11 @@
 105	Sweet Pea Orecchiette	\N	\N	\N	12	25	5	4	t	sweet-pea-orecchiette-alt.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 106	Garlic Chicken	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	4	15	3	2	t	garlic-chicken.jpg	0	\N	f	f
 107	Ham & Gruyere Melt	Top with 1/2 cup of bechamel sauce and 2 eggs cooked to desired doneness.	\N	\N	4	10	5	1	t	ham-gruyere-melt.jpg	0	\N	f	f
-108	Greek Chicken Pasta	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	12	120	10	8	t	\N	0	\N	f	f
+108	Greek Chicken Pasta	\N	\N	\N	12	120	10	8	t	\N	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 109	Grilled Fattoush Salad	\N	\N	\N	20	15	10	4	t	grilled-fattoush-salad.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 110	Sausage Sandwich	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	6	15	3	4	t	sausage-sandwich.jpg	0	\N	f	f
 111	Tahini Rocky Road	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	20	12	t	tahini-rocky-road.jpg	0	\N	f	f
-112	Jools' Chocolate Dreams	From Jamie Oliver's 5 Ingredients Mediterranean	\N	\N	32	120	40	6	t	jools-chocolate-dreams.jpg	0	\N	f	f
+112	Jools' Chocolate Dreams	\N	\N	\N	64	120	40	6	t	jools-chocolate-dreams.jpg	0	From Jamie Oliver's 5 Ingredients Mediterranean	f	f
 113	Multigrain Pancake Batter	\N	Too many ingredients.	\N	2	10	5	6	t	buttermilk-pancakes.jpg	0	\N	f	f
 114	Honey Dijon Mustard Dressing	\N	\N	\N	0	0	5	1	t	honey-mustard-dressing.jpg	6	\N	f	f
 115	Sweet Honey Chicken Pecan Salad	\N	\N	\N	6	10	5	1	t	honey-chicken-pecan-salad.jpg	0	\N	f	f
@@ -211,7 +211,7 @@
 266	Sweet Potato Cauliflower Curry	\N	\N	\N	4	55	5	4	t	cauliflower-curry.jpg	0	https://www.drkarafitzgerald.com/recipe/sweet-potato-cauliflower-curry/	f	f
 267	Curried Mung Bean Soup	\N	\N	\N	8	45	15	4	t	curried-mung-bean-soup-alt.jpg	0	https://www.drkarafitzgerald.com/recipe/curried-mung-bean-soup/	f	f
 268	Orange Flower Water	\N	\N	\N	0	120	5	1	t	\N	6	https://thishealthytable.com/blog/orange-blossom-water/	f	f
-269	Rose Water	\N	\N	\N	0	20	5	1	t	rose-water.jpg	6	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	f	f
+269	Rose Water	\N	Too expensive. Not a fan.	\N	0	20	5	1	t	rose-water.jpg	6	https://moonandspoonandyum.com/how-to-make-rose-water-at-home/	f	f
 270	Hoisin Chicken Lettuce Cups	Just toss it all in a salad bowl if you prefer.	\N	\N	12	10	2	3	t	chicken-lettuce-cups.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 271	Traditional Stuffing	\N	\N	\N	16	55	5	4	t	traditional-stuffing.jpg	0	https://www.drkarafitzgerald.com/recipe/traditional-stuffing-with-a-secret-ingredient/	f	f
 272	Fragrant Spiced Rice	\N	\N	\N	8	10	5	4	t	baked-saffron-rice.jpg	0	https://www.drkarafitzgerald.com/recipe/fragrant-spiced-rice/	f	f
@@ -232,7 +232,7 @@
 319	Chorizo, Sweet Potato & Black Bean Rice Skillet	\N	\N	\N	8	30	10	6	t	chorizo-sweet-potato-black-beans-rice.jpg	0	https://iowagirleats.com/mexican-chorizo-sweet-potato-black-bean-rice-skillet/	f	f
 320	Comforting Sausage Bake	\N	\N	\N	8	45	10	4	t	sausage-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 321	Gnarly Peanut Chicken	From Jamie Oliver's 5 Ingredients	\N	\N	8	10	2	2	t	peanut-chicken.jpg	0	\N	f	f
-322	Crockpot Christmas Crack	Not every bag of chocolate chips has the same amount. It's okay if your bag has a little less or a little more. Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version.	\N	\N	64	60	5	4	t	\N	0	https://www.glutenfreepalate.com/crockpot-christmas-crack/	f	f
+322	Crockpot Christmas Crack	Add the ingredients into you Crockpot or slow cooker in the order they are listed. This is very important. White chocolate doesn't melt if it has direct contact with the bottom of the slow cooker, it just clumps and burns. Don't stir your ingredient before they are done heating up. The heat will transfer up through the ingredients and soften all of the chocolate chips. The magic happens when the hour is up and you stir everything together. The chocolate chips will melt and the flavors will combine. Let it set up in the refrigerator or freezer before serving. See notes in the post about a stove top version.	\N	\N	64	60	5	4	t	\N	0	https://www.glutenfreepalate.com/crockpot-christmas-crack/	f	f
 323	Easy Sausage Carbonara	From Jamie Oliver's 5 Ingredients	\N	\N	12	10	5	2	t	sausage-carbonara.jpg	0	\N	f	f
 324	Crème Fraîche	\N	\N	\N	0	0	5	1	t	buttermilk.jpg	6	https://www.seriouseats.com/how-to-make-creme-fraiche-in-1-easy-step	f	f
 325	Anti-Allergy Salad	\N	\N	\N	20	10	5	2	t	anti-allergy-salad.jpg	0	https://www.drkarafitzgerald.com/recipe/recipe-anti-allergy-salad/	f	f
