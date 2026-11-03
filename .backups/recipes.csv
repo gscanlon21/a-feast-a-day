@@ -65,7 +65,7 @@
 85	Pasta Fresca	\N	\N	\N	12	15	5	4	t	pasta-fresca.jpg	0	https://iowagirleats.com/pasta-fresca/	f	f
 86	Cheesy Ham and Broccoli Rice Skillet	\N	\N	\N	12	15	5	3	t	cheesy-ham-broccoli-rice.jpg	0	https://iowagirleats.com/cheesy-ham-and-broccoli-rice-skillet/	f	f
 87	Korean Beef Lettuce Wraps	\N	\N	\N	12	15	5	4	t	chicken-lettuce-wraps.jpg	0	https://iowagirleats.com/korean-beef-lettuce-wraps/	f	f
-88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	f	f
+88	Homemade Teriyaki Sauce	\N	\N	\N	0	10	5	1	t	teriyaki-sauce.jpg	6	https://www.recipetineats.com/homemade-teriyaki-sauce/	t	f
 89	Homemade Crunchy Taco Hamburger Helper	\N	\N	\N	0	20	5	5	t	taco-hamburger-helper.jpg	1	https://iowagirleats.com/homemade-crunchy-taco-hamburger-helper-30-minute-meal/	t	f
 90	Mini BBQ Cheddar Meatloaves	\N	\N	\N	4	15	5	4	t	chedder-meatloaf.jpg	0	https://iowagirleats.com/mini-bbq-cheddar-meatloaves/	f	f
 91	Large Batch Homemade Taco Seasoning	\N	\N	\N	0	0	5	1	t	taco-seasoning.jpg	6	https://iowagirleats.com/large-batch-homemade-taco-seasoning	t	f
@@ -219,7 +219,7 @@
 306	Peas, Beans, Chili, & Mint	From Jamie Oliver's 5 Ingredients	\N	\N	20	0	10	4	t	peas-beans-chili-mint.jpg	0	\N	f	f
 307	Spiced Lentils & Rice	\N	\N	\N	12	20	5	3	t	spiced-lentils-rice.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 308	Fresh Pesto	\N	Duplicate of Pesto.	\N	0	0	5	1	t	pesto.jpg	6	\N	f	f
-309	Asparagus, Eggs, & French Dressing	From Jamie Oliver's 5 Ingredients	\N	\N	4	10	5	2	t	asparagus-eggs-dressing.jpg	0	\N	f	f
+309	Asparagus, Eggs, & French Dressing	\N	\N	\N	4	10	5	2	t	asparagus-eggs-dressing.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 310	Hot Chocolate Sauce	\N	\N	\N	0	4	1	1	t	hot-chocolate-sauce.jpg	6	\N	f	f
 311	Sausage & Apple Bake	\N	\N	\N	8	35	10	4	t	sausage-apple-bake.jpg	0	From Jamie Oliver's 5 Ingredients	f	f
 312	Black Bean Sauce	\N	\N	\N	0	10	5	1	t	black-bean-sauce.jpg	6	https://www.food.com/recipe/mexican-black-bean-sauce-280411	t	f
@@ -676,3 +676,4 @@
 1124	Mango Chutney	\N	\N	\N	0	0	15	8	t	\N	6	https://www.jamieoliver.com/recipes/fruit/mango-chutney/	t	f
 1125	Garlic Texas Toast	If you are dairy-free, use olive oil in place of butter for Dairy-Free Garlic Bread. If you like your garlic toast softer, bake at 375°F for 4-6 minutes per side, instead of at 400°F. You can opt to only spread one side of the bread with the garlic butter, using half the amount this recipe calls for.	Not very nutritious.	\N	0	0	0	2	t	\N	0	https://amindfullmom.com/homemade-garlic-bread/	t	f
 1126	Date Ice Cream	Soak the dates until soft and drain them well before blending. Blend until completely smooth and creamy. Any remaining pieces of date can create a grainy texture after freezing. Taste the mixture before freezing and add an extra date or two if you’d like it sweeter. Press parchment paper or plastic wrap directly onto the surface before storing to help prevent ice crystals. Store in an airtight container in the freezer for up to 2 weeks. For popsicles, pour the blended mixture into molds and freeze until solid.	\N	\N	112	120	10	6	t	\N	0	https://www.mamaknowsglutenfree.com/date-ice-cream/	f	f
+1127	Ready Rice & Beans	\N	\N	\N	12	10	5	2	t	red-beans-rice.jpg	0	\N	f	f
